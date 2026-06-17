@@ -105,18 +105,21 @@ function updateUI() {
     document.getElementById('hero-desc').innerText = translation.heroDesc;
     
     // Update Card 1
+    document.getElementById('card-smartfarm').href = `https://smartfarm.inwoovation.com/?lang=${currentLang}`;
     document.getElementById('c1-badge').innerText = translation.card1Badge;
     document.getElementById('c1-title').innerText = translation.card1Title;
     document.getElementById('c1-desc').innerText = translation.card1Desc;
     document.getElementById('c1-action').innerHTML = `${translation.card1Action} <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>`;
 
     // Update Card 2
+    document.getElementById('card-pollinator').href = `https://smartfarm.inwoovation.com/Pollinator_Safety_Project/?lang=${currentLang}`;
     document.getElementById('c2-badge').innerText = translation.card2Badge;
     document.getElementById('c2-title').innerText = translation.card2Title;
     document.getElementById('c2-desc').innerText = translation.card2Desc;
     document.getElementById('c2-action').innerHTML = `${translation.card2Action} <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>`;
 
     // Update Card 3
+    document.getElementById('card-vertical').href = `https://smartfarm.inwoovation.com/Vertical_Farming_Project/?lang=${currentLang}`;
     document.getElementById('c3-badge').innerText = translation.card3Badge;
     document.getElementById('c3-title').innerText = translation.card3Title;
     document.getElementById('c3-desc').innerText = translation.card3Desc;
