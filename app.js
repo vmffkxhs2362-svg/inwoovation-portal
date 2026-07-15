@@ -33,11 +33,11 @@ const i18n = {
         card4Badge: "프리미엄 템플릿",
         card4Action: "스토어 둘러보기",
 
-        // Card 5: Coming Soon / Finance
-        card5Title: "양적 금융 분석 연구실 (Quant Lab)",
-        card5Desc: "통계적 차원 축소 모델, 알고리즘 트레이딩 백테스팅 엔진 및 자산 최적화 시뮬레이터를 개발 중입니다. (AgTech 파이프라인 완성 후 정식 배포 예정)",
-        card5Badge: "R&D 준비 중",
-        card5Action: "릴리즈 대기 중",
+        // Card 5: AgriAtlas Wiki
+        card5Title: "AgriAtlas 글로벌 위키",
+        card5Desc: "전 세계 스마트팜 정밀 공학 가이드북 및 작물별 생식/영양생장 조향 데이터 허브. 국내외 공인 규격 레퍼런스 PDF 자료를 직관적으로 열람할 수 있는 통합 지식 도서관입니다.",
+        card5Badge: "지식 아카이브",
+        card5Action: "위키 라이브러리 입장",
 
         // Footer
         footerReserved: "© 2026 Inwoovation Lab. All rights reserved. | 이노베이션 연구소",
@@ -71,11 +71,11 @@ const i18n = {
         card4Badge: "Premium Store",
         card4Action: "Visit Gumroad Store",
 
-        // Card 5: Coming Soon / Finance
-        card5Title: "Quantitative Finance Lab (Quant Lab)",
-        card5Desc: "Developing statistical portfolio optimizers, dimensionality reduction backtest pipelines, and automated trading metrics. (Releasing after AgTech stable release)",
-        card5Badge: "R&D Active",
-        card5Action: "Coming Soon",
+        // Card 5: AgriAtlas Wiki
+        card5Title: "AgriAtlas Global Wiki",
+        card5Desc: "An engineering-centric repository for Controlled Environment Agriculture. Access detailed climate steering, crop nutrition, and reference manual PDFs in one unified archive.",
+        card5Badge: "Knowledge Base",
+        card5Action: "Enter Wiki Library",
 
         // Footer
         footerReserved: "© 2026 Inwoovation Lab. All rights reserved.",
@@ -112,14 +112,14 @@ function updateUI() {
     document.getElementById('c1-action').innerHTML = `${translation.card1Action} <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>`;
 
     // Update Card 2
-    document.getElementById('card-pollinator').href = `https://smartfarm.inwoovation.com/Pollinator_Safety_Project/?lang=${currentLang}`;
+    document.getElementById('card-pollinator').href = `https://smartfarm.inwoovation.com/?tab=pollinator&lang=${currentLang}`;
     document.getElementById('c2-badge').innerText = translation.card2Badge;
     document.getElementById('c2-title').innerText = translation.card2Title;
     document.getElementById('c2-desc').innerText = translation.card2Desc;
     document.getElementById('c2-action').innerHTML = `${translation.card2Action} <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>`;
 
     // Update Card 3
-    document.getElementById('card-vertical').href = `https://smartfarm.inwoovation.com/Vertical_Farming_Project/?lang=${currentLang}`;
+    document.getElementById('card-vertical').href = `https://smartfarm.inwoovation.com/?tab=vertical&lang=${currentLang}`;
     document.getElementById('c3-badge').innerText = translation.card3Badge;
     document.getElementById('c3-title').innerText = translation.card3Title;
     document.getElementById('c3-desc').innerText = translation.card3Desc;
@@ -132,10 +132,11 @@ function updateUI() {
     document.getElementById('c4-action').innerHTML = `${translation.card4Action} <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>`;
 
     // Update Card 5
+    document.getElementById('card-wiki').href = `https://wiki.inwoovation.com/?lang=${currentLang}`;
     document.getElementById('c5-badge').innerText = translation.card5Badge;
     document.getElementById('c5-title').innerText = translation.card5Title;
     document.getElementById('c5-desc').innerText = translation.card5Desc;
-    document.getElementById('c5-action').innerHTML = `${translation.card5Action} <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>`;
+    document.getElementById('c5-action').innerHTML = `${translation.card5Action} <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>`;
 
     // Update Footer
     document.getElementById('footer-reserved').innerText = translation.footerReserved;
