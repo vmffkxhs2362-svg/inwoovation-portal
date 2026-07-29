@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penman-Monteith 방정식을 활용한 작물 표준 증산량(ET0) 추정 모델 | Inwoovation Lab</title>
+    <meta name="description" content="FAO-56 표준 Penman-Monteith 수식을 바탕으로 온실 일조량, 풍속, 습도 데이터 기반 일일 작물 관수 요구량 산출법.">
+    <link rel="canonical" href="https://inwoovation.com/articles/article-05-penman-monteith-transpiration.html" />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8597809158257497" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .article-container { max-width: 850px; margin: 40px auto; padding: 35px; background: #ffffff; border-radius: 16px; border: 1px solid #e2e8f0; line-height: 1.85; color: #334155; }
+        .article-container h1 { font-size: 2rem; color: #0f172a; margin-bottom: 15px; border-bottom: 3px solid #10b981; padding-bottom: 12px; line-height: 1.3; }
+        .article-meta { color: #64748b; font-size: 0.95rem; margin-bottom: 30px; display: flex; gap: 15px; background: #f8fafc; padding: 10px 16px; border-radius: 8px; font-weight: 500; }
+        .article-container h2 { font-size: 1.35rem; color: #065f46; margin-top: 35px; margin-bottom: 14px; background: #ecfdf5; padding: 8px 16px; border-left: 4px solid #10b981; border-radius: 4px; }
+        .article-container h3 { font-size: 1.1rem; color: #1e293b; margin-top: 24px; margin-bottom: 10px; font-weight: 700; }
+        .article-container p { margin-bottom: 18px; text-align: justify; }
+        .article-container ul, .article-container ol { margin-left: 24px; margin-bottom: 20px; }
+        .back-link { display: inline-block; margin-bottom: 20px; color: #10b981; text-decoration: none; font-weight: 600; }
+        .back-link:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <a href="/" class="back-link">← 이노베이션 랩 메인으로 돌아가기</a>
+    <div class="article-container">
+        <h1>Penman-Monteith 방정식을 활용한 작물 표준 증산량(ET0) 추정 모델</h1>
+        <div class="article-meta">
+            <span>📅 2026-07-29</span>
+            <span>🏷️ 수문학 & 관수공학</span>
+            <span>✍️ Inwoovation Lab 연구팀</span>
+        </div>
+        
+        <h2>1. 정밀 수경재배의 핵심: 증산량(Evapotranspiration) 추정</h2>
+        <p>수경재배에서 과공급된 양액은 배수 낭비를 초래하고, 부족한 관수는 배지 실측 EC 폭등을 유발합니다. FAO(UN 식량농업기구)에서 정립한 <strong>Penman-Monteith(PM) 공식</strong>은 작물의 일일 표준 증산량을 연산하는 세계 공인 모델입니다.</p>
+
+        <h2>2. FAO-56 Penman-Monteith 수식 구조</h2>
+        <p>복사 에너지 항(Radiative term)과 공기역학적 항(Aerodynamic term)의 결합 수식으로 구성됩니다.</p>
+        <p style="background:#f1f5f9; padding:15px; border-radius:8px; font-family:monospace; font-weight:bold;">
+        ET_0 = [ 0.408 Δ (R_n - G) + γ (900 / (T + 273)) u_2 (e_s - e_a) ] ÷ [ Δ + γ (1 + 0.34 u_2) ]
+        </p>
+
+        <h2>3. 실전 양액 제어기 연동 조향법</h2>
+        <p>일사량 센서(J/cm²) 수치와 PM 방정식을 연동하면 일사 누적 450 J/cm² 도달 시 1회 관수(회당 100ml/주)를 자동으로 트리가하는 정밀 펄스 관수 제어가 가능해집니다.</p>
+        
+    </div>
+</div>
+<footer>
+    <p>© 2026 Inwoovation Lab. All rights reserved. | <a href="/privacy-policy.html">개인정보 처리방침</a> | <a href="/terms-of-service.html">이용약관</a> | <a href="/about.html">소개</a> | <a href="/contact.html">문의</a> | <a href="/guides.html">공학 가이드</a></p>
+</footer>
+</body>
+</html>

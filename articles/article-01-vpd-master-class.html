@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스마트팜 온실 VPD(포화수증기압차) 관리의 공학적 원리와 최적 수치 가이드 | Inwoovation Lab</title>
+    <meta name="description" content="온실 상대습도(RH)만 관리할 때 발생하는 영농 오류를 극복하고, 작물의 실제 증산 동력인 VPD(kPa)를 정밀 연산 및 제어하는 물리 법칙 가이드.">
+    <link rel="canonical" href="https://inwoovation.com/articles/article-01-vpd-master-class.html" />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8597809158257497" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .article-container { max-width: 850px; margin: 40px auto; padding: 35px; background: #ffffff; border-radius: 16px; border: 1px solid #e2e8f0; line-height: 1.85; color: #334155; }
+        .article-container h1 { font-size: 2rem; color: #0f172a; margin-bottom: 15px; border-bottom: 3px solid #10b981; padding-bottom: 12px; line-height: 1.3; }
+        .article-meta { color: #64748b; font-size: 0.95rem; margin-bottom: 30px; display: flex; gap: 15px; background: #f8fafc; padding: 10px 16px; border-radius: 8px; font-weight: 500; }
+        .article-container h2 { font-size: 1.35rem; color: #065f46; margin-top: 35px; margin-bottom: 14px; background: #ecfdf5; padding: 8px 16px; border-left: 4px solid #10b981; border-radius: 4px; }
+        .article-container h3 { font-size: 1.1rem; color: #1e293b; margin-top: 24px; margin-bottom: 10px; font-weight: 700; }
+        .article-container p { margin-bottom: 18px; text-align: justify; }
+        .article-container ul, .article-container ol { margin-left: 24px; margin-bottom: 20px; }
+        .back-link { display: inline-block; margin-bottom: 20px; color: #10b981; text-decoration: none; font-weight: 600; }
+        .back-link:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <a href="/" class="back-link">← 이노베이션 랩 메인으로 돌아가기</a>
+    <div class="article-container">
+        <h1>스마트팜 온실 VPD(포화수증기압차) 관리의 공학적 원리와 최적 수치 가이드</h1>
+        <div class="article-meta">
+            <span>📅 2026-07-29</span>
+            <span>🏷️ 온실 물리학</span>
+            <span>✍️ Inwoovation Lab 연구팀</span>
+        </div>
+        
+        <h2>1. 서론: 왜 상대습도(RH) 대신 VPD를 관리해야 하는가?</h2>
+        <p>많은 시설하우스 농가에서 온실 내부 환경을 제어할 때 온도와 상대습도(RH%)에만 의존합니다. 하지만 동일한 상대습도 70%라 하더라도 기온이 15℃일 때와 30℃일 때 공기가 보유할 수 있는 수증기의 양은 천지차이입니다. 공기가 최대로 머금을 수 있는 수증기압(VP sat)과 현재 실제 수증기압(VP act)의 물리적 차이를 나타내는 수치가 바로 <strong>VPD(Vapor Pressure Deficit, 포화수증기압차)</strong>입니다.</p>
+        
+        <h2>2. VPD의 수식 및 물리학적 연산 법칙</h2>
+        <p>VPD는 킬로파스칼(kPa) 단위로 측정되며, 섭씨 기온(T)과 상대습도(RH)를 바탕으로 다음과 같이 산출됩니다.</p>
+
+        <p style="background:#f1f5f9; padding:15px; border-radius:8px; font-family:monospace; font-weight:bold;">
+        VP sat = 0.61078 × exp( (17.27 × T) ÷ (T + 237.3) )  [kPa]<br>
+        VP act = VP sat × (RH ÷ 100)  [kPa]<br>
+        VPD = VP sat - VP act  [kPa]
+        </p>
+
+        <h2>3. 작물 생육 단계별 최적 VPD 관리 매트릭스</h2>
+        <p>작물은 VPD 구간에 따라 기공(Stomata)을 열거나 닫아 증산 작용과 이산화탄소 흡수율을 조절합니다.</p>
+        <ul>
+            <li><strong>0.4 kPa 미만 (과습 위험 구간):</strong> 공기 중 수증기가 지나치게 넘쳐 증산 작용이 정지됩니다. 뿌리로부터 칼슘 및 미네랄 수송이 차단되며 회색곰팡이병 및 잎곰팡이병 발생률이 급증합니다.</li>
+            <li><strong>0.4 ~ 0.8 kPa (육묘 및 기공 형성기):</strong> 발아 및 뿌리 정착을 유도하는 온화한 습도 환경입니다.</li>
+            <li><strong>0.8 ~ 1.2 kPa (최적 영양생장 및 생식생장기):</strong> 광합성과 증산 작용이 가장 왕성하게 일어나는 골든 아워 구간입니다.</li>
+            <li><strong>1.6 kPa 초과 (과건조 위기 구간):</strong> 공기가 너무 건조하여 작물이 체내 수분 손실을 막기 위해 기공을 강제로 닫습니다. 광합성이 중단되고 신초 끝이 타들어가는 현상이 발생합니다.</li>
+        </ul>
+
+        <h2>4. 결론 및 실전 제어 팁</h2>
+        <p>온실 내부 VPD를 적정 범위로 유지하기 위해서는 난방기, 가습기, 천창 환기 팬의 연동 제어가 필수적입니다. 기온 상승 시에는 가습을 통해 VPD 상승을 억제하고, 야간 습도 상승 시에는 예열 환기를 통해 VPD 하락을 방지해야 합니다.</p>
+        
+    </div>
+</div>
+<footer>
+    <p>© 2026 Inwoovation Lab. All rights reserved. | <a href="/privacy-policy.html">개인정보 처리방침</a> | <a href="/terms-of-service.html">이용약관</a> | <a href="/about.html">소개</a> | <a href="/contact.html">문의</a> | <a href="/guides.html">공학 가이드</a></p>
+</footer>
+</body>
+</html>

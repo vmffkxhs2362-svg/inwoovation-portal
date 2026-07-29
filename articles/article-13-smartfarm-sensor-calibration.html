@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>온실 환경 센서(온습도·EC·pH·CO2) 교정(Calibration) 및 보정 수식 | Inwoovation Lab</title>
+    <meta name="description" content="스마트팜 센서 드리프트(Drift) 오차를 보정하기 위한 2점 교정(Two-Point Calibration) 표준 알고리즘과 수식.">
+    <link rel="canonical" href="https://inwoovation.com/articles/article-13-smartfarm-sensor-calibration.html" />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8597809158257497" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .article-container { max-width: 850px; margin: 40px auto; padding: 35px; background: #ffffff; border-radius: 16px; border: 1px solid #e2e8f0; line-height: 1.85; color: #334155; }
+        .article-container h1 { font-size: 2rem; color: #0f172a; margin-bottom: 15px; border-bottom: 3px solid #10b981; padding-bottom: 12px; line-height: 1.3; }
+        .article-meta { color: #64748b; font-size: 0.95rem; margin-bottom: 30px; display: flex; gap: 15px; background: #f8fafc; padding: 10px 16px; border-radius: 8px; font-weight: 500; }
+        .article-container h2 { font-size: 1.35rem; color: #065f46; margin-top: 35px; margin-bottom: 14px; background: #ecfdf5; padding: 8px 16px; border-left: 4px solid #10b981; border-radius: 4px; }
+        .article-container h3 { font-size: 1.1rem; color: #1e293b; margin-top: 24px; margin-bottom: 10px; font-weight: 700; }
+        .article-container p { margin-bottom: 18px; text-align: justify; }
+        .article-container ul, .article-container ol { margin-left: 24px; margin-bottom: 20px; }
+        .back-link { display: inline-block; margin-bottom: 20px; color: #10b981; text-decoration: none; font-weight: 600; }
+        .back-link:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <a href="/" class="back-link">← 이노베이션 랩 메인으로 돌아가기</a>
+    <div class="article-container">
+        <h1>온실 환경 센서(온습도·EC·pH·CO2) 교정(Calibration) 및 보정 수식</h1>
+        <div class="article-meta">
+            <span>📅 2026-07-29</span>
+            <span>🏷️ 스마트팜 센서 공학</span>
+            <span>✍️ Inwoovation Lab 연구팀</span>
+        </div>
+        
+        <h2>1. 센서 드리프트(Drift) 현상과 데이터 신뢰성</h2>
+        <p>온실 환경 센서는 고온 다습한 악조건에 노출되어 시간이 지남에 따라 가치가 이탈하는 **센서 드리프트**가 발생합니다. 오차 범위 5% 이상의 센서 데이터는 환경 제어 시스템 전체를 마비시킵니다.</p>
+
+        <h2>2. EC / pH 2점 선형 교정 수식</h2>
+        <p style="background:#f1f5f9; padding:15px; border-radius:8px; font-family:monospace; font-weight:bold;">
+        Y_calibrated = Slope × (X_raw - Offset)<br>
+        - Slope = (Ref_High - Ref_Low) ÷ (Raw_High - Raw_Low)<br>
+        - Offset = Raw_Low - (Ref_Low ÷ Slope)
+        </p>
+
+        <h2>3. 표준 완충액(Buffer Solution) 센서 교정 주기</h2>
+        <ul>
+            <li><strong>pH 센서:</strong> pH 4.01 및 pH 7.00 용액으로 2주 1회 교정</li>
+            <li><strong>EC 센서:</strong> 1.413 mS/cm 표준액으로 1개월 1회 교정</li>
+            <li><strong>NDIR CO2 센서:</strong> 깨끗한 외기 공기(415 ppm) 맑은 날 Zero-point 교정</li>
+        </ul>
+        
+    </div>
+</div>
+<footer>
+    <p>© 2026 Inwoovation Lab. All rights reserved. | <a href="/privacy-policy.html">개인정보 처리방침</a> | <a href="/terms-of-service.html">이용약관</a> | <a href="/about.html">소개</a> | <a href="/contact.html">문의</a> | <a href="/guides.html">공학 가이드</a></p>
+</footer>
+</body>
+</html>

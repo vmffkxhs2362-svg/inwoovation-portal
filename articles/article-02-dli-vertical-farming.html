@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>수직농장(식물공장) 인공광 제어를 위한 DLI(Daily Light Integral) 연산 설계 | Inwoovation Lab</title>
+    <meta name="description" content="완전 밀폐형 수직농장의 전기료를 최적화하면서 작물 생산성을 최대화하기 위한 DLI 및 PPFD 광합성 유효 광량 산출 수식.">
+    <link rel="canonical" href="https://inwoovation.com/articles/article-02-dli-vertical-farming.html" />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8597809158257497" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .article-container { max-width: 850px; margin: 40px auto; padding: 35px; background: #ffffff; border-radius: 16px; border: 1px solid #e2e8f0; line-height: 1.85; color: #334155; }
+        .article-container h1 { font-size: 2rem; color: #0f172a; margin-bottom: 15px; border-bottom: 3px solid #10b981; padding-bottom: 12px; line-height: 1.3; }
+        .article-meta { color: #64748b; font-size: 0.95rem; margin-bottom: 30px; display: flex; gap: 15px; background: #f8fafc; padding: 10px 16px; border-radius: 8px; font-weight: 500; }
+        .article-container h2 { font-size: 1.35rem; color: #065f46; margin-top: 35px; margin-bottom: 14px; background: #ecfdf5; padding: 8px 16px; border-left: 4px solid #10b981; border-radius: 4px; }
+        .article-container h3 { font-size: 1.1rem; color: #1e293b; margin-top: 24px; margin-bottom: 10px; font-weight: 700; }
+        .article-container p { margin-bottom: 18px; text-align: justify; }
+        .article-container ul, .article-container ol { margin-left: 24px; margin-bottom: 20px; }
+        .back-link { display: inline-block; margin-bottom: 20px; color: #10b981; text-decoration: none; font-weight: 600; }
+        .back-link:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <a href="/" class="back-link">← 이노베이션 랩 메인으로 돌아가기</a>
+    <div class="article-container">
+        <h1>수직농장(식물공장) 인공광 제어를 위한 DLI(Daily Light Integral) 연산 설계</h1>
+        <div class="article-meta">
+            <span>📅 2026-07-29</span>
+            <span>🏷️ 수직농업 & 광공학</span>
+            <span>✍️ Inwoovation Lab 연구팀</span>
+        </div>
+        
+        <h2>1. 수직농장 전력비 최적화의 핵심: DLI</h2>
+        <p>수직농장(Vertical Farm) 운영비에서 가장 큰 비중을 차지하는 것은 인공광 LED 전력비입니다. 무작정 높은 광도(PPFD)를 제공하는 것은 전력 낭비를 초래합니다. 작물이 하루 동안 받아들여야 하는 총 광자의 누적 수량인 <strong>DLI(Daily Light Integral, mol/m²/day)</strong>를 정밀하게 설계해야 합니다.</p>
+
+        <h2>2. DLI와 PPFD의 광학적 상관관계 수식</h2>
+        <p>광합성 유효 광양자속 밀도(PPFD, μmol/m²/s)와 일일 조사 시간(Photoperiod)을 기반으로 DLI를 다음과 같이 계산합니다.</p>
+
+        <p style="background:#f1f5f9; padding:15px; border-radius:8px; font-family:monospace; font-weight:bold;">
+        DLI (mol/m²/day) = PPFD (μmol/m²/s) × 조사 시간 (Hours) × 3,600 (Sec/Hour) ÷ 1,000,000
+        </p>
+
+        <h2>3. 엽채류 및 과채류 필요 DLI 타겟 기준표</h2>
+        <ul>
+            <li><strong>버터헤드 / 로메인 상추:</strong> 14 ~ 17 mol/m²/day (PPFD 200~250 μmol/m²/s 기준 18시간 조사)</li>
+            <li><strong>바질 / 로즈마리 허브류:</strong> 16 ~ 20 mol/m²/day</li>
+            <li><strong>수경재배 딸기:</strong> 20 ~ 25 mol/m²/day</li>
+            <li><strong>방울토마토:</strong> 25 ~ 30 mol/m²/day</li>
+        </ul>
+
+        <h2>4. 전력 요금 절감을 위한 광주기 조향 팁</h2>
+        <p>PPFD를 300 μmol/m²/s로 높이고 12시간 켜는 것보다, PPFD를 200 μmol/m²/s로 낮추고 18시간 켜는 것이 동일한 DLI(12.96 mol)를 달성하면서도 LEDの発熱을 줄이고 피크 전력 요금을 25% 이상 단축할 수 있습니다.</p>
+        
+    </div>
+</div>
+<footer>
+    <p>© 2026 Inwoovation Lab. All rights reserved. | <a href="/privacy-policy.html">개인정보 처리방침</a> | <a href="/terms-of-service.html">이용약관</a> | <a href="/about.html">소개</a> | <a href="/contact.html">문의</a> | <a href="/guides.html">공학 가이드</a></p>
+</footer>
+</body>
+</html>
