@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스마트팜 정밀 공학 가이드 아카이브 | Inwoovation Lab</title>
+    <meta name="description" content="VPD(포화수증기압차) 관리, 수직농업 DLI 광량 설계, 병해충 자가진단 및 수분벌 보호 가이드북. 구글 애드센스 고품질 학술 가이드.">
+    <link rel="canonical" href="https://inwoovation.com/guides.html" />
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .article-container { max-width: 850px; margin: 40px auto; padding: 35px; background: #ffffff; border-radius: 16px; border: 1px solid #e2e8f0; line-height: 1.85; color: #334155; }
+        .article-container h1 { font-size: 2.2rem; color: #0f172a; margin-bottom: 20px; border-bottom: 3px solid #10b981; padding-bottom: 12px; }
+        .article-container h2 { font-size: 1.4rem; color: #065f46; margin-top: 40px; margin-bottom: 14px; background: #ecfdf5; padding: 8px 16px; border-left: 4px solid #10b981; border-radius: 4px; }
+        .article-container h3 { font-size: 1.15rem; color: #1e293b; margin-top: 24px; margin-bottom: 10px; font-weight: 700; }
+        .article-container p { margin-bottom: 18px; text-align: justify; }
+        .article-container ul, .article-container ol { margin-left: 24px; margin-bottom: 20px; }
+        .article-card { background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 24px; margin-bottom: 30px; }
+        .back-link { display: inline-block; margin-bottom: 20px; color: #10b981; text-decoration: none; font-weight: 600; }
+        .back-link:hover { text-decoration: underline; }
+        .highlight-box { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px; border-radius: 6px; margin: 20px 0; font-size: 0.95rem; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <a href="/" class="back-link">← 메인 페이지로 돌아가기</a>
+    <div class="article-container">
+        <h1>정밀 원예 & AgTech 엔지니어링 가이드 아카이브</h1>
+        <p>Inwoovation Lab 연구팀이 기재한 정밀 영농 및 온실 기후 제어 분야의 핵심 공학 기술 가이드북입니다.</p>
+
+        <!-- Article 1 -->
+        <article class="article-card">
+            <h2>가이드 1: 온실 환경 제어의 핵심, VPD(Vapor Pressure Deficit) 정밀 연산 가이드</h2>
+            <p><strong>작성일: 2026-07-29 | 분류: 온실 물리학 시뮬레이션</strong></p>
+            <p>스마트팜 제어에서 단순히 상대습도(RH%)만 보고 습도를 조절하는 것은 심각한 영농 오류를 범할 수 있습니다. 작물이 실제로 느끼는 증산 작용의 동력은 상대습도가 아니라 <strong>VPD(포화수증기압차, Vapor Pressure Deficit)</strong>입니다.</p>
+            
+            <h3>1. VPD의 물리학적 정의</h3>
+            <p>VPD는 공기가 수증기를 최대로 머금을 수 있는 수증기압(VP sat)과 현재 실제 공기 중에 존재하는 수증기압(VP act)의 차이를 의미하며, 단위는 kPa(킬로파스칼)을 사용합니다.</p>
+
+            <h3>2. 작물 생육 단계별 최적 VPD 범위</h3>
+            <ul>
+                <li><strong>삽목 및 육묘기:</strong> 0.4 ~ 0.8 kPa (높은 습도 유지로 뿌리 형성 유도)</li>
+                <li><strong>영양생장기:</strong> 0.8 ~ 1.1 kPa (왕성한 증산 작용과 양분 수송 유도)</li>
+                <li><strong>생식생장 및 생육 후기:</strong> 1.0 ~ 1.5 kPa (과실 비대 및 병해 예방)</li>
+            </ul>
+
+            <div class="highlight-box">
+                <strong>💡 핵심 가이드:</strong> VPD가 0.4 kPa 이하로 떨어지면 공기가 과습하여 증산 작용이 멈추고 곰팡이병(회색곰팡이, 잎곰팡이) 발생률이 300% 증가합니다. 반대로 1.6 kPa 이상으로 올라가면 공기가 건조하여 기공이 닫히고 이산화탄소 흡수가 중단됩니다.
+            </div>
+            <p>당 연구소의 <a href="https://smartfarm.inwoovation.com/" target="_blank">스마트팜 랩 VPD 시뮬레이터</a>를 활용하면 온실 온도와 습도를 입력하는 즉시 목표 VPD에 도달하기 위한 최적 난방 및 가습 수치를 연산할 수 있습니다.</p>
+        </article>
+
+        <!-- Article 2 -->
+        <article class="article-card">
+            <h2>가이드 2: 수직농장(식물공장) 인공광 제어를 위한 DLI(Daily Light Integral) 설계</h2>
+            <p><strong>작성일: 2026-07-29 | 분류: 수직농업 & LED 광공학</strong></p>
+            <p>완전 밀폐형 식물공장이나 실내 인공광 제어 환경에서 전기료를 최적화하면서 생산성을 최대화하기 위해서는 <strong>DLI(일일 광합성 유효 광량, mol/m²/day)</strong> 개념을 필수로 이해해야 합니다.</p>
+
+            <h3>1. DLI와 PPFD의 관계 수식</h3>
+            <p>DLI는 하루 동안 작물 단위 면적(1m²)에 조사되는 총 광자(Photon)의 수량을 의미합니다. 광합성 유효 광양자속 밀도(PPFD, μmol/m²/s)와 광주기(Photoperiod, 시간)를 이용하여 다음과 같이 연산합니다.</p>
+            <p style="background:#f1f5f9; padding:12px; border-radius:6px; font-family:monospace; font-weight:bold;">
+                DLI (mol/m²/day) = PPFD (μmol/m²/s) × 광주기 (hours) × 3600 (seconds) ÷ 1,000,000
+            </p>
+
+            <h3>2. 작물별 표준 필요 DLI 목표치</h3>
+            <ul>
+                <li><strong>상추 및 잎채소류:</strong> 14 ~ 17 mol/m²/day</li>
+                <li><strong>딸기 및 수경과채류:</strong> 20 ~ 25 mol/m²/day</li>
+                <li><strong>토마토 및 파프리카:</strong> 25 ~ 30 mol/m²/day</li>
+            </ul>
+            <p>수직농장에서 LED 조명 전력비를 절감하려면 PPFD를 무작정 높이는 대신, 광주기를 16~18시간으로 늘려 필요 DLI를 충족시키는 것이 단위 전력당 생산량을 20% 이상 개선할 수 있습니다. 당 연구소의 <a href="https://smartfarm.inwoovation.com/Vertical_Farming_Project/" target="_blank">DLI 계산기</a>를 활용해 보세요.</p>
+        </article>
+
+        <!-- Article 3 -->
+        <article class="article-card">
+            <h2>가이드 3: 화분매개벌(수분벌) 보호 및 약제 살포 후 안전 대기시간(REI) 가이드</h2>
+            <p><strong>작성일: 2026-07-29 | 분류: 온실 생태 진단 & 안전</strong></p>
+            <p>시설하우스에서 토마토, 딸기 수분을 위해 방사하는 서양뒤영벌이나 뒤영벌류는 농약 살포 시 극도로 취약합니다. 방제 작업 후 수분벌의 피해를 최소화하고 안전하게 재방사하기 위한 수치 기준을 안내합니다.</p>
+
+            <h3>1. 약제 살포 시 수분벌 관리 3대 수칙</h3>
+            <ol>
+                <li><strong>방사 봉인:</strong> 약제 살포 최소 2시간 전 벌통 입구를 닫고 그늘진 냉암소(15~18℃)로 이동 조치</li>
+                <li><strong>잔류 독성 기간 준수:</strong> 작물 보호제별 수분벌 안전 대기시간(REI)을 반드시 확인 후 재방사</li>
+                <li><strong>온실 환기:</strong> 살포 후 온실 내부 획기적 강제 환기 실시</li>
+            </ol>
+            <p>자세한 온실 병해충 자가진단 및 수분벌 약제 안전 대기시간 연산은 <a href="https://smartfarm.inwoovation.com/Pollinator_Safety_Project/" target="_blank">병해충 자가진단 포털</a>에서 즉각 확인할 수 있습니다.</p>
+        </article>
+
+    </div>
+</div>
+<footer>
+    <p>© 2026 Inwoovation Lab. All rights reserved. | <a href="/privacy-policy.html">개인정보 처리방침</a> | <a href="/terms-of-service.html">이용약관</a> | <a href="/about.html">소개</a> | <a href="/contact.html">문의</a> | <a href="/guides.html">공학 가이드</a></p>
+</footer>
+</body>
+</html>
