@@ -51,150 +51,221 @@
 </head>
 <body>
 
-<div class="container">
-    <!-- Header -->
-    <header>
-        <div class="logo-container">
-            <span class="logo-main">Inwoovation</span>
-            <span class="logo-sub">Lab / R&D Portal</span>
+    <div class="container">
+        <!-- Header Navbar -->
+        <header>
+            <div class="logo-container">
+                <a href="/" class="logo-main">INWOOVATION <span>LAB</span></a>
+                <div class="status-badge">
+                    <span class="status-dot"></span>
+                    <span>ALL SYSTEMS LIVE</span>
+                </div>
+            </div>
+            
+            <div class="lang-switch">
+                <button class="lang-btn active" id="lang-ko" onclick="setLanguage('ko')">KO</button>
+                <button class="lang-btn" id="lang-en" onclick="setLanguage('en')">EN</button>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-pill">
+                <span>🔬 NEXT-GEN CEA & SOFTWARE ENGINEERING R&D</span>
+            </div>
+            <h1 id="hero-title">미래형 비즈니스를 위한<br>AgTech & 소프트웨어 엔지니어링 랩</h1>
+            <p id="hero-desc">
+                이노베이션 랩(Inwoovation Lab)은 정밀 원예 공학 모델, 자가진단 시스템, 그리고 운영 자동화 디지털 도구를 전문적으로 엔지니어링합니다. 가벼우며 의존성 없는 고성능 정적 웹 기술을 지향합니다.
+            </p>
+
+            <!-- Stats Ribbon -->
+            <div class="stats-ribbon">
+                <div class="stat-box">
+                    <span class="stat-icon">⚡</span>
+                    <div class="stat-info">
+                        <div class="stat-val">0ms</div>
+                        <div class="stat-lbl">Runtime Latency</div>
+                    </div>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-icon">🔬</span>
+                    <div class="stat-info">
+                        <div class="stat-val">16+</div>
+                        <div class="stat-lbl">PhD Research Papers</div>
+                    </div>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-icon">📚</span>
+                    <div class="stat-info">
+                        <div class="stat-val">6+</div>
+                        <div class="stat-lbl">Crop Encyclopedias</div>
+                    </div>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-icon">🛡️</span>
+                    <div class="stat-info">
+                        <div class="stat-val">100%</div>
+                        <div class="stat-lbl">Serverless Cloud</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Live Research Highlights Section -->
+        <section style="margin-bottom: 4rem;">
+            <div class="section-header">
+                <div>
+                    <div class="section-title">🔬 Live Scientific Research Stream</div>
+                    <div class="section-subtitle">Doctoral plant physiology, bioenergetics, and climate steering papers published chronologically.</div>
+                </div>
+                <a href="https://wiki.inwoovation.com/research.html" style="color: var(--primary); font-weight: 700; text-decoration: none; font-size: 0.95rem; display: flex; align-items: center; gap: 0.4rem;">
+                    View All 16 Papers →
+                </a>
+            </div>
+
+            <div class="research-stream-grid">
+                <a href="https://wiki.inwoovation.com/anthocyanin_led_spectral_kinetics.html" class="research-stream-card">
+                    <div>
+                        <span class="research-tag">🗓️ 2026-08-05 10:38 UTC</span>
+                        <h3>Photomorphogenic Regulation of Anthocyanin Biosynthetic Genes via Blue-to-Red Spectral Ratios</h3>
+                        <p>Quantifying CHS (EC 2.3.1.74) and DFR gene expression under dynamic LED blue (450nm) to red (660nm) flux ratios.</p>
+                    </div>
+                    <div class="research-meta">📖 Read Doctoral Paper →</div>
+                </a>
+
+                <a href="https://wiki.inwoovation.com/nitrate_reductase_circadian_rhythm.html" class="research-stream-card">
+                    <div>
+                        <span class="research-tag">🗓️ 2026-08-05 10:36 UTC</span>
+                        <h3>Circadian Clock Gating of Plastidic Nitrate Reductase (NR) Activity under Photoperiod Extension</h3>
+                        <p>Circadian clock components (CCA1/LHY) gating Nitrate Reductase (NR, EC 1.7.1.1) phosphorylation under extended photoperiods.</p>
+                    </div>
+                    <div class="research-meta">📖 Read Doctoral Paper →</div>
+                </a>
+
+                <a href="https://wiki.inwoovation.com/rhizosphere_ph_cation_exchange_kinetics.html" class="research-stream-card">
+                    <div>
+                        <span class="research-tag">🗓️ 2026-08-05 10:34 UTC</span>
+                        <h3>Rhizosphere Proton (H+) Exudation and Cation Exchange Capacity Kinetics under NO3-/NH4+ Dosing</h3>
+                        <p>Plasma membrane H+-ATPase proton pumping, rhizosphere pH drift, and substrate CEC under dynamic N-ratios.</p>
+                    </div>
+                    <div class="research-meta">📖 Read Doctoral Paper →</div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Platform Hub Services Grid -->
+        <section style="margin-bottom: 4rem;">
+            <div class="section-header">
+                <div>
+                    <div class="section-title">🏛️ Platform R&D Core Services</div>
+                    <div class="section-subtitle">Decoupled static applications and simulation engines hosted across sub-domains.</div>
+                </div>
+            </div>
+
+            <div class="grid">
+                <!-- Card 1: Smart Farm Engineering Lab -->
+                <a id="card-smartfarm" href="https://smartfarm.inwoovation.com/" class="card theme-emerald">
+                    <div class="card-header">
+                        <div class="card-icon">🌱</div>
+                        <span id="c1-badge" class="card-badge">AgTech 코어</span>
+                    </div>
+                    <div class="card-body">
+                        <h2 id="c1-title">스마트팜 엔지니어링 랩</h2>
+                        <p id="c1-desc">시설하우스 재배 환경 진단 및 정밀 물리학적 시뮬레이터. VPD(포화수증기압차), 온실 야간 열손실, Penman-Monteith 표준 작물 증산량 등 영농 핵심 모델을 즉각 연산합니다.</p>
+                    </div>
+                    <div id="c1-action" class="card-action">
+                        <span>연구소 입장하기</span>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </div>
+                </a>
+
+                <!-- Card 2: AgriAtlas Global Wiki -->
+                <a id="card-wiki" href="https://wiki.inwoovation.com/" class="card theme-blue">
+                    <div class="card-header">
+                        <div class="card-icon">📖</div>
+                        <span id="c5-badge" class="card-badge">지식 아카이브</span>
+                    </div>
+                    <div class="card-body">
+                        <h2 id="c5-title">AgriAtlas 글로벌 위키 & 연구소</h2>
+                        <p id="c5-desc">전 세계 스마트팜 정밀 공학 가이드북 및 작물별 생식/영양생장 조향 데이터 허브. 박사급 생물물리학 학술 논문과 작물 백과사전을 직관적으로 열람할 수 있습니다.</p>
+                    </div>
+                    <div id="c5-action" class="card-action">
+                        <span>위키 라이브러리 입장</span>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </div>
+                </a>
+
+                <!-- Card 3: Diagnosis & Bee Safety -->
+                <a id="card-pollinator" href="https://smartfarm.inwoovation.com/diagnosis.html" class="card theme-amber">
+                    <div class="card-header">
+                        <div class="card-icon">🐝</div>
+                        <span id="c2-badge" class="card-badge">생태 진단</span>
+                    </div>
+                    <div class="card-body">
+                        <h2 id="c2-title">병해충 자가진단 & 수분벌 안전 포털</h2>
+                        <p id="c2-desc">3단계 예찰을 통해 주요 온실 질병을 즉시 진단하고 적정 방제 약제를 처방합니다. 살포된 약제의 화분매개벌 안전 대기 시간(REI) 및 온실 온도별 방사 활동성을 예측 시뮬레이션합니다.</p>
+                    </div>
+                    <div id="c2-action" class="card-action">
+                        <span>자가진단 툴킷 실행</span>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </div>
+                </a>
+
+                <!-- Card 4: Vertical Farming DLI Calculator -->
+                <a id="card-vertical" href="https://smartfarm.inwoovation.com/vertical_dli.html" class="card theme-purple">
+                    <div class="card-header">
+                        <div class="card-icon">💡</div>
+                        <span id="c3-badge" class="card-badge">인공광 제어</span>
+                    </div>
+                    <div class="card-body">
+                        <h2 id="c3-title">수직농업 DLI 광량 계산기</h2>
+                        <p id="c3-desc">완전 밀폐형 수직농장(식물공장)의 광환경 정밀 설계 도구. 목표 Daily Light Integral(DLI)을 충족하기 위한 광합성 유효 광양자속 밀도(PPFD)와 최적 광주기(Photoperiod)를 연산합니다.</p>
+                    </div>
+                    <div id="c3-action" class="card-action">
+                        <span>DLI 계산기 실행</span>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </div>
+                </a>
+
+                <!-- Card 5: Gumroad Shop -->
+                <a href="https://inwoovation.gumroad.com/l/smartfarm-os" target="_blank" class="card theme-blue">
+                    <div class="card-header">
+                        <div class="card-icon">🛍️</div>
+                        <span id="c4-badge" class="card-badge">프리미엄 템플릿</span>
+                    </div>
+                    <div class="card-body">
+                        <h2 id="c4-title">스마트팜 운영 OS & 엑셀 패키지</h2>
+                        <p id="c4-desc">상업용 하우스 운영을 자동화하기 위한 노션(Notion) 통합 관리 템플릿과 정밀 양액 처방 배합법, 센서 보정 일지 엑셀 툴킷을 Gumroad 스토어에서 공식 제공합니다.</p>
+                    </div>
+                    <div id="c4-action" class="card-action">
+                        <span>스토어 둘러보기</span>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Engineering Articles Callout Banner -->
+        <section class="articles-callout">
+            <div class="articles-callout-content">
+                <h2>📚 정밀 영농 공학 아티클 아카이브 (15선)</h2>
+                <p>VPD(포화수증기압차) 물리 모델링, 수직농장 HVAC 공조 제습 계산, Penman-Monteith 표준 증산량, 독일 원예 아우스빌둥 직업교육 등 15대 전문 학술 가이드북 전권을 열람하실 수 있습니다.</p>
+            </div>
+            <a href="guides.html" class="articles-callout-btn">
+                <span>공학 아티클 읽어보기 →</span>
+            </a>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p id="footer-reserved">© 2026 Inwoovation Lab. All rights reserved. | <a href="/privacy-policy.html">개인정보 처리방침</a> | <a href="/terms-of-service.html">이용약관</a> | <a href="/about.html">소개</a> | <a href="/contact.html">문의</a> | <a href="/guides.html">공학 가이드</a></p>
+            <p id="footer-tech" style="font-size: 0.8rem; color: #64748b;">Decoupled Serverless Infrastructure. Hosted on GitHub Pages with 0% runtime dependency.</p>
         </div>
-        <div class="lang-switch">
-            <button class="lang-btn active" id="lang-ko" onclick="setLanguage('ko')">KO</button>
-            <button class="lang-btn" id="lang-en" onclick="setLanguage('en')">EN</button>
-        </div>
-    </header>
+    </footer>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <h1 id="hero-title">미래형 비즈니스를 위한<br>AgTech & 소프트웨어 엔지니어링 랩</h1>
-        <p id="hero-desc">이노베이션 랩(Inwoovation Lab)은 정밀 원예 공학 모델, 자가진단 시스템, 그리고 운영 자동화 디지털 도구를 전문적으로 엔지니어링합니다. 가벼우며 의존성 없는 고성능 정적 웹 기술을 지향합니다.</p>
-    </section>
-
-    <!-- Grid Layout for Services -->
-    <main class="grid">
-        <!-- Card 1: Smart Farm Engineering Lab -->
-        <a id="card-smartfarm" href="https://smartfarm.inwoovation.com/" class="card theme-emerald">
-            <div class="card-header">
-                <div class="card-icon">🌱</div>
-                <span class="card-badge" id="c1-badge">AgTech 코어</span>
-            </div>
-            <div class="card-body">
-                <h2 id="c1-title">스마트팜 엔지니어링 랩</h2>
-                <p id="c1-desc">시설하우스 재배 환경 진단 및 정밀 물리학적 시뮬레이터. VPD(포화수증기압차), 온실 야간 열손실, Penman-Monteith 표준 작물 증산량 등 영농 핵심 모델을 즉각 연산합니다.</p>
-            </div>
-            <div class="card-action" id="c1-action">
-                연구소 입장하기
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                    <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-            </div>
-        </a>
-
-        <!-- Card 2: Greenhouse Diagnosis & Bee Safety -->
-        <a id="card-pollinator" href="https://smartfarm.inwoovation.com/Pollinator_Safety_Project/" class="card theme-amber">
-            <div class="card-header">
-                <div class="card-icon">🐝</div>
-                <span class="card-badge" id="c2-badge">생태 진단</span>
-            </div>
-            <div class="card-body">
-                <h2 id="c2-title">병해충 자가진단 & 수분벌 안전 포털</h2>
-                <p id="c2-desc">3단계 예찰을 통해 주요 온실 질병을 즉시 진단하고 적정 방제 약제를 처방합니다. 살포된 약제의 화분매개벌 안전 대기 시간(REI) 및 온실 온도별 방사 활동성을 예측 시뮬레이션합니다.</p>
-            </div>
-            <div class="card-action" id="c2-action">
-                자가진단 툴킷 실행
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                    <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-            </div>
-        </a>
-
-        <!-- Card 3: Vertical Farming DLI Calculator -->
-        <a id="card-vertical" href="https://smartfarm.inwoovation.com/Vertical_Farming_Project/" class="card theme-purple">
-            <div class="card-header">
-                <div class="card-icon">💡</div>
-                <span class="card-badge" id="c3-badge">인공광 제어</span>
-            </div>
-            <div class="card-body">
-                <h2 id="c3-title">수직농업 DLI 광량 계산기</h2>
-                <p id="c3-desc">완전 밀폐형 수직농장(식물공장)의 광환경 정밀 설계 도구. 목표 Daily Light Integral(DLI)을 충족하기 위한 광합성 유효 광양자속 밀도(PPFD)와 최적 광주기(Photoperiod)를 연산합니다.</p>
-            </div>
-            <div class="card-action" id="c3-action">
-                DLI 계산기 실행
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                    <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-            </div>
-        </a>
-
-        <!-- Card 4: Notion & Excel templates shop -->
-        <a href="https://inwoovation.gumroad.com/l/smartfarm-os" target="_blank" class="card theme-blue">
-            <div class="card-header">
-                <div class="card-icon">🛍️</div>
-                <span class="card-badge" id="c4-badge">프리미엄 템플릿</span>
-            </div>
-            <div class="card-body">
-                <h2 id="c4-title">스마트팜 운영 OS & 엑셀 패키지</h2>
-                <p id="c4-desc">상업용 하우스 운영을 자동화하기 위한 노션(Notion) 통합 관리 템플릿과 정밀 양액 처방 배합법, 센서 보정 일지 엑셀 툴킷을 Gumroad 스토어에서 공식 제공합니다.</p>
-            </div>
-            <div class="card-action" id="c4-action">
-                스토어 둘러보기
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                    <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-            </div>
-        </a>
-
-        <!-- Card 5: AgriAtlas Wiki -->
-        <a id="card-wiki" href="https://wiki.inwoovation.com/" class="card theme-indigo">
-            <div class="card-header">
-                <div class="card-icon">📖</div>
-                <span class="card-badge" id="c5-badge">지식 아카이브</span>
-            </div>
-            <div class="card-body">
-                <h2 id="c5-title">AgriAtlas 글로벌 위키</h2>
-                <p id="c5-desc">전 세계 스마트팜 정밀 공학 가이드북 및 작물별 생식/영양생장 조향 데이터 허브. 국내외 공인 규격 레퍼런스 PDF 자료를 직관적으로 열람할 수 있는 통합 지식 도서관입니다.</p>
-            </div>
-            <div class="card-action" id="c5-action">
-                위키 라이브러리 입장
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                    <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-            </div>
-        </a>
-
-        <!-- Card 6: AgTech Guides & Articles -->
-        <a id="card-guides" href="/guides.html" class="card theme-emerald">
-            <div class="card-header">
-                <div class="card-icon">📚</div>
-                <span class="card-badge" id="c6-badge">공학 아티클</span>
-            </div>
-            <div class="card-body">
-                <h2 id="c6-title">정밀 영농 공학 가이드 아카이브</h2>
-                <p id="c6-desc">온실 VPD(포화수증기압차) 관리법, 수직농장 DLI 광량 수식 설계 및 수분벌 약제 안전 대기시간(REI) 계산법을 포함한 전문 학술 가이드북 아카이브입니다.</p>
-            </div>
-            <div class="card-action" id="c6-action">
-                가이드 읽어보기
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                    <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-            </div>
-        </a>
-    </main>
-</div>
-
-<!-- Footer -->
-<footer>
-    <p id="footer-reserved">© 2026 Inwoovation Lab. All rights reserved. | <a href="/privacy-policy.html">개인정보 처리방침</a> | <a href="/terms-of-service.html">이용약관</a> | <a href="/about.html">소개</a> | <a href="/contact.html">문의</a> | <a href="/guides.html">공학 가이드</a></p>
-    <p id="footer-tech">Decoupled Serverless Infrastructure. Hosted on GitHub Pages with 0% runtime dependency. | <strong>최신 시스템 업데이트: 2026년 08월 05일 KST</strong></p>
-</footer>
-
-<!-- JS Script -->
-<script src="app.js"></script>
+    <!-- JS Application Logic -->
+    <script src="app.js"></script>
 </body>
 </html>
