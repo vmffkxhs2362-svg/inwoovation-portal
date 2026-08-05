@@ -1,7 +1,7 @@
 /* 
-   Inwoovation Lab Portal Logic (English Primary Default)
+   Inwoovation Lab Portal Logic (Unified Pure English)
    Author: vmffkxhs2362-svg
-   Features: Dynamic I18n translation & Client-side state persistence
+   Features: Unified Global English UI & State Management
 */
 
 const i18n = {
@@ -40,45 +40,7 @@ const i18n = {
         card5Action: "Enter Wiki Library",
 
         // Footer
-        footerReserved: "© 2026 Inwoovation Lab. All rights reserved. | Privacy Policy | Terms of Service",
-        footerTech: "Decoupled Serverless Infrastructure. Hosted on GitHub Pages with 0% runtime dependency."
-    },
-    ko: {
-        heroTitle: "미래형 비즈니스를 위한<br>AgTech & 소프트웨어 엔지니어링 랩",
-        heroDesc: "이노베이션 랩(Inwoovation Lab)은 정밀 원예 공학 모델, 자가진단 시스템, 그리고 운영 자동화 디지털 도구를 전문적으로 엔지니어링합니다. 가벼우며 의존성 없는 고성능 정적 웹 기술을 지향합니다.",
-        
-        // Card 1: Smart Farm
-        card1Title: "스마트팜 엔지니어링 랩",
-        card1Desc: "시설하우스 재배 환경 진단 및 정밀 물리학적 시뮬레이터. VPD(포화수증기압차), 온실 야간 열손실, Penman-Monteith 표준 작물 증산량 등 영농 핵심 모델을 즉각 연산합니다.",
-        card1Badge: "AgTech 코어",
-        card1Action: "연구소 입장하기",
-
-        // Card 2: Diagnosis & Bee Safety
-        card2Title: "병해충 자가진단 & 수분벌 안전 포털",
-        card2Desc: "3단계 예찰을 통해 주요 온실 질병을 즉시 진단하고 적정 방제 약제를 처방합니다. 살포된 약제의 화분매개벌 안전 대기 시간(REI) 및 온실 온도별 방사 활동성을 예측 시뮬레이션합니다.",
-        card2Badge: "생태 진단",
-        card2Action: "자가진단 툴킷 실행",
-
-        // Card 3: Vertical Farming
-        card3Title: "수직농업 DLI 광량 계산기",
-        card3Desc: "완전 밀폐형 수직농장(식물공장)의 광환경 정밀 설계 도구. 목표 Daily Light Integral(DLI)을 충족하기 위한 광합성 유효 광양자속 밀도(PPFD)와 최적 광주기(Photoperiod)를 연산합니다.",
-        card3Badge: "인공광 제어",
-        card3Action: "DLI 계산기 실행",
-
-        // Card 4: Gumroad Shop
-        card4Title: "스마트팜 운영 OS & 엑셀 패키지",
-        card4Desc: "상업용 하우스 운영을 자동화하기 위한 노션(Notion) 통합 관리 템플릿과 정밀 양액 처방 배합법, 센서 보정 일지 엑셀 툴킷을 Gumroad 스토어에서 공식 제공합니다.",
-        card4Badge: "프리미엄 템플릿",
-        card4Action: "스토어 둘러보기",
-
-        // Card 5: AgriAtlas Wiki
-        card5Title: "AgriAtlas 글로벌 위키 & 연구소",
-        card5Desc: "전 세계 스마트팜 정밀 공학 가이드북 및 작물별 생식/영양생장 조향 데이터 허브. 국내외 공인 규격 레퍼런스 PDF 자료를 직관적으로 열람할 수 있는 통합 지식 도서관입니다.",
-        card5Badge: "지식 아카이브",
-        card5Action: "위키 라이브러리 입장",
-
-        // Footer
-        footerReserved: "© 2026 Inwoovation Lab. All rights reserved.",
+        footerReserved: "© 2026 Inwoovation Lab. All rights reserved. | Privacy Policy | Terms of Service | About | Contact | Engineering Guides",
         footerTech: "Decoupled Serverless Infrastructure. Hosted on GitHub Pages with 0% runtime dependency."
     }
 };
@@ -86,20 +48,19 @@ const i18n = {
 let currentLang = 'en';
 
 function setLanguage(lang) {
-    if (lang !== 'ko' && lang !== 'en') lang = 'en';
-    currentLang = lang;
-    localStorage.setItem('inwoovation_pref_lang', lang);
+    currentLang = 'en';
+    localStorage.setItem('inwoovation_pref_lang', 'en');
     
     // Manage active state of buttons
     document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-    const btn = document.getElementById(`lang-${lang}`);
+    const btn = document.getElementById('lang-en');
     if (btn) btn.classList.add('active');
     
     updateUI();
 }
 
 function updateUI() {
-    const translation = i18n[currentLang] || i18n.en;
+    const translation = i18n.en;
     
     // Update Hero
     const heroTitleEl = document.getElementById('hero-title');
@@ -109,7 +70,7 @@ function updateUI() {
     
     // Update Card 1
     const c1 = document.getElementById('card-smartfarm');
-    if (c1) c1.href = `https://smartfarm.inwoovation.com/?lang=${currentLang}`;
+    if (c1) c1.href = `https://smartfarm.inwoovation.com/?lang=en`;
     if (document.getElementById('c1-badge')) document.getElementById('c1-badge').innerText = translation.card1Badge;
     if (document.getElementById('c1-title')) document.getElementById('c1-title').innerText = translation.card1Title;
     if (document.getElementById('c1-desc')) document.getElementById('c1-desc').innerText = translation.card1Desc;
@@ -117,7 +78,7 @@ function updateUI() {
 
     // Update Card 2
     const c2 = document.getElementById('card-pollinator');
-    if (c2) c2.href = `https://smartfarm.inwoovation.com/diagnosis.html?lang=${currentLang}`;
+    if (c2) c2.href = `https://smartfarm.inwoovation.com/diagnosis.html?lang=en`;
     if (document.getElementById('c2-badge')) document.getElementById('c2-badge').innerText = translation.card2Badge;
     if (document.getElementById('c2-title')) document.getElementById('c2-title').innerText = translation.card2Title;
     if (document.getElementById('c2-desc')) document.getElementById('c2-desc').innerText = translation.card2Desc;
@@ -125,7 +86,7 @@ function updateUI() {
 
     // Update Card 3
     const c3 = document.getElementById('card-vertical');
-    if (c3) c3.href = `https://smartfarm.inwoovation.com/vertical_dli.html?lang=${currentLang}`;
+    if (c3) c3.href = `https://smartfarm.inwoovation.com/vertical_dli.html?lang=en`;
     if (document.getElementById('c3-badge')) document.getElementById('c3-badge').innerText = translation.card3Badge;
     if (document.getElementById('c3-title')) document.getElementById('c3-title').innerText = translation.card3Title;
     if (document.getElementById('c3-desc')) document.getElementById('c3-desc').innerText = translation.card3Desc;
@@ -139,23 +100,19 @@ function updateUI() {
 
     // Update Card 5
     const c5 = document.getElementById('card-wiki');
-    if (c5) c5.href = `https://wiki.inwoovation.com/?lang=${currentLang}`;
+    if (c5) c5.href = `https://wiki.inwoovation.com/?lang=en`;
     if (document.getElementById('c5-badge')) document.getElementById('c5-badge').innerText = translation.card5Badge;
     if (document.getElementById('c5-title')) document.getElementById('c5-title').innerText = translation.card5Title;
     if (document.getElementById('c5-desc')) document.getElementById('c5-desc').innerText = translation.card5Desc;
     if (document.getElementById('c5-action')) document.getElementById('c5-action').innerHTML = `${translation.card5Action} <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>`;
 
     // Update Footer
-    if (document.getElementById('footer-reserved')) document.getElementById('footer-reserved').innerText = translation.footerReserved;
+    if (document.getElementById('footer-reserved')) document.getElementById('footer-reserved').innerHTML = translation.footerReserved;
     if (document.getElementById('footer-tech')) document.getElementById('footer-tech').innerText = translation.footerTech;
 }
 
 // Initial Loading Logic
 document.addEventListener('DOMContentLoaded', () => {
-    const savedLang = localStorage.getItem('inwoovation_pref_lang');
-    if (savedLang) {
-        setLanguage(savedLang);
-    } else {
-        setLanguage('en');
-    }
+    localStorage.setItem('inwoovation_pref_lang', 'en');
+    setLanguage('en');
 });

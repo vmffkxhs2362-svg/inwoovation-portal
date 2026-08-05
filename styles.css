@@ -1,25 +1,23 @@
 /* 
-   Inwoovation Lab Portal Stylesheet (2026 Ultra-Premium Dark Glassmorphism Revamp)
+   Inwoovation Lab Portal Stylesheet (2026 Ultra-Premium Dark Glassmorphism + Blog Layout)
    Author: vmffkxhs2362-svg
-   Design Theme: High-Contrast Dark Slate, Glowing Cyan/Emerald Accents, Glassmorphism 2.0
 */
 
 :root {
     --bg-base: #0f172a;
     --bg-surface: #1e293b;
-    --bg-glass: rgba(30, 41, 59, 0.75);
+    --bg-glass: rgba(30, 41, 59, 0.85);
     --border-glass: rgba(255, 255, 255, 0.12);
-    --border-glow: rgba(56, 189, 248, 0.3);
+    --border-glow: rgba(56, 189, 248, 0.35);
     --text-primary: #f8fafc;
     --text-secondary: #cbd5e1;
     --text-muted: #94a3b8;
     --primary: #38bdf8;
-    --primary-glow: rgba(56, 189, 248, 0.35);
+    --primary-glow: rgba(56, 189, 248, 0.4);
     --accent-emerald: #10b981;
-    --accent-emerald-glow: rgba(16, 185, 129, 0.35);
+    --accent-emerald-glow: rgba(16, 185, 129, 0.4);
     --accent-amber: #f59e0b;
     --accent-purple: #a855f7;
-    --accent-indigo: #6366f1;
     --transition-smooth: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
     --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -252,7 +250,7 @@ header {
     text-transform: uppercase;
 }
 
-/* Section Titles */
+/* Section Headers */
 .section-header {
     display: flex;
     justify-content: space-between;
@@ -262,7 +260,7 @@ header {
 
 .section-title {
     font-family: var(--font-heading);
-    font-size: 2rem;
+    font-size: 2.1rem;
     font-weight: 800;
     color: white;
     display: flex;
@@ -276,67 +274,128 @@ header {
     margin-top: 0.3rem;
 }
 
-/* Live Research Banner Grid */
-.research-stream-grid {
+/* Research Blog Magazine Grid */
+.blog-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 1.5rem;
-    margin-bottom: 4.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-bottom: 5rem;
 }
 
-.research-stream-card {
+.blog-card {
     background: var(--bg-surface);
     border: 1px solid var(--border-glass);
-    border-radius: 18px;
-    padding: 1.6rem;
-    transition: var(--transition-smooth);
+    border-radius: 20px;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    transition: var(--transition-smooth);
     text-decoration: none;
     color: inherit;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+.blog-card:hover {
+    border-color: var(--primary);
+    box-shadow: 0 20px 45px var(--primary-glow);
+    transform: translateY(-6px);
+}
+
+.blog-img-box {
+    width: 100%;
+    height: 200px;
     position: relative;
     overflow: hidden;
 }
 
-.research-stream-card:hover {
-    border-color: var(--primary);
-    box-shadow: 0 15px 35px var(--primary-glow);
-    transform: translateY(-4px);
+.blog-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
 }
 
-.research-tag {
+.blog-card:hover .blog-img-box img {
+    transform: scale(1.08);
+}
+
+.blog-badge-overlay {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border-glow);
+    color: var(--primary);
     font-size: 0.75rem;
     font-weight: 700;
-    color: var(--primary);
-    background: rgba(56, 189, 248, 0.12);
-    border: 1px solid rgba(56, 189, 248, 0.3);
-    padding: 0.3rem 0.7rem;
+    padding: 0.35rem 0.8rem;
     border-radius: 100px;
-    display: inline-block;
-    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
 }
 
-.research-stream-card h3 {
-    font-family: var(--font-heading);
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: white;
-    line-height: 1.4;
-    margin-bottom: 0.8rem;
+.blog-content {
+    padding: 1.8rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: space-between;
 }
 
-.research-stream-card p {
-    font-size: 0.9rem;
-    color: var(--text-muted);
-    line-height: 1.5;
-    margin-bottom: 1.2rem;
-}
-
-.research-meta {
-    font-size: 0.85rem;
+.blog-date {
+    font-size: 0.8rem;
     color: var(--accent-emerald);
     font-weight: 700;
+    margin-bottom: 0.6rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.blog-title {
+    font-family: var(--font-heading);
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: white;
+    line-height: 1.35;
+    margin-bottom: 0.8rem;
+    transition: color 0.2s;
+}
+
+.blog-card:hover .blog-title {
+    color: var(--primary);
+}
+
+.blog-excerpt {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.blog-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 0.85rem;
+}
+
+.blog-author {
+    color: var(--text-muted);
+    font-weight: 600;
+}
+
+.blog-link-btn {
+    color: var(--primary);
+    font-weight: 800;
     display: flex;
     align-items: center;
     gap: 0.4rem;
@@ -422,40 +481,24 @@ header {
     transition: var(--transition-smooth);
 }
 
-/* Theme Variation Styling */
-.card.theme-emerald:hover {
-    border-color: var(--accent-emerald);
-    box-shadow: 0 20px 45px var(--accent-emerald-glow);
-    transform: translateY(-6px);
-}
+/* Theme Variations */
+.card.theme-emerald:hover { border-color: var(--accent-emerald); box-shadow: 0 20px 45px var(--accent-emerald-glow); transform: translateY(-6px); }
 .card.theme-emerald .card-icon { color: var(--accent-emerald); background: rgba(16, 185, 129, 0.12); }
 .card.theme-emerald .card-badge { background: rgba(16, 185, 129, 0.15); color: var(--accent-emerald); border: 1px solid rgba(16, 185, 129, 0.3); }
 
-.card.theme-amber:hover {
-    border-color: var(--accent-amber);
-    box-shadow: 0 20px 45px rgba(245, 158, 11, 0.35);
-    transform: translateY(-6px);
-}
+.card.theme-amber:hover { border-color: var(--accent-amber); box-shadow: 0 20px 45px rgba(245, 158, 11, 0.35); transform: translateY(-6px); }
 .card.theme-amber .card-icon { color: var(--accent-amber); background: rgba(245, 158, 11, 0.12); }
 .card.theme-amber .card-badge { background: rgba(245, 158, 11, 0.15); color: var(--accent-amber); border: 1px solid rgba(245, 158, 11, 0.3); }
 
-.card.theme-purple:hover {
-    border-color: var(--accent-purple);
-    box-shadow: 0 20px 45px rgba(168, 85, 247, 0.35);
-    transform: translateY(-6px);
-}
+.card.theme-purple:hover { border-color: var(--accent-purple); box-shadow: 0 20px 45px rgba(168, 85, 247, 0.35); transform: translateY(-6px); }
 .card.theme-purple .card-icon { color: var(--accent-purple); background: rgba(168, 85, 247, 0.12); }
 .card.theme-purple .card-badge { background: rgba(168, 85, 247, 0.15); color: var(--accent-purple); border: 1px solid rgba(168, 85, 247, 0.3); }
 
-.card.theme-blue:hover {
-    border-color: var(--primary);
-    box-shadow: 0 20px 45px var(--primary-glow);
-    transform: translateY(-6px);
-}
+.card.theme-blue:hover { border-color: var(--primary); box-shadow: 0 20px 45px var(--primary-glow); transform: translateY(-6px); }
 .card.theme-blue .card-icon { color: var(--primary); background: rgba(56, 189, 248, 0.12); }
 .card.theme-blue .card-badge { background: rgba(56, 189, 248, 0.15); color: var(--primary); border: 1px solid rgba(56, 189, 248, 0.3); }
 
-/* Articles Archive Callout */
+/* Articles Callout */
 .articles-callout {
     background: linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 0.95));
     border: 1px solid var(--border-glow);
@@ -506,7 +549,7 @@ header {
     background: #7dd3fc;
 }
 
-/* Footer Styling */
+/* Footer */
 footer {
     border-top: 1px solid var(--border-glass);
     padding: 3rem 0;
@@ -533,7 +576,7 @@ footer p {
     line-height: 1.6;
 }
 
-/* Mobile Responsiveness */
+/* Mobile Responsive */
 @media (max-width: 768px) {
     .container { padding: 1.2rem; }
     header { flex-direction: column; gap: 1rem; align-items: flex-start; }
@@ -542,6 +585,7 @@ footer p {
     .hero p { font-size: 1.05rem; }
     .stats-ribbon { justify-content: flex-start; gap: 1rem; }
     .stat-box { flex: 1; min-width: 140px; }
+    .blog-grid { grid-template-columns: 1fr; }
     .grid { grid-template-columns: 1fr; }
     .articles-callout { padding: 2rem; flex-direction: column; align-items: flex-start; }
 }
