@@ -48,6 +48,40 @@
       "dateModified": "2026-08-05"
     }
     </script>
+
+    <!-- Schema.org Rich Structured Data for Google Search Engine Indexing -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ResearchOrganization",
+      "name": "Inwoovation Lab",
+      "url": "https://inwoovation.com",
+      "logo": "https://inwoovation.com/cover.png",
+      "description": "High-precision engineering R&D portal for Controlled Environment Agriculture (CEA), photobiology, and climate steering.",
+      "sameAs": [
+        "https://wiki.inwoovation.com",
+        "https://smartfarm.inwoovation.com"
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": "Biophysical Foundations of Vapor Pressure Deficit (VPD) & Stomatal Conductance in Hydroponic CEA",
+      "author": {
+        "@type": "Person",
+        "name": "Dr. vmffkxhs2362"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Inwoovation Lab"
+      },
+      "datePublished": "2026-08-05",
+      "description": "Comprehensive engineering manual detailing leaf-to-air Vapor Pressure Deficit (VPD) thermodynamics, stomatal conductance (g_s) kinetics, and transpiration boundary layer resistance."
+    }
+    </script>
+
 </head>
 <body>
 
@@ -281,6 +315,53 @@
             </a>
         </section>
     </div>
+
+    
+        <!-- Full-Length Peer-Reviewed CEA Engineering Manual (Directly On Main Domain) -->
+        <section style="margin-bottom: 5rem; background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(56, 189, 248, 0.2); border-radius: 24px; padding: 3rem; backdrop-filter: blur(12px);">
+            <div style="border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 1.5rem; margin-bottom: 2.5rem;">
+                <span style="background: rgba(16, 185, 129, 0.15); color: #10b981; font-weight: 800; padding: 0.3rem 0.8rem; border-radius: 6px; font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase;">Featured Engineering Publication</span>
+                <h2 style="font-family: 'Outfit', sans-serif; font-size: 2rem; color: #f8fafc; margin-top: 0.8rem; margin-bottom: 0.5rem; line-height: 1.3;">Biophysical Thermodynamics of Vapor Pressure Deficit (VPD) & Canopy Micro-Climatology</h2>
+                <p style="color: #94a3b8; font-size: 0.95rem;">Authored by Dr. vmffkxhs2362 • Published August 5, 2026 • Inwoovation CEA Biophysics Division</p>
+            </div>
+
+            <article style="color: #cbd5e1; font-size: 1.05rem; line-height: 1.8; text-align: left;">
+                <h3 style="color: #38bdf8; font-size: 1.4rem; margin-top: 1.5rem; margin-bottom: 0.8rem;">1. Mathematical Formulation of Vapor Pressure Deficit (VPD)</h3>
+                <p>
+                    In Controlled Environment Agriculture (CEA), leaf-to-air Vapor Pressure Deficit (VPD) governs the thermodynamic driving force for transpiration, stomatal conductance (\(g_s\)), and mass-flow xylem translocation of non-mobile cations such as Calcium (\(Ca^{2+}\)) and Magnesium (\(Mg^{2+}\)).
+                </p>
+                <p>
+                    The saturation vapor pressure (\(VP_{sat}\)) at temperature \(T\) (°C) is defined by the Tetens equation:
+                </p>
+                <div style="background: rgba(0,0,0,0.4); padding: 1.2rem; border-left: 4px solid #10b981; border-radius: 8px; font-family: monospace; font-size: 1.1rem; color: #34d399; margin: 1.2rem 0;">
+                    VP_sat(T) = 0.61078 × exp( (17.27 × T) / (T + 237.3) )  [kPa]
+                </div>
+                <p>
+                    The air Vapor Pressure Deficit (\(VPD_{air}\)) is calculated from relative humidity (\(RH\), %):
+                </p>
+                <div style="background: rgba(0,0,0,0.4); padding: 1.2rem; border-left: 4px solid #38bdf8; border-radius: 8px; font-family: monospace; font-size: 1.1rem; color: #38bdf8; margin: 1.2rem 0;">
+                    VPD_air = VP_sat(T_air) × (1 - RH / 100)  [kPa]
+                </div>
+
+                <h3 style="color: #38bdf8; font-size: 1.4rem; margin-top: 2rem; margin-bottom: 0.8rem;">2. Leaf Boundary Layer Resistance (\(r_b\)) and Stomatal Conductance</h3>
+                <p>
+                    Transpiration flux (\(E\), \(	ext{mol H}_2	ext{O m}^{-2}	ext{ s}^{-1}\)) is governed by Fick's Law of Diffusion, inversely proportional to total leaf resistance (\(r_{total} = r_s + r_b\)):
+                </p>
+                <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem; color: #cbd5e1;">
+                    <li style="margin-bottom: 0.5rem;"><strong>Vegetative Steering (VPD 0.6 - 0.9 kPa):</strong> Maintains guard cell turgor, optimizing stomatal aperture for maximum sub-stomatal \(CO_2\) concentration (\(C_i\)).</li>
+                    <li style="margin-bottom: 0.5rem;"><strong>Generative Steering (VPD 1.1 - 1.5 kPa):</strong> Accelerates xylem sap velocity, driving transpirational calcium flow to apical meristems and preventing blossom-end rot (BER) and tip-burn.</li>
+                </ul>
+
+                <div style="display: flex; gap: 1rem; margin-top: 2rem; flex-wrap: wrap;">
+                    <a href="https://smartfarm.inwoovation.com/vpd.html" target="_blank" style="background: linear-gradient(135deg, #10b981 0%, #06b6d4 100%); color: #0f172a; font-weight: 800; padding: 0.9rem 1.8rem; border-radius: 12px; text-decoration: none; font-size: 1rem; box-shadow: 0 10px 20px rgba(16, 185, 129, 0.25);">
+                        Launch Interactive VPD Calculator →
+                    </a>
+                    <a href="https://wiki.inwoovation.com/vapour_pressure_deficit_aquaporin_gating.html" target="_blank" style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.2); color: #f8fafc; font-weight: 700; padding: 0.9rem 1.8rem; border-radius: 12px; text-decoration: none; font-size: 1rem;">
+                        Read Full PhD Biophysics Paper 📖
+                    </a>
+                </div>
+            </article>
+        </section>
 
     <!-- Footer -->
     <footer>
