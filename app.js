@@ -1,10 +1,48 @@
 /* 
-   Inwoovation Lab Portal Logic
+   Inwoovation Lab Portal Logic (English Primary Default)
    Author: vmffkxhs2362-svg
    Features: Dynamic I18n translation & Client-side state persistence
 */
 
 const i18n = {
+    en: {
+        heroTitle: "AgTech & Software Engineering Lab<br>for Next-Generation Agriculture",
+        heroDesc: "Inwoovation Lab engineers lightweight, zero-latency biophysical crop models, symptom-based biosecurity diagnostics, and operational optimization toolkits. Committed to dependency-free, high-performance static architectures.",
+        
+        // Card 1: Smart Farm
+        card1Title: "Smart Farm Engineering Lab",
+        card1Desc: "Greenhouse microclimate analytics and physical simulator. Instantly calculate Vapor Pressure Deficit (VPD), nighttime greenhouse heat loss, and Penman-Monteith standard crop transpiration.",
+        card1Badge: "AgTech Core",
+        card1Action: "Enter Lab Website",
+
+        // Card 2: Diagnosis & Bee Safety
+        card2Title: "Greenhouse Diagnosis & Bee Safety",
+        card2Desc: "3-step visual scouting decision-tree for greenhouse diseases. Instantly cross-references prescribed chemical treatments to calculate managed bumblebee/honeybee Re-entry Intervals (REI).",
+        card2Badge: "Biosecurity",
+        card2Action: "Launch Diagnostics",
+
+        // Card 3: Vertical Farming
+        card3Title: "Vertical Farming DLI Calculator",
+        card3Desc: "Precision lighting design utility for indoor vertical farming. Calculate target PPFD and photoperiod combinations to optimize the Daily Light Integral (DLI) across crops.",
+        card3Badge: "Lighting Control",
+        card3Action: "Open DLI Calculator",
+
+        // Card 4: Gumroad Shop
+        card4Title: "Smart Farm Operator OS & Tools",
+        card4Desc: "Professional Notion templates and engineering spreadsheet packages. Systematize commercial farm operations, sensor calibration schedules, and nutrient formulas via Gumroad.",
+        card4Badge: "Premium Toolkit",
+        card4Action: "Visit Gumroad Store",
+
+        // Card 5: AgriAtlas Wiki
+        card5Title: "AgriAtlas Global Wiki & Research",
+        card5Desc: "An engineering-centric repository for Controlled Environment Agriculture. Access detailed climate steering, crop nutrition, doctoral research papers, and reference manual PDFs in one unified archive.",
+        card5Badge: "Knowledge Archive",
+        card5Action: "Enter Wiki Library",
+
+        // Footer
+        footerReserved: "© 2026 Inwoovation Lab. All rights reserved. | Privacy Policy | Terms of Service",
+        footerTech: "Decoupled Serverless Infrastructure. Hosted on GitHub Pages with 0% runtime dependency."
+    },
     ko: {
         heroTitle: "미래형 비즈니스를 위한<br>AgTech & 소프트웨어 엔지니어링 랩",
         heroDesc: "이노베이션 랩(Inwoovation Lab)은 정밀 원예 공학 모델, 자가진단 시스템, 그리고 운영 자동화 디지털 도구를 전문적으로 엔지니어링합니다. 가벼우며 의존성 없는 고성능 정적 웹 기술을 지향합니다.",
@@ -34,48 +72,10 @@ const i18n = {
         card4Action: "스토어 둘러보기",
 
         // Card 5: AgriAtlas Wiki
-        card5Title: "AgriAtlas 글로벌 위키",
+        card5Title: "AgriAtlas 글로벌 위키 & 연구소",
         card5Desc: "전 세계 스마트팜 정밀 공학 가이드북 및 작물별 생식/영양생장 조향 데이터 허브. 국내외 공인 규격 레퍼런스 PDF 자료를 직관적으로 열람할 수 있는 통합 지식 도서관입니다.",
         card5Badge: "지식 아카이브",
         card5Action: "위키 라이브러리 입장",
-
-        // Footer
-        footerReserved: "© 2026 Inwoovation Lab. All rights reserved. | 이노베이션 연구소",
-        footerTech: "Decoupled Serverless Infrastructure. Hosted on GitHub Pages with 0% runtime dependency."
-    },
-    en: {
-        heroTitle: "AgTech & Software Engineering Lab<br>for Next-Generation Businesses",
-        heroDesc: "Inwoovation Lab engineers lightweight, zero-latency physical crop models, symptom-based biosecurity diagnostics, and operational optimization toolkits. Committed to dependency-free, high-performance static architectures.",
-        
-        // Card 1: Smart Farm
-        card1Title: "Smart Farm Engineering Lab",
-        card1Desc: "Greenhouse microclimate analytics and physical simulator. Instantly calculate Vapor Pressure Deficit (VPD), nighttime greenhouse heat loss, and Penman-Monteith standard crop transpiration.",
-        card1Badge: "AgTech Core",
-        card1Action: "Enter Lab Website",
-
-        // Card 2: Diagnosis & Bee Safety
-        card2Title: "Greenhouse Diagnosis & Bee Safety",
-        card2Desc: "3-step visual scouting decision-tree for greenhouse diseases. Instantly cross-references prescribed chemical treatments to calculate managed bumblebee/honeybee Re-entry Intervals (REI).",
-        card2Badge: "Ecology Portal",
-        card2Action: "Launch Diagnostics",
-
-        // Card 3: Vertical Farming
-        card3Title: "Vertical Farming DLI Calculator",
-        card3Desc: "Precision lighting design utility for indoor vertical farming. Calculate target PPFD and photoperiod combinations to optimize the Daily Light Integral (DLI) across crops.",
-        card3Badge: "Artificial Light",
-        card3Action: "Open DLI Calculator",
-
-        // Card 4: Gumroad Shop
-        card4Title: "Smart Farm Operator OS & Tools",
-        card4Desc: "Professional Notion templates and engineering spreadsheet packages. Systematize commercial farm operations, sensor calibration schedules, and nutrient formulas via Gumroad.",
-        card4Badge: "Premium Store",
-        card4Action: "Visit Gumroad Store",
-
-        // Card 5: AgriAtlas Wiki
-        card5Title: "AgriAtlas Global Wiki",
-        card5Desc: "An engineering-centric repository for Controlled Environment Agriculture. Access detailed climate steering, crop nutrition, and reference manual PDFs in one unified archive.",
-        card5Badge: "Knowledge Base",
-        card5Action: "Enter Wiki Library",
 
         // Footer
         footerReserved: "© 2026 Inwoovation Lab. All rights reserved.",
@@ -83,64 +83,71 @@ const i18n = {
     }
 };
 
-let currentLang = 'ko';
+let currentLang = 'en';
 
 function setLanguage(lang) {
-    if (lang !== 'ko' && lang !== 'en') lang = 'ko';
+    if (lang !== 'ko' && lang !== 'en') lang = 'en';
     currentLang = lang;
     localStorage.setItem('inwoovation_pref_lang', lang);
     
     // Manage active state of buttons
     document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-    document.getElementById(`lang-${lang}`).classList.add('active');
+    const btn = document.getElementById(`lang-${lang}`);
+    if (btn) btn.classList.add('active');
     
     updateUI();
 }
 
 function updateUI() {
-    const translation = i18n[currentLang];
+    const translation = i18n[currentLang] || i18n.en;
     
     // Update Hero
-    document.getElementById('hero-title').innerHTML = translation.heroTitle;
-    document.getElementById('hero-desc').innerText = translation.heroDesc;
+    const heroTitleEl = document.getElementById('hero-title');
+    const heroDescEl = document.getElementById('hero-desc');
+    if (heroTitleEl) heroTitleEl.innerHTML = translation.heroTitle;
+    if (heroDescEl) heroDescEl.innerText = translation.heroDesc;
     
     // Update Card 1
-    document.getElementById('card-smartfarm').href = `https://smartfarm.inwoovation.com/?lang=${currentLang}`;
-    document.getElementById('c1-badge').innerText = translation.card1Badge;
-    document.getElementById('c1-title').innerText = translation.card1Title;
-    document.getElementById('c1-desc').innerText = translation.card1Desc;
-    document.getElementById('c1-action').innerHTML = `${translation.card1Action} <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>`;
+    const c1 = document.getElementById('card-smartfarm');
+    if (c1) c1.href = `https://smartfarm.inwoovation.com/?lang=${currentLang}`;
+    if (document.getElementById('c1-badge')) document.getElementById('c1-badge').innerText = translation.card1Badge;
+    if (document.getElementById('c1-title')) document.getElementById('c1-title').innerText = translation.card1Title;
+    if (document.getElementById('c1-desc')) document.getElementById('c1-desc').innerText = translation.card1Desc;
+    if (document.getElementById('c1-action')) document.getElementById('c1-action').innerHTML = `${translation.card1Action} <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>`;
 
     // Update Card 2
-    document.getElementById('card-pollinator').href = `https://smartfarm.inwoovation.com/?tab=pollinator&lang=${currentLang}`;
-    document.getElementById('c2-badge').innerText = translation.card2Badge;
-    document.getElementById('c2-title').innerText = translation.card2Title;
-    document.getElementById('c2-desc').innerText = translation.card2Desc;
-    document.getElementById('c2-action').innerHTML = `${translation.card2Action} <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>`;
+    const c2 = document.getElementById('card-pollinator');
+    if (c2) c2.href = `https://smartfarm.inwoovation.com/diagnosis.html?lang=${currentLang}`;
+    if (document.getElementById('c2-badge')) document.getElementById('c2-badge').innerText = translation.card2Badge;
+    if (document.getElementById('c2-title')) document.getElementById('c2-title').innerText = translation.card2Title;
+    if (document.getElementById('c2-desc')) document.getElementById('c2-desc').innerText = translation.card2Desc;
+    if (document.getElementById('c2-action')) document.getElementById('c2-action').innerHTML = `${translation.card2Action} <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>`;
 
     // Update Card 3
-    document.getElementById('card-vertical').href = `https://smartfarm.inwoovation.com/?tab=vertical&lang=${currentLang}`;
-    document.getElementById('c3-badge').innerText = translation.card3Badge;
-    document.getElementById('c3-title').innerText = translation.card3Title;
-    document.getElementById('c3-desc').innerText = translation.card3Desc;
-    document.getElementById('c3-action').innerHTML = `${translation.card3Action} <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>`;
+    const c3 = document.getElementById('card-vertical');
+    if (c3) c3.href = `https://smartfarm.inwoovation.com/vertical_dli.html?lang=${currentLang}`;
+    if (document.getElementById('c3-badge')) document.getElementById('c3-badge').innerText = translation.card3Badge;
+    if (document.getElementById('c3-title')) document.getElementById('c3-title').innerText = translation.card3Title;
+    if (document.getElementById('c3-desc')) document.getElementById('c3-desc').innerText = translation.card3Desc;
+    if (document.getElementById('c3-action')) document.getElementById('c3-action').innerHTML = `${translation.card3Action} <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>`;
 
     // Update Card 4
-    document.getElementById('c4-badge').innerText = translation.card4Badge;
-    document.getElementById('c4-title').innerText = translation.card4Title;
-    document.getElementById('c4-desc').innerText = translation.card4Desc;
-    document.getElementById('c4-action').innerHTML = `${translation.card4Action} <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>`;
+    if (document.getElementById('c4-badge')) document.getElementById('c4-badge').innerText = translation.card4Badge;
+    if (document.getElementById('c4-title')) document.getElementById('c4-title').innerText = translation.card4Title;
+    if (document.getElementById('c4-desc')) document.getElementById('c4-desc').innerText = translation.card4Desc;
+    if (document.getElementById('c4-action')) document.getElementById('c4-action').innerHTML = `${translation.card4Action} <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>`;
 
     // Update Card 5
-    document.getElementById('card-wiki').href = `https://wiki.inwoovation.com/?lang=${currentLang}`;
-    document.getElementById('c5-badge').innerText = translation.card5Badge;
-    document.getElementById('c5-title').innerText = translation.card5Title;
-    document.getElementById('c5-desc').innerText = translation.card5Desc;
-    document.getElementById('c5-action').innerHTML = `${translation.card5Action} <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>`;
+    const c5 = document.getElementById('card-wiki');
+    if (c5) c5.href = `https://wiki.inwoovation.com/?lang=${currentLang}`;
+    if (document.getElementById('c5-badge')) document.getElementById('c5-badge').innerText = translation.card5Badge;
+    if (document.getElementById('c5-title')) document.getElementById('c5-title').innerText = translation.card5Title;
+    if (document.getElementById('c5-desc')) document.getElementById('c5-desc').innerText = translation.card5Desc;
+    if (document.getElementById('c5-action')) document.getElementById('c5-action').innerHTML = `${translation.card5Action} <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>`;
 
     // Update Footer
-    document.getElementById('footer-reserved').innerText = translation.footerReserved;
-    document.getElementById('footer-tech').innerText = translation.footerTech;
+    if (document.getElementById('footer-reserved')) document.getElementById('footer-reserved').innerText = translation.footerReserved;
+    if (document.getElementById('footer-tech')) document.getElementById('footer-tech').innerText = translation.footerTech;
 }
 
 // Initial Loading Logic
@@ -149,12 +156,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (savedLang) {
         setLanguage(savedLang);
     } else {
-        // Auto-detect browser locale
-        const userLocale = navigator.language || navigator.userLanguage;
-        if (userLocale.startsWith('ko')) {
-            setLanguage('ko');
-        } else {
-            setLanguage('en');
-        }
+        setLanguage('en');
     }
 });
