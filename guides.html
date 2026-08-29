@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>스마트팜 & AgTech 공학 학술 아카이브 (15선) | Inwoovation Lab</title>
-    <meta name="description" content="VPD 연산, DLI 광량 설계, 온실 열손실, 수경재배 양액 처방, 바이오필릭 디자인 등 정밀 영농 15대 학술 아티클 모음집.">
+    <title>Precision CEA & Horticultural Engineering Articles (20 Volume Archive) | Inwoovation Lab</title>
+    <meta name="description" content="Peer-reviewed Controlled Environment Agriculture (CEA), VPD physics, photobiology, fertigation, and greenhouse engineering articles archive.">
     <link rel="canonical" href="https://inwoovation.com/guides.html" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-V4RYJBMEDE"></script>
@@ -15,108 +15,243 @@
        gtag('config', 'G-V4RYJBMEDE');
     </script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8597809158257497" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <style>
-        .article-container { max-width: 900px; margin: 40px auto; padding: 35px; background: #ffffff; border-radius: 16px; border: 1px solid #e2e8f0; line-height: 1.85; color: #334155; }
-        .article-container h1 { font-size: 2.2rem; color: #0f172a; margin-bottom: 20px; border-bottom: 3px solid #10b981; padding-bottom: 12px; }
-        .guides-grid { display: grid; grid-template-columns: 1fr; gap: 20px; margin-top: 30px; }
-        .guide-card { background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 24px; text-decoration: none; color: inherit; transition: transform 0.2s, border-color 0.2s; display: block; }
-        .guide-card:hover { transform: translateY(-3px); border-color: #10b981; background: #ffffff; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05); }
-        .guide-card h2 { font-size: 1.25rem; color: #065f46; margin-bottom: 10px; font-weight: 700; }
-        .guide-card p { font-size: 0.95rem; color: #475569; margin: 0; line-height: 1.6; }
-        .back-link { display: inline-block; margin-bottom: 20px; color: #10b981; text-decoration: none; font-weight: 600; }
+        .article-container { max-width: 950px; margin: 40px auto; padding: 35px; background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-radius: 20px; border: 1px solid var(--border-glass); line-height: 1.85; color: var(--text-secondary); box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
+        .article-container h1 { font-family: 'Outfit', sans-serif; font-size: 2.3rem; color: #f8fafc; margin-bottom: 12px; }
+        .guides-search-box { margin: 25px 0; display: flex; gap: 12px; }
+        .guides-search-input { flex: 1; background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 12px; padding: 12px 18px; color: #f8fafc; font-size: 1rem; outline: none; transition: border-color 0.2s; }
+        .guides-search-input:focus { border-color: #38bdf8; box-shadow: 0 0 15px rgba(56, 189, 248, 0.2); }
+        .guides-grid { display: grid; grid-template-columns: 1fr; gap: 18px; margin-top: 25px; }
+        .guide-card { background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 14px; padding: 22px; text-decoration: none; color: inherit; transition: all 0.25s ease; display: block; }
+        .guide-card:hover { transform: translateY(-3px); border-color: #10b981; background: rgba(15, 23, 42, 0.9); box-shadow: 0 10px 25px rgba(16, 185, 129, 0.15); }
+        .guide-card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+        .guide-tag { background: rgba(16, 185, 129, 0.15); color: #10b981; font-size: 0.75rem; font-weight: 700; padding: 4px 10px; border-radius: 6px; text-transform: uppercase; letter-spacing: 0.05em; }
+        .guide-card h2 { font-family: 'Outfit', sans-serif; font-size: 1.25rem; color: #f8fafc; margin-bottom: 8px; font-weight: 700; line-height: 1.4; }
+        .guide-card p { font-size: 0.92rem; color: #94a3b8; margin: 0; line-height: 1.6; }
+        .back-link { display: inline-flex; align-items: center; gap: 6px; margin-bottom: 20px; color: #38bdf8; text-decoration: none; font-weight: 600; font-size: 0.95rem; }
         .back-link:hover { text-decoration: underline; }
     </style>
 </head>
 <body>
 <div class="container">
-    <a href="/" class="back-link">← 이노베이션 랩 메인으로 돌아가기</a>
+    <a href="/" class="back-link">← Return to Inwoovation Lab Home</a>
     <div class="article-container">
-        <h1>정밀 원예 & AgTech 학술 아티클 라이브러리 (15선)</h1>
-        <p>Inwoovation Lab 연구팀이 작성한 15대 전문 학술 아티클 모음입니다. 각 제목을 클릭하시면 전문을 열람하실 수 있습니다.</p>
+        <h1>🔬 Precision Engineering Articles Archive (20 Volumes)</h1>
+        <p>Comprehensive engineering publications on biophysics, crop steering, root aeration, photobiology, and commercial greenhouse automation.</p>
 
-        <div class="guides-grid">
+        <div class="guides-search-box">
+            <input type="text" id="articleSearch" class="guides-search-input" placeholder="🔍 Search articles by keyword (e.g. VPD, DLI, Meister, Substrate, Ozone)..." onkeyup="filterArticles()">
+        </div>
 
-            <a href="/articles/article-01-vpd-master-class.html" class="guide-card">
-                <h2>스마트팜 온실 VPD(포화수증기압차) 관리의 공학적 원리와 최적 수치 가이드</h2>
-                <p>온실 상대습도(RH)만 관리할 때 발생하는 영농 오류를 극복하고, 작물의 실제 증산 동력인 VPD(kPa)를 정밀 연산 및 제어하는 물리 법칙 가이드.</p>
+        <div class="guides-grid" id="articlesList">
+
+            <a href="/articles/article-16-german-meister-greenhouse-climate.html" class="guide-card" data-tags="climate meister rti heating tomato">
+                <div class="guide-card-header">
+                    <span class="guide-tag">🇩🇪 Climate Steering</span>
+                    <span style="font-size: 0.8rem; color: #64748b;">Vol. 16</span>
+                </div>
+                <h2>German Master Grower (Gärtnermeister) Greenhouse Climate Steering Strategy for Solanaceae</h2>
+                <p>24-hour radiation-temperature integration (RTI), pre-night temperature drops (DIP), and 3-way motorized mixing valve pipe rail heating physics.</p>
             </a>
 
-            <a href="/articles/article-02-dli-vertical-farming.html" class="guide-card">
-                <h2>수직농장(식물공장) 인공광 제어를 위한 DLI(Daily Light Integral) 연산 설계</h2>
-                <p>완전 밀폐형 수직농장의 전기료를 최적화하면서 작물 생산성을 최대화하기 위한 DLI 및 PPFD 광합성 유효 광량 산출 수식.</p>
+            <a href="/articles/article-17-indoor-plant-soil-aeration-porosity.html" class="guide-card" data-tags="soil porosity aeration root substrate monstera">
+                <div class="guide-card-header">
+                    <span class="guide-tag">🌱 Substrate Physics</span>
+                    <span style="font-size: 0.8rem; color: #64748b;">Vol. 17</span>
+                </div>
+                <h2>Biophysical Soil Physics: Air Porosity, Water Retention Curves & Root Zone Aeration</h2>
+                <p>Total Porosity (TP), Container Capacity (CC), and Air-Filled Porosity (AFP) to eliminate hypoxia and root rot in containerized horticulture.</p>
             </a>
 
-            <a href="/articles/article-03-pollinator-safety-rei.html" class="guide-card">
-                <h2>온실 수분벌(뒤영벌) 보호 및 농약 살포 후 안전 대기시간(REI) 가이드</h2>
-                <p>시설하우스 딸기, 토마토 수분을 위한 뒤영벌 생태 보호 지침 및 작물보호제 살포 시 잔류 독성 안전 대기시간 수식.</p>
+            <a href="/articles/article-18-recirculating-nutrient-sterilization.html" class="guide-card" data-tags="water sterilization uvc ozone hydroponics fertigation">
+                <div class="guide-card-header">
+                    <span class="guide-tag">💧 Water Engineering</span>
+                    <span style="font-size: 0.8rem; color: #64748b;">Vol. 18</span>
+                </div>
+                <h2>Closed-Loop Hydroponic Drain Water Disinfection: UV-C, Ozone, Heat & Ultrafiltration</h2>
+                <p>UV-C irradiance dosage, ozone redox potential (ORP), and iron chelate preservation in recirculating commercial greenhouses.</p>
             </a>
 
-            <a href="/articles/article-04-greenhouse-heating-loss.html" class="guide-card">
-                <h2>피복재별 온실 야간 열손실계수(U-value) 및 난방 에너지 절감 수식</h2>
-                <p>유리, 피에프(PF) 필름, 다중 PO 필름 등 온실 피복재의 관개 열손실 수식을 분석하고 야간 난방 유류비를 30% 절감하는 공학 가이드.</p>
+            <a href="/articles/article-19-vertical-farm-biomass-conversion-efficiency.html" class="guide-card" data-tags="vertical farm pue ppfd lighting dli biomass">
+                <div class="guide-card-header">
+                    <span class="guide-tag">💡 Photobiology</span>
+                    <span style="font-size: 0.8rem; color: #64748b;">Vol. 19</span>
+                </div>
+                <h2>Photon Use Efficiency (PUE) & Electric Power to Fresh Biomass Kinetics in Vertical Farming</h2>
+                <p>Quantifying photon efficacy (μmol/J) and energy yield (g/kWh) to minimize operating expenditure in commercial plant factories.</p>
             </a>
 
-            <a href="/articles/article-05-penman-monteith-transpiration.html" class="guide-card">
-                <h2>Penman-Monteith 방정식을 활용한 작물 표준 증산량(ET0) 추정 모델</h2>
-                <p>FAO-56 표준 Penman-Monteith 수식을 바탕으로 온실 일조량, 풍속, 습도 데이터 기반 일일 작물 관수 요구량 산출법.</p>
+            <a href="/articles/article-20-leaf-temperature-infrared-thermometry.html" class="guide-card" data-tags="leaf temp infrared cwsi sensor thermography vpd">
+                <div class="guide-card-header">
+                    <span class="guide-tag">🌡️ Phyto-Sensing</span>
+                    <span style="font-size: 0.8rem; color: #64748b;">Vol. 20</span>
+                </div>
+                <h2>Leaf Temperature Infrared Thermometry & Crop Water Stress Index (CWSI) Sensing</h2>
+                <p>Stefan-Boltzmann radiometry, leaf-to-air temperature differential (ΔT), and automated transpiration stress detection.</p>
             </a>
 
-            <a href="/articles/article-06-hydroponic-nutrient-formulation.html" class="guide-card">
-                <h2>수경재배 양액 처방 원소 이온 농도(meq/L) 배합 원리 및 pH/EC 관리</h2>
-                <p>야마자키, 네덜란드 락울 연구소(PBG) 처방전을 바탕으로 다량원소(N, P, K, Ca, Mg, S) 당량 농도 연산법.</p>
+            <a href="/articles/article-01-vpd-master-class.html" class="guide-card" data-tags="vpd thermodynamics greenhouse climate transpiration">
+                <div class="guide-card-header">
+                    <span class="guide-tag">🔬 Biophysics</span>
+                    <span style="font-size: 0.8rem; color: #64748b;">Vol. 01</span>
+                </div>
+                <h2>Biophysical Foundations of Vapor Pressure Deficit (VPD) Thermodynamics in CEA Greenhouses</h2>
+                <p>Mastering VPD (kPa) computation over relative humidity (RH%) to eliminate crop stress, balance stomatal conductance, and drive transpirational xylem flow.</p>
             </a>
 
-            <a href="/articles/article-07-indoor-plant-lighting-spectrum.html" class="guide-card">
-                <h2>실내 식물 가등을 위한 파장별(적색/청색/원적색) 광합성 효율과 파스 굴절 효과</h2>
-                <p>McCree 곡선 기반 450nm 청색광, 660nm 적색광, 730nm 원적색광(Far-Red) 파장의 광합성 및 형태 형성 조향 분석.</p>
+            <a href="/articles/article-02-dli-vertical-farming.html" class="guide-card" data-tags="dli vertical farm led ppfd lighting">
+                <div class="guide-card-header">
+                    <span class="guide-tag">💡 Lighting Control</span>
+                    <span style="font-size: 0.8rem; color: #64748b;">Vol. 02</span>
+                </div>
+                <h2>Daily Light Integral (DLI) & PPFD Photoperiod Optimization for Indoor Vertical Farming</h2>
+                <p>Optimizing artificial LED spectrum, photon flux density (PPFD), and photoperiod combinations to maximize photon use efficiency (PUE).</p>
             </a>
 
-            <a href="/articles/article-08-monstera-deliciosa-care-guide.html" class="guide-card">
-                <h2>몬스테라 델리시오샤 수경재배 및 VPD 잎 타들어감 방지 공학 가이드</h2>
-                <p>인기 관엽식물 몬스테라의 근권 공기 주입 수경재배 기법 및 실내 상대습도 저하 시 잎 팁 마름(Tip Burn) 방지 수치.</p>
+            <a href="/articles/article-03-pollinator-safety-rei.html" class="guide-card" data-tags="pollinator bee rei biosecurity pesticide">
+                <div class="guide-card-header">
+                    <span class="guide-tag">🐝 Biosecurity</span>
+                    <span style="font-size: 0.8rem; color: #64748b;">Vol. 03</span>
+                </div>
+                <h2>Greenhouse Pollinator Safety & Re-entry Interval (REI) Biophysical Decision Framework</h2>
+                <p>Quantifying managed bumblebee (Bombus terrestris) eco-toxicology and chemical pesticide residual half-life dynamics in commercial greenhouse operations.</p>
             </a>
 
-            <a href="/articles/article-09-stomata-conductance-photosynthesis.html" class="guide-card">
-                <h2>식물 기공 전도도(Stomatal Conductance)와 CO2 시비 농도의 상관관계</h2>
-                <p>온실 내부 이산화탄소(CO2) 농도를 800~1,000ppm으로 증대할 때 기공 전도도 및 광합성 효율(A-Ci Curve) 변화 조향.</p>
+            <a href="/articles/article-04-greenhouse-heating-loss.html" class="guide-card" data-tags="heat loss u-value greenhouse energy insulation">
+                <div class="guide-card-header">
+                    <span class="guide-tag">🔥 Energy Systems</span>
+                    <span style="font-size: 0.8rem; color: #64748b;">Vol. 04</span>
+                </div>
+                <h2>Greenhouse Nighttime Heat Loss Formulations & Thermal Glazing U-Value Optimization</h2>
+                <p>Quantifying convective, radiative, and infiltration heat loss across single glass, double polycarbonate, and multi-layer thermal screens.</p>
             </a>
 
-            <a href="/articles/article-10-vertical-farm-hvac-design.html" class="guide-card">
-                <h2>밀폐형 수직농장 공조(HVAC) 설비 기류 및 제습 수량 계산법</h2>
-                <p>수직농장 내 미세기후(Micro-climate) 불균일성을 해소하기 위한 수평/수직 풍속(0.3~0.5m/s) 설계 및 1일 제습량 계산 수식.</p>
+            <a href="/articles/article-05-penman-monteith-transpiration.html" class="guide-card" data-tags="penman monteith evapotranspiration et0 irrigation fao56">
+                <div class="guide-card-header">
+                    <span class="guide-tag">💧 Hydrology</span>
+                    <span style="font-size: 0.8rem; color: #64748b;">Vol. 05</span>
+                </div>
+                <h2>FAO-56 Penman-Monteith Evapotranspiration Dynamics in Protected Horticultural Structures</h2>
+                <p>Modeling canopy energy balance, aerodynamic resistance, and net radiation to accurately forecast daily irrigation demand.</p>
             </a>
 
-            <a href="/articles/article-11-strawberry-greenhouse-climate.html" class="guide-card">
-                <h2>설향 딸기 시설하우스 화아분화 및 온도/주야간 변온 관리 기술</h2>
-                <p>국내 대표 품종 설향 딸기의 화아분화 촉진 저온 단일 처리 조건 및 휴면 타파, 주야간 관리 온도(25℃/8℃) 프로토콜.</p>
+            <a href="/articles/article-06-hydroponic-nutrient-formulation.html" class="guide-card" data-tags="nutrient hydroponics ec ph fertigation ions">
+                <div class="guide-card-header">
+                    <span class="guide-tag">🧪 Plant Nutrition</span>
+                    <span style="font-size: 0.8rem; color: #64748b;">Vol. 06</span>
+                </div>
+                <h2>Stoichiometric Hydroponic Solution Formulation: Ionic Equivalents (meq/L) and EC/pH Dynamics</h2>
+                <p>Balancing macro and micronutrient cation-anion ratios to maintain target osmotic potential and root absorption kinetics.</p>
             </a>
 
-            <a href="/articles/article-12-tomato-blossom-end-rot-calcium.html" class="guide-card">
-                <h2>토마토 배꼽썩음병(BER) 예방을 위한 칼슘(Ca2+) 이온 이동과 증산 조절</h2>
-                <p>토마토 과실 배꼽썩음병의 원인인 세포벽 칼슘 결핍 메커니즘과 식물체 체내 칼슘 이동 강화를 위한 증산 유도 공학.</p>
+            <a href="/articles/article-07-indoor-plant-lighting-spectrum.html" class="guide-card" data-tags="spectrum mccree led far red photomorphogenesis">
+                <div class="guide-card-header">
+                    <span class="guide-tag">💡 Photobiology</span>
+                    <span style="font-size: 0.8rem; color: #64748b;">Vol. 07</span>
+                </div>
+                <h2>Spectral Photobiology: McCree Action Spectrum & Far-Red Emerson Enhancement in CEA</h2>
+                <p>Leveraging 660nm deep red and 730nm far-red photon ratios to regulate phytochrome photostationary state and shade avoidance.</p>
             </a>
 
-            <a href="/articles/article-13-smartfarm-sensor-calibration.html" class="guide-card">
-                <h2>온실 환경 센서(온습도·EC·pH·CO2) 교정(Calibration) 및 보정 수식</h2>
-                <p>스마트팜 센서 드리프트(Drift) 오차를 보정하기 위한 2점 교정(Two-Point Calibration) 표준 알고리즘과 수식.</p>
+            <a href="/articles/article-08-monstera-deliciosa-care-guide.html" class="guide-card" data-tags="monstera indoor plant aroid tipburn substrate">
+                <div class="guide-card-header">
+                    <span class="guide-tag">🌿 Ornamentals</span>
+                    <span style="font-size: 0.8rem; color: #64748b;">Vol. 08</span>
+                </div>
+                <h2>Aroid Biophysics: Hydroponic Cultivation & VPD Optimization for Monstera deliciosa</h2>
+                <p>Preventing apical necrosis, tip-burn, and root hypoxia in high-value indoor foliage through engineered rhizosphere aeration.</p>
             </a>
 
-            <a href="/articles/article-14-ausbildung-horticulture-germany.html" class="guide-card">
-                <h2>독일 원예 아우스빌둥(Gärtner) 교육 과정과 실전 정착 가이드</h2>
-                <p>유럽 선진 원예 강국 독일의 원예 재배사(Gärtner - Zierpflanzenbau) 3년 아우스빌둥 직업교육 시스템 및 비자 준비 절차.</p>
+            <a href="/articles/article-09-stomata-conductance-photosynthesis.html" class="guide-card" data-tags="stomata co2 photosynthesis gas exchange c3">
+                <div class="guide-card-header">
+                    <span class="guide-tag">🔬 Crop Physiology</span>
+                    <span style="font-size: 0.8rem; color: #64748b;">Vol. 09</span>
+                </div>
+                <h2>Stomatal Conductance Kinetics & CO2 Enrichment Assimilation (A-Ci Curves) in C3 Crops</h2>
+                <p>Optimizing elevated CO2 enrichment (800–1,200 ppm) alongside leaf boundary layer conductance to maximize net Rubisco carboxylation.</p>
             </a>
 
-            <a href="/articles/article-15-plant-interior-biophilic-design.html" class="guide-card">
-                <h2>상업 공간 바이오필릭(Biophilic) 플랜테리어 식물 배치 및 유지관리 공학</h2>
-                <p>카페, 오피스, 호텔 로비 바이오필릭 디자인 적용 시 조도(Lux), 습도, 환기 환경 분석에 따른 적정 식물 선택 및 배합 모듈.</p>
+            <a href="/articles/article-10-vertical-farm-hvac-design.html" class="guide-card" data-tags="hvac airflow dehumidification vertical farm microclimate">
+                <div class="guide-card-header">
+                    <span class="guide-tag">❄️ HVAC Engineering</span>
+                    <span style="font-size: 0.8rem; color: #64748b;">Vol. 10</span>
+                </div>
+                <h2>Closed-Canopy Airflow Distribution & Dehumidification Sizing for Vertical Farms</h2>
+                <p>Engineering sensible vs latent heat removal, air exchange rates, and boundary layer disruption to eliminate microclimate stratification.</p>
+            </a>
+
+            <a href="/articles/article-11-strawberry-greenhouse-climate.html" class="guide-card" data-tags="strawberry climate dormancy flower induction winter">
+                <div class="guide-card-header">
+                    <span class="guide-tag">🍓 Solanaceae & Berry</span>
+                    <span style="font-size: 0.8rem; color: #64748b;">Vol. 11</span>
+                </div>
+                <h2>Greenhouse Strawberry Climate Steering: Floral Induction, DIF, & Chilling Accumulation</h2>
+                <p>Managing day-night temperature differentials (DIF) and photoperiod to optimize crown carbohydrate storage and brix levels.</p>
+            </a>
+
+            <a href="/articles/article-12-tomato-blossom-end-rot-calcium.html" class="guide-card" data-tags="tomato ber calcium blossom end rot xylem">
+                <div class="guide-card-header">
+                    <span class="guide-tag">🍅 Crop Pathology</span>
+                    <span style="font-size: 0.8rem; color: #64748b;">Vol. 12</span>
+                </div>
+                <h2>Cell Wall Calcium Translocation & Blossom-End Rot (BER) Biophysical Prevention in Tomato</h2>
+                <p>Preventing calcium deficiency through generative root pressure steering, night humidity management, and xylem mass-flow tuning.</p>
+            </a>
+
+            <a href="/articles/article-13-smartfarm-sensor-calibration.html" class="guide-card" data-tags="sensor calibration ec ph co2 drift ntc">
+                <div class="guide-card-header">
+                    <span class="guide-tag">📟 Sensorics</span>
+                    <span style="font-size: 0.8rem; color: #64748b;">Vol. 13</span>
+                </div>
+                <h2>Smart Farm Sensor Metrology: Calibration Drift & Error Compensation Algorithms</h2>
+                <p>Multi-point linear regression and temperature compensation formulas for NDIR CO2, glass-electrode pH, and toroidal EC sensors.</p>
+            </a>
+
+            <a href="/articles/article-14-ausbildung-horticulture-germany.html" class="guide-card" data-tags="germany ausbildung gartner straelen meister visa">
+                <div class="guide-card-header">
+                    <span class="guide-tag">🇩🇪 Ausbildung Career</span>
+                    <span style="font-size: 0.8rem; color: #64748b;">Vol. 14</span>
+                </div>
+                <h2>German Dual Vocational Horticulture System (Gärtner Ausbildung) & Master Career Pathway</h2>
+                <p>Structure of the German 3-year dual apprenticeship system, Chamber of Agriculture (LWK) examinations, and Gärtnermeister qualifications.</p>
+            </a>
+
+            <a href="/articles/article-15-plant-interior-biophilic-design.html" class="guide-card" data-tags="biophilic interior plant light lux air quality">
+                <div class="guide-card-header">
+                    <span class="guide-tag">🏢 Biophilic Architecture</span>
+                    <span style="font-size: 0.8rem; color: #64748b;">Vol. 15</span>
+                </div>
+                <h2>Biophilic Commercial Interior Horticulture: Microclimate Modeling & Species Selection</h2>
+                <p>Integrating indoor botanical installations with HVAC zoning, supplemental photoperiod lighting, and automated sub-irrigation.</p>
             </a>
 
         </div>
     </div>
 </div>
+
+<script>
+function filterArticles() {
+    const query = document.getElementById('articleSearch').value.toLowerCase();
+    const cards = document.querySelectorAll('.guide-card');
+    cards.forEach(card => {
+        const text = (card.innerText + " " + (card.getAttribute('data-tags') || '')).toLowerCase();
+        if (text.includes(query)) {
+            card.style.display = 'block';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+}
+</script>
+
 <footer>
-    <p>© 2026 Inwoovation Lab. All rights reserved. | <a href="/privacy-policy.html">개인정보 처리방침</a> | <a href="/terms-of-service.html">이용약관</a> | <a href="/about.html">소개</a> | <a href="/contact.html">문의</a> | <a href="/guides.html">공학 가이드</a></p>
+    <div class="container">
+        <p>© 2026 Inwoovation Lab. All rights reserved. | <a href="/privacy-policy.html">Privacy Policy</a> | <a href="/terms-of-service.html">Terms of Service</a> | <a href="/about.html">About</a> | <a href="/contact.html">Contact</a></p>
+    </div>
 </footer>
 </body>
 </html>
