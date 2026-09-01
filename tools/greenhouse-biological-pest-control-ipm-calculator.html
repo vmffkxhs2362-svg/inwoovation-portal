@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greenhouse Biological Pest Control (IPM) & Predator Release Calculator | Inwoovation</title>
+  <meta name="description" content="Industrial Integrated Pest Management (IPM) bio-control calculator for commercial greenhouses. Calculate predatory mite (Phytoseiulus, Amblyseius) and parasitoid wasp (Encarsia, Aphidius) release rates.">
+  <link rel="stylesheet" href="css/digital_twin_styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  
+  <style>
+    .calc-card {
+      background: rgba(30, 41, 59, 0.85);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+    .input-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+    .input-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .input-group label {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+    .input-group select, .input-group input {
+      background: #0f172a;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #f8fafc;
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-family: var(--font-main);
+      font-size: 0.95rem;
+      outline: none;
+    }
+    .input-group select:focus, .input-group input:focus {
+      border-color: var(--accent-emerald);
+    }
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+    .res-box {
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      padding: 16px;
+      text-align: center;
+    }
+    .res-val {
+      font-family: var(--font-mono);
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--accent-emerald);
+      margin-top: 4px;
+    }
+    .compat-badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-top: 8px;
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Greenhouse Biological Pest Control (IPM) Calculator",
+    "url": "https://inwoovation.com/tools/greenhouse-biological-pest-control-ipm-calculator.html",
+    "description": "Calculates predatory mite and parasitoid wasp release rates, environmental survival envelopes, and chemical compatibility in commercial greenhouses.",
+    "applicationCategory": "EducationalApplication, AgriculturalTool",
+    "operatingSystem": "All",
+    "author": {
+      "@type": "Person",
+      "name": "Inwoo Hwang"
+    },
+    "dateModified": "2026-09-01"
+  }
+  </script>
+</head>
+<body>
+
+  <div class="sim-container">
+    <header class="sim-header">
+      <a href="index.html" class="nav-back">← Back to Engineering Tools Suite</a>
+      <h1>🐞 Greenhouse Biological Pest Control (IPM) Sizing Engine</h1>
+      <p>Calculate beneficial predatory mite & parasitoid release densities, biocontrol microclimate envelopes, and weekly scouting budgets.</p>
+    </header>
+
+    <div class="calc-card">
+      <h2 style="font-size: 1.2rem; margin-top: 0; color: #38bdf8;">1. Target Pest & Greenhouse Facility Parameters</h2>
+      <div class="input-grid">
+        <div class="input-group">
+          <label>Target Pest Infestation</label>
+          <select id="targetPest" onchange="calculateIPM()">
+            <option value="spider_mite">Two-Spotted Spider Mite (Tetranychus urticae)</option>
+            <option value="whitefly">Greenhouse Whitefly (Trialeurodes vaporariorum)</option>
+            <option value="thrips">Western Flower Thrips (Frankliniella occidentalis)</option>
+            <option value="aphid">Green Peach Aphid (Myzus persicae)</option>
+            <option value="fungus_gnat">Fungus Gnats (Bradysia spp.)</option>
+          </select>
+        </div>
+
+        <div class="input-group">
+          <label>Infestation Severity Level</label>
+          <select id="infestLevel" onchange="calculateIPM()">
+            <option value="preventive">Preventive / Zero Visible Pests (Baseline)</option>
+            <option value="low" selected>Low Severity (Isolated Hotspots, &lt;2 per leaf)</option>
+            <option value="medium">Medium Severity (Widespread, 3-10 per leaf)</option>
+            <option value="curative_high">Curative High Outbreak (&gt;10 per leaf + Webbing)</option>
+          </select>
+        </div>
+
+        <div class="input-group">
+          <label>Greenhouse Cultivation Area (m²)</label>
+          <input type="number" id="ghArea" value="10000" min="100" max="500000" step="500" oninput="calculateIPM()">
+        </div>
+
+        <div class="input-group">
+          <label>Current Canopy Temp (°C) & RH (%)</label>
+          <div style="display: flex; gap: 8px;">
+            <input type="number" id="curTemp" value="23" min="12" max="38" step="0.5" placeholder="°C" oninput="calculateIPM()">
+            <input type="number" id="curRH" value="68" min="20" max="95" step="1" placeholder="RH%" oninput="calculateIPM()">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="calc-card">
+      <h2 style="font-size: 1.2rem; margin-top: 0; color: #10b981;">2. Prescribed Beneficial Bio-Agents & Release Rates</h2>
+      
+      <div class="results-grid">
+        <div class="res-box">
+          <div style="color: #94a3b8; font-size: 0.85rem;">PRIMARY BIO-PREDATOR</div>
+          <div id="bioName" style="font-size: 1.15rem; font-weight: 700; color: #38bdf8; margin-top: 6px;">Phytoseiulus persimilis</div>
+          <div id="bioType" style="font-size: 0.75rem; color: #64748b;">Specialist Predatory Mite</div>
+        </div>
+
+        <div class="res-box">
+          <div style="color: #94a3b8; font-size: 0.85rem;">RELEASE DENSITY</div>
+          <div id="releaseDensity" class="res-val">6.0</div>
+          <div style="font-size: 0.75rem; color: #64748b;">beneficials / m²</div>
+        </div>
+
+        <div class="res-box">
+          <div style="color: #94a3b8; font-size: 0.85rem;">TOTAL WEEKLY RELEASE</div>
+          <div id="totalBeneficials" class="res-val" style="color: #facc15;">60,000</div>
+          <div style="font-size: 0.75rem; color: #64748b;">total predators / week</div>
+        </div>
+
+        <div class="res-box">
+          <div style="color: #94a3b8; font-size: 0.85rem;">PACKAGING UNITS</div>
+          <div id="bottleCount" class="res-val" style="color: #a78bfa;">30</div>
+          <div id="bottleLabel" style="font-size: 0.75rem; color: #64748b;">bottles (2,000 mites/btl)</div>
+        </div>
+      </div>
+
+      <div style="margin-top: 20px; padding: 16px; background: rgba(15, 23, 42, 0.5); border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.08);">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <span style="font-weight: 700; color: #f8fafc;">🌿 Environmental Viability Status:</span>
+          <span id="envStatusBadge" class="compat-badge" style="background: rgba(16, 185, 129, 0.2); color: #10b981; border: 1px solid #10b981;">OPTIMAL CLIMATE ENVELOPE</span>
+        </div>
+        <p id="envAdvice" style="font-size: 0.9rem; color: #cbd5e1; margin: 8px 0 0 0; line-height: 1.5;">
+          Current greenhouse microclimate (23.0°C, 68% RH) is ideal for <em>Phytoseiulus persimilis</em> oviposition and searching velocity. Predator population will double every 4.2 days, outpacing spider mite reproduction.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const PEST_DB = {
+      spider_mite: {
+        bioName: "Phytoseiulus persimilis",
+        bioType: "Obligate Predatory Mite",
+        rates: { preventive: 1.0, low: 6.0, medium: 15.0, curative_high: 35.0 },
+        packSize: 2000,
+        packLabel: "bottles (2,000 mites/btl)",
+        tOpt: [18, 27],
+        rhMin: 60
+      },
+      whitefly: {
+        bioName: "Encarsia formosa",
+        bioType: "Parasitoid Wasp (Pupae cards)",
+        rates: { preventive: 0.5, low: 2.0, medium: 5.0, curative_high: 12.0 },
+        packSize: 1000,
+        packLabel: "cards (1,000 pupae/card)",
+        tOpt: [20, 28],
+        rhMin: 50
+      },
+      thrips: {
+        bioName: "Amblyseius swirskii / Orius",
+        bioType: "Generalist Predatory Mite & Bug",
+        rates: { preventive: 25.0, low: 50.0, medium: 100.0, curative_high: 200.0 },
+        packSize: 50000,
+        packLabel: "tubes (50,000 mites/tube)",
+        tOpt: [22, 32],
+        rhMin: 65
+      },
+      aphid: {
+        bioName: "Aphidius colemani",
+        bioType: "Parasitoid Endoparasite Wasp",
+        rates: { preventive: 0.2, low: 1.0, medium: 4.0, curative_high: 10.0 },
+        packSize: 1000,
+        packLabel: "vials (1,000 wasps/vial)",
+        tOpt: [18, 25],
+        rhMin: 55
+      },
+      fungus_gnat: {
+        bioName: "Steinernema feltiae (Nematodes)",
+        bioType: "Entomopathogenic Nematode",
+        rates: { preventive: 250000, low: 500000, medium: 1000000, curative_high: 2000000 },
+        packSize: 50000000,
+        packLabel: "trays (50M nematodes/tray)",
+        tOpt: [14, 25],
+        rhMin: 70
+      }
+    };
+
+    function calculateIPM() {
+      const pest = document.getElementById('targetPest').value;
+      const level = document.getElementById('infestLevel').value;
+      const area = parseFloat(document.getElementById('ghArea').value) || 10000;
+      const temp = parseFloat(document.getElementById('curTemp').value) || 23;
+      const rh = parseFloat(document.getElementById('curRH').value) || 68;
+
+      const data = PEST_DB[pest];
+      const rate = data.rates[level];
+      const total = rate * area;
+      const bottles = Math.ceil(total / data.packSize);
+
+      document.getElementById('bioName').textContent = data.bioName;
+      document.getElementById('bioType').textContent = data.bioType;
+      document.getElementById('releaseDensity').textContent = rate >= 1000 ? (rate / 1000).toLocaleString() + 'k' : rate.toFixed(1);
+      document.getElementById('totalBeneficials').textContent = total >= 1000000 ? (total / 1000000).toFixed(1) + 'M' : total.toLocaleString();
+      document.getElementById('bottleCount').textContent = bottles.toLocaleString();
+      document.getElementById('bottleLabel').textContent = data.packLabel;
+
+      const badge = document.getElementById('envStatusBadge');
+      const advice = document.getElementById('envAdvice');
+
+      if (temp >= data.tOpt[0] && temp <= data.tOpt[1] && rh >= data.rhMin) {
+        badge.textContent = "OPTIMAL CLIMATE ENVELOPE";
+        badge.style.background = "rgba(16, 185, 129, 0.2)";
+        badge.style.color = "#10b981";
+        badge.style.borderColor = "#10b981";
+        advice.innerHTML = `Current microclimate (${temp.toFixed(1)}°C, ${rh}% RH) supports maximum predatory reproduction and voracity for <em>${data.bioName}</em>.`;
+      } else if (rh < data.rhMin) {
+        badge.textContent = "SUB-OPTIMAL: LOW HUMIDITY RISK";
+        badge.style.background = "rgba(245, 158, 11, 0.2)";
+        badge.style.color = "#f59e0b";
+        badge.style.borderColor = "#f59e0b";
+        advice.innerHTML = `Relative humidity (${rh}%) is below threshold (${data.rhMin}%). Predatory eggs risk desiccation. Trigger high-pressure fogging or localized canopy misting.`;
+      } else {
+        badge.textContent = "THERMAL STRESS WARNING";
+        badge.style.background = "rgba(239, 68, 68, 0.2)";
+        badge.style.color = "#ef4444";
+        badge.style.borderColor = "#ef4444";
+        advice.innerHTML = `Temperature (${temp.toFixed(1)}°C) is outside the optimal window (${data.tOpt[0]}-${data.tOpt[1]}°C). Benefical activity will slow down significantly.`;
+      }
+    }
+
+    calculateIPM();
+  </script>
+</body>
+</html>
