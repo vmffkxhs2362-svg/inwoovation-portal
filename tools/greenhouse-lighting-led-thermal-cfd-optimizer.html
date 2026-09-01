@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Horticultural LED Thermal Heat-Sink & Junction Temperature (Tj) Optimizer | Inwoovation</title>
+  <meta name="description" content="Industrial engineering calculator for horticultural LED fixture thermal dissipation, junction temperature (Tj), photon efficacy derating, and canopy convective heat flux.">
+  <link rel="stylesheet" href="css/digital_twin_styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  
+  <style>
+    .calc-card {
+      background: rgba(30, 41, 59, 0.85);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+    .res-box {
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      padding: 16px;
+      text-align: center;
+    }
+    .res-val {
+      font-family: var(--font-mono);
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--accent-emerald);
+      margin-top: 4px;
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Horticultural LED Thermal Heat-Sink & Junction Temp Optimizer",
+    "url": "https://inwoovation.com/tools/greenhouse-lighting-led-thermal-cfd-optimizer.html",
+    "description": "Calculates LED diode junction temperature, thermal dissipation, and photon efficacy derating.",
+    "applicationCategory": "EducationalApplication, EngineeringTool",
+    "operatingSystem": "All",
+    "author": {
+      "@type": "Person",
+      "name": "Inwoo Hwang"
+    },
+    "dateModified": "2026-09-01"
+  }
+  </script>
+</head>
+<body>
+
+  <div class="sim-container">
+    <header class="sim-header">
+      <h1>💡 LED Thermal Heat-Sink & $T_j$ Optimizer</h1>
+      <p>Diode Junction Temperature, Photon Efficacy Derating & Canopy Convective Heat Flux Engine</p>
+    </header>
+
+    <div class="calc-card">
+      <h3 class="control-section-title">⚡ Fixture Electrical Power & Heat Sink Sizing</h3>
+      <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px;">
+        <div class="control-group">
+          <div class="control-label-row">
+            <span>Fixture Electrical Power ($P_{elec}$)</span>
+            <span id="lbl-power">650 W</span>
+          </div>
+          <input type="range" id="slider-power" min="100" max="1200" value="650" step="25">
+        </div>
+
+        <div class="control-group">
+          <div class="control-label-row">
+            <span>Fixture PPE Efficacy ($\mu\text{mol/J}$)</span>
+            <span id="lbl-ppe">3.2 µmol/J</span>
+          </div>
+          <input type="range" id="slider-ppe" min="2.2" max="4.0" value="3.2" step="0.1">
+        </div>
+
+        <div class="control-group">
+          <div class="control-label-row">
+            <span>Ambient Air Temp ($T_{amb}$)</span>
+            <span id="lbl-t-amb">22.0 °C</span>
+          </div>
+          <input type="range" id="slider-t-amb" min="15" max="38" value="22.0" step="0.5">
+        </div>
+      </div>
+    </div>
+
+    <!-- Results Telemetry -->
+    <div class="results-grid">
+      <div class="res-box">
+        <div style="font-size: 0.8rem; color: var(--text-muted);">DIODE JUNCTION TEMP ($T_j$)</div>
+        <div class="res-val" id="res-tj" style="color: var(--accent-cyan);">64.2 °C</div>
+      </div>
+      <div class="res-box">
+        <div style="font-size: 0.8rem; color: var(--text-muted);">HEAT DISSIPATION LOAD</div>
+        <div class="res-val" id="res-heat-w" style="color: #ef4444;">338 W</div>
+      </div>
+      <div class="res-box">
+        <div style="font-size: 0.8rem; color: var(--text-muted);">PPE THERMAL DERATING</div>
+        <div class="res-val" id="res-derate" style="color: var(--accent-emerald);">- 2.4 % (Optimal)</div>
+      </div>
+      <div class="res-box">
+        <div style="font-size: 0.8rem; color: var(--text-muted);">EXPECTED L90 LIFETIME</div>
+        <div class="res-val" id="res-life">68,000 Hours</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function calculate() {
+      const pElec = parseFloat(document.getElementById('slider-power').value);
+      const ppe = parseFloat(document.getElementById('slider-ppe').value);
+      const tAmb = parseFloat(document.getElementById('slider-t-amb').value);
+
+      document.getElementById('lbl-power').innerText = pElec + ' W';
+      document.getElementById('lbl-ppe').innerText = ppe.toFixed(1) + ' µmol/J';
+      document.getElementById('lbl-t-amb').innerText = tAmb.toFixed(1) + ' °C';
+
+      // Photons carry ~48% of energy at 3.2 umol/J, the rest (52%) is dissipated as heat
+      const photonFraction = Math.min(0.60, ppe * 0.15);
+      const heatFraction = 1.0 - photonFraction;
+      const heatW = pElec * heatFraction;
+
+      // Thermal resistance R_th (j-a) for aluminum extruded fin sink ~ 0.125 °C/W
+      const rTh = 0.125;
+      const tj = tAmb + (heatW * rTh);
+
+      // Efficacy thermal derating: ~ -0.08% per degree above 25°C
+      const deltaT = Math.max(0, tj - 25.0);
+      const deratePct = deltaT * 0.08;
+
+      // Lifetime estimation based on Arrhenius equation
+      const lifeHours = Math.max(25000, 100000 * Math.exp(-0.012 * (tj - 50)));
+
+      document.getElementById('res-tj').innerText = tj.toFixed(1) + ' °C';
+      document.getElementById('res-heat-w').innerText = Math.round(heatW) + ' W';
+      document.getElementById('res-derate').innerText = '- ' + deratePct.toFixed(1) + ' %';
+      document.getElementById('res-life').innerText = Math.round(lifeHours).toLocaleString() + ' Hours';
+
+      const tjEl = document.getElementById('res-tj');
+      if (tj < 70) tjEl.style.color = '#10b981';
+      else if (tj < 85) tjEl.style.color = '#f59e0b';
+      else tjEl.style.color = '#ef4444';
+    }
+
+    document.querySelectorAll('input').forEach(el => {
+      el.addEventListener('input', calculate);
+    });
+
+    calculate();
+  </script>
+</body>
+</html>

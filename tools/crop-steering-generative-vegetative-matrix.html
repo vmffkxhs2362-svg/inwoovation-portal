@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Commercial Crop Steering Matrix (Generative vs Vegetative) | Inwoovation</title>
+  <meta name="description" content="Industrial crop steering optimizer for high-wire greenhouse tomatoes, peppers, and cannabis. Calculate 24h DIF, VPD differential, and irrigation dry-down balance.">
+  <link rel="stylesheet" href="css/digital_twin_styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  
+  <style>
+    .calc-card {
+      background: rgba(30, 41, 59, 0.85);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+    .steer-meter-wrapper {
+      height: 42px;
+      background: #0f172a;
+      border-radius: 10px;
+      overflow: hidden;
+      display: flex;
+      margin: 20px 0;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      position: relative;
+    }
+    .steer-seg-veg {
+      width: 50%;
+      background: linear-gradient(90deg, #10b981, #3b82f6);
+      display: flex;
+      align-items: center;
+      padding-left: 16px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: white;
+    }
+    .steer-seg-gen {
+      width: 50%;
+      background: linear-gradient(90deg, #f59e0b, #ef4444);
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding-right: 16px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: white;
+    }
+    .steer-needle {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 6px;
+      background: #ffffff;
+      box-shadow: 0 0 12px #ffffff;
+      transition: left 0.3s ease;
+    }
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+    .res-box {
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      padding: 16px;
+      text-align: center;
+    }
+    .res-val {
+      font-family: var(--font-mono);
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--accent-emerald);
+      margin-top: 4px;
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Commercial Crop Steering Matrix Calculator",
+    "url": "https://inwoovation.com/tools/crop-steering-generative-vegetative-matrix.html",
+    "description": "Calculates generative vs vegetative crop steering balance using DIF, VPD, and irrigation dry-down metrics.",
+    "applicationCategory": "EducationalApplication, AgriculturalTool",
+    "operatingSystem": "All",
+    "author": {
+      "@type": "Person",
+      "name": "Inwoo Hwang"
+    },
+    "dateModified": "2026-09-01"
+  }
+  </script>
+</head>
+<body>
+
+  <div class="sim-container">
+    <header class="sim-header">
+      <h1>🌱 Crop Steering Matrix (Generative vs Vegetative)</h1>
+      <p>Precision 24h DIF, VPD Differential & Substrate Dry-Down Plant Balance Engine</p>
+    </header>
+
+    <div class="calc-card">
+      <h3 class="control-section-title">⚖️ Climate & Substrate Steering Signals</h3>
+      <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px;">
+        <div class="control-group">
+          <div class="control-label-row">
+            <span>24h Temperature DIF ($T_{day} - T_{night}$)</span>
+            <span id="lbl-dif">+ 4.0 °C</span>
+          </div>
+          <input type="range" id="slider-dif" min="-4.0" max="10.0" value="4.0" step="0.5">
+        </div>
+
+        <div class="control-group">
+          <div class="control-label-row">
+            <span>Daytime Canopy VPD</span>
+            <span id="lbl-vpd">1.25 kPa</span>
+          </div>
+          <input type="range" id="slider-vpd" min="0.5" max="2.2" value="1.25" step="0.05">
+        </div>
+
+        <div class="control-group">
+          <div class="control-label-row">
+            <span>Overnight Slab Dry-Down</span>
+            <span id="lbl-drydown">10.0 %</span>
+          </div>
+          <input type="range" id="slider-drydown" min="3.0" max="18.0" value="10.0" step="0.5">
+        </div>
+      </div>
+
+      <h4 style="margin: 24px 0 8px 0; color: var(--text-muted); font-size: 0.95rem;">Live Steering Equilibrium Balance</h4>
+      <div class="steer-meter-wrapper">
+        <div class="steer-seg-veg">◀ VEGETATIVE (Foliage & Stems)</div>
+        <div class="steer-seg-gen">GENERATIVE (Flowers & Fruit) ▶</div>
+        <div id="steer-needle" class="steer-needle" style="left: 62%;"></div>
+      </div>
+    </div>
+
+    <!-- Results Telemetry -->
+    <div class="results-grid">
+      <div class="res-box">
+        <div style="font-size: 0.8rem; color: var(--text-muted);">STEERING INDEX (CSI)</div>
+        <div class="res-val" id="res-csi" style="color: var(--accent-emerald);">+ 2.4 (Generative)</div>
+      </div>
+      <div class="res-box">
+        <div style="font-size: 0.8rem; color: var(--text-muted);">FRUIT SET PROBABILITY</div>
+        <div class="res-val" id="res-fruit-set" style="color: var(--accent-cyan);">94.8 %</div>
+      </div>
+      <div class="res-box">
+        <div style="font-size: 0.8rem; color: var(--text-muted);">HEAD THICKNESS INDEX</div>
+        <div class="res-val" id="res-head-thick">11.2 mm (Balanced)</div>
+      </div>
+      <div class="res-box">
+        <div style="font-size: 0.8rem; color: var(--text-muted);">RECOMMENDED ACTION</div>
+        <div class="res-val" id="res-action" style="color: #10b981; font-size: 1.3rem;">MAINTAIN CURRENT REGIME</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function calculate() {
+      const dif = parseFloat(document.getElementById('slider-dif').value);
+      const vpd = parseFloat(document.getElementById('slider-vpd').value);
+      const drydown = parseFloat(document.getElementById('slider-drydown').value);
+
+      document.getElementById('lbl-dif').innerText = (dif >= 0 ? '+ ' : '') + dif.toFixed(1) + ' °C';
+      document.getElementById('lbl-vpd').innerText = vpd.toFixed(2) + ' kPa';
+      document.getElementById('lbl-drydown').innerText = drydown.toFixed(1) + ' %';
+
+      // Crop Steering Index (CSI): 
+      // Higher DIF (+), Higher VPD (+), Higher DryDown (+) => Generative (+)
+      // Lower DIF (-), Lower VPD (-), Lower DryDown (-) => Vegetative (-)
+      const csi = (dif * 0.45) + ((vpd - 0.9) * 2.5) + ((drydown - 7.0) * 0.35);
+
+      // Map CSI (-5 to +5) to percentage (0% to 100%)
+      const needlePct = Math.max(5, Math.min(95, 50 + (csi * 9.0)));
+      document.getElementById('steer-needle').style.left = needlePct + '%';
+
+      let statusText = 'BALANCED';
+      if (csi > 1.5) statusText = '+ ' + csi.toFixed(1) + ' (Generative)';
+      else if (csi < -1.5) statusText = csi.toFixed(1) + ' (Vegetative)';
+      else statusText = (csi >= 0 ? '+ ' : '') + csi.toFixed(1) + ' (Balanced)';
+
+      const fruitSet = Math.min(99, Math.max(70, 85 + csi * 3.5));
+      const headThick = Math.max(8.0, 12.5 - csi * 0.6);
+
+      document.getElementById('res-csi').innerText = statusText;
+      document.getElementById('res-fruit-set').innerText = fruitSet.toFixed(1) + ' %';
+      document.getElementById('res-head-thick').innerText = headThick.toFixed(1) + ' mm';
+
+      const actEl = document.getElementById('res-action');
+      if (csi > 3.5) {
+        actEl.innerText = 'OVER-GENERATIVE (INCREASE IRRIGATION)';
+        actEl.style.color = '#ef4444';
+      } else if (csi < -3.5) {
+        actEl.innerText = 'OVER-VEGETATIVE (INCREASE DIF & DRYDOWN)';
+        actEl.style.color = '#38bdf8';
+      } else {
+        actEl.innerText = 'OPTIMAL CROP BALANCE';
+        actEl.style.color = '#10b981';
+      }
+    }
+
+    document.querySelectorAll('input').forEach(el => {
+      el.addEventListener('input', calculate);
+    });
+
+    calculate();
+  </script>
+</body>
+</html>
