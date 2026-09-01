@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta name="google-adsense-account" content="ca-pub-8597809158257497">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>施設園芸・スマート農業のための飽差（VPD）最適化マスタークラス | Inwoovation Lab</title>
+    <meta name="description" content="温室栽培および植物工場における飽差（Vapour Pressure Deficit, VPD）の物理計算、葉温と気温差による蒸散ダイナミクス、カルシウム欠乏（尻腐れ病）防止制御。">
+    <link rel="canonical" href="https://inwoovation.com/articles/ja/article-01-vpd-masterclass-jp.html" />
+    <link rel="alternate" hreflang="en" href="https://inwoovation.com/articles/article-01-vpd-master-class.html" />
+    <link rel="alternate" hreflang="de" href="https://inwoovation.com/articles/de/article-01-vpd-meisterklasse.html" />
+    <link rel="alternate" hreflang="ja" href="https://inwoovation.com/articles/ja/article-01-vpd-masterclass-jp.html" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V4RYJBMEDE"></script>
+    <script>
+       window.dataLayer = window.dataLayer || [];
+       function gtag(){dataLayer.push(arguments);}
+       gtag('js', new Date());
+       gtag('config', 'G-V4RYJBMEDE');
+    </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8597809158257497" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+        .article-container { max-width: 850px; margin: 40px auto; padding: 35px; background: #ffffff; border-radius: 16px; border: 1px solid #e2e8f0; line-height: 1.85; color: #334155; }
+        .article-container h1 { font-size: 2rem; color: #0f172a; margin-bottom: 15px; border-bottom: 3px solid #10b981; padding-bottom: 12px; line-height: 1.3; }
+        .article-meta { color: #64748b; font-size: 0.95rem; margin-bottom: 30px; display: flex; gap: 15px; background: #f8fafc; padding: 10px 16px; border-radius: 8px; font-weight: 500; }
+        .article-container h2 { font-size: 1.35rem; color: #065f46; margin-top: 35px; margin-bottom: 14px; background: #ecfdf5; padding: 8px 16px; border-left: 4px solid #10b981; border-radius: 4px; }
+        .article-container p { margin-bottom: 18px; text-align: justify; }
+        .article-container ul { margin-left: 24px; margin-bottom: 20px; }
+        .back-link { display: inline-block; margin-bottom: 20px; color: #10b981; text-decoration: none; font-weight: 600; }
+        .equation-box { background:#f1f5f9; padding:15px; border-radius:8px; font-family:monospace; font-weight:bold; color:#0f172a; margin-bottom:18px; line-height: 1.6; }
+        .cta-box { background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(56, 189, 248, 0.1)); border: 1px solid rgba(16, 185, 129, 0.3); padding: 20px; border-radius: 12px; margin-top: 30px; text-align: center; }
+        .cta-btn { display: inline-block; background: #10b981; color: #ffffff; padding: 10px 22px; border-radius: 8px; text-decoration: none; font-weight: 700; margin-top: 10px; }
+    </style>
+    <!-- Open Graph & Social SEO -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="施設園芸・スマート農業のための飽差（VPD）最適化マスタークラス | Inwoovation Lab">
+    <meta property="og:description" content="温室栽培および植物工場における飽差（Vapour Pressure Deficit, VPD）の物理計算、葉温と気温差による蒸散ダイナミクス、カルシウム欠乏（尻腐れ病）防止制御。">
+    <meta property="og:url" content="https://inwoovation.com/articles/ja/article-01-vpd-masterclass-jp.html">
+    <meta property="og:site_name" content="Inwoovation Lab">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- JSON-LD TechArticle Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": "施設園芸・スマート農業のための飽差（VPD）最適化マスタークラス",
+      "description": "温室栽培および植物工場における飽差（Vapour Pressure Deficit, VPD）の物理計算、葉温と気温差による蒸散ダイナミクス、カルシウム欠乏（尻腐れ病）防止制御。",
+      "url": "https://inwoovation.com/articles/ja/article-01-vpd-masterclass-jp.html",
+      "inLanguage": "ja-JP",
+      "author": {
+        "@type": "Person",
+        "name": "Inwoo Hwang",
+        "jobTitle": "園芸工学エンジニア & Meister候補"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Inwoovation Lab",
+        "url": "https://inwoovation.com"
+      },
+      "datePublished": "2026-09-01",
+      "dateModified": "2026-09-01"
+    }
+    </script>
+</head>
+<body>
+    <div class="article-container">
+        <a href="../../index.html" class="back-link">&larr; Inwoovation Lab ポータルへ戻る</a>
+        
+        <h1>施設園芸・スマート農業のための飽差（VPD）最適化マスタークラス：物理計算と気候制御</h1>
+        
+        <div class="article-meta">
+            <span>執筆: Inwoo Hwang</span> &bull; <span>2026年9月1日</span> &bull; <span>施設園芸工学 &amp; 植物生理学</span>
+        </div>
+
+        <p>オランダ型フェンロー温室や最先端の人工光型植物工場（PFAL）において、単なる相対湿度（RH）の管理だけでは十分な生産効率を達成できません。植物の根からの水・養分吸収（特にカルシウム）、気孔開度、および純光合成速度を決定づける本質的な物理指標は、葉内と周囲空気との間の<strong>飽差（Vapour Pressure Deficit, VPD）</strong>です。</p>
+
+        <h2>1. 飽和水蒸気圧（$e_s$）を求めるテテンス（Tetens）の式</h2>
+        <p>温度 $T$（°C）における空気の飽和水蒸気圧は、熱力学的なマグヌス・テテンスの公式により極めて高い精度で算出されます：</p>
+
+        <div class="equation-box">
+            $$e_s(T) = 0.61078 \cdot \exp\left( \frac{17.27 \cdot T}{T + 237.3} \right) \quad [\text{kPa}]$$
+        </div>
+
+        <p>温室内の実水蒸気圧（$e_a$）は、相対湿度（$\text{RH}$ %）を乗じることで求まります：</p>
+
+        <div class="equation-box">
+            $$e_a = e_s(T_{air}) \cdot \frac{\text{RH}}{100} \quad [\text{kPa}]$$
+        </div>
+
+        <h2>2. 葉温飽差（$VPD_{leaf}$）と空気飽差（$VPD_{air}$）の決定的な違い</h2>
+        <p>蒸散による気化熱冷却や日射吸収により、<strong>実際の葉温（$T_{leaf}$）は室温（$T_{air}$）と1.5°C〜2.5°C乖離</strong>します。真の蒸散駆動力を正確に把握するには、赤外線放射温度計を用いた葉温基準の飽差（$\text{VPD}_{leaf}$）制御が不可欠です：</p>
+
+        <div class="equation-box">
+            $$\text{VPD}_{leaf} = e_s(T_{leaf}) - e_a \quad [\text{kPa}]$$
+        </div>
+
+        <ul>
+            <li><strong>最適制御領域（トマト・キュウリ等）</strong>: $0.85\text{ 〜 }1.25\text{ kPa}$。気孔が十分に開き、健全な蒸散と光合成が持続するゴールデンゾーン。</li>
+            <li><strong>低飽差リスク（$< 0.4\text{ kPa}$）</strong>: 蒸散が停止し、カルシウムが果実先端に届かず<strong>尻腐れ病（Blossom End Rot）</strong>が発生。過剰な溢泌水により灰色かび病等の菌害を誘発。</li>
+            <li><strong>高飽差リスク（$> 1.6\text{ kPa}$）</strong>: 植物が水ストレスを感知し気孔を閉鎖。光合成速度が激減し生育が停止。</li>
+        </ul>
+
+        <div class="cta-box">
+            <h3>オンライン飽差（VPD）計算ツール</h3>
+            <p>温室や栽培室の環境数値を入力して、リアルタイムの飽差・露点をシミュレーションできます。</p>
+            <a href="https://smartfarm.inwoovation.com/vpd.html" class="cta-btn" target="_blank">VPD計算ツールを起動 &rarr;</a>
+        </div>
+    </div>
+</body>
+</html>
