@@ -84,6 +84,12 @@ function generateInstitutionalPDF(reportTitle, kpiData, inputSummary, recommenda
                 <p style="font-size:0.85rem; color:#15803d; line-height:1.6; margin:0;">${recommendationText}</p>
             </div>
 
+            
+            <!-- 4. Legal & Engineering Disclaimer -->
+            <div style="margin-bottom:16px; padding:10px 14px; background:#f8fafc; border:1px solid #e2e8f0; border-radius:6px; font-size:0.68rem; color:#64748b; line-height:1.4;">
+                <strong>⚖️ Engineering & Agronomic Disclaimer:</strong> This automated audit report is generated for preliminary estimation, educational, and research modeling purposes. Calculations are derived from standard biophysical models (ASABE, DIN V 18599, FAO-56). Commercial execution, structural sizing, and chemical/biological applications must be verified by licensed Professional Engineers (PE) and certified local crop consultants. Inwoovation Lab assumes no liability for commercial outcomes or equipment performance.
+            </div>
+
             <!-- Footer & Disclaimers -->
             <div style="border-top:1px solid #e2e8f0; padding-top:12px; margin-top:30px; display:flex; justify-content:space-between; font-size:0.7rem; color:#94a3b8;">
                 <div>Verified by Inwoovation Lab Automated Biophysical Kernel v2026.9</div>

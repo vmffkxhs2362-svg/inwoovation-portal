@@ -251,6 +251,42 @@
             </div>
 
             <!-- Stats Ribbon -->
+
+        <!-- === VISITOR QUICK-START ONBOARDING GUIDE === -->
+        <section style="margin: 20px 0 40px; background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(16px); border: 1px solid rgba(56, 189, 248, 0.25); border-radius: 20px; padding: 28px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 14px;">
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <span style="font-size: 1.6rem;">👋</span>
+                    <div>
+                        <h3 style="font-family: 'Outfit', sans-serif; font-size: 1.25rem; font-weight: 800; color: #f8fafc; margin: 0;">Welcome to Inwoovation Lab — Quick Start Guide</h3>
+                        <p style="color: #94a3b8; font-size: 0.88rem; margin: 2px 0 0 0;">How commercial growers, engineers, and researchers utilize our open-access CEA ecosystem:</p>
+                    </div>
+                </div>
+                <button onclick="window.InwooPalette.open()" style="background: rgba(56, 189, 248, 0.15); border: 1px solid #38bdf8; color: #38bdf8; padding: 6px 14px; border-radius: 8px; font-weight: 700; font-size: 0.85rem; cursor: pointer;">
+                    ⚡ Try Spotlight (Ctrl+K)
+                </button>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px;">
+                <div style="background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 16px;">
+                    <div style="font-size: 1.1rem; font-weight: 800; color: #38bdf8; margin-bottom: 6px;">1️⃣ Instant Search</div>
+                    <p style="font-size: 0.85rem; color: #cbd5e1; line-height: 1.5; margin: 0;">Press <kbd style="background: rgba(255,255,255,0.1); padding: 1px 4px; border-radius: 4px; color: #38bdf8; font-family: monospace;">Ctrl+K</kbd> to search 32 tools, 10 crop guides, and 39 global climate whitepapers in 0ms.</p>
+                </div>
+                <div style="background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 16px;">
+                    <div style="font-size: 1.1rem; font-weight: 800; color: #10b981; margin-bottom: 6px;">2️⃣ 0ms Simulations</div>
+                    <p style="font-size: 0.85rem; color: #cbd5e1; line-height: 1.5; margin: 0;">Run 3D WebGL Venlo twins, heating loads, and crop steering algorithms directly in your browser with zero sign-up.</p>
+                </div>
+                <div style="background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 16px;">
+                    <div style="font-size: 1.1rem; font-weight: 800; color: #f59e0b; margin-bottom: 6px;">3️⃣ 1-Click Audit PDF</div>
+                    <p style="font-size: 0.85rem; color: #cbd5e1; line-height: 1.5; margin: 0;">Generate institutional-grade A4 engineering audit reports ready for banks, investors, and team reviews.</p>
+                </div>
+                <div style="background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 16px;">
+                    <div style="font-size: 1.1rem; font-weight: 800; color: #a855f7; margin-bottom: 6px;">4️⃣ OpenCEA Python</div>
+                    <p style="font-size: 0.85rem; color: #cbd5e1; line-height: 1.5; margin: 0;">Integrate our MIT-licensed Python physics engine & FastMCP servers directly into your greenhouse automation software.</p>
+                </div>
+            </div>
+        </section>
+
             <div class="stats-ribbon">
                 <div class="stat-box">
                     <span class="stat-icon">🛠️</span>
@@ -706,6 +742,21 @@
             </a>
         </section>
     </div>
+
+    
+        <!-- === PROMINENT LEGAL & ENGINEERING DISCLAIMER === -->
+        <section style="margin: 40px 0; background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(245, 158, 11, 0.3); border-radius: 16px; padding: 24px; color: #94a3b8; font-size: 0.88rem; line-height: 1.65; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px; color: #f59e0b; font-weight: 700; font-size: 1rem; font-family: 'Outfit', sans-serif;">
+                <span style="font-size: 1.3rem;">⚖️</span>
+                <span>Horticultural Engineering & Agronomic Simulation Disclaimer</span>
+            </div>
+            <p style="margin-bottom: 8px;">
+                The computational tools, biophysical models, computer vision leaf pathology analyzers, and crop steering algorithms provided on <strong>Inwoovation Lab (inwoovation.com)</strong> are developed for scientific research, educational modeling, and preliminary engineering design. All thermodynamic, psychrometric, and photobiological formulas are calibrated against established academic literature (including ASABE standards, DIN V 18599, Wageningen UR research, and FAO-56).
+            </p>
+            <p style="margin-bottom: 0;">
+                <strong>Notice of Limitation:</strong> Actual commercial crop yield, microclimate homogeneity, energy consumption, and biological efficacy depend on localized factors, structural integrity, sensor calibration, and operational diligence. These open-source tools do <em>not</em> constitute certified Professional Engineering (PE) stamped drawings, structural guarantees, or regulatory pesticide/fertilizer prescriptions. Always consult with certified local agronomists, licensed engineers, and local agricultural extension authorities before making major capital investments or crop management adjustments.
+            </p>
+        </section>
 
     <!-- Footer -->
     <footer>
