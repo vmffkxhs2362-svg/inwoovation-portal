@@ -1,45 +1,228 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta name="google-adsense-account" content="ca-pub-8597809158257497">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>연구소 소개 | Inwoovation Lab</title>
-    <meta name="description" content="Inwoovation Lab - 미래형 AgTech & 비대칭 소프트웨어 엔지니어링 랩 소개 페이지입니다.">
+    <title>About Inwoovation Lab | Precision AgTech & CEA Engineering</title>
+    <meta name="description" content="Inwoovation Lab is an independent R&D lab building open-access biophysical simulators and engineering tools for commercial greenhouse growers, vertical farmers, and CEA engineers worldwide.">
     <link rel="canonical" href="https://inwoovation.com/about.html" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V4RYJBMEDE"></script>
+    <script>
+       window.dataLayer = window.dataLayer || [];
+       function gtag(){dataLayer.push(arguments);}
+       gtag('js', new Date());
+       gtag('config', 'G-V4RYJBMEDE');
+    </script>
     <!-- Google AdSense Script -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8597809158257497" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="styles.css">
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://inwoovation.com/about.html">
+    <meta property="og:title" content="About Inwoovation Lab | Precision AgTech & CEA Engineering">
+    <meta property="og:description" content="Open-access biophysical simulators for commercial greenhouse growers worldwide.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=20260901_about_v2">
     <style>
-        .article-container { max-width: 800px; margin: 40px auto; padding: 30px; background: #ffffff; border-radius: 16px; border: 1px solid #e2e8f0; line-height: 1.8; color: #334155; }
-        .article-container h1 { font-size: 2rem; color: #0f172a; margin-bottom: 20px; }
-        .article-container h2 { font-size: 1.3rem; color: #1e293b; margin-top: 30px; margin-bottom: 12px; border-bottom: 2px solid #f1f5f9; padding-bottom: 8px; }
-        .article-container p { margin-bottom: 16px; }
-        .article-container ul { margin-left: 20px; margin-bottom: 16px; }
-        .back-link { display: inline-block; margin-bottom: 20px; color: #10b981; text-decoration: none; font-weight: 600; }
+        .about-hero {
+            text-align: center;
+            padding: 60px 20px 40px;
+        }
+        .about-hero h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #10b981, #38bdf8, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 16px;
+        }
+        .about-hero p.subtitle {
+            font-size: 1.15rem;
+            color: #94a3b8;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto 60px;
+            padding: 0 24px;
+        }
+        .about-section {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 36px;
+            margin-bottom: 28px;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+        .about-section:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 40px rgba(16, 185, 129, 0.12);
+        }
+        .about-section h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.5rem;
+            color: #f8fafc;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .about-section p, .about-section li {
+            color: #cbd5e1;
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+        .about-section ul {
+            list-style: none;
+            padding: 0;
+        }
+        .about-section ul li {
+            padding: 8px 0;
+            padding-left: 24px;
+            position: relative;
+        }
+        .about-section ul li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: 700;
+        }
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .stat-card {
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            padding: 24px;
+            text-align: center;
+        }
+        .stat-card .stat-number {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #10b981;
+        }
+        .stat-card .stat-label {
+            color: #94a3b8;
+            font-size: 0.85rem;
+            margin-top: 6px;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: #38bdf8;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 20px 24px;
+        }
         .back-link:hover { text-decoration: underline; }
     </style>
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ResearchOrganization",
+        "name": "Inwoovation Lab",
+        "url": "https://inwoovation.com",
+        "description": "Independent R&D lab building open-access biophysical simulators for commercial greenhouse growers and CEA engineers worldwide.",
+        "foundingDate": "2025",
+        "areaServed": "Worldwide",
+        "knowsAbout": ["Controlled Environment Agriculture", "Greenhouse Engineering", "Hydroponics", "Photobiology", "Precision Agriculture"]
+    }
+    </script>
 </head>
 <body>
 <div class="container">
-    <a href="/" class="back-link">← 메인 페이지로 돌아가기</a>
-    <div class="article-container">
-        <h1>Inwoovation Lab 소개</h1>
-        <p><strong>Inwoovation Lab (이노베이션 랩)</strong>은 정밀 원예 공학, 식물 물리학 시뮬레이션, 그리고 제로-코스트 서버리스 웹 엔지니어링 기술을 결합하여 고성능 디지털 도구를 제공하는 독립 연구 및 개발(R&D) 포털입니다.</p>
+    <a href="/" class="back-link">← Return to Inwoovation Lab Home</a>
 
-        <h2>연구 미션 (Mission)</h2>
-        <p>우리는 복잡하고 비효율적인 영농 데이터와 첨단 기술 간의 장벽을 허물고, 누구나 웹 브라우저에서 즉각 실행 가능한 가볍고 직관적인 디지털 솔루션을 만듭니다.</p>
+    <div class="about-hero">
+        <h1>About Inwoovation Lab</h1>
+        <p class="subtitle">We build free, open-access biophysical simulation tools that help commercial greenhouse growers, vertical farmers, and agricultural engineers make data-driven decisions — anywhere in the world.</p>
+    </div>
 
-        <h2>핵심 연구 영역</h2>
-        <ul>
-            <li><strong>정밀 AgTech 물리 시뮬레이션:</strong> VPD(포화수증기압차), DLI(광합성 유효 광량), 야간 온실 열손실 수치 모델링</li>
-            <li><strong>생태 진단 & 안전 시스템:</strong> 병해충 예찰 자가진단 및 수분벌 약제 안전 대기시간(REI) 예측 툴킷</li>
-            <li><strong>지속 가능한 서버리스 엔지니어링:</strong> 런타임 의존성이 0%인 최고 속도의 디커플드 정적 웹 포털 빌드 architecture</li>
-        </ul>
+    <div class="about-content">
+        <!-- Mission -->
+        <div class="about-section">
+            <h2>🎯 Our Mission</h2>
+            <p>Complex horticultural engineering — VPD microclimate control, photosynthetic light optimization, fertigation chemistry, energy modeling — has traditionally required expensive proprietary software or deep academic training.</p>
+            <p>Inwoovation Lab breaks down these barriers by creating <strong>browser-based, zero-install engineering calculators</strong> that run instantly on any device. Every tool is free, requires no registration, and works offline.</p>
+        </div>
+
+        <!-- By the Numbers -->
+        <div class="about-section">
+            <h2>📊 By the Numbers</h2>
+            <div class="stat-grid">
+                <div class="stat-card">
+                    <div class="stat-number">30</div>
+                    <div class="stat-label">Engineering Tools</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">72</div>
+                    <div class="stat-label">Technical Articles</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">Languages (EN / DE / JA)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">0</div>
+                    <div class="stat-label">Cost to Users ($)</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Core Research Areas -->
+        <div class="about-section">
+            <h2>🔬 Core Research Areas</h2>
+            <ul>
+                <li><strong>Greenhouse Climate Physics</strong> — VPD, psychrometric Mollier analysis, thermal screen heat loss, natural ventilation convection modeling</li>
+                <li><strong>Photobiology & Spectrum Engineering</strong> — DLI optimization, PAR/Far-Red canopy extinction (Beer-Lambert), LED junction thermal design, photomorphogenesis</li>
+                <li><strong>Precision Fertigation & Hydroponics</strong> — Nutrient solution formulation, chemical speciation (Debye-Hückel), rockwool moisture/drain optimization</li>
+                <li><strong>AI & Autonomous Control</strong> — MPC reinforcement-learning climate controllers, MQTT IoT fleet simulation, digital twin modeling</li>
+                <li><strong>Energy & Structural Engineering</strong> — CHP flue gas SCR, thermal buffer tank stratification, RO desalination, wind/snow load (EN 13031)</li>
+                <li><strong>Crop Science & Plant Health</strong> — Farquhar photosynthesis (FvCB), crop steering (generative/vegetative), transpiration-calcium-BER risk, biological IPM predator sizing</li>
+            </ul>
+        </div>
+
+        <!-- Technology Stack -->
+        <div class="about-section">
+            <h2>⚡ Technology Philosophy</h2>
+            <p>Every tool is built with <strong>zero external framework dependencies</strong> — pure HTML, CSS, and vanilla JavaScript. This means:</p>
+            <ul>
+                <li><strong>Instant loading</strong> — No npm, no bundler, no build step. Sub-second page loads worldwide.</li>
+                <li><strong>Works offline</strong> — Once loaded, tools function without an internet connection.</li>
+                <li><strong>100% client-side privacy</strong> — No data ever leaves your browser. Zero telemetry on calculations.</li>
+                <li><strong>Runs anywhere</strong> — Desktop, tablet, or mobile phone in a greenhouse with spotty WiFi.</li>
+            </ul>
+        </div>
+
+        <!-- Open Source & Community -->
+        <div class="about-section">
+            <h2>🌱 Open Access Commitment</h2>
+            <p>Inwoovation Lab believes that precision agriculture knowledge should not be locked behind paywalls. Our tools are <strong>free for every grower on earth</strong> — from a small-scale farmer in Kenya to a 100-hectare Venlo glasshouse operator in the Netherlands.</p>
+            <p>All technical articles include academic citations (DOI/PMID) and are available in English, German, and Japanese to maximize global accessibility.</p>
+        </div>
     </div>
 </div>
 <footer>
-    <p>© 2026 Inwoovation Lab. All rights reserved. | <a href="/privacy-policy.html">개인정보 처리방침</a> | <a href="/terms-of-service.html">이용약관</a> | <a href="/about.html">소개</a> | <a href="/contact.html">문의</a></p>
+    <p>© 2026 Inwoovation Lab. All rights reserved. | <a href="/privacy-policy.html">Privacy Policy</a> | <a href="/terms-of-service.html">Terms of Service</a> | <a href="/about.html">About</a> | <a href="/contact.html">Contact</a></p>
 </footer>
 </body>
 </html>

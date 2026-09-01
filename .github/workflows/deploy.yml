@@ -1,0 +1,112 @@
+name: Deploy & Validate Inwoovation Portal
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate HTML files exist
+        run: |
+          echo "🔍 Checking critical files..."
+          CRITICAL_FILES=(
+            "index.html"
+            "about.html"
+            "contact.html"
+            "guides.html"
+            "tools/index.html"
+            "sitemap.xml"
+            "robots.txt"
+            "styles.css"
+            "privacy-policy.html"
+            "terms-of-service.html"
+          )
+          MISSING=0
+          for file in "${CRITICAL_FILES[@]}"; do
+            if [ ! -f "$file" ]; then
+              echo "❌ MISSING: $file"
+              MISSING=$((MISSING + 1))
+            else
+              echo "✅ Found: $file"
+            fi
+          done
+          if [ $MISSING -gt 0 ]; then
+            echo "::error::$MISSING critical file(s) missing!"
+            exit 1
+          fi
+
+      - name: Count tools and articles
+        run: |
+          TOOL_COUNT=$(ls -1 tools/*.html 2>/dev/null | grep -v index.html | wc -l)
+          ARTICLE_COUNT=$(ls -1 articles/*.html 2>/dev/null | wc -l)
+          ARTICLE_DE_COUNT=$(ls -1 articles/de/*.html 2>/dev/null | wc -l)
+          ARTICLE_JA_COUNT=$(ls -1 articles/ja/*.html 2>/dev/null | wc -l)
+          echo "📊 Content inventory:"
+          echo "   🔧 Tools: $TOOL_COUNT"
+          echo "   📄 Articles (EN): $ARTICLE_COUNT"
+          echo "   🇩🇪 Articles (DE): $ARTICLE_DE_COUNT"
+          echo "   🇯🇵 Articles (JA): $ARTICLE_JA_COUNT"
+          echo "   📦 Total pages: $((TOOL_COUNT + ARTICLE_COUNT + ARTICLE_DE_COUNT + ARTICLE_JA_COUNT + 5))"
+
+      - name: Validate sitemap.xml
+        run: |
+          if grep -q '<urlset' sitemap.xml; then
+            URL_COUNT=$(grep -c '<loc>' sitemap.xml)
+            echo "✅ sitemap.xml valid — $URL_COUNT URLs indexed"
+          else
+            echo "::error::sitemap.xml is malformed!"
+            exit 1
+          fi
+
+      - name: Check meta tags coverage
+        run: |
+          echo "🏷️ Checking SEO meta tags..."
+          TOTAL=0
+          HAS_TITLE=0
+          HAS_DESC=0
+          for f in index.html about.html contact.html guides.html tools/index.html; do
+            TOTAL=$((TOTAL + 1))
+            if grep -q '<title>' "$f"; then HAS_TITLE=$((HAS_TITLE + 1)); fi
+            if grep -qi 'meta name="description"' "$f"; then HAS_DESC=$((HAS_DESC + 1)); fi
+          done
+          echo "   Title tags: $HAS_TITLE / $TOTAL"
+          echo "   Meta descriptions: $HAS_DESC / $TOTAL"
+
+  deploy:
+    needs: validate
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
