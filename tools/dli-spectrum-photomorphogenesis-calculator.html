@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Commercial Greenhouse DLI & LED Spectrum Photomorphogenesis Calculator | Inwoovation</title>
+  <meta name="description" content="Industrial-grade Daily Light Integral (DLI) & Far-Red (730nm) Emerson Enhancement Effect spectral calculator for commercial greenhouse horticulture.">
+  <link rel="stylesheet" href="css/digital_twin_styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  
+  <style>
+    .calc-card {
+      background: rgba(30, 41, 59, 0.85);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+    .spectrum-bar-wrapper {
+      height: 36px;
+      border-radius: 8px;
+      overflow: hidden;
+      display: flex;
+      margin: 16px 0;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .spec-seg {
+      height: 100%;
+      transition: width 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: white;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+    }
+    .seg-blue { background: #3b82f6; }
+    .seg-white { background: #e2e8f0; color: #0f172a; text-shadow: none; }
+    .seg-deepred { background: #ef4444; }
+    .seg-farred { background: #881337; }
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+    .res-box {
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      padding: 16px;
+      text-align: center;
+    }
+    .res-val {
+      font-family: var(--font-mono);
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--accent-emerald);
+      margin-top: 4px;
+    }
+  </style>
+
+  <!-- Structured Data JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Greenhouse DLI & Spectrum Photomorphogenesis Calculator",
+    "url": "https://inwoovation.com/tools/dli-spectrum-photomorphogenesis-calculator.html",
+    "description": "Calculates Daily Light Integral (DLI), Far-Red Emerson enhancement effect, and spectrum ratios for horticultural crops.",
+    "applicationCategory": "EducationalApplication, AgriculturalTool",
+    "operatingSystem": "All",
+    "author": {
+      "@type": "Person",
+      "name": "Inwoo Hwang"
+    },
+    "dateModified": "2026-09-01"
+  }
+  </script>
+</head>
+<body>
+
+  <div class="sim-container">
+    <header class="sim-header">
+      <h1>💡 DLI & Far-Red Spectrum Calculator</h1>
+      <p>Professional Daily Light Integral & Emerson Enhancement Effect Photomorphogenesis Engine</p>
+    </header>
+
+    <div class="calc-card">
+      <h3 class="control-section-title">🌱 Select Crop Profile & Target DLI</h3>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+        <div class="control-group">
+          <label style="color: var(--text-muted); font-size: 0.9rem;">Target Crop</label>
+          <select id="crop-select" style="background: #1e293b; color: white; border: 1px solid #475569; padding: 10px; border-radius: 8px; font-size: 1rem;">
+            <option value="tomato">High-Wire Tomato (Target DLI: 25 - 30 mol/m²d)</option>
+            <option value="pepper">Sweet Bell Pepper (Target DLI: 20 - 25 mol/m²d)</option>
+            <option value="cucumber">Greenhouse Cucumber (Target DLI: 22 - 28 mol/m²d)</option>
+            <option value="lettuce">DWC Butterhead Lettuce (Target DLI: 14 - 17 mol/m²d)</option>
+            <option value="strawberry">Ever-bearing Strawberry (Target DLI: 18 - 22 mol/m²d)</option>
+          </select>
+        </div>
+
+        <div class="control-group">
+          <div class="control-label-row">
+            <span>Natural Sunlight DLI (Outdoor/Glass Transmission)</span>
+            <span id="lbl-nat-dli">12.0 mol/m²d</span>
+          </div>
+          <input type="range" id="slider-nat-dli" min="2" max="30" value="12" step="0.5">
+        </div>
+      </div>
+    </div>
+
+    <div class="calc-card">
+      <h3 class="control-section-title">⚡ Supplemental LED Lighting Parameters</h3>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+        <div class="control-group">
+          <div class="control-label-row">
+            <span>Supplemental PPFD ($\mu\text{mol}/(\text{m}^2\text{s})$)</span>
+            <span id="lbl-ppfd">250 µmol/m²s</span>
+          </div>
+          <input type="range" id="slider-ppfd" min="0" max="600" value="250" step="10">
+        </div>
+
+        <div class="control-group">
+          <div class="control-label-row">
+            <span>Photoperiod Duration</span>
+            <span id="lbl-photoperiod">16.0 Hours</span>
+          </div>
+          <input type="range" id="slider-photoperiod" min="8" max="20" value="16" step="0.5">
+        </div>
+      </div>
+
+      <h4 style="margin: 20px 0 8px 0; color: var(--text-muted); font-size: 0.95rem;">LED Spectrum Distribution Breakdown</h4>
+      <div class="spectrum-bar-wrapper">
+        <div id="seg-b" class="spec-seg seg-blue" style="width: 15%;">450nm (15%)</div>
+        <div id="seg-w" class="spec-seg seg-white" style="width: 20%;">White (20%)</div>
+        <div id="seg-dr" class="spec-seg seg-deepred" style="width: 55%;">660nm (55%)</div>
+        <div id="seg-fr" class="spec-seg seg-farred" style="width: 10%;">730nm (10%)</div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;">
+        <div class="control-group">
+          <span style="font-size: 0.8rem; color: #60a5fa;">Royal Blue (450nm) %</span>
+          <input type="number" id="inp-b" value="15" min="0" max="100" style="background:#0f172a; color:white; border:1px solid #334155; padding:6px; border-radius:6px;">
+        </div>
+        <div class="control-group">
+          <span style="font-size: 0.8rem; color: #cbd5e1;">Broad White %</span>
+          <input type="number" id="inp-w" value="20" min="0" max="100" style="background:#0f172a; color:white; border:1px solid #334155; padding:6px; border-radius:6px;">
+        </div>
+        <div class="control-group">
+          <span style="font-size: 0.8rem; color: #f87171;">Deep Red (660nm) %</span>
+          <input type="number" id="inp-dr" value="55" min="0" max="100" style="background:#0f172a; color:white; border:1px solid #334155; padding:6px; border-radius:6px;">
+        </div>
+        <div class="control-group">
+          <span style="font-size: 0.8rem; color: #fda4af;">Far-Red (730nm) %</span>
+          <input type="number" id="inp-fr" value="10" min="0" max="100" style="background:#0f172a; color:white; border:1px solid #334155; padding:6px; border-radius:6px;">
+        </div>
+      </div>
+    </div>
+
+    <!-- Results Telemetry -->
+    <div class="results-grid">
+      <div class="res-box">
+        <div style="font-size: 0.8rem; color: var(--text-muted);">SUPPLEMENTAL DLI</div>
+        <div class="res-val" id="res-supp-dli">14.4 mol/m²d</div>
+      </div>
+      <div class="res-box">
+        <div style="font-size: 0.8rem; color: var(--text-muted);">TOTAL CROP DLI</div>
+        <div class="res-val" id="res-total-dli" style="color: var(--accent-cyan);">26.4 mol/m²d</div>
+      </div>
+      <div class="res-box">
+        <div style="font-size: 0.8rem; color: var(--text-muted);">EMERSON QUANTUM BOOST</div>
+        <div class="res-val" id="res-emerson" style="color: #ec4899;">+14.2 %</div>
+      </div>
+      <div class="res-box">
+        <div style="font-size: 0.8rem; color: var(--text-muted);">DLI TARGET FULFILLMENT</div>
+        <div class="res-val" id="res-target-pct">96.0 %</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function calculate() {
+      const natDli = parseFloat(document.getElementById('slider-nat-dli').value);
+      const ppfd = parseFloat(document.getElementById('slider-ppfd').value);
+      const photoperiod = parseFloat(document.getElementById('slider-photoperiod').value);
+      
+      const bPct = parseFloat(document.getElementById('inp-b').value) || 0;
+      const wPct = parseFloat(document.getElementById('inp-w').value) || 0;
+      const drPct = parseFloat(document.getElementById('inp-dr').value) || 0;
+      const frPct = parseFloat(document.getElementById('inp-fr').value) || 0;
+
+      // Update Spectrum Bar
+      const totalPct = bPct + wPct + drPct + frPct || 100;
+      document.getElementById('seg-b').style.width = (bPct / totalPct * 100) + '%';
+      document.getElementById('seg-b').innerText = '450nm (' + Math.round(bPct / totalPct * 100) + '%)';
+      
+      document.getElementById('seg-w').style.width = (wPct / totalPct * 100) + '%';
+      document.getElementById('seg-w').innerText = 'White (' + Math.round(wPct / totalPct * 100) + '%)';
+
+      document.getElementById('seg-dr').style.width = (drPct / totalPct * 100) + '%';
+      document.getElementById('seg-dr').innerText = '660nm (' + Math.round(drPct / totalPct * 100) + '%)';
+
+      document.getElementById('seg-fr').style.width = (frPct / totalPct * 100) + '%';
+      document.getElementById('seg-fr').innerText = '730nm (' + Math.round(frPct / totalPct * 100) + '%)';
+
+      // Supplemental DLI formula = PPFD * Hours * 0.0036
+      const suppDli = ppfd * photoperiod * 0.0036;
+      const totalDli = natDli + suppDli;
+
+      // Emerson Effect calculation: Far-red ratio relative to deep-red
+      const frRatio = (frPct / (drPct + frPct || 1));
+      let emersonBoost = 0;
+      if (frRatio > 0.02 && frRatio < 0.25) {
+        emersonBoost = (frRatio * 100) * 1.35;
+      } else if (frRatio >= 0.25) {
+        emersonBoost = 22.5; // saturation
+      }
+
+      // Crop Target Mapping
+      const crop = document.getElementById('crop-select').value;
+      let targetDli = 27.5;
+      if (crop === 'pepper') targetDli = 22.5;
+      else if (crop === 'cucumber') targetDli = 25.0;
+      else if (crop === 'lettuce') targetDli = 15.5;
+      else if (crop === 'strawberry') targetDli = 20.0;
+
+      const targetPct = (totalDli / targetDli) * 100;
+
+      // Update DOM
+      document.getElementById('lbl-nat-dli').innerText = natDli.toFixed(1) + ' mol/m²d';
+      document.getElementById('lbl-ppfd').innerText = ppfd + ' µmol/m²s';
+      document.getElementById('lbl-photoperiod').innerText = photoperiod.toFixed(1) + ' Hours';
+
+      document.getElementById('res-supp-dli').innerText = suppDli.toFixed(1) + ' mol/m²d';
+      document.getElementById('res-total-dli').innerText = totalDli.toFixed(1) + ' mol/m²d';
+      document.getElementById('res-emerson').innerText = '+' + emersonBoost.toFixed(1) + ' %';
+      document.getElementById('res-target-pct').innerText = targetPct.toFixed(1) + ' %';
+
+      if (targetPct >= 90 && targetPct <= 110) {
+        document.getElementById('res-target-pct').style.color = '#10b981';
+      } else if (targetPct < 75) {
+        document.getElementById('res-target-pct').style.color = '#f59e0b';
+      } else {
+        document.getElementById('res-target-pct').style.color = '#38bdf8';
+      }
+    }
+
+    document.querySelectorAll('input, select').forEach(el => {
+      el.addEventListener('input', calculate);
+      el.addEventListener('change', calculate);
+    });
+
+    calculate();
+  </script>
+</body>
+</html>
