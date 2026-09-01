@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="google-adsense-account" content="ca-pub-8597809158257497">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greenhouse Natural Ventilation & Buoyancy-Driven Airflow Calculator | Inwoovation Lab</title>
+    <meta name="description" content="Calculate natural ventilation rates, buoyancy-driven (stack effect) and wind-driven airflow through greenhouse vents using ASABE EP406.4 and De Jong & Bot thermodynamic models. Free precision CEA tool.">
+    <link rel="canonical" href="https://inwoovation.com/tools/greenhouse-natural-ventilation-buoyancy-airflow-calculator.html" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V4RYJBMEDE"></script>
+    <script>
+       window.dataLayer = window.dataLayer || [];
+       function gtag(){dataLayer.push(arguments);}
+       gtag('js', new Date());
+       gtag('config', 'G-V4RYJBMEDE');
+    </script>
+    <!-- Google AdSense Script -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8597809158257497" crossorigin="anonymous"></script>
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://inwoovation.com/tools/greenhouse-natural-ventilation-buoyancy-airflow-calculator.html">
+    <meta property="og:title" content="Greenhouse Natural Ventilation Calculator">
+    <meta property="og:description" content="Calculate buoyancy (stack effect) and wind-driven ventilation rates through greenhouse roof and side vents.">
+    <meta property="og:image" content="https://inwoovation.com/og-cover.jpg">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css?v=20260901_tool31">
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Greenhouse Natural Ventilation & Buoyancy-Driven Airflow Calculator",
+        "url": "https://inwoovation.com/tools/greenhouse-natural-ventilation-buoyancy-airflow-calculator.html",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "All",
+        "description": "Calculate natural ventilation rates using combined buoyancy (stack effect) and wind-driven airflow models for greenhouse roof and side vents.",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "author": { "@type": "Organization", "name": "Inwoovation Lab", "url": "https://inwoovation.com" }
+    }
+    </script>
+    <style>
+        .tool-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 30px 24px 60px;
+        }
+        .tool-header {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+        .tool-header h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #10b981, #38bdf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 12px;
+        }
+        .tool-header p {
+            color: #94a3b8;
+            font-size: 1.05rem;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        .tool-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(16, 185, 129, 0.12);
+            color: #10b981;
+            font-weight: 700;
+            font-size: 0.78rem;
+            padding: 5px 12px;
+            border-radius: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 12px;
+        }
+        .calc-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-bottom: 24px;
+        }
+        @media (max-width: 768px) {
+            .calc-grid { grid-template-columns: 1fr; }
+        }
+        .calc-section {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 28px;
+        }
+        .calc-section h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.25rem;
+            color: #f8fafc;
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .input-group {
+            margin-bottom: 16px;
+        }
+        .input-group label {
+            display: block;
+            color: #94a3b8;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+        .input-group input, .input-group select {
+            width: 100%;
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            border-radius: 10px;
+            padding: 10px 14px;
+            color: #f8fafc;
+            font-size: 0.95rem;
+            outline: none;
+            transition: border-color 0.2s;
+            box-sizing: border-box;
+        }
+        .input-group input:focus, .input-group select:focus {
+            border-color: #38bdf8;
+            box-shadow: 0 0 12px rgba(56, 189, 248, 0.15);
+        }
+        .input-hint {
+            color: #64748b;
+            font-size: 0.75rem;
+            margin-top: 4px;
+        }
+        .btn-calculate {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: #fff;
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border: none;
+            border-radius: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(16, 185, 129, 0.3);
+            margin-bottom: 24px;
+        }
+        .btn-calculate:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.45);
+        }
+        .btn-calculate:active { transform: translateY(0); }
+        .results-panel {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            border-radius: 20px;
+            padding: 32px;
+            display: none;
+        }
+        .results-panel.active { display: block; }
+        .results-panel h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.4rem;
+            color: #10b981;
+            margin-bottom: 20px;
+        }
+        .result-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        .result-card {
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 14px;
+            padding: 20px;
+            text-align: center;
+        }
+        .result-card .result-value {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2rem;
+            font-weight: 800;
+            color: #10b981;
+        }
+        .result-card .result-label {
+            color: #94a3b8;
+            font-size: 0.82rem;
+            margin-top: 4px;
+        }
+        .result-card .result-unit {
+            color: #64748b;
+            font-size: 0.75rem;
+        }
+        .vent-bar-container {
+            margin-top: 20px;
+        }
+        .vent-bar-label {
+            display: flex;
+            justify-content: space-between;
+            color: #cbd5e1;
+            font-size: 0.85rem;
+            margin-bottom: 6px;
+        }
+        .vent-bar-track {
+            width: 100%;
+            height: 28px;
+            background: rgba(15, 23, 42, 0.6);
+            border-radius: 14px;
+            overflow: hidden;
+            position: relative;
+            border: 1px solid rgba(255,255,255,0.06);
+        }
+        .vent-bar-fill {
+            height: 100%;
+            border-radius: 14px;
+            transition: width 0.6s ease;
+            display: flex;
+            align-items: center;
+            padding-left: 12px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: #fff;
+        }
+        .vent-bar-buoyancy { background: linear-gradient(90deg, #f59e0b, #ef4444); }
+        .vent-bar-wind { background: linear-gradient(90deg, #38bdf8, #6366f1); }
+        .vent-bar-combined { background: linear-gradient(90deg, #10b981, #34d399); }
+        .theory-section {
+            background: rgba(30, 41, 59, 0.5);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 16px;
+            padding: 28px;
+            margin-top: 28px;
+        }
+        .theory-section h3 {
+            font-family: 'Outfit', sans-serif;
+            color: #f8fafc;
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+        }
+        .theory-section p, .theory-section li {
+            color: #94a3b8;
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+        .theory-section code {
+            background: rgba(56, 189, 248, 0.1);
+            color: #38bdf8;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: #38bdf8;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+        .back-link:hover { text-decoration: underline; }
+        .status-indicator {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 14px;
+            border-radius: 10px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            margin-top: 12px;
+        }
+        .status-good { background: rgba(16,185,129,0.12); color: #10b981; }
+        .status-warning { background: rgba(245,158,11,0.12); color: #f59e0b; }
+        .status-danger { background: rgba(239,68,68,0.12); color: #ef4444; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <a href="/tools/" class="back-link">← Back to All Tools</a>
+    <div class="tool-container">
+        <div class="tool-header">
+            <span class="tool-badge">🌬️ Tool #31 — Climate Control</span>
+            <h1>Greenhouse Natural Ventilation & Buoyancy-Driven Airflow Calculator</h1>
+            <p>Calculate combined buoyancy (stack effect) and wind-driven ventilation rates through roof and side vents using ASABE EP406.4 and De Jong & Bot thermodynamic airflow models.</p>
+        </div>
+
+        <div class="calc-grid">
+            <!-- Greenhouse Geometry -->
+            <div class="calc-section">
+                <h2>🏗️ Greenhouse Geometry</h2>
+                <div class="input-group">
+                    <label for="floorArea">Floor Area (m²)</label>
+                    <input type="number" id="floorArea" value="1000" min="10" max="100000" step="10">
+                    <div class="input-hint">Total greenhouse ground coverage</div>
+                </div>
+                <div class="input-group">
+                    <label for="ridgeHeight">Ridge Height (m)</label>
+                    <input type="number" id="ridgeHeight" value="6.5" min="2" max="20" step="0.1">
+                    <div class="input-hint">Height from floor to ridge peak</div>
+                </div>
+                <div class="input-group">
+                    <label for="gutterHeight">Gutter / Eave Height (m)</label>
+                    <input type="number" id="gutterHeight" value="4.5" min="1.5" max="15" step="0.1">
+                    <div class="input-hint">Height from floor to gutter/eave</div>
+                </div>
+                <div class="input-group">
+                    <label for="greenhouseVolume">Greenhouse Volume (m³)</label>
+                    <input type="number" id="greenhouseVolume" value="5500" min="20" max="500000" step="50">
+                    <div class="input-hint">Total enclosed air volume</div>
+                </div>
+            </div>
+
+            <!-- Vent Openings -->
+            <div class="calc-section">
+                <h2>🪟 Vent Openings</h2>
+                <div class="input-group">
+                    <label for="roofVentArea">Roof Vent Opening Area (m²)</label>
+                    <input type="number" id="roofVentArea" value="80" min="0" max="10000" step="1">
+                    <div class="input-hint">Total openable roof vent area (both sides combined)</div>
+                </div>
+                <div class="input-group">
+                    <label for="sideVentArea">Side Vent Opening Area (m²)</label>
+                    <input type="number" id="sideVentArea" value="60" min="0" max="10000" step="1">
+                    <div class="input-hint">Total openable side wall vent area</div>
+                </div>
+                <div class="input-group">
+                    <label for="dischargeCoeff">Discharge Coefficient (Cd)</label>
+                    <input type="number" id="dischargeCoeff" value="0.6" min="0.1" max="1.0" step="0.05">
+                    <div class="input-hint">0.5–0.7 typical; higher = less obstruction (insect screens: 0.3–0.5)</div>
+                </div>
+                <div class="input-group">
+                    <label for="windCoeff">Wind Pressure Coefficient (Cw)</label>
+                    <input type="number" id="windCoeff" value="0.09" min="0.01" max="0.5" step="0.01">
+                    <div class="input-hint">0.05–0.15 typical for multi-span greenhouses</div>
+                </div>
+            </div>
+
+            <!-- Climate Conditions -->
+            <div class="calc-section">
+                <h2>🌡️ Climate Conditions</h2>
+                <div class="input-group">
+                    <label for="tempOutside">Outside Air Temperature (°C)</label>
+                    <input type="number" id="tempOutside" value="25" min="-20" max="55" step="0.5">
+                </div>
+                <div class="input-group">
+                    <label for="tempInside">Inside Air Temperature (°C)</label>
+                    <input type="number" id="tempInside" value="30" min="-10" max="65" step="0.5">
+                </div>
+                <div class="input-group">
+                    <label for="windSpeed">External Wind Speed (m/s)</label>
+                    <input type="number" id="windSpeed" value="2.5" min="0" max="30" step="0.1">
+                    <div class="input-hint">Measured at 10m reference height</div>
+                </div>
+            </div>
+
+            <!-- Crop & Target -->
+            <div class="calc-section">
+                <h2>🌿 Crop & Target</h2>
+                <div class="input-group">
+                    <label for="cropType">Crop Type</label>
+                    <select id="cropType">
+                        <option value="tomato">Tomato (High transpiration)</option>
+                        <option value="cucumber">Cucumber (Very high transpiration)</option>
+                        <option value="pepper">Sweet Pepper (Medium transpiration)</option>
+                        <option value="lettuce">Lettuce / Leafy Greens (Low transpiration)</option>
+                        <option value="strawberry">Strawberry (Medium-Low transpiration)</option>
+                        <option value="cannabis">Cannabis / Hemp (High transpiration)</option>
+                        <option value="ornamental">Cut Flowers / Ornamentals (Variable)</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="targetACH">Target Air Changes per Hour (ACH)</label>
+                    <input type="number" id="targetACH" value="40" min="1" max="120" step="1">
+                    <div class="input-hint">30–60 ACH for hot climates; 10–20 ACH for mild. High-transpiration crops need ≥40.</div>
+                </div>
+            </div>
+        </div>
+
+        <button class="btn-calculate" id="btnCalculate" onclick="calculateVentilation()">🌬️ Calculate Natural Ventilation Rate</button>
+
+        <!-- Results -->
+        <div class="results-panel" id="resultsPanel">
+            <h2>📊 Ventilation Analysis Results</h2>
+
+            <div class="result-grid" id="resultGrid"></div>
+
+            <!-- Visual Bars -->
+            <div class="vent-bar-container" id="ventBars"></div>
+
+            <!-- Status -->
+            <div id="ventStatus" style="margin-top: 20px;"></div>
+        </div>
+
+        <!-- Theory Section -->
+        <div class="theory-section">
+            <h3>📐 Thermodynamic Model</h3>
+            <p>This calculator uses the <strong>combined buoyancy + wind-driven</strong> natural ventilation model widely used in greenhouse engineering research (Kittas et al., 1997; Boulard & Baille, 1995):</p>
+
+            <p><strong>Buoyancy-driven (Stack Effect):</strong></p>
+            <p><code>Q_buoyancy = Cd × A_vent × √(g × ΔH × (T_in − T_out) / T_mean_K)</code></p>
+            <p>Where <code>g = 9.81 m/s²</code>, <code>ΔH</code> = height difference between inlet and outlet vents, and <code>T_mean_K</code> = mean absolute temperature (K).</p>
+
+            <p><strong>Wind-driven:</strong></p>
+            <p><code>Q_wind = Cd × A_vent × U_wind × √(Cw)</code></p>
+
+            <p><strong>Combined (quadrature sum):</strong></p>
+            <p><code>Q_total = √(Q_buoyancy² + Q_wind²)</code></p>
+
+            <p>The combined model assumes buoyancy and wind effects are independent and additive in quadrature (ASABE EP406.4, ISO 13790:2008).</p>
+
+            <h3>📚 Key References</h3>
+            <ul>
+                <li>Kittas, C., Boulard, T., & Papadakis, G. (1997). Natural ventilation of a greenhouse with ridge and side openings: sensitivity to temperature and wind effects. <em>Transactions of the ASAE</em>, 40(2), 415-425.</li>
+                <li>Boulard, T., & Baille, A. (1995). Modelling of air exchange rate in a greenhouse equipped with continuous roof vents. <em>Journal of Agricultural Engineering Research</em>, 61(1), 37-48.</li>
+                <li>ASABE EP406.4 (2003). Heating, Ventilating and Cooling Greenhouses. American Society of Agricultural and Biological Engineers.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<footer>
+    <p>© 2026 Inwoovation Lab. All rights reserved. | <a href="/privacy-policy.html">Privacy Policy</a> | <a href="/terms-of-service.html">Terms of Service</a> | <a href="/about.html">About</a> | <a href="/contact.html">Contact</a></p>
+</footer>
+
+<script>
+function calculateVentilation() {
+    // Inputs
+    const floorArea = parseFloat(document.getElementById('floorArea').value);
+    const ridgeHeight = parseFloat(document.getElementById('ridgeHeight').value);
+    const gutterHeight = parseFloat(document.getElementById('gutterHeight').value);
+    const volume = parseFloat(document.getElementById('greenhouseVolume').value);
+    const roofVentArea = parseFloat(document.getElementById('roofVentArea').value);
+    const sideVentArea = parseFloat(document.getElementById('sideVentArea').value);
+    const cd = parseFloat(document.getElementById('dischargeCoeff').value);
+    const cw = parseFloat(document.getElementById('windCoeff').value);
+    const tOut = parseFloat(document.getElementById('tempOutside').value);
+    const tIn = parseFloat(document.getElementById('tempInside').value);
+    const uWind = parseFloat(document.getElementById('windSpeed').value);
+    const targetACH = parseFloat(document.getElementById('targetACH').value);
+
+    // Constants
+    const g = 9.81; // m/s²
+    const tMeanK = ((tIn + tOut) / 2) + 273.15; // Mean absolute temp (K)
+    const deltaH = ridgeHeight - gutterHeight; // Height difference (m)
+    const deltaT = Math.max(tIn - tOut, 0.1); // Temperature difference (°C)
+
+    // Effective vent area for buoyancy: combined roof + side using series formula
+    // For cross ventilation: use total area
+    const totalVentArea = roofVentArea + sideVentArea;
+
+    // Combined vent area for buoyancy (series resistance model)
+    let aEffBuoyancy;
+    if (roofVentArea > 0 && sideVentArea > 0) {
+        aEffBuoyancy = (roofVentArea * sideVentArea) / Math.sqrt(roofVentArea ** 2 + sideVentArea ** 2);
+    } else {
+        aEffBuoyancy = Math.max(roofVentArea, sideVentArea) * 0.5;
+    }
+
+    // Buoyancy-driven flow rate (m³/s)
+    const qBuoyancy = cd * aEffBuoyancy * Math.sqrt(g * deltaH * deltaT / tMeanK);
+
+    // Wind-driven flow rate (m³/s)
+    const qWind = cd * totalVentArea * uWind * Math.sqrt(cw);
+
+    // Combined (quadrature sum)
+    const qTotal = Math.sqrt(qBuoyancy ** 2 + qWind ** 2);
+
+    // Air changes per hour
+    const achBuoyancy = (qBuoyancy * 3600) / volume;
+    const achWind = (qWind * 3600) / volume;
+    const achTotal = (qTotal * 3600) / volume;
+
+    // Ventilation rate per floor area
+    const ventRatePerM2 = (qTotal * 3600) / floorArea; // m³/h/m²
+
+    // Percentage of target ACH
+    const achPercent = (achTotal / targetACH) * 100;
+
+    // Vent ratio
+    const ventRatio = (totalVentArea / floorArea) * 100;
+
+    // Buoyancy vs Wind contribution
+    const buoyancyPct = qTotal > 0 ? (qBuoyancy ** 2 / (qBuoyancy ** 2 + qWind ** 2)) * 100 : 0;
+    const windPct = 100 - buoyancyPct;
+
+    // Results grid
+    const resultGrid = document.getElementById('resultGrid');
+    resultGrid.innerHTML = `
+        <div class="result-card">
+            <div class="result-value">${qTotal.toFixed(1)}</div>
+            <div class="result-label">Total Ventilation Rate</div>
+            <div class="result-unit">m³/s</div>
+        </div>
+        <div class="result-card">
+            <div class="result-value">${achTotal.toFixed(1)}</div>
+            <div class="result-label">Air Changes per Hour</div>
+            <div class="result-unit">ACH (combined)</div>
+        </div>
+        <div class="result-card">
+            <div class="result-value">${ventRatePerM2.toFixed(1)}</div>
+            <div class="result-label">Ventilation per Floor Area</div>
+            <div class="result-unit">m³/h/m²</div>
+        </div>
+        <div class="result-card">
+            <div class="result-value">${ventRatio.toFixed(1)}%</div>
+            <div class="result-label">Vent-to-Floor Ratio</div>
+            <div class="result-unit">${totalVentArea.toFixed(0)} m² / ${floorArea.toFixed(0)} m²</div>
+        </div>
+        <div class="result-card">
+            <div class="result-value">${(qTotal * 3600).toFixed(0)}</div>
+            <div class="result-label">Total Hourly Volume</div>
+            <div class="result-unit">m³/h</div>
+        </div>
+        <div class="result-card">
+            <div class="result-value">${achPercent.toFixed(0)}%</div>
+            <div class="result-label">Target ACH Achievement</div>
+            <div class="result-unit">of ${targetACH} ACH target</div>
+        </div>
+    `;
+
+    // Visual bars
+    const maxACH = Math.max(achTotal, targetACH) * 1.2;
+    const ventBars = document.getElementById('ventBars');
+    ventBars.innerHTML = `
+        <div style="margin-bottom: 14px;">
+            <div class="vent-bar-label">
+                <span>🔥 Buoyancy (Stack Effect): ${achBuoyancy.toFixed(1)} ACH</span>
+                <span>${buoyancyPct.toFixed(0)}% contribution</span>
+            </div>
+            <div class="vent-bar-track">
+                <div class="vent-bar-fill vent-bar-buoyancy" style="width: ${Math.min((achBuoyancy / maxACH) * 100, 100)}%">
+                    ${achBuoyancy.toFixed(1)} ACH
+                </div>
+            </div>
+        </div>
+        <div style="margin-bottom: 14px;">
+            <div class="vent-bar-label">
+                <span>💨 Wind-Driven: ${achWind.toFixed(1)} ACH</span>
+                <span>${windPct.toFixed(0)}% contribution</span>
+            </div>
+            <div class="vent-bar-track">
+                <div class="vent-bar-fill vent-bar-wind" style="width: ${Math.min((achWind / maxACH) * 100, 100)}%">
+                    ${achWind.toFixed(1)} ACH
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="vent-bar-label">
+                <span>⚡ Combined Total: ${achTotal.toFixed(1)} ACH</span>
+                <span>Target: ${targetACH} ACH</span>
+            </div>
+            <div class="vent-bar-track">
+                <div class="vent-bar-fill vent-bar-combined" style="width: ${Math.min((achTotal / maxACH) * 100, 100)}%">
+                    ${achTotal.toFixed(1)} / ${targetACH} ACH
+                </div>
+            </div>
+        </div>
+    `;
+
+    // Status indicator
+    const ventStatus = document.getElementById('ventStatus');
+    let statusHTML = '';
+
+    if (achPercent >= 100) {
+        statusHTML = `<div class="status-indicator status-good">✅ Excellent — Natural ventilation meets or exceeds the ${targetACH} ACH target. No supplemental fans required under these conditions.</div>`;
+    } else if (achPercent >= 70) {
+        statusHTML = `<div class="status-indicator status-warning">⚠️ Marginal — Achieving ${achPercent.toFixed(0)}% of target. Consider increasing vent openings or adding HAF fans for peak periods.</div>`;
+    } else {
+        const deficitACH = targetACH - achTotal;
+        const fanFlowNeeded = (deficitACH * volume) / 3600;
+        statusHTML = `<div class="status-indicator status-danger">🚨 Insufficient — Only ${achPercent.toFixed(0)}% of target ACH. Deficit: ${deficitACH.toFixed(1)} ACH. Supplemental fans needed: ≥${fanFlowNeeded.toFixed(1)} m³/s (${(fanFlowNeeded * 2118.88).toFixed(0)} CFM).</div>`;
+    }
+
+    // Vent ratio recommendation
+    if (ventRatio < 15) {
+        statusHTML += `<div class="status-indicator status-warning" style="margin-top: 8px;">📐 Low vent-to-floor ratio (${ventRatio.toFixed(1)}%). Dutch standard recommends ≥15–25% for adequate passive ventilation.</div>`;
+    } else if (ventRatio >= 25) {
+        statusHTML += `<div class="status-indicator status-good" style="margin-top: 8px;">📐 Excellent vent-to-floor ratio (${ventRatio.toFixed(1)}%) — exceeds Dutch Venlo standard (≥25%).</div>`;
+    }
+
+    ventStatus.innerHTML = statusHTML;
+
+    // Show results
+    document.getElementById('resultsPanel').classList.add('active');
+
+    // Scroll to results
+    document.getElementById('resultsPanel').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+// Auto-calculate on load
+document.addEventListener('DOMContentLoaded', function() {
+    calculateVentilation();
+});
+</script>
+</body>
+</html>

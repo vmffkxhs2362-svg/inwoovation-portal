@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Greenhouse & Controlled Environment Engineering Tools Suite (30 Enterprise Tools) | Inwoovation</title>
-  <meta name="description" content="A comprehensive suite of 30 industrial-grade commercial greenhouse engineering calculators, digital twin simulators, AI diagnostic vision engines, IoT fleet telemetry, and autonomous MPC controllers.">
+  <title>Greenhouse & Controlled Environment Engineering Tools Suite (31 Enterprise Tools) | Inwoovation</title>
+  <meta name="description" content="A comprehensive suite of 31 industrial-grade commercial greenhouse engineering calculators, digital twin simulators, AI diagnostic vision engines, IoT fleet telemetry, and autonomous MPC controllers.">
   <link rel="stylesheet" href="css/digital_twin_styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -447,6 +447,16 @@
         </div>
         <a href="greenhouse-autonomous-ai-climate-controller.html" class="tool-link">Launch Autonomous MPC Controller →</a>
       </div>
+
+      <!-- Tool 31 -->
+      <div class="tool-card">
+        <div>
+          <div class="tool-icon">🌬️</div>
+          <h2 class="tool-title">Natural Ventilation & Buoyancy Airflow Calculator</h2>
+          <p class="tool-desc">Combined buoyancy (stack effect) and wind-driven ventilation rate calculator using ASABE EP406.4 and De Jong & Bot thermodynamic models for greenhouse roof and side vents.</p>
+        </div>
+        <a href="greenhouse-natural-ventilation-buoyancy-airflow-calculator.html" class="tool-link">Launch Ventilation Calculator →</a>
+      </div>
     </div>
   </div>
 
@@ -460,7 +470,7 @@
           c.style.display = 'flex';
         } else {
           const text = c.innerText.toLowerCase();
-          if (cat === 'climate' && (text.includes('climate') || text.includes('twin') || text.includes('mollier') || text.includes('heat') || text.includes('co2') || text.includes('fogging') || text.includes('haf') || text.includes('buffer') || text.includes('structural'))) {
+          if (cat === 'climate' && (text.includes('climate') || text.includes('twin') || text.includes('mollier') || text.includes('heat') || text.includes('co2') || text.includes('fogging') || text.includes('haf') || text.includes('buffer') || text.includes('structural') || text.includes('ventilation'))) {
             c.style.display = 'flex';
           } else if (cat === 'lighting' && (text.includes('dli') || text.includes('spectrum') || text.includes('led') || text.includes('extinction') || text.includes('yield') || text.includes('farquhar'))) {
             c.style.display = 'flex';
