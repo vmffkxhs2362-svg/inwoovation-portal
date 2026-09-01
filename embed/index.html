@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-adsense-account" content="ca-pub-8597809158257497">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Embeddable AgTech & Greenhouse Widgets Generator | Inwoovation Lab</title>
+  <meta name="description" content="Embed 0ms real-time VPD gauges, DLI lighting meters, and psychrometric widgets on your agricultural blog, farm management portal, or sensor dashboard for free.">
+  <link rel="canonical" href="https://inwoovation.com/embed/index.html" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V4RYJBMEDE"></script>
+  <script>
+     window.dataLayer = window.dataLayer || [];
+     function gtag(){dataLayer.push(arguments);}
+     gtag('js', new Date());
+     gtag('config', 'G-V4RYJBMEDE');
+  </script>
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8597809158257497" crossorigin="anonymous"></script>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&family=JetBrains+Mono:wght@500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../css/global-ui-enhancements.css?v=20260901_spotlight">
+  <script src="../js/global-search-palette.js?v=20260901_spotlight"></script>
+
+  <style>
+    .embed-hub-wrapper {
+      max-width: 1000px;
+      margin: 40px auto 80px;
+      padding: 0 20px;
+    }
+    .embed-card {
+      background: rgba(30, 41, 59, 0.7);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 28px;
+      margin-bottom: 32px;
+      display: grid;
+      grid-template-columns: 360px 1fr;
+      gap: 28px;
+      align-items: center;
+    }
+    @media (max-width: 800px) {
+      .embed-card { grid-template-columns: 1fr; }
+    }
+    .code-box {
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      border-radius: 12px;
+      padding: 16px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.82rem;
+      color: #38bdf8;
+      overflow-x: auto;
+      margin: 12px 0;
+      position: relative;
+    }
+    .copy-btn {
+      background: linear-gradient(135deg, #10b981, #059669);
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s;
+    }
+    .copy-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin:20px 0;">
+      <a href="../index.html" style="color:#38bdf8; text-decoration:none; font-weight:700;">← Return to Inwoovation Lab Home</a>
+      <button class="nav-search-trigger" onclick="window.InwooPalette.open()"><span>🔍 Spotlight Search</span> <kbd>Ctrl+K</kbd></button>
+    </div>
+
+    <div class="embed-hub-wrapper">
+      <div style="text-align: center; margin-bottom: 40px;">
+        <div class="hero-pill" style="margin: 0 auto 12px; display: inline-flex;">
+          <span>🌐 100% FREE & EMBEDDABLE AGTECH WIDGETS</span>
+        </div>
+        <h1 style="font-family:'Outfit',sans-serif; font-size:2.4rem; font-weight:800; color:#f8fafc; margin-bottom:12px;">
+          Embed Live Greenhouse Calculators on Your Site
+        </h1>
+        <p style="color:#94a3b8; font-size:1.05rem; max-width:700px; margin:0 auto; line-height:1.6;">
+          Copy one line of HTML code to embed our real-time 0ms biophysical calculators directly on your farm blog, research dashboard, or agricultural supplier portal.
+        </p>
+      </div>
+
+      <!-- Widget 1: VPD Gauge -->
+      <div class="embed-card">
+        <div>
+          <iframe src="vpd-gauge.html" width="100%" height="380" style="border:none; border-radius:16px; overflow:hidden;"></iframe>
+        </div>
+        <div>
+          <div style="display:flex; align-items:center; gap:8px; margin-bottom:6px;">
+            <span style="background:rgba(16,185,129,0.2); color:#10b981; font-size:0.75rem; font-weight:800; padding:2px 8px; border-radius:4px;">POPULAR</span>
+            <h2 style="font-family:'Outfit',sans-serif; font-size:1.4rem; font-weight:700; color:#f8fafc; margin:0;">Live VPD Microclimate Gauge</h2>
+          </div>
+          <p style="color:#94a3b8; font-size:0.9rem; line-height:1.6;">
+            Interactive circular VPD gauge computing leaf-to-air vapor pressure deficit from temperature, humidity, and leaf offset sliders.
+          </p>
+          <div class="code-box" id="code-vpd">&lt;iframe src="https://inwoovation.com/embed/vpd-gauge.html" width="340" height="380" frameborder="0" style="border-radius:16px;"&gt;&lt;/iframe&gt;</div>
+          <button class="copy-btn" onclick="copyCode('code-vpd', this)">📋 Copy Embed Code</button>
+        </div>
+      </div>
+
+      <!-- Widget 2: DLI Calculator -->
+      <div class="embed-card">
+        <div>
+          <iframe src="dli-calculator.html" width="100%" height="380" style="border:none; border-radius:16px; overflow:hidden;"></iframe>
+        </div>
+        <div>
+          <div style="display:flex; align-items:center; gap:8px; margin-bottom:6px;">
+            <span style="background:rgba(250,204,21,0.2); color:#facc15; font-size:0.75rem; font-weight:800; padding:2px 8px; border-radius:4px;">LIGHTING</span>
+            <h2 style="font-family:'Outfit',sans-serif; font-size:1.4rem; font-weight:700; color:#f8fafc; margin:0;">Daily Light Integral (DLI) Meter</h2>
+          </div>
+          <p style="color:#94a3b8; font-size:0.9rem; line-height:1.6;">
+            Real-time PAR photobiology calculator computing cumulative daily moles of light per m² from PPFD and photoperiod duration.
+          </p>
+          <div class="code-box" id="code-dli">&lt;iframe src="https://inwoovation.com/embed/dli-calculator.html" width="340" height="380" frameborder="0" style="border-radius:16px;"&gt;&lt;/iframe&gt;</div>
+          <button class="copy-btn" onclick="copyCode('code-dli', this)">📋 Copy Embed Code</button>
+        </div>
+      </div>
+
+      <!-- Legal Disclaimer -->
+      <div style="margin: 40px 0 20px; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(245, 158, 11, 0.3); border-radius: 12px; padding: 20px; color: #94a3b8; font-size: 0.85rem; line-height: 1.6;">
+        <div style="color: #f59e0b; font-weight: 700; margin-bottom: 6px; font-size: 0.95rem;">⚖️ Widget License & Fair Use:</div>
+        <div>Inwoovation Lab widgets are 100% free for educational, commercial farm, and editorial use. Attribution back to inwoovation.com is automatically included in the widget footer.</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function copyCode(id, btn) {
+      const code = document.getElementById(id).innerText;
+      navigator.clipboard.writeText(code).then(() => {
+        const originalText = btn.innerHTML;
+        btn.innerHTML = '✅ Copied!';
+        setTimeout(() => { btn.innerHTML = originalText; }, 2000);
+      });
+    }
+  </script>
+</body>
+</html>

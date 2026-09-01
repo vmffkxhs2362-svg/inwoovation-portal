@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VPD Microclimate Gauge Widget | Inwoovation Lab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;800&family=JetBrains+Mono:wght@600;700&family=Plus+Jakarta+Sans:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #0f172a;
+      color: #f8fafc;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      padding: 16px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .widget-card {
+      width: 100%;
+      max-width: 340px;
+      background: rgba(30, 41, 59, 0.95);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      border-radius: 16px;
+      padding: 18px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    }
+    .widget-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      padding-bottom: 8px;
+    }
+    .widget-brand {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 800;
+      font-size: 0.85rem;
+      color: #38bdf8;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .widget-brand span { color: #f8fafc; }
+    .vpd-display-box {
+      text-align: center;
+      background: rgba(15, 23, 42, 0.8);
+      border-radius: 12px;
+      padding: 14px;
+      margin-bottom: 14px;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+    .vpd-value {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #10b981;
+      line-height: 1;
+    }
+    .vpd-unit { font-size: 0.9rem; color: #94a3b8; margin-left: 4px; }
+    .vpd-status {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-top: 6px;
+      padding: 3px 8px;
+      border-radius: 100px;
+      display: inline-block;
+      background: rgba(16, 185, 129, 0.15);
+      color: #10b981;
+    }
+    .slider-group { margin-bottom: 10px; }
+    .slider-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.75rem;
+      color: #94a3b8;
+      margin-bottom: 4px;
+      font-weight: 600;
+    }
+    .slider-val { color: #38bdf8; font-family: 'JetBrains Mono', monospace; }
+    input[type=range] {
+      width: 100%;
+      height: 5px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 5px;
+      outline: none;
+      -webkit-appearance: none;
+    }
+    input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #38bdf8;
+      cursor: pointer;
+      box-shadow: 0 0 8px rgba(56, 189, 248, 0.6);
+    }
+    .widget-footer {
+      text-align: center;
+      margin-top: 10px;
+      font-size: 0.7rem;
+      color: #64748b;
+    }
+    .widget-footer a { color: #38bdf8; text-decoration: none; font-weight: 600; }
+    .widget-footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="widget-card">
+    <div class="widget-header">
+      <a href="https://inwoovation.com" target="_blank" class="widget-brand">
+        <span>INWOOVATION</span> LAB
+      </a>
+      <span style="font-size: 0.7rem; color: #10b981; font-weight: 700;">LIVE VPD WIDGET</span>
+    </div>
+
+    <div class="vpd-display-box">
+      <div>
+        <span id="vpd-num" class="vpd-value">1.05</span>
+        <span class="vpd-unit">kPa</span>
+      </div>
+      <div id="vpd-status" class="vpd-status">Optimal Generative</div>
+    </div>
+
+    <div class="slider-group">
+      <div class="slider-label">
+        <span>Air Temp</span>
+        <span id="t-val" class="slider-val">24.0 °C</span>
+      </div>
+      <input type="range" id="t-slider" min="10" max="40" step="0.5" value="24.0">
+    </div>
+
+    <div class="slider-group">
+      <div class="slider-label">
+        <span>Relative Humidity</span>
+        <span id="rh-val" class="slider-val">70 %</span>
+      </div>
+      <input type="range" id="rh-slider" min="30" max="95" step="1" value="70">
+    </div>
+
+    <div class="slider-group">
+      <div class="slider-label">
+        <span>Leaf Temp Offset</span>
+        <span id="leaf-val" class="slider-val">- 1.5 °C</span>
+      </div>
+      <input type="range" id="leaf-slider" min="-4" max="2" step="0.5" value="-1.5">
+    </div>
+
+    <div class="widget-footer">
+      Powered by <a href="https://inwoovation.com" target="_blank">Inwoovation Lab OpenCEA</a>
+    </div>
+  </div>
+
+  <script>
+    function update() {
+      const t = parseFloat(document.getElementById('t-slider').value);
+      const rh = parseFloat(document.getElementById('rh-slider').value);
+      const leafOffset = parseFloat(document.getElementById('leaf-slider').value);
+      const tLeaf = t + leafOffset;
+
+      document.getElementById('t-val').innerText = t.toFixed(1) + ' °C';
+      document.getElementById('rh-val').innerText = rh + ' %';
+      document.getElementById('leaf-val').innerText = (leafOffset >= 0 ? '+ ' : '') + leafOffset.toFixed(1) + ' °C';
+
+      // Saturated vapor pressure at leaf temp (SVP_leaf)
+      const svpLeaf = 0.61078 * Math.exp((17.27 * tLeaf) / (tLeaf + 237.3));
+      // Actual vapor pressure in air (AVP_air)
+      const svpAir = 0.61078 * Math.exp((17.27 * t) / (t + 237.3));
+      const avpAir = svpAir * (rh / 100.0);
+
+      const vpd = Math.max(0.1, svpLeaf - avpAir);
+      const vpdEl = document.getElementById('vpd-num');
+      const statusEl = document.getElementById('vpd-status');
+
+      vpdEl.innerText = vpd.toFixed(2);
+
+      if (vpd < 0.5) {
+        statusEl.innerText = 'Under-Transpiration (Disease Risk)';
+        statusEl.style.background = 'rgba(56, 189, 248, 0.15)';
+        statusEl.style.color = '#38bdf8';
+        vpdEl.style.color = '#38bdf8';
+      } else if (vpd <= 1.2) {
+        statusEl.innerText = 'Optimal Photosynthesis (Safe)';
+        statusEl.style.background = 'rgba(16, 185, 129, 0.15)';
+        statusEl.style.color = '#10b981';
+        vpdEl.style.color = '#10b981';
+      } else if (vpd <= 1.6) {
+        statusEl.innerText = 'Moderate Stress (Generative)';
+        statusEl.style.background = 'rgba(245, 158, 11, 0.15)';
+        statusEl.style.color = '#f59e0b';
+        vpdEl.style.color = '#f59e0b';
+      } else {
+        statusEl.innerText = 'Severe Stomatal Closure (Wilting)';
+        statusEl.style.background = 'rgba(239, 68, 68, 0.15)';
+        statusEl.style.color = '#ef4444';
+        vpdEl.style.color = '#ef4444';
+      }
+    }
+
+    document.querySelectorAll('input').forEach(el => el.addEventListener('input', update));
+    update();
+  </script>
+</body>
+</html>

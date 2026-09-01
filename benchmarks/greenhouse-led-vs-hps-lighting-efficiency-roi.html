@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-adsense-account" content="ca-pub-8597809158257497">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greenhouse LED Toplighting vs HPS 5-Year Energy & ROI Benchmark | Inwoovation Lab</title>
+  <meta name="description" content="Comprehensive technical comparison between Horticultural LED fixtures (3.5 µmol/J) and High-Pressure Sodium (1.8 µmol/J) lamps. 5-year electricity OPEX and thermal heat compensation modeling.">
+  <link rel="canonical" href="https://inwoovation.com/benchmarks/greenhouse-led-vs-hps-lighting-efficiency-roi.html" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V4RYJBMEDE"></script>
+  <script>
+     window.dataLayer = window.dataLayer || [];
+     function gtag(){dataLayer.push(arguments);}
+     gtag('js', new Date());
+     gtag('config', 'G-V4RYJBMEDE');
+  </script>
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8597809158257497" crossorigin="anonymous"></script>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&family=JetBrains+Mono:wght@500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../css/global-ui-enhancements.css?v=20260901_spotlight">
+  <script src="../js/global-search-palette.js?v=20260901_spotlight"></script>
+  <script src="../js/audit-pdf-generator.js"></script>
+
+  <style>
+    .bench-wrapper {
+      max-width: 1050px;
+      margin: 30px auto 80px;
+      padding: 0 20px;
+    }
+    .bench-card {
+      background: rgba(30, 41, 59, 0.8);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 32px;
+      margin-bottom: 32px;
+    }
+    .compare-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin: 24px 0;
+    }
+    @media (max-width: 768px) {
+      .compare-grid { grid-template-columns: 1fr; }
+    }
+    .tech-box {
+      background: rgba(15, 23, 42, 0.85);
+      border-radius: 16px;
+      padding: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .slider-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 6px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #94a3b8;
+    }
+    .slider-val {
+      color: #38bdf8;
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 700;
+    }
+    .bench-kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin: 24px 0;
+    }
+    .kpi-card {
+      background: rgba(15, 23, 42, 0.9);
+      border-radius: 14px;
+      padding: 18px;
+      text-align: center;
+      border: 1px solid rgba(56, 189, 248, 0.2);
+    }
+    .kpi-val {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #10b981;
+      margin: 6px 0;
+    }
+    .kpi-lbl {
+      font-size: 0.78rem;
+      color: #94a3b8;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin:20px 0;">
+      <a href="../index.html" style="color:#38bdf8; text-decoration:none; font-weight:700;">← Return to Inwoovation Lab Home</a>
+      <button class="nav-search-trigger" onclick="window.InwooPalette.open()"><span>🔍 Spotlight Search</span> <kbd>Ctrl+K</kbd></button>
+    </div>
+
+    <div class="bench-wrapper">
+      <div style="text-align: center; margin-bottom: 32px;">
+        <div class="hero-pill" style="margin: 0 auto 12px; display: inline-flex;"><span>💡 HIGH-EFFICIENCY PHOTOBIOLOGY BENCHMARK</span></div>
+        <h1 style="font-family:'Outfit',sans-serif; font-size:2.2rem; font-weight:800; color:#f8fafc;">
+          LED Toplighting vs. 1000W HPS: 5-Year ROI & Heat Balance Model
+        </h1>
+        <p style="color:#94a3b8; font-size:1rem; max-width:750px; margin:8px auto 0;">
+          Simulate the capital expense, annual electricity savings, photon efficacy (µmol/J), and supplemental boiler heating requirements when retrofitting HPS to high-efficiency LED fixtures.
+        </p>
+      </div>
+
+      <div class="bench-card">
+        <h2 style="font-family:'Outfit',sans-serif; font-size:1.4rem; color:#f8fafc; margin-bottom:20px;">⚙️ Facility & Lighting Operational Inputs</h2>
+        
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:20px;">
+          <div>
+            <div class="slider-row"><span>Target Canopy PPFD</span><span id="lbl-ppfd" class="slider-val">200 µmol/m²/s</span></div>
+            <input type="range" id="sl-ppfd" min="50" max="450" step="10" value="200" style="width:100%;">
+          </div>
+          <div>
+            <div class="slider-row"><span>Annual Burning Hours</span><span id="lbl-hours" class="slider-val">3,000 Hours/yr</span></div>
+            <input type="range" id="sl-hours" min="1000" max="6000" step="250" value="3000" style="width:100%;">
+          </div>
+          <div>
+            <div class="slider-row"><span>Electricity Tariff ($/kWh)</span><span id="lbl-tariff" class="slider-val">$0.14 / kWh</span></div>
+            <input type="range" id="sl-tariff" min="0.05" max="0.40" step="0.01" value="0.14" style="width:100%;">
+          </div>
+          <div>
+            <div class="slider-row"><span>Greenhouse Area</span><span id="lbl-area" class="slider-val">10,000 m² (1 ha)</span></div>
+            <input type="range" id="sl-area" min="1000" max="50000" step="1000" value="10000" style="width:100%;">
+          </div>
+        </div>
+
+        <!-- KPI Comparison Grid -->
+        <div class="bench-kpi-grid">
+          <div class="kpi-card">
+            <div class="kpi-lbl">Annual Energy Savings</div>
+            <div class="kpi-val" id="res-energy-save">$235,200</div>
+            <div style="font-size:0.75rem; color:#10b981;">- 48.6% Power Draw</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-lbl">LED Retrofit Payback</div>
+            <div class="kpi-val" id="res-payback">3.2 Years</div>
+            <div style="font-size:0.75rem; color:#38bdf8;">At $0.14/kWh Tariff</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-lbl">5-Year Net ROI</div>
+            <div class="kpi-val" id="res-roi">+ $425,000</div>
+            <div style="font-size:0.75rem; color:#facc15;">Cumulative Savings</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-lbl">Supplemental Boiler Heat</div>
+            <div class="kpi-val" id="res-heat">+ 12.4 W/m²</div>
+            <div style="font-size:0.75rem; color:#ef4444;">Lost HPS Convection</div>
+          </div>
+        </div>
+
+        <!-- Technical Comparison Breakdown -->
+        <div class="compare-grid">
+          <div class="tech-box" style="border-color:rgba(56,189,248,0.3);">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+              <span style="font-weight:800; font-size:1.2rem; color:#38bdf8;">💡 SOTA Horticultural LED</span>
+              <span style="background:rgba(56,189,248,0.2); color:#38bdf8; font-size:0.75rem; font-weight:700; padding:2px 8px; border-radius:6px;">3.5 µmol/J</span>
+            </div>
+            <p style="font-size:0.85rem; color:#cbd5e1; line-height:1.6;">
+              Custom spectral tuning (Deep Red 660nm + Far-Red 730nm + Blue 450nm) delivers 95%+ photon efficacy with 50,000-hour L90 diode lifespan. Minimal downward radiative heat protects sensitive canopies.
+            </p>
+          </div>
+
+          <div class="tech-box" style="border-color:rgba(245,158,11,0.3);">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+              <span style="font-weight:800; font-size:1.2rem; color:#f59e0b;">🔥 Legacy 1000W DE HPS</span>
+              <span style="background:rgba(245,158,11,0.2); color:#f59e0b; font-size:0.75rem; font-weight:700; padding:2px 8px; border-radius:6px;">1.8 µmol/J</span>
+            </div>
+            <p style="font-size:0.85rem; color:#cbd5e1; line-height:1.6;">
+              High infra-red radiant heat load (~45% of total input energy) heats the upper crop canopy directly, but requires bulb replacements every 10,000 hours and consumes double the electrical power.
+            </p>
+          </div>
+        </div>
+
+        <!-- 1-Click PDF Export -->
+        <div style="text-align:center; margin-top:20px;">
+          <button onclick="exportLedAuditPDF()" style="background:linear-gradient(135deg, #0284c7, #0369a1); color:#fff; border:1px solid rgba(255,255,255,0.2); padding:12px 24px; border-radius:12px; font-weight:700; font-size:0.95rem; cursor:pointer; display:inline-flex; align-items:center; gap:8px;">
+            📄 Download LED vs HPS Lighting Feasibility Audit (PDF)
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function calculate() {
+        const ppfd = parseFloat(document.getElementById('sl-ppfd').value);
+        const hours = parseFloat(document.getElementById('sl-hours').value);
+        const tariff = parseFloat(document.getElementById('sl-tariff').value);
+        const area = parseFloat(document.getElementById('sl-area').value);
+
+        document.getElementById('lbl-ppfd').innerText = ppfd + ' µmol/m²/s';
+        document.getElementById('lbl-hours').innerText = hours.toLocaleString() + ' Hours/yr';
+        document.getElementById('lbl-tariff').innerText = '$' + tariff.toFixed(2) + ' / kWh';
+        document.getElementById('lbl-area').innerText = area.toLocaleString() + ' m² (' + (area/10000).toFixed(1) + ' ha)';
+
+        const ledW_m2 = ppfd / 3.5;
+        const hpsW_m2 = ppfd / 1.8;
+
+        const ledKwh_yr = (ledW_m2 * area * hours) / 1000.0;
+        const hpsKwh_yr = (hpsW_m2 * area * hours) / 1000.0;
+
+        const ledCost_yr = ledKwh_yr * tariff;
+        const hpsCost_yr = hpsKwh_yr * tariff;
+        const annualSavings = hpsCost_yr - ledCost_yr;
+
+        const netCapexPremium = area * 55.0;
+        const paybackYrs = netCapexPremium / Math.max(1, annualSavings);
+        const fiveYrRoi = (annualSavings * 5) - netCapexPremium;
+        const suppHeatW = (hpsW_m2 - ledW_m2) * 0.4;
+
+        document.getElementById('res-energy-save').innerText = '$' + Math.round(annualSavings).toLocaleString();
+        document.getElementById('res-payback').innerText = paybackYrs.toFixed(1) + ' Years';
+        document.getElementById('res-roi').innerText = (fiveYrRoi >= 0 ? '+ $' : '- $') + Math.abs(Math.round(fiveYrRoi)).toLocaleString();
+        document.getElementById('res-heat').innerText = '+' + suppHeatW.toFixed(1) + ' W/m²';
+      }
+
+      function exportLedAuditPDF() {
+        const ppfd = document.getElementById('lbl-ppfd').innerText;
+        const hours = document.getElementById('lbl-hours').innerText;
+        const area = document.getElementById('lbl-area').innerText;
+        const tariff = document.getElementById('lbl-tariff').innerText;
+        const save = document.getElementById('res-energy-save').innerText;
+        const pb = document.getElementById('res-payback').innerText;
+        const roi = document.getElementById('res-roi').innerText;
+        const heat = document.getElementById('res-heat').innerText;
+
+        const kpis = [
+          { label: "Annual Power Savings", value: save, unit: "Per Year" },
+          { label: "Payback Horizon", value: pb, unit: "Break-Even" },
+          { label: "5-Year Cumulative ROI", value: roi, unit: "Net Cashflow" },
+          { label: "Boiler Heat Demand", value: heat, unit: "Winter Compensation" }
+        ];
+
+        const inputs = [
+          { label: "Canopy Target PPFD", value: ppfd },
+          { label: "Annual Lighting Hours", value: hours },
+          { label: "Electricity Tariff", value: tariff },
+          { label: "Facility Footprint", value: area },
+          { label: "Efficacy Standard", value: "DLC Hort V3.0 / ASABE S640" }
+        ];
+
+        const rec = `LED toplighting retrofit across ${area} yields ${save} annual electrical energy reduction with break-even payback in ${pb}. Supplemental boiler heating demand increases by ${heat} during extreme winter periods due to reduced downward lamp radiation.`;
+
+        generateInstitutionalPDF("Commercial Greenhouse LED vs HPS Lighting Feasibility Audit", kpis, inputs, rec);
+      }
+
+      document.querySelectorAll('input').forEach(el => el.addEventListener('input', calculate));
+      calculate();
+    </script>
+
+    <!-- Legal Disclaimer -->
+    <div style="margin: 40px 0 20px; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(245, 158, 11, 0.3); border-radius: 12px; padding: 20px; color: #94a3b8; font-size: 0.85rem; line-height: 1.6;">
+      <div style="color: #f59e0b; font-weight: 700; margin-bottom: 6px; font-size: 0.95rem;">⚖️ Engineering & Financial Modeling Disclaimer:</div>
+      <div>Equipment efficiencies, utility tariffs, and payback periods are modeled using standard industrial benchmarks (ASABE S640, ASHRAE, Fraunhofer ISE). Actual farm operational performance may vary by manufacturer binning, regional energy contracts, and crop transpiration demand. Always obtain vendor performance warranties and consult certified Professional Engineers.</div>
+    </div>
+  </div>
+</body>
+</html>

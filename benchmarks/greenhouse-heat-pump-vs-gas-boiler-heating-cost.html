@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-adsense-account" content="ca-pub-8597809158257497">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greenhouse Heat Pump vs Natural Gas Boiler Heating Cost Benchmark | Inwoovation Lab</title>
+  <meta name="description" content="Economic & carbon lifecycle comparison between Industrial Air/Water Heat Pumps (COP 3.8) and Condensing Natural Gas Boilers (95% efficiency). Spark spread and heating $/GJ analysis.">
+  <link rel="canonical" href="https://inwoovation.com/benchmarks/greenhouse-heat-pump-vs-gas-boiler-heating-cost.html" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V4RYJBMEDE"></script>
+  <script>
+     window.dataLayer = window.dataLayer || [];
+     function gtag(){dataLayer.push(arguments);}
+     gtag('js', new Date());
+     gtag('config', 'G-V4RYJBMEDE');
+  </script>
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8597809158257497" crossorigin="anonymous"></script>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&family=JetBrains+Mono:wght@500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../css/global-ui-enhancements.css?v=20260901_spotlight">
+  <script src="../js/global-search-palette.js?v=20260901_spotlight"></script>
+  <script src="../js/audit-pdf-generator.js"></script>
+
+  <style>
+    .bench-wrapper {
+      max-width: 1050px;
+      margin: 30px auto 80px;
+      padding: 0 20px;
+    }
+    .bench-card {
+      background: rgba(30, 41, 59, 0.8);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 32px;
+      margin-bottom: 32px;
+    }
+    .compare-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin: 24px 0;
+    }
+    @media (max-width: 768px) {
+      .compare-grid { grid-template-columns: 1fr; }
+    }
+    .tech-box {
+      background: rgba(15, 23, 42, 0.85);
+      border-radius: 16px;
+      padding: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .slider-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 6px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #94a3b8;
+    }
+    .slider-val {
+      color: #38bdf8;
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 700;
+    }
+    .bench-kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin: 24px 0;
+    }
+    .kpi-card {
+      background: rgba(15, 23, 42, 0.9);
+      border-radius: 14px;
+      padding: 18px;
+      text-align: center;
+      border: 1px solid rgba(56, 189, 248, 0.2);
+    }
+    .kpi-val {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #10b981;
+      margin: 6px 0;
+    }
+    .kpi-lbl {
+      font-size: 0.78rem;
+      color: #94a3b8;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin:20px 0;">
+      <a href="../index.html" style="color:#38bdf8; text-decoration:none; font-weight:700;">← Return to Inwoovation Lab Home</a>
+      <button class="nav-search-trigger" onclick="window.InwooPalette.open()"><span>🔍 Spotlight Search</span> <kbd>Ctrl+K</kbd></button>
+    </div>
+
+    <div class="bench-wrapper">
+      <div style="text-align: center; margin-bottom: 32px;">
+        <div class="hero-pill" style="margin: 0 auto 12px; display: inline-flex;"><span>🔥 THERMAL DECARBONIZATION BENCHMARK</span></div>
+        <h1 style="font-family:'Outfit',sans-serif; font-size:2.2rem; font-weight:800; color:#f8fafc;">
+          Industrial Heat Pump vs. Gas Boiler: Heating Cost & COP Model
+        </h1>
+        <p style="color:#94a3b8; font-size:1rem; max-width:750px; margin:8px auto 0;">
+          Evaluate heat pump Coefficient of Performance (COP), spark spread electricity-to-gas price ratios, boiler carbon taxation, and total heating OPEX per GJ of thermal energy.
+        </p>
+      </div>
+
+      <div class="bench-card">
+        <h2 style="font-family:'Outfit',sans-serif; font-size:1.4rem; color:#f8fafc; margin-bottom:20px;">⚙️ Energy Tariff & Heating Model Inputs</h2>
+        
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:20px;">
+          <div>
+            <div class="slider-row"><span>Natural Gas Price ($/m³)</span><span id="lbl-gas" class="slider-val">$0.65 / m³</span></div>
+            <input type="range" id="sl-gas" min="0.20" max="1.50" step="0.05" value="0.65" style="width:100%;">
+          </div>
+          <div>
+            <div class="slider-row"><span>Electricity Price ($/kWh)</span><span id="lbl-elec" class="slider-val">$0.12 / kWh</span></div>
+            <input type="range" id="sl-elec" min="0.04" max="0.35" step="0.01" value="0.12" style="width:100%;">
+          </div>
+          <div>
+            <div class="slider-row"><span>Heat Pump Seasonal COP</span><span id="lbl-cop" class="slider-val">3.60 COP</span></div>
+            <input type="range" id="sl-cop" min="2.0" max="5.5" step="0.1" value="3.60" style="width:100%;">
+          </div>
+          <div>
+            <div class="slider-row"><span>Annual Thermal Demand</span><span id="lbl-thermal" class="slider-val">35,000 GJ/yr</span></div>
+            <input type="range" id="sl-thermal" min="5000" max="100000" step="5000" value="35000" style="width:100%;">
+          </div>
+        </div>
+
+        <!-- KPI Comparison Grid -->
+        <div class="bench-kpi-grid">
+          <div class="kpi-card">
+            <div class="kpi-lbl">Gas Boiler Heating Cost</div>
+            <div class="kpi-val" id="res-gas-cost" style="color:#ef4444;">$19.8 / GJ</div>
+            <div style="font-size:0.75rem; color:#94a3b8;">At 95% Thermal Eff.</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-lbl">Heat Pump Cost</div>
+            <div class="kpi-val" id="res-hp-cost" style="color:#10b981;">$9.3 / GJ</div>
+            <div style="font-size:0.75rem; color:#10b981;">- 53.0% OPEX</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-lbl">Annual Heating Savings</div>
+            <div class="kpi-val" id="res-hp-save">$367,500</div>
+            <div style="font-size:0.75rem; color:#facc15;">Per Year</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-lbl">CO2 Emissions Reduction</div>
+            <div class="kpi-val" id="res-co2-red">- 1,480 Tons</div>
+            <div style="font-size:0.75rem; color:#38bdf8;">Decarbonization</div>
+          </div>
+        </div>
+
+        <!-- 1-Click PDF Export -->
+        <div style="text-align:center; margin-top:20px;">
+          <button onclick="exportHpAuditPDF()" style="background:linear-gradient(135deg, #0284c7, #0369a1); color:#fff; border:1px solid rgba(255,255,255,0.2); padding:12px 24px; border-radius:12px; font-weight:700; font-size:0.95rem; cursor:pointer; display:inline-flex; align-items:center; gap:8px;">
+            📄 Download Heating Decarbonization Audit Report (PDF)
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function calculate() {
+        const gasPriceM3 = parseFloat(document.getElementById('sl-gas').value);
+        const elecPriceKwh = parseFloat(document.getElementById('sl-elec').value);
+        const cop = parseFloat(document.getElementById('sl-cop').value);
+        const demandGj = parseFloat(document.getElementById('sl-thermal').value);
+
+        document.getElementById('lbl-gas').innerText = '$' + gasPriceM3.toFixed(2) + ' / m³';
+        document.getElementById('lbl-elec').innerText = '$' + elecPriceKwh.toFixed(2) + ' / kWh';
+        document.getElementById('lbl-cop').innerText = cop.toFixed(2) + ' COP';
+        document.getElementById('lbl-thermal').innerText = demandGj.toLocaleString() + ' GJ/yr';
+
+        const costGj_gas = gasPriceM3 / 0.03341;
+        const costGj_hp = (277.78 / cop) * elecPriceKwh;
+
+        const totalGasCost = demandGj * costGj_gas;
+        const totalHpCost = demandGj * costGj_hp;
+        const annualSave = totalGasCost - totalHpCost;
+        const co2ReductionTons = demandGj * 0.056 * 0.75;
+
+        document.getElementById('res-gas-cost').innerText = '$' + costGj_gas.toFixed(1) + ' / GJ';
+        document.getElementById('res-hp-cost').innerText = '$' + costGj_hp.toFixed(1) + ' / GJ';
+        document.getElementById('res-hp-save').innerText = (annualSave >= 0 ? '$' : '-$') + Math.round(Math.abs(annualSave)).toLocaleString();
+        document.getElementById('res-co2-red').innerText = '- ' + Math.round(co2ReductionTons).toLocaleString() + ' Tons';
+      }
+
+      function exportHpAuditPDF() {
+        const gas = document.getElementById('lbl-gas').innerText;
+        const elec = document.getElementById('lbl-elec').innerText;
+        const cop = document.getElementById('lbl-cop').innerText;
+        const demand = document.getElementById('lbl-thermal').innerText;
+        const gasCost = document.getElementById('res-gas-cost').innerText;
+        const hpCost = document.getElementById('res-hp-cost').innerText;
+        const save = document.getElementById('res-hp-save').innerText;
+        const co2 = document.getElementById('res-co2-red').innerText;
+
+        const kpis = [
+          { label: "Gas Boiler Unit Cost", value: gasCost, unit: "Delivered Heat" },
+          { label: "Heat Pump Unit Cost", value: hpCost, unit: "At " + cop },
+          { label: "Annual Thermal Savings", value: save, unit: "Per Year" },
+          { label: "Carbon Abatement", value: co2, unit: "Annual CO2 Avoided" }
+        ];
+
+        const inputs = [
+          { label: "Natural Gas Tariff", value: gas },
+          { label: "Electricity Tariff", value: elec },
+          { label: "Heat Pump SCOP", value: cop },
+          { label: "Annual Heat Demand", value: demand },
+          { label: "Thermal Standard", value: "EN 14825 / VDI 4650 Heating Decarbonization" }
+        ];
+
+        const rec = `Transitioning facility heating from gas boiler (${gasCost}) to industrial heat pump (${hpCost}) at SCOP of ${cop} delivers ${save} in annual thermal operating savings and abates ${co2} of carbon emissions annually.`;
+
+        generateInstitutionalPDF("Commercial Greenhouse Heat Pump vs Gas Boiler Feasibility Audit", kpis, inputs, rec);
+      }
+
+      document.querySelectorAll('input').forEach(el => el.addEventListener('input', calculate));
+      calculate();
+    </script>
+
+    <!-- Legal Disclaimer -->
+    <div style="margin: 40px 0 20px; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(245, 158, 11, 0.3); border-radius: 12px; padding: 20px; color: #94a3b8; font-size: 0.85rem; line-height: 1.6;">
+      <div style="color: #f59e0b; font-weight: 700; margin-bottom: 6px; font-size: 0.95rem;">⚖️ Engineering & Financial Modeling Disclaimer:</div>
+      <div>Equipment efficiencies, utility tariffs, and payback periods are modeled using standard industrial benchmarks (ASABE S640, ASHRAE, Fraunhofer ISE). Actual farm operational performance may vary by manufacturer binning, regional energy contracts, and crop transpiration demand. Always obtain vendor performance warranties and consult certified Professional Engineers.</div>
+    </div>
+  </div>
+</body>
+</html>
