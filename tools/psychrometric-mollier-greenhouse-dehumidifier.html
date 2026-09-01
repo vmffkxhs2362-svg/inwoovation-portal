@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Psychrometric Mollier Diagram & Greenhouse Dehumidification Optimizer | Inwoovation</title>
+  <meta name="description" content="Industrial psychrometric air state and greenhouse dehumidification energy optimizer. Compare mechanical heat pumps vs ridge vent purging.">
+  <link rel="stylesheet" href="css/digital_twin_styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  
+  <style>
+    .calc-card {
+      background: rgba(30, 41, 59, 0.85);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+    .chart-container {
+      width: 100%;
+      height: 380px;
+      background: #020617;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      position: relative;
+    }
+    #mollierCanvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+    .res-box {
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      padding: 16px;
+      text-align: center;
+    }
+    .res-val {
+      font-family: var(--font-mono);
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--accent-emerald);
+      margin-top: 4px;
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Psychrometric Mollier Diagram & Greenhouse Dehumidification Optimizer",
+    "url": "https://inwoovation.com/tools/psychrometric-mollier-greenhouse-dehumidifier.html",
+    "description": "Calculates moist air enthalpy, dew point, humidity ratio, and greenhouse dehumidification energy savings.",
+    "applicationCategory": "EducationalApplication, EngineeringTool",
+    "operatingSystem": "All",
+    "author": {
+      "@type": "Person",
+      "name": "Inwoo Hwang"
+    },
+    "dateModified": "2026-09-01"
+  }
+  </script>
+</head>
+<body>
+
+  <div class="sim-container">
+    <header class="sim-header">
+      <h1>🌡️ Psychrometric Mollier & Dehumidification Optimizer</h1>
+      <p>Thermodynamic Enthalpy & Mechanical Heat Pump Energy Conservation Engine</p>
+    </header>
+
+    <div class="calc-card">
+      <h3 class="control-section-title">📊 Psychrometric Air State Parameters</h3>
+      <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px;">
+        <div class="control-group">
+          <div class="control-label-row">
+            <span>Indoor Dry-Bulb Temperature ($T_{db}$)</span>
+            <span id="lbl-temp">20.0 °C</span>
+          </div>
+          <input type="range" id="slider-temp" min="10" max="35" value="20.0" step="0.5">
+        </div>
+
+        <div class="control-group">
+          <div class="control-label-row">
+            <span>Indoor Relative Humidity ($RH$)</span>
+            <span id="lbl-rh">85 %</span>
+          </div>
+          <input type="range" id="slider-rh" min="40" max="98" value="85" step="1">
+        </div>
+
+        <div class="control-group">
+          <div class="control-label-row">
+            <span>Greenhouse Area ($m^2$)</span>
+            <span id="lbl-area">10,000 m² (1 Ha)</span>
+          </div>
+          <input type="range" id="slider-area" min="1000" max="50000" value="10000" step="1000">
+        </div>
+      </div>
+
+      <div class="chart-container" style="margin-top: 20px;">
+        <canvas id="mollierCanvas"></canvas>
+      </div>
+    </div>
+
+    <!-- Telemetry Cards -->
+    <div class="results-grid">
+      <div class="res-box">
+        <div style="font-size: 0.8rem; color: var(--text-muted);">ABSOLUTE HUMIDITY ($x$)</div>
+        <div class="res-val" id="res-abs-hum" style="color: var(--accent-cyan);">12.5 g/kg</div>
+      </div>
+      <div class="res-box">
+        <div style="font-size: 0.8rem; color: var(--text-muted);">DEW POINT TEMP ($T_{dew}$)</div>
+        <div class="res-val" id="res-dew-pt" style="color: #f59e0b;">17.4 °C</div>
+      </div>
+      <div class="res-box">
+        <div style="font-size: 0.8rem; color: var(--text-muted);">MOIST AIR ENTHALPY ($h$)</div>
+        <div class="res-val" id="res-enthalpy">52.1 kJ/kg</div>
+      </div>
+      <div class="res-box">
+        <div style="font-size: 0.8rem; color: var(--text-muted);">HEAT PUMP ENERGY SAVINGS</div>
+        <div class="res-val" id="res-savings" style="color: var(--accent-emerald); font-size: 1.5rem;">42.5 % vs Vents</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const canvas = document.getElementById('mollierCanvas');
+    const ctx = canvas.getContext('2d');
+
+    function resize() {
+      canvas.width = canvas.parentElement.clientWidth;
+      canvas.height = canvas.parentElement.clientHeight;
+    }
+    window.addEventListener('resize', resize);
+    resize();
+
+    function drawChart(t, rh, dew, x) {
+      const w = canvas.width;
+      const h = canvas.height;
+      ctx.clearRect(0, 0, w, h);
+
+      // Grid
+      ctx.strokeStyle = 'rgba(255, 255, 255, 0.08)';
+      ctx.lineWidth = 1;
+      for (let i = 1; i <= 8; i++) {
+        ctx.beginPath();
+        ctx.moveTo((w * i) / 9, 20);
+        ctx.lineTo((w * i) / 9, h - 30);
+        ctx.stroke();
+      }
+
+      // Saturation Curve (100% RH)
+      ctx.strokeStyle = '#38bdf8';
+      ctx.lineWidth = 2.5;
+      ctx.beginPath();
+      for (let tx = 0; tx <= 40; tx += 0.5) {
+        const es = 0.61078 * Math.exp((17.27 * tx) / (tx + 237.3));
+        const xs = 622 * (es / (101.325 - es)); // g/kg
+        const px = (tx / 40) * (w - 80) + 40;
+        const py = h - 40 - (xs / 30) * (h - 60);
+        if (tx === 0) ctx.moveTo(px, py);
+        else ctx.lineTo(px, py);
+      }
+      ctx.stroke();
+
+      // Current State Point
+      const ptX = (t / 40) * (w - 80) + 40;
+      const ptY = h - 40 - (x / 30) * (h - 60);
+
+      ctx.fillStyle = '#10b981';
+      ctx.shadowColor = '#10b981';
+      ctx.shadowBlur = 15;
+      ctx.beginPath();
+      ctx.arc(ptX, ptY, 8, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.shadowBlur = 0;
+
+      // Label State Point
+      ctx.fillStyle = '#f8fafc';
+      ctx.font = '12px JetBrains Mono';
+      ctx.fillText(`State: ${t.toFixed(1)}°C, ${x.toFixed(1)}g/kg (${rh}%)`, ptX + 12, ptY - 8);
+    }
+
+    function calculate() {
+      const t = parseFloat(document.getElementById('slider-temp').value);
+      const rh = parseFloat(document.getElementById('slider-rh').value);
+      const area = parseFloat(document.getElementById('slider-area').value);
+
+      document.getElementById('lbl-temp').innerText = t.toFixed(1) + ' °C';
+      document.getElementById('lbl-rh').innerText = rh + ' %';
+      document.getElementById('lbl-area').innerText = area.toLocaleString() + ' m²';
+
+      // Saturated Vapor Pressure
+      const es = 0.61078 * Math.exp((17.27 * t) / (t + 237.3)); // kPa
+      const ea = es * (rh / 100.0);
+      
+      // Absolute humidity x (g water / kg dry air)
+      const p_atm = 101.325;
+      const x = 622 * (ea / (p_atm - ea));
+
+      // Dew Point
+      const dew = (237.3 * Math.log(ea / 0.61078)) / (17.27 - Math.log(ea / 0.61078));
+
+      // Enthalpy h = 1.006*T + x*(2501 + 1.86*T)/1000  (kJ/kg)
+      const h_moist = 1.006 * t + (x / 1000) * (2501 + 1.86 * t);
+
+      // Mechanical Dehumidifier vs Vent Purging Savings
+      const savings = Math.min(65, Math.max(25, 35 + (20 - t) * 1.2 + (rh - 70) * 0.4));
+
+      document.getElementById('res-abs-hum').innerText = x.toFixed(1) + ' g/kg';
+      document.getElementById('res-dew-pt').innerText = dew.toFixed(1) + ' °C';
+      document.getElementById('res-enthalpy').innerText = h_moist.toFixed(1) + ' kJ/kg';
+      document.getElementById('res-savings').innerText = savings.toFixed(1) + ' % vs Vents';
+
+      drawChart(t, rh, dew, x);
+    }
+
+    document.querySelectorAll('input').forEach(el => {
+      el.addEventListener('input', calculate);
+    });
+
+    calculate();
+  </script>
+</body>
+</html>

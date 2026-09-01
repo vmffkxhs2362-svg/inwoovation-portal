@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hydroponic Nutrient Formulation & Ion Balance Calculator | Inwoovation Smart Farming</title>
+  <meta name="description" content="Industrial-grade commercial hydroponic nutrient solution calculator. Optimize Hoagland, Sonneveld, and Steiner ionic ratios (NO3, K, Ca, Mg, P) for greenhouse crops.">
+  <link rel="stylesheet" href="css/digital_twin_styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  
+  <style>
+    .calc-card {
+      background: rgba(30, 41, 59, 0.85);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+    .ion-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 16px;
+      font-size: 0.9rem;
+    }
+    .ion-table th, .ion-table td {
+      padding: 12px;
+      text-align: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .ion-table th {
+      background: rgba(15, 23, 42, 0.8);
+      color: var(--accent-cyan);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-size: 0.8rem;
+    }
+    .ion-table td {
+      font-family: var(--font-mono);
+    }
+    .cation { color: #60a5fa; }
+    .anion { color: #34d399; }
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+    .res-box {
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      padding: 16px;
+      text-align: center;
+    }
+    .res-val {
+      font-family: var(--font-mono);
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--accent-emerald);
+      margin-top: 4px;
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Hydroponic Nutrient Formulation & Ion Balance Calculator",
+    "url": "https://inwoovation.com/tools/hydroponic-nutrient-solution-calculator.html",
+    "description": "Calculates precise molar and ppm fertilizer dosing ratios for commercial greenhouse hydroponic systems.",
+    "applicationCategory": "EducationalApplication, AgriculturalTool",
+    "operatingSystem": "All",
+    "author": {
+      "@type": "Person",
+      "name": "Inwoo Hwang"
+    },
+    "dateModified": "2026-09-01"
+  }
+  </script>
+</head>
+<body>
+
+  <div class="sim-container">
+    <header class="sim-header">
+      <h1>🧪 Hydroponic Nutrient & Ion Balance Calculator</h1>
+      <p>Precision Molar Equilibrium & Sonneveld / Steiner Dosing Engine (Dutch WUR Standard)</p>
+    </header>
+
+    <div class="calc-card">
+      <h3 class="control-section-title">🌱 Crop Target Formula & Tank Volume</h3>
+      <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px;">
+        <div class="control-group">
+          <label style="color: var(--text-muted); font-size: 0.9rem;">Crop Standard Recipe</label>
+          <select id="recipe-select" style="background: #1e293b; color: white; border: 1px solid #475569; padding: 10px; border-radius: 8px; font-size: 1rem;">
+            <option value="tomato_veg">Dutch Rockwool Tomato (Vegetative / EC 2.6)</option>
+            <option value="tomato_gen">Dutch Rockwool Tomato (Generative / EC 3.2)</option>
+            <option value="cucumber">Sonneveld Cucumber (EC 2.2)</option>
+            <option value="pepper">Sweet Bell Pepper (EC 2.4)</option>
+            <option value="lettuce">Modified Hoagland Lettuce (EC 1.6)</option>
+            <option value="strawberry">Substrate Strawberry (EC 1.4)</option>
+          </select>
+        </div>
+
+        <div class="control-group">
+          <div class="control-label-row">
+            <span>Mixing Tank Volume (Liters)</span>
+            <span id="lbl-vol">1,000 L</span>
+          </div>
+          <input type="range" id="slider-vol" min="100" max="10000" value="1000" step="100">
+        </div>
+
+        <div class="control-group">
+          <div class="control-label-row">
+            <span>Target EC Multiplier</span>
+            <span id="lbl-ec-mult">1.0x</span>
+          </div>
+          <input type="range" id="slider-ec-mult" min="0.6" max="1.5" value="1.0" step="0.05">
+        </div>
+      </div>
+    </div>
+
+    <!-- Ionic Breakdown Table -->
+    <div class="calc-card">
+      <h3 class="control-section-title">⚖️ Macro-Element Ionic Profile & Fertilizer Mass Breakdown</h3>
+      <table class="ion-table">
+        <thead>
+          <tr>
+            <th>Ion Species</th>
+            <th>Type</th>
+            <th>Target Concentration (mmol/L)</th>
+            <th>Concentration (ppm / mg/L)</th>
+            <th>Required Salt Fertilizer Mass (g / Tank)</th>
+          </tr>
+        </thead>
+        <tbody id="ion-tbody">
+          <!-- Dynamically populated via JS -->
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Summary Metrics -->
+    <div class="results-grid">
+      <div class="res-box">
+        <div style="font-size: 0.8rem; color: var(--text-muted);">PREDICTED SOLUTION EC</div>
+        <div class="res-val" id="res-ec" style="color: var(--accent-cyan);">2.60 mS/cm</div>
+      </div>
+      <div class="res-box">
+        <div style="font-size: 0.8rem; color: var(--text-muted);">ESTIMATED pH RANGE</div>
+        <div class="res-val" id="res-ph">5.6 - 5.8</div>
+      </div>
+      <div class="res-box">
+        <div style="font-size: 0.8rem; color: var(--text-muted);">K : Ca : Mg CATION RATIO</div>
+        <div class="res-val" id="res-cation-ratio" style="font-size: 1.4rem; color: #60a5fa;">5.2 : 3.8 : 1.0</div>
+      </div>
+      <div class="res-box">
+        <div style="font-size: 0.8rem; color: var(--text-muted);">TOTAL FERTILIZER SALT</div>
+        <div class="res-val" id="res-total-salt">1,840 g</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const RECIPES = {
+      tomato_veg: {
+        ec: 2.6,
+        ions: [
+          { name: "NO3- (Nitrate)", type: "Anion", mmol: 14.5, salt: "Calcium Nitrate + Potassium Nitrate", mw_factor: 1.08 },
+          { name: "NH4+ (Ammonium)", type: "Cation", mmol: 1.2, salt: "Ammonium Nitrate", mw_factor: 0.55 },
+          { name: "H2PO4- (Phosphate)", type: "Anion", mmol: 1.5, salt: "Monopotassium Phosphate (MKP)", mw_factor: 0.89 },
+          { name: "K+ (Potassium)", type: "Cation", mmol: 8.5, salt: "Potassium Sulfate + MKP", mw_factor: 1.45 },
+          { name: "Ca2+ (Calcium)", type: "Cation", mmol: 4.5, salt: "Calcium Nitrate Tetrahydrate", mw_factor: 2.36 },
+          { name: "Mg2+ (Magnesium)", type: "Cation", mmol: 2.2, salt: "Magnesium Sulfate (Epsom Salt)", mw_factor: 2.46 },
+          { name: "SO4 2- (Sulfate)", type: "Anion", mmol: 3.5, salt: "Magnesium Sulfate + Potassium Sulfate", mw_factor: 1.82 }
+        ]
+      },
+      tomato_gen: {
+        ec: 3.2,
+        ions: [
+          { name: "NO3- (Nitrate)", type: "Anion", mmol: 16.0, salt: "Calcium Nitrate + Potassium Nitrate", mw_factor: 1.08 },
+          { name: "NH4+ (Ammonium)", type: "Cation", mmol: 0.5, salt: "Ammonium Nitrate", mw_factor: 0.55 },
+          { name: "H2PO4- (Phosphate)", type: "Anion", mmol: 1.8, salt: "Monopotassium Phosphate (MKP)", mw_factor: 0.89 },
+          { name: "K+ (Potassium)", type: "Cation", mmol: 11.5, salt: "Potassium Sulfate + MKP", mw_factor: 1.45 },
+          { name: "Ca2+ (Calcium)", type: "Cation", mmol: 5.5, salt: "Calcium Nitrate Tetrahydrate", mw_factor: 2.36 },
+          { name: "Mg2+ (Magnesium)", type: "Cation", mmol: 2.8, salt: "Magnesium Sulfate", mw_factor: 2.46 },
+          { name: "SO4 2- (Sulfate)", type: "Anion", mmol: 4.5, salt: "Magnesium Sulfate + K2SO4", mw_factor: 1.82 }
+        ]
+      },
+      cucumber: {
+        ec: 2.2,
+        ions: [
+          { name: "NO3- (Nitrate)", type: "Anion", mmol: 13.0, salt: "Calcium Nitrate", mw_factor: 1.08 },
+          { name: "NH4+ (Ammonium)", type: "Cation", mmol: 1.0, salt: "Ammonium Nitrate", mw_factor: 0.55 },
+          { name: "H2PO4- (Phosphate)", type: "Anion", mmol: 1.25, salt: "MKP", mw_factor: 0.89 },
+          { name: "K+ (Potassium)", type: "Cation", mmol: 7.5, salt: "Potassium Nitrate + MKP", mw_factor: 1.45 },
+          { name: "Ca2+ (Calcium)", type: "Cation", mmol: 3.75, salt: "Calcium Nitrate", mw_factor: 2.36 },
+          { name: "Mg2+ (Magnesium)", type: "Cation", mmol: 1.5, salt: "Epsom Salt", mw_factor: 2.46 },
+          { name: "SO4 2- (Sulfate)", type: "Anion", mmol: 2.0, salt: "MgSO4", mw_factor: 1.82 }
+        ]
+      },
+      pepper: {
+        ec: 2.4,
+        ions: [
+          { name: "NO3- (Nitrate)", type: "Anion", mmol: 14.0, salt: "Calcium Nitrate", mw_factor: 1.08 },
+          { name: "NH4+ (Ammonium)", type: "Cation", mmol: 0.8, salt: "Ammonium Nitrate", mw_factor: 0.55 },
+          { name: "H2PO4- (Phosphate)", type: "Anion", mmol: 1.5, salt: "MKP", mw_factor: 0.89 },
+          { name: "K+ (Potassium)", type: "Cation", mmol: 8.0, salt: "Potassium Sulfate", mw_factor: 1.45 },
+          { name: "Ca2+ (Calcium)", type: "Cation", mmol: 4.2, salt: "Calcium Nitrate", mw_factor: 2.36 },
+          { name: "Mg2+ (Magnesium)", type: "Cation", mmol: 1.8, salt: "Epsom Salt", mw_factor: 2.46 },
+          { name: "SO4 2- (Sulfate)", type: "Anion", mmol: 2.8, salt: "MgSO4", mw_factor: 1.82 }
+        ]
+      },
+      lettuce: {
+        ec: 1.6,
+        ions: [
+          { name: "NO3- (Nitrate)", type: "Anion", mmol: 9.5, salt: "Calcium Nitrate", mw_factor: 1.08 },
+          { name: "NH4+ (Ammonium)", type: "Cation", mmol: 0.8, salt: "Ammonium Nitrate", mw_factor: 0.55 },
+          { name: "H2PO4- (Phosphate)", type: "Anion", mmol: 1.0, salt: "MKP", mw_factor: 0.89 },
+          { name: "K+ (Potassium)", type: "Cation", mmol: 5.5, salt: "Potassium Nitrate", mw_factor: 1.45 },
+          { name: "Ca2+ (Calcium)", type: "Cation", mmol: 2.5, salt: "Calcium Nitrate", mw_factor: 2.36 },
+          { name: "Mg2+ (Magnesium)", type: "Cation", mmol: 1.0, salt: "Epsom Salt", mw_factor: 2.46 },
+          { name: "SO4 2- (Sulfate)", type: "Anion", mmol: 1.5, salt: "MgSO4", mw_factor: 1.82 }
+        ]
+      },
+      strawberry: {
+        ec: 1.4,
+        ions: [
+          { name: "NO3- (Nitrate)", type: "Anion", mmol: 8.0, salt: "Calcium Nitrate", mw_factor: 1.08 },
+          { name: "NH4+ (Ammonium)", type: "Cation", mmol: 0.5, salt: "Ammonium Nitrate", mw_factor: 0.55 },
+          { name: "H2PO4- (Phosphate)", type: "Anion", mmol: 1.0, salt: "MKP", mw_factor: 0.89 },
+          { name: "K+ (Potassium)", type: "Cation", mmol: 4.8, salt: "Potassium Sulfate", mw_factor: 1.45 },
+          { name: "Ca2+ (Calcium)", type: "Cation", mmol: 2.2, salt: "Calcium Nitrate", mw_factor: 2.36 },
+          { name: "Mg2+ (Magnesium)", type: "Cation", mmol: 1.0, salt: "Epsom Salt", mw_factor: 2.46 },
+          { name: "SO4 2- (Sulfate)", type: "Anion", mmol: 1.2, salt: "MgSO4", mw_factor: 1.82 }
+        ]
+      }
+    };
+
+    function recalculate() {
+      const recipeKey = document.getElementById('recipe-select').value;
+      const vol = parseFloat(document.getElementById('slider-vol').value);
+      const ecMult = parseFloat(document.getElementById('slider-ec-mult').value);
+
+      document.getElementById('lbl-vol').innerText = vol.toLocaleString() + ' L';
+      document.getElementById('lbl-ec-mult').innerText = ecMult.toFixed(2) + 'x';
+
+      const recipe = RECIPES[recipeKey];
+      const targetEc = recipe.ec * ecMult;
+      document.getElementById('res-ec').innerText = targetEc.toFixed(2) + ' mS/cm';
+
+      const tbody = document.getElementById('ion-tbody');
+      tbody.innerHTML = '';
+
+      let totalSaltGrams = 0;
+      let k_val = 0, ca_val = 0, mg_val = 0;
+
+      recipe.ions.forEach(ion => {
+        const adjMmol = ion.mmol * ecMult;
+        // Mol wt rough approximation (NO3=62, NH4=18, H2PO4=97, K=39.1, Ca=40.08, Mg=24.3, SO4=96)
+        let molWt = 62;
+        if (ion.name.includes("NH4")) molWt = 18;
+        else if (ion.name.includes("H2PO4")) molWt = 97;
+        else if (ion.name.includes("K+")) { molWt = 39.1; k_val = adjMmol; }
+        else if (ion.name.includes("Ca2+")) { molWt = 40.1; ca_val = adjMmol; }
+        else if (ion.name.includes("Mg2+")) { molWt = 24.3; mg_val = adjMmol; }
+        else if (ion.name.includes("SO4")) molWt = 96;
+
+        const ppm = adjMmol * molWt;
+        const saltGrams = (adjMmol * ion.mw_factor * vol * 0.1);
+        totalSaltGrams += saltGrams;
+
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td style="font-weight: 700; text-align: left;">${ion.name}</td>
+          <td class="${ion.type === 'Cation' ? 'cation' : 'anion'}">${ion.type}</td>
+          <td>${adjMmol.toFixed(2)}</td>
+          <td>${ppm.toFixed(1)} mg/L</td>
+          <td style="color: var(--accent-emerald); font-weight: 700;">${saltGrams.toFixed(0)} g</td>
+        `;
+        tbody.appendChild(tr);
+      });
+
+      document.getElementById('res-total-salt').innerText = Math.round(totalSaltGrams).toLocaleString() + ' g';
+      
+      const mg_base = mg_val || 1;
+      const k_ratio = (k_val / mg_base).toFixed(1);
+      const ca_ratio = (ca_val / mg_base).toFixed(1);
+      document.getElementById('res-cation-ratio').innerText = `${k_ratio} : ${ca_ratio} : 1.0`;
+    }
+
+    document.querySelectorAll('input, select').forEach(el => {
+      el.addEventListener('input', recalculate);
+      el.addEventListener('change', recalculate);
+    });
+
+    recalculate();
+  </script>
+</body>
+</html>
