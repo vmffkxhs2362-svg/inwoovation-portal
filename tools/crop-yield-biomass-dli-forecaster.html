@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crop Yield & Biomass Accumulation DLI Forecaster | Inwoovation Smart Farming</title>
+  <meta name="description" content="Predictive photosynthetic dry matter accumulation, Light Use Efficiency (LUE), and weekly commercial crop harvest yields based on cumulative Daily Light Integral (DLI).">
+  <link rel="stylesheet" href="css/digital_twin_styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  
+  <style>
+    .calc-card {
+      background: rgba(30, 41, 59, 0.85);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+    .res-box {
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      padding: 16px;
+      text-align: center;
+    }
+    .res-val {
+      font-family: var(--font-mono);
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--accent-emerald);
+      margin-top: 4px;
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Crop Yield & Biomass Accumulation DLI Forecaster",
+    "url": "https://inwoovation.com/tools/crop-yield-biomass-dli-forecaster.html",
+    "description": "Calculates commercial greenhouse crop yield forecasts and harvest weight based on Light Use Efficiency (LUE) and DLI.",
+    "applicationCategory": "EducationalApplication, AgriculturalTool",
+    "operatingSystem": "All",
+    "author": {
+      "@type": "Person",
+      "name": "Inwoo Hwang"
+    },
+    "dateModified": "2026-09-01"
+  }
+  </script>
+</head>
+<body>
+
+  <div class="sim-container">
+    <header class="sim-header">
+      <h1>📈 Crop Yield & Biomass DLI Forecaster</h1>
+      <p>Photochemical Light Use Efficiency (LUE) & Harvest Biomass Modeling Engine (WUR Model)</p>
+    </header>
+
+    <div class="calc-card">
+      <h3 class="control-section-title">🌾 Crop Variety & Photosynthetic Environment</h3>
+      <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px;">
+        <div class="control-group">
+          <label style="color: var(--text-muted); font-size: 0.9rem;">Crop Variety</label>
+          <select id="crop-select" style="background:#1e293b; color:white; border:1px solid #475569; padding:10px; border-radius:8px;">
+            <option value="tomato">High-Wire Beefsteak Tomato (LUE: 3.0 g/mol, HI: 0.68)</option>
+            <option value="pepper">Sweet Bell Pepper (LUE: 2.6 g/mol, HI: 0.62)</option>
+            <option value="cucumber">High-Wire Cucumber (LUE: 3.4 g/mol, HI: 0.72)</option>
+            <option value="strawberry">Substrate Strawberry (LUE: 2.2 g/mol, HI: 0.55)</option>
+          </select>
+        </div>
+
+        <div class="control-group">
+          <div class="control-label-row">
+            <span>Average Daily DLI</span>
+            <span id="lbl-dli">25.0 mol/m²d</span>
+          </div>
+          <input type="range" id="slider-dli" min="5" max="35" value="25.0" step="0.5">
+        </div>
+
+        <div class="control-group">
+          <div class="control-label-row">
+            <span>Plant Density</span>
+            <span id="lbl-density">2.8 Stems / m²</span>
+          </div>
+          <input type="range" id="slider-density" min="1.5" max="4.5" value="2.8" step="0.1">
+        </div>
+      </div>
+    </div>
+
+    <!-- Results Telemetry -->
+    <div class="results-grid">
+      <div class="res-box">
+        <div style="font-size: 0.8rem; color: var(--text-muted);">WEEKLY FRESH FRUIT YIELD</div>
+        <div class="res-val" id="res-weekly-kg" style="color: var(--accent-cyan);">1.75 kg/m²·wk</div>
+      </div>
+      <div class="res-box">
+        <div style="font-size: 0.8rem; color: var(--text-muted);">ANNUAL PROJECTED YIELD</div>
+        <div class="res-val" id="res-annual-kg" style="color: var(--accent-emerald);">85.4 kg/m²·yr</div>
+      </div>
+      <div class="res-box">
+        <div style="font-size: 0.8rem; color: var(--text-muted);">DRY MATTER PRODUCTION</div>
+        <div class="res-val" id="res-dry-matter">525 g/m²·wk</div>
+      </div>
+      <div class="res-box">
+        <div style="font-size: 0.8rem; color: var(--text-muted);">1 HA ANNUAL PRODUCTION</div>
+        <div class="res-val" id="res-ha-ton">854 Tons / Ha</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function calculate() {
+      const crop = document.getElementById('crop-select').value;
+      const dli = parseFloat(document.getElementById('slider-dli').value);
+      const density = parseFloat(document.getElementById('slider-density').value);
+
+      document.getElementById('lbl-dli').innerText = dli.toFixed(1) + ' mol/m²d';
+      document.getElementById('lbl-density').innerText = density.toFixed(1) + ' Stems / m²';
+
+      let lue = 3.0; // g dry biomass per mol PAR
+      let hi = 0.68; // Harvest index (fraction of dry matter to fruit)
+      let dryContent = 0.055; // 5.5% dry matter in fresh tomato fruit (94.5% water)
+
+      if (crop === 'pepper') {
+        lue = 2.6; hi = 0.62; dryContent = 0.080;
+      } else if (crop === 'cucumber') {
+        lue = 3.4; hi = 0.72; dryContent = 0.040;
+      } else if (crop === 'strawberry') {
+        lue = 2.2; hi = 0.55; dryContent = 0.090;
+      }
+
+      // Weekly Dry Biomass = DLI * 7 days * LUE (g/m²·wk)
+      const weeklyDryBiomass = dli * 7.0 * lue;
+      const weeklyFruitDry = weeklyDryBiomass * hi;
+      const weeklyFreshFruitKg = (weeklyFruitDry / dryContent) / 1000.0;
+      const annualKg = weeklyFreshFruitKg * 48.0; // 48 active harvesting weeks
+      const haTons = (annualKg * 10000.0) / 1000.0;
+
+      document.getElementById('res-weekly-kg').innerText = weeklyFreshFruitKg.toFixed(2) + ' kg/m²·wk';
+      document.getElementById('res-annual-kg').innerText = annualKg.toFixed(1) + ' kg/m²·yr';
+      document.getElementById('res-dry-matter').innerText = Math.round(weeklyDryBiomass) + ' g/m²·wk';
+      document.getElementById('res-ha-ton').innerText = Math.round(haTons).toLocaleString() + ' Tons / Ha';
+    }
+
+    document.querySelectorAll('input, select').forEach(el => {
+      el.addEventListener('input', calculate);
+      el.addEventListener('change', calculate);
+    });
+
+    calculate();
+  </script>
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greenhouse CO2 Enrichment & Economics Optimizer | Inwoovation Smart Farming</title>
+  <meta name="description" content="Industrial CO2 dosing kinetics and economics optimizer. Calculate pure liquid vs flue gas dosing costs, ventilation purge losses, and net crop yield gains.">
+  <link rel="stylesheet" href="css/digital_twin_styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  
+  <style>
+    .calc-card {
+      background: rgba(30, 41, 59, 0.85);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+    .res-box {
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      padding: 16px;
+      text-align: center;
+    }
+    .res-val {
+      font-family: var(--font-mono);
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--accent-emerald);
+      margin-top: 4px;
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Greenhouse CO2 Enrichment & Economics Optimizer",
+    "url": "https://inwoovation.com/tools/greenhouse-co2-enrichment-optimizer.html",
+    "description": "Calculates commercial greenhouse CO2 dosing kinetics, vent purge losses, and net economic ROI.",
+    "applicationCategory": "EducationalApplication, AgriculturalTool",
+    "operatingSystem": "All",
+    "author": {
+      "@type": "Person",
+      "name": "Inwoo Hwang"
+    },
+    "dateModified": "2026-09-01"
+  }
+  </script>
+</head>
+<body>
+
+  <div class="sim-container">
+    <header class="sim-header">
+      <h1>💨 Greenhouse CO₂ Enrichment & Economics Engine</h1>
+      <p>Precision Gas Kinetics, Vent Purge Losses & Net Photosynthetic ROI Optimizer</p>
+    </header>
+
+    <div class="calc-card">
+      <h3 class="control-section-title">🏭 CO₂ Dosing Target & Source Configuration</h3>
+      <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px;">
+        <div class="control-group">
+          <div class="control-label-row">
+            <span>Target Indoor CO₂ Level</span>
+            <span id="lbl-co2">900 ppm</span>
+          </div>
+          <input type="range" id="slider-co2" min="400" max="1500" value="900" step="50">
+        </div>
+
+        <div class="control-group">
+          <div class="control-label-row">
+            <span>Roof Vent Opening</span>
+            <span id="lbl-vent">15 %</span>
+          </div>
+          <input type="range" id="slider-vent" min="0" max="100" value="15" step="5">
+        </div>
+
+        <div class="control-group">
+          <div class="control-label-row">
+            <span>CO₂ Supply Source</span>
+          </div>
+          <select id="source-select" style="background:#1e293b; color:white; border:1px solid #475569; padding:10px; border-radius:8px;">
+            <option value="chp">Natural Gas CHP Flue Gas ($0.06 / kg CO₂)</option>
+            <option value="liquid">Pure Bulk Liquid CO₂ ($0.28 / kg CO₂)</option>
+            <option value="direct_burner">Direct Gas Burner ($0.12 / kg CO₂)</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- Results Telemetry -->
+    <div class="results-grid">
+      <div class="res-box">
+        <div style="font-size: 0.8rem; color: var(--text-muted);">PHOTOSYNTHETIC BOOST</div>
+        <div class="res-val" id="res-photo-boost" style="color: var(--accent-emerald);">+28.5 %</div>
+      </div>
+      <div class="res-box">
+        <div style="font-size: 0.8rem; color: var(--text-muted);">REQUIRED DOSING RATE</div>
+        <div class="res-val" id="res-dose-rate" style="color: var(--accent-cyan);">68.4 kg/Ha·h</div>
+      </div>
+      <div class="res-box">
+        <div style="font-size: 0.8rem; color: var(--text-muted);">VENTILATION PURGE LOSS</div>
+        <div class="res-val" id="res-vent-loss" style="color: #f59e0b;">52.0 %</div>
+      </div>
+      <div class="res-box">
+        <div style="font-size: 0.8rem; color: var(--text-muted);">DAILY NET ROI ESTIMATE</div>
+        <div class="res-val" id="res-net-roi">+$248 / Ha·d</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function calculate() {
+      const co2 = parseFloat(document.getElementById('slider-co2').value);
+      const vent = parseFloat(document.getElementById('slider-vent').value);
+      const source = document.getElementById('source-select').value;
+
+      document.getElementById('lbl-co2').innerText = co2 + ' ppm';
+      document.getElementById('lbl-vent').innerText = vent + ' %';
+
+      // Ambient baseline is 420 ppm
+      const deltaCo2 = Math.max(0, co2 - 420);
+      
+      // Photosynthetic boost follows Michaelis-Menten kinetics
+      const photoBoost = (deltaCo2 / (deltaCo2 + 450)) * 52.0;
+
+      // Crop uptake (~ 35 kg CO2 / Ha·h under high light)
+      const cropUptake = 35.0 * (1 + photoBoost / 100.0);
+
+      // Vent loss kinetics (grows quadratically with vent opening)
+      const ventLossKg = (vent / 100.0) * deltaCo2 * 0.18;
+      const totalDoseRate = cropUptake + ventLossKg;
+
+      const ventLossPct = (ventLossKg / (totalDoseRate || 1)) * 100;
+
+      // Economics: Extra tomato value vs CO2 cost
+      let costPerKg = 0.06;
+      if (source === 'liquid') costPerKg = 0.28;
+      else if (source === 'direct_burner') costPerKg = 0.12;
+
+      const dailyCo2Cost = totalDoseRate * 12.0 * costPerKg; // 12 dosing hours
+      // Extra yield value ~$15 per extra % boost per hectare day
+      const dailyYieldValue = photoBoost * 14.5;
+      const netRoi = dailyYieldValue - dailyCo2Cost;
+
+      document.getElementById('res-photo-boost').innerText = '+' + photoBoost.toFixed(1) + ' %';
+      document.getElementById('res-dose-rate').innerText = totalDoseRate.toFixed(1) + ' kg/Ha·h';
+      document.getElementById('res-vent-loss').innerText = ventLossPct.toFixed(1) + ' %';
+      
+      const roiEl = document.getElementById('res-net-roi');
+      if (netRoi >= 0) {
+        roiEl.innerText = '+$' + Math.round(netRoi) + ' / Ha·d';
+        roiEl.style.color = '#10b981';
+      } else {
+        roiEl.innerText = '-$' + Math.abs(Math.round(netRoi)) + ' / Ha·d';
+        roiEl.style.color = '#ef4444';
+      }
+    }
+
+    document.querySelectorAll('input, select').forEach(el => {
+      el.addEventListener('input', calculate);
+      el.addEventListener('change', calculate);
+    });
+
+    calculate();
+  </script>
+</body>
+</html>

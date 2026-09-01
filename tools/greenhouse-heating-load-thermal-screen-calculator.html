@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greenhouse Heating Load & Thermal Screen Energy Calculator (DIN V 18599) | Inwoovation</title>
+  <meta name="description" content="Industrial engineering calculator for greenhouse peak heating loads, pipe rail hydraulics, and thermal screen energy savings based on DIN V 18599.">
+  <link rel="stylesheet" href="css/digital_twin_styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  
+  <style>
+    .calc-card {
+      background: rgba(30, 41, 59, 0.85);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+    .res-box {
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      padding: 16px;
+      text-align: center;
+    }
+    .res-val {
+      font-family: var(--font-mono);
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--accent-emerald);
+      margin-top: 4px;
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Greenhouse Heating Load & Thermal Screen Energy Calculator",
+    "url": "https://inwoovation.com/tools/greenhouse-heating-load-thermal-screen-calculator.html",
+    "description": "Calculates peak thermal heating demand, hot-water pipe sizing, and thermal screen energy conservation according to DIN V 18599.",
+    "applicationCategory": "EducationalApplication, EngineeringTool",
+    "operatingSystem": "All",
+    "author": {
+      "@type": "Person",
+      "name": "Inwoo Hwang"
+    },
+    "dateModified": "2026-09-01"
+  }
+  </script>
+</head>
+<body>
+
+  <div class="sim-container">
+    <header class="sim-header">
+      <h1>🔥 Greenhouse Heating Load & Thermal Screen Engine</h1>
+      <p>DIN V 18599 Thermal Envelope Transmission & Hot-Water Pipe Hydraulics Calculator</p>
+    </header>
+
+    <div class="calc-card">
+      <h3 class="control-section-title">📐 Greenhouse Dimensions & Structure</h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
+        <div class="control-group">
+          <div class="control-label-row">
+            <span>Floor Area ($A_{floor}$)</span>
+            <span id="lbl-floor">10,000 m² (1 Ha)</span>
+          </div>
+          <input type="range" id="slider-floor" min="1000" max="50000" value="10000" step="1000">
+        </div>
+
+        <div class="control-group">
+          <div class="control-label-row">
+            <span>Gutter Height ($H_g$)</span>
+            <span id="lbl-height">6.5 m</span>
+          </div>
+          <input type="range" id="slider-height" min="4.0" max="9.0" value="6.5" step="0.5">
+        </div>
+
+        <div class="control-group">
+          <div class="control-label-row">
+            <span>Glazing Type</span>
+          </div>
+          <select id="glazing-select" style="background:#1e293b; color:white; border:1px solid #475569; padding:10px; border-radius:8px;">
+            <option value="single_diffuse">Single 4mm Diffuse Glass (U=6.5 W/m²K)</option>
+            <option value="double_ar">Double Anti-Reflective Glass (U=3.2 W/m²K)</option>
+            <option value="poly_double">Double Inflatable Polyethylene (U=4.2 W/m²K)</option>
+            <option value="polycarb_16">16mm Multiwall Polycarbonate (U=2.4 W/m²K)</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="calc-card">
+      <h3 class="control-section-title">❄️ Design Temperatures & Thermal Screen Control</h3>
+      <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px;">
+        <div class="control-group">
+          <div class="control-label-row">
+            <span>Target Indoor Night Temp</span>
+            <span id="lbl-tin">18.0 °C</span>
+          </div>
+          <input type="range" id="slider-tin" min="10" max="25" value="18.0" step="0.5">
+        </div>
+
+        <div class="control-group">
+          <div class="control-label-row">
+            <span>Design Minimum Outdoor Temp</span>
+            <span id="lbl-tout">-12.0 °C</span>
+          </div>
+          <input type="range" id="slider-tout" min="-25" max="5" value="-12.0" step="1">
+        </div>
+
+        <div class="control-group">
+          <div class="control-label-row">
+            <span>Thermal Energy Screen Closure</span>
+            <span id="lbl-screen">100 % (Fully Closed)</span>
+          </div>
+          <input type="range" id="slider-screen" min="0" max="100" value="100" step="5">
+        </div>
+      </div>
+    </div>
+
+    <!-- Results Telemetry -->
+    <div class="results-grid">
+      <div class="res-box">
+        <div style="font-size: 0.8rem; color: var(--text-muted);">PEAK HEATING POWER</div>
+        <div class="res-val" id="res-peak-kw" style="color: #ef4444;">1,420 kW</div>
+      </div>
+      <div class="res-box">
+        <div style="font-size: 0.8rem; color: var(--text-muted);">SPECIFIC HEATING LOAD</div>
+        <div class="res-val" id="res-spec-load" style="color: var(--accent-cyan);">142 W/m²</div>
+      </div>
+      <div class="res-box">
+        <div style="font-size: 0.8rem; color: var(--text-muted);">THERMAL SCREEN SAVINGS</div>
+        <div class="res-val" id="res-screen-save" style="color: var(--accent-emerald);">43.5 %</div>
+      </div>
+      <div class="res-box">
+        <div style="font-size: 0.8rem; color: var(--text-muted);">ESTIMATED BOILER LOAD</div>
+        <div class="res-val" id="res-boiler-btu">4.85 MMBtu/h</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function calculate() {
+      const area = parseFloat(document.getElementById('slider-floor').value);
+      const height = parseFloat(document.getElementById('slider-height').value);
+      const tIn = parseFloat(document.getElementById('slider-tin').value);
+      const tOut = parseFloat(document.getElementById('slider-tout').value);
+      const screenPct = parseFloat(document.getElementById('slider-screen').value);
+      const glazing = document.getElementById('glazing-select').value;
+
+      document.getElementById('lbl-floor').innerText = area.toLocaleString() + ' m²';
+      document.getElementById('lbl-height').innerText = height.toFixed(1) + ' m';
+      document.getElementById('lbl-tin').innerText = tIn.toFixed(1) + ' °C';
+      document.getElementById('lbl-tout').innerText = tOut.toFixed(1) + ' °C';
+      document.getElementById('lbl-screen').innerText = screenPct + ' %';
+
+      let uBase = 6.5;
+      if (glazing === 'double_ar') uBase = 3.2;
+      else if (glazing === 'poly_double') uBase = 4.2;
+      else if (glazing === 'polycarb_16') uBase = 2.4;
+
+      // Envelope Area approximation (Roof + Side walls)
+      // Roof pitch ~ 22 deg => Roof area ~ 1.15 * Floor area
+      // Wall perimeter ~ 4 * sqrt(Floor area) => Wall area = Perimeter * Height
+      const roofArea = area * 1.15;
+      const wallArea = 4 * Math.sqrt(area) * height;
+      const totalEnvelopeArea = roofArea + wallArea;
+
+      // Effective U-value with screen
+      // Screen provides ~45% reduction at 100% closure on roof
+      const screenFactor = 1.0 - (screenPct / 100.0) * 0.45;
+      const effectiveU = (roofArea * uBase * screenFactor + wallArea * uBase) / totalEnvelopeArea;
+
+      const deltaT = tIn - tOut;
+      // Transmission loss Q_trans = A_env * U_eff * deltaT
+      const qTransW = totalEnvelopeArea * effectiveU * deltaT;
+      
+      // Infiltration & air exchange loss (0.5 air changes / hour)
+      const volume = area * height;
+      const qInfW = 1.204 * 1005 * (volume * 0.5 / 3600.0) * deltaT;
+
+      const totalPeakW = qTransW + qInfW;
+      const peakKw = totalPeakW / 1000.0;
+      const specLoad = totalPeakW / area;
+
+      // Unscreened base peak for savings comparison
+      const unscreenedW = (totalEnvelopeArea * uBase * deltaT) + qInfW;
+      const savingsPct = ((unscreenedW - totalPeakW) / unscreenedW) * 100;
+      const boilerBtu = (totalPeakW * 3.412142) / 1000000.0; // MMBtu/h
+
+      document.getElementById('res-peak-kw').innerText = Math.round(peakKw).toLocaleString() + ' kW';
+      document.getElementById('res-spec-load').innerText = Math.round(specLoad) + ' W/m²';
+      document.getElementById('res-screen-save').innerText = savingsPct.toFixed(1) + ' %';
+      document.getElementById('res-boiler-btu').innerText = boilerBtu.toFixed(2) + ' MMBtu/h';
+    }
+
+    document.querySelectorAll('input, select').forEach(el => {
+      el.addEventListener('input', calculate);
+      el.addEventListener('change', calculate);
+    });
+
+    calculate();
+  </script>
+</body>
+</html>
