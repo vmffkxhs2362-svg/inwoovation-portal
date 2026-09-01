@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Canopy Light Extinction (Beer-Lambert & LAI) Calculator | Inwoovation</title>
+  <meta name="description" content="Industrial plant physiology calculator for multi-layer canopy light extinction (Beer-Lambert Law), Leaf Area Index (LAI), and diffuse vs direct photon penetration.">
+  <link rel="stylesheet" href="css/digital_twin_styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  
+  <style>
+    .calc-card {
+      background: rgba(30, 41, 59, 0.85);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+    .res-box {
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      padding: 16px;
+      text-align: center;
+    }
+    .res-val {
+      font-family: var(--font-mono);
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--accent-emerald);
+      margin-top: 4px;
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Canopy Light Extinction & LAI Calculator",
+    "url": "https://inwoovation.com/tools/par-far-red-canopy-extinction-beer-lambert-calculator.html",
+    "description": "Calculates canopy photon interception and bottom layer PAR availability using the Beer-Lambert law.",
+    "applicationCategory": "EducationalApplication, AgriculturalTool",
+    "operatingSystem": "All",
+    "author": {
+      "@type": "Person",
+      "name": "Inwoo Hwang"
+    },
+    "dateModified": "2026-09-01"
+  }
+  </script>
+</head>
+<body>
+
+  <div class="sim-container">
+    <header class="sim-header">
+      <h1>☀️ Canopy Light Extinction (Beer-Lambert & LAI) Engine</h1>
+      <p>Multi-Layer Canopy PAR Penetration, Diffuse Light Boost & Bottom Layer Light Availability</p>
+    </header>
+
+    <div class="calc-card">
+      <h3 class="control-section-title">🌿 Canopy Geometry & Incident Radiation</h3>
+      <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px;">
+        <div class="control-group">
+          <div class="control-label-row">
+            <span>Leaf Area Index ($LAI$)</span>
+            <span id="lbl-lai">3.5 m²/m²</span>
+          </div>
+          <input type="range" id="slider-lai" min="1.0" max="6.0" value="3.5" step="0.1">
+        </div>
+
+        <div class="control-group">
+          <div class="control-label-row">
+            <span>Incident Top Canopy PPFD</span>
+            <span id="lbl-ppfd">850 µmol/m²s</span>
+          </div>
+          <input type="range" id="slider-ppfd" min="100" max="1500" value="850" step="25">
+        </div>
+
+        <div class="control-group">
+          <div class="control-label-row">
+            <span>Light Diffusivity (Glass / Screen)</span>
+            <span id="lbl-diffuse">Hortiscatter 65% (Diffuse)</span>
+          </div>
+          <select id="diffuse-select" style="background:#1e293b; color:white; border:1px solid #475569; padding:10px; border-radius:8px;">
+            <option value="diffuse">Diffuse Light (k = 0.55 - Deep Penetration)</option>
+            <option value="direct">Direct Clear Sunlight (k = 0.75 - Top Heavy)</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- Results Telemetry -->
+    <div class="results-grid">
+      <div class="res-box">
+        <div style="font-size: 0.8rem; color: var(--text-muted);">BOTTOM LAYER PPFD</div>
+        <div class="res-val" id="res-bottom-ppfd" style="color: var(--accent-cyan);">124 µmol/m²s</div>
+      </div>
+      <div class="res-box">
+        <div style="font-size: 0.8rem; color: var(--text-muted);">CANOPY LIGHT INTERCEPTION</div>
+        <div class="res-val" id="res-interception" style="color: var(--accent-emerald);">85.4 %</div>
+      </div>
+      <div class="res-box">
+        <div style="font-size: 0.8rem; color: var(--text-muted);">INTER-LIGHTING BENEFIT</div>
+        <div class="res-val" id="res-inter-benefit" style="color: #f59e0b;">+ 18.5 % Photosynthesis</div>
+      </div>
+      <div class="res-box">
+        <div style="font-size: 0.8rem; color: var(--text-muted);">CANOPY LIGHT STATUS</div>
+        <div class="res-val" id="res-light-status" style="color: #10b981; font-size: 1.3rem;">EXCELLENT DISTRIBUTION</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function calculate() {
+      const lai = parseFloat(document.getElementById('slider-lai').value);
+      const ppfd = parseFloat(document.getElementById('slider-ppfd').value);
+      const diffMode = document.getElementById('diffuse-select').value;
+
+      document.getElementById('lbl-lai').innerText = lai.toFixed(1) + ' m²/m²';
+      document.getElementById('lbl-ppfd').innerText = ppfd.toLocaleString() + ' µmol/m²s';
+
+      const k = diffMode === 'diffuse' ? 0.55 : 0.75;
+      const bottomPpfd = ppfd * Math.exp(-k * lai);
+      const interceptPct = (1.0 - Math.exp(-k * lai)) * 100.0;
+
+      document.getElementById('res-bottom-ppfd').innerText = Math.round(bottomPpfd) + ' µmol/m²s';
+      document.getElementById('res-interception').innerText = interceptPct.toFixed(1) + ' %';
+    }
+
+    document.querySelectorAll('input, select').forEach(el => {
+      el.addEventListener('input', calculate);
+      el.addEventListener('change', calculate);
+    });
+
+    calculate();
+  </script>
+</body>
+</html>

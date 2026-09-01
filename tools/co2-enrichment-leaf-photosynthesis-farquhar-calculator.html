@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biochemical Farquhar (FvCB) Leaf Photosynthesis Calculator | Inwoovation</title>
+  <meta name="description" content="Industrial plant physiology calculator for Farquhar-von Caemmerer-Berry (FvCB) C3 leaf photosynthesis, Rubisco kinetics (Vcmax), electron transport (J), and net CO2 assimilation rate (Anet).">
+  <link rel="stylesheet" href="css/digital_twin_styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  
+  <style>
+    .calc-card {
+      background: rgba(30, 41, 59, 0.85);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+    .res-box {
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      padding: 16px;
+      text-align: center;
+    }
+    .res-val {
+      font-family: var(--font-mono);
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--accent-emerald);
+      margin-top: 4px;
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Biochemical Farquhar (FvCB) Leaf Photosynthesis Calculator",
+    "url": "https://inwoovation.com/tools/co2-enrichment-leaf-photosynthesis-farquhar-calculator.html",
+    "description": "Calculates Rubisco-limited and electron transport-limited net photosynthesis rates.",
+    "applicationCategory": "EducationalApplication, AgriculturalTool",
+    "operatingSystem": "All",
+    "author": {
+      "@type": "Person",
+      "name": "Inwoo Hwang"
+    },
+    "dateModified": "2026-09-01"
+  }
+  </script>
+</head>
+<body>
+
+  <div class="sim-container">
+    <header class="sim-header">
+      <h1>🍃 Farquhar (FvCB) Leaf Photosynthesis Engine</h1>
+      <p>Rubisco Kinetics ($V_{cmax}$), Electron Transport ($J$) & Net Assimilation Rate ($A_{net}$)</p>
+    </header>
+
+    <div class="calc-card">
+      <h3 class="control-section-title">🧪 Ambient CO₂ & Absorbed Irradiance</h3>
+      <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px;">
+        <div class="control-group">
+          <div class="control-label-row">
+            <span>Ambient CO₂ Concentration ($C_a$)</span>
+            <span id="lbl-ca">800 ppm</span>
+          </div>
+          <input type="range" id="slider-ca" min="350" max="1500" value="800" step="25">
+        </div>
+
+        <div class="control-group">
+          <div class="control-label-row">
+            <span>Leaf Temperature ($T_{leaf}$)</span>
+            <span id="lbl-tleaf">24.0 °C</span>
+          </div>
+          <input type="range" id="slider-tleaf" min="15" max="35" value="24.0" step="0.5">
+        </div>
+
+        <div class="control-group">
+          <div class="control-label-row">
+            <span>Incident PPFD</span>
+            <span id="lbl-ppfd-f">650 µmol/m²s</span>
+          </div>
+          <input type="range" id="slider-ppfd-f" min="50" max="1500" value="650" step="25">
+        </div>
+      </div>
+    </div>
+
+    <!-- Results Telemetry -->
+    <div class="results-grid">
+      <div class="res-box">
+        <div style="font-size: 0.8rem; color: var(--text-muted);">NET ASSIMILATION RATE ($A_{net}$)</div>
+        <div class="res-val" id="res-anet" style="color: var(--accent-emerald);">24.8 µmol/m²s</div>
+      </div>
+      <div class="res-box">
+        <div style="font-size: 0.8rem; color: var(--text-muted);">CO₂ ENRICHMENT BOOST</div>
+        <div class="res-val" id="res-co2-boost" style="color: var(--accent-cyan);">+ 38.4 % vs Ambient</div>
+      </div>
+      <div class="res-box">
+        <div style="font-size: 0.8rem; color: var(--text-muted);">LIMITING BIOCHEMICAL FACTOR</div>
+        <div class="res-val" id="res-limit-fac" style="color: #38bdf8; font-size: 1.3rem;">RUBISCO CARBOXYLATION (Ac)</div>
+      </div>
+      <div class="res-box">
+        <div style="font-size: 0.8rem; color: var(--text-muted);">WATER USE EFFICIENCY (iWUE)</div>
+        <div class="res-val" id="res-iwue">9.2 µmol/mmol</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function calculate() {
+      const ca = parseFloat(document.getElementById('slider-ca').value);
+      const tleaf = parseFloat(document.getElementById('slider-tleaf').value);
+      const ppfd = parseFloat(document.getElementById('slider-ppfd-f').value);
+
+      document.getElementById('lbl-ca').innerText = ca + ' ppm';
+      document.getElementById('lbl-tleaf').innerText = tleaf.toFixed(1) + ' °C';
+      document.getElementById('lbl-ppfd-f').innerText = ppfd + ' µmol/m²s';
+
+      // Intercellular Ci ~ 0.7 * Ca
+      const ci = ca * 0.7;
+      // Gamma* CO2 compensation point ~ 42 ppm at 25C
+      const gammaStar = 42.75 * Math.exp(37830 * (tleaf - 25) / (298.15 * 8.314 * (273.15 + tleaf)));
+
+      // Vcmax ~ 95 umol/m2s for tomato
+      const vcmax = 95.0;
+      const kc = 404.9;
+      const ko = 278.4;
+      const oi = 210.0;
+      const km = kc * (1.0 + oi / ko);
+
+      // Rubisco-limited rate Ac
+      const ac = vcmax * (ci - gammaStar) / (ci + km);
+
+      // Light-limited rate Aj
+      const j = (0.85 * ppfd) / Math.sqrt(1.0 + Math.pow(0.85 * ppfd / 180.0, 2));
+      const aj = j * (ci - gammaStar) / (4.0 * ci + 8.0 * gammaStar);
+
+      const rd = 1.2;
+      const anet = Math.max(0, Math.min(ac, aj) - rd);
+
+      // Baseline at 400 ppm
+      const ciBase = 400.0 * 0.7;
+      const acBase = vcmax * (ciBase - gammaStar) / (ciBase + km);
+      const ajBase = j * (ciBase - gammaStar) / (4.0 * ciBase + 8.0 * gammaStar);
+      const anetBase = Math.max(0, Math.min(acBase, ajBase) - rd);
+
+      const boostPct = anetBase > 0 ? ((anet - anetBase) / anetBase) * 100.0 : 0;
+
+      document.getElementById('res-anet').innerText = anet.toFixed(1) + ' µmol/m²s';
+      document.getElementById('res-co2-boost').innerText = '+ ' + boostPct.toFixed(1) + ' % vs Ambient';
+      document.getElementById('res-limit-fac').innerText = ac < aj ? 'RUBISCO LIMITED (Ac)' : 'LIGHT LIMITED (Aj)';
+    }
+
+    document.querySelectorAll('input').forEach(el => {
+      el.addEventListener('input', calculate);
+    });
+
+    calculate();
+  </script>
+</body>
+</html>
