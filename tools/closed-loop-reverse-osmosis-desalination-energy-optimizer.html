@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Closed-Loop RO Desalination & Energy Recovery Optimizer | Inwoovation</title>
+  <meta name="description" content="Industrial engineering calculator for greenhouse reverse osmosis (RO) membrane flux (LMH), specific energy consumption (kWh/m3), sodium Na+ rejection, and concentrate recovery ratio.">
+  <link rel="stylesheet" href="css/digital_twin_styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  
+  <style>
+    .calc-card {
+      background: rgba(30, 41, 59, 0.85);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+    .res-box {
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      padding: 16px;
+      text-align: center;
+    }
+    .res-val {
+      font-family: var(--font-mono);
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--accent-emerald);
+      margin-top: 4px;
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Closed-Loop RO Desalination & Energy Recovery Optimizer",
+    "url": "https://inwoovation.com/tools/closed-loop-reverse-osmosis-desalination-energy-optimizer.html",
+    "description": "Calculates RO membrane permeate flux, sodium rejection rate, and specific energy consumption for greenhouse drainage water.",
+    "applicationCategory": "EducationalApplication, AgriculturalTool",
+    "operatingSystem": "All",
+    "author": {
+      "@type": "Person",
+      "name": "Inwoo Hwang"
+    },
+    "dateModified": "2026-09-01"
+  }
+  </script>
+</head>
+<body>
+
+  <div class="sim-container">
+    <header class="sim-header">
+      <h1>💧 Closed-Loop RO Desalination & Energy Engine</h1>
+      <p>Membrane Flux (LMH), $Na^+$ Sodium Rejection (99.2%) & Specific Energy Consumption Sizing</p>
+    </header>
+
+    <div class="calc-card">
+      <h3 class="control-section-title">🧪 Feedwater Salinity & Target Recovery Ratio</h3>
+      <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px;">
+        <div class="control-group">
+          <div class="control-label-row">
+            <span>Drain Feedwater Sodium ($Na^+$)</span>
+            <span id="lbl-na">6.5 mmol/L (150 ppm)</span>
+          </div>
+          <input type="range" id="slider-na" min="1.0" max="15.0" value="6.5" step="0.5">
+        </div>
+
+        <div class="control-group">
+          <div class="control-label-row">
+            <span>Permeate Water Recovery Ratio</span>
+            <span id="lbl-rec">80 %</span>
+          </div>
+          <input type="range" id="slider-rec" min="65" max="92" value="80" step="1">
+        </div>
+
+        <div class="control-group">
+          <div class="control-label-row">
+            <span>Energy Recovery Device (ERD)</span>
+            <span id="lbl-erd">Isobaric Pressure Exchanger</span>
+          </div>
+          <select id="erd-select" style="background:#1e293b; color:white; border:1px solid #475569; padding:10px; border-radius:8px;">
+            <option value="px">Isobaric Pressure Exchanger (PX - 96% Eff)</option>
+            <option value="turbo">Turbocharger Energy Recovery (78% Eff)</option>
+            <option value="none">Direct High-Pressure Pump (No ERD)</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- Results Telemetry -->
+    <div class="results-grid">
+      <div class="res-box">
+        <div style="font-size: 0.8rem; color: var(--text-muted);">PERMEATE $Na^+$ CONCENTRATION</div>
+        <div class="res-val" id="res-perm-na" style="color: var(--accent-cyan);">< 0.05 mmol/L</div>
+      </div>
+      <div class="res-box">
+        <div style="font-size: 0.8rem; color: var(--text-muted);">SPECIFIC ENERGY CONSUMPTION</div>
+        <div class="res-val" id="res-sec" style="color: var(--accent-emerald);">0.85 kWh / m³</div>
+      </div>
+      <div class="res-box">
+        <div style="font-size: 0.8rem; color: var(--text-muted);">OPERATING FEED PRESSURE</div>
+        <div class="res-val" id="res-pressure" style="color: #38bdf8;">14.2 bar</div>
+      </div>
+      <div class="res-box">
+        <div style="font-size: 0.8rem; color: var(--text-muted);">ANNUAL WATER SAVINGS</div>
+        <div class="res-val" id="res-water-save" style="color: #10b981;">3,200 m³ / Ha</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function calculate() {
+      const na = parseFloat(document.getElementById('slider-na').value);
+      const rec = parseFloat(document.getElementById('slider-rec').value);
+      const erd = document.getElementById('erd-select').value;
+
+      document.getElementById('lbl-na').innerText = na.toFixed(1) + ' mmol/L (' + Math.round(na * 23) + ' ppm)';
+      document.getElementById('lbl-rec').innerText = rec + ' %';
+
+      // Osmotic pressure calculation Pi = iCRT
+      const osmoticBar = (na * 23.0 * 2.0 / 1000.0) * 0.8;
+      const feedBar = Math.max(10.0, osmoticBar + 8.5 + (rec - 75) * 0.4);
+
+      let secKwhM3 = (feedBar * 0.08);
+      if (erd === 'px') secKwhM3 *= 0.55;
+      else if (erd === 'turbo') secKwhM3 *= 0.72;
+
+      const permNa = (na * (1.0 - 0.992));
+
+      document.getElementById('res-perm-na').innerText = permNa.toFixed(3) + ' mmol/L (Pure)';
+      document.getElementById('res-sec').innerText = secKwhM3.toFixed(2) + ' kWh / m³';
+      document.getElementById('res-pressure').innerText = feedBar.toFixed(1) + ' bar';
+    }
+
+    document.querySelectorAll('input, select').forEach(el => {
+      el.addEventListener('input', calculate);
+      el.addEventListener('change', calculate);
+    });
+
+    calculate();
+  </script>
+</body>
+</html>

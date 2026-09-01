@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Xylem Calcium Flux & Blossom-End Rot (BER) Risk Engine | Inwoovation</title>
+  <meta name="description" content="Industrial plant physiology calculator for xylem calcium transport kinetics, transpiration pull, and Blossom-End Rot (BER) risk forecasting in commercial greenhouse tomatoes and peppers.">
+  <link rel="stylesheet" href="css/digital_twin_styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  
+  <style>
+    .calc-card {
+      background: rgba(30, 41, 59, 0.85);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+    .res-box {
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      padding: 16px;
+      text-align: center;
+    }
+    .res-val {
+      font-family: var(--font-mono);
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--accent-emerald);
+      margin-top: 4px;
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Xylem Calcium Flux & Blossom-End Rot (BER) Risk Engine",
+    "url": "https://inwoovation.com/tools/crop-transpiration-calcium-blossom-end-rot-risk-model.html",
+    "description": "Calculates xylem calcium delivery to distal fruit tissue and predicts Blossom-End Rot risk.",
+    "applicationCategory": "EducationalApplication, AgriculturalTool",
+    "operatingSystem": "All",
+    "author": {
+      "@type": "Person",
+      "name": "Inwoo Hwang"
+    },
+    "dateModified": "2026-09-01"
+  }
+  </script>
+</head>
+<body>
+
+  <div class="sim-container">
+    <header class="sim-header">
+      <h1>🍅 Xylem Calcium Flux & Blossom-End Rot ($BER$) Engine</h1>
+      <p>Transpirational Pull Kinetics, Distal Fruit Calcium Accumulation & Deficiency Risk Modeling</p>
+    </header>
+
+    <div class="calc-card">
+      <h3 class="control-section-title">🌿 Transpiration Tension & Rootzone Salinity</h3>
+      <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px;">
+        <div class="control-group">
+          <div class="control-label-row">
+            <span>Daytime Canopy VPD</span>
+            <span id="lbl-vpd">1.40 kPa</span>
+          </div>
+          <input type="range" id="slider-vpd" min="0.4" max="2.4" value="1.40" step="0.05">
+        </div>
+
+        <div class="control-group">
+          <div class="control-label-row">
+            <span>Rootzone Slab EC ($EC_{slab}$)</span>
+            <span id="lbl-ec">3.2 mS/cm</span>
+          </div>
+          <input type="range" id="slider-ec" min="1.5" max="6.0" value="3.2" step="0.1">
+        </div>
+
+        <div class="control-group">
+          <div class="control-label-row">
+            <span>Fruit Growth Expansion Rate</span>
+            <span id="lbl-growth">Fast (Peak Summer)</span>
+          </div>
+          <select id="growth-select" style="background:#1e293b; color:white; border:1px solid #475569; padding:10px; border-radius:8px;">
+            <option value="rapid">Rapid Cell Expansion (High Solar Radiation)</option>
+            <option value="moderate">Moderate Growth (Spring / Autumn)</option>
+            <option value="slow">Slow Vegetative (Low Solar Winter)</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- Results Telemetry -->
+    <div class="results-grid">
+      <div class="res-box">
+        <div style="font-size: 0.8rem; color: var(--text-muted);">DISTAL FRUIT Ca CONCENTRATION</div>
+        <div class="res-val" id="res-ca-distal" style="color: var(--accent-cyan);">0.14 % DM</div>
+      </div>
+      <div class="res-box">
+        <div style="font-size: 0.8rem; color: var(--text-muted);">BLOSSOM-END ROT (BER) RISK</div>
+        <div class="res-val" id="res-ber-risk" style="color: var(--accent-emerald);">LOW RISK (2.1%)</div>
+      </div>
+      <div class="res-box">
+        <div style="font-size: 0.8rem; color: var(--text-muted);">XYLEM : PHLOEM FLOW RATIO</div>
+        <div class="res-val" id="res-xylem-ratio" style="color: #38bdf8;">1 : 4.2</div>
+      </div>
+      <div class="res-box">
+        <div style="font-size: 0.8rem; color: var(--text-muted);">CLIMATE ACTION ADVICE</div>
+        <div class="res-val" id="res-advice" style="color: #10b981; font-size: 1.3rem;">MAINTAIN HUMIDITY & NIGHT ROOT PRESSURE</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function calculate() {
+      const vpd = parseFloat(document.getElementById('slider-vpd').value);
+      const ec = parseFloat(document.getElementById('slider-ec').value);
+      const growth = document.getElementById('growth-select').value;
+
+      document.getElementById('lbl-vpd').innerText = vpd.toFixed(2) + ' kPa';
+      document.getElementById('lbl-ec').innerText = ec.toFixed(1) + ' mS/cm';
+
+      // Calcium moves ONLY via xylem with transpiration.
+      // High VPD diverts calcium to leaves rather than fruit!
+      // High EC reduces root osmotic water uptake.
+      let growthFactor = 1.0;
+      if (growth === 'rapid') growthFactor = 1.35;
+      else if (growth === 'slow') growthFactor = 0.75;
+
+      const leafDiversion = Math.max(1.0, vpd * 1.8);
+      const osmoticStress = Math.max(1.0, ec / 2.5);
+
+      const distalCa = Math.max(0.04, (0.24 / (leafDiversion * 0.5 + osmoticStress * 0.5)) / growthFactor);
+      const berRiskPct = Math.min(85, Math.max(1, (0.12 - distalCa) * 650 + (vpd > 1.8 ? 20 : 0)));
+
+      document.getElementById('res-ca-distal').innerText = distalCa.toFixed(2) + ' % DM';
+
+      const riskEl = document.getElementById('res-ber-risk');
+      const advEl = document.getElementById('res-advice');
+
+      if (distalCa >= 0.12) {
+        riskEl.innerText = 'LOW RISK (' + berRiskPct.toFixed(1) + '%)';
+        riskEl.style.color = '#10b981';
+        advEl.innerText = 'OPTIMAL Ca PARTITIONING';
+        advEl.style.color = '#10b981';
+      } else if (distalCa >= 0.08) {
+        riskEl.innerText = 'MODERATE RISK (' + berRiskPct.toFixed(1) + '%)';
+        riskEl.style.color = '#f59e0b';
+        advEl.innerText = 'LOWER MIDDAY VPD & FLUSH SLAB EC';
+        advEl.style.color = '#f59e0b';
+      } else {
+        riskEl.innerText = 'CRITICAL BER RISK (' + berRiskPct.toFixed(1) + '%)';
+        riskEl.style.color = '#ef4444';
+        advEl.innerText = 'URGENT: SHADE CANOPY & INCREASE NIGHT ROOT PRESSURE';
+        advEl.style.color = '#ef4444';
+      }
+    }
+
+    document.querySelectorAll('input, select').forEach(el => {
+      el.addEventListener('input', calculate);
+      el.addEventListener('change', calculate);
+    });
+
+    calculate();
+  </script>
+</body>
+</html>

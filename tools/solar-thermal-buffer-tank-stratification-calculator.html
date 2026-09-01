@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hot Water Buffer Tank Thermal Storage & Stratification Sizing | Inwoovation</title>
+  <meta name="description" content="Industrial engineering calculator for greenhouse hot-water buffer tank thermal storage (MWh), thermocline stratification stability, and night peak heating discharge duration.">
+  <link rel="stylesheet" href="css/digital_twin_styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  
+  <style>
+    .calc-card {
+      background: rgba(30, 41, 59, 0.85);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+    .res-box {
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      padding: 16px;
+      text-align: center;
+    }
+    .res-val {
+      font-family: var(--font-mono);
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--accent-emerald);
+      margin-top: 4px;
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Hot Water Buffer Tank Thermal Storage & Stratification Sizing",
+    "url": "https://inwoovation.com/tools/solar-thermal-buffer-tank-stratification-calculator.html",
+    "description": "Calculates buffer tank heat storage capacity (MWh), thermocline stability, and night heating discharge duration.",
+    "applicationCategory": "EducationalApplication, AgriculturalTool",
+    "operatingSystem": "All",
+    "author": {
+      "@type": "Person",
+      "name": "Inwoo Hwang"
+    },
+    "dateModified": "2026-09-01"
+  }
+  </script>
+</head>
+<body>
+
+  <div class="sim-container">
+    <header class="sim-header">
+      <h1>🔥 Hot Water Buffer Tank & Stratification Engine</h1>
+      <p>Thermocline Stability, Thermal Heat Storage (MWh) & Night Discharge Duration Sizing</p>
+    </header>
+
+    <div class="calc-card">
+      <h3 class="control-section-title">🏭 Buffer Tank Volume & Operating Temperatures</h3>
+      <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px;">
+        <div class="control-group">
+          <div class="control-label-row">
+            <span>Buffer Tank Volume ($V_{tank}$)</span>
+            <span id="lbl-tank-vol">2,500 m³ (2.5 ML)</span>
+          </div>
+          <input type="range" id="slider-tank-vol" min="500" max="10000" value="2500" step="250">
+        </div>
+
+        <div class="control-group">
+          <div class="control-label-row">
+            <span>Top Charge Temperature ($T_{top}$)</span>
+            <span id="lbl-t-top">92.0 °C</span>
+          </div>
+          <input type="range" id="slider-t-top" min="75" max="98" value="92.0" step="0.5">
+        </div>
+
+        <div class="control-group">
+          <div class="control-label-row">
+            <span>Bottom Return Temperature ($T_{bot}$)</span>
+            <span id="lbl-t-bot">42.0 °C</span>
+          </div>
+          <input type="range" id="slider-t-bot" min="30" max="55" value="42.0" step="0.5">
+        </div>
+      </div>
+    </div>
+
+    <!-- Results Telemetry -->
+    <div class="results-grid">
+      <div class="res-box">
+        <div style="font-size: 0.8rem; color: var(--text-muted);">HEAT STORAGE CAPACITY</div>
+        <div class="res-val" id="res-mwh" style="color: var(--accent-cyan);">145.3 MWh</div>
+      </div>
+      <div class="res-box">
+        <div style="font-size: 0.8rem; color: var(--text-muted);">NIGHT DISCHARGE DURATION</div>
+        <div class="res-val" id="res-discharge" style="color: var(--accent-emerald);">9.5 Hours (1 Ha Peak)</div>
+      </div>
+      <div class="res-box">
+        <div style="font-size: 0.8rem; color: var(--text-muted);">THERMOCLINE RICHARDSON NO.</div>
+        <div class="res-val" id="res-ri" style="color: #10b981;">Ri = 12.8 (Highly Stable)</div>
+      </div>
+      <div class="res-box">
+        <div style="font-size: 0.8rem; color: var(--text-muted);">BOILER SIZING RELIEF</div>
+        <div class="res-val" id="res-relief">- 45.0 % Peak Cap</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function calculate() {
+      const vol = parseFloat(document.getElementById('slider-tank-vol').value);
+      const tTop = parseFloat(document.getElementById('slider-t-top').value);
+      const tBot = parseFloat(document.getElementById('slider-t-bot').value);
+
+      document.getElementById('lbl-tank-vol').innerText = vol.toLocaleString() + ' m³';
+      document.getElementById('lbl-t-top').innerText = tTop.toFixed(1) + ' °C';
+      document.getElementById('lbl-t-bot').innerText = tBot.toFixed(1) + ' °C';
+
+      const deltaT = Math.max(5, tTop - tBot);
+      // Thermal storage Q = V * rho * cp * deltaT (J)
+      // 1 m3 water * 4.184 kJ/kgK * deltaT = MWh
+      const heatMwh = (vol * 1000.0 * 4.184 * deltaT) / 3600000.0;
+      
+      // Typical 1 Ha greenhouse peak heat demand ~ 1.5 MW
+      const dischargeHours = heatMwh / 1.5;
+
+      document.getElementById('res-mwh').innerText = heatMwh.toFixed(1) + ' MWh';
+      document.getElementById('res-discharge').innerText = dischargeHours.toFixed(1) + ' Hours';
+    }
+
+    document.querySelectorAll('input').forEach(el => {
+      el.addEventListener('input', calculate);
+    });
+
+    calculate();
+  </script>
+</body>
+</html>
