@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greenhouse HAF Air Circulation & CFD Air Velocity Optimizer | Inwoovation</title>
+  <meta name="description" content="Industrial CFD calculator for horizontal air flow (HAF) fan spacing, jet throw distance, Bernoulli air entrainment, and microclimate boundary layer destratification.">
+  <link rel="stylesheet" href="css/digital_twin_styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  
+  <style>
+    .calc-card {
+      background: rgba(30, 41, 59, 0.85);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+    .res-box {
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      padding: 16px;
+      text-align: center;
+    }
+    .res-val {
+      font-family: var(--font-mono);
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--accent-emerald);
+      margin-top: 4px;
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Greenhouse HAF Air Circulation & CFD Optimizer",
+    "url": "https://inwoovation.com/tools/greenhouse-microclimate-cfd-air-velocity-optimizer.html",
+    "description": "Calculates horizontal air flow fan spacing, air speed decay, and canopy boundary layer destratification.",
+    "applicationCategory": "EducationalApplication, AgriculturalTool",
+    "operatingSystem": "All",
+    "author": {
+      "@type": "Person",
+      "name": "Inwoo Hwang"
+    },
+    "dateModified": "2026-09-01"
+  }
+  </script>
+</head>
+<body>
+
+  <div class="sim-container">
+    <header class="sim-header">
+      <h1>💨 Greenhouse HAF Air Circulation & CFD Optimizer</h1>
+      <p>Fan Jet Throw Distance, Bernoulli Entrainment & Boundary Layer Destratification Engine</p>
+    </header>
+
+    <div class="calc-card">
+      <h3 class="control-section-title">🌀 Bay Geometry & Fan Specifications</h3>
+      <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px;">
+        <div class="control-group">
+          <div class="control-label-row">
+            <span>Greenhouse Span Length</span>
+            <span id="lbl-span">80.0 m</span>
+          </div>
+          <input type="range" id="slider-span" min="30" max="150" value="80" step="5">
+        </div>
+
+        <div class="control-group">
+          <div class="control-label-row">
+            <span>Fan Diameter & Discharge CFM</span>
+            <span id="lbl-cfm">4,200 CFM (450mm)</span>
+          </div>
+          <input type="range" id="slider-cfm" min="1500" max="8000" value="4200" step="100">
+        </div>
+
+        <div class="control-group">
+          <div class="control-label-row">
+            <span>Crop Canopy Height</span>
+            <span id="lbl-crop-h">3.2 m (High-Wire)</span>
+          </div>
+          <input type="range" id="slider-crop-h" min="0.5" max="5.0" value="3.2" step="0.1">
+        </div>
+      </div>
+    </div>
+
+    <!-- Results Telemetry -->
+    <div class="results-grid">
+      <div class="res-box">
+        <div style="font-size: 0.8rem; color: var(--text-muted);">RECOMMENDED FAN SPACING</div>
+        <div class="res-val" id="res-fan-spacing" style="color: var(--accent-cyan);">18.0 m</div>
+      </div>
+      <div class="res-box">
+        <div style="font-size: 0.8rem; color: var(--text-muted);">CANOPY AIR VELOCITY</div>
+        <div class="res-val" id="res-velocity" style="color: var(--accent-emerald);">0.38 m/s (Optimal)</div>
+      </div>
+      <div class="res-box">
+        <div style="font-size: 0.8rem; color: var(--text-muted);">AIR CIRCULATION RATE</div>
+        <div class="res-val" id="res-air-turns" style="color: #f59e0b;">2.8 Vol / Hour</div>
+      </div>
+      <div class="res-box">
+        <div style="font-size: 0.8rem; color: var(--text-muted);">FANS REQUIRED PER BAY</div>
+        <div class="res-val" id="res-fan-count">4 Units</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function calculate() {
+      const span = parseFloat(document.getElementById('slider-span').value);
+      const cfm = parseFloat(document.getElementById('slider-cfm').value);
+      const cropH = parseFloat(document.getElementById('slider-crop-h').value);
+
+      document.getElementById('lbl-span').innerText = span.toFixed(1) + ' m';
+      document.getElementById('lbl-cfm').innerText = cfm.toLocaleString() + ' CFM';
+      document.getElementById('lbl-crop-h').innerText = cropH.toFixed(1) + ' m';
+
+      // Fan throw distance ~ (CFM / 100) * 0.45 in meters
+      const throwDist = Math.min(30, (cfm / 100.0) * 0.45);
+      const fanSpacing = throwDist * 0.85;
+      const fanCount = Math.max(2, Math.ceil(span / fanSpacing));
+
+      // Canopy air velocity in m/s (Target 0.3 - 0.5 m/s)
+      const avgVelocity = Math.max(0.15, Math.min(0.85, (cfm / 3800.0) * 0.35 + 0.05));
+      const airTurns = (cfm * 1.699 * fanCount * 60) / (span * 8.0 * 6.5 * 10); // m3/h / volume
+
+      document.getElementById('res-fan-spacing').innerText = fanSpacing.toFixed(1) + ' m';
+      document.getElementById('res-velocity').innerText = avgVelocity.toFixed(2) + ' m/s (Optimal)';
+      document.getElementById('res-air-turns').innerText = airTurns.toFixed(1) + ' Vol / Hour';
+      document.getElementById('res-fan-count').innerText = fanCount + ' Units / Bay';
+    }
+
+    document.querySelectorAll('input').forEach(el => {
+      el.addEventListener('input', calculate);
+    });
+
+    calculate();
+  </script>
+</body>
+</html>

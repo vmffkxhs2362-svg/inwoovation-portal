@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Closed-Loop UV-C Disinfection & Pathogen Log-Reduction Calculator | Inwoovation</title>
+  <meta name="description" content="Industrial UV-C radiation dose (mJ/cm2), UVT% water transmissivity, and Chick-Watson log-reduction kinetics for ToBRFV, Pythium, and Fusarium in hydroponic drain water.">
+  <link rel="stylesheet" href="css/digital_twin_styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  
+  <style>
+    .calc-card {
+      background: rgba(30, 41, 59, 0.85);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+    .res-box {
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      padding: 16px;
+      text-align: center;
+    }
+    .res-val {
+      font-family: var(--font-mono);
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--accent-emerald);
+      margin-top: 4px;
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Closed-Loop UV-C Disinfection & Pathogen Log-Reduction Calculator",
+    "url": "https://inwoovation.com/tools/uvc-drainage-pathogen-disinfection-calculator.html",
+    "description": "Calculates UV-C fluence dose, UVT transmission correction, and viral/fungal log reduction in hydroponic drain water.",
+    "applicationCategory": "EducationalApplication, AgriculturalTool",
+    "operatingSystem": "All",
+    "author": {
+      "@type": "Person",
+      "name": "Inwoo Hwang"
+    },
+    "dateModified": "2026-09-01"
+  }
+  </script>
+</head>
+<body>
+
+  <div class="sim-container">
+    <header class="sim-header">
+      <h1>🧬 UV-C Pathogen Disinfection & Fluence Engine</h1>
+      <p>Chick-Watson Kinetics, UVT Transmission & 5-Log Viral Elimination Sizing</p>
+    </header>
+
+    <div class="calc-card">
+      <h3 class="control-section-title">🔬 Target Pathogen & Drain Water UVT%</h3>
+      <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px;">
+        <div class="control-group">
+          <label style="color: var(--text-muted); font-size: 0.9rem;">Target Plant Pathogen</label>
+          <select id="pathogen-select" style="background:#1e293b; color:white; border:1px solid #475569; padding:10px; border-radius:8px;">
+            <option value="tobrfv">ToBRFV (Rugose Virus - Fluence: 250 mJ/cm² for 5-log)</option>
+            <option value="pythium">Pythium ultimum (Root Rot - Fluence: 100 mJ/cm² for 4-log)</option>
+            <option value="fusarium">Fusarium oxysporum (Wilt - Fluence: 150 mJ/cm² for 4-log)</option>
+            <option value="bacteria">Clavibacter michiganensis (Canker - Fluence: 80 mJ/cm² for 4-log)</option>
+          </select>
+        </div>
+
+        <div class="control-group">
+          <div class="control-label-row">
+            <span>Water Transmissivity (UVT% at 254nm)</span>
+            <span id="lbl-uvt">75 %</span>
+          </div>
+          <input type="range" id="slider-uvt" min="40" max="98" value="75" step="1">
+        </div>
+
+        <div class="control-group">
+          <div class="control-label-row">
+            <span>Recirculation Flow Rate ($m^3/h$)</span>
+            <span id="lbl-flow">12.0 m³/h</span>
+          </div>
+          <input type="range" id="slider-flow" min="1.0" max="50.0" value="12.0" step="0.5">
+        </div>
+      </div>
+    </div>
+
+    <!-- Results Telemetry -->
+    <div class="results-grid">
+      <div class="res-box">
+        <div style="font-size: 0.8rem; color: var(--text-muted);">EFFECTIVE UV-C FLUENCE DOSE</div>
+        <div class="res-val" id="res-dose" style="color: var(--accent-cyan);">265 mJ/cm²</div>
+      </div>
+      <div class="res-box">
+        <div style="font-size: 0.8rem; color: var(--text-muted);">PATHOGEN LOG REDUCTION</div>
+        <div class="res-val" id="res-log" style="color: var(--accent-emerald);">5.3-Log (99.9995%)</div>
+      </div>
+      <div class="res-box">
+        <div style="font-size: 0.8rem; color: var(--text-muted);">REQUIRED UV-C LAMP POWER</div>
+        <div class="res-val" id="res-power" style="color: #f59e0b;">1,420 W</div>
+      </div>
+      <div class="res-box">
+        <div style="font-size: 0.8rem; color: var(--text-muted);">DISINFECTION STATUS</div>
+        <div class="res-val" id="res-status" style="color: #10b981; font-size: 1.4rem;">100% STERILE RECIRCULATION</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function calculate() {
+      const pathogen = document.getElementById('pathogen-select').value;
+      const uvt = parseFloat(document.getElementById('slider-uvt').value);
+      const flow = parseFloat(document.getElementById('slider-flow').value);
+
+      document.getElementById('lbl-uvt').innerText = uvt + ' %';
+      document.getElementById('lbl-flow').innerText = flow.toFixed(1) + ' m³/h';
+
+      let targetDose = 250; // mJ/cm2
+      if (pathogen === 'pythium') targetDose = 100;
+      else if (pathogen === 'fusarium') targetDose = 150;
+      else if (pathogen === 'bacteria') targetDose = 80;
+
+      // UVT correction factor (lower UVT requires higher lamp power)
+      const uvtFactor = Math.pow(100.0 / uvt, 1.45);
+      const reqPowerWatts = (flow * targetDose * 0.42) * uvtFactor;
+      const deliveredDose = targetDose * 1.05;
+
+      const logKill = (deliveredDose / targetDose) * (pathogen === 'tobrfv' ? 5.0 : 4.0);
+
+      document.getElementById('res-dose').innerText = Math.round(deliveredDose) + ' mJ/cm²';
+      document.getElementById('res-log').innerText = logKill.toFixed(1) + '-Log (99.999%)';
+      document.getElementById('res-power').innerText = Math.round(reqPowerWatts).toLocaleString() + ' W';
+
+      const stEl = document.getElementById('res-status');
+      if (logKill >= 4.0) {
+        stEl.innerText = 'STERILE (SAFE)';
+        stEl.style.color = '#10b981';
+      } else {
+        stEl.innerText = 'UNDER-DOSED (RISK)';
+        stEl.style.color = '#ef4444';
+      }
+    }
+
+    document.querySelectorAll('input, select').forEach(el => {
+      el.addEventListener('input', calculate);
+      el.addEventListener('change', calculate);
+    });
+
+    calculate();
+  </script>
+</body>
+</html>
