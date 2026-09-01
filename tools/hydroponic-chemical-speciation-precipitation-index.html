@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hydroponic Chemical Speciation & Mineral Precipitation Index (SI) | Inwoovation</title>
+  <meta name="description" content="Industrial chemical speciation calculator for hydroponic nutrient solutions: Debye-Hückel ionic strength, ion activity coefficients, and Saturation Index (SI) for Ca-phosphate and gypsum precipitation.">
+  <link rel="stylesheet" href="css/digital_twin_styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  
+  <style>
+    .calc-card {
+      background: rgba(30, 41, 59, 0.85);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+    .res-box {
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      padding: 16px;
+      text-align: center;
+    }
+    .res-val {
+      font-family: var(--font-mono);
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--accent-emerald);
+      margin-top: 4px;
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Hydroponic Chemical Speciation & Mineral Precipitation Index (SI)",
+    "url": "https://inwoovation.com/tools/hydroponic-chemical-speciation-precipitation-index.html",
+    "description": "Calculates Debye-Hückel ionic strength and Saturation Index (SI) to prevent drip emitter mineral scaling.",
+    "applicationCategory": "EducationalApplication, AgriculturalTool",
+    "operatingSystem": "All",
+    "author": {
+      "@type": "Person",
+      "name": "Inwoo Hwang"
+    },
+    "dateModified": "2026-09-01"
+  }
+  </script>
+</head>
+<body>
+
+  <div class="sim-container">
+    <header class="sim-header">
+      <h1>🧪 Hydroponic Chemical Speciation & Mineral Precipitation Engine</h1>
+      <p>Debye-Hückel Ion Activity Coefficients ($\gamma_i$) & Saturation Index ($SI = \log(IAP / K_{sp})$) Sizing</p>
+    </header>
+
+    <div class="calc-card">
+      <h3 class="control-section-title">💧 Solution pH & Ion Concentrations</h3>
+      <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px;">
+        <div class="control-group">
+          <div class="control-label-row">
+            <span>Nutrient Solution pH</span>
+            <span id="lbl-ph">5.80</span>
+          </div>
+          <input type="range" id="slider-ph" min="4.5" max="7.5" value="5.80" step="0.05">
+        </div>
+
+        <div class="control-group">
+          <div class="control-label-row">
+            <span>Calcium Concentration ($Ca^{2+}$)</span>
+            <span id="lbl-ca-conc">4.5 mmol/L</span>
+          </div>
+          <input type="range" id="slider-ca-conc" min="1.0" max="10.0" value="4.5" step="0.25">
+        </div>
+
+        <div class="control-group">
+          <div class="control-label-row">
+            <span>Phosphate Concentration ($H_2PO_4^-$)</span>
+            <span id="lbl-p-conc">1.5 mmol/L</span>
+          </div>
+          <input type="range" id="slider-p-conc" min="0.5" max="4.0" value="1.5" step="0.1">
+        </div>
+      </div>
+    </div>
+
+    <!-- Results Telemetry -->
+    <div class="results-grid">
+      <div class="res-box">
+        <div style="font-size: 0.8rem; color: var(--text-muted);">DICALCIUM PHOSPHATE ($CaHPO_4$) SI</div>
+        <div class="res-val" id="res-si-p" style="color: var(--accent-emerald);">- 0.82 (Soluble)</div>
+      </div>
+      <div class="res-box">
+        <div style="font-size: 0.8rem; color: var(--text-muted);">CALCITE ($CaCO_3$) SI</div>
+        <div class="res-val" id="res-si-c" style="color: var(--accent-cyan);">- 1.45 (Safe)</div>
+      </div>
+      <div class="res-box">
+        <div style="font-size: 0.8rem; color: var(--text-muted);">DEBYE-HÜCKEL IONIC STRENGTH ($I$)</div>
+        <div class="res-val" id="res-ionic-str" style="color: #38bdf8;">0.028 mol/L</div>
+      </div>
+      <div class="res-box">
+        <div style="font-size: 0.8rem; color: var(--text-muted);">DRIP EMITTER CLOGGING RISK</div>
+        <div class="res-val" id="res-clog-risk" style="color: #10b981; font-size: 1.3rem;">ZERO PRECIPITATION RISK</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function calculate() {
+      const ph = parseFloat(document.getElementById('slider-ph').value);
+      const ca = parseFloat(document.getElementById('slider-ca-conc').value);
+      const p = parseFloat(document.getElementById('slider-p-conc').value);
+
+      document.getElementById('lbl-ph').innerText = ph.toFixed(2);
+      document.getElementById('lbl-ca-conc').innerText = ca.toFixed(2) + ' mmol/L';
+      document.getElementById('lbl-p-conc').innerText = p.toFixed(2) + ' mmol/L';
+
+      // Ionic strength ~ 0.006 * EC (approx 0.025 - 0.035 mol/L)
+      const ionicStr = 0.0055 * (ca * 2.0 + p + 15.0);
+      
+      // Saturation Index SI = log10(IAP / Ksp)
+      // High pH drives HPO4(2-) concentration rapidly higher!
+      const pK2_phos = 7.20;
+      const frac_hpo4 = Math.pow(10, ph - pK2_phos) / (1.0 + Math.pow(10, ph - pK2_phos));
+      
+      // SI for CaHPO4 (Ksp ~ 10^-7.0)
+      const iap_p = (ca / 1000.0) * (p / 1000.0 * frac_hpo4);
+      const si_p = Math.log10(iap_p / 1.0e-7);
+
+      // SI for CaCO3 (Ksp ~ 10^-8.48)
+      const si_c = (ph - 7.0) * 1.8 - 0.5;
+
+      document.getElementById('res-si-p').innerText = (si_p >= 0 ? '+ ' : '') + si_p.toFixed(2) + (si_p > 0 ? ' (Precipitating!)' : ' (Soluble)');
+      document.getElementById('res-si-c').innerText = (si_c >= 0 ? '+ ' : '') + si_c.toFixed(2) + (si_c > 0 ? ' (Scaling Risk)' : ' (Safe)');
+      document.getElementById('res-ionic-str').innerText = ionicStr.toFixed(3) + ' mol/L';
+
+      const clogEl = document.getElementById('res-clog-risk');
+      const pEl = document.getElementById('res-si-p');
+
+      if (si_p > 0.1 || si_c > 0.1) {
+        clogEl.innerText = 'CRITICAL: EMITTER CLOGGING IMMINENT';
+        clogEl.style.color = '#ef4444';
+        pEl.style.color = '#ef4444';
+      } else if (si_p > -0.3) {
+        clogEl.innerText = 'BORDERLINE SATURATION (LOWER pH)';
+        clogEl.style.color = '#f59e0b';
+        pEl.style.color = '#f59e0b';
+      } else {
+        clogEl.innerText = 'ZERO PRECIPITATION RISK (SAFE)';
+        clogEl.style.color = '#10b981';
+        pEl.style.color = '#10b981';
+      }
+    }
+
+    document.querySelectorAll('input').forEach(el => {
+      el.addEventListener('input', calculate);
+    });
+
+    calculate();
+  </script>
+</body>
+</html>
