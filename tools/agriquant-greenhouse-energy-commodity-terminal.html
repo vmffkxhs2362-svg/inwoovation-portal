@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgriQuant Commercial CEA Energy & Commodity Terminal | Inwoovation</title>
+  <meta name="description" content="Open-source financial and energy quant terminal for commercial high-tech greenhouses. Simulates Dutch TTF natural gas prices, electricity spark spreads, and fertilizer arbitrage.">
+  <link rel="stylesheet" href="css/digital_twin_styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  
+  <style>
+    .terminal-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .terminal-card {
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 20px;
+    }
+    .ticker-bar {
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+      background: rgba(30, 41, 59, 0.7);
+      padding: 12px 20px;
+      border-radius: 10px;
+      margin-bottom: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      font-family: var(--font-mono);
+      font-size: 0.9rem;
+    }
+    .ticker-item {
+      display: flex;
+      gap: 8px;
+      white-space: nowrap;
+    }
+    .ticker-up { color: #10b981; }
+    .ticker-down { color: #ef4444; }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "AgriQuant Greenhouse Energy & Commodity Terminal",
+    "url": "https://inwoovation.com/tools/agriquant-greenhouse-energy-commodity-terminal.html",
+    "description": "Calculates energy arbitrage, Dutch TTF natural gas spark spreads, and fertilizer ROI in protected horticulture.",
+    "applicationCategory": "FinancialApplication, AgriculturalTool",
+    "operatingSystem": "All",
+    "author": {
+      "@type": "Person",
+      "name": "Inwoo Hwang"
+    },
+    "dateModified": "2026-09-01"
+  }
+  </script>
+</head>
+<body>
+
+  <div class="sim-container">
+    <header class="sim-header">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <div>
+          <h1>📊 AgriQuant CEA Energy & Commodity Terminal</h1>
+          <p>Real-Time Dutch TTF Gas Spark Spread, Energy Arbitrage & Fertilizer Economics Engine</p>
+        </div>
+        <span style="background: rgba(59, 130, 246, 0.2); color: #60a5fa; border: 1px solid #3b82f6; padding: 6px 14px; border-radius: 12px; font-weight: 700; font-size: 0.85rem;">OPEN SOURCE QUANT v2.0</span>
+      </div>
+    </header>
+
+    <!-- Financial Ticker -->
+    <div class="ticker-bar">
+      <div class="ticker-item"><span>🇳🇱 TTF GAS:</span> <strong>€34.20/MWh</strong> <span class="ticker-up">+1.4%</span></div>
+      <div class="ticker-item"><span>⚡ EU POWER:</span> <strong>€82.50/MWh</strong> <span class="ticker-down">-0.8%</span></div>
+      <div class="ticker-item"><span>🧪 UREA (DEF):</span> <strong>$410/Ton</strong> <span class="ticker-up">+0.5%</span></div>
+      <div class="ticker-item"><span>🍅 TOMATO INDEX:</span> <strong>€1.85/kg</strong> <span class="ticker-up">+3.2%</span></div>
+      <div class="ticker-item"><span>💶 EUR/USD:</span> <strong>1.085</strong> <span class="ticker-up">+0.1%</span></div>
+    </div>
+
+    <div class="terminal-grid">
+      <!-- Energy Arbitrage Module -->
+      <div class="terminal-card">
+        <h3 class="control-section-title">⚡ CHP Spark Spread & Power Arbitrage</h3>
+        
+        <div class="control-group">
+          <div class="control-label-row">
+            <span>Dutch TTF Natural Gas Price (€/MWh)</span>
+            <span id="lbl-ttf">€34.00</span>
+          </div>
+          <input type="range" id="slider-ttf" min="15.0" max="95.0" value="34.0" step="1.0">
+        </div>
+
+        <div class="control-group">
+          <div class="control-label-row">
+            <span>Grid Power Selling Tariff (€/MWh)</span>
+            <span id="lbl-power-tariff">€85.00</span>
+          </div>
+          <input type="range" id="slider-power-tariff" min="40.0" max="220.0" value="85.0" step="2.5">
+        </div>
+
+        <div class="control-group">
+          <div class="control-label-row">
+            <span>CHP Electrical Efficiency ($\eta_{elec}$)</span>
+            <span id="lbl-chp-eff">44.0 %</span>
+          </div>
+          <input type="range" id="slider-chp-eff" min="38.0" max="48.0" value="44.0" step="0.5">
+        </div>
+
+        <div style="background: rgba(30, 41, 59, 0.6); padding: 16px; border-radius: 10px; margin-top: 16px;">
+          <div style="font-size: 0.85rem; color: var(--text-muted);">CLEAN SPARK SPREAD</div>
+          <div id="res-spark-spread" style="font-family: var(--font-mono); font-size: 1.8rem; font-weight: 800; color: var(--accent-emerald);">+ €7.73 / MWh (Profitable)</div>
+        </div>
+      </div>
+
+      <!-- CO2 & Heat Yield Arbitrage -->
+      <div class="terminal-card">
+        <h3 class="control-section-title">📈 CO₂ Enrichment Yield ROI</h3>
+
+        <div class="control-group">
+          <div class="control-label-row">
+            <span>Liquid Pure CO₂ Bulk Price (€/Ton)</span>
+            <span id="lbl-liquid-co2">€145.00</span>
+          </div>
+          <input type="range" id="slider-liquid-co2" min="80.0" max="300.0" value="145.0" step="5.0">
+        </div>
+
+        <div class="control-group">
+          <div class="control-label-row">
+            <span>Tomato Gate Price (€/kg)</span>
+            <span id="lbl-tom-price">€1.85</span>
+          </div>
+          <input type="range" id="slider-tom-price" min="0.80" max="3.50" value="1.85" step="0.05">
+        </div>
+
+        <div style="background: rgba(30, 41, 59, 0.6); padding: 16px; border-radius: 10px; margin-top: 36px;">
+          <div style="font-size: 0.85rem; color: var(--text-muted);">CHP CO₂ PRODUCTION VALUE</div>
+          <div id="res-co2-val" style="font-family: var(--font-mono); font-size: 1.8rem; font-weight: 800; color: var(--accent-cyan);">€139.20 / Hour (15 Ha)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function calculate() {
+      const ttf = parseFloat(document.getElementById('slider-ttf').value);
+      const power = parseFloat(document.getElementById('slider-power-tariff').value);
+      const chpEff = parseFloat(document.getElementById('slider-chp-eff').value) / 100.0;
+      const co2Price = parseFloat(document.getElementById('slider-liquid-co2').value);
+      const tomPrice = parseFloat(document.getElementById('slider-tom-price').value);
+
+      document.getElementById('lbl-ttf').innerText = '€' + ttf.toFixed(2);
+      document.getElementById('lbl-power-tariff').innerText = '€' + power.toFixed(2);
+      document.getElementById('lbl-chp-eff').innerText = (chpEff * 100).toFixed(1) + ' %';
+      document.getElementById('lbl-liquid-co2').innerText = '€' + co2Price.toFixed(2);
+      document.getElementById('lbl-tom-price').innerText = '€' + tomPrice.toFixed(2);
+
+      // Spark Spread = Power Price - (Gas Price / Electrical Efficiency)
+      const sparkSpread = power - (ttf / chpEff);
+
+      const spEl = document.getElementById('res-spark-spread');
+      if (sparkSpread > 0) {
+        spEl.innerText = '+ €' + sparkSpread.toFixed(2) + ' / MWh (Profitable)';
+        spEl.style.color = '#10b981';
+      } else {
+        spEl.innerText = '- €' + Math.abs(sparkSpread).toFixed(2) + ' / MWh (Grid Power Preferred)';
+        spEl.style.color = '#ef4444';
+      }
+
+      // 2.0 MW CHP generates ~ 960 kg CO2 / hour
+      const co2ValHour = (960.0 / 1000.0) * co2Price;
+      document.getElementById('res-co2-val').innerText = '€' + co2ValHour.toFixed(2) + ' / Hour Saved';
+    }
+
+    document.querySelectorAll('input').forEach(el => {
+      el.addEventListener('input', calculate);
+    });
+
+    calculate();
+  </script>
+</body>
+</html>
