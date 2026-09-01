@@ -402,7 +402,17 @@
 
             <!-- Status -->
             <div id="ventStatus" style="margin-top: 20px;"></div>
+
+            <!-- 1-Click Institutional Audit PDF Button -->
+            <div style="margin-top: 24px; text-align: center;">
+                <button onclick="exportVentilationAuditPDF()" style="background: linear-gradient(135deg, #0284c7, #0369a1); color: #fff; border: 1px solid rgba(255,255,255,0.2); padding: 12px 24px; border-radius: 12px; font-weight: 700; font-size: 0.95rem; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 14px rgba(2, 132, 199, 0.35);">
+                    📄 Download Institutional Engineering Audit Report (PDF)
+                </button>
+            </div>
         </div>
+
+        <!-- Include Universal Client-Side PDF Engine -->
+        <script src="../js/audit-pdf-generator.js"></script>
 
         <!-- Theory Section -->
         <div class="theory-section">
@@ -597,6 +607,53 @@ function calculateVentilation() {
 
     // Scroll to results
     document.getElementById('resultsPanel').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function exportVentilationAuditPDF() {
+    const floorArea = document.getElementById('floorArea').value;
+    const volume = document.getElementById('greenhouseVolume').value;
+    const roofVent = document.getElementById('roofVentArea').value;
+    const sideVent = document.getElementById('sideVentArea').value;
+    const tOut = document.getElementById('tempOutside').value;
+    const tIn = document.getElementById('tempInside').value;
+    const wind = document.getElementById('windSpeed').value;
+    const crop = document.getElementById('cropType').value;
+    const targetACH = document.getElementById('targetACH').value;
+
+    const cards = document.querySelectorAll('#resultGrid .result-card');
+    if (!cards || cards.length < 4) {
+        calculateVentilation();
+    }
+
+    const kpiData = [
+        { label: "Total Airflow", value: document.querySelectorAll('#resultGrid .result-value')[0].innerText, unit: "m³/s" },
+        { label: "Combined ACH", value: document.querySelectorAll('#resultGrid .result-value')[1].innerText, unit: "Air Changes / hr" },
+        { label: "Per Floor Area", value: document.querySelectorAll('#resultGrid .result-value')[2].innerText, unit: "m³/h per m²" },
+        { label: "Vent-to-Floor Ratio", value: document.querySelectorAll('#resultGrid .result-value')[3].innerText, unit: "Coverage %" },
+        { label: "Hourly Volume", value: document.querySelectorAll('#resultGrid .result-value')[4].innerText, unit: "m³/hour" },
+        { label: "Target Achievement", value: document.querySelectorAll('#resultGrid .result-value')[5].innerText, unit: "% of Target" }
+    ];
+
+    const inputSummary = [
+        { label: "Greenhouse Floor Area", value: `${floorArea} m²` },
+        { label: "Enclosed Air Volume", value: `${volume} m³` },
+        { label: "Roof Vent Area (Continuous)", value: `${roofVent} m²` },
+        { label: "Side Wall Vent Area", value: `${sideVent} m²` },
+        { label: "Outside Ambient Temperature", value: `${tOut} °C` },
+        { label: "Inside Canopy Air Temperature", value: `${tIn} °C` },
+        { label: "External Wind Velocity (10m Ref)", value: `${wind} m/s` },
+        { label: "Cultivated Crop Target Profile", value: crop.toUpperCase() },
+        { label: "Design Air Exchange Target", value: `${targetACH} ACH` }
+    ];
+
+    const recommendation = document.getElementById('ventStatus').innerText;
+
+    generateInstitutionalPDF(
+        "Greenhouse Natural Ventilation & Buoyancy Airflow Audit",
+        kpiData,
+        inputSummary,
+        recommendation
+    );
 }
 
 // Auto-calculate on load
