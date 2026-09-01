@@ -34,8 +34,102 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- CSS Stylesheet -->
-    <link rel="stylesheet" href="styles.css">
+    <!-- CSS Stylesheet with Cache Busting -->
+    <link rel="stylesheet" href="styles.css?v=20260901_30tools_v3">
+
+    <style>
+        .nav-links {
+            display: flex;
+            gap: 0.75rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .nav-item {
+            color: #f8fafc !important;
+            text-decoration: none !important;
+            font-weight: 700 !important;
+            font-size: 0.9rem !important;
+            padding: 0.55rem 1.1rem !important;
+            border-radius: 100px !important;
+            background: rgba(30, 41, 59, 0.9) !important;
+            border: 1px solid rgba(255, 255, 255, 0.18) !important;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+            transition: all 0.25s ease !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            gap: 0.4rem !important;
+            white-space: nowrap !important;
+        }
+        .nav-item:hover {
+            color: #ffffff !important;
+            background: rgba(56, 189, 248, 0.25) !important;
+            border-color: #38bdf8 !important;
+            transform: translateY(-2px) !important;
+            box-shadow: 0 6px 16px rgba(56, 189, 248, 0.35) !important;
+        }
+        .nav-item-highlight {
+            background: linear-gradient(135deg, #10b981, #059669) !important;
+            color: #ffffff !important;
+            border-color: #34d399 !important;
+            font-weight: 800 !important;
+            box-shadow: 0 6px 20px rgba(16, 185, 129, 0.45) !important;
+        }
+        .nav-item-highlight:hover {
+            background: linear-gradient(135deg, #34d399, #10b981) !important;
+            transform: translateY(-2px) scale(1.03) !important;
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.6) !important;
+        }
+        .hero-cta-group {
+            display: flex;
+            gap: 1.2rem;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-bottom: 3.5rem;
+        }
+        .btn-primary-glow {
+            background: linear-gradient(135deg, #10b981, #059669) !important;
+            color: #ffffff !important;
+            font-family: 'Outfit', sans-serif !important;
+            font-weight: 800 !important;
+            font-size: 1.15rem !important;
+            padding: 1.1rem 2.4rem !important;
+            border-radius: 14px !important;
+            text-decoration: none !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            gap: 0.6rem !important;
+            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.4) !important;
+            transition: all 0.25s ease !important;
+            border: 1px solid rgba(255, 255, 255, 0.2) !important;
+        }
+        .btn-primary-glow:hover {
+            transform: translateY(-3px) scale(1.02) !important;
+            box-shadow: 0 15px 35px rgba(16, 185, 129, 0.55) !important;
+        }
+        .btn-secondary-glass {
+            background: rgba(15, 23, 42, 0.85) !important;
+            backdrop-filter: blur(12px) !important;
+            border: 1px solid rgba(56, 189, 248, 0.4) !important;
+            color: #38bdf8 !important;
+            font-family: 'Outfit', sans-serif !important;
+            font-weight: 700 !important;
+            font-size: 1.1rem !important;
+            padding: 1.1rem 2.2rem !important;
+            border-radius: 14px !important;
+            text-decoration: none !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            gap: 0.6rem !important;
+            transition: all 0.25s ease !important;
+        }
+        .btn-secondary-glass:hover {
+            background: rgba(56, 189, 248, 0.2) !important;
+            border-color: #38bdf8 !important;
+            color: #ffffff !important;
+            transform: translateY(-3px) !important;
+        }
+    </style>
 
     <!-- SEO Structured Data: WebSite & Organization -->
     <script type="application/ld+json">
