@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>High-Pressure Fogging & Evaporative Cooling Droplet Engine | Inwoovation</title>
+  <meta name="description" content="Industrial 70 bar high-pressure fogging calculator. Compute Sauter Mean Diameter (D32 < 10µm), flash evaporation rates, adiabatic temperature drop, and leaf wetting risk.">
+  <link rel="stylesheet" href="css/digital_twin_styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  
+  <style>
+    .calc-card {
+      background: rgba(30, 41, 59, 0.85);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+    .res-box {
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      padding: 16px;
+      text-align: center;
+    }
+    .res-val {
+      font-family: var(--font-mono);
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--accent-emerald);
+      margin-top: 4px;
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "High-Pressure Fogging & Evaporative Cooling Droplet Engine",
+    "url": "https://inwoovation.com/tools/fogging-nozzle-droplet-evaporative-cooling-engine.html",
+    "description": "Calculates 70-bar high pressure fogging adiabatic cooling capacity and droplet evaporation time.",
+    "applicationCategory": "EducationalApplication, AgriculturalTool",
+    "operatingSystem": "All",
+    "author": {
+      "@type": "Person",
+      "name": "Inwoo Hwang"
+    },
+    "dateModified": "2026-09-01"
+  }
+  </script>
+</head>
+<body>
+
+  <div class="sim-container">
+    <header class="sim-header">
+      <h1>💨 High-Pressure Fogging ($70\text{ bar}$) Droplet Engine</h1>
+      <p>Micro-Droplet Atomization ($D_{32} < 10\ \mu\text{m}$), Adiabatic Cooling & Flash Evaporation Optimizer</p>
+    </header>
+
+    <div class="calc-card">
+      <h3 class="control-section-title">⚙️ Operating Pressure & Nozzle Density</h3>
+      <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px;">
+        <div class="control-group">
+          <div class="control-label-row">
+            <span>Operating Pump Pressure</span>
+            <span id="lbl-pressure">70 bar</span>
+          </div>
+          <input type="range" id="slider-pressure" min="20" max="100" value="70" step="5">
+        </div>
+
+        <div class="control-group">
+          <div class="control-label-row">
+            <span>Ambient Dry-Bulb Temp</span>
+            <span id="lbl-t-air">32.0 °C</span>
+          </div>
+          <input type="range" id="slider-t-air" min="20" max="45" value="32.0" step="0.5">
+        </div>
+
+        <div class="control-group">
+          <div class="control-label-row">
+            <span>Ambient Relative Humidity</span>
+            <span id="lbl-rh-air">45 %</span>
+          </div>
+          <input type="range" id="slider-rh-air" min="20" max="85" value="45" step="1">
+        </div>
+      </div>
+    </div>
+
+    <!-- Results Telemetry -->
+    <div class="results-grid">
+      <div class="res-box">
+        <div style="font-size: 0.8rem; color: var(--text-muted);">SAUTER MEAN DIAMETER ($D_{32}$)</div>
+        <div class="res-val" id="res-d32" style="color: var(--accent-cyan);">8.2 µm</div>
+      </div>
+      <div class="res-box">
+        <div style="font-size: 0.8rem; color: var(--text-muted);">MAX ADIABATIC COOLING ($\Delta T$)</div>
+        <div class="res-val" id="res-delta-t" style="color: #38bdf8;">- 6.8 °C</div>
+      </div>
+      <div class="res-box">
+        <div style="font-size: 0.8rem; color: var(--text-muted);">DROPLET EVAPORATION TIME</div>
+        <div class="res-val" id="res-evap-time" style="color: var(--accent-emerald);">1.4 Seconds</div>
+      </div>
+      <div class="res-box">
+        <div style="font-size: 0.8rem; color: var(--text-muted);">LEAF WETTING RISK</div>
+        <div class="res-val" id="res-wet-risk" style="color: var(--accent-emerald); font-size: 1.4rem;">SAFE (ZERO DROPLET DRIFT)</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function calculate() {
+      const p = parseFloat(document.getElementById('slider-pressure').value);
+      const t = parseFloat(document.getElementById('slider-t-air').value);
+      const rh = parseFloat(document.getElementById('slider-rh-air').value);
+
+      document.getElementById('lbl-pressure').innerText = p + ' bar';
+      document.getElementById('lbl-t-air').innerText = t.toFixed(1) + ' °C';
+      document.getElementById('lbl-rh-air').innerText = rh + ' %';
+
+      // Sauter mean diameter D32 = 35 * (p / 20)^(-0.45) in microns
+      const d32 = 35.0 * Math.pow(p / 20.0, -0.45);
+
+      // Evaporation time t_evap ~ D^2 / (8 * D_v * delta_rho) ~ seconds
+      const evapTime = (Math.pow(d32, 2) / 45.0) * (1.0 - rh / 100.0) + 0.3;
+
+      // Wet-bulb temperature Tw approximation (Stull formula)
+      const tw = t * Math.atan(0.151977 * Math.pow(rh + 8.313659, 0.5)) + Math.atan(t + rh) - Math.atan(rh - 1.676331) + 0.00391838 * Math.pow(rh, 1.5) * Math.atan(0.023101 * rh) - 4.686035;
+      
+      const maxCooling = (t - tw) * 0.78; // ~78% adiabatic saturation efficiency
+
+      document.getElementById('res-d32').innerText = d32.toFixed(1) + ' µm';
+      document.getElementById('res-delta-t').innerText = '- ' + maxCooling.toFixed(1) + ' °C';
+      document.getElementById('res-evap-time').innerText = evapTime.toFixed(1) + ' Seconds';
+
+      const riskEl = document.getElementById('res-wet-risk');
+      if (d32 < 12 && rh < 80) {
+        riskEl.innerText = 'SAFE (ZERO WETTING)';
+        riskEl.style.color = '#10b981';
+      } else if (d32 < 20) {
+        riskEl.innerText = 'MODERATE RISK';
+        riskEl.style.color = '#f59e0b';
+      } else {
+        riskEl.innerText = 'HIGH WETTING RISK';
+        riskEl.style.color = '#ef4444';
+      }
+    }
+
+    document.querySelectorAll('input').forEach(el => {
+      el.addEventListener('input', calculate);
+    });
+
+    calculate();
+  </script>
+</body>
+</html>

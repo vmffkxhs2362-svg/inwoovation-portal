@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hourly Penman-Monteith Evapotranspiration Modeling in Greenhouses | Inwoovation</title>
+  <meta name="description" content="Engineering analysis of hourly crop evapotranspiration (ETc), stomatal resistance (rs), aerodynamic boundary layer resistance (ra), and precision irrigation scheduling.">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="canonical" href="https://inwoovation.com/articles/article-29-hourly-penman-monteith-evapotranspiration.html">
+  <link rel="alternate" hreflang="en" href="https://inwoovation.com/articles/article-29-hourly-penman-monteith-evapotranspiration.html">
+  <link rel="alternate" hreflang="de" href="https://inwoovation.com/articles/de/article-29-stundengenaue-penman-monteith-evapotranspiration.html">
+  <link rel="alternate" hreflang="ja" href="https://inwoovation.com/articles/ja/article-29-hourly-penman-monteith-evapotranspiration-jp.html">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Hourly Penman-Monteith Evapotranspiration Modeling in Commercial Greenhouses",
+    "description": "Mathematical parameterization of latent heat flux and crop water consumption under controlled environment conditions.",
+    "author": {
+      "@type": "Person",
+      "name": "Inwoo Hwang"
+    },
+    "datePublished": "2026-09-01",
+    "dateModified": "2026-09-01",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Inwoovation Smart Farming"
+    }
+  }
+  </script>
+</head>
+<body>
+  <article class="article-container">
+    <header class="article-header">
+      <div class="category-tag">Hydrology & Precision Irrigation Dynamics</div>
+      <h1>Hourly Penman-Monteith Evapotranspiration Modeling & Stomatal Resistance Dynamics</h1>
+      <div class="article-meta">Published: 2026-09-01 • Author: Inwoo Hwang • Reading Time: 9 min</div>
+    </header>
+
+    <div class="article-body">
+      <p class="lead">Under high-wire greenhouse conditions, applying static daily irrigation timer cycles results in severe rootzone hypoxia during morning low-transpiration periods and catastrophic water deficit stress during peak midday solar irradiance. Implementing the <strong>hourly FAO-56 Penman-Monteith model</strong> dynamically matches dripper delivery to actual crop transpiration.</p>
+
+      <h2>1. The Coupled Energy Balance Formulation</h2>
+      <div class="code-box">
+        <code>\lambda ET = \frac{\Delta (R_n - G) + \rho_a c_p \frac{VPD}{r_a}}{\Delta + \gamma (1 + \frac{r_c}{r_a})}</code>
+      </div>
+      <p>Where canopy resistance $r_c = r_s / (2 \cdot LAI)$ is dynamically modulated by radiation intensity and vapor pressure deficit ($VPD$).</p>
+
+      <h2>2. Interactive Calculation Tool</h2>
+      <p>Calculate your hourly crop evapotranspiration and dripper schedule with our online calculator:</p>
+      <p><a href="../tools/evapotranspiration-penman-monteith-calculator.html" class="cta-button" style="display:inline-block; padding:12px 24px; background:#10b981; color:white; border-radius:8px; text-decoration:none; font-weight:700;">💧 Launch Hourly ETc Calculator</a></p>
+    </div>
+  </article>
+</body>
+</html>

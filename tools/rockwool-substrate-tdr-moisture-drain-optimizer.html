@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rockwool Slab TDR Moisture & Drain EC Balancing Optimizer | Inwoovation</title>
+  <meta name="description" content="Industrial substrate water content (VWC %), dry-down kinetics, and drainage EC balancing calculator for commercial rockwool slab hydroponics.">
+  <link rel="stylesheet" href="css/digital_twin_styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  
+  <style>
+    .calc-card {
+      background: rgba(30, 41, 59, 0.85);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+    .res-box {
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      padding: 16px;
+      text-align: center;
+    }
+    .res-val {
+      font-family: var(--font-mono);
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--accent-emerald);
+      margin-top: 4px;
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Rockwool Slab TDR Moisture & Drain EC Optimizer",
+    "url": "https://inwoovation.com/tools/rockwool-substrate-tdr-moisture-drain-optimizer.html",
+    "description": "Calculates substrate water content (VWC), dry-down rate, and drainage EC for rockwool hydroponics.",
+    "applicationCategory": "EducationalApplication, AgriculturalTool",
+    "operatingSystem": "All",
+    "author": {
+      "@type": "Person",
+      "name": "Inwoo Hwang"
+    },
+    "dateModified": "2026-09-01"
+  }
+  </script>
+</head>
+<body>
+
+  <div class="sim-container">
+    <header class="sim-header">
+      <h1>🧱 Rockwool TDR Moisture & Drain EC Optimizer</h1>
+      <p>Volumetric Water Content (VWC %), Dry-Down Kinetics & Substrate Salinity Balancer</p>
+    </header>
+
+    <div class="calc-card">
+      <h3 class="control-section-title">📊 Slab Dimensions & Dripper Inputs</h3>
+      <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px;">
+        <div class="control-group">
+          <div class="control-label-row">
+            <span>Current Slab VWC (TDR Sensor)</span>
+            <span id="lbl-vwc">68 %</span>
+          </div>
+          <input type="range" id="slider-vwc" min="40" max="95" value="68" step="1">
+        </div>
+
+        <div class="control-group">
+          <div class="control-label-row">
+            <span>Drip EC Inflow ($EC_{in}$)</span>
+            <span id="lbl-ec-in">2.8 mS/cm</span>
+          </div>
+          <input type="range" id="slider-ec-in" min="1.2" max="4.5" value="2.8" step="0.1">
+        </div>
+
+        <div class="control-group">
+          <div class="control-label-row">
+            <span>Target Drainage Fraction</span>
+            <span id="lbl-drain">30 %</span>
+          </div>
+          <input type="range" id="slider-drain" min="10" max="50" value="30" step="2">
+        </div>
+      </div>
+    </div>
+
+    <!-- Results Telemetry -->
+    <div class="results-grid">
+      <div class="res-box">
+        <div style="font-size: 0.8rem; color: var(--text-muted);">PREDICTED PORE WATER EC</div>
+        <div class="res-val" id="res-pore-ec" style="color: var(--accent-cyan);">3.45 mS/cm</div>
+      </div>
+      <div class="res-box">
+        <div style="font-size: 0.8rem; color: var(--text-muted);">DRAINAGE EC ($EC_{drain}$)</div>
+        <div class="res-val" id="res-drain-ec" style="color: #f59e0b;">3.80 mS/cm</div>
+      </div>
+      <div class="res-box">
+        <div style="font-size: 0.8rem; color: var(--text-muted);">OVERNIGHT DRY-DOWN TARGET</div>
+        <div class="res-val" id="res-drydown">8.0 - 12.0 %</div>
+      </div>
+      <div class="res-box">
+        <div style="font-size: 0.8rem; color: var(--text-muted);">IRRIGATION STATUS</div>
+        <div class="res-val" id="res-status" style="color: var(--accent-emerald);">OPTIMAL BALANCE</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function calculate() {
+      const vwc = parseFloat(document.getElementById('slider-vwc').value);
+      const ecIn = parseFloat(document.getElementById('slider-ec-in').value);
+      const drain = parseFloat(document.getElementById('slider-drain').value);
+
+      document.getElementById('lbl-vwc').innerText = vwc + ' %';
+      document.getElementById('lbl-ec-in').innerText = ecIn.toFixed(1) + ' mS/cm';
+      document.getElementById('lbl-drain').innerText = drain + ' %';
+
+      // Mass balance equation for drainage EC
+      // Crop water uptake vs nutrient uptake ratio
+      const transpirationFactor = 1.0 - (drain / 100.0);
+      const ecDrain = ecIn + (ecIn * 0.45 * (transpirationFactor / (drain / 100.0)));
+      const poreEc = (ecIn + ecDrain) / 2.0 * 0.95;
+
+      document.getElementById('res-pore-ec').innerText = poreEc.toFixed(2) + ' mS/cm';
+      document.getElementById('res-drain-ec').innerText = ecDrain.toFixed(2) + ' mS/cm';
+
+      const statusEl = document.getElementById('res-status');
+      if (vwc < 55) {
+        statusEl.innerText = 'WATER DEFICIT (PULSE)';
+        statusEl.style.color = '#ef4444';
+      } else if (ecDrain > 5.0) {
+        statusEl.innerText = 'SALINITY FLUSH REQ';
+        statusEl.style.color = '#f59e0b';
+      } else {
+        statusEl.innerText = 'OPTIMAL BALANCE';
+        statusEl.style.color = '#10b981';
+      }
+    }
+
+    document.querySelectorAll('input').forEach(el => {
+      el.addEventListener('input', calculate);
+    });
+
+    calculate();
+  </script>
+</body>
+</html>
