@@ -6,6 +6,8 @@
   <title>Greenhouse & Controlled Environment Engineering Tools Suite (32 Enterprise Tools) | Inwoovation</title>
   <meta name="description" content="A comprehensive suite of 32 industrial-grade commercial greenhouse engineering calculators, 3D WebGL digital twin simulators, AI diagnostic vision engines, and autonomous MPC controllers.">
   <link rel="stylesheet" href="css/digital_twin_styles.css">
+  <link rel="stylesheet" href="../css/global-ui-enhancements.css?v=20260901_spotlight">
+  <script src="../js/global-search-palette.js?v=20260901_spotlight"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
@@ -99,6 +101,8 @@
       padding: 16px 0;
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
       margin-bottom: 24px;
+      flex-wrap: wrap;
+      gap: 12px;
     }
   </style>
 
@@ -106,9 +110,9 @@
   {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    "name": "Inwoovation Engineering Tools Suite (30 Enterprise Tools)",
+    "name": "Inwoovation Engineering Tools Suite (32 Enterprise Tools)",
     "url": "https://inwoovation.com/tools/index.html",
-    "description": "Collection of 30 industrial-grade greenhouse simulation, AI computer vision, IoT telemetry, and autonomous MPC control tools.",
+    "description": "Collection of 32 industrial-grade greenhouse simulation, AI computer vision, IoT telemetry, and autonomous MPC control tools.",
     "author": {
       "@type": "Person",
       "name": "Inwoo Hwang"
@@ -125,8 +129,11 @@
         <span>←</span>
         <span>Return to Inwoovation Lab Home</span>
       </a>
-      <div style="display: flex; gap: 12px;">
+      <div style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap;">
+        <button class="nav-search-trigger" onclick="window.InwooPalette.open()" title="Open Spotlight Search (Ctrl+K)"><span>🔍 Search</span> <kbd>Ctrl+K</kbd></button>
         <a href="../guides.html" style="color: #94a3b8; text-decoration: none; font-size: 0.9rem; font-weight: 600;">📚 72 Articles</a>
+        <a href="../crops/greenhouse-tomato-microclimate-vpd-steering-guide.html" style="color: #10b981; text-decoration: none; font-size: 0.9rem; font-weight: 600;">🌱 10 Crops</a>
+        <a href="../climate/westland-netherlands-greenhouse-climate-guide.html" style="color: #38bdf8; text-decoration: none; font-size: 0.9rem; font-weight: 600;">🌍 39 Climate Hubs</a>
         <a href="opencea-python-micro-framework-playground.html" style="color: #facc15; text-decoration: none; font-size: 0.9rem; font-weight: 600;">🐍 OpenCEA Python</a>
       </div>
     </div>
@@ -134,12 +141,12 @@
     <header class="sim-header">
       <div>
         <h1 style="font-size: 2.2rem; font-weight: 800; color: #ffffff;">🛠️ Commercial CEA Engineering Tools Suite</h1>
-        <p style="color: #94a3b8; margin-top: 6px;">30 Enterprise-Grade Microclimate Physics Models, Autonomous AI Controllers & Open-Source Tools</p>
+        <p style="color: #94a3b8; margin-top: 6px;">32 Enterprise-Grade Microclimate Physics Models, Autonomous AI Controllers & Open-Source Tools</p>
       </div>
     </header>
 
     <div class="filter-bar">
-      <button class="filter-btn active" onclick="filterCategory('all', this)">All 30 Tools</button>
+      <button class="filter-btn active" onclick="filterCategory('all', this)">All 32 Tools</button>
       <button class="filter-btn" onclick="filterCategory('climate', this)">🌡️ Climate & Thermodynamics</button>
       <button class="filter-btn" onclick="filterCategory('lighting', this)">💡 Lighting & Photobiology</button>
       <button class="filter-btn" onclick="filterCategory('water', this)">💧 Hydroponics & Water</button>

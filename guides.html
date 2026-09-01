@@ -20,6 +20,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/global-ui-enhancements.css?v=20260901_spotlight">
+    <script src="js/global-search-palette.js?v=20260901_spotlight"></script>
     <style>
         .article-container { max-width: 950px; margin: 40px auto; padding: 35px; background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-radius: 20px; border: 1px solid var(--border-glass); line-height: 1.85; color: var(--text-secondary); box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
         .article-container h1 { font-family: 'Outfit', sans-serif; font-size: 2.3rem; color: #f8fafc; margin-bottom: 12px; }
@@ -33,13 +35,16 @@
         .guide-tag { background: rgba(16, 185, 129, 0.15); color: #10b981; font-size: 0.75rem; font-weight: 700; padding: 4px 10px; border-radius: 6px; text-transform: uppercase; letter-spacing: 0.05em; }
         .guide-card h2 { font-family: 'Outfit', sans-serif; font-size: 1.25rem; color: #f8fafc; margin-bottom: 8px; font-weight: 700; line-height: 1.4; }
         .guide-card p { font-size: 0.92rem; color: #94a3b8; margin: 0; line-height: 1.6; }
-        .back-link { display: inline-flex; align-items: center; gap: 6px; margin-bottom: 20px; color: #38bdf8; text-decoration: none; font-weight: 600; font-size: 0.95rem; }
+        .back-link { display: inline-flex; align-items: center; gap: 6px; color: #38bdf8; text-decoration: none; font-weight: 600; font-size: 0.95rem; }
         .back-link:hover { text-decoration: underline; }
     </style>
 </head>
 <body>
 <div class="container">
-    <a href="/" class="back-link">← Return to Inwoovation Lab Home</a>
+    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:20px;">
+        <a href="/" class="back-link">← Return to Inwoovation Lab Home</a>
+        <button class="nav-search-trigger" onclick="window.InwooPalette.open()" title="Open Spotlight Search (Ctrl+K)"><span>🔍 Spotlight Search</span> <kbd>Ctrl+K</kbd></button>
+    </div>
     <div class="article-container">
         <h1>🔬 Precision Engineering Articles Archive (72 Multilingual Volumes)</h1>
         <p>Comprehensive engineering publications on biophysics, autonomous AI climate MPC, photobiology, and commercial greenhouse automation in English, German, and Japanese.</p>

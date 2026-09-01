@@ -36,6 +36,8 @@
     
     <!-- CSS Stylesheet with Cache Busting -->
     <link rel="stylesheet" href="styles.css?v=20260901_30tools_v3">
+    <link rel="stylesheet" href="css/global-ui-enhancements.css?v=20260901_spotlight">
+    <script src="js/global-search-palette.js?v=20260901_spotlight"></script>
 
     <style>
         .nav-links {
@@ -206,6 +208,7 @@
                 </div>
             </div>
             <nav class="nav-links">
+                <button class="nav-search-trigger" onclick="window.InwooPalette.open()" title="Open Spotlight Search (Ctrl+K)"><span>🔍 Search</span> <kbd>Ctrl+K</kbd></button>
                 <a href="/" class="nav-item">Home</a>
                 <a href="tools/greenhouse-3d-digital-twin-simulator.html" class="nav-item nav-item-highlight" style="background: linear-gradient(135deg, #0284c7, #38bdf8) !important; border-color: #38bdf8 !important;">🌟 3D WebGL Twin</a>
                 <a href="tools/index.html" class="nav-item nav-item-highlight">🛠️ 32 Tools Suite</a>
