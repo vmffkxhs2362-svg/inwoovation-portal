@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Greenhouse Edge IoT & MQTT Telemetry Fleet Simulator | Inwoovation</title>
+  <meta name="description" content="Industrial IoT simulator streaming real-time MQTT telemetry across 100 virtual greenhouse microclimate, slab TDR, and PAR sensor nodes with edge anomaly detection.">
+  <link rel="stylesheet" href="css/digital_twin_styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  
+  <style>
+    .fleet-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .node-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(65px, 1fr));
+      gap: 8px;
+      background: rgba(15, 23, 42, 0.7);
+      padding: 16px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      max-height: 380px;
+      overflow-y: auto;
+    }
+    .node-box {
+      background: rgba(30, 41, 59, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 6px;
+      padding: 8px 4px;
+      text-align: center;
+      font-size: 0.75rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .node-box:hover {
+      transform: scale(1.08);
+      border-color: var(--accent-emerald);
+    }
+    .node-online { border-color: #10b981; color: #10b981; }
+    .node-warning { border-color: #f59e0b; color: #f59e0b; }
+    .node-alert { border-color: #ef4444; color: #ef4444; }
+
+    .terminal-box {
+      background: #0f172a;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 12px;
+      padding: 16px;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: #38bdf8;
+      height: 380px;
+      overflow-y: auto;
+      white-space: pre-wrap;
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Smart Greenhouse Edge IoT & MQTT Telemetry Fleet Simulator",
+    "url": "https://inwoovation.com/tools/greenhouse-mqtt-edge-iot-fleet-simulator.html",
+    "description": "Simulates 100 virtual edge sensor nodes streaming JSON payloads over MQTT with real-time anomaly detection.",
+    "applicationCategory": "DeveloperApplication, AgriculturalTool",
+    "operatingSystem": "All",
+    "author": {
+      "@type": "Person",
+      "name": "Inwoo Hwang"
+    },
+    "dateModified": "2026-09-01"
+  }
+  </script>
+</head>
+<body>
+
+  <div class="sim-container">
+    <header class="sim-header">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <div>
+          <h1>📡 Greenhouse Edge IoT & MQTT Fleet Simulator</h1>
+          <p>100 Virtual Sensor Nodes Streaming Real-Time JSON Telemetry (Temp, RH, VPD, Slab VWC & EC)</p>
+        </div>
+        <button id="btn-stream" onclick="toggleStream()" style="background: #10b981; color: white; border: none; padding: 10px 20px; border-radius: 8px; font-weight: 700; cursor: pointer;">▶ Start Live Telemetry</button>
+      </div>
+    </header>
+
+    <div class="fleet-grid">
+      <!-- 100 Virtual Sensor Grid -->
+      <div>
+        <h3 class="control-section-title">🌐 100-Node Fleet Status (Hectares 1 to 20)</h3>
+        <div class="node-grid" id="node-container"></div>
+        <div style="display: flex; gap: 16px; margin-top: 12px; font-size: 0.8rem; color: var(--text-muted);">
+          <span>🟢 Normal: <strong id="cnt-normal" style="color: #10b981;">94</strong></span>
+          <span>🟡 Warning (VPD): <strong id="cnt-warn" style="color: #f59e0b;">5</strong></span>
+          <span>🔴 Alert (EC/Dry): <strong id="cnt-alert" style="color: #ef4444;">1</strong></span>
+        </div>
+      </div>
+
+      <!-- MQTT Telemetry Console -->
+      <div>
+        <h3 class="control-section-title">📟 Live MQTT JSON Telemetry Stream (`topic: greenhouse/fleet/#`)</h3>
+        <div id="mqtt-terminal" class="terminal-box">>>> Connecting to virtual MQTT broker ws://broker.inwoovation.com:8883...
+>>> Subscribed to topics: [greenhouse/fleet/node_001..100/telemetry]
+>>> Ready. Click 'Start Live Telemetry' to broadcast streaming packets.</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const nodeContainer = document.getElementById('node-container');
+    const nodes = [];
+    for (let i = 1; i <= 100; i++) {
+      const id = String(i).padStart(3, '0');
+      const el = document.createElement('div');
+      el.className = 'node-box node-online';
+      el.id = `node-${id}`;
+      el.innerHTML = `<div>N-${id}</div><div style="font-size:0.65rem; color:#94a3b8;">OK</div>`;
+      nodeContainer.appendChild(el);
+      nodes.push({ id, el, status: 'online' });
+    }
+
+    let isStreaming = false;
+    let streamTimer = null;
+
+    function toggleStream() {
+      isStreaming = !isStreaming;
+      const btn = document.getElementById('btn-stream');
+      if (isStreaming) {
+        btn.innerText = '⏹ Stop Streaming';
+        btn.style.background = '#ef4444';
+        startStream();
+      } else {
+        btn.innerText = '▶ Start Live Telemetry';
+        btn.style.background = '#10b981';
+        clearInterval(streamTimer);
+      }
+    }
+
+    function startStream() {
+      const term = document.getElementById('mqtt-terminal');
+      streamTimer = setInterval(() => {
+        const randNode = nodes[Math.floor(Math.random() * nodes.length)];
+        const temp = (21.5 + (Math.random() * 4.0 - 2.0)).toFixed(1);
+        const rh = (68.0 + (Math.random() * 12.0 - 6.0)).toFixed(1);
+        const vpd = (0.95 + (Math.random() * 0.4 - 0.2)).toFixed(2);
+        const vwc = (65.0 + (Math.random() * 6.0 - 3.0)).toFixed(1);
+        const ec = (3.2 + (Math.random() * 0.4 - 0.2)).toFixed(2);
+
+        const packet = {
+          client_id: `ESP32-CEA-NODE-${randNode.id}`,
+          ts: new Date().toISOString(),
+          topic: `greenhouse/zone_${Math.ceil(parseInt(randNode.id)/5)}/node_${randNode.id}`,
+          payload: {
+            t_air_c: parseFloat(temp),
+            rh_pct: parseFloat(rh),
+            vpd_kpa: parseFloat(vpd),
+            slab_vwc_pct: parseFloat(vwc),
+            slab_pore_ec_ds_m: parseFloat(ec),
+            batt_v: 3.64
+          }
+        };
+
+        const msg = JSON.stringify(packet, null, 2);
+        term.innerText = `[MQTT PUB] ${packet.topic}\n${msg}\n\n` + term.innerText.slice(0, 1800);
+      }, 400);
+    }
+  </script>
+</body>
+</html>

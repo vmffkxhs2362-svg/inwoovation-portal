@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Greenhouse Edge IoT & MQTT Fleet Telemetry Architecture | Inwoovation</title>
+  <meta name="description" content="Industrial IoT architecture for commercial protected cropping: LoRaWAN, MQTT broker topologies, JSON schema telemetry, and edge anomaly detection across 100+ greenhouse zones.">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="canonical" href="https://inwoovation.com/articles/article-50-smart-greenhouse-mqtt-edge-iot-fleet.html">
+  <link rel="alternate" hreflang="en" href="https://inwoovation.com/articles/article-50-smart-greenhouse-mqtt-edge-iot-fleet.html">
+  <link rel="alternate" hreflang="de" href="https://inwoovation.com/articles/de/article-50-smart-gewaechshaus-mqtt-edge-iot-flotte.html">
+  <link rel="alternate" hreflang="ja" href="https://inwoovation.com/articles/ja/article-50-smart-greenhouse-mqtt-edge-iot-fleet-jp.html">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Smart Greenhouse Edge IoT & MQTT Fleet Telemetry Architecture",
+    "description": "Distributed sensor networks, MQTT QoS levels, and real-time microclimate streaming in CEA.",
+    "author": {
+      "@type": "Person",
+      "name": "Inwoo Hwang"
+    },
+    "datePublished": "2026-09-01",
+    "dateModified": "2026-09-01",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Inwoovation Smart Farming"
+    }
+  }
+  </script>
+</head>
+<body>
+  <article class="article-container">
+    <header class="article-header">
+      <div class="category-tag">Industrial IoT & Sensor Networks</div>
+      <h1>Smart Greenhouse Edge IoT & MQTT Fleet Telemetry Architecture</h1>
+      <div class="article-meta">Published: 2026-09-01 • Author: Inwoo Hwang • Reading Time: 9 min</div>
+    </header>
+
+    <div class="article-body">
+      <p class="lead">Managing 20+ hectares of high-wire glasshouse production necessitates low-latency distributed sensor networks. MQTT with QoS 1 over TLS provides resilient, bidirectional telemetry for canopy microclimate, substrate TDR moisture, and drain EC monitoring.</p>
+
+      <h2>1. MQTT Topic Hierarchy</h2>
+      <div class="code-box">
+        <code>greenhouse/{facility_id}/zone_{01..20}/node_{001..100}/telemetry</code>
+      </div>
+
+      <h2>2. Interactive IoT Fleet Simulator</h2>
+      <p><a href="../tools/greenhouse-mqtt-edge-iot-fleet-simulator.html" class="cta-button" style="display:inline-block; padding:12px 24px; background:#38bdf8; color:black; border-radius:8px; text-decoration:none; font-weight:700;">📡 Launch MQTT Fleet Simulator</a></p>
+    </div>
+  </article>
+</body>
+</html>

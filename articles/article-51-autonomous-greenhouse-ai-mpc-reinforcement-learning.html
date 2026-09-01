@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Autonomous Greenhouse AI: Reinforcement Learning & Model Predictive Control | Inwoovation</title>
+  <meta name="description" content="Autonomous climate computer optimization using Reinforcement Learning and Model Predictive Control (MPC). Optimizes 24h temperature trajectories and cuts heating energy by 22.4%.">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="canonical" href="https://inwoovation.com/articles/article-51-autonomous-greenhouse-ai-mpc-reinforcement-learning.html">
+  <link rel="alternate" hreflang="en" href="https://inwoovation.com/articles/article-51-autonomous-greenhouse-ai-mpc-reinforcement-learning.html">
+  <link rel="alternate" hreflang="de" href="https://inwoovation.com/articles/de/article-51-autonome-gewaechshaeuser-ki-mpc-reinforcement-learning.html">
+  <link rel="alternate" hreflang="ja" href="https://inwoovation.com/articles/ja/article-51-autonomous-greenhouse-ai-mpc-reinforcement-learning-jp.html">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Autonomous Greenhouse AI: Reinforcement Learning & Model Predictive Control",
+    "description": "Model predictive control, optimal trajectory planning, and energy minimization in smart CEA.",
+    "author": {
+      "@type": "Person",
+      "name": "Inwoo Hwang"
+    },
+    "datePublished": "2026-09-01",
+    "dateModified": "2026-09-01",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Inwoovation Smart Farming"
+    }
+  }
+  </script>
+</head>
+<body>
+  <article class="article-container">
+    <header class="article-header">
+      <div class="category-tag">Artificial Intelligence & Climate Automation</div>
+      <h1>Autonomous Greenhouse AI: Reinforcement Learning & Model Predictive Control</h1>
+      <div class="article-meta">Published: 2026-09-01 • Author: Inwoo Hwang • Reading Time: 10 min</div>
+    </header>
+
+    <div class="article-body">
+      <p class="lead">Autonomous greenhouse control moves beyond static heuristic PID setpoints. By combining 24-hour weather forecasts with physiological crop models (Farquhar photosynthesis and Penman-Monteith transpiration), <strong>Model Predictive Control (MPC)</strong> and Deep Reinforcement Learning optimize pipe rail temperatures and vent openings, reducing natural gas usage by $22.4\%$ while maximizing harvest biomass.</p>
+
+      <h2>1. The MPC Cost Objective Function</h2>
+      <div class="code-box">
+        <code>\min_{u} J = \sum_{k=0}^{N-1} \left( w_{energy} \cdot P_{heat}(k) - w_{yield} \cdot A_{net}(k) + w_{\Delta u} \|\Delta u(k)\|^2 \right)</code>
+      </div>
+
+      <h2>2. Interactive MPC Simulator</h2>
+      <p><a href="../tools/greenhouse-autonomous-ai-climate-controller.html" class="cta-button" style="display:inline-block; padding:12px 24px; background:#10b981; color:white; border-radius:8px; text-decoration:none; font-weight:700;">🧠 Launch Autonomous MPC Simulator</a></p>
+    </div>
+  </article>
+</body>
+</html>
