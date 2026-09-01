@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greenhouse Digital Twin Microclimate Simulator | Inwoovation Smart Farming</title>
+  <meta name="description" content="Industrial-grade interactive Venlo greenhouse digital twin simulator. Model real-time solar radiation, VPD, crop transpiration, thermal screens, and automated PID climate control.">
+  <link rel="stylesheet" href="css/digital_twin_styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  
+  <!-- Structured Data JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Greenhouse Digital Twin Microclimate Simulator",
+    "url": "https://inwoovation.com/tools/digital-twin-greenhouse-simulator.html",
+    "description": "Real-time thermodynamic microclimate and crop transpiration simulator for high-tech commercial greenhouses.",
+    "applicationCategory": "EducationalApplication, EngineeringTool",
+    "operatingSystem": "All",
+    "author": {
+      "@type": "Person",
+      "name": "Inwoo Hwang"
+    },
+    "dateModified": "2026-09-01"
+  }
+  </script>
+</head>
+<body>
+
+  <div class="sim-container">
+    <header class="sim-header">
+      <h1>🌿 Greenhouse Digital Twin Simulator</h1>
+      <p>Real-Time Venlo Thermodynamic Physics & PID Microclimate Engine (Wageningen WUR Standard)</p>
+    </header>
+
+    <div class="sim-grid">
+      <!-- Viewport & Telemetry -->
+      <div class="viewport-panel">
+        <div class="canvas-wrapper">
+          <canvas id="ghCanvas"></canvas>
+        </div>
+
+        <div class="telemetry-bar">
+          <div class="telemetry-card">
+            <div class="telemetry-label">Indoor Temp ($T_{in}$)</div>
+            <div class="telemetry-val" id="val-temp-in">21.5 °C</div>
+          </div>
+          <div class="telemetry-card">
+            <div class="telemetry-label">Relative Humidity</div>
+            <div class="telemetry-val" id="val-rh-in">72 %</div>
+          </div>
+          <div class="telemetry-card">
+            <div class="telemetry-label">Leaf VPD ($VPD_{leaf}$)</div>
+            <div class="telemetry-val" id="val-vpd-in">0.95 kPa</div>
+          </div>
+          <div class="telemetry-card">
+            <div class="telemetry-label">Transpiration Flux</div>
+            <div class="telemetry-val" id="val-transpiration">185 g/m²h</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Control Panel -->
+      <div class="controls-panel">
+        <h3 class="control-section-title">☀️ Outdoor Boundary Conditions</h3>
+        
+        <div class="control-group">
+          <div class="control-label-row">
+            <span>Solar Radiation</span>
+            <span id="lbl-solar">650 W/m²</span>
+          </div>
+          <input type="range" id="slider-solar" min="0" max="1100" value="650" step="25">
+        </div>
+
+        <div class="control-group">
+          <div class="control-label-row">
+            <span>Outdoor Temperature</span>
+            <span id="lbl-tout">14.0 °C</span>
+          </div>
+          <input type="range" id="slider-tout" min="-10" max="38" value="14.0" step="0.5">
+        </div>
+
+        <h3 class="control-section-title">⚙️ Greenhouse Climate Actuators</h3>
+
+        <div class="toggle-row">
+          <span>Auto-PID Climate Computer</span>
+          <input type="checkbox" id="toggle-pid" checked style="transform: scale(1.3); accent-color: var(--accent-emerald);">
+        </div>
+
+        <div class="toggle-row">
+          <span>Supplemental LED Toplights</span>
+          <input type="checkbox" id="toggle-led" checked style="transform: scale(1.3); accent-color: var(--accent-emerald);">
+        </div>
+
+        <button class="btn-action" onclick="alert('Digital Twin Telemetry Snapshot Exported to Antigravity Vault!');">
+          📊 Export Climate CSV Telemetry
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/digital_twin_engine.js"></script>
+</body>
+</html>
