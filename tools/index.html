@@ -70,6 +70,36 @@
       font-weight: 700;
       margin-left: 8px;
     }
+    .filter-bar {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin: 24px 0;
+    }
+    .filter-btn {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #94a3b8;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .filter-btn:hover, .filter-btn.active {
+      background: var(--accent-emerald);
+      color: #0f172a;
+      border-color: var(--accent-emerald);
+    }
+    .top-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      margin-bottom: 24px;
+    }
   </style>
 
   <script type="application/ld+json">
@@ -90,10 +120,32 @@
 <body>
 
   <div class="sim-container">
+    <div class="top-nav">
+      <a href="../index.html" style="color: #38bdf8; text-decoration: none; font-weight: 700; display: flex; align-items: center; gap: 6px;">
+        <span>←</span>
+        <span>Return to Inwoovation Lab Home</span>
+      </a>
+      <div style="display: flex; gap: 12px;">
+        <a href="../guides.html" style="color: #94a3b8; text-decoration: none; font-size: 0.9rem; font-weight: 600;">📚 72 Articles</a>
+        <a href="opencea-python-micro-framework-playground.html" style="color: #facc15; text-decoration: none; font-size: 0.9rem; font-weight: 600;">🐍 OpenCEA Python</a>
+      </div>
+    </div>
+
     <header class="sim-header">
-      <h1>🛠️ Commercial CEA & Greenhouse Engineering Suite</h1>
-      <p>30 Enterprise-Grade Microclimate Physics Models, Autonomous AI Controllers & Open-Source Tools</p>
+      <div>
+        <h1 style="font-size: 2.2rem; font-weight: 800; color: #ffffff;">🛠️ Commercial CEA Engineering Tools Suite</h1>
+        <p style="color: #94a3b8; margin-top: 6px;">30 Enterprise-Grade Microclimate Physics Models, Autonomous AI Controllers & Open-Source Tools</p>
+      </div>
     </header>
+
+    <div class="filter-bar">
+      <button class="filter-btn active" onclick="filterCategory('all', this)">All 30 Tools</button>
+      <button class="filter-btn" onclick="filterCategory('climate', this)">🌡️ Climate & Thermodynamics</button>
+      <button class="filter-btn" onclick="filterCategory('lighting', this)">💡 Lighting & Photobiology</button>
+      <button class="filter-btn" onclick="filterCategory('water', this)">💧 Hydroponics & Water</button>
+      <button class="filter-btn" onclick="filterCategory('ai', this)">🧠 AI, IoT & Automation</button>
+      <button class="filter-btn" onclick="filterCategory('quant', this)">📊 Finance & Quant</button>
+    </div>
 
     <div class="tools-hub-grid">
       <!-- Tool 1 -->
@@ -398,5 +450,32 @@
     </div>
   </div>
 
+  <script>
+    function filterCategory(cat, btn) {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const cards = document.querySelectorAll('.tool-card');
+      cards.forEach(c => {
+        if (cat === 'all') {
+          c.style.display = 'flex';
+        } else {
+          const text = c.innerText.toLowerCase();
+          if (cat === 'climate' && (text.includes('climate') || text.includes('twin') || text.includes('mollier') || text.includes('heat') || text.includes('co2') || text.includes('fogging') || text.includes('haf') || text.includes('buffer') || text.includes('structural'))) {
+            c.style.display = 'flex';
+          } else if (cat === 'lighting' && (text.includes('dli') || text.includes('spectrum') || text.includes('led') || text.includes('extinction') || text.includes('yield') || text.includes('farquhar'))) {
+            c.style.display = 'flex';
+          } else if (cat === 'water' && (text.includes('nutrient') || text.includes('penman') || text.includes('rockwool') || text.includes('uv-c') || text.includes('calcium') || text.includes('desalination') || text.includes('matric') || text.includes('speciation'))) {
+            c.style.display = 'flex';
+          } else if (cat === 'ai' && (text.includes('ai') || text.includes('mqtt') || text.includes('opencea') || text.includes('vision') || text.includes('steering') || text.includes('autonomous'))) {
+            c.style.display = 'flex';
+          } else if (cat === 'quant' && (text.includes('quant') || text.includes('capex') || text.includes('srs') || text.includes('scr'))) {
+            c.style.display = 'flex';
+          } else {
+            c.style.display = 'none';
+          }
+        }
+      });
+    }
+  </script>
 </body>
 </html>

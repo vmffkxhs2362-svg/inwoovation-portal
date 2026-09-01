@@ -104,21 +104,21 @@
     <div class="container">
         <!-- Header Navbar -->
         <header>
-            <div class="logo-container">
-                <a href="/" class="logo-main">INWOOVATION <span>LAB</span></a>
-                <div class="status-badge">
-                    <span class="status-dot"></span>
+            <div class="logo-container" style="display: flex; align-items: center; gap: 0.8rem;">
+                <a href="/" class="logo-main" style="font-family: var(--font-heading); font-size: 1.6rem; font-weight: 800; color: #ffffff; text-decoration: none;">INWOOVATION <span style="color: var(--primary);">LAB</span></a>
+                <div class="status-badge" style="display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.75rem; font-weight: 700; color: var(--accent-emerald); background: rgba(16, 185, 129, 0.12); border: 1px solid rgba(16, 185, 129, 0.3); padding: 0.3rem 0.7rem; border-radius: 100px;">
+                    <span class="status-dot" style="width: 7px; height: 7px; background: var(--accent-emerald); border-radius: 50%;"></span>
                     <span>ALL SYSTEMS LIVE</span>
                 </div>
             </div>
-            <nav style="display: flex; gap: 1.2rem; align-items: center; flex-wrap: wrap;">
-                <a href="/" style="color: #cbd5e1; text-decoration: none; font-weight: 600; font-size: 0.95rem;">Home</a>
-                <a href="tools/index.html" style="color: #10b981; text-decoration: none; font-weight: 800; font-size: 0.95rem; background: rgba(16, 185, 129, 0.15); padding: 0.4rem 0.9rem; border-radius: 8px; border: 1px solid rgba(16, 185, 129, 0.4);">🛠️ 30 Enterprise Tools</a>
-                <a href="guides.html" style="color: #38bdf8; text-decoration: none; font-weight: 700; font-size: 0.95rem;">📚 72 Articles</a>
-                <a href="tools/opencea-python-micro-framework-playground.html" style="color: #facc15; text-decoration: none; font-weight: 700; font-size: 0.95rem;">🐍 OpenCEA Python</a>
-                <a href="tools/agriquant-greenhouse-energy-commodity-terminal.html" style="color: #a78bfa; text-decoration: none; font-weight: 700; font-size: 0.95rem;">📊 AgriQuant</a>
-                <a href="tools/meister-deutsch-srs-learning-engine.html" style="color: #f43f5e; text-decoration: none; font-weight: 700; font-size: 0.95rem;">🇩🇪 Meister SRS</a>
-                <a href="about.html" style="color: #cbd5e1; text-decoration: none; font-weight: 600; font-size: 0.95rem;">About</a>
+            <nav class="nav-links">
+                <a href="/" class="nav-item">Home</a>
+                <a href="tools/index.html" class="nav-item nav-item-highlight">🛠️ 30 Enterprise Tools</a>
+                <a href="guides.html" class="nav-item">📚 72 Articles</a>
+                <a href="tools/opencea-python-micro-framework-playground.html" class="nav-item">🐍 OpenCEA Python</a>
+                <a href="tools/agriquant-greenhouse-energy-commodity-terminal.html" class="nav-item">📊 AgriQuant</a>
+                <a href="tools/meister-deutsch-srs-learning-engine.html" class="nav-item">🇩🇪 Meister SRS</a>
+                <a href="about.html" class="nav-item">About</a>
             </nav>
         </header>
 
@@ -131,6 +131,22 @@
             <p id="hero-desc">
                 Inwoovation Lab engineers 30 industrial-grade biophysical crop models, autonomous AI climate controllers (MPC), plant disease computer vision, and the OpenCEA Python micro-framework.
             </p>
+
+            <!-- Prominent Action CTA Buttons -->
+            <div class="hero-cta-group">
+                <a href="tools/index.html" class="btn-primary-glow">
+                    <span>🚀 Launch 30 Enterprise Tools</span>
+                    <span>→</span>
+                </a>
+                <a href="tools/opencea-python-micro-framework-playground.html" class="btn-secondary-glass">
+                    <span>🐍 OpenCEA Python Engine</span>
+                    <span>→</span>
+                </a>
+                <a href="guides.html" class="btn-secondary-glass">
+                    <span>📚 Explore 72 Articles</span>
+                    <span>→</span>
+                </a>
+            </div>
 
             <!-- Stats Ribbon -->
             <div class="stats-ribbon">
