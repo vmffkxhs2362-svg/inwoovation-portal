@@ -164,8 +164,16 @@
         <div class="res-val" id="res-action" style="color: #10b981; font-size: 1.3rem;">MAINTAIN CURRENT REGIME</div>
       </div>
     </div>
+
+    <!-- 1-Click PDF Export -->
+    <div style="text-align:center; margin-top:24px;">
+      <button onclick="exportCropSteerAuditPDF()" style="background:linear-gradient(135deg, #0284c7, #0369a1); color:#fff; border:1px solid rgba(255,255,255,0.2); padding:12px 24px; border-radius:12px; font-weight:700; font-size:0.95rem; cursor:pointer; display:inline-flex; align-items:center; gap:8px; box-shadow:0 4px 14px rgba(2,132,199,0.35);">
+        📄 Download Precision Crop Steering Audit Report (PDF)
+      </button>
+    </div>
   </div>
 
+  <script src="../js/audit-pdf-generator.js"></script>
   <script>
     function calculate() {
       const dif = parseFloat(document.getElementById('slider-dif').value);
@@ -176,12 +184,7 @@
       document.getElementById('lbl-vpd').innerText = vpd.toFixed(2) + ' kPa';
       document.getElementById('lbl-drydown').innerText = drydown.toFixed(1) + ' %';
 
-      // Crop Steering Index (CSI): 
-      // Higher DIF (+), Higher VPD (+), Higher DryDown (+) => Generative (+)
-      // Lower DIF (-), Lower VPD (-), Lower DryDown (-) => Vegetative (-)
       const csi = (dif * 0.45) + ((vpd - 0.9) * 2.5) + ((drydown - 7.0) * 0.35);
-
-      // Map CSI (-5 to +5) to percentage (0% to 100%)
       const needlePct = Math.max(5, Math.min(95, 50 + (csi * 9.0)));
       document.getElementById('steer-needle').style.left = needlePct + '%';
 
@@ -208,6 +211,39 @@
         actEl.innerText = 'OPTIMAL CROP BALANCE';
         actEl.style.color = '#10b981';
       }
+    }
+
+    function exportCropSteerAuditPDF() {
+      const dif = document.getElementById('lbl-dif').innerText;
+      const vpd = document.getElementById('lbl-vpd').innerText;
+      const drydown = document.getElementById('lbl-drydown').innerText;
+      const csi = document.getElementById('res-csi').innerText;
+      const fruitSet = document.getElementById('res-fruit-set').innerText;
+      const headThick = document.getElementById('res-head-thick').innerText;
+      const action = document.getElementById('res-action').innerText;
+
+      const kpiData = [
+        { label: "Steering Index (CSI)", value: csi, unit: "Equilibrium Score" },
+        { label: "Fruit Set Probability", value: fruitSet, unit: "Reproductive Load" },
+        { label: "Stem Head Caliber", value: headThick, unit: "Target: 10-12 mm" },
+        { label: "Agronomic Directive", value: action, unit: "Immediate Action" }
+      ];
+
+      const inputSummary = [
+        { label: "Day-Night Temperature Differential (DIF)", value: dif },
+        { label: "Canopy Vapor Pressure Deficit (VPD)", value: vpd },
+        { label: "Substrate Slab Night Drydown", value: drydown },
+        { label: "Root-Zone Matrix Model", value: "Dutch Grodan / Wageningen UR Crop Steering Kernel" }
+      ];
+
+      const recommendation = `Crop steering equilibrium index evaluated at ${csi}. Diagnostic recommendation: ${action}. Maintain nighttime slab drydown at ${drydown} to sustain generative steering balance.`;
+
+      generateInstitutionalPDF(
+        "Commercial CEA Precision Crop Steering & Balance Audit",
+        kpiData,
+        inputSummary,
+        recommendation
+      );
     }
 
     document.querySelectorAll('input').forEach(el => {

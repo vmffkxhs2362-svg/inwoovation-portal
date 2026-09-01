@@ -130,12 +130,20 @@
         <div class="res-val" id="res-enthalpy">52.1 kJ/kg</div>
       </div>
       <div class="res-box">
-        <div style="font-size: 0.8rem; color: var(--text-muted);">HEAT PUMP ENERGY SAVINGS</div>
-        <div class="res-val" id="res-savings" style="color: var(--accent-emerald); font-size: 1.5rem;">42.5 % vs Vents</div>
+        <div style="font-size: 0.8rem; color: var(--text-muted);">HEAT RECOVERY SAVINGS</div>
+        <div class="res-val" id="res-savings" style="color: var(--accent-emerald);">48.2 % vs Vents</div>
       </div>
+    </div>
+
+    <!-- 1-Click PDF Export -->
+    <div style="text-align:center; margin-top:24px;">
+      <button onclick="exportMollierAuditPDF()" style="background:linear-gradient(135deg, #0284c7, #0369a1); color:#fff; border:1px solid rgba(255,255,255,0.2); padding:12px 24px; border-radius:12px; font-weight:700; font-size:0.95rem; cursor:pointer; display:inline-flex; align-items:center; gap:8px; box-shadow:0 4px 14px rgba(2,132,199,0.35);">
+        📄 Download Psychrometric & Dehumidification Audit Report (PDF)
+      </button>
     </div>
   </div>
 
+  <script src="../js/audit-pdf-generator.js"></script>
   <script>
     const canvas = document.getElementById('mollierCanvas');
     const ctx = canvas.getContext('2d');
@@ -226,6 +234,39 @@
       document.getElementById('res-savings').innerText = savings.toFixed(1) + ' % vs Vents';
 
       drawChart(t, rh, dew, x);
+    }
+
+    function exportMollierAuditPDF() {
+      const t = document.getElementById('lbl-temp').innerText;
+      const rh = document.getElementById('lbl-rh').innerText;
+      const area = document.getElementById('lbl-area').innerText;
+      const x = document.getElementById('res-abs-hum').innerText;
+      const dew = document.getElementById('res-dew-pt').innerText;
+      const h = document.getElementById('res-enthalpy').innerText;
+      const save = document.getElementById('res-savings').innerText;
+
+      const kpiData = [
+        { label: "Absolute Humidity (x)", value: x, unit: "g water / kg dry air" },
+        { label: "Dew Point Temperature", value: dew, unit: "Condensation Threshold" },
+        { label: "Moist Air Enthalpy", value: h, unit: "Specific Energy" },
+        { label: "Heat Recovery Saving", value: save, unit: "Vs. Window Venting" }
+      ];
+
+      const inputSummary = [
+        { label: "Dry-Bulb Air Temperature", value: t },
+        { label: "Relative Humidity", value: rh },
+        { label: "Facility Floor Area", value: area },
+        { label: "Psychrometric Model", value: "ASHRAE Fundamentals / Mollier h-x Diagram" }
+      ];
+
+      const recommendation = `Psychrometric audit at ${t} and ${rh} yields absolute moisture of ${x} with dew point at ${dew}. Closed-loop heat-pump dehumidification delivers ${save} thermal energy retention compared to cold outside air purging.`;
+
+      generateInstitutionalPDF(
+        "Greenhouse Psychrometric State & Heat-Pump Dehumidification Audit",
+        kpiData,
+        inputSummary,
+        recommendation
+      );
     }
 
     document.querySelectorAll('input').forEach(el => {

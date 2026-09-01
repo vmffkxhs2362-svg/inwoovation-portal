@@ -150,8 +150,16 @@
         <div class="res-val" id="res-boiler-btu">4.85 MMBtu/h</div>
       </div>
     </div>
+
+    <!-- 1-Click PDF Export -->
+    <div style="text-align:center; margin-top:24px;">
+      <button onclick="exportHeatingAuditPDF()" style="background:linear-gradient(135deg, #0284c7, #0369a1); color:#fff; border:1px solid rgba(255,255,255,0.2); padding:12px 24px; border-radius:12px; font-weight:700; font-size:0.95rem; cursor:pointer; display:inline-flex; align-items:center; gap:8px; box-shadow:0 4px 14px rgba(2,132,199,0.35);">
+        📄 Download Heating & Thermal Screen Audit Report (PDF)
+      </button>
+    </div>
   </div>
 
+  <script src="../js/audit-pdf-generator.js"></script>
   <script>
     function calculate() {
       const area = parseFloat(document.getElementById('slider-floor').value);
@@ -172,23 +180,16 @@
       else if (glazing === 'poly_double') uBase = 4.2;
       else if (glazing === 'polycarb_16') uBase = 2.4;
 
-      // Envelope Area approximation (Roof + Side walls)
-      // Roof pitch ~ 22 deg => Roof area ~ 1.15 * Floor area
-      // Wall perimeter ~ 4 * sqrt(Floor area) => Wall area = Perimeter * Height
       const roofArea = area * 1.15;
       const wallArea = 4 * Math.sqrt(area) * height;
       const totalEnvelopeArea = roofArea + wallArea;
 
-      // Effective U-value with screen
-      // Screen provides ~45% reduction at 100% closure on roof
       const screenFactor = 1.0 - (screenPct / 100.0) * 0.45;
       const effectiveU = (roofArea * uBase * screenFactor + wallArea * uBase) / totalEnvelopeArea;
 
       const deltaT = tIn - tOut;
-      // Transmission loss Q_trans = A_env * U_eff * deltaT
       const qTransW = totalEnvelopeArea * effectiveU * deltaT;
       
-      // Infiltration & air exchange loss (0.5 air changes / hour)
       const volume = area * height;
       const qInfW = 1.204 * 1005 * (volume * 0.5 / 3600.0) * deltaT;
 
@@ -196,15 +197,49 @@
       const peakKw = totalPeakW / 1000.0;
       const specLoad = totalPeakW / area;
 
-      // Unscreened base peak for savings comparison
       const unscreenedW = (totalEnvelopeArea * uBase * deltaT) + qInfW;
       const savingsPct = ((unscreenedW - totalPeakW) / unscreenedW) * 100;
-      const boilerBtu = (totalPeakW * 3.412142) / 1000000.0; // MMBtu/h
+      const boilerBtu = (totalPeakW * 3.412142) / 1000000.0;
 
       document.getElementById('res-peak-kw').innerText = Math.round(peakKw).toLocaleString() + ' kW';
       document.getElementById('res-spec-load').innerText = Math.round(specLoad) + ' W/m²';
       document.getElementById('res-screen-save').innerText = savingsPct.toFixed(1) + ' %';
       document.getElementById('res-boiler-btu').innerText = boilerBtu.toFixed(2) + ' MMBtu/h';
+    }
+
+    function exportHeatingAuditPDF() {
+      const area = document.getElementById('lbl-floor').innerText;
+      const tIn = document.getElementById('lbl-tin').innerText;
+      const tOut = document.getElementById('lbl-tout').innerText;
+      const screen = document.getElementById('lbl-screen').innerText;
+      const peak = document.getElementById('res-peak-kw').innerText;
+      const spec = document.getElementById('res-spec-load').innerText;
+      const save = document.getElementById('res-screen-save').innerText;
+      const btu = document.getElementById('res-boiler-btu').innerText;
+
+      const kpiData = [
+        { label: "Peak Heating Load", value: peak, unit: "Total Thermal Demand" },
+        { label: "Specific Load", value: spec, unit: "Per m² Ground Area" },
+        { label: "Screen Energy Saving", value: save, unit: "Vs. Unscreened Baseline" },
+        { label: "Boiler Rating Needed", value: btu, unit: "Imperial Equivalent" }
+      ];
+
+      const inputSummary = [
+        { label: "Ground Floor Area", value: area },
+        { label: "Inside Setpoint Temperature", value: tIn },
+        { label: "Outside Design Winter Temperature", value: tOut },
+        { label: "Thermal Screen Closure Ratio", value: screen },
+        { label: "Standard Applied", value: "DIN V 18599 / NEN 3859 Thermodynamic Kernel" }
+      ];
+
+      const recommendation = `Greenhouse heating simulation for ${area} facility under design winter conditions (${tOut} outside / ${tIn} inside) confirms a peak boiler capacity requirement of ${peak} (${spec}). Deploying the thermal screen at ${screen} reduces transmission heat loss by ${save}.`;
+
+      generateInstitutionalPDF(
+        "Commercial Greenhouse Heating Load & Thermal Screen Engineering Audit",
+        kpiData,
+        inputSummary,
+        recommendation
+      );
     }
 
     document.querySelectorAll('input, select').forEach(el => {

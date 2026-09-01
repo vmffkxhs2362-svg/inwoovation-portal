@@ -44,14 +44,250 @@
         <h1>🔬 Precision Engineering Articles Archive (72 Multilingual Volumes)</h1>
         <p>Comprehensive engineering publications on biophysics, autonomous AI climate MPC, photobiology, and commercial greenhouse automation in English, German, and Japanese.</p>
 
+        
+        <!-- Category Filter Tabs -->
+        <div style="display:flex; gap:10px; flex-wrap:wrap; margin:20px 0 10px;">
+            <button class="cat-tab active" onclick="filterCategory('all', this)" style="background:rgba(16,185,129,0.2); border:1px solid #10b981; color:#10b981; padding:8px 16px; border-radius:10px; font-weight:700; font-size:0.85rem; cursor:pointer;">✨ All Resources (121+)</button>
+            <button class="cat-tab" onclick="filterCategory('article', this)" style="background:rgba(15,23,42,0.8); border:1px solid rgba(255,255,255,0.1); color:#94a3b8; padding:8px 16px; border-radius:10px; font-weight:700; font-size:0.85rem; cursor:pointer;">📚 72 Engineering Articles</button>
+            <button class="cat-tab" onclick="filterCategory('crop', this)" style="background:rgba(15,23,42,0.8); border:1px solid rgba(255,255,255,0.1); color:#94a3b8; padding:8px 16px; border-radius:10px; font-weight:700; font-size:0.85rem; cursor:pointer;">🌱 10 Crop Atlases</button>
+            <button class="cat-tab" onclick="filterCategory('climate', this)" style="background:rgba(15,23,42,0.8); border:1px solid rgba(255,255,255,0.1); color:#94a3b8; padding:8px 16px; border-radius:10px; font-weight:700; font-size:0.85rem; cursor:pointer;">🌍 39 Climate Hubs</button>
+        </div>
+
         <div class="guides-search-box">
             <input type="text" id="articleSearch" class="guides-search-input" placeholder="🔍 Search articles by keyword (e.g. VPD, MPC, AI, IoT, OpenCEA, DLI, Meister)..." onkeyup="filterArticles()">
         </div>
 
         <div class="guides-grid" id="articlesList">
 
+            <a href="crops/greenhouse-tomato-microclimate-vpd-steering-guide.html" class="guide-card crop-card" data-category="crop" data-tags="🍅 commercial greenhouse tomato solanaceae vine vpd 0.8-1.2 kpa, dli 25-35 mol, calcium ber risk mitigation and dif temperature steering.">
+                <div class="guide-card-header">
+                    <span class="guide-tag" style="background:rgba(16,185,129,0.2); color:#10b981;">🌱 Solanaceae Vine</span>
+                    <span style="font-size:0.8rem; color:#64748b;">Crop Guide</span>
+                </div>
+                <h2>🍅 Commercial Greenhouse Tomato</h2>
+                <p>VPD 0.8-1.2 kPa, DLI 25-35 mol, Calcium BER risk mitigation and DIF temperature steering.</p>
+            </a>
+    
+            <a href="crops/greenhouse-cucumber-high-humidity-transpiration-guide.html" class="guide-card crop-card" data-category="crop" data-tags="🥒 high-humidity greenhouse cucumber cucurbitaceae vpd 0.6-1.0 kpa, high transpiration guttation management, downy mildew and spider mite ipm.">
+                <div class="guide-card-header">
+                    <span class="guide-tag" style="background:rgba(16,185,129,0.2); color:#10b981;">🌱 Cucurbitaceae</span>
+                    <span style="font-size:0.8rem; color:#64748b;">Crop Guide</span>
+                </div>
+                <h2>🥒 High-Humidity Greenhouse Cucumber</h2>
+                <p>VPD 0.6-1.0 kPa, high transpiration guttation management, downy mildew and spider mite IPM.</p>
+            </a>
+    
+            <a href="crops/greenhouse-sweet-pepper-climate-blossom-end-rot-guide.html" class="guide-card crop-card" data-category="crop" data-tags="🫑 commercial greenhouse sweet pepper solanaceae fruit setting abortion prevention, 24h-mean temperature balance, and xylem calcium flux.">
+                <div class="guide-card-header">
+                    <span class="guide-tag" style="background:rgba(16,185,129,0.2); color:#10b981;">🌱 Solanaceae</span>
+                    <span style="font-size:0.8rem; color:#64748b;">Crop Guide</span>
+                </div>
+                <h2>🫑 Commercial Greenhouse Sweet Pepper</h2>
+                <p>Fruit setting abortion prevention, 24h-mean temperature balance, and xylem calcium flux.</p>
+            </a>
+    
+            <a href="crops/commercial-strawberry-greenhouse-climate-dli-guide.html" class="guide-card crop-card" data-category="crop" data-tags="🍓 controlled environment strawberry rosaceae table-top substrate table-top night cooling (8-12°c), high brix sugar accumulation, and low ec fertigation.">
+                <div class="guide-card-header">
+                    <span class="guide-tag" style="background:rgba(16,185,129,0.2); color:#10b981;">🌱 Rosaceae Table-Top</span>
+                    <span style="font-size:0.8rem; color:#64748b;">Crop Guide</span>
+                </div>
+                <h2>🍓 Controlled Environment Strawberry</h2>
+                <p>Substrate table-top night cooling (8-12°C), high Brix sugar accumulation, and low EC fertigation.</p>
+            </a>
+    
+            <a href="crops/vertical-farm-lettuce-leafy-greens-tipburn-prevention-guide.html" class="guide-card crop-card" data-category="crop" data-tags="🥬 vertical farm lettuce & leafy greens asteraceae nft/dwc inner-leaf tipburn elimination via horizontal airflow velocity (0.3-0.5 m/s) and dli 16 mol/day.">
+                <div class="guide-card-header">
+                    <span class="guide-tag" style="background:rgba(16,185,129,0.2); color:#10b981;">🌱 Asteraceae NFT/DWC</span>
+                    <span style="font-size:0.8rem; color:#64748b;">Crop Guide</span>
+                </div>
+                <h2>🥬 Vertical Farm Lettuce & Leafy Greens</h2>
+                <p>Inner-leaf tipburn elimination via horizontal airflow velocity (0.3-0.5 m/s) and DLI 16 mol/day.</p>
+            </a>
+    
+            <a href="crops/commercial-cannabis-microclimate-vpd-photobiology-guide.html" class="guide-card crop-card" data-category="crop" data-tags="🌿 commercial cea cannabis cannabaceae phenological vpd staging (0.9 to 1.5 kpa), late-flower botrytis suppression, and dli 55 mol/day.">
+                <div class="guide-card-header">
+                    <span class="guide-tag" style="background:rgba(16,185,129,0.2); color:#10b981;">🌱 Cannabaceae</span>
+                    <span style="font-size:0.8rem; color:#64748b;">Crop Guide</span>
+                </div>
+                <h2>🌿 Commercial CEA Cannabis</h2>
+                <p>Phenological VPD staging (0.9 to 1.5 kPa), late-flower Botrytis suppression, and DLI 55 mol/day.</p>
+            </a>
+    
+            <a href="crops/greenhouse-cut-flower-rose-microclimate-guide.html" class="guide-card crop-card" data-category="crop" data-tags="🌹 commercial greenhouse cut rose rosaceae high-wire bending-shoot archway light interception, night powdery mildew suppression, and stem elongation.">
+                <div class="guide-card-header">
+                    <span class="guide-tag" style="background:rgba(16,185,129,0.2); color:#10b981;">🌱 Rosaceae High-Wire</span>
+                    <span style="font-size:0.8rem; color:#64748b;">Crop Guide</span>
+                </div>
+                <h2>🌹 Commercial Greenhouse Cut Rose</h2>
+                <p>Bending-shoot archway light interception, night powdery mildew suppression, and stem elongation.</p>
+            </a>
+    
+            <a href="crops/greenhouse-phalaenopsis-orchid-climate-spike-induction-guide.html" class="guide-card crop-card" data-category="crop" data-tags="🌸 phalaenopsis orchid microclimate orchidaceae cam night cam co2 enrichment, vegetative 28°c growth vs 19°c/17°c cooling floral spike induction.">
+                <div class="guide-card-header">
+                    <span class="guide-tag" style="background:rgba(16,185,129,0.2); color:#10b981;">🌱 Orchidaceae CAM</span>
+                    <span style="font-size:0.8rem; color:#64748b;">Crop Guide</span>
+                </div>
+                <h2>🌸 Phalaenopsis Orchid Microclimate</h2>
+                <p>Night CAM CO2 enrichment, vegetative 28°C growth vs 19°C/17°C cooling floral spike induction.</p>
+            </a>
+    
+            <a href="crops/hydroponic-basil-culinary-herbs-climate-guide.html" class="guide-card crop-card" data-category="crop" data-tags="🌿 hydroponic sweet basil & herbs lamiaceae nft 12°c chilling injury prevention, basil downy mildew suppression, and humidity control.">
+                <div class="guide-card-header">
+                    <span class="guide-tag" style="background:rgba(16,185,129,0.2); color:#10b981;">🌱 Lamiaceae NFT</span>
+                    <span style="font-size:0.8rem; color:#64748b;">Crop Guide</span>
+                </div>
+                <h2>🌿 Hydroponic Sweet Basil & Herbs</h2>
+                <p>12°C chilling injury prevention, Basil Downy Mildew suppression, and humidity control.</p>
+            </a>
+    
+            <a href="crops/greenhouse-eggplant-aubergine-microclimate-guide.html" class="guide-card crop-card" data-category="crop" data-tags="🍆 commercial greenhouse eggplant solanaceae root-zone 19°c substrate heating, blossom drop prevention, and biological thrips bio-control.">
+                <div class="guide-card-header">
+                    <span class="guide-tag" style="background:rgba(16,185,129,0.2); color:#10b981;">🌱 Solanaceae</span>
+                    <span style="font-size:0.8rem; color:#64748b;">Crop Guide</span>
+                </div>
+                <h2>🍆 Commercial Greenhouse Eggplant</h2>
+                <p>Root-zone 19°C substrate heating, blossom drop prevention, and biological thrips bio-control.</p>
+            </a>
+    
+
+            <a href="climate/westland-netherlands-greenhouse-climate-guide.html" class="guide-card climate-card" data-category="climate" data-tags="🇳🇱 westland, netherlands 52.0°n • maritime cfb world capital of high-tech glasshouse horticulture. solar dli 6-42 mol, geothermal heat networks, and dual thermal screens.">
+                <div class="guide-card-header">
+                    <span class="guide-tag" style="background:rgba(56,189,248,0.2); color:#38bdf8;">🌍 52.0°N • Maritime Cfb</span>
+                    <span style="font-size:0.8rem; color:#64748b;">Climate Almanac</span>
+                </div>
+                <h2>🇳🇱 Westland, Netherlands</h2>
+                <p>World capital of high-tech glasshouse horticulture. Solar DLI 6-42 mol, geothermal heat networks, and dual thermal screens.</p>
+            </a>
+    
+            <a href="climate/bleiswijk-netherlands-cea-research-cluster.html" class="guide-card climate-card" data-category="climate" data-tags="🇳🇱 bleiswijk, netherlands 52.0°n • autonomous cea wageningen ur greenhouse research cluster. semi-closed overpressure ventilation and autonomous ai climate controllers.">
+                <div class="guide-card-header">
+                    <span class="guide-tag" style="background:rgba(56,189,248,0.2); color:#38bdf8;">🌍 52.0°N • Autonomous CEA</span>
+                    <span style="font-size:0.8rem; color:#64748b;">Climate Almanac</span>
+                </div>
+                <h2>🇳🇱 Bleiswijk, Netherlands</h2>
+                <p>Wageningen UR greenhouse research cluster. Semi-closed overpressure ventilation and autonomous AI climate controllers.</p>
+            </a>
+    
+            <a href="climate/straelen-lower-rhine-germany-horticulture-guide.html" class="guide-card climate-card" data-category="climate" data-tags="🇩🇪 straelen / lower rhine, germany 51.4°n • continental cfb premier german horticultural auction cluster. winter heating load (45 m³ gas/m²) and din 11535 ridge venting.">
+                <div class="guide-card-header">
+                    <span class="guide-tag" style="background:rgba(56,189,248,0.2); color:#38bdf8;">🌍 51.4°N • Continental Cfb</span>
+                    <span style="font-size:0.8rem; color:#64748b;">Climate Almanac</span>
+                </div>
+                <h2>🇩🇪 Straelen / Lower Rhine, Germany</h2>
+                <p>Premier German horticultural auction cluster. Winter heating load (45 m³ gas/m²) and DIN 11535 ridge venting.</p>
+            </a>
+    
+            <a href="climate/almeria-spain-parral-greenhouse-climate-guide.html" class="guide-card climate-card" data-category="climate" data-tags="🇪🇸 almería, spain 36.8°n • semi-arid bsh europe's sea of plastic. hyper-solar dli 58 mol/day, whitewashing (blanqueo), and mediterranean parral structures.">
+                <div class="guide-card-header">
+                    <span class="guide-tag" style="background:rgba(56,189,248,0.2); color:#38bdf8;">🌍 36.8°N • Semi-Arid BSh</span>
+                    <span style="font-size:0.8rem; color:#64748b;">Climate Almanac</span>
+                </div>
+                <h2>🇪🇸 Almería, Spain</h2>
+                <p>Europe's Sea of Plastic. Hyper-solar DLI 58 mol/day, whitewashing (blanqueo), and Mediterranean parral structures.</p>
+            </a>
+    
+            <a href="climate/murcia-spain-precision-hydroponics-guide" class="guide-card climate-card" data-category="climate" data-tags="🇪🇸 murcia, spain 38.0°n • mediterranean bsk precision drip irrigation and retractable thermo-reflective screens for semi-arid vegetable production.">
+                <div class="guide-card-header">
+                    <span class="guide-tag" style="background:rgba(56,189,248,0.2); color:#38bdf8;">🌍 38.0°N • Mediterranean BSk</span>
+                    <span style="font-size:0.8rem; color:#64748b;">Climate Almanac</span>
+                </div>
+                <h2>🇪🇸 Murcia, Spain</h2>
+                <p>Precision drip irrigation and retractable thermo-reflective screens for semi-arid vegetable production.</p>
+            </a>
+    
+            <a href="climate/leamington-ontario-canada-greenhouse-guide.html" class="guide-card climate-card" data-category="climate" data-tags="🇨🇦 leamington, ontario, canada 42.0°n • continental dfa north america's largest greenhouse cluster. severe sub-zero winter heating models and high-output led top-lighting.">
+                <div class="guide-card-header">
+                    <span class="guide-tag" style="background:rgba(56,189,248,0.2); color:#38bdf8;">🌍 42.0°N • Continental Dfa</span>
+                    <span style="font-size:0.8rem; color:#64748b;">Climate Almanac</span>
+                </div>
+                <h2>🇨🇦 Leamington, Ontario, Canada</h2>
+                <p>North America's largest greenhouse cluster. Severe sub-zero winter heating models and high-output LED top-lighting.</p>
+            </a>
+    
+            <a href="climate/salinas-valley-california-salad-bowl-guide.html" class="guide-card climate-card" data-category="climate" data-tags="🇺🇸 salinas valley, california, usa 36.7°n • mediterranean csb america's salad bowl. marine layer fog utilization, high-tunnel automated side curtains, and leafy greens cea.">
+                <div class="guide-card-header">
+                    <span class="guide-tag" style="background:rgba(56,189,248,0.2); color:#38bdf8;">🌍 36.7°N • Mediterranean Csb</span>
+                    <span style="font-size:0.8rem; color:#64748b;">Climate Almanac</span>
+                </div>
+                <h2>🇺🇸 Salinas Valley, California, USA</h2>
+                <p>America's Salad Bowl. Marine layer fog utilization, high-tunnel automated side curtains, and leafy greens CEA.</p>
+            </a>
+    
+            <a href="climate/marana-tucson-arizona-hyper-solar-cea-guide.html" class="guide-card climate-card" data-category="climate" data-tags="🇺🇸 marana / tucson, arizona, usa 32.4°n • hot desert bwh desert high-radiation cea. evaporative pad-and-fan cooling (80 ach) and aluminized shade screens.">
+                <div class="guide-card-header">
+                    <span class="guide-tag" style="background:rgba(56,189,248,0.2); color:#38bdf8;">🌍 32.4°N • Hot Desert BWh</span>
+                    <span style="font-size:0.8rem; color:#64748b;">Climate Almanac</span>
+                </div>
+                <h2>🇺🇸 Marana / Tucson, Arizona, USA</h2>
+                <p>Desert high-radiation CEA. Evaporative pad-and-fan cooling (80 ACH) and aluminized shade screens.</p>
+            </a>
+    
+            <a href="climate/queretaro-agropark-mexico-high-altitude-guide.html" class="guide-card climate-card" data-category="climate" data-tags="🇲🇽 querétaro (agropark), mexico 20.6°n • highland cwb (1,900m) high-altitude central mexican plateau. natural stack-effect ventilation and high-wire cluster tomato exports.">
+                <div class="guide-card-header">
+                    <span class="guide-tag" style="background:rgba(56,189,248,0.2); color:#38bdf8;">🌍 20.6°N • Highland Cwb (1,900m)</span>
+                    <span style="font-size:0.8rem; color:#64748b;">Climate Almanac</span>
+                </div>
+                <h2>🇲🇽 Querétaro (Agropark), Mexico</h2>
+                <p>High-altitude Central Mexican plateau. Natural stack-effect ventilation and high-wire cluster tomato exports.</p>
+            </a>
+    
+            <a href="climate/bogota-savanna-colombia-cut-flower-guide.html" class="guide-card climate-card" data-category="climate" data-tags="🇨🇴 bogotá savanna, colombia 4.7°n • equator cfb (2,600m) world's cut flower capital. perennial 12h daylength, zero winter heating, and night frost protection curtains.">
+                <div class="guide-card-header">
+                    <span class="guide-tag" style="background:rgba(56,189,248,0.2); color:#38bdf8;">🌍 4.7°N • Equator Cfb (2,600m)</span>
+                    <span style="font-size:0.8rem; color:#64748b;">Climate Almanac</span>
+                </div>
+                <h2>🇨🇴 Bogotá Savanna, Colombia</h2>
+                <p>World's cut flower capital. Perennial 12h daylength, zero winter heating, and night frost protection curtains.</p>
+            </a>
+    
+            <a href="climate/gimje-smart-farm-innovation-valley-korea-guide.html" class="guide-card climate-card" data-category="climate" data-tags="🇰🇷 gimje smart farm valley, south korea 35.8°n • monsoon dfa cutting-edge asian digital smart farm hub. multi-span glasshouse heat pump integration and paprika crop steering.">
+                <div class="guide-card-header">
+                    <span class="guide-tag" style="background:rgba(56,189,248,0.2); color:#38bdf8;">🌍 35.8°N • Monsoon Dfa</span>
+                    <span style="font-size:0.8rem; color:#64748b;">Climate Almanac</span>
+                </div>
+                <h2>🇰🇷 Gimje Smart Farm Valley, South Korea</h2>
+                <p>Cutting-edge Asian digital smart farm hub. Multi-span glasshouse heat pump integration and paprika crop steering.</p>
+            </a>
+    
+            <a href="climate/miryang-gyeongnam-korea-strawberry-capital-guide.html" class="guide-card climate-card" data-category="climate" data-tags="🇰🇷 miryang, gyeongnam, south korea 35.5°n • subtropical cfa korea's premier strawberry capital. high winter solar basin radiation and crown root-zone heating.">
+                <div class="guide-card-header">
+                    <span class="guide-tag" style="background:rgba(56,189,248,0.2); color:#38bdf8;">🌍 35.5°N • Subtropical Cfa</span>
+                    <span style="font-size:0.8rem; color:#64748b;">Climate Almanac</span>
+                </div>
+                <h2>🇰🇷 Miryang, Gyeongnam, South Korea</h2>
+                <p>Korea's premier strawberry capital. High winter solar basin radiation and crown root-zone heating.</p>
+            </a>
+    
+            <a href="climate/aichi-toyohashi-japan-protected-agriculture-guide.html" class="guide-card climate-card" data-category="climate" data-tags="🇯🇵 toyohashi, aichi, japan 34.8°n • pacific cfa japan's agricultural output leader. multi-span greenhouse typhoon-proofing and japanese eggplant production.">
+                <div class="guide-card-header">
+                    <span class="guide-tag" style="background:rgba(56,189,248,0.2); color:#38bdf8;">🌍 34.8°N • Pacific Cfa</span>
+                    <span style="font-size:0.8rem; color:#64748b;">Climate Almanac</span>
+                </div>
+                <h2>🇯🇵 Toyohashi, Aichi, Japan</h2>
+                <p>Japan's agricultural output leader. Multi-span greenhouse typhoon-proofing and Japanese eggplant production.</p>
+            </a>
+    
+            <a href="climate/al-ain-abu-dhabi-uae-desert-greenhouse-guide.html" class="guide-card climate-card" data-category="climate" data-tags="🇦🇪 al ain, abu dhabi, uae 24.2°n • hyper-arid desert bwh desert agriculture innovation. closed-loop liquid chilling, desalination fertigation, and sandstorm protection.">
+                <div class="guide-card-header">
+                    <span class="guide-tag" style="background:rgba(56,189,248,0.2); color:#38bdf8;">🌍 24.2°N • Hyper-Arid Desert BWh</span>
+                    <span style="font-size:0.8rem; color:#64748b;">Climate Almanac</span>
+                </div>
+                <h2>🇦🇪 Al Ain, Abu Dhabi, UAE</h2>
+                <p>Desert agriculture innovation. Closed-loop liquid chilling, desalination fertigation, and sandstorm protection.</p>
+            </a>
+    
+            <a href="climate/lake-naivasha-kenya-geothermal-floriculture-guide.html" class="guide-card climate-card" data-category="climate" data-tags="🇰🇪 lake naivasha (rift valley), kenya 0.7°s • highland cfb (1,900m) equatorial rift valley floriculture. direct geothermal steam injection heating and sawtooth natural ventilation.">
+                <div class="guide-card-header">
+                    <span class="guide-tag" style="background:rgba(56,189,248,0.2); color:#38bdf8;">🌍 0.7°S • Highland Cfb (1,900m)</span>
+                    <span style="font-size:0.8rem; color:#64748b;">Climate Almanac</span>
+                </div>
+                <h2>🇰🇪 Lake Naivasha (Rift Valley), Kenya</h2>
+                <p>Equatorial Rift Valley floriculture. Direct geothermal steam injection heating and sawtooth natural ventilation.</p>
+            </a>
+    
+
             <!-- New Article 51 -->
-            <a href="articles/article-51-autonomous-greenhouse-ai-mpc-reinforcement-learning.html" class="guide-card" data-tags="ai mpc reinforcement learning autonomous climate gas savings">
+            <a href="articles/article-51-autonomous-greenhouse-ai-mpc-reinforcement-learning.html" class="guide-card" data-category="article" data-tags="ai mpc reinforcement learning autonomous climate gas savings">
                 <div class="guide-card-header">
                     <span class="guide-tag">🧠 Autonomous AI & MPC</span>
                     <span style="font-size: 0.8rem; color: #64748b;">Vol. 51</span>
@@ -61,7 +297,7 @@
             </a>
 
             <!-- New Article 50 -->
-            <a href="articles/article-50-smart-greenhouse-mqtt-edge-iot-fleet.html" class="guide-card" data-tags="mqtt iot esp32 lorawan telemetry sensors fleet">
+            <a href="articles/article-50-smart-greenhouse-mqtt-edge-iot-fleet.html" class="guide-card" data-category="article" data-tags="mqtt iot esp32 lorawan telemetry sensors fleet">
                 <div class="guide-card-header">
                     <span class="guide-tag">📡 Industrial IoT</span>
                     <span style="font-size: 0.8rem; color: #64748b;">Vol. 50</span>
@@ -71,7 +307,7 @@
             </a>
 
             <!-- New Article 46 -->
-            <a href="articles/article-46-opencea-python-micro-framework-release.html" class="guide-card" data-tags="opencea python framework open source science">
+            <a href="articles/article-46-opencea-python-micro-framework-release.html" class="guide-card" data-category="article" data-tags="opencea python framework open source science">
                 <div class="guide-card-header">
                     <span class="guide-tag">🐍 Open Source Python</span>
                     <span style="font-size: 0.8rem; color: #64748b;">Vol. 46</span>
@@ -274,14 +510,41 @@
 </div>
 
 <script>
-function filterArticles() {
-    const query = document.getElementById('articleSearch').value.toLowerCase();
-    const cards = document.querySelectorAll('.guide-card');
-    cards.forEach(card => {
-        const text = (card.innerText + " " + (card.getAttribute('data-tags') || '')).toLowerCase();
-        if (text.includes(query)) {
-            card.style.display = 'block';
-        } else {
+
+        let currentCategory = 'all';
+
+        function filterCategory(cat, btn) {
+            currentCategory = cat;
+            document.querySelectorAll('.cat-tab').forEach(b => {
+                b.style.background = 'rgba(15,23,42,0.8)';
+                b.style.borderColor = 'rgba(255,255,255,0.1)';
+                b.style.color = '#94a3b8';
+            });
+            btn.style.background = 'rgba(16,185,129,0.2)';
+            btn.style.borderColor = '#10b981';
+            btn.style.color = '#10b981';
+            filterArticles();
+        }
+
+        function filterArticles() {
+            const query = document.getElementById('articleSearch').value.toLowerCase();
+            const cards = document.querySelectorAll('.guide-card');
+            cards.forEach(card => {
+                const tags = (card.getAttribute('data-tags') || '').toLowerCase();
+                const text = card.innerText.toLowerCase();
+                const cat = card.getAttribute('data-category') || 'article';
+                
+                const matchesQuery = !query || tags.includes(query) || text.includes(query);
+                const matchesCat = (currentCategory === 'all') || (cat === currentCategory);
+
+                if (matchesQuery && matchesCat) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+ else {
             card.style.display = 'none';
         }
     });
