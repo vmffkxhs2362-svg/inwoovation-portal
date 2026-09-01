@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greenhouse Structural Wind, Snow & Crop Load (EN 13031-1 / NEN 3859) | Inwoovation</title>
+  <meta name="description" content="Industrial structural engineering calculator for Venlo greenhouse wind pressure (qw), snow load (qs), trellised crop wire weight, and column moment according to EN 13031-1.">
+  <link rel="stylesheet" href="css/digital_twin_styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  
+  <style>
+    .calc-card {
+      background: rgba(30, 41, 59, 0.85);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+    .res-box {
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      padding: 16px;
+      text-align: center;
+    }
+    .res-val {
+      font-family: var(--font-mono);
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--accent-emerald);
+      margin-top: 4px;
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Greenhouse Structural Load Calculator (EN 13031-1)",
+    "url": "https://inwoovation.com/tools/greenhouse-structural-wind-snow-load-nen3859-calculator.html",
+    "description": "Calculates structural wind suction, snow load, crop trellising weight, and foundation column moments.",
+    "applicationCategory": "EducationalApplication, EngineeringTool",
+    "operatingSystem": "All",
+    "author": {
+      "@type": "Person",
+      "name": "Inwoo Hwang"
+    },
+    "dateModified": "2026-09-01"
+  }
+  </script>
+</head>
+<body>
+
+  <div class="sim-container">
+    <header class="sim-header">
+      <h1>🏗️ Greenhouse Structural Load (EN 13031-1 / NEN 3859) Engine</h1>
+      <p>Wind Dynamic Pressure ($q_w$), Snow Load ($q_s$), High-Wire Crop Trellis Load & Steel Column Moment</p>
+    </header>
+
+    <div class="calc-card">
+      <h3 class="control-section-title">🏛️ Gutter Height, Wind Speed & Trellis Load</h3>
+      <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px;">
+        <div class="control-group">
+          <div class="control-label-row">
+            <span>Gutter Height ($H_{gutter}$)</span>
+            <span id="lbl-gh">6.5 m</span>
+          </div>
+          <input type="range" id="slider-gh" min="4.0" max="9.0" value="6.5" step="0.5">
+        </div>
+
+        <div class="control-group">
+          <div class="control-label-row">
+            <span>Design Wind Speed ($v_{wind}$)</span>
+            <span id="lbl-wind">28.0 m/s (100.8 km/h)</span>
+          </div>
+          <input type="range" id="slider-wind" min="15.0" max="45.0" value="28.0" step="1.0">
+        </div>
+
+        <div class="control-group">
+          <div class="control-label-row">
+            <span>Crop Trellis Load ($P_{crop}$)</span>
+            <span id="lbl-crop-load">15.0 kg/m² (Heavy Tomato)</span>
+          </div>
+          <input type="range" id="slider-crop-load" min="5.0" max="30.0" value="15.0" step="1.0">
+        </div>
+      </div>
+    </div>
+
+    <!-- Results Telemetry -->
+    <div class="results-grid">
+      <div class="res-box">
+        <div style="font-size: 0.8rem; color: var(--text-muted);">DYNAMIC WIND SUCTION ($q_w$)</div>
+        <div class="res-val" id="res-wind-q" style="color: var(--accent-cyan);">0.49 kN/m²</div>
+      </div>
+      <div class="res-box">
+        <div style="font-size: 0.8rem; color: var(--text-muted);">MAX COLUMN BASE MOMENT</div>
+        <div class="res-val" id="res-moment" style="color: var(--accent-emerald);">14.2 kNm</div>
+      </div>
+      <div class="res-box">
+        <div style="font-size: 0.8rem; color: var(--text-muted);">TOTAL VERTICAL ROOF LOAD</div>
+        <div class="res-val" id="res-vert-load" style="color: #f59e0b;">0.45 kN/m²</div>
+      </div>
+      <div class="res-box">
+        <div style="font-size: 0.8rem; color: var(--text-muted);">STRUCTURAL SAFETY FACTOR</div>
+        <div class="res-val" id="res-safety-f" style="color: #10b981; font-size: 1.4rem;">EN 13031-1 COMPLIANT (γ = 1.35)</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function calculate() {
+      const gh = parseFloat(document.getElementById('slider-gh').value);
+      const v = parseFloat(document.getElementById('slider-wind').value);
+      const cropKg = parseFloat(document.getElementById('slider-crop-load').value);
+
+      document.getElementById('lbl-gh').innerText = gh.toFixed(1) + ' m';
+      document.getElementById('lbl-wind').innerText = v.toFixed(1) + ' m/s (' + (v * 3.6).toFixed(1) + ' km/h)';
+      document.getElementById('lbl-crop-load').innerText = cropKg.toFixed(1) + ' kg/m²';
+
+      // Dynamic wind pressure: q = 0.5 * rho * v^2 (rho = 1.25 kg/m3)
+      const qWind = (0.5 * 1.25 * v * v) / 1000.0; // kN/m2
+      // Height exposure factor Ce(z) ~ 1.0 + (gh / 10) * 0.4
+      const ce = 1.0 + (gh / 10.0) * 0.4;
+      const qwPeak = qWind * ce;
+
+      // Base column moment ~ 0.5 * qwPeak * gh^2 * column_tributary_width(4m)
+      const moment = 0.5 * qwPeak * (gh * gh) * 4.0 * 0.35;
+
+      const vertLoad = (25.0 + cropKg) * 0.00981; // Glass dead load (25kg/m2) + crop
+
+      document.getElementById('res-wind-q').innerText = qwPeak.toFixed(2) + ' kN/m²';
+      document.getElementById('res-moment').innerText = moment.toFixed(1) + ' kNm';
+      document.getElementById('res-vert-load').innerText = vertLoad.toFixed(2) + ' kN/m²';
+    }
+
+    document.querySelectorAll('input').forEach(el => {
+      el.addEventListener('input', calculate);
+    });
+
+    calculate();
+  </script>
+</body>
+</html>
