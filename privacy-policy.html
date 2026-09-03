@@ -4,20 +4,101 @@
     <meta name="google-adsense-account" content="ca-pub-8597809158257497">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0f172a">
     <title>개인정보 처리방침 | Inwoovation Lab</title>
     <meta name="description" content="Inwoovation Lab의 개인정보 처리방침 및 쿠키 정책 안내 페이지입니다.">
     <link rel="canonical" href="https://inwoovation.com/privacy-policy.html" />
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V4RYJBMEDE"></script>
+    <script>
+       window.dataLayer = window.dataLayer || [];
+       function gtag(){dataLayer.push(arguments);}
+       gtag('js', new Date());
+       gtag('config', 'G-V4RYJBMEDE');
+    </script>
+    
     <!-- Google AdSense Script -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8597809158257497" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Open Graph / Meta -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://inwoovation.com/privacy-policy.html">
+    <meta property="og:title" content="개인정보 처리방침 | Inwoovation Lab">
+    <meta property="og:description" content="Inwoovation Lab의 개인정보 처리방침 및 쿠키 정책 안내 페이지입니다.">
+    <meta property="og:image" content="https://inwoovation.com/og-cover.jpg">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=20260903_v1">
+    
     <style>
-        .article-container { max-width: 800px; margin: 40px auto; padding: 30px; background: #ffffff; border-radius: 16px; border: 1px solid #e2e8f0; line-height: 1.8; color: #334155; }
-        .article-container h1 { font-size: 2rem; color: #0f172a; margin-bottom: 20px; }
-        .article-container h2 { font-size: 1.3rem; color: #1e293b; margin-top: 30px; margin-bottom: 12px; border-bottom: 2px solid #f1f5f9; padding-bottom: 8px; }
-        .article-container p { margin-bottom: 16px; }
-        .article-container ul { margin-left: 20px; margin-bottom: 16px; }
-        .back-link { display: inline-block; margin-bottom: 20px; color: #10b981; text-decoration: none; font-weight: 600; }
-        .back-link:hover { text-decoration: underline; }
+        .article-container { 
+            max-width: 860px; 
+            margin: 40px auto; 
+            padding: 36px 40px; 
+            background: rgba(30, 41, 59, 0.75); 
+            backdrop-filter: blur(16px); 
+            -webkit-backdrop-filter: blur(16px); 
+            border-radius: 20px; 
+            border: 1px solid var(--border-glass); 
+            line-height: 1.85; 
+            color: var(--text-secondary); 
+            box-shadow: 0 20px 45px rgba(0,0,0,0.4);
+        }
+        .article-container h1 { 
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.2rem; 
+            color: #f8fafc; 
+            margin-bottom: 8px; 
+            font-weight: 800;
+            background: linear-gradient(135deg, #10b981, #38bdf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .article-container h2 { 
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.35rem; 
+            color: #f8fafc; 
+            margin-top: 36px; 
+            margin-bottom: 14px; 
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08); 
+            padding-bottom: 8px; 
+            font-weight: 700;
+        }
+        .article-container p { margin-bottom: 16px; font-size: 0.96rem; }
+        .article-container ul { margin-left: 24px; margin-bottom: 20px; font-size: 0.95rem; }
+        .article-container li { margin-bottom: 8px; }
+        .article-container a { color: #38bdf8; text-decoration: none; font-weight: 600; transition: color 0.2s; }
+        .article-container a:hover { color: #7dd3fc; text-decoration: underline; }
+        .back-link { 
+            display: inline-flex; 
+            align-items: center; 
+            gap: 6px; 
+            margin-bottom: 24px; 
+            color: #38bdf8; 
+            text-decoration: none; 
+            font-weight: 600; 
+            font-size: 0.95rem;
+            transition: transform 0.2s;
+        }
+        .back-link:hover { 
+            transform: translateX(-3px); 
+            color: #7dd3fc; 
+            text-decoration: none; 
+        }
+        .meta-tagline {
+            color: var(--text-muted);
+            font-size: 0.88rem;
+            margin-bottom: 24px;
+        }
+        @media (max-width: 768px) {
+            .article-container { padding: 24px 20px; margin: 20px auto; }
+            .article-container h1 { font-size: 1.75rem; }
+            .article-container h2 { font-size: 1.2rem; }
+        }
     </style>
 </head>
 <body>
@@ -25,12 +106,12 @@
     <a href="/" class="back-link">← 메인 페이지로 돌아가기</a>
     <div class="article-container">
         <h1>개인정보 처리방침 (Privacy Policy)</h1>
-        <p><strong>최종 수정일: 2026년 7월 29일</strong></p>
+        <p class="meta-tagline"><strong>최종 수정일: 2026년 9월 3일 KST</strong></p>
         
         <p>Inwoovation Lab(이하 '연구소')은 이용자의 개인정보보호를 매우 중요시하며, 「개인정보 보호법」 및 관계 법령을 준수하고 있습니다. 본 개인정보 처리방침은 연구소가 이용자의 개인정보를 어떻게 수집, 이용, 보호하는지 안내합니다.</p>
 
         <h2>1. 수집하는 개인정보 항목 및 수집 방법</h2>
-        <p>연구소는 별도의 회원가입 없이 이용할 수 있는 정적 웹 포털입니다. 단, 서비스 이용 과정에서 다음과 같은 정보가 자동으로 생성되어 수집될 수 있습니다.</p>
+        <p>연구소는 별도의 회원가입 없이 누구나 자유롭게 이용할 수 있는 정적 과학기술 공학 포털입니다. 단, 서비스 이용 과정에서 다음과 같은 정보가 자동으로 생성되어 수집될 수 있습니다.</p>
         <ul>
             <li>IP 주소, 쿠키(Cookie), 방문 일시, 서비스 이용 기록, 브라우저 종류 및 OS 정보</li>
         </ul>
@@ -40,11 +121,11 @@
         <ul>
             <li>웹사이트 서비스 안정성 확보 및 시스템 오류 진단</li>
             <li>방문자 통계 분석 및 웹 트랙킹 (Google Analytics 활용)</li>
-            <li>맞춤형 맞춤 광고 제공 (Google AdSense 프로그램 활용)</li>
+            <li>맞춤형 광고 제공 (Google AdSense 프로그램 활용)</li>
         </ul>
 
         <h2>3. 쿠키(Cookie) 및 제3자 광고 쿠키 정책 (Google AdSense)</h2>
-        <p>연구소는 이용자의 정보를 저장하고 수시로 불러오는 '쿠키(cookie)'를 사용합니다. 쿠키는 웹사이트를 운영하는데 이용되는 서버가 이용자의 브라우저에 보내는 아주 작은 텍스트 파일로서 이용자의 컴퓨터에 저장됩니다.</p>
+        <p>연구소는 이용자의 편의 증진과 최적화된 웹 경험을 위해 '쿠키(cookie)'를 사용합니다. 쿠키는 웹사이트를 운영하는데 이용되는 서버가 이용자의 브라우저에 보내는 아주 작은 텍스트 파일로서 이용자의 컴퓨터에 저장됩니다.</p>
         <ul>
             <li><strong>Google 및 제3자 판매자 쿠키:</strong> Google을 포함한 제3자 판매자는 쿠키를 사용하여 이용자의 이전 웹사이트 방문 기록을 바탕으로 광고를 게재합니다.</li>
             <li><strong>Google의 광고 쿠키:</strong> Google 및 파트너는 광고 쿠키를 통해 이용자가 연구소 또는 인터넷상의 다른 사이트를 방문한 기록을 바탕으로 맞춤형 광고를 제공할 수 있습니다.</li>
