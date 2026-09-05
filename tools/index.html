@@ -852,15 +852,7 @@
       "roi": ["capex", "opex", "irr", "roi", "quant", "economics"],
       "quant": ["quant", "commodity", "ttf", "spark", "energy"],
       "open source": ["open source", "opencea", "agriquant", "python", "playground"],
-      "python": ["opencea", "python", "playground", "framework"],
-      // Silent alias matching for Korean terms if typed
-      "배꼽": ["calcium", "blossom-end", "ber", "rot", "xylem"],
-      "칼슘": ["calcium", "blossom-end", "ber", "rot", "xylem"],
-      "난방": ["heating", "screen", "din v 18599", "thermal", "buffer", "boiler"],
-      "습도": ["mollier", "psychrometric", "dew point", "humidity", "fogging", "vpd"],
-      "보광": ["dli", "spectrum", "led", "light", "far-red"],
-      "염류": ["ucf", "desalination", "ro", "reverse osmosis", "na+"],
-      "자율": ["autonomous", "mpc", "ai", "reinforcement"]
+      "python": ["opencea", "python", "playground", "framework"]
     };
 
     let activeCategory = 'all';
@@ -1058,13 +1050,13 @@
 
       let matchedKey = forcedKey;
       if (!matchedKey) {
-        if (text.includes("ber") || text.includes("calcium") || text.includes("rot") || text.includes("blossom") || text.includes("배꼽") || text.includes("칼슘")) matchedKey = "ber";
-        else if (text.includes("botrytis") || text.includes("mold") || text.includes("humidity") || text.includes("dew") || text.includes("condensation") || text.includes("곰팡이") || text.includes("결로") || text.includes("과습")) matchedKey = "botrytis";
-        else if (text.includes("heat") || text.includes("boiler") || text.includes("gas") || text.includes("screen") || text.includes("buffer") || text.includes("난방") || text.includes("보일러") || text.includes("열손실")) matchedKey = "heating";
-        else if (text.includes("led") || text.includes("light") || text.includes("dli") || text.includes("spectrum") || text.includes("far-red") || text.includes("광") || text.includes("보광")) matchedKey = "led_roi";
-        else if (text.includes("sodium") || text.includes("salinity") || text.includes("desalination") || text.includes("drain") || text.includes("ucf") || text.includes("나트륨") || text.includes("염류") || text.includes("순환식")) matchedKey = "sodium";
-        else if (text.includes("pest") || text.includes("mite") || text.includes("thrips") || text.includes("ipm") || text.includes("wasp") || text.includes("insect") || text.includes("충") || text.includes("응애") || text.includes("천적")) matchedKey = "ipm";
-        else if (text.includes("autonomous") || text.includes("mpc") || text.includes("ai") || text.includes("iot") || text.includes("camera") || text.includes("vision") || text.includes("자율")) matchedKey = "autonomous";
+        if (text.includes("ber") || text.includes("calcium") || text.includes("rot") || text.includes("blossom")) matchedKey = "ber";
+        else if (text.includes("botrytis") || text.includes("mold") || text.includes("humidity") || text.includes("dew") || text.includes("condensation")) matchedKey = "botrytis";
+        else if (text.includes("heat") || text.includes("boiler") || text.includes("gas") || text.includes("screen") || text.includes("buffer")) matchedKey = "heating";
+        else if (text.includes("led") || text.includes("light") || text.includes("dli") || text.includes("spectrum") || text.includes("far-red")) matchedKey = "led_roi";
+        else if (text.includes("sodium") || text.includes("salinity") || text.includes("desalination") || text.includes("drain") || text.includes("ucf")) matchedKey = "sodium";
+        else if (text.includes("pest") || text.includes("mite") || text.includes("thrips") || text.includes("ipm") || text.includes("wasp") || text.includes("insect")) matchedKey = "ipm";
+        else if (text.includes("autonomous") || text.includes("mpc") || text.includes("ai") || text.includes("iot") || text.includes("camera") || text.includes("vision")) matchedKey = "autonomous";
         else matchedKey = "ber"; // default fallback
       }
 
