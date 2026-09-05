@@ -382,17 +382,17 @@
           type="text" 
           id="liveSearchInput" 
           class="live-search-input" 
-          placeholder="계산기 이름, 센서, 물리기능, 영문/한글 증상 검색 (예: VPD, 칼슘, 난방, DLI, LED, UCF, 토마토...)" 
+          placeholder="Search calculators by name, physics model, sensor, or symptom (e.g. VPD, Calcium, Heating, DLI, LED, UCF, Tomato...)" 
           autocomplete="off"
           spellcheck="false"
           oninput="filterToolsRealtime()"
         >
-        <button id="clearSearchBtn" class="clear-search-btn" onclick="clearLiveSearch()" title="검색어 초기화">✕</button>
+        <button id="clearSearchBtn" class="clear-search-btn" onclick="clearLiveSearch()" title="Clear search">✕</button>
       </div>
 
       <div class="search-meta-row">
         <div id="searchResultStats" class="search-counter">
-          전체 <strong>33개</strong> 전문 엔지니어링 계산기 표시 중
+          Displaying all <strong>33</strong> enterprise engineering calculators
         </div>
         <div class="quick-chips">
           <span class="chip-label">Quick Tags:</span>
@@ -412,8 +412,8 @@
           <div style="display: flex; align-items: center; gap: 10px;">
             <span style="font-size: 1.25rem;">🤖</span>
             <div>
-              <div style="font-weight: 700; color: #f8fafc; font-size: 0.95rem;">AI Agronomist Problem Navigator (온실 증상 진단 & 계산기 자동 추천)</div>
-              <div style="color: #94a3b8; font-size: 0.8rem;">현장 재배 이슈나 계산 목적을 입력하시면 최적의 시뮬레이션 계산기를 찾아 즉시 강조해 드립니다.</div>
+              <div style="font-weight: 700; color: #f8fafc; font-size: 0.95rem;">AI Agronomist Problem Navigator (Microclimate Diagnosis & Tool Matching)</div>
+              <div style="color: #94a3b8; font-size: 0.8rem;">Input your greenhouse cultivation issue or engineering objective to instantly match and highlight optimal simulation engines.</div>
             </div>
           </div>
           <span class="ai-badge">Instant AI Engine ⚡</span>
@@ -421,26 +421,26 @@
 
         <div class="ai-assistant-content" id="aiAssistantContent">
           <div style="margin-bottom: 10px; font-size: 0.82rem; color: #94a3b8; font-weight: 600;">
-            자주 겪는 대표적 온실 재배·엔지니어링 시나리오 (클릭 시 자동 진단 & 도구 매핑):
+            Common Commercial Greenhouse Scenarios (Click for instant diagnostic & tool matching):
           </div>
           <div class="symptom-chips">
-            <button class="symptom-chip" onclick="applyScenario('ber')">🍅 토마토 배꼽썩음병 (Blossom-End Rot)</button>
-            <button class="symptom-chip" onclick="applyScenario('botrytis')">🌧️ 온실 과습 & 잿빛곰팡이 (Botrytis)</button>
-            <button class="symptom-chip" onclick="applyScenario('heating')">❄️ 겨울철 난방비 폭탄 & 열손실 저감</button>
-            <button class="symptom-chip" onclick="applyScenario('led_roi')">💡 LED 보광 ROI & 광합성 수율 예측</button>
-            <button class="symptom-chip" onclick="applyScenario('sodium')">🧪 순환식 수경재배 Na⁺ 염류 집적</button>
-            <button class="symptom-chip" onclick="applyScenario('ipm')">🐞 총채벌레/응애 생물학적 방제(IPM)</button>
-            <button class="symptom-chip" onclick="applyScenario('autonomous')">🧠 온실 자율제어 MPC & AI 생육진단</button>
+            <button class="symptom-chip" onclick="applyScenario('ber')">🍅 Tomato Blossom-End Rot (BER)</button>
+            <button class="symptom-chip" onclick="applyScenario('botrytis')">🌧️ High Humidity & Botrytis Blight</button>
+            <button class="symptom-chip" onclick="applyScenario('heating')">❄️ Winter Peak Heating Load & Heat Loss</button>
+            <button class="symptom-chip" onclick="applyScenario('led_roi')">💡 Supplemental LED ROI & Yield Forecast</button>
+            <button class="symptom-chip" onclick="applyScenario('sodium')">🧪 Closed-Loop Recirculation Na⁺ Accumulation</button>
+            <button class="symptom-chip" onclick="applyScenario('ipm')">🐞 Spider Mite / Thrips Biological Control (IPM)</button>
+            <button class="symptom-chip" onclick="applyScenario('autonomous')">🧠 Autonomous AI MPC Climate Control</button>
           </div>
 
           <div class="ai-input-wrapper" style="margin-top: 14px;">
             <input 
               type="text" 
               id="aiProblemInput" 
-              placeholder="예: '토마토 잎이 타들어가고 과실 끝이 썩어요', '겨울 보일러 가스비 아끼는 법', '적산일사가 부족할 때'..." 
+              placeholder="e.g. 'Distal fruit rot on high-wire tomatoes', 'Boiler gas spikes during night', 'Low solar DLI in winter'..." 
               onkeydown="if(event.key === 'Enter') runAiDiagnosis()"
             >
-            <button class="ai-submit-btn" onclick="runAiDiagnosis()">🩺 증상 진단 & 도구 찾기</button>
+            <button class="ai-submit-btn" onclick="runAiDiagnosis()">🩺 Diagnose & Match Tools</button>
           </div>
 
           <div id="aiDiagnosisResult" class="ai-diagnosis-result"></div>
@@ -791,47 +791,76 @@
   </div>
 
   <script>
-    // 1. KOREAN & ENGLISH SYNONYM DICTIONARY FOR CEA CALCULATORS
+    // 1. COMPREHENSIVE CEA SYNONYM & KEYWORD DICTIONARY
     const CEA_SYNONYMS = {
+      "ber": ["calcium", "blossom-end", "ber", "rot", "xylem"],
+      "calcium": ["calcium", "blossom-end", "ber", "rot", "xylem"],
+      "rot": ["calcium", "blossom-end", "ber", "rot"],
+      "blossom": ["calcium", "blossom-end", "ber", "rot"],
+      "tomato": ["tomato", "calcium", "steering", "generative", "high-wire", "ber"],
+      "pepper": ["pepper", "calcium", "steering", "dli", "mollier"],
+      "strawberry": ["strawberry", "dli", "chilling", "fogging", "mollier"],
+      "cucumber": ["cucumber", "nutrient", "penman", "vpd"],
+      "lettuce": ["lettuce", "dli", "nutrient", "vertical"],
+      "heating": ["heating", "screen", "din v 18599", "thermal", "buffer", "boiler"],
+      "boiler": ["heating", "buffer", "chp", "boiler", "hot water"],
+      "buffer": ["buffer", "stratification", "storage", "mwh", "richardson"],
+      "tank": ["buffer", "stratification", "storage"],
+      "gas": ["heating", "chp", "gas", "scr", "co2", "urea"],
+      "screen": ["screen", "heating", "thermal", "din v 18599"],
+      "humidity": ["mollier", "psychrometric", "dew point", "humidity", "fogging", "vpd"],
+      "dew": ["mollier", "psychrometric", "dew point", "condensation"],
+      "condensation": ["mollier", "psychrometric", "dew point", "condensation"],
+      "dehumidifier": ["mollier", "psychrometric", "dehumidifier", "heat pump"],
+      "mollier": ["mollier", "psychrometric", "enthalpy", "dew point"],
+      "botrytis": ["botrytis", "mollier", "agrivision", "disease", "haf", "pathogen"],
+      "mold": ["botrytis", "mollier", "agrivision", "disease"],
+      "disease": ["agrivision", "botrytis", "uv-c", "ipm", "pathogen"],
+      "light": ["dli", "spectrum", "led", "light", "far-red", "photomorphogenesis"],
+      "lighting": ["dli", "spectrum", "led", "light", "far-red"],
+      "led": ["dli", "spectrum", "led", "light", "far-red", "thermal"],
+      "dli": ["dli", "daily light", "integral", "yield", "biomass"],
+      "spectrum": ["spectrum", "dli", "far-red", "730nm", "emerson"],
+      "far-red": ["spectrum", "dli", "far-red", "730nm", "emerson"],
+      "emerson": ["spectrum", "dli", "far-red", "730nm", "emerson"],
+      "nutrient": ["nutrient", "ion", "sonneveld", "steiner", "speciation", "tdr", "rockwool", "ucf"],
+      "fertilizer": ["nutrient", "ion", "speciation", "ucf", "dosing"],
+      "ec": ["nutrient", "ion", "rockwool", "ucf", "tdr"],
+      "salinity": ["ucf", "desalination", "ro", "reverse osmosis", "na+", "salinity"],
+      "sodium": ["ucf", "desalination", "ro", "reverse osmosis", "na+"],
+      "desalination": ["ucf", "desalination", "ro", "reverse osmosis", "na+"],
+      "drain": ["ucf", "drain", "desalination", "uvc", "recirculating"],
+      "recirculation": ["ucf", "desalination", "ro", "nutrient"],
+      "ventilation": ["ventilation", "buoyancy", "haf", "cfd", "airflow", "vents"],
+      "fan": ["haf", "cfd", "air velocity", "destratification", "jet"],
+      "haf": ["haf", "cfd", "air velocity", "destratification"],
+      "cfd": ["haf", "cfd", "air velocity", "destratification"],
+      "pest": ["ipm", "biological", "pest", "mite", "wasp", "predatory"],
+      "ipm": ["ipm", "biological", "predatory", "mite", "parasitoid"],
+      "mite": ["ipm", "biological", "predatory", "mite"],
+      "thrips": ["ipm", "biological", "predatory", "mite", "wasp"],
+      "autonomous": ["autonomous", "mpc", "ai", "reinforcement", "predictive"],
+      "ai": ["autonomous", "mpc", "ai", "vision", "agrivision", "fleet"],
+      "mpc": ["autonomous", "mpc", "ai", "reinforcement", "climate"],
+      "vision": ["vision", "agrivision", "leaf area", "lai", "disease"],
+      "camera": ["vision", "agrivision", "leaf area", "lai"],
+      "sensor": ["mqtt", "iot", "fleet", "edge", "lorawan", "telemetry"],
+      "iot": ["mqtt", "iot", "fleet", "edge", "lorawan"],
+      "mqtt": ["mqtt", "iot", "fleet", "edge", "lorawan"],
+      "capex": ["capex", "opex", "irr", "npv", "dcf", "quant", "roi", "bankability"],
+      "opex": ["capex", "opex", "irr", "npv", "quant", "energy"],
+      "roi": ["capex", "opex", "irr", "roi", "quant", "economics"],
+      "quant": ["quant", "commodity", "ttf", "spark", "energy"],
+      "open source": ["open source", "opencea", "agriquant", "python", "playground"],
+      "python": ["opencea", "python", "playground", "framework"],
+      // Silent alias matching for Korean terms if typed
       "배꼽": ["calcium", "blossom-end", "ber", "rot", "xylem"],
-      "배꼽썩음": ["calcium", "blossom-end", "ber", "rot", "xylem"],
       "칼슘": ["calcium", "blossom-end", "ber", "rot", "xylem"],
-      "토마토": ["tomato", "calcium", "steering", "generative", "high-wire", "ber"],
-      "파프리카": ["pepper", "calcium", "steering", "dli", "mollier"],
-      "딸기": ["strawberry", "dli", "chilling", "fogging", "mollier"],
       "난방": ["heating", "screen", "din v 18599", "thermal", "buffer", "boiler"],
-      "난방비": ["heating", "screen", "din v 18599", "thermal", "buffer", "boiler"],
-      "보일러": ["heating", "buffer", "chp", "boiler", "hot water"],
-      "축열조": ["buffer", "stratification", "storage", "mwh", "richardson"],
-      "가스": ["heating", "chp", "gas", "scr", "co2", "urea"],
       "습도": ["mollier", "psychrometric", "dew point", "humidity", "fogging", "vpd"],
-      "과습": ["mollier", "psychrometric", "botrytis", "haf", "ventilation"],
-      "결로": ["mollier", "psychrometric", "dew point", "condensation"],
-      "제습": ["mollier", "psychrometric", "dehumidifier", "heat pump"],
-      "몰리에르": ["mollier", "psychrometric", "enthalpy", "dew point"],
-      "곰팡이": ["botrytis", "mollier", "agrivision", "disease", "haf", "pathogen"],
-      "빛": ["dli", "spectrum", "led", "light", "far-red", "photomorphogenesis"],
-      "광": ["dli", "spectrum", "led", "light", "far-red", "extinction"],
-      "보광": ["dli", "spectrum", "led", "light", "far-red", "emerson"],
-      "일사": ["dli", "radiation", "light", "yield", "biomass", "extinction"],
-      "적산일사": ["dli", "daily light", "integral", "yield"],
-      "양액": ["nutrient", "ion", "sonneveld", "steiner", "speciation", "tdr", "rockwool", "ucf"],
-      "비료": ["nutrient", "ion", "speciation", "ucf", "dosing"],
-      "염류": ["ucf", "desalination", "ro", "reverse osmosis", "na+", "salinity"],
-      "나트륨": ["ucf", "desalination", "ro", "reverse osmosis", "na+"],
-      "배액": ["ucf", "drain", "desalination", "uvc", "recirculating"],
-      "환기": ["ventilation", "buoyancy", "haf", "cfd", "airflow", "vents"],
-      "유동팬": ["haf", "cfd", "air velocity", "destratification", "jet"],
-      "해충": ["ipm", "biological", "pest", "mite", "wasp", "predatory"],
-      "천적": ["ipm", "biological", "predatory", "mite", "parasitoid"],
-      "자율": ["autonomous", "mpc", "ai", "reinforcement", "predictive"],
-      "인공지능": ["autonomous", "mpc", "ai", "vision", "agrivision", "fleet"],
-      "카메라": ["vision", "agrivision", "leaf area", "lai", "disease"],
-      "센서": ["mqtt", "iot", "fleet", "edge", "lorawan", "telemetry"],
-      "수익": ["capex", "opex", "irr", "npv", "dcf", "quant", "roi", "bankability"],
-      "비용": ["capex", "opex", "irr", "npv", "quant", "energy"],
-      "경제성": ["capex", "opex", "irr", "roi", "quant", "economics"],
-      "오픈소스": ["open source", "opencea", "agriquant", "python", "playground"]
+      "보광": ["dli", "spectrum", "led", "light", "far-red"],
+      "염류": ["ucf", "desalination", "ro", "reverse osmosis", "na+"],
+      "자율": ["autonomous", "mpc", "ai", "reinforcement"]
     };
 
     let activeCategory = 'all';
@@ -896,11 +925,11 @@
       });
 
       if (!query && activeCategory === 'all') {
-        stats.innerHTML = `전체 <strong>${visibleCount}개</strong> 전문 엔지니어링 계산기 표시 중`;
+        stats.innerHTML = `Displaying all <strong>${visibleCount}</strong> enterprise engineering calculators`;
       } else if (query) {
-        stats.innerHTML = `검색 결과: <strong>${visibleCount}개</strong> 계산기 발견 (키워드: "${input.value}")`;
+        stats.innerHTML = `Search Results: <strong>${visibleCount}</strong> calculators found for "${input.value}"`;
       } else {
-        stats.innerHTML = `카테고리 필터: <strong>${visibleCount}개</strong> 계산기 표시 중`;
+        stats.innerHTML = `Category Filter: <strong>${visibleCount}</strong> calculators displayed`;
       }
     }
 
@@ -938,78 +967,78 @@
     // 3. AI AGRONOMIST PROBLEM DIAGNOSTIC & RECOMMENDER ENGINE
     const SCENARIO_DB = {
       ber: {
-        query: "토마토 배꼽썩음병 칼슘 결핍",
-        title: "🍅 토마토 배꼽썩음병 (Blossom-End Rot, BER) 정밀 진단",
-        explanation: "배꼽썩음병(BER)은 단순 토양 칼슘 부족이 아니라 <strong>고온·과습 또는 근권 건조에 따른 증산류(Transpiration stream) 정체</strong>로 인해 칼슘이 과실 말단으로 수송되지 못해 발생합니다. 증산량 조절과 양액 내 칼슘 분배 모델을 통해 즉시 예방할 수 있습니다.",
+        query: "tomato blossom-end rot calcium deficiency distal fruit",
+        title: "🍅 Tomato Blossom-End Rot (BER) & Calcium Partitioning Diagnosis",
+        explanation: "Blossom-End Rot (BER) is rarely caused by root calcium deficiency alone; rather, it is driven by <strong>restricted xylem transpiration streams under high humidity or high substrate EC</strong>, preventing divalent Ca²⁺ ions from reaching rapidly expanding distal fruit tissue. Steering vapor pressure deficit (VPD) and optimizing molar Ca/K/Mg ratios prevents distal necrosis.",
         recommendations: [
-          { name: "Xylem Calcium & Blossom-End Rot Risk Model", url: "crop-transpiration-calcium-blossom-end-rot-risk-model.html", tag: "1차 필수 도구" },
-          { name: "Hydroponic Nutrient & Ion Balance Engine", url: "hydroponic-nutrient-solution-calculator.html", tag: "양액 Ca/K/Mg 비율" },
-          { name: "Hourly Penman-Monteith ETc Calculator", url: "evapotranspiration-penman-monteith-calculator.html", tag: "증산류 유량 산정" }
+          { name: "Xylem Calcium & Blossom-End Rot Risk Model", url: "crop-transpiration-calcium-blossom-end-rot-risk-model.html", tag: "Primary Diagnostic Engine" },
+          { name: "Hydroponic Nutrient & Ion Balance Engine", url: "hydroponic-nutrient-solution-calculator.html", tag: "Molar Ca/K/Mg Formulation" },
+          { name: "Hourly Penman-Monteith ETc Calculator", url: "evapotranspiration-penman-monteith-calculator.html", tag: "Transpiration Flux" }
         ],
         targetUrls: ["calcium-blossom-end-rot", "hydroponic-nutrient-solution", "penman-monteith"]
       },
       botrytis: {
-        query: "온실 과습 잿빛곰팡이 결로 제습",
-        title: "🌧️ 온실 과습 & 잿빛곰팡이 (Botrytis cinerea) 예방 진단",
-        explanation: "잿빛곰팡이 분생포자는 <strong>잎 표면 온도가 노점(Dew Point) 이하로 떨어져 응결수(결로)가 2시간 이상 지속</strong>될 때 급격히 발아합니다. 습공기선도(Mollier) 기반의 환기/제습 타이밍과 HAF 팬 유속 제어로 경계층을 파괴해야 합니다.",
+        query: "humidity botrytis gray mold condensation dew point",
+        title: "🌧️ High Humidity & Botrytis cinerea Gray Mold Prevention",
+        explanation: "Botrytis cinerea conidia germinate rapidly when <strong>leaf surface temperature drops below the dew point, leaving continuous free condensation moisture for over 2–4 hours</strong>. Optimizing psychrometric Mollier ridge vent purging and maintaining horizontal airflow (HAF) boundary layer destratification eliminates stagnant microclimates.",
         recommendations: [
-          { name: "Psychrometric Mollier Diagram Optimizer", url: "psychrometric-mollier-greenhouse-dehumidifier.html", tag: "노점 & 제습 계산" },
-          { name: "HAF Circulation & CFD Air Velocity Engine", url: "greenhouse-microclimate-cfd-air-velocity-optimizer.html", tag: "기류 정체 해소" },
-          { name: "AgriVision AI Crop Disease Analyzer", url: "agrivision-ai-crop-disease-analyzer.html", tag: "AI 병반 조기 탐지" }
+          { name: "Psychrometric Mollier Diagram Optimizer", url: "psychrometric-mollier-greenhouse-dehumidifier.html", tag: "Dew Point & Dehumidification" },
+          { name: "HAF Circulation & CFD Air Velocity Engine", url: "greenhouse-microclimate-cfd-air-velocity-optimizer.html", tag: "Airflow Destratification" },
+          { name: "AgriVision AI Crop Disease Analyzer", url: "agrivision-ai-crop-disease-analyzer.html", tag: "AI Lesion Segmentation" }
         ],
         targetUrls: ["psychrometric-mollier", "cfd-air-velocity", "agrivision-ai"]
       },
       heating: {
-        query: "겨울철 난방비 축열조 열손실 스크린",
-        title: "❄️ 겨울철 온실 난방비 폭탄 & 피크 열손실 저감 진단",
-        explanation: "온실 난방비 절감의 핵심은 <strong>DIN V 18599 규격 피크 관류 열손실 정밀 산정</strong>과 <strong>축열조(Buffer Tank) 성층화(Richardson No. > 10)</strong>를 통한 주간 잉여 열 저장 및 자율제어 MPC를 통한 불필요 환기 차단입니다. 최대 35~43% 연료 절감이 가능합니다.",
+        query: "winter heating boiler gas thermal screen buffer tank",
+        title: "❄️ Winter Greenhouse Peak Heating Demand & Energy Conservation",
+        explanation: "Over 85% of annual greenhouse heating fuel is consumed during nighttime peak transmission loss. Engineering <strong>DIN V 18599 envelope U-values with dual thermal screens (-43.5% heat loss)</strong> combined with high-Richardson-number hot water buffer tank stratification and autonomous MPC suppresses fossil gas spikes while preserving target root temperatures.",
         recommendations: [
-          { name: "DIN V 18599 Heating Load & Screen Engine", url: "greenhouse-heating-load-thermal-screen-calculator.html", tag: "피크 열손실 & 스크린 절감" },
-          { name: "Hot Water Buffer Tank Stratification Engine", url: "solar-thermal-buffer-tank-stratification-calculator.html", tag: "축열조 성층화 용량" },
-          { name: "Autonomous AI Climate Computer & MPC", url: "greenhouse-autonomous-ai-climate-controller.html", tag: "가스 22.4% 절감 자율제어" }
+          { name: "DIN V 18599 Heating Load & Screen Engine", url: "greenhouse-heating-load-thermal-screen-calculator.html", tag: "Peak Heat Loss & Screens" },
+          { name: "Hot Water Buffer Tank Stratification Engine", url: "solar-thermal-buffer-tank-stratification-calculator.html", tag: "Thermocline Storage Capacity" },
+          { name: "Autonomous AI Climate Computer & MPC", url: "greenhouse-autonomous-ai-climate-controller.html", tag: "22.4% Gas Savings MPC" }
         ],
         targetUrls: ["heating-load", "buffer-tank", "autonomous-ai"]
       },
       led_roi: {
-        query: "LED 보광 DLI 에머슨 효과 광합성 수율",
-        title: "💡 LED 보광 조명 투자 회수(ROI) & 광합성 효율 극대화 진단",
-        explanation: "보광 LED 도입 시 목표 일일 적산일사량(DLI: 토마토 25~30 mol/m²d) 달성과 <strong>730nm 원적색광(Far-Red)의 에머슨 효과(+12~18% 광합성 시너지)</strong>를 정량화하고, 다이오드 접합부 온도(Tj) 방열을 점검해야 투자비(CapEx) 회수 기간을 2년 이하로 단축할 수 있습니다.",
+        query: "supplemental led lighting dli emerson effect photosynthesis",
+        title: "💡 Supplemental LED Lighting ROI & Photomorphogenesis Optimization",
+        explanation: "Maximizing economic returns on greenhouse LED fixtures requires balancing target Daily Light Integral (DLI: 25–30 mol/m²d for high-wire crops) against electricity tariff schedules, exploiting <strong>730nm Far-Red Emerson Enhancement (+12–18% quantum efficiency boost)</strong>, and verifying diode junction temperature (Tj) to protect L90 fixture lifespan.",
         recommendations: [
-          { name: "DLI & Far-Red (730nm) Spectrum Engine", url: "dli-spectrum-photomorphogenesis-calculator.html", tag: "DLI & 에머슨 효과" },
-          { name: "Crop Yield & Biomass DLI Forecaster", url: "crop-yield-biomass-dli-forecaster.html", tag: "주간 수확량 예측" },
-          { name: "LED Thermal Heat-Sink & Tj Optimizer", url: "greenhouse-lighting-led-thermal-cfd-optimizer.html", tag: "방열 & 수명 L90" }
+          { name: "DLI & Far-Red (730nm) Spectrum Engine", url: "dli-spectrum-photomorphogenesis-calculator.html", tag: "DLI & Emerson Effect" },
+          { name: "Crop Yield & Biomass DLI Forecaster", url: "crop-yield-biomass-dli-forecaster.html", tag: "Weekly Harvest Modeling" },
+          { name: "LED Thermal Heat-Sink & Tj Optimizer", url: "greenhouse-lighting-led-thermal-cfd-optimizer.html", tag: "Thermal CFD & L90 Life" }
         ],
         targetUrls: ["dli-spectrum", "crop-yield-biomass", "led-thermal"]
       },
       sodium: {
-        query: "순환식 수경재배 나트륨 염류 집적 배액",
-        title: "🧪 순환식 수경재배 Na⁺/Cl⁻ 염류 집적 & 배액 재이용 진단",
-        explanation: "순환식 수경재배에서 배액을 전량 회수하면 작물이 흡수하지 않는 Na⁺와 Cl⁻이 급격히 농축되어 뿌리 삼투압 저하를 일으킵니다. <strong>농축계수(UCF) 모델로 한계 배액 비율(Drain Fraction)을 산정</strong>하고 역삼투(RO) 탈염 기술의 에너지 비용을 비교해야 합니다.",
+        query: "closed-loop sodium salinity drain accumulation reverse osmosis",
+        title: "🧪 Closed-Loop Recirculation Na⁺/Cl⁻ Ion Accumulation & Desalination",
+        explanation: "In closed-loop drain-to-waste and recirculation systems, unabsorbed sodium (Na⁺) and chloride (Cl⁻) accumulate exponentially, depressing root osmotic potential. Applying a <strong>dynamic Uptake Concentration Factor (UCF) model determines the maximum drain reuse ratio</strong> before membrane reverse osmosis (RO) desalination becomes economically mandatory.",
         recommendations: [
-          { name: "Nutrient Uptake Concentration Factor (UCF) Analyzer", url: "nutrient-uptake-concentration-factor-analyzer.html", tag: "Na⁺ 농축 동역학 분석" },
-          { name: "Closed-Loop RO Desalination & Energy Optimizer", url: "closed-loop-reverse-osmosis-desalination-energy-optimizer.html", tag: "99.2% 탈염 에너지 산산" },
-          { name: "Chemical Speciation & Precipitation Index", url: "hydroponic-chemical-speciation-precipitation-index.html", tag: "관수 노즐 막힘 방지" }
+          { name: "Nutrient Uptake Concentration Factor (UCF) Analyzer", url: "nutrient-uptake-concentration-factor-analyzer.html", tag: "Na⁺ Dynamic Accumulation" },
+          { name: "Closed-Loop RO Desalination & Energy Optimizer", url: "closed-loop-reverse-osmosis-desalination-energy-optimizer.html", tag: "99.2% Desalination kWh/m³" },
+          { name: "Chemical Speciation & Precipitation Index", url: "hydroponic-chemical-speciation-precipitation-index.html", tag: "Emitter Scaling Prevention" }
         ],
         targetUrls: ["nutrient-uptake-concentration", "reverse-osmosis", "chemical-speciation"]
       },
       ipm: {
-        query: "총채벌레 응애 가루이 천적 방제 IPM",
-        title: "🐞 총채벌레/응애 생물학적 방제(IPM) 및 천적 방사 진단",
-        explanation: "화학 살충제 내성을 막고 수출 규격을 충족하려면 <strong>칠레이리응애(Phytoseiulus persimilis), 지중이리응애 등 천적 투입 밀도</strong>와 온실 미기후(온도 20~27°C, 상대습도 65~75%) 부합도를 모델링하여 방제 실패를 차단해야 합니다.",
+        query: "spider mites thrips biological control ipm beneficial insects",
+        title: "🐞 Biological Pest Control (IPM) & Beneficial Insect Release Optimization",
+        explanation: "Combating chemical pesticide resistance requires deploying <strong>predatory mites (Phytoseiulus persimilis, Amblyseius swirskii) and parasitoid wasps within their thermal-hygrometric performance envelopes (20–28°C, 65–75% RH)</strong> to prevent scouting failures and population crashes.",
         recommendations: [
-          { name: "Greenhouse Biological Pest Control (IPM) Engine", url: "greenhouse-biological-pest-control-ipm-calculator.html", tag: "천적 방사 밀도 & 온습도 포락선" },
-          { name: "AgriVision AI Crop Disease Analyzer", url: "agrivision-ai-crop-disease-analyzer.html", tag: "AI 병해충 영상 판독" }
+          { name: "Greenhouse Biological Pest Control (IPM) Engine", url: "greenhouse-biological-pest-control-ipm-calculator.html", tag: "Release Rates & Envelopes" },
+          { name: "AgriVision AI Crop Disease Analyzer", url: "agrivision-ai-crop-disease-analyzer.html", tag: "Vision Crop Diagnostics" }
         ],
         targetUrls: ["biological-pest-control", "agrivision-ai"]
       },
       autonomous: {
-        query: "온실 자율제어 MPC 인공지능 IoT",
-        title: "🧠 스마트 온실 자율제어(MPC) & IoT 엣지 텔레메트리 진단",
-        explanation: "단순 온습도 임계값 제어에서 벗어나 <strong>외부 기상 예보와 작물 광합성 모델을 융합한 모델예측제어(MPC)</strong>를 구축하면 광합성을 극대화하면서도 난방 에너지를 22.4% 절감할 수 있습니다.",
+        query: "autonomous mpc climate computer reinforcement learning iot",
+        title: "🧠 Autonomous AI Climate Computer & IoT Edge Telemetry Navigation",
+        explanation: "Moving beyond static day/night threshold setpoints, <strong>reinforcement learning and Model Predictive Control (MPC)</strong> co-optimize dynamic 24-hour climate trajectories with real-time weather forecasts, trimming 22.4% heating gas while maximizing leaf photosynthesis.",
         recommendations: [
-          { name: "Autonomous AI Climate Computer & MPC", url: "greenhouse-autonomous-ai-climate-controller.html", tag: "강화학습 24h 최적 궤적" },
-          { name: "Greenhouse MQTT Edge IoT Fleet Simulator", url: "greenhouse-mqtt-edge-iot-fleet-simulator.html", tag: "100개 가상 센서 플릿" },
-          { name: "Venlo Greenhouse Digital Twin Simulator", url: "digital-twin-greenhouse-simulator.html", tag: "물리 열역학 디지털 트윈" }
+          { name: "Autonomous AI Climate Computer & MPC", url: "greenhouse-autonomous-ai-climate-controller.html", tag: "24h Reinforcement Learning" },
+          { name: "Greenhouse MQTT Edge IoT Fleet Simulator", url: "greenhouse-mqtt-edge-iot-fleet-simulator.html", tag: "100 Virtual Sensor Fleet" },
+          { name: "Venlo Greenhouse Digital Twin Simulator", url: "digital-twin-greenhouse-simulator.html", tag: "Thermodynamic Digital Twin" }
         ],
         targetUrls: ["autonomous-ai", "mqtt-edge", "digital-twin-greenhouse"]
       }
@@ -1029,14 +1058,14 @@
 
       let matchedKey = forcedKey;
       if (!matchedKey) {
-        if (text.includes("배꼽") || text.includes("칼슘") || text.includes("ber") || text.includes("rot")) matchedKey = "ber";
-        else if (text.includes("곰팡이") || text.includes("결로") || text.includes("과습") || text.includes("botrytis")) matchedKey = "botrytis";
-        else if (text.includes("난방") || text.includes("보일러") || text.includes("열손실") || text.includes("가스") || text.includes("축열")) matchedKey = "heating";
-        else if (text.includes("led") || text.includes("보광") || text.includes("dli") || text.includes("광합성") || text.includes("빛")) matchedKey = "led_roi";
-        else if (text.includes("나트륨") || text.includes("염류") || text.includes("순환식") || text.includes("탈염") || text.includes("ucf")) matchedKey = "sodium";
-        else if (text.includes("충") || text.includes("응애") || text.includes("천적") || text.includes("방제") || text.includes("ipm")) matchedKey = "ipm";
-        else if (text.includes("자율") || text.includes("mpc") || text.includes("ai") || text.includes("iot") || text.includes("카메라")) matchedKey = "autonomous";
-        else matchedKey = "ber"; // default fallback to most popular symptom
+        if (text.includes("ber") || text.includes("calcium") || text.includes("rot") || text.includes("blossom") || text.includes("배꼽") || text.includes("칼슘")) matchedKey = "ber";
+        else if (text.includes("botrytis") || text.includes("mold") || text.includes("humidity") || text.includes("dew") || text.includes("condensation") || text.includes("곰팡이") || text.includes("결로") || text.includes("과습")) matchedKey = "botrytis";
+        else if (text.includes("heat") || text.includes("boiler") || text.includes("gas") || text.includes("screen") || text.includes("buffer") || text.includes("난방") || text.includes("보일러") || text.includes("열손실")) matchedKey = "heating";
+        else if (text.includes("led") || text.includes("light") || text.includes("dli") || text.includes("spectrum") || text.includes("far-red") || text.includes("광") || text.includes("보광")) matchedKey = "led_roi";
+        else if (text.includes("sodium") || text.includes("salinity") || text.includes("desalination") || text.includes("drain") || text.includes("ucf") || text.includes("나트륨") || text.includes("염류") || text.includes("순환식")) matchedKey = "sodium";
+        else if (text.includes("pest") || text.includes("mite") || text.includes("thrips") || text.includes("ipm") || text.includes("wasp") || text.includes("insect") || text.includes("충") || text.includes("응애") || text.includes("천적")) matchedKey = "ipm";
+        else if (text.includes("autonomous") || text.includes("mpc") || text.includes("ai") || text.includes("iot") || text.includes("camera") || text.includes("vision") || text.includes("자율")) matchedKey = "autonomous";
+        else matchedKey = "ber"; // default fallback
       }
 
       const item = SCENARIO_DB[matchedKey];
@@ -1049,14 +1078,14 @@
             <strong style="color: #f8fafc; font-size: 0.92rem;">${r.name}</strong>
             <span style="font-size: 0.75rem; background: rgba(6, 182, 212, 0.2); color: #38bdf8; padding: 2px 6px; border-radius: 4px; margin-left: 8px; font-weight: 700;">${r.tag}</span>
           </div>
-          <a href="${r.url}" style="color: #34d399; font-weight: 700; text-decoration: none; font-size: 0.85rem;">실행하기 →</a>
+          <a href="${r.url}" style="color: #34d399; font-weight: 700; text-decoration: none; font-size: 0.85rem;">Launch Engine →</a>
         </div>
       `).join('');
 
       resultBox.innerHTML = `
         <div style="font-weight: 800; font-size: 1.05rem; color: #38bdf8; margin-bottom: 6px;">${item.title}</div>
         <p style="color: #cbd5e1; font-size: 0.9rem; line-height: 1.55; margin-bottom: 12px;">${item.explanation}</p>
-        <div style="font-size: 0.82rem; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.05em;">🎯 AI 권장 시뮬레이션 계산기:</div>
+        <div style="font-size: 0.82rem; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.05em;">🎯 AI Recommended Engineering Calculators:</div>
         ${recHtml}
       `;
       resultBox.style.display = 'block';
