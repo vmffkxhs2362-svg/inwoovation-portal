@@ -104,6 +104,226 @@
       flex-wrap: wrap;
       gap: 12px;
     }
+
+    /* SEARCH & AI NAVIGATOR STYLES */
+    .search-navigator-wrapper {
+      margin-bottom: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .search-box-container {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+    .search-icon-badge {
+      position: absolute;
+      left: 18px;
+      font-size: 1.15rem;
+      pointer-events: none;
+      color: #64748b;
+    }
+    .live-search-input {
+      width: 100%;
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 14px;
+      padding: 16px 48px 16px 52px;
+      color: #ffffff;
+      font-size: 1.05rem;
+      font-family: var(--font-sans);
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+    }
+    .live-search-input:focus {
+      outline: none;
+      border-color: var(--accent-cyan);
+      box-shadow: 0 0 0 4px rgba(6, 182, 212, 0.2), 0 8px 30px rgba(0,0,0,0.4);
+      background: rgba(15, 23, 42, 0.95);
+    }
+    .clear-search-btn {
+      position: absolute;
+      right: 16px;
+      background: rgba(255, 255, 255, 0.08);
+      border: none;
+      color: #94a3b8;
+      font-size: 1.1rem;
+      cursor: pointer;
+      display: none;
+      width: 28px;
+      height: 28px;
+      line-height: 28px;
+      text-align: center;
+      border-radius: 50%;
+      transition: all 0.15s ease;
+    }
+    .clear-search-btn:hover {
+      background: rgba(239, 68, 68, 0.3);
+      color: #ef4444;
+    }
+    .search-meta-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 0.88rem;
+    }
+    .search-counter {
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+    .search-counter strong {
+      color: var(--accent-cyan);
+      font-size: 1.05rem;
+    }
+    .quick-chips {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .chip-label {
+      color: #64748b;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .quick-chip {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #cbd5e1;
+      border-radius: 12px;
+      padding: 4px 10px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .quick-chip:hover {
+      background: rgba(6, 182, 212, 0.15);
+      border-color: var(--accent-cyan);
+      color: var(--accent-cyan);
+    }
+    .ai-assistant-card {
+      background: rgba(30, 41, 59, 0.6);
+      border: 1px solid rgba(6, 182, 212, 0.25);
+      border-radius: 14px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+    .ai-assistant-card.active {
+      border-color: var(--accent-emerald);
+      box-shadow: 0 10px 30px rgba(16, 185, 129, 0.15);
+    }
+    .ai-assistant-toggle {
+      padding: 12px 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      background: rgba(15, 23, 42, 0.6);
+      user-select: none;
+    }
+    .ai-assistant-toggle:hover {
+      background: rgba(15, 23, 42, 0.85);
+    }
+    .ai-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: linear-gradient(135deg, rgba(6, 182, 212, 0.2), rgba(16, 185, 129, 0.2));
+      border: 1px solid rgba(6, 182, 212, 0.4);
+      color: #38bdf8;
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 3px 8px;
+      border-radius: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .ai-assistant-content {
+      padding: 18px;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .ai-input-wrapper {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .ai-input-wrapper input {
+      flex: 1;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 8px;
+      padding: 10px 14px;
+      color: #fff;
+      font-size: 0.92rem;
+      font-family: var(--font-sans);
+    }
+    .ai-input-wrapper input:focus {
+      outline: none;
+      border-color: var(--accent-emerald);
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+    }
+    .ai-submit-btn {
+      background: linear-gradient(135deg, var(--accent-cyan), #0284c7);
+      color: #0f172a;
+      border: none;
+      border-radius: 8px;
+      padding: 0 18px;
+      font-weight: 800;
+      font-size: 0.88rem;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s;
+    }
+    .ai-submit-btn:hover {
+      filter: brightness(1.15);
+      transform: translateY(-1px);
+    }
+    .symptom-chips {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .symptom-chip {
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #94a3b8;
+      border-radius: 12px;
+      padding: 5px 12px;
+      font-size: 0.8rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .symptom-chip:hover {
+      background: rgba(16, 185, 129, 0.15);
+      color: #34d399;
+      border-color: #34d399;
+    }
+    .ai-diagnosis-result {
+      margin-top: 14px;
+      background: rgba(15, 23, 42, 0.95);
+      border-left: 4px solid var(--accent-emerald);
+      border-radius: 8px;
+      padding: 14px 16px;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      display: none;
+    }
+    .ai-diagnosis-result strong { color: var(--accent-emerald); }
+    .highlight-pulse {
+      animation: toolCardGlow 1.8s ease-in-out infinite alternate;
+      border-color: var(--accent-emerald) !important;
+    }
+    @keyframes toolCardGlow {
+      from { box-shadow: 0 0 8px rgba(16, 185, 129, 0.4); transform: translateY(-2px); }
+      to { box-shadow: 0 0 24px rgba(6, 182, 212, 0.8); transform: translateY(-4px); }
+    }
   </style>
 
   <script type="application/ld+json">
@@ -152,6 +372,80 @@
         <p style="color: #94a3b8; font-size: 0.85rem; margin-top: 2px;">Zero-dependency single-file standalone bundle + complete source code package for agricultural engineers & consultants.</p>
       </div>
       <a href="https://buy.polar.sh/polar_cl_mRhSIZcW5YZGwh5QrSBVl1jLF8WeS8fZERjKk08f9LX" target="_blank" data-polar-checkout data-polar-checkout-theme="dark" style="background: linear-gradient(135deg, #06b6d4, #10b981); color: #0f172a; text-decoration: none; padding: 12px 22px; border-radius: 8px; font-weight: 800; font-size: 0.95rem; white-space: nowrap; box-shadow: 0 4px 12px rgba(6, 182, 212, 0.25);">⭐ Buy Pro Pack ($19)</a>
+    </div>
+
+    <!-- REAL-TIME SEARCH & AI AGRONOMIST NAVIGATOR -->
+    <div class="search-navigator-wrapper">
+      <div class="search-box-container">
+        <span class="search-icon-badge">🔍</span>
+        <input 
+          type="text" 
+          id="liveSearchInput" 
+          class="live-search-input" 
+          placeholder="계산기 이름, 센서, 물리기능, 영문/한글 증상 검색 (예: VPD, 칼슘, 난방, DLI, LED, UCF, 토마토...)" 
+          autocomplete="off"
+          spellcheck="false"
+          oninput="filterToolsRealtime()"
+        >
+        <button id="clearSearchBtn" class="clear-search-btn" onclick="clearLiveSearch()" title="검색어 초기화">✕</button>
+      </div>
+
+      <div class="search-meta-row">
+        <div id="searchResultStats" class="search-counter">
+          전체 <strong>33개</strong> 전문 엔지니어링 계산기 표시 중
+        </div>
+        <div class="quick-chips">
+          <span class="chip-label">Quick Tags:</span>
+          <button class="quick-chip" onclick="applyQuickSearch('Tomato')">🍅 Tomato</button>
+          <button class="quick-chip" onclick="applyQuickSearch('VPD')">💧 VPD / Humidity</button>
+          <button class="quick-chip" onclick="applyQuickSearch('DLI')">💡 LED / DLI</button>
+          <button class="quick-chip" onclick="applyQuickSearch('Heating')">🔥 Heating / Energy</button>
+          <button class="quick-chip" onclick="applyQuickSearch('Nutrient')">🧪 Nutrients / EC</button>
+          <button class="quick-chip" onclick="applyQuickSearch('AI')">🧠 AI & Vision</button>
+          <button class="quick-chip" onclick="applyQuickSearch('Open Source')">⭐ Open Source</button>
+        </div>
+      </div>
+
+      <!-- AI AGRONOMIST PROBLEM SOLVER & CHATBOT CARD -->
+      <div class="ai-assistant-card" id="aiAssistantCard">
+        <div class="ai-assistant-toggle" onclick="toggleAiAssistant()">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <span style="font-size: 1.25rem;">🤖</span>
+            <div>
+              <div style="font-weight: 700; color: #f8fafc; font-size: 0.95rem;">AI Agronomist Problem Navigator (온실 증상 진단 & 계산기 자동 추천)</div>
+              <div style="color: #94a3b8; font-size: 0.8rem;">현장 재배 이슈나 계산 목적을 입력하시면 최적의 시뮬레이션 계산기를 찾아 즉시 강조해 드립니다.</div>
+            </div>
+          </div>
+          <span class="ai-badge">Instant AI Engine ⚡</span>
+        </div>
+
+        <div class="ai-assistant-content" id="aiAssistantContent">
+          <div style="margin-bottom: 10px; font-size: 0.82rem; color: #94a3b8; font-weight: 600;">
+            자주 겪는 대표적 온실 재배·엔지니어링 시나리오 (클릭 시 자동 진단 & 도구 매핑):
+          </div>
+          <div class="symptom-chips">
+            <button class="symptom-chip" onclick="applyScenario('ber')">🍅 토마토 배꼽썩음병 (Blossom-End Rot)</button>
+            <button class="symptom-chip" onclick="applyScenario('botrytis')">🌧️ 온실 과습 & 잿빛곰팡이 (Botrytis)</button>
+            <button class="symptom-chip" onclick="applyScenario('heating')">❄️ 겨울철 난방비 폭탄 & 열손실 저감</button>
+            <button class="symptom-chip" onclick="applyScenario('led_roi')">💡 LED 보광 ROI & 광합성 수율 예측</button>
+            <button class="symptom-chip" onclick="applyScenario('sodium')">🧪 순환식 수경재배 Na⁺ 염류 집적</button>
+            <button class="symptom-chip" onclick="applyScenario('ipm')">🐞 총채벌레/응애 생물학적 방제(IPM)</button>
+            <button class="symptom-chip" onclick="applyScenario('autonomous')">🧠 온실 자율제어 MPC & AI 생육진단</button>
+          </div>
+
+          <div class="ai-input-wrapper" style="margin-top: 14px;">
+            <input 
+              type="text" 
+              id="aiProblemInput" 
+              placeholder="예: '토마토 잎이 타들어가고 과실 끝이 썩어요', '겨울 보일러 가스비 아끼는 법', '적산일사가 부족할 때'..." 
+              onkeydown="if(event.key === 'Enter') runAiDiagnosis()"
+            >
+            <button class="ai-submit-btn" onclick="runAiDiagnosis()">🩺 증상 진단 & 도구 찾기</button>
+          </div>
+
+          <div id="aiDiagnosisResult" class="ai-diagnosis-result"></div>
+        </div>
+      </div>
     </div>
 
     <div class="filter-bar">
@@ -474,9 +768,8 @@
         <a href="greenhouse-natural-ventilation-buoyancy-airflow-calculator.html" class="tool-link">Launch Ventilation Calculator →</a>
       </div>
 
-      <!-- Tool 32 (3D WebGL Flagship) -->
-      <div class="tool-card" style="border-color: #38bdf8;">
-        <div class="tool-card" data-category="water">
+      <!-- Tool 32 -->
+      <div class="tool-card" data-category="water" style="border-color: #38bdf8;">
         <div>
           <div class="tool-icon">🔬</div>
           <h2 class="tool-title">Nutrient Uptake Concentration Factor (UCF) Analyzer</h2>
@@ -485,6 +778,7 @@
         <a href="nutrient-uptake-concentration-factor-analyzer.html" class="tool-link">Launch UCF Analyzer →</a>
       </div>
 
+      <!-- Tool 33 (3D WebGL Flagship) -->
       <div class="tool-card" data-category="climate" style="border: 1px solid rgba(56, 189, 248, 0.3); background: linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(2, 132, 199, 0.15));">
         <div>
           <div class="tool-icon">🌟</div>
@@ -497,32 +791,307 @@
   </div>
 
   <script>
+    // 1. KOREAN & ENGLISH SYNONYM DICTIONARY FOR CEA CALCULATORS
+    const CEA_SYNONYMS = {
+      "배꼽": ["calcium", "blossom-end", "ber", "rot", "xylem"],
+      "배꼽썩음": ["calcium", "blossom-end", "ber", "rot", "xylem"],
+      "칼슘": ["calcium", "blossom-end", "ber", "rot", "xylem"],
+      "토마토": ["tomato", "calcium", "steering", "generative", "high-wire", "ber"],
+      "파프리카": ["pepper", "calcium", "steering", "dli", "mollier"],
+      "딸기": ["strawberry", "dli", "chilling", "fogging", "mollier"],
+      "난방": ["heating", "screen", "din v 18599", "thermal", "buffer", "boiler"],
+      "난방비": ["heating", "screen", "din v 18599", "thermal", "buffer", "boiler"],
+      "보일러": ["heating", "buffer", "chp", "boiler", "hot water"],
+      "축열조": ["buffer", "stratification", "storage", "mwh", "richardson"],
+      "가스": ["heating", "chp", "gas", "scr", "co2", "urea"],
+      "습도": ["mollier", "psychrometric", "dew point", "humidity", "fogging", "vpd"],
+      "과습": ["mollier", "psychrometric", "botrytis", "haf", "ventilation"],
+      "결로": ["mollier", "psychrometric", "dew point", "condensation"],
+      "제습": ["mollier", "psychrometric", "dehumidifier", "heat pump"],
+      "몰리에르": ["mollier", "psychrometric", "enthalpy", "dew point"],
+      "곰팡이": ["botrytis", "mollier", "agrivision", "disease", "haf", "pathogen"],
+      "빛": ["dli", "spectrum", "led", "light", "far-red", "photomorphogenesis"],
+      "광": ["dli", "spectrum", "led", "light", "far-red", "extinction"],
+      "보광": ["dli", "spectrum", "led", "light", "far-red", "emerson"],
+      "일사": ["dli", "radiation", "light", "yield", "biomass", "extinction"],
+      "적산일사": ["dli", "daily light", "integral", "yield"],
+      "양액": ["nutrient", "ion", "sonneveld", "steiner", "speciation", "tdr", "rockwool", "ucf"],
+      "비료": ["nutrient", "ion", "speciation", "ucf", "dosing"],
+      "염류": ["ucf", "desalination", "ro", "reverse osmosis", "na+", "salinity"],
+      "나트륨": ["ucf", "desalination", "ro", "reverse osmosis", "na+"],
+      "배액": ["ucf", "drain", "desalination", "uvc", "recirculating"],
+      "환기": ["ventilation", "buoyancy", "haf", "cfd", "airflow", "vents"],
+      "유동팬": ["haf", "cfd", "air velocity", "destratification", "jet"],
+      "해충": ["ipm", "biological", "pest", "mite", "wasp", "predatory"],
+      "천적": ["ipm", "biological", "predatory", "mite", "parasitoid"],
+      "자율": ["autonomous", "mpc", "ai", "reinforcement", "predictive"],
+      "인공지능": ["autonomous", "mpc", "ai", "vision", "agrivision", "fleet"],
+      "카메라": ["vision", "agrivision", "leaf area", "lai", "disease"],
+      "센서": ["mqtt", "iot", "fleet", "edge", "lorawan", "telemetry"],
+      "수익": ["capex", "opex", "irr", "npv", "dcf", "quant", "roi", "bankability"],
+      "비용": ["capex", "opex", "irr", "npv", "quant", "energy"],
+      "경제성": ["capex", "opex", "irr", "roi", "quant", "economics"],
+      "오픈소스": ["open source", "opencea", "agriquant", "python", "playground"]
+    };
+
+    let activeCategory = 'all';
+
+    // 2. REAL-TIME MULTI-FIELD INSTANT SEARCH
+    function filterToolsRealtime() {
+      const input = document.getElementById('liveSearchInput');
+      const clearBtn = document.getElementById('clearSearchBtn');
+      const stats = document.getElementById('searchResultStats');
+      const query = input.value.trim().toLowerCase();
+
+      clearBtn.style.display = query ? 'block' : 'none';
+
+      // Expand query with synonyms
+      const searchTerms = [query];
+      for (const [key, synList] of Object.entries(CEA_SYNONYMS)) {
+        if (query.includes(key) || key.includes(query)) {
+          searchTerms.push(...synList);
+        }
+      }
+
+      const cards = document.querySelectorAll('.tool-card');
+      let visibleCount = 0;
+
+      cards.forEach(card => {
+        // Remove prior pulse animation if any
+        card.classList.remove('highlight-pulse');
+
+        const text = (card.innerText + " " + (card.getAttribute('data-category') || "")).toLowerCase();
+        const link = card.querySelector('a') ? card.querySelector('a').getAttribute('href').toLowerCase() : "";
+        const fullContent = text + " " + link;
+
+        let matchesSearch = false;
+        if (!query) {
+          matchesSearch = true;
+        } else {
+          matchesSearch = searchTerms.some(term => fullContent.includes(term));
+        }
+
+        // Category matching
+        let matchesCat = true;
+        if (activeCategory !== 'all') {
+          if (activeCategory === 'climate') {
+            matchesCat = fullContent.includes('climate') || fullContent.includes('twin') || fullContent.includes('mollier') || fullContent.includes('heat') || fullContent.includes('co2') || fullContent.includes('fogging') || fullContent.includes('haf') || fullContent.includes('buffer') || fullContent.includes('structural') || fullContent.includes('ventilation');
+          } else if (activeCategory === 'lighting') {
+            matchesCat = fullContent.includes('dli') || fullContent.includes('spectrum') || fullContent.includes('led') || fullContent.includes('extinction') || fullContent.includes('yield') || fullContent.includes('farquhar');
+          } else if (activeCategory === 'water') {
+            matchesCat = fullContent.includes('nutrient') || fullContent.includes('penman') || fullContent.includes('rockwool') || fullContent.includes('uv-c') || fullContent.includes('calcium') || fullContent.includes('desalination') || fullContent.includes('matric') || fullContent.includes('speciation') || fullContent.includes('ucf');
+          } else if (activeCategory === 'ai') {
+            matchesCat = fullContent.includes('ai') || fullContent.includes('mqtt') || fullContent.includes('opencea') || fullContent.includes('vision') || fullContent.includes('steering') || fullContent.includes('autonomous');
+          } else if (activeCategory === 'quant') {
+            matchesCat = fullContent.includes('quant') || fullContent.includes('capex') || fullContent.includes('srs') || fullContent.includes('scr') || fullContent.includes('irr');
+          }
+        }
+
+        if (matchesSearch && matchesCat) {
+          card.style.display = 'flex';
+          visibleCount++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      if (!query && activeCategory === 'all') {
+        stats.innerHTML = `전체 <strong>${visibleCount}개</strong> 전문 엔지니어링 계산기 표시 중`;
+      } else if (query) {
+        stats.innerHTML = `검색 결과: <strong>${visibleCount}개</strong> 계산기 발견 (키워드: "${input.value}")`;
+      } else {
+        stats.innerHTML = `카테고리 필터: <strong>${visibleCount}개</strong> 계산기 표시 중`;
+      }
+    }
+
+    function clearLiveSearch() {
+      const input = document.getElementById('liveSearchInput');
+      input.value = '';
+      document.getElementById('aiDiagnosisResult').style.display = 'none';
+      filterToolsRealtime();
+      input.focus();
+    }
+
+    function applyQuickSearch(term) {
+      const input = document.getElementById('liveSearchInput');
+      input.value = term;
+      // Reset category to all to allow wide search
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      document.querySelector('.filter-btn').classList.add('active');
+      activeCategory = 'all';
+      filterToolsRealtime();
+      input.focus();
+    }
+
     function filterCategory(cat, btn) {
       document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
+      activeCategory = cat;
+      filterToolsRealtime();
+    }
+
+    function toggleAiAssistant() {
+      const card = document.getElementById('aiAssistantCard');
+      card.classList.toggle('active');
+    }
+
+    // 3. AI AGRONOMIST PROBLEM DIAGNOSTIC & RECOMMENDER ENGINE
+    const SCENARIO_DB = {
+      ber: {
+        query: "토마토 배꼽썩음병 칼슘 결핍",
+        title: "🍅 토마토 배꼽썩음병 (Blossom-End Rot, BER) 정밀 진단",
+        explanation: "배꼽썩음병(BER)은 단순 토양 칼슘 부족이 아니라 <strong>고온·과습 또는 근권 건조에 따른 증산류(Transpiration stream) 정체</strong>로 인해 칼슘이 과실 말단으로 수송되지 못해 발생합니다. 증산량 조절과 양액 내 칼슘 분배 모델을 통해 즉시 예방할 수 있습니다.",
+        recommendations: [
+          { name: "Xylem Calcium & Blossom-End Rot Risk Model", url: "crop-transpiration-calcium-blossom-end-rot-risk-model.html", tag: "1차 필수 도구" },
+          { name: "Hydroponic Nutrient & Ion Balance Engine", url: "hydroponic-nutrient-solution-calculator.html", tag: "양액 Ca/K/Mg 비율" },
+          { name: "Hourly Penman-Monteith ETc Calculator", url: "evapotranspiration-penman-monteith-calculator.html", tag: "증산류 유량 산정" }
+        ],
+        targetUrls: ["calcium-blossom-end-rot", "hydroponic-nutrient-solution", "penman-monteith"]
+      },
+      botrytis: {
+        query: "온실 과습 잿빛곰팡이 결로 제습",
+        title: "🌧️ 온실 과습 & 잿빛곰팡이 (Botrytis cinerea) 예방 진단",
+        explanation: "잿빛곰팡이 분생포자는 <strong>잎 표면 온도가 노점(Dew Point) 이하로 떨어져 응결수(결로)가 2시간 이상 지속</strong>될 때 급격히 발아합니다. 습공기선도(Mollier) 기반의 환기/제습 타이밍과 HAF 팬 유속 제어로 경계층을 파괴해야 합니다.",
+        recommendations: [
+          { name: "Psychrometric Mollier Diagram Optimizer", url: "psychrometric-mollier-greenhouse-dehumidifier.html", tag: "노점 & 제습 계산" },
+          { name: "HAF Circulation & CFD Air Velocity Engine", url: "greenhouse-microclimate-cfd-air-velocity-optimizer.html", tag: "기류 정체 해소" },
+          { name: "AgriVision AI Crop Disease Analyzer", url: "agrivision-ai-crop-disease-analyzer.html", tag: "AI 병반 조기 탐지" }
+        ],
+        targetUrls: ["psychrometric-mollier", "cfd-air-velocity", "agrivision-ai"]
+      },
+      heating: {
+        query: "겨울철 난방비 축열조 열손실 스크린",
+        title: "❄️ 겨울철 온실 난방비 폭탄 & 피크 열손실 저감 진단",
+        explanation: "온실 난방비 절감의 핵심은 <strong>DIN V 18599 규격 피크 관류 열손실 정밀 산정</strong>과 <strong>축열조(Buffer Tank) 성층화(Richardson No. > 10)</strong>를 통한 주간 잉여 열 저장 및 자율제어 MPC를 통한 불필요 환기 차단입니다. 최대 35~43% 연료 절감이 가능합니다.",
+        recommendations: [
+          { name: "DIN V 18599 Heating Load & Screen Engine", url: "greenhouse-heating-load-thermal-screen-calculator.html", tag: "피크 열손실 & 스크린 절감" },
+          { name: "Hot Water Buffer Tank Stratification Engine", url: "solar-thermal-buffer-tank-stratification-calculator.html", tag: "축열조 성층화 용량" },
+          { name: "Autonomous AI Climate Computer & MPC", url: "greenhouse-autonomous-ai-climate-controller.html", tag: "가스 22.4% 절감 자율제어" }
+        ],
+        targetUrls: ["heating-load", "buffer-tank", "autonomous-ai"]
+      },
+      led_roi: {
+        query: "LED 보광 DLI 에머슨 효과 광합성 수율",
+        title: "💡 LED 보광 조명 투자 회수(ROI) & 광합성 효율 극대화 진단",
+        explanation: "보광 LED 도입 시 목표 일일 적산일사량(DLI: 토마토 25~30 mol/m²d) 달성과 <strong>730nm 원적색광(Far-Red)의 에머슨 효과(+12~18% 광합성 시너지)</strong>를 정량화하고, 다이오드 접합부 온도(Tj) 방열을 점검해야 투자비(CapEx) 회수 기간을 2년 이하로 단축할 수 있습니다.",
+        recommendations: [
+          { name: "DLI & Far-Red (730nm) Spectrum Engine", url: "dli-spectrum-photomorphogenesis-calculator.html", tag: "DLI & 에머슨 효과" },
+          { name: "Crop Yield & Biomass DLI Forecaster", url: "crop-yield-biomass-dli-forecaster.html", tag: "주간 수확량 예측" },
+          { name: "LED Thermal Heat-Sink & Tj Optimizer", url: "greenhouse-lighting-led-thermal-cfd-optimizer.html", tag: "방열 & 수명 L90" }
+        ],
+        targetUrls: ["dli-spectrum", "crop-yield-biomass", "led-thermal"]
+      },
+      sodium: {
+        query: "순환식 수경재배 나트륨 염류 집적 배액",
+        title: "🧪 순환식 수경재배 Na⁺/Cl⁻ 염류 집적 & 배액 재이용 진단",
+        explanation: "순환식 수경재배에서 배액을 전량 회수하면 작물이 흡수하지 않는 Na⁺와 Cl⁻이 급격히 농축되어 뿌리 삼투압 저하를 일으킵니다. <strong>농축계수(UCF) 모델로 한계 배액 비율(Drain Fraction)을 산정</strong>하고 역삼투(RO) 탈염 기술의 에너지 비용을 비교해야 합니다.",
+        recommendations: [
+          { name: "Nutrient Uptake Concentration Factor (UCF) Analyzer", url: "nutrient-uptake-concentration-factor-analyzer.html", tag: "Na⁺ 농축 동역학 분석" },
+          { name: "Closed-Loop RO Desalination & Energy Optimizer", url: "closed-loop-reverse-osmosis-desalination-energy-optimizer.html", tag: "99.2% 탈염 에너지 산산" },
+          { name: "Chemical Speciation & Precipitation Index", url: "hydroponic-chemical-speciation-precipitation-index.html", tag: "관수 노즐 막힘 방지" }
+        ],
+        targetUrls: ["nutrient-uptake-concentration", "reverse-osmosis", "chemical-speciation"]
+      },
+      ipm: {
+        query: "총채벌레 응애 가루이 천적 방제 IPM",
+        title: "🐞 총채벌레/응애 생물학적 방제(IPM) 및 천적 방사 진단",
+        explanation: "화학 살충제 내성을 막고 수출 규격을 충족하려면 <strong>칠레이리응애(Phytoseiulus persimilis), 지중이리응애 등 천적 투입 밀도</strong>와 온실 미기후(온도 20~27°C, 상대습도 65~75%) 부합도를 모델링하여 방제 실패를 차단해야 합니다.",
+        recommendations: [
+          { name: "Greenhouse Biological Pest Control (IPM) Engine", url: "greenhouse-biological-pest-control-ipm-calculator.html", tag: "천적 방사 밀도 & 온습도 포락선" },
+          { name: "AgriVision AI Crop Disease Analyzer", url: "agrivision-ai-crop-disease-analyzer.html", tag: "AI 병해충 영상 판독" }
+        ],
+        targetUrls: ["biological-pest-control", "agrivision-ai"]
+      },
+      autonomous: {
+        query: "온실 자율제어 MPC 인공지능 IoT",
+        title: "🧠 스마트 온실 자율제어(MPC) & IoT 엣지 텔레메트리 진단",
+        explanation: "단순 온습도 임계값 제어에서 벗어나 <strong>외부 기상 예보와 작물 광합성 모델을 융합한 모델예측제어(MPC)</strong>를 구축하면 광합성을 극대화하면서도 난방 에너지를 22.4% 절감할 수 있습니다.",
+        recommendations: [
+          { name: "Autonomous AI Climate Computer & MPC", url: "greenhouse-autonomous-ai-climate-controller.html", tag: "강화학습 24h 최적 궤적" },
+          { name: "Greenhouse MQTT Edge IoT Fleet Simulator", url: "greenhouse-mqtt-edge-iot-fleet-simulator.html", tag: "100개 가상 센서 플릿" },
+          { name: "Venlo Greenhouse Digital Twin Simulator", url: "digital-twin-greenhouse-simulator.html", tag: "물리 열역학 디지털 트윈" }
+        ],
+        targetUrls: ["autonomous-ai", "mqtt-edge", "digital-twin-greenhouse"]
+      }
+    };
+
+    function applyScenario(type) {
+      const scenario = SCENARIO_DB[type];
+      if (!scenario) return;
+      document.getElementById('aiProblemInput').value = scenario.title.replace(/^[^\s]+\s/, '');
+      runAiDiagnosis(type);
+    }
+
+    function runAiDiagnosis(forcedKey) {
+      const input = document.getElementById('aiProblemInput');
+      const resultBox = document.getElementById('aiDiagnosisResult');
+      const text = (forcedKey || input.value).toLowerCase();
+
+      let matchedKey = forcedKey;
+      if (!matchedKey) {
+        if (text.includes("배꼽") || text.includes("칼슘") || text.includes("ber") || text.includes("rot")) matchedKey = "ber";
+        else if (text.includes("곰팡이") || text.includes("결로") || text.includes("과습") || text.includes("botrytis")) matchedKey = "botrytis";
+        else if (text.includes("난방") || text.includes("보일러") || text.includes("열손실") || text.includes("가스") || text.includes("축열")) matchedKey = "heating";
+        else if (text.includes("led") || text.includes("보광") || text.includes("dli") || text.includes("광합성") || text.includes("빛")) matchedKey = "led_roi";
+        else if (text.includes("나트륨") || text.includes("염류") || text.includes("순환식") || text.includes("탈염") || text.includes("ucf")) matchedKey = "sodium";
+        else if (text.includes("충") || text.includes("응애") || text.includes("천적") || text.includes("방제") || text.includes("ipm")) matchedKey = "ipm";
+        else if (text.includes("자율") || text.includes("mpc") || text.includes("ai") || text.includes("iot") || text.includes("카메라")) matchedKey = "autonomous";
+        else matchedKey = "ber"; // default fallback to most popular symptom
+      }
+
+      const item = SCENARIO_DB[matchedKey];
+      if (!item) return;
+
+      // Render rich diagnosis card
+      let recHtml = item.recommendations.map(r => `
+        <div style="margin-top: 8px; display: flex; align-items: center; justify-content: space-between; background: rgba(15, 23, 42, 0.8); padding: 8px 14px; border-radius: 8px; border-left: 3px solid #06b6d4;">
+          <div>
+            <strong style="color: #f8fafc; font-size: 0.92rem;">${r.name}</strong>
+            <span style="font-size: 0.75rem; background: rgba(6, 182, 212, 0.2); color: #38bdf8; padding: 2px 6px; border-radius: 4px; margin-left: 8px; font-weight: 700;">${r.tag}</span>
+          </div>
+          <a href="${r.url}" style="color: #34d399; font-weight: 700; text-decoration: none; font-size: 0.85rem;">실행하기 →</a>
+        </div>
+      `).join('');
+
+      resultBox.innerHTML = `
+        <div style="font-weight: 800; font-size: 1.05rem; color: #38bdf8; margin-bottom: 6px;">${item.title}</div>
+        <p style="color: #cbd5e1; font-size: 0.9rem; line-height: 1.55; margin-bottom: 12px;">${item.explanation}</p>
+        <div style="font-size: 0.82rem; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.05em;">🎯 AI 권장 시뮬레이션 계산기:</div>
+        ${recHtml}
+      `;
+      resultBox.style.display = 'block';
+
+      // Highlight target cards in the grid and scroll to the first one
       const cards = document.querySelectorAll('.tool-card');
+      let firstMatchedCard = null;
+
       cards.forEach(c => {
-        if (cat === 'all') {
+        c.classList.remove('highlight-pulse');
+        const link = c.querySelector('a') ? c.querySelector('a').getAttribute('href').toLowerCase() : "";
+        const isTarget = item.targetUrls.some(u => link.includes(u));
+        if (isTarget) {
+          c.classList.add('highlight-pulse');
           c.style.display = 'flex';
-        } else {
-          const text = c.innerText.toLowerCase();
-          if (cat === 'climate' && (text.includes('climate') || text.includes('twin') || text.includes('mollier') || text.includes('heat') || text.includes('co2') || text.includes('fogging') || text.includes('haf') || text.includes('buffer') || text.includes('structural') || text.includes('ventilation'))) {
-            c.style.display = 'flex';
-          } else if (cat === 'lighting' && (text.includes('dli') || text.includes('spectrum') || text.includes('led') || text.includes('extinction') || text.includes('yield') || text.includes('farquhar'))) {
-            c.style.display = 'flex';
-          } else if (cat === 'water' && (text.includes('nutrient') || text.includes('penman') || text.includes('rockwool') || text.includes('uv-c') || text.includes('calcium') || text.includes('desalination') || text.includes('matric') || text.includes('speciation'))) {
-            c.style.display = 'flex';
-          } else if (cat === 'ai' && (text.includes('ai') || text.includes('mqtt') || text.includes('opencea') || text.includes('vision') || text.includes('steering') || text.includes('autonomous'))) {
-            c.style.display = 'flex';
-          } else if (cat === 'quant' && (text.includes('quant') || text.includes('capex') || text.includes('srs') || text.includes('scr'))) {
-            c.style.display = 'flex';
-          } else {
-            c.style.display = 'none';
-          }
+          if (!firstMatchedCard) firstMatchedCard = c;
         }
       });
+
+      if (firstMatchedCard) {
+        firstMatchedCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
     }
+
+    // 4. KEYBOARD SHORTCUT (Ctrl+K or /) TO INSTANT SEARCH
+    window.addEventListener('keydown', (e) => {
+      if ((e.ctrlKey && e.key.toLowerCase() === 'k') || (e.key === '/' && document.activeElement.tagName !== 'INPUT')) {
+        e.preventDefault();
+        const searchInput = document.getElementById('liveSearchInput');
+        searchInput.focus();
+        searchInput.select();
+      }
+    });
   </script>
   <script src="https://cdn.jsdelivr.net/npm/@polar-sh/checkout@0.1/dist/embed.global.js" defer data-auto-init></script>
 </body>
 </html>
+
