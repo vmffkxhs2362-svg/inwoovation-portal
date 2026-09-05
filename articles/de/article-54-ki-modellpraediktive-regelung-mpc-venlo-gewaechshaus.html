@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KI-basierte Modellprädiktive Regelung (MPC) im Venlo-Gewächshaus: Echtzeit-Energie- und Ertragsoptimierung | Inwoovation</title>
+  <meta name="description" content="Mathematische Zustandsraum-Modellierung der Gewächshaus-Thermodynamik, nichtlineare MPC-Kostenfunktions-Optimierung, Spotmarkt-Integration und autonome Klimasteuerung.">
+  <link rel="stylesheet" href="../../css/styles.css">
+  <link rel="canonical" href="https://inwoovation.com/articles/de/article-54-ki-modellpraediktive-regelung-mpc-venlo-gewaechshaus.html">
+  <link rel="alternate" hreflang="en" href="https://inwoovation.com/articles/article-54-ai-model-predictive-control-mpc-venlo-greenhouse.html">
+  <link rel="alternate" hreflang="de" href="https://inwoovation.com/articles/de/article-54-ki-modellpraediktive-regelung-mpc-venlo-gewaechshaus.html">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8597809158257497" crossorigin="anonymous"></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "KI-basierte Modellprädiktive Regelung (MPC) im Venlo-Gewächshaus: Echtzeit-Energie- und Ertragsoptimierung",
+    "description": "Ingenieurwissenschaftliche Grundlagen der modellprädiktiven Klimaregelung (MPC) in modernen Venlo-Glashäusern zur Senkung des Heizenergiebedarfs und Ertragssteigerung.",
+    "author": {
+      "@type": "Person",
+      "name": "Inwoo Hwang"
+    },
+    "datePublished": "2026-09-05",
+    "dateModified": "2026-09-05",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Inwoovation Smart Farming"
+    }
+  }
+  </script>
+</head>
+<body>
+  <article class="article-container">
+    <header class="article-header">
+      <div class="category-tag">KI-Klimaregelung & Regelungstechnik</div>
+      <h1>KI-basierte Modellprädiktive Regelung (MPC) im Venlo-Gewächshaus: Echtzeit-Energie- und Ertragsoptimierung</h1>
+      <div class="article-meta">Veröffentlicht: 2026-09-05 • Autor: Inwoo Hwang • Lesezeit: 14 Min.</div>
+    </header>
+
+    <div class="article-body">
+      <p class="lead">In den führenden Unterglas-Gartenbauzentren Europas – vom niederländischen <strong>Westland</strong> über den <strong>Niederrhein (Straelen)</strong> bis zum bayerischen <strong>Knoblauchsland (Nürnberg)</strong> – vollzieht sich ein technologischer Paradigmenwechsel. Konventionelle, regelbasierte PID-Klimacomputer (wie Priva Connext oder Hoogendoorn iGro) arbeiten mit starren Sollwertkurven und P-Bändern. Die <strong>KI-gestützte modellprädiktive Regelung (Model Predictive Control, MPC)</strong> hingegen begreift das Gewächshaus als dynamisches, multivariables thermodynamisches System (MIMO). Unter Einbeziehung hochauflösender 24- bis 48-Stunden-Wetterprognosen und volatiler Strom-Spotmarktpreise optimiert sie Stellglieder kontinuierlich auf maximalen Deckungsbeitrag bei minimiertem Pilzdruck.</p>
+
+      <h2>1. Physikalische Zustandsraum-Modellierung der Energiebilanz</h2>
+      <p>Das Mikroklima eines Venlo-Gewächshauses lässt sich durch gekoppelte Differentialgleichungen beschreiben. Die instationäre Lufttemperatur ($T_{in}$) wird durch Rohrleitungsheizung, solare Einstrahlung, Transmissionsverluste der Hülle und Lüftungswärmeaustausch bestimmt:</p>
+      <div class="code-box">
+        <code>C_{air} \cdot V \cdot \frac{dT_{in}}{dt} = \dot{Q}_{rohr}(t) + \eta_{rad} \cdot I_{solar}(t) \cdot A_{boden} - U_{ges}(t) \cdot A_{dach} \cdot (T_{in} - T_{out}) - \rho_{air} c_p \dot{V}_{lueft}(t) \cdot (T_{in} - T_{out})</code>
+      </div>
+      <p>Hierbei bedeuten:</p>
+      <ul>
+        <li><strong>$C_{air} \cdot V$</strong>: Effektive thermische Gesamtkapazität des Gewächshausluftvolumens ($J/K$).</li>
+        <li><strong>$\dot{Q}_{rohr}(t)$</strong>: Wärmeleistung der Rohrheizung ($W$).</li>
+        <li><strong>$U_{ges}(t)$</strong>: Dynamischer Wärmedurchgangskoeffizient ($W/m^2\cdot K$), der bei Schließen doppelter Energieschirme (z. B. Svensson Luxous + Obscura) von $6{,}5\text{ W}/m^2\text{K}$ (Einfachglas 4 mm) auf unter $2{,}2\text{ W}/m^2\text{K}$ absinkt.</li>
+        <li><strong>$\dot{V}_{lueft}(t)$</strong>: Natürlicher Volumenstrom durch Firstlüftungsklappen infolge von Auftriebs- und Winddruckeffekten ($m^3/s$).</li>
+      </ul>
+
+      <h2>2. Feuchtehaushalt, Transpiration & Dampfdruckdefizit (VPD)</h2>
+      <p>Die pflanzliche Transpiration stellt eine gewaltige latente Wärmesenke dar. Die absolute Luftfeuchtigkeit ($x_{in}$, $kg_{wasser}/kg_{luft}$) folgt der stomatären Verdunstung der Bestandesoberfläche und dem Lüftungswechsel:</p>
+      <div class="code-box">
+        <code>\rho_{air} V \cdot \frac{dx_{in}}{dt} = E_{trans}(LAI, VPD_{blatt}, I_{solar}) - \rho_{air} \dot{V}_{lueft}(t) \cdot (x_{in} - x_{out})</code>
+      </div>
+      <p>Ein herkömmlicher Regler öffnet die Lüftung oft erst reaktiv bei Überschreiten von 85 % relativer Feuchte, was im Winter zu hohen Wärmeverlusten führt. Der MPC-Algorithmus antizipiert das abendliche Absinken der Außentemperatur und den Taupunkt. Er führt bereits 45 Minuten vor Sonnenuntergang eine kurze, kontrollierte Trockenlüftung durch und stabilisiert das VPD im physiologischen Optimum ($0{,}8–1{,}2\text{ kPa}$), ohne Kälteschocks an Triebspitzen zu provozieren.</p>
+
+      <h2>3. Nichtlineare multikriterielle Kostenfunktion der MPC</h2>
+      <p>In jedem Abtastschritt (z. B. alle 5 Minuten) löst die MPC ein numerisches Optimierungsproblem über den Prädiktionshorizont $H_p$:</p>
+      <div class="code-box">
+        <code>\min_{u \in \mathcal{U}} \int_{t}^{t+H_p} \left[ C_{gas}(\tau) \cdot \dot{Q}_{heiz}(\tau) + C_{strom}(\tau) \cdot P_{led}(\tau) + C_{co2} \cdot \dot{m}_{co2}(\tau) - P_{ertrag} \cdot \frac{d\text{Biomasse}}{d\tau}(A_{net}) \right] d\tau + \sum \text{Strafunktionen}</code>
+      </div>
+      <p>Unter Einhaltung agronomischer Randbedingungen:</p>
+      <ul>
+        <li>$T_{min} \le T_{in}(\tau) \le T_{max}$ (z. B. $15^\circ\text{C} \le T_{in} \le 27^\circ\text{C}$ für Tomatenkultur).</li>
+        <li>$0{,}5\text{ kPa} \le VPD(\tau) \le 1{,}5\text{ kPa}$ (Hemmung von Botrytis cinerea und Schutz vor Stomataschluss).</li>
+        <li>$\Delta T / \Delta t \le 2{,}0^\circ\text{C} / \text{Stunde}$ (Vermeidung von Platzen der Früchte durch thermische Schocks).</li>
+      </ul>
+
+      <h2>4. Dynamische Einbindung von Strombörsen-Preisen (EPEX SPOT)</h2>
+      <p>In Gewächshäusern mit LED-Assimilationsbelichtung (200–350 $\mu\text{mol}/m^2\cdot s$) ist Strom der größte variable Kostenfaktor. Durch Anbindung an die <strong>EPEX SPOT Day-Ahead-Stundenauktion</strong> verlagert die MPC energieintensive Belichtungszeiten automatisch in günstige Nacht- oder Mittagsstunden (hoher PV-Überschuss) und dimmt Leuchten während teurer Spitzenlastzeiten. Dadurch sinken die Stromkosten der Belichtung um 18–26 % bei unverändertem Tageslichtintegral (DLI).</p>
+
+      <h2>5. Gegenüberstellung: Konventioneller PID-Regler vs. KI-MPC</h2>
+      <table style="width:100%; border-collapse:collapse; margin:20px 0; color:#e2e8f0; font-size:0.95rem;">
+        <thead>
+          <tr style="border-bottom:2px solid #3b82f6; background:#1e293b; text-align:left;">
+            <th style="padding:10px;">Parameter / Kriterium</th>
+            <th style="padding:10px;">Konventioneller PID-Klimacomputer</th>
+            <th style="padding:10px;">KI-Modellprädiktive Regelung (MPC)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid #334155;">
+            <td style="padding:10px;"><strong>Regelprinzip</strong></td>
+            <td style="padding:10px;">Reaktive Rückkopplung bei Abweichung ($e = W - X$)</td>
+            <td style="padding:10px;">Proaktive Vorausschau über 24–48 h Horizont</td>
+          </tr>
+          <tr style="border-bottom:1px solid #334155;">
+            <td style="padding:10px;"><strong>Wetterstörungen</strong></td>
+            <td style="padding:10px;">Reagiert erst nach Absinken der Innentemperatur</td>
+            <td style="padding:10px;">Vorheizen/Vorkühlen nach Einstrahlungsprognose</td>
+          </tr>
+          <tr style="border-bottom:1px solid #334155;">
+            <td style="padding:10px;"><strong>Primärenergieverbrauch</strong></td>
+            <td style="padding:10px;">Referenzbasis ($100\,\%$)</td>
+            <td style="padding:10px;"><strong>14 bis 22 % Einsparung</strong> bei Heizenergie</td>
+          </tr>
+          <tr style="border-bottom:1px solid #334155;">
+            <td style="padding:10px;"><strong>Trockenmasseertrag</strong></td>
+            <td style="padding:10px;">Standard-Saisonertrag</td>
+            <td style="padding:10px;"><strong>+5 bis +11 % Ertragssteigerung</strong></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>6. Weiterführende Berechnungswerkzeuge</h2>
+      <p>Nutzen Sie unsere interaktiven thermodynamischen Rechner zur Auslegung von Gewächshaustechnik:</p>
+      <p>
+        <a href="../../tools/greenhouse-heating-load-thermal-screen-calculator.html" class="cta-button" style="display:inline-block; padding:12px 24px; background:#0284c7; color:white; border-radius:8px; text-decoration:none; font-weight:700; margin-right:12px;">🌡️ Heizlast- & Energieschirm-Rechner</a>
+        <a href="../../tools/greenhouse-co2-enrichment-calculator.html" class="cta-button" style="display:inline-block; padding:12px 24px; background:#059669; color:white; border-radius:8px; text-decoration:none; font-weight:700;">💨 CO2-Begasungs- & Photosynthese-Rechner</a>
+      </p>
+    </div>
+  </article>
+</body>
+</html>
