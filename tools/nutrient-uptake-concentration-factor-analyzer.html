@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    <meta name="google-adsense-account" content="ca-pub-8597809158257497">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greenhouse Nutrient Uptake Concentration Factor (UCF) & Drain-to-Waste Analyzer | Inwoovation</title>
+  <meta name="description" content="Model nutrient uptake concentration factors in recirculating and drain-to-waste hydroponic systems. Simulate EC drift, ion accumulation, and optimal drain fraction for greenhouse crops.">
+  <link rel="canonical" href="https://inwoovation.com/tools/nutrient-uptake-concentration-factor-analyzer.html" />
+  <link rel="stylesheet" href="css/digital_twin_styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+
+  <style>
+    .calc-card {
+      background: rgba(30, 41, 59, 0.85);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+    .calc-card h2 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin: 0 0 16px 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .calc-card h2 .icon { font-size: 1.3rem; }
+    .param-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+    }
+    .param-group { display: flex; flex-direction: column; gap: 4px; }
+    .param-group label {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .param-group input, .param-group select {
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 8px;
+      padding: 10px 12px;
+      color: var(--text-main);
+      font-family: var(--font-mono);
+      font-size: 0.95rem;
+      transition: border-color 0.2s;
+    }
+    .param-group input:focus, .param-group select:focus {
+      outline: none;
+      border-color: var(--accent-cyan);
+      box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.15);
+    }
+    .btn-compute {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 28px;
+      background: linear-gradient(135deg, #10b981, #06b6d4);
+      border: none;
+      border-radius: 10px;
+      color: #fff;
+      font-family: var(--font-sans);
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      margin-top: 16px;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .btn-compute:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(16, 185, 129, 0.35);
+    }
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+    .result-card {
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 16px;
+      text-align: center;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .result-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--accent-cyan);
+    }
+    .result-card .label {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 600;
+    }
+    .result-card .value {
+      font-family: var(--font-mono);
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin: 6px 0 2px 0;
+    }
+    .result-card .unit {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+    .status-ok { color: var(--accent-emerald); }
+    .status-warn { color: var(--accent-amber); }
+    .status-danger { color: var(--accent-rose); }
+
+    /* Chart area */
+    .chart-container {
+      position: relative;
+      width: 100%;
+      height: 320px;
+      background: rgba(15, 23, 42, 0.7);
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      overflow: hidden;
+      margin-top: 16px;
+    }
+    .chart-canvas { width: 100%; height: 100%; }
+
+    /* Ion UCF Table */
+    .ucf-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 16px;
+      font-size: 0.88rem;
+    }
+    .ucf-table th, .ucf-table td {
+      padding: 10px 14px;
+      text-align: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .ucf-table th {
+      background: rgba(15, 23, 42, 0.8);
+      color: var(--accent-cyan);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      font-size: 0.75rem;
+    }
+    .ucf-table td { font-family: var(--font-mono); }
+    .ucf-table tbody tr:hover {
+      background: rgba(6, 182, 212, 0.08);
+    }
+
+    /* Theory section */
+    .theory-card {
+      background: rgba(30, 41, 59, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin-top: 16px;
+      font-size: 0.9rem;
+      line-height: 1.7;
+      color: var(--text-muted);
+    }
+    .theory-card h3 {
+      color: var(--text-main);
+      font-size: 1rem;
+      margin: 0 0 8px 0;
+    }
+    .theory-card code {
+      background: rgba(6, 182, 212, 0.12);
+      color: var(--accent-cyan);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+    }
+    .formula-block {
+      background: rgba(15, 23, 42, 0.8);
+      border-left: 3px solid var(--accent-cyan);
+      padding: 12px 16px;
+      border-radius: 0 8px 8px 0;
+      margin: 12px 0;
+      font-family: var(--font-mono);
+      color: var(--text-main);
+      font-size: 0.88rem;
+      overflow-x: auto;
+    }
+    .crop-presets {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+    .preset-btn {
+      padding: 6px 14px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      background: rgba(15, 23, 42, 0.5);
+      border-radius: 20px;
+      color: var(--text-muted);
+      font-family: var(--font-sans);
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .preset-btn:hover, .preset-btn.active {
+      background: rgba(6, 182, 212, 0.15);
+      border-color: var(--accent-cyan);
+      color: var(--accent-cyan);
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+      margin-bottom: 16px;
+      transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--accent-cyan); }
+    .footer-note {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.78rem;
+      margin-top: 40px;
+      padding: 20px 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .footer-note a { color: var(--accent-cyan); text-decoration: none; }
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    @media (max-width: 768px) {
+      .two-col { grid-template-columns: 1fr; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Greenhouse Nutrient Uptake Concentration Factor (UCF) & Drain-to-Waste Analyzer",
+    "url": "https://inwoovation.com/tools/nutrient-uptake-concentration-factor-analyzer.html",
+    "description": "Model nutrient uptake concentration factors in recirculating and drain-to-waste hydroponic systems. Simulate EC drift, ion accumulation, and optimal drain fraction for greenhouse crops.",
+    "applicationCategory": "EducationalApplication, AgriculturalTool",
+    "operatingSystem": "All",
+    "author": {
+      "@type": "Person",
+      "name": "Inwoo Hwang"
+    },
+    "dateModified": "2026-09-05"
+  }
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8597809158257497" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div class="sim-container">
+  <a href="index.html" class="back-link">← Back to Engineering Tools Hub</a>
+
+  <div class="sim-header">
+    <h1>🔬 Nutrient Uptake Concentration Factor Analyzer</h1>
+    <p>Model ion-specific UCF dynamics in recirculating & drain-to-waste hydroponic systems</p>
+  </div>
+
+  <!-- CROP PRESET SELECTOR -->
+  <div class="calc-card">
+    <h2><span class="icon">🌱</span> Crop & System Configuration</h2>
+    <p style="color:var(--text-muted);font-size:0.85rem;margin:0 0 12px 0;">Select a crop preset or configure custom parameters. UCF = Uptake Concentration / Supply Concentration.</p>
+    <div class="crop-presets" id="cropPresets">
+      <button class="preset-btn active" data-crop="tomato" onclick="loadPreset('tomato')">🍅 Tomato</button>
+      <button class="preset-btn" data-crop="cucumber" onclick="loadPreset('cucumber')">🥒 Cucumber</button>
+      <button class="preset-btn" data-crop="pepper" onclick="loadPreset('pepper')">🌶️ Sweet Pepper</button>
+      <button class="preset-btn" data-crop="lettuce" onclick="loadPreset('lettuce')">🥬 Lettuce</button>
+      <button class="preset-btn" data-crop="strawberry" onclick="loadPreset('strawberry')">🍓 Strawberry</button>
+      <button class="preset-btn" data-crop="rose" onclick="loadPreset('rose')">🌹 Rose</button>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <!-- LEFT: Input Parameters -->
+    <div>
+      <!-- Supply Solution -->
+      <div class="calc-card">
+        <h2><span class="icon">💧</span> Supply Nutrient Solution (Fertigation)</h2>
+        <div class="param-grid">
+          <div class="param-group">
+            <label>Supply EC (dS/m)</label>
+            <input type="number" id="supplyEC" value="2.5" step="0.1" min="0.5" max="8" oninput="compute()">
+          </div>
+          <div class="param-group">
+            <label>Supply pH</label>
+            <input type="number" id="supplyPH" value="5.8" step="0.1" min="3.5" max="8" oninput="compute()">
+          </div>
+          <div class="param-group">
+            <label>Solution Temp (°C)</label>
+            <input type="number" id="solutionTemp" value="22" step="0.5" min="5" max="40" oninput="compute()">
+          </div>
+          <div class="param-group">
+            <label>Flow Rate (L/h)</label>
+            <input type="number" id="flowRate" value="3.0" step="0.1" min="0.5" max="20" oninput="compute()">
+          </div>
+        </div>
+      </div>
+
+      <!-- Ion Concentrations -->
+      <div class="calc-card">
+        <h2><span class="icon">⚗️</span> Supply Ion Concentrations (mmol/L)</h2>
+        <div class="param-grid">
+          <div class="param-group">
+            <label>NO₃⁻ (Nitrate)</label>
+            <input type="number" id="ionNO3" value="12.0" step="0.5" min="0" oninput="compute()">
+          </div>
+          <div class="param-group">
+            <label>K⁺ (Potassium)</label>
+            <input type="number" id="ionK" value="7.0" step="0.5" min="0" oninput="compute()">
+          </div>
+          <div class="param-group">
+            <label>Ca²⁺ (Calcium)</label>
+            <input type="number" id="ionCa" value="4.5" step="0.5" min="0" oninput="compute()">
+          </div>
+          <div class="param-group">
+            <label>Mg²⁺ (Magnesium)</label>
+            <input type="number" id="ionMg" value="1.5" step="0.25" min="0" oninput="compute()">
+          </div>
+          <div class="param-group">
+            <label>H₂PO₄⁻ (Phosphate)</label>
+            <input type="number" id="ionP" value="1.25" step="0.25" min="0" oninput="compute()">
+          </div>
+          <div class="param-group">
+            <label>SO₄²⁻ (Sulfate)</label>
+            <input type="number" id="ionSO4" value="1.5" step="0.25" min="0" oninput="compute()">
+          </div>
+          <div class="param-group">
+            <label>Na⁺ (Sodium)</label>
+            <input type="number" id="ionNa" value="0.5" step="0.1" min="0" oninput="compute()">
+          </div>
+          <div class="param-group">
+            <label>Cl⁻ (Chloride)</label>
+            <input type="number" id="ionCl" value="0.5" step="0.1" min="0" oninput="compute()">
+          </div>
+        </div>
+      </div>
+
+      <!-- System Parameters -->
+      <div class="calc-card">
+        <h2><span class="icon">🏭</span> System & Environment</h2>
+        <div class="param-grid">
+          <div class="param-group">
+            <label>System Type</label>
+            <select id="systemType" onchange="compute()">
+              <option value="recirculating">♻️ Recirculating (Closed)</option>
+              <option value="dtw">🚿 Drain-to-Waste (Open)</option>
+            </select>
+          </div>
+          <div class="param-group">
+            <label>Drain Fraction (%)</label>
+            <input type="number" id="drainFraction" value="30" step="5" min="5" max="80" oninput="compute()">
+          </div>
+          <div class="param-group">
+            <label>Water Uptake (L/plant/day)</label>
+            <input type="number" id="waterUptake" value="1.8" step="0.1" min="0.2" max="8" oninput="compute()">
+          </div>
+          <div class="param-group">
+            <label>Recirculation Cycles</label>
+            <input type="number" id="recircCycles" value="5" step="1" min="1" max="20" oninput="compute()">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: Results & Chart -->
+    <div>
+      <!-- UCF Results -->
+      <div class="calc-card">
+        <h2><span class="icon">📊</span> Uptake Concentration Factor (UCF) Results</h2>
+        <div class="results-grid" id="ucfResults">
+          <!-- Dynamically populated -->
+        </div>
+      </div>
+
+      <!-- Drain Analysis -->
+      <div class="calc-card">
+        <h2><span class="icon">🔄</span> Drain Solution Analysis</h2>
+        <div class="results-grid" id="drainResults">
+          <!-- Dynamically populated -->
+        </div>
+      </div>
+
+      <!-- EC Drift Chart -->
+      <div class="calc-card">
+        <h2><span class="icon">📈</span> EC Drift Over Recirculation Cycles</h2>
+        <div class="chart-container">
+          <canvas id="ecDriftChart" class="chart-canvas"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- UCF Detailed Table -->
+  <div class="calc-card">
+    <h2><span class="icon">🧪</span> Ion-Specific UCF & Accumulation Risk Matrix</h2>
+    <table class="ucf-table" id="ucfTable">
+      <thead>
+        <tr>
+          <th>Ion</th>
+          <th>Supply (mmol/L)</th>
+          <th>Plant Uptake (mmol/L)</th>
+          <th>UCF</th>
+          <th>Drain (mmol/L)</th>
+          <th>Accumulation Risk</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="ucfTableBody">
+        <!-- Dynamically populated -->
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Theory Section -->
+  <div class="calc-card">
+    <h2><span class="icon">📖</span> Engineering Theory & Equations</h2>
+    <div class="theory-card">
+      <h3>Uptake Concentration Factor (UCF)</h3>
+      <p>The UCF describes the ratio at which a plant absorbs a specific nutrient relative to water. It is defined as the ratio of ion concentration in the plant uptake solution to the ion concentration in the supply solution:</p>
+      <div class="formula-block">
+        UCF<sub>ion</sub> = C<sub>uptake,ion</sub> / C<sub>supply,ion</sub>
+      </div>
+      <p>When <code>UCF > 1.0</code>, the plant preferentially absorbs that ion (active uptake), causing its concentration in the drain to decrease. When <code>UCF < 1.0</code>, the ion accumulates in the root zone and drain solution (passive exclusion).</p>
+
+      <h3>Drain EC Estimation</h3>
+      <p>For recirculating systems, the drain EC increases with each cycle as excluded ions (Na⁺, Cl⁻, SO₄²⁻) accumulate:</p>
+      <div class="formula-block">
+        EC<sub>drain</sub> ≈ EC<sub>supply</sub> × (1 / DF) × Σ(C<sub>ion</sub> × (1 - UCF<sub>ion</sub>))
+      </div>
+      <p>Where <code>DF</code> = Drain Fraction (volume drain / volume supplied). Typical greenhouse drain fractions range from 20-40% depending on substrate, climate, and crop.</p>
+
+      <h3>Temperature Correction</h3>
+      <p>EC readings are temperature-dependent. The standard reference is 25°C. The correction factor is approximately:</p>
+      <div class="formula-block">
+        EC<sub>25°C</sub> = EC<sub>measured</sub> / (1 + 0.02 × (T - 25))
+      </div>
+      <p>where <code>T</code> is the solution temperature in °C and <code>0.02</code> is the approximate coefficient for most nutrient solutions.</p>
+
+      <h3>Sodium Accumulation Threshold</h3>
+      <p>In recirculating systems, Na⁺ accumulates because plants have near-zero uptake (UCF ≈ 0.05). The critical threshold for most greenhouse crops is <code>Na⁺ < 8 mmol/L</code> in drain. When exceeded, the system must be partially or fully flushed.</p>
+    </div>
+  </div>
+
+  <div class="footer-note">
+    <p>© 2026 <a href="https://inwoovation.com">Inwoovation</a> — Precision Greenhouse Engineering Intelligence</p>
+    <p>Based on Sonneveld & Voogt (2009) methodology. Not a substitute for professional lab analysis.</p>
+  </div>
+</div>
+
+<script>
+  // Crop-specific UCF presets (Sonneveld & Voogt, 2009; De Kreij et al., 1999)
+  const CROP_DATA = {
+    tomato: {
+      name: 'Tomato (Solanum lycopersicum)',
+      ucf: { NO3: 0.85, K: 0.90, Ca: 0.55, Mg: 0.40, P: 0.70, SO4: 0.30, Na: 0.05, Cl: 0.10 },
+      supply: { EC: 2.5, pH: 5.8, NO3: 12.0, K: 7.0, Ca: 4.5, Mg: 1.5, P: 1.25, SO4: 1.5, Na: 0.5, Cl: 0.5 },
+      waterUptake: 1.8
+    },
+    cucumber: {
+      name: 'Cucumber (Cucumis sativus)',
+      ucf: { NO3: 0.95, K: 1.05, Ca: 0.45, Mg: 0.35, P: 0.80, SO4: 0.25, Na: 0.04, Cl: 0.08 },
+      supply: { EC: 2.2, pH: 5.5, NO3: 14.0, K: 7.5, Ca: 3.75, Mg: 1.25, P: 1.5, SO4: 1.25, Na: 0.3, Cl: 0.3 },
+      waterUptake: 2.2
+    },
+    pepper: {
+      name: 'Sweet Pepper (Capsicum annuum)',
+      ucf: { NO3: 0.80, K: 0.85, Ca: 0.50, Mg: 0.38, P: 0.65, SO4: 0.28, Na: 0.04, Cl: 0.08 },
+      supply: { EC: 2.8, pH: 5.8, NO3: 13.0, K: 6.5, Ca: 4.0, Mg: 1.75, P: 1.0, SO4: 1.75, Na: 0.5, Cl: 0.5 },
+      waterUptake: 1.5
+    },
+    lettuce: {
+      name: 'Lettuce (Lactuca sativa)',
+      ucf: { NO3: 0.70, K: 0.95, Ca: 0.60, Mg: 0.50, P: 0.55, SO4: 0.20, Na: 0.06, Cl: 0.12 },
+      supply: { EC: 1.5, pH: 6.0, NO3: 10.0, K: 6.0, Ca: 3.0, Mg: 1.0, P: 1.0, SO4: 1.0, Na: 0.3, Cl: 0.3 },
+      waterUptake: 0.8
+    },
+    strawberry: {
+      name: 'Strawberry (Fragaria × ananassa)',
+      ucf: { NO3: 0.75, K: 0.80, Ca: 0.45, Mg: 0.35, P: 0.60, SO4: 0.25, Na: 0.03, Cl: 0.07 },
+      supply: { EC: 1.8, pH: 5.8, NO3: 9.0, K: 5.5, Ca: 3.5, Mg: 1.0, P: 1.0, SO4: 1.0, Na: 0.3, Cl: 0.3 },
+      waterUptake: 1.2
+    },
+    rose: {
+      name: 'Rose (Rosa spp.)',
+      ucf: { NO3: 0.88, K: 0.82, Ca: 0.48, Mg: 0.42, P: 0.72, SO4: 0.32, Na: 0.05, Cl: 0.09 },
+      supply: { EC: 2.0, pH: 5.5, NO3: 11.0, K: 5.0, Ca: 3.5, Mg: 1.5, P: 1.25, SO4: 1.5, Na: 0.3, Cl: 0.3 },
+      waterUptake: 1.4
+    }
+  };
+
+  let currentCrop = 'tomato';
+
+  function loadPreset(cropKey) {
+    currentCrop = cropKey;
+    const crop = CROP_DATA[cropKey];
+    document.querySelectorAll('.preset-btn').forEach(btn => btn.classList.remove('active'));
+    document.querySelector(`[data-crop="${cropKey}"]`).classList.add('active');
+
+    document.getElementById('supplyEC').value = crop.supply.EC;
+    document.getElementById('supplyPH').value = crop.supply.pH;
+    document.getElementById('ionNO3').value = crop.supply.NO3;
+    document.getElementById('ionK').value = crop.supply.K;
+    document.getElementById('ionCa').value = crop.supply.Ca;
+    document.getElementById('ionMg').value = crop.supply.Mg;
+    document.getElementById('ionP').value = crop.supply.P;
+    document.getElementById('ionSO4').value = crop.supply.SO4;
+    document.getElementById('ionNa').value = crop.supply.Na;
+    document.getElementById('ionCl').value = crop.supply.Cl;
+    document.getElementById('waterUptake').value = crop.waterUptake;
+    compute();
+  }
+
+  function getInputs() {
+    return {
+      supplyEC: parseFloat(document.getElementById('supplyEC').value) || 2.5,
+      supplyPH: parseFloat(document.getElementById('supplyPH').value) || 5.8,
+      solutionTemp: parseFloat(document.getElementById('solutionTemp').value) || 22,
+      flowRate: parseFloat(document.getElementById('flowRate').value) || 3.0,
+      systemType: document.getElementById('systemType').value,
+      drainFraction: parseFloat(document.getElementById('drainFraction').value) / 100 || 0.3,
+      waterUptake: parseFloat(document.getElementById('waterUptake').value) || 1.8,
+      recircCycles: parseInt(document.getElementById('recircCycles').value) || 5,
+      ions: {
+        NO3: parseFloat(document.getElementById('ionNO3').value) || 12,
+        K: parseFloat(document.getElementById('ionK').value) || 7,
+        Ca: parseFloat(document.getElementById('ionCa').value) || 4.5,
+        Mg: parseFloat(document.getElementById('ionMg').value) || 1.5,
+        P: parseFloat(document.getElementById('ionP').value) || 1.25,
+        SO4: parseFloat(document.getElementById('ionSO4').value) || 1.5,
+        Na: parseFloat(document.getElementById('ionNa').value) || 0.5,
+        Cl: parseFloat(document.getElementById('ionCl').value) || 0.5
+      }
+    };
+  }
+
+  function compute() {
+    const inp = getInputs();
+    const ucf = CROP_DATA[currentCrop].ucf;
+    const DF = inp.drainFraction;
+
+    // Temperature-corrected EC
+    const tempCorrFactor = 1 + 0.02 * (inp.solutionTemp - 25);
+    const ecCorrected = inp.supplyEC / tempCorrFactor;
+
+    // Calculate drain concentrations for each ion
+    const ionNames = ['NO3', 'K', 'Ca', 'Mg', 'P', 'SO4', 'Na', 'Cl'];
+    const ionLabels = {
+      NO3: 'NO₃⁻', K: 'K⁺', Ca: 'Ca²⁺', Mg: 'Mg²⁺',
+      P: 'H₂PO₄⁻', SO4: 'SO₄²⁻', Na: 'Na⁺', Cl: 'Cl⁻'
+    };
+    const ionResults = {};
+
+    ionNames.forEach(ion => {
+      const supply = inp.ions[ion];
+      const uptakeConc = supply * ucf[ion];
+      // Mass balance: supply * (1 - DF) = uptake; drain = supply - uptake * (1-DF)/DF
+      // Simplified: drain_conc = supply * (1 - ucf * (1 - DF)) / DF
+      const drainConc = supply * (1 - ucf[ion] * (1 - DF)) / DF;
+      ionResults[ion] = {
+        supply: supply,
+        uptakeConc: uptakeConc,
+        ucfValue: ucf[ion],
+        drainConc: Math.max(0, drainConc),
+        label: ionLabels[ion]
+      };
+    });
+
+    // Overall drain EC estimate (simplified: proportional to total ion concentration)
+    const totalSupplyIons = ionNames.reduce((sum, ion) => sum + inp.ions[ion], 0);
+    const totalDrainIons = ionNames.reduce((sum, ion) => sum + ionResults[ion].drainConc, 0);
+    const drainEC = ecCorrected * (totalDrainIons / totalSupplyIons);
+
+    // Recirculation EC drift simulation
+    const ecDriftData = [ecCorrected];
+    let currentEC = ecCorrected;
+    for (let cycle = 1; cycle <= inp.recircCycles; cycle++) {
+      if (inp.systemType === 'recirculating') {
+        // Each cycle, excluded ions accumulate
+        const accumulationFactor = 1 + (1 - DF) * 0.08 * cycle;
+        currentEC = ecCorrected * accumulationFactor;
+      } else {
+        // DTW: EC stays relatively stable
+        currentEC = ecCorrected * (1 + 0.01 * cycle);
+      }
+      ecDriftData.push(currentEC);
+    }
+
+    // Render UCF result cards
+    const ucfResultsEl = document.getElementById('ucfResults');
+    ucfResultsEl.innerHTML = '';
+    const keyIons = ['NO3', 'K', 'Ca', 'Na'];
+    keyIons.forEach(ion => {
+      const r = ionResults[ion];
+      const statusClass = r.ucfValue >= 0.7 ? 'status-ok' : (r.ucfValue >= 0.3 ? 'status-warn' : 'status-danger');
+      ucfResultsEl.innerHTML += `
+        <div class="result-card">
+          <div class="label">${r.label} UCF</div>
+          <div class="value ${statusClass}">${r.ucfValue.toFixed(2)}</div>
+          <div class="unit">${r.ucfValue >= 0.7 ? 'Active Uptake' : (r.ucfValue >= 0.3 ? 'Moderate' : 'Exclusion Risk')}</div>
+        </div>`;
+    });
+
+    // Drain results
+    const drainResultsEl = document.getElementById('drainResults');
+    drainResultsEl.innerHTML = `
+      <div class="result-card">
+        <div class="label">Drain EC (est.)</div>
+        <div class="value ${drainEC < 4 ? 'status-ok' : (drainEC < 6 ? 'status-warn' : 'status-danger')}">${drainEC.toFixed(1)}</div>
+        <div class="unit">dS/m @ 25°C</div>
+      </div>
+      <div class="result-card">
+        <div class="label">EC Temp-Corrected</div>
+        <div class="value status-ok">${ecCorrected.toFixed(2)}</div>
+        <div class="unit">dS/m → 25°C ref</div>
+      </div>
+      <div class="result-card">
+        <div class="label">Na⁺ in Drain</div>
+        <div class="value ${ionResults.Na.drainConc < 5 ? 'status-ok' : (ionResults.Na.drainConc < 8 ? 'status-warn' : 'status-danger')}">${ionResults.Na.drainConc.toFixed(1)}</div>
+        <div class="unit">mmol/L (max 8)</div>
+      </div>
+      <div class="result-card">
+        <div class="label">Water Efficiency</div>
+        <div class="value status-ok">${((1 - DF) * 100).toFixed(0)}%</div>
+        <div class="unit">uptake / supplied</div>
+      </div>`;
+
+    // Detailed UCF table
+    const tbody = document.getElementById('ucfTableBody');
+    tbody.innerHTML = '';
+    ionNames.forEach(ion => {
+      const r = ionResults[ion];
+      const risk = r.ucfValue < 0.15 ? '🔴 High Accumulation' :
+                   r.ucfValue < 0.4  ? '🟡 Moderate' :
+                   r.ucfValue < 0.8  ? '🟢 Balanced' : '🔵 Preferential Uptake';
+      const action = r.ucfValue < 0.15 ? 'Flush / reduce supply' :
+                     r.ucfValue < 0.4  ? 'Monitor drain closely' :
+                     r.ucfValue < 0.8  ? 'Maintain current' : 'May increase slightly';
+      tbody.innerHTML += `<tr>
+        <td><strong>${r.label}</strong></td>
+        <td>${r.supply.toFixed(2)}</td>
+        <td>${r.uptakeConc.toFixed(2)}</td>
+        <td style="color:${r.ucfValue >= 0.7 ? 'var(--accent-emerald)' : r.ucfValue >= 0.3 ? 'var(--accent-amber)' : 'var(--accent-rose)'}; font-weight:700">${r.ucfValue.toFixed(2)}</td>
+        <td>${r.drainConc.toFixed(2)}</td>
+        <td>${risk}</td>
+        <td style="font-family:var(--font-sans);font-size:0.82rem;color:var(--text-muted)">${action}</td>
+      </tr>`;
+    });
+
+    // Draw EC drift chart
+    drawECChart(ecDriftData, inp.recircCycles);
+  }
+
+  function drawECChart(data, cycles) {
+    const canvas = document.getElementById('ecDriftChart');
+    const ctx = canvas.getContext('2d');
+    const dpr = window.devicePixelRatio || 1;
+
+    canvas.width = canvas.offsetWidth * dpr;
+    canvas.height = canvas.offsetHeight * dpr;
+    ctx.scale(dpr, dpr);
+
+    const W = canvas.offsetWidth;
+    const H = canvas.offsetHeight;
+    const pad = { t: 30, r: 30, b: 50, l: 60 };
+    const plotW = W - pad.l - pad.r;
+    const plotH = H - pad.t - pad.b;
+
+    // Clear
+    ctx.clearRect(0, 0, W, H);
+
+    // Determine Y range
+    const maxEC = Math.max(...data) * 1.15;
+    const minEC = Math.min(...data) * 0.85;
+
+    // Grid
+    ctx.strokeStyle = 'rgba(255,255,255,0.06)';
+    ctx.lineWidth = 1;
+    for (let i = 0; i <= 5; i++) {
+      const y = pad.t + (plotH / 5) * i;
+      ctx.beginPath();
+      ctx.moveTo(pad.l, y);
+      ctx.lineTo(W - pad.r, y);
+      ctx.stroke();
+    }
+
+    // Axes labels
+    ctx.fillStyle = '#94a3b8';
+    ctx.font = '11px Inter, sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText('Recirculation Cycle', W / 2, H - 8);
+    ctx.save();
+    ctx.translate(16, H / 2);
+    ctx.rotate(-Math.PI / 2);
+    ctx.fillText('EC (dS/m)', 0, 0);
+    ctx.restore();
+
+    // Y-axis ticks
+    ctx.textAlign = 'right';
+    for (let i = 0; i <= 5; i++) {
+      const val = minEC + ((maxEC - minEC) / 5) * (5 - i);
+      const y = pad.t + (plotH / 5) * i;
+      ctx.fillText(val.toFixed(1), pad.l - 8, y + 4);
+    }
+
+    // X-axis ticks
+    ctx.textAlign = 'center';
+    for (let i = 0; i < data.length; i++) {
+      const x = pad.l + (plotW / (data.length - 1)) * i;
+      ctx.fillText(i.toString(), x, H - pad.b + 20);
+    }
+
+    // Warning zone (EC > 5)
+    if (maxEC > 5) {
+      const warningY = pad.t + plotH * (1 - (5 - minEC) / (maxEC - minEC));
+      ctx.fillStyle = 'rgba(244, 63, 94, 0.06)';
+      ctx.fillRect(pad.l, pad.t, plotW, warningY - pad.t);
+      ctx.fillStyle = 'rgba(244, 63, 94, 0.5)';
+      ctx.font = '10px Inter, sans-serif';
+      ctx.textAlign = 'left';
+      ctx.fillText('⚠ EC > 5.0 dS/m', pad.l + 6, warningY - 4);
+    }
+
+    // Draw line
+    ctx.beginPath();
+    ctx.strokeStyle = '#06b6d4';
+    ctx.lineWidth = 2.5;
+    ctx.lineJoin = 'round';
+    data.forEach((ec, i) => {
+      const x = pad.l + (plotW / (data.length - 1)) * i;
+      const y = pad.t + plotH * (1 - (ec - minEC) / (maxEC - minEC));
+      if (i === 0) ctx.moveTo(x, y);
+      else ctx.lineTo(x, y);
+    });
+    ctx.stroke();
+
+    // Gradient fill under line
+    const gradient = ctx.createLinearGradient(0, pad.t, 0, pad.t + plotH);
+    gradient.addColorStop(0, 'rgba(6, 182, 212, 0.2)');
+    gradient.addColorStop(1, 'rgba(6, 182, 212, 0.01)');
+    ctx.lineTo(pad.l + plotW, pad.t + plotH);
+    ctx.lineTo(pad.l, pad.t + plotH);
+    ctx.closePath();
+    ctx.fillStyle = gradient;
+    ctx.fill();
+
+    // Data points
+    data.forEach((ec, i) => {
+      const x = pad.l + (plotW / (data.length - 1)) * i;
+      const y = pad.t + plotH * (1 - (ec - minEC) / (maxEC - minEC));
+      ctx.beginPath();
+      ctx.arc(x, y, 5, 0, Math.PI * 2);
+      ctx.fillStyle = ec > 5 ? '#f43f5e' : '#06b6d4';
+      ctx.fill();
+      ctx.strokeStyle = '#0f172a';
+      ctx.lineWidth = 2;
+      ctx.stroke();
+
+      // Value label
+      ctx.fillStyle = '#f8fafc';
+      ctx.font = '10px JetBrains Mono, monospace';
+      ctx.textAlign = 'center';
+      ctx.fillText(ec.toFixed(2), x, y - 12);
+    });
+  }
+
+  // Init
+  compute();
+  window.addEventListener('resize', compute);
+</script>
+
+</body>
+</html>
