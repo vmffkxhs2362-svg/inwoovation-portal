@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta name="google-adsense-account" content="ca-pub-8597809158257497">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>식물 기공 전도도(Stomatal Conductance)와 CO2 시비 농도의 상관관계 | Inwoovation Lab</title>
-    <meta name="description" content="온실 내부 이산화탄소(CO2) 농도를 800~1,000ppm으로 증대할 때 기공 전도도 및 광합성 효율(A-Ci Curve) 변화 조향.">
+    <title>Stomatal Conductance Dynamics & Farquhar-von Caemmerer-Berry (FvCB) Photosynthesis Coupling | Inwoovation Lab</title>
+    <meta name="description" content="Coupled Farquhar-von Caemmerer-Berry photosynthesis and Ball-Berry stomatal conductance models under elevated CO2 enrichment and light-saturated CEA canopies.">
     <link rel="canonical" href="https://inwoovation.com/articles/article-09-stomata-conductance-photosynthesis.html" />
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8597809158257497" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../styles.css">
@@ -22,21 +22,21 @@
     </style>
     <!-- Open Graph & Social SEO -->
     <meta property="og:type" content="article">
-    <meta property="og:title" content="식물 기공 전도도(Stomatal Conductance)와 CO2 시비 농도의 상관관계 | Inwoovation Lab">
-    <meta property="og:description" content="온실 내부 이산화탄소(CO2) 농도를 800~1,000ppm으로 증대할 때 기공 전도도 및 광합성 효율(A-Ci Curve) 변화 조향.">
+    <meta property="og:title" content="Stomatal Conductance Dynamics & Farquhar-von Caemmerer-Berry (FvCB) Photosynthesis Coupling | Inwoovation Lab">
+    <meta property="og:description" content="Coupled Farquhar-von Caemmerer-Berry photosynthesis and Ball-Berry stomatal conductance models under elevated CO2 enrichment and light-saturated CEA canopies.">
     <meta property="og:url" content="https://inwoovation.com/articles/article-09-stomata-conductance-photosynthesis.html">
     <meta property="og:site_name" content="Inwoovation Lab">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="식물 기공 전도도(Stomatal Conductance)와 CO2 시비 농도의 상관관계 | Inwoovation Lab">
-    <meta name="twitter:description" content="온실 내부 이산화탄소(CO2) 농도를 800~1,000ppm으로 증대할 때 기공 전도도 및 광합성 효율(A-Ci Curve) 변화 조향.">
+    <meta name="twitter:title" content="Stomatal Conductance Dynamics & Farquhar-von Caemmerer-Berry (FvCB) Photosynthesis Coupling | Inwoovation Lab">
+    <meta name="twitter:description" content="Coupled Farquhar-von Caemmerer-Berry photosynthesis and Ball-Berry stomatal conductance models under elevated CO2 enrichment and light-saturated CEA canopies.">
 
     <!-- JSON-LD TechArticle Structured Data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "TechArticle",
-      "headline": "식물 기공 전도도(Stomatal Conductance)와 CO2 시비 농도의 상관관계 | Inwoovation Lab",
-      "description": "온실 내부 이산화탄소(CO2) 농도를 800~1,000ppm으로 증대할 때 기공 전도도 및 광합성 효율(A-Ci Curve) 변화 조향.",
+      "headline": "Stomatal Conductance Dynamics & Farquhar-von Caemmerer-Berry (FvCB) Photosynthesis Coupling | Inwoovation Lab",
+      "description": "Coupled Farquhar-von Caemmerer-Berry photosynthesis and Ball-Berry stomatal conductance models under elevated CO2 enrichment and light-saturated CEA canopies.",
       "url": "https://inwoovation.com/articles/article-09-stomata-conductance-photosynthesis.html",
       "author": {
         "@type": "Person",
@@ -48,7 +48,7 @@
         "name": "Inwoovation Lab",
         "url": "https://inwoovation.com"
       },
-      "datePublished": "2026-08-30",
+      "datePublished": "2026-08-10",
       "dateModified": "2026-09-05",
       "mainEntityOfPage": "https://inwoovation.com/articles/article-09-stomata-conductance-photosynthesis.html"
     }
@@ -56,33 +56,36 @@
 </head>
 <body>
 <div class="container">
-    <a href="/" class="back-link">← 이노베이션 랩 메인으로 돌아가기</a>
+    <a href="/" class="back-link">← Return to Inwoovation Lab Home</a>
     <div class="article-container">
-        <h1>식물 기공 전도도(Stomatal Conductance)와 CO2 시비 농도의 상관관계</h1>
+        <h1>Stomatal Conductance Dynamics & Farquhar-von Caemmerer-Berry (FvCB) Photosynthesis Coupling</h1>
         <div class="article-meta">
-            <span>📅 2026-07-29</span>
-            <span>🏷️ 식물 생리학 & CO2 조향</span>
-            <span>✍️ Inwoovation Lab 연구팀</span>
+            <span>📅 2026-08-10</span>
+            <span>🏷️ Plant Biophysics & Modeling</span>
+            <span>✍️ Inwoovation Lab Research Team</span>
         </div>
         
-        <h2>1. 광합성의 제한 요인: 이산화탄소(CO2) 농도</h2>
-        <p>대기 중 CO2 농도는 약 415ppm 수준입니다. 그러나 주간 온실 내부에서 작물이 광합성을 시작하면 CO2 농도가 250ppm 이하로 급감하며 광합성의 극심한 율속 단계(Bottleneck)가 됩니다.</p>
+        <h2>1. Limiting Factors of Carbon Assimilation: The CO2 Saturation Plateau</h2>
+        <p>In high-intensity commercial crop production, light and carbon dioxide represent the primary substrates for the Calvin-Benson cycle. Ambient atmospheric CO₂ (~420 ppm) is biochemically rate-limiting for C3 greenhouse crops (tomatoes, cucumbers, peppers, strawberries). Supplying supplemental carbon dioxide up to 800–1,200 ppm elevates net CO₂ assimilation (\(A_{net}\)) by 25–40%, provided canopy stomata remain open and photosynthetically active.</p>
 
-        <h2>2. A-Ci 곡선과 Rubisco 활성화</h2>
-        <p>Rubisco 효소의 탄소 고정 효율을 극대화하기 위해 온실 CO2 시비를 수행합니다.</p>
+        <h2>2. The A-Ci Curve, Rubisco Carboxylation Kinetics, and Ball-Berry Stomatal Resistance</h2>
+        <p>The biochemical model of Farquhar, von Caemmerer, and Berry (FvCB) establishes that net carbon assimilation is limited by either Rubisco enzyme kinetics (\(W_c\)) or RuBP regeneration via electron transport (\(W_j\)):</p>
+        <p style="background:#f1f5f9; padding:15px; border-radius:8px; font-family:monospace; font-weight:bold;">
+        A_net = min(W_c, W_j) - R_d  [μmol/m²·s]<br>
+        W_c = V_cmax × [ (C_i - Γ*) ÷ (C_i + K_c·(1 + O_i / K_o)) ]<br>
+        g_s = g_0 + a_1 × [ (A_net × RH) ÷ C_s ]  [mol/m²·s]
+        </p>
+        <p>The Ball-Berry model couples stomatal conductance (\(g_s\)) directly with carbon assimilation (\(A_{net}\)), relative humidity (\(RH\)), and surface CO₂ concentration (\(C_s\)). Under high CO₂ concentrations, guard cells naturally decrease aperture to conserve water, yet internal intercellular carbon (\(C_i\)) remains high, drastically elevating instantaneous Water Use Efficiency (WUE).</p>
+
+        <h2>3. Engineering Daytime CO2 Dosing & Boundary Layer Exchange Optimization</h2>
         <ul>
-            <li><strong>외기 대기 농도 (400 ppm):</strong> 광합성 속도 기준 100%</li>
-            <li><strong>800 ppm 시비 시:</strong> 광합성 속도 135% ~ 150% 증대!</li>
-            <li><strong>1,200 ppm 초과 시:</strong> 기공 전도도가 급격히 감소하여 증산 작용 저하 및 잎 칼슘 결핍 유발.</li>
+            <li><strong>Ventilation Compromise:</strong> When greenhouse roof vents open above 15–20% to manage temperature, injected pure liquid CO₂ rapidly escapes into the atmosphere, making dosing economically unfeasible. Dosing is most cost-effective during morning closed-ventilation periods.</li>
+            <li><strong>Boundary Layer Scrubbing:</strong> Without active internal air movement, stagnant boundary layers (exceeding 3–5 mm) form over leaf surfaces, creating severe localized CO₂ depletion. Sustaining horizontal air circulation at \(0.3	ext{--}0.5	ext{ m/s}\) thins the leaf boundary layer, slashing diffusive resistance.</li>
         </ul>
-
-        <h2>3. 효율적인 주간 시비 가이드</h2>
-        <p>일출 후 1시간 뒤부터 환기창이 열리기 전까지 CO2를 750~900ppm 수준으로 펄스 시비하는 것이 가스 비용 대비 최대의 효과를 창출합니다.</p>
-        
     </div>
 </div>
 <footer>
-    <p>© 2026 Inwoovation Lab. All rights reserved. | <a href="/privacy-policy.html">개인정보 처리방침</a> | <a href="/terms-of-service.html">이용약관</a> | <a href="/about.html">소개</a> | <a href="/contact.html">문의</a> | <a href="/guides.html">공학 가이드</a></p>
+    <p>© 2026 Inwoovation Lab. All rights reserved. | <a href="/privacy-policy.html">Privacy Policy</a> | <a href="/terms-of-service.html">Terms of Service</a> | <a href="/about.html">About</a> | <a href="/contact.html">Contact</a> | <a href="https://forms.gle/SC3ehhA4r6sPEZxV7" target="_blank" style="color: #10b981; font-weight: 700;">Send Feedback 📩</a></p>
 </footer>
 </body>
 </html>

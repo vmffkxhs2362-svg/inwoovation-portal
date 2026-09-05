@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta name="google-adsense-account" content="ca-pub-8597809158257497">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>피복재별 온실 야간 열손실계수(U-value) 및 난방 에너지 절감 수식 | Inwoovation Lab</title>
-    <meta name="description" content="유리, 피에프(PF) 필름, 다중 PO 필름 등 온실 피복재의 관개 열손실 수식을 분석하고 야간 난방 유류비를 30% 절감하는 공학 가이드.">
+    <title>Greenhouse Envelope Peak Heat Loss Coefficients (U-Values) & Thermodynamic Thermal Screen Modeling | Inwoovation Lab</title>
+    <meta name="description" content="Engineering greenhouse heating loads using Q = U·A·ΔT heat transfer dynamics, cover glazing U-values, wind infiltration friction, and multilayer thermal curtain energy savings.">
     <link rel="canonical" href="https://inwoovation.com/articles/article-04-greenhouse-heating-loss.html" />
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8597809158257497" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../styles.css">
@@ -22,21 +22,21 @@
     </style>
     <!-- Open Graph & Social SEO -->
     <meta property="og:type" content="article">
-    <meta property="og:title" content="피복재별 온실 야간 열손실계수(U-value) 및 난방 에너지 절감 수식 | Inwoovation Lab">
-    <meta property="og:description" content="유리, 피에프(PF) 필름, 다중 PO 필름 등 온실 피복재의 관개 열손실 수식을 분석하고 야간 난방 유류비를 30% 절감하는 공학 가이드.">
+    <meta property="og:title" content="Greenhouse Envelope Peak Heat Loss Coefficients (U-Values) & Thermodynamic Thermal Screen Modeling | Inwoovation Lab">
+    <meta property="og:description" content="Engineering greenhouse heating loads using Q = U·A·ΔT heat transfer dynamics, cover glazing U-values, wind infiltration friction, and multilayer thermal curtain energy savings.">
     <meta property="og:url" content="https://inwoovation.com/articles/article-04-greenhouse-heating-loss.html">
     <meta property="og:site_name" content="Inwoovation Lab">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="피복재별 온실 야간 열손실계수(U-value) 및 난방 에너지 절감 수식 | Inwoovation Lab">
-    <meta name="twitter:description" content="유리, 피에프(PF) 필름, 다중 PO 필름 등 온실 피복재의 관개 열손실 수식을 분석하고 야간 난방 유류비를 30% 절감하는 공학 가이드.">
+    <meta name="twitter:title" content="Greenhouse Envelope Peak Heat Loss Coefficients (U-Values) & Thermodynamic Thermal Screen Modeling | Inwoovation Lab">
+    <meta name="twitter:description" content="Engineering greenhouse heating loads using Q = U·A·ΔT heat transfer dynamics, cover glazing U-values, wind infiltration friction, and multilayer thermal curtain energy savings.">
 
     <!-- JSON-LD TechArticle Structured Data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "TechArticle",
-      "headline": "피복재별 온실 야간 열손실계수(U-value) 및 난방 에너지 절감 수식 | Inwoovation Lab",
-      "description": "유리, 피에프(PF) 필름, 다중 PO 필름 등 온실 피복재의 관개 열손실 수식을 분석하고 야간 난방 유류비를 30% 절감하는 공학 가이드.",
+      "headline": "Greenhouse Envelope Peak Heat Loss Coefficients (U-Values) & Thermodynamic Thermal Screen Modeling | Inwoovation Lab",
+      "description": "Engineering greenhouse heating loads using Q = U·A·ΔT heat transfer dynamics, cover glazing U-values, wind infiltration friction, and multilayer thermal curtain energy savings.",
       "url": "https://inwoovation.com/articles/article-04-greenhouse-heating-loss.html",
       "author": {
         "@type": "Person",
@@ -48,7 +48,7 @@
         "name": "Inwoovation Lab",
         "url": "https://inwoovation.com"
       },
-      "datePublished": "2026-08-30",
+      "datePublished": "2026-07-30",
       "dateModified": "2026-09-05",
       "mainEntityOfPage": "https://inwoovation.com/articles/article-04-greenhouse-heating-loss.html"
     }
@@ -56,39 +56,39 @@
 </head>
 <body>
 <div class="container">
-    <a href="/" class="back-link">← 이노베이션 랩 메인으로 돌아가기</a>
+    <a href="/" class="back-link">← Return to Inwoovation Lab Home</a>
     <div class="article-container">
-        <h1>피복재별 온실 야간 열손실계수(U-value) 및 난방 에너지 절감 수식</h1>
+        <h1>Greenhouse Envelope Peak Heat Loss Coefficients (U-Values) & Thermodynamic Thermal Screen Modeling</h1>
         <div class="article-meta">
-            <span>📅 2026-07-29</span>
-            <span>🏷️ 온실 에너공학</span>
-            <span>✍️ Inwoovation Lab 연구팀</span>
+            <span>📅 2026-07-30</span>
+            <span>🏷️ Thermodynamics & Energy</span>
+            <span>✍️ Inwoovation Lab Research Team</span>
         </div>
         
-        <h2>1. 겨울철 온실 경영비의 적: 야간 열손실</h2>
-        <p>시설원예 농가의 겨울철 경영비 중 난방비 비율은 최대 40%에 달합니다. 온실 구조체의 열관류율(U-value)과 관개 열손실을 이해하면 난방 부하를 정밀하게 예측하고 절감할 수 있습니다.</p>
+        <h2>1. Winter CEA Energy Economics: Nocturnal Envelope Heat Loss Dynamics</h2>
+        <p>Heating energy represents up to 30–45% of total annual operational expenditure (OPEX) in commercial temperate and cold-climate greenhouses. At night, greenhouses function as uninsulated, high-surface-area thermodynamic radiators. Unlike traditional civil buildings with high thermal mass, protected agricultural structures feature thin glazing materials designed primarily for light transmission, making precise peak heat loss calculations critical for boiler capacity sizing and thermal curtain ROI evaluations.</p>
 
-        <h2>2. 온실 부하 계산 기본 수식</h2>
+        <h2>2. Fundamental Thermodynamic Heat Load Transfer Equations</h2>
+        <p>The steady-state nocturnal heat loss of a commercial greenhouse envelope is governed by Fourier's law of thermal conduction coupled with convective boundary layers and wind-induced air infiltration:</p>
         <p style="background:#f1f5f9; padding:15px; border-radius:8px; font-family:monospace; font-weight:bold;">
-        Q_total = (U × A × ΔT) + (V × N × C_p × ρ × ΔT)  [kcal/h or W]<br>
-        - U: 피복재 열관류율 (W/m²·K)<br>
-        - A: 온실 표면적 (m²)<br>
-        - ΔT: 설정 실내온도 - 외기온도 (K)<br>
-        - V: 온실 용적 (m³), N: 틈새 환기 횟수
+        Q_total = Q_transmission + Q_infiltration  [W]<br>
+        Q_transmission = ∑ (U_i × A_i) × (T_in - T_out)  [W]<br>
+        Q_infiltration = 0.33 × N_ach × V_gh × (T_in - T_out)  [W]
         </p>
+        <p>Where \(U_i\) is the overall heat transfer coefficient (W/m²·K), \(A_i\) is the exposed surface area (m²), \(T_{in} - T_{out}\) is the design temperature differential (\(\Delta T\)), \(N_{ach}\) is the air exchange rate per hour (ACH), and \(V_{gh}\) is the greenhouse volume (m³).</p>
 
-        <h2>3. 주요 피복재 및 다겹보온커튼의 U-value 비교</h2>
+        <h2>3. Glazing Material U-Values, Multilayer Thermal Curtains, and Infiltration Losses</h2>
         <ul>
-            <li><strong>단동 PE 필름 (Single PE):</strong> 6.0 W/m²·K (열손실 높음)</li>
-            <li><strong>이중 PO 필름 (Double PO Air-inflated):</strong> 3.5 W/m²·K</li>
-            <li><strong>단판 유리 (Single Glass):</strong> 5.8 W/m²·K</li>
-            <li><strong>5겹 다겹보온커튼 추가 시:</strong> 1.2 ~ 1.8 W/m²·K (열손실 70% 감소!)</li>
+            <li><strong>Single Polyethylene Film (150–200 μm):</strong> \(U pprox 6.0	ext{--}6.5	ext{ W/m²·K}\). High long-wave infrared transmission; susceptible to excessive radiative condensation loss.</li>
+            <li><strong>Double Poly Inflated (Air-Inflated Glazing):</strong> \(U pprox 3.2	ext{--}3.5	ext{ W/m²·K}\). Trapped 10 cm dead air barrier slashes thermal transmission by nearly 45%.</li>
+            <li><strong>Single Float Glass (4 mm Horticultural Glass):</strong> \(U pprox 5.8	ext{--}6.0	ext{ W/m²·K}\). High daylight transmittance (91%) but significant nocturnal conductive dissipation.</li>
+            <li><strong>Diffuse Double Glazing / Insulated Venlo:</strong> \(U pprox 2.8	ext{--}3.0	ext{ W/m²·K}\).</li>
+            <li><strong>High-Reflective Aluminum Thermal Screens:</strong> Deployment of multi-layer aluminum film screens reduces composite envelope U-values by 45–65%, reflecting thermal infrared radiation back into the crop canopy and creating an insulating micro-attic airspace.</li>
         </ul>
-        
     </div>
 </div>
 <footer>
-    <p>© 2026 Inwoovation Lab. All rights reserved. | <a href="/privacy-policy.html">개인정보 처리방침</a> | <a href="/terms-of-service.html">이용약관</a> | <a href="/about.html">소개</a> | <a href="/contact.html">문의</a> | <a href="/guides.html">공학 가이드</a></p>
+    <p>© 2026 Inwoovation Lab. All rights reserved. | <a href="/privacy-policy.html">Privacy Policy</a> | <a href="/terms-of-service.html">Terms of Service</a> | <a href="/about.html">About</a> | <a href="/contact.html">Contact</a> | <a href="https://forms.gle/SC3ehhA4r6sPEZxV7" target="_blank" style="color: #10b981; font-weight: 700;">Send Feedback 📩</a></p>
 </footer>
 </body>
 </html>

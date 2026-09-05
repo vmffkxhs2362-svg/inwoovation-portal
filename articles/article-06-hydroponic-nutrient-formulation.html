@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta name="google-adsense-account" content="ca-pub-8597809158257497">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>수경재배 양액 처방 원소 이온 농도(meq/L) 배합 원리 및 pH/EC 관리 | Inwoovation Lab</title>
-    <meta name="description" content="야마자키, 네덜란드 락울 연구소(PBG) 처방전을 바탕으로 다량원소(N, P, K, Ca, Mg, S) 당량 농도 연산법.">
+    <title>Molar Stoichiometry & Sonneveld/Steiner Ion Balancing (meq/L) in Closed-Loop Hydroponics | Inwoovation Lab</title>
+    <meta name="description" content="Precision closed-loop hydroponic nutrient balancing: milliequivalent calculations, Steiner cation-anion stoichiometry, salt solubility products, and rootzone pH/EC regulation.">
     <link rel="canonical" href="https://inwoovation.com/articles/article-06-hydroponic-nutrient-formulation.html" />
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8597809158257497" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../styles.css">
@@ -22,21 +22,21 @@
     </style>
     <!-- Open Graph & Social SEO -->
     <meta property="og:type" content="article">
-    <meta property="og:title" content="수경재배 양액 처방 원소 이온 농도(meq/L) 배합 원리 및 pH/EC 관리 | Inwoovation Lab">
-    <meta property="og:description" content="야마자키, 네덜란드 락울 연구소(PBG) 처방전을 바탕으로 다량원소(N, P, K, Ca, Mg, S) 당량 농도 연산법.">
+    <meta property="og:title" content="Molar Stoichiometry & Sonneveld/Steiner Ion Balancing (meq/L) in Closed-Loop Hydroponics | Inwoovation Lab">
+    <meta property="og:description" content="Precision closed-loop hydroponic nutrient balancing: milliequivalent calculations, Steiner cation-anion stoichiometry, salt solubility products, and rootzone pH/EC regulation.">
     <meta property="og:url" content="https://inwoovation.com/articles/article-06-hydroponic-nutrient-formulation.html">
     <meta property="og:site_name" content="Inwoovation Lab">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="수경재배 양액 처방 원소 이온 농도(meq/L) 배합 원리 및 pH/EC 관리 | Inwoovation Lab">
-    <meta name="twitter:description" content="야마자키, 네덜란드 락울 연구소(PBG) 처방전을 바탕으로 다량원소(N, P, K, Ca, Mg, S) 당량 농도 연산법.">
+    <meta name="twitter:title" content="Molar Stoichiometry & Sonneveld/Steiner Ion Balancing (meq/L) in Closed-Loop Hydroponics | Inwoovation Lab">
+    <meta name="twitter:description" content="Precision closed-loop hydroponic nutrient balancing: milliequivalent calculations, Steiner cation-anion stoichiometry, salt solubility products, and rootzone pH/EC regulation.">
 
     <!-- JSON-LD TechArticle Structured Data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "TechArticle",
-      "headline": "수경재배 양액 처방 원소 이온 농도(meq/L) 배합 원리 및 pH/EC 관리 | Inwoovation Lab",
-      "description": "야마자키, 네덜란드 락울 연구소(PBG) 처방전을 바탕으로 다량원소(N, P, K, Ca, Mg, S) 당량 농도 연산법.",
+      "headline": "Molar Stoichiometry & Sonneveld/Steiner Ion Balancing (meq/L) in Closed-Loop Hydroponics | Inwoovation Lab",
+      "description": "Precision closed-loop hydroponic nutrient balancing: milliequivalent calculations, Steiner cation-anion stoichiometry, salt solubility products, and rootzone pH/EC regulation.",
       "url": "https://inwoovation.com/articles/article-06-hydroponic-nutrient-formulation.html",
       "author": {
         "@type": "Person",
@@ -48,7 +48,7 @@
         "name": "Inwoovation Lab",
         "url": "https://inwoovation.com"
       },
-      "datePublished": "2026-08-30",
+      "datePublished": "2026-08-03",
       "dateModified": "2026-09-05",
       "mainEntityOfPage": "https://inwoovation.com/articles/article-06-hydroponic-nutrient-formulation.html"
     }
@@ -56,35 +56,37 @@
 </head>
 <body>
 <div class="container">
-    <a href="/" class="back-link">← 이노베이션 랩 메인으로 돌아가기</a>
+    <a href="/" class="back-link">← Return to Inwoovation Lab Home</a>
     <div class="article-container">
-        <h1>수경재배 양액 처방 원소 이온 농도(meq/L) 배합 원리 및 pH/EC 관리</h1>
+        <h1>Molar Stoichiometry & Sonneveld/Steiner Ion Balancing (meq/L) in Closed-Loop Hydroponics</h1>
         <div class="article-meta">
-            <span>📅 2026-07-29</span>
-            <span>🏷️ 양액 화학 & 생리학</span>
-            <span>✍️ Inwoovation Lab 연구팀</span>
+            <span>📅 2026-08-03</span>
+            <span>🏷️ Plant Nutrition & Chemistry</span>
+            <span>✍️ Inwoovation Lab Research Team</span>
         </div>
         
-        <h2>1. 수경재배 양액의 기본: 밀리당량(meq/L) 농도</h2>
-        <p>양액 재배에서 원소를 PPM(mg/L) 단위로만 계산하면 원자량과 전하량의 이온 균형이 깨질 수 있습니다. 따라서 이온 수 계산의 표준인 <strong>meq/L(밀리당량)</strong> 단위로 양액을 처방해야 합니다.</p>
+        <h2>1. Foundations of Closed-Loop Fertigation: Milliequivalent (meq/L) Concentration Dynamics</h2>
+        <p>In commercial closed-loop recirculating hydroponics, nutrient recipes must be engineered in milliequivalents per liter (meq/L) or millimoles per liter (mmol/L) rather than simple parts per million (ppm). Because chemical reactions and plant root ion transport proteins (channels and symporters) interact according to ionic valence and electrical charges, maintaining exact cation-anion equivalence is mandatory to prevent precipitations and nutrient imbalances.</p>
 
-        <h2>2. 주요 다량원소의 양이온/음이온 당량 평형 (Anion-Cation Balance)</h2>
-        <p>양액 내 양이온 합(NO3-, H2PO4-, SO42-)과 음이온 합(K+, Ca2+, Mg2+, NH4+)은 전기적으로 중성을 이루어야 합니다.</p>
+        <h2>2. Anion-Cation Electrochemical Equivalence & Steiner Recipe Formulations</h2>
+        <p>According to the universal law of electroneutrality, the sum of all positively charged cations in solution must exactly equal the sum of all negatively charged anions:</p>
+        <p style="background:#f1f5f9; padding:15px; border-radius:8px; font-family:monospace; font-weight:bold;">
+        ∑ Cations [meq/L] = K⁺ + Ca²⁺ + Mg²⁺ + NH₄⁺ + Na⁺<br>
+        ∑ Anions [meq/L] = NO₃⁻ + H₂PO₄⁻ + SO₄²⁻ + Cl⁻<br>
+        Balance: ∑ Cations ≡ ∑ Anions (Target error margin < 2%)
+        </p>
+        <p>A classic Dutch Sonneveld recipe for fruiting tomato crops targets a total cation sum of approximately \(18	ext{--}20	ext{ meq/L}\) (corresponding to an EC of \(2.0	ext{--}2.2	ext{ dS/m}\)), with a \(K:Ca\) equivalent ratio maintained between \(1.2:1\) and \(1.5:1\) to prevent vegetative vigor distortion while ensuring adequate calcium partitioning to distal fruit cells.</p>
+
+        <h2>3. Substrate Rootzone pH Drift, Antagonistic Ion Competition, and EC Accumulation</h2>
         <ul>
-            <li><strong>NO3- (질산태 질소):</strong> 11.0 ~ 14.0 meq/L</li>
-            <li><strong>H2PO4- (인산):</strong> 1.5 ~ 2.0 meq/L</li>
-            <li><strong>K+ (칼륨):</strong> 5.0 ~ 8.0 meq/L</li>
-            <li><strong>Ca2+ (칼슘):</strong> 3.5 ~ 5.0 meq/L</li>
-            <li><strong>Mg2+ (마그네슘):</strong> 1.5 ~ 2.5 meq/L</li>
+            <li><strong>Nitrate vs Ammonium Driven pH Shifts:</strong> When roots absorb negatively charged nitrate (\(NO_3^-\)), they excrete hydroxyl (\(OH^-\)) or bicarbonate (\(HCO_3^-\)) ions, raising rhizosphere pH. Incorporating 5–10% of total nitrogen as ammonium (\(NH_4^+\)) triggers proton (\(H^+\)) extrusion, buffering rootzone pH stably between 5.6 and 6.2.</li>
+            <li><strong>Cation Antagonism:</strong> Excessive potassium (\(K^+\)) competitively suppresses magnesium (\(Mg^{2+}\)) and calcium (\(Ca^{2+}\)) uptake at the root plasma membrane, causing interveinal chlorosis in lower canopy leaves.</li>
+            <li><strong>Two-Tank (A/B) Stock Chemistry:</strong> Calcium nitrate and iron chelates must always reside in Tank A, completely isolated from sulfates (magnesium sulfate) and phosphates (monopotassium phosphate) in Tank B, preventing the precipitation of insoluble gypsum (\(CaSO_4\)) and calcium phosphate (\(Ca_3(PO_4)_2\)).</li>
         </ul>
-
-        <h2>3. 배지 내 pH 및 EC 변동 대응</h2>
-        <p>배지 급액 pH가 5.5 ~ 6.2 범위를 벗어나면 철(Fe), 인(P), 칼슘(Ca)의 불용화 침전 현상이 발생하므로, NH4+ 비율 조절을 통해 배지 근권 pH를 안정화시킵니다.</p>
-        
     </div>
 </div>
 <footer>
-    <p>© 2026 Inwoovation Lab. All rights reserved. | <a href="/privacy-policy.html">개인정보 처리방침</a> | <a href="/terms-of-service.html">이용약관</a> | <a href="/about.html">소개</a> | <a href="/contact.html">문의</a> | <a href="/guides.html">공학 가이드</a></p>
+    <p>© 2026 Inwoovation Lab. All rights reserved. | <a href="/privacy-policy.html">Privacy Policy</a> | <a href="/terms-of-service.html">Terms of Service</a> | <a href="/about.html">About</a> | <a href="/contact.html">Contact</a> | <a href="https://forms.gle/SC3ehhA4r6sPEZxV7" target="_blank" style="color: #10b981; font-weight: 700;">Send Feedback 📩</a></p>
 </footer>
 </body>
 </html>
