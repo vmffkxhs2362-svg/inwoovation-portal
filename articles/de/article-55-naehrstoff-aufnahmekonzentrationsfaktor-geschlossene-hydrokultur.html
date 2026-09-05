@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-adsense-account" content="ca-pub-8597809158257497">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nährstoff-Aufnahmekonzentrationsfaktor (UCF) in der geschlossenen Hydrokultur | Inwoovation</title>
+  <meta name="description" content="Ingenieurwissenschaftliche Modellierung des Nährstoff-Aufnahmekonzentrationsfaktors (UCF), Ionenakkumulationskinetik, Natrium-Grenzwerte und Auswaschfraktion im erdelosen Gewächshausbau.">
+  <link rel="stylesheet" href="../../css/styles.css">
+  <link rel="canonical" href="https://inwoovation.com/articles/de/article-55-naehrstoff-aufnahmekonzentrationsfaktor-geschlossene-hydrokultur.html">
+  <link rel="alternate" hreflang="en" href="https://inwoovation.com/articles/article-55-nutrient-uptake-concentration-factor-recirculating-hydroponics.html">
+  <link rel="alternate" hreflang="de" href="https://inwoovation.com/articles/de/article-55-naehrstoff-aufnahmekonzentrationsfaktor-geschlossene-hydrokultur.html">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8597809158257497" crossorigin="anonymous"></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Nährstoff-Aufnahmekonzentrationsfaktor (UCF) in der geschlossenen Hydrokultur: Massenbilanz & Ionendynamik",
+    "description": "Massenbilanzmodellierung des Nährstoff-Aufnahmekonzentrationsfaktors (UCF), differenzielle Ionenakkumulation im Wurzelraum, Natriumakkumulation und Auswaschfraktionsoptimierung im erdelosen Anbau.",
+    "author": {
+      "@type": "Person",
+      "name": "Inwoo Hwang"
+    },
+    "datePublished": "2026-09-05",
+    "dateModified": "2026-09-05",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Inwoovation Smart Farming"
+    }
+  }
+  </script>
+</head>
+<body>
+  <article class="article-container">
+    <header class="article-header">
+      <div class="category-tag">Geschlossene Kreislauffertigation & Pflanzenernährung</div>
+      <h1>Nährstoff-Aufnahmekonzentrationsfaktor (UCF) in der geschlossenen Hydrokultur: Massenbilanz & Ionendynamik</h1>
+      <div class="article-meta">Veröffentlicht: 05.09.2026 • Autor: Inwoo Hwang • Lesezeit: 15 Min.</div>
+    </header>
+
+    <div class="article-body">
+      <p class="lead">Gemäß den strengen Vorgaben der europäischen <strong>EU-Wasserrahmenrichtlinie (WRRL)</strong> und den niederländischen Zero-Discharge-Regulierungen ist es professionellen Unterglasbetrieben im <strong>Westland</strong>, am <strong>Niederrhein (Straelen)</strong> und im <strong>Knoblauchsland (Nürnberg)</strong> untersagt, Drainagewasser ungeklärt in das Grund- oder Oberflächenwasser einzuleiten. Während geschlossene Kreislaufsysteme bis zu <strong>30–40% Bewässerungswasser</strong> und <strong>25–35% Mineraldünger</strong> einsparen, werfen sie erhebliche ionendynamische Herausforderungen auf: die unausgeglichene Anreicherung von Ballastionen und eine unkontrollierte Erhöhung der elektrischen Leitfähigkeit (EC-Wert). Die mathematische Modellierung des <strong>Aufnahmekonzentrationsfaktors (UCF, Uptake Concentration Factor)</strong> bildet die unverzichtbare Grundlage für ein stabiles Wurzelraum-Management.</p>
+
+      <h2>1. Das agrophysikalische Konzept des Aufnahmekonzentrationsfaktors (UCF)</h2>
+      <p>Im erdelosen Substratanbau (Steinwollmatten, Kokos, Perlit) nehmen Pflanzen Wasser und gelöste Nährstoffionen nicht in festen stöchiometrischen Verhältnissen auf. Die Transpiration wird primär durch das Dampfdruckdefizit (VPD) und die Globalstrahlung angetrieben, während die Ionenaufnahme von metabolischen Wachstumsphasen, Enzymkinetiken und Membrantransportern ($H^+$-ATPasen) abhängt.</p>
+
+      <p>Der <strong>Aufnahmekonzentrationsfaktor ($UCF_i$)</strong> einer Ionenspezies $i$ beschreibt das dimensionslose Verhältnis zwischen der von der Pflanzenwurzel aktiv aufgenommenen Ionenkonzentration ($C_{uptake, i}$) und der im Tropfwasser zugeführten Konzentration ($C_{supply, i}$):</p>
+      
+      <div class="code-box">
+        <code>UCF_i = \frac{C_{uptake, i}}{C_{supply, i}} = \frac{\dot{M}_{uptake, i} \,/\, \dot{V}_{trans}}{C_{supply, i}}</code>
+      </div>
+
+      <p>Hierbei gilt:</p>
+      <ul>
+        <li><strong>$\dot{M}_{uptake, i}$</strong>: Massenstrom des assimilierten Ions $i$ ($mmol/h$ bzw. $mg/h$).</li>
+        <li><strong>$\dot{V}_{trans}$</strong>: Transpirationsvolumenstrom des Bestandes ($L/h$).</li>
+        <li><strong>$C_{supply, i}$</strong>: Über die Tropfer dosierte Konzentration ($mmol/L$).</li>
+      </ul>
+
+      <p>Hinsichtlich des $UCF_i$-Wertes unterscheidet man drei fundamentale Ionenklassen:</p>
+      <ol>
+        <li><strong>Aktive Luxuskonsumtion ($UCF_i > 1.0$)</strong>: Die Pflanze entzieht das Ion im Verhältnis zum Wasser schneller als im Tropfwasser vorgelegt ($K^+, NO_3^-, H_2PO_4^-$). Die Substratkonzentration fällt ohne Nachdosierung ab.</li>
+        <li><strong>Gleichgewichtige Aufnahme ($UCF_i \approx 1.0$)</strong>: Wasser und Ion werden proportional zur Tropfkonzentration aufgenommen. Die Konzentration in der Matte bleibt über Bewässerungstakte hinweg stabil.</li>
+        <li><strong>Passive Ballastakkumulation ($UCF_i < 1.0$)</strong>: Wasser wird wesentlich rascher aufgenommen als das Ion ($Ca^{2+}, Mg^{2+}$, sowie Ballastionen $Na^+$ und $Cl^-$). Die unverbrauchten Ionen reichern sich im Wurzelraum an und treiben den EC-Wert drastisch in die Höhe.</li>
+      </ol>
+
+      <h2>2. Mathematische Massenbilanz im Substratwurzelraum</h2>
+      <p>Für ein inertes Substratvolumen $V_{sub}$ ($L/m^2$) lautet die instationäre Massenerhaltung für jedes Ion $i$:</p>
+
+      <div class="code-box">
+        <code>\frac{d\left(V_{sub} \cdot C_{sub, i}\right)}{dt} = Q_{irr}(t) \cdot C_{supply, i}(t) - Q_{drain}(t) \cdot C_{drain, i}(t) - \dot{V}_{trans}(t) \cdot C_{uptake, i}(t)</code>
+      </div>
+
+      <p>Unter der Annahme vollständiger Durchmischung ($C_{drain, i} = C_{sub, i}$) und stationärer Wasserbilanz mit der Auswaschfraktion (Leaching Fraction $LF = Q_{drain} / Q_{irr}$) ergibt sich die stationäre Drainagekonzentration zu:</p>
+
+      <div class="code-box">
+        <code>C_{drain, i} = C_{supply, i} \cdot \left[ \frac{1 - (1 - LF) \cdot UCF_i}{LF} \right]</code>
+      </div>
+
+      <p>Diese analytische Gleichung verdeutlicht die Gefahr: Bei Ionen mit $UCF = 0.2$ und einer zu geringen Auswaschung von $LF = 10\%$ steigt die Konzentration im Drain auf das <strong>4,6-Fache</strong> der Ausgangskonzentration, was unausweichlich zu toxischer Versalzung führt.</p>
+
+      <h2>3. Kritische Natrium-Grenzwerte im kommerziellen Fruchtgemüseanbau</h2>
+      <table style="width:100%; border-collapse:collapse; margin:20px 0; color:#e2e8f0; font-size:0.95rem;">
+        <thead>
+          <tr style="border-bottom:2px solid #06b6d4; background:#1e293b; text-align:left;">
+            <th style="padding:10px;">Kulturpflanze</th>
+            <th style="padding:10px;">Kritischer $Na^+$-Grenzwert</th>
+            <th style="padding:10px;">Pathophysiologische Schäden</th>
+            <th style="padding:10px;">Empfohlene Auswaschfraktion ($LF$)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid #334155;">
+            <td style="padding:10px;"><strong>Tomate (High-Wire)</strong></td>
+            <td style="padding:10px;">$6.0 - 8.0\text{ mmol/L}$</td>
+            <td style="padding:10px;">Fruchtgrößenverlust, Blütenendfäule durch Ca-Antagonismus</td>
+            <td style="padding:10px;">$25\% - 35\%$</td>
+          </tr>
+          <tr style="border-bottom:1px solid #334155;">
+            <td style="padding:10px;"><strong>Paprika (Blockpaprika)</strong></td>
+            <td style="padding:10px;">$4.0 - 5.5\text{ mmol/L}$</td>
+            <td style="padding:10px;">Blattrandnekrosen, vorzeitiger Blüten- und Fruchtfall</td>
+            <td style="padding:10px;">$30\% - 40\%$</td>
+          </tr>
+          <tr style="border-bottom:1px solid #334155;">
+            <td style="padding:10px;"><strong>Salatgurke (Schlangengurke)</strong></td>
+            <td style="padding:10px;">$4.0 - 6.0\text{ mmol/L}$</td>
+            <td style="padding:10px;">Stomata-Schluss, akuter Ertragseinbruch, Wachstumsdepression</td>
+            <td style="padding:10px;">$20\% - 30\%$</td>
+          </tr>
+          <tr style="border-bottom:1px solid #334155;">
+            <td style="padding:10px;"><strong>Erdbeere (Stellage)</strong></td>
+            <td style="padding:10px;">$2.0 - 3.0\text{ mmol/L}$</td>
+            <td style="padding:10px;">Hochgradig salzempfindlich; Wurzelspitzennekrosen, Tip-Burn</td>
+            <td style="padding:10px;">$15\% - 25\%$</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>4. Interaktive Simulationswerkzeuge & Rechner</h2>
+      <p>Modellieren Sie die Ionenanreicherungskurven und berechnen Sie die exakten Auswaschfraktionen direkt mit unseren webbasierten Simulationswerkzeugen:</p>
+      <p style="margin-top:20px;">
+        <a href="../../tools/nutrient-uptake-concentration-factor-analyzer.html" class="cta-button" style="display:inline-block; padding:12px 24px; background:#06b6d4; color:#0f172a; border-radius:8px; text-decoration:none; font-weight:800; margin-right:12px;">🔬 UCF- & Drainage-Simulator starten (Tool #33)</a>
+        <a href="../../tools/hydroponic-nutrient-solution-calculator.html" class="cta-button" style="display:inline-block; padding:12px 24px; background:#10b981; color:#0f172a; border-radius:8px; text-decoration:none; font-weight:800; margin-right:12px;">🧪 Hydroponik-Ionenbilanzrechner (Tool #3)</a>
+      </p>
+    </div>
+  </article>
+
+  <footer style="margin-top:50px; text-align:center; padding:30px; border-top:1px solid rgba(255,255,255,0.1); color:#64748b;">
+    <p>© 2026 Inwoovation Smart Farming & CEA Research Lab. Peer-Reviewed Engineering Standards.</p>
+  </footer>
+</body>
+</html>
