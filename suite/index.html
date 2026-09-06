@@ -291,8 +291,28 @@
       font-size: 0.88rem;
     }
     .action-plan ul { margin-left: 18px; margin-top: 4px; }
+    .cli-details {
+      margin-top: 12px;
+      background: rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 8px;
+      padding: 8px 12px;
+      font-size: 0.8rem;
+    }
+    .cli-details summary {
+      cursor: pointer;
+      color: var(--text-muted);
+      font-weight: 600;
+      user-select: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .cli-details summary:hover {
+      color: #38bdf8;
+    }
     .cli-box {
-      margin-top: 10px;
+      margin-top: 8px;
       background: #020617;
       border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: 6px;
@@ -304,6 +324,7 @@
       justify-content: space-between;
       align-items: center;
       gap: 8px;
+      word-break: break-all;
     }
     .cli-btn-copy {
       background: rgba(56, 189, 248, 0.15);
@@ -313,6 +334,7 @@
       padding: 3px 8px;
       font-size: 0.72rem;
       cursor: pointer;
+      white-space: nowrap;
     }
     .cli-btn-copy:hover { background: rgba(56, 189, 248, 0.3); color: #fff; }
     .copilot-input-bar { display: flex; gap: 10px; }
@@ -607,14 +629,15 @@
         </div>
       </div>
 
-      <!-- Preset Scenarios -->
+      <!-- 1-Tap Zero-Typing Presets for Growers -->
       <div class="chips-row">
-        <span class="chip-label">Preset Scenarios:</span>
-        <button class="chip" onclick="askCopilot('Tomato leaves curling upward and flower blossoms dropping in hot afternoon')">🍅 Tomato Leaf Curling & Blossom Drop</button>
-        <button class="chip" onclick="askCopilot('Double-poly 20000 sq ft greenhouse winter heating bill is too high at night')">❄️ Greenhouse Heating & Curtain Savings</button>
-        <button class="chip" onclick="askCopilot('Winter greenhouse strawberry supplemental LED hours and target DLI')">💡 Strawberry LED Lighting & DLI</button>
-        <button class="chip" onclick="askCopilot('Well water baseline EC 0.3, how to balance lettuce hydroponic fertigation to EC 1.8?')">💧 Hydroponic Fertigation EC Dilution</button>
-        <button class="chip" onclick="askCopilot('Sealed commercial glasshouse 10000 sq ft, how much CO2 needed for 800 ppm?')">💨 Commercial CO2 Enrichment Rate</button>
+        <span class="chip-label">👉 1-Tap Field Solutions:</span>
+        <button class="chip" onclick="askCopilot('Tomato leaves curling upward and flower blossoms dropping in hot afternoon')">🍅 Tomato Leaf Curl & Drop</button>
+        <button class="chip" onclick="askCopilot('Double-poly 20000 sq ft greenhouse winter heating bill is too high at night')">❄️ Cut Night Heating Bill 35%</button>
+        <button class="chip" onclick="askCopilot('Winter greenhouse strawberry supplemental LED hours and target DLI')">💡 Strawberry Supplemental DLI</button>
+        <button class="chip" onclick="askCopilot('Well water baseline EC 0.3, how to balance lettuce hydroponic fertigation to EC 1.8?')">💧 Prevent White Crust Drip Clogs</button>
+        <button class="chip" onclick="askCopilot('Sealed commercial glasshouse 10000 sq ft, how much CO2 needed for 800 ppm?')">💨 Morning CO2 Photosynthesis Boost</button>
+        <button class="chip" onclick="askCopilot('100 high power 640W LED fixtures chiller cooling tons HVAC sizing')">⚡ LED Heat & Chiller Sizing</button>
       </div>
 
       <!-- Dialogue Feed -->
@@ -1039,20 +1062,28 @@
     function closeModal() { document.getElementById('modalBackdrop').classList.remove('open'); }
 
     /* ============================================================
-       CALCULATIONS
+       CALCULATIONS (Defensively Clamped for Zero NaN / Division by Zero)
        ============================================================ */
     function recalcVPD() {
-      const t = parseFloat(document.getElementById('airTemp').value) || 24.0;
-      const rh = parseFloat(document.getElementById('rh').value) || 65.0;
-      const offset = parseFloat(document.getElementById('leafOffset').value) || -2.0;
+      let t = parseFloat(document.getElementById('airTemp').value);
+      if (isNaN(t)) t = 24.0;
+      t = Math.max(-20.0, Math.min(60.0, t));
+
+      let rh = parseFloat(document.getElementById('rh').value);
+      if (isNaN(rh)) rh = 65.0;
+      rh = Math.max(5.0, Math.min(99.0, rh));
+
+      let offset = parseFloat(document.getElementById('leafOffset').value);
+      if (isNaN(offset)) offset = -2.0;
+      offset = Math.max(-10.0, Math.min(10.0, offset));
 
       const vpsatAir = 0.61078 * Math.exp((17.27 * t) / (t + 237.3));
       const vpair = vpsatAir * (rh / 100.0);
-      const vpdAir = vpsatAir - vpair;
+      const vpdAir = Math.max(0.0, vpsatAir - vpair);
 
       const tLeaf = t + offset;
       const vpsatLeaf = 0.61078 * Math.exp((17.27 * tLeaf) / (tLeaf + 237.3));
-      const vpdLeaf = vpsatLeaf - vpair;
+      const vpdLeaf = Math.max(0.0, vpsatLeaf - vpair);
 
       document.getElementById('resVpdLeaf').innerText = vpdLeaf.toFixed(2) + " kPa";
       document.getElementById('resVpdAir').innerText = vpdAir.toFixed(2) + " kPa";
@@ -1074,11 +1105,19 @@
     }
 
     function recalcDLI() {
-      const ppfd = parseFloat(document.getElementById('ppfd').value) || 300;
-      const hours = parseFloat(document.getElementById('photoperiod').value) || 16;
-      const sun = parseFloat(document.getElementById('sunShare').value) || 0;
+      let ppfd = parseFloat(document.getElementById('ppfd').value);
+      if (isNaN(ppfd) || ppfd < 0) ppfd = 300.0;
+      ppfd = Math.min(2500.0, ppfd);
 
-      const suppDli = (ppfd * hours * 3600) / 1000000.0;
+      let hours = parseFloat(document.getElementById('photoperiod').value);
+      if (isNaN(hours) || hours < 0) hours = 16.0;
+      hours = Math.min(24.0, hours);
+
+      let sun = parseFloat(document.getElementById('sunShare').value);
+      if (isNaN(sun) || sun < 0) sun = 0.0;
+      sun = Math.min(95.0, sun); // Prevent division by zero at 100%!
+
+      const suppDli = (ppfd * hours * 3600.0) / 1000000.0;
       const totalDli = sun > 0 ? suppDli / (1.0 - (sun / 100.0)) : suppDli;
 
       document.getElementById('resDli').innerText = totalDli.toFixed(1) + " mol/m²/d";
@@ -1098,9 +1137,15 @@
     }
 
     function recalcHeat() {
-      const area = parseFloat(document.getElementById('area').value) || 1000;
-      const tin = parseFloat(document.getElementById('tin').value) || 18;
-      const tout = parseFloat(document.getElementById('tout').value) || -5;
+      let area = parseFloat(document.getElementById('area').value);
+      if (isNaN(area) || area <= 0) area = 1000.0;
+
+      let tin = parseFloat(document.getElementById('tin').value);
+      if (isNaN(tin)) tin = 18.0;
+
+      let tout = parseFloat(document.getElementById('tout').value);
+      if (isNaN(tout)) tout = -5.0;
+
       const screens = parseInt(document.getElementById('screens').value) || 0;
 
       let u = 6.0;
@@ -1108,40 +1153,58 @@
       if (screens === 2) u = 2.7;
 
       const envelopeFactor = 1.35;
-      const deltaT = Math.max(0, tin - tout);
+      const deltaT = Math.max(0.0, tin - tout);
       const heatW = area * envelopeFactor * u * deltaT;
       const heatKw = heatW / 1000.0;
-      const specific = heatW / area;
+      const specific = area > 0 ? (heatW / area) : 0.0;
 
       document.getElementById('resHeatKw').innerText = heatKw.toFixed(1) + " kW";
       document.getElementById('resHeatSpecific').innerText = specific.toFixed(1) + " W/m²";
     }
 
     function recalcCO2() {
-      const area = parseFloat(document.getElementById('co2Area').value) || 1000;
-      const height = parseFloat(document.getElementById('co2Height').value) || 4.5;
-      const target = parseFloat(document.getElementById('co2Target').value) || 1000;
-      const ambient = parseFloat(document.getElementById('co2Ambient').value) || 420;
-      const ach = parseFloat(document.getElementById('co2Ach').value) || 0.5;
+      let area = parseFloat(document.getElementById('co2Area').value);
+      if (isNaN(area) || area <= 0) area = 1000.0;
+
+      let height = parseFloat(document.getElementById('co2Height').value);
+      if (isNaN(height) || height <= 0) height = 4.5;
+      height = Math.max(1.5, Math.min(15.0, height));
+
+      let target = parseFloat(document.getElementById('co2Target').value);
+      if (isNaN(target)) target = 1000.0;
+
+      let ambient = parseFloat(document.getElementById('co2Ambient').value);
+      if (isNaN(ambient)) ambient = 420.0;
+
+      let ach = parseFloat(document.getElementById('co2Ach').value);
+      if (isNaN(ach) || ach < 0) ach = 0.5;
 
       const volume = area * height;
-      const deltaPpm = Math.max(0, target - ambient);
+      const deltaPpm = Math.max(0.0, target - ambient);
       const ventLossKgH = volume * ach * (deltaPpm * 1e-6) * 1.842;
       const cropUptakeKgH = (area * 25.0) / 1000.0;
       const totalKgH = ventLossKgH + cropUptakeKgH;
-      const specificGM2H = (totalKgH * 1000.0) / area;
+      const specificGM2H = area > 0 ? ((totalKgH * 1000.0) / area) : 0.0;
 
       document.getElementById('resCo2KgH').innerText = totalKgH.toFixed(2) + " kg/h";
       document.getElementById('resCo2Specific').innerText = specificGM2H.toFixed(1) + " g/m²/h";
     }
 
     function recalcFert() {
-      const targetEc = parseFloat(document.getElementById('fertTargetEc').value) || 2.0;
-      const baseEc = parseFloat(document.getElementById('fertBaseEc').value) || 0.3;
-      const volL = parseFloat(document.getElementById('fertBatchVol').value) || 1000;
-      const ratio = parseFloat(document.getElementById('fertRatio').value) || 100;
+      let targetEc = parseFloat(document.getElementById('fertTargetEc').value);
+      if (isNaN(targetEc)) targetEc = 2.0;
 
-      const netEc = Math.max(0, targetEc - baseEc);
+      let baseEc = parseFloat(document.getElementById('fertBaseEc').value);
+      if (isNaN(baseEc)) baseEc = 0.3;
+
+      let volL = parseFloat(document.getElementById('fertBatchVol').value);
+      if (isNaN(volL) || volL <= 0) volL = 1000.0;
+
+      let ratio = parseFloat(document.getElementById('fertRatio').value);
+      if (isNaN(ratio) || ratio <= 0) ratio = 100.0;
+      ratio = Math.max(1.0, ratio); // Prevent division by zero!
+
+      const netEc = Math.max(0.0, targetEc - baseEc);
       const stockVolL = volL / ratio;
       const saltsKg = (netEc * 0.95 * volL) / 1000.0;
       const estPpm = targetEc * 500.0;
@@ -1152,10 +1215,18 @@
     }
 
     function recalcLED() {
-      const watts = parseFloat(document.getElementById('ledWatts').value) || 640;
-      const count = parseInt(document.getElementById('ledCount').value) || 50;
-      const ppe = parseFloat(document.getElementById('ledPpe').value) || 2.8;
-      const hours = parseFloat(document.getElementById('ledHours').value) || 16;
+      let watts = parseFloat(document.getElementById('ledWatts').value);
+      if (isNaN(watts) || watts < 0) watts = 640.0;
+
+      let count = parseInt(document.getElementById('ledCount').value);
+      if (isNaN(count) || count < 0) count = 50;
+
+      let ppe = parseFloat(document.getElementById('ledPpe').value);
+      if (isNaN(ppe) || ppe <= 0) ppe = 2.8;
+
+      let hours = parseFloat(document.getElementById('ledHours').value);
+      if (isNaN(hours) || hours < 0) hours = 16.0;
+      hours = Math.min(24.0, hours);
 
       const totalKw = (watts * count) / 1000.0;
       const totalPpf = watts * count * ppe;
@@ -1320,10 +1391,13 @@
               </ul>
             </div>
             <p style="margin-top:10px; font-size:0.85rem; color:#a7f3d0;">👉 Applied values to the <strong>CO₂ Enrichment Dosing Rate</strong> calculator below.</p>
-            <div class="cli-box">
-              <span>${cliCmd}</span>
-              <button class="cli-btn-copy" onclick="copyCliCmd(this, '${cliCmd}')">Copy CLI Command</button>
-            </div>
+            <details class="cli-details">
+              <summary>⚙️ Advanced Python CLI / API Command (Optional for Engineers)</summary>
+              <div class="cli-box">
+                <span>${cliCmd}</span>
+                <button class="cli-btn-copy" onclick="copyCliCmd(this, '${cliCmd}')">Copy Command</button>
+              </div>
+            </details>
           `
         };
       }
@@ -1360,10 +1434,13 @@
                 </ul>
               </div>
               <p style="margin-top:10px; font-size:0.85rem; color:#a7f3d0;">👉 Populated the <strong>LED Sizing & HVAC Load</strong> calculator below.</p>
-              <div class="cli-box">
-                <span>${cliCmd}</span>
-                <button class="cli-btn-copy" onclick="copyCliCmd(this, '${cliCmd}')">Copy CLI Command</button>
-              </div>
+              <details class="cli-details">
+                <summary>⚙️ Advanced Python CLI / API Command (Optional for Engineers)</summary>
+                <div class="cli-box">
+                  <span>${cliCmd}</span>
+                  <button class="cli-btn-copy" onclick="copyCliCmd(this, '${cliCmd}')">Copy Command</button>
+                </div>
+              </details>
             `
           };
         } else {
@@ -1396,10 +1473,13 @@
                 </ul>
               </div>
               <p style="margin-top:10px; font-size:0.85rem; color:#a7f3d0;">👉 Configured the <strong>Daily Light Integral (DLI)</strong> calculator below.</p>
-              <div class="cli-box">
-                <span>${cliCmd}</span>
-                <button class="cli-btn-copy" onclick="copyCliCmd(this, '${cliCmd}')">Copy CLI Command</button>
-              </div>
+              <details class="cli-details">
+                <summary>⚙️ Advanced Python CLI / API Command (Optional for Engineers)</summary>
+                <div class="cli-box">
+                  <span>${cliCmd}</span>
+                  <button class="cli-btn-copy" onclick="copyCliCmd(this, '${cliCmd}')">Copy Command</button>
+                </div>
+              </details>
             `
           };
         }
@@ -1433,10 +1513,13 @@
               </ul>
             </div>
             <p style="margin-top:10px; font-size:0.85rem; color:#a7f3d0;">👉 Applied stress parameters to the <strong>Vapor Pressure Deficit (VPD)</strong> calculator below.</p>
-            <div class="cli-box">
-              <span>${cliCmd}</span>
-              <button class="cli-btn-copy" onclick="copyCliCmd(this, '${cliCmd}')">Copy CLI Command</button>
-            </div>
+            <details class="cli-details">
+              <summary>⚙️ Advanced Python CLI / API Command (Optional for Engineers)</summary>
+              <div class="cli-box">
+                <span>${cliCmd}</span>
+                <button class="cli-btn-copy" onclick="copyCliCmd(this, '${cliCmd}')">Copy Command</button>
+              </div>
+            </details>
           `
         };
       }
@@ -1473,10 +1556,13 @@
               </ul>
             </div>
             <p style="margin-top:10px; font-size:0.85rem; color:#a7f3d0;">👉 Applied parameters to the <strong>Fertigation EC & Dilution Ratio</strong> calculator below.</p>
-            <div class="cli-box">
-              <span>${cliCmd}</span>
-              <button class="cli-btn-copy" onclick="copyCliCmd(this, '${cliCmd}')">Copy CLI Command</button>
-            </div>
+            <details class="cli-details">
+              <summary>⚙️ Advanced Python CLI / API Command (Optional for Engineers)</summary>
+              <div class="cli-box">
+                <span>${cliCmd}</span>
+                <button class="cli-btn-copy" onclick="copyCliCmd(this, '${cliCmd}')">Copy Command</button>
+              </div>
+            </details>
           `
         };
       }
@@ -1520,10 +1606,13 @@
               </ul>
             </div>
             <p style="margin-top:10px; font-size:0.85rem; color:#a7f3d0;">👉 Applied your facility specifications to the <strong>Greenhouse Heating Demand</strong> calculator below.</p>
-            <div class="cli-box">
-              <span>${cliCmd}</span>
-              <button class="cli-btn-copy" onclick="copyCliCmd(this, '${cliCmd}')">Copy CLI Command</button>
-            </div>
+            <details class="cli-details">
+              <summary>⚙️ Advanced Python CLI / API Command (Optional for Engineers)</summary>
+              <div class="cli-box">
+                <span>${cliCmd}</span>
+                <button class="cli-btn-copy" onclick="copyCliCmd(this, '${cliCmd}')">Copy Command</button>
+              </div>
+            </details>
           `
         };
       }
