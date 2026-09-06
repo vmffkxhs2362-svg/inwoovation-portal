@@ -1058,33 +1058,35 @@
     </div>
   </div>
 
+  <script src="../js/biophysics_kernel.js"></script>
   <script>
     function openModal() { document.getElementById('modalBackdrop').classList.add('open'); }
     function closeModal() { document.getElementById('modalBackdrop').classList.remove('open'); }
 
     /* ============================================================
-       CALCULATIONS (Defensively Clamped for Zero NaN / Division by Zero)
+       CALCULATIONS (Delegated to Pure BiophysicsKernel)
        ============================================================ */
     function recalcVPD() {
       let t = parseFloat(document.getElementById('airTemp').value);
-      if (isNaN(t)) t = 24.0;
-      t = Math.max(-20.0, Math.min(60.0, t));
-
       let rh = parseFloat(document.getElementById('rh').value);
-      if (isNaN(rh)) rh = 65.0;
-      rh = Math.max(5.0, Math.min(99.0, rh));
-
       let offset = parseFloat(document.getElementById('leafOffset').value);
-      if (isNaN(offset)) offset = -2.0;
-      offset = Math.max(-10.0, Math.min(10.0, offset));
 
-      const vpsatAir = 0.61078 * Math.exp((17.27 * t) / (t + 237.3));
-      const vpair = vpsatAir * (rh / 100.0);
-      const vpdAir = Math.max(0.0, vpsatAir - vpair);
-
-      const tLeaf = t + offset;
-      const vpsatLeaf = 0.61078 * Math.exp((17.27 * tLeaf) / (tLeaf + 237.3));
-      const vpdLeaf = Math.max(0.0, vpsatLeaf - vpair);
+      let vpdLeaf, vpdAir;
+      if (typeof BiophysicsKernel !== 'undefined') {
+        const vpd = BiophysicsKernel.computeVPD(t, rh, -offset);
+        vpdLeaf = vpd.leafVpdKpa;
+        vpdAir = vpd.airVpdKpa;
+      } else {
+        t = isNaN(t) ? 24.0 : Math.max(-20.0, Math.min(60.0, t));
+        rh = isNaN(rh) ? 65.0 : Math.max(5.0, Math.min(99.0, rh));
+        offset = isNaN(offset) ? -2.0 : Math.max(-10.0, Math.min(10.0, offset));
+        const vpsatAir = 0.61078 * Math.exp((17.27 * t) / (t + 237.3));
+        const vpair = vpsatAir * (rh / 100.0);
+        vpdAir = Math.max(0.0, vpsatAir - vpair);
+        const tLeaf = t + offset;
+        const vpsatLeaf = 0.61078 * Math.exp((17.27 * tLeaf) / (tLeaf + 237.3));
+        vpdLeaf = Math.max(0.0, vpsatLeaf - vpair);
+      }
 
       document.getElementById('resVpdLeaf').innerText = vpdLeaf.toFixed(2) + " kPa";
       document.getElementById('resVpdAir').innerText = vpdAir.toFixed(2) + " kPa";
@@ -1107,18 +1109,19 @@
 
     function recalcDLI() {
       let ppfd = parseFloat(document.getElementById('ppfd').value);
-      if (isNaN(ppfd) || ppfd < 0) ppfd = 300.0;
-      ppfd = Math.min(2500.0, ppfd);
-
       let hours = parseFloat(document.getElementById('photoperiod').value);
-      if (isNaN(hours) || hours < 0) hours = 16.0;
-      hours = Math.min(24.0, hours);
-
       let sun = parseFloat(document.getElementById('sunShare').value);
       if (isNaN(sun) || sun < 0) sun = 0.0;
-      sun = Math.min(95.0, sun); // Prevent division by zero at 100%!
+      sun = Math.min(95.0, sun);
 
-      const suppDli = (ppfd * hours * 3600.0) / 1000000.0;
+      let suppDli;
+      if (typeof BiophysicsKernel !== 'undefined') {
+        suppDli = BiophysicsKernel.computeDLI(ppfd, hours).dliMolM2Day;
+      } else {
+        ppfd = isNaN(ppfd) || ppfd < 0 ? 300.0 : Math.min(2500.0, ppfd);
+        hours = isNaN(hours) || hours < 0 ? 16.0 : Math.min(24.0, hours);
+        suppDli = (ppfd * hours * 3600.0) / 1000000.0;
+      }
       const totalDli = sun > 0 ? suppDli / (1.0 - (sun / 100.0)) : suppDli;
 
       document.getElementById('resDli').innerText = totalDli.toFixed(1) + " mol/m²/d";

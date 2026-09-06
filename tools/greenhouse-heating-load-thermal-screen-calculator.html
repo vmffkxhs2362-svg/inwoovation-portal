@@ -169,8 +169,9 @@
   </div>
 
   <script src="../js/audit-pdf-generator.js"></script>
+  <script src="../js/biophysics_kernel.js"></script>
   <script>
-    function calculate() {
+    function readInputs() {
       const area = parseFloat(document.getElementById('slider-floor').value);
       const height = parseFloat(document.getElementById('slider-height').value);
       const tIn = parseFloat(document.getElementById('slider-tin').value);
@@ -184,36 +185,28 @@
       document.getElementById('lbl-tout').innerText = tOut.toFixed(1) + ' °C';
       document.getElementById('lbl-screen').innerText = screenPct + ' %';
 
-      let uBase = 6.5;
-      if (glazing === 'double_ar') uBase = 3.2;
-      else if (glazing === 'poly_double') uBase = 4.2;
-      else if (glazing === 'polycarb_16') uBase = 2.4;
+      return {
+        floorAreaM2: area,
+        gutterHeightM: height,
+        insideTempC: tIn,
+        outsideTempC: tOut,
+        screenClosurePct: screenPct,
+        glazingType: glazing,
+        airExchangeRatePerHour: 0.5
+      };
+    }
 
-      const roofArea = area * 1.15;
-      const wallArea = 4 * Math.sqrt(area) * height;
-      const totalEnvelopeArea = roofArea + wallArea;
+    function renderResults(res) {
+      document.getElementById('res-peak-kw').innerText = Math.round(res.peakKw).toLocaleString() + ' kW';
+      document.getElementById('res-spec-load').innerText = Math.round(res.specLoadWPerM2) + ' W/m²';
+      document.getElementById('res-screen-save').innerText = res.screenSavingsPct.toFixed(1) + ' %';
+      document.getElementById('res-boiler-btu').innerText = res.boilerRatingMMBtu.toFixed(2) + ' MMBtu/h';
+    }
 
-      const screenFactor = 1.0 - (screenPct / 100.0) * 0.45;
-      const effectiveU = (roofArea * uBase * screenFactor + wallArea * uBase) / totalEnvelopeArea;
-
-      const deltaT = tIn - tOut;
-      const qTransW = totalEnvelopeArea * effectiveU * deltaT;
-      
-      const volume = area * height;
-      const qInfW = 1.204 * 1005 * (volume * 0.5 / 3600.0) * deltaT;
-
-      const totalPeakW = qTransW + qInfW;
-      const peakKw = totalPeakW / 1000.0;
-      const specLoad = totalPeakW / area;
-
-      const unscreenedW = (totalEnvelopeArea * uBase * deltaT) + qInfW;
-      const savingsPct = ((unscreenedW - totalPeakW) / unscreenedW) * 100;
-      const boilerBtu = (totalPeakW * 3.412142) / 1000000.0;
-
-      document.getElementById('res-peak-kw').innerText = Math.round(peakKw).toLocaleString() + ' kW';
-      document.getElementById('res-spec-load').innerText = Math.round(specLoad) + ' W/m²';
-      document.getElementById('res-screen-save').innerText = savingsPct.toFixed(1) + ' %';
-      document.getElementById('res-boiler-btu').innerText = boilerBtu.toFixed(2) + ' MMBtu/h';
+    function calculate() {
+      const inputs = readInputs();
+      const results = BiophysicsKernel.computeHeatingLoad(inputs);
+      renderResults(results);
     }
 
     function exportHeatingAuditPDF() {
