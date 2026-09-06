@@ -1270,8 +1270,144 @@
         inTemp = Math.round(((fVal - 32) * 5 / 9) * 10) / 10;
       }
 
-      // SCENARIO 1: VPD / Leaf Curling / Flower Abortion / Wilting
-      if (q.includes('curl') || q.includes('flower') || q.includes('blossom') || q.includes('abort') || q.includes('wilt') || q.includes('vpd') || q.includes('transpir') || q.includes('dry') || q.includes('tipburn') || q.includes('crispy')) {
+      // 1. SPECIALIZED 33-TOOL DIRECT DEEP ROUTING
+      if (['cfd', 'nen', 'farquhar', 'penman', 'rockwool', 'uvc', 'terminal', 'commodity', 'mqtt', 'twin'].some(k => q.includes(k))) {
+        return {
+          targetCard: 'toolsGrid',
+          html: `
+            <strong>🔬 [Specialized Engineering Engine Identified]</strong>
+            <div class="diagnosis-box">
+              Your inquiry involves specialized CEA biophysical modeling or CFD/IoT physics.<br>
+              We have matched your topic directly to our dedicated commercial engine in the catalog below.
+            </div>
+            <div class="action-plan">
+              <strong>👉 Recommended Engine:</strong>
+              <ul>
+                <li><strong>Direct Interactive Simulation:</strong> Scroll down to the <em>33-Tool Commercial Catalog</em> to launch the full dedicated model.</li>
+                <li><strong>All-Inclusive Access:</strong> All 33 specialized tools are fully unlocked in your Pro Suite.</li>
+              </ul>
+            </div>
+            <p style="margin-top:10px; font-size:0.85rem; color:#a7f3d0;">👉 Highlighted the <strong>Specialized Commercial Catalog</strong> below.</p>
+          `
+        };
+      }
+
+      // 2. CO2 ENRICHMENT (Evaluated before generic 'gas')
+      if (q.includes('co2') || q.includes('carbon dioxide') || /\bppm\b/.test(q) || q.includes('co2 dosing') || q.includes('dosing')) {
+        const floorArea = areaVal || 3300;
+        document.getElementById('co2Area').value = floorArea;
+        document.getElementById('co2Target').value = 800;
+        document.getElementById('co2Ambient').value = 420;
+        document.getElementById('co2Ach').value = 0.3;
+        recalcCO2();
+
+        const totalKgH = document.getElementById('resCo2KgH').innerText;
+        const cliCmd = `python horti_cli.py co2 --area ${floorArea} --height 4.5 --target-ppm 800 --ambient-ppm 420`;
+
+        return {
+          targetCard: 'cardCO2',
+          html: `
+            <strong>💨 [CO₂ Enrichment Protocol] Target 800 PPM Injection for ${floorArea.toLocaleString()} m² Greenhouse</strong>
+            <div class="diagnosis-box">
+              In a closed facility during morning sun, active crop photosynthesis depletes CO₂ below 300 PPM, halting growth.<br>
+              • <strong>Hourly Injection Requirement:</strong> <strong>${totalKgH}</strong> to sustain 800 PPM under tight ventilation (0.3 ACH).
+            </div>
+            <div class="action-plan">
+              <strong>📈 Best Practices for Maximum CO₂ ROI:</strong>
+              <ul>
+                <li><strong>Target Window:</strong> Dose from 30 minutes after sunrise until vents open >15% (typically 08:30–11:30 AM).</li>
+                <li><strong>Vent Interlock Shutoff:</strong> Immediately halt CO₂ injection when roof vents exceed 20% opening to prevent venting costly gas into ambient air.</li>
+              </ul>
+            </div>
+            <p style="margin-top:10px; font-size:0.85rem; color:#a7f3d0;">👉 Applied values to the <strong>CO₂ Enrichment Dosing Rate</strong> calculator below.</p>
+            <div class="cli-box">
+              <span>${cliCmd}</span>
+              <button class="cli-btn-copy" onclick="copyCliCmd(this, '${cliCmd}')">Copy CLI Command</button>
+            </div>
+          `
+        };
+      }
+
+      // 3. LED LIGHTING & DLI / CHILLER HVAC (Use \bdli\b to prevent 'seedling' false match)
+      const hasLightKw = ['led', 'light', 'ppfd', 'photoperiod', 'fixture', 'supplement', 'chiller', 'cooling ton', 'kwh', 'heat load'].some(k => q.includes(k)) || /\bdli\b/.test(q);
+      if (hasLightKw) {
+        if (['chiller', 'cooling ton', 'hvac', 'dissipation', 'kwh', 'heat load'].some(k => q.includes(k))) {
+          const fixtures = parseInt(extractNumber(/(\d+)\s*(?:led|fixture|high)/i, 50));
+          const watts = extractNumber(/(\d+)\s*w/i, 640);
+          document.getElementById('ledWatts').value = watts;
+          document.getElementById('ledCount').value = fixtures;
+          recalcLED();
+
+          const totalKw = document.getElementById('resLedKw').innerText;
+          const coolingTons = document.getElementById('resLedCoolingTons').innerText;
+          const dailyKwh = document.getElementById('resLedKwh').innerText;
+          const cliCmd = `python horti_cli.py led --watts ${watts} --count ${fixtures} --hours 16`;
+
+          return {
+            targetCard: 'cardLED',
+            html: `
+              <strong>💡 [LED Electrical & HVAC Thermal Load Audit] Sizing for ${fixtures} Fixtures</strong>
+              <div class="diagnosis-box">
+                Operating <strong>${fixtures} fixtures</strong> at <strong>${watts}W</strong> each:<br>
+                • <strong>Total Electrical Demand:</strong> <strong>${totalKw}</strong> (Daily: ${dailyKwh})<br>
+                • <strong>Required HVAC Chiller Tonnage:</strong> <strong>${coolingTons}</strong> of active heat rejection.
+              </div>
+              <div class="action-plan">
+                <strong>❄️ HVAC Heat Rejection Strategy:</strong>
+                <ul>
+                  <li><strong>Sensible Heat Load:</strong> Over 90% of electrical energy consumed by LEDs converts directly into sensible room heat. Ensure dedicated spot-cooling above the canopy.</li>
+                  <li><strong>Target Operating Window:</strong> Stage fixture on-cycles during off-peak nighttime electric tariff windows to slash commercial demand charges.</li>
+                </ul>
+              </div>
+              <p style="margin-top:10px; font-size:0.85rem; color:#a7f3d0;">👉 Populated the <strong>LED Sizing & HVAC Load</strong> calculator below.</p>
+              <div class="cli-box">
+                <span>${cliCmd}</span>
+                <button class="cli-btn-copy" onclick="copyCliCmd(this, '${cliCmd}')">Copy CLI Command</button>
+              </div>
+            `
+          };
+        } else {
+          let cropName = q.includes('strawberr') ? 'Strawberry' : (q.includes('lettuce') ? 'Lettuce / Greens' : 'Vine Crops');
+          let targetPpfd = cropName === 'Strawberry' ? 260 : (cropName === 'Lettuce / Greens' ? 220 : 350);
+          let photoperiodVal = cropName === 'Strawberry' ? 14 : 16;
+
+          document.getElementById('ppfd').value = targetPpfd;
+          document.getElementById('photoperiod').value = photoperiodVal;
+          document.getElementById('sunShare').value = 20;
+          recalcDLI();
+
+          const dliVal = document.getElementById('resDli').innerText;
+          const cliCmd = `python horti_cli.py dli --ppfd ${targetPpfd} --photoperiod ${photoperiodVal}`;
+
+          return {
+            targetCard: 'cardDLI',
+            html: `
+              <strong>💡 [Supplemental Lighting Audit] ${cropName} Targeted DLI & Photoperiod Plan</strong>
+              <div class="diagnosis-box">
+                Winter overcast and short daylight cause severe carbohydrate starvation, stunting fruit sizing and vegetative vigor.<br>
+                Delivering <strong>${targetPpfd} µmol/m²/s</strong> over a <strong>${photoperiodVal}-hour</strong> photoperiod provides <strong>${dliVal}</strong> of PAR (hitting commercial yield targets).
+              </div>
+              <div class="action-plan">
+                <strong>🌱 Recommended Lighting Schedule:</strong>
+                <ul>
+                  <li><strong>Pre-Dawn Extension (Recommended):</strong> Turn fixtures on from 04:30 to 08:00 (3.5 hours) before sunrise to activate stomata for early photosynthesis.</li>
+                  <li><strong>Post-Sunset Extension:</strong> Supplement from 17:30 to 20:30 (3.0 hours) to reach the DLI threshold without heat buildup.</li>
+                  <li><strong>Mandatory Dark Period:</strong> Provide at least 7–8 hours of uninterrupted darkness to prevent calcium tipburn and vegetative disorders.</li>
+                </ul>
+              </div>
+              <p style="margin-top:10px; font-size:0.85rem; color:#a7f3d0;">👉 Configured the <strong>Daily Light Integral (DLI)</strong> calculator below.</p>
+              <div class="cli-box">
+                <span>${cliCmd}</span>
+                <button class="cli-btn-copy" onclick="copyCliCmd(this, '${cliCmd}')">Copy CLI Command</button>
+              </div>
+            `
+          };
+        }
+      }
+
+      // 4. VPD & TRANSPIRATION STRESS
+      const hasVpdSymptom = ['curl', 'blossom', 'abort', 'wilt', 'vpd', 'transpir', 'dry inside', 'tipburn', 'crispy'].some(k => q.includes(k)) || q.includes('flower drop') || q.includes('flowers falling') || q.includes('flower abort');
+      if (hasVpdSymptom) {
         document.getElementById('airTemp').value = 28.5;
         document.getElementById('rh').value = 45;
         document.getElementById('leafOffset').value = -1.5;
@@ -1305,8 +1441,48 @@
         };
       }
 
-      // SCENARIO 2: Heating / Fuel Costs / Cold Weather / Thermal Screens
-      if (q.includes('heat') || q.includes('boiler') || q.includes('fuel') || q.includes('oil') || q.includes('gas') || q.includes('curtain') || q.includes('screen') || q.includes('thermal') || q.includes('cold') || q.includes('freez') || q.includes('winter') || q.includes('burner')) {
+      // 5. FERTIGATION & EC
+      if (['fert', 'nutrient', 'dilution', 'feed', 'drain', 'salt', 'batch'].some(k => q.includes(k)) || /\bec\b/.test(q)) {
+        let targetEc = extractNumber(/(\d+[\.]?\d*)\s*(?:ec|ms)/i, 1.8);
+        let baseEc = extractNumber(/(?:source|raw|well|base).*?(\d+[\.]?\d*)/i, 0.3);
+
+        document.getElementById('fertTargetEc').value = targetEc;
+        document.getElementById('fertBaseEc').value = baseEc;
+        document.getElementById('fertBatchVol').value = 1000;
+        document.getElementById('fertRatio').value = 100;
+        recalcFert();
+
+        const stockL = document.getElementById('resStockL').innerText;
+        const saltsKg = document.getElementById('resSaltsKg').innerText;
+        const cliCmd = `python horti_cli.py fert --target-ec ${targetEc} --base-ec ${baseEc} --volume 1000 --ratio 100`;
+
+        return {
+          targetCard: 'cardFert',
+          html: `
+            <strong>💧 [Fertigation Formulation] Target EC ${targetEc} mS/cm (Source Water EC: ${baseEc})</strong>
+            <div class="diagnosis-box">
+              Compensating for source water electrical conductivity (<strong>${baseEc} mS/cm</strong>):<br>
+              • <strong>Dry Soluble Fertilizer for 1,000 L Working Tank:</strong> ~<strong>${saltsKg}</strong><br>
+              • <strong>100x Concentrated Stock (Tanks A & B) Injection:</strong> <strong>${stockL} each</strong>
+            </div>
+            <div class="action-plan">
+              <strong>⚠️ Essential Rules for Commercial Fertigation:</strong>
+              <ul>
+                <li><strong>Keep Tanks A & B Strictly Separated:</strong> Never mix Calcium Nitrate (Tank A) with Sulfates and Phosphates (Tank B) in concentrated form. Precipitated gypsum permanently clogs drip emitters.</li>
+                <li><strong>Daily Drain EC Checks:</strong> If drainage leachate EC is >0.5 mS/cm higher than dripper EC, salt accumulation has begun. Run a short clear water flush.</li>
+              </ul>
+            </div>
+            <p style="margin-top:10px; font-size:0.85rem; color:#a7f3d0;">👉 Applied parameters to the <strong>Fertigation EC & Dilution Ratio</strong> calculator below.</p>
+            <div class="cli-box">
+              <span>${cliCmd}</span>
+              <button class="cli-btn-copy" onclick="copyCliCmd(this, '${cliCmd}')">Copy CLI Command</button>
+            </div>
+          `
+        };
+      }
+
+      // 6. HEATING / FUEL COSTS / COLD WEATHER / THERMAL SCREENS
+      if (['heat', 'boiler', 'fuel', 'oil', 'gas', 'curtain', 'screen', 'thermal', 'cold', 'freez', 'winter', 'burner'].some(k => q.includes(k))) {
         const floorArea = areaVal || 2000;
         let isStrawberry = q.includes('strawberr');
         const designIn = inTemp !== null ? inTemp : (isStrawberry ? 9.0 : 15.0);
@@ -1352,122 +1528,7 @@
         };
       }
 
-      // SCENARIO 3: LED Lighting & DLI / Supplemental
-      if (q.includes('led') || q.includes('light') || q.includes('dli') || q.includes('ppfd') || q.includes('photoperiod') || q.includes('supplement') || q.includes('strawberr') || q.includes('lettuce')) {
-        let cropName = q.includes('strawberr') ? 'Strawberry' : (q.includes('lettuce') ? 'Lettuce / Greens' : 'Vine Crops');
-        let targetPpfd = cropName === 'Strawberry' ? 260 : (cropName === 'Lettuce / Greens' ? 220 : 350);
-        let photoperiodVal = cropName === 'Strawberry' ? 14 : 16;
-
-        document.getElementById('ppfd').value = targetPpfd;
-        document.getElementById('photoperiod').value = photoperiodVal;
-        document.getElementById('sunShare').value = 20;
-        recalcDLI();
-
-        const dliVal = document.getElementById('resDli').innerText;
-        const cliCmd = `python horti_cli.py dli --ppfd ${targetPpfd} --photoperiod ${photoperiodVal}`;
-
-        return {
-          targetCard: 'cardDLI',
-          html: `
-            <strong>💡 [Supplemental Lighting Audit] ${cropName} Targeted DLI & Photoperiod Plan</strong>
-            <div class="diagnosis-box">
-              Winter overcast and short daylight cause severe carbohydrate starvation, stunting fruit sizing and vegetative vigor.<br>
-              Delivering <strong>${targetPpfd} µmol/m²/s</strong> over a <strong>${photoperiodVal}-hour</strong> photoperiod provides <strong>${dliVal}</strong> of PAR (hitting commercial yield targets).
-            </div>
-            <div class="action-plan">
-              <strong>🌱 Recommended Lighting Schedule:</strong>
-              <ul>
-                <li><strong>Pre-Dawn Extension (Recommended):</strong> Turn fixtures on from 04:30 to 08:00 (3.5 hours) before sunrise to activate stomata for early photosynthesis.</li>
-                <li><strong>Post-Sunset Extension:</strong> Supplement from 17:30 to 20:30 (3.0 hours) to reach the DLI threshold without heat buildup.</li>
-                <li><strong>Mandatory Dark Period:</strong> Provide at least 7–8 hours of uninterrupted darkness to prevent calcium tipburn and vegetative disorders.</li>
-              </ul>
-            </div>
-            <p style="margin-top:10px; font-size:0.85rem; color:#a7f3d0;">👉 Configured the <strong>Daily Light Integral (DLI)</strong> calculator below.</p>
-            <div class="cli-box">
-              <span>${cliCmd}</span>
-              <button class="cli-btn-copy" onclick="copyCliCmd(this, '${cliCmd}')">Copy CLI Command</button>
-            </div>
-          `
-        };
-      }
-
-      // SCENARIO 4: Fertigation & EC
-      if (q.includes('fert') || q.includes('nutrient') || q.includes('ec') || q.includes('dilution') || q.includes('feed') || q.includes('drain') || q.includes('salt') || q.includes('batch')) {
-        let targetEc = extractNumber(/(\d+[\.]?\d*)\s*(?:ec|ms)/i, 1.8);
-        let baseEc = extractNumber(/(?:source|raw|well|base).*?(\d+[\.]?\d*)/i, 0.3);
-
-        document.getElementById('fertTargetEc').value = targetEc;
-        document.getElementById('fertBaseEc').value = baseEc;
-        document.getElementById('fertBatchVol').value = 1000;
-        document.getElementById('fertRatio').value = 100;
-        recalcFert();
-
-        const stockL = document.getElementById('resStockL').innerText;
-        const saltsKg = document.getElementById('resSaltsKg').innerText;
-        const cliCmd = `python horti_cli.py fert --target-ec ${targetEc} --base-ec ${baseEc} --volume 1000 --ratio 100`;
-
-        return {
-          targetCard: 'cardFert',
-          html: `
-            <strong>💧 [Fertigation Formulation] Target EC ${targetEc} mS/cm (Source Water EC: ${baseEc})</strong>
-            <div class="diagnosis-box">
-              Compensating for source water electrical conductivity (<strong>${baseEc} mS/cm</strong>):<br>
-              • <strong>Dry Soluble Fertilizer for 1,000 L Working Tank:</strong> ~<strong>${saltsKg}</strong><br>
-              • <strong>100x Concentrated Stock (Tanks A & B) Injection:</strong> <strong>${stockL} each</strong>
-            </div>
-            <div class="action-plan">
-              <strong>⚠️ Essential Rules for Commercial Fertigation:</strong>
-              <ul>
-                <li><strong>Keep Tanks A & B Strictly Separated:</strong> Never mix Calcium Nitrate (Tank A) with Sulfates and Phosphates (Tank B) in concentrated form. Precipitated gypsum permanently clogs drip emitters.</li>
-                <li><strong>Daily Drain EC Checks:</strong> If drainage leachate EC is >0.5 mS/cm higher than dripper EC, salt accumulation has begun. Run a short clear water flush.</li>
-              </ul>
-            </div>
-            <p style="margin-top:10px; font-size:0.85rem; color:#a7f3d0;">👉 Applied parameters to the <strong>Fertigation EC & Dilution Ratio</strong> calculator below.</p>
-            <div class="cli-box">
-              <span>${cliCmd}</span>
-              <button class="cli-btn-copy" onclick="copyCliCmd(this, '${cliCmd}')">Copy CLI Command</button>
-            </div>
-          `
-        };
-      }
-
-      // SCENARIO 5: CO2 Enrichment
-      if (q.includes('co2') || q.includes('carbon') || q.includes('gas') || q.includes('ppm') || q.includes('dosing')) {
-        const floorArea = areaVal || 3300;
-        document.getElementById('co2Area').value = floorArea;
-        document.getElementById('co2Target').value = 800;
-        document.getElementById('co2Ambient').value = 420;
-        document.getElementById('co2Ach').value = 0.3;
-        recalcCO2();
-
-        const totalKgH = document.getElementById('resCo2KgH').innerText;
-        const cliCmd = `python horti_cli.py co2 --area ${floorArea} --height 4.5 --target-ppm 800 --ambient-ppm 420`;
-
-        return {
-          targetCard: 'cardCO2',
-          html: `
-            <strong>💨 [CO₂ Enrichment Protocol] Target 800 PPM Injection for ${floorArea.toLocaleString()} m² Greenhouse</strong>
-            <div class="diagnosis-box">
-              In a closed facility during morning sun, active crop photosynthesis depletes CO₂ below 300 PPM, halting growth.<br>
-              • <strong>Hourly Injection Requirement:</strong> <strong>${totalKgH}</strong> to sustain 800 PPM under tight ventilation (0.3 ACH).
-            </div>
-            <div class="action-plan">
-              <strong>📈 Best Practices for Maximum CO₂ ROI:</strong>
-              <ul>
-                <li><strong>Target Window:</strong> Dose from 30 minutes after sunrise until vents open >15% (typically 08:30–11:30 AM).</li>
-                <li><strong>Vent Interlock Shutoff:</strong> Immediately halt CO₂ injection when roof vents exceed 20% opening to prevent venting costly gas into ambient air.</li>
-              </ul>
-            </div>
-            <p style="margin-top:10px; font-size:0.85rem; color:#a7f3d0;">👉 Applied values to the <strong>CO₂ Enrichment Dosing Rate</strong> calculator below.</p>
-            <div class="cli-box">
-              <span>${cliCmd}</span>
-              <button class="cli-btn-copy" onclick="copyCliCmd(this, '${cliCmd}')">Copy CLI Command</button>
-            </div>
-          `
-        };
-      }
-
-      // DEFAULT / FALLBACK SMART TRIAGE
+      // 7. DEFAULT / FALLBACK SMART TRIAGE
       return {
         targetCard: 'cardVPD',
         html: `
