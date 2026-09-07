@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-adsense-account" content="ca-pub-8597809158257497">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Far-Red Photobiology (ePAR 400–750 nm) & Phytochrome Photostationary State (PSS) in Greenhouse Horticulture | Inwoovation</title>
+  <meta name="description" content="Engineering biophysics of far-red photon efficacy, ePAR extended photosynthetic range (400-750 nm), phytochrome photostationary state (PSS), and end-of-day (EOD) dynamics in commercial high-wire greenhouse crops.">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="canonical" href="https://inwoovation.com/articles/article-56-far-red-photobiology-epar-phytochrome-photostationary-state.html">
+  <link rel="alternate" hreflang="en" href="https://inwoovation.com/articles/article-56-far-red-photobiology-epar-phytochrome-photostationary-state.html">
+  <link rel="alternate" hreflang="de" href="https://inwoovation.com/articles/de/article-56-dunkelrot-photobiologie-epar-phytochrom-photostationaerer-zustand.html">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8597809158257497" crossorigin="anonymous"></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Far-Red Photobiology (ePAR 400–750 nm) & Phytochrome Photostationary State (PSS) in Greenhouse Horticulture",
+    "description": "Biophysical modeling of extended photosynthetically active radiation (ePAR 400-750 nm), phytochrome photostationary state (PSS), Emerson enhancement effect, and End-of-Day (EOD) far-red steering in commercial CEA.",
+    "author": {
+      "@type": "Person",
+      "name": "Inwoo Hwang"
+    },
+    "datePublished": "2026-09-07",
+    "dateModified": "2026-09-07",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Inwoovation Smart Farming"
+    }
+  }
+  </script>
+</head>
+<body>
+  <article class="article-container">
+    <header class="article-header">
+      <div class="category-tag">Horticultural Photobiology & LED Engineering</div>
+      <h1>Far-Red Photobiology (ePAR 400–750 nm) & Phytochrome Photostationary State (PSS) in Greenhouse Horticulture</h1>
+      <div class="article-meta">Published: 2026-09-07 • Author: Inwoo Hwang • Reading Time: 16 min</div>
+    </header>
+
+    <div class="article-body">
+      <p class="lead">For over five decades, commercial CEA horticulture strictly adhered to the traditional McCree curve definition of Photosynthetically Active Radiation (PAR, 400–700 nm), treating far-red photons (700–750 nm) as non-photosynthetic light with negligible quantum yield. However, groundbreaking biophysical research by Zhen, Bugbee, and Wageningen University has rewritten plant photobiology. Far-red photons not only drive direct photosynthetic carbon assimilation when combined with shorter wavelengths via the <strong>Emerson Enhancement Effect</strong>, but they also serve as the primary environmental trigger for shade avoidance, petiole elongation, and canopy photon interception via the <strong>Phytochrome Photostationary State (PSS)</strong>. In modern European Venlo greenhouses—from <strong>Niederrhein (Straelen)</strong> to <strong>Westland</strong>—integrating dynamic far-red LED channels enables growers to balance canopy architecture with unprecedented electrical efficacy ($\mu\text{mol/J}$).</p>
+
+      <h2>1. The Paradigm Shift: From PAR (400–700 nm) to ePAR (400–750 nm)</h2>
+      <p>Under the historical definition established by K.J. McCree (1972), photons with wavelengths longer than 700 nm were excluded from quantum light meters because their solitary quantum yield of $CO_2$ fixation drops sharply. However, inside natural sunlight and mixed LED spectra, Photosystem II (PSII, peak excitation $\sim 680\text{ nm}$) and Photosystem I (PSI, peak excitation $\sim 700-730\text{ nm}$) operate in series.</p>
+
+      <p>When leaves are illuminated exclusively with red and blue photons, PSII is over-excited while PSI becomes rate-limiting, causing an electron transport bottleneck at the plastoquinone (PQ) pool. Supplementing with far-red photons (700–750 nm) selectively excites PSI, clearing the PQ pool and restoring full cyclic and non-cyclic electron transport. This synergism is quantified by the <strong>Emerson Enhancement Ratio ($EER$)</strong>:</p>
+
+      <div class="code-box">
+        <code>EER = \frac{A_{combined}(\lambda_{400-700} + \lambda_{700-750})}{A_{PAR}(\lambda_{400-700}) + A_{FR}(\lambda_{700-750})} > 1.0</code>
+      </div>
+
+      <p>Where $A$ denotes the net photosynthetic $CO_2$ assimilation rate ($\mu\text{mol } CO_2 \cdot m^{-2} \cdot s^{-1}$). In high-wire fruiting crops such as tomato (<em>Solanum lycopersicum</em>) and sweet pepper (<em>Capsicum annuum</em>), adding up to 15–20% far-red photons to a red/blue or broad-spectrum background yields an equal or greater quantum yield per absorbed photon than adding an identical flux of pure 660 nm red photons.</p>
+
+      <h2>2. Mathematical Modeling of Phytochrome Photostationary State (PSS)</h2>
+      <p>While far-red photons directly power photosynthesis, they concurrently regulate plant morphology through the phytochrome photoreceptor system. Phytochromes exist in two photo-reversible conformations:</p>
+      <ul>
+        <li><strong>$P_r$ (Inactive Form)</strong>: Absorbance peak at 660 nm (Red). Absorbing red light converts $P_r \rightarrow P_{fr}$.</li>
+        <li><strong>$P_{fr}$ (Biologically Active Form)</strong>: Absorbance peak at 730 nm (Far-Red). Absorbing far-red light converts $P_{fr} \rightarrow P_r$.</li>
+      </ul>
+
+      <p>Under any spectral power distribution $N(\lambda)$ ($\mu\text{mol} \cdot m^{-2} \cdot s^{-1} \cdot nm^{-1}$), the ratio of active phytochrome to total phytochrome reaches a dynamic photostationary state ($PSS$), mathematically formulated using the photochemical cross-sections of Sager et al. (1988) and Gardner (1993):</p>
+
+      <div class="code-box">
+        <code>PSS = \frac{[P_{fr}]}{[P_{total}]} = \frac{\int_{300}^{800} \lambda \cdot N(\lambda) \cdot \sigma_r(\lambda) \, d\lambda}{\int_{300}^{800} \lambda \cdot N(\lambda) \cdot \sigma_r(\lambda) \, d\lambda + \int_{300}^{800} \lambda \cdot N(\lambda) \cdot \sigma_{fr}(\lambda) \, d\lambda}</code>
+      </div>
+
+      <p>Where:</p>
+      <ul>
+        <li><strong>$\sigma_r(\lambda)$</strong>: Photochemical extinction coefficient and quantum yield of $P_r \rightarrow P_{fr}$ conversion at wavelength $\lambda$.</li>
+        <li><strong>$\sigma_{fr}(\lambda)$</strong>: Photochemical extinction coefficient and quantum yield of $P_{fr} \rightarrow P_r$ conversion at wavelength $\lambda$.</li>
+      </ul>
+
+      <p>In open sunlight, the red-to-far-red ratio ($R:FR \approx 1.2$) establishes a $PSS \approx 0.70 - 0.72$. Beneath dense crop canopies, chlorophyll selectively absorbs 400–700 nm while transmitting >80% of far-red photons, causing $R:FR$ to plummet below 0.2 and driving $PSS$ down to $0.45 - 0.55$. This induces the classical <strong>Shade Avoidance Syndrome (SAS)</strong>.</p>
+
+      <h2>3. Horticultural Steering: Canopy Expansion vs. Harvest Index</h2>
+      <p>Manipulating the $PSS$ enables precision control over vegetative architecture without chemical plant growth regulators (PGRs):</p>
+
+      <table style="width:100%; border-collapse:collapse; margin:20px 0; color:#e2e8f0; font-size:0.95rem;">
+        <thead>
+          <tr style="border-bottom:2px solid #06b6d4; background:#1e293b; text-align:left;">
+            <th style="padding:10px;">PSS Range</th>
+            <th style="padding:10px;">Morphological Response</th>
+            <th style="padding:10px;">Agronomic Objective</th>
+            <th style="padding:10px;">Typical CEA Application</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.08);">
+            <td style="padding:10px; font-weight:700; color:#38bdf8;">0.80 – 0.88</td>
+            <td style="padding:10px;">Extreme compact internodes, thick leaves, high specific leaf weight ($SLW$).</td>
+            <td style="padding:10px;">Prevent stretching in young transplants; dwarf bedding plants.</td>
+            <td style="padding:10px;">Nursery propagation, seedling grafts, vertical indoor leafy greens.</td>
+          </tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.08);">
+            <td style="padding:10px; font-weight:700; color:#10b981;">0.68 – 0.74</td>
+            <td style="padding:10px;">Natural open-field phenotype; balanced vegetative/generative partitioning.</td>
+            <td style="padding:10px;">Standard vegetative maintenance; maximum harvest index ($HI$).</td>
+            <td style="padding:10px;">Commercial Venlo high-wire tomato & pepper production.</td>
+          </tr>
+          <tr>
+            <td style="padding:10px; font-weight:700; color:#f59e0b;">0.55 – 0.65</td>
+            <td style="padding:10px;">Rapid leaf lamina expansion, elongated petioles, reduced chlorophyll concentration per unit area.</td>
+            <td style="padding:10px;">Accelerate canopy ground closure; maximize fractional light interception ($f_{int}$).</td>
+            <td style="padding:10px;">Early transplant establishment; winter low-DLI supplemental steering.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>4. End-of-Day (EOD) vs. Continuous Daytime Far-Red Regimes</h2>
+      <p>Growers face two distinct engineering strategies for applying far-red photons:</p>
+
+      <h3>Strategy A: Continuous Daytime Far-Red ($ePAR$)</h3>
+      <p>Far-red LEDs (730 nm peak) operate throughout the entire photoperiod alongside broad-spectrum or red/blue top-lights. This simultaneously harnesses the <strong>Emerson enhancement effect</strong> (boosting net canopy carbon fixation by 8–12%) and maintains a moderate $PSS \approx 0.65$. Because leaf lamina expands more broadly, the canopy absorbs more total daily incident photons ($DLI$), compounding yield gains over 20-week cropping cycles.</p>
+
+      <h3>Strategy B: End-of-Day (EOD) Far-Red Pulse</h3>
+      <p>To avoid excessive stem stretching during daytime high-DLI conditions while capturing the morphological benefits of shade avoidance, a short pulse of far-red light (15–30 minutes at $20-40 \, \mu\text{mol} \cdot m^{-2} \cdot s^{-1}$) is delivered immediately after the main photoperiod shuts off. This resets phytochrome to the inactive $P_r$ state ($PSS < 0.40$) for the duration of the night. In high-wire cucumber (<em>Cucumis sativus</em>), EOD far-red accelerates petiole elongation and prevents leaf crowding in dense vertical rows without reducing fruit dry matter partition.</p>
+
+      <h2>5. Energy Efficacy and Venlo Greenhouse Thermal Balance</h2>
+      <p>From an electrical engineering standpoint, modern 730 nm far-red LED packages exhibit exceptionally high electrical-to-optical conversion efficiency ($\eta_{opt} \approx 70-75\%$), achieving fixture efficacies exceeding <strong>$3.8 - 4.2 \, \mu\text{mol/J}$</strong>—substantially higher than phosphor-converted white or 450 nm royal blue LEDs. Furthermore, because far-red photons are less strongly absorbed by greenhouse structural glass and upper canopy shade screens, radiant dissipation patterns differ markedly from traditional high-pressure sodium (HPS) luminaires.</p>
+
+      <div class="code-box">
+        <code>\Delta H_{canopy} = \int \left[ (1 - \alpha_{PAR}) \cdot PPFD + (1 - \alpha_{FR}) \cdot PFD_{FR} \right] d\lambda + \dot{Q}_{convection}</code>
+      </div>
+
+      <p>By shifting 15% of supplemental light fixture power to far-red channels, growers in cool maritime climates like North Rhine-Westphalia can deliver equal photosynthetic carbon driving force while reducing electrical connected load by <strong>7.4%</strong> and mitigating midday leaf temperature overheating.</p>
+
+      <h2>6. Conclusion: Engineering Guidelines for Modern CEA Operators</h2>
+      <p>Integrating ePAR and PSS metrics into commercial climate and lighting computers (e.g., Priva, Hoogendoorn, Ridder) represents the cutting edge of controlled environment agriculture. Key operational rules for growers include:</p>
+      <ul>
+        <li><strong>Adopt ePAR Light Sensors</strong>: Upgrade quantum sensors to wide-band detectors measuring 400–750 nm to account for the full photochemical driving force.</li>
+        <li><strong>Target $PSS \approx 0.70$ for High-Wire Fruiting Crops</strong>: Maintain $R:FR \approx 1.2-1.5$ during full fruit-load stages to avoid unwanted vegetative sink competition.</li>
+        <li><strong>Deploy EOD Pulses for Canopy Opening</strong>: Utilize 20-minute EOD far-red treatments during winter low-light weeks to expand light interception without excessive structural stretching.</li>
+      </ul>
+    </div>
+
+    <footer class="article-footer" style="margin-top:40px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.1);">
+      <p><strong>About the Author:</strong> Inwoo Hwang is an agrotechnology systems researcher and software engineer specializing in biophysical greenhouse modeling, closed-loop fertigation dynamics, and autonomous climate control architectures for European Venlo greenhouse facilities.</p>
+      <p><a href="../guides.html" style="color:#38bdf8;">← Back to All Horticultural Engineering Articles</a></p>
+    </footer>
+  </article>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-adsense-account" content="ca-pub-8597809158257497">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dunkelrot-Photobiologie (ePAR 400–750 nm) & Phytochrom-Photostationärer Zustand (PSS) im Unterglasanbau | Inwoovation</title>
+  <meta name="description" content="Ingenieurwissenschaftliche Photobiologie von Dunkelrot-Photonen (Far-Red), ePAR (400-750 nm), Phytochrom-Gleichgewicht (PSS) und End-of-Day-Steuerung in kommerziellen Venlo-Gewächshäusern.">
+  <link rel="stylesheet" href="../../css/styles.css">
+  <link rel="canonical" href="https://inwoovation.com/articles/de/article-56-dunkelrot-photobiologie-epar-phytochrom-photostationaerer-zustand.html">
+  <link rel="alternate" hreflang="en" href="https://inwoovation.com/articles/article-56-far-red-photobiology-epar-phytochrome-photostationary-state.html">
+  <link rel="alternate" hreflang="de" href="https://inwoovation.com/articles/de/article-56-dunkelrot-photobiologie-epar-phytochrom-photostationaerer-zustand.html">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8597809158257497" crossorigin="anonymous"></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Dunkelrot-Photobiologie (ePAR 400–750 nm) & Phytochrom-Photostationärer Zustand (PSS) im Unterglasanbau",
+    "description": "Biophysikalische Modellierung der erweiterten photosynthetisch aktiven Strahlung (ePAR 400-750 nm), Phytochrom-Gleichgewicht (PSS), Emerson-Verstärkungseffekt und End-of-Day (EOD) Belichtungsstrategien im professionellen Gartenbau.",
+    "author": {
+      "@type": "Person",
+      "name": "Inwoo Hwang"
+    },
+    "datePublished": "2026-09-07",
+    "dateModified": "2026-09-07",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Inwoovation Smart Farming"
+    }
+  }
+  </script>
+</head>
+<body>
+  <article class="article-container">
+    <header class="article-header">
+      <div class="category-tag">Gartenbau-Photobiologie & LED-Systemtechnik</div>
+      <h1>Dunkelrot-Photobiologie (ePAR 400–750 nm) & Phytochrom-Photostationärer Zustand (PSS) im Unterglasanbau</h1>
+      <div class="article-meta">Veröffentlicht: 07.09.2026 • Autor: Inwoo Hwang • Lesezeit: 16 Min.</div>
+    </header>
+
+    <div class="article-body">
+      <p class="lead">Über fünf Jahrzehnte lang definierte der Erwerbsgartenbau die photosynthetisch aktive Strahlung (PAR) strikt nach der McCree-Kurve (400–700 nm) und stufte Dunkelrot-Photonen (Far-Red, 700–750 nm) als photochemisch ineffizient ein. Durch neuere biophysikalische Arbeiten von Zhen, Bugbee sowie der Universität Wageningen hat sich das photobiologische Paradigma jedoch grundlegend gewandelt: Dunkelrot-Photonen treiben über den <strong>Emerson-Verstärkungseffekt</strong> in Kombination mit kürzeren Wellenlängen die Photosynthese mit hoher Quantenausbeute an und steuern über das <strong>Phytochrom-Gleichgewicht ($PSS$, Phytochrome Photostationary State)</strong> gezielt die Bestandesarchitektur und Lichtinterzeption. In modernen Venlo-Gewächshäusern am <strong>Niederrhein (Straelen)</strong> und im <strong>Knoblauchsland</strong> ermöglicht die Integration dynamischer Dunkelrot-LED-Kanäle eine drastische Steigerung der elektrischen Gesamteffizienz ($\mu\text{mol/J}$).</p>
+
+      <h2>1. Der Paradigmenwechsel: Von PAR (400–700 nm) zu ePAR (400–750 nm)</h2>
+      <p>Unter der historischen Definition von K.J. McCree (1972) wurden Photonen oberhalb von 700 nm aus Quantenlichtmessern ausgeschlossen, da die solitäre Quantenausbeute der $CO_2$-Fixierung jenseits von 700 nm steil abfällt. Unter natürlichem Sonnenlicht oder breitbandigen LED-Spektren arbeiten die beiden Photosysteme – Photosystem II (PSII, Anregungsmaximum $\sim 680\text{ nm}$) und Photosystem I (PSI, Anregungsmaximum $\sim 700-730\text{ nm}$) – jedoch in Reihe.</p>
+
+      <p>Wird ein Pflanzenbestand ausschließlich mit rotem (660 nm) und blauem (450 nm) Licht bestrahlt, wird PSII übererregt, während PSI zum geschwindigkeitsbestimmenden Engpass wird. Dies führt zu einem Elektronenstau am Plastoquinon-Pool (PQ). Die gezielte Zugabe von Dunkelrot-Photonen (700–750 nm) regt selektiv PSI an, baut den Elektronenstau ab und stellt den optimalen linearen Elektronentransport wieder her. Dieses Phänomen wird quantifiziert durch das <strong>Emerson-Verstärkungsverhältnis ($EER$)</strong>:</p>
+
+      <div class="code-box">
+        <code>EER = \frac{A_{kombiniert}(\lambda_{400-700} + \lambda_{700-750})}{A_{PAR}(\lambda_{400-700}) + A_{FR}(\lambda_{700-750})} > 1.0</code>
+      </div>
+
+      <p>Hierbei beschreibt $A$ die Netto-Photosyntheserate ($\mu\text{mol } CO_2 \cdot m^{-2} \cdot s^{-1}$). Bei ertragsintensiven Fruchtgemüsekulturen wie Tomate (<em>Solanum lycopersicum</em>) und Paprika (<em>Capsicum annuum</em>) führt ein Dunkelrotanteil von 15–20% zu einer gleichen oder höheren photochemischen Effizienz als eine äquivalente Erhöhung des 660 nm Hellrot-Lichtstroms.</p>
+
+      <h2>2. Mathematische Modellierung des Phytochrom-Photostationären Zustands (PSS)</h2>
+      <p>Neben der direkten photosynthetischen Verwertung modulieren Dunkelrot-Photonen maßgeblich die Pflanzenmorphologie über das Phytochrom-Photorezeptorsystem. Phytochrom existiert in zwei reversibel schaltbaren Konformationen:</p>
+      <ul>
+        <li><strong>$P_r$ (Inaktive Form)</strong>: Absorptionsmaximum bei 660 nm (Hellrot). Die Absorption von Hellrot wandelt $P_r \rightarrow P_{fr}$ um.</li>
+        <li><strong>$P_{fr}$ (Biologisch aktive Form)</strong>: Absorptionsmaximum bei 730 nm (Dunkelrot). Die Absorption von Dunkelrot schaltet $P_{fr} \rightarrow P_r$ zurück.</li>
+      </ul>
+
+      <p>Unter einem beliebigen Strahlungsspektrum $N(\lambda)$ ($\mu\text{mol} \cdot m^{-2} \cdot s^{-1} \cdot nm^{-1}$) stellt sich ein dynamischer photostationärer Gleichgewichtszustand ($PSS$) ein, der nach Sager et al. (1988) und Gardner (1993) wie folgt formuliert wird:</p>
+
+      <div class="code-box">
+        <code>PSS = \frac{[P_{fr}]}{[P_{total}]} = \frac{\int_{300}^{800} \lambda \cdot N(\lambda) \cdot \sigma_r(\lambda) \, d\lambda}{\int_{300}^{800} \lambda \cdot N(\lambda) \cdot \sigma_r(\lambda) \, d\lambda + \int_{300}^{800} \lambda \cdot N(\lambda) \cdot \sigma_{fr}(\lambda) \, d\lambda}</code>
+      </div>
+
+      <p>Hierbei stellen $\sigma_r(\lambda)$ und $\sigma_{fr}(\lambda)$ die photochemischen Wirkungsquerschnitte für die Hin- und Rückreaktion dar. Im unbeschatteten Freilandlicht etabliert das Hellrot-zu-Dunkelrot-Verhältnis ($R:FR \approx 1.2$) ein $PSS \approx 0.70 - 0.72$. Im dichten Unterglasbestand absorbiert das Chlorophyll 400–700 nm Licht stark, während Dunkelrot zu über 80% transmittiert wird. Das $R:FR$-Verhältnis sinkt auf $< 0.2$, was das $PSS$ auf $0.45 - 0.55$ drückt und die <strong>Schattenvermeidungsreaktion (Shade Avoidance Syndrome, SAS)</strong> auslöst.</p>
+
+      <h2>3. Gartenbauliche Bestandessteuerung: Blattflächenexpansion vs. Ernteindex</h2>
+      <p>Über die gezielte Beeinflussung des $PSS$-Wertes kann der Gärtnermeister die vegetative Architektur ohne chemische Wachstumsregulatoren (Hemmstoffe) steuern:</p>
+
+      <table style="width:100%; border-collapse:collapse; margin:20px 0; color:#e2e8f0; font-size:0.95rem;">
+        <thead>
+          <tr style="border-bottom:2px solid #06b6d4; background:#1e293b; text-align:left;">
+            <th style="padding:10px;">PSS-Bereich</th>
+            <th style="padding:10px;">Morphologische Reaktion</th>
+            <th style="padding:10px;">Gartenbauliches Ziel</th>
+            <th style="padding:10px;">Praxisanwendung</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.08);">
+            <td style="padding:10px; font-weight:700; color:#38bdf8;">0.80 – 0.88</td>
+            <td style="padding:10px;">Stark gestauchte Internodien, dicke Blätter, hohes spezifisches Blattgewicht ($SLW$).</td>
+            <td style="padding:10px;">Verhinderung des Geilwuchses (Vergeilung) bei Jungpflanzen.</td>
+            <td style="padding:10px;">Jungpflanzenanzucht, Veredelung, Vertical Farming (Salat).</td>
+          </tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.08);">
+            <td style="padding:10px; font-weight:700; color:#10b981;">0.68 – 0.74</td>
+            <td style="padding:10px;">Ausgeglichener Habitus; harmonische vegetative und generative Verteilung.</td>
+            <td style="padding:10px;">Standard-Produktionsbetrieb; maximaler Ernteindex ($HI$).</td>
+            <td style="padding:10px;">Hochdraht-Tomaten- & Paprika-Kulturen im Venlo-Gewächshaus.</td>
+          </tr>
+          <tr>
+            <td style="padding:10px; font-weight:700; color:#f59e0b;">0.55 – 0.65</td>
+            <td style="padding:10px;">Rasche Blattspreitenexpansion, verlängerte Blattstiele, rascher Bestandsschluss.</td>
+            <td style="padding:10px;">Maximierung der fraktionellen Lichtabsorption ($f_{int}$).</td>
+            <td style="padding:10px;">Frühe Etablierungsphase im Winter; lichtarme Perioden.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>4. End-of-Day (EOD) vs. Kontinuierliche Tages-Dunkelrotbelichtung</h2>
+      <p>Im professionellen Gewächshausmanagement stehen zwei ingenieurtechnische Applikationsstrategien zur Auswahl:</p>
+
+      <h3>Strategie A: Kontinuierliche Dunkelrot-Zusatzbelichtung ($ePAR$)</h3>
+      <p>Dunkelrot-LEDs (730 nm Peak) laufen während der gesamten Photoperiode synchron mit den Weiß- oder Rot/Blau-Toplights. Dies nutzt ganztägig den <strong>Emerson-Effekt</strong> (Steigerung der Netto-Kohlenstofffixierung um 8–12%) und stabilisiert das $PSS$ auf einem moderaten Niveau von $\sim 0.65$. Durch die vergrößerte Blattfläche fängt der Bestand mehr Photonen des täglichen Lichtintegrals ($DLI$) auf, was zu messbaren Mehrerträgen führt.</p>
+
+      <h3>Strategie B: End-of-Day (EOD) Dunkelrot-Impulsbelichtung</h3>
+      <p>Um ein unerwünschtes vegetatives Längenwachstum während der Haupttageszeit zu vermeiden, wird unmittelbar nach Abschaltung der Hauptbelichtung ein 15- bis 30-minütiger Dunkelrot-Impuls ($20-40 \, \mu\text{mol} \cdot m^{-2} \cdot s^{-1}$) appliziert. Dies überführt das Phytochrom vor Beginn der Dunkelphase in die inaktive $P_r$-Form ($PSS < 0.40$). Im Salat- und Gurkenanbau fördert dieser nächtliche Impuls die Blattspreitenausbreitung, ohne den Frucht-Trockenmasseanteil zu mindern.</p>
+
+      <h2>5. Energieeffizienz und thermische Strahlungsbilanz</h2>
+      <p>Aus elektrotechnischer Sicht besitzen moderne 730-nm-Dunkelrot-LED-Chips eine herausragende optische Konversionseffizienz ($\eta_{opt} \approx 70-75\%$) und erreichen Fixture-Effizienzen von über <strong>$3.8 - 4.2 \, \mu\text{mol/J}$</strong>. Da Dunkelrot-Photonen von den Gewächshausscheiben weniger absorbiert werden als die Wärmestrahlung konventioneller Natriumdampf-Hochdrucklampen (HPS), reduziert der Einsatz von Dunkelrot-LEDs die unerwünschte Überhitzung der oberen Bestandesschichten.</p>
+
+      <div class="code-box">
+        <code>\Delta H_{Bestand} = \int \left[ (1 - \alpha_{PAR}) \cdot PPFD + (1 - \alpha_{FR}) \cdot PFD_{FR} \right] d\lambda + \dot{Q}_{Konvektion}</code>
+      </div>
+
+      <p>Durch die Substitution von 15% der installierten LED-Leistung durch Dunkelrot-Kanäle können Gartenbaubetriebe in Straelen bei gleichem photochemischen Ertrag die elektrische Anschlussleistung um <strong>7.4%</strong> senken und die Betriebskosten der Spitzenlast-Heizung dämpfen.</p>
+
+      <h2>6. Fazit: Handlungsempfehlungen für moderne Gartenbaubetriebe</h2>
+      <p>Die Einbindung von ePAR- und PSS-Kennzahlen in moderne Klimacomputer (z. B. Priva Connext, Hoogendoorn iSii) repräsentiert den State-of-the-Art im geschützten Anbau. Für die betriebliche Praxis gelten folgende Kernregeln:</p>
+      <ul>
+        <li><strong>ePAR-Sensoren nachrüsten</strong>: Umstellung von klassischen PAR-Quantensensoren auf Breitband-Messköpfe (400–750 nm), um die tatsächliche photosynthetische Triebkraft zu erfassen.</li>
+        <li><strong>Ziel-$PSS \approx 0.70$ bei Hochdrahtkulturen</strong>: Sicherung eines ausgewogenen Verhältnisses von $R:FR \approx 1.2-1.5$ in der Hauptfruchtphase, um übermäßiges vegetatives Triebwachstum zu verhindern.</li>
+        <li><strong>EOD-Impulse in den Wintermonaten</strong>: 20-minütige EOD-Dunkelrotgaben in sonnenarmen Wochen zur Vergrößerung der Blattinterzeptionsfläche.</li>
+      </ul>
+    </div>
+
+    <footer class="article-footer" style="margin-top:40px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.1);">
+      <p><strong>Über den Autor:</strong> Inwoo Hwang ist Agrotechnologie-Forscher und Software-Ingenieur mit Spezialisierung auf biophysikalische Gewächshausmodellierung, geschlossene Kreislauffertigation und autonome Klimaregelungsarchitekturen für europäische Venlo-Gewächshäuser.</p>
+      <p><a href="../../guides.html" style="color:#38bdf8;">← Zurück zur Übersicht aller Fachartikel</a></p>
+    </footer>
+  </article>
+</body>
+</html>
