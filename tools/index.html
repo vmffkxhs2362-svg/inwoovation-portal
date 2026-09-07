@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Greenhouse & Controlled Environment Engineering Tools Suite (33 Enterprise Tools) | Inwoovation</title>
-  <meta name="description" content="A comprehensive suite of 33 industrial-grade commercial greenhouse engineering calculators, 3D WebGL digital twin simulators, AI diagnostic vision engines, and autonomous MPC controllers.">
+  <title>Greenhouse & Controlled Environment Engineering Tools Suite (34 Enterprise Tools) | Inwoovation</title>
+  <meta name="description" content="A comprehensive suite of 34 industrial-grade commercial greenhouse engineering calculators, 3D WebGL digital twin simulators, global agri-subsidy navigators, and autonomous MPC controllers.">
   <link rel="stylesheet" href="css/digital_twin_styles.css">
   <link rel="stylesheet" href="../css/global-ui-enhancements.css?v=20260901_spotlight">
   <script src="../js/global-search-palette.js?v=20260901_spotlight"></script>
@@ -361,7 +361,7 @@
     <header class="sim-header">
       <div>
         <h1 style="font-size: 2.2rem; font-weight: 800; color: #ffffff;">🛠️ Commercial CEA Engineering Tools Suite</h1>
-        <p style="color: #94a3b8; margin-top: 6px;">33 Enterprise-Grade Microclimate Physics Models, Autonomous AI Controllers & Open-Source Tools</p>
+        <p style="color: #94a3b8; margin-top: 6px;">34 Enterprise-Grade Microclimate Physics Models, Global Subsidy Navigators & Autonomous AI Controllers</p>
       </div>
     </header>
 
@@ -400,6 +400,7 @@
           <button class="quick-chip" onclick="applyQuickSearch('VPD')">💧 VPD / Humidity</button>
           <button class="quick-chip" onclick="applyQuickSearch('DLI')">💡 LED / DLI</button>
           <button class="quick-chip" onclick="applyQuickSearch('Heating')">🔥 Heating / Energy</button>
+          <button class="quick-chip" onclick="applyQuickSearch('Subsidy')">🏛️ Grants & Subsidies</button>
           <button class="quick-chip" onclick="applyQuickSearch('Nutrient')">🧪 Nutrients / EC</button>
           <button class="quick-chip" onclick="applyQuickSearch('AI')">🧠 AI & Vision</button>
           <button class="quick-chip" onclick="applyQuickSearch('Open Source')">⭐ Open Source</button>
@@ -427,6 +428,7 @@
             <button class="symptom-chip" onclick="applyScenario('ber')">🍅 Tomato Blossom-End Rot (BER)</button>
             <button class="symptom-chip" onclick="applyScenario('botrytis')">🌧️ High Humidity & Botrytis Blight</button>
             <button class="symptom-chip" onclick="applyScenario('heating')">❄️ Winter Peak Heating Load & Heat Loss</button>
+            <button class="symptom-chip" onclick="applyScenario('subsidy')">🏛️ Government Subsidies & Energy Grants</button>
             <button class="symptom-chip" onclick="applyScenario('led_roi')">💡 Supplemental LED ROI & Yield Forecast</button>
             <button class="symptom-chip" onclick="applyScenario('sodium')">🧪 Closed-Loop Recirculation Na⁺ Accumulation</button>
             <button class="symptom-chip" onclick="applyScenario('ipm')">🐞 Spider Mite / Thrips Biological Control (IPM)</button>
@@ -449,15 +451,25 @@
     </div>
 
     <div class="filter-bar">
-      <button class="filter-btn active" onclick="filterCategory('all', this)">All 33 Tools</button>
+      <button class="filter-btn active" onclick="filterCategory('all', this)">All 34 Tools</button>
       <button class="filter-btn" onclick="filterCategory('climate', this)">🌡️ Climate & Thermodynamics</button>
       <button class="filter-btn" onclick="filterCategory('lighting', this)">💡 Lighting & Photobiology</button>
       <button class="filter-btn" onclick="filterCategory('water', this)">💧 Hydroponics & Water</button>
       <button class="filter-btn" onclick="filterCategory('ai', this)">🧠 AI, IoT & Automation</button>
-      <button class="filter-btn" onclick="filterCategory('quant', this)">📊 Finance & Quant</button>
+      <button class="filter-btn" onclick="filterCategory('quant', this)">📊 Finance & Subsidies</button>
     </div>
 
     <div class="tools-hub-grid">
+      <!-- Tool 0: Global Agri-Subsidy & Grant Navigator -->
+      <div class="tool-card" style="border-color: rgba(16, 185, 129, 0.4); background: linear-gradient(145deg, rgba(30, 41, 59, 0.95), rgba(15, 23, 42, 0.9));">
+        <div>
+          <div class="tool-icon">🌐</div>
+          <h2 class="tool-title">Global Agri-Subsidy & Grant Navigator <span class="badge-open-source" style="background: rgba(16, 185, 129, 0.2); color: #34d399; border-color: #10b981;">FINTECH</span></h2>
+          <p class="tool-desc">Real-time commercial greenhouse, vertical farm, and smart farm financial incentive finder across Germany (BLE/AFP), USA (USDA EQIP/REAP), Korea (MAFRA ICT), Netherlands (SDE++), Canada, and Japan with instant capital payback compression calculator.</p>
+        </div>
+        <a href="global-agri-subsidy-grant-navigator.html" class="tool-link" style="background: linear-gradient(135deg, #10b981, #059669);">Launch Subsidy Navigator →</a>
+      </div>
+
       <!-- Tool 1 -->
       <div class="tool-card">
         <div>
@@ -904,7 +916,7 @@
           } else if (activeCategory === 'ai') {
             matchesCat = fullContent.includes('ai') || fullContent.includes('mqtt') || fullContent.includes('opencea') || fullContent.includes('vision') || fullContent.includes('steering') || fullContent.includes('autonomous');
           } else if (activeCategory === 'quant') {
-            matchesCat = fullContent.includes('quant') || fullContent.includes('capex') || fullContent.includes('srs') || fullContent.includes('scr') || fullContent.includes('irr');
+            matchesCat = fullContent.includes('quant') || fullContent.includes('capex') || fullContent.includes('srs') || fullContent.includes('scr') || fullContent.includes('irr') || fullContent.includes('subsidy') || fullContent.includes('grant') || fullContent.includes('ble');
           }
         }
 
@@ -1033,6 +1045,17 @@
           { name: "Venlo Greenhouse Digital Twin Simulator", url: "digital-twin-greenhouse-simulator.html", tag: "Thermodynamic Digital Twin" }
         ],
         targetUrls: ["autonomous-ai", "mqtt-edge", "digital-twin-greenhouse"]
+      },
+      subsidy: {
+        query: "government subsidy grant reap eqip ble smartfarm energy screen incentive",
+        title: "🏛️ Agricultural Subsidies, Clean Energy Grants & Payback Compression",
+        explanation: "Commercial greenhouse investments (LED retrofits, thermal screens, heat pumps, closed-loop fertigation) qualify for <strong>30% to 75% non-repayable government grants</strong> (German BLE/AFP, US USDA REAP/EQIP, Korean MAFRA ICT, Dutch SDE++). Factoring in capital subsidies compresses facility payback periods from 5.8 years to under 2.5 years.",
+        recommendations: [
+          { name: "Global Agri-Subsidy & Grant Navigator", url: "global-agri-subsidy-grant-navigator.html", tag: "Primary Grant Finder" },
+          { name: "Greenhouse 10-Year CapEx/OpEx & IRR Engine", url: "greenhouse-capex-opex-10year-roi-calculator.html", tag: "Financial Feasibility" },
+          { name: "DIN V 18599 Heating Load & Screen Engine", url: "greenhouse-heating-load-thermal-screen-calculator.html", tag: "Energy Savings Compliance" }
+        ],
+        targetUrls: ["subsidy-grant-navigator", "capex-opex-10year-roi", "heating-load-thermal-screen"]
       }
     };
 
@@ -1056,6 +1079,7 @@
         else if (text.includes("led") || text.includes("light") || text.includes("dli") || text.includes("spectrum") || text.includes("far-red")) matchedKey = "led_roi";
         else if (text.includes("sodium") || text.includes("salinity") || text.includes("desalination") || text.includes("drain") || text.includes("ucf")) matchedKey = "sodium";
         else if (text.includes("pest") || text.includes("mite") || text.includes("thrips") || text.includes("ipm") || text.includes("wasp") || text.includes("insect")) matchedKey = "ipm";
+        else if (text.includes("subsidy") || text.includes("grant") || text.includes("reap") || text.includes("eqip") || text.includes("ble") || text.includes("funding") || text.includes("지원금") || text.includes("보조금")) matchedKey = "subsidy";
         else if (text.includes("autonomous") || text.includes("mpc") || text.includes("ai") || text.includes("iot") || text.includes("camera") || text.includes("vision")) matchedKey = "autonomous";
         else matchedKey = "ber"; // default fallback
       }

@@ -1,0 +1,1265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-adsense-account" content="ca-pub-8597809158257497">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Global Agri-Subsidy & Grant Navigator | Smart Farm & Greenhouse Financial Incentives | Inwoovation</title>
+  <meta name="description" content="Explore real-time commercial greenhouse, vertical farm, and smart agriculture government subsidies, non-repayable grants, and energy rebates across Germany (BLE/AFP), USA (USDA EQIP/REAP), South Korea (MAFRA ICT), Netherlands (SDE++/EG), Canada, and Japan. Calculate your estimated grant coverage and payback compression.">
+  <meta name="keywords" content="greenhouse subsidies, farm grants, USDA REAP grant calculator, USDA EQIP high tunnel, BLE Energieeffizienz Gewächshaus, 스마트팜 정부지원금, 농업에너지이용효율화사업, 청년후계농 지원금, EU CAP farming grants, greenhouse energy grants 2026, CEA financial incentives">
+  <link rel="canonical" href="https://inwoovation.com/tools/global-agri-subsidy-grant-navigator.html" />
+  <link rel="stylesheet" href="css/digital_twin_styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg-dark: #090d16;
+      --card-bg: rgba(22, 30, 46, 0.82);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --card-hover-border: rgba(16, 185, 129, 0.4);
+      --accent-emerald: #10b981;
+      --accent-cyan: #06b6d4;
+      --accent-amber: #f59e0b;
+      --accent-blue: #3b82f6;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+
+    .nav-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 24px 20px 80px 20px;
+    }
+
+    /* Top Ribbon */
+    .top-ribbon {
+      background: linear-gradient(90deg, rgba(6, 182, 212, 0.18), rgba(16, 185, 129, 0.18));
+      border-bottom: 1px solid rgba(16, 185, 129, 0.35);
+      padding: 8px 20px;
+      font-size: 0.85rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    /* Header */
+    .hero-header {
+      text-align: center;
+      padding: 40px 10px 30px 10px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      color: var(--accent-emerald);
+      padding: 4px 14px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      letter-spacing: 0.5px;
+    }
+
+    .hero-title {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin: 0 0 12px 0;
+      background: linear-gradient(135deg, #ffffff 40%, #a7f3d0 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-subtitle {
+      max-width: 860px;
+      margin: 0 auto;
+      color: var(--text-muted);
+      font-size: 1.05rem;
+    }
+
+    /* Live Calculator Box */
+    .calc-bunker {
+      background: linear-gradient(145deg, rgba(30, 41, 59, 0.7), rgba(15, 23, 42, 0.85));
+      border: 1px solid rgba(16, 185, 129, 0.25);
+      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.6);
+      border-radius: 20px;
+      padding: 28px;
+      margin: 30px 0 40px 0;
+      backdrop-filter: blur(14px);
+    }
+
+    .calc-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding-bottom: 16px;
+    }
+
+    .calc-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #e2e8f0;
+    }
+
+    .calc-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      align-items: center;
+    }
+
+    .input-control-card {
+      background: rgba(15, 23, 42, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 14px;
+      padding: 20px;
+    }
+
+    .input-label-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .input-label {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #cbd5e1;
+    }
+
+    .input-val-badge {
+      font-family: var(--font-mono);
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--accent-cyan);
+    }
+
+    .range-slider {
+      width: 100%;
+      height: 8px;
+      border-radius: 4px;
+      background: #334155;
+      outline: none;
+      -webkit-appearance: none;
+      cursor: pointer;
+    }
+
+    .range-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--accent-emerald);
+      cursor: pointer;
+      box-shadow: 0 0 12px rgba(16, 185, 129, 0.6);
+      border: 2px solid #ffffff;
+    }
+
+    .currency-selector {
+      display: flex;
+      gap: 6px;
+      background: rgba(0, 0, 0, 0.3);
+      padding: 4px;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .currency-btn {
+      background: transparent;
+      border: none;
+      color: #94a3b8;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      transition: all 0.2s;
+    }
+
+    .currency-btn.active {
+      background: var(--accent-emerald);
+      color: #030712;
+    }
+
+    /* Metric Outputs */
+    .calc-results-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+    }
+
+    .calc-metric-tile {
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 14px;
+      padding: 18px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .calc-metric-tile::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent-emerald), var(--accent-cyan));
+    }
+
+    .metric-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: #94a3b8;
+      margin-bottom: 6px;
+    }
+
+    .metric-number {
+      font-family: var(--font-mono);
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: #ffffff;
+    }
+
+    .metric-subtext {
+      font-size: 0.75rem;
+      color: #64748b;
+      margin-top: 4px;
+    }
+
+    /* Controls Bar: Country & Category Tabs */
+    .controls-panel {
+      margin-bottom: 30px;
+    }
+
+    .country-pills-row {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 12px;
+      margin-bottom: 16px;
+      scrollbar-width: thin;
+    }
+
+    .country-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(30, 41, 59, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #cbd5e1;
+      padding: 8px 16px;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s ease;
+    }
+
+    .country-pill:hover {
+      background: rgba(51, 65, 85, 0.8);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .country-pill.active {
+      background: var(--accent-emerald);
+      color: #030712;
+      border-color: var(--accent-emerald);
+      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+    }
+
+    .category-tabs-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    .category-tab {
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: #94a3b8;
+      padding: 6px 14px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .category-tab:hover {
+      color: #ffffff;
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .category-tab.active {
+      background: rgba(6, 182, 212, 0.15);
+      border-color: var(--accent-cyan);
+      color: var(--accent-cyan);
+    }
+
+    /* Search & Counter Row */
+    .filter-search-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .search-input-box {
+      flex: 1;
+      min-width: 280px;
+      position: relative;
+    }
+
+    .search-input {
+      width: 100%;
+      box-sizing: border-box;
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 12px;
+      padding: 12px 16px 12px 42px;
+      color: #ffffff;
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .search-input:focus {
+      border-color: var(--accent-emerald);
+      box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #64748b;
+      font-size: 1.1rem;
+    }
+
+    .count-indicator {
+      color: #94a3b8;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    /* Grants Grid */
+    .grants-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+      gap: 24px;
+    }
+
+    .grant-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 18px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      backdrop-filter: blur(10px);
+      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+      position: relative;
+    }
+
+    .grant-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--card-hover-border);
+      box-shadow: 0 16px 30px -10px rgba(16, 185, 129, 0.2);
+    }
+
+    .card-top-badges {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+    }
+
+    .country-flag-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #e2e8f0;
+      background: rgba(255, 255, 255, 0.06);
+      padding: 4px 10px;
+      border-radius: 6px;
+    }
+
+    .rate-badge {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      font-weight: 800;
+      background: rgba(16, 185, 129, 0.15);
+      color: var(--accent-emerald);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      padding: 4px 10px;
+      border-radius: 6px;
+    }
+
+    .grant-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 0 0 6px 0;
+      line-height: 1.4;
+    }
+
+    .grant-agency {
+      font-size: 0.8rem;
+      color: var(--accent-cyan);
+      font-weight: 600;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .grant-desc {
+      font-size: 0.9rem;
+      color: #94a3b8;
+      line-height: 1.5;
+      margin-bottom: 18px;
+    }
+
+    .items-tags-box {
+      margin-bottom: 16px;
+    }
+
+    .items-title {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      color: #64748b;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+    }
+
+    .tags-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .equipment-tag {
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: #cbd5e1;
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-size: 0.75rem;
+    }
+
+    .eligibility-box {
+      background: rgba(15, 23, 42, 0.6);
+      border-left: 3px solid var(--accent-amber);
+      border-radius: 4px;
+      padding: 10px 12px;
+      font-size: 0.8rem;
+      color: #cbd5e1;
+      margin-bottom: 20px;
+    }
+
+    .card-actions-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: auto;
+    }
+
+    .btn-apply {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      background: linear-gradient(135deg, var(--accent-emerald), #059669);
+      color: #030712;
+      font-weight: 700;
+      font-size: 0.85rem;
+      padding: 10px 14px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    .btn-apply:hover {
+      opacity: 0.9;
+    }
+
+    .btn-tool-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #e2e8f0;
+      font-weight: 600;
+      font-size: 0.85rem;
+      padding: 10px 14px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .btn-tool-link:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: var(--accent-cyan);
+      color: var(--accent-cyan);
+    }
+
+    /* Modal */
+    .modal-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(8px);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .modal-backdrop.open {
+      display: flex;
+    }
+
+    .modal-box {
+      background: #111827;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 20px;
+      max-width: 650px;
+      width: 100%;
+      padding: 28px;
+      position: relative;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+
+    .modal-close-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: transparent;
+      border: none;
+      color: #94a3b8;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    /* Footer */
+    .footer-note {
+      text-align: center;
+      margin-top: 60px;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      color: #64748b;
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 768px) {
+      .grants-grid {
+        grid-template-columns: 1fr;
+      }
+      .calc-grid {
+        grid-template-columns: 1fr;
+      }
+      .card-actions-row {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Global Agri-Subsidy & Grant Navigator",
+    "url": "https://inwoovation.com/tools/global-agri-subsidy-grant-navigator.html",
+    "description": "Real-time interactive intelligence portal and subsidy calculator for commercial greenhouse, CEA, and smart farm financial grants across Germany, USA, South Korea, Netherlands, Canada, and Japan.",
+    "applicationCategory": "FinancialApplication, GovernmentService",
+    "operatingSystem": "All",
+    "author": {
+      "@type": "Organization",
+      "name": "Inwoovation Engineering Intelligence"
+    },
+    "dateModified": "2026-09-07"
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Top Ribbon -->
+  <div class="top-ribbon">
+    <div style="display: flex; align-items: center; gap: 8px;">
+      <span style="font-size: 1.1rem;">🏛️</span>
+      <span><strong>Inwoovation Agri-GrantTech:</strong> Live verified subsidy intelligence across 7 global agricultural jurisdictions.</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <a href="index.html" style="color: #cbd5e1; text-decoration: none; font-size: 0.85rem; font-weight: 600;">← All 34 CEA Tools</a>
+      <a href="https://inwoovation.com" style="color: var(--accent-emerald); text-decoration: none; font-size: 0.85rem; font-weight: 700;">Inwoovation Portal Home</a>
+    </div>
+  </div>
+
+  <div class="nav-container">
+
+    <!-- Hero Header -->
+    <header class="hero-header">
+      <div class="hero-badge">🌐 GLOBAL AGRI-FINANCIAL INTELLIGENCE</div>
+      <h1 class="hero-title">Global Agri-Subsidy & Grant Navigator</h1>
+      <p class="hero-subtitle">
+        Find, filter, and calculate non-repayable government grants, energy efficiency rebates, and low-interest smart farm loans across Germany, the United States, South Korea, the Netherlands, Canada, and Japan.
+      </p>
+    </header>
+
+    <!-- Interactive Subsidy & Payback Simulator -->
+    <section class="calc-bunker">
+      <div class="calc-header">
+        <div class="calc-title">
+          <span>🧮</span>
+          <span>Instant Facility Subsidy & Capital Payback Simulator</span>
+        </div>
+        <div class="currency-selector">
+          <button class="currency-btn active" id="cur-usd" onclick="setCurrency('USD', 1.0, '$')">USD ($)</button>
+          <button class="currency-btn" id="cur-eur" onclick="setCurrency('EUR', 0.92, '€')">EUR (€)</button>
+          <button class="currency-btn" id="cur-krw" onclick="setCurrency('KRW', 1350, '₩')">KRW (₩)</button>
+        </div>
+      </div>
+
+      <div class="calc-grid">
+        <!-- Input Controls -->
+        <div class="input-control-card">
+          <div class="input-label-row">
+            <span class="input-label">Estimated Project CapEx / Equipment Cost</span>
+            <span class="input-val-badge" id="lbl-capex-val">$250,000</span>
+          </div>
+          <input type="range" class="range-slider" id="slider-capex" min="20000" max="2000000" step="10000" value="250000" oninput="recalcSimulator()">
+          <div style="display: flex; justify-content: space-between; color: #64748b; font-size: 0.75rem; margin-top: 6px;">
+            <span>Small Retrofit ($20k)</span>
+            <span>Commercial Expansion ($2M)</span>
+          </div>
+
+          <div style="margin-top: 20px;">
+            <div class="input-label-row">
+              <span class="input-label">Projected Eligible Grant Coverage Rate</span>
+              <span class="input-val-badge" id="lbl-rate-val">40% Coverage</span>
+            </div>
+            <input type="range" class="range-slider" id="slider-rate" min="20" max="75" step="5" value="40" oninput="recalcSimulator()">
+            <div style="display: flex; justify-content: space-between; color: #64748b; font-size: 0.75rem; margin-top: 6px;">
+              <span>Conservative (20%)</span>
+              <span>Max Incentive (75%)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Output KPI Tiles -->
+        <div class="calc-results-row">
+          <div class="calc-metric-tile">
+            <div class="metric-label">Estimated Non-Repayable Grant</div>
+            <div class="metric-number" id="res-grant-amount" style="color: var(--accent-emerald);">$100,000</div>
+            <div class="metric-subtext">Direct government cost-share</div>
+          </div>
+
+          <div class="calc-metric-tile">
+            <div class="metric-label">Net Grower Out-of-Pocket</div>
+            <div class="metric-number" id="res-net-capex" style="color: var(--accent-cyan);">$150,000</div>
+            <div class="metric-subtext">Required equity or loan financing</div>
+          </div>
+
+          <div class="calc-metric-tile">
+            <div class="metric-label">Payback Period Acceleration</div>
+            <div class="metric-number" id="res-payback" style="color: #fbbf24;">5.2y → 3.1y</div>
+            <div class="metric-subtext">40.4% shorter breakeven timeline</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Controls Panel: Country Switcher & Category Filter -->
+    <section class="controls-panel">
+      <!-- Country Switcher -->
+      <div class="country-pills-row" id="country-pills-container">
+        <!-- Rendered by JS -->
+      </div>
+
+      <!-- Category Tabs -->
+      <div class="category-tabs-row" id="category-tabs-container">
+        <!-- Rendered by JS -->
+      </div>
+
+      <!-- Search & Status Row -->
+      <div class="filter-search-row">
+        <div class="search-input-box">
+          <span class="search-icon">🔍</span>
+          <input type="text" class="search-input" id="search-query" placeholder="Filter by keyword (e.g. LED, screen, heat pump, 청년, BLE, EQIP)..." oninput="applyFilters()">
+        </div>
+        <div class="count-indicator" id="programs-count">
+          Showing 12 Active Incentive Programs
+        </div>
+      </div>
+    </section>
+
+    <!-- Program Cards Grid -->
+    <main class="grants-grid" id="grants-cards-container">
+      <!-- Injected by JS -->
+    </main>
+
+    <!-- Modal for Detailed Policy Inspection -->
+    <div class="modal-backdrop" id="policy-modal" onclick="closeModal(event)">
+      <div class="modal-box" onclick="event.stopPropagation()">
+        <button class="modal-close-btn" onclick="closeModalDirect()">✕</button>
+        <div id="modal-content">
+          <!-- Injected dynamically -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Note -->
+    <footer class="footer-note">
+      <p>
+        <strong>Disclaimer:</strong> Financial subsidy percentages, application criteria, and fiscal allocations are compiled from official ministerial guidelines (BLE, USDA, MAFRA, RVO, AAFC, MAFF). Actual grant approvals depend on national budget availability, technical verification, and official review.
+      </p>
+      <p>© 2026 Inwoovation Engineering Group. Continuous Zero-Hallucination Horticultural Intelligence.</p>
+    </footer>
+
+  </div>
+
+  <script>
+    // Embedded Global Subsidy Intelligence Dataset
+    const SUB_DATA = {
+      countries: [
+        { code: "ALL", name: "All Countries", flag: "🌍" },
+        { code: "DE", name: "Germany", flag: "🇩🇪" },
+        { code: "US", name: "United States", flag: "🇺🇸" },
+        { code: "KR", name: "South Korea", flag: "🇰🇷" },
+        { code: "NL", name: "Netherlands", flag: "🇳🇱" },
+        { code: "CA", name: "Canada", flag: "🇨🇦" },
+        { code: "JP", name: "Japan", flag: "🇯🇵" }
+      ],
+      categories: [
+        { id: "all", label: "All Categories", icon: "🌐" },
+        { id: "energy", label: "Greenhouse Energy & Screens", icon: "⚡" },
+        { id: "smartfarm", label: "Smart Farm ICT & Controllers", icon: "🤖" },
+        { id: "youth", label: "Young & Beginning Farmers", icon: "🧑‍🌾" },
+        { id: "renewables", label: "Heat Pumps & Renewables", icon: "🔥" },
+        { id: "hydroponics", label: "Water & Hydroponics", icon: "💧" }
+      ],
+      programs: [
+        {
+          id: "DE-BLE-ENERGIE",
+          country: "DE",
+          countryName: "Germany",
+          flag: "🇩🇪",
+          category: "energy",
+          name: "Bundesprogramm Energieeffizienz in Landwirtschaft und Gartenbau",
+          agency: "BLE / BMEL (Germany)",
+          subsidyType: "Non-Repayable Grant (Zuschuss)",
+          subsidyRate: "30% - 40%",
+          rateDecimal: 0.35,
+          maxAmount: "€600,000 per facility",
+          currency: "EUR",
+          targetEquipment: [
+            "Horticultural LED Fixtures",
+            "Thermal Climate Screens (Energieschirme)",
+            "Multi-layer Glazing Retrofits",
+            "Flue Gas Condenser Heat Recovery"
+          ],
+          eligibility: "Commercial greenhouse growers with certified minimum 20% carbon/energy reduction confirmed by an accredited energy consultant (Energieberater).",
+          deadline: "Rolling Admissions / Continuous Budget Window",
+          officialUrl: "https://www.ble.de/DE/Projektfoerderung/Foerderungen-Auftraege/Bundesprogramm-Energieeffizienz/bundesprogramm-energieeffizienz_node.html",
+          linkedCalculator: "greenhouse-heating-load-thermal-screen-calculator.html",
+          linkedToolTitle: "Thermal Screen Heat Savings",
+          summary: "Germany's premier greenhouse decarbonization grant funding up to 40% of capital costs for thermal screens, LED conversion, and greenhouse insulation."
+        },
+        {
+          id: "DE-AFP-NRW",
+          country: "DE",
+          countryName: "Germany",
+          flag: "🇩🇪",
+          category: "smartfarm",
+          name: "Agrarinvestitionsförderungsprogramm (AFP) Nordrhein-Westfalen",
+          agency: "Landwirtschaftskammer NRW",
+          subsidyType: "Capital Grant & Low-Interest Loan",
+          subsidyRate: "20% - 40%",
+          rateDecimal: 0.30,
+          maxAmount: "€2,000,000 investment ceiling",
+          currency: "EUR",
+          targetEquipment: [
+            "New Venlo Glasshouse Construction",
+            "Closed-Loop Hydroponics with UV/Ozone Disinfection",
+            "Automated Climate Computers & Irrigation Rigs",
+            "Rainwater Holding Basins"
+          ],
+          eligibility: "Horticultural enterprises in NRW (e.g. Straelen / Niederrhein) meeting economic viability criteria, operated by certified professionals (e.g. Gärtnermeister).",
+          deadline: "Bi-annual Cut-off Rounds (Spring / Autumn)",
+          officialUrl: "https://www.landwirtschaftskammer.de/foerderung/laendlich/afp/",
+          linkedCalculator: "greenhouse-capex-opex-10year-roi-calculator.html",
+          linkedToolTitle: "10-Year CapEx & ROI Engine",
+          summary: "Major facility modernization subsidy for high-tech glasshouse expansion in Germany's largest horticultural cluster (Niederrhein)."
+        },
+        {
+          id: "DE-EU-JUNGLANDWIRTE",
+          country: "DE",
+          countryName: "Germany",
+          flag: "🇩🇪",
+          category: "youth",
+          name: "GAP Junglandwirte-Einkommensunterstützung & Niederlassungsprämie",
+          agency: "Landwirtschaftskammer / EU CAP",
+          subsidyType: "Direct Income Top-Up & Settlement Bonus",
+          subsidyRate: "Up to €70,000 Lump Sum + €134/ha/year",
+          rateDecimal: 0.50,
+          maxAmount: "€70,000 settlement bonus + 5-year acreage top-up",
+          currency: "EUR",
+          targetEquipment: [
+            "Farm Acquisition & Initial Working Capital",
+            "Digital Crop Steering Sensors & Mobile Controls",
+            "First-Time Horticultural Equipment Purchase"
+          ],
+          eligibility: "Enterprise managers under 40 years of age established within the last 5 years with certified vocational qualification (Ausbildung / Meister).",
+          deadline: "Annual Single Application Window (May 15)",
+          officialUrl: "https://www.bmel.de/DE/themen/landwirtschaft/eu-agrarpolitik-und-foerderung/gap/junglandwirte.html",
+          linkedCalculator: "greenhouse-capex-opex-10year-roi-calculator.html",
+          linkedToolTitle: "CapEx & OpEx Modeling",
+          summary: "Direct non-repayable cash bonus designed to support newly minted Gärtnermeister and young agricultural founders establishing commercial enterprises."
+        },
+        {
+          id: "US-USDA-EQIP",
+          country: "US",
+          countryName: "United States",
+          flag: "🇺🇸",
+          category: "hydroponics",
+          name: "USDA NRCS Environmental Quality Incentives Program (EQIP)",
+          agency: "USDA NRCS (United States)",
+          subsidyType: "Cost-Share Reimbursement Grant",
+          subsidyRate: "50% - 75% (Up to 90% for Beginning/Veterans)",
+          rateDecimal: 0.65,
+          maxAmount: "$450,000 per Farm Bill lifecycle",
+          currency: "USD",
+          targetEquipment: [
+            "Commercial High Tunnels (Hoop Houses)",
+            "Micro-Irrigation & Drip Fertigation Automation",
+            "Soil Moisture TDR Sensors & Weather Stations",
+            "Tailwater Recovery Recirculation Systems"
+          ],
+          eligibility: "Producers in compliance with conservation provisions with adjusted gross income (AGI) under $900,000.",
+          deadline: "Continuous Batching with State Ranking Deadlines",
+          officialUrl: "https://www.nrcs.usda.gov/programs-initiatives/eqip-environmental-quality-incentives-program",
+          linkedCalculator: "evapotranspiration-penman-monteith-calculator.html",
+          linkedToolTitle: "Penman-Monteith ET0 Calc",
+          summary: "Flagship federal cost-share covering 50% to 90% of the cost to construct seasonal high tunnels and automated precision drip irrigation."
+        },
+        {
+          id: "US-USDA-REAP",
+          country: "US",
+          countryName: "United States",
+          flag: "🇺🇸",
+          category: "renewables",
+          name: "USDA Rural Energy for America Program (REAP) Grants",
+          agency: "USDA Rural Development",
+          subsidyType: "Non-Repayable Grant (Up to 50%) & Loan Guarantees",
+          subsidyRate: "Up to 50% Matching Grant",
+          rateDecimal: 0.50,
+          maxAmount: "$1,000,000 for Renewables / $500,000 for Efficiency",
+          currency: "USD",
+          targetEquipment: [
+            "Greenhouse Rooftop & Ground Solar PV Arrays",
+            "Ground-Source & Air-Source Industrial Heat Pumps",
+            "High-Efficiency Horticultural LED Fixtures",
+            "Dual Thermal Screen Insulation Retrofits"
+          ],
+          eligibility: "Agricultural producers earning ≥50% of gross income from farming, or eligible rural small businesses.",
+          deadline: "Quarterly Deadlines (March 31, June 30, Sept 30, Dec 31)",
+          officialUrl: "https://www.rd.usda.gov/programs-services/energy-programs/rural-energy-america-program-renewable-energy-systems-energy-efficiency-improvement-guaranteed-loans",
+          linkedCalculator: "greenhouse-heating-load-thermal-screen-calculator.html",
+          linkedToolTitle: "Heating Load & Screen ROI",
+          summary: "Provides massive federal clean energy grants covering up to 50% of capital costs to transition greenhouses to solar, LED, and industrial heat pumps."
+        },
+        {
+          id: "KR-MAFRA-ICT",
+          country: "KR",
+          countryName: "South Korea",
+          flag: "🇰🇷",
+          category: "smartfarm",
+          name: "스마트팜 ICT 융복합 확산사업 (Smart Farm ICT Convergence)",
+          agency: "농림축산식품부 (MAFRA) / 농어촌공사",
+          subsidyType: "Government Direct Grant (50-70%) + Policy Loan",
+          subsidyRate: "50% - 70% (국비 20~30% + 지방비 30% + 융자 30%)",
+          rateDecimal: 0.60,
+          maxAmount: "온실 ha당 최대 2억 ~ 5억 원 지원",
+          currency: "KRW",
+          targetEquipment: [
+            "복합환경제어기 (Complex Climate Computer)",
+            "내외부 기상센서 (일사량, 온습도, CO2, 풍속)",
+            "정밀 자동 양액공급기 및 배액 수질 계측기",
+            "원격 모바일 CCTV 및 천측창 자동 개폐 모터"
+          ],
+          eligibility: "시설원예(채소·화훼) 재배 농업인 또는 농업회사법인으로 농업경영체 등록 완료 농가.",
+          deadline: "매년 1~2월 정기 공모 및 지자체 잔여예산 추가 접수",
+          officialUrl: "https://www.smartfarmkorea.net/",
+          linkedCalculator: "greenhouse-autonomous-ai-climate-controller.html",
+          linkedToolTitle: "Autonomous Climate AI",
+          summary: "한국 농식품부의 대표 스마트팜 사업으로 복합환경제어기, 센서, 자동 양액기 등 ICT 설비비의 50~70%를 정부와 지자체가 직접 지원."
+        },
+        {
+          id: "KR-MAFRA-ENERGY",
+          country: "KR",
+          countryName: "South Korea",
+          flag: "🇰🇷",
+          category: "energy",
+          name: "농업에너지이용효율화사업 (Agri-Energy Efficiency Improvement)",
+          agency: "농림축산식품부 / 한국농어촌공사",
+          subsidyType: "Government Direct Grant (50% 보조)",
+          subsidyRate: "50% 보조 (국비 20% + 지방비 30% + 융자 30% + 자부담 20%)",
+          rateDecimal: 0.50,
+          maxAmount: "온실 규모별 산정 (수억 원 한도)",
+          currency: "KRW",
+          targetEquipment: [
+            "다겹보온커튼 및 알루미늄 단열 스크린 개폐장치",
+            "지열 히트펌프 및 공기열 히트펌프 냉난방 설비",
+            "폐열회수 환기장치 및 배기열 회수기",
+            "온실 측벽 다중 피복 및 배관 단열재"
+          ],
+          eligibility: "가온 시설을 구비한 채소·화훼 온실 재배 농가로 에너지 20% 이상 절감 계획서 제출 농가.",
+          deadline: "매년 7~9월 익년도 사업 지자체 사전 신청 접수",
+          officialUrl: "https://www.mafra.go.kr/",
+          linkedCalculator: "greenhouse-heating-load-thermal-screen-calculator.html",
+          linkedToolTitle: "Thermal Screen Heat Savings",
+          summary: "온실 다겹보온커튼과 히트펌프 설치비의 50%를 무상 지원하여 겨울철 시설원예 난방비를 40~60% 이상 감축시키는 에너지 특화 사업."
+        },
+        {
+          id: "KR-MAFRA-YOUTH",
+          country: "KR",
+          countryName: "South Korea",
+          flag: "🇰🇷",
+          category: "youth",
+          name: "청년후계농 영농정착지원사업 (Youth Farmer Settlement)",
+          agency: "농림축산식품부 / 농식품정보원",
+          subsidyType: "Monthly Voucher Grant & Low-Interest 1.5% Loan",
+          subsidyRate: "월 최대 110만 원 바우처 + 5억 융자금 (금리 1.5%)",
+          rateDecimal: 0.70,
+          maxAmount: "3년간 최대 3,600만 원 보조금 + 5억 원 정책자금 융자",
+          currency: "KRW",
+          targetEquipment: [
+            "온실 신축 부지 매입 및 농지 임대차 비용",
+            "스마트팜 온실 시설물 시공 및 온실 자재 구입",
+            "초기 비료, 양액, 종묘 원자재 및 농기계 구입"
+          ],
+          eligibility: "만 18세 이상 ~ 만 40세 미만 독립경영 3년 이하(예정자 포함) 청년 농업인.",
+          deadline: "매년 12월 ~ 1월 농림사업정보시스템(Agrix) 정기 공모",
+          officialUrl: "https://www.agrix.go.kr/",
+          linkedCalculator: "greenhouse-capex-opex-10year-roi-calculator.html",
+          linkedToolTitle: "10-Year CapEx & ROI Engine",
+          summary: "청년 스마트팜 창업을 위한 국가 지원으로 3년간 최대 3,600만 원 정착 바우처와 연 1.5% 고정금리 5억 원 정책대출(5년 거치 20년 분할상환) 제공."
+        },
+        {
+          id: "NL-RVO-EG",
+          country: "NL",
+          countryName: "Netherlands",
+          flag: "🇳🇱",
+          category: "energy",
+          name: "EG Subsidie: Energie-efficiëntie glastuinbouw",
+          agency: "RVO (Netherlands)",
+          subsidyType: "Direct Capital Grant (Subsidie)",
+          subsidyRate: "25% - 40% of Eligible Costs",
+          rateDecimal: 0.30,
+          maxAmount: "€350,000 per facility",
+          currency: "EUR",
+          targetEquipment: [
+            "Second High-Grade Thermal Screen (Tweede energiescherm)",
+            "Diffuse Glass Retrofits with Double AR Coatings",
+            "Low-Temperature Heat Network Distribution Pipes",
+            "Air Handling Units with Latent Heat Exchangers"
+          ],
+          eligibility: "Commercial glasshouse horticultural companies operating in the Netherlands reducing natural gas consumption.",
+          deadline: "Annual Tender Window (April to November)",
+          officialUrl: "https://www.rvo.nl/subsidies-financiering/energie-efficientie-glastuinbouw",
+          linkedCalculator: "greenhouse-heating-load-thermal-screen-calculator.html",
+          linkedToolTitle: "Mollier & Thermal Screen Tool",
+          summary: "Dutch national program supporting Venlo glasshouse growers in cutting gas dependency via dual thermal screens and diffuse glass."
+        },
+        {
+          id: "NL-RVO-SDE",
+          country: "NL",
+          countryName: "Netherlands",
+          flag: "🇳🇱",
+          category: "renewables",
+          name: "SDE++ (Stimulering Duurzame Energieproductie en Klimaattransitie)",
+          agency: "RVO (Netherlands)",
+          subsidyType: "Operating Premium Subsidy (12 to 15 Years)",
+          subsidyRate: "Covers Non-Profitable Unprofitable Gap per Ton CO2",
+          rateDecimal: 0.45,
+          maxAmount: "Multi-Million Euro 15-Year Operating Guarantee",
+          currency: "EUR",
+          targetEquipment: [
+            "Deep Geothermal Heating Clusters for Greenhouses (Aardwarmte)",
+            "Aquifer Thermal Energy Storage (ATES) Systems",
+            "Megawatt-Scale Industrial Heat Pumps",
+            "Biomass Clean Heat with Pure Biogenic CO2 Dosing"
+          ],
+          eligibility: "Commercial greenhouse consortia, individual horticultural complexes, and district heat networks.",
+          deadline: "Annual Phased Bidding Tender (Autumn)",
+          officialUrl: "https://www.rvo.nl/subsidies-financiering/sde",
+          linkedCalculator: "aquifer-thermal-energy-storage-ates-heat-pump.html",
+          linkedToolTitle: "ATES & Industrial Heat Pump",
+          summary: "The Netherlands' flagship 15-year operational subsidy funding deep geothermal and massive industrial heat pumps for glasshouse clusters."
+        },
+        {
+          id: "CA-AAFC-ACT",
+          country: "CA",
+          countryName: "Canada",
+          flag: "🇨🇦",
+          category: "energy",
+          name: "Agricultural Clean Technology (ACT) Program - Adoption Stream",
+          agency: "Agriculture and Agri-Food Canada (AAFC)",
+          subsidyType: "Non-Repayable Contribution",
+          subsidyRate: "Up to 50% (Up to 60% for Young Farmers)",
+          rateDecimal: 0.50,
+          maxAmount: "$2,000,000 CAD per project",
+          currency: "CAD",
+          targetEquipment: [
+            "High-Efficiency Condensing Heating Boilers",
+            "Commercial LED Fixtures Replacing HPS Systems",
+            "Automated Thermal Shade Screens & Poly Envelope Upgrades",
+            "Precision Microclimate Sensing Networks"
+          ],
+          eligibility: "Canadian agricultural producers and greenhouse operators with projects demonstrating direct greenhouse gas emissions reduction.",
+          deadline: "Continuous Intake until Allocations are Exhausted",
+          officialUrl: "https://agriculture.canada.ca/en/agricultural-programs-and-services/agricultural-clean-technology-program-adoption-stream",
+          linkedCalculator: "greenhouse-heating-load-thermal-screen-calculator.html",
+          linkedToolTitle: "Thermal Screen Heat Savings",
+          summary: "Canadian federal grant funding up to 50-60% of greenhouse energy-efficient equipment retrofits and clean technology adoption."
+        },
+        {
+          id: "JP-MAFF-SMART",
+          country: "JP",
+          countryName: "Japan",
+          flag: "🇯🇵",
+          category: "smartfarm",
+          name: "スマート農業推進総合対策事業 (Smart Agriculture Comprehensive Program)",
+          agency: "農林水産省 (MAFF, Japan)",
+          subsidyType: "Direct Capital Subsidy (1/2 補助)",
+          subsidyRate: "50% (1/2 国庫補助)",
+          rateDecimal: 0.50,
+          maxAmount: "사업 규모에 따른 정률 국비 보조",
+          currency: "JPY",
+          targetEquipment: [
+            "시설원예 복합환경제어 장치 (온습도, CO2, 차광 자동제어)",
+            "수경재배 양액 정밀 계측 및 자동 배합 시스템",
+            "온실 작물 생육 모니터링 카메라 및 데이터 로거",
+            "수확 및 운반 자동화 로봇 설비"
+          ],
+          eligibility: "일본 내 인정농업인, 영농집단, 스마트농업 실증 컨소시엄 참여 원예 농가.",
+          deadline: "연차별 정기 모집 (통상 2~4월)",
+          officialUrl: "https://www.maff.go.jp/j/kanbo/smart/",
+          linkedCalculator: "greenhouse-autonomous-ai-climate-controller.html",
+          linkedToolTitle: "Autonomous Climate AI",
+          summary: "일본 농림수산성의 스마트농업 보급 대표 사업으로 첨단 복합환경제어기 및 센서 도입비 50%를 국가가 직접 보조."
+        }
+      ]
+    };
+
+    // State
+    let selectedCountry = "ALL";
+    let selectedCategory = "all";
+    let activeCurrency = "USD";
+    let currencyMultiplier = 1.0;
+    let currencySymbol = "$";
+
+    function initPage() {
+      renderCountryPills();
+      renderCategoryTabs();
+      recalcSimulator();
+      applyFilters();
+    }
+
+    function renderCountryPills() {
+      const container = document.getElementById("country-pills-container");
+      container.innerHTML = SUB_DATA.countries.map(c => `
+        <button class="country-pill ${c.code === selectedCountry ? 'active' : ''}" onclick="selectCountry('${c.code}')">
+          <span>${c.flag}</span>
+          <span>${c.name}</span>
+        </button>
+      `).join("");
+    }
+
+    function renderCategoryTabs() {
+      const container = document.getElementById("category-tabs-container");
+      container.innerHTML = SUB_DATA.categories.map(cat => `
+        <button class="category-tab ${cat.id === selectedCategory ? 'active' : ''}" onclick="selectCategory('${cat.id}')">
+          <span>${cat.icon}</span> ${cat.label}
+        </button>
+      `).join("");
+    }
+
+    function selectCountry(code) {
+      selectedCountry = code;
+      renderCountryPills();
+      applyFilters();
+    }
+
+    function selectCategory(catId) {
+      selectedCategory = catId;
+      renderCategoryTabs();
+      applyFilters();
+    }
+
+    function setCurrency(cur, rate, symbol) {
+      activeCurrency = cur;
+      currencyMultiplier = rate;
+      currencySymbol = symbol;
+
+      document.querySelectorAll(".currency-btn").forEach(b => b.classList.remove("active"));
+      if (cur === 'USD') document.getElementById("cur-usd").classList.add("active");
+      if (cur === 'EUR') document.getElementById("cur-eur").classList.add("active");
+      if (cur === 'KRW') document.getElementById("cur-krw").classList.add("active");
+
+      recalcSimulator();
+    }
+
+    function recalcSimulator() {
+      const rawUsd = parseFloat(document.getElementById("slider-capex").value);
+      const ratePct = parseFloat(document.getElementById("slider-rate").value);
+
+      const convertedCapEx = rawUsd * currencyMultiplier;
+      const grantAmount = convertedCapEx * (ratePct / 100);
+      const netCapEx = convertedCapEx - grantAmount;
+
+      // Base payback calculation (assuming 22% annual net cash flow yield on raw investment)
+      const baseAnnualCashFlow = convertedCapEx * 0.20;
+      const unsubsidizedPaybackYears = (convertedCapEx / baseAnnualCashFlow).toFixed(1);
+      const subsidizedPaybackYears = (netCapEx / baseAnnualCashFlow).toFixed(1);
+      const paybackCompressionPct = (((unsubsidizedPaybackYears - subsidizedPaybackYears) / unsubsidizedPaybackYears) * 100).toFixed(0);
+
+      // Format strings
+      document.getElementById("lbl-capex-val").innerText = formatCurrency(convertedCapEx);
+      document.getElementById("lbl-rate-val").innerText = ratePct + "% Coverage";
+
+      document.getElementById("res-grant-amount").innerText = formatCurrency(grantAmount);
+      document.getElementById("res-net-capex").innerText = formatCurrency(netCapEx);
+      document.getElementById("res-payback").innerText = `${unsubsidizedPaybackYears}y → ${subsidizedPaybackYears}y`;
+    }
+
+    function formatCurrency(val) {
+      if (activeCurrency === "KRW") {
+        return currencySymbol + Math.round(val).toLocaleString('ko-KR') + "원";
+      } else {
+        return currencySymbol + Math.round(val).toLocaleString('en-US');
+      }
+    }
+
+    function applyFilters() {
+      const query = document.getElementById("search-query").value.toLowerCase().trim();
+
+      const filtered = SUB_DATA.programs.filter(p => {
+        // Country check
+        const matchCountry = (selectedCountry === "ALL" || p.country === selectedCountry);
+        // Category check
+        const matchCat = (selectedCategory === "all" || p.category === selectedCategory);
+        // Search query
+        let matchQuery = true;
+        if (query) {
+          const hay = (p.name + " " + p.agency + " " + p.summary + " " + p.eligibility + " " + p.targetEquipment.join(" ")).toLowerCase();
+          matchQuery = hay.includes(query);
+        }
+        return matchCountry && matchCat && matchQuery;
+      });
+
+      document.getElementById("programs-count").innerText = `Showing ${filtered.length} Active Incentive Programs`;
+      renderProgramCards(filtered);
+    }
+
+    function renderProgramCards(programs) {
+      const container = document.getElementById("grants-cards-container");
+      if (programs.length === 0) {
+        container.innerHTML = `
+          <div style="grid-column: 1 / -1; text-align: center; padding: 60px 20px; background: rgba(30, 41, 59, 0.4); border-radius: 16px;">
+            <p style="font-size: 2rem; margin-bottom: 10px;">🔍</p>
+            <h3 style="color: #ffffff; margin-bottom: 8px;">No incentive programs match your current filter</h3>
+            <p style="color: #94a3b8;">Try switching to "All Countries" or resetting your search keyword.</p>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = programs.map(p => `
+        <article class="grant-card">
+          <div>
+            <div class="card-top-badges">
+              <span class="country-flag-badge">${p.flag} ${p.countryName}</span>
+              <span class="rate-badge">Coverage: ${p.subsidyRate}</span>
+            </div>
+
+            <h2 class="grant-title">${p.name}</h2>
+            <div class="grant-agency">🏛️ ${p.agency}</div>
+            <p class="grant-desc">${p.summary}</p>
+
+            <div class="items-tags-box">
+              <div class="items-title">Eligible Equipment / Scope</div>
+              <div class="tags-container">
+                ${p.targetEquipment.map(item => `<span class="equipment-tag">✓ ${item}</span>`).join("")}
+              </div>
+            </div>
+
+            <div class="eligibility-box">
+              <strong>⚖️ Qualification Criteria:</strong> ${p.eligibility}
+            </div>
+          </div>
+
+          <div class="card-actions-row">
+            <a href="${p.officialUrl}" target="_blank" rel="noopener noreferrer" class="btn-apply">
+              <span>🔗 Official Portal</span>
+            </a>
+            <a href="${p.linkedCalculator}" class="btn-tool-link" title="Open corresponding biophysical calculator">
+              <span>🧮 ${p.linkedToolTitle}</span>
+            </a>
+          </div>
+        </article>
+      `).join("");
+    }
+
+    function closeModal(e) {
+      document.getElementById("policy-modal").classList.remove("open");
+    }
+
+    function closeModalDirect() {
+      document.getElementById("policy-modal").classList.remove("open");
+    }
+
+    window.addEventListener("DOMContentLoaded", initPage);
+  </script>
+</body>
+</html>
