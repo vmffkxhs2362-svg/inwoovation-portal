@@ -51,6 +51,7 @@ HEADERS = {
 }
 
 DEFAULT_KEYWORDS = [
+    # Pure Agriculture
     "agriculture",
     "irrigation",
     "tractor",
@@ -59,10 +60,47 @@ DEFAULT_KEYWORDS = [
     "greenhouse",
     "orchard",
     "dairy methane",
-    "cover crop",
-    "compost",
-    "specialty crop"
+    "specialty crop",
+    # Cross-Domain CleanTech & Startup (AgTech / CEA Eligible)
+    "clean energy",
+    "microgrid",
+    "zero emission",
+    "climate tech",
+    "cleantech",
+    "food production",
+    "small business"
 ]
+
+AG_RELATED_TRACKS = [
+    "agriculture", "farming", "grower", "irrigation", "water", "food",
+    "crop", "greenhouse", "soil", "tractor", "dairy", "agtech", "rural",
+    "clean energy", "microgrid", "renewable", "solar", "emissions", "all sectors", "open to all"
+]
+
+EXCLUDED_SECTORS = [
+    "gambling", "casino", "adult entertainment", "liquor store", "nightclub"
+]
+
+def evaluate_cross_domain_eligibility(title: str, text: str) -> dict:
+    """Evaluates whether general cleantech, energy, or small business grant is eligible for AgTech/Growers."""
+    corpus = (title + " " + text).lower()
+    
+    # 1. Negative exclusion check
+    if any(ex in corpus for ex in EXCLUDED_SECTORS):
+        return {"isEligible": False, "isCrossDomain": 0, "matchedTracks": [], "categoryLabel": "Excluded", "badge": "Excluded"}
+        
+    matched = [t for t in AG_RELATED_TRACKS if t in corpus]
+    
+    # 2. Check if cross-domain cleantech/startup
+    is_cross = any(k in corpus for k in ["clean energy", "microgrid", "zero emission", "climate", "small business", "entrepreneur", "innovation"])
+    
+    return {
+        "isEligible": True,
+        "isCrossDomain": 1 if is_cross else 0,
+        "matchedTracks": matched[:6],
+        "categoryLabel": "California Cross-Domain CleanTech / Startup" if is_cross else "California State Agriculture / Energy",
+        "badge": "🚀 Cross-Domain CleanTech / Startup (Ag-Eligible)" if is_cross else "🌾 Agricultural Incentive"
+    }
 
 def fetch_url(url: str, timeout: int = 15) -> str:
     """Fetch URL with user-agent headers and resilient timeout handling."""
@@ -220,21 +258,28 @@ class CAGrantRadar:
                         if dl_match:
                             deadline = dl_match.group(1).strip()
 
+                        eval_res = evaluate_cross_domain_eligibility(title, text_corpus)
+                        if not eval_res["isEligible"]:
+                            continue
+
                         candidate = {
                             "sourcePlatform": "grants_ca_gov",
                             "agencyName": agency,
                             "opportunityTitle": title,
                             "opportunityUrl": detail_url,
-                            "category": "California State Agriculture / Energy",
+                            "category": eval_res["categoryLabel"],
                             "estFundingAmount": funding,
                             "deadlineText": deadline,
+                            "isCrossDomain": eval_res["isCrossDomain"],
+                            "matchedTracks": eval_res["matchedTracks"],
+                            "badge": eval_res["badge"],
                             "status": "pending_review",
-                            "discoveryNotes": f"Discovered via grants.ca.gov search keyword '{kw}'",
+                            "discoveryNotes": f"Discovered via keyword '{kw}' | Tracks: {', '.join(eval_res['matchedTracks']) or 'General'}",
                             "discoveredAt": datetime.now().isoformat()
                         }
                         discovered.append(candidate)
                         self.existing_candidate_urls.add(detail_url.lower().rstrip("/"))
-                        print(f"    ✨ DISCOVERED NEW: [{agency}] {title} ({funding})")
+                        print(f"    ✨ DISCOVERED NEW: [{agency}] {title} ({funding}) [{'CROSS-DOMAIN' if eval_res['isCrossDomain'] else 'PURE-AG'}]")
                         time.sleep(0.4)
                     except Exception as e_detail:
                         print(f"    ⚠️ Error extracting {detail_url}: {e_detail}")
@@ -356,6 +401,8 @@ class CAGrantRadar:
                         category TEXT,
                         est_funding_amount TEXT,
                         deadline_text TEXT,
+                        is_cross_domain INTEGER NOT NULL DEFAULT 0,
+                        matched_tracks TEXT,
                         status TEXT DEFAULT 'pending_review',
                         discovery_notes TEXT,
                         discovered_at DATETIME DEFAULT CURRENT_TIMESTAMP
@@ -367,8 +414,9 @@ class CAGrantRadar:
                         cur.execute("""
                             INSERT OR IGNORE INTO discovered_candidates (
                                 source_platform, agency_name, opportunity_title, opportunity_url,
-                                category, est_funding_amount, deadline_text, status, discovery_notes, discovered_at
-                            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                                category, est_funding_amount, deadline_text, is_cross_domain, matched_tracks,
+                                status, discovery_notes, discovered_at
+                            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
                         """, (
                             cand["sourcePlatform"],
                             cand["agencyName"],
@@ -377,6 +425,8 @@ class CAGrantRadar:
                             cand["category"],
                             cand["estFundingAmount"],
                             cand["deadlineText"],
+                            cand.get("isCrossDomain", 0),
+                            json.dumps(cand.get("matchedTracks", []), ensure_ascii=False),
                             cand["status"],
                             cand["discoveryNotes"],
                             cand["discoveredAt"]
@@ -400,8 +450,8 @@ def main():
     
     all_candidates = []
     
-    # 1. Scan CA Grants Portal across key terms
-    all_candidates.extend(radar.scan_ca_grants_portal(keywords=["agriculture", "irrigation", "tractor", "specialty crop", "water efficiency"]))
+    # 1. Scan CA Grants Portal across pure ag and cross-domain cleantech/startup terms
+    all_candidates.extend(radar.scan_ca_grants_portal(keywords=DEFAULT_KEYWORDS))
     
     # 2. Scan Regional Air Districts
     all_candidates.extend(radar.scan_regional_air_districts())

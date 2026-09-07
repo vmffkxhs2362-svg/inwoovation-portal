@@ -123,8 +123,9 @@ def import_json_to_db():
                 cur.execute("""
                     INSERT OR IGNORE INTO discovered_candidates (
                         source_platform, agency_name, opportunity_title, opportunity_url,
-                        category, est_funding_amount, deadline_text, status, discovery_notes, discovered_at
-                    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                        category, est_funding_amount, deadline_text, is_cross_domain, matched_tracks,
+                        status, discovery_notes, discovered_at
+                    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
                 """, (
                     c.get("sourcePlatform", "unknown"),
                     c.get("agencyName", "California Agency"),
@@ -133,6 +134,8 @@ def import_json_to_db():
                     c.get("category", "General Ag"),
                     c.get("estFundingAmount", ""),
                     c.get("deadlineText", ""),
+                    c.get("isCrossDomain", 0),
+                    json.dumps(c.get("matchedTracks", []), ensure_ascii=False),
                     c.get("status", "pending_review"),
                     c.get("discoveryNotes", ""),
                     c.get("discoveredAt", "")

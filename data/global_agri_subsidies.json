@@ -5,7 +5,7 @@
     "lastUpdated": "2026-09-07",
     "curator": "Inwoovation Engineering Intelligence / Antigravity Operations",
     "pilotJurisdiction": "California (CDFA / CARB / CEC / USDA California State Office)",
-    "totalPrograms": 23,
+    "totalPrograms": 24,
     "countriesCovered": [
       "US",
       "DE",
@@ -250,7 +250,8 @@
           "water",
           "renewables",
           "smartfarm"
-        ]
+        ],
+        "trackScope": "pure_ag"
       }
     },
     {
@@ -328,7 +329,8 @@
         ],
         "technologies": [
           "soils"
-        ]
+        ],
+        "trackScope": "pure_ag"
       }
     },
     {
@@ -407,7 +409,8 @@
           "energy",
           "renewables",
           "smartfarm"
-        ]
+        ],
+        "trackScope": "pure_ag"
       }
     },
     {
@@ -484,7 +487,8 @@
         "technologies": [
           "livestock",
           "renewables"
-        ]
+        ],
+        "trackScope": "pure_ag"
       }
     },
     {
@@ -563,7 +567,8 @@
           "smartfarm",
           "energy",
           "water"
-        ]
+        ],
+        "trackScope": "pure_ag"
       }
     },
     {
@@ -643,7 +648,8 @@
           "energy",
           "water",
           "soils"
-        ]
+        ],
+        "trackScope": "pure_ag"
       }
     },
     {
@@ -722,7 +728,8 @@
         "technologies": [
           "renewables",
           "energy"
-        ]
+        ],
+        "trackScope": "pure_ag"
       }
     },
     {
@@ -798,7 +805,8 @@
         "technologies": [
           "energy",
           "renewables"
-        ]
+        ],
+        "trackScope": "pure_ag"
       }
     },
     {
@@ -875,7 +883,8 @@
         "technologies": [
           "energy",
           "smartfarm"
-        ]
+        ],
+        "trackScope": "pure_ag"
       }
     },
     {
@@ -950,7 +959,8 @@
         "technologies": [
           "smartfarm",
           "energy"
-        ]
+        ],
+        "trackScope": "pure_ag"
       }
     },
     {
@@ -1028,7 +1038,8 @@
         "technologies": [
           "smartfarm",
           "energy"
-        ]
+        ],
+        "trackScope": "pure_ag"
       }
     },
     {
@@ -1103,7 +1114,8 @@
         "technologies": [
           "energy",
           "renewables"
-        ]
+        ],
+        "trackScope": "pure_ag"
       }
     },
     {
@@ -1177,7 +1189,8 @@
         ],
         "technologies": [
           "smartfarm"
-        ]
+        ],
+        "trackScope": "pure_ag"
       }
     },
     {
@@ -1250,7 +1263,8 @@
         "technologies": [
           "energy",
           "renewables"
-        ]
+        ],
+        "trackScope": "pure_ag"
       }
     },
     {
@@ -1324,7 +1338,8 @@
         "technologies": [
           "renewables",
           "energy"
-        ]
+        ],
+        "trackScope": "pure_ag"
       }
     },
     {
@@ -1400,7 +1415,8 @@
           "energy",
           "renewables",
           "smartfarm"
-        ]
+        ],
+        "trackScope": "pure_ag"
       }
     },
     {
@@ -1475,7 +1491,8 @@
         "technologies": [
           "smartfarm",
           "energy"
-        ]
+        ],
+        "trackScope": "pure_ag"
       }
     },
     {
@@ -1552,7 +1569,8 @@
         "technologies": [
           "machinery",
           "renewables"
-        ]
+        ],
+        "trackScope": "pure_ag"
       }
     },
     {
@@ -1630,7 +1648,8 @@
         "technologies": [
           "soils",
           "water"
-        ]
+        ],
+        "trackScope": "pure_ag"
       }
     },
     {
@@ -1707,7 +1726,8 @@
         "technologies": [
           "soils",
           "smartfarm"
-        ]
+        ],
+        "trackScope": "pure_ag"
       }
     },
     {
@@ -1783,7 +1803,8 @@
         "technologies": [
           "soils",
           "machinery"
-        ]
+        ],
+        "trackScope": "pure_ag"
       }
     },
     {
@@ -1856,7 +1877,8 @@
         "technologies": [
           "water",
           "smartfarm"
-        ]
+        ],
+        "trackScope": "pure_ag"
       }
     },
     {
@@ -1928,6 +1950,91 @@
         "targetAudience": [
           "commercial_cea",
           "food_processor"
+        ],
+        "technologies": [
+          "renewables",
+          "energy",
+          "smartfarm"
+        ],
+        "trackScope": "pure_ag"
+      }
+    },
+    {
+      "id": "us-ca-calseed-concept-award",
+      "country": "US",
+      "countryName": "United States",
+      "region": "US-CA",
+      "regionName": "California",
+      "jurisdictionLabel": "California (CEC EPIC / CalSEED)",
+      "flag": "🇺🇸",
+      "category": "renewables",
+      "name": "CalSEED Clean Energy & AgTech Concept Award",
+      "agency": "California Energy Commission (CEC) & California Clean Energy Fund (CalCEF)",
+      "subsidyType": "Equity-Free Cash Grant (100% 무상지원)",
+      "subsidyRate": "100% 무상지원 (자부담 0%)",
+      "rateDecimal": 1.0,
+      "maxAmount": "$150,000 (Follow-on Prototype Award up to $450,000)",
+      "matchRequirement": "$0 (No Cost-Share Required / 지분 희석 0%)",
+      "disbursementType": "Milestone-based Cash Grant Advances",
+      "currency": "USD",
+      "verifiedDate": "2026-09-07",
+      "deadline": "2026-11-30 (Annual Cohort Solicitation)",
+      "selectionMethod": "Competitive Technical Review & Pitch Evaluation",
+      "isCrossDomain": true,
+      "crossDomainBadge": "🚀 Cross-Domain CleanTech / Startup (Ag-Eligible)",
+      "targetEquipment": [
+        "Agricultural Microgrid & Smart Inverter Control Algorithms",
+        "Battery Energy Storage Systems (BESS) for Commercial Greenhouses",
+        "Dynamic Far-Red / ePAR Spectrum Energy Optimization Systems",
+        "Solar-Powered Variable Frequency Drive (VFD) Irrigation Pumps",
+        "On-Farm Waste Heat Recovery & Thermochemical Conversion",
+        "Autonomous CEA Climate & Energy Co-Optimization Hardware"
+      ],
+      "ineligibleCosts": [
+        "General corporate overhead exceeding 15%",
+        "Direct land purchase or real estate acquisition",
+        "Purchasing mature off-the-shelf commercial equipment without innovative integration",
+        "Marketing or commercial sales advertising campaigns"
+      ],
+      "qualificationCriteria": [
+        "Must be a California-based early-stage startup, university spin-off, or innovative agricultural technology business",
+        "Technology readiness level between TRL 2 (Proof of Concept) and TRL 4 (Lab Validation)",
+        "Technology must deliver quantifiable electricity or natural gas savings to California IOU ratepayers (PG&E, SCE, SDG&E)",
+        "Applicants located in or benefiting Disadvantaged Communities (DAC) receive 15% evaluation scoring bonus"
+      ],
+      "documentChecklist": [
+        "CalSEED Concept Proposal Application & Executive Summary (Submittable)",
+        "Technical Innovation & Ratepayer Energy Impact Calculation Model",
+        "Proof of California Business Entity Registration (CA Secretary of State)",
+        "Disadvantaged Community (DAC / SB 535) or Underrepresented Entrepreneur Verification (if applicable)",
+        "Budget justification table detailing milestone labor and prototype materials"
+      ],
+      "officialUrl": "https://calseed.fund/",
+      "portalName": "CalSEED Online Application Portal (Submittable)",
+      "contactPhone": "(415) 968-3850",
+      "contactEmail": "info@calseed.fund",
+      "linkedCalculator": "solar-thermal-buffer-tank-stratification-calculator.html",
+      "linkedToolTitle": "Thermal & Energy Simulator",
+      "summary": "Premier California cross-domain clean energy concept grant providing $150,000 in non-dilutive grant funding for early-stage AgTech, greenhouse microgrids, and agricultural energy efficiency innovations.",
+      "deepGuide": "Step 1: Check eligibility on calseed.fund. Step 2: Formulate energy savings metric for CA ratepayers. Step 3: Complete Submittable questionnaire. Step 4: Shortlisted candidates enter virtual pitch evaluation.",
+      "applicationWindow": {
+        "status": "open",
+        "statusLabel": "🟢 접수 중 (Open)",
+        "startDate": "2026-08-15",
+        "endDate": "2026-11-30",
+        "deadlineDisplay": "2026-11-30 (D-84)",
+        "daysRemaining": 84,
+        "cycleFrequency": "연 1회 정기 공모 (Annual Cohort Window)",
+        "submissionPortal": "CalSEED Submittable Portal"
+      },
+      "facets": {
+        "fundingTier": "tier_medium",
+        "matchTier": "zero_match",
+        "trackScope": "cross_domain",
+        "targetAudience": [
+          "commercial_cea",
+          "beginning_farmer",
+          "small_family"
         ],
         "technologies": [
           "renewables",
