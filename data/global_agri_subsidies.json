@@ -1,41 +1,175 @@
 {
   "metadata": {
     "title": "Global Agricultural Subsidies, Grants & Financial Incentive Database",
-    "version": "2.0.0",
+    "version": "2.1.0",
     "lastUpdated": "2026-09-07",
     "curator": "Inwoovation Engineering Intelligence / Antigravity Operations",
-    "pilotJurisdiction": "California (CDFA / USDA California State Office)",
-    "totalPrograms": 15,
-    "countriesCovered": ["US", "DE", "KR", "NL", "CA", "JP", "EU"],
-    "standard": "7-Point Farmer Metadata Specification"
+    "pilotJurisdiction": "California (CDFA / CARB / CEC / USDA California State Office)",
+    "totalPrograms": 23,
+    "countriesCovered": [
+      "US",
+      "DE",
+      "KR",
+      "NL",
+      "CA",
+      "JP",
+      "EU"
+    ],
+    "standard": "7-Point Farmer Metadata Specification",
+    "features": [
+      "7-Point Farmer Metadata Specification",
+      "Booking.com-Style Multi-Faceted Filter Architecture",
+      "Real-time Application Window & D-Day Tracking",
+      "Payback Compression Modeling"
+    ]
   },
   "categories": [
-    { "id": "all", "label": "All Incentive Programs", "icon": "🌐" },
-    { "id": "water", "label": "Water Efficiency & Drip Telemetry", "icon": "💧" },
-    { "id": "energy", "label": "Greenhouse Energy & Thermal Screens", "icon": "⚡" },
-    { "id": "smartfarm", "label": "Smart Farm ICT & Sensors", "icon": "🤖" },
-    { "id": "soils", "label": "Soil Health & Carbon Sequestration", "icon": "🌱" },
-    { "id": "renewables", "label": "Solar PV & Ag Heat Pumps", "icon": "🔥" },
-    { "id": "youth", "label": "Beginning & Young Farmers", "icon": "🧑‍🌾" }
+    {
+      "id": "all",
+      "label": "All Programs",
+      "icon": "🌐"
+    },
+    {
+      "id": "water",
+      "label": "Water Efficiency & Drip Telemetry",
+      "icon": "💧"
+    },
+    {
+      "id": "energy",
+      "label": "Greenhouse Energy & Thermal Screens",
+      "icon": "⚡"
+    },
+    {
+      "id": "machinery",
+      "label": "Tractor, Harvester & Pump Electrification",
+      "icon": "🚜"
+    },
+    {
+      "id": "smartfarm",
+      "label": "Smart Farm ICT & Automation",
+      "icon": "🤖"
+    },
+    {
+      "id": "soils",
+      "label": "Soil Health, Organic & Carbon",
+      "icon": "🌱"
+    },
+    {
+      "id": "renewables",
+      "label": "Solar PV, Microgrid & Heat Pumps",
+      "icon": "🔥"
+    },
+    {
+      "id": "livestock",
+      "label": "Livestock Manure & Methane",
+      "icon": "🐮"
+    },
+    {
+      "id": "youth",
+      "label": "Beginning & Young Farmers",
+      "icon": "🧑‍🌾"
+    }
   ],
   "jurisdictions": [
-    { "code": "ALL", "name": "All Jurisdictions", "flag": "🌍", "country": "ALL" },
-    { "code": "US-CA", "name": "California (CDFA Spotlight)", "flag": "🌴", "country": "US" },
-    { "code": "US-FED", "name": "US Federal (USDA)", "flag": "🇺🇸", "country": "US" },
-    { "code": "DE", "name": "Germany (BLE / AFP)", "flag": "🇩🇪", "country": "DE" },
-    { "code": "KR", "name": "South Korea (농식품부)", "flag": "🇰🇷", "country": "KR" },
-    { "code": "NL", "name": "Netherlands (RVO)", "flag": "🇳🇱", "country": "NL" },
-    { "code": "CA", "name": "Canada (AAFC)", "flag": "🇨🇦", "country": "CA" },
-    { "code": "JP", "name": "Japan (農林水産省)", "flag": "🇯🇵", "country": "JP" }
+    {
+      "code": "ALL",
+      "name": "All Jurisdictions",
+      "flag": "🌍",
+      "country": "ALL"
+    },
+    {
+      "code": "US-CA",
+      "name": "California (CDFA Spotlight)",
+      "flag": "🌴",
+      "country": "US"
+    },
+    {
+      "code": "US-FED",
+      "name": "US Federal (USDA)",
+      "flag": "🇺🇸",
+      "country": "US"
+    },
+    {
+      "code": "DE",
+      "name": "Germany (BLE / AFP)",
+      "flag": "🇩🇪",
+      "country": "DE"
+    },
+    {
+      "code": "KR",
+      "name": "South Korea (농식품부)",
+      "flag": "🇰🇷",
+      "country": "KR"
+    },
+    {
+      "code": "NL",
+      "name": "Netherlands (RVO)",
+      "flag": "🇳🇱",
+      "country": "NL"
+    },
+    {
+      "code": "CA",
+      "name": "Canada (AAFC)",
+      "flag": "🇨🇦",
+      "country": "CA"
+    },
+    {
+      "code": "JP",
+      "name": "Japan (農林水産省)",
+      "flag": "🇯🇵",
+      "country": "JP"
+    }
   ],
   "countries": [
-    { "code": "ALL", "name": "Global / All Countries", "flag": "🌍", "currency": "USD", "exchangeRateToUSD": 1.0 },
-    { "code": "US", "name": "United States", "flag": "🇺🇸", "currency": "USD", "exchangeRateToUSD": 1.0 },
-    { "code": "DE", "name": "Germany (Deutschland)", "flag": "🇩🇪", "currency": "EUR", "exchangeRateToUSD": 1.09 },
-    { "code": "KR", "name": "South Korea (대한민국)", "flag": "🇰🇷", "currency": "KRW", "exchangeRateToUSD": 0.00074 },
-    { "code": "NL", "name": "Netherlands (Nederland)", "flag": "🇳🇱", "currency": "EUR", "exchangeRateToUSD": 1.09 },
-    { "code": "CA", "name": "Canada", "flag": "🇨🇦", "currency": "CAD", "exchangeRateToUSD": 0.74 },
-    { "code": "JP", "name": "Japan (日本)", "flag": "🇯🇵", "currency": "JPY", "exchangeRateToUSD": 0.0068 }
+    {
+      "code": "ALL",
+      "name": "Global / All Countries",
+      "flag": "🌍",
+      "currency": "USD",
+      "exchangeRateToUSD": 1.0
+    },
+    {
+      "code": "US",
+      "name": "United States",
+      "flag": "🇺🇸",
+      "currency": "USD",
+      "exchangeRateToUSD": 1.0
+    },
+    {
+      "code": "DE",
+      "name": "Germany (Deutschland)",
+      "flag": "🇩🇪",
+      "currency": "EUR",
+      "exchangeRateToUSD": 1.09
+    },
+    {
+      "code": "KR",
+      "name": "South Korea (대한민국)",
+      "flag": "🇰🇷",
+      "currency": "KRW",
+      "exchangeRateToUSD": 0.00074
+    },
+    {
+      "code": "NL",
+      "name": "Netherlands (Nederland)",
+      "flag": "🇳🇱",
+      "currency": "EUR",
+      "exchangeRateToUSD": 1.09
+    },
+    {
+      "code": "CA",
+      "name": "Canada",
+      "flag": "🇨🇦",
+      "currency": "CAD",
+      "exchangeRateToUSD": 0.74
+    },
+    {
+      "code": "JP",
+      "name": "Japan (日本)",
+      "flag": "🇯🇵",
+      "currency": "JPY",
+      "exchangeRateToUSD": 0.0068
+    }
   ],
   "programs": [
     {
@@ -51,7 +185,7 @@
       "agency": "California Department of Food and Agriculture (CDFA) - OEFI",
       "subsidyType": "Direct Non-Repayable Grant",
       "subsidyRate": "100% Grant Funding (No Grower Match Required)",
-      "rateDecimal": 1.00,
+      "rateDecimal": 1.0,
       "maxAmount": "$200,000 per agricultural project",
       "matchRequirement": "0% (Zero grower matching funds required; matching funds optional for higher merit points)",
       "disbursementType": "Advance Payment (up to 25% for eligible applicants) + Quarterly Progress Invoicing",
@@ -93,7 +227,31 @@
       "linkedCalculator": "evapotranspiration-penman-monteith-calculator.html",
       "linkedToolTitle": "Penman-Monteith ET0 Calc",
       "summary": "California's premier water and clean energy grant covering up to $200,000 at 100% funding to upgrade irrigation pumps to solar/VFD and install real-time soil moisture telemetry.",
-      "deepGuide": "Step 1: Obtain a certified pump efficiency test from an electric utility (PG&E/SCE). Step 2: Model water and GHG reduction using the CDFA calculator. Step 3: Secure 3 vendor bids. Step 4: Submit via CDFA AmpliFund portal."
+      "deepGuide": "Step 1: Obtain a certified pump efficiency test from an electric utility (PG&E/SCE). Step 2: Model water and GHG reduction using the CDFA calculator. Step 3: Secure 3 vendor bids. Step 4: Submit via CDFA AmpliFund portal.",
+      "applicationWindow": {
+        "status": "open",
+        "statusLabel": "🟢 접수 중 (Open)",
+        "startDate": "2026-08-01",
+        "endDate": "2026-11-15",
+        "deadlineDisplay": "2026-11-15 (D-69)",
+        "daysRemaining": 69,
+        "cycleFrequency": "연 1회 가을 정기 공모 (Annual Fall Solicitation)",
+        "submissionPortal": "CDFA AmpliFund Grant Portal"
+      },
+      "facets": {
+        "fundingTier": "tier_medium",
+        "matchTier": "zero_match",
+        "targetAudience": [
+          "commercial_cea",
+          "small_family",
+          "beginning_farmer"
+        ],
+        "technologies": [
+          "water",
+          "renewables",
+          "smartfarm"
+        ]
+      }
     },
     {
       "id": "US-CA-CDFA-HSP",
@@ -108,7 +266,7 @@
       "agency": "California Department of Food and Agriculture (CDFA) - OEFI",
       "subsidyType": "Direct Flat-Rate Practice Grant",
       "subsidyRate": "Fixed Acreage Payment Rates (Covers 80% - 100% of Practice Implementation)",
-      "rateDecimal": 0.90,
+      "rateDecimal": 0.9,
       "maxAmount": "$100,000 per agricultural operation",
       "matchRequirement": "0% (Zero match required; flat payment rates per acre/ton)",
       "disbursementType": "Annual Practice Verification & Flat-Rate Reimbursement",
@@ -149,7 +307,29 @@
       "linkedCalculator": "greenhouse-capex-opex-10year-roi-calculator.html",
       "linkedToolTitle": "Soil & CapEx ROI Engine",
       "summary": "Direct incentive grants up to $100,000 providing flat per-acre cash payments to California farmers for compost application, cover cropping, and whole orchard recycling.",
-      "deepGuide": "Step 1: Map fields and calculate baseline soil organic matter. Step 2: Run COMET-Planner to estimate carbon benefits. Step 3: Submit early as applications are processed first-come, first-served."
+      "deepGuide": "Step 1: Map fields and calculate baseline soil organic matter. Step 2: Run COMET-Planner to estimate carbon benefits. Step 3: Submit early as applications are processed first-come, first-served.",
+      "applicationWindow": {
+        "status": "rolling",
+        "statusLabel": "🔄 상시 접수 (Rolling)",
+        "startDate": "2026-05-01",
+        "endDate": "2026-12-31",
+        "deadlineDisplay": "상시 선착순 접수 (예산 소진 시 조기 마감)",
+        "daysRemaining": 115,
+        "cycleFrequency": "연중 상시 선착순 접수 (Continuous Batching)",
+        "submissionPortal": "CDFA AmpliFund Online Portal"
+      },
+      "facets": {
+        "fundingTier": "tier_medium",
+        "matchTier": "zero_match",
+        "targetAudience": [
+          "small_family",
+          "commercial_cea",
+          "beginning_farmer"
+        ],
+        "technologies": [
+          "soils"
+        ]
+      }
     },
     {
       "id": "US-CA-CEC-FPIP",
@@ -205,7 +385,30 @@
       "linkedCalculator": "greenhouse-heating-load-thermal-screen-calculator.html",
       "linkedToolTitle": "Thermal Screen Heat Savings",
       "summary": "Massive state grant providing up to $5,000,000 (covering 65% of costs) for California CEA greenhouses and food packing facilities upgrading to advanced LED, heat pumps, and dual thermal screens.",
-      "deepGuide": "Requires a formal PE energy audit. Highly competitive. Focus heavily on verified therms and kWh saved per dollar of grant requested."
+      "deepGuide": "Requires a formal PE energy audit. Highly competitive. Focus heavily on verified therms and kWh saved per dollar of grant requested.",
+      "applicationWindow": {
+        "status": "closing_soon",
+        "statusLabel": "🟡 마감 임박 (Closing Soon)",
+        "startDate": "2026-07-01",
+        "endDate": "2026-09-30",
+        "deadlineDisplay": "2026-09-30 (D-23 마감 임박)",
+        "daysRemaining": 23,
+        "cycleFrequency": "연 1회 대규모 설비 경쟁 공모 (Annual Competitive)",
+        "submissionPortal": "California Energy Commission Energy Commission e-Grant Portal"
+      },
+      "facets": {
+        "fundingTier": "tier_mega",
+        "matchTier": "half_match",
+        "targetAudience": [
+          "commercial_cea",
+          "food_processor"
+        ],
+        "technologies": [
+          "energy",
+          "renewables",
+          "smartfarm"
+        ]
+      }
     },
     {
       "id": "US-CA-CDFA-AMMP",
@@ -220,7 +423,7 @@
       "agency": "California Department of Food and Agriculture (CDFA) - OEFI",
       "subsidyType": "Capital Cost-Share Grant",
       "subsidyRate": "100% of Eligible Project Costs (Up to Grant Limit)",
-      "rateDecimal": 1.00,
+      "rateDecimal": 1.0,
       "maxAmount": "$750,000 per dairy or livestock operation",
       "matchRequirement": "0% (No matching funds required; in-kind support optional)",
       "disbursementType": "Advance Payment (up to 25%) + Invoiced Milestone Reimbursements",
@@ -260,7 +463,29 @@
       "linkedCalculator": "greenhouse-capex-opex-10year-roi-calculator.html",
       "linkedToolTitle": "CapEx / OpEx ROI Engine",
       "summary": "Offers up to $750,000 at 100% state grant funding for California dairies and livestock farms converting to solid separators and compost bedded pack systems to eliminate lagoon methane emissions.",
-      "deepGuide": "Ensure coordination with your local Regional Water Quality Control Board prior to submission. Scoring hinges on metric tons of CO2e reduced."
+      "deepGuide": "Ensure coordination with your local Regional Water Quality Control Board prior to submission. Scoring hinges on metric tons of CO2e reduced.",
+      "applicationWindow": {
+        "status": "open",
+        "statusLabel": "🟢 접수 중 (Open)",
+        "startDate": "2026-07-15",
+        "endDate": "2026-10-31",
+        "deadlineDisplay": "2026-10-31 (D-54)",
+        "daysRemaining": 54,
+        "cycleFrequency": "연 1회 정기 공모 (Annual Solicitation Window)",
+        "submissionPortal": "CDFA AmpliFund Portal"
+      },
+      "facets": {
+        "fundingTier": "tier_large",
+        "matchTier": "zero_match",
+        "targetAudience": [
+          "commercial_cea",
+          "small_family"
+        ],
+        "technologies": [
+          "livestock",
+          "renewables"
+        ]
+      }
     },
     {
       "id": "US-CA-CDFA-SCBGP",
@@ -275,7 +500,7 @@
       "agency": "CDFA / USDA Agricultural Marketing Service (AMS)",
       "subsidyType": "Direct Project Grant",
       "subsidyRate": "100% Non-Repayable Project Grant",
-      "rateDecimal": 1.00,
+      "rateDecimal": 1.0,
       "maxAmount": "Up to $500,000 per project (3-Year Term)",
       "matchRequirement": "0% Mandatory Match (Matching funds strongly encouraged and scored favorably)",
       "disbursementType": "Quarterly Cost Reimbursement based on milestone deliverables",
@@ -315,7 +540,31 @@
       "linkedCalculator": "greenhouse-autonomous-ai-climate-controller.html",
       "linkedToolTitle": "Autonomous Climate AI",
       "summary": "State-administered federal grant funding up to $500,000 for innovative smart agriculture, pest control robotics, and post-harvest technology benefiting California specialty crop growers.",
-      "deepGuide": "Phase 1 requires a concise Concept Proposal. Projects that partner with grower cooperatives or demonstrate clear industry-wide dissemination score highest."
+      "deepGuide": "Phase 1 requires a concise Concept Proposal. Projects that partner with grower cooperatives or demonstrate clear industry-wide dissemination score highest.",
+      "applicationWindow": {
+        "status": "upcoming",
+        "statusLabel": "🔵 차기 공고 예정 (Upcoming)",
+        "startDate": "2026-11-01",
+        "endDate": "2027-01-15",
+        "deadlineDisplay": "2026년 11월 차기 공고 예정 (개시 D-55)",
+        "daysRemaining": -1,
+        "cycleFrequency": "연 1회 정기 공모 (Annual Speciality Crop Cycle)",
+        "submissionPortal": "CDFA Grants Office / AmpliFund"
+      },
+      "facets": {
+        "fundingTier": "tier_large",
+        "matchTier": "zero_match",
+        "targetAudience": [
+          "commercial_cea",
+          "small_family",
+          "beginning_farmer"
+        ],
+        "technologies": [
+          "smartfarm",
+          "energy",
+          "water"
+        ]
+      }
     },
     {
       "id": "US-FED-USDA-EQIP-CA",
@@ -371,7 +620,31 @@
       "linkedCalculator": "evapotranspiration-penman-monteith-calculator.html",
       "linkedToolTitle": "Penman-Monteith ET0 Calc",
       "summary": "Federal cost-share funding 75% to 90% of the cost to construct commercial high tunnels and precision drip irrigation across California's valleys, with special priority for beginning growers.",
-      "deepGuide": "Step 1: Visit your local USDA Service Center in your California county to get a Farm/Tract number. Step 2: Request an on-site visit from an NRCS conservationist. Step 3: Rank your application in the CART tool."
+      "deepGuide": "Step 1: Visit your local USDA Service Center in your California county to get a Farm/Tract number. Step 2: Request an on-site visit from an NRCS conservationist. Step 3: Rank your application in the CART tool.",
+      "applicationWindow": {
+        "status": "rolling",
+        "statusLabel": "🔄 상시 접수 (Rolling)",
+        "startDate": "2026-01-01",
+        "endDate": "2026-12-31",
+        "deadlineDisplay": "상시 접수 (배치 평가 분기별 시행)",
+        "daysRemaining": 115,
+        "cycleFrequency": "연중 상시 접수 후 분기별 랭킹 평가 (Quarterly Ranking Batches)",
+        "submissionPortal": "USDA Farmers.gov / Local NRCS Service Center"
+      },
+      "facets": {
+        "fundingTier": "tier_medium",
+        "matchTier": "low_match",
+        "targetAudience": [
+          "small_family",
+          "commercial_cea",
+          "beginning_farmer"
+        ],
+        "technologies": [
+          "energy",
+          "water",
+          "soils"
+        ]
+      }
     },
     {
       "id": "US-FED-USDA-REAP",
@@ -386,7 +659,7 @@
       "agency": "USDA Rural Development (National & California State Office)",
       "subsidyType": "Non-Repayable Grant (Up to 50%) & Loan Guarantees",
       "subsidyRate": "Up to 50% Non-Repayable Capital Grant (IRA Clean Energy Allocation)",
-      "rateDecimal": 0.50,
+      "rateDecimal": 0.5,
       "maxAmount": "Renewables: Up to $1,000,000 | Energy Efficiency: Up to $500,000",
       "matchRequirement": "50% Applicant Match (Can combine with 30% Federal Investment Tax Credit for ~80% total recovery!)",
       "disbursementType": "Post-Installation Reimbursement upon Certified Commissioning & Utility Interconnection",
@@ -427,7 +700,30 @@
       "linkedCalculator": "greenhouse-heating-load-thermal-screen-calculator.html",
       "linkedToolTitle": "Heating Load & Screen ROI",
       "summary": "Flagship federal program covering 50% of capital costs for solar arrays, heat pumps, and LED retrofits. When stacked with the 30% IRS Section 48 ITC tax credit, California growers recover up to 80% of total costs!",
-      "deepGuide": "Ensure you get your SAM.gov UEI early as verification can take 3-4 weeks. Pair REAP with the 30% federal ITC tax credit and California net-metering rules for rapid ROI under 2.5 years."
+      "deepGuide": "Ensure you get your SAM.gov UEI early as verification can take 3-4 weeks. Pair REAP with the 30% federal ITC tax credit and California net-metering rules for rapid ROI under 2.5 years.",
+      "applicationWindow": {
+        "status": "open",
+        "statusLabel": "🟢 접수 중 (Open)",
+        "startDate": "2026-07-01",
+        "endDate": "2026-12-31",
+        "deadlineDisplay": "2026-12-31 (Q4 배치 마감)",
+        "daysRemaining": 115,
+        "cycleFrequency": "분기별 연속 접수 (Continuous Quarterly Windows)",
+        "submissionPortal": "USDA Rural Development Online Portal"
+      },
+      "facets": {
+        "fundingTier": "tier_mega",
+        "matchTier": "half_match",
+        "targetAudience": [
+          "commercial_cea",
+          "food_processor",
+          "small_family"
+        ],
+        "technologies": [
+          "renewables",
+          "energy"
+        ]
+      }
     },
     {
       "id": "DE-BLE-ENERGIE",
@@ -482,7 +778,28 @@
       "linkedCalculator": "greenhouse-heating-load-thermal-screen-calculator.html",
       "linkedToolTitle": "Thermal Screen Heat Savings",
       "summary": "Germany's flagship greenhouse modernization grant covering up to 40% of capital costs for thermal screens, LED conversion, and greenhouse insulation with €600,000 grant ceiling.",
-      "deepGuide": "Must hire an accredited Energieberater before purchasing any equipment. The grant contract must be formally issued by BLE before placing purchase orders."
+      "deepGuide": "Must hire an accredited Energieberater before purchasing any equipment. The grant contract must be formally issued by BLE before placing purchase orders.",
+      "applicationWindow": {
+        "status": "open",
+        "statusLabel": "🟢 접수 중 (Open)",
+        "startDate": "2026-01-01",
+        "endDate": "2026-12-31",
+        "deadlineDisplay": "2026-12-31 (연중 지속 접수)",
+        "daysRemaining": 115,
+        "cycleFrequency": "상시 접수 (Continuous Submission)",
+        "submissionPortal": "BLE Förderportal (foerderportal.bund.de)"
+      },
+      "facets": {
+        "fundingTier": "tier_large",
+        "matchTier": "half_match",
+        "targetAudience": [
+          "commercial_cea"
+        ],
+        "technologies": [
+          "energy",
+          "renewables"
+        ]
+      }
     },
     {
       "id": "DE-AFP-NRW",
@@ -497,7 +814,7 @@
       "agency": "Landwirtschaftskammer Nordrhein-Westfalen (LWK NRW)",
       "subsidyType": "Investment Capital Subsidy & Low-Interest Loan",
       "subsidyRate": "20% - 40% of Eligible Capital Investment",
-      "rateDecimal": 0.30,
+      "rateDecimal": 0.3,
       "maxAmount": "€2,000,000 Investment Ceiling",
       "matchRequirement": "60% - 80% Farm Equity or Rentenbank Agricultural Loan",
       "disbursementType": "Milestone-based inspection and construction draws",
@@ -537,7 +854,29 @@
       "linkedCalculator": "greenhouse-capex-opex-10year-roi-calculator.html",
       "linkedToolTitle": "10-Year CapEx & ROI Engine",
       "summary": "Premier structural modernization grant in Germany's largest horticultural cluster (Straelen / Niederrhein) supporting new glasshouses, closed-loop hydroponics, and climate computers up to €2,000,000.",
-      "deepGuide": "Ensure building permits are fully granted prior to the application deadline. The scoring rubric gives heavy preference to closed-loop water recirculation."
+      "deepGuide": "Ensure building permits are fully granted prior to the application deadline. The scoring rubric gives heavy preference to closed-loop water recirculation.",
+      "applicationWindow": {
+        "status": "closing_soon",
+        "statusLabel": "🟡 마감 임박 (Closing Soon)",
+        "startDate": "2026-06-01",
+        "endDate": "2026-09-30",
+        "deadlineDisplay": "2026-09-30 (D-23 마감 임박)",
+        "daysRemaining": 23,
+        "cycleFrequency": "연 2회 선정 공고 (Bi-annual Solicitations)",
+        "submissionPortal": "Landwirtschaftskammer Nordrhein-Westfalen"
+      },
+      "facets": {
+        "fundingTier": "tier_large",
+        "matchTier": "low_match",
+        "targetAudience": [
+          "commercial_cea",
+          "small_family"
+        ],
+        "technologies": [
+          "energy",
+          "smartfarm"
+        ]
+      }
     },
     {
       "id": "DE-EU-JUNGLANDWIRTE",
@@ -552,7 +891,7 @@
       "agency": "Landwirtschaftskammer / EU CAP",
       "subsidyType": "Direct Income Top-Up & Capital Settlement Grant",
       "subsidyRate": "Fixed Acreage Top-Up + Up to €70,000 Settlement Bonus",
-      "rateDecimal": 0.50,
+      "rateDecimal": 0.5,
       "maxAmount": "€70,000 Lump Sum + €134/ha/year for 5 Consecutive Years",
       "matchRequirement": "0% (Direct non-repayable income injection and settlement capital)",
       "disbursementType": "Annual Single Area Payment (Direktzahlung) + Staged Settlement Tranches",
@@ -591,7 +930,28 @@
       "linkedCalculator": "greenhouse-capex-opex-10year-roi-calculator.html",
       "linkedToolTitle": "CapEx & OpEx Modeling",
       "summary": "Special young farmer bonus providing a direct €70,000 cash grant plus €134/ha/year for 5 years to support newly qualified Gärtnermeister and agricultural founders.",
-      "deepGuide": "Must submit together with your state's Gemeinsamer Antrag before May 15. Ensure company bylaws explicitly show the young farmer holds effective executive control."
+      "deepGuide": "Must submit together with your state's Gemeinsamer Antrag before May 15. Ensure company bylaws explicitly show the young farmer holds effective executive control.",
+      "applicationWindow": {
+        "status": "upcoming",
+        "statusLabel": "🔵 차기 공고 예정 (Upcoming)",
+        "startDate": "2027-03-01",
+        "endDate": "2027-05-15",
+        "deadlineDisplay": "2027년 봄 정기 신청 예정",
+        "daysRemaining": -1,
+        "cycleFrequency": "매년 봄 GAP 통합신청 (Annual Direct Payment Window)",
+        "submissionPortal": "Agrarförderung Online (ANDI/ZeaSys)"
+      },
+      "facets": {
+        "fundingTier": "tier_medium",
+        "matchTier": "zero_match",
+        "targetAudience": [
+          "beginning_farmer"
+        ],
+        "technologies": [
+          "smartfarm",
+          "energy"
+        ]
+      }
     },
     {
       "id": "KR-MAFRA-ICT",
@@ -606,7 +966,7 @@
       "agency": "농림축산식품부 (MAFRA) / 농어촌공사 / 지자체 농업기술센터",
       "subsidyType": "정부 국고/지방비 보조 (50~70%) + 정책 융자",
       "subsidyRate": "50% - 70% 지원 (국비 20~30% + 지방비 30% + 융자 30% + 자부담 10~20%)",
-      "rateDecimal": 0.60,
+      "rateDecimal": 0.6,
       "maxAmount": "온실 ha당 최대 2억 ~ 5억 원 지원 한도",
       "matchRequirement": "자부담 10% ~ 20% (융자 30% 별도 지원 가능)",
       "disbursementType": "감리 및 현장 검수 완료 후 시공업체 직접 지급 (e나라도움 시스템)",
@@ -646,7 +1006,30 @@
       "linkedCalculator": "greenhouse-autonomous-ai-climate-controller.html",
       "linkedToolTitle": "Autonomous Climate AI",
       "summary": "한국 농식품부의 대표 스마트팜 사업으로 복합환경제어기, 센서, 자동 양액기 등 ICT 설비비의 50~70%를 정부와 지자체가 직접 지원.",
-      "deepGuide": "스마트팜코리아(smartfarmkorea.net) 사전 가입 필수. KS 표준 인증 장비를 채택해야 하며, 관할 시군 농업기술센터에 방문 또는 e나라도움으로 접수."
+      "deepGuide": "스마트팜코리아(smartfarmkorea.net) 사전 가입 필수. KS 표준 인증 장비를 채택해야 하며, 관할 시군 농업기술센터에 방문 또는 e나라도움으로 접수.",
+      "applicationWindow": {
+        "status": "open",
+        "statusLabel": "🟢 접수 중 (Open)",
+        "startDate": "2026-08-01",
+        "endDate": "2026-10-15",
+        "deadlineDisplay": "2026-10-15 (D-38)",
+        "daysRemaining": 38,
+        "cycleFrequency": "연 1회 시군구 농정부서 공모 (Annual Municipal Call)",
+        "submissionPortal": "스마트팜코리아 및 관할 시·군 농정과"
+      },
+      "facets": {
+        "fundingTier": "tier_large",
+        "matchTier": "half_match",
+        "targetAudience": [
+          "commercial_cea",
+          "small_family",
+          "beginning_farmer"
+        ],
+        "technologies": [
+          "smartfarm",
+          "energy"
+        ]
+      }
     },
     {
       "id": "KR-MAFRA-ENERGY",
@@ -661,7 +1044,7 @@
       "agency": "농림축산식품부 / 한국농어촌공사 / 지자체",
       "subsidyType": "정부 국고/지방비 무상 보조 (50%)",
       "subsidyRate": "50% 무상 보조 (국비 20% + 지방비 30% + 융자 30% + 자부담 20%)",
-      "rateDecimal": 0.50,
+      "rateDecimal": 0.5,
       "maxAmount": "온실 규모(ha)별 산출 (수억 원 한도)",
       "matchRequirement": "자부담 20% (정책 융자 30% 지원 가능)",
       "disbursementType": "한국농어촌공사 감리 승인 후 준공 검사 완료 시 시공업체 직접 지급",
@@ -700,7 +1083,28 @@
       "linkedCalculator": "greenhouse-heating-load-thermal-screen-calculator.html",
       "linkedToolTitle": "Thermal Screen Heat Savings",
       "summary": "온실 다겹보온커튼과 히트펌프 설치비의 50%를 무상 지원하여 겨울철 시설원예 난방비를 40~60% 이상 감축시키는 에너지 특화 사업.",
-      "deepGuide": "한국농어촌공사가 설계를 대행하거나 감리를 수행합니다. 1년 전 여름(7~9월) 수요조사 단계에서 지자체에 미리 신청해야 이듬해 예산 배정을 받습니다."
+      "deepGuide": "한국농어촌공사가 설계를 대행하거나 감리를 수행합니다. 1년 전 여름(7~9월) 수요조사 단계에서 지자체에 미리 신청해야 이듬해 예산 배정을 받습니다.",
+      "applicationWindow": {
+        "status": "closing_soon",
+        "statusLabel": "🟡 마감 임박 (Closing Soon)",
+        "startDate": "2026-07-01",
+        "endDate": "2026-09-25",
+        "deadlineDisplay": "2026-09-25 (D-18 마감 임박)",
+        "daysRemaining": 18,
+        "cycleFrequency": "연 1회 지자체 정기 공모 (Annual Fall Window)",
+        "submissionPortal": "관할 지자체 농업기술센터 / 농정과"
+      },
+      "facets": {
+        "fundingTier": "tier_large",
+        "matchTier": "low_match",
+        "targetAudience": [
+          "commercial_cea"
+        ],
+        "technologies": [
+          "energy",
+          "renewables"
+        ]
+      }
     },
     {
       "id": "KR-MAFRA-YOUTH",
@@ -715,7 +1119,7 @@
       "agency": "농림축산식품부 / 농림수산식품교육문화정보원",
       "subsidyType": "매월 정착 바우처 (최장 3년) + 연 1.5% 고정금리 정책대출",
       "subsidyRate": "월 최대 110만 원 영농정착지원금 + 최대 5억 원 융자 (금리 1.5%)",
-      "rateDecimal": 0.70,
+      "rateDecimal": 0.7,
       "maxAmount": "최장 3년간 총 3,600만 원 무상 보조 + 5억 원 저리 정책융자",
       "matchRequirement": "정착지원금은 0% 자부담 무상 보조 / 융자금은 5년 거치 20년 상환",
       "disbursementType": "농협 청년농 바우처 카드 매월 자동 충전 + 영농 기반 마련 시 융자 실행",
@@ -754,7 +1158,27 @@
       "linkedCalculator": "greenhouse-capex-opex-10year-roi-calculator.html",
       "linkedToolTitle": "10-Year CapEx & ROI Engine",
       "summary": "청년 스마트팜 창업을 위한 국가 핵심 지원으로 3년간 최대 3,600만 원 정착 바우처와 연 1.5% 고정금리 5억 원 정책대출(5년 거치 20년 분할상환) 제공.",
-      "deepGuide": "영농계획서 작성이 합격의 70%를 좌우합니다. 스마트팜 혁신밸리 청년창업보육센터 수료생은 우선 선발 혜택이 주어집니다."
+      "deepGuide": "영농계획서 작성이 합격의 70%를 좌우합니다. 스마트팜 혁신밸리 청년창업보육센터 수료생은 우선 선발 혜택이 주어집니다.",
+      "applicationWindow": {
+        "status": "upcoming",
+        "statusLabel": "🔵 차기 공고 예정 (Upcoming)",
+        "startDate": "2026-12-01",
+        "endDate": "2027-01-31",
+        "deadlineDisplay": "2026년 12월 정기 모집 공고 예정",
+        "daysRemaining": -1,
+        "cycleFrequency": "연 1회 정기 공모 (Annual National Call)",
+        "submissionPortal": "Agrix (농림사업정보시스템)"
+      },
+      "facets": {
+        "fundingTier": "tier_micro",
+        "matchTier": "zero_match",
+        "targetAudience": [
+          "beginning_farmer"
+        ],
+        "technologies": [
+          "smartfarm"
+        ]
+      }
     },
     {
       "id": "NL-RVO-EG",
@@ -769,7 +1193,7 @@
       "agency": "Rijksdienst voor Ondernemend Nederland (RVO)",
       "subsidyType": "Direct Non-Repayable Capital Grant (Subsidie)",
       "subsidyRate": "25% - 40% of Eligible Capital Investment",
-      "rateDecimal": 0.30,
+      "rateDecimal": 0.3,
       "maxAmount": "€350,000 per greenhouse enterprise",
       "matchRequirement": "60% - 75% Enterprise Equity or Commercial Financing",
       "disbursementType": "Final payment upon project completion and verified energy inspection",
@@ -806,7 +1230,28 @@
       "linkedCalculator": "greenhouse-heating-load-thermal-screen-calculator.html",
       "linkedToolTitle": "Thermal Screen Heat Savings",
       "summary": "Dutch national program supporting Venlo glasshouse growers in cutting natural gas dependency via secondary thermal screens, diffuse glass, and latent heat air handling units.",
-      "deepGuide": "Ensure you have eHerkenning Level 3 ready. The Dutch government prioritizes the 'Het Nieuwe Telen' (Next Generation Growing) methodology."
+      "deepGuide": "Ensure you have eHerkenning Level 3 ready. The Dutch government prioritizes the 'Het Nieuwe Telen' (Next Generation Growing) methodology.",
+      "applicationWindow": {
+        "status": "open",
+        "statusLabel": "🟢 접수 중 (Open)",
+        "startDate": "2026-04-01",
+        "endDate": "2026-11-30",
+        "deadlineDisplay": "2026-11-30 (D-84)",
+        "daysRemaining": 84,
+        "cycleFrequency": "연 1회 정기 공모 (Annual Glastuinbouw Window)",
+        "submissionPortal": "RVO Mijn Rijksdienst Portal"
+      },
+      "facets": {
+        "fundingTier": "tier_large",
+        "matchTier": "low_match",
+        "targetAudience": [
+          "commercial_cea"
+        ],
+        "technologies": [
+          "energy",
+          "renewables"
+        ]
+      }
     },
     {
       "id": "NL-RVO-SDE",
@@ -858,7 +1303,29 @@
       "linkedCalculator": "aquifer-thermal-energy-storage-ates-heat-pump.html",
       "linkedToolTitle": "ATES & Industrial Heat Pump",
       "summary": "The Netherlands' flagship 15-year operational subsidy funding deep geothermal and massive industrial heat pumps for glasshouse clusters.",
-      "deepGuide": "Timing is critical: the application phases open in weekly tiers based on €/ton CO2 threshold. Apply in the earliest possible phase to secure budget allocation."
+      "deepGuide": "Timing is critical: the application phases open in weekly tiers based on €/ton CO2 threshold. Apply in the earliest possible phase to secure budget allocation.",
+      "applicationWindow": {
+        "status": "closing_soon",
+        "statusLabel": "🟡 마감 임박 (Closing Soon)",
+        "startDate": "2026-09-01",
+        "endDate": "2026-10-05",
+        "deadlineDisplay": "2026-10-05 (D-28 마감 임박)",
+        "daysRemaining": 28,
+        "cycleFrequency": "연 1회 단계별 입찰 옥션 (Tiered Auction Window)",
+        "submissionPortal": "RVO eLoket"
+      },
+      "facets": {
+        "fundingTier": "tier_mega",
+        "matchTier": "half_match",
+        "targetAudience": [
+          "commercial_cea",
+          "food_processor"
+        ],
+        "technologies": [
+          "renewables",
+          "energy"
+        ]
+      }
     },
     {
       "id": "CA-AAFC-ACT",
@@ -873,7 +1340,7 @@
       "agency": "Agriculture and Agri-Food Canada (AAFC)",
       "subsidyType": "Direct Non-Repayable Contribution",
       "subsidyRate": "Up to 50% (Up to 60% for Underrepresented/Young Farmers)",
-      "rateDecimal": 0.50,
+      "rateDecimal": 0.5,
       "maxAmount": "$2,000,000 CAD per agricultural enterprise",
       "matchRequirement": "40% - 50% Applicant Cash Contribution",
       "disbursementType": "Milestone-based progress claims upon submission of paid receipts",
@@ -911,7 +1378,30 @@
       "linkedCalculator": "greenhouse-heating-load-thermal-screen-calculator.html",
       "linkedToolTitle": "Thermal Screen Heat Savings",
       "summary": "Canadian federal grant funding up to 50-60% of greenhouse energy-efficient equipment retrofits and clean technology adoption up to $2,000,000 CAD.",
-      "deepGuide": "Ensure your baseline GHG audit explicitly states fuel consumption in cubic meters of natural gas or liters of propane to substantiate emissions savings."
+      "deepGuide": "Ensure your baseline GHG audit explicitly states fuel consumption in cubic meters of natural gas or liters of propane to substantiate emissions savings.",
+      "applicationWindow": {
+        "status": "rolling",
+        "statusLabel": "🔄 상시 접수 (Rolling)",
+        "startDate": "2026-01-01",
+        "endDate": "2026-12-31",
+        "deadlineDisplay": "상시 접수 (예산 한도 도달 시 종료)",
+        "daysRemaining": 115,
+        "cycleFrequency": "연중 상시 선착순 접수 (Continuous Intake)",
+        "submissionPortal": "Agriculture and Agri-Food Canada Online Services"
+      },
+      "facets": {
+        "fundingTier": "tier_mega",
+        "matchTier": "half_match",
+        "targetAudience": [
+          "commercial_cea",
+          "food_processor"
+        ],
+        "technologies": [
+          "energy",
+          "renewables",
+          "smartfarm"
+        ]
+      }
     },
     {
       "id": "JP-MAFF-SMART",
@@ -926,7 +1416,7 @@
       "agency": "農林水産省 (MAFF, Japan) / 農業・食品産業技術総合研究機構 (NARO)",
       "subsidyType": "Direct Capital Subsidy (定額・1/2 国庫補助)",
       "subsidyRate": "50% (1/2 国庫直接補助)",
-      "rateDecimal": 0.50,
+      "rateDecimal": 0.5,
       "maxAmount": "사업 규모 및 컨소시엄에 따른 정률 지원 (수천만 엔 단위)",
       "matchRequirement": "50% 자부담 (일본 정책금융공고 농업근대화자금 연계 가능)",
       "disbursementType": "사업 중간 실적 보고 및 최종 완료 검사 후 보조금 교부",
@@ -964,7 +1454,487 @@
       "linkedCalculator": "greenhouse-autonomous-ai-climate-controller.html",
       "linkedToolTitle": "Autonomous Climate AI",
       "summary": "일본 농림수산성의 스마트농업 보급 대표 사업으로 첨단 복합환경제어기 및 센서 도입비 50%를 국가가 직접 보조.",
-      "deepGuide": "e-MAFF 시스템을 통한 온라인 신청. 농업개량보급센터 또는 연구기관과의 컨소시엄 구성 시 채택 확률이 대폭 상승합니다."
+      "deepGuide": "e-MAFF 시스템을 통한 온라인 신청. 농업개량보급센터 또는 연구기관과의 컨소시엄 구성 시 채택 확률이 대폭 상승합니다.",
+      "applicationWindow": {
+        "status": "open",
+        "statusLabel": "🟢 접수 중 (Open)",
+        "startDate": "2026-07-01",
+        "endDate": "2026-10-31",
+        "deadlineDisplay": "2026-10-31 (D-54)",
+        "daysRemaining": 54,
+        "cycleFrequency": "연 1회 공모 (Annual Japanese MAFF Solicitation)",
+        "submissionPortal": "jGrants (デジタル庁 補助金申請システム)"
+      },
+      "facets": {
+        "fundingTier": "tier_large",
+        "matchTier": "half_match",
+        "targetAudience": [
+          "commercial_cea",
+          "small_family"
+        ],
+        "technologies": [
+          "smartfarm",
+          "energy"
+        ]
+      }
+    },
+    {
+      "id": "US-CA-CARB-FARMER",
+      "country": "US",
+      "countryName": "United States",
+      "region": "US-CA",
+      "regionName": "California (Statewide)",
+      "jurisdictionLabel": "California (CARB)",
+      "flag": "🚜",
+      "category": "machinery",
+      "name": "CARB FARMER: Agricultural Tractor, Harvester & Pump Electrification",
+      "agency": "California Air Resources Board (CARB) & Local Air Districts (SJVAPCD, SCAQMD, BAAQMD)",
+      "subsidyType": "Direct Capital Equipment Grant / Scrap-and-Replace Voucher",
+      "subsidyRate": "50% - 80% of Eligible Replacement Cost (up to 80% for Zero-Emission)",
+      "rateDecimal": 0.8,
+      "maxAmount": "$450,000 per agricultural vehicle/engine",
+      "matchRequirement": "20% - 50% cash match or certified equipment trade-in equity",
+      "disbursementType": "Direct Payment to Approved Dealer / Invoiced Reimbursement",
+      "currency": "USD",
+      "verifiedDate": "2026-09-07 Verified (CARB FARMER Guidelines)",
+      "deadline": "Rolling Batch Processing until District Allocation Exhausted",
+      "selectionMethod": "First-Come, First-Served ranked by Cost-Effectiveness ($/ton NOx + PM2.5 reduced)",
+      "targetEquipment": [
+        "Tier 4 Final & Zero-Emission (Battery Electric) 25+ HP Agricultural Tractors",
+        "Zero-Emission Electric Utility Terrain Vehicles (UTVs) and small ag loaders",
+        "Agricultural stationary & booster pump diesel-to-electric motor conversions",
+        "Off-road mobile agricultural equipment (Nut harvesters, sprayers, forklifts)"
+      ],
+      "ineligibleItems": [
+        "Equipment purchased or delivered prior to formal Air District grant execution",
+        "Existing diesel engines that have not operated in California for past 24 months",
+        "Tractors with non-operable hour meters or unverified historical diesel consumption",
+        "Personal passenger trucks, street-legal haulers, or non-farm machinery"
+      ],
+      "qualificationCriteria": [
+        "California agricultural producer owning and operating qualifying Tier 0-2 diesel machinery",
+        "Must operate the equipment at least 75% of total annual hours within California air districts",
+        "Must agree to permanently scrap/destroy the existing old diesel engine/tractor chassis",
+        "Minimum 3-year post-replacement operational commitment with hour-meter reporting"
+      ],
+      "documentChecklist": [
+        "Two years of historical engine run hours (Hour meter logs or fuel purchase records)",
+        "Current California Farm Bureau or CDFA Agricultural Producer ID Verification",
+        "Itemized quote from authorized farm equipment dealership with CARB Executive Order certification",
+        "Clear photographs of existing tractor/engine showing serial plate and complete machine",
+        "California Payee Data Record (STD 204) and Air District Application Form"
+      ],
+      "officialUrl": "https://ww2.arb.ca.gov/our-work/programs/farmer-program",
+      "portalName": "CARB / Local Air District Grant Management Portal",
+      "contactPhone": "(916) 445-6347",
+      "contactEmail": "farmerprogram@arb.ca.gov",
+      "linkedCalculator": "greenhouse-capex-opex-10year-roi-calculator.html",
+      "linkedToolTitle": "CapEx/OpEx 10-Yr ROI",
+      "summary": "California's multi-million dollar clean air fund covering 50%-80% (up to $450,000) to scrap older diesel tractors and irrigation pumps in favor of Tier 4 Final or zero-emission electric machinery.",
+      "deepGuide": "Step 1: Check your local air district allocation (San Joaquin, South Coast, etc.). Step 2: Document 24 months of fuel/hour records for existing diesel tractor. Step 3: Get dealership quote for Tier 4 or electric unit. Step 4: Submit application before purchasing.",
+      "applicationWindow": {
+        "status": "open",
+        "statusLabel": "🟢 접수 중 (Open)",
+        "startDate": "2026-06-01",
+        "endDate": "2026-11-30",
+        "deadlineDisplay": "2026-11-30 (D-84 / 상시 접수 병행)",
+        "daysRemaining": 84,
+        "cycleFrequency": "상시 접수 및 분기별 심사 (Continuous District Intake)",
+        "submissionPortal": "Local Air Pollution Control District (SJVAPCD / SCAQMD Portal)"
+      },
+      "facets": {
+        "fundingTier": "tier_large",
+        "matchTier": "low_match",
+        "targetAudience": [
+          "commercial_cea",
+          "small_family"
+        ],
+        "technologies": [
+          "machinery",
+          "renewables"
+        ]
+      }
+    },
+    {
+      "id": "US-CA-CDFA-PHP",
+      "country": "US",
+      "countryName": "United States",
+      "region": "US-CA",
+      "regionName": "California (Statewide)",
+      "jurisdictionLabel": "California (CDFA)",
+      "flag": "🐝",
+      "category": "soils",
+      "name": "CDFA Pollinator Habitat Program (PHP) Grants",
+      "agency": "California Department of Food and Agriculture (CDFA) - OEFI",
+      "subsidyType": "Direct Non-Repayable Grant (100% Funding)",
+      "subsidyRate": "100% Grant Funding (Zero Grower Cost-Share Required)",
+      "rateDecimal": 1.0,
+      "maxAmount": "$200,000 per agricultural project ($2M for regional conservation entities)",
+      "matchRequirement": "0% (Zero grower matching required)",
+      "disbursementType": "Advance Payment (up to 25%) + Invoiced Practice Verification",
+      "currency": "USD",
+      "verifiedDate": "2026-09-07 Verified (CDFA OEFI Bulletin)",
+      "deadline": "2026-10-30 Solicitation Window",
+      "selectionMethod": "Competitive Technical Review prioritizing native pollinator density and water efficiency",
+      "targetEquipment": [
+        "Perennial flowering hedgerows, windbreaks, and native wildflower field borders",
+        "Flowering cover crops integrated into orchard alleys and vegetable crop rotations",
+        "Native tree and shrub plantings around irrigation reservoirs and greenhouses",
+        "Temporary and permanent low-flow micro-drip establishment irrigation for pollinator zones"
+      ],
+      "ineligibleItems": [
+        "Invasive plant species or non-certified seed mixtures",
+        "Synthetic chemical pesticide spraying within designated pollinator sanctuaries",
+        "General farm perimeter fences not directly protecting planted pollinator corridors",
+        "Projects on non-agricultural commercial or residential parcels"
+      ],
+      "qualificationCriteria": [
+        "California commercial agricultural producers, ranchers, and agricultural tribes",
+        "Must maintain pollinator plantings for a minimum of three (3) consecutive years",
+        "Must integrate non-chemical pest management buffers around pollinator zones",
+        "Producers with leased land must supply certified landowner agreement"
+      ],
+      "documentChecklist": [
+        "Detailed Planting Plan & NRCS Practice Standard Compliance Form (Standard 420/327)",
+        "Itemized seed and native plant nursery quotes (California native ecotypes required)",
+        "Farm Parcel Map (APN) highlighting acreage and GPS coordinates of pollinator rows",
+        "Landowner Agreement Form for leased farming parcels",
+        "California Payee Data Record (STD 204)"
+      ],
+      "officialUrl": "https://www.cdfa.ca.gov/oefi/php/",
+      "portalName": "CDFA AmpliFund Grant Portal",
+      "contactPhone": "(916) 900-5075",
+      "contactEmail": "cdfa.oefi@cdfa.ca.gov",
+      "linkedCalculator": "greenhouse-biological-pest-control-ipm-calculator.html",
+      "linkedToolTitle": "Biological IPM Calc",
+      "summary": "100% grant up to $200,000 with zero cost-share to install pollinator hedgerows, insectary borders, and native flowering groundcovers across California commercial farms.",
+      "deepGuide": "Step 1: Partner with an RCD or pollinator expert to design native seed mix. Step 2: Calculate establishment irrigation needs. Step 3: Submit budget via CDFA AmpliFund.",
+      "applicationWindow": {
+        "status": "open",
+        "statusLabel": "🟢 접수 중 (Open)",
+        "startDate": "2026-08-15",
+        "endDate": "2026-10-30",
+        "deadlineDisplay": "2026-10-30 (D-53)",
+        "daysRemaining": 53,
+        "cycleFrequency": "연 1회 정기 공모 (Annual Fall Cycle)",
+        "submissionPortal": "CDFA AmpliFund Online Portal"
+      },
+      "facets": {
+        "fundingTier": "tier_medium",
+        "matchTier": "zero_match",
+        "targetAudience": [
+          "small_family",
+          "commercial_cea",
+          "beginning_farmer"
+        ],
+        "technologies": [
+          "soils",
+          "water"
+        ]
+      }
+    },
+    {
+      "id": "US-CA-CDFA-OTPP",
+      "country": "US",
+      "countryName": "United States",
+      "region": "US-CA",
+      "regionName": "California (Statewide)",
+      "jurisdictionLabel": "California (CDFA)",
+      "flag": "🥑",
+      "category": "soils",
+      "name": "CDFA Organic Transition Pilot Program (OTPP) & Certification Cost Share",
+      "agency": "California Department of Food and Agriculture (CDFA) & USDA Organic Cost Share (OCCSP)",
+      "subsidyType": "Direct Infrastructure Block Grant + 75% Certification Fee Reimbursement",
+      "subsidyRate": "75% Certification Reimbursement + 100% Transition Implementation Grant",
+      "rateDecimal": 0.85,
+      "maxAmount": "$50,000 transition grant + $1,000/yr certification rebate",
+      "matchRequirement": "0% for transition grant; 25% co-pay on certification fees",
+      "disbursementType": "Annual Invoiced Reimbursement",
+      "currency": "USD",
+      "verifiedDate": "2026-09-07 Verified (CDFA Organic Program)",
+      "deadline": "2026-11-01 Annual Organic Window",
+      "selectionMethod": "First-Come, First-Served for eligible applicants transitioning to USDA Organic",
+      "targetEquipment": [
+        "Organic System Plan (OSP) development and accredited certification audit fees",
+        "Approved organic fertility equipment (Compost spreaders, organic cover crop seeders)",
+        "Mechanical weed cultivation and solarization plastic sheeting for organic transition",
+        "Dedicated organic buffer zone fencing and wash-pack sanitation equipment"
+      ],
+      "ineligibleItems": [
+        "Synthetic chemical fertilizers, herbicides, and prohibited pesticides (NOP 205.105)",
+        "Operations that do not intend to achieve certified organic status within 36 months",
+        "Costs incurred before the certified transition agreement window"
+      ],
+      "qualificationCriteria": [
+        "California agricultural producers actively transitioning acres from conventional to USDA Organic",
+        "Must register with the California State Organic Program (SOP)",
+        "Must have an active Organic System Plan (OSP) under review by a USDA-accredited certifier (CCOF, QAI, etc.)",
+        "Priority scoring for socially disadvantaged, veteran, and beginning farmers"
+      ],
+      "documentChecklist": [
+        "California State Organic Program (SOP) Registration Certificate",
+        "Proof of application or letter of intent with USDA-accredited certification agency (e.g. CCOF)",
+        "Itemized receipts and proof of payment for organic certification fees and eligible transition tools",
+        "Federal IRS Form W-9 and California STD 204 form",
+        "Field history narrative verifying land has been free of prohibited substances"
+      ],
+      "officialUrl": "https://www.cdfa.ca.gov/organic/",
+      "portalName": "CDFA State Organic Program Portal",
+      "contactPhone": "(916) 900-5030",
+      "contactEmail": "cdfa.organic@cdfa.ca.gov",
+      "linkedCalculator": "greenhouse-fertilizer-ec-ppm-stock-tank-blending-calculator.html",
+      "linkedToolTitle": "Fertigation & Nutrients",
+      "summary": "Supports California growers transitioning to certified organic production with up to $50,000 in direct transition equipment grants plus 75% annual organic certification audit fee rebates.",
+      "deepGuide": "Step 1: File your Organic System Plan (OSP) with CCOF. Step 2: Register with CDFA SOP. Step 3: Submit receipts for 75% fee reimbursement and apply for transition block grants.",
+      "applicationWindow": {
+        "status": "open",
+        "statusLabel": "🟢 접수 중 (Open)",
+        "startDate": "2026-06-01",
+        "endDate": "2026-11-01",
+        "deadlineDisplay": "2026-11-01 (D-55)",
+        "daysRemaining": 55,
+        "cycleFrequency": "연 1회 정기 신청 (Annual Organic Cycle)",
+        "submissionPortal": "CDFA State Organic Program Portal"
+      },
+      "facets": {
+        "fundingTier": "tier_micro",
+        "matchTier": "zero_match",
+        "targetAudience": [
+          "small_family",
+          "beginning_farmer",
+          "commercial_cea"
+        ],
+        "technologies": [
+          "soils",
+          "smartfarm"
+        ]
+      }
+    },
+    {
+      "id": "US-CA-SJVAPCD-BURN",
+      "country": "US",
+      "countryName": "United States",
+      "region": "US-CA",
+      "regionName": "San Joaquin Valley (CA)",
+      "jurisdictionLabel": "California (SJVAPCD)",
+      "flag": "🪵",
+      "category": "soils",
+      "name": "SJVAPCD Ag Burn Alternatives: Whole Orchard Recycling & Soil Chipping",
+      "agency": "San Joaquin Valley Air Pollution Control District (SJVAPCD)",
+      "subsidyType": "Direct Per-Acre Incentive Rebate",
+      "subsidyRate": "Fixed Acreage Rebate ($600 - $750/acre; Covers up to 70% of contractor chipping)",
+      "rateDecimal": 0.7,
+      "maxAmount": "$60,000 per grower per year (Up to 500 acres max)",
+      "matchRequirement": "Grower covers contractor cost difference above $750/acre",
+      "disbursementType": "Post-Incorporation Field Verification Reimbursement",
+      "currency": "USD",
+      "verifiedDate": "2026-09-07 Verified (SJVAPCD Bulletin)",
+      "deadline": "Continuous Open Intake / Year-Round Participation",
+      "selectionMethod": "First-Come, First-Served for San Joaquin Valley commercial orchard/vineyard acreage",
+      "targetEquipment": [
+        "Contractor Whole Orchard Recycling (WOR) heavy chipping and tub-grinding services",
+        "Deep soil incorporation tillage of shredded biomass (minimum 6-inch incorporation depth)",
+        "Mobile pyrolytic ag-biomass to biochar conversion services",
+        "Shredded orchard woodchips used as surface mulch on commercial ag parcels"
+      ],
+      "ineligibleItems": [
+        "Orchard wood transported off-site to biomass combustion or incineration plants",
+        "Acreage pulled or chipped before receiving written SJVAPCD pre-approval voucher",
+        "Residential fruit trees, municipal landscaping, or non-commercial plots"
+      ],
+      "qualificationCriteria": [
+        "Commercial tree fruit, nut orchard, or vineyard located within San Joaquin Valley air basin",
+        "Minimum removal of 1 contiguous acre of agricultural trees or vines",
+        "Biomass must be chipped and incorporated into soil on-site or used for on-farm mulching",
+        "Grower must agree not to conduct open agricultural burning on the parcel"
+      ],
+      "documentChecklist": [
+        "SJVAPCD Ag Burn Alternatives Application & Pre-Removal Field Map",
+        "Contractor written quote specifying chipping method and estimated acreage",
+        "Clear pre-removal photographs of the standing orchard or vineyard",
+        "Post-incorporation contractor invoice and proof of payment",
+        "Landowner authorization letter if farming under tenancy"
+      ],
+      "officialUrl": "https://www.valleyair.org/grants/alt-ag-burn.htm",
+      "portalName": "Valley Air District Online Grant Portal",
+      "contactPhone": "(559) 230-5800",
+      "contactEmail": "grants@valleyair.org",
+      "linkedCalculator": "evapotranspiration-penman-monteith-calculator.html",
+      "linkedToolTitle": "Water & Soil Models",
+      "summary": "San Joaquin Valley incentive providing $600-$750/acre (up to $60,000 per grower) to chip and recycle whole orchards into the soil rather than open-burning, dramatically increasing soil water retention.",
+      "deepGuide": "Step 1: Apply to SJVAPCD BEFORE pulling trees. Step 2: Receive Voucher. Step 3: Contractor chips and incorporates wood into soil. Step 4: Submit invoice for prompt check payment.",
+      "applicationWindow": {
+        "status": "rolling",
+        "statusLabel": "🔄 상시 접수 (Rolling)",
+        "startDate": "2026-01-01",
+        "endDate": "2026-12-31",
+        "deadlineDisplay": "연중 상시 선착순 접수 (Continuous Intake)",
+        "daysRemaining": 115,
+        "cycleFrequency": "연중 상시 접수 (Year-Round Open Window)",
+        "submissionPortal": "SJVAPCD Online Grant Portal"
+      },
+      "facets": {
+        "fundingTier": "tier_micro",
+        "matchTier": "low_match",
+        "targetAudience": [
+          "small_family",
+          "commercial_cea"
+        ],
+        "technologies": [
+          "soils",
+          "machinery"
+        ]
+      }
+    },
+    {
+      "id": "US-CA-CDFA-WETA",
+      "country": "US",
+      "countryName": "United States",
+      "region": "US-CA",
+      "regionName": "California (Statewide)",
+      "jurisdictionLabel": "California (CDFA)",
+      "flag": "🌊",
+      "category": "water",
+      "name": "CDFA Water Efficiency Technical Assistance (WETA)",
+      "agency": "CDFA Office of Environmental Farming & University of California Cooperative Extension (UCCE)",
+      "subsidyType": "100% Free Specialized Technical Service & Engineering Audit",
+      "subsidyRate": "100% Free Service ($10,000+ Market Value per Irrigation Audit)",
+      "rateDecimal": 1.0,
+      "maxAmount": "Free Engineering Services & Pump Test Vouchers (No Cash Cap)",
+      "matchRequirement": "0% (Zero grower cost)",
+      "disbursementType": "Direct Service Provision by University / Resource Conservation District Engineers",
+      "currency": "USD",
+      "verifiedDate": "2026-09-07 Verified (CDFA OEFI Bulletin)",
+      "deadline": "Continuous Enrollment / First-Come Basis",
+      "selectionMethod": "Non-competitive; Available to all California agricultural growers with irrigation pumps",
+      "targetEquipment": [
+        "Free Mobile Irrigation Lab (MIL) distribution uniformity and pressure tests",
+        "Free certified agricultural pump efficiency testing and cavitation diagnostics",
+        "Free technical design support for CDFA SWEEP and USDA EQIP grant applications",
+        "Free soil moisture sensor calibration and irrigation scheduling workshops"
+      ],
+      "ineligibleItems": [
+        "Direct cash grants to purchase hardware (hardware funded separately via SWEEP)",
+        "Technical assistance for residential gardens or golf courses"
+      ],
+      "qualificationCriteria": [
+        "Active California commercial farmer, greenhouse operator, or rancher",
+        "Priority service scheduling for socially disadvantaged farmers, small acreage, and language-minority growers",
+        "Grower agrees to grant field access to UCCE/RCD irrigation specialists"
+      ],
+      "documentChecklist": [
+        "Simple online grower intake form (Location, acreage, crop type)",
+        "Recent electric or diesel utility bill showing agricultural pump meter number",
+        "General farm parcel map indicating pump and main pipeline locations"
+      ],
+      "officialUrl": "https://www.cdfa.ca.gov/oefi/technical/weta.html",
+      "portalName": "CDFA WETA Provider Network",
+      "contactPhone": "(916) 900-5075",
+      "contactEmail": "cdfa.oefi@cdfa.ca.gov",
+      "linkedCalculator": "greenhouse-irrigation-run-time-leaching-fraction-calculator.html",
+      "linkedToolTitle": "Irrigation Run-Time Calc",
+      "summary": "100% free technical assistance providing certified irrigation pump testing, mobile irrigation uniformity audits, and one-on-one engineering support to prepare winning CDFA SWEEP applications.",
+      "deepGuide": "Step 1: Sign up with your local UCCE or RCD technical partner. Step 2: Irrigation specialist visits farm to test pump and system uniformity. Step 3: Receive official report to attach to your SWEEP grant.",
+      "applicationWindow": {
+        "status": "rolling",
+        "statusLabel": "🔄 상시 접수 (Rolling)",
+        "startDate": "2026-01-01",
+        "endDate": "2026-12-31",
+        "deadlineDisplay": "상시 무료 서비스 접수 (Year-Round Continuous)",
+        "daysRemaining": 115,
+        "cycleFrequency": "연중 상시 접수 (Continuous Intake)",
+        "submissionPortal": "CDFA / Local RCD Intake Portal"
+      },
+      "facets": {
+        "fundingTier": "tier_micro",
+        "matchTier": "zero_match",
+        "targetAudience": [
+          "small_family",
+          "beginning_farmer",
+          "commercial_cea"
+        ],
+        "technologies": [
+          "water",
+          "smartfarm"
+        ]
+      }
+    },
+    {
+      "id": "US-CA-CEC-EPIC",
+      "country": "US",
+      "countryName": "United States",
+      "region": "US-CA",
+      "regionName": "California (Statewide)",
+      "jurisdictionLabel": "California (CEC)",
+      "flag": "⚡",
+      "category": "renewables",
+      "name": "California Energy Commission (CEC) EPIC: Ag Microgrids & CEA Demand Flexibility",
+      "agency": "California Energy Commission (CEC) - Energy Research and Development Division",
+      "subsidyType": "Competitive R&D and Commercial Demonstration Grant",
+      "subsidyRate": "50% - 80% Cost-Share Grant Funding",
+      "rateDecimal": 0.7,
+      "maxAmount": "$3,000,000 per commercial CEA / ag processing facility",
+      "matchRequirement": "20% - 50% non-state matching funds (cash or verified private capital)",
+      "disbursementType": "Milestone-Based Progress Reimbursement Invoicing",
+      "currency": "USD",
+      "verifiedDate": "2026-09-07 Verified (CEC EPIC Solicitation)",
+      "deadline": "2026-12-01 Solicitation Window",
+      "selectionMethod": "Rigorous Competitive Scoring based on Grid Resiliency, Peak Shifting (kW), and GHG Reduction",
+      "targetEquipment": [
+        "Commercial greenhouse Battery Energy Storage Systems (BESS, 500 kWh - 4 MWh)",
+        "Chilled water and hot water Thermal Energy Storage (TES) buffer tanks for CEA climate control",
+        "Automated Demand Response (AutoDR) telemetry integrating with California CAISO wholesale markets",
+        "Agri-voltaic microgrid controllers coordinating rooftop/ground solar PV with greenhouse LED lighting"
+      ],
+      "ineligibleItems": [
+        "Standard non-flexible LED fixtures without smart dimming / automated curtailment capability",
+        "Diesel or fossil-fueled emergency generators",
+        "Projects that do not deliver measurable electric load shifting during 4 PM - 9 PM grid peak hours"
+      ],
+      "qualificationCriteria": [
+        "Commercial greenhouses, vertical farms, or post-harvest cold storage located in IOU electric territory (PG&E, SCE, SDG&E)",
+        "Must demonstrate at least 20% peak grid demand reduction during summer peak events",
+        "Must provide letter of support from electric utility confirming grid interconnection viability",
+        "Must share anonymized interval energy performance data with CEC research repository"
+      ],
+      "documentChecklist": [
+        "Detailed Microgrid / BESS Electrical Single-Line Diagram (SLD) signed by CA Professional Engineer (PE)",
+        "12 Months of 15-minute interval Green Button utility electric consumption data",
+        "Comprehensive match funding commitment letters and corporate financial statements",
+        "California Environmental Quality Act (CEQA) compliance self-certification",
+        "Subcontractor statements of work and detailed equipment cost breakdown tables"
+      ],
+      "officialUrl": "https://www.energy.ca.gov/funding-opportunities/solicitations",
+      "portalName": "CEC Energy Commission Agreement Management System (ECAMS)",
+      "contactPhone": "(916) 654-4201",
+      "contactEmail": "EPIC.Ag@energy.ca.gov",
+      "linkedCalculator": "greenhouse-heating-load-thermal-screen-calculator.html",
+      "linkedToolTitle": "Heating & Energy Calc",
+      "summary": "Large-scale California grant providing $500k-$3M to equip commercial greenhouses and CEA facilities with battery storage, thermal buffers, and microgrid controllers to eliminate peak electricity charges.",
+      "deepGuide": "Step 1: Download 15-minute Green Button energy data. Step 2: Work with storage engineering vendor for single-line diagram. Step 3: Secure match letters. Step 4: Submit via ECAMS portal.",
+      "applicationWindow": {
+        "status": "open",
+        "statusLabel": "🟢 접수 중 (Open)",
+        "startDate": "2026-08-01",
+        "endDate": "2026-12-01",
+        "deadlineDisplay": "2026-12-01 (D-85)",
+        "daysRemaining": 85,
+        "cycleFrequency": "연 1회 대형 에너지 공모 (Annual Clean Energy Solicitation)",
+        "submissionPortal": "California ECAMS Portal"
+      },
+      "facets": {
+        "fundingTier": "tier_mega",
+        "matchTier": "low_match",
+        "targetAudience": [
+          "commercial_cea",
+          "food_processor"
+        ],
+        "technologies": [
+          "renewables",
+          "energy",
+          "smartfarm"
+        ]
+      }
     }
   ]
 }
