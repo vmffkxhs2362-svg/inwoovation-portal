@@ -863,7 +863,7 @@
       "opex": ["capex", "opex", "irr", "npv", "quant", "energy"],
       "roi": ["capex", "opex", "irr", "roi", "quant", "economics"],
       "quant": ["quant", "commodity", "ttf", "spark", "energy"],
-      "subsidy": ["subsidy", "grant", "cdfa", "sweep", "hsp", "ammp", "fpip", "reap", "eqip", "ble", "funding", "incentive", "보조금", "지원금"],
+      "subsidy": ["subsidy", "grant", "cdfa", "sweep", "hsp", "ammp", "fpip", "reap", "eqip", "ble", "funding", "incentive", "subsidies"],
       "grant": ["subsidy", "grant", "cdfa", "sweep", "hsp", "reap", "eqip", "funding", "incentive"],
       "cdfa": ["subsidy", "grant", "cdfa", "sweep", "hsp", "ammp", "fpip", "california"],
       "california": ["subsidy", "cdfa", "sweep", "hsp", "ammp", "fpip", "california", "et0"],
@@ -1083,7 +1083,7 @@
         else if (text.includes("led") || text.includes("light") || text.includes("dli") || text.includes("spectrum") || text.includes("far-red")) matchedKey = "led_roi";
         else if (text.includes("sodium") || text.includes("salinity") || text.includes("desalination") || text.includes("drain") || text.includes("ucf")) matchedKey = "sodium";
         else if (text.includes("pest") || text.includes("mite") || text.includes("thrips") || text.includes("ipm") || text.includes("wasp") || text.includes("insect")) matchedKey = "ipm";
-        else if (text.includes("subsidy") || text.includes("grant") || text.includes("reap") || text.includes("eqip") || text.includes("ble") || text.includes("funding") || text.includes("지원금") || text.includes("보조금")) matchedKey = "subsidy";
+        else if (text.includes("subsidy") || text.includes("grant") || text.includes("reap") || text.includes("eqip") || text.includes("ble") || text.includes("funding") || text.includes("incentive")) matchedKey = "subsidy";
         else if (text.includes("autonomous") || text.includes("mpc") || text.includes("ai") || text.includes("iot") || text.includes("camera") || text.includes("vision")) matchedKey = "autonomous";
         else matchedKey = "ber"; // default fallback
       }
