@@ -465,6 +465,329 @@
     }
 
     /* Payback Modeling Simulator Widget */
+    
+    /* CALIFORNIA MULTI-GRANT STACKING WIZARD */
+    .stacking-wizard-card {
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.85), rgba(6, 78, 59, 0.35));
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      border-radius: 14px;
+      padding: 22px;
+      margin-bottom: 24px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .stacking-wizard-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #10b981, #06b6d4, #f59e0b);
+    }
+
+    .wizard-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+    }
+
+    .wizard-title-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .wizard-icon {
+      font-size: 1.8rem;
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .wizard-badge {
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.25), rgba(6, 182, 212, 0.25));
+      border: 1px solid rgba(52, 211, 153, 0.4);
+      color: #34d399;
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 2px 8px;
+      border-radius: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .btn-wizard-toggle {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #cbd5e1;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-wizard-toggle:hover {
+      background: rgba(255, 255, 255, 0.15);
+      color: #ffffff;
+    }
+
+    .wizard-step-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    @media (max-width: 900px) {
+      .wizard-step-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .wizard-col {
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .wizard-col-title {
+      font-size: 0.88rem;
+      font-weight: 800;
+      color: #38bdf8;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      padding-bottom: 8px;
+    }
+
+    .wizard-label {
+      font-size: 0.78rem;
+      color: #94a3b8;
+      font-weight: 600;
+      margin-bottom: 4px;
+      display: block;
+    }
+
+    .wizard-select {
+      width: 100%;
+      background: #0f172a;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #f8fafc;
+      padding: 8px 10px;
+      border-radius: 6px;
+      font-size: 0.82rem;
+      cursor: pointer;
+    }
+
+    .wizard-select:focus {
+      outline: none;
+      border-color: var(--accent-emerald);
+    }
+
+    .wizard-checkbox-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .wizard-check-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.82rem;
+      color: #e2e8f0;
+      cursor: pointer;
+      padding: 4px 6px;
+      border-radius: 4px;
+      transition: background 0.15s;
+    }
+
+    .wizard-check-item:hover {
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .wizard-equipment-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .wizard-equip-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      background: rgba(30, 41, 59, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 8px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .wizard-equip-item:hover {
+      background: rgba(30, 41, 59, 0.7);
+      border-color: rgba(16, 185, 129, 0.3);
+    }
+
+    .wizard-equip-item input[type="checkbox"] {
+      accent-color: var(--accent-emerald);
+      width: 16px;
+      height: 16px;
+      margin-top: 2px;
+      cursor: pointer;
+    }
+
+    .equip-info strong {
+      display: block;
+      font-size: 0.85rem;
+      color: #f1f5f9;
+    }
+
+    .equip-info span {
+      display: block;
+      font-size: 0.75rem;
+      color: #94a3b8;
+      margin-top: 2px;
+    }
+
+    .wizard-summary-panel {
+      background: rgba(15, 23, 42, 0.75);
+      border: 1px solid rgba(16, 185, 129, 0.25);
+      border-radius: 10px;
+      padding: 16px;
+    }
+
+    .wizard-metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .w-metric-card {
+      background: rgba(30, 41, 59, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 8px;
+      padding: 12px;
+      text-align: center;
+    }
+
+    .w-metric-card.highlight-green {
+      border-color: rgba(16, 185, 129, 0.4);
+      background: rgba(6, 78, 59, 0.2);
+    }
+
+    .w-metric-card.highlight-cyan {
+      border-color: rgba(6, 182, 212, 0.4);
+      background: rgba(8, 51, 68, 0.2);
+    }
+
+    .w-metric-title {
+      font-size: 0.72rem;
+      color: #94a3b8;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+
+    .w-metric-val {
+      font-size: 1.35rem;
+      font-weight: 800;
+      font-family: var(--font-mono);
+      color: #ffffff;
+    }
+
+    .w-metric-card.highlight-green .w-metric-val {
+      color: #34d399;
+    }
+
+    .w-metric-card.highlight-cyan .w-metric-val {
+      color: #38bdf8;
+    }
+
+    .w-metric-sub {
+      font-size: 0.75rem;
+      color: #94a3b8;
+      margin-top: 2px;
+    }
+
+    .wizard-breakdown-box {
+      background: rgba(15, 23, 42, 0.6);
+      border-radius: 8px;
+      padding: 10px 14px;
+      margin-bottom: 14px;
+    }
+
+    .breakdown-title {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #e2e8f0;
+      margin-bottom: 8px;
+    }
+
+    .breakdown-pills {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .stack-pill {
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      color: #a7f3d0;
+      font-size: 0.76rem;
+      padding: 3px 10px;
+      border-radius: 12px;
+      font-family: var(--font-mono);
+    }
+
+    .wizard-legal-advisory {
+      background: rgba(245, 158, 11, 0.08);
+      border-left: 3px solid #f59e0b;
+      padding: 10px 14px;
+      border-radius: 0 6px 6px 0;
+    }
+
+    .btn-filter-stacked {
+      background: linear-gradient(135deg, #10b981, #06b6d4);
+      border: none;
+      color: #030712;
+      font-weight: 800;
+      font-size: 0.85rem;
+      padding: 10px 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s;
+      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+    }
+
+    .btn-filter-stacked:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 16px rgba(16, 185, 129, 0.45);
+    }
+
     .calc-card {
       background: linear-gradient(135deg, rgba(30, 41, 59, 0.95), rgba(15, 23, 42, 0.95));
       border: 1px solid rgba(16, 185, 129, 0.4);
@@ -1157,7 +1480,7 @@
     </div>
     <div style="display: flex; align-items: center; gap: 12px;">
       <a href="index.html" style="color: #cbd5e1; text-decoration: none; font-size: 0.82rem;">← All 35 Tools</a>
-      <a href="https://buy.polar.sh/polar_cl_mRhSIZcW5YZGwh5QrSBVl1jLF8WeS8fZERjKk08f9LX" target="_blank" style="background: linear-gradient(135deg, #06b6d4, #10b981); color: #030712; font-weight: 800; font-size: 0.8rem; padding: 4px 12px; border-radius: 6px; text-decoration: none;">Get Full Suite ($19)</a>
+      <a href="https://buy.polar.sh/polar_cl_mRhSIZcW5YZGwh5QrSBVl1jLF8WeS8fZERjKk08f9LX" target="_blank" rel="noopener noreferrer" style="background: linear-gradient(135deg, #06b6d4, #10b981); color: #030712; font-weight: 800; font-size: 0.8rem; padding: 4px 12px; border-radius: 6px; text-decoration: none;">Get Full Suite ($19)</a>
     </div>
   </div>
 
@@ -1298,6 +1621,149 @@
         <div class="active-chips-ribbon" id="active-chips-ribbon">
           <!-- Injected via JS -->
         </div>
+
+        
+        <!-- CALIFORNIA MULTI-GRANT STACKING & ELIGIBILITY AI WIZARD -->
+        <section class="stacking-wizard-card" id="california-stacking-wizard">
+          <div class="wizard-header">
+            <div class="wizard-title-group">
+              <span class="wizard-icon">⚡</span>
+              <div>
+                <h3 style="margin: 0; font-size: 1.05rem; color: #ffffff; display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                  California Multi-Grant Stacking &amp; Eligibility AI Wizard
+                  <span class="wizard-badge">AI Multi-Grant Optimizer</span>
+                </h3>
+                <p style="margin: 3px 0 0 0; font-size: 0.8rem; color: #94a3b8;">
+                  캘리포니아 농가 다중 보조금 중복 수혜(Stacking) 최적화: 물/에너지(SWEEP) + 친환경 농기계(FARMER) + 토양/수분매개(HSP/PHP) + 마이크로그리드(CEC) 동시 수혜 시뮬레이션
+                </p>
+              </div>
+            </div>
+            <button class="btn-wizard-toggle" id="wizard-toggle-btn" onclick="toggleStackingWizard()">
+              <span id="wizard-toggle-text">Collapse</span> ▲
+            </button>
+          </div>
+
+          <div class="wizard-body" id="wizard-body-content">
+            <div class="wizard-step-grid">
+              <!-- Step 1: Farm Location & Priority Status -->
+              <div class="wizard-col">
+                <div class="wizard-col-title">📍 Step 1: California County &amp; Region</div>
+                <div>
+                  <label class="wizard-label" for="wizard-county">Farm Location (Air Basin / Valley):</label>
+                  <select id="wizard-county" class="wizard-select" onchange="recalcStacking()">
+                    <option value="fresno">Fresno County (San Joaquin Valley APCD - High Priority)</option>
+                    <option value="tulare">Tulare / Kings County (San Joaquin Valley APCD)</option>
+                    <option value="kern">Kern County (San Joaquin Valley APCD)</option>
+                    <option value="monterey">Monterey County (Salinas Valley - High Water Priority)</option>
+                    <option value="imperial">Imperial County (Desert / Colorado River Basin)</option>
+                    <option value="ventura">Ventura / Santa Barbara (South Coast AQMD)</option>
+                    <option value="sacramento">Sacramento / Yolo County (SMAQMD / Sacramento Valley)</option>
+                    <option value="other_ca">Other California Counties</option>
+                  </select>
+                </div>
+
+                <div class="wizard-checkbox-group">
+                  <label class="wizard-check-item">
+                    <input type="checkbox" id="wizard-dac" onchange="recalcStacking()" checked>
+                    <span>🌿 Disadvantaged Community (DAC / SB 535) <strong style="color: #34d399;">(+10% bonus)</strong></span>
+                  </label>
+                  <label class="wizard-check-item">
+                    <input type="checkbox" id="wizard-sdf" onchange="recalcStacking()">
+                    <span>👨‍🌾 Socially Disadvantaged / Beginning Farmer (&lt;10 yrs)</span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Step 2: Equipment & Practice Wishlist (Multi-select) -->
+              <div class="wizard-col">
+                <div class="wizard-col-title">🚜 Step 2: Desired Equipment &amp; Practice Wishlist</div>
+                <div class="wizard-equipment-list">
+                  <label class="wizard-equip-item">
+                    <input type="checkbox" class="equip-check" value="solar_pump" data-cost="180000" data-grant="150000" data-name="CDFA SWEEP (Water/Solar VFD)" onchange="recalcStacking()" checked>
+                    <div class="equip-info">
+                      <strong>⚡ Solar PV &amp; VFD Irrigation Pump Upgrade</strong>
+                      <span>Est: $180,000 | Stacks: CDFA SWEEP ($200k max) + USDA REAP</span>
+                    </div>
+                  </label>
+                  <label class="wizard-equip-item">
+                    <input type="checkbox" class="equip-check" value="electric_tractor" data-cost="280000" data-grant="224000" data-name="CARB FARMER (Zero-Emission Tractor)" onchange="recalcStacking()" checked>
+                    <div class="equip-info">
+                      <strong>🚜 Zero-Emission Electric Tractor / Ag Utility Vehicle</strong>
+                      <span>Est: $280,000 | Stacks: CARB FARMER (Up to 80%) + Clean Off-Road CORE</span>
+                    </div>
+                  </label>
+                  <label class="wizard-equip-item">
+                    <input type="checkbox" class="equip-check" value="pollinator_habitat" data-cost="45000" data-grant="45000" data-name="CDFA Pollinator Habitat Program" onchange="recalcStacking()" checked>
+                    <div class="equip-info">
+                      <strong>🌸 Pollinator Hedgerow &amp; Soil Health Cover Crops</strong>
+                      <span>Est: $45,000 | Stacks: CDFA PHP (100% Grant, $0 Match) + HSP</span>
+                    </div>
+                  </label>
+                  <label class="wizard-equip-item">
+                    <input type="checkbox" class="equip-check" value="bess_microgrid" data-cost="350000" data-grant="200000" data-name="CEC Clean Ag Microgrids" onchange="recalcStacking()">
+                    <div class="equip-info">
+                      <strong>🔋 Ag Microgrid &amp; Battery Energy Storage (BESS)</strong>
+                      <span>Est: $350,000 | Stacks: CEC Clean Ag Microgrids + CPUC SGIP</span>
+                    </div>
+                  </label>
+                  <label class="wizard-equip-item">
+                    <input type="checkbox" class="equip-check" value="orchard_chipping" data-cost="50000" data-grant="40000" data-name="SJVAPCD Ag Burn Alternatives" onchange="recalcStacking()">
+                    <div class="equip-info">
+                      <strong>♻️ Whole Orchard Recycling &amp; Soil Chipping</strong>
+                      <span>Est: $50,000 | Stacks: SJVAPCD Ag Burn ($750/acre) + CDFA HSP</span>
+                    </div>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Live Optimized Results Display -->
+            <div class="wizard-summary-panel">
+              <div class="wizard-metrics-grid">
+                <div class="w-metric-card">
+                  <div class="w-metric-title">TOTAL COMBINED CAPEX</div>
+                  <div class="w-metric-val" id="wiz-total-capex">$505,000</div>
+                </div>
+                <div class="w-metric-card highlight-green">
+                  <div class="w-metric-title">MAX STACKED CASH GRANTS</div>
+                  <div class="w-metric-val" id="wiz-stacked-grants">$419,000</div>
+                  <div class="w-metric-sub" id="wiz-grant-pct">83.0% Total Grant Coverage</div>
+                </div>
+                <div class="w-metric-card highlight-cyan">
+                  <div class="w-metric-title">ESTIMATED NET GROWER MATCH</div>
+                  <div class="w-metric-val" id="wiz-net-out-of-pocket">$86,000</div>
+                  <div class="w-metric-sub" id="wiz-pocket-pct">17.0% Out-of-Pocket</div>
+                </div>
+              </div>
+
+              <!-- Detailed Stack Breakdown -->
+              <div class="wizard-breakdown-box">
+                <div class="breakdown-title">📋 Recommended Stackable Grant Package:</div>
+                <div class="breakdown-pills" id="wizard-stack-pills">
+                  <!-- Injected dynamically -->
+                </div>
+              </div>
+
+              <!-- Legal Stacking Notice & Filter Link -->
+              <div class="wizard-legal-advisory">
+                <div style="font-weight: 700; color: #f59e0b; margin-bottom: 4px; display: flex; align-items: center; gap: 6px;">
+                  <span>⚖️</span> <span>California Grant Stacking &amp; Anti-Double Dipping Rules (중복 수혜 규정 안내)</span>
+                </div>
+                <div style="font-size: 0.78rem; color: #cbd5e1; line-height: 1.5;">
+                  • <strong>연방/주정부 복합 수혜 허용 (Federal + State Stacking)</strong>: CDFA SWEEP(주정부)과 USDA REAP(연방)은 결합 가능하나 총 지원금은 적격 사업비의 100%를 초과할 수 없습니다.<br>
+                  • <strong>동일 송장 이중 청구 금지 (No Double-Dipping on Same Invoices)</strong>: 동일 트랙터 또는 펌프의 동일 시리얼 넘버에 대해 CARB FARMER와 NRCS EQIP에서 100% 중복 정산받는 것은 위법이며, 승인된 비율에 따라 분할 청구(Prorated Cost-Share)해야 합니다.<br>
+                  • <strong>DAC 가점 혜택</strong>: SB 535 취약 커뮤니티(DAC) 농가는 CDFA 및 CARB 평가 시 가산점 10~15점이 부여되어 최종 선정률이 월등히 높아집니다.
+                </div>
+              </div>
+
+              <div style="margin-top: 14px; display: flex; justify-content: flex-end;">
+                <button class="btn-filter-stacked" onclick="filterByWizardStack()">
+                  <span>🔍 Filter Navigator for Stacked Programs (<span id="wiz-program-count">3</span> Programs)</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
 
         <!-- Interactive Payback Modeling Simulator Widget -->
         <section class="calc-card">
@@ -3356,9 +3822,117 @@
     let currencySymbol = "$";
     let activeTabByProgram = {};
 
+    
+    /* =========================================================================
+       CALIFORNIA MULTI-GRANT STACKING WIZARD LOGIC
+       ========================================================================= */
+    let isWizardCollapsed = false;
+
+    function toggleStackingWizard() {
+      const body = document.getElementById("wizard-body-content");
+      const btnText = document.getElementById("wizard-toggle-text");
+      const btn = document.getElementById("wizard-toggle-btn");
+      isWizardCollapsed = !isWizardCollapsed;
+      
+      if (isWizardCollapsed) {
+        body.style.display = "none";
+        btnText.innerText = "Expand";
+        btn.innerHTML = '<span>Expand</span> ▼';
+      } else {
+        body.style.display = "block";
+        btnText.innerText = "Collapse";
+        btn.innerHTML = '<span>Collapse</span> ▲';
+      }
+    }
+
+    function recalcStacking() {
+      const checkboxes = document.querySelectorAll(".equip-check:checked");
+      const isDac = document.getElementById("wizard-dac").checked;
+      const isSdf = document.getElementById("wizard-sdf").checked;
+      const county = document.getElementById("wizard-county").value;
+
+      let totalCapex = 0;
+      let totalGrants = 0;
+      const stackItems = [];
+
+      checkboxes.forEach(cb => {
+        const cost = parseFloat(cb.getAttribute("data-cost")) || 0;
+        let grant = parseFloat(cb.getAttribute("data-grant")) || 0;
+        const name = cb.getAttribute("data-name");
+
+        // Bonus for DAC or SDF (up to +10% higher grant, capped at cost)
+        if (isDac || isSdf) {
+          grant = Math.min(cost, grant * 1.08);
+        }
+
+        totalCapex += cost;
+        totalGrants += grant;
+        stackItems.push({ name, grant: Math.round(grant) });
+      });
+
+      // Air District bonus for San Joaquin Valley (Fresno, Tulare, Kern)
+      if (["fresno", "tulare", "kern"].includes(county)) {
+        // SJV priority air basin
+        totalGrants = Math.min(totalCapex * 0.92, totalGrants * 1.05);
+      }
+
+      // Cap total grant at 90% (or 95% if DAC) to comply with anti-over-subsidization rule
+      const maxAllowedGrantPct = isDac ? 0.95 : 0.90;
+      const effectiveGrant = Math.min(totalCapex * maxAllowedGrantPct, totalGrants);
+      const netOutOfPocket = Math.max(0, totalCapex - effectiveGrant);
+      const coveragePct = totalCapex > 0 ? ((effectiveGrant / totalCapex) * 100).toFixed(1) : "0.0";
+      const pocketPct = totalCapex > 0 ? ((netOutOfPocket / totalCapex) * 100).toFixed(1) : "0.0";
+
+      // Update DOM
+      document.getElementById("wiz-total-capex").innerText = "$" + Math.round(totalCapex).toLocaleString("en-US");
+      document.getElementById("wiz-stacked-grants").innerText = "$" + Math.round(effectiveGrant).toLocaleString("en-US");
+      document.getElementById("wiz-net-out-of-pocket").innerText = "$" + Math.round(netOutOfPocket).toLocaleString("en-US");
+      document.getElementById("wiz-grant-pct").innerText = `${coveragePct}% Total Grant Coverage`;
+      document.getElementById("wiz-pocket-pct").innerText = `${pocketPct}% Out-of-Pocket`;
+      document.getElementById("wiz-program-count").innerText = stackItems.length;
+
+      // Render breakdown pills
+      const pillsContainer = document.getElementById("wizard-stack-pills");
+      if (stackItems.length === 0) {
+        pillsContainer.innerHTML = `<span style="font-size: 0.8rem; color: #94a3b8;">Select at least one equipment item above to compute optimal grant stack.</span>`;
+      } else {
+        pillsContainer.innerHTML = stackItems.map(item => `
+          <span class="stack-pill">✓ ${item.name}: +$${item.grant.toLocaleString('en-US')}</span>
+        `).join("");
+      }
+    }
+
+    function filterByWizardStack() {
+      // 1. Reset all filters first
+      if (typeof resetAllFilters === "function") {
+        resetAllFilters();
+      }
+
+      // 2. Select California jurisdiction
+      const caCb = document.getElementById("chk-jurisdiction-US-CA") || document.querySelector('input[data-facet-group="jurisdiction"][value="US-CA"]');
+      if (caCb) {
+        caCb.checked = true;
+        if (typeof activeFilters !== "undefined") {
+          activeFilters.jurisdiction = ["US-CA"];
+        }
+      }
+
+      // 3. Scroll down smoothly to program cards feed
+      const feedElem = document.getElementById("grants-cards-container");
+      if (feedElem) {
+        feedElem.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+
+      // 4. Trigger re-filtering
+      if (typeof applyFilters === "function") {
+        applyFilters();
+      }
+    }
+
     function initPage() {
       renderFacetCheckboxes();
       recalcSimulator();
+      recalcStacking();
       applyFilters();
     }
 

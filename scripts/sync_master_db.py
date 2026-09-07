@@ -112,6 +112,36 @@ def import_json_to_db():
             json.dumps(facets.get("technologies", [p["category"]]), ensure_ascii=False)
         ))
 
+    # 7. Sync Discovered Candidates from JSON if available
+    cand_path = os.path.join(KB_DIR, "01_Master_Database", "discovered_candidates.json")
+    total_cand = 0
+    if os.path.exists(cand_path):
+        try:
+            with open(cand_path, "r", encoding="utf-8") as cf:
+                cand_list = json.load(cf)
+            for c in cand_list:
+                cur.execute("""
+                    INSERT OR IGNORE INTO discovered_candidates (
+                        source_platform, agency_name, opportunity_title, opportunity_url,
+                        category, est_funding_amount, deadline_text, status, discovery_notes, discovered_at
+                    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                """, (
+                    c.get("sourcePlatform", "unknown"),
+                    c.get("agencyName", "California Agency"),
+                    c.get("opportunityTitle", ""),
+                    c.get("opportunityUrl", ""),
+                    c.get("category", "General Ag"),
+                    c.get("estFundingAmount", ""),
+                    c.get("deadlineText", ""),
+                    c.get("status", "pending_review"),
+                    c.get("discoveryNotes", ""),
+                    c.get("discoveredAt", "")
+                ))
+            cur.execute("SELECT COUNT(*) FROM discovered_candidates")
+            total_cand = cur.fetchone()[0]
+        except Exception as ce:
+            print(f"⚠️ Candidate sync warning: {ce}")
+
     conn.commit()
 
     # Query validation
@@ -123,9 +153,10 @@ def import_json_to_db():
     total_doc = cur.fetchone()[0]
 
     conn.close()
-    print(f"🎉 Master Database Synchronized: {total_p} programs | {total_eq} equipment items | {total_doc} document checklist requirements.")
+    print(f"🎉 Master Database Synchronized: {total_p} programs | {total_eq} equipment items | {total_doc} documents | {total_cand} discovered candidates.")
     return True
 
 if __name__ == "__main__":
     init_db()
     import_json_to_db()
+
