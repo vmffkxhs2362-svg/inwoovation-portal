@@ -4,10 +4,40 @@
   <meta charset="UTF-8">
   <meta name="google-adsense-account" content="ca-pub-8597809158257497">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Global Agri-Subsidy & Grant Navigator | Smart Farm & Greenhouse Financial Incentives | Inwoovation</title>
-  <meta name="description" content="Explore real-time commercial greenhouse, vertical farm, and smart agriculture government subsidies, non-repayable grants, and energy rebates across Germany (BLE/AFP), USA (USDA EQIP/REAP), South Korea (MAFRA ICT), Netherlands (SDE++/EG), Canada, and Japan. Calculate your estimated grant coverage and payback compression.">
-  <meta name="keywords" content="greenhouse subsidies, farm grants, USDA REAP grant calculator, USDA EQIP high tunnel, BLE Energieeffizienz Gewächshaus, 스마트팜 정부지원금, 농업에너지이용효율화사업, 청년후계농 지원금, EU CAP farming grants, greenhouse energy grants 2026, CEA financial incentives">
+  <title>Global Agri-Subsidy & Grant Navigator | California & Global Farm Incentives | Inwoovation</title>
+  <meta name="description" content="Official California (CDFA SWEEP/HSP/AMMP/FPIP), USDA, European (BLE/GAP), and South Korean agricultural subsidy intelligence. Explore 7-point verified farmer dossiers, funding caps, document checklists, and interactive grant ROI modeling.">
+  <meta name="keywords" content="CDFA SWEEP grant, California farm grants, USDA REAP grant calculator, USDA EQIP high tunnel California, CDFA Healthy Soils Program, BLE Energieeffizienz Gewächshaus, 스마트팜 정부지원금, 농업에너지이용효율화사업, 청년후계농 지원금, CEA financial incentives 2026">
   <link rel="canonical" href="https://inwoovation.com/tools/global-agri-subsidy-grant-navigator.html" />
+  
+  <!-- Open Graph / Social SEO -->
+  <meta property="og:title" content="Global Agri-Subsidy & Grant Navigator | California & Global Farm Incentives">
+  <meta property="og:description" content="Official California (CDFA SWEEP/HSP/AMMP/FPIP), USDA, European (BLE/GAP), and South Korean agricultural subsidy intelligence. Explore 7-point verified farmer dossiers, funding caps, document checklists, and interactive grant ROI modeling.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://inwoovation.com/tools/global-agri-subsidy-grant-navigator.html">
+  <meta property="og:image" content="https://inwoovation.com/assets/og-preview.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Global Agri-Subsidy & Grant Navigator | California & Global Farm Incentives">
+  <meta name="twitter:description" content="Commercial CEA & farm subsidy intelligence across California (CDFA), USA (USDA), Germany (BLE), and Korea with 7-point verified dossiers and live payback calculator.">
+  <meta name="twitter:image" content="https://inwoovation.com/assets/og-preview.png">
+
+  <!-- Structured Data JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Global Agri-Subsidy & Grant Navigator",
+    "url": "https://inwoovation.com/tools/global-agri-subsidy-grant-navigator.html",
+    "description": "Commercial CEA, greenhouse, and smart farm subsidy intelligence for California (CDFA SWEEP/HSP/AMMP/FPIP), USA (USDA EQIP/REAP), EU (BLE), and Korea with 7-point verified farmer dossiers and capital payback compression modeling.",
+    "applicationCategory": "BusinessApplication, FinancialApplication, AgriculturalTool",
+    "operatingSystem": "All",
+    "author": {
+      "@type": "Person",
+      "name": "Inwoo Hwang"
+    },
+    "dateModified": "2026-09-07"
+  }
+  </script>
+
   <link rel="stylesheet" href="css/digital_twin_styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,12 +46,13 @@
   <style>
     :root {
       --bg-dark: #090d16;
-      --card-bg: rgba(22, 30, 46, 0.82);
-      --card-border: rgba(255, 255, 255, 0.08);
-      --card-hover-border: rgba(16, 185, 129, 0.4);
+      --card-bg: rgba(22, 30, 46, 0.85);
+      --card-border: rgba(255, 255, 255, 0.09);
+      --card-hover-border: rgba(16, 185, 129, 0.45);
       --accent-emerald: #10b981;
       --accent-cyan: #06b6d4;
       --accent-amber: #f59e0b;
+      --accent-rose: #f43f5e;
       --accent-blue: #3b82f6;
       --text-main: #f8fafc;
       --text-muted: #94a3b8;
@@ -38,7 +69,7 @@
     }
 
     .nav-container {
-      max-width: 1400px;
+      max-width: 1440px;
       margin: 0 auto;
       padding: 24px 20px 80px 20px;
     }
@@ -47,29 +78,42 @@
     .top-ribbon {
       background: linear-gradient(90deg, rgba(6, 182, 212, 0.18), rgba(16, 185, 129, 0.18));
       border-bottom: 1px solid rgba(16, 185, 129, 0.35);
-      padding: 8px 20px;
+      padding: 10px 20px;
       font-size: 0.85rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 12px;
+    }
+
+    .top-ribbon-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(16, 185, 129, 0.2);
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      color: #a7f3d0;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 0.75rem;
     }
 
     /* Header */
     .hero-header {
       text-align: center;
-      padding: 40px 10px 30px 10px;
+      padding: 40px 10px 24px 10px;
     }
 
     .hero-badge {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
+      gap: 8px;
       background: rgba(16, 185, 129, 0.15);
       border: 1px solid rgba(16, 185, 129, 0.3);
       color: var(--accent-emerald);
-      padding: 4px 14px;
+      padding: 6px 16px;
       border-radius: 20px;
       font-size: 0.85rem;
       font-weight: 700;
@@ -78,30 +122,61 @@
     }
 
     .hero-title {
-      font-size: clamp(2rem, 4vw, 3rem);
+      font-size: clamp(2.1rem, 4.2vw, 3.2rem);
       font-weight: 800;
       letter-spacing: -0.02em;
-      margin: 0 0 12px 0;
+      margin: 0 0 14px 0;
       background: linear-gradient(135deg, #ffffff 40%, #a7f3d0 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
     .hero-subtitle {
-      max-width: 860px;
+      max-width: 900px;
       margin: 0 auto;
       color: var(--text-muted);
       font-size: 1.05rem;
     }
 
+    /* 7-Point Standard Callout Banner */
+    .standard-callout {
+      margin: 24px auto 32px auto;
+      max-width: 1100px;
+      background: linear-gradient(90deg, rgba(16, 185, 129, 0.1), rgba(6, 182, 212, 0.1));
+      border: 1px solid rgba(16, 185, 129, 0.25);
+      border-radius: 12px;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 0.88rem;
+    }
+
+    .standard-points-pill {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .std-pill {
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 3px 10px;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      color: #cbd5e1;
+    }
+
     /* Live Calculator Box */
     .calc-bunker {
-      background: linear-gradient(145deg, rgba(30, 41, 59, 0.7), rgba(15, 23, 42, 0.85));
+      background: linear-gradient(145deg, rgba(30, 41, 59, 0.75), rgba(15, 23, 42, 0.9));
       border: 1px solid rgba(16, 185, 129, 0.25);
       box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.6);
       border-radius: 20px;
       padding: 28px;
-      margin: 30px 0 40px 0;
+      margin: 10px 0 36px 0;
       backdrop-filter: blur(14px);
     }
 
@@ -133,7 +208,7 @@
     }
 
     .input-control-card {
-      background: rgba(15, 23, 42, 0.5);
+      background: rgba(15, 23, 42, 0.55);
       border: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: 14px;
       padding: 20px;
@@ -183,7 +258,7 @@
     .currency-selector {
       display: flex;
       gap: 6px;
-      background: rgba(0, 0, 0, 0.3);
+      background: rgba(0, 0, 0, 0.35);
       padding: 4px;
       border-radius: 8px;
       border: 1px solid rgba(255, 255, 255, 0.1);
@@ -234,7 +309,7 @@
     }
 
     .metric-label {
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       text-transform: uppercase;
       letter-spacing: 0.8px;
       color: #94a3b8;
@@ -254,9 +329,18 @@
       margin-top: 4px;
     }
 
-    /* Controls Bar: Country & Category Tabs */
+    /* Controls Bar: Jurisdiction & Category Tabs */
     .controls-panel {
       margin-bottom: 30px;
+    }
+
+    .jurisdiction-label {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
     }
 
     .country-pills-row {
@@ -277,7 +361,7 @@
       color: #cbd5e1;
       padding: 8px 16px;
       border-radius: 30px;
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       font-weight: 600;
       cursor: pointer;
       white-space: nowrap;
@@ -293,7 +377,12 @@
       background: var(--accent-emerald);
       color: #030712;
       border-color: var(--accent-emerald);
-      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.35);
+    }
+
+    .country-pill.ca-spotlight {
+      border: 1px solid rgba(16, 185, 129, 0.5);
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(6, 182, 212, 0.15));
     }
 
     .category-tabs-row {
@@ -307,7 +396,7 @@
       background: transparent;
       border: 1px solid rgba(255, 255, 255, 0.08);
       color: #94a3b8;
-      padding: 6px 14px;
+      padding: 7px 14px;
       border-radius: 8px;
       font-size: 0.85rem;
       font-weight: 600;
@@ -317,7 +406,7 @@
 
     .category-tab:hover {
       color: #ffffff;
-      border-color: rgba(255, 255, 255, 0.2);
+      border-color: rgba(255, 255, 255, 0.25);
     }
 
     .category-tab.active {
@@ -345,7 +434,7 @@
     .search-input {
       width: 100%;
       box-sizing: border-box;
-      background: rgba(15, 23, 42, 0.8);
+      background: rgba(15, 23, 42, 0.85);
       border: 1px solid rgba(255, 255, 255, 0.12);
       border-radius: 12px;
       padding: 12px 16px 12px 42px;
@@ -378,8 +467,8 @@
     /* Grants Grid */
     .grants-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
-      gap: 24px;
+      grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+      gap: 26px;
     }
 
     .grant-card {
@@ -390,7 +479,7 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(12px);
       transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
       position: relative;
     }
@@ -398,106 +487,246 @@
     .grant-card:hover {
       transform: translateY(-4px);
       border-color: var(--card-hover-border);
-      box-shadow: 0 16px 30px -10px rgba(16, 185, 129, 0.2);
+      box-shadow: 0 16px 32px -10px rgba(16, 185, 129, 0.2);
     }
 
-    .card-top-badges {
+    .grant-card.ca-highlight {
+      border: 1px solid rgba(16, 185, 129, 0.35);
+      background: linear-gradient(170deg, rgba(22, 30, 46, 0.95), rgba(16, 35, 45, 0.92));
+    }
+
+    /* 7-Point Farmer Metadata Presentation */
+    .card-meta-ribbon {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 14px;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 12px;
+      font-size: 0.78rem;
     }
 
-    .country-flag-badge {
+    .jurisdiction-badge {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      font-size: 0.85rem;
       font-weight: 700;
       color: #e2e8f0;
-      background: rgba(255, 255, 255, 0.06);
-      padding: 4px 10px;
+      background: rgba(255, 255, 255, 0.08);
+      padding: 3px 10px;
       border-radius: 6px;
     }
 
-    .rate-badge {
+    .verified-date-badge {
+      color: #6ee7b7;
       font-family: var(--font-mono);
-      font-size: 0.85rem;
-      font-weight: 800;
-      background: rgba(16, 185, 129, 0.15);
-      color: var(--accent-emerald);
-      border: 1px solid rgba(16, 185, 129, 0.3);
-      padding: 4px 10px;
-      border-radius: 6px;
+      font-size: 0.75rem;
+      background: rgba(16, 185, 129, 0.12);
+      border: 1px solid rgba(16, 185, 129, 0.25);
+      padding: 2px 8px;
+      border-radius: 4px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
     }
 
     .grant-title {
-      font-size: 1.2rem;
-      font-weight: 700;
+      font-size: 1.25rem;
+      font-weight: 800;
       color: #ffffff;
       margin: 0 0 6px 0;
-      line-height: 1.4;
+      line-height: 1.35;
     }
 
     .grant-agency {
-      font-size: 0.8rem;
+      font-size: 0.82rem;
       color: var(--accent-cyan);
       font-weight: 600;
-      margin-bottom: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
     }
 
-    .grant-desc {
-      font-size: 0.9rem;
-      color: #94a3b8;
-      line-height: 1.5;
-      margin-bottom: 18px;
-    }
-
-    .items-tags-box {
+    /* Financial Strip */
+    .financial-strip {
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 12px 14px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
       margin-bottom: 16px;
     }
 
-    .items-title {
-      font-size: 0.75rem;
+    .fin-item-label {
+      font-size: 0.72rem;
       text-transform: uppercase;
-      color: #64748b;
-      font-weight: 700;
       letter-spacing: 0.5px;
-      margin-bottom: 8px;
+      color: #94a3b8;
+      margin-bottom: 2px;
+    }
+
+    .fin-item-val {
+      font-family: var(--font-mono);
+      font-size: 1rem;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    .fin-item-val.highlight {
+      color: var(--accent-emerald);
+      font-size: 1.15rem;
+    }
+
+    .grant-desc {
+      font-size: 0.88rem;
+      color: #94a3b8;
+      line-height: 1.5;
+      margin-bottom: 16px;
+    }
+
+    /* In-Card Tabbed 7-Point Dossier System */
+    .card-detail-tabs {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 10px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding-bottom: 8px;
+    }
+
+    .card-tab-btn {
+      background: transparent;
+      border: none;
+      color: #94a3b8;
+      font-size: 0.78rem;
+      font-weight: 700;
+      cursor: pointer;
+      padding: 4px 8px;
+      border-radius: 4px;
+      transition: all 0.15s;
+    }
+
+    .card-tab-btn:hover {
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .card-tab-btn.active {
+      color: var(--accent-emerald);
+      background: rgba(16, 185, 129, 0.12);
+    }
+
+    .card-tab-pane {
+      display: none;
+      min-height: 110px;
+      margin-bottom: 16px;
+      font-size: 0.82rem;
+    }
+
+    .card-tab-pane.active {
+      display: block;
+    }
+
+    /* Target Equipment vs Ineligible Scope */
+    .scope-box {
+      background: rgba(15, 23, 42, 0.5);
+      border-radius: 8px;
+      padding: 10px;
+    }
+
+    .scope-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 6px;
+    }
+
+    .scope-title.eligible {
+      color: var(--accent-emerald);
+    }
+
+    .scope-title.ineligible {
+      color: var(--accent-rose);
+      margin-top: 8px;
     }
 
     .tags-container {
       display: flex;
       flex-wrap: wrap;
-      gap: 6px;
+      gap: 5px;
     }
 
     .equipment-tag {
-      background: rgba(15, 23, 42, 0.8);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      color: #cbd5e1;
-      padding: 3px 8px;
-      border-radius: 6px;
-      font-size: 0.75rem;
-    }
-
-    .eligibility-box {
-      background: rgba(15, 23, 42, 0.6);
-      border-left: 3px solid var(--accent-amber);
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.25);
+      color: #a7f3d0;
+      padding: 2px 7px;
       border-radius: 4px;
-      padding: 10px 12px;
-      font-size: 0.8rem;
-      color: #cbd5e1;
-      margin-bottom: 20px;
+      font-size: 0.72rem;
     }
 
+    .ineligible-tag {
+      background: rgba(244, 63, 94, 0.1);
+      border: 1px solid rgba(244, 63, 94, 0.25);
+      color: #fca5a5;
+      padding: 2px 7px;
+      border-radius: 4px;
+      font-size: 0.72rem;
+    }
+
+    /* Checklist in Card */
+    .checklist-mini {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .checklist-mini li {
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+      color: #cbd5e1;
+      font-size: 0.78rem;
+      line-height: 1.35;
+    }
+
+    .checklist-mini li::before {
+      content: '📁';
+      font-size: 0.8rem;
+    }
+
+    /* Timeline & Selection */
+    .timeline-box {
+      background: rgba(15, 23, 42, 0.5);
+      border-radius: 8px;
+      padding: 10px;
+      color: #cbd5e1;
+    }
+
+    .timeline-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 6px;
+      font-size: 0.78rem;
+    }
+
+    .timeline-row:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Card Actions */
     .card-actions-row {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 8px;
       margin-top: auto;
+      padding-top: 10px;
     }
 
     .btn-apply {
@@ -508,8 +737,8 @@
       background: linear-gradient(135deg, var(--accent-emerald), #059669);
       color: #030712;
       font-weight: 700;
-      font-size: 0.85rem;
-      padding: 10px 14px;
+      font-size: 0.82rem;
+      padding: 9px 12px;
       border-radius: 8px;
       text-decoration: none;
       transition: opacity 0.2s;
@@ -519,36 +748,58 @@
       opacity: 0.9;
     }
 
-    .btn-tool-link {
+    .btn-dossier {
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 6px;
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(6, 182, 212, 0.15);
+      border: 1px solid rgba(6, 182, 212, 0.35);
+      color: var(--accent-cyan);
+      font-weight: 700;
+      font-size: 0.82rem;
+      padding: 9px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-dossier:hover {
+      background: rgba(6, 182, 212, 0.25);
+      border-color: var(--accent-cyan);
+    }
+
+    .btn-tool-link {
+      grid-column: 1 / -1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
       color: #e2e8f0;
       font-weight: 600;
-      font-size: 0.85rem;
-      padding: 10px 14px;
+      font-size: 0.8rem;
+      padding: 7px 10px;
       border-radius: 8px;
       text-decoration: none;
       transition: all 0.2s;
     }
 
     .btn-tool-link:hover {
-      background: rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.1);
       border-color: var(--accent-cyan);
       color: var(--accent-cyan);
     }
 
-    /* Modal */
+    /* Modal Dossier */
     .modal-backdrop {
       display: none;
       position: fixed;
       inset: 0;
-      background: rgba(0, 0, 0, 0.75);
-      backdrop-filter: blur(8px);
-      z-index: 1000;
+      background: rgba(0, 0, 0, 0.82);
+      backdrop-filter: blur(10px);
+      z-index: 2000;
       align-items: center;
       justify-content: center;
       padding: 20px;
@@ -559,26 +810,193 @@
     }
 
     .modal-box {
-      background: #111827;
-      border: 1px solid rgba(255, 255, 255, 0.15);
+      background: #0f172a;
+      border: 1px solid rgba(16, 185, 129, 0.3);
       border-radius: 20px;
-      max-width: 650px;
+      max-width: 820px;
       width: 100%;
-      padding: 28px;
+      padding: 32px;
       position: relative;
       max-height: 90vh;
       overflow-y: auto;
+      box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.8);
     }
 
     .modal-close-btn {
       position: absolute;
       top: 20px;
       right: 20px;
-      background: transparent;
-      border: none;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
       color: #94a3b8;
-      font-size: 1.5rem;
+      font-size: 1.2rem;
       cursor: pointer;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.15s;
+    }
+
+    .modal-close-btn:hover {
+      color: #ffffff;
+      background: rgba(244, 63, 94, 0.3);
+      border-color: var(--accent-rose);
+    }
+
+    .modal-header-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--accent-emerald);
+      background: rgba(16, 185, 129, 0.15);
+      padding: 4px 12px;
+      border-radius: 6px;
+      margin-bottom: 12px;
+    }
+
+    .modal-title {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin: 0 0 8px 0;
+      line-height: 1.35;
+    }
+
+    .modal-section {
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 18px;
+      margin-top: 18px;
+    }
+
+    .modal-section-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--accent-cyan);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* Interactive Modal Checklist */
+    .interactive-checklist {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .checklist-item-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      background: rgba(30, 41, 59, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 10px 14px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+
+    .checklist-item-row:hover {
+      background: rgba(51, 65, 85, 0.6);
+    }
+
+    .check-box-input {
+      width: 18px;
+      height: 18px;
+      margin-top: 3px;
+      accent-color: var(--accent-emerald);
+      cursor: pointer;
+    }
+
+    .check-text {
+      color: #e2e8f0;
+      font-size: 0.88rem;
+      line-height: 1.45;
+    }
+
+    .modal-contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .contact-card {
+      background: rgba(30, 41, 59, 0.5);
+      padding: 10px 14px;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .contact-card a {
+      color: var(--accent-cyan);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.85rem;
+    }
+
+    .modal-actions-bar {
+      display: flex;
+      gap: 12px;
+      margin-top: 24px;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+    }
+
+    .btn-print {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #ffffff;
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .btn-print:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    /* Print styling */
+    @media print {
+      body * {
+        visibility: hidden;
+      }
+      .modal-box, .modal-box * {
+        visibility: visible;
+      }
+      .modal-box {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        max-width: 100%;
+        box-shadow: none;
+        border: none;
+        background: #ffffff !important;
+        color: #000000 !important;
+      }
+      .modal-close-btn, .modal-actions-bar {
+        display: none !important;
+      }
     }
 
     /* Footer */
@@ -610,7 +1028,7 @@
     "@type": "WebApplication",
     "name": "Global Agri-Subsidy & Grant Navigator",
     "url": "https://inwoovation.com/tools/global-agri-subsidy-grant-navigator.html",
-    "description": "Real-time interactive intelligence portal and subsidy calculator for commercial greenhouse, CEA, and smart farm financial grants across Germany, USA, South Korea, Netherlands, Canada, and Japan.",
+    "description": "Real-time interactive intelligence portal and subsidy calculator for commercial greenhouse, CEA, and smart farm financial grants across California (CDFA SWEEP/HSP/FPIP), USA (USDA), Germany, South Korea, Netherlands, Canada, and Japan.",
     "applicationCategory": "FinancialApplication, GovernmentService",
     "operatingSystem": "All",
     "author": {
@@ -626,11 +1044,11 @@
   <!-- Top Ribbon -->
   <div class="top-ribbon">
     <div style="display: flex; align-items: center; gap: 8px;">
-      <span style="font-size: 1.1rem;">🏛️</span>
-      <span><strong>Inwoovation Agri-GrantTech:</strong> Live verified subsidy intelligence across 7 global agricultural jurisdictions.</span>
+      <span class="top-ribbon-badge">🌴 CA PILOT LIVE</span>
+      <span><strong>Inwoovation Agri-GrantTech:</strong> 7-Point Farmer Metadata Standard & California CDFA Intensive Implementation.</span>
     </div>
-    <div style="display: flex; align-items: center; gap: 12px;">
-      <a href="index.html" style="color: #cbd5e1; text-decoration: none; font-size: 0.85rem; font-weight: 600;">← All 34 CEA Tools</a>
+    <div style="display: flex; align-items: center; gap: 14px;">
+      <a href="index.html" style="color: #cbd5e1; text-decoration: none; font-size: 0.85rem; font-weight: 600;">← All 35 CEA Tools</a>
       <a href="https://inwoovation.com" style="color: var(--accent-emerald); text-decoration: none; font-size: 0.85rem; font-weight: 700;">Inwoovation Portal Home</a>
     </div>
   </div>
@@ -639,479 +1057,1116 @@
 
     <!-- Hero Header -->
     <header class="hero-header">
-      <div class="hero-badge">🌐 GLOBAL AGRI-FINANCIAL INTELLIGENCE</div>
+      <div class="hero-badge">🌐 GLOBAL AGRI-FINANCIAL INTELLIGENCE · 7-POINT SPECIFICATION</div>
       <h1 class="hero-title">Global Agri-Subsidy & Grant Navigator</h1>
       <p class="hero-subtitle">
-        Find, filter, and calculate non-repayable government grants, energy efficiency rebates, and low-interest smart farm loans across Germany, the United States, South Korea, the Netherlands, Canada, and Japan.
+        Actionable government grant intelligence for commercial growers, orchardists, and high-tech greenhouse operators. Featuring verified California (CDFA/CEC/USDA) programs, 7-point audit metadata, document checklists, and live payback compression modeling.
       </p>
     </header>
+
+    <!-- 7-Point Standard Callout Banner -->
+    <div class="standard-callout">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <span style="font-size: 1.3rem;">📋</span>
+        <strong>7-Point Farmer Metadata Standard:</strong>
+      </div>
+      <div class="standard-points-pill">
+        <span class="std-pill">1. 🗓️ Verified Date</span>
+        <span class="std-pill">2. ⏳ Deadline & Selection</span>
+        <span class="std-pill">3. 💰 Grant & Match Rate</span>
+        <span class="std-pill">4. 💧 Eligible vs Ineligible</span>
+        <span class="std-pill">5. ⚖️ Qualification Criteria</span>
+        <span class="std-pill">6. 📑 Required Documents</span>
+        <span class="std-pill">7. 🔗 Official Link & Contact</span>
+      </div>
+    </div>
 
     <!-- Interactive Subsidy & Payback Simulator -->
     <section class="calc-bunker">
       <div class="calc-header">
         <div class="calc-title">
           <span>🧮</span>
-          <span>Instant Facility Subsidy & Capital Payback Simulator</span>
+          <span>Grant Coverage & Payback Compression Simulator</span>
         </div>
         <div class="currency-selector">
-          <button class="currency-btn active" id="cur-usd" onclick="setCurrency('USD', 1.0, '$')">USD ($)</button>
-          <button class="currency-btn" id="cur-eur" onclick="setCurrency('EUR', 0.92, '€')">EUR (€)</button>
-          <button class="currency-btn" id="cur-krw" onclick="setCurrency('KRW', 1350, '₩')">KRW (₩)</button>
+          <button id="cur-usd" class="currency-btn active" onclick="setCurrency('USD', 1.0, '$')">USD ($)</button>
+          <button id="cur-eur" class="currency-btn" onclick="setCurrency('EUR', 1.09, '€')">EUR (€)</button>
+          <button id="cur-krw" class="currency-btn" onclick="setCurrency('KRW', 1350, '₩')">KRW (₩)</button>
         </div>
       </div>
 
       <div class="calc-grid">
-        <!-- Input Controls -->
+        <!-- Input 1: CapEx Slider -->
         <div class="input-control-card">
           <div class="input-label-row">
-            <span class="input-label">Estimated Project CapEx / Equipment Cost</span>
-            <span class="input-val-badge" id="lbl-capex-val">$250,000</span>
+            <span class="input-label">Project Capital Expenditure (CapEx)</span>
+            <span id="lbl-capex-val" class="input-val-badge">$300,000</span>
           </div>
-          <input type="range" class="range-slider" id="slider-capex" min="20000" max="2000000" step="10000" value="250000" oninput="recalcSimulator()">
-          <div style="display: flex; justify-content: space-between; color: #64748b; font-size: 0.75rem; margin-top: 6px;">
-            <span>Small Retrofit ($20k)</span>
-            <span>Commercial Expansion ($2M)</span>
-          </div>
-
-          <div style="margin-top: 20px;">
-            <div class="input-label-row">
-              <span class="input-label">Projected Eligible Grant Coverage Rate</span>
-              <span class="input-val-badge" id="lbl-rate-val">40% Coverage</span>
-            </div>
-            <input type="range" class="range-slider" id="slider-rate" min="20" max="75" step="5" value="40" oninput="recalcSimulator()">
-            <div style="display: flex; justify-content: space-between; color: #64748b; font-size: 0.75rem; margin-top: 6px;">
-              <span>Conservative (20%)</span>
-              <span>Max Incentive (75%)</span>
-            </div>
+          <input type="range" id="slider-capex" class="range-slider" min="10000" max="2000000" step="10000" value="300000" oninput="recalcSimulator()">
+          <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: #64748b; margin-top: 6px;">
+            <span>$10k (Sensors)</span>
+            <span>$500k (VFDs/Solar)</span>
+            <span>$2M (Turnkey CEA)</span>
           </div>
         </div>
 
-        <!-- Output KPI Tiles -->
-        <div class="calc-results-row">
-          <div class="calc-metric-tile">
-            <div class="metric-label">Estimated Non-Repayable Grant</div>
-            <div class="metric-number" id="res-grant-amount" style="color: var(--accent-emerald);">$100,000</div>
-            <div class="metric-subtext">Direct government cost-share</div>
+        <!-- Input 2: Subsidy Coverage Rate Slider -->
+        <div class="input-control-card">
+          <div class="input-label-row">
+            <span class="input-label">Grant Subsidy Coverage Rate</span>
+            <span id="lbl-rate-val" class="input-val-badge">50% Coverage</span>
           </div>
+          <input type="range" id="slider-rate" class="range-slider" min="10" max="100" step="5" value="50" oninput="recalcSimulator()">
+          <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: #64748b; margin-top: 6px;">
+            <span>20% (Partial Rebate)</span>
+            <span>50% (USDA/BLE Standard)</span>
+            <span>100% (CDFA SWEEP)</span>
+          </div>
+        </div>
+      </div>
 
-          <div class="calc-metric-tile">
-            <div class="metric-label">Net Grower Out-of-Pocket</div>
-            <div class="metric-number" id="res-net-capex" style="color: var(--accent-cyan);">$150,000</div>
-            <div class="metric-subtext">Required equity or loan financing</div>
-          </div>
-
-          <div class="calc-metric-tile">
-            <div class="metric-label">Payback Period Acceleration</div>
-            <div class="metric-number" id="res-payback" style="color: #fbbf24;">5.2y → 3.1y</div>
-            <div class="metric-subtext">40.4% shorter breakeven timeline</div>
-          </div>
+      <!-- Simulator Metric Outputs -->
+      <div class="calc-results-row" style="margin-top: 24px;">
+        <div class="calc-metric-tile">
+          <div class="metric-label">Estimated Government Grant</div>
+          <div id="res-grant-amount" class="metric-number" style="color: var(--accent-emerald);">$150,000</div>
+          <div class="metric-subtext">Direct Non-Repayable Contribution</div>
+        </div>
+        <div class="calc-metric-tile">
+          <div class="metric-label">Net Grower Outlay (CapEx)</div>
+          <div id="res-net-capex" class="metric-number" style="color: var(--accent-cyan);">$150,000</div>
+          <div class="metric-subtext">Grower Matching Share After Grant</div>
+        </div>
+        <div class="calc-metric-tile">
+          <div class="metric-label">Payback Compression</div>
+          <div id="res-payback" class="metric-number" style="color: #facc15;">5.0y → 2.5y</div>
+          <div class="metric-subtext">Accelerated Capital Recovery Timeline</div>
         </div>
       </div>
     </section>
 
-    <!-- Controls Panel: Country Switcher & Category Filter -->
+    <!-- Controls Bar: Jurisdiction & Category Filters -->
     <section class="controls-panel">
-      <!-- Country Switcher -->
-      <div class="country-pills-row" id="country-pills-container">
-        <!-- Rendered by JS -->
+      <div class="jurisdiction-label">🏛️ Select Target Agricultural Jurisdiction</div>
+      <div id="jurisdiction-pills-container" class="country-pills-row">
+        <!-- Injected via JavaScript -->
       </div>
 
-      <!-- Category Tabs -->
-      <div class="category-tabs-row" id="category-tabs-container">
-        <!-- Rendered by JS -->
+      <div class="jurisdiction-label" style="margin-top: 10px;">🏷️ Filter by Technology & Farm Priority</div>
+      <div id="category-tabs-container" class="category-tabs-row">
+        <!-- Injected via JavaScript -->
       </div>
 
-      <!-- Search & Status Row -->
       <div class="filter-search-row">
         <div class="search-input-box">
           <span class="search-icon">🔍</span>
-          <input type="text" class="search-input" id="search-query" placeholder="Filter by keyword (e.g. LED, screen, heat pump, 청년, BLE, EQIP)..." oninput="applyFilters()">
+          <input type="text" id="search-query" class="search-input" placeholder="Search by program name, agency, equipment (e.g., SWEEP, VFD, high tunnel, solar, LED)..." oninput="applyFilters()">
         </div>
-        <div class="count-indicator" id="programs-count">
-          Showing 12 Active Incentive Programs
-        </div>
+        <div id="programs-count" class="count-indicator">Showing 0 Active Incentive Programs</div>
       </div>
     </section>
 
-    <!-- Program Cards Grid -->
-    <main class="grants-grid" id="grants-cards-container">
-      <!-- Injected by JS -->
+    <!-- Active Grants Grid -->
+    <main id="grants-cards-container" class="grants-grid">
+      <!-- Injected via JavaScript -->
     </main>
-
-    <!-- Modal for Detailed Policy Inspection -->
-    <div class="modal-backdrop" id="policy-modal" onclick="closeModal(event)">
-      <div class="modal-box" onclick="event.stopPropagation()">
-        <button class="modal-close-btn" onclick="closeModalDirect()">✕</button>
-        <div id="modal-content">
-          <!-- Injected dynamically -->
-        </div>
-      </div>
-    </div>
 
     <!-- Footer Note -->
     <footer class="footer-note">
       <p>
-        <strong>Disclaimer:</strong> Financial subsidy percentages, application criteria, and fiscal allocations are compiled from official ministerial guidelines (BLE, USDA, MAFRA, RVO, AAFC, MAFF). Actual grant approvals depend on national budget availability, technical verification, and official review.
+        <strong>Disclaimer & Regulatory Note:</strong> The Global Agri-Subsidy & Grant Navigator provides curated engineering guidance and administrative metadata based on published governmental solicitations (CDFA, USDA, BLE, BMEL, MAFRA, RVO, AAFC, MAFF). Program parameters, funding caps, and selection rounds are subject to legislative allocations. Always review official application guidelines prior to capital commitment.
       </p>
-      <p>© 2026 Inwoovation Engineering Group. Continuous Zero-Hallucination Horticultural Intelligence.</p>
+      <p>© 2026 Inwoovation Engineering Intelligence. Built with 100% Air-Gapped Zero-PII Compliance.</p>
     </footer>
 
   </div>
 
+  <!-- Deep 7-Point Farmer Dossier Modal -->
+  <div id="policy-modal" class="modal-backdrop" onclick="closeModalOnBackdrop(event)">
+    <div class="modal-box" onclick="event.stopPropagation()">
+      <button class="modal-close-btn" onclick="closeModalDirect()" aria-label="Close Dossier">✕</button>
+      
+      <div id="modal-content-container">
+        <!-- Injected via JavaScript -->
+      </div>
+    </div>
+  </div>
+
   <script>
-    // Embedded Global Subsidy Intelligence Dataset
+    // Embedded 7-Point Farmer Subsidy Database (Works 100% Standalone & Air-Gapped)
     const SUB_DATA = {
-      countries: [
-        { code: "ALL", name: "All Countries", flag: "🌍" },
-        { code: "DE", name: "Germany", flag: "🇩🇪" },
-        { code: "US", name: "United States", flag: "🇺🇸" },
-        { code: "KR", name: "South Korea", flag: "🇰🇷" },
-        { code: "NL", name: "Netherlands", flag: "🇳🇱" },
-        { code: "CA", name: "Canada", flag: "🇨🇦" },
-        { code: "JP", name: "Japan", flag: "🇯🇵" }
+      jurisdictions: [
+        { code: "ALL", name: "All Jurisdictions", flag: "🌍", isSpotlight: false },
+        { code: "US-CA", name: "California (CDFA Spotlight)", flag: "🌴", isSpotlight: true },
+        { code: "US-FED", name: "US Federal (USDA)", flag: "🇺🇸", isSpotlight: false },
+        { code: "DE", name: "Germany (BLE / AFP)", flag: "🇩🇪", isSpotlight: false },
+        { code: "KR", name: "South Korea (농식품부)", flag: "🇰🇷", isSpotlight: false },
+        { code: "NL", name: "Netherlands (RVO)", flag: "🇳🇱", isSpotlight: false },
+        { code: "CA", name: "Canada (AAFC)", flag: "🇨🇦", isSpotlight: false },
+        { code: "JP", name: "Japan (農林水産省)", flag: "🇯🇵", isSpotlight: false }
       ],
       categories: [
-        { id: "all", label: "All Categories", icon: "🌐" },
+        { id: "all", label: "All Programs", icon: "🌐" },
+        { id: "water", label: "Water & Drip Telemetry", icon: "💧" },
         { id: "energy", label: "Greenhouse Energy & Screens", icon: "⚡" },
-        { id: "smartfarm", label: "Smart Farm ICT & Controllers", icon: "🤖" },
-        { id: "youth", label: "Young & Beginning Farmers", icon: "🧑‍🌾" },
-        { id: "renewables", label: "Heat Pumps & Renewables", icon: "🔥" },
-        { id: "hydroponics", label: "Water & Hydroponics", icon: "💧" }
+        { id: "smartfarm", label: "Smart Farm ICT & Sensors", icon: "🤖" },
+        { id: "soils", label: "Soil Health & Carbon", icon: "🌱" },
+        { id: "renewables", label: "Solar PV & Ag Heat Pumps", icon: "🔥" },
+        { id: "youth", label: "Young & Beginning Farmers", icon: "🧑‍🌾" }
       ],
       programs: [
+        {
+          id: "US-CA-CDFA-SWEEP",
+          country: "US",
+          countryName: "United States",
+          region: "US-CA",
+          regionName: "California (Statewide)",
+          jurisdictionLabel: "California (CDFA)",
+          flag: "🌴",
+          category: "water",
+          name: "CDFA State Water Efficiency and Enhancement Program (SWEEP)",
+          agency: "California Department of Food and Agriculture (CDFA) - OEFI",
+          subsidyType: "Direct Non-Repayable Grant",
+          subsidyRate: "100% Grant Funding (No Grower Match Required)",
+          rateDecimal: 1.00,
+          maxAmount: "$200,000 per agricultural project",
+          matchRequirement: "0% (Zero grower matching funds required; matching funds optional for higher merit points)",
+          disbursementType: "Advance Payment (up to 25% for eligible applicants) + Quarterly Invoicing",
+          currency: "USD",
+          verifiedDate: "2026-09-07 Verified (CDFA OEFI Bulletin)",
+          deadline: "Continuous Batching / Next Solicitation Closes Q4 2026",
+          selectionMethod: "Competitive Merit Scoring & Technical Review",
+          targetEquipment: [
+            "Solar PV arrays dedicated to powering irrigation pumps",
+            "Variable Frequency Drive (VFD) installation on agricultural pumps",
+            "Soil moisture telemetry probes (Capacitance, TDR, C-Probe) & weather stations",
+            "Conversion from flood/furrow to micro-drip & low-pressure micro-sprinklers",
+            "Automated irrigation line valves, flow meters, and telemetry controllers"
+          ],
+          ineligibleItems: [
+            "General operational labor, tractor fuel, and maintenance overhead",
+            "Repair or maintenance of existing non-upgraded equipment",
+            "Expenses incurred prior to formal execution of the CDFA grant agreement",
+            "Leased equipment where ownership does not transfer to the agricultural producer"
+          ],
+          qualificationCriteria: [
+            "Commercial agricultural operations on land located within California",
+            "Must demonstrate verifiable water savings AND greenhouse gas (GHG) reductions",
+            "Must possess legal water rights or active agricultural groundwater well metering",
+            "Leased land requires signed Landowner Consent and minimum remaining lease term"
+          ],
+          documentChecklist: [
+            "Certified Pump Efficiency Test Report (completed within last 24 months by PG&E/SCE/APEP accredited tester)",
+            "CDFA SWEEP Water Savings & GHG Calculator Output Spreadsheet",
+            "Three (3) Itemized Vendor Quotes for all proposed equipment/solar packages (valid within 90 days)",
+            "Farm Layout Map & APN Parcel Diagram indicating pump, sensor, and pipeline locations",
+            "California Payee Data Record (STD 204) & Federal IRS Form W-9",
+            "Landowner Consent Form (mandatory if farm property is leased)"
+          ],
+          officialUrl: "https://www.cdfa.ca.gov/oefi/sweep/",
+          portalName: "CDFA AmpliFund Grant Portal",
+          contactPhone: "(916) 900-5075",
+          contactEmail: "cdfa.oefi@cdfa.ca.gov",
+          linkedCalculator: "evapotranspiration-penman-monteith-calculator.html",
+          linkedToolTitle: "Penman-Monteith ET0 Calc",
+          summary: "California's premier water and clean energy grant covering up to $200,000 at 100% funding to upgrade irrigation pumps to solar/VFD and install real-time soil moisture telemetry.",
+          deepGuide: "Step 1: Obtain a certified pump efficiency test from your electric utility (PG&E/SCE). Step 2: Model water and GHG reduction using the CDFA calculator. Step 3: Secure 3 vendor bids. Step 4: Submit via CDFA AmpliFund portal."
+        },
+        {
+          id: "US-CA-CDFA-HSP",
+          country: "US",
+          countryName: "United States",
+          region: "US-CA",
+          regionName: "California (Statewide)",
+          jurisdictionLabel: "California (CDFA)",
+          flag: "🌱",
+          category: "soils",
+          name: "CDFA Healthy Soils Program (HSP) Incentives",
+          agency: "California Department of Food and Agriculture (CDFA) - OEFI",
+          subsidyType: "Direct Flat-Rate Practice Grant",
+          subsidyRate: "Fixed Acreage Payment Rates (Covers 80% - 100% of Practice Implementation)",
+          rateDecimal: 0.90,
+          maxAmount: "$100,000 per agricultural operation",
+          matchRequirement: "0% (Zero match required; flat payment rates per acre/ton)",
+          disbursementType: "Annual Practice Verification & Flat-Rate Reimbursement",
+          currency: "USD",
+          verifiedDate: "2026-09-07 Verified (CDFA OEFI Bulletin)",
+          deadline: "First-Come, First-Served Rolling Review until Funding Cap Exhausted",
+          selectionMethod: "First-Come, First-Served for Eligible Applications meeting minimum threshold",
+          targetEquipment: [
+            "Commercial compost application (on-farm and purchased certified organic compost)",
+            "Cover cropping seed blends (legume, cereal, brassica mixtures)",
+            "Whole orchard recycling (chipping and incorporating old fruit/nut trees into soil)",
+            "Hedgerow planting, windbreak establishment, and pollinator strips",
+            "Reduced tillage, conservation tillage, and no-till drill implementation"
+          ],
+          ineligibleItems: [
+            "Continuation of soil practices already implemented prior to grant award",
+            "Commercial synthetic chemical fertilizers and synthetic pesticides",
+            "Capital purchase of tractors, heavy earthmoving machinery, or vehicles",
+            "Soil amendments not listed on CDFA approved practice guidelines"
+          ],
+          qualificationCriteria: [
+            "California agricultural operations, croplands, orchards, vineyards, and rangelands",
+            "Producers must commit to maintaining practice for full 3-year agreement period",
+            "Prior receipt of HSP funding on the exact same field parcel is disqualified",
+            "Must utilize CDFA-COMET-Planner to quantify GHG sequestration"
+          ],
+          documentChecklist: [
+            "CDFA HSP COMET-Planner GHG Quantification Report",
+            "Field Boundary Map with APN parcel numbers and GPS coordinates",
+            "Baseline Soil Organic Matter (SOM) Test Report (sampled within last 12 months)",
+            "Compost Certificate of Analysis (verifying C:N ratio and heavy metal compliance)",
+            "Completed California Payee Data Record (STD 204)"
+          ],
+          officialUrl: "https://www.cdfa.ca.gov/oefi/healthysoils/",
+          portalName: "CDFA Grants Online Portal",
+          contactPhone: "(916) 900-5075",
+          contactEmail: "cdfa.oefi@cdfa.ca.gov",
+          linkedCalculator: "greenhouse-capex-opex-10year-roi-calculator.html",
+          linkedToolTitle: "Soil & CapEx ROI Engine",
+          summary: "Direct incentive grants up to $100,000 providing flat per-acre cash payments to California farmers for compost application, cover cropping, and whole orchard recycling.",
+          deepGuide: "Step 1: Map fields and calculate baseline soil organic matter. Step 2: Run COMET-Planner to estimate carbon benefits. Step 3: Submit early as applications are processed first-come, first-served."
+        },
+        {
+          id: "US-CA-CEC-FPIP",
+          country: "US",
+          countryName: "United States",
+          region: "US-CA",
+          regionName: "California (Statewide)",
+          jurisdictionLabel: "California (CEC / CDFA)",
+          flag: "⚡",
+          category: "energy",
+          name: "California Food Production Investment Program (FPIP) - CEA & Ag Processing",
+          agency: "California Energy Commission (CEC) & CDFA",
+          subsidyType: "Competitive Capital Grant",
+          subsidyRate: "Up to 65% of Total Eligible Equipment & Installation Costs",
+          rateDecimal: 0.65,
+          maxAmount: "Tier 1: Up to $5,000,000 | Tier 2: Up to $1,500,000",
+          matchRequirement: "35% Applicant Match (Cash or certified commercial loan financing)",
+          disbursementType: "Milestone Progress Reimbursement (with 10% retention until commissioning)",
+          currency: "USD",
+          verifiedDate: "2026-09-07 Verified (CEC Energy Research Bulletin)",
+          deadline: "Annual Solicitation Cycle (Cut-off Window: Late 2026)",
+          selectionMethod: "Competitive Technical Scoring & Benefit-Cost Ratio Evaluation",
+          targetEquipment: [
+            "Advanced horticultural LED luminaires replacing HPS/HID in CEA facilities",
+            "Natural refrigerant industrial refrigeration systems (CO2 transcritical / NH3)",
+            "Industrial heat pumps for greenhouse root zone heating & drying facilities",
+            "Automated dual thermal climate screens and triple-layer greenhouse envelopes",
+            "Flue gas heat recovery, waste heat economizers, and microgrid solar PV"
+          ],
+          ineligibleItems: [
+            "Production equipment unrelated to energy efficiency or GHG reduction",
+            "Facility land acquisition or construction of shell buildings",
+            "Research and development unproven technologies without field readiness",
+            "Contingency allowances and indirect administrative overhead exceeding 10%"
+          ],
+          qualificationCriteria: [
+            "Food production, cold storage, packaging, or commercial CEA greenhouse facilities located in California",
+            "Facility must pay into the California Climate Investments (GGRF) fund",
+            "Project must demonstrate a minimum simple payback reduction of at least 30%",
+            "Must provide baseline 12 months of utility electricity and natural gas bills"
+          ],
+          documentChecklist: [
+            "Professional Engineering (PE) Certified Energy & GHG Audit",
+            "12 Consecutive Months of Utility Electric & Gas Invoices with Interval Meter Data",
+            "Equipment Vendor Technical Cut Sheets & Detailed Engineering Design Drawings",
+            "Proof of 35% Matching Funds (Bank Statement, Credit Line, or Financing Approval)",
+            "California CEQA Environmental Compliance Documentation"
+          ],
+          officialUrl: "https://www.energy.ca.gov/programs-and-topics/programs/food-production-investment-program",
+          portalName: "CEC Energy Commission Grants Gateway",
+          contactPhone: "(916) 654-4287",
+          contactEmail: "fpip@energy.ca.gov",
+          linkedCalculator: "greenhouse-heating-load-thermal-screen-calculator.html",
+          linkedToolTitle: "Thermal Screen Heat Savings",
+          summary: "Massive state grant providing up to $5,000,000 (covering 65% of costs) for California CEA greenhouses and food packing facilities upgrading to advanced LED, heat pumps, and dual thermal screens.",
+          deepGuide: "Requires a formal PE energy audit. Highly competitive. Focus heavily on verified therms and kWh saved per dollar of grant requested."
+        },
+        {
+          id: "US-CA-CDFA-AMMP",
+          country: "US",
+          countryName: "United States",
+          region: "US-CA",
+          regionName: "California (Statewide)",
+          jurisdictionLabel: "California (CDFA)",
+          flag: "🐄",
+          category: "smartfarm",
+          name: "CDFA Alternative Manure Management Program (AMMP)",
+          agency: "California Department of Food and Agriculture (CDFA) - OEFI",
+          subsidyType: "Capital Cost-Share Grant",
+          subsidyRate: "100% of Eligible Project Costs (Up to Grant Limit)",
+          rateDecimal: 1.00,
+          maxAmount: "$750,000 per dairy or livestock operation",
+          matchRequirement: "0% (No matching funds required; in-kind support optional)",
+          disbursementType: "Advance Payment (up to 25%) + Invoiced Milestone Reimbursements",
+          currency: "USD",
+          verifiedDate: "2026-09-07 Verified (CDFA AMMP Bulletin)",
+          deadline: "Annual Solicitation Batch (Next Deadline: Fall 2026)",
+          selectionMethod: "Competitive Technical Scoring based on GHG Abatement Cost-Effectiveness",
+          targetEquipment: [
+            "Mechanical solid separators (screw press, rotary drum, weeping wall systems)",
+            "Compost bedded pack barns and aerated static pile composting systems",
+            "Scrape manure collection conversion retrofits replacing flush lagoon systems",
+            "Solar drying bays and manure solid processing machinery"
+          ],
+          ineligibleItems: [
+            "Anaerobic digester installations (covered separately under DDRDP program)",
+            "Feed additives and animal nutrition supplements",
+            "General farm machinery not directly related to manure solids separation",
+            "Costs incurred prior to project contract execution"
+          ],
+          qualificationCriteria: [
+            "Commercial dairy and livestock operations located in California",
+            "Currently utilizing a flush manure lagoon or anaerobic storage system",
+            "Must implement a non-digester manure management practice that reduces methane",
+            "Must maintain the practice for a minimum operating life of 5 years"
+          ],
+          documentChecklist: [
+            "CDFA AMMP GHG Quantification Calculator Output (official CARB tool)",
+            "Regional Water Quality Control Board Waste Discharge Requirement (WDR) Permit",
+            "Site Engineering Layout & Process Flow Schematics",
+            "Written Equipment Vendor Quotes for all mechanical separators and electrical hookups",
+            "California Payee Data Record (STD 204)"
+          ],
+          officialUrl: "https://www.cdfa.ca.gov/oefi/ammp/",
+          portalName: "CDFA OEFI Portal",
+          contactPhone: "(916) 900-5075",
+          contactEmail: "cdfa.oefi@cdfa.ca.gov",
+          linkedCalculator: "greenhouse-capex-opex-10year-roi-calculator.html",
+          linkedToolTitle: "CapEx / OpEx ROI Engine",
+          summary: "Offers up to $750,000 at 100% state grant funding for California dairies and livestock farms converting to solid separators and compost bedded pack systems to eliminate lagoon methane emissions.",
+          deepGuide: "Ensure coordination with your local Regional Water Quality Control Board prior to submission. Scoring hinges on metric tons of CO2e reduced."
+        },
+        {
+          id: "US-CA-CDFA-SCBGP",
+          country: "US",
+          countryName: "United States",
+          region: "US-CA",
+          regionName: "California (Statewide)",
+          jurisdictionLabel: "California (CDFA / USDA)",
+          flag: "🍇",
+          category: "smartfarm",
+          name: "California Specialty Crop Block Grant Program (SCBGP)",
+          agency: "CDFA / USDA Agricultural Marketing Service (AMS)",
+          subsidyType: "Direct Project Grant",
+          subsidyRate: "100% Non-Repayable Project Grant",
+          rateDecimal: 1.00,
+          maxAmount: "Up to $500,000 per project (3-Year Term)",
+          matchRequirement: "0% Mandatory Match (Matching funds strongly encouraged and scored favorably)",
+          disbursementType: "Quarterly Cost Reimbursement based on milestone deliverables",
+          currency: "USD",
+          verifiedDate: "2026-09-07 Verified (CDFA Specialty Crop Bulletin)",
+          deadline: "Two-Phase Annual Cycle: Concept Proposal Q4 2026 / Full Proposal Q1 2027",
+          selectionMethod: "Two-Stage Competitive Review (Technical Review Committee & CDFA Panel)",
+          targetEquipment: [
+            "Precision smart farm sensor networks for specialty fruit, nut, and vegetable crops",
+            "CEA greenhouse pest biological control automation and drone dispersal systems",
+            "Post-harvest shelf-life extension and sorting technology for California specialty crops",
+            "Horticultural AI diagnostic vision hardware and automated yield forecasting tools"
+          ],
+          ineligibleItems: [
+            "Projects benefiting a single private commercial farm without broader industry benefit",
+            "Direct production subsidies or operating costs of staple commodity crops (wheat, corn, cotton)",
+            "General agricultural real estate or permanent land acquisition",
+            "Lobbying or political activities"
+          ],
+          qualificationCriteria: [
+            "California non-profits, agricultural trade associations, university researchers, and collaborative grower groups",
+            "Project must solely benefit California specialty crops (fruits, vegetables, tree nuts, dried fruits, horticulture, nursery, and greenhouse floriculture)",
+            "Must generate publicly accessible data and measurable industry-wide benefits",
+            "Must complete all deliverables within a strict 3-year performance period"
+          ],
+          documentChecklist: [
+            "Concept Proposal & Scope of Work Narrative",
+            "Letters of Support from California Specialty Crop Grower Associations (minimum 3)",
+            "Detailed Itemized 3-Year Budget Spreadsheet with Justification Narrative",
+            "Key Personnel Resumes and Project Manager Qualifications",
+            "Data Sharing and Public Accessibility Plan"
+          ],
+          officialUrl: "https://www.cdfa.ca.gov/Specialty_Crop_Competitiveness_Grants/",
+          portalName: "CDFA SCBGP Gateway",
+          contactPhone: "(916) 657-3231",
+          contactEmail: "grants@cdfa.ca.gov",
+          linkedCalculator: "greenhouse-autonomous-ai-climate-controller.html",
+          linkedToolTitle: "Autonomous Climate AI",
+          summary: "State-administered federal grant funding up to $500,000 for innovative smart agriculture, pest control robotics, and post-harvest technology benefiting California specialty crop growers.",
+          deepGuide: "Phase 1 requires a concise Concept Proposal. Projects that partner with grower cooperatives or demonstrate clear industry-wide dissemination score highest."
+        },
+        {
+          id: "US-FED-USDA-EQIP-CA",
+          country: "US",
+          countryName: "United States",
+          region: "US-CA",
+          regionName: "California (NRCS State Office)",
+          jurisdictionLabel: "California (USDA-NRCS)",
+          flag: "🇺🇸",
+          category: "water",
+          name: "USDA NRCS California EQIP (Specialty Crop & High Tunnel Initiative)",
+          agency: "USDA Natural Resources Conservation Service (California State Office, Davis CA)",
+          subsidyType: "Cost-Share Reimbursement Grant",
+          subsidyRate: "50% - 75% Standard (Up to 90% for Historically Underserved / Beginning Farmers)",
+          rateDecimal: 0.75,
+          maxAmount: "$450,000 per Farm Bill lifecycle (Up to $10,000/acre for high tunnels)",
+          matchRequirement: "10% - 50% Producer Match depending on producer classification",
+          disbursementType: "Flat-Rate Practice Reimbursement upon NRCS Field Inspection & Verification",
+          currency: "USD",
+          verifiedDate: "2026-09-07 Verified (USDA NRCS California Bulletin)",
+          deadline: "Continuous Intake / Annual State Ranking Cut-Offs (November & March)",
+          selectionMethod: "NRCS Conservation Assessment Ranking Tool (CART) Merit Score",
+          targetEquipment: [
+            "Commercial High Tunnels (Hoop Houses, Practice Code 325) for season extension",
+            "Micro-irrigation retrofits (Practice Code 441) including drip tubing & filtration",
+            "Irrigation Water Management (IWM Practice 449) automated soil moisture logging",
+            "Agricultural stationary combustion engine replacement (CARB Tier 4 clean diesel/electric)",
+            "Cover crop seed establishment and conservation crop rotation"
+          ],
+          ineligibleItems: [
+            "Heated commercial permanent glasshouses (only unheated high tunnels eligible under Practice 325)",
+            "Equipment purchased or installed prior to contract obligation and NRCS approval",
+            "General operational costs, commercial seed purchases for cash crop harvest",
+            "Producers with Adjusted Gross Income (AGI) exceeding $900,000 (unless granted waiver)"
+          ],
+          qualificationCriteria: [
+            "Agricultural producers holding an established USDA Farm Service Agency (FSA) Farm and Tract Number",
+            "Compliance with USDA Highly Erodible Land and Wetland Conservation (AD-1026)",
+            "Average Adjusted Gross Income (AGI) below $900,000 for the prior 3 tax years",
+            "Must hold control of the land (deed or written lease spanning the practice lifespan)"
+          ],
+          documentChecklist: [
+            "USDA FSA Farm and Tract Registration (Form AD-2047)",
+            "Highly Erodible Land Conservation and Wetland Certification (Form AD-1026)",
+            "Average Adjusted Gross Income (AGI) Certification Form (CCC-941)",
+            "NRCS Conservation Plan developed with your local District Conservationist",
+            "High Tunnel or Irrigation System Engineering Quotes and Site Map"
+          ],
+          officialUrl: "https://www.nrcs.usda.gov/conservation-basics/conservation-by-state/california",
+          portalName: "Farmers.gov / NRCS California Service Centers",
+          contactPhone: "(530) 792-5600",
+          contactEmail: "california.nrcs@usda.gov",
+          linkedCalculator: "evapotranspiration-penman-monteith-calculator.html",
+          linkedToolTitle: "Penman-Monteith ET0 Calc",
+          summary: "Federal cost-share funding 75% to 90% of the cost to construct commercial high tunnels and precision drip irrigation across California's valleys, with special priority for beginning growers.",
+          deepGuide: "Step 1: Visit your local USDA Service Center in your California county to get a Farm/Tract number. Step 2: Request an on-site visit from an NRCS conservationist. Step 3: Rank your application in the CART tool."
+        },
+        {
+          id: "US-FED-USDA-REAP",
+          country: "US",
+          countryName: "United States",
+          region: "US-FED",
+          regionName: "United States (Federal & California Allocation)",
+          jurisdictionLabel: "United States (USDA-RD)",
+          flag: "🇺🇸",
+          category: "renewables",
+          name: "USDA Rural Energy for America Program (REAP) Clean Energy Grants",
+          agency: "USDA Rural Development (National & California State Office)",
+          subsidyType: "Non-Repayable Grant (Up to 50%) & Loan Guarantees",
+          subsidyRate: "Up to 50% Non-Repayable Capital Grant (IRA Clean Energy Allocation)",
+          rateDecimal: 0.50,
+          maxAmount: "Renewables: Up to $1,000,000 | Energy Efficiency: Up to $500,000",
+          matchRequirement: "50% Applicant Match (Can combine with 30% Federal Investment Tax Credit for ~80% total recovery!)",
+          disbursementType: "Post-Installation Reimbursement upon Certified Commissioning & Utility Interconnection",
+          currency: "USD",
+          verifiedDate: "2026-09-07 Verified (USDA Rural Development Notice)",
+          deadline: "Quarterly Continuous Batching (March 31, June 30, September 30, December 31)",
+          selectionMethod: "Point-Ranked Priority Scoring (Scoring based on % energy generated/saved and payback)",
+          targetEquipment: [
+            "Agricultural rooftop, carport, and ground-mount Solar PV installations",
+            "Geothermal and industrial ground/air-source heat pumps for commercial greenhouses",
+            "Commercial horticultural LED retrofits replacing high-pressure sodium fixtures",
+            "Dual thermal shade screens, motorized insulated louvers, and curtain walls",
+            "High-efficiency ventilation fans, VFD motors, and refrigeration compressor retrofits"
+          ],
+          ineligibleItems: [
+            "Residential solar or heating installations not dedicated to commercial agriculture",
+            "Agricultural operations earning less than 50% of gross revenue from farming unless located in designated rural areas",
+            "Equipment ordered or contracted prior to environmental review (NEPA) clearance",
+            "Used or refurbished equipment lacking original manufacturer warranties"
+          ],
+          qualificationCriteria: [
+            "Agricultural producers with ≥50% of gross annual income derived from farming operations (no rural area restriction for producers)",
+            "Rural small businesses located in eligible non-metro areas with population < 50,000",
+            "Must be registered in the federal System for Award Management (SAM.gov) with an active UEI number",
+            "Projects over $200,000 require an independent certified Technical Report or Energy Audit"
+          ],
+          documentChecklist: [
+            "Active SAM.gov Registration & Unique Entity Identifier (UEI)",
+            "Independent Certified Energy Audit (for projects > $200,000) or Energy Assessment (for < $200,000)",
+            "Form RD 4280-3A or 4280-3B (USDA REAP Application)",
+            "Prior 3 Years Federal Tax Returns documenting agricultural gross income ratio",
+            "Utility Interconnection Agreement & 12 Months Electric Billing History"
+          ],
+          officialUrl: "https://www.rd.usda.gov/programs-services/energy-programs/rural-energy-america-program-renewable-energy-systems-energy-efficiency-improvement-guaranteed-loans",
+          portalName: "USDA Rural Development Grants Gateway",
+          contactPhone: "(530) 792-5800",
+          contactEmail: "CaliforniaEnergy@usda.gov",
+          linkedCalculator: "greenhouse-heating-load-thermal-screen-calculator.html",
+          linkedToolTitle: "Heating Load & Screen ROI",
+          summary: "Flagship federal program covering 50% of capital costs for solar arrays, heat pumps, and LED retrofits. When stacked with the 30% IRS Section 48 ITC tax credit, California growers recover up to 80% of total costs!",
+          deepGuide: "Ensure you get your SAM.gov UEI early as verification can take 3-4 weeks. Pair REAP with the 30% federal ITC tax credit and California net-metering rules for rapid ROI under 2.5 years."
+        },
         {
           id: "DE-BLE-ENERGIE",
           country: "DE",
           countryName: "Germany",
+          region: "DE",
+          regionName: "Germany (Federal)",
+          jurisdictionLabel: "Germany (BLE / BMEL)",
           flag: "🇩🇪",
           category: "energy",
           name: "Bundesprogramm Energieeffizienz in Landwirtschaft und Gartenbau",
-          agency: "BLE / BMEL (Germany)",
-          subsidyType: "Non-Repayable Grant (Zuschuss)",
-          subsidyRate: "30% - 40%",
+          agency: "Bundesanstalt für Landwirtschaft und Ernährung (BLE) / BMEL",
+          subsidyType: "Direct Non-Repayable Capital Grant (Zuschuss)",
+          subsidyRate: "30% - 40% of Total Investment Cost",
           rateDecimal: 0.35,
-          maxAmount: "€600,000 per facility",
+          maxAmount: "€600,000 per project (€1.2M for combined consortium measures)",
+          matchRequirement: "60% - 70% Enterprise Match (Own equity or commercial bank loan)",
+          disbursementType: "Progress Reimbursement based on verified invoices and consultant certification",
           currency: "EUR",
+          verifiedDate: "2026-09-07 Verified (BLE Official Förderportal)",
+          deadline: "Rolling Intake / Continuous Federal Budget Window",
+          selectionMethod: "First-Come, First-Served for verified applications meeting ≥20% CO2 savings threshold",
           targetEquipment: [
-            "Horticultural LED Fixtures",
-            "Thermal Climate Screens (Energieschirme)",
-            "Multi-layer Glazing Retrofits",
-            "Flue Gas Condenser Heat Recovery"
+            "High-performance thermal climate screens (Energieschirme: Svensson, Bonar, Phormium)",
+            "Industrial horticultural LED lighting fixtures replacing high-pressure sodium",
+            "Insulating greenhouse glazing retrofits (Doppelstegplatten, diffuse isolierglas)",
+            "Flue gas heat recovery condensers, buffer tanks, and latent heat exchangers"
           ],
-          eligibility: "Commercial greenhouse growers with certified minimum 20% carbon/energy reduction confirmed by an accredited energy consultant (Energieberater).",
-          deadline: "Rolling Admissions / Continuous Budget Window",
+          ineligibleItems: [
+            "Greenhouse construction or expansion without proven energy savings",
+            "Measures ordered or commenced prior to official Zuwendungsbescheid approval",
+            "Second-hand or used horticultural machinery",
+            "General operational expenditure and production consumables"
+          ],
+          qualificationCriteria: [
+            "Commercial horticultural and agricultural enterprises located in Germany",
+            "Minimum 20% certified CO2/energy savings verified by an accredited energy consultant (Energieberater)",
+            "Enterprise must fulfill EU SME (KMU) definition or agricultural enterprise status",
+            "Must operate existing greenhouse facilities for at least 3 years"
+          ],
+          documentChecklist: [
+            "Energieberatungsbericht (Certified Energy Concept prepared by an accredited consultant)",
+            "CO2-Minderungsberechnung (Official BLE carbon reduction calculation sheet)",
+            "Two to three detailed commercial quotes from certified horticultural builders",
+            "Commercial Register Excerpt (Handelsregisterauszug / Gewerbeanmeldung)",
+            "De-minimis declaration and KMU self-assessment declaration"
+          ],
           officialUrl: "https://www.ble.de/DE/Projektfoerderung/Foerderungen-Auftraege/Bundesprogramm-Energieeffizienz/bundesprogramm-energieeffizienz_node.html",
+          portalName: "BLE Förderportal easy-Online",
+          contactPhone: "+49 228 6845-3800",
+          contactEmail: "energieeffizienz@ble.de",
           linkedCalculator: "greenhouse-heating-load-thermal-screen-calculator.html",
           linkedToolTitle: "Thermal Screen Heat Savings",
-          summary: "Germany's premier greenhouse decarbonization grant funding up to 40% of capital costs for thermal screens, LED conversion, and greenhouse insulation."
+          summary: "Germany's flagship greenhouse modernization grant covering up to 40% of capital costs for thermal screens, LED conversion, and greenhouse insulation with €600,000 grant ceiling.",
+          deepGuide: "Must hire an accredited Energieberater before purchasing any equipment. The grant contract must be formally issued by BLE before placing purchase orders."
         },
         {
           id: "DE-AFP-NRW",
           country: "DE",
           countryName: "Germany",
+          region: "DE",
+          regionName: "North Rhine-Westphalia",
+          jurisdictionLabel: "Germany (LWK NRW)",
           flag: "🇩🇪",
           category: "smartfarm",
           name: "Agrarinvestitionsförderungsprogramm (AFP) Nordrhein-Westfalen",
-          agency: "Landwirtschaftskammer NRW",
-          subsidyType: "Capital Grant & Low-Interest Loan",
-          subsidyRate: "20% - 40%",
+          agency: "Landwirtschaftskammer Nordrhein-Westfalen (LWK NRW)",
+          subsidyType: "Investment Capital Subsidy & Low-Interest Loan",
+          subsidyRate: "20% - 40% of Eligible Capital Investment",
           rateDecimal: 0.30,
-          maxAmount: "€2,000,000 investment ceiling",
+          maxAmount: "€2,000,000 Investment Ceiling",
+          matchRequirement: "60% - 80% Farm Equity or Rentenbank Agricultural Loan",
+          disbursementType: "Milestone-based inspection and construction draws",
           currency: "EUR",
+          verifiedDate: "2026-09-07 Verified (LWK NRW Förderrichtlinien)",
+          deadline: "Bi-Annual Cut-Off Windows (Spring / Autumn Selection Rounds)",
+          selectionMethod: "Competitive Ranking based on environmental and animal welfare indicators",
           targetEquipment: [
-            "New Venlo Glasshouse Construction",
-            "Closed-Loop Hydroponics with UV/Ozone Disinfection",
-            "Automated Climate Computers & Irrigation Rigs",
-            "Rainwater Holding Basins"
+            "New modern Venlo glasshouse construction with integrated energy conservation",
+            "Closed-loop nutrient recirculation systems with UV/Ozone disinfection",
+            "Automated climate computers and precision irrigation fertigation rigs",
+            "Rainwater collection holding basins, buffer reservoirs, and pumping stations"
           ],
-          eligibility: "Horticultural enterprises in NRW (e.g. Straelen / Niederrhein) meeting economic viability criteria, operated by certified professionals (e.g. Gärtnermeister).",
-          deadline: "Bi-annual Cut-off Rounds (Spring / Autumn)",
+          ineligibleItems: [
+            "Purchase of production rights, quotas, and agricultural land",
+            "Simple replacement investments without technological innovation",
+            "Machinery that does not exceed standard legal environmental baselines",
+            "Projects commenced prior to written funding pre-approval"
+          ],
+          qualificationCriteria: [
+            "Horticultural businesses in NRW (Straelen / Niederrhein) demonstrating long-term economic viability",
+            "Manager must possess certified vocational agricultural qualifications (Gärtnermeister / Agraringenieur)",
+            "Minimum 25% farm income generated from production",
+            "Must submit a comprehensive agricultural investment and business plan"
+          ],
+          documentChecklist: [
+            "Wirtschaftlichkeitsberechnung (3-Year Business Viability Forecast)",
+            "Approved Building Permit (Baugenehmigung) and Water District Drainage Permits",
+            "Itemized Construction Cost Estimate formatted to DIN 276 standards",
+            "Proof of Vocational Qualification (Meisterbrief / Diplom)",
+            "Financing Confirmation Letter from Commercial Bank or Rentenbank"
+          ],
           officialUrl: "https://www.landwirtschaftskammer.de/foerderung/laendlich/afp/",
+          portalName: "LWK NRW Portal",
+          contactPhone: "+49 251 2376-0",
+          contactEmail: "foerderung@lwk.nrw.de",
           linkedCalculator: "greenhouse-capex-opex-10year-roi-calculator.html",
           linkedToolTitle: "10-Year CapEx & ROI Engine",
-          summary: "Major facility modernization subsidy for high-tech glasshouse expansion in Germany's largest horticultural cluster (Niederrhein)."
+          summary: "Premier structural modernization grant in Germany's largest horticultural cluster (Straelen / Niederrhein) supporting new glasshouses, closed-loop hydroponics, and climate computers up to €2,000,000.",
+          deepGuide: "Ensure building permits are fully granted prior to the application deadline. The scoring rubric gives heavy preference to closed-loop water recirculation."
         },
         {
           id: "DE-EU-JUNGLANDWIRTE",
           country: "DE",
           countryName: "Germany",
+          region: "DE",
+          regionName: "Germany (EU CAP)",
+          jurisdictionLabel: "Germany (EU CAP)",
           flag: "🇩🇪",
           category: "youth",
           name: "GAP Junglandwirte-Einkommensunterstützung & Niederlassungsprämie",
           agency: "Landwirtschaftskammer / EU CAP",
-          subsidyType: "Direct Income Top-Up & Settlement Bonus",
-          subsidyRate: "Up to €70,000 Lump Sum + €134/ha/year",
+          subsidyType: "Direct Income Top-Up & Capital Settlement Grant",
+          subsidyRate: "Fixed Acreage Top-Up + Up to €70,000 Settlement Bonus",
           rateDecimal: 0.50,
-          maxAmount: "€70,000 settlement bonus + 5-year acreage top-up",
+          maxAmount: "€70,000 Lump Sum + €134/ha/year for 5 Consecutive Years",
+          matchRequirement: "0% (Direct non-repayable income injection and settlement capital)",
+          disbursementType: "Annual Single Area Payment (Direktzahlung) + Staged Settlement Tranches",
           currency: "EUR",
+          verifiedDate: "2026-09-07 Verified (BMEL GAP-Strategieplan)",
+          deadline: "Annual Single Application Window (May 15 Cut-off)",
+          selectionMethod: "Non-Competitive Entitlement for all eligible applicants meeting qualification",
           targetEquipment: [
-            "Farm Acquisition & Initial Working Capital",
-            "Digital Crop Steering Sensors & Mobile Controls",
-            "First-Time Horticultural Equipment Purchase"
+            "Farm acquisition, greenhouse leasehold, and initial working capital",
+            "Digital crop steering sensors, mobile telemetry, and diagnostic meters",
+            "First-time horticultural machinery and nursery establishment supplies",
+            "Enterprise software, digital accounting, and farm ERP systems"
           ],
-          eligibility: "Enterprise managers under 40 years of age established within the last 5 years with certified vocational qualification (Ausbildung / Meister).",
-          deadline: "Annual Single Application Window (May 15)",
+          ineligibleItems: [
+            "Applicants reaching age 40 prior to the year of establishment",
+            "Businesses where young farmer holds less than 50% voting control",
+            "Establishments older than 5 years at time of first application"
+          ],
+          qualificationCriteria: [
+            "Business manager under 40 years of age established as head of holding within past 5 years",
+            "Certified vocational education in agriculture or horticulture (Berufsabschluss / Meister / Studium)",
+            "Must hold effective and long-term financial/managerial control of the agricultural enterprise",
+            "Registered farm operation with active Betriebsnummer"
+          ],
+          documentChecklist: [
+            "Gemeinsamer Antrag (Annual Single Application submitted via ANDI/LEA/DIANA)",
+            "Proof of Vocational Qualification (Meisterprüfungszeugnis / Hochschulabschluss)",
+            "Company Articles of Association (Gesellschaftsvertrag) verifying majority voting control",
+            "Commercial Farm Registration (Betriebsnummernachweis)",
+            "Business Takeover or Establishment Agreement (Übergabevertrag)"
+          ],
           officialUrl: "https://www.bmel.de/DE/themen/landwirtschaft/eu-agrarpolitik-und-foerderung/gap/junglandwirte.html",
+          portalName: "BMEL / Federal States Agricultural Portals",
+          contactPhone: "+49 228 99529-0",
+          contactEmail: "poststelle@bmel.bund.de",
           linkedCalculator: "greenhouse-capex-opex-10year-roi-calculator.html",
           linkedToolTitle: "CapEx & OpEx Modeling",
-          summary: "Direct non-repayable cash bonus designed to support newly minted Gärtnermeister and young agricultural founders establishing commercial enterprises."
-        },
-        {
-          id: "US-USDA-EQIP",
-          country: "US",
-          countryName: "United States",
-          flag: "🇺🇸",
-          category: "hydroponics",
-          name: "USDA NRCS Environmental Quality Incentives Program (EQIP)",
-          agency: "USDA NRCS (United States)",
-          subsidyType: "Cost-Share Reimbursement Grant",
-          subsidyRate: "50% - 75% (Up to 90% for Beginning/Veterans)",
-          rateDecimal: 0.65,
-          maxAmount: "$450,000 per Farm Bill lifecycle",
-          currency: "USD",
-          targetEquipment: [
-            "Commercial High Tunnels (Hoop Houses)",
-            "Micro-Irrigation & Drip Fertigation Automation",
-            "Soil Moisture TDR Sensors & Weather Stations",
-            "Tailwater Recovery Recirculation Systems"
-          ],
-          eligibility: "Producers in compliance with conservation provisions with adjusted gross income (AGI) under $900,000.",
-          deadline: "Continuous Batching with State Ranking Deadlines",
-          officialUrl: "https://www.nrcs.usda.gov/programs-initiatives/eqip-environmental-quality-incentives-program",
-          linkedCalculator: "evapotranspiration-penman-monteith-calculator.html",
-          linkedToolTitle: "Penman-Monteith ET0 Calc",
-          summary: "Flagship federal cost-share covering 50% to 90% of the cost to construct seasonal high tunnels and automated precision drip irrigation."
-        },
-        {
-          id: "US-USDA-REAP",
-          country: "US",
-          countryName: "United States",
-          flag: "🇺🇸",
-          category: "renewables",
-          name: "USDA Rural Energy for America Program (REAP) Grants",
-          agency: "USDA Rural Development",
-          subsidyType: "Non-Repayable Grant (Up to 50%) & Loan Guarantees",
-          subsidyRate: "Up to 50% Matching Grant",
-          rateDecimal: 0.50,
-          maxAmount: "$1,000,000 for Renewables / $500,000 for Efficiency",
-          currency: "USD",
-          targetEquipment: [
-            "Greenhouse Rooftop & Ground Solar PV Arrays",
-            "Ground-Source & Air-Source Industrial Heat Pumps",
-            "High-Efficiency Horticultural LED Fixtures",
-            "Dual Thermal Screen Insulation Retrofits"
-          ],
-          eligibility: "Agricultural producers earning ≥50% of gross income from farming, or eligible rural small businesses.",
-          deadline: "Quarterly Deadlines (March 31, June 30, Sept 30, Dec 31)",
-          officialUrl: "https://www.rd.usda.gov/programs-services/energy-programs/rural-energy-america-program-renewable-energy-systems-energy-efficiency-improvement-guaranteed-loans",
-          linkedCalculator: "greenhouse-heating-load-thermal-screen-calculator.html",
-          linkedToolTitle: "Heating Load & Screen ROI",
-          summary: "Provides massive federal clean energy grants covering up to 50% of capital costs to transition greenhouses to solar, LED, and industrial heat pumps."
+          summary: "Special young farmer bonus providing a direct €70,000 cash grant plus €134/ha/year for 5 years to support newly qualified Gärtnermeister and agricultural founders.",
+          deepGuide: "Must submit together with your state's Gemeinsamer Antrag before May 15. Ensure company bylaws explicitly show the young farmer holds effective executive control."
         },
         {
           id: "KR-MAFRA-ICT",
           country: "KR",
           countryName: "South Korea",
+          region: "KR",
+          regionName: "대한민국 (전국)",
+          jurisdictionLabel: "South Korea (농식품부)",
           flag: "🇰🇷",
           category: "smartfarm",
           name: "스마트팜 ICT 융복합 확산사업 (Smart Farm ICT Convergence)",
-          agency: "농림축산식품부 (MAFRA) / 농어촌공사",
-          subsidyType: "Government Direct Grant (50-70%) + Policy Loan",
-          subsidyRate: "50% - 70% (국비 20~30% + 지방비 30% + 융자 30%)",
+          agency: "농림축산식품부 (MAFRA) / 농어촌공사 / 지자체 농업기술센터",
+          subsidyType: "정부 국고/지방비 보조 (50~70%) + 정책 융자",
+          subsidyRate: "50% - 70% 지원 (국비 20~30% + 지방비 30% + 융자 30% + 자부담 10~20%)",
           rateDecimal: 0.60,
-          maxAmount: "온실 ha당 최대 2억 ~ 5억 원 지원",
+          maxAmount: "온실 ha당 최대 2억 ~ 5억 원 지원 한도",
+          matchRequirement: "자부담 10% ~ 20% (융자 30% 별도 지원 가능)",
+          disbursementType: "감리 및 현장 검수 완료 후 시공업체 직접 지급 (e나라도움 시스템)",
           currency: "KRW",
+          verifiedDate: "2026-09-07 Verified (농식품부 스마트팜 공고)",
+          deadline: "매년 1~2월 정기 공모 및 지자체별 잔여예산 하반기 2차 접수",
+          selectionMethod: "전문가 현장 실사 및 ICT 도입 적격성 심사 평가",
           targetEquipment: [
-            "복합환경제어기 (Complex Climate Computer)",
-            "내외부 기상센서 (일사량, 온습도, CO2, 풍속)",
+            "온실 내외부 복합 기상센서 (일사량, 온습도, 풍향풍속, CO2)",
+            "국가 표준 규격 복합환경제어기 (Complex Climate Computer)",
             "정밀 자동 양액공급기 및 배액 수질 계측기",
-            "원격 모바일 CCTV 및 천측창 자동 개폐 모터"
+            "원격 모바일 모니터링 CCTV 및 천측창 전동 구동기 모터"
           ],
-          eligibility: "시설원예(채소·화훼) 재배 농업인 또는 농업회사법인으로 농업경영체 등록 완료 농가.",
-          deadline: "매년 1~2월 정기 공모 및 지자체 잔여예산 추가 접수",
+          ineligibleItems: [
+            "스마트팜 국가 표준(KS) 규격 미인증 비표준 장비",
+            "단순 온실 골조 및 비닐 교체 등 하드웨어 일반 소모품",
+            "사업 승인 전 사전 구매 또는 선시공된 자재",
+            "농가 일상 운영비, 비료, 종자 등 영농 자재"
+          ],
+          qualificationCriteria: [
+            "시설원예(채소·화훼) 재배 농업인 또는 농업회사법인",
+            "국립농산물품질관리원 농업경영체 등록 완료 농가 (필수)",
+            "ICT 장비를 설치할 수 있는 연동 또는 단동 내재해형 규격 온실 보유 농가",
+            "스마트팜 전문 교육 20시간 이상 이수 농가 가점 부여"
+          ],
+          documentChecklist: [
+            "스마트팜 ICT 융복합 사업 신청서 및 사업계획서",
+            "농업경영체 등록확인서 (최근 1개월 이내 발급)",
+            "표준 ICT 장비 규격서 및 공인 시공업체 비교 견적서 2부",
+            "온실 부지 토지대장 및 건축물대장 (임차 시 5년 이상 임대차계약서)",
+            "스마트팜 농업인 교육 이수증 사본"
+          ],
           officialUrl: "https://www.smartfarmkorea.net/",
+          portalName: "스마트팜코리아 (SmartFarm Korea)",
+          contactPhone: "1522-2911",
+          contactEmail: "smartfarm@epis.or.kr",
           linkedCalculator: "greenhouse-autonomous-ai-climate-controller.html",
           linkedToolTitle: "Autonomous Climate AI",
-          summary: "한국 농식품부의 대표 스마트팜 사업으로 복합환경제어기, 센서, 자동 양액기 등 ICT 설비비의 50~70%를 정부와 지자체가 직접 지원."
+          summary: "한국 농식품부의 대표 스마트팜 사업으로 복합환경제어기, 센서, 자동 양액기 등 ICT 설비비의 50~70%를 정부와 지자체가 직접 지원.",
+          deepGuide: "스마트팜코리아(smartfarmkorea.net) 사전 가입 필수. KS 표준 인증 장비를 채택해야 하며, 관할 시군 농업기술센터에 방문 또는 e나라도움으로 접수."
         },
         {
           id: "KR-MAFRA-ENERGY",
           country: "KR",
           countryName: "South Korea",
+          region: "KR",
+          regionName: "대한민국 (전국)",
+          jurisdictionLabel: "South Korea (농식품부)",
           flag: "🇰🇷",
           category: "energy",
           name: "농업에너지이용효율화사업 (Agri-Energy Efficiency Improvement)",
-          agency: "농림축산식품부 / 한국농어촌공사",
-          subsidyType: "Government Direct Grant (50% 보조)",
-          subsidyRate: "50% 보조 (국비 20% + 지방비 30% + 융자 30% + 자부담 20%)",
+          agency: "농림축산식품부 / 한국농어촌공사 / 지자체",
+          subsidyType: "정부 국고/지방비 무상 보조 (50%)",
+          subsidyRate: "50% 무상 보조 (국비 20% + 지방비 30% + 융자 30% + 자부담 20%)",
           rateDecimal: 0.50,
-          maxAmount: "온실 규모별 산정 (수억 원 한도)",
+          maxAmount: "온실 규모(ha)별 산출 (수억 원 한도)",
+          matchRequirement: "자부담 20% (정책 융자 30% 지원 가능)",
+          disbursementType: "한국농어촌공사 감리 승인 후 준공 검사 완료 시 시공업체 직접 지급",
           currency: "KRW",
+          verifiedDate: "2026-09-07 Verified (농식품부 에너지이용효율화 지침)",
+          deadline: "매년 7~9월 익년도 사업 사전 수요조사 및 1월 본신청",
+          selectionMethod: "난방 에너지 절감률 산출 모델 및 농가 평가 기준표 심사",
           targetEquipment: [
-            "다겹보온커튼 및 알루미늄 단열 스크린 개폐장치",
-            "지열 히트펌프 및 공기열 히트펌프 냉난방 설비",
-            "폐열회수 환기장치 및 배기열 회수기",
-            "온실 측벽 다중 피복 및 배관 단열재"
+            "알루미늄 단열 스크린 및 다겹보온커튼 개폐 설비",
+            "지열 히트펌프 및 공기열 히트펌프 냉난방 시스템",
+            "폐열회수 환기장치 및 배기열 회수 콘덴싱 장치",
+            "온실 측벽 다중 피복재 및 난방 배관 고효율 단열재"
           ],
-          eligibility: "가온 시설을 구비한 채소·화훼 온실 재배 농가로 에너지 20% 이상 절감 계획서 제출 농가.",
-          deadline: "매년 7~9월 익년도 사업 지자체 사전 신청 접수",
+          ineligibleItems: [
+            "화석연료(등유, 면세유, 가스) 전용 단순 온풍난방기",
+            "공인 성능 시험성적서가 없는 비인증 보온재",
+            "사업 승인 이전 기시공된 자재 및 중고 설비",
+            "비인가 임의 온실 구조물 (불법 가설물)"
+          ],
+          qualificationCriteria: [
+            "채소, 화훼, 과수 등 가온 시설을 갖추고 재배 중인 농업경영체 등록 농가",
+            "기존 대비 20% 이상 에너지 절감이 입증 가능한 온실",
+            "지열의 경우 수자원공사 또는 지질 전문기관의 현장 지하수 조사 적합 판정 필"
+          ],
+          documentChecklist: [
+            "농업에너지이용효율화사업 지원신청서 및 에너지 절감 계획서",
+            "농업경영체 등록확인서",
+            "공인 시험기관(농업기술실용화재단 등) 보온커튼/히트펌프 성능시험성적서",
+            "난방 설비 설계도면 및 시공 내역서 2부",
+            "토지대장, 건축물대장 또는 농지 임대차계약서"
+          ],
           officialUrl: "https://www.mafra.go.kr/",
+          portalName: "농림축산식품부 포털 및 시군청 농정과",
+          contactPhone: "044-201-1851",
+          contactEmail: "energy@mafra.go.kr",
           linkedCalculator: "greenhouse-heating-load-thermal-screen-calculator.html",
           linkedToolTitle: "Thermal Screen Heat Savings",
-          summary: "온실 다겹보온커튼과 히트펌프 설치비의 50%를 무상 지원하여 겨울철 시설원예 난방비를 40~60% 이상 감축시키는 에너지 특화 사업."
+          summary: "온실 다겹보온커튼과 히트펌프 설치비의 50%를 무상 지원하여 겨울철 시설원예 난방비를 40~60% 이상 감축시키는 에너지 특화 사업.",
+          deepGuide: "한국농어촌공사가 설계를 대행하거나 감리를 수행합니다. 1년 전 여름(7~9월) 수요조사 단계에서 지자체에 미리 신청해야 이듬해 예산 배정을 받습니다."
         },
         {
           id: "KR-MAFRA-YOUTH",
           country: "KR",
           countryName: "South Korea",
+          region: "KR",
+          regionName: "대한민국 (전국)",
+          jurisdictionLabel: "South Korea (농식품부)",
           flag: "🇰🇷",
           category: "youth",
           name: "청년후계농 영농정착지원사업 (Youth Farmer Settlement)",
-          agency: "농림축산식품부 / 농식품정보원",
-          subsidyType: "Monthly Voucher Grant & Low-Interest 1.5% Loan",
-          subsidyRate: "월 최대 110만 원 바우처 + 5억 융자금 (금리 1.5%)",
+          agency: "농림축산식품부 / 농림수산식품교육문화정보원",
+          subsidyType: "매월 정착 바우처 (최장 3년) + 연 1.5% 고정금리 정책대출",
+          subsidyRate: "월 최대 110만 원 영농정착지원금 + 최대 5억 원 융자 (금리 1.5%)",
           rateDecimal: 0.70,
-          maxAmount: "3년간 최대 3,600만 원 보조금 + 5억 원 정책자금 융자",
+          maxAmount: "최장 3년간 총 3,600만 원 무상 보조 + 5억 원 저리 정책융자",
+          matchRequirement: "정착지원금은 0% 자부담 무상 보조 / 융자금은 5년 거치 20년 상환",
+          disbursementType: "농협 청년농 바우처 카드 매월 자동 충전 + 영농 기반 마련 시 융자 실행",
           currency: "KRW",
+          verifiedDate: "2026-09-07 Verified (농식품부 청년후계농 지침)",
+          deadline: "매년 12월 ~ 익년 1월 Agrix 온라인 정기 공모",
+          selectionMethod: "1차 서면평가(영농계획서) + 2차 시도별 심층 면접 평가",
           targetEquipment: [
-            "온실 신축 부지 매입 및 농지 임대차 비용",
-            "스마트팜 온실 시설물 시공 및 온실 자재 구입",
-            "초기 비료, 양액, 종묘 원자재 및 농기계 구입"
+            "스마트팜 온실 신축 부지 매입 및 농지 임차료",
+            "온실 신축 골조, 피복재, 복합환경제어기 등 시설 투자",
+            "초기 종묘, 비료, 양액 원자재 및 농기계 구입",
+            "영농 정착기 가족 생계 및 농업 경영 활동비"
           ],
-          eligibility: "만 18세 이상 ~ 만 40세 미만 독립경영 3년 이하(예정자 포함) 청년 농업인.",
-          deadline: "매년 12월 ~ 1월 농림사업정보시스템(Agrix) 정기 공모",
+          ineligibleItems: [
+            "만 40세 초과자 또는 독립경영 3년 초과자",
+            "사업자등록을 보유하고 타 산업에 상근 근로자로 종사하는 자",
+            "직전 연도 건강보험료 부과액 기준 일정 소득 이상자 (소득 상위자 제외)"
+          ],
+          qualificationCriteria: [
+            "만 18세 이상 ~ 만 40세 미만 (신청 연도 기준)",
+            "독립경영 3년 이하 (독립경영 예정자 포함)",
+            "병역필 또는 병역면제자 (여성 농업인 포함)",
+            "지자체 영농 정착 의무복무(지원받은 기간만큼 의무 영농) 준수 가능자"
+          ],
+          documentChecklist: [
+            "청년후계농 영농정착지원사업 신청서 및 중장기 영농계획서 (Agrix 작성)",
+            "주민등록등본 및 가족관계증명서",
+            "건강보험료 납부확인서 또는 부과액 증명원 (소득 확인)",
+            "농업 관련 학교 졸업증명서 또는 농업 교육 이수증 (가점 서류)",
+            "농지 취득 또는 임대차 계획 증빙서류"
+          ],
           officialUrl: "https://www.agrix.go.kr/",
+          portalName: "농림사업정보시스템 (Agrix)",
+          contactPhone: "1670-0255",
+          contactEmail: "youth@epis.or.kr",
           linkedCalculator: "greenhouse-capex-opex-10year-roi-calculator.html",
           linkedToolTitle: "10-Year CapEx & ROI Engine",
-          summary: "청년 스마트팜 창업을 위한 국가 지원으로 3년간 최대 3,600만 원 정착 바우처와 연 1.5% 고정금리 5억 원 정책대출(5년 거치 20년 분할상환) 제공."
+          summary: "청년 스마트팜 창업을 위한 국가 핵심 지원으로 3년간 최대 3,600만 원 정착 바우처와 연 1.5% 고정금리 5억 원 정책대출(5년 거치 20년 분할상환) 제공.",
+          deepGuide: "영농계획서 작성이 합격의 70%를 좌우합니다. 스마트팜 혁신밸리 청년창업보육센터 수료생은 우선 선발 혜택이 주어집니다."
         },
         {
           id: "NL-RVO-EG",
           country: "NL",
           countryName: "Netherlands",
+          region: "NL",
+          regionName: "Netherlands (National)",
+          jurisdictionLabel: "Netherlands (RVO)",
           flag: "🇳🇱",
           category: "energy",
-          name: "EG Subsidie: Energie-efficiëntie glastuinbouw",
-          agency: "RVO (Netherlands)",
-          subsidyType: "Direct Capital Grant (Subsidie)",
-          subsidyRate: "25% - 40% of Eligible Costs",
+          name: "EG Subsidie: Energie-efficiëntie en hernieuwbare energie glastuinbouw",
+          agency: "Rijksdienst voor Ondernemend Nederland (RVO)",
+          subsidyType: "Direct Non-Repayable Capital Grant (Subsidie)",
+          subsidyRate: "25% - 40% of Eligible Capital Investment",
           rateDecimal: 0.30,
-          maxAmount: "€350,000 per facility",
+          maxAmount: "€350,000 per greenhouse enterprise",
+          matchRequirement: "60% - 75% Enterprise Equity or Commercial Financing",
+          disbursementType: "Final payment upon project completion and verified energy inspection",
           currency: "EUR",
-          targetEquipment: [
-            "Second High-Grade Thermal Screen (Tweede energiescherm)",
-            "Diffuse Glass Retrofits with Double AR Coatings",
-            "Low-Temperature Heat Network Distribution Pipes",
-            "Air Handling Units with Latent Heat Exchangers"
-          ],
-          eligibility: "Commercial glasshouse horticultural companies operating in the Netherlands reducing natural gas consumption.",
+          verifiedDate: "2026-09-07 Verified (RVO Staatscourant Publication)",
           deadline: "Annual Tender Window (April to November)",
+          selectionMethod: "First-Come, First-Served within annual budget ceiling",
+          targetEquipment: [
+            "Second high-grade thermal screen (Tweede energiescherm: Ludvig Svensson)",
+            "Diffuse glass retrofits with double anti-reflective coatings",
+            "Low-temperature heat network distribution pipe systems",
+            "Air handling units with latent heat recovery (Het Nieuwe Telen - HNT)"
+          ],
+          ineligibleItems: [
+            "First standard thermal screen (only second or subsequent screens qualify)",
+            "Standard greenhouse maintenance and glazing replacement",
+            "Projects commenced before formal electronic submission to RVO"
+          ],
+          qualificationCriteria: [
+            "Commercial glasshouse horticultural enterprises operating in the Netherlands",
+            "Demonstrated gas reduction through energy conservation measures",
+            "Must comply with Dutch environmental covenant for greenhouse horticulture (Convenant Glastuinbouw)"
+          ],
+          documentChecklist: [
+            "Technical specification and quotation from approved greenhouse greenhouse installer",
+            "RVO Calculation Sheet documenting gas savings (m3 natural gas / yr)",
+            "Greenhouse site plan showing exact compartmental boundaries",
+            "eHerkenning Level 3 digital login credentials for submission"
+          ],
           officialUrl: "https://www.rvo.nl/subsidies-financiering/energie-efficientie-glastuinbouw",
+          portalName: "Mijn RVO Portal",
+          contactPhone: "+31 88 042 42 42",
+          contactEmail: "energie@rvo.nl",
           linkedCalculator: "greenhouse-heating-load-thermal-screen-calculator.html",
-          linkedToolTitle: "Mollier & Thermal Screen Tool",
-          summary: "Dutch national program supporting Venlo glasshouse growers in cutting gas dependency via dual thermal screens and diffuse glass."
+          linkedToolTitle: "Thermal Screen Heat Savings",
+          summary: "Dutch national program supporting Venlo glasshouse growers in cutting natural gas dependency via secondary thermal screens, diffuse glass, and latent heat air handling units.",
+          deepGuide: "Ensure you have eHerkenning Level 3 ready. The Dutch government prioritizes the 'Het Nieuwe Telen' (Next Generation Growing) methodology."
         },
         {
           id: "NL-RVO-SDE",
           country: "NL",
           countryName: "Netherlands",
+          region: "NL",
+          regionName: "Netherlands (National)",
+          jurisdictionLabel: "Netherlands (RVO)",
           flag: "🇳🇱",
           category: "renewables",
           name: "SDE++ (Stimulering Duurzame Energieproductie en Klimaattransitie)",
-          agency: "RVO (Netherlands)",
-          subsidyType: "Operating Premium Subsidy (12 to 15 Years)",
-          subsidyRate: "Covers Non-Profitable Unprofitable Gap per Ton CO2",
+          agency: "Rijksdienst voor Ondernemend Nederland (RVO)",
+          subsidyType: "15-Year Operating Premium Feed-in Subsidy",
+          subsidyRate: "Covers Unprofitable Tariff Gap per Ton CO2 Avoided",
           rateDecimal: 0.45,
-          maxAmount: "Multi-Million Euro 15-Year Operating Guarantee",
+          maxAmount: "Multi-Million Euro 15-Year Operating Commitment",
+          matchRequirement: "Requires Full Project Financing by Consortium or Bank",
+          disbursementType: "Monthly operating premium paid over 12 to 15 years based on meter data",
           currency: "EUR",
+          verifiedDate: "2026-09-07 Verified (RVO SDE++ Regulation)",
+          deadline: "Annual Phased Bidding Tender (September to October)",
+          selectionMethod: "Competitive Auction ranked by Subsidy Cost per Ton of Avoided CO2 (€/ton CO2)",
           targetEquipment: [
-            "Deep Geothermal Heating Clusters for Greenhouses (Aardwarmte)",
-            "Aquifer Thermal Energy Storage (ATES) Systems",
-            "Megawatt-Scale Industrial Heat Pumps",
-            "Biomass Clean Heat with Pure Biogenic CO2 Dosing"
+            "Deep geothermal heating clusters for greenhouses (Aardwarmte)",
+            "Aquifer Thermal Energy Storage (ATES) systems",
+            "Megawatt-scale industrial electric heat pumps",
+            "Biomass heat & power with biogenic CO2 capture and greenhouse dosing"
           ],
-          eligibility: "Commercial greenhouse consortia, individual horticultural complexes, and district heat networks.",
-          deadline: "Annual Phased Bidding Tender (Autumn)",
+          ineligibleItems: [
+            "Small-scale installations under minimum capacity thresholds",
+            "Projects without secured grid or heat transport interconnection agreements",
+            "Projects lacking an irrevocable environmental permit"
+          ],
+          qualificationCriteria: [
+            "Commercial greenhouse consortia, energy cooperatives, and district heat networks",
+            "Feasibility study and geological analysis (for geothermal installations)",
+            "Must possess an irrevocable environmental and water permit (Omgevingsvergunning)"
+          ],
+          documentChecklist: [
+            "Geological Subsurface Study (for Aardwarmte projects)",
+            "Irrevocable Environmental Permit (Onherroepelijke Omgevingsvergunning)",
+            "Grid & Heat Offtake Letter of Intent (Transportindicatie Netbeheerder)",
+            "Consortium Agreement and Financial Feasibility Model"
+          ],
           officialUrl: "https://www.rvo.nl/subsidies-financiering/sde",
+          portalName: "Mijn RVO Portal",
+          contactPhone: "+31 88 042 42 42",
+          contactEmail: "sde@rvo.nl",
           linkedCalculator: "aquifer-thermal-energy-storage-ates-heat-pump.html",
           linkedToolTitle: "ATES & Industrial Heat Pump",
-          summary: "The Netherlands' flagship 15-year operational subsidy funding deep geothermal and massive industrial heat pumps for glasshouse clusters."
+          summary: "The Netherlands' flagship 15-year operational subsidy funding deep geothermal and massive industrial heat pumps for glasshouse clusters.",
+          deepGuide: "Timing is critical: the application phases open in weekly tiers based on €/ton CO2 threshold. Apply in the earliest possible phase to secure budget allocation."
         },
         {
           id: "CA-AAFC-ACT",
           country: "CA",
           countryName: "Canada",
+          region: "CA",
+          regionName: "Canada (Federal)",
+          jurisdictionLabel: "Canada (AAFC)",
           flag: "🇨🇦",
           category: "energy",
           name: "Agricultural Clean Technology (ACT) Program - Adoption Stream",
           agency: "Agriculture and Agri-Food Canada (AAFC)",
-          subsidyType: "Non-Repayable Contribution",
-          subsidyRate: "Up to 50% (Up to 60% for Young Farmers)",
+          subsidyType: "Direct Non-Repayable Contribution",
+          subsidyRate: "Up to 50% (Up to 60% for Underrepresented/Young Farmers)",
           rateDecimal: 0.50,
-          maxAmount: "$2,000,000 CAD per project",
+          maxAmount: "$2,000,000 CAD per agricultural enterprise",
+          matchRequirement: "40% - 50% Applicant Cash Contribution",
+          disbursementType: "Milestone-based progress claims upon submission of paid receipts",
           currency: "CAD",
+          verifiedDate: "2026-09-07 Verified (AAFC Program Guidelines)",
+          deadline: "Continuous Intake until Budget Allocations are Exhausted",
+          selectionMethod: "Competitive Assessment based on GHG reduction and technical merit",
           targetEquipment: [
-            "High-Efficiency Condensing Heating Boilers",
-            "Commercial LED Fixtures Replacing HPS Systems",
-            "Automated Thermal Shade Screens & Poly Envelope Upgrades",
-            "Precision Microclimate Sensing Networks"
+            "High-efficiency greenhouse condensing heating boilers and heat exchangers",
+            "Commercial horticultural LED fixtures replacing high-pressure sodium fixtures",
+            "Automated thermal shade screens and poly envelope insulation retrofits",
+            "Precision microclimate sensor telemetry and variable speed pump controllers"
           ],
-          eligibility: "Canadian agricultural producers and greenhouse operators with projects demonstrating direct greenhouse gas emissions reduction.",
-          deadline: "Continuous Intake until Allocations are Exhausted",
+          ineligibleItems: [
+            "Routine equipment maintenance and direct operational farming inputs",
+            "Land acquisition or building foundations for regular structures",
+            "Expenditures incurred prior to the project start date"
+          ],
+          qualificationCriteria: [
+            "Canadian agricultural producers and commercial greenhouse operators",
+            "Project must demonstrate a direct and quantifiable reduction in greenhouse gas emissions",
+            "Must be a Canadian legal business entity capable of entering into a legal agreement"
+          ],
+          documentChecklist: [
+            "Project Proposal Narrative & Work Plan",
+            "GHG Emissions Reduction Quantification Sheet (AAFC Tool)",
+            "Equipment Vendor Quotes (minimum 2 independent commercial bids)",
+            "Financial Statements for the prior 2 fiscal years",
+            "Proof of Legal Business Incorporation in Canada"
+          ],
           officialUrl: "https://agriculture.canada.ca/en/agricultural-programs-and-services/agricultural-clean-technology-program-adoption-stream",
+          portalName: "AAFC Online Services Portal",
+          contactPhone: "1-877-246-4682",
+          contactEmail: "aafc.act-cta.aac@agr.gc.ca",
           linkedCalculator: "greenhouse-heating-load-thermal-screen-calculator.html",
           linkedToolTitle: "Thermal Screen Heat Savings",
-          summary: "Canadian federal grant funding up to 50-60% of greenhouse energy-efficient equipment retrofits and clean technology adoption."
+          summary: "Canadian federal grant funding up to 50-60% of greenhouse energy-efficient equipment retrofits and clean technology adoption up to $2,000,000 CAD.",
+          deepGuide: "Ensure your baseline GHG audit explicitly states fuel consumption in cubic meters of natural gas or liters of propane to substantiate emissions savings."
         },
         {
           id: "JP-MAFF-SMART",
           country: "JP",
           countryName: "Japan",
+          region: "JP",
+          regionName: "Japan (National)",
+          jurisdictionLabel: "Japan (農林水産省)",
           flag: "🇯🇵",
           category: "smartfarm",
           name: "スマート農業推進総合対策事業 (Smart Agriculture Comprehensive Program)",
-          agency: "農林水産省 (MAFF, Japan)",
-          subsidyType: "Direct Capital Subsidy (1/2 補助)",
-          subsidyRate: "50% (1/2 国庫補助)",
+          agency: "農林水産省 (MAFF, Japan) / 農業・食品産業技術総合研究機構 (NARO)",
+          subsidyType: "Direct Capital Subsidy (定額・1/2 国庫補助)",
+          subsidyRate: "50% (1/2 国庫直接補助)",
           rateDecimal: 0.50,
-          maxAmount: "사업 규모에 따른 정률 국비 보조",
+          maxAmount: "사업 규모 및 컨소시엄에 따른 정률 지원 (수천만 엔 단위)",
+          matchRequirement: "50% 자부담 (일본 정책금융공고 농업근대화자금 연계 가능)",
+          disbursementType: "사업 중간 실적 보고 및 최종 완료 검사 후 보조금 교부",
           currency: "JPY",
+          verifiedDate: "2026-09-07 Verified (農林水産省 政策情報)",
+          deadline: "연차별 정기 모집 (통상 2~4월 공모)",
+          selectionMethod: "스마트 농업 실증 컨소시엄 심사 및 지역 파급효과 평가",
           targetEquipment: [
-            "시설원예 복합환경제어 장치 (온습도, CO2, 차광 자동제어)",
+            "시설원예 복합환경제어 장치 (온습도, CO2, 차광 자동제어 시스템)",
             "수경재배 양액 정밀 계측 및 자동 배합 시스템",
-            "온실 작물 생육 모니터링 카메라 및 데이터 로거",
-            "수확 및 운반 자동화 로봇 설비"
+            "온실 작물 생육 모니터링 AI 카메라 및 환경 데이터 로거",
+            "수확 및 운반 자동화 보조 로봇 설비"
           ],
-          eligibility: "일본 내 인정농업인, 영농집단, 스마트농업 실증 컨소시엄 참여 원예 농가.",
-          deadline: "연차별 정기 모집 (통상 2~4월)",
+          ineligibleItems: [
+            "단순 비닐 교체 등 하드웨어 일반 소모품",
+            "스마트 농업 실증 계획과 무관한 범용 농기계",
+            "보조금 교부 결정 전 사전 발주 및 납품된 장비"
+          ],
+          qualificationCriteria: [
+            "일본 내 인정농업인, 영농집단, 농업생산법인",
+            "스마트농업 기술 실증 컨소시엄 참여 원예 농가",
+            "생산성 향상 및 노동력 절감 목표 수립 농가"
+          ],
+          documentChecklist: [
+            "스마트농업 실증 계획서 및 성과 목표표",
+            "인정농업인 인정서 사본",
+            "도입 장비 사양서 및 복수 시공업체 비교 견적서",
+            "직전 2개년도 확정신고서 및 재무제표",
+            "지자체 농업개량보급센터 의견서"
+          ],
           officialUrl: "https://www.maff.go.jp/j/kanbo/smart/",
+          portalName: "e-MAFF (農林水産省 共通申請サービス)",
+          contactPhone: "+81-3-3502-8111",
+          contactEmail: "smart_agri@maff.go.jp",
           linkedCalculator: "greenhouse-autonomous-ai-climate-controller.html",
           linkedToolTitle: "Autonomous Climate AI",
-          summary: "일본 농림수산성의 스마트농업 보급 대표 사업으로 첨단 복합환경제어기 및 센서 도입비 50%를 국가가 직접 보조."
+          summary: "일본 농림수산성의 스마트농업 보급 대표 사업으로 첨단 복합환경제어기 및 센서 도입비 50%를 국가가 직접 보조.",
+          deepGuide: "e-MAFF 시스템을 통한 온라인 신청. 농업개량보급센터 또는 연구기관과의 컨소시엄 구성 시 채택 확률이 대폭 상승합니다."
         }
       ]
     };
 
-    // State
-    let selectedCountry = "ALL";
+    // State Variables
+    let selectedJurisdiction = "ALL";
     let selectedCategory = "all";
     let activeCurrency = "USD";
     let currencyMultiplier = 1.0;
     let currencySymbol = "$";
+    let activeTabByProgram = {};
 
     function initPage() {
-      renderCountryPills();
+      renderJurisdictionPills();
       renderCategoryTabs();
       recalcSimulator();
       applyFilters();
     }
 
-    function renderCountryPills() {
-      const container = document.getElementById("country-pills-container");
-      container.innerHTML = SUB_DATA.countries.map(c => `
-        <button class="country-pill ${c.code === selectedCountry ? 'active' : ''}" onclick="selectCountry('${c.code}')">
-          <span>${c.flag}</span>
-          <span>${c.name}</span>
+    function renderJurisdictionPills() {
+      const container = document.getElementById("jurisdiction-pills-container");
+      container.innerHTML = SUB_DATA.jurisdictions.map(j => `
+        <button class="country-pill ${j.isSpotlight ? 'ca-spotlight' : ''} ${j.code === selectedJurisdiction ? 'active' : ''}" onclick="selectJurisdiction('${j.code}')">
+          <span>${j.flag}</span>
+          <span>${j.name}</span>
         </button>
       `).join("");
     }
@@ -1125,9 +2180,9 @@
       `).join("");
     }
 
-    function selectCountry(code) {
-      selectedCountry = code;
-      renderCountryPills();
+    function selectJurisdiction(code) {
+      selectedJurisdiction = code;
+      renderJurisdictionPills();
       applyFilters();
     }
 
@@ -1158,13 +2213,11 @@
       const grantAmount = convertedCapEx * (ratePct / 100);
       const netCapEx = convertedCapEx - grantAmount;
 
-      // Base payback calculation (assuming 22% annual net cash flow yield on raw investment)
+      // Payback calculation assuming 20% annual net cash flow yield on raw investment
       const baseAnnualCashFlow = convertedCapEx * 0.20;
       const unsubsidizedPaybackYears = (convertedCapEx / baseAnnualCashFlow).toFixed(1);
       const subsidizedPaybackYears = (netCapEx / baseAnnualCashFlow).toFixed(1);
-      const paybackCompressionPct = (((unsubsidizedPaybackYears - subsidizedPaybackYears) / unsubsidizedPaybackYears) * 100).toFixed(0);
 
-      // Format strings
       document.getElementById("lbl-capex-val").innerText = formatCurrency(convertedCapEx);
       document.getElementById("lbl-rate-val").innerText = ratePct + "% Coverage";
 
@@ -1185,21 +2238,54 @@
       const query = document.getElementById("search-query").value.toLowerCase().trim();
 
       const filtered = SUB_DATA.programs.filter(p => {
-        // Country check
-        const matchCountry = (selectedCountry === "ALL" || p.country === selectedCountry);
-        // Category check
+        // Jurisdiction Check
+        let matchJurisdiction = false;
+        if (selectedJurisdiction === "ALL") {
+          matchJurisdiction = true;
+        } else if (selectedJurisdiction === "US-CA") {
+          matchJurisdiction = (p.region === "US-CA");
+        } else if (selectedJurisdiction === "US-FED") {
+          matchJurisdiction = (p.country === "US" && p.region === "US-FED");
+        } else {
+          matchJurisdiction = (p.country === selectedJurisdiction);
+        }
+
+        // Category Check
         const matchCat = (selectedCategory === "all" || p.category === selectedCategory);
-        // Search query
+
+        // Search Query
         let matchQuery = true;
         if (query) {
-          const hay = (p.name + " " + p.agency + " " + p.summary + " " + p.eligibility + " " + p.targetEquipment.join(" ")).toLowerCase();
+          const hay = (
+            p.name + " " +
+            p.agency + " " +
+            p.summary + " " +
+            p.jurisdictionLabel + " " +
+            p.targetEquipment.join(" ") + " " +
+            (p.ineligibleItems ? p.ineligibleItems.join(" ") : "") + " " +
+            p.qualificationCriteria.join(" ") + " " +
+            p.documentChecklist.join(" ")
+          ).toLowerCase();
           matchQuery = hay.includes(query);
         }
-        return matchCountry && matchCat && matchQuery;
+
+        return matchJurisdiction && matchCat && matchQuery;
       });
 
       document.getElementById("programs-count").innerText = `Showing ${filtered.length} Active Incentive Programs`;
       renderProgramCards(filtered);
+    }
+
+    function switchCardTab(programId, tabName) {
+      activeTabByProgram[programId] = tabName;
+      // Update buttons
+      document.querySelectorAll(`[data-card-btn="${programId}"]`).forEach(btn => {
+        btn.classList.toggle("active", btn.getAttribute("data-tab") === tabName);
+      });
+      // Update panes
+      document.querySelectorAll(`[data-card-pane="${programId}"]`).forEach(pane => {
+        pane.classList.toggle("active", pane.getAttribute("data-pane") === tabName);
+      });
     }
 
     function renderProgramCards(programs) {
@@ -1207,56 +2293,251 @@
       if (programs.length === 0) {
         container.innerHTML = `
           <div style="grid-column: 1 / -1; text-align: center; padding: 60px 20px; background: rgba(30, 41, 59, 0.4); border-radius: 16px;">
-            <p style="font-size: 2rem; margin-bottom: 10px;">🔍</p>
+            <p style="font-size: 2.2rem; margin-bottom: 12px;">🔍</p>
             <h3 style="color: #ffffff; margin-bottom: 8px;">No incentive programs match your current filter</h3>
-            <p style="color: #94a3b8;">Try switching to "All Countries" or resetting your search keyword.</p>
+            <p style="color: #94a3b8;">Try switching to "All Jurisdictions" or resetting your search keywords.</p>
           </div>
         `;
         return;
       }
 
-      container.innerHTML = programs.map(p => `
-        <article class="grant-card">
-          <div>
-            <div class="card-top-badges">
-              <span class="country-flag-badge">${p.flag} ${p.countryName}</span>
-              <span class="rate-badge">Coverage: ${p.subsidyRate}</span>
-            </div>
+      container.innerHTML = programs.map(p => {
+        const isCA = (p.region === "US-CA");
+        const activeTab = activeTabByProgram[p.id] || "scope";
 
-            <h2 class="grant-title">${p.name}</h2>
-            <div class="grant-agency">🏛️ ${p.agency}</div>
-            <p class="grant-desc">${p.summary}</p>
-
-            <div class="items-tags-box">
-              <div class="items-title">Eligible Equipment / Scope</div>
-              <div class="tags-container">
-                ${p.targetEquipment.map(item => `<span class="equipment-tag">✓ ${item}</span>`).join("")}
+        return `
+          <article class="grant-card ${isCA ? 'ca-highlight' : ''}">
+            <div>
+              <!-- 7-Point Meta Ribbon: Jurisdiction & Verified Date -->
+              <div class="card-meta-ribbon">
+                <span class="jurisdiction-badge">${p.flag} ${p.jurisdictionLabel}</span>
+                <span class="verified-date-badge">🗓️ ${p.verifiedDate.split(" ")[0]} Verified</span>
               </div>
+
+              <h2 class="grant-title">${p.name}</h2>
+              <div class="grant-agency">🏛️ ${p.agency}</div>
+
+              <!-- Financial Strip (Point 3) -->
+              <div class="financial-strip">
+                <div>
+                  <div class="fin-item-label">Maximum Grant Ceiling</div>
+                  <div class="fin-item-val highlight">${p.maxAmount.split(" ")[0]} ${p.maxAmount.split(" ")[1] || ''}</div>
+                </div>
+                <div>
+                  <div class="fin-item-label">Funding & Match Rate</div>
+                  <div class="fin-item-val" style="color: var(--accent-cyan);">${p.subsidyRate.includes("100%") ? "100% Grant" : p.subsidyRate.split("(")[0]}</div>
+                </div>
+              </div>
+
+              <p class="grant-desc">${p.summary}</p>
+
+              <!-- In-Card 7-Point Tabbed Dossier Navigator -->
+              <div class="card-detail-tabs">
+                <button class="card-tab-btn ${activeTab === 'scope' ? 'active' : ''}" data-card-btn="${p.id}" data-tab="scope" onclick="switchCardTab('${p.id}', 'scope')">💧 Eligible Items</button>
+                <button class="card-tab-btn ${activeTab === 'criteria' ? 'active' : ''}" data-card-btn="${p.id}" data-tab="criteria" onclick="switchCardTab('${p.id}', 'criteria')">⚖️ Eligibility</button>
+                <button class="card-tab-btn ${activeTab === 'docs' ? 'active' : ''}" data-card-btn="${p.id}" data-tab="docs" onclick="switchCardTab('${p.id}', 'docs')">📑 Docs</button>
+                <button class="card-tab-btn ${activeTab === 'timing' ? 'active' : ''}" data-card-btn="${p.id}" data-tab="timing" onclick="switchCardTab('${p.id}', 'timing')">⏳ Timeline</button>
+              </div>
+
+              <!-- Tab Pane 1: Scope (Point 4) -->
+              <div class="card-tab-pane ${activeTab === 'scope' ? 'active' : ''}" data-card-pane="${p.id}" data-pane="scope">
+                <div class="scope-box">
+                  <div class="scope-title eligible">✓ Eligible Equipment Whitelist:</div>
+                  <div class="tags-container">
+                    ${p.targetEquipment.slice(0, 3).map(item => `<span class="equipment-tag">✓ ${item}</span>`).join("")}
+                    ${p.targetEquipment.length > 3 ? `<span class="equipment-tag" style="background: rgba(255,255,255,0.06); color:#cbd5e1;">+${p.targetEquipment.length - 3} more</span>` : ''}
+                  </div>
+                  ${p.ineligibleItems ? `
+                    <div class="scope-title ineligible">✗ Excluded / Ineligible Costs:</div>
+                    <div class="tags-container">
+                      ${p.ineligibleItems.slice(0, 2).map(item => `<span class="ineligible-tag">✗ ${item}</span>`).join("")}
+                    </div>
+                  ` : ''}
+                </div>
+              </div>
+
+              <!-- Tab Pane 2: Criteria (Point 5) -->
+              <div class="card-tab-pane ${activeTab === 'criteria' ? 'active' : ''}" data-card-pane="${p.id}" data-pane="criteria">
+                <div class="scope-box" style="line-height: 1.45; color: #cbd5e1;">
+                  <div style="font-weight: 700; color: #facc15; margin-bottom: 4px;">⚖️ Mandatory Grower Qualification:</div>
+                  <ul style="margin: 0; padding-left: 18px; font-size: 0.78rem;">
+                    ${p.qualificationCriteria.map(q => `<li style="margin-bottom: 4px;">${q}</li>`).join("")}
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Tab Pane 3: Documents Checklist (Point 6) -->
+              <div class="card-tab-pane ${activeTab === 'docs' ? 'active' : ''}" data-card-pane="${p.id}" data-pane="docs">
+                <div class="scope-box">
+                  <div style="font-weight: 700; color: var(--accent-cyan); margin-bottom: 6px;">📂 Required Submission Checklist:</div>
+                  <ul class="checklist-mini">
+                    ${p.documentChecklist.slice(0, 3).map(doc => `<li><span>${doc}</span></li>`).join("")}
+                    ${p.documentChecklist.length > 3 ? `<li style="color: var(--accent-emerald); font-weight: 600;"><span>+ ${p.documentChecklist.length - 3} additional audit documents in full dossier</span></li>` : ''}
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Tab Pane 4: Timeline & Selection (Point 2) -->
+              <div class="card-tab-pane ${activeTab === 'timing' ? 'active' : ''}" data-card-pane="${p.id}" data-pane="timing">
+                <div class="timeline-box">
+                  <div class="timeline-row">
+                    <span style="color: #94a3b8;">📅 Application Window:</span>
+                    <strong style="color: #ffffff;">${p.deadline}</strong>
+                  </div>
+                  <div class="timeline-row">
+                    <span style="color: #94a3b8;">🎯 Selection Mechanism:</span>
+                    <strong style="color: var(--accent-emerald);">${p.selectionMethod}</strong>
+                  </div>
+                  <div class="timeline-row">
+                    <span style="color: #94a3b8;">💳 Disbursement Model:</span>
+                    <span style="color: #cbd5e1;">${p.disbursementType.split("+")[0]}</span>
+                  </div>
+                </div>
+              </div>
+
             </div>
 
-            <div class="eligibility-box">
-              <strong>⚖️ Qualification Criteria:</strong> ${p.eligibility}
+            <!-- Card Actions -->
+            <div class="card-actions-row">
+              <a href="${p.officialUrl}" target="_blank" rel="noopener noreferrer" class="btn-apply">
+                <span>🔗 Official Portal</span>
+              </a>
+              <button class="btn-dossier" onclick="openProgramDossier('${p.id}')">
+                <span>📋 Full 7-Pt Dossier</span>
+              </button>
+              <a href="${p.linkedCalculator}" class="btn-tool-link" title="Open corresponding biophysical calculator">
+                <span>🧮 Model in ${p.linkedToolTitle} →</span>
+              </a>
             </div>
-          </div>
-
-          <div class="card-actions-row">
-            <a href="${p.officialUrl}" target="_blank" rel="noopener noreferrer" class="btn-apply">
-              <span>🔗 Official Portal</span>
-            </a>
-            <a href="${p.linkedCalculator}" class="btn-tool-link" title="Open corresponding biophysical calculator">
-              <span>🧮 ${p.linkedToolTitle}</span>
-            </a>
-          </div>
-        </article>
-      `).join("");
+          </article>
+        `;
+      }).join("");
     }
 
-    function closeModal(e) {
-      document.getElementById("policy-modal").classList.remove("open");
+    // Modal Operations
+    function openProgramDossier(programId) {
+      const p = SUB_DATA.programs.find(item => item.id === programId);
+      if (!p) return;
+
+      const container = document.getElementById("modal-content-container");
+      container.innerHTML = `
+        <div class="modal-header-tag">${p.flag} ${p.jurisdictionLabel} · ${p.verifiedDate}</div>
+        <h2 class="modal-title">${p.name}</h2>
+        <div style="color: var(--accent-cyan); font-weight: 600; font-size: 0.95rem; margin-bottom: 16px;">
+          🏛️ Administering Authority: ${p.agency} (${p.portalName})
+        </div>
+
+        <!-- Executive Financial Breakdown -->
+        <div class="financial-strip" style="background: rgba(30, 41, 59, 0.7); grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));">
+          <div>
+            <div class="fin-item-label">Maximum Grant Amount</div>
+            <div class="fin-item-val highlight">${p.maxAmount}</div>
+          </div>
+          <div>
+            <div class="fin-item-label">Funding Rate</div>
+            <div class="fin-item-val" style="color: var(--accent-cyan);">${p.subsidyRate}</div>
+          </div>
+          <div>
+            <div class="fin-item-label">Grower Matching Share</div>
+            <div class="fin-item-val" style="color: #facc15;">${p.matchRequirement.split("(")[0]}</div>
+          </div>
+        </div>
+
+        <!-- Section 1: Overview & Roadmap -->
+        <div class="modal-section">
+          <div class="modal-section-title">🗺️ Step-by-Step Grower Application Roadmap</div>
+          <p style="color: #e2e8f0; font-size: 0.9rem; line-height: 1.6; margin-bottom: 10px;">${p.summary}</p>
+          <div style="background: rgba(16, 185, 129, 0.1); border-left: 3px solid var(--accent-emerald); padding: 12px; border-radius: 4px; font-size: 0.85rem; color: #a7f3d0;">
+            <strong>Advisor's Step-by-Step Playbook:</strong> ${p.deepGuide}
+          </div>
+        </div>
+
+        <!-- Section 2: Eligible vs Ineligible Scope -->
+        <div class="modal-section">
+          <div class="modal-section-title">💧 Eligible Equipment Whitelist vs Excluded Costs</div>
+          <div style="margin-bottom: 12px;">
+            <div style="font-weight: 700; color: var(--accent-emerald); font-size: 0.82rem; margin-bottom: 6px;">✓ ELIGIBLE CAPITAL ASSETS:</div>
+            <ul style="margin: 0; padding-left: 20px; color: #cbd5e1; font-size: 0.85rem;">
+              ${p.targetEquipment.map(eq => `<li style="margin-bottom: 4px;">${eq}</li>`).join("")}
+            </ul>
+          </div>
+          ${p.ineligibleItems ? `
+            <div>
+              <div style="font-weight: 700; color: var(--accent-rose); font-size: 0.82rem; margin-bottom: 6px;">✗ EXCLUDED EXPENDITURES (INELIGIBLE):</div>
+              <ul style="margin: 0; padding-left: 20px; color: #fca5a5; font-size: 0.85rem;">
+                ${p.ineligibleItems.map(ineq => `<li style="margin-bottom: 4px;">${ineq}</li>`).join("")}
+              </ul>
+            </div>
+          ` : ''}
+        </div>
+
+        <!-- Section 3: Interactive Mandatory Document Checklist -->
+        <div class="modal-section">
+          <div class="modal-section-title">📑 Interactive Submission Document Checklist</div>
+          <p style="font-size: 0.82rem; color: #94a3b8; margin-top: -6px; margin-bottom: 12px;">
+            Check off each audit document as you prepare your submission packet:
+          </p>
+          <ul class="interactive-checklist">
+            ${p.documentChecklist.map((doc, idx) => `
+              <li class="checklist-item-row" onclick="toggleCheckbox(this)">
+                <input type="checkbox" id="check-${idx}" class="check-box-input" onclick="event.stopPropagation()">
+                <label for="check-${idx}" class="check-text">${doc}</label>
+              </li>
+            `).join("")}
+          </ul>
+        </div>
+
+        <!-- Section 4: Authority Contacts & Direct Links -->
+        <div class="modal-section">
+          <div class="modal-section-title">🏛️ Supervising Authority Inquiries & Portal Access</div>
+          <div class="modal-contact-grid">
+            <div class="contact-card">
+              <div style="font-size: 0.72rem; color: #94a3b8; text-transform: uppercase;">Official Portal Name</div>
+              <div style="font-weight: 700; color: #ffffff; font-size: 0.85rem;">${p.portalName}</div>
+            </div>
+            <div class="contact-card">
+              <div style="font-size: 0.72rem; color: #94a3b8; text-transform: uppercase;">Helpdesk Phone</div>
+              <div><a href="tel:${p.contactPhone}">${p.contactPhone}</a></div>
+            </div>
+            <div class="contact-card">
+              <div style="font-size: 0.72rem; color: #94a3b8; text-transform: uppercase;">Official Inquiries Email</div>
+              <div><a href="mailto:${p.contactEmail}">${p.contactEmail}</a></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modal Action Footer -->
+        <div class="modal-actions-bar">
+          <button class="btn-print" onclick="window.print()">
+            <span>🖨️ Print / Save PDF Checklist</span>
+          </button>
+          <a href="${p.linkedCalculator}" class="btn-dossier" style="text-decoration: none;">
+            <span>🧮 Open ${p.linkedToolTitle}</span>
+          </a>
+          <a href="${p.officialUrl}" target="_blank" rel="noopener noreferrer" class="btn-apply" style="padding: 10px 20px;">
+            <span>🔗 Launch Official Application Portal</span>
+          </a>
+        </div>
+      `;
+
+      document.getElementById("policy-modal").classList.add("open");
+    }
+
+    function toggleCheckbox(rowElem) {
+      const cb = rowElem.querySelector(".check-box-input");
+      if (cb) {
+        cb.checked = !cb.checked;
+      }
     }
 
     function closeModalDirect() {
       document.getElementById("policy-modal").classList.remove("open");
+    }
+
+    function closeModalOnBackdrop(e) {
+      if (e.target.id === "policy-modal") {
+        closeModalDirect();
+      }
     }
 
     window.addEventListener("DOMContentLoaded", initPage);

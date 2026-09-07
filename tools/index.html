@@ -451,7 +451,7 @@
     </div>
 
     <div class="filter-bar">
-      <button class="filter-btn active" onclick="filterCategory('all', this)">All 34 Tools</button>
+      <button class="filter-btn active" onclick="filterCategory('all', this)">All 35 Tools</button>
       <button class="filter-btn" onclick="filterCategory('climate', this)">🌡️ Climate & Thermodynamics</button>
       <button class="filter-btn" onclick="filterCategory('lighting', this)">💡 Lighting & Photobiology</button>
       <button class="filter-btn" onclick="filterCategory('water', this)">💧 Hydroponics & Water</button>
@@ -461,11 +461,11 @@
 
     <div class="tools-hub-grid">
       <!-- Tool 0: Global Agri-Subsidy & Grant Navigator -->
-      <div class="tool-card" style="border-color: rgba(16, 185, 129, 0.4); background: linear-gradient(145deg, rgba(30, 41, 59, 0.95), rgba(15, 23, 42, 0.9));">
+      <div class="tool-card" data-category="quant" style="border-color: rgba(16, 185, 129, 0.4); background: linear-gradient(145deg, rgba(30, 41, 59, 0.95), rgba(15, 23, 42, 0.9));">
         <div>
           <div class="tool-icon">🌐</div>
           <h2 class="tool-title">Global Agri-Subsidy & Grant Navigator <span class="badge-open-source" style="background: rgba(16, 185, 129, 0.2); color: #34d399; border-color: #10b981;">FINTECH</span></h2>
-          <p class="tool-desc">Real-time commercial greenhouse, vertical farm, and smart farm financial incentive finder across Germany (BLE/AFP), USA (USDA EQIP/REAP), Korea (MAFRA ICT), Netherlands (SDE++), Canada, and Japan with instant capital payback compression calculator.</p>
+          <p class="tool-desc">Real-time commercial greenhouse, CEA, and smart farm financial grant intelligence across California (CDFA SWEEP/HSP/AMMP/FPIP), USA (USDA EQIP/REAP), Germany (BLE/AFP), South Korea (MAFRA ICT), Netherlands (SDE++), Canada, and Japan. Includes 7-point verified farmer metadata dossiers, document checklists, and live payback compression modeling.</p>
         </div>
         <a href="global-agri-subsidy-grant-navigator.html" class="tool-link" style="background: linear-gradient(135deg, #10b981, #059669);">Launch Subsidy Navigator →</a>
       </div>
@@ -863,6 +863,10 @@
       "opex": ["capex", "opex", "irr", "npv", "quant", "energy"],
       "roi": ["capex", "opex", "irr", "roi", "quant", "economics"],
       "quant": ["quant", "commodity", "ttf", "spark", "energy"],
+      "subsidy": ["subsidy", "grant", "cdfa", "sweep", "hsp", "ammp", "fpip", "reap", "eqip", "ble", "funding", "incentive", "보조금", "지원금"],
+      "grant": ["subsidy", "grant", "cdfa", "sweep", "hsp", "reap", "eqip", "funding", "incentive"],
+      "cdfa": ["subsidy", "grant", "cdfa", "sweep", "hsp", "ammp", "fpip", "california"],
+      "california": ["subsidy", "cdfa", "sweep", "hsp", "ammp", "fpip", "california", "et0"],
       "open source": ["open source", "opencea", "agriquant", "python", "playground"],
       "python": ["opencea", "python", "playground", "framework"]
     };
