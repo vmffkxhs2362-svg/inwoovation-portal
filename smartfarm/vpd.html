@@ -1,13 +1,462 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Redirecting to Inwoovation Lab...</title>
-  <link rel="canonical" href="https://inwoovation.com/smartfarm/vpd.html">
-  <meta http-equiv="refresh" content="0; url=https://inwoovation.com/smartfarm/vpd.html">
-  <script>window.location.replace("https://inwoovation.com/smartfarm/vpd.html" + window.location.search + window.location.hash);</script>
-</head>
-<body style="background:#0b0f19;color:#f8fafc;font-family:sans-serif;display:flex;justify-content:center;align-items:center;height:100vh;margin:0;">
-  <p>Redirecting to <a href="https://inwoovation.com/smartfarm/vpd.html" style="color:#38bdf8;">https://inwoovation.com/smartfarm/vpd.html</a>...</p>
-</body>
-</html>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Leaf VPD Calculator | Vapor Pressure Deficit for Greenhouse Climate Control</title>
+<meta content="Calculate leaf-to-air Vapor Pressure Deficit (VPD) in real-time using the Tetens equation. Optimize greenhouse climate for seedling, vegetative, and flowering stages with interactive VPD matrix charts." name="description"/>
+<meta content="VPD calculator, vapor pressure deficit, leaf temperature, greenhouse climate control, stomatal conductance, transpiration rate, VPD chart, kPa, Tetens equation, CEA climate" name="keywords"/>
+<meta content="Y7d3dVoTQHBbG1GoKc4E_LUZb6YBmv491pv7G01mOk8" name="google-site-verification"/>
+<link href="https://inwoovation.com/smartfarm/vpd" rel="canonical"/>
+<!-- Open Graph / Facebook -->
+<meta content="website" property="og:type"/>
+<meta content="https://inwoovation.com/smartfarm/vpd" property="og:url">
+<meta content="Leaf VPD Calculator | Vapor Pressure Deficit for Greenhouse Climate Control" property="og:title"/>
+<meta content="Calculate leaf-to-air Vapor Pressure Deficit (VPD) in real-time using the Tetens equation. Optimize greenhouse climate for seedling, vegetative, and flowering stages with interactive VPD matrix charts." property="og:description"/>
+<meta content="https://inwoovation.com/smartfarm/cover.png" property="og:image"/>
+<!-- Twitter Card -->
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://inwoovation.com/smartfarm/vpd" name="twitter:url"/>
+<meta content="Leaf VPD Calculator | Vapor Pressure Deficit for Greenhouse Climate Control" name="twitter:title"/>
+<meta content="Calculate leaf-to-air Vapor Pressure Deficit (VPD) in real-time using the Tetens equation. Optimize greenhouse climate for seedling, vegetative, and flowering stages with interactive VPD matrix charts." name="twitter:description"/>
+<meta content="https://inwoovation.com/smartfarm/cover.png" name="twitter:image"/>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-V4RYJBMEDE"></script>
+<script>
+   window.dataLayer = window.dataLayer || [];
+   function gtag(){dataLayer.push(arguments);}
+   gtag('js', new Date());
+   gtag('config', 'G-V4RYJBMEDE');
+  </script>
+<!-- Google AdSense -->
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8597809158257497"></script>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- SEO JSON-LD Structured Data -->
+<script type="application/ld+json">
+  {
+   "@context": "https://schema.org",
+   "@type": "WebApplication",
+   "name": "Leaf VPD Calculator | Vapor Pressure Deficit for Greenhouse Climate Control",
+   "operatingSystem": "All",
+   "applicationCategory": "EducationalApplication",
+   "browserRequirements": "Requires HTML5, Javascript, CSS3",
+   "softwareVersion": "2.1",
+   "inLanguage": "en",
+   "description": "Calculate leaf-to-air Vapor Pressure Deficit (VPD) in real-time using the Tetens equation. Optimize greenhouse climate for seedling, vegetative, and flowering stages with interactive VPD matrix charts.",
+   "url": "https://inwoovation.com/smartfarm/vpd",
+   "publisher": {
+     "@type": "Organization",
+     "name": "Inwoovation Smart Farm Lab",
+     "url": "https://inwoovation.com/smartfarm/"
+   },
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   }
+  }
+  </script>
+</meta><link href="style.css?v=3.3" rel="stylesheet"/></head>
+<body>
+<main class="container"><header>
+<div class="header-top-bar" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 0.8rem;">
+<div class="badge" id="header-badge" style="margin-bottom: 0;">Last Updated: September 08, 2026</div>
+<div style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap;">
+    <a href="https://inwoovation.com/" target="_blank" rel="noopener noreferrer" style="background: rgba(30, 41, 59, 0.9); border: 1px solid rgba(255, 255, 255, 0.18); color: #f8fafc; font-weight: 700; font-size: 0.85rem; padding: 0.45rem 0.9rem; border-radius: 100px; text-decoration: none; display: inline-flex; align-items: center; gap: 0.4rem; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); transition: all 0.25s ease;">
+        🌐 Inwoovation Lab
+    </a>
+    <a href="https://buy.polar.sh/polar_cl_mRhSIZcW5YZGwh5QrSBVl1jLF8WeS8fZERjKk08f9LX" target="_blank" data-polar-checkout data-polar-checkout-theme="dark" style="background: linear-gradient(135deg, #06b6d4, #10b981); color: #030712; font-weight: 800; font-size: 0.85rem; padding: 0.45rem 0.9rem; border-radius: 100px; text-decoration: none; display: inline-flex; align-items: center; gap: 0.4rem; box-shadow: 0 4px 14px rgba(6, 182, 212, 0.35);">
+        ⭐ OpenCEA Pro ($19)
+    </a>
+    <button class="lang-btn" id="btn-farm-profile" onclick="toggleFarmProfileDrawer()" style="border-color: var(--primary); color: var(--primary); display: inline-flex; align-items: center; gap: 0.3rem; font-weight: 600; padding: 0.4rem 0.8rem; border-radius: 100px; cursor: pointer; background: transparent; border: 1px solid;">
+        📋 My Farm
+    </button>
+<div class="lang-switch" id="unit-switch" style="margin-bottom: 0; display: flex;">
+<button class="lang-btn active" id="unit-metric" onclick="changeUnit('metric')">Metric</button>
+<button class="lang-btn" id="unit-imperial" onclick="changeUnit('imperial')">Imperial</button>
+</div>
+<div id="google_translate_element" style="display: inline-block; margin-left: 0.5rem; vertical-align: middle;"></div></div>
+</div>
+<div id="header-title" onclick="resetToHome()" style="cursor: pointer; display: inline-block; font-size: 2em; font-weight: bold; margin: 0.67em 0;">Smart Farm Engineering Lab</div>
+<p id="header-desc">High-precision online engineering simulation & modeling suite for modern greenhouse designers, growers, and agricultural engineers.</p>
+</header><div class="nav-control-panel">
+<div class="search-box-wrapper">
+<span class="search-icon">🔍</span>
+<input id="sim-search" oninput="filterSimulators()" placeholder="Search simulators or keywords... (e.g. VPD, heating, nutrient, DLI)" type="text"/>
+</div>
+<div class="category-chips">
+<button class="chip active" id="chip-all" onclick="filterCategory('all')">All</button>
+<button class="chip" id="chip-climate" onclick="filterCategory('climate')">Climate</button>
+<button class="chip" id="chip-facility" onclick="filterCategory('facility')">Facility</button>
+<button class="chip" id="chip-fertigation" onclick="filterCategory('fertigation')">Nutrient</button>
+<button class="chip" id="chip-market" onclick="switchTab('market')" style="border-color: rgba(234, 179, 8, 0.5); color: #facc15; background: rgba(234, 179, 8, 0.1);">Market</button>
+<button class="chip beta-only-chip" id="chip-beta" onclick="filterCategory('beta')" style="display: none; border-color: rgba(245, 158, 11, 0.3); color: var(--warning);">Beta Review</button>
+</div>
+</div><div class="tabs-container"><div class="tabs">
+<a class="tab-btn" href="https://buy.polar.sh/polar_cl_mRhSIZcW5YZGwh5QrSBVl1jLF8WeS8fZERjKk08f9LX" target="_blank" data-polar-checkout data-polar-checkout-theme="dark" style="background: linear-gradient(135deg, rgba(6, 182, 212, 0.2), rgba(16, 185, 129, 0.2)); border: 1px solid rgba(16, 185, 129, 0.4); color: #34d399; font-weight: 800;">
+<span class="desktop-text">⭐ OpenCEA Pro Suite ($19)</span>
+<span class="mobile-text">⭐ Pro ($19)</span>
+</a>
+<a class="tab-btn" href="index.html" id="btn-tab-dashboard">
+<span class="desktop-text">🏠 Dashboard Home</span>
+<span class="mobile-text">Home</span>
+</a>
+<a class="tab-btn" href="market.html" id="btn-tab-market">
+<span class="desktop-text">📈 Market Index</span>
+<span class="mobile-text">Market</span>
+</a>
+<a class="tab-btn active" href="vpd.html" id="btn-tab-vpd">
+<span class="desktop-text">Vapor Pressure Deficit (VPD)</span>
+<span class="mobile-text">VPD</span>
+</a>
+<a class="tab-btn" href="mixing_valve.html" id="btn-tab-valve">
+<span class="desktop-text">Heating Mixing Valve</span>
+<span class="mobile-text">Mixing Valve</span>
+</a>
+<a class="tab-btn" href="fertigation.html" id="btn-tab-fert">
+<span class="desktop-text">Stock Tank Fertigation</span>
+<span class="mobile-text">Fertigation</span>
+</a>
+<a class="tab-btn" href="heat_loss.html" id="btn-tab-heat-loss">
+<span class="desktop-text">Greenhouse Heat Loss</span>
+<span class="mobile-text">Heat Loss</span>
+</a>
+<a class="tab-btn" href="roi_simulator.html" id="btn-tab-roi">
+<span class="desktop-text">Boiler vs Heat Pump ROI</span>
+<span class="mobile-text">Heating ROI</span>
+</a>
+<a class="tab-btn" href="transpiration.html" id="btn-tab-transpiration">
+<span class="desktop-text">Plant Transpiration (PM)</span>
+<span class="mobile-text">Transpiration</span>
+</a>
+<a class="tab-btn" href="diagnosis.html" id="btn-tab-pollinator">
+<span class="desktop-text">🐝 Crop Diagnosis &amp; Bees</span>
+<span class="mobile-text">🐝 Pest/Bees</span>
+</a>
+<a class="tab-btn" href="vertical_dli.html" id="btn-tab-vertical">
+<span class="desktop-text">🌱 Vertical Farming DLI</span>
+<span class="mobile-text">🌱 Vertical DLI</span>
+</a>
+<a class="tab-btn" href="smartfarm_layout_wfc.html" id="btn-tab-wfc">
+<span class="desktop-text">📐 WFC Layout Planner</span>
+<span class="mobile-text">📐 WFC Layout</span>
+</a>
+<a class="tab-btn" href="https://wiki.inwoovation.com/" target="_blank" style="border-color: rgba(56, 189, 248, 0.4); color: #38bdf8; background: rgba(56, 189, 248, 0.1);">
+<span class="desktop-text">🔬 AgTech Wiki & Research ↗</span>
+<span class="mobile-text">Research</span>
+</a>
+</div></div>
+<div class="calc-wrapper active" id="section-vpd">
+<div class="form-panel">
+<h1 class="panel-title">Environmental Data</h1>
+<div class="segmented-control">
+<button class="segment-btn active" id="stage-seedling" onclick="setVpdStage('seedling')">Seedling/Clone</button>
+<button class="segment-btn" id="stage-veg" onclick="setVpdStage('veg')">Vegetative</button>
+<button class="segment-btn" id="stage-flower" onclick="setVpdStage('flower')">Flower/Fruit</button>
+</div>
+<div class="input-group">
+<div class="input-header">
+<label for="vpd-preset" id="lbl-vpd-preset">Light &amp; Env Preset</label>
+</div>
+<div class="input-control-wrapper select-arrow-wrapper">
+<select id="vpd-preset" onchange="applyVpdPreset()">
+<option selected="" value="custom">Custom Input</option>
+<option value="led">LED Greenhouse (Offset +1.0°C)</option>
+<option value="hps">HPS Greenhouse (Offset -2.0°C)</option>
+<option value="sunlight">Sunlight Day (Offset -1.5°C)</option>
+<option value="night">Night/Dark (Offset 0.0°C)</option>
+</select>
+</div>
+</div>
+<div class="input-group">
+<div class="input-header">
+<label for="temp-air">Air Temperature</label>
+<div class="toggle-container">
+<button class="toggle-btn active" id="temp-unit-c" onclick="switchTempUnit('C')">°C</button>
+<button class="toggle-btn" id="temp-unit-f" onclick="switchTempUnit('F')">°F</button>
+</div>
+</div>
+<div class="input-control-wrapper">
+<input id="temp-air" oninput="calculateVpdEngine()" step="0.1" type="number" value="25.0"/>
+<span class="suffix" id="temp-air-unit">°C</span>
+</div>
+</div>
+<div class="input-group">
+<div class="input-header">
+<label for="rh-air">Relative Humidity</label>
+</div>
+<div class="input-control-wrapper">
+<input id="rh-air" max="98" min="10" oninput="calculateVpdEngine()" step="1" type="number" value="65"/>
+<span class="suffix">%</span>
+</div>
+</div>
+<div class="input-group">
+<div class="input-header">
+<label for="offset-leaf">Leaf Temp Offset (vs. Air)</label>
+</div>
+<div class="input-control-wrapper">
+<input id="offset-leaf" oninput="calculateVpdEngine()" step="0.1" type="number" value="-2.0"/>
+<span class="suffix" id="offset-leaf-unit">°C</span>
+</div>
+</div>
+<!-- VPD Scientific SEO Guide Accordion -->
+<div class="accordion academic-guide" id="vpd-academic-accordion">
+<div class="accordion-header" onclick="toggleAccordion('vpd-academic-accordion')">
+
+<span class="academic-guide-lang" style="font-weight: 700; color: var(--primary);">📚 Scientific Climate Control Guide (VPD)</span>
+<span class="icon" style="color: var(--primary);">▼</span>
+</div>
+<div class="accordion-body">
+
+<div class="academic-guide-lang">
+<h3>📚 Horticultural Physiology of Vapor Pressure Deficit (VPD) and Climate Control</h3>
+<p>Vapor Pressure Deficit (VPD) is a critical climate variable in CEA (Controlled Environment Agriculture) that directly governs plant transpiration rates, nutrient uptake, and photosynthetic efficiency. Unlike Relative Humidity (RH), VPD reflects the true drying power of the air by calculating the difference between the saturation vapor pressure and actual vapor pressure in kilopascals (kPa).</p>
+<h4>1. Mathematical Definition and Formulas</h4>
+<p>VPD represents the pressure differential between the moisture inside the leaf's stomatal cavity (assumed to be 100% saturated at leaf temperature) and the surrounding air. The mathematical calculation uses the Tetens equation:</p>
+<ul>
+<li>Saturation Vapor Pressure: <code>VPsat(T) = 0.61078 * exp((17.27 * T) / (T + 237.3))</code> (kPa)</li>
+<li>Actual Vapor Pressure of Air: <code>VPact = VPsat(T_air) * (RH / 100)</code> (kPa)</li>
+<li>Leaf-to-Air VPD: <code>VPD_leaf = VPsat(T_leaf) - VPact</code> (kPa) (where <code>T_leaf = T_air + Offset</code>)</li>
+</ul>
+<h4>2. The Biophysical Role of Leaf Temperature Offset</h4>
+<p>Due to evaporative cooling during transpiration, active crop leaves are typically 1.5°C to 2.0°C cooler than the ambient air (negative temperature offset). However, artificial lighting heavily skews this dynamic. HPS lamps emit intensive infrared radiation, often heating the leaves above ambient temperatures, while LED lighting lacks this radiant heat, keeping the leaf temperature closer to or below the room temperature. Accounting for this Leaf Temperature Offset is crucial for high-precision climate control.</p>
+<h4>3. Target Ranges &amp; Preventative Physiology</h4>
+<ul>
+<li><strong>Propagating &amp; Rooting (0.4 - 0.8 kPa)</strong>: Low VPD prevents dehydration in rootless cuttings by keeping transpiration low, fostering cellular turgor and rapid rooting.</li>
+<li><strong>Vegetative Stage (0.8 - 1.1 kPa)</strong>: A moderate VPD keeps stomata open for optimal CO2 assimilation while ensuring a steady transpirational stream for major mobile nutrients.</li>
+<li><strong>Flowering &amp; Fruiting (1.1 - 1.5 kPa)</strong>: Higher VPD rates facilitate transpirational pull for calcium, a non-mobile element essential for cell wall structure, effectively preventing blossom-end rot in tomatoes and tip-burn in leafy greens. It also suppresses fungal spore germination.</li>
+</ul>
+<h4>4. Peer-Reviewed Academic Research & Stomatal Conductance</h4>
+<p>Controlled environment plant physiology studies indexed in <strong>PubMed (NCBI)</strong> validate these operational ranges:</p>
+<ul>
+<li><strong>Interactive Regimes of Reduced Irrigation and Salt Stress (PMID 30873187 | DOI: 10.3389/fpls.2019.00160)</strong>: Demonstrates that elevated atmospheric VPD exacerbates leaf hydraulic conductivity loss and stomatal closure under root-zone osmotic stress, lowering Water Use Efficiency (WUE) at leaf and plant scales.</li>
+<li><strong>Atmospheric Drought & Photosynthetic Impedance in Glasshouse Crops (PMID 30382414 | DOI: 10.1007/s00572-018-0872-6)</strong>: Evaluates atmospheric drought (VPD > 1.8 kPa) in commercial glasshouse tomatoes, confirming severe transpiration inhibition and reduced CO2 assimilation under fluctuating radiation conditions.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="result-panel">
+<div class="result-header">Leaf-to-Air VPD</div>
+<!-- Dynamic Gauge SVG -->
+<div class="gauge-svg-wrapper">
+<svg height="110" viewbox="0 0 200 110" width="200">
+<defs>
+<lineargradient id="cyan-green-grad" x1="0%" x2="100%" y1="0%" y2="0%">
+<stop offset="0%" stop-color="#ef4444"></stop> <!-- Red (dry) -->
+<stop offset="40%" stop-color="#f59e0b"></stop> <!-- Yellow -->
+<stop offset="60%" stop-color="#10b981"></stop> <!-- Green (opt) -->
+<stop offset="85%" stop-color="#06b6d4"></stop> <!-- Cyan -->
+<stop offset="100%" stop-color="#ef4444"></stop> <!-- Red (wet) -->
+</lineargradient>
+</defs>
+<!-- Arc (Radius 90, Center 100,100) -->
+<path class="gauge-meter gauge-bg" d="M 10 100 A 90 90 0 0 1 190 100"></path>
+<path class="gauge-meter gauge-fill" d="M 10 100 A 90 90 0 0 1 190 100" id="gauge-fill-arc"></path>
+</svg>
+<div class="gauge-indicator" id="gauge-hand"></div>
+<div class="gauge-center-dot"></div>
+</div>
+<div class="big-number" id="vpd-value">0.75</div>
+<div class="status-pill optimal" id="vpd-status-pill">Optimal VPD</div>
+<p class="result-desc" id="vpd-explanation">Perfect climate envelope for your stage.</p>
+<div class="info-card">
+<h4>Horticulture Tip</h4>
+<p id="vpd-tip">Maintaining proper leaf-to-air VPD is essential for normal plant transpiration and calcium uptake, preventing physiological disorders like blossom-end rot.</p>
+</div>
+    <div class="info-card" id="vpd-dewpoint-card" style="border-left: 4px solid var(--cyan);">
+        <h4>Dew Point &amp; Condensation Alarm</h4>
+        <p id="vpd-dewpoint-value" style="font-weight: 700; color: var(--text-light); font-size: 1rem; margin-top: 0.2rem;">Dew Point: --</p>
+        <p id="vpd-dewpoint-status" style="font-size: 0.85rem; color: var(--text-gray); margin-top: 0.2rem; line-height: 1.4;"></p>
+    </div>
+    <div class="info-card" id="vpd-actions-card" style="border-left: 4px solid var(--primary);">
+        <h4 id="lbl-vpd-actions-title">Live Climate Action Guide</h4>
+        <ul id="vpd-actions-list" style="list-style-type: none; font-size: 0.85rem; color: var(--text-gray); margin-top: 0.5rem; display: flex; flex-direction: column; gap: 0.5rem; line-height: 1.5;">
+        <!-- Populated dynamically -->
+        </ul>
+    </div>
+    </div>
+    
+    <!-- Interactive VPD Matrix Section -->
+    <div class="vpd-matrix-container">
+        <h3 class="vpd-matrix-title">Interactive VPD Matrix Chart</h3>
+        <p class="vpd-matrix-subtitle">This chart displays calculated Leaf VPD values (kPa). The color coding dynamically shifts to highlight optimal zones matching your selected crop stage, leaf offset, and temperature unit settings.</p>
+        <div class="vpd-matrix-table-wrapper">
+            <div id="vpd-matrix-target"></div>
+        </div>
+        <div class="vpd-legend">
+            <div class="vpd-legend-item">
+                <div class="vpd-legend-color vpd-cell-too-low"></div>
+                <span>Too Humid (Low VPD)</span>
+            </div>
+            <div class="vpd-legend-item">
+                <div class="vpd-legend-color vpd-cell-optimal"></div>
+                <span>Optimal Range</span>
+            </div>
+            <div class="vpd-legend-item">
+                <div class="vpd-legend-color vpd-cell-warning"></div>
+                <span>Too Dry (High VPD)</span>
+            </div>
+            <div class="vpd-legend-item">
+                <div class="vpd-legend-color vpd-cell-danger"></div>
+                <span>Extreme Dry (Risk)</span>
+            </div>
+        </div>
+    </div>
+    <div id="amazon-vpd-widget"></div>
+</div>
+
+
+
+
+
+<footer>
+<div style="display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 0.8rem; flex-wrap: wrap; font-size: 0.9rem;">
+<a href="index.html" style="color: var(--text-gray); text-decoration: none; font-weight: 600; hover: { color: var(--primary); }">Home</a>
+<a href="about.html" style="color: var(--text-gray); text-decoration: none; font-weight: 600;">About</a>
+<a href="contact.html" style="color: var(--text-gray); text-decoration: none; font-weight: 600;">Contact</a>
+<a href="terms.html" style="color: var(--text-gray); text-decoration: none; font-weight: 600;">Terms</a>
+<a href="privacy.html" style="color: var(--text-gray); text-decoration: none; font-weight: 600;">Privacy Policy</a>
+</div>
+<p>© 2026 Smart Farm Engineering Lab. All rights reserved.</p>
+<p>Built for zero-cost static hosting. Designed by Inwoovation</p>
+<p id="footer-disclaimer" style="font-size: 0.75rem; color: var(--text-gray); opacity: 0.75; max-width: 800px; margin: 1.2rem auto 0 auto; line-height: 1.5; font-weight: 500; text-align: center;"><strong>Disclaimer:</strong> The simulations provided by this tool are for educational and informational purposes only. Inwoovation is not liable for any crop damage, equipment failure, or financial loss resulting from the use of these simulators. Always double-check simulation results and consult certified professionals before applying changes to commercial greenhouses.</p>
+</footer>
+</div>
+<!-- Floating Inquiry Button (FAB) -->
+<a class="feedback-fab" href="https://forms.gle/SC3ehhA4r6sPEZxV7" id="btn-feedback" onclick="handleFeedbackClick(event)" target="_blank">
+<span class="icon">📩</span>
+<span class="text" id="lbl-feedback-text">Inquiry &amp; Request</span>
+</a>
+
+<!-- My Farm Profile Drawer -->
+<div class="farm-profile-drawer" id="farm-profile-drawer" style="display: none;">
+    <div class="drawer-overlay" onclick="toggleFarmProfileDrawer()"></div>
+    <div class="drawer-content">
+        <div class="drawer-header">
+            <h3>📋 My Farm Profile</h3>
+            <button class="drawer-close-btn" onclick="toggleFarmProfileDrawer()">✕</button>
+        </div>
+        <p class="drawer-subtitle" style="font-size: 0.78rem; color: var(--text-gray); margin-bottom: 1.2rem; line-height: 1.4;">
+            🔒 GDPR Compliant: Your profile is stored 100% locally on your browser. We collect zero data on our servers.
+        </p>
+        <div class="drawer-form" style="display: flex; flex-direction: column; gap: 0.9rem; text-align: left;">
+            <div class="input-group" style="margin-bottom: 0;">
+                <label for="prof-area" style="font-size: 0.8rem; font-weight: 600; color: var(--text-light);">Greenhouse Floor Area</label>
+                <div class="input-control-wrapper" style="margin-top: 0.3rem;">
+                    <input type="number" id="prof-area" value="1500" step="100" style="width: 100%;" />
+                    <span class="suffix" id="prof-area-suffix">m²</span>
+                </div>
+            </div>
+            
+            <div class="input-group" style="margin-bottom: 0;">
+                <label for="prof-cladding" style="font-size: 0.8rem; font-weight: 600; color: var(--text-light);">Cladding Material</label>
+                <div class="input-control-wrapper select-arrow-wrapper" style="margin-top: 0.3rem;">
+                    <select id="prof-cladding" style="width: 100%;" onchange="onProfileCladdingChange()">
+                        <option value="5.5">Single Glass / PE Film (U = 5.5)</option>
+                        <option value="3.5">Double PE / Polycarbonate (U = 3.5)</option>
+                        <option value="1.8">Triple Glass / High Insulated (U = 1.8)</option>
+                        <option value="custom">Other (Custom U-Value)</option>
+                    </select>
+                </div>
+                <div class="input-control-wrapper" id="prof-cladding-custom-wrapper" style="display: none; margin-top: 0.5rem;">
+                    <input type="number" id="prof-cladding-custom" value="2.5" step="0.1" style="width: 100%;" />
+                    <span class="suffix">W/m²·K</span>
+                </div>
+            </div>
+
+            <div class="input-group" style="margin-bottom: 0;">
+                <label for="prof-crop" style="font-size: 0.8rem; font-weight: 600; color: var(--text-light);">Main Cultivated Crop</label>
+                <div class="input-control-wrapper select-arrow-wrapper" style="margin-top: 0.3rem;">
+                    <select id="prof-crop" style="width: 100%;">
+                        <option value="tomato">Tomato</option>
+                        <option value="strawberry">Strawberry</option>
+                        <option value="pepper">Bell Pepper</option>
+                        <option value="cucumber">Cucumber</option>
+                        <option value="herbs">Medicinal Herbs / Basil</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="input-group" style="margin-bottom: 0;">
+                <label for="prof-tank" style="font-size: 0.8rem; font-weight: 600; color: var(--text-light);">Fertigation Tank A/B Vol</label>
+                <div class="input-control-wrapper" style="margin-top: 0.3rem;">
+                    <input type="number" id="prof-tank" value="1000" step="100" style="width: 100%;" />
+                    <span class="suffix" id="prof-tank-suffix">L</span>
+                </div>
+            </div>
+
+            <div class="input-group" style="margin-bottom: 0;">
+                <label for="prof-injector" style="font-size: 0.8rem; font-weight: 600; color: var(--text-light);">Injector Dilution Ratio (1:X)</label>
+                <div class="input-control-wrapper" style="margin-top: 0.3rem;">
+                    <input type="number" id="prof-injector" value="100" step="10" style="width: 100%;" />
+                    <span class="suffix">Ratio</span>
+                </div>
+            </div>
+
+            <div class="input-group" style="margin-bottom: 0;">
+                <label for="prof-boiler" style="font-size: 0.8rem; font-weight: 600; color: var(--text-light);">Boiler Fuel Type</label>
+                <div class="input-control-wrapper select-arrow-wrapper" style="margin-top: 0.3rem;">
+                    <select id="prof-boiler" style="width: 100%;" onchange="onProfileBoilerChange()">
+                        <option value="gas">Natural Gas</option>
+                        <option value="oil">Heating Oil / Kerosene</option>
+                        <option value="lpg">LPG</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="input-group" style="margin-bottom: 0;">
+                <label for="prof-boiler-price" style="font-size: 0.8rem; font-weight: 600; color: var(--text-light);">Boiler Fuel Unit Price</label>
+                <div class="input-control-wrapper" style="margin-top: 0.3rem;">
+                    <input type="number" id="prof-boiler-price" value="1000" step="10" style="width: 100%;" />
+                    <span class="suffix" id="prof-boiler-price-suffix">₩/m³</span>
+                </div>
+            </div>
+
+            <div class="input-group" style="margin-bottom: 0;">
+                <label for="prof-elec-rate" style="font-size: 0.8rem; font-weight: 600; color: var(--text-light);">Agricultural Electricity Rate</label>
+                <div class="input-control-wrapper" style="margin-top: 0.3rem;">
+                    <input type="number" id="prof-elec-rate" value="80" step="1" style="width: 100%;" />
+                    <span class="suffix" id="prof-elec-rate-suffix">₩/kWh</span>
+                </div>
+            </div>
+            
+            <button class="estimator-btn" onclick="saveFarmProfile()" style="margin-top: 0.5rem; background: linear-gradient(135deg, var(--primary) 0%, var(--cyan) 100%); color: var(--text-dark); border: none; font-weight: 700; width: 100%;">
+                💾 Save Profile
+            </button>
+
+            <div style="display: flex; gap: 0.5rem; margin-top: 0.2rem;">
+                <button class="estimator-btn" onclick="exportFarmProfile()" style="font-size: 0.8rem; background: rgba(15, 23, 42, 0.04); border: 1px solid var(--border-card); color: var(--text-light); flex: 1; display: inline-flex; align-items: center; justify-content: center; gap: 0.2rem; margin: 0; padding: 0.6rem 0;">
+                    📤 Export
+                </button>
+                <button class="estimator-btn" onclick="triggerProfileImport()" style="font-size: 0.8rem; background: rgba(15, 23, 42, 0.04); border: 1px solid var(--border-card); color: var(--text-light); flex: 1; display: inline-flex; align-items: center; justify-content: center; gap: 0.2rem; margin: 0; padding: 0.6rem 0;">
+                    📥 Import
+                </button>
+                <input type="file" id="prof-import-file" style="display: none;" onchange="importFarmProfile(event)" accept=".json" />
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="common.js?v=3.2"></script><script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+        autoDisplay: false
+      }, 'google_translate_element');
+    }
+    </script><script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" type="text/javascript"></script>
+<script src="https://cdn.jsdelivr.net/npm/@polar-sh/checkout@0.1/dist/embed.global.js" defer data-auto-init></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        if (typeof renderAmazonEquipmentCards === "function") {
+            renderAmazonEquipmentCards("amazon-vpd-widget", "vpd");
+        }
+    });
+</script>
+</body></html>

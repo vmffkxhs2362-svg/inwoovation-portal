@@ -1,13 +1,548 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Redirecting to Inwoovation Lab...</title>
-  <link rel="canonical" href="https://inwoovation.com/parts/">
-  <meta http-equiv="refresh" content="0; url=https://inwoovation.com/parts/">
-  <script>window.location.replace("https://inwoovation.com/parts/" + window.location.search + window.location.hash);</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AgriMaster is a global agricultural parts and equipment parametric search engine. Find solenoid valves, vent motors, pH probes, LED grow lights with engineering specs, ref. pricing, and local dealer locations within 50km.">
+    <meta name="google-site-verification" content="xHzmAhcxMgyf-hP2TujQwCGF3-7GrLBkLU9PoHShaps" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V4RYJBMEDE"></script>
+    <script>
+       window.dataLayer = window.dataLayer || [];
+       function gtag(){dataLayer.push(arguments);}
+       gtag('js', new Date());
+       gtag('config', 'G-V4RYJBMEDE');
+    </script>
+    <!-- Google AdSense Script -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8597809158257497" crossorigin="anonymous"></script>
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://inwoovation.com/parts/">
+    <!-- Open Graph -->
+    <meta property="og:title" content="AgriMaster | Global AgTech Component Search Engine">
+    <meta property="og:description" content="Precision parametric search for agricultural parts and equipment. Spec-matched components with global shipping and 50km local dealer locator.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://inwoovation.com/parts/">
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌱</text></svg>">
+    <title>AgriMaster | Global Agricultural Parts & Equipment Search Engine</title>
+    <!-- Leaflet.js Interactive Map Engine -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Pretendard:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0f172a;
+            --bg-card: #1e293b;
+            --bg-input: #334155;
+            --primary: #10b981;
+            --primary-hover: #059669;
+            --accent-orange: #ff9900;
+            --text-light: #f8fafc;
+            --text-gray: #94a3b8;
+            --border: rgba(255, 255, 255, 0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Pretendard', 'Outfit', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+            padding-bottom: 4rem;
+        }
+
+        header {
+            background: rgba(30, 41, 59, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            padding: 1.2rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+        }
+
+        .badge-proto {
+            font-size: 0.65rem;
+            background: rgba(234, 179, 8, 0.2);
+            color: #eab308;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            border: 1px solid rgba(234, 179, 8, 0.4);
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+
+        .hero-banner {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-banner h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #10b981 0%, #38bdf8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-banner p {
+            color: var(--text-gray);
+            font-size: 1rem;
+        }
+
+        /* Filter Section */
+        .search-panel {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .search-bar-row {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .search-input {
+            flex: 1;
+            background: var(--bg-input);
+            border: 1px solid var(--border);
+            color: #fff;
+            padding: 0.8rem 1.2rem;
+            border-radius: 10px;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        .search-input:focus {
+            border-color: var(--primary);
+        }
+
+        .category-pills {
+            display: flex;
+            gap: 0.6rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+
+        .pill-btn {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--border);
+            color: var(--text-gray);
+            padding: 0.5rem 1rem;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .pill-btn.active, .pill-btn:hover {
+            background: var(--primary);
+            color: #fff;
+            border-color: var(--primary);
+        }
+
+        .parametric-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .filter-group label {
+            display: block;
+            font-size: 0.8rem;
+            color: var(--text-gray);
+            margin-bottom: 0.4rem;
+            font-weight: 600;
+        }
+
+        .filter-select {
+            width: 100%;
+            background: var(--bg-input);
+            border: 1px solid var(--border);
+            color: #fff;
+            padding: 0.6rem 0.8rem;
+            border-radius: 8px;
+            outline: none;
+            font-size: 0.9rem;
+        }
+
+        .toggle-check {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            cursor: pointer;
+            margin-top: 1.6rem;
+            font-size: 0.9rem;
+            color: #38bdf8;
+            font-weight: 600;
+        }
+
+        /* Parts Grid */
+        .results-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+
+        .parts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .part-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 1.2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .part-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--primary);
+        }
+
+        .card-tag {
+            font-size: 0.7rem;
+            background: rgba(16, 185, 129, 0.15);
+            color: var(--primary);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 0.6rem;
+        }
+
+        .part-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text-light);
+            margin-bottom: 0.8rem;
+            line-height: 1.4;
+        }
+
+        .spec-list {
+            list-style: none;
+            font-size: 0.82rem;
+            color: var(--text-gray);
+            margin-bottom: 1rem;
+            background: rgba(15, 23, 42, 0.5);
+            padding: 0.6rem 0.8rem;
+            border-radius: 8px;
+        }
+
+        .spec-list li {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.3rem;
+        }
+
+        .spec-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .part-price {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: #fff;
+        }
+
+        .btn-check-stock {
+            background: linear-gradient(135deg, var(--primary) 0%, #059669 100%);
+            color: #fff;
+            border: none;
+            padding: 0.7rem 1rem;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            cursor: pointer;
+            width: 100%;
+            transition: opacity 0.2s;
+        }
+
+        .btn-check-stock:hover {
+            opacity: 0.9;
+        }
+
+        /* Modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.75);
+            backdrop-filter: blur(8px);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 200;
+        }
+
+        .modal-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            width: 90%;
+            max-width: 550px;
+            max-height: 85vh;
+            overflow-y: auto;
+            padding: 2rem;
+            position: relative;
+        }
+
+        /* Hide Leaflet attribution text & add pointer cursor */
+        .leaflet-control-attribution {
+            display: none !important;
+        }
+
+        #modal-map-view {
+            cursor: pointer;
+            position: relative;
+        }
+
+        .close-modal {
+            position: sticky;
+            top: 0;
+            float: right;
+            font-size: 1.5rem;
+            color: var(--text-gray);
+            cursor: pointer;
+            z-index: 20;
+            background: var(--bg-card);
+            border-radius: 50%;
+            padding: 0.2rem 0.6rem;
+        }
+
+        .modal-title {
+            font-size: 1.3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .option-box {
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .option-title {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 0.4rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-buy-online {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff9900 0%, #ffac31 100%);
+            color: #111;
+            font-weight: 800;
+            padding: 0.6rem 1rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            margin-top: 0.6rem;
+            margin-right: 0.5rem;
+        }
+
+        .btn-buy-ali {
+            display: inline-block;
+            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+            color: #fff;
+            font-weight: 800;
+            padding: 0.6rem 1rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            margin-top: 0.6rem;
+        }
+    </style>
 </head>
-<body style="background:#0b0f19;color:#f8fafc;font-family:sans-serif;display:flex;justify-content:center;align-items:center;height:100vh;margin:0;">
-  <p>Redirecting to <a href="https://inwoovation.com/parts/" style="color:#38bdf8;">https://inwoovation.com/parts/</a>...</p>
+<body>
+
+    <header>
+        <a href="#" class="logo">🌱 AgriMaster <span class="badge-proto">Global B2B Portal</span></a>
+        <div style="font-size: 0.85rem; color: var(--text-gray);">Agricultural Materials &amp; Equipment Parametric Search Engine</div>
+    </header>
+
+    <div class="container">
+        <div class="hero-banner">
+            <h1>Global AgTech Component &amp; Equipment Search Engine</h1>
+            <p>Enter pipe sizes, operating voltage, or pressure ratings to match components with global shipping and local dealers within 50km.</p>
+            <div id="user-location-badge" style="display:inline-flex; align-items:center; gap:0.4rem; background:rgba(56,189,248,0.15); color:#38bdf8; border:1px solid rgba(56,189,248,0.3); padding:0.35rem 0.9rem; border-radius:20px; font-size:0.82rem; font-weight:700; margin-top:0.8rem;">
+                📍 Detecting your farm location...
+            </div>
+        </div>
+
+
+        <!-- Search & Filter Panel -->
+        <div class="search-panel">
+            <div class="search-bar-row">
+                <input type="text" id="search-keyword" class="search-input" placeholder="Search part name, spec, or SKU (e.g. 25mm solenoid valve, 24V motor, pH probe...)" oninput="filterParts()">
+            </div>
+
+            <!-- Category Pills -->
+            <div class="category-pills">
+                <button class="pill-btn active" onclick="setCategory('all', this)">All Categories</button>
+                <button class="pill-btn" onclick="setCategory('irrigation', this)">💧 Irrigation &amp; Fertigation</button>
+                <button class="pill-btn" onclick="setCategory('climate', this)">🏠 Climate &amp; Structure</button>
+                <button class="pill-btn" onclick="setCategory('sensors', this)">💡 CEA Lighting &amp; Sensors</button>
+                <button class="pill-btn" onclick="setCategory('tools', this)">✂️ Tools &amp; Supplies</button>
+            </div>
+
+            <!-- Parametric Filters -->
+            <div class="parametric-grid">
+                <div class="filter-group">
+                    <label for="filter-pipe">Pipe / Connection Size</label>
+                    <select id="filter-pipe" class="filter-select" onchange="filterParts()">
+                        <option value="all">All Sizes</option>
+                        <option value="1/2&quot;">1/2" (15mm)</option>
+                        <option value="3/4&quot;">3/4" (20mm)</option>
+                        <option value="1&quot; (25mm)">1" (25mm)</option>
+                        <option value="1.5&quot; (40mm)">1.5" (40mm)</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="filter-voltage">Operating Voltage</label>
+                    <select id="filter-voltage" class="filter-select" onchange="filterParts()">
+                        <option value="all">All Voltages</option>
+                        <option value="AC220V">AC 220V</option>
+                        <option value="DC24V">DC 24V</option>
+                        <option value="DC12V">DC 12V</option>
+                        <option value="Manual">Manual / Non-powered</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label class="toggle-check">
+                        <input type="checkbox" id="filter-local-only" onchange="filterParts()">
+                        <span>📍 Show Nearby Dealers (Within 50km)</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Results Section -->
+        <div class="results-header">
+            <span id="results-count">Search Results: 0 Components Found</span>
+            <span>* Engineering specs derived from datasheets; pricing represents indicative market reference (Ref. Price).</span>
+        </div>
+
+
+        <div class="parts-grid" id="parts-container">
+            <!-- Dynamic Part Cards Rendered via app.js -->
+        </div>
+    </div>
+
+    <!-- Dual Purchasing Modal -->
+    <div class="modal-overlay" id="parts-modal">
+        <div class="modal-card">
+            <span class="close-modal" onclick="closeModal()" aria-label="Close modal" role="button" tabindex="0">&times;</span>
+            <div class="modal-title" id="modal-part-name">Component Specifications &amp; Procurement Options</div>
+
+            <!-- Option A: Global Online Affiliate -->
+            <div class="option-box">
+                <div class="option-title">🌐 Option A: Direct Online Order (Global Shipping)</div>
+                <p style="font-size:0.82rem; color:var(--text-gray);">Order directly via Amazon or AliExpress for international delivery.</p>
+                <div>
+                    <a href="#" target="_blank" id="modal-amazon-link" class="btn-buy-online">Order on Amazon ↗</a>
+                    <a href="#" target="_blank" id="modal-ali-link" class="btn-buy-ali">AliExpress B2B Wholesale ↗</a>
+                </div>
+            </div>
+
+            <!-- Option B: Local Dealer Nearby (1-Click Call & 50km Interactive Map) -->
+            <div class="option-box" style="border-color: rgba(56, 189, 248, 0.4); background: rgba(56, 189, 248, 0.05);">
+                <div class="option-title" style="color: #38bdf8;">📍 Option B: Nearby Dealer Locations (Within 50km)</div>
+                <p style="font-size:0.8rem; color:var(--text-gray); margin-bottom: 0.6rem;">Specialty equipment dealers carrying this specification within 50km of your farm.</p>
+                <div id="modal-map-view" style="width: 100%; height: 200px; border-radius: 12px; margin-bottom: 0.8rem; border: 1px solid rgba(56, 189, 248, 0.3); overflow: hidden; background: #0f172a;"></div>
+                <div id="modal-local-container">
+                    <!-- Populated dynamically via app.js -->
+                </div>
+            </div>
+
+            <!-- Option C: 1-Click Google Spec Search -->
+            <div class="option-box" style="border-color: rgba(168, 85, 247, 0.4); background: rgba(168, 85, 247, 0.05);">
+                <div class="option-title" style="color: #c084fc;">🔍 Option C: 1-Click Google Spec &amp; Datasheet Search</div>
+                <p style="font-size:0.8rem; color:var(--text-gray);">Search Google for official engineering datasheets, CAD drawings, and local distributors for this exact specification.</p>
+                <div>
+                    <a href="#" target="_blank" id="modal-google-search-link" style="display:inline-block; background:linear-gradient(135deg, #a855f7 0%, #7e22ce 100%); color:#fff; font-weight:800; padding:0.6rem 1rem; border-radius:8px; text-decoration:none; font-size:0.85rem; margin-top:0.6rem;">
+                        🔍 Search Spec on Google ↗
+                    </a>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer style="margin-top: 3rem; padding: 2rem 0; border-top: 1px solid var(--border); text-align: center; color: var(--text-gray); font-size: 0.85rem;">
+        <div style="display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 0.8rem; flex-wrap: wrap; font-size: 0.9rem;">
+            <a href="index.html" style="color: var(--text-gray); text-decoration: none; font-weight: 600;">Home</a>
+            <a href="privacy.html" style="color: var(--text-gray); text-decoration: none; font-weight: 600;">Privacy Policy</a>
+            <a href="terms.html" style="color: var(--text-gray); text-decoration: none; font-weight: 600;">Terms of Service</a>
+            <a href="https://inwoovation.com/about.html" style="color: var(--text-gray); text-decoration: none; font-weight: 600;">About</a>
+            <a href="https://inwoovation.com/contact.html" style="color: var(--text-gray); text-decoration: none; font-weight: 600;">Contact</a>
+            <a href="https://forms.gle/SC3ehhA4r6sPEZxV7" target="_blank" style="color: var(--primary); font-weight: 700; text-decoration: none;">Send Feedback 📩</a>
+        </div>
+        <p>© 2026 Inwoovation Lab. AgriMaster. All rights reserved.</p>
+        <p style="font-size: 0.75rem; color: var(--text-gray); opacity: 0.75; max-width: 800px; margin: 1.2rem auto 0 auto; line-height: 1.5; font-weight: 500;"><strong>Disclaimer:</strong> Product specifications, pricing, and dealer information are provided for reference only. Inwoovation is not liable for accuracy of third-party product data or purchasing decisions made using this platform.</p>
+    </footer>
+
+    <script src="app.js?v=1.1"></script>
 </body>
 </html>

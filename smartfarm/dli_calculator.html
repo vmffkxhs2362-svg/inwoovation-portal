@@ -1,13 +1,230 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Redirecting to Inwoovation Lab...</title>
-  <link rel="canonical" href="https://inwoovation.com/smartfarm/dli_calculator.html">
-  <meta http-equiv="refresh" content="0; url=https://inwoovation.com/smartfarm/dli_calculator.html">
-  <script>window.location.replace("https://inwoovation.com/smartfarm/dli_calculator.html" + window.location.search + window.location.hash);</script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Daily Light Integral (DLI) & LED Electricity ROI Calculator | Smart Farm Lab</title>
+<meta content="Calculate Daily Light Integral (DLI) targets, supplemental LED PPFD requirements, photoperiod hours, and daily/monthly electricity ROI costs for commercial CEA and vertical farms." name="description"/>
+<meta content="DLI calculator, Daily Light Integral, LED grow light calculator, PPFD to DLI, electricity ROI calculator, vertical farm lighting, CEA light steering" name="keywords"/>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-V4RYJBMEDE"></script>
+<script>
+   window.dataLayer = window.dataLayer || [];
+   function gtag(){dataLayer.push(arguments);}
+   gtag('js', new Date());
+   gtag('config', 'G-V4RYJBMEDE');
+</script>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8597809158257497"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="style.css?v=3.2" rel="stylesheet"/>
 </head>
-<body style="background:#0b0f19;color:#f8fafc;font-family:sans-serif;display:flex;justify-content:center;align-items:center;height:100vh;margin:0;">
-  <p>Redirecting to <a href="https://inwoovation.com/smartfarm/dli_calculator.html" style="color:#38bdf8;">https://inwoovation.com/smartfarm/dli_calculator.html</a>...</p>
+<body>
+<main class="container">
+<header>
+<div class="header-top-bar" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 0.8rem;">
+<div class="badge" id="header-badge">Last Updated: September 08, 2026</div>
+<div style="display: flex; gap: 0.5rem; align-items: center;">
+    <button class="lang-btn" id="btn-farm-profile" onclick="toggleFarmProfileDrawer()" style="border-color: var(--primary); color: var(--primary); display: inline-flex; align-items: center; gap: 0.3rem; font-weight: 600; padding: 0.4rem 0.8rem; border-radius: 10px; cursor: pointer; background: transparent; border: 1px solid;">
+        📋 <span>My Farm</span>
+    </button>
+<div class="lang-switch" id="unit-switch">
+<button class="lang-btn active" id="unit-metric" onclick="changeUnit('metric')">Metric</button>
+<button class="lang-btn" id="unit-imperial" onclick="changeUnit('imperial')">Imperial</button>
+</div>
+<div id="google_translate_element" style="display: inline-block; margin-left: 0.5rem;"></div>
+</div>
+</div>
+<div id="header-title" onclick="location.href='index.html'" style="cursor: pointer; font-size: 2em; font-weight: bold; margin: 0.67em 0;">Smart Farm Engineering Lab</div>
+<p id="header-desc">High-precision online engineering simulation & modeling suite for modern greenhouse designers, growers, and agricultural engineers.</p>
+</header>
+
+<div class="tabs-container">
+<div class="tabs">
+<a class="tab-btn" href="index.html">🏠 Dashboard Home</a>
+<a class="tab-btn" href="vpd.html">VPD Calculator</a>
+<a class="tab-btn active" href="dli_calculator.html">💡 DLI & LED ROI</a>
+<a class="tab-btn" href="fertigation.html">Fertigation Solver</a>
+<a class="tab-btn" href="heat_loss.html">Greenhouse Heat Loss</a>
+<a class="tab-btn" href="roi_simulator.html">Boiler ROI</a>
+<a class="tab-btn" href="https://wiki.inwoovation.com/" target="_blank" style="border-color: rgba(56, 189, 248, 0.4); color: #38bdf8; background: rgba(56, 189, 248, 0.1);">🔬 AgTech Wiki ↗</a>
+</div>
+</div>
+
+<div class="calc-wrapper active">
+<div class="calc-sidebar">
+<h2>💡 DLI & LED Lighting Parameters</h2>
+
+<div class="input-group">
+<label for="dli-crop">Target Crop Preset</label>
+<div class="input-control-wrapper select-arrow-wrapper">
+<select id="dli-crop" onchange="applyCropPreset()">
+<option value="17">Lettuce & Leafy Greens (Target DLI: 17 mol/m²/d)</option>
+<option value="30">High-Wire Tomato (Target DLI: 30 mol/m²/d)</option>
+<option value="22">Hydroponic Strawberry (Target DLI: 22 mol/m²/d)</option>
+<option value="25">Bell Pepper / Paprika (Target DLI: 25 mol/m²/d)</option>
+<option value="18">Sweet Basil / Herbs (Target DLI: 18 mol/m²/d)</option>
+<option value="20">Curly Kale (Target DLI: 20 mol/m²/d)</option>
+<option value="custom">Custom Target</option>
+</select>
+</div>
+</div>
+
+<div class="input-group">
+<label for="dli-target">Target Total DLI (mol/m²/day)</label>
+<div class="input-control-wrapper">
+<input id="dli-target" type="number" value="17" step="0.5" oninput="calculateDLI()"/>
+<span class="suffix">mol/m²/d</span>
+</div>
+</div>
+
+<div class="input-group">
+<label for="dli-sun">Natural Sunlight DLI Contribution</label>
+<div class="input-control-wrapper">
+<input id="dli-sun" type="number" value="8" step="0.5" oninput="calculateDLI()"/>
+<span class="suffix">mol/m²/d</span>
+</div>
+</div>
+
+<div class="input-group">
+<label for="led-ppfd">Supplemental LED PPFD (μmol/m²/s)</label>
+<div class="input-control-wrapper">
+<input id="led-ppfd" type="number" value="200" step="10" oninput="calculateDLI()"/>
+<span class="suffix">μmol/m²/s</span>
+</div>
+</div>
+
+<div class="input-group">
+<label for="led-hours">LED Photoperiod (Hours/Day)</label>
+<div class="input-control-wrapper">
+<input id="led-hours" type="number" value="16" step="0.5" max="24" oninput="calculateDLI()"/>
+<span class="suffix">hrs/day</span>
+</div>
+</div>
+
+<div class="input-group">
+<label for="led-power">Total LED System Power Consumption</label>
+<div class="input-control-wrapper">
+<input id="led-power" type="number" value="15000" step="500" oninput="calculateDLI()"/>
+<span class="suffix">Watts (W)</span>
+</div>
+</div>
+
+<div class="input-group">
+<label for="elec-rate">Electricity Rate</label>
+<div class="input-control-wrapper">
+<input id="elec-rate" type="number" value="0.12" step="0.01" oninput="calculateDLI()"/>
+<span class="suffix">$/kWh</span>
+</div>
+</div>
+</div>
+
+<div class="calc-results">
+<h2>📊 DLI & Financial ROI Analysis</h2>
+
+<div class="metric-card" style="border-left: 4px solid var(--primary);">
+<div class="metric-title">Total Daily Light Integral (DLI)</div>
+<div class="metric-val" id="res-total-dli">19.52 mol/m²/d</div>
+<div class="metric-sub" id="res-dli-status">✅ Target DLI Satisfied (114.8% of Target)</div>
+</div>
+
+<div class="results-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+<div class="metric-card">
+<div class="metric-title">LED Supplemental DLI</div>
+<div class="metric-val" id="res-led-dli">11.52 mol/m²/d</div>
+<div class="metric-sub">Contributed by LED fixtures</div>
+</div>
+
+<div class="metric-card">
+<div class="metric-title">Daily Energy Consumption</div>
+<div class="metric-val" id="res-daily-kwh">240.0 kWh</div>
+<div class="metric-sub">7,200 kWh / month</div>
+</div>
+
+<div class="metric-card" style="border-left: 4px solid #facc15;">
+<div class="metric-title">Daily Electricity Cost</div>
+<div class="metric-val" id="res-daily-cost" style="color: #facc15;">$28.80 / day</div>
+<div class="metric-sub" id="res-monthly-cost">$864.00 / month</div>
+</div>
+
+<div class="metric-card" style="border-left: 4px solid var(--cyan);">
+<div class="metric-title">Photon Efficacy Yield</div>
+<div class="metric-val" id="res-efficacy" style="color: var(--cyan);">2.70 μmol/J</div>
+<div class="metric-sub">System Photon Efficiency</div>
+</div>
+</div>
+
+<div class="info-card" style="margin-top: 1.5rem; text-align: left; border-left: 4px solid var(--primary);">
+<h3 style="color: var(--primary); font-size: 1.1rem; margin-bottom: 0.5rem;">🌱 Crop Steering & Photomorphogenesis Guidance</h3>
+<p id="res-steering-advice" style="font-size: 0.95rem; color: #cbd5e1; line-height: 1.6;">
+Your photoperiod of 16.0 hours under 200 μmol/m²/s PPFD provides an ideal photomorphogenic light steering regime. Ensure ambient leaf temperature offset is kept within -1.5°C under high PPFD.
+</p>
+</div>
+</div>
+</div>
+
+<footer>
+<p>© 2026 Smart Farm Engineering Lab. Built for zero-cost static hosting. Designed by Inwoovation</p>
+</footer>
+</main>
+
+<script>
+function applyCropPreset() {
+    const val = document.getElementById('dli-crop').value;
+    if (val !== 'custom') {
+        document.getElementById('dli-target').value = val;
+    }
+    calculateDLI();
+}
+
+function calculateDLI() {
+    const targetDli = parseFloat(document.getElementById('dli-target').value) || 0;
+    const sunDli = parseFloat(document.getElementById('dli-sun').value) || 0;
+    const ppfd = parseFloat(document.getElementById('led-ppfd').value) || 0;
+    const hours = parseFloat(document.getElementById('led-hours').value) || 0;
+    const powerW = parseFloat(document.getElementById('led-power').value) || 0;
+    const rate = parseFloat(document.getElementById('elec-rate').value) || 0;
+
+    // LED DLI Formula: (PPFD * Hours * 3600) / 1,000,000
+    const ledDli = (ppfd * hours * 3600) / 1000000;
+    const totalDli = sunDli + ledDli;
+    const satisfyPct = targetDli > 0 ? (totalDli / targetDli) * 100 : 0;
+
+    // Energy & Cost Formula
+    const dailyKwh = (powerW * hours) / 1000;
+    const monthlyKwh = dailyKwh * 30;
+    const dailyCost = dailyKwh * rate;
+    const monthlyCost = monthlyKwh * rate;
+
+    // Update DOM
+    document.getElementById('res-total-dli').innerText = totalDli.toFixed(2) + ' mol/m²/d';
+    document.getElementById('res-led-dli').innerText = ledDli.toFixed(2) + ' mol/m²/d';
+    document.getElementById('res-daily-kwh').innerText = dailyKwh.toFixed(1) + ' kWh';
+    document.getElementById('res-daily-cost').innerText = '$' + dailyCost.toFixed(2) + ' / day';
+    document.getElementById('res-monthly-cost').innerText = '$' + monthlyCost.toFixed(2) + ' / month';
+
+    const statusEl = document.getElementById('res-dli-status');
+    if (satisfyPct >= 100) {
+        statusEl.innerText = `✅ Target DLI Satisfied (${satisfyPct.toFixed(1)}% of Target)`;
+        statusEl.style.color = '#86efac';
+    } else {
+        statusEl.innerText = `⚠️ Target Deficit: Short by ${(targetDli - totalDli).toFixed(2)} mol/m²/d (${satisfyPct.toFixed(1)}% met)`;
+        statusEl.style.color = '#fca5a5';
+    }
+
+    const steeringEl = document.getElementById('res-steering-advice');
+    if (hours > 20) {
+        steeringEl.innerText = '⚠️ Photoperiod exceeds 20 hours/day. Watch out for chlorosis or starch buildup in mesophyll cells. Consider increasing PPFD and reducing photoperiod to 16-18 hours.';
+    } else if (satisfyPct < 85) {
+        steeringEl.innerText = `💡 Light Deficit Warning: Increase supplemental LED PPFD by at least ${Math.ceil(((targetDli - totalDli) * 1000000) / (hours * 3600))} μmol/m²/s or extend photoperiod to hit target DLI.`;
+    } else {
+        steeringEl.innerText = `🌱 Optimal Steering: Your photoperiod of ${hours.toFixed(1)} hours under ${ppfd} μmol/m²/s PPFD provides ideal photosynthetic photon flux. Maintain root zone temperature at 18-20°C for optimal ATP synthesis.`;
+    }
+}
+
+// Initial calculation on load
+window.onload = calculateDLI;
+</script>
 </body>
 </html>

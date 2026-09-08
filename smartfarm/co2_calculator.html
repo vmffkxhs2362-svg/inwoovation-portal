@@ -1,13 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Redirecting to Inwoovation Lab...</title>
-  <link rel="canonical" href="https://inwoovation.com/smartfarm/co2_calculator.html">
-  <meta http-equiv="refresh" content="0; url=https://inwoovation.com/smartfarm/co2_calculator.html">
-  <script>window.location.replace("https://inwoovation.com/smartfarm/co2_calculator.html" + window.location.search + window.location.hash);</script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Greenhouse CO2 Enrichment & Cylinder Sizing Calculator | Smart Farm Lab</title>
+<meta content="Calculate greenhouse CO2 injection rates, target ppm enrichment, cylinder/tank consumption rates, and hourly enrichment costs for commercial growers." name="description"/>
+<meta content="CO2 calculator, greenhouse CO2 injection, CO2 enrichment rate, CO2 tank sizing, ppm calculator, greenhouse climate control" name="keywords"/>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-V4RYJBMEDE"></script>
+<script>
+   window.dataLayer = window.dataLayer || [];
+   function gtag(){dataLayer.push(arguments);}
+   gtag('js', new Date());
+   gtag('config', 'G-V4RYJBMEDE');
+</script>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8597809158257497"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="style.css?v=3.2" rel="stylesheet"/>
 </head>
-<body style="background:#0b0f19;color:#f8fafc;font-family:sans-serif;display:flex;justify-content:center;align-items:center;height:100vh;margin:0;">
-  <p>Redirecting to <a href="https://inwoovation.com/smartfarm/co2_calculator.html" style="color:#38bdf8;">https://inwoovation.com/smartfarm/co2_calculator.html</a>...</p>
+<body>
+<main class="container">
+<header>
+<div class="header-top-bar" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 0.8rem;">
+<div class="badge" id="header-badge">Last Updated: September 08, 2026</div>
+<div style="display: flex; gap: 0.5rem; align-items: center;">
+    <button class="lang-btn" id="btn-farm-profile" onclick="toggleFarmProfileDrawer()" style="border-color: var(--primary); color: var(--primary); display: inline-flex; align-items: center; gap: 0.3rem; font-weight: 600; padding: 0.4rem 0.8rem; border-radius: 10px; cursor: pointer; background: transparent; border: 1px solid;">
+        📋 <span>My Farm</span>
+    </button>
+<div class="lang-switch" id="unit-switch">
+<button class="lang-btn active" id="unit-metric" onclick="changeUnit('metric')">Metric</button>
+<button class="lang-btn" id="unit-imperial" onclick="changeUnit('imperial')">Imperial</button>
+</div>
+<div id="google_translate_element" style="display: inline-block; margin-left: 0.5rem;"></div>
+</div>
+</div>
+<div id="header-title" onclick="location.href='index.html'" style="cursor: pointer; font-size: 2em; font-weight: bold; margin: 0.67em 0;">Smart Farm Engineering Lab</div>
+<p id="header-desc">High-precision online engineering simulation & modeling suite for modern greenhouse designers, growers, and agricultural engineers.</p>
+</header>
+
+<div class="tabs-container">
+<div class="tabs">
+<a class="tab-btn" href="index.html">🏠 Dashboard Home</a>
+<a class="tab-btn" href="vpd.html">VPD Calculator</a>
+<a class="tab-btn" href="dli_calculator.html">💡 DLI ROI</a>
+<a class="tab-btn active" href="co2_calculator.html">🧪 CO2 Sizer</a>
+<a class="tab-btn" href="fertigation.html">Fertigation Solver</a>
+<a class="tab-btn" href="heat_loss.html">Heat Loss</a>
+<a class="tab-btn" href="roi_simulator.html">Boiler ROI</a>
+<a class="tab-btn" href="https://wiki.inwoovation.com/" target="_blank" style="border-color: rgba(56, 189, 248, 0.4); color: #38bdf8; background: rgba(56, 189, 248, 0.1);">🔬 AgTech Wiki ↗</a>
+</div>
+</div>
+
+<div class="calc-wrapper active">
+<div class="calc-sidebar">
+<h2>🧪 CO2 Injection Parameters</h2>
+
+<div class="input-group">
+<label for="gh-volume">Greenhouse Volume (m³)</label>
+<div class="input-control-wrapper">
+<input id="gh-volume" type="number" value="4500" step="100" oninput="calculateCO2()"/>
+<span class="suffix">m³</span>
+</div>
+</div>
+
+<div class="input-group">
+<label for="co2-ambient">Ambient Outside CO2 (ppm)</label>
+<div class="input-control-wrapper">
+<input id="co2-ambient" type="number" value="415" step="5" oninput="calculateCO2()"/>
+<span class="suffix">ppm</span>
+</div>
+</div>
+
+<div class="input-group">
+<label for="co2-target">Target Canopy CO2 (ppm)</label>
+<div class="input-control-wrapper">
+<input id="co2-target" type="number" value="1200" step="50" oninput="calculateCO2()"/>
+<span class="suffix">ppm</span>
+</div>
+</div>
+
+<div class="input-group">
+<label for="air-exchange">Air Exchange Rate (ACH / hour)</label>
+<div class="input-control-wrapper">
+<input id="air-exchange" type="number" value="0.75" step="0.1" oninput="calculateCO2()"/>
+<span class="suffix">ACH/hr</span>
+</div>
+</div>
+
+<div class="input-group">
+<label for="co2-cost">Liquid CO2 Bulk Price ($/kg)</label>
+<div class="input-control-wrapper">
+<input id="co2-cost" type="number" value="0.35" step="0.05" oninput="calculateCO2()"/>
+<span class="suffix">$/kg</span>
+</div>
+</div>
+</div>
+
+<div class="calc-results">
+<h2>📊 CO2 Mass Balance & Cost Analysis</h2>
+
+<div class="metric-card" style="border-left: 4px solid var(--primary);">
+<div class="metric-title">Required CO2 Injection Rate</div>
+<div class="metric-val" id="res-co2-rate">6.38 kg / hour</div>
+<div class="metric-sub" id="res-co2-flow">~ 3,250 Liters / hour</div>
+</div>
+
+<div class="results-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+<div class="metric-card">
+<div class="metric-title">Daily Consumption (10h Injection)</div>
+<div class="metric-val" id="res-daily-kg">63.8 kg / day</div>
+<div class="metric-sub">1.91 Tons / month</div>
+</div>
+
+<div class="metric-card" style="border-left: 4px solid #facc15;">
+<div class="metric-title">Daily Enrichment Cost</div>
+<div class="metric-val" id="res-daily-cost" style="color: #facc15;">$22.33 / day</div>
+<div class="metric-sub" id="res-monthly-cost">$669.90 / month</div>
+</div>
+
+<div class="metric-card" style="border-left: 4px solid var(--cyan);">
+<div class="metric-title">Cylinder Refill Frequency</div>
+<div class="metric-val" id="res-refill" style="color: var(--cyan);">Every 7.8 Days</div>
+<div class="metric-sub">Based on 500kg Bulk Tank</div>
+</div>
+
+<div class="metric-card">
+<div class="metric-title">Photosynthetic Gain</div>
+<div class="metric-val" id="res-photosynthesis-gain" style="color: #86efac;">+38.5% Gain</div>
+<div class="metric-sub">Rubisco Carboxylation Boost</div>
+</div>
+</div>
+
+<div class="info-card" style="margin-top: 1.5rem; text-align: left; border-left: 4px solid var(--primary);">
+<h3 style="color: var(--primary); font-size: 1.1rem; margin-bottom: 0.5rem;">🌱 CO2 Agronomic Engineering Guidance</h3>
+<p id="res-co2-advice" style="font-size: 0.95rem; color: #cbd5e1; line-height: 1.6;">
+Targeting 1200 ppm CO2 under 0.75 ACH air exchange provides optimal carbon saturation for C3 crops. Ensure air movement across canopy crowns is maintained above 0.25 m/s to prevent localized CO2 depletion zones.
+</p>
+</div>
+</div>
+</div>
+
+<footer>
+<p>© 2026 Smart Farm Engineering Lab. Built for zero-cost static hosting. Designed by Inwoovation</p>
+</footer>
+</main>
+
+<script>
+function calculateCO2() {
+    const vol = parseFloat(document.getElementById('gh-volume').value) || 0;
+    const ambient = parseFloat(document.getElementById('co2-ambient').value) || 0;
+    const target = parseFloat(document.getElementById('co2-target').value) || 0;
+    const ach = parseFloat(document.getElementById('air-exchange').value) || 0;
+    const costKg = parseFloat(document.getElementById('co2-cost').value) || 0;
+
+    // CO2 density @ 20°C = 1.836 kg/m³
+    // PPM delta = (target - ambient) * 10^-6
+    // Infiltration loss per hour = vol * ach * (target - ambient) * 10^-6 * 1.836 (kg)
+    // Plus crop consumption estimate (~1.5 g/m²/hr = ~0.0015 * vol/3.5 kg/hr)
+    const deltaPpm = Math.max(0, target - ambient);
+    const lossKgHr = (vol * ach * deltaPpm * 1e-6 * 1.836) + (vol * 0.0003);
+    const dailyKg = lossKgHr * 10; // 10h injection photoperiod
+    const monthlyKg = dailyKg * 30;
+
+    const dailyCost = dailyKg * costKg;
+    const monthlyCost = monthlyKg * costKg;
+    const tankRefillDays = dailyKg > 0 ? (500 / dailyKg) : 0;
+
+    document.getElementById('res-co2-rate').innerText = lossKgHr.toFixed(2) + ' kg / hour';
+    document.getElementById('res-co2-flow').innerText = '~ ' + Math.round(lossKgHr * 510) + ' Liters / hour';
+    document.getElementById('res-daily-kg').innerText = dailyKg.toFixed(1) + ' kg / day';
+    document.getElementById('res-daily-cost').innerText = '$' + dailyCost.toFixed(2) + ' / day';
+    document.getElementById('res-monthly-cost').innerText = '$' + monthlyCost.toFixed(2) + ' / month';
+    document.getElementById('res-refill').innerText = 'Every ' + tankRefillDays.toFixed(1) + ' Days';
+
+    const gainPct = Math.min(50, Math.round((deltaPpm / 400) * 20));
+    document.getElementById('res-photosynthesis-gain').innerText = '+' + gainPct + '% Gain';
+
+    const adviceEl = document.getElementById('res-co2-advice');
+    if (ach > 2.0) {
+        adviceEl.innerText = '⚠️ High Ventilation Loss: Your greenhouse ventilation rate exceeds 2.0 ACH. Enriching CO2 under high ventilation causes severe gas waste. Close roof vents or reduce fan speed during CO2 injection.';
+    } else {
+        adviceEl.innerText = `🌱 Optimal CO2 Steering: Injecting ${lossKgHr.toFixed(2)} kg/hr maintains ${target} ppm CO2. Rubisco oxygenase activity is suppressed by ~65%, accelerating crop cycle time by 4 to 6 days.`;
+    }
+}
+
+window.onload = calculateCO2;
+</script>
 </body>
 </html>

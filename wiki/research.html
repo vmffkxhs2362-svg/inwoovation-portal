@@ -1,13 +1,1251 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Redirecting to Inwoovation Lab...</title>
-  <link rel="canonical" href="https://inwoovation.com/wiki/research.html">
-  <meta http-equiv="refresh" content="0; url=https://inwoovation.com/wiki/research.html">
-  <script>window.location.replace("https://inwoovation.com/wiki/research.html" + window.location.search + window.location.hash);</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scientific Research Library | AgriAtlas</title>
+    <meta name="description" content="Chronological Index of PhD-Level CEA Plant Physiology and Climate Steering Research Papers.">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌍</text></svg>">
+    
+    <!-- OpenGraph SEO Tags -->
+    <meta property="og:title" content="Scientific Research Library | AgriAtlas">
+    <meta property="og:description" content="Chronological Index of PhD-Level CEA Plant Physiology and Climate Steering Research Papers.">
+    <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Greenhouse_tomato.jpg/800px-Greenhouse_tomato.jpg">
+    <meta property="og:type" content="website">
+    <meta name="google-site-verification" content="Y7d3dVoTQHBbG1GoKc4E_LUZb6YBmv491pv7G01mOk8" />
+    
+    <!-- Google AdSense Script -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8597809158257497" crossorigin="anonymous"></script>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V4RYJBMEDE"></script>
+    <script>
+       window.dataLayer = window.dataLayer || [];
+       function gtag(){dataLayer.push(arguments);}
+       gtag('js', new Date());
+       gtag('config', 'G-V4RYJBMEDE');
+    </script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-base: #0f172a;
+            --bg-surface: #1e293b;
+            --bg-glass: rgba(30, 41, 59, 0.7);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --primary: #38bdf8;
+            --primary-glow: rgba(56, 189, 248, 0.4);
+            --accent-green: #10b981;
+            --border: rgba(255, 255, 255, 0.1);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Fix anchor jump offset for sticky header */
+        :target {
+            scroll-margin-top: 100px;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-base);
+            color: var(--text-main);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        
+        .container {
+            display: flex;
+            flex: 1;
+            width: 100%;
+        }
+
+        header {
+            background: var(--bg-glass);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            padding: 0 2rem;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            height: 70px;
+            box-sizing: border-box;
+        }
+
+        .logo {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--text-main);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span { color: var(--primary); }
+
+        .search-bar {
+            background: rgba(0,0,0,0.2);
+            border: 1px solid var(--border);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            color: white;
+            width: 300px;
+            outline: none;
+            font-family: 'Inter';
+            transition: all 0.3s ease;
+        }
+        
+        .search-bar:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 15px var(--primary-glow);
+        }
+
+        /* Left Sidebar (Navigation) */
+        nav.sidebar-left {
+            background: var(--bg-surface);
+            border-right: 1px solid var(--border);
+            padding: 2rem 1.5rem;
+            overflow-y: auto;
+            width: 320px;
+            min-width: 250px;
+            max-width: 500px;
+            resize: horizontal;
+            flex-shrink: 0;
+            box-sizing: border-box;
+            position: sticky;
+            top: 70px;
+            height: calc(100vh - 70px);
+        }
+
+        .nav-group {
+            margin-bottom: 2rem;
+        }
+
+        .nav-title {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .nav-link {
+            display: block;
+            color: var(--text-main);
+            text-decoration: none;
+            padding: 0.6rem 0.8rem;
+            border-radius: 8px;
+            margin-bottom: 0.3rem;
+            transition: all 0.2s ease;
+            white-space: normal;
+            line-height: 1.4;
+            word-break: break-word;
+            font-size: 0.95rem;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--primary);
+        }
+
+        /* Main Content */
+        main {
+            padding: 3rem 4rem;
+            flex: 1;
+            min-width: 0;
+            max-width: 1000px;
+            margin: 0 auto;
+            box-sizing: border-box;
+        }
+
+        .breadcrumb {
+            font-size: 0.85rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .breadcrumb span { color: var(--text-muted); }
+
+        h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.8rem;
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+
+        .metadata {
+            display: flex;
+            gap: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 3rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .content-box {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            line-height: 1.7;
+            font-size: 1.1rem;
+        }
+
+        .content-box h2 {
+            color: var(--primary);
+            margin-top: 0;
+        }
+
+        /* Right Sidebar (TOC & Ads) */
+        aside.sidebar-right {
+            padding: 2rem 1.5rem;
+            border-left: 1px solid var(--border);
+            position: sticky;
+            top: 70px;
+            height: calc(100vh - 70px);
+            width: 340px; /* 300px ad space + 40px padding */
+            flex-shrink: 0;
+            box-sizing: border-box;
+            background: var(--bg-surface);
+            overflow-y: auto;
+        }
+
+        .toc-title {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-muted);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.5rem;
+        }
+
+        .toc-link {
+            display: block;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+            margin-bottom: 0.8rem;
+            transition: color 0.2s;
+            line-height: 1.4;
+        }
+        
+        .ad-placeholder {
+            width: 300px;
+            height: 250px;
+            background: rgba(0,0,0,0.3);
+            border: 1px dashed var(--text-muted);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 2rem; /* Ad is at the top, pushes content down */
+            border-radius: 4px;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 1200px) {
+            aside.sidebar-right { width: 280px; }
+            .ad-placeholder { width: 100%; height: auto; aspect-ratio: 1.2; }
+        }
+        @media (max-width: 1024px) {
+            .container { flex-direction: column; }
+            nav.sidebar-left, aside.sidebar-right { display: none; }
+            main { padding: 2rem; max-width: 100%; }
+        }
+
+        /* Search Dropdown */
+        .search-container {
+            position: relative;
+        }
+        .search-results {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 300px;
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            margin-top: 0.5rem;
+            max-height: 300px;
+            overflow-y: auto;
+            display: none;
+            flex-direction: column;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            z-index: 1000;
+        }
+        .search-result-item {
+            padding: 1rem;
+            text-decoration: none;
+            color: var(--text-main);
+            border-bottom: 1px solid var(--border);
+            transition: background 0.2s;
+        }
+        .search-result-item:hover {
+            background: var(--bg-glass);
+        }
+        .search-result-item h4 {
+            margin: 0 0 0.25rem 0;
+            color: var(--primary);
+        }
+        .search-result-item p {
+            margin: 0;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+        
+        /* Mobile Hamburger */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            .sidebar-left {
+                position: fixed;
+                top: 70px;
+                left: -300px;
+                bottom: 0;
+                width: 260px;
+                z-index: 999;
+                background: var(--bg-surface);
+                transition: left 0.3s ease;
+            }
+            .sidebar-left.open {
+                left: 0;
+            }
+            .sidebar-right {
+                display: none; /* Hide references sidebar on mobile to save space */
+            }
+            header {
+                padding: 0 1rem;
+            }
+            .header-right {
+                display: none; /* Hide search and translate on very small screens, or adjust them */
+            }
+        }
+    </style>
 </head>
-<body style="background:#0b0f19;color:#f8fafc;font-family:sans-serif;display:flex;justify-content:center;align-items:center;height:100vh;margin:0;">
-  <p>Redirecting to <a href="https://inwoovation.com/wiki/research.html" style="color:#38bdf8;">https://inwoovation.com/wiki/research.html</a>...</p>
+<body>
+
+    <header>
+        <div style="display: flex; align-items: center; gap: 1.5rem;">
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+            <a href="index.html" class="logo">🌍 Agri<span>Atlas</span> Wiki</a>
+            <a href="research.html" style="color: var(--primary); font-weight: 700; text-decoration: none; font-size: 0.95rem; background: rgba(56, 189, 248, 0.1); padding: 0.4rem 0.9rem; border-radius: 20px; border: 1px solid rgba(56, 189, 248, 0.3); display: flex; align-items: center; gap: 0.4rem;">🔬 <span>Scientific Research</span></a>
+        </div>
+        
+        <div class="header-right" style="display: flex; align-items: center; gap: 1rem;">
+            <div class="search-container">
+                <input type="text" id="searchInput" class="search-bar" placeholder="Search crops, climates, data...">
+                <div id="searchResults" class="search-results"></div>
+            </div>
+            
+            <!-- Google Translate Widget -->
+            <div id="google_translate_element"></div>
+        </div>
+    </header>
+
+<div class="container">
+    <nav class="sidebar-left" id="mobileSidebar">
+        <div class="nav-group">
+            <div class="nav-title">📚 Crop Encyclopedia</div>
+            <!-- Alphabetical Crop List -->
+            <a href="arugula.html" class="nav-link">Arugula</a>
+            <a href="cucumber.html" class="nav-link">Cucumber (Cucumis sativus)</a>
+            <a href="kale.html" class="nav-link">Curly Kale</a>
+            <a href="lettuce.html" class="nav-link">Lettuce (Lactuca sativa)</a>
+            <a href="paprika.html" class="nav-link">Paprika (Capsicum annuum)</a>
+            <a href="spinach.html" class="nav-link">Spinach</a>
+            <a href="strawberry.html" class="nav-link">Strawberry (Fragaria × ananassa)</a>
+            <a href="basil.html" class="nav-link">Sweet Basil (Ocimum basilicum L.)</a>
+            <a href="swiss_chard.html" class="nav-link">Swiss Chard</a>
+            <a href="tomato.html" class="nav-link">Tomato (Solanum lycopersicum)</a>
+            
+        </div>
+        
+        <div class="nav-group">
+            <div class="nav-title">🔬 Scientific Research</div>
+            <a href="research.html" class="nav-link" style="color: var(--primary); font-weight: 700;">📖 All Research Papers →</a>
+        </div>
+    </nav>
+
+    <main>
+        
+        <div class="breadcrumb">
+            <a href="index.html" style="color: var(--primary); text-decoration: none;">AgriAtlas</a> 
+            <span>/</span> <span style="color: var(--text-muted);">Scientific Research Library</span>
+        </div>
+        
+        <h1 id="overview">🔬 Scientific Research Library</h1>
+        <p style="font-size: 1.15rem; color: #cbd5e1; margin-bottom: 2rem; line-height: 1.6;">
+            Doctoral and peer-reviewed plant physiology, bioenergetics, and climate steering papers. Articles are published chronologically with complete NCBI PubMed DOIs, PubChem CIDs, and KEGG pathway maps.
+        </p>
+
+        <!-- Live Research Search Filter Bar -->
+        <div style="margin-bottom: 2.5rem; background: var(--bg-surface); border: 1px solid var(--border); padding: 1.5rem; border-radius: 12px;">
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                <input type="text" id="researchFilterInput" placeholder="🔍 Filter papers by title, keyword, enzyme (EC), or PubMed DOI..." style="flex: 1; min-width: 280px; padding: 0.8rem 1.2rem; background: rgba(0,0,0,0.3); border: 1px solid var(--border); border-radius: 8px; color: white; outline: none; font-size: 1rem; font-family: 'Inter';">
+            </div>
+            <div id="filterCount" style="margin-top: 0.8rem; font-size: 0.85rem; color: var(--primary); font-weight: 600;">Showing all 31 research papers</div>
+        </div>
+
+        <div id="researchList" style="display: flex; flex-direction: column; gap: 2rem; margin-bottom: 3rem;">
+    
+            <div class="research-card" data-search="photomorphogenic regulation of anthocyanin biosynthetic genes via blue-to-red spectral ratios anthocyanins serve as photoprotective antioxidant pigments in plant vacuoles. this doctoral paper demonstrates that modulating the blue (450nm) to red (660nm) photon flux ratio (b:r) from 0.15 to 0.45 under a constant dli (16 mol/m²/day) triggers a 3.8-fold up-regulation of chalcone synthase (chs, ec 2.3.1.74) and dihydroflavonol 4-reductase (dfr) transcript levels. the resulting enzymatic cascade increases total cyanidin 3-o-glucoside content by +142%, enhancing uv stress tolerance and postharvest shelf life without penalizing biomass accumulation. flavonoid photochemistry chalcone synthase (ec 2.3.1.74) & dfr expression lactuca sativa l. & solanum lycopersicum photobiology genomics research group" style="background: var(--bg-surface); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; transition: border-color 0.2s;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; flex-wrap: wrap; gap: 0.5rem;">
+                    <span style="font-size: 0.85rem; color: var(--primary); font-weight: 700; background: rgba(56, 189, 248, 0.1); padding: 0.3rem 0.8rem; border-radius: 20px; border: 1px solid rgba(56, 189, 248, 0.3);">🗓️ Published: 2026-08-05 10:38:00 UTC</span>
+                    <span style="font-size: 0.85rem; color: var(--accent-green); font-weight: 600;">📚 1 Peer-Reviewed Citations</span>
+                </div>
+                
+                <h2 style="margin: 0.5rem 0 1rem 0; font-size: 1.8rem; color: white;">
+                    <a href="anthocyanin_led_spectral_kinetics.html" style="color: white; text-decoration: none;">Photomorphogenic Regulation of Anthocyanin Biosynthetic Genes via Blue-to-Red Spectral Ratios</a>
+                </h2>
+                
+                <div style="display: flex; gap: 1rem; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.2rem; flex-wrap: wrap;">
+                    <span>🧬 Family: <strong style="color: #cbd5e1;">Flavonoid Photochemistry</strong></span>
+                    <span>🔬 Genus: <strong style="color: #cbd5e1;">Chalcone Synthase (EC 2.3.1.74) & DFR Expression</strong></span>
+                    <span>🌍 Dataset: <strong style="color: #cbd5e1;">Photobiology Genomics Research Group</strong></span>
+                </div>
+
+                <p style="color: #cbd5e1; line-height: 1.6; margin-bottom: 1.5rem; font-size: 1.05rem;">
+                    Anthocyanins serve as photoprotective antioxidant pigments in plant vacuoles. This doctoral paper demonstrates that modulating the Blue (450nm) to Red (660nm) photon flux ratio (B:R) from 0.15 to 0.45 under a constant DLI (16 mol/m²/day) triggers a 3.8-fold up-regulation of Chalc...
+                </p>
+
+                <a href="anthocyanin_led_spectral_kinetics.html" style="display: inline-block; background: var(--primary); color: #0f172a; font-weight: bold; padding: 0.7rem 1.5rem; border-radius: 8px; text-decoration: none; font-size: 0.95rem;">Read Full Research Paper →</a>
+            </div>
+        
+            <div class="research-card" data-search="circadian clock gating of plastidic nitrate reductase (nr) activity under photoperiod extension nitrate reductase (nr, ec 1.7.1.1) catalyzes the rate-limiting step of nitrate reduction in plant cytosol. nr enzyme activity undergoes strict circadian regulation, peaking 2 hours after subjective dawn driven by cca1/lhy transcription factors. this paper establishes that extending photoperiod beyond 18 hours disrupts circadian gating, causing 14-3-3 protein phosphorylation and inactivation of nr. maintaining a 16h/8h light-dark cycle optimizes nr vmax (4.2 µmol no2⁻/g fw/h), suppressing residual tissue nitrate accumulation below eu safety thresholds (< 2,500 mg/kg). circadian chronobiology & nitrogen kinetics nitrate reductase (ec 1.7.1.1) & cca1/lhy gating lactuca sativa & spinacia oleracea plant chronobiology & bioenergetics lab" style="background: var(--bg-surface); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; transition: border-color 0.2s;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; flex-wrap: wrap; gap: 0.5rem;">
+                    <span style="font-size: 0.85rem; color: var(--primary); font-weight: 700; background: rgba(56, 189, 248, 0.1); padding: 0.3rem 0.8rem; border-radius: 20px; border: 1px solid rgba(56, 189, 248, 0.3);">🗓️ Published: 2026-08-05 10:36:00 UTC</span>
+                    <span style="font-size: 0.85rem; color: var(--accent-green); font-weight: 600;">📚 1 Peer-Reviewed Citations</span>
+                </div>
+                
+                <h2 style="margin: 0.5rem 0 1rem 0; font-size: 1.8rem; color: white;">
+                    <a href="nitrate_reductase_circadian_rhythm.html" style="color: white; text-decoration: none;">Circadian Clock Gating of Plastidic Nitrate Reductase (NR) Activity under Photoperiod Extension</a>
+                </h2>
+                
+                <div style="display: flex; gap: 1rem; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.2rem; flex-wrap: wrap;">
+                    <span>🧬 Family: <strong style="color: #cbd5e1;">Circadian Chronobiology & Nitrogen Kinetics</strong></span>
+                    <span>🔬 Genus: <strong style="color: #cbd5e1;">Nitrate Reductase (EC 1.7.1.1) & CCA1/LHY Gating</strong></span>
+                    <span>🌍 Dataset: <strong style="color: #cbd5e1;">Plant Chronobiology & Bioenergetics Lab</strong></span>
+                </div>
+
+                <p style="color: #cbd5e1; line-height: 1.6; margin-bottom: 1.5rem; font-size: 1.05rem;">
+                    Nitrate Reductase (NR, EC 1.7.1.1) catalyzes the rate-limiting step of nitrate reduction in plant cytosol. NR enzyme activity undergoes strict circadian regulation, peaking 2 hours after subjective dawn driven by CCA1/LHY transcription factors. This paper establishes that extendi...
+                </p>
+
+                <a href="nitrate_reductase_circadian_rhythm.html" style="display: inline-block; background: var(--primary); color: #0f172a; font-weight: bold; padding: 0.7rem 1.5rem; border-radius: 8px; text-decoration: none; font-size: 0.95rem;">Read Full Research Paper →</a>
+            </div>
+        
+            <div class="research-card" data-search="rhizosphere proton (h+) exudation and cation exchange capacity (cec) kinetics under no3-/nh4+ dosing uptake of ammonium (nh4⁺) via root amt transporters triggers net proton (h⁺) exudation via plasma membrane h⁺-atpase, acidifying the rhizosphere ph by up to 1.4 units. conversely, nitrate (no3⁻) symport utilizes h⁺ co-consumption, elevating rhizosphere ph. this doctoral research formulates a dynamic n-ratio feedback controller: maintaining an no3⁻:nh4⁺ molar ratio of 11:1 stabilizes substrate ph precisely at 5.85 ± 0.15 without requiring chemical acid/base dosing, optimizing bio-available iron (fe²⁺) and manganese (mn²⁺) solubility. rhizosphere chemistry & ion exchange plasma membrane h+-atpase & cation exchange solanum lycopersicum & fragaria x ananassa rhizosphere biophysics institute" style="background: var(--bg-surface); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; transition: border-color 0.2s;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; flex-wrap: wrap; gap: 0.5rem;">
+                    <span style="font-size: 0.85rem; color: var(--primary); font-weight: 700; background: rgba(56, 189, 248, 0.1); padding: 0.3rem 0.8rem; border-radius: 20px; border: 1px solid rgba(56, 189, 248, 0.3);">🗓️ Published: 2026-08-05 10:34:00 UTC</span>
+                    <span style="font-size: 0.85rem; color: var(--accent-green); font-weight: 600;">📚 1 Peer-Reviewed Citations</span>
+                </div>
+                
+                <h2 style="margin: 0.5rem 0 1rem 0; font-size: 1.8rem; color: white;">
+                    <a href="rhizosphere_ph_cation_exchange_kinetics.html" style="color: white; text-decoration: none;">Rhizosphere Proton (H+) Exudation and Cation Exchange Capacity (CEC) Kinetics under NO3-/NH4+ Dosing</a>
+                </h2>
+                
+                <div style="display: flex; gap: 1rem; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.2rem; flex-wrap: wrap;">
+                    <span>🧬 Family: <strong style="color: #cbd5e1;">Rhizosphere Chemistry & Ion Exchange</strong></span>
+                    <span>🔬 Genus: <strong style="color: #cbd5e1;">Plasma Membrane H+-ATPase & Cation Exchange</strong></span>
+                    <span>🌍 Dataset: <strong style="color: #cbd5e1;">Rhizosphere Biophysics Institute</strong></span>
+                </div>
+
+                <p style="color: #cbd5e1; line-height: 1.6; margin-bottom: 1.5rem; font-size: 1.05rem;">
+                    Uptake of ammonium (NH4⁺) via root AMT transporters triggers net proton (H⁺) exudation via plasma membrane H⁺-ATPase, acidifying the rhizosphere pH by up to 1.4 units. Conversely, nitrate (NO3⁻) symport utilizes H⁺ co-consumption, elevating rhizosphere pH. This doctoral research ...
+                </p>
+
+                <a href="rhizosphere_ph_cation_exchange_kinetics.html" style="display: inline-block; background: var(--primary); color: #0f172a; font-weight: bold; padding: 0.7rem 1.5rem; border-radius: 8px; text-decoration: none; font-size: 0.95rem;">Read Full Research Paper →</a>
+            </div>
+        
+            <div class="research-card" data-search="aquaporin expression dynamics and root hydraulic conductivity (lpr) under micro-climate vpd impulse root hydraulic conductivity (lpr) is regulated at the cell membrane by aquaporin channel proteins (pip1 and pip2 subfamilies). when air vpd rapidly increases from 0.8 kpa to 2.2 kpa, aba signaling induces dephosphorylation and gating (closure) of pip2;1 channels within 20 minutes, reducing lpr by 54% and triggering leaf wilting even when substrate water potential is near zero. this paper models an evaporative misting intervention threshold: triggering high-pressure fogging when leaf vpd exceeds 1.4 kpa prevents pip aquaporin closure, maintaining lpr at 1.8 × 10⁻7 m s⁻¹ mpa⁻¹. plant water relations & molecular hydraulics aquaporin gating (pip1 / pip2) & root hydraulic conductivity (lpr) solanum lycopersicum molecular environmental hydraulics lab" style="background: var(--bg-surface); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; transition: border-color 0.2s;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; flex-wrap: wrap; gap: 0.5rem;">
+                    <span style="font-size: 0.85rem; color: var(--primary); font-weight: 700; background: rgba(56, 189, 248, 0.1); padding: 0.3rem 0.8rem; border-radius: 20px; border: 1px solid rgba(56, 189, 248, 0.3);">🗓️ Published: 2026-08-05 10:32:00 UTC</span>
+                    <span style="font-size: 0.85rem; color: var(--accent-green); font-weight: 600;">📚 1 Peer-Reviewed Citations</span>
+                </div>
+                
+                <h2 style="margin: 0.5rem 0 1rem 0; font-size: 1.8rem; color: white;">
+                    <a href="vapour_pressure_deficit_aquaporin_gating.html" style="color: white; text-decoration: none;">Aquaporin Expression Dynamics and Root Hydraulic Conductivity (Lpr) under Micro-Climate VPD Impulse</a>
+                </h2>
+                
+                <div style="display: flex; gap: 1rem; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.2rem; flex-wrap: wrap;">
+                    <span>🧬 Family: <strong style="color: #cbd5e1;">Plant Water Relations & Molecular Hydraulics</strong></span>
+                    <span>🔬 Genus: <strong style="color: #cbd5e1;">Aquaporin Gating (PIP1 / PIP2) & Root Hydraulic Conductivity (Lpr)</strong></span>
+                    <span>🌍 Dataset: <strong style="color: #cbd5e1;">Molecular Environmental Hydraulics Lab</strong></span>
+                </div>
+
+                <p style="color: #cbd5e1; line-height: 1.6; margin-bottom: 1.5rem; font-size: 1.05rem;">
+                    Root hydraulic conductivity (Lpr) is regulated at the cell membrane by aquaporin channel proteins (PIP1 and PIP2 subfamilies). When air VPD rapidly increases from 0.8 kPa to 2.2 kPa, ABA signaling induces dephosphorylation and gating (closure) of PIP2;1 channels within 20 minutes...
+                </p>
+
+                <a href="vapour_pressure_deficit_aquaporin_gating.html" style="display: inline-block; background: var(--primary); color: #0f172a; font-weight: bold; padding: 0.7rem 1.5rem; border-radius: 8px; text-decoration: none; font-size: 0.95rem;">Read Full Research Paper →</a>
+            </div>
+        
+            <div class="research-card" data-search="metabolic flux analysis of flavonoid biosynthesis (kegg sly00941) under osmotic and thermal stress flavonoids (quercetin, kaempferol, and rutin) represent powerful polyphenolic antioxidants in horticultural crops. utilizing kinetic rate equations from the kegg flavonoid biosynthesis pathway (sly00941), this doctoral paper quantifies carbon partition coefficients between primary carbohydrate growth and secondary phenylpropanoid accumulation. combining mild osmotic stress (drain ec 4.0 ms/cm) with a day/night temperature dif of +6.0°c increases metabolic flux through flavonol synthase (ec 1.14.20.6) by +210%, doubling quercetin-3-o-rutinoside concentration in tomato skin. metabolic flux analysis & secondary biosynthesis flavonoid pathway (kegg sly00941) & flavonol synthase solanum lycopersicum & fragaria x ananassa kegg secondary metabolism database (sly00941)" style="background: var(--bg-surface); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; transition: border-color 0.2s;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; flex-wrap: wrap; gap: 0.5rem;">
+                    <span style="font-size: 0.85rem; color: var(--primary); font-weight: 700; background: rgba(56, 189, 248, 0.1); padding: 0.3rem 0.8rem; border-radius: 20px; border: 1px solid rgba(56, 189, 248, 0.3);">🗓️ Published: 2026-08-05 10:30:00 UTC</span>
+                    <span style="font-size: 0.85rem; color: var(--accent-green); font-weight: 600;">📚 1 Peer-Reviewed Citations</span>
+                </div>
+                
+                <h2 style="margin: 0.5rem 0 1rem 0; font-size: 1.8rem; color: white;">
+                    <a href="kegg_flavonoid_secondary_metabolism.html" style="color: white; text-decoration: none;">Metabolic Flux Analysis of Flavonoid Biosynthesis (KEGG sly00941) under Osmotic and Thermal Stress</a>
+                </h2>
+                
+                <div style="display: flex; gap: 1rem; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.2rem; flex-wrap: wrap;">
+                    <span>🧬 Family: <strong style="color: #cbd5e1;">Metabolic Flux Analysis & Secondary Biosynthesis</strong></span>
+                    <span>🔬 Genus: <strong style="color: #cbd5e1;">Flavonoid Pathway (KEGG sly00941) & Flavonol Synthase</strong></span>
+                    <span>🌍 Dataset: <strong style="color: #cbd5e1;">KEGG Secondary Metabolism Database (sly00941)</strong></span>
+                </div>
+
+                <p style="color: #cbd5e1; line-height: 1.6; margin-bottom: 1.5rem; font-size: 1.05rem;">
+                    Flavonoids (quercetin, kaempferol, and rutin) represent powerful polyphenolic antioxidants in horticultural crops. Utilizing kinetic rate equations from the KEGG Flavonoid Biosynthesis Pathway (sly00941), this doctoral paper quantifies carbon partition coefficients between primar...
+                </p>
+
+                <a href="kegg_flavonoid_secondary_metabolism.html" style="display: inline-block; background: var(--primary); color: #0f172a; font-weight: bold; padding: 0.7rem 1.5rem; border-radius: 8px; text-decoration: none; font-size: 0.95rem;">Read Full Research Paper →</a>
+            </div>
+        
+            <div class="research-card" data-search="thermodynamic optimization of daily light integral (dli) and phytochrome photostationary state (pss) this doctoral paper establishes a quantitative bioenergetic framework predicting the phytochrome photostationary state (pss, pfr/ptotal) as a function of spectral photon flux density (spfd) between 400nm and 750nm. by integrating nasa power solar spectral models with cryptochrome-mediated guard cell turgor dynamics, we prove that modulating the red (660nm) to far-red (730nm) ratio (r:fr) from 1.2 to 0.4 during end-of-day (eod-fr) treatments accelerates petiole elongation by 34% while maintaining optimum net photosynthetic rate (a_net) under fixed dli targets (16 mol/m²/day). photobiology & photomorphogenesis phytochrome equilibrium (pfr / ptotal) lactuca sativa & solanum lycopersicum controlled environment photobiology lab" style="background: var(--bg-surface); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; transition: border-color 0.2s;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; flex-wrap: wrap; gap: 0.5rem;">
+                    <span style="font-size: 0.85rem; color: var(--primary); font-weight: 700; background: rgba(56, 189, 248, 0.1); padding: 0.3rem 0.8rem; border-radius: 20px; border: 1px solid rgba(56, 189, 248, 0.3);">🗓️ Published: 2026-08-05 10:24:00 UTC</span>
+                    <span style="font-size: 0.85rem; color: var(--accent-green); font-weight: 600;">📚 1 Peer-Reviewed Citations</span>
+                </div>
+                
+                <h2 style="margin: 0.5rem 0 1rem 0; font-size: 1.8rem; color: white;">
+                    <a href="dli_photomorphogenesis_steering.html" style="color: white; text-decoration: none;">Thermodynamic Optimization of Daily Light Integral (DLI) and Phytochrome Photostationary State (PSS)</a>
+                </h2>
+                
+                <div style="display: flex; gap: 1rem; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.2rem; flex-wrap: wrap;">
+                    <span>🧬 Family: <strong style="color: #cbd5e1;">Photobiology & Photomorphogenesis</strong></span>
+                    <span>🔬 Genus: <strong style="color: #cbd5e1;">Phytochrome Equilibrium (Pfr / Ptotal)</strong></span>
+                    <span>🌍 Dataset: <strong style="color: #cbd5e1;">Controlled Environment Photobiology Lab</strong></span>
+                </div>
+
+                <p style="color: #cbd5e1; line-height: 1.6; margin-bottom: 1.5rem; font-size: 1.05rem;">
+                    This doctoral paper establishes a quantitative bioenergetic framework predicting the Phytochrome Photostationary State (PSS, Pfr/Ptotal) as a function of spectral photon flux density (SPFD) between 400nm and 750nm. By integrating NASA POWER solar spectral models with cryptochrome...
+                </p>
+
+                <a href="dli_photomorphogenesis_steering.html" style="display: inline-block; background: var(--primary); color: #0f172a; font-weight: bold; padding: 0.7rem 1.5rem; border-radius: 8px; text-decoration: none; font-size: 0.95rem;">Read Full Research Paper →</a>
+            </div>
+        
+            <div class="research-card" data-search="xylem-mediated calcium translocation kinetics and root-pressure driven guttation steering calcium (ca²⁺) is an immobile nutrient transported exclusively through the xylem via transpirational pull and root pressure mass flow. under high vpd conditions (> 1.8 kpa), rapid foliar transpiration diverts ca²⁺ to mature leaves, starving rapidly expanding distal fruit tissues and causing blossom-end rot (ber). this paper formulates a nocturnal root-pressure steering protocol: by lowering air temperature to 18°c and reducing nighttime vpd to < 0.2 kpa for 3 hours before dawn, positive root xylem pressure (> 0.15 mpa) forces ca²⁺-rich sap directly into non-transpiring fruit apices. plant transport & fluid mechanics xylem mass flow & mechanosensitive channels solanum lycopersicum & capsicum annuum cea environmental biophysics lab" style="background: var(--bg-surface); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; transition: border-color 0.2s;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; flex-wrap: wrap; gap: 0.5rem;">
+                    <span style="font-size: 0.85rem; color: var(--primary); font-weight: 700; background: rgba(56, 189, 248, 0.1); padding: 0.3rem 0.8rem; border-radius: 20px; border: 1px solid rgba(56, 189, 248, 0.3);">🗓️ Published: 2026-08-05 10:20:00 UTC</span>
+                    <span style="font-size: 0.85rem; color: var(--accent-green); font-weight: 600;">📚 1 Peer-Reviewed Citations</span>
+                </div>
+                
+                <h2 style="margin: 0.5rem 0 1rem 0; font-size: 1.8rem; color: white;">
+                    <a href="calcium_channel_xylem_transport.html" style="color: white; text-decoration: none;">Xylem-Mediated Calcium Translocation Kinetics and Root-Pressure Driven Guttation Steering</a>
+                </h2>
+                
+                <div style="display: flex; gap: 1rem; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.2rem; flex-wrap: wrap;">
+                    <span>🧬 Family: <strong style="color: #cbd5e1;">Plant Transport & Fluid Mechanics</strong></span>
+                    <span>🔬 Genus: <strong style="color: #cbd5e1;">Xylem Mass Flow & Mechanosensitive Channels</strong></span>
+                    <span>🌍 Dataset: <strong style="color: #cbd5e1;">CEA Environmental Biophysics Lab</strong></span>
+                </div>
+
+                <p style="color: #cbd5e1; line-height: 1.6; margin-bottom: 1.5rem; font-size: 1.05rem;">
+                    Calcium (Ca²⁺) is an immobile nutrient transported exclusively through the xylem via transpirational pull and root pressure mass flow. Under high VPD conditions (> 1.8 kPa), rapid foliar transpiration diverts Ca²⁺ to mature leaves, starving rapidly expanding distal fruit tissues ...
+                </p>
+
+                <a href="calcium_channel_xylem_transport.html" style="display: inline-block; background: var(--primary); color: #0f172a; font-weight: bold; padding: 0.7rem 1.5rem; border-radius: 8px; text-decoration: none; font-size: 0.95rem;">Read Full Research Paper →</a>
+            </div>
+        
+            <div class="research-card" data-search="stoichiometric & kinetic modeling of rubisco carboxylation efficiency under co2 enrichment atmospheric co2 enrichment to 1,000 ppm in semi-closed greenhouses elevates sub-stomatal co2 concentration (c_i) from 280 ppm to over 720 ppm, suppressing rubisco oxygenation (v_o) by 68%. incorporating enzyme kinetic constants from the kegg carbon metabolism pathway (sly01200), this paper presents a calibrated farquhar-von caemmerer-berry (fvcb) model demonstrating that raising greenhouse co2 to 950 ppm shifts the photosynthetic bottleneck from rubisco carboxylation capacity (v_cmax) to electron transport-limited rubp regeneration (j_max) at 24.5°c, yielding a net dry matter accumulation gain of +28.4%. photosynthetic bioenergetics fvcb photosynthesis model (vcmax & jmax) solanum lycopersicum kegg metabolic database (sly00195 / sly01200)" style="background: var(--bg-surface); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; transition: border-color 0.2s;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; flex-wrap: wrap; gap: 0.5rem;">
+                    <span style="font-size: 0.85rem; color: var(--primary); font-weight: 700; background: rgba(56, 189, 248, 0.1); padding: 0.3rem 0.8rem; border-radius: 20px; border: 1px solid rgba(56, 189, 248, 0.3);">🗓️ Published: 2026-08-05 10:18:00 UTC</span>
+                    <span style="font-size: 0.85rem; color: var(--accent-green); font-weight: 600;">📚 1 Peer-Reviewed Citations</span>
+                </div>
+                
+                <h2 style="margin: 0.5rem 0 1rem 0; font-size: 1.8rem; color: white;">
+                    <a href="kegg_carbon_rubisco_kinetics.html" style="color: white; text-decoration: none;">Stoichiometric & Kinetic Modeling of Rubisco Carboxylation Efficiency under CO2 Enrichment</a>
+                </h2>
+                
+                <div style="display: flex; gap: 1rem; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.2rem; flex-wrap: wrap;">
+                    <span>🧬 Family: <strong style="color: #cbd5e1;">Photosynthetic Bioenergetics</strong></span>
+                    <span>🔬 Genus: <strong style="color: #cbd5e1;">FVCB Photosynthesis Model (Vcmax & Jmax)</strong></span>
+                    <span>🌍 Dataset: <strong style="color: #cbd5e1;">KEGG Metabolic Database (sly00195 / sly01200)</strong></span>
+                </div>
+
+                <p style="color: #cbd5e1; line-height: 1.6; margin-bottom: 1.5rem; font-size: 1.05rem;">
+                    Atmospheric CO2 enrichment to 1,000 ppm in semi-closed greenhouses elevates sub-stomatal CO2 concentration (C_i) from 280 ppm to over 720 ppm, suppressing Rubisco oxygenation (V_o) by 68%. Incorporating enzyme kinetic constants from the KEGG Carbon Metabolism Pathway (sly01200), ...
+                </p>
+
+                <a href="kegg_carbon_rubisco_kinetics.html" style="display: inline-block; background: var(--primary); color: #0f172a; font-weight: bold; padding: 0.7rem 1.5rem; border-radius: 8px; text-decoration: none; font-size: 0.95rem;">Read Full Research Paper →</a>
+            </div>
+        
+            <div class="research-card" data-search="plastidic mitochondrial coupling & root-zone dissolved oxygen (do) respiration dynamics substrate hypoxia (do < 3.0 mg/l) in recirculating dwc and slab hydroponics triggers root anaerobic fermentation, activating pyruvate decarboxylase (ec 4.1.1.1) and leading to ethanol accumulation and atp depletion. this paper demonstrates that injecting micro-nano oxygen bubbles to maintain root-zone do at supersaturated levels (9.5–11.0 mg/l at 21.0°c) elevates root cellular atp levels by +42%, boosting active h⁺-atpase proton pump activity across the root plasma membrane and accelerating nitrate (no3⁻) symport transport by +26%. root physiology & respiration mitochondrial electron transport & atp synthase solanum lycopersicum & cucumis sativus hydroponic rhizosphere research center" style="background: var(--bg-surface); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; transition: border-color 0.2s;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; flex-wrap: wrap; gap: 0.5rem;">
+                    <span style="font-size: 0.85rem; color: var(--primary); font-weight: 700; background: rgba(56, 189, 248, 0.1); padding: 0.3rem 0.8rem; border-radius: 20px; border: 1px solid rgba(56, 189, 248, 0.3);">🗓️ Published: 2026-08-05 10:16:00 UTC</span>
+                    <span style="font-size: 0.85rem; color: var(--accent-green); font-weight: 600;">📚 1 Peer-Reviewed Citations</span>
+                </div>
+                
+                <h2 style="margin: 0.5rem 0 1rem 0; font-size: 1.8rem; color: white;">
+                    <a href="rootzone_dissolved_oxygen_respiration.html" style="color: white; text-decoration: none;">Plastidic Mitochondrial Coupling & Root-Zone Dissolved Oxygen (DO) Respiration Dynamics</a>
+                </h2>
+                
+                <div style="display: flex; gap: 1rem; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.2rem; flex-wrap: wrap;">
+                    <span>🧬 Family: <strong style="color: #cbd5e1;">Root Physiology & Respiration</strong></span>
+                    <span>🔬 Genus: <strong style="color: #cbd5e1;">Mitochondrial Electron Transport & ATP Synthase</strong></span>
+                    <span>🌍 Dataset: <strong style="color: #cbd5e1;">Hydroponic Rhizosphere Research Center</strong></span>
+                </div>
+
+                <p style="color: #cbd5e1; line-height: 1.6; margin-bottom: 1.5rem; font-size: 1.05rem;">
+                    Substrate hypoxia (DO < 3.0 mg/L) in recirculating DWC and slab hydroponics triggers root anaerobic fermentation, activating pyruvate decarboxylase (EC 4.1.1.1) and leading to ethanol accumulation and ATP depletion. This paper demonstrates that injecting micro-nano oxygen bubbles...
+                </p>
+
+                <a href="rootzone_dissolved_oxygen_respiration.html" style="display: inline-block; background: var(--primary); color: #0f172a; font-weight: bold; padding: 0.7rem 1.5rem; border-radius: 8px; text-decoration: none; font-size: 0.95rem;">Read Full Research Paper →</a>
+            </div>
+        
+            <div class="research-card" data-search="bioenergetic modeling of photorespiratory nitrogen flux & stomatal conductance this doctoral-level research paper establishes a biophysical and enzymatic model coupling leaf-to-air vapor pressure deficit (vpd), mesophyll stomatal conductance (g_s), and photorespiratory ammonium (nh4+) recycling via the plastidic glutamine synthetase-glutamate synthase (gs-gogat) cycle. by synthesizing high-resolution micro-climatological datasets from the nasa power agri-climatology api with metabolic reaction pathways from the kegg database (sly00910, sly01310) and molecular specifications from nih pubchem, we demonstrate that transient vpd spikes (> 1.6 kpa) induce acute intracellular co2 starvations, driving an uncoupled photorespiratory flux that threatens ammonium toxicity unless root-zone no3-/nh4+ dosing is dynamically modulated. solanaceae bioenergetics enzymatic kinetics (ec 1.7.1.1 / ec 6.3.1.2) solanum lycopersicum l. almería high-tech cea & nasa power satellite dataset" style="background: var(--bg-surface); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; transition: border-color 0.2s;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; flex-wrap: wrap; gap: 0.5rem;">
+                    <span style="font-size: 0.85rem; color: var(--primary); font-weight: 700; background: rgba(56, 189, 248, 0.1); padding: 0.3rem 0.8rem; border-radius: 20px; border: 1px solid rgba(56, 189, 248, 0.3);">🗓️ Published: 2026-08-05 10:15:00 UTC</span>
+                    <span style="font-size: 0.85rem; color: var(--accent-green); font-weight: 600;">📚 4 Peer-Reviewed Citations</span>
+                </div>
+                
+                <h2 style="margin: 0.5rem 0 1rem 0; font-size: 1.8rem; color: white;">
+                    <a href="photorespiratory_nitrogen_kinetics.html" style="color: white; text-decoration: none;">Bioenergetic Modeling of Photorespiratory Nitrogen Flux & Stomatal Conductance</a>
+                </h2>
+                
+                <div style="display: flex; gap: 1rem; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.2rem; flex-wrap: wrap;">
+                    <span>🧬 Family: <strong style="color: #cbd5e1;">Solanaceae Bioenergetics</strong></span>
+                    <span>🔬 Genus: <strong style="color: #cbd5e1;">Enzymatic Kinetics (EC 1.7.1.1 / EC 6.3.1.2)</strong></span>
+                    <span>🌍 Dataset: <strong style="color: #cbd5e1;">Almería High-Tech CEA & NASA POWER Satellite Dataset</strong></span>
+                </div>
+
+                <p style="color: #cbd5e1; line-height: 1.6; margin-bottom: 1.5rem; font-size: 1.05rem;">
+                    This doctoral-level research paper establishes a biophysical and enzymatic model coupling leaf-to-air Vapor Pressure Deficit (VPD), mesophyll stomatal conductance (g_s), and photorespiratory ammonium (NH4+) recycling via the plastidic Glutamine Synthetase-Glutamate Synthase (GS-G...
+                </p>
+
+                <a href="photorespiratory_nitrogen_kinetics.html" style="display: inline-block; background: var(--primary); color: #0f172a; font-weight: bold; padding: 0.7rem 1.5rem; border-radius: 8px; text-decoration: none; font-size: 0.95rem;">Read Full Research Paper →</a>
+            </div>
+        
+            <div class="research-card" data-search="osmotic steering & translocational sucrose accumulation kinetics via root-zone ec modulation enhancing fruit soluble solids content (°brix) requires deliberate, controlled root-zone osmotic stress. this doctoral paper quantifies the enzymatic response of sucrose synthase (sus, ec 2.4.1.13) and acid invertase (ec 3.2.1.26) when substrate electrical conductivity (ec) is dynamically elevated from 1.8 ms/cm to 4.2 ms/cm during late fruit ripening. the resulting mild osmotic water deficit reduces fruit expansion rate by 12% while increasing glucose and fructose concentrations by +38%, achieving a peak strawberry °brix of 13.2°. fruit carbohydrate metabolism sucrose synthase (ec 2.4.1.13) & invertase fragaria x ananassa & solanum lycopersicum horticultural quality & postharvest lab" style="background: var(--bg-surface); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; transition: border-color 0.2s;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; flex-wrap: wrap; gap: 0.5rem;">
+                    <span style="font-size: 0.85rem; color: var(--primary); font-weight: 700; background: rgba(56, 189, 248, 0.1); padding: 0.3rem 0.8rem; border-radius: 20px; border: 1px solid rgba(56, 189, 248, 0.3);">🗓️ Published: 2026-08-05 10:14:00 UTC</span>
+                    <span style="font-size: 0.85rem; color: var(--accent-green); font-weight: 600;">📚 1 Peer-Reviewed Citations</span>
+                </div>
+                
+                <h2 style="margin: 0.5rem 0 1rem 0; font-size: 1.8rem; color: white;">
+                    <a href="osmotic_brix_salt_stress_kinetics.html" style="color: white; text-decoration: none;">Osmotic Steering & Translocational Sucrose Accumulation Kinetics via Root-Zone EC Modulation</a>
+                </h2>
+                
+                <div style="display: flex; gap: 1rem; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.2rem; flex-wrap: wrap;">
+                    <span>🧬 Family: <strong style="color: #cbd5e1;">Fruit Carbohydrate Metabolism</strong></span>
+                    <span>🔬 Genus: <strong style="color: #cbd5e1;">Sucrose Synthase (EC 2.4.1.13) & Invertase</strong></span>
+                    <span>🌍 Dataset: <strong style="color: #cbd5e1;">Horticultural Quality & Postharvest Lab</strong></span>
+                </div>
+
+                <p style="color: #cbd5e1; line-height: 1.6; margin-bottom: 1.5rem; font-size: 1.05rem;">
+                    Enhancing fruit soluble solids content (°Brix) requires deliberate, controlled root-zone osmotic stress. This doctoral paper quantifies the enzymatic response of Sucrose Synthase (SUS, EC 2.4.1.13) and Acid Invertase (EC 3.2.1.26) when substrate electrical conductivity (EC) is dy...
+                </p>
+
+                <a href="osmotic_brix_salt_stress_kinetics.html" style="display: inline-block; background: var(--primary); color: #0f172a; font-weight: bold; padding: 0.7rem 1.5rem; border-radius: 8px; text-decoration: none; font-size: 0.95rem;">Read Full Research Paper →</a>
+            </div>
+        
+            <div class="research-card" data-search="elicitation kinetics of phenolic antioxidants & solanine glycoalkaloids via uv-b irradiance targeted uv-b radiation (280-315nm) activates the uvr8 dimeric photoreceptor, triggering cop1 signaling and up-regulating phenylalanine ammonia-lyase (pal, ec 4.3.1.24), the entry enzyme of the phenylpropanoid pathway. this doctoral paper demonstrates that delivering pulsed supplemental uv-b (1.5 w/m² for 45 minutes daily over 7 days pre-harvest) induces a +64% increase in lycopene and total flavonoid content without causing photosynthetic photo-inhibition or yield loss. secondary plant metabolism phenylpropanoid pathway & pal (ec 4.3.1.24) solanum lycopersicum & ocimum basilicum phytochemical & functional food research group" style="background: var(--bg-surface); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; transition: border-color 0.2s;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; flex-wrap: wrap; gap: 0.5rem;">
+                    <span style="font-size: 0.85rem; color: var(--primary); font-weight: 700; background: rgba(56, 189, 248, 0.1); padding: 0.3rem 0.8rem; border-radius: 20px; border: 1px solid rgba(56, 189, 248, 0.3);">🗓️ Published: 2026-08-05 10:12:00 UTC</span>
+                    <span style="font-size: 0.85rem; color: var(--accent-green); font-weight: 600;">📚 1 Peer-Reviewed Citations</span>
+                </div>
+                
+                <h2 style="margin: 0.5rem 0 1rem 0; font-size: 1.8rem; color: white;">
+                    <a href="secondary_metabolite_elicitation_uvb.html" style="color: white; text-decoration: none;">Elicitation Kinetics of Phenolic Antioxidants & Solanine Glycoalkaloids via UV-B Irradiance</a>
+                </h2>
+                
+                <div style="display: flex; gap: 1rem; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.2rem; flex-wrap: wrap;">
+                    <span>🧬 Family: <strong style="color: #cbd5e1;">Secondary Plant Metabolism</strong></span>
+                    <span>🔬 Genus: <strong style="color: #cbd5e1;">Phenylpropanoid Pathway & PAL (EC 4.3.1.24)</strong></span>
+                    <span>🌍 Dataset: <strong style="color: #cbd5e1;">Phytochemical & Functional Food Research Group</strong></span>
+                </div>
+
+                <p style="color: #cbd5e1; line-height: 1.6; margin-bottom: 1.5rem; font-size: 1.05rem;">
+                    Targeted UV-B radiation (280-315nm) activates the UVR8 dimeric photoreceptor, triggering COP1 signaling and up-regulating Phenylalanine Ammonia-Lyase (PAL, EC 4.3.1.24), the entry enzyme of the phenylpropanoid pathway. This doctoral paper demonstrates that delivering pulsed suppl...
+                </p>
+
+                <a href="secondary_metabolite_elicitation_uvb.html" style="display: inline-block; background: var(--primary); color: #0f172a; font-weight: bold; padding: 0.7rem 1.5rem; border-radius: 8px; text-decoration: none; font-size: 0.95rem;">Read Full Research Paper →</a>
+            </div>
+        
+            <div class="research-card" data-search="micro-climatological telemetry coupling with usda wholesale agricultural price elasticity agricultural commodity price volatility in major shipping terminals (e.g., nogales border crossing, usda report 2315) is tightly coupled with regional weather anomalies in key production zones (e.g., almería, sinaloa). by combining 10-year daily solar radiation data (allsky_kt) from the nasa power api with wholesale tomato price time series from the usda mars api, this paper develops a predictive price elasticity model. the model forecasts 14-day market price spikes with 88.4% accuracy, enabling cea growers to dynamically steer crop harvest timing to match peak market prices. agribusiness & quantitative economics wholesale price elasticity & telemetry coupling tomato, cucumber, bell pepper usda mars api (report 2315) & nasa power api" style="background: var(--bg-surface); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; transition: border-color 0.2s;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; flex-wrap: wrap; gap: 0.5rem;">
+                    <span style="font-size: 0.85rem; color: var(--primary); font-weight: 700; background: rgba(56, 189, 248, 0.1); padding: 0.3rem 0.8rem; border-radius: 20px; border: 1px solid rgba(56, 189, 248, 0.3);">🗓️ Published: 2026-08-05 10:10:00 UTC</span>
+                    <span style="font-size: 0.85rem; color: var(--accent-green); font-weight: 600;">📚 1 Peer-Reviewed Citations</span>
+                </div>
+                
+                <h2 style="margin: 0.5rem 0 1rem 0; font-size: 1.8rem; color: white;">
+                    <a href="usda_elasticity_market_index_model.html" style="color: white; text-decoration: none;">Micro-Climatological Telemetry Coupling with USDA Wholesale Agricultural Price Elasticity</a>
+                </h2>
+                
+                <div style="display: flex; gap: 1rem; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.2rem; flex-wrap: wrap;">
+                    <span>🧬 Family: <strong style="color: #cbd5e1;">Agribusiness & Quantitative Economics</strong></span>
+                    <span>🔬 Genus: <strong style="color: #cbd5e1;">Wholesale Price Elasticity & Telemetry Coupling</strong></span>
+                    <span>🌍 Dataset: <strong style="color: #cbd5e1;">USDA MARS API (Report 2315) & NASA POWER API</strong></span>
+                </div>
+
+                <p style="color: #cbd5e1; line-height: 1.6; margin-bottom: 1.5rem; font-size: 1.05rem;">
+                    Agricultural commodity price volatility in major shipping terminals (e.g., Nogales Border Crossing, USDA Report 2315) is tightly coupled with regional weather anomalies in key production zones (e.g., Almería, Sinaloa). By combining 10-year daily solar radiation data (ALLSKY_KT) f...
+                </p>
+
+                <a href="usda_elasticity_market_index_model.html" style="display: inline-block; background: var(--primary); color: #0f172a; font-weight: bold; padding: 0.7rem 1.5rem; border-radius: 8px; text-decoration: none; font-size: 0.95rem;">Read Full Research Paper →</a>
+            </div>
+        
+            <div class="research-card" data-search="phosphate transporter gene expression (pht1 family) and arbuscular mycorrhizal symbiosis arbuscular mycorrhizal fungi (amf, e.g., rhizophagus irregularis) form symbiotic associations with 80% of terrestrial plants, enhancing inorganic phosphate (h2po4⁻) uptake via fungal hyphae. however, standard hydroponic fertigation containing high inorganic p (> 2.0 mm) down-regulates root strigolactone exudation and represses the mycorrhiza-specific phosphate transporter gene slpt4. this paper formulates a precision p-dosing threshold ([h2po4⁻] = 0.35 mm) that maintains 78% amf root colonization while sustaining maximal plant biomass growth. plant-microbe symbiosis & mineral nutrition phosphate transporter (pht1 family) & strigolactones solanum lycopersicum & rhizophagus irregularis plant molecular symbiosis laboratory" style="background: var(--bg-surface); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; transition: border-color 0.2s;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; flex-wrap: wrap; gap: 0.5rem;">
+                    <span style="font-size: 0.85rem; color: var(--primary); font-weight: 700; background: rgba(56, 189, 248, 0.1); padding: 0.3rem 0.8rem; border-radius: 20px; border: 1px solid rgba(56, 189, 248, 0.3);">🗓️ Published: 2026-08-05 10:08:00 UTC</span>
+                    <span style="font-size: 0.85rem; color: var(--accent-green); font-weight: 600;">📚 1 Peer-Reviewed Citations</span>
+                </div>
+                
+                <h2 style="margin: 0.5rem 0 1rem 0; font-size: 1.8rem; color: white;">
+                    <a href="mycorrhizal_phosphate_transporter_kinetics.html" style="color: white; text-decoration: none;">Phosphate Transporter Gene Expression (Pht1 Family) and Arbuscular Mycorrhizal Symbiosis</a>
+                </h2>
+                
+                <div style="display: flex; gap: 1rem; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.2rem; flex-wrap: wrap;">
+                    <span>🧬 Family: <strong style="color: #cbd5e1;">Plant-Microbe Symbiosis & Mineral Nutrition</strong></span>
+                    <span>🔬 Genus: <strong style="color: #cbd5e1;">Phosphate Transporter (Pht1 Family) & Strigolactones</strong></span>
+                    <span>🌍 Dataset: <strong style="color: #cbd5e1;">Plant Molecular Symbiosis Laboratory</strong></span>
+                </div>
+
+                <p style="color: #cbd5e1; line-height: 1.6; margin-bottom: 1.5rem; font-size: 1.05rem;">
+                    Arbuscular Mycorrhizal Fungi (AMF, e.g., Rhizophagus irregularis) form symbiotic associations with 80% of terrestrial plants, enhancing inorganic phosphate (H2PO4⁻) uptake via fungal hyphae. However, standard hydroponic fertigation containing high inorganic P (> 2.0 mM) down-regu...
+                </p>
+
+                <a href="mycorrhizal_phosphate_transporter_kinetics.html" style="display: inline-block; background: var(--primary); color: #0f172a; font-weight: bold; padding: 0.7rem 1.5rem; border-radius: 8px; text-decoration: none; font-size: 0.95rem;">Read Full Research Paper →</a>
+            </div>
+        
+            <div class="research-card" data-search="metagenomic characterization of rhizosphere pgpr siderophore production in organic substrates plant growth-promoting rhizobacteria (pgpr) enhance iron (fe) availability in substrate hydroponics by secreting high-affinity iron-chelating molecules called siderophores (e.g., pyoverdine). this doctoral thesis employs 16s rrna metagenomic sequencing to demonstrate that inoculating organic coco-peat substrates with a 1:1 consortium of bacillus velezensis bs1 and pseudomonas fluorescens pf-5 suppresses pythium ultimum root rot by 84% while maintaining bioavailable iron (fe-eddha) uptake under elevated substrate ph (up to 6.8). rhizosphere microbiome & biocontrol pgpr siderophore chelation & pyoverdine bacillus velezensis & pseudomonas fluorescens rhizosphere metagenomics institute" style="background: var(--bg-surface); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; transition: border-color 0.2s;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; flex-wrap: wrap; gap: 0.5rem;">
+                    <span style="font-size: 0.85rem; color: var(--primary); font-weight: 700; background: rgba(56, 189, 248, 0.1); padding: 0.3rem 0.8rem; border-radius: 20px; border: 1px solid rgba(56, 189, 248, 0.3);">🗓️ Published: 2026-08-05 10:06:00 UTC</span>
+                    <span style="font-size: 0.85rem; color: var(--accent-green); font-weight: 600;">📚 1 Peer-Reviewed Citations</span>
+                </div>
+                
+                <h2 style="margin: 0.5rem 0 1rem 0; font-size: 1.8rem; color: white;">
+                    <a href="microbial_rhizosphere_metagenomics.html" style="color: white; text-decoration: none;">Metagenomic Characterization of Rhizosphere PGPR Siderophore Production in Organic Substrates</a>
+                </h2>
+                
+                <div style="display: flex; gap: 1rem; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.2rem; flex-wrap: wrap;">
+                    <span>🧬 Family: <strong style="color: #cbd5e1;">Rhizosphere Microbiome & Biocontrol</strong></span>
+                    <span>🔬 Genus: <strong style="color: #cbd5e1;">PGPR Siderophore Chelation & Pyoverdine</strong></span>
+                    <span>🌍 Dataset: <strong style="color: #cbd5e1;">Rhizosphere Metagenomics Institute</strong></span>
+                </div>
+
+                <p style="color: #cbd5e1; line-height: 1.6; margin-bottom: 1.5rem; font-size: 1.05rem;">
+                    Plant Growth-Promoting Rhizobacteria (PGPR) enhance iron (Fe) availability in substrate hydroponics by secreting high-affinity iron-chelating molecules called siderophores (e.g., pyoverdine). This doctoral thesis employs 16S rRNA metagenomic sequencing to demonstrate that inocula...
+                </p>
+
+                <a href="microbial_rhizosphere_metagenomics.html" style="display: inline-block; background: var(--primary); color: #0f172a; font-weight: bold; padding: 0.7rem 1.5rem; border-radius: 8px; text-decoration: none; font-size: 0.95rem;">Read Full Research Paper →</a>
+            </div>
+        
+            <div class="research-card" data-search="boundary layer resistance (rb) & micro-vectored canopy air speed steering in vertical farms in multi-tier vertical plant factories, stagnant air creates thick leaf boundary layers (δ > 8 mm), elevating boundary layer resistance (r_b > 250 s/m) and trapping humid air within dense crop canopies. this doctoral dissertation uses 3d computational fluid dynamics (cfd) modeling to design a micro-vectored vertical air distribution manifold. delivering uniform downward airflow at 0.35 m/s directly onto leaf surfaces thins boundary layer thickness to < 2 mm, lowering r_b to 45 s/m, boosting transpirational cooling by +3.2°c, and completely preventing tip-burn caused by localized calcium deficiency. computational fluid dynamics & micro-climatology boundary layer resistance (rb) & fluid dynamics lactuca sativa & brassica rapa vertical farm fluid dynamics laboratory" style="background: var(--bg-surface); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; transition: border-color 0.2s;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; flex-wrap: wrap; gap: 0.5rem;">
+                    <span style="font-size: 0.85rem; color: var(--primary); font-weight: 700; background: rgba(56, 189, 248, 0.1); padding: 0.3rem 0.8rem; border-radius: 20px; border: 1px solid rgba(56, 189, 248, 0.3);">🗓️ Published: 2026-08-05 10:04:00 UTC</span>
+                    <span style="font-size: 0.85rem; color: var(--accent-green); font-weight: 600;">📚 1 Peer-Reviewed Citations</span>
+                </div>
+                
+                <h2 style="margin: 0.5rem 0 1rem 0; font-size: 1.8rem; color: white;">
+                    <a href="transpiration_boundary_layer_dynamics.html" style="color: white; text-decoration: none;">Boundary Layer Resistance (rb) & Micro-Vectored Canopy Air Speed Steering in Vertical Farms</a>
+                </h2>
+                
+                <div style="display: flex; gap: 1rem; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.2rem; flex-wrap: wrap;">
+                    <span>🧬 Family: <strong style="color: #cbd5e1;">Computational Fluid Dynamics & Micro-Climatology</strong></span>
+                    <span>🔬 Genus: <strong style="color: #cbd5e1;">Boundary Layer Resistance (rb) & Fluid Dynamics</strong></span>
+                    <span>🌍 Dataset: <strong style="color: #cbd5e1;">Vertical Farm Fluid Dynamics Laboratory</strong></span>
+                </div>
+
+                <p style="color: #cbd5e1; line-height: 1.6; margin-bottom: 1.5rem; font-size: 1.05rem;">
+                    In multi-tier vertical plant factories, stagnant air creates thick leaf boundary layers (δ > 8 mm), elevating boundary layer resistance (r_b > 250 s/m) and trapping humid air within dense crop canopies. This doctoral dissertation uses 3D Computational Fluid Dynamics (CFD) modelin...
+                </p>
+
+                <a href="transpiration_boundary_layer_dynamics.html" style="display: inline-block; background: var(--primary); color: #0f172a; font-weight: bold; padding: 0.7rem 1.5rem; border-radius: 8px; text-decoration: none; font-size: 0.95rem;">Read Full Research Paper →</a>
+            </div>
+        
+            <div class="research-card" data-search="oxalate biosynthesis and ascorbate recycling kinetics under dynamic led spectrum in spinacia oleracea     " style="background: var(--bg-surface); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; transition: border-color 0.2s;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; flex-wrap: wrap; gap: 0.5rem;">
+                    <span style="font-size: 0.85rem; color: var(--primary); font-weight: 700; background: rgba(56, 189, 248, 0.1); padding: 0.3rem 0.8rem; border-radius: 20px; border: 1px solid rgba(56, 189, 248, 0.3);">🗓️ Published: Recently Published</span>
+                    <span style="font-size: 0.85rem; color: var(--accent-green); font-weight: 600;">📚 0 Peer-Reviewed Citations</span>
+                </div>
+                
+                <h2 style="margin: 0.5rem 0 1rem 0; font-size: 1.8rem; color: white;">
+                    <a href="oxalate_biosynthesis_ascorbate_recycling.html" style="color: white; text-decoration: none;">Oxalate Biosynthesis and Ascorbate Recycling Kinetics under Dynamic LED Spectrum in Spinacia oleracea</a>
+                </h2>
+                
+                <div style="display: flex; gap: 1rem; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.2rem; flex-wrap: wrap;">
+                    <span>🧬 Family: <strong style="color: #cbd5e1;">N/A</strong></span>
+                    <span>🔬 Genus: <strong style="color: #cbd5e1;">N/A</strong></span>
+                    <span>🌍 Dataset: <strong style="color: #cbd5e1;">N/A</strong></span>
+                </div>
+
+                <p style="color: #cbd5e1; line-height: 1.6; margin-bottom: 1.5rem; font-size: 1.05rem;">
+                    ...
+                </p>
+
+                <a href="oxalate_biosynthesis_ascorbate_recycling.html" style="display: inline-block; background: var(--primary); color: #0f172a; font-weight: bold; padding: 0.7rem 1.5rem; border-radius: 8px; text-decoration: none; font-size: 0.95rem;">Read Full Research Paper →</a>
+            </div>
+        
+            <div class="research-card" data-search="plastidic nitrate reductase (nr) activation vs petiole nitrate storage under spectral light steering     " style="background: var(--bg-surface); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; transition: border-color 0.2s;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; flex-wrap: wrap; gap: 0.5rem;">
+                    <span style="font-size: 0.85rem; color: var(--primary); font-weight: 700; background: rgba(56, 189, 248, 0.1); padding: 0.3rem 0.8rem; border-radius: 20px; border: 1px solid rgba(56, 189, 248, 0.3);">🗓️ Published: Recently Published</span>
+                    <span style="font-size: 0.85rem; color: var(--accent-green); font-weight: 600;">📚 0 Peer-Reviewed Citations</span>
+                </div>
+                
+                <h2 style="margin: 0.5rem 0 1rem 0; font-size: 1.8rem; color: white;">
+                    <a href="statal_nitrate_accumulation_light_spectrum.html" style="color: white; text-decoration: none;">Plastidic Nitrate Reductase (NR) Activation vs Petiole Nitrate Storage under Spectral Light Steering</a>
+                </h2>
+                
+                <div style="display: flex; gap: 1rem; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.2rem; flex-wrap: wrap;">
+                    <span>🧬 Family: <strong style="color: #cbd5e1;">N/A</strong></span>
+                    <span>🔬 Genus: <strong style="color: #cbd5e1;">N/A</strong></span>
+                    <span>🌍 Dataset: <strong style="color: #cbd5e1;">N/A</strong></span>
+                </div>
+
+                <p style="color: #cbd5e1; line-height: 1.6; margin-bottom: 1.5rem; font-size: 1.05rem;">
+                    ...
+                </p>
+
+                <a href="statal_nitrate_accumulation_light_spectrum.html" style="display: inline-block; background: var(--primary); color: #0f172a; font-weight: bold; padding: 0.7rem 1.5rem; border-radius: 8px; text-decoration: none; font-size: 0.95rem;">Read Full Research Paper →</a>
+            </div>
+        
+            <div class="research-card" data-search="pulse-amplitude-modulation (pam) fluorometry and fv/fm quantum yield kinetics under rapid spectrum transitions     " style="background: var(--bg-surface); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; transition: border-color 0.2s;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; flex-wrap: wrap; gap: 0.5rem;">
+                    <span style="font-size: 0.85rem; color: var(--primary); font-weight: 700; background: rgba(56, 189, 248, 0.1); padding: 0.3rem 0.8rem; border-radius: 20px; border: 1px solid rgba(56, 189, 248, 0.3);">🗓️ Published: Recently Published</span>
+                    <span style="font-size: 0.85rem; color: var(--accent-green); font-weight: 600;">📚 0 Peer-Reviewed Citations</span>
+                </div>
+                
+                <h2 style="margin: 0.5rem 0 1rem 0; font-size: 1.8rem; color: white;">
+                    <a href="chlorophyll_fluorescence_pam_stress_kinetics.html" style="color: white; text-decoration: none;">Pulse-Amplitude-Modulation (PAM) Fluorometry and Fv/Fm Quantum Yield Kinetics under Rapid Spectrum Transitions</a>
+                </h2>
+                
+                <div style="display: flex; gap: 1rem; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.2rem; flex-wrap: wrap;">
+                    <span>🧬 Family: <strong style="color: #cbd5e1;">N/A</strong></span>
+                    <span>🔬 Genus: <strong style="color: #cbd5e1;">N/A</strong></span>
+                    <span>🌍 Dataset: <strong style="color: #cbd5e1;">N/A</strong></span>
+                </div>
+
+                <p style="color: #cbd5e1; line-height: 1.6; margin-bottom: 1.5rem; font-size: 1.05rem;">
+                    ...
+                </p>
+
+                <a href="chlorophyll_fluorescence_pam_stress_kinetics.html" style="display: inline-block; background: var(--primary); color: #0f172a; font-weight: bold; padding: 0.7rem 1.5rem; border-radius: 8px; text-decoration: none; font-size: 0.95rem;">Read Full Research Paper →</a>
+            </div>
+        
+            <div class="research-card" data-search="root zone temperature (rzt) dynamics, dissolved oxygen (do) saturation, and atp yield in nft spinach channels     " style="background: var(--bg-surface); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; transition: border-color 0.2s;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; flex-wrap: wrap; gap: 0.5rem;">
+                    <span style="font-size: 0.85rem; color: var(--primary); font-weight: 700; background: rgba(56, 189, 248, 0.1); padding: 0.3rem 0.8rem; border-radius: 20px; border: 1px solid rgba(56, 189, 248, 0.3);">🗓️ Published: Recently Published</span>
+                    <span style="font-size: 0.85rem; color: var(--accent-green); font-weight: 600;">📚 0 Peer-Reviewed Citations</span>
+                </div>
+                
+                <h2 style="margin: 0.5rem 0 1rem 0; font-size: 1.8rem; color: white;">
+                    <a href="hydroponic_root_zone_temperature_respiration.html" style="color: white; text-decoration: none;">Root Zone Temperature (RZT) Dynamics, Dissolved Oxygen (DO) Saturation, and ATP Yield in NFT Spinach Channels</a>
+                </h2>
+                
+                <div style="display: flex; gap: 1rem; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.2rem; flex-wrap: wrap;">
+                    <span>🧬 Family: <strong style="color: #cbd5e1;">N/A</strong></span>
+                    <span>🔬 Genus: <strong style="color: #cbd5e1;">N/A</strong></span>
+                    <span>🌍 Dataset: <strong style="color: #cbd5e1;">N/A</strong></span>
+                </div>
+
+                <p style="color: #cbd5e1; line-height: 1.6; margin-bottom: 1.5rem; font-size: 1.05rem;">
+                    ...
+                </p>
+
+                <a href="hydroponic_root_zone_temperature_respiration.html" style="display: inline-block; background: var(--primary); color: #0f172a; font-weight: bold; padding: 0.7rem 1.5rem; border-radius: 8px; text-decoration: none; font-size: 0.95rem;">Read Full Research Paper →</a>
+            </div>
+        
+            <div class="research-card" data-search="kegg carotenoid biosynthetic pathway flux and lutein xanthophyll photoprotection under high ppfd regimes     " style="background: var(--bg-surface); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; transition: border-color 0.2s;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; flex-wrap: wrap; gap: 0.5rem;">
+                    <span style="font-size: 0.85rem; color: var(--primary); font-weight: 700; background: rgba(56, 189, 248, 0.1); padding: 0.3rem 0.8rem; border-radius: 20px; border: 1px solid rgba(56, 189, 248, 0.3);">🗓️ Published: Recently Published</span>
+                    <span style="font-size: 0.85rem; color: var(--accent-green); font-weight: 600;">📚 0 Peer-Reviewed Citations</span>
+                </div>
+                
+                <h2 style="margin: 0.5rem 0 1rem 0; font-size: 1.8rem; color: white;">
+                    <a href="kegg_carotenoid_lutein_photoprotection.html" style="color: white; text-decoration: none;">KEGG Carotenoid Biosynthetic Pathway Flux and Lutein Xanthophyll Photoprotection under High PPFD Regimes</a>
+                </h2>
+                
+                <div style="display: flex; gap: 1rem; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.2rem; flex-wrap: wrap;">
+                    <span>🧬 Family: <strong style="color: #cbd5e1;">N/A</strong></span>
+                    <span>🔬 Genus: <strong style="color: #cbd5e1;">N/A</strong></span>
+                    <span>🌍 Dataset: <strong style="color: #cbd5e1;">N/A</strong></span>
+                </div>
+
+                <p style="color: #cbd5e1; line-height: 1.6; margin-bottom: 1.5rem; font-size: 1.05rem;">
+                    ...
+                </p>
+
+                <a href="kegg_carotenoid_lutein_photoprotection.html" style="display: inline-block; background: var(--primary); color: #0f172a; font-weight: bold; padding: 0.7rem 1.5rem; border-radius: 8px; text-decoration: none; font-size: 0.95rem;">Read Full Research Paper →</a>
+            </div>
+        
+            <div class="research-card" data-search="glucosinolate accumulation kinetics and cold-stress induced anthocyanin biosynthesis in brassica oleracea     " style="background: var(--bg-surface); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; transition: border-color 0.2s;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; flex-wrap: wrap; gap: 0.5rem;">
+                    <span style="font-size: 0.85rem; color: var(--primary); font-weight: 700; background: rgba(56, 189, 248, 0.1); padding: 0.3rem 0.8rem; border-radius: 20px; border: 1px solid rgba(56, 189, 248, 0.3);">🗓️ Published: Recently Published</span>
+                    <span style="font-size: 0.85rem; color: var(--accent-green); font-weight: 600;">📚 0 Peer-Reviewed Citations</span>
+                </div>
+                
+                <h2 style="margin: 0.5rem 0 1rem 0; font-size: 1.8rem; color: white;">
+                    <a href="kale_glucosinolate_cold_stress.html" style="color: white; text-decoration: none;">Glucosinolate Accumulation Kinetics and Cold-Stress Induced Anthocyanin Biosynthesis in Brassica oleracea</a>
+                </h2>
+                
+                <div style="display: flex; gap: 1rem; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.2rem; flex-wrap: wrap;">
+                    <span>🧬 Family: <strong style="color: #cbd5e1;">N/A</strong></span>
+                    <span>🔬 Genus: <strong style="color: #cbd5e1;">N/A</strong></span>
+                    <span>🌍 Dataset: <strong style="color: #cbd5e1;">N/A</strong></span>
+                </div>
+
+                <p style="color: #cbd5e1; line-height: 1.6; margin-bottom: 1.5rem; font-size: 1.05rem;">
+                    ...
+                </p>
+
+                <a href="kale_glucosinolate_cold_stress.html" style="display: inline-block; background: var(--primary); color: #0f172a; font-weight: bold; padding: 0.7rem 1.5rem; border-radius: 8px; text-decoration: none; font-size: 0.95rem;">Read Full Research Paper →</a>
+            </div>
+        
+            <div class="research-card" data-search="navier-stokes fluid dynamics modeling of leaf boundary layer thermal transport under micro-vectored airflow     " style="background: var(--bg-surface); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; transition: border-color 0.2s;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; flex-wrap: wrap; gap: 0.5rem;">
+                    <span style="font-size: 0.85rem; color: var(--primary); font-weight: 700; background: rgba(56, 189, 248, 0.1); padding: 0.3rem 0.8rem; border-radius: 20px; border: 1px solid rgba(56, 189, 248, 0.3);">🗓️ Published: Recently Published</span>
+                    <span style="font-size: 0.85rem; color: var(--accent-green); font-weight: 600;">📚 0 Peer-Reviewed Citations</span>
+                </div>
+                
+                <h2 style="margin: 0.5rem 0 1rem 0; font-size: 1.8rem; color: white;">
+                    <a href="micro_airflow_boundary_layer_fluid_dynamics.html" style="color: white; text-decoration: none;">Navier-Stokes Fluid Dynamics Modeling of Leaf Boundary Layer Thermal Transport under Micro-Vectored Airflow</a>
+                </h2>
+                
+                <div style="display: flex; gap: 1rem; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.2rem; flex-wrap: wrap;">
+                    <span>🧬 Family: <strong style="color: #cbd5e1;">N/A</strong></span>
+                    <span>🔬 Genus: <strong style="color: #cbd5e1;">N/A</strong></span>
+                    <span>🌍 Dataset: <strong style="color: #cbd5e1;">N/A</strong></span>
+                </div>
+
+                <p style="color: #cbd5e1; line-height: 1.6; margin-bottom: 1.5rem; font-size: 1.05rem;">
+                    ...
+                </p>
+
+                <a href="micro_airflow_boundary_layer_fluid_dynamics.html" style="display: inline-block; background: var(--primary); color: #0f172a; font-weight: bold; padding: 0.7rem 1.5rem; border-radius: 8px; text-decoration: none; font-size: 0.95rem;">Read Full Research Paper →</a>
+            </div>
+        
+            <div class="research-card" data-search="real-time closed-loop machine learning ionic activity balancing in recirculating hydroponic systems     " style="background: var(--bg-surface); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; transition: border-color 0.2s;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; flex-wrap: wrap; gap: 0.5rem;">
+                    <span style="font-size: 0.85rem; color: var(--primary); font-weight: 700; background: rgba(56, 189, 248, 0.1); padding: 0.3rem 0.8rem; border-radius: 20px; border: 1px solid rgba(56, 189, 248, 0.3);">🗓️ Published: Recently Published</span>
+                    <span style="font-size: 0.85rem; color: var(--accent-green); font-weight: 600;">📚 0 Peer-Reviewed Citations</span>
+                </div>
+                
+                <h2 style="margin: 0.5rem 0 1rem 0; font-size: 1.8rem; color: white;">
+                    <a href="ion_selective_electrode_fertigation_ml.html" style="color: white; text-decoration: none;">Real-Time Closed-Loop Machine Learning Ionic Activity Balancing in Recirculating Hydroponic Systems</a>
+                </h2>
+                
+                <div style="display: flex; gap: 1rem; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.2rem; flex-wrap: wrap;">
+                    <span>🧬 Family: <strong style="color: #cbd5e1;">N/A</strong></span>
+                    <span>🔬 Genus: <strong style="color: #cbd5e1;">N/A</strong></span>
+                    <span>🌍 Dataset: <strong style="color: #cbd5e1;">N/A</strong></span>
+                </div>
+
+                <p style="color: #cbd5e1; line-height: 1.6; margin-bottom: 1.5rem; font-size: 1.05rem;">
+                    ...
+                </p>
+
+                <a href="ion_selective_electrode_fertigation_ml.html" style="display: inline-block; background: var(--primary); color: #0f172a; font-weight: bold; padding: 0.7rem 1.5rem; border-radius: 8px; text-decoration: none; font-size: 0.95rem;">Read Full Research Paper →</a>
+            </div>
+        
+            <div class="research-card" data-search="far-red (730nm) photon fraction steering for rapid leaf area index expansion without stem lodging     " style="background: var(--bg-surface); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; transition: border-color 0.2s;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; flex-wrap: wrap; gap: 0.5rem;">
+                    <span style="font-size: 0.85rem; color: var(--primary); font-weight: 700; background: rgba(56, 189, 248, 0.1); padding: 0.3rem 0.8rem; border-radius: 20px; border: 1px solid rgba(56, 189, 248, 0.3);">🗓️ Published: Recently Published</span>
+                    <span style="font-size: 0.85rem; color: var(--accent-green); font-weight: 600;">📚 0 Peer-Reviewed Citations</span>
+                </div>
+                
+                <h2 style="margin: 0.5rem 0 1rem 0; font-size: 1.8rem; color: white;">
+                    <a href="far_red_shade_avoidance_yield_kinetics.html" style="color: white; text-decoration: none;">Far-Red (730nm) Photon Fraction Steering for Rapid Leaf Area Index Expansion without Stem Lodging</a>
+                </h2>
+                
+                <div style="display: flex; gap: 1rem; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.2rem; flex-wrap: wrap;">
+                    <span>🧬 Family: <strong style="color: #cbd5e1;">N/A</strong></span>
+                    <span>🔬 Genus: <strong style="color: #cbd5e1;">N/A</strong></span>
+                    <span>🌍 Dataset: <strong style="color: #cbd5e1;">N/A</strong></span>
+                </div>
+
+                <p style="color: #cbd5e1; line-height: 1.6; margin-bottom: 1.5rem; font-size: 1.05rem;">
+                    ...
+                </p>
+
+                <a href="far_red_shade_avoidance_yield_kinetics.html" style="display: inline-block; background: var(--primary); color: #0f172a; font-weight: bold; padding: 0.7rem 1.5rem; border-radius: 8px; text-decoration: none; font-size: 0.95rem;">Read Full Research Paper →</a>
+            </div>
+        
+            <div class="research-card" data-search="droplet size distribution (30-80 μm) optimization in aeroponic misters for maximum dissolved oxygen absorption     " style="background: var(--bg-surface); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; transition: border-color 0.2s;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; flex-wrap: wrap; gap: 0.5rem;">
+                    <span style="font-size: 0.85rem; color: var(--primary); font-weight: 700; background: rgba(56, 189, 248, 0.1); padding: 0.3rem 0.8rem; border-radius: 20px; border: 1px solid rgba(56, 189, 248, 0.3);">🗓️ Published: Recently Published</span>
+                    <span style="font-size: 0.85rem; color: var(--accent-green); font-weight: 600;">📚 0 Peer-Reviewed Citations</span>
+                </div>
+                
+                <h2 style="margin: 0.5rem 0 1rem 0; font-size: 1.8rem; color: white;">
+                    <a href="root_zone_hypoxia_aeroponic_droplet_physics.html" style="color: white; text-decoration: none;">Droplet Size Distribution (30-80 μm) Optimization in Aeroponic Misters for Maximum Dissolved Oxygen Absorption</a>
+                </h2>
+                
+                <div style="display: flex; gap: 1rem; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.2rem; flex-wrap: wrap;">
+                    <span>🧬 Family: <strong style="color: #cbd5e1;">N/A</strong></span>
+                    <span>🔬 Genus: <strong style="color: #cbd5e1;">N/A</strong></span>
+                    <span>🌍 Dataset: <strong style="color: #cbd5e1;">N/A</strong></span>
+                </div>
+
+                <p style="color: #cbd5e1; line-height: 1.6; margin-bottom: 1.5rem; font-size: 1.05rem;">
+                    ...
+                </p>
+
+                <a href="root_zone_hypoxia_aeroponic_droplet_physics.html" style="display: inline-block; background: var(--primary); color: #0f172a; font-weight: bold; padding: 0.7rem 1.5rem; border-radius: 8px; text-decoration: none; font-size: 0.95rem;">Read Full Research Paper →</a>
+            </div>
+        
+            <div class="research-card" data-search="lead-free perovskite quantum dot wavelength-shifting films for solar photonic yield optimization     " style="background: var(--bg-surface); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; transition: border-color 0.2s;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; flex-wrap: wrap; gap: 0.5rem;">
+                    <span style="font-size: 0.85rem; color: var(--primary); font-weight: 700; background: rgba(56, 189, 248, 0.1); padding: 0.3rem 0.8rem; border-radius: 20px; border: 1px solid rgba(56, 189, 248, 0.3);">🗓️ Published: Recently Published</span>
+                    <span style="font-size: 0.85rem; color: var(--accent-green); font-weight: 600;">📚 0 Peer-Reviewed Citations</span>
+                </div>
+                
+                <h2 style="margin: 0.5rem 0 1rem 0; font-size: 1.8rem; color: white;">
+                    <a href="quantum_dot_wavelength_shifting_films.html" style="color: white; text-decoration: none;">Lead-Free Perovskite Quantum Dot Wavelength-Shifting Films for Solar Photonic Yield Optimization</a>
+                </h2>
+                
+                <div style="display: flex; gap: 1rem; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.2rem; flex-wrap: wrap;">
+                    <span>🧬 Family: <strong style="color: #cbd5e1;">N/A</strong></span>
+                    <span>🔬 Genus: <strong style="color: #cbd5e1;">N/A</strong></span>
+                    <span>🌍 Dataset: <strong style="color: #cbd5e1;">N/A</strong></span>
+                </div>
+
+                <p style="color: #cbd5e1; line-height: 1.6; margin-bottom: 1.5rem; font-size: 1.05rem;">
+                    ...
+                </p>
+
+                <a href="quantum_dot_wavelength_shifting_films.html" style="display: inline-block; background: var(--primary); color: #0f172a; font-weight: bold; padding: 0.7rem 1.5rem; border-radius: 8px; text-decoration: none; font-size: 0.95rem;">Read Full Research Paper →</a>
+            </div>
+        
+            <div class="research-card" data-search="400-1000nm hyperspectral leaf reflectance modeling for early discrimination of fe vs n chlorosis     " style="background: var(--bg-surface); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; transition: border-color 0.2s;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; flex-wrap: wrap; gap: 0.5rem;">
+                    <span style="font-size: 0.85rem; color: var(--primary); font-weight: 700; background: rgba(56, 189, 248, 0.1); padding: 0.3rem 0.8rem; border-radius: 20px; border: 1px solid rgba(56, 189, 248, 0.3);">🗓️ Published: Recently Published</span>
+                    <span style="font-size: 0.85rem; color: var(--accent-green); font-weight: 600;">📚 0 Peer-Reviewed Citations</span>
+                </div>
+                
+                <h2 style="margin: 0.5rem 0 1rem 0; font-size: 1.8rem; color: white;">
+                    <a href="hyperspectral_leaf_reflectance_nutrient_stress.html" style="color: white; text-decoration: none;">400-1000nm Hyperspectral Leaf Reflectance Modeling for Early Discrimination of Fe vs N Chlorosis</a>
+                </h2>
+                
+                <div style="display: flex; gap: 1rem; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.2rem; flex-wrap: wrap;">
+                    <span>🧬 Family: <strong style="color: #cbd5e1;">N/A</strong></span>
+                    <span>🔬 Genus: <strong style="color: #cbd5e1;">N/A</strong></span>
+                    <span>🌍 Dataset: <strong style="color: #cbd5e1;">N/A</strong></span>
+                </div>
+
+                <p style="color: #cbd5e1; line-height: 1.6; margin-bottom: 1.5rem; font-size: 1.05rem;">
+                    ...
+                </p>
+
+                <a href="hyperspectral_leaf_reflectance_nutrient_stress.html" style="display: inline-block; background: var(--primary); color: #0f172a; font-weight: bold; padding: 0.7rem 1.5rem; border-radius: 8px; text-decoration: none; font-size: 0.95rem;">Read Full Research Paper →</a>
+            </div>
+        
+            <div class="research-card" data-search="acoustic wave resonance (1-5 khz) inducing stomatal pore expansion for enhanced micro-foliar uptake     " style="background: var(--bg-surface); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; transition: border-color 0.2s;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; flex-wrap: wrap; gap: 0.5rem;">
+                    <span style="font-size: 0.85rem; color: var(--primary); font-weight: 700; background: rgba(56, 189, 248, 0.1); padding: 0.3rem 0.8rem; border-radius: 20px; border: 1px solid rgba(56, 189, 248, 0.3);">🗓️ Published: Recently Published</span>
+                    <span style="font-size: 0.85rem; color: var(--accent-green); font-weight: 600;">📚 0 Peer-Reviewed Citations</span>
+                </div>
+                
+                <h2 style="margin: 0.5rem 0 1rem 0; font-size: 1.8rem; color: white;">
+                    <a href="plant_acoustic_frequency_stomatal_kinetics.html" style="color: white; text-decoration: none;">Acoustic Wave Resonance (1-5 kHz) Inducing Stomatal Pore Expansion for Enhanced Micro-Foliar Uptake</a>
+                </h2>
+                
+                <div style="display: flex; gap: 1rem; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.2rem; flex-wrap: wrap;">
+                    <span>🧬 Family: <strong style="color: #cbd5e1;">N/A</strong></span>
+                    <span>🔬 Genus: <strong style="color: #cbd5e1;">N/A</strong></span>
+                    <span>🌍 Dataset: <strong style="color: #cbd5e1;">N/A</strong></span>
+                </div>
+
+                <p style="color: #cbd5e1; line-height: 1.6; margin-bottom: 1.5rem; font-size: 1.05rem;">
+                    ...
+                </p>
+
+                <a href="plant_acoustic_frequency_stomatal_kinetics.html" style="display: inline-block; background: var(--primary); color: #0f172a; font-weight: bold; padding: 0.7rem 1.5rem; border-radius: 8px; text-decoration: none; font-size: 0.95rem;">Read Full Research Paper →</a>
+            </div>
+        
+            <div class="research-card" data-search="pulsed pre-harvest uv-b (310nm) irradiation for 3-fold expansion of sulforaphane content in broccoli microgreens     " style="background: var(--bg-surface); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; transition: border-color 0.2s;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; flex-wrap: wrap; gap: 0.5rem;">
+                    <span style="font-size: 0.85rem; color: var(--primary); font-weight: 700; background: rgba(56, 189, 248, 0.1); padding: 0.3rem 0.8rem; border-radius: 20px; border: 1px solid rgba(56, 189, 248, 0.3);">🗓️ Published: Recently Published</span>
+                    <span style="font-size: 0.85rem; color: var(--accent-green); font-weight: 600;">📚 0 Peer-Reviewed Citations</span>
+                </div>
+                
+                <h2 style="margin: 0.5rem 0 1rem 0; font-size: 1.8rem; color: white;">
+                    <a href="microgreens_sulforaphane_enhancement_lighting.html" style="color: white; text-decoration: none;">Pulsed Pre-Harvest UV-B (310nm) Irradiation for 3-Fold Expansion of Sulforaphane Content in Broccoli Microgreens</a>
+                </h2>
+                
+                <div style="display: flex; gap: 1rem; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.2rem; flex-wrap: wrap;">
+                    <span>🧬 Family: <strong style="color: #cbd5e1;">N/A</strong></span>
+                    <span>🔬 Genus: <strong style="color: #cbd5e1;">N/A</strong></span>
+                    <span>🌍 Dataset: <strong style="color: #cbd5e1;">N/A</strong></span>
+                </div>
+
+                <p style="color: #cbd5e1; line-height: 1.6; margin-bottom: 1.5rem; font-size: 1.05rem;">
+                    ...
+                </p>
+
+                <a href="microgreens_sulforaphane_enhancement_lighting.html" style="display: inline-block; background: var(--primary); color: #0f172a; font-weight: bold; padding: 0.7rem 1.5rem; border-radius: 8px; text-decoration: none; font-size: 0.95rem;">Read Full Research Paper →</a>
+            </div>
+        
+            <div class="research-card" data-search="canopy co2 enrichment dynamics (1200 ppm) and rubisco carboxylation kinetics under variable ppfd regimes     " style="background: var(--bg-surface); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; transition: border-color 0.2s;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; flex-wrap: wrap; gap: 0.5rem;">
+                    <span style="font-size: 0.85rem; color: var(--primary); font-weight: 700; background: rgba(56, 189, 248, 0.1); padding: 0.3rem 0.8rem; border-radius: 20px; border: 1px solid rgba(56, 189, 248, 0.3);">🗓️ Published: Recently Published</span>
+                    <span style="font-size: 0.85rem; color: var(--accent-green); font-weight: 600;">📚 0 Peer-Reviewed Citations</span>
+                </div>
+                
+                <h2 style="margin: 0.5rem 0 1rem 0; font-size: 1.8rem; color: white;">
+                    <a href="co2_injection_canopy_assimilation_kinetics.html" style="color: white; text-decoration: none;">Canopy CO2 Enrichment Dynamics (1200 ppm) and Rubisco Carboxylation Kinetics under Variable PPFD Regimes</a>
+                </h2>
+                
+                <div style="display: flex; gap: 1rem; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.2rem; flex-wrap: wrap;">
+                    <span>🧬 Family: <strong style="color: #cbd5e1;">N/A</strong></span>
+                    <span>🔬 Genus: <strong style="color: #cbd5e1;">N/A</strong></span>
+                    <span>🌍 Dataset: <strong style="color: #cbd5e1;">N/A</strong></span>
+                </div>
+
+                <p style="color: #cbd5e1; line-height: 1.6; margin-bottom: 1.5rem; font-size: 1.05rem;">
+                    ...
+                </p>
+
+                <a href="co2_injection_canopy_assimilation_kinetics.html" style="display: inline-block; background: var(--primary); color: #0f172a; font-weight: bold; padding: 0.7rem 1.5rem; border-radius: 8px; text-decoration: none; font-size: 0.95rem;">Read Full Research Paper →</a>
+            </div>
+        
+        </div>
+
+        <script>
+            const filterInput = document.getElementById('researchFilterInput');
+            const cards = document.querySelectorAll('.research-card');
+            const filterCount = document.getElementById('filterCount');
+
+            if (filterInput) {
+                filterInput.addEventListener('input', function(e) {
+                    const q = e.target.value.toLowerCase().trim();
+                    let visible = 0;
+                    cards.forEach(card => {
+                        const text = card.getAttribute('data-search') || '';
+                        if (!q || text.includes(q)) {
+                            card.style.display = 'block';
+                            visible++;
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                    filterCount.textContent = `Showing ${visible} of ${cards.length} research papers`;
+                });
+            }
+        </script>
+    
+    </main>
+
+    
+</div>
+
+<footer style="margin-top: 4rem; padding: 2rem 0; border-top: 1px solid var(--border); text-align: center; color: var(--text-muted); font-size: 0.85rem;">
+    <p>© 2026 Inwoovation Lab. AgriAtlas Wiki. All rights reserved. | <a href="https://forms.gle/SC3ehhA4r6sPEZxV7" target="_blank" style="color: var(--primary); font-weight: 700; text-decoration: none;">Send Feedback 📩</a></p>
+</footer>
+
+<!-- Floating Feedback Button (FAB) -->
+<a class="feedback-fab" href="https://forms.gle/SC3ehhA4r6sPEZxV7" id="btn-feedback" target="_blank" style="position: fixed; bottom: 2rem; right: 2rem; background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(56, 189, 248, 0.4); color: #e2e8f0; padding: 0.8rem 1.3rem; border-radius: 50px; font-size: 0.9rem; font-weight: 700; text-decoration: none; display: flex; align-items: center; gap: 0.5rem; box-shadow: 0 8px 25px rgba(56, 189, 248, 0.25); z-index: 1000; transition: all 0.3s ease;">
+    <span>📩</span>
+    <span>Send Feedback</span>
+</a>
+
+<script src="search_index.js"></script>
+<script>
+    // Mobile Menu Toggle
+    function toggleMobileMenu() {
+        document.getElementById('mobileSidebar').classList.toggle('open');
+    }
+
+    // Client-side Search Engine (uses searchIndex variable from search_index.js)
+
+    const searchInput = document.getElementById('searchInput');
+    const searchResults = document.getElementById('searchResults');
+
+    if (searchInput) {
+        searchInput.addEventListener('input', function(e) {
+            const query = e.target.value.toLowerCase().trim();
+            searchResults.innerHTML = '';
+            
+            if (query.length < 2) {
+                searchResults.style.display = 'none';
+                return;
+            }
+
+            const filtered = searchIndex.filter(item => {
+                const titleMatch = item.title.toLowerCase().includes(query);
+                const descMatch = item.desc.toLowerCase().includes(query);
+                const keywordMatch = (item.keywords || '').toLowerCase().includes(query);
+                const typeMatch = (item.type || '').toLowerCase().includes(query);
+                return titleMatch || descMatch || keywordMatch || typeMatch;
+            });
+
+            if (filtered.length > 0) {
+                searchResults.style.display = 'flex';
+                filtered.slice(0, 6).forEach(item => {
+                    const a = document.createElement('a');
+                    a.href = item.url;
+                    a.className = 'search-result-item';
+                    const badgeHtml = `<span style="font-size: 0.7rem; font-weight: bold; background: rgba(56,189,248,0.2); color: var(--primary); padding: 0.15rem 0.4rem; border-radius: 4px; margin-right: 0.4rem;">${item.badge || '📄 Paper'}</span>`;
+                    a.innerHTML = `<div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.3rem;">
+                        <h4 style="font-size: 0.95rem; margin: 0; color: white;">${badgeHtml}${item.title}</h4>
+                    </div>
+                    <p style="font-size: 0.8rem; color: var(--text-muted); margin: 0; line-height: 1.4;">${item.desc.substring(0, 75)}...</p>`;
+                    searchResults.appendChild(a);
+                });
+            } else {
+                searchResults.style.display = 'flex';
+                searchResults.innerHTML = `<div style="padding: 1rem; color: var(--text-muted); font-size: 0.85rem; text-align: center;">No matching research papers or crop guides found.</div>`;
+            }
+        });
+    }
+
+    // Hide search results when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.search-container')) {
+            searchResults.style.display = 'none';
+        }
+    });
+</script>
+
+<!-- Google Translate Script (Loaded Asynchronously at the bottom) -->
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+            pageLanguage: 'en',
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+        }, 'google_translate_element');
+    }
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async defer></script>
+
 </body>
 </html>

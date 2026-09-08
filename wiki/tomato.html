@@ -1,13 +1,631 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Redirecting to Inwoovation Lab...</title>
-  <link rel="canonical" href="https://inwoovation.com/wiki/tomato.html">
-  <meta http-equiv="refresh" content="0; url=https://inwoovation.com/wiki/tomato.html">
-  <script>window.location.replace("https://inwoovation.com/wiki/tomato.html" + window.location.search + window.location.hash);</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tomato (Solanum lycopersicum) | AgriAtlas</title>
+    <meta name="description" content="Comprehensive engineering data for greenhouse tomato climate control, crop steering, and fertigation.">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌍</text></svg>">
+    
+    <!-- OpenGraph SEO Tags -->
+    <meta property="og:title" content="Tomato (Solanum lycopersicum) | AgriAtlas">
+    <meta property="og:description" content="Comprehensive engineering data for greenhouse tomato climate control, crop steering, and fertigation.">
+    <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/8/89/Tomato_je.jpg">
+    <meta property="og:type" content="website">
+    <meta name="google-site-verification" content="Y7d3dVoTQHBbG1GoKc4E_LUZb6YBmv491pv7G01mOk8" />
+    
+    <!-- Google AdSense Script -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8597809158257497" crossorigin="anonymous"></script>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V4RYJBMEDE"></script>
+    <script>
+       window.dataLayer = window.dataLayer || [];
+       function gtag(){dataLayer.push(arguments);}
+       gtag('js', new Date());
+       gtag('config', 'G-V4RYJBMEDE');
+    </script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-base: #0f172a;
+            --bg-surface: #1e293b;
+            --bg-glass: rgba(30, 41, 59, 0.7);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --primary: #38bdf8;
+            --primary-glow: rgba(56, 189, 248, 0.4);
+            --accent-green: #10b981;
+            --border: rgba(255, 255, 255, 0.1);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Fix anchor jump offset for sticky header */
+        :target {
+            scroll-margin-top: 100px;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-base);
+            color: var(--text-main);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        
+        .container {
+            display: flex;
+            flex: 1;
+            width: 100%;
+        }
+
+        header {
+            background: var(--bg-glass);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            padding: 0 2rem;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            height: 70px;
+            box-sizing: border-box;
+        }
+
+        .logo {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--text-main);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span { color: var(--primary); }
+
+        .search-bar {
+            background: rgba(0,0,0,0.2);
+            border: 1px solid var(--border);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            color: white;
+            width: 300px;
+            outline: none;
+            font-family: 'Inter';
+            transition: all 0.3s ease;
+        }
+        
+        .search-bar:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 15px var(--primary-glow);
+        }
+
+        /* Left Sidebar (Navigation) */
+        nav.sidebar-left {
+            background: var(--bg-surface);
+            border-right: 1px solid var(--border);
+            padding: 2rem 1.5rem;
+            overflow-y: auto;
+            width: 320px;
+            min-width: 250px;
+            max-width: 500px;
+            resize: horizontal;
+            flex-shrink: 0;
+            box-sizing: border-box;
+            position: sticky;
+            top: 70px;
+            height: calc(100vh - 70px);
+        }
+
+        .nav-group {
+            margin-bottom: 2rem;
+        }
+
+        .nav-title {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .nav-link {
+            display: block;
+            color: var(--text-main);
+            text-decoration: none;
+            padding: 0.6rem 0.8rem;
+            border-radius: 8px;
+            margin-bottom: 0.3rem;
+            transition: all 0.2s ease;
+            white-space: normal;
+            line-height: 1.4;
+            word-break: break-word;
+            font-size: 0.95rem;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--primary);
+        }
+
+        /* Main Content */
+        main {
+            padding: 3rem 4rem;
+            flex: 1;
+            min-width: 0;
+            max-width: 1000px;
+            margin: 0 auto;
+            box-sizing: border-box;
+        }
+
+        .breadcrumb {
+            font-size: 0.85rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .breadcrumb span { color: var(--text-muted); }
+
+        h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.8rem;
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+
+        .metadata {
+            display: flex;
+            gap: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 3rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .content-box {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            line-height: 1.7;
+            font-size: 1.1rem;
+        }
+
+        .content-box h2 {
+            color: var(--primary);
+            margin-top: 0;
+        }
+
+        /* Right Sidebar (TOC & Ads) */
+        aside.sidebar-right {
+            padding: 2rem 1.5rem;
+            border-left: 1px solid var(--border);
+            position: sticky;
+            top: 70px;
+            height: calc(100vh - 70px);
+            width: 340px; /* 300px ad space + 40px padding */
+            flex-shrink: 0;
+            box-sizing: border-box;
+            background: var(--bg-surface);
+            overflow-y: auto;
+        }
+
+        .toc-title {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-muted);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.5rem;
+        }
+
+        .toc-link {
+            display: block;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+            margin-bottom: 0.8rem;
+            transition: color 0.2s;
+            line-height: 1.4;
+        }
+        
+        .ad-placeholder {
+            width: 300px;
+            height: 250px;
+            background: rgba(0,0,0,0.3);
+            border: 1px dashed var(--text-muted);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 2rem; /* Ad is at the top, pushes content down */
+            border-radius: 4px;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 1200px) {
+            aside.sidebar-right { width: 280px; }
+            .ad-placeholder { width: 100%; height: auto; aspect-ratio: 1.2; }
+        }
+        @media (max-width: 1024px) {
+            .container { flex-direction: column; }
+            nav.sidebar-left, aside.sidebar-right { display: none; }
+            main { padding: 2rem; max-width: 100%; }
+        }
+
+        /* Search Dropdown */
+        .search-container {
+            position: relative;
+        }
+        .search-results {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 300px;
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            margin-top: 0.5rem;
+            max-height: 300px;
+            overflow-y: auto;
+            display: none;
+            flex-direction: column;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            z-index: 1000;
+        }
+        .search-result-item {
+            padding: 1rem;
+            text-decoration: none;
+            color: var(--text-main);
+            border-bottom: 1px solid var(--border);
+            transition: background 0.2s;
+        }
+        .search-result-item:hover {
+            background: var(--bg-glass);
+        }
+        .search-result-item h4 {
+            margin: 0 0 0.25rem 0;
+            color: var(--primary);
+        }
+        .search-result-item p {
+            margin: 0;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+        
+        /* Mobile Hamburger */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            .sidebar-left {
+                position: fixed;
+                top: 70px;
+                left: -300px;
+                bottom: 0;
+                width: 260px;
+                z-index: 999;
+                background: var(--bg-surface);
+                transition: left 0.3s ease;
+            }
+            .sidebar-left.open {
+                left: 0;
+            }
+            .sidebar-right {
+                display: none; /* Hide references sidebar on mobile to save space */
+            }
+            header {
+                padding: 0 1rem;
+            }
+            .header-right {
+                display: none; /* Hide search and translate on very small screens, or adjust them */
+            }
+        }
+    </style>
+    <link rel="canonical" href="https://inwoovation.com/wiki/tomato.html" />
 </head>
-<body style="background:#0b0f19;color:#f8fafc;font-family:sans-serif;display:flex;justify-content:center;align-items:center;height:100vh;margin:0;">
-  <p>Redirecting to <a href="https://inwoovation.com/wiki/tomato.html" style="color:#38bdf8;">https://inwoovation.com/wiki/tomato.html</a>...</p>
+<body>
+
+    <header>
+        <div style="display: flex; align-items: center; gap: 1.5rem;">
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+            <a href="index.html" class="logo">🌍 Agri<span>Atlas</span> Wiki</a>
+            <a href="research.html" style="color: var(--primary); font-weight: 700; text-decoration: none; font-size: 0.95rem; background: rgba(56, 189, 248, 0.1); padding: 0.4rem 0.9rem; border-radius: 20px; border: 1px solid rgba(56, 189, 248, 0.3); display: flex; align-items: center; gap: 0.4rem;">🔬 <span>Scientific Research</span></a>
+        </div>
+        
+        <div class="header-right" style="display: flex; align-items: center; gap: 1rem;">
+            <div class="search-container">
+                <input type="text" id="searchInput" class="search-bar" placeholder="Search crops, climates, data...">
+                <div id="searchResults" class="search-results"></div>
+            </div>
+            
+            <!-- Google Translate Widget -->
+            <div id="google_translate_element"></div>
+        </div>
+    </header>
+
+<div class="container">
+    <nav class="sidebar-left" id="mobileSidebar">
+        <div class="nav-group">
+            <div class="nav-title">📚 Crop Encyclopedia</div>
+            <!-- Alphabetical Crop List -->
+            <a href="arugula.html" class="nav-link">Arugula</a>
+            <a href="cucumber.html" class="nav-link">Cucumber (Cucumis sativus)</a>
+            <a href="kale.html" class="nav-link">Curly Kale</a>
+            <a href="lettuce.html" class="nav-link">Lettuce (Lactuca sativa)</a>
+            <a href="paprika.html" class="nav-link">Paprika (Capsicum annuum)</a>
+            <a href="spinach.html" class="nav-link">Spinach</a>
+            <a href="strawberry.html" class="nav-link">Strawberry (Fragaria × ananassa)</a>
+            <a href="basil.html" class="nav-link">Sweet Basil (Ocimum basilicum L.)</a>
+            <a href="swiss_chard.html" class="nav-link">Swiss Chard</a>
+            <a href="tomato.html" class="nav-link active">Tomato (Solanum lycopersicum)</a>
+            
+        </div>
+        
+        <div class="nav-group">
+            <div class="nav-title">🔬 Scientific Research</div>
+            <a href="research.html" class="nav-link" style="color: var(--primary); font-weight: 700;">📖 All Research Papers →</a>
+        </div>
+    </nav>
+
+    <main>
+        
+        <div class="breadcrumb">
+            <a href="index.html" style="color: var(--primary); text-decoration: none;">AgriAtlas</a> 
+            <span>/</span> <a href="#" style="color: var(--primary); text-decoration: none;">Knowledge Base</a> 
+            <span>/</span> <span style="color: var(--text-muted);">Tomato (Solanum lycopersicum)</span>
+        </div>
+        
+        <h1 id="overview">Tomato (Solanum lycopersicum)</h1>
+    
+        <figure style="margin: 0 0 2rem 0; width: 100%;">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Tomato_je.jpg" alt="Tomato Fruit (Solanum lycopersicum)" style="width: 100%; max-height: 400px; object-fit: cover; border-radius: 12px; border: 1px solid var(--border);">
+            <figcaption style="text-align: center; color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem;">Tomato Fruit (Solanum lycopersicum)</figcaption>
+        </figure>
+        
+        <div class="metadata">
+            <span>📚 Family/Class: Solanaceae (가지과)</span>
+            <span>🌱 Genus/Sub-category: Solanum (가지속)</span>
+            <span>🧬 Species/Type: Solanum lycopersicum</span>
+            <span>🌍 Origin: South America</span>
+        </div>
+        
+        <p style="font-size: 1.15rem; color: #cbd5e1; margin-bottom: 3rem; line-height: 1.6;">
+            The tomato is the most extensively grown greenhouse crop globally. It serves as the primary model organism for Controlled Environment Agriculture (CEA). Mastering tomato cultivation requires deep engineering precision, specifically the manipulation of temperature differentials (DIF) and Vapor Pressure Deficit (VPD) to 'steer' the plant between vegetative (leafy) and generative (fruiting) growth phases.
+        </p>
+    
+            <h2 style="color: white; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; margin-bottom: 1.5rem;" id="climate-strategy">Global Climate Strategy</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 3rem;">
+        
+                <div class="content-box" style="margin-bottom: 0;">
+                    <h3 style="margin-top: 0; color: var(--primary); font-size: 1.2rem;">🌍 The Netherlands (High-Tech Glasshouse)</h3>
+                    <p style="color: #f8fafc; font-size: 0.95rem; line-height: 1.5;">Relies heavily on combined heat and power (CHP) to provide heating and CO2 simultaneously. Precision control of VPD (0.8 - 1.2 kPa) ensures maximum transpiration and nutrient uptake. High-wire training systems are standard, allowing plants to reach 15+ meters in length.</p>
+                    <span style="font-size: 0.85rem; color: var(--text-muted); background: rgba(0,0,0,0.3); padding: 0.3rem 0.6rem; border-radius: 6px; display: inline-block; margin-top: 1rem;">⚙️ Tech Level: High (Full Climate Computer, Boiler, CO2 Enrichment, HPS/LED Lighting)</span>
+                </div>
+            
+                <div class="content-box" style="margin-bottom: 0;">
+                    <h3 style="margin-top: 0; color: var(--primary); font-size: 1.2rem;">🌍 Almería, Spain (Passive Solar)</h3>
+                    <p style="color: #f8fafc; font-size: 0.95rem; line-height: 1.5;">Low-tech plastic 'parral' greenhouses dominating the Mediterranean. No active heating. Relies entirely on passive ventilation (roof vents) and shade paint (whitewash) during summer to manage extreme heat loads. VPD often exceeds safe limits (2.0+ kPa) in summer, leading to blossom end rot. <sup id="cite-1"><a href="#ref-1" style="color: var(--primary); text-decoration: none;">[1]</a></sup></p>
+                    <span style="font-size: 0.85rem; color: var(--text-muted); background: rgba(0,0,0,0.3); padding: 0.3rem 0.6rem; border-radius: 6px; display: inline-block; margin-top: 1rem;">⚙️ Tech Level: Low/Medium (Passive ventilation, minimal heating)</span>
+                </div>
+            </div>
+            <h2 style="color: white; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; margin-bottom: 1.5rem;" id="crop-steering">Crop Steering Parameters</h2>
+            <p style="color: #cbd5e1; margin-bottom: 2rem;">Crop Steering is the practice of manipulating environmental and root-zone parameters to push the plant toward either vegetative growth (building structure) or generative growth (producing fruit).</p>
+            
+            <table style="width: 100%; border-collapse: collapse; margin-bottom: 3rem; background: rgba(30, 41, 59, 0.5); border-radius: 12px; overflow: hidden; border: 1px solid var(--border);">
+                <thead>
+                    <tr style="background: rgba(0,0,0,0.3);">
+                        <th style="padding: 1rem; text-align: left; border-bottom: 1px solid var(--border); color: var(--text-muted);">Parameter</th>
+                        <th style="padding: 1rem; text-align: left; border-bottom: 1px solid var(--border); color: #86efac;">🌱 Vegetative Target (Leaf Growth)</th>
+                        <th style="padding: 1rem; text-align: left; border-bottom: 1px solid var(--border); color: #fca5a5;">🍅 Generative Target (Fruit Growth)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="padding: 1rem; border-bottom: 1px solid rgba(255,255,255,0.05); font-weight: bold; color: var(--primary);">Temperature DIF</td>
+                        <td style="padding: 1rem; border-bottom: 1px solid rgba(255,255,255,0.05); color: #f8fafc;">Low to Zero (e.g., Day 22°C / Night 20°C)</td>
+                        <td style="padding: 1rem; border-bottom: 1px solid rgba(255,255,255,0.05); color: #f8fafc;">High (e.g., Day 24°C / Night 16°C)</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 1rem; border-bottom: 1px solid rgba(255,255,255,0.05); font-weight: bold; color: var(--primary);">VPD (kPa)</td>
+                        <td style="padding: 1rem; border-bottom: 1px solid rgba(255,255,255,0.05); color: #f8fafc;">0.6 - 0.8 kPa (Low transpiration stress)</td>
+                        <td style="padding: 1rem; border-bottom: 1px solid rgba(255,255,255,0.05); color: #f8fafc;">1.0 - 1.4 kPa (High transpiration stress)</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 1rem; border-bottom: 1px solid rgba(255,255,255,0.05); font-weight: bold; color: var(--primary);">Irrigation & Space Strategy</td>
+                        <td style="padding: 1rem; border-bottom: 1px solid rgba(255,255,255,0.05); color: #f8fafc;">Frequent, small shots to keep media wet (Low EC buildup)</td>
+                        <td style="padding: 1rem; border-bottom: 1px solid rgba(255,255,255,0.05); color: #f8fafc;">Infrequent, large shots allowing media to dry out (High EC buildup)</td>
+                    </tr>
+                </tbody>
+            </table>
+        
+            <h2 style="color: white; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; margin-bottom: 1.5rem;" id="fertigation">Fertigation Strategy</h2>
+            <p style="color: #cbd5e1; margin-bottom: 1.5rem;">Nutrient solutions must shift dynamically based on the steering phase.</p>
+            
+            <div style="background: rgba(255,255,255,0.03); border-left: 4px solid var(--primary); padding: 1.5rem; margin-bottom: 1.5rem; border-radius: 0 8px 8px 0;">
+                <h4 style="margin-top: 0; color: #86efac;">Phase 1: Vegetative Vigor</h4>
+                <p style="margin-bottom: 0; color: #f8fafc;">Higher Nitrogen (N) relative to Potassium (K). Target EC: 2.5 - 3.0 mS/cm. Important to maintain robust root system before fruit load increases.</p>
+            </div>
+            
+            <div style="background: rgba(255,255,255,0.03); border-left: 4px solid #fca5a5; padding: 1.5rem; margin-bottom: 3rem; border-radius: 0 8px 8px 0;">
+                <h4 style="margin-top: 0; color: #fca5a5;">Phase 2: Generative / Brix Steering</h4>
+                <p style="margin-bottom: 0; color: #f8fafc;">Higher Potassium (K) to Nitrogen (N) ratio. Target EC: 3.5 - 4.5+ mS/cm. High EC induces mild water stress, driving sugars into the fruit to increase Brix (flavor).</p>
+            </div>
+        
+            <h2 style="color: white; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; margin-bottom: 1.5rem;" id="cross-crop-benchmarks">Cross-Crop Benchmarks & Companion Risk Matrix</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 3rem;">
+                <div class="content-box" style="margin-bottom: 0;">
+                    <h3 style="margin-top: 0; color: var(--primary); font-size: 1.1rem;">📊 Comparative Physiological Demands</h3>
+                    <ul style="color: #f8fafc; font-size: 0.95rem; line-height: 1.8; margin-bottom: 0; padding-left: 1.2rem;">
+                        <li><strong>DLI Requirement Level:</strong> Ultra-High (22-30 mol/m²/day)</li>
+                        <li><strong>EC Tolerance Range:</strong> High (2.5 - 4.5 dS/m)</li>
+                        <li><strong>Calcium Demand / Risk:</strong> Extreme (Blossom End Rot Risk)</li>
+                    </ul>
+                </div>
+                <div class="content-box" style="margin-bottom: 0;">
+                    <h3 style="margin-top: 0; color: #fca5a5; font-size: 1.1rem;">🛡️ Shared Pathogens & Spatial Companions</h3>
+                    <ul style="color: #f8fafc; font-size: 0.95rem; line-height: 1.8; margin-bottom: 0; padding-left: 1.2rem;">
+                        <li><strong>Shared Pathogen Risk:</strong> Pythium ultimum, Botrytis cinerea, Tomato Spotted Wilt Virus (TSWV)</li>
+                        <li><strong>Companion CEA Crops:</strong> Basil, Paprika</li>
+                        <li><strong>Encyclopedia Sync Date:</strong> 2026-08-05</li>
+                    </ul>
+                </div>
+            </div>
+        
+        <div id="calculators" style="background: linear-gradient(135deg, rgba(16,185,129,0.1) 0%, rgba(56,189,248,0.1) 100%); border: 1px solid rgba(16,185,129,0.3); padding: 2.5rem; border-radius: 12px; text-align: center; margin-bottom: 2rem;">
+            <h2 style="margin-top: 0; color: white; font-size: 1.8rem;">Ready to steer your crop?</h2>
+            <p style="color: #cbd5e1; font-size: 1.1rem; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                AgriAtlas provides the theory, but every greenhouse is unique. Use our precise engineering calculators to hit these target VPD and Temperature DIF values based on your specific facility's U-Value and heating capacity.
+            </p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="https://smartfarm.inwoovation.com/vpd.html" target="_blank" style="display: inline-block; background: var(--primary); color: #0f172a; font-weight: bold; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-size: 1.1rem; transition: transform 0.2s;">Run VPD Calculator</a>
+                <a href="https://smartfarm.inwoovation.com/heat_loss.html" target="_blank" style="display: inline-block; background: transparent; border: 2px solid var(--accent-green); color: var(--accent-green); font-weight: bold; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-size: 1.1rem; transition: transform 0.2s;">Calculate Heat Loss</a>
+            </div>
+        </div>
+    
+    </main>
+
+    
+    <aside class="sidebar-right">
+        <div style="background: rgba(0,0,0,0.5); border: 1px dashed var(--border); border-radius: 8px; padding: 1rem; text-align: center; margin-bottom: 2rem; color: var(--text-muted); font-size: 0.85rem;">
+            <div style="width: 300px; height: 250px; background: rgba(255,255,255,0.02); display: flex; align-items: center; justify-content: center; margin: 0 auto;">
+                Advertisement<br>(300x250)
+            </div>
+        </div>
+        <div class="toc-title" style="margin-bottom: 1rem; color: #cbd5e1; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem;">References & Citations</div>
+        <div style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; padding-right: 0.5rem;">
+        
+            <div style="margin-bottom: 1.2rem; padding-bottom: 1.2rem; border-bottom: 1px solid rgba(255,255,255,0.05);" id="ref-1">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.4rem; gap: 0.5rem;">
+                    <span style="font-weight: 600; color: #cbd5e1;"><a href="#cite-1" style="color: var(--primary); text-decoration: none; font-weight: bold; margin-right: 0.3rem;">^</a> [1] MDPI Agronomy. Passive Cooling in Mediterranean Greenhouses.</span>
+                    <a href="references/EU_MDPI_tomato-cooling-mediterranean_2022.pdf" target="_blank" style="color: var(--primary); text-decoration: none; font-size: 0.75rem; background: rgba(56,189,248,0.1); padding: 0.2rem 0.5rem; border-radius: 4px; border: 1px solid rgba(56,189,248,0.2); white-space: nowrap;">[Link ↗]</a>
+                </div>
+                <div style="font-size: 0.75rem; color: var(--text-muted); line-height: 1.5; padding-left: 0.6rem; border-left: 2px solid var(--border); margin-top: 0.5rem;">
+                    <div>📝 Original: <i style="color: #cbd5e1;">Greenhouse cooling in the Mediterranean region</i></div>
+                    <div>🏢 Publisher: MDPI Agronomy Journal</div>
+                    <div>🆔 ID: <span style="font-family: monospace; color: var(--primary);">DOI: 10.3390/agronomy10070966</span></div>
+                </div>
+            </div>
+            
+        </div>
+    </aside>
+        
+</div>
+
+<footer style="margin-top: 4rem; padding: 2rem 0; border-top: 1px solid var(--border); text-align: center; color: var(--text-muted); font-size: 0.85rem;">
+    <p>© 2026 Inwoovation Lab. AgriAtlas Wiki. All rights reserved. | <a href="https://forms.gle/SC3ehhA4r6sPEZxV7" target="_blank" style="color: var(--primary); font-weight: 700; text-decoration: none;">Send Feedback 📩</a></p>
+</footer>
+
+<!-- Floating Feedback Button (FAB) -->
+<a class="feedback-fab" href="https://forms.gle/SC3ehhA4r6sPEZxV7" id="btn-feedback" target="_blank" style="position: fixed; bottom: 2rem; right: 2rem; background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(56, 189, 248, 0.4); color: #e2e8f0; padding: 0.8rem 1.3rem; border-radius: 50px; font-size: 0.9rem; font-weight: 700; text-decoration: none; display: flex; align-items: center; gap: 0.5rem; box-shadow: 0 8px 25px rgba(56, 189, 248, 0.25); z-index: 1000; transition: all 0.3s ease;">
+    <span>📩</span>
+    <span>Send Feedback</span>
+</a>
+
+<script src="search_index.js"></script>
+<script>
+    // Mobile Menu Toggle
+    function toggleMobileMenu() {
+        document.getElementById('mobileSidebar').classList.toggle('open');
+    }
+
+    // Client-side Search Engine (uses searchIndex variable from search_index.js)
+
+    const searchInput = document.getElementById('searchInput');
+    const searchResults = document.getElementById('searchResults');
+
+    if (searchInput) {
+        searchInput.addEventListener('input', function(e) {
+            const query = e.target.value.toLowerCase().trim();
+            searchResults.innerHTML = '';
+            
+            if (query.length < 2) {
+                searchResults.style.display = 'none';
+                return;
+            }
+
+            const filtered = searchIndex.filter(item => {
+                const titleMatch = item.title.toLowerCase().includes(query);
+                const descMatch = item.desc.toLowerCase().includes(query);
+                const keywordMatch = (item.keywords || '').toLowerCase().includes(query);
+                const typeMatch = (item.type || '').toLowerCase().includes(query);
+                return titleMatch || descMatch || keywordMatch || typeMatch;
+            });
+
+            if (filtered.length > 0) {
+                searchResults.style.display = 'flex';
+                filtered.slice(0, 6).forEach(item => {
+                    const a = document.createElement('a');
+                    a.href = item.url;
+                    a.className = 'search-result-item';
+                    const badgeHtml = `<span style="font-size: 0.7rem; font-weight: bold; background: rgba(56,189,248,0.2); color: var(--primary); padding: 0.15rem 0.4rem; border-radius: 4px; margin-right: 0.4rem;">${item.badge || '📄 Paper'}</span>`;
+                    a.innerHTML = `<div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.3rem;">
+                        <h4 style="font-size: 0.95rem; margin: 0; color: white;">${badgeHtml}${item.title}</h4>
+                    </div>
+                    <p style="font-size: 0.8rem; color: var(--text-muted); margin: 0; line-height: 1.4;">${item.desc.substring(0, 75)}...</p>`;
+                    searchResults.appendChild(a);
+                });
+            } else {
+                searchResults.style.display = 'flex';
+                searchResults.innerHTML = `<div style="padding: 1rem; color: var(--text-muted); font-size: 0.85rem; text-align: center;">No matching research papers or crop guides found.</div>`;
+            }
+        });
+    }
+
+    // Hide search results when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.search-container')) {
+            searchResults.style.display = 'none';
+        }
+    });
+</script>
+
+<!-- Google Translate Script (Loaded Asynchronously at the bottom) -->
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+            pageLanguage: 'en',
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+        }, 'google_translate_element');
+    }
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async defer></script>
+
 </body>
 </html>
