@@ -1,0 +1,76 @@
+{
+  "crop_id": "swiss_chard",
+  "name": "Swiss Chard",
+  "title": "Swiss Chard (Beta vulgaris subsp. vulgaris)",
+  "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Swiss_Chard.jpg/800px-Swiss_Chard.jpg",
+  "description": "Betalain pigment elicitation, root zone EC salinity management, and Controlled Environment Agriculture climate guidelines.",
+  "category": "Colored Leafy Greens",
+  "summary": "High-antioxidant betalain-rich leafy vegetable requiring dynamic blue-green spectrum ratios and precise Na+/K+ ratio regulation.",
+  "ideal_vpd_kPa": {
+    "min": 0.7,
+    "max": 1.0,
+    "optimal": 0.85
+  },
+  "target_dli": {
+    "min": 14,
+    "max": 18,
+    "optimal": 16
+  },
+  "target_ppfd": {
+    "min": 220,
+    "max": 300,
+    "optimal": 250
+  },
+  "hydroponic_ec": {
+    "min": 1.5,
+    "max": 2.2,
+    "optimal": 1.8
+  },
+  "hydroponic_ph": {
+    "min": 6.0,
+    "max": 6.6,
+    "optimal": 6.3
+  },
+  "temp_day": {
+    "min": 18,
+    "max": 22,
+    "optimal": 20
+  },
+  "temp_night": {
+    "min": 14,
+    "max": 17,
+    "optimal": 15
+  },
+  "steering": {
+    "generative": "Elevate EC to 2.2 dS/m, apply 20% Blue (450nm) + 15% Green (525nm) LED spectrum to maximize red/yellow betalain pigment concentration.",
+    "vegetative": "Maintain EC 1.5 dS/m, RH 75% (VPD 0.75 kPa) for succulent petiole expansion."
+  },
+  "key_diseases": [
+    "Cercospora Leaf Spot (Cercospora beticola)",
+    "Pythium Root Rot"
+  ],
+  "nutrient_formula_ppm": {
+    "N_NO3": 160,
+    "N_NH4": 8,
+    "P": 40,
+    "K": 210,
+    "Ca": 130,
+    "Mg": 50,
+    "Na": 30,
+    "Fe": 3.0
+  },
+  "cross_crop_benchmarks": {
+    "dli_requirement_level": "Moderate (14-18 mol/m²/day)",
+    "ec_tolerance_range": "Moderate-High (1.5 - 2.2 dS/m)",
+    "shared_pathogens": [
+      "Cercospora beticola (Leaf Spot)",
+      "Pythium Root Rot"
+    ],
+    "companion_compatibility": [
+      "Spinach",
+      "Lettuce"
+    ],
+    "calcium_demand": "High (Petiole Strength & Betalain Induction)",
+    "last_updated": "2026-08-05"
+  }
+}

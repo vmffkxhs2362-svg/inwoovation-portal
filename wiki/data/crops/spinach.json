@@ -1,0 +1,77 @@
+{
+  "crop_id": "spinach",
+  "name": "Spinach",
+  "title": "Spinach (Spinacia oleracea)",
+  "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Spinach_leaves.jpg/800px-Spinach_leaves.jpg",
+  "description": "Nitrate accumulation control, oxalate reduction kinetics, and hydroponic NFT root zone temperature management for high yields.",
+  "scientific_name": "Spinacia oleracea",
+  "category": "Nutritional Leafy Greens",
+  "summary": "High-density cool-climate leafy green requiring strict nitrate steering, controlled root zone temperature, and precise DLI photoperiod management.",
+  "ideal_vpd_kPa": {
+    "min": 0.7,
+    "max": 1.0,
+    "optimal": 0.85
+  },
+  "target_dli": {
+    "min": 14,
+    "max": 18,
+    "optimal": 16
+  },
+  "target_ppfd": {
+    "min": 220,
+    "max": 300,
+    "optimal": 250
+  },
+  "hydroponic_ec": {
+    "min": 1.4,
+    "max": 1.8,
+    "optimal": 1.6
+  },
+  "hydroponic_ph": {
+    "min": 6.0,
+    "max": 6.5,
+    "optimal": 6.2
+  },
+  "temp_day": {
+    "min": 16,
+    "max": 20,
+    "optimal": 18
+  },
+  "temp_night": {
+    "min": 12,
+    "max": 15,
+    "optimal": 14
+  },
+  "steering": {
+    "generative": "Maintain EC 1.8 dS/m, higher Blue spectrum (450nm) to promote thick leaf blade morphology and compact petiole length.",
+    "vegetative": "Lower EC to 1.4 dS/m, increase RH to 75% (VPD 0.7 kPa), and apply 20% Far-Red (730nm) expansion spectrum for leaf area index expansion."
+  },
+  "key_diseases": [
+    "Downy Mildew (Peronospora farinosa)",
+    "Pythium Root Rot",
+    "Fusarium Wilt"
+  ],
+  "nutrient_formula_ppm": {
+    "N_NO3": 150,
+    "N_NH4": 10,
+    "P": 40,
+    "K": 200,
+    "Ca": 120,
+    "Mg": 45,
+    "Fe": 3.0
+  },
+  "cross_crop_benchmarks": {
+    "dli_requirement_level": "Moderate (14-18 mol/m²/day)",
+    "ec_tolerance_range": "Moderate (1.4 - 1.8 dS/m)",
+    "shared_pathogens": [
+      "Peronospora farinosa f. sp. spinaciae",
+      "Pythium Root Rot"
+    ],
+    "companion_compatibility": [
+      "Lettuce",
+      "Strawberry"
+    ],
+    "calcium_demand": "High (Leaf Tip-burn & Oxalate Steering)",
+    "last_updated": "2026-08-05"
+  }
+}

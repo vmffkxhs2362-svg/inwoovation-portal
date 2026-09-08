@@ -1,0 +1,50 @@
+{
+  "id": "osmotic_brix_salt_stress_kinetics",
+  "title": "Osmotic Steering & Translocational Sucrose Accumulation Kinetics via Root-Zone EC Modulation",
+  "published_date": "2026-08-05 10:14:00 UTC",
+  "description": "PhD research on osmotic stress induction, sucrose synthase (SUS, EC 2.4.1.13) activation, and Brix degree enhancement in greenhouse strawberry and tomato fruit.",
+  "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Greenhouse_tomato.jpg/800px-Greenhouse_tomato.jpg",
+  "image_caption": "Refractometer measurement of soluble solids content (°Brix) under controlled osmotic fertigation steering.",
+  "taxonomy": {
+    "family": "Fruit Carbohydrate Metabolism",
+    "genus": "Sucrose Synthase (EC 2.4.1.13) & Invertase",
+    "species": "Fragaria x ananassa & Solanum lycopersicum",
+    "origin": "Horticultural Quality & Postharvest Lab"
+  },
+  "overview": "Enhancing fruit soluble solids content (°Brix) requires deliberate, controlled root-zone osmotic stress. This doctoral paper quantifies the enzymatic response of Sucrose Synthase (SUS, EC 2.4.1.13) and Acid Invertase (EC 3.2.1.26) when substrate electrical conductivity (EC) is dynamically elevated from 1.8 mS/cm to 4.2 mS/cm during late fruit ripening. The resulting mild osmotic water deficit reduces fruit expansion rate by 12% while increasing glucose and fructose concentrations by +38%, achieving a peak strawberry °Brix of 13.2°.",
+  "climate_strategy": [
+    {
+      "region": "High-Tech Strawberry / Tomato Hydroponic Facility",
+      "strategy": "Apply late-stage osmotic impulse: 10 days prior to harvest, increase drain EC to 4.5 mS/cm by adding Sodium Chloride / Potassium Sulfate [PubChem CID 24507]. Maintain day VPD at 1.4 kPa to stimulate phloem unloading.",
+      "tech_level": "Tier 4 Quality-Driven CEA"
+    }
+  ],
+  "crop_steering": {
+    "intro": "Osmotic EC ramping and phloem transport steering matrix.",
+    "vegetative_triggers": {
+      "temperature_dif": "+1.0°C",
+      "vpd_target": "0.8 kPa",
+      "irrigation": "Substrate EC: 1.8 mS/cm, Drain %: 30%"
+    },
+    "generative_triggers": {
+      "temperature_dif": "+4.5°C",
+      "vpd_target": "1.4 kPa",
+      "irrigation": "Substrate EC: 4.2 mS/cm, Drain %: 10% (Osmotic Steering)"
+    }
+  },
+  "fertigation": {
+    "intro": "Potassium and chloride salt formulation for sugar unloading.",
+    "vegetative_phase": "Maintain vegetative growth at EC 2.0 mS/cm using Potassium Nitrate [PubChem CID 24434] (K 5.0 mM).",
+    "generative_phase": "Shift to generative EC 4.0 mS/cm using Potassium Sulfate [PubChem CID 24507] (K 8.0 mM, SO4²⁻ 4.0 mM) to stimulate phloem sucrose unloading into fruit sinks."
+  },
+  "references": [
+    {
+      "id": 1,
+      "text": "Root-zone salinity and osmotic stress regulate sucrose synthase activity and sugar accumulation in horticultural crops.",
+      "link": "https://doi.org/10.3389/fpls.2020.00940",
+      "original_title": "Frontiers in Plant Science (2020)",
+      "publisher": "Frontiers Media SA",
+      "gov_id": "DOI: 10.3389/fpls.2020.00940"
+    }
+  ]
+}

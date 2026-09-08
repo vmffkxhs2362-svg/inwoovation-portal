@@ -1,0 +1,69 @@
+{
+  "id": "lettuce",
+  "title": "Lettuce (Lactuca sativa)",
+  "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Romaine_lettuce.jpg/960px-Romaine_lettuce.jpg",
+  "image_caption": "Romaine Lettuce (Lactuca sativa)",
+  "description": "DLI optimization, environmental VPD control, and tip-burn mitigation for vertical farming and greenhouse leafy greens.",
+  "taxonomy": {
+    "family": "Asteraceae (국화과)",
+    "genus": "Lactuca (상추속)",
+    "species": "Lactuca sativa",
+    "origin": "Mediterranean & Eurasia"
+  },
+  "overview": "Lettuce is the primary crop for indoor vertical farming (VF) and nutrient film technique (NFT) greenhouses. Because it is harvested for its leaves, steering is focused entirely on maximizing vegetative biomass while preventing tip-burn (caused by localized calcium deficiency under low transpiration in stagnant air). Controlling DLI (Daily Light Integral) and root-zone oxygenation are critical success factors.",
+  "climate_strategy": [
+    {
+      "region": "United States (Vertical Farm LED)",
+      "strategy": "Grown in fully enclosed vertical stack environments under LED lighting. Target DLI is 14 - 17 mol/m²/day. Focus is on localized air speed (0.3 - 0.5 m/s) using vertical fans to break the boundary layer of the inner leaves, preventing tip-burn.",
+      "tech_level": "Very High (Fully closed HVAC, multi-tier LED racks, vertical air circulation)"
+    },
+    {
+      "region": "South Korea (NFT Greenhouse)",
+      "strategy": "Cultivated in hydroponic NFT (Nutrient Film Technique) gutters. Relies on shading screens and evaporative cooling pads to keep root-zone temperatures below 20°C in summer, preventing root rot and bolting. <sup id=\"cite-1\"><a href=\"#ref-1\" style=\"color: var(--primary); text-decoration: none;\">[1]</a></sup>",
+      "tech_level": "Medium/High (NFT gutters, cooling pads, shading systems)"
+    }
+  ],
+  "crop_steering": {
+    "intro": "Since lettuce is sold for vegetative mass, steering focuses on maximizing leaf growth speed without triggering bolting (flowering) or tip-burn.",
+    "vegetative_triggers": {
+      "temperature_dif": "Low temperature DIF and cool ADT (Day 18-20°C / Night 14-16°C). Keeps plant in vegetative state.",
+      "vpd_target": "0.5 - 0.8 kPa (Ensures moderate transpiration without leaf stress).",
+      "irrigation": "Continuous flow (NFT) or high water frequency (Deep Water Culture) to prevent dry-backs."
+    },
+    "generative_triggers": {
+      "temperature_dif": "High temperature DIF or hot ADT (above 24°C) triggers unwanted generative steering (bolting, bitter taste). Avoid.",
+      "vpd_target": "VPD above 1.2 kPa causes excessive transpiration, leading to leaf margin drying and tip-burn. Avoid.",
+      "irrigation": "Allowing root-zone dry-backs induces generative stress, causing bitterness and root damage. Avoid."
+    }
+  },
+  "fertigation": {
+    "intro": "Lettuce has a very low salinity tolerance compared to fruiting crops. Keeping EC low and calcium availability high is vital.",
+    "vegetative_phase": "Nitrogen-heavy formulation with high Nitrate-to-Ammonium ratio. Target EC: 1.2 - 1.6 mS/cm. Maintain dissolved oxygen (DO) above 6-8 ppm.",
+    "generative_phase": "Not applicable (avoid generative shift). Maintain vegetative EC throughout the entire growth cycle (seedling to harvest)."
+  },
+  "references": [
+    {
+      "id": 1,
+      "text": "RDA (Rural Development Administration). Agricultural Technology Guide 36: Lettuce (2020 Rev.). Chapter 5 (Hydroponic Cultivation, p. 115-122).",
+      "original_title": "농업기술길잡이 36 - 상추 (제5장 수경재배 기술, p. 115-122)",
+      "publisher": "Rural Development Administration, Republic of Korea",
+      "gov_id": "ISBN 979-11-290-1669-0",
+      "link": "references/KR_RDA_lettuce_manual_2023.pdf"
+    }
+  ],
+  "cross_crop_benchmarks": {
+    "dli_requirement_level": "Moderate (14-17 mol/m²/day)",
+    "ec_tolerance_range": "Low-Moderate (1.2 - 1.8 dS/m)",
+    "shared_pathogens": [
+      "Bremia lactucae (Downy Mildew)",
+      "Sclerotinia sclerotiorum",
+      "Pythium"
+    ],
+    "companion_compatibility": [
+      "Spinach",
+      "Strawberry"
+    ],
+    "calcium_demand": "Extreme (Inner Tip-burn Risk)",
+    "last_updated": "2026-08-05"
+  }
+}

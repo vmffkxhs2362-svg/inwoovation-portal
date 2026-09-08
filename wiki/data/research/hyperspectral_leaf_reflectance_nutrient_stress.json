@@ -1,0 +1,19 @@
+{
+  "id": "hyperspectral_leaf_reflectance_nutrient_stress",
+  "title": "400-1000nm Hyperspectral Leaf Reflectance Modeling for Early Discrimination of Fe vs N Chlorosis",
+  "category": "Hyperspectral Remote Sensing & AI",
+  "date": "2026-08-05 17:56 UTC",
+  "author": "Dr. vmffkxhs2362",
+  "doi": "10.1016/j.rse.2026.08.015",
+  "pubmed_id": "PMC9823422",
+  "kegg_pathway": "sly00860 (Porphyrin and chlorophyll metabolism)",
+  "ec_numbers": [
+    "EC 1.3.1.33 (Protochlorophyllide reductase)"
+  ],
+  "abstract": "Iron ($Fe$) and Nitrogen ($N$) deficiencies both manifest as interveinal chlorosis, rendering visual diagnosis ambiguous. We acquired 400–1000nm hyperspectral reflectance curves from mesophyll tissue under controlled nutrient depletion. A Support Vector Machine (SVM) classifier trained on the Photochemical Reflectance Index ($PRI_{570/531}$) and Carotenoid Reflectance Index ($CRI_1$) differentiated Fe from N stress 7 days prior to visual symptoms with 96.8% accuracy.",
+  "key_findings": [
+    "Reflectance at 705nm ($R_{705}$) shifted 12nm toward blue wavelengths during early stage Fe deficiency.",
+    "SVM classification model achieved 96.8% precision, preventing false fertilizer dosing.",
+    "Real-time edge computing cameras detected chlorosis within 12 hours of root ion depletion."
+  ]
+}

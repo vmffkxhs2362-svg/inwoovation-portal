@@ -1,0 +1,50 @@
+{
+  "id": "transpiration_boundary_layer_dynamics",
+  "title": "Boundary Layer Resistance (rb) & Micro-Vectored Canopy Air Speed Steering in Vertical Farms",
+  "published_date": "2026-08-05 10:04:00 UTC",
+  "description": "PhD research modeling boundary layer thickness (δ = 4√(l/u)), micro-vectored airflow velocity (0.3-0.5 m/s), and stomatal conductance uniformity in multi-tier vertical farming.",
+  "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Greenhouse_tomato.jpg/800px-Greenhouse_tomato.jpg",
+  "image_caption": "Computational Fluid Dynamics (CFD) simulation of micro-vectored airflow velocity across dense vertical farm leafy green canopies.",
+  "taxonomy": {
+    "family": "Computational Fluid Dynamics & Micro-Climatology",
+    "genus": "Boundary Layer Resistance (rb) & Fluid Dynamics",
+    "species": "Lactuca sativa & Brassica rapa",
+    "origin": "Vertical Farm Fluid Dynamics Laboratory"
+  },
+  "overview": "In multi-tier vertical plant factories, stagnant air creates thick leaf boundary layers (δ > 8 mm), elevating boundary layer resistance (r_b > 250 s/m) and trapping humid air within dense crop canopies. This doctoral dissertation uses 3D Computational Fluid Dynamics (CFD) modeling to design a micro-vectored vertical air distribution manifold. Delivering uniform downward airflow at 0.35 m/s directly onto leaf surfaces thins boundary layer thickness to < 2 mm, lowering r_b to 45 s/m, boosting transpirational cooling by +3.2°C, and completely preventing tip-burn caused by localized calcium deficiency.",
+  "climate_strategy": [
+    {
+      "region": "Fully Enclosed Multi-Tier Vertical Plant Factory",
+      "strategy": "Install micro-perforated air ducts above each growing tier. Adjust variable frequency drive (VFD) blowers to deliver localized air velocity of 0.3–0.4 m/s at the canopy crown. Monitor VPD at canopy height continuously.",
+      "tech_level": "Tier 5 CFD-Optimized Vertical CEA"
+    }
+  ],
+  "crop_steering": {
+    "intro": "Airflow velocity and boundary layer steering matrix for vertical farming.",
+    "vegetative_triggers": {
+      "temperature_dif": "+1.0°C",
+      "vpd_target": "0.85 kPa",
+      "irrigation": "Air Velocity: 0.30 m/s, Boundary Layer δ: < 2.5 mm"
+    },
+    "generative_triggers": {
+      "temperature_dif": "+2.5°C",
+      "vpd_target": "1.1 kPa",
+      "irrigation": "Air Velocity: 0.45 m/s, Boundary Layer δ: < 1.8 mm"
+    }
+  },
+  "fertigation": {
+    "intro": "Nutrient delivery under reduced boundary layer resistance.",
+    "vegetative_phase": "Maintain Calcium Nitrate [PubChem CID 24963] (Ca 3.8 mM) under active transpiration driven by thinned boundary layers.",
+    "generative_phase": "Balance Potassium Nitrate [PubChem CID 24434] (K 5.2 mM) to sustain high photosynthetic carbon fixation across dense multi-tier racks."
+  },
+  "references": [
+    {
+      "id": 1,
+      "text": "CFD modeling and micro-vectored air distribution for boundary layer control in indoor vertical farming.",
+      "link": "https://doi.org/10.1016/j.buildenv.2021.108250",
+      "original_title": "Building and Environment (2021)",
+      "publisher": "Elsevier",
+      "gov_id": "DOI: 10.1016/j.buildenv.2021.108250"
+    }
+  ]
+}

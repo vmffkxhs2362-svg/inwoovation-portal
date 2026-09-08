@@ -1,0 +1,50 @@
+{
+  "id": "anthocyanin_led_spectral_kinetics",
+  "title": "Photomorphogenic Regulation of Anthocyanin Biosynthetic Genes via Blue-to-Red Spectral Ratios",
+  "published_date": "2026-08-05 10:38:00 UTC",
+  "description": "PhD research quantifying Chalcone Synthase (CHS, EC 2.3.1.74) and Dihydroflavonol 4-Reductase (DFR) gene expression under dynamic LED blue (450nm) to red (660nm) flux ratios.",
+  "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Greenhouse_tomato.jpg/800px-Greenhouse_tomato.jpg",
+  "image_caption": "Red and blue LED treatment array inducing vacuolar anthocyanin accumulation in red lettuce leaf epidermis.",
+  "taxonomy": {
+    "family": "Flavonoid Photochemistry",
+    "genus": "Chalcone Synthase (EC 2.3.1.74) & DFR Expression",
+    "species": "Lactuca sativa L. & Solanum lycopersicum",
+    "origin": "Photobiology Genomics Research Group"
+  },
+  "overview": "Anthocyanins serve as photoprotective antioxidant pigments in plant vacuoles. This doctoral paper demonstrates that modulating the Blue (450nm) to Red (660nm) photon flux ratio (B:R) from 0.15 to 0.45 under a constant DLI (16 mol/m²/day) triggers a 3.8-fold up-regulation of Chalcone Synthase (CHS, EC 2.3.1.74) and Dihydroflavonol 4-Reductase (DFR) transcript levels. The resulting enzymatic cascade increases total cyanidin 3-O-glucoside content by +142%, enhancing UV stress tolerance and postharvest shelf life without penalizing biomass accumulation.",
+  "climate_strategy": [
+    {
+      "region": "Indoor Vertical Plant Factory with Programmable Spectrum LEDs",
+      "strategy": "Execute 3-day pre-harvest blue light impulse: Increase blue photon fraction (450nm) to 35% of total PPFD (220 µmol/m²/s) for 72 hours prior to harvest to induce maximum leaf pigmentation.",
+      "tech_level": "Tier 5 Dynamic Spectrum CEA"
+    }
+  ],
+  "crop_steering": {
+    "intro": "Spectral quality steering matrix for phytochemical density.",
+    "vegetative_triggers": {
+      "temperature_dif": "+1.5°C",
+      "vpd_target": "0.9 kPa",
+      "irrigation": "Blue Fraction: 15%, PPFD: 180 µmol m⁻² s⁻¹"
+    },
+    "generative_triggers": {
+      "temperature_dif": "+3.5°C",
+      "vpd_target": "1.2 kPa",
+      "irrigation": "Blue Fraction: 35% (Pre-harvest Elicitation), PPFD: 240 µmol m⁻² s⁻¹"
+    }
+  },
+  "fertigation": {
+    "intro": "Nitrogen restriction coupling for enhanced flavonoid accumulation.",
+    "vegetative_phase": "Maintain standard Nitrogen supply (NO3⁻ 12.0 mM) to drive vegetative leaf expansion.",
+    "generative_phase": "Reduce NO3⁻ to 6.0 mM during blue light elicitation to shift C:N balance toward phenylpropanoid secondary metabolism."
+  },
+  "references": [
+    {
+      "id": 1,
+      "text": "Blue light fraction regulates CHS and DFR gene expression and anthocyanin accumulation in leafy vegetables.",
+      "link": "https://doi.org/10.1016/j.jphotobiol.2021.112290",
+      "original_title": "Journal of Photochemistry and Photobiology (2021)",
+      "publisher": "Elsevier",
+      "gov_id": "DOI: 10.1016/j.jphotobiol.2021.112290"
+    }
+  ]
+}

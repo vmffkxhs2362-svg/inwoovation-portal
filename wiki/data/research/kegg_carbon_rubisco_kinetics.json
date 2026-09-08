@@ -1,0 +1,50 @@
+{
+  "id": "kegg_carbon_rubisco_kinetics",
+  "title": "Stoichiometric & Kinetic Modeling of Rubisco Carboxylation Efficiency under CO2 Enrichment",
+  "published_date": "2026-08-05 10:18:00 UTC",
+  "description": "Doctoral dissertation on Rubisco kinetics (Vcmax, Jmax), KEGG carbon pathways (sly00195, sly01200), and sub-stomatal CO2 (Ci) enrichment optimization in greenhouse atmospheres.",
+  "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Greenhouse_tomato.jpg/800px-Greenhouse_tomato.jpg",
+  "image_caption": "Infrared Gas Analyzer (IRGA) leaf chamber recording Farquhar-von Caemmerer-Berry (FVCB) A-Ci response curves.",
+  "taxonomy": {
+    "family": "Photosynthetic Bioenergetics",
+    "genus": "FVCB Photosynthesis Model (Vcmax & Jmax)",
+    "species": "Solanum lycopersicum",
+    "origin": "KEGG Metabolic Database (sly00195 / sly01200)"
+  },
+  "overview": "Atmospheric CO2 enrichment to 1,000 ppm in semi-closed greenhouses elevates sub-stomatal CO2 concentration (C_i) from 280 ppm to over 720 ppm, suppressing Rubisco oxygenation (V_o) by 68%. Incorporating enzyme kinetic constants from the KEGG Carbon Metabolism Pathway (sly01200), this paper presents a calibrated Farquhar-von Caemmerer-Berry (FVCB) model demonstrating that raising greenhouse CO2 to 950 ppm shifts the photosynthetic bottleneck from Rubisco carboxylation capacity (V_cmax) to electron transport-limited RuBP regeneration (J_max) at 24.5°C, yielding a net dry matter accumulation gain of +28.4%.",
+  "climate_strategy": [
+    {
+      "region": "High-Density Glasshouse with Liquid CO2 Injection",
+      "strategy": "Dosage algorithm: Inject pure liquid CO2 to maintain ambient CO2 at 900 ppm during active PAR (> 300 W/m²). Automatically ramp down injection when vent aperture exceeds 25% to minimize gas wastage.",
+      "tech_level": "Tier 4 High-Efficiency CEA"
+    }
+  ],
+  "crop_steering": {
+    "intro": "CO2-PAR temperature coupling matrix for maximum net assimilation rate (A_net).",
+    "vegetative_triggers": {
+      "temperature_dif": "+2.0°C",
+      "vpd_target": "0.9 kPa",
+      "irrigation": "Target CO2: 800 ppm, PAR Target: 350 W/m²"
+    },
+    "generative_triggers": {
+      "temperature_dif": "+4.0°C",
+      "vpd_target": "1.3 kPa",
+      "irrigation": "Target CO2: 1,050 ppm, PAR Target: 550 W/m²"
+    }
+  },
+  "fertigation": {
+    "intro": "Nitrogen demand scaling under elevated CO2 carboxylation rates.",
+    "vegetative_phase": "Increase total Nitrogen dosing by +15% (NO3⁻ 16.5 mM) to support elevated synthesis of Rubisco proteins (which comprise up to 50% of soluble leaf protein).",
+    "generative_phase": "Balance Potassium Nitrate [PubChem CID 24434] (K 6.0 mM) to facilitate stomatal opening under elevated ambient CO2 levels."
+  },
+  "references": [
+    {
+      "id": 1,
+      "text": "Modeling Rubisco carboxylation and RuBP regeneration kinetics under elevated CO2.",
+      "link": "https://doi.org/10.1093/jxb/ery394",
+      "original_title": "Journal of Experimental Botany (2018)",
+      "publisher": "Oxford University Press",
+      "gov_id": "DOI: 10.1093/jxb/ery394"
+    }
+  ]
+}

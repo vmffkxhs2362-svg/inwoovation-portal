@@ -1,0 +1,78 @@
+{
+  "crop_id": "kale",
+  "name": "Curly Kale",
+  "title": "Curly Kale (Brassica oleracea var. sabellica)",
+  "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Kale_Leaf.jpg/800px-Kale_Leaf.jpg",
+  "description": "Cold temperature stress elicitation, anthocyanin accumulation, and vertical farm LED light spectrum optimization for nutrient density.",
+  "category": "Superfood Leafy Green",
+  "summary": "High-density nutrient-rich Brassica cultivar requiring cold DIF steering, glucosinolate enhancement, and controlled boundary layer micro-airflow.",
+  "ideal_vpd_kPa": {
+    "min": 0.8,
+    "max": 1.1,
+    "optimal": 0.95
+  },
+  "target_dli": {
+    "min": 16,
+    "max": 22,
+    "optimal": 18
+  },
+  "target_ppfd": {
+    "min": 250,
+    "max": 350,
+    "optimal": 300
+  },
+  "hydroponic_ec": {
+    "min": 1.6,
+    "max": 2.4,
+    "optimal": 2.0
+  },
+  "hydroponic_ph": {
+    "min": 5.8,
+    "max": 6.4,
+    "optimal": 6.0
+  },
+  "temp_day": {
+    "min": 18,
+    "max": 22,
+    "optimal": 20
+  },
+  "temp_night": {
+    "min": 12,
+    "max": 16,
+    "optimal": 14
+  },
+  "steering": {
+    "generative": "Increase EC to 2.4 dS/m, lower night temperature to 12°C (DIF +8°C) to induce cold-stress anthocyanin and glucoraphanin synthesis.",
+    "vegetative": "Maintain EC 1.8 dS/m, RH 70% (VPD 0.85 kPa), 18h photoperiod under 25% Blue LED spectrum for leaf expansion."
+  },
+  "key_diseases": [
+    "Black Rot (Xanthomonas campestris)",
+    "Downy Mildew",
+    "Cabbage Aphid"
+  ],
+  "nutrient_formula_ppm": {
+    "N_NO3": 180,
+    "N_NH4": 12,
+    "P": 45,
+    "K": 220,
+    "Ca": 140,
+    "Mg": 50,
+    "S": 65,
+    "Fe": 3.5
+  },
+  "cross_crop_benchmarks": {
+    "dli_requirement_level": "Moderate-High (16-22 mol/m²/day)",
+    "ec_tolerance_range": "High (1.6 - 2.4 dS/m)",
+    "shared_pathogens": [
+      "Xanthomonas campestris (Black Rot)",
+      "Downy Mildew",
+      "Cabbage Aphid"
+    ],
+    "companion_compatibility": [
+      "Lettuce",
+      "Spinach"
+    ],
+    "calcium_demand": "High (Apical Tip-burn & Glucosinolate Steering)",
+    "last_updated": "2026-08-05"
+  }
+}

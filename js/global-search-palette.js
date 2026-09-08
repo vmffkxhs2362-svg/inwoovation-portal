@@ -52,13 +52,42 @@
     // 📚 ARTICLES & CORE
     { title: "72 Multilingual Precision Engineering Articles Directory", cat: "article", url: "guides.html", icon: "📚", desc: "Peer-reviewed publications on biophysics, MPC, photobiology & AI", tags: "articles guides publications papers research vpd mpc" },
     { title: "Autonomous Greenhouse AI: Reinforcement Learning & MPC (Vol. 51)", cat: "article", url: "articles/article-51-autonomous-greenhouse-ai-mpc-reinforcement-learning.html", icon: "🧠", desc: "24-hour predictive trajectory optimization saving 22.4% heating gas", tags: "autonomous ai reinforcement learning mpc gas savings article" },
+    // 🧪 SMART FARM LAB SIMULATORS (15)
+    { title: "Smart Farm Engineering Lab Dashboard", cat: "sim", url: "smartfarm/index.html", icon: "🧪", desc: "15 interactive biophysical simulators and crop modeling engines", tags: "smartfarm dashboard simulators vpd mixing valve fertigation heat loss" },
+    { title: "Vapor Pressure Deficit (VPD) Microclimate Engine", cat: "sim", url: "smartfarm/vpd.html", icon: "💧", desc: "Leaf-to-air VPD, dewpoint temperature & ASAE standard transpiration model", tags: "vpd vapor pressure deficit leaf temperature humidity dewpoint" },
+    { title: "3-Way Motorized Mixing Valve & Pipe Sizing Engine", cat: "sim", url: "smartfarm/mixing_valve.html", icon: "🚰", desc: "Kv/Cv valve coefficient, hot water flow rate & heating pipe sizing", tags: "mixing valve heating pipe kv cv flow rate boiler heating loop" },
+    { title: "Stock Tank A/B Fertigation EC Blending Calculator", cat: "sim", url: "smartfarm/fertigation.html", icon: "🧪", desc: "Concentrated A/B stock tank dilution, injection ratio & target EC model", tags: "fertigation fertilizer stock tank a b dilution ec nutrient solution" },
+    { title: "Greenhouse Peak Heat Loss & Fuel Consumption Model", cat: "sim", url: "smartfarm/heat_loss.html", icon: "🔥", desc: "U-value envelope transmission, infiltration & seasonal gas/biomass estimator", tags: "heat loss fuel u value transmission infiltration gas heating" },
+    { title: "Vertical Farming DLI, Photoperiod & PPFD Calculator", cat: "sim", url: "smartfarm/vertical_dli.html", icon: "💡", desc: "Multi-tier vertical farm LED fluence, photoperiod & photon harvest model", tags: "vertical farm dli photoperiod ppfd led indoor farming" },
+    { title: "Smart Farm 10-Year Capex/Opex Commercial ROI Simulator", cat: "sim", url: "smartfarm/roi_simulator.html", icon: "💰", desc: "Multi-span smart farm capital expenditure & operational cash flow forecast", tags: "roi capex opex payback cash flow financial simulator" },
+    { title: "Canopy Transpiration & Calcium Xylem Flux Model", cat: "sim", url: "smartfarm/transpiration.html", icon: "🌿", desc: "Penman-Monteith canopy transpiration rate & calcium tipburn prevention", tags: "transpiration xylem calcium tipburn penman monteith flux" },
+    { title: "Smart Farm Plant Pathology & Disease Diagnostic Tool", cat: "sim", url: "smartfarm/diagnosis.html", icon: "🔬", desc: "Symptom matrix, root-zone pathogen diagnostics & corrective actions", tags: "diagnosis plant disease pathogen mildew blight root rot" },
+    { title: "LED Grow Light Efficacy (PPE) & PPFD Energy Simulator", cat: "sim", url: "smartfarm/lighting_efficacy.html", icon: "⚡", desc: "Photosynthetic photon efficacy (umol/J), electrical input & fixture sizing", tags: "lighting efficacy ppe led fixture umol j energy ppfd" },
+    { title: "Greenhouse Layout Wave Function Collapse (WFC) Engine", cat: "sim", url: "smartfarm/smartfarm_layout_wfc.html", icon: "📐", desc: "Procedural smart farm layout generation & spatial optimization using WFC", tags: "layout wfc wave function collapse greenhouse design spatial" },
+
+    // 📚 AGTECH WIKI PLANT PHYSIOLOGY & BIOCHEMISTRY (52)
+    { title: "AgTech Wiki Master Botanical & Biochemical Encyclopedia", cat: "wiki", url: "wiki/index.html", icon: "📚", desc: "52 peer-reviewed research papers on plant physiology, molecular genetics & climate", tags: "wiki encyclopedia botany biochemistry physiology rubisco" },
+    { title: "Tomato (Solanum lycopersicum) Physiology Wiki", cat: "wiki", url: "wiki/tomato.html", icon: "🍅", desc: "VPD 0.8-1.2 kPa, High-wire DIF steering, Rubisco activation & truss pruning", tags: "tomato solanaceae rubisco dif high wire crop wiki" },
+    { title: "Lettuce (Lactuca sativa) Tipburn & Aquaporin Wiki", cat: "wiki", url: "wiki/lettuce.html", icon: "🥬", desc: "Inner-leaf calcium mobility, aquaporin gating & boundary layer dynamics", tags: "lettuce tipburn aquaporin calcium leaf airflow wiki" },
+    { title: "Strawberry (Fragaria ananassa) Crown Cooling Wiki", cat: "wiki", url: "wiki/strawberry.html", icon: "🍓", desc: "Floral initiation chilling units, night table-top temperature & sucrose brix", tags: "strawberry brix crown cooling chilling flowering wiki" },
+    { title: "Sweet Pepper (Capsicum annuum) Fruit Set Wiki", cat: "wiki", url: "wiki/paprika.html", icon: "🫑", desc: "Flower abortion mitigation, 24h mean temperature integration & sink strength", tags: "sweet pepper paprika blossom drop fruit set flower wiki" },
+    { title: "Cucumber (Cucumis sativus) Boundary Layer Wiki", cat: "wiki", url: "wiki/cucumber.html", icon: "🥒", desc: "High transpiration guttation kinetics, micro-airflow & downy mildew resistance", tags: "cucumber cucurbitaceae guttation boundary layer transpiration wiki" },
+    { title: "Rubisco Carbon Fixation & Calvin Cycle Kinetics", cat: "wiki", url: "wiki/kegg_carbon_rubisco_kinetics.html", icon: "🧬", desc: "Farquhar photosynthesis model, CO2 Km and photorespiration oxygenase suppression", tags: "rubisco carbon calvin cycle photosynthesis farquhar co2 enzyme" },
+    { title: "Vapor Pressure Deficit & Stomatal Aquaporin Gating", cat: "wiki", url: "wiki/vapour_pressure_deficit_aquaporin_gating.html", icon: "💧", desc: "PIP aquaporin hydraulic conductivity, guard cell turgor & ABA signaling", tags: "vpd aquaporin gating stomata guard cell aba turgor hydraulic" },
+
+    // ⚙️ AGRIMASTER GLOBAL COMPONENT & DEALER SEARCH ENGINE
+    { title: "AgriMaster Global Agricultural Parts & Equipment Search Engine", cat: "part", url: "parts/index.html", icon: "⚙️", desc: "Parametric search for solenoid valves, vent motors, pH probes, LED lights with 50km local dealer maps", tags: "agrimaster parts equipment solenoid valve motor sensor led dealer locator" },
+    { title: "AgriMaster Solenoid Valves & Fertigation Components", cat: "part", url: "parts/index.html", icon: "🚰", desc: "24VAC/220V irrigation solenoid valves, PVC diaphragm valves & flow meters", tags: "solenoid valve irrigation fertigation 24vac parts agrimaster" },
+    { title: "AgriMaster Ridge Vent Motors & Greenhouse Actuators", cat: "part", url: "parts/index.html", icon: "🔄", desc: "Ridder/De Gier rack and pinion vent drive motors, limit switches & gearboxes", tags: "vent motor actuator rack pinion ridder de gier gearbox agrimaster" },
+    { title: "AgriMaster Industrial pH, EC & DO Sensor Probes", cat: "part", url: "parts/index.html", icon: "🔬", desc: "Differential pH glass probes, toroidal EC transmitters & optical DO sensors", tags: "ph probe ec sensor do dissolved oxygen sensor transmitter agrimaster" },
+
     { title: "About Inwoovation Lab & Research Team", cat: "core", url: "about.html", icon: "ℹ️", desc: "Mission, open-source engineering standards, and founder background", tags: "about inwoovation team founder mission" }
   ];
 
   // Helper to determine relative root path
   function getRootPrefix() {
     const p = window.location.pathname;
-    if (p.includes('/tools/') || p.includes('/crops/') || p.includes('/climate/') || p.includes('/articles/')) {
+    if (p.includes('/tools/') || p.includes('/crops/') || p.includes('/climate/') || p.includes('/articles/') || p.includes('/smartfarm/') || p.includes('/wiki/') || p.includes('/parts/')) {
       if (p.includes('/articles/de/') || p.includes('/articles/ja/')) {
         return '../../';
       }
@@ -78,15 +107,18 @@
       <div class="inwoo-palette-box">
         <div class="inwoo-palette-header">
           <span class="inwoo-palette-search-icon">🔍</span>
-          <input type="text" id="inwoo-palette-input" placeholder="Search 32 tools, 10 crops, 39 climate hubs, 72 articles... (Type to filter)" autocomplete="off" />
+          <input type="text" id="inwoo-palette-input" placeholder="Search 220+ tools, simulators, wiki, parts, crops, articles... (Type to filter)" autocomplete="off" />
           <span class="inwoo-palette-esc-badge" onclick="window.InwooPalette.close()">ESC</span>
         </div>
         <div class="inwoo-palette-tabs">
-          <button class="inwoo-pal-tab active" data-cat="all">✨ All (150+)</button>
-          <button class="inwoo-pal-tab" data-cat="tool">🛠️ Tools (32)</button>
-          <button class="inwoo-pal-tab" data-cat="crop">🌱 Crops (10)</button>
-          <button class="inwoo-pal-tab" data-cat="climate">🌍 Climate (39)</button>
-          <button class="inwoo-pal-tab" data-cat="article">📚 Articles (72)</button>
+          <button class="inwoo-pal-tab active" data-cat="all">✨ All (220+)</button>
+          <button class="inwoo-pal-tab" data-cat="tool">🛠️ Tools (35)</button>
+          <button class="inwoo-pal-tab" data-cat="sim">🧪 Simulators (15)</button>
+          <button class="inwoo-pal-tab" data-cat="wiki">📚 Wiki (52)</button>
+          <button class="inwoo-pal-tab" data-cat="part">⚙️ Parts</button>
+          <button class="inwoo-pal-tab" data-cat="crop">🌱 Crops</button>
+          <button class="inwoo-pal-tab" data-cat="climate">🌍 Climate</button>
+          <button class="inwoo-pal-tab" data-cat="article">📚 Articles</button>
         </div>
         <div class="inwoo-palette-results" id="inwoo-palette-results">
           <!-- Dynamically populated -->
@@ -97,7 +129,7 @@
             <span><kbd>↵</kbd> Open</span>
             <span><kbd>Esc</kbd> Close</span>
           </div>
-          <div style="color: #64748b; font-size: 0.75rem;">Inwoovation Universal Spotlight</div>
+          <div style="color: #64748b; font-size: 0.75rem;">Inwoovation Universal Spotlight (220+ Endpoints)</div>
         </div>
       </div>
     `;

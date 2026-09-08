@@ -1,0 +1,50 @@
+{
+  "id": "secondary_metabolite_elicitation_uvb",
+  "title": "Elicitation Kinetics of Phenolic Antioxidants & Solanine Glycoalkaloids via UV-B Irradiance",
+  "published_date": "2026-08-05 10:12:00 UTC",
+  "description": "Doctoral research examining UVR8 photoreceptor activation, Phenylalanine Ammonia-Lyase (PAL, EC 4.3.1.24) kinetics, and phenolic antioxidant synthesis under pulsed UV-B lighting.",
+  "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Greenhouse_tomato.jpg/800px-Greenhouse_tomato.jpg",
+  "image_caption": "Narrowband UV-B (285nm) LED illumination module deployed for pre-harvest phytochemical elicitation.",
+  "taxonomy": {
+    "family": "Secondary Plant Metabolism",
+    "genus": "Phenylpropanoid Pathway & PAL (EC 4.3.1.24)",
+    "species": "Solanum lycopersicum & Ocimum basilicum",
+    "origin": "Phytochemical & Functional Food Research Group"
+  },
+  "overview": "Targeted UV-B radiation (280-315nm) activates the UVR8 dimeric photoreceptor, triggering COP1 signaling and up-regulating Phenylalanine Ammonia-Lyase (PAL, EC 4.3.1.24), the entry enzyme of the phenylpropanoid pathway. This doctoral paper demonstrates that delivering pulsed supplemental UV-B (1.5 W/m² for 45 minutes daily over 7 days pre-harvest) induces a +64% increase in lycopene and total flavonoid content without causing photosynthetic photo-inhibition or yield loss.",
+  "climate_strategy": [
+    {
+      "region": "Medicinal & High-Value Culinary Crop Factory",
+      "strategy": "Install narrow-spectrum UV-B LEDs (290nm). Program pulsed irradiation cycles during peak daytime hours when PAR > 400 µmol/m²/s to allow active DNA repair via photolyase enzymes.",
+      "tech_level": "Tier 5 High-Tech Phytochemical CEA"
+    }
+  ],
+  "crop_steering": {
+    "intro": "Photomorphogenic stress elicitation and antioxidant optimization matrix.",
+    "vegetative_triggers": {
+      "temperature_dif": "+1.0°C",
+      "vpd_target": "0.9 kPa",
+      "irrigation": "UV-B Dosage: 0.0 W/m² (Baseline growth)"
+    },
+    "generative_triggers": {
+      "temperature_dif": "+3.0°C",
+      "vpd_target": "1.2 kPa",
+      "irrigation": "UV-B Dosage: 1.5 W/m² (45 min/day pre-harvest elicitation)"
+    }
+  },
+  "fertigation": {
+    "intro": "Micronutrient cofactors for secondary metabolite biosynthesis.",
+    "vegetative_phase": "Ensure adequate Boron (B 30 µM) and Zinc (Zn 10 µM) supply to maintain cell wall integrity under UV-induced ROS signaling.",
+    "generative_phase": "Modulate Monopotassium Phosphate [PubChem CID 516951] to support ATP demand during secondary metabolite biosynthesis."
+  },
+  "references": [
+    {
+      "id": 1,
+      "text": "Pulsed UV-B radiation regulates UVR8 signaling and phenolic antioxidant accumulation in greenhouse crops.",
+      "link": "https://doi.org/10.1016/j.phytochem.2021.112850",
+      "original_title": "Phytochemistry (2021)",
+      "publisher": "Elsevier",
+      "gov_id": "DOI: 10.1016/j.phytochem.2021.112850"
+    }
+  ]
+}

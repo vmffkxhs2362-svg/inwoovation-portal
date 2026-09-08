@@ -1,0 +1,54 @@
+{
+    "id": "care_farming",
+    "title": "Care Farming (치유농업)",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Horticultural_Therapy_Garden_%2824694163908%29.jpg",
+    "image_caption": "Therapeutic Horticultural Garden for Care Farming",
+    "description": "Integrating therapeutic agriculture, social forestry, and horticultural therapy with controlled-environment facilities.",
+    "taxonomy": {
+        "family": "Social Care & Health (사회복지 및 보건)",
+        "genus": "Green Care (그린케어)",
+        "species": "Care Farming / Social Farming",
+        "origin": "Netherlands & Western Europe"
+    },
+    "overview": "Care Farming (치유농업) is the therapeutic use of farming practices—including plant cultivation, animal care, and rural landscapes—to provide social, clinical, educational, or rehabilitative services. By merging agriculture with healthcare, it creates sustainable social enterprises that improve community well-being while utilizing the natural therapeutic benefits of nature. In high-tech Controlled Environment Agriculture (CEA), care farming utilizes barrier-free automation to expand accessibility.",
+    "climate_strategy": [
+        {
+            "region": "The Netherlands (Zorgboerderij)",
+            "strategy": "Pioneered the integration of care farms into the national health insurance system (WMO/Wlz). Over 1,200 active care farms provide day services for elderly dementia patients, youth with autism, and recovering addicts. Farms combine commercial horticulture with structured social support.",
+            "tech_level": "High (Accessible glasshouses, occupational therapy equipment, dairy farms)"
+        },
+        {
+            "region": "South Korea (RDA Care Agriculture)",
+            "strategy": "Actively promoted by the Rural Development Administration (RDA) under the 'Act on Support and Development of Care Agriculture'. Focuses on establishing regional Care Agriculture Centers, developing standardized clinical horticultural therapy programs, and prescribing farming activities for dementia prevention.",
+            "tech_level": "Medium/High (Wheelchair-accessible smart greenhouses, elevated tables, sensory gardens)"
+        }
+    ],
+    "crop_steering": {
+        "intro": "Rather than commercial crop steering (maximizing yield), Care Farming utilizes 'Therapeutic Environment Steering' to optimize user safety, sensory engagement, and ease of participation.",
+        "vegetative_triggers": {
+            "temperature_dif": "Thermal comfort targets (20-22°C year-round). Avoid extreme DIF that causes worker fatigue or cold drafts.",
+            "vpd_target": "0.6 - 0.8 kPa (Maintains comfortable indoor air humidity for patients and elderly).",
+            "irrigation": "Elevated gutter heights (75-85cm) for wheelchair accessibility. Focus on simple, drip-irrigated grow bags for easy planting."
+        },
+        "generative_triggers": {
+            "temperature_dif": "Avoid. Keep climate stable to ensure barrier-free activities without thermal shock or heat stress.",
+            "vpd_target": "Avoid high VPD (low humidity) which dries out throat passages and worsens dry eye symptoms in elderly users.",
+            "irrigation": "Incorporate sensory irrigation tasks (e.g., hand-watering herbs) using lightweight cans to build fine motor skills."
+        }
+    },
+    "fertigation": {
+        "intro": "Fertigation systems in Care Farming prioritize safety, non-toxicity, and user interaction over maximize crop yield.",
+        "vegetative_phase": "Organic-based, low-concentration liquid fertilizers to prevent chemical burns if handled by patients. Maintain strict hygiene protocols to avoid mold growth in media.",
+        "generative_phase": "Focus on high-aromatic herb nutrition (lavender, mint, rosemary) to maximize essential oil production, enhancing sensory olfactory stimulation during therapeutic sessions."
+    },
+    "references": [
+        {
+            "id": 1,
+            "text": "RDA (Rural Development Administration). Introduction to Care Agriculture & Services (2021 Rev.). Chapter 2 (Infrastructure & Facility Standards, p. 45-52).",
+            "original_title": "치유농업 서비스와 프로그램 가이드 (제2장 시설 및 장비 기준, p. 45-52)",
+            "publisher": "Rural Development Administration, Republic of Korea",
+            "gov_id": "ISBN 979-11-290-2101-4",
+            "link": "https://www.nongsaro.go.kr/"
+        }
+    ]
+}

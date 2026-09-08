@@ -1,0 +1,50 @@
+{
+  "id": "calcium_channel_xylem_transport",
+  "title": "Xylem-Mediated Calcium Translocation Kinetics and Root-Pressure Driven Guttation Steering",
+  "published_date": "2026-08-05 10:20:00 UTC",
+  "description": "PhD research detailing mechanosensitive Ca2+ ion channel transport, xylem sap mass flow, and nighttime VPD suppression to eliminate localized physiological disorders in Solanaceae.",
+  "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Greenhouse_tomato.jpg/800px-Greenhouse_tomato.jpg",
+  "image_caption": "Xylem pressure transducer setup monitoring nocturnal root pressure and guttation droplet formation.",
+  "taxonomy": {
+    "family": "Plant Transport & Fluid Mechanics",
+    "genus": "Xylem Mass Flow & Mechanosensitive Channels",
+    "species": "Solanum lycopersicum & Capsicum annuum",
+    "origin": "CEA Environmental Biophysics Lab"
+  },
+  "overview": "Calcium (Ca²⁺) is an immobile nutrient transported exclusively through the xylem via transpirational pull and root pressure mass flow. Under high VPD conditions (> 1.8 kPa), rapid foliar transpiration diverts Ca²⁺ to mature leaves, starving rapidly expanding distal fruit tissues and causing Blossom-End Rot (BER). This paper formulates a nocturnal root-pressure steering protocol: by lowering air temperature to 18°C and reducing nighttime VPD to < 0.2 kPa for 3 hours before dawn, positive root xylem pressure (> 0.15 MPa) forces Ca²⁺-rich sap directly into non-transpiring fruit apices.",
+  "climate_strategy": [
+    {
+      "region": "Commercial Semi-Closed Glasshouse Complex",
+      "strategy": "Execute pre-dawn humidity boost (RH > 92%, VPD < 0.2 kPa) combined with zero substrate drainage to induce root guttation. Monitor Calcium Nitrate [PubChem CID 24963] concentration in drainage sap.",
+      "tech_level": "Tier 4 High-Tech CEA"
+    }
+  ],
+  "crop_steering": {
+    "intro": "Micro-climatic control of xylem sap velocity and calcium partitioning.",
+    "vegetative_triggers": {
+      "temperature_dif": "+1.0°C",
+      "vpd_target": "0.8 kPa (Day) / 0.2 kPa (Pre-dawn)",
+      "irrigation": "Ca²⁺ concentration: 4.5 mM, Substrate moisture: 75% at night"
+    },
+    "generative_triggers": {
+      "temperature_dif": "+3.0°C",
+      "vpd_target": "1.1 kPa (Day) / 0.15 kPa (Pre-dawn)",
+      "irrigation": "Ca²⁺ concentration: 5.5 mM, Nighttime root pressure push"
+    }
+  },
+  "fertigation": {
+    "intro": "Divalent ion competition management (Ca²⁺ vs. K⁺ / Mg²⁺ / NH4⁺).",
+    "vegetative_phase": "Balance Calcium Nitrate [PubChem CID 24963] against Magnesium Sulfate [PubChem CID 24083] at a molar ratio of 2.5:1 (Ca 4.5 mM, Mg 1.8 mM) to prevent competitive ion antagonism at root plasma membrane ZIP transporters.",
+    "generative_phase": "Restrict root-zone Ammonium Nitrate [PubChem CID 22985] below 0.5 mM during rapid fruit swell."
+  },
+  "references": [
+    {
+      "id": 1,
+      "text": "Xylem transport and calcium distribution in CEA tomatoes under controlled micro-climate.",
+      "link": "https://doi.org/10.1111/pce.13840",
+      "original_title": "Plant, Cell & Environment (2020)",
+      "publisher": "Wiley-Blackwell",
+      "gov_id": "DOI: 10.1111/pce.13840"
+    }
+  ]
+}

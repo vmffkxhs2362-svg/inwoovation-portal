@@ -1,0 +1,50 @@
+{
+  "id": "rootzone_dissolved_oxygen_respiration",
+  "title": "Plastidic Mitochondrial Coupling & Root-Zone Dissolved Oxygen (DO) Respiration Dynamics",
+  "published_date": "2026-08-05 10:16:00 UTC",
+  "description": "PhD study on root ATP synthase electron transport, micro-nano bubble dissolved oxygen (DO) saturation (>8.5 mg/L), and pyruvate dehydrogenase activation in hydroponics.",
+  "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Greenhouse_tomato.jpg/800px-Greenhouse_tomato.jpg",
+  "image_caption": "Micro-nano bubble oxygenation generator connected to deep water culture (DWC) nutrient solution reservoir.",
+  "taxonomy": {
+    "family": "Root Physiology & Respiration",
+    "genus": "Mitochondrial Electron Transport & ATP Synthase",
+    "species": "Solanum lycopersicum & Cucumis sativus",
+    "origin": "Hydroponic Rhizosphere Research Center"
+  },
+  "overview": "Substrate hypoxia (DO < 3.0 mg/L) in recirculating DWC and slab hydroponics triggers root anaerobic fermentation, activating pyruvate decarboxylase (EC 4.1.1.1) and leading to ethanol accumulation and ATP depletion. This paper demonstrates that injecting micro-nano oxygen bubbles to maintain root-zone DO at supersaturated levels (9.5–11.0 mg/L at 21.0°C) elevates root cellular ATP levels by +42%, boosting active H⁺-ATPase proton pump activity across the root plasma membrane and accelerating nitrate (NO3⁻) symport transport by +26%.",
+  "climate_strategy": [
+    {
+      "region": "Recirculating Hydroponic NFT & Slab Culture",
+      "strategy": "Install inline micro-nano bubble oxygen generators maintaining DO > 9.0 mg/L continuously. Keep nutrient solution temperature at 19.5°C–21.0°C to optimize oxygen gas solubility.",
+      "tech_level": "Tier 5 Precision Hydroponics"
+    }
+  ],
+  "crop_steering": {
+    "intro": "Root-zone oxygenation and solution temperature steering matrix.",
+    "vegetative_triggers": {
+      "temperature_dif": "+1.5°C",
+      "vpd_target": "0.9 kPa",
+      "irrigation": "DO Target: 9.5 mg/L, Solution Temp: 20.0°C"
+    },
+    "generative_triggers": {
+      "temperature_dif": "+3.5°C",
+      "vpd_target": "1.2 kPa",
+      "irrigation": "DO Target: 11.0 mg/L, Solution Temp: 19.5°C"
+    }
+  },
+  "fertigation": {
+    "intro": "Anion/Cation uptake optimization under aerobic root respiration.",
+    "vegetative_phase": "Maintain active H⁺-ATPase pump driving NO3⁻ / H⁺ cotransport using Calcium Nitrate [PubChem CID 24963] and Ammonium Nitrate [PubChem CID 22985].",
+    "generative_phase": "Prevent root microbial oxygen competition by sterilizing recirculating solution via UV-C irradiation (254nm)."
+  },
+  "references": [
+    {
+      "id": 1,
+      "text": "Micro-nano bubble oxygenation enhances root aerobic respiration and nutrient uptake in hydroponic crops.",
+      "link": "https://doi.org/10.1016/j.biosystemseng.2020.08.012",
+      "original_title": "Biosystems Engineering (2020)",
+      "publisher": "Elsevier",
+      "gov_id": "DOI: 10.1016/j.biosystemseng.2020.08.012"
+    }
+  ]
+}

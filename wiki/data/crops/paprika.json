@@ -1,0 +1,69 @@
+{
+  "id": "paprika",
+  "title": "Paprika (Capsicum annuum)",
+  "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/85/Green-Yellow-Red-Pepper-2009.jpg",
+  "image_caption": "Bell Pepper Fruits (Capsicum annuum)",
+  "description": "Precision greenhouse climate control and vegetative/generative crop steering for high-wire sweet peppers.",
+  "taxonomy": {
+    "family": "Solanaceae (가지과)",
+    "genus": "Capsicum (고추속)",
+    "species": "Capsicum annuum",
+    "origin": "Central & South America"
+  },
+  "overview": "Paprika (bell pepper) is a major high-tech greenhouse crop, typically trained in high-wire V-systems. Successful cultivation requires precise management of average daily temperature (ADT) and day/night temperature differentials (DIF) to maintain a balance between vegetative growth (stem and leaf size) and generative steering (fruit set and ripening). Unlike tomatoes, paprika has a distinct 'flushing' pattern where it sets fruit in cycles, requiring proactive steering adjustments.",
+  "climate_strategy": [
+    {
+      "region": "South Korea (RDA Smart Farm)",
+      "strategy": "Predominantly grown in high-roof glasshouses and modern plastic houses. Focus is on maintaining strict night temperatures (18-19°C) during winter using heating pipes under gutters. VPD is managed actively to prevent blossom-end rot (BER) and sunscald. <sup id=\"cite-1\"><a href=\"#ref-1\" style=\"color: var(--primary); text-decoration: none;\">[1]</a></sup>",
+      "tech_level": "High (Gutter heating, automated vent screens, CO2 dosing)"
+    },
+    {
+      "region": "The Netherlands (WUR)",
+      "strategy": "Utilizes high-wire V-systems allowing high density planting. Relies on advanced climate computers to steer crop load dynamically. High thermal screens and active dehumidification are used to maintain optimal VPD (0.8 - 1.2 kPa) and save energy.",
+      "tech_level": "Very High (Fully closed glasshouses, double screens, high-wire V-systems)"
+    }
+  ],
+  "crop_steering": {
+    "intro": "Paprika steering focuses on avoiding excessive vegetative growth which leads to abortion of flower buds, while ensuring enough leaf canopy to prevent sunscald on ripening fruits.",
+    "vegetative_triggers": {
+      "temperature_dif": "Low day-to-night temperature difference (e.g., Day 21°C / Night 19°C) and warm ADT.",
+      "vpd_target": "0.5 - 0.7 kPa (Ensures low transpiration stress, promoting leaf expansion).",
+      "irrigation": "Frequent, short irrigation shots starting early. Lower root-zone EC (2.0 - 2.2 mS/cm)."
+    },
+    "generative_triggers": {
+      "temperature_dif": "Large day-to-night temperature difference (e.g., Day 24°C / Night 16°C) to stimulate flowering.",
+      "vpd_target": "0.9 - 1.2 kPa (Drives transpiration and calcium transport to fruits).",
+      "irrigation": "Larger dry-backs between shots. Higher root-zone EC (2.8 - 3.2 mS/cm) to limit vegetative stretch."
+    }
+  },
+  "fertigation": {
+    "intro": "Paprika requires careful management of the Potassium-to-Nitrogen (K:N) ratio to steer vegetative/generative balance, and sufficient Calcium (Ca) to prevent blossom-end rot.",
+    "vegetative_phase": "Higher Nitrogen relative to Potassium. Target EC: 2.0 - 2.2 mS/cm. Keep pH in root zone between 5.5 - 6.2.",
+    "generative_phase": "Increase Potassium-to-Nitrogen ratio. Target EC: 2.5 - 3.0 mS/cm. Increase Calcium levels during high solar radiation days to support rapidly expanding fruits."
+  },
+  "references": [
+    {
+      "id": 1,
+      "text": "RDA (Rural Development Administration). Agricultural Technology Guide 124: Colored Sweet Pepper (Paprika) (2021 Rev.). Chapter 5 (Climate Control, p. 112-118).",
+      "original_title": "농업기술길잡이 124 - 착색단고추(파프리카) (제5장 환경관리, p. 112-118)",
+      "publisher": "Rural Development Administration, Republic of Korea",
+      "gov_id": "ISBN 979-11-290-2051-2",
+      "link": "references/KR_RDA_paprika_manual_2021.pdf"
+    }
+  ],
+  "cross_crop_benchmarks": {
+    "dli_requirement_level": "High (20-25 mol/m²/day)",
+    "ec_tolerance_range": "Moderate-High (2.0 - 3.2 dS/m)",
+    "shared_pathogens": [
+      "Leveillula taurica (Powdery Mildew)",
+      "Broad Mite",
+      "Thrips tabaci"
+    ],
+    "companion_compatibility": [
+      "Tomato",
+      "Basil"
+    ],
+    "calcium_demand": "High (Blossom End Rot Risk)",
+    "last_updated": "2026-08-05"
+  }
+}

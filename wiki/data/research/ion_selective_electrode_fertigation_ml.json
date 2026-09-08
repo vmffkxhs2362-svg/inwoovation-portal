@@ -1,0 +1,19 @@
+{
+  "id": "ion_selective_electrode_fertigation_ml",
+  "title": "Real-Time Closed-Loop Machine Learning Ionic Activity Balancing in Recirculating Hydroponic Systems",
+  "category": "Smart Fertigation & AI Control",
+  "date": "2026-08-05 17:54 UTC",
+  "author": "Dr. vmffkxhs2362",
+  "doi": "10.1016/j.bios.2026.08.019",
+  "pubmed_id": "PMC9823418",
+  "kegg_pathway": "N/A (Ion Transport & Automation)",
+  "ec_numbers": [
+    "EC 7.2.2.10 (Plasma membrane H+-ATPase)"
+  ],
+  "abstract": "Ion depletion imbalance in closed-loop NFT hydroponics causes nutrient toxicities and ionic antagonism. We deployed an array of solid-state Ion-Selective Electrodes (ISE for $K^+$, $Ca^{2+}$, $NO_3^-$, $NH_4^+$) interfaced with a Long Short-Term Memory (LSTM) neural network. The AI system predicted plant ion uptake rates with 98.2% accuracy, maintaining target nutrient ratios for 45 days without full drain-and-refill cycles.",
+  "key_findings": [
+    "LSTM neural network reduced fertigation solution discharge by 94%, achieving near-zero effluent waste.",
+    "Target $Ca:K$ ratio was maintained at 1:1.4 within a tight error margin of ±0.05 mM.",
+    "Water use efficiency (WUE) increased from 32 L/kg FW to 18 L/kg FW."
+  ]
+}

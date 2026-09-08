@@ -1,0 +1,50 @@
+{
+  "id": "mycorrhizal_phosphate_transporter_kinetics",
+  "title": "Phosphate Transporter Gene Expression (Pht1 Family) and Arbuscular Mycorrhizal Symbiosis",
+  "published_date": "2026-08-05 10:08:00 UTC",
+  "description": "Doctoral research on high inorganic P (H2PO4-) suppression of mycorrhizal colonization, Pht1 transporter expression kinetics, and strigolactone root exudate signaling.",
+  "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Greenhouse_tomato.jpg/800px-Greenhouse_tomato.jpg",
+  "image_caption": "Microscopic view of fungal arbuscules inside root cortical cells under mycorrhizal inoculation.",
+  "taxonomy": {
+    "family": "Plant-Microbe Symbiosis & Mineral Nutrition",
+    "genus": "Phosphate Transporter (Pht1 Family) & Strigolactones",
+    "species": "Solanum lycopersicum & Rhizophagus irregularis",
+    "origin": "Plant Molecular Symbiosis Laboratory"
+  },
+  "overview": "Arbuscular Mycorrhizal Fungi (AMF, e.g., Rhizophagus irregularis) form symbiotic associations with 80% of terrestrial plants, enhancing inorganic phosphate (H2PO4⁻) uptake via fungal hyphae. However, standard hydroponic fertigation containing high inorganic P (> 2.0 mM) down-regulates root strigolactone exudation and represses the mycorrhiza-specific phosphate transporter gene SlPT4. This paper formulates a precision P-dosing threshold ([H2PO4⁻] = 0.35 mM) that maintains 78% AMF root colonization while sustaining maximal plant biomass growth.",
+  "climate_strategy": [
+    {
+      "region": "Organic & Sustainable CEA Glasshouse",
+      "strategy": "Inoculate organic coconut coir substrate with Rhizophagus irregularis spores at seeding. Restrict initial fertigation Monopotassium Phosphate [PubChem CID 516951] to 0.3 mM during the first 4 weeks to induce symbiosis establishment.",
+      "tech_level": "Tier 4 Bio-Integrated CEA"
+    }
+  ],
+  "crop_steering": {
+    "intro": "Biological symbiosis steering matrix for organic hydroponic production.",
+    "vegetative_triggers": {
+      "temperature_dif": "+1.5°C",
+      "vpd_target": "0.85 kPa",
+      "irrigation": "Inorganic P: 0.35 mM (Symbiosis Induction Phase)"
+    },
+    "generative_triggers": {
+      "temperature_dif": "+3.0°C",
+      "vpd_target": "1.2 kPa",
+      "irrigation": "Inorganic P: 0.80 mM (Maintenance Phase via Fungal Hyphae)"
+    }
+  },
+  "fertigation": {
+    "intro": "Nutrient solution formulation for mycorrhizal compatibility.",
+    "vegetative_phase": "Dose Monopotassium Phosphate [PubChem CID 516951] at 0.35 mM (P 11 mg/L) combined with Organic Nitrogen sources to prevent fungal hyphal inhibition.",
+    "generative_phase": "Supplement Potassium Nitrate [PubChem CID 24434] (K 4.5 mM) to meet potassium demand without overloading phosphate ions."
+  },
+  "references": [
+    {
+      "id": 1,
+      "text": "Phosphate availability regulates mycorrhizal symbiosis and Pht1 gene expression in horticultural crops.",
+      "link": "https://doi.org/10.1007/s00572-020-00980-w",
+      "original_title": "Mycorrhiza (2020)",
+      "publisher": "Springer Berlin Heidelberg",
+      "gov_id": "DOI: 10.1007/s00572-020-00980-w"
+    }
+  ]
+}

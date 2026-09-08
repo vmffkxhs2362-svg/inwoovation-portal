@@ -1,0 +1,50 @@
+{
+  "id": "kegg_flavonoid_secondary_metabolism",
+  "title": "Metabolic Flux Analysis of Flavonoid Biosynthesis (KEGG sly00941) under Osmotic and Thermal Stress",
+  "published_date": "2026-08-05 10:30:00 UTC",
+  "description": "Doctoral research modeling carbon flux distribution through the KEGG Flavonoid Pathway (sly00941), Naringenin 3-dioxygenase (EC 1.14.11.9), and flavonol synthase under abiotic stress.",
+  "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Greenhouse_tomato.jpg/800px-Greenhouse_tomato.jpg",
+  "image_caption": "High-Performance Liquid Chromatography (HPLC) chromatogram of quercetin and kaempferol glycosides.",
+  "taxonomy": {
+    "family": "Metabolic Flux Analysis & Secondary Biosynthesis",
+    "genus": "Flavonoid Pathway (KEGG sly00941) & Flavonol Synthase",
+    "species": "Solanum lycopersicum & Fragaria x ananassa",
+    "origin": "KEGG Secondary Metabolism Database (sly00941)"
+  },
+  "overview": "Flavonoids (quercetin, kaempferol, and rutin) represent powerful polyphenolic antioxidants in horticultural crops. Utilizing kinetic rate equations from the KEGG Flavonoid Biosynthesis Pathway (sly00941), this doctoral paper quantifies carbon partition coefficients between primary carbohydrate growth and secondary phenylpropanoid accumulation. Combining mild osmotic stress (drain EC 4.0 mS/cm) with a day/night temperature DIF of +6.0°C increases metabolic flux through Flavonol Synthase (EC 1.14.20.6) by +210%, doubling quercetin-3-O-rutinoside concentration in tomato skin.",
+  "climate_strategy": [
+    {
+      "region": "High-Value Functional Crop Glasshouse",
+      "strategy": "Apply late-stage thermal-osmotic steering: 14 days pre-harvest, elevate day temperature to 27.0°C and lower night temperature to 20.0°C (DIF +7.0°C) while maintaining substrate EC at 3.8 mS/cm.",
+      "tech_level": "Tier 4 Nutraceutical CEA"
+    }
+  ],
+  "crop_steering": {
+    "intro": "Metabolic flux redirect steering matrix for functional food production.",
+    "vegetative_triggers": {
+      "temperature_dif": "+1.5°C",
+      "vpd_target": "0.9 kPa",
+      "irrigation": "Baseline carbon allocation to structural biomass"
+    },
+    "generative_triggers": {
+      "temperature_dif": "+7.0°C",
+      "vpd_target": "1.45 kPa",
+      "irrigation": "Osmotic EC: 3.8 mS/cm (Flavonoid Flux Steering)"
+    }
+  },
+  "fertigation": {
+    "intro": "Nutrient elicitation for phenylpropanoid pathway enzymes.",
+    "vegetative_phase": "Maintain balanced N-P-K fertigation for leaf canopy development.",
+    "generative_phase": "Dose Monopotassium Phosphate [PubChem CID 516951] (P 2.0 mM, K 6.5 mM) to supply ATP for 4-coumarate-CoA ligase (EC 6.2.1.12) activation."
+  },
+  "references": [
+    {
+      "id": 1,
+      "text": "KEGG pathway flux modeling of flavonoid biosynthesis under environmental stress steering.",
+      "link": "https://www.kegg.jp/pathway/sly00941",
+      "original_title": "Kyoto Encyclopedia of Genes and Genomes",
+      "publisher": "Kanehisa Laboratories",
+      "gov_id": "KEGG: sly00941 (Flavonoid Biosynthesis)"
+    }
+  ]
+}

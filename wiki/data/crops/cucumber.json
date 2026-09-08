@@ -1,0 +1,67 @@
+{
+  "id": "cucumber",
+  "title": "Cucumber (Cucumis sativus)",
+  "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/96/ARS_cucumber.jpg",
+  "image_caption": "Cucumber Fruits (Cucumis sativus)",
+  "description": "Transpiration management, leaf area index (LAI) optimization, and steering strategies for greenhouse cucumbers.",
+  "taxonomy": {
+    "family": "Cucurbitaceae (박과)",
+    "genus": "Cucumis (오이속)",
+    "species": "Cucumis sativus",
+    "origin": "India & Southern Asia"
+  },
+  "overview": "Cucumber is one of the fastest-growing greenhouse crops. Because of its extremely high leaf area index (LAI) and soft tissue, it is highly sensitive to humidity and transpiration stress. Precision steering is required to manage its massive water requirements while keeping vegetative and generative loads balanced, preventing diseases like powdery mildew and downy mildew.",
+  "climate_strategy": [
+    {
+      "region": "South Korea (RDA Smart Farm)",
+      "strategy": "Typically grown in plastic multi-span greenhouses. Requires strong night heating (15-18°C) to prevent downy mildew during winter. Focus is on air circulation to reduce boundary layer humidity around the dense canopy. <sup id=\"cite-1\"><a href=\"#ref-1\" style=\"color: var(--primary); text-decoration: none;\">[1]</a></sup>",
+      "tech_level": "Medium (Forced-air heaters, air circulation fans, drip irrigation)"
+    },
+    {
+      "region": "The Netherlands (WUR)",
+      "strategy": "High-tech cultivation on rockwool gutters with high plant densities. High-wire training systems are standard. Focus is on managing VPD precisely (0.7 - 1.1 kPa) to ensure constant transpiration without causing root-zone waterlogging.",
+      "tech_level": "Very High (Rockwool slab gutters, high-wire training, high-pressure fogging)"
+    }
+  ],
+  "crop_steering": {
+    "intro": "Cucumber steering must be highly reactive due to the rapid growth cycle. The goal is to maintain strong vegetative vigor (thick stems) while steering generatively to support fruit elongation.",
+    "vegetative_triggers": {
+      "temperature_dif": "Low day-to-night temperature difference (e.g., Day 22°C / Night 20°C).",
+      "vpd_target": "0.5 - 0.7 kPa (Prevents water stress, encourages leaf cell expansion).",
+      "irrigation": "Frequent, small irrigation shots to keep root-zone moisture high. Lower EC (1.6 - 1.8 mS/cm)."
+    },
+    "generative_triggers": {
+      "temperature_dif": "Large day-to-night temperature difference (e.g., Day 24°C / Night 16°C) to trigger flowering.",
+      "vpd_target": "0.9 - 1.2 kPa (Drives transpiration, though must be monitored to avoid wilting).",
+      "irrigation": "Longer dry-backs between shots. Higher EC (2.2 - 2.5 mS/cm) to steer the crop generatively."
+    }
+  },
+  "fertigation": {
+    "intro": "Cucumbers require a massive amount of water and a balanced nutrient supply. High potassium levels are required to support fruit expansion and maintain fruit quality.",
+    "vegetative_phase": "Balanced Nitrogen and Phosphorus to support rapid root and shoot expansion. Target EC: 1.8 - 2.0 mS/cm.",
+    "generative_phase": "Increase Potassium (K) relative to Nitrogen (N) for fruit cell elongation. Target EC: 2.2 - 2.6 mS/cm."
+  },
+  "references": [
+    {
+      "id": 1,
+      "text": "RDA (Rural Development Administration). Agricultural Technology Guide 48: Cucumber (2020 Rev.). Chapter 6 (Fertigation & Soil Management, p. 135-141).",
+      "original_title": "농업기술길잡이 48 - 오이 (제6장 수경재배 및 토양관리, p. 135-141)",
+      "publisher": "Rural Development Administration, Republic of Korea",
+      "gov_id": "ISBN 979-11-290-1681-2",
+      "link": "https://www.nongsaro.go.kr/portal/ps/psb/psbx/cropEbookMain.ps?menuId=PS65290&cropsEbookNm=%EC%98%A4%EC%9D%B4"
+    }
+  ],
+  "cross_crop_benchmarks": {
+    "dli_requirement_level": "High (20-26 mol/m²/day)",
+    "ec_tolerance_range": "Moderate (1.8 - 2.8 dS/m)",
+    "shared_pathogens": [
+      "Pseudoperonospora cubensis (Downy Mildew)",
+      "Pythium aphanidermatum"
+    ],
+    "companion_compatibility": [
+      "Lettuce"
+    ],
+    "calcium_demand": "High (Rapid Fruit Expansion)",
+    "last_updated": "2026-08-05"
+  }
+}

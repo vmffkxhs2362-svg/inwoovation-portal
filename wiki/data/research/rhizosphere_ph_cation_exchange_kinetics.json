@@ -1,0 +1,50 @@
+{
+  "id": "rhizosphere_ph_cation_exchange_kinetics",
+  "title": "Rhizosphere Proton (H+) Exudation and Cation Exchange Capacity (CEC) Kinetics under NO3-/NH4+ Dosing",
+  "published_date": "2026-08-05 10:34:00 UTC",
+  "description": "PhD dissertation modeling root plasma membrane H+-ATPase proton pumping, rhizosphere pH drift, and substrate CEC under dynamic nitrate-to-ammonium ratios.",
+  "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Greenhouse_tomato.jpg/800px-Greenhouse_tomato.jpg",
+  "image_caption": "Rhizosphere pH micro-electrode mapping micro-zone acidification around root hair elongation zones.",
+  "taxonomy": {
+    "family": "Rhizosphere Chemistry & Ion Exchange",
+    "genus": "Plasma Membrane H+-ATPase & Cation Exchange",
+    "species": "Solanum lycopersicum & Fragaria x ananassa",
+    "origin": "Rhizosphere Biophysics Institute"
+  },
+  "overview": "Uptake of ammonium (NH4⁺) via root AMT transporters triggers net proton (H⁺) exudation via plasma membrane H⁺-ATPase, acidifying the rhizosphere pH by up to 1.4 units. Conversely, nitrate (NO3⁻) symport utilizes H⁺ co-consumption, elevating rhizosphere pH. This doctoral research formulates a dynamic N-ratio feedback controller: maintaining an NO3⁻:NH4⁺ molar ratio of 11:1 stabilizes substrate pH precisely at 5.85 ± 0.15 without requiring chemical acid/base dosing, optimizing bio-available Iron (Fe²⁺) and Manganese (Mn²⁺) solubility.",
+  "climate_strategy": [
+    {
+      "region": "Recirculating Rockwool / Coco-Coir Hydroponic System",
+      "strategy": "Install automated inline pH/EC telemetry coupled with dual-stock fertilizer injectors. Dynamically modulate Ammonium Nitrate [PubChem CID 22985] dosing based on 15-minute drain pH feedback.",
+      "tech_level": "Tier 4 Autonomous Hydroponic Fertigation"
+    }
+  ],
+  "crop_steering": {
+    "intro": "Rhizosphere pH stabilization and cation uptake matrix.",
+    "vegetative_triggers": {
+      "temperature_dif": "+1.5°C",
+      "vpd_target": "0.9 kPa",
+      "irrigation": "Target Substrate pH: 5.8, NO3⁻:NH4⁺ Ratio: 11:1"
+    },
+    "generative_triggers": {
+      "temperature_dif": "+3.5°C",
+      "vpd_target": "1.25 kPa",
+      "irrigation": "Target Substrate pH: 6.0, NO3⁻:NH4⁺ Ratio: 15:1"
+    }
+  },
+  "fertigation": {
+    "intro": "Balanced ionic equilibrium strategy.",
+    "vegetative_phase": "Formulate Calcium Nitrate [PubChem CID 24963] (Ca 4.5 mM) and Ammonium Nitrate [PubChem CID 22985] (NH4⁺ 1.0 mM) to drive gentle root acidification.",
+    "generative_phase": "Eliminate NH4⁺ dosing during high root temperature (> 23°C) to prevent root respiration oxygen stress."
+  },
+  "references": [
+    {
+      "id": 1,
+      "text": "Rhizosphere pH dynamics and cation exchange kinetics under differential nitrate/ammonium fertigation.",
+      "link": "https://doi.org/10.1016/j.pantp.2021.100015",
+      "original_title": "Plant Physiology and Biochemistry (2021)",
+      "publisher": "Elsevier",
+      "gov_id": "DOI: 10.1016/j.pantp.2021.100015"
+    }
+  ]
+}

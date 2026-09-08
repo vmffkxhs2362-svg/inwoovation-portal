@@ -1,0 +1,50 @@
+{
+  "id": "nitrate_reductase_circadian_rhythm",
+  "title": "Circadian Clock Gating of Plastidic Nitrate Reductase (NR) Activity under Photoperiod Extension",
+  "published_date": "2026-08-05 10:36:00 UTC",
+  "description": "Doctoral research detailing circadian clock components (CCA1/LHY) gating Nitrate Reductase (NR, EC 1.7.1.1) phosphorylation under 20-hour extended photoperiod regimes.",
+  "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Greenhouse_tomato.jpg/800px-Greenhouse_tomato.jpg",
+  "image_caption": "Bioluminescence reporter assay tracking CIRCADIAN AND CLOCK ASSOCIATED 1 (CCA1) promoter activity.",
+  "taxonomy": {
+    "family": "Circadian Chronobiology & Nitrogen Kinetics",
+    "genus": "Nitrate Reductase (EC 1.7.1.1) & CCA1/LHY Gating",
+    "species": "Lactuca sativa & Spinacia oleracea",
+    "origin": "Plant Chronobiology & Bioenergetics Lab"
+  },
+  "overview": "Nitrate Reductase (NR, EC 1.7.1.1) catalyzes the rate-limiting step of nitrate reduction in plant cytosol. NR enzyme activity undergoes strict circadian regulation, peaking 2 hours after subjective dawn driven by CCA1/LHY transcription factors. This paper establishes that extending photoperiod beyond 18 hours disrupts circadian gating, causing 14-3-3 protein phosphorylation and inactivation of NR. Maintaining a 16h/8h light-dark cycle optimizes NR Vmax (4.2 µmol NO2⁻/g FW/h), suppressing residual tissue nitrate accumulation below EU safety thresholds (< 2,500 mg/kg).",
+  "climate_strategy": [
+    {
+      "region": "Controlled Environment Hydroponic Facility",
+      "strategy": "Set photoperiod strictly to 16 hours ON / 8 hours OFF. Align fertigation pulse delivery to coincide with peak morning NR activity (ZT2-ZT6) when cytosolic NADH availability is maximal.",
+      "tech_level": "Tier 5 Chrono-Integrated CEA"
+    }
+  ],
+  "crop_steering": {
+    "intro": "Photoperiodic and enzymatic alignment steering matrix.",
+    "vegetative_triggers": {
+      "temperature_dif": "+2.0°C",
+      "vpd_target": "0.85 kPa",
+      "irrigation": "Photoperiod: 16h, Morning Fertigation Peak"
+    },
+    "generative_triggers": {
+      "temperature_dif": "+4.0°C",
+      "vpd_target": "1.15 kPa",
+      "irrigation": "Photoperiod: 16h, Pre-harvest N starvation 48h"
+    }
+  },
+  "fertigation": {
+    "intro": "Dosing alignment with diurnal enzymatic reduction cycles.",
+    "vegetative_phase": "Deliver 70% of daily Calcium Nitrate [PubChem CID 24963] during ZT0 to ZT6 to match peak NR enzymatic activity.",
+    "generative_phase": "Flush root zone with pure water 48 hours prior to harvest to deplete vacuolar NO3⁻ pools."
+  },
+  "references": [
+    {
+      "id": 1,
+      "text": "Circadian clock gating of nitrate reductase activity and tissue nitrate reduction in hydroponic leafy greens.",
+      "link": "https://doi.org/10.1093/pcp/pcab088",
+      "original_title": "Plant and Cell Physiology (2021)",
+      "publisher": "Oxford University Press",
+      "gov_id": "DOI: 10.1093/pcp/pcab088"
+    }
+  ]
+}

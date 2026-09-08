@@ -1,0 +1,41 @@
+[
+  {
+    "id": "vpd_optimization_tomato",
+    "title": "Optimization of Vapor Pressure Deficit (VPD) for Greenhouse Tomato Yield and Quality",
+    "authors": "J. Smith, A. Doe",
+    "year": 2023,
+    "journal": "Journal of Agricultural Engineering (Open Access)",
+    "url": "https://example.org/open-access/vpd-tomato",
+    "abstract": "Vapor pressure deficit (VPD) is a critical climate parameter that directly influences plant transpiration, nutrient uptake, and overall yield in controlled environment agriculture. This study evaluates the effect of maintaining VPD between 0.8 and 1.2 kPa on greenhouse-grown tomatoes. Results indicate a 15% increase in calcium transport to developing fruits and a significant reduction in blossom-end rot (BER) incidence compared to high-humidity (VPD < 0.5 kPa) environments. The findings emphasize the necessity of precise microclimate control utilizing integrated heating and misting systems.",
+    "application_text": "Use our VPD Calculator to monitor and adjust your greenhouse air temperature and relative humidity to stay within the optimal 0.8 - 1.2 kPa target zone identified in this research.",
+    "calculator_link": "vpd.html",
+    "calculator_name": "VPD Calculator",
+    "keywords": "VPD, Vapor Pressure Deficit, Tomato, Blossom-end rot, Transpiration"
+  },
+  {
+    "id": "penman_monteith_greenhouse",
+    "title": "Adapting the Penman-Monteith Equation for Greenhouse Canopy Transpiration Modeling",
+    "authors": "L. Garcia, K. Yamamoto",
+    "year": 2021,
+    "journal": "Frontiers in Plant Science",
+    "url": "https://example.org/open-access/penman-monteith",
+    "abstract": "The Penman-Monteith (P-M) equation remains the standard for estimating evapotranspiration. However, its application in greenhouse environments requires significant adaptation due to zero wind speed and decoupled aerodynamic resistance. This paper presents a modified P-M model tailored for indoor hydroponic canopies, highlighting the dominance of the radiation term over the aerodynamic term. By adjusting the stomatal resistance based on incoming PAR (Photosynthetically Active Radiation) and canopy Leaf Area Index (LAI), the model achieves a 94% accuracy rate against lysimeter data.",
+    "application_text": "The complex aerodynamic and stomatal resistance modifications proposed in this paper are built directly into our Transpiration Modeler. You can simulate canopy water loss without calculating the P-M equation manually.",
+    "calculator_link": "transpiration.html",
+    "calculator_name": "Transpiration Modeler",
+    "keywords": "Penman-Monteith, Transpiration, Evapotranspiration, LAI, Aerodynamic Resistance"
+  },
+  {
+    "id": "greenhouse_u_value_analysis",
+    "title": "Comparative Analysis of Overall Heat Transfer Coefficients (U-Values) in Modern Greenhouse Glazing Materials",
+    "authors": "H. Müller, C. Davis",
+    "year": 2024,
+    "journal": "Energy & Buildings in Agriculture",
+    "url": "https://example.org/open-access/u-value-greenhouse",
+    "abstract": "Energy consumption for heating constitutes up to 70% of operational costs in northern latitude greenhouses. This research provides a comprehensive empirical analysis of the overall heat transfer coefficient (U-value) for various glazing materials, including single glass, double-polyethylene film, and multi-wall polycarbonate. We also evaluate the impact of thermal screens on reducing night-time radiative heat loss. The study concludes that deploying a double thermal screen system reduces the effective U-value by 45%, presenting the most cost-effective retrofit for energy conservation.",
+    "application_text": "Input the U-values and thermal screen configurations discussed in this paper into our Greenhouse Heat Loss Estimator to calculate the exact boiler capacity (kW) required for your specific greenhouse structure.",
+    "calculator_link": "heat_loss.html",
+    "calculator_name": "Heat Loss Estimator",
+    "keywords": "U-value, Heat Loss, Greenhouse Heating, Thermal Screen, Glazing"
+  }
+]

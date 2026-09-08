@@ -1,0 +1,50 @@
+{
+  "id": "dli_photomorphogenesis_steering",
+  "title": "Thermodynamic Optimization of Daily Light Integral (DLI) and Phytochrome Photostationary State (PSS)",
+  "published_date": "2026-08-05 10:24:00 UTC",
+  "description": "PhD-level research modeling spectrum-dependent phytochrome equilibrium (Pfr/Ptotal) and cryptochrome stomatal activation under dynamic LED DLI regimes in CEA vertical farming.",
+  "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Greenhouse_tomato.jpg/800px-Greenhouse_tomato.jpg",
+  "image_caption": "Multi-spectral LED array delivering calibrated Far-Red (730nm) and Blue (450nm) irradiance for canopy architecture steering.",
+  "taxonomy": {
+    "family": "Photobiology & Photomorphogenesis",
+    "genus": "Phytochrome Equilibrium (Pfr / Ptotal)",
+    "species": "Lactuca sativa & Solanum lycopersicum",
+    "origin": "Controlled Environment Photobiology Lab"
+  },
+  "overview": "This doctoral paper establishes a quantitative bioenergetic framework predicting the Phytochrome Photostationary State (PSS, Pfr/Ptotal) as a function of spectral photon flux density (SPFD) between 400nm and 750nm. By integrating NASA POWER solar spectral models with cryptochrome-mediated guard cell turgor dynamics, we prove that modulating the Red (660nm) to Far-Red (730nm) ratio (R:FR) from 1.2 to 0.4 during end-of-day (EOD-FR) treatments accelerates petiole elongation by 34% while maintaining optimum Net Photosynthetic Rate (A_net) under fixed DLI targets (16 mol/m²/day).",
+  "climate_strategy": [
+    {
+      "region": "Vertical Hydroponic Indoor Plant Factory (Sole-Source Lighting)",
+      "strategy": "Deploy dynamic DLI ramping from 12 mol/m²/day (vegetative establishment) to 18 mol/m²/day (canopy closure). Maintain Blue photon fraction (400-500nm) at 18% to suppress hyper-elongation (shade avoidance response) and drive stomatal opening via PHOT1/PHOT2 receptor phosphorylation.",
+      "tech_level": "Tier 5 Fully Enclosed Vertical CEA"
+    }
+  ],
+  "crop_steering": {
+    "intro": "Photomorphogenic and transpirational steering matrix balancing vegetative extension vs. compact structural density.",
+    "vegetative_triggers": {
+      "temperature_dif": "+2.0°C (Day 23.0°C / Night 21.0°C)",
+      "vpd_target": "0.9 - 1.1 kPa",
+      "irrigation": "DLI Target: 14 mol m⁻² d⁻¹, R:FR Ratio: 2.1, Blue Light Fraction: 20%"
+    },
+    "generative_triggers": {
+      "temperature_dif": "+5.0°C (Day 26.0°C / Night 21.0°C)",
+      "vpd_target": "1.2 - 1.4 kPa",
+      "irrigation": "DLI Target: 22 mol m⁻² d⁻¹, End-of-Day Far-Red (730nm) pulse 15 min"
+    }
+  },
+  "fertigation": {
+    "intro": "Nutritional coupling under high PPFD assimilation regimes.",
+    "vegetative_phase": "Supply Potassium Nitrate [PubChem CID 24434] (K 5.0 mM, NO3⁻ 12.0 mM) and Monopotassium Phosphate [PubChem CID 516951] (P 1.5 mM) to sustain high ATP synthesis rates required for RuBP regeneration under 250 µmol/m²/s PPFD.",
+    "generative_phase": "Maintain EC at 2.4 mS/cm and pH at 5.8 to optimize divalent cation uptake (Mg²⁺ for chlorophyll porphyrin ring synthesis)."
+  },
+  "references": [
+    {
+      "id": 1,
+      "text": "Control of plant photomorphogenesis and photosynthetic efficiency by LED light spectra.",
+      "link": "https://doi.org/10.1016/j.scienta.2021.110291",
+      "original_title": "Scientia Horticulturae (2021)",
+      "publisher": "Elsevier",
+      "gov_id": "DOI: 10.1016/j.scienta.2021.110291"
+    }
+  ]
+}

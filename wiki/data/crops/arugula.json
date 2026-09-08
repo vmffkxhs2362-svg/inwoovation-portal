@@ -1,0 +1,76 @@
+{
+  "crop_id": "arugula",
+  "name": "Arugula",
+  "title": "Arugula / Rocket (Eruca vesicaria)",
+  "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Eruca_sativa_001.JPG/800px-Eruca_sativa_001.JPG",
+  "description": "Fast-turnover pungent culinary leafy green requiring high DLI photoperiods, glucosinolate flavor steering, and precise EC management.",
+  "category": "Aromatic Brassicaceae",
+  "summary": "Fast-turnover (18-22 day) pungent culinary leafy green requiring high DLI photoperiods and glucosinolate flavor optimization.",
+  "ideal_vpd_kPa": {
+    "min": 0.75,
+    "max": 1.05,
+    "optimal": 0.9
+  },
+  "target_dli": {
+    "min": 15,
+    "max": 20,
+    "optimal": 17
+  },
+  "target_ppfd": {
+    "min": 230,
+    "max": 320,
+    "optimal": 270
+  },
+  "hydroponic_ec": {
+    "min": 1.4,
+    "max": 2.0,
+    "optimal": 1.7
+  },
+  "hydroponic_ph": {
+    "min": 5.8,
+    "max": 6.4,
+    "optimal": 6.0
+  },
+  "temp_day": {
+    "min": 17,
+    "max": 21,
+    "optimal": 19
+  },
+  "temp_night": {
+    "min": 13,
+    "max": 16,
+    "optimal": 14
+  },
+  "steering": {
+    "generative": "Higher sulfur fertigation (SO42- 70 ppm) and 25% Blue light ratio to boost spicy glucoraphanin flavor profile.",
+    "vegetative": "EC 1.4 dS/m, 18h photoperiod under 250 PPFD for rapid canopy closure."
+  },
+  "key_diseases": [
+    "Downy Mildew (Hyaloperonospora parasitica)",
+    "Flea Beetles"
+  ],
+  "nutrient_formula_ppm": {
+    "N_NO3": 155,
+    "N_NH4": 10,
+    "P": 42,
+    "K": 190,
+    "Ca": 125,
+    "Mg": 45,
+    "S": 70,
+    "Fe": 3.2
+  },
+  "cross_crop_benchmarks": {
+    "dli_requirement_level": "Moderate-High (15-20 mol/m²/day)",
+    "ec_tolerance_range": "Moderate (1.4 - 2.0 dS/m)",
+    "shared_pathogens": [
+      "Hyaloperonospora parasitica (Downy Mildew)",
+      "Flea Beetles"
+    ],
+    "companion_compatibility": [
+      "Kale",
+      "Basil"
+    ],
+    "calcium_demand": "Moderate (Rapid 18-day Growth)",
+    "last_updated": "2026-08-05"
+  }
+}

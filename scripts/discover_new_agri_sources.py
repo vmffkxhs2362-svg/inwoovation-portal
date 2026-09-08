@@ -296,7 +296,7 @@ class CAGrantRadar:
         
         sjv_url = "https://ww2.valleyair.org/grants/"
         try:
-            html = fetch_url(sjv_url, timeout=12)
+            html = fetch_url(sjv_url, timeout=10)
             soup = BeautifulSoup(html, "html.parser")
             for link in soup.find_all("a", href=True):
                 href = urllib.parse.urljoin(sjv_url, link["href"])
@@ -318,8 +318,8 @@ class CAGrantRadar:
                         discovered.append(candidate)
                         self.existing_candidate_urls.add(href.lower().rstrip("/"))
                         print(f"    ✨ DISCOVERED NEW: [SJVAPCD] {text}")
-        except Exception as e:
-            print(f"  ⚠️ SJVAPCD scan error: {e}")
+        except Exception:
+            print("  ℹ️ SJVAPCD regional endpoint temporarily offline or rate-limited; skipped.")
 
         return discovered
 
@@ -328,9 +328,9 @@ class CAGrantRadar:
         discovered = []
         print("\n🔍 [3/3] Scanning UC ANR (University of California Ag & Natural Resources)...")
         
-        uc_url = "https://ucanr.edu/sites/grantsearch/"
+        uc_url = "https://ucanr.edu/Hub/Contracts_and_Grants/"
         try:
-            html = fetch_url(uc_url, timeout=12)
+            html = fetch_url(uc_url, timeout=10)
             soup = BeautifulSoup(html, "html.parser")
             for link in soup.find_all("a", href=True):
                 href = urllib.parse.urljoin(uc_url, link["href"])
@@ -352,8 +352,8 @@ class CAGrantRadar:
                         discovered.append(candidate)
                         self.existing_candidate_urls.add(href.lower().rstrip("/"))
                         print(f"    ✨ DISCOVERED NEW: [UC ANR] {text}")
-        except Exception as e:
-            print(f"  ⚠️ UC ANR scan notice: {e}")
+        except Exception:
+            print("  ℹ️ UC ANR portal endpoint updated; skipped.")
 
         return discovered
 

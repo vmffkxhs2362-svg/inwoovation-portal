@@ -1,0 +1,90 @@
+{
+  "id": "strawberry",
+  "title": "Strawberry (Fragaria × ananassa)",
+  "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Garden_strawberry_%28Fragaria_%C3%97_ananassa%29_single2.jpg/960px-Garden_strawberry_%28Fragaria_%C3%97_ananassa%29_single2.jpg",
+  "image_caption": "Greenhouse Strawberry Cultivation",
+  "description": "Precision climate control and fertigation strategies for winter and day-neutral strawberries.",
+  "taxonomy": {
+    "family": "Rosaceae (장미과)",
+    "genus": "Fragaria (딸기속)",
+    "species": "Fragaria × ananassa",
+    "origin": "Europe (hybrid)"
+  },
+  "overview": "Strawberries are high-value soft fruits that require meticulous climate control to prevent fungal diseases (like Botrytis) and ensure optimal fruit set. Unlike tomatoes, strawberries prefer much cooler temperatures and have different photoperiod requirements (Short-day vs Day-neutral).",
+  "climate_strategy": [
+    {
+      "region": "South Korea (RDA Smart Farm)",
+      "strategy": "Dominates the winter market (Dec-Apr) using single-span plastic houses. Heating is minimal, relying on multi-layer thermal screens. The primary challenge is extreme humidity at night, requiring precision dehumidification or morning heating bursts to prevent Botrytis cinerea. <sup id=\"cite-1\"><a href=\"#ref-1\" style=\"color: var(--primary); text-decoration: none;\">[1]</a></sup>",
+      "tech_level": "Medium (Multi-layer thermal screens, forced-air heaters)"
+    },
+    {
+      "region": "The Netherlands (WUR)",
+      "strategy": "Year-round production in high-tech glasshouses using supplemental LED lighting (Red/Blue/Far-Red spectrums). Precise VPD control ensures calcium transport to the fruit, preventing tip-burn on leaves and calyx.",
+      "tech_level": "High (LEDs, active dehumidification, elevated gutters)"
+    },
+    {
+      "region": "United States (Florida Plasticulture)",
+      "strategy": "Utilizes the annual winter plasticulture system on raised beds. Major focus is on frost protection using overhead sprinkler systems when temperatures fall below freezing. Fertigation is managed dynamically through drip tape. <sup id=\"cite-3\"><a href=\"#ref-3\" style=\"color: var(--primary); text-decoration: none;\">[3]</a></sup>",
+      "tech_level": "Medium/High (Raised beds, black plastic mulch, overhead sprinkler frost protection)"
+    }
+  ],
+  "crop_steering": {
+    "intro": "Strawberry steering focuses heavily on balancing the crown size (vegetative) with truss development (generative) using temperature strategies.",
+    "vegetative_triggers": {
+      "temperature_dif": "Higher average daily temperature (ADT), Warmer nights (12-14°C)",
+      "vpd_target": "0.4 - 0.6 kPa (Encourages rapid leaf expansion)",
+      "irrigation": "Frequent, lower EC (1.2 mS/cm) to build plant volume"
+    },
+    "generative_triggers": {
+      "temperature_dif": "Strong DIF. Cool nights (8-10°C) to induce flowering",
+      "vpd_target": "0.8 - 1.0 kPa (Enhances transpiration and calcium uptake)",
+      "irrigation": "Higher EC (1.8 - 2.0 mS/cm) to improve fruit flavor (Brix)"
+    }
+  },
+  "fertigation": {
+    "intro": "Strawberries are extremely sensitive to salinity (high EC) compared to tomatoes. <sup id=\"cite-2\"><a href=\"#ref-2\" style=\"color: var(--primary); text-decoration: none;\">[2]</a></sup>",
+    "vegetative_phase": "Balanced N-P-K. Target EC: 1.2 mS/cm. Keep ammonium levels low to prevent pH drops in the substrate.",
+    "generative_phase": "Increase Potassium (K) and Calcium (Ca) for fruit firmness. Target EC: 1.5 - 1.8 mS/cm. Maintain high drainage fraction (30%+) to prevent salt accumulation."
+  },
+  "references": [
+    {
+      "id": 1,
+      "text": "RDA (Rural Development Administration). Agricultural Technology Guide 40: Strawberry (2020 Rev.). Chapter 4 (Propagation Technology, p. 76-82).",
+      "original_title": "농업기술길잡이 40 - 딸기 (제4장 육묘기술, p. 76-82)",
+      "publisher": "Rural Development Administration, Republic of Korea",
+      "gov_id": "ISBN 979-11-290-1673-7",
+      "link": "references/KR_RDA_strawberry_manual_2020.pdf"
+    },
+    {
+      "id": 2,
+      "text": "Lee, I. H., et al. (2013). Establishing Mother Plant Planting Date for Uniform Strawberry Plug Seedling Production. Report of Agricultural Science and Technology Development, Chungnam ARES. (p. 655-658)",
+      "original_title": "딸기 균일묘 생산을 위한 모주 정식시기 구명",
+      "publisher": "Chungnam Agricultural Research and Extension Services",
+      "gov_id": "Chungnam ARES Report 2013 (p. 655-658)",
+      "link": "references/KR_CN_strawberry_mother-plant-timing_2013.pdf"
+    },
+    {
+      "id": 3,
+      "text": "Whitaker, V. M., et al. (2025). Chapter 16. Strawberry Production. Vegetable Production Handbook of Florida, UF/IFAS Extension (HS736/CV134).",
+      "original_title": "Chapter 16. Strawberry Production (Florida Handbook)",
+      "publisher": "University of Florida, IFAS Extension",
+      "gov_id": "UF/IFAS HS736",
+      "link": "references/US_FL_strawberry_production_2025.pdf"
+    }
+  ],
+  "cross_crop_benchmarks": {
+    "dli_requirement_level": "Moderate-High (17-22 mol/m²/day)",
+    "ec_tolerance_range": "Low-Moderate (0.8 - 1.4 dS/m)",
+    "shared_pathogens": [
+      "Podosphaera aphanis (Powdery Mildew)",
+      "Botrytis cinerea",
+      "Two-Spotted Spider Mite"
+    ],
+    "companion_compatibility": [
+      "Lettuce",
+      "Spinach"
+    ],
+    "calcium_demand": "High (Tip-burn & Fruit Softening)",
+    "last_updated": "2026-08-05"
+  }
+}
