@@ -12,10 +12,14 @@
       "material": "Reinforced Nylon"
     },
     "price_usd": 34.50,
+    "calculator_link": "/smartfarm/fertigation.html",
+    "calculator_label": "Fertigation Dilution Solver",
+    "wiki_link": "/wiki/ion_selective_electrode_fertigation_ml.html",
+    "wiki_label": "Automated Fertigation Kinetics",
     "local_dealer_available": true,
     "local_dealers": [
       {
-        "store_name": "유성농협 본점",
+        "store_name": "유성농협 본점 자재센터",
         "country": "KR",
         "region": "대전 유성구 장대동",
         "distance_km": 2.4,
@@ -23,7 +27,7 @@
         "lng": 127.3364
       },
       {
-        "store_name": "대전 아그로텍",
+        "store_name": "대전 스마트 아그로텍",
         "country": "KR",
         "region": "대전 유성구 노은동",
         "distance_km": 4.1,
@@ -59,271 +63,732 @@
       "pipe_size": "1\" (25mm)",
       "voltage": "AC220V",
       "max_pressure": "16 bar",
-      "flow_rate": "6.3 m³/h",
-      "material": "Brass / Stainless"
+      "flow_rate": "Kv 6.3 (m³/h)",
+      "material": "Forged Brass CW617N"
     },
     "price_usd": 128.00,
+    "calculator_link": "/smartfarm/mixing_valve.html",
+    "calculator_label": "Mixing Valve Kv Sizing Solver",
+    "wiki_link": "/wiki/hydroponic_root_zone_temperature_respiration.html",
+    "wiki_label": "Root Zone Temperature Respiration",
     "local_dealer_available": true,
     "local_dealers": [
       {
-        "store_name": "부여군농업기술센터",
+        "store_name": "삼양 정밀 밸브 유성 대리점",
         "country": "KR",
-        "region": "충남 부여군",
-        "distance_km": 38.2,
-        "lat": 36.2750,
-        "lng": 126.9090
+        "region": "대전 유성구 궁동",
+        "distance_km": 3.2,
+        "lat": 36.3615,
+        "lng": 127.3489
       },
       {
-        "store_name": "Tractor Supply Co. (West Jordan)",
+        "store_name": "Belimo Americas Distributor",
         "country": "US",
-        "region": "West Jordan, UT, USA",
-        "distance_km": 16.2,
-        "lat": 40.6135,
-        "lng": -111.9388
-      },
-      {
-        "store_name": "ZETOR TRACTORS a.s.",
-        "country": "CZ",
-        "region": "Brno, Czech Republic",
-        "distance_km": 34.0,
-        "lat": 49.1951,
-        "lng": 16.6068
+        "region": "Denver, CO, USA",
+        "distance_km": 14.8,
+        "lat": 39.7392,
+        "lng": -104.9903
       }
     ],
-    "amazon_link": "https://www.amazon.com/dp/B01ENFOIQE?tag=inwoovation20-20",
-    "aliexpress_link": "https://www.aliexpress.com/item/100500654321.html"
+    "amazon_link": "https://www.amazon.com/dp/B08XYZ1234?tag=inwoovation20-20",
+    "aliexpress_link": "https://www.aliexpress.com/item/100500789012.html"
   },
   {
     "id": "PART-IRR-003",
-    "name": "2\" Automatic Backwash Disc Filter System (120 Mesh / 130 Micron)",
+    "name": "Venturi Fertilizer Injector Assembly 1.5\" (DN40) with Suction Valve",
     "category": "irrigation",
     "category_label": "💧 Irrigation & Fertigation",
     "specs": {
       "pipe_size": "1.5\" (40mm)",
       "voltage": "Manual",
-      "max_pressure": "8 bar",
-      "flow_rate": "25 m³/h",
-      "material": "Polypropylene"
+      "max_pressure": "6 bar",
+      "flow_rate": "15 m³/h",
+      "material": "Chemical-Resistant PVDF"
     },
-    "price_usd": 89.00,
+    "price_usd": 48.00,
+    "calculator_link": "/smartfarm/fertigation.html",
+    "calculator_label": "Fertigation Stock Tank Calculator",
+    "wiki_link": "/wiki/rhizosphere_ph_cation_exchange_kinetics.html",
+    "wiki_label": "Rhizosphere Cation Exchange",
     "local_dealer_available": true,
     "local_dealers": [
       {
-        "store_name": "천안농협 종합자재센터",
+        "store_name": "논산 관수 농자재 백화점",
         "country": "KR",
-        "region": "충남 천안시 서북구",
-        "distance_km": 54.0,
-        "lat": 36.8151,
-        "lng": 127.1138
-      },
-      {
-        "store_name": "Sprinkler World of Salt Lake",
-        "country": "US",
-        "region": "Salt Lake City, UT, USA",
-        "distance_km": 12.1,
-        "lat": 40.6908,
-        "lng": -111.8988
-      },
-      {
-        "store_name": "AgroZet České Budějovice",
-        "country": "CZ",
-        "region": "České Budějovice, Czech Republic",
-        "distance_km": 48.5,
-        "lat": 48.9745,
-        "lng": 14.4743
+        "region": "충남 논산시 취암동",
+        "distance_km": 28.5,
+        "lat": 36.2045,
+        "lng": 127.0854
       }
     ],
-    "amazon_link": "https://www.amazon.com/dp/B01J1E5LWM?tag=inwoovation20-20",
-    "aliexpress_link": "https://www.aliexpress.com/item/100500789012.html"
+    "amazon_link": "https://www.amazon.com/dp/B07VENTURI40?tag=inwoovation20-20",
+    "aliexpress_link": "https://www.aliexpress.com/item/100500334455.html"
   },
   {
-    "id": "PART-CLM-001",
-    "name": "24V DC Greenhouse Roll-Up Vent Motor (100m Roll Capacity)",
-    "category": "climate",
-    "category_label": "🏠 Climate & Structure",
+    "id": "PART-IRR-004",
+    "name": "Industrial Stepper Peristaltic Dosing Pump (0-1,000 mL/min, RS485)",
+    "category": "irrigation",
+    "category_label": "💧 Irrigation & Fertigation",
     "specs": {
-      "pipe_size": "3/4\"",
+      "pipe_size": "3/8\" (10mm)",
       "voltage": "DC24V",
-      "max_pressure": "N/A",
-      "flow_rate": "100m Roll",
-      "material": "Cast Aluminum"
+      "max_pressure": "3 bar",
+      "flow_rate": "1,000 mL/min",
+      "material": "PharmMed BPT Tubing"
     },
-    "price_usd": 78.50,
+    "price_usd": 185.00,
+    "calculator_link": "/smartfarm/fertigation.html",
+    "calculator_label": "A/B Stock Tank Sizing Solver",
+    "wiki_link": "/wiki/ion_selective_electrode_fertigation_ml.html",
+    "wiki_label": "ISE Real-time Nutrient Dosing",
     "local_dealer_available": true,
     "local_dealers": [
       {
-        "store_name": "유성농협 본점",
+        "store_name": "대전 테크노 전자 계측",
         "country": "KR",
-        "region": "대전 유성구 장대동",
-        "distance_km": 2.4,
-        "lat": 36.3621,
-        "lng": 127.3364
-      },
-      {
-        "store_name": "CAL-Ranch Stores (West Jordan)",
-        "country": "US",
-        "region": "West Jordan, UT, USA",
-        "distance_km": 17.5,
-        "lat": 40.6080,
-        "lng": -111.9600
-      },
-      {
-        "store_name": "Mountfield Praha",
-        "country": "CZ",
-        "region": "Praha, Czech Republic",
-        "distance_km": 11.2,
-        "lat": 50.0755,
-        "lng": 14.4378
+        "region": "대전 유성구 관평동",
+        "distance_km": 6.8,
+        "lat": 36.4251,
+        "lng": 127.3912
       }
     ],
-    "amazon_link": "https://www.amazon.com/dp/B01J141XNO?tag=inwoovation20-20",
-    "aliexpress_link": "https://www.aliexpress.com/item/100500345678.html"
+    "amazon_link": "https://www.amazon.com/dp/B08DOSINGPUMP?tag=inwoovation20-20",
+    "aliexpress_link": "https://www.aliexpress.com/item/100500889900.html"
   },
   {
-    "id": "PART-CLM-002",
-    "name": "Aluminum Lock Channel (C-Profile) & Zig-Zag Spring Wire (2.0m)",
+    "id": "PART-IRR-005",
+    "name": "70-Bar High-Pressure Anti-Drip Fogging Nozzle (0.15mm Ceramic Orifice)",
+    "category": "irrigation",
+    "category_label": "💧 Irrigation & Fertigation",
+    "specs": {
+      "pipe_size": "1/4\" Slip-Lock (6.35mm)",
+      "voltage": "Manual",
+      "max_pressure": "70 bar (1,000 PSI)",
+      "flow_rate": "0.045 L/min",
+      "material": "Nickel-Plated Brass + Ceramic Core"
+    },
+    "price_usd": 8.50,
+    "calculator_link": "/smartfarm/vpd.html",
+    "calculator_label": "Vapor Pressure Deficit (VPD) Calculator",
+    "wiki_link": "/wiki/vapour_pressure_deficit_aquaporin_gating.html",
+    "wiki_label": "Aquaporin Gating & Microclimate",
+    "local_dealer_available": true,
+    "local_dealers": [
+      {
+        "store_name": "동양 고압 포그 시스템",
+        "country": "KR",
+        "region": "대전 대덕구 대화동",
+        "distance_km": 7.3,
+        "lat": 36.3685,
+        "lng": 127.4121
+      }
+    ],
+    "amazon_link": "https://www.amazon.com/dp/B09FOGNOZZLE?tag=inwoovation20-20",
+    "aliexpress_link": "https://www.aliexpress.com/item/100500556677.html"
+  },
+  {
+    "id": "PART-IRR-006",
+    "name": "Closed-Loop UV-C Drain Water Disinfection Chamber (40W, 15 GPM, 254nm)",
+    "category": "irrigation",
+    "category_label": "💧 Irrigation & Fertigation",
+    "specs": {
+      "pipe_size": "1.5\" (40mm)",
+      "voltage": "AC220V",
+      "max_pressure": "8 bar",
+      "flow_rate": "3.5 m³/h (15 GPM)",
+      "material": "316L Stainless Steel Chamber"
+    },
+    "price_usd": 320.00,
+    "calculator_link": "/smartfarm/fertigation.html",
+    "calculator_label": "Drain Water EC Rebalancing",
+    "wiki_link": "/wiki/microbial_rhizosphere_metagenomics.html",
+    "wiki_label": "Recirculating Pythium/Fusarium Control",
+    "local_dealer_available": true,
+    "local_dealers": [
+      {
+        "store_name": "K-Water 클린 아쿠아 테크",
+        "country": "KR",
+        "region": "대전 대덕구 신탄진동",
+        "distance_km": 12.1,
+        "lat": 36.4521,
+        "lng": 127.4289
+      }
+    ],
+    "amazon_link": "https://www.amazon.com/dp/B08UVCCHAMBER?tag=inwoovation20-20",
+    "aliexpress_link": "https://www.aliexpress.com/item/100500998877.html"
+  },
+  {
+    "id": "PART-CLI-001",
+    "name": "Heavy-Duty Roof Vent Gearmotor 150 Nm (24V DC / 400V AC, 3.5 RPM)",
     "category": "climate",
     "category_label": "🏠 Climate & Structure",
     "specs": {
-      "pipe_size": "1/2\"",
-      "voltage": "Manual",
-      "max_pressure": "N/A",
-      "flow_rate": "N/A",
-      "material": "Galvanized Steel & PVC"
+      "pipe_size": "1\" (25mm) Drive Shaft",
+      "voltage": "DC24V",
+      "torque": "150 Nm",
+      "rpm": "3.5 RPM",
+      "material": "Cast Aluminum & Hardened Steel"
     },
-    "price_usd": 12.00,
+    "price_usd": 245.00,
+    "calculator_link": "/smartfarm/heat_loss.html",
+    "calculator_label": "Ventilation & Heat Balance Calculator",
+    "wiki_link": "/wiki/micro_airflow_boundary_layer_fluid_dynamics.html",
+    "wiki_label": "Boundary Layer Micro-Airflow Dynamics",
     "local_dealer_available": true,
     "local_dealers": [
       {
-        "store_name": "유성농협 본점",
+        "store_name": "경북 성주 스마트 온실 모터",
         "country": "KR",
-        "region": "대전 유성구 장대동",
-        "distance_km": 2.4,
-        "lat": 36.3621,
-        "lng": 127.3364
+        "region": "경북 성주군 성주읍",
+        "distance_km": 88.0,
+        "lat": 35.9182,
+        "lng": 128.2831
       },
       {
-        "store_name": "IFA Country Store (Salt Lake City)",
+        "store_name": "Ridder Drive Systems West",
         "country": "US",
-        "region": "Salt Lake City, UT, USA",
-        "distance_km": 8.4,
-        "lat": 40.7251,
-        "lng": -111.9248
-      },
-      {
-        "store_name": "Mountfield Praha",
-        "country": "CZ",
-        "region": "Praha, Czech Republic",
-        "distance_km": 11.2,
-        "lat": 50.0755,
-        "lng": 14.4378
+        "region": "Sacramento, CA, USA",
+        "distance_km": 19.5,
+        "lat": 38.5816,
+        "lng": -121.4944
       }
     ],
-    "amazon_link": "https://www.amazon.com/dp/B0728C7KNC?tag=inwoovation20-20",
-    "aliexpress_link": "https://www.aliexpress.com/item/100500901234.html"
+    "amazon_link": "https://www.amazon.com/dp/B07VENTMOTOR?tag=inwoovation20-20",
+    "aliexpress_link": "https://www.aliexpress.com/item/100500112233.html"
+  },
+  {
+    "id": "PART-CLI-002",
+    "name": "Dual-Layer Aluminized Thermal Energy Screen (55% Shade, 45% Energy Saving)",
+    "category": "climate",
+    "category_label": "🏠 Climate & Structure",
+    "specs": {
+      "dimensions": "4.3m x 100m Roll",
+      "voltage": "Manual",
+      "shading_rate": "55%",
+      "energy_saving": "45%",
+      "material": "Aluminum / Polyester Flame Retardant"
+    },
+    "price_usd": 480.00,
+    "calculator_link": "/smartfarm/heat_loss.html",
+    "calculator_label": "DIN V 18599 Screen Heating Savings",
+    "wiki_link": "/wiki/quantum_dot_wavelength_shifting_films.html",
+    "wiki_label": "Photothermal Screen Radiation Physics",
+    "local_dealer_available": true,
+    "local_dealers": [
+      {
+        "store_name": "스벤손 코리아 대리점 (김제)",
+        "country": "KR",
+        "region": "전북 김제시 백구면",
+        "distance_km": 64.0,
+        "lat": 35.8521,
+        "lng": 127.0215
+      }
+    ],
+    "amazon_link": "https://www.amazon.com/dp/B08THERMALSCREEN?tag=inwoovation20-20",
+    "aliexpress_link": "https://www.aliexpress.com/item/100500445566.html"
+  },
+  {
+    "id": "PART-CLI-003",
+    "name": "BLDC Greenhouse Air Circulation Fan 120W (IP55, 3,800 m³/h, Variable Speed)",
+    "category": "climate",
+    "category_label": "🏠 Climate & Structure",
+    "specs": {
+      "diameter": "400mm (16\")",
+      "voltage": "AC220V",
+      "power": "120W",
+      "airflow": "3,800 m³/h",
+      "material": "Stainless Steel Bracket & ABS Blade"
+    },
+    "price_usd": 135.00,
+    "calculator_link": "/smartfarm/transpiration.html",
+    "calculator_label": "Canopy Transpiration & Airflow Solver",
+    "wiki_link": "/wiki/transpiration_boundary_layer_dynamics.html",
+    "wiki_label": "Stomatal Resistance & Boundary Fluid",
+    "local_dealer_available": true,
+    "local_dealers": [
+      {
+        "store_name": "부여 스마트팜 설비 센터",
+        "country": "KR",
+        "region": "충남 부여군 규암면",
+        "distance_km": 42.0,
+        "lat": 36.2751,
+        "lng": 126.8821
+      }
+    ],
+    "amazon_link": "https://www.amazon.com/dp/B07CIRCFAN?tag=inwoovation20-20",
+    "aliexpress_link": "https://www.aliexpress.com/item/100500667788.html"
+  },
+  {
+    "id": "PART-CLI-004",
+    "name": "Evaporative Cellulose Cooling Pad 150mm (5090 Fluted, Anti-Algae Treated)",
+    "category": "climate",
+    "category_label": "🏠 Climate & Structure",
+    "specs": {
+      "dimensions": "1800mm x 600mm x 150mm",
+      "voltage": "Manual",
+      "flute_angle": "45/15 Degree (5090)",
+      "saturation_efficiency": "88%",
+      "material": "Cross-Linked Cellulose Paper"
+    },
+    "price_usd": 65.00,
+    "calculator_link": "/smartfarm/vpd.html",
+    "calculator_label": "Wet-Bulb Depressive Cooling Estimator",
+    "wiki_link": "/wiki/vapour_pressure_deficit_aquaporin_gating.html",
+    "wiki_label": "Evaporative Enthalpy Thermodynamics",
+    "local_dealer_available": true,
+    "local_dealers": [
+      {
+        "store_name": "밀양 농자재 온실 쿨링 패드",
+        "country": "KR",
+        "region": "경남 밀양시 상남면",
+        "distance_km": 145.0,
+        "lat": 35.4521,
+        "lng": 128.7421
+      }
+    ],
+    "amazon_link": "https://www.amazon.com/dp/B08COOLPAD150?tag=inwoovation20-20",
+    "aliexpress_link": "https://www.aliexpress.com/item/100500778899.html"
+  },
+  {
+    "id": "PART-CLI-005",
+    "name": "Side Curtain Roll-Up Motor 100W (24V DC, 100m Span with Electronic Limit)",
+    "category": "climate",
+    "category_label": "🏠 Climate & Structure",
+    "specs": {
+      "pipe_size": "25mm / 32mm Roller Pipe",
+      "voltage": "DC24V",
+      "power": "100W",
+      "max_span": "100m Length",
+      "material": "IP66 Sealed Aluminum Housing"
+    },
+    "price_usd": 115.00,
+    "calculator_link": "/smartfarm/heat_loss.html",
+    "calculator_label": "Night Heat Loss & Infiltration",
+    "wiki_link": "/wiki/micro_airflow_boundary_layer_fluid_dynamics.html",
+    "wiki_label": "Natural Buoyancy Ventilation Physics",
+    "local_dealer_available": true,
+    "local_dealers": [
+      {
+        "store_name": "안성 스마트 하우스 구동기",
+        "country": "KR",
+        "region": "경기 안성시 대덕면",
+        "distance_km": 92.0,
+        "lat": 37.0125,
+        "lng": 127.2289
+      }
+    ],
+    "amazon_link": "https://www.amazon.com/dp/B07ROLLUPMOTOR?tag=inwoovation20-20",
+    "aliexpress_link": "https://www.aliexpress.com/item/100500223344.html"
+  },
+  {
+    "id": "PART-CLI-006",
+    "name": "High-Density Anti-Insect Screen 50-Mesh (0.25mm Aperture, Anti-UV PE)",
+    "category": "climate",
+    "category_label": "🏠 Climate & Structure",
+    "specs": {
+      "dimensions": "3.0m x 100m Roll",
+      "voltage": "Manual",
+      "mesh_size": "50 Mesh (0.25 x 0.25 mm)",
+      "airflow_reduction": "28%",
+      "material": "100% Virgin HDPE Monofilament"
+    },
+    "price_usd": 195.00,
+    "calculator_link": "/smartfarm/heat_loss.html",
+    "calculator_label": "Vent Flow Impedance Calculator",
+    "wiki_link": "/wiki/care_farming.html",
+    "wiki_label": "IPM Biological Vector Exclusion",
+    "local_dealer_available": true,
+    "local_dealers": [
+      {
+        "store_name": "진주 방충망 온실 자재",
+        "country": "KR",
+        "region": "경남 진주시 초전동",
+        "distance_km": 110.0,
+        "lat": 35.2015,
+        "lng": 128.1125
+      }
+    ],
+    "amazon_link": "https://www.amazon.com/dp/B08INSECTNET50?tag=inwoovation20-20",
+    "aliexpress_link": "https://www.aliexpress.com/item/100500336699.html"
   },
   {
     "id": "PART-SEN-001",
-    "name": "Apera Instruments Industrial Glass Electrode pH Probe (NPT 3/4\")",
+    "name": "Samsung LM301H EVO + Deep Red 660nm LED Toplight Bar (650W, 2.9 µmol/J)",
     "category": "sensors",
     "category_label": "💡 CEA Lighting & Sensors",
     "specs": {
-      "pipe_size": "3/4\"",
-      "voltage": "DC12V",
-      "max_pressure": "6 bar",
-      "flow_rate": "N/A",
-      "material": "Glass & PTFE"
+      "ppfd_output": "1,885 µmol/s",
+      "voltage": "AC220V",
+      "efficacy": "2.9 µmol/J",
+      "spectrum": "Full-Spectrum 4000K + 660nm + 730nm Far-Red",
+      "cooling": "Passive Extruded Aluminum Heat Sink"
     },
-    "price_usd": 145.00,
-    "local_dealer_available": false,
-    "local_dealers": [],
-    "amazon_link": "https://www.amazon.com/dp/B005POOJHG?tag=inwoovation20-20",
-    "aliexpress_link": "https://www.aliexpress.com/item/100500567890.html"
+    "price_usd": 420.00,
+    "calculator_link": "/smartfarm/lighting_efficacy.html",
+    "calculator_label": "Lighting Photon Efficacy Solver",
+    "wiki_link": "/wiki/dli_photomorphogenesis_steering.html",
+    "wiki_label": "Phytochrome Photomorphogenesis Kinetics",
+    "local_dealer_available": true,
+    "local_dealers": [
+      {
+        "store_name": "서울 금천 가산 IT 조명",
+        "country": "KR",
+        "region": "서울 금천구 가산디지털1로",
+        "distance_km": 132.0,
+        "lat": 37.4789,
+        "lng": 126.8821
+      },
+      {
+        "store_name": "Fluence by OSRAM Distributor",
+        "country": "US",
+        "region": "Austin, TX, USA",
+        "distance_km": 18.2,
+        "lat": 30.2672,
+        "lng": -97.7431
+      }
+    ],
+    "amazon_link": "https://www.amazon.com/dp/B08LM301HEVO?tag=inwoovation20-20",
+    "aliexpress_link": "https://www.aliexpress.com/item/100500119988.html"
   },
   {
     "id": "PART-SEN-002",
-    "name": "Spider Farmer SF1000D Full Spectrum LED Grow Light Board (100W)",
+    "name": "TDR 3-in-1 Soil & Substrate Moisture, EC & Temperature Sensor (SDI-12 / Modbus)",
     "category": "sensors",
     "category_label": "💡 CEA Lighting & Sensors",
     "specs": {
-      "pipe_size": "N/A",
-      "voltage": "AC220V",
-      "max_pressure": "N/A",
-      "flow_rate": "2.7 μmol/J",
-      "material": "Samsung LM301B LED"
+      "parameters": "VWC (0-100%), Pore Water EC (0-20 dS/m), Temp (-40~80°C)",
+      "voltage": "DC12V",
+      "interface": "SDI-12 / RS485 Modbus-RTU",
+      "accuracy": "±1% VWC, ±0.1 dS/m EC, ±0.2°C Temp",
+      "probes": "3-Rod Stainless Steel 316L"
     },
-    "price_usd": 159.00,
+    "price_usd": 165.00,
+    "calculator_link": "/smartfarm/fertigation.html",
+    "calculator_label": "Substrate EC Dilution Engine",
+    "wiki_link": "/wiki/rhizosphere_ph_cation_exchange_kinetics.html",
+    "wiki_label": "Dielectric Permittivity & Cation Flux",
     "local_dealer_available": true,
     "local_dealers": [
       {
-        "store_name": "서울 양재동 꽃시장 자재상가",
+        "store_name": "대전 카이스트 산학협력 센서 허브",
         "country": "KR",
-        "region": "서울 서초구",
-        "distance_km": 140.0,
-        "lat": 37.4696,
-        "lng": 127.0392
-      },
-      {
-        "store_name": "CAL-Ranch Stores (Provo)",
-        "country": "US",
-        "region": "Provo, UT, USA",
-        "distance_km": 42.5,
-        "lat": 40.2662,
-        "lng": -111.6585
-      },
-      {
-        "store_name": "Mountfield Brno",
-        "country": "CZ",
-        "region": "Brno, Czech Republic",
-        "distance_km": 36.5,
-        "lat": 49.1951,
-        "lng": 16.6068
+        "region": "대전 유성구 대학로",
+        "distance_km": 3.8,
+        "lat": 36.3721,
+        "lng": 127.3601
       }
     ],
-    "amazon_link": "https://www.amazon.com/dp/B084L1Y754?tag=inwoovation20-20",
-    "aliexpress_link": "https://www.aliexpress.com/item/100500234567.html"
+    "amazon_link": "https://www.amazon.com/dp/B09TDRSENSOR3?tag=inwoovation20-20",
+    "aliexpress_link": "https://www.aliexpress.com/item/100500554433.html"
   },
   {
-    "id": "PART-TOOL-001",
-    "name": "Plant Tapetool Vine Tying Machine & 10 Rolls Tape Set",
+    "id": "PART-SEN-003",
+    "name": "Dual-Beam NDIR CO2 Gas Transmitter (0-5,000 ppm, IP65, 4-20mA / Modbus)",
+    "category": "sensors",
+    "category_label": "💡 CEA Lighting & Sensors",
+    "specs": {
+      "measurement_range": "0 - 5,000 ppm CO2",
+      "voltage": "DC24V",
+      "accuracy": "±(30 ppm + 3% of reading)",
+      "output": "4-20mA & RS485 Modbus RTU",
+      "optical_chamber": "Gold-Plated Dual-Beam NDIR"
+    },
+    "price_usd": 145.00,
+    "calculator_link": "/smartfarm/co2_calculator.html",
+    "calculator_label": "Greenhouse CO2 Injection Solver",
+    "wiki_link": "/wiki/co2_injection_canopy_assimilation_kinetics.html",
+    "wiki_label": "Rubisco Carboxylation Kinetics",
+    "local_dealer_available": true,
+    "local_dealers": [
+      {
+        "store_name": "수원 광교 정밀 계측 센서",
+        "country": "KR",
+        "region": "경기 수원시 영통구 광교동",
+        "distance_km": 115.0,
+        "lat": 37.2915,
+        "lng": 127.0512
+      }
+    ],
+    "amazon_link": "https://www.amazon.com/dp/B08NDIRCO2SENS?tag=inwoovation20-20",
+    "aliexpress_link": "https://www.aliexpress.com/item/100500448822.html"
+  },
+  {
+    "id": "PART-SEN-004",
+    "name": "Apogee-Calibrated Quantum PPFD PAR Flux Sensor (400-700nm, 0-3,000 µmol/m²s)",
+    "category": "sensors",
+    "category_label": "💡 CEA Lighting & Sensors",
+    "specs": {
+      "spectral_range": "400 to 700 nm (Photosynthetically Active)",
+      "voltage": "DC12V",
+      "measurement_range": "0 to 3,000 µmol/m²·s",
+      "cosine_correction": "±2% at 45°, ±5% at 75°",
+      "housing": "Anodized Aluminum Dome (Weatherproof)"
+    },
+    "price_usd": 285.00,
+    "calculator_link": "/smartfarm/dli_calculator.html",
+    "calculator_label": "Daily Light Integral (DLI) Calculator",
+    "wiki_link": "/wiki/chlorophyll_fluorescence_pam_stress_kinetics.html",
+    "wiki_label": "Photochemical Quenching & PAM Kinetics",
+    "local_dealer_available": true,
+    "local_dealers": [
+      {
+        "store_name": "전주 농촌진흥청 인근 스마트랩",
+        "country": "KR",
+        "region": "전북 전주시 덕진구 농생명로",
+        "distance_km": 68.0,
+        "lat": 35.8321,
+        "lng": 127.0654
+      }
+    ],
+    "amazon_link": "https://www.amazon.com/dp/B07QUANTUMPAR?tag=inwoovation20-20",
+    "aliexpress_link": "https://www.aliexpress.com/item/100500991122.html"
+  },
+  {
+    "id": "PART-SEN-005",
+    "name": "Optical Luminescent Dissolved Oxygen (DO) Probe (0-20 mg/L, Auto-Temp)",
+    "category": "sensors",
+    "category_label": "💡 CEA Lighting & Sensors",
+    "specs": {
+      "measurement_range": "0.00 to 20.00 mg/L (ppm)",
+      "voltage": "DC12V",
+      "principle": "Fluorescence Quenching Optical Cap",
+      "electrolyte_needed": "No (Zero Maintenance Cap)",
+      "response_time": "T90 < 30 seconds"
+    },
+    "price_usd": 295.00,
+    "calculator_link": "/smartfarm/fertigation.html",
+    "calculator_label": "Hydroponic DWC Respiration Solver",
+    "wiki_link": "/wiki/rootzone_dissolved_oxygen_respiration.html",
+    "wiki_label": "Root Hypoxia & ATP Respiration Limits",
+    "local_dealer_available": true,
+    "local_dealers": [
+      {
+        "store_name": "화성 동탄 바이오 센서 랩",
+        "country": "KR",
+        "region": "경기 화성시 동탄오산로",
+        "distance_km": 105.0,
+        "lat": 37.1995,
+        "lng": 127.0987
+      }
+    ],
+    "amazon_link": "https://www.amazon.com/dp/B08OPTICALDOPROBE?tag=inwoovation20-20",
+    "aliexpress_link": "https://www.aliexpress.com/item/100500773311.html"
+  },
+  {
+    "id": "PART-SEN-006",
+    "name": "Infrared Leaf Canopy Temperature Sensor (10° FOV, Non-Contact, ±0.3°C)",
+    "category": "sensors",
+    "category_label": "💡 CEA Lighting & Sensors",
+    "specs": {
+      "target_temp_range": "-20°C to 70°C",
+      "voltage": "DC12V",
+      "field_of_view": "10° Half-Angle Focused Cone",
+      "accuracy": "±0.3°C with Calibrated Germanium Lens",
+      "output": "RS485 Modbus RTU / 0-5V"
+    },
+    "price_usd": 210.00,
+    "calculator_link": "/smartfarm/vpd.html",
+    "calculator_label": "Canopy Leaf VPD & Transpiration Solver",
+    "wiki_link": "/wiki/vapour_pressure_deficit_aquaporin_gating.html",
+    "wiki_label": "Leaf Thermal Equilibrium & Stomatal Conductance",
+    "local_dealer_available": true,
+    "local_dealers": [
+      {
+        "store_name": "대구 달성 스마트 농업 기기",
+        "country": "KR",
+        "region": "대구 달성군 현풍읍",
+        "distance_km": 118.0,
+        "lat": 35.6985,
+        "lng": 128.4389
+      }
+    ],
+    "amazon_link": "https://www.amazon.com/dp/B09INFRAREDLEAF?tag=inwoovation20-20",
+    "aliexpress_link": "https://www.aliexpress.com/item/100500882244.html"
+  },
+  {
+    "id": "PART-TLS-001",
+    "name": "High-Wire Tomato Roller Hooks with 12m UV-Degradable Bio-Twine (Pack of 500)",
     "category": "tools",
     "category_label": "✂️ Tools & Supplies",
     "specs": {
-      "pipe_size": "N/A",
+      "twine_length": "12 meters per hook",
       "voltage": "Manual",
-      "max_pressure": "N/A",
-      "flow_rate": "N/A",
-      "material": "Stainless Steel & ABS"
+      "hook_material": "Galvanized High-Tensile Spring Steel",
+      "twine_type": "PLA Biodegradable Compostable Twine",
+      "bearing_capacity": "25 kg per hook"
     },
-    "price_usd": 22.00,
+    "price_usd": 110.00,
+    "calculator_link": "/smartfarm/roi_simulator.html",
+    "calculator_label": "Crop Trellising Labor ROI Calculator",
+    "wiki_link": "/wiki/tomato.html",
+    "wiki_label": "Indeterminate Tomato High-Wire Training",
     "local_dealer_available": true,
     "local_dealers": [
       {
-        "store_name": "유성농협 본점",
+        "store_name": "부여 스마트팜 시설 자재 협동조합",
         "country": "KR",
-        "region": "대전 유성구 장대동",
-        "distance_km": 2.4,
-        "lat": 36.3621,
-        "lng": 127.3364
-      },
-      {
-        "store_name": "IFA Country Store (Salt Lake City)",
-        "country": "US",
-        "region": "Salt Lake City, UT, USA",
-        "distance_km": 8.4,
-        "lat": 40.7251,
-        "lng": -111.9248
-      },
-      {
-        "store_name": "Mountfield Praha",
-        "country": "CZ",
-        "region": "Praha, Czech Republic",
-        "distance_km": 11.2,
-        "lat": 50.0755,
-        "lng": 14.4378
+        "region": "충남 부여군 부여읍",
+        "distance_km": 44.0,
+        "lat": 36.2751,
+        "lng": 126.9125
       }
     ],
-    "amazon_link": "https://www.amazon.com/dp/B07RZMZB5W?tag=inwoovation20-20",
-    "aliexpress_link": "https://www.aliexpress.com/item/100500123456.html"
+    "amazon_link": "https://www.amazon.com/dp/B07ROLLERHOOK500?tag=inwoovation20-20",
+    "aliexpress_link": "https://www.aliexpress.com/item/100500115599.html"
+  },
+  {
+    "id": "PART-TLS-002",
+    "name": "Dutch Hydroponic Bato Bucket System (11L Heavy-Duty with 2 Siphon Elbows, 20-Pack)",
+    "category": "tools",
+    "category_label": "✂️ Tools & Supplies",
+    "specs": {
+      "capacity": "11 Liters (300 x 250 x 230 mm)",
+      "voltage": "Manual",
+      "material": "Food-Grade UV-Stabilized Polypropylene",
+      "drainage": "Dual 1\" Siphon Overflow Elbows Included",
+      "reservoir": "Integrated 1.5L Safety Water Reserve"
+    },
+    "price_usd": 85.00,
+    "calculator_link": "/smartfarm/fertigation.html",
+    "calculator_label": "Drip Emitter Runoff Rate Solver",
+    "wiki_link": "/wiki/cucumber.html",
+    "wiki_label": "Perlite Hydroponic Substrate Hydraulics",
+    "local_dealer_available": true,
+    "local_dealers": [
+      {
+        "store_name": "세종 조치원 원예 농자재",
+        "country": "KR",
+        "region": "세종시 조치원읍",
+        "distance_km": 21.0,
+        "lat": 36.6021,
+        "lng": 127.2985
+      }
+    ],
+    "amazon_link": "https://www.amazon.com/dp/B08BATOPACK20?tag=inwoovation20-20",
+    "aliexpress_link": "https://www.aliexpress.com/item/100500228833.html"
+  },
+  {
+    "id": "PART-TLS-003",
+    "name": "Grodan-Type Rockwool Slab 1000 x 150 x 75 mm (Dual-Density Matrix, Pack of 16)",
+    "category": "tools",
+    "category_label": "✂️ Tools & Supplies",
+    "specs": {
+      "dimensions": "1000 x 150 x 75 mm",
+      "voltage": "Manual",
+      "porosity": "96% Total Pore Volume",
+      "water_holding": "80% Water Retention Capacity",
+      "fiber_direction": "Vertical Fibers for Fast Drainage"
+    },
+    "price_usd": 125.00,
+    "calculator_link": "/smartfarm/transpiration.html",
+    "calculator_label": "Substrate Water Depletion Estimator",
+    "wiki_link": "/wiki/paprika.html",
+    "wiki_label": "Hydroponic Rockwool Capillary Action",
+    "local_dealer_available": true,
+    "local_dealers": [
+      {
+        "store_name": "천안 원예 자재 유통 센터",
+        "country": "KR",
+        "region": "충남 천안시 동남구 풍세면",
+        "distance_km": 48.0,
+        "lat": 36.7521,
+        "lng": 127.1254
+      }
+    ],
+    "amazon_link": "https://www.amazon.com/dp/B07ROCKWOOL1000?tag=inwoovation20-20",
+    "aliexpress_link": "https://www.aliexpress.com/item/100500339911.html"
+  },
+  {
+    "id": "PART-TLS-004",
+    "name": "Precision Digital Optical Brix & Salinity Refractometer (0-53% Brix, ATC)",
+    "category": "tools",
+    "category_label": "✂️ Tools & Supplies",
+    "specs": {
+      "brix_range": "0.0% to 53.0% Brix (Resolution 0.1%)",
+      "voltage": "2x AAA Battery (DC3V)",
+      "temperature_compensation": "Automatic (10°C to 40°C)",
+      "sample_volume": "0.3 mL Drop on Sapphire Prism",
+      "measurement_time": "1.5 seconds"
+    },
+    "price_usd": 89.00,
+    "calculator_link": "/smartfarm/roi_simulator.html",
+    "calculator_label": "Crop Sugar Grading Premium Estimator",
+    "wiki_link": "/wiki/osmotic_brix_salt_stress_kinetics.html",
+    "wiki_label": "Osmotic Sugar Stacking & Fruit Quality",
+    "local_dealer_available": true,
+    "local_dealers": [
+      {
+        "store_name": "대전 유성 바이오 계측기기",
+        "country": "KR",
+        "region": "대전 유성구 전민동",
+        "distance_km": 5.4,
+        "lat": 36.4021,
+        "lng": 127.3995
+      }
+    ],
+    "amazon_link": "https://www.amazon.com/dp/B08DIGITALBRIX?tag=inwoovation20-20",
+    "aliexpress_link": "https://www.aliexpress.com/item/100500441188.html"
+  },
+  {
+    "id": "PART-TLS-005",
+    "name": "Micro-Airflow Ultrasonic Boundary Layer Anemometer (0.01 to 5.00 m/s)",
+    "category": "tools",
+    "category_label": "✂️ Tools & Supplies",
+    "specs": {
+      "airflow_range": "0.01 to 5.00 m/s (Zero Friction Ultrasonic)",
+      "voltage": "DC12V",
+      "resolution": "0.01 m/s",
+      "accuracy": "±(0.03 m/s + 2%)",
+      "output": "RS485 Modbus RTU"
+    },
+    "price_usd": 275.00,
+    "calculator_link": "/smartfarm/transpiration.html",
+    "calculator_label": "Leaf Boundary Layer Resistance Calculator",
+    "wiki_link": "/wiki/transpiration_boundary_layer_dynamics.html",
+    "wiki_label": "Reynolds Number & Boundary Layer Thinning",
+    "local_dealer_available": true,
+    "local_dealers": [
+      {
+        "store_name": "대전 카이스트 첨단 센서 사업부",
+        "country": "KR",
+        "region": "대전 유성구 구성동",
+        "distance_km": 4.1,
+        "lat": 36.3685,
+        "lng": 127.3589
+      }
+    ],
+    "amazon_link": "https://www.amazon.com/dp/B09ANEMOMETERCEA?tag=inwoovation20-20",
+    "aliexpress_link": "https://www.aliexpress.com/item/100500772299.html"
+  },
+  {
+    "id": "PART-TLS-006",
+    "name": "Heavy-Duty Battery Powered Electric Pruning Shears (32mm Branch Capacity, 2x 21V)",
+    "category": "tools",
+    "category_label": "✂️ Tools & Supplies",
+    "specs": {
+      "cutting_diameter": "Max 32mm (1.26\")",
+      "voltage": "DC21V (2x 2.0Ah Lithium-Ion Batteries)",
+      "blade_material": "SK5 High Carbon Forged Steel",
+      "continuous_runtime": "6 to 8 hours per charge",
+      "weight": "0.95 kg (Ultra Ergonomic)"
+    },
+    "price_usd": 120.00,
+    "calculator_link": "/smartfarm/roi_simulator.html",
+    "calculator_label": "Pruning Labor Productivity Calculator",
+    "wiki_link": "/wiki/care_farming.html",
+    "wiki_label": "Ergonomic Agricultural Tool Design",
+    "local_dealer_available": true,
+    "local_dealers": [
+      {
+        "store_name": "논산 대동 전동 원예 공구",
+        "country": "KR",
+        "region": "충남 논산시 연무읍",
+        "distance_km": 34.0,
+        "lat": 36.1421,
+        "lng": 127.1025
+      }
+    ],
+    "amazon_link": "https://www.amazon.com/dp/B08ELECTRICPRUNER?tag=inwoovation20-20",
+    "aliexpress_link": "https://www.aliexpress.com/item/100500994433.html"
   }
 ]
