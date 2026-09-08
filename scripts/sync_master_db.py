@@ -112,6 +112,23 @@ def import_json_to_db():
             json.dumps(facets.get("technologies", [p["category"]]), ensure_ascii=False)
         ))
 
+        # 6.5 Sync Application Playbooks
+        playbook = p.get("applicationPlaybook")
+        if playbook:
+            cur.execute("""
+                INSERT OR REPLACE INTO application_playbooks (
+                    program_id, official_calculators, scoring_cheat_sheet,
+                    vendor_quote_rules, disqualification_pitfalls, stacking_rules
+                ) VALUES (?, ?, ?, ?, ?, ?)
+            """, (
+                p["id"],
+                json.dumps(playbook.get("officialCalculators", []), ensure_ascii=False),
+                json.dumps(playbook.get("scoringCheatSheet", {}), ensure_ascii=False),
+                json.dumps(playbook.get("vendorQuoteRules", []), ensure_ascii=False),
+                json.dumps(playbook.get("disqualificationPitfalls", []), ensure_ascii=False),
+                playbook.get("stackingRules", "")
+            ))
+
     # 7. Sync Discovered Candidates from JSON if available
     cand_path = os.path.join(KB_DIR, "01_Master_Database", "discovered_candidates.json")
     total_cand = 0
@@ -121,11 +138,16 @@ def import_json_to_db():
                 cand_list = json.load(cf)
             for c in cand_list:
                 cur.execute("""
-                    INSERT OR IGNORE INTO discovered_candidates (
+                    INSERT INTO discovered_candidates (
                         source_platform, agency_name, opportunity_title, opportunity_url,
                         category, est_funding_amount, deadline_text, is_cross_domain, matched_tracks,
                         status, discovery_notes, discovered_at
                     ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                    ON CONFLICT(opportunity_url) DO UPDATE SET
+                        status = excluded.status,
+                        category = excluded.category,
+                        est_funding_amount = excluded.est_funding_amount,
+                        matched_tracks = excluded.matched_tracks
                 """, (
                     c.get("sourcePlatform", "unknown"),
                     c.get("agencyName", "California Agency"),
@@ -154,9 +176,11 @@ def import_json_to_db():
     total_eq = cur.fetchone()[0]
     cur.execute("SELECT COUNT(*) FROM document_checklist")
     total_doc = cur.fetchone()[0]
+    cur.execute("SELECT COUNT(*) FROM application_playbooks")
+    total_playbooks = cur.fetchone()[0]
 
     conn.close()
-    print(f"🎉 Master Database Synchronized: {total_p} programs | {total_eq} equipment items | {total_doc} documents | {total_cand} discovered candidates.")
+    print(f"🎉 Master Database Synchronized: {total_p} programs | {total_eq} equipment items | {total_doc} documents | {total_playbooks} playbooks | {total_cand} discovered candidates.")
     return True
 
 if __name__ == "__main__":
