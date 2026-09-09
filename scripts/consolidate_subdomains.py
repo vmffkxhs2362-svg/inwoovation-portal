@@ -17,6 +17,7 @@ def make_redirect_html(dest_url):
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <meta name="google-adsense-account" content="ca-pub-8597809158257497">
   <title>Redirecting to Inwoovation Lab...</title>
   <link rel="canonical" href="{dest_url}">
   <meta http-equiv="refresh" content="0; url={dest_url}">
