@@ -123,6 +123,110 @@
     </div>
   </div>
 
+    <!-- START: INJECTED EDITORIAL & AMAZON ASSOCIATES HARDWARE MODULE -->
+    <div class="tool-editorial-wrapper">
+      
+      <!-- Technical Theory & Mathematical Formulation -->
+      <section class="editorial-card">
+        <h2><span>🤖</span> Engineering Theory & Biophysical Principles</h2>
+        <p>Modern commercial greenhouse operations are rapidly transitioning from reactive feedback PID loops to predictive, physics-informed autonomous controllers. A digital twin combines dynamic greenhouse energy balances (solar heat gain, long-wave radiation loss, ground conduction) with physiological crop models (canopy photosynthesis, transpiration). By ingesting external weather station forecasts (solar irradiance, wind velocity, ambient temperature), Model Predictive Control (MPC) algorithms solve multi-objective optimization problems every 5 minutes. This enables anticipatory thermal screen deployment before outdoor temperatures plummet, pre-charging solar thermal buffer tanks, and dynamic peak-electricity shaving.</p>
+        
+        <h3>Governing Equations & Mathematical Model</h3>
+        <div class="formula-box">
+MPC Objective Function:
+  J = ∑ [ w_yield · (A_net - Target)² + w_energy · (Cost_gas + Cost_elec) + w_smooth · (Δu)² ]
+Subject to State Constraints:
+  • T_min ≤ T_canopy(t) ≤ T_max
+  • VPD_min ≤ VPD(t) ≤ VPD_max
+  • Window_aperture_rate ≤ max_speed
+        </div>
+
+        <h3>Commercial Greenhouse Setpoints & Benchmark Matrix</h3>
+        <div class="benchmark-table-wrapper">
+          <table class="benchmark-table">
+            <thead>
+              <tr>
+                <th>Crop / System State</th>
+                <th>Target Setpoint</th>
+                <th>Engineering Range</th>
+                <th>Operational Impact</th>
+              </tr>
+            </thead>
+            <tbody>
+<tr><td><strong>IoT Telemetry Frequency (MQTT)</strong></td><td>Every 10 – 30 seconds</td><td>QoS 1 telemetry stream to edge gateway</td><td>-</td></tr>
+<tr><td><strong>MPC Optimization Horizon</strong></td><td>24 – 48 Hours Ahead</td><td>Predictive rolling horizon with 5-minute step resolution</td><td>-</td></tr>
+<tr><td><strong>Energy Cost Reduction via MPC</strong></td><td>15 – 28%</td><td>Compared to traditional setpoint day/night thermostat loops</td><td>-</td></tr>
+<tr><td><strong>Thermal Stratification in Buffer Tank</strong></td><td>Top: 85 – 95°C | Bottom: 35 – 45°C</td><td>Sharp thermocline ensures maximum boiler heat recovery</td><td>-</td></tr>
+
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Frequently Asked Questions (FAQ) Section -->
+      <section class="editorial-card">
+        <h2><span>❓</span> Frequently Asked Engineering Questions (FAQ)</h2>
+        <div class="faq-accordion">
+
+        <details class="faq-item">
+          <summary class="faq-summary">What is the primary advantage of Model Predictive Control over standard greenhouse climate computers? <span>▾</span></summary>
+          <div class="faq-content">Standard PID controllers only respond after an error has already occurred (e.g. greenhouse has already gotten too cold or too humid). MPC looks 24 to 48 hours into the future using weather forecasts and dynamic thermal models to adjust screens, vents, and heating hours in advance, avoiding costly overshoot.</div>
+        </details>
+        
+        <details class="faq-item">
+          <summary class="faq-summary">How do MQTT and LoRaWAN architectures handle harsh greenhouse radio environments? <span>▾</span></summary>
+          <div class="faq-content">High humidity, dense wet crop canopies, and metal truss structures attenuate 2.4GHz Wi-Fi signals severely. Sub-GHz LoRaWAN (868/915 MHz) or industrial RS-485 Modbus RTU wire loops provide robust, noise-immune transmission from sensor nodes back to the central edge PLC.</div>
+        </details>
+        
+        <details class="faq-item">
+          <summary class="faq-summary">What role do 3D digital twins play in commercial facility management? <span>▾</span></summary>
+          <div class="faq-content">3D WebGL digital twins visualize spatial temperature, humidity, and airflow non-uniformities that single-point aspiration box sensors fail to capture. They identify microclimate dead zones, fungal risk hotspots, and draft leaks before visible crop damage occurs.</div>
+        </details>
+        
+        </div>
+      </section>
+
+      <!-- Recommended Hardware & Amazon Associates Monetization -->
+      <section class="amazon-showcase">
+        <div class="amazon-header">
+          <h3><span>🛒</span> Recommended Precision Field Hardware (Amazon)</h3>
+          <span style="font-size:0.8rem; color:#94a3b8;">Store ID: <strong>inwoovation20-20</strong></span>
+        </div>
+        <p style="font-size:0.9rem; color:#cbd5e1; margin-bottom:20px;">
+          Commercial precision horticulture demands lab-grade sensors and field calibration meters. 
+          The following industrial-grade instruments are vetted for validating the inputs and outputs of this calculator:
+        </p>
+        <div class="amazon-grid">
+
+        <div class="amazon-card">
+          <span class="amazon-badge">Meteorological</span>
+          <h4 class="amazon-product-name">Ecowitt Wittboy Pro Ultrasonic Solar Weather Station</h4>
+          <p class="amazon-product-desc">High-accuracy meteorological station recording solar irradiance, wind gust velocity, rain rate, and ambient temperature for predictive greenhouse automation.</p>
+          <a href="https://www.amazon.com/dp/B0B68Y5954?tag=inwoovation20-20" target="_blank" rel="nofollow noopener noreferrer" class="amazon-btn">
+            <span>🛒 Check Price on Amazon</span> <span>↗</span>
+          </a>
+        </div>
+        
+        <div class="amazon-card">
+          <span class="amazon-badge">IoT Wireless</span>
+          <h4 class="amazon-product-name">RuuviTag Pro Industrial Bluetooth Microclimate & Soil Sensor</h4>
+          <p class="amazon-product-desc">Rugged IP67 environmental beacon measuring air temperature, relative humidity, atmospheric pressure, and motion for wireless IoT telemetry.</p>
+          <a href="https://www.amazon.com/dp/B09KNH3Z17?tag=inwoovation20-20" target="_blank" rel="nofollow noopener noreferrer" class="amazon-btn">
+            <span>🛒 Check Price on Amazon</span> <span>↗</span>
+          </a>
+        </div>
+        
+        </div>
+        <div class="affiliate-disclosure">
+          <strong>Affiliate Disclosure:</strong> As an Amazon Associate, inwoovation.com earns from qualifying purchases. 
+          Product recommendations are independently selected to support precise commercial greenhouse climate, lighting, and fertigation modeling at zero extra cost to you.
+        </div>
+      </section>
+
+    </div>
+    <!-- END: INJECTED EDITORIAL & AMAZON ASSOCIATES HARDWARE MODULE -->
+    
+
   <script>
     const nodeContainer = document.getElementById('node-container');
     const nodes = [];

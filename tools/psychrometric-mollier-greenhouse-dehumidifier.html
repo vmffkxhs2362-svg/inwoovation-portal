@@ -153,6 +153,120 @@
   </div>
 
   <script src="../js/audit-pdf-generator.js"></script>
+
+    <!-- START: INJECTED EDITORIAL & AMAZON ASSOCIATES HARDWARE MODULE -->
+    <div class="tool-editorial-wrapper">
+      
+      <!-- Technical Theory & Mathematical Formulation -->
+      <section class="editorial-card">
+        <h2><span>🌡️</span> Engineering Theory & Biophysical Principles</h2>
+        <p>Greenhouse microclimate engineering balances sensible heat flux, latent energy transfers, and mass transport through the plant boundary layer. Vapor Pressure Deficit (VPD), defined as the difference between the saturation vapor pressure at leaf temperature and the actual ambient vapor pressure, is the fundamental driving gradient for crop transpiration and xylem sap translocation. If VPD is too low (< 0.4 kPa), transpiration stalls, leading to localized calcium deficiencies (blossom-end rot, tipburn) and fungal spore germination (Botrytis cinerea). Conversely, if VPD exceeds 1.5 kPa, stomatal closure occurs via abscisic acid (ABA) signaling to prevent desiccation, terminating CO2 assimilation. Precise psychrometric control via thermal screens, high-pressure fogging, and modulating ventilation louvers stabilizes VPD within the optimal photosynthetic window.</p>
+        
+        <h3>Governing Equations & Mathematical Model</h3>
+        <div class="formula-box">
+VPD (kPa) = VPsat(T_leaf) - VPair(T_air, RH)
+Where:
+  • VPsat(T) = 0.61078 × exp[ (17.27 × T) / (T + 237.3) ]  (Tetens equation)
+  • VPair = VPsat(T_air) × (RH% / 100)
+  • T_leaf is measured via infrared pyrometer (typically T_air ± 1.5°C)
+        </div>
+
+        <h3>Commercial Greenhouse Setpoints & Benchmark Matrix</h3>
+        <div class="benchmark-table-wrapper">
+          <table class="benchmark-table">
+            <thead>
+              <tr>
+                <th>Crop / System State</th>
+                <th>Target Setpoint</th>
+                <th>Engineering Range</th>
+                <th>Operational Impact</th>
+              </tr>
+            </thead>
+            <tbody>
+<tr><td><strong>Vegetative Phase (High Humidity)</strong></td><td>0.5 – 0.8 kPa</td><td>22.0 – 25.0 °C</td><td>70 – 80%</td></tr>
+<tr><td><strong>Early Flowering / Generative</strong></td><td>0.8 – 1.1 kPa</td><td>20.0 – 23.0 °C</td><td>65 – 75%</td></tr>
+<tr><td><strong>Late Fruiting / Heavy Load</strong></td><td>1.0 – 1.3 kPa</td><td>19.0 – 22.0 °C</td><td>60 – 70%</td></tr>
+<tr><td><strong>High Radiation Midday Peak</strong></td><td>1.2 – 1.5 kPa</td><td>24.0 – 27.0 °C</td><td>55 – 65%</td></tr>
+<tr><td><strong>Nighttime Transpiration Maintenance</strong></td><td>0.3 – 0.6 kPa</td><td>16.0 – 18.0 °C</td><td>75 – 85%</td></tr>
+
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Frequently Asked Questions (FAQ) Section -->
+      <section class="editorial-card">
+        <h2><span>❓</span> Frequently Asked Engineering Questions (FAQ)</h2>
+        <div class="faq-accordion">
+
+        <details class="faq-item">
+          <summary class="faq-summary">Why is leaf temperature more critical than ambient air temperature for VPD? <span>▾</span></summary>
+          <div class="faq-content">Because stomata are located on the leaf surface, the saturation vapor pressure must be calculated at leaf temperature, not air temperature. High transpiration can cool leaves 2°C below ambient air, while intense solar radiation without air movement can heat leaves 3°C above air, shifting calculated VPD by over 30%.</div>
+        </details>
+        
+        <details class="faq-item">
+          <summary class="faq-summary">How does high-pressure fogging (70 bar) achieve adiabatic cooling without leaf wetting? <span>▾</span></summary>
+          <div class="faq-content">Operating water pressure at 70 bar shears droplet diameters below 10–15 microns (Sauter Mean Diameter D32). Droplets of this microscopic size flash-evaporate into the ambient air stream in under 1.5 seconds, extracting latent heat of vaporization (2.45 MJ/kg) before they can gravity-settle onto foliage.</div>
+        </details>
+        
+        <details class="faq-item">
+          <summary class="faq-summary">What is the optimal air velocity through the greenhouse crop canopy? <span>▾</span></summary>
+          <div class="faq-content">Horizontal circulation fans should maintain an air speed of 0.3 to 0.5 m/s across leaves. This thins the laminar boundary layer resistance, replenishing localized CO2 supplies and preventing humid microclimates that invite fungal pathogens.</div>
+        </details>
+        
+        </div>
+      </section>
+
+      <!-- Recommended Hardware & Amazon Associates Monetization -->
+      <section class="amazon-showcase">
+        <div class="amazon-header">
+          <h3><span>🛒</span> Recommended Precision Field Hardware (Amazon)</h3>
+          <span style="font-size:0.8rem; color:#94a3b8;">Store ID: <strong>inwoovation20-20</strong></span>
+        </div>
+        <p style="font-size:0.9rem; color:#cbd5e1; margin-bottom:20px;">
+          Commercial precision horticulture demands lab-grade sensors and field calibration meters. 
+          The following industrial-grade instruments are vetted for validating the inputs and outputs of this calculator:
+        </p>
+        <div class="amazon-grid">
+
+        <div class="amazon-card">
+          <span class="amazon-badge">Grower Essential</span>
+          <h4 class="amazon-product-name">Klein Tools IR1 Dual-Laser Infrared Thermometer (-4 to 752°F)</h4>
+          <p class="amazon-product-desc">Essential non-contact infrared pyrometer for measuring real-time leaf canopy surface temperature and leaf-to-air VPD differentials.</p>
+          <a href="https://www.amazon.com/dp/B07V77G39C?tag=inwoovation20-20" target="_blank" rel="nofollow noopener noreferrer" class="amazon-btn">
+            <span>🛒 Check Price on Amazon</span> <span>↗</span>
+          </a>
+        </div>
+        
+        <div class="amazon-card">
+          <span class="amazon-badge">Automation</span>
+          <h4 class="amazon-product-name">Inkbird IHC-200 Dual-Relay Digital Pre-Wired Humidity Controller</h4>
+          <p class="amazon-product-desc">Automates commercial dehumidifiers and high-pressure fogging pumps based on precise psychrometric relative humidity thresholds.</p>
+          <a href="https://www.amazon.com/dp/B01J1E5LWM?tag=inwoovation20-20" target="_blank" rel="nofollow noopener noreferrer" class="amazon-btn">
+            <span>🛒 Check Price on Amazon</span> <span>↗</span>
+          </a>
+        </div>
+        
+        <div class="amazon-card">
+          <span class="amazon-badge">CFD Validation</span>
+          <h4 class="amazon-product-name">BTMETER BT-100 Digital Anemometer & Air Velocity Meter</h4>
+          <p class="amazon-product-desc">Handheld air speed and volumetric CFM tester to evaluate greenhouse circulation fan throw distance and boundary layer resistance.</p>
+          <a href="https://www.amazon.com/dp/B01J141XNO?tag=inwoovation20-20" target="_blank" rel="nofollow noopener noreferrer" class="amazon-btn">
+            <span>🛒 Check Price on Amazon</span> <span>↗</span>
+          </a>
+        </div>
+        
+        </div>
+        <div class="affiliate-disclosure">
+          <strong>Affiliate Disclosure:</strong> As an Amazon Associate, inwoovation.com earns from qualifying purchases. 
+          Product recommendations are independently selected to support precise commercial greenhouse climate, lighting, and fertigation modeling at zero extra cost to you.
+        </div>
+      </section>
+
+    </div>
+    <!-- END: INJECTED EDITORIAL & AMAZON ASSOCIATES HARDWARE MODULE -->
+    
+
   <script>
     const canvas = document.getElementById('mollierCanvas');
     const ctx = canvas.getContext('2d');
