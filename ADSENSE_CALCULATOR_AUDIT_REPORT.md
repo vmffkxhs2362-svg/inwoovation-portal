@@ -9,10 +9,10 @@
 ## 1. Executive Summary
 
 * **Total Active Tools Audited**: 22
-* **Tools with >= 600 Words (High Authority Depth)**: **16** (72.7%)
-* **Tools Recommended for Expansion (< 600 Words)**: **6**
+* **Tools with >= 600 Words (High Authority Depth)**: **21** (95.5%)
+* **Tools Recommended for Expansion (< 600 Words)**: **1**
 * **AdSense Tag Coverage**: 22 / 22 (100% verified)
-* **Schema.org Structured Data Coverage**: 20 / 22
+* **Schema.org Structured Data Coverage**: 22 / 22
 
 ---
 
@@ -20,28 +20,28 @@
 
 | Calculator File | Visible Words | Mathematical Equations | Schema.org JSON-LD | AdSense Code | Audit Status |
 | :--- | :---: | :---: | :---: | :---: | :---: |
-| `_template.html` | **172** | ✅ | ✅ (WebApplication, Offer, Organization) | ✅ | 🟡 EXPAND |
-| `contact.html` | **242** | ✅ | ✅ (WebApplication, Offer, Organization) | ✅ | 🟡 EXPAND |
-| `greenpocket.html` | **243** | ✅ | ❌ (None) | ✅ | 🟡 EXPAND |
-| `terms.html` | **348** | ✅ | ✅ (WebApplication, Offer, Organization) | ✅ | 🟡 EXPAND |
-| `about.html` | **367** | ✅ | ✅ (WebApplication, Offer, Organization) | ✅ | 🟡 EXPAND |
-| `privacy.html` | **427** | ❌ | ❌ (None) | ✅ | 🟡 EXPAND |
-| `korean_greenhouse_3d.html` | **645** | ✅ | ✅ (WebApplication, Answer, Offer, Question, FAQPage, Organization) | ✅ | 🟢 SOLID |
-| `mixing_valve.html` | **680** | ✅ | ✅ (WebApplication, Offer, Organization) | ✅ | 🟢 SOLID |
-| `market.html` | **681** | ✅ | ✅ (WebApplication, Answer, Offer, Question, FAQPage, Organization) | ✅ | 🟢 SOLID |
-| `diagnosis.html` | **730** | ✅ | ✅ (WebApplication, Answer, Offer, Question, FAQPage, Organization) | ✅ | 🟢 SOLID |
-| `co2_calculator.html` | **744** | ✅ | ✅ (SoftwareApplication, Answer, Offer, Question, Person, FAQPage, Organization) | ✅ | 🟢 SOLID |
-| `roi_simulator.html` | **749** | ✅ | ✅ (WebApplication, Answer, Offer, Question, FAQPage, Organization) | ✅ | 🟢 SOLID |
-| `transpiration.html` | **753** | ✅ | ✅ (WebApplication, Answer, Offer, Question, FAQPage, Organization) | ✅ | 🟢 SOLID |
-| `vpd.html` | **754** | ✅ | ✅ (WebApplication, Offer, Organization) | ✅ | 🟢 SOLID |
-| `library_vpd_optimization_tomato.html` | **758** | ✅ | ✅ (ScholarlyArticle, Answer, Question, Person, FAQPage, Organization) | ✅ | 🟢 SOLID |
-| `index.html` | **761** | ✅ | ✅ (WebApplication, Answer, Offer, Question, FAQPage, Organization) | ✅ | 🟢 SOLID |
-| `dli_calculator.html` | **782** | ✅ | ✅ (SoftwareApplication, Answer, Offer, Question, Person, FAQPage, Organization) | ✅ | 🟢 SOLID |
-| `smartfarm_layout_wfc.html` | **803** | ✅ | ✅ (WebApplication, Answer, Offer, Question, FAQPage, Organization) | ✅ | 🟢 SOLID |
-| `vertical_dli.html` | **864** | ✅ | ✅ (WebApplication, Answer, Offer, Question, FAQPage, Organization) | ✅ | 🟢 SOLID |
-| `heat_loss.html` | **900** | ✅ | ✅ (WebApplication, Answer, Offer, Question, FAQPage, Organization) | ✅ | 🟢 SOLID |
-| `lighting_efficacy.html` | **917** | ✅ | ✅ (WebApplication, Answer, Offer, Question, FAQPage, Organization) | ✅ | 🟢 SOLID |
-| `fertigation.html` | **944** | ✅ | ✅ (WebApplication, Offer, Organization) | ✅ | 🟢 SOLID |
+| `_template.html` | **172** | ✅ | ✅ (WebApplication, Organization, Offer) | ✅ | 🟡 EXPAND |
+| `korean_greenhouse_3d.html` | **645** | ✅ | ✅ (Organization, Answer, Offer, Question, WebApplication, FAQPage) | ✅ | 🟢 SOLID |
+| `contact.html` | **659** | ✅ | ✅ (Organization, ContactPoint, ContactPage) | ✅ | 🟢 SOLID |
+| `mixing_valve.html` | **680** | ✅ | ✅ (WebApplication, Organization, Offer) | ✅ | 🟢 SOLID |
+| `market.html` | **681** | ✅ | ✅ (Organization, Answer, Offer, Question, WebApplication, FAQPage) | ✅ | 🟢 SOLID |
+| `diagnosis.html` | **730** | ✅ | ✅ (Organization, Answer, Offer, Question, WebApplication, FAQPage) | ✅ | 🟢 SOLID |
+| `co2_calculator.html` | **744** | ✅ | ✅ (SoftwareApplication, Organization, Person, Answer, Offer, Question, FAQPage) | ✅ | 🟢 SOLID |
+| `roi_simulator.html` | **749** | ✅ | ✅ (Organization, Answer, Offer, Question, WebApplication, FAQPage) | ✅ | 🟢 SOLID |
+| `transpiration.html` | **753** | ✅ | ✅ (Organization, Answer, Offer, Question, WebApplication, FAQPage) | ✅ | 🟢 SOLID |
+| `vpd.html` | **754** | ✅ | ✅ (WebApplication, Organization, Offer) | ✅ | 🟢 SOLID |
+| `library_vpd_optimization_tomato.html` | **758** | ✅ | ✅ (ScholarlyArticle, Organization, Person, Answer, Question, FAQPage) | ✅ | 🟢 SOLID |
+| `index.html` | **761** | ✅ | ✅ (Organization, Answer, Offer, Question, WebApplication, FAQPage) | ✅ | 🟢 SOLID |
+| `dli_calculator.html` | **782** | ✅ | ✅ (SoftwareApplication, Organization, Person, Answer, Offer, Question, FAQPage) | ✅ | 🟢 SOLID |
+| `smartfarm_layout_wfc.html` | **803** | ✅ | ✅ (Organization, Answer, Offer, Question, WebApplication, FAQPage) | ✅ | 🟢 SOLID |
+| `greenpocket.html` | **805** | ✅ | ✅ (Organization, Answer, Question, CollectionPage, FAQPage) | ✅ | 🟢 SOLID |
+| `privacy.html` | **815** | ❌ | ✅ (WebPage, Organization) | ✅ | 🟢 SOLID |
+| `vertical_dli.html` | **864** | ✅ | ✅ (Organization, Answer, Offer, Question, WebApplication, FAQPage) | ✅ | 🟢 SOLID |
+| `heat_loss.html` | **900** | ✅ | ✅ (Organization, Answer, Offer, Question, WebApplication, FAQPage) | ✅ | 🟢 SOLID |
+| `lighting_efficacy.html` | **917** | ✅ | ✅ (Organization, Answer, Offer, Question, WebApplication, FAQPage) | ✅ | 🟢 SOLID |
+| `terms.html` | **942** | ✅ | ✅ (WebPage, Organization) | ✅ | 🟢 SOLID |
+| `fertigation.html` | **944** | ✅ | ✅ (WebApplication, Organization, Offer) | ✅ | 🟢 SOLID |
+| `about.html` | **1027** | ✅ | ✅ (AboutPage, Organization, Answer, Question, FAQPage) | ✅ | 🟢 SOLID |
 
 ---
 

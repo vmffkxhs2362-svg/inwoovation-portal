@@ -451,10 +451,63 @@
         </table>
 
         <h3 style="font-family: 'Outfit', sans-serif; font-size: 1.2rem; color: var(--text-primary); margin-top: 1.5rem; margin-bottom: 0.8rem;">2. Nutrient Solution Chemistry: EC &amp; pH Equilibrium</h3>
-        <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.7;">Maintaining nutrient solubility requires strict pH regulation. When solution pH drifts above 6.5, micronutrients such as iron (Fe), zinc (Zn), and manganese (Mn) precipitate into insoluble hydroxides, inducing characteristic interveinal chlorosis (yellowing of young leaves). Using two-part A/B concentrated stock solutions prevents calcium sulfate (gypsum) precipitation. For commercial grade precision math, consult our <a href="fertigation.html" style="color: var(--accent-green); text-decoration: underline; font-weight: 600;">Fertigation Stock Tank Calculator</a>.</p>
+        <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.7;">Maintaining nutrient solubility requires strict pH regulation (ideal range: 5.8 to 6.2). When solution pH drifts above 6.5, micronutrients such as iron (Fe-EDDHA / Fe-DTPA), zinc (Zn), and manganese (Mn) precipitate into insoluble hydroxides, inducing characteristic interveinal chlorosis (yellowing of young leaves). Conversely, pH below 5.2 risks calcium and magnesium lockout while causing aluminum or copper toxicity. Using two-part A/B concentrated stock solutions prevents calcium sulfate (gypsum) and calcium phosphate precipitation. For commercial grade precision math, consult our <a href="fertigation.html" style="color: var(--accent-green); text-decoration: underline; font-weight: 600;">Fertigation Stock Tank Calculator</a>.</p>
 
-        <h3 style="font-family: 'Outfit', sans-serif; font-size: 1.2rem; color: var(--text-primary); margin-top: 1.5rem; margin-bottom: 0.8rem;">3. LED Light Spectrum &amp; Photoperiod Optimization</h3>
-        <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.7;">Home indoor environments typically lack natural sunlight. Using full-spectrum white LEDs supplemented with 660 nm deep red chips delivers optimal photosynthetic quantum yield without harsh purple glare. For detailed lighting calculations, use our <a href="vertical_dli.html" style="color: var(--accent-green); text-decoration: underline; font-weight: 600;">Vertical Farming DLI Simulator</a> or the <a href="dli_calculator.html" style="color: var(--accent-green); text-decoration: underline; font-weight: 600;">DLI Precision Calculator</a>.</p>
+        <h3 style="font-family: 'Outfit', sans-serif; font-size: 1.2rem; color: var(--text-primary); margin-top: 1.5rem; margin-bottom: 0.8rem;">3. Crop-Specific Hydroponic Target Parameters</h3>
+        <table style="width: 100%; border-collapse: collapse; margin-top: 0.8rem; margin-bottom: 1.2rem; font-size: 0.88rem; color: var(--text-secondary); background: rgba(255,255,255,0.02); border-radius: 8px; overflow: hidden;">
+            <thead>
+                <tr style="background: rgba(16, 185, 129, 0.1); color: var(--accent-green); text-align: left;">
+                    <th style="padding: 0.6rem 0.8rem; border-bottom: 1px solid var(--border-color);">Crop Cultivar</th>
+                    <th style="padding: 0.6rem 0.8rem; border-bottom: 1px solid var(--border-color);">Target EC (mS/cm)</th>
+                    <th style="padding: 0.6rem 0.8rem; border-bottom: 1px solid var(--border-color);">Optimal pH</th>
+                    <th style="padding: 0.6rem 0.8rem; border-bottom: 1px solid var(--border-color);">Daily Light Integral (DLI)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05); font-weight: 600;">Butterhead &amp; Romaine Lettuce</td>
+                    <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">1.0 ~ 1.4 mS/cm</td>
+                    <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">5.6 ~ 6.0</td>
+                    <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">14 ~ 17 mol/m²/day</td>
+                </tr>
+                <tr>
+                    <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05); font-weight: 600;">Genovese Basil &amp; Mint</td>
+                    <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">1.4 ~ 1.8 mS/cm</td>
+                    <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">5.8 ~ 6.2</td>
+                    <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">12 ~ 16 mol/m²/day</td>
+                </tr>
+                <tr>
+                    <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05); font-weight: 600;">Hydroponic Strawberries</td>
+                    <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">1.2 ~ 1.6 mS/cm</td>
+                    <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">5.5 ~ 6.0</td>
+                    <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">17 ~ 22 mol/m²/day</td>
+                </tr>
+                <tr>
+                    <td style="padding: 0.6rem 0.8rem; font-weight: 600;">Dwarf Snack Tomatoes / Peppers</td>
+                    <td style="padding: 0.6rem 0.8rem;">2.2 ~ 2.8 mS/cm</td>
+                    <td style="padding: 0.6rem 0.8rem;">5.8 ~ 6.5</td>
+                    <td style="padding: 0.6rem 0.8rem;">22 ~ 30 mol/m²/day</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3 style="font-family: 'Outfit', sans-serif; font-size: 1.2rem; color: var(--text-primary); margin-top: 1.5rem; margin-bottom: 0.8rem;">4. Root-Zone Dissolved Oxygen &amp; Pythium Prevention</h3>
+        <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.7;">The primary failure mode in compact hydroponics is root suffocation caused by water temperatures exceeding 22°C (71.6°F), where dissolved oxygen (DO) saturation drops below 6.5 mg/L. Hypoxic root environments trigger zoospore germination of water molds (<em>Pythium ultimum</em>), leading to brown, sloughing roots and sudden plant wilt. Maintain reservoir temperatures between 18°C and 20°C and ensure continuous micro-bubble aeration via ceramic air stones or venturi injectors.</p>
+
+        <h3 style="font-family: 'Outfit', sans-serif; font-size: 1.2rem; color: var(--text-primary); margin-top: 1.5rem; margin-bottom: 0.8rem;">5. LED Light Spectrum &amp; Photoperiod Optimization</h3>
+        <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.7;">Home indoor environments typically lack natural sunlight. Using full-spectrum white LEDs (4000K-5000K Ra &gt; 90) supplemented with 660 nm deep red chips delivers optimal photosynthetic quantum yield without harsh purple glare. For detailed lighting calculations, use our <a href="vertical_dli.html" style="color: var(--accent-green); text-decoration: underline; font-weight: 600;">Vertical Farming DLI Simulator</a> or the <a href="dli_calculator.html" style="color: var(--accent-green); text-decoration: underline; font-weight: 600;">DLI Precision Calculator</a>.</p>
+
+        <h3 style="font-family: 'Outfit', sans-serif; font-size: 1.2rem; color: var(--text-primary); margin-top: 1.5rem; margin-bottom: 0.8rem;">6. Frequently Asked Questions (FAQ)</h3>
+        <div style="display: flex; flex-direction: column; gap: 0.8rem; margin-top: 0.8rem;">
+            <div style="background: rgba(255,255,255,0.02); padding: 1rem; border-radius: 8px; border-left: 3px solid var(--accent-green);">
+                <strong style="color: var(--text-primary); font-size: 0.95rem;">How often should hydroponic reservoir water be changed?</strong>
+                <p style="color: var(--text-secondary); font-size: 0.88rem; line-height: 1.6; margin: 0.3rem 0 0 0;">In closed recirculating systems, salts and non-assimilated counter-ions (such as sodium and chloride) accumulate over time. We recommend complete reservoir flushes and water replenishment every 14 to 21 days, or whenever the accumulated refill volume reaches 2× the base reservoir capacity.</p>
+            </div>
+            <div style="background: rgba(255,255,255,0.02); padding: 1rem; border-radius: 8px; border-left: 3px solid #06b6d4;">
+                <strong style="color: var(--text-primary); font-size: 0.95rem;">Can tap water be used directly for hydroponic systems?</strong>
+                <p style="color: var(--text-secondary); font-size: 0.88rem; line-height: 1.6; margin: 0.3rem 0 0 0;">Tap water is suitable if its baseline EC is below 0.3 mS/cm and free of heavy chloramine. If municipal tap water has high calcium carbonate hardness (alkalinity &gt; 150 mg/L CaCO₃), pre-neutralization with dilute phosphoric or nitric acid, or blending with reverse osmosis (RO) permeate, is required to prevent pH spikes.</p>
+            </div>
+        </div>
     </section>
 
     <footer>
