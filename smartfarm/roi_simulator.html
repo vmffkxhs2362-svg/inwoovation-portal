@@ -39,25 +39,66 @@
 <script type="application/ld+json">
   {
    "@context": "https://schema.org",
-   "@type": "WebApplication",
-   "name": "Boiler vs Heat Pump ROI Simulator | Greenhouse Heating Cost Analysis",
-   "operatingSystem": "All",
-   "applicationCategory": "EducationalApplication",
-   "browserRequirements": "Requires HTML5, Javascript, CSS3",
-   "softwareVersion": "2.1",
-   "inLanguage": "en",
-   "description": "Compare annual heating costs between conventional boilers (gas, oil, LPG) and heat pumps. Calculate payback period, energy savings, and return on investment for greenhouse heating system transitions.",
-   "url": "https://inwoovation.com/smartfarm/roi_simulator",
-   "publisher": {
-     "@type": "Organization",
-     "name": "Inwoovation Smart Farm Lab",
-     "url": "https://inwoovation.com/smartfarm/"
-   },
-   "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-   }
+   "@graph": [
+     {
+       "@type": "WebApplication",
+       "name": "Boiler vs Heat Pump ROI Simulator | Greenhouse Heating Cost Analysis",
+       "operatingSystem": "All",
+       "applicationCategory": "EducationalApplication",
+       "browserRequirements": "Requires HTML5, Javascript, CSS3",
+       "softwareVersion": "2.2",
+       "inLanguage": "en",
+       "description": "Compare annual heating costs between conventional boilers (gas, oil, LPG) and heat pumps. Calculate payback period, energy savings, and return on investment for greenhouse heating system transitions.",
+       "url": "https://inwoovation.com/smartfarm/roi_simulator",
+       "publisher": {
+         "@type": "Organization",
+         "name": "Inwoovation Smart Farm Lab",
+         "url": "https://inwoovation.com/smartfarm/"
+       },
+       "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+       }
+     },
+     {
+       "@type": "FAQPage",
+       "mainEntity": [
+         {
+           "@type": "Question",
+           "name": "What is the Coefficient of Performance (COP) in agricultural heat pumps?",
+           "acceptedAnswer": {
+             "@type": "Answer",
+             "text": "The Coefficient of Performance (COP) is the ratio of thermal energy output delivered to electrical energy input consumed. A heat pump operating at a COP of 3.5 generates 3.5 kWh of heat into the greenhouse water loop for every 1.0 kWh of grid electricity consumed, effectively achieving an equivalent thermal efficiency of 350%."
+           }
+         },
+         {
+           "@type": "Question",
+           "name": "How do you calculate annual greenhouse heating energy using Heating Degree Days (HDD)?",
+           "acceptedAnswer": {
+             "@type": "Answer",
+             "text": "Annual greenhouse heating load is modeled using Heating Degree Days (HDD): E_annual = 24 × (Q_design / ΔT_design) × HDD_base. By multiplying design peak capacity by the cumulative degree days below the heating base temperature (typically 15°C to 18°C), growers calculate total annual MWh of thermal demand."
+           }
+         },
+         {
+           "@type": "Question",
+           "name": "When does a heat pump become more cost-effective than a natural gas or LPG boiler?",
+           "acceptedAnswer": {
+             "@type": "Answer",
+             "text": "A heat pump delivers lower operational cost when the spark spread satisfies: (Electricity Price / SCOP) < (Fuel Price / Boiler Efficiency). In jurisdictions with favorable agricultural electricity tariffs (e.g. Korea Ag-rate ~80 KRW/kWh or German night tariffs), heat pumps reduce operational heating costs by 40% to 65% compared to diesel, LPG, or standard natural gas."
+           }
+         },
+         {
+           "@type": "Question",
+           "name": "What is the typical payback period for converting a commercial greenhouse to heat pumps?",
+           "acceptedAnswer": {
+             "@type": "Answer",
+             "text": "The simple payback period is calculated as Additional Capital Expenditure (CapEx) divided by Annual Operational Fuel Savings (OpEx). For high-heat crops like winter tomatoes or strawberries, well-designed air-to-water or groundwater heat pumps achieve full capital payback within 2.5 to 4.5 years, particularly when paired with insulated hot water buffer storage tanks."
+           }
+         }
+       ]
+     }
+   ]
   }
   </script>
 </meta><link href="style.css?v=3.3" rel="stylesheet"/></head>
@@ -227,6 +268,92 @@
 <div class="input-control-wrapper">
 <input id="roi-capex" oninput="calculateRoiEngine()" step="100000" type="number" value="15000000"/>
 <span class="suffix" id="roi-capex-unit">₩</span>
+</div>
+</div>
+<!-- Heat Pump ROI Engineering SEO Guide Accordion -->
+<div class="accordion academic-guide" id="roi-academic-accordion">
+<div class="accordion-header" onclick="toggleAccordion('roi-academic-accordion')">
+<span class="academic-guide-lang" style="font-weight: 700; color: var(--primary);">📚 Heat Pump Thermodynamics, COP &amp; LCOH Economic Guide</span>
+<span class="icon" style="color: var(--primary);">▼</span>
+</div>
+<div class="accordion-body">
+<div class="academic-guide-lang">
+<h3>📚 Thermodynamic &amp; Economic Principles of Greenhouse Heating Decarbonization</h3>
+<p>Heating expenses represent 25% to 45% of total operating expenditures (OpEx) for commercial CEA greenhouses in temperate climates. Decarbonizing thermal systems with air-to-water (A2W) or ground-source heat pumps (GSHP) drastically slashes fossil fuel dependency, but requires rigorous lifecycle cost modeling.</p>
+
+<h4>1. Heat Pump COP &amp; Carnot Thermodynamic Limit</h4>
+<p>Unlike combustion boilers that convert chemical fuel energy into heat at &lt; 95% efficiency, vapor compression heat pumps extract low-grade environmental heat and elevate its temperature. The theoretical maximum efficiency is bounded by the Carnot COP:</p>
+<div style="background: rgba(15, 23, 42, 0.6); padding: 1rem; border-radius: 8px; border-left: 3px solid var(--primary); margin: 0.8rem 0; font-family: monospace; font-size: 0.95rem;">
+    COP_Carnot = T_sink / (T_sink - T_source) &nbsp;⟹&nbsp; COP_actual = η_isentropic × COP_Carnot
+</div>
+<ul>
+<li><code>T_sink</code> : Heating supply water temperature (Kelvin, e.g. <code>45°C = 318.15 K</code>).</li>
+<li><code>T_source</code> : Ambient outdoor air or groundwater temperature (Kelvin, e.g. <code>0°C = 273.15 K</code>).</li>
+<li><code>η_isentropic</code> : Compressor practical isentropic efficiency (typically <code>0.45 to 0.55</code> for modern scroll/inverter compressors).</li>
+<li><strong>Takeaway</strong>: Lowering hot water distribution temperature from 80°C (traditional pipe rail) to 45°C increases seasonal COP from <strong>2.1 up to 3.8</strong>, cutting electric power consumption by 45%.</li>
+</ul>
+
+<h4>2. Levelized Cost of Heat (LCOH) &amp; Spark Spread Math</h4>
+<p>The operational cost per unit of thermal heat delivered ($/kWh_th or ₩/kWh_th) governs the economic viability between fossil boilers and electric heat pumps:</p>
+<div style="background: rgba(15, 23, 42, 0.6); padding: 1rem; border-radius: 8px; border-left: 3px solid var(--primary); margin: 0.8rem 0; font-family: monospace; font-size: 0.95rem;">
+    LCOH_boiler = Fuel_Price / (LHV_fuel × η_combustion) <br/>
+    LCOH_heatpump = Electricity_Tariff / SCOP_seasonal
+</div>
+<p>The heat pump is operationally superior whenever <code>LCOH_heatpump &lt; LCOH_boiler</code>. The critical parity ratio is: <code>SCOP &gt; (Electricity_Tariff / Fuel_Price) × LHV_fuel × η_combustion</code>.</p>
+
+<h4>3. Greenhouse Heating Fuels &amp; Performance Benchmark</h4>
+<table style="width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.88rem; background: rgba(30, 41, 59, 0.4); border-radius: 8px; overflow: hidden;">
+    <thead>
+        <tr style="background: rgba(15, 23, 42, 0.8); text-align: left;">
+            <th style="padding: 0.6rem 0.8rem; border-bottom: 1px solid var(--border-card);">Heating Source</th>
+            <th style="padding: 0.6rem 0.8rem; border-bottom: 1px solid var(--border-card);">Lower Heating Value (LHV)</th>
+            <th style="padding: 0.6rem 0.8rem; border-bottom: 1px solid var(--border-card);">System Efficiency / COP</th>
+            <th style="padding: 0.6rem 0.8rem; border-bottom: 1px solid var(--border-card);">Carbon Intensity (kg CO₂/MWh)</th>
+            <th style="padding: 0.6rem 0.8rem; border-bottom: 1px solid var(--border-card);">Relative OpEx Rank</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">Natural Gas (Pipeline LNG)</td>
+            <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">10.5 kWh / m³</td>
+            <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">88 - 94%</td>
+            <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">~202 kg/MWh</td>
+            <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">Moderate (Clean flue CO₂)</td>
+        </tr>
+        <tr>
+            <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">LPG (Liquefied Petroleum Gas)</td>
+            <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">12.8 kWh / kg</td>
+            <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">85 - 90%</td>
+            <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">~230 kg/MWh</td>
+            <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">High (Expensive off-grid)</td>
+        </tr>
+        <tr>
+            <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">Heating Oil (Kerosene / Diesel)</td>
+            <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">10.0 kWh / L</td>
+            <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">80 - 85%</td>
+            <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">~267 kg/MWh</td>
+            <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">Very High (Volatile)</td>
+        </tr>
+        <tr>
+            <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">Air-Source Heat Pump (A2W)</td>
+            <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">Electric (1.0 kWh)</td>
+            <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">COP 2.8 - 3.6 (SCOP)</td>
+            <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">Grid Dependent (~100-200)</td>
+            <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">Lowest OpEx (Ag Tariff)</td>
+        </tr>
+        <tr>
+            <td style="padding: 0.6rem 0.8rem;">Ground-Source / Water Heat Pump</td>
+            <td style="padding: 0.6rem 0.8rem;">Electric (1.0 kWh)</td>
+            <td style="padding: 0.6rem 0.8rem;">COP 4.0 - 5.2 (SCOP)</td>
+            <td style="padding: 0.6rem 0.8rem;">Grid Dependent (~80-150)</td>
+            <td style="padding: 0.6rem 0.8rem;">Ultra-Low OpEx (High CapEx)</td>
+        </tr>
+    </tbody>
+</table>
+
+<h4>4. Thermal Storage Buffer Tanks &amp; Peak Shaving Architecture</h4>
+<p>To prevent over-sizing expensive heat pump chillers for extreme once-a-decade winter cold spikes, modern greenhouse engineering pairs base-load heat pumps with an existing gas boiler for peak shaving. Installing a stratified hot water buffer tank (<code>50 to 100 m³ / hectare</code>) allows the heat pump to operate at maximum efficiency during warm daylight hours or cheap overnight off-peak tariff periods, storing low-cost heat for cold predawn release.</p>
+</div>
 </div>
 </div>
 </div>

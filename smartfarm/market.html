@@ -39,25 +39,58 @@
 <script type="application/ld+json">
   {
    "@context": "https://schema.org",
-   "@type": "WebApplication",
-   "name": "Global Agricultural Market Index | AgTech Precision Suite",
-   "operatingSystem": "All",
-   "applicationCategory": "EducationalApplication",
-   "browserRequirements": "Requires HTML5, Javascript, CSS3",
-   "softwareVersion": "2.1",
-   "inLanguage": "en",
-   "description": "Real-time tracking of global wholesale prices for agricultural commodities including tomatoes, cucumbers, peppers, and natural gas.",
-   "url": "https://inwoovation.com/smartfarm/market",
-   "publisher": {
-     "@type": "Organization",
-     "name": "Inwoovation Smart Farm Lab",
-     "url": "https://inwoovation.com/smartfarm/"
-   },
-   "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-   }
+   "@graph": [
+     {
+       "@type": "WebApplication",
+       "name": "Global Agricultural Market Index | AgTech Precision Suite",
+       "operatingSystem": "All",
+       "applicationCategory": "EducationalApplication",
+       "browserRequirements": "Requires HTML5, Javascript, CSS3",
+       "softwareVersion": "2.2",
+       "inLanguage": "en",
+       "description": "Real-time tracking of global wholesale prices for agricultural commodities including tomatoes, cucumbers, peppers, and natural gas.",
+       "url": "https://inwoovation.com/smartfarm/market",
+       "publisher": {
+         "@type": "Organization",
+         "name": "Inwoovation Smart Farm Lab",
+         "url": "https://inwoovation.com/smartfarm/"
+       },
+       "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+       }
+     },
+     {
+       "@type": "FAQPage",
+       "mainEntity": [
+         {
+           "@type": "Question",
+           "name": "How does European Natural Gas (Dutch TTF) impact fresh greenhouse produce prices?",
+           "acceptedAnswer": {
+             "@type": "Answer",
+             "text": "Natural gas represents 25% to 40% of total winter operating costs for heated glasshouses across the Netherlands, Germany, and Belgium. When TTF gas prices spike, growers either delay planting dates to avoid high winter heating or curtail supplementary lighting, drastically reducing winter domestic supply and causing wholesale tomato and cucumber spot prices to rise by 30% to 60%."
+           }
+         },
+         {
+           "@type": "Question",
+           "name": "What data sources track real-time global agricultural commodity prices?",
+           "acceptedAnswer": {
+             "@type": "Answer",
+             "text": "This index aggregates live daily shipping point and terminal market wholesale reports from the USDA Agricultural Marketing Service (AMS MARS API), European auction indices (Dutch Royal FloraHolland and German BLE/ZMP wholesale proxies), and ICE European natural gas benchmark futures."
+           }
+         },
+         {
+           "@type": "Question",
+           "name": "What is the economic advantage of high-wire Dutch greenhouse production over unheated tunnel farming?",
+           "acceptedAnswer": {
+             "@type": "Answer",
+             "text": "While heated high-wire glasshouses require higher initial capital investment and thermal energy, they achieve yields of 65 to 85 kg/m² per year for tomatoes (compared to 12-25 kg/m² in unheated plastic tunnels), with superior fruit firmness, 98% Grade-A packout rates, and consistent 52-week delivery reliability demanded by supermarket retailers."
+           }
+         }
+       ]
+     }
+   ]
   }
   </script>
 </meta><link href="style.css?v=3.3" rel="stylesheet"/></head>
@@ -190,9 +223,71 @@
 </div>
 </div>
 
+<!-- Agricultural Commodity Economics & Energy Correlation Guide Accordion -->
+<div class="accordion academic-guide" id="market-academic-accordion" style="margin-top: 1.5rem; margin-bottom: 2rem;">
+<div class="accordion-header" onclick="toggleAccordion('market-academic-accordion')">
+<span class="academic-guide-lang" style="font-weight: 700; color: var(--primary);">📚 Agricultural Market Economics, Energy Elasticity &amp; Freight Arbitrage</span>
+<span class="icon" style="color: var(--primary);">▼</span>
+</div>
+<div class="accordion-body">
+<div class="academic-guide-lang">
+<h3>📚 Commodity Pricing Mechanisms &amp; Thermal Energy Interdependence in Global CEA</h3>
+<p>Modern protected horticulture operates within a highly interconnected global commodity ecosystem. Wholesale farmgate and terminal market prices reflect complex seasonal interactions between local energy heating tariffs, transcontinental freight logistics, and yield volume fluctuations.</p>
 
+<h4>1. The Thermal Energy-to-Produce Cost Elasticity</h4>
+<p>In high-latitude heated greenhouses (Northern Europe, Northeast US, South Korea), heating fuel is the single largest variable input after labor. The cost transmission elasticity between natural gas / electricity and wholesale produce pricing can be modeled as:</p>
+<div style="background: rgba(15, 23, 42, 0.6); padding: 1rem; border-radius: 8px; border-left: 3px solid var(--primary); margin: 0.8rem 0; font-family: monospace; font-size: 0.95rem;">
+    ΔCost_produce (€/kg) = [ Heat_Demand (kWh_th/m²·yr) × ΔP_gas (€/kWh) ] / Annual_Yield (kg/m²·yr)
+</div>
+<p>For a Venlo tomato glasshouse consuming <code>350 kWh_th/m²·year</code> and yielding <code>70 kg/m²</code>, every <strong>10 €/MWh increase in wholesale natural gas (Dutch TTF)</strong> elevates the baseline production cost by <code>0.05 €/kg</code> (or 0.25 € per standard 5 kg carton). When winter gas prices spike, unhedged growers turn down boiler setpoints or delay planting until March, triggering acute winter supply shortfalls and price volatility.</p>
 
-<footer>
+<h4>2. Global Protected Horticulture Commodity Benchmark Specifications</h4>
+<table style="width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.88rem; background: rgba(30, 41, 59, 0.4); border-radius: 8px; overflow: hidden;">
+    <thead>
+        <tr style="background: rgba(15, 23, 42, 0.8); text-align: left;">
+            <th style="padding: 0.6rem 0.8rem; border-bottom: 1px solid var(--border-card);">Commodity</th>
+            <th style="padding: 0.6rem 0.8rem; border-bottom: 1px solid var(--border-card);">Standard Wholesale Packaging</th>
+            <th style="padding: 0.6rem 0.8rem; border-bottom: 1px solid var(--border-card);">Key Quality Grading Metrics</th>
+            <th style="padding: 0.6rem 0.8rem; border-bottom: 1px solid var(--border-card);">Primary Global Export Corridors</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">Tomatoes on the Vine (TOV / Truss)</td>
+            <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">5 kg (11 lb) corrugated carton</td>
+            <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">Uniform calyx greenness, 5-6 fruits/truss, Brix &gt; 4.5°</td>
+            <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">Netherlands ➔ Germany / UK; Mexico ➔ US</td>
+        </tr>
+        <tr>
+            <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">Long English Seedless Cucumbers</td>
+            <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">12 or 14-count plastic shrink-wrapped case</td>
+            <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">Straightness (&lt; 20mm curve), 350-450g unit weight</td>
+            <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">Spain (Almería) ➔ Northern EU; Ontario ➔ US East</td>
+        </tr>
+        <tr>
+            <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">Colored Bell Peppers (Paprika)</td>
+            <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">5 kg carton (Red, Yellow, Orange)</td>
+            <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">Caliber 75-85mm, 4-lobed blocky shape, wall thickness &gt; 6mm</td>
+            <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">Spain / Netherlands ➔ EU; Mexico (Sinaloa) ➔ US</td>
+        </tr>
+        <tr>
+            <td style="padding: 0.6rem 0.8rem;">Greenhouse Strawberries</td>
+            <td style="padding: 0.6rem 0.8rem;">8 × 500g or 10 × 250g clear PET clamshells</td>
+            <td style="padding: 0.6rem 0.8rem;">Brix &gt; 9.5°, full red surface color, firm flesh</td>
+            <td style="padding: 0.6rem 0.8rem;">Belgium / Netherlands domestic; Korea ➔ SE Asia export</td>
+        </tr>
+    </tbody>
+</table>
+
+<h4>3. Global Arbitrage &amp; Seasonal Production Shifts</h4>
+<p>Wholesale fresh produce markets exhibit sharp seasonal transitions driven by solar radiation availability:</p>
+<ul>
+<li><strong>Summer Dynamics (May to September)</strong>: High natural solar DLI enables peak, cost-effective harvest volumes in northern glasshouses (Netherlands, Ontario, Korea), depressing wholesale spot prices.</li>
+<li><strong>Winter Dynamics (November to March)</strong>: Northern domestic supply contracts to high-value lighted operations. Massive logistics corridors activate from Mediterranean unheated plastic hoop houses (Almería, Spain; Antalya, Turkey) and subtropical regions (Culiacán, Mexico) into northern consuming metropolises, with freight and diesel fuel surcharges setting the regional price floor.</li>
+</ul>
+</div>
+</div>
+</div>
 <div style="display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 0.8rem; flex-wrap: wrap; font-size: 0.9rem;">
 <a href="index.html" style="color: var(--text-gray); text-decoration: none; font-weight: 600; hover: { color: var(--primary); }">Home</a>
 <a href="about.html" style="color: var(--text-gray); text-decoration: none; font-weight: 600;">About</a>

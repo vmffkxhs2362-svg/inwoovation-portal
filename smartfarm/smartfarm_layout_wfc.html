@@ -39,25 +39,66 @@
 <script type="application/ld+json">
   {
    "@context": "https://schema.org",
-   "@type": "WebApplication",
-   "name": "Smartfarm WFC Bed & Hydronic Layout Planner | Automated Commercial Greenhouse Spatial Optimizer",
-   "operatingSystem": "All",
-   "applicationCategory": "EducationalApplication",
-   "browserRequirements": "Requires HTML5, Javascript, CSS3",
-   "softwareVersion": "2.1",
-   "inLanguage": "en",
-   "description": "Autonomous Wave Function Collapse (WFC) and A* pathfinding algorithm for smart farm greenhouse design. Automatically routes cultivation gutters, main supply/return hydronic headers, harvesting pathways, and computes instant Bill of Materials (BOM) & plant density.",
-   "url": "https://inwoovation.com/smartfarm/smartfarm_layout_wfc",
-   "publisher": {
-     "@type": "Organization",
-     "name": "Inwoovation Smart Farm Lab",
-     "url": "https://inwoovation.com/smartfarm/"
-   },
-   "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-   }
+   "@graph": [
+     {
+       "@type": "WebApplication",
+       "name": "Smartfarm WFC Bed & Hydronic Layout Planner | Automated Commercial Greenhouse Spatial Optimizer",
+       "operatingSystem": "All",
+       "applicationCategory": "EducationalApplication",
+       "browserRequirements": "Requires HTML5, Javascript, CSS3",
+       "softwareVersion": "2.2",
+       "inLanguage": "en",
+       "description": "Autonomous Wave Function Collapse (WFC) and A* pathfinding algorithm for smart farm greenhouse design. Automatically routes cultivation gutters, main supply/return hydronic headers, harvesting pathways, and computes instant Bill of Materials (BOM) & plant density.",
+       "url": "https://inwoovation.com/smartfarm/smartfarm_layout_wfc",
+       "publisher": {
+         "@type": "Organization",
+         "name": "Inwoovation Smart Farm Lab",
+         "url": "https://inwoovation.com/smartfarm/"
+       },
+       "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+       }
+     },
+     {
+       "@type": "FAQPage",
+       "mainEntity": [
+         {
+           "@type": "Question",
+           "name": "What is Wave Function Collapse (WFC) in greenhouse layout planning?",
+           "acceptedAnswer": {
+             "@type": "Answer",
+             "text": "Wave Function Collapse (WFC) is a constraint-satisfaction procedural algorithm that treats greenhouse spatial planning as a grid of superposed cell possibilities. By enforcing strict adjacency rules (e.g. gutters must align with pipe-rails, walkways must connect to central corridors, and drip lines must terminate at return drainage manifolds), WFC autonomously generates globally consistent, conflict-free greenhouse CAD layouts."
+           }
+         },
+         {
+           "@type": "Question",
+           "name": "What are standard Venlo greenhouse bay widths and row spacings?",
+           "acceptedAnswer": {
+             "@type": "Answer",
+             "text": "Modern commercial Venlo glasshouses typically utilize 8.0 m, 9.6 m, or 12.8 m post-to-post span widths. In an 8.0 m bay, growers standardly install 5 crop rows spaced at 1.60 m (for tomatoes or cucumbers) or 4 rows spaced at 2.00 m (for wide canopies). In 9.6 m bays, 6 crop rows spaced at 1.60 m are universally preferred."
+           }
+         },
+         {
+           "@type": "Question",
+           "name": "How is the diameter of the main irrigation header pipe calculated?",
+           "acceptedAnswer": {
+             "@type": "Answer",
+             "text": "Main supply header pipe sizing is calculated from peak volumetric flow rate: Q = (Total Drippers × Emitter Discharge) / 1000 m³/h. Pipe internal diameter is sized using D = sqrt(4Q / (π × v)), targeting a fluid velocity (v) between 1.0 m/s and 1.5 m/s to prevent excessive friction head loss and water hammer."
+           }
+         },
+         {
+           "@type": "Question",
+           "name": "Why is gutter orientation (North-South vs East-West) critical?",
+           "acceptedAnswer": {
+             "@type": "Answer",
+             "text": "North-South gutter orientation provides the most uniform diurnal light distribution across crop rows as the sun sweeps from east to west, minimizing static row shading. East-West gutter orientation is primarily used in single-span passive solar solar greenhouses in extreme northern latitudes to maximize southern winter solar elevation capture."
+           }
+         }
+       ]
+     }
+   ]
   }
   </script>
 </meta><link href="style.css?v=3.3" rel="stylesheet"/></head>
@@ -292,7 +333,78 @@
   </div>
 </div>
 
+<!-- WFC Greenhouse Spatial Engineering Academic Accordion -->
+<div class="accordion academic-guide" id="wfc-academic-accordion" style="margin-top: 1.5rem; margin-bottom: 2rem;">
+<div class="accordion-header" onclick="toggleAccordion('wfc-academic-accordion')">
+<span class="academic-guide-lang" style="font-weight: 700; color: var(--primary);">📚 Wave Function Collapse, Greenhouse Bay Geometry &amp; Hydraulics Guide</span>
+<span class="icon" style="color: var(--primary);">▼</span>
+</div>
+<div class="accordion-body">
+<div class="academic-guide-lang">
+<h3>📚 Algorithmic Space Planning &amp; Structural Kinematics in Commercial Greenhouses</h3>
+<p>Modern controlled environment agriculture (CEA) facilities require millimetric spatial efficiency. Maximizing photosynthetic production floor area while maintaining unhindered harvest cart logistics, uniform drip irrigation pressure, and return drainage slopes requires algorithmic layout optimization.</p>
 
+<h4>1. Wave Function Collapse (WFC) &amp; Constraint Adjacency Matrix</h4>
+<p>Traditional CAD layout drafting requires hours of iterative manual positioning. This planner executes a modified Wave Function Collapse (WFC) constraint satisfaction algorithm across a discrete grid coordinate system:</p>
+<ul>
+<li><strong>Cell Superposition</strong>: Each spatial grid cell begins in a superposition state of all valid greenhouse modules: <em>[Empty, Cultivation Gutter, Harvest Walkway, Pipe-Rail Heating Manifold, Concrete Main Corridor, Drainage Sump]</em>.</li>
+<li><strong>Entropy Collapse</strong>: The algorithm iteratively selects the cell with lowest Shannon entropy and collapses it into a concrete module based on user greenhouse dimensions.</li>
+<li><strong>Propagation &amp; Arc-Consistency</strong>: Adjacency rules propagate outward instantaneously—e.g., cultivation gutters must align strictly with heating pipe rails (gauge 51 mm, 500-600 mm wheel centers), while harvest pathways must terminate directly into the concrete central service spine.</li>
+</ul>
+
+<h4>2. Commercial Greenhouse Bay Geometry Benchmark Matrix</h4>
+<table style="width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.88rem; background: rgba(30, 41, 59, 0.4); border-radius: 8px; overflow: hidden;">
+    <thead>
+        <tr style="background: rgba(15, 23, 42, 0.8); text-align: left;">
+            <th style="padding: 0.6rem 0.8rem; border-bottom: 1px solid var(--border-card);">Greenhouse Arch Type</th>
+            <th style="padding: 0.6rem 0.8rem; border-bottom: 1px solid var(--border-card);">Standard Bay Width</th>
+            <th style="padding: 0.6rem 0.8rem; border-bottom: 1px solid var(--border-card);">Crop Rows per Bay</th>
+            <th style="padding: 0.6rem 0.8rem; border-bottom: 1px solid var(--border-card);">Row Spacing (Center)</th>
+            <th style="padding: 0.6rem 0.8rem; border-bottom: 1px solid var(--border-card);">Gutter Height</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">Dutch Venlo Glass (8.0m)</td>
+            <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">8.00 m</td>
+            <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">5 Rows (Standard) / 4 Rows</td>
+            <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">1.60 m (High-wire) / 2.00 m</td>
+            <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">5.50 - 6.50 m</td>
+        </tr>
+        <tr>
+            <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">Dutch Venlo Glass (9.6m)</td>
+            <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">9.60 m</td>
+            <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">6 Rows</td>
+            <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">1.60 m (Optimal Light Interception)</td>
+            <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">6.00 - 7.00 m</td>
+        </tr>
+        <tr>
+            <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">Commercial Gothic Arch Poly</td>
+            <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">9.60 - 10.00 m</td>
+            <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">5 to 6 Rows</td>
+            <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">1.60 - 1.80 m</td>
+            <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">4.50 - 5.50 m</td>
+        </tr>
+        <tr>
+            <td style="padding: 0.6rem 0.8rem;">Elevated Strawberry Table-Top</td>
+            <td style="padding: 0.6rem 0.8rem;">8.00 - 9.60 m</td>
+            <td style="padding: 0.6rem 0.8rem;">7 to 8 Swinging / Fixed Gutters</td>
+            <td style="padding: 0.6rem 0.8rem;">1.00 - 1.20 m (Ergonomic harvest)</td>
+            <td style="padding: 0.6rem 0.8rem;">1.10 - 1.30 m (Bench level)</td>
+        </tr>
+    </tbody>
+</table>
+
+<h4>3. Irrigation Hydraulics &amp; Header Pipe Diameter Sizing</h4>
+<p>Ensuring uniform fertigation across hundreds of linear meters requires sizing the main distribution header pipe to prevent excessive pressure drops (&lt; 10% pressure differential between first and last dripper):</p>
+<div style="background: rgba(15, 23, 42, 0.6); padding: 1rem; border-radius: 8px; border-left: 3px solid var(--primary); margin: 0.8rem 0; font-family: monospace; font-size: 0.95rem;">
+    Q_peak (m³/h) = [ N_plants × N_drippers × q_emitter (L/h) ] / 1000 <br/>
+    D_pipe (mm) = √[ (4 × Q_peak × 10⁶) / (3600 × π × v_water) ]
+</div>
+<p>Maintaining water velocity <code>v_water</code> within the optimal hydraulic design window of <strong>1.0 m/s to 1.4 m/s</strong> ensures quiet laminar-to-moderate turbulent flow without destructive water hammer during rapid solenoid valve switching. For peak flows exceeding <code>15 m³/h</code>, pipe diameter should never drop below <code>DN65 (65A)</code>.</p>
+</div>
+</div>
+</div>
 
 <footer>
 <div style="display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 0.8rem; flex-wrap: wrap; font-size: 0.9rem;">

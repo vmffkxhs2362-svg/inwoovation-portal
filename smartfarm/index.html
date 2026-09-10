@@ -39,25 +39,66 @@
 <script type="application/ld+json">
   {
    "@context": "https://schema.org",
-   "@type": "WebApplication",
-   "name": "Smart Farm Engineering Lab | Free Greenhouse Calculators & AgTech Precision Tools",
-   "operatingSystem": "All",
-   "applicationCategory": "EducationalApplication",
-   "browserRequirements": "Requires HTML5, Javascript, CSS3",
-   "softwareVersion": "2.1",
-   "inLanguage": "en",
-   "description": "Free online precision engineering tools for greenhouse growers: VPD calculator, fertigation solver, heat loss estimator, mixing valve sizer, crop diagnosis, and ROI analysis. Designed for CEA professionals and agricultural engineers.",
-   "url": "https://inwoovation.com/smartfarm/",
-   "publisher": {
-     "@type": "Organization",
-     "name": "Inwoovation Smart Farm Lab",
-     "url": "https://inwoovation.com/smartfarm/"
-   },
-   "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-   }
+   "@graph": [
+     {
+       "@type": "WebApplication",
+       "name": "Smart Farm Engineering Lab | Free Greenhouse Calculators & AgTech Precision Tools",
+       "operatingSystem": "All",
+       "applicationCategory": "EducationalApplication",
+       "browserRequirements": "Requires HTML5, Javascript, CSS3",
+       "softwareVersion": "2.2",
+       "inLanguage": "en",
+       "description": "Free online precision engineering tools for greenhouse growers: VPD calculator, fertigation solver, heat loss estimator, mixing valve sizer, crop diagnosis, and ROI analysis. Designed for CEA professionals and agricultural engineers.",
+       "url": "https://inwoovation.com/smartfarm/",
+       "publisher": {
+         "@type": "Organization",
+         "name": "Inwoovation Smart Farm Lab",
+         "url": "https://inwoovation.com/smartfarm/"
+       },
+       "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+       }
+     },
+     {
+       "@type": "FAQPage",
+       "mainEntity": [
+         {
+           "@type": "Question",
+           "name": "What is Smart Farm Engineering Lab?",
+           "acceptedAnswer": {
+             "@type": "Answer",
+             "text": "Smart Farm Engineering Lab is a free, browser-based suite of high-precision agricultural engineering simulators for greenhouse growers, controlled environment agriculture (CEA) designers, and smart farm consultants. It models thermodynamics, hydraulics, photobiology, and crop physiology."
+           }
+         },
+         {
+           "@type": "Question",
+           "name": "What calculation tools are included in the portal?",
+           "acceptedAnswer": {
+             "@type": "Answer",
+             "text": "The portal provides 10+ engineering simulators: Vapor Pressure Deficit (VPD), 3-Way Heating Mixing Valve Sizing (Kv/Cv), Raw Fertilizer Salt Fertigation Solver, Greenhouse Peak Heat Loss Estimator (Q=UAΔT), Boiler vs Heat Pump ROI Modeler, Penman-Monteith Transpiration Calculator, Biological Pest Diagnosis & Pollinator REI Calculator, Vertical Farm Multi-Tier DLI & Thermal Modeler, CO2 Enrichment & Burner Sizer, and Wave Function Collapse (WFC) Greenhouse Spatial Layout Optimizer."
+           }
+         },
+         {
+           "@type": "Question",
+           "name": "What engineering standards and equations do these calculators use?",
+           "acceptedAnswer": {
+             "@type": "Answer",
+             "text": "All tools are implemented from peer-reviewed engineering standards: Tetens and Buck equations for saturation vapor pressure, ASABE EP406.4 and DIN 4701 for greenhouse heat transfer, FAO-56 Penman-Monteith for evapotranspiration, EN 1452 and Hazen-Williams for hydronic pipe flow, and the Stanghellini greenhouse canopy transpiration model."
+           }
+         },
+         {
+           "@type": "Question",
+           "name": "Are my farm dimensions and configuration data stored privately?",
+           "acceptedAnswer": {
+             "@type": "Answer",
+             "text": "Yes. The platform operates completely client-side in your web browser. All farm profile parameters, substrate dimensions, and custom presets are stored 100% locally in your browser's localStorage without server-side data harvesting, ensuring full GDPR compliance and commercial trade secret confidentiality."
+           }
+         }
+       ]
+     }
+   ]
   }
   </script>
 </meta><link href="style.css?v=3.3" rel="stylesheet"/></head>
@@ -263,21 +304,29 @@
 
 <!-- SEO Content Section: Intro Text for Crawlers & Users -->
 <div class="info-card" style="margin-top: 2.5rem; border-left: 4px solid var(--primary); text-align: left;">
-<h3 style="color: var(--primary); font-size: 1.1rem; margin-bottom: 0.8rem; font-weight: 700;">🔬 Who Is This Suite For?</h3>
-<p style="color: var(--text-gray); font-size: 0.9rem; line-height: 1.7;">Smart Farm Engineering Lab is a free, open-source suite of high-precision online calculators built for <strong>greenhouse growers, CEA (Controlled Environment Agriculture) designers, horticultural researchers, and agricultural engineers</strong>. Unlike generic farming apps, every tool here is grounded in peer-reviewed biophysical and thermodynamic models — from the Tetens equation for Vapor Pressure Deficit (VPD) to the Penman-Monteith transpiration model and EN 1452 pipe sizing standards.</p>
+<h3 style="color: var(--primary); font-size: 1.15rem; margin-bottom: 0.8rem; font-weight: 700;">🔬 Professional Greenhouse &amp; CEA Engineering Suite</h3>
+<p style="color: var(--text-gray); font-size: 0.92rem; line-height: 1.7;">Smart Farm Engineering Lab is a free, open-source suite of high-precision online calculators built for <strong>greenhouse growers, CEA (Controlled Environment Agriculture) designers, horticultural researchers, and agricultural engineers</strong>. Unlike generic farming apps, every tool here is grounded in peer-reviewed biophysical and thermodynamic models — from the Tetens equation for Vapor Pressure Deficit (VPD) to the Penman-Monteith transpiration model, DIN 4701 / ASABE EP406 greenhouse thermal loss, and EN 1452 hydronic pipe sizing standards.</p>
 </div>
 
 <div class="info-card" style="margin-top: 1rem; border-left: 4px solid var(--cyan); text-align: left;">
-<h3 style="color: var(--cyan); font-size: 1.1rem; margin-bottom: 0.8rem; font-weight: 700;">⚡ What Problems Do These Tools Solve?</h3>
-<ul style="margin-left: 1rem; color: var(--text-gray); font-size: 0.9rem; line-height: 1.8; display: flex; flex-direction: column; gap: 0.3rem;">
-<li><strong>VPD Calculator</strong> — Prevent condensation-induced fungal outbreaks and optimize stomatal transpiration for maximum nutrient uptake.</li>
-<li><strong>Mixing Valve Sizer</strong> — Select the correct Kv coefficient and DN pipe diameter for hot water heating loops without expensive engineering consultations.</li>
-<li><strong>Fertigation Solver</strong> — Avoid chemical precipitation (salt lockout) by calculating exact raw fertilizer weights and acid neutralization volumes for your stock tanks.</li>
-<li><strong>Heat Loss Estimator</strong> — Determine maximum heating load (kW) based on your specific cover material U-values, wind speed, and target indoor climate.</li>
-<li><strong>Boiler vs Heat Pump ROI</strong> — Quantify the payback period for switching from fossil fuels to agricultural heat pumps with real energy price inputs.</li>
-<li><strong>Crop Diagnosis &amp; Bee Safety</strong> — Identify crop diseases and pests by symptom scouting, then check pesticide bee toxicity and Safe Re-entry Intervals (REI).</li>
-<li><strong>Vertical Farm DLI</strong> — Calculate Daily Light Integral targets, LED PPFD requirements, and thermal dissipation loads for indoor vertical farming operations.</li>
+<h3 style="color: var(--cyan); font-size: 1.15rem; margin-bottom: 0.8rem; font-weight: 700;">⚡ Comprehensive Engineering Toolset</h3>
+<ul style="margin-left: 1rem; color: var(--text-gray); font-size: 0.9rem; line-height: 1.8; display: flex; flex-direction: column; gap: 0.4rem;">
+<li><strong><a href="vpd.html" style="color: var(--primary); font-weight: 600;">VPD Precision Calculator</a></strong> — Calculate leaf-to-air vapor pressure deficit using calibrated leaf surface temperature offsets. Prevent condensation-induced fungal outbreaks (<em>Botrytis cinerea</em>) and optimize stomatal conductance for rapid calcium xylem transport.</li>
+<li><strong><a href="mixing_valve.html" style="color: var(--primary); font-weight: 600;">Heating Mixing Valve (Kv/Cv)</a></strong> — Size 3-way motorized mixing valves and hot water distribution piping loops across delta-T flow gradients without costly sizing errors.</li>
+<li><strong><a href="fertigation.html" style="color: var(--primary); font-weight: 600;">Stock Tank Fertigation Solver</a></strong> — Formulate precision hydroponic nutrient recipes across Tanks A, B, and C. Calculate exact chemical salt gram weights and acid neutralization volumes to prevent toxic gypsum precipitation.</li>
+<li><strong><a href="heat_loss.html" style="color: var(--primary); font-weight: 600;">Greenhouse Heat Loss Estimator</a></strong> — Compute peak heating capacity in kW and BTU/h using steady-state heat flux formulas, cladding material U-values, and wind velocity infiltration modifiers.</li>
+<li><strong><a href="roi_simulator.html" style="color: var(--primary); font-weight: 600;">Boiler vs Heat Pump ROI</a></strong> — Quantify operating savings, spark spread parity, and capital payback periods for transitioning fossil fuel boilers to high-COP heat pumps.</li>
+<li><strong><a href="transpiration.html" style="color: var(--primary); font-weight: 600;">Crop Transpiration (Penman-Monteith)</a></strong> — Model hourly canopy water flux (L/m²·h) as a function of incident solar radiation, Leaf Area Index (LAI), and stomatal resistance.</li>
+<li><strong><a href="diagnosis.html" style="color: var(--primary); font-weight: 600;">Crop Disease &amp; Bee Safety Diagnosis</a></strong> — Scout visual disease and pest symptoms while cross-referencing insecticide chemical classes against bumblebee Safe Re-entry Intervals (REI).</li>
+<li><strong><a href="vertical_dli.html" style="color: var(--primary); font-weight: 600;">Vertical Farming DLI &amp; Thermal Modeler</a></strong> — Optimize multi-tier LED photoperiods, evaluate spectral R/B/FR ratios, and compute HVAC chiller sensible heat removal loads.</li>
+<li><strong><a href="co2_calculator.html" style="color: var(--primary); font-weight: 600;">CO₂ Enrichment &amp; Burner Capacity</a></strong> — Calculate pure liquid CO₂ or natural gas burner consumption rates to sustain target 800-1200 ppm levels under variable air exchange rates.</li>
+<li><strong><a href="smartfarm_layout_wfc.html" style="color: var(--primary); font-weight: 600;">WFC Gutter &amp; Hydronic Layout Planner</a></strong> — Procedural Wave Function Collapse spatial generator that automatically routes crop gutters, pipe rail manifolds, and harvest paths with instant Bill of Materials (BOM).</li>
 </ul>
+</div>
+
+<div class="info-card" style="margin-top: 1rem; border-left: 4px solid var(--purple); text-align: left;">
+<h3 style="color: #c084fc; font-size: 1.15rem; margin-bottom: 0.8rem; font-weight: 700;">📐 Biophysical Rigor &amp; Global Standards Compliance</h3>
+<p style="color: var(--text-gray); font-size: 0.9rem; line-height: 1.7;">Every calculation engine is benchmarked against internationally accepted engineering standards, including <strong>ASABE EP406.4</strong> (Heating, Ventilating and Cooling Greenhouses), <strong>DIN 4701 / EN 12831</strong> (Heat Load of Buildings), <strong>FAO-56</strong> (Crop Evapotranspiration Guidelines), and <strong>CIE / ASABE S640</strong> (Quantities and Units of Electromagnetic Radiation for Plants). Zero guesswork, zero black-box formulas.</p>
 </div>
 
     </div> <!-- Close section-dashboard -->

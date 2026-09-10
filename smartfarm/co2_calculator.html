@@ -19,6 +19,71 @@
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 <link href="style.css?v=3.2" rel="stylesheet"/>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Greenhouse CO2 Enrichment & Cylinder Sizing Calculator",
+  "operatingSystem": "All",
+  "applicationCategory": "EngineeringApplication",
+  "description": "Calculate greenhouse CO2 injection mass flow rates, Farquhar-von Caemmerer-Berry photosynthetic kinetics, cylinder consumption schedules, and hourly enrichment costs.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Inwoo Hwang"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Inwoovation Smart Farming"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the optimal CO2 concentration for greenhouse tomatoes and cucumbers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For C3 greenhouse crops like high-wire tomatoes and cucumbers, optimal canopy CO2 concentration is 800 to 1,200 ppm under active photosynthetically active radiation (PPFD > 300 μmol/m²/s). Above 1,200 to 1,500 ppm, RuBisCO carboxylation saturates while stomatal conductance decreases, yielding diminishing returns."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does greenhouse ventilation affect CO2 enrichment economics?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Greenhouse ventilation rapidly exchanges internal enriched air with ambient air. When air exchange exceeds 1.5 to 2.0 ACH (air changes per hour) due to open roof vents, over 80% of injected CO2 escapes into the atmosphere. Economic dosing algorithms restrict or pause pure liquid CO2 injection when roof vents open beyond 15-20%."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is the required CO2 injection rate calculated?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The required CO2 injection rate (kg/h) equals the ventilation infiltration loss plus crop photosynthetic consumption: Rate = (Greenhouse Volume × ACH × Delta PPM × 10^-6 × CO2 Density) + (Canopy Area × Leaf Net Assimilation Rate). Standard CO2 density at 20°C and 1 atm is approximately 1.836 kg/m³."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can supplemental CO2 compensate for lower greenhouse temperatures?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, elevating CO2 shifts the optimum temperature for C3 photosynthesis upward by 2°C to 4°C because high CO2 competitively inhibits photorespiration, which accelerates as temperatures rise. However, maintaining adequate root zone temperature is still required for nutrient transport."
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <main class="container">
@@ -141,6 +206,107 @@ Targeting 1200 ppm CO2 under 0.75 ACH air exchange provides optimal carbon satur
 </div>
 </div>
 </div>
+
+<!-- Comprehensive Agricultural Engineering & Biophysics Guide -->
+<section class="info-card" style="margin-top: 2rem; padding: 2rem; border-left: 5px solid var(--primary); background: rgba(15, 23, 42, 0.7);">
+  <h2 style="color: var(--primary); font-size: 1.4rem; font-weight: 700; margin-bottom: 1rem;">📚 Theoretical Foundations of CEA Carbon Enrichment & RuBisCO Kinetics</h2>
+  
+  <p style="color: #cbd5e1; line-height: 1.7; font-size: 0.95rem; margin-bottom: 1.2rem;">
+    In commercial Controlled Environment Agriculture (CEA), carbon dioxide ($CO_2$) is a primary gaseous fertilizer. Under ambient atmospheric conditions ($CO_2 \approx 420\text{ ppm}$), C3 photosynthetic crops—including Solanaceae (tomatoes, sweet peppers, eggplants) and Cucurbitaceae (cucumbers)—operate far below the saturation point of the primary carboxylating enzyme, <strong>Ribulose-1,5-bisphosphate carboxylase-oxygenase (RuBisCO)</strong>. When supplemental LED or HPS lighting provides intense photosynthetic photon flux density ($\text{PPFD} > 300\text{ }\mu\text{mol}\cdot\text{m}^{-2}\cdot\text{s}^{-1}$), vigorous canopies rapidly exhaust internal $CO_2$ to sub-ambient levels ($200-280\text{ ppm}$), severely depressing biomass synthesis.
+  </p>
+
+  <h3 style="color: var(--cyan); font-size: 1.15rem; font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.6rem;">1. The Biophysical Mass-Balance Equation</h3>
+  <p style="color: #cbd5e1; line-height: 1.7; font-size: 0.95rem; margin-bottom: 0.8rem;">
+    The net accumulation of gaseous carbon dioxide within an enclosed greenhouse volume ($V_{gh}$, $\text{m}^3$) is governed by a first-order dynamic mass-balance differential equation:
+  </p>
+  <div style="background: rgba(0,0,0,0.4); border: 1px solid rgba(56, 189, 248, 0.2); border-radius: 8px; padding: 1rem; margin: 1rem 0; font-family: monospace; color: #38bdf8; font-size: 0.95rem;">
+    V_{gh} · (dC / dt) = Φ_{inj}(t) - LAI · A_{net}(C, I, T) - ACH(t) · V_{gh} · (C - C_{ambient})
+  </div>
+  <p style="color: #cbd5e1; line-height: 1.7; font-size: 0.95rem;">
+    Where:
+  </p>
+  <ul style="color: #94a3b8; font-size: 0.9rem; line-height: 1.7; margin-left: 1.5rem; margin-bottom: 1.2rem;">
+    <li><strong>Φ_{inj}(t)</strong>: Mass flow injection rate of pure liquid $CO_2$ or boiler flue gas ($\text{kg}\cdot\text{h}^{-1}$).</li>
+    <li><strong>LAI · A_{net}</strong>: Canopy assimilation rate based on Leaf Area Index ($m^2/m^2$) and Farquhar-von Caemmerer-Berry net photosynthetic uptake.</li>
+    <li><strong>ACH(t)</strong>: Air Changes per Hour ($\text{h}^{-1}$), representing ventilation leakage and fan air exchange.</li>
+    <li><strong>C - C_{ambient}</strong>: Partial pressure concentration gradient driving outward molecular dispersion.</li>
+  </ul>
+
+  <h3 style="color: var(--cyan); font-size: 1.15rem; font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.6rem;">2. Recommended CO2 Enrichment Targets by Crop Species</h3>
+  <div style="overflow-x: auto; margin: 1rem 0;">
+    <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem; color: #cbd5e1;">
+      <thead>
+        <tr style="border-bottom: 2px solid rgba(56, 189, 248, 0.3); text-align: left;">
+          <th style="padding: 0.6rem; color: var(--primary);">Crop Species</th>
+          <th style="padding: 0.6rem;">Baseline Ambient</th>
+          <th style="padding: 0.6rem;">Target Daylight PPM</th>
+          <th style="padding: 0.6rem;">Threshold Saturation</th>
+          <th style="padding: 0.6rem;">Expected Yield Uplift</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom: 1px solid rgba(255,255,255,0.08);">
+          <td style="padding: 0.6rem; font-weight: 600; color: #f8fafc;">High-Wire Tomato</td>
+          <td style="padding: 0.6rem;">420 ppm</td>
+          <td style="padding: 0.6rem; color: #38bdf8;">1,000 – 1,200 ppm</td>
+          <td style="padding: 0.6rem;">1,400 ppm</td>
+          <td style="padding: 0.6rem; color: #4ade80;">+25% to +35%</td>
+        </tr>
+        <tr style="border-bottom: 1px solid rgba(255,255,255,0.08);">
+          <td style="padding: 0.6rem; font-weight: 600; color: #f8fafc;">Greenhouse Cucumber</td>
+          <td style="padding: 0.6rem;">420 ppm</td>
+          <td style="padding: 0.6rem; color: #38bdf8;">900 – 1,100 ppm</td>
+          <td style="padding: 0.6rem;">1,300 ppm</td>
+          <td style="padding: 0.6rem; color: #4ade80;">+20% to +30%</td>
+        </tr>
+        <tr style="border-bottom: 1px solid rgba(255,255,255,0.08);">
+          <td style="padding: 0.6rem; font-weight: 600; color: #f8fafc;">Sweet Bell Pepper</td>
+          <td style="padding: 0.6rem;">420 ppm</td>
+          <td style="padding: 0.6rem; color: #38bdf8;">800 – 1,000 ppm</td>
+          <td style="padding: 0.6rem;">1,200 ppm</td>
+          <td style="padding: 0.6rem; color: #4ade80;">+18% to +26%</td>
+        </tr>
+        <tr style="border-bottom: 1px solid rgba(255,255,255,0.08);">
+          <td style="padding: 0.6rem; font-weight: 600; color: #f8fafc;">Indoor Vertical Greens</td>
+          <td style="padding: 0.6rem;">420 ppm</td>
+          <td style="padding: 0.6rem; color: #38bdf8;">1,100 – 1,400 ppm</td>
+          <td style="padding: 0.6rem;">1,600 ppm</td>
+          <td style="padding: 0.6rem; color: #4ade80;">+30% to +45%</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 style="color: var(--cyan); font-size: 1.15rem; font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.6rem;">3. Ventilation Gating & Marginal Economic Optimization</h3>
+  <p style="color: #cbd5e1; line-height: 1.7; font-size: 0.95rem; margin-bottom: 0.8rem;">
+    A common operational error in commercial greenhouse facilities is injecting pure $CO_2$ at static setpoints throughout the day. When ambient solar irradiance drives greenhouse temperatures higher, ridge roof vents automatically open. When vents open past 15–20% ($ACH > 2.0\text{ h}^{-1}$), <strong>more than 80% of injected $CO_2$ is immediately swept out to the exterior</strong>, resulting in severe financial loss without biological benefit. Modern Dutch and German climate computers (Priva, Hoogendoorn, Ridder) enforce dynamic ventilation gating:
+  </p>
+  <ul style="color: #94a3b8; font-size: 0.9rem; line-height: 1.7; margin-left: 1.5rem; margin-bottom: 1.2rem;">
+    <li><strong>Closed Screen / Low ACH (&lt; 0.5/hr)</strong>: Target peak enrichment (1,000 – 1,200 ppm). Maximum dosing efficiency.</li>
+    <li><strong>Partial Venting (0.5 – 1.5 ACH)</strong>: Throttle setpoint to 600 – 800 ppm to maintain positive assimilation while curbing gas loss.</li>
+    <li><strong>Heavy Summer Venting (&gt; 2.5 ACH)</strong>: Maintain ambient setpoint (420 – 450 ppm). Do not dose pure liquid $CO_2$.</li>
+  </ul>
+
+  <h3 style="color: var(--cyan); font-size: 1.15rem; font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.6rem;">4. Frequently Asked Questions (FAQ)</h3>
+  <div style="display: flex; flex-direction: column; gap: 1rem; margin-top: 1rem;">
+    <div style="background: rgba(15, 23, 42, 0.4); border: 1px solid rgba(255,255,255,0.06); border-radius: 8px; padding: 1rem;">
+      <h4 style="color: #f8fafc; font-size: 0.95rem; margin-bottom: 0.4rem;">Q: Can elevated CO2 compensate for lower greenhouse temperatures?</h4>
+      <p style="color: #94a3b8; font-size: 0.88rem; line-height: 1.5;">Yes. Elevating $CO_2$ shifts the optimum temperature for C3 photosynthesis upward by 2°C to 4°C. High $CO_2$ competitively inhibits the oxygenase activity of RuBisCO, thereby suppressing photorespiration which normally escalates as temperatures rise.</p>
+    </div>
+    <div style="background: rgba(15, 23, 42, 0.4); border: 1px solid rgba(255,255,255,0.06); border-radius: 8px; padding: 1rem;">
+      <h4 style="color: #f8fafc; font-size: 0.95rem; margin-bottom: 0.4rem;">Q: What is the risk of excessive CO2 levels (&gt; 1,600 ppm)?</h4>
+      <p style="color: #94a3b8; font-size: 0.88rem; line-height: 1.5;">Prolonged exposure to concentrations above 1,500–1,800 ppm induces partial stomatal closure, reducing transpiration and leading to localized calcium deficiency (tip-burn, blossom-end rot). Levels above 5,000 ppm also present human occupational health and safety hazards (OSHA 8-hour TWA limit is 5,000 ppm).</p>
+    </div>
+  </div>
+
+  <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1);">
+    <p style="color: #94a3b8; font-size: 0.88rem;">
+      📖 For complete biophysical modeling and Michaelis-Menten temperature functions, read our peer-reviewed guide: 
+      <a href="../articles/article-58-dynamic-co2-enrichment-kinetics-rubisco-carboxylation-venlo.html" style="color: #38bdf8; font-weight: 600; text-decoration: underline;">Vol. 58: Dynamic CO2 Enrichment Kinetics &amp; RuBisCO Carboxylation Thermodynamics in High-Wire Venlo Greenhouses →</a>
+    </p>
+  </div>
+</section>
+
 
 <footer>
 <p>© 2026 Smart Farm Engineering Lab. Built for zero-cost static hosting. Designed by Inwoovation</p>

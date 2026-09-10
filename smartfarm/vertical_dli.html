@@ -39,25 +39,66 @@
 <script type="application/ld+json">
   {
    "@context": "https://schema.org",
-   "@type": "WebApplication",
-   "name": "Vertical Farming DLI Calculator | LED PPFD & Thermal Output Analyzer",
-   "operatingSystem": "All",
-   "applicationCategory": "EducationalApplication",
-   "browserRequirements": "Requires HTML5, Javascript, CSS3",
-   "softwareVersion": "2.1",
-   "inLanguage": "en",
-   "description": "Calculate Daily Light Integral (DLI), LED PPFD requirements, photoperiod optimization, and thermal heat dissipation for vertical farming and indoor growing systems. Supports leafy greens, strawberries, and herbs.",
-   "url": "https://inwoovation.com/smartfarm/vertical_dli",
-   "publisher": {
-     "@type": "Organization",
-     "name": "Inwoovation Smart Farm Lab",
-     "url": "https://inwoovation.com/smartfarm/"
-   },
-   "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-   }
+   "@graph": [
+     {
+       "@type": "WebApplication",
+       "name": "Vertical Farming DLI Calculator | LED PPFD & Thermal Output Analyzer",
+       "operatingSystem": "All",
+       "applicationCategory": "EducationalApplication",
+       "browserRequirements": "Requires HTML5, Javascript, CSS3",
+       "softwareVersion": "2.2",
+       "inLanguage": "en",
+       "description": "Calculate Daily Light Integral (DLI), LED PPFD requirements, photoperiod optimization, and thermal heat dissipation for vertical farming and indoor growing systems. Supports leafy greens, strawberries, and herbs.",
+       "url": "https://inwoovation.com/smartfarm/vertical_dli",
+       "publisher": {
+         "@type": "Organization",
+         "name": "Inwoovation Smart Farm Lab",
+         "url": "https://inwoovation.com/smartfarm/"
+       },
+       "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+       }
+     },
+     {
+       "@type": "FAQPage",
+       "mainEntity": [
+         {
+           "@type": "Question",
+           "name": "How do you calculate Daily Light Integral (DLI) in vertical indoor farms?",
+           "acceptedAnswer": {
+             "@type": "Answer",
+             "text": "Daily Light Integral (DLI) is calculated using the formula DLI = PPFD (μmol/m²·s) × Photoperiod (hours) × 0.0036. For instance, maintaining an indoor canopy under 250 μmol/m²·s PPFD for 18 hours per day delivers exactly 16.2 mol/m²·day of Photosynthetically Active Radiation (PAR)."
+           }
+         },
+         {
+           "@type": "Question",
+           "name": "What is the role of Far-Red (730 nm) light in indoor plant factories?",
+           "acceptedAnswer": {
+             "@type": "Answer",
+             "text": "Far-red photons (700 to 750 nm) activate Photosystem I and reverse phytochrome photo-equilibrium (Pfr to Pr), stimulating leaf expansion and increasing light interception. When delivered alongside red photons (the Emerson Enhancement Effect), far-red photons accelerate gross photosynthesis beyond standard 400-700 nm PAR predictions."
+           }
+         },
+         {
+           "@type": "Question",
+           "name": "How does LED junction temperature (Tj) affect luminaire lifespan and efficacy?",
+           "acceptedAnswer": {
+             "@type": "Answer",
+             "text": "LED diode efficiency drops as junction temperature (Tj) rises. Exceeding 80°C to 85°C degrades silicone encapsulation and phosphor conversion layers, accelerating lumen depreciation (L90B50 rating) and shifting emission wavelengths. Maintaining heatsink convection ensures diodes remain below 65°C."
+           }
+         },
+         {
+           "@type": "Question",
+           "name": "How much HVAC cooling capacity is needed for vertical farming LED lighting?",
+           "acceptedAnswer": {
+             "@type": "Answer",
+             "text": "In a sealed vertical farm, nearly 100% of electrical power fed to LED fixtures is ultimately converted to sensible and latent room heat (the fraction radiated as photons is absorbed by leaves and benches and re-emitted as convective or transpirational heat). Each 1 kW of electrical grow light requires approximately 0.284 Tons of Refrigeration (TR) or 3,412 BTU/h of active HVAC chiller cooling."
+           }
+         }
+       ]
+     }
+   ]
   }
   </script>
 </meta><link href="style.css?v=3.3" rel="stylesheet"/></head>
@@ -336,9 +377,88 @@
 <div id="amazon-vertical-widget"></div>
 </div>
 
+</div>
 
+<!-- Vertical Farming DLI & Thermal Engineering Academic Accordion -->
+<div class="accordion academic-guide" id="vdli-academic-accordion" style="margin-top: 1.5rem; margin-bottom: 2rem;">
+<div class="accordion-header" onclick="toggleAccordion('vdli-academic-accordion')">
+<span class="academic-guide-lang" style="font-weight: 700; color: var(--primary);">📚 Vertical Farming Photobiology, Spectrum &amp; LED Thermal Guide</span>
+<span class="icon" style="color: var(--primary);">▼</span>
+</div>
+<div class="accordion-body">
+<div class="academic-guide-lang">
+<h3>📚 Photobiological Physics &amp; Thermal Balance of Closed Indoor Plant Factories</h3>
+<p>Vertical farming eliminates solar variability by cultivating crops across vertically stacked tiers under 100% artificial LED radiation. Optimizing yield per cubic meter (kg/m³/year) requires synchronizing quantum photon flux, spectral photomorphogenesis, and HVAC sensible heat extraction.</p>
 
+<h4>1. Daily Light Integral (DLI) &amp; Operational Photoperiod Arbitrage</h4>
+<p>The cumulative photon dosage received by indoor crops is determined by integrating instantaneous photosynthetic photon flux density (PPFD) over the photoperiod run-time:</p>
+<div style="background: rgba(15, 23, 42, 0.6); padding: 1rem; border-radius: 8px; border-left: 3px solid var(--primary); margin: 0.8rem 0; font-family: monospace; font-size: 0.95rem;">
+    DLI (mol/m²·day) = PPFD (μmol/m²·s) × Photoperiod (hours/day) × 3600 s/h × 10⁻⁶ mol/μmol <br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= PPFD × Photoperiod × 0.0036
+</div>
+<p>Commercial plant factories leverage this relationship to avoid expensive peak electricity rates: running fixtures at a lower PPFD (e.g. <code>220 μmol/m²·s</code>) for <strong>18 hours during cheap off-peak/night hours</strong> delivers <code>14.3 mol/m²·day</code> while saving 30% to 50% on utility charges compared to high-intensity daytime cycles.</p>
 
+<h4>2. Crop Photoperiod &amp; DLI Threshold Benchmark Matrix</h4>
+<table style="width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.88rem; background: rgba(30, 41, 59, 0.4); border-radius: 8px; overflow: hidden;">
+    <thead>
+        <tr style="background: rgba(15, 23, 42, 0.8); text-align: left;">
+            <th style="padding: 0.6rem 0.8rem; border-bottom: 1px solid var(--border-card);">Crop Cultivar</th>
+            <th style="padding: 0.6rem 0.8rem; border-bottom: 1px solid var(--border-card);">Target DLI (mol/m²·d)</th>
+            <th style="padding: 0.6rem 0.8rem; border-bottom: 1px solid var(--border-card);">Recommended PPFD</th>
+            <th style="padding: 0.6rem 0.8rem; border-bottom: 1px solid var(--border-card);">Optimal Photoperiod</th>
+            <th style="padding: 0.6rem 0.8rem; border-bottom: 1px solid var(--border-card);">Morphological Focus</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">Butterhead / Romaine Lettuce</td>
+            <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">14 - 17</td>
+            <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">200 - 250 μmol/m²·s</td>
+            <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">16 - 18 Hours</td>
+            <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">Prevent tip-burn &amp; rapid head mass</td>
+        </tr>
+        <tr>
+            <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">Genovese Basil &amp; Culinary Herbs</td>
+            <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">16 - 22</td>
+            <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">250 - 320 μmol/m²·s</td>
+            <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">18 Hours</td>
+            <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">Essential oil accumulation &amp; flavor synthesis</td>
+        </tr>
+        <tr>
+            <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">Everbearing Strawberry (Indoor)</td>
+            <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">18 - 25</td>
+            <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">280 - 380 μmol/m²·s</td>
+            <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">16 Hours</td>
+            <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">Brix sugar accumulation &amp; crown initiation</td>
+        </tr>
+        <tr>
+            <td style="padding: 0.6rem 0.8rem;">Microgreens (Radish, Mustard, Pea)</td>
+            <td style="padding: 0.6rem 0.8rem;">8 - 12</td>
+            <td style="padding: 0.6rem 0.8rem;">120 - 180 μmol/m²·s</td>
+            <td style="padding: 0.6rem 0.8rem;">14 - 16 Hours</td>
+            <td style="padding: 0.6rem 0.8rem;">Fast 7-10 day harvest turnover</td>
+        </tr>
+    </tbody>
+</table>
+
+<h4>3. Spectral Photobiology &amp; The Emerson Enhancement Effect</h4>
+<ul>
+<li><strong>Deep Red (660 nm)</strong>: Highest quantum yield of photosynthesis; aligns with Chlorophyll <em>a</em> and <em>b</em> primary absorption bands.</li>
+<li><strong>Royal Blue (450 nm)</strong>: Stimulates stomatal opening and prevents plant stretching (shade-induced etiolation). High blue ratios (&gt; 20%) increase secondary metabolite content (phenolics and flavonoids).</li>
+<li><strong>Green / Broad White (520-560 nm)</strong>: Provides human visual inspection comfort and penetrates deep into lower canopy leaf layers where red/blue light is fully absorbed.</li>
+<li><strong>Far-Red (730 nm)</strong>: Modulates phytochrome photostationary state ($P_{fr} / P_{total}$). Adding 10% to 15% far-red photons expands leaf blade area and activates Photosystem I, boosting overall canopy photosynthetic efficiency by <strong>8% to 12%</strong> (Emerson Enhancement Effect).</li>
+</ul>
+
+<h4>4. LED Diode Thermal Dissipation &amp; Junction Temperature ($T_j$)</h4>
+<p>Modern top-tier LED chips convert approximately 45% to 52% of electrical power into optical photons; the remaining 48% to 55% is dissipated directly as conducted heat through the aluminum substrate:</p>
+<div style="background: rgba(15, 23, 42, 0.6); padding: 1rem; border-radius: 8px; border-left: 3px solid var(--primary); margin: 0.8rem 0; font-family: monospace; font-size: 0.95rem;">
+    Q_thermal = P_electrical × (1 - η_optical) <br/>
+    T_junction = T_ambient + Q_thermal × (R_th,junction-case + R_th,case-heatsink + R_th,heatsink-ambient)
+</div>
+<p>In closed indoor vertical farms, 100% of lighting electrical wattage eventually converts into ambient room heat (as radiated photons are absorbed by walls, benches, and leaves and re-emitted). Every <strong>100 kW of installed LED lighting</strong> requires exactly <code>28.4 Tons of Refrigeration (TR)</code> (or ~100 kW of HVAC cooling capacity) to maintain a stable 22°C growing environment.</p>
+</div>
+</div>
+</div>
 
 <footer>
 <div style="display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 0.8rem; flex-wrap: wrap; font-size: 0.9rem;">

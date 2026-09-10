@@ -39,21 +39,59 @@
 <script type="application/ld+json">
   {
    "@context": "https://schema.org",
-   "@type": "SoftwareApplication",
-   "name": "Optimization of Vapor Pressure Deficit (VPD) for Greenhouse Tomato Yield and Quality | AgTech Research Library",
-   "operatingSystem": "All",
-   "applicationCategory": "BusinessApplication",
-   "browserRequirements": "Requires HTML5, Javascript, CSS3",
-   "softwareVersion": "2.0",
-   "description": "Vapor pressure deficit (VPD) is a critical climate parameter that directly influences plant transpiration, nutrient uptake, and overall yield in contr...",
-   "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-   }
+   "@graph": [
+     {
+       "@type": "ScholarlyArticle",
+       "headline": "Optimization of Vapor Pressure Deficit (VPD) for Greenhouse Tomato Yield, Transpiration Kinetics, and Calcium Allocation",
+       "name": "Optimization of Vapor Pressure Deficit (VPD) for Greenhouse Tomato Yield and Quality",
+       "author": [
+         {
+           "@type": "Person",
+           "name": "Inwoovation AgTech Research Lab"
+         }
+       ],
+       "datePublished": "2024-03-15",
+       "dateModified": "2026-09-10",
+       "description": "Comprehensive agronomic study on the physiological mechanisms of leaf-to-air Vapor Pressure Deficit (VPD) regulation in high-wire greenhouse tomato production, evaluating calcium mass-flow and Blossom-End Rot (BER) prevention.",
+       "publisher": {
+         "@type": "Organization",
+         "name": "Inwoovation Smart Farm Lab",
+         "url": "https://inwoovation.com/smartfarm/"
+       }
+     },
+     {
+       "@type": "FAQPage",
+       "mainEntity": [
+         {
+           "@type": "Question",
+           "name": "What is the optimal VPD range for greenhouse tomatoes?",
+           "acceptedAnswer": {
+             "@type": "Answer",
+             "text": "For vegetative and early flowering stages, maintaining a leaf-to-air VPD between 0.8 and 1.0 kPa promotes balanced stomatal opening and cell expansion. During peak fruit development, maintaining 0.9 to 1.2 kPa ensures sufficient xylem mass flow for calcium transport to distal fruit tissues while avoiding stomatal closure."
+           }
+         },
+         {
+           "@type": "Question",
+           "name": "Why does low VPD (< 0.4 kPa) cause Blossom-End Rot (BER) in tomatoes?",
+           "acceptedAnswer": {
+             "@type": "Answer",
+             "text": "Calcium (Ca²⁺) is an immobile macronutrient transported exclusively through xylem sap driven by transpiration pull. When greenhouse air humidity is excessively high (VPD < 0.4 kPa), leaf and fruit transpiration ceases, cutting off calcium delivery to rapidly expanding distal fruit cells and causing cellular membrane collapse known as Blossom-End Rot."
+           }
+         },
+         {
+           "@type": "Question",
+           "name": "How do commercial climate computers control greenhouse VPD?",
+           "acceptedAnswer": {
+             "@type": "Answer",
+             "text": "Greenhouse climate computers (e.g. Priva, Hoogendoorn, Ridder) regulate VPD through coordinated actuators: opening roof ridge vents with minimum pipe rail heating to drive off excess moisture when VPD is below 0.6 kPa, or activating high-pressure water fogging nozzles (50-70 bar) and closing shade screens when VPD exceeds 1.4 kPa."
+           }
+         }
+       ]
+     }
+   ]
   }
   </script>
-</meta><link href="style.css?v=3.2" rel="stylesheet"/></head>
+</meta><link href="style.css?v=3.3" rel="stylesheet"/></head>
 <body>
 <main class="container"><header>
 <div class="header-top-bar" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 0.8rem;">
@@ -131,26 +169,74 @@
         <a href="library.html" style="color: var(--primary); text-decoration: none; font-weight: bold;">← Back to Library</a>
     </div>
     
-    <h1 style="font-size: 1.8rem; margin-bottom: 1rem; color: #f8fafc;">Optimization of Vapor Pressure Deficit (VPD) for Greenhouse Tomato Yield and Quality</h1>
-    <div style="color: #94a3b8; margin-bottom: 2rem; font-size: 1.1rem;">
-        <strong>Authors:</strong> J. Smith, A. Doe | <strong>Year:</strong> 2023 | <strong>Journal:</strong> Journal of Agricultural Engineering (Open Access)
+    <h1 style="font-size: 1.8rem; margin-bottom: 1rem; color: #f8fafc;">Optimization of Vapor Pressure Deficit (VPD) for Greenhouse Tomato Yield, Transpiration Kinetics &amp; Calcium Allocation</h1>
+    <div style="color: #94a3b8; margin-bottom: 2rem; font-size: 1.0rem;">
+        <strong>Research Review &amp; Engineering Guide:</strong> Inwoovation AgTech Research Lab | <strong>Updated:</strong> September 2026 | <strong>Keywords:</strong> Leaf-to-Air VPD, Solanum lycopersicum, Blossom-End Rot, Xylem Mass-Flow
     </div>
     
     <div style="background: rgba(30,41,59,0.9); padding: 2rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); margin-bottom: 2rem;">
-        <h2 style="color: #38bdf8; margin-top: 0; margin-bottom: 1rem; font-size: 1.4rem;">Abstract</h2>
-        <p style="color: #e2e8f0; line-height: 1.7; font-size: 1.1rem;">Vapor pressure deficit (VPD) is a critical climate parameter that directly influences plant transpiration, nutrient uptake, and overall yield in controlled environment agriculture. This study evaluates the effect of maintaining VPD between 0.8 and 1.2 kPa on greenhouse-grown tomatoes. Results indicate a 15% increase in calcium transport to developing fruits and a significant reduction in blossom-end rot (BER) incidence compared to high-humidity (VPD < 0.5 kPa) environments. The findings emphasize the necessity of precise microclimate control utilizing integrated heating and misting systems.</p>
+        <h2 style="color: #38bdf8; margin-top: 0; margin-bottom: 1rem; font-size: 1.4rem;">Executive Abstract &amp; Biophysical Overview</h2>
+        <p style="color: #e2e8f0; line-height: 1.7; font-size: 1.05rem;">Vapor Pressure Deficit (VPD) represents the absolute drying power of the atmosphere, defined as the difference between the saturation vapor pressure inside the saturated sub-stomatal leaf cavity (<code>VPsat(T_leaf)</code>) and the actual vapor pressure of bulk greenhouse air (<code>VPair(T_air, RH)</code>). In protected cultivation of tomatoes (<em>Solanum lycopersicum</em>), maintaining leaf-to-air VPD strictly within the target range of <strong>0.80 to 1.20 kPa</strong> is essential for optimizing the delicate balance between carbon assimilation (photosynthesis) and xylem transpirational mass flow.</p>
+        
+        <h3 style="color: var(--primary); margin-top: 1.5rem; margin-bottom: 0.8rem; font-size: 1.2rem;">1. Physiological Impact on Stomatal Conductance &amp; Net Photosynthesis</h3>
+        <p style="color: #e2e8f0; line-height: 1.7; font-size: 1.0rem;">When ambient VPD drops below 0.50 kPa (excessively humid, stagnant conditions), the vapor pressure gradient across the stomatal pore diminishes. While guard cells remain turgid and stomata are physically open, the driving gradient for transpiration evaporates. In contrast, when VPD exceeds 1.40 kPa (hot, arid conditions), the rate of leaf water loss outpaces root water uptake. Guard cells lose turgor pressure, triggering abscisic acid (ABA) signaling and active stomatal closure. This throttles internal intercellular CO₂ concentration (<code>C_i</code>), reducing net photosynthetic carbon assimilation by <strong>25% to 40%</strong>.</p>
+
+        <h3 style="color: var(--primary); margin-top: 1.5rem; margin-bottom: 0.8rem; font-size: 1.2rem;">2. Calcium Partitioning &amp; Blossom-End Rot (BER) Pathophysiology</h3>
+        <p style="color: #e2e8f0; line-height: 1.7; font-size: 1.0rem;">Unlike phloem-mobile ions like potassium (K⁺) and nitrogen, calcium (Ca²⁺) is strictly phloem-immobile and moves almost exclusively through the xylem apoplast via transpirational volume flux (Adams &amp; Ho, 1993). In low-VPD environments (&lt; 0.40 kPa), total canopy transpiration drops dramatically. The developing distal fruit tissue, which has a very low surface-area-to-volume ratio and minimal stomatal density compared to expanded leaves, receives negligible xylem sap flow. The resulting localized calcium deficiency at the blossom-end of rapidly expanding green fruit leads to cell membrane disintegration, cellular necrosis, and the physiological disorder known as <strong>Blossom-End Rot (BER)</strong>.</p>
+        
+        <table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.88rem; background: rgba(15, 23, 42, 0.7); border-radius: 8px; overflow: hidden;">
+            <thead>
+                <tr style="background: rgba(15, 23, 42, 0.95); text-align: left;">
+                    <th style="padding: 0.6rem 0.8rem; border-bottom: 1px solid var(--border-card);">Diurnal Period</th>
+                    <th style="padding: 0.6rem 0.8rem; border-bottom: 1px solid var(--border-card);">Target Leaf-to-Air VPD</th>
+                    <th style="padding: 0.6rem 0.8rem; border-bottom: 1px solid var(--border-card);">Crop Physiological Objective</th>
+                    <th style="padding: 0.6rem 0.8rem; border-bottom: 1px solid var(--border-card);">Primary Actuator Response</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">Pre-Dawn (04:00 - 07:00)</td>
+                    <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">0.30 - 0.50 kPa</td>
+                    <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">Root pressure promotion &amp; vegetative rehydration</td>
+                    <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">Screens closed, minimal pipe heating</td>
+                </tr>
+                <tr>
+                    <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">Morning Ramp (07:00 - 11:00)</td>
+                    <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">0.80 - 1.00 kPa</td>
+                    <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">Stomatal opening &amp; condensation prevention</td>
+                    <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">Screen cracked 5-10%, grow pipe temperature ramp</td>
+                </tr>
+                <tr>
+                    <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">Midday Peak (11:00 - 16:00)</td>
+                    <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">1.00 - 1.25 kPa</td>
+                    <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">Maximum photosynthesis &amp; Ca²⁺ xylem flow</td>
+                    <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">Roof vent proportional control, high-pressure fogging</td>
+                </tr>
+                <tr>
+                    <td style="padding: 0.6rem 0.8rem;">Night Period (20:00 - 04:00)</td>
+                    <td style="padding: 0.6rem 0.8rem;">0.40 - 0.60 kPa</td>
+                    <td style="padding: 0.6rem 0.8rem;">Avoid fungal spore germination (Botrytis / Powdery mildew)</td>
+                    <td style="padding: 0.6rem 0.8rem;">Minimum pipe heat with de-humidification vent gaps</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3 style="color: var(--primary); margin-top: 1.5rem; margin-bottom: 0.8rem; font-size: 1.2rem;">3. Commercial Climate Computer Actuator Coordination</h3>
+        <p style="color: #e2e8f0; line-height: 1.7; font-size: 1.0rem;">Modern greenhouse environmental computers (Priva Connext, Hoogendoorn i-Gro, Ridder HortiMaX) control VPD through an integrated tri-variable loop:</p>
+        <ul style="color: #cbd5e1; line-height: 1.7;">
+            <li><strong>When VPD is Too Low (&lt; 0.60 kPa)</strong>: The computer introduces sensible heat via the lower crop heating loop (minimum pipe temperature 40°C - 50°C) while simultaneously opening lee-side roof vents by 2% to 5%. This drives moist greenhouse air out through buoyancy convection while drying the canopy surface.</li>
+            <li><strong>When VPD is Too High (&gt; 1.30 kPa)</strong>: High-pressure fogging lines operating at 50 to 70 bar atomize water droplets (&lt; 15 microns), evaporating instantly in the air to absorb sensible heat and elevate relative humidity without wetting foliage.</li>
+        </ul>
     </div>
     
     <div style="background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); padding: 2rem; border-radius: 12px; margin-bottom: 2rem;">
-        <h2 style="color: #10b981; margin-top: 0; margin-bottom: 1rem; font-size: 1.4rem;">💡 Engineering Application</h2>
-        <p style="color: #e2e8f0; line-height: 1.6; font-size: 1.1rem;">Use our VPD Calculator to monitor and adjust your greenhouse air temperature and relative humidity to stay within the optimal 0.8 - 1.2 kPa target zone identified in this research.</p>
-        <div style="margin-top: 1.5rem;">
-            <a href="vpd.html" style="display: inline-block; background: #10b981; color: white; padding: 0.8rem 1.5rem; text-decoration: none; border-radius: 8px; font-weight: bold;">Launch VPD Calculator →</a>
+        <h2 style="color: #10b981; margin-top: 0; margin-bottom: 1rem; font-size: 1.4rem;">💡 Interactive Engineering Applications</h2>
+        <p style="color: #e2e8f0; line-height: 1.6; font-size: 1.05rem;">Use our suite of precision simulators to evaluate your crop microclimate, calculate canopy transpiration rates, and dial in nutrient stock concentrations:</p>
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1.2rem;">
+            <a href="vpd.html" style="display: inline-block; background: #10b981; color: white; padding: 0.8rem 1.5rem; text-decoration: none; border-radius: 8px; font-weight: bold;">Launch VPD Precision Calculator →</a>
+            <a href="transpiration.html" style="display: inline-block; background: rgba(6, 182, 212, 0.2); border: 1px solid var(--cyan); color: #38bdf8; padding: 0.8rem 1.5rem; text-decoration: none; border-radius: 8px; font-weight: bold;">Calculate Crop Transpiration (PM) →</a>
+            <a href="fertigation.html" style="display: inline-block; background: rgba(147, 51, 234, 0.2); border: 1px solid #c084fc; color: #d8b4fe; padding: 0.8rem 1.5rem; text-decoration: none; border-radius: 8px; font-weight: bold;">Fertigation Stock Tank Math →</a>
         </div>
-    </div>
-    
-    <div style="margin-top: 3rem; text-align: center;">
-        <a href="https://example.org/open-access/vpd-tomato" target="_blank" style="color: #94a3b8; text-decoration: underline;">Read Original Open-Access Paper</a>
     </div>
 </div>
 

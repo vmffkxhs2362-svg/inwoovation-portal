@@ -39,25 +39,66 @@
 <script type="application/ld+json">
   {
    "@context": "https://schema.org",
-   "@type": "WebApplication",
-   "name": "Greenhouse Heat Loss Calculator | Heating Load & Cover U-Value Estimator",
-   "operatingSystem": "All",
-   "applicationCategory": "EducationalApplication",
-   "browserRequirements": "Requires HTML5, Javascript, CSS3",
-   "softwareVersion": "2.1",
-   "inLanguage": "en",
-   "description": "Calculate maximum greenhouse heating load in kW and BTU/h using Q=UAΔT heat transfer formulas, wind friction velocity modifiers, and cover U-values for single poly, glass, and polycarbonate structures.",
-   "url": "https://inwoovation.com/smartfarm/heat_loss",
-   "publisher": {
-     "@type": "Organization",
-     "name": "Inwoovation Smart Farm Lab",
-     "url": "https://inwoovation.com/smartfarm/"
-   },
-   "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-   }
+   "@graph": [
+     {
+       "@type": "WebApplication",
+       "name": "Greenhouse Heat Loss Calculator | Heating Load & Cover U-Value Estimator",
+       "operatingSystem": "All",
+       "applicationCategory": "EducationalApplication",
+       "browserRequirements": "Requires HTML5, Javascript, CSS3",
+       "softwareVersion": "2.2",
+       "inLanguage": "en",
+       "description": "Calculate maximum greenhouse heating load in kW and BTU/h using Q=UAΔT heat transfer formulas, wind friction velocity modifiers, and cover U-values for single poly, glass, and polycarbonate structures.",
+       "url": "https://inwoovation.com/smartfarm/heat_loss",
+       "publisher": {
+         "@type": "Organization",
+         "name": "Inwoovation Smart Farm Lab",
+         "url": "https://inwoovation.com/smartfarm/"
+       },
+       "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+       }
+     },
+     {
+       "@type": "FAQPage",
+       "mainEntity": [
+         {
+           "@type": "Question",
+           "name": "How do you calculate peak greenhouse heating load?",
+           "acceptedAnswer": {
+             "@type": "Answer",
+             "text": "Peak greenhouse heating load is calculated using the steady-state thermal transmission formula Q = A × U × ΔT × F_wind, where A is the total exposed envelope surface area in m², U is the thermal transmittance in W/(m²·K), ΔT is the temperature difference between inside setpoint and extreme outside design temperature, and F_wind is the wind infiltration multiplier (typically 1.0 to 1.35 based on velocity)."
+           }
+         },
+         {
+           "@type": "Question",
+           "name": "What are typical U-values for greenhouse glazing materials?",
+           "acceptedAnswer": {
+             "@type": "Answer",
+             "text": "Typical heat transfer coefficients (U-values) are: Single Polyethylene (PE) Film: 6.0 W/(m²·K); Double Inflated Poly Film: 3.5 W/(m²·K); Single Float Glass (4mm): 5.5 to 5.8 W/(m²·K); Twin-Wall Polycarbonate (8mm): 3.3 W/(m²·K); Triple-Wall Polycarbonate (16mm): 2.3 W/(m²·K); and Diffuse Glass with Anti-Reflective coating: 5.2 W/(m²·K)."
+           }
+         },
+         {
+           "@type": "Question",
+           "name": "How much energy do thermal energy curtains save in commercial greenhouses?",
+           "acceptedAnswer": {
+             "@type": "Answer",
+             "text": "Automated thermal screens (such as aluminized Svensson Luxous or XLS screens) reduce overall heat loss by 35% to 52% when deployed at night. They add an additional boundary layer of stagnant air and reflect radiant long-wave infrared heat back down into the crop canopy."
+           }
+         },
+         {
+           "@type": "Question",
+           "name": "Why is wind speed critical in greenhouse boiler sizing?",
+           "acceptedAnswer": {
+             "@type": "Answer",
+             "text": "Wind increases both the external convective heat transfer coefficient (stripping the thin boundary layer of air off the glazing) and cold air infiltration through structural laps, vents, and gables. High winds of 7+ m/s can increase instantaneous thermal loss by 25% to 40% compared to calm conditions."
+           }
+         }
+       ]
+     }
+   ]
   }
   </script>
 </meta><link href="style.css?v=3.3" rel="stylesheet"/></head>
@@ -218,30 +259,90 @@
 <!-- Heat Loss Engineering SEO Guide Accordion -->
 <div class="accordion academic-guide" id="hl-academic-accordion">
 <div class="accordion-header" onclick="toggleAccordion('hl-academic-accordion')">
-<span class="academic-guide-lang" style="font-weight: 700; color: var(--primary);">📚 Heat Loss Formula &amp; Glazing U-Value Guide</span>
+<span class="academic-guide-lang" style="font-weight: 700; color: var(--primary);">📚 Heat Loss Formula, Glazing U-Values &amp; Energy Screen Physics</span>
 <span class="icon" style="color: var(--primary);">▼</span>
 </div>
 <div class="accordion-body">
 <div class="academic-guide-lang">
 <h3>📚 Thermodynamic Principles of Greenhouse Heat Load Calculations</h3>
-<p>Estimating peak heating capacity for agricultural greenhouses relies on steady-state conductive and convective heat transfer principles. The peak thermal demand determines the sizing of hot water boilers, heat pumps, and pipe rail distribution loops.</p>
-<h4>1. Fundamental Heat Loss Equation (Q = A * U * ΔT)</h4>
-<p>The total heat flux transmitted through the greenhouse envelope is calculated using the classical Fourier conduction equation modified for overall heat transfer coefficients:</p>
+<p>Estimating peak heating capacity for agricultural greenhouses relies on steady-state conductive, convective, and infiltration heat transfer principles (ASABE EP406.4 and DIN 4701 standards). Sizing hot water boilers, heat pumps, buffer tanks, and pipe rail distribution loops requires accurately predicting the maximum instantaneous heat flux during peak winter design conditions.</p>
+
+<h4>1. Steady-State Heat Balance Equation</h4>
+<p>The total net thermal loss of a protected greenhouse structure is determined by summing transmission conduction and infiltration losses while accounting for nocturnal thermal radiation:</p>
+<div style="background: rgba(15, 23, 42, 0.6); padding: 1rem; border-radius: 8px; border-left: 3px solid var(--primary); margin: 0.8rem 0; font-family: monospace; font-size: 0.95rem;">
+    Q_total = Q_trans + Q_inf - Q_internal
+</div>
 <ul>
-<li><code>Q = A * U * (Ti - To) * F_wind</code> (Watts or kW)</li>
-<li>Where <code>A</code> is total exposed surface area of roof and side walls (m²).</li>
-<li><code>U</code> is the thermal transmittance (W/m²·K) of the glazing material.</li>
-<li><code>ΔT = Ti - To</code> is the temperature differential between target indoor setpoint and lowest design outdoor temperature.</li>
-<li><code>F_wind</code> is the wind speed infiltration multiplier (1.0 at < 1 m/s up to 1.35 at > 7 m/s).</li>
+<li><code>Q_trans = A_cover × U_eff × (T_in - T_out)</code> : Conductive and convective heat loss through the greenhouse envelope (Watts).</li>
+<li><code>Q_inf = 0.5 × V_gh × N_ach × ρ_air × c_p × (T_in - T_out)</code> : Cold outside air infiltration through glazing laps and ridge vent gaskets (Watts).</li>
+<li><code>Q_internal</code> : Internal heat gains from supplementary grow lighting and circulating fan motors (zero during dark nocturnal heating design scenarios).</li>
 </ul>
-<h4>2. Typical Glazing Material U-Values</h4>
+
+<h4>2. Wind Velocity Multiplier &amp; Infiltration Effects</h4>
+<p>Wind flowing over greenhouse roof ridges strips the stagnant external boundary air film, dramatically raising convective heat transfer coefficients and forcing air infiltration through structural laps. This simulator models wind impact via the velocity correction factor <code>F_wind</code>:</p>
 <ul>
-<li><strong>Single PE Film</strong>: 6.0 W/m²·K (High transmission, high thermal loss)</li>
-<li><strong>Double Inflated PE Film</strong>: 3.5 W/m²·K (~40% thermal energy savings)</li>
-<li><strong>Single Float Glass (4mm)</strong>: 5.5 W/m²·K</li>
-<li><strong>Twin-Wall Polycarbonate (8mm)</strong>: 3.3 W/m²·K</li>
-<li><strong>Triple-Wall Polycarbonate (16mm)</strong>: 2.3 W/m²·K (Superior insulation)</li>
+<li><strong>Calm (v &lt; 1.0 m/s)</strong>: <code>F_wind = 1.00</code> (Nominal laboratory U-value).</li>
+<li><strong>Moderate Breeze (1.0 to 4.0 m/s)</strong>: <code>F_wind = 1.10 to 1.20</code> (+10% to +20% heat flux).</li>
+<li><strong>High Gale (&gt; 7.0 m/s)</strong>: <code>F_wind = 1.30 to 1.40</code> (+30% to +40% surge due to windward pressure gradients).</li>
 </ul>
+
+<h4>3. Cladding U-Value &amp; Light Transmission Benchmark</h4>
+<table style="width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.88rem; background: rgba(30, 41, 59, 0.4); border-radius: 8px; overflow: hidden;">
+    <thead>
+        <tr style="background: rgba(15, 23, 42, 0.8); text-align: left;">
+            <th style="padding: 0.6rem 0.8rem; border-bottom: 1px solid var(--border-card);">Cladding Material</th>
+            <th style="padding: 0.6rem 0.8rem; border-bottom: 1px solid var(--border-card);">U-Value (W/m²·K)</th>
+            <th style="padding: 0.6rem 0.8rem; border-bottom: 1px solid var(--border-card);">PAR Light Transmission</th>
+            <th style="padding: 0.6rem 0.8rem; border-bottom: 1px solid var(--border-card);">Primary Agricultural Application</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">Single Polyethylene (PE) Film</td>
+            <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">6.00</td>
+            <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">88 - 90%</td>
+            <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">Low-cost single-span plastic tunnels</td>
+        </tr>
+        <tr>
+            <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">Double Inflated PE Film (Air gap)</td>
+            <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">3.50</td>
+            <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">80 - 82%</td>
+            <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">Commercial multi-span polyethylene ranges</td>
+        </tr>
+        <tr>
+            <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">Single Float Glass (4mm Venlo)</td>
+            <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">5.50 - 5.80</td>
+            <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">89 - 91%</td>
+            <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">High-light Dutch Venlo glasshouses</td>
+        </tr>
+        <tr>
+            <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">Twin-Wall Polycarbonate (8mm)</td>
+            <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">3.30</td>
+            <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">80 - 82%</td>
+            <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">Greenhouse gables, side walls &amp; nursery houses</td>
+        </tr>
+        <tr>
+            <td style="padding: 0.6rem 0.8rem;">Triple-Wall Polycarbonate (16mm)</td>
+            <td style="padding: 0.6rem 0.8rem;">2.30</td>
+            <td style="padding: 0.6rem 0.8rem;">74 - 76%</td>
+            <td style="padding: 0.6rem 0.8rem;">Severe winter climate ranges &amp; vertical farms</td>
+        </tr>
+    </tbody>
+</table>
+
+<h4>4. Thermal Curtains &amp; Composite Resistance</h4>
+<p>Deploying automated aluminized energy screens (such as Svensson Luxous or XLS) creates an insulating air buffer between the crop zone and the cold roof. The composite thermal resistance <code>R_total</code> and effective U-value <code>U_eff</code> are calculated as:</p>
+<div style="background: rgba(15, 23, 42, 0.6); padding: 1rem; border-radius: 8px; border-left: 3px solid var(--primary); margin: 0.8rem 0; font-family: monospace; font-size: 0.95rem;">
+    R_total = (1 / U_glazing) + R_screen + R_aircavity &nbsp;⟹&nbsp; U_eff = 1 / R_total
+</div>
+<p>A single high-grade aluminized thermal screen provides an energy saving of <strong>40% to 47%</strong>. Adding a secondary transparent day-screen provides cumulative energy savings of <strong>up to 60%</strong> while preventing radiative leaf chilling (frost damage under clear night skies).</p>
+
+<h4>5. Hot Water Pipe Rail Sizing Formula</h4>
+<p>Once the peak heat demand <code>Q</code> (kW) is determined, the necessary mass flow rate <code>m_dot</code> (kg/s or m³/h) of circulating hot water through the pipe rail heating system (DN51 or DN40 steel tubes) is calculated via:</p>
+<div style="background: rgba(15, 23, 42, 0.6); padding: 1rem; border-radius: 8px; border-left: 3px solid var(--primary); margin: 0.8rem 0; font-family: monospace; font-size: 0.95rem;">
+    m_dot = Q / (c_p × (T_supply - T_return))
+</div>
+<p>For standard boiler loops operating at 80°C / 60°C (ΔT = 20°C), each 100 kW of heating load requires approximately <code>4.3 m³/h</code> of water circulation. For modern heat pump loops operating at lower temperatures (45°C / 38°C, ΔT = 7°C), flow rates must triple (<code>~12.3 m³/h</code>), requiring larger pipe rail diameters and high-capacity mixing valves.</p>
 </div>
 </div>
 </div>

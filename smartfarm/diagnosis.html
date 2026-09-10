@@ -39,25 +39,66 @@
 <script type="application/ld+json">
   {
    "@context": "https://schema.org",
-   "@type": "WebApplication",
-   "name": "Crop Disease & Pest Diagnosis Tool | Pesticide Bee Safety REI Calculator",
-   "operatingSystem": "All",
-   "applicationCategory": "EducationalApplication",
-   "browserRequirements": "Requires HTML5, Javascript, CSS3",
-   "softwareVersion": "2.1",
-   "inLanguage": "en",
-   "description": "Free AI-powered crop disease and pest diagnosis for tomato, strawberry, blueberry, melon, and pepper. Includes pesticide bee toxicity database with Safe Re-entry Interval (REI) calculator, pollinator density optimizer, and foraging activity simulator.",
-   "url": "https://inwoovation.com/smartfarm/diagnosis",
-   "publisher": {
-     "@type": "Organization",
-     "name": "Inwoovation Smart Farm Lab",
-     "url": "https://inwoovation.com/smartfarm/"
-   },
-   "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-   }
+   "@graph": [
+     {
+       "@type": "WebApplication",
+       "name": "Crop Disease & Pest Diagnosis Tool | Pesticide Bee Safety REI Calculator",
+       "operatingSystem": "All",
+       "applicationCategory": "EducationalApplication",
+       "browserRequirements": "Requires HTML5, Javascript, CSS3",
+       "softwareVersion": "2.2",
+       "inLanguage": "en",
+       "description": "Free AI-powered crop disease and pest diagnosis for tomato, strawberry, blueberry, melon, and pepper. Includes pesticide bee toxicity database with Safe Re-entry Interval (REI) calculator, pollinator density optimizer, and foraging activity simulator.",
+       "url": "https://inwoovation.com/smartfarm/diagnosis",
+       "publisher": {
+         "@type": "Organization",
+         "name": "Inwoovation Smart Farm Lab",
+         "url": "https://inwoovation.com/smartfarm/"
+       },
+       "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+       }
+     },
+     {
+       "@type": "FAQPage",
+       "mainEntity": [
+         {
+           "@type": "Question",
+           "name": "What is the Safe Re-entry Interval (REI) for bumblebees after pesticide application?",
+           "acceptedAnswer": {
+             "@type": "Answer",
+             "text": "The pollinator Safe Re-entry Interval (REI) is the mandatory duration hives must remain closed or relocated away from the treated greenhouse to avoid toxic acute oral or contact mortality. Depending on pesticide chemistry, REI ranges from 0 hours for bee-safe diamides (e.g. Chlorantraniliprole) or bio-fungicides to 7-21 days for high-residual systemic neonicotinoids (e.g. Imidacloprid, Thiamethoxam)."
+           }
+         },
+         {
+           "@type": "Question",
+           "name": "How does temperature affect bumblebee (Bombus terrestris) foraging in greenhouses?",
+           "acceptedAnswer": {
+             "@type": "Answer",
+             "text": "Bumblebees maintain peak foraging activity between 18°C and 26°C. At temperatures below 12°C, flight muscle shivering is insufficient for sustained foraging. When ambient greenhouse temperatures exceed 30°C to 32°C, foraging drops precipitously as worker bees abandon pollination to perform wing-fanning for brood thermoregulation inside the hive."
+           }
+         },
+         {
+           "@type": "Question",
+           "name": "How does buzz pollination work in greenhouse tomato production?",
+           "acceptedAnswer": {
+             "@type": "Answer",
+             "text": "Solanaceous flowers have poricidal anthers that only release pollen when vibrated at a specific resonance frequency (300 to 400 Hz). Bumblebees grasp the flower cone and rapidly contract their indirect flight muscles (sonication), dislodging large quantities of pollen onto their bodies and ensuring near-100% fruit set and uniform seed distribution."
+           }
+         },
+         {
+           "@type": "Question",
+           "name": "What biological control agents (beneficial insects) are used for greenhouse pest IPM?",
+           "acceptedAnswer": {
+             "@type": "Answer",
+             "text": "Key greenhouse biological control agents include Encarsia formosa and Macrolophus pygmaeus for whiteflies, Phytoseiulus persimilis and Neoseiulus californicus for two-spotted spider mites, and Amblyseius swirskii and Orius laevigatus for Western flower thrips and broad mites."
+           }
+         }
+       ]
+     }
+   ]
   }
   </script>
 </meta><link href="style.css?v=3.3" rel="stylesheet"/></head>
@@ -302,6 +343,73 @@
 <h3 id="lbl-act-guide-title">Microclimate Control Guide</h3>
 <p id="activity-guide-text">Analyzing bee foraging patterns...</p>
 </div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Integrated Pest Management & Pollinator Guide Accordion -->
+<div class="accordion academic-guide" id="diag-academic-accordion" style="margin-top: 1.5rem;">
+<div class="accordion-header" onclick="toggleAccordion('diag-academic-accordion')">
+<span class="academic-guide-lang" style="font-weight: 700; color: var(--primary);">📚 Biological IPM, Pesticide REI &amp; Pollination Kinematics Guide</span>
+<span class="icon" style="color: var(--primary);">▼</span>
+</div>
+<div class="accordion-body">
+<div class="academic-guide-lang">
+<h3>📚 Integrated Pest Management (IPM) &amp; Protected Pollinator Ecology</h3>
+<p>Modern commercial greenhouses rely on delicate ecological equilibrium. Maximizing marketable crop yield while avoiding chemical pesticide resistance requires balancing beneficial biological predators, precision pollinator management (Bombus terrestris), and rigorous chemical re-entry intervals (REI).</p>
+
+<h4>1. Biological Control Agents (Beneficial Predators &amp; Parasitoids)</h4>
+<table style="width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.88rem; background: rgba(30, 41, 59, 0.4); border-radius: 8px; overflow: hidden;">
+    <thead>
+        <tr style="background: rgba(15, 23, 42, 0.8); text-align: left;">
+            <th style="padding: 0.6rem 0.8rem; border-bottom: 1px solid var(--border-card);">Beneficial Species</th>
+            <th style="padding: 0.6rem 0.8rem; border-bottom: 1px solid var(--border-card);">Target Pest Complex</th>
+            <th style="padding: 0.6rem 0.8rem; border-bottom: 1px solid var(--border-card);">Mechanism of Action</th>
+            <th style="padding: 0.6rem 0.8rem; border-bottom: 1px solid var(--border-card);">Optimal Climate Window</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">Encarsia formosa (Wasp)</td>
+            <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">Greenhouse Whitefly (Trialeurodes vaporariorum)</td>
+            <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">Endoparasitism of nymph scales &amp; host-feeding</td>
+            <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">20°C - 26°C, RH 60-70%</td>
+        </tr>
+        <tr>
+            <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">Phytoseiulus persimilis (Mite)</td>
+            <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">Two-Spotted Spider Mite (Tetranychus urticae)</td>
+            <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">Aggressive voracious predation (adults + eggs)</td>
+            <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">18°C - 27°C, RH &gt; 65% (Dry air kills eggs)</td>
+        </tr>
+        <tr>
+            <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">Amblyseius swirskii (Mite)</td>
+            <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">Thrips larvae, Whitefly eggs, Broad mites</td>
+            <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">Generalist predator; can establish on pollen</td>
+            <td style="padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);">25°C - 32°C (Thrives in hot summer conditions)</td>
+        </tr>
+        <tr>
+            <td style="padding: 0.6rem 0.8rem;">Macrolophus pygmaeus (Bug)</td>
+            <td style="padding: 0.6rem 0.8rem;">Tuta absoluta, Whiteflies, Aphids, Mites</td>
+            <td style="padding: 0.6rem 0.8rem;">Polyphagous mirid predator; high hunting stamina</td>
+            <td style="padding: 0.6rem 0.8rem;">18°C - 28°C, requires Artemia egg feeding</td>
+        </tr>
+    </tbody>
+</table>
+
+<h4>2. Pesticide Chemical Classes &amp; Pollinator Toxicity Grading</h4>
+<ul>
+<li><strong>Group 4A Neonicotinoids (Imidacloprid, Thiamethoxam, Clothianidin)</strong>: Highly acute neurotoxic acetylcholine receptor agonists. Oral LD50 &lt; 0.005 µg/bee. Systemic translocation into floral nectar and guttation droplets creates lethal and sub-lethal disorientation. <em>REI: 14 to 21 days minimum (Hive relocation required)</em>.</li>
+<li><strong>Group 28 Diamides (Chlorantraniliprole, Flubendiamide)</strong>: Ryanodine receptor modulators with high selectivity for lepidopteran muscle channels. Extremely safe for hymenopteran pollinators (Oral LD50 &gt; 100 µg/bee). <em>REI: 0 to 4 hours (Safe once spray residue dries)</em>.</li>
+<li><strong>Bio-rational Biologicals (Bacillus thuringiensis, Beauveria bassiana, Potassium bicarbonate)</strong>: Minimal off-target environmental footprint. Compatible with ongoing bumblebee pollination programs. <em>REI: 0 hours</em>.</li>
+</ul>
+
+<h4>3. Bumblebee Foraging Thermodynamics &amp; Buzz Pollination Sizing</h4>
+<p>Unlike honeybees (Apis mellifera) that require bright sunlight and temperatures above 15°C, bumblebees (<em>Bombus terrestris</em>) possess dense insulating setae and can thermoregulate their flight muscles, foraging effectively down to 10°C–12°C under overcast sky conditions. However, high temperatures are dangerous:</p>
+<div style="background: rgba(15, 23, 42, 0.6); padding: 1rem; border-radius: 8px; border-left: 3px solid var(--primary); margin: 0.8rem 0; font-family: monospace; font-size: 0.95rem;">
+    Foraging_Index(T) = Optimal(18°C - 26°C, 100%) &nbsp;|&nbsp; Suppressed(28°C - 31°C, 65%) &nbsp;|&nbsp; Hive_Fanning_Only(&gt; 32°C, 0-15%)
+</div>
+<p>At temperatures exceeding 32°C, workers abandon flower foraging to perform evaporative cooling by fanning the hive entrance with their wings. To safeguard fruit quality, hives should be shaded, placed beneath gutter shadows, and stocked at <strong>3 to 5 hives / hectare</strong> for commercial high-wire tomato operations.</p>
 </div>
 </div>
 </div>

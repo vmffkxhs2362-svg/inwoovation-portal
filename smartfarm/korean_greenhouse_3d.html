@@ -8,6 +8,65 @@
   <meta name="description" content="Interactive 3D digital twin for multi-span arch poly and Venlo glass greenhouses. Real-time solar azimuth, roll-up roof/side ventilation, thermal screens, high-pressure fogging, and professional engineering A4 PDF export.">
   <link rel="canonical" href="https://inwoovation.com/smartfarm/korean_greenhouse_3d.html" />
   
+  <!-- SEO JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+   "@context": "https://schema.org",
+   "@graph": [
+     {
+       "@type": "WebApplication",
+       "name": "3D Commercial Greenhouse Digital Twin & Physics Microclimate Simulator",
+       "operatingSystem": "All",
+       "applicationCategory": "EducationalApplication",
+       "browserRequirements": "Requires WebGL, HTML5, Javascript, CSS3",
+       "softwareVersion": "2.2",
+       "inLanguage": "en",
+       "description": "Interactive 3D digital twin for multi-span arch poly and Venlo glass greenhouses. Real-time solar azimuth, roll-up roof/side ventilation, thermal screens, high-pressure fogging, and professional engineering A4 PDF export.",
+       "url": "https://inwoovation.com/smartfarm/korean_greenhouse_3d.html",
+       "publisher": {
+         "@type": "Organization",
+         "name": "Inwoovation Smart Farm Lab",
+         "url": "https://inwoovation.com/smartfarm/"
+       },
+       "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+       }
+     },
+     {
+       "@type": "FAQPage",
+       "mainEntity": [
+         {
+           "@type": "Question",
+           "name": "What is a greenhouse 3D digital twin simulator?",
+           "acceptedAnswer": {
+             "@type": "Answer",
+             "text": "A greenhouse 3D digital twin is an interactive computational model rendered in WebGL (Three.js) that simulates dynamic microclimate physics: real-time solar raycasting based on latitude and time of day, natural ventilation stack effects across roof vents, thermal curtain deployment, and evaporative fogging cooling."
+           }
+         },
+         {
+           "@type": "Question",
+           "name": "What are standard Korean RDA multi-span greenhouse specifications?",
+           "acceptedAnswer": {
+             "@type": "Answer",
+             "text": "Standard Korean Rural Development Administration (RDA) multi-span greenhouses typically feature an 8.0 m bay width, 4.0 m to 4.5 m gutter height, and structural hot-dip galvanized steel tubing (SPVHS/STK400, Ø 31.8 mm to Ø 48.6 mm) engineered to withstand wind gusts exceeding 40 m/s and snow loads up to 40 cm."
+           }
+         },
+         {
+           "@type": "Question",
+           "name": "How does thermal buoyancy drive natural greenhouse ventilation?",
+           "acceptedAnswer": {
+             "@type": "Answer",
+             "text": "Thermal buoyancy (the chimney or stack effect) occurs because warm air inside the greenhouse is less dense than outside cold air. The resulting pressure differential drives air out through ridge roof vents at a volumetric rate proportional to the square root of the height differential (Δh) and temperature gradient (ΔT)."
+           }
+         }
+       ]
+     }
+   ]
+  }
+  </script>
+  
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-V4RYJBMEDE"></script>
   <script>
@@ -273,6 +332,66 @@
     <div style="margin: 30px 0 10px; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(245, 158, 11, 0.3); border-radius: 12px; padding: 20px; color: #94a3b8; font-size: 0.85rem; line-height: 1.6;">
       <div style="color: #f59e0b; font-weight: 700; margin-bottom: 6px; font-size: 0.95rem;">⚖️ Engineering Simulation Disclaimer:</div>
       <div>This 3D digital twin and generated specification document are calculated based on standard agricultural engineering physics and ASABE greenhouse design benchmarks for preliminary evaluation. Actual greenhouse construction requires certified structural load reviews and local building code compliance.</div>
+    </div>
+
+    <!-- 3D Digital Twin & Structural Physics Academic Accordion -->
+    <div style="margin: 24px 0; background: rgba(30, 41, 59, 0.85); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 16px; padding: 24px; text-align: left;">
+      <h2 style="font-size: 1.3rem; font-weight: 800; color: #38bdf8; margin-top: 0; margin-bottom: 12px;">📚 3D Digital Twin Physics, RDA Standards &amp; Structural Aerodynamics</h2>
+      <p style="color: #cbd5e1; font-size: 0.92rem; line-height: 1.7;">A commercial greenhouse is a complex biophysical reactor. Integrating real-time 3D spatial visualization with thermodynamic microclimate solvers allows agronomists, greenhouse builders, and automation engineers to pre-validate solar radiation penetration, natural ventilation air exchanges (ACH), and structural wind safety before breaking ground.</p>
+
+      <h3 style="color: #10b981; font-size: 1.05rem; font-weight: 700; margin-top: 16px; margin-bottom: 8px;">1. Standard Agricultural Structural Specifications (Korean RDA vs. Dutch Venlo)</h3>
+      <table style="width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.84rem; background: rgba(15, 23, 42, 0.7); border-radius: 8px; overflow: hidden;">
+        <thead>
+          <tr style="background: rgba(15, 23, 42, 0.95); text-align: left;">
+            <th style="padding: 6px 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">Structural Design Type</th>
+            <th style="padding: 6px 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">Standard Bay Width</th>
+            <th style="padding: 6px 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">Gutter Height</th>
+            <th style="padding: 6px 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">Main Column Specification</th>
+            <th style="padding: 6px 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">Wind Load Design Limit</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="padding: 6px 10px; border-bottom: 1px solid rgba(255,255,255,0.05);">RDA 10-Span Arch Polyhouse</td>
+            <td style="padding: 6px 10px; border-bottom: 1px solid rgba(255,255,255,0.05);">8.00 m</td>
+            <td style="padding: 6px 10px; border-bottom: 1px solid rgba(255,255,255,0.05);">4.00 - 4.50 m</td>
+            <td style="padding: 6px 10px; border-bottom: 1px solid rgba(255,255,255,0.05);">STK400 (Ø 48.6mm × 2.3t)</td>
+            <td style="padding: 6px 10px; border-bottom: 1px solid rgba(255,255,255,0.05);">38 - 42 m/s (Typhoon Grade)</td>
+          </tr>
+          <tr>
+            <td style="padding: 6px 10px; border-bottom: 1px solid rgba(255,255,255,0.05);">High-Wire Venlo Glasshouse</td>
+            <td style="padding: 6px 10px; border-bottom: 1px solid rgba(255,255,255,0.05);">8.00 / 9.60 m</td>
+            <td style="padding: 6px 10px; border-bottom: 1px solid rgba(255,255,255,0.05);">6.00 - 7.00 m</td>
+            <td style="padding: 6px 10px; border-bottom: 1px solid rgba(255,255,255,0.05);">RHS Steel (100×100×3.2t)</td>
+            <td style="padding: 6px 10px; border-bottom: 1px solid rgba(255,255,255,0.05);">45 m/s (Eurocode EN 13031)</td>
+          </tr>
+          <tr>
+            <td style="padding: 6px 10px;">Single-Span Tunnel (Korean 07-type)</td>
+            <td style="padding: 6px 10px;">6.00 - 7.00 m</td>
+            <td style="padding: 6px 10px;">1.80 - 2.20 m</td>
+            <td style="padding: 6px 10px;">SPVHS (Ø 25.4mm × 1.2t)</td>
+            <td style="padding: 6px 10px;">28 - 32 m/s (Inland Only)</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3 style="color: #10b981; font-size: 1.05rem; font-weight: 700; margin-top: 16px; margin-bottom: 8px;">2. Thermal Stack Buoyancy &amp; Wind Pressure Ventilation</h3>
+      <p style="color: #cbd5e1; font-size: 0.9rem; line-height: 1.7;">Natural ventilation in protected greenhouses is driven by the simultaneous action of wind-induced surface pressure gradients and internal thermal stack buoyancy. The total air exchange rate (Air Changes per Hour, ACH) is governed by:</p>
+      <div style="background: rgba(15, 23, 42, 0.6); padding: 12px; border-radius: 8px; border-left: 3px solid #10b981; margin: 8px 0; font-family: monospace; font-size: 0.9rem; color: #e2e8f0;">
+        Q_total = √[ Q_wind² + Q_buoyancy² ] <br/>
+        Q_buoyancy = C_d × A_vent × √[ 2 × g × Δh × (T_in - T_out) / T_in ]
+      </div>
+      <p style="color: #cbd5e1; font-size: 0.9rem; line-height: 1.7;">Where <code>C_d ≈ 0.60</code> is the discharge orifice coefficient, <code>Δh</code> is vertical distance between side intake vents and roof exhaust vents, and <code>T_in - T_out</code> is thermal uplift. Maintaining continuous roof vent modulating control prevents heat stratification under the ridge apex and stabilizes the crop canopy boundary layer.</p>
+
+      <h3 style="color: #10b981; font-size: 1.05rem; font-weight: 700; margin-top: 16px; margin-bottom: 8px;">3. Structural Wind Velocity Pressure ($q_z$) Math</h3>
+      <p style="color: #cbd5e1; font-size: 0.9rem; line-height: 1.7;">Greenhouse frames must withstand dynamic wind velocity pressures per ASABE EP446 and Korean structural standards:</p>
+      <div style="background: rgba(15, 23, 42, 0.6); padding: 12px; border-radius: 8px; border-left: 3px solid #10b981; margin: 8px 0; font-family: monospace; font-size: 0.9rem; color: #e2e8f0;">
+        q_z = 0.5 × ρ_air × V_wind² × I_importance × C_shape
+      </div>
+      <p style="color: #cbd5e1; font-size: 0.9rem; line-height: 1.7;">A design wind speed of 40 m/s (144 km/h) generates an outward uplift suction pressure of <strong>~1,000 N/m² (~100 kg/m²)</strong> across the leeward roof arch. Multi-span arch gutters must incorporate reinforced foundation post anchors and continuous longitudinal wind bracing to prevent catastrophic uplift failure.</p>
+
+      <h3 style="color: #10b981; font-size: 1.05rem; font-weight: 700; margin-top: 16px; margin-bottom: 8px;">4. Evaporative High-Pressure Fog Cooling &amp; Sensible Heat Extraction</h3>
+      <p style="color: #cbd5e1; font-size: 0.9rem; line-height: 1.7;">During peak summer solar radiation in continental East Asian summers, natural ventilation alone cannot keep indoor temperatures below ambient. Operating high-pressure fog lines at <strong>50 to 70 bar</strong> atomizes water droplets to &lt; 15 microns. The water evaporates flash-fast before hitting leaves, absorbing <code>2.45 MJ of sensible heat per kilogram of water evaporated</code> (ΔT reduction of 3°C to 7°C) while maintaining canopy VPD within the productive 0.8 to 1.2 kPa window.</p>
     </div>
   </div>
 
