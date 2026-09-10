@@ -60,6 +60,25 @@ def get_parts_urls():
         urls.append(url)
     return urls
 
+def get_articles_urls():
+    dest_dir = os.path.join(PORTAL_DIR, "articles")
+    html_files = glob.glob(os.path.join(dest_dir, "*.html"))
+    urls = []
+    for f in html_files:
+        fn = os.path.basename(f)
+        urls.append(f"https://inwoovation.com/articles/{fn}")
+    return urls
+
+def get_portal_root_urls():
+    html_files = [f for f in glob.glob(os.path.join(PORTAL_DIR, "*.html"))
+                  if not os.path.basename(f).startswith("_")]
+    urls = []
+    for f in html_files:
+        fn = os.path.basename(f)
+        url = "https://inwoovation.com/" if fn == "index.html" else f"https://inwoovation.com/{fn}"
+        urls.append(url)
+    return urls
+
 def ensure_legacy_301_redirectors():
     print("\n🔀 Verifying and enforcing 301 Meta-Refresh & Canonical Redirectors in legacy repos...")
     
@@ -129,11 +148,13 @@ if __name__ == "__main__":
     print("🌐 INWOOVATION SUBDOMAIN CONSOLIDATION ENGINE (SSOT: inwoovation.com)")
     print("=" * 60)
     
+    root_urls = get_portal_root_urls()
+    article_urls = get_articles_urls()
     sf_urls = get_smartfarm_urls()
     wiki_urls = get_wiki_urls()
     parts_urls = get_parts_urls()
     
-    all_urls = sf_urls + wiki_urls + parts_urls
+    all_urls = root_urls + article_urls + sf_urls + wiki_urls + parts_urls
     update_unified_sitemap(all_urls)
     
     ensure_legacy_301_redirectors()
