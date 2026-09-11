@@ -4,22 +4,22 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Greenhouse Heat Loss Calculator | Heating Load & Cover U-Value Estimator</title>
-<meta content="Calculate maximum greenhouse heating load in kW and BTU/h using Q=UAΔT heat transfer formulas, wind friction velocity modifiers, and cover U-values for single poly, glass, and polycarbonate structures." name="description"/>
-<meta content="greenhouse heat loss calculator, heating load calculator BTU, Q=UAΔT heat transfer formula, glazing U-value table, greenhouse insulation, boiler capacity sizing kW, wind infiltration heat loss, commercial greenhouse thermal design" name="keywords"/>
+<title>Greenhouse Heat Loss Calculator | Peak Heating Load & Boiler Sizing (kW & BTU/h)</title>
+<meta content="Calculate maximum greenhouse heating load in kW and BTU/h using ASABE EP406 Q=UAΔT heat transfer formulas, wind infiltration modifiers, regional climate presets, and cover U-values for commercial glass and poly greenhouses." name="description"/>
+<meta content="greenhouse heat loss calculator, greenhouse boiler sizing kw, commercial heating load calculator btu, glazing U-value table, thermal screen energy saving, greenhouse hvac engineering spec sheet, ASABE EP406 heat transfer, denver greenhouse heating design, moses lake greenhouse heating, dutch venlo heating demand" name="keywords"/>
 <meta content="Y7d3dVoTQHBbG1GoKc4E_LUZb6YBmv491pv7G01mOk8" name="google-site-verification"/>
 <link href="https://inwoovation.com/smartfarm/heat_loss" rel="canonical"/>
 <!-- Open Graph / Facebook -->
 <meta content="website" property="og:type"/>
 <meta content="https://inwoovation.com/smartfarm/heat_loss" property="og:url">
-<meta content="Greenhouse Heat Loss Calculator | Heating Load & Cover U-Value Estimator" property="og:title"/>
-<meta content="Calculate maximum greenhouse heating load in kW and BTU/h using Q=UAΔT heat transfer formulas, wind friction velocity modifiers, and cover U-values for single poly, glass, and polycarbonate structures." property="og:description"/>
+<meta content="Greenhouse Heat Loss Calculator | Peak Heating Load & Boiler Sizing (kW & BTU/h)" property="og:title"/>
+<meta content="Calculate maximum greenhouse heating load in kW and BTU/h using ASABE EP406 Q=UAΔT formulas, wind velocity modifiers, and 1-click climate presets. Export official engineering spec sheets." property="og:description"/>
 <meta content="https://inwoovation.com/smartfarm/cover.png" property="og:image"/>
 <!-- Twitter Card -->
 <meta content="summary_large_image" name="twitter:card"/>
 <meta content="https://inwoovation.com/smartfarm/heat_loss" name="twitter:url"/>
-<meta content="Greenhouse Heat Loss Calculator | Heating Load & Cover U-Value Estimator" name="twitter:title"/>
-<meta content="Calculate maximum greenhouse heating load in kW and BTU/h using Q=UAΔT heat transfer formulas, wind friction velocity modifiers, and cover U-values for single poly, glass, and polycarbonate structures." name="twitter:description"/>
+<meta content="Greenhouse Heat Loss Calculator | Peak Heating Load & Boiler Sizing (kW & BTU/h)" name="twitter:title"/>
+<meta content="Calculate maximum greenhouse heating load in kW and BTU/h using ASABE EP406 Q=UAΔT formulas, wind velocity modifiers, and 1-click climate presets. Export official engineering spec sheets." name="twitter:description"/>
 <meta content="https://inwoovation.com/smartfarm/cover.png" name="twitter:image"/>
 <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-V4RYJBMEDE"></script>
@@ -212,6 +212,22 @@
 </div>
 <div class="input-group">
 <div class="input-header">
+<label for="hl-climate-preset">🌍 Regional Climate Preset (1-Click Sizing)</label>
+</div>
+<div class="input-control-wrapper select-arrow-wrapper">
+<select id="hl-climate-preset" onchange="applyClimatePreset()">
+<option selected="" value="custom">Custom Regional Temperature</option>
+<option value="denver">🇺🇸 Denver, CO (Extreme Winter: -15°C / 5°F, Wind: 4.5 m/s)</option>
+<option value="moses_lake">🇺🇸 Moses Lake, WA (Ag-Belt: -12°C / 10°F, Wind: 4.0 m/s)</option>
+<option value="london">🇬🇧 London / Southern UK (Maritime: -2°C / 28°F, Wind: 3.5 m/s)</option>
+<option value="straelen">🇳🇱 Straelen / Westland (Venlo Cluster: -6°C / 21°F, Wind: 3.8 m/s)</option>
+<option value="jinju">🇰🇷 Jinju / Gimje / Buyeo (Korea: -10°C / 14°F, Wind: 3.0 m/s)</option>
+<option value="ontario">🇨🇦 Leamington, Ontario (Great Lakes: -18°C / 0°F, Wind: 5.0 m/s)</option>
+</select>
+</div>
+</div>
+<div class="input-group">
+<div class="input-header">
 <label for="hl-area" id="lbl-hl-area">Cover Surface Area (A)</label>
 </div>
 <div class="input-control-wrapper">
@@ -352,7 +368,56 @@
 <div class="big-number" id="hl-value">0.0 kW</div>
 <div class="status-pill optimal" id="hl-status-pill">Heat Loss Calculated</div>
 <p class="result-desc" id="hl-explanation">Ready...</p>
-<div class="info-card" id="hl-actions-card" style="border-left: 4px solid var(--primary); margin-top: 1.5rem;">
+
+<!-- Quick Action Buttons: PDF Export & Share Link -->
+<div style="display: flex; gap: 0.6rem; margin-top: 1.2rem; flex-wrap: wrap;">
+    <button type="button" class="estimator-btn" onclick="printHeatLossReport()" style="flex: 1; background: linear-gradient(135deg, #0284c7, #0369a1); color: #ffffff; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; gap: 0.4rem; border: none; border-radius: 8px; padding: 0.65rem 1rem; cursor: pointer; box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3); font-size: 0.85rem;">
+        📄 Print / Export PDF Spec
+    </button>
+    <button type="button" class="estimator-btn" onclick="copyShareCalculationLink()" id="btn-share-link" style="flex: 1; background: rgba(30, 41, 59, 0.85); border: 1px solid rgba(255, 255, 255, 0.2); color: #f8fafc; font-weight: 600; display: inline-flex; align-items: center; justify-content: center; gap: 0.4rem; border-radius: 8px; padding: 0.65rem 1rem; cursor: pointer; font-size: 0.85rem;">
+        🔗 Share Calculation Link
+    </button>
+</div>
+
+<!-- Chained Workflow: Auto-Forward Calculated Heat Load -->
+<div class="info-card" id="hl-chain-card" style="border-left: 4px solid #10b981; background: rgba(16, 185, 129, 0.06); margin-top: 1.2rem;">
+    <h4 style="color: #34d399; margin-bottom: 0.4rem; display: flex; align-items: center; gap: 0.4rem;">
+        ⚡ Next Engineering Steps (Auto-Forward Calculated Load)
+    </h4>
+    <p style="font-size: 0.85rem; color: var(--text-gray); line-height: 1.5; margin-bottom: 0.8rem;">
+        Calculated Peak Load: <strong id="hl-chain-kw" style="color: #f8fafc;">0.0 kW</strong>. Transfer this load directly to sizing tools:
+    </p>
+    <div style="display: flex; gap: 0.6rem; flex-wrap: wrap;">
+        <a id="link-chain-roi" href="roi_simulator.html" style="background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.4); color: #34d399; font-size: 0.82rem; font-weight: 700; padding: 0.5rem 0.8rem; border-radius: 6px; text-decoration: none; display: inline-flex; align-items: center; gap: 0.3rem;">
+            🔥 Calculate Heat Pump ROI ➔
+        </a>
+        <a id="link-chain-valve" href="mixing_valve.html" style="background: rgba(6, 182, 212, 0.15); border: 1px solid rgba(6, 182, 212, 0.4); color: #38bdf8; font-size: 0.82rem; font-weight: 700; padding: 0.5rem 0.8rem; border-radius: 6px; text-decoration: none; display: inline-flex; align-items: center; gap: 0.3rem;">
+            🚰 Size 3-Way Mixing Valve ➔
+        </a>
+    </div>
+</div>
+
+<!-- Commercial Conversion Banner: OpenCEA Pro ($19) -->
+<div class="info-card" style="border: 1px solid rgba(6, 182, 212, 0.4); background: linear-gradient(135deg, rgba(6, 182, 212, 0.12) 0%, rgba(16, 185, 129, 0.12) 100%); margin-top: 1.2rem; border-radius: 10px; padding: 1.1rem;">
+    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.8rem;">
+        <div>
+            <span style="background: rgba(6, 182, 212, 0.25); color: #38bdf8; font-size: 0.72rem; font-weight: 800; padding: 0.2rem 0.5rem; border-radius: 100px; text-transform: uppercase;">
+                Commercial Engineering Pro
+            </span>
+            <h4 style="color: #f8fafc; font-size: 1rem; margin: 0.4rem 0 0.2rem 0; font-weight: 800;">
+                Need 8,760-Hour Full-Year Dynamic Simulation?
+            </h4>
+            <p style="font-size: 0.8rem; color: #94a3b8; line-height: 1.4; margin: 0; max-width: 460px;">
+                Unlock <strong>OpenCEA Pro ($19)</strong>: Multi-zone thermal screens, solar heat deduction, hourly local weather, and 24/7 offline standalone software.
+            </p>
+        </div>
+        <a href="https://buy.polar.sh/polar_cl_mRhSIZcW5YZGwh5QrSBVl1jLF8WeS8fZERjKk08f9LX" target="_blank" data-polar-checkout data-polar-checkout-theme="dark" style="background: linear-gradient(135deg, #06b6d4, #10b981); color: #030712; font-weight: 800; font-size: 0.85rem; padding: 0.6rem 1.1rem; border-radius: 8px; text-decoration: none; display: inline-flex; align-items: center; gap: 0.4rem; box-shadow: 0 4px 14px rgba(6, 182, 212, 0.35); white-space: nowrap;">
+            ⭐ Get Pro Suite ($19)
+        </a>
+    </div>
+</div>
+
+<div class="info-card" id="hl-actions-card" style="border-left: 4px solid var(--primary); margin-top: 1.2rem;">
 <h4 id="lbl-hl-actions-title">Live Diagnostic Report</h4>
 <p id="hl-actions-list" style="font-size: 0.9rem; color: var(--text-gray); margin-top: 0.5rem; line-height: 1.6;"></p>
 </div>

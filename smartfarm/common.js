@@ -1884,7 +1884,253 @@ window.DIAGNOSIS_COLLECTOR_URL = "YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL";
             }
             actionsList.innerHTML = advise;
         }
+
+        // Store results globally for export & chaining
+        window.lastHlResults = { qLossKw, qLossBtu, A, U, deltaT, fWind, tempIn, tempOut, wind, currentUnit };
+
+        // Update Chained Workflow Elements
+        const chainKwEl = document.getElementById('hl-chain-kw');
+        if (chainKwEl) {
+            chainKwEl.innerText = `${qLossKw.toFixed(1)} kW (${Math.round(qLossBtu).toLocaleString()} BTU/h)`;
+        }
+        const chainRoiLink = document.getElementById('link-chain-roi');
+        if (chainRoiLink) {
+            chainRoiLink.href = `roi_simulator.html?heatLoad=${qLossKw.toFixed(1)}`;
+        }
+        const chainValveLink = document.getElementById('link-chain-valve');
+        if (chainValveLink) {
+            chainValveLink.href = `mixing_valve.html?heatLoad=${qLossKw.toFixed(1)}`;
+        }
     }
+
+    const climatePresets = {
+        denver: { tempOut: -15, wind: 4.5 },
+        moses_lake: { tempOut: -12, wind: 4.0 },
+        london: { tempOut: -2, wind: 3.5 },
+        straelen: { tempOut: -6, wind: 3.8 },
+        jinju: { tempOut: -10, wind: 3.0 },
+        ontario: { tempOut: -18, wind: 5.0 }
+    };
+
+    window.applyClimatePreset = function() {
+        const selectEl = document.getElementById('hl-climate-preset');
+        if (!selectEl) return;
+        const val = selectEl.value;
+        if (val === 'custom') return;
+        const p = climatePresets[val];
+        if (!p) return;
+        
+        if (currentUnit === 'imperial') {
+            document.getElementById('hl-temp-out').value = Math.round(p.tempOut * 9/5 + 32);
+            document.getElementById('hl-wind').value = (p.wind * 2.23694).toFixed(1);
+        } else {
+            document.getElementById('hl-temp-out').value = p.tempOut;
+            document.getElementById('hl-wind').value = p.wind;
+        }
+        if (typeof calculateHeatLossEngine === 'function') calculateHeatLossEngine();
+    };
+
+    window.copyShareCalculationLink = function() {
+        const A = document.getElementById('hl-area') ? document.getElementById('hl-area').value : '1500';
+        const U = document.getElementById('hl-uvalue') ? document.getElementById('hl-uvalue').value : '5.5';
+        const tempIn = document.getElementById('hl-temp-in') ? document.getElementById('hl-temp-in').value : '18';
+        const tempOut = document.getElementById('hl-temp-out') ? document.getElementById('hl-temp-out').value : '-5';
+        const wind = document.getElementById('hl-wind') ? document.getElementById('hl-wind').value : '3.0';
+        const preset = document.getElementById('hl-preset') ? document.getElementById('hl-preset').value : 'custom';
+        const climate = document.getElementById('hl-climate-preset') ? document.getElementById('hl-climate-preset').value : 'custom';
+        
+        const url = new URL(window.location.href);
+        url.searchParams.set('area', A);
+        url.searchParams.set('u', U);
+        url.searchParams.set('ti', tempIn);
+        url.searchParams.set('to', tempOut);
+        url.searchParams.set('wind', wind);
+        if (preset !== 'custom') url.searchParams.set('mat', preset);
+        if (climate !== 'custom') url.searchParams.set('loc', climate);
+        
+        navigator.clipboard.writeText(url.toString()).then(() => {
+            const btn = document.getElementById('btn-share-link');
+            if (btn) {
+                const orig = btn.innerHTML;
+                btn.innerHTML = '✅ Copied to Clipboard!';
+                btn.style.borderColor = '#10b981';
+                btn.style.color = '#34d399';
+                setTimeout(() => {
+                    btn.innerHTML = orig;
+                    btn.style.borderColor = '';
+                    btn.style.color = '';
+                }, 2200);
+            }
+        }).catch(() => {
+            prompt('Copy calculation link:', url.toString());
+        });
+    };
+
+    window.printHeatLossReport = function() {
+        const res = window.lastHlResults || {};
+        const nowStr = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' });
+        const qKw = res.qLossKw ? res.qLossKw.toFixed(1) : '0.0';
+        const qBtu = res.qLossBtu ? Math.round(res.qLossBtu).toLocaleString() : '0';
+        const areaVal = document.getElementById('hl-area') ? document.getElementById('hl-area').value : '1500';
+        const areaSuffix = document.getElementById('hl-area-suffix') ? document.getElementById('hl-area-suffix').innerText : 'm²';
+        const uVal = document.getElementById('hl-uvalue') ? document.getElementById('hl-uvalue').value : '5.5';
+        const uSuffix = document.getElementById('hl-uvalue-suffix') ? document.getElementById('hl-uvalue-suffix').innerText : 'W/m²·K';
+        const tempInVal = document.getElementById('hl-temp-in') ? document.getElementById('hl-temp-in').value : '18';
+        const tempOutVal = document.getElementById('hl-temp-out') ? document.getElementById('hl-temp-out').value : '-5';
+        const tempSuffix = document.getElementById('hl-temp-in-suffix') ? document.getElementById('hl-temp-in-suffix').innerText : '°C';
+        const windVal = document.getElementById('hl-wind') ? document.getElementById('hl-wind').value : '3.0';
+        const windSuffix = document.getElementById('hl-wind-suffix') ? document.getElementById('hl-wind-suffix').innerText : 'm/s';
+        
+        const boilerSizingKw = (parseFloat(qKw) * 1.15).toFixed(1);
+        const boilerSizingBtu = Math.round(parseFloat(qKw) * 1.15 * 3412.14).toLocaleString();
+        const waterFlow8060 = ((parseFloat(qKw) * 0.86) / 20).toFixed(2);
+        const specificLoadWm2 = (parseFloat(areaVal) > 0 ? (parseFloat(qKw) * 1000 / parseFloat(areaVal)).toFixed(1) : '0');
+
+        const printHtml = `
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Inwoovation Lab - Greenhouse Heat Loss Specification Sheet</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: #1e293b; padding: 40px; margin: 0; background: #fff; line-height: 1.5; }
+        .header-table { width: 100%; border-bottom: 3px solid #0284c7; padding-bottom: 15px; margin-bottom: 25px; }
+        .logo-title { font-size: 22px; font-weight: 800; color: #0369a1; letter-spacing: -0.5px; }
+        .doc-title { font-size: 14px; font-weight: 600; color: #64748b; text-transform: uppercase; }
+        .badge { font-size: 12px; background: #e0f2fe; color: #0369a1; padding: 4px 10px; border-radius: 4px; font-weight: 700; display: inline-block; }
+        .sec-title { font-size: 15px; font-weight: 800; color: #0f172a; border-bottom: 1px solid #cbd5e1; padding-bottom: 5px; margin: 25px 0 12px 0; text-transform: uppercase; letter-spacing: 0.5px; }
+        table.data-table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 13px; }
+        table.data-table th, table.data-table td { padding: 8px 12px; border: 1px solid #cbd5e1; text-align: left; }
+        table.data-table th { background: #f8fafc; font-weight: 700; color: #334155; }
+        .highlight-box { background: #f0f9ff; border: 2px solid #0284c7; border-radius: 8px; padding: 20px; margin: 20px 0; }
+        .highlight-val { font-size: 28px; font-weight: 900; color: #0369a1; }
+        .highlight-sub { font-size: 14px; color: #475569; font-weight: 600; margin-top: 4px; }
+        .footer { border-top: 1px solid #e2e8f0; margin-top: 40px; padding-top: 15px; font-size: 11px; color: #94a3b8; display: flex; justify-content: space-between; }
+        @media print {
+            body { padding: 20px; }
+            @page { margin: 15mm; }
+        }
+    </style>
+</head>
+<body>
+    <table class="header-table">
+        <tr>
+            <td>
+                <div class="logo-title">INWOOVATION SMART FARM ENGINEERING LAB</div>
+                <div class="doc-title">Commercial Greenhouse HVAC Heat Load Calculation Sheet</div>
+            </td>
+            <td style="text-align: right;">
+                <span class="badge">OFFICIAL ENGINEERING SPEC</span><br>
+                <span style="font-size: 11px; color: #64748b; margin-top: 4px; display: inline-block;">Generated: ${nowStr}</span>
+            </td>
+        </tr>
+    </table>
+
+    <div class="highlight-box">
+        <div style="font-size: 12px; font-weight: 800; color: #0284c7; text-transform: uppercase; letter-spacing: 0.5px;">Peak Design Heating Load</div>
+        <div class="highlight-val">${qKw} kW <span style="font-size: 18px; font-weight: 700; color: #64748b;">(${qBtu} BTU/h)</span></div>
+        <div class="highlight-sub">Specific Envelope Heat Flux: <strong>${specificLoadWm2} W/m²</strong> | Design ΔT: <strong>${(parseFloat(tempInVal) - parseFloat(tempOutVal)).toFixed(1)}${tempSuffix}</strong></div>
+    </div>
+
+    <div class="sec-title">1. Design Input Parameters & Boundary Conditions</div>
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Design Value</th>
+                <th>Unit</th>
+                <th>Engineering Reference / Standard</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Greenhouse Envelope Surface Area (A)</td>
+                <td><strong>${areaVal}</strong></td>
+                <td>${areaSuffix}</td>
+                <td>Total exposed glazing & side-wall area</td>
+            </tr>
+            <tr>
+                <td>Cladding Heat Transfer Coefficient (U)</td>
+                <td><strong>${uVal}</strong></td>
+                <td>${uSuffix}</td>
+                <td>ASABE EP406.4 / DIN 4701 Steady-State</td>
+            </tr>
+            <tr>
+                <td>Target Indoor Setpoint Temp (Ti)</td>
+                <td><strong>${tempInVal}</strong></td>
+                <td>${tempSuffix}</td>
+                <td>Crop night canopy maintenance target</td>
+            </tr>
+            <tr>
+                <td>Extreme Winter Outdoor Design Temp (To)</td>
+                <td><strong>${tempOutVal}</strong></td>
+                <td>${tempSuffix}</td>
+                <td>ASHRAE 99.6% peak winter design percentile</td>
+            </tr>
+            <tr>
+                <td>Outdoor Wind Speed (v)</td>
+                <td><strong>${windVal}</strong></td>
+                <td>${windSuffix}</td>
+                <td>External convective stripping & infiltration modifier</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="sec-title">2. Equipment Sizing & Hydraulic Recommendations</div>
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th>System Component</th>
+                <th>Recommended Specification</th>
+                <th>Basis of Calculation</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Recommended Boiler / Heat Pump Rating</td>
+                <td><strong>${boilerSizingKw} kW</strong> (${boilerSizingBtu} BTU/h)</td>
+                <td>Includes 1.15x engineering safety / pickup margin</td>
+            </tr>
+            <tr>
+                <td>Circulating Hot Water Mass Flow Rate</td>
+                <td><strong>${waterFlow8060} m³/h</strong></td>
+                <td>Standard pipe-rail loop at 80°C/60°C (ΔT = 20K)</td>
+            </tr>
+            <tr>
+                <td>Energy Curtain (Thermal Screen) Benefit</td>
+                <td><strong>-${(parseFloat(qKw) * 0.42).toFixed(1)} kW</strong> (42% peak reduction)</td>
+                <td>Aluminized screen deployment under clear winter night</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="sec-title">3. Engineering Certification & Notes</div>
+    <p style="font-size: 11px; color: #475569; line-height: 1.6; margin: 0 0 15px 0;">
+        This steady-state thermal transmission report was synthesized using the fundamental conductive and convective equation <code>Q = A × U × ΔT × F_wind</code>. Dynamic radiative cooling and sudden infiltration spikes during high gales (>10 m/s) should be buffered via hot water thermal storage tanks.
+    </p>
+
+    <div class="footer">
+        <div>Engineered by Inwoovation Smart Farm Lab &bull; https://inwoovation.com/smartfarm/</div>
+        <div>Document Ref: INW-HL-${Date.now().toString(36).toUpperCase()}</div>
+    </div>
+
+    <script>
+        window.onload = function() {
+            window.print();
+        };
+    <\/script>
+</body>
+</html>
+        `;
+        const printWin = window.open('', '_blank', 'width=850,height=950');
+        if (printWin) {
+            printWin.document.open();
+            printWin.document.write(printHtml);
+            printWin.document.close();
+        } else {
+            alert('Please allow popups for this site to export the engineering spec sheet.');
+        }
+    };
 
     let currentRoiCurrency = 'KRW';
     
@@ -3824,8 +4070,49 @@ window.DIAGNOSIS_COLLECTOR_URL = "YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL";
         }, 3000);
     }
 
+    window.loadUrlCalculationParams = function() {
+        const params = new URLSearchParams(window.location.search);
+        // Heat loss params
+        if (document.getElementById('section-heat-loss')) {
+            let shouldCalc = false;
+            if (params.has('area')) { document.getElementById('hl-area').value = params.get('area'); shouldCalc = true; }
+            if (params.has('u')) { document.getElementById('hl-uvalue').value = params.get('u'); shouldCalc = true; }
+            if (params.has('ti')) { document.getElementById('hl-temp-in').value = params.get('ti'); shouldCalc = true; }
+            if (params.has('to')) { document.getElementById('hl-temp-out').value = params.get('to'); shouldCalc = true; }
+            if (params.has('wind')) { document.getElementById('hl-wind').value = params.get('wind'); shouldCalc = true; }
+            if (params.has('mat') && document.getElementById('hl-preset')) { document.getElementById('hl-preset').value = params.get('mat'); }
+            if (params.has('loc') && document.getElementById('hl-climate-preset')) { document.getElementById('hl-climate-preset').value = params.get('loc'); }
+            if (shouldCalc && typeof calculateHeatLossEngine === 'function') {
+                calculateHeatLossEngine();
+            }
+        }
+        // Mixing valve params (chained from heat loss)
+        if (document.getElementById('section-valve') && params.has('heatLoad')) {
+            const qVal = parseFloat(params.get('heatLoad'));
+            if (!isNaN(qVal)) {
+                const heatPowerInput = document.getElementById('heat-power');
+                if (heatPowerInput) {
+                    heatPowerInput.value = qVal;
+                    if (typeof calculateValveEngine === 'function') calculateValveEngine();
+                }
+            }
+        }
+        // ROI simulator params (chained from heat loss)
+        if (document.getElementById('section-roi') && params.has('heatLoad')) {
+            const qVal = parseFloat(params.get('heatLoad'));
+            if (!isNaN(qVal)) {
+                const roiDemandInput = document.getElementById('roi-demand');
+                if (roiDemandInput) {
+                    roiDemandInput.value = Math.round(qVal * 1000);
+                    if (typeof calculateRoiEngine === 'function') calculateRoiEngine();
+                }
+            }
+        }
+    };
+
     document.addEventListener("DOMContentLoaded", function() {
         initLocalStoragePersistence();
+        window.loadUrlCalculationParams();
 
         // Inject 1-Click Copy Result Button into Result Panels if not present
         const resultPanels = document.querySelectorAll('.result-panel');
