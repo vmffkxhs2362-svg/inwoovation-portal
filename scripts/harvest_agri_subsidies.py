@@ -85,6 +85,86 @@ TARGET_PORTALS = [
         "agency": "State of California",
         "pinned_selectors": [".sticky-header", ".featured-grant", "div.pinned"],
         "max_age_days": 60
+    },
+    {
+        "id": "OR_ENERGY_TRUST",
+        "name": "Energy Trust of Oregon Agriculture & CEA Energy Efficiency",
+        "url": "https://www.energytrust.org/commercial/agriculture/",
+        "region": "US-OR",
+        "country": "US",
+        "agency": "Energy Trust of Oregon / ODOE",
+        "pinned_selectors": [".sticky", ".featured"],
+        "max_age_days": 90
+    },
+    {
+        "id": "OR_OWEB",
+        "name": "Oregon Watershed Enhancement Board (OWEB) Grants",
+        "url": "https://www.oregon.gov/oweb/grants/",
+        "region": "US-OR",
+        "country": "US",
+        "agency": "Oregon Watershed Enhancement Board (OWEB)",
+        "pinned_selectors": [".pinned", ".highlight"],
+        "max_age_days": 90
+    },
+    {
+        "id": "WA_WSDA_GRANTS",
+        "name": "Washington State Department of Agriculture (WSDA) Grants",
+        "url": "https://agr.wa.gov/services/grant-and-financial-assistance",
+        "region": "US-WA",
+        "country": "US",
+        "agency": "Washington State Department of Agriculture (WSDA)",
+        "pinned_selectors": [".alert", ".featured"],
+        "max_age_days": 90
+    },
+    {
+        "id": "WA_SCC_GRANTS",
+        "name": "Washington State Conservation Commission (SCC) Irrigation & Conservation",
+        "url": "https://www.scc.wa.gov/grants",
+        "region": "US-WA",
+        "country": "US",
+        "agency": "Washington State Conservation Commission (SCC)",
+        "pinned_selectors": [".sticky", ".notice"],
+        "max_age_days": 90
+    },
+    {
+        "id": "TX_TDA_GRANTS",
+        "name": "Texas Department of Agriculture (TDA) Grants & Financial Assistance",
+        "url": "https://www.texasagriculture.gov/Grants-Services",
+        "region": "US-TX",
+        "country": "US",
+        "agency": "Texas Department of Agriculture (TDA)",
+        "pinned_selectors": [".hero-alert", ".pinned"],
+        "max_age_days": 90
+    },
+    {
+        "id": "TX_TWDB_AG",
+        "name": "Texas Water Development Board (TWDB) Ag Water Conservation",
+        "url": "https://www.twdb.texas.gov/financial/programs/ag-conservation/",
+        "region": "US-TX",
+        "country": "US",
+        "agency": "Texas Water Development Board (TWDB)",
+        "pinned_selectors": [".alert", ".announcement"],
+        "max_age_days": 90
+    },
+    {
+        "id": "NY_NYSERDA_AG",
+        "name": "NYSERDA Agriculture Energy Efficiency Program",
+        "url": "https://www.nyserda.ny.gov/All-Programs/Agriculture-Energy-Efficiency",
+        "region": "US-NY",
+        "country": "US",
+        "agency": "New York State Energy Research and Development Authority (NYSERDA)",
+        "pinned_selectors": [".callout-banner", ".sticky"],
+        "max_age_days": 90
+    },
+    {
+        "id": "NY_AGM_GRANTS",
+        "name": "NYS Department of Agriculture and Markets (AGM) Funding Opportunities",
+        "url": "https://agriculture.ny.gov/funding-opportunities",
+        "region": "US-NY",
+        "country": "US",
+        "agency": "NYS Department of Agriculture and Markets (AGM)",
+        "pinned_selectors": [".pinned-row", ".announcement"],
+        "max_age_days": 90
     }
 ]
 
