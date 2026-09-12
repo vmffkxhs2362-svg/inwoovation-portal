@@ -97,12 +97,13 @@ Provide precision engineering calculations for commercial greenhouse operators, 
 
 ---
 
-## 📂 Sector 2: `articles/` — Engineering & Grant Whitepapers (65 Core Guides)
+## 📂 Sector 2: `articles/` — Engineering & Grant Whitepapers (66 Core Guides)
 
 ### Core Mission
 Drive high-authority organic search traffic from commercial growers searching for equipment retrofits, USDA grant applications, and climate steering protocols.
 
 ### Key Flagship Documents
+* [`article-66-california-sweep-vs-texas-twdb-agricultural-water-grants.html`](file:///g:/Meine%20Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/articles/article-66-california-sweep-vs-texas-twdb-agricultural-water-grants.html): California CDFA SWEEP ($200k) vs Texas TWDB ($500k) agricultural water grants, VFD pump thermodynamics, SDI, and cost-share stacking.
 * [`article-62-us-50-state-agricultural-grant-playbook.html`](file:///g:/Meine%20Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/articles/article-62-us-50-state-agricultural-grant-playbook.html): Master Playbook for non-dilutive capital across all 50 states ($19 OpenCEA Pro lead magnet).
 * [`article-63-florida-texas-agricultural-water-irrigation-grants.html`](file:///g:/Meine%20Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/articles/article-63-florida-texas-agricultural-water-irrigation-grants.html): FDACS BMP 87.5% and TWDB Agri-Clean Water programs.
 * [`article-64-midwest-corn-belt-water-quality-soil-health-subsidies.html`](file:///g:/Meine%20Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/articles/article-64-midwest-corn-belt-water-quality-soil-health-subsidies.html): Iowa WQI, Ohio H2Ohio, Minnesota AGRI conservation grants.
