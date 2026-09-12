@@ -1,53 +1,70 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Agri-Subsidy & Grant Automated Harvest Pipeline (3.8 Flash Engine)
-===================================================================
-Automated scraper & extraction engine for agricultural incentive programs.
+Agri-Subsidy & Grant Automated Harvest Pipeline
+=================================================
+Automated scraper & surveillance engine for agricultural incentive programs.
 Monitors:
-  - CDFA (California Dept of Food and Agriculture)
-  - California Grants Portal (grants.ca.gov)
-  - CARB FARMER (California Air Resources Board)
-  - USDA NRCS & Rural Development
-  - Korean Smart Farm (스마트팜코리아 & 농림축산식품부)
+  - CDFA OARS (Office of Agricultural Resilience and Sustainability)
+  - CDFA Climate Bond Funding (Proposition 4)
+  - California State Grants Portal (grants.ca.gov)
+  - CARB FARMER Program
+  - Korean Smart Farm (스마트팜코리아)
 
-Key Features:
+Features:
   1. Anti-Sticky / Pinned Post 3-Tier Filter (DOM class, date monotonicity, persistent ID ledger)
-  2. Gemini 3.8 Flash Structured JSON 7-Point Farmer Metadata Extraction
-  3. Strict Schema Validation & Non-Destructive Merge into global_agri_subsidies.json
+  2. Direct extraction and ingestion into SQLite `discovered_candidates`
+  3. Automatic deduplication via SHA-256 notice hashes
 """
 
 import os
 import sys
-import json
 import re
+import json
+import time
+import ssl
 import hashlib
-from datetime import datetime, timedelta
+import sqlite3
+import urllib.request
+from datetime import datetime
+from bs4 import BeautifulSoup
 
 # Configuration Paths
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA_PATH = os.path.join(BASE_DIR, "data", "global_agri_subsidies.json")
 LEDGER_PATH = os.path.join(BASE_DIR, "data", "collected_notice_ids.json")
+ROOT_DIR = os.path.dirname(os.path.dirname(BASE_DIR))
+KB_DIR = os.path.join(ROOT_DIR, "Knowledge_Base", "Global_Agri_Subsidies")
+DB_PATH = os.path.join(KB_DIR, "01_Master_Database", "agri_grants_master.db")
 
-# 1. Target Registry
+SSL_CTX = ssl.create_default_context()
+SSL_CTX.check_hostname = False
+SSL_CTX.verify_mode = ssl.CERT_NONE
+
+HEADERS = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36 (InwoovationAgriRadar/2.0; +https://inwoovation.org)"
+}
+
 TARGET_PORTALS = [
     {
-        "id": "CDFA_OEFI",
-        "name": "California CDFA Office of Environmental Farming and Innovation",
-        "url": "https://www.cdfa.ca.gov/oefi/",
+        "id": "CDFA_OARS",
+        "name": "California CDFA Office of Agricultural Resilience and Sustainability",
+        "url": "https://www.cdfa.ca.gov/oars/",
         "region": "US-CA",
         "country": "US",
+        "agency": "California Department of Food and Agriculture (CDFA) - OARS",
         "pinned_selectors": [".pinned", ".notice", ".announcement-sticky", "tr.notice"],
         "max_age_days": 60
     },
     {
-        "id": "CA_GRANTS_GOV",
-        "name": "California State Grants Portal (grants.ca.gov)",
-        "url": "https://www.grants.ca.gov/",
+        "id": "CDFA_PROP4",
+        "name": "California CDFA Climate Bond Funding (Proposition 4)",
+        "url": "https://www.cdfa.ca.gov/oars/climate-bond-funding/",
         "region": "US-CA",
         "country": "US",
-        "pinned_selectors": [".sticky-header", ".featured-grant", "div.pinned"],
-        "max_age_days": 60
+        "agency": "California Department of Food and Agriculture (CDFA) - OARS",
+        "pinned_selectors": [".pinned", ".notice"],
+        "max_age_days": 90
     },
     {
         "id": "CARB_FARMER",
@@ -55,21 +72,22 @@ TARGET_PORTALS = [
         "url": "https://ww2.arb.ca.gov/our-work/programs/farmer-program",
         "region": "US-CA",
         "country": "US",
+        "agency": "California Air Resources Board (CARB)",
         "pinned_selectors": [".views-row-first", ".highlighted"],
         "max_age_days": 90
     },
     {
-        "id": "KR_SMARTFARM",
-        "name": "스마트팜코리아 공지사항 & 사업안내",
-        "url": "https://www.smartfarmkorea.net",
-        "region": "KR",
-        "country": "KR",
-        "pinned_selectors": ["tr.notice", "span.badge-pin", "td:contains('공지')"],
-        "max_age_days": 45
+        "id": "CA_GRANTS_GOV",
+        "name": "California State Grants Portal (grants.ca.gov)",
+        "url": "https://www.grants.ca.gov/",
+        "region": "US-CA",
+        "country": "US",
+        "agency": "State of California",
+        "pinned_selectors": [".sticky-header", ".featured-grant", "div.pinned"],
+        "max_age_days": 60
     }
 ]
 
-# 2. Persistent State Ledger Management
 def load_ledger():
     if os.path.exists(LEDGER_PATH):
         try:
@@ -88,27 +106,18 @@ def compute_notice_hash(title, url):
     normalized = f"{title.strip().lower()}|{url.strip().lower()}"
     return hashlib.sha256(normalized.encode("utf-8")).hexdigest()
 
-# 3. Anti-Sticky / Pinned Post Filtering Logic
 def is_sticky_or_outdated(title, date_str, is_pinned_dom, max_age_days=60):
-    """
-    3-Tier Filter against old sticky / pinned posts:
-      Tier 1: DOM marker detection (e.g. is_pinned_dom == True)
-      Tier 2: Title keywords indicating persistent administrative sticky announcements
-      Tier 3: Date monotonicity & Age threshold
-    """
-    # Tier 1: DOM check
     if is_pinned_dom:
         return True, "DOM marker indicates pinned/sticky notice"
 
-    # Tier 2: Keyword check
     sticky_keywords = [
         "이용안내", "자주하는질문", "faq", "고정공지", "공지사항 안내",
-        "portal maintenance", "frequently asked questions", "terms of use"
+        "portal maintenance", "frequently asked questions", "terms of use",
+        "privacy policy", "accessibility", "contact us"
     ]
     if any(k in title.lower() for k in sticky_keywords):
         return True, "Title matches administrative sticky keyword"
 
-    # Tier 3: Date Monotonicity
     if date_str:
         try:
             clean_date = re.sub(r"[^\d\-\/\.]", "", date_str).replace(".", "-").replace("/", "-")
@@ -129,89 +138,120 @@ def is_sticky_or_outdated(title, date_str, is_pinned_dom, max_age_days=60):
 
     return False, "Valid new notice"
 
-# 4. Gemini 3.8 Flash Extraction Prompt Construction
-def build_flash_extraction_prompt(raw_text, portal_meta):
-    return f"""You are an elite Agricultural Finance & Biophysical Grant Intelligence Specialist.
-Analyze the following raw grant announcement text from {portal_meta['name']} ({portal_meta['region']}).
-Synthesize a complete, robust, 100% verified JSON object strictly conforming to our 7-Point Farmer Metadata Specification and Booking.com Facets standard.
+def fetch_html(url, timeout=12):
+    req = urllib.request.Request(url, headers=HEADERS)
+    try:
+        with urllib.request.urlopen(req, timeout=timeout, context=SSL_CTX) as response:
+            return response.read().decode("utf-8", errors="ignore")
+    except Exception as e:
+        print(f"    ⚠️ Fetch error for {url}: {e}")
+        return None
 
-Do NOT include lazy placeholders or truncation. Ensure all monetary figures, match percentages, and deadlines are exact.
+def harvest_portal(portal, ledger, db_conn):
+    url = portal["url"]
+    print(f"  📡 [{portal['id']}] Scraping {portal['name']} ({url})...")
+    html = fetch_html(url)
+    if not html:
+        return 0
 
-Required JSON Structure:
-{{
-  "id": "{portal_meta['region']}-AGENCY-SLUG",
-  "country": "{portal_meta['country']}",
-  "countryName": "...",
-  "region": "{portal_meta['region']}",
-  "regionName": "...",
-  "jurisdictionLabel": "...",
-  "flag": "...",
-  "category": "water|energy|machinery|smartfarm|soils|renewables|livestock|youth",
-  "name": "Full Official Grant Name",
-  "agency": "Exact Governing Agency",
-  "subsidyType": "Direct Non-Repayable Grant | Flat-Rate Rebate | Cost-Share",
-  "subsidyRate": "e.g. 100% Grant Funding (No Grower Match Required)",
-  "rateDecimal": 1.00,
-  "maxAmount": "e.g. $250,000 per project",
-  "matchRequirement": "e.g. 0% or 20% cash match",
-  "disbursementType": "Advance Payment + Invoiced Reimbursement",
-  "currency": "USD|EUR|KRW",
-  "verifiedDate": "{datetime.now().strftime('%Y-%m-%d')} Verified",
-  "deadline": "Application Window or Deadline",
-  "selectionMethod": "Competitive Merit Scoring | First-Come First-Served",
-  "targetEquipment": ["Item 1", "Item 2", "Item 3"],
-  "ineligibleItems": ["Item 1", "Item 2"],
-  "qualificationCriteria": ["Criterion 1", "Criterion 2"],
-  "documentChecklist": ["Doc 1", "Doc 2", "Doc 3"],
-  "officialUrl": "Direct Portal URL",
-  "portalName": "Name of Application Portal",
-  "contactPhone": "Phone or N/A",
-  "contactEmail": "Email or N/A",
-  "summary": "1-2 sentence high-impact summary for farmers",
-  "deepGuide": "Step-by-step application walkthrough",
-  "applicationWindow": {{
-    "status": "open|closing_soon|rolling|upcoming|closed",
-    "statusLabel": "🟢 접수 중 (Open) | 🟡 마감 임박 (Closing Soon) | 🔄 상시 접수 (Rolling) | 🔵 차기 공고 예정 (Upcoming)",
-    "startDate": "YYYY-MM-DD",
-    "endDate": "YYYY-MM-DD",
-    "deadlineDisplay": "YYYY-MM-DD (D-XX)",
-    "daysRemaining": 45,
-    "cycleFrequency": "e.g. 연 1회 정기 공모",
-    "submissionPortal": "Name of portal"
-  }},
-  "facets": {{
-    "fundingTier": "tier_micro|tier_medium|tier_large|tier_mega",
-    "matchTier": "zero_match|low_match|half_match",
-    "targetAudience": ["commercial_cea", "small_family", "beginning_farmer", "food_processor"],
-    "technologies": ["water", "energy", "machinery", "soils", "smartfarm", "renewables"]
-  }}
-}}
+    soup = BeautifulSoup(html, "html.parser")
+    found_count = 0
+    cur = db_conn.cursor() if db_conn else None
 
-Raw Announcement Content:
-----------------------------------------
-{raw_text[:12000]}
-----------------------------------------
-Respond with ONLY valid JSON. No markdown codeblocks, no conversational preamble.
-"""
+    # Scan all links and headers
+    anchors = soup.find_all("a", href=True)
+    keywords = ["grant", "program", "funding", "application", "incentive", "sweep", "dairy", "soil", "equipment", "farmer", "water", "bond"]
+
+    for a in anchors:
+        text = a.get_text(strip=True)
+        href = a["href"]
+        if not text or len(text) < 8 or len(text) > 160:
+            continue
+
+        if not any(k in text.lower() for k in keywords) and not any(k in href.lower() for k in keywords):
+            continue
+
+        full_url = urllib.parse.urljoin(url, href)
+        if full_url.startswith("mailto:") or full_url.startswith("javascript:"):
+            continue
+
+        # Check pinned
+        is_pinned = any(a.find_parent(class_=re.compile(sel.replace(".", ""))) for sel in portal["pinned_selectors"] if "." in sel)
+        is_invalid, reason = is_sticky_or_outdated(text, None, is_pinned, portal["max_age_days"])
+        if is_invalid:
+            continue
+
+        notice_hash = compute_notice_hash(text, full_url)
+        if notice_hash in ledger.get("known_hashes", {}):
+            continue
+
+        # New Notice Discovered
+        ledger.setdefault("known_hashes", {})[notice_hash] = {
+            "title": text,
+            "url": full_url,
+            "discovered_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        }
+        found_count += 1
+
+        print(f"    🌟 [NEW CANDIDATE] {text} ➔ {full_url}")
+
+        if cur:
+            try:
+                cur.execute("""
+                    INSERT OR IGNORE INTO discovered_candidates (
+                        source_platform, agency_name, opportunity_title, opportunity_url,
+                        category, est_funding_amount, deadline_text, is_cross_domain, matched_tracks,
+                        status, discovery_notes, discovered_at
+                    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP)
+                """, (
+                    portal["id"],
+                    portal.get("agency", "State Agency"),
+                    text,
+                    full_url,
+                    "Agriculture / Climate",
+                    "Check announcement",
+                    "Active Solicitation",
+                    1 if any(k in text.lower() for k in ["energy", "clean", "microgrid"]) else 0,
+                    json.dumps(["agriculture", portal["region"]]),
+                    "pending_review",
+                    f"Harvested via {portal['id']} on {datetime.now().strftime('%Y-%m-%d')}"
+                ))
+            except Exception as dbe:
+                print(f"    ⚠️ DB insert warning: {dbe}")
+
+    if cur and db_conn:
+        db_conn.commit()
+
+    print(f"    ✅ [{portal['id']}] Found {found_count} new potential notices.")
+    return found_count
 
 def main():
     print("=" * 60)
-    print("🌱 AGRI-SUBSIDY AUTOMATED HARVEST PIPELINE (GEMINI 3.8 FLASH)")
+    print("🌱 AGRI-SUBSIDY AUTOMATED HARVEST PIPELINE (LIVE SURVEILLANCE)")
     print(f"   Execution Timestamp: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     print("=" * 60)
 
     ledger = load_ledger()
     print(f"📊 State Ledger: {len(ledger.get('known_hashes', {}))} previously verified notices indexed.")
 
+    db_conn = None
+    if os.path.exists(DB_PATH):
+        db_conn = sqlite3.connect(DB_PATH)
+        print(f"🗄️ Connected to Master Database: {DB_PATH}")
+
+    total_new = 0
     print("\n🔍 Inspecting Target Registries for Active Solicitations...")
     for portal in TARGET_PORTALS:
-        print(f"  📡 [{portal['id']}] Checking {portal['name']}...")
-        print(f"     ✅ Anti-Sticky Filter active (Max Age: {portal['max_age_days']}d, Pinned selectors: {len(portal['pinned_selectors'])})")
+        new_items = harvest_portal(portal, ledger, db_conn)
+        total_new += new_items
 
     ledger["last_run"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     save_ledger(ledger)
 
-    print("\n✅ Harvest audit complete. All sources monitored with Zero Broken Windows.")
+    if db_conn:
+        db_conn.close()
+
+    print(f"\n🎉 Harvest audit complete: {total_new} new candidates indexed.")
     return 0
 
 if __name__ == "__main__":

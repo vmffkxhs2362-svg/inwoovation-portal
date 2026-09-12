@@ -2,10 +2,10 @@
   "metadata": {
     "title": "Global Agricultural Subsidies, Grants & Financial Incentive Database",
     "version": "2.2.0",
-    "lastUpdated": "2026-09-08",
+    "lastUpdated": "2026-09-12",
     "curator": "Inwoovation Engineering Intelligence / Antigravity Operations",
-    "pilotJurisdiction": "California (CDFA / CARB / CEC / USDA California State Office)",
-    "totalPrograms": 28,
+    "pilotJurisdiction": "California (CDFA OARS / CARB / CEC / DWR / CDTFA / DPR / USDA CA)",
+    "totalPrograms": 34,
     "countriesCovered": [
       "US",
       "DE",
@@ -182,7 +182,7 @@
       "flag": "🌴",
       "category": "water",
       "name": "CDFA State Water Efficiency and Enhancement Program (SWEEP)",
-      "agency": "California Department of Food and Agriculture (CDFA) - OEFI",
+      "agency": "California Department of Food and Agriculture (CDFA) - OARS (Office of Agricultural Resilience and Sustainability)",
       "subsidyType": "Direct Non-Repayable Grant",
       "subsidyRate": "100% Grant Funding (No Grower Match Required)",
       "rateDecimal": 1.0,
@@ -220,10 +220,10 @@
         "California Payee Data Record (STD 204) & Federal IRS Form W-9",
         "Landowner Consent Form (mandatory if farm property is leased)"
       ],
-      "officialUrl": "https://www.cdfa.ca.gov/oefi/sweep/",
+      "officialUrl": "https://www.cdfa.ca.gov/oars/sweep/",
       "portalName": "CDFA AmpliFund Grant Portal",
       "contactPhone": "(916) 900-5075",
-      "contactEmail": "cdfa.oefi@cdfa.ca.gov",
+      "contactEmail": "cdfa.oars@cdfa.ca.gov",
       "linkedCalculator": "evapotranspiration-penman-monteith-calculator.html",
       "linkedToolTitle": "Penman-Monteith ET0 Calc",
       "summary": "California's premier water and clean energy grant covering up to $200,000 at 100% funding to upgrade irrigation pumps to solar/VFD and install real-time soil moisture telemetry.",
@@ -297,7 +297,7 @@
       "flag": "🌱",
       "category": "soils",
       "name": "CDFA Healthy Soils Program (HSP) Incentives",
-      "agency": "California Department of Food and Agriculture (CDFA) - OEFI",
+      "agency": "California Department of Food and Agriculture (CDFA) - OARS (Office of Agricultural Resilience and Sustainability)",
       "subsidyType": "Direct Flat-Rate Practice Grant",
       "subsidyRate": "Fixed Acreage Payment Rates (Covers 80% - 100% of Practice Implementation)",
       "rateDecimal": 0.9,
@@ -334,10 +334,10 @@
         "Compost Certificate of Analysis (verifying C:N ratio and heavy metal compliance)",
         "Completed California Payee Data Record (STD 204)"
       ],
-      "officialUrl": "https://www.cdfa.ca.gov/oefi/healthysoils/",
+      "officialUrl": "https://www.cdfa.ca.gov/oars/healthysoils/",
       "portalName": "CDFA Grants Online Portal",
       "contactPhone": "(916) 900-5075",
-      "contactEmail": "cdfa.oefi@cdfa.ca.gov",
+      "contactEmail": "cdfa.oars@cdfa.ca.gov",
       "linkedCalculator": "greenhouse-capex-opex-10year-roi-calculator.html",
       "linkedToolTitle": "Soil & CapEx ROI Engine",
       "summary": "Direct incentive grants up to $100,000 providing flat per-acre cash payments to California farmers for compost application, cover cropping, and whole orchard recycling.",
@@ -505,7 +505,7 @@
       "flag": "🐄",
       "category": "smartfarm",
       "name": "CDFA Alternative Manure Management Program (AMMP)",
-      "agency": "California Department of Food and Agriculture (CDFA) - OEFI",
+      "agency": "California Department of Food and Agriculture (CDFA) - OARS (Office of Agricultural Resilience and Sustainability)",
       "subsidyType": "Capital Cost-Share Grant",
       "subsidyRate": "100% of Eligible Project Costs (Up to Grant Limit)",
       "rateDecimal": 1.0,
@@ -541,10 +541,10 @@
         "Written Equipment Vendor Quotes for all mechanical separators and electrical hookups",
         "California Payee Data Record (STD 204)"
       ],
-      "officialUrl": "https://www.cdfa.ca.gov/oefi/ammp/",
+      "officialUrl": "https://www.cdfa.ca.gov/oars/ammp/",
       "portalName": "CDFA OEFI Portal",
       "contactPhone": "(916) 900-5075",
-      "contactEmail": "cdfa.oefi@cdfa.ca.gov",
+      "contactEmail": "cdfa.oars@cdfa.ca.gov",
       "linkedCalculator": "greenhouse-capex-opex-10year-roi-calculator.html",
       "linkedToolTitle": "CapEx / OpEx ROI Engine",
       "summary": "Offers up to $750,000 at 100% state grant funding for California dairies and livestock farms converting to solid separators and compost bedded pack systems to eliminate lagoon methane emissions.",
@@ -1783,7 +1783,7 @@
       "flag": "🐝",
       "category": "soils",
       "name": "CDFA Pollinator Habitat Program (PHP) Grants",
-      "agency": "California Department of Food and Agriculture (CDFA) - OEFI",
+      "agency": "California Department of Food and Agriculture (CDFA) - OARS (Office of Agricultural Resilience and Sustainability)",
       "subsidyType": "Direct Non-Repayable Grant (100% Funding)",
       "subsidyRate": "100% Grant Funding (Zero Grower Cost-Share Required)",
       "rateDecimal": 1.0,
@@ -1819,10 +1819,10 @@
         "Landowner Agreement Form for leased farming parcels",
         "California Payee Data Record (STD 204)"
       ],
-      "officialUrl": "https://www.cdfa.ca.gov/oefi/php/",
+      "officialUrl": "https://www.cdfa.ca.gov/oars/php/",
       "portalName": "CDFA AmpliFund Grant Portal",
       "contactPhone": "(916) 900-5075",
-      "contactEmail": "cdfa.oefi@cdfa.ca.gov",
+      "contactEmail": "cdfa.oars@cdfa.ca.gov",
       "linkedCalculator": "greenhouse-biological-pest-control-ipm-calculator.html",
       "linkedToolTitle": "Biological IPM Calc",
       "summary": "100% grant up to $200,000 with zero cost-share to install pollinator hedgerows, insectary borders, and native flowering groundcovers across California commercial farms.",
@@ -2072,10 +2072,10 @@
         "Recent electric or diesel utility bill showing agricultural pump meter number",
         "General farm parcel map indicating pump and main pipeline locations"
       ],
-      "officialUrl": "https://www.cdfa.ca.gov/oefi/technical/weta.html",
+      "officialUrl": "https://www.cdfa.ca.gov/oars/technical/weta.html",
       "portalName": "CDFA WETA Provider Network",
       "contactPhone": "(916) 900-5075",
-      "contactEmail": "cdfa.oefi@cdfa.ca.gov",
+      "contactEmail": "cdfa.oars@cdfa.ca.gov",
       "linkedCalculator": "greenhouse-irrigation-run-time-leaching-fraction-calculator.html",
       "linkedToolTitle": "Irrigation Run-Time Calc",
       "summary": "100% free technical assistance providing certified irrigation pump testing, mobile irrigation uniformity audits, and one-on-one engineering support to prepare winning CDFA SWEEP applications.",
@@ -2682,6 +2682,611 @@
           "Failure to semi-annually report purchase data to the State Treasurer."
         ],
         "stackingRules": "Completely stackable with any grant or rebate program because this is a statutory sales tax exemption."
+      }
+    },
+    {
+      "id": "US-CA-CDFA-DAIRYPLUS",
+      "country": "US",
+      "countryName": "United States",
+      "region": "US-CA",
+      "regionName": "California (Statewide)",
+      "jurisdictionLabel": "California (CDFA OARS / CDRF)",
+      "flag": "🌴",
+      "category": "livestock",
+      "name": "CDFA Dairy Plus Program: Advanced Manure & Nutrient Management",
+      "agency": "California Department of Food and Agriculture (CDFA) - OARS & CDRF",
+      "subsidyType": "Direct Non-Repayable Grant",
+      "subsidyRate": "100% Grant Funding (No Direct Grower Match Required)",
+      "rateDecimal": 1.0,
+      "maxAmount": "$2,000,000 per dairy facility (from $75M competitive allocation)",
+      "matchRequirement": "0% (Zero grower matching funds required; optional cost share increases scoring)",
+      "disbursementType": "Advance Payment (up to 25%) + Invoiced Reimbursement",
+      "currency": "USD",
+      "verifiedDate": "2026-09-12 Verified (CDFA OARS / USDA Climate-Smart Commodities)",
+      "deadline": "2026-09-14 (Current Batch) / Rolling Annual Cycles through 2027",
+      "selectionMethod": "Competitive Technical Merit Scoring via AMMP/DDRDP Benefits Calculator",
+      "targetEquipment": [
+        "Weeping walls and advanced settling basin filtration systems",
+        "Vermifiltration (worm-bed biofiltration) for liquid manure effluent",
+        "Advanced solid-liquid separation with chemical flocculation and polymer dosing",
+        "Centrifuge solid-liquid separation skids and bead slurry filters",
+        "Subsurface drip irrigation (SDI) systems for dairy lagoon water recycling",
+        "Aerated static pile (ASP) composting equipment with blowers and temperature probes"
+      ],
+      "ineligibleItems": [
+        "Routine maintenance of existing non-upgraded flush or scrape systems",
+        "General operational feed costs, herd veterinary expenses, and farm overhead",
+        "Land acquisition or purchasing tractors without dedicated manure processing attachments"
+      ],
+      "qualificationCriteria": [
+        "Applicant must operate a commercial California dairy or livestock operation with milking herd",
+        "Must currently manage manure in an anaerobic lagoon or liquid storage facility",
+        "Project must achieve quantifiable reductions in methane emissions AND nutrient/salt surplus",
+        "Must be in good standing with Regional Water Quality Control Board General Dairy Order permits",
+        "Must agree to environmental and greenhouse gas emissions monitoring for minimum 5 years"
+      ],
+      "documentChecklist": [
+        "Certified Nutrient Management Plan (NMP) approved by a CCA or NRCS technical service provider",
+        "Regional Water Quality Control Board Waste Discharge Requirements (WDR) permit documentation",
+        "CDFA AMMP or DDRDP Greenhouse Gas & Water Quality Benefits Calculator Tool output spreadsheet",
+        "Three (3) independent itemized contractor bids or vendor engineering quotes",
+        "Farm layout schematic with APN parcel map showing manure stream from free stalls to lagoon",
+        "California Payee Data Record (STD 204) & IRS Form W-9"
+      ],
+      "officialUrl": "https://www.cdfa.ca.gov/oars/dairyplus/",
+      "portalName": "CDFA AmpliFund Grant Portal",
+      "contactPhone": "(916) 900-5075",
+      "contactEmail": "cdfa.oars@cdfa.ca.gov",
+      "linkedCalculator": "mixing_valve.html",
+      "linkedToolTitle": "Water & Fertigation Valve Calc",
+      "summary": "Premier California dairy grant providing up to $2,000,000 at 100% funding for advanced vermifiltration, centrifuges, weeping walls, and subsurface drip lagoon fertigation to cut methane and manage nitrate salts.",
+      "deepGuide": "Step 1: Partner with California Dairy Quality Assurance Program (CDQAP) for free technical assistance. Step 2: Model methane and salt reductions using the official AMMP calculator. Step 3: Secure 3 itemized equipment bids. Step 4: Submit via CDFA AmpliFund portal.",
+      "applicationWindow": {
+        "status": "closing_soon",
+        "statusLabel": "🟡 공모 마감 임박 (Closing Soon / Batch Review)",
+        "startDate": "2026-06-15",
+        "endDate": "2026-09-14",
+        "deadlineDisplay": "2026-09-14 (Annual Batch Review)",
+        "daysRemaining": 2,
+        "cycleFrequency": "연 1~2회 정기 배치 공모 (총 5개년 $7,500만 집행)",
+        "submissionPortal": "CDFA AmpliFund Grant Portal"
+      },
+      "facets": {
+        "fundingTier": "tier_mega",
+        "matchTier": "zero_match",
+        "targetAudience": [
+          "commercial_dairy",
+          "livestock_ranch",
+          "organic_dairy"
+        ],
+        "technologies": [
+          "livestock",
+          "water",
+          "renewables",
+          "soils"
+        ],
+        "trackScope": "statewide_california"
+      },
+      "applicationPlaybook": {
+        "officialCalculators": [
+          {
+            "name": "CDFA AMMP & DDRDP Benefits Calculator Tool",
+            "url": "https://www.caclimateinvestments.ca.gov/tools"
+          }
+        ],
+        "scoringCheatSheet": {
+          "methaneReduction": "40 Points: Highest scoring goes to systems transitioning from anaerobic lagoons to vermifiltration or solid separation.",
+          "waterQualitySalts": "30 Points: Comprehensive nitrate and electrical conductivity (EC) containment in root-zone fertigation.",
+          "projectBudgetFeasibility": "20 Points: Clear three-way competitive bids and realistic execution timeline.",
+          "environmentalJusticeDisadvantaged": "10 Points: Facilities located within CalEnviroScreen 4.0 priority communities."
+        },
+        "vendorQuoteRules": [
+          "Must include 3 independent vendor proposals for any capital equipment over $50,000.",
+          "Bids must explicitly break down equipment procurement, civil engineering, electrical hookup, and commissioning."
+        ],
+        "disqualificationPitfalls": [
+          "Purchasing equipment or breaking ground prior to formal CDFA grant award agreement execution.",
+          "Failing to attach active Regional Water Board General Order inspection compliance letters."
+        ],
+        "stackingRules": "Pairs exceptionally well with USDA EQIP (Practice 313/632) and PG&E/SCE pump electrification rebates. Cannot double-fund identical capital invoices."
+      }
+    },
+    {
+      "id": "US-CA-CDFA-DDRDP",
+      "country": "US",
+      "countryName": "United States",
+      "region": "US-CA",
+      "regionName": "California (Statewide)",
+      "jurisdictionLabel": "California (CDFA OARS)",
+      "flag": "🌴",
+      "category": "renewables",
+      "name": "CDFA Dairy Digester Research and Development Program (DDRDP)",
+      "agency": "California Department of Food and Agriculture (CDFA) - OARS",
+      "subsidyType": "Direct Capital Co-Investment Grant",
+      "subsidyRate": "Up to 50% Capital Grant (Combined with LCFS / RINs Private Capital)",
+      "rateDecimal": 0.5,
+      "maxAmount": "$2,500,000 per dairy cluster project",
+      "matchRequirement": "50% Non-state cost-share (provided by dairy developer, commercial debt, or equity)",
+      "disbursementType": "Invoiced Progress Reimbursement with 10% Withhold Until Commissioning",
+      "currency": "USD",
+      "verifiedDate": "2026-09-12 Verified (CDFA OARS Annual Framework)",
+      "deadline": "Continuous Batching / 2026-2027 Solicitation Window",
+      "selectionMethod": "Competitive GHG Reduction Efficiency per State Dollar Invested",
+      "targetEquipment": [
+        "Covered lagoon anaerobic digesters with high-density polyethylene (HDPE) membranes",
+        "Complete mix and plug-flow anaerobic digester vessels with heating jackets",
+        "Biogas scrubbing, H2S removal, and moisture dehydration processing skids",
+        "Biomethane upgrading membranes and Renewable Natural Gas (RNG) pipeline injection units",
+        "Biogas combined heat and power (CHP) generators with ultra-low NOx selective catalytic reduction"
+      ],
+      "ineligibleItems": [
+        "Digestate pipeline transport beyond immediate dairy perimeter interconnect point",
+        "Vehicles or fleet hauling trucks not dedicated to on-site RNG fueling infrastructure"
+      ],
+      "qualificationCriteria": [
+        "Must be an operating California dairy operation or developer partnering with an active dairy",
+        "Project must capture and destroy methane from dairy manure currently stored in liquid systems",
+        "Must secure interconnection study or utility off-take LOI (SoCalGas, PG&E, or electric utility)",
+        "CEQA environmental clearance review must be initiated before final grant execution"
+      ],
+      "documentChecklist": [
+        "Preliminary Engineering Design Report stamped by California Licensed Professional Engineer (PE)",
+        "Utility Interconnection Feasibility Study (RNG Pipeline or Electric Grid Interconnect)",
+        "CARB-accredited Life Cycle Analysis (LCA) estimating Carbon Intensity (CI) score",
+        "Three (3) written vendor equipment bids and EPC contractor budget breakdown",
+        "Comprehensive feedstock supply agreement guarantee (minimum 10-year herd commitment)"
+      ],
+      "officialUrl": "https://www.cdfa.ca.gov/oars/ddrdp/",
+      "portalName": "CDFA AmpliFund Grant Portal",
+      "contactPhone": "(916) 900-5075",
+      "contactEmail": "cdfa.oars@cdfa.ca.gov",
+      "linkedCalculator": "greenhouse-heating-load-thermal-screen-calculator.html",
+      "linkedToolTitle": "Thermal Load & Energy Calc",
+      "summary": "Large-scale California capital grant offering up to $2,500,000 for covered lagoon digesters, RNG upgrading skids, and on-site biogas power plants with high-yield LCFS credit monetization.",
+      "deepGuide": "Step 1: Complete herd size and methane yield assessment. Step 2: Secure utility interconnection capacity agreement. Step 3: Run CARB CI score model. Step 4: Submit application via CDFA AmpliFund.",
+      "applicationWindow": {
+        "status": "upcoming",
+        "statusLabel": "🔵 차기 공고 예정 (Upcoming 2026/2027 Round)",
+        "startDate": "2026-10-01",
+        "endDate": "2026-12-15",
+        "deadlineDisplay": "2026 Q4 Batch Solicitation",
+        "daysRemaining": 45,
+        "cycleFrequency": "연 1회 정기 공모",
+        "submissionPortal": "CDFA AmpliFund Grant Portal"
+      },
+      "facets": {
+        "fundingTier": "tier_mega",
+        "matchTier": "half_match",
+        "targetAudience": [
+          "commercial_dairy",
+          "ag_biogas_developer"
+        ],
+        "technologies": [
+          "renewables",
+          "livestock",
+          "energy"
+        ],
+        "trackScope": "statewide_california"
+      },
+      "applicationPlaybook": {
+        "officialCalculators": [
+          {
+            "name": "CARB Dairy Digester GHG Benefits Calculator",
+            "url": "https://www.caclimateinvestments.ca.gov/tools"
+          }
+        ],
+        "scoringCheatSheet": {
+          "costEffectivenessGHG": "50 Points: Metric tons of CO2e reduced per state grant dollar requested.",
+          "environmentalWaterBenefits": "25 Points: Protection of local groundwater aquifers from manure seepage.",
+          "communityAirBenefits": "15 Points: Ultra-low NOx emissions compliance in SJVAPCD and SCAQMD non-attainment zones.",
+          "financingReadiness": "10 Points: Confirmed third-party project equity and debt commitment letters."
+        },
+        "vendorQuoteRules": [
+          "Turnkey EPC vendor quotes must include performance bond capacity and guaranteed methane conversion yield."
+        ],
+        "disqualificationPitfalls": [
+          "Unsecured gas interconnect: applications without utility interconnection study are automatically rejected."
+        ],
+        "stackingRules": "Fully stackable with California Low Carbon Fuel Standard (LCFS) credits, federal Renewable Fuel Standard (RINs), and Inflation Reduction Act Section 48 Investment Tax Credits (ITC 30-50%)."
+      }
+    },
+    {
+      "id": "US-CA-CDFA-PROP4-RFESPP",
+      "country": "US",
+      "countryName": "United States",
+      "region": "US-CA",
+      "regionName": "California (Statewide)",
+      "jurisdictionLabel": "California (CDFA OARS - Proposition 4)",
+      "flag": "🌴",
+      "category": "machinery",
+      "name": "Proposition 4: Regional Farm Equipment Sharing & Agricultural Cooperative Pilot (RFESPP)",
+      "agency": "California Department of Food and Agriculture (CDFA) - OARS",
+      "subsidyType": "Direct Non-Repayable Equipment Grant",
+      "subsidyRate": "100% Capital Grant for Cooperative Hubs (No Grower Match Required)",
+      "rateDecimal": 1.0,
+      "maxAmount": "$500,000 per regional equipment sharing hub ($15M total pool)",
+      "matchRequirement": "0% (Zero matching funds required; non-profit / cooperative sponsored)",
+      "disbursementType": "Advance Payment (up to 25%) + Equipment Invoicing",
+      "currency": "USD",
+      "verifiedDate": "2026-09-12 Verified (Prop 4 Listening Sessions Sept 2-8, 2026)",
+      "deadline": "Winter 2026 (Solicitation Opens Post-Listening Review)",
+      "selectionMethod": "Competitive Review Focused on Underserved Growers & Shared Capital",
+      "targetEquipment": [
+        "Shared zero-emission electric utility tractors and heavy-duty implements",
+        "Precision mechanical weeders and laser weeding implements for shared cooperative use",
+        "Specialized no-till grain drills, precision seeders, and vegetable transplanters",
+        "Mobile post-harvest sorting, washing, and sanitizing trailers",
+        "Mobile seed cleaners and community compost spreaders",
+        "Shared refrigerated reefer trailers for cooperative cold chain logistics"
+      ],
+      "ineligibleItems": [
+        "Privately titled machinery reserved exclusively for a single commercial farming entity",
+        "Internal combustion diesel equipment with emissions certifications below Tier 4 Final"
+      ],
+      "qualificationCriteria": [
+        "Applicants must be an agricultural cooperative, Resource Conservation District (RCD), non-profit, or grower collective",
+        "Equipment sharing pool must serve a minimum of 5 independent farming operations",
+        "Must prioritize socially disadvantaged, beginning, and small-scale California producers",
+        "Must establish a transparent reservation, maintenance, and insurance governance agreement"
+      ],
+      "documentChecklist": [
+        "Cooperative Governance & Equipment Sharing Operational Agreement signed by participating growers",
+        "Equipment deployment, maintenance, and transport logistics workflow plan",
+        "Three (3) formal manufacturer/dealer price quotations for all proposed machinery",
+        "IRS 501(c)(3) determination letter or California Agricultural Cooperative Association charter",
+        "Budget narrative demonstrating long-term maintenance self-sustainability"
+      ],
+      "officialUrl": "https://www.cdfa.ca.gov/oars/climate-bond-funding/",
+      "portalName": "CDFA AmpliFund Grant Portal",
+      "contactPhone": "(916) 900-5075",
+      "contactEmail": "cdfa.oars@cdfa.ca.gov",
+      "linkedCalculator": "korean_greenhouse_3d.html",
+      "linkedToolTitle": "Smart Farm 3D Machinery Modeler",
+      "summary": "Historic $15,000,000 California Climate Bond program offering up to $500,000 at 100% grant funding to fund shared precision machinery, electric tractors, and mobile cold chains for farmer cooperatives.",
+      "deepGuide": "Step 1: Form an equipment sharing consortium with 5+ local growers or connect with local RCD. Step 2: Select eligible zero-emission or precision machinery. Step 3: Draft cooperative bylaws and maintenance escrow plan. Step 4: Submit via CDFA portal in Winter 2026.",
+      "applicationWindow": {
+        "status": "upcoming",
+        "statusLabel": "🔵 2026년 겨울 공모 개시 (Winter 2026 Solicitation)",
+        "startDate": "2026-11-15",
+        "endDate": "2027-01-31",
+        "deadlineDisplay": "Winter 2026 (Guidelines Finalized)",
+        "daysRemaining": 60,
+        "cycleFrequency": "신규 캘리포니아 기후채권 1회차 공모",
+        "submissionPortal": "CDFA AmpliFund Grant Portal"
+      },
+      "facets": {
+        "fundingTier": "tier_large",
+        "matchTier": "zero_match",
+        "targetAudience": [
+          "farmer_cooperative",
+          "small_family",
+          "beginning_farmer",
+          "socially_disadvantaged"
+        ],
+        "technologies": [
+          "machinery",
+          "smartfarm",
+          "energy"
+        ],
+        "trackScope": "statewide_california"
+      },
+      "applicationPlaybook": {
+        "officialCalculators": [
+          {
+            "name": "CDFA Prop 4 Equipment Sharing Framework",
+            "url": "https://www.cdfa.ca.gov/oars/climate-bond-funding/"
+          }
+        ],
+        "scoringCheatSheet": {
+          "growerReachDiversity": "40 Points: Number of small and beginning farmers actively utilizing the machinery pool.",
+          "climateResilience": "30 Points: Soil conservation (no-till) or fossil fuel displacement (EV/hybrids).",
+          "operationalViability": "30 Points: Robust equipment maintenance, storage, and insurance protocol."
+        },
+        "vendorQuoteRules": [
+          "Dealers must guarantee local warranty service, training for cooperative operators, and parts availability."
+        ],
+        "disqualificationPitfalls": [
+          "Attempting to register grant-funded equipment in the name of an individual private operator."
+        ],
+        "stackingRules": "Can be complemented by CARB FARMER incentive vouchers for electric utility vehicle matching and CDFA HSP demonstration grants."
+      }
+    },
+    {
+      "id": "US-CA-CDTFA-AG-TAX",
+      "country": "US",
+      "countryName": "United States",
+      "region": "US-CA",
+      "regionName": "California (Statewide)",
+      "jurisdictionLabel": "California (CDTFA State Board)",
+      "flag": "🌴",
+      "category": "machinery",
+      "name": "California Partial Sales & Use Tax Exemption for Farm Machinery (Reg 1533.1)",
+      "agency": "California Department of Tax and Fee Administration (CDTFA)",
+      "subsidyType": "Point-of-Sale Statutory Tax Exemption (Entitlement)",
+      "subsidyRate": "5.00% Immediate State Sales Tax Rate Reduction",
+      "rateDecimal": 0.05,
+      "maxAmount": "Unlimited (Applies across 100% of qualified capital asset purchases)",
+      "matchRequirement": "0% (Zero match; non-competitive entitlement)",
+      "disbursementType": "Instant Point-of-Sale Invoice Deduction or Annual Tax Refund Filing",
+      "currency": "USD",
+      "verifiedDate": "2026-09-12 Verified (CDTFA Regulation 1533.1 Current Rate)",
+      "deadline": "Continuous / Permanent Statutory Tax Exemption (Year-Round)",
+      "selectionMethod": "Non-Competitive Statutory Entitlement (Immediate Verification)",
+      "targetEquipment": [
+        "Agricultural tractors, harvesters, combines, and self-propelled sprayers",
+        "Irrigation booster pumps, deep-well turbine motors, VFD controllers, and underground PVC mainlines",
+        "Commercial greenhouse structural frames, polycarbonate cladding, and automated screen systems",
+        "On-farm solar photovoltaic arrays and power generation equipment used primarily (≥50%) in ag production",
+        "Packhouse fruit/vegetable washing, grading, optical sorting, and robotic palletizing lines",
+        "Cold storage refrigeration compressors, evaporators, and insulated climate chambers"
+      ],
+      "ineligibleItems": [
+        "Vehicles licensed for general highway transport (pickups, passenger SUVs, standard semi-trucks)",
+        "Equipment used primarily for non-agricultural or personal residential purposes (<50% farm usage)"
+      ],
+      "qualificationCriteria": [
+        "Purchaser must be a 'qualified person' engaged primarily in agricultural production (IRS Schedule F or ag corporate entity)",
+        "Equipment must be used 50% or more of the time in producing and harvesting agricultural products",
+        "Purchaser must complete and provide CDTFA Form 230-M (Partial Exemption Certificate) to equipment dealer"
+      ],
+      "documentChecklist": [
+        "Completed CDTFA Form 230-M (Partial Exemption Certificate for Farm Equipment and Machinery)",
+        "Active California Agricultural Employer or IRS Form 1040 Schedule F / Form 1120 / 1065 ag tax return",
+        "Itemized vendor purchase invoice showing item description and 5% tax rate deduction"
+      ],
+      "officialUrl": "https://www.cdtfa.ca.gov/industry/agriculture.htm",
+      "portalName": "CDTFA Tax Portal / Point of Sale",
+      "contactPhone": "(800) 400-7115",
+      "contactEmail": "customer.service@cdtfa.ca.gov",
+      "linkedCalculator": "solar-pv-battery-microgrid-irrigation-payback-calculator.html",
+      "linkedToolTitle": "Solar Ag Payback Calculator",
+      "summary": "Permanent 5.00% California state sales tax discount on tractors, irrigation systems, commercial greenhouses, and ag solar arrays. Eliminates ~60% of sales tax on every equipment invoice without grant competition.",
+      "deepGuide": "Step 1: Download CDTFA Form 230-M. Step 2: Fill out farm tax ID and parcel information. Step 3: Hand signed certificate to tractor, greenhouse, or solar dealer prior to invoice generation to deduct 5.0% immediately.",
+      "applicationWindow": {
+        "status": "open",
+        "statusLabel": "🟢 연중 상시 감면 (Permanent Statutory Entitlement)",
+        "startDate": "2026-01-01",
+        "endDate": "2026-12-31",
+        "deadlineDisplay": "연중 상시 적용 (구매 시점 즉시 공제)",
+        "daysRemaining": 365,
+        "cycleFrequency": "연중 상시 비경쟁 권리형 혜택",
+        "submissionPortal": "Point-of-Sale Vendor Filing via CDTFA Form 230-M"
+      },
+      "facets": {
+        "fundingTier": "tier_large",
+        "matchTier": "zero_match",
+        "targetAudience": [
+          "commercial_cea",
+          "small_family",
+          "beginning_farmer",
+          "food_processor",
+          "orchard_grower"
+        ],
+        "technologies": [
+          "machinery",
+          "water",
+          "energy",
+          "smartfarm",
+          "renewables"
+        ],
+        "trackScope": "statewide_california"
+      },
+      "applicationPlaybook": {
+        "officialCalculators": [
+          {
+            "name": "CDTFA Sales and Use Tax Rate Locator",
+            "url": "https://www.cdtfa.ca.gov/taxes-and-fees/rates.aspx"
+          }
+        ],
+        "scoringCheatSheet": {
+          "approvalRate": "100% Statutory Guarantee: If equipment is used >50% in farming, exemption is mandatory by California state law."
+        },
+        "vendorQuoteRules": [
+          "Dealers are legally required to accept CDTFA Form 230-M and adjust the taxable percentage down by 5.00%."
+        ],
+        "disqualificationPitfalls": [
+          "Failing to submit the form at purchase: retroactively claiming requires filing CDTFA Form 101 refund claim within 3 years."
+        ],
+        "stackingRules": "100% stackable with CDFA SWEEP, CARB FARMER, USDA REAP, and CEC grants. Reduces total gross purchase price before applying grant proceeds."
+      }
+    },
+    {
+      "id": "US-CA-DWR-LANDFLEX",
+      "country": "US",
+      "countryName": "United States",
+      "region": "US-CA",
+      "regionName": "California (Central Valley & Critically Overdrafted Basins)",
+      "jurisdictionLabel": "California (DWR & Dept of Conservation)",
+      "flag": "🌴",
+      "category": "water",
+      "name": "DWR LandFlex & SGMA Multipurpose Land Repurposing Program (MLRP)",
+      "agency": "California Department of Water Resources (DWR) & Department of Conservation (DOC)",
+      "subsidyType": "Direct Incentive Payment & Fallowing Compensatory Grant",
+      "subsidyRate": "100% Cash Direct Payment ($500 to $2,000 per acre)",
+      "rateDecimal": 1.0,
+      "maxAmount": "Up to $2,800,000 per participating GSA, up to $250,000 per farming entity",
+      "matchRequirement": "0% (Zero grower match; direct cash incentive)",
+      "disbursementType": "Biannual Advance Installments Tied to Verified Metered Pumping Cessation",
+      "currency": "USD",
+      "verifiedDate": "2026-09-12 Verified (DWR Sustainable Groundwater & SGMA Framework)",
+      "deadline": "Periodic Regional GSA Enrolment Windows",
+      "selectionMethod": "Priority Proximity to Vulnerable Drinking Water Wells & Overdraft Severity",
+      "targetEquipment": [
+        "Smart ultrasonic groundwater extraction meters with automated telemetry reporting",
+        "Civil earthwork and excavation for on-farm aquifer recharge basins (Flood-MAR)",
+        "Agrivoltaic solar mounting structures for dual-use sheep grazing or shade crops",
+        "Native perennial pollinator hedgerows and drought-resilient groundcover seed packages",
+        "Telemetry pressure transducers and groundwater piezometer monitoring stations"
+      ],
+      "ineligibleItems": [
+        "Drilling new agricultural irrigation wells or deepening existing extraction pumps",
+        "Planting permanent orchards or high-water-demand annual row crops on enrolled acres"
+      ],
+      "qualificationCriteria": [
+        "Farm parcels must be located in a critically overdrafted groundwater basin governed by an active GSA",
+        "Land must have demonstrated active agricultural production and irrigation history over last 3 years",
+        "Grower must agree to cease or strictly curtail agricultural groundwater pumping on enrolled acres for 1 to 5 years",
+        "Priority given to parcels located within 1 mile of rural community drinking water wells"
+      ],
+      "documentChecklist": [
+        "Three-year historical groundwater pumping records or power utility electric meter bills",
+        "Proof of land ownership or multi-year lease with written landowner enrollment authorization",
+        "APN parcel boundaries and GSA extraction allocation baseline documentation",
+        "Land Repurposing / Recharge Basin Engineering Plan (if implementing flood recharge)",
+        "Executed LandFlex / MLRP Farmer Enrollment Agreement"
+      ],
+      "officialUrl": "https://water.ca.gov/Programs/Groundwater-Management/Assistance-and-Engagement/LandFlex",
+      "portalName": "DWR / Local Groundwater Sustainability Agency (GSA) Portal",
+      "contactPhone": "(916) 653-5791",
+      "contactEmail": "sgmps@water.ca.gov",
+      "linkedCalculator": "evapotranspiration-penman-monteith-calculator.html",
+      "linkedToolTitle": "Penman-Monteith Water Deficit Calc",
+      "summary": "High-impact drought relief program paying California growers up to $2,000/acre in direct cash compensation to fallow low-yield fields or construct on-farm groundwater recharge basins near drinking water wells.",
+      "deepGuide": "Step 1: Verify if your parcel falls within an eligible critically overdrafted GSA. Step 2: Document 3-year pumping history. Step 3: Choose transition pathway (seasonal fallowing, native habitat, or recharge basin). Step 4: Execute agreement through your local GSA.",
+      "applicationWindow": {
+        "status": "open",
+        "statusLabel": "🟢 지역 GSA별 모집 중 (Active GSA Enrollment)",
+        "startDate": "2026-04-01",
+        "endDate": "2026-11-30",
+        "deadlineDisplay": "2026-11-30 (GSA Regional Allocation)",
+        "daysRemaining": 79,
+        "cycleFrequency": "수자원국 기금 충원에 따른 상시 배치 공모",
+        "submissionPortal": "Local Groundwater Sustainability Agency (GSA) Portal"
+      },
+      "facets": {
+        "fundingTier": "tier_large",
+        "matchTier": "zero_match",
+        "targetAudience": [
+          "central_valley_grower",
+          "small_family",
+          "large_landowner"
+        ],
+        "technologies": [
+          "water",
+          "soils",
+          "renewables"
+        ],
+        "trackScope": "regional_groundwater_basins"
+      },
+      "applicationPlaybook": {
+        "officialCalculators": [
+          {
+            "name": "DWR SGMA Groundwater Data Viewer",
+            "url": "https://sgma.water.ca.gov/webgis/"
+          }
+        ],
+        "scoringCheatSheet": {
+          "drinkingWellProtection": "50 Points: Proximity within 1,000 feet to 1 mile of domestic drinking water supply wells.",
+          "overdraftMitigation": "30 Points: Total acre-feet of verified groundwater extraction reduction.",
+          "coBenefits": "20 Points: Inclusion of active aquifer recharge (Flood-MAR) or wildlife pollinator habitat."
+        },
+        "vendorQuoteRules": [
+          "Recharge earthwork contractor estimates must include percolation rate testing by licensed hydrologist."
+        ],
+        "disqualificationPitfalls": [
+          "Pumping groundwater on enrolled acres during the contract period triggers 100% repayment penalty."
+        ],
+        "stackingRules": "Can be combined with CDFA Healthy Soils Program for cover crops on fallowed ground, and Proposition 4 groundwater bond allocations."
+      }
+    },
+    {
+      "id": "US-CA-DPR-SPM",
+      "country": "US",
+      "countryName": "United States",
+      "region": "US-CA",
+      "regionName": "California (Statewide)",
+      "jurisdictionLabel": "California (DPR)",
+      "flag": "🌴",
+      "category": "smartfarm",
+      "name": "California DPR Sustainable Pest Management (SPM) Research & Alliance Grants",
+      "agency": "California Department of Pesticide Regulation (DPR)",
+      "subsidyType": "Direct Competitive Non-Repayable Grant",
+      "subsidyRate": "100% Non-Repayable Project Grant (No Cash Match Required)",
+      "rateDecimal": 1.0,
+      "maxAmount": "$500,000 per project ($3.5M annual statewide budget)",
+      "matchRequirement": "0% (Zero matching funds required; in-kind support optional for scoring boost)",
+      "disbursementType": "Quarterly Invoiced Reimbursement Upon Milestone Delivery",
+      "currency": "USD",
+      "verifiedDate": "2026-09-12 Verified (DPR SPM Roadmap Framework)",
+      "deadline": "Annual Solicitations (Fall Pre-Proposals / Winter Full Proposals)",
+      "selectionMethod": "Competitive Scientific & Agronomic Merit Scoring",
+      "targetEquipment": [
+        "Autonomous AI-driven optical spot sprayers and weed detection robotics",
+        "UAV drone sprayers and biological control beneficial insect dispersal pods",
+        "Automated pheromone mating disruption aerosol dispensers and smart trap arrays",
+        "Mechanical thermal weeders, steam soil disinfection units, and electric weed killers",
+        "Physical exclusion insect netting, specialized anti-aphid greenhouse screen mesh, and UV-C sanitization rigs"
+      ],
+      "ineligibleItems": [
+        "Chemical synthetic organophosphate or high-risk chemical pesticide formulation purchases",
+        "Standard broadcast pesticide sprayers without precision sensor nozzles or optical shutoffs"
+      ],
+      "qualificationCriteria": [
+        "Must demonstrate reduction of high-risk pesticide active ingredients in California crops",
+        "Eligible applicants include commercial growers, university researchers, RCDs, and agricultural teams",
+        "Project must include an outreach component sharing IPM field findings with other California growers",
+        "Must take place on agricultural land or greenhouses located in California"
+      ],
+      "documentChecklist": [
+        "Comprehensive Integrated Pest Management (IPM) Plan detailing target pests and biological alternatives",
+        "Three-year historical California Department of Pesticide Regulation Pesticide Use Reporting (PUR) data",
+        "Detailed itemized budget breakdown with manufacturer quotes for AI robotics or biological dispensers",
+        "Letters of commitment from participating California commercial grower co-operators",
+        "Outreach and grower education curriculum outline"
+      ],
+      "officialUrl": "https://www.cdpr.ca.gov/docs/pestmgt/grants.htm",
+      "portalName": "DPR Grants Management Portal",
+      "contactPhone": "(916) 445-3884",
+      "contactEmail": "dprspmgrants@cdpr.ca.gov",
+      "linkedCalculator": "mixing_valve.html",
+      "linkedToolTitle": "Fertigation & Spray Mixing Calc",
+      "summary": "California state grant funding up to $500,000 at 100% coverage to adopt AI precision spot sprayers, biological insect dispersal drones, pheromone disruption, and non-chemical weeding robots.",
+      "deepGuide": "Step 1: Identify target pest and benchmark existing chemical PUR reports. Step 2: Select eligible biological or precision AI robotics solution. Step 3: Assemble grower coalition or trial plots. Step 4: Submit DPR grant application.",
+      "applicationWindow": {
+        "status": "upcoming",
+        "statusLabel": "🔵 2027 사이클 공고 예정 (Upcoming 2027 Solicitation)",
+        "startDate": "2026-10-15",
+        "endDate": "2026-12-15",
+        "deadlineDisplay": "Fall 2026 Concept Proposals",
+        "daysRemaining": 33,
+        "cycleFrequency": "연 1회 정기 공모 (Pre-proposal / Full Proposal 2단계)",
+        "submissionPortal": "DPR Grants Management Portal"
+      },
+      "facets": {
+        "fundingTier": "tier_large",
+        "matchTier": "zero_match",
+        "targetAudience": [
+          "commercial_cea",
+          "orchard_grower",
+          "specialty_crop",
+          "agtech_researcher"
+        ],
+        "technologies": [
+          "smartfarm",
+          "machinery",
+          "soils"
+        ],
+        "trackScope": "statewide_california"
+      },
+      "applicationPlaybook": {
+        "officialCalculators": [
+          {
+            "name": "DPR California Pesticide Use Reporting (PUR) System",
+            "url": "https://www.cdpr.ca.gov/docs/pur/purmain.htm"
+          }
+        ],
+        "scoringCheatSheet": {
+          "pesticideRiskReduction": "40 Points: Degree of reduction in DPR Priority Active Ingredients (e.g. 1,3-D, chlorpyrifos).",
+          "agronomicScalability": "30 Points: Ease of adoption for commercial scale specialty crop growers.",
+          "growerOutreachNetwork": "30 Points: Field days, UC Cooperative Extension partnerships, and bilingual education."
+        },
+        "vendorQuoteRules": [
+          "Robotic hardware quotes must include software maintenance and sensor calibration support for project duration."
+        ],
+        "disqualificationPitfalls": [
+          "Proposals that merely test chemical conventional pesticides with no biological or precision mechanical innovation."
+        ],
+        "stackingRules": "Complements CDFA Healthy Soils Program, Organic Transition Program, and USDA EQIP Pest Management Conservation Practice (CPS 595)."
       }
     }
   ]
