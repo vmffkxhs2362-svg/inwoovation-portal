@@ -97,12 +97,13 @@ Provide precision engineering calculations for commercial greenhouse operators, 
 
 ---
 
-## 📂 Sector 2: `articles/` — Engineering & Grant Whitepapers (67 Core Guides)
+## 📂 Sector 2: `articles/` — Engineering & Grant Whitepapers (68 Core Guides)
 
 ### Core Mission
 Drive high-authority organic search traffic from commercial growers searching for equipment retrofits, USDA grant applications, and climate steering protocols.
 
 ### Key Flagship Documents
+* [`article-68-direct-air-capture-solid-amine-co2-greenhouse-heat-pumps.html`](file:///g:/Meine%20Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/articles/article-68-direct-air-capture-solid-amine-co2-greenhouse-heat-pumps.html): Direct Air Capture (DAC) & Solid-Amine CO₂ Desorption in Decarbonized Greenhouses: Solving the Carbon Deficit via Heat Pump Waste Heat Integration & US 45Q / EU Horizon Grants.
 * [`article-67-geothermal-district-heating-industrial-heat-pumps-greenhouse.html`](file:///g:/Meine%20Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/articles/article-67-geothermal-district-heating-industrial-heat-pumps-greenhouse.html): Deep Geothermal Heating & Industrial Heat Pumps in Venlo Greenhouses: German Meister Engineering (VDI 4640 / DIN EN 13031) vs. US DOE & USDA REAP 70% Grant Stacking.
 * [`article-66-california-sweep-vs-texas-twdb-agricultural-water-grants.html`](file:///g:/Meine%20Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/articles/article-66-california-sweep-vs-texas-twdb-agricultural-water-grants.html): California CDFA SWEEP ($200k) vs Texas TWDB ($500k) agricultural water grants, VFD pump thermodynamics, SDI, and cost-share stacking.
 * [`article-62-us-50-state-agricultural-grant-playbook.html`](file:///g:/Meine%20Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/articles/article-62-us-50-state-agricultural-grant-playbook.html): Master Playbook for non-dilutive capital across all 50 states ($19 OpenCEA Pro lead magnet).
