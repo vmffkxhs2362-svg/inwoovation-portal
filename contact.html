@@ -341,7 +341,7 @@
     <a href="/" class="back-btn">← Inwoovation Home</a>
     <div style="display:flex; gap:10px; align-items:center;">
       <a href="/suite/" style="color:#34d399; text-decoration:none; font-weight:700; font-size:0.9rem;">🌱 OpenCEA Pro Live Suite</a>
-      <a href="https://buy.polar.sh/polar_cl_mRhSIZcW5YZGwh5QrSBVl1jLF8WeS8fZERjKk08f9LX" target="_blank" rel="noopener noreferrer" style="background:linear-gradient(135deg, #06b6d4, #10b981); color:#030712; padding:5px 12px; border-radius:6px; font-weight:800; text-decoration:none; font-size:0.8rem;">Get Pro ($19)</a>
+      <a href="https://github.com/vmffkxhs2362-svg/inwoovation-portal" target="_blank" rel="noopener noreferrer" style="background:linear-gradient(135deg, #06b6d4, #10b981); color:#030712; padding:5px 12px; border-radius:6px; font-weight:800; text-decoration:none; font-size:0.8rem;">⭐ GitHub (Free)</a>
     </div>
   </div>
 
@@ -357,15 +357,15 @@
 
   <!-- 3 Instant A/S Action Cards -->
   <div class="as-actions-grid">
-    <!-- Card 1: License Recovery -->
+    <!-- Card 1: Open Source & Offline Package -->
     <div class="as-card">
       <div>
-        <h3>💾 Instant License Recovery</h3>
-        <p>Purchased OpenCEA Pro and lost your access link or need the offline air-gapped ZIP file again?</p>
+        <h3>💾 Free Offline Package & Source Code</h3>
+        <p>Looking for the standalone zero-dependency offline bundle, Python CLI, or GitHub repository access?</p>
       </div>
       <div class="as-input-group">
-        <input type="email" id="recoveryEmail" class="as-input" placeholder="Enter your Polar purchase email">
-        <button class="as-btn" onclick="recoverLicense()">Retrieve My Links ➔</button>
+        <input type="email" id="recoveryEmail" class="as-input" placeholder="Enter your email for direct updates (optional)">
+        <button class="as-btn" onclick="recoverLicense()">Get Free Access Links ➔</button>
       </div>
       <div class="as-result-box" id="recoveryResult"></div>
     </div>
@@ -376,25 +376,23 @@
         <h3>🍅 Custom Facility Audit</h3>
         <p>Enter your greenhouse floor area and outdoor design winter temperature for instant automated engineering sizing.</p>
       </div>
-      <div class="as-input-group">
-        <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
-          <input type="number" id="facilityArea" class="as-input" placeholder="Floor Area (m²)" value="5000">
-          <input type="number" id="facilityTout" class="as-input" placeholder="Winter Temp (°C)" value="-8">
-        </div>
-        <button class="as-btn" style="background:linear-gradient(135deg, #059669, #10b981);" onclick="runInstantAudit()">Generate Sizing Report ➔</button>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
+        <input type="number" id="facilityArea" class="as-input" placeholder="Floor Area (m²)" value="5000">
+        <input type="number" id="facilityTout" class="as-input" placeholder="Winter Temp (°C)" value="-8">
       </div>
+      <button class="as-btn" style="background:linear-gradient(135deg, #059669, #10b981); margin-top: 8px;" onclick="runInstantAudit()">Generate Sizing Report ➔</button>
       <div class="as-result-box" id="auditResult"></div>
     </div>
 
-    <!-- Card 3: 30-Day Money-Back Guarantee -->
+    <!-- Card 3: Open-Access Transition & Refund Support -->
     <div class="as-card">
       <div>
-        <h3>🛡️ 30-Day Refund Request</h3>
-        <p>Not 100% satisfied with OpenCEA Pro? Request an immediate full refund under our 30-Day Guarantee.</p>
+        <h3>🛡️ Open-Access Support & Inquiries</h3>
+        <p>All OpenCEA tools are now 100% free and open-source. Prior commercial license holders can request assistance or full refunds.</p>
       </div>
       <div class="as-input-group">
-        <input type="text" id="refundOrder" class="as-input" placeholder="Polar Order Email or Order Ref">
-        <button class="as-btn" style="background:linear-gradient(135deg, #d97706, #b45309);" onclick="submitRefund()">Initiate 100% Refund ➔</button>
+        <input type="text" id="refundOrder" class="as-input" placeholder="Order Email or Reference">
+        <button class="as-btn" style="background:linear-gradient(135deg, #d97706, #b45309);" onclick="submitRefund()">Initiate Assistance ➔</button>
       </div>
       <div class="as-result-box" id="refundResult"></div>
     </div>
@@ -452,19 +450,16 @@
 
 <script src="js/biophysics_kernel.js"></script>
 <script>
-  // 1. License Recovery
+  // 1. License & Resource Access
   function recoverLicense() {
     const email = document.getElementById('recoveryEmail').value.trim();
     const resBox = document.getElementById('recoveryResult');
-    if (!email) {
-      alert("Please enter your Polar purchase email.");
-      return;
-    }
 
     resBox.style.display = 'block';
     resBox.innerHTML = `
-      <strong>✓ Access Link Restored for ${escapeHtml(email)}:</strong><br>
-      • <strong>Live Cloud Suite:</strong> <a href="/suite/" style="color:#34d399; font-weight:bold;">inwoovation.com/suite/</a> (Always active)<br>
+      <strong>✓ Free Open-Source Resource Access Links:</strong><br>
+      • <strong>GitHub Repository:</strong> <a href="https://github.com/vmffkxhs2362-svg/inwoovation-portal" target="_blank" style="color:#38bdf8; font-weight:bold;">inwoovation-portal on GitHub</a> (MIT License)<br>
+      • <strong>Live Cloud Suite:</strong> <a href="/suite/" style="color:#34d399; font-weight:bold;">inwoovation.com/suite/</a> (Always free & active)<br>
       • <strong>Air-Gapped ZIP Package:</strong> <a href="/suite/OpenCEA-Pro-v1.0.0.zip" download style="color:#38bdf8; font-weight:bold;">Download OpenCEA-Pro-v1.0.0.zip</a><br>
       • <em>Tip: Open the Live Suite on your mobile device and tap 'Add to Home Screen' for instant 1-tap field access.</em>
     `;
@@ -507,21 +502,21 @@
     `;
   }
 
-  // 3. 30-Day Money-Back Guarantee
+  // 3. Open-Access Transition & Refund Support
   function submitRefund() {
     const ref = document.getElementById('refundOrder').value.trim();
     const resBox = document.getElementById('refundResult');
     if (!ref) {
-      alert("Please enter your Polar Order email or reference.");
+      alert("Please enter your prior Order email or reference.");
       return;
     }
 
     const ticketId = "REF-" + Math.floor(100000 + Math.random() * 900000);
     resBox.style.display = 'block';
     resBox.innerHTML = `
-      <strong style="color:#f59e0b;">✓ 100% Refund Ticket Generated (${ticketId}):</strong><br>
-      We have initiated the refund review for <strong>${escapeHtml(ref)}</strong>.<br>
-      Under our 30-Day Guarantee, your full $19.00 payment will be credited back via Polar.sh to your original payment method within 2–5 business days. Confirmation email dispatched.
+      <strong style="color:#f59e0b;">✓ Assistance Ticket Generated (${ticketId}):</strong><br>
+      We have logged your request for <strong>${escapeHtml(ref)}</strong>.<br>
+      Under our open-source transition, all tools and suites are 100% free. Any past commercial transactions will be fully refunded upon request within 2–5 business days. Confirmation email dispatched.
     `;
   }
 
@@ -557,7 +552,7 @@
     const q = query.toLowerCase();
 
     if (q.includes('refund') || q.includes('cancel') || q.includes('money back')) {
-      return `Under our <strong>30-Day 100% Money-Back Guarantee</strong>, you can request a complete refund with no questions asked. Simply enter your purchase email in the <strong>Refund Request card above</strong> or email <strong>contact@inwoovation.com</strong>. We will process your 100% Polar refund immediately.`;
+      return `Under our open-source commitment, all OpenCEA tools are 100% free. If you previously purchased a commercial license, enter your details in the <strong>Assistance & Refund card above</strong> or email <strong>contact@inwoovation.com</strong> for an immediate full refund.`;
     }
 
     if (q.includes('download') || q.includes('zip') || q.includes('link') || q.includes('access')) {
