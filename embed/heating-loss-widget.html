@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-adsense-account" content="ca-pub-8597809158257497">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8597809158257497" crossorigin="anonymous"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greenhouse Heating Load Widget (DIN V 18599) | Inwoovation Lab</title>
+  <meta name="description" content="Embed zero-friction greenhouse heating load and boiler gas demand calculator based on DIN V 18599 standards.">
+  <link rel="canonical" href="https://inwoovation.com/embed/heating-loss-widget.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;800&family=JetBrains+Mono:wght@600;700&family=Plus+Jakarta+Sans:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #0f172a;
+      color: #f8fafc;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      padding: 16px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .widget-card {
+      width: 100%;
+      max-width: 360px;
+      background: rgba(30, 41, 59, 0.95);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      border-radius: 16px;
+      padding: 18px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    }
+    .widget-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      padding-bottom: 8px;
+    }
+    .widget-brand {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 800;
+      font-size: 0.85rem;
+      color: #38bdf8;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .widget-brand span { color: #f8fafc; }
+    .badge {
+      background: rgba(6, 182, 212, 0.15);
+      color: #38bdf8;
+      border: 1px solid rgba(6, 182, 212, 0.3);
+      font-size: 0.65rem;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 4px;
+      text-transform: uppercase;
+    }
+    .display-box {
+      text-align: center;
+      background: rgba(15, 23, 42, 0.85);
+      border-radius: 12px;
+      padding: 14px;
+      margin-bottom: 14px;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+    .display-val {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #38bdf8;
+      line-height: 1;
+    }
+    .display-unit { font-size: 0.9rem; color: #94a3b8; font-weight: 600; margin-left: 2px; }
+    .display-sub {
+      font-size: 0.75rem;
+      color: #10b981;
+      margin-top: 6px;
+      font-weight: 600;
+    }
+    .input-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .field-label {
+      font-size: 0.75rem;
+      color: #94a3b8;
+      margin-bottom: 4px;
+      font-weight: 600;
+      display: flex;
+      justify-content: space-between;
+    }
+    .field-label span { color: #38bdf8; }
+    input[type="range"] {
+      width: 100%;
+      height: 4px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 2px;
+      outline: none;
+      -webkit-appearance: none;
+    }
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #38bdf8;
+      cursor: pointer;
+    }
+    select {
+      width: 100%;
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid rgba(255,255,255,0.15);
+      color: #f8fafc;
+      padding: 5px 8px;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      outline: none;
+    }
+    .metrics-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      background: rgba(15, 23, 42, 0.5);
+      border-radius: 8px;
+      padding: 8px;
+      margin-bottom: 12px;
+      font-size: 0.75rem;
+    }
+    .metric-item { display: flex; flex-direction: column; }
+    .metric-lbl { color: #94a3b8; font-size: 0.7rem; }
+    .metric-val { font-family: 'JetBrains Mono', monospace; font-weight: 700; color: #f8fafc; }
+    .widget-footer {
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 10px;
+    }
+    .powered-by {
+      font-size: 0.7rem;
+      color: #94a3b8;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: color 0.2s;
+    }
+    .powered-by:hover { color: #38bdf8; }
+    .powered-by strong { color: #38bdf8; }
+  </style>
+</head>
+<body>
+
+<div class="widget-card">
+  <div class="widget-header">
+    <a href="https://inwoovation.com/" target="_blank" rel="noopener" class="widget-brand">
+      🔥 Inwoo<span>vation</span>
+    </a>
+    <span class="badge">DIN V 18599</span>
+  </div>
+
+  <div class="display-box">
+    <div class="display-val" id="peakKw">185.4<span class="display-unit">kW</span></div>
+    <div class="display-sub" id="gasRate">≈ 19.5 m³/h Natural Gas</div>
+  </div>
+
+  <div class="input-grid">
+    <div>
+      <div class="field-label">Area (m²): <span id="lblArea">2,000</span></div>
+      <input type="range" id="inpArea" min="200" max="10000" step="100" value="2000" oninput="calcHeating()">
+    </div>
+    <div>
+      <div class="field-label">Winter Tout: <span id="lblTout">-5°C</span></div>
+      <input type="range" id="inpTout" min="-20" max="10" step="1" value="-5" oninput="calcHeating()">
+    </div>
+    <div>
+      <div class="field-label">Indoor Tin: <span id="lblTin">18°C</span></div>
+      <input type="range" id="inpTin" min="10" max="25" step="1" value="18" oninput="calcHeating()">
+    </div>
+    <div>
+      <div class="field-label">Glazing Cover</div>
+      <select id="selGlazing" onchange="calcHeating()">
+        <option value="6.5">Single Glass (6.5 W/m²K)</option>
+        <option value="3.2" selected>Double Glass (3.2 W/m²K)</option>
+        <option value="3.0">Polycarbonate 16mm (3.0 W/m²K)</option>
+        <option value="7.0">Single PE Film (7.0 W/m²K)</option>
+        <option value="4.0">Double Poly Inflatable (4.0 W/m²K)</option>
+      </select>
+    </div>
+  </div>
+
+  <div style="margin-bottom: 12px;">
+    <div class="field-label">Energy Thermal Screen</div>
+    <select id="selScreen" onchange="calcHeating()">
+      <option value="0">No Screen (0% Savings)</option>
+      <option value="0.35" selected>Standard Thermal Screen (35% Savings)</option>
+      <option value="0.52">Double High-Grade Screen (52% Savings)</option>
+    </select>
+  </div>
+
+  <div class="metrics-row">
+    <div class="metric-item">
+      <span class="metric-lbl">Specific Load</span>
+      <span class="metric-val" id="specLoad">92.7 W/m²</span>
+    </div>
+    <div class="metric-item">
+      <span class="metric-lbl">Delta T (Tin - Tout)</span>
+      <span class="metric-val" id="deltaT">23.0 K</span>
+    </div>
+  </div>
+
+  <div class="widget-footer">
+    <a href="https://inwoovation.com/tools/greenhouse-heating-load-thermal-screen-calculator.html" target="_blank" rel="noopener" class="powered-by">
+      ⚡ Powered by <strong>Inwoovation Lab (100% Free Open Source)</strong>
+    </a>
+  </div>
+</div>
+
+<script>
+  function calcHeating() {
+    const area = parseFloat(document.getElementById('inpArea').value);
+    const tOut = parseFloat(document.getElementById('inpTout').value);
+    const tIn = parseFloat(document.getElementById('inpTin').value);
+    const uVal = parseFloat(document.getElementById('selGlazing').value);
+    const screenSave = parseFloat(document.getElementById('selScreen').value);
+
+    document.getElementById('lblArea').textContent = area.toLocaleString();
+    document.getElementById('lblTout').textContent = (tOut >= 0 ? '+' : '') + tOut + '°C';
+    document.getElementById('lblTin').textContent = tIn + '°C';
+
+    const delta = Math.max(0, tIn - tOut);
+    document.getElementById('deltaT').textContent = delta.toFixed(1) + ' K';
+
+    // Greenhouse envelope area ratio ≈ 1.35x ground area for Venlo/gable roof
+    const envelopeArea = area * 1.35;
+    // Base transmission heat loss (W)
+    let heatW = envelopeArea * uVal * delta;
+    // Infiltration loss ≈ 0.5 ACH * Volume * 0.34 * delta
+    const avgHeight = 4.5;
+    const vol = area * avgHeight;
+    const infW = 0.5 * vol * 0.34 * delta;
+    let totalW = heatW + infW;
+
+    // Apply thermal screen reduction
+    totalW = totalW * (1 - screenSave);
+
+    const totalKw = totalW / 1000;
+    const spec = totalW / area;
+    // Gas demand ≈ totalKw / 9.5 kWh/m3 (calorific value) / 0.90 (boiler eff)
+    const gasM3 = totalKw / (9.5 * 0.90);
+
+    document.getElementById('peakKw').innerHTML = totalKw.toFixed(1) + '<span class="display-unit">kW</span>';
+    document.getElementById('specLoad').textContent = spec.toFixed(1) + ' W/m²';
+    document.getElementById('gasRate').textContent = '≈ ' + gasM3.toFixed(1) + ' m³/h Natural Gas';
+  }
+
+  calcHeating();
+</script>
+</body>
+</html>

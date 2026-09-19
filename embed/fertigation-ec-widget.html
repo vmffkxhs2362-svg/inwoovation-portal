@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-adsense-account" content="ca-pub-8597809158257497">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8597809158257497" crossorigin="anonymous"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hydroponic Fertigation & Stock Tank Dilution Widget | Inwoovation Lab</title>
+  <meta name="description" content="Embed zero-friction hydroponic A/B stock tank dosing and electrical conductivity (EC) blending calculator for commercial growers.">
+  <link rel="canonical" href="https://inwoovation.com/embed/fertigation-ec-widget.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;800&family=JetBrains+Mono:wght@600;700&family=Plus+Jakarta+Sans:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #0f172a;
+      color: #f8fafc;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      padding: 16px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .widget-card {
+      width: 100%;
+      max-width: 360px;
+      background: rgba(30, 41, 59, 0.95);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      border-radius: 16px;
+      padding: 18px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    }
+    .widget-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      padding-bottom: 8px;
+    }
+    .widget-brand {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 800;
+      font-size: 0.85rem;
+      color: #fbbf24;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .widget-brand span { color: #f8fafc; }
+    .badge {
+      background: rgba(245, 158, 11, 0.15);
+      color: #fbbf24;
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      font-size: 0.65rem;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 4px;
+      text-transform: uppercase;
+    }
+    .display-box {
+      text-align: center;
+      background: rgba(15, 23, 42, 0.85);
+      border-radius: 12px;
+      padding: 14px;
+      margin-bottom: 14px;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+    .display-val {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #fbbf24;
+      line-height: 1;
+    }
+    .display-unit { font-size: 0.9rem; color: #94a3b8; font-weight: 600; margin-left: 2px; }
+    .display-sub {
+      font-size: 0.75rem;
+      color: #38bdf8;
+      margin-top: 6px;
+      font-weight: 600;
+    }
+    .input-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .field-label {
+      font-size: 0.75rem;
+      color: #94a3b8;
+      margin-bottom: 4px;
+      font-weight: 600;
+      display: flex;
+      justify-content: space-between;
+    }
+    .field-label span { color: #fbbf24; }
+    input[type="range"] {
+      width: 100%;
+      height: 4px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 2px;
+      outline: none;
+      -webkit-appearance: none;
+    }
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #fbbf24;
+      cursor: pointer;
+    }
+    select {
+      width: 100%;
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid rgba(255,255,255,0.15);
+      color: #f8fafc;
+      padding: 5px 8px;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      outline: none;
+    }
+    .metrics-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      background: rgba(15, 23, 42, 0.5);
+      border-radius: 8px;
+      padding: 8px;
+      margin-bottom: 12px;
+      font-size: 0.75rem;
+    }
+    .metric-item { display: flex; flex-direction: column; }
+    .metric-lbl { color: #94a3b8; font-size: 0.7rem; }
+    .metric-val { font-family: 'JetBrains Mono', monospace; font-weight: 700; color: #f8fafc; }
+    .widget-footer {
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 10px;
+    }
+    .powered-by {
+      font-size: 0.7rem;
+      color: #94a3b8;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: color 0.2s;
+    }
+    .powered-by:hover { color: #fbbf24; }
+    .powered-by strong { color: #fbbf24; }
+  </style>
+</head>
+<body>
+
+<div class="widget-card">
+  <div class="widget-header">
+    <a href="https://inwoovation.com/" target="_blank" rel="noopener" class="widget-brand">
+      🧪 Inwoo<span>vation</span>
+    </a>
+    <span class="badge">A/B Fertigation</span>
+  </div>
+
+  <div class="display-box">
+    <div class="display-val" id="dispStock">100<span class="display-unit">L</span></div>
+    <div class="display-sub" id="dispRatio">Per 10,000 L Batch at 1:100 Ratio</div>
+  </div>
+
+  <div class="input-grid">
+    <div>
+      <div class="field-label">Batch Volume: <span id="lblBatch">10,000 L</span></div>
+      <input type="range" id="inpBatch" min="1000" max="50000" step="1000" value="10000" oninput="calcFert()">
+    </div>
+    <div>
+      <div class="field-label">Target EC: <span id="lblTargetEc">2.5 mS/cm</span></div>
+      <input type="range" id="inpTargetEc" min="1.0" max="4.0" step="0.1" value="2.5" oninput="calcFert()">
+    </div>
+    <div>
+      <div class="field-label">Raw Water EC: <span id="lblRawEc">0.3 mS/cm</span></div>
+      <input type="range" id="inpRawEc" min="0.0" max="1.5" step="0.1" value="0.3" oninput="calcFert()">
+    </div>
+    <div>
+      <div class="field-label">Dilution Ratio</div>
+      <select id="selRatio" onchange="calcFert()">
+        <option value="100" selected>1 : 100 (Standard Commercial)</option>
+        <option value="200">1 : 200 (High-Concentration)</option>
+        <option value="50">1 : 50 (Small Scale)</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="metrics-row">
+    <div class="metric-item">
+      <span class="metric-lbl">Delta EC (Added Salts)</span>
+      <span class="metric-val" id="deltaEc">2.2 mS/cm</span>
+    </div>
+    <div class="metric-item">
+      <span class="metric-lbl">Dissolved Salts Est.</span>
+      <span class="metric-val" id="saltMass">14.1 kg</span>
+    </div>
+  </div>
+
+  <div class="widget-footer">
+    <a href="https://inwoovation.com/tools/hydroponic-nutrient-solution-calculator.html" target="_blank" rel="noopener" class="powered-by">
+      ⚡ Powered by <strong>Inwoovation Lab (100% Free Open Source)</strong>
+    </a>
+  </div>
+</div>
+
+<script>
+  function calcFert() {
+    const batchL = parseFloat(document.getElementById('inpBatch').value);
+    const targetEc = parseFloat(document.getElementById('inpTargetEc').value);
+    const rawEc = parseFloat(document.getElementById('inpRawEc').value);
+    const ratio = parseFloat(document.getElementById('selRatio').value);
+
+    document.getElementById('lblBatch').textContent = batchL.toLocaleString() + ' L';
+    document.getElementById('lblTargetEc').textContent = targetEc.toFixed(1) + ' mS/cm';
+    document.getElementById('lblRawEc').textContent = rawEc.toFixed(1) + ' mS/cm';
+
+    const delta = Math.max(0, targetEc - rawEc);
+    document.getElementById('deltaEc').textContent = delta.toFixed(1) + ' mS/cm';
+
+    // Required stock volume for this batch
+    const stockL = batchL / ratio;
+    // Estimated salt conversion factor ≈ 0.64 g/L per 1.0 mS/cm delta EC (Sonneveld / Dutch standard)
+    const saltGramsPerLiter = delta * 0.64;
+    const totalSaltKg = (batchL * saltGramsPerLiter) / 1000;
+
+    document.getElementById('dispStock').innerHTML = stockL.toFixed(0) + '<span class="display-unit">L Tank A & B</span>';
+    document.getElementById('dispRatio').textContent = `Per ${batchL.toLocaleString()} L Batch at 1:${ratio} Ratio`;
+    document.getElementById('saltMass').textContent = totalSaltKg.toFixed(1) + ' kg Dry Salts';
+  }
+
+  calcFert();
+</script>
+</body>
+</html>

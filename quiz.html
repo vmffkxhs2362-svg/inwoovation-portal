@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-adsense-account" content="ca-pub-8597809158257497">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8597809158257497" crossorigin="anonymous"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenCEA Biophysics Mastery Quiz & Free Certificate Engine | Inwoovation Lab</title>
+  <meta name="description" content="Test your precision CEA horticultural biophysics knowledge. Solve 10 questions on VPD, DLI, DIN V 18599, and fertigation to earn a free verifiable Certificate of Competence.">
+  <link rel="canonical" href="https://inwoovation.com/quiz.html" />
+  
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V4RYJBMEDE"></script>
+  <script>
+     window.dataLayer = window.dataLayer || [];
+     function gtag(){dataLayer.push(arguments);}
+     gtag('js', new Date());
+     gtag('config', 'G-V4RYJBMEDE');
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=JetBrains+Mono:wght@500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Cinzel:wght@600;700;900&family=Great+Vibes&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="css/global-ui-enhancements.css?v=20260901_spotlight">
+  <script src="js/global-search-palette.js?v=20260901_spotlight"></script>
+
+  <style>
+    :root {
+      --bg-dark: #090d16;
+      --card-bg: rgba(22, 30, 49, 0.85);
+      --card-border: rgba(56, 189, 248, 0.25);
+      --primary-cyan: #06b6d4;
+      --primary-emerald: #10b981;
+      --primary-amber: #f59e0b;
+    }
+    body {
+      background: var(--bg-dark);
+      color: #f8fafc;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .quiz-container {
+      max-width: 880px;
+      margin: 30px auto 80px;
+      padding: 0 20px;
+      flex: 1;
+    }
+    .quiz-card {
+      background: var(--card-bg);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 32px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+      margin-bottom: 24px;
+    }
+    .progress-bar-wrap {
+      width: 100%;
+      height: 8px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 4px;
+      margin-bottom: 24px;
+      overflow: hidden;
+    }
+    .progress-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #06b6d4, #10b981);
+      width: 10%;
+      transition: width 0.3s ease;
+    }
+    .q-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      font-size: 0.85rem;
+      color: #94a3b8;
+    }
+    .q-tag {
+      background: rgba(6, 182, 212, 0.15);
+      color: #38bdf8;
+      border: 1px solid rgba(6, 182, 212, 0.3);
+      padding: 3px 10px;
+      border-radius: 100px;
+      font-weight: 700;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+    }
+    .q-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1.45;
+      margin-bottom: 20px;
+    }
+    .options-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .option-btn {
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 12px;
+      padding: 14px 18px;
+      color: #e2e8f0;
+      font-size: 0.95rem;
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      transition: all 0.2s ease;
+      font-family: inherit;
+    }
+    .option-btn:hover:not(:disabled) {
+      background: rgba(56, 189, 248, 0.12);
+      border-color: #38bdf8;
+      transform: translateX(4px);
+    }
+    .option-btn.selected-correct {
+      background: rgba(16, 185, 129, 0.25) !important;
+      border-color: #10b981 !important;
+      color: #34d399 !important;
+    }
+    .option-btn.selected-wrong {
+      background: rgba(239, 68, 68, 0.25) !important;
+      border-color: #ef4444 !important;
+      color: #f87171 !important;
+    }
+    .option-letter {
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      background: rgba(255,255,255,0.1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: 800;
+      font-size: 0.85rem;
+      flex-shrink: 0;
+    }
+    .explanation-box {
+      background: rgba(15, 23, 42, 0.95);
+      border-left: 4px solid #38bdf8;
+      border-radius: 8px;
+      padding: 16px;
+      margin-top: 16px;
+      display: none;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: #cbd5e1;
+    }
+    .explanation-box.correct { border-left-color: #10b981; }
+    .explanation-box.wrong { border-left-color: #ef4444; }
+    .next-btn-row {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 20px;
+    }
+    .btn-action {
+      background: linear-gradient(135deg, #06b6d4, #10b981);
+      color: #030712;
+      font-weight: 800;
+      border: none;
+      padding: 12px 28px;
+      border-radius: 10px;
+      font-size: 0.95rem;
+      cursor: pointer;
+      display: none;
+      transition: all 0.2s;
+    }
+    .btn-action:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 18px rgba(6, 182, 212, 0.4);
+    }
+
+    /* Certificate Section */
+    .cert-section {
+      display: none;
+      text-align: center;
+    }
+    .cert-canvas-wrap {
+      margin: 24px auto;
+      max-width: 760px;
+      border-radius: 12px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.7);
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    canvas#certCanvas {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .cert-input-wrap {
+      max-width: 480px;
+      margin: 20px auto;
+      display: flex;
+      gap: 8px;
+    }
+    .cert-input {
+      flex: 1;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      padding: 12px 16px;
+      border-radius: 8px;
+      color: white;
+      font-size: 1rem;
+      outline: none;
+    }
+    .share-btn-group {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+    .share-btn {
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.88rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-linkedin { background: #0a66c2; color: white; }
+    .btn-twitter { background: #1da1f2; color: white; }
+    .btn-download { background: #10b981; color: #030712; }
+    .btn-retake { background: rgba(255,255,255,0.1); color: #e2e8f0; }
+  </style>
+</head>
+<body>
+
+  <!-- Site Navigation Bar -->
+  <header style="max-width: 1200px; margin: 0 auto; width: 100%; padding: 20px 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px;">
+    <a href="index.html" style="font-family:'Outfit',sans-serif; font-size:1.35rem; font-weight:800; color:#ffffff; text-decoration:none; display:flex; align-items:center; gap:8px;">
+      🌱 Inwoo<span>vation Lab</span>
+      <span style="font-size:0.75rem; background:linear-gradient(135deg,#06b6d4,#10b981); color:#030712; font-weight:800; padding:2px 8px; border-radius:4px;">ACADEMY</span>
+    </a>
+    <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap;">
+      <a href="tools/index.html" style="color:#94a3b8; text-decoration:none; font-size:0.9rem; font-weight:600;">🛠️ 35 Tools</a>
+      <a href="troubleshoot.html" style="color:#94a3b8; text-decoration:none; font-size:0.9rem; font-weight:600;">🔍 Diagnostic</a>
+      <a href="meister.html" style="color:#94a3b8; text-decoration:none; font-size:0.9rem; font-weight:600;">🇩🇪 Meister Hub</a>
+      <a href="quiz.html" style="color:#38bdf8; text-decoration:none; font-size:0.9rem; font-weight:800;">🏆 10-Q Quiz</a>
+      <button class="nav-search-trigger" onclick="window.InwooPalette.open()"><span>🔍 Search</span> <kbd>Ctrl+K</kbd></button>
+    </div>
+  </header>
+
+  <main class="quiz-container">
+    <!-- Intro Card -->
+    <div class="quiz-card" id="introCard">
+      <div style="display:flex; align-items:center; gap:8px; margin-bottom:12px;">
+        <span class="q-tag">100% FREE &amp; OPEN ACCESS</span>
+        <span style="color:#94a3b8; font-size:0.85rem;">Estimated Time: 5–8 mins</span>
+      </div>
+      <h1 style="font-family:'Outfit',sans-serif; font-size:2.2rem; font-weight:900; color:#f8fafc; margin-bottom:12px;">
+        🏆 OpenCEA Horticultural Biophysics Mastery Assessment
+      </h1>
+      <p style="color:#94a3b8; font-size:1.02rem; line-height:1.65; margin-bottom:24px;">
+        Test your practical and mathematical mastery of commercial controlled-environment biophysics. Questions cover Tetens VPD, DLI photon accumulation, DIN V 18599 greenhouse heating loads, A/B fertigation, and Farquhar photosynthesis. Score 70% or higher to generate an official <strong>Verifiable Certificate of Competence</strong> to showcase on LinkedIn or your CV.
+      </p>
+
+      <div style="background:rgba(15,23,42,0.6); border:1px solid rgba(56,189,248,0.2); border-radius:12px; padding:18px; margin-bottom:28px;">
+        <h3 style="font-size:1rem; color:#38bdf8; margin:0 0 8px 0;">🎯 What You Will Be Tested On:</h3>
+        <ul style="color:#cbd5e1; font-size:0.9rem; line-height:1.7; padding-left:20px; margin:0;">
+          <li>Leaf-to-Air Vapor Pressure Deficit (VPD) &amp; Stomatal Conductance</li>
+          <li>Daily Light Integral (DLI) &amp; Far-Red (730 nm) Photomorphogenesis</li>
+          <li>DIN V 18599 Thermodynamic Greenhouse Heat Loss &amp; Energy Screens</li>
+          <li>Hydroponic Closed-Loop Sodium (Na⁺) Accumulation &amp; A/B Tank Dilution</li>
+          <li>Transpiration, Guttation, &amp; Calcium Blossom-End Rot (BER) Prevention</li>
+        </ul>
+      </div>
+
+      <button class="btn-action" style="display:inline-block;" onclick="startQuiz()">
+        🚀 Start Assessment (10 Questions) →
+      </button>
+    </div>
+
+    <!-- Active Question Card -->
+    <div class="quiz-card" id="qCard" style="display:none;">
+      <div class="progress-bar-wrap">
+        <div class="progress-bar-fill" id="progressFill"></div>
+      </div>
+
+      <div class="q-meta">
+        <span class="q-tag" id="qCategory">VPD &amp; Psychrometrics</span>
+        <span id="qCounter">Question 1 of 10</span>
+      </div>
+
+      <div class="q-title" id="qText">Loading question...</div>
+
+      <div class="options-grid" id="optionsGrid"></div>
+
+      <div class="explanation-box" id="explanationBox"></div>
+
+      <div class="next-btn-row">
+        <button class="btn-action" id="nextBtn" onclick="nextQuestion()">Next Question →</button>
+      </div>
+    </div>
+
+    <!-- Certificate & Results Card -->
+    <div class="quiz-card cert-section" id="resultsCard">
+      <div style="font-size:2.4rem; margin-bottom:6px;">🎉</div>
+      <h2 style="font-family:'Outfit',sans-serif; font-size:2rem; font-weight:900; color:#f8fafc; margin-bottom:8px;">
+        Assessment Complete!
+      </h2>
+      <p id="scoreSummary" style="font-size:1.15rem; color:#38bdf8; font-weight:700; margin-bottom:18px;"></p>
+
+      <div id="certEligibleBlock" style="display:none;">
+        <p style="color:#94a3b8; font-size:0.95rem; max-width:600px; margin:0 auto 16px;">
+          Congratulations! You qualified for the <strong>OpenCEA Certified Precision CEA Specialist</strong> credential. Enter your full name below to stamp your certificate:
+        </p>
+        <div class="cert-input-wrap">
+          <input type="text" id="certNameInput" class="cert-input" placeholder="Your Full Name (e.g. Inwoo Hwang)" value="">
+          <button class="btn-action" style="display:inline-block; padding:10px 20px;" onclick="renderCertificate()">Generate Stamped Certificate</button>
+        </div>
+
+        <div class="cert-canvas-wrap">
+          <canvas id="certCanvas" width="1200" height="850"></canvas>
+        </div>
+
+        <div class="share-btn-group">
+          <button class="share-btn btn-download" onclick="downloadCert()">💾 Download High-Res PNG</button>
+          <button class="share-btn btn-linkedin" onclick="shareLinkedIn()">💼 Share on LinkedIn</button>
+          <button class="share-btn btn-twitter" onclick="shareTwitter()">🐦 Post on X / Twitter</button>
+          <button class="share-btn btn-retake" onclick="resetQuiz()">🔄 Retake Quiz</button>
+        </div>
+      </div>
+
+      <div id="certRetryBlock" style="display:none; margin-top:20px;">
+        <p style="color:#f87171; font-size:1rem; margin-bottom:16px;">
+          A score of 70% or higher is required to unlock the verifiable certificate. Review our free 35 tools and retake the test!
+        </p>
+        <div style="display:flex; justify-content:center; gap:12px;">
+          <a href="tools/index.html" class="share-btn" style="background:#0284c7; color:white; text-decoration:none;">🛠️ Review 35 Tools</a>
+          <button class="share-btn btn-download" onclick="resetQuiz()">🔄 Retake Assessment</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer style="text-align:center; padding:30px 20px; color:#64748b; font-size:0.85rem; border-top:1px solid rgba(255,255,255,0.06); margin-top:auto;">
+    © 2026 Inwoovation Engineering Lab (Nürnberg Knoblauchsland &amp; Seoul). 100% Free &amp; Open Source under MIT License.<br>
+    <a href="index.html" style="color:#94a3b8;">Home</a> | <a href="tools/index.html" style="color:#94a3b8;">Tools Suite</a> | <a href="quiz.html" style="color:#38bdf8;">Biophysics Quiz</a> | <a href="privacy-policy.html" style="color:#94a3b8;">Privacy</a>
+  </footer>
+
+  <script>
+    const QUESTIONS = [
+      {
+        cat: "VPD & Psychrometrics",
+        q: "In a commercial tomato glasshouse, air temperature is 24.0°C with 65% RH. The thermal infrared camera measures a leaf temperature of 22.0°C (2.0°C canopy depression). Which is the true Leaf-to-Air Vapor Pressure Deficit (VPD_leaf)?",
+        options: [
+          "0.70 kPa (Healthy transpiration zone)",
+          "1.05 kPa (Extreme drought stress)",
+          "0.32 kPa (Severe condensation danger)",
+          "1.85 kPa (Stomatal closure induced)"
+        ],
+        answer: 0,
+        explanation: "At 22.0°C leaf temperature, saturation vapor pressure e_sat(leaf) = 2.643 kPa. At 24.0°C air and 65% RH, air vapor pressure e_air = 0.65 × 2.983 = 1.939 kPa. Leaf VPD = 2.643 - 1.939 = 0.704 kPa. This is right in the ideal commercial steer zone (0.6 - 1.0 kPa)."
+      },
+      {
+        cat: "Photobiology & Lighting",
+        q: "A commercial vertical farm operates horticultural LED fixtures providing a constant 350 µmol/m²s PPFD at canopy level for an 18-hour photoperiod. What is the cumulative Daily Light Integral (DLI)?",
+        options: [
+          "15.12 mol/m²/day",
+          "22.68 mol/m²/day",
+          "18.90 mol/m²/day",
+          "11.34 mol/m²/day"
+        ],
+        answer: 1,
+        explanation: "DLI = (PPFD × photoperiod_seconds) / 1,000,000 = (350 × 18 × 3600) / 1,000,000 = 22,680,000 / 1,000,000 = 22.68 mol/m²/day. Perfect for high-yielding baby greens and fruiting strawberries."
+      },
+      {
+        cat: "DIN V 18599 Thermodynamics",
+        q: "According to German greenhouse energy standards (DIN V 18599 / KTBL), what is the typical heat transmission coefficient (U-value) for standard single float glass, and how much energy savings can a modern aluminized thermal screen provide when closed at night?",
+        options: [
+          "U = 3.0 W/m²K, with 10–15% energy savings",
+          "U = 6.0–6.5 W/m²K, with 30–45% energy savings",
+          "U = 1.1 W/m²K, with 60–75% energy savings",
+          "U = 8.5 W/m²K, with 5% energy savings"
+        ],
+        answer: 1,
+        explanation: "Single horticultural glass has an uninsulated U-value of 6.0 to 6.5 W/m²K. Deploying an aluminized thermal screen creates an insulating stagnant air boundary and reflects long-wave thermal radiation, reliably reducing peak nocturnal heating load by 30% to 45%."
+      },
+      {
+        cat: "Hydroponics & Fertigation",
+        q: "A grower mixes an A/B concentrated stock tank at a standard 1:100 injector ratio. If the raw municipal water has an EC of 0.3 mS/cm and the desired drip irrigation delivery EC is 2.5 mS/cm, what is the required delta EC contributed by the dosed salts?",
+        options: [
+          "Delta EC = 2.2 mS/cm (approx. 1.4 g/L dry salt density in delivery)",
+          "Delta EC = 2.8 mS/cm",
+          "Delta EC = 1.0 mS/cm",
+          "Delta EC = 0.5 mS/cm"
+        ],
+        answer: 0,
+        explanation: "Delta EC = Target EC - Raw Water EC = 2.5 - 0.3 = 2.2 mS/cm. Under Sonneveld hydroponic calibration (0.64 g/L per 1.0 mS/cm), this represents ~1.408 g/L of dissolved salts delivered to the rootzone."
+      },
+      {
+        cat: "Plant Physiology & Calcium",
+        q: "Why does prolonged high relative humidity (VPD < 0.20 kPa) during nighttime lead to distal Blossom-End Rot (BER) in rapidly growing fruit, even when the hydroponic nutrient solution has abundant Calcium (Ca²⁺)?",
+        options: [
+          "Calcium is phloem-mobile and moves away from fruit to root tissue in high humidity",
+          "Calcium is phloem-immobile and relies strictly on xylem water transpiration; low VPD halts daytime transpiration, while absence of night guttation leaves fruit tips starved of calcium",
+          "High humidity converts Calcium into insoluble calcium carbonate in the substrate",
+          "Excess moisture causes roots to excrete calcium back into drainage"
+        ],
+        answer: 1,
+        explanation: "Calcium moves almost exclusively via xylem mass flow driven by transpiration. If daytime VPD is too high, leaves steal all the water/calcium; if night humidity has zero root pressure/guttation, distal fruit tissues develop localized calcium deficiency, causing Blossom-End Rot (BER)."
+      },
+      {
+        cat: "Enthalpy & Evaporative Cooling",
+        q: "When 70-bar high-pressure fogging nozzles atomize water into 10–15 micron droplets inside a summer greenhouse, what thermodynamic process causes the indoor air dry-bulb temperature to drop without mechanical chillers?",
+        options: [
+          "Sensible heat of the air is converted into latent heat of water vaporization along the constant wet-bulb enthalpy line",
+          "The water droplets act as physical mirrors blocking solar PAR radiation",
+          "Endothermic reaction of dissolved minerals absorbs infrared wavelengths",
+          "Isothermal air compression releases cooler nitrogen gas"
+        ],
+        answer: 0,
+        explanation: "Evaporating 1 kg of water absorbs ~2,450 kJ of sensible heat from the surrounding air. This is a classic adiabatic psychrometric process where dry-bulb temperature falls toward wet-bulb temperature while air moisture content (specific humidity) rises along a line of constant enthalpy."
+      },
+      {
+        cat: "CO2 Optimization & Farquhar",
+        q: "Under the Farquhar, von Caemmerer & Berry (FvCB) biochemical model of C3 photosynthesis (tomatoes, cucumbers), what happens when ambient CO2 is enriched from 400 ppm to 900 ppm under saturating PPFD (800 µmol/m²s)?",
+        options: [
+          "Photosynthesis decreases due to stomatal poisoning",
+          "Rubisco oxygenase activity (photorespiration) is suppressed and carboxylation efficiency increases, boosting net CO2 assimilation rate (A_net) by 25–40%",
+          "RuBP regeneration becomes completely inactive",
+          "Leaf respiration ceases entirely"
+        ],
+        answer: 1,
+        explanation: "Rubisco is bifunctional (carboxylase and oxygenase). Enriching CO2 competitively inhibits photorespiratory carbon oxidation (PCO) cycle and shifts Rubisco toward carbon fixation, increasing net C3 canopy biomass gain by 25% to 40% under adequate light."
+      },
+      {
+        cat: "Crop Steering & Morphogenesis",
+        q: "In commercial vine crop steering (Grodan Rockwool method), which environmental setting pushes the plant toward Generative (fruiting, reproductive) development?",
+        options: [
+          "High 24h average temperature, small Day-Night difference (DIF), high substrate moisture (WC > 80%), low EC",
+          "Large Day-Night temperature drop (+DIF), higher electrical conductivity (EC), larger dryback before first irrigation, and higher daytime VPD",
+          "Continuous nighttime lighting, low VPD, and low EC",
+          "Zero ventilation, low humidity, and high irrigation shot volume"
+        ],
+        answer: 1,
+        explanation: "Generative steering puts mild osmotic and evaporative demand on the crop: higher rootzone EC (+0.5 mS/cm), larger drybacks (10–15%), higher daytime VPD (1.0–1.2 kPa), and a distinct day/night temperature drop (+DIF). This signals the crop to invest sugars into flowers and fruit rather than thick stems."
+      },
+      {
+        cat: "Photobiology & Far-Red",
+        q: "What photomorphogenic response occurs when far-red light (730 nm) is added to a 400–700 nm PAR spectrum, lowering the Phytochrome Photostationary State (PSS)?",
+        options: [
+          "Canopy dwarfing and shortened internodes",
+          "Shade avoidance response: stimulated stem elongation, leaf expansion, and increased Emerson enhancement effect",
+          "Immediate flower abortion",
+          "Total chlorosis of leaves"
+        ],
+        answer: 1,
+        explanation: "Lowering PSS (Pfr/Ptot) triggers the evolutionary shade avoidance mechanism: cells expand faster, petioles elongate, and leaf area expands to capture more photons. Combined with 660 nm red light, 730 nm far-red also increases photochemical quantum yield (Emerson effect)."
+      },
+      {
+        cat: "Closed-Loop Hydroponic Recirculation",
+        q: "In closed-loop commercial drain recycling (Dutch Westland protocol), what is the typical threshold for Sodium (Na⁺) accumulation where recirculation must be partially drained or discharged to prevent osmotic yield loss in tomatoes?",
+        options: [
+          "Na⁺ > 8.0–10.0 mmol/L (≈ 180–230 mg/L)",
+          "Na⁺ > 0.5 mmol/L",
+          "Na⁺ > 45.0 mmol/L",
+          "Na⁺ never accumulates in closed loops"
+        ],
+        answer: 0,
+        explanation: "Tomatoes exclude sodium at the root membrane. As water is transpired, Na+ accumulates in the recirculating drain water. Above 8.0–10.0 mmol/L, high osmotic pressure and antagonism against K+ and Ca2+ causes crop yield loss, requiring partial drain discharge or reverse osmosis desalination."
+      }
+    ];
+
+    let currentIdx = 0;
+    let score = 0;
+    let userAnswers = [];
+    let certHash = "OCEA-" + Math.floor(100000 + Math.random() * 900000) + "-2026";
+
+    function startQuiz() {
+      document.getElementById('introCard').style.display = 'none';
+      document.getElementById('qCard').style.display = 'block';
+      currentIdx = 0;
+      score = 0;
+      userAnswers = [];
+      showQuestion();
+    }
+
+    function showQuestion() {
+      const q = QUESTIONS[currentIdx];
+      document.getElementById('qCategory').textContent = q.cat;
+      document.getElementById('qCounter').textContent = `Question ${currentIdx + 1} of ${QUESTIONS.length}`;
+      document.getElementById('qText').textContent = q.q;
+
+      const pct = ((currentIdx + 1) / QUESTIONS.length) * 100;
+      document.getElementById('progressFill').style.width = pct + '%';
+
+      const grid = document.getElementById('optionsGrid');
+      grid.innerHTML = '';
+
+      const letters = ['A', 'B', 'C', 'D'];
+      q.options.forEach((opt, idx) => {
+        const btn = document.createElement('button');
+        btn.className = 'option-btn';
+        btn.innerHTML = `<span class="option-letter">${letters[idx]}</span><span>${opt}</span>`;
+        btn.onclick = () => selectOption(idx);
+        grid.appendChild(btn);
+      });
+
+      const exp = document.getElementById('explanationBox');
+      exp.style.display = 'none';
+      exp.className = 'explanation-box';
+
+      document.getElementById('nextBtn').style.display = 'none';
+    }
+
+    function selectOption(selectedIdx) {
+      const q = QUESTIONS[currentIdx];
+      const buttons = document.querySelectorAll('.option-btn');
+      buttons.forEach(b => b.disabled = true);
+
+      const isCorrect = selectedIdx === q.answer;
+      if (isCorrect) score++;
+      userAnswers.push({ q: currentIdx, selected: selectedIdx, correct: isCorrect });
+
+      buttons[selectedIdx].classList.add(isCorrect ? 'selected-correct' : 'selected-wrong');
+      if (!isCorrect) {
+        buttons[q.answer].classList.add('selected-correct');
+      }
+
+      const exp = document.getElementById('explanationBox');
+      exp.style.display = 'block';
+      exp.className = 'explanation-box ' + (isCorrect ? 'correct' : 'wrong');
+      exp.innerHTML = `
+        <strong>${isCorrect ? '✓ Correct!' : '✗ Incorrect.'}</strong><br>
+        ${q.explanation}
+      `;
+
+      document.getElementById('nextBtn').style.display = 'inline-block';
+    }
+
+    function nextQuestion() {
+      currentIdx++;
+      if (currentIdx < QUESTIONS.length) {
+        showQuestion();
+      } else {
+        finishQuiz();
+      }
+    }
+
+    function finishQuiz() {
+      document.getElementById('qCard').style.display = 'none';
+      document.getElementById('resultsCard').style.display = 'block';
+
+      const pct = Math.round((score / QUESTIONS.length) * 100);
+      document.getElementById('scoreSummary').textContent = `Score: ${score} / ${QUESTIONS.length} (${pct}%) — ` +
+        (pct >= 80 ? "Mastery Grade (Distinction)" : pct >= 70 ? "Passing Grade (Certified)" : "Needs Review");
+
+      if (pct >= 70) {
+        document.getElementById('certEligibleBlock').style.display = 'block';
+        document.getElementById('certRetryBlock').style.display = 'none';
+        renderCertificate();
+      } else {
+        document.getElementById('certEligibleBlock').style.display = 'none';
+        document.getElementById('certRetryBlock').style.display = 'block';
+      }
+    }
+
+    function renderCertificate() {
+      const canvas = document.getElementById('certCanvas');
+      const ctx = canvas.getContext('2d');
+      const name = (document.getElementById('certNameInput').value.trim()) || "Agricultural Engineer";
+
+      // Dimensions 1200 x 850
+      const w = canvas.width;
+      const h = canvas.height;
+
+      // Outer Background
+      const bgGrad = ctx.createLinearGradient(0, 0, w, h);
+      bgGrad.addColorStop(0, '#060d1a');
+      bgGrad.addColorStop(0.5, '#0c182c');
+      bgGrad.addColorStop(1, '#081426');
+      ctx.fillStyle = bgGrad;
+      ctx.fillRect(0, 0, w, h);
+
+      // Gold / Emerald Guilloche Border
+      ctx.lineWidth = 14;
+      ctx.strokeStyle = '#059669';
+      ctx.strokeRect(30, 30, w - 60, h - 60);
+
+      ctx.lineWidth = 2;
+      ctx.strokeStyle = '#38bdf8';
+      ctx.strokeRect(42, 42, w - 84, h - 84);
+
+      // Header Emblem
+      ctx.fillStyle = '#38bdf8';
+      ctx.font = 'bold 36px Outfit, sans-serif';
+      ctx.textAlign = 'center';
+      ctx.fillText('🌱 OPEN-CEA ACADEMY', w / 2, 110);
+
+      ctx.fillStyle = '#94a3b8';
+      ctx.font = '14px JetBrains Mono, monospace';
+      ctx.fillText('INSTITUTIONAL CONTROLLED ENVIRONMENT AGRICULTURE SPECIFICATION', w / 2, 140);
+
+      // Title
+      ctx.fillStyle = '#f8fafc';
+      ctx.font = 'bold 44px Cinzel, serif';
+      ctx.fillText('CERTIFICATE OF MASTERY', w / 2, 220);
+
+      ctx.fillStyle = '#34d399';
+      ctx.font = '600 20px Outfit, sans-serif';
+      ctx.fillText('PRECISION HORTICULTURAL BIOPHYSICS & MICROCLIMATE ENGINEERING', w / 2, 260);
+
+      // Presentation Text
+      ctx.fillStyle = '#cbd5e1';
+      ctx.font = 'italic 18px Georgia, serif';
+      ctx.fillText('This credential formally certifies that', w / 2, 330);
+
+      // Name
+      ctx.fillStyle = '#38bdf8';
+      ctx.font = 'bold 54px Cinzel, serif';
+      ctx.fillText(name, w / 2, 410);
+
+      // Underline
+      ctx.strokeStyle = '#0284c7';
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.moveTo(w / 2 - 250, 430);
+      ctx.lineTo(w / 2 + 250, 430);
+      ctx.stroke();
+
+      // Criteria Text
+      ctx.fillStyle = '#e2e8f0';
+      ctx.font = '16px Plus Jakarta Sans, sans-serif';
+      ctx.fillText('has demonstrated verified competence in ASAE EP411 Vapor Pressure Deficit calculation,', w / 2, 480);
+      ctx.fillText('DIN V 18599 thermodynamic greenhouse heating equations, DLI photobiology, and closed-loop fertigation.', w / 2, 510);
+
+      // Seal Badge
+      const sealX = w / 2;
+      const sealY = 630;
+      ctx.save();
+      ctx.beginPath();
+      ctx.arc(sealX, sealY, 56, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(6, 182, 212, 0.12)';
+      ctx.fill();
+      ctx.lineWidth = 3;
+      ctx.strokeStyle = '#10b981';
+      ctx.stroke();
+
+      ctx.fillStyle = '#f59e0b';
+      ctx.font = 'bold 15px Outfit, sans-serif';
+      ctx.fillText('★ VERIFIED ★', sealX, sealY - 10);
+      ctx.fillStyle = '#34d399';
+      ctx.font = 'bold 12px JetBrains Mono, monospace';
+      ctx.fillText('GRADE: 100%', sealX, sealY + 12);
+      ctx.fillText('DIN-ASAE', sealX, sealY + 28);
+      ctx.restore();
+
+      // Signatures & Metadata
+      // Left: Verification Hash & Date
+      ctx.textAlign = 'left';
+      ctx.fillStyle = '#94a3b8';
+      ctx.font = '12px JetBrains Mono, monospace';
+      ctx.fillText(`Verification ID: ${certHash}`, 70, 760);
+      const todayStr = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+      ctx.fillText(`Issued: ${todayStr}`, 70, 782);
+      ctx.fillText(`Standard: DIN V 18599 / Wageningen WUR / ASAE EP411`, 70, 804);
+
+      // Right: Lead Architect Signature
+      ctx.textAlign = 'right';
+      ctx.fillStyle = '#38bdf8';
+      ctx.font = '32px "Great Vibes", cursive';
+      ctx.fillText('Inwoo Hwang', w - 70, 765);
+
+      ctx.fillStyle = '#94a3b8';
+      ctx.font = '12px Outfit, sans-serif';
+      ctx.fillText('Inwoo Hwang, Lead Systems Architect', w - 70, 788);
+      ctx.fillText('Inwoovation Engineering Lab (Nürnberg / Seoul)', w - 70, 806);
+    }
+
+    function downloadCert() {
+      const canvas = document.getElementById('certCanvas');
+      const link = document.createElement('a');
+      link.download = `OpenCEA-Certificate-${certHash}.png`;
+      link.href = canvas.toDataURL('image/png');
+      link.click();
+    }
+
+    function shareLinkedIn() {
+      const url = encodeURIComponent('https://inwoovation.com/quiz.html');
+      const title = encodeURIComponent('I just earned the Certified Precision CEA Specialist credential on OpenCEA Academy!');
+      const summary = encodeURIComponent(`Verified biophysical competence in greenhouse microclimate modeling (DIN V 18599, VPD, DLI). Credential Hash: ${certHash}`);
+      window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${url}&title=${title}&summary=${summary}`, '_blank');
+    }
+
+    function shareTwitter() {
+      const url = encodeURIComponent('https://inwoovation.com/quiz.html');
+      const text = encodeURIComponent(`Just completed the OpenCEA Greenhouse Biophysics Assessment with credential ${certHash}! 100% free open-source precision agriculture tools:`);
+      window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`, '_blank');
+    }
+
+    function resetQuiz() {
+      document.getElementById('resultsCard').style.display = 'none';
+      document.getElementById('introCard').style.display = 'block';
+    }
+  </script>
+</body>
+</html>

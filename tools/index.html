@@ -353,6 +353,9 @@
       </a>
       <div style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap;">
         <button class="nav-search-trigger" onclick="window.InwooPalette.open()" title="Open Spotlight Search (Ctrl+K)"><span>🔍 Search</span> <kbd>Ctrl+K</kbd></button>
+        <a href="../troubleshoot.html" style="color: #34d399; text-decoration: none; font-size: 0.9rem; font-weight: 700;">🩺 Diagnostic</a>
+        <a href="../meister.html" style="color: #fbbf24; text-decoration: none; font-size: 0.9rem; font-weight: 700;">🇩🇪 Meister</a>
+        <a href="../quiz.html" style="color: #38bdf8; text-decoration: none; font-size: 0.9rem; font-weight: 700;">🏆 10-Q Quiz</a>
         <a href="../guides.html" style="color: #94a3b8; text-decoration: none; font-size: 0.9rem; font-weight: 600;">📚 69 Articles</a>
         <a href="../crops/greenhouse-tomato-microclimate-vpd-steering-guide.html" style="color: #10b981; text-decoration: none; font-size: 0.9rem; font-weight: 600;">🌱 10 Crops</a>
         <a href="../climate/westland-netherlands-greenhouse-climate-guide.html" style="color: #38bdf8; text-decoration: none; font-size: 0.9rem; font-weight: 600;">🌍 40 Climate Hubs</a>
@@ -406,6 +409,7 @@
           <button class="quick-chip" onclick="applyQuickSearch('Nutrient')">🧪 Nutrients / EC</button>
           <button class="quick-chip" onclick="applyQuickSearch('AI')">🧠 AI & Vision</button>
           <button class="quick-chip" onclick="applyQuickSearch('Open Source')">⭐ Open Source</button>
+          <button class="quick-chip" onclick="rollRandomToolCard()" style="background: linear-gradient(135deg, rgba(139, 92, 246, 0.4), rgba(236, 72, 153, 0.4)); border-color: #ec4899; color: #ffffff; font-weight: 800;">🎲 Surprise Me</button>
         </div>
       </div>
 
@@ -1141,6 +1145,25 @@
 
       if (firstMatchedCard) {
         firstMatchedCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    }
+
+    // 3b. SURPRISE ME (RANDOM TOOL RECOMMENDATION)
+    function rollRandomToolCard() {
+      clearLiveSearch();
+      const cards = Array.from(document.querySelectorAll('.tool-card'));
+      if (!cards.length) return;
+
+      const randCard = cards[Math.floor(Math.random() * cards.length)];
+      cards.forEach(c => c.classList.remove('highlight-pulse'));
+
+      randCard.classList.add('highlight-pulse');
+      randCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+      const stats = document.getElementById('searchResultStats');
+      const toolTitle = randCard.querySelector('h2') ? randCard.querySelector('h2').innerText : 'Selected Tool';
+      if (stats) {
+        stats.innerHTML = `🎲 <strong>Surprise Tool Pick:</strong> ${toolTitle}!`;
       }
     }
 

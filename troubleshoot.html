@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-adsense-account" content="ca-pub-8597809158257497">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8597809158257497" crossorigin="anonymous"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greenhouse Cultivation & Facility Troubleshooting Wizard | Inwoovation Lab</title>
+  <meta name="description" content="Instant diagnostic wizard for commercial greenhouse and indoor farm issues. Identify root causes for tip burn, blossom-end rot, condensation, and heating spikes with 3-step actionable protocols and biophysical calculators.">
+  <link rel="canonical" href="https://inwoovation.com/troubleshoot.html" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V4RYJBMEDE"></script>
+  <script>
+     window.dataLayer = window.dataLayer || [];
+     function gtag(){dataLayer.push(arguments);}
+     gtag('js', new Date());
+     gtag('config', 'G-V4RYJBMEDE');
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=JetBrains+Mono:wght@500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="css/global-ui-enhancements.css?v=20260901_spotlight">
+  <script src="js/global-search-palette.js?v=20260901_spotlight"></script>
+
+  <style>
+    :root {
+      --bg-dark: #080c16;
+      --card-bg: rgba(22, 30, 49, 0.85);
+      --border-color: rgba(56, 189, 248, 0.25);
+    }
+    body {
+      background: var(--bg-dark);
+      color: #f8fafc;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .trouble-container {
+      max-width: 1140px;
+      margin: 30px auto 80px;
+      padding: 0 20px;
+      flex: 1;
+    }
+    .hero-banner {
+      background: linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 0.95));
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      padding: 36px 32px;
+      margin-bottom: 28px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+    }
+    .pill-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(16, 185, 129, 0.15);
+      color: #34d399;
+      border: 1px solid rgba(16, 185, 129, 0.35);
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 3px 10px;
+      border-radius: 100px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .filter-bar {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+    .search-input {
+      flex: 1;
+      min-width: 280px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      padding: 12px 18px;
+      border-radius: 12px;
+      color: #f8fafc;
+      font-size: 0.95rem;
+      outline: none;
+    }
+    .cat-btn {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      color: #cbd5e1;
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .cat-btn:hover, .cat-btn.active {
+      background: #0284c7;
+      color: white;
+      border-color: #38bdf8;
+    }
+    .symptom-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 20px;
+    }
+    .symptom-card {
+      background: var(--card-bg);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.25s ease;
+    }
+    .symptom-card:hover {
+      transform: translateY(-3px);
+      border-color: #38bdf8;
+      box-shadow: 0 10px 25px rgba(6, 182, 212, 0.18);
+    }
+    .card-top { margin-bottom: 14px; }
+    .card-icon { font-size: 1.8rem; margin-bottom: 8px; }
+    .card-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #f8fafc;
+      margin: 0 0 6px 0;
+    }
+    .card-cat {
+      font-size: 0.72rem;
+      color: #38bdf8;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+    .card-desc {
+      color: #94a3b8;
+      font-size: 0.86rem;
+      line-height: 1.55;
+      margin-top: 8px;
+    }
+    .action-steps {
+      background: rgba(15, 23, 42, 0.7);
+      border-left: 3px solid #10b981;
+      border-radius: 6px;
+      padding: 10px 12px;
+      margin: 12px 0;
+      font-size: 0.8rem;
+      line-height: 1.5;
+      color: #cbd5e1;
+    }
+    .tool-link-btn {
+      background: linear-gradient(135deg, rgba(6, 182, 212, 0.2), rgba(16, 185, 129, 0.2));
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      color: #34d399;
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-weight: 800;
+      font-size: 0.82rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: all 0.2s;
+    }
+    .tool-link-btn:hover {
+      background: linear-gradient(135deg, #06b6d4, #10b981);
+      color: #030712;
+      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.35);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Site Navigation Bar -->
+  <header style="max-width: 1200px; margin: 0 auto; width: 100%; padding: 20px 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px;">
+    <a href="index.html" style="font-family:'Outfit',sans-serif; font-size:1.35rem; font-weight:800; color:#ffffff; text-decoration:none; display:flex; align-items:center; gap:8px;">
+      🌱 Inwoo<span>vation Lab</span>
+      <span style="font-size:0.75rem; background:linear-gradient(135deg,#10b981,#059669); color:#ffffff; font-weight:800; padding:2px 8px; border-radius:4px;">DIAGNOSTIC</span>
+    </a>
+    <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap;">
+      <a href="tools/index.html" style="color:#94a3b8; text-decoration:none; font-size:0.9rem; font-weight:600;">🛠️ 35 Tools</a>
+      <a href="troubleshoot.html" style="color:#38bdf8; text-decoration:none; font-size:0.9rem; font-weight:800;">🔍 Diagnostic</a>
+      <a href="meister.html" style="color:#94a3b8; text-decoration:none; font-size:0.9rem; font-weight:600;">🇩🇪 Meister Hub</a>
+      <a href="quiz.html" style="color:#94a3b8; text-decoration:none; font-size:0.9rem; font-weight:600;">🏆 10-Q Quiz</a>
+      <button class="nav-search-trigger" onclick="window.InwooPalette.open()"><span>🔍 Spotlight Search</span> <kbd>Ctrl+K</kbd></button>
+    </div>
+  </header>
+
+  <main class="trouble-container">
+    <!-- Hero Banner -->
+    <div class="hero-banner">
+      <span class="pill-badge">🩺 REAL-TIME CEA PROBLEM SOLVER &amp; PROTOCOL DISPATCH</span>
+      <h1 style="font-family:'Outfit',sans-serif; font-size:2.2rem; font-weight:900; color:#f8fafc; margin: 8px 0 12px 0;">
+        Commercial Greenhouse Troubleshooting Wizard
+      </h1>
+      <p style="color:#94a3b8; font-size:1.02rem; line-height:1.65; max-width:860px; margin:0;">
+        Fast field diagnosis for commercial greenhouse growers, vertical farm operators, and facility managers. Select your visible crop symptom or engineering issue to inspect the underlying biophysical cause, immediate corrective actions, and direct calculation engines.
+      </p>
+    </div>
+
+    <!-- Filter & Search Bar -->
+    <div class="filter-bar">
+      <input 
+        type="text" 
+        id="troubleSearch" 
+        class="search-input" 
+        placeholder="🔍 Search symptoms (e.g., tip burn, calcium, boiler, humidity, yellow, spider mite, sodium)..."
+        oninput="filterSymptoms()"
+      >
+      <div style="display:flex; gap:6px; flex-wrap:wrap;">
+        <button class="cat-btn active" onclick="setCategory('all', this)">All</button>
+        <button class="cat-btn" onclick="setCategory('tomato', this)">🍅 Tomato &amp; Vine</button>
+        <button class="cat-btn" onclick="setCategory('strawberry', this)">🍓 Strawberry</button>
+        <button class="cat-btn" onclick="setCategory('greens', this)">🥬 Leafy Greens</button>
+        <button class="cat-btn" onclick="setCategory('climate', this)">⚡ Energy &amp; HVAC</button>
+        <button class="cat-btn" onclick="setCategory('fertigation', this)">🧪 Nutrient &amp; Water</button>
+      </div>
+    </div>
+
+    <!-- Symptom Grid -->
+    <div class="symptom-grid" id="symptomGrid">
+      <!-- Cards rendered via JS -->
+    </div>
+  </main>
+
+  <footer style="text-align:center; padding:30px 20px; color:#64748b; font-size:0.85rem; border-top:1px solid rgba(255,255,255,0.06); margin-top:auto;">
+    © 2026 Inwoovation Engineering Lab (Nürnberg Knoblauchsland &amp; Seoul). 100% Free &amp; Open Source.<br>
+    <a href="index.html" style="color:#94a3b8;">Home</a> | <a href="tools/index.html" style="color:#94a3b8;">Tools Suite</a> | <a href="troubleshoot.html" style="color:#38bdf8;">Troubleshooting</a> | <a href="meister.html" style="color:#94a3b8;">Meister Hub</a> | <a href="quiz.html" style="color:#94a3b8;">Biophysics Quiz</a>
+  </footer>
+
+  <script>
+    const ISSUES = [
+      {
+        id: "ber",
+        cat: "tomato",
+        icon: "🍅",
+        title: "Blossom-End Rot (BER) in Tomato / Pepper",
+        cause: "Localized Calcium (Ca²⁺) starvation in distal fruit tissue caused by high daytime VPD (> 1.4 kPa) forcing water to leaves, or zero nighttime root pressure / guttation.",
+        protocol: "1. Lower daytime VPD to 0.8–1.0 kPa via fogging or misting.<br>2. Maintain 80–85% night RH to allow root guttation pressure to pump Ca²⁺ into fruit.<br>3. Verify Ca:K ratio in rootzone >= 1:2.",
+        toolTitle: "Calcium & BER Risk Model",
+        toolUrl: "tools/crop-transpiration-calcium-blossom-end-rot-risk-model.html"
+      },
+      {
+        id: "botrytis",
+        cat: "climate",
+        icon: "🌧️",
+        title: "Night Condensation & Botrytis Blight",
+        cause: "Greenhouse indoor air drops below dew point temperature during sunset cooldown, forming liquid water films on leaves and glass where fungal spores germinate.",
+        protocol: "1. Deploy thermal screens 30 mins before sunset to trap ground radiant heat.<br>2. Fire heating pipes at minimum 35°C during sunset to prevent air dew-point cross.<br>3. Open leeward vents 2–5% with minimum heating pipe for active air drying.",
+        toolTitle: "Psychrometric Mollier Dehumidifier",
+        toolUrl: "tools/psychrometric-mollier-greenhouse-dehumidifier.html"
+      },
+      {
+        id: "tipburn_straw",
+        cat: "strawberry",
+        icon: "🍓",
+        title: "Strawberry Leaf & Bract Tip Burn",
+        cause: "High boundary layer resistance in calm air restricting transpirational water flow to emerging young leaf margins and developing calyx tissues.",
+        protocol: "1. Ensure continuous gentle horizontal air movement (0.3–0.5 m/s) with circulation fans.<br>2. Lower daytime EC by 0.2 mS/cm to reduce osmotic resistance.<br>3. Provide a dryback period between daytime irrigation pulses.",
+        toolTitle: "Microclimate CFD Air Velocity Optimizer",
+        toolUrl: "tools/greenhouse-microclimate-cfd-air-velocity-optimizer.html"
+      },
+      {
+        id: "inner_tipburn_greens",
+        cat: "greens",
+        icon: "🥬",
+        title: "Inner Heart Tip Burn in Vertical Greens",
+        cause: "Rapid vegetative biomass growth under high DLI (> 17 mol/m²d) outpaces vascular calcium transport into tightly folded young heart leaves.",
+        protocol: "1. Install vertical downward air tubes targeting the center of the heads.<br>2. Dim PPFD by 15% during peak vegetative expansion.<br>3. Lower night temperature by 3–4°C to slow cellular elongation rate.",
+        toolTitle: "DLI Spectrum Photomorphogenesis Tool",
+        toolUrl: "tools/dli-spectrum-photomorphogenesis-calculator.html"
+      },
+      {
+        id: "heating_spike",
+        cat: "climate",
+        icon: "❄️",
+        title: "Winter Heating Fuel & Gas Consumption Spike",
+        cause: "Severe infiltration air leakage (> 1.2 ACH) through unsealed gable vents, or uncalibrated thermal screen gaps allowing warm air buoyancy convection.",
+        protocol: "1. Seal thermal screen edges with perimeter seals to eliminate thermal chimney draft.<br>2. Recalibrate 3-way mixing valve (Kv) to prevent boiler water short-cycling.<br>3. Lower nocturnal setpoint by 1.5°C during lowest outdoor wind chill periods.",
+        toolTitle: "Greenhouse Heating Load Calculator",
+        toolUrl: "tools/greenhouse-heating-load-thermal-screen-calculator.html"
+      },
+      {
+        id: "sodium_buildup",
+        cat: "fertigation",
+        icon: "🧪",
+        title: "Sodium (Na⁺) Accumulation in Recirculating Drain",
+        cause: "Crops transpire pure water and exclude sodium at root membranes, leading to progressive Na⁺ concentration in closed-loop systems until osmotic toxicity occurs.",
+        protocol: "1. Test drain water Na⁺; if > 8.0 mmol/L, bleed 15–20% of drain volume.<br>2. Switch to reverse osmosis (RO) raw water for stock dilution.<br>3. Boost Potassium (K⁺) slightly to compete against sodium uptake.",
+        toolTitle: "Closed-Loop Desalination Optimizer",
+        toolUrl: "tools/closed-loop-reverse-osmosis-desalination-energy-optimizer.html"
+      },
+      {
+        id: "flower_drop",
+        cat: "tomato",
+        icon: "🥀",
+        title: "Tomato Blossom Drop & Poor Fruit Set",
+        cause: "Day temperatures exceeding 30°C or night temperatures above 22°C causing pollen sterility, or extreme VPD (> 1.6 kPa) drying pollen grains on the stigma.",
+        protocol: "1. Activate high-pressure fogging to keep midday temps < 28°C and VPD < 1.2 kPa.<br>2. Introduce bumblebees (Bombus terrestris) and verify buzzing pollination marks.<br>3. Apply shade screens when outdoor solar radiation exceeds 850 W/m².",
+        toolTitle: "Crop Steering Generative/Vegetative Matrix",
+        toolUrl: "tools/crop-steering-generative-vegetative-matrix.html"
+      },
+      {
+        id: "spider_mites",
+        cat: "tomato",
+        icon: "🕷️",
+        title: "Two-Spotted Spider Mite (Tetranychus urticae)",
+        cause: "Hot, dry microclimates (VPD > 1.5 kPa, RH < 50%) accelerate mite reproductive cycles from egg to adult in under 7 days.",
+        protocol: "1. Raise localized canopy humidity to 65–70% to inhibit mite egg hatching.<br>2. Release predatory mites (Phytoseiulus persimilis) at 5–10 mites/m².<br>3. Spot-treat hot spots with bio-pesticides or horticultural potassium salts.",
+        toolTitle: "Biological Pest Control (IPM) Calculator",
+        toolUrl: "tools/greenhouse-biological-pest-control-ipm-calculator.html"
+      },
+      {
+        id: "ph_crash",
+        cat: "fertigation",
+        icon: "📉",
+        title: "Substrate Rootzone pH Crash (< 5.2)",
+        cause: "Excess ammonium (NH₄⁺) nitrogen uptake by roots causes active excretion of hydrogen ions (H⁺) into the rockwool slab or nutrient solution.",
+        protocol: "1. Replace ammonium with nitrate (NO₃⁻) in Tank A / B formulation.<br>2. Increase raw water bicarbonate buffer (HCO₃⁻) to 0.5–1.0 mmol/L.<br>3. Flush rootzone with 1.2x normal shot volume at pH 6.0.",
+        toolTitle: "Hydroponic Chemical Speciation Index",
+        toolUrl: "tools/hydroponic-chemical-speciation-precipitation-index.html"
+      }
+    ];
+
+    let currentCategory = "all";
+
+    function renderIssues() {
+      const grid = document.getElementById('symptomGrid');
+      const query = document.getElementById('troubleSearch').value.toLowerCase().trim();
+
+      const filtered = ISSUES.filter(item => {
+        const matchCat = currentCategory === 'all' || item.cat === currentCategory;
+        const matchText = !query || 
+          item.title.toLowerCase().includes(query) || 
+          item.cause.toLowerCase().includes(query) || 
+          item.protocol.toLowerCase().includes(query);
+        return matchCat && matchText;
+      });
+
+      if (filtered.length === 0) {
+        grid.innerHTML = `
+          <div style="grid-column: 1 / -1; text-align:center; padding: 40px; color: #94a3b8;">
+            <div style="font-size:2rem; margin-bottom:8px;">🔍</div>
+            <strong>No matching symptoms found.</strong>
+            <p style="font-size:0.85rem; margin-top:4px;">Try searching for "tip burn", "calcium", "VPD", "heating", or "spider mite".</p>
+          </div>
+        `;
+        return;
+      }
+
+      grid.innerHTML = filtered.map(item => `
+        <div class="symptom-card">
+          <div class="card-top">
+            <div class="card-icon">${item.icon}</div>
+            <div class="card-cat">${item.cat.toUpperCase()}</div>
+            <h3 class="card-title">${item.title}</h3>
+            <p class="card-desc"><strong>Root Cause:</strong> ${item.cause}</p>
+            <div class="action-steps">
+              <strong>🩺 3-Step Corrective Protocol:</strong><br>
+              ${item.protocol}
+            </div>
+          </div>
+          <a href="${item.toolUrl}" class="tool-link-btn">
+            <span>⚙️ Launch Fix: ${item.toolTitle}</span>
+            <span>→</span>
+          </a>
+        </div>
+      `).join('');
+    }
+
+    function setCategory(cat, btn) {
+      currentCategory = cat;
+      document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      renderIssues();
+    }
+
+    function filterSymptoms() {
+      renderIssues();
+    }
+
+    renderIssues();
+  </script>
+</body>
+</html>

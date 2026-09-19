@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-adsense-account" content="ca-pub-8597809158257497">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8597809158257497" crossorigin="anonymous"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CO2 Enrichment & Injection Widget | Inwoovation Lab</title>
+  <meta name="description" content="Embed zero-friction greenhouse CO2 dosing and ventilation loss calculator for precision horticultural facilities.">
+  <link rel="canonical" href="https://inwoovation.com/embed/co2-enrichment-widget.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;800&family=JetBrains+Mono:wght@600;700&family=Plus+Jakarta+Sans:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #0f172a;
+      color: #f8fafc;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      padding: 16px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .widget-card {
+      width: 100%;
+      max-width: 360px;
+      background: rgba(30, 41, 59, 0.95);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      border-radius: 16px;
+      padding: 18px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    }
+    .widget-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      padding-bottom: 8px;
+    }
+    .widget-brand {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 800;
+      font-size: 0.85rem;
+      color: #10b981;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .widget-brand span { color: #f8fafc; }
+    .badge {
+      background: rgba(16, 185, 129, 0.15);
+      color: #34d399;
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      font-size: 0.65rem;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 4px;
+      text-transform: uppercase;
+    }
+    .display-box {
+      text-align: center;
+      background: rgba(15, 23, 42, 0.85);
+      border-radius: 12px;
+      padding: 14px;
+      margin-bottom: 14px;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+    .display-val {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #34d399;
+      line-height: 1;
+    }
+    .display-unit { font-size: 0.9rem; color: #94a3b8; font-weight: 600; margin-left: 2px; }
+    .display-sub {
+      font-size: 0.75rem;
+      color: #38bdf8;
+      margin-top: 6px;
+      font-weight: 600;
+    }
+    .input-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .field-label {
+      font-size: 0.75rem;
+      color: #94a3b8;
+      margin-bottom: 4px;
+      font-weight: 600;
+      display: flex;
+      justify-content: space-between;
+    }
+    .field-label span { color: #34d399; }
+    input[type="range"] {
+      width: 100%;
+      height: 4px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 2px;
+      outline: none;
+      -webkit-appearance: none;
+    }
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #34d399;
+      cursor: pointer;
+    }
+    select {
+      width: 100%;
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid rgba(255,255,255,0.15);
+      color: #f8fafc;
+      padding: 5px 8px;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      outline: none;
+    }
+    .metrics-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      background: rgba(15, 23, 42, 0.5);
+      border-radius: 8px;
+      padding: 8px;
+      margin-bottom: 12px;
+      font-size: 0.75rem;
+    }
+    .metric-item { display: flex; flex-direction: column; }
+    .metric-lbl { color: #94a3b8; font-size: 0.7rem; }
+    .metric-val { font-family: 'JetBrains Mono', monospace; font-weight: 700; color: #f8fafc; }
+    .widget-footer {
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 10px;
+    }
+    .powered-by {
+      font-size: 0.7rem;
+      color: #94a3b8;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: color 0.2s;
+    }
+    .powered-by:hover { color: #34d399; }
+    .powered-by strong { color: #34d399; }
+  </style>
+</head>
+<body>
+
+<div class="widget-card">
+  <div class="widget-header">
+    <a href="https://inwoovation.com/" target="_blank" rel="noopener" class="widget-brand">
+      🌱 Inwoo<span>vation</span>
+    </a>
+    <span class="badge">CO₂ Photosynthesis</span>
+  </div>
+
+  <div class="display-box">
+    <div class="display-val" id="co2Rate">24.8<span class="display-unit">kg/h</span></div>
+    <div class="display-sub" id="dailyTotal">≈ 198.4 kg / 8h Photoperiod</div>
+  </div>
+
+  <div class="input-grid">
+    <div>
+      <div class="field-label">Floor Area: <span id="lblArea">3,000 m²</span></div>
+      <input type="range" id="inpArea" min="500" max="10000" step="100" value="3000" oninput="calcCO2()">
+    </div>
+    <div>
+      <div class="field-label">Target CO₂: <span id="lblTarget">800 ppm</span></div>
+      <input type="range" id="inpTarget" min="450" max="1500" step="50" value="800" oninput="calcCO2()">
+    </div>
+    <div>
+      <div class="field-label">Vent Rate: <span id="lblVent">0.8 ACH</span></div>
+      <input type="range" id="inpVent" min="0.2" max="5.0" step="0.1" value="0.8" oninput="calcCO2()">
+    </div>
+    <div>
+      <div class="field-label">Crop Stage</div>
+      <select id="selCrop" onchange="calcCO2()">
+        <option value="5.0">Tomato Full Canopy (5.0 g/m²h)</option>
+        <option value="6.0">Cucumber Fast Vegetative (6.0 g/m²h)</option>
+        <option value="3.5">Strawberry Fruiting (3.5 g/m²h)</option>
+        <option value="4.0">Leafy Greens Hydroponic (4.0 g/m²h)</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="metrics-row">
+    <div class="metric-item">
+      <span class="metric-lbl">Canopy Uptake Rate</span>
+      <span class="metric-val" id="uptakeVal">15.0 kg/h</span>
+    </div>
+    <div class="metric-item">
+      <span class="metric-lbl">Ventilation Leak Rate</span>
+      <span class="metric-val" id="ventLossVal">9.8 kg/h</span>
+    </div>
+  </div>
+
+  <div class="widget-footer">
+    <a href="https://inwoovation.com/tools/greenhouse-co2-enrichment-optimizer.html" target="_blank" rel="noopener" class="powered-by">
+      ⚡ Powered by <strong>Inwoovation Lab (100% Free Open Source)</strong>
+    </a>
+  </div>
+</div>
+
+<script>
+  function calcCO2() {
+    const area = parseFloat(document.getElementById('inpArea').value);
+    const targetPpm = parseFloat(document.getElementById('inpTarget').value);
+    const ach = parseFloat(document.getElementById('inpVent').value);
+    const cropRate = parseFloat(document.getElementById('selCrop').value);
+
+    document.getElementById('lblArea').textContent = area.toLocaleString() + ' m²';
+    document.getElementById('lblTarget').textContent = targetPpm + ' ppm';
+    document.getElementById('lblVent').textContent = ach.toFixed(1) + ' ACH';
+
+    const ambientPpm = 420;
+    const avgHeight = 4.5;
+    const volume = area * avgHeight; // m3
+    // CO2 air density ≈ 1.98 kg/m3. 1 ppm = 1e-6 volume fraction ≈ 1.8e-6 kg CO2/m3 at 20°C
+    const deltaPpm = Math.max(0, targetPpm - ambientPpm);
+    const ventLossKg = (volume * ach * deltaPpm * 1.83e-6); // kg/h
+    const canopyUptakeKg = (area * cropRate) / 1000; // kg/h
+
+    const totalInjection = ventLossKg + canopyUptakeKg;
+    const daily8h = totalInjection * 8;
+
+    document.getElementById('co2Rate').innerHTML = totalInjection.toFixed(1) + '<span class="display-unit">kg/h</span>';
+    document.getElementById('dailyTotal').textContent = '≈ ' + daily8h.toFixed(1) + ' kg / 8h Photoperiod';
+    document.getElementById('uptakeVal').textContent = canopyUptakeKg.toFixed(1) + ' kg/h';
+    document.getElementById('ventLossVal').textContent = ventLossKg.toFixed(1) + ' kg/h';
+  }
+
+  calcCO2();
+</script>
+</body>
+</html>
