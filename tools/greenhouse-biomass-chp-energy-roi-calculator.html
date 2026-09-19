@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="google-adsense-account" content="ca-pub-8597809158257497">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greenhouse Biomass CHP & Waste Heat ROI Simulator | Inwoovation Lab</title>
+    <meta name="description" content="Interactive precision engineering calculator for greenhouse biomass-fired CHP systems: model wood-chip fuel costs, fossil natural gas replacement, SCR CO2 dosing value, carbon credit savings, and payback period.">
+    <link rel="canonical" href="https://inwoovation.com/tools/greenhouse-biomass-chp-energy-roi-calculator.html" />
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V4RYJBMEDE"></script>
+    <script>
+       window.dataLayer = window.dataLayer || [];
+       function gtag(){dataLayer.push(arguments);}
+       gtag('js', new Date());
+       gtag('config', 'G-V4RYJBMEDE');
+    </script>
+    <!-- Google AdSense Script -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8597809158257497" crossorigin="anonymous"></script>
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://inwoovation.com/tools/greenhouse-biomass-chp-energy-roi-calculator.html">
+    <meta property="og:title" content="Greenhouse Biomass CHP & Waste Heat ROI Simulator">
+    <meta property="og:description" content="Model capital expenditure, fuel cost delta, carbon emission offsets, and payback periods for biomass-fired greenhouse heating systems.">
+    <meta property="og:image" content="https://inwoovation.com/og-cover.jpg">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css?v=20260919_tool35">
+    
+    <style>
+        .tool-wrapper { max-width: 1080px; margin: 40px auto 80px; padding: 0 20px; color: #cbd5e1; font-family: 'Plus Jakarta Sans', sans-serif; }
+        .tool-header { text-align: center; margin-bottom: 36px; }
+        .tool-tag { display: inline-flex; align-items: center; gap: 6px; background: rgba(16, 185, 129, 0.15); color: #10b981; font-weight: 800; font-size: 0.82rem; padding: 6px 14px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 12px; }
+        .tool-header h1 { font-family: 'Outfit', sans-serif; font-size: 2.3rem; font-weight: 800; color: #f8fafc; line-height: 1.3; margin-bottom: 12px; }
+        .tool-header p { font-size: 1.05rem; color: #94a3b8; max-width: 800px; margin: 0 auto; line-height: 1.6; }
+        
+        .calculator-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 30px; }
+        @media (max-width: 860px) { .calculator-grid { grid-template-columns: 1fr; } }
+        
+        .calc-panel { background: rgba(30, 41, 59, 0.6); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 20px; padding: 28px; box-shadow: 0 15px 35px rgba(0,0,0,0.3); }
+        .calc-panel h2 { font-family: 'Outfit', sans-serif; font-size: 1.35rem; color: #f8fafc; margin-bottom: 20px; display: flex; align-items: center; gap: 8px; border-bottom: 1px solid rgba(255, 255, 255, 0.06); padding-bottom: 12px; }
+        
+        .input-group { margin-bottom: 20px; }
+        .input-label-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; font-size: 0.92rem; font-weight: 600; color: #e2e8f0; }
+        .input-val-badge { font-family: 'JetBrains Mono', monospace; font-weight: 700; color: #38bdf8; background: rgba(15, 23, 42, 0.6); padding: 3px 10px; border-radius: 6px; border: 1px solid rgba(56, 189, 248, 0.3); }
+        .range-slider { width: 100%; height: 6px; border-radius: 4px; background: #334155; outline: none; -webkit-appearance: none; cursor: pointer; }
+        .range-slider::-webkit-slider-thumb { -webkit-appearance: none; width: 18px; height: 18px; border-radius: 50%; background: #10b981; cursor: pointer; box-shadow: 0 0 10px rgba(16, 185, 129, 0.6); border: 2px solid #ffffff; }
+        
+        .kpi-summary-box { background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(56, 189, 248, 0.1)); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 16px; padding: 22px; text-align: center; margin-bottom: 24px; }
+        .kpi-main-val { font-family: 'Outfit', sans-serif; font-size: 2.6rem; font-weight: 800; color: #10b981; line-height: 1.1; margin-bottom: 6px; }
+        .kpi-main-lbl { color: #94a3b8; font-size: 0.88rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+        
+        .results-list { display: flex; flex-direction: column; gap: 14px; }
+        .result-row { display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; background: rgba(15, 23, 42, 0.5); border-radius: 10px; border: 1px solid rgba(255, 255, 255, 0.04); }
+        .result-row .lbl { font-size: 0.92rem; color: #cbd5e1; }
+        .result-row .val { font-family: 'JetBrains Mono', monospace; font-weight: 700; color: #f8fafc; font-size: 1.05rem; }
+        
+        .ad-box { background: rgba(15, 23, 42, 0.4); border: 1px dashed rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 16px; text-align: center; margin: 30px 0; }
+        .back-link { display: inline-flex; align-items: center; gap: 6px; color: #38bdf8; text-decoration: none; font-weight: 600; font-size: 0.95rem; margin-bottom: 20px; }
+    </style>
+    
+    <!-- Schema.org SoftwareApplication -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Greenhouse Biomass CHP & Waste Heat ROI Simulator",
+        "operatingSystem": "All modern browsers",
+        "applicationCategory": "EngineeringCalculator",
+        "description": "Precision engineering financial and thermodynamic calculator for commercial greenhouse biomass-fired combined heat and power systems.",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "author": { "@type": "Organization", "name": "Inwoovation Lab" }
+    }
+    </script>
+</head>
+<body>
+<div class="container">
+    <div class="tool-wrapper">
+        <a href="/tools/index.html" class="back-link">← Return to All Engineering Calculators</a>
+        
+        <header class="tool-header">
+            <span class="tool-tag">⚡ Tool #35 • Thermodynamics & CAPEX</span>
+            <h1>Greenhouse Biomass CHP & Waste Heat ROI Simulator</h1>
+            <p>Model capital expenditure, fuel cost delta, biogenic CO₂ fertilization value, cross-sector municipal heat sales, and simple payback periods for high-wire Venlo biomass installations.</p>
+        </header>
+
+        <!-- AdSense Top Banner -->
+        <div class="ad-box">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-8597809158257497"
+                 data-ad-slot="auto"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+        <div class="calculator-grid">
+            <!-- Left Panel: Input Controls -->
+            <div class="calc-panel">
+                <h2>🎛️ Engineering & Cost Parameters</h2>
+                
+                <div class="input-group">
+                    <div class="input-label-row">
+                        <span>Greenhouse Growing Area (m²)</span>
+                        <span class="input-val-badge" id="lbl_area">30,000 m²</span>
+                    </div>
+                    <input type="range" class="range-slider" id="inp_area" min="5000" max="100000" step="2500" value="30000" oninput="calculateROI()">
+                </div>
+
+                <div class="input-group">
+                    <div class="input-label-row">
+                        <span>Annual Heat Demand (kWh/m²/yr)</span>
+                        <span class="input-val-badge" id="lbl_heat_intensity">350 kWh/m²</span>
+                    </div>
+                    <input type="range" class="range-slider" id="inp_heat_intensity" min="150" max="550" step="25" value="350" oninput="calculateROI()">
+                </div>
+
+                <div class="input-group">
+                    <div class="input-label-row">
+                        <span>Baseline Fossil Gas Price (€/kWh)</span>
+                        <span class="input-val-badge" id="lbl_gas_price">€0.085 / kWh</span>
+                    </div>
+                    <input type="range" class="range-slider" id="inp_gas_price" min="0.040" max="0.160" step="0.005" value="0.085" oninput="calculateROI()">
+                </div>
+
+                <div class="input-group">
+                    <div class="input-label-row">
+                        <span>Wood Chip Delivered Cost (€/tonne)</span>
+                        <span class="input-val-badge" id="lbl_biomass_cost">€130 / t</span>
+                    </div>
+                    <input type="range" class="range-slider" id="inp_biomass_cost" min="70" max="220" step="5" value="130" oninput="calculateROI()">
+                </div>
+
+                <div class="input-group">
+                    <div class="input-label-row">
+                        <span>Decarbonization Grant / Subsidy (%)</span>
+                        <span class="input-val-badge" id="lbl_grant_pct">35%</span>
+                    </div>
+                    <input type="range" class="range-slider" id="inp_grant_pct" min="0" max="60" step="5" value="35" oninput="calculateROI()">
+                </div>
+
+                <div class="input-group">
+                    <div class="input-label-row">
+                        <span>Avoided Commercial CO₂ Price (€/t)</span>
+                        <span class="input-val-badge" id="lbl_co2_price">€140 / t</span>
+                    </div>
+                    <input type="range" class="range-slider" id="inp_co2_price" min="60" max="260" step="10" value="140" oninput="calculateROI()">
+                </div>
+
+                <div class="input-group">
+                    <div class="input-label-row">
+                        <span>Surplus Heat Exported to Grid (%)</span>
+                        <span class="input-val-badge" id="lbl_export_pct">15%</span>
+                    </div>
+                    <input type="range" class="range-slider" id="inp_export_pct" min="0" max="40" step="5" value="15" oninput="calculateROI()">
+                </div>
+            </div>
+
+            <!-- Right Panel: Financial & Environmental Output -->
+            <div class="calc-panel">
+                <h2>📈 Financial Returns & Decarbonization</h2>
+
+                <div class="kpi-summary-box">
+                    <div class="kpi-main-val" id="out_payback">3.7 Years</div>
+                    <div class="kpi-main-lbl">Estimated Simple Payback Period</div>
+                </div>
+
+                <div class="results-list">
+                    <div class="result-row">
+                        <span class="lbl">Total Annual Energy Demand</span>
+                        <span class="val" id="out_total_energy">10,500 MWh/yr</span>
+                    </div>
+                    <div class="result-row">
+                        <span class="lbl">Baseline Fossil Gas Annual Cost</span>
+                        <span class="val" style="color:#ef4444;" id="out_baseline_cost">€892,500</span>
+                    </div>
+                    <div class="result-row">
+                        <span class="lbl">Biomass Wood Chip Fuel Cost</span>
+                        <span class="val" style="color:#f59e0b;" id="out_biomass_cost">€464,773</span>
+                    </div>
+                    <div class="result-row">
+                        <span class="lbl">Annual Net Fuel Cost Savings</span>
+                        <span class="val" style="color:#10b981;" id="out_fuel_savings">€427,727</span>
+                    </div>
+                    <div class="result-row">
+                        <span class="lbl">Biogenic CO₂ Canopy Dosing Value</span>
+                        <span class="val" style="color:#38bdf8;" id="out_co2_value">€176,400</span>
+                    </div>
+                    <div class="result-row">
+                        <span class="lbl">Municipal District Heat Export Revenue</span>
+                        <span class="val" style="color:#a855f7;" id="out_export_revenue">€70,875</span>
+                    </div>
+                    <div class="result-row" style="background:rgba(16,185,129,0.15); border-color:rgba(16,185,129,0.4);">
+                        <span class="lbl" style="font-weight:700; color:#f8fafc;">Total Annual Operating Benefit</span>
+                        <span class="val" style="color:#10b981; font-size:1.2rem;" id="out_total_benefit">€675,002 / yr</span>
+                    </div>
+                    <div class="result-row">
+                        <span class="lbl">Avoided Fossil CO₂ Emissions</span>
+                        <span class="val" id="out_co2_abatement">2,121 tCO₂/yr</span>
+                    </div>
+                    <div class="result-row">
+                        <span class="lbl">Gross CAPEX (Boiler, SCR, Buffers)</span>
+                        <span class="val" id="out_gross_capex">€3,800,000</span>
+                    </div>
+                    <div class="result-row">
+                        <span class="lbl">Net CAPEX (After Grants/Subsidies)</span>
+                        <span class="val" style="color:#38bdf8;" id="out_net_capex">€2,470,000</span>
+                    </div>
+                    <div class="result-row">
+                        <span class="lbl">10-Year Net Present Value (NPV @ 6%)</span>
+                        <span class="val" style="color:#10b981;" id="out_npv">€2,498,061</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- AdSense Mid Banner -->
+        <div class="ad-box">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-8597809158257497"
+                 data-ad-slot="auto"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+        <!-- Technical Appendix -->
+        <div class="calc-panel" style="margin-top:30px;">
+            <h2>🔬 Biophysical & Thermodynamic Assumptions</h2>
+            <ul style="line-height: 1.8; font-size: 0.95rem; color: #94a3b8;">
+                <li><strong>Wood Chip Lower Heating Value (LHV)</strong>: Calculated at 3.20 kWh/kg assuming standard W35 moisture content (35% moisture according to EN ISO 17225-4).</li>
+                <li><strong>Boiler Efficiency</strong>: 88% overall thermal conversion efficiency incorporating secondary condensing flue gas economizers.</li>
+                <li><strong>Fossil Emission Factor</strong>: 0.202 kg CO₂/kWh for natural gas combustion (German Umweltbundesamt standard).</li>
+                <li><strong>Biogenic CO₂ Recovery</strong>: Assumes catalytic SCR DeNOx purification recovering 120 kg clean CO₂ per megawatt-hour of biomass consumed, delivering daylight canopy dosing (800–1,000 ppm).</li>
+                <li><strong>Heat Export Tariff</strong>: Wholesale industrial heat delivery tariff benchmarked at €0.045/kWh for municipal district networks and airport thermal grids.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script>
+function formatEuro(val) {
+    return '€' + Math.round(val).toLocaleString('en-US');
+}
+
+function calculateROI() {
+    // Inputs
+    const area = parseFloat(document.getElementById('inp_area').value);
+    const heatIntensity = parseFloat(document.getElementById('inp_heat_intensity').value);
+    const gasPrice = parseFloat(document.getElementById('inp_gas_price').value);
+    const biomassCostTon = parseFloat(document.getElementById('inp_biomass_cost').value);
+    const grantPct = parseFloat(document.getElementById('inp_grant_pct').value) / 100;
+    const co2PriceTon = parseFloat(document.getElementById('inp_co2_price').value);
+    const exportPct = parseFloat(document.getElementById('inp_export_pct').value) / 100;
+
+    // Badges update
+    document.getElementById('lbl_area').innerText = area.toLocaleString('en-US') + ' m²';
+    document.getElementById('lbl_heat_intensity').innerText = heatIntensity + ' kWh/m²';
+    document.getElementById('lbl_gas_price').innerText = '€' + gasPrice.toFixed(3) + ' / kWh';
+    document.getElementById('lbl_biomass_cost').innerText = '€' + Math.round(biomassCostTon) + ' / t';
+    document.getElementById('lbl_grant_pct').innerText = Math.round(grantPct * 100) + '%';
+    document.getElementById('lbl_co2_price').innerText = '€' + Math.round(co2PriceTon) + ' / t';
+    document.getElementById('lbl_export_pct').innerText = Math.round(exportPct * 100) + '%';
+
+    // Thermal Demand
+    const totalThermalKwh = area * heatIntensity;
+    const totalThermalMwh = totalThermalKwh / 1000;
+    const baselineCost = totalThermalKwh * gasPrice;
+
+    // Biomass Consumption
+    // 1 tonne wood chips (35% moisture) ~ 3,200 kWh lower heating value. Boiler efficiency ~ 88%.
+    const netKwhPerTon = 3200 * 0.88; // ~ 2,816 kWh net heat per tonne
+    const tonnesBiomass = totalThermalKwh / netKwhPerTon;
+    const biomassFuelCost = tonnesBiomass * biomassCostTon;
+    const fuelSavings = Math.max(0, baselineCost - biomassFuelCost);
+
+    // Biogenic CO2 Value
+    // ~ 120 kg clean CO2 captured via SCR per MWh thermal used during daylight
+    const daylightFraction = 0.55;
+    const tonsCo2Captured = (totalThermalMwh * daylightFraction * 0.12);
+    const co2Value = tonsCo2Captured * co2PriceTon;
+
+    // District Heat Export Revenue
+    // Extra heat produced during off-peak periods sold at €0.045/kWh
+    const exportKwh = totalThermalKwh * exportPct;
+    const exportRevenue = exportKwh * 0.045;
+
+    // Total Operating Benefit
+    const totalAnnualBenefit = fuelSavings + co2Value + exportRevenue;
+
+    // CO2 Abatement
+    // 0.202 kg CO2 / kWh natural gas avoided
+    const co2AbatedTonnes = (totalThermalKwh * 0.202) / 1000;
+
+    // CAPEX Estimation
+    // Base scale model: ~ €95/m² for complete turn-key biomass boiler, SCR, buffer tank, and piping
+    let grossCapex = area * 105;
+    if (area > 50000) grossCapex *= 0.90; // economies of scale
+    const netCapex = grossCapex * (1 - grantPct);
+
+    // Payback
+    const paybackYears = (totalAnnualBenefit > 0) ? (netCapex / totalAnnualBenefit) : 99;
+
+    // 10-Year NPV at 6% discount rate
+    const r = 0.06;
+    let npv = -netCapex;
+    for (let t = 1; t <= 10; t++) {
+        npv += totalAnnualBenefit / Math.pow(1 + r, t);
+    }
+
+    // Display
+    document.getElementById('out_total_energy').innerText = Math.round(totalThermalMwh).toLocaleString('en-US') + ' MWh/yr';
+    document.getElementById('out_baseline_cost').innerText = formatEuro(baselineCost);
+    document.getElementById('out_biomass_cost').innerText = formatEuro(biomassFuelCost);
+    document.getElementById('out_fuel_savings').innerText = formatEuro(fuelSavings);
+    document.getElementById('out_co2_value').innerText = formatEuro(co2Value);
+    document.getElementById('out_export_revenue').innerText = formatEuro(exportRevenue);
+    document.getElementById('out_total_benefit').innerText = formatEuro(totalAnnualBenefit) + ' / yr';
+    document.getElementById('out_co2_abatement').innerText = Math.round(co2AbatedTonnes).toLocaleString('en-US') + ' tCO₂/yr';
+    document.getElementById('out_gross_capex').innerText = formatEuro(grossCapex);
+    document.getElementById('out_net_capex').innerText = formatEuro(netCapex);
+    document.getElementById('out_payback').innerText = (paybackYears < 50 ? paybackYears.toFixed(1) + ' Years' : '> 50 Years');
+    document.getElementById('out_npv').innerText = formatEuro(npv);
+}
+
+// Initial calculation on load
+window.addEventListener('DOMContentLoaded', calculateROI);
+</script>
+
+<footer>
+    <div class="container" style="text-align:center; padding:30px 0; color:#64748b; font-size:0.85rem; border-top:1px solid rgba(255,255,255,0.05); margin-top:60px;">
+        <p>© 2026 Inwoovation Lab. All rights reserved. | <a href="/privacy-policy.html" style="color:#94a3b8;">Privacy Policy</a> | <a href="/terms-of-service.html" style="color:#94a3b8;">Terms of Service</a> | <a href="/about.html" style="color:#94a3b8;">About</a> | <a href="/contact.html" style="color:#94a3b8;">Contact</a></p>
+    </div>
+</footer>
+</body>
+</html>

@@ -353,9 +353,9 @@
       </a>
       <div style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap;">
         <button class="nav-search-trigger" onclick="window.InwooPalette.open()" title="Open Spotlight Search (Ctrl+K)"><span>🔍 Search</span> <kbd>Ctrl+K</kbd></button>
-        <a href="../guides.html" style="color: #94a3b8; text-decoration: none; font-size: 0.9rem; font-weight: 600;">📚 72 Articles</a>
+        <a href="../guides.html" style="color: #94a3b8; text-decoration: none; font-size: 0.9rem; font-weight: 600;">📚 69 Articles</a>
         <a href="../crops/greenhouse-tomato-microclimate-vpd-steering-guide.html" style="color: #10b981; text-decoration: none; font-size: 0.9rem; font-weight: 600;">🌱 10 Crops</a>
-        <a href="../climate/westland-netherlands-greenhouse-climate-guide.html" style="color: #38bdf8; text-decoration: none; font-size: 0.9rem; font-weight: 600;">🌍 39 Climate Hubs</a>
+        <a href="../climate/westland-netherlands-greenhouse-climate-guide.html" style="color: #38bdf8; text-decoration: none; font-size: 0.9rem; font-weight: 600;">🌍 40 Climate Hubs</a>
         <a href="opencea-python-micro-framework-playground.html" style="color: #facc15; text-decoration: none; font-size: 0.9rem; font-weight: 600;">🐍 OpenCEA Python</a>
       </div>
     </div>
@@ -394,7 +394,7 @@
 
       <div class="search-meta-row">
         <div id="searchResultStats" class="search-counter">
-          Displaying all <strong>33</strong> enterprise engineering calculators
+          Displaying all <strong>35</strong> enterprise engineering calculators
         </div>
         <div class="quick-chips">
           <span class="chip-label">Quick Tags:</span>
@@ -801,6 +801,16 @@
         </div>
         <a href="greenhouse-3d-digital-twin-simulator.html" class="tool-link" style="background: linear-gradient(135deg, #0284c7, #38bdf8);">Launch 3D WebGL Simulator →</a>
       </div>
+
+      <!-- Tool 35 (Biomass CHP & District Heating ROI Engine) -->
+      <div class="tool-card" data-category="quant" style="border: 1px solid rgba(16, 185, 129, 0.4); background: linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(16, 185, 129, 0.1));">
+        <div>
+          <div class="tool-icon">🪵</div>
+          <h2 class="tool-title">Biomass CHP &amp; District Heating Energy ROI Calculator</h2>
+          <p class="tool-desc">Model woodchip/pellet biomass boilers (1–20 MWth), flue gas SCR CO₂ dosing yield value, cascaded district heating revenues, fuel cost displacement vs natural gas, and 10-year discounted cash flow NPV / payback.</p>
+        </div>
+        <a href="greenhouse-biomass-chp-energy-roi-calculator.html" class="tool-link" style="background: linear-gradient(135deg, #10b981, #059669);">Launch Biomass CHP ROI Calculator →</a>
+      </div>
     </div>
   </div>
 
@@ -817,7 +827,9 @@
       "cucumber": ["cucumber", "nutrient", "penman", "vpd"],
       "lettuce": ["lettuce", "dli", "nutrient", "vertical"],
       "heating": ["heating", "screen", "din v 18599", "thermal", "buffer", "boiler"],
-      "boiler": ["heating", "buffer", "chp", "boiler", "hot water"],
+      "boiler": ["heating", "buffer", "chp", "boiler", "hot water", "biomass", "woodchip"],
+      "biomass": ["biomass", "woodchip", "pellet", "chp", "scr", "district heating", "heating", "boiler", "lcoh"],
+      "district heating": ["district heating", "biomass", "chp", "heating", "cascaded", "lcoh"],
       "buffer": ["buffer", "stratification", "storage", "mwh", "richardson"],
       "tank": ["buffer", "stratification", "storage"],
       "gas": ["heating", "chp", "gas", "scr", "co2", "urea"],
