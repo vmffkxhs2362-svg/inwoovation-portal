@@ -72,6 +72,38 @@
     "dateModified": "2026-09-01"
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Why does warm greenhouse air hold exponentially more water vapor?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The saturation vapor pressure of air follows the Clausius-Clapeyron relation. For every 10°C rise in temperature, air's moisture-holding capacity nearly doubles, drastically altering latent heat content and condensation risks."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What causes evening condensation on Venlo greenhouse glazing and crop heads?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Radiant cooling to the cold sky drops leaf and glass surface temperatures below the microclimate dew point temperature, causing moisture to phase-change from vapor to liquid droplets, promoting Botrytis spore germination."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does heat recovery mechanical dehumidification save energy over window purging?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Window purging vents sensible and latent heat outside, requiring boiler reheating. Mechanical dehumidifiers condense water onto evaporator coils and return latent heat of vaporization back into the canopy via the condenser, retaining up to 50% thermal energy."
+        }
+      }
+    ]
+  }
+  </script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8597809158257497" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -124,6 +156,11 @@
       </div>
     </div>
 
+    <!-- Visual Dial Telemetry -->
+    <div style="display: flex; justify-content: center; margin: 24px 0 16px 0;">
+      <div id="vpdGaugeContainer" style="width: 100%; max-width: 280px;"></div>
+    </div>
+
     <!-- Telemetry Cards -->
     <div class="results-grid">
       <div class="res-box">
@@ -152,6 +189,7 @@
     </div>
   </div>
 
+  <script src="../js/gauge-meter.js"></script>
   <script src="../js/audit-pdf-generator.js"></script>
 
     <!-- START: INJECTED EDITORIAL & AMAZON ASSOCIATES HARDWARE MODULE -->
@@ -325,6 +363,25 @@ Where:
       ctx.fillText(`State: ${t.toFixed(1)}°C, ${x.toFixed(1)}g/kg (${rh}%)`, ptX + 12, ptY - 8);
     }
 
+    let vpdGauge = null;
+    if (typeof InwooGauge !== 'undefined') {
+      vpdGauge = new InwooGauge('vpdGaugeContainer', {
+        min: 0,
+        max: 2.5,
+        value: 0.85,
+        unit: 'kPa',
+        title: 'Vapor Pressure Deficit (VPD)',
+        decimals: 2,
+        zones: [
+          { from: 0, to: 0.4, color: '#38bdf8', label: 'LOW VPD (FUNGAL RISK)' },
+          { from: 0.4, to: 0.8, color: '#10b981', label: 'VEGETATIVE WINDOW' },
+          { from: 0.8, to: 1.2, color: '#059669', label: 'OPTIMAL PHOTOSYNTHETIC' },
+          { from: 1.2, to: 1.6, color: '#f59e0b', label: 'MILD TRANSPIRATION STRESS' },
+          { from: 1.6, to: 2.5, color: '#ef4444', label: 'HIGH STOMATAL CLOSURE' }
+        ]
+      });
+    }
+
     function calculate() {
       const t = parseFloat(document.getElementById('slider-temp').value);
       const rh = parseFloat(document.getElementById('slider-rh').value);
@@ -348,6 +405,9 @@ Where:
       // Enthalpy h = 1.006*T + x*(2501 + 1.86*T)/1000  (kJ/kg)
       const h_moist = 1.006 * t + (x / 1000) * (2501 + 1.86 * t);
 
+      // Vapor Pressure Deficit (kPa)
+      const vpd = Math.max(0, es - ea);
+
       // Mechanical Dehumidifier vs Vent Purging Savings
       const savings = Math.min(65, Math.max(25, 35 + (20 - t) * 1.2 + (rh - 70) * 0.4));
 
@@ -355,6 +415,10 @@ Where:
       document.getElementById('res-dew-pt').innerText = dew.toFixed(1) + ' °C';
       document.getElementById('res-enthalpy').innerText = h_moist.toFixed(1) + ' kJ/kg';
       document.getElementById('res-savings').innerText = savings.toFixed(1) + ' % vs Vents';
+
+      if (vpdGauge) {
+        vpdGauge.update(vpd);
+      }
 
       drawChart(t, rh, dew, x);
     }

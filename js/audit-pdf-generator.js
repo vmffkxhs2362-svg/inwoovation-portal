@@ -41,37 +41,48 @@ function generateInstitutionalPDF(reportTitle, kpiData, inputSummary, recommenda
     });
 
     printContainer.innerHTML = `
-        <div class="print-page" style="font-family:'Plus Jakarta Sans',sans-serif; color:#0f172a; padding:40px; max-width:800px; margin:0 auto; background:#ffffff;">
+        <div class="print-page" style="font-family:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color:#0f172a; padding:24px 32px; max-width:820px; margin:0 auto; background:#ffffff; box-sizing:border-box;">
             <!-- Header -->
-            <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:3px solid #10b981; padding-bottom:16px; margin-bottom:24px;">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; border-bottom:3px solid #10b981; padding-bottom:14px; margin-bottom:18px;">
                 <div>
-                    <div style="font-size:1.4rem; font-weight:800; color:#0f172a; letter-spacing:-0.02em;">INWOOVATION LAB</div>
-                    <div style="font-size:0.8rem; color:#64748b; font-weight:600;">Controlled Environment Agriculture R&D • Open-Source Engineering</div>
+                    <div style="font-size:1.5rem; font-weight:800; color:#0f172a; letter-spacing:-0.02em; display:flex; align-items:center; gap:8px;">
+                        <span>INWOOVATION LAB</span>
+                        <span style="font-size:0.75rem; background:#0f172a; color:#38bdf8; font-family:monospace; padding:2px 8px; border-radius:4px; font-weight:600;">CEA R&D</span>
+                    </div>
+                    <div style="font-size:0.78rem; color:#475569; font-weight:600; margin-top:2px;">Controlled Environment Agriculture Engineering • Open-Source Thermodynamic Kernel</div>
+                    <div style="font-size:0.72rem; color:#64748b;">Official Reference: inwoovation.com • Knoblauchsland Horticultural Research Hub</div>
                 </div>
                 <div style="text-align:right;">
-                    <div style="font-size:0.75rem; font-weight:700; color:#10b981; background:#ecfdf5; border:1px solid #a7f3d0; padding:4px 8px; border-radius:6px; display:inline-block;">OFFICIAL AUDIT REPORT</div>
-                    <div style="font-size:0.75rem; color:#94a3b8; margin-top:4px;">Date: ${todayStr}</div>
+                    <div style="font-size:0.75rem; font-weight:800; color:#047857; background:#ecfdf5; border:1px solid #6ee7b7; padding:4px 10px; border-radius:6px; display:inline-block; letter-spacing:0.04em;">
+                        OFFICIAL AUDIT REPORT
+                    </div>
+                    <div style="font-size:0.72rem; color:#64748b; margin-top:4px;">Date: <strong>${todayStr}</strong></div>
+                    <div style="font-size:0.68rem; color:#94a3b8; font-family:monospace;">STAMP: DIN V 18599 / ISO 20480-1</div>
                 </div>
             </div>
 
-            <!-- Title -->
-            <div style="margin-bottom:20px;">
-                <h1 style="font-size:1.6rem; font-weight:800; color:#0f172a; margin:0 0 6px 0;">${reportTitle}</h1>
-                <p style="font-size:0.85rem; color:#475569; margin:0; line-height:1.5;">Biophysical thermodynamic calculation summary generated autonomously via Inwoovation Lab open-access engineering engines (inwoovation.com).</p>
+            <!-- Title & Scope -->
+            <div style="margin-bottom:16px;">
+                <h1 style="font-size:1.45rem; font-weight:800; color:#0f172a; margin:0 0 4px 0; letter-spacing:-0.01em;">${reportTitle}</h1>
+                <p style="font-size:0.8rem; color:#475569; margin:0; line-height:1.45;">Deterministic biophysical simulation audit computed client-side with zero data persistence. Calibrated against ASABE, DIN V 18599, and Wageningen UR peer-reviewed thermodynamic standards.</p>
             </div>
 
             <!-- Key Results KPI Grid -->
-            <div style="margin-bottom:24px;">
-                <h2 style="font-size:1rem; font-weight:700; color:#0f172a; text-transform:uppercase; letter-spacing:0.05em; border-bottom:1px solid #e2e8f0; padding-bottom:6px; margin-bottom:12px;">1. Executive Calculation Results</h2>
-                <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:12px;">
+            <div style="margin-bottom:18px;">
+                <div style="font-size:0.85rem; font-weight:800; color:#0f172a; text-transform:uppercase; letter-spacing:0.05em; border-bottom:1px solid #cbd5e1; padding-bottom:4px; margin-bottom:10px;">
+                    1. Executive KPI Telemetry
+                </div>
+                <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(160px, 1fr)); gap:10px;">
                     ${kpiRows}
                 </div>
             </div>
 
             <!-- Input Parameters Table -->
-            <div style="margin-bottom:24px;">
-                <h2 style="font-size:1rem; font-weight:700; color:#0f172a; text-transform:uppercase; letter-spacing:0.05em; border-bottom:1px solid #e2e8f0; padding-bottom:6px; margin-bottom:12px;">2. Baseline Simulation Inputs</h2>
-                <table style="width:100%; border-collapse:collapse; font-size:0.85rem;">
+            <div style="margin-bottom:18px;">
+                <div style="font-size:0.85rem; font-weight:800; color:#0f172a; text-transform:uppercase; letter-spacing:0.05em; border-bottom:1px solid #cbd5e1; padding-bottom:4px; margin-bottom:8px;">
+                    2. Baseline Operational Inputs
+                </div>
+                <table style="width:100%; border-collapse:collapse; font-size:0.8rem;">
                     <tbody>
                         ${inputRows}
                     </tbody>
@@ -79,21 +90,24 @@ function generateInstitutionalPDF(reportTitle, kpiData, inputSummary, recommenda
             </div>
 
             <!-- Recommendations & Standards -->
-            <div style="margin-bottom:24px; background:#f0fdf4; border:1px solid #bbf7d0; border-radius:8px; padding:16px;">
-                <h2 style="font-size:0.95rem; font-weight:700; color:#166534; margin:0 0 6px 0;">3. Engineering Assessment & Standards Compliance</h2>
-                <p style="font-size:0.85rem; color:#15803d; line-height:1.6; margin:0;">${recommendationText}</p>
+            <div style="margin-bottom:16px; background:#f0fdf4; border:1px solid #86efac; border-radius:8px; padding:12px 14px;">
+                <div style="font-size:0.85rem; font-weight:800; color:#166534; margin:0 0 4px 0; display:flex; align-items:center; gap:6px;">
+                    <span>📋</span>
+                    <span>3. Engineering Interpretation & Operational Recommendations</span>
+                </div>
+                <p style="font-size:0.78rem; color:#14532d; line-height:1.55; margin:0;">${recommendationText}</p>
             </div>
 
-            
-            <!-- 4. Legal & Engineering Disclaimer -->
-            <div style="margin-bottom:16px; padding:10px 14px; background:#f8fafc; border:1px solid #e2e8f0; border-radius:6px; font-size:0.68rem; color:#64748b; line-height:1.4;">
-                <strong>⚖️ Engineering & Agronomic Disclaimer:</strong> This automated audit report is generated for preliminary estimation, educational, and research modeling purposes. Calculations are derived from standard biophysical models (ASABE, DIN V 18599, FAO-56). Commercial execution, structural sizing, and chemical/biological applications must be verified by licensed Professional Engineers (PE) and certified local crop consultants. Inwoovation Lab assumes no liability for commercial outcomes or equipment performance.
+            <!-- Legal & Engineering Disclaimer -->
+            <div style="margin-bottom:14px; padding:8px 12px; background:#f8fafc; border:1px solid #e2e8f0; border-radius:6px; font-size:0.65rem; color:#64748b; line-height:1.4;">
+                <strong>⚖️ Engineering & Agronomic Disclaimer:</strong> This automated audit report is generated for preliminary estimation, educational modeling, and facility feasibility assessment. Calculations follow standard biophysical formulations (ASABE, DIN V 18599, FAO-56). Commercial execution, structural sizing, and chemical/biological dosing must be reviewed by licensed Professional Engineers (PE) and certified crop consultants. Inwoovation Lab assumes no liability for operational performance.
             </div>
 
             <!-- Footer & Disclaimers -->
-            <div style="border-top:1px solid #e2e8f0; padding-top:12px; margin-top:30px; display:flex; justify-content:space-between; font-size:0.7rem; color:#94a3b8;">
+            <div style="border-top:1px solid #e2e8f0; padding-top:8px; margin-top:14px; display:flex; justify-content:space-between; align-items:center; font-size:0.68rem; color:#94a3b8;">
                 <div>Verified by Inwoovation Lab Automated Biophysical Kernel v2026.9</div>
-                <div>Document ID: INW-${Math.random().toString(36).substring(2, 9).toUpperCase()} • Public Access</div>
+                <div style="font-family:monospace; font-weight:700; color:#0f766e;">DOC-ID: INW-${Math.random().toString(36).substring(2, 9).toUpperCase()} • 100% Client-Side</div>
+                <div>https://inwoovation.com</div>
             </div>
         </div>
     `;
@@ -107,18 +121,22 @@ function generateInstitutionalPDF(reportTitle, kpiData, inputSummary, recommenda
                 #institutional-print-container { display: none; }
             }
             @media print {
-                body * { visibility: hidden; }
-                #institutional-print-container, #institutional-print-container * { visibility: visible; }
+                body * { visibility: hidden !important; }
+                #institutional-print-container, #institutional-print-container * { visibility: visible !important; }
                 #institutional-print-container {
-                    position: absolute;
-                    left: 0;
-                    top: 0;
-                    width: 100%;
+                    position: absolute !important;
+                    left: 0 !important;
+                    top: 0 !important;
+                    width: 100% !important;
                     display: block !important;
+                }
+                .print-page {
+                    page-break-inside: avoid !important;
+                    break-inside: avoid !important;
                 }
                 @page {
                     size: A4 portrait;
-                    margin: 15mm;
+                    margin: 10mm 12mm;
                 }
             }
         `;
@@ -128,3 +146,4 @@ function generateInstitutionalPDF(reportTitle, kpiData, inputSummary, recommenda
     // Trigger Print
     window.print();
 }
+

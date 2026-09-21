@@ -83,6 +83,38 @@
     "dateModified": "2026-09-01"
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Why is drain percentage monitoring critical in closed-loop recirculating hydroponics?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Plants absorb water and ions at differential rates depending on vapor pressure deficit and irradiance. Monitoring drain volume and electrical conductivity ensures salts do not accumulate in the slab while ensuring that roots receive adequate dissolved oxygen replenishment."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does chemical speciation affect calcium and phosphate availability?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "In nutrient stock tanks and dripline solutions with pH > 6.2, free Ca²⁺ ions readily react with orthophosphate species to precipitate insoluble calcium phosphate, clogging drip emitters and inducing blossom-end rot. Maintaining pH between 5.5 and 5.8 prevents crystallization."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is TDR technology and how does it calibrate rockwool moisture measurements?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Time-Domain Reflectometry (TDR) emits high-frequency electromagnetic pulses along stainless steel rods. By measuring the dielectric permittivity of the substrate, TDR calculates volumetric water content within ±1% precision, independent of fertilizer EC variations."
+        }
+      }
+    ]
+  }
+  </script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8597809158257497" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -154,6 +186,11 @@
       </table>
     </div>
 
+    <!-- Visual Dial Telemetry -->
+    <div style="display: flex; justify-content: center; margin: 24px 0 16px 0;">
+      <div id="ecGaugeContainer" style="width: 100%; max-width: 280px;"></div>
+    </div>
+
     <!-- Summary Metrics -->
     <div class="results-grid">
       <div class="res-box">
@@ -172,6 +209,13 @@
         <div style="font-size: 0.8rem; color: var(--text-muted);">TOTAL FERTILIZER SALT</div>
         <div class="res-val" id="res-total-salt">1,840 g</div>
       </div>
+    </div>
+
+    <!-- 1-Click PDF Export -->
+    <div style="text-align:center; margin-top:24px;">
+      <button onclick="exportNutrientAuditPDF()" style="background:linear-gradient(135deg, #0284c7, #0369a1); color:#fff; border:1px solid rgba(255,255,255,0.2); padding:12px 24px; border-radius:12px; font-weight:700; font-size:0.95rem; cursor:pointer; display:inline-flex; align-items:center; gap:8px; box-shadow:0 4px 14px rgba(2,132,199,0.35);">
+        📄 Download Hydroponic Recipe Audit Report (PDF)
+      </button>
     </div>
   </div>
 
@@ -414,6 +458,61 @@ Where:
       const k_ratio = (k_val / mg_base).toFixed(1);
       const ca_ratio = (ca_val / mg_base).toFixed(1);
       document.getElementById('res-cation-ratio').innerText = `${k_ratio} : ${ca_ratio} : 1.0`;
+
+      if (ecGauge) {
+        ecGauge.update(targetEc);
+      }
+    }
+
+    let ecGauge = null;
+    if (typeof InwooGauge !== 'undefined') {
+      ecGauge = new InwooGauge('ecGaugeContainer', {
+        min: 0,
+        max: 5.0,
+        value: 2.6,
+        unit: 'mS/cm',
+        title: 'Nutrient Electrical Conductivity (EC)',
+        decimals: 2,
+        zones: [
+          { from: 0, to: 1.5, color: '#38bdf8', label: 'LOW EC (SEEDLING/GREENS)' },
+          { from: 1.5, to: 2.8, color: '#10b981', label: 'OPTIMAL COMMERCIAL EC' },
+          { from: 2.8, to: 3.8, color: '#f59e0b', label: 'GENERATIVE STEERING' },
+          { from: 3.8, to: 5.0, color: '#ef4444', label: 'HIGH SALINITY RISK' }
+        ]
+      });
+    }
+
+    function exportNutrientAuditPDF() {
+      const recipe = document.getElementById('recipe-select').selectedOptions[0].text;
+      const vol = document.getElementById('lbl-vol').innerText;
+      const mult = document.getElementById('lbl-ec-mult').innerText;
+      const ec = document.getElementById('res-ec').innerText;
+      const ph = document.getElementById('res-ph').innerText;
+      const ratio = document.getElementById('res-cation-ratio').innerText;
+      const salt = document.getElementById('res-total-salt').innerText;
+
+      const kpiData = [
+        { label: "Target Solution EC", value: ec, unit: "Electrical Conductivity" },
+        { label: "Target pH Range", value: ph, unit: "Optimum Bioavailability" },
+        { label: "K : Ca : Mg Ratio", value: ratio, unit: "Cation Stoichiometry" },
+        { label: "Total Salts Dosed", value: salt, unit: "Per Solution Batch" }
+      ];
+
+      const inputSummary = [
+        { label: "Crop Nutritional Recipe", value: recipe },
+        { label: "Batch Water Volume", value: vol },
+        { label: "EC Intensity Multiplier", value: mult },
+        { label: "Ionic Model Applied", value: "Sonneveld & Voogt Dutch Closed-Loop Standard" }
+      ];
+
+      const recommendation = `Hydroponic dosing formulation for ${recipe} (${vol} batch at ${mult} strength) targets an EC of ${ec} and pH ${ph} with a balanced K:Ca:Mg cation profile of ${ratio}. Maintain rootzone dissolved oxygen > 8 mg/L to prevent root tip necrosis.`;
+
+      generateInstitutionalPDF(
+        "Commercial Hydroponic Recipe & Ion Balance Engineering Audit",
+        kpiData,
+        inputSummary,
+        recommendation
+      );
     }
 
     document.querySelectorAll('input, select').forEach(el => {
@@ -423,5 +522,7 @@ Where:
 
     recalculate();
   </script>
+  <script src="../js/gauge-meter.js"></script>
+  <script src="../js/audit-pdf-generator.js"></script>
 </body>
 </html>

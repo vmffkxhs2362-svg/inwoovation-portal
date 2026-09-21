@@ -59,6 +59,38 @@
     "dateModified": "2026-09-01"
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Why is leaf temperature more critical than ambient air temperature for VPD?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Because stomata are located on the leaf surface, the saturation vapor pressure must be calculated at leaf temperature, not air temperature. High transpiration can cool leaves 2°C below ambient air, shifting calculated VPD by over 30%."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does high-pressure fogging (70 bar) achieve adiabatic cooling without leaf wetting?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Operating water pressure at 70 bar shears droplet diameters below 10–15 microns (Sauter Mean Diameter D32). Droplets flash-evaporate in under 1.5 seconds, extracting latent heat of vaporization (2.45 MJ/kg) before settling onto foliage."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the optimal air velocity through the greenhouse crop canopy?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Horizontal circulation fans should maintain an air speed of 0.3 to 0.5 m/s across leaves. This thins the laminar boundary layer resistance, replenishing localized CO2 supplies and preventing humid microclimates that invite fungal pathogens."
+        }
+      }
+    ]
+  }
+  </script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8597809158257497" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -140,6 +172,11 @@
       </div>
     </div>
 
+    <!-- Visual Dial Telemetry -->
+    <div style="display: flex; justify-content: center; margin: 24px 0 16px 0;">
+      <div id="heatLoadGaugeContainer" style="width: 100%; max-width: 280px;"></div>
+    </div>
+
     <!-- Results Telemetry -->
     <div class="results-grid">
       <div class="res-box">
@@ -182,6 +219,7 @@
     </div>
   </div>
 
+  <script src="../js/gauge-meter.js"></script>
   <script src="../js/audit-pdf-generator.js"></script>
   <script src="../js/biophysics_kernel.js"></script>
 
@@ -324,11 +362,32 @@ Where:
       };
     }
 
+    let heatGauge = null;
+    if (typeof InwooGauge !== 'undefined') {
+      heatGauge = new InwooGauge('heatLoadGaugeContainer', {
+        min: 0,
+        max: 300,
+        value: 142,
+        unit: 'W/m²',
+        title: 'Specific Heating Demand',
+        decimals: 0,
+        zones: [
+          { from: 0, to: 100, color: '#10b981', label: 'OPTIMAL (LOW DEMAND)' },
+          { from: 100, to: 180, color: '#f59e0b', label: 'MODERATE HEATING' },
+          { from: 180, to: 300, color: '#ef4444', label: 'HIGH THERMAL LOAD' }
+        ]
+      });
+    }
+
     function renderResults(res) {
       document.getElementById('res-peak-kw').innerText = Math.round(res.peakKw).toLocaleString() + ' kW';
       document.getElementById('res-spec-load').innerText = Math.round(res.specLoadWPerM2) + ' W/m²';
       document.getElementById('res-screen-save').innerText = res.screenSavingsPct.toFixed(1) + ' %';
       document.getElementById('res-boiler-btu').innerText = res.boilerRatingMMBtu.toFixed(2) + ' MMBtu/h';
+
+      if (heatGauge) {
+        heatGauge.update(res.specLoadWPerM2);
+      }
     }
 
     function calculate() {

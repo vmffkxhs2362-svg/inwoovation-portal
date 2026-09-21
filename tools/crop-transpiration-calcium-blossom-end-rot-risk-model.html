@@ -59,6 +59,38 @@
     "dateModified": "2026-09-01"
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Why is drain percentage monitoring critical in closed-loop recirculating hydroponics?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Plants absorb water and ions at differential rates depending on vapor pressure deficit and irradiance. Monitoring drain volume and electrical conductivity ensures salts do not accumulate in the slab while ensuring that roots receive adequate dissolved oxygen replenishment."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does chemical speciation affect calcium and phosphate availability?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "In nutrient stock tanks and dripline solutions with pH > 6.2, free Ca²⁺ ions readily react with orthophosphate species to precipitate insoluble calcium phosphate, clogging drip emitters and inducing blossom-end rot. Maintaining pH between 5.5 and 5.8 prevents crystallization."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is TDR technology and how does it calibrate rockwool moisture measurements?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Time-Domain Reflectometry (TDR) emits high-frequency electromagnetic pulses along stainless steel rods. By measuring the dielectric permittivity of the substrate, TDR calculates volumetric water content within ±1% precision, independent of fertilizer EC variations."
+        }
+      }
+    ]
+  }
+  </script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8597809158257497" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -111,6 +143,11 @@
       </div>
     </div>
 
+    <!-- Visual Dial Telemetry -->
+    <div style="display: flex; justify-content: center; margin: 24px 0 16px 0;">
+      <div id="berGaugeContainer" style="width: 100%; max-width: 280px;"></div>
+    </div>
+
     <!-- Results Telemetry -->
     <div class="results-grid">
       <div class="res-box">
@@ -129,6 +166,13 @@
         <div style="font-size: 0.8rem; color: var(--text-muted);">CLIMATE ACTION ADVICE</div>
         <div class="res-val" id="res-advice" style="color: #10b981; font-size: 1.3rem;">MAINTAIN HUMIDITY & NIGHT ROOT PRESSURE</div>
       </div>
+    </div>
+
+    <!-- 1-Click PDF Export -->
+    <div style="text-align:center; margin-top:24px;">
+      <button onclick="exportTranspirationAuditPDF()" style="background:linear-gradient(135deg, #0284c7, #0369a1); color:#fff; border:1px solid rgba(255,255,255,0.2); padding:12px 24px; border-radius:12px; font-weight:700; font-size:0.95rem; cursor:pointer; display:inline-flex; align-items:center; gap:8px; box-shadow:0 4px 14px rgba(2,132,199,0.35);">
+        📄 Download Transpiration & BER Risk Audit Report (PDF)
+      </button>
     </div>
   </div>
 
@@ -244,6 +288,8 @@ Where:
     </div>
     <!-- END: INJECTED EDITORIAL & AMAZON ASSOCIATES HARDWARE MODULE -->
     
+  <script src="../js/gauge-meter.js"></script>
+  <script src="../js/audit-pdf-generator.js"></script>
 
   <script>
     function calculate() {
@@ -288,6 +334,58 @@ Where:
         advEl.innerText = 'URGENT: SHADE CANOPY & INCREASE NIGHT ROOT PRESSURE';
         advEl.style.color = '#ef4444';
       }
+
+      if (berGauge) {
+        berGauge.update(berRiskPct);
+      }
+    }
+
+    let berGauge = null;
+    if (typeof InwooGauge !== 'undefined') {
+      berGauge = new InwooGauge('berGaugeContainer', {
+        min: 0,
+        max: 100,
+        value: 5,
+        unit: '%',
+        title: 'Blossom-End Rot Risk',
+        decimals: 1,
+        zones: [
+          { from: 0, to: 15, color: '#10b981', label: 'LOW BER RISK (OPTIMAL)' },
+          { from: 15, to: 40, color: '#f59e0b', label: 'MODERATE DEFICIENCY' },
+          { from: 40, to: 100, color: '#ef4444', label: 'CRITICAL BER DAMAGE' }
+        ]
+      });
+    }
+
+    function exportTranspirationAuditPDF() {
+      const vpd = document.getElementById('lbl-vpd').innerText;
+      const ec = document.getElementById('lbl-ec').innerText;
+      const ca = document.getElementById('res-ca-distal').innerText;
+      const risk = document.getElementById('res-ber-risk').innerText;
+      const ratio = document.getElementById('res-xylem-ratio').innerText;
+      const advice = document.getElementById('res-advice').innerText;
+
+      const kpiData = [
+        { label: "Distal Ca Concentration", value: ca, unit: "Target > 0.12% DM" },
+        { label: "Blossom-End Rot Risk", value: risk, unit: "Predicted Probability" },
+        { label: "Xylem : Phloem Ratio", value: ratio, unit: "Sap Translocation" }
+      ];
+
+      const inputSummary = [
+        { label: "Canopy Vapor Pressure Deficit (VPD)", value: vpd },
+        { label: "Rootzone Slab EC", value: ec },
+        { label: "Biophysical Model", value: "Ho et al. Transpiration & Fruit Expansion Model" },
+        { label: "Recommended Mitigation", value: advice }
+      ];
+
+      const recommendation = `Agronomic audit for fruit calcium partitioning at ${vpd} daytime VPD and ${ec} rootzone EC yields a distal fruit Ca content of ${ca}, indicating ${risk}. ${advice}.`;
+
+      generateInstitutionalPDF(
+        "Crop Transpiration & Blossom-End Rot (BER) Biophysical Audit",
+        kpiData,
+        inputSummary,
+        recommendation
+      );
     }
 
     document.querySelectorAll('input, select').forEach(el => {
