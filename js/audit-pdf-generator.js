@@ -98,9 +98,20 @@ function generateInstitutionalPDF(reportTitle, kpiData, inputSummary, recommenda
                 <p style="font-size:0.78rem; color:#14532d; line-height:1.55; margin:0;">${recommendationText}</p>
             </div>
 
+            <!-- Pro Commercial Package Upsell Banner -->
+            <div style="margin-bottom:14px; padding:10px 14px; background:linear-gradient(90deg, #f0fdf4, #ecfeff); border:1.5px solid #10b981; border-radius:8px; display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                    <div style="font-size:0.8rem; font-weight:800; color:#065f46;">💼 Commercial Underwriting &amp; Bank Loan Package ($29 Pro / $49 Commercial)</div>
+                    <div style="font-size:0.7rem; color:#047857; margin-top:2px;">Includes 10-Year Discounted Cash Flow (DCF), USDA REAP/EQIP grant worksheets, and utility rate sensitivity matrix.</div>
+                </div>
+                <div style="text-align:right;">
+                    <a href="https://inwoovation.com/contact.html?subject=Request_Commercial_Feasibility_Package" target="_blank" style="text-decoration:none; font-size:0.72rem; font-weight:700; color:#0f766e; font-family:monospace; background:#ffffff; padding:4px 8px; border:1px solid #10b981; border-radius:4px; display:inline-block;">inwoovation.com/contact.html</a>
+                </div>
+            </div>
+
             <!-- Legal & Engineering Disclaimer -->
             <div style="margin-bottom:14px; padding:8px 12px; background:#f8fafc; border:1px solid #e2e8f0; border-radius:6px; font-size:0.65rem; color:#64748b; line-height:1.4;">
-                <strong>⚖️ Engineering & Agronomic Disclaimer:</strong> This automated audit report is generated for preliminary estimation, educational modeling, and facility feasibility assessment. Calculations follow standard biophysical formulations (ASABE, DIN V 18599, FAO-56). Commercial execution, structural sizing, and chemical/biological dosing must be reviewed by licensed Professional Engineers (PE) and certified crop consultants. Inwoovation Lab assumes no liability for operational performance.
+                <strong>⚖️ Engineering &amp; Agronomic Disclaimer:</strong> This automated audit report is generated for preliminary estimation, educational modeling, and facility feasibility assessment. Calculations follow standard biophysical formulations (ASABE, DIN V 18599, FAO-56). Commercial execution, structural sizing, and chemical/biological dosing must be reviewed by licensed Professional Engineers (PE) and certified crop consultants. Inwoovation Lab assumes no liability for operational performance.
             </div>
 
             <!-- Footer & Disclaimers -->
