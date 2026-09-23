@@ -174,6 +174,12 @@
       </div>
     </div>
 
+    <!-- Visual Dial Telemetry -->
+    <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin: 24px 0 16px 0;">
+      <div id="dliGaugeContainer" style="width: 100%; max-width: 260px;"></div>
+      <div id="targetPctGaugeContainer" style="width: 100%; max-width: 260px;"></div>
+    </div>
+
     <!-- Results Telemetry -->
     <div class="results-grid">
       <div class="res-box">
@@ -381,7 +387,46 @@ Where:
       } else {
         document.getElementById('res-target-pct').style.color = '#38bdf8';
       }
+
+      if (dliGauge) dliGauge.update(totalDli);
+      if (targetGauge) targetGauge.update(targetPct);
     }
+
+    let dliGauge = null;
+    let targetGauge = null;
+
+    window.addEventListener('DOMContentLoaded', () => {
+      if (typeof InwooGauge !== 'undefined') {
+        dliGauge = new InwooGauge('dliGaugeContainer', {
+          min: 0,
+          max: 45,
+          value: 26.4,
+          unit: 'mol/m²d',
+          title: 'Total Cumulative DLI',
+          decimals: 1,
+          zones: [
+            { from: 0, to: 15, color: '#f59e0b', label: 'LOW LIGHT' },
+            { from: 15, to: 32, color: '#10b981', label: 'COMMERCIAL TARGET' },
+            { from: 32, to: 45, color: '#ec4899', label: 'SATURATION (MAX)' }
+          ]
+        });
+
+        targetGauge = new InwooGauge('targetPctGaugeContainer', {
+          min: 0,
+          max: 150,
+          value: 96,
+          unit: '%',
+          title: 'DLI Target Fulfillment',
+          decimals: 0,
+          zones: [
+            { from: 0, to: 80, color: '#f59e0b', label: 'DEFICIT' },
+            { from: 80, to: 115, color: '#10b981', label: 'OPTIMAL (100%)' },
+            { from: 115, to: 150, color: '#06b6d4', label: 'SURPLUS LIGHT' }
+          ]
+        });
+      }
+      calculate();
+    });
 
     document.querySelectorAll('input, select').forEach(el => {
       el.addEventListener('input', calculate);
@@ -390,6 +435,7 @@ Where:
 
     calculate();
   </script>
+  <script src="../js/gauge-meter.js"></script>
   <script src="js/inwoovation_dossier_engine.js"></script>
 </body>
 </html>

@@ -130,6 +130,12 @@
       </div>
     </div>
 
+    <!-- Visual Dial Telemetry -->
+    <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin: 24px 0 16px 0;">
+      <div id="etHourlyGaugeContainer" style="width: 100%; max-width: 260px;"></div>
+      <div id="vpdGaugeContainer" style="width: 100%; max-width: 260px;"></div>
+    </div>
+
     <!-- Results Telemetry -->
     <div class="results-grid">
       <div class="res-box">
@@ -330,7 +336,46 @@ Where:
       document.getElementById('res-irr-vol').innerText = Math.round(irrVolHaL).toLocaleString() + ' L/h';
       document.getElementById('res-vpd').innerText = vpd.toFixed(2) + ' kPa';
       document.getElementById('res-etc-daily').innerText = dailyEtL.toFixed(2) + ' L/m²·d';
+
+      if (etGauge) etGauge.update(etc_gh);
+      if (vpdGauge) vpdGauge.update(vpd);
     }
+
+    let etGauge = null;
+    let vpdGauge = null;
+
+    window.addEventListener('DOMContentLoaded', () => {
+      if (typeof InwooGauge !== 'undefined') {
+        etGauge = new InwooGauge('etHourlyGaugeContainer', {
+          min: 0,
+          max: 600,
+          value: 345,
+          unit: 'g/m²·h',
+          title: 'Hourly Evapotranspiration',
+          decimals: 0,
+          zones: [
+            { from: 0, to: 150, color: '#06b6d4', label: 'LOW TRANSPIRATION' },
+            { from: 150, to: 450, color: '#10b981', label: 'OPTIMAL CANOPY FLUX' },
+            { from: 450, to: 600, color: '#ef4444', label: 'STRESS TRANSPIRATION' }
+          ]
+        });
+
+        vpdGauge = new InwooGauge('vpdGaugeContainer', {
+          min: 0,
+          max: 2.5,
+          value: 1.05,
+          unit: 'kPa',
+          title: 'Canopy VPD Deficit',
+          decimals: 2,
+          zones: [
+            { from: 0, to: 0.5, color: '#38bdf8', label: 'LOW (DISEASE RISK)' },
+            { from: 0.5, to: 1.4, color: '#10b981', label: 'OPTIMAL APERTURE' },
+            { from: 1.4, to: 2.5, color: '#f59e0b', label: 'HIGH (STOMATAL SHUT)' }
+          ]
+        });
+      }
+      calculate();
+    });
 
     document.querySelectorAll('input, select').forEach(el => {
       el.addEventListener('input', calculate);
@@ -339,6 +384,7 @@ Where:
 
     calculate();
   </script>
+  <script src="../js/gauge-meter.js"></script>
   <script src="js/inwoovation_dossier_engine.js"></script>
 </body>
 </html>

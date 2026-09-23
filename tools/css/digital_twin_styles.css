@@ -454,6 +454,11 @@ input[type="range"] {
   text-align: center;
 }
 
+.inw-ad-container ins.adsbygoogle {
+  min-height: 100px;
+  display: block;
+}
+
 .inw-golden-zone {
   background: rgba(15, 23, 42, 0.75);
   backdrop-filter: blur(12px);

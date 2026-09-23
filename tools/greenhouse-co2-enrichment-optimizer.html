@@ -110,6 +110,12 @@
       </div>
     </div>
 
+    <!-- Visual Dial Telemetry -->
+    <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin: 24px 0 16px 0;">
+      <div id="co2PpmGaugeContainer" style="width: 100%; max-width: 260px;"></div>
+      <div id="photoBoostGaugeContainer" style="width: 100%; max-width: 260px;"></div>
+    </div>
+
     <!-- Results Telemetry -->
     <div class="results-grid">
       <div class="res-box">
@@ -297,7 +303,46 @@ Where:
         roiEl.innerText = '-$' + Math.abs(Math.round(netRoi)) + ' / Ha·d';
         roiEl.style.color = '#ef4444';
       }
+
+      if (co2Gauge) co2Gauge.update(co2);
+      if (boostGauge) boostGauge.update(photoBoost);
     }
+
+    let co2Gauge = null;
+    let boostGauge = null;
+
+    window.addEventListener('DOMContentLoaded', () => {
+      if (typeof InwooGauge !== 'undefined') {
+        co2Gauge = new InwooGauge('co2PpmGaugeContainer', {
+          min: 400,
+          max: 1500,
+          value: 900,
+          unit: 'ppm',
+          title: 'Indoor CO₂ Concentration',
+          decimals: 0,
+          zones: [
+            { from: 400, to: 650, color: '#f59e0b', label: 'SUB-OPTIMAL' },
+            { from: 650, to: 1100, color: '#10b981', label: 'OPTIMAL ENRICHMENT' },
+            { from: 1100, to: 1500, color: '#06b6d4', label: 'HIGH LEVEL (MAX)' }
+          ]
+        });
+
+        boostGauge = new InwooGauge('photoBoostGaugeContainer', {
+          min: 0,
+          max: 50,
+          value: 28.5,
+          unit: '%',
+          title: 'Net Photosynthetic Gain',
+          decimals: 1,
+          zones: [
+            { from: 0, to: 15, color: '#f59e0b', label: 'MODEST' },
+            { from: 15, to: 35, color: '#10b981', label: 'TARGET BOOST' },
+            { from: 35, to: 50, color: '#a855f7', label: 'MAX CARBOXYLATION' }
+          ]
+        });
+      }
+      calculate();
+    });
 
     document.querySelectorAll('input, select').forEach(el => {
       el.addEventListener('input', calculate);
@@ -306,6 +351,7 @@ Where:
 
     calculate();
   </script>
+  <script src="../js/gauge-meter.js"></script>
   <script src="js/inwoovation_dossier_engine.js"></script>
 </body>
 </html>
