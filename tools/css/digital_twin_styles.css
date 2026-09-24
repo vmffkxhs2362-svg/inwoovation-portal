@@ -616,4 +616,37 @@ input[type="range"] {
   }
 }
 
+/* ==========================================================================
+   MOBILE VIEWPORT & TOUCH UI/UX OPTIMIZATION (< 480px)
+   ========================================================================== */
+@media (max-width: 480px) {
+  .sim-container {
+    padding: 16px 10px;
+  }
+  .calc-card,
+  .viewport-panel {
+    padding: 16px 12px;
+    border-radius: 12px;
+  }
+  .results-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .res-box {
+    padding: 12px 8px;
+  }
+  .res-val {
+    font-size: 1.5rem;
+  }
+  /* InwooGauge SVG Mobile Scaling */
+  div[id$="GaugeContainer"] {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+  /* Touch target ergonomics */
+  input[type="range"] {
+    height: 8px;
+  }
+}
+
 
