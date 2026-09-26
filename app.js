@@ -108,6 +108,16 @@ function filterCategory(cat, element) {
 
 const ALL_TOOLS_CATALOG = [
     {
+        id: "venlocad_3d",
+        title: "VenloCAD 3D Parametric CAD Engine",
+        url: "tools/venlocad-3d.html",
+        icon: "📐",
+        cat: "3D CAD & Structural",
+        facilities: ["venlo", "poly", "research"],
+        goals: ["energy", "subsidy", "climate"],
+        desc: "Interactive parametric 3D CAD: NEN 3859 structural deflection, automated steel/aluminum BOM costing, and 3-view 2D DXF export."
+    },
+    {
         id: "grant_nav",
         title: "50-State Agri-Subsidy Navigator",
         url: "tools/global-agri-subsidy-grant-navigator.html",

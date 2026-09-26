@@ -69,6 +69,50 @@ def get_articles_urls():
         urls.append(f"https://inwoovation.com/articles/{fn}")
     return urls
 
+def get_tools_urls():
+    dest_dir = os.path.join(PORTAL_DIR, "tools")
+    html_files = [f for f in glob.glob(os.path.join(dest_dir, "*.html"))
+                  if not os.path.basename(f).startswith("_") and not os.path.basename(f).startswith("old_")]
+    urls = []
+    for f in html_files:
+        fn = os.path.basename(f)
+        url = "https://inwoovation.com/tools/" if fn == "index.html" else f"https://inwoovation.com/tools/{fn}"
+        urls.append(url)
+    return urls
+
+def get_crops_urls():
+    dest_dir = os.path.join(PORTAL_DIR, "crops")
+    html_files = [f for f in glob.glob(os.path.join(dest_dir, "*.html"))
+                  if not os.path.basename(f).startswith("_")]
+    urls = []
+    for f in html_files:
+        fn = os.path.basename(f)
+        url = "https://inwoovation.com/crops/" if fn == "index.html" else f"https://inwoovation.com/crops/{fn}"
+        urls.append(url)
+    return urls
+
+def get_climate_urls():
+    dest_dir = os.path.join(PORTAL_DIR, "climate")
+    html_files = [f for f in glob.glob(os.path.join(dest_dir, "*.html"))
+                  if not os.path.basename(f).startswith("_")]
+    urls = []
+    for f in html_files:
+        fn = os.path.basename(f)
+        url = "https://inwoovation.com/climate/" if fn == "index.html" else f"https://inwoovation.com/climate/{fn}"
+        urls.append(url)
+    return urls
+
+def get_benchmarks_urls():
+    dest_dir = os.path.join(PORTAL_DIR, "benchmarks")
+    html_files = [f for f in glob.glob(os.path.join(dest_dir, "*.html"))
+                  if not os.path.basename(f).startswith("_")]
+    urls = []
+    for f in html_files:
+        fn = os.path.basename(f)
+        url = "https://inwoovation.com/benchmarks/" if fn == "index.html" else f"https://inwoovation.com/benchmarks/{fn}"
+        urls.append(url)
+    return urls
+
 def get_portal_root_urls():
     html_files = [f for f in glob.glob(os.path.join(PORTAL_DIR, "*.html"))
                   if not os.path.basename(f).startswith("_")]
@@ -129,7 +173,14 @@ def update_unified_sitemap(all_urls):
     xml = ['<?xml version="1.0" encoding="UTF-8"?>',
            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     for u in sorted_urls:
-        priority = "1.0" if u == "https://inwoovation.com/" else "0.8"
+        if u in ("https://inwoovation.com/", "https://inwoovation.com/tools/venlocad-3d.html", "https://inwoovation.com/tools/global-agri-subsidy-grant-navigator.html"):
+            priority = "1.0"
+        elif "/tools/" in u:
+            priority = "0.9"
+        elif any(k in u for k in ("/crops/", "/climate/", "/benchmarks/", "/articles/")):
+            priority = "0.8"
+        else:
+            priority = "0.7"
         xml.append("  <url>")
         xml.append(f"    <loc>{u}</loc>")
         xml.append(f"    <lastmod>{TODAY_ISO}</lastmod>")
@@ -149,12 +200,17 @@ if __name__ == "__main__":
     print("=" * 60)
     
     root_urls = get_portal_root_urls()
+    tools_urls = get_tools_urls()
+    crops_urls = get_crops_urls()
+    climate_urls = get_climate_urls()
+    benchmark_urls = get_benchmarks_urls()
     article_urls = get_articles_urls()
     sf_urls = get_smartfarm_urls()
     wiki_urls = get_wiki_urls()
     parts_urls = get_parts_urls()
     
-    all_urls = root_urls + article_urls + sf_urls + wiki_urls + parts_urls
+    all_urls = (root_urls + tools_urls + crops_urls + climate_urls + 
+                benchmark_urls + article_urls + sf_urls + wiki_urls + parts_urls)
     update_unified_sitemap(all_urls)
     
     ensure_legacy_301_redirectors()
