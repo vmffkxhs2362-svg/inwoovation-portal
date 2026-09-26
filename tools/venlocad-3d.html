@@ -575,7 +575,73 @@
       display: inline-flex; align-items: center; justify-content: center;
       border: 3px double #10b981; color: #10b981; font-weight: 900; font-family: var(--font-mono);
       padding: 6px 14px; border-radius: 8px; transform: rotate(-3deg); font-size: 0.85rem; letter-spacing: 0.08em;
-      box-shadow: 0 0 12px rgba(16, 185, 129, 0.3); text-transform: uppercase;
+    /* Engineering & Legal Disclaimer Section */
+    .cad-legal-disclaimer {
+      margin-top: 28px;
+      margin-bottom: 24px;
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(245, 158, 11, 0.35);
+      border-left: 4px solid #f59e0b;
+      border-radius: 14px;
+      padding: 22px 26px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.55);
+    }
+    .disclaimer-head {
+      display: flex; align-items: center; gap: 10px; margin-bottom: 14px;
+    }
+    .disclaimer-icon {
+      font-size: 1.5rem;
+    }
+    .disclaimer-title-ko {
+      font-size: 1.05rem; font-weight: 800; color: #fbbf24; letter-spacing: -0.01em;
+    }
+    .disclaimer-title-en {
+      font-size: 0.78rem; font-weight: 700; color: #94a3b8; margin-left: 6px; text-transform: uppercase;
+    }
+    .disclaimer-body-ko {
+      font-size: 0.82rem; line-height: 1.75; color: #cbd5e1; margin-bottom: 14px;
+    }
+    .disclaimer-body-ko p {
+      margin-bottom: 10px;
+    }
+    .disclaimer-body-ko p:last-child {
+      margin-bottom: 0;
+    }
+    .disclaimer-body-ko strong {
+      color: #f8fafc;
+    }
+    .disclaimer-body-en {
+      font-size: 0.74rem; line-height: 1.6; color: #94a3b8;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 12px;
+    }
+    .disclaimer-body-en strong {
+      color: #e2e8f0;
+    }
+
+    /* Global Portal Footer */
+    footer.cad-portal-footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 32px 16px 40px;
+      text-align: center;
+      margin-top: 20px;
+    }
+    .footer-nav-links {
+      display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;
+      margin-bottom: 12px; font-size: 0.84rem; font-weight: 600;
+    }
+    .footer-nav-links a {
+      color: #94a3b8; text-decoration: none; transition: color 0.2s ease;
+    }
+    .footer-nav-links a:hover {
+      color: var(--accent-sky);
+    }
+    .footer-copy {
+      font-size: 0.76rem; color: #64748b; margin-bottom: 4px;
+    }
+    .footer-meta {
+      font-size: 0.70rem; color: #475569; font-family: var(--font-mono);
     }
 
     @media print {
@@ -1141,6 +1207,59 @@
         </div>
       </div>
     </div>
+
+    <!-- ENGINEERING & LEGAL DISCLAIMER SECTION -->
+    <section class="cad-legal-disclaimer">
+      <div class="disclaimer-head">
+        <span class="disclaimer-icon">⚖️</span>
+        <div>
+          <span class="disclaimer-title-ko">공학적 시뮬레이션 및 법적 책임 한계 안내</span>
+          <span class="disclaimer-title-en">Engineering Simulation &amp; Legal Disclaimer</span>
+        </div>
+      </div>
+      <div class="disclaimer-body-ko">
+        <p>
+          <strong>1. 예비 기획 및 개념 설계 모델링의 성격:</strong> 본 <strong>VenloCAD 3D</strong> 엔진이 산출하는 3D 온실 형상 모델, 강재 부재 규격, 풍하중·설적하중 안전율(유럽 NEN 3859 / EN 13031-1 및 국토교통부 KDS 41 기준 준용), 자재 명세서(BOM) 물량 및 추정 공사비는 상업용 온실 재배자, 농업회사법인, 스마트팜 시공 엔지니어의 <strong>사전 기획, 투자 타당성 검토 및 개념 설계(Preliminary Feasibility &amp; Conceptual Engineering)를 지원하기 위한 100% 오픈소스 공학적 시뮬레이션 결과</strong>입니다.
+        </p>
+        <p>
+          <strong>2. 인허가 및 실제 시공 전 필수 법적 절차:</strong> 본 시스템의 모든 연산 결과는 법적 효력을 갖는 최종 실시설계 도서, 구조계산서 또는 시공 감리 서류를 대체할 수 없습니다. 실제 온실 건축 시공, 지자체 건축 인허가 및 착공 신고, 농림축산식품부 스마트팜 종합자금 보조금 신청, 농협/농어촌공사 시설자금 대출 심사 시에는 반드시 <strong>사업 대상 부지의 현장 지반 지내력 시험(Soil Bearing Capacity Test), 지역별 설계 기본풍속 및 적설하중 해석, 그리고 공인 건축구조기술사(PE)의 구조계산서 날인 및 건축사 감리</strong>를 거쳐 최종 시공 도서를 확정해야 합니다.
+        </p>
+        <p>
+          <strong>3. 원자재 시장 시세 및 공사비 변동성:</strong> 산출되는 추정 공사비 및 자재 물량은 국내외 표준 원자재 지표(각관 SGH400, 고내식 삼원계 합금 PosMAC, 알루미늄 압출 형재, 4mm 저철분 고산란 확산유리 등)를 기반으로 산출된 지표 수치이며, 원자재 국제가격, 환율, 현장 지형 조건, 인건비 및 장비 임대료에 따라 상이하므로 <strong>법적 구속력을 지닌 확정 시공 견적(Binding Bid)을 구성하지 않습니다.</strong>
+        </p>
+        <p>
+          <strong>4. 손해배상 책임의 부인 (Limitation of Liability):</strong> Inwoovation Lab 및 개발자는 본 시뮬레이션 프로그램의 사용, 수치 해석상의 오차, 시스템 장애, 또는 본 연산 결과를 신뢰하여 수행된 실제 온실 시공·영농 과정에서 발생하는 직·간접적 재산상 손실, 태풍·대설·지진 등 극한 기후로 인한 시설물 파괴, 설비 결함, 작물 생육 장해 또는 인명 피해에 대해 법률상 허용되는 최대한도 내에서 일체의 민·형사상 손해배상 책임을 부담하지 않습니다.
+        </p>
+      </div>
+      <div class="disclaimer-body-en">
+        <strong>Notice for Global Growers &amp; CEA Structural Engineers:</strong> VenloCAD 3D is a browser-based parametric engineering simulator engineered strictly for preliminary feasibility modeling, educational research, and conceptual architectural layout planning based on NEN 3859 and EN 13031-1 greenhouse engineering standards. All structural safety ratios, bill of materials (BOM), light transmittance predictions, and estimated capital expenditure metrics are indicative computational simulations and do NOT constitute certified for-construction drawings (IFC) or official stamped engineering blueprints. Commercial greenhouse construction requires mandatory site-specific geotechnical soil testing, local microclimate wind/snow hazard audits, and formal review/stamping by a licensed Professional Structural Engineer (PE) complying with regional building codes. Inwoovation Lab disclaims all liability for any structural failures, weather damages, crop losses, contractual disputes, or financial losses arising from the use of this tool. For complete operational terms, please review our <a href="/terms-of-service.html" style="color: #38bdf8; text-decoration: underline;">Terms of Service</a>.
+      </div>
+    </section>
+
+    <!-- Global Portal Footer -->
+    <footer class="cad-portal-footer">
+      <nav class="footer-nav-links">
+        <a href="/">홈 (Home)</a>
+        <span>•</span>
+        <a href="/tools/venlocad-3d.html">VenloCAD 3D</a>
+        <span>•</span>
+        <a href="/suite/index.html">스마트팜 솔루션 허브</a>
+        <span>•</span>
+        <a href="/tools/global-agri-subsidy-grant-navigator.html">농업 보조금 네비게이터</a>
+        <span>•</span>
+        <a href="/terms-of-service.html">이용약관 (Terms)</a>
+        <span>•</span>
+        <a href="/privacy-policy.html">개인정보처리방침 (Privacy)</a>
+        <span>•</span>
+        <a href="/contact.html">문의 &amp; 기술 지원</a>
+      </nav>
+      <p class="footer-copy">
+        © 2026 Inwoovation Lab. All rights reserved. • Zero-Hallucination Biophysical Horticultural Intelligence Suite
+      </p>
+      <p class="footer-meta">
+        Designed &amp; Engineered by Inwoo Hwang • Grounded on NEN 3859, EN 13031-1 &amp; KDS 41 Structural Standards
+      </p>
+    </footer>
   </div>
 
   <!-- Engineering Specification Sheet Modal (A4 Standard Print / PDF) -->
@@ -1281,12 +1400,12 @@
         </div>
 
         <!-- Official Sign-off & Notice Footer -->
-        <div style="border-top: 1px solid rgba(255,255,255,0.12); padding-top: 10px; display: flex; justify-content: space-between; align-items: center; font-size: 0.7rem; color: #94a3b8;">
-          <div>
-            * 본 사양서는 유럽 온실 구조설계기준(NEN 3859 및 EN 13031-1)과 대한민국 원예특작시설 표준에 기반하여 WebGL 물리 엔진으로 연산된 공식 엔지니어링 브리핑 도서입니다.
+        <div style="border-top: 1px solid rgba(255,255,255,0.12); padding-top: 10px; display: flex; justify-content: space-between; align-items: flex-start; font-size: 0.68rem; color: #94a3b8; gap: 16px;">
+          <div style="line-height: 1.5;">
+            <strong>[공학 시뮬레이션 및 법적 책임 한계 안내]</strong> 본 기술 사양서는 유럽 온실 구조설계기준(NEN 3859 / EN 13031-1)과 대한민국 원예특작시설 표준에 기반하여 WebGL 물리 엔진으로 연산된 <strong>공학적 예비 기획 및 개념 설계 도서</strong>입니다. 실제 시공 및 지자체 건축 인허가 시에는 반드시 사업 대상 부지의 현장 지반 지내력 시험, 지역별 설계 기본풍속 및 적설하중 해석, 그리고 공인 건축구조기술사(PE)의 구조계산서 날인 및 감리를 거쳐야 합니다.
           </div>
-          <div style="text-align: right; min-width: 180px;">
-            Inwoovation Lab CEA R&amp;D Unit<br>
+          <div style="text-align: right; min-width: 175px; line-height: 1.4;">
+            Inwoovation Lab CEA R&amp;D<br>
             <strong>대표 공학자: 황 인 우 (인)</strong>
           </div>
         </div>
