@@ -280,14 +280,16 @@
     .cad-sidebar::-webkit-scrollbar-thumb { background: #334155; border-radius: 3px; }
 
     .tab-bar {
-      display: grid; grid-template-columns: repeat(4, 1fr); gap: 3px; margin-bottom: 12px;
-      background: rgba(0, 0, 0, 0.35); padding: 3px; border-radius: 8px;
+      display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 12px;
+      background: rgba(0, 0, 0, 0.35); padding: 4px; border-radius: 8px;
     }
     .tab-btn {
+      flex: 1 1 calc(33.33% - 4px); min-width: 60px;
       background: transparent; border: none; color: var(--text-muted);
-      padding: 5px 2px; font-size: 0.68rem; font-weight: 700; border-radius: 6px;
-      cursor: pointer; transition: all 0.2s; text-align: center;
+      padding: 6px 2px; font-size: 0.68rem; font-weight: 700; border-radius: 6px;
+      cursor: pointer; transition: all 0.2s; text-align: center; white-space: nowrap;
     }
+    .tab-btn:hover { color: #f8fafc; background: rgba(255, 255, 255, 0.05); }
     .tab-btn.active {
       background: var(--accent-cyan); color: #080c14; font-weight: 800;
     }
@@ -433,6 +435,52 @@
     .slot-card:hover { border-color: var(--accent-cyan); background: rgba(30, 41, 59, 0.9); }
     .slot-info h4 { font-size: 0.9rem; font-weight: 800; color: #f8fafc; margin-bottom: 3px; }
     .slot-info p { font-size: 0.72rem; color: var(--text-muted); margin: 0; font-family: var(--font-mono); }
+
+    /* Specification Sheet Modal & Print Styles */
+    #spec-modal {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 120;
+      background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(10px);
+      display: none; align-items: center; justify-content: center;
+    }
+    .spec-box {
+      background: #0f172a; border: 1px solid var(--accent-sky); border-radius: 16px;
+      width: 94%; max-width: 960px; max-height: 90vh; display: flex; flex-direction: column;
+      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.95); overflow: hidden;
+    }
+    .spec-printable {
+      padding: 24px; overflow-y: auto; flex: 1; background: #0b1120; color: #f8fafc;
+    }
+    .spec-table {
+      width: 100%; border-collapse: collapse; font-size: 0.74rem; text-align: left; margin: 8px 0;
+    }
+    .spec-table th {
+      background: rgba(255, 255, 255, 0.05); color: var(--accent-sky); padding: 6px 10px; border: 1px solid rgba(255,255,255,0.08); font-weight: 700;
+    }
+    .spec-table td {
+      padding: 6px 10px; border: 1px solid rgba(255,255,255,0.06); color: #cbd5e1;
+    }
+    .spec-card {
+      background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 10px; padding: 14px;
+    }
+    .stamp-badge {
+      display: inline-flex; align-items: center; justify-content: center;
+      border: 3px double #10b981; color: #10b981; font-weight: 900; font-family: var(--font-mono);
+      padding: 6px 14px; border-radius: 8px; transform: rotate(-3deg); font-size: 0.85rem; letter-spacing: 0.08em;
+      box-shadow: 0 0 12px rgba(16, 185, 129, 0.3); text-transform: uppercase;
+    }
+
+    @media print {
+      body * { visibility: hidden !important; }
+      #spec-modal, #spec-modal * { visibility: visible !important; }
+      #spec-modal { position: absolute !important; left: 0 !important; top: 0 !important; width: 100% !important; height: auto !important; background: #fff !important; }
+      .spec-box { width: 100% !important; max-width: 100% !important; border: none !important; box-shadow: none !important; }
+      .spec-printable { background: #fff !important; color: #0f172a !important; padding: 12px !important; }
+      .no-print { display: none !important; }
+      .spec-card { border: 1px solid #cbd5e1 !important; color: #0f172a !important; background: #f8fafc !important; }
+      .spec-table th { background: #f1f5f9 !important; color: #0f172a !important; border-color: #cbd5e1 !important; }
+      .spec-table td { color: #1e293b !important; border-color: #e2e8f0 !important; }
+      .stamp-badge { border-color: #15803d !important; color: #15803d !important; box-shadow: none !important; }
+    }
   </style>
 </head>
 <body>
@@ -522,6 +570,7 @@
           <button class="tool-btn" onclick="triggerFileInput()" title="내 PC에서 .vcad 또는 .json 프로젝트 파일 열기">📂 열기</button>
           <button class="tool-btn" onclick="openSlotModal()" title="브라우저 로컬 저장 슬롯 관리">📑 슬롯 관리</button>
           <button class="tool-btn" onclick="copyShareableLink()" title="현재 설계를 다른 사람에게 URL로 공유">🔗 링크 복사</button>
+          <button class="tool-btn" onclick="openSpecSheetModal()" style="background: linear-gradient(135deg, #0284c7, #38bdf8); color: #030712; font-weight: 800; border-color: #38bdf8;" title="인허가 및 대출 제출용 1페이지 공학 사양서 A4 PDF 출력">📄 기술 사양서 (A4)</button>
           <button class="tool-btn" onclick="openConsultModal('topbar')" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.25), rgba(6, 182, 212, 0.25)); border-color: rgba(16, 185, 129, 0.6); color: #34d399; font-weight: 800;" title="황인우 엔지니어 1:1 맞춤 설계 대행 & 집중 케어 신청">🧑‍💻 전문가 케어 신청</button>
           <input type="file" id="vcad-file-input" accept=".vcad,.json" style="display:none" onchange="handleFileSelect(event)">
         </div>
@@ -542,6 +591,9 @@
       <div class="cad-sidebar">
         <div class="tab-bar">
           <button class="tab-btn active" onclick="setTab('t-geo', this)">📐 치수</button>
+          <button class="tab-btn" onclick="setTab('t-mat', this)">🧱 재질</button>
+          <button class="tab-btn" onclick="setTab('t-agro', this)">🌱 설비</button>
+          <button class="tab-btn" onclick="setTab('t-clim', this)">🪟 기후</button>
           <button class="tab-btn" onclick="setTab('t-str', this)">🌪️ 하중</button>
           <button class="tab-btn" onclick="setTab('t-sol', this)">☀️ 일조</button>
           <button class="tab-btn" onclick="setTab('t-exp', this)">💾 도면</button>
@@ -609,6 +661,148 @@
             <label class="cad-toggle-item"><span>독립기초</span><input type="checkbox" id="chk-foot" checked></label>
             <label class="cad-toggle-item"><span>접합 브래킷</span><input type="checkbox" id="chk-joint" checked></label>
             <label class="cad-toggle-item"><span>와이어프레임</span><input type="checkbox" id="chk-wire"></label>
+          </div>
+        </div>
+
+        <!-- Tab: Materials & Physical Properties -->
+        <div id="t-mat" style="display: none;">
+          <div class="cad-param">
+            <div class="cad-param-header"><span>피복재 규격 (Glazing Material)</span></div>
+            <select id="sel-glaze" style="width: 100%; padding: 6px 8px; background: #1e293b; color: #fff; border: 1px solid var(--panel-border); border-radius: 6px; font-size: 0.75rem;">
+              <option value="diffuse_glass" selected>4mm 저철분 고산란 확산유리 (2xAR Haze 70%)</option>
+              <option value="float_glass">표준 4mm 플로트 투명유리 (Haze 0%)</option>
+              <option value="polycarbonate">16mm 3중 중공 폴리카보네이트 (Twin-Wall PC)</option>
+              <option value="etfe_film">초경량 불소필름 (F-Clean / ETFE 100μm)</option>
+            </select>
+          </div>
+
+          <div class="cad-param">
+            <div class="cad-param-header"><span>골조 강재 등급 (Structural Steel Grade)</span></div>
+            <select id="sel-steel" style="width: 100%; padding: 6px 8px; background: #1e293b; color: #fff; border: 1px solid var(--panel-border); border-radius: 6px; font-size: 0.75rem;">
+              <option value="S355JR" selected>고장력 구조용강 S355JR (fy=355 MPa, 안전율 +35%)</option>
+              <option value="S235JR">표준 일반구조용강 S235JR (fy=235 MPa, 표준 가성비)</option>
+            </select>
+          </div>
+
+          <div style="background: rgba(0,0,0,0.3); padding: 10px; border-radius: 8px; font-size: 0.74rem; margin-top: 10px;">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+              <span>☀️ 유효 광투과율 (PAR):</span><span id="txt-mat-trans" class="cad-val" style="color: var(--accent-gold);">96.5 % (Haze 70%)</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+              <span>🔥 외피 열관류율 (U-value):</span><span id="txt-mat-u" class="cad-val" style="color: var(--accent-sky);">5.6 W/m²K</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+              <span>⚖️ 외피 단위 자중:</span><span id="txt-mat-weight" class="cad-val">10.0 kg/m²</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+              <span>💰 피복재 기준 단가:</span><span id="txt-mat-cost" class="cad-val" style="color: #34d399;">38,000 원/m²</span>
+            </div>
+            <div id="txt-mat-desc" style="font-size: 0.68rem; color: #94a3b8; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 5px; margin-top: 5px; line-height: 1.4;">
+              네덜란드 토마토/파프리카 온실 표준 사양: 산란광(Haze 70%)이 하부 캐노피까지 깊숙이 침투하여 잎 타는 현상을 방지하고 광합성량을 8~11% 향상시킵니다.
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab: Agronomic Infrastructure -->
+        <div id="t-agro" style="display: none;">
+          <div class="cad-param">
+            <div class="cad-param-header"><span>재배 작물 프리셋 (Target Crop)</span></div>
+            <select id="sel-crop" style="width: 100%; padding: 6px 8px; background: #1e293b; color: #fff; border: 1px solid var(--panel-border); border-radius: 6px; font-size: 0.75rem;">
+              <option value="tomato" selected>🍅 토마토 (하이와이어 거터 / 2.5주/m²)</option>
+              <option value="strawberry">🍓 딸기 (고설 양액베드 / 6.5주/m²)</option>
+              <option value="pepper">🫑 파프리카 (하이와이어 / 3.0주/m²)</option>
+              <option value="cucumber">🥒 오이 (입식재배 / 2.2주/m²)</option>
+              <option value="greens">🥬 엽채류 (수경베드 / 25.0주/m²)</option>
+            </select>
+          </div>
+
+          <div class="cad-param">
+            <div class="cad-param-header">
+              <span>베이당 거터 라인 수 (Gutters/Bay)</span>
+              <span class="cad-val" id="val-gutters-bay">4 열</span>
+            </div>
+            <input type="range" id="rng-gutters-bay" min="2" max="6" step="1" value="4">
+          </div>
+
+          <div class="cad-param">
+            <div class="cad-param-header">
+              <span>주간 재식 간격 (Plant Spacing)</span>
+              <span class="cad-val" id="val-plant-spacing">25 cm</span>
+            </div>
+            <input type="range" id="rng-plant-spacing" min="15" max="40" step="5" value="25">
+          </div>
+
+          <div class="cad-toggles" style="margin-top: 6px;">
+            <label class="cad-toggle-item"><span>재배 베드</span><input type="checkbox" id="chk-gutters" checked></label>
+            <label class="cad-toggle-item"><span>난방 레일 파이프</span><input type="checkbox" id="chk-rails" checked></label>
+            <label class="cad-toggle-item" style="grid-column: span 2;"><span>작물 캐노피 시각화</span><input type="checkbox" id="chk-crops" checked></label>
+          </div>
+
+          <div style="background: rgba(0,0,0,0.3); padding: 10px; border-radius: 8px; font-size: 0.74rem; margin-top: 10px;">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+              <span>총 베드 연장:</span><span id="txt-agro-gutter-len" class="cad-val">384 m</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+              <span>총 식재 가능 주수:</span><span id="txt-agro-plants" class="cad-val" style="color: #34d399;">1,536 주</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+              <span>식재 밀도:</span><span id="txt-agro-density" class="cad-val">2.0 주/m² (6.6주/평)</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+              <span>난방 레일 파이프(Ø51):</span><span id="txt-agro-rail-len" class="cad-val">768 m (듀얼)</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-weight: 700; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 4px; margin-top: 4px;">
+              <span>예상 연간 수확량:</span><span id="txt-agro-yield" class="cad-val" style="color: var(--accent-gold);">약 49.9 톤/년</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab: Climate, Ventilation & Thermal Screen -->
+        <div id="t-clim" style="display: none;">
+          <div class="cad-param">
+            <div class="cad-param-header">
+              <span>지붕 연속 천창 개폐 (Roof Vent Open)</span>
+              <span class="cad-val" id="val-vent">0 %</span>
+            </div>
+            <input type="range" id="rng-vent" min="0" max="100" step="5" value="0">
+          </div>
+
+          <div class="cad-param">
+            <div class="cad-param-header"><span>천창 개폐 형식</span></div>
+            <select id="sel-vent-type" style="width: 100%; padding: 6px 8px; background: #1e293b; color: #fff; border: 1px solid var(--panel-border); border-radius: 6px; font-size: 0.75rem;">
+              <option value="continuous" selected>연속 천창 (Continuous Ridge Vent - 네덜란드 표준)</option>
+              <option value="alternating">지그재그 천창 (Alternating Vent)</option>
+            </select>
+          </div>
+
+          <div class="cad-param">
+            <div class="cad-param-header">
+              <span>에너지 보온 스크린 전개 (Thermal Screen)</span>
+              <span class="cad-val" id="val-screen">0 %</span>
+            </div>
+            <input type="range" id="rng-screen" min="0" max="100" step="5" value="0">
+          </div>
+
+          <div class="cad-toggles" style="margin-top: 6px;">
+            <label class="cad-toggle-item" style="grid-column: span 2;"><span>에너지 스크린 3D 표시</span><input type="checkbox" id="chk-screen" checked></label>
+          </div>
+
+          <div style="background: rgba(0,0,0,0.3); padding: 10px; border-radius: 8px; font-size: 0.74rem; margin-top: 10px;">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+              <span>환기창 유효 개구 면적:</span><span id="txt-vent-area" class="cad-val">0.0 m² (최대 163m²)</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+              <span>바닥 대비 환기 면적비:</span><span id="txt-vent-ratio" class="cad-val">21.3 %</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+              <span>고온기 자연환기 적합도:</span><span id="txt-vent-status" class="cad-val" style="color: #10b981;">✅ NEN 3859 적합</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+              <span>스크린 전개시 유효 U값:</span><span id="txt-screen-u" class="cad-val" style="color: #38bdf8;">5.6 W/m²K</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-weight: 700; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 4px; margin-top: 4px;">
+              <span>야간 난방 에너지 절감율:</span><span id="txt-screen-save" class="cad-val" style="color: #34d399;">0 %</span>
+            </div>
           </div>
         </div>
 
@@ -717,10 +911,13 @@
           <div style="font-size: 0.72rem; font-weight: 700; color: var(--accent-gold); margin-bottom: 6px; text-transform: uppercase;">
             📄 엔지니어링 도면 &amp; BOM 추출
           </div>
+          <button class="btn-action btn-action-primary" onclick="openSpecSheetModal()" style="font-size: 0.82rem; padding: 10px; margin-bottom: 8px; background: linear-gradient(135deg, #0284c7, #38bdf8); color: #030712; font-weight: 800; box-shadow: 0 4px 15px rgba(56, 189, 248, 0.4);">
+            📄 1페이지 공식 기술 사양서 (A4 인쇄 / PDF)
+          </button>
           <button class="btn-action btn-action-gold" onclick="openBOMModal()">
             📊 실시간 자재 견적서 (BOM) 보기
           </button>
-          <button class="btn-action btn-action-primary" onclick="exportMasterDXF()">
+          <button class="btn-action" onclick="exportMasterDXF()">
             📄 3-View 종합 2D 도면 (DXF) 다운로드
           </button>
           <button class="btn-action" onclick="exportBOMCSV()">
@@ -767,6 +964,14 @@
           <span class="hud-data" id="hud-al" style="color: var(--accent-cyan);">1,420 kg</span>
         </div>
         <div class="hud-cell">
+          <span class="hud-title">외피 U값 / 절감</span>
+          <span class="hud-data" id="hud-u" style="color: #38bdf8;">5.6 W/m²K</span>
+        </div>
+        <div class="hud-cell">
+          <span class="hud-title">식재 가능 주수</span>
+          <span class="hud-data" id="hud-plants" style="color: #34d399;">1,536 주</span>
+        </div>
+        <div class="hud-cell">
           <span class="hud-title">추정 자재 견적</span>
           <span class="hud-data" id="hud-cost" style="color: var(--accent-gold);">3,842 만원</span>
         </div>
@@ -803,6 +1008,164 @@
             M_ULS = max(1.5 * M_wind, 1.2 * M_wind + 1.2 * M_vert)<br>
             δ_col = (k_share * w_line * H⁴) / (185 * E * I_x) &lt;= H / 150
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Engineering Specification Sheet Modal (A4 Standard Print / PDF) -->
+  <div id="spec-modal">
+    <div class="spec-box">
+      <div class="popup-head no-print" style="background: rgba(2, 132, 199, 0.15);">
+        <div>
+          <h3 style="color: #38bdf8;">📄 VenloCAD 3D 엔지니어링 기술 사양서 &amp; 인허가 공학 확인서</h3>
+          <span style="font-size: 0.72rem; color: var(--text-muted);">유럽 NEN 3859 / EN 13031-1 준용 농업시설 구조안전 및 시공 종합 기술 도판 (A4 규격)</span>
+        </div>
+        <div style="display: flex; gap: 8px;">
+          <button class="btn-action btn-action-primary" style="width: auto; margin: 0; padding: 6px 14px;" onclick="printSpecSheet()">🖨️ 인쇄 / PDF 저장 (Ctrl+P)</button>
+          <button onclick="closeSpecSheetModal()" style="background:none; border:none; color:var(--text-muted); font-size:1.4rem; cursor:pointer;">&times;</button>
+        </div>
+      </div>
+      <div class="spec-printable" id="spec-sheet-content">
+        <!-- Header Info -->
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 2px solid #38bdf8; padding-bottom: 12px; margin-bottom: 16px;">
+          <div>
+            <div style="font-size: 1.35rem; font-weight: 900; letter-spacing: -0.02em; color: #fff;">
+              INWOOVATION <span style="color: var(--accent-cyan);">LAB</span> | CEA STRUCTURAL SPECIFICATION
+            </div>
+            <div style="font-size: 0.8rem; color: #94a3b8; margin-top: 3px;">
+              스마트팜 온실 엔지니어링 기술 사양서 · 구조안전 인증 · 자재 명세서 (BOM)
+            </div>
+          </div>
+          <div style="text-align: right; font-family: var(--font-mono); font-size: 0.72rem;">
+            <div>문서 번호: <strong id="spec-doc-no" style="color: #38bdf8;">VCAD-2026-NEN3859</strong></div>
+            <div>발행 일시: <span id="spec-date">2026-09-26 KST</span></div>
+            <div>책임 엔지니어: <strong>황인우 (Inwoo Hwang)</strong></div>
+          </div>
+        </div>
+
+        <!-- 3D Perspective Snapshot & Stamp -->
+        <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 14px; margin-bottom: 16px; align-items: center;">
+          <div style="background: #000; border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; overflow: hidden; height: 210px; display: flex; align-items: center; justify-content: center;">
+            <img id="spec-snap-img" alt="3D Greenhouse Perspective Snapshot" style="width: 100%; height: 100%; object-fit: contain;">
+          </div>
+          <div class="spec-card" style="display: flex; flex-direction: column; justify-content: space-between; height: 210px; box-sizing: border-box; text-align: center;">
+            <div style="font-size: 0.72rem; font-weight: 800; color: var(--accent-sky); text-transform: uppercase;">
+              NEN 3859 / EN 13031-1 구조 인증
+            </div>
+            <div style="margin: 8px 0;">
+              <div class="stamp-badge" id="spec-stamp">
+                APPROVED<br>PASS 1.24
+              </div>
+            </div>
+            <div style="font-size: 0.68rem; color: #94a3b8; line-height: 1.4;">
+              충남대학교 스마트팜 CEA 공학 해석<br>풍속 <span id="spec-v-wind">32m/s</span> · 적설 <span id="spec-v-snow">25cm</span> 안전율 적합
+            </div>
+          </div>
+        </div>
+
+        <!-- 4-Quadrant Technical Data Grid -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px;">
+          <!-- 1. Geometry -->
+          <div class="spec-card">
+            <h4 style="font-size: 0.82rem; color: var(--accent-cyan); margin: 0 0 8px 0; font-weight: 800;">
+              1. 온실 건축 제원 (Architectural Dimensions)
+            </h4>
+            <table class="spec-table">
+              <tr><th>구조 형식</th><td>네덜란드형 벤로 온실 (Venlo Glasshouse)</td></tr>
+              <tr><th>스팬 및 연동</th><td id="spec-dim-span">8.0m × 3연동 (가로 24.0m)</td></tr>
+              <tr><th>온실 총 연장</th><td id="spec-dim-len">32.0 m (기둥 간격 4.0m)</td></tr>
+              <tr><th>연면적 / 평수</th><td id="spec-dim-area">768.0 m² (232 평)</td></tr>
+              <tr><th>처마고 / 최고고</th><td id="spec-dim-height">처마 4.5m / 최고 5.3m (지붕각 22°)</td></tr>
+            </table>
+          </div>
+
+          <!-- 2. Materials & Physics -->
+          <div class="spec-card">
+            <h4 style="font-size: 0.82rem; color: var(--accent-gold); margin: 0 0 8px 0; font-weight: 800;">
+              2. 외피 재질 &amp; 물리 물성 (Materials &amp; Physics)
+            </h4>
+            <table class="spec-table">
+              <tr><th>지붕 피복재</th><td id="spec-mat-glaze">4mm 저철분 고산란 확산유리 (Haze 70%)</td></tr>
+              <tr><th>유효 광투과율</th><td id="spec-mat-trans">PAR 96.5% (산란광 캐노피 침투)</td></tr>
+              <tr><th>외피 열관류율</th><td id="spec-mat-u">5.6 W/m²K (단일외피 기준)</td></tr>
+              <tr><th>골조 강재 등급</th><td id="spec-mat-steel">고장력 구조용강 S355JR (fy = 355 MPa)</td></tr>
+              <tr><th>거터 &amp; 릿지</th><td>알루미늄 압출 형재 EN AW-6060-T6</td></tr>
+            </table>
+          </div>
+
+          <!-- 3. Agronomic Infrastructure -->
+          <div class="spec-card">
+            <h4 style="font-size: 0.82rem; color: var(--accent-emerald); margin: 0 0 8px 0; font-weight: 800;">
+              3. 내부 농업 설비 (Agronomic Infrastructure)
+            </h4>
+            <table class="spec-table">
+              <tr><th>목표 재배 작물</th><td id="spec-agro-crop">토마토 (하이와이어)</td></tr>
+              <tr><th>행잉 배드 연장</th><td id="spec-agro-gutter">베이당 4열 / 총 384 m</td></tr>
+              <tr><th>식재 주수 &amp; 밀도</th><td id="spec-agro-plants">1,536 주 (2.0 주/m²)</td></tr>
+              <tr><th>온수 난방 레일</th><td id="spec-agro-rail">Ø51mm 듀얼 강관 (총 768 m)</td></tr>
+              <tr><th>예상 연간 생산량</th><td id="spec-agro-yield">약 49.9 톤 / 년</td></tr>
+            </table>
+          </div>
+
+          <!-- 4. Climate Steering & Screens -->
+          <div class="spec-card">
+            <h4 style="font-size: 0.82rem; color: var(--accent-sky); margin: 0 0 8px 0; font-weight: 800;">
+              4. 환기 &amp; 에너지 절감 (Ventilation &amp; Screens)
+            </h4>
+            <table class="spec-table">
+              <tr><th>천창 환기 시스템</th><td id="spec-clim-vent">지붕 연속 환기창 (Continuous Ridge Vent)</td></tr>
+              <tr><th>환기 면적비</th><td id="spec-clim-vratio">21.3 % (NEN 3859 고온기 냉각 충족)</td></tr>
+              <tr><th>보온 스크린 시스템</th><td>알루미늄 직포 반사 에너지 스크린 (1중)</td></tr>
+              <tr><th>야간 열관류율</th><td id="spec-clim-u">3.1 W/m²K (스크린 전개시)</td></tr>
+              <tr><th>연간 난방비 절감</th><td id="spec-clim-save">-44 % (단일외피 대비)</td></tr>
+            </table>
+          </div>
+        </div>
+
+        <!-- BOM Summary Table -->
+        <div class="spec-card" style="margin-bottom: 16px;">
+          <h4 style="font-size: 0.82rem; color: #fff; margin: 0 0 8px 0; font-weight: 800;">
+            5. 공종별 자재비 및 추정 시공 견적서 요약 (BOM Summary)
+          </h4>
+          <table class="spec-table">
+            <thead>
+              <tr>
+                <th>공종 분류</th>
+                <th>주요 규격 및 자재 사양</th>
+                <th>물량</th>
+                <th>총 중량</th>
+                <th>추정 금액 (KRW)</th>
+              </tr>
+            </thead>
+            <tbody id="spec-bom-tbody">
+              <!-- Dynamically populated -->
+            </tbody>
+            <tfoot>
+              <tr style="font-weight: 800; background: rgba(255,255,255,0.06);">
+                <td colspan="4" style="text-align: right; color: var(--accent-gold);">총 추정 시공비 합계 (VAT 별도):</td>
+                <td id="spec-total-cost" style="color: var(--accent-gold); font-family: var(--font-mono); font-size: 0.85rem;">0 원</td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+
+        <!-- Official Sign-off & Notice Footer -->
+        <div style="border-top: 1px solid rgba(255,255,255,0.12); padding-top: 10px; display: flex; justify-content: space-between; align-items: center; font-size: 0.7rem; color: #94a3b8;">
+          <div>
+            * 본 사양서는 유럽 온실 구조설계기준(NEN 3859 및 EN 13031-1)과 대한민국 원예특작시설 표준에 기반하여 WebGL 물리 엔진으로 연산된 공식 엔지니어링 브리핑 도서입니다.
+          </div>
+          <div style="text-align: right; min-width: 180px;">
+            Inwoovation Lab CEA R&amp;D Unit<br>
+            <strong>대표 공학자: 황 인 우 (인)</strong>
+          </div>
+        </div>
+      </div>
+      <div class="popup-foot no-print">
+        <span style="font-size: 0.72rem; color: var(--text-muted);">💡 브라우저 인쇄창(Ctrl+P)에서 'PDF로 저장'을 선택하면 공학 사양서 전자문서가 생성됩니다.</span>
+        <div style="display: flex; gap: 8px;">
+          <button class="btn-action btn-action-primary" style="width: auto; margin: 0;" onclick="printSpecSheet()">🖨️ A4 인쇄 / PDF 저장</button>
+          <button class="btn-action" style="width: auto; margin: 0;" onclick="closeSpecSheetModal()">닫기</button>
         </div>
       </div>
     </div>
@@ -953,6 +1316,22 @@
       columnSize: '100x50x3.2',
       solarSeason: 'equinox',
       solarHour: 12.0,
+      // Materials & Steel Specs
+      glazingType: 'diffuse_glass',
+      steelGrade: 'S355JR',
+      // Agronomic Infrastructure
+      showGutters: true,
+      showRails: true,
+      showCrops: true,
+      guttersPerBay: 4,
+      plantSpacing: 25, // in cm (0.25m)
+      cropType: 'tomato',
+      // Ventilation & Thermal Screen
+      ventOpenRatio: 0,
+      ventType: 'continuous',
+      showScreen: true,
+      screenClosedRatio: 0,
+      // Toggles
       show3DDimensions: true,
       showTruss: true,
       showGlass: true,
@@ -969,12 +1348,73 @@
       '150x75x3.6': { width: 0.15, depth: 0.075, unitWeight: 11.85, Zx: 64.2e-6, Ix: 4.82e-6, costPerKg: 2800 }
     };
 
+    const glazingSpecs = {
+      'diffuse_glass': {
+        name: '4mm 저철분 고산란 확산유리 (2xAR Haze 70%)',
+        shortName: '고산란 확산유리 (Haze 70%)',
+        transmittance: 96.5,
+        haze: 70.0,
+        uValue: 5.6,
+        unitWeight: 10.0,
+        costPerM2: 38000,
+        desc: '네덜란드 토마토/파프리카 온실 표준 사양: 산란광(Haze 70%)이 하부 캐노피까지 깊숙이 침투하여 잎 타는 현상을 방지하고 광합성량을 8~11% 향상시킵니다.',
+        matProps: { color: 0xf8fafc, transparent: true, opacity: 0.55, roughness: 0.65, transmission: 0.70, thickness: 0.6 }
+      },
+      'float_glass': {
+        name: '표준 4mm 플로트 투명유리 (Haze 0%)',
+        shortName: '표준 4mm 플로트 유리',
+        transmittance: 90.0,
+        haze: 0.0,
+        uValue: 5.8,
+        unitWeight: 10.0,
+        costPerM2: 25000,
+        desc: '직달광 위주 범용 원예용 유리: 초기 자재비가 저렴하나 직달광이 강해 여름철 엽온 상승 및 상부 잎 타는 현상(엽소)에 주의가 필요합니다.',
+        matProps: { color: 0xbae6fd, transparent: true, opacity: 0.35, roughness: 0.08, transmission: 0.85, thickness: 0.6 }
+      },
+      'polycarbonate': {
+        name: '16mm 3중 중공 폴리카보네이트 (Twin-Wall PC)',
+        shortName: '16mm 중공 PC (고단열)',
+        transmittance: 76.0,
+        haze: 90.0,
+        uValue: 2.4,
+        unitWeight: 2.7,
+        costPerM2: 28000,
+        desc: '초고단열 온실 외피: 열관류율 2.4 W/m²K로 단일유리 대비 난방비를 최대 45% 절감하며, 자중이 가벼워 한랭지 및 적설 지대에 이상적입니다.',
+        matProps: { color: 0xe2e8f0, transparent: true, opacity: 0.70, roughness: 0.40, transmission: 0.60, thickness: 1.2 }
+      },
+      'etfe_film': {
+        name: '초경량 불소필름 (F-Clean / ETFE 100μm)',
+        shortName: '초경량 ETFE 필름',
+        transmittance: 94.0,
+        haze: 15.0,
+        uValue: 5.9,
+        unitWeight: 0.35,
+        costPerM2: 22000,
+        desc: '초경량 고투과 불소수지 필름: 자외선(UV) 투과율이 뛰어나 화훼 및 기능성 작물 착색에 탁월하며, 골조 하중 부담을 90% 이상 경감합니다.',
+        matProps: { color: 0xcffafe, transparent: true, opacity: 0.22, roughness: 0.05, transmission: 0.95, thickness: 0.1 }
+      }
+    };
+
+    const steelSpecs = {
+      'S355JR': { name: '고장력 구조용강 (S355JR / SS355)', fy: 355, costMult: 1.15 },
+      'S235JR': { name: '표준 일반구조용강 (S235JR / SS275)', fy: 235, costMult: 1.0 }
+    };
+
+    const cropSpecs = {
+      'tomato': { name: '토마토 (하이와이어)', defGutters: 4, defSpacing: 25, yieldKgM2: 65 },
+      'strawberry': { name: '딸기 (고설 양액베드)', defGutters: 5, defSpacing: 18, yieldKgM2: 12 },
+      'pepper': { name: '파프리카 (하이와이어)', defGutters: 4, defSpacing: 30, yieldKgM2: 30 },
+      'cucumber': { name: '오이 (입식재배)', defGutters: 3, defSpacing: 35, yieldKgM2: 70 },
+      'greens': { name: '엽채류 (수경베드)', defGutters: 6, defSpacing: 15, yieldKgM2: 40 }
+    };
+
     let cScene, cCamera, cRenderer, cControls;
     let gScene, gCamera, gRenderer, gCube;
     let greenhouseModel, cSunLight;
     let cRaycaster, cMouse;
     let cHighlightBox = null;
     let mSteel, mAl, mGlass, mFoot, mJoint, mWarn;
+    let mScreen, mGutterMat, mCropMat, mRailMat;
     let autoSaveTimer = null;
 
     function initCAD() {
@@ -987,7 +1427,7 @@
       cCamera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.5, 600);
       cCamera.position.set(38, 28, 48);
 
-      cRenderer = new THREE.WebGLRenderer({ antialias: true });
+      cRenderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true });
       cRenderer.setPixelRatio(window.devicePixelRatio);
       cRenderer.setSize(container.clientWidth, container.clientHeight);
       cRenderer.shadowMap.enabled = true;
@@ -1023,10 +1463,16 @@
 
       mSteel = new THREE.MeshStandardMaterial({ color: 0x94a3b8, metalness: 0.85, roughness: 0.3 });
       mAl = new THREE.MeshStandardMaterial({ color: 0xf1f5f9, metalness: 0.92, roughness: 0.18 });
-      mGlass = new THREE.MeshPhysicalMaterial({ color: 0xbae6fd, transparent: true, opacity: 0.38, roughness: 0.08, transmission: 0.85, thickness: 0.6 });
+      mGlass = new THREE.MeshPhysicalMaterial({ color: 0xf8fafc, transparent: true, opacity: 0.55, roughness: 0.65, transmission: 0.70, thickness: 0.6 });
       mFoot = new THREE.MeshStandardMaterial({ color: 0x475569, roughness: 0.85 });
       mJoint = new THREE.MeshStandardMaterial({ color: 0x334155, metalness: 0.9, roughness: 0.25 });
       mWarn = new THREE.MeshStandardMaterial({ color: 0xef4444, metalness: 0.5, roughness: 0.3, emissive: 0x7f1d1d });
+
+      // Advanced Materials
+      mScreen = new THREE.MeshStandardMaterial({ color: 0xf1f5f9, roughness: 0.4, metalness: 0.45, side: THREE.DoubleSide, opacity: 0.90, transparent: true });
+      mGutterMat = new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 0.25, metalness: 0.1 });
+      mCropMat = new THREE.MeshStandardMaterial({ color: 0x16a34a, roughness: 0.85, transparent: true, opacity: 0.88 });
+      mRailMat = new THREE.MeshStandardMaterial({ color: 0x334155, metalness: 0.85, roughness: 0.28 });
 
       greenhouseModel = new THREE.Group();
       cScene.add(greenhouseModel);
@@ -1079,6 +1525,13 @@
       const offsetX = -(bays * W) / 2;
       const offsetZ = -L / 2;
 
+      // Dynamic Glazing Material Props
+      const gSpec = glazingSpecs[cadParams.glazingType] || glazingSpecs['diffuse_glass'];
+      if (gSpec && gSpec.matProps) {
+        Object.assign(mGlass, gSpec.matProps);
+        mGlass.needsUpdate = true;
+      }
+
       const structural = calcStructure();
       const curColMat = (structural.sf < 1.0) ? mWarn : mSteel;
 
@@ -1100,7 +1553,7 @@
           colMesh.userData = {
             type: 'COLUMN',
             name: `주기둥 (Column C-${b * numPostsZ + p + 1})`,
-            spec: `각관 ${cadParams.columnSize} SGH400`,
+            spec: `각관 ${cadParams.columnSize} (${cadParams.steelGrade})`,
             role: '처마 수직 하중 및 외측 풍하중 지지 | NEN 3859 휨모멘트 저항',
             status: structural.sf >= 1.0 ? '✅ 안전 (PASS)' : '⚠️ 과하중 (WARNING)'
           };
@@ -1149,11 +1602,20 @@
         greenhouseModel.add(gutter);
       }
 
-      // 3. Ridges, Glazing Bars, Glass & Trusses
+      // 3. Ridges, Glazing Bars, Glass & Opening Vents
       const ridgeGeo = new THREE.BoxGeometry(0.08, 0.08, L);
       const rafterLen = Math.sqrt(halfSub * halfSub + subGableRise * subGableRise);
       const rafterGeo = new THREE.CylinderGeometry(0.018, 0.018, rafterLen, 6);
       const glassGeo = new THREE.BoxGeometry(rafterLen, 0.015, L);
+
+      const ventRatio = (cadParams.ventOpenRatio || 0) / 100;
+      const ventAngle = ventRatio * 0.45; // Max 25.8 deg opening
+      const ventLen = rafterLen * 0.42;
+      const fixedLen = rafterLen - ventLen;
+      const fixFrac = fixedLen / rafterLen;
+      const fixGeo = new THREE.BoxGeometry(fixedLen, 0.015, L);
+      const ventPaneGeo = new THREE.BoxGeometry(ventLen, 0.016, L);
+      const pushrodGeo = new THREE.CylinderGeometry(0.012, 0.012, 0.65, 6);
 
       for (let b = 0; b < bays; b++) {
         const bayStartX = offsetX + b * W;
@@ -1173,29 +1635,117 @@
           greenhouseModel.add(ridge);
 
           if (cadParams.showGlass) {
-            const leftGlass = new THREE.Mesh(glassGeo, mGlass);
-            leftGlass.position.set(ridgeX - halfSub / 2, H + subGableRise / 2, 0);
-            leftGlass.rotation.z = radPitch;
-            leftGlass.userData = {
-              type: 'GLASS',
-              name: '산광 온실유리 (Diffused Glass Panel)',
-              spec: '4mm 저철분 산광 강화유리 (Haze 45%, 광투과율 91.5%)',
-              role: '식물 광합성 채광, 기밀 단열 및 적설 하중 분산',
-              status: '✅ 적설 35cm 안전'
-            };
-            greenhouseModel.add(leftGlass);
+            const isVentOpen = ventRatio > 0;
+            const openLeft = isVentOpen;
+            const openRight = isVentOpen && (cadParams.ventType === 'continuous' || (b * 2 + sg) % 2 === 1);
 
-            const rightGlass = new THREE.Mesh(glassGeo, mGlass);
-            rightGlass.position.set(ridgeX + halfSub / 2, H + subGableRise / 2, 0);
-            rightGlass.rotation.z = -radPitch;
-            rightGlass.userData = {
-              type: 'GLASS',
-              name: '산광 온실유리 (Diffused Glass Panel)',
-              spec: '4mm 저철분 산광 강화유리 (Haze 45%, 광투과율 91.5%)',
-              role: '식물 광합성 채광, 기밀 단열 및 적설 하중 분산',
-              status: '✅ 적설 35cm 안전'
-            };
-            greenhouseModel.add(rightGlass);
+            // Left Slope Glass
+            if (!openLeft) {
+              const leftGlass = new THREE.Mesh(glassGeo, mGlass);
+              leftGlass.position.set(ridgeX - halfSub / 2, H + subGableRise / 2, 0);
+              leftGlass.rotation.z = radPitch;
+              leftGlass.userData = {
+                type: 'GLASS',
+                name: `지붕 피복재 (${gSpec.shortName})`,
+                spec: `${gSpec.name} (U값 ${gSpec.uValue} W/m²K, PAR ${gSpec.transmittance}%)`,
+                role: '식물 광합성 채광, 기밀 단열 및 적설 하중 분산',
+                status: '✅ 정상'
+              };
+              greenhouseModel.add(leftGlass);
+            } else {
+              // Fixed lower pane
+              const fixMidX = (ridgeX - halfSub) + (halfSub * fixFrac / 2);
+              const fixMidY = H + (subGableRise * fixFrac / 2);
+              const fixMesh = new THREE.Mesh(fixGeo, mGlass);
+              fixMesh.position.set(fixMidX, fixMidY, 0);
+              fixMesh.rotation.z = radPitch;
+              fixMesh.userData = {
+                type: 'GLASS_FIXED',
+                name: '지붕 하부 고정창 (Fixed Pane)',
+                spec: gSpec.shortName,
+                role: '하부 기밀 피복 및 채광',
+                status: '✅ 정상'
+              };
+              greenhouseModel.add(fixMesh);
+
+              // Rotating upper vent pane hinged at ridge
+              const openAngle = radPitch - ventAngle;
+              const ventMidX = ridgeX - (ventLen / 2) * Math.cos(openAngle);
+              const ventMidY = ridgeY - (ventLen / 2) * Math.sin(openAngle);
+              const ventMesh = new THREE.Mesh(ventPaneGeo, mGlass);
+              ventMesh.position.set(ventMidX, ventMidY, 0);
+              ventMesh.rotation.z = openAngle;
+              ventMesh.userData = {
+                type: 'VENT_WINDOW',
+                name: '지붕 연속 환기창 (Continuous Roof Vent)',
+                spec: `개폐율 ${cadParams.ventOpenRatio}% (${cadParams.ventType === 'continuous' ? '연속' : '교번'})`,
+                role: '자연 부력 환기 및 고온기 제습/냉각',
+                status: `✅ 환기면적비 ${(ventRatio * 32).toFixed(1)}%`
+              };
+              greenhouseModel.add(ventMesh);
+
+              // Pushrods
+              for (let rz of [offsetZ + L * 0.25, offsetZ + L * 0.75]) {
+                const rod = new THREE.Mesh(pushrodGeo, mAl);
+                rod.position.set(ridgeX - 0.4, ridgeY - 0.25, rz);
+                rod.rotation.z = 0.4;
+                greenhouseModel.add(rod);
+              }
+            }
+
+            // Right Slope Glass
+            if (!openRight) {
+              const rightGlass = new THREE.Mesh(glassGeo, mGlass);
+              rightGlass.position.set(ridgeX + halfSub / 2, H + subGableRise / 2, 0);
+              rightGlass.rotation.z = -radPitch;
+              rightGlass.userData = {
+                type: 'GLASS',
+                name: `지붕 피복재 (${gSpec.shortName})`,
+                spec: `${gSpec.name} (U값 ${gSpec.uValue} W/m²K, PAR ${gSpec.transmittance}%)`,
+                role: '식물 광합성 채광, 기밀 단열 및 적설 하중 분산',
+                status: '✅ 정상'
+              };
+              greenhouseModel.add(rightGlass);
+            } else {
+              // Fixed lower pane
+              const fixMidX = (ridgeX + halfSub) - (halfSub * fixFrac / 2);
+              const fixMidY = H + (subGableRise * fixFrac / 2);
+              const fixMesh = new THREE.Mesh(fixGeo, mGlass);
+              fixMesh.position.set(fixMidX, fixMidY, 0);
+              fixMesh.rotation.z = -radPitch;
+              fixMesh.userData = {
+                type: 'GLASS_FIXED',
+                name: '지붕 하부 고정창 (Fixed Pane)',
+                spec: gSpec.shortName,
+                role: '하부 기밀 피복 및 채광',
+                status: '✅ 정상'
+              };
+              greenhouseModel.add(fixMesh);
+
+              // Rotating upper vent pane
+              const openAngle = -radPitch + ventAngle;
+              const ventMidX = ridgeX + (ventLen / 2) * Math.cos(-openAngle);
+              const ventMidY = ridgeY - (ventLen / 2) * Math.sin(-openAngle);
+              const ventMesh = new THREE.Mesh(ventPaneGeo, mGlass);
+              ventMesh.position.set(ventMidX, ventMidY, 0);
+              ventMesh.rotation.z = openAngle;
+              ventMesh.userData = {
+                type: 'VENT_WINDOW',
+                name: '지붕 연속 환기창 (Continuous Roof Vent)',
+                spec: `개폐율 ${cadParams.ventOpenRatio}%`,
+                role: '자연 부력 환기 및 고온기 제습/냉각',
+                status: `✅ 환기면적비 ${(ventRatio * 32).toFixed(1)}%`
+              };
+              greenhouseModel.add(ventMesh);
+
+              // Pushrods
+              for (let rz of [offsetZ + L * 0.25, offsetZ + L * 0.75]) {
+                const rod = new THREE.Mesh(pushrodGeo, mAl);
+                rod.position.set(ridgeX + 0.4, ridgeY - 0.25, rz);
+                rod.rotation.z = -0.4;
+                greenhouseModel.add(rod);
+              }
+            }
           }
 
           if (cadParams.showGlazing) {
@@ -1215,6 +1765,7 @@
           }
         }
 
+        // Trusses
         if (cadParams.showTruss) {
           const trussTieGeo = new THREE.BoxGeometry(W, 0.05, 0.04);
           const diagonalLen = Math.sqrt(Math.pow(W / 4, 2) + Math.pow(subGableRise, 2));
@@ -1228,8 +1779,8 @@
             chord.userData = {
               type: 'TRUSS',
               name: `워렌 트러스 (Warren Truss T-${b + 1}-${p + 1})`,
-              spec: '각관 50x30x2.3 하현재 + 환봉 Φ12 래티스',
-              role: `스팬 횡방향 휨 방지 및 토마토/파프리카 작물 하중(${cadParams.cropLoad} kg/m²) 지탱`,
+              spec: `각관 50x30x2.3 하현재 + 환봉 Φ12 래티스 (${cadParams.steelGrade})`,
+              role: `스팬 횡방향 휨 방지 및 작물 하중(${cadParams.cropLoad} kg/m²) 지탱`,
               status: '✅ 응력비 0.68 양호'
             };
             greenhouseModel.add(chord);
@@ -1252,8 +1803,94 @@
             }
           }
         }
+
+        // Horizontal Retractable Thermal Screen
+        if (cadParams.showScreen && (cadParams.screenClosedRatio || 0) > 0) {
+          const sRatio = (cadParams.screenClosedRatio || 0) / 100;
+          const scrW = W * sRatio;
+          const scrGeo = new THREE.PlaneGeometry(scrW, L);
+          const scrMesh = new THREE.Mesh(scrGeo, mScreen);
+          scrMesh.rotation.x = -Math.PI / 2;
+          scrMesh.position.set(bayStartX + scrW / 2, H - 0.05, 0);
+          scrMesh.userData = {
+            type: 'SCREEN',
+            name: `수평 에너지 보온커튼 (Bay ${b + 1})`,
+            spec: `알루미늄 85% 고반사 다층 스크린 (전개율 ${cadParams.screenClosedRatio}%)`,
+            role: '야간 장파 복사냉각 차단 및 난방 에너지 44% 절감',
+            status: `✅ 유효 U값 ${(gSpec.uValue * (1 - 0.44 * sRatio)).toFixed(2)} W/m²K`
+          };
+          greenhouseModel.add(scrMesh);
+        }
+
+        // Agronomic Infrastructure: Hanging Gutters, Heating Rails & Crops
+        if (cadParams.showGutters) {
+          const numGutters = cadParams.guttersPerBay || 4;
+          const cSpec = cropSpecs[cadParams.cropType] || cropSpecs['tomato'];
+          const gutGeo = new THREE.BoxGeometry(0.18, 0.08, L);
+          const wireGeo = new THREE.CylinderGeometry(0.003, 0.003, H - 1.0, 4);
+          const railGeo = new THREE.CylinderGeometry(0.0255, 0.0255, L, 8);
+          const cropH = (cadParams.cropType === 'strawberry') ? 0.45 : (cadParams.cropType === 'greens') ? 0.30 : Math.min(2.8, H - 1.8);
+          const cropGeo = new THREE.BoxGeometry(0.48, cropH, L * 0.98);
+
+          for (let g = 1; g <= numGutters; g++) {
+            const gutterX = bayStartX + g * (W / (numGutters + 1));
+
+            // Hanging Gutter
+            const gutMesh = new THREE.Mesh(gutGeo, mGutterMat);
+            gutMesh.position.set(gutterX, 1.0, 0);
+            gutMesh.castShadow = true;
+            gutMesh.userData = {
+              type: 'CROP_GUTTER',
+              name: `행잉 재배 거터 (Gutter B${b+1}-L${g})`,
+              spec: '백색 폴리코팅 연속 엠보 강판 (폭 180mm)',
+              role: '암면/코코피트 배지 거치 및 양액 100% 회수',
+              status: '✅ 구배 1/200 정상'
+            };
+            greenhouseModel.add(gutMesh);
+
+            // Suspension Wires (at each post)
+            for (let p = 0; p < numPostsZ; p++) {
+              const wz = offsetZ + p * S;
+              const wire = new THREE.Mesh(wireGeo, mSteel);
+              wire.position.set(gutterX, 1.0 + (H - 1.0) / 2, wz);
+              greenhouseModel.add(wire);
+            }
+
+            // Dual Heating Rails (underneath gutter)
+            if (cadParams.showRails) {
+              for (let rSign of [-0.22, 0.22]) {
+                const rail = new THREE.Mesh(railGeo, mRailMat);
+                rail.rotation.x = Math.PI / 2;
+                rail.position.set(gutterX + rSign, 0.15, 0);
+                rail.userData = {
+                  type: 'HEATING_RAIL',
+                  name: '온수 난방 레일파이프 (Dual Φ51mm)',
+                  spec: '고온수 백관 파이프 (80/60°C 설계)',
+                  role: '근권부 복사 가온 및 수확/방제 대차 주행 레일',
+                  status: '✅ 방열량 120 W/m 정상'
+                };
+                greenhouseModel.add(rail);
+              }
+            }
+
+            // Crop Canopy
+            if (cadParams.showCrops) {
+              const cropMesh = new THREE.Mesh(cropGeo, mCropMat);
+              cropMesh.position.set(gutterX, 1.04 + cropH / 2, 0);
+              cropMesh.userData = {
+                type: 'CROP_CANOPY',
+                name: `생육 캐노피 (${cSpec.name})`,
+                spec: `주간거리 ${cadParams.plantSpacing || 25}cm (연간 ${cSpec.yieldKgM2} kg/m²)`,
+                role: '광합성 동화작용 및 바이오매스 생산',
+                status: '✅ 엽면적지수(LAI) 3.5 양호'
+              };
+              greenhouseModel.add(cropMesh);
+            }
+          }
+        }
       }
 
+      // Wind Bracing
       if (cadParams.showBracing) {
         const braceGeo = new THREE.CylinderGeometry(0.008, 0.008, Math.sqrt(S * S + H * H), 6);
         const braceAngle = Math.atan2(H, S);
@@ -1287,13 +1924,18 @@
       const sk = (snow / 100) * 2.0;
       const S_snow = mu1 * sk;
 
+      // Include roof dead load from selected glazing
+      const gSpec = glazingSpecs[cadParams.glazingType] || glazingSpecs['diffuse_glass'];
+      const roofDeadLoad = (gSpec.unitWeight * 9.8) / 1000;
+
       const w_wind_line = qp * S * 0.8;
       const k_share = 0.45;
       const M_wind = k_share * (w_wind_line * Math.pow(H, 2)) / 8;
-      const M_vert = 0.35 * S_snow * S * (H * 0.05);
+      const M_vert = 0.35 * (S_snow + roofDeadLoad) * S * (H * 0.05);
       const M_ULS = Math.max(1.5 * M_wind, 1.2 * M_wind + 1.2 * M_vert);
 
-      const fy = 235e3;
+      const stSpec = steelSpecs[cadParams.steelGrade] || steelSpecs['S235JR'];
+      const fy = stSpec.fy * 1e3;
       const Mcap = (col.Zx * fy) / 1.1;
       const sf = Mcap / M_ULS;
 
@@ -1321,6 +1963,10 @@
       const numColumns = (bays + 1) * numPostsZ;
       const col = colSpecs[cadParams.columnSize];
 
+      const gSpec = glazingSpecs[cadParams.glazingType] || glazingSpecs['diffuse_glass'];
+      const stSpec = steelSpecs[cadParams.steelGrade] || steelSpecs['S355JR'];
+      const cSpec = cropSpecs[cadParams.cropType] || cropSpecs['tomato'];
+
       const totalArea = bays * W * L;
       const pyeong = Math.round(totalArea / 3.305785);
       const totalColWeight = numColumns * H * col.unitWeight;
@@ -1332,12 +1978,26 @@
       const totalGlazeM = bays * 4 * Math.round(L / 1.0) * Math.sqrt(Math.pow(W / 4, 2) + Math.pow(0.5, 2));
       const totalAlKg = Math.round(totalGutterM * 4.25 + totalRidgeM * 1.85 + totalGlazeM * 1.12);
 
-      const steelCost = totalSteelKg * col.costPerKg;
+      // Base Structure & Envelope Costs
+      const steelCost = totalSteelKg * col.costPerKg * stSpec.costMult;
       const alCost = totalAlKg * 6500;
-      const glassCost = totalArea * 1.15 * 22000;
+      const glassCost = totalArea * 1.18 * gSpec.costPerM2;
       const footingCost = numColumns * 65000;
-      const totalEstimatedCost = steelCost + alCost + glassCost + footingCost;
 
+      // Agronomic & Climate Infrastructure Costs
+      const totalGutters = bays * (cadParams.guttersPerBay || 4);
+      const totalGutterLen = totalGutters * L;
+      let gutterCost = 0;
+      let railCost = 0;
+      let screenCost = 0;
+      if (cadParams.showGutters) gutterCost = totalGutterLen * 14000;
+      if (cadParams.showRails) railCost = totalGutterLen * 2 * 12000;
+      if (cadParams.showScreen) screenCost = totalArea * 1.05 * 8500;
+      const ventCost = (bays * 2 * 650000) + (bays * Math.max(4, Math.round(L / 2.5)) * 45000);
+
+      const totalEstimatedCost = steelCost + alCost + glassCost + footingCost + gutterCost + railCost + screenCost + ventCost;
+
+      // HUD Updates
       document.getElementById('hud-a').innerText = `${totalArea.toFixed(0)} m² (${pyeong}평)`;
       document.getElementById('hud-st').innerText = `${totalSteelKg.toLocaleString()} kg`;
       document.getElementById('hud-al').innerText = `${totalAlKg.toLocaleString()} kg`;
@@ -1352,6 +2012,75 @@
         sfEl.innerText = `D (${res.sf.toFixed(2)} OVERLOAD)`; sfEl.style.color = '#f43f5e';
       }
 
+      // Live U-Value & Thermal Screen Stats
+      const sRatio = (cadParams.showScreen ? (cadParams.screenClosedRatio || 0) : 0) / 100;
+      const effectiveU = gSpec.uValue * (1 - 0.44 * sRatio);
+      const savePercent = Math.round(0.44 * sRatio * 100);
+      const hudUEl = document.getElementById('hud-u');
+      if (hudUEl) hudUEl.innerText = `${effectiveU.toFixed(2)} W/m²K (-${savePercent}%)`;
+
+      // Agronomic Plants & Density
+      const spacingM = (cadParams.plantSpacing || 25) / 100;
+      const totalPlants = Math.round(totalGutterLen / spacingM);
+      const plantDensity = (totalPlants / totalArea).toFixed(1);
+      const estYieldTon = ((totalArea * cSpec.yieldKgM2) / 1000).toFixed(1);
+      const hudPlantsEl = document.getElementById('hud-plants');
+      if (hudPlantsEl) hudPlantsEl.innerText = `${totalPlants.toLocaleString()} 주 (${plantDensity}주/m²)`;
+
+      // Tab 2: Materials & Physics Updates
+      const elMatTrans = document.getElementById('txt-mat-trans');
+      if (elMatTrans) elMatTrans.innerText = `${gSpec.transmittance} % (Haze ${gSpec.haze}%)`;
+      const elMatU = document.getElementById('txt-mat-u');
+      if (elMatU) elMatU.innerText = `${gSpec.uValue} W/m²K`;
+      const elMatW = document.getElementById('txt-mat-weight');
+      if (elMatW) elMatW.innerText = `${gSpec.unitWeight} kg/m²`;
+      const elMatCost = document.getElementById('txt-mat-cost');
+      if (elMatCost) elMatCost.innerText = `${gSpec.costPerM2.toLocaleString()} 원/m²`;
+      const elMatDesc = document.getElementById('txt-mat-desc');
+      if (elMatDesc) elMatDesc.innerText = gSpec.desc;
+
+      // Tab 3: Agronomic Updates
+      const elAgroGutter = document.getElementById('txt-agro-gutter-len');
+      if (elAgroGutter) elAgroGutter.innerText = `${totalGutterLen.toLocaleString()} m (${totalGutters}라인)`;
+      const elAgroPlants = document.getElementById('txt-agro-plants');
+      if (elAgroPlants) elAgroPlants.innerText = `${totalPlants.toLocaleString()} 주`;
+      const elAgroDensity = document.getElementById('txt-agro-density');
+      if (elAgroDensity) elAgroDensity.innerText = `${plantDensity} 주/m² (${(plantDensity * 3.3).toFixed(1)}주/평)`;
+      const elAgroRail = document.getElementById('txt-agro-rail-len');
+      if (elAgroRail) elAgroRail.innerText = `${(totalGutterLen * 2).toLocaleString()} m (듀얼)`;
+      const elAgroYield = document.getElementById('txt-agro-yield');
+      if (elAgroYield) elAgroYield.innerText = `약 ${estYieldTon} 톤/년 (${cSpec.yieldKgM2} kg/m²)`;
+
+      // Tab 4: Climate & Screen Updates
+      const ventMaxRatio = (cadParams.ventType === 'continuous') ? 0.32 : 0.18;
+      const openRatio = (cadParams.ventOpenRatio || 0) / 100;
+      const actVentArea = totalArea * 1.08 * ventMaxRatio * openRatio;
+      const maxVentArea = totalArea * 1.08 * ventMaxRatio;
+      const ventAreaRatio = (openRatio * ventMaxRatio * 100).toFixed(1);
+
+      const elVentArea = document.getElementById('txt-vent-area');
+      if (elVentArea) elVentArea.innerText = `${actVentArea.toFixed(1)} m² (최대 ${maxVentArea.toFixed(0)}m²)`;
+      const elVentRatio = document.getElementById('txt-vent-ratio');
+      if (elVentRatio) elVentRatio.innerText = `${ventAreaRatio} %`;
+      const elVentStatus = document.getElementById('txt-vent-status');
+      if (elVentStatus) {
+        if (cadParams.ventOpenRatio >= 50) {
+          elVentStatus.innerText = '✅ NEN 3859 적합 (냉각 충분)';
+          elVentStatus.style.color = '#10b981';
+        } else if (cadParams.ventOpenRatio > 0) {
+          elVentStatus.innerText = '⚠️ 부분 환기 (미소 환기)';
+          elVentStatus.style.color = '#f59e0b';
+        } else {
+          elVentStatus.innerText = '🔒 밀폐 (환기 정지)';
+          elVentStatus.style.color = '#94a3b8';
+        }
+      }
+      const elScreenU = document.getElementById('txt-screen-u');
+      if (elScreenU) elScreenU.innerText = `${effectiveU.toFixed(2)} W/m²K`;
+      const elScreenSave = document.getElementById('txt-screen-save');
+      if (elScreenSave) elScreenSave.innerText = `${savePercent} %`;
+
+      // Tab 5: Structural Loads Updates
       document.getElementById('txt-qp').innerText = `${res.qp} kN/m²`;
       document.getElementById('txt-snow').innerText = `${res.snow} kN/m²`;
       document.getElementById('txt-mom').innerText = `${res.mMax} kN·m`;
@@ -1568,6 +2297,7 @@
       const link = (id, key, unit) => {
         const rng = document.getElementById(`rng-${id}`);
         const val = document.getElementById(`val-${id}`);
+        if (!rng || !val) return;
         rng.addEventListener('input', (e) => {
           const v = parseFloat(e.target.value);
           cadParams[key] = v;
@@ -1608,8 +2338,105 @@
         triggerAutoSave();
       });
 
+      // New Materials Selects
+      const selGlaze = document.getElementById('sel-glaze');
+      if (selGlaze) {
+        selGlaze.addEventListener('change', (e) => {
+          cadParams.glazingType = e.target.value;
+          generateGreenhouseMesh();
+          triggerAutoSave();
+          trackGA4Event('param_glaze_change', { glazing: cadParams.glazingType });
+        });
+      }
+
+      const selSteel = document.getElementById('sel-steel');
+      if (selSteel) {
+        selSteel.addEventListener('change', (e) => {
+          cadParams.steelGrade = e.target.value;
+          generateGreenhouseMesh();
+          triggerAutoSave();
+          trackGA4Event('param_steel_change', { steel: cadParams.steelGrade });
+        });
+      }
+
+      // New Agronomic Controls
+      const selCrop = document.getElementById('sel-crop');
+      if (selCrop) {
+        selCrop.addEventListener('change', (e) => {
+          cadParams.cropType = e.target.value;
+          const cSpec = cropSpecs[cadParams.cropType];
+          if (cSpec) {
+            cadParams.guttersPerBay = cSpec.defGutters;
+            cadParams.plantSpacing = cSpec.defSpacing;
+            const rGut = document.getElementById('rng-gutters-bay');
+            if (rGut) rGut.value = cSpec.defGutters;
+            const vGut = document.getElementById('val-gutters-bay');
+            if (vGut) vGut.innerText = `${cSpec.defGutters} 열`;
+            const rSpc = document.getElementById('rng-plant-spacing');
+            if (rSpc) rSpc.value = cSpec.defSpacing;
+            const vSpc = document.getElementById('val-plant-spacing');
+            if (vSpc) vSpc.innerText = `${cSpec.defSpacing} cm`;
+          }
+          generateGreenhouseMesh();
+          triggerAutoSave();
+          trackGA4Event('param_crop_change', { crop: cadParams.cropType });
+        });
+      }
+
+      const rngGut = document.getElementById('rng-gutters-bay');
+      if (rngGut) {
+        rngGut.addEventListener('input', (e) => {
+          cadParams.guttersPerBay = parseInt(e.target.value, 10);
+          document.getElementById('val-gutters-bay').innerText = `${cadParams.guttersPerBay} 열`;
+          generateGreenhouseMesh();
+          triggerAutoSave();
+        });
+      }
+
+      const rngSpc = document.getElementById('rng-plant-spacing');
+      if (rngSpc) {
+        rngSpc.addEventListener('input', (e) => {
+          cadParams.plantSpacing = parseInt(e.target.value, 10);
+          document.getElementById('val-plant-spacing').innerText = `${cadParams.plantSpacing} cm`;
+          generateGreenhouseMesh();
+          triggerAutoSave();
+        });
+      }
+
+      // New Climate & Screen Controls
+      const rngVent = document.getElementById('rng-vent');
+      if (rngVent) {
+        rngVent.addEventListener('input', (e) => {
+          cadParams.ventOpenRatio = parseInt(e.target.value, 10);
+          document.getElementById('val-vent').innerText = `${cadParams.ventOpenRatio} %`;
+          generateGreenhouseMesh();
+          triggerAutoSave();
+        });
+      }
+
+      const selVentType = document.getElementById('sel-vent-type');
+      if (selVentType) {
+        selVentType.addEventListener('change', (e) => {
+          cadParams.ventType = e.target.value;
+          generateGreenhouseMesh();
+          triggerAutoSave();
+        });
+      }
+
+      const rngScreen = document.getElementById('rng-screen');
+      if (rngScreen) {
+        rngScreen.addEventListener('input', (e) => {
+          cadParams.screenClosedRatio = parseInt(e.target.value, 10);
+          document.getElementById('val-screen').innerText = `${cadParams.screenClosedRatio} %`;
+          generateGreenhouseMesh();
+          triggerAutoSave();
+        });
+      }
+
       const bindChk = (id, key, isMatProp) => {
-        document.getElementById(`chk-${id}`).addEventListener('change', (e) => {
+        const el = document.getElementById(`chk-${id}`);
+        if (!el) return;
+        el.addEventListener('change', (e) => {
           if (isMatProp) {
             mSteel.wireframe = e.target.checked;
             mAl.wireframe = e.target.checked;
@@ -1628,13 +2455,21 @@
       bindChk('foot', 'showFooting');
       bindChk('joint', 'showJoints');
       bindChk('wire', 'showWireframe', true);
+      bindChk('gutters', 'showGutters');
+      bindChk('rails', 'showRails');
+      bindChk('crops', 'showCrops');
+      bindChk('screen', 'showScreen');
     }
 
     function setTab(tabId, btn) {
-      ['t-geo', 't-str', 't-sol', 't-exp'].forEach(id => document.getElementById(id).style.display = 'none');
+      ['t-geo', 't-mat', 't-agro', 't-clim', 't-str', 't-sol', 't-exp'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.style.display = 'none';
+      });
       document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-      document.getElementById(tabId).style.display = 'block';
-      btn.classList.add('active');
+      const targetTab = document.getElementById(tabId);
+      if (targetTab) targetTab.style.display = 'block';
+      if (btn) btn.classList.add('active');
     }
 
     // --- GA4 Custom Event Dispatcher ---
@@ -1650,19 +2485,29 @@
 
     function applyCropPreset(type) {
       document.querySelectorAll('.crop-pill').forEach(p => p.classList.remove('active'));
-      event.target.classList.add('active');
+      if (event && event.target) event.target.classList.add('active');
       if (type === 'tomato') {
         setCADParams(8.0, 6.0, 4, 48.0, 22.0, '120x60x3.2', 15.0);
+        cadParams.cropType = 'tomato';
+        cadParams.guttersPerBay = 4;
+        cadParams.plantSpacing = 25;
       } else if (type === 'strawberry') {
         setCADParams(9.6, 4.5, 3, 36.0, 21.0, '100x50x3.2', 8.0);
+        cadParams.cropType = 'strawberry';
+        cadParams.guttersPerBay = 5;
+        cadParams.plantSpacing = 18;
       } else if (type === 'greens') {
         setCADParams(6.4, 3.8, 4, 32.0, 20.0, '100x50x3.2', 5.0);
+        cadParams.cropType = 'greens';
+        cadParams.guttersPerBay = 6;
+        cadParams.plantSpacing = 15;
       } else if (type === 'snow') {
         setCADParams(8.0, 5.0, 4, 40.0, 24.5, '150x75x3.6', 15.0);
         cadParams.snowDepth = 45.0;
         document.getElementById('rng-snow').value = 45.0;
         document.getElementById('val-snow').innerText = '45.0 cm';
       }
+      syncCADInputs();
       generateGreenhouseMesh();
       triggerAutoSave();
       trackGA4Event('preset_crop_select', { crop_type: type });
@@ -1720,7 +2565,7 @@
           <td style="font-family:var(--font-mono);">${it.len}</td>
           <td style="font-family:var(--font-mono); font-weight:700;">${it.qty}</td>
           <td style="font-family:var(--font-mono);">${it.unitKg}</td>
-          <td style="font-family:var(--font-mono); font-weight:700;">${it.totalKg}</td>
+          <td style="font-family:var(--font-mono); font-weight:700;">${typeof it.totalKg === 'number' ? it.totalKg.toLocaleString() : it.totalKg}</td>
           <td>${it.price}</td>
           <td style="font-family:var(--font-mono); font-weight:700; color:var(--accent-gold);">${it.cost.toLocaleString()} 원</td>
         `;
@@ -1749,6 +2594,9 @@
       const numColumns = (bays + 1) * numPostsZ;
       const col = colSpecs[cadParams.columnSize];
 
+      const gSpec = glazingSpecs[cadParams.glazingType] || glazingSpecs['diffuse_glass'];
+      const stSpec = steelSpecs[cadParams.steelGrade] || steelSpecs['S355JR'];
+
       const colKg = Math.round(numColumns * H * col.unitWeight);
       const gutterKg = Math.round((bays + 1) * L * 4.25);
       const ridgeKg = Math.round(bays * 2 * L * 1.85);
@@ -1758,16 +2606,216 @@
       const trussWebKg = Math.round(bays * numPostsZ * 4.8 * 0.89);
       const glassArea = Math.round(bays * W * L * 1.18);
 
-      return [
-        { id: 'COL-01', cat: '주기둥', spec: `각관 ${cadParams.columnSize} SGH400 HDG`, len: H * 1000, qty: numColumns, unitKg: col.unitWeight, totalKg: colKg, price: `${col.costPerKg.toLocaleString()}원/kg`, cost: colKg * col.costPerKg },
-        { id: 'GUT-01', cat: '처마 거터', spec: '알루미늄 압출 형재 Al 6063-T6', len: L * 1000, qty: bays + 1, unitKg: 4.25, totalKg: gutterKg, price: '6,500원/kg', cost: gutterKg * 6500 },
-        { id: 'RDG-01', cat: '용마루 릿지', spec: '알루미늄 릿지 프로파일 Al 6063-T6', len: L * 1000, qty: bays * 2, unitKg: 1.85, totalKg: ridgeKg, price: '6,500원/kg', cost: ridgeKg * 6500 },
+      const items = [
+        { id: 'COL-01', cat: '주기둥', spec: `각관 ${cadParams.columnSize} ${cadParams.steelGrade} HDG`, len: Math.round(H * 1000), qty: numColumns, unitKg: col.unitWeight, totalKg: colKg, price: `${Math.round(col.costPerKg * stSpec.costMult).toLocaleString()}원/kg`, cost: Math.round(colKg * col.costPerKg * stSpec.costMult) },
+        { id: 'GUT-01', cat: '처마 거터', spec: '알루미늄 압출 형재 Al 6063-T6', len: Math.round(L * 1000), qty: bays + 1, unitKg: 4.25, totalKg: gutterKg, price: '6,500원/kg', cost: gutterKg * 6500 },
+        { id: 'RDG-01', cat: '용마루 릿지', spec: '알루미늄 릿지 프로파일 Al 6063-T6', len: Math.round(L * 1000), qty: bays * 2, unitKg: 1.85, totalKg: ridgeKg, price: '6,500원/kg', cost: ridgeKg * 6500 },
         { id: 'GLZ-01', cat: '서까래 바', spec: '유리 고정용 알루미늄 바', len: 2150, qty: bays * 4 * numGlaze, unitKg: 1.12, totalKg: glazeKg, price: '6,800원/kg', cost: glazeKg * 6800 },
-        { id: 'TRS-01', cat: '트러스 하현재', spec: '아연도금 각관 50x30x2.3', len: W * 1000, qty: bays * numPostsZ, unitKg: 2.67, totalKg: trussChordKg, price: '2,800원/kg', cost: trussChordKg * 2800 },
-        { id: 'TRS-02', cat: '트러스 래티스', spec: '환봉 Φ12 SS400', len: 1200, qty: bays * numPostsZ * 4, unitKg: 0.89, totalKg: trussWebKg, price: '2,800원/kg', cost: trussWebKg * 2800 },
-        { id: 'GLS-01', cat: '산광 온실유리', spec: '4mm 저철분 산광 강화유리', len: 'Pane', qty: `${glassArea} m²`, unitKg: '10.0', totalKg: glassArea * 10, price: '22,000원/m²', cost: glassArea * 22000 },
-        { id: 'FND-01', cat: '독립기초', spec: 'Φ300x1200 콘크리트 + 앵커볼트', len: 1200, qty: numColumns, unitKg: '200', totalKg: numColumns * 200, price: '65,000원/EA', cost: numColumns * 65000 }
+        { id: 'TRS-01', cat: '트러스 하현재', spec: `아연도금 각관 50x30x2.3 (${cadParams.steelGrade})`, len: Math.round(W * 1000), qty: bays * numPostsZ, unitKg: 2.67, totalKg: trussChordKg, price: `${Math.round(2800 * stSpec.costMult).toLocaleString()}원/kg`, cost: Math.round(trussChordKg * 2800 * stSpec.costMult) },
+        { id: 'TRS-02', cat: '트러스 래티스', spec: `환봉 Φ12 (${cadParams.steelGrade})`, len: 1200, qty: bays * numPostsZ * 4, unitKg: 0.89, totalKg: trussWebKg, price: `${Math.round(2800 * stSpec.costMult).toLocaleString()}원/kg`, cost: Math.round(trussWebKg * 2800 * stSpec.costMult) },
+        { id: 'GLS-01', cat: '외피 피복재', spec: gSpec.name, len: 'Pane', qty: `${glassArea} m²`, unitKg: gSpec.unitWeight, totalKg: Math.round(glassArea * gSpec.unitWeight), price: `${gSpec.costPerM2.toLocaleString()}원/m²`, cost: glassArea * gSpec.costPerM2 },
+        { id: 'FND-01', cat: '독립기초', spec: 'Φ300x1200 콘크리트 + 앵커볼트', len: 1200, qty: numColumns, unitKg: 200, totalKg: numColumns * 200, price: '65,000원/EA', cost: numColumns * 65000 }
       ];
+
+      // Vent Actuator motors & rack-and-pinions
+      const numVentMotors = bays * 2;
+      const numVentRacks = bays * Math.max(4, Math.round(L / 2.5));
+      const ventMechCost = (numVentMotors * 650000) + (numVentRacks * 45000);
+      items.push({
+        id: 'CL-01', cat: '천창 환기 설비', spec: `Ridder 연속 환기 감속 모터 및 랙피니언 (${cadParams.ventType === 'continuous' ? '연속' : '지그재그'})`,
+        len: 'Assy', qty: `${numVentMotors}모터 / ${numVentRacks}랙`, unitKg: 'Set', totalKg: numVentMotors * 28 + numVentRacks * 4,
+        price: '일괄 견적', cost: ventMechCost
+      });
+
+      // Agronomic infrastructure
+      const totalGutters = bays * (cadParams.guttersPerBay || 4);
+      const totalGutterLen = totalGutters * L;
+      if (cadParams.showGutters) {
+        const gutCost = Math.round(totalGutterLen * 14000);
+        items.push({
+          id: 'AG-01', cat: '행잉 재배 거터', spec: '백색 폴리코팅 연속 엠보 강판 (폭 180mm) + 와이어 행거',
+          len: Math.round(L * 1000), qty: `${totalGutters} 라인 (${totalGutterLen}m)`, unitKg: 2.2, totalKg: Math.round(totalGutterLen * 2.2),
+          price: '14,000원/m', cost: gutCost
+        });
+      }
+      if (cadParams.showRails) {
+        const railLen = totalGutterLen * 2;
+        const railCost = Math.round(railLen * 12000);
+        items.push({
+          id: 'AG-02', cat: '난방 레일 파이프', spec: 'Φ51mm 백관 온수 배관 (수확 대차 주행 레일 겸용)',
+          len: Math.round(L * 1000), qty: `${totalGutters * 2} 라인 (${railLen}m)`, unitKg: 3.8, totalKg: Math.round(railLen * 3.8),
+          price: '12,000원/m', cost: railCost
+        });
+      }
+
+      // Thermal screen
+      if (cadParams.showScreen) {
+        const screenArea = Math.round(bays * W * L * 1.05);
+        const screenCost = screenArea * 8500;
+        items.push({
+          id: 'CL-02', cat: '에너지 보온스크린', spec: '알루미늄 85% 고반사 다층 보온 차광막 + 인장 구동선',
+          len: 'Roll', qty: `${screenArea} m²`, unitKg: 0.18, totalKg: Math.round(screenArea * 0.18),
+          price: '8,500원/m²', cost: screenCost
+        });
+      }
+
+      return items;
+    }
+
+    // --- Engineering Specification Sheet (A4 PDF & Print) ---
+    function openSpecSheetModal() {
+      cRenderer.render(cScene, cCamera);
+      try {
+        const snap = cRenderer.domElement.toDataURL('image/png');
+        const imgEl = document.getElementById('spec-snap-img');
+        if (imgEl) imgEl.src = snap;
+      } catch (e) {
+        console.warn('Snapshot capture failed:', e);
+      }
+
+      const W = cadParams.spanWidth;
+      const H = cadParams.gutterHeight;
+      const bays = cadParams.bays;
+      const L = cadParams.totalLength;
+      const S = cadParams.postSpacing;
+      const pitch = cadParams.roofPitch;
+      const area = W * bays * L;
+      const pyeong = Math.round(area / 3.305785);
+      const rad = (pitch * Math.PI) / 180;
+      const subGableRise = (W / 4) * Math.tan(rad);
+      const ridgeY = H + subGableRise;
+
+      const gSpec = glazingSpecs[cadParams.glazingType] || glazingSpecs['diffuse_glass'];
+      const stSpec = steelSpecs[cadParams.steelGrade] || steelSpecs['S355JR'];
+      const cSpec = cropSpecs[cadParams.cropType] || cropSpecs['tomato'];
+      const structural = calcStructure();
+
+      const now = new Date();
+      const dateStr = `${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}-${String(now.getDate()).padStart(2,'0')}`;
+      const docNoEl = document.getElementById('spec-doc-no');
+      if (docNoEl) docNoEl.innerText = `VCAD-${now.getFullYear()}-NEN3859-${bays}B`;
+      const dateEl = document.getElementById('spec-date');
+      if (dateEl) dateEl.innerText = `${dateStr} KST`;
+
+      const stampEl = document.getElementById('spec-stamp');
+      if (stampEl) {
+        if (structural.sf >= 1.2) {
+          stampEl.innerHTML = `APPROVED<br>PASS ${structural.sf.toFixed(2)}`;
+          stampEl.style.borderColor = '#10b981';
+          stampEl.style.color = '#10b981';
+        } else if (structural.sf >= 1.0) {
+          stampEl.innerHTML = `MARGINAL<br>PASS ${structural.sf.toFixed(2)}`;
+          stampEl.style.borderColor = '#f59e0b';
+          stampEl.style.color = '#f59e0b';
+        } else {
+          stampEl.innerHTML = `REJECTED<br>FAIL ${structural.sf.toFixed(2)}`;
+          stampEl.style.borderColor = '#f43f5e';
+          stampEl.style.color = '#f43f5e';
+        }
+      }
+
+      const windEl = document.getElementById('spec-v-wind');
+      if (windEl) windEl.innerText = `${cadParams.windSpeed}m/s`;
+      const snowEl = document.getElementById('spec-v-snow');
+      if (snowEl) snowEl.innerText = `${cadParams.snowDepth}cm`;
+
+      const dimSpanEl = document.getElementById('spec-dim-span');
+      if (dimSpanEl) dimSpanEl.innerText = `${W.toFixed(1)}m × ${bays}연동 (전폭 ${(W * bays).toFixed(1)}m)`;
+      const dimLenEl = document.getElementById('spec-dim-len');
+      if (dimLenEl) dimLenEl.innerText = `${L.toFixed(1)} m (기둥 스팬 ${S.toFixed(1)}m)`;
+      const dimAreaEl = document.getElementById('spec-dim-area');
+      if (dimAreaEl) dimAreaEl.innerText = `${area.toFixed(1)} m² (${pyeong} 평)`;
+      const dimHeightEl = document.getElementById('spec-dim-height');
+      if (dimHeightEl) dimHeightEl.innerText = `처마 ${H.toFixed(1)}m / 최고 ${ridgeY.toFixed(1)}m (지붕각 ${pitch.toFixed(1)}°)`;
+
+      const matGlazeEl = document.getElementById('spec-mat-glaze');
+      if (matGlazeEl) matGlazeEl.innerText = gSpec.name;
+      const matTransEl = document.getElementById('spec-mat-trans');
+      if (matTransEl) matTransEl.innerText = `PAR ${gSpec.transmittance}% (Haze ${gSpec.haze}%)`;
+      const matUEl = document.getElementById('spec-mat-u');
+      if (matUEl) matUEl.innerText = `${gSpec.uValue} W/m²K (단일외피 기준)`;
+      const matSteelEl = document.getElementById('spec-mat-steel');
+      if (matSteelEl) matSteelEl.innerText = `${stSpec.name} (fy = ${stSpec.fy} MPa)`;
+
+      const totalGutters = bays * (cadParams.guttersPerBay || 4);
+      const totalGutterLen = totalGutters * L;
+      const spacingM = (cadParams.plantSpacing || 25) / 100;
+      const totalPlants = Math.round(totalGutterLen / spacingM);
+      const density = (totalPlants / area).toFixed(1);
+      const estYield = ((area * cSpec.yieldKgM2) / 1000).toFixed(1);
+
+      const agroCropEl = document.getElementById('spec-agro-crop');
+      if (agroCropEl) agroCropEl.innerText = cSpec.name;
+      const agroGutterEl = document.getElementById('spec-agro-gutter');
+      if (agroGutterEl) agroGutterEl.innerText = `베이당 ${cadParams.guttersPerBay || 4}열 / 총 ${totalGutterLen.toLocaleString()} m`;
+      const agroPlantsEl = document.getElementById('spec-agro-plants');
+      if (agroPlantsEl) agroPlantsEl.innerText = `${totalPlants.toLocaleString()} 주 (${density} 주/m²)`;
+      const agroRailEl = document.getElementById('spec-agro-rail');
+      if (agroRailEl) agroRailEl.innerText = `Ø51mm 듀얼 강관 (총 ${(totalGutterLen * 2).toLocaleString()} m)`;
+      const agroYieldEl = document.getElementById('spec-agro-yield');
+      if (agroYieldEl) agroYieldEl.innerText = `약 ${estYield} 톤 / 년 (${cSpec.yieldKgM2} kg/m² 기준)`;
+
+      const ventName = (cadParams.ventType === 'continuous') ? '지붕 연속 천창 (Continuous Ridge Vent)' : '지그재그 교번 천창 (Alternating Vent)';
+      const ventMaxRatio = (cadParams.ventType === 'continuous') ? 0.32 : 0.18;
+      const openRatio = (cadParams.ventOpenRatio || 0) / 100;
+      const actRatio = (openRatio * ventMaxRatio * 100).toFixed(1);
+
+      const climVentEl = document.getElementById('spec-clim-vent');
+      if (climVentEl) climVentEl.innerText = `${ventName} (개폐율 ${cadParams.ventOpenRatio}%)`;
+      const climVratioEl = document.getElementById('spec-clim-vratio');
+      if (climVratioEl) climVratioEl.innerText = `${actRatio} % (${cadParams.ventOpenRatio >= 50 ? 'NEN 3859 고온기 냉각 충족' : '환기 개구부 주의'})`;
+
+      const screenRatio = (cadParams.showScreen ? (cadParams.screenClosedRatio || 0) : 0) / 100;
+      const effectiveU = (gSpec.uValue * (1 - 0.44 * screenRatio)).toFixed(2);
+      const savePercent = Math.round(0.44 * screenRatio * 100);
+
+      const climUEl = document.getElementById('spec-clim-u');
+      if (climUEl) climUEl.innerText = `${effectiveU} W/m²K (스크린 전개 ${cadParams.screenClosedRatio || 0}%)`;
+      const climSaveEl = document.getElementById('spec-clim-save');
+      if (climSaveEl) climSaveEl.innerText = `-${savePercent} % (스크린 가동시 난방 부하 절감)`;
+
+      const items = buildBOMArray();
+      const tbody = document.getElementById('spec-bom-tbody');
+      if (tbody) {
+        tbody.innerHTML = '';
+        let totalCost = 0;
+        items.forEach(it => {
+          totalCost += it.cost;
+          const tr = document.createElement('tr');
+          tr.innerHTML = `
+            <td style="font-weight:700;">${it.cat} (${it.id})</td>
+            <td>${it.spec}</td>
+            <td style="font-family:var(--font-mono);">${it.qty}</td>
+            <td style="font-family:var(--font-mono);">${typeof it.totalKg === 'number' ? it.totalKg.toLocaleString() + ' kg' : it.totalKg}</td>
+            <td style="font-family:var(--font-mono); font-weight:700; text-align:right;">${it.cost.toLocaleString()} 원</td>
+          `;
+          tbody.appendChild(tr);
+        });
+        const totalEl = document.getElementById('spec-total-cost');
+        if (totalEl) totalEl.innerText = `${totalCost.toLocaleString()} 원 (약 ${Math.round(totalCost / 10000).toLocaleString()} 만원)`;
+      }
+
+      document.getElementById('spec-modal').style.display = 'flex';
+      trackGA4Event('spec_sheet_modal_open', {
+        bays: bays,
+        span_width: W,
+        total_length: L,
+        glazing: cadParams.glazingType,
+        crop: cadParams.cropType,
+        safety_factor: structural.sf
+      });
+    }
+
+    function closeSpecSheetModal() {
+      document.getElementById('spec-modal').style.display = 'none';
+    }
+
+    function printSpecSheet() {
+      trackGA4Event('spec_sheet_print', {
+        format: 'A4_PDF',
+        crop: cadParams.cropType
+      });
+      window.print();
     }
 
     // --- 10. 3-Tier Zero-Loss Save & Load Architecture ---
@@ -1990,7 +3038,7 @@
 
     // Tier 3: Shareable URL Link
     function copyShareableLink() {
-      const hash = `#span=${cadParams.spanWidth}&gutter=${cadParams.gutterHeight}&bays=${cadParams.bays}&len=${cadParams.totalLength}&post=${cadParams.postSpacing}&pitch=${cadParams.roofPitch}&wind=${cadParams.windSpeed}&snow=${cadParams.snowDepth}&crop=${cadParams.cropLoad}&col=${encodeURIComponent(cadParams.columnSize)}`;
+      const hash = `#span=${cadParams.spanWidth}&gutter=${cadParams.gutterHeight}&bays=${cadParams.bays}&len=${cadParams.totalLength}&post=${cadParams.postSpacing}&pitch=${cadParams.roofPitch}&wind=${cadParams.windSpeed}&snow=${cadParams.snowDepth}&crop=${cadParams.cropLoad}&col=${encodeURIComponent(cadParams.columnSize)}&glaze=${cadParams.glazingType}&steel=${cadParams.steelGrade}&cropType=${cadParams.cropType}&vent=${cadParams.ventOpenRatio}&screen=${cadParams.screenClosedRatio}`;
       const url = window.location.origin + window.location.pathname + hash;
       navigator.clipboard.writeText(url).then(() => {
         showToast("🔗 공유 링크가 클립보드에 복사되었습니다!");
@@ -2016,6 +3064,11 @@
         if (q.has('snow')) cadParams.snowDepth = parseFloat(q.get('snow'));
         if (q.has('crop')) cadParams.cropLoad = parseFloat(q.get('crop'));
         if (q.has('col')) cadParams.columnSize = q.get('col');
+        if (q.has('glaze')) cadParams.glazingType = q.get('glaze');
+        if (q.has('steel')) cadParams.steelGrade = q.get('steel');
+        if (q.has('cropType')) cadParams.cropType = q.get('cropType');
+        if (q.has('vent')) cadParams.ventOpenRatio = parseInt(q.get('vent'), 10);
+        if (q.has('screen')) cadParams.screenClosedRatio = parseInt(q.get('screen'), 10);
         return true;
       } catch (e) {
         return false;
@@ -2050,6 +3103,27 @@
         document.getElementById('val-solar').innerText = `${hr}:${min}`;
       }
 
+      if (document.getElementById('sel-glaze')) document.getElementById('sel-glaze').value = cadParams.glazingType;
+      if (document.getElementById('sel-steel')) document.getElementById('sel-steel').value = cadParams.steelGrade;
+      if (document.getElementById('sel-crop')) document.getElementById('sel-crop').value = cadParams.cropType;
+      if (document.getElementById('rng-gutters-bay')) {
+        document.getElementById('rng-gutters-bay').value = cadParams.guttersPerBay || 4;
+        document.getElementById('val-gutters-bay').innerText = `${cadParams.guttersPerBay || 4} 열`;
+      }
+      if (document.getElementById('rng-plant-spacing')) {
+        document.getElementById('rng-plant-spacing').value = cadParams.plantSpacing || 25;
+        document.getElementById('val-plant-spacing').innerText = `${cadParams.plantSpacing || 25} cm`;
+      }
+      if (document.getElementById('rng-vent')) {
+        document.getElementById('rng-vent').value = cadParams.ventOpenRatio || 0;
+        document.getElementById('val-vent').innerText = `${cadParams.ventOpenRatio || 0} %`;
+      }
+      if (document.getElementById('sel-vent-type')) document.getElementById('sel-vent-type').value = cadParams.ventType || 'continuous';
+      if (document.getElementById('rng-screen')) {
+        document.getElementById('rng-screen').value = cadParams.screenClosedRatio || 0;
+        document.getElementById('val-screen').innerText = `${cadParams.screenClosedRatio || 0} %`;
+      }
+
       const chk = (id, val) => {
         const el = document.getElementById(`chk-${id}`);
         if (el) el.checked = !!val;
@@ -2062,6 +3136,10 @@
       chk('foot', cadParams.showFooting);
       chk('joint', cadParams.showJoints);
       chk('wire', cadParams.showWireframe);
+      chk('gutters', cadParams.showGutters);
+      chk('rails', cadParams.showRails);
+      chk('crops', cadParams.showCrops);
+      chk('screen', cadParams.showScreen);
     }
 
     function showToast(text) {
