@@ -175,22 +175,63 @@
     }
     #cad-canvas { width: 100%; height: 100%; display: block; }
 
-    /* Floating Ribbon in Viewport */
-    .cad-top-bar {
-      position: absolute; top: 14px; left: 16px; z-index: 10;
-      display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
-      background: var(--panel-bg); backdrop-filter: blur(14px);
-      padding: 8px 14px; border-radius: 12px; border: 1px solid var(--panel-border);
+    /* Dedicated Professional CAD Command Ribbon (Above Viewport) */
+    .cad-main-ribbon {
+      background: rgba(13, 20, 36, 0.95);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--panel-border);
+      border-radius: 14px;
+      padding: 10px 16px;
+      margin-bottom: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
     }
-    .cad-top-bar h2 {
-      font-size: 1.05rem; font-weight: 800; letter-spacing: -0.02em;
+    .ribbon-brand-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .ribbon-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
       background: linear-gradient(135deg, #38bdf8, #06b6d4, #10b981);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
       margin: 0;
     }
+    .ribbon-badge {
+      font-size: 0.68rem;
+      color: #38bdf8;
+      font-weight: 800;
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      background: rgba(56, 189, 248, 0.12);
+      padding: 2px 7px;
+      border-radius: 6px;
+      letter-spacing: 0.04em;
+    }
+    .ribbon-presets {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      margin-left: 6px;
+      flex-wrap: wrap;
+    }
+    .ribbon-actions {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
     .crop-pill {
       background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1);
-      color: #cbd5e1; padding: 3px 8px; border-radius: 6px; font-size: 0.68rem;
+      color: #cbd5e1; padding: 4px 9px; border-radius: 6px; font-size: 0.72rem;
       font-weight: 600; cursor: pointer; transition: all 0.2s ease;
       display: inline-flex; align-items: center; gap: 4px;
     }
@@ -200,21 +241,16 @@
     }
     .pyeong-pill {
       background: rgba(245, 158, 11, 0.12); border: 1px solid rgba(245, 158, 11, 0.3);
-      color: #fbbf24; padding: 3px 7px; border-radius: 6px; font-size: 0.68rem;
+      color: #fbbf24; padding: 4px 8px; border-radius: 6px; font-size: 0.72rem;
       font-weight: 700; cursor: pointer; transition: all 0.2s ease;
     }
     .pyeong-pill:hover {
       background: rgba(245, 158, 11, 0.25); border-color: #f59e0b; color: #fff;
     }
 
-    /* Top Quick Save / Load Toolbar */
-    .save-toolbar {
-      display: flex; align-items: center; gap: 5px; margin-left: 6px;
-      border-left: 1px solid rgba(255, 255, 255, 0.12); padding-left: 10px;
-    }
     .tool-btn {
-      background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(56, 189, 248, 0.3);
-      color: #cbd5e1; padding: 3px 8px; border-radius: 6px; font-size: 0.68rem;
+      background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(56, 189, 248, 0.3);
+      color: #cbd5e1; padding: 5px 10px; border-radius: 6px; font-size: 0.72rem;
       font-weight: 700; cursor: pointer; transition: all 0.2s ease;
       display: inline-flex; align-items: center; gap: 4px;
     }
@@ -226,6 +262,33 @@
     }
     .tool-btn-gold:hover {
       background: rgba(245, 158, 11, 0.3); border-color: #f59e0b; color: #fff;
+    }
+    .btn-spec-highlight {
+      background: linear-gradient(135deg, #0284c7, #38bdf8) !important;
+      color: #030712 !important; font-weight: 800 !important;
+      border-color: #38bdf8 !important; box-shadow: 0 2px 10px rgba(56, 189, 248, 0.35);
+    }
+    .btn-care-highlight {
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.25), rgba(6, 182, 212, 0.25)) !important;
+      border-color: rgba(16, 185, 129, 0.6) !important;
+      color: #34d399 !important; font-weight: 800 !important;
+    }
+
+    /* Floating Viewport Control Bar (Top Left) */
+    .cad-viewport-ctrl-bar {
+      position: absolute; top: 14px; left: 16px; z-index: 25;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .sidebar-toggle-btn {
+      background: rgba(15, 23, 42, 0.88); backdrop-filter: blur(12px);
+      border: 1px solid rgba(56, 189, 248, 0.35); color: #38bdf8;
+      padding: 6px 14px; border-radius: 8px; font-size: 0.74rem;
+      font-weight: 800; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5); transition: all 0.2s ease;
+    }
+    .sidebar-toggle-btn:hover {
+      background: rgba(6, 182, 212, 0.25); border-color: #06b6d4; color: #ffffff;
+      transform: translateY(-1px);
     }
 
     /* 3D In-Scene Dimension Badges */
@@ -246,8 +309,8 @@
 
     /* Part Inspector HUD (Appears when clicking 3D elements) */
     #inspector-hud {
-      position: absolute; top: 68px; left: 50%; transform: translateX(-50%);
-      z-index: 25; background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(16px);
+      position: absolute; top: 14px; left: 50%; transform: translateX(-50%);
+      z-index: 30; background: rgba(15, 23, 42, 0.96); backdrop-filter: blur(16px);
       border: 1px solid var(--accent-cyan); border-radius: 12px;
       padding: 8px 16px; display: none; align-items: center; gap: 14px;
       box-shadow: 0 12px 35px rgba(0, 0, 0, 0.8), 0 0 20px rgba(6, 182, 212, 0.3);
@@ -271,25 +334,30 @@
 
     /* Left CAD Control Sidebar */
     .cad-sidebar {
-      position: absolute; top: 68px; left: 16px; width: 340px; max-height: calc(100% - 84px);
-      z-index: 10; background: var(--panel-bg); backdrop-filter: blur(16px);
+      position: absolute; top: 52px; left: 16px; width: 330px; max-height: calc(100% - 130px);
+      z-index: 20; background: rgba(13, 20, 36, 0.95); backdrop-filter: blur(18px);
       border: 1px solid var(--panel-border); border-radius: 14px;
-      padding: 14px; overflow-y: auto; box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
+      padding: 14px; overflow-y: auto; box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease;
+    }
+    .cad-sidebar.collapsed {
+      transform: translateX(-370px);
+      opacity: 0;
+      pointer-events: none;
     }
     .cad-sidebar::-webkit-scrollbar { width: 5px; }
     .cad-sidebar::-webkit-scrollbar-thumb { background: #334155; border-radius: 3px; }
 
     .tab-bar {
-      display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 12px;
-      background: rgba(0, 0, 0, 0.35); padding: 4px; border-radius: 8px;
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; margin-bottom: 12px;
+      background: rgba(0, 0, 0, 0.4); padding: 4px; border-radius: 8px;
     }
     .tab-btn {
-      flex: 1 1 calc(33.33% - 4px); min-width: 60px;
       background: transparent; border: none; color: var(--text-muted);
       padding: 6px 2px; font-size: 0.68rem; font-weight: 700; border-radius: 6px;
       cursor: pointer; transition: all 0.2s; text-align: center; white-space: nowrap;
     }
-    .tab-btn:hover { color: #f8fafc; background: rgba(255, 255, 255, 0.05); }
+    .tab-btn:hover { color: #f8fafc; background: rgba(255, 255, 255, 0.06); }
     .tab-btn.active {
       background: var(--accent-cyan); color: #080c14; font-weight: 800;
     }
@@ -318,12 +386,12 @@
 
     /* Top Right Orientation Gizmo */
     .cad-gizmo-box {
-      position: absolute; top: 14px; right: 16px; z-index: 10;
+      position: absolute; top: 14px; right: 16px; z-index: 15;
       display: flex; flex-direction: column; align-items: center; gap: 6px;
     }
     #cad-gizmo {
       width: 95px; height: 95px; cursor: pointer;
-      background: rgba(13, 20, 36, 0.7); backdrop-filter: blur(10px);
+      background: rgba(13, 20, 36, 0.75); backdrop-filter: blur(10px);
       border: 1px solid var(--panel-border); border-radius: 14px;
     }
     .gizmo-btn-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; width: 95px; }
@@ -336,15 +404,23 @@
 
     /* Bottom HUD */
     .cad-hud {
-      position: absolute; bottom: 16px; right: 16px; z-index: 10;
-      background: var(--panel-bg); backdrop-filter: blur(14px);
+      position: absolute; bottom: 14px; right: 16px; z-index: 10;
+      background: rgba(13, 20, 36, 0.94); backdrop-filter: blur(16px);
       border: 1px solid var(--panel-border); border-radius: 12px;
-      padding: 10px 16px; display: flex; gap: 16px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
-      flex-wrap: wrap;
+      padding: 8px 14px; display: flex; gap: 14px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+      flex-wrap: nowrap; overflow-x: auto; max-width: calc(100% - 370px);
     }
-    .hud-cell { display: flex; flex-direction: column; }
-    .hud-title { font-size: 0.63rem; color: var(--text-muted); text-transform: uppercase; font-weight: 600; }
-    .hud-data { font-size: 1.0rem; font-weight: 800; color: #fff; font-family: var(--font-mono); margin-top: 1px; }
+    .cad-hud::-webkit-scrollbar { height: 3px; }
+    .cad-hud::-webkit-scrollbar-thumb { background: #334155; border-radius: 2px; }
+    @media (max-width: 1024px) {
+      .cad-hud {
+        max-width: calc(100% - 32px);
+        left: 16px; right: 16px;
+      }
+    }
+    .hud-cell { display: flex; flex-direction: column; white-space: nowrap; }
+    .hud-title { font-size: 0.60rem; color: var(--text-muted); text-transform: uppercase; font-weight: 600; }
+    .hud-data { font-size: 0.90rem; font-weight: 800; color: #fff; font-family: var(--font-mono); margin-top: 1px; }
 
     /* Action Buttons */
     .btn-action {
@@ -511,9 +587,49 @@
       </p>
     </header>
 
+    <!-- Dedicated Professional CAD Command Ribbon -->
+    <div class="cad-main-ribbon">
+      <div class="ribbon-brand-group">
+        <span style="font-size: 1.4rem;">📐</span>
+        <h2 class="ribbon-title">VenloCAD 3D</h2>
+        <span class="ribbon-badge">v2.5 MASTER</span>
+        <div class="ribbon-presets">
+          <button class="crop-pill active" onclick="applyCropPreset('tomato')">🍅 토마토 (8m/고처마)</button>
+          <button class="crop-pill" onclick="applyCropPreset('strawberry')">🍓 딸기 (9.6m/채광)</button>
+          <button class="crop-pill" onclick="applyCropPreset('greens')">🥬 엽채류 (6.4m/실속)</button>
+          <button class="crop-pill" onclick="applyCropPreset('snow')">❄️ 대설/강풍 보강</button>
+          <span style="font-size: 0.68rem; color: var(--text-muted); align-self: center; margin: 0 4px;">|</span>
+          <button class="pyeong-pill" onclick="applyPyeongPreset(300)">300평</button>
+          <button class="pyeong-pill" onclick="applyPyeongPreset(500)">500평</button>
+          <button class="pyeong-pill" onclick="applyPyeongPreset(1000)">1,000평</button>
+        </div>
+      </div>
+
+      <!-- Quick Save / Load / Share Toolbar -->
+      <div class="ribbon-actions">
+        <button class="tool-btn tool-btn-gold" onclick="saveProjectFile()" title="내 PC에 .vcad 프로젝트 파일로 저장">💾 저장 (.vcad)</button>
+        <button class="tool-btn" onclick="triggerFileInput()" title="내 PC에서 .vcad 또는 .json 프로젝트 파일 열기">📂 열기</button>
+        <button class="tool-btn" onclick="openSlotModal()" title="브라우저 로컬 저장 슬롯 관리">📑 슬롯 관리</button>
+        <button class="tool-btn" onclick="copyShareableLink()" title="현재 설계를 다른 사람에게 URL로 공유">🔗 링크 복사</button>
+        <button class="tool-btn btn-spec-highlight" onclick="openSpecSheetModal()" title="인허가 및 대출 제출용 1페이지 공학 사양서 A4 PDF 출력">📄 기술 사양서 (A4)</button>
+        <button class="tool-btn btn-care-highlight" onclick="openConsultModal('topbar')" title="황인우 엔지니어 1:1 맞춤 설계 대행 & 집중 케어 신청">🧑‍💻 전문가 케어 신청</button>
+        <input type="file" id="vcad-file-input" accept=".vcad,.json" style="display:none" onchange="handleFileSelect(event)">
+      </div>
+    </div>
+
     <!-- 3D CAD Viewport Container -->
     <div class="cad-viewport-wrapper">
       <div id="cad-canvas"></div>
+
+      <!-- Viewport Controls (Top Left) -->
+      <div class="cad-viewport-ctrl-bar">
+        <button id="btn-toggle-sidebar" class="sidebar-toggle-btn" onclick="toggleSidebar()" title="설계 변수 제어 패널 접기/펼치기">
+          <span>◀</span><span>파라미터 패널 접기</span>
+        </button>
+        <button class="sidebar-toggle-btn" onclick="setView('iso')" title="3D 등각 투영 뷰로 리셋">
+          <span>🔄</span><span>뷰 리셋</span>
+        </button>
+      </div>
 
       <!-- Drag & Drop Visual Overlay -->
       <div id="drop-overlay">
@@ -549,33 +665,6 @@
         <button class="close-inspector" onclick="closeInspector()">&times;</button>
       </div>
 
-      <!-- Top Preset & Crop Wizard Bar -->
-      <div class="cad-top-bar">
-        <h2>VenloCAD 3D</h2>
-        <span style="font-size: 0.68rem; color: var(--accent-sky); font-weight: 700; border: 1px solid rgba(56, 189, 248, 0.4); padding: 2px 6px; border-radius: 999px;">v2.0</span>
-        <div style="display: flex; gap: 4px; margin-left: 6px; flex-wrap: wrap;">
-          <button class="crop-pill active" onclick="applyCropPreset('tomato')">🍅 토마토 (8m/고처마)</button>
-          <button class="crop-pill" onclick="applyCropPreset('strawberry')">🍓 딸기 (9.6m/채광)</button>
-          <button class="crop-pill" onclick="applyCropPreset('greens')">🥬 엽채류 (6.4m/실속)</button>
-          <button class="crop-pill" onclick="applyCropPreset('snow')">❄️ 대설/강풍 보강</button>
-          <span style="font-size: 0.68rem; color: var(--text-muted); align-self: center; margin-left: 4px;">평수:</span>
-          <button class="pyeong-pill" onclick="applyPyeongPreset(300)">300평</button>
-          <button class="pyeong-pill" onclick="applyPyeongPreset(500)">500평</button>
-          <button class="pyeong-pill" onclick="applyPyeongPreset(1000)">1,000평</button>
-        </div>
-
-        <!-- Quick Save / Load / Share Toolbar -->
-        <div class="save-toolbar">
-          <button class="tool-btn tool-btn-gold" onclick="saveProjectFile()" title="내 PC에 .vcad 프로젝트 파일로 저장">💾 저장 (.vcad)</button>
-          <button class="tool-btn" onclick="triggerFileInput()" title="내 PC에서 .vcad 또는 .json 프로젝트 파일 열기">📂 열기</button>
-          <button class="tool-btn" onclick="openSlotModal()" title="브라우저 로컬 저장 슬롯 관리">📑 슬롯 관리</button>
-          <button class="tool-btn" onclick="copyShareableLink()" title="현재 설계를 다른 사람에게 URL로 공유">🔗 링크 복사</button>
-          <button class="tool-btn" onclick="openSpecSheetModal()" style="background: linear-gradient(135deg, #0284c7, #38bdf8); color: #030712; font-weight: 800; border-color: #38bdf8;" title="인허가 및 대출 제출용 1페이지 공학 사양서 A4 PDF 출력">📄 기술 사양서 (A4)</button>
-          <button class="tool-btn" onclick="openConsultModal('topbar')" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.25), rgba(6, 182, 212, 0.25)); border-color: rgba(16, 185, 129, 0.6); color: #34d399; font-weight: 800;" title="황인우 엔지니어 1:1 맞춤 설계 대행 & 집중 케어 신청">🧑‍💻 전문가 케어 신청</button>
-          <input type="file" id="vcad-file-input" accept=".vcad,.json" style="display:none" onchange="handleFileSelect(event)">
-        </div>
-      </div>
-
       <!-- Orientation Gizmo -->
       <div class="cad-gizmo-box">
         <div id="cad-gizmo" title="Click faces to align view"></div>
@@ -597,6 +686,7 @@
           <button class="tab-btn" onclick="setTab('t-str', this)">🌪️ 하중</button>
           <button class="tab-btn" onclick="setTab('t-sol', this)">☀️ 일조</button>
           <button class="tab-btn" onclick="setTab('t-exp', this)">💾 도면</button>
+          <button class="tab-btn" onclick="toggleSidebar()" style="color: #f87171;" title="패널 숨기기">✕ 닫기</button>
         </div>
 
         <!-- Tab 1: Geometry -->
@@ -2135,6 +2225,29 @@
       document.getElementById('txt-sol-trans').innerText = `${transmittance.toFixed(1)} %`;
     }
 
+    let sidebarCollapsed = false;
+    function toggleSidebar() {
+      sidebarCollapsed = !sidebarCollapsed;
+      const sb = document.querySelector('.cad-sidebar');
+      const btn = document.getElementById('btn-toggle-sidebar');
+      if (!sb || !btn) return;
+      if (sidebarCollapsed) {
+        sb.classList.add('collapsed');
+        btn.innerHTML = '<span>▶</span><span>⚙️ 파라미터 패널 열기</span>';
+        btn.style.background = 'linear-gradient(135deg, rgba(6, 182, 212, 0.35), rgba(16, 185, 129, 0.35))';
+        btn.style.borderColor = '#06b6d4';
+        btn.style.color = '#ffffff';
+      } else {
+        sb.classList.remove('collapsed');
+        btn.innerHTML = '<span>◀</span><span>파라미터 패널 접기</span>';
+        btn.style.background = 'rgba(15, 23, 42, 0.88)';
+        btn.style.borderColor = 'rgba(56, 189, 248, 0.35)';
+        btn.style.color = '#38bdf8';
+      }
+      updateDimensionBadges();
+      trackGA4Event('sidebar_toggle', { collapsed: sidebarCollapsed });
+    }
+
     function updateDimensionBadges() {
       const overlay = document.getElementById('dimension-overlay');
       if (!cadParams.show3DDimensions) {
@@ -2161,7 +2274,17 @@
         if (v.z > 1.0) return null;
         const hw = c.clientWidth / 2;
         const hh = c.clientHeight / 2;
-        return { x: v.x * hw + hw, y: -(v.y * hh) + hh };
+        const px = v.x * hw + hw;
+        const py = -(v.y * hh) + hh;
+        // If sidebar is visible, hide badges that fall underneath the sidebar
+        if (!sidebarCollapsed && px < 350 && py < c.clientHeight - 80) {
+          return null;
+        }
+        // Clamping to visible canvas viewport
+        if (px < 30 || px > c.clientWidth - 30 || py < 30 || py > c.clientHeight - 40) {
+          return null;
+        }
+        return { x: px, y: py };
       };
 
       const wPos = projectPos(0, 0.4, offsetZ - 1.2);
@@ -2194,7 +2317,7 @@
     }
 
     function onViewportClick(e) {
-      if (e.target.closest('.cad-sidebar') || e.target.closest('.cad-top-bar') || e.target.closest('.cad-hud') || e.target.closest('.cad-gizmo-box')) return;
+      if (e.target.closest('.cad-sidebar') || e.target.closest('.cad-main-ribbon') || e.target.closest('.cad-viewport-ctrl-bar') || e.target.closest('.cad-hud') || e.target.closest('.cad-gizmo-box')) return;
       const rect = cRenderer.domElement.getBoundingClientRect();
       cMouse.x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
       cMouse.y = -((e.clientY - rect.top) / rect.height) * 2 + 1;
