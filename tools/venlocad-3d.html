@@ -420,6 +420,7 @@
           <button class="tool-btn" onclick="triggerFileInput()" title="내 PC에서 .vcad 또는 .json 프로젝트 파일 열기">📂 열기</button>
           <button class="tool-btn" onclick="openSlotModal()" title="브라우저 로컬 저장 슬롯 관리">📑 슬롯 관리</button>
           <button class="tool-btn" onclick="copyShareableLink()" title="현재 설계를 다른 사람에게 URL로 공유">🔗 링크 복사</button>
+          <button class="tool-btn" onclick="openConsultModal()" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.25), rgba(6, 182, 212, 0.25)); border-color: rgba(16, 185, 129, 0.6); color: #34d399; font-weight: 800;" title="황인우 엔지니어 1:1 맞춤 설계 대행 & 집중 케어 신청">🧑‍💻 전문가 케어 신청</button>
           <input type="file" id="vcad-file-input" accept=".vcad,.json" style="display:none" onchange="handleFileSelect(event)">
         </div>
       </div>
@@ -629,6 +630,23 @@
           <p style="font-size: 0.7rem; color: var(--text-muted); margin-top: 10px; line-height: 1.4;">
             * DXF 파일은 AutoCAD, Inventor, ZWCAD 100% 호환 표준 포맷이며, 정면 입면도, 측면 입면도, 지붕 골조 평면도 3개 뷰와 치수선, 표준 표제란이 포함되어 있습니다.
           </p>
+
+          <!-- 1:1 Expert Custom Design & Care Banner -->
+          <div style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(6, 182, 212, 0.15)); border: 1px solid rgba(16, 185, 129, 0.45); border-radius: 10px; padding: 12px; margin-top: 12px;">
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
+              <span style="font-size: 1.25rem;">🧑‍💻</span>
+              <div>
+                <div style="color: #34d399; font-size: 0.8rem; font-weight: 800;">전문가 1:1 맞춤 설계 &amp; 집중 케어</div>
+                <div style="font-size: 0.65rem; color: var(--text-muted);">황인우 엔지니어 (충남대 스마트팜 CEA) 직통</div>
+              </div>
+            </div>
+            <p style="font-size: 0.7rem; color: #cbd5e1; margin-bottom: 8px; line-height: 1.4;">
+              시공사 견적 교차검증(거품 제거), 부지 맞춤형 2D/3D 실시설계, 정부 보조금/인허가용 구조계산서 완성이 필요하신가요? 직접 1:1 집중 케어해 드립니다.
+            </p>
+            <button class="btn-action" onclick="openConsultModal()" style="margin: 0; background: linear-gradient(135deg, #059669, #10b981); border: none; font-weight: 800; color: #fff;">
+              🎯 1:1 설계 대행 &amp; 감리 신청하기
+            </button>
+          </div>
         </div>
       </div>
 
@@ -724,6 +742,7 @@
           <span style="font-size: 1.05rem; font-weight: 800; color: var(--accent-gold); font-family: var(--font-mono);" id="modal-sum-cost">0 원</span>
         </div>
         <div style="display: flex; gap: 8px;">
+          <button class="btn-action" style="width: auto; margin: 0; background: linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(6, 182, 212, 0.2)); border-color: #10b981; color: #34d399; font-weight: 700;" onclick="openConsultModal()">🧑‍💻 전문가 감리/대행 신청</button>
           <button class="btn-action" style="width: auto; margin: 0;" onclick="window.print()">🖨️ 인쇄 / PDF 보고서</button>
           <button class="btn-action btn-action-primary" style="width: auto; margin: 0;" onclick="exportBOMCSV()">📥 CSV 다운로드</button>
         </div>
@@ -749,6 +768,70 @@
       <div class="popup-foot">
         <span style="font-size: 0.75rem; color: var(--text-muted);">💡 브라우저 캐시 삭제 전까지 영구 보존됩니다.</span>
         <button class="btn-action" style="width: auto; margin: 0;" onclick="closeSlotModal()">닫기</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Expert Bespoke Engineering & Consultation Modal -->
+  <div id="consult-modal" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 100; background: rgba(0, 0, 0, 0.82); backdrop-filter: blur(8px); display: none; align-items: center; justify-content: center;">
+    <div class="popup-box" style="max-width: 720px; border-color: var(--accent-emerald);">
+      <div class="popup-head" style="background: rgba(16, 185, 129, 0.1);">
+        <div>
+          <h3 style="color: #34d399;">🏛️ 황인우 엔지니어 1:1 맞춤 설계 &amp; 집중 케어 서비스</h3>
+          <span style="font-size: 0.72rem; color: var(--text-muted);">충남대학교 스마트팜 시설원예학(CEA) 엔지니어링 기반 맞춤 설계 · 견적 거품 제거 · 정밀 감리</span>
+        </div>
+        <button onclick="closeConsultModal()" style="background:none; border:none; color:var(--text-muted); font-size:1.4rem; cursor:pointer;">&times;</button>
+      </div>
+      <div class="popup-body">
+        <!-- Live Design Snapshot Card -->
+        <div style="background: rgba(15, 23, 42, 0.9); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 12px; padding: 14px 18px; margin-bottom: 16px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <strong style="color: var(--accent-sky); font-size: 0.85rem;">📋 현재 작업 중인 설계 데이터가 자동으로 연동됩니다:</strong>
+            <span style="font-size: 0.68rem; background: rgba(16, 185, 129, 0.2); color: #34d399; padding: 2px 8px; border-radius: 999px; font-weight: 700;">LIVE ATTACHED</span>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; font-size: 0.76rem; font-family: var(--font-mono);">
+            <div>규격: <span id="c-spec" style="color: #fff; font-weight: 700;">8.0m × 3연동</span></div>
+            <div>총 면적: <span id="c-area" style="color: #fff; font-weight: 700;">768 m² (232평)</span></div>
+            <div>처마/기둥: <span id="c-col" style="color: #fff; font-weight: 700;">4.5m / 100x50</span></div>
+            <div>추정 자재비: <span id="c-cost" style="color: var(--accent-gold); font-weight: 700;">3,842 만원</span></div>
+          </div>
+        </div>
+
+        <h4 style="font-size: 0.88rem; font-weight: 800; color: #fff; margin-bottom: 8px;">💡 이런 분들께 1:1 집중 케어를 추천드립니다</h4>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; font-size: 0.74rem; color: #cbd5e1; margin-bottom: 18px;">
+          <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); border-radius: 8px; padding: 10px;">
+            <strong style="color: var(--accent-cyan); display: block; margin-bottom: 4px;">1. 시공사 견적 교차검증 (BOM Audit)</strong>
+            업체가 제시한 평당 공사비와 철골/알루미늄 부재 수량이 적정한지, 불필요한 마진 거품이 없는지 팩트체크합니다.
+          </div>
+          <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); border-radius: 8px; padding: 10px;">
+            <strong style="color: var(--accent-emerald); display: block; margin-bottom: 4px;">2. 맞춤형 2D/3D 실시설계 납품</strong>
+            내 토지 지적도와 경사도를 완벽히 반영한 배치도, 기초도, 골조도, 배관도 풀 패키지 도면을 작성해 드립니다.
+          </div>
+          <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); border-radius: 8px; padding: 10px;">
+            <strong style="color: var(--accent-gold); display: block; margin-bottom: 4px;">3. 정부 지원사업 &amp; 인허가 도서</strong>
+            청년농 스마트팜 종합자금, 농식품부 보조금 심사 통과를 위한 전문 구조계산서 및 사업계획서 기술 도판을 완성합니다.
+          </div>
+          <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); border-radius: 8px; padding: 10px;">
+            <strong style="color: var(--accent-sky); display: block; margin-bottom: 4px;">4. 작물별 온실 환경 최적화</strong>
+            딸기 고설베드, 토마토 하이와이어, 엽채류 수경재배에 최적화된 처마고, 차광률, 환기창 설계를 컨설팅합니다.
+          </div>
+        </div>
+
+        <div style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 10px; padding: 12px; display: flex; flex-direction: column; gap: 8px;">
+          <div style="font-size: 0.8rem; font-weight: 700; color: #fff;">📩 간편 문의 접수 방법 (24시간 내 직통 회신)</div>
+          <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+            <button class="btn-action btn-action-primary" style="flex: 1; margin: 0; background: linear-gradient(135deg, #059669, #10b981);" onclick="sendConsultEmail()">
+              ✉️ 현재 설계안 첨부하여 이메일 문의하기
+            </button>
+            <button class="btn-action" style="flex: 1; margin: 0;" onclick="copyConsultLinkAndOpen()">
+              📋 설계 공유 링크 복사 &amp; 고객센터 문의
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="popup-foot">
+        <span style="font-size: 0.72rem; color: var(--text-muted);">📧 직통 문의: contact@inwoovation.com | 황인우 엔지니어</span>
+        <button class="btn-action" style="width: auto; margin: 0;" onclick="closeConsultModal()">닫기</button>
       </div>
     </div>
   </div>
@@ -1996,6 +2079,73 @@
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
+    }
+
+    // --- 14. 1:1 Bespoke Engineering Consultation & Care ---
+    function openConsultModal() {
+      const W = cadParams.spanWidth;
+      const bays = cadParams.bays;
+      const L = cadParams.totalLength;
+      const H = cadParams.gutterHeight;
+      const area = Math.round(W * bays * L);
+      const pyeong = Math.round(area * 0.3025);
+
+      const items = buildBOMArray();
+      let sumCost = 0;
+      items.forEach(it => sumCost += it.cost);
+      const costManwon = Math.round(sumCost / 10000);
+
+      document.getElementById('c-spec').innerText = `${W.toFixed(1)}m × ${bays}연동 × ${L.toFixed(1)}m`;
+      document.getElementById('c-area').innerText = `${area} m² (${pyeong}평)`;
+      document.getElementById('c-col').innerText = `${H.toFixed(1)}m / ${cadParams.columnSize}`;
+      document.getElementById('c-cost').innerText = `약 ${costManwon.toLocaleString()} 만원`;
+
+      document.getElementById('consult-modal').style.display = 'flex';
+    }
+
+    function closeConsultModal() {
+      document.getElementById('consult-modal').style.display = 'none';
+    }
+
+    function sendConsultEmail() {
+      const W = cadParams.spanWidth;
+      const bays = cadParams.bays;
+      const L = cadParams.totalLength;
+      const H = cadParams.gutterHeight;
+      const area = Math.round(W * bays * L);
+      const pyeong = Math.round(area * 0.3025);
+      const hash = `#span=${cadParams.spanWidth}&gutter=${cadParams.gutterHeight}&bays=${cadParams.bays}&len=${cadParams.totalLength}&post=${cadParams.postSpacing}&pitch=${cadParams.roofPitch}&wind=${cadParams.windSpeed}&snow=${cadParams.snowDepth}&crop=${cadParams.cropLoad}&col=${encodeURIComponent(cadParams.columnSize)}`;
+      const shareUrl = window.location.origin + window.location.pathname + hash;
+
+      const subject = encodeURIComponent(`[VenloCAD 3D] 온실 1:1 맞춤 설계 대행 및 감리 컨설팅 문의 (${pyeong}평)`);
+      const body = encodeURIComponent(
+        `안녕하세요, 황인우 엔지니어님.\n\n` +
+        `VenloCAD 3D에서 작업한 온실 모델에 대한 1:1 맞춤 설계 대행 및 감리 케어를 신청합니다.\n\n` +
+        `[현재 설계 개요]\n` +
+        `- 온실 규격: ${W}m 폭 x ${bays}연동 x ${L}m 연장 (총 ${area}m² / 약 ${pyeong}평)\n` +
+        `- 처마고 / 지붕각: ${H}m / ${cadParams.roofPitch}°\n` +
+        `- 기둥 규격: 각관 ${cadParams.columnSize}\n` +
+        `- 설계 하중: 풍속 ${cadParams.windSpeed}m/s, 적설 ${cadParams.snowDepth}cm\n` +
+        `- 3D 설계 복원 링크: ${shareUrl}\n\n` +
+        `[문의 희망 사항]\n` +
+        `( ) 시공사 견적 교차검증 및 공사비 거품 제거\n` +
+        `( ) 현장 부지 맞춤형 2D/3D 실시설계 도면 납품\n` +
+        `( ) 정부 스마트팜 지원사업 / 지자체 인허가 제출 서류 도판\n` +
+        `( ) 작물별(딸기/토마토/엽채류/기타) 시설 최적화 컨설팅\n\n` +
+        `[성함 / 연락처]: \n` +
+        `[설치 예정 지역(시/군)]: \n` +
+        `[추가 문의 사항]: \n`
+      );
+
+      window.location.href = `mailto:contact@inwoovation.com?subject=${subject}&body=${body}`;
+    }
+
+    function copyConsultLinkAndOpen() {
+      copyShareableLink();
+      showToast("🔗 설계 링크가 복사되었습니다! 문의 페이지로 이동합니다.");
+      setTimeout(() => {
+        window.open('/contact.html', '_blank');
+      }, 1000);
     }
 
     function onResize() {
