@@ -105,6 +105,27 @@
       background: rgba(245, 158, 11, 0.25); border-color: #f59e0b; color: #fff;
     }
 
+    /* Top Quick Save / Load Toolbar */
+    .save-toolbar {
+      display: flex; align-items: center; gap: 5px; margin-left: 6px;
+      border-left: 1px solid rgba(255, 255, 255, 0.12); padding-left: 10px;
+    }
+    .tool-btn {
+      background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(56, 189, 248, 0.3);
+      color: #cbd5e1; padding: 3px 8px; border-radius: 6px; font-size: 0.68rem;
+      font-weight: 700; cursor: pointer; transition: all 0.2s ease;
+      display: inline-flex; align-items: center; gap: 4px;
+    }
+    .tool-btn:hover {
+      background: rgba(6, 182, 212, 0.25); border-color: var(--accent-cyan); color: #fff;
+    }
+    .tool-btn-gold {
+      background: rgba(245, 158, 11, 0.15); border-color: rgba(245, 158, 11, 0.4); color: #fbbf24;
+    }
+    .tool-btn-gold:hover {
+      background: rgba(245, 158, 11, 0.3); border-color: #f59e0b; color: #fff;
+    }
+
     /* 3D In-Scene Dimension Badges */
     #dimension-overlay {
       position: absolute; top: 0; left: 0; width: 100%; height: 100%;
@@ -263,6 +284,53 @@
       padding: 12px 20px; border-top: 1px solid rgba(255, 255, 255, 0.1);
       display: flex; justify-content: space-between; align-items: center; background: #0b1120;
     }
+
+    /* Drag & Drop Visual Overlay */
+    #drop-overlay {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 50;
+      background: rgba(6, 182, 212, 0.15); backdrop-filter: blur(6px);
+      border: 3px dashed var(--accent-cyan); display: none;
+      align-items: center; justify-content: center; pointer-events: none;
+    }
+    .drop-box {
+      background: rgba(15, 23, 42, 0.95); border: 1px solid var(--accent-cyan);
+      padding: 24px 36px; border-radius: 16px; text-align: center;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+    }
+    .drop-box h3 { font-size: 1.2rem; font-weight: 800; color: var(--accent-sky); margin-bottom: 6px; }
+    .drop-box p { font-size: 0.82rem; color: #cbd5e1; margin: 0; }
+
+    /* Toast Notification */
+    #toast-msg {
+      position: absolute; bottom: 74px; left: 50%; transform: translateX(-50%);
+      z-index: 60; background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(14px);
+      border: 1px solid var(--accent-cyan); border-radius: 10px;
+      padding: 8px 16px; color: #f8fafc; font-size: 0.78rem; font-weight: 700;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7); display: none;
+      animation: toastFade 2.2s forwards;
+    }
+    @keyframes toastFade {
+      0% { opacity: 0; transform: translate(-50%, 10px); }
+      15% { opacity: 1; transform: translate(-50%, 0); }
+      85% { opacity: 1; transform: translate(-50%, 0); }
+      100% { opacity: 0; transform: translate(-50%, -10px); }
+    }
+
+    /* Slot Card styling in Slot Modal */
+    #slot-modal {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 100;
+      background: rgba(0, 0, 0, 0.78); backdrop-filter: blur(8px);
+      display: none; align-items: center; justify-content: center;
+    }
+    .slot-grid { display: grid; grid-template-columns: 1fr; gap: 10px; }
+    .slot-card {
+      background: #1e293b; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 10px;
+      padding: 12px 16px; display: flex; justify-content: space-between; align-items: center;
+      transition: all 0.2s ease;
+    }
+    .slot-card:hover { border-color: var(--accent-cyan); background: rgba(30, 41, 59, 0.9); }
+    .slot-info h4 { font-size: 0.9rem; font-weight: 800; color: #f8fafc; margin-bottom: 3px; }
+    .slot-info p { font-size: 0.72rem; color: var(--text-muted); margin: 0; font-family: var(--font-mono); }
   </style>
 </head>
 <body>
@@ -296,6 +364,18 @@
     <!-- 3D CAD Viewport Container -->
     <div class="cad-viewport-wrapper">
       <div id="cad-canvas"></div>
+
+      <!-- Drag & Drop Visual Overlay -->
+      <div id="drop-overlay">
+        <div class="drop-box">
+          <div style="font-size: 2.5rem; margin-bottom: 8px;">📥</div>
+          <h3>📂 VenloCAD 프로젝트 파일 로드</h3>
+          <p>.vcad 또는 .json 파일을 여기에 놓으면 0.1초 만에 복원됩니다.</p>
+        </div>
+      </div>
+
+      <!-- Toast Notification Message -->
+      <div id="toast-msg">알림 메시지</div>
 
       <!-- In-Scene 3D Dynamic Dimension Badges -->
       <div id="dimension-overlay">
@@ -332,6 +412,15 @@
           <button class="pyeong-pill" onclick="applyPyeongPreset(300)">300평</button>
           <button class="pyeong-pill" onclick="applyPyeongPreset(500)">500평</button>
           <button class="pyeong-pill" onclick="applyPyeongPreset(1000)">1,000평</button>
+        </div>
+
+        <!-- Quick Save / Load / Share Toolbar -->
+        <div class="save-toolbar">
+          <button class="tool-btn tool-btn-gold" onclick="saveProjectFile()" title="내 PC에 .vcad 프로젝트 파일로 저장">💾 저장 (.vcad)</button>
+          <button class="tool-btn" onclick="triggerFileInput()" title="내 PC에서 .vcad 또는 .json 프로젝트 파일 열기">📂 열기</button>
+          <button class="tool-btn" onclick="openSlotModal()" title="브라우저 로컬 저장 슬롯 관리">📑 슬롯 관리</button>
+          <button class="tool-btn" onclick="copyShareableLink()" title="현재 설계를 다른 사람에게 URL로 공유">🔗 링크 복사</button>
+          <input type="file" id="vcad-file-input" accept=".vcad,.json" style="display:none" onchange="handleFileSelect(event)">
         </div>
       </div>
 
@@ -508,6 +597,23 @@
 
         <!-- Tab 4: Export -->
         <div id="t-exp" style="display: none;">
+          <div style="font-size: 0.72rem; font-weight: 700; color: var(--accent-sky); margin-bottom: 6px; text-transform: uppercase;">
+            💾 프로젝트 보관 및 공유 (Zero-Loss Save)
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 6px;">
+            <button class="btn-action btn-action-gold" onclick="saveProjectFile()" style="margin-top: 0;">💾 .vcad 저장</button>
+            <button class="btn-action" onclick="triggerFileInput()" style="margin-top: 0;">📂 파일 열기</button>
+          </div>
+          <button class="btn-action" onclick="openSlotModal()" style="margin-top: 0; margin-bottom: 6px;">
+            📑 로컬 슬롯 보관함 (1, 2, 3번)
+          </button>
+          <button class="btn-action" onclick="copyShareableLink()" style="margin-top: 0; margin-bottom: 12px; border-color: rgba(245, 158, 11, 0.4); color: #fbbf24;">
+            🔗 현재 모델 1초 공유 링크 복사
+          </button>
+
+          <div style="font-size: 0.72rem; font-weight: 700; color: var(--accent-gold); margin-bottom: 6px; text-transform: uppercase;">
+            📄 엔지니어링 도면 &amp; BOM 추출
+          </div>
           <button class="btn-action btn-action-gold" onclick="openBOMModal()">
             📊 실시간 자재 견적서 (BOM) 보기
           </button>
@@ -625,6 +731,28 @@
     </div>
   </div>
 
+  <!-- Browser Slot Storage Modal -->
+  <div id="slot-modal">
+    <div class="popup-box" style="max-width: 650px;">
+      <div class="popup-head">
+        <div>
+          <h3>📑 브라우저 로컬 저장 슬롯 관리자</h3>
+          <span style="font-size: 0.72rem; color: var(--text-muted);">서버 전송 없이 내 브라우저에 안전하게 보관되는 3개 전용 슬롯 &amp; 자동 저장본</span>
+        </div>
+        <button onclick="closeSlotModal()" style="background:none; border:none; color:var(--text-muted); font-size:1.4rem; cursor:pointer;">&times;</button>
+      </div>
+      <div class="popup-body">
+        <div class="slot-grid" id="slot-cards-container">
+          <!-- Dynamically populated -->
+        </div>
+      </div>
+      <div class="popup-foot">
+        <span style="font-size: 0.75rem; color: var(--text-muted);">💡 브라우저 캐시 삭제 전까지 영구 보존됩니다.</span>
+        <button class="btn-action" style="width: auto; margin: 0;" onclick="closeSlotModal()">닫기</button>
+      </div>
+    </div>
+  </div>
+
   <!-- Script Engine -->
   <script>
     const cadParams = {
@@ -662,6 +790,7 @@
     let cRaycaster, cMouse;
     let cHighlightBox = null;
     let mSteel, mAl, mGlass, mFoot, mJoint, mWarn;
+    let autoSaveTimer = null;
 
     function initCAD() {
       const container = document.getElementById('cad-canvas');
@@ -721,8 +850,15 @@
       cMouse = new THREE.Vector2();
       cRenderer.domElement.addEventListener('click', onViewportClick);
 
+      // Check URL Hash or AutoSave on Startup
+      const hashLoaded = loadFromHash();
+      if (!hashLoaded) {
+        loadAutoSaveOnStartup();
+      }
+
       initGizmoView();
       wireCADInputs();
+      setupDragAndDrop();
       updateSolar();
       generateGreenhouseMesh();
 
@@ -1252,6 +1388,7 @@
           cadParams[key] = v;
           val.innerText = `${v.toFixed(1)} ${unit}`;
           generateGreenhouseMesh();
+          triggerAutoSave();
         });
       };
       link('span', 'spanWidth', 'm');
@@ -1271,16 +1408,19 @@
         const min = (v % 1 === 0.5) ? '30' : '00';
         document.getElementById('val-solar').innerText = `${hr}:${min}`;
         updateSolar();
+        triggerAutoSave();
       });
 
       document.getElementById('sel-season').addEventListener('change', (e) => {
         cadParams.solarSeason = e.target.value;
         updateSolar();
+        triggerAutoSave();
       });
 
       document.getElementById('sel-col').addEventListener('change', (e) => {
         cadParams.columnSize = e.target.value;
         generateGreenhouseMesh();
+        triggerAutoSave();
       });
 
       const bindChk = (id, key, isMatProp) => {
@@ -1292,6 +1432,7 @@
             cadParams[key] = e.target.checked;
             generateGreenhouseMesh();
           }
+          triggerAutoSave();
         });
       };
       bindChk('dim', 'show3DDimensions');
@@ -1327,6 +1468,7 @@
         document.getElementById('val-snow').innerText = '45.0 cm';
       }
       generateGreenhouseMesh();
+      triggerAutoSave();
     }
 
     function applyPyeongPreset(pyeong) {
@@ -1338,6 +1480,7 @@
         setCADParams(8.0, 5.5, 6, 68.0, 22.0, '120x60x3.2', 15.0);
       }
       generateGreenhouseMesh();
+      triggerAutoSave();
     }
 
     function setCADParams(span, gutter, bays, len, pitch, colSize, crop) {
@@ -1422,6 +1565,291 @@
         { id: 'GLS-01', cat: '산광 온실유리', spec: '4mm 저철분 산광 강화유리', len: 'Pane', qty: `${glassArea} m²`, unitKg: '10.0', totalKg: glassArea * 10, price: '22,000원/m²', cost: glassArea * 22000 },
         { id: 'FND-01', cat: '독립기초', spec: 'Φ300x1200 콘크리트 + 앵커볼트', len: 1200, qty: numColumns, unitKg: '200', totalKg: numColumns * 200, price: '65,000원/EA', cost: numColumns * 65000 }
       ];
+    }
+
+    // --- 10. 3-Tier Zero-Loss Save & Load Architecture ---
+    // Tier 1: Standalone .vcad Project File I/O
+    function saveProjectFile() {
+      const projectData = {
+        format: "VenloCAD_Project",
+        version: "2.0",
+        savedAt: new Date().toISOString(),
+        projectName: `Venlo_${cadParams.spanWidth}m_${cadParams.bays}bays_${cadParams.totalLength}m`,
+        engineer: "Hwang Inwoo",
+        standards: "NEN 3859 / EN 13031-1",
+        params: cadParams
+      };
+      const jsonStr = JSON.stringify(projectData, null, 2);
+      triggerDownload(`VenloCAD_Project_${cadParams.bays}Bay_${cadParams.spanWidth}m.vcad`, "application/json", jsonStr);
+      showToast("💾 .vcad 프로젝트 파일이 저장되었습니다.");
+    }
+
+    function triggerFileInput() {
+      document.getElementById('vcad-file-input').click();
+    }
+
+    function handleFileSelect(e) {
+      const file = e.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        loadProjectFromJSON(event.target.result);
+      };
+      reader.readAsText(file);
+      e.target.value = '';
+    }
+
+    function loadProjectFromJSON(jsonText) {
+      try {
+        const data = JSON.parse(jsonText);
+        const p = data.params || data;
+        if (p.spanWidth !== undefined) cadParams.spanWidth = parseFloat(p.spanWidth);
+        if (p.gutterHeight !== undefined) cadParams.gutterHeight = parseFloat(p.gutterHeight);
+        if (p.bays !== undefined) cadParams.bays = parseInt(p.bays, 10);
+        if (p.totalLength !== undefined) cadParams.totalLength = parseFloat(p.totalLength);
+        if (p.postSpacing !== undefined) cadParams.postSpacing = parseFloat(p.postSpacing);
+        if (p.roofPitch !== undefined) cadParams.roofPitch = parseFloat(p.roofPitch);
+        if (p.windSpeed !== undefined) cadParams.windSpeed = parseFloat(p.windSpeed);
+        if (p.snowDepth !== undefined) cadParams.snowDepth = parseFloat(p.snowDepth);
+        if (p.cropLoad !== undefined) cadParams.cropLoad = parseFloat(p.cropLoad);
+        if (p.columnSize !== undefined) cadParams.columnSize = p.columnSize;
+        if (p.solarSeason !== undefined) cadParams.solarSeason = p.solarSeason;
+        if (p.solarHour !== undefined) cadParams.solarHour = parseFloat(p.solarHour);
+
+        syncCADInputs();
+        updateSolar();
+        generateGreenhouseMesh();
+        showToast("📂 프로젝트를 완벽하게 불러왔습니다!");
+      } catch (err) {
+        showToast("⚠️ 잘못된 프로젝트 파일 형식입니다.");
+        console.error(err);
+      }
+    }
+
+    // Drag and Drop
+    function setupDragAndDrop() {
+      const overlay = document.getElementById('drop-overlay');
+      let dragCounter = 0;
+
+      window.addEventListener('dragenter', (e) => {
+        e.preventDefault();
+        dragCounter++;
+        overlay.style.display = 'flex';
+      });
+
+      window.addEventListener('dragleave', (e) => {
+        e.preventDefault();
+        dragCounter--;
+        if (dragCounter <= 0) {
+          overlay.style.display = 'none';
+          dragCounter = 0;
+        }
+      });
+
+      window.addEventListener('dragover', (e) => {
+        e.preventDefault();
+      });
+
+      window.addEventListener('drop', (e) => {
+        e.preventDefault();
+        overlay.style.display = 'none';
+        dragCounter = 0;
+
+        if (e.dataTransfer && e.dataTransfer.files.length > 0) {
+          const file = e.dataTransfer.files[0];
+          const reader = new FileReader();
+          reader.onload = (event) => {
+            loadProjectFromJSON(event.target.result);
+          };
+          reader.readAsText(file);
+        }
+      });
+    }
+
+    // Tier 2: Browser Local Storage Auto-Save & Slots
+    function triggerAutoSave() {
+      clearTimeout(autoSaveTimer);
+      autoSaveTimer = setTimeout(() => {
+        try {
+          const payload = { params: cadParams, savedAt: new Date().toISOString() };
+          localStorage.setItem('venlocad_autosave', JSON.stringify(payload));
+        } catch (e) {}
+      }, 500);
+    }
+
+    function loadAutoSaveOnStartup() {
+      try {
+        const raw = localStorage.getItem('venlocad_autosave');
+        if (raw) {
+          const data = JSON.parse(raw);
+          if (data && data.params) {
+            Object.assign(cadParams, data.params);
+            syncCADInputs();
+          }
+        }
+      } catch (e) {}
+    }
+
+    function openSlotModal() {
+      renderSlots();
+      document.getElementById('slot-modal').style.display = 'flex';
+    }
+
+    function closeSlotModal() {
+      document.getElementById('slot-modal').style.display = 'none';
+    }
+
+    function renderSlots() {
+      const container = document.getElementById('slot-cards-container');
+      container.innerHTML = '';
+
+      for (let i = 1; i <= 3; i++) {
+        const key = `venlocad_slot_${i}`;
+        const raw = localStorage.getItem(key);
+        let info = null;
+        if (raw) {
+          try { info = JSON.parse(raw); } catch (e) {}
+        }
+
+        const card = document.createElement('div');
+        card.className = 'slot-card';
+        if (info) {
+          const d = new Date(info.savedAt);
+          const dateStr = `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')} ${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).padStart(2,'0')}`;
+          card.innerHTML = `
+            <div class="slot-info">
+              <h4>슬롯 ${i}: ${info.params.spanWidth}m × ${info.params.bays}연동 (${info.params.totalLength}m)</h4>
+              <p>저장 일시: ${dateStr} | 기둥: ${info.params.columnSize} | 풍속: ${info.params.windSpeed}m/s</p>
+            </div>
+            <div style="display:flex; gap:6px;">
+              <button class="btn-action btn-action-primary" style="width:auto; margin:0; padding:5px 10px;" onclick="loadSlot(${i})">불러오기</button>
+              <button class="btn-action" style="width:auto; margin:0; padding:5px 10px;" onclick="saveSlot(${i})">덮어쓰기</button>
+              <button class="btn-action" style="width:auto; margin:0; padding:5px 10px; color:var(--accent-rose);" onclick="clearSlot(${i})">삭제</button>
+            </div>
+          `;
+        } else {
+          card.innerHTML = `
+            <div class="slot-info">
+              <h4>슬롯 ${i}: [비어 있음]</h4>
+              <p>현재 작업 중인 설계를 저장할 수 있습니다.</p>
+            </div>
+            <button class="btn-action btn-action-gold" style="width:auto; margin:0; padding:6px 12px;" onclick="saveSlot(${i})">현재 설계 저장</button>
+          `;
+        }
+        container.appendChild(card);
+      }
+    }
+
+    function saveSlot(slotNum) {
+      const payload = {
+        params: cadParams,
+        savedAt: new Date().toISOString()
+      };
+      localStorage.setItem(`venlocad_slot_${slotNum}`, JSON.stringify(payload));
+      renderSlots();
+      showToast(`💾 슬롯 ${slotNum}에 저장되었습니다.`);
+    }
+
+    function loadSlot(slotNum) {
+      const raw = localStorage.getItem(`venlocad_slot_${slotNum}`);
+      if (!raw) return;
+      try {
+        const data = JSON.parse(raw);
+        Object.assign(cadParams, data.params);
+        syncCADInputs();
+        updateSolar();
+        generateGreenhouseMesh();
+        closeSlotModal();
+        showToast(`📂 슬롯 ${slotNum} 설계를 불러왔습니다.`);
+      } catch (e) {
+        showToast('⚠️ 슬롯을 불러올 수 없습니다.');
+      }
+    }
+
+    function clearSlot(slotNum) {
+      localStorage.removeItem(`venlocad_slot_${slotNum}`);
+      renderSlots();
+      showToast(`🗑️ 슬롯 ${slotNum}이 삭제되었습니다.`);
+    }
+
+    // Tier 3: Shareable URL Link
+    function copyShareableLink() {
+      const hash = `#span=${cadParams.spanWidth}&gutter=${cadParams.gutterHeight}&bays=${cadParams.bays}&len=${cadParams.totalLength}&post=${cadParams.postSpacing}&pitch=${cadParams.roofPitch}&wind=${cadParams.windSpeed}&snow=${cadParams.snowDepth}&crop=${cadParams.cropLoad}&col=${encodeURIComponent(cadParams.columnSize)}`;
+      const url = window.location.origin + window.location.pathname + hash;
+      navigator.clipboard.writeText(url).then(() => {
+        showToast("🔗 공유 링크가 클립보드에 복사되었습니다!");
+      }).catch(() => {
+        showToast("🔗 링크: " + hash);
+      });
+    }
+
+    function loadFromHash() {
+      if (!window.location.hash || window.location.hash.length < 3) return false;
+      try {
+        const q = new URLSearchParams(window.location.hash.substring(1));
+        if (q.has('span')) cadParams.spanWidth = parseFloat(q.get('span'));
+        if (q.has('gutter')) cadParams.gutterHeight = parseFloat(q.get('gutter'));
+        if (q.has('bays')) cadParams.bays = parseInt(q.get('bays'), 10);
+        if (q.has('len')) cadParams.totalLength = parseFloat(q.get('len'));
+        if (q.has('post')) cadParams.postSpacing = parseFloat(q.get('post'));
+        if (q.has('pitch')) cadParams.roofPitch = parseFloat(q.get('pitch'));
+        if (q.has('wind')) cadParams.windSpeed = parseFloat(q.get('wind'));
+        if (q.has('snow')) cadParams.snowDepth = parseFloat(q.get('snow'));
+        if (q.has('crop')) cadParams.cropLoad = parseFloat(q.get('crop'));
+        if (q.has('col')) cadParams.columnSize = q.get('col');
+        return true;
+      } catch (e) {
+        return false;
+      }
+    }
+
+    function syncCADInputs() {
+      setCADParams(
+        cadParams.spanWidth,
+        cadParams.gutterHeight,
+        cadParams.bays,
+        cadParams.totalLength,
+        cadParams.roofPitch,
+        cadParams.columnSize,
+        cadParams.cropLoad
+      );
+      document.getElementById('rng-wind').value = cadParams.windSpeed;
+      document.getElementById('val-wind').innerText = `${cadParams.windSpeed.toFixed(1)} m/s`;
+      document.getElementById('rng-snow').value = cadParams.snowDepth;
+      document.getElementById('val-snow').innerText = `${cadParams.snowDepth.toFixed(1)} cm`;
+      document.getElementById('rng-post').value = cadParams.postSpacing;
+      document.getElementById('val-post').innerText = `${cadParams.postSpacing.toFixed(1)} m`;
+
+      if (document.getElementById('sel-season')) {
+        document.getElementById('sel-season').value = cadParams.solarSeason;
+      }
+      if (document.getElementById('rng-solar')) {
+        cadParams.solarHour = parseFloat(cadParams.solarHour);
+        document.getElementById('rng-solar').value = cadParams.solarHour;
+        const hr = Math.floor(cadParams.solarHour);
+        const min = (cadParams.solarHour % 1 === 0.5) ? '30' : '00';
+        document.getElementById('val-solar').innerText = `${hr}:${min}`;
+      }
+
+      const chk = (id, val) => {
+        const el = document.getElementById(`chk-${id}`);
+        if (el) el.checked = !!val;
+      };
+      chk('dim', cadParams.show3DDimensions);
+      chk('truss', cadParams.showTruss);
+      chk('glass', cadParams.showGlass);
+      chk('glaze', cadParams.showGlazing);
+      chk('brace', cadParams.showBracing);
+      chk('foot', cadParams.showFooting);
+      chk('joint', cadParams.showJoints);
+      chk('wire', cadParams.showWireframe);
+    }
+
+    function showToast(text) {
+      const t = document.getElementById('toast-msg');
+      t.innerText = text;
+      t.style.display = 'block';
+      setTimeout(() => { t.style.display = 'none'; }, 2200);
     }
 
     function exportBOMCSV() {
