@@ -1486,6 +1486,9 @@
       if (!hashLoaded) {
         loadAutoSaveOnStartup();
       }
+      if (window.location.hash && window.location.hash.toLowerCase().includes('consult')) {
+        setTimeout(openConsultModal, 500);
+      }
 
       initGizmoView();
       wireCADInputs();

@@ -5,7 +5,8 @@
  */
 (function() {
   const ECOSYSTEM_INDEX = [
-    // 🛠️ TOOLS (32)
+    // 🛠️ TOOLS
+    { title: "VenloCAD 3D v2.5 Parametric CAD Engine", cat: "tool", url: "tools/venlocad-3d.html", icon: "📐", desc: "Institutional WebGL 3D CAD: 4 Glazing Shaders, S355JR structural checks, roof vent kinematics, A4 Spec Sheet PDF & 1:1 Care", tags: "venlocad 3d cad webgl parametric nen3859 structural glazing diffuse polycarbonate acrylic s355jr gutters heating rails vent kinematics dxf stl pdf consultation" },
     { title: "3D WebGL Venlo Greenhouse Digital Twin", cat: "tool", url: "tools/greenhouse-3d-digital-twin-simulator.html", icon: "🌟", desc: "Three.js solar tracking, roof vent kinematics, thermal screen & fogging simulator", tags: "3d webgl threejs venlo digital twin physics solar shadow screen vent fogging" },
     { title: "AgriVision™ AI Crop Disease & Leaf Pathology Analyzer", cat: "tool", url: "tools/agrivision-ai-crop-disease-analyzer.html", icon: "🔬", desc: "In-browser WebRTC camera AI leaf pathology & biological IPM prescription", tags: "ai computer vision leaf pathology blight mildew chlorosis spider mite ipm" },
     { title: "Natural Ventilation & Buoyancy Airflow Calculator", cat: "tool", url: "tools/greenhouse-natural-ventilation-buoyancy-airflow-calculator.html", icon: "💨", desc: "ASABE stack effect & wind-driven air exchange (ACH) rate calculator", tags: "natural ventilation buoyancy airflow stack effect wind asabe ach" },

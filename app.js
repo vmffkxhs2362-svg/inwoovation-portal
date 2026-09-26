@@ -109,13 +109,13 @@ function filterCategory(cat, element) {
 const ALL_TOOLS_CATALOG = [
     {
         id: "venlocad_3d",
-        title: "VenloCAD 3D Parametric CAD Engine",
+        title: "VenloCAD 3D v2.5 Master Engine",
         url: "tools/venlocad-3d.html",
         icon: "📐",
         cat: "3D CAD & Structural",
         facilities: ["venlo", "poly", "research"],
         goals: ["energy", "subsidy", "climate"],
-        desc: "Interactive parametric 3D CAD: NEN 3859 structural deflection, automated steel/aluminum BOM costing, and 3-view 2D DXF export."
+        desc: "Institutional WebGL CAD: 4 Glazing Shaders, S355JR structural load checks, roof vent kinematics, A4 Spec Sheet PDF & 1:1 Care."
     },
     {
         id: "grant_nav",
