@@ -290,6 +290,22 @@
       background: rgba(6, 182, 212, 0.25); border-color: #06b6d4; color: #ffffff;
       transform: translateY(-1px);
     }
+    .home-view-btn {
+      background: linear-gradient(135deg, rgba(14, 165, 233, 0.2), rgba(99, 102, 241, 0.2));
+      border: 1px solid rgba(56, 189, 248, 0.45); color: #38bdf8;
+    }
+    .home-view-btn:hover {
+      background: linear-gradient(135deg, rgba(14, 165, 233, 0.45), rgba(99, 102, 241, 0.45));
+      border-color: #38bdf8; color: #ffffff;
+      box-shadow: 0 0 14px rgba(56, 189, 248, 0.45);
+      transform: translateY(-1px);
+    }
+    .tool-btn-home {
+      background: rgba(14, 165, 233, 0.16); border-color: rgba(56, 189, 248, 0.4); color: #38bdf8;
+    }
+    .tool-btn-home:hover {
+      background: rgba(14, 165, 233, 0.35); border-color: #0284c7; color: #fff;
+    }
 
     /* 3D In-Scene Dimension Badges */
     #dimension-overlay {
@@ -388,6 +404,23 @@
     .cad-gizmo-box {
       position: absolute; top: 14px; right: 16px; z-index: 15;
       display: flex; flex-direction: column; align-items: center; gap: 6px;
+    }
+    .gizmo-top-row {
+      display: flex; align-items: center; justify-content: space-between; width: 95px;
+      padding: 0 2px;
+    }
+    .gizmo-home-btn {
+      background: rgba(15, 23, 42, 0.9); border: 1px solid rgba(56, 189, 248, 0.4);
+      color: #38bdf8; border-radius: 6px; font-size: 0.85rem; width: 26px; height: 26px;
+      display: flex; align-items: center; justify-content: center; cursor: pointer;
+      transition: all 0.2s ease; box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+    }
+    .gizmo-home-btn:hover {
+      background: #0284c7; color: #fff; transform: scale(1.1);
+      box-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
+    }
+    .gizmo-label {
+      font-size: 0.58rem; font-weight: 800; color: #64748b; letter-spacing: 0.05em;
     }
     #cad-gizmo {
       width: 95px; height: 95px; cursor: pointer;
@@ -607,6 +640,7 @@
 
       <!-- Quick Save / Load / Share Toolbar -->
       <div class="ribbon-actions">
+        <button class="tool-btn tool-btn-home" onclick="goHomeView()" title="Autodesk Inventor 표준 등각 투영 홈 뷰 복귀 (단축키: F6 또는 Home)">🏠 홈 뷰 (F6)</button>
         <button class="tool-btn tool-btn-gold" onclick="saveProjectFile()" title="내 PC에 .vcad 프로젝트 파일로 저장">💾 저장 (.vcad)</button>
         <button class="tool-btn" onclick="triggerFileInput()" title="내 PC에서 .vcad 또는 .json 프로젝트 파일 열기">📂 열기</button>
         <button class="tool-btn" onclick="openSlotModal()" title="브라우저 로컬 저장 슬롯 관리">📑 슬롯 관리</button>
@@ -623,11 +657,11 @@
 
       <!-- Viewport Controls (Top Left) -->
       <div class="cad-viewport-ctrl-bar">
-        <button id="btn-toggle-sidebar" class="sidebar-toggle-btn" onclick="toggleSidebar()" title="설계 변수 제어 패널 접기/펼치기">
+        <button id="btn-toggle-sidebar" class="sidebar-toggle-btn" onclick="toggleSidebar()" title="설계 변수 제어 패널 접기/펼치기 (단축키: [ )">
           <span>◀</span><span>파라미터 패널 접기</span>
         </button>
-        <button class="sidebar-toggle-btn" onclick="setView('iso')" title="3D 등각 투영 뷰로 리셋">
-          <span>🔄</span><span>뷰 리셋</span>
+        <button id="btn-home-view" class="sidebar-toggle-btn home-view-btn" onclick="goHomeView()" title="Autodesk Inventor 표준 홈 뷰 (단축키: F6 또는 Home)">
+          <span>🏠</span><span>홈 뷰 (F6)</span>
         </button>
       </div>
 
@@ -667,12 +701,18 @@
 
       <!-- Orientation Gizmo -->
       <div class="cad-gizmo-box">
-        <div id="cad-gizmo" title="Click faces to align view"></div>
+        <div class="gizmo-top-row">
+          <button class="gizmo-home-btn" onclick="goHomeView()" title="Autodesk Inventor 표준 홈 뷰 (단축키: F6)">
+            <span>🏠</span>
+          </button>
+          <span class="gizmo-label">NAVCUBE</span>
+        </div>
+        <div id="cad-gizmo" title="면을 클릭하면 해당 방향으로 정렬됩니다"></div>
         <div class="gizmo-btn-row">
           <button class="g-btn" onclick="setView('top')">TOP</button>
           <button class="g-btn" onclick="setView('front')">FRONT</button>
           <button class="g-btn" onclick="setView('side')">SIDE</button>
-          <button class="g-btn" onclick="setView('iso')" style="grid-column: span 3; background: rgba(6, 182, 212, 0.2); color: var(--accent-sky);">ISO 3D</button>
+          <button class="g-btn" onclick="goHomeView()" style="grid-column: span 3; background: rgba(6, 182, 212, 0.25); color: #38bdf8; font-weight: 800;" title="등각 투영 홈 뷰 [F6]">🏠 HOME [F6]</button>
         </div>
       </div>
 
@@ -1583,6 +1623,7 @@
       initGizmoView();
       wireCADInputs();
       setupDragAndDrop();
+      setupKeyboardShortcuts();
       updateSolar();
       generateGreenhouseMesh();
 
@@ -2404,19 +2445,45 @@
         case 'side': targetPos = new THREE.Vector3(dist, targetY, 0); break;
         case 'left': targetPos = new THREE.Vector3(-dist, targetY, 0); break;
         case 'back': targetPos = new THREE.Vector3(0, targetY, -dist); break;
-        case 'iso': default: targetPos = new THREE.Vector3(dist * 0.7, dist * 0.6, dist * 0.7); break;
+        case 'iso': default: targetPos = new THREE.Vector3(dist * 0.72, dist * 0.62, dist * 0.78); break;
       }
-      const start = cCamera.position.clone();
+      const startPos = cCamera.position.clone();
+      const startTarget = cControls.target.clone();
+      const endTarget = new THREE.Vector3(0, targetY, 0);
       const t0 = performance.now();
       function step(now) {
         const p = Math.min((now - t0) / 600, 1);
         const ease = 0.5 - Math.cos(p * Math.PI) / 2;
-        cCamera.position.lerpVectors(start, targetPos, ease);
-        cControls.target.set(0, targetY, 0);
+        cCamera.position.lerpVectors(startPos, targetPos, ease);
+        cControls.target.lerpVectors(startTarget, endTarget, ease);
         cControls.update();
         if (p < 1) requestAnimationFrame(step);
       }
       requestAnimationFrame(step);
+    }
+
+    function goHomeView() {
+      setView('iso');
+      showToast('🏠 인벤터 표준 홈 뷰 (등각 투영)로 복귀했습니다 [F6]');
+      trackGA4Event('view_home_f6', { shortcut: 'F6' });
+    }
+
+    function setupKeyboardShortcuts() {
+      window.addEventListener('keydown', (e) => {
+        // Do not intercept if focused on text input, textarea, or select element
+        if (e.target && (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.tagName === 'SELECT')) {
+          return;
+        }
+
+        // F6 or Home key: Return to Home View (Autodesk Inventor Standard)
+        if (e.key === 'F6' || e.code === 'F6' || e.key === 'Home') {
+          e.preventDefault();
+          goHomeView();
+        } else if (e.key === '[' || e.code === 'BracketLeft') {
+          e.preventDefault();
+          toggleSidebar();
+        }
+      });
     }
 
     function wireCADInputs() {
