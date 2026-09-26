@@ -420,7 +420,7 @@
           <button class="tool-btn" onclick="triggerFileInput()" title="내 PC에서 .vcad 또는 .json 프로젝트 파일 열기">📂 열기</button>
           <button class="tool-btn" onclick="openSlotModal()" title="브라우저 로컬 저장 슬롯 관리">📑 슬롯 관리</button>
           <button class="tool-btn" onclick="copyShareableLink()" title="현재 설계를 다른 사람에게 URL로 공유">🔗 링크 복사</button>
-          <button class="tool-btn" onclick="openConsultModal()" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.25), rgba(6, 182, 212, 0.25)); border-color: rgba(16, 185, 129, 0.6); color: #34d399; font-weight: 800;" title="황인우 엔지니어 1:1 맞춤 설계 대행 & 집중 케어 신청">🧑‍💻 전문가 케어 신청</button>
+          <button class="tool-btn" onclick="openConsultModal('topbar')" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.25), rgba(6, 182, 212, 0.25)); border-color: rgba(16, 185, 129, 0.6); color: #34d399; font-weight: 800;" title="황인우 엔지니어 1:1 맞춤 설계 대행 & 집중 케어 신청">🧑‍💻 전문가 케어 신청</button>
           <input type="file" id="vcad-file-input" accept=".vcad,.json" style="display:none" onchange="handleFileSelect(event)">
         </div>
       </div>
@@ -643,7 +643,7 @@
             <p style="font-size: 0.7rem; color: #cbd5e1; margin-bottom: 8px; line-height: 1.4;">
               시공사 견적 교차검증(거품 제거), 부지 맞춤형 2D/3D 실시설계, 정부 보조금/인허가용 구조계산서 완성이 필요하신가요? 직접 1:1 집중 케어해 드립니다.
             </p>
-            <button class="btn-action" onclick="openConsultModal()" style="margin: 0; background: linear-gradient(135deg, #059669, #10b981); border: none; font-weight: 800; color: #fff;">
+            <button class="btn-action" onclick="openConsultModal('tab_banner')" style="margin: 0; background: linear-gradient(135deg, #059669, #10b981); border: none; font-weight: 800; color: #fff;">
               🎯 1:1 설계 대행 &amp; 감리 신청하기
             </button>
           </div>
@@ -742,7 +742,7 @@
           <span style="font-size: 1.05rem; font-weight: 800; color: var(--accent-gold); font-family: var(--font-mono);" id="modal-sum-cost">0 원</span>
         </div>
         <div style="display: flex; gap: 8px;">
-          <button class="btn-action" style="width: auto; margin: 0; background: linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(6, 182, 212, 0.2)); border-color: #10b981; color: #34d399; font-weight: 700;" onclick="openConsultModal()">🧑‍💻 전문가 감리/대행 신청</button>
+          <button class="btn-action" style="width: auto; margin: 0; background: linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(6, 182, 212, 0.2)); border-color: #10b981; color: #34d399; font-weight: 700;" onclick="openConsultModal('bom_modal')">🧑‍💻 전문가 감리/대행 신청</button>
           <button class="btn-action" style="width: auto; margin: 0;" onclick="window.print()">🖨️ 인쇄 / PDF 보고서</button>
           <button class="btn-action btn-action-primary" style="width: auto; margin: 0;" onclick="exportBOMCSV()">📥 CSV 다운로드</button>
         </div>
@@ -1535,6 +1535,17 @@
       btn.classList.add('active');
     }
 
+    // --- GA4 Custom Event Dispatcher ---
+    function trackGA4Event(eventName, eventParams = {}) {
+      try {
+        if (typeof gtag === 'function') {
+          gtag('event', eventName, eventParams);
+        }
+      } catch (e) {
+        console.debug('GA4 tracking error:', e);
+      }
+    }
+
     function applyCropPreset(type) {
       document.querySelectorAll('.crop-pill').forEach(p => p.classList.remove('active'));
       event.target.classList.add('active');
@@ -1552,6 +1563,7 @@
       }
       generateGreenhouseMesh();
       triggerAutoSave();
+      trackGA4Event('preset_crop_select', { crop_type: type });
     }
 
     function applyPyeongPreset(pyeong) {
@@ -1564,6 +1576,7 @@
       }
       generateGreenhouseMesh();
       triggerAutoSave();
+      trackGA4Event('preset_pyeong_select', { target_pyeong: pyeong });
     }
 
     function setCADParams(span, gutter, bays, len, pitch, colSize, crop) {
@@ -1613,6 +1626,11 @@
       });
       document.getElementById('modal-sum-cost').innerText = `${sum.toLocaleString()} 원`;
       document.getElementById('bom-popup').style.display = 'flex';
+      trackGA4Event('bom_modal_view', {
+        estimated_cost_won: sum,
+        floor_area_m2: Math.round(cadParams.spanWidth * cadParams.bays * cadParams.totalLength),
+        floor_area_pyeong: Math.round(cadParams.spanWidth * cadParams.bays * cadParams.totalLength * 0.3025)
+      });
     }
 
     function closeBOMModal() {
@@ -1665,6 +1683,13 @@
       const jsonStr = JSON.stringify(projectData, null, 2);
       triggerDownload(`VenloCAD_Project_${cadParams.bays}Bay_${cadParams.spanWidth}m.vcad`, "application/json", jsonStr);
       showToast("💾 .vcad 프로젝트 파일이 저장되었습니다.");
+      trackGA4Event('vcad_file_export', {
+        format: 'vcad',
+        bays: cadParams.bays,
+        span_width: cadParams.spanWidth,
+        total_length: cadParams.totalLength,
+        floor_area_pyeong: Math.round(cadParams.spanWidth * cadParams.bays * cadParams.totalLength * 0.3025)
+      });
     }
 
     function triggerFileInput() {
@@ -1703,6 +1728,10 @@
         updateSolar();
         generateGreenhouseMesh();
         showToast("📂 프로젝트를 완벽하게 불러왔습니다!");
+        trackGA4Event('vcad_file_import', {
+          format: 'vcad',
+          floor_area_pyeong: Math.round(cadParams.spanWidth * cadParams.bays * cadParams.totalLength * 0.3025)
+        });
       } catch (err) {
         showToast("⚠️ 잘못된 프로젝트 파일 형식입니다.");
         console.error(err);
@@ -1831,6 +1860,7 @@
       localStorage.setItem(`venlocad_slot_${slotNum}`, JSON.stringify(payload));
       renderSlots();
       showToast(`💾 슬롯 ${slotNum}에 저장되었습니다.`);
+      trackGA4Event('slot_storage_save', { slot_number: slotNum });
     }
 
     function loadSlot(slotNum) {
@@ -1844,6 +1874,7 @@
         generateGreenhouseMesh();
         closeSlotModal();
         showToast(`📂 슬롯 ${slotNum} 설계를 불러왔습니다.`);
+        trackGA4Event('slot_storage_load', { slot_number: slotNum });
       } catch (e) {
         showToast('⚠️ 슬롯을 불러올 수 없습니다.');
       }
@@ -1863,6 +1894,9 @@
         showToast("🔗 공유 링크가 클립보드에 복사되었습니다!");
       }).catch(() => {
         showToast("🔗 링크: " + hash);
+      });
+      trackGA4Event('vcad_share_url_copy', {
+        floor_area_pyeong: Math.round(cadParams.spanWidth * cadParams.bays * cadParams.totalLength * 0.3025)
       });
     }
 
@@ -1942,6 +1976,7 @@
         csv += `"${it.id}","${it.cat}","${it.spec}",${it.len},"${it.qty}",${it.unitKg},${it.totalKg},"${it.price}",${it.cost}\n`;
       });
       triggerDownload("VenloCAD_BOM_Specification.csv", "text/csv;charset=utf-8;", csv);
+      trackGA4Event('bom_export_csv', { format: 'csv' });
     }
 
     function exportMasterDXF() {
@@ -2040,6 +2075,7 @@
 
       dxf += "0\nENDSEC\n0\nEOF\n";
       triggerDownload("VenloCAD_Master_Production_Drawing.dxf", "application/dxf", dxf);
+      trackGA4Event('cad_export_dxf', { drawing_type: 'master_3view', bays: bays });
     }
 
     function exportCADSTL() {
@@ -2069,6 +2105,7 @@
       });
       stl += "endsolid VenloCAD_Greenhouse\n";
       triggerDownload("VenloCAD_Greenhouse_3D.stl", "application/sla", stl);
+      trackGA4Event('cad_export_stl', { mesh_type: 'greenhouse_frame' });
     }
 
     function triggerDownload(filename, mime, content) {
@@ -2082,7 +2119,7 @@
     }
 
     // --- 14. 1:1 Bespoke Engineering Consultation & Care ---
-    function openConsultModal() {
+    function openConsultModal(source = 'general') {
       const W = cadParams.spanWidth;
       const bays = cadParams.bays;
       const L = cadParams.totalLength;
@@ -2101,6 +2138,17 @@
       document.getElementById('c-cost').innerText = `약 ${costManwon.toLocaleString()} 만원`;
 
       document.getElementById('consult-modal').style.display = 'flex';
+
+      trackGA4Event('consult_modal_open', {
+        source: source,
+        span_width: W,
+        bays: bays,
+        total_length: L,
+        floor_area_m2: area,
+        floor_area_pyeong: pyeong,
+        column_size: cadParams.columnSize,
+        estimated_cost_manwon: costManwon
+      });
     }
 
     function closeConsultModal() {
@@ -2114,6 +2162,18 @@
       const H = cadParams.gutterHeight;
       const area = Math.round(W * bays * L);
       const pyeong = Math.round(area * 0.3025);
+      const items = buildBOMArray();
+      let sumCost = 0;
+      items.forEach(it => sumCost += it.cost);
+      const costManwon = Math.round(sumCost / 10000);
+
+      trackGA4Event('consult_email_click', {
+        floor_area_pyeong: pyeong,
+        estimated_cost_manwon: costManwon,
+        value: costManwon,
+        currency: 'KRW'
+      });
+
       const hash = `#span=${cadParams.spanWidth}&gutter=${cadParams.gutterHeight}&bays=${cadParams.bays}&len=${cadParams.totalLength}&post=${cadParams.postSpacing}&pitch=${cadParams.roofPitch}&wind=${cadParams.windSpeed}&snow=${cadParams.snowDepth}&crop=${cadParams.cropLoad}&col=${encodeURIComponent(cadParams.columnSize)}`;
       const shareUrl = window.location.origin + window.location.pathname + hash;
 
@@ -2141,6 +2201,18 @@
     }
 
     function copyConsultLinkAndOpen() {
+      const area = Math.round(cadParams.spanWidth * cadParams.bays * cadParams.totalLength);
+      const pyeong = Math.round(area * 0.3025);
+      const items = buildBOMArray();
+      let sumCost = 0;
+      items.forEach(it => sumCost += it.cost);
+      const costManwon = Math.round(sumCost / 10000);
+
+      trackGA4Event('consult_contact_page_click', {
+        floor_area_pyeong: pyeong,
+        estimated_cost_manwon: costManwon
+      });
+
       copyShareableLink();
       showToast("🔗 설계 링크가 복사되었습니다! 문의 페이지로 이동합니다.");
       setTimeout(() => {
