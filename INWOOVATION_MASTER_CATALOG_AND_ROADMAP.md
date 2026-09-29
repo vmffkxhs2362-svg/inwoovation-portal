@@ -169,7 +169,7 @@ Parametric catalog of industrial CEA hardware components and semiconductor/vacuu
 * Motorized 3-Way & 4-Way Mixing Valves (Belimo, Danfoss, Centra)
 * Continuous Ridge & Double Rail Rack and Pinion Drive Systems (De Gier, Ridder)
 * Flame-Retardant Thermal & Blackout Screens (Svensson, Bonar)
-* [`vacuum-systems.html`](file:///g:/Meine%20Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/parts/vacuum-systems.html): Industrial Vacuum & Semiconductor Equipment Catalog (DAWOOVAC SSOT - DEV, DSP, DGB, DPB, and Swagelok VCR fittings).
+* [`vacuum-systems.html`](file:///g:/Meine%20Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/parts/vacuum-systems.html): Industrial Vacuum & Semiconductor Equipment Catalog (Precision Vacuum Systems SSOT - DEV, DSP, DGB, DPB, and Swagelok VCR fittings).
 
 ---
 
