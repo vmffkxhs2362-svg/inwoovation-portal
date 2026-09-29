@@ -362,6 +362,32 @@ function closeSurprise() {
     if (box) box.style.display = 'none';
 }
 
+// 3-Click Executive Workstation Pillar Switcher
+function switchExecutivePillar(pillarId) {
+    document.querySelectorAll('.pillar-tab-btn').forEach(btn => {
+        btn.classList.remove('active');
+        btn.style.background = 'rgba(30, 41, 59, 0.7)';
+        btn.style.borderColor = 'rgba(255, 255, 255, 0.15)';
+        btn.style.color = '#cbd5e1';
+        btn.style.boxShadow = 'none';
+    });
+    const activeBtn = document.getElementById('tab-' + pillarId);
+    if (activeBtn) {
+        activeBtn.classList.add('active');
+        activeBtn.style.background = 'linear-gradient(135deg, rgba(16, 185, 129, 0.25), rgba(5, 150, 105, 0.35))';
+        activeBtn.style.borderColor = '#10b981';
+        activeBtn.style.color = '#ffffff';
+        activeBtn.style.boxShadow = '0 4px 20px rgba(16, 185, 129, 0.35)';
+    }
+    document.querySelectorAll('.pillar-content-panel').forEach(panel => {
+        panel.style.display = 'none';
+    });
+    const targetPanel = document.getElementById('pillar-content-' + pillarId);
+    if (targetPanel) {
+        targetPanel.style.display = 'grid';
+    }
+}
+
 // Initialize on DOM ready
 document.addEventListener('DOMContentLoaded', () => {
     initPersonalizedMatcher();

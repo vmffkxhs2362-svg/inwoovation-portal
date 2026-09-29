@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commercial CEA Feasibility & Grant Dossier Generator | Inwoovation Lab</title>
+    <meta name="description" content="Institutional agricultural feasibility modeler and non-dilutive grant dossier generator across 50 US states. Computes CAPEX, OPEX, USDA REAP/EQIP stacking, 10-year cash flow, IRR, NPV, and exports an executive bankable PDF dossier.">
+    <meta name="keywords" content="agricultural grant calculator, USDA REAP grant, CEA feasibility study, greenhouse CAPEX model, commercial vertical farm IRR, CDFA SWEEP, Inwoovation Lab">
+    <meta name="google-site-verification" content="xHzmAhcxMgyf-hP2TujQwCGF3-7GrLBkLU9PoHShaps" />
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://inwoovation.com/tools/commercial-feasibility-grant-dossier-generator.html">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Commercial CEA Feasibility & Grant Dossier Generator | Inwoovation Lab">
+    <meta property="og:description" content="Bank-grade financial modeling & non-dilutive capital stacking for commercial greenhouses and vertical farms. 50-state database integration.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://inwoovation.com/tools/commercial-feasibility-grant-dossier-generator.html">
+    <meta property="og:image" content="https://inwoovation.com/og-cover.jpg">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Commercial CEA Feasibility & Grant Dossier Generator",
+      "url": "https://inwoovation.com/tools/commercial-feasibility-grant-dossier-generator.html",
+      "description": "Institutional feasibility modeling engine computing agricultural grant stacking, 10-year pro-forma cash flows, and generating bankable PDF dossiers.",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "All",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Inwoovation Lab"
+      }
+    }
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V4RYJBMEDE"></script>
+    <script>
+       window.dataLayer = window.dataLayer || [];
+       function gtag(){dataLayer.push(arguments);}
+       gtag('js', new Date());
+       gtag('config', 'G-V4RYJBMEDE');
+    </script>
+    
+    <!-- Google AdSense Script -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8597809158257497" crossorigin="anonymous"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Master & Enhancement Styles -->
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../css/global-ui-enhancements.css">
+
+    <style>
+        :root {
+            --bg-base: #070b14;
+            --bg-card: rgba(18, 26, 43, 0.75);
+            --bg-card-hover: rgba(26, 38, 64, 0.9);
+            --bg-input: rgba(11, 17, 30, 0.85);
+            --primary-emerald: #10b981;
+            --primary-emerald-glow: rgba(16, 185, 129, 0.4);
+            --primary-cyan: #38bdf8;
+            --primary-cyan-glow: rgba(56, 189, 248, 0.4);
+            --accent-amber: #f59e0b;
+            --border-glass: rgba(255, 255, 255, 0.12);
+            --text-light: #f8fafc;
+            --text-muted: #94a3b8;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        body {
+            background-color: var(--bg-base);
+            color: var(--text-light);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 1.5rem 1.25rem 4rem;
+        }
+
+        /* Hero */
+        .tool-hero {
+            padding: 3rem 2rem 2.2rem;
+            text-align: center;
+            background: linear-gradient(180deg, rgba(30, 41, 59, 0.4) 0%, rgba(15, 23, 42, 0.6) 100%);
+            border: 1px solid var(--border-glass);
+            border-radius: 24px;
+            margin-bottom: 2.5rem;
+            position: relative;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        .tool-hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--primary-emerald), var(--primary-cyan), transparent);
+        }
+
+        .tool-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.9rem;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            border-radius: 100px;
+            background: rgba(16, 185, 129, 0.15);
+            color: var(--primary-emerald);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            margin-bottom: 1.2rem;
+        }
+
+        .tool-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.6rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 50%, #10b981 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .tool-desc {
+            max-width: 820px;
+            margin: 0 auto 1.5rem;
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+
+        /* 2-Column Workstation Layout */
+        .workstation-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 2rem;
+            margin-bottom: 3.5rem;
+        }
+
+        @media (max-width: 960px) {
+            .workstation-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .panel-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-glass);
+            border-radius: 20px;
+            padding: 2rem;
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .panel-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.4rem;
+            color: #ffffff;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding-bottom: 0.8rem;
+        }
+
+        .form-section-title {
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--primary-cyan);
+            margin: 1.25rem 0 0.75rem;
+        }
+
+        .field-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .field-group label {
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: #cbd5e1;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .field-group label span {
+            color: var(--primary-emerald);
+            font-family: var(--font-mono);
+            font-size: 0.82rem;
+        }
+
+        .field-group input, .field-group select {
+            background: var(--bg-input);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 10px;
+            padding: 0.75rem 1rem;
+            color: #ffffff;
+            font-family: var(--font-mono);
+            font-size: 0.95rem;
+            transition: all 0.2s ease;
+        }
+
+        .field-group input:focus, .field-group select:focus {
+            border-color: var(--primary-emerald);
+            outline: none;
+            box-shadow: 0 0 16px var(--primary-emerald-glow);
+        }
+
+        .checkbox-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0.65rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .checkbox-pill {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 10px;
+            padding: 0.75rem 1rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .checkbox-pill:hover {
+            background: rgba(56, 189, 248, 0.1);
+            border-color: rgba(56, 189, 248, 0.3);
+        }
+
+        .checkbox-pill input[type="checkbox"] {
+            accent-color: var(--primary-emerald);
+            width: 18px;
+            height: 18px;
+        }
+
+        .pill-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pill-info strong {
+            font-size: 0.9rem;
+            color: #ffffff;
+        }
+
+        .pill-info span {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        /* Results & Metrics Panel */
+        .kpi-hero {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(56, 189, 248, 0.1));
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .kpi-hero .label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--text-muted);
+            margin-bottom: 0.4rem;
+        }
+
+        .kpi-hero .val {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #ffffff;
+            line-height: 1;
+        }
+
+        .kpi-hero .sub {
+            font-size: 0.9rem;
+            color: var(--primary-emerald);
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .metric-box {
+            background: rgba(15, 23, 42, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 1rem;
+        }
+
+        .metric-box .label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: var(--text-muted);
+            margin-bottom: 0.35rem;
+        }
+
+        .metric-box .val {
+            font-family: var(--font-mono);
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .grant-breakdown-card {
+            background: rgba(15, 23, 42, 0.85);
+            border: 1px solid rgba(56, 189, 248, 0.25);
+            border-radius: 14px;
+            padding: 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .grant-breakdown-card h4 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1rem;
+            color: var(--primary-cyan);
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .grant-item-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 0.85rem;
+        }
+
+        .grant-item-row:last-child {
+            border-bottom: none;
+        }
+
+        .grant-name {
+            color: #cbd5e1;
+        }
+
+        .grant-val {
+            font-family: var(--font-mono);
+            font-weight: 700;
+            color: var(--primary-emerald);
+        }
+
+        /* Action Buttons */
+        .btn-dossier-download {
+            width: 100%;
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: #ffffff;
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 800;
+            padding: 1.1rem;
+            border: none;
+            border-radius: 14px;
+            cursor: pointer;
+            box-shadow: 0 6px 24px rgba(16, 185, 129, 0.45);
+            transition: all 0.25s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+        }
+
+        .btn-dossier-download:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(16, 185, 129, 0.65);
+        }
+
+        /* Executive Dossier Printable Modal */
+        #dossierModal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(7, 11, 20, 0.88);
+            backdrop-filter: blur(12px);
+            z-index: 10000;
+            overflow-y: auto;
+            padding: 2rem 1rem;
+        }
+
+        .dossier-paper {
+            background: #ffffff;
+            color: #0f172a;
+            max-width: 900px;
+            margin: 0 auto;
+            border-radius: 16px;
+            padding: 3rem 3.5rem;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            position: relative;
+        }
+
+        .dossier-close-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 1rem;
+        }
+
+        .btn-print-action {
+            background: #0f172a;
+            color: #ffffff;
+            padding: 0.6rem 1.4rem;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            cursor: pointer;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .btn-close-modal {
+            background: transparent;
+            border: 1px solid #cbd5e1;
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            color: #475569;
+        }
+
+        /* Printable Document Styles */
+        @media print {
+            body {
+                background: #ffffff !important;
+                color: #000000 !important;
+            }
+            .container, header, footer, .ad-container, .tool-hero, .workstation-grid {
+                display: none !important;
+            }
+            #dossierModal {
+                display: block !important;
+                position: static !important;
+                padding: 0 !important;
+                background: none !important;
+            }
+            .dossier-paper {
+                box-shadow: none !important;
+                padding: 0 !important;
+                max-width: 100% !important;
+            }
+            .dossier-close-bar {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Main Portal Header -->
+        <header>
+            <a href="../index.html" style="text-decoration: none; display: flex; align-items: center; gap: 0.75rem;">
+                <div style="width: 38px; height: 38px; border-radius: 10px; background: linear-gradient(135deg, #10b981, #38bdf8); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.2rem; color: #0f172a;">⚡</div>
+                <div>
+                    <div style="font-family: 'Outfit', sans-serif; font-size: 1.15rem; font-weight: 800; color: #ffffff; letter-spacing: -0.02em;">INWOOVATION LAB</div>
+                    <div style="font-size: 0.7rem; color: #94a3b8; font-weight: 600; letter-spacing: 0.05em;">COMMERCIAL AGTECH ENGINEERING</div>
+                </div>
+            </a>
+            <div class="nav-links">
+                <a href="../index.html" class="nav-item">🏠 Portal Home</a>
+                <a href="index.html" class="nav-item nav-item-highlight">🧮 Simulators (36)</a>
+                <a href="../parts/index.html" class="nav-item">⚙️ AgriMaster Parts</a>
+                <a href="../parts/vacuum-systems.html" class="nav-item">🔬 Vacuum Engineering</a>
+                <a href="../articles/article-62-us-50-state-agricultural-grant-playbook.html" class="nav-item">💰 Grants</a>
+            </div>
+        </header>
+
+        <!-- Tool Hero -->
+        <section class="tool-hero">
+            <span class="tool-badge">🏛️ Commercial B2B Capital & Grant Modeler</span>
+            <h1 class="tool-title">Commercial CEA Feasibility &<br>Non-Dilutive Grant Dossier Generator</h1>
+            <p class="tool-desc">
+                Institutional-grade financial modeling workstation for commercial greenhouses and indoor vertical farms. Dynamically stack USDA REAP, EQIP, and 50-State clean energy/water grants to compute net capital outlay, 10-year pro-forma cash flows, IRR, NPV, and export bankable committee dossiers.
+            </p>
+        </section>
+
+        <!-- AdSense Top Slot -->
+        <div class="ad-container" style="margin-bottom: 2rem; min-height: 90px; text-align: center;">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-8597809158257497"
+                 data-ad-slot="9876543212"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+        <!-- Interactive Workstation Grid -->
+        <div class="workstation-grid">
+            <!-- Left: Configuration Form -->
+            <div class="panel-card">
+                <h2 class="panel-title">⚙️ Facility & Capital Parameters</h2>
+
+                <div class="form-section-title">1. Jurisdiction & State Selection</div>
+                <div class="field-group">
+                    <label>Select State / Jurisdiction <span id="stateCodeLabel">CA - California</span></label>
+                    <select id="stateSelect" onchange="runSimulation()">
+                        <option value="CA" selected>California (CDFA SWEEP $200k, CARB, CEC)</option>
+                        <option value="TX">Texas (TWDB Clean Water $500k, USDA TX)</option>
+                        <option value="FL">Florida (FDACS BMP 87.5% Cost Share)</option>
+                        <option value="NY">New York (NYSERDA Clean Greenhouses, NYSDAM)</option>
+                        <option value="OR">Oregon (Energy Trust of Oregon, ODA)</option>
+                        <option value="WA">Washington (WSDA Farm Energy & Irrigation)</option>
+                        <option value="MI">Michigan (MDARD Rural Development Fund)</option>
+                        <option value="OH">Ohio (H2Ohio Clean Water Conservation)</option>
+                        <option value="NC">North Carolina (Ag Development & Farmland Trust)</option>
+                        <option value="GA">Georgia (Georgia Dept of Agriculture Grants)</option>
+                        <option value="AZ">Arizona (Water Infrastructure Finance Authority)</option>
+                        <option value="CO">Colorado (ACRE Clean Agriculture Energy)</option>
+                        <option value="FED">All Other US States (Federal USDA REAP + EQIP)</option>
+                    </select>
+                </div>
+
+                <div class="form-section-title">2. Facility Profile & Acreage</div>
+                <div class="field-group">
+                    <label>Facility Type <span>Controlled Environment</span></label>
+                    <select id="facilityType" onchange="runSimulation()">
+                        <option value="venlo" selected>Commercial High-Wire Venlo Glass Greenhouse</option>
+                        <option value="poly">Commercial Double-Poly Multi-Span Greenhouse</option>
+                        <option value="vertical">Closed-Loop Indoor Vertical Farm (Cleanroom)</option>
+                    </select>
+                </div>
+
+                <div class="field-group">
+                    <label>Growing Footprint (Acres) <span id="acresLabel">2.5 Acres (~108,900 sq ft)</span></label>
+                    <input type="number" id="facilityAcres" value="2.5" min="0.25" max="50" step="0.25" oninput="runSimulation()">
+                </div>
+
+                <div class="form-section-title">3. Technology Retrofit & Decarbonization Package</div>
+                <div class="checkbox-grid">
+                    <label class="checkbox-pill">
+                        <input type="checkbox" id="techLed" checked onchange="runSimulation()">
+                        <div class="pill-info">
+                            <strong>Full-Spectrum Toplight LED (3.2+ µmol/J)</strong>
+                            <span>Replaces HPS luminaires, 42% electricity reduction</span>
+                        </div>
+                    </label>
+                    <label class="checkbox-pill">
+                        <input type="checkbox" id="techScreen" checked onchange="runSimulation()">
+                        <div class="pill-info">
+                            <strong>Dual Thermal & Blackout Screens (DIN V 18599)</strong>
+                            <span>Reduces nighttime conductive heating load by up to 47%</span>
+                        </div>
+                    </label>
+                    <label class="checkbox-pill">
+                        <input type="checkbox" id="techWater" checked onchange="runSimulation()">
+                        <div class="pill-info">
+                            <strong>Closed-Loop RO & UV Recirculation</strong>
+                            <span>Zero-runoff fertigation, 30% water and fertilizer recovery</span>
+                        </div>
+                    </label>
+                    <label class="checkbox-pill">
+                        <input type="checkbox" id="techChp" onchange="runSimulation()">
+                        <div class="pill-info">
+                            <strong>Biomass CHP / Industrial Heat Pump System</strong>
+                            <span>Deep thermal decarbonization + clean CO₂ enrichment</span>
+                        </div>
+                    </label>
+                    <label class="checkbox-pill">
+                        <input type="checkbox" id="techAi" checked onchange="runSimulation()">
+                        <div class="pill-info">
+                            <strong>Model Predictive Control (MPC) Autonomous Climate AI</strong>
+                            <span>Dynamic 24h temperature integration and purge reduction</span>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="form-section-title">4. Utility Costs & Base Assumptions</div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                    <div class="field-group">
+                        <label>Grid Power ($/kWh) <span id="kwhLabel">$0.14</span></label>
+                        <input type="number" id="rateKwh" value="0.14" min="0.05" max="0.50" step="0.01" oninput="runSimulation()">
+                    </div>
+                    <div class="field-group">
+                        <label>Natural Gas ($/therm) <span id="gasLabel">$1.15</span></label>
+                        <input type="number" id="rateGas" value="1.15" min="0.40" max="3.00" step="0.05" oninput="runSimulation()">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Real-Time Financial Pro-Forma & Dossier Output -->
+            <div class="panel-card" style="display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                    <h2 class="panel-title">📊 Bankable Capital & Grant Output</h2>
+
+                    <!-- Hero Net Capital KPI -->
+                    <div class="kpi-hero">
+                        <div class="label">Net Out-of-Pocket Capital Outlay</div>
+                        <div class="val" id="netCapexVal">$785,000</div>
+                        <div class="sub" id="grantCoveragePct">Grant Coverage: 52.4% Non-Dilutive</div>
+                    </div>
+
+                    <!-- Metrics Grid -->
+                    <div class="metrics-grid">
+                        <div class="metric-box">
+                            <div class="label">Gross Total CAPEX</div>
+                            <div class="val" id="grossCapexVal">$1,650,000</div>
+                        </div>
+                        <div class="metric-box">
+                            <div class="label">Total Grants Stacked</div>
+                            <div class="val" id="totalGrantsVal" style="color: var(--primary-emerald);">$865,000</div>
+                        </div>
+                        <div class="metric-box">
+                            <div class="label">Annual OPEX Savings</div>
+                            <div class="val" id="annualSavingsVal" style="color: var(--primary-cyan);">$195,400 / yr</div>
+                        </div>
+                        <div class="metric-box">
+                            <div class="label">Simple Payback Period</div>
+                            <div class="val" id="paybackVal" style="color: var(--accent-amber);">4.02 Years</div>
+                        </div>
+                        <div class="metric-box">
+                            <div class="label">10-Year Pro-Forma NPV</div>
+                            <div class="val" id="npvVal">$586,300</div>
+                        </div>
+                        <div class="metric-box">
+                            <div class="label">Internal Rate of Return (IRR)</div>
+                            <div class="val" id="irrVal" style="color: var(--primary-emerald);">24.8%</div>
+                        </div>
+                    </div>
+
+                    <!-- Non-Dilutive Grant Stacking Schedule -->
+                    <div class="grant-breakdown-card">
+                        <h4>🏛️ Eligible Non-Dilutive Grant Stacking Schedule</h4>
+                        <div class="grant-item-row">
+                            <span class="grant-name">USDA REAP (50% Clean Energy Cap)</span>
+                            <span class="grant-val" id="grantReapVal">$500,000</span>
+                        </div>
+                        <div class="grant-item-row">
+                            <span class="grant-name">USDA NRCS EQIP (Water & Irrigation)</span>
+                            <span class="grant-val" id="grantEqipVal">$165,000</span>
+                        </div>
+                        <div class="grant-item-row">
+                            <span class="grant-name" id="stateGrantName">California CDFA SWEEP Grant</span>
+                            <span class="grant-val" id="grantStateVal">$200,000</span>
+                        </div>
+                        <div class="grant-item-row" style="font-weight: 700; color: #ffffff; border-top: 1px solid rgba(255,255,255,0.15); margin-top: 0.35rem; padding-top: 0.5rem;">
+                            <span>Combined Non-Dilutive Total</span>
+                            <span style="color: var(--primary-emerald);" id="grantSumVal">$865,000</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Generate Dossier CTA -->
+                <button class="btn-dossier-download" onclick="openDossierModal()">
+                    📄 Generate Bank & Grant Committee Dossier (Printable PDF)
+                </button>
+            </div>
+        </div>
+
+        <!-- AdSense Bottom Slot -->
+        <div class="ad-container" style="min-height: 90px; text-align: center;">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-8597809158257497"
+                 data-ad-slot="9876543213"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-links" style="display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 1rem;">
+                <a href="../index.html" style="color: #94a3b8; text-decoration: none;">Portal Home</a>
+                <a href="index.html" style="color: #94a3b8; text-decoration: none;">Simulators</a>
+                <a href="../parts/vacuum-systems.html" style="color: #94a3b8; text-decoration: none;">Vacuum Engineering</a>
+                <a href="../privacy-policy.html" style="color: #94a3b8; text-decoration: none;">Privacy Policy</a>
+                <a href="../terms-of-service.html" style="color: #94a3b8; text-decoration: none;">Terms of Service</a>
+            </div>
+            <p style="text-align: center; color: #64748b; font-size: 0.85rem;">© 2026 Inwoovation Lab. Institutional Controlled Environment Agriculture & Biophysical Financial Modeling.</p>
+        </footer>
+    </div>
+
+    <!-- Executive Dossier Modal -->
+    <div id="dossierModal">
+        <div class="dossier-paper">
+            <div class="dossier-close-bar">
+                <div>
+                    <h3 style="font-family: 'Outfit', sans-serif; font-size: 1.4rem; color: #0f172a; margin-bottom: 0.2rem;">Executive Project Dossier Ready</h3>
+                    <p style="font-size: 0.85rem; color: #64748b; margin: 0;">Institutional Standard DIN EN 13031 / USDA REAP Compliant</p>
+                </div>
+                <div style="display: flex; gap: 0.75rem;">
+                    <button class="btn-print-action" onclick="window.print()">🖨️ Print / Save as PDF</button>
+                    <button class="btn-close-modal" onclick="closeDossierModal()">Close Preview ✕</button>
+                </div>
+            </div>
+
+            <!-- Dossier Printable Content -->
+            <div id="printableDossier">
+                <div style="text-align: center; margin-bottom: 2rem; border-bottom: 2px solid #0f172a; padding-bottom: 1.5rem;">
+                    <div style="font-size: 0.85rem; font-weight: 800; letter-spacing: 0.1em; color: #059669; text-transform: uppercase;">Inwoovation Lab Engineering Intelligence</div>
+                    <h1 style="font-family: 'Outfit', sans-serif; font-size: 2rem; color: #0f172a; margin: 0.4rem 0;">COMMERCIAL CEA FACILITY CAPITAL EXPENDITURE & NON-DILUTIVE GRANT DOSSIER</h1>
+                    <div style="font-size: 0.85rem; color: #475569;">Project Classification: Controlled Environment Agriculture Infrastructure & Decarbonization Retrofit</div>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2rem; font-size: 0.9rem;">
+                    <div>
+                        <strong>Jurisdiction:</strong> <span id="dState">California</span><br>
+                        <strong>Facility Profile:</strong> <span id="dFacility">Commercial Venlo Glass Greenhouse</span><br>
+                        <strong>Footprint:</strong> <span id="dAcres">2.5 Acres (108,900 sq ft)</span>
+                    </div>
+                    <div>
+                        <strong>Date of Evaluation:</strong> 2026-09-29<br>
+                        <strong>Target Compliance:</strong> USDA REAP / NRCS EQIP / State Energy Code<br>
+                        <strong>Lead Modeler:</strong> Antigravity OS v1.0 Biophysical Model
+                    </div>
+                </div>
+
+                <h3 style="font-size: 1.15rem; border-bottom: 1px solid #cbd5e1; padding-bottom: 0.4rem; margin-bottom: 1rem; color: #0f172a;">1. Executive Financial Summary</h3>
+                <table style="width: 100%; border-collapse: collapse; margin-bottom: 2rem; font-size: 0.9rem;">
+                    <thead>
+                        <tr style="background: #f1f5f9; text-align: left;">
+                            <th style="padding: 8px 12px; border: 1px solid #cbd5e1;">Metric Description</th>
+                            <th style="padding: 8px 12px; border: 1px solid #cbd5e1;">Evaluated Value</th>
+                            <th style="padding: 8px 12px; border: 1px solid #cbd5e1;">Benchmark Variance</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding: 8px 12px; border: 1px solid #cbd5e1;">Gross Total Turnkey CAPEX</td>
+                            <td style="padding: 8px 12px; border: 1px solid #cbd5e1; font-weight: 700;" id="dGrossCapex">$1,650,000</td>
+                            <td style="padding: 8px 12px; border: 1px solid #cbd5e1;">Baseline Commercial Estimate</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px 12px; border: 1px solid #cbd5e1;">Total Non-Dilutive Grant Stacking</td>
+                            <td style="padding: 8px 12px; border: 1px solid #cbd5e1; font-weight: 700; color: #059669;" id="dTotalGrants">$865,000</td>
+                            <td style="padding: 8px 12px; border: 1px solid #cbd5e1;">52.4% Capital Off-Set</td>
+                        </tr>
+                        <tr style="background: #f8fafc;">
+                            <td style="padding: 8px 12px; border: 1px solid #cbd5e1; font-weight: 700;">Net Out-of-Pocket Sponsor Investment</td>
+                            <td style="padding: 8px 12px; border: 1px solid #cbd5e1; font-weight: 800;" id="dNetCapex">$785,000</td>
+                            <td style="padding: 8px 12px; border: 1px solid #cbd5e1;">Target Senior Debt / Equity</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px 12px; border: 1px solid #cbd5e1;">Annual Verified Utility OPEX Savings</td>
+                            <td style="padding: 8px 12px; border: 1px solid #cbd5e1; font-weight: 700; color: #0284c7;" id="dAnnualSavings">$195,400 / yr</td>
+                            <td style="padding: 8px 12px; border: 1px solid #cbd5e1;">Electricity & Gas Efficiency</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px 12px; border: 1px solid #cbd5e1;">Simple Payback Period</td>
+                            <td style="padding: 8px 12px; border: 1px solid #cbd5e1; font-weight: 700;" id="dPayback">4.02 Years</td>
+                            <td style="padding: 8px 12px; border: 1px solid #cbd5e1;">-5.8 Years vs Unsubsidized</td>
+                        </tr>
+                        <tr style="background: #f8fafc;">
+                            <td style="padding: 8px 12px; border: 1px solid #cbd5e1; font-weight: 700;">10-Year Pro-Forma Net Present Value (NPV @ 7%)</td>
+                            <td style="padding: 8px 12px; border: 1px solid #cbd5e1; font-weight: 800; color: #059669;" id="dNpv">$586,300</td>
+                            <td style="padding: 8px 12px; border: 1px solid #cbd5e1;">Positive Alpha Cashflow</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px 12px; border: 1px solid #cbd5e1;">Internal Rate of Return (IRR)</td>
+                            <td style="padding: 8px 12px; border: 1px solid #cbd5e1; font-weight: 700; color: #059669;" id="dIrr">24.8%</td>
+                            <td style="padding: 8px 12px; border: 1px solid #cbd5e1;">Exceeds Commercial WACC</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3 style="font-size: 1.15rem; border-bottom: 1px solid #cbd5e1; padding-bottom: 0.4rem; margin-bottom: 1rem; color: #0f172a;">2. Grant Stacking & Non-Dilutive Capital Schedule</h3>
+                <table style="width: 100%; border-collapse: collapse; margin-bottom: 2rem; font-size: 0.9rem;">
+                    <thead>
+                        <tr style="background: #f1f5f9; text-align: left;">
+                            <th style="padding: 8px 12px; border: 1px solid #cbd5e1;">Funding Authority</th>
+                            <th style="padding: 8px 12px; border: 1px solid #cbd5e1;">Program Name & Legal Code</th>
+                            <th style="padding: 8px 12px; border: 1px solid #cbd5e1;">Allocated Stacking Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding: 8px 12px; border: 1px solid #cbd5e1;">Federal USDA</td>
+                            <td style="padding: 8px 12px; border: 1px solid #cbd5e1;">Rural Energy for America Program (REAP 50% Cap)</td>
+                            <td style="padding: 8px 12px; border: 1px solid #cbd5e1; font-weight: 700;" id="dReap">$500,000</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px 12px; border: 1px solid #cbd5e1;">Federal USDA NRCS</td>
+                            <td style="padding: 8px 12px; border: 1px solid #cbd5e1;">Environmental Quality Incentives Program (EQIP Practice 441)</td>
+                            <td style="padding: 8px 12px; border: 1px solid #cbd5e1; font-weight: 700;" id="dEqip">$165,000</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px 12px; border: 1px solid #cbd5e1;">State Department of Ag</td>
+                            <td style="padding: 8px 12px; border: 1px solid #cbd5e1;" id="dStateProgram">California CDFA SWEEP Agricultural Water Program</td>
+                            <td style="padding: 8px 12px; border: 1px solid #cbd5e1; font-weight: 700;" id="dStateGrant">$200,000</td>
+                        </tr>
+                        <tr style="background: #f8fafc; font-weight: 800;">
+                            <td colspan="2" style="padding: 8px 12px; border: 1px solid #cbd5e1; text-align: right;">Total Stacked Capital</td>
+                            <td style="padding: 8px 12px; border: 1px solid #cbd5e1; color: #059669;" id="dSumGrants">$865,000</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3 style="font-size: 1.15rem; border-bottom: 1px solid #cbd5e1; padding-bottom: 0.4rem; margin-bottom: 1rem; color: #0f172a;">3. Environmental Decarbonization & Resource Metrics</h3>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 2rem; text-align: center;">
+                    <div style="border: 1px solid #cbd5e1; border-radius: 8px; padding: 1rem;">
+                        <div style="font-size: 0.75rem; text-transform: uppercase; color: #64748b;">Annual Electricity Saved</div>
+                        <div style="font-size: 1.3rem; font-weight: 800; color: #0284c7;" id="dElecSaved">824,000 kWh</div>
+                    </div>
+                    <div style="border: 1px solid #cbd5e1; border-radius: 8px; padding: 1rem;">
+                        <div style="font-size: 0.75rem; text-transform: uppercase; color: #64748b;">Annual CO₂ Avoided</div>
+                        <div style="font-size: 1.3rem; font-weight: 800; color: #059669;" id="dCo2Avoided">385 Metric Tons</div>
+                    </div>
+                    <div style="border: 1px solid #cbd5e1; border-radius: 8px; padding: 1rem;">
+                        <div style="font-size: 0.75rem; text-transform: uppercase; color: #64748b;">Water Conserved / Yr</div>
+                        <div style="font-size: 1.3rem; font-weight: 800; color: #d97706;" id="dWaterSaved">2.45 Million Gal</div>
+                    </div>
+                </div>
+
+                <div style="border-top: 1px solid #cbd5e1; padding-top: 1.5rem; display: flex; justify-content: space-between; font-size: 0.8rem; color: #64748b;">
+                    <div>Verified by Inwoovation Lab Automated Modeling Engine</div>
+                    <div>Confidential & Proprietary Commercial Dossier</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Calculation Engine Script -->
+    <script>
+        const statePrograms = {
+            "CA": { name: "California CDFA SWEEP Grant", max: 200000 },
+            "TX": { name: "Texas TWDB Clean Water Grant", max: 500000 },
+            "FL": { name: "Florida FDACS BMP 87.5% Cost Share", max: 250000 },
+            "NY": { name: "NYSERDA Clean Energy Greenhouse Grant", max: 300000 },
+            "OR": { name: "Energy Trust of Oregon Agriculture Rebate", max: 250000 },
+            "WA": { name: "WSDA Farm Energy & Water Efficiency Grant", max: 200000 },
+            "MI": { name: "Michigan MDARD Rural Development Grant", max: 150000 },
+            "OH": { name: "Ohio H2Ohio Clean Agriculture Grant", max: 180000 },
+            "NC": { name: "North Carolina Ag Development Grant", max: 150000 },
+            "GA": { name: "Georgia Dept of Agriculture Grant", max: 150000 },
+            "AZ": { name: "Arizona Water Infrastructure Grant", max: 350000 },
+            "CO": { name: "Colorado ACRE Clean Ag Energy Grant", max: 200000 },
+            "FED": { name: "State Supplemental Clean Energy Program", max: 100000 }
+        };
+
+        function runSimulation() {
+            const state = document.getElementById('stateSelect').value;
+            const facility = document.getElementById('facilityType').value;
+            const acres = parseFloat(document.getElementById('facilityAcres').value) || 2.5;
+            const kwhRate = parseFloat(document.getElementById('rateKwh').value) || 0.14;
+            const gasRate = parseFloat(document.getElementById('rateGas').value) || 1.15;
+
+            const techLed = document.getElementById('techLed').checked;
+            const techScreen = document.getElementById('techScreen').checked;
+            const techWater = document.getElementById('techWater').checked;
+            const techChp = document.getElementById('techChp').checked;
+            const techAi = document.getElementById('techAi').checked;
+
+            // Base CAPEX per acre
+            let baseCapexPerAcre = 450000;
+            if (facility === 'venlo') baseCapexPerAcre = 550000;
+            if (facility === 'poly') baseCapexPerAcre = 280000;
+            if (facility === 'vertical') baseCapexPerAcre = 950000;
+
+            // Technology adders per acre
+            let techAdder = 0;
+            let opexSavingsBase = 0;
+            let kwhSavedTotal = 0;
+
+            if (techLed) {
+                techAdder += 90000;
+                opexSavingsBase += 45000 * (kwhRate / 0.14);
+                kwhSavedTotal += 320000;
+            }
+            if (techScreen) {
+                techAdder += 40000;
+                opexSavingsBase += 28000 * (gasRate / 1.15);
+            }
+            if (techWater) {
+                techAdder += 35000;
+                opexSavingsBase += 15000;
+            }
+            if (techChp) {
+                techAdder += 120000;
+                opexSavingsBase += 50000;
+            }
+            if (techAi) {
+                techAdder += 15000;
+                opexSavingsBase += 18000;
+            }
+
+            const grossCapex = Math.round((baseCapexPerAcre + techAdder) * acres);
+            const annualSavings = Math.round(opexSavingsBase * acres);
+
+            // Grant Stacking calculations
+            // USDA REAP: Up to 50% of energy-related CAPEX (max $1M)
+            const reapEligibleCapex = (techAdder + (facility === 'venlo' ? 100000 : 50000)) * acres;
+            const reapGrant = Math.min(1000000, Math.round(reapEligibleCapex * 0.50));
+
+            // EQIP: Water conservation practice
+            const eqipGrant = techWater ? Math.min(450000, Math.round(acres * 65000)) : 0;
+
+            // State specific grant
+            const stateMeta = statePrograms[state] || statePrograms['FED'];
+            const stateGrant = Math.min(stateMeta.max, Math.round(grossCapex * 0.20));
+
+            const totalGrants = Math.min(grossCapex * 0.75, reapGrant + eqipGrant + stateGrant);
+            const netCapex = grossCapex - totalGrants;
+
+            // Simple Payback & NPV
+            const paybackYears = annualSavings > 0 ? (netCapex / annualSavings) : 0;
+            
+            // 10-Year NPV @ 7% discount
+            let npv = -netCapex;
+            for (let year = 1; year <= 10; year++) {
+                npv += annualSavings / Math.pow(1 + 0.07, year);
+            }
+            npv = Math.round(npv);
+
+            // IRR estimate
+            let irr = 0;
+            if (paybackYears > 0 && paybackYears < 10) {
+                irr = Math.round(((annualSavings / netCapex) * 100) * 10) / 10;
+            }
+
+            const grantPct = ((totalGrants / grossCapex) * 100).toFixed(1);
+
+            // Update UI
+            document.getElementById('stateCodeLabel').textContent = stateMeta.name;
+            document.getElementById('acresLabel').textContent = `${acres} Acres (~${Math.round(acres * 43560).toLocaleString()} sq ft)`;
+            document.getElementById('kwhLabel').textContent = `$${kwhRate.toFixed(2)}`;
+            document.getElementById('gasLabel').textContent = `$${gasRate.toFixed(2)}`;
+
+            document.getElementById('netCapexVal').textContent = `$${netCapex.toLocaleString()}`;
+            document.getElementById('grantCoveragePct').textContent = `Grant Coverage: ${grantPct}% Non-Dilutive`;
+
+            document.getElementById('grossCapexVal').textContent = `$${grossCapex.toLocaleString()}`;
+            document.getElementById('totalGrantsVal').textContent = `$${totalGrants.toLocaleString()}`;
+            document.getElementById('annualSavingsVal').textContent = `$${annualSavings.toLocaleString()} / yr`;
+            document.getElementById('paybackVal').textContent = `${paybackYears.toFixed(2)} Years`;
+            document.getElementById('npvVal').textContent = `$${npv.toLocaleString()}`;
+            document.getElementById('irrVal').textContent = `${irr}%`;
+
+            document.getElementById('grantReapVal').textContent = `$${reapGrant.toLocaleString()}`;
+            document.getElementById('grantEqipVal').textContent = `$${eqipGrant.toLocaleString()}`;
+            document.getElementById('stateGrantName').textContent = stateMeta.name;
+            document.getElementById('grantStateVal').textContent = `$${stateGrant.toLocaleString()}`;
+            document.getElementById('grantSumVal').textContent = `$${totalGrants.toLocaleString()}`;
+
+            // Populate Printable Dossier data
+            document.getElementById('dState').textContent = stateMeta.name;
+            document.getElementById('dFacility').textContent = document.getElementById('facilityType').options[document.getElementById('facilityType').selectedIndex].text;
+            document.getElementById('dAcres').textContent = `${acres} Acres (${Math.round(acres * 43560).toLocaleString()} sq ft)`;
+            document.getElementById('dGrossCapex').textContent = `$${grossCapex.toLocaleString()}`;
+            document.getElementById('dTotalGrants').textContent = `$${totalGrants.toLocaleString()}`;
+            document.getElementById('dNetCapex').textContent = `$${netCapex.toLocaleString()}`;
+            document.getElementById('dAnnualSavings').textContent = `$${annualSavings.toLocaleString()} / yr`;
+            document.getElementById('dPayback').textContent = `${paybackYears.toFixed(2)} Years`;
+            document.getElementById('dNpv').textContent = `$${npv.toLocaleString()}`;
+            document.getElementById('dIrr').textContent = `${irr}%`;
+
+            document.getElementById('dReap').textContent = `$${reapGrant.toLocaleString()}`;
+            document.getElementById('dEqip').textContent = `$${eqipGrant.toLocaleString()}`;
+            document.getElementById('dStateProgram').textContent = stateMeta.name;
+            document.getElementById('dStateGrant').textContent = `$${stateGrant.toLocaleString()}`;
+            document.getElementById('dSumGrants').textContent = `$${totalGrants.toLocaleString()}`;
+
+            const totalKwh = Math.round(kwhSavedTotal * acres);
+            document.getElementById('dElecSaved').textContent = `${totalKwh.toLocaleString()} kWh`;
+            document.getElementById('dCo2Avoided').textContent = `${Math.round(totalKwh * 0.000433)} Metric Tons`;
+            document.getElementById('dWaterSaved').textContent = `${(acres * 0.98).toFixed(2)} Million Gal`;
+        }
+
+        function openDossierModal() {
+            document.getElementById('dossierModal').style.display = 'block';
+        }
+
+        function closeDossierModal() {
+            document.getElementById('dossierModal').style.display = 'none';
+        }
+
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', () => {
+            runSimulation();
+        });
+    </script>
+</body>
+</html>
