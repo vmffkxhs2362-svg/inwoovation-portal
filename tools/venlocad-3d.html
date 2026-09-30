@@ -389,6 +389,37 @@
       background: repeating-linear-gradient(45deg, #334155, #334155 6px, #1e293b 6px, #1e293b 12px);
       color: #94a3b8; font-size: 0.65rem;
     }
+
+    /* Floating Proactive Lead Magnet Chip (Bottom-Right, above HUD) */
+    #floating-consult-chip {
+      position: absolute; bottom: 84px; right: 20px; z-index: 25;
+      background: rgba(13, 20, 36, 0.95); backdrop-filter: blur(20px);
+      border: 1px solid rgba(16, 185, 129, 0.45); border-radius: 12px;
+      padding: 10px 14px; display: none; align-items: center; gap: 14px;
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.7), 0 0 20px rgba(16, 185, 129, 0.2);
+      animation: slideUpChip 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    @keyframes slideUpChip {
+      from { opacity: 0; transform: translateY(14px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    #floating-consult-chip:hover {
+      border-color: rgba(16, 185, 129, 0.8);
+      box-shadow: 0 14px 40px rgba(0, 0, 0, 0.8), 0 0 25px rgba(16, 185, 129, 0.3);
+    }
+
+    /* Post-Export Success & Consulting Callout Toast */
+    #export-lead-modal {
+      position: fixed; top: 76px; right: 20px; z-index: 105;
+      background: rgba(15, 23, 42, 0.96); backdrop-filter: blur(20px);
+      border: 1px solid var(--accent-cyan); border-radius: 14px;
+      padding: 14px 18px; max-width: 420px; box-shadow: 0 16px 45px rgba(0, 0, 0, 0.8), 0 0 25px rgba(6, 182, 212, 0.25);
+      display: none; animation: slideInExport 0.3s ease-out;
+    }
+    @keyframes slideInExport {
+      from { opacity: 0; transform: translateX(20px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
   </style>
 
   <!-- Three.js CDN -->
@@ -768,6 +799,43 @@
     </div>
   </aside>
 
+  <!-- Proactive Floating Advisory Chip (Appears upon engagement) -->
+  <div id="floating-consult-chip">
+    <div style="display: flex; align-items: center; gap: 8px;">
+      <span style="font-size: 1.25rem;">🧑‍💻</span>
+      <div>
+        <div style="font-size: 0.76rem; font-weight: 800; color: #34d399;">온실 설계 &amp; 견적 검토가 필요하신가요?</div>
+        <div style="font-size: 0.67rem; color: #94a3b8;">황인우 엔지니어 (충남대 CEA) 1:1 집중 케어</div>
+      </div>
+    </div>
+    <div style="display: flex; align-items: center; gap: 6px;">
+      <button onclick="openConsultModal('floating_chip')" class="btn btn-primary" style="padding: 4px 11px; font-size: 0.72rem; background: linear-gradient(135deg, #059669, #10b981); border: none; font-weight: 800;">1:1 무료 자문</button>
+      <button onclick="dismissConsultChip()" style="background: none; border: none; color: #64748b; font-size: 1.15rem; cursor: pointer; padding: 0 4px; line-height: 1;" title="닫기">&times;</button>
+    </div>
+  </div>
+
+  <!-- Post-Export Success & Consulting Callout Toast -->
+  <div id="export-lead-modal">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; margin-bottom: 8px;">
+      <div style="display: flex; align-items: center; gap: 6px;">
+        <span style="font-size: 1.25rem;">📥</span>
+        <strong id="export-lead-title" style="color: var(--accent-sky); font-size: 0.84rem;">설계 파일 다운로드 완료!</strong>
+      </div>
+      <button onclick="closeExportLeadModal()" style="background: none; border: none; color: var(--text-muted); font-size: 1.15rem; cursor: pointer; line-height: 1;" title="닫기">&times;</button>
+    </div>
+    <p id="export-lead-desc" style="font-size: 0.72rem; color: #cbd5e1; margin-bottom: 12px; line-height: 1.45;">
+      시공사 견적 교차검증(자재 거품 제거) 또는 지자체 인허가용 구조계산서가 필요하신가요? 황인우 엔지니어가 1:1로 직접 검토해 드립니다.
+    </p>
+    <div style="display: flex; gap: 6px;">
+      <button class="btn btn-primary" onclick="openConsultModal('post_export'); closeExportLeadModal();" style="flex: 1; padding: 7px 10px; font-size: 0.74rem; background: linear-gradient(135deg, #059669, #10b981); border: none; font-weight: 800;">
+        🎯 1:1 맞춤 검토 신청하기
+      </button>
+      <button class="btn" onclick="closeExportLeadModal()" style="padding: 7px 10px; font-size: 0.74rem;">
+        닫기
+      </button>
+    </div>
+  </div>
+
   <!-- Live HUD Metrics (Bottom Right) -->
   <div id="hud-panel">
     <div class="hud-item">
@@ -909,6 +977,7 @@
         </div>
         <div style="display: flex; gap: 8px;">
           <button class="btn btn-primary" onclick="exportCuttingCSV()">📥 절단 가공표 (CSV) 다운로드</button>
+          <button class="btn" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(6, 182, 212, 0.2)); border-color: #10b981; color: #34d399; font-weight: 700;" onclick="openConsultModal('cutting_modal')">🧑‍💻 가공·제작 감리 및 견적 검토 신청</button>
           <button class="btn" onclick="window.print()">🖨️ 가공 지시서 인쇄</button>
           <button class="btn" onclick="closeCuttingModal()">닫기</button>
         </div>
@@ -986,11 +1055,14 @@
         <div style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 10px; padding: 12px; display: flex; flex-direction: column; gap: 8px;">
           <div style="font-size: 0.8rem; font-weight: 700; color: #fff;">📩 간편 문의 접수 방법 (24시간 내 직통 회신)</div>
           <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-            <button class="btn btn-primary" style="flex: 1; margin: 0; background: linear-gradient(135deg, #059669, #10b981); border: none;" onclick="sendConsultEmail()">
-              ✉️ 현재 설계안 첨부하여 이메일 문의하기
+            <button class="btn btn-primary" style="flex: 1; min-width: 170px; margin: 0; background: linear-gradient(135deg, #059669, #10b981); border: none; font-weight: 800;" onclick="sendConsultEmail()">
+              ✉️ 현재 설계안 첨부 이메일 발송
             </button>
-            <button class="btn" style="flex: 1; margin: 0;" onclick="copyConsultLinkAndOpen()">
-              📋 설계 공유 링크 복사 &amp; 고객센터 문의
+            <button class="btn" style="flex: 1; min-width: 170px; margin: 0; background: rgba(56, 189, 248, 0.15); border-color: rgba(56, 189, 248, 0.4); color: #38bdf8; font-weight: 700;" onclick="copyConsultText()">
+              📋 문의 양식 복사 (웹메일/메신저)
+            </button>
+            <button class="btn" style="flex: 1; min-width: 140px; margin: 0;" onclick="copyConsultLinkAndOpen()">
+              🌐 포털 고객센터 문의
             </button>
           </div>
         </div>
@@ -1142,10 +1214,17 @@
 
       window.addEventListener('resize', onWindowResize);
       animate();
+
+      // Proactive Advisory Trigger (after 90s of design work)
+      setTimeout(checkProactiveEngagement, 90000);
     }
 
     // --- 3. Procedural Greenhouse Generator ---
     function buildGreenhouse() {
+      if (typeof onUserParamInteraction === 'function') {
+        onUserParamInteraction();
+      }
+
       while (greenhouseGroup.children.length > 0) {
         const obj = greenhouseGroup.children[0];
         if (obj.geometry) obj.geometry.dispose();
@@ -1879,6 +1958,7 @@
       const jsonStr = JSON.stringify(projectData, null, 2);
       downloadFile(`VenloCAD_Project_${params.bays}Bay_${params.spanWidth}m.vcad`, "application/json", jsonStr);
       showToast("💾 .vcad 프로젝트 파일이 저장되었습니다.");
+      showExportLeadNotice('vcad');
       trackGA4Event('vcad_file_export', {
         format: 'vcad',
         bays: params.bays,
@@ -2218,6 +2298,7 @@
         csv += `"${it.id}","${it.cat}","${it.spec}",${it.len},"${it.qty}",${it.unitKg},${it.totalKg},"${it.unitPrice}",${it.totalCost}\n`;
       });
       downloadFile("VenloCAD_BOM_Specification.csv", "text/csv;charset=utf-8;", csv);
+      showExportLeadNotice('bom');
       trackGA4Event('bom_export_csv', { format: 'csv' });
     }
 
@@ -2445,6 +2526,7 @@
       });
       downloadFile("VenloCAD_Pipe_Cutting_Schedule.csv", "text/csv;charset=utf-8;", csv);
       showToast("💾 1D 절단 가공표(CSV)가 다운로드되었습니다!");
+      showExportLeadNotice('cutting');
       trackGA4Event('cutting_export_csv', { format: 'csv' });
     }
 
@@ -2596,6 +2678,7 @@
 
       dxf += "0\nENDSEC\n0\nEOF\n";
       downloadFile("VenloCAD_Master_Production_Drawing.dxf", "application/dxf", dxf);
+      showExportLeadNotice('dxf');
       trackGA4Event('cad_export_dxf', { drawing_type: 'master_3view', bays: bays });
     }
 
@@ -2632,6 +2715,7 @@
       });
       stl += "endsolid VenloCAD_3D_Model\n";
       downloadFile("VenloCAD_Greenhouse_3D.stl", "application/sla", stl);
+      showExportLeadNotice('stl');
       trackGA4Event('cad_export_stl', { mesh_type: 'greenhouse_frame' });
     }
 
@@ -2756,6 +2840,124 @@
       setTimeout(() => {
         window.open('https://inwoovation.com/contact.html', '_blank');
       }, 1000);
+    }
+
+    function copyConsultText() {
+      const W = params.spanWidth;
+      const bays = params.bays;
+      const L = params.totalLength;
+      const H = params.gutterHeight;
+      const area = Math.round(W * bays * L);
+      const pyeong = Math.round(area * 0.3025);
+      const items = generateBOMData();
+      let sumCost = 0;
+      items.forEach(it => sumCost += it.totalCost);
+      const costManwon = Math.round(sumCost / 10000);
+
+      const hash = `#span=${params.spanWidth}&gutter=${params.gutterHeight}&bays=${params.bays}&len=${params.totalLength}&post=${params.postSpacing}&pitch=${params.roofPitch}&wind=${params.windSpeed}&snow=${params.snowDepth}&crop=${params.cropLoad}&col=${encodeURIComponent(params.columnSize)}`;
+      const shareUrl = window.location.origin + window.location.pathname + hash;
+
+      const inquiryText = 
+`[VenloCAD 3D 온실 1:1 맞춤 설계 및 감리 컨설팅 문의]
+- 수신: 황인우 엔지니어 (contact@inwoovation.com)
+- 온실 규격: ${W}m 폭 x ${bays}연동 x ${L}m 연장 (총 ${area}m² / 약 ${pyeong}평)
+- 처마고 / 지붕각: ${H}m / ${params.roofPitch}°
+- 기둥 규격: 각관 ${params.columnSize}
+- 설계 하중: 풍속 ${params.windSpeed}m/s, 적설 ${params.snowDepth}cm
+- 추정 자재비: 약 ${costManwon.toLocaleString()} 만원
+- 3D 설계 복원 링크: ${shareUrl}
+
+[희망 문의 사항]
+( ) 시공사 견적 교차검증 (BOM 자재 거품 제거)
+( ) 현장 부지 맞춤형 2D/3D 실시설계 도면 납품
+( ) 정부 스마트팜 보조금 및 지자체 인허가 구조계산서
+( ) 작물별(딸기/토마토/엽채류) 시설 최적화 컨설팅
+
+[문의자 정보]
+- 성함/상호: 
+- 연락처: 
+- 설치 예정 지역(시/군): 
+- 상세 문의 내용: `;
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(inquiryText).then(() => {
+          showToast("📋 문의 양식이 복사되었습니다! 메일/메신저에 붙여넣으세요.");
+        }).catch(() => {
+          fallbackCopyText(inquiryText);
+        });
+      } else {
+        fallbackCopyText(inquiryText);
+      }
+
+      trackGA4Event('consult_text_copied', {
+        floor_area_pyeong: pyeong,
+        estimated_cost_manwon: costManwon
+      });
+    }
+
+    function fallbackCopyText(text) {
+      const ta = document.createElement("textarea");
+      ta.value = text;
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand("copy");
+      document.body.removeChild(ta);
+      showToast("📋 문의 양식이 복사되었습니다! 메일/메신저에 붙여넣으세요.");
+    }
+
+    // --- 15. Proactive Lead Magnet & Post-Export Advisory ---
+    function showExportLeadNotice(type) {
+      const modal = document.getElementById('export-lead-modal');
+      if (!modal) return;
+
+      const typeMap = {
+        'vcad': '💾 .vcad 프로젝트 파일',
+        'bom': '📊 자재 명세서(BOM) & 시공 견적서',
+        'cutting': '✂️ 1D 파이프 절단 가공표',
+        'dxf': '📐 2D DXF 엔지니어링 도면',
+        'stl': '🧊 3D CAD 메쉬 모델'
+      };
+
+      const title = typeMap[type] || '설계 파일';
+      document.getElementById('export-lead-title').innerText = `${title} 다운로드 완료!`;
+      document.getElementById('export-lead-desc').innerText = `내 PC에 파일 저장이 완료되었습니다. 시공사 견적 교차검증(자재 거품 제거)이나 지자체 인허가용 구조계산서 작성이 필요하신가요? 황인우 엔지니어가 1:1로 직접 검토해 드립니다.`;
+      modal.style.display = 'block';
+
+      trackGA4Event('export_lead_modal_shown', { export_type: type });
+    }
+
+    function closeExportLeadModal() {
+      const modal = document.getElementById('export-lead-modal');
+      if (modal) modal.style.display = 'none';
+    }
+
+    let userParamInteractions = 0;
+    let proactiveChipTriggered = false;
+
+    function onUserParamInteraction() {
+      userParamInteractions++;
+      checkProactiveEngagement();
+    }
+
+    function checkProactiveEngagement() {
+      if (proactiveChipTriggered) return;
+      if (sessionStorage.getItem('dismiss_consult_chip') === '1') return;
+
+      if (userParamInteractions >= 2) {
+        const chip = document.getElementById('floating-consult-chip');
+        if (chip) {
+          chip.style.display = 'flex';
+          proactiveChipTriggered = true;
+          trackGA4Event('proactive_consult_chip_shown', { interactions: userParamInteractions });
+        }
+      }
+    }
+
+    function dismissConsultChip() {
+      const chip = document.getElementById('floating-consult-chip');
+      if (chip) chip.style.display = 'none';
+      sessionStorage.setItem('dismiss_consult_chip', '1');
+      trackGA4Event('proactive_consult_chip_dismissed');
     }
 
     function onWindowResize() {
