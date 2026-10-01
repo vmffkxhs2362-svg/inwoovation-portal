@@ -138,12 +138,12 @@
     #sidebar::-webkit-scrollbar-thumb:hover { background: var(--accent-cyan); }
 
     .tab-nav {
-      display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; margin-bottom: 14px;
+      display: grid; grid-template-columns: repeat(5, 1fr); gap: 4px; margin-bottom: 14px;
       background: rgba(0, 0, 0, 0.35); padding: 4px; border-radius: 10px;
     }
     .tab-btn {
       background: transparent; border: none; color: var(--text-muted);
-      padding: 6px 2px; font-size: 0.7rem; font-weight: 600; border-radius: 6px;
+      padding: 6px 1px; font-size: 0.67rem; font-weight: 600; border-radius: 6px;
       cursor: pointer; transition: all 0.2s ease; text-align: center;
     }
     .tab-btn.active {
@@ -507,10 +507,11 @@
   <!-- Left Parametric Sidebar -->
   <aside id="sidebar">
     <div class="tab-nav">
-      <button class="tab-btn active" onclick="switchTab('tab-geo', this)">📐 치수/평수</button>
-      <button class="tab-btn" onclick="switchTab('tab-struct', this)">🔩 복합하중</button>
-      <button class="tab-btn" onclick="switchTab('tab-solar', this)">☀️ 일조/음영</button>
-      <button class="tab-btn" onclick="switchTab('tab-export', this)">💾 도면/저장</button>
+      <button class="tab-btn active" onclick="switchTab('tab-geo', this)">📐 치수</button>
+      <button class="tab-btn" onclick="switchTab('tab-struct', this)">🔩 하중</button>
+      <button class="tab-btn" onclick="switchTab('tab-solar', this)">☀️ 일조</button>
+      <button class="tab-btn" onclick="switchTab('tab-vent', this)">🌬️ 천창</button>
+      <button class="tab-btn" onclick="switchTab('tab-export', this)">💾 저장</button>
     </div>
 
     <!-- TAB 1: GEOMETRY & PYEONG -->
@@ -723,7 +724,93 @@
       </div>
     </div>
 
-    <!-- TAB 4: EXPORT & SAVE & BOM -->
+    <!-- TAB 4: ROOF VENTILATION & AERODYNAMICS -->
+    <div id="tab-vent" class="tab-content" style="display: none;">
+      <div class="section-title">
+        <span>🌬️ 천창 자연 환기 &amp; 유체 역학</span>
+        <span style="font-size: 0.7rem; color: var(--accent-cyan);">Wageningen SOTA</span>
+      </div>
+
+      <!-- Vent Open Slider -->
+      <div class="param-group">
+        <div class="param-header">
+          <span>천창 개폐율 (Vent Opening)</span>
+          <span class="param-val" id="val-vent-open">35.0 % (14.0°)</span>
+        </div>
+        <input type="range" id="input-vent-open" min="0" max="100" step="1" value="35">
+      </div>
+
+      <!-- Opening Mode Pills -->
+      <div class="param-group">
+        <div class="param-header">
+          <span>환기 개폐 모드 (Ventilation Mode)</span>
+        </div>
+        <div class="crop-pills" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-top: 6px;">
+          <button type="button" class="crop-pill vent-mode-pill active" onclick="setVentSide('both', this)">
+            <span>양측 (Both)</span>
+          </button>
+          <button type="button" class="crop-pill vent-mode-pill" onclick="setVentSide('leeward', this)">
+            <span>풍하지 (Leeward)</span>
+          </button>
+          <button type="button" class="crop-pill vent-mode-pill" onclick="setVentSide('windward', this)">
+            <span>바람받이 (Windward)</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Ambient Wind Speed Slider -->
+      <div class="param-group">
+        <div class="param-header">
+          <span>외기 자연 풍속 (Ambient Breeze)</span>
+          <span class="param-val" id="val-ambient-wind">3.0 m/s</span>
+        </div>
+        <input type="range" id="input-ambient-wind" min="0.5" max="12.0" step="0.5" value="3.0">
+      </div>
+
+      <!-- Dynamic Simulation Toggle & Presets -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px;">
+        <button type="button" id="btn-toggle-vent-anim" class="btn" onclick="toggleVentAnimation()" style="font-size: 0.75rem; padding: 8px; border-color: rgba(56, 189, 248, 0.4); background: rgba(56, 189, 248, 0.1); color: var(--accent-sky);">
+          ▶️ 동적 개폐 시뮬레이션
+        </button>
+        <button type="button" class="btn" onclick="resetVentPreset('summer')" style="font-size: 0.75rem; padding: 8px;">
+          ☀️ 하계 최대환기 (100%)
+        </button>
+      </div>
+
+      <!-- Real-time Aerodynamic & Microclimate Matrix -->
+      <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 10px; padding: 12px; margin-top: 14px;">
+        <div style="font-size: 0.72rem; color: var(--text-muted); margin-bottom: 8px; font-weight: 700; display: flex; justify-content: space-between; align-items: center;">
+          <span>🍃 네덜란드 바헤닝언 온실 환기 진단:</span>
+          <span id="vent-flow-badge" class="badge" style="background: rgba(16, 185, 129, 0.2); color: #34d399; font-size: 0.65rem;">최적 자연환기 (Optimal)</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; font-size: 0.78rem; margin-bottom: 4px;">
+          <span>천창 유효 개구 면적 (Av):</span>
+          <span id="metric-vent-area" class="param-val" style="color: var(--accent-sky);">110.2 m²</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; font-size: 0.78rem; margin-bottom: 4px;">
+          <span>풍력 기류 환기량 (Gwind):</span>
+          <span id="metric-vent-wind" class="param-val">166,600 m³/h</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; font-size: 0.78rem; margin-bottom: 4px;">
+          <span>열부력 굴뚝 환기량 (Gtemp):</span>
+          <span id="metric-vent-stack" class="param-val">68,800 m³/h</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; font-size: 0.78rem; margin-bottom: 4px;">
+          <span>총 복합 환기량 (Gtot):</span>
+          <span id="metric-vent-gtot" class="param-val" style="color: var(--accent-cyan);">180,500 m³/h</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; font-size: 0.82rem; font-weight: 700; margin-top: 6px; padding-top: 6px; border-top: 1px solid rgba(255, 255, 255, 0.08);">
+          <span>시간당 환기 횟수 (ACH):</span>
+          <span id="metric-vent-ach" class="param-val" style="color: var(--accent-emerald); font-size: 0.95rem;">47.9 회/h</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; font-size: 0.78rem; margin-top: 4px;">
+          <span>자연 환기 냉각 효과 (ΔTcool):</span>
+          <span id="metric-vent-cooling" class="param-val" style="color: var(--accent-gold);">-50.0 °C 강하</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 5: EXPORT & SAVE & BOM -->
     <div id="tab-export" class="tab-content" style="display: none;">
       <div class="section-title">
         <span>💾 프로젝트 저장 및 복원</span>
@@ -1097,7 +1184,13 @@
       showBracing: true,
       showFooting: true,
       showJoints: true,
-      showWireframe: false
+      showWireframe: false,
+      // SOTA Parametric Roof Ventilation & Aerodynamics
+      showRoofVents: true,
+      ventOpenPct: 35.0,
+      ventSide: 'both',
+      ambientWind: 3.0,
+      ventAnimate: false
     };
 
     // Column Profiles DB with Elastic Modulus & Inertia
@@ -1351,29 +1444,157 @@
           greenhouseGroup.add(ridge);
 
           if (params.showGlass) {
-            const leftGlass = new THREE.Mesh(glassGeo, glassMat);
-            leftGlass.position.set(ridgeX - halfSub / 2, H + subGableRise / 2, 0);
-            leftGlass.rotation.z = radPitch;
-            leftGlass.userData = {
-              type: 'GLASS',
-              name: '산광 온실유리 (Diffused Glass Panel)',
-              spec: '4mm 저철분 산광 강화유리 (Haze 45%, 광투과율 91.5%)',
-              role: '식물 광합성 채광, 기밀 단열 및 적설 하중 분산',
-              status: '✅ 적설 35cm 안전'
-            };
-            greenhouseGroup.add(leftGlass);
+            if (!params.showRoofVents) {
+              const leftGlass = new THREE.Mesh(glassGeo, glassMat);
+              leftGlass.position.set(ridgeX - halfSub / 2, H + subGableRise / 2, 0);
+              leftGlass.rotation.z = radPitch;
+              greenhouseGroup.add(leftGlass);
 
-            const rightGlass = new THREE.Mesh(glassGeo, glassMat);
-            rightGlass.position.set(ridgeX + halfSub / 2, H + subGableRise / 2, 0);
-            rightGlass.rotation.z = -radPitch;
-            rightGlass.userData = {
-              type: 'GLASS',
-              name: '산광 온실유리 (Diffused Glass Panel)',
-              spec: '4mm 저철분 산광 강화유리 (Haze 45%, 광투과율 91.5%)',
-              role: '식물 광합성 채광, 기밀 단열 및 적설 하중 분산',
-              status: '✅ 적설 35cm 안전'
-            };
-            greenhouseGroup.add(rightGlass);
+              const rightGlass = new THREE.Mesh(glassGeo, glassMat);
+              rightGlass.position.set(ridgeX + halfSub / 2, H + subGableRise / 2, 0);
+              rightGlass.rotation.z = -radPitch;
+              greenhouseGroup.add(rightGlass);
+            } else {
+              // SOTA Operable Roof Vents with Fixed Lower Glass & Push Rods
+              const L_vent = rafterLen * 0.58;
+              const L_fixed = rafterLen - L_vent;
+              const d_fixed_mid = L_vent + L_fixed / 2;
+              const d_vent_mid = L_vent / 2;
+
+              const fixedGlassGeo = new THREE.BoxGeometry(L_fixed, 0.015, L);
+              const ventGlassGeo = new THREE.BoxGeometry(L_vent, 0.015, L);
+              const sashRailGeo = new THREE.BoxGeometry(0.035, 0.035, L);
+
+              const ventOpenPct = params.ventOpenPct;
+              const isLeftVentOpen = (params.ventSide === 'both' || params.ventSide === 'leeward') && ventOpenPct > 0;
+              const isRightVentOpen = (params.ventSide === 'both' || params.ventSide === 'windward') && ventOpenPct > 0;
+
+              const leftAngleDeg = isLeftVentOpen ? (ventOpenPct / 100.0) * 40.0 : 0.0;
+              const leftAngleRad = (leftAngleDeg * Math.PI) / 180.0;
+              const leftRotZ = radPitch - leftAngleRad;
+
+              const rightAngleDeg = isRightVentOpen ? (ventOpenPct / 100.0) * 40.0 : 0.0;
+              const rightAngleRad = (rightAngleDeg * Math.PI) / 180.0;
+              const rightRotZ = -radPitch + rightAngleRad;
+
+              // 1. Lower Fixed Glass (Towards Gutter)
+              const fixedLeftX = ridgeX - d_fixed_mid * Math.cos(radPitch);
+              const fixedLeftY = ridgeY - d_fixed_mid * Math.sin(radPitch);
+              const leftFixedGlass = new THREE.Mesh(fixedGlassGeo, glassMat);
+              leftFixedGlass.position.set(fixedLeftX, fixedLeftY, 0);
+              leftFixedGlass.rotation.z = radPitch;
+              leftFixedGlass.userData = {
+                type: 'FIXED_ROOF_GLASS',
+                name: '지붕 하부 고정유리 (Fixed Lower Glass)',
+                spec: '4mm 저철분 산광 강화유리 (Haze 45%)',
+                role: '처마 부근 고정 채광 및 기밀 유지',
+                status: '✅ 정상'
+              };
+              greenhouseGroup.add(leftFixedGlass);
+
+              const fixedRightX = ridgeX + d_fixed_mid * Math.cos(radPitch);
+              const fixedRightY = ridgeY - d_fixed_mid * Math.sin(radPitch);
+              const rightFixedGlass = new THREE.Mesh(fixedGlassGeo, glassMat);
+              rightFixedGlass.position.set(fixedRightX, fixedRightY, 0);
+              rightFixedGlass.rotation.z = -radPitch;
+              rightFixedGlass.userData = {
+                type: 'FIXED_ROOF_GLASS',
+                name: '지붕 하부 고정유리 (Fixed Lower Glass)',
+                spec: '4mm 저철분 산광 강화유리 (Haze 45%)',
+                role: '처마 부근 고정 채광 및 기밀 유지',
+                status: '✅ 정상'
+              };
+              greenhouseGroup.add(rightFixedGlass);
+
+              // 2. Operable Left Vent Sash & Glass
+              const ventLeftX = ridgeX - d_vent_mid * Math.cos(leftRotZ);
+              const ventLeftY = ridgeY - d_vent_mid * Math.sin(leftRotZ);
+              const leftVentGlass = new THREE.Mesh(ventGlassGeo, glassMat);
+              leftVentGlass.position.set(ventLeftX, ventLeftY, 0);
+              leftVentGlass.rotation.z = leftRotZ;
+              leftVentGlass.userData = {
+                type: 'ROOF_VENT',
+                name: `좌측 연속 천창 (Left Roof Vent V-${b * 2 + sg + 1}-L)`,
+                spec: 'Al 6063-T6 새시 + 4mm 강화유리',
+                role: '자연 환기 배기 및 온습도 제어',
+                status: isLeftVentOpen ? `🌬️ 개방 ${ventOpenPct.toFixed(0)}% (${leftAngleDeg.toFixed(1)}°)` : '🔒 전폐 (Sealed)'
+              };
+              greenhouseGroup.add(leftVentGlass);
+
+              // Left Vent Bottom Rail Frame
+              const tipLeftX = ridgeX - L_vent * Math.cos(leftRotZ);
+              const tipLeftY = ridgeY - L_vent * Math.sin(leftRotZ);
+              const leftBottomRail = new THREE.Mesh(sashRailGeo, aluminumMat);
+              leftBottomRail.position.set(tipLeftX, tipLeftY, 0);
+              leftBottomRail.rotation.z = leftRotZ;
+              greenhouseGroup.add(leftBottomRail);
+
+              // 3. Operable Right Vent Sash & Glass
+              const ventRightX = ridgeX + d_vent_mid * Math.cos(radPitch - rightAngleRad);
+              const ventRightY = ridgeY - d_vent_mid * Math.sin(radPitch - rightAngleRad);
+              const rightVentGlass = new THREE.Mesh(ventGlassGeo, glassMat);
+              rightVentGlass.position.set(ventRightX, ventRightY, 0);
+              rightVentGlass.rotation.z = rightRotZ;
+              rightVentGlass.userData = {
+                type: 'ROOF_VENT',
+                name: `우측 연속 천창 (Right Roof Vent V-${b * 2 + sg + 1}-R)`,
+                spec: 'Al 6063-T6 새시 + 4mm 강화유리',
+                role: '자연 환기 배기 및 온습도 제어',
+                status: isRightVentOpen ? `🌬️ 개방 ${ventOpenPct.toFixed(0)}% (${rightAngleDeg.toFixed(1)}°)` : '🔒 전폐 (Sealed)'
+              };
+              greenhouseGroup.add(rightVentGlass);
+
+              // Right Vent Bottom Rail Frame
+              const tipRightX = ridgeX + L_vent * Math.cos(radPitch - rightAngleRad);
+              const tipRightY = ridgeY - L_vent * Math.sin(radPitch - rightAngleRad);
+              const rightBottomRail = new THREE.Mesh(sashRailGeo, aluminumMat);
+              rightBottomRail.position.set(tipRightX, tipRightY, 0);
+              rightBottomRail.rotation.z = rightRotZ;
+              greenhouseGroup.add(rightBottomRail);
+
+              // 4. Rack-and-Pinion Push Rods at post intervals along Z
+              for (let p = 0; p < numPostsZ; p++) {
+                const zPos = offsetZ + p * S;
+
+                // Left Push Rod
+                const pLeftX = ridgeX - halfSub * 0.45;
+                const pLeftY = H + subGableRise * 0.25;
+                const dLx = tipLeftX - pLeftX;
+                const dLy = tipLeftY - pLeftY;
+                const rodLenLeft = Math.sqrt(dLx * dLx + dLy * dLy);
+                const rodLeftGeo = new THREE.CylinderGeometry(0.012, 0.012, rodLenLeft, 6);
+                const rodLeft = new THREE.Mesh(rodLeftGeo, steelMat);
+                rodLeft.position.set((pLeftX + tipLeftX) / 2, (pLeftY + tipLeftY) / 2, zPos);
+                rodLeft.rotation.z = Math.atan2(dLy, dLx) - Math.PI / 2;
+                rodLeft.userData = {
+                  type: 'PUSH_ROD',
+                  name: `천창 랙 앤 피니언 푸시로드 (Vent Push Rod R-${b + 1}-${p + 1}-L)`,
+                  spec: 'Φ25mm 아연도금 랙바 + 전동 모터 구동축',
+                  role: '천창 개폐 토크 전달 및 강풍 시 창문 지탱',
+                  status: isLeftVentOpen ? `작동 양호 (신장 ${rodLenLeft.toFixed(2)}m)` : '대기 (수축)'
+                };
+                greenhouseGroup.add(rodLeft);
+
+                // Right Push Rod
+                const pRightX = ridgeX + halfSub * 0.45;
+                const pRightY = H + subGableRise * 0.25;
+                const dRx = tipRightX - pRightX;
+                const dRy = tipRightY - pRightY;
+                const rodLenRight = Math.sqrt(dRx * dRx + dRy * dRy);
+                const rodRightGeo = new THREE.CylinderGeometry(0.012, 0.012, rodLenRight, 6);
+                const rodRight = new THREE.Mesh(rodRightGeo, steelMat);
+                rodRight.position.set((pRightX + tipRightX) / 2, (pRightY + tipRightY) / 2, zPos);
+                rodRight.rotation.z = Math.atan2(dRy, dRx) - Math.PI / 2;
+                rodRight.userData = {
+                  type: 'PUSH_ROD',
+                  name: `천창 랙 앤 피니언 푸시로드 (Vent Push Rod R-${b + 1}-${p + 1}-R)`,
+                  spec: 'Φ25mm 아연도금 랙바 + 전동 모터 구동축',
+                  role: '천창 개폐 토크 전달 및 강풍 시 창문 지탱',
+                  status: isRightVentOpen ? `작동 양호 (신장 ${rodLenRight.toFixed(2)}m)` : '대기 (수축)'
+                };
+                greenhouseGroup.add(rodRight);
+              }
+            }
           }
 
           if (params.showGlazing) {
@@ -1458,6 +1679,77 @@
 
       updateHUDandMetrics(structural);
       triggerAutoSave();
+    }
+
+    // --- 4.5 Wageningen Natural Ventilation & Biophysics Engine ---
+    function computeVentilationMetrics() {
+      const W = params.spanWidth;
+      const H = params.gutterHeight;
+      const bays = params.bays;
+      const L = params.totalLength;
+      const radPitch = (params.roofPitch * Math.PI) / 180;
+      const halfSub = (W / 2) / 2;
+      const subGableRise = halfSub * Math.tan(radPitch);
+      const rafterLen = Math.sqrt(halfSub * halfSub + subGableRise * subGableRise);
+      const L_vent = rafterLen * 0.58;
+
+      let activeSides = 0;
+      if (params.showRoofVents && params.ventSide !== 'closed') {
+        if (params.ventSide === 'both') activeSides = bays * 2 * 2;
+        else if (params.ventSide === 'leeward' || params.ventSide === 'windward') activeSides = bays * 2 * 1;
+      }
+
+      const openPct = (params.showRoofVents && params.ventSide !== 'closed') ? params.ventOpenPct : 0.0;
+      const thetaDeg = (openPct / 100.0) * 40.0;
+      const thetaRad = (thetaDeg * Math.PI) / 180.0;
+
+      // Effective gap & opening area (m²)
+      const hGap = thetaRad > 0.001 ? (L_vent * Math.sin(thetaRad)) : 0.002;
+      const Av = Math.max(0.6, activeSides * L * hGap);
+
+      // Wind-driven ventilation G_wind (m³/s) - Wageningen Cw = 0.14
+      const Cw = 0.14;
+      const vWind = Math.max(0.5, params.ambientWind);
+      const G_wind = Cw * Av * vWind;
+
+      // Thermal buoyancy stack-driven ventilation G_temp (m³/s) - Kittas & De Jong Cd = 0.65
+      const Cd = 0.65;
+      const deltaH = Math.max(0.4, subGableRise * 0.7 + 0.35);
+      const deltaT = 5.0; // indoor-outdoor temp difference in K
+      const Tmean = 293.15; // 20°C in K
+      const g = 9.81;
+      const buoyVelocity = Math.sqrt(Math.max(0.01, 2 * g * deltaH * (deltaT / Tmean)));
+      const G_temp = Cd * (Av / 2) * buoyVelocity;
+
+      // Combined Total Airflow (m³/h)
+      const G_tot_m3s = Math.sqrt(G_wind * G_wind + G_temp * G_temp);
+      const G_tot_m3h = G_tot_m3s * 3600;
+
+      // Greenhouse Internal Air Volume (m³)
+      const V_gh = bays * W * L * (H + subGableRise / 2);
+
+      // Air Changes per Hour (ACH, 1/h)
+      const ACH = G_tot_m3h / V_gh;
+
+      // Natural Cooling Drop (°C)
+      const floorArea = bays * W * L;
+      const Q_solar = floorArea * 400.0;
+      const rho_Cp = 1.2 * 1005;
+      const deltaT_excess = Q_solar / (rho_Cp * G_tot_m3s + 5.0 * floorArea * 1.2);
+      const deltaT_closed = Q_solar / (rho_Cp * (0.8 * V_gh / 3600) + 5.0 * floorArea * 1.2);
+      const coolingDrop = Math.max(0.0, deltaT_closed - deltaT_excess);
+
+      return {
+        Av,
+        G_wind_m3h: G_wind * 3600,
+        G_temp_m3h: G_temp * 3600,
+        G_tot_m3h,
+        ACH,
+        thetaDeg,
+        coolingDrop,
+        deltaT_excess,
+        V_gh
+      };
     }
 
     // --- 4. Structural Engineering Engine ---
@@ -1553,6 +1845,50 @@
       const tabSf = document.getElementById('metric-col-sf');
       tabSf.innerText = `${sfVal.toFixed(2)} (${sfVal >= 1.0 ? 'PASS' : 'FAIL'})`;
       tabSf.style.color = (sfVal >= 1.0) ? '#10b981' : '#f43f5e';
+
+      // Ventilation Biophysics Metrics Sync
+      const vent = computeVentilationMetrics();
+      const achEl = document.getElementById('hud-ach');
+      if (achEl) {
+        achEl.innerText = `${vent.ACH.toFixed(1)} 회/h (${params.ventOpenPct.toFixed(0)}%)`;
+        if (vent.ACH >= 30) achEl.style.color = '#10b981';
+        else if (vent.ACH >= 10) achEl.style.color = '#38bdf8';
+        else achEl.style.color = '#f59e0b';
+      }
+
+      const mArea = document.getElementById('metric-vent-area');
+      if (mArea) mArea.innerText = `${vent.Av.toFixed(1)} m²`;
+      const mWind = document.getElementById('metric-vent-wind');
+      if (mWind) mWind.innerText = `${Math.round(vent.G_wind_m3h).toLocaleString()} m³/h`;
+      const mStack = document.getElementById('metric-vent-stack');
+      if (mStack) mStack.innerText = `${Math.round(vent.G_temp_m3h).toLocaleString()} m³/h`;
+      const mGtot = document.getElementById('metric-vent-gtot');
+      if (mGtot) mGtot.innerText = `${Math.round(vent.G_tot_m3h).toLocaleString()} m³/h`;
+      const mAch = document.getElementById('metric-vent-ach');
+      if (mAch) mAch.innerText = `${vent.ACH.toFixed(1)} 회/h`;
+      const mCool = document.getElementById('metric-vent-cooling');
+      if (mCool) mCool.innerText = `-${vent.coolingDrop.toFixed(1)} °C 강하 (실내 +${vent.deltaT_excess.toFixed(1)}°C)`;
+
+      const vBadge = document.getElementById('vent-flow-badge');
+      if (vBadge) {
+        if (!params.showRoofVents || params.ventSide === 'closed' || params.ventOpenPct === 0) {
+          vBadge.innerText = '밀폐 기밀 (Sealed)';
+          vBadge.style.color = '#94a3b8';
+          vBadge.style.background = 'rgba(148, 163, 184, 0.15)';
+        } else if (vent.ACH > 60) {
+          vBadge.innerText = '강풍 대량환기 (High Flow)';
+          vBadge.style.color = '#38bdf8';
+          vBadge.style.background = 'rgba(56, 189, 248, 0.2)';
+        } else if (vent.ACH >= 30) {
+          vBadge.innerText = '최적 자연환기 (Optimal)';
+          vBadge.style.color = '#34d399';
+          vBadge.style.background = 'rgba(16, 185, 129, 0.2)';
+        } else {
+          vBadge.innerText = '미풍 제어 (Gentle Flow)';
+          vBadge.style.color = '#fbbf24';
+          vBadge.style.background = 'rgba(245, 158, 11, 0.2)';
+        }
+      }
     }
 
     // --- 5. Real-time Solar Tracking & Shading Simulation ---
@@ -1854,6 +2190,30 @@
       bindToggle('joints', 'showJoints');
       bindToggle('wireframe', 'showWireframe', true);
 
+      // Roof Ventilation UI Binds
+      const ventOpenInput = document.getElementById('input-vent-open');
+      const ventOpenLabel = document.getElementById('val-vent-open');
+      if (ventOpenInput && ventOpenLabel) {
+        ventOpenInput.addEventListener('input', (e) => {
+          const val = parseFloat(e.target.value);
+          params.ventOpenPct = val;
+          const deg = (val / 100.0) * 40.0;
+          ventOpenLabel.innerText = `${val.toFixed(0)} % (${deg.toFixed(1)}°)`;
+          buildGreenhouse();
+        });
+      }
+
+      const ambientWindInput = document.getElementById('input-ambient-wind');
+      const ambientWindLabel = document.getElementById('val-ambient-wind');
+      if (ambientWindInput && ambientWindLabel) {
+        ambientWindInput.addEventListener('input', (e) => {
+          const val = parseFloat(e.target.value);
+          params.ambientWind = val;
+          ambientWindLabel.innerText = `${val.toFixed(1)} m/s`;
+          updateHUDandMetrics(computeStructuralSafety());
+        });
+      }
+
       // Buttons
       document.getElementById('btn-open-bom').addEventListener('click', openBOM);
       document.getElementById('btn-export-dxf').addEventListener('click', exportDXF);
@@ -1941,6 +2301,19 @@
         const min = (params.solarHour % 1 === 0.5) ? '30' : '00';
         document.getElementById('val-solar-hour').innerText = `${hr}:${min}`;
       }
+      if (document.getElementById('input-vent-open')) {
+        document.getElementById('input-vent-open').value = params.ventOpenPct;
+        const deg = (params.ventOpenPct / 100.0) * 40.0;
+        document.getElementById('val-vent-open').innerText = `${params.ventOpenPct.toFixed(0)} % (${deg.toFixed(1)}°)`;
+      }
+      if (document.getElementById('input-ambient-wind')) {
+        document.getElementById('input-ambient-wind').value = params.ambientWind;
+        document.getElementById('val-ambient-wind').innerText = `${params.ambientWind.toFixed(1)} m/s`;
+      }
+      document.querySelectorAll('.vent-mode-pill').forEach(b => {
+        b.classList.remove('active');
+        if (b.innerText.toLowerCase().includes(params.ventSide.toLowerCase())) b.classList.add('active');
+      });
     }
 
     // --- 10. Save & Load System (3-Tier) ---
@@ -2243,11 +2616,22 @@
       const footingCount = numColumns;
       const footingCost = footingCount * 65000;
 
+      const numVentPanels = bays * 4;
+      const ventSashLenM = bays * 4 * L;
+      const ventSashKg = Math.round(ventSashLenM * 1.65);
+      const ventSashCost = ventSashKg * 7200;
+
+      const numPushRods = bays * 4 * numPostsZ;
+      const pushRodKg = Math.round(numPushRods * 1.45);
+      const pushRodCost = numPushRods * 18000;
+
       return [
         { id: 'COL-01', cat: '주기둥', spec: `각관 ${params.columnSize} SGH400 HDG`, len: H * 1000, qty: numColumns, unitKg: colSpec.unitWeight, totalKg: colTotalKg, unitPrice: `${colSpec.costPerKg.toLocaleString()}원/kg`, totalCost: colCost },
         { id: 'GUT-01', cat: '물받이 거터', spec: '알루미늄 압출 프로파일 Al 6063-T6', len: L * 1000, qty: bays + 1, unitKg: 4.25, totalKg: gutterTotalKg, unitPrice: '6,500원/kg', totalCost: gutterCost },
         { id: 'RDG-01', cat: '용마루 프로파일', spec: '알루미늄 릿지 프로파일 Al 6063-T6', len: L * 1000, qty: bays * 2, unitKg: 1.85, totalKg: ridgeTotalKg, unitPrice: '6,500원/kg', totalCost: ridgeCost },
         { id: 'GLZ-01', cat: '서까래 바', spec: '온실 유리 고정용 알루미늄 바', len: 2150, qty: bays * 4 * numGlaze, unitKg: 1.12, totalKg: glazeTotalKg, unitPrice: '6,800원/kg', totalCost: glazeCost },
+        { id: 'VNT-01', cat: '천창 환기프레임', spec: 'Al 6063-T6 온실 천창 새시 프로파일', len: L * 1000, qty: numVentPanels, unitKg: 1.65, totalKg: ventSashKg, unitPrice: '7,200원/kg', totalCost: ventSashCost },
+        { id: 'VNT-02', cat: '랙 앤 피니언', spec: 'Φ25mm 아연도금 랙바 + 구동 브래킷', len: 1200, qty: numPushRods, unitKg: 1.45, totalKg: pushRodKg, unitPrice: '18,000원/EA', totalCost: pushRodCost },
         { id: 'TRS-01', cat: '트러스 하현재', spec: '아연도금 각관 50x30x2.3', len: W * 1000, qty: bays * numPostsZ, unitKg: 2.67, totalKg: trussChordKg, unitPrice: '2,800원/kg', totalCost: Math.round(trussChordKg * 2800) },
         { id: 'TRS-02', cat: '트러스 래티스', spec: '아연도금 환봉 Φ12 SS400', len: 1200, qty: bays * numPostsZ * 4, unitKg: 0.89, totalKg: trussWebKg, unitPrice: '2,800원/kg', totalCost: Math.round(trussWebKg * 2800) },
         { id: 'GLS-01', cat: '산광 온실유리', spec: '4mm 저철분 산광 강화유리', len: 'Pane', qty: `${glassArea} m²`, unitKg: '10.0', totalKg: glassArea * 10, unitPrice: '22,000원/m²', totalCost: glassCost },
@@ -2966,6 +3350,7 @@
       renderer.setSize(window.innerWidth, window.innerHeight);
     }
 
+    let lastVentAnimTime = 0;
     function animate() {
       requestAnimationFrame(animate);
       controls.update();
@@ -2974,6 +3359,21 @@
       if (gizmoCube) {
         gizmoCube.quaternion.copy(camera.quaternion).invert();
         gizmoRenderer.render(gizmoScene, gizmoCamera);
+      }
+
+      if (params.ventAnimate) {
+        const now = Date.now();
+        if (now - lastVentAnimTime > 32) { // 30 FPS smooth wave
+          lastVentAnimTime = now;
+          const time = now * 0.0012;
+          params.ventOpenPct = 45.0 + 38.0 * Math.sin(time);
+          const deg = (params.ventOpenPct / 100.0) * 40.0;
+          const slider = document.getElementById('input-vent-open');
+          const label = document.getElementById('val-vent-open');
+          if (slider) slider.value = params.ventOpenPct.toFixed(0);
+          if (label) label.innerText = `${params.ventOpenPct.toFixed(0)} % (${deg.toFixed(1)}°)`;
+          buildGreenhouse();
+        }
       }
 
       update3DDimensions();
