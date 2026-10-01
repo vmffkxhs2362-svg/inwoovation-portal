@@ -7,6 +7,17 @@ html_files = glob.glob(os.path.join(portal_dir, "**", "*.html"), recursive=True)
 
 print(f"Total HTML files found: {len(html_files)}")
 
+# Pre-index existing files and directories for O(1) in-memory link validation
+existing_files = set()
+existing_dirs = set()
+for root, dirs, files in os.walk(portal_dir):
+    if '.git' in root:
+        continue
+    for f in files:
+        existing_files.add(os.path.normpath(os.path.join(root, f)).lower())
+    for d in dirs:
+        existing_dirs.add(os.path.normpath(os.path.join(root, d)).lower())
+
 issues = []
 tools_count = 0
 articles_count = 0
@@ -71,16 +82,20 @@ for file_path in html_files:
         else:
             target = os.path.normpath(os.path.join(os.path.dirname(file_path), clean_href))
         
-        # Check if target file or target/index.html exists
+        norm_target = target.lower()
+        if norm_target in existing_files:
+            continue
+        if norm_target in existing_dirs:
+            if os.path.normpath(os.path.join(target, "index.html")).lower() in existing_files:
+                continue
+            issues.append((rel_path, f"Directory link missing index.html: {href}"))
+            continue
+        if (norm_target + ".html") in existing_files:
+            continue
+        
+        # Fallback check
         if not os.path.exists(target):
-            if os.path.isdir(target) and os.path.exists(os.path.join(target, "index.html")):
-                continue
-            if os.path.exists(target + ".html"):
-                continue
             issues.append((rel_path, f"Broken link: {href} -> target not found: {target}"))
-        elif os.path.isdir(target):
-            if not os.path.exists(os.path.join(target, "index.html")):
-                issues.append((rel_path, f"Directory link missing index.html: {href}"))
 
 print(f"Audited Tools: {tools_count}")
 print(f"Audited Articles: {articles_count}")

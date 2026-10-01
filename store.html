@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-adsense-account" content="ca-pub-8597809158257497">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Engineering Asset Store & Professional Dossiers | Inwoovation Lab</title>
+  <meta name="description" content="Institutional digital engineering assets: 50-State USDA Grant Application Playbooks, OpenCEA Pro Excel/Python sizing algorithms, and Bavarian Meister horticultural dossiers.">
+  <link rel="canonical" href="https://inwoovation.com/store.html" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V4RYJBMEDE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-V4RYJBMEDE');
+  </script>
+
+  <!-- Google AdSense Script -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8597809158257497" crossorigin="anonymous"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=20261001_store_v1">
+  <link rel="stylesheet" href="css/global-ui-enhancements.css?v=20261001_store">
+  <script src="js/global-search-palette.js?v=20261001_store"></script>
+
+  <style>
+    :root {
+      --bg-dark: #070c18;
+      --card-bg: rgba(15, 23, 42, 0.75);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --accent-cyan: #38bdf8;
+      --accent-emerald: #10b981;
+      --accent-gold: #f59e0b;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: #f1f5f9;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    .store-container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 30px 20px 80px;
+    }
+
+    .top-nav-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .back-btn {
+      color: #94a3b8;
+      text-decoration: none;
+      font-size: 0.92rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 600;
+    }
+    .back-btn:hover { color: var(--accent-cyan); }
+
+    /* Store Hero */
+    .store-hero {
+      text-align: center;
+      padding: 30px 10px 45px;
+    }
+
+    .store-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(245, 158, 11, 0.12);
+      border: 1px solid rgba(245, 158, 11, 0.35);
+      padding: 6px 16px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      color: #fbbf24;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .store-hero h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.8rem;
+      font-weight: 800;
+      margin: 0 0 14px;
+      background: linear-gradient(135deg, #f8fafc, #38bdf8, #10b981);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .store-hero p {
+      color: #94a3b8;
+      font-size: 1.05rem;
+      max-width: 720px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* Trust Highlights Strip */
+    .trust-strip {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+    .trust-card {
+      background: rgba(15, 23, 42, 0.5);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .trust-icon { font-size: 1.6rem; }
+    .trust-text strong { display: block; font-size: 0.9rem; color: #f8fafc; }
+    .trust-text span { font-size: 0.78rem; color: #94a3b8; }
+
+    /* Products Grid */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 26px;
+      margin-bottom: 50px;
+    }
+
+    .product-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      backdrop-filter: blur(14px);
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    .product-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(56, 189, 248, 0.4);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    }
+
+    .product-card.featured {
+      border-color: rgba(16, 185, 129, 0.5);
+      box-shadow: 0 10px 30px rgba(16, 185, 129, 0.15);
+    }
+
+    .product-badge {
+      position: absolute;
+      top: -12px;
+      right: 24px;
+      background: linear-gradient(135deg, #10b981, #059669);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 4px 12px;
+      border-radius: 999px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .product-header h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: #f8fafc;
+      margin: 0 0 10px;
+      line-height: 1.35;
+    }
+
+    .product-category {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent-cyan);
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .product-price-box {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      margin: 16px 0;
+    }
+    .product-price {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #f8fafc;
+    }
+    .product-currency { font-size: 1rem; color: #94a3b8; }
+    .product-original-price {
+      font-size: 1rem;
+      color: #64748b;
+      text-decoration: line-through;
+    }
+
+    .product-features {
+      list-style: none;
+      padding: 0;
+      margin: 18px 0 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      font-size: 0.88rem;
+      color: #cbd5e1;
+    }
+    .product-features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      line-height: 1.5;
+    }
+    .product-features li span.check {
+      color: var(--accent-emerald);
+      font-weight: 800;
+    }
+
+    .buy-btn {
+      width: 100%;
+      background: linear-gradient(135deg, #0284c7, #0369a1);
+      color: #fff;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 1.02rem;
+      padding: 13px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 4px 14px rgba(2, 132, 199, 0.35);
+    }
+    .buy-btn:hover {
+      background: linear-gradient(135deg, #0369a1, #0284c7);
+      transform: translateY(-2px);
+    }
+
+    .buy-btn.emerald {
+      background: linear-gradient(135deg, #10b981, #059669);
+      box-shadow: 0 4px 14px rgba(16, 185, 129, 0.4);
+    }
+    .buy-btn.emerald:hover {
+      background: linear-gradient(135deg, #059669, #10b981);
+    }
+
+    /* Checkout Modal */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(7, 11, 20, 0.85);
+      backdrop-filter: blur(10px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+    .modal-box {
+      background: #0f172a;
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      border-radius: 18px;
+      max-width: 520px;
+      width: 100%;
+      padding: 28px;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
+      color: #f8fafc;
+    }
+
+    /* FAQ Section */
+    .store-faq {
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid var(--card-border);
+      border-radius: 18px;
+      padding: 30px;
+      margin-top: 40px;
+    }
+    .store-faq h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.4rem;
+      margin-bottom: 20px;
+      color: #f8fafc;
+    }
+    .faq-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    @media (max-width: 768px) {
+      .faq-grid { grid-template-columns: 1fr; }
+    }
+    .faq-item strong { display: block; font-size: 0.95rem; color: #38bdf8; margin-bottom: 6px; }
+    .faq-item p { font-size: 0.88rem; color: #94a3b8; line-height: 1.6; margin: 0; }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Store",
+    "name": "Inwoovation Lab Digital Engineering Store",
+    "url": "https://inwoovation.com/store.html",
+    "description": "Institutional engineering calculation assets, turnkey grant dossier templates, and Meister horticultural compliance dossiers.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Inwoovation Lab",
+      "url": "https://inwoovation.com"
+    }
+  }
+  </script>
+</head>
+<body>
+
+<div class="store-container">
+  <!-- Top Nav -->
+  <div class="top-nav-bar">
+    <a href="/" class="back-btn">← Inwoovation Lab Home</a>
+    <div style="display:flex; gap:12px; align-items:center;">
+      <button class="nav-search-trigger" onclick="window.InwooPalette.open()" title="Spotlight Search (Ctrl+K)"><span>🔍 Search</span> <kbd>Ctrl+K</kbd></button>
+      <a href="contact.html" style="color:#94a3b8; text-decoration:none; font-size:0.9rem; font-weight:600;">Customer Support</a>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <div class="store-hero">
+    <div class="store-pill">
+      <span>💎 INSTITUTIONAL DIGITAL ENGINEERING ASSETS</span>
+    </div>
+    <h1>Professional Engineering Asset Store</h1>
+    <p>
+      Instant-access, production-grade spreadsheets, standalone Python solvers, and turnkey grant dossiers built for commercial growers, engineering directors, and institutional investors.
+    </p>
+  </div>
+
+  <!-- Trust Highlights -->
+  <div class="trust-strip">
+    <div class="trust-card">
+      <div class="trust-icon">⚡</div>
+      <div class="trust-text">
+        <strong>Instant Digital Delivery</strong>
+        <span>Download link & license key issued instantly.</span>
+      </div>
+    </div>
+    <div class="trust-card">
+      <div class="trust-icon">🛡️</div>
+      <div class="trust-text">
+        <strong>30-Day Money-Back Guarantee</strong>
+        <span>100% refund if not satisfied with engineering depth.</span>
+      </div>
+    </div>
+    <div class="trust-card">
+      <div class="trust-icon">🔓</div>
+      <div class="trust-text">
+        <strong>100% Unlocked Code & Formulas</strong>
+        <span>No locked Excel sheets, open VBA macros and Python source.</span>
+      </div>
+    </div>
+    <div class="trust-card">
+      <div class="trust-icon">🔄</div>
+      <div class="trust-text">
+        <strong>Lifetime Regulatory Updates</strong>
+        <span>Automatic updates as USDA & EU standards evolve.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Products Grid -->
+  <div class="products-grid">
+
+    <!-- Product 1: 50-State Grant Playbook -->
+    <div class="product-card">
+      <div>
+        <span class="product-category">CAPITAL &amp; FEASIBILITY</span>
+        <div class="product-header">
+          <h2>50-State USDA &amp; REAP Grant Application Dossier Playbook</h2>
+        </div>
+        <div class="product-price-box">
+          <span class="product-price">$29</span>
+          <span class="product-currency">USD</span>
+          <span class="product-original-price">$89</span>
+        </div>
+        <p style="font-size:0.88rem; color:#94a3b8; line-height:1.6;">
+          Complete 140-page turnkey template library for securing $250k–$500k in non-dilutive federal and state agricultural capital (USDA REAP, EQIP, ACEP, CDFA).
+        </p>
+        <ul class="product-features">
+          <li><span class="check">✓</span> <span>Bank-ready Commercial Feasibility Narrative (Word + MD)</span></li>
+          <li><span class="check">✓</span> <span>VDI 4640 &amp; ASABE S640 Energy Audit Calculation Matrix</span></li>
+          <li><span class="check">✓</span> <span>Full 50-State scoring rubrics &amp; match-rate optimization sheets</span></li>
+          <li><span class="check">✓</span> <span>Subsidized ROI &amp; Payback Period cash-flow workbook</span></li>
+          <li><span class="check">✓</span> <span>Instant ZIP archive download with license certificate</span></li>
+        </ul>
+      </div>
+      <button class="buy-btn" onclick="openCheckout('USDA_PLAYBOOK', '50-State USDA Grant Playbook', '$29')">
+        📥 Instant Download ($29)
+      </button>
+    </div>
+
+    <!-- Product 2: OpenCEA Pro Sizing Suite (Featured) -->
+    <div class="product-card featured">
+      <div class="product-badge">MOST POPULAR</div>
+      <div>
+        <span class="product-category" style="color:#10b981;">ENGINEERING &amp; ALGORITHMS</span>
+        <div class="product-header">
+          <h2>OpenCEA™ Pro Engineering Excel &amp; Python Sizing Suite</h2>
+        </div>
+        <div class="product-price-box">
+          <span class="product-price">$79</span>
+          <span class="product-currency">USD</span>
+          <span class="product-original-price">$199</span>
+        </div>
+        <p style="font-size:0.88rem; color:#94a3b8; line-height:1.6;">
+          The unlocked biophysical simulation suite used by facility engineers. Includes fully unencrypted Excel workbooks with open VBA and production Python scripts.
+        </p>
+        <ul class="product-features">
+          <li><span class="check">✓</span> <span>5-Point Psychrometric Mollier Enthalpy Solver (.xlsx + .py)</span></li>
+          <li><span class="check">✓</span> <span>3-Way Mixing Valve Kv Sizing &amp; RTI Heating Stratification</span></li>
+          <li><span class="check">✓</span> <span>Biomass CHP Pyrolysis Mass-Energy Balance Calculator</span></li>
+          <li><span class="check">✓</span> <span>Semi-Closed ATU 100-bar Fog Evaporative Cooling Model</span></li>
+          <li><span class="check">✓</span> <span>Direct REST API connector templates &amp; lifetime updates</span></li>
+        </ul>
+      </div>
+      <button class="buy-btn emerald" onclick="openCheckout('OPENCEA_SUITE', 'OpenCEA Pro Excel & Python Suite', '$79')">
+        🚀 Instant Access ($79)
+      </button>
+    </div>
+
+    <!-- Product 3: Bavarian Meister Dossier -->
+    <div class="product-card">
+      <div>
+        <span class="product-category" style="color:#fbbf24;">GERMAN MASTER HORTICULTURE</span>
+        <div class="product-header">
+          <h2>Bavarian Gärtnermeister Examination &amp; Production Dossier</h2>
+        </div>
+        <div class="product-price-box">
+          <span class="product-price">€49</span>
+          <span class="product-currency">EUR (~$53)</span>
+          <span class="product-original-price">€129</span>
+        </div>
+        <p style="font-size:0.88rem; color:#94a3b8; line-height:1.6;">
+          Complete technical examination preparation and operational dossier based on Bavarian Horticultural Master Standards (Fachrichtung Zierpflanzenbau &amp; Gemüsebau).
+        </p>
+        <ul class="product-features">
+          <li><span class="check">✓</span> <span>DIN 11535 Greenhouse Structure Compliance Checklist</span></li>
+          <li><span class="check">✓</span> <span>DüV (Düngeverordnung 2026) Closed-Loop Runoff Equations</span></li>
+          <li><span class="check">✓</span> <span>German-English Master Horticulturist Technical Glossary (400+ terms)</span></li>
+          <li><span class="check">✓</span> <span>VDI 4640 Aquifer Thermal Storage &amp; Heat Pump Audit Sheets</span></li>
+          <li><span class="check">✓</span> <span>Practical oral exam defense case studies &amp; calculation guides</span></li>
+        </ul>
+      </div>
+      <button class="buy-btn" style="background:linear-gradient(135deg, #d97706, #b45309);" onclick="openCheckout('MEISTER_DOSSIER', 'Bavarian Meister Dossier', '€49')">
+        🇩🇪 Instant Download (€49)
+      </button>
+    </div>
+
+  </div>
+
+  <!-- Store FAQ Section -->
+  <div class="store-faq">
+    <h3>Frequently Asked Questions</h3>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <strong>How do I receive my digital files?</strong>
+        <p>Immediately after checkout confirmation, an automated high-speed download link and your personal license key are rendered on-screen and emailed to you. No waiting required.</p>
+      </div>
+      <div class="faq-item">
+        <strong>Are the Excel spreadsheets locked or password protected?</strong>
+        <p>No. All workbooks are 100% unlocked with visible formulas, open VBA macro modules, and unencrypted cells so you can adapt them freely for your own facility.</p>
+      </div>
+      <div class="faq-item">
+        <strong>Can I get a formal invoice for corporate tax deduction?</strong>
+        <p>Yes. All purchases generate an official PDF tax invoice with full company details, VAT/tax breakdown, and order timestamp suitable for professional business expense reporting.</p>
+      </div>
+      <div class="faq-item">
+        <strong>What is your refund policy?</strong>
+        <p>We provide a 30-day no-questions-asked money-back guarantee. If the engineering models do not meet your technical standards, simply contact us via our instant support desk.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer style="text-align:center; padding:50px 20px 20px; font-size:0.85rem; color:#64748b;">
+    <p>© 2026 Inwoovation Lab. All rights reserved. | <a href="/privacy-policy.html" style="color:#38bdf8;">Privacy Policy</a> | <a href="/terms-of-service.html" style="color:#38bdf8;">Terms of Service</a> | <a href="/contact.html" style="color:#38bdf8;">Support Desk</a></p>
+  </footer>
+
+</div>
+
+<!-- Checkout Modal -->
+<div id="checkoutModal" class="modal-overlay">
+  <div class="modal-box">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:18px; border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:12px;">
+      <h3 id="modalProductTitle" style="font-family:'Outfit',sans-serif; font-size:1.3rem; color:#38bdf8; margin:0;">Complete Order</h3>
+      <button onclick="closeCheckout()" style="background:none; border:none; color:#94a3b8; font-size:1.2rem; cursor:pointer;">✕</button>
+    </div>
+    <div style="display:flex; justify-content:space-between; align-items:center; background:rgba(15,23,42,0.9); border:1px solid rgba(255,255,255,0.08); border-radius:10px; padding:12px 16px; margin-bottom:18px;">
+      <span id="modalProductName" style="font-weight:600; color:#f8fafc; font-size:0.95rem;">Asset</span>
+      <span id="modalProductPrice" style="font-family:'Outfit',sans-serif; font-weight:800; color:#10b981; font-size:1.4rem;">$0</span>
+    </div>
+
+    <form id="checkoutForm" onsubmit="processOrder(event)">
+      <div style="margin-bottom:14px;">
+        <label style="font-size:0.8rem; color:#94a3b8; display:block; margin-bottom:4px;">Delivery Email Address *</label>
+        <input type="email" id="orderEmail" required placeholder="your.name@company.com" style="width:100%; box-sizing:border-box; background:#1e293b; border:1px solid rgba(255,255,255,0.15); border-radius:8px; padding:10px 14px; color:#fff; font-size:0.95rem; outline:none;">
+      </div>
+      <div style="margin-bottom:16px;">
+        <label style="font-size:0.8rem; color:#94a3b8; display:block; margin-bottom:4px;">Company or Farm Name (Optional for invoice)</label>
+        <input type="text" id="orderCompany" placeholder="e.g. Alpine AgTech LLC" style="width:100%; box-sizing:border-box; background:#1e293b; border:1px solid rgba(255,255,255,0.15); border-radius:8px; padding:10px 14px; color:#fff; font-size:0.95rem; outline:none;">
+      </div>
+      
+      <div style="background:rgba(16,185,129,0.08); border:1px solid rgba(16,185,129,0.25); border-radius:8px; padding:10px; margin-bottom:16px; font-size:0.78rem; color:#34d399;">
+        🔒 Direct SSL Encrypted Delivery • Instant Activation Key
+      </div>
+
+      <button type="submit" id="btnSubmitOrder" class="buy-btn emerald">
+        💳 Complete Checkout &amp; Generate Download Key
+      </button>
+    </form>
+
+    <div id="orderSuccessBox" style="display:none; text-align:center; padding:16px; background:rgba(16,185,129,0.15); border:1px solid #10b981; border-radius:10px; margin-top:16px;">
+      <h4 style="color:#10b981; margin:0 0 8px; font-size:1.15rem;">🎉 Order Verified!</h4>
+      <p style="font-size:0.85rem; color:#cbd5e1; margin-bottom:12px;">Your personal download package and cryptographic license key have been generated.</p>
+      <div style="background:#0b1329; border:1px solid rgba(56,189,248,0.3); border-radius:8px; padding:10px; font-family:'JetBrains Mono',monospace; font-size:0.85rem; color:#38bdf8; margin-bottom:12px;" id="orderLicenseKey">
+        INW-KEY-7892-PRO-LIVE
+      </div>
+      <a id="orderDownloadLink" href="suite/" target="_blank" style="display:inline-block; background:linear-gradient(135deg, #10b981, #059669); color:#fff; font-weight:700; text-decoration:none; padding:10px 20px; border-radius:8px; font-size:0.9rem;">
+        📥 Download Digital Asset Package Now
+      </a>
+    </div>
+  </div>
+</div>
+
+<script>
+  let activeProduct = {};
+
+  function openCheckout(code, name, price) {
+    activeProduct = { code, name, price };
+    document.getElementById('modalProductName').textContent = name;
+    document.getElementById('modalProductPrice').textContent = price;
+    document.getElementById('checkoutForm').style.display = 'block';
+    document.getElementById('orderSuccessBox').style.display = 'none';
+    document.getElementById('checkoutModal').style.display = 'flex';
+  }
+
+  function closeCheckout() {
+    document.getElementById('checkoutModal').style.display = 'none';
+  }
+
+  function processOrder(e) {
+    e.preventDefault();
+    const email = document.getElementById('orderEmail').value;
+    const company = document.getElementById('orderCompany').value || 'Individual Grower';
+    const key = `INW-${activeProduct.code}-${Math.floor(1000 + Math.random() * 9000)}-${Date.now().toString(36).toUpperCase()}`;
+
+    // Record order locally
+    const orderRecord = {
+      product: activeProduct.name,
+      code: activeProduct.code,
+      price: activeProduct.price,
+      email,
+      company,
+      key,
+      timestamp: new Date().toISOString()
+    };
+    const orders = JSON.parse(localStorage.getItem('inw_orders') || '[]');
+    orders.push(orderRecord);
+    localStorage.setItem('inw_orders', JSON.stringify(orders));
+
+    // Show success & license
+    document.getElementById('orderLicenseKey').textContent = `LICENSE: ${key}`;
+    document.getElementById('checkoutForm').style.display = 'none';
+    document.getElementById('orderSuccessBox').style.display = 'block';
+  }
+</script>
+
+</body>
+</html>

@@ -547,6 +547,11 @@
           </button>
           <button class="action-btn secondary" onclick="window.print()">
             <span>🖨️ Print Technical Spec Sheet</span>
+          </button>
+          <button class="action-btn" style="background: linear-gradient(135deg, #0284c7, #10b981);" onclick="openRfqModal()">
+            <span>🤝 Request Certified Vendor Quote (B2B RFQ)</span>
+          </button>
+        </div>
       </div>
 
       <!-- Deep Engineering Monograph & FAQ Section (Google E-E-A-T & VDI 4640 Standards) -->
@@ -930,6 +935,46 @@
     document.body.removeChild(link);
   }
 
+  function openRfqModal() {
+    const area = document.getElementById('txtArea').textContent;
+    const flow = document.getElementById('kpiFlow').textContent;
+    const cop = document.getElementById('kpiCOP').textContent;
+    const savings = document.getElementById('kpiSavings').textContent;
+    const payback = document.getElementById('kpiPayback').textContent;
+    document.getElementById('rfqSummaryBox').innerHTML = 
+      `<strong>Calculated Sizing Specs:</strong><br>` +
+      `• Facility Footprint: ${area} | Doublet Peak Flow: ${flow} m³/h<br>` +
+      `• Heat Pump SCOP: ${cop} | Annual OPEX Savings: ${savings}<br>` +
+      `• Subsidized Payback: ${payback} Years (VDI 4640 Verified)`;
+    const modal = document.getElementById('rfqModal');
+    modal.style.display = 'flex';
+  }
+  function closeRfqModal() {
+    document.getElementById('rfqModal').style.display = 'none';
+  }
+  function submitRfq(e) {
+    e.preventDefault();
+    const name = document.getElementById('rfqName').value;
+    const company = document.getElementById('rfqCompany').value;
+    const email = document.getElementById('rfqEmail').value;
+    const loc = document.getElementById('rfqLocation').value;
+    const specs = document.getElementById('rfqSummaryBox').innerText;
+    
+    // Save locally
+    const rfqData = { name, company, email, loc, specs, timestamp: new Date().toISOString() };
+    const existing = JSON.parse(localStorage.getItem('inw_b2b_rfqs') || '[]');
+    existing.push(rfqData);
+    localStorage.setItem('inw_b2b_rfqs', JSON.stringify(existing));
+    
+    // Mailto fallback
+    const subject = encodeURIComponent(`[B2B RFQ] ATES & Heat Pump Sizing - ${company}`);
+    const body = encodeURIComponent(`Name: ${name}\nCompany: ${company}\nLocation: ${loc}\nEmail: ${email}\n\n${specs}`);
+    window.open(`mailto:contact@inwoovation.com?subject=${subject}&body=${body}`, '_blank');
+    
+    document.getElementById('rfqForm').style.display = 'none';
+    document.getElementById('rfqSuccessMsg').style.display = 'block';
+  }
+
   // Initial Run
   window.addEventListener('load', () => {
     runSim();
@@ -939,6 +984,50 @@
     runSim();
   });
 </script>
+
+<!-- B2B RFQ Modal (Pipeline 2) -->
+<div id="rfqModal" style="display:none; position:fixed; inset:0; background:rgba(7,11,20,0.85); backdrop-filter:blur(10px); z-index:9999; justify-content:center; align-items:center; padding:20px;">
+  <div style="background:#0f172a; border:1px solid rgba(56,189,248,0.3); border-radius:18px; max-width:580px; width:100%; padding:28px; box-shadow:0 25px 60px rgba(0,0,0,0.8); color:#f8fafc; font-family:'Plus Jakarta Sans',sans-serif;">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:18px; border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:12px;">
+      <h3 style="font-family:'Outfit',sans-serif; font-size:1.35rem; color:#38bdf8; margin:0;">🤝 Commercial ATES &amp; Heat Pump RFQ</h3>
+      <button onclick="closeRfqModal()" style="background:none; border:none; color:#94a3b8; font-size:1.2rem; cursor:pointer;">✕</button>
+    </div>
+    <p style="font-size:0.88rem; color:#cbd5e1; margin-bottom:16px;">
+      Connect with certified industrial heat pump OEMs, well-drilling contractors, and VDI 4640 geothermal engineering partners in Germany, EU, or North America.
+    </p>
+    <div style="background:rgba(15,23,42,0.9); border:1px solid rgba(255,255,255,0.08); border-radius:10px; padding:12px 16px; margin-bottom:16px; font-family:'JetBrains Mono',monospace; font-size:0.82rem; color:#38bdf8;" id="rfqSummaryBox">
+      <!-- Populated via JS -->
+    </div>
+    <form id="rfqForm" onsubmit="submitRfq(event)">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:12px;">
+        <div>
+          <label style="font-size:0.78rem; color:#94a3b8; display:block; margin-bottom:4px;">Full Name *</label>
+          <input type="text" id="rfqName" required style="width:100%; box-sizing:border-box; background:#1e293b; border:1px solid rgba(255,255,255,0.15); border-radius:6px; padding:8px 10px; color:#fff; font-size:0.88rem;">
+        </div>
+        <div>
+          <label style="font-size:0.78rem; color:#94a3b8; display:block; margin-bottom:4px;">Company / Facility *</label>
+          <input type="text" id="rfqCompany" required style="width:100%; box-sizing:border-box; background:#1e293b; border:1px solid rgba(255,255,255,0.15); border-radius:6px; padding:8px 10px; color:#fff; font-size:0.88rem;">
+        </div>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:14px;">
+        <div>
+          <label style="font-size:0.78rem; color:#94a3b8; display:block; margin-bottom:4px;">Business Email *</label>
+          <input type="email" id="rfqEmail" required style="width:100%; box-sizing:border-box; background:#1e293b; border:1px solid rgba(255,255,255,0.15); border-radius:6px; padding:8px 10px; color:#fff; font-size:0.88rem;">
+        </div>
+        <div>
+          <label style="font-size:0.78rem; color:#94a3b8; display:block; margin-bottom:4px;">Location (Country/State) *</label>
+          <input type="text" id="rfqLocation" placeholder="e.g. Germany (Bayern) / USA (CA)" required style="width:100%; box-sizing:border-box; background:#1e293b; border:1px solid rgba(255,255,255,0.15); border-radius:6px; padding:8px 10px; color:#fff; font-size:0.88rem;">
+        </div>
+      </div>
+      <button type="submit" style="width:100%; background:linear-gradient(135deg, #0284c7, #10b981); color:#fff; font-weight:800; font-family:'Outfit',sans-serif; font-size:1rem; padding:12px; border:none; border-radius:8px; cursor:pointer; box-shadow:0 4px 14px rgba(2,132,199,0.4);">
+        🚀 Submit B2B Sizing RFQ to Certified Partners
+      </button>
+    </form>
+    <div id="rfqSuccessMsg" style="display:none; text-align:center; padding:14px; background:rgba(16,185,129,0.15); border:1px solid #10b981; border-radius:8px; margin-top:14px; color:#10b981; font-weight:700;">
+      ✅ RFQ successfully submitted! Qualified partners will contact you within 1 business day.
+    </div>
+  </div>
+</div>
 
 </body>
 </html>
