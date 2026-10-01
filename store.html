@@ -267,6 +267,59 @@
       background: linear-gradient(135deg, #059669, #10b981);
     }
 
+    .buy-btn.gold {
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      box-shadow: 0 4px 14px rgba(245, 158, 11, 0.4);
+    }
+    .buy-btn.gold:hover {
+      background: linear-gradient(135deg, #d97706, #f59e0b);
+    }
+
+    .buy-btn.purple {
+      background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+      box-shadow: 0 4px 14px rgba(139, 92, 246, 0.4);
+    }
+    .buy-btn.purple:hover {
+      background: linear-gradient(135deg, #7c3aed, #8b5cf6);
+    }
+
+    /* Master Enterprise Bundle Hero Banner */
+    .master-bundle-card {
+      background: linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 0.95));
+      border: 2px solid rgba(245, 158, 11, 0.45);
+      border-radius: 24px;
+      padding: 34px;
+      margin-bottom: 45px;
+      position: relative;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 0 0 30px rgba(245, 158, 11, 0.12);
+      backdrop-filter: blur(16px);
+      display: grid;
+      grid-template-columns: 1.6fr 1fr;
+      gap: 32px;
+      align-items: center;
+    }
+    @media (max-width: 900px) {
+      .master-bundle-card {
+        grid-template-columns: 1fr;
+        padding: 24px;
+        gap: 22px;
+      }
+    }
+    .master-bundle-badge {
+      position: absolute;
+      top: -14px;
+      left: 30px;
+      background: linear-gradient(135deg, #f59e0b, #b45309);
+      color: #fff;
+      font-size: 0.78rem;
+      font-weight: 800;
+      padding: 5px 16px;
+      border-radius: 999px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      box-shadow: 0 4px 12px rgba(245, 158, 11, 0.35);
+    }
+
     /* Checkout Modal */
     .modal-overlay {
       display: none;
@@ -386,6 +439,46 @@
     </div>
   </div>
 
+  <!-- Master Bundle Hero Banner -->
+  <div class="master-bundle-card">
+    <div class="master-bundle-badge">👑 COMPLETE 7-IN-1 MASTER ENTERPRISE VAULT (SAVE 48%)</div>
+    <div>
+      <span class="product-category" style="color:#fbbf24;">ALL-IN-ONE INSTITUTIONAL AGTECH ARSENAL</span>
+      <h2 style="font-family:'Outfit',sans-serif; font-size:1.85rem; font-weight:800; color:#f8fafc; margin:10px 0 12px; line-height:1.3;">
+        Complete AgTech &amp; CEA Enterprise Master Vault (7-in-1)
+      </h2>
+      <p style="font-size:0.92rem; color:#94a3b8; line-height:1.6; margin-bottom:18px;">
+        The definitive commercial engineering arsenal for greenhouse EPC contractors, vertical farm operators, and institutional agricultural investors. Includes all 7 production suites, Python solvers, 15-crop fertigation recipes, structural BOM tools, and turnkey B2B offtake contracts.
+      </p>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:10px; font-size:0.85rem; color:#cbd5e1;">
+        <div><span style="color:#10b981; font-weight:800;">✓</span> 50-State USDA &amp; REAP Grant Playbook ($29)</div>
+        <div><span style="color:#10b981; font-weight:800;">✓</span> OpenCEA Pro Biophysical Python Suite ($79)</div>
+        <div><span style="color:#10b981; font-weight:800;">✓</span> Bavarian Meister DQR 6 Production Dossier (€49)</div>
+        <div><span style="color:#10b981; font-weight:800;">✓</span> Precision Hydroponic Nutrient Formulator ($69)</div>
+        <div><span style="color:#10b981; font-weight:800;">✓</span> Greenhouse Construction BOM Reverse Estimator ($89)</div>
+        <div><span style="color:#10b981; font-weight:800;">✓</span> Vertical Farm Unit Economics &amp; Heat Simulator ($99)</div>
+        <div><span style="color:#10b981; font-weight:800;">✓</span> High-Value Specialty Crops (Wasabi &amp; Vanilla) ($79)</div>
+        <div><span style="color:#fbbf24; font-weight:800;">★</span> Unified ZIP + Master Docs &amp; Lifetime Updates</div>
+      </div>
+    </div>
+    <div style="background:rgba(15,23,42,0.85); border:1px solid rgba(245,158,11,0.3); border-radius:18px; padding:24px; text-align:center;">
+      <div style="font-size:0.82rem; color:#94a3b8; text-transform:uppercase; letter-spacing:0.05em; font-weight:700;">Individual Value: $483 USD</div>
+      <div style="display:flex; justify-content:center; align-items:baseline; gap:8px; margin:10px 0 16px;">
+        <span style="font-family:'Outfit',sans-serif; font-size:2.8rem; font-weight:800; color:#fbbf24;">$249</span>
+        <span style="font-size:1.05rem; color:#94a3b8;">USD (~₩329,000)</span>
+      </div>
+      <div style="background:rgba(245,158,11,0.12); border:1px solid rgba(245,158,11,0.25); border-radius:8px; padding:8px; font-size:0.8rem; color:#fbbf24; font-weight:700; margin-bottom:18px;">
+        ⚡ Instant Download • 100% Unlocked Source Code
+      </div>
+      <button class="buy-btn gold" onclick="openCheckout('MASTER_VAULT_7IN1', '7-in-1 AgTech Enterprise Master Vault', '$249')">
+        👑 Instant Enterprise Access ($249)
+      </button>
+      <div style="margin-top:12px; font-size:0.75rem; color:#64748b;">
+        Includes multi-user commercial license for all staff &amp; clients.
+      </div>
+    </div>
+  </div>
+
   <!-- Products Grid -->
   <div class="products-grid">
 
@@ -471,6 +564,118 @@
       </div>
       <button class="buy-btn" style="background:linear-gradient(135deg, #d97706, #b45309);" onclick="openCheckout('MEISTER_DOSSIER', 'Bavarian Meister Dossier', '€49')">
         🇩🇪 Instant Download (€49)
+      </button>
+    </div>
+
+    <!-- Product 4: Hydroponic Nutrient Formulator -->
+    <div class="product-card">
+      <div>
+        <span class="product-category" style="color:#38bdf8;">FERTIGATION &amp; ION BALANCING</span>
+        <div class="product-header">
+          <h2>Precision Hydroponic Nutrient Formulation &amp; Groundwater Suite</h2>
+        </div>
+        <div class="product-price-box">
+          <span class="product-price">$69</span>
+          <span class="product-currency">USD (~₩89,000)</span>
+          <span class="product-original-price">$179</span>
+        </div>
+        <p style="font-size:0.88rem; color:#94a3b8; line-height:1.6;">
+          Deduct native well water minerals from target crop requirements and solve exact salt weights (Tank A/B 100x) using pure Python. Cuts monthly fertilizer spend by 20%–35%.
+        </p>
+        <ul class="product-features">
+          <li><span class="check">✓</span> <span>Pure Python 3.9+ CLI/JSON stoichiometric ion formulator</span></li>
+          <li><span class="check">✓</span> <span>Native groundwater deduction (Ca, Mg, HCO3, SO4) &amp; acid dosing</span></li>
+          <li><span class="check">✓</span> <span>15 Commercial crop database (Strawberry, Tomato, Wasabi, etc.)</span></li>
+          <li><span class="check">✓</span> <span>Salt solubility limits (10°C/20°C) &amp; precipitation matrix chart</span></li>
+          <li><span class="check">✓</span> <span>Iron chelate selection guide (Fe-EDTA vs DTPA vs EDDHA by pH)</span></li>
+        </ul>
+      </div>
+      <button class="buy-btn" onclick="openCheckout('HYDRO_NUTRIENT_FORMULATOR', 'Precision Hydroponic Nutrient Formulator Suite', '$69')">
+        🧪 Instant Access ($69)
+      </button>
+    </div>
+
+    <!-- Product 5: Greenhouse BOM Reverse Estimator -->
+    <div class="product-card">
+      <div>
+        <span class="product-category" style="color:#f59e0b;">CONSTRUCTION &amp; LEGAL DEFENSE</span>
+        <div class="product-header">
+          <h2>Greenhouse Construction Cost &amp; BOM Reverse-Estimator Suite</h2>
+        </div>
+        <div class="product-price-box">
+          <span class="product-price">$89</span>
+          <span class="product-currency">USD (~₩119,000)</span>
+          <span class="product-original-price">$229</span>
+        </div>
+        <p style="font-size:0.88rem; color:#94a3b8; line-height:1.6;">
+          Reverse contractor quotes into exact physical steel tonnage, cladding areas, drive motors, and fair labor. Detect price-gouging and defend against predatory construction terms.
+        </p>
+        <ul class="product-features">
+          <li><span class="check">✓</span> <span>Python 3.9+ physical BOM &amp; steel tonnage calculator</span></li>
+          <li><span class="check">✓</span> <span>KS certified pipe specs (SPPS 290 / SPP) vs non-certified steel</span></li>
+          <li><span class="check">✓</span> <span>Multi-span PO vinyl, polycarbonate &amp; Venlo glasshouse models</span></li>
+          <li><span class="check">✓</span> <span>Contractor markup gouging detector (fair 12% margin benchmark)</span></li>
+          <li><span class="check">✓</span> <span>Top 10 Predatory Contract Defense Clauses &amp; Counter-Provisions</span></li>
+        </ul>
+      </div>
+      <button class="buy-btn gold" onclick="openCheckout('GREENHOUSE_BOM_ESTIMATOR', 'Greenhouse Construction BOM & Cost Estimator', '$89')">
+        🏗️ Instant Access ($89)
+      </button>
+    </div>
+
+    <!-- Product 6: Vertical Farm Unit Economics Simulator -->
+    <div class="product-card">
+      <div>
+        <span class="product-category" style="color:#8b5cf6;">FINANCE &amp; THERMODYNAMICS</span>
+        <div class="product-header">
+          <h2>Vertical Farm Unit Economics &amp; CapEx/OpEx Simulator</h2>
+        </div>
+        <div class="product-price-box">
+          <span class="product-price">$99</span>
+          <span class="product-currency">USD (~₩129,000)</span>
+          <span class="product-original-price">$249</span>
+        </div>
+        <p style="font-size:0.88rem; color:#94a3b8; line-height:1.6;">
+          Institutional thermodynamic mass-energy balance solving sensible heat, latent moisture, power tariffs, true COGS per kg, and 10-year investor-grade pro-forma cash flows.
+        </p>
+        <ul class="product-features">
+          <li><span class="check">✓</span> <span>Thermodynamic heat balance &amp; HVAC chiller sizing model (.py)</span></li>
+          <li><span class="check">✓</span> <span>Monthly biomass yield (heads/month, kg/month) &amp; photoperiod PPFD</span></li>
+          <li><span class="check">✓</span> <span>True COGS per kg &amp; 100g retail bag break-even calculator</span></li>
+          <li><span class="check">✓</span> <span>Turnkey 100-Pyeong 5-tier ₩380M BOQ schedule with equipment specs</span></li>
+          <li><span class="check">✓</span> <span>10-Year Amortization, OpEx ledger &amp; bankable EBITDA financial model</span></li>
+        </ul>
+      </div>
+      <button class="buy-btn purple" onclick="openCheckout('VERTICAL_FARM_SIMULATOR', 'Vertical Farm Unit Economics & Simulator', '$99')">
+        ⚡ Instant Access ($99)
+      </button>
+    </div>
+
+    <!-- Product 7: High-Value Niche Specialty Crops Suite -->
+    <div class="product-card">
+      <div>
+        <span class="product-category" style="color:#10b981;">NICHE HIGH-MARGIN HORTICULTURE</span>
+        <div class="product-header">
+          <h2>High-Value Specialty Crops (Wasabi &amp; Vanilla) Commercial Suite</h2>
+        </div>
+        <div class="product-price-box">
+          <span class="product-price">$79</span>
+          <span class="product-currency">USD (~₩99,000)</span>
+          <span class="product-original-price">$199</span>
+        </div>
+        <p style="font-size:0.88rem; color:#94a3b8; line-height:1.6;">
+          Complete engineering &amp; agronomic blueprint for Sawa-wasabi and cured Bourbon vanilla pods selling for ₩160,000–₩800,000/kg. Includes turnkey B2B fine-dining supply contracts.
+        </p>
+        <ul class="product-features">
+          <li><span class="check">✓</span> <span>Sawa-wasabi chilled gravel gutter engineering (11°C–14°C)</span></li>
+          <li><span class="check">✓</span> <span>Dissolved oxygen supersaturation (≥8.5 mg/L) root-rot prevention</span></li>
+          <li><span class="check">✓</span> <span>Vanilla high-wire vine looping &amp; morning pollination manual (≥92% set)</span></li>
+          <li><span class="check">✓</span> <span>4-Stage Bourbon curing protocol achieving ≥2.0% vanillin content</span></li>
+          <li><span class="check">✓</span> <span>B2B fine-dining &amp; omakase direct supply agreement template</span></li>
+        </ul>
+      </div>
+      <button class="buy-btn emerald" onclick="openCheckout('HIGH_VALUE_CROPS_SUITE', 'High-Value Specialty Crops Commercial Suite', '$79')">
+        🌿 Instant Access ($79)
       </button>
     </div>
 
@@ -587,6 +792,21 @@
 
     // Show success & license
     document.getElementById('orderLicenseKey').textContent = `LICENSE: ${key}`;
+    const downloadMap = {
+      'USDA_PLAYBOOK': 'digital_assets/01_USDA_GRANT_PLAYBOOK/',
+      'OPENCEA_SUITE': 'digital_assets/02_OPENCEA_PRO_SUITE/',
+      'MEISTER_DOSSIER': 'digital_assets/03_BAVARIAN_MEISTER_DOSSIER/',
+      'HYDRO_NUTRIENT_FORMULATOR': 'digital_assets/04_HYDRO_NUTRIENT_FORMULATOR/',
+      'GREENHOUSE_BOM_ESTIMATOR': 'digital_assets/05_GREENHOUSE_BOM_COST_ESTIMATOR/',
+      'VERTICAL_FARM_SIMULATOR': 'digital_assets/06_VERTICAL_FARM_UNIT_ECONOMICS/',
+      'HIGH_VALUE_CROPS_SUITE': 'digital_assets/07_HIGH_VALUE_CROPS_WASABI_VANILLA/',
+      'MASTER_VAULT_7IN1': 'digital_assets/'
+    };
+    const dlPath = downloadMap[activeProduct.code] || 'digital_assets/';
+    const dlBtn = document.getElementById('orderDownloadLink');
+    dlBtn.href = dlPath;
+    dlBtn.textContent = `📥 Download ${activeProduct.name} Package`;
+
     document.getElementById('checkoutForm').style.display = 'none';
     document.getElementById('orderSuccessBox').style.display = 'block';
   }

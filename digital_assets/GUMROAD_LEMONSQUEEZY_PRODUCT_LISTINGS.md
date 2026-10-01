@@ -228,8 +228,184 @@ https://inwoovation.com/store.html
 
 ---
 
-# Upsell Bundle: Inwoovation Complete CEA Enterprise Engineering Bundle
+# Product 4: Precision Hydroponic Nutrient Formulation & Groundwater Correction Suite
 
-- **Bundle Price**: **$129.00 USD** (Regular $162.00 Value — Save 20%)
-- **Includes**: All 3 products above (Grant Playbook + Python Suite + Bavarian Meister Dossier) in a single unified zip archive with an exclusive master integration index.
-- **Recommended Checkout Option**: "Add all 3 suites to my order for just $129 (Save $33)".
+- **Platform Category**: Business & Science / Agriculture / Software & Spreadsheets
+- **Standard Price**: **$69.00 USD (₩89,000 KRW)**
+- **URL Slug Recommendation**: `hydroponic-groundwater-nutrient-formulator`
+
+### 1. Title & Tagline
+- **Product Title**: Precision Hydroponic Nutrient Formulation & Groundwater Correction Suite
+- **Subtitle**: Stoichiometric Ion-Balancing Python Engine, Native Groundwater Deduction Algorithm, 15 Commercial Crop Recipes, and Solubility Compatibility Master Chart.
+
+### 2. Marketplace Pitch & Description
+```markdown
+Stop wasting 20% to 35% of your monthly fertilizer budget by feeding crops minerals that your groundwater already provides for free.
+
+Most commercial hydroponic growers either use generic pre-mix fertilizers or follow static university recipes that ignore native well water chemistry. Groundwater with elevated bicarbonate, calcium, or magnesium causes nutrient precipitation, dripper clogging, and catastrophic tipburn or blossom end rot.
+
+The Precision Hydroponic Nutrient Formulation Suite solves this with a zero-dependency Python 3.9+ computational engine that automatically subtracts your native groundwater ions from target crop requirements and calculates the exact grams of raw fertilizer salts needed for Stock Tank A and Stock Tank B (100x).
+
+### What is Included in Your Instant Download:
+1. **`groundwater_nutrient_formulator.py`**:
+   - Zero-dependency Python CLI and JSON engine.
+   - Solves linear ion equations for Calcium Nitrate, Potassium Nitrate, MKP, Magnesium Sulfate, Potassium Sulfate, Iron DTPA, and 68% Nitric Acid.
+   - Calculates exact raw water acid neutralization dosage to buffer pH between 5.6 and 5.8.
+   - Computes direct cash savings compared to uncorrected baseline fertigation.
+2. **`15_COMMERCIAL_CROP_RECIPES_DATABASE.csv`**:
+   - Complete stoichiometric meq/L and ppm targets for 15 commercial crops across vegetative and fruiting phases:
+     * Strawberry (Seolhyang/Maehyang vegetative & fruiting)
+     * Beefsteak Tomato & High-Brix Cherry Tomato
+     * Bell Pepper / Paprika (vegetative & fruiting)
+     * Dutch High-Wire Cucumber
+     * Korean Melon (Chamoe slab culture)
+     * Butterhead Lettuce (closed-head tipburn prevention)
+     * Sweet Genovese Basil (high terpene profile)
+     * Spinach & Baby Leaf (low oxalate)
+     * Eggplant (Aubergine)
+     * Southern Highbush Blueberry (acidic pH 4.5-5.0)
+     * Sawa-Wasabi (cool flowing nutrient film)
+3. **`FERTILIZER_SALT_SOLUBILITY_AND_MIXING_CHART.md`**:
+   - Laboratory solubility limits at 10°C and 20°C (kg/100L).
+   - Incompatibility matrix preventing Gypsum, Calcium Phosphate, and Struvite precipitation.
+   - Iron chelate selection guide (Fe-EDTA vs Fe-DTPA vs Fe-EDDHA) based on rootzone pH.
+4. **`README_NUTRIENT_SUITE.md`**:
+   - Complete technical manual and stoichiometric derivation guide.
+```
+
+### 3. Marketplace Tags & SEO Keywords
+`hydroponic nutrient calculator`, `fertigation formulation`, `groundwater correction`, `strawberry nutrient formula`, `tomato fertilizer recipe`, `stock tank a and b`, `a/b fertilizer mix`, `soilless culture`
+
+---
+
+# Product 5: Commercial Greenhouse Construction Cost & BOM Reverse-Engineering Suite
+
+- **Platform Category**: Business & Engineering / Construction / Estimators
+- **Standard Price**: **$89.00 USD (₩119,000 KRW)**
+- **URL Slug Recommendation**: `greenhouse-construction-bom-estimator`
+
+### 1. Title & Tagline
+- **Product Title**: Commercial Greenhouse Construction Cost & BOM Reverse-Engineering Suite
+- **Subtitle**: Bill of Materials (BOM) Sizing Calculator, KS Certified Steel Tonnage Estimator, Contractor Markup Gouging Detector, and 10 Predatory Contract Defense Clauses.
+
+### 2. Marketplace Pitch & Description
+```markdown
+Never get price-gouged on commercial greenhouse construction again.
+
+Greenhouse builders routinely issue high-level lump-sum quotes (₩1,500,000 to ₩2,500,000 per pyeong) without itemizing structural steel tonnage, cladding surface areas, or equipment costs. Agricultural clients routinely overpay by 30% to 50% or receive substandard, non-certified steel that collapses under heavy snow.
+
+This engineering suite reverses the contractor's quotation by calculating the exact physical Bill of Materials (BOM), structural steel tonnage, cladding area, drive motors, and fair labor installation costs for your specific greenhouse footprint.
+
+### What is Included in Your Instant Download:
+1. **`greenhouse_bom_cost_calculator.py`**:
+   - Python 3.9+ computational engine supporting single-span vinyl, multi-span PO vinyl, twin-wall polycarbonate, and commercial Venlo glasshouses.
+   - Computes structural steel weight (tons) for columns, trusses, gutters, and purlins based on eave height.
+   - Computes foundation concrete volumes, cladding area (with 10% overlap), dual automated screens, ridge vent motors, and circulation fans.
+   - Audits contractor quotes, flagging price discrepancies and determining if quotes are FAIR, MODERATE, or OVERPRICED.
+2. **`GREENHOUSE_CONTRACT_DEFENSE_CHECKLIST.md`**:
+   - Top 10 predatory contract clauses commonly inserted by contractors (unilateral price escalation, delay penalty exclusion, warranty reduction, advance payment traps).
+   - Word-for-word legal counter-provisions protecting the agricultural client.
+   - 5-stage progressive milestone payment schedule tied to strict on-site physical acceptance tests.
+3. **`README_BOM_ESTIMATOR.md`**:
+   - Steel specification standards (KS D 3562 / SPPS 290 vs non-certified pipe).
+   - Cladding material comparison matrix and fair turnkey contractor margin architecture.
+```
+
+### 3. Marketplace Tags & SEO Keywords
+`greenhouse cost estimator`, `greenhouse bom`, `smart farm construction cost`, `venlo greenhouse price`, `greenhouse contract checklist`, `온실 평당 시공비`, `스마트팜 자재 산출서`, `비닐온실 견적`
+
+---
+
+# Product 6: Commercial Vertical Farm Unit Economics & CapEx/OpEx Simulation Suite
+
+- **Platform Category**: Business & Finance / AgTech Financial Models / Vertical Farming
+- **Standard Price**: **$99.00 USD (₩129,000 KRW)**
+- **URL Slug Recommendation**: `vertical-farm-unit-economics-simulator`
+
+### 1. Title & Tagline
+- **Product Title**: Commercial Vertical Farm Unit Economics & CapEx/OpEx Simulation Suite
+- **Subtitle**: Thermodynamic Heat Dissipation Balance, Power Tariff Sensitivity Simulator, Turnkey 100-Pyeong BOQ Schedule, and 10-Year Amortization Financial Model.
+
+### 2. Marketplace Pitch & Description
+```markdown
+Over 85% of vertical farming startups fail because they underestimate thermodynamic heat dissipation and electricity costs.
+
+Every kilowatt of electricity supplied to indoor LED grow lights converts directly into sensible heat and crop transpiration moisture. Without rigorous thermodynamic modeling, facilities install undersized HVAC chillers or face catastrophic operational electricity bills that exceed crop revenue.
+
+This simulation suite provides the institutional-grade mathematical and financial model required to compute your true Cost of Goods Sold (COGS) per kilogram and prove bankability to investors and agricultural loan boards.
+
+### What is Included in Your Instant Download:
+1. **`vertical_farm_unit_economics_simulator.py`**:
+   - Rigorous thermodynamic energy and mass balance Python 3.9+ engine.
+   - Computes monthly biomass yield (heads/month and kg/month) based on footprint, tiers, PPFD, and crop cycle.
+   - Sizes total connected LED electrical load and HVAC cooling/dehumidification chiller draw based on COP.
+   - Generates full monthly OpEx breakdown: electricity, direct labor, seeds/plugs, custom fertilizer, packaging, and rent.
+   - Solves Cost of Goods Sold (COGS) per 1kg and per 100g retail bag, minimum break-even price, and CapEx payback horizon.
+2. **`VERTICAL_FARM_100_PYEONG_CAPEX_OPEX_LEDGER.md`**:
+   - Turnkey ₩380,000,000 capital expenditure bill of quantities for a 100-pyeong, 5-tier commercial facility.
+   - Covers PIR 100mm cleanroom panels, anodized aluminum racks, Samsung LM301H LED bars, inverter chillers, desiccant dehumidifiers, 4-channel fertigator, and 4°C cold store.
+   - 10-year pro-forma income statement showing EBITDA margins under diverse wholesale market price scenarios.
+3. **`README_VERTICAL_FARM.md`**:
+   - Comprehensive engineering manual on vertical farm thermodynamics, light-to-heat conversion physics, and cost optimization levers.
+```
+
+### 3. Marketplace Tags & SEO Keywords
+`vertical farm financial model`, `vertical farming economics`, `pfal unit economics`, `indoor farming capex opex`, `vertical farm electricity cost`, `수직농장 경제성`, `식물공장 원가 계산`, `스마트팜 투자 분석`
+
+---
+
+# Product 7: High-Value Niche Specialty Crops (Wasabi & Vanilla) Turnkey Commercial Suite
+
+- **Platform Category**: Business & Agriculture / Specialty Crops / Commercial Guides
+- **Standard Price**: **$79.00 USD (₩99,000 KRW)**
+- **URL Slug Recommendation**: `high-value-crops-wasabi-vanilla-suite`
+
+### 1. Title & Tagline
+- **Product Title**: High-Value Niche Specialty Crops (Fresh Sawa-Wasabi & Bourbon Vanilla) Commercial Suite
+- **Subtitle**: Continuous Chilled-Flow Hydroponic Wasabi Protocol, Greenhouse Vanilla Trellising & 4-Stage Bourbon Curing Manual, and B2B Fine-Dining Offtake Sales Contract.
+
+### 2. Marketplace Pitch & Description
+```markdown
+Break free from commodity vegetable price collapse by cultivating crops that sell for ₩160,000 to ₩800,000 per kilogram.
+
+While commodity greens sell for ₩2,000 to ₩5,000/kg, luxury culinary establishments face critical shortages of authentic fresh Sawa-wasabi and single-origin cured Bourbon vanilla pods. Producing these crops in controlled environments decouples your revenue from agricultural auctions and delivers annual revenues of ₩120M to ₩260M from just 100 pyeong.
+
+This suite delivers the exact biological parameters, chilling engineering designs, morning pollination kinetics, enzymatic curing protocols, and B2B sales contracts needed to monetize these elite crops.
+
+### What is Included in Your Instant Download:
+1. **`WASABI_HYDROPONIC_ENGINEERING_PROTOCOL.md`**:
+   - Complete Sawa-wasabi continuous chilled water ($11-14°C) gravel gutter engineering.
+   - Dissolved oxygen supersaturation protocol ($\ge 8.5\text{ mg/L}$) preventing Erwinia and Phoma root rot.
+   - Glucosinolate-steering nutrient formulation maximizing sinigrin and allyl isothiocyanate pungency.
+   - Staggered harvest schedule and secondary leaf/petiole pickle revenue streams.
+2. **`VANILLA_ORCHID_GREENHOUSE_CULTIVATION_AND_CURING_PROTOCOL.md`**:
+   - High-wire climbing vine looping system and winter floral induction stress cycles.
+   - Step-by-step morning hand pollination protocol (6:00 AM - 11:30 AM) achieving $\ge 92\%$ fruit set.
+   - The 4-Stage Bourbon Curing Process (Killing in 63°C water, 48h wool sweating, 4-week slow drying, 3-month cedar conditioning) maximizing vanillin content ($\ge 2.0\%$).
+3. **`B2B_FINE_DINING_DIRECT_SUPPLY_CONTRACT_TEMPLATE.md`**:
+   - Ready-to-use commercial sales and offtake agreement for Michelin-starred restaurants, omakase sushi bars, and artisan patisseries.
+   - Fixed annual contract prices (₩220,000/kg for Wasabi Grade 1, ₩750,000/kg for Vanilla Grade A).
+   - Cold-chain 24-hour harvest-to-table delivery SLAs, minimum order quotas (MOQ), and Net-15/Net-30 payment terms.
+4. **`README_HIGH_VALUE_CROPS.md`**:
+   - Economic feasibility comparison and market opportunity overview.
+```
+
+### 3. Marketplace Tags & SEO Keywords
+`wasabi cultivation`, `sawa wasabi hydroponics`, `vanilla orchid greenhouse`, `vanilla curing process`, `specialty crop guide`, `b2b restaurant supply contract`, `생와사비 수경재배`, `바닐라빈 재배`, `고소득 특수작물`
+
+---
+
+# Master Upsell Bundle: Complete AgTech & CEA Enterprise Master Vault (7-in-1)
+
+- **Bundle Price**: **$249.00 USD (₩329,000 KRW)** (Total Individual Value: $483.00 USD — Save 48%)
+- **Includes**: All 7 commercial engineering suites:
+  1. 50-State USDA & REAP Grant Playbook ($29)
+  2. OpenCEA™ Pro Engineering Suite ($79)
+  3. Bavarian Gärtnermeister Examination Dossier (€49 / $54)
+  4. Precision Hydroponic Nutrient Formulation Suite ($69)
+  5. Greenhouse Construction Cost & BOM Estimator ($89)
+  6. Commercial Vertical Farm Unit Economics Simulator ($99)
+  7. High-Value Niche Specialty Crops (Wasabi & Vanilla) Suite ($79)
+- **Target Audience**: Turnkey EPC greenhouse builders, agricultural engineering consultants, commercial farm owners, AgTech corporate investors.
+- **Delivery**: Single unified ZIP archive with master integration documentation and Python launcher scripts.
+
