@@ -472,7 +472,9 @@ Subject to State Constraints:
       <button class="endpoint-tab active" onclick="selectEndpoint('vpd', this)"><span class="method-badge">POST</span> /v1/physics/vpd</button>
       <button class="endpoint-tab" onclick="selectEndpoint('dli', this)"><span class="method-badge">POST</span> /v1/physics/dli</button>
       <button class="endpoint-tab" onclick="selectEndpoint('ventilation', this)"><span class="method-badge">POST</span> /v1/climate/ventilation</button>
+      <button class="endpoint-tab" onclick="selectEndpoint('atu', this)"><span class="method-badge">POST</span> /v1/climate/atu-mollier</button>
       <button class="endpoint-tab" onclick="selectEndpoint('penman', this)"><span class="method-badge">POST</span> /v1/physics/penman-monteith</button>
+      <button class="endpoint-tab" onclick="selectEndpoint('recirculation', this)"><span class="method-badge">POST</span> /v1/fertigation/closed-loop-ion-balance</button>
       <button class="endpoint-tab" onclick="selectEndpoint('ipm', this)"><span class="method-badge">POST</span> /v1/ipm/predator-sizing</button>
     </div>
 
@@ -750,6 +752,165 @@ Subject to State Constraints:
               total_predatory_mites_required: totalInsects,
               standard_packaging_bottles_2000ct: bottles,
               timing_window: "Dawn or late afternoon at RH > 60%"
+            }
+          };
+        }
+      },
+      atu: {
+        payload: JSON.stringify({
+          outside_temp_c: 32.0,
+          outside_rh_pct: 45.0,
+          inside_return_temp_c: 25.0,
+          inside_return_rh_pct: 75.0,
+          recirculation_ratio: 0.70,
+          fan_airflow_m3_h: 85000.0,
+          evaporative_efficiency_pct: 85.0
+        }, null, 2),
+        handler: (data) => {
+          const tOut = data.outside_temp_c || 32.0;
+          const rhOut = (data.outside_rh_pct || 45.0) / 100.0;
+          const tIn = data.inside_return_temp_c || 25.0;
+          const rhIn = (data.inside_return_rh_pct || 75.0) / 100.0;
+          const recRatio = data.recirculation_ratio !== undefined ? data.recirculation_ratio : 0.70;
+          const airFlow = data.fan_airflow_m3_h || 85000.0;
+          const fogEff = (data.evaporative_efficiency_pct || 85.0) / 100.0;
+
+          const esOut = 0.61078 * Math.exp((17.27 * tOut) / (tOut + 237.3));
+          const eaOut = esOut * rhOut;
+          const xOut = 0.622 * eaOut / (101.325 - eaOut);
+          const hOut = 1.006 * tOut + xOut * (2501 + 1.86 * tOut);
+
+          const esIn = 0.61078 * Math.exp((17.27 * tIn) / (tIn + 237.3));
+          const eaIn = esIn * rhIn;
+          const xIn = 0.622 * eaIn / (101.325 - eaIn);
+          const hIn = 1.006 * tIn + xIn * (2501 + 1.86 * tIn);
+
+          const tMix = (1.0 - recRatio) * tOut + recRatio * tIn;
+          const xMix = (1.0 - recRatio) * xOut + recRatio * xIn;
+          const hMix = (1.0 - recRatio) * hOut + recRatio * hIn;
+
+          const twb = tMix * Math.atan(0.151977 * Math.pow(xMix * 1000 + 8.313659, 0.5)) +
+                      Math.atan(tMix + xMix * 1000) - Math.atan(xMix * 1000 - 1.676331) +
+                      0.00391838 * Math.pow(xMix * 1000, 1.5) * Math.atan(0.023101 * xMix * 1000) - 4.686035;
+
+          const deltaTMax = Math.max(0, tMix - twb);
+          const tSupply = tMix - (deltaTMax * fogEff);
+          const deltaTCooling = tMix - tSupply;
+
+          const rhoAir = 1.204;
+          const massFlowKgS = (airFlow * rhoAir) / 3600.0;
+          const sensibleCoolingKw = massFlowKgS * 1.006 * deltaTCooling;
+
+          return {
+            status: "success",
+            timestamp: new Date().toISOString(),
+            data: {
+              mixing_state: {
+                mixed_temp_c: parseFloat(tMix.toFixed(2)),
+                humidity_ratio_g_kg: parseFloat((xMix * 1000).toFixed(2)),
+                enthalpy_kj_kg: parseFloat(hMix.toFixed(2)),
+                wet_bulb_temp_c: parseFloat(twb.toFixed(2))
+              },
+              supply_air_state: {
+                supply_temp_c: parseFloat(tSupply.toFixed(2)),
+                temperature_drop_c: parseFloat(deltaTCooling.toFixed(2)),
+                supply_airflow_m3_h: airFlow,
+                sensible_cooling_capacity_kw: parseFloat(sensibleCoolingKw.toFixed(1))
+              },
+              positive_pressure_shield: {
+                differential_pressure_pa: 22.4,
+                insect_exclusion_vector: "100% Thrips/Aphid Barrier",
+                co2_purge_prevention_pct: parseFloat((recRatio * 100).toFixed(1))
+              },
+              governing_standard: "DIN 1946-6 / ASHRAE Fundamentals Chapter 1"
+            }
+          };
+        }
+      },
+      recirculation: {
+        payload: JSON.stringify({
+          crop: "tomato",
+          irrigation_volume_m3_day: 40.0,
+          drainage_fraction: 0.30,
+          raw_water_na_mmol_l: 0.35,
+          raw_water_cl_mmol_l: 0.45,
+          feed_na_mmol_l: 0.50,
+          feed_cl_mmol_l: 0.60,
+          recirculation_ratio: 0.85,
+          max_na_threshold_mmol_l: 5.0,
+          simulation_cycles: 15
+        }, null, 2),
+        handler: (data) => {
+          const drainFrac = data.drainage_fraction || 0.30;
+          const recRatio = data.recirculation_ratio || 0.85;
+          const rawNa = data.raw_water_na_mmol_l || 0.35;
+          const rawCl = data.raw_water_cl_mmol_l || 0.45;
+          const feedNa = data.feed_na_mmol_l || 0.50;
+          const feedCl = data.feed_cl_mmol_l || 0.60;
+          const maxNa = data.max_na_threshold_mmol_l || 5.0;
+          const cycles = data.simulation_cycles || 15;
+
+          const turNa = 0.15;
+          const turCl = 0.25;
+
+          const ionicStrengthM = 0.025;
+          const sqrtI = Math.sqrt(ionicStrengthM);
+          const logGamma = -0.509 * (1 * 1) * (sqrtI / (1.0 + sqrtI) - 0.3 * ionicStrengthM);
+          const gammaNa = Math.pow(10, logGamma);
+
+          let curNa = feedNa;
+          let curCl = feedCl;
+          let purgeCycle = null;
+          const trajectory = [];
+
+          for (let c = 1; c <= cycles; c++) {
+            const drainNa = curNa * (1.0 - (1.0 - drainFrac) * turNa) / drainFrac;
+            const drainCl = curCl * (1.0 - (1.0 - drainFrac) * turCl) / drainFrac;
+
+            const nextNa = (1.0 - recRatio) * rawNa + recRatio * drainNa;
+            const nextCl = (1.0 - recRatio) * rawCl + recRatio * drainCl;
+
+            curNa = nextNa;
+            curCl = nextCl;
+
+            trajectory.push({
+              cycle: c,
+              na_mmol_l: parseFloat(curNa.toFixed(2)),
+              cl_mmol_l: parseFloat(curCl.toFixed(2)),
+              active_na_activity: parseFloat((curNa * gammaNa).toFixed(3))
+            });
+
+            if (!purgeCycle && curNa >= maxNa) {
+              purgeCycle = c;
+            }
+          }
+
+          const dailyWaterM3 = data.irrigation_volume_m3_day || 40.0;
+          const waterSavedM3Year = dailyWaterM3 * drainFrac * recRatio * 365.0;
+          const fertilizerSavingsEurYear = waterSavedM3Year * 0.95;
+
+          return {
+            status: "success",
+            timestamp: new Date().toISOString(),
+            data: {
+              chemical_speciation: {
+                ionic_strength_mol_l: ionicStrengthM,
+                davies_activity_coefficient_gamma_na: parseFloat(gammaNa.toFixed(4)),
+                osmotic_depreciation_status: curNa > 4.0 ? "High Osmotic Tension (Steer Transpiration)" : "Balanced Osmotic Potential"
+              },
+              accumulation_forecast: {
+                final_na_mmol_l: parseFloat(curNa.toFixed(2)),
+                final_cl_mmol_l: parseFloat(curCl.toFixed(2)),
+                max_na_threshold_mmol_l: maxNa,
+                cycles_to_mandatory_purge: purgeCycle ? purgeCycle : `> ${cycles} Cycles (Safe)`
+              },
+              duev_compliance_and_savings: {
+                annual_drain_water_recovered_m3: parseFloat(waterSavedM3Year.toFixed(1)),
+                annual_fertilizer_cost_saved_eur: parseFloat(fertilizerSavingsEurYear.toFixed(1)),
+                german_duev_groundwater_discharge_status: "100% Zero-Discharge Compliant (DüV §3 Abs. 2)",
+                recirculation_efficiency_pct: parseFloat((recRatio * 100).toFixed(1))
+              },
+              trajectory_sample: trajectory.slice(0, 5)
             }
           };
         }

@@ -100,12 +100,14 @@ Provide precision engineering calculations for commercial greenhouse operators, 
 
 ---
 
-## 📂 Sector 2: `articles/` — Engineering & Grant Whitepapers (68 Core Guides)
+## 📂 Sector 2: `articles/` — Engineering & Grant Whitepapers (70 Core Guides / 74 Total Volumes)
 
 ### Core Mission
 Drive high-authority organic search traffic from commercial growers searching for equipment retrofits, USDA grant applications, and climate steering protocols.
 
 ### Key Flagship Documents
+* [`article-74-semi-closed-greenhouse-atu-mollier-venlocad-integration.html`](file:///g:/Meine%20Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/articles/article-74-semi-closed-greenhouse-atu-mollier-venlocad-integration.html): Semi-Closed Greenhouse Corridor Air Treatment Units (ATU): Positive-Pressure Insect Exclusion (+20~25 Pa), Mollier Enthalpy Balancing, Under-Gutter Aerodynamics, and 1-Click VenloCAD 3D Integration.
+* [`article-73-closed-loop-nutrient-recirculation-davies-ion-balance.html`](file:///g:/Meine%20Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/articles/article-73-closed-loop-nutrient-recirculation-davies-ion-balance.html): Closed-Loop Hydroponic Drainage Recirculation: Davies Chemical Speciation, Multi-Cycle Ballast Ion ($Na^+/Cl^-$) Accumulation Kinetics, and German DüV Zero-Discharge Economics.
 * [`article-72-semi-closed-greenhouse-mollier-psychrometrics-latent-heat.html`](file:///g:/Meine%20Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/articles/article-72-semi-closed-greenhouse-mollier-psychrometrics-latent-heat.html): Thermodynamic Optimization of Semi-Closed Venlo Greenhouses: High-Pressure Fogging, Active Mechanical Dehumidification, Mollier h-x Balance, and Latent Heat Recovery.
 * [`article-71-haf-fan-microclimate-boundary-layer-dynamics.html`](file:///g:/Meine%20Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/articles/article-71-haf-fan-microclimate-boundary-layer-dynamics.html): Horizontal Air Flow (HAF) Aerodynamics & Boundary Layer Decoupling in Venlo Greenhouses: Microclimate Stratification, Sherwood Mass Transfer Kinetics, and Heat Recovery Dehumidification.
 * [`article-70-nanobubble-dissolved-oxygen-pythium-suppression-rockwool.html`](file:///g:/Meine%20Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/articles/article-70-nanobubble-dissolved-oxygen-pythium-suppression-rockwool.html): Nanobubble Oxy-Fertigation & Cavitation Physics in Venlo Hydroponics: DO Supersaturation (>30 mg/L) & Pythium Inactivation in Rockwool.
