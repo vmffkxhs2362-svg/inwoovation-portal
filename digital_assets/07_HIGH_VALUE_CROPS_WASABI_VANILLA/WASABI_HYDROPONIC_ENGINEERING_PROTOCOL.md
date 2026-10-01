@@ -81,6 +81,6 @@ Wasabi reaches commercial maturity between **14 and 18 months** from tissue-cult
 - **Grade 2 (Standard Culinary)**: Weight $70 - 119\text{g}$, slight curvature.  
   *Contract Farmgate Price*: **₩140,000 - ₩170,000 / kg ($100 - $125 USD/kg)**.
 
-### 5.2. Secondary Revenue: Edible Leaves & Stems (와사비 잎줄기)
+### 5.2. Secondary Revenue: Edible Leaves & Petioles (Wasabi Greens)
 During the 16-month growth cycle, mature outer leaves and leaf stalks (*wasabi petioles*) can be harvested every 6 weeks without harming rhizome expansion.
-- Leaves and stems are vacuum-packed and sold to craft pickle producers (*와사비 장아찌*) and craft breweries for **₩22,000 to ₩30,000 / kg**, generating intermediate cashflow that covers all monthly electricity bills before main rhizome harvest.
+- Leaves and stems are vacuum-packed and sold to gourmet pickle producers (*wasabi tsukemono*) and craft culinary distributors for **$16.00 to $22.00 / kg**, generating intermediate cashflow that covers all monthly electricity bills before main rhizome harvest.

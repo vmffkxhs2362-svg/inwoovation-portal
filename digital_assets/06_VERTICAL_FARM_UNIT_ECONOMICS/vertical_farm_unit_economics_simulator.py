@@ -230,7 +230,7 @@ def main():
     parser.add_argument('--photoperiod', type=float, default=16.0, help="Photoperiod hours/day (default: 16)")
     parser.add_argument('--power-tariff', type=float, default=70.0, help="Electricity cost in KRW/kWh (default: 70)")
     parser.add_argument('--wholesale-price', type=float, default=16000.0, help="Wholesale selling price KRW/kg (default: 16000)")
-    parser.add_argument('--capex', type=float, default=380000000.0, help="Total turnkey CapEx investment in KRW (default: 3.8억)")
+    parser.add_argument('--capex', type=float, default=380000000.0, help="Total turnkey CapEx investment in KRW (default: 380,000,000 KRW / ~$280,000 USD)")
     parser.add_argument('--labor-count', type=float, default=2.5, help="Full-time labor equivalent (default: 2.5)")
     parser.add_argument('--format', type=str, choices=['table', 'json'], default='table', help="Output format: table or json")
 

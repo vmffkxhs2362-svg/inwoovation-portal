@@ -39,7 +39,7 @@ COST_BENCHMARKS = {
 # Type Multipliers and Structural Weights
 GREENHOUSE_MODELS = {
     'single_vinyl': {
-        'name': 'Single-Span High-Profile Vinyl Arch (단동 비닐 온실)',
+        'name': 'Single-Span High-Profile Vinyl Arch',
         'steel_kg_m2': 9.5,
         'steel_type': 'pregalv',
         'cladding': 'po_film',
@@ -49,7 +49,7 @@ GREENHOUSE_MODELS = {
         'screens_layers': 1,
     },
     'multi_vinyl': {
-        'name': 'Multi-Span High-Tech Vinyl/PO Greenhouse (연동 비닐/PO 온실)',
+        'name': 'Multi-Span High-Tech Vinyl/PO Commercial Greenhouse',
         'steel_kg_m2': 18.5,
         'steel_type': 'hdg',
         'cladding': 'po_film',
@@ -59,7 +59,7 @@ GREENHOUSE_MODELS = {
         'screens_layers': 2,
     },
     'multi_pc': {
-        'name': 'Multi-Span Twin-Wall Polycarbonate Facility (연동 PC 온실)',
+        'name': 'Multi-Span Twin-Wall Polycarbonate Facility',
         'steel_kg_m2': 21.0,
         'steel_type': 'hdg',
         'cladding': 'twin_pc',
@@ -69,7 +69,7 @@ GREENHOUSE_MODELS = {
         'screens_layers': 2,
     },
     'multi_venlo_glass': {
-        'name': 'Venlo High-Wire Commercial Glasshouse (첨단 벤로형 유리온실)',
+        'name': 'Venlo High-Wire Commercial Glasshouse',
         'steel_kg_m2': 28.5,
         'steel_type': 'hdg',
         'cladding': 'glass_esg',
@@ -176,13 +176,13 @@ def calculate_greenhouse_bom(model_key, area_pyeong, eave_height_m, contractor_q
         markup_over_fair_percent = (discrepancy_krw / fair_turnkey_price_krw) * 100.0
 
         if markup_over_fair_percent <= 5.0:
-            verdict = "FAIR & COMPETITIVE (정상적이고 경쟁력 있는 견적)"
+            verdict = "FAIR & COMPETITIVE (Within standard market range)"
             risk_level = "LOW"
         elif markup_over_fair_percent <= 18.0:
-            verdict = "MODERATE MARKUP (다소 마진이 높음 - 5~10% 네고 권장)"
+            verdict = "MODERATE MARKUP (5-10% price negotiation advised)"
             risk_level = "MEDIUM"
         else:
-            verdict = "OVERPRICED / GOUGING (심각한 바가지 견적 - 상세 견적 역산 요구 필수)"
+            verdict = "OVERPRICED / GOUGING (Detailed itemized BOM audit required)"
             risk_level = "HIGH"
 
         audit = {
@@ -269,12 +269,12 @@ def print_formatted_table(res):
     print(f"   - Fair Contractor Net Margin (12.0%):             ₩{cs['contractor_fair_profit_12pct_krw']:>12,}")
     print(f"   ===================================================================")
     print(f"   ⭐ FAIR TURNKEY CONTRACT VALUE:                    ₩{cs['fair_turnkey_total_krw']:>12,}")
-    print(f"      (Fair Cost per Pyeong: ₩{cs['fair_price_per_pyeong_krw']:,} / 평 | ${cs['fair_turnkey_usd']:,} USD)")
+    print(f"      (Unit Cost: ${cs['fair_price_per_m2_usd']} USD/m² | ${cs['fair_turnkey_usd']:,} USD Total)")
 
     if res['contractor_audit']:
         aud = res['contractor_audit']
         print("\n🔍 CONTRACTOR QUOTE VERIFICATION AUDIT:")
-        print(f"   Contractor's Quoted Total:    ₩{aud['contractor_quote_krw']:,} (₩{aud['contractor_quote_per_pyeong_krw']:,} / 평)")
+        print(f"   Contractor's Quoted Total:    ₩{aud['contractor_quote_krw']:,} (${aud['contractor_quote_krw']/USD_KRW_EXCHANGE_RATE:,.0f} USD)")
         print(f"   Difference from Fair Price:   ₩{aud['discrepancy_krw']:+,} ({aud['markup_over_fair_percent']:+.1f}%)")
         print(f"   Contractor Audit Verdict:     [{aud['risk_level']}] {aud['verdict']}")
     print("=" * 78)
@@ -288,7 +288,7 @@ def main():
     parser.add_argument('--area', type=float, default=1000.0,
                         help="Floor area in Pyeong (1 pyeong = 3.3058 m2, default: 1000)")
     parser.add_argument('--eave-height', type=float, default=4.5,
-                        help="Eave height (측고) in meters (default: 4.5m)")
+                        help="Eave height in meters (default: 4.5m)")
     parser.add_argument('--contractor-quote', type=float, default=0.0,
                         help="Contractor total quote in KRW for price gouging audit")
     parser.add_argument('--format', type=str, choices=['table', 'json'], default='table',

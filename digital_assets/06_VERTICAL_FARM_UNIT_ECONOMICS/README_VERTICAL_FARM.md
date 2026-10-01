@@ -91,7 +91,7 @@ $$\text{COGS}_{kg} = C_{power} + C_{seeds\_plugs} + C_{nutrients} + C_{labor} + 
 ## 4. Software Usage: `vertical_farm_unit_economics_simulator.py`
 
 ```bash
-# Run 100-pyeong 5-tier vertical farm simulation with Agricultural Power (농사용 을):
+# Run 100-pyeong 5-tier vertical farm simulation with Agricultural Power Tariff (Tier 2):
 python vertical_farm_unit_economics_simulator.py \
   --area 100 \
   --tiers 5 \

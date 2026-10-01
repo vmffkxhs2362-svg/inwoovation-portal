@@ -312,19 +312,19 @@ This engineering suite reverses the contractor's quotation by calculating the ex
 ```
 
 ### 3. Marketplace Tags & SEO Keywords
-`greenhouse cost estimator`, `greenhouse bom`, `smart farm construction cost`, `venlo greenhouse price`, `greenhouse contract checklist`, `온실 평당 시공비`, `스마트팜 자재 산출서`, `비닐온실 견적`
+`greenhouse cost estimator`, `greenhouse bom`, `smart farm construction cost`, `venlo greenhouse price`, `greenhouse contract checklist`, `horticultural engineering`, `commercial greenhouse pricing`, `structural steel takeoff`
 
 ---
 
 # Product 6: Commercial Vertical Farm Unit Economics & CapEx/OpEx Simulation Suite
 
 - **Platform Category**: Business & Finance / AgTech Financial Models / Vertical Farming
-- **Standard Price**: **$99.00 USD (₩129,000 KRW)**
+- **Standard Price**: **$99.00 USD**
 - **URL Slug Recommendation**: `vertical-farm-unit-economics-simulator`
 
 ### 1. Title & Tagline
 - **Product Title**: Commercial Vertical Farm Unit Economics & CapEx/OpEx Simulation Suite
-- **Subtitle**: Thermodynamic Heat Dissipation Balance, Power Tariff Sensitivity Simulator, Turnkey 100-Pyeong BOQ Schedule, and 10-Year Amortization Financial Model.
+- **Subtitle**: Thermodynamic Heat Dissipation Balance, Power Tariff Sensitivity Simulator, Turnkey BOQ Schedule, and 10-Year Amortization Financial Model.
 
 ### 2. Marketplace Pitch & Description
 ```markdown
@@ -342,7 +342,7 @@ This simulation suite provides the institutional-grade mathematical and financia
    - Generates full monthly OpEx breakdown: electricity, direct labor, seeds/plugs, custom fertilizer, packaging, and rent.
    - Solves Cost of Goods Sold (COGS) per 1kg and per 100g retail bag, minimum break-even price, and CapEx payback horizon.
 2. **`VERTICAL_FARM_100_PYEONG_CAPEX_OPEX_LEDGER.md`**:
-   - Turnkey ₩380,000,000 capital expenditure bill of quantities for a 100-pyeong, 5-tier commercial facility.
+   - Turnkey capital expenditure bill of quantities for a 5-tier commercial facility.
    - Covers PIR 100mm cleanroom panels, anodized aluminum racks, Samsung LM301H LED bars, inverter chillers, desiccant dehumidifiers, 4-channel fertigator, and 4°C cold store.
    - 10-year pro-forma income statement showing EBITDA margins under diverse wholesale market price scenarios.
 3. **`README_VERTICAL_FARM.md`**:
@@ -350,14 +350,14 @@ This simulation suite provides the institutional-grade mathematical and financia
 ```
 
 ### 3. Marketplace Tags & SEO Keywords
-`vertical farm financial model`, `vertical farming economics`, `pfal unit economics`, `indoor farming capex opex`, `vertical farm electricity cost`, `수직농장 경제성`, `식물공장 원가 계산`, `스마트팜 투자 분석`
+`vertical farm financial model`, `vertical farming economics`, `pfal unit economics`, `indoor farming capex opex`, `vertical farm electricity cost`, `commercial hydroponics`, `controlled environment agriculture`, `agtech cogs model`
 
 ---
 
 # Product 7: High-Value Niche Specialty Crops (Wasabi & Vanilla) Turnkey Commercial Suite
 
 - **Platform Category**: Business & Agriculture / Specialty Crops / Commercial Guides
-- **Standard Price**: **$79.00 USD (₩99,000 KRW)**
+- **Standard Price**: **$79.00 USD**
 - **URL Slug Recommendation**: `high-value-crops-wasabi-vanilla-suite`
 
 ### 1. Title & Tagline
@@ -366,32 +366,32 @@ This simulation suite provides the institutional-grade mathematical and financia
 
 ### 2. Marketplace Pitch & Description
 ```markdown
-Break free from commodity vegetable price collapse by cultivating crops that sell for ₩160,000 to ₩800,000 per kilogram.
+Break free from commodity vegetable price collapse by cultivating crops that sell for $150 to $600 per kilogram.
 
-While commodity greens sell for ₩2,000 to ₩5,000/kg, luxury culinary establishments face critical shortages of authentic fresh Sawa-wasabi and single-origin cured Bourbon vanilla pods. Producing these crops in controlled environments decouples your revenue from agricultural auctions and delivers annual revenues of ₩120M to ₩260M from just 100 pyeong.
+While commodity greens face intense pricing pressure, luxury culinary establishments face critical shortages of authentic fresh Sawa-wasabi and single-origin cured Bourbon vanilla pods. Producing these crops in controlled environments decouples your revenue from agricultural auctions and delivers exceptional return on investment.
 
 This suite delivers the exact biological parameters, chilling engineering designs, morning pollination kinetics, enzymatic curing protocols, and B2B sales contracts needed to monetize these elite crops.
 
 ### What is Included in Your Instant Download:
 1. **`WASABI_HYDROPONIC_ENGINEERING_PROTOCOL.md`**:
-   - Complete Sawa-wasabi continuous chilled water ($11-14°C) gravel gutter engineering.
-   - Dissolved oxygen supersaturation protocol ($\ge 8.5\text{ mg/L}$) preventing Erwinia and Phoma root rot.
+   - Complete Sawa-wasabi continuous chilled water (11-14°C) gravel gutter engineering.
+   - Dissolved oxygen supersaturation protocol (>= 8.5 mg/L) preventing Erwinia and Phoma root rot.
    - Glucosinolate-steering nutrient formulation maximizing sinigrin and allyl isothiocyanate pungency.
    - Staggered harvest schedule and secondary leaf/petiole pickle revenue streams.
 2. **`VANILLA_ORCHID_GREENHOUSE_CULTIVATION_AND_CURING_PROTOCOL.md`**:
    - High-wire climbing vine looping system and winter floral induction stress cycles.
-   - Step-by-step morning hand pollination protocol (6:00 AM - 11:30 AM) achieving $\ge 92\%$ fruit set.
-   - The 4-Stage Bourbon Curing Process (Killing in 63°C water, 48h wool sweating, 4-week slow drying, 3-month cedar conditioning) maximizing vanillin content ($\ge 2.0\%$).
+   - Step-by-step morning hand pollination protocol (6:00 AM - 11:30 AM) achieving >= 92% fruit set.
+   - The 4-Stage Bourbon Curing Process (Killing in 63°C water, 48h wool sweating, 4-week slow drying, 3-month cedar conditioning) maximizing vanillin content (>= 2.0%).
 3. **`B2B_FINE_DINING_DIRECT_SUPPLY_CONTRACT_TEMPLATE.md`**:
    - Ready-to-use commercial sales and offtake agreement for Michelin-starred restaurants, omakase sushi bars, and artisan patisseries.
-   - Fixed annual contract prices (₩220,000/kg for Wasabi Grade 1, ₩750,000/kg for Vanilla Grade A).
-   - Cold-chain 24-hour harvest-to-table delivery SLAs, minimum order quotas (MOQ), and Net-15/Net-30 payment terms.
+   - Fixed annual contract prices ($165/kg for Wasabi Grade 1, $550/kg for Vanilla Grade A).
+   - Cold-chain 24-hour harvest-to-table delivery SLAs, minimum order quotas (MOQ), and Net-30 payment terms.
 4. **`README_HIGH_VALUE_CROPS.md`**:
    - Economic feasibility comparison and market opportunity overview.
 ```
 
 ### 3. Marketplace Tags & SEO Keywords
-`wasabi cultivation`, `sawa wasabi hydroponics`, `vanilla orchid greenhouse`, `vanilla curing process`, `specialty crop guide`, `b2b restaurant supply contract`, `생와사비 수경재배`, `바닐라빈 재배`, `고소득 특수작물`
+`wasabi cultivation`, `sawa wasabi hydroponics`, `vanilla orchid greenhouse`, `vanilla curing process`, `specialty crop guide`, `b2b restaurant supply contract`, `gourmet bourbon vanilla`, `high value agriculture`
 
 ---
 

@@ -27,24 +27,24 @@ The primary cost driver in any greenhouse structure is the **hot-dip galvanized 
 - **Heavy Industrial Venlo Glass (Eave 6.0m - 7.5m, Trellis Heavy Crop)**: $26.0 - 35.0 \text{ kg/m}^2$ ($86 - 116 \text{ kg/pyeong}$)
 
 ### 2.2. Steel Specification & Sizing Standards
-| Structural Component | Standard Dimension (KS / DIN) | Wall Thickness ($t$) | Zinc Coating Mass ($\text{g/m}^2$) |
+| Structural Component | Standard Dimension (DIN / ASTM / KS) | Wall Thickness ($t$) | Zinc Coating Mass ($\text{g/m}^2$) |
 | :--- | :--- | :---: | :---: |
-| **Main Columns (기둥)** | Square Pipe $100 \times 100\text{mm}$ or $125 \times 75\text{mm}$ | $3.2 - 4.5\text{ mm}$ | $\ge 400 \text{ g/m}^2$ (HDG) |
-| **Truss Chords (보/트러스)** | Upper/Lower Chords: Rectangular $60 \times 40\text{mm}$ | $2.3 - 3.2\text{ mm}$ | $\ge 350 \text{ g/m}^2$ (HDG) |
-| **Roof Gutters (처마/물받이)** | Roll-formed Galvanized Sheet $1.5 - 2.0\text{t}$ | $1.5 - 2.0\text{ mm}$ | $\ge 450 \text{ g/m}^2$ (Continuous Zinc) |
-| **Arch Purlins (도리/서까래)**| Round Pipe $\Phi 31.8\text{mm} - \Phi 48.6\text{mm}$ | $1.5 - 2.1\text{ mm}$ | $\ge 275 \text{ g/m}^2$ (Pre-Galv) |
+| **Main Columns** | Square Pipe $100 \times 100\text{mm}$ or $125 \times 75\text{mm}$ | $3.2 - 4.5\text{ mm}$ | $\ge 400 \text{ g/m}^2$ (HDG) |
+| **Truss Chords** | Upper/Lower Chords: Rectangular $60 \times 40\text{mm}$ | $2.3 - 3.2\text{ mm}$ | $\ge 350 \text{ g/m}^2$ (HDG) |
+| **Roof Gutters** | Roll-formed Galvanized Sheet $1.5 - 2.0\text{t}$ | $1.5 - 2.0\text{ mm}$ | $\ge 450 \text{ g/m}^2$ (Continuous Zinc) |
+| **Arch Purlins & Rafters**| Round Pipe $\Phi 31.8\text{mm} - \Phi 48.6\text{mm}$ | $1.5 - 2.1\text{ mm}$ | $\ge 275 \text{ g/m}^2$ (Pre-Galv) |
 
 ---
 
 ## 3. Cladding Materials & Replacement Cost Index
 
-| Cladding System | Light Transmittance | U-Value ($\text{W/m}^2\cdot\text{K}$) | Useful Lifespan | Raw Material Cost ($\text{KRW/m}^2$) |
+| Cladding System | Light Transmittance | U-Value ($\text{W/m}^2\cdot\text{K}$) | Useful Lifespan | Raw Material Cost ($\text{USD/m}^2$) |
 | :--- | :---: | :---: | :---: | :---: |
-| **PO Film (0.15mm Anti-Fog/Drip)** | $89 - 91\%$ | $5.8 - 6.0$ | $3 - 5 \text{ Years}$ | ₩2,500 - ₩3,800 |
-| **Double Inflatable Poly (0.15mm $\times 2$)** | $78 - 82\%$ | $3.2 - 3.5$ | $3 - 5 \text{ Years}$ | ₩5,500 - ₩7,500 |
-| **Twin-Wall Polycarbonate (8mm-10mm)** | $79 - 82\%$ | $2.8 - 3.0$ | $10 - 12 \text{ Years}$| ₩18,000 - ₩25,000 |
-| **ETFE Architectural Film (F-Clean 100$\mu$m)**| $93 - 94\%$ | $5.5$ | $15 - 20 \text{ Years}$| ₩28,000 - ₩38,000 |
-| **4mm Tempered Diffuse Glass (ESG)** | $91 - 92\%$ | $5.7$ | $25+ \text{ Years}$ | ₩35,000 - ₩50,000 |
+| **PO Film (0.15mm Anti-Fog/Drip)** | $89 - 91\%$ | $5.8 - 6.0$ | $3 - 5 \text{ Years}$ | $2.00 - $3.00 |
+| **Double Inflatable Poly (0.15mm $\times 2$)** | $78 - 82\%$ | $3.2 - 3.5$ | $3 - 5 \text{ Years}$ | $4.20 - $5.80 |
+| **Twin-Wall Polycarbonate (8mm-10mm)** | $79 - 82\%$ | $2.8 - 3.0$ | $10 - 12 \text{ Years}$| $14.00 - $19.00 |
+| **ETFE Architectural Film (F-Clean 100$\mu$m)**| $93 - 94\%$ | $5.5$ | $15 - 20 \text{ Years}$| $22.00 - $29.00 |
+| **4mm Tempered Diffuse Glass (ESG)** | $91 - 92\%$ | $5.7$ | $25+ \text{ Years}$ | $28.00 - $39.00 |
 
 ---
 
