@@ -547,7 +547,55 @@
           </button>
           <button class="action-btn secondary" onclick="window.print()">
             <span>🖨️ Print Technical Spec Sheet</span>
-          </button>
+      </div>
+
+      <!-- Deep Engineering Monograph & FAQ Section (Google E-E-A-T & VDI 4640 Standards) -->
+      <div class="calc-card" style="margin-top:20px;">
+        <h2>📚 Theoretical Hydrogeology, VDI 4640 Standards & Numerical Verification</h2>
+        <p style="font-size:0.95rem; line-height:1.75; color:#cbd5e1;">
+          Aquifer Thermal Energy Storage (ATES) utilizes saturated geological formations (predominantly unconsolidated sand and gravel aquifers confined by clay aquicludes) as seasonal thermal energy buffers. During the summer cooling cycle, chilled groundwater ($6\text{--}9^\circ\text{C}$) is extracted from the Cold Well, routed through plate heat exchangers to absorb excess greenhouse sensible heat and fan-coil loads, and re-injected into the Warm Well at $16\text{--}22^\circ\text{C}$. In winter, the flow direction reverses: warm water is pumped from the Warm Well into the evaporator of industrial ammonia ($\text{NH}_3$/R717) or hydrocarbon heat pumps, lifting heat to $45\text{--}55^\circ\text{C}$ for pipe-rail heating networks while returning chilled water to recharge the cold reservoir.
+        </p>
+
+        <h3 style="font-size:1.15rem; color:#38bdf8; margin:18px 0 10px;">1. Dupuit-Theis Hydraulic Drawdown & Well Interference</h3>
+        <p style="font-size:0.92rem; line-height:1.7; color:#94a3b8;">
+          For a fully penetrating well in a confined aquifer of thickness $H_{\text{aq}}$ and hydraulic conductivity $k_f$, steady-state radial drawdown $s_w$ at well radius $r_w$ under volumetric extraction $\dot{V}$ is governed by the Dupuit-Theis formulation:
+        </p>
+        <div class="formula-tag">
+          s_w = \frac{\dot{V}}{2 \pi \cdot k_f \cdot H_{\text{aq}}} \cdot \ln\left(\frac{R_{\text{influence}}}{r_w}\right) \quad [\text{m}]
+        </div>
+        <p style="font-size:0.92rem; line-height:1.7; color:#94a3b8;">
+          To prevent catastrophic hydraulic jamming and borehole screen siltation, Darcy entry velocity must not exceed $v_{\text{crit}} = \sqrt{k_f} / 30 \text{ m/s}$ (Sichardt criteria).
+        </p>
+
+        <h3 style="font-size:1.15rem; color:#38bdf8; margin:18px 0 10px;">2. Thermal Plume Geometry & Breakthrough Prevention (VDI 4640 Part 4)</h3>
+        <p style="font-size:0.92rem; line-height:1.7; color:#94a3b8;">
+          Under radial advective transport, the seasonal thermal radius $R_{\text{th}}$ of injected warm or cold water within a porous matrix having volumetric heat capacity $c_{\text{aq}} = (1-\phi)c_{\text{solid}} + \phi c_{\text{water}}$ is calculated as:
+        </p>
+        <div class="formula-tag">
+          R_{\text{th}} = \sqrt{\frac{c_w \cdot V_{\text{seasonal}}}{\pi \cdot H_{\text{aq}} \cdot c_{\text{aq}}}} \quad [\text{m}]
+        </div>
+        <p style="font-size:0.92rem; line-height:1.7; color:#94a3b8;">
+          According to VDI 4640 guidelines, well separation distance $L_{\text{well}}$ must strictly satisfy $L_{\text{well}} \ge 2.5 \cdot R_{\text{th}} + v_{\text{regional}} \cdot \tau_{\text{seasonal}}$ to prevent early thermal breakthrough, which degrades seasonal coefficient of performance (COP) over multi-decade lifecycles.
+        </p>
+
+        <h3 style="font-size:1.15rem; color:#38bdf8; margin:18px 0 10px;">3. Frequently Asked Questions (FAQ)</h3>
+        <div style="display:flex; flex-direction:column; gap:14px; margin-top:10px;">
+          <div style="background:rgba(15,23,42,0.6); padding:16px; border-radius:10px; border:1px solid rgba(255,255,255,0.06);">
+            <strong style="color:#f8fafc; font-size:0.95rem;">Q1: What are the primary hydrogeological requirements for an agricultural ATES system?</strong>
+            <p style="font-size:0.88rem; color:#94a3b8; margin:6px 0 0;">An unconsolidated sand or gravel aquifer with transmissivity $T = k_f \cdot H_{\text{aq}} > 50\text{ m}^2/\text{day}$, natural hydraulic gradient $< 0.005$ to avoid plume drift, low dissolved iron ($< 0.2\text{ mg/L}$) and manganese to prevent well screen clogging, and confining upper/lower clay aquicludes to isolate potable drinking water aquifers.</p>
+          </div>
+          <div style="background:rgba(15,23,42,0.6); padding:16px; border-radius:10px; border:1px solid rgba(255,255,255,0.06);">
+            <strong style="color:#f8fafc; font-size:0.95rem;">Q2: How does ATES compare to conventional closed-loop borehole heat exchangers (BHE)?</strong>
+            <p style="font-size:0.88rem; color:#94a3b8; margin:6px 0 0;">For commercial facilities exceeding 1 hectare (heating loads $> 1.5\text{ MW}_{\text{th}}$), ATES achieves $40\text{--}60\%$ lower capital expenditure per kilowatt installed compared to drilling hundreds of 100m U-tube boreholes, while offering significantly higher flow rates ($100\text{--}300\text{ m}^3/\text{h}$) and direct free cooling capacities.</p>
+          </div>
+          <div style="background:rgba(15,23,42,0.6); padding:16px; border-radius:10px; border:1px solid rgba(255,255,255,0.06);">
+            <strong style="color:#f8fafc; font-size:0.95rem;">Q3: How do German BEW (Bundesförderung effiziente Wärmenetze) grants apply?</strong>
+            <p style="font-size:0.88rem; color:#94a3b8; margin:6px 0 0;">Under BEW Modul 2, innovative deep and shallow geothermal installations, industrial heat pumps, and aquifer doublet wells qualify for up to $40\text{--}45\%$ non-dilutive capital grants, shortening commercial payback periods from 6.8 years to under 3.5 years.</p>
+          </div>
+          <div style="background:rgba(15,23,42,0.6); padding:16px; border-radius:10px; border:1px solid rgba(255,255,255,0.06);">
+            <strong style="color:#f8fafc; font-size:0.95rem;">Q4: What maintenance is required to prevent well clogging and geochemical scaling?</strong>
+            <p style="font-size:0.88rem; color:#94a3b8; margin:6px 0 0;">Nitrogen gas blanketing in buffer tanks, pressurized closed-loop hydraulic loops keeping water above $\text{CO}_2$ outgassing pressure, seasonal regenerative backwashing, and continuous redox potential monitoring prevent calcium carbonate precipitation and ferric hydroxide scaling.</p>
+          </div>
         </div>
       </div>
     </div>
