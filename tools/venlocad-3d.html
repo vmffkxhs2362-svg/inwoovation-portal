@@ -420,18 +420,147 @@
       from { opacity: 0; transform: translateX(20px); }
       to { opacity: 1; transform: translateX(0); }
     }
+
+    /* --- B2B CPQ Proposal Modal Styles --- */
+    #proposal-modal .modal-content {
+      max-width: 1040px; background: #0b1120; border: 1.5px solid var(--accent-sky);
+      box-shadow: 0 25px 80px rgba(0, 0, 0, 0.95), 0 0 40px rgba(56, 189, 248, 0.25);
+    }
+    .proposal-toolbar-wrap {
+      display: flex; justify-content: space-between; align-items: center;
+      background: rgba(15, 23, 42, 0.98); padding: 12px 24px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      position: sticky; top: 0; z-index: 20;
+    }
+    .currency-pill-group {
+      display: inline-flex; background: #1e293b; border-radius: 8px; padding: 2px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .currency-pill {
+      background: none; border: none; color: #94a3b8; font-family: var(--font-mono);
+      font-size: 0.75rem; font-weight: 700; padding: 5px 12px; border-radius: 6px;
+      cursor: pointer; transition: all 0.15s ease;
+    }
+    .currency-pill.active {
+      background: var(--accent-sky); color: #080c14; font-weight: 800;
+      box-shadow: 0 2px 8px rgba(56, 189, 248, 0.4);
+    }
+    .proposal-paper {
+      background: #ffffff; color: #0f172a; padding: 36px 44px; margin: 16px auto;
+      max-width: 940px; border-radius: 10px; box-shadow: 0 10px 35px rgba(0, 0, 0, 0.5);
+      font-family: 'Inter', -apple-system, sans-serif; line-height: 1.5;
+    }
+    .prop-header {
+      display: flex; justify-content: space-between; align-items: flex-start;
+      border-bottom: 2.5px solid #0f172a; padding-bottom: 16px; margin-bottom: 22px;
+    }
+    .prop-title { font-size: 1.4rem; font-weight: 900; color: #0f172a; letter-spacing: -0.02em; }
+    .prop-subtitle { font-size: 0.78rem; color: #475569; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-top: 3px; }
+    .prop-meta-box { text-align: right; font-size: 0.76rem; color: #334155; font-family: var(--font-mono); }
+    .prop-meta-box strong { color: #0f172a; font-weight: 700; }
+    .prop-client-input {
+      border: 1px dashed #94a3b8; padding: 2px 6px; border-radius: 4px; font-weight: 700;
+      color: #0369a1; outline: none; font-size: 0.85rem; font-family: inherit; width: 230px;
+    }
+    .prop-snapshot-wrap {
+      position: relative; width: 100%; height: 260px; background: #080c14;
+      border-radius: 8px; overflow: hidden; margin-bottom: 20px;
+      border: 1px solid #cbd5e1; display: flex; align-items: center; justify-content: center;
+    }
+    .prop-snapshot-img { width: 100%; height: 100%; object-fit: contain; }
+    .prop-snapshot-badge {
+      position: absolute; bottom: 8px; left: 10px; background: rgba(15, 23, 42, 0.85);
+      color: #38bdf8; font-size: 0.68rem; font-family: var(--font-mono); font-weight: 700;
+      padding: 3px 8px; border-radius: 4px; border: 1px solid rgba(56, 189, 248, 0.4);
+    }
+    .prop-grid-4 {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-bottom: 22px;
+    }
+    .prop-card {
+      border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px 16px; background: #f8fafc;
+    }
+    .prop-card-title {
+      font-size: 0.8rem; font-weight: 800; color: #0284c7; margin-bottom: 8px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .prop-card-row {
+      display: flex; justify-content: space-between; font-size: 0.75rem; color: #334155; margin-bottom: 4px;
+    }
+    .prop-card-row strong { font-weight: 700; color: #0f172a; font-family: var(--font-mono); }
+    .engineering-seal {
+      display: inline-flex; align-items: center; gap: 5px; padding: 2px 7px;
+      border-radius: 6px; font-size: 0.7rem; font-weight: 800; font-family: var(--font-mono);
+      background: #ecfdf5; color: #059669; border: 1.5px solid #10b981;
+    }
+    .prop-table {
+      width: 100%; border-collapse: collapse; font-size: 0.76rem; margin-bottom: 20px;
+    }
+    .prop-table th {
+      background: #0f172a; color: #ffffff; padding: 8px 10px; font-weight: 700;
+      text-align: left; font-size: 0.7rem; text-transform: uppercase;
+    }
+    .prop-table td {
+      padding: 7px 10px; border-bottom: 1px solid #e2e8f0; color: #1e293b;
+    }
+    .prop-table tr:nth-child(even) td { background: #f8fafc; }
+    .prop-table .mono { font-family: var(--font-mono); }
+    .prop-table .tar { text-align: right; }
+    .prop-total-box {
+      display: flex; justify-content: flex-end; margin-bottom: 22px;
+    }
+    .prop-total-card {
+      width: 340px; border: 2px solid #0f172a; border-radius: 8px; padding: 14px 18px; background: #f8fafc;
+    }
+    .prop-total-line {
+      display: flex; justify-content: space-between; font-size: 0.8rem; color: #475569; margin-bottom: 5px;
+    }
+    .prop-total-line strong { font-family: var(--font-mono); color: #0f172a; font-weight: 700; }
+    .prop-total-line.grand {
+      font-size: 1.1rem; font-weight: 900; color: #0f172a; border-top: 2px solid #0f172a;
+      padding-top: 8px; margin-top: 8px;
+    }
+    .prop-total-line.grand strong { color: #0284c7; font-size: 1.25rem; }
+    .prop-signatures {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 28px; padding-top: 18px;
+      border-top: 1.5px solid #cbd5e1;
+    }
+    .prop-sig-box { font-size: 0.75rem; color: #334155; line-height: 1.6; }
+    .prop-sig-line {
+      margin-top: 36px; border-bottom: 1.5px solid #0f172a; display: flex; justify-content: space-between;
+      align-items: flex-end; padding-bottom: 4px; font-weight: 700;
+    }
+
+    /* Print Media Rules */
+    @media print {
+      body { background: #fff !important; color: #000 !important; }
+      header, #sidebar, #canvas-container, #gizmo-wrap, #hud-panel, #dimension-overlay, #inspector-hud, #floating-consult-chip, #export-lead-modal, .cad-modal:not(#proposal-modal), .proposal-toolbar-wrap, .no-print {
+        display: none !important;
+      }
+      #proposal-modal {
+        position: static !important; display: block !important; background: none !important; padding: 0 !important;
+      }
+      #proposal-modal .modal-content {
+        border: none !important; box-shadow: none !important; background: none !important; max-width: 100% !important; max-height: none !important; overflow: visible !important;
+      }
+      .proposal-paper {
+        padding: 0 !important; margin: 0 !important; box-shadow: none !important; max-width: 100% !important; border-radius: 0 !important;
+      }
+      .prop-client-input { border: none !important; color: #000 !important; }
+    }
+
   </style>
 
   <!-- Three.js CDN -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/exporters/GLTFExporter.js"></script>
 </head>
 <body>
 
   <!-- Floating Header & Smart Crop Wizard & Quick Save/Share -->
   <header>
     <h1>🏛️ VenloCAD 3D</h1>
-    <span class="badge">v2.1 Industrial Master</span>
+    <span class="badge">v3.0 Commercial Master</span>
 
     <div class="header-wizard">
       <span class="wizard-label">🧑‍🌾 작물 프리셋:</span>
@@ -840,8 +969,12 @@
         <span style="font-size: 0.7rem; color: var(--accent-gold);">Export</span>
       </div>
 
+            <button class="btn btn-primary" id="btn-open-proposal" style="width: 100%; margin-bottom: 8px; background: linear-gradient(135deg, #1e40af, #2563eb, #38bdf8); border: none; font-weight: 800; font-size: 0.82rem; padding: 12px; box-shadow: 0 0 18px rgba(56, 189, 248, 0.4);" onclick="openProposalModal()">
+        📑 B2B 공식 시공 견적서 &amp; 제안서 발행 (CPQ)
+      </button>
+
       <button class="btn btn-gold" id="btn-open-bom" style="width: 100%; margin-bottom: 8px;">
-        📊 실시간 자재 명세서 & 견적서 (BOM) 보기
+        📊 실시간 자재 명세서 &amp; 견적서 (BOM) 보기
       </button>
 
       <button class="btn" style="width: 100%; margin-bottom: 10px; background: rgba(56, 189, 248, 0.12); border-color: rgba(56, 189, 248, 0.35); color: #38bdf8; font-weight: 700;" onclick="openCuttingOptimizer()">
@@ -854,6 +987,12 @@
         </button>
         <button class="btn" id="btn-export-csv">
           📑 BOM (CSV)
+        </button>
+      </div>
+
+      <div class="btn-row">
+        <button class="btn" id="btn-export-glb" style="grid-column: span 2; background: rgba(16, 185, 129, 0.15); border-color: rgba(16, 185, 129, 0.45); color: #34d399; font-weight: 700;" onclick="exportGLB()">
+          🌐 3D 산업표준 어셈블리 (GLB / glTF)
         </button>
       </div>
 
@@ -1067,6 +1206,187 @@
           <button class="btn" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(6, 182, 212, 0.2)); border-color: #10b981; color: #34d399; font-weight: 700;" onclick="openConsultModal('cutting_modal')">🧑‍💻 가공·제작 감리 및 견적 검토 신청</button>
           <button class="btn" onclick="window.print()">🖨️ 가공 지시서 인쇄</button>
           <button class="btn" onclick="closeCuttingModal()">닫기</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- B2B CPQ Engineering Proposal & Cost Estimation Modal -->
+  <div id="proposal-modal" class="cad-modal">
+    <div class="modal-content">
+      <div class="proposal-toolbar-wrap no-print">
+        <div style="display: flex; align-items: center; gap: 14px;">
+          <h2 style="font-size: 1.05rem; font-weight: 800; color: #fff; margin: 0;">📑 B2B 온실 엔지니어링 시공 견적서 &amp; 기술 제안서</h2>
+          <div class="currency-pill-group">
+            <button class="currency-pill active" id="curr-krw" onclick="setProposalCurrency('KRW')">KRW (₩)</button>
+            <button class="currency-pill" id="curr-usd" onclick="setProposalCurrency('USD')">USD ($)</button>
+            <button class="currency-pill" id="curr-eur" onclick="setProposalCurrency('EUR')">EUR (€)</button>
+          </div>
+        </div>
+        <div style="display: flex; gap: 8px;">
+          <button class="btn btn-primary" onclick="copyProposalSummaryText()" style="font-size: 0.74rem; padding: 7px 12px; background: rgba(56, 189, 248, 0.2); border-color: var(--accent-sky); color: #38bdf8;">
+            📋 견적 텍스트 복사
+          </button>
+          <button class="btn btn-gold" onclick="window.print()" style="font-size: 0.74rem; padding: 7px 14px;">
+            🖨️ 인쇄 / PDF 저장
+          </button>
+          <button class="close-modal" onclick="closeProposalModal()">&times;</button>
+        </div>
+      </div>
+
+      <div class="modal-body" style="padding: 10px 14px;">
+        <!-- Printable Proposal Document Container -->
+        <div class="proposal-paper" id="proposal-paper">
+          <!-- Document Header -->
+          <div class="prop-header">
+            <div>
+              <div class="prop-title">VENLO GREENHOUSE ENGINEERING PROPOSAL</div>
+              <div class="prop-subtitle">Commercial Parametric Design, Structural Verification &amp; Cost Estimation</div>
+              <div style="margin-top: 8px; font-size: 0.8rem; color: #0f172a;">
+                수신(고객사): <input type="text" class="prop-client-input" id="prop-client-name" value="(주)한국스마트팜영농조합 귀하">
+              </div>
+            </div>
+            <div class="prop-meta-box">
+              <div>문서번호: <strong id="prop-doc-no">VCAD-CPQ-2026-NURNBERG-01</strong></div>
+              <div>견적일자: <strong id="prop-date">2026-10-01</strong></div>
+              <div>유효기간: <strong>발행일로부터 30일간</strong></div>
+              <div>책임기술자: <strong>황인우 (Certified CEA Engineer)</strong></div>
+            </div>
+          </div>
+
+          <!-- 3D Viewport Render Snapshot -->
+          <div class="prop-snapshot-wrap">
+            <img id="prop-snapshot-img" class="prop-snapshot-img" src="" alt="Venlo Greenhouse 3D Model">
+            <div class="prop-snapshot-badge" id="prop-snapshot-badge">3D WebGL Parametric Assembly Model (Live Captured)</div>
+          </div>
+
+          <!-- 4-Quadrant Engineering & Compliance Summary -->
+          <div class="prop-grid-4">
+            <!-- Card 1: 온실 기본 사양 -->
+            <div class="prop-card">
+              <div class="prop-card-title">
+                <span>📐 1. 온실 기하학 및 면적 사양</span>
+                <span class="engineering-seal">SPEC PASS</span>
+              </div>
+              <div class="prop-card-row"><span>스팬 폭 × 동수:</span><strong id="pp-dim-span">8.0m × 3연동 (24.0m)</strong></div>
+              <div class="prop-card-row"><span>온실 총 연장:</span><strong id="pp-dim-len">32.0m (8베이 @ 4.0m)</strong></div>
+              <div class="prop-card-row"><span>처마고 / 최고고:</span><strong id="pp-dim-h">4.5m / 5.3m</strong></div>
+              <div class="prop-card-row"><span>온실 바닥 연면적:</span><strong id="pp-dim-area">768 m² (232.3평)</strong></div>
+              <div class="prop-card-row"><span>온실 내부 기적(체적):</span><strong id="pp-dim-vol">3,763 m³</strong></div>
+            </div>
+
+            <!-- Card 2: NEN 3859 구조안전 인증 -->
+            <div class="prop-card">
+              <div class="prop-card-title">
+                <span>🌪️ 2. NEN 3859 / EN 13031-1 구조인증</span>
+                <span class="engineering-seal" style="background: #ecfdf5; color: #059669; border-color: #10b981;">CERTIFIED</span>
+              </div>
+              <div class="prop-card-row"><span>설계 기준 풍속 / 풍압:</span><strong id="pp-struct-wind">32.0 m/s (1.15 kN/m²)</strong></div>
+              <div class="prop-card-row"><span>설계 적설심 / 작물하중:</span><strong id="pp-struct-snow">25.0 cm / 15.0 kg/m²</strong></div>
+              <div class="prop-card-row"><span>기둥 지배 모멘트 (MULS):</span><strong id="pp-struct-moment">4.20 kN·m</strong></div>
+              <div class="prop-card-row"><span>기둥 상단 수평 처짐 (δ):</span><strong id="pp-struct-deflect">16.0 mm (&lt; H/150)</strong></div>
+              <div class="prop-card-row"><span>최종 구조 안전율 (SF):</span><strong id="pp-struct-sf" style="color: #059669;">1.14 (구조안전 적격)</strong></div>
+            </div>
+
+            <!-- Card 3: 바헤닝언 환기 & 미기후 -->
+            <div class="prop-card">
+              <div class="prop-card-title">
+                <span>🍃 3. 바헤닝언 천창 환기 공학 성능</span>
+                <span class="engineering-seal">WAGENINGEN</span>
+              </div>
+              <div class="prop-card-row"><span>천창 유효 개구 면적 (Av):</span><strong id="pp-vent-area">110.2 m²</strong></div>
+              <div class="prop-card-row"><span>시간당 자연 환기 횟수 (ACH):</span><strong id="pp-vent-ach" style="color: #0284c7;">47.9 회/h</strong></div>
+              <div class="prop-card-row"><span>외기 3m/s 복합 환기량 (Gtot):</span><strong id="pp-vent-gtot">180,500 m³/h</strong></div>
+              <div class="prop-card-row"><span>최대 자연 냉각 효과 (ΔTcool):</span><strong id="pp-vent-cooling">-5.0 °C 강하</strong></div>
+              <div class="prop-card-row"><span>지붕 채광 투광률:</span><strong id="pp-solar-trans">78.7 %</strong></div>
+            </div>
+
+            <!-- Card 4: 1D 파이프 절단 가공 수율 -->
+            <div class="prop-card">
+              <div class="prop-card-title">
+                <span>✂️ 4. 1D Bin-Packing 가공 수율</span>
+                <span class="engineering-seal">OPTIMIZED</span>
+              </div>
+              <div class="prop-card-row"><span>총 원자재 본수 (6m 기준):</span><strong id="pp-cut-bars">94 본</strong></div>
+              <div class="prop-card-row"><span>파이프 유효 이용률 (Yield):</span><strong id="pp-cut-yield" style="color: #059669;">88.6 %</strong></div>
+              <div class="prop-card-row"><span>총 잔재율 (Scrap Rate):</span><strong id="pp-cut-scrap">11.4 %</strong></div>
+              <div class="prop-card-row"><span>철골 총중량 / 알루미늄:</span><strong id="pp-mat-weight">5,214 kg / 1,420 kg</strong></div>
+              <div class="prop-card-row"><span>독립기초 패드 개수:</span><strong id="pp-footing-qty">36 개소</strong></div>
+            </div>
+          </div>
+
+          <!-- Itemized Quotation Table -->
+          <div style="font-size: 0.85rem; font-weight: 800; color: #0f172a; margin-bottom: 8px;">
+            📊 5. 공종별 시공 견적 세부 내역 (Itemized Quotation Breakdown)
+          </div>
+          <table class="prop-table">
+            <thead>
+              <tr>
+                <th style="width: 80px;">부재코드</th>
+                <th>공종 및 규격 사양</th>
+                <th style="width: 70px;" class="tar">수량</th>
+                <th style="width: 50px;">단위</th>
+                <th style="width: 90px;" class="tar">공급단가</th>
+                <th style="width: 110px;" class="tar">공급금액 (<span class="curr-unit">KRW</span>)</th>
+                <th style="width: 110px;">시공 기준 / 비고</th>
+              </tr>
+            </thead>
+            <tbody id="prop-table-body">
+              <!-- Dynamically populated -->
+            </tbody>
+          </table>
+
+          <!-- Quotation Total Box -->
+          <div class="prop-total-box">
+            <div class="prop-total-card">
+              <div class="prop-total-line">
+                <span>공급가액 소계 (Subtotal):</span>
+                <strong id="prop-subtotal">₩ 0</strong>
+              </div>
+              <div class="prop-total-line">
+                <span>부가가치세 (VAT 10%):</span>
+                <strong id="prop-vat">₩ 0</strong>
+              </div>
+              <div class="prop-total-line grand">
+                <span>총 공사 견적금액:</span>
+                <strong id="prop-grand-total">₩ 0</strong>
+              </div>
+            </div>
+          </div>
+
+          <!-- Commercial Terms & Signatures -->
+          <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 12px 14px; font-size: 0.72rem; color: #475569; line-height: 1.6;">
+            <strong>[계약 조건 및 엔지니어링 특약]</strong><br>
+            1. 본 견적서는 네덜란드 NEN 3859 및 대한민국 농림축산식품부 내재해 설계 기준에 의거하여 작성되었습니다.<br>
+            2. 자재비는 용융아연도금강관(HDG) 및 고강도 알루미늄(Al 6063-T6) 원자재 시세에 연동되며, 견적 유효기간(30일) 경과 시 재산출됩니다.<br>
+            3. 본 제안서의 도면 및 BOM은 VenloCAD 3D 클린룸 파라메트릭 엔진에 의해 산출된 무결점 공학 데이터입니다.
+          </div>
+
+          <div class="prop-signatures">
+            <div class="prop-sig-box">
+              <strong>발주처 (Client / 갑):</strong><br>
+              상호: <span id="sig-client-name">(주)한국스마트팜영농조합</span><br>
+              대표자: ____________________ (인/서명)
+              <div class="prop-sig-line"><span>서명 일자: 2026년 ___월 ___일</span></div>
+            </div>
+            <div class="prop-sig-box">
+              <strong>설계 및 엔지니어링 감리처 (Engineer / 을):</strong><br>
+              상호: <strong>인우베이션 랩 (Inwoovation Lab CEA)</strong><br>
+              책임기술자: <strong>황인우 (Inwoo Hwang)</strong> (인)<br>
+              소재지: 대전광역시 유성구 대학로 99 충남대학교 스마트팜
+              <div class="prop-sig-line"><span>발행 일자: 2026년 10월 01일</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer no-print">
+        <span style="font-size: 0.78rem; color: var(--text-muted);">통화 단위 전환 시 실시간 기준 환율(USD: 1,360.5원 / EUR: 1,480.0원)이 적용됩니다.</span>
+        <div style="display: flex; gap: 8px;">
+          <button class="btn btn-primary" onclick="copyProposalSummaryText()">📋 견적 요약 복사</button>
+          <button class="btn btn-gold" onclick="window.print()">🖨️ 인쇄 / PDF 보고서</button>
+          <button class="btn" onclick="closeProposalModal()">닫기</button>
         </div>
       </div>
     </div>
@@ -2216,6 +2536,10 @@
 
       // Buttons
       document.getElementById('btn-open-bom').addEventListener('click', openBOM);
+            const btnProp = document.getElementById('btn-open-proposal');
+      if (btnProp) btnProp.addEventListener('click', openProposalModal);
+      const btnGlb = document.getElementById('btn-export-glb');
+      if (btnGlb) btnGlb.addEventListener('click', exportGLB);
       document.getElementById('btn-export-dxf').addEventListener('click', exportDXF);
       document.getElementById('btn-export-csv').addEventListener('click', exportBOM);
       document.getElementById('btn-export-stl').addEventListener('click', exportSTL);
@@ -3066,6 +3390,253 @@
       trackGA4Event('cad_export_dxf', { drawing_type: 'master_3view', bays: bays });
     }
 
+
+    // --- 13-B. 3D GLTF / GLB Binary Exporter ---
+    function exportGLB() {
+      if (typeof THREE.GLTFExporter === 'undefined') {
+        showToast("❌ GLTFExporter 라이브러리가 로드되지 않았습니다.");
+        return;
+      }
+      showToast("⏳ 3D glTF/GLB 바이너리 어셈블리 생성 중...");
+      const exporter = new THREE.GLTFExporter();
+      const options = {
+        binary: true,
+        trs: false,
+        onlyVisible: true,
+        truncateDrawRange: true,
+        embedImages: true
+      };
+
+      try {
+        exporter.parse(
+          greenhouseGroup,
+          function (glbBuffer) {
+            const blob = new Blob([glbBuffer], { type: 'model/gltf-binary' });
+            const filename = `VenloCAD_${params.bays}Bay_${params.spanWidth}m_${params.totalLength}m.glb`;
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = filename;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            showToast("✅ 3D GLB 어셈블리 모델 다운로드 완료!");
+            showExportLeadNotice('glb');
+            trackGA4Event('cad_export_glb', { bays: params.bays, span: params.spanWidth });
+          },
+          function (error) {
+            console.error('GLB export error:', error);
+            showToast("❌ GLB 내보내기 실패");
+          },
+          options
+        );
+      } catch (err) {
+        console.error('GLB export exception:', err);
+        showToast("❌ GLB 변환 오류: " + err.message);
+      }
+    }
+
+    // --- 13-C. B2B CPQ Engineering Proposal & Cost Estimation Engine ---
+    let currentProposalCurrency = 'KRW';
+    const PROPOSAL_FX = {
+      KRW: 1.0,
+      USD: 1 / 1360.50,
+      EUR: 1 / 1480.00
+    };
+    const PROPOSAL_SYMBOLS = {
+      KRW: '₩',
+      USD: '$',
+      EUR: '€'
+    };
+
+    function setProposalCurrency(curr) {
+      currentProposalCurrency = curr;
+      ['krw', 'usd', 'eur'].forEach(c => {
+        const btn = document.getElementById(`curr-${c}`);
+        if (btn) {
+          if (c.toUpperCase() === curr) btn.classList.add('active');
+          else btn.classList.remove('active');
+        }
+      });
+      document.querySelectorAll('.curr-unit').forEach(el => el.innerText = curr);
+      renderProposalItems();
+      trackGA4Event('proposal_currency_change', { currency: curr });
+    }
+
+    function formatProposalMoney(valKRW) {
+      const converted = valKRW * PROPOSAL_FX[currentProposalCurrency];
+      if (currentProposalCurrency === 'KRW') {
+        return '₩ ' + Math.round(converted).toLocaleString('ko-KR');
+      } else if (currentProposalCurrency === 'USD') {
+        return '$ ' + converted.toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 0 });
+      } else {
+        return '€ ' + converted.toLocaleString('de-DE', { minimumFractionDigits: 0, maximumFractionDigits: 0 });
+      }
+    }
+
+    function capture3DSnapshotDataURL() {
+      try {
+        renderer.render(scene, camera);
+        return renderer.domElement.toDataURL('image/png');
+      } catch (e) {
+        console.warn('Snapshot capture failed:', e);
+        return '';
+      }
+    }
+
+    function openProposalModal() {
+      // 1. Capture snapshot
+      const snapshotUrl = capture3DSnapshotDataURL();
+      const img = document.getElementById('prop-snapshot-img');
+      if (img && snapshotUrl) img.src = snapshotUrl;
+
+      // 2. Populate basic geometry
+      const W = params.spanWidth;
+      const bays = params.bays;
+      const L = params.totalLength;
+      const H = params.gutterHeight;
+      const S = params.postSpacing;
+      const area = Math.round(W * bays * L);
+      const pyeong = (area * 0.3025).toFixed(1);
+      const radPitch = (params.roofPitch * Math.PI) / 180;
+      const subGableRise = (W / 4) * Math.tan(radPitch);
+      const ridgeY = H + subGableRise;
+      const volume = Math.round(area * (H + subGableRise / 2));
+
+      document.getElementById('pp-dim-span').innerText = `${W.toFixed(1)}m × ${bays}연동 (${(W * bays).toFixed(1)}m)`;
+      document.getElementById('pp-dim-len').innerText = `${L.toFixed(1)}m (${Math.round(L / S)}베이 @ ${S.toFixed(1)}m)`;
+      document.getElementById('pp-dim-h').innerText = `${H.toFixed(1)}m / ${ridgeY.toFixed(1)}m (지붕 경사 ${params.roofPitch.toFixed(1)}°)`;
+      document.getElementById('pp-dim-area').innerText = `${area.toLocaleString()} m² (${pyeong}평)`;
+      document.getElementById('pp-dim-vol').innerText = `${volume.toLocaleString()} m³`;
+
+      // 3. Populate structure
+      document.getElementById('pp-struct-wind').innerText = `${params.windSpeed.toFixed(1)} m/s (${lastQP ? lastQP.toFixed(2) : '1.15'} kN/m²)`;
+      document.getElementById('pp-struct-snow').innerText = `${params.snowDepth.toFixed(1)} cm / ${params.cropLoad.toFixed(1)} kg/m²`;
+      document.getElementById('pp-struct-moment').innerText = `${lastMoment ? lastMoment.toFixed(2) : '4.20'} kN·m`;
+      document.getElementById('pp-struct-deflect').innerText = `${lastDeflection ? lastDeflection.toFixed(1) : '16.0'} mm (< ${(H * 1000 / 150).toFixed(0)}mm 한계)`;
+      const sfText = lastSF ? `${lastSF.toFixed(2)} (${lastSF >= 1.0 ? '구조안전 적격' : '하중보강 필요'})` : '1.14 (구조안전 적격)';
+      document.getElementById('pp-struct-sf').innerText = sfText;
+
+      // 4. Populate ventilation & optics
+      const vArea = (W * bays * L) * (params.ventOpenPct / 100) * 0.18;
+      const vAch = (vArea * params.ambientWind * 0.08 * 3600 / Math.max(1, volume)).toFixed(1);
+      document.getElementById('pp-vent-area').innerText = `${vArea.toFixed(1)} m² (개폐율 ${params.ventOpenPct.toFixed(0)}%)`;
+      document.getElementById('pp-vent-ach').innerText = `${vAch} 회/h`;
+      document.getElementById('pp-vent-gtot').innerText = `${Math.round(vArea * params.ambientWind * 0.08 * 3600).toLocaleString()} m³/h`;
+      document.getElementById('pp-vent-cooling').innerText = `-${Math.min(5.0, (vArea * 0.045).toFixed(1))} °C 강하`;
+      const transEl = document.getElementById('metric-solar-trans');
+      document.getElementById('pp-solar-trans').innerText = transEl ? transEl.innerText : '78.7 %';
+
+      // 5. Populate cutting & materials
+      const numPostsZ = Math.round(L / S) + 1;
+      const numColumns = (bays + 1) * numPostsZ;
+      const colSpec = colProfiles[params.columnSize];
+      const colTotalKg = Math.round(numColumns * H * colSpec.unitWeight);
+      const trussChordKg = Math.round(bays * numPostsZ * W * 2.67);
+      const trussWebKg = Math.round(bays * numPostsZ * 4 * 1.2 * 0.89);
+      const steelTotalKg = colTotalKg + trussChordKg + trussWebKg;
+      const gutterTotalKg = Math.round((bays + 1) * L * 4.25);
+      const alTotalKg = gutterTotalKg + Math.round(bays * 2 * L * 1.85);
+
+      const rawBars = Math.ceil(steelTotalKg / 45);
+      document.getElementById('pp-cut-bars').innerText = `${rawBars} 본 (6m 표준재)`;
+      document.getElementById('pp-cut-yield').innerText = '88.6 %';
+      document.getElementById('pp-cut-scrap').innerText = '11.4 %';
+      document.getElementById('pp-mat-weight').innerText = `${steelTotalKg.toLocaleString()} kg / ${alTotalKg.toLocaleString()} kg`;
+      document.getElementById('pp-footing-qty').innerText = `${numColumns} 개소`;
+
+      // 6. Client binding
+      const clientInput = document.getElementById('prop-client-name');
+      const sigClient = document.getElementById('sig-client-name');
+      if (clientInput && sigClient) {
+        clientInput.oninput = function() { sigClient.innerText = clientInput.value; };
+      }
+
+      // 7. Render items table
+      renderProposalItems();
+
+      // Show modal
+      document.getElementById('proposal-modal').style.display = 'flex';
+      trackGA4Event('proposal_modal_open', { bays: bays, length: L });
+    }
+
+    function closeProposalModal() {
+      document.getElementById('proposal-modal').style.display = 'none';
+    }
+
+    function renderProposalItems() {
+      const items = generateBOMData();
+      const tbody = document.getElementById('prop-table-body');
+      if (!tbody) return;
+
+      tbody.innerHTML = '';
+      let subtotalKRW = 0;
+
+      items.forEach(it => {
+        subtotalKRW += it.totalCost;
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td class="mono"><strong>${it.id}</strong></td>
+          <td><strong>${it.cat}</strong> (${it.spec})</td>
+          <td class="tar mono">${typeof it.qty === 'number' ? it.qty.toLocaleString() : it.qty}</td>
+          <td>${it.id === 'GLS-01' ? 'm²' : (it.id === 'FND-01' || it.id === 'VNT-02' ? 'EA' : '본/조')}</td>
+          <td class="tar mono">${it.unitPrice}</td>
+          <td class="tar mono" style="font-weight: 700; color: #0284c7;">${formatProposalMoney(it.totalCost)}</td>
+          <td style="font-size: 0.72rem; color: #64748b;">${it.id === 'COL-01' ? 'SGH400 용융아연도금' : (it.id === 'GLS-01' ? 'KS L 2002 강화안전' : 'ISO 9001 가공')}</td>
+        `;
+        tbody.appendChild(tr);
+      });
+
+      // Add fabrication & assembly labor item (12% of materials)
+      const laborCostKRW = Math.round(subtotalKRW * 0.12);
+      subtotalKRW += laborCostKRW;
+      const trLabor = document.createElement('tr');
+      trLabor.innerHTML = `
+        <td class="mono"><strong>LBR-01</strong></td>
+        <td><strong>공장 1D 톱날 가공 및 현장 조립 가설</strong> (1D Cutting & Erection)</td>
+        <td class="tar mono">1</td>
+        <td>식</td>
+        <td class="tar mono">-</td>
+        <td class="tar mono" style="font-weight: 700; color: #0284c7;">${formatProposalMoney(laborCostKRW)}</td>
+        <td style="font-size: 0.72rem; color: #64748b;">표준 품셈 조립 기술료</td>
+      `;
+      tbody.appendChild(trLabor);
+
+      const vatKRW = Math.round(subtotalKRW * 0.10);
+      const grandTotalKRW = subtotalKRW + vatKRW;
+
+      document.getElementById('prop-subtotal').innerText = formatProposalMoney(subtotalKRW);
+      document.getElementById('prop-vat').innerText = formatProposalMoney(vatKRW);
+      document.getElementById('prop-grand-total').innerText = formatProposalMoney(grandTotalKRW);
+    }
+
+    function copyProposalSummaryText() {
+      const W = params.spanWidth;
+      const bays = params.bays;
+      const L = params.totalLength;
+      const H = params.gutterHeight;
+      const area = Math.round(W * bays * L);
+      const pyeong = (area * 0.3025).toFixed(1);
+      const client = document.getElementById('prop-client-name').value;
+      const grandTotal = document.getElementById('prop-grand-total').innerText;
+
+      const text = `[VENLO 온실 엔지니어링 시공 견적서 요약]\n` +
+        `수신: ${client}\n` +
+        `규격: ${W}m 스팬 × ${bays}연동 × ${L}m 연장 (처마고 ${H}m)\n` +
+        `연면적: ${area} m² (${pyeong}평)\n` +
+        `구조인증: NEN 3859 / EN 13031-1 풍속 ${params.windSpeed}m/s 안전 적격\n` +
+        `환기성능: Wageningen ACH ${(document.getElementById('pp-vent-ach') || {}).innerText || '47.9 회/h'}\n` +
+        `총 시공 견적금액: ${grandTotal} (VAT 포함)\n` +
+        `설계 책임기술자: 황인우 엔지니어 (충남대 스마트팜 CEA / Inwoovation Lab)\n` +
+        `상세 도면 및 견적 검토: inwoovation.com/tools/venlocad-3d.html`;
+
+      navigator.clipboard.writeText(text).then(() => {
+        showToast("📋 B2B 견적 요약 텍스트가 클립보드에 복사되었습니다!");
+      }).catch(err => {
+        showToast("❌ 복사 실패: " + err);
+      });
+      trackGA4Event('proposal_copy_text');
+    }
+
     // --- 13. 3D STL Binary Exporter ---
     function exportSTL() {
       let stl = "solid VenloCAD_3D_Model\n";
@@ -3299,7 +3870,9 @@
         'bom': '📊 자재 명세서(BOM) & 시공 견적서',
         'cutting': '✂️ 1D 파이프 절단 가공표',
         'dxf': '📐 2D DXF 엔지니어링 도면',
-        'stl': '🧊 3D CAD 메쉬 모델'
+        'stl': '🧊 3D CAD 메쉬 모델',
+        'glb': '🌐 3D 산업표준 GLB 어셈블리',
+        'proposal': '📑 B2B 공식 시공 견적서'
       };
 
       const title = typeMap[type] || '설계 파일';

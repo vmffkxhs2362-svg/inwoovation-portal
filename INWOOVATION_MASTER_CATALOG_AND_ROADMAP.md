@@ -21,7 +21,7 @@
 
 | Sector | Root Path | Active Endpoints | Primary Target Persona | Strategic / Monetization Value |
 | :--- | :--- | :---: | :--- | :--- |
-| **1. Industrial Tools** | `tools/` | 35 HTML files | Facility Engineers, Energy Planners, Commercial Growers | High-utility sticky tools, OpenCEA Pro funnel, $49 Report tier |
+| **1. Industrial Tools** | `tools/` | 37 HTML files | Facility Engineers, Energy Planners, Commercial Growers | High-utility sticky tools, OpenCEA Pro funnel, $49 Report tier |
 | **2. Technical Articles** | `articles/` | 129 HTML files (65 core) | Agricultural Executives, Farm Owners, Agronomists | Programmatic SEO, Google AdSense, Grant Playbook Lead Magnet |
 | **3. Climate Hubs** | `climate/` | 39 HTML files | Regional Greenhouse Operators, Site Selection Engineers | Localized psychrometrics, regional climate steering |
 | **4. Crop Precision Guides**| `crops/` | 10 HTML files | Head Growers, Crop Production Managers | Crop-specific biophysical targets (DLI, VPD, EC, pH, DIP) |
@@ -53,12 +53,12 @@ To guarantee that no service is inadvertently degraded or neglected, the AI Agen
 
 ---
 
-## 📂 Sector 1: `tools/` — Industrial Calculation & Simulation Suite (35 Tools)
+## 📂 Sector 1: `tools/` — Industrial Calculation & Simulation Suite (37 Tools)
 
 ### Core Mission
 Provide precision engineering calculations for commercial greenhouse operators, vertical farms, and agricultural planners. Eliminates manual spreadsheet errors and provides instant, client-side biophysical modeling.
 
-### Complete Tool Inventory (35 Verified Endpoints)
+### Complete Tool Inventory (37 Verified Endpoints)
 1. [`global-agri-subsidy-grant-navigator.html`](file:///g:/Meine%20Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/tools/global-agri-subsidy-grant-navigator.html): 50-state search engine with 87 verified programs, 5 USDA regional filters, and 7-point metadata cards.
 2. [`greenhouse-3d-digital-twin-simulator.html`](file:///g:/Meine%20Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/tools/greenhouse-3d-digital-twin-simulator.html): Three.js WebGL Venlo greenhouse model with dynamic solar positioning, thermal radiation, and ventilation airflow.
 3. [`agriquant-greenhouse-energy-commodity-terminal.html`](file:///g:/Meine%20Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/tools/agriquant-greenhouse-energy-commodity-terminal.html): Natural gas, grid electricity day-ahead peak-shaving, and CHP / thermal buffer tank economic optimization.
@@ -93,7 +93,9 @@ Provide precision engineering calculations for commercial greenhouse operators, 
 32. [`soil-matrix-water-potential-matric-suction-calculator.html`](file:///g:/Meine%20Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/tools/soil-matrix-water-potential-matric-suction-calculator.html): Van Genuchten soil water retention curve, field capacity, and tensiometer kPa thresholds.
 33. [`solar-thermal-buffer-tank-stratification-calculator.html`](file:///g:/Meine%20Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/tools/solar-thermal-buffer-tank-stratification-calculator.html): Richardson number buoyancy thermocline stratification and buffer storage capacity (MWh).
 34. [`uvc-drainage-pathogen-disinfection-calculator.html`](file:///g:/Meine%20Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/tools/uvc-drainage-pathogen-disinfection-calculator.html): UV-C 254nm radiant dose (mJ/cm²), transmission percent (T10), and log-4 pathogen kill kinetics.
-35. [`index.html`](file:///g:/Meine%20Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/tools/index.html): Industrial calculation suite master portal with real-time fuzzy search and category filtering.
+35. [`venlocad-3d.html`](file:///g:/Meine%20Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/tools/venlocad-3d.html): VenloCAD 3D v3.0 Commercial Master — Parametric Venlo greenhouse 3D CAD modeling, NEN 3859 structural verification, Wageningen natural ventilation airflow, 1D pipe cutting schedule optimizer, binary glTF / GLB 3D export, and client-ready B2B commercial CPQ proposal generator.
+36. [`semi-closed-greenhouse-atu-mollier-simulator.html`](file:///g:/Meine%20Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/tools/semi-closed-greenhouse-atu-mollier-simulator.html): Semi-Closed Greenhouse ATU (Air Treatment Unit) & Mollier h-x Psychrometric 3D Simulator — WebGL 3D cutaway twin of mixing chamber, dampers, high-pressure fogging, centrifugal fan, and perforated polyethylene under-gutter duct, paired with interactive 2D Mollier h-x state-point solver.
+37. [`index.html`](file:///g:/Meine%20Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/tools/index.html): Industrial calculation suite master portal with real-time fuzzy search, category filtering, and featured flagship tools.
 
 ---
 

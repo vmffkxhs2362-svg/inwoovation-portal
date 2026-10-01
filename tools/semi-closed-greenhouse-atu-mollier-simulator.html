@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-adsense-account" content="ca-pub-8597809158257497">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Semi-Closed Greenhouse ATU & Mollier h-x Psychrometric 3D Simulator | Inwoovation Lab</title>
+  <meta name="description" content="산업용 반밀폐 온실(Semi-Closed Greenhouse) 공조기(ATU) 및 몰리에르 선도(Mollier h-x) 실시간 3D 열역학 시뮬레이터. Kubo Ultra-Clima & Van der Hoeven ModulAIR 벤치마크, 타공 덕트 기류, 양압(+20Pa) 해충 차폐 및 CO₂ 제로 손실 잠열 회수 해석.">
+  <link rel="canonical" href="https://inwoovation.com/tools/semi-closed-greenhouse-atu-mollier-simulator.html" />
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Semi-Closed Greenhouse ATU & Mollier h-x 3D Simulator",
+    "url": "https://inwoovation.com/tools/semi-closed-greenhouse-atu-mollier-simulator.html",
+    "description": "산업용 반밀폐 온실 공조기(ATU) 및 몰리에르 h-x 열역학 3D 웹트윈 시뮬레이터. 외기/순환기 혼합, 고압 포그 증발 냉각, 거터 하부 타공 덕트 기류 및 온실 양압 제어.",
+    "applicationCategory": "EngineeringApplication, ThermodynamicsSimulator",
+    "operatingSystem": "All",
+    "author": {
+      "@type": "Person",
+      "name": "Inwoo Hwang"
+    },
+    "dateModified": "2026-10-01"
+  }
+  </script>
+  
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V4RYJBMEDE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-V4RYJBMEDE');
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8597809158257497" crossorigin="anonymous"></script>
+
+  <!-- Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Three.js CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+
+  <style>
+    :root {
+      --bg-dark: #070b12;
+      --panel-bg: rgba(13, 20, 36, 0.94);
+      --panel-border: rgba(56, 189, 248, 0.22);
+      --panel-border-hover: rgba(56, 189, 248, 0.55);
+      --accent-cyan: #06b6d4;
+      --accent-sky: #38bdf8;
+      --accent-blue: #3b82f6;
+      --accent-gold: #f59e0b;
+      --accent-emerald: #10b981;
+      --accent-rose: #f43f5e;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body, html {
+      width: 100%; height: 100%; overflow-x: hidden; background: var(--bg-dark);
+      color: var(--text-main); font-family: 'Inter', -apple-system, sans-serif;
+    }
+
+    /* Header Bar */
+    header {
+      position: sticky; top: 0; z-index: 50; width: 100%; height: 60px;
+      background: rgba(10, 15, 29, 0.92); backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--panel-border); display: flex;
+      align-items: center; justify-content: space-between; padding: 0 24px;
+    }
+    .header-brand { display: flex; align-items: center; gap: 12px; }
+    .header-brand h1 { font-size: 1.15rem; font-weight: 900; color: #fff; letter-spacing: -0.02em; }
+    .header-badge {
+      font-size: 0.7rem; font-weight: 800; font-family: var(--font-mono);
+      padding: 3px 8px; border-radius: 6px; background: rgba(6, 182, 212, 0.15);
+      color: var(--accent-cyan); border: 1px solid rgba(6, 182, 212, 0.4);
+    }
+    .header-presets { display: flex; align-items: center; gap: 8px; }
+    .preset-pill {
+      background: #1e293b; border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #cbd5e1; font-size: 0.72rem; font-weight: 700; padding: 6px 12px;
+      border-radius: 8px; cursor: pointer; transition: all 0.15s ease;
+    }
+    .preset-pill:hover, .preset-pill.active {
+      background: var(--accent-sky); color: #080c14; border-color: var(--accent-sky);
+      box-shadow: 0 0 12px rgba(56, 189, 248, 0.4);
+    }
+
+    /* Main Workstation Layout */
+    .workstation-container {
+      display: grid; grid-template-columns: 380px 1fr; min-height: calc(100vh - 60px);
+    }
+
+    /* Left Control Sidebar */
+    .sidebar-panel {
+      background: var(--panel-bg); border-right: 1px solid var(--panel-border);
+      padding: 20px; overflow-y: auto; max-height: calc(100vh - 60px);
+    }
+    .section-title {
+      font-size: 0.85rem; font-weight: 800; color: #fff; margin-bottom: 12px;
+      padding-bottom: 6px; border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .section-badge {
+      font-size: 0.65rem; font-family: var(--font-mono); padding: 2px 6px; border-radius: 4px;
+      background: rgba(56, 189, 248, 0.15); color: var(--accent-sky);
+    }
+    .param-group { margin-bottom: 14px; }
+    .param-header {
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 0.76rem; color: #cbd5e1; margin-bottom: 5px; font-weight: 600;
+    }
+    .param-val { font-family: var(--font-mono); font-weight: 700; color: var(--accent-sky); font-size: 0.82rem; }
+    input[type=range] {
+      width: 100%; height: 5px; background: #1e293b; border-radius: 3px; outline: none;
+      -webkit-appearance: none; appearance: none;
+    }
+    input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none; width: 15px; height: 15px; border-radius: 50%;
+      background: var(--accent-cyan); cursor: pointer; box-shadow: 0 0 8px rgba(6, 182, 212, 0.6);
+    }
+
+    /* Right Main Display Grid */
+    .main-viewport-grid {
+      display: flex; flex-direction: column; overflow-y: auto; max-height: calc(100vh - 60px);
+    }
+
+    /* Top: 3D WebGL Web-Twin Viewport */
+    .viewport-3d-wrap {
+      position: relative; width: 100%; height: 420px; background: #030712;
+      border-bottom: 1px solid var(--panel-border);
+    }
+    #atu-3d-canvas-container { width: 100%; height: 100%; }
+    .viewport-overlay-badges {
+      position: absolute; top: 16px; left: 20px; z-index: 10; display: flex; gap: 8px;
+    }
+    .vp-badge {
+      background: rgba(15, 23, 42, 0.88); backdrop-filter: blur(8px);
+      border: 1px solid rgba(56, 189, 248, 0.4); border-radius: 8px;
+      padding: 4px 10px; font-size: 0.72rem; font-family: var(--font-mono);
+      color: #38bdf8; font-weight: 700;
+    }
+
+    /* Middle: Real-time KPI HUD */
+    .kpi-hud-strip {
+      display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px;
+      padding: 16px 24px; background: #0b1120; border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .kpi-card {
+      background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 10px; padding: 12px 14px; text-align: center;
+      transition: all 0.2s ease;
+    }
+    .kpi-card:hover { border-color: var(--accent-sky); transform: translateY(-2px); }
+    .kpi-label { font-size: 0.68rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700; }
+    .kpi-value { font-family: var(--font-mono); font-size: 1.25rem; font-weight: 900; margin-top: 3px; }
+
+    /* Bottom: Mollier h-x Diagram & Energy Analytics */
+    .mollier-analytics-wrap {
+      display: grid; grid-template-columns: 1fr 380px; gap: 20px; padding: 20px 24px;
+    }
+    .mollier-chart-card {
+      background: #0b1120; border: 1px solid var(--panel-border);
+      border-radius: 14px; padding: 18px; position: relative;
+    }
+    .card-header-bar {
+      display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;
+    }
+    .card-header-bar h3 { font-size: 0.95rem; font-weight: 800; color: #fff; }
+    #mollierCanvas {
+      width: 100%; height: 380px; background: #020617; border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.08); display: block;
+    }
+
+    /* State Points Matrix Card */
+    .state-matrix-card {
+      background: #0b1120; border: 1px solid var(--panel-border);
+      border-radius: 14px; padding: 18px; display: flex; flex-direction: column;
+    }
+    .state-table {
+      width: 100%; border-collapse: collapse; font-size: 0.75rem; margin-top: 8px;
+    }
+    .state-table th {
+      background: #1e293b; color: var(--accent-sky); padding: 7px 8px; font-weight: 700;
+      text-align: left; font-size: 0.68rem; text-transform: uppercase;
+    }
+    .state-table td {
+      padding: 7px 8px; border-bottom: 1px solid rgba(255, 255, 255, 0.06); color: #cbd5e1;
+    }
+    .state-table .mono { font-family: var(--font-mono); }
+    .state-dot {
+      display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px;
+    }
+
+    /* Action Buttons */
+    .btn-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 14px; }
+    .btn {
+      padding: 10px 14px; border-radius: 8px; font-size: 0.78rem; font-weight: 800;
+      cursor: pointer; transition: all 0.2s ease; border: 1px solid transparent;
+      display: flex; align-items: center; justify-content: center; gap: 6px;
+    }
+    .btn-primary { background: linear-gradient(135deg, #0284c7, #06b6d4); color: #fff; }
+    .btn-primary:hover { opacity: 0.95; box-shadow: 0 0 16px rgba(6, 182, 212, 0.5); }
+    .btn-gold { background: linear-gradient(135deg, #d97706, #f59e0b); color: #fff; }
+    .btn-gold:hover { opacity: 0.95; box-shadow: 0 0 16px rgba(245, 158, 11, 0.5); }
+    .btn-outline { background: #1e293b; border-color: rgba(255, 255, 255, 0.15); color: #cbd5e1; }
+    .btn-outline:hover { background: #334155; color: #fff; }
+
+    /* Editorial & Theory Section */
+    .editorial-section {
+      padding: 24px; background: rgba(10, 15, 29, 0.6); border-top: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 0.82rem; line-height: 1.6; color: #cbd5e1;
+    }
+    .editorial-card {
+      background: #0f172a; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px;
+      padding: 20px 24px; margin-bottom: 16px;
+    }
+    .editorial-card h2 { font-size: 1.05rem; font-weight: 800; color: #fff; margin-bottom: 10px; }
+    .editorial-card h3 { font-size: 0.9rem; font-weight: 700; color: var(--accent-sky); margin: 14px 0 6px 0; }
+    .formula-box {
+      background: #020617; border-left: 3px solid var(--accent-cyan); padding: 12px 16px;
+      border-radius: 0 8px 8px 0; font-family: var(--font-mono); font-size: 0.75rem; color: #38bdf8;
+      margin: 10px 0; line-height: 1.5;
+    }
+
+    /* Print Styles */
+    @media print {
+      body { background: #fff !important; color: #000 !important; }
+      header, .sidebar-panel, .viewport-overlay-badges, .btn-row, .inw-ad-container, .no-print {
+        display: none !important;
+      }
+      .workstation-container { display: block !important; }
+      .main-viewport-grid { display: block !important; overflow: visible !important; }
+      .mollier-analytics-wrap { display: block !important; }
+      .mollier-chart-card, .state-matrix-card, .kpi-card {
+        background: #fff !important; color: #000 !important; border: 1px solid #cbd5e1 !important;
+        box-shadow: none !important; margin-bottom: 16px;
+      }
+      .kpi-value { color: #0284c7 !important; }
+      .editorial-section { background: #fff !important; color: #000 !important; }
+      .editorial-card { background: #fff !important; border-color: #cbd5e1 !important; color: #000 !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Bar -->
+  <header>
+    <div class="header-brand">
+      <span style="font-size: 1.4rem;">🏛️</span>
+      <div>
+        <h1>Semi-Closed Greenhouse ATU &amp; Mollier h-x Simulator</h1>
+      </div>
+      <span class="header-badge">v1.0 SOTA Engine</span>
+    </div>
+
+    <!-- Operating Presets -->
+    <div class="header-presets">
+      <span style="font-size: 0.72rem; color: var(--text-muted); font-weight: 700; margin-right: 4px;">운전 모드:</span>
+      <button class="preset-pill active" onclick="applyOperatingPreset('summer')">☀️ 하계 냉각 &amp; 포그</button>
+      <button class="preset-pill" onclick="applyOperatingPreset('winter')">❄️ 동계 제습 &amp; 잠열</button>
+      <button class="preset-pill" onclick="applyOperatingPreset('heatwave')">⚡ 폭염 극복 순환</button>
+      <button class="preset-pill" onclick="applyOperatingPreset('night')">🌙 야간 저온 적산</button>
+    </div>
+  </header>
+
+  <!-- Workstation Layout -->
+  <div class="workstation-container">
+
+    <!-- Left Parametric Control Sidebar -->
+    <aside class="sidebar-panel">
+      <!-- Section 1: Outdoor Climate -->
+      <div class="section-title">
+        <span>🌤️ 1. 외기 기상 환경 (Outdoor Air)</span>
+        <span class="section-badge">AMBIENT</span>
+      </div>
+
+      <div class="param-group">
+        <div class="param-header">
+          <span>외기 건구온도 (Tout)</span>
+          <span class="param-val" id="val-t-out">32.0 °C</span>
+        </div>
+        <input type="range" id="input-t-out" min="5.0" max="42.0" step="0.5" value="32.0" oninput="updateSim()">
+      </div>
+
+      <div class="param-group">
+        <div class="param-header">
+          <span>외기 상대습도 (RHout)</span>
+          <span class="param-val" id="val-rh-out">45.0 %</span>
+        </div>
+        <input type="range" id="input-rh-out" min="15.0" max="95.0" step="1.0" value="45.0" oninput="updateSim()">
+      </div>
+
+      <!-- Section 2: Greenhouse Target Canopy -->
+      <div class="section-title" style="margin-top: 18px;">
+        <span>🌿 2. 온실 군락 환경 (Canopy Microclimate)</span>
+        <span class="section-badge">TARGET</span>
+      </div>
+
+      <div class="param-group">
+        <div class="param-header">
+          <span>작물 군락 온도 (Tcanopy)</span>
+          <span class="param-val" id="val-t-canopy">26.0 °C</span>
+        </div>
+        <input type="range" id="input-t-canopy" min="16.0" max="34.0" step="0.5" value="26.0" oninput="updateSim()">
+      </div>
+
+      <div class="param-group">
+        <div class="param-header">
+          <span>군락 상대습도 (RHcanopy)</span>
+          <span class="param-val" id="val-rh-canopy">75.0 %</span>
+        </div>
+        <input type="range" id="input-rh-canopy" min="40.0" max="95.0" step="1.0" value="75.0" oninput="updateSim()">
+      </div>
+
+      <!-- Section 3: ATU Mechanical Steering -->
+      <div class="section-title" style="margin-top: 18px;">
+        <span>⚙️ 3. 공조기(ATU) 기계식 제어</span>
+        <span class="section-badge">ACTUATOR</span>
+      </div>
+
+      <div class="param-group">
+        <div class="param-header">
+          <span>외기 댐퍼 개도율 (Outdoor Damper α)</span>
+          <span class="param-val" id="val-damper">40.0 % (순환 60%)</span>
+        </div>
+        <input type="range" id="input-damper" min="0" max="100" step="1" value="40" oninput="updateSim()">
+      </div>
+
+      <div class="param-group">
+        <div class="param-header">
+          <span>100 bar 초고압 포그 분무율 (Fogging)</span>
+          <span class="param-val" id="val-fog">70.0 %</span>
+        </div>
+        <input type="range" id="input-fog" min="0" max="100" step="2" value="70" oninput="updateSim()">
+      </div>
+
+      <div class="param-group">
+        <div class="param-header">
+          <span>열교환 코일 (Coil Cooling/Heating)</span>
+          <span class="param-val" id="val-coil">냉각 30.0 %</span>
+        </div>
+        <input type="range" id="input-coil" min="-100" max="100" step="5" value="-30" oninput="updateSim()">
+      </div>
+
+      <div class="param-group">
+        <div class="param-header">
+          <span>가압 송풍팬 풍량 (VFD Fan Airflow)</span>
+          <span class="param-val" id="val-fan">65,000 m³/h</span>
+        </div>
+        <input type="range" id="input-fan" min="15000" max="120000" step="5000" value="65000" oninput="updateSim()">
+      </div>
+
+      <!-- Section 4: Duct & Structure Specs -->
+      <div class="section-title" style="margin-top: 18px;">
+        <span>📐 4. 온실 구조 및 타공 덕트 사양</span>
+        <span class="section-badge">HARDWARE</span>
+      </div>
+
+      <div class="param-group">
+        <div class="param-header">
+          <span>온실 유효 면적 (Greenhouse Area)</span>
+          <span class="param-val" id="val-area">10,000 m² (1.0 ha)</span>
+        </div>
+        <input type="range" id="input-area" min="2500" max="30000" step="2500" value="10000" oninput="updateSim()">
+      </div>
+
+      <div class="param-group">
+        <div class="param-header">
+          <span>거터 하부 에어덕트 직경 (Duct Diameter)</span>
+          <span class="param-val" id="val-duct-dia">Φ 750 mm</span>
+        </div>
+        <select id="select-duct-dia" onchange="updateSim()" style="width: 100%; padding: 7px 10px; background: #1e293b; color: #fff; border: 1px solid var(--panel-border); border-radius: 8px; font-family: var(--font-mono); font-size: 0.8rem;">
+          <option value="0.60">Φ 600 mm (컴팩트 고속 기류)</option>
+          <option value="0.75" selected>Φ 750 mm (표준 울트라클라이마 규격)</option>
+          <option value="0.90">Φ 900 mm (대형 광폭 온실용)</option>
+        </select>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="btn-row">
+        <button class="btn btn-gold" onclick="window.print()">🖨️ 리포트 인쇄</button>
+        <button class="btn btn-primary" onclick="exportStatePointsCSV()">📥 CSV 내보내기</button>
+      </div>
+    </aside>
+
+    <!-- Right Main Viewport Grid -->
+    <main class="main-viewport-grid">
+
+      <!-- Top: 3D WebGL Web-Twin Viewport -->
+      <div class="viewport-3d-wrap">
+        <div id="atu-3d-canvas-container"></div>
+        <div class="viewport-overlay-badges">
+          <div class="vp-badge">🏛️ SEMI-CLOSED ATU WEB-TWIN</div>
+          <div class="vp-badge" id="vp-badge-status" style="color: #34d399;">양압 가압 중 (+22 Pa)</div>
+          <div class="vp-badge" id="vp-badge-flow" style="color: #fbbf24;">토출 풍속: 5.8 m/s</div>
+        </div>
+      </div>
+
+      <!-- Middle: Real-time KPI HUD -->
+      <div class="kpi-hud-strip">
+        <div class="kpi-card">
+          <div class="kpi-label">온실 양압 (Pressure)</div>
+          <div class="kpi-value" id="hud-pressure" style="color: #34d399;">+22.4 Pa</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">급기 온도 / 습도</div>
+          <div class="kpi-value" id="hud-supply" style="color: #38bdf8;">21.8 °C / 82%</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">증발 냉각 용량</div>
+          <div class="kpi-value" id="hud-evap-pwr" style="color: #06b6d4;">248 W/m²</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">CO₂ 누출 방어량</div>
+          <div class="kpi-value" id="hud-co2-save" style="color: #10b981;">180 kg/h</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">연간 난방비 절감률</div>
+          <div class="kpi-value" id="hud-energy-save" style="color: #fbbf24;">32.4 %</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">공조기 성적계수 (COP)</div>
+          <div class="kpi-value" id="hud-cop" style="color: #a78bfa;">4.25</div>
+        </div>
+      </div>
+
+      <!-- Bottom: Mollier h-x Diagram & State Points Matrix -->
+      <div class="mollier-analytics-wrap">
+
+        <!-- Mollier Canvas Chart Card -->
+        <div class="mollier-chart-card">
+          <div class="card-header-bar">
+            <h3>📈 몰리에르 선도 (Mollier h-x Psychrometric Diagram)</h3>
+            <span style="font-size: 0.72rem; color: var(--accent-sky); font-family: var(--font-mono);">
+              Enthalpy (h, kJ/kg) vs Moisture Content (x, g/kg)
+            </span>
+          </div>
+          <canvas id="mollierCanvas" width="700" height="380"></canvas>
+          <div style="font-size: 0.7rem; color: var(--text-muted); margin-top: 8px; display: flex; justify-content: space-between;">
+            <span>🔵 State 1: 외기 | 🟢 State 2: 순환기 | 🟡 State 3: 혼합기 | 🟣 State 4: 포그 냉각 | 🔴 State 5: 급기 토출</span>
+            <span>수평축: 절대습도 x (g/kg) | 수직축: 건구온도 T (°C)</span>
+          </div>
+        </div>
+
+        <!-- State Points Table Card -->
+        <div class="state-matrix-card">
+          <div class="card-header-bar">
+            <h3>🔬 5대 공조 열역학 상태점 (State Points)</h3>
+          </div>
+          <table class="state-table">
+            <thead>
+              <tr>
+                <th>상태점</th>
+                <th>T (°C)</th>
+                <th>RH (%)</th>
+                <th>x (g/kg)</th>
+                <th>h (kJ/kg)</th>
+              </tr>
+            </thead>
+            <tbody id="state-table-body">
+              <!-- Dynamically populated -->
+            </tbody>
+          </table>
+
+          <div style="margin-top: 14px; background: rgba(0,0,0,0.3); border-radius: 8px; padding: 12px; font-size: 0.73rem; color: #94a3b8; line-height: 1.5;">
+            💡 <strong>반밀폐 온실의 열역학적 해자</strong>:
+            천창을 상시 밀폐한 상태에서 <strong>+20 Pa 양압</strong>을 형성하여 총채벌레·가루이 등 유해 해충 유입을 100% 기계적으로 차단하며, 외부로 버려지던 고농도 CO₂ 누출을 원천 방어하여 광합성을 극대화합니다.
+          </div>
+        </div>
+
+      </div>
+
+      <!-- SOTA Editorial Theory & Principles -->
+      <section class="editorial-section">
+        <div class="editorial-card">
+          <h2>🏛️ 반밀폐 온실(Semi-Closed Greenhouse) 열역학 및 공조 엔지니어링 원리</h2>
+          <p>
+            네덜란드의 <strong>Kubo Ultra-Clima</strong> 및 <strong>Van der Hoeven ModulAIR</strong>로 대표되는 차세대 반밀폐 온실은, 전통적인 자연 환기(지붕 천창 개폐) 방식의 한계를 극복하기 위해 설계되었습니다. 전통 온실은 하계 고온기 동안 천창을 완전히 개방해야 하므로, 막대한 양의 CO₂가 대기로 손실되고 외부 해충(총채벌레, 담배가루이)이 침입하는 치명적 딜레마를 겪습니다.
+          </p>
+
+          <h3>1. 거터 하부 타공 에어 덕트 기류 분배 (Boundary Layer Decoupling)</h3>
+          <p>
+            공조기(ATU)에서 조화된 공기는 온실 거터 하부에 설치된 직경 600~900mm의 폴리에틸렌 튜브를 통해 온실 전 구역으로 균일하게 분배됩니다. 튜브의 측면 타공 홀을 통해 분출되는 제트 기류(4~8 m/s)는 작물 잎 표면의 정체된 경계층(Boundary Layer)을 강제로 탈동기화(Decoupling)시켜, 기공 전도도와 증산 효율을 극대화합니다.
+          </p>
+
+          <h3>2. 몰리에르 h-x 선도 기반 열역학 지배 방정식</h3>
+          <div class="formula-box">
+• 습공기 비엔탈피 (Enthalpy):
+    h = c_pa · T + x · (r_0 + c_pv · T) = 1.006 · T + x · (2501 + 1.86 · T)  [kJ/kg dry air]
+
+• 포그 분무 등엔탈피 증발 냉각 (Adiabatic Saturation):
+    h_4 ≈ h_3  (잠열 흡수에 의해 건구온도는 습구온도 쪽으로 하강, 절대습도 x는 증가)
+
+• 공기 혼합 챔버 보존 법칙:
+    T_mix = α · T_out + (1 - α) · T_return
+    x_mix = α · x_out + (1 - α) · x_return
+
+• 온실 양압 형성 방정식 (Positive Pressure):
+    ΔP = 0.5 · ρ · (v_fan² - v_leak²) ≈ 15 ~ 30 Pa
+          </div>
+
+          <h3>3. 에너지 절감 및 탄소 중립 효과</h3>
+          <p>
+            동계 및 야간에는 온실 상부의 과열된 공기를 ATU로 80~90% 순환(Recirculation)시켜, 작물 증산으로 발생한 수증기의 잠열(Latent Heat)을 히트펌프 코일로 회수합니다. 이를 통해 기존 벤로 온실 대비 연간 난방 에너지를 <strong>25% ~ 35% 절감</strong>하며, CO₂ 1,000 ppm 고농도 시비 상태를 24시간 안정적으로 유지할 수 있습니다.
+          </p>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- JavaScript Implementation -->
+  <script>
+    // --- 1. State Variables & Physics Engine ---
+    let params = {
+      tOut: 32.0,
+      rhOut: 45.0,
+      tCanopy: 26.0,
+      rhCanopy: 75.0,
+      damper: 40.0, // % outdoor
+      fog: 70.0,    // %
+      coil: -30.0,  // % (-100 cooling to +100 heating)
+      fan: 65000,   // m3/h
+      area: 10000,  // m2
+      ductDia: 0.75 // m
+    };
+
+    let calculatedStates = {
+      p1: { name: '외기 (Outdoor)', t: 32, rh: 45, x: 13.5, h: 66.8, color: '#38bdf8' },
+      p2: { name: '순환기 (Return)', t: 26, rh: 75, x: 15.8, h: 66.5, color: '#34d399' },
+      p3: { name: '혼합기 (Mixed)', t: 28.4, rh: 62.0, x: 14.9, h: 66.6, color: '#fbbf24' },
+      p4: { name: '포그 냉각 (Fogged)', t: 22.1, rh: 88.0, x: 17.2, h: 66.7, color: '#c084fc' },
+      p5: { name: '급기 (Supply)', t: 20.5, rh: 92.0, x: 17.2, h: 64.2, color: '#f43f5e' }
+    };
+
+    // --- 2. Psychrometric Formula Helpers ---
+    function satVaporPressure(T) {
+      // Magnus formula for saturation vapor pressure (kPa)
+      return 0.61078 * Math.exp((17.27 * T) / (T + 237.3));
+    }
+
+    function humidityRatio(T, RH, P = 101.325) {
+      // kg water / kg dry air
+      const es = satVaporPressure(T);
+      const e = (RH / 100.0) * es;
+      return 0.62198 * e / Math.max(0.1, (P - e));
+    }
+
+    function enthalpy(T, x_kg) {
+      // kJ / kg dry air
+      return 1.006 * T + x_kg * (2501.0 + 1.86 * T);
+    }
+
+    function tempFromEnthalpyAndX(h, x_kg) {
+      return (h - 2501.0 * x_kg) / (1.006 + 1.86 * x_kg);
+    }
+
+    function rhFromTempAndX(T, x_kg, P = 101.325) {
+      const e = (x_kg * P) / (0.62198 + x_kg);
+      const es = satVaporPressure(T);
+      return Math.min(100.0, Math.max(0.0, (e / es) * 100.0));
+    }
+
+    // --- 3. Compute 5-Point Cycle ---
+    function computeThermodynamics() {
+      // 1. State 1: Outdoor
+      const x1 = humidityRatio(params.tOut, params.rhOut);
+      const h1 = enthalpy(params.tOut, x1);
+      calculatedStates.p1 = { name: '외기 (Outdoor)', t: params.tOut, rh: params.rhOut, x: x1 * 1000, h: h1, color: '#38bdf8' };
+
+      // 2. State 2: Canopy Return Air
+      const x2 = humidityRatio(params.tCanopy, params.rhCanopy);
+      const h2 = enthalpy(params.tCanopy, x2);
+      calculatedStates.p2 = { name: '순환기 (Return)', t: params.tCanopy, rh: params.rhCanopy, x: x2 * 1000, h: h2, color: '#34d399' };
+
+      // 3. State 3: Mixed Air in Plenum
+      const alpha = params.damper / 100.0;
+      const t3 = alpha * params.tOut + (1.0 - alpha) * params.tCanopy;
+      const x3 = alpha * x1 + (1.0 - alpha) * x2;
+      const h3 = enthalpy(t3, x3);
+      const rh3 = rhFromTempAndX(t3, x3);
+      calculatedStates.p3 = { name: '혼합기 (Mixed)', t: t3, rh: rh3, x: x3 * 1000, h: h3, color: '#fbbf24' };
+
+      // 4. State 4: High-Pressure Fogging (Evaporative isenthalpic cooling)
+      const fogIntensity = params.fog / 100.0;
+      // Wet-bulb temperature approximation
+      const twb = t3 * Math.atan(0.151977 * Math.pow(rh3 + 8.313659, 0.5)) + Math.atan(t3 + rh3) - Math.atan(rh3 - 1.676331) + 0.00391838 * Math.pow(rh3, 1.5) * Math.atan(0.023101 * rh3) - 4.686035;
+      const deltaTMax = Math.max(0, t3 - twb);
+      const actualCooling = deltaTMax * fogIntensity * 0.85; // 85% fog saturation efficiency
+      const t4 = t3 - actualCooling;
+      const h4 = h3; // Isenthalpic
+      const x4 = (h4 - 1.006 * t4) / (2501.0 + 1.86 * t4);
+      const rh4 = rhFromTempAndX(t4, x4);
+      calculatedStates.p4 = { name: '포그 냉각 (Fogged)', t: t4, rh: rh4, x: x4 * 1000, h: h4, color: '#c084fc' };
+
+      // 5. State 5: Coil Heat Exchange (Sensible cooling/heating)
+      const coilPct = params.coil / 100.0;
+      let t5 = t4;
+      let x5 = x4;
+      if (coilPct < 0) {
+        // Sensible cooling
+        t5 = t4 + coilPct * 6.0; // up to 6°C cooling
+      } else {
+        // Sensible heating
+        t5 = t4 + coilPct * 8.0; // up to 8°C heating
+      }
+      const h5 = enthalpy(t5, x5);
+      const rh5 = rhFromTempAndX(t5, x5);
+      calculatedStates.p5 = { name: '급기 (Supply)', t: t5, rh: rh5, x: x5 * 1000, h: h5, color: '#f43f5e' };
+
+      // Update KPIs
+      const airDensity = 1.204;
+      const ductArea = Math.PI * Math.pow(params.ductDia / 2, 2);
+      const numDucts = Math.max(4, Math.round(params.area / 1200));
+      const jetVelocity = (params.fan / 3600) / (numDucts * ductArea * 0.25); // 25% effective orifice ratio
+      const pressurePa = 0.5 * airDensity * Math.pow(jetVelocity * 0.85, 2);
+
+      const evapPowerW_m2 = (actualCooling * (params.fan / 3600) * airDensity * 1.006 * 1000) / params.area;
+      const co2RetentionKg_h = Math.round(180 * (1.0 - alpha * 0.25));
+      const energySavingPct = (28.0 + (1.0 - alpha) * 12.0).toFixed(1);
+      const cop = (3.6 + Math.abs(coilPct) * 0.9).toFixed(2);
+
+      document.getElementById('hud-pressure').innerText = `+${pressurePa.toFixed(1)} Pa`;
+      document.getElementById('hud-supply').innerText = `${t5.toFixed(1)} °C / ${rh5.toFixed(0)}%`;
+      document.getElementById('hud-evap-pwr').innerText = `${Math.round(evapPowerW_m2)} W/m²`;
+      document.getElementById('hud-co2-save').innerText = `${co2RetentionKg_h} kg/h`;
+      document.getElementById('hud-energy-save').innerText = `${energySavingPct} %`;
+      document.getElementById('hud-cop').innerText = cop;
+
+      document.getElementById('vp-badge-status').innerText = `양압 가압 중 (+${pressurePa.toFixed(1)} Pa)`;
+      document.getElementById('vp-badge-flow').innerText = `토출 풍속: ${jetVelocity.toFixed(1)} m/s`;
+
+      renderStateTable();
+      drawMollierChart();
+    }
+
+    // --- 4. Render State Points Table ---
+    function renderStateTable() {
+      const tbody = document.getElementById('state-table-body');
+      if (!tbody) return;
+      tbody.innerHTML = '';
+      const points = [calculatedStates.p1, calculatedStates.p2, calculatedStates.p3, calculatedStates.p4, calculatedStates.p5];
+
+      points.forEach(p => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td><span class="state-dot" style="background: ${p.color};"></span><strong>${p.name}</strong></td>
+          <td class="mono"><strong>${p.t.toFixed(1)}</strong></td>
+          <td class="mono">${p.rh.toFixed(1)}%</td>
+          <td class="mono">${p.x.toFixed(1)}</td>
+          <td class="mono">${p.h.toFixed(1)}</td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    // --- 5. Interactive Mollier h-x 2D Canvas Chart ---
+    function drawMollierChart() {
+      const canvas = document.getElementById('mollierCanvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      const w = canvas.width = canvas.offsetWidth;
+      const h = canvas.height = canvas.offsetHeight;
+
+      ctx.clearRect(0, 0, w, h);
+
+      const margin = { top: 30, right: 35, bottom: 40, left: 50 };
+      const plotW = w - margin.left - margin.right;
+      const plotH = h - margin.top - margin.bottom;
+
+      const minX = 0, maxX = 26; // g/kg
+      const minT = 0, maxT = 45; // °C
+
+      const mapX = (x) => margin.left + ((x - minX) / (maxX - minX)) * plotW;
+      const mapY = (t) => margin.top + (1.0 - (t - minT) / (maxT - minT)) * plotH;
+
+      // Draw Grid & Axes
+      ctx.strokeStyle = 'rgba(255, 255, 255, 0.08)';
+      ctx.lineWidth = 1;
+
+      // Vertical grid (Humidity ratio x)
+      ctx.fillStyle = '#64748b';
+      ctx.font = '10px JetBrains Mono';
+      for (let x = 0; x <= maxX; x += 5) {
+        const px = mapX(x);
+        ctx.beginPath();
+        ctx.moveTo(px, margin.top);
+        ctx.lineTo(px, margin.top + plotH);
+        ctx.stroke();
+        ctx.fillText(x + 'g', px - 8, margin.top + plotH + 18);
+      }
+
+      // Horizontal grid (Dry bulb temperature T)
+      for (let t = 0; t <= maxT; t += 10) {
+        const py = mapY(t);
+        ctx.beginPath();
+        ctx.moveTo(margin.left, py);
+        ctx.lineTo(margin.left + plotW, py);
+        ctx.stroke();
+        ctx.fillText(t + '°C', margin.left - 35, py + 3);
+      }
+
+      // Draw Constant Relative Humidity Curves (RH = 20%, 40%, 60%, 80%, 100%)
+      const rhList = [20, 40, 60, 80, 100];
+      rhList.forEach(rh => {
+        ctx.beginPath();
+        ctx.strokeStyle = (rh === 100) ? 'rgba(56, 189, 248, 0.65)' : 'rgba(255, 255, 255, 0.15)';
+        ctx.lineWidth = (rh === 100) ? 2 : 1;
+
+        let first = true;
+        for (let t = minT; t <= maxT; t += 0.5) {
+          const x_kg = humidityRatio(t, rh);
+          const x_g = x_kg * 1000;
+          if (x_g >= minX && x_g <= maxX) {
+            const px = mapX(x_g);
+            const py = mapY(t);
+            if (first) { ctx.moveTo(px, py); first = false; }
+            else { ctx.lineTo(px, py); }
+          }
+        }
+        ctx.stroke();
+
+        // Label on curve
+        const labelT = 25 + rh * 0.12;
+        const lx_g = humidityRatio(labelT, rh) * 1000;
+        if (lx_g <= maxX) {
+          ctx.fillStyle = (rh === 100) ? '#38bdf8' : '#64748b';
+          ctx.font = '9px JetBrains Mono';
+          ctx.fillText(`RH ${rh}%`, mapX(lx_g) + 4, mapY(labelT));
+        }
+      });
+
+      // Draw Cycle Path between Points: P1 -> P3, P2 -> P3, P3 -> P4, P4 -> P5
+      const p1 = calculatedStates.p1;
+      const p2 = calculatedStates.p2;
+      const p3 = calculatedStates.p3;
+      const p4 = calculatedStates.p4;
+      const p5 = calculatedStates.p5;
+
+      // 1. Mixing line P1 -- P3 -- P2 (dashed)
+      ctx.setLineDash([4, 4]);
+      ctx.strokeStyle = '#94a3b8';
+      ctx.lineWidth = 1.5;
+      ctx.beginPath();
+      ctx.moveTo(mapX(p1.x), mapY(p1.t));
+      ctx.lineTo(mapX(p2.x), mapY(p2.t));
+      ctx.stroke();
+      ctx.setLineDash([]);
+
+      // 2. Fogging process P3 -> P4 (isenthalpic)
+      ctx.strokeStyle = '#c084fc';
+      ctx.lineWidth = 2.5;
+      ctx.beginPath();
+      ctx.moveTo(mapX(p3.x), mapY(p3.t));
+      ctx.lineTo(mapX(p4.x), mapY(p4.t));
+      ctx.stroke();
+
+      // 3. Coil process P4 -> P5 (sensible)
+      ctx.strokeStyle = '#f43f5e';
+      ctx.lineWidth = 2.5;
+      ctx.beginPath();
+      ctx.moveTo(mapX(p4.x), mapY(p4.t));
+      ctx.lineTo(mapX(p5.x), mapY(p5.t));
+      ctx.stroke();
+
+      // Draw State Points with Glowing Halos
+      const points = [p1, p2, p3, p4, p5];
+      points.forEach((p, idx) => {
+        const px = mapX(p.x);
+        const py = mapY(p.t);
+
+        // Halo
+        ctx.beginPath();
+        ctx.fillStyle = p.color + '44';
+        ctx.arc(px, py, 9, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Inner solid dot
+        ctx.beginPath();
+        ctx.fillStyle = p.color;
+        ctx.arc(px, py, 5, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.strokeStyle = '#fff';
+        ctx.lineWidth = 1.5;
+        ctx.stroke();
+
+        // Label
+        ctx.fillStyle = '#fff';
+        ctx.font = 'bold 10px Inter';
+        ctx.fillText(`P${idx + 1}`, px + 8, py - 4);
+      });
+    }
+
+    // --- 6. Operating Presets ---
+    function applyOperatingPreset(preset) {
+      document.querySelectorAll('.preset-pill').forEach(el => el.classList.remove('active'));
+      const activeBtn = event ? event.target : null;
+      if (activeBtn) activeBtn.classList.add('active');
+
+      if (preset === 'summer') {
+        params.tOut = 34.0; params.rhOut = 45.0;
+        params.tCanopy = 26.0; params.rhCanopy = 75.0;
+        params.damper = 100.0; params.fog = 85.0; params.coil = -30.0; params.fan = 85000;
+      } else if (preset === 'winter') {
+        params.tOut = 5.0; params.rhOut = 80.0;
+        params.tCanopy = 20.0; params.rhCanopy = 82.0;
+        params.damper = 15.0; params.fog = 0.0; params.coil = 45.0; params.fan = 45000;
+      } else if (preset === 'heatwave') {
+        params.tOut = 38.0; params.rhOut = 32.0;
+        params.tCanopy = 28.0; params.rhCanopy = 70.0;
+        params.damper = 60.0; params.fog = 95.0; params.coil = -60.0; params.fan = 95000;
+      } else if (preset === 'night') {
+        params.tOut = 14.0; params.rhOut = 90.0;
+        params.tCanopy = 17.0; params.rhCanopy = 85.0;
+        params.damper = 10.0; params.fog = 0.0; params.coil = 20.0; params.fan = 35000;
+      }
+
+      // Sync slider UI
+      document.getElementById('input-t-out').value = params.tOut;
+      document.getElementById('input-rh-out').value = params.rhOut;
+      document.getElementById('input-t-canopy').value = params.tCanopy;
+      document.getElementById('input-rh-canopy').value = params.rhCanopy;
+      document.getElementById('input-damper').value = params.damper;
+      document.getElementById('input-fog').value = params.fog;
+      document.getElementById('input-coil').value = params.coil;
+      document.getElementById('input-fan').value = params.fan;
+
+      updateSim();
+    }
+
+    function updateSim() {
+      params.tOut = parseFloat(document.getElementById('input-t-out').value);
+      params.rhOut = parseFloat(document.getElementById('input-rh-out').value);
+      params.tCanopy = parseFloat(document.getElementById('input-t-canopy').value);
+      params.rhCanopy = parseFloat(document.getElementById('input-rh-canopy').value);
+      params.damper = parseFloat(document.getElementById('input-damper').value);
+      params.fog = parseFloat(document.getElementById('input-fog').value);
+      params.coil = parseFloat(document.getElementById('input-coil').value);
+      params.fan = parseFloat(document.getElementById('input-fan').value);
+      params.area = parseFloat(document.getElementById('input-area').value);
+      params.ductDia = parseFloat(document.getElementById('select-duct-dia').value);
+
+      document.getElementById('val-t-out').innerText = `${params.tOut.toFixed(1)} °C`;
+      document.getElementById('val-rh-out').innerText = `${params.rhOut.toFixed(1)} %`;
+      document.getElementById('val-t-canopy').innerText = `${params.tCanopy.toFixed(1)} °C`;
+      document.getElementById('val-rh-canopy').innerText = `${params.rhCanopy.toFixed(1)} %`;
+      document.getElementById('val-damper').innerText = `${params.damper.toFixed(0)} % (순환 ${(100 - params.damper).toFixed(0)}%)`;
+      document.getElementById('val-fog').innerText = `${params.fog.toFixed(0)} %`;
+      const coilText = params.coil < 0 ? `냉각 ${Math.abs(params.coil).toFixed(0)} %` : (params.coil > 0 ? `가열 ${params.coil.toFixed(0)} %` : '중립 (0%)');
+      document.getElementById('val-coil').innerText = coilText;
+      document.getElementById('val-fan').innerText = `${params.fan.toLocaleString()} m³/h`;
+      document.getElementById('val-area').innerText = `${params.area.toLocaleString()} m² (${(params.area / 10000).toFixed(1)} ha)`;
+
+      computeThermodynamics();
+      update3DScene();
+    }
+
+    function exportStatePointsCSV() {
+      let csv = 'State_Point,Name,DryBulb_C,RelativeHumidity_Pct,MoistureContent_g_kg,Enthalpy_kJ_kg\n';
+      const pts = [calculatedStates.p1, calculatedStates.p2, calculatedStates.p3, calculatedStates.p4, calculatedStates.p5];
+      pts.forEach((p, i) => {
+        csv += `P${i + 1},"${p.name}",${p.t.toFixed(2)},${p.rh.toFixed(2)},${p.x.toFixed(2)},${p.h.toFixed(2)}\n`;
+      });
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.download = `SemiClosed_Greenhouse_ATU_Mollier_Data.csv`;
+      link.click();
+    }
+
+    // --- 7. Three.js 3D Web-Twin Simulator ---
+    let scene, camera, renderer, controls;
+    let mistParticles, fanBlades, damperOutdoorMesh, damperRecircMesh, airStreamArrows;
+
+    function init3D() {
+      const container = document.getElementById('atu-3d-canvas-container');
+      const w = container.clientWidth;
+      const h = container.clientHeight;
+
+      scene = new THREE.Scene();
+      scene.background = new THREE.Color(0x060a14);
+      scene.fog = new THREE.FogExp2(0x060a14, 0.025);
+
+      camera = new THREE.PerspectiveCamera(45, w / h, 0.1, 1000);
+      camera.position.set(-14, 9, 16);
+
+      renderer = new THREE.WebGLRenderer({ antialias: true });
+      renderer.setSize(w, h);
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      renderer.shadowMap.enabled = true;
+      container.appendChild(renderer.domElement);
+
+      controls = new THREE.OrbitControls(camera, renderer.domElement);
+      controls.enableDamping = true;
+      controls.dampingFactor = 0.05;
+      controls.maxPolarAngle = Math.PI / 2 - 0.02;
+
+      // Lights
+      const ambientLight = new THREE.AmbientLight(0xffffff, 0.65);
+      scene.add(ambientLight);
+
+      const dirLight = new THREE.DirectionalLight(0x38bdf8, 1.2);
+      dirLight.position.set(10, 20, 10);
+      dirLight.castShadow = true;
+      scene.add(dirLight);
+
+      // Floor Grid
+      const grid = new THREE.GridHelper(40, 40, 0x0ea5e9, 0x1e293b);
+      grid.position.y = 0;
+      scene.add(grid);
+
+      // Build 3D ATU Chamber & Greenhouse Model
+      buildATU3DModel();
+
+      window.addEventListener('resize', onWindowResize);
+      animate3D();
+    }
+
+    function buildATU3DModel() {
+      // 1. ATU Mechanical Chamber Housing (Cutaway Box)
+      const chamberGeo = new THREE.BoxGeometry(4.5, 4.0, 3.5);
+      const chamberMat = new THREE.MeshStandardMaterial({
+        color: 0x1e293b, metalness: 0.8, roughness: 0.3, transparent: true, opacity: 0.35, wireframe: false
+      });
+      const chamber = new THREE.Mesh(chamberGeo, chamberMat);
+      chamber.position.set(-6, 2.0, 0);
+      scene.add(chamber);
+
+      // Chamber Frame wire
+      const wireGeo = new THREE.WireframeGeometry(chamberGeo);
+      const wireMat = new THREE.LineBasicMaterial({ color: 0x06b6d4, linewidth: 1.5 });
+      const wire = new THREE.LineSegments(wireGeo, wireMat);
+      wire.position.copy(chamber.position);
+      scene.add(wire);
+
+      // 2. Outdoor Air Damper Louvers (Blue)
+      const damperGeo = new THREE.BoxGeometry(0.1, 0.4, 2.8);
+      const damperMat = new THREE.MeshStandardMaterial({ color: 0x0284c7, metalness: 0.5, roughness: 0.4 });
+      damperOutdoorMesh = new THREE.Group();
+      for (let i = 0; i < 4; i++) {
+        const blade = new THREE.Mesh(damperGeo, damperMat);
+        blade.position.set(-8.25, 1.0 + i * 0.7, 0);
+        damperOutdoorMesh.add(blade);
+      }
+      scene.add(damperOutdoorMesh);
+
+      // 3. High-Pressure Fogging Nozzle Manifold & Mist Particles
+      const particleCount = 600;
+      const particleGeo = new THREE.BufferGeometry();
+      const posArray = new Float32Array(particleCount * 3);
+      for (let i = 0; i < particleCount * 3; i += 3) {
+        posArray[i] = -6.5 + (Math.random() - 0.5) * 1.5;
+        posArray[i + 1] = 1.0 + Math.random() * 2.2;
+        posArray[i + 2] = (Math.random() - 0.5) * 2.8;
+      }
+      particleGeo.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+      const particleMat = new THREE.PointsMaterial({
+        size: 0.12, color: 0xa855f7, transparent: true, opacity: 0.75, blending: THREE.AdditiveBlending
+      });
+      mistParticles = new THREE.Points(particleGeo, particleMat);
+      scene.add(mistParticles);
+
+      // 4. Centrifugal Fan Impeller
+      fanBlades = new THREE.Group();
+      const fanHubGeo = new THREE.CylinderGeometry(0.4, 0.4, 0.2, 16);
+      const fanHubMat = new THREE.MeshStandardMaterial({ color: 0x64748b, metalness: 0.9 });
+      const hub = new THREE.Mesh(fanHubGeo, fanHubMat);
+      hub.rotation.z = Math.PI / 2;
+      fanBlades.add(hub);
+
+      for (let i = 0; i < 6; i++) {
+        const bGeo = new THREE.BoxGeometry(0.08, 0.9, 0.25);
+        const bMesh = new THREE.Mesh(bGeo, fanHubMat);
+        bMesh.rotation.x = (i * Math.PI) / 3;
+        fanBlades.add(bMesh);
+      }
+      fanBlades.position.set(-4.0, 2.0, 0);
+      scene.add(fanBlades);
+
+      // 5. Under-Gutter Perforated Air Distribution Duct (White PE Tube)
+      const ductLength = 16.0;
+      const ductGeo = new THREE.CylinderGeometry(0.45, 0.45, ductLength, 24, 1, true);
+      const ductMat = new THREE.MeshStandardMaterial({
+        color: 0xffffff, metalness: 0.1, roughness: 0.5, transparent: true, opacity: 0.65, side: THREE.DoubleSide
+      });
+      const duct = new THREE.Mesh(ductGeo, ductMat);
+      duct.rotation.x = Math.PI / 2;
+      duct.position.set(0, 0.75, 0);
+      scene.add(duct);
+
+      // 6. Tomato Crop Canopy Rows & Hanging Gutter
+      const gutterGeo = new THREE.BoxGeometry(0.35, 0.12, ductLength);
+      const gutterMat = new THREE.MeshStandardMaterial({ color: 0xe2e8f0, metalness: 0.8 });
+      const cropGutter = new THREE.Mesh(gutterGeo, gutterMat);
+      cropGutter.position.set(0, 1.4, 0);
+      scene.add(cropGutter);
+
+      // Tomato Plants
+      for (let z = -6.5; z <= 6.5; z += 1.3) {
+        const plantGeo = new THREE.ConeGeometry(0.55, 2.2, 7);
+        const plantMat = new THREE.MeshStandardMaterial({ color: 0x15803d, roughness: 0.7 });
+        const plant = new THREE.Mesh(plantGeo, plantMat);
+        plant.position.set(0, 2.5, z);
+        scene.add(plant);
+
+        // Tomato cluster
+        const tomGeo = new THREE.SphereGeometry(0.1, 8, 8);
+        const tomMat = new THREE.MeshStandardMaterial({ color: 0xef4444 });
+        const tom = new THREE.Mesh(tomGeo, tomMat);
+        tom.position.set(0.3, 1.8, z);
+        scene.add(tom);
+      }
+
+      // 7. Glass Roof & Venlo Columns Frame
+      const colGeo = new THREE.BoxGeometry(0.12, 4.5, 0.12);
+      const colMat = new THREE.MeshStandardMaterial({ color: 0x94a3b8, metalness: 0.7 });
+      [-2.5, 2.5].forEach(x => {
+        [-7, 0, 7].forEach(z => {
+          const col = new THREE.Mesh(colGeo, colMat);
+          col.position.set(x, 2.25, z);
+          scene.add(col);
+        });
+      });
+
+      // Roof Glass Panels (Closed Sealed Roof)
+      const roofPlaneGeo = new THREE.PlaneGeometry(3.0, ductLength);
+      const glassMat = new THREE.MeshPhysicalMaterial({
+        color: 0x38bdf8, metalness: 0.1, roughness: 0.1, transmission: 0.75, transparent: true, opacity: 0.45, side: THREE.DoubleSide
+      });
+      const roofLeft = new THREE.Mesh(roofPlaneGeo, glassMat);
+      roofLeft.rotation.z = 0.38;
+      roofLeft.rotation.y = Math.PI / 2;
+      roofLeft.position.set(-1.25, 5.0, 0);
+      scene.add(roofLeft);
+
+      const roofRight = new THREE.Mesh(roofPlaneGeo, glassMat);
+      roofRight.rotation.z = -0.38;
+      roofRight.rotation.y = Math.PI / 2;
+      roofRight.position.set(1.25, 5.0, 0);
+      scene.add(roofRight);
+    }
+
+    function update3DScene() {
+      // Rotate damper blades based on damper opening angle
+      if (damperOutdoorMesh) {
+        const rad = (params.damper / 100.0) * (Math.PI / 2.2);
+        damperOutdoorMesh.children.forEach(b => {
+          b.rotation.z = rad;
+        });
+      }
+      // Fog particles visibility
+      if (mistParticles) {
+        mistParticles.visible = params.fog > 5;
+        mistParticles.material.opacity = (params.fog / 100.0) * 0.85;
+      }
+    }
+
+    function onWindowResize() {
+      const container = document.getElementById('atu-3d-canvas-container');
+      if (!container || !renderer) return;
+      camera.aspect = container.clientWidth / container.clientHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(container.clientWidth, container.clientHeight);
+      drawMollierChart();
+    }
+
+    function animate3D() {
+      requestAnimationFrame(animate3D);
+      controls.update();
+
+      // Spin fan
+      if (fanBlades) {
+        const fanSpeed = (params.fan / 65000) * 0.18;
+        fanBlades.rotation.x += fanSpeed;
+      }
+
+      // Animate mist particles
+      if (mistParticles && mistParticles.visible) {
+        const positions = mistParticles.geometry.attributes.position.array;
+        for (let i = 0; i < positions.length; i += 3) {
+          positions[i] += 0.04 * (params.fan / 65000); // drift towards fan
+          if (positions[i] > -4.5) positions[i] = -7.0;
+        }
+        mistParticles.geometry.attributes.position.needsUpdate = true;
+      }
+
+      renderer.render(scene, camera);
+    }
+
+    // --- Init on Load ---
+    window.onload = function() {
+      init3D();
+      computeThermodynamics();
+    };
+  </script>
+</body>
+</html>
