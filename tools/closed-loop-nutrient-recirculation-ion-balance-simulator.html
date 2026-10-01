@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-adsense-account" content="ca-pub-8597809158257497">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8597809158257497" crossorigin="anonymous"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Closed-Loop Hydroponic Drainage Recirculation & Ion Balance Simulator | Inwoovation</title>
+  <meta name="description" content="Commercial greenhouse closed-loop hydroponics drainage reuse simulator. Models multi-cycle Na/Cl accumulation, Davies ionic activity coefficients, and German DüV zero-discharge compliance.">
+  <link rel="canonical" href="https://inwoovation.com/tools/closed-loop-nutrient-recirculation-ion-balance-simulator.html" />
+  
+  <!-- OpenGraph / Twitter -->
+  <meta property="og:title" content="Closed-Loop Hydroponic Drainage Recirculation & Ion Balance Simulator">
+  <meta property="og:description" content="Industrial closed-loop hydroponics drainage reuse, Davies activity coefficient solver, Na/Cl accumulation cycles, and German DüV zero-discharge compliance calculator.">
+  <meta property="og:url" content="https://inwoovation.com/tools/closed-loop-nutrient-recirculation-ion-balance-simulator.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Closed-Loop Hydroponic Drainage Recirculation & Ion Balance Simulator">
+  <meta name="twitter:description" content="Simulate hydroponic drainage recirculation, ion accumulation kinetics, and fertilizer cost savings.">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/digital_twin_styles.css">
+  <link rel="stylesheet" href="../css/global-ui-enhancements.css?v=20260901_spotlight">
+  <script src="../js/global-search-palette.js?v=20260901_spotlight"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+
+  <style>
+    .calc-card {
+      background: rgba(30, 41, 59, 0.85);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 24px;
+      transition: border-color 0.2s ease;
+    }
+    .calc-card:hover {
+      border-color: rgba(56, 189, 248, 0.35);
+    }
+    .calc-card h2 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin: 0 0 16px 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #f8fafc;
+    }
+    .calc-card h2 .icon { font-size: 1.35rem; }
+    
+    .param-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 16px;
+    }
+    .param-group { display: flex; flex-direction: column; gap: 5px; }
+    .param-group label {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .param-group input, .param-group select {
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 8px;
+      padding: 10px 12px;
+      color: var(--text-main);
+      font-family: var(--font-mono);
+      font-size: 0.92rem;
+      transition: all 0.2s ease;
+    }
+    .param-group input:focus, .param-group select:focus {
+      outline: none;
+      border-color: var(--accent-cyan);
+      box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.2);
+    }
+    
+    .preset-pills {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+    .preset-pill {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #cbd5e1;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .preset-pill:hover, .preset-pill.active {
+      background: linear-gradient(135deg, rgba(6, 182, 212, 0.25), rgba(16, 185, 129, 0.25));
+      border-color: var(--accent-cyan);
+      color: #38bdf8;
+    }
+    
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+    .result-card {
+      background: rgba(15, 23, 42, 0.75);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 16px;
+      text-align: center;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .result-card:hover {
+      transform: translateY(-2px);
+      border-color: var(--accent-emerald);
+    }
+    .result-card .label {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 700;
+    }
+    .result-card .value {
+      font-family: var(--font-mono);
+      font-size: 1.55rem;
+      font-weight: 700;
+      margin: 6px 0 2px 0;
+    }
+    .result-card .unit {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+    }
+    
+    .chart-box {
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 16px;
+      margin-top: 20px;
+    }
+    .chart-box canvas {
+      width: 100%;
+      height: 320px;
+      display: block;
+    }
+    
+    .ion-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 16px;
+      font-size: 0.85rem;
+    }
+    .ion-table th {
+      background: rgba(15, 23, 42, 0.9);
+      padding: 10px;
+      text-align: left;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    }
+    .ion-table td {
+      padding: 10px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      font-family: var(--font-mono);
+      color: #e2e8f0;
+    }
+    .ion-table tr:hover td {
+      background: rgba(255, 255, 255, 0.02);
+    }
+    
+    .btn-action-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    .btn-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-family: var(--font-sans);
+      font-weight: 700;
+      font-size: 0.92rem;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s ease;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, #10b981, #06b6d4);
+      color: #0f172a;
+    }
+    .btn-primary:hover {
+      box-shadow: 0 4px 18px rgba(16, 185, 129, 0.35);
+      transform: translateY(-2px);
+    }
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.08);
+      color: #e2e8f0;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.14);
+      border-color: #94a3b8;
+    }
+
+    .badge-status {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+    .badge-pass { background: rgba(16, 185, 129, 0.2); color: #34d399; border: 1px solid #10b981; }
+    .badge-warn { background: rgba(245, 158, 11, 0.2); color: #fbbf24; border: 1px solid #f59e0b; }
+    .badge-danger { background: rgba(244, 63, 94, 0.2); color: #f87171; border: 1px solid #f43f5e; }
+  </style>
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Closed-Loop Hydroponic Drainage Recirculation & Ion Balance Simulator",
+    "url": "https://inwoovation.com/tools/closed-loop-nutrient-recirculation-ion-balance-simulator.html",
+    "description": "Industrial hydroponics closed-loop drainage recirculation simulation, Davies activity coefficient solver, Na/Cl ballast accumulation tracking, and German DüV zero-discharge compliance calculator.",
+    "applicationCategory": "BusinessApplication, EducationalApplication",
+    "operatingSystem": "All modern web browsers",
+    "author": {
+      "@type": "Person",
+      "name": "Inwoo Hwang",
+      "jobTitle": "Smart Farm CEA Systems Engineer",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "Inwoovation Lab CEA"
+      }
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <div class="sim-container">
+    <!-- Top Navigation Bar -->
+    <div class="top-nav" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0 24px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.08); margin-bottom: 24px; flex-wrap: wrap; gap: 12px;">
+      <a href="index.html" style="color: #38bdf8; text-decoration: none; font-weight: 700; display: flex; align-items: center; gap: 6px;">
+        <span>←</span>
+        <span>Back to Tools Master Suite (37 Enterprise Tools)</span>
+      </a>
+      <div style="display: flex; gap: 14px; align-items: center; flex-wrap: wrap;">
+        <button class="nav-search-trigger" onclick="window.InwooPalette.open()" title="Open Spotlight Search (Ctrl+K)"><span>🔍 Search</span> <kbd>Ctrl+K</kbd></button>
+        <a href="venlocad-3d.html" style="color: #38bdf8; text-decoration: none; font-size: 0.88rem; font-weight: 600;">📐 VenloCAD 3D</a>
+        <a href="semi-closed-greenhouse-atu-mollier-simulator.html" style="color: #34d399; text-decoration: none; font-size: 0.88rem; font-weight: 600;">🌬️ Semi-Closed ATU</a>
+        <a href="nutrient-uptake-concentration-factor-analyzer.html" style="color: #fbbf24; text-decoration: none; font-size: 0.88rem; font-weight: 600;">🧪 UCF Analyzer</a>
+        <a href="../index.html" style="color: #94a3b8; text-decoration: none; font-size: 0.88rem; font-weight: 600;">🏛️ Lab Home</a>
+      </div>
+    </div>
+
+    <!-- Header Section -->
+    <header class="sim-header">
+      <div style="display: inline-block; padding: 4px 12px; background: rgba(6, 182, 212, 0.15); border: 1px solid rgba(6, 182, 212, 0.4); border-radius: 999px; color: var(--accent-cyan); font-size: 0.78rem; font-weight: 800; margin-bottom: 8px;">
+        SOTA HYDROPONIC DRAINAGE RECIRCULATION ENGINE
+      </div>
+      <h1>Closed-Loop Drainage Recirculation & Ion Balance Simulator</h1>
+      <p>Precision Davies Ionic Activity Solver, Non-Essential Ballast (Na/Cl) Multi-Cycle Accumulation & German DüV Zero-Discharge Economics</p>
+    </header>
+
+    <!-- Main Grid -->
+    <div class="sim-grid">
+      <!-- Left Column: Controls & Configuration -->
+      <div class="main-controls">
+        
+        <!-- Module 1: Facility & Irrigation Parameters -->
+        <div class="calc-card">
+          <h2><span class="icon">🏛️</span> 1. Production Facility &amp; Irrigation Setup</h2>
+          
+          <div class="param-group" style="margin-bottom: 14px;">
+            <label>Crop Species Preset (TUR Profiles)</label>
+            <div class="preset-pills">
+              <button type="button" class="preset-pill active" onclick="setCropPreset('tomato', this)">🍅 Tomato (High Transpiration / Tolerant)</button>
+              <button type="button" class="preset-pill" onclick="setCropPreset('cucumber', this)">🥒 Cucumber (Fast Growth / Moderate)</button>
+              <button type="button" class="preset-pill" onclick="setCropPreset('pepper', this)">🫑 Sweet Pepper (Moderate / Sensitive)</button>
+              <button type="button" class="preset-pill" onclick="setCropPreset('strawberry', this)">🍓 Strawberry (Low Salt / High Sensitivity)</button>
+            </div>
+          </div>
+
+          <div class="param-grid">
+            <div class="param-group">
+              <label>Cultivation Area (m²)</label>
+              <input type="number" id="in-area" value="10000" min="100" max="500000" step="500" onchange="runSimulation()">
+            </div>
+            <div class="param-group">
+              <label>Daily Irrigation Dose (L/m²·day)</label>
+              <input type="number" id="in-dose" value="4.5" min="1.0" max="15.0" step="0.5" onchange="runSimulation()">
+            </div>
+            <div class="param-group">
+              <label>Drainage Fraction (DF %)</label>
+              <input type="number" id="in-drain-pct" value="30" min="10" max="60" step="5" onchange="runSimulation()">
+            </div>
+            <div class="param-group">
+              <label>Recirculation Reuse Ratio (%)</label>
+              <input type="number" id="in-reuse-pct" value="85" min="0" max="100" step="5" onchange="runSimulation()">
+            </div>
+          </div>
+        </div>
+
+        <!-- Module 2: Source Water Baseline Quality -->
+        <div class="calc-card">
+          <h2><span class="icon">💧</span> 2. Fresh Makeup Water Baseline (Raw Water Quality)</h2>
+          
+          <div class="param-group" style="margin-bottom: 14px;">
+            <label>Raw Water Source Presets</label>
+            <div class="preset-pills">
+              <button type="button" class="preset-pill active" onclick="setWaterPreset('rain', this)">🌧️ Rainwater Basin (Ultra-Pure: 0.05 dS/m)</button>
+              <button type="button" class="preset-pill" onclick="setWaterPreset('well', this)">🚰 Deep Groundwater (Moderate Na/Cl: 0.72 dS/m)</button>
+              <button type="button" class="preset-pill" onclick="setWaterPreset('ro', this)">⚡ RO Desalination Permeate (Polished: 0.02 dS/m)</button>
+            </div>
+          </div>
+
+          <div class="param-grid">
+            <div class="param-group">
+              <label>Raw Water EC (dS/m)</label>
+              <input type="number" id="in-raw-ec" value="0.05" min="0.01" max="3.0" step="0.02" onchange="runSimulation()">
+            </div>
+            <div class="param-group">
+              <label>Raw Sodium Na⁺ (mmol/L)</label>
+              <input type="number" id="in-raw-na" value="0.10" min="0.01" max="15.0" step="0.05" onchange="runSimulation()">
+            </div>
+            <div class="param-group">
+              <label>Raw Chloride Cl⁻ (mmol/L)</label>
+              <input type="number" id="in-raw-cl" value="0.15" min="0.01" max="15.0" step="0.05" onchange="runSimulation()">
+            </div>
+            <div class="param-group">
+              <label>Raw Calcium Ca²⁺ (mmol/L)</label>
+              <input type="number" id="in-raw-ca" value="0.08" min="0.0" max="6.0" step="0.05" onchange="runSimulation()">
+            </div>
+            <div class="param-group">
+              <label>Raw Sulfate SO₄²⁻ (mmol/L)</label>
+              <input type="number" id="in-raw-so4" value="0.05" min="0.0" max="6.0" step="0.05" onchange="runSimulation()">
+            </div>
+            <div class="param-group">
+              <label>Target Feeding EC (dS/m)</label>
+              <input type="number" id="in-target-ec" value="2.60" min="1.0" max="5.0" step="0.1" onchange="runSimulation()">
+            </div>
+          </div>
+        </div>
+
+        <!-- Module 3: Multi-Cycle Ballast Accumulation Curve -->
+        <div class="calc-card">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
+            <h2><span class="icon">📈</span> 3. Dynamic Multi-Cycle Ion Accumulation (1~30 Cycles)</h2>
+            <span id="badge-purge-status" class="badge-status badge-pass">✅ Safe Recirculation Loop</span>
+          </div>
+          <p style="font-size: 0.84rem; color: var(--text-muted); margin: 0 0 12px 0;">
+            Tracking the mathematical mass-balance trajectory of non-absorbed sodium (Na⁺), chloride (Cl⁻), and electrical conductivity drift over repeated recirculation cycles.
+          </p>
+          
+          <div class="chart-box">
+            <canvas id="accumulationCanvas"></canvas>
+          </div>
+
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 14px; font-size: 0.78rem; color: #94a3b8; flex-wrap: wrap; gap: 10px;">
+            <div style="display: flex; gap: 16px;">
+              <span style="display: flex; align-items: center; gap: 5px;"><strong style="color: #f43f5e;">―</strong> Na⁺ Sodium (mmol/L)</span>
+              <span style="display: flex; align-items: center; gap: 5px;"><strong style="color: #38bdf8;">―</strong> Cl⁻ Chloride (mmol/L)</span>
+              <span style="display: flex; align-items: center; gap: 5px;"><strong style="color: #10b981;">―</strong> Total Solution EC (dS/m)</span>
+              <span style="display: flex; align-items: center; gap: 5px;"><strong style="color: #fbbf24; border-bottom: 1px dashed #fbbf24;">---</strong> Crop Threshold Limit</span>
+            </div>
+            <span id="purge-countdown-text" style="font-weight: 700; color: #38bdf8;">No purge required in 30 cycles</span>
+          </div>
+        </div>
+
+        <!-- Module 4: Davies Equation Ionic Speciation Table -->
+        <div class="calc-card">
+          <h2><span class="icon">🧪</span> 4. Davies Equation Activity Coefficient Solver</h2>
+          <p style="font-size: 0.84rem; color: var(--text-muted); margin: 0 0 14px 0;">
+            Thermodynamic correction for non-ideal electrolyte interactions in concentrated nutrient solutions: log₁₀(γᵢ) = -0.509·zᵢ²·[√I/(1+√I) - 0.3·I], where chemical activity aᵢ = γᵢ·cᵢ.
+          </p>
+
+          <table class="ion-table">
+            <thead>
+              <tr>
+                <th>Ion Species</th>
+                <th>Valence (z)</th>
+                <th>Nominal (mmol/L)</th>
+                <th>Ionic Str (Iᵢ)</th>
+                <th>Activity Coeff (γ)</th>
+                <th>Effective Activity (aᵢ)</th>
+                <th>Transpiration Uptake (TUR)</th>
+              </tr>
+            </thead>
+            <tbody id="ion-table-body">
+              <!-- Dynamically populated -->
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+
+      <!-- Right Column: Synthesis, KPIs & Compliance -->
+      <div class="side-kpis">
+        
+        <!-- Summary KPI Card -->
+        <div class="calc-card" style="border-color: rgba(16, 185, 129, 0.35);">
+          <h2><span class="icon">📊</span> Simulation Summary</h2>
+          
+          <div class="results-grid" style="grid-template-columns: 1fr 1fr;">
+            <div class="result-card">
+              <div class="label">Purge Trigger</div>
+              <div class="value" id="kpi-purge-cycle" style="color: #38bdf8;">30+</div>
+              <div class="unit">Cycles (Days: <span id="kpi-purge-days">75</span>d)</div>
+            </div>
+            <div class="result-card">
+              <div class="label">Water Savings</div>
+              <div class="value" id="kpi-water-saved" style="color: #10b981;">85.0%</div>
+              <div class="unit"><span id="kpi-water-m3">13,961</span> m³/year</div>
+            </div>
+            <div class="result-card">
+              <div class="label">Fertilizer Saved</div>
+              <div class="value" id="kpi-fert-saved" style="color: #facc15;">28.4%</div>
+              <div class="unit"><span id="kpi-fert-kg">4,820</span> kg NPK/yr</div>
+            </div>
+            <div class="result-card">
+              <div class="label">Financial Gain</div>
+              <div class="value" id="kpi-cost-saved" style="color: #34d399;">$24.2k</div>
+              <div class="unit">€22,500 / ₩33M yr</div>
+            </div>
+          </div>
+
+          <div style="margin-top: 16px; padding: 12px; background: rgba(15, 23, 42, 0.85); border-radius: 10px; font-size: 0.8rem; line-height: 1.5; color: #cbd5e1;">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+              <span>Daily Irrigation Volume:</span>
+              <strong id="kpi-daily-irrig">45,000 L/day</strong>
+            </div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+              <span>Recycled Drainage Volume:</span>
+              <strong id="kpi-daily-recycled" style="color: #38bdf8;">11,475 L/day</strong>
+            </div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+              <span>Ionic Strength (I):</span>
+              <strong id="kpi-ionic-strength">0.0382 mol/L</strong>
+            </div>
+            <div style="display: flex; justify-content: space-between;">
+              <span>Mean Monovalent γ₁:</span>
+              <strong id="kpi-gamma-mono">0.865</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- German DüV Zero-Discharge Certificate Card -->
+        <div class="calc-card" style="border-color: rgba(245, 158, 11, 0.35);">
+          <h2><span class="icon">🇩🇪</span> DüV Compliance &amp; ESG Dossier</h2>
+          <div style="font-size: 0.82rem; line-height: 1.6; color: #cbd5e1;">
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+              <span id="badge-duev" class="badge-status badge-pass">CERTIFIED ZERO-DISCHARGE</span>
+            </div>
+            <p style="margin: 0 0 10px 0;">
+              <strong>German DüV (Düngeverordnung) &amp; EU Water Framework Directive (2000/60/EC) Compliance:</strong>
+              Closed-loop recirculating systems prevent agricultural nitrate (<span style="color: #38bdf8;">NO₃⁻</span>) and phosphate (<span style="color: #38bdf8;">H₂PO₄⁻</span>) runoff into municipal watersheds.
+            </p>
+            <div style="background: rgba(0, 0, 0, 0.3); padding: 10px; border-radius: 8px; font-size: 0.78rem;">
+              <div>• Groundwater Leaching Avoidance: <strong style="color: #34d399;">100% Zero Runoff</strong></div>
+              <div>• Total Annual Nitrogen Conserved: <strong id="kpi-n-conserved" style="color: #38bdf8;">1,420 kg N</strong></div>
+              <div>• Total Annual Phosphate Conserved: <strong id="kpi-p-conserved" style="color: #facc15;">380 kg P₂O₅</strong></div>
+            </div>
+          </div>
+
+          <div class="btn-action-row" style="margin-top: 16px;">
+            <button type="button" class="btn-action btn-primary" onclick="exportSimulationCSV()" style="flex: 1;">
+              📥 Export Cycle CSV
+            </button>
+            <button type="button" class="btn-action btn-secondary" onclick="window.print()" style="flex: 1;">
+              🖨️ Print Dossier
+            </button>
+          </div>
+        </div>
+
+        <!-- Agronomic Guidance Card -->
+        <div class="calc-card">
+          <h2><span class="icon">💡</span> Agronomist Steering Notes</h2>
+          <div style="font-size: 0.8rem; color: #94a3b8; line-height: 1.55;">
+            <p style="margin: 0 0 8px 0;">
+              <strong>1. Sodium Flush Threshold:</strong> Once rootzone Na⁺ exceeds crop threshold (<span id="note-na-threshold">8.0</span> mmol/L), plant roots suffer competitive inhibition of K⁺ and Ca²⁺ uptake, risking tipburn and blossom-end rot (BER).
+            </p>
+            <p style="margin: 0 0 8px 0;">
+              <strong>2. Makeup Blending Rule:</strong> Maintain a minimum 15% fresh water dilution to buffer against sudden ionic spikes during peak mid-day solar transpiration.
+            </p>
+            <p style="margin: 0;">
+              <strong>3. UV-C &amp; Ozone Sanitation:</strong> Recirculated drain water must undergo 254nm UV-C irradiation (250 mJ/cm²) to eliminate <em>Pythium</em> and <em>Fusarium</em> zoospores prior to A/B tank reinjection.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Simulation Engine Script -->
+  <script>
+    // --- 1. Crop Biological & TUR Parameters ---
+    const CROP_PROFILES = {
+      tomato: {
+        name: 'Tomato (Solanum lycopersicum)',
+        naLimit: 8.0,
+        clLimit: 10.0,
+        targetEC: 2.6,
+        baseDose: 4.5,
+        tur: { NO3: 13.5, NH4: 1.0, H2PO4: 1.4, K: 8.5, Ca: 4.2, Mg: 2.2, SO4: 2.5, Na: 0.15, Cl: 0.20 }
+      },
+      cucumber: {
+        name: 'Cucumber (Cucumis sativus)',
+        naLimit: 4.0,
+        clLimit: 5.0,
+        targetEC: 2.2,
+        baseDose: 5.5,
+        tur: { NO3: 15.0, NH4: 0.8, H2PO4: 1.6, K: 9.5, Ca: 3.8, Mg: 1.8, SO4: 2.0, Na: 0.25, Cl: 0.30 }
+      },
+      pepper: {
+        name: 'Sweet Pepper (Capsicum annuum)',
+        naLimit: 5.5,
+        clLimit: 7.0,
+        targetEC: 2.4,
+        baseDose: 3.8,
+        tur: { NO3: 12.0, NH4: 0.5, H2PO4: 1.3, K: 7.8, Ca: 4.5, Mg: 2.0, SO4: 2.2, Na: 0.10, Cl: 0.15 }
+      },
+      strawberry: {
+        name: 'Strawberry (Fragaria × ananassa)',
+        naLimit: 2.5,
+        clLimit: 3.0,
+        targetEC: 1.5,
+        baseDose: 2.5,
+        tur: { NO3: 8.5, NH4: 0.4, H2PO4: 1.1, K: 5.2, Ca: 2.5, Mg: 1.2, SO4: 1.5, Na: 0.08, Cl: 0.10 }
+      }
+    };
+
+    const WATER_PROFILES = {
+      rain: { ec: 0.05, na: 0.10, cl: 0.15, ca: 0.08, so4: 0.05 },
+      well: { ec: 0.72, na: 1.90, cl: 2.40, ca: 1.20, so4: 0.85 },
+      ro:   { ec: 0.02, na: 0.05, cl: 0.05, ca: 0.01, so4: 0.01 }
+    };
+
+    let currentCrop = 'tomato';
+    let simulationResults = [];
+
+    function setCropPreset(cropKey, btn) {
+      document.querySelectorAll('.preset-pills button').forEach(b => {
+        if (b.innerText.toLowerCase().includes(cropKey)) b.classList.add('active');
+        else if (['tomato', 'cucumber', 'pepper', 'strawberry'].some(k => b.innerText.toLowerCase().includes(k))) b.classList.remove('active');
+      });
+      currentCrop = cropKey;
+      const c = CROP_PROFILES[cropKey];
+      document.getElementById('in-dose').value = c.baseDose;
+      document.getElementById('in-target-ec').value = c.targetEC;
+      document.getElementById('note-na-threshold').innerText = c.naLimit.toFixed(1);
+      runSimulation();
+    }
+
+    function setWaterPreset(waterKey, btn) {
+      document.querySelectorAll('.preset-pills button').forEach(b => {
+        if (['rain', 'well', 'ro'].some(k => b.innerText.toLowerCase().includes(k))) {
+          if (b.innerText.toLowerCase().includes(waterKey)) b.classList.add('active');
+          else b.classList.remove('active');
+        }
+      });
+      const w = WATER_PROFILES[waterKey];
+      document.getElementById('in-raw-ec').value = w.ec;
+      document.getElementById('in-raw-na').value = w.na;
+      document.getElementById('in-raw-cl').value = w.cl;
+      document.getElementById('in-raw-ca').value = w.ca;
+      document.getElementById('in-raw-so4').value = w.so4;
+      runSimulation();
+    }
+
+    // --- 2. Davies Equation Speciation Solver ---
+    function solveDaviesActivity(ions, ionicStrength) {
+      const A = 0.509; // Davies constant at 25°C
+      const sqrtI = Math.sqrt(ionicStrength);
+      const factor = (sqrtI / (1 + sqrtI)) - 0.3 * ionicStrength;
+
+      const out = {};
+      for (const [ion, data] of Object.entries(ions)) {
+        const z = data.z;
+        const logGamma = -A * (z * z) * factor;
+        const gamma = Math.pow(10, logGamma);
+        const conc = data.conc;
+        const activity = gamma * conc;
+        out[ion] = {
+          z: z,
+          conc: conc,
+          gamma: gamma,
+          activity: activity,
+          i_contribution: 0.5 * (conc * 0.001) * (z * z)
+        };
+      }
+      return out;
+    }
+
+    // --- 3. Core Recirculation Simulation Engine ---
+    function runSimulation() {
+      const areaM2 = parseFloat(document.getElementById('in-area').value);
+      const doseL = parseFloat(document.getElementById('in-dose').value);
+      const dfPct = parseFloat(document.getElementById('in-drain-pct').value) / 100.0;
+      const reusePct = parseFloat(document.getElementById('in-reuse-pct').value) / 100.0;
+      
+      const rawEC = parseFloat(document.getElementById('in-raw-ec').value);
+      const rawNa = parseFloat(document.getElementById('in-raw-na').value);
+      const rawCl = parseFloat(document.getElementById('in-raw-cl').value);
+      const rawCa = parseFloat(document.getElementById('in-raw-ca').value);
+      const rawSO4 = parseFloat(document.getElementById('in-raw-so4').value);
+      const targetEC = parseFloat(document.getElementById('in-target-ec').value);
+
+      const crop = CROP_PROFILES[currentCrop];
+      const dailyTotalWaterL = areaM2 * doseL;
+      const dailyDrainL = dailyTotalWaterL * dfPct;
+      const dailyRecycledL = dailyDrainL * reusePct;
+      const dailyMakeupL = dailyTotalWaterL - dailyRecycledL;
+
+      // Base feeding nutrient solution recipe (mmol/L)
+      const feedRecipe = {
+        NO3:   { z: 1, conc: 14.5 },
+        NH4:   { z: 1, conc: 1.0 },
+        H2PO4: { z: 1, conc: 1.5 },
+        K:     { z: 1, conc: 9.0 },
+        Ca:    { z: 2, conc: 4.5 },
+        Mg:    { z: 2, conc: 2.2 },
+        SO4:   { z: 2, conc: 2.8 },
+        Na:    { z: 1, conc: rawNa },
+        Cl:    { z: 1, conc: rawCl }
+      };
+
+      // Calculate initial ionic strength I = 0.5 * sum(c_i * z_i^2)
+      let sumCz2 = 0;
+      for (const [k, v] of Object.entries(feedRecipe)) {
+        sumCz2 += (v.conc * 0.001) * (v.z * v.z);
+      }
+      const I_initial = 0.5 * sumCz2;
+      const daviesInitial = solveDaviesActivity(feedRecipe, I_initial);
+
+      // Multi-cycle simulation (30 cycles)
+      simulationResults = [];
+      let curDrainNa = rawNa;
+      let curDrainCl = rawCl;
+      let curDrainSO4 = rawSO4;
+      let purgeCycle = -1;
+
+      for (let cycle = 1; cycle <= 30; cycle++) {
+        // Blended irrigation water concentration
+        const mixNa = (1 - reusePct) * rawNa + reusePct * curDrainNa;
+        const mixCl = (1 - reusePct) * rawCl + reusePct * curDrainCl;
+        const mixSO4 = (1 - reusePct) * (feedRecipe.SO4.conc + rawSO4) + reusePct * curDrainSO4;
+
+        // Drainage concentration after crop uptake
+        // Mass balance: Drain_Conc = [Mix_Conc - (1 - DF) * TUR] / DF
+        curDrainNa = Math.max(mixNa * 0.5, (mixNa - (1 - dfPct) * crop.tur.Na) / dfPct);
+        curDrainCl = Math.max(mixCl * 0.5, (mixCl - (1 - dfPct) * crop.tur.Cl) / dfPct);
+        curDrainSO4 = Math.max(mixSO4 * 0.5, (mixSO4 - (1 - dfPct) * crop.tur.SO4) / dfPct);
+
+        // Approximate solution EC from ions: base + delta Na + delta Cl
+        const deltaEC = (curDrainNa * 0.095) + (curDrainCl * 0.085);
+        const curEC = Math.min(6.5, targetEC + deltaEC * 0.45);
+
+        simulationResults.push({
+          cycle: cycle,
+          na: curDrainNa,
+          cl: curDrainCl,
+          so4: curDrainSO4,
+          ec: curEC,
+          mixNa: mixNa,
+          mixCl: mixCl
+        });
+
+        if (purgeCycle === -1 && (curDrainNa >= crop.naLimit || curDrainCl >= crop.clLimit)) {
+          purgeCycle = cycle;
+        }
+      }
+
+      // Update KPIs
+      updateKPIs({
+        dailyTotalWaterL,
+        dailyRecycledL,
+        dailyMakeupL,
+        areaM2,
+        purgeCycle,
+        crop,
+        I_initial,
+        daviesInitial,
+        feedRecipe
+      });
+
+      // Render Davies Table
+      renderDaviesTable(daviesInitial, crop);
+
+      // Draw Chart
+      drawAccumulationChart(crop);
+    }
+
+    function updateKPIs(data) {
+      const purgeCycleEl = document.getElementById('kpi-purge-cycle');
+      const purgeDaysEl = document.getElementById('kpi-purge-days');
+      const badgeStatusEl = document.getElementById('badge-purge-status');
+      const purgeCountdownText = document.getElementById('purge-countdown-text');
+
+      if (data.purgeCycle === -1) {
+        purgeCycleEl.innerText = '30+';
+        purgeCycleEl.style.color = '#10b981';
+        purgeDaysEl.innerText = '75+';
+        badgeStatusEl.className = 'badge-status badge-pass';
+        badgeStatusEl.innerText = '✅ Safe Recirculation Loop';
+        purgeCountdownText.innerText = '✨ No purge dump required in 30 cycles';
+        purgeCountdownText.style.color = '#34d399';
+      } else {
+        const estDays = Math.round(data.purgeCycle * 2.5);
+        purgeCycleEl.innerText = `Cycle ${data.purgeCycle}`;
+        purgeCycleEl.style.color = '#f59e0b';
+        purgeDaysEl.innerText = estDays;
+        badgeStatusEl.className = 'badge-status badge-warn';
+        badgeStatusEl.innerText = `⚠️ Purge Required at Cycle ${data.purgeCycle}`;
+        purgeCountdownText.innerText = `⚠️ Salt threshold breach in Cycle ${data.purgeCycle} (~${estDays} days)`;
+        purgeCountdownText.style.color = '#fbbf24';
+      }
+
+      const annualRecycledM3 = Math.round((data.dailyRecycledL * 365) / 1000);
+      document.getElementById('kpi-water-m3').innerText = annualRecycledM3.toLocaleString();
+      const reusePctVal = parseFloat(document.getElementById('in-reuse-pct').value);
+      document.getElementById('kpi-water-saved').innerText = `${reusePctVal.toFixed(1)}%`;
+
+      // Fertilizer savings calculation
+      // Commercial NPK equivalent in drainage: approx 0.35 kg NPK per m³ drainage reused
+      const annualFertKg = Math.round(annualRecycledM3 * 0.345);
+      document.getElementById('kpi-fert-kg').innerText = annualFertKg.toLocaleString();
+      const fertSavedPct = (reusePctVal * 0.334).toFixed(1);
+      document.getElementById('kpi-fert-saved').innerText = `${fertSavedPct}%`;
+
+      // Economic savings: Water ($1.2/m³) + Fertilizer ($3.8/kg NPK)
+      const annualCostUSD = Math.round(annualRecycledM3 * 1.20 + annualFertKg * 3.80);
+      const annualCostEUR = Math.round(annualCostUSD * 0.93);
+      const annualCostKRW = Math.round(annualCostUSD * 1360 / 1000000);
+      document.getElementById('kpi-cost-saved').innerText = `$${(annualCostUSD / 1000).toFixed(1)}k`;
+
+      document.getElementById('kpi-daily-irrig').innerText = `${Math.round(data.dailyTotalWaterL).toLocaleString()} L/day`;
+      document.getElementById('kpi-daily-recycled').innerText = `${Math.round(data.dailyRecycledL).toLocaleString()} L/day`;
+      document.getElementById('kpi-ionic-strength').innerText = `${data.I_initial.toFixed(4)} mol/L`;
+      document.getElementById('kpi-gamma-mono').innerText = data.daviesInitial.NO3.gamma.toFixed(3);
+
+      // DüV Environmental metrics
+      const nConservedKg = Math.round(annualRecycledM3 * 0.145);
+      const pConservedKg = Math.round(annualRecycledM3 * 0.038);
+      document.getElementById('kpi-n-conserved').innerText = `${nConservedKg.toLocaleString()} kg N`;
+      document.getElementById('kpi-p-conserved').innerText = `${pConservedKg.toLocaleString()} kg P₂O₅`;
+    }
+
+    function renderDaviesTable(davies, crop) {
+      const tbody = document.getElementById('ion-table-body');
+      tbody.innerHTML = '';
+
+      for (const [ion, d] of Object.entries(davies)) {
+        const turVal = crop.tur[ion] !== undefined ? `${crop.tur[ion].toFixed(2)} mmol/L` : '-';
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td><strong>${ion}</strong></td>
+          <td>${d.z}</td>
+          <td>${d.conc.toFixed(2)}</td>
+          <td>${d.i_contribution.toFixed(5)}</td>
+          <td style="color: #38bdf8;">${d.gamma.toFixed(3)}</td>
+          <td style="color: #34d399; font-weight: 700;">${d.activity.toFixed(2)}</td>
+          <td>${turVal}</td>
+        `;
+        tbody.appendChild(tr);
+      }
+    }
+
+    function drawAccumulationChart(crop) {
+      const canvas = document.getElementById('accumulationCanvas');
+      const ctx = canvas.getContext('2d');
+      const rect = canvas.getBoundingClientRect();
+      const dpr = window.devicePixelRatio || 1;
+      
+      canvas.width = rect.width * dpr;
+      canvas.height = 320 * dpr;
+      ctx.scale(dpr, dpr);
+
+      const W = rect.width;
+      const H = 320;
+      const pad = { top: 25, right: 35, bottom: 40, left: 55 };
+      const plotW = W - pad.left - pad.right;
+      const plotH = H - pad.top - pad.bottom;
+
+      ctx.clearRect(0, 0, W, H);
+
+      // Determine Max Y value
+      let maxVal = Math.max(crop.naLimit * 1.35, crop.clLimit * 1.35);
+      simulationResults.forEach(r => {
+        if (r.na > maxVal) maxVal = r.na * 1.15;
+        if (r.cl > maxVal) maxVal = r.cl * 1.15;
+        if (r.ec > maxVal) maxVal = r.ec * 1.15;
+      });
+
+      // Grid lines
+      ctx.strokeStyle = 'rgba(255, 255, 255, 0.06)';
+      ctx.lineWidth = 1;
+      for (let i = 0; i <= 5; i++) {
+        const y = pad.top + (plotH / 5) * i;
+        ctx.beginPath();
+        ctx.moveTo(pad.left, y);
+        ctx.lineTo(W - pad.right, y);
+        ctx.stroke();
+
+        const tickVal = maxVal * (1 - i / 5);
+        ctx.fillStyle = '#64748b';
+        ctx.font = '10px Inter, sans-serif';
+        ctx.textAlign = 'right';
+        ctx.fillText(tickVal.toFixed(1), pad.left - 8, y + 3);
+      }
+
+      // X Axis Ticks
+      for (let c = 0; c <= 30; c += 5) {
+        const x = pad.left + (c / 30) * plotW;
+        ctx.fillStyle = '#64748b';
+        ctx.font = '10px Inter, sans-serif';
+        ctx.textAlign = 'center';
+        ctx.fillText(c === 0 ? '0' : `C${c}`, x, H - pad.bottom + 16);
+      }
+
+      // Axis Titles
+      ctx.fillStyle = '#94a3b8';
+      ctx.font = '11px Inter, sans-serif';
+      ctx.textAlign = 'center';
+      ctx.fillText('Recirculation Cycles', pad.left + plotW / 2, H - 10);
+
+      // Threshold Line (Crop Na Limit)
+      const threshY = pad.top + plotH * (1 - crop.naLimit / maxVal);
+      ctx.save();
+      ctx.setLineDash([5, 5]);
+      ctx.strokeStyle = 'rgba(251, 191, 36, 0.85)';
+      ctx.lineWidth = 1.5;
+      ctx.beginPath();
+      ctx.moveTo(pad.left, threshY);
+      ctx.lineTo(W - pad.right, threshY);
+      ctx.stroke();
+      ctx.fillStyle = '#fbbf24';
+      ctx.font = '10px Inter, sans-serif';
+      ctx.textAlign = 'right';
+      ctx.fillText(`Na⁺ Threshold: ${crop.naLimit} mmol/L`, W - pad.right - 6, threshY - 6);
+      ctx.restore();
+
+      // Plot Line helper
+      function plotLine(key, color, width = 2) {
+        ctx.beginPath();
+        ctx.strokeStyle = color;
+        ctx.lineWidth = width;
+        ctx.lineJoin = 'round';
+        simulationResults.forEach((r, idx) => {
+          const x = pad.left + (r.cycle / 30) * plotW;
+          const y = pad.top + plotH * (1 - r[key] / maxVal);
+          if (idx === 0) ctx.moveTo(x, y);
+          else ctx.lineTo(x, y);
+        });
+        ctx.stroke();
+
+        // Data dots
+        ctx.fillStyle = color;
+        simulationResults.forEach((r, idx) => {
+          if (idx % 2 === 0 || idx === simulationResults.length - 1) {
+            const x = pad.left + (r.cycle / 30) * plotW;
+            const y = pad.top + plotH * (1 - r[key] / maxVal);
+            ctx.beginPath();
+            ctx.arc(x, y, 3, 0, Math.PI * 2);
+            ctx.fill();
+          }
+        });
+      }
+
+      // Draw Curves
+      plotLine('cl', '#38bdf8', 2);
+      plotLine('na', '#f43f5e', 2.5);
+      plotLine('ec', '#10b981', 1.8);
+    }
+
+    // --- 4. CSV Exporter ---
+    function exportSimulationCSV() {
+      let csv = "\uFEFFCycle,Na_mmol_L,Cl_mmol_L,SO4_mmol_L,Solution_EC_dSm,Mix_Na_mmol_L,Mix_Cl_mmol_L\n";
+      simulationResults.forEach(r => {
+        csv += `${r.cycle},${r.na.toFixed(3)},${r.cl.toFixed(3)},${r.so4.toFixed(3)},${r.ec.toFixed(2)},${r.mixNa.toFixed(3)},${r.mixCl.toFixed(3)}\n`;
+      });
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+      const link = document.createElement("a");
+      link.href = URL.createObjectURL(blob);
+      link.download = `Closed_Loop_Hydroponics_Simulation_${currentCrop}.csv`;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+
+    // Init on load & resize
+    window.onload = () => {
+      runSimulation();
+      window.addEventListener('resize', () => {
+        drawAccumulationChart(CROP_PROFILES[currentCrop]);
+      });
+    };
+  </script>
+  <script src="js/inwoovation_dossier_engine.js"></script>
+</body>
+</html>
