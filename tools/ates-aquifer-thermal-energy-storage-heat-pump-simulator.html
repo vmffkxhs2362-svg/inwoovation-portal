@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-adsense-account" content="ca-pub-8597809158257497">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8597809158257497" crossorigin="anonymous"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aquifer Thermal Energy Storage (ATES) & Heat Pump Sizing Simulator | Inwoovation Lab</title>
+  <meta name="description" content="Industrial CEA Aquifer Thermal Energy Storage (ATES) doublet well and heat pump simulator. Models warm/cold well seasonal hydraulics, Darcy drawdown, COP (VDI 4640), and German BEW decarbonization economics.">
+  <link rel="canonical" href="https://inwoovation.com/tools/ates-aquifer-thermal-energy-storage-heat-pump-simulator.html" />
+  
+  <!-- OpenGraph / Twitter -->
+  <meta property="og:title" content="Aquifer Thermal Energy Storage (ATES) & Heat Pump Sizing Simulator">
+  <meta property="og:description" content="Commercial greenhouse ATES doublet well hydraulics, heat pump seasonal COP, aquifer thermal recovery, and BEW / IRA grant payback calculator.">
+  <meta property="og:url" content="https://inwoovation.com/tools/ates-aquifer-thermal-energy-storage-heat-pump-simulator.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V4RYJBMEDE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-V4RYJBMEDE');
+  </script>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/digital_twin_styles.css">
+  <link rel="stylesheet" href="../css/global-ui-enhancements.css?v=20261001_spotlight">
+  <script src="../js/global-search-palette.js?v=20261001_spotlight"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-dark: #0f172a;
+      --card-bg: rgba(30, 41, 59, 0.85);
+      --border-glass: rgba(255, 255, 255, 0.1);
+      --accent-cyan: #38bdf8;
+      --accent-emerald: #10b981;
+      --accent-amber: #f59e0b;
+      --accent-rose: #f43f5e;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+    }
+    body {
+      background-color: var(--bg-dark);
+      color: #cbd5e1;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+    .app-container {
+      max-width: 1400px;
+      margin: 30px auto 80px;
+      padding: 0 20px;
+    }
+    .tool-header {
+      text-align: center;
+      margin-bottom: 30px;
+      border-bottom: 1px solid var(--border-glass);
+      padding-bottom: 24px;
+    }
+    .tool-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(56, 189, 248, 0.15);
+      color: var(--accent-cyan);
+      font-weight: 800;
+      font-size: 0.85rem;
+      padding: 6px 16px;
+      border-radius: 100px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 12px;
+      border: 1px solid rgba(56, 189, 248, 0.3);
+    }
+    .tool-header h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin: 0 0 10px;
+    }
+    .tool-header p {
+      font-size: 1rem;
+      color: var(--text-muted);
+      max-width: 850px;
+      margin: 0 auto;
+    }
+    .grid-layout {
+      display: grid;
+      grid-template-columns: 420px 1fr;
+      gap: 24px;
+    }
+    @media (max-width: 1024px) {
+      .grid-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+    .calc-card {
+      background: var(--card-bg);
+      backdrop-filter: blur(14px);
+      border: 1px solid var(--border-glass);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
+    .calc-card h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin: 0 0 16px 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding-bottom: 10px;
+    }
+    .input-group {
+      margin-bottom: 14px;
+    }
+    .input-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text-main);
+      margin-bottom: 6px;
+    }
+    .input-val-badge {
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--accent-cyan);
+      font-weight: 700;
+    }
+    input[type="range"] {
+      width: 100%;
+      height: 6px;
+      background: rgba(15, 23, 42, 0.8);
+      border-radius: 4px;
+      outline: none;
+      -webkit-appearance: none;
+    }
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--accent-cyan);
+      cursor: pointer;
+      box-shadow: 0 0 8px rgba(56, 189, 248, 0.6);
+    }
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+    .kpi-card {
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 16px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .kpi-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--accent-cyan), var(--accent-emerald));
+    }
+    .kpi-title {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 6px;
+    }
+    .kpi-value {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.65rem;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+    .kpi-unit {
+      font-size: 0.82rem;
+      color: var(--accent-cyan);
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .canvas-container {
+      background: #020617;
+      border: 1px solid var(--border-glass);
+      border-radius: 14px;
+      padding: 12px;
+      margin-bottom: 20px;
+      position: relative;
+    }
+    canvas {
+      width: 100%;
+      height: 380px;
+      display: block;
+      border-radius: 8px;
+    }
+    .mode-switch-bar {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+    .mode-btn {
+      flex: 1;
+      padding: 10px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 0.88rem;
+      cursor: pointer;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(15, 23, 42, 0.7);
+      color: var(--text-muted);
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+    .mode-btn.active-summer {
+      background: rgba(244, 63, 94, 0.2);
+      border-color: var(--accent-rose);
+      color: #fda4af;
+    }
+    .mode-btn.active-winter {
+      background: rgba(56, 189, 248, 0.2);
+      border-color: var(--accent-cyan);
+      color: var(--accent-cyan);
+    }
+    .btn-row {
+      display: flex;
+      gap: 12px;
+      margin-top: 18px;
+    }
+    .action-btn {
+      flex: 1;
+      background: linear-gradient(135deg, #0284c7, #10b981);
+      color: #ffffff;
+      font-weight: 700;
+      border: none;
+      padding: 12px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .action-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 14px rgba(2, 132, 199, 0.4);
+    }
+    .action-btn.secondary {
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid var(--border-glass);
+      color: #cbd5e1;
+    }
+    .action-btn.secondary:hover {
+      border-color: var(--accent-cyan);
+    }
+    .formula-tag {
+      background: rgba(15, 23, 42, 0.9);
+      border-left: 3px solid var(--accent-cyan);
+      padding: 12px 16px;
+      border-radius: 0 8px 8px 0;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+      color: var(--accent-cyan);
+      margin: 14px 0;
+    }
+  </style>
+
+  <!-- Schema.org WebApplication & FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "Aquifer Thermal Energy Storage (ATES) & Heat Pump Sizing Simulator",
+        "url": "https://inwoovation.com/tools/ates-aquifer-thermal-energy-storage-heat-pump-simulator.html",
+        "description": "Industrial greenhouse Aquifer Thermal Energy Storage (ATES) doublet well and heat pump simulator. Computes seasonal flow rates, Darcy drawdown, COP, and BEW grant payback.",
+        "applicationCategory": "EngineeringApplication, ThermodynamicsSimulator",
+        "operatingSystem": "All",
+        "author": { "@type": "Person", "name": "Inwoo Hwang" }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is an Aquifer Thermal Energy Storage (ATES) doublet well system?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "An ATES doublet system consists of two separate deep groundwater wells: a Warm Well (typically 16°C to 22°C) and a Cold Well (typically 6°C to 9°C) drilled into a permeable sand/gravel aquifer. In summer, groundwater is pumped from the cold well to provide free greenhouse cooling and injected into the warm well. In winter, flow reverses: warm water is extracted to feed an industrial heat pump evaporator, delivering low-temperature heating (35°C–45°C) to the crop at COPs > 4.5."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What well separation distance is required to avoid thermal breakthrough?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Under VDI 4640 and European hydrogeological standards, the thermal radius of influence is calculated as R_th = sqrt((c_w * V_seasonal) / (pi * H_aq * c_aq)). To prevent thermal breakthrough over a 25-year lifespan, warm and cold wells must be separated by at least 2.5 to 3.0 times the thermal radius (typically 100 to 180 meters)."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<div class="app-container">
+  <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:16px;">
+    <a href="/tools/index.html" style="color:var(--accent-cyan); text-decoration:none; font-weight:600; font-size:0.92rem; display:inline-flex; align-items:center; gap:6px;">← Back to All 38 Engineering Tools</a>
+    <button class="nav-search-trigger" onclick="window.InwooPalette.open()" title="Open Spotlight Search (Ctrl+K)"><span>🔍 Spotlight Search</span> <kbd>Ctrl+K</kbd></button>
+  </div>
+
+  <header class="tool-header">
+    <span class="tool-badge">⚡ Flagship Tool 38 • Decarbonized Geothermal CEA</span>
+    <h1>Aquifer Thermal Energy Storage (ATES) &amp; Heat Pump Sizing Simulator</h1>
+    <p>Model commercial greenhouse seasonal doublet well hydraulics, Darcy drawdown, VDI 4640 seasonal heat pump COP, and German BEW (Bundesförderung für effiziente Wärmenetze) / US IRA 48C decarbonization economics.</p>
+  </header>
+
+  <!-- Mode Selector Bar -->
+  <div class="mode-switch-bar">
+    <button id="btnSummer" class="mode-btn active-summer" onclick="setSeason('summer')">
+      <span>☀️ Summer Cooling Mode (Charge Warm Well)</span>
+    </button>
+    <button id="btnWinter" class="mode-btn" onclick="setSeason('winter')">
+      <span>❄️ Winter Heating Mode (Extract Warm Well)</span>
+    </button>
+  </div>
+
+  <div class="grid-layout">
+    <!-- Left Column: Input Control Panels -->
+    <div>
+      <!-- Greenhouse & Peak Load Parameters -->
+      <div class="calc-card">
+        <h2>🏛️ 1. Greenhouse &amp; Peak Thermal Demand</h2>
+        
+        <div class="input-group">
+          <div class="input-label">
+            <span>Cultivation Area (Hectares)</span>
+            <span id="txtArea" class="input-val-badge">2.5 ha</span>
+          </div>
+          <input type="range" id="rngArea" min="0.5" max="20" step="0.5" value="2.5" oninput="runSim()">
+        </div>
+
+        <div class="input-group">
+          <div class="input-label">
+            <span>Peak Heating Demand (W/m²)</span>
+            <span id="txtHeatLoad" class="input-val-badge">140 W/m²</span>
+          </div>
+          <input type="range" id="rngHeatLoad" min="60" max="250" step="5" value="140" oninput="runSim()">
+        </div>
+
+        <div class="input-group">
+          <div class="input-label">
+            <span>Peak Cooling Demand (W/m²)</span>
+            <span id="txtCoolLoad" class="input-val-badge">110 W/m²</span>
+          </div>
+          <input type="range" id="rngCoolLoad" min="40" max="220" step="5" value="110" oninput="runSim()">
+        </div>
+
+        <div class="input-group">
+          <div class="input-label">
+            <span>Annual Full-Load Heating Hours</span>
+            <span id="txtHeatHours" class="input-val-badge">1,650 h/yr</span>
+          </div>
+          <input type="range" id="rngHeatHours" min="800" max="3000" step="50" value="1650" oninput="runSim()">
+        </div>
+      </div>
+
+      <!-- Hydrogeology & Aquifer Doublet Parameters -->
+      <div class="calc-card">
+        <h2>🌊 2. Aquifer Hydrogeology (VDI 4640)</h2>
+        
+        <div class="input-group">
+          <div class="input-label">
+            <span>Aquifer Saturated Thickness (H_aq)</span>
+            <span id="txtThick" class="input-val-badge">25 m</span>
+          </div>
+          <input type="range" id="rngThick" min="10" max="80" step="5" value="25" oninput="runSim()">
+        </div>
+
+        <div class="input-group">
+          <div class="input-label">
+            <span>Hydraulic Conductivity (k_f × 10⁻⁴ m/s)</span>
+            <span id="txtPerm" class="input-val-badge">2.5 × 10⁻⁴ m/s (Sand/Gravel)</span>
+          </div>
+          <input type="range" id="rngPerm" min="0.5" max="10.0" step="0.5" value="2.5" oninput="runSim()">
+        </div>
+
+        <div class="input-group">
+          <div class="input-label">
+            <span>Warm Well Storage Temp (T_warm)</span>
+            <span id="txtTwarm" class="input-val-badge">19.0 °C</span>
+          </div>
+          <input type="range" id="rngTwarm" min="14" max="25" step="0.5" value="19.0" oninput="runSim()">
+        </div>
+
+        <div class="input-group">
+          <div class="input-label">
+            <span>Cold Well Storage Temp (T_cold)</span>
+            <span id="txtTcold" class="input-val-badge">7.5 °C</span>
+          </div>
+          <input type="range" id="rngTcold" min="5" max="12" step="0.5" value="7.5" oninput="runSim()">
+        </div>
+
+        <div class="input-group">
+          <div class="input-label">
+            <span>Well Separation Distance (L_well)</span>
+            <span id="txtDist" class="input-val-badge">130 m</span>
+          </div>
+          <input type="range" id="rngDist" min="60" max="300" step="10" value="130" oninput="runSim()">
+        </div>
+      </div>
+
+      <!-- Heat Pump & Economic Factors -->
+      <div class="calc-card">
+        <h2>💶 3. Heat Pump &amp; Energy Economics</h2>
+        
+        <div class="input-group">
+          <div class="input-label">
+            <span>Heat Pump Supply Water Temp</span>
+            <span id="txtTsupply" class="input-val-badge">42 °C (Low-Temp Rail)</span>
+          </div>
+          <input type="range" id="rngTsupply" min="30" max="60" step="1" value="42" oninput="runSim()">
+        </div>
+
+        <div class="input-group">
+          <div class="input-label">
+            <span>Electricity Tariff (€/kWh)</span>
+            <span id="txtElecPrice" class="input-val-badge">0.14 €/kWh</span>
+          </div>
+          <input type="range" id="rngElecPrice" min="0.06" max="0.35" step="0.01" value="0.14" oninput="runSim()">
+        </div>
+
+        <div class="input-group">
+          <div class="input-label">
+            <span>Natural Gas Baseline (€/kWh)</span>
+            <span id="txtGasPrice" class="input-val-badge">0.085 €/kWh</span>
+          </div>
+          <input type="range" id="rngGasPrice" min="0.04" max="0.18" step="0.005" value="0.085" oninput="runSim()">
+        </div>
+
+        <div class="input-group">
+          <div class="input-label">
+            <span>BEW / IRA Clean Energy Subsidy</span>
+            <span id="txtSubsidy" class="input-val-badge">45% Non-Dilutive Grant</span>
+          </div>
+          <input type="range" id="rngSubsidy" min="0" max="60" step="5" value="45" oninput="runSim()">
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Column: Visualizer, KPI Matrix & Calculations -->
+    <div>
+      <!-- 2D Canvas ATU & Aquifer Doublet Geological Cross-Section -->
+      <div class="canvas-container">
+        <canvas id="atesCanvas"></canvas>
+      </div>
+
+      <!-- Real-Time KPI Matrix -->
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <div class="kpi-title">Pumping Flow Rate</div>
+          <div id="kpiFlow" class="kpi-value">145</div>
+          <div class="kpi-unit">m³/h (Doublet Peak)</div>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-title">Heating COP (VDI 4640)</div>
+          <div id="kpiCOP" class="kpi-value">5.12</div>
+          <div class="kpi-unit">W_th / W_el (Seasonal)</div>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-title">Well Drawdown</div>
+          <div id="kpiDrawdown" class="kpi-value">3.4</div>
+          <div class="kpi-unit">m (Dupuit-Theis)</div>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-title">Thermal Recovery (η_th)</div>
+          <div id="kpiRecovery" class="kpi-value">84.2</div>
+          <div class="kpi-unit">% (No Breakthrough)</div>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-title">Annual CO₂ Reduction</div>
+          <div id="kpiCO2" class="kpi-value">842</div>
+          <div class="kpi-unit">Tons CO₂e / Year</div>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-title">Annual OPEX Savings</div>
+          <div id="kpiSavings" class="kpi-value">€164,200</div>
+          <div class="kpi-unit">Net Annual Profit</div>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-title">Subsidized Payback</div>
+          <div id="kpiPayback" class="kpi-value">3.4</div>
+          <div class="kpi-unit">Years (BEW 45% Grant)</div>
+        </div>
+      </div>
+
+      <!-- Engineering Science Card -->
+      <div class="calc-card">
+        <h2>📐 Hydrogeological &amp; Thermodynamic Formulation</h2>
+        <p>Groundwater flow and seasonal heat recovery obey the coupled Darcy groundwater potential and energy conservation laws:</p>
+
+        <div class="formula-tag">
+          Pumping Flow: V_dot = Q_thermal / (rho_w * C_p * Delta_T_well) [m³/h]<br>
+          Darcy Well Drawdown: s_w = V_dot / (2 * pi * k_f * H_aq) * ln(R_influence / r_well) [m]<br>
+          Carnot COP: COP_th = eta_carnot * (T_supply_K / (T_supply_K - T_evap_K))<br>
+          Thermal Radius: R_thermal = sqrt((C_w * V_seasonal) / (pi * H_aq * C_aquifer)) [m]
+        </div>
+
+        <div style="font-size:0.92rem; color:#cbd5e1; margin-top:14px;">
+          <strong>VDI 4640 Compliance Status:</strong><br>
+          <span id="vdiStatus" style="color:#10b981; font-weight:700;">✅ Excellent: Well distance (130m) exceeds minimum safe thermal distance (94m). Zero thermal breakthrough risk over 25-year operational lifecycle.</span>
+        </div>
+
+        <div class="btn-row">
+          <button class="action-btn" onclick="exportCSV()">
+            <span>📥 Export Engineering CSV Report</span>
+          </button>
+          <button class="action-btn secondary" onclick="window.print()">
+            <span>🖨️ Print Technical Spec Sheet</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  let currentSeason = 'summer'; // 'summer' or 'winter'
+  let animFrameId;
+  let particlePhase = 0;
+
+  function setSeason(season) {
+    currentSeason = season;
+    document.getElementById('btnSummer').className = 'mode-btn' + (season === 'summer' ? ' active-summer' : '');
+    document.getElementById('btnWinter').className = 'mode-btn' + (season === 'winter' ? ' active-winter' : '');
+    runSim();
+  }
+
+  function runSim() {
+    // 1. Inputs
+    const areaHa = parseFloat(document.getElementById('rngArea').value);
+    const heatLoadWm2 = parseFloat(document.getElementById('rngHeatLoad').value);
+    const coolLoadWm2 = parseFloat(document.getElementById('rngCoolLoad').value);
+    const heatHours = parseFloat(document.getElementById('rngHeatHours').value);
+    const Haq = parseFloat(document.getElementById('rngThick').value);
+    const kf = parseFloat(document.getElementById('rngPerm').value) * 1e-4; // m/s
+    const Twarm = parseFloat(document.getElementById('rngTwarm').value);
+    const Tcold = parseFloat(document.getElementById('rngTcold').value);
+    const Lwell = parseFloat(document.getElementById('rngDist').value);
+    const Tsupply = parseFloat(document.getElementById('rngTsupply').value);
+    const elecPrice = parseFloat(document.getElementById('rngElecPrice').value);
+    const gasPrice = parseFloat(document.getElementById('rngGasPrice').value);
+    const subsidyPct = parseFloat(document.getElementById('rngSubsidy').value);
+
+    // Update UI Badges
+    document.getElementById('txtArea').textContent = areaHa.toFixed(1) + ' ha';
+    document.getElementById('txtHeatLoad').textContent = heatLoadWm2 + ' W/m²';
+    document.getElementById('txtCoolLoad').textContent = coolLoadWm2 + ' W/m²';
+    document.getElementById('txtHeatHours').textContent = heatHours.toLocaleString() + ' h/yr';
+    document.getElementById('txtThick').textContent = Haq + ' m';
+    document.getElementById('txtPerm').textContent = (kf * 1e4).toFixed(1) + ' × 10⁻⁴ m/s';
+    document.getElementById('txtTwarm').textContent = Twarm.toFixed(1) + ' °C';
+    document.getElementById('txtTcold').textContent = Tcold.toFixed(1) + ' °C';
+    document.getElementById('txtDist').textContent = Lwell + ' m';
+    document.getElementById('txtTsupply').textContent = Tsupply + ' °C';
+    document.getElementById('txtElecPrice').textContent = elecPrice.toFixed(2) + ' €/kWh';
+    document.getElementById('txtGasPrice').textContent = gasPrice.toFixed(3) + ' €/kWh';
+    document.getElementById('txtSubsidy').textContent = subsidyPct + '% Non-Dilutive Grant';
+
+    const areaM2 = areaHa * 10000;
+    const deltaTwell = Math.max(1, Twarm - Tcold);
+    const rhoCp = 1.163; // kWh / (m³ · K)
+
+    // Heating & Cooling Capacities
+    const peakHeatMW = (areaM2 * heatLoadWm2) / 1e6; // MW_th
+    const peakCoolMW = (areaM2 * coolLoadWm2) / 1e6; // MW_th
+
+    // Pumping flow calculation
+    // In winter: heating from warm well. Q_evap = peakHeatMW * (1 - 1/COP)
+    // COP calculation: Carnot * 0.55
+    const TevapK = (Twarm - 3) + 273.15; // 3K approach
+    const TsupplyK = Tsupply + 273.15;
+    const copCarnot = TsupplyK / (TsupplyK - TevapK);
+    const copReal = Math.min(6.5, Math.max(3.2, copCarnot * 0.55));
+
+    const QevapMW = peakHeatMW * (1 - 1 / copReal);
+    const flowHeatingM3h = (QevapMW * 1000) / (rhoCp * deltaTwell);
+    
+    // In summer: free cooling or chiller charging
+    const flowCoolingM3h = (peakCoolMW * 1000) / (rhoCp * deltaTwell);
+
+    const peakFlowM3h = Math.max(flowHeatingM3h, flowCoolingM3h);
+
+    // Dupuit-Theis Well Drawdown
+    // s_w = Q / (2 * pi * kf * Haq) * ln(R / r_w)
+    const Qm3s = (peakFlowM3h / 3600);
+    const rWell = 0.25; // 250mm casing
+    const rInf = 250; // 250m radius of influence
+    const transmissivity = kf * Haq; // m²/s
+    const drawdown = (Qm3s / (2 * Math.PI * transmissivity)) * Math.log(rInf / rWell);
+
+    // Thermal radius calculation (R_th)
+    const annualHeatMWh = peakHeatMW * heatHours * 0.45; // average load factor 45%
+    const annualWaterM3 = (annualHeatMWh * 1000) / (rhoCp * deltaTwell);
+    const cWater = 4.18e6; // J/(m³·K)
+    const cAquifer = 2.4e6; // J/(m³·K) for wet sand
+    const Rthermal = Math.sqrt((cWater * annualWaterM3) / (Math.PI * Haq * cAquifer));
+    const minSafeDist = Rthermal * 2.6;
+    const thermalRecovery = Math.min(91, Math.max(68, 88 - (Rthermal / Lwell) * 12));
+
+    // Economic & Carbon Comparison vs Gas Boiler (88% efficiency)
+    const annualGasKWh = (annualHeatMWh * 1000) / 0.88;
+    const gasCost = annualGasKWh * gasPrice;
+
+    const heatPumpElecKWh = (annualHeatMWh * 1000) / copReal;
+    const pumpHead = Math.max(15, drawdown + 25); // meters total dynamic head
+    const pumpPowerKW = (1000 * 9.81 * (peakFlowM3h / 3600) * pumpHead) / (3600 * 0.72);
+    const annualPumpElecKWh = pumpPowerKW * heatHours * 0.45;
+    const totalElecKWh = heatPumpElecKWh + annualPumpElecKWh;
+    const elecCost = totalElecKWh * elecPrice;
+
+    const netOpexSavings = Math.max(0, gasCost - elecCost);
+
+    // Carbon Emissions: Gas = 0.202 kg/kWh, German Green Grid = 0.085 kg/kWh
+    const gasCO2Tons = (annualGasKWh * 0.202) / 1000;
+    const elecCO2Tons = (totalElecKWh * 0.085) / 1000;
+    const co2SavedTons = Math.max(0, gasCO2Tons - elecCO2Tons);
+
+    // CAPEX Estimation: Drilling 2 wells @ €1,200/m + heat pump @ €220/kW_th
+    const depthWell = Haq + 45; // total depth approx 70m
+    const wellCapex = 2 * depthWell * 1200;
+    const hpCapex = (peakHeatMW * 1000) * 240;
+    const totalCapexGross = wellCapex + hpCapex + 85000; // piping & automation
+    const netCapex = totalCapexGross * (1 - subsidyPct / 100);
+
+    const paybackYears = netOpexSavings > 0 ? (netCapex / netOpexSavings) : 99;
+
+    // Update KPI UI
+    document.getElementById('kpiFlow').textContent = Math.round(peakFlowM3h);
+    document.getElementById('kpiCOP').textContent = copReal.toFixed(2);
+    document.getElementById('kpiDrawdown').textContent = Math.min(45, Math.max(0.8, drawdown)).toFixed(1);
+    document.getElementById('kpiRecovery').textContent = thermalRecovery.toFixed(1);
+    document.getElementById('kpiCO2').textContent = Math.round(co2SavedTons).toLocaleString();
+    document.getElementById('kpiSavings').textContent = '€' + Math.round(netOpexSavings).toLocaleString();
+    document.getElementById('kpiPayback').textContent = paybackYears < 30 ? paybackYears.toFixed(1) : '> 25';
+
+    // VDI Status text
+    const vdiEl = document.getElementById('vdiStatus');
+    if (Lwell >= minSafeDist) {
+      vdiEl.innerHTML = `✅ <strong>VDI 4640 Fully Compliant:</strong> Separation distance (${Lwell}m) exceeds minimum thermal threshold (${Math.round(minSafeDist)}m). Zero thermal breakthrough.`;
+      vdiEl.style.color = '#10b981';
+    } else {
+      vdiEl.innerHTML = `⚠️ <strong>Thermal Interference Warning:</strong> Separation (${Lwell}m) is below recommended safe distance (${Math.round(minSafeDist)}m). Potential thermal breakthrough within 12–18 years.`;
+      vdiEl.style.color = '#f59e0b';
+    }
+
+    drawVisualizer(Twarm, Tcold, Lwell, Haq, currentSeason);
+  }
+
+  function drawVisualizer(Twarm, Tcold, Lwell, Haq, season) {
+    const canvas = document.getElementById('atesCanvas');
+    const ctx = canvas.getContext('2d');
+    const w = canvas.width = canvas.parentElement.clientWidth;
+    const h = canvas.height = 380;
+
+    // Background Layers
+    // 0 to 80: Atmosphere & Greenhouse
+    // 80 to 140: Unsaturated Soil / Vadose Zone
+    // 140 to 180: Impermeable Clay Confining Layer
+    // 180 to 330: Permeable Saturated Sand/Gravel Aquifer
+    // 330 to 380: Bedrock Bed
+
+    ctx.fillStyle = '#0f172a';
+    ctx.fillRect(0, 0, w, 80);
+
+    // Greenhouse structure
+    ctx.strokeStyle = 'rgba(56, 189, 248, 0.5)';
+    ctx.lineWidth = 1.5;
+    for (let x = 60; x < w - 60; x += 40) {
+      ctx.beginPath();
+      ctx.moveTo(x, 78);
+      ctx.lineTo(x + 20, 45);
+      ctx.lineTo(x + 40, 78);
+      ctx.stroke();
+    }
+    ctx.fillStyle = '#e2e8f0';
+    ctx.font = 'bold 12px "Outfit", sans-serif';
+    ctx.fillText('HIGH-WIRE VENLO GREENHOUSE (PROTECTED CULTIVATION)', 70, 32);
+
+    // Vadose zone
+    ctx.fillStyle = '#334155';
+    ctx.fillRect(0, 80, w, 60);
+    ctx.fillStyle = '#94a3b8';
+    ctx.font = '10px "JetBrains Mono"';
+    ctx.fillText('UNSATURATED VADOSE ZONE (SILT / LOAM)', 14, 110);
+
+    // Clay confining layer
+    ctx.fillStyle = '#1e293b';
+    ctx.fillRect(0, 140, w, 35);
+    ctx.fillStyle = '#64748b';
+    ctx.fillText('IMPERMEABLE CONFINING CLAY AQUICLUDE', 14, 162);
+
+    // Saturated Aquifer
+    ctx.fillStyle = '#032030';
+    ctx.fillRect(0, 175, w, 155);
+    ctx.fillStyle = 'rgba(56, 189, 248, 0.7)';
+    ctx.fillText(`SATURATED CONFINED SAND AQUIFER (Thickness = ${Haq}m)`, 14, 195);
+
+    // Bedrock
+    ctx.fillStyle = '#090d16';
+    ctx.fillRect(0, 330, w, 50);
+    ctx.fillStyle = '#475569';
+    ctx.fillText('IMPERMEABLE BEDROCK BASE', 14, 355);
+
+    // Wells Coordinates
+    const xCold = w * 0.32;
+    const xWarm = w * 0.68;
+    const yTop = 80;
+    const yBottom = 310;
+
+    // Draw Plumes (Thermal Cones)
+    // Cold Plume around Cold Well
+    const plumeR = Math.min(85, Math.max(35, w * 0.16));
+    const coldGrad = ctx.createRadialGradient(xCold, 250, 10, xCold, 250, plumeR);
+    coldGrad.addColorStop(0, 'rgba(56, 189, 248, 0.85)');
+    coldGrad.addColorStop(0.6, 'rgba(56, 189, 248, 0.3)');
+    coldGrad.addColorStop(1, 'rgba(56, 189, 248, 0)');
+    ctx.fillStyle = coldGrad;
+    ctx.beginPath();
+    ctx.arc(xCold, 250, plumeR, 0, Math.PI * 2);
+    ctx.fill();
+
+    // Warm Plume around Warm Well
+    const warmGrad = ctx.createRadialGradient(xWarm, 250, 10, xWarm, 250, plumeR);
+    warmGrad.addColorStop(0, 'rgba(244, 63, 94, 0.85)');
+    warmGrad.addColorStop(0.6, 'rgba(244, 63, 94, 0.3)');
+    warmGrad.addColorStop(1, 'rgba(244, 63, 94, 0)');
+    ctx.fillStyle = warmGrad;
+    ctx.beginPath();
+    ctx.arc(xWarm, 250, plumeR, 0, Math.PI * 2);
+    ctx.fill();
+
+    // Draw Casing Pipes
+    ctx.lineWidth = 6;
+    ctx.strokeStyle = '#64748b';
+    // Cold well line
+    ctx.beginPath();
+    ctx.moveTo(xCold, yTop);
+    ctx.lineTo(xCold, yBottom);
+    ctx.stroke();
+
+    // Warm well line
+    ctx.beginPath();
+    ctx.moveTo(xWarm, yTop);
+    ctx.lineTo(xWarm, yBottom);
+    ctx.stroke();
+
+    // Well screen slots
+    ctx.strokeStyle = '#38bdf8';
+    ctx.lineWidth = 10;
+    ctx.beginPath();
+    ctx.moveTo(xCold, 230);
+    ctx.lineTo(xCold, 300);
+    ctx.stroke();
+
+    ctx.strokeStyle = '#f43f5e';
+    ctx.beginPath();
+    ctx.moveTo(xWarm, 230);
+    ctx.lineTo(xWarm, 300);
+    ctx.stroke();
+
+    // Well Heads & Labels
+    ctx.fillStyle = '#38bdf8';
+    ctx.font = 'bold 12px "Outfit"';
+    ctx.fillText(`COLD WELL (${Tcold.toFixed(1)}°C)`, xCold - 50, 72);
+
+    ctx.fillStyle = '#f43f5e';
+    ctx.fillText(`WARM WELL (${Twarm.toFixed(1)}°C)`, xWarm - 50, 72);
+
+    // Surface Piping
+    ctx.lineWidth = 3;
+    ctx.strokeStyle = season === 'summer' ? '#f43f5e' : '#38bdf8';
+    ctx.setLineDash([6, 6]);
+    ctx.lineDashOffset = -particlePhase;
+    ctx.beginPath();
+    ctx.moveTo(xCold, yTop);
+    ctx.lineTo(xCold, yTop - 25);
+    ctx.lineTo(xWarm, yTop - 25);
+    ctx.lineTo(xWarm, yTop);
+    ctx.stroke();
+    ctx.setLineDash([]);
+
+    // Season flow arrow
+    ctx.fillStyle = season === 'summer' ? '#f43f5e' : '#38bdf8';
+    ctx.font = 'bold 13px "Outfit"';
+    if (season === 'summer') {
+      ctx.fillText(`SUMMER MODE: Cold Extract → Greenhouse Heat Dump → Warm Inject ➔`, w * 0.22, yTop - 32);
+    } else {
+      ctx.fillText(`WINTER MODE: ⬅ Warm Extract → Heat Pump Evaporator → Cold Inject`, w * 0.22, yTop - 32);
+    }
+
+    // Well Separation Dimension
+    ctx.strokeStyle = 'rgba(255, 255, 255, 0.4)';
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.moveTo(xCold, 330);
+    ctx.lineTo(xWarm, 330);
+    ctx.stroke();
+    ctx.fillStyle = '#f8fafc';
+    ctx.font = '11px "JetBrains Mono"';
+    ctx.fillText(`Doublet Separation L = ${Lwell} m`, (xCold + xWarm) / 2 - 65, 325);
+
+    particlePhase += 1.2;
+  }
+
+  function animate() {
+    particlePhase += 0.8;
+    const Haq = parseFloat(document.getElementById('rngThick').value);
+    const Twarm = parseFloat(document.getElementById('rngTwarm').value);
+    const Tcold = parseFloat(document.getElementById('rngTcold').value);
+    const Lwell = parseFloat(document.getElementById('rngDist').value);
+    drawVisualizer(Twarm, Tcold, Lwell, Haq, currentSeason);
+    animFrameId = requestAnimationFrame(animate);
+  }
+
+  function exportCSV() {
+    const area = document.getElementById('txtArea').textContent;
+    const flow = document.getElementById('kpiFlow').textContent;
+    const cop = document.getElementById('kpiCOP').textContent;
+    const drawdown = document.getElementById('kpiDrawdown').textContent;
+    const co2 = document.getElementById('kpiCO2').textContent;
+    const savings = document.getElementById('kpiSavings').textContent;
+    const payback = document.getElementById('kpiPayback').textContent;
+
+    const csvContent = "data:text/csv;charset=utf-8,"
+      + "Metric,Value\n"
+      + `Greenhouse Area,${area}\n`
+      + `Doublet Pumping Peak Flow,${flow} m3/h\n`
+      + `Heat Pump Seasonal COP,${cop}\n`
+      + `Darcy Well Drawdown,${drawdown} m\n`
+      + `Annual CO2 Reduction,${co2} Tons\n`
+      + `Annual OPEX Savings,${savings}\n`
+      + `Subsidized Payback,${payback} Years\n`
+      + `Standard Norm,VDI 4640 / DIN EN 13031-1\n`;
+
+    const encodedUri = encodeURI(csvContent);
+    const link = document.createElement("a");
+    link.setAttribute("href", encodedUri);
+    link.setAttribute("download", "ATES_HeatPump_Sizing_Report_Inwoovation.csv");
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
+
+  // Initial Run
+  window.addEventListener('load', () => {
+    runSim();
+    animate();
+  });
+  window.addEventListener('resize', () => {
+    runSim();
+  });
+</script>
+
+</body>
+</html>

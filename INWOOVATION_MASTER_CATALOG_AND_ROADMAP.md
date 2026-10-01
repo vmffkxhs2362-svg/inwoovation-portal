@@ -53,12 +53,12 @@ To guarantee that no service is inadvertently degraded or neglected, the AI Agen
 
 ---
 
-## 📂 Sector 1: `tools/` — Industrial Calculation & Simulation Suite (37 Active Tools + 1 Master Hub)
+## 📂 Sector 1: `tools/` — Industrial Calculation & Simulation Suite (38 Active Tools + 1 Master Hub)
 
 ### Core Mission
 Provide precision engineering calculations for commercial greenhouse operators, vertical farms, and agricultural planners. Eliminates manual spreadsheet errors and provides instant, client-side biophysical modeling.
 
-### Complete Tool Inventory (38 Verified Endpoints / 37 Active Engines)
+### Complete Tool Inventory (39 Verified Endpoints / 38 Active Engines)
 1. [`global-agri-subsidy-grant-navigator.html`](file:///g:/Meine%20Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/tools/global-agri-subsidy-grant-navigator.html): 50-state search engine with 87 verified programs, 5 USDA regional filters, and 7-point metadata cards.
 2. [`greenhouse-3d-digital-twin-simulator.html`](file:///g:/Meine%20Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/tools/greenhouse-3d-digital-twin-simulator.html): Three.js WebGL Venlo greenhouse model with dynamic solar positioning, thermal radiation, and ventilation airflow.
 3. [`agriquant-greenhouse-energy-commodity-terminal.html`](file:///g:/Meine%20Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/tools/agriquant-greenhouse-energy-commodity-terminal.html): Natural gas, grid electricity day-ahead peak-shaving, and CHP / thermal buffer tank economic optimization.
@@ -96,7 +96,8 @@ Provide precision engineering calculations for commercial greenhouse operators, 
 35. [`venlocad-3d.html`](file:///g:/Meine%20Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/tools/venlocad-3d.html): VenloCAD 3D v3.0 Commercial Master — Parametric Venlo greenhouse 3D CAD modeling, NEN 3859 structural verification, Wageningen natural ventilation airflow, 1D pipe cutting schedule optimizer, binary glTF / GLB 3D export, Semi-Closed Air Treatment Unit (ATU) corridor chamber & under-gutter positive pressure perforated PE ducts, and client-ready B2B commercial CPQ proposal generator.
 36. [`semi-closed-greenhouse-atu-mollier-simulator.html`](file:///g:/Meine%20Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/tools/semi-closed-greenhouse-atu-mollier-simulator.html): Semi-Closed Greenhouse ATU (Air Treatment Unit) & Mollier h-x Psychrometric 3D Simulator — WebGL 3D cutaway twin of mixing chamber, dampers, high-pressure fogging, centrifugal fan, and perforated polyethylene under-gutter duct, paired with interactive 2D Mollier h-x state-point solver.
 37. [`closed-loop-nutrient-recirculation-ion-balance-simulator.html`](file:///g:/Meine%20Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/tools/closed-loop-nutrient-recirculation-ion-balance-simulator.html): Closed-Loop Hydroponic Drainage Recirculation & Ion Balance Simulator — Multi-cycle ballast ($Na^+/Cl^-$) accumulation kinetics, Davies equation ionic activity solver, crop-specific Transpiration-to-Uptake Ratios (TUR), and German DüV / EU Water Framework zero-discharge compliance economics.
-38. [`index.html`](file:///g:/Meine%20Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/tools/index.html): Industrial calculation suite master portal with real-time fuzzy search, category filtering, and featured flagship tools.
+38. [`ates-aquifer-thermal-energy-storage-heat-pump-simulator.html`](file:///g:/Meine%20Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/tools/ates-aquifer-thermal-energy-storage-heat-pump-simulator.html): Aquifer Thermal Energy Storage (ATES) Doublet Well & Industrial Heat Pump Sizing Simulator — Hydrogeological Dupuit-Theis cone of depression, seasonal doublet plume thermal recovery ($\eta_{th} \approx 84\%$), VDI 4640 / DIN EN 13031 heat pump seasonal COP ($>5.0$), and German BEW 45% grant / US IRA 48C decarbonization financial model.
+39. [`index.html`](file:///g:/Meine%20Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/tools/index.html): Industrial calculation suite master portal with real-time fuzzy search, category filtering, and featured flagship tools.
 
 ---
 
