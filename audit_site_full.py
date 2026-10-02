@@ -2,7 +2,7 @@ import os
 import glob
 import re
 
-portal_dir = r"g:\Meine Ablage\Antigravity\Headquater\Career\Inwoovation_Portal"
+portal_dir = os.path.dirname(os.path.abspath(__file__))
 html_files = glob.glob(os.path.join(portal_dir, "**", "*.html"), recursive=True)
 
 print(f"Total HTML files found: {len(html_files)}")
