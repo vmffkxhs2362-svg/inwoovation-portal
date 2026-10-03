@@ -2850,7 +2850,7 @@ window.DIAGNOSIS_COLLECTOR_URL = "YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL";
             toxicity: "꿀벌 독성 등급",
             rei: "안전 재진입 대기기간 (REI)",
             guideline: "SOP 대응 및 살포 가이드라인",
-            footer: "본 리포트는 Inwoovation 스마트팜 엔지니어링 랩(smartfarm.inwoovation.com)에서 실시간으로 발행되었습니다.",
+            footer: "본 리포트는 Inwoovation 스마트팜 엔지니어링 랩(inwoovation.com/smartfarm)에서 실시간으로 발행되었습니다.",
             verified: "자가진단 무결성 인증됨"
         } : {
             title: "Smart Farm Precision Diagnosis Report",
@@ -2867,7 +2867,7 @@ window.DIAGNOSIS_COLLECTOR_URL = "YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL";
             toxicity: "Bee Toxicity Level",
             rei: "Re-entry Interval (REI)",
             guideline: "SOP Hive Action Guidelines",
-            footer: "Issued in real-time by Inwoovation Smart Farm Lab (smartfarm.inwoovation.com).",
+            footer: "Issued in real-time by Inwoovation Smart Farm Lab (inwoovation.com/smartfarm).",
             verified: "Self-Diagnosis Verified"
         };
 

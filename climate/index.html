@@ -1,0 +1,1825 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V4RYJBMEDE"></script>
+    <script>
+       window.dataLayer = window.dataLayer || [];
+       function gtag(){dataLayer.push(arguments);}
+       gtag('js', new Date());
+       gtag('config', 'G-V4RYJBMEDE');
+    </script>
+    <meta name="google-adsense-account" content="ca-pub-8597809158257497">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Ag-Climate Atlas: 40 Greenhouse Climate Hubs | Inwoovation Lab</title>
+    <link rel="canonical" href="https://inwoovation.com/climate/" />
+    <meta name="description" content="Compare 40 commercial greenhouse regions by latitude, Köppen climate class and seasonal Daily Light Integral (DLI) to plan screens, lighting and heating.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://inwoovation.com/climate/">
+    <meta property="og:title" content="Global Ag-Climate Atlas: 40 Greenhouse Climate Hubs | Inwoovation Lab">
+    <meta property="og:description" content="Compare 40 commercial greenhouse regions by latitude, Köppen climate class and seasonal Daily Light Integral (DLI) to plan screens, lighting and heating.">
+    <meta property="og:image" content="https://inwoovation.com/og-cover.jpg">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8597809158257497" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .atlas { max-width: 1180px; margin: 32px auto 64px; padding: 0 24px; }
+        .atlas-back { color: #38bdf8; text-decoration: none; font-weight: 600; font-size: 0.95rem; }
+        .atlas-head { text-align: center; margin: 24px 0 28px; }
+        .atlas-head h1 { font-family: 'Outfit', sans-serif; font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 800; color: #f8fafc; margin-bottom: 12px; }
+        .atlas-head p { color: #94a3b8; font-size: 1.05rem; line-height: 1.7; max-width: 760px; margin: 0 auto; }
+        .atlas-filter { display: block; width: 100%; max-width: 520px; margin: 0 auto 28px; padding: 14px 18px; border-radius: 14px; border: 1px solid rgba(255,255,255,0.14); background: rgba(15,23,42,0.85); color: #f8fafc; font-size: 1rem; font-family: inherit; }
+        .atlas-filter:focus { outline: 2px solid #38bdf8; outline-offset: 2px; }
+        .atlas-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 16px; }
+        .atlas-card { display: block; text-decoration: none; background: rgba(30,41,59,0.7); border: 1px solid rgba(255,255,255,0.08); border-radius: 18px; padding: 20px; transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease; }
+        .atlas-card:hover, .atlas-card:focus-visible { transform: translateY(-3px); border-color: rgba(56,189,248,0.5); box-shadow: 0 12px 28px rgba(56,189,248,0.15); }
+        .atlas-lat { display: inline-block; font-size: 0.75rem; font-weight: 700; letter-spacing: .05em; color: #38bdf8; background: rgba(56,189,248,0.12); padding: 4px 10px; border-radius: 8px; }
+        .atlas-card h2 { font-family: 'Outfit', sans-serif; font-size: 1.08rem; color: #f8fafc; margin: 10px 0 6px; line-height: 1.35; }
+        .atlas-koppen { color: #10b981; font-size: 0.85rem; margin-bottom: 12px; }
+        .atlas-card dl { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+        .atlas-card dt { color: #94a3b8; font-size: 0.72rem; text-transform: uppercase; letter-spacing: .04em; }
+        .atlas-card dd { color: #f8fafc; font-weight: 700; font-family: 'Outfit', sans-serif; }
+        .atlas-empty { display: none; text-align: center; color: #94a3b8; margin-top: 24px; }
+        footer { text-align: center; color: #94a3b8; font-size: 0.85rem; padding: 32px 16px; }
+        footer a { color: #94a3b8; }
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Global Ag-Climate Atlas for Greenhouse Engineering",
+  "url": "https://inwoovation.com/climate/",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Inwoovation Lab",
+    "url": "https://inwoovation.com"
+  },
+  "mainEntity": {
+    "@type": "ItemList",
+    "numberOfItems": 40,
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Bleiswijk, Netherlands",
+        "url": "https://inwoovation.com/climate/bleiswijk-netherlands-cea-research-cluster.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Naaldwijk (Westland East), Netherlands",
+        "url": "https://inwoovation.com/climate/naaldwijk-netherlands-floriculture-hub-guide.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Westland, Netherlands",
+        "url": "https://inwoovation.com/climate/westland-netherlands-greenhouse-climate-guide.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": "Straelen / Lower Rhine, Germany",
+        "url": "https://inwoovation.com/climate/straelen-lower-rhine-germany-horticulture-guide.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "name": "Nürnberg / Knoblauchsland, Bavaria",
+        "url": "https://inwoovation.com/climate/nuernberg-knoblauchsland-bavaria-greenhouse-climate-guide.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 6,
+        "name": "Delta / Fraser Valley, BC, Canada",
+        "url": "https://inwoovation.com/climate/delta-fraser-valley-bc-canada-greenhouse-guide.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 7,
+        "name": "Brittany (Finistère), France",
+        "url": "https://inwoovation.com/climate/brittany-finistere-france-tomato-cluster-guide.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 8,
+        "name": "Leamington / Kingsville, Ontario, Canada",
+        "url": "https://inwoovation.com/climate/leamington-ontario-canada-greenhouse-guide.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 9,
+        "name": "Morehead (Appalachian Basin), Kentucky, USA",
+        "url": "https://inwoovation.com/climate/appharvest-morehead-kentucky-cea-guide.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 10,
+        "name": "Murcia (Campo de Cartagena), Spain",
+        "url": "https://inwoovation.com/climate/murcia-spain-precision-hydroponics-guide.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 11,
+        "name": "Antalya (Aksu & Kumluca), Turkey",
+        "url": "https://inwoovation.com/climate/antalya-turkey-mediterranean-greenhouse-guide.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 12,
+        "name": "Ragusa / Vittoria, Sicily, Italy",
+        "url": "https://inwoovation.com/climate/ragusa-sicily-italy-protected-cropping-guide.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 13,
+        "name": "Shouguang, Shandong, China",
+        "url": "https://inwoovation.com/climate/shouguang-shandong-china-solar-greenhouse-guide.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 14,
+        "name": "Almería (Campo de Dalías), Spain",
+        "url": "https://inwoovation.com/climate/almeria-spain-parral-greenhouse-climate-guide.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 15,
+        "name": "Salinas Valley, California, USA",
+        "url": "https://inwoovation.com/climate/salinas-valley-california-salad-bowl-guide.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 16,
+        "name": "Buyeo (Geum River Basin), South Korea",
+        "url": "https://inwoovation.com/climate/buyeo-chungnam-korea-tomato-cluster-guide.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 17,
+        "name": "Nonsan, Chungnam, South Korea",
+        "url": "https://inwoovation.com/climate/nonsan-chungnam-korea-smart-berry-guide.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 18,
+        "name": "Gimje Smart Farm Valley, South Korea",
+        "url": "https://inwoovation.com/climate/gimje-smart-farm-innovation-valley-korea-guide.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 19,
+        "name": "Miryang, Gyeongnam, South Korea",
+        "url": "https://inwoovation.com/climate/miryang-gyeongnam-korea-strawberry-capital-guide.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 20,
+        "name": "Ierapetra, Crete, Greece",
+        "url": "https://inwoovation.com/climate/ierapetra-crete-greece-solar-greenhouse-guide.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 21,
+        "name": "Santa Maria, California, USA",
+        "url": "https://inwoovation.com/climate/santa-maria-valley-california-berry-tunnel-guide.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 22,
+        "name": "Toyohashi, Aichi Prefecture, Japan",
+        "url": "https://inwoovation.com/climate/aichi-toyohashi-japan-protected-agriculture-guide.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 23,
+        "name": "Kochi (Tosa Bay), Japan",
+        "url": "https://inwoovation.com/climate/kochi-japan-warm-climate-horticulture-guide.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 24,
+        "name": "Marana & Tucson, Arizona, USA",
+        "url": "https://inwoovation.com/climate/marana-tucson-arizona-hyper-solar-cea-guide.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 25,
+        "name": "Arava Valley / Ein Yahav, Israel",
+        "url": "https://inwoovation.com/climate/arava-valley-israel-desert-fertigation-guide.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 26,
+        "name": "Souss-Massa Valley (Agadir), Morocco",
+        "url": "https://inwoovation.com/climate/souss-massa-agadir-morocco-export-greenhouse-guide.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 27,
+        "name": "Kunming (Spring City), Yunnan, China",
+        "url": "https://inwoovation.com/climate/kunming-yunnan-china-asian-flower-capital-guide.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 28,
+        "name": "Culiacán (Sinaloa Valley), Mexico",
+        "url": "https://inwoovation.com/climate/culiacan-sinaloa-mexico-winter-vegetable-guide.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 29,
+        "name": "Al-Kharj / Riyadh Oasis, Saudi Arabia",
+        "url": "https://inwoovation.com/climate/riyadh-al-kharj-saudi-arabia-desert-cea-guide.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 30,
+        "name": "Al Ain, Abu Dhabi, United Arab Emirates",
+        "url": "https://inwoovation.com/climate/al-ain-abu-dhabi-uae-desert-greenhouse-guide.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 31,
+        "name": "Querétaro (Agropark), Mexico",
+        "url": "https://inwoovation.com/climate/queretaro-agropark-mexico-high-altitude-guide.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 32,
+        "name": "Đà Lạt, Central Highlands, Vietnam",
+        "url": "https://inwoovation.com/climate/dalat-vietnam-central-highlands-horticulture-guide.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 33,
+        "name": "Bogotá Savanna, Colombia",
+        "url": "https://inwoovation.com/climate/bogota-savanna-colombia-cut-flower-guide.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 34,
+        "name": "Cameron Highlands, Pahang, Malaysia",
+        "url": "https://inwoovation.com/climate/cameron-highlands-malaysia-tropical-highland-guide.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 35,
+        "name": "Cayambe, Pichincha, Ecuador",
+        "url": "https://inwoovation.com/climate/cayambe-pichincha-ecuador-hyper-radiation-guide.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 36,
+        "name": "Lake Naivasha (Rift Valley), Kenya",
+        "url": "https://inwoovation.com/climate/lake-naivasha-kenya-geothermal-floriculture-guide.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 37,
+        "name": "Guyra (New England Plateau), NSW, Australia",
+        "url": "https://inwoovation.com/climate/guyra-new-south-wales-australia-highland-tomato-guide.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 38,
+        "name": "Stellenbosch / Boland, Western Cape, South Africa",
+        "url": "https://inwoovation.com/climate/stellenbosch-western-cape-south-africa-guide.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 39,
+        "name": "Adelaide Plains (Virginia), South Australia",
+        "url": "https://inwoovation.com/climate/virginia-adelaide-plains-australia-guide.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 40,
+        "name": "Pukekohe, Auckland Region, New Zealand",
+        "url": "https://inwoovation.com/climate/pukekohe-auckland-new-zealand-greenhouse-guide.html"
+      }
+    ]
+  }
+}
+    </script>
+</head>
+<body>
+<main class="atlas">
+    <a class="atlas-back" href="/guides.html">← Guides &amp; Articles</a>
+    <header class="atlas-head">
+        <h1>Global Ag-Climate Atlas</h1>
+        <p>40 commercial greenhouse regions, ordered north to south. Each hub summarises latitude,
+           Köppen climate class and seasonal natural Daily Light Integral (DLI, mol/m²/day) as a starting
+           point for screen, lighting and heating design.</p>
+    </header>
+    <label for="atlas-filter" class="visually-hidden" style="position:absolute;left:-9999px;">Filter climate hubs</label>
+    <input id="atlas-filter" class="atlas-filter" type="search" placeholder="Filter by region or climate class (e.g. Cfb, Spain, desert)…" autocomplete="off">
+    <section class="atlas-grid" id="atlas-grid">
+        <a class="atlas-card" href="bleiswijk-netherlands-cea-research-cluster.html" data-search="bleiswijk, netherlands 34-40
+                summer peak dli (mol/m²/d)
+            
+            
+                6-9
+                winter minimum dli (mol/m²/d)
+            
+            
+                high (geothermal + chp)
+                winter heating load
+            
+            
+                maritime temperate (cfb)">
+            <span class="atlas-lat">52.0°N</span>
+            <h2>Bleiswijk, Netherlands</h2>
+            <p class="atlas-koppen">34-40
+                Summer Peak DLI (mol/m²/d)
+            
+            
+                6-9
+                Winter Minimum DLI (mol/m²/d)
+            
+            
+                High (Geothermal + CHP)
+                Winter Heating Load
+            
+            
+                Maritime Temperate (Cfb)</p>
+            <dl>
+                <div><dt>Summer DLI</dt><dd>34-40</dd></div>
+                <div><dt>Winter DLI</dt><dd>34-40
+                Summer Peak DLI (mol/m²/d)
+            
+            
+                6-9</dd></div>
+            </dl>
+        </a>
+        <a class="atlas-card" href="naaldwijk-netherlands-floriculture-hub-guide.html" data-search="naaldwijk (westland east), netherlands 35-41
+                summer peak dli (mol/m²/d)
+            
+            
+                6-10
+                winter minimum dli (mol/m²/d)
+            
+            
+                high (smart grid heat network)
+                winter heating load
+            
+            
+                maritime temperate (cfb)">
+            <span class="atlas-lat">52.0°N</span>
+            <h2>Naaldwijk (Westland East), Netherlands</h2>
+            <p class="atlas-koppen">35-41
+                Summer Peak DLI (mol/m²/d)
+            
+            
+                6-10
+                Winter Minimum DLI (mol/m²/d)
+            
+            
+                High (Smart Grid Heat Network)
+                Winter Heating Load
+            
+            
+                Maritime Temperate (Cfb)</p>
+            <dl>
+                <div><dt>Summer DLI</dt><dd>35-41</dd></div>
+                <div><dt>Winter DLI</dt><dd>35-41
+                Summer Peak DLI (mol/m²/d)
+            
+            
+                6-10</dd></div>
+            </dl>
+        </a>
+        <a class="atlas-card" href="westland-netherlands-greenhouse-climate-guide.html" data-search="westland, netherlands 35-42
+                summer peak dli (mol/m²/d)
+            
+            
+                6-10
+                winter minimum dli (mol/m²/d)
+            
+            
+                high (35-45 m³ gas/m²/yr)
+                winter heating load
+            
+            
+                maritime temperate (cfb)">
+            <span class="atlas-lat">52.0°N</span>
+            <h2>Westland, Netherlands</h2>
+            <p class="atlas-koppen">35-42
+                Summer Peak DLI (mol/m²/d)
+            
+            
+                6-10
+                Winter Minimum DLI (mol/m²/d)
+            
+            
+                High (35-45 m³ gas/m²/yr)
+                Winter Heating Load
+            
+            
+                Maritime Temperate (Cfb)</p>
+            <dl>
+                <div><dt>Summer DLI</dt><dd>35-42</dd></div>
+                <div><dt>Winter DLI</dt><dd>35-42
+                Summer Peak DLI (mol/m²/d)
+            
+            
+                6-10</dd></div>
+            </dl>
+        </a>
+        <a class="atlas-card" href="straelen-lower-rhine-germany-horticulture-guide.html" data-search="straelen / lower rhine, germany 36-42
+                summer peak dli (mol/m²/d)
+            
+            
+                5-9
+                winter minimum dli (mol/m²/d)
+            
+            
+                very high (40-50 m³ gas/m²/yr)
+                winter heating load
+            
+            
+                continental transition (cfb)">
+            <span class="atlas-lat">51.4°N</span>
+            <h2>Straelen / Lower Rhine, Germany</h2>
+            <p class="atlas-koppen">36-42
+                Summer Peak DLI (mol/m²/d)
+            
+            
+                5-9
+                Winter Minimum DLI (mol/m²/d)
+            
+            
+                Very High (40-50 m³ gas/m²/yr)
+                Winter Heating Load
+            
+            
+                Continental Transition (Cfb)</p>
+            <dl>
+                <div><dt>Summer DLI</dt><dd>36-42</dd></div>
+                <div><dt>Winter DLI</dt><dd>36-42
+                Summer Peak DLI (mol/m²/d)
+            
+            
+                5-9</dd></div>
+            </dl>
+        </a>
+        <a class="atlas-card" href="nuernberg-knoblauchsland-bavaria-greenhouse-climate-guide.html" data-search="nürnberg / knoblauchsland, bavaria 38-45
+                summer peak dli (mol/m²/d)
+            
+            
+                7.2-10.5
+                winter minimum dli (mol/m²/d)
+            
+            
+                biomass chp (~35-42 m³ gas-eq/m²/yr)
+                winter heating benchmark
+            
+            
+                warm-summer humid (cfb)">
+            <span class="atlas-lat">49.5°N</span>
+            <h2>Nürnberg / Knoblauchsland, Bavaria</h2>
+            <p class="atlas-koppen">38-45
+                Summer Peak DLI (mol/m²/d)
+            
+            
+                7.2-10.5
+                Winter Minimum DLI (mol/m²/d)
+            
+            
+                Biomass CHP (~35-42 m³ gas-eq/m²/yr)
+                Winter Heating Benchmark
+            
+            
+                Warm-Summer Humid (Cfb)</p>
+            <dl>
+                <div><dt>Summer DLI</dt><dd>38-45</dd></div>
+                <div><dt>Winter DLI</dt><dd>38-45
+                Summer Peak DLI (mol/m²/d)
+            
+            
+                7.2-10.5</dd></div>
+            </dl>
+        </a>
+        <a class="atlas-card" href="delta-fraser-valley-bc-canada-greenhouse-guide.html" data-search="delta / fraser valley, bc, canada 36-44
+                summer peak dli (mol/m²/d)
+            
+            
+                6-11
+                winter minimum dli (mol/m²/d)
+            
+            
+                high (hydro-electric &amp; natural gas)
+                winter heating load
+            
+            
+                pacific maritime (cfb)">
+            <span class="atlas-lat">49.1°N</span>
+            <h2>Delta / Fraser Valley, BC, Canada</h2>
+            <p class="atlas-koppen">36-44
+                Summer Peak DLI (mol/m²/d)
+            
+            
+                6-11
+                Winter Minimum DLI (mol/m²/d)
+            
+            
+                High (Hydro-Electric &amp; Natural Gas)
+                Winter Heating Load
+            
+            
+                Pacific Maritime (Cfb)</p>
+            <dl>
+                <div><dt>Summer DLI</dt><dd>36-44</dd></div>
+                <div><dt>Winter DLI</dt><dd>36-44
+                Summer Peak DLI (mol/m²/d)
+            
+            
+                6-11</dd></div>
+            </dl>
+        </a>
+        <a class="atlas-card" href="brittany-finistere-france-tomato-cluster-guide.html" data-search="brittany (finistère), france 32-38
+                summer peak dli (mol/m²/d)
+            
+            
+                7-11
+                winter minimum dli (mol/m²/d)
+            
+            
+                moderate-high (30-38 m³ gas/m²/yr)
+                winter heating load
+            
+            
+                hyper-maritime cool summer (cfb)">
+            <span class="atlas-lat">48.4°N</span>
+            <h2>Brittany (Finistère), France</h2>
+            <p class="atlas-koppen">32-38
+                Summer Peak DLI (mol/m²/d)
+            
+            
+                7-11
+                Winter Minimum DLI (mol/m²/d)
+            
+            
+                Moderate-High (30-38 m³ gas/m²/yr)
+                Winter Heating Load
+            
+            
+                Hyper-Maritime Cool Summer (Cfb)</p>
+            <dl>
+                <div><dt>Summer DLI</dt><dd>32-38</dd></div>
+                <div><dt>Winter DLI</dt><dd>32-38
+                Summer Peak DLI (mol/m²/d)
+            
+            
+                7-11</dd></div>
+            </dl>
+        </a>
+        <a class="atlas-card" href="leamington-ontario-canada-greenhouse-guide.html" data-search="leamington / kingsville, ontario, canada 40-48
+                summer peak dli (mol/m²/d)
+            
+            
+                8-14
+                winter minimum dli (mol/m²/d)
+            
+            
+                extreme (45-60 m³ gas/m²/yr)
+                winter heating load
+            
+            
+                humid continental (dfa)">
+            <span class="atlas-lat">42.0°N</span>
+            <h2>Leamington / Kingsville, Ontario, Canada</h2>
+            <p class="atlas-koppen">40-48
+                Summer Peak DLI (mol/m²/d)
+            
+            
+                8-14
+                Winter Minimum DLI (mol/m²/d)
+            
+            
+                Extreme (45-60 m³ gas/m²/yr)
+                Winter Heating Load
+            
+            
+                Humid Continental (Dfa)</p>
+            <dl>
+                <div><dt>Summer DLI</dt><dd>40-48</dd></div>
+                <div><dt>Winter DLI</dt><dd>40-48
+                Summer Peak DLI (mol/m²/d)
+            
+            
+                8-14</dd></div>
+            </dl>
+        </a>
+        <a class="atlas-card" href="appharvest-morehead-kentucky-cea-guide.html" data-search="morehead (appalachian basin), kentucky, usa 38-46
+                summer peak dli (mol/m²/d)
+            
+            
+                10-16
+                winter minimum dli (mol/m²/d)
+            
+            
+                high (winter snow &amp; sub-zero peaks)
+                winter heating load
+            
+            
+                humid subtropical (cfa)">
+            <span class="atlas-lat">38.2°N</span>
+            <h2>Morehead (Appalachian Basin), Kentucky, USA</h2>
+            <p class="atlas-koppen">38-46
+                Summer Peak DLI (mol/m²/d)
+            
+            
+                10-16
+                Winter Minimum DLI (mol/m²/d)
+            
+            
+                High (Winter Snow &amp; Sub-Zero Peaks)
+                Winter Heating Load
+            
+            
+                Humid Subtropical (Cfa)</p>
+            <dl>
+                <div><dt>Summer DLI</dt><dd>38-46</dd></div>
+                <div><dt>Winter DLI</dt><dd>38-46
+                Summer Peak DLI (mol/m²/d)
+            
+            
+                10-16</dd></div>
+            </dl>
+        </a>
+        <a class="atlas-card" href="murcia-spain-precision-hydroponics-guide.html" data-search="murcia (campo de cartagena), spain 48-56
+                summer peak dli (mol/m²/d)
+            
+            
+                15-20
+                winter minimum dli (mol/m²/d)
+            
+            
+                low (5-10 m³ gas/m²/yr)
+                winter heating load
+            
+            
+                semi-arid mediterranean (bsk)">
+            <span class="atlas-lat">38.0°N</span>
+            <h2>Murcia (Campo de Cartagena), Spain</h2>
+            <p class="atlas-koppen">48-56
+                Summer Peak DLI (mol/m²/d)
+            
+            
+                15-20
+                Winter Minimum DLI (mol/m²/d)
+            
+            
+                Low (5-10 m³ gas/m²/yr)
+                Winter Heating Load
+            
+            
+                Semi-Arid Mediterranean (BSk)</p>
+            <dl>
+                <div><dt>Summer DLI</dt><dd>48-56</dd></div>
+                <div><dt>Winter DLI</dt><dd>48-56
+                Summer Peak DLI (mol/m²/d)
+            
+            
+                15-20</dd></div>
+            </dl>
+        </a>
+        <a class="atlas-card" href="antalya-turkey-mediterranean-greenhouse-guide.html" data-search="antalya (aksu &amp; kumluca), turkey 50-58
+                summer peak dli (mol/m²/d)
+            
+            
+                16-22
+                winter minimum dli (mol/m²/d)
+            
+            
+                low (coal / biomass peaking)
+                winter heating load
+            
+            
+                mediterranean hot summer (csa)">
+            <span class="atlas-lat">36.9°N</span>
+            <h2>Antalya (Aksu &amp; Kumluca), Turkey</h2>
+            <p class="atlas-koppen">50-58
+                Summer Peak DLI (mol/m²/d)
+            
+            
+                16-22
+                Winter Minimum DLI (mol/m²/d)
+            
+            
+                Low (Coal / Biomass Peaking)
+                Winter Heating Load
+            
+            
+                Mediterranean Hot Summer (Csa)</p>
+            <dl>
+                <div><dt>Summer DLI</dt><dd>50-58</dd></div>
+                <div><dt>Winter DLI</dt><dd>50-58
+                Summer Peak DLI (mol/m²/d)
+            
+            
+                16-22</dd></div>
+            </dl>
+        </a>
+        <a class="atlas-card" href="ragusa-sicily-italy-protected-cropping-guide.html" data-search="ragusa / vittoria, sicily, italy 52-60
+                summer peak dli (mol/m²/d)
+            
+            
+                18-24
+                winter minimum dli (mol/m²/d)
+            
+            
+                very low (frost protection only)
+                winter heating load
+            
+            
+                hot mediterranean (csa)">
+            <span class="atlas-lat">36.9°N</span>
+            <h2>Ragusa / Vittoria, Sicily, Italy</h2>
+            <p class="atlas-koppen">52-60
+                Summer Peak DLI (mol/m²/d)
+            
+            
+                18-24
+                Winter Minimum DLI (mol/m²/d)
+            
+            
+                Very Low (Frost Protection Only)
+                Winter Heating Load
+            
+            
+                Hot Mediterranean (Csa)</p>
+            <dl>
+                <div><dt>Summer DLI</dt><dd>52-60</dd></div>
+                <div><dt>Winter DLI</dt><dd>52-60
+                Summer Peak DLI (mol/m²/d)
+            
+            
+                18-24</dd></div>
+            </dl>
+        </a>
+        <a class="atlas-card" href="shouguang-shandong-china-solar-greenhouse-guide.html" data-search="shouguang, shandong, china 42-50
+                summer peak dli (mol/m²/d)
+            
+            
+                14-20
+                winter minimum dli (mol/m²/d)
+            
+            
+                passive thermal wall (csg soil/brick storage)
+                winter heating load
+            
+            
+                monsoon continental (dwa)">
+            <span class="atlas-lat">36.9°N</span>
+            <h2>Shouguang, Shandong, China</h2>
+            <p class="atlas-koppen">42-50
+                Summer Peak DLI (mol/m²/d)
+            
+            
+                14-20
+                Winter Minimum DLI (mol/m²/d)
+            
+            
+                Passive Thermal Wall (CSG Soil/Brick Storage)
+                Winter Heating Load
+            
+            
+                Monsoon Continental (Dwa)</p>
+            <dl>
+                <div><dt>Summer DLI</dt><dd>42-50</dd></div>
+                <div><dt>Winter DLI</dt><dd>42-50
+                Summer Peak DLI (mol/m²/d)
+            
+            
+                14-20</dd></div>
+            </dl>
+        </a>
+        <a class="atlas-card" href="almeria-spain-parral-greenhouse-climate-guide.html" data-search="almería (campo de dalías), spain 50-58
+                summer peak dli (mol/m²/d)
+            
+            
+                16-22
+                winter minimum dli (mol/m²/d)
+            
+            
+                minimal (0-5 m³ gas/m²/yr)
+                winter heating load
+            
+            
+                hot semi-arid mediterranean (bsh)">
+            <span class="atlas-lat">36.8°N</span>
+            <h2>Almería (Campo de Dalías), Spain</h2>
+            <p class="atlas-koppen">50-58
+                Summer Peak DLI (mol/m²/d)
+            
+            
+                16-22
+                Winter Minimum DLI (mol/m²/d)
+            
+            
+                Minimal (0-5 m³ gas/m²/yr)
+                Winter Heating Load
+            
+            
+                Hot Semi-Arid Mediterranean (BSh)</p>
+            <dl>
+                <div><dt>Summer DLI</dt><dd>50-58</dd></div>
+                <div><dt>Winter DLI</dt><dd>50-58
+                Summer Peak DLI (mol/m²/d)
+            
+            
+                16-22</dd></div>
+            </dl>
+        </a>
+        <a class="atlas-card" href="salinas-valley-california-salad-bowl-guide.html" data-search="salinas valley, california, usa 42-50
+                summer peak dli (mol/m²/d)
+            
+            
+                16-22
+                winter minimum dli (mol/m²/d)
+            
+            
+                low-moderate (marine layer protection)
+                winter heating load
+            
+            
+                cool-summer mediterranean (csb)">
+            <span class="atlas-lat">36.7°N</span>
+            <h2>Salinas Valley, California, USA</h2>
+            <p class="atlas-koppen">42-50
+                Summer Peak DLI (mol/m²/d)
+            
+            
+                16-22
+                Winter Minimum DLI (mol/m²/d)
+            
+            
+                Low-Moderate (Marine Layer Protection)
+                Winter Heating Load
+            
+            
+                Cool-Summer Mediterranean (Csb)</p>
+            <dl>
+                <div><dt>Summer DLI</dt><dd>42-50</dd></div>
+                <div><dt>Winter DLI</dt><dd>42-50
+                Summer Peak DLI (mol/m²/d)
+            
+            
+                16-22</dd></div>
+            </dl>
+        </a>
+        <a class="atlas-card" href="buyeo-chungnam-korea-tomato-cluster-guide.html" data-search="buyeo (geum river basin), south korea 36-44
+                summer peak dli (mol/m²/d)
+            
+            
+                12-17
+                winter minimum dli (mol/m²/d)
+            
+            
+                high (winter heating essential)
+                winter heating load
+            
+            
+                continental monsoon (dwa)">
+            <span class="atlas-lat">36.2°N</span>
+            <h2>Buyeo (Geum River Basin), South Korea</h2>
+            <p class="atlas-koppen">36-44
+                Summer Peak DLI (mol/m²/d)
+            
+            
+                12-17
+                Winter Minimum DLI (mol/m²/d)
+            
+            
+                High (Winter Heating Essential)
+                Winter Heating Load
+            
+            
+                Continental Monsoon (Dwa)</p>
+            <dl>
+                <div><dt>Summer DLI</dt><dd>36-44</dd></div>
+                <div><dt>Winter DLI</dt><dd>36-44
+                Summer Peak DLI (mol/m²/d)
+            
+            
+                12-17</dd></div>
+            </dl>
+        </a>
+        <a class="atlas-card" href="nonsan-chungnam-korea-smart-berry-guide.html" data-search="nonsan, chungnam, south korea 36-44
+                summer peak dli (mol/m²/d)
+            
+            
+                12-17
+                winter minimum dli (mol/m²/d)
+            
+            
+                high (night minimum 8°c gutter heating)
+                winter heating load
+            
+            
+                continental monsoon (dfa)">
+            <span class="atlas-lat">36.2°N</span>
+            <h2>Nonsan, Chungnam, South Korea</h2>
+            <p class="atlas-koppen">36-44
+                Summer Peak DLI (mol/m²/d)
+            
+            
+                12-17
+                Winter Minimum DLI (mol/m²/d)
+            
+            
+                High (Night Minimum 8°C Gutter Heating)
+                Winter Heating Load
+            
+            
+                Continental Monsoon (Dfa)</p>
+            <dl>
+                <div><dt>Summer DLI</dt><dd>36-44</dd></div>
+                <div><dt>Winter DLI</dt><dd>36-44
+                Summer Peak DLI (mol/m²/d)
+            
+            
+                12-17</dd></div>
+            </dl>
+        </a>
+        <a class="atlas-card" href="gimje-smart-farm-innovation-valley-korea-guide.html" data-search="gimje smart farm valley, south korea 38-46
+                summer peak dli (mol/m²/d)
+            
+            
+                12-18
+                winter minimum dli (mol/m²/d)
+            
+            
+                high (sub-zero winter cold waves -12°c)
+                winter heating load
+            
+            
+                continental monsoon (dfa)">
+            <span class="atlas-lat">35.8°N</span>
+            <h2>Gimje Smart Farm Valley, South Korea</h2>
+            <p class="atlas-koppen">38-46
+                Summer Peak DLI (mol/m²/d)
+            
+            
+                12-18
+                Winter Minimum DLI (mol/m²/d)
+            
+            
+                High (Sub-Zero Winter Cold Waves -12°C)
+                Winter Heating Load
+            
+            
+                Continental Monsoon (Dfa)</p>
+            <dl>
+                <div><dt>Summer DLI</dt><dd>38-46</dd></div>
+                <div><dt>Winter DLI</dt><dd>38-46
+                Summer Peak DLI (mol/m²/d)
+            
+            
+                12-18</dd></div>
+            </dl>
+        </a>
+        <a class="atlas-card" href="miryang-gyeongnam-korea-strawberry-capital-guide.html" data-search="miryang, gyeongnam, south korea 40-48
+                summer peak dli (mol/m²/d)
+            
+            
+                14-20
+                winter minimum dli (mol/m²/d)
+            
+            
+                moderate (southern solar basin)
+                winter heating load
+            
+            
+                humid subtropical (cfa)">
+            <span class="atlas-lat">35.5°N</span>
+            <h2>Miryang, Gyeongnam, South Korea</h2>
+            <p class="atlas-koppen">40-48
+                Summer Peak DLI (mol/m²/d)
+            
+            
+                14-20
+                Winter Minimum DLI (mol/m²/d)
+            
+            
+                Moderate (Southern Solar Basin)
+                Winter Heating Load
+            
+            
+                Humid Subtropical (Cfa)</p>
+            <dl>
+                <div><dt>Summer DLI</dt><dd>40-48</dd></div>
+                <div><dt>Winter DLI</dt><dd>40-48
+                Summer Peak DLI (mol/m²/d)
+            
+            
+                14-20</dd></div>
+            </dl>
+        </a>
+        <a class="atlas-card" href="ierapetra-crete-greece-solar-greenhouse-guide.html" data-search="ierapetra, crete, greece 54-62
+                summer peak dli (mol/m²/d)
+            
+            
+                20-25
+                winter minimum dli (mol/m²/d)
+            
+            
+                near-zero (sub-tropical winter)
+                winter heating load
+            
+            
+                warm semi-arid aegean (bsh)">
+            <span class="atlas-lat">35.0°N</span>
+            <h2>Ierapetra, Crete, Greece</h2>
+            <p class="atlas-koppen">54-62
+                Summer Peak DLI (mol/m²/d)
+            
+            
+                20-25
+                Winter Minimum DLI (mol/m²/d)
+            
+            
+                Near-Zero (Sub-Tropical Winter)
+                Winter Heating Load
+            
+            
+                Warm Semi-Arid Aegean (BSh)</p>
+            <dl>
+                <div><dt>Summer DLI</dt><dd>54-62</dd></div>
+                <div><dt>Winter DLI</dt><dd>54-62
+                Summer Peak DLI (mol/m²/d)
+            
+            
+                20-25</dd></div>
+            </dl>
+        </a>
+        <a class="atlas-card" href="santa-maria-valley-california-berry-tunnel-guide.html" data-search="santa maria, california, usa 45-52
+                summer peak dli (mol/m²/d)
+            
+            
+                18-24
+                winter minimum dli (mol/m²/d)
+            
+            
+                low (mild winter 5-8°c min)
+                winter heating load
+            
+            
+                mediterranean marine (csb)">
+            <span class="atlas-lat">34.9°N</span>
+            <h2>Santa Maria, California, USA</h2>
+            <p class="atlas-koppen">45-52
+                Summer Peak DLI (mol/m²/d)
+            
+            
+                18-24
+                Winter Minimum DLI (mol/m²/d)
+            
+            
+                Low (Mild Winter 5-8°C Min)
+                Winter Heating Load
+            
+            
+                Mediterranean Marine (Csb)</p>
+            <dl>
+                <div><dt>Summer DLI</dt><dd>45-52</dd></div>
+                <div><dt>Winter DLI</dt><dd>45-52
+                Summer Peak DLI (mol/m²/d)
+            
+            
+                18-24</dd></div>
+            </dl>
+        </a>
+        <a class="atlas-card" href="aichi-toyohashi-japan-protected-agriculture-guide.html" data-search="toyohashi, aichi prefecture, japan 40-48
+                summer peak dli (mol/m²/d)
+            
+            
+                14-19
+                winter minimum dli (mol/m²/d)
+            
+            
+                moderate (pacific coastal winter)
+                winter heating load
+            
+            
+                humid subtropical pacific (cfa)">
+            <span class="atlas-lat">34.8°N</span>
+            <h2>Toyohashi, Aichi Prefecture, Japan</h2>
+            <p class="atlas-koppen">40-48
+                Summer Peak DLI (mol/m²/d)
+            
+            
+                14-19
+                Winter Minimum DLI (mol/m²/d)
+            
+            
+                Moderate (Pacific Coastal Winter)
+                Winter Heating Load
+            
+            
+                Humid Subtropical Pacific (Cfa)</p>
+            <dl>
+                <div><dt>Summer DLI</dt><dd>40-48</dd></div>
+                <div><dt>Winter DLI</dt><dd>40-48
+                Summer Peak DLI (mol/m²/d)
+            
+            
+                14-19</dd></div>
+            </dl>
+        </a>
+        <a class="atlas-card" href="kochi-japan-warm-climate-horticulture-guide.html" data-search="kochi (tosa bay), japan 42-50
+                summer peak dli (mol/m²/d)
+            
+            
+                16-22
+                winter minimum dli (mol/m²/d)
+            
+            
+                low-moderate (warm kuroshio current)
+                winter heating load
+            
+            
+                humid subtropical high sunshine (cfa)">
+            <span class="atlas-lat">33.6°N</span>
+            <h2>Kochi (Tosa Bay), Japan</h2>
+            <p class="atlas-koppen">42-50
+                Summer Peak DLI (mol/m²/d)
+            
+            
+                16-22
+                Winter Minimum DLI (mol/m²/d)
+            
+            
+                Low-Moderate (Warm Kuroshio Current)
+                Winter Heating Load
+            
+            
+                Humid Subtropical High Sunshine (Cfa)</p>
+            <dl>
+                <div><dt>Summer DLI</dt><dd>42-50</dd></div>
+                <div><dt>Winter DLI</dt><dd>42-50
+                Summer Peak DLI (mol/m²/d)
+            
+            
+                16-22</dd></div>
+            </dl>
+        </a>
+        <a class="atlas-card" href="marana-tucson-arizona-hyper-solar-cea-guide.html" data-search="marana &amp; tucson, arizona, usa 52-60
+                summer peak dli (mol/m²/d)
+            
+            
+                24-30
+                winter minimum dli (mol/m²/d)
+            
+            
+                hyper-extreme cooling load
+                summer hvac challenge
+            
+            
+                hot desert (bwh)">
+            <span class="atlas-lat">32.4°N</span>
+            <h2>Marana &amp; Tucson, Arizona, USA</h2>
+            <p class="atlas-koppen">52-60
+                Summer Peak DLI (mol/m²/d)
+            
+            
+                24-30
+                Winter Minimum DLI (mol/m²/d)
+            
+            
+                Hyper-Extreme Cooling Load
+                Summer HVAC Challenge
+            
+            
+                Hot Desert (BWh)</p>
+            <dl>
+                <div><dt>Summer DLI</dt><dd>52-60</dd></div>
+                <div><dt>Winter DLI</dt><dd>52-60
+                Summer Peak DLI (mol/m²/d)
+            
+            
+                24-30</dd></div>
+            </dl>
+        </a>
+        <a class="atlas-card" href="arava-valley-israel-desert-fertigation-guide.html" data-search="arava valley / ein yahav, israel 58-68
+                summer peak dli (mol/m²/d)
+            
+            
+                24-30
+                winter minimum dli (mol/m²/d)
+            
+            
+                zero (thermal mass storage)
+                winter heating load
+            
+            
+                hyper-arid rift valley (bwh, -100m msl)">
+            <span class="atlas-lat">30.5°N</span>
+            <h2>Arava Valley / Ein Yahav, Israel</h2>
+            <p class="atlas-koppen">58-68
+                Summer Peak DLI (mol/m²/d)
+            
+            
+                24-30
+                Winter Minimum DLI (mol/m²/d)
+            
+            
+                Zero (Thermal Mass Storage)
+                Winter Heating Load
+            
+            
+                Hyper-Arid Rift Valley (BWh, -100m MSL)</p>
+            <dl>
+                <div><dt>Summer DLI</dt><dd>58-68</dd></div>
+                <div><dt>Winter DLI</dt><dd>58-68
+                Summer Peak DLI (mol/m²/d)
+            
+            
+                24-30</dd></div>
+            </dl>
+        </a>
+        <a class="atlas-card" href="souss-massa-agadir-morocco-export-greenhouse-guide.html" data-search="souss-massa valley (agadir), morocco 50-58
+                summer peak dli (mol/m²/d)
+            
+            
+                20-26
+                winter minimum dli (mol/m²/d)
+            
+            
+                zero (coastal frost-free)
+                winter heating load
+            
+            
+                hot semi-arid atlantic (bsh)">
+            <span class="atlas-lat">30.4°N</span>
+            <h2>Souss-Massa Valley (Agadir), Morocco</h2>
+            <p class="atlas-koppen">50-58
+                Summer Peak DLI (mol/m²/d)
+            
+            
+                20-26
+                Winter Minimum DLI (mol/m²/d)
+            
+            
+                Zero (Coastal Frost-Free)
+                Winter Heating Load
+            
+            
+                Hot Semi-Arid Atlantic (BSh)</p>
+            <dl>
+                <div><dt>Summer DLI</dt><dd>50-58</dd></div>
+                <div><dt>Winter DLI</dt><dd>50-58
+                Summer Peak DLI (mol/m²/d)
+            
+            
+                20-26</dd></div>
+            </dl>
+        </a>
+        <a class="atlas-card" href="kunming-yunnan-china-asian-flower-capital-guide.html" data-search="kunming (spring city), yunnan, china 38-46
+                summer peak dli (mol/m²/d)
+            
+            
+                22-28
+                winter minimum dli (mol/m²/d)
+            
+            
+                very low (no severe winter)
+                winter heating load
+            
+            
+                subtropical highland (cwb, 1,900m)">
+            <span class="atlas-lat">25.0°N</span>
+            <h2>Kunming (Spring City), Yunnan, China</h2>
+            <p class="atlas-koppen">38-46
+                Summer Peak DLI (mol/m²/d)
+            
+            
+                22-28
+                Winter Minimum DLI (mol/m²/d)
+            
+            
+                Very Low (No Severe Winter)
+                Winter Heating Load
+            
+            
+                Subtropical Highland (Cwb, 1,900m)</p>
+            <dl>
+                <div><dt>Summer DLI</dt><dd>38-46</dd></div>
+                <div><dt>Winter DLI</dt><dd>38-46
+                Summer Peak DLI (mol/m²/d)
+            
+            
+                22-28</dd></div>
+            </dl>
+        </a>
+        <a class="atlas-card" href="culiacan-sinaloa-mexico-winter-vegetable-guide.html" data-search="culiacán (sinaloa valley), mexico 50-58
+                summer peak dli (mol/m²/d)
+            
+            
+                22-28
+                winter minimum dli (mol/m²/d)
+            
+            
+                zero (warm winter night &gt;=14°c)
+                winter heating load
+            
+            
+                hot semi-arid / tropical savanna (bsh)">
+            <span class="atlas-lat">24.8°N</span>
+            <h2>Culiacán (Sinaloa Valley), Mexico</h2>
+            <p class="atlas-koppen">50-58
+                Summer Peak DLI (mol/m²/d)
+            
+            
+                22-28
+                Winter Minimum DLI (mol/m²/d)
+            
+            
+                Zero (Warm Winter Night &gt;=14°C)
+                Winter Heating Load
+            
+            
+                Hot Semi-Arid / Tropical Savanna (BSh)</p>
+            <dl>
+                <div><dt>Summer DLI</dt><dd>50-58</dd></div>
+                <div><dt>Winter DLI</dt><dd>50-58
+                Summer Peak DLI (mol/m²/d)
+            
+            
+                22-28</dd></div>
+            </dl>
+        </a>
+        <a class="atlas-card" href="riyadh-al-kharj-saudi-arabia-desert-cea-guide.html" data-search="al-kharj / riyadh oasis, saudi arabia 60-70
+                summer peak dli (mol/m²/d)
+            
+            
+                25-30
+                winter minimum dli (mol/m²/d)
+            
+            
+                zero (desert winter)
+                winter heating load
+            
+            
+                hyper-arid desert (bwh)">
+            <span class="atlas-lat">24.7°N</span>
+            <h2>Al-Kharj / Riyadh Oasis, Saudi Arabia</h2>
+            <p class="atlas-koppen">60-70
+                Summer Peak DLI (mol/m²/d)
+            
+            
+                25-30
+                Winter Minimum DLI (mol/m²/d)
+            
+            
+                Zero (Desert Winter)
+                Winter Heating Load
+            
+            
+                Hyper-Arid Desert (BWh)</p>
+            <dl>
+                <div><dt>Summer DLI</dt><dd>60-70</dd></div>
+                <div><dt>Winter DLI</dt><dd>60-70
+                Summer Peak DLI (mol/m²/d)
+            
+            
+                25-30</dd></div>
+            </dl>
+        </a>
+        <a class="atlas-card" href="al-ain-abu-dhabi-uae-desert-greenhouse-guide.html" data-search="al ain, abu dhabi, united arab emirates 58-68
+                summer peak dli (mol/m²/d)
+            
+            
+                26-32
+                winter minimum dli (mol/m²/d)
+            
+            
+                zero (desert winter &gt;=12°c)
+                winter heating load
+            
+            
+                hyper-arid desert (bwh)">
+            <span class="atlas-lat">24.2°N</span>
+            <h2>Al Ain, Abu Dhabi, United Arab Emirates</h2>
+            <p class="atlas-koppen">58-68
+                Summer Peak DLI (mol/m²/d)
+            
+            
+                26-32
+                Winter Minimum DLI (mol/m²/d)
+            
+            
+                Zero (Desert Winter &gt;=12°C)
+                Winter Heating Load
+            
+            
+                Hyper-Arid Desert (BWh)</p>
+            <dl>
+                <div><dt>Summer DLI</dt><dd>58-68</dd></div>
+                <div><dt>Winter DLI</dt><dd>58-68
+                Summer Peak DLI (mol/m²/d)
+            
+            
+                26-32</dd></div>
+            </dl>
+        </a>
+        <a class="atlas-card" href="queretaro-agropark-mexico-high-altitude-guide.html" data-search="querétaro (agropark), mexico 46-54
+                summer peak dli (mol/m²/d)
+            
+            
+                26-32
+                winter minimum dli (mol/m²/d)
+            
+            
+                low (mild mountain winter)
+                winter heating load
+            
+            
+                high-altitude subtropical (cwb, 1,900m)">
+            <span class="atlas-lat">20.6°N</span>
+            <h2>Querétaro (Agropark), Mexico</h2>
+            <p class="atlas-koppen">46-54
+                Summer Peak DLI (mol/m²/d)
+            
+            
+                26-32
+                Winter Minimum DLI (mol/m²/d)
+            
+            
+                Low (Mild Mountain Winter)
+                Winter Heating Load
+            
+            
+                High-Altitude Subtropical (Cwb, 1,900m)</p>
+            <dl>
+                <div><dt>Summer DLI</dt><dd>46-54</dd></div>
+                <div><dt>Winter DLI</dt><dd>46-54
+                Summer Peak DLI (mol/m²/d)
+            
+            
+                26-32</dd></div>
+            </dl>
+        </a>
+        <a class="atlas-card" href="dalat-vietnam-central-highlands-horticulture-guide.html" data-search="đà lạt, central highlands, vietnam 32-38
+                summer peak dli (mol/m²/d)
+            
+            
+                30-36
+                winter minimum dli (mol/m²/d)
+            
+            
+                zero (perennial spring climate)
+                winter heating load
+            
+            
+                subtropical highland (cwb, 1,500m)">
+            <span class="atlas-lat">11.9°N</span>
+            <h2>Đà Lạt, Central Highlands, Vietnam</h2>
+            <p class="atlas-koppen">32-38
+                Summer Peak DLI (mol/m²/d)
+            
+            
+                30-36
+                Winter Minimum DLI (mol/m²/d)
+            
+            
+                Zero (Perennial Spring Climate)
+                Winter Heating Load
+            
+            
+                Subtropical Highland (Cwb, 1,500m)</p>
+            <dl>
+                <div><dt>Summer DLI</dt><dd>32-38</dd></div>
+                <div><dt>Winter DLI</dt><dd>32-38
+                Summer Peak DLI (mol/m²/d)
+            
+            
+                30-36</dd></div>
+            </dl>
+        </a>
+        <a class="atlas-card" href="bogota-savanna-colombia-cut-flower-guide.html" data-search="bogotá savanna, colombia 30-36 (12h constant)
+                summer peak dli (mol/m²/d)
+            
+            
+                30-36 (12h constant)
+                winter minimum dli (mol/m²/d)
+            
+            
+                low (night frost protection ~2-4°c)
+                winter heating load
+            
+            
+                subtropical highland (cfb, 2,600m equator)">
+            <span class="atlas-lat">4.7°N</span>
+            <h2>Bogotá Savanna, Colombia</h2>
+            <p class="atlas-koppen">30-36 (12h constant)
+                Summer Peak DLI (mol/m²/d)
+            
+            
+                30-36 (12h constant)
+                Winter Minimum DLI (mol/m²/d)
+            
+            
+                Low (Night Frost Protection ~2-4°C)
+                Winter Heating Load
+            
+            
+                Subtropical Highland (Cfb, 2,600m Equator)</p>
+            <dl>
+                <div><dt>Summer DLI</dt><dd>30-36 (12h constant)</dd></div>
+                <div><dt>Winter DLI</dt><dd>30-36 (12h constant)
+                Summer Peak DLI (mol/m²/d)
+            
+            
+                30-36 (12h constant)</dd></div>
+            </dl>
+        </a>
+        <a class="atlas-card" href="cameron-highlands-malaysia-tropical-highland-guide.html" data-search="cameron highlands, pahang, malaysia 28-34
+                summer peak dli (mol/m²/d)
+            
+            
+                28-34
+                winter minimum dli (mol/m²/d)
+            
+            
+                zero (constant 14-22°c year-round)
+                winter heating load
+            
+            
+                equatorial mountain rain (af/cfb, 1,500m)">
+            <span class="atlas-lat">4.5°N</span>
+            <h2>Cameron Highlands, Pahang, Malaysia</h2>
+            <p class="atlas-koppen">28-34
+                Summer Peak DLI (mol/m²/d)
+            
+            
+                28-34
+                Winter Minimum DLI (mol/m²/d)
+            
+            
+                Zero (Constant 14-22°C Year-Round)
+                Winter Heating Load
+            
+            
+                Equatorial Mountain Rain (Af/Cfb, 1,500m)</p>
+            <dl>
+                <div><dt>Summer DLI</dt><dd>28-34</dd></div>
+                <div><dt>Winter DLI</dt><dd>28-34
+                Summer Peak DLI (mol/m²/d)
+            
+            
+                28-34</dd></div>
+            </dl>
+        </a>
+        <a class="atlas-card" href="cayambe-pichincha-ecuador-hyper-radiation-guide.html" data-search="cayambe, pichincha, ecuador 35-42 (extreme uv index)
+                summer peak dli (mol/m²/d)
+            
+            
+                35-42 (extreme uv index)
+                winter minimum dli (mol/m²/d)
+            
+            
+                low (constant 6-8°c night)
+                winter heating load
+            
+            
+                equatorial alpine (cfb, 2,850m zero latitude)">
+            <span class="atlas-lat">0.0°N</span>
+            <h2>Cayambe, Pichincha, Ecuador</h2>
+            <p class="atlas-koppen">35-42 (Extreme UV Index)
+                Summer Peak DLI (mol/m²/d)
+            
+            
+                35-42 (Extreme UV Index)
+                Winter Minimum DLI (mol/m²/d)
+            
+            
+                Low (Constant 6-8°C Night)
+                Winter Heating Load
+            
+            
+                Equatorial Alpine (Cfb, 2,850m Zero Latitude)</p>
+            <dl>
+                <div><dt>Summer DLI</dt><dd>35-42 (Extreme UV Index)</dd></div>
+                <div><dt>Winter DLI</dt><dd>35-42 (Extreme UV Index)
+                Summer Peak DLI (mol/m²/d)
+            
+            
+                35-42 (Extreme UV Index)</dd></div>
+            </dl>
+        </a>
+        <a class="atlas-card" href="lake-naivasha-kenya-geothermal-floriculture-guide.html" data-search="lake naivasha (rift valley), kenya 38-44 (12h day)
+                summer peak dli (mol/m²/d)
+            
+            
+                38-44 (12h day)
+                winter minimum dli (mol/m²/d)
+            
+            
+                moderate (geothermal steam direct injection)
+                winter heating load
+            
+            
+                highland equatorial (cfb, 1,900m)">
+            <span class="atlas-lat">0.7°S</span>
+            <h2>Lake Naivasha (Rift Valley), Kenya</h2>
+            <p class="atlas-koppen">38-44 (12h Day)
+                Summer Peak DLI (mol/m²/d)
+            
+            
+                38-44 (12h Day)
+                Winter Minimum DLI (mol/m²/d)
+            
+            
+                Moderate (Geothermal Steam Direct Injection)
+                Winter Heating Load
+            
+            
+                Highland Equatorial (Cfb, 1,900m)</p>
+            <dl>
+                <div><dt>Summer DLI</dt><dd>38-44 (12h Day)</dd></div>
+                <div><dt>Winter DLI</dt><dd>38-44 (12h Day)
+                Summer Peak DLI (mol/m²/d)
+            
+            
+                38-44 (12h Day)</dd></div>
+            </dl>
+        </a>
+        <a class="atlas-card" href="guyra-new-south-wales-australia-highland-tomato-guide.html" data-search="guyra (new england plateau), nsw, australia 46-54
+                summer peak dli (mol/m²/d)
+            
+            
+                16-22
+                winter minimum dli (mol/m²/d)
+            
+            
+                high (sub-zero winter nights -5°c)
+                winter heating load
+            
+            
+                temperate highland (cfb, 1,330m)">
+            <span class="atlas-lat">30.2°S</span>
+            <h2>Guyra (New England Plateau), NSW, Australia</h2>
+            <p class="atlas-koppen">46-54
+                Summer Peak DLI (mol/m²/d)
+            
+            
+                16-22
+                Winter Minimum DLI (mol/m²/d)
+            
+            
+                High (Sub-Zero Winter Nights -5°C)
+                Winter Heating Load
+            
+            
+                Temperate Highland (Cfb, 1,330m)</p>
+            <dl>
+                <div><dt>Summer DLI</dt><dd>46-54</dd></div>
+                <div><dt>Winter DLI</dt><dd>46-54
+                Summer Peak DLI (mol/m²/d)
+            
+            
+                16-22</dd></div>
+            </dl>
+        </a>
+        <a class="atlas-card" href="stellenbosch-western-cape-south-africa-guide.html" data-search="stellenbosch / boland, western cape, south africa 48-56
+                summer peak dli (mol/m²/d)
+            
+            
+                14-20
+                winter minimum dli (mol/m²/d)
+            
+            
+                low-moderate (mild winter 5-8°c min)
+                winter heating load
+            
+            
+                mediterranean oceanic (csb)">
+            <span class="atlas-lat">33.9°S</span>
+            <h2>Stellenbosch / Boland, Western Cape, South Africa</h2>
+            <p class="atlas-koppen">48-56
+                Summer Peak DLI (mol/m²/d)
+            
+            
+                14-20
+                Winter Minimum DLI (mol/m²/d)
+            
+            
+                Low-Moderate (Mild Winter 5-8°C Min)
+                Winter Heating Load
+            
+            
+                Mediterranean Oceanic (Csb)</p>
+            <dl>
+                <div><dt>Summer DLI</dt><dd>48-56</dd></div>
+                <div><dt>Winter DLI</dt><dd>48-56
+                Summer Peak DLI (mol/m²/d)
+            
+            
+                14-20</dd></div>
+            </dl>
+        </a>
+        <a class="atlas-card" href="virginia-adelaide-plains-australia-guide.html" data-search="adelaide plains (virginia), south australia 52-62
+                summer peak dli (mol/m²/d)
+            
+            
+                14-20
+                winter minimum dli (mol/m²/d)
+            
+            
+                low (gas/biomass peaking)
+                winter heating load
+            
+            
+                hot-summer mediterranean (csa)">
+            <span class="atlas-lat">34.7°S</span>
+            <h2>Adelaide Plains (Virginia), South Australia</h2>
+            <p class="atlas-koppen">52-62
+                Summer Peak DLI (mol/m²/d)
+            
+            
+                14-20
+                Winter Minimum DLI (mol/m²/d)
+            
+            
+                Low (Gas/Biomass Peaking)
+                Winter Heating Load
+            
+            
+                Hot-Summer Mediterranean (Csa)</p>
+            <dl>
+                <div><dt>Summer DLI</dt><dd>52-62</dd></div>
+                <div><dt>Winter DLI</dt><dd>52-62
+                Summer Peak DLI (mol/m²/d)
+            
+            
+                14-20</dd></div>
+            </dl>
+        </a>
+        <a class="atlas-card" href="pukekohe-auckland-new-zealand-greenhouse-guide.html" data-search="pukekohe, auckland region, new zealand 44-52
+                summer peak dli (mol/m²/d)
+            
+            
+                10-15
+                winter minimum dli (mol/m²/d)
+            
+            
+                moderate (mild oceanic winter 6-9°c min)
+                winter heating load
+            
+            
+                oceanic temperate (cfb)">
+            <span class="atlas-lat">37.2°S</span>
+            <h2>Pukekohe, Auckland Region, New Zealand</h2>
+            <p class="atlas-koppen">44-52
+                Summer Peak DLI (mol/m²/d)
+            
+            
+                10-15
+                Winter Minimum DLI (mol/m²/d)
+            
+            
+                Moderate (Mild Oceanic Winter 6-9°C Min)
+                Winter Heating Load
+            
+            
+                Oceanic Temperate (Cfb)</p>
+            <dl>
+                <div><dt>Summer DLI</dt><dd>44-52</dd></div>
+                <div><dt>Winter DLI</dt><dd>44-52
+                Summer Peak DLI (mol/m²/d)
+            
+            
+                10-15</dd></div>
+            </dl>
+        </a>
+    </section>
+    <p class="atlas-empty" id="atlas-empty">No hub matches that filter.</p>
+</main>
+<footer>
+    <p>© 2026 Inwoovation Lab | <a href="/privacy-policy.html">Privacy Policy</a> | <a href="/terms-of-service.html">Terms of Service</a> | <a href="/about.html">About</a> | <a href="/contact.html">Contact</a></p>
+</footer>
+<script>
+(function () {
+    var input = document.getElementById('atlas-filter');
+    var cards = Array.prototype.slice.call(document.querySelectorAll('.atlas-card'));
+    var empty = document.getElementById('atlas-empty');
+    input.addEventListener('input', function () {
+        var query = input.value.trim().toLowerCase();
+        var shown = 0;
+        cards.forEach(function (card) {
+            var match = !query || card.getAttribute('data-search').indexOf(query) !== -1;
+            card.style.display = match ? '' : 'none';
+            if (match) shown++;
+        });
+        empty.style.display = shown ? 'none' : 'block';
+    });
+})();
+</script>
+</body>
+</html>

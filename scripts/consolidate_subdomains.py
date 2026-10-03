@@ -28,101 +28,6 @@ def make_redirect_html(dest_url):
 </body>
 </html>"""
 
-def get_smartfarm_urls():
-    dest_dir = os.path.join(PORTAL_DIR, "smartfarm")
-    html_files = [f for f in glob.glob(os.path.join(dest_dir, "*.html")) 
-                  if not os.path.basename(f).startswith("old_") and not os.path.basename(f).startswith("naverbce")]
-    urls = []
-    for f in html_files:
-        fn = os.path.basename(f)
-        url = "https://inwoovation.com/smartfarm/" if fn == "index.html" else f"https://inwoovation.com/smartfarm/{fn}"
-        urls.append(url)
-    return urls
-
-def get_wiki_urls():
-    dest_dir = os.path.join(PORTAL_DIR, "wiki")
-    html_files = [f for f in glob.glob(os.path.join(dest_dir, "*.html")) 
-                  if not os.path.basename(f).startswith("_")]
-    urls = []
-    for f in html_files:
-        fn = os.path.basename(f)
-        url = "https://inwoovation.com/wiki/" if fn == "index.html" else f"https://inwoovation.com/wiki/{fn}"
-        urls.append(url)
-    return urls
-
-def get_parts_urls():
-    dest_dir = os.path.join(PORTAL_DIR, "parts")
-    html_files = [f for f in glob.glob(os.path.join(dest_dir, "*.html"))]
-    urls = []
-    for f in html_files:
-        fn = os.path.basename(f)
-        url = "https://inwoovation.com/parts/" if fn == "index.html" else f"https://inwoovation.com/parts/{fn}"
-        urls.append(url)
-    return urls
-
-def get_articles_urls():
-    dest_dir = os.path.join(PORTAL_DIR, "articles")
-    html_files = glob.glob(os.path.join(dest_dir, "*.html"))
-    urls = []
-    for f in html_files:
-        fn = os.path.basename(f)
-        urls.append(f"https://inwoovation.com/articles/{fn}")
-    return urls
-
-def get_tools_urls():
-    dest_dir = os.path.join(PORTAL_DIR, "tools")
-    html_files = [f for f in glob.glob(os.path.join(dest_dir, "*.html"))
-                  if not os.path.basename(f).startswith("_") and not os.path.basename(f).startswith("old_")]
-    urls = []
-    for f in html_files:
-        fn = os.path.basename(f)
-        url = "https://inwoovation.com/tools/" if fn == "index.html" else f"https://inwoovation.com/tools/{fn}"
-        urls.append(url)
-    return urls
-
-def get_crops_urls():
-    dest_dir = os.path.join(PORTAL_DIR, "crops")
-    html_files = [f for f in glob.glob(os.path.join(dest_dir, "*.html"))
-                  if not os.path.basename(f).startswith("_")]
-    urls = []
-    for f in html_files:
-        fn = os.path.basename(f)
-        url = "https://inwoovation.com/crops/" if fn == "index.html" else f"https://inwoovation.com/crops/{fn}"
-        urls.append(url)
-    return urls
-
-def get_climate_urls():
-    dest_dir = os.path.join(PORTAL_DIR, "climate")
-    html_files = [f for f in glob.glob(os.path.join(dest_dir, "*.html"))
-                  if not os.path.basename(f).startswith("_")]
-    urls = []
-    for f in html_files:
-        fn = os.path.basename(f)
-        url = "https://inwoovation.com/climate/" if fn == "index.html" else f"https://inwoovation.com/climate/{fn}"
-        urls.append(url)
-    return urls
-
-def get_benchmarks_urls():
-    dest_dir = os.path.join(PORTAL_DIR, "benchmarks")
-    html_files = [f for f in glob.glob(os.path.join(dest_dir, "*.html"))
-                  if not os.path.basename(f).startswith("_")]
-    urls = []
-    for f in html_files:
-        fn = os.path.basename(f)
-        url = "https://inwoovation.com/benchmarks/" if fn == "index.html" else f"https://inwoovation.com/benchmarks/{fn}"
-        urls.append(url)
-    return urls
-
-def get_portal_root_urls():
-    html_files = [f for f in glob.glob(os.path.join(PORTAL_DIR, "*.html"))
-                  if not os.path.basename(f).startswith("_")]
-    urls = []
-    for f in html_files:
-        fn = os.path.basename(f)
-        url = "https://inwoovation.com/" if fn == "index.html" else f"https://inwoovation.com/{fn}"
-        urls.append(url)
-    return urls
-
 def ensure_legacy_301_redirectors():
     print("\n🔀 Verifying and enforcing 301 Meta-Refresh & Canonical Redirectors in legacy repos...")
     
@@ -155,63 +60,71 @@ def ensure_legacy_301_redirectors():
                 fh.write(make_redirect_html(dest_url))
     print(f"  ✅ Enforced 301 redirects in AgriMaster_Portal")
 
-def update_unified_sitemap(all_urls):
-    print("\n🗺️ Generating Unified Sitemap for inwoovation.com...")
+SITEMAP_SKIP_DIRS = {".git", "__pycache__", "node_modules", "embed", "scripts", "data",
+                     "digital_assets", "handbooks", "css", "js"}
+DATE_MODIFIED_RE = re.compile(r'"dateModified"\s*:\s*"(\d{4}-\d{2}-\d{2})')
+
+
+def _is_publishable(rel_path, html):
+    """A page belongs in the sitemap if it is real content, not a template/verification/redirect stub."""
+    name = os.path.basename(rel_path)
+    if name.startswith(("_", "old_", "naver", "google")):
+        return False
+    return not re.search(r'http-equiv=["\']refresh', html, re.I)
+
+
+def collect_sitemap_entries(portal_dir=PORTAL_DIR):
+    """Walk the portal and return sorted [(url, lastmod)] derived purely from files on disk."""
+    entries = []
+    for root, dirs, files in os.walk(portal_dir):
+        dirs[:] = [d for d in dirs if d not in SITEMAP_SKIP_DIRS]
+        for name in files:
+            if not name.endswith(".html"):
+                continue
+            path = os.path.join(root, name)
+            rel_path = os.path.relpath(path, portal_dir).replace("\\", "/")
+            with open(path, "r", encoding="utf-8", errors="ignore") as fh:
+                html = fh.read()
+            if not _is_publishable(rel_path, html):
+                continue
+            url_path = rel_path[:-len("index.html")] if name == "index.html" else rel_path
+            match = DATE_MODIFIED_RE.search(html)
+            entries.append((f"https://inwoovation.com/{url_path}", match.group(1) if match else TODAY_ISO))
+    return sorted(entries)
+
+
+def _priority_for(url):
+    if url in ("https://inwoovation.com/", "https://inwoovation.com/tools/venlocad-3d.html",
+               "https://inwoovation.com/tools/global-agri-subsidy-grant-navigator.html"):
+        return "1.0"
+    if "/tools/" in url:
+        return "0.9"
+    if any(k in url for k in ("/crops/", "/climate/", "/benchmarks/", "/articles/")):
+        return "0.8"
+    return "0.7"
+
+
+def update_unified_sitemap():
+    print("\n🗺️ Generating Unified Sitemap for inwoovation.com (filesystem-derived)...")
     sitemap_path = os.path.join(PORTAL_DIR, "sitemap.xml")
-    
-    existing_urls = set()
-    if os.path.exists(sitemap_path):
-        with open(sitemap_path, "r", encoding="utf-8", errors="ignore") as f:
-            content = f.read()
-        existing_urls = set(re.findall(r'<loc>([^<]+)</loc>', content))
-        
-    for u in all_urls:
-        existing_urls.add(u)
-        
-    sorted_urls = sorted(list(existing_urls))
-    
+    entries = collect_sitemap_entries()
     xml = ['<?xml version="1.0" encoding="UTF-8"?>',
            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
-    for u in sorted_urls:
-        if u in ("https://inwoovation.com/", "https://inwoovation.com/tools/venlocad-3d.html", "https://inwoovation.com/tools/global-agri-subsidy-grant-navigator.html"):
-            priority = "1.0"
-        elif "/tools/" in u:
-            priority = "0.9"
-        elif any(k in u for k in ("/crops/", "/climate/", "/benchmarks/", "/articles/")):
-            priority = "0.8"
-        else:
-            priority = "0.7"
-        xml.append("  <url>")
-        xml.append(f"    <loc>{u}</loc>")
-        xml.append(f"    <lastmod>{TODAY_ISO}</lastmod>")
-        xml.append("    <changefreq>weekly</changefreq>")
-        xml.append(f"    <priority>{priority}</priority>")
-        xml.append("  </url>")
+    for url, lastmod in entries:
+        xml += ["  <url>", f"    <loc>{url}</loc>", f"    <lastmod>{lastmod}</lastmod>",
+                "    <changefreq>weekly</changefreq>", f"    <priority>{_priority_for(url)}</priority>",
+                "  </url>"]
     xml.append('</urlset>')
-    
     with open(sitemap_path, "w", encoding="utf-8") as f:
         f.write("\n".join(xml))
-        
-    print(f"  ✅ Unified sitemap written with {len(sorted_urls)} URLs to {sitemap_path}")
+    print(f"  ✅ Unified sitemap written with {len(entries)} URLs to {sitemap_path}")
 
 if __name__ == "__main__":
     print("=" * 60)
     print("🌐 INWOOVATION SUBDOMAIN CONSOLIDATION ENGINE (SSOT: inwoovation.com)")
     print("=" * 60)
     
-    root_urls = get_portal_root_urls()
-    tools_urls = get_tools_urls()
-    crops_urls = get_crops_urls()
-    climate_urls = get_climate_urls()
-    benchmark_urls = get_benchmarks_urls()
-    article_urls = get_articles_urls()
-    sf_urls = get_smartfarm_urls()
-    wiki_urls = get_wiki_urls()
-    parts_urls = get_parts_urls()
-    
-    all_urls = (root_urls + tools_urls + crops_urls + climate_urls + 
-                benchmark_urls + article_urls + sf_urls + wiki_urls + parts_urls)
-    update_unified_sitemap(all_urls)
+    update_unified_sitemap()
     
     ensure_legacy_301_redirectors()
     print("\n🎉 ALL SUBDOMAINS SECURE & SSOT MAINTAINED UNDER inwoovation.com!")
