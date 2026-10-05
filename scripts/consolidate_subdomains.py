@@ -40,6 +40,15 @@ def ensure_legacy_301_redirectors():
         with open(f, "w", encoding="utf-8") as fh:
             fh.write(make_redirect_html(dest_url))
     print(f"  ✅ Enforced {len(sf_html_files)} 301 redirects in Passive_Income_Hub")
+    sf_sitemap = os.path.join(SMARTFARM_DIR, "sitemap.xml")
+    if os.path.exists(sf_sitemap):
+        with open(sf_sitemap, "r", encoding="utf-8", errors="ignore") as f:
+            s_content = f.read()
+        new_s_content = re.sub(r'<lastmod>[^<]+</lastmod>', f'<lastmod>{TODAY_ISO}</lastmod>', s_content)
+        if new_s_content != s_content:
+            with open(sf_sitemap, "w", encoding="utf-8") as f:
+                f.write(new_s_content)
+        print(f"  ✅ Synchronized Passive_Income_Hub sitemap.xml to {TODAY_ISO}")
 
     # 2. Wiki legacy redirects
     wiki_html_files = [f for f in glob.glob(os.path.join(WIKI_DIR, "*.html")) 
