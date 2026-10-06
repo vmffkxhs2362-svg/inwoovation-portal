@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-V4RYJBMEDE"></script>
@@ -21,12 +21,12 @@
     "@type": "WebApplication",
     "name": "VenloCAD 3D",
     "url": "https://inwoovation.com/tools/venlocad-3d.html",
-    "description": "산업용 벤로 온실 3D 파라메트릭 CAD 및 구조 엔지니어링 엔진. 3D WebGL 실시간 렌더링, NEN 3859 구조해석, BOM 자재 견적서, 1D 파이프 선형 절단 가공 최적화 및 2D DXF 도면 추출.",
+    "description": "Industrial Venlo greenhouse 3D parametric CAD and structural engineering engine. Real-time 3D WebGL rendering, NEN 3859 structural analysis, automated BOM quotation, 1D linear cutting stock schedule, and 2D DXF engineering export.",
     "applicationCategory": "EngineeringApplication, CADTool",
     "operatingSystem": "All",
     "author": {
       "@type": "Person",
-      "name": "Inwoo Hwang"
+      "name": "Inwoovation Engineering Lab"
     },
     "dateModified": "2026-10-06"
   }
@@ -139,7 +139,45 @@
       z-index: 20; background: var(--panel-bg); backdrop-filter: blur(20px);
       border: 1px solid var(--panel-border); border-radius: 16px;
       padding: 16px 18px; overflow-y: auto; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
-      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease;
+    }
+    #sidebar.collapsed {
+      transform: translateX(calc(-100% - 30px));
+      pointer-events: none;
+      opacity: 0;
+    }
+    .sidebar-toggle-btn {
+      position: absolute;
+      top: 86px;
+      left: 405px;
+      z-index: 25;
+      width: 32px;
+      height: 42px;
+      background: rgba(13, 20, 36, 0.92);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--panel-border);
+      border-radius: 0 10px 10px 0;
+      color: var(--accent-cyan);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+      transition: left 0.35s cubic-bezier(0.16, 1, 0.3, 1), background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+      user-select: none;
+      font-size: 0.85rem;
+    }
+    .sidebar-toggle-btn:hover {
+      background: rgba(15, 23, 42, 0.98);
+      border-color: var(--accent-cyan);
+      color: #fff;
+      transform: scale(1.05);
+    }
+    .sidebar-toggle-btn.collapsed {
+      left: 12px;
+      border-radius: 10px;
+      border: 1px solid var(--accent-cyan);
+      box-shadow: 0 0 15px rgba(6, 182, 212, 0.4);
     }
     #sidebar::-webkit-scrollbar { width: 5px; }
     #sidebar::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
@@ -571,25 +609,25 @@
     <span class="badge">v3.0 Commercial Master</span>
 
     <div class="header-wizard">
-      <span class="wizard-label">🧑‍🌾 작물 프리셋:</span>
-      <button class="crop-pill active" onclick="applyCropPreset('tomato')">🍅 토마토</button>
-      <button class="crop-pill" onclick="applyCropPreset('strawberry')">🍓 딸기</button>
-      <button class="crop-pill" onclick="applyCropPreset('greens')">🥬 엽채류</button>
-      <button class="crop-pill" onclick="applyCropPreset('snow')">❄️ 대설보강</button>
+      <span class="wizard-label">🧑‍🌾 Crop Preset:</span>
+      <button class="crop-pill active" onclick="applyCropPreset('tomato')">🍅 Tomato</button>
+      <button class="crop-pill" onclick="applyCropPreset('strawberry')">🍓 Strawberry</button>
+      <button class="crop-pill" onclick="applyCropPreset('greens')">🥬 Leafy Greens</button>
+      <button class="crop-pill" onclick="applyCropPreset('snow')">❄️ Heavy Snow</button>
 
-      <span class="wizard-label" style="margin-left: 6px;">평수:</span>
-      <button class="pyeong-pill" onclick="applyPyeongPreset(300)">300평</button>
-      <button class="pyeong-pill" onclick="applyPyeongPreset(500)">500평</button>
-      <button class="pyeong-pill" onclick="applyPyeongPreset(1000)">1,000평</button>
+      <span class="wizard-label" style="margin-left: 6px;">Acreage:</span>
+      <button class="pyeong-pill" onclick="applyPyeongPreset(300)">1,000 m² (0.25 ac)</button>
+      <button class="pyeong-pill" onclick="applyPyeongPreset(500)">2,500 m² (0.62 ac)</button>
+      <button class="pyeong-pill" onclick="applyPyeongPreset(1000)">5,000 m² (1.24 ac)</button>
     </div>
 
     <!-- Quick Save / Load / Share Toolbar -->
     <div class="save-toolbar">
-      <button class="tool-btn tool-btn-gold" onclick="saveProjectFile()" title="내 PC에 .vcad 프로젝트 파일로 저장">💾 저장 (.vcad)</button>
-      <button class="tool-btn" onclick="triggerFileInput()" title="내 PC에서 .vcad 또는 .json 프로젝트 파일 열기">📂 열기</button>
-      <button class="tool-btn" onclick="openSlotModal()" title="브라우저 로컬 저장 슬롯 관리">📑 슬롯 관리</button>
-      <button class="tool-btn" onclick="copyShareableLink()" title="현재 설계를 다른 사람에게 URL로 공유">🔗 링크 복사</button>
-      <button class="tool-btn" onclick="openConsultModal('topbar')" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.25), rgba(6, 182, 212, 0.25)); border-color: rgba(16, 185, 129, 0.6); color: #34d399; font-weight: 800;" title="황인우 엔지니어 1:1 맞춤 설계 대행 & 집중 케어 신청">🧑‍💻 전문가 케어 신청</button>
+      <button class="tool-btn tool-btn-gold" onclick="saveProjectFile()" title="Save .vcad project file to local drive">💾 Save (.vcad)</button>
+      <button class="tool-btn" onclick="triggerFileInput()" title="Open .vcad or .json project file">📂 Open</button>
+      <button class="tool-btn" onclick="openSlotModal()" title="Manage browser local storage slots">📑 Slot Manager</button>
+      <button class="tool-btn" onclick="copyShareableLink()" title="Copy shareable design URL">🔗 Share Link</button>
+      <button class="tool-btn" onclick="openConsultModal('topbar')" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.25), rgba(6, 182, 212, 0.25)); border-color: rgba(16, 185, 129, 0.6); color: #34d399; font-weight: 800;" title="Request Turnkey Commercial Greenhouse Engineering & Structural Consultation">🧑‍💻 Consultation</button>
       <input type="file" id="vcad-file-input" accept=".vcad,.json" style="display:none" onchange="handleFileSelect(event)">
     </div>
   </header>
@@ -600,39 +638,39 @@
   <!-- Drag & Drop Visual Overlay -->
   <div id="drop-overlay">
     <div class="drop-box">
-      <h3>📂 VenloCAD 프로젝트 파일 로드</h3>
-      <p>.vcad 또는 .json 파일을 여기에 놓으면 0.1초 만에 복원됩니다.</p>
+      <h3>📂 Load VenloCAD Project File</h3>
+      <p>Drop your .vcad or .json project file here to restore instantly.</p>
     </div>
   </div>
 
   <!-- In-Scene 3D Dynamic Dimension Badges -->
   <div id="dimension-overlay">
-    <div id="dim-width" class="dim-badge">가로 폭: <span>24.0m</span> (3연동)</div>
-    <div id="dim-length" class="dim-badge">총 연장: <span>32.0m</span> (8베이)</div>
-    <div id="dim-gutter" class="dim-badge">처마고: <span>4.5m</span></div>
-    <div id="dim-ridge" class="dim-badge">최고고: <span>5.3m</span></div>
+    <div id="dim-width" class="dim-badge">Width: <span>24.0m</span> (3 Bays)</div>
+    <div id="dim-length" class="dim-badge">Length: <span>32.0m</span> (8 Bays)</div>
+    <div id="dim-gutter" class="dim-badge">Gutter Height: <span>4.5m</span></div>
+    <div id="dim-ridge" class="dim-badge">Ridge Height: <span>5.3m</span></div>
   </div>
 
   <!-- Part Inspector HUD (Appears when clicking 3D elements) -->
   <div id="inspector-hud">
     <div style="font-size: 1.5rem;" id="insp-icon">📍</div>
     <div>
-      <div class="inspector-title" id="insp-title">주기둥 (Main Column C-04)</div>
-      <div class="inspector-spec" id="insp-spec">규격: 각관 100x50x3.2 SGH400 HDG</div>
+      <div class="inspector-title" id="insp-title">Main Column (C-04)</div>
+      <div class="inspector-spec" id="insp-spec">Spec: RHS 100x50x3.2 SGH400 HDG</div>
     </div>
     <div style="font-size: 0.74rem; color: #94a3b8; max-width: 280px;" id="insp-desc">
-      처마 하중 전달 및 외측 풍하중 지지 | 지배 모멘트 4.2 kN·m
+      Transfers gutter loads & resists external wind loads | Design Moment 4.2 kN·m
     </div>
-    <div class="inspector-badge" id="insp-status">✅ 안전 (PASS)</div>
+    <div class="inspector-badge" id="insp-status">✅ Safe (PASS)</div>
     <button class="close-inspector" onclick="closeInspector()">&times;</button>
   </div>
 
   <!-- Toast Notification Message -->
-  <div id="toast-msg">알림 메시지</div>
+  <div id="toast-msg">Notification</div>
 
   <!-- Orientation Compass Gizmo & View Buttons -->
   <div id="gizmo-wrap">
-    <div id="gizmo-container" title="드래그하여 회전하거나 클릭하여 뷰 전환"></div>
+    <div id="gizmo-container" title="Drag to rotate or click to switch camera view"></div>
     <div class="view-quick-buttons">
       <button class="quick-view-btn" onclick="setCameraView('top')">TOP</button>
       <button class="quick-view-btn" onclick="setCameraView('front')">FRONT</button>
@@ -641,26 +679,31 @@
     </div>
   </div>
 
+  <!-- Sidebar Toggle Button -->
+  <button id="sidebar-toggle-btn" class="sidebar-toggle-btn" onclick="toggleSidebar()" title="Toggle Sidebar (Ctrl+B)" aria-label="Toggle Sidebar">
+    <span id="sidebar-toggle-icon">◀</span>
+  </button>
+
   <!-- Left Parametric Sidebar -->
   <aside id="sidebar">
     <div class="tab-nav">
-      <button class="tab-btn active" onclick="switchTab('tab-geo', this)">📐 치수</button>
-      <button class="tab-btn" onclick="switchTab('tab-struct', this)">🔩 하중</button>
-      <button class="tab-btn" onclick="switchTab('tab-solar', this)">☀️ 일조</button>
-      <button class="tab-btn" onclick="switchTab('tab-vent', this)">🌬️ 천창</button>
-      <button class="tab-btn" onclick="switchTab('tab-export', this)">💾 저장</button>
+      <button class="tab-btn active" onclick="switchTab('tab-geo', this)">📐 Geometry</button>
+      <button class="tab-btn" onclick="switchTab('tab-struct', this)">🔩 Structural</button>
+      <button class="tab-btn" onclick="switchTab('tab-solar', this)">☀️ Solar</button>
+      <button class="tab-btn" onclick="switchTab('tab-vent', this)">🌬️ Ventilation</button>
+      <button class="tab-btn" onclick="switchTab('tab-export', this)">💾 Export</button>
     </div>
 
     <!-- TAB 1: GEOMETRY & PYEONG -->
     <div id="tab-geo" class="tab-content">
       <div class="section-title">
-        <span>📐 벤로 온실 기하학 스키마</span>
+        <span>📐 Venlo Greenhouse Geometry</span>
         <span style="font-size: 0.7rem; color: var(--accent-sky);">SSOT</span>
       </div>
 
       <div class="param-group">
         <div class="param-header">
-          <span>스팬 가로 폭 (Span Width)</span>
+          <span>Span Width (m)</span>
           <span class="param-val" id="val-span">8.0 m</span>
         </div>
         <input type="range" id="input-span" min="3.2" max="12.8" step="0.8" value="8.0">
@@ -668,7 +711,7 @@
 
       <div class="param-group">
         <div class="param-header">
-          <span>처마 기둥 높이 (Gutter Height)</span>
+          <span>Gutter Column Height (m)</span>
           <span class="param-val" id="val-gutter">4.5 m</span>
         </div>
         <input type="range" id="input-gutter" min="2.5" max="7.5" step="0.5" value="4.5">
@@ -676,7 +719,7 @@
 
       <div class="param-group">
         <div class="param-header">
-          <span>연동 스팬 개수 (Bay Count)</span>
+          <span>Bay Count (Multi-Span)</span>
           <span class="param-val" id="val-bays">3 bays</span>
         </div>
         <input type="range" id="input-bays" min="1" max="10" step="1" value="3">
@@ -684,7 +727,7 @@
 
       <div class="param-group">
         <div class="param-header">
-          <span>온실 총 연장 길이 (Total Length)</span>
+          <span>Total Greenhouse Length (m)</span>
           <span class="param-val" id="val-length">32.0 m</span>
         </div>
         <input type="range" id="input-length" min="8.0" max="120.0" step="4.0" value="32.0">
@@ -692,7 +735,7 @@
 
       <div class="param-group">
         <div class="param-header">
-          <span>길이 방향 기둥 간격 (Post Spacing)</span>
+          <span>Post Spacing along Length (m)</span>
           <span class="param-val" id="val-post">4.0 m</span>
         </div>
         <input type="range" id="input-post" min="3.0" max="5.0" step="0.5" value="4.0">
@@ -700,51 +743,51 @@
 
       <div class="param-group">
         <div class="param-header">
-          <span>유리 지붕 경사각 (Roof Pitch)</span>
+          <span>Glass Roof Pitch (deg)</span>
           <span class="param-val" id="val-pitch">22.0 °</span>
         </div>
         <input type="range" id="input-pitch" min="18.0" max="28.0" step="0.5" value="22.0">
       </div>
 
       <div class="section-title" style="margin-top: 16px;">
-        <span>👁️ 3D 가시성 & 치수 레이어</span>
+        <span>👁️ 3D Visibility & Layers</span>
       </div>
 
       <div class="toggle-grid">
         <label class="toggle-card">
-          <span>📏 3D 치수선 라벨</span>
+          <span>📏 3D Dimension Callouts</span>
           <input type="checkbox" id="toggle-dimensions" checked>
         </label>
         <label class="toggle-card">
-          <span>지붕 워렌 트러스</span>
+          <span>Roof Warren Truss</span>
           <input type="checkbox" id="toggle-truss" checked>
         </label>
         <label class="toggle-card">
-          <span>산광 강화유리</span>
+          <span>Diffuse Tempered Glass</span>
           <input type="checkbox" id="toggle-glass" checked>
         </label>
         <label class="toggle-card">
-          <span>서까래 알루미늄 바</span>
+          <span>Aluminum Glazing Bars</span>
           <input type="checkbox" id="toggle-glazing" checked>
         </label>
         <label class="toggle-card">
-          <span>풍하중 X-브레이싱</span>
+          <span>Wind Load X-Bracing</span>
           <input type="checkbox" id="toggle-bracing" checked>
         </label>
         <label class="toggle-card">
-          <span>콘크리트 독립기초</span>
+          <span>Concrete Pad Footings</span>
           <input type="checkbox" id="toggle-footing" checked>
         </label>
         <label class="toggle-card">
-          <span>와이어프레임 모드</span>
+          <span>Wireframe Mode</span>
           <input type="checkbox" id="toggle-wireframe">
         </label>
         <label class="toggle-card">
-          <span>부재 접합부 디테일</span>
+          <span>Structural Joint Details</span>
           <input type="checkbox" id="toggle-joints" checked>
         </label>
         <label class="toggle-card">
-          <span>🌀 반밀폐 공조 덕트</span>
+          <span>🌀 Semi-Closed Air Ducts</span>
           <input type="checkbox" id="toggle-ducts" checked>
         </label>
       </div>
@@ -753,13 +796,13 @@
     <!-- TAB 2: COMBINED LOADS & DEFLECTION (NEN 3859 / EN 13031-1) -->
     <div id="tab-struct" class="tab-content" style="display: none;">
       <div class="section-title">
-        <span>🌪️ 복합 극한하중 & 처짐 해석</span>
+        <span>🌪️ Combined Load & Deflection Analysis</span>
         <span style="font-size: 0.7rem; color: var(--accent-emerald);">CASTA / ULS</span>
       </div>
 
       <div class="param-group">
         <div class="param-header">
-          <span>설계 기준 풍속 (Design Wind Speed)</span>
+          <span>Design Wind Speed (m/s)</span>
           <span class="param-val" id="val-wind">32.0 m/s</span>
         </div>
         <input type="range" id="input-wind" min="20.0" max="45.0" step="1.0" value="32.0">
@@ -767,7 +810,7 @@
 
       <div class="param-group">
         <div class="param-header">
-          <span>지상 설계 적설심 (Snow Depth)</span>
+          <span>Ground Design Snow Depth (cm)</span>
           <span class="param-val" id="val-snow">25.0 cm</span>
         </div>
         <input type="range" id="input-snow" min="0.0" max="80.0" step="5.0" value="25.0">
@@ -775,7 +818,7 @@
 
       <div class="param-group">
         <div class="param-header">
-          <span>작물 유인 하중 (Crop Load)</span>
+          <span>Trellised Crop Load (kg/m²)</span>
           <span class="param-val" id="val-crop">15.0 kg/m²</span>
         </div>
         <input type="range" id="input-crop" min="0.0" max="30.0" step="2.5" value="15.0">
@@ -783,38 +826,38 @@
 
       <div class="param-group">
         <div class="param-header">
-          <span>주기둥 강관 단면 규격 (Column Profile)</span>
+          <span>Main Column RHS Profile</span>
         </div>
         <select id="select-col-size" style="width: 100%; padding: 8px 10px; background: #1e293b; color: #fff; border: 1px solid var(--panel-border); border-radius: 8px; outline: none; font-size: 0.8rem; font-family: var(--font-mono);">
-          <option value="100x50x3.2" selected>각관 100x50x3.2 (표준 SGH400, Zx=22.4 cm³, Ix=112 cm⁴)</option>
-          <option value="120x60x3.2">각관 120x60x3.2 (강화 규격, Zx=35.1 cm³, Ix=211 cm⁴)</option>
-          <option value="150x75x3.6">각관 150x75x3.6 (초고처마 광폭용, Zx=64.2 cm³, Ix=482 cm⁴)</option>
+          <option value="100x50x3.2" selected>RHS 100x50x3.2 (Standard SGH400, Zx=22.4 cm³, Ix=112 cm⁴)</option>
+          <option value="120x60x3.2">RHS 120x60x3.2 (Heavy Duty, Zx=35.1 cm³, Ix=211 cm⁴)</option>
+          <option value="150x75x3.6">RHS 150x75x3.6 (Wide Span / High Gutter, Zx=64.2 cm³, Ix=482 cm⁴)</option>
         </select>
       </div>
 
       <!-- Real-time Engineering Matrix -->
       <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 10px; padding: 12px; margin-top: 14px;">
         <div style="font-size: 0.72rem; color: var(--text-muted); margin-bottom: 8px; font-weight: 700;">
-          📊 NEN 3859 / EN 13031-1 극한 하중 조합 결과:
+          📊 NEN 3859 / EN 13031-1 ULS Combinations:
         </div>
         <div style="display: flex; justify-content: space-between; font-size: 0.78rem; margin-bottom: 4px;">
-          <span>피크 풍압 ($q_p$):</span>
+          <span>Peak Velocity Wind Pressure ($q_p$):</span>
           <span id="metric-wind-qp" class="param-val">1.15 kN/m²</span>
         </div>
         <div style="display: flex; justify-content: space-between; font-size: 0.78rem; margin-bottom: 4px;">
-          <span>지붕 적설하중 ($S$):</span>
+          <span>Roof Snow Load ($S$):</span>
           <span id="metric-snow-s" class="param-val">0.40 kN/m²</span>
         </div>
         <div style="display: flex; justify-content: space-between; font-size: 0.78rem; margin-bottom: 4px;">
-          <span>지배 설계 모멘트 ($M_{ULS}$):</span>
+          <span>Governing Moment ($M_{ULS}$):</span>
           <span id="metric-col-moment" class="param-val">4.20 kN·m</span>
         </div>
         <div style="display: flex; justify-content: space-between; font-size: 0.78rem; margin-bottom: 4px;">
-          <span>기둥 상단 처짐 ($\delta$):</span>
-          <span id="metric-col-deflection" class="param-val">16.0 mm (한계: 30mm)</span>
+          <span>Column Top Deflection ($\delta$):</span>
+          <span id="metric-col-deflection" class="param-val">16.0 mm (Limit: 30mm)</span>
         </div>
         <div style="display: flex; justify-content: space-between; font-size: 0.82rem; font-weight: 700; margin-top: 6px; padding-top: 6px; border-top: 1px solid rgba(255, 255, 255, 0.08);">
-          <span>구조 안전율 (Safety Factor):</span>
+          <span>Structural Safety Factor (SF):</span>
           <span id="metric-col-sf" class="param-val" style="color: var(--accent-emerald);">1.14 (PASS)</span>
         </div>
       </div>
@@ -823,24 +866,24 @@
     <!-- TAB 3: SOLAR SHADING & DAYLIGHT -->
     <div id="tab-solar" class="tab-content" style="display: none;">
       <div class="section-title">
-        <span>☀️ 실시간 태양 궤적 & 골조 음영</span>
+        <span>☀️ Solar Path & Frame Shading</span>
         <span style="font-size: 0.7rem; color: var(--accent-gold);">Daylight</span>
       </div>
 
       <div class="param-group">
         <div class="param-header">
-          <span>계절 선택 (Solar Declination)</span>
+          <span>Season (Solar Declination)</span>
         </div>
         <select id="select-solar-season" style="width: 100%; padding: 8px 10px; background: #1e293b; color: #fff; border: 1px solid var(--panel-border); border-radius: 8px; outline: none; font-size: 0.8rem;">
-          <option value="equinox" selected>춘분/추분 (3/9월, $\delta=0^\circ$)</option>
-          <option value="summer">하지 (6월, $\delta=+23.5^\circ$ 태양 최고고)</option>
-          <option value="winter">동지 (12월, $\delta=-23.5^\circ$ 긴 그림자)</option>
+          <option value="equinox" selected>Equinox (Mar/Sep, $\delta=0^\circ$)</option>
+          <option value="summer">Summer Solstice (Jun, $\delta=+23.5^\circ$)</option>
+          <option value="winter">Winter Solstice (Dec, $\delta=-23.5^\circ$)</option>
         </select>
       </div>
 
       <div class="param-group">
         <div class="param-header">
-          <span>태양 시각 (Local Solar Time)</span>
+          <span>Local Solar Time</span>
           <span class="param-val" id="val-solar-hour">12:00</span>
         </div>
         <input type="range" id="input-solar-hour" min="8.0" max="17.0" step="0.5" value="12.0">
@@ -848,18 +891,18 @@
 
       <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 10px; padding: 12px; margin-top: 14px;">
         <div style="font-size: 0.72rem; color: var(--text-muted); margin-bottom: 8px; font-weight: 700;">
-          🔬 광학 시뮬레이션 진단:
+          🔬 Optical Simulation Metrics:
         </div>
         <div style="display: flex; justify-content: space-between; font-size: 0.78rem; margin-bottom: 4px;">
-          <span>태양 고도각 (Solar Elevation):</span>
+          <span>Solar Elevation Angle:</span>
           <span id="metric-solar-elev" class="param-val">53.5 °</span>
         </div>
         <div style="display: flex; justify-content: space-between; font-size: 0.78rem; margin-bottom: 4px;">
-          <span>골조 차광 손실률 (Shading):</span>
+          <span>Frame Shading Loss:</span>
           <span id="metric-solar-shading" class="param-val">12.8 %</span>
         </div>
         <div style="display: flex; justify-content: space-between; font-size: 0.78rem; font-weight: 700; margin-top: 6px; padding-top: 6px; border-top: 1px solid rgba(255, 255, 255, 0.08);">
-          <span>유효 채광 투광률 (Transmittance):</span>
+          <span>Effective Light Transmittance:</span>
           <span id="metric-solar-trans" class="param-val" style="color: var(--accent-gold);">78.7 %</span>
         </div>
       </div>
@@ -868,14 +911,14 @@
     <!-- TAB 4: ROOF VENTILATION & AERODYNAMICS -->
     <div id="tab-vent" class="tab-content" style="display: none;">
       <div class="section-title">
-        <span>🌬️ 천창 자연 환기 &amp; 유체 역학</span>
+        <span>🌬️ Roof Natural Ventilation &amp; Aerodynamics</span>
         <span style="font-size: 0.7rem; color: var(--accent-cyan);">Wageningen SOTA</span>
       </div>
 
       <!-- Vent Open Slider -->
       <div class="param-group">
         <div class="param-header">
-          <span>천창 개폐율 (Vent Opening)</span>
+          <span>Vent Opening Ratio</span>
           <span class="param-val" id="val-vent-open">35.0 % (14.0°)</span>
         </div>
         <input type="range" id="input-vent-open" min="0" max="100" step="1" value="35">
@@ -884,17 +927,17 @@
       <!-- Opening Mode Pills -->
       <div class="param-group">
         <div class="param-header">
-          <span>환기 개폐 모드 (Ventilation Mode)</span>
+          <span>Ventilation Mode</span>
         </div>
         <div class="crop-pills" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-top: 6px;">
           <button type="button" class="crop-pill vent-mode-pill active" onclick="setVentSide('both', this)">
-            <span>양측 (Both)</span>
+            <span>Both Sides</span>
           </button>
           <button type="button" class="crop-pill vent-mode-pill" onclick="setVentSide('leeward', this)">
-            <span>풍하지 (Leeward)</span>
+            <span>Leeward Only</span>
           </button>
           <button type="button" class="crop-pill vent-mode-pill" onclick="setVentSide('windward', this)">
-            <span>바람받이 (Windward)</span>
+            <span>Windward Only</span>
           </button>
         </div>
       </div>
@@ -902,7 +945,7 @@
       <!-- Ambient Wind Speed Slider -->
       <div class="param-group">
         <div class="param-header">
-          <span>외기 자연 풍속 (Ambient Breeze)</span>
+          <span>Ambient Wind Speed</span>
           <span class="param-val" id="val-ambient-wind">3.0 m/s</span>
         </div>
         <input type="range" id="input-ambient-wind" min="0.5" max="12.0" step="0.5" value="3.0">
@@ -911,68 +954,68 @@
       <!-- Dynamic Simulation Toggle & Presets -->
       <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px;">
         <button type="button" id="btn-toggle-vent-anim" class="btn" onclick="toggleVentAnimation()" style="font-size: 0.75rem; padding: 8px; border-color: rgba(56, 189, 248, 0.4); background: rgba(56, 189, 248, 0.1); color: var(--accent-sky);">
-          ▶️ 동적 개폐 시뮬레이션
+          ▶️ Dynamic Opening Simulation
         </button>
         <button type="button" class="btn" onclick="resetVentPreset('summer')" style="font-size: 0.75rem; padding: 8px;">
-          ☀️ 하계 최대환기 (100%)
+          ☀️ Max Summer Ventilation (100%)
         </button>
       </div>
 
       <!-- Real-time Aerodynamic & Microclimate Matrix -->
       <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 10px; padding: 12px; margin-top: 14px;">
         <div style="font-size: 0.72rem; color: var(--text-muted); margin-bottom: 8px; font-weight: 700; display: flex; justify-content: space-between; align-items: center;">
-          <span>🍃 네덜란드 바헤닝언 온실 환기 진단:</span>
-          <span id="vent-flow-badge" class="badge" style="background: rgba(16, 185, 129, 0.2); color: #34d399; font-size: 0.65rem;">최적 자연환기 (Optimal)</span>
+          <span>🍃 Wageningen UR Greenhouse Ventilation Metrics:</span>
+          <span id="vent-flow-badge" class="badge" style="background: rgba(16, 185, 129, 0.2); color: #34d399; font-size: 0.65rem;">Optimal Airflow</span>
         </div>
         <div style="display: flex; justify-content: space-between; font-size: 0.78rem; margin-bottom: 4px;">
-          <span>천창 유효 개구 면적 (Av):</span>
+          <span>Effective Vent Opening Area (Av):</span>
           <span id="metric-vent-area" class="param-val" style="color: var(--accent-sky);">110.2 m²</span>
         </div>
         <div style="display: flex; justify-content: space-between; font-size: 0.78rem; margin-bottom: 4px;">
-          <span>풍력 기류 환기량 (Gwind):</span>
+          <span>Wind-Driven Airflow Rate (Gwind):</span>
           <span id="metric-vent-wind" class="param-val">166,600 m³/h</span>
         </div>
         <div style="display: flex; justify-content: space-between; font-size: 0.78rem; margin-bottom: 4px;">
-          <span>열부력 굴뚝 환기량 (Gtemp):</span>
+          <span>Thermal Buoyancy Airflow Rate (Gtemp):</span>
           <span id="metric-vent-stack" class="param-val">68,800 m³/h</span>
         </div>
         <div style="display: flex; justify-content: space-between; font-size: 0.78rem; margin-bottom: 4px;">
-          <span>총 복합 환기량 (Gtot):</span>
+          <span>Total Combined Airflow Rate (Gtot):</span>
           <span id="metric-vent-gtot" class="param-val" style="color: var(--accent-cyan);">180,500 m³/h</span>
         </div>
         <div style="display: flex; justify-content: space-between; font-size: 0.82rem; font-weight: 700; margin-top: 6px; padding-top: 6px; border-top: 1px solid rgba(255, 255, 255, 0.08);">
-          <span>시간당 환기 횟수 (ACH):</span>
-          <span id="metric-vent-ach" class="param-val" style="color: var(--accent-emerald); font-size: 0.95rem;">47.9 회/h</span>
+          <span>Air Changes Per Hour (ACH):</span>
+          <span id="metric-vent-ach" class="param-val" style="color: var(--accent-emerald); font-size: 0.95rem;">47.9 ACH</span>
         </div>
         <div style="display: flex; justify-content: space-between; font-size: 0.78rem; margin-top: 4px;">
-          <span>자연 환기 냉각 효과 (ΔTcool):</span>
-          <span id="metric-vent-cooling" class="param-val" style="color: var(--accent-gold);">-50.0 °C 강하</span>
+          <span>Natural Cooling Effect (ΔTcool):</span>
+          <span id="metric-vent-cooling" class="param-val" style="color: var(--accent-gold);">-50.0 °C Drop</span>
         </div>
       <!-- Semi-Closed ATU Section -->
       <div style="background: rgba(56, 189, 248, 0.05); border: 1px solid rgba(56, 189, 248, 0.25); border-radius: 10px; padding: 12px; margin-top: 14px;">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-          <span style="font-weight: 800; font-size: 0.8rem; color: var(--accent-sky);">🌀 반밀폐 온실 시스템 (Semi-Closed ATU)</span>
+          <span style="font-weight: 800; font-size: 0.8rem; color: var(--accent-sky);">🌀 Semi-Closed Greenhouse System (ATU)</span>
           <label class="toggle-card" style="margin: 0; padding: 4px 8px; width: auto; background: rgba(56, 189, 248, 0.15); border-color: rgba(56, 189, 248, 0.4);">
-            <span style="font-size: 0.72rem; color: #fff; margin-right: 6px;">활성화</span>
+            <span style="font-size: 0.72rem; color: #fff; margin-right: 6px;">Enable</span>
             <input type="checkbox" id="toggle-semi-closed" onchange="toggleSemiClosedSystem(this.checked)">
           </label>
         </div>
         <div id="semi-closed-details" style="display: none; font-size: 0.75rem; color: #cbd5e1; line-height: 1.6;">
           <div style="display: flex; justify-content: space-between; margin-bottom: 3px;">
-            <span>측면 복도 공조실 (Corridor ATU):</span>
-            <span id="metric-atu-chamber" class="param-val" style="color: #38bdf8;">1개소 (3 EC Fans)</span>
+            <span>Corridor Air Handling Unit (ATU):</span>
+            <span id="metric-atu-chamber" class="param-val" style="color: #38bdf8;">1 Unit (3 EC Fans)</span>
           </div>
           <div style="display: flex; justify-content: space-between; margin-bottom: 3px;">
-            <span>거터 하부 타공 PE 덕트:</span>
-            <span id="metric-atu-ducts" class="param-val">Φ750mm (3열 배치)</span>
+            <span>Sub-Gutter Perforated PE Ducts:</span>
+            <span id="metric-atu-ducts" class="param-val">Φ750mm (3 Bay Ducts)</span>
           </div>
           <div style="display: flex; justify-content: space-between; margin-bottom: 3px;">
-            <span>온실 내부 정압 (Pressure Shield):</span>
-            <span class="param-val" style="color: #34d399; font-weight: 700;">+22.4 Pa (해충 차단)</span>
+            <span>Positive Static Pressure:</span>
+            <span class="param-val" style="color: #34d399; font-weight: 700;">+22.4 Pa (Insect Exclusion Shield)</span>
           </div>
           <div style="display: flex; justify-content: space-between;">
-            <span>CO₂ 유출 차단 &amp; 보존 효율:</span>
-            <span class="param-val" style="color: #fbbf24; font-weight: 700;">88.5% 보존 (창호 90% 폐쇄)</span>
+            <span>CO₂ Retention &amp; Conservation:</span>
+            <span class="param-val" style="color: #fbbf24; font-weight: 700;">88.5% Retained (Vents 90% Sealed)</span>
           </div>
         </div>
       </div>
@@ -981,48 +1024,48 @@
     <!-- TAB 5: EXPORT & SAVE & BOM -->
     <div id="tab-export" class="tab-content" style="display: none;">
       <div class="section-title">
-        <span>💾 프로젝트 저장 및 복원</span>
+        <span>💾 Project Storage &amp; Backup</span>
         <span style="font-size: 0.7rem; color: var(--accent-cyan);">Zero-Loss</span>
       </div>
 
       <div class="btn-row" style="margin-top: 0; margin-bottom: 12px;">
         <button class="btn btn-gold" onclick="saveProjectFile()">
-          💾 파일 저장 (.vcad)
+          💾 Save File (.vcad)
         </button>
         <button class="btn" onclick="triggerFileInput()">
-          📂 파일 열기 (.vcad)
+          📂 Open File (.vcad)
         </button>
       </div>
 
       <div class="btn-row" style="margin-top: 0; margin-bottom: 14px;">
         <button class="btn" onclick="openSlotModal()">
-          📑 브라우저 슬롯 보관함
+          📑 Browser Slot Storage
         </button>
         <button class="btn" onclick="copyShareableLink()">
-          🔗 공유 링크 복사
+          🔗 Copy Shareable Link
         </button>
       </div>
 
       <div class="section-title" style="margin-top: 10px;">
-        <span>📄 엔지니어링 도면 & BOM 추출</span>
+        <span>📄 Engineering Drawings &amp; BOM</span>
         <span style="font-size: 0.7rem; color: var(--accent-gold);">Export</span>
       </div>
 
             <button class="btn btn-primary" id="btn-open-proposal" style="width: 100%; margin-bottom: 8px; background: linear-gradient(135deg, #1e40af, #2563eb, #38bdf8); border: none; font-weight: 800; font-size: 0.82rem; padding: 12px; box-shadow: 0 0 18px rgba(56, 189, 248, 0.4);" onclick="openProposalModal()">
-        📑 B2B 공식 시공 견적서 &amp; 제안서 발행 (CPQ)
+        📑 B2B Commercial Proposal &amp; Quotation (CPQ)
       </button>
 
       <button class="btn btn-gold" id="btn-open-bom" style="width: 100%; margin-bottom: 8px;">
-        📊 실시간 자재 명세서 &amp; 견적서 (BOM) 보기
+        📊 Bill of Materials (BOM) &amp; Cost Estimation
       </button>
 
       <button class="btn" style="width: 100%; margin-bottom: 10px; background: rgba(56, 189, 248, 0.12); border-color: rgba(56, 189, 248, 0.35); color: #38bdf8; font-weight: 700;" onclick="openCuttingOptimizer()">
-        ✂️ 1D 파이프 절단 가공표 (Cutting Schedule)
+        ✂️ 1D Linear Cutting Stock Schedule
       </button>
 
       <div class="btn-row">
         <button class="btn btn-primary" id="btn-export-dxf">
-          📄 2D 도면 (DXF)
+          📄 2D Engineering Drawings (DXF)
         </button>
         <button class="btn" id="btn-export-csv">
           📑 BOM (CSV)
@@ -1031,13 +1074,13 @@
 
       <div class="btn-row">
         <button class="btn" id="btn-export-glb" style="grid-column: span 2; background: rgba(16, 185, 129, 0.15); border-color: rgba(16, 185, 129, 0.45); color: #34d399; font-weight: 700;" onclick="exportGLB()">
-          🌐 3D 산업표준 어셈블리 (GLB / glTF)
+          🌐 3D Standard Assembly (GLB / glTF)
         </button>
       </div>
 
       <div class="btn-row">
         <button class="btn" id="btn-export-stl" style="grid-column: span 2;">
-          🧊 3D CAD 메쉬 추출 (STL)
+          🧊 3D CAD Mesh (STL)
         </button>
       </div>
 
@@ -1046,20 +1089,20 @@
         <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
           <span style="font-size: 1.3rem;">🧑‍💻</span>
           <div>
-            <div style="color: #34d399; font-size: 0.82rem; font-weight: 800;">전문가 1:1 맞춤 설계 &amp; 집중 케어</div>
-            <div style="font-size: 0.68rem; color: var(--text-muted);">황인우 엔지니어 (충남대 스마트팜 CEA) 직통</div>
+            <div style="color: #34d399; font-size: 0.82rem; font-weight: 800;">Turnkey Commercial Engineering &amp; Audit</div>
+            <div style="font-size: 0.68rem; color: var(--text-muted);">Inwoovation Engineering Lab • Commercial CEA Operations</div>
           </div>
         </div>
         <p style="font-size: 0.72rem; color: #cbd5e1; margin-bottom: 10px; line-height: 1.4;">
-          시공사 견적 교차검증(거품 제거), 부지 맞춤형 2D/3D 실시설계, 정부 보조금/인허가용 구조계산서 완성이 필요하신가요? 직접 1:1 집중 케어해 드립니다.
+          Need contractor quotation verification, site-tailored 2D/3D detail engineering, or certified structural calculations for commercial permits? Inwoovation Engineering Lab delivers turnkey engineering consultation.
         </p>
         <button class="btn btn-primary" onclick="openConsultModal('tab_banner')" style="width: 100%; margin: 0; background: linear-gradient(135deg, #059669, #10b981); border: none; font-weight: 800; color: #fff;">
-          🎯 1:1 설계 대행 &amp; 감리 신청하기
+          🎯 Request Engineering Consultation &amp; Audit
         </button>
       </div>
 
       <div style="margin-top: 14px; font-size: 0.72rem; color: var(--text-muted); line-height: 1.5; background: rgba(0, 0, 0, 0.25); padding: 10px; border-radius: 8px;">
-        💡 <strong>.vcad 프로젝트 파일</strong>: 100% 오프라인 클라이언트 저장 규격으로, 파일 하나에 모든 온실 치수, 기둥 단면, 하중 조건, 일조 환경이 영구 보존됩니다. 뷰포트로 드래그 앤 드롭하여 바로 열 수 있습니다.
+        💡 <strong>.vcad Project File</strong>: 100% offline client storage format preserving all greenhouse geometry, column sections, design loads, and microclimate parameters. Drag and drop onto the viewport to restore instantly.
       </div>
     </div>
   </aside>
@@ -1069,13 +1112,13 @@
     <div style="display: flex; align-items: center; gap: 8px;">
       <span style="font-size: 1.25rem;">🧑‍💻</span>
       <div>
-        <div style="font-size: 0.76rem; font-weight: 800; color: #34d399;">온실 설계 &amp; 견적 검토가 필요하신가요?</div>
-        <div style="font-size: 0.67rem; color: #94a3b8;">황인우 엔지니어 (충남대 CEA) 1:1 집중 케어</div>
+        <div style="font-size: 0.76rem; font-weight: 800; color: #34d399;">Need Commercial Greenhouse Engineering Review?</div>
+        <div style="font-size: 0.67rem; color: #94a3b8;">Inwoovation Engineering Lab • Turnkey CEA Consultation</div>
       </div>
     </div>
     <div style="display: flex; align-items: center; gap: 6px;">
-      <button onclick="openConsultModal('floating_chip')" class="btn btn-primary" style="padding: 4px 11px; font-size: 0.72rem; background: linear-gradient(135deg, #059669, #10b981); border: none; font-weight: 800;">1:1 무료 자문</button>
-      <button onclick="dismissConsultChip()" style="background: none; border: none; color: #64748b; font-size: 1.15rem; cursor: pointer; padding: 0 4px; line-height: 1;" title="닫기">&times;</button>
+      <button onclick="openConsultModal('floating_chip')" class="btn btn-primary" style="padding: 4px 11px; font-size: 0.72rem; background: linear-gradient(135deg, #059669, #10b981); border: none; font-weight: 800;">Consult Engineers</button>
+      <button onclick="dismissConsultChip()" style="background: none; border: none; color: #64748b; font-size: 1.15rem; cursor: pointer; padding: 0 4px; line-height: 1;" title="Close">&times;</button>
     </div>
   </div>
 
@@ -1084,19 +1127,19 @@
     <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; margin-bottom: 8px;">
       <div style="display: flex; align-items: center; gap: 6px;">
         <span style="font-size: 1.25rem;">📥</span>
-        <strong id="export-lead-title" style="color: var(--accent-sky); font-size: 0.84rem;">설계 파일 다운로드 완료!</strong>
+        <strong id="export-lead-title" style="color: var(--accent-sky); font-size: 0.84rem;">Design Export Complete!</strong>
       </div>
-      <button onclick="closeExportLeadModal()" style="background: none; border: none; color: var(--text-muted); font-size: 1.15rem; cursor: pointer; line-height: 1;" title="닫기">&times;</button>
+      <button onclick="closeExportLeadModal()" style="background: none; border: none; color: var(--text-muted); font-size: 1.15rem; cursor: pointer; line-height: 1;" title="Close">&times;</button>
     </div>
     <p id="export-lead-desc" style="font-size: 0.72rem; color: #cbd5e1; margin-bottom: 12px; line-height: 1.45;">
-      시공사 견적 교차검증(자재 거품 제거) 또는 지자체 인허가용 구조계산서가 필요하신가요? 황인우 엔지니어가 1:1로 직접 검토해 드립니다.
+      Looking for contractor quotation verification, permit-ready structural engineering calculations, or site-tailored detailed CAD drawings? Inwoovation Engineering Lab provides turnkey commercial technical review.
     </p>
     <div style="display: flex; gap: 6px;">
       <button class="btn btn-primary" onclick="openConsultModal('post_export'); closeExportLeadModal();" style="flex: 1; padding: 7px 10px; font-size: 0.74rem; background: linear-gradient(135deg, #059669, #10b981); border: none; font-weight: 800;">
-        🎯 1:1 맞춤 검토 신청하기
+        🎯 Request Engineering Review
       </button>
       <button class="btn" onclick="closeExportLeadModal()" style="padding: 7px 10px; font-size: 0.74rem;">
-        닫기
+        Close
       </button>
     </div>
   </div>
@@ -1104,23 +1147,23 @@
   <!-- Live HUD Metrics (Bottom Right) -->
   <div id="hud-panel">
     <div class="hud-item">
-      <span class="hud-label">총 바닥 면적 (평수)</span>
-      <span class="hud-value" id="hud-area">768 m² (232평)</span>
+      <span class="hud-label">Total Floor Area</span>
+      <span class="hud-value" id="hud-area">768 m² (0.19 ac)</span>
     </div>
     <div class="hud-item">
-      <span class="hud-label">철골 총중량</span>
+      <span class="hud-label">Total Steel Weight</span>
       <span class="hud-value" id="hud-steel" style="color: var(--accent-sky);">5,214 kg</span>
     </div>
     <div class="hud-item">
-      <span class="hud-label">알루미늄 중량</span>
+      <span class="hud-label">Aluminum Weight</span>
       <span class="hud-value" id="hud-al" style="color: var(--accent-cyan);">1,420 kg</span>
     </div>
     <div class="hud-item">
-      <span class="hud-label">추정 시공 자재비</span>
-      <span class="hud-value" id="hud-cost" style="color: var(--accent-gold);">3,842 만원</span>
+      <span class="hud-label">Est. Material Cost</span>
+      <span class="hud-value" id="hud-cost" style="color: var(--accent-gold);">$28,250</span>
     </div>
     <div class="hud-item">
-      <span class="hud-label">NEN 3859 종합안전</span>
+      <span class="hud-label">NEN 3859 Structural Safety</span>
       <span class="hud-value" id="hud-safety" style="color: var(--accent-emerald);">A+ (PASS)</span>
     </div>
   </div>
@@ -1130,8 +1173,8 @@
     <div class="modal-content">
       <div class="modal-header">
         <div>
-          <h2>📊 VenloCAD 3D 정밀 자재 명세서 & 시공 견적서 (BOM)</h2>
-          <span style="font-size: 0.75rem; color: var(--text-muted);">산업용 표준 온실 배관 규격 및 대한민국 농림축산식품부 / 네덜란드 NEN 3859 산출 기준</span>
+          <h2>📊 VenloCAD 3D Bill of Materials (BOM) &amp; Cost Estimation</h2>
+          <span style="font-size: 0.75rem; color: var(--text-muted);">Industrial greenhouse structural standards complying with Dutch NEN 3859 / EN 13031-1 engineering guidelines</span>
         </div>
         <button class="close-modal" onclick="closeBOM()">&times;</button>
       </div>
@@ -1139,15 +1182,15 @@
         <table class="bom-table">
           <thead>
             <tr>
-              <th>부재 ID</th>
-              <th>분류</th>
-              <th>사양 및 재질</th>
-              <th>길이(mm)</th>
-              <th>수량</th>
-              <th>단위중량(kg)</th>
-              <th>총중량(kg)</th>
-              <th>단가</th>
-              <th>금액 (KRW)</th>
+              <th>Item ID</th>
+              <th>Category</th>
+              <th>Specification &amp; Material</th>
+              <th>Length (mm)</th>
+              <th>Quantity</th>
+              <th>Unit Wt (kg)</th>
+              <th>Total Wt (kg)</th>
+              <th>Unit Price</th>
+              <th>Amount (USD)</th>
             </tr>
           </thead>
           <tbody id="bom-table-body">
@@ -1157,14 +1200,14 @@
       </div>
       <div class="modal-footer">
         <div>
-          <span style="font-size: 0.8rem; color: var(--text-muted);">총 추정 자재 견적 합계:</span>
-          <span class="cost-highlight" id="modal-total-cost">0 원</span>
+          <span style="font-size: 0.8rem; color: var(--text-muted);">Total Estimated Material Cost:</span>
+          <span class="cost-highlight" id="modal-total-cost">$0</span>
         </div>
         <div style="display: flex; gap: 8px;">
-          <button class="btn btn-gold" id="btn-open-cutting" onclick="openCuttingOptimizer()">✂️ 1D 절단 가공표 (Cutting List)</button>
-          <button class="btn" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(6, 182, 212, 0.2)); border-color: #10b981; color: #34d399; font-weight: 700;" onclick="openConsultModal('bom_modal')">🧑‍💻 전문가 감리/대행 신청</button>
-          <button class="btn" onclick="window.print()">🖨️ 인쇄 / PDF 보고서</button>
-          <button class="btn btn-primary" onclick="exportBOM()">📥 CSV 다운로드</button>
+          <button class="btn btn-gold" id="btn-open-cutting" onclick="openCuttingOptimizer()">✂️ 1D Cutting Stock List</button>
+          <button class="btn" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(6, 182, 212, 0.2)); border-color: #10b981; color: #34d399; font-weight: 700;" onclick="openConsultModal('bom_modal')">🧑‍💻 Consultation &amp; Audit</button>
+          <button class="btn" onclick="window.print()">🖨️ Print / Save PDF</button>
+          <button class="btn btn-primary" onclick="exportBOM()">📥 Export CSV</button>
         </div>
       </div>
     </div>
@@ -1175,8 +1218,8 @@
     <div class="modal-content" style="max-width: 1040px;">
       <div class="modal-header">
         <div>
-          <h2>✂️ 1D 철골 파이프 절단 가공표 (Linear Cutting Stock Schedule)</h2>
-          <span style="font-size: 0.75rem; color: var(--text-muted);">Best-Fit Decreasing 1D Bin-Packing 알고리즘 기반 원자재 본수 및 잔재율(Scrap) 최소화</span>
+          <h2>✂️ 1D Linear Cutting Stock Schedule (1D Bin Packing)</h2>
+          <span style="font-size: 0.75rem; color: var(--text-muted);">Best-Fit Decreasing 1D Bin-Packing algorithm minimizing raw stock bar usage and scrap waste rate</span>
         </div>
         <button class="close-modal" onclick="closeCuttingModal()">&times;</button>
       </div>
@@ -1185,52 +1228,52 @@
         <div style="display: flex; gap: 14px; align-items: center; justify-content: space-between; background: rgba(0,0,0,0.35); padding: 10px 14px; border-radius: 10px; margin-bottom: 16px; flex-wrap: wrap;">
           <div style="display: flex; gap: 12px; align-items: center;">
             <label style="font-size: 0.76rem; color: #cbd5e1; font-weight: 600;">
-              원자재 표준 규격:
+              Raw Stock Length:
               <select id="cutting-raw-length" onchange="runCuttingOptimization()" style="margin-left: 6px; padding: 4px 8px; background: #1e293b; color: #38bdf8; border: 1px solid var(--panel-border); border-radius: 6px; font-family: var(--font-mono); font-weight: 700;">
-                <option value="6000" selected>6,000 mm (6m 표준재)</option>
-                <option value="8000">8,000 mm (8m 장척재)</option>
+                <option value="6000" selected>6,000 mm (6m Standard Stock)</option>
+                <option value="8000">8,000 mm (8m Long Stock)</option>
                 <option value="10000">10,000 mm (10m)</option>
-                <option value="12000">12,000 mm (12m 대형재)</option>
+                <option value="12000">12,000 mm (12m Mill Stock)</option>
               </select>
             </label>
             <label style="font-size: 0.76rem; color: #cbd5e1; font-weight: 600;">
-              톱날 절단 여유 (Kerf):
+              Saw Blade Kerf Loss:
               <select id="cutting-kerf" onchange="runCuttingOptimization()" style="margin-left: 6px; padding: 4px 8px; background: #1e293b; color: #f59e0b; border: 1px solid var(--panel-border); border-radius: 6px; font-family: var(--font-mono); font-weight: 700;">
-                <option value="0">0 mm (이론치)</option>
-                <option value="3" selected>3 mm (원형톱/밴드쏘 표준)</option>
+                <option value="0">0 mm (Theoretical)</option>
+                <option value="3" selected>3 mm (Circular Saw / Band Saw)</option>
                 <option value="4">4 mm</option>
-                <option value="5">5 mm (고속절단기)</option>
+                <option value="5">5 mm (Abrasive Cutter)</option>
               </select>
             </label>
           </div>
           <div style="font-size: 0.72rem; color: var(--text-muted);">
-            💡 파이프 가공 공장 발주 및 현장 조립 가공 지시서 규격 100% 호환
+            💡 Fully compliant with CNC saw cut-lists and factory shop-assembly schedules
           </div>
         </div>
 
         <!-- KPI Grid -->
         <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 18px;">
           <div style="background: #1e293b; border: 1px solid rgba(56,189,248,0.25); border-radius: 10px; padding: 12px; text-align: center;">
-            <div style="font-size: 0.68rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700;">총 소요 원자재 (Raw Bars)</div>
-            <div id="cut-kpi-bars" style="font-size: 1.3rem; font-weight: 800; color: #38bdf8; font-family: var(--font-mono); margin-top: 2px;">0 본</div>
+            <div style="font-size: 0.68rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700;">Total Raw Stock Bars</div>
+            <div id="cut-kpi-bars" style="font-size: 1.3rem; font-weight: 800; color: #38bdf8; font-family: var(--font-mono); margin-top: 2px;">0 Bars</div>
           </div>
           <div style="background: #1e293b; border: 1px solid rgba(16,185,129,0.25); border-radius: 10px; padding: 12px; text-align: center;">
-            <div style="font-size: 0.68rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700;">자재 유효 이용률 (Yield)</div>
+            <div style="font-size: 0.68rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700;">Stock Material Yield</div>
             <div id="cut-kpi-yield" style="font-size: 1.3rem; font-weight: 800; color: #34d399; font-family: var(--font-mono); margin-top: 2px;">0.0%</div>
           </div>
           <div style="background: #1e293b; border: 1px solid rgba(244,63,94,0.25); border-radius: 10px; padding: 12px; text-align: center;">
-            <div style="font-size: 0.68rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700;">총 잔재율 (Scrap Rate)</div>
+            <div style="font-size: 0.68rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700;">Total Scrap Rate</div>
             <div id="cut-kpi-scrap" style="font-size: 1.3rem; font-weight: 800; color: #f43f5e; font-family: var(--font-mono); margin-top: 2px;">0.0%</div>
           </div>
           <div style="background: #1e293b; border: 1px solid rgba(245,158,11,0.25); border-radius: 10px; padding: 12px; text-align: center;">
-            <div style="font-size: 0.68rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700;">총 스크랩 잔재 중량</div>
+            <div style="font-size: 0.68rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700;">Total Scrap Weight</div>
             <div id="cut-kpi-waste-kg" style="font-size: 1.3rem; font-weight: 800; color: #fbbf24; font-family: var(--font-mono); margin-top: 2px;">0 kg</div>
           </div>
         </div>
 
         <!-- Cutting Patterns Visual List -->
         <div style="font-size: 0.8rem; font-weight: 800; color: var(--accent-sky); margin-bottom: 8px;">
-          📋 부재군별 최적 절단 가공 패턴 (Optimized Cutting Patterns)
+          📋 Optimized Cutting Patterns by Member Group
         </div>
         <div id="cutting-patterns-container" style="display: flex; flex-direction: column; gap: 10px;">
           <!-- Dynamically generated visual pattern bars -->
@@ -1238,13 +1281,13 @@
       </div>
       <div class="modal-footer">
         <div>
-          <span style="font-size: 0.78rem; color: var(--text-muted);">알고리즘: Best-Fit Decreasing 1D Bin Packing | ISO 9001 가공표</span>
+          <span style="font-size: 0.78rem; color: var(--text-muted);">Algorithm: Best-Fit Decreasing 1D Bin Packing | ISO 9001 Shop Schedule</span>
         </div>
         <div style="display: flex; gap: 8px;">
-          <button class="btn btn-primary" onclick="exportCuttingCSV()">📥 절단 가공표 (CSV) 다운로드</button>
-          <button class="btn" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(6, 182, 212, 0.2)); border-color: #10b981; color: #34d399; font-weight: 700;" onclick="openConsultModal('cutting_modal')">🧑‍💻 가공·제작 감리 및 견적 검토 신청</button>
-          <button class="btn" onclick="window.print()">🖨️ 가공 지시서 인쇄</button>
-          <button class="btn" onclick="closeCuttingModal()">닫기</button>
+          <button class="btn btn-primary" onclick="exportCuttingCSV()">📥 Export Cutting Schedule (CSV)</button>
+          <button class="btn" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(6, 182, 212, 0.2)); border-color: #10b981; color: #34d399; font-weight: 700;" onclick="openConsultModal('cutting_modal')">🧑‍💻 Fabrication Audit &amp; Technical Consultation</button>
+          <button class="btn" onclick="window.print()">🖨️ Print Cutting Schedule</button>
+          <button class="btn" onclick="closeCuttingModal()">Close</button>
         </div>
       </div>
     </div>
@@ -1256,7 +1299,7 @@
     <div class="modal-content">
       <div class="proposal-toolbar-wrap no-print">
         <div style="display: flex; align-items: center; gap: 14px;">
-          <h2 style="font-size: 1.05rem; font-weight: 800; color: #fff; margin: 0;">📑 B2B 온실 엔지니어링 시공 견적서 &amp; 기술 제안서</h2>
+          <h2 style="font-size: 1.05rem; font-weight: 800; color: #fff; margin: 0;">📑 Commercial Greenhouse Engineering Proposal &amp; Quotation (CPQ)</h2>
           <div class="currency-pill-group">
             <button class="currency-pill active" id="curr-krw" onclick="setProposalCurrency('KRW')">KRW (₩)</button>
             <button class="currency-pill" id="curr-usd" onclick="setProposalCurrency('USD')">USD ($)</button>
@@ -1265,10 +1308,10 @@
         </div>
         <div style="display: flex; gap: 8px;">
           <button class="btn btn-primary" onclick="copyProposalSummaryText()" style="font-size: 0.74rem; padding: 7px 12px; background: rgba(56, 189, 248, 0.2); border-color: var(--accent-sky); color: #38bdf8;">
-            📋 견적 텍스트 복사
+            📋 Copy Proposal Text
           </button>
           <button class="btn btn-gold" onclick="window.print()" style="font-size: 0.74rem; padding: 7px 14px;">
-            🖨️ 인쇄 / PDF 저장
+            🖨️ Print / Save PDF
           </button>
           <button class="close-modal" onclick="closeProposalModal()">&times;</button>
         </div>
@@ -1283,14 +1326,14 @@
               <div class="prop-title">VENLO GREENHOUSE ENGINEERING PROPOSAL</div>
               <div class="prop-subtitle">Commercial Parametric Design, Structural Verification &amp; Cost Estimation</div>
               <div style="margin-top: 8px; font-size: 0.8rem; color: #0f172a;">
-                수신(고객사): <input type="text" class="prop-client-input" id="prop-client-name" value="(주)한국스마트팜영농조합 귀하">
+                Client / Organization: <input type="text" class="prop-client-input" id="prop-client-name" value="Global Greenhouse Enterprises Inc.">
               </div>
             </div>
             <div class="prop-meta-box">
-              <div>문서번호: <strong id="prop-doc-no">VCAD-CPQ-2026-NURNBERG-01</strong></div>
-              <div>견적일자: <strong id="prop-date">2026-10-01</strong></div>
-              <div>유효기간: <strong>발행일로부터 30일간</strong></div>
-              <div>책임기술자: <strong>황인우 (Certified CEA Engineer)</strong></div>
+              <div>Document No: <strong id="prop-doc-no">VCAD-CPQ-2026-ENG-01</strong></div>
+              <div>Date: <strong id="prop-date">2026-10-06</strong></div>
+              <div>Validity: <strong>30 Days from Issue</strong></div>
+              <div>Lead Authority: <strong>Inwoovation Engineering Lab (Principal CEA Division)</strong></div>
             </div>
           </div>
 
@@ -1302,73 +1345,73 @@
 
           <!-- 4-Quadrant Engineering & Compliance Summary -->
           <div class="prop-grid-4">
-            <!-- Card 1: 온실 기본 사양 -->
+            <!-- Card 1: Basic Greenhouse Geometry -->
             <div class="prop-card">
               <div class="prop-card-title">
-                <span>📐 1. 온실 기하학 및 면적 사양</span>
+                <span>📐 1. Geometry &amp; Area Specifications</span>
                 <span class="engineering-seal">SPEC PASS</span>
               </div>
-              <div class="prop-card-row"><span>스팬 폭 × 동수:</span><strong id="pp-dim-span">8.0m × 3연동 (24.0m)</strong></div>
-              <div class="prop-card-row"><span>온실 총 연장:</span><strong id="pp-dim-len">32.0m (8베이 @ 4.0m)</strong></div>
-              <div class="prop-card-row"><span>처마고 / 최고고:</span><strong id="pp-dim-h">4.5m / 5.3m</strong></div>
-              <div class="prop-card-row"><span>온실 바닥 연면적:</span><strong id="pp-dim-area">768 m² (232.3평)</strong></div>
-              <div class="prop-card-row"><span>온실 내부 기적(체적):</span><strong id="pp-dim-vol">3,763 m³</strong></div>
+              <div class="prop-card-row"><span>Span Width × Bay Count:</span><strong id="pp-dim-span">8.0m × 3 Bays (24.0m)</strong></div>
+              <div class="prop-card-row"><span>Total Greenhouse Length:</span><strong id="pp-dim-len">32.0m (8 Bays @ 4.0m)</strong></div>
+              <div class="prop-card-row"><span>Gutter / Ridge Height:</span><strong id="pp-dim-h">4.5m / 5.3m</strong></div>
+              <div class="prop-card-row"><span>Total Floor Area:</span><strong id="pp-dim-area">768 m² (0.19 ac)</strong></div>
+              <div class="prop-card-row"><span>Enclosed Volume:</span><strong id="pp-dim-vol">3,763 m³</strong></div>
             </div>
 
-            <!-- Card 2: 구조 예비검토 (EN 1990/1993 간이식 — 인허가 구조계산서 아님) -->
+            <!-- Card 2: Structural Preliminary Audit (NEN 3859 / EN 1993) -->
             <div class="prop-card">
               <div class="prop-card-title">
-                <span>🌪️ 2. 구조 예비검토 (EN 1990/1993 간이식)</span>
+                <span>🌪️ 2. Preliminary Structural Audit (NEN 3859 / EN 1993)</span>
                 <span id="pp-struct-seal" class="engineering-seal" style="background: #ecfdf5; color: #059669; border-color: #10b981;">PRE-CHECK OK</span>
               </div>
-              <div class="prop-card-row"><span>설계 기준 풍속 / 풍압:</span><strong id="pp-struct-wind">32.0 m/s (1.15 kN/m²)</strong></div>
-              <div class="prop-card-row"><span>설계 적설심 / 작물하중:</span><strong id="pp-struct-snow">25.0 cm / 15.0 kg/m²</strong></div>
-              <div class="prop-card-row"><span>기둥 지배 모멘트 (MULS):</span><strong id="pp-struct-moment">4.20 kN·m</strong></div>
-              <div class="prop-card-row"><span>기둥 상단 수평 처짐 (δ):</span><strong id="pp-struct-deflect">16.0 mm (&lt; H/150)</strong></div>
-              <div class="prop-card-row"><span>최종 구조 안전율 (SF):</span><strong id="pp-struct-sf" style="color: #059669;">1.14 (구조안전 적격)</strong></div>
+              <div class="prop-card-row"><span>Design Wind Speed / Pressure:</span><strong id="pp-struct-wind">32.0 m/s (1.15 kN/m²)</strong></div>
+              <div class="prop-card-row"><span>Ground Snow Depth / Crop Load:</span><strong id="pp-struct-snow">25.0 cm / 15.0 kg/m²</strong></div>
+              <div class="prop-card-row"><span>Governing Moment (MULS):</span><strong id="pp-struct-moment">4.20 kN·m</strong></div>
+              <div class="prop-card-row"><span>Column Top Deflection (δ):</span><strong id="pp-struct-deflect">16.0 mm (&lt; H/150)</strong></div>
+              <div class="prop-card-row"><span>Overall Structural Safety Factor:</span><strong id="pp-struct-sf" style="color: #059669;">1.14 (PASS - Safe)</strong></div>
             </div>
 
-            <!-- Card 3: 바헤닝언 환기 & 미기후 -->
+            <!-- Card 3: Wageningen Ventilation & Microclimate -->
             <div class="prop-card">
               <div class="prop-card-title">
-                <span>🍃 3. 바헤닝언 천창 환기 공학 성능</span>
+                <span>🍃 3. Wageningen Natural Ventilation Performance</span>
                 <span class="engineering-seal">WAGENINGEN</span>
               </div>
-              <div class="prop-card-row"><span>천창 유효 개구 면적 (Av):</span><strong id="pp-vent-area">110.2 m²</strong></div>
-              <div class="prop-card-row"><span>시간당 자연 환기 횟수 (ACH):</span><strong id="pp-vent-ach" style="color: #0284c7;">47.9 회/h</strong></div>
-              <div class="prop-card-row"><span>외기 3m/s 복합 환기량 (Gtot):</span><strong id="pp-vent-gtot">180,500 m³/h</strong></div>
-              <div class="prop-card-row"><span>최대 자연 냉각 효과 (ΔTcool):</span><strong id="pp-vent-cooling">-5.0 °C 강하</strong></div>
-              <div class="prop-card-row"><span>지붕 채광 투광률:</span><strong id="pp-solar-trans">78.7 %</strong></div>
+              <div class="prop-card-row"><span>Effective Vent Opening Area (Av):</span><strong id="pp-vent-area">110.2 m²</strong></div>
+              <div class="prop-card-row"><span>Natural Air Changes Per Hour (ACH):</span><strong id="pp-vent-ach" style="color: #0284c7;">47.9 ACH</strong></div>
+              <div class="prop-card-row"><span>Combined Airflow Rate (Gtot @ 3m/s):</span><strong id="pp-vent-gtot">180,500 m³/h</strong></div>
+              <div class="prop-card-row"><span>Peak Natural Cooling Delta (ΔTcool):</span><strong id="pp-vent-cooling">-5.0 °C Drop</strong></div>
+              <div class="prop-card-row"><span>Roof Light Transmittance:</span><strong id="pp-solar-trans">78.7 %</strong></div>
             </div>
 
-            <!-- Card 4: 1D 파이프 절단 가공 수율 -->
+            <!-- Card 4: 1D Pipe Cutting Yield -->
             <div class="prop-card">
               <div class="prop-card-title">
-                <span>✂️ 4. 1D Bin-Packing 가공 수율</span>
+                <span>✂️ 4. 1D Bin-Packing Fabrication Yield</span>
                 <span class="engineering-seal">OPTIMIZED</span>
               </div>
-              <div class="prop-card-row"><span>총 원자재 본수 (6m 기준):</span><strong id="pp-cut-bars">94 본</strong></div>
-              <div class="prop-card-row"><span>파이프 유효 이용률 (Yield):</span><strong id="pp-cut-yield" style="color: #059669;">88.6 %</strong></div>
-              <div class="prop-card-row"><span>총 잔재율 (Scrap Rate):</span><strong id="pp-cut-scrap">11.4 %</strong></div>
-              <div class="prop-card-row"><span>철골 총중량 / 알루미늄:</span><strong id="pp-mat-weight">5,214 kg / 1,420 kg</strong></div>
-              <div class="prop-card-row"><span>독립기초 패드 개수:</span><strong id="pp-footing-qty">36 개소</strong></div>
+              <div class="prop-card-row"><span>Total Raw Bars (6m Stock):</span><strong id="pp-cut-bars">94 Bars</strong></div>
+              <div class="prop-card-row"><span>Material Utilization Yield:</span><strong id="pp-cut-yield" style="color: #059669;">88.6 %</strong></div>
+              <div class="prop-card-row"><span>Total Scrap Waste Rate:</span><strong id="pp-cut-scrap">11.4 %</strong></div>
+              <div class="prop-card-row"><span>Total Steel / Aluminum Weight:</span><strong id="pp-mat-weight">5,214 kg / 1,420 kg</strong></div>
+              <div class="prop-card-row"><span>Isolated Footing Count:</span><strong id="pp-footing-qty">36 Units</strong></div>
             </div>
           </div>
 
           <!-- Itemized Quotation Table -->
           <div style="font-size: 0.85rem; font-weight: 800; color: #0f172a; margin-bottom: 8px;">
-            📊 5. 공종별 시공 견적 세부 내역 (Itemized Quotation Breakdown)
+            📊 5. Itemized Quotation Breakdown
           </div>
           <table class="prop-table">
             <thead>
               <tr>
-                <th style="width: 80px;">부재코드</th>
-                <th>공종 및 규격 사양</th>
-                <th style="width: 70px;" class="tar">수량</th>
-                <th style="width: 50px;">단위</th>
-                <th style="width: 90px;" class="tar">공급단가</th>
-                <th style="width: 110px;" class="tar">공급금액 (<span class="curr-unit">KRW</span>)</th>
-                <th style="width: 110px;">시공 기준 / 비고</th>
+                <th style="width: 80px;">Item Code</th>
+                <th>Trade &amp; Specification</th>
+                <th style="width: 70px;" class="tar">Qty</th>
+                <th style="width: 50px;">Unit</th>
+                <th style="width: 90px;" class="tar">Unit Price</th>
+                <th style="width: 110px;" class="tar">Amount (<span class="curr-unit">USD</span>)</th>
+                <th style="width: 110px;">Standard / Notes</th>
               </tr>
             </thead>
             <tbody id="prop-table-body">
@@ -1380,15 +1423,15 @@
           <div class="prop-total-box">
             <div class="prop-total-card">
               <div class="prop-total-line">
-                <span>공급가액 소계 (Subtotal):</span>
+                <span>Subtotal Amount:</span>
                 <strong id="prop-subtotal">₩ 0</strong>
               </div>
               <div class="prop-total-line">
-                <span>부가가치세 (VAT 10%):</span>
+                <span>Tax / VAT (10%):</span>
                 <strong id="prop-vat">₩ 0</strong>
               </div>
               <div class="prop-total-line grand">
-                <span>총 공사 견적금액:</span>
+                <span>Total Contract Estimate:</span>
                 <strong id="prop-grand-total">₩ 0</strong>
               </div>
             </div>
@@ -1396,36 +1439,36 @@
 
           <!-- Commercial Terms & Signatures -->
           <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 12px 14px; font-size: 0.72rem; color: #475569; line-height: 1.6;">
-            <strong>[계약 조건 및 엔지니어링 특약]</strong><br>
-            1. 본 견적서는 네덜란드 NEN 3859 및 대한민국 농림축산식품부 내재해 설계 기준에 의거하여 작성되었습니다.<br>
-            2. 자재비는 용융아연도금강관(HDG) 및 고강도 알루미늄(Al 6063-T6) 원자재 시세에 연동되며, 견적 유효기간(30일) 경과 시 재산출됩니다.<br>
-            3. 본 제안서의 도면 및 BOM은 VenloCAD 3D 클린룸 파라메트릭 엔진에 의해 산출된 무결점 공학 데이터입니다.
+            <strong>[Terms &amp; Engineering Specifications]</strong><br>
+            1. This quotation is calculated in compliance with Dutch NEN 3859 and European EN 13031-1 structural standards.<br>
+            2. Material costs are indexed to international HDG steel and Al 6063-T6 commodity market indices, valid for 30 days from date of issuance.<br>
+            3. All geometry, bill of materials, and cutting schedules are synthesized autonomously by the VenloCAD 3D parametric cleanroom engine.
           </div>
 
           <div class="prop-signatures">
             <div class="prop-sig-box">
-              <strong>발주처 (Client / 갑):</strong><br>
-              상호: <span id="sig-client-name">(주)한국스마트팜영농조합</span><br>
-              대표자: ____________________ (인/서명)
-              <div class="prop-sig-line"><span>서명 일자: 2026년 ___월 ___일</span></div>
+              <strong>Client / Buyer:</strong><br>
+              Organization: <span id="sig-client-name">Global Greenhouse Enterprises Inc.</span><br>
+              Authorized Representative: ____________________ (Signature)
+              <div class="prop-sig-line"><span>Signature Date: _____ / _____ / 2026</span></div>
             </div>
             <div class="prop-sig-box">
-              <strong>설계 및 엔지니어링 감리처 (Engineer / 을):</strong><br>
-              상호: <strong>인우베이션 랩 (Inwoovation Lab CEA)</strong><br>
-              책임기술자: <strong>황인우 (Inwoo Hwang)</strong> (인)<br>
-              소재지: 대전광역시 유성구 대학로 99 충남대학교 스마트팜
-              <div class="prop-sig-line"><span>발행 일자: 2026년 10월 01일</span></div>
+              <strong>Engineering &amp; Technical Authority:</strong><br>
+              Company: <strong>Inwoovation Engineering Lab</strong><br>
+              Lead Structural Engineer: <strong>Principal CEA Engineering Team</strong><br>
+              Office: <strong>Inwoovation Engineering Lab • Global Commercial CEA Operations</strong>
+              <div class="prop-sig-line"><span>Issue Date: October 06, 2026</span></div>
             </div>
           </div>
         </div>
       </div>
 
       <div class="modal-footer no-print">
-        <span style="font-size: 0.78rem; color: var(--text-muted);">통화 단위 전환 시 실시간 기준 환율(USD: 1,360.5원 / EUR: 1,480.0원)이 적용됩니다.</span>
+        <span style="font-size: 0.78rem; color: var(--text-muted);">Currency amounts are indexed to standard international baseline rates (USD primary, EUR secondary).</span>
         <div style="display: flex; gap: 8px;">
-          <button class="btn btn-primary" onclick="copyProposalSummaryText()">📋 견적 요약 복사</button>
-          <button class="btn btn-gold" onclick="window.print()">🖨️ 인쇄 / PDF 보고서</button>
-          <button class="btn" onclick="closeProposalModal()">닫기</button>
+          <button class="btn btn-primary" onclick="copyProposalSummaryText()">📋 Copy Proposal Summary</button>
+          <button class="btn btn-gold" onclick="window.print()">🖨️ Print / Save PDF</button>
+          <button class="btn" onclick="closeProposalModal()">Close</button>
         </div>
       </div>
     </div>
@@ -1436,8 +1479,8 @@
     <div class="modal-content" style="max-width: 650px;">
       <div class="modal-header">
         <div>
-          <h2>📑 브라우저 로컬 저장 슬롯 관리자</h2>
-          <span style="font-size: 0.75rem; color: var(--text-muted);">서버 전송 없이 내 브라우저에 안전하게 보관되는 3개 전용 슬롯 & 자동 저장본</span>
+          <h2>📑 Browser Local Storage Slot Manager</h2>
+          <span style="font-size: 0.75rem; color: var(--text-muted);">Offline client-side storage with 3 dedicated project slots and automatic local recovery</span>
         </div>
         <button class="close-modal" onclick="closeSlotModal()">&times;</button>
       </div>
@@ -1447,8 +1490,8 @@
         </div>
       </div>
       <div class="modal-footer">
-        <span style="font-size: 0.75rem; color: var(--text-muted);">💡 브라우저 캐시 삭제 전까지 영구 보존됩니다.</span>
-        <button class="btn" onclick="closeSlotModal()">닫기</button>
+        <span style="font-size: 0.75rem; color: var(--text-muted);">💡 Data persists indefinitely until browser storage is manually cleared.</span>
+        <button class="btn" onclick="closeSlotModal()">Close</button>
       </div>
     </div>
   </div>
@@ -1458,8 +1501,8 @@
     <div class="modal-content" style="max-width: 720px; border-color: var(--accent-emerald);">
       <div class="modal-header" style="background: rgba(16, 185, 129, 0.1);">
         <div>
-          <h2 style="color: #34d399; font-size: 1.1rem; margin: 0;">🏛️ 황인우 엔지니어 1:1 맞춤 설계 &amp; 집중 케어 서비스</h2>
-          <span style="font-size: 0.72rem; color: var(--text-muted);">충남대학교 스마트팜 시설원예학(CEA) 엔지니어링 기반 맞춤 설계 · 견적 거품 제거 · 정밀 감리</span>
+          <h2 style="color: #34d399; font-size: 1.1rem; margin: 0;">🏛️ Turnkey Commercial Greenhouse Engineering &amp; Structural Consultation</h2>
+          <span style="font-size: 0.72rem; color: var(--text-muted);">Inwoovation Engineering Lab • Controlled Environment Agriculture (CEA) • Turnkey Parametric Design &amp; Structural Audit</span>
         </div>
         <button class="close-modal" onclick="closeConsultModal()">&times;</button>
       </div>
@@ -1467,55 +1510,55 @@
         <!-- Live Design Snapshot Card -->
         <div style="background: rgba(15, 23, 42, 0.9); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 12px; padding: 14px 18px; margin-bottom: 16px;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-            <strong style="color: var(--accent-sky); font-size: 0.85rem;">📋 현재 작업 중인 설계 데이터가 자동으로 연동됩니다:</strong>
+            <strong style="color: var(--accent-sky); font-size: 0.85rem;">📋 Active Project Model Parameters Attached:</strong>
             <span style="font-size: 0.68rem; background: rgba(16, 185, 129, 0.2); color: #34d399; padding: 2px 8px; border-radius: 999px; font-weight: 700;">LIVE ATTACHED</span>
           </div>
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; font-size: 0.76rem; font-family: var(--font-mono);">
-            <div>규격: <span id="c-spec" style="color: #fff; font-weight: 700;">8.0m × 3연동</span></div>
-            <div>총 면적: <span id="c-area" style="color: #fff; font-weight: 700;">768 m² (232평)</span></div>
-            <div>처마/기둥: <span id="c-col" style="color: #fff; font-weight: 700;">4.5m / 100x50</span></div>
-            <div>추정 자재비: <span id="c-cost" style="color: var(--accent-gold); font-weight: 700;">3,842 만원</span></div>
+            <div>Dimensions: <span id="c-spec" style="color: #fff; font-weight: 700;">8.0m × 3 Bays</span></div>
+            <div>Total Area: <span id="c-area" style="color: #fff; font-weight: 700;">768 m² (0.19 ac)</span></div>
+            <div>Gutter / Column: <span id="c-col" style="color: #fff; font-weight: 700;">4.5m / RHS 100x50</span></div>
+            <div>Est. Material Cost: <span id="c-cost" style="color: var(--accent-gold); font-weight: 700;">$28,250</span></div>
           </div>
         </div>
 
-        <h4 style="font-size: 0.88rem; font-weight: 800; color: #fff; margin-bottom: 8px;">💡 이런 분들께 1:1 집중 케어를 추천드립니다</h4>
+        <h4 style="font-size: 0.88rem; font-weight: 800; color: #fff; margin-bottom: 8px;">💡 Turnkey Engineering Services Provided:</h4>
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; font-size: 0.74rem; color: #cbd5e1; margin-bottom: 18px;">
           <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); border-radius: 8px; padding: 10px;">
-            <strong style="color: var(--accent-cyan); display: block; margin-bottom: 4px;">1. 시공사 견적 교차검증 (BOM Audit)</strong>
-            업체가 제시한 평당 공사비와 철골/알루미늄 부재 수량이 적정한지, 불필요한 마진 거품이 없는지 팩트체크합니다.
+            <strong style="color: var(--accent-cyan); display: block; margin-bottom: 4px;">1. Contractor Quotation Cross-Audit (BOM Fact-Check)</strong>
+            Audit third-party contractor bills of materials, verify member quantities and unit costs, and eliminate hidden subcontractor markups.
           </div>
           <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); border-radius: 8px; padding: 10px;">
-            <strong style="color: var(--accent-emerald); display: block; margin-bottom: 4px;">2. 맞춤형 2D/3D 실시설계 납품</strong>
-            내 토지 지적도와 경사도를 완벽히 반영한 배치도, 기초도, 골조도, 배관도 풀 패키지 도면을 작성해 드립니다.
+            <strong style="color: var(--accent-emerald); display: block; margin-bottom: 4px;">2. Site-Specific 2D/3D Detail Engineering Package</strong>
+            Complete engineering packages incorporating site topography, foundation layout, steel framing plans, and HVAC schematics.
           </div>
           <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); border-radius: 8px; padding: 10px;">
-            <strong style="color: var(--accent-gold); display: block; margin-bottom: 4px;">3. 정부 지원사업 &amp; 인허가 도서</strong>
-            청년농 스마트팜 종합자금, 농식품부 보조금 심사 통과를 위한 전문 구조계산서 및 사업계획서 기술 도판을 완성합니다.
+            <strong style="color: var(--accent-gold); display: block; margin-bottom: 4px;">3. Certified Structural Reports for Building Permits</strong>
+            Professional structural calculation reports and technical blueprints required for municipal building permits and commercial loan financing.
           </div>
           <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); border-radius: 8px; padding: 10px;">
-            <strong style="color: var(--accent-sky); display: block; margin-bottom: 4px;">4. 작물별 온실 환경 최적화</strong>
-            딸기 고설베드, 토마토 하이와이어, 엽채류 수경재배에 최적화된 처마고, 차광률, 환기창 설계를 컨설팅합니다.
+            <strong style="color: var(--accent-sky); display: block; margin-bottom: 4px;">4. Crop-Specific CEA Microclimate Optimization</strong>
+            Optimized gutter heights, dynamic shading, and Wageningen airflow designs tailored for high-wire tomatoes, strawberries, or leafy greens.
           </div>
         </div>
 
         <div style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 10px; padding: 12px; display: flex; flex-direction: column; gap: 8px;">
-          <div style="font-size: 0.8rem; font-weight: 700; color: #fff;">📩 간편 문의 접수 방법 (24시간 내 직통 회신)</div>
+          <div style="font-size: 0.8rem; font-weight: 700; color: #fff;">📩 Direct Consultation Channels (Response within 24h)</div>
           <div style="display: flex; gap: 8px; flex-wrap: wrap;">
             <button class="btn btn-primary" style="flex: 1; min-width: 170px; margin: 0; background: linear-gradient(135deg, #059669, #10b981); border: none; font-weight: 800;" onclick="sendConsultEmail()">
-              ✉️ 현재 설계안 첨부 이메일 발송
+              ✉️ Send Inquiry Email with Model Attached
             </button>
             <button class="btn" style="flex: 1; min-width: 170px; margin: 0; background: rgba(56, 189, 248, 0.15); border-color: rgba(56, 189, 248, 0.4); color: #38bdf8; font-weight: 700;" onclick="copyConsultText()">
-              📋 문의 양식 복사 (웹메일/메신저)
+              📋 Copy Inquiry Brief to Clipboard
             </button>
             <button class="btn" style="flex: 1; min-width: 140px; margin: 0;" onclick="copyConsultLinkAndOpen()">
-              🌐 포털 고객센터 문의
+              🌐 Visit Inwoovation Contact Center
             </button>
           </div>
         </div>
       </div>
       <div class="modal-footer">
-        <span style="font-size: 0.72rem; color: var(--text-muted);">📧 직통 문의: contact@inwoovation.com | 황인우 엔지니어</span>
-        <button class="btn" onclick="closeConsultModal()">닫기</button>
+        <span style="font-size: 0.72rem; color: var(--text-muted);">📧 Direct Engineering Desk: contact@inwoovation.com | Inwoovation Engineering Lab</span>
+        <button class="btn" onclick="closeConsultModal()">Close</button>
       </div>
     </div>
   </div>
@@ -1740,10 +1783,10 @@
           col.receiveShadow = true;
           col.userData = {
             type: 'COLUMN',
-            name: `주기둥 (Main Column C-${b * numPostsZ + p + 1})`,
-            spec: `각관 ${params.columnSize} SGH400 HDG`,
-            role: '처마 수직 하중 및 외측 풍하중 지지 | NEN 3859 휨모멘트 저항',
-            status: structural.safetyFactor >= 1.0 ? '✅ 안전 (PASS)' : '⚠️ 과하중 (WARNING)'
+            name: `Main Column (C-${b * numPostsZ + p + 1})`,
+            spec: `RHS ${params.columnSize} SGH400 HDG`,
+            role: 'Supports vertical gutter loads & resists external wind loads | NEN 3859 Moment Resistance',
+            status: structural.safetyFactor >= 1.0 ? '✅ Safe (PASS)' : '⚠️ Overload (WARNING)'
           };
           greenhouseGroup.add(col);
 
@@ -1754,10 +1797,10 @@
             foot.receiveShadow = true;
             foot.userData = {
               type: 'FOOTING',
-              name: `독립 콘크리트 기초 (Footing F-${b + 1})`,
-              spec: 'Φ300 x 1200mm 원형 피어 + 4점 M20 앵커볼트',
-              role: '기둥 휨모멘트 반력 흡수 및 바람에 의한 인발(Uplift) 방지',
-              status: '✅ 지내력 150 kN/m² 안전'
+              name: `Concrete Pad Footing (F-${b + 1})`,
+              spec: 'Φ300 x 1200mm Pier + 4-Point M20 Anchor Bolts',
+              role: 'Absorbs column reaction moments and prevents wind uplift',
+              status: '✅ Safe (Bearing Capacity 150 kN/m²)'
             };
             greenhouseGroup.add(foot);
 
@@ -1784,10 +1827,10 @@
         gutter.castShadow = true;
         gutter.userData = {
           type: 'GUTTER',
-          name: `알루미늄 거터 (Gutter Channel G-${b + 1})`,
-          spec: 'Al 6063-T6 고강도 일체형 압출 프로파일',
-          role: '지붕 빗물 우수 배수 채널 (시간당 180 L/m) 및 기둥 상부 타이빔 역할',
-          status: '✅ 처짐 L/300 이내 합격'
+          name: `Aluminum Gutter Channel (G-${b + 1})`,
+          spec: 'Al 6063-T6 Heavy-Duty Extruded Profile',
+          role: 'Roof rainwater drainage channel (180 L/m/h) & column tie-beam',
+          status: '✅ Deflection within L/300 (PASS)'
         };
         greenhouseGroup.add(gutter);
       }
@@ -1808,10 +1851,10 @@
           ridge.position.set(ridgeX, ridgeY, 0);
           ridge.userData = {
             type: 'RIDGE',
-            name: `지붕 용마루 (Roof Ridge R-${b * 2 + sg + 1})`,
-            spec: 'Al 6063-T6 온실 용마루 릿지 프로파일',
-            role: '유리 최상단 고정 및 지붕 연속 환기창(Roof Vent) 힌지 축 지탱',
-            status: '✅ 정상'
+            name: `Roof Ridge Profile (R-${b * 2 + sg + 1})`,
+            spec: 'Al 6063-T6 Greenhouse Ridge Profile',
+            role: 'Secures top glazing & supports roof vent hinge axis',
+            status: '✅ Operational'
           };
           greenhouseGroup.add(ridge);
 
@@ -1857,10 +1900,10 @@
               leftFixedGlass.rotation.z = radPitch;
               leftFixedGlass.userData = {
                 type: 'FIXED_ROOF_GLASS',
-                name: '지붕 하부 고정유리 (Fixed Lower Glass)',
-                spec: '4mm 저철분 산광 강화유리 (Haze 45%)',
-                role: '처마 부근 고정 채광 및 기밀 유지',
-                status: '✅ 정상'
+                name: 'Fixed Lower Roof Glass',
+                spec: '4mm Low-Iron Diffuse Tempered Glass (Haze 45%)',
+                role: 'Gutter glazing & airtight weather envelope',
+                status: '✅ Operational'
               };
               greenhouseGroup.add(leftFixedGlass);
 
@@ -1871,10 +1914,10 @@
               rightFixedGlass.rotation.z = -radPitch;
               rightFixedGlass.userData = {
                 type: 'FIXED_ROOF_GLASS',
-                name: '지붕 하부 고정유리 (Fixed Lower Glass)',
-                spec: '4mm 저철분 산광 강화유리 (Haze 45%)',
-                role: '처마 부근 고정 채광 및 기밀 유지',
-                status: '✅ 정상'
+                name: 'Fixed Lower Roof Glass',
+                spec: '4mm Low-Iron Diffuse Tempered Glass (Haze 45%)',
+                role: 'Gutter glazing & airtight weather envelope',
+                status: '✅ Operational'
               };
               greenhouseGroup.add(rightFixedGlass);
 
@@ -1886,10 +1929,10 @@
               leftVentGlass.rotation.z = leftRotZ;
               leftVentGlass.userData = {
                 type: 'ROOF_VENT',
-                name: `좌측 연속 천창 (Left Roof Vent V-${b * 2 + sg + 1}-L)`,
-                spec: 'Al 6063-T6 새시 + 4mm 강화유리',
-                role: '자연 환기 배기 및 온습도 제어',
-                status: isLeftVentOpen ? `🌬️ 개방 ${ventOpenPct.toFixed(0)}% (${leftAngleDeg.toFixed(1)}°)` : '🔒 전폐 (Sealed)'
+                name: `Left Continuous Roof Vent (V-${b * 2 + sg + 1}-L)`,
+                spec: 'Al 6063-T6 Sash + 4mm Tempered Glass',
+                role: 'Natural convective exhaust & microclimate ventilation',
+                status: isLeftVentOpen ? `🌬️ Open ${ventOpenPct.toFixed(0)}% (${leftAngleDeg.toFixed(1)}°)` : '🔒 Sealed'
               };
               greenhouseGroup.add(leftVentGlass);
 
@@ -1909,10 +1952,10 @@
               rightVentGlass.rotation.z = rightRotZ;
               rightVentGlass.userData = {
                 type: 'ROOF_VENT',
-                name: `우측 연속 천창 (Right Roof Vent V-${b * 2 + sg + 1}-R)`,
-                spec: 'Al 6063-T6 새시 + 4mm 강화유리',
-                role: '자연 환기 배기 및 온습도 제어',
-                status: isRightVentOpen ? `🌬️ 개방 ${ventOpenPct.toFixed(0)}% (${rightAngleDeg.toFixed(1)}°)` : '🔒 전폐 (Sealed)'
+                name: `Right Continuous Roof Vent (V-${b * 2 + sg + 1}-R)`,
+                spec: 'Al 6063-T6 Sash + 4mm Tempered Glass',
+                role: 'Natural convective exhaust & microclimate ventilation',
+                status: isRightVentOpen ? `🌬️ Open ${ventOpenPct.toFixed(0)}% (${rightAngleDeg.toFixed(1)}°)` : '🔒 Sealed'
               };
               greenhouseGroup.add(rightVentGlass);
 
@@ -1940,10 +1983,10 @@
                 rodLeft.rotation.z = Math.atan2(dLy, dLx) - Math.PI / 2;
                 rodLeft.userData = {
                   type: 'PUSH_ROD',
-                  name: `천창 랙 앤 피니언 푸시로드 (Vent Push Rod R-${b + 1}-${p + 1}-L)`,
-                  spec: 'Φ25mm 아연도금 랙바 + 전동 모터 구동축',
-                  role: '천창 개폐 토크 전달 및 강풍 시 창문 지탱',
-                  status: isLeftVentOpen ? `작동 양호 (신장 ${rodLenLeft.toFixed(2)}m)` : '대기 (수축)'
+                  name: `Vent Rack & Pinion Push Rod (R-${b + 1}-${p + 1}-L)`,
+                  spec: 'Φ25mm Galvanized Rack Bar + Motor Drive Shaft',
+                  role: 'Transfers vent opening torque & resists wind uplift',
+                  status: isLeftVentOpen ? `Operating (Stroke ${rodLenLeft.toFixed(2)}m)` : 'Retracted (Closed)'
                 };
                 greenhouseGroup.add(rodLeft);
 
@@ -1959,10 +2002,10 @@
                 rodRight.rotation.z = Math.atan2(dRy, dRx) - Math.PI / 2;
                 rodRight.userData = {
                   type: 'PUSH_ROD',
-                  name: `천창 랙 앤 피니언 푸시로드 (Vent Push Rod R-${b + 1}-${p + 1}-R)`,
-                  spec: 'Φ25mm 아연도금 랙바 + 전동 모터 구동축',
-                  role: '천창 개폐 토크 전달 및 강풍 시 창문 지탱',
-                  status: isRightVentOpen ? `작동 양호 (신장 ${rodLenRight.toFixed(2)}m)` : '대기 (수축)'
+                  name: `Vent Rack & Pinion Push Rod (R-${b + 1}-${p + 1}-R)`,
+                  spec: 'Φ25mm Galvanized Rack Bar + Motor Drive Shaft',
+                  role: 'Transfers vent opening torque & resists wind uplift',
+                  status: isRightVentOpen ? `Operating (Stroke ${rodLenRight.toFixed(2)}m)` : 'Retracted (Closed)'
                 };
                 greenhouseGroup.add(rodRight);
               }
@@ -2000,10 +2043,10 @@
             chord.position.set(bayStartX + W / 2, H, z);
             chord.userData = {
               type: 'TRUSS',
-              name: `워렌 트러스 (Warren Truss T-${b + 1}-${p + 1})`,
-              spec: '각관 50x30x2.3 하현재 + 환봉 Φ12 래티스',
-              role: `스팬 횡방향 휨 방지 및 토마토/파프리카 작물 하중(${params.cropLoad} kg/m²) 지탱`,
-              status: '✅ 응력비 0.68 양호'
+              name: `Warren Truss (T-${b + 1}-${p + 1})`,
+              spec: 'RHS 50x30x2.3 Bottom Chord + Φ12 Round Bar Web',
+              role: `Resists span lateral bending & supports crop load (${params.cropLoad} kg/m²)`,
+              status: '✅ Stress Ratio 0.68 (Safe)'
             };
             greenhouseGroup.add(chord);
 
@@ -2063,10 +2106,10 @@
         atuChamber.receiveShadow = true;
         atuChamber.userData = {
           type: 'SEMI_CLOSED_ATU',
-          name: '반밀폐 측면 복도 공조실 (Corridor ATU Chamber)',
-          spec: `단열 샌드위치 패널 100T | ${Math.ceil(bays / 2) * 2}대 EC 고효율 원심 송풍기`,
-          role: '외기/환기 혼합, 고압 포그 냉각 및 거터 하부 에어덕트 가압 급기',
-          status: '✅ 양압 +22.4Pa 최적 (COP 4.25)'
+          name: 'Semi-Closed Corridor ATU Chamber',
+          spec: `100T Insulated Sandwich Panel | ${Math.ceil(bays / 2) * 2} EC Centrifugal Fans`,
+          role: 'Air mixing, high-pressure fog cooling, and sub-gutter duct pressurization',
+          status: '✅ Positive Pressure +22.4Pa (COP 4.25)'
         };
         greenhouseGroup.add(atuChamber);
 
@@ -2105,10 +2148,10 @@
             duct.receiveShadow = true;
             duct.userData = {
               type: 'SEMI_CLOSED_DUCT',
-              name: `거터 하부 타공 PE 에어덕트 (Duct D-${b + 1})`,
-              spec: `Φ750mm x ${L.toFixed(1)}m 고압 타공 폴리에틸렌 튜브`,
-              role: '양압 공조 혼합 공기 균일 분배 & 작물 군락 상향 미기상 기류 형성',
-              status: '✅ 정압 +22.4Pa / 풍속 1.8 m/s'
+              name: `Under-Gutter Perforated PE Duct (D-${b + 1})`,
+              spec: `Φ750mm x ${L.toFixed(1)}m Perforated Polyethylene Duct`,
+              role: 'Uniform air distribution & microclimate canopy upward airflow',
+              status: '✅ Static Pressure +22.4Pa / Air Velocity 1.8 m/s'
             };
             greenhouseGroup.add(duct);
 
@@ -2268,8 +2311,8 @@
       const M_Rd = (colSpec.Zx * fy) / gammaM;
 
       const combos = [
-        { name: 'CO1 풍하중 주도', N: 1.35 * N_perm + 1.5 * 0.5 * N_snow, M: 1.5 * M_wind },
-        { name: 'CO2 적설 주도', N: 1.35 * N_perm + 1.5 * N_snow, M: 1.5 * 0.6 * M_wind }
+        { name: 'CO1 Wind Dominant', N: 1.35 * N_perm + 1.5 * 0.5 * N_snow, M: 1.5 * M_wind },
+        { name: 'CO2 Snow Dominant', N: 1.35 * N_perm + 1.5 * N_snow, M: 1.5 * 0.6 * M_wind }
       ].map(c => ({ ...c, utilization: c.N / Nb_Rd + c.M / M_Rd }));
       const governing = combos.reduce((a, b) => (b.utilization > a.utilization ? b : a));
       const sf = 1 / governing.utilization;
@@ -2320,15 +2363,15 @@
       const footingCost = numColumns * 65000;
       const totalEstimatedCost = steelCost + alCost + glassCost + footingCost;
 
-      document.getElementById('hud-area').innerText = `${totalArea.toFixed(0)} m² (${pyeong}평)`;
+      document.getElementById('hud-area').innerText = `${totalArea.toFixed(0)} m² (${(totalArea * 0.000247105).toFixed(2)} ac)`;
       document.getElementById('hud-steel').innerText = `${totalSteelKg.toLocaleString()} kg`;
       document.getElementById('hud-al').innerText = `${totalAlKg.toLocaleString()} kg`;
-      document.getElementById('hud-cost').innerText = `${Math.round(totalEstimatedCost / 10000).toLocaleString()} 만원`;
+      document.getElementById('hud-cost').innerText = `$${Math.round(totalEstimatedCost / 1360).toLocaleString()}`;
 
       const sfEl = document.getElementById('hud-safety');
       const sfVal = structural.safetyFactor;
       if (!structural.slsPass) {
-        sfEl.innerText = `D (${sfVal.toFixed(2)} SLS 처짐 초과)`;
+        sfEl.innerText = `D (${sfVal.toFixed(2)} SLS Deflection Exceeded)`;
         sfEl.style.color = '#f43f5e';
       } else if (sfVal >= 1.2) {
         sfEl.innerText = `A+ (${sfVal.toFixed(2)} PASS)`;
@@ -2344,7 +2387,7 @@
       document.getElementById('metric-wind-qp').innerText = `${structural.qp_kN} kN/m²`;
       document.getElementById('metric-snow-s').innerText = `${structural.snow_kN} kN/m²`;
       document.getElementById('metric-col-moment').innerText = `${structural.moment_kNm} kN·m / N ${structural.axial_kN} kN (Nb,Rd ${structural.bucklingResistance_kN} kN, λ ${structural.slenderness})`;
-      document.getElementById('metric-col-deflection').innerText = `${structural.deflection_mm} mm (한계 ${structural.deflection_allow} mm)`;
+      document.getElementById('metric-col-deflection').innerText = `${structural.deflection_mm} mm (Limit ${structural.deflection_allow} mm)`;
       const tabSf = document.getElementById('metric-col-sf');
       const overallPass = sfVal >= 1.0 && structural.slsPass;
       tabSf.innerText = `${sfVal.toFixed(2)} (${overallPass ? 'PASS' : 'FAIL'} · ${structural.governingCombo})`;
@@ -2354,7 +2397,7 @@
       const vent = computeVentilationMetrics();
       const achEl = document.getElementById('hud-ach');
       if (achEl) {
-        achEl.innerText = `${vent.ACH.toFixed(1)} 회/h (${params.ventOpenPct.toFixed(0)}%)`;
+        achEl.innerText = `${vent.ACH.toFixed(1)} ACH (${params.ventOpenPct.toFixed(0)}%)`;
         if (vent.ACH >= 30) achEl.style.color = '#10b981';
         else if (vent.ACH >= 10) achEl.style.color = '#38bdf8';
         else achEl.style.color = '#f59e0b';
@@ -2369,30 +2412,30 @@
       const mGtot = document.getElementById('metric-vent-gtot');
       if (mGtot) mGtot.innerText = `${Math.round(vent.G_tot_m3h).toLocaleString()} m³/h`;
       const mAch = document.getElementById('metric-vent-ach');
-      if (mAch) mAch.innerText = `${vent.ACH.toFixed(1)} 회/h`;
+      if (mAch) mAch.innerText = `${vent.ACH.toFixed(1)} ACH`;
       const mCool = document.getElementById('metric-vent-cooling');
-      if (mCool) mCool.innerText = `-${vent.coolingDrop.toFixed(1)} °C 강하 (실내 +${vent.deltaT_excess.toFixed(1)}°C)`;
+      if (mCool) mCool.innerText = `-${vent.coolingDrop.toFixed(1)} °C Drop (Indoor +${vent.deltaT_excess.toFixed(1)}°C)`;
 
       const vBadge = document.getElementById('vent-flow-badge');
       if (vBadge) {
         if (params.semiClosed) {
-          vBadge.innerText = '🌀 반밀폐 양압 (+22.4Pa / 최적)';
+          vBadge.innerText = '🌀 Semi-Closed (+22.4Pa / Optimal)';
           vBadge.style.color = '#38bdf8';
           vBadge.style.background = 'rgba(56, 189, 248, 0.2)';
         } else if (!params.showRoofVents || params.ventSide === 'closed' || params.ventOpenPct === 0) {
-          vBadge.innerText = '밀폐 기밀 (Sealed)';
+          vBadge.innerText = 'Sealed Weatherproof';
           vBadge.style.color = '#94a3b8';
           vBadge.style.background = 'rgba(148, 163, 184, 0.15)';
         } else if (vent.ACH > 60) {
-          vBadge.innerText = '강풍 대량환기 (High Flow)';
+          vBadge.innerText = 'High Flow Ventilation';
           vBadge.style.color = '#38bdf8';
           vBadge.style.background = 'rgba(56, 189, 248, 0.2)';
         } else if (vent.ACH >= 30) {
-          vBadge.innerText = '최적 자연환기 (Optimal)';
+          vBadge.innerText = 'Optimal Ventilation';
           vBadge.style.color = '#34d399';
           vBadge.style.background = 'rgba(16, 185, 129, 0.2)';
         } else {
-          vBadge.innerText = '미풍 제어 (Gentle Flow)';
+          vBadge.innerText = 'Gentle Flow Control';
           vBadge.style.color = '#fbbf24';
           vBadge.style.background = 'rgba(245, 158, 11, 0.2)';
         }
@@ -2475,34 +2518,34 @@
       const elW = document.getElementById('dim-width');
       if (wPos) {
         elW.style.opacity = '1'; elW.style.left = `${wPos.x}px`; elW.style.top = `${wPos.y}px`;
-        elW.innerHTML = `가로 폭: <span>${(bays * W).toFixed(1)}m</span> (${bays}연동)`;
+        elW.innerHTML = `Width: <span>${(bays * W).toFixed(1)}m</span> (${bays} Bays)`;
       } else elW.style.opacity = '0';
 
       const lPos = projectPos(offsetX - 1.2, 0.4, 0);
       const elL = document.getElementById('dim-length');
       if (lPos) {
         elL.style.opacity = '1'; elL.style.left = `${lPos.x}px`; elL.style.top = `${lPos.y}px`;
-        elL.innerHTML = `총 연장: <span>${L.toFixed(1)}m</span>`;
+        elL.innerHTML = `Length: <span>${L.toFixed(1)}m</span>`;
       } else elL.style.opacity = '0';
 
       const gPos = projectPos(offsetX - 0.6, H / 2, offsetZ);
       const elG = document.getElementById('dim-gutter');
       if (gPos) {
         elG.style.opacity = '1'; elG.style.left = `${gPos.x}px`; elG.style.top = `${gPos.y}px`;
-        elG.innerHTML = `처마고: <span>${H.toFixed(1)}m</span>`;
+        elG.innerHTML = `Gutter Height: <span>${H.toFixed(1)}m</span>`;
       } else elG.style.opacity = '0';
 
       const rPos = projectPos(offsetX + W / 4, ridgeY + 0.4, offsetZ);
       const elR = document.getElementById('dim-ridge');
       if (rPos) {
         elR.style.opacity = '1'; elR.style.left = `${rPos.x}px`; elR.style.top = `${rPos.y}px`;
-        elR.innerHTML = `최고고: <span>${ridgeY.toFixed(1)}m</span>`;
+        elR.innerHTML = `Ridge Height: <span>${ridgeY.toFixed(1)}m</span>`;
       } else elR.style.opacity = '0';
     }
 
     // --- 7. Interactive 3D Part Inspector (Raycasting) ---
     function onCanvasClick(e) {
-      if (e.target.closest('#sidebar') || e.target.closest('header') || e.target.closest('#hud-panel') || e.target.closest('#gizmo-wrap')) return;
+      if (e.target.closest('#sidebar') || e.target.closest('#sidebar-toggle-btn') || e.target.closest('header') || e.target.closest('#hud-panel') || e.target.closest('#gizmo-wrap')) return;
 
       mouse.x = (e.clientX / window.innerWidth) * 2 - 1;
       mouse.y = -(e.clientY / window.innerHeight) * 2 + 1;
@@ -2522,10 +2565,10 @@
       const data = mesh.userData;
 
       const hud = document.getElementById('inspector-hud');
-      document.getElementById('insp-title').innerText = data.name || '온실 골조 부재';
-      document.getElementById('insp-spec').innerText = `규격: ${data.spec || '표준 온실 부재'}`;
-      document.getElementById('insp-desc').innerText = data.role || '온실 하중 전달 및 외피 지탱';
-      document.getElementById('insp-status').innerText = data.status || '✅ 안전 (PASS)';
+      document.getElementById('insp-title').innerText = data.name || 'Greenhouse Structural Member';
+      document.getElementById('insp-spec').innerText = `Spec: ${data.spec || 'Standard Member'}`;
+      document.getElementById('insp-desc').innerText = data.role || 'Transfers structural loads and supports glazing';
+      document.getElementById('insp-status').innerText = data.status || '✅ Safe (PASS)';
 
       hud.style.display = 'flex';
 
@@ -2742,16 +2785,43 @@
       const atuChamberEl = document.getElementById('metric-atu-chamber');
       if (atuChamberEl) {
         const fanCount = Math.max(2, Math.ceil(params.bays / 2) * 2);
-        atuChamberEl.innerText = `1개소 (${fanCount} EC Fans)`;
+        atuChamberEl.innerText = `1 Unit (${fanCount} EC Fans)`;
       }
       const atuDuctsEl = document.getElementById('metric-atu-ducts');
       if (atuDuctsEl) {
-        atuDuctsEl.innerText = `Φ750mm (${params.bays}열 배치)`;
+        atuDuctsEl.innerText = `Φ750mm (${params.bays} Ducts)`;
       }
 
       buildGreenhouse();
       trackGA4Event('semi_closed_toggle', { enabled: enabled });
     }
+
+    function toggleSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      const toggleBtn = document.getElementById('sidebar-toggle-btn');
+      const icon = document.getElementById('sidebar-toggle-icon');
+      if (!sidebar) return;
+      const isCollapsed = sidebar.classList.toggle('collapsed');
+      if (toggleBtn) {
+        toggleBtn.classList.toggle('collapsed', isCollapsed);
+        toggleBtn.setAttribute('title', isCollapsed ? 'Expand Sidebar (Ctrl+B)' : 'Collapse Sidebar (Ctrl+B)');
+      }
+      if (icon) {
+        icon.textContent = isCollapsed ? '▶' : '◀';
+      }
+      showToast(isCollapsed ? 'Sidebar collapsed (Ctrl+B to expand)' : 'Sidebar expanded');
+      setTimeout(() => {
+        if (typeof onWindowResize === 'function') onWindowResize();
+      }, 360);
+    }
+
+    window.addEventListener('keydown', (e) => {
+      if (['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement?.tagName)) return;
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'b') {
+        e.preventDefault();
+        toggleSidebar();
+      }
+    });
 
     function switchTab(tabId, btn) {
       document.querySelectorAll('.tab-content').forEach(el => el.style.display = 'none');
@@ -2856,13 +2926,13 @@
         version: "2.0",
         savedAt: new Date().toISOString(),
         projectName: `Venlo_${params.spanWidth}m_${params.bays}bays_${params.totalLength}m`,
-        engineer: "Hwang Inwoo",
+        engineer: "Inwoovation Engineering Lab",
         standards: "NEN 3859 / EN 13031-1",
         params: params
       };
       const jsonStr = JSON.stringify(projectData, null, 2);
       downloadFile(`VenloCAD_Project_${params.bays}Bay_${params.spanWidth}m.vcad`, "application/json", jsonStr);
-      showToast("💾 .vcad 프로젝트 파일이 저장되었습니다.");
+      showToast("💾 .vcad project file saved successfully.");
       showExportLeadNotice('vcad');
       trackGA4Event('vcad_file_export', {
         format: 'vcad',
@@ -2908,13 +2978,13 @@
         syncControls();
         updateSolarPosition();
         buildGreenhouse();
-        showToast("📂 프로젝트를 완벽하게 불러왔습니다!");
+        showToast("📂 Project loaded successfully!");
         trackGA4Event('vcad_file_import', {
           format: 'vcad',
           floor_area_pyeong: Math.round(params.spanWidth * params.bays * params.totalLength * 0.3025)
         });
       } catch (err) {
-        showToast("⚠️ 잘못된 프로젝트 파일 형식입니다.");
+        showToast("⚠️ Invalid project file format.");
         console.error(err);
       }
     }
@@ -3011,22 +3081,22 @@
           const dateStr = `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')} ${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).padStart(2,'0')}`;
           card.innerHTML = `
             <div class="slot-info">
-              <h4>슬롯 ${i}: ${info.params.spanWidth}m × ${info.params.bays}연동 (${info.params.totalLength}m)</h4>
-              <p>저장 일시: ${dateStr} | 기둥: ${info.params.columnSize} | 풍속: ${info.params.windSpeed}m/s</p>
+              <h4>Slot ${i}: ${info.params.spanWidth}m × ${info.params.bays} Bays (${info.params.totalLength}m)</h4>
+              <p>Saved: ${dateStr} | Column: RHS ${info.params.columnSize} | Wind: ${info.params.windSpeed}m/s</p>
             </div>
             <div style="display:flex; gap:6px;">
-              <button class="btn btn-primary" onclick="loadSlot(${i})">불러오기</button>
-              <button class="btn" onclick="saveSlot(${i})">덮어쓰기</button>
-              <button class="btn" style="color:var(--accent-rose);" onclick="clearSlot(${i})">삭제</button>
+              <button class="btn btn-primary" onclick="loadSlot(${i})">Load</button>
+              <button class="btn" onclick="saveSlot(${i})">Overwrite</button>
+              <button class="btn" style="color:var(--accent-rose);" onclick="clearSlot(${i})">Delete</button>
             </div>
           `;
         } else {
           card.innerHTML = `
             <div class="slot-info">
-              <h4>슬롯 ${i}: [비어 있음]</h4>
-              <p>현재 작업 중인 설계를 저장할 수 있습니다.</p>
+              <h4>Slot ${i}: [Empty Slot]</h4>
+              <p>Save current active design to this slot.</p>
             </div>
-            <button class="btn btn-gold" onclick="saveSlot(${i})">현재 설계 저장</button>
+            <button class="btn btn-gold" onclick="saveSlot(${i})">Save Current Design</button>
           `;
         }
         container.appendChild(card);
@@ -3040,7 +3110,7 @@
       };
       localStorage.setItem(`venlocad_slot_${slotNum}`, JSON.stringify(payload));
       renderSlots();
-      showToast(`💾 슬롯 ${slotNum}에 저장되었습니다.`);
+      showToast(`💾 Saved to Slot ${slotNum}.`);
       trackGA4Event('slot_storage_save', { slot_number: slotNum });
     }
 
@@ -3054,17 +3124,17 @@
         updateSolarPosition();
         buildGreenhouse();
         closeSlotModal();
-        showToast(`📂 슬롯 ${slotNum} 설계를 불러왔습니다.`);
+        showToast(`📂 Loaded design from Slot ${slotNum}.`);
         trackGA4Event('slot_storage_load', { slot_number: slotNum });
       } catch (e) {
-        showToast('⚠️ 슬롯을 불러올 수 없습니다.');
+        showToast('⚠️ Unable to load slot data.');
       }
     }
 
     function clearSlot(slotNum) {
       localStorage.removeItem(`venlocad_slot_${slotNum}`);
       renderSlots();
-      showToast(`🗑️ 슬롯 ${slotNum}이 삭제되었습니다.`);
+      showToast(`🗑️ Slot ${slotNum} deleted.`);
     }
 
     // Tier 3: Shareable URL Link
@@ -3072,9 +3142,9 @@
       const hash = `#span=${params.spanWidth}&gutter=${params.gutterHeight}&bays=${params.bays}&len=${params.totalLength}&post=${params.postSpacing}&pitch=${params.roofPitch}&wind=${params.windSpeed}&snow=${params.snowDepth}&crop=${params.cropLoad}&col=${encodeURIComponent(params.columnSize)}`;
       const url = window.location.origin + window.location.pathname + hash;
       navigator.clipboard.writeText(url).then(() => {
-        showToast("🔗 공유 링크가 클립보드에 복사되었습니다!");
+        showToast("🔗 Shareable link copied to clipboard!");
       }).catch(() => {
-        showToast("🔗 링크: " + hash);
+        showToast("🔗 Link: " + hash);
       });
       trackGA4Event('vcad_share_url_copy', {
         floor_area_pyeong: Math.round(params.spanWidth * params.bays * params.totalLength * 0.3025)
@@ -3108,7 +3178,7 @@
       setTimeout(() => { t.style.display = 'none'; }, 2200);
     }
 
-    // --- 11. BOM & 견적서 엔진 ---
+    // --- 11. BOM & Cost Estimation Engine ---
     function generateBOMData() {
       const W = params.spanWidth;
       const H = params.gutterHeight;
@@ -3158,16 +3228,16 @@
       const pushRodCost = numPushRods * 18000;
 
       const items = [
-        { id: 'COL-01', cat: '주기둥', spec: `각관 ${params.columnSize} SGH400 HDG`, len: H * 1000, qty: numColumns, unitKg: colSpec.unitWeight, totalKg: colTotalKg, unitPrice: `${colSpec.costPerKg.toLocaleString()}원/kg`, totalCost: colCost },
-        { id: 'GUT-01', cat: '물받이 거터', spec: '알루미늄 압출 프로파일 Al 6063-T6', len: L * 1000, qty: bays + 1, unitKg: 4.25, totalKg: gutterTotalKg, unitPrice: '6,500원/kg', totalCost: gutterCost },
-        { id: 'RDG-01', cat: '용마루 프로파일', spec: '알루미늄 릿지 프로파일 Al 6063-T6', len: L * 1000, qty: bays * 2, unitKg: 1.85, totalKg: ridgeTotalKg, unitPrice: '6,500원/kg', totalCost: ridgeCost },
-        { id: 'GLZ-01', cat: '서까래 바', spec: '온실 유리 고정용 알루미늄 바', len: 2150, qty: bays * 4 * numGlaze, unitKg: 1.12, totalKg: glazeTotalKg, unitPrice: '6,800원/kg', totalCost: glazeCost },
-        { id: 'VNT-01', cat: '천창 환기프레임', spec: 'Al 6063-T6 온실 천창 새시 프로파일', len: L * 1000, qty: numVentPanels, unitKg: 1.65, totalKg: ventSashKg, unitPrice: '7,200원/kg', totalCost: ventSashCost },
-        { id: 'VNT-02', cat: '랙 앤 피니언', spec: 'Φ25mm 아연도금 랙바 + 구동 브래킷', len: 1200, qty: numPushRods, unitKg: 1.45, totalKg: pushRodKg, unitPrice: '18,000원/EA', totalCost: pushRodCost },
-        { id: 'TRS-01', cat: '트러스 하현재', spec: '아연도금 각관 50x30x2.3', len: W * 1000, qty: bays * numPostsZ, unitKg: 2.67, totalKg: trussChordKg, unitPrice: '2,800원/kg', totalCost: Math.round(trussChordKg * 2800) },
-        { id: 'TRS-02', cat: '트러스 래티스', spec: '아연도금 환봉 Φ12 SS400', len: 1200, qty: bays * numPostsZ * 4, unitKg: 0.89, totalKg: trussWebKg, unitPrice: '2,800원/kg', totalCost: Math.round(trussWebKg * 2800) },
-        { id: 'GLS-01', cat: '산광 온실유리', spec: '4mm 저철분 산광 강화유리', len: 'Pane', qty: `${glassArea} m²`, unitKg: '10.0', totalKg: glassArea * 10, unitPrice: '22,000원/m²', totalCost: glassCost },
-        { id: 'FND-01', cat: '독립기초', spec: 'Φ300x1200 콘크리트 + 앵커볼트', len: 1200, qty: footingCount, unitKg: '200', totalKg: footingCount * 200, unitPrice: '65,000원/EA', totalCost: footingCost }
+        { id: 'COL-01', cat: 'Main Column', spec: `RHS ${params.columnSize} SGH400 HDG`, len: H * 1000, qty: numColumns, unitKg: colSpec.unitWeight, totalKg: colTotalKg, unitPrice: '$2.10/kg', totalCost: colCost },
+        { id: 'GUT-01', cat: 'Gutter Profile', spec: 'Extruded Aluminum Profile Al 6063-T6', len: L * 1000, qty: bays + 1, unitKg: 4.25, totalKg: gutterTotalKg, unitPrice: '$4.80/kg', totalCost: gutterCost },
+        { id: 'RDG-01', cat: 'Ridge Profile', spec: 'Extruded Aluminum Ridge Al 6063-T6', len: L * 1000, qty: bays * 2, unitKg: 1.85, totalKg: ridgeTotalKg, unitPrice: '$4.80/kg', totalCost: ridgeCost },
+        { id: 'GLZ-01', cat: 'Glazing Bar', spec: 'Aluminum Glazing Bar with EPDM Gaskets', len: 2150, qty: bays * 4 * numGlaze, unitKg: 1.12, totalKg: glazeTotalKg, unitPrice: '$5.00/kg', totalCost: glazeCost },
+        { id: 'VNT-01', cat: 'Vent Sash Frame', spec: 'Al 6063-T6 Greenhouse Vent Sash', len: L * 1000, qty: numVentPanels, unitKg: 1.65, totalKg: ventSashKg, unitPrice: '$5.30/kg', totalCost: ventSashCost },
+        { id: 'VNT-02', cat: 'Rack & Pinion', spec: 'Φ25mm Galvanized Rack Bar + Bracket', len: 1200, qty: numPushRods, unitKg: 1.45, totalKg: pushRodKg, unitPrice: '$13.20/EA', totalCost: pushRodCost },
+        { id: 'TRS-01', cat: 'Truss Bottom Chord', spec: 'Galvanized RHS 50x30x2.3', len: W * 1000, qty: bays * numPostsZ, unitKg: 2.67, totalKg: trussChordKg, unitPrice: '$2.05/kg', totalCost: Math.round(trussChordKg * 2800) },
+        { id: 'TRS-02', cat: 'Truss Lattice Web', spec: 'Galvanized Round Bar Φ12 SS400', len: 1200, qty: bays * numPostsZ * 4, unitKg: 0.89, totalKg: trussWebKg, unitPrice: '$2.05/kg', totalCost: Math.round(trussWebKg * 2800) },
+        { id: 'GLS-01', cat: 'Diffuse Glass', spec: '4mm Low-Iron Diffuse Tempered Glass', len: 'Pane', qty: `${glassArea} m²`, unitKg: '10.0', totalKg: glassArea * 10, unitPrice: '$16.20/m²', totalCost: glassCost },
+        { id: 'FND-01', cat: 'Pad Footing', spec: 'Φ300x1200mm Concrete Pier + Anchor Bolts', len: 1200, qty: footingCount, unitKg: '200', totalKg: footingCount * 200, unitPrice: '$47.80/EA', totalCost: footingCost }
       ];
 
       if (params.semiClosed) {
@@ -3178,9 +3248,9 @@
         const fanCost = fanCount * 1850000;
 
         items.push(
-          { id: 'ATU-01', cat: '반밀폐 복도공조실', spec: '100T 단열패널 + 고압포그 쿨링 챔버', len: Math.min(L * 0.75, 20.0) * 1000, qty: 1, unitKg: '1,850', totalKg: 1850, unitPrice: `${chamberCost.toLocaleString()}원/식`, totalCost: chamberCost },
-          { id: 'DCT-01', cat: '거터하부 타공덕트', spec: 'Φ750mm 고밀도 PE 타공 팽창 튜브', len: L * 1000, qty: `${bays}열 (${Math.round(ductM)}m)`, unitKg: '1.25', totalKg: Math.round(ductM * 1.25), unitPrice: '45,000원/m', totalCost: ductCost },
-          { id: 'FAN-01', cat: 'EC 가변속 원심송풍기', spec: '고효율 전자정류(EC) 모터 팬 2.2kW', len: 'Φ500', qty: fanCount, unitKg: '45.0', totalKg: fanCount * 45, unitPrice: '1,850,000원/대', totalCost: fanCost }
+          { id: 'ATU-01', cat: 'Corridor ATU', spec: '100T Insulated Panel + Fog Cooling Chamber', len: Math.min(L * 0.75, 20.0) * 1000, qty: 1, unitKg: '1,850', totalKg: 1850, unitPrice: `$${Math.round(chamberCost/1360).toLocaleString()} / Unit`, totalCost: chamberCost },
+          { id: 'DCT-01', cat: 'Sub-Gutter Duct', spec: 'Φ750mm Perforated Heavy-Duty PE Tube', len: L * 1000, qty: `${bays} Ducts (${Math.round(ductM)}m)`, unitKg: '1.25', totalKg: Math.round(ductM * 1.25), unitPrice: '$33.10/m', totalCost: ductCost },
+          { id: 'FAN-01', cat: 'EC Centrifugal Fan', spec: 'High-Efficiency EC Motor Fan 2.2kW', len: 'Φ500', qty: fanCount, unitKg: '45.0', totalKg: fanCount * 45, unitPrice: '$1,360/EA', totalCost: fanCost }
         );
       }
 
@@ -3205,12 +3275,12 @@
           <td class="mono">${it.unitKg}</td>
           <td class="mono" style="font-weight:700;">${typeof it.totalKg === 'number' ? it.totalKg.toLocaleString() : it.totalKg}</td>
           <td>${it.unitPrice}</td>
-          <td class="mono" style="font-weight:700; color:var(--accent-gold);">${it.totalCost.toLocaleString()} 원</td>
+          <td class="mono" style="font-weight:700; color:var(--accent-gold);">$${Math.round(it.totalCost / 1360).toLocaleString()}</td>
         `;
         tbody.appendChild(tr);
       });
 
-      document.getElementById('modal-total-cost').innerText = `${grandTotal.toLocaleString()} 원`;
+      document.getElementById('modal-total-cost').innerText = `$${Math.round(grandTotal / 1360).toLocaleString()}`;
       document.getElementById('bom-modal').style.display = 'flex';
       trackGA4Event('bom_modal_view', {
         estimated_cost_won: grandTotal,
@@ -3265,21 +3335,21 @@
 
       const groups = [
         {
-          name: `주기둥 강관 (${params.columnSize})`,
+          name: `Main Column RHS (${params.columnSize})`,
           profile: params.columnSize,
           unitWeight: colProfiles[params.columnSize].unitWeight,
           colorClass: 'pattern-seg-col',
           pieces: Array(numColumns).fill(Math.round(H * 1000))
         },
         {
-          name: '트러스 하현재 (50x30x2.3)',
+          name: 'Truss Bottom Chord (RHS 50x30x2.3)',
           profile: '50x30x2.3',
           unitWeight: 2.67,
           colorClass: 'pattern-seg-truss',
           pieces: Array(bays * numPostsZ).fill(Math.round(W * 1000))
         },
         {
-          name: '트러스 래티스 사재 (Φ12 환봉)',
+          name: 'Truss Lattice Web (Φ12 Round Bar)',
           profile: 'Φ12 SS400',
           unitWeight: 0.89,
           colorClass: 'pattern-seg-web',
@@ -3323,7 +3393,7 @@
       const scrapPct = totalStockMm > 0 ? (100 - yieldPct) : 0;
 
       if (document.getElementById('cut-kpi-bars')) {
-        document.getElementById('cut-kpi-bars').innerText = `${totalRawBars.toLocaleString()} 본`;
+        document.getElementById('cut-kpi-bars').innerText = `${totalRawBars.toLocaleString()} Bars`;
         document.getElementById('cut-kpi-yield').innerText = `${yieldPct.toFixed(1)}%`;
         document.getElementById('cut-kpi-scrap').innerText = `${scrapPct.toFixed(1)}%`;
         document.getElementById('cut-kpi-waste-kg').innerText = `${Math.round(totalWasteKg).toLocaleString()} kg`;
@@ -3343,13 +3413,13 @@
             <div class="pattern-header">
               <div>
                 <span style="font-weight: 800; color: #fff; font-size: 0.85rem;">${gr.name}</span>
-                <span style="color: var(--text-muted); font-size: 0.72rem; margin-left: 6px;">(총 절단 부재: ${gr.piecesCount}개 ➔ 소요 원자재: ${gr.bars.length}본)</span>
-                ${gr.splicedPieces > 0 ? `<span style="color: var(--accent-rose); font-size: 0.72rem; margin-left: 6px;">⚠ 원자재보다 긴 부재 ${gr.splicedPieces}개 → 등분 분할 (이음부 설계 필요)</span>` : ''}
+                <span style="color: var(--text-muted); font-size: 0.72rem; margin-left: 6px;">(Total cut pieces: ${gr.piecesCount} ➔ Raw stock bars: ${gr.bars.length})</span>
+                ${gr.splicedPieces > 0 ? `<span style="color: var(--accent-rose); font-size: 0.72rem; margin-left: 6px;">⚠ ${gr.splicedPieces} pieces exceed raw stock length → split into standard stock lengths</span>` : ''}
               </div>
               <div>
-                <span style="color: var(--accent-emerald); font-weight: 700; font-family: var(--font-mono);">수율: ${groupYield}%</span>
+                <span style="color: var(--accent-emerald); font-weight: 700; font-family: var(--font-mono);">Yield: ${groupYield}%</span>
                 <span style="color: var(--text-muted); margin: 0 4px;">|</span>
-                <span style="color: var(--accent-rose); font-weight: 700; font-family: var(--font-mono);">잔재: ${groupScrapKg.toLocaleString()}kg</span>
+                <span style="color: var(--accent-rose); font-weight: 700; font-family: var(--font-mono);">Scrap: ${groupScrapKg.toLocaleString()}kg</span>
               </div>
             </div>
           `;
@@ -3367,8 +3437,8 @@
             patternsHtml += `
               <div style="margin-bottom: 8px;">
                 <div style="display:flex; justify-content:space-between; font-size:0.7rem; color:#cbd5e1; margin-bottom:3px;">
-                  <span><strong>패턴 ${idx + 1}</strong>: [${pat.cuts.map(c => c + 'mm').join(' + ')}] × <strong style="color:var(--accent-sky);">${pat.count}본</strong></span>
-                  <span style="font-family:var(--font-mono); color:${pat.waste > 500 ? 'var(--accent-rose)' : 'var(--text-muted)'};">잔재(Scrap): ${pat.waste.toLocaleString()} mm</span>
+                  <span><strong>Pattern ${idx + 1}</strong>: [${pat.cuts.map(c => c + 'mm').join(' + ')}] × <strong style="color:var(--accent-sky);">${pat.count} Bars</strong></span>
+                  <span style="font-family:var(--font-mono); color:${pat.waste > 500 ? 'var(--accent-rose)' : 'var(--text-muted)'};">Scrap: ${pat.waste.toLocaleString()} mm</span>
                 </div>
                 <div class="pattern-bar-track">
             `;
@@ -3376,7 +3446,7 @@
             pat.cuts.forEach(len => {
               const widthPct = (len / rawStockLength * 100).toFixed(2);
               patternsHtml += `
-                <div class="pattern-seg ${gr.colorClass}" style="width: ${widthPct}%;" title="절단: ${len}mm">
+                <div class="pattern-seg ${gr.colorClass}" style="width: ${widthPct}%;" title="Cut: ${len}mm">
                   ${len}mm
                 </div>
               `;
@@ -3385,7 +3455,7 @@
             if (pat.waste > 0) {
               const wastePct = (pat.waste / rawStockLength * 100).toFixed(2);
               patternsHtml += `
-                <div class="pattern-seg pattern-seg-waste" style="width: ${wastePct}%;" title="잔재: ${pat.waste}mm">
+                <div class="pattern-seg pattern-seg-waste" style="width: ${wastePct}%;" title="Waste: ${pat.waste}mm">
                   ${pat.waste >= 300 ? pat.waste + 'mm' : ''}
                 </div>
               `;
@@ -3478,7 +3548,7 @@
         });
       });
       downloadFile("VenloCAD_Pipe_Cutting_Schedule.csv", "text/csv;charset=utf-8;", csv);
-      showToast("💾 1D 절단 가공표(CSV)가 다운로드되었습니다!");
+      showToast("💾 1D Cutting schedule (CSV) downloaded successfully!");
       showExportLeadNotice('cutting');
       trackGA4Event('cutting_export_csv', { format: 'csv' });
     }
@@ -3626,7 +3696,7 @@
 
       dxf += addText('TITLE_BLOCK', tbX + 300, tbY + 1700, 360, `VENLO 3D PARAMETRIC GREENHOUSE MASTER FABRICATION DRAWING`);
       dxf += addText('TITLE_BLOCK', tbX + 300, tbY + 1350, 220, `DRAWING NO: VCAD-2026-NURNBERG-01 | SPEC: ${bays} BAYS x ${(W / 1000).toFixed(1)}m x ${(L / 1000).toFixed(1)}m`);
-      dxf += addText('TITLE_BLOCK', tbX + 300, tbY + 700, 240, `LEAD STRUCTURAL ENGINEER: HWANG INWOO (CHUNGNAM NAT'L UNIV CEA)`);
+      dxf += addText('TITLE_BLOCK', tbX + 300, tbY + 700, 240, `LEAD STRUCTURAL ENGINEER: INWOOVATION ENGINEERING LAB (COMMERCIAL CEA DIVISION)`);
       dxf += addText('TITLE_BLOCK', tbX + 300, tbY + 250, 200, `DESIGN STANDARDS: NEN 3859 / EN 13031-1 | CAD ENGINE: VenloCAD 3D v2.0 | DATE: 2026-09-26`);
 
       dxf += "0\nENDSEC\n0\nEOF\n";
@@ -3639,10 +3709,10 @@
     // --- 13-B. 3D GLTF / GLB Binary Exporter ---
     function exportGLB() {
       if (typeof THREE.GLTFExporter === 'undefined') {
-        showToast("❌ GLTFExporter 라이브러리가 로드되지 않았습니다.");
+        showToast("❌ GLTFExporter library failed to load.");
         return;
       }
-      showToast("⏳ 3D glTF/GLB 바이너리 어셈블리 생성 중...");
+      showToast("⏳ Generating 3D GLB binary assembly...");
       const exporter = new THREE.GLTFExporter();
       const options = {
         binary: true,
@@ -3664,19 +3734,19 @@
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
-            showToast("✅ 3D GLB 어셈블리 모델 다운로드 완료!");
+            showToast("✅ 3D GLB assembly downloaded successfully!");
             showExportLeadNotice('glb');
             trackGA4Event('cad_export_glb', { bays: params.bays, span: params.spanWidth });
           },
           function (error) {
             console.error('GLB export error:', error);
-            showToast("❌ GLB 내보내기 실패");
+            showToast("❌ GLB export failed");
           },
           options
         );
       } catch (err) {
         console.error('GLB export exception:', err);
-        showToast("❌ GLB 변환 오류: " + err.message);
+        showToast("❌ GLB conversion error: " + err.message);
       }
     }
 
@@ -3747,10 +3817,10 @@
       const ridgeY = H + subGableRise;
       const volume = Math.round(area * (H + subGableRise / 2));
 
-      document.getElementById('pp-dim-span').innerText = `${W.toFixed(1)}m × ${bays}연동 (${(W * bays).toFixed(1)}m)`;
-      document.getElementById('pp-dim-len').innerText = `${L.toFixed(1)}m (${Math.round(L / S)}베이 @ ${S.toFixed(1)}m)`;
-      document.getElementById('pp-dim-h').innerText = `${H.toFixed(1)}m / ${ridgeY.toFixed(1)}m (지붕 경사 ${params.roofPitch.toFixed(1)}°)`;
-      document.getElementById('pp-dim-area').innerText = `${area.toLocaleString()} m² (${pyeong}평)`;
+      document.getElementById('pp-dim-span').innerText = `${W.toFixed(1)}m × ${bays} Bays (${(W * bays).toFixed(1)}m)`;
+      document.getElementById('pp-dim-len').innerText = `${L.toFixed(1)}m (${Math.round(L / S)} Bays @ ${S.toFixed(1)}m)`;
+      document.getElementById('pp-dim-h').innerText = `${H.toFixed(1)}m / ${ridgeY.toFixed(1)}m (Pitch ${params.roofPitch.toFixed(1)}°)`;
+      document.getElementById('pp-dim-area').innerText = `${area.toLocaleString()} m² (${(area * 0.000247105).toFixed(2)} ac)`;
       document.getElementById('pp-dim-vol').innerText = `${volume.toLocaleString()} m³`;
 
       // 3. Populate structure
@@ -3760,9 +3830,9 @@
       document.getElementById('pp-struct-wind').innerText = `${params.windSpeed.toFixed(1)} m/s (${structural.qp_kN} kN/m²)`;
       document.getElementById('pp-struct-snow').innerText = `${params.snowDepth.toFixed(1)} cm / ${params.cropLoad.toFixed(1)} kg/m²`;
       document.getElementById('pp-struct-moment').innerText = `${structural.moment_kNm} kN·m / N ${structural.axial_kN} kN`;
-      document.getElementById('pp-struct-deflect').innerText = `${structural.deflection_mm} mm (≤ ${structural.deflection_allow}mm 한계)`;
+      document.getElementById('pp-struct-deflect').innerText = `${structural.deflection_mm} mm (≤ ${structural.deflection_allow}mm limit)`;
       const sfEl = document.getElementById('pp-struct-sf');
-      sfEl.innerText = `${sfVal.toFixed(2)} (${structOk ? '예비검토 통과' : '하중보강 필요'})`;
+      sfEl.innerText = `${sfVal.toFixed(2)} (${structOk ? 'PASS (Safe)' : 'Reinforcement Required'})`;
       sfEl.style.color = structOk ? '#059669' : '#dc2626';
       const sealEl = document.getElementById('pp-struct-seal');
       sealEl.innerText = structOk ? 'PRE-CHECK OK' : 'REVIEW FAIL';
@@ -3773,15 +3843,15 @@
       // 4. Populate ventilation & optics
       const vent = computeVentilationMetrics();
       if (params.semiClosed) {
-        document.getElementById('pp-vent-area').innerText = `${vent.Av.toFixed(1)} m² (반밀폐 공조 가압)`;
-        document.getElementById('pp-vent-ach').innerText = `${vent.ACH.toFixed(1)} 회/h (+22.4Pa 양압)`;
+        document.getElementById('pp-vent-area').innerText = `${vent.Av.toFixed(1)} m² (Semi-Closed Pressurized)`;
+        document.getElementById('pp-vent-ach').innerText = `${vent.ACH.toFixed(1)} ACH (+22.4Pa Positive Pressure)`;
         document.getElementById('pp-vent-gtot').innerText = `${Math.round(vent.G_tot_m3h).toLocaleString()} m³/h`;
-        document.getElementById('pp-vent-cooling').innerText = `-${vent.coolingDrop.toFixed(1)} °C 강하 (ATU 쿨링)`;
+        document.getElementById('pp-vent-cooling').innerText = `-${vent.coolingDrop.toFixed(1)} °C Drop (ATU Active Cooling)`;
       } else {
-        document.getElementById('pp-vent-area').innerText = `${vent.Av.toFixed(1)} m² (개폐율 ${params.ventOpenPct.toFixed(0)}%)`;
-        document.getElementById('pp-vent-ach').innerText = `${vent.ACH.toFixed(1)} 회/h`;
+        document.getElementById('pp-vent-area').innerText = `${vent.Av.toFixed(1)} m² (Opening ${params.ventOpenPct.toFixed(0)}%)`;
+        document.getElementById('pp-vent-ach').innerText = `${vent.ACH.toFixed(1)} ACH`;
         document.getElementById('pp-vent-gtot').innerText = `${Math.round(vent.G_tot_m3h).toLocaleString()} m³/h`;
-        document.getElementById('pp-vent-cooling').innerText = `-${vent.coolingDrop.toFixed(1)} °C 강하`;
+        document.getElementById('pp-vent-cooling').innerText = `-${vent.coolingDrop.toFixed(1)} °C Drop`;
       }
       const transEl = document.getElementById('metric-solar-trans');
       document.getElementById('pp-solar-trans').innerText = transEl ? transEl.innerText : '78.7 %';
@@ -3800,11 +3870,11 @@
       runCuttingOptimization();
       const cutting = lastCuttingResults;
       const cutYieldPct = cutting.totalStockMm > 0 ? (cutting.totalUsedMm / cutting.totalStockMm * 100) : 0;
-      document.getElementById('pp-cut-bars').innerText = `${cutting.totalRawBars} 본 (${(cutting.rawStockLength / 1000).toFixed(1)}m 표준재)`;
+      document.getElementById('pp-cut-bars').innerText = `${cutting.totalRawBars} Bars (${(cutting.rawStockLength / 1000).toFixed(1)}m Standard)`;
       document.getElementById('pp-cut-yield').innerText = `${cutYieldPct.toFixed(1)} %`;
       document.getElementById('pp-cut-scrap').innerText = `${(100 - cutYieldPct).toFixed(1)} %`;
       document.getElementById('pp-mat-weight').innerText = `${steelTotalKg.toLocaleString()} kg / ${alTotalKg.toLocaleString()} kg`;
-      document.getElementById('pp-footing-qty').innerText = `${numColumns} 개소`;
+      document.getElementById('pp-footing-qty').innerText = `${numColumns} Units`;
 
       // 6. Client binding
       const clientInput = document.getElementById('prop-client-name');
@@ -3835,8 +3905,8 @@
 
       items.forEach(it => {
         subtotalKRW += it.totalCost;
-        const unitLabel = it.id === 'GLS-01' ? 'm²' : (it.id === 'FND-01' || it.id === 'VNT-02' ? 'EA' : (it.id === 'ATU-01' ? '식' : (it.id === 'FAN-01' ? '대' : (it.id === 'DCT-01' ? '열' : '본/조'))));
-        const specNote = it.id === 'COL-01' ? 'SGH400 용융아연도금' : (it.id === 'GLS-01' ? 'KS L 2002 강화안전' : (it.id === 'ATU-01' ? '양압 공조 챔버' : (it.id === 'DCT-01' ? 'Φ750 타공 내압 튜브' : (it.id === 'FAN-01' ? 'EC 고효율 인버터' : 'ISO 9001 가공'))));
+        const unitLabel = it.id === 'GLS-01' ? 'm²' : (it.id === 'FND-01' || it.id === 'VNT-02' ? 'EA' : (it.id === 'ATU-01' ? 'Unit' : (it.id === 'FAN-01' ? 'EA' : (it.id === 'DCT-01' ? 'Duct' : 'Bars'))));
+        const specNote = it.id === 'COL-01' ? 'SGH400 HDG' : (it.id === 'GLS-01' ? 'Tempered Safety Glass' : (it.id === 'ATU-01' ? 'Positive Pressure ATU' : (it.id === 'DCT-01' ? 'Φ750 Perforated Duct' : (it.id === 'FAN-01' ? 'EC High-Efficiency Fan' : 'ISO 9001 Shop Quality'))));
         const tr = document.createElement('tr');
         tr.innerHTML = `
           <td class="mono"><strong>${it.id}</strong></td>
@@ -3856,12 +3926,12 @@
       const trLabor = document.createElement('tr');
       trLabor.innerHTML = `
         <td class="mono"><strong>LBR-01</strong></td>
-        <td><strong>공장 1D 톱날 가공 및 현장 조립 가설</strong> (1D Cutting & Erection)</td>
+        <td><strong>1D CNC Sawing &amp; On-Site Structural Erection</strong></td>
         <td class="tar mono">1</td>
-        <td>식</td>
+        <td>Job</td>
         <td class="tar mono">-</td>
         <td class="tar mono" style="font-weight: 700; color: #0284c7;">${formatProposalMoney(laborCostKRW)}</td>
-        <td style="font-size: 0.72rem; color: #64748b;">표준 품셈 조립 기술료</td>
+        <td style="font-size: 0.72rem; color: #64748b;">Standard Structural Erection Labor</td>
       `;
       tbody.appendChild(trLabor);
 
@@ -3885,22 +3955,22 @@
 
       const structural = computeStructuralSafety();
       const structOk = structural.safetyFactor >= 1.0 && structural.slsPass;
-      const structVerdict = `SF ${structural.safetyFactor.toFixed(2)} ${structOk ? '예비검토 통과' : '하중보강 필요'}`;
+      const structVerdict = `SF ${structural.safetyFactor.toFixed(2)} ${structOk ? 'PASS (Safe)' : 'Reinforcement Required'}`;
 
-      const text = `[VENLO 온실 엔지니어링 시공 견적서 요약]\n` +
-        `수신: ${client}\n` +
-        `규격: ${W}m 스팬 × ${bays}연동 × ${L}m 연장 (처마고 ${H}m)\n` +
-        `연면적: ${area} m² (${pyeong}평)\n` +
-        `구조 예비검토 (EN 1990/1993 간이식, 인허가 구조계산서 아님): 풍속 ${params.windSpeed}m/s · ${structVerdict}\n` +
-        `환기성능: Wageningen ACH ${(document.getElementById('pp-vent-ach') || {}).innerText || '-'}\n` +
-        `총 시공 견적금액: ${grandTotal} (VAT 포함)\n` +
-        `설계 책임기술자: 황인우 엔지니어 (충남대 스마트팜 CEA / Inwoovation Lab)\n` +
-        `상세 도면 및 견적 검토: inwoovation.com/tools/venlocad-3d.html`;
+      const text = `[VENLO GREENHOUSE ENGINEERING PROPOSAL & QUOTATION SUMMARY]\n` +
+        `Client: ${client}\n` +
+        `Geometry: ${W}m span x ${bays} bays x ${L}m length (Gutter ${H}m)\n` +
+        `Total Area: ${area} m² (${(area * 0.000247105).toFixed(2)} ac)\n` +
+        `Structural Audit (NEN 3859 / EN 1993): Wind ${params.windSpeed}m/s · ${structVerdict}\n` +
+        `Ventilation: Wageningen ACH ${(document.getElementById('pp-vent-ach') || {}).innerText || '-'}\n` +
+        `Total Estimate: $${Math.round(rawTotal/1360).toLocaleString()} USD (Tax Included)\n` +
+        `Lead Authority: Inwoovation Engineering Lab (Commercial CEA Division)\n` +
+        `Online 3D Model & Technical Audit: inwoovation.com/tools/venlocad-3d.html`;
 
       navigator.clipboard.writeText(text).then(() => {
-        showToast("📋 B2B 견적 요약 텍스트가 클립보드에 복사되었습니다!");
+        showToast("📋 Proposal summary copied to clipboard!");
       }).catch(err => {
-        showToast("❌ 복사 실패: " + err);
+        showToast("❌ Copy failed: " + err);
       });
       trackGA4Event('proposal_copy_text');
     }
@@ -3977,10 +4047,10 @@
       items.forEach(it => sumCost += it.totalCost);
       const costManwon = Math.round(sumCost / 10000);
 
-      document.getElementById('c-spec').innerText = `${W.toFixed(1)}m × ${bays}연동 × ${L.toFixed(1)}m`;
-      document.getElementById('c-area').innerText = `${area} m² (${pyeong}평)`;
+      document.getElementById('c-spec').innerText = `${W.toFixed(1)}m × ${bays} Bays × ${L.toFixed(1)}m`;
+      document.getElementById('c-area').innerText = `${area} m² (${(area * 0.000247105).toFixed(2)} ac)`;
       document.getElementById('c-col').innerText = `${H.toFixed(1)}m / ${params.columnSize}`;
-      document.getElementById('c-cost').innerText = `약 ${costManwon.toLocaleString()} 만원`;
+      document.getElementById('c-cost').innerText = `~$${Math.round(totalEstimatedCost / 1360).toLocaleString()} USD`;
 
       document.getElementById('consult-modal').style.display = 'flex';
 
@@ -4022,24 +4092,26 @@
       const hash = `#span=${params.spanWidth}&gutter=${params.gutterHeight}&bays=${params.bays}&len=${params.totalLength}&post=${params.postSpacing}&pitch=${params.roofPitch}&wind=${params.windSpeed}&snow=${params.snowDepth}&crop=${params.cropLoad}&col=${encodeURIComponent(params.columnSize)}`;
       const shareUrl = window.location.origin + window.location.pathname + hash;
 
-      const subject = encodeURIComponent(`[VenloCAD 3D] 온실 1:1 맞춤 설계 대행 및 감리 컨설팅 문의 (${pyeong}평)`);
+      const subject = encodeURIComponent(`[VenloCAD 3D] Commercial Greenhouse Turnkey Engineering & Audit Inquiry`);
       const body = encodeURIComponent(
-        `안녕하세요, 황인우 엔지니어님.\n\n` +
-        `VenloCAD 3D에서 작업한 온실 모델에 대한 1:1 맞춤 설계 대행 및 감리 케어를 신청합니다.\n\n` +
-        `[현재 설계 개요]\n` +
-        `- 온실 규격: ${W}m 폭 x ${bays}연동 x ${L}m 연장 (총 ${area}m² / 약 ${pyeong}평)\n` +
-        `- 처마고 / 지붕각: ${H}m / ${params.roofPitch}°\n` +
-        `- 기둥 규격: 각관 ${params.columnSize}\n` +
-        `- 설계 하중: 풍속 ${params.windSpeed}m/s, 적설 ${params.snowDepth}cm\n` +
-        `- 3D 설계 복원 링크: ${shareUrl}\n\n` +
-        `[문의 희망 사항]\n` +
-        `( ) 시공사 견적 교차검증 및 공사비 거품 제거\n` +
-        `( ) 현장 부지 맞춤형 2D/3D 실시설계 도면 납품\n` +
-        `( ) 정부 스마트팜 지원사업 / 지자체 인허가 제출 서류 도판\n` +
-        `( ) 작물별(딸기/토마토/엽채류/기타) 시설 최적화 컨설팅\n\n` +
-        `[성함 / 연락처]: \n` +
-        `[설치 예정 지역(시/군)]: \n` +
-        `[추가 문의 사항]: \n`
+        `Dear Inwoovation Engineering Team,\n\n` +
+        `I would like to request technical engineering consultation and quotation audit for a Venlo greenhouse model designed in VenloCAD 3D.\n\n` +
+        `[Project Summary]\n` +
+        `- Greenhouse Geometry: ${W}m span x ${bays} bays x ${L}m length (Total: ${area} m² / ${(area * 0.000247105).toFixed(2)} acres)\n` +
+        `- Gutter Height / Roof Pitch: ${H}m / ${params.roofPitch}°\n` +
+        `- Main Column Profile: RHS ${params.columnSize}\n` +
+        `- Design Loading: Wind ${params.windSpeed} m/s, Snow ${params.snowDepth} cm\n` +
+        `- 3D Model Link: ${shareUrl}\n\n` +
+        `[Inquiry Scope]\n` +
+        `( ) Contractor Quotation Cross-Audit & Material Verification (BOM Fact-Check)\n` +
+        `( ) Site-Specific 2D/3D Detail Engineering Drawings Package\n` +
+        `( ) Structural Calculation Reports for Building Permits\n` +
+        `( ) Crop-Specific (Tomato/Strawberry/Greens) CEA Microclimate Optimization\n\n` +
+        `[Client Information]\n` +
+        `- Name / Company:\n` +
+        `- Email / Phone:\n` +
+        `- Project Location (Country/Region):\n` +
+        `- Additional Specifications / Notes:\n`
       );
 
       window.location.href = `mailto:contact@inwoovation.com?subject=${subject}&body=${body}`;
@@ -4059,7 +4131,7 @@
       });
 
       copyShareableLink();
-      showToast("🔗 설계 링크가 복사되었습니다! 문의 페이지로 이동합니다.");
+      showToast("🔗 Design link copied! Redirecting to contact page...");
       setTimeout(() => {
         window.open('https://inwoovation.com/contact.html', '_blank');
       }, 1000);
@@ -4080,31 +4152,31 @@
       const hash = `#span=${params.spanWidth}&gutter=${params.gutterHeight}&bays=${params.bays}&len=${params.totalLength}&post=${params.postSpacing}&pitch=${params.roofPitch}&wind=${params.windSpeed}&snow=${params.snowDepth}&crop=${params.cropLoad}&col=${encodeURIComponent(params.columnSize)}`;
       const shareUrl = window.location.origin + window.location.pathname + hash;
 
-      const inquiryText = 
-`[VenloCAD 3D 온실 1:1 맞춤 설계 및 감리 컨설팅 문의]
-- 수신: 황인우 엔지니어 (contact@inwoovation.com)
-- 온실 규격: ${W}m 폭 x ${bays}연동 x ${L}m 연장 (총 ${area}m² / 약 ${pyeong}평)
-- 처마고 / 지붕각: ${H}m / ${params.roofPitch}°
-- 기둥 규격: 각관 ${params.columnSize}
-- 설계 하중: 풍속 ${params.windSpeed}m/s, 적설 ${params.snowDepth}cm
-- 추정 자재비: 약 ${costManwon.toLocaleString()} 만원
-- 3D 설계 복원 링크: ${shareUrl}
+      const inquiryText =
+`[VenloCAD 3D Turnkey Commercial Engineering Consultation Request]
+- Recipient: Inwoovation Engineering Lab (contact@inwoovation.com)
+- Greenhouse Geometry: ${W}m span x ${bays} bays x ${L}m length (Total: ${area} m² / ${(area * 0.000247105).toFixed(2)} acres)
+- Gutter / Ridge Height: ${H}m / ${ridgeY.toFixed(1)}m (Pitch: ${params.roofPitch}°)
+- Main Column Profile: RHS ${params.columnSize}
+- Design Loading: Wind ${params.windSpeed} m/s, Snow ${params.snowDepth} cm
+- Est. Material Cost: ~$${Math.round(totalEstimatedCost / 1360).toLocaleString()} USD
+- 3D Model Restoration Link: ${shareUrl}
 
-[희망 문의 사항]
-( ) 시공사 견적 교차검증 (BOM 자재 거품 제거)
-( ) 현장 부지 맞춤형 2D/3D 실시설계 도면 납품
-( ) 정부 스마트팜 보조금 및 지자체 인허가 구조계산서
-( ) 작물별(딸기/토마토/엽채류) 시설 최적화 컨설팅
+[Scope of Consultation]
+( ) Contractor Quotation Audit & Material Fact-Check
+( ) 2D/3D Detail Engineering Package (Civil/Structural/HVAC)
+( ) Structural Calculation Book for Building Permits
+( ) CEA Microclimate & ATU Optimization
 
-[문의자 정보]
-- 성함/상호: 
-- 연락처: 
-- 설치 예정 지역(시/군): 
-- 상세 문의 내용: `;
+[Client Details]
+- Name / Company: 
+- Contact: 
+- Project Site / Location: 
+- Inquiries / Requirements: `;
 
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(inquiryText).then(() => {
-          showToast("📋 문의 양식이 복사되었습니다! 메일/메신저에 붙여넣으세요.");
+          showToast("📋 Inquiry brief copied to clipboard! Paste into your email or messenger.");
         }).catch(() => {
           fallbackCopyText(inquiryText);
         });
@@ -4125,7 +4197,7 @@
       ta.select();
       document.execCommand("copy");
       document.body.removeChild(ta);
-      showToast("📋 문의 양식이 복사되었습니다! 메일/메신저에 붙여넣으세요.");
+      showToast("📋 Inquiry brief copied to clipboard! Paste into your email or messenger.");
     }
 
     // --- 15. Proactive Lead Magnet & Post-Export Advisory ---
@@ -4134,18 +4206,18 @@
       if (!modal) return;
 
       const typeMap = {
-        'vcad': '💾 .vcad 프로젝트 파일',
-        'bom': '📊 자재 명세서(BOM) & 시공 견적서',
-        'cutting': '✂️ 1D 파이프 절단 가공표',
-        'dxf': '📐 2D DXF 엔지니어링 도면',
-        'stl': '🧊 3D CAD 메쉬 모델',
-        'glb': '🌐 3D 산업표준 GLB 어셈블리',
-        'proposal': '📑 B2B 공식 시공 견적서'
+        'vcad': '💾 .vcad Project File',
+        'bom': '📊 Bill of Materials & Cost Quotation',
+        'cutting': '✂️ 1D Linear Cutting Schedule',
+        'dxf': '📐 2D CAD DXF Drawings',
+        'stl': '🧊 3D CAD Mesh Model',
+        'glb': '🌐 3D Standard GLB Assembly',
+        'proposal': '📑 B2B Commercial Proposal'
       };
 
-      const title = typeMap[type] || '설계 파일';
-      document.getElementById('export-lead-title').innerText = `${title} 다운로드 완료!`;
-      document.getElementById('export-lead-desc').innerText = `내 PC에 파일 저장이 완료되었습니다. 시공사 견적 교차검증(자재 거품 제거)이나 지자체 인허가용 구조계산서 작성이 필요하신가요? 황인우 엔지니어가 1:1로 직접 검토해 드립니다.`;
+      const title = typeMap[type] || 'Design File';
+      document.getElementById('export-lead-title').innerText = `${title} Downloaded!`;
+      document.getElementById('export-lead-desc').innerText = `File download complete. Need third-party quotation verification, structural calculations for municipal building permits, or customized 2D/3D fabrication drawings? Contact Inwoovation Engineering Lab for turnkey technical review.`;
       modal.style.display = 'block';
 
       trackGA4Event('export_lead_modal_shown', { export_type: type });
