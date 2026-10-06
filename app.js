@@ -1,6 +1,6 @@
 /* 
    Inwoovation Lab Portal Logic (v12.0 Interactive & High-Performance)
-   Author: vmffkxhs2362-svg
+   Author: Inwoovation Engineering Lab
    Features: Zero-Latency Biophysical VPD Micro-Simulator, Real-Time Filter & Search
 */
 
