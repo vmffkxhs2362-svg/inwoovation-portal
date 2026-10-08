@@ -27,7 +27,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../styles.css?v=20260901_climate_v1">
+    <link rel="stylesheet" href="../styles.css?v=20260919_climate_v2">
     <style>
         .climate-article { max-width: 940px; margin: 40px auto 60px; padding: 0 24px; }
         .climate-header { text-align: center; margin-bottom: 36px; }
@@ -42,6 +42,10 @@
         .section-panel h2 { font-family: 'Outfit', sans-serif; font-size: 1.35rem; color: #f8fafc; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
         .section-panel p, .section-panel li { color: #cbd5e1; font-size: 0.98rem; line-height: 1.8; }
         .ad-banner { background: rgba(15, 23, 42, 0.4); border: 1px dashed rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 16px; text-align: center; margin: 24px 0; }
+        .data-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.92rem; }
+        .data-table th, .data-table td { padding: 10px 14px; border: 1px solid rgba(255, 255, 255, 0.08); text-align: left; }
+        .data-table th { background: rgba(15, 23, 42, 0.8); color: #38bdf8; font-weight: 700; }
+        .data-table tr:nth-child(even) { background: rgba(255, 255, 255, 0.02); }
     </style>
     <!-- Schema.org TechArticle -->
     <script type="application/ld+json">
@@ -81,16 +85,16 @@
         <!-- KPI Grid -->
         <div class="kpi-grid">
             <div class="kpi-card">
-                <div class="kpi-val">35-42</div>
+                <div class="kpi-val">38-42</div>
                 <div class="kpi-lbl">Summer Peak DLI (mol/m²/d)</div>
             </div>
             <div class="kpi-card">
-                <div class="kpi-val">6-10</div>
+                <div class="kpi-val">5.4-8.5</div>
                 <div class="kpi-lbl">Winter Minimum DLI (mol/m²/d)</div>
             </div>
             <div class="kpi-card">
-                <div class="kpi-val" style="color:#f59e0b; font-size:1.15rem;">High (35-45 m³ gas/m²/yr)</div>
-                <div class="kpi-lbl">Winter Heating Load</div>
+                <div class="kpi-val" style="color:#f59e0b; font-size:1.15rem;">Geothermal &amp; CHP (32-40 m³ eq/m²/yr)</div>
+                <div class="kpi-lbl">Annual Heating Benchmark</div>
             </div>
             <div class="kpi-card">
                 <div class="kpi-val" style="color:#10b981; font-size:1.1rem;">Maritime Temperate (Cfb)</div>
@@ -98,24 +102,71 @@
             </div>
         </div>
 
-        <!-- Microclimate Physics Breakdown -->
+        <!-- Section 1: Regional Baseline & Macroclimate -->
         <div class="section-panel">
-            <h2>☀️ Solar Radiation & Photobiology Optimization</h2>
-            <p>In <strong>Westland, Netherlands</strong>, natural solar Daily Light Integral transitions from <strong>6-10 mol/m²/day</strong> during winter solstice to <strong>35-42 mol/m²/day</strong> at summer peak. For commercial crops like High-Wire Tomato, Sweet Pepper, Cut Flowers, target canopy DLI requires dynamic screen management to avoid photoinhibition during midday radiation spikes exceeding 850 W/m².</p>
+            <h2>📍 1. Geographic Microclimate & North Sea Maritime Buffer</h2>
+            <p><strong>The Westland region</strong> (51.99°N, 4.21°E, elevation 0 to -2 m NAP), often celebrated as the "Glass City" (Glazen Stad), is the historic global epicenter of high-tech Controlled Environment Agriculture (CEA). Bordered immediately by the North Sea to the west and the Port of Rotterdam to the south, Westland enjoys a strongly buffered maritime temperate climate (Köppen Cfb). Extreme summer heatwaves (&gt;35°C) are rare due to cooling marine sea breezes, while severe winter freezes are mitigated by North Sea thermal inertia, resulting in a mean January temperature of +3.5°C and rare dips below -7°C.</p>
+            <p>However, the coastal latitude causes pronounced seasonal daylight asymmetry. Global horizontal irradiance peaks at <strong>40–42 mol/m²/day</strong> in June under high sun angles, but collapses to less than <strong>6.0 mol/m²/day</strong> in December under frequent maritime cloud cover and short 7.5-hour photoperiods. Consequently, commercial year-round crop production depends strictly on high-efficiency horticultural supplemental lighting and multi-layered climate screens.</p>
         </div>
 
-        <!-- Climate Control & Screen Strategy -->
+        <!-- Section 2: NASA POWER Monthly DLI Curves & Supplemental LED Sizing -->
         <div class="section-panel">
-            <h2>🛡️ Recommended Thermal & Shade Screen Specification</h2>
-            <p><strong>Screen Specification:</strong> Double Screen (Energy 47% + High-Grade Diffuse 20%)</p>
-            <p><strong>Primary Cooling Strategy:</strong> Roof Natural Ventilation + Screening</p>
-            <p>Maintaining positive day-night temperature differential (DIF) and nighttime dehumidification minimizes condensation on cold structural glass surfaces, suppressing Botrytis and powdery mildew spore viability.</p>
+            <h2>💡 2. Monthly Solar DLI Curves &amp; Supplemental LED Sizing</h2>
+            <p>Commercial high-wire crops (truss tomato, cocktail tomato, sweet bell pepper, and cucumber) cultivated in Westland Venlo glasshouses require a target canopy DLI of <strong>25 to 30 mol/m²/day</strong> for generative balance and maximum premium yield. The table below outlines empirical monthly irradiance modeled from NASA POWER climatology (51.99°N, 4.21°E) and diffuse Venlo glass transmission (τ = 70%):</p>
+            
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Month</th>
+                        <th>Avg Outdoor DLI (mol/m²/d)</th>
+                        <th>Inside Venlo DLI (τ = 70%)</th>
+                        <th>Crop Target DLI</th>
+                        <th>Supplemental LED Need (PPFD / h)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Jan</strong></td><td>6.8</td><td>4.8</td><td>25.0</td><td>200 µmol/m²/s (16h)</td></tr>
+                    <tr><td><strong>Feb</strong></td><td>12.2</td><td>8.5</td><td>25.0</td><td>160 µmol/m²/s (16h)</td></tr>
+                    <tr><td><strong>Mar</strong></td><td>22.5</td><td>15.8</td><td>28.0</td><td>100 µmol/m²/s (14h)</td></tr>
+                    <tr><td><strong>Apr</strong></td><td>32.4</td><td>22.7</td><td>30.0</td><td>0–40 µmol/m²/s (transitional)</td></tr>
+                    <tr><td><strong>May</strong></td><td>38.6</td><td>27.0</td><td>30.0</td><td>Natural Sunlight Sufficient (Screening Active)</td></tr>
+                    <tr><td><strong>Jun</strong></td><td>41.5</td><td>29.1</td><td>30.0</td><td>Natural Sunlight Sufficient (Diffuse Shading)</td></tr>
+                    <tr><td><strong>Jul</strong></td><td>39.8</td><td>27.9</td><td>30.0</td><td>Natural Sunlight Sufficient (Thermal Screen at Midday)</td></tr>
+                    <tr><td><strong>Aug</strong></td><td>34.2</td><td>23.9</td><td>30.0</td><td>Natural Sunlight Sufficient</td></tr>
+                    <tr><td><strong>Sep</strong></td><td>24.1</td><td>16.9</td><td>28.0</td><td>60 µmol/m²/s (12h)</td></tr>
+                    <tr><td><strong>Oct</strong></td><td>14.5</td><td>10.2</td><td>25.0</td><td>140 µmol/m²/s (16h)</td></tr>
+                    <tr><td><strong>Nov</strong></td><td>8.1</td><td>5.7</td><td>25.0</td><td>190 µmol/m²/s (16h)</td></tr>
+                    <tr><td><strong>Dec</strong></td><td>5.4</td><td>3.8</td><td>25.0</td><td>210 µmol/m²/s (16h)</td></tr>
+                </tbody>
+            </table>
+            <p>Growers utilizing modern LED top-lighting installations (3.2–3.8 µmol/J efficiency) operate light intensities of 180 to 240 µmol/m²/s to sustain winter crop vigor while decoupling heat generation from lighting schedules.</p>
+        </div>
+
+        <!-- Section 3: Thermal Screen Strategy & Geothermal Heat Networks -->
+        <div class="section-panel">
+            <h2>🛡️ 3. DIN V 18599 Heating Physics &amp; Trias Westland Geothermal</h2>
+            <p>Heating design for modern 6.5m–7.5m post-height Venlo structures follows rigorous DIN V 18599 and NEN 3859 thermal modeling:</p>
+            <ul>
+                <li><strong>Unscreened Structural Heat Transfer ($U$-value)</strong>: Standard single 4mm float glass exhibits an overall heat transfer coefficient of $U = 5.8\text{ W/m}^2\text{K}$. During design winter minimum conditions (-8°C external, +18°C internal, $\Delta T = 26\text{ K}$), peak heating load reaches <strong>150–180 W/m²</strong>.</li>
+                <li><strong>Dual Thermal Screen Attenuation</strong>: Installing double horizontal screens—combining an ultra-transparent daytime energy screen (e.g., Ludvig Svensson Luxous 1147 FR, 47% energy saving) with a dense nighttime thermal/blackout screen (Obscura)—reduces overall $U$-value to $2.8–3.1\text{ W/m}^2\text{K}$, dropping peak heating requirements by <strong>45% to 52%</strong>.</li>
+                <li><strong>Deep Geothermal (Aardwarmte) Integration</strong>: The <strong>Trias Westland</strong> project extracts 85°C geothermal brine from Lower Cretaceous sandstone aquifers at 2.3 km depth. Supplying high-temperature base-load hot water to interconnected glasshouse clusters, it displaces over 35 million m³ of natural gas annually, transitioning Westland toward climate-neutral CEA.</li>
+            </ul>
+        </div>
+
+        <!-- Section 4: Het Nieuwe Telen (Next Generation Growing) & VPD Steering -->
+        <div class="section-panel">
+            <h2>🌿 4. Het Nieuwe Telen (HNT) &amp; Humidity Deficit Control</h2>
+            <p>Under the Dutch <em>Het Nieuwe Telen</em> (Next Generation Growing) philosophy developed by Wageningen University &amp; Research (WUR Bleiswijk), greenhouses maintain active dehumidification with screens fully closed:</p>
+            <ul>
+                <li><strong>Mechanical Heat Recovery Dehumidifiers (DryGair / Air &amp; Energy)</strong>: Condense transpired plant moisture while returning the latent heat of vaporization ($2.45\text{ MJ/kg H}_2\text{O}$) into the greenhouse air, preventing Botrytis cinerea without cracking open ridge vents in cold weather.</li>
+                <li><strong>Target Vapor Pressure Deficit (VPD)</strong>: Daytime canopy VPD is steered between <strong>0.8 and 1.2 kPa</strong> for optimal stomatal conductance and calcium translocation into growing tips, while night VPD is maintained at <strong>0.5 to 0.7 kPa</strong> to prevent gutation and blossom end rot.</li>
+            </ul>
         </div>
 
         <!-- Dominant Commercial Crops -->
         <div class="section-panel">
-            <h2>🌿 Dominant Commercial Production Crops</h2>
-            <p>Major protected cropping varieties grown at scale in this regional cluster: <strong>High-Wire Tomato, Sweet Pepper, Cut Flowers</strong>.</p>
+            <h2>🏢 5. Cluster Leaders &amp; Production Benchmarks</h2>
+            <p>Major commercial enterprises in the Westland hub include <strong>Prominent, Agro Care, Duijvestijn Tomaten, and Lans</strong>, cultivating high-wire truss tomatoes yielding up to <strong>75–90 kg/m²/year</strong> under LED assimilation lighting, and sweet bell peppers reaching <strong>30–35 kg/m²/year</strong>.</p>
         </div>
 
         <!-- Relevant Tools Linkage -->
@@ -123,9 +174,10 @@
             <h2>🔧 Recommended Inwoovation Lab Engineering Tools</h2>
             <ul style="list-style:none; padding-left:0; line-height:2.2;">
                 <li><a href="../tools/greenhouse-3d-digital-twin-simulator.html" style="color:#38bdf8; font-weight:600; text-decoration:none;">🌟 3D WebGL Venlo Digital Twin Simulator →</a></li>
-                <li><a href="../tools/greenhouse-natural-ventilation-buoyancy-airflow-calculator.html" style="color:#38bdf8; font-weight:600; text-decoration:none;">🌬️ Natural Ventilation & Buoyancy Airflow Calculator →</a></li>
+                <li><a href="../tools/greenhouse-natural-ventilation-buoyancy-airflow-calculator.html" style="color:#38bdf8; font-weight:600; text-decoration:none;">🌬️ Natural Ventilation &amp; Buoyancy Airflow Calculator →</a></li>
                 <li><a href="../tools/greenhouse-heating-load-thermal-screen-calculator.html" style="color:#38bdf8; font-weight:600; text-decoration:none;">🔥 Thermal Screen Heating Load Calculator (DIN V 18599) →</a></li>
-                <li><a href="../tools/dli-spectrum-photomorphogenesis-calculator.html" style="color:#38bdf8; font-weight:600; text-decoration:none;">💡 DLI & Horticultural LED Spectrum Optimizer →</a></li>
+                <li><a href="../tools/dli-spectrum-photomorphogenesis-calculator.html" style="color:#38bdf8; font-weight:600; text-decoration:none;">💡 DLI &amp; Horticultural LED Spectrum Optimizer →</a></li>
+                <li><a href="../tools/stock-tank-nutrient-recipe-dosing-calculator.html" style="color:#38bdf8; font-weight:600; text-decoration:none;">🧪 A/B Stock Tank &amp; Hydroponic Fertigation Calculator →</a></li>
             </ul>
         </div>
 
