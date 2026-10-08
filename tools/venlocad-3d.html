@@ -906,6 +906,19 @@
 
       <div class="param-group">
         <div class="param-header">
+          <span>Greenhouse Location / Latitude</span>
+        </div>
+        <select id="select-solar-location" style="width: 100%; padding: 8px 10px; background: #1e293b; color: #fff; border: 1px solid var(--panel-border); border-radius: 8px; outline: none; font-size: 0.8rem;">
+          <option value="49.45" selected>🇩🇪 Germany (Nürnberg 49.45° N - Knoblauchsland)</option>
+          <option value="52.00">🇳🇱 Netherlands (Wageningen 52.00° N - Westland)</option>
+          <option value="36.50">🇰🇷 South Korea (Central 36.50° N - Buyeo/Gimje)</option>
+          <option value="36.77">🇺🇸 USA California (Salinas 36.77° N)</option>
+          <option value="36.84">🇪🇸 Spain (Almería 36.84° N)</option>
+        </select>
+      </div>
+
+      <div class="param-group">
+        <div class="param-header">
           <span>Season (Solar Declination)</span>
         </div>
         <select id="select-solar-season" style="width: 100%; padding: 8px 10px; background: #1e293b; color: #fff; border: 1px solid var(--panel-border); border-radius: 8px; outline: none; font-size: 0.8rem;">
@@ -1611,6 +1624,7 @@
       snowDepth: 25.0,
       cropLoad: 15.0,
       columnSize: '100x50x3.2',
+      latitude: 49.45,
       solarSeason: 'equinox',
       solarHour: 12.0,
       show3DDimensions: true,
@@ -2480,12 +2494,13 @@
     function updateSolarPosition() {
       const season = params.solarSeason;
       const hour = params.solarHour;
+      const latDeg = (params.latitude !== undefined && !isNaN(params.latitude)) ? params.latitude : 49.45;
 
       let declinationDeg = 0.0;
       if (season === 'summer') declinationDeg = 23.45;
       else if (season === 'winter') declinationDeg = -23.45;
       const delta = (declinationDeg * Math.PI) / 180;
-      const phi = (36.5 * Math.PI) / 180;
+      const phi = (latDeg * Math.PI) / 180;
       const omega = ((hour - 12) * 15 * Math.PI) / 180;
 
       const sinAlpha = Math.sin(phi) * Math.sin(delta) + Math.cos(phi) * Math.cos(delta) * Math.cos(omega);
@@ -2495,14 +2510,18 @@
       const cosGamma = (Math.sin(alpha) * Math.sin(phi) - Math.sin(delta)) / (Math.cos(alpha) * Math.cos(phi) || 0.001);
       const gamma = Math.acos(Math.max(-1.0, Math.min(1.0, cosGamma))) * (hour < 12 ? -1 : 1);
 
+      const isNight = alphaDeg <= 0;
       const R = 90;
-      const sunX = R * Math.cos(alpha) * Math.sin(gamma);
-      const sunY = Math.max(10, R * Math.sin(alpha));
-      const sunZ = R * Math.cos(alpha) * Math.cos(gamma);
+      const sunX = R * Math.cos(Math.max(0, alpha)) * Math.sin(gamma);
+      const sunY = Math.max(isNight ? -20 : 5, R * Math.sin(alpha));
+      const sunZ = R * Math.cos(Math.max(0, alpha)) * Math.cos(gamma);
 
-      if (sunLight) {
+      if (typeof sunLight !== 'undefined' && sunLight) {
         sunLight.position.set(sunX, sunY, sunZ);
-        if (alphaDeg > 20) {
+        if (isNight) {
+          sunLight.color.setHex(0x1e293b);
+          sunLight.intensity = 0.05;
+        } else if (alphaDeg > 20) {
           sunLight.color.setHex(0xfff7ed);
           sunLight.intensity = 1.35;
         } else {
@@ -2511,12 +2530,18 @@
         }
       }
 
-      const totalShading = Math.min(35.0, 9.0 + Math.max(0.0, 15.0 * Math.cos(alpha)));
-      const transmittance = (91.5 * (100 - totalShading) / 100);
+      const totalShading = isNight ? 100.0 : Math.min(35.0, 9.0 + Math.max(0.0, 15.0 * Math.cos(Math.max(0, alpha))));
+      const transmittance = isNight ? 0.0 : (91.5 * (100 - totalShading) / 100);
 
-      document.getElementById('metric-solar-elev').innerText = `${alphaDeg.toFixed(1)} °`;
-      document.getElementById('metric-solar-shading').innerText = `${totalShading.toFixed(1)} %`;
-      document.getElementById('metric-solar-trans').innerText = `${transmittance.toFixed(1)} %`;
+      const elevEl = document.getElementById('metric-solar-elev');
+      const shadingEl = document.getElementById('metric-solar-shading');
+      const transEl = document.getElementById('metric-solar-trans');
+
+      if (elevEl) elevEl.innerText = isNight ? `${alphaDeg.toFixed(1)} ° (Night)` : `${alphaDeg.toFixed(1)} °`;
+      if (shadingEl) shadingEl.innerText = isNight ? '100.0 % (Night)' : `${totalShading.toFixed(1)} %`;
+      if (transEl) transEl.innerText = isNight ? '0.0 % (Night)' : `${transmittance.toFixed(1)} %`;
+
+      return { alphaDeg, totalShading, transmittance, isNight, latDeg };
     }
 
     // --- 6. 3D In-Scene Dynamic Dimension Projection ---
@@ -2749,6 +2774,14 @@
         updateSolarPosition();
       });
 
+      const locSel = document.getElementById('select-solar-location');
+      if (locSel) {
+        locSel.addEventListener('change', (e) => {
+          params.latitude = parseFloat(e.target.value);
+          updateSolarPosition();
+        });
+      }
+
       document.getElementById('select-col-size').addEventListener('change', (e) => {
         params.columnSize = e.target.value;
         buildGreenhouse();
@@ -2928,6 +2961,9 @@
       document.getElementById('input-crop').value = params.cropLoad;
       document.getElementById('val-crop').innerText = `${params.cropLoad.toFixed(1)} kg/m²`;
       document.getElementById('select-col-size').value = params.columnSize;
+      if (document.getElementById('select-solar-location')) {
+        document.getElementById('select-solar-location').value = (params.latitude !== undefined ? params.latitude : 49.45).toFixed(2);
+      }
       if (document.getElementById('select-solar-season')) {
         document.getElementById('select-solar-season').value = params.solarSeason;
       }
@@ -3995,9 +4031,9 @@
         `Client: ${client}\n` +
         `Geometry: ${W}m span x ${bays} bays x ${L}m length (Gutter ${H}m)\n` +
         `Total Area: ${area} m² (${(area * 0.000247105).toFixed(2)} ac)\n` +
-        `Structural Audit (NEN 3859 / EN 1993): Wind ${params.windSpeed}m/s · ${structVerdict}\n` +
+        `Structural Pre-Check (EN 1990/1993, Preliminary only): Wind ${params.windSpeed}m/s · ${structVerdict}\n` +
         `Ventilation: Wageningen ACH ${(document.getElementById('pp-vent-ach') || {}).innerText || '-'}\n` +
-        `Total Estimate: $${Math.round(rawTotal/1360).toLocaleString()} USD (Tax Included)\n` +
+        `Total Estimate: ${grandTotal} (Tax Included)\n` +
         `Lead Authority: Inwoovation Engineering Lab (Commercial CEA Division)\n` +
         `Online 3D Model & Technical Audit: inwoovation.com/tools/venlocad-3d.html`;
 
