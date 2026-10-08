@@ -12,8 +12,8 @@
   <meta charset="UTF-8">
     <meta name="google-adsense-account" content="ca-pub-8597809158257497">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Greenhouse Heating Load & Thermal Screen Energy Calculator (DIN V 18599) | Inwoovation</title>
-  <meta name="description" content="Industrial engineering calculator for greenhouse peak heating loads, pipe rail hydraulics, and thermal screen energy savings based on DIN V 18599.">
+  <title>Greenhouse Heating Load, Thermal Screen & Green Energy Transition Sizer (DIN V 18599) | Inwoovation</title>
+  <meta name="description" content="Commercial engineering calculator for greenhouse peak heating demand, DIN V 18599 thermal screen savings, hydronic pipe rail sizing, and geothermal/biomass renewable energy transition.">
     <link rel="canonical" href="https://inwoovation.com/tools/greenhouse-heating-load-thermal-screen-calculator.html" />
   <link rel="stylesheet" href="css/digital_twin_styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -49,15 +49,25 @@
       color: var(--accent-emerald);
       margin-top: 4px;
     }
+    .badge-green {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      background: rgba(16, 185, 129, 0.2);
+      color: #34d399;
+      border: 1px solid rgba(16, 185, 129, 0.4);
+    }
   </style>
 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Greenhouse Heating Load & Thermal Screen Energy Calculator",
+    "name": "Greenhouse Heating Load, Thermal Screen & Green Energy Transition Sizer",
     "url": "https://inwoovation.com/tools/greenhouse-heating-load-thermal-screen-calculator.html",
-    "description": "Calculates peak thermal heating demand, hot-water pipe sizing, and thermal screen energy conservation according to DIN V 18599.",
+    "description": "Calculates peak thermal heating demand, hot-water pipe sizing, thermal screen conservation, and geothermal/biomass decarbonization according to DIN V 18599.",
     "applicationCategory": "EducationalApplication, EngineeringTool",
     "operatingSystem": "All",
     "author": {
@@ -74,26 +84,26 @@
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "Why is leaf temperature more critical than ambient air temperature for VPD?",
+        "name": "How does a thermal energy screen achieve 40–45% energy conservation in Venlo greenhouses?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Because stomata are located on the leaf surface, the saturation vapor pressure must be calculated at leaf temperature, not air temperature. High transpiration can cool leaves 2°C below ambient air, shifting calculated VPD by over 30%."
+          "text": "A closed thermal screen acts as a radiative barrier intercepting long-wave infrared radiation emitted by the crop and floor. Furthermore, it creates a stagnant insulating air buffer beneath the cold glass roof, reducing convective heat transfer coefficients by over 40% based on DIN V 18599 standards."
         }
       },
       {
         "@type": "Question",
-        "name": "How does high-pressure fogging (70 bar) achieve adiabatic cooling without leaf wetting?",
+        "name": "What is the typical hydraulic flow rate requirement for heating pipe rails?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Operating water pressure at 70 bar shears droplet diameters below 10–15 microns (Sauter Mean Diameter D32). Droplets flash-evaporate in under 1.5 seconds, extracting latent heat of vaporization (2.45 MJ/kg) before settling onto foliage."
+          "text": "For a standard commercial greenhouse with a 20°C temperature differential across the heating circuit (e.g. 70°C supply / 50°C return), the required circulation flow rate is calculated as V = Q / (rho * Cp * deltaT), requiring approximately 43 m³/h per 1,000 kW of heating load."
         }
       },
       {
         "@type": "Question",
-        "name": "What is the optimal air velocity through the greenhouse crop canopy?",
+        "name": "How does deep geothermal energy integration compare to conventional natural gas boilers?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Horizontal circulation fans should maintain an air speed of 0.3 to 0.5 m/s across leaves. This thins the laminar boundary layer resistance, replenishing localized CO2 supplies and preventing humid microclimates that invite fungal pathogens."
+          "text": "Deep geothermal heating utilizes thermal water (120–140°C) via titanium plate heat exchangers, delivering zero on-site fossil combustion and abating approximately 0.20 kg CO2 per kWh of heat generated compared to standard natural gas boilers."
         }
       }
     ]
@@ -114,15 +124,15 @@
     </div>
   </div>
 
-
   <div class="sim-container">
     <header class="sim-header">
-      <h1>🔥 Greenhouse Heating Load & Thermal Screen Engine</h1>
-      <p>DIN V 18599 Thermal Envelope Transmission & Hot-Water Pipe Hydraulics Calculator</p>
+      <div style="margin-bottom: 8px;"><span class="badge-green">DIN V 18599 &amp; NEN 3859 COMPLIANT</span></div>
+      <h1>🔥 Greenhouse Heating Load, Thermal Screen &amp; Green Energy Sizer</h1>
+      <p>Thermodynamic Transmission Analysis, Hydronic Pipe Sizing &amp; Decarbonization Payback Engine</p>
     </header>
 
     <div class="calc-card">
-      <h3 class="control-section-title">📐 Greenhouse Dimensions & Structure</h3>
+      <h3 class="control-section-title">📐 Greenhouse Dimensions &amp; Structure</h3>
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
         <div class="control-group">
           <div class="control-label-row">
@@ -142,10 +152,10 @@
 
         <div class="control-group">
           <div class="control-label-row">
-            <span>Glazing Type</span>
+            <span>Glazing Material</span>
           </div>
-          <select id="glazing-select" style="background:#1e293b; color:white; border:1px solid #475569; padding:10px; border-radius:8px;">
-            <option value="single_diffuse">Single 4mm Diffuse Glass (U=6.5 W/m²K)</option>
+          <select id="glazing-select" style="background:#1e293b; color:white; border:1px solid #475569; padding:10px; border-radius:8px; width: 100%;">
+            <option value="single_glass">Single 4mm Diffuse Glass (U=6.5 W/m²K)</option>
             <option value="double_ar">Double Anti-Reflective Glass (U=3.2 W/m²K)</option>
             <option value="poly_double">Double Inflatable Polyethylene (U=4.2 W/m²K)</option>
             <option value="polycarb_16">16mm Multiwall Polycarbonate (U=2.4 W/m²K)</option>
@@ -155,8 +165,8 @@
     </div>
 
     <div class="calc-card">
-      <h3 class="control-section-title">❄️ Design Temperatures & Thermal Screen Control</h3>
-      <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px;">
+      <h3 class="control-section-title">❄️ Design Temperatures &amp; Thermal Screen Control</h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px;">
         <div class="control-group">
           <div class="control-label-row">
             <span>Target Indoor Night Temp</span>
@@ -175,10 +185,44 @@
 
         <div class="control-group">
           <div class="control-label-row">
-            <span>Thermal Energy Screen Closure</span>
+            <span>Thermal Screen Closure Ratio</span>
             <span id="lbl-screen">100 % (Fully Closed)</span>
           </div>
           <input type="range" id="slider-screen" min="0" max="100" value="100" step="5">
+        </div>
+      </div>
+    </div>
+
+    <!-- Green Energy Source Selection Card -->
+    <div class="calc-card" style="border: 1px solid rgba(16, 185, 129, 0.35); background: rgba(6, 78, 59, 0.15);">
+      <h3 class="control-section-title" style="color: #34d399;">🌱 Green Energy Transition &amp; Renewable Heating Source</h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px;">
+        <div class="control-group">
+          <div class="control-label-row">
+            <span>Thermal Energy Supply Model</span>
+          </div>
+          <select id="energy-source-select" style="background:#0f172a; color:#38bdf8; border:1px solid #10b981; padding:10px; border-radius:8px; width: 100%; font-weight: 600;">
+            <option value="geothermal">🌋 Deep Geothermal (Steiner Kirchweidach Model, COP eq ~18)</option>
+            <option value="biomass_chp">🪵 Biomass Woodchip CHP (Scherzer Nürnberg Model, 88% eff.)</option>
+            <option value="industrial_waste">🏭 Industrial Waste Heat Symbiosis (Wittenberg / Neurath Model)</option>
+            <option value="natural_gas">🔥 Conventional Gas Condensing Boiler (Baseline, 0.202 kg CO2/kWh)</option>
+          </select>
+        </div>
+
+        <div class="control-group">
+          <div class="control-label-row">
+            <span>Heating Loop Delta T ($\Delta T$)</span>
+            <span id="lbl-deltat">20.0 °C (75°C / 55°C)</span>
+          </div>
+          <input type="range" id="slider-deltat" min="10" max="35" value="20" step="5">
+        </div>
+
+        <div class="control-group">
+          <div class="control-label-row">
+            <span>Annual Heating Equivalent Hours</span>
+            <span id="lbl-hours">2,200 h / year</span>
+          </div>
+          <input type="range" id="slider-hours" min="1200" max="3200" value="2200" step="100">
         </div>
       </div>
     </div>
@@ -206,12 +250,28 @@
         <div style="font-size: 0.8rem; color: var(--text-muted);">ESTIMATED BOILER LOAD</div>
         <div class="res-val" id="res-boiler-btu">4.85 MMBtu/h</div>
       </div>
+      <div class="res-box" style="border-color: rgba(16, 185, 129, 0.3);">
+        <div style="font-size: 0.8rem; color: #34d399;">ANNUAL CO₂ ABATEMENT</div>
+        <div class="res-val" id="res-co2-abatement" style="color: #10b981;">578 t CO₂/yr</div>
+      </div>
+      <div class="res-box" style="border-color: rgba(56, 189, 248, 0.3);">
+        <div style="font-size: 0.8rem; color: #38bdf8;">HYDRONIC FLOW RATE</div>
+        <div class="res-val" id="res-flow-rate" style="color: #38bdf8;">61.1 m³/h</div>
+      </div>
+      <div class="res-box" style="border-color: rgba(245, 158, 11, 0.3);">
+        <div style="font-size: 0.8rem; color: #fbbf24;">ANNUAL HEATING COST SAVINGS</div>
+        <div class="res-val" id="res-cost-savings" style="color: #fbbf24;">€ 187,400 / yr</div>
+      </div>
+      <div class="res-box">
+        <div style="font-size: 0.8rem; color: var(--text-muted);">ANNUAL HEAT DEMAND</div>
+        <div class="res-val" id="res-annual-mwh" style="color: #cbd5e1;">3,124 MWh/yr</div>
+      </div>
     </div>
 
     <!-- 1-Click PDF Export -->
     <div style="text-align:center; margin-top:24px;">
       <button onclick="exportHeatingAuditPDF()" style="background:linear-gradient(135deg, #0284c7, #0369a1); color:#fff; border:1px solid rgba(255,255,255,0.2); padding:12px 24px; border-radius:12px; font-weight:700; font-size:0.95rem; cursor:pointer; display:inline-flex; align-items:center; gap:8px; box-shadow:0 4px 14px rgba(2,132,199,0.35);">
-        📄 Download Heating & Thermal Screen Audit Report (PDF)
+        📄 Download Heating &amp; Decarbonization Engineering Audit (PDF)
       </button>
     </div>
 
@@ -220,7 +280,7 @@
       <div style="display: flex; align-items: center; gap: 12px;">
         <span style="font-size: 1.6rem;">💡</span>
         <div>
-          <div style="font-size: 0.95rem; font-weight: 800; color: #34d399;">Up to $200,000 for Greenhouse Thermal Screens &amp; Heat Pumps</div>
+          <div style="font-size: 0.95rem; font-weight: 800; color: #34d399;">Up to $200,000 for Greenhouse Thermal Screens, Geothermal &amp; Heat Pumps</div>
           <div style="font-size: 0.82rem; color: #94a3b8; margin-top: 2px;">Eligible under California CDFA SWEEP, CEC Clean Ag, and EU BLE Energy Efficiency Programs</div>
         </div>
       </div>
@@ -234,7 +294,6 @@
   <script src="../js/audit-pdf-generator.js"></script>
   <script src="../js/biophysics_kernel.js"></script>
 
-    
     <!-- High-RPM Native Golden-Zone AdSense Unit (Option C) -->
     <div class="inw-ad-container inw-golden-zone">
       <div class="inw-ad-label">Sponsored / Commercial Intelligence</div>
@@ -255,36 +314,44 @@
       
       <!-- Technical Theory & Mathematical Formulation -->
       <section class="editorial-card">
-        <h2><span>🌡️</span> Engineering Theory & Biophysical Principles</h2>
-        <p>Greenhouse microclimate engineering balances sensible heat flux, latent energy transfers, and mass transport through the plant boundary layer. Vapor Pressure Deficit (VPD), defined as the difference between the saturation vapor pressure at leaf temperature and the actual ambient vapor pressure, is the fundamental driving gradient for crop transpiration and xylem sap translocation. If VPD is too low (< 0.4 kPa), transpiration stalls, leading to localized calcium deficiencies (blossom-end rot, tipburn) and fungal spore germination (Botrytis cinerea). Conversely, if VPD exceeds 1.5 kPa, stomatal closure occurs via abscisic acid (ABA) signaling to prevent desiccation, terminating CO2 assimilation. Precise psychrometric control via thermal screens, high-pressure fogging, and modulating ventilation louvers stabilizes VPD within the optimal photosynthetic window.</p>
+        <h2><span>🌡️</span> Engineering Theory: DIN V 18599 Greenhouse Thermodynamics</h2>
+        <p>Commercial greenhouse heating demands a rigorous thermodynamic balance between transmission conduction through the envelope, infiltration ventilation losses, and radiant thermal exchange with the cold night sky. Unlike standard commercial buildings, agricultural glasshouses feature high surface-to-floor area ratios ($A_{env} / A_{floor} \approx 1.25 - 1.50$), making envelope thermal resistance ($U$-value) and dynamic thermal screen deployment the decisive factors in energy consumption. This tool implements the DIN V 18599 and NEN 3859 thermal modeling kernel with integrated green heat source transition economics (Deep Geothermal, Biomass CHP, Industrial Waste Heat).</p>
         
-        <h3>Governing Equations & Mathematical Model</h3>
+        <h3>Governing Thermodynamic Formulations</h3>
         <div class="formula-box">
-VPD (kPa) = VPsat(T_leaf) - VPair(T_air, RH)
-Where:
-  • VPsat(T) = 0.61078 × exp[ (17.27 × T) / (T + 237.3) ]  (Tetens equation)
-  • VPair = VPsat(T_air) × (RH% / 100)
-  • T_leaf is measured via infrared pyrometer (typically T_air ± 1.5°C)
+1. Total Peak Thermal Demand:
+   Q_total (W) = Q_trans + Q_inf
+   Where:
+   • Q_trans = [ A_roof · U_roof · (1 - f_screen · 0.45) + A_wall · U_wall ] · (T_in - T_out)
+   • Q_inf = rho_air · c_p,air · (V_greenhouse · ACH / 3600) · (T_in - T_out)
+   • rho_air = 1.204 kg/m³, c_p,air = 1005 J/(kg·K)
+
+2. Hydronic Pipe Rail Circulation (Ø51mm Steel Pipe):
+   V_flow (m³/h) = Q_total (kW) / [ rho_water · c_p,water · deltaT_circuit ] · 3600
+   • deltaT_circuit = T_supply - T_return (typically 20°C in high-wire cultivation)
+
+3. Decarbonization Abatement:
+   CO2_abatement (t/yr) = E_annual (MWh) · [ EF_baseline - EF_renewable ]
+   • EF_gas = 0.202 t CO2/MWh | EF_geothermal = 0.015 t CO2/MWh | EF_biomass = 0.025 t CO2/MWh
         </div>
 
-        <h3>Commercial Greenhouse Setpoints & Benchmark Matrix</h3>
+        <h3>Commercial Envelope U-Values & Benchmark Performance</h3>
         <div class="benchmark-table-wrapper">
           <table class="benchmark-table">
             <thead>
               <tr>
-                <th>Crop / System State</th>
-                <th>Target Setpoint</th>
-                <th>Engineering Range</th>
-                <th>Operational Impact</th>
+                <th>Glazing Material Specification</th>
+                <th>Nominal U-Value</th>
+                <th>Light Transmittance (PAR)</th>
+                <th>Typical Commercial Application</th>
               </tr>
             </thead>
             <tbody>
-<tr><td><strong>Vegetative Phase (High Humidity)</strong></td><td>0.5 – 0.8 kPa</td><td>22.0 – 25.0 °C</td><td>70 – 80%</td></tr>
-<tr><td><strong>Early Flowering / Generative</strong></td><td>0.8 – 1.1 kPa</td><td>20.0 – 23.0 °C</td><td>65 – 75%</td></tr>
-<tr><td><strong>Late Fruiting / Heavy Load</strong></td><td>1.0 – 1.3 kPa</td><td>19.0 – 22.0 °C</td><td>60 – 70%</td></tr>
-<tr><td><strong>High Radiation Midday Peak</strong></td><td>1.2 – 1.5 kPa</td><td>24.0 – 27.0 °C</td><td>55 – 65%</td></tr>
-<tr><td><strong>Nighttime Transpiration Maintenance</strong></td><td>0.3 – 0.6 kPa</td><td>16.0 – 18.0 °C</td><td>75 – 85%</td></tr>
-
+              <tr><td><strong>Single 4mm Diffuse Glass (AR)</strong></td><td>6.5 W/m²K</td><td>91.5 %</td><td>High-wire tomato &amp; cucumber (Knoblauchsland, Westland)</td></tr>
+              <tr><td><strong>Double Anti-Reflective Glass</strong></td><td>3.2 W/m²K</td><td>87.0 %</td><td>High-latitude low-energy Venlo installations</td></tr>
+              <tr><td><strong>Double Inflatable Polyethylene</strong></td><td>4.2 W/m²K</td><td>78 – 82 %</td><td>Commercial berry tunnels and Asian multi-span houses</td></tr>
+              <tr><td><strong>16mm Multiwall Polycarbonate</strong></td><td>2.4 W/m²K</td><td>74.0 %</td><td>Greenhouse gables, north walls &amp; propagation nurseries</td></tr>
+              <tr><td><strong>Closed Energy Screen (Aluminized)</strong></td><td>Effective U -43%</td><td>Dynamic deploy</td><td>Nighttime thermal retention (Svensson Luxous / Harmony)</td></tr>
             </tbody>
           </table>
         </div>
@@ -296,18 +363,18 @@ Where:
         <div class="faq-accordion">
 
         <details class="faq-item">
-          <summary class="faq-summary">Why is leaf temperature more critical than ambient air temperature for VPD? <span>▾</span></summary>
-          <div class="faq-content">Because stomata are located on the leaf surface, the saturation vapor pressure must be calculated at leaf temperature, not air temperature. High transpiration can cool leaves 2°C below ambient air, while intense solar radiation without air movement can heat leaves 3°C above air, shifting calculated VPD by over 30%.</div>
+          <summary class="faq-summary">How does a thermal energy screen achieve 40–45% energy conservation? <span>▾</span></summary>
+          <div class="faq-content">A closed thermal screen acts as a radiative barrier intercepting long-wave infrared radiation (wavelength 5–50 µm) emitted by the crop and floor. Furthermore, it creates a stagnant, decoupled air buffer beneath the cold glass roof, preventing convective looping and dropping the effective roof transmission by over 40% in accordance with DIN V 18599 calculations.</div>
         </details>
         
         <details class="faq-item">
-          <summary class="faq-summary">How does high-pressure fogging (70 bar) achieve adiabatic cooling without leaf wetting? <span>▾</span></summary>
-          <div class="faq-content">Operating water pressure at 70 bar shears droplet diameters below 10–15 microns (Sauter Mean Diameter D32). Droplets of this microscopic size flash-evaporate into the ambient air stream in under 1.5 seconds, extracting latent heat of vaporization (2.45 MJ/kg) before they can gravity-settle onto foliage.</div>
+          <summary class="faq-summary">What is the optimal temperature differential (Delta T) for greenhouse pipe rails? <span>▾</span></summary>
+          <div class="faq-content">High-wire horticultural heating loops are designed for a 20°C delta T (e.g. 75°C supply and 55°C return). A smaller delta T demands larger pump electrical energy and high flow rates, while a larger delta T creates uneven temperature gradients along crop rows, inducing cold pockets and localized condensation.</div>
         </details>
         
         <details class="faq-item">
-          <summary class="faq-summary">What is the optimal air velocity through the greenhouse crop canopy? <span>▾</span></summary>
-          <div class="faq-content">Horizontal circulation fans should maintain an air speed of 0.3 to 0.5 m/s across leaves. This thins the laminar boundary layer resistance, replenishing localized CO2 supplies and preventing humid microclimates that invite fungal pathogens.</div>
+          <summary class="faq-summary">How does deep geothermal compare to biomass woodchip CHP for peak winter loads? <span>▾</span></summary>
+          <div class="faq-content">Deep geothermal (e.g. Gemüsebau Steiner in Kirchweidach) delivers continuous baseload energy at negligible marginal fuel cost, but requires high capital expenditure. Biomass woodchip systems (e.g. Scherzer Gemüse in Nürnberg) provide rapid modulation and high supply temperatures (85–95°C), while producing scrubbed flue-gas CO2 for plant growth, creating an ideal municipal-industrial hybrid energy loop.</div>
         </details>
         
         </div>
@@ -316,37 +383,36 @@ Where:
       <!-- Recommended Hardware & Amazon Associates Monetization -->
       <section class="amazon-showcase">
         <div class="amazon-header">
-          <h3><span>🛒</span> Recommended Precision Field Hardware (Amazon)</h3>
+          <h3><span>🛒</span> Recommended Heating &amp; Thermal Field Instruments (Amazon)</h3>
           <span style="font-size:0.8rem; color:#94a3b8;">Store ID: <strong>inwoovation20-20</strong></span>
         </div>
         <p style="font-size:0.9rem; color:#cbd5e1; margin-bottom:20px;">
-          Commercial precision horticulture demands lab-grade sensors and field calibration meters. 
-          The following industrial-grade instruments are vetted for validating the inputs and outputs of this calculator:
+          Validating thermal screen seals, envelope infiltration, and hydronic loop balancing requires industrial-grade thermal and flow diagnostic tools:
         </p>
         <div class="amazon-grid">
 
         <div class="amazon-card">
-          <span class="amazon-badge">Grower Essential</span>
-          <h4 class="amazon-product-name">Klein Tools IR1 Dual-Laser Infrared Thermometer (-4 to 752°F)</h4>
-          <p class="amazon-product-desc">Essential non-contact infrared pyrometer for measuring real-time leaf canopy surface temperature and leaf-to-air VPD differentials.</p>
-          <a href="https://www.amazon.com/dp/B07V77G39C?tag=inwoovation20-20" target="_blank" rel="nofollow noopener noreferrer" class="amazon-btn">
+          <span class="amazon-badge">Thermal Audit</span>
+          <h4 class="amazon-product-name">FLIR ONE Pro Thermal Imaging Camera (160x120 IR Resolution)</h4>
+          <p class="amazon-product-desc">Essential diagnostic imager for detecting glass envelope air leaks, thermal screen edge gaps, and heating pipe thermal bridging in real time.</p>
+          <a href="https://www.amazon.com/dp/B0728C7KND?tag=inwoovation20-20" target="_blank" rel="nofollow noopener noreferrer" class="amazon-btn">
             <span>🛒 Check Price on Amazon</span> <span>↗</span>
           </a>
         </div>
         
         <div class="amazon-card">
-          <span class="amazon-badge">Automation</span>
-          <h4 class="amazon-product-name">Inkbird IHC-200 Dual-Relay Digital Pre-Wired Humidity Controller</h4>
-          <p class="amazon-product-desc">Automates commercial dehumidifiers and high-pressure fogging pumps based on precise psychrometric relative humidity thresholds.</p>
-          <a href="https://www.amazon.com/dp/B01J1E5LWM?tag=inwoovation20-20" target="_blank" rel="nofollow noopener noreferrer" class="amazon-btn">
+          <span class="amazon-badge">Hydronics</span>
+          <h4 class="amazon-product-name">Inkbird Dual-Probe Waterproof Digital Temperature Monitor</h4>
+          <p class="amazon-product-desc">Continuous digital monitoring of greenhouse supply and return pipe rail temperatures to calibrate heating circuit Delta T.</p>
+          <a href="https://www.amazon.com/dp/B01HXM5UAC?tag=inwoovation20-20" target="_blank" rel="nofollow noopener noreferrer" class="amazon-btn">
             <span>🛒 Check Price on Amazon</span> <span>↗</span>
           </a>
         </div>
         
         <div class="amazon-card">
-          <span class="amazon-badge">CFD Validation</span>
-          <h4 class="amazon-product-name">BTMETER BT-100 Digital Anemometer & Air Velocity Meter</h4>
-          <p class="amazon-product-desc">Handheld air speed and volumetric CFM tester to evaluate greenhouse circulation fan throw distance and boundary layer resistance.</p>
+          <span class="amazon-badge">Envelope Seal</span>
+          <h4 class="amazon-product-name">BTMETER Digital Anemometer &amp; CFM Airflow Velocity Meter</h4>
+          <p class="amazon-product-desc">Measures air infiltration rates around gable vents, louvers, and screen seals to verify design ACH specifications under negative pressure.</p>
           <a href="https://www.amazon.com/dp/B01J141XNO?tag=inwoovation20-20" target="_blank" rel="nofollow noopener noreferrer" class="amazon-btn">
             <span>🛒 Check Price on Amazon</span> <span>↗</span>
           </a>
@@ -361,7 +427,6 @@ Where:
 
     </div>
     <!-- END: INJECTED EDITORIAL & AMAZON ASSOCIATES HARDWARE MODULE -->
-    
 
   <script>
     function readInputs() {
@@ -371,12 +436,17 @@ Where:
       const tOut = parseFloat(document.getElementById('slider-tout').value);
       const screenPct = parseFloat(document.getElementById('slider-screen').value);
       const glazing = document.getElementById('glazing-select').value;
+      const energySource = document.getElementById('energy-source-select').value;
+      const deltaT = parseFloat(document.getElementById('slider-deltat').value);
+      const hours = parseFloat(document.getElementById('slider-hours').value);
 
       document.getElementById('lbl-floor').innerText = area.toLocaleString() + ' m²';
       document.getElementById('lbl-height').innerText = height.toFixed(1) + ' m';
       document.getElementById('lbl-tin').innerText = tIn.toFixed(1) + ' °C';
       document.getElementById('lbl-tout').innerText = tOut.toFixed(1) + ' °C';
       document.getElementById('lbl-screen').innerText = screenPct + ' %';
+      document.getElementById('lbl-deltat').innerText = deltaT.toFixed(1) + ' °C (' + (75).toFixed(0) + '°C / ' + (75 - deltaT).toFixed(0) + '°C)';
+      document.getElementById('lbl-hours').innerText = hours.toLocaleString() + ' h / year';
 
       return {
         floorAreaM2: area,
@@ -385,7 +455,10 @@ Where:
         outsideTempC: tOut,
         screenClosurePct: screenPct,
         glazingType: glazing,
-        airExchangeRatePerHour: 0.5
+        airExchangeRatePerHour: 0.5,
+        energySource: energySource,
+        circuitDeltaT: deltaT,
+        annualEquivalentHours: hours
       };
     }
 
@@ -406,11 +479,47 @@ Where:
       });
     }
 
-    function renderResults(res) {
+    function renderResults(res, inputs) {
       document.getElementById('res-peak-kw').innerText = Math.round(res.peakKw).toLocaleString() + ' kW';
       document.getElementById('res-spec-load').innerText = Math.round(res.specLoadWPerM2) + ' W/m²';
       document.getElementById('res-screen-save').innerText = res.screenSavingsPct.toFixed(1) + ' %';
       document.getElementById('res-boiler-btu').innerText = res.boilerRatingMMBtu.toFixed(2) + ' MMBtu/h';
+
+      // 1. Annual Thermal Energy (MWh/year)
+      const annualMWh = (res.peakKw * 0.55 * inputs.annualEquivalentHours) / 1000.0;
+      document.getElementById('res-annual-mwh').innerText = Math.round(annualMWh).toLocaleString() + ' MWh/yr';
+
+      // 2. Hydronic Flow Rate (m³/h): V = Q_kW / (4.186 * deltaT) * 3600 / 1000
+      const flowRateM3H = res.peakKw > 0 ? (res.peakKw / (4.186 * inputs.circuitDeltaT)) * 3.6 : 0;
+      document.getElementById('res-flow-rate').innerText = flowRateM3H.toFixed(1) + ' m³/h';
+
+      // 3. Green Energy Transition Factors
+      // Natural Gas Baseline: 0.202 t CO2/MWh, Cost: 0.08 €/kWh (80 €/MWh)
+      const baseCO2PerMWh = 0.202;
+      const baseCostPerMWh = 80.0;
+
+      let sourceCO2PerMWh = baseCO2PerMWh;
+      let sourceCostPerMWh = baseCostPerMWh;
+
+      if (inputs.energySource === 'geothermal') {
+        sourceCO2PerMWh = 0.015; // Steiner Kirchweidach model
+        sourceCostPerMWh = 22.0;
+      } else if (inputs.energySource === 'biomass_chp') {
+        sourceCO2PerMWh = 0.025; // Scherzer Nürnberg model
+        sourceCostPerMWh = 35.0;
+      } else if (inputs.energySource === 'industrial_waste') {
+        sourceCO2PerMWh = 0.020; // Wittenberg / Neurath model
+        sourceCostPerMWh = 25.0;
+      } else {
+        sourceCO2PerMWh = baseCO2PerMWh;
+        sourceCostPerMWh = baseCostPerMWh;
+      }
+
+      const co2Abated = Math.max(0, annualMWh * (baseCO2PerMWh - sourceCO2PerMWh));
+      const costSaved = Math.max(0, annualMWh * (baseCostPerMWh - sourceCostPerMWh));
+
+      document.getElementById('res-co2-abatement').innerText = Math.round(co2Abated).toLocaleString() + ' t CO₂/yr';
+      document.getElementById('res-cost-savings').innerText = '€ ' + Math.round(costSaved).toLocaleString() + ' / yr';
 
       if (heatGauge) {
         heatGauge.update(res.specLoadWPerM2);
@@ -420,7 +529,7 @@ Where:
     function calculate() {
       const inputs = readInputs();
       const results = BiophysicsKernel.computeHeatingLoad(inputs);
-      renderResults(results);
+      renderResults(results, inputs);
     }
 
     function exportHeatingAuditPDF() {
@@ -431,27 +540,33 @@ Where:
       const peak = document.getElementById('res-peak-kw').innerText;
       const spec = document.getElementById('res-spec-load').innerText;
       const save = document.getElementById('res-screen-save').innerText;
-      const btu = document.getElementById('res-boiler-btu').innerText;
+      const flow = document.getElementById('res-flow-rate').innerText;
+      const co2 = document.getElementById('res-co2-abatement').innerText;
+      const cost = document.getElementById('res-cost-savings').innerText;
+      const source = document.getElementById('energy-source-select').options[document.getElementById('energy-source-select').selectedIndex].text;
 
       const kpiData = [
         { label: "Peak Heating Load", value: peak, unit: "Total Thermal Demand" },
         { label: "Specific Load", value: spec, unit: "Per m² Ground Area" },
         { label: "Screen Energy Saving", value: save, unit: "Vs. Unscreened Baseline" },
-        { label: "Boiler Rating Needed", value: btu, unit: "Imperial Equivalent" }
+        { label: "Hydronic Flow Rate", value: flow, unit: "Circulation Volume" },
+        { label: "Annual CO2 Abatement", value: co2, unit: "Decarbonization Benefit" },
+        { label: "Heating Cost Savings", value: cost, unit: "Annual Fuel Economy" }
       ];
 
       const inputSummary = [
         { label: "Ground Floor Area", value: area },
-        { label: "Inside Setpoint Temperature", value: tIn },
-        { label: "Outside Design Winter Temperature", value: tOut },
-        { label: "Thermal Screen Closure Ratio", value: screen },
-        { label: "Standard Applied", value: "DIN V 18599 / NEN 3859 Thermodynamic Kernel" }
+        { label: "Indoor Setpoint", value: tIn },
+        { label: "Design Winter Outdoor", value: tOut },
+        { label: "Screen Closure Ratio", value: screen },
+        { label: "Selected Green Heat Source", value: source },
+        { label: "Engineering Standard", value: "DIN V 18599 / NEN 3859 Thermodynamic Kernel" }
       ];
 
-      const recommendation = `Greenhouse heating simulation for ${area} facility under design winter conditions (${tOut} outside / ${tIn} inside) confirms a peak boiler capacity requirement of ${peak} (${spec}). Deploying the thermal screen at ${screen} reduces transmission heat loss by ${save}.`;
+      const recommendation = `Greenhouse heating & renewable decarbonization audit for ${area} facility under winter design conditions (${tOut} ambient / ${tIn} setpoint) verifies a peak thermal demand of ${peak} (${spec}). Deploying the thermal screen at ${screen} cuts baseline transmission by ${save}. Transitioning to ${source} reduces annual fossil emissions by ${co2} while yielding estimated fuel cost savings of ${cost}.`;
 
       generateInstitutionalPDF(
-        "Commercial Greenhouse Heating Load & Thermal Screen Engineering Audit",
+        "Commercial Greenhouse Heating Load & Green Energy Transition Audit",
         kpiData,
         inputSummary,
         recommendation
