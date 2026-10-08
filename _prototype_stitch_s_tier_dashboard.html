@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Inwoovation Lab // SOTA CEA &amp; VenloCAD Digital Twin</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Fonts: Outfit (Display/Headlines), JetBrains Mono (Telemetry/Code), Inter (Body) -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;family=Outfit:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with Forms and Container Queries -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "primary-container": "#00f5a0",
+            "tertiary": "#fff1e4",
+            "on-tertiary-container": "#835200",
+            "on-error": "#690005",
+            "tertiary-fixed": "#ffddb8",
+            "on-tertiary-fixed-variant": "#653e00",
+            "background": "#131313",
+            "primary": "#cdffde",
+            "error-container": "#93000a",
+            "tertiary-container": "#ffce95",
+            "inverse-on-surface": "#313030",
+            "secondary-fixed": "#acedff",
+            "secondary": "#4cd7f6",
+            "error": "#ffb4ab",
+            "on-secondary-container": "#00424e",
+            "on-error-container": "#ffdad6",
+            "on-background": "#e5e2e1",
+            "on-tertiary-fixed": "#2a1700",
+            "surface": "#131313",
+            "inverse-primary": "#006c44",
+            "on-secondary-fixed-variant": "#004e5c",
+            "secondary-container": "#03b5d3",
+            "on-surface-variant": "#b9cbbd",
+            "outline-variant": "#3b4a40",
+            "surface-container": "#201f1f",
+            "surface-bright": "#3a3939",
+            "surface-container-lowest": "#0e0e0e",
+            "outline": "#849588",
+            "on-tertiary": "#472a00",
+            "on-surface": "#e5e2e1",
+            "secondary-fixed-dim": "#4cd7f6",
+            "on-primary-container": "#006b43",
+            "surface-dim": "#131313",
+            "on-secondary": "#003640",
+            "primary-fixed-dim": "#00e293",
+            "on-secondary-fixed": "#001f26",
+            "surface-tint": "#00e293",
+            "primary-fixed": "#50ffaf",
+            "tertiary-fixed-dim": "#ffb95f",
+            "surface-container-high": "#2a2a2a",
+            "surface-variant": "#353534",
+            "surface-container-highest": "#353534",
+            "on-primary-fixed": "#002111",
+            "inverse-surface": "#e5e2e1",
+            "surface-container-low": "#1c1b1b",
+            "on-primary-fixed-variant": "#005232",
+            "on-primary": "#003921"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "gutter": "1.5rem",
+            "gutter-mobile": "0.75rem",
+            "margin-mobile": "1rem",
+            "margin": "2.5rem",
+            "space-xl": "2.5rem",
+            "space-md": "1rem",
+            "space-sm": "0.5rem",
+            "space-2xl": "4rem",
+            "space-lg": "1.5rem",
+            "space-xs": "0.25rem"
+          },
+          "fontFamily": {
+            "headline-lg": ["Outfit"],
+            "headline-md": ["Outfit"],
+            "telemetry-label": ["JetBrains Mono"],
+            "telemetry-readout": ["JetBrains Mono"],
+            "body-md": ["Inter"],
+            "body-lg": ["Inter"],
+            "code-sm": ["JetBrains Mono"],
+            "body-sm": ["Inter"],
+            "display-xl": ["Outfit"],
+            "display-xl-mobile": ["Outfit"],
+            "headline-sm": ["Outfit"],
+            "headline-lg-mobile": ["Outfit"]
+          },
+          "fontSize": {
+            "headline-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "telemetry-label": ["11px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "500" }],
+            "telemetry-readout": ["24px", { "lineHeight": "28px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "body-md": ["14px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+            "code-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+            "display-xl": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+            "display-xl-mobile": ["38px", { "lineHeight": "46px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "500" }],
+            "headline-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    /* Cleanroom grid subtle texture */
+    .cleanroom-grid {
+      background-image: linear-gradient(to right, rgba(76, 215, 246, 0.03) 1px, transparent 1px),
+                        linear-gradient(to bottom, rgba(76, 215, 246, 0.03) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+    /* Dynamic reticle pulse */
+    @keyframes pulse-subtle {
+      0%, 100% { opacity: 0.9; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.98); }
+    }
+    .animate-pulse-subtle {
+      animation: pulse-subtle 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+    /* Range input custom styling */
+    input[type=range] {
+      accent-color: #00f5a0;
+    }
+    input[type=range]::-webkit-slider-runnable-track {
+      background: #201f1f;
+      height: 4px;
+      border-radius: 2px;
+      border: 1px solid #3b4a40;
+    }
+    input[type=range]::-webkit-slider-thumb {
+      background: #00f5a0;
+      border: 2px solid #0e0e0e;
+      height: 14px;
+      width: 14px;
+      border-radius: 2px;
+      margin-top: -5px;
+      box-shadow: 0 0 8px rgba(0, 245, 160, 0.8);
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface cleanroom-grid min-h-screen flex flex-col font-body-md antialiased selection:bg-primary-container selection:text-on-primary-fixed">
+<!-- ================= TOP NAV BAR (Shared Component: glass_hud_header) ================= -->
+<header class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-gutter w-full h-16 bg-surface-container-lowest/80 backdrop-blur-md border-b border-outline-variant/30 shadow-[0_4px_24px_rgba(0,0,0,0.6)]">
+<!-- Brand / Status Section -->
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-space-sm cursor-pointer group">
+<div class="relative w-8 h-8 rounded bg-surface-container border border-primary-container/40 flex items-center justify-center shadow-[0_0_12px_rgba(0,245,160,0.2)] group-hover:border-primary-container transition-colors">
+<span class="material-symbols-outlined text-primary-container text-[20px]" data-icon="deployed_code">deployed_code</span>
+<div class="absolute -inset-0.5 bg-primary-container/20 blur-[6px] -z-10 rounded"></div>
+</div>
+<span class="font-headline-md text-headline-md font-bold tracking-tight text-primary">INWOOVATION LAB</span>
+</div>
+<!-- Live Engine Status Badge -->
+<div class="hidden xl:flex items-center gap-2 px-2.5 py-1 rounded bg-surface-container border border-primary-container/30 shadow-[0_0_10px_rgba(0,245,160,0.1)]">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-pulse shadow-[0_0_6px_#00f5a0]"></span>
+<span class="font-telemetry-label text-telemetry-label text-primary-fixed tracking-wider uppercase">WUR SOTA CEA Engine Online</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant/70 border-l border-outline-variant/50 pl-2">14ms</span>
+</div>
+</div>
+<!-- Center Navigation Links -->
+<nav class="hidden md:flex items-center gap-space-lg h-full">
+<a class="text-primary-fixed font-bold border-b-2 border-primary-container pb-1 tracking-wider font-telemetry-label text-telemetry-label uppercase flex items-center gap-1.5 transition-colors" href="#venlocad">
+<span class="material-symbols-outlined text-[16px] text-primary-container" data-icon="view_in_ar">view_in_ar</span>
+        VenloCAD 3D
+      </a>
+<a class="text-on-surface-variant font-medium tracking-wider hover:text-on-surface font-telemetry-label text-telemetry-label uppercase flex items-center gap-1.5 transition-colors" href="#climate-atlas">
+<span class="material-symbols-outlined text-[16px]" data-icon="public">public</span>
+        Climate Atlas
+      </a>
+<a class="text-on-surface-variant font-medium tracking-wider hover:text-on-surface font-telemetry-label text-telemetry-label uppercase flex items-center gap-1.5 transition-colors" href="#crop-benchmarks">
+<span class="material-symbols-outlined text-[16px]" data-icon="analytics">analytics</span>
+        Crop Benchmarks
+      </a>
+<a class="text-on-surface-variant font-medium tracking-wider hover:text-on-surface font-telemetry-label text-telemetry-label uppercase flex items-center gap-1.5 transition-colors" href="#subsidies-navigator">
+<span class="material-symbols-outlined text-[16px]" data-icon="account_balance">account_balance</span>
+        Subsidies Navigator
+      </a>
+</nav>
+<!-- Trailing Actions & Search -->
+<div class="flex items-center gap-space-md">
+<!-- Search Input / Telemetry -->
+<div class="hidden lg:flex items-center bg-surface-container-low border border-outline-variant/60 rounded px-2.5 py-1 focus-within:border-primary-container transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant text-[16px] mr-1.5" data-icon="search">search</span>
+<input class="bg-transparent text-on-surface font-code-sm text-code-sm outline-none border-none p-0 focus:ring-0 w-44 placeholder:text-on-surface-variant/50" placeholder="Telemetry Query (e.g. Par/VPD/Bay 4)..." type="text"/>
+<kbd class="font-code-sm text-code-sm text-on-surface-variant/40 bg-surface-container-high px-1 rounded ml-1">⌘K</kbd>
+</div>
+<!-- Icon Actions -->
+<div class="flex items-center gap-space-xs text-on-surface-variant">
+<button class="p-1.5 rounded hover:bg-surface-container-high hover:text-primary-fixed transition-colors active:scale-[0.98] relative" title="Notifications">
+<span class="material-symbols-outlined text-[20px]" data-icon="notifications">notifications</span>
+<span class="absolute top-1 right-1 w-1.5 h-1.5 rounded-full bg-secondary"></span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container-high hover:text-primary-fixed transition-colors active:scale-[0.98]" title="Tune Console">
+<span class="material-symbols-outlined text-[20px]" data-icon="tune">tune</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container-high hover:text-primary-fixed transition-colors active:scale-[0.98]" title="Bio-Systems Engineer Avatar">
+<span class="material-symbols-outlined text-[20px]" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+<!-- Trailing Primary Action -->
+<button class="hidden sm:flex items-center gap-1.5 bg-primary-container text-on-primary-fixed font-headline-sm text-headline-sm font-semibold px-3 py-1.5 rounded shadow-[0_0_16px_rgba(0,245,160,0.3)] hover:shadow-[0_0_24px_rgba(0,245,160,0.5)] transition-all active:scale-[0.98]">
+<span class="material-symbols-outlined text-[18px]" data-icon="terminal">terminal</span>
+        Enterprise Portal
+      </button>
+</div>
+</header>
+<!-- ================= SIDE NAV BAR (Shared Component: telemetry_dock) ================= -->
+<aside class="hidden xl:flex fixed left-0 top-16 bottom-0 z-40 flex-col justify-between w-64 p-space-md overflow-y-auto bg-surface-container-lowest/70 backdrop-blur-xl border-r border-outline-variant/30 shadow-[4px_0_24px_rgba(0,0,0,0.5)]">
+<div class="space-y-space-md">
+<!-- Deck Header -->
+<div class="px-space-sm py-2 border-b border-outline-variant/40">
+<div class="flex items-center gap-2 mb-1">
+<div class="w-2 h-2 rounded-sm bg-primary-fixed shadow-[0_0_8px_#00f5a0]"></div>
+<span class="font-headline-sm text-headline-sm font-semibold text-primary">CEA TELEMETRY DECK</span>
+</div>
+<p class="font-telemetry-label text-telemetry-label text-on-surface-variant uppercase tracking-wider">Parametric Node Cluster 04</p>
+</div>
+<!-- Navigation Tabs (Tabs with active matching Spatial Digital Twin) -->
+<div class="space-y-1">
+<!-- Tab 1: Spatial Digital Twin (ACTIVE) -->
+<a class="flex items-center gap-space-sm bg-surface-container-high/60 text-primary-fixed border-l-2 border-primary-container px-space-sm py-2 rounded-r-DEFAULT transition-colors" href="#digital-twin">
+<span class="material-symbols-outlined text-[18px] text-primary-container" data-icon="view_in_ar">view_in_ar</span>
+<span class="font-telemetry-label text-telemetry-label uppercase tracking-wider">Spatial Digital Twin</span>
+</a>
+<!-- Tab 2: Biophysical Telemetry -->
+<a class="flex items-center gap-space-sm text-on-surface-variant px-space-sm py-2 rounded-DEFAULT hover:text-on-surface hover:bg-surface-container-high/40 hover:text-primary-fixed transition-colors" href="#biophysical">
+<span class="material-symbols-outlined text-[18px]" data-icon="sensors">sensors</span>
+<span class="font-telemetry-label text-telemetry-label uppercase tracking-wider">Biophysical Telemetry</span>
+</a>
+<!-- Tab 3: Lighting Spectrum -->
+<a class="flex items-center gap-space-sm text-on-surface-variant px-space-sm py-2 rounded-DEFAULT hover:text-on-surface hover:bg-surface-container-high/40 hover:text-primary-fixed transition-colors" href="#lighting">
+<span class="material-symbols-outlined text-[18px]" data-icon="wb_iridescent">wb_iridescent</span>
+<span class="font-telemetry-label text-telemetry-label uppercase tracking-wider">Lighting Spectrum</span>
+</a>
+<!-- Tab 4: Micro-Climate Nodes -->
+<a class="flex items-center gap-space-sm text-on-surface-variant px-space-sm py-2 rounded-DEFAULT hover:text-on-surface hover:bg-surface-container-high/40 hover:text-primary-fixed transition-colors" href="#nodes">
+<span class="material-symbols-outlined text-[18px]" data-icon="grain">grain</span>
+<span class="font-telemetry-label text-telemetry-label uppercase tracking-wider">Micro-Climate Nodes</span>
+</a>
+<!-- Tab 5: Nutrient Dosing -->
+<a class="flex items-center gap-space-sm text-on-surface-variant px-space-sm py-2 rounded-DEFAULT hover:text-on-surface hover:bg-surface-container-high/40 hover:text-primary-fixed transition-colors" href="#nutrients">
+<span class="material-symbols-outlined text-[18px]" data-icon="science">science</span>
+<span class="font-telemetry-label text-telemetry-label uppercase tracking-wider">Nutrient Dosing</span>
+</a>
+<!-- Tab 6: System Audit -->
+<a class="flex items-center gap-space-sm text-on-surface-variant px-space-sm py-2 rounded-DEFAULT hover:text-on-surface hover:bg-surface-container-high/40 hover:text-primary-fixed transition-colors" href="#audit">
+<span class="material-symbols-outlined text-[18px]" data-icon="terminal">terminal</span>
+<span class="font-telemetry-label text-telemetry-label uppercase tracking-wider">System Audit</span>
+</a>
+</div>
+</div>
+<!-- Sidebar CTA & Footer Tabs -->
+<div class="space-y-space-md border-t border-outline-variant/40 pt-space-md">
+<!-- CTA Button -->
+<button class="w-full py-2 px-space-sm rounded bg-surface-container border border-primary-container/40 text-primary font-headline-sm text-headline-sm hover:bg-primary-container hover:text-on-primary-fixed transition-all flex items-center justify-center gap-2 shadow-[0_0_12px_rgba(0,245,160,0.15)]">
+<span class="material-symbols-outlined text-[18px]" data-icon="bolt">bolt</span>
+        Deploy SOTA Setpoints
+      </button>
+<!-- Footer Tabs -->
+<div class="space-y-1">
+<a class="flex items-center gap-space-sm text-on-surface-variant px-space-sm py-1.5 rounded hover:text-on-surface hover:bg-surface-container-high/40 transition-colors" href="#diagnostic-logs">
+<span class="material-symbols-outlined text-[16px]" data-icon="developer_board">developer_board</span>
+<span class="font-telemetry-label text-telemetry-label tracking-wider">Diagnostic Logs</span>
+</a>
+<a class="flex items-center gap-space-sm text-on-surface-variant px-space-sm py-1.5 rounded hover:text-on-surface hover:bg-surface-container-high/40 transition-colors" href="#subsystem-config">
+<span class="material-symbols-outlined text-[16px]" data-icon="settings">settings</span>
+<span class="font-telemetry-label text-telemetry-label tracking-wider">Subsystem Config</span>
+</a>
+</div>
+<!-- Autonomous Greenhouse Telemetry Core Unit Info -->
+<div class="p-2 rounded bg-surface-container-lowest border border-outline-variant/30 text-[10px] font-code-sm text-on-surface-variant/80 flex items-center justify-between">
+<span>CORE: v8.24-RC4</span>
+<span class="text-primary-fixed">SYNC: 100%</span>
+</div>
+</div>
+</aside>
+<!-- ================= MAIN CONTENT CANVAS ================= -->
+<main class="mt-16 xl:ml-64 flex-1 p-gutter transition-all">
+<div class="max-w-[1680px] mx-auto space-y-gutter">
+<!-- TOP DASHBOARD HUD BREADCRUMB & REAL-TIME CEA STATUS CHIP BAR -->
+<div class="flex flex-wrap items-center justify-between gap-space-md border-b border-outline-variant/30 pb-space-sm">
+<div class="flex items-center gap-3">
+<div class="px-2 py-0.5 rounded bg-surface-container-high border border-outline-variant/50 font-telemetry-label text-telemetry-label text-primary-fixed uppercase tracking-wider">
+            FACILITY ID: NL-WESTLAND-09
+          </div>
+<span class="text-outline text-xs">/</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold tracking-tight">Parametric Venlo Digital Twin &amp; Micro-Climate Array</span>
+</div>
+<div class="flex flex-wrap items-center gap-2">
+<!-- Environmental VPD chip -->
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded bg-surface-container-low border border-secondary/40 text-secondary font-telemetry-label text-telemetry-label">
+<span class="material-symbols-outlined text-[14px]" data-icon="opacity">opacity</span>
+<span>VPD: 1.05 kPa (TARGET)</span>
+</div>
+<!-- PAR Transmissivity Chip -->
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded bg-surface-container-low border border-primary-container/40 text-primary font-telemetry-label text-telemetry-label">
+<span class="material-symbols-outlined text-[14px]" data-icon="solar_power">solar_power</span>
+<span>PAR TRANS: 72% DIFFUSE</span>
+</div>
+<!-- Structural Eurocode Compliance -->
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded bg-surface-container-low border border-outline-variant/50 text-on-surface-variant font-telemetry-label text-telemetry-label">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+<span>EN 13031-1 COMPLIANT</span>
+</div>
+</div>
+</div>
+<!-- MAIN DUAL-PANE COCKPIT GRID (Hero Panel + Biophysical Telemetry Engine) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
+<!-- ================= LEFT HERO: VenloCAD 3D Parametric HUD (8 Cols) ================= -->
+<section class="lg:col-span-8 flex flex-col gap-space-md bg-surface-container-lowest/80 backdrop-blur-xl border border-secondary/30 rounded-xl p-space-md shadow-[0_20px_48px_rgba(0,0,0,0.85)] relative overflow-hidden group">
+<!-- Specular Glow Highlight Top Edge -->
+<div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary-container/40 to-transparent"></div>
+<!-- Viewport HUD Header -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm pb-space-sm border-b border-outline-variant/40">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[22px]" data-icon="domain">domain</span>
+<div>
+<h1 class="font-headline-sm text-headline-sm font-bold text-on-surface tracking-tight">VENLOCAD v4.2 // SPATIAL DIGITAL TWIN</h1>
+<p class="font-telemetry-label text-telemetry-label text-on-surface-variant uppercase">WESTLAND-09 VENLO COMPLEX // MULTI-BAY HORTICULTURE</p>
+</div>
+</div>
+<!-- Toggles and Camera Modes -->
+<div class="flex flex-wrap items-center gap-2">
+<!-- Mode Toggles -->
+<div class="flex items-center bg-surface-container-low p-0.5 rounded border border-outline-variant/60 text-xs font-telemetry-label">
+<button class="px-2 py-1 rounded bg-surface-container text-primary-fixed border border-primary-container/40 shadow-[0_0_8px_rgba(0,245,160,0.2)]">Wireframe</button>
+<button class="px-2 py-1 rounded text-on-surface-variant hover:text-on-surface transition-colors">FEM</button>
+<button class="px-2 py-1 rounded text-on-surface-variant hover:text-on-surface transition-colors">Radiation</button>
+<button class="px-2 py-1 rounded text-on-surface-variant hover:text-on-surface transition-colors">Thermal</button>
+</div>
+<!-- Camera Angle Selector -->
+<div class="flex items-center bg-surface-container-low p-0.5 rounded border border-outline-variant/60 text-xs font-telemetry-label text-on-surface-variant">
+<button class="px-2 py-1 rounded bg-surface-bright text-on-surface font-semibold">Iso 30°</button>
+<button class="px-2 py-1 hover:text-on-surface">Top</button>
+<button class="px-2 py-1 hover:text-on-surface">Elev</button>
+</div>
+<button class="p-1 rounded bg-surface-container hover:bg-surface-container-high border border-outline-variant/40 text-on-surface" title="Expand Viewport">
+<span class="material-symbols-outlined text-[18px]" data-icon="fullscreen">fullscreen</span>
+</button>
+</div>
+</div>
+<!-- Interactive 3D Greenhouse Viewport Visual Rendering Canvas -->
+<div class="relative w-full h-[410px] rounded-lg bg-surface-container-lowest border border-outline-variant/40 overflow-hidden flex items-center justify-center cleanroom-grid">
+<!-- Reticle Crosshair HUD Overlays -->
+<div class="absolute inset-0 pointer-events-none p-4 flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<div class="font-code-sm text-code-sm text-secondary/70 flex flex-col">
+<span>LAT: 52.0116° N</span>
+<span>LON: 4.2185° E</span>
+<span>AZIMUTH: 182.4° (OPTIMAL SOLAR GAIN)</span>
+</div>
+<!-- Mini Crosshair Badge -->
+<div class="border border-primary-container/40 p-1 rounded bg-surface-container-low/80 flex items-center gap-1.5 font-telemetry-label text-telemetry-label text-primary-fixed">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+                  LIVE DIGITAL TWIN
+                </div>
+</div>
+<div class="flex justify-between items-end">
+<div class="font-code-sm text-code-sm text-on-surface-variant/60">
+<span>SCALE 1:50 | 4-BAY CONTINUOUS TRUSS</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-telemetry-label text-telemetry-label text-secondary">SUN ELEVATION: 41.2°</span>
+</div>
+</div>
+</div>
+<!-- Precision Isometric SVG 3D Greenhouse Construction Model -->
+<svg class="w-full h-full max-h-[380px] drop-shadow-[0_0_25px_rgba(76,215,246,0.15)]" fill="none" viewbox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<!-- Sun / PAR Solar Radiation Vectors -->
+<lineargradient gradientunits="userSpaceOnUse" id="solarRay" x1="200" x2="400" y1="0" y2="280">
+<stop stop-color="#4cd7f6" stop-opacity="0.35"></stop>
+<stop offset="1" stop-color="#00f5a0" stop-opacity="0.0"></stop>
+</lineargradient>
+<lineargradient id="glassRoofGrad" x1="0" x2="1" y1="0" y2="1">
+<stop stop-color="#4cd7f6" stop-opacity="0.22"></stop>
+<stop offset="1" stop-color="#00f5a0" stop-opacity="0.08"></stop>
+</lineargradient>
+<lineargradient id="cropRowGrad" x1="0" x2="1" y1="0" y2="0">
+<stop stop-color="#00f5a0" stop-opacity="0.6"></stop>
+<stop offset="1" stop-color="#00f5a0" stop-opacity="0.1"></stop>
+</lineargradient>
+</defs>
+<!-- Solar Radiation Rays Penetrating Glass Roof -->
+<polygon fill="url(#solarRay)" points="260,20 380,20 480,260 360,260"></polygon>
+<polygon fill="url(#solarRay)" points="410,10 530,10 630,250 510,250"></polygon>
+<!-- Ground Grid / Foundation Concrete Plinth -->
+<path d="M120 280 L400 370 L680 250 L400 160 Z" fill="#0e0e0e" fill-opacity="0.6" stroke="#3b4a40" stroke-dasharray="4 4" stroke-width="1.5"></path>
+<!-- Structural Gutter Lines (Venlo 4 Bays) -->
+<!-- Bay 1 -->
+<line stroke="#849588" stroke-width="2" x1="200" x2="480" y1="210" y2="300"></line>
+<!-- Bay 2 -->
+<line stroke="#849588" stroke-width="2" x1="260" x2="540" y1="185" y2="275"></line>
+<!-- Bay 3 -->
+<line stroke="#849588" stroke-width="2" x1="320" x2="600" y1="160" y2="250"></line>
+<!-- Bay 4 -->
+<line stroke="#849588" stroke-width="2" x1="380" x2="660" y1="135" y2="225"></line>
+<!-- Vertical Steel Columns (Posts: 6.5m scale) -->
+<g stroke="#4cd7f6" stroke-width="1.5">
+<!-- Front Post Row -->
+<line x1="200" x2="200" y1="210" y2="280"></line>
+<line x1="270" x2="270" y1="232" y2="302"></line>
+<line x1="340" x2="340" y1="255" y2="325"></line>
+<line x1="410" x2="410" y1="278" y2="348"></line>
+<line x1="480" x2="480" y1="300" y2="370"></line>
+<!-- Bay 2 Posts -->
+<line stroke-opacity="0.5" x1="260" x2="260" y1="185" y2="255"></line>
+<line stroke-opacity="0.5" x1="330" x2="330" y1="207" y2="277"></line>
+<line stroke-opacity="0.5" x1="400" x2="400" y1="230" y2="300"></line>
+<line stroke-opacity="0.5" x1="470" x2="470" y1="252" y2="322"></line>
+<line stroke-opacity="0.5" x1="540" x2="540" y1="275" y2="345"></line>
+<!-- Bay 3 & 4 Posts Backing -->
+<line stroke-opacity="0.3" x1="380" x2="380" y1="135" y2="205"></line>
+<line stroke-opacity="0.3" x1="520" x2="520" y1="180" y2="250"></line>
+<line stroke-opacity="0.3" x1="660" x2="660" y1="225" y2="295"></line>
+</g>
+<!-- Venlo Gabled Glass Roofs (22° Pitch) -->
+<!-- Ridge 1 -->
+<path d="M200 210 L230 185 L260 185 L230 210 Z" fill="url(#glassRoofGrad)" stroke="#4cd7f6" stroke-width="1.2"></path>
+<line stroke="#00f5a0" stroke-width="1.5" x1="230" x2="510" y1="185" y2="275"></line>
+<!-- Ridge 2 -->
+<path d="M260 185 L290 160 L320 160 L290 185 Z" fill="url(#glassRoofGrad)" stroke="#4cd7f6" stroke-width="1.2"></path>
+<line stroke="#00f5a0" stroke-width="1.5" x1="290" x2="570" y1="160" y2="250"></line>
+<!-- Ridge 3 -->
+<path d="M320 160 L350 135 L380 135 L350 160 Z" fill="url(#glassRoofGrad)" stroke="#4cd7f6" stroke-width="1.2"></path>
+<line stroke="#00f5a0" stroke-width="1.5" x1="350" x2="630" y1="135" y2="225"></line>
+<!-- Ridge 4 -->
+<path d="M380 135 L410 110 L440 110 L410 135 Z" fill="url(#glassRoofGrad)" stroke="#4cd7f6" stroke-width="1.2"></path>
+<line stroke="#00f5a0" stroke-width="1.5" x1="410" x2="690" y1="110" y2="200"></line>
+<!-- Glass Roof Panes & Glazing Bars -->
+<polygon fill="url(#glassRoofGrad)" points="230,185 510,275 480,300 200,210" stroke="#3b4a40" stroke-width="0.8"></polygon>
+<polygon fill="url(#glassRoofGrad)" points="290,160 570,250 540,275 260,185" stroke="#3b4a40" stroke-width="0.8"></polygon>
+<polygon fill="url(#glassRoofGrad)" points="350,135 630,225 600,250 320,160" stroke="#3b4a40" stroke-width="0.8"></polygon>
+<polygon fill="url(#glassRoofGrad)" points="410,110 690,200 660,225 380,135" stroke="#3b4a40" stroke-width="0.8"></polygon>
+<!-- Continuous Ridge Ventilation Windows (Open 38.4% status) -->
+<g stroke="#acedff" stroke-width="1.8">
+<!-- Vent Bay 1 -->
+<line x1="300" x2="370" y1="205" y2="227"></line>
+<polygon fill="#4cd7f6" fill-opacity="0.3" points="300,205 370,227 360,217 290,195"></polygon>
+<!-- Vent Bay 2 -->
+<line x1="360" x2="430" y1="180" y2="202"></line>
+<polygon fill="#4cd7f6" fill-opacity="0.3" points="360,180 430,202 420,192 350,170"></polygon>
+</g>
+<!-- Interior CEA Crops: High-Wire Tomato / Cucumber Gutters -->
+<g>
+<path d="M240 270 L460 340" stroke="url(#cropRowGrad)" stroke-linecap="round" stroke-width="6"></path>
+<path d="M300 250 L520 320" stroke="url(#cropRowGrad)" stroke-linecap="round" stroke-width="6"></path>
+<path d="M360 230 L580 300" stroke="url(#cropRowGrad)" stroke-linecap="round" stroke-width="6"></path>
+</g>
+<!-- Dynamic Node Markers / Sensors in 3D Space -->
+<g class="animate-pulse-subtle">
+<!-- Node 01: Canopy Micro-Climate -->
+<circle cx="340" cy="275" fill="#00f5a0" r="4" stroke="#0e0e0e" stroke-width="2"></circle>
+<line stroke="#00f5a0" stroke-dasharray="2 2" stroke-width="1" x1="340" x2="340" y1="275" y2="245"></line>
+<rect fill="#131313" height="15" rx="2" stroke="#00f5a0" stroke-width="0.8" width="60" x="310" y="230"></rect>
+<text fill="#cdffde" font-family="JetBrains Mono" font-size="8" text-anchor="middle" x="340" y="241">21.4°C // VPD 1.05</text>
+<!-- Node 02: Thermal Screen / Ridge Sensor -->
+<circle cx="510" cy="275" fill="#4cd7f6" r="4" stroke="#0e0e0e" stroke-width="2"></circle>
+<line stroke="#4cd7f6" stroke-dasharray="2 2" stroke-width="1" x1="510" x2="510" y1="275" y2="240"></line>
+<rect fill="#131313" height="15" rx="2" stroke="#4cd7f6" stroke-width="0.8" width="60" x="480" y="225"></rect>
+<text fill="#acedff" font-family="JetBrains Mono" font-size="8" text-anchor="middle" x="510" y="236">PAR 72% DIFF</text>
+</g>
+</svg>
+</div>
+<!-- Real-Time Parametric Controls Toolbar (4 Sliders) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-sm bg-surface-container-low p-space-sm rounded-lg border border-outline-variant/40">
+<!-- Slider 1: Post Height -->
+<div class="space-y-1">
+<div class="flex justify-between items-center text-xs">
+<span class="font-telemetry-label text-telemetry-label text-on-surface-variant uppercase">Post Height</span>
+<span class="font-code-sm text-code-sm text-primary-fixed font-bold">6.5m</span>
+</div>
+<input class="w-full" max="9.0" min="4.5" step="0.5" type="range" value="6.5"/>
+<div class="flex justify-between text-[10px] text-outline font-code-sm">
+<span>4.5m</span>
+<span>9.0m</span>
+</div>
+</div>
+<!-- Slider 2: Bay Span -->
+<div class="space-y-1">
+<div class="flex justify-between items-center text-xs">
+<span class="font-telemetry-label text-telemetry-label text-on-surface-variant uppercase">Bay Span</span>
+<span class="font-code-sm text-code-sm text-primary-fixed font-bold">3.2m</span>
+</div>
+<input class="w-full" max="4.8" min="3.2" step="0.8" type="range" value="3.2"/>
+<div class="flex justify-between text-[10px] text-outline font-code-sm">
+<span>3.2m std</span>
+<span>4.8m</span>
+</div>
+</div>
+<!-- Slider 3: Roof Pitch -->
+<div class="space-y-1">
+<div class="flex justify-between items-center text-xs">
+<span class="font-telemetry-label text-telemetry-label text-on-surface-variant uppercase">Roof Pitch</span>
+<span class="font-code-sm text-code-sm text-secondary font-bold">22°</span>
+</div>
+<input class="w-full" max="26" min="18" step="1" type="range" value="22"/>
+<div class="flex justify-between text-[10px] text-outline font-code-sm">
+<span>18° min</span>
+<span>26° max</span>
+</div>
+</div>
+<!-- Slider 4: Thermal Screen Efficiency -->
+<div class="space-y-1">
+<div class="flex justify-between items-center text-xs">
+<span class="font-telemetry-label text-telemetry-label text-on-surface-variant uppercase">Thermal Screen</span>
+<span class="font-code-sm text-code-sm text-primary-fixed font-bold">42%</span>
+</div>
+<input class="w-full" max="100" min="0" step="1" type="range" value="42"/>
+<div class="flex justify-between text-[10px] text-outline font-code-sm">
+<span>0% Open</span>
+<span>100% Closed</span>
+</div>
+</div>
+</div>
+<!-- Real-Time Structural Load & Transmissivity KPI Cards Row -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-sm pt-space-xs">
+<div class="p-space-sm rounded bg-surface-container/60 border border-outline-variant/50 flex items-center justify-between">
+<div>
+<div class="font-telemetry-label text-telemetry-label text-on-surface-variant uppercase">PAR Transmissivity</div>
+<div class="font-headline-sm text-headline-sm font-bold text-primary-fixed">72%</div>
+<div class="font-code-sm text-code-sm text-on-surface-variant/80">Diffuse AR Glass Coating</div>
+</div>
+<span class="material-symbols-outlined text-primary-container text-[24px]" data-icon="wb_sunny">wb_sunny</span>
+</div>
+<div class="p-space-sm rounded bg-surface-container/60 border border-outline-variant/50 flex items-center justify-between">
+<div>
+<div class="font-telemetry-label text-telemetry-label text-on-surface-variant uppercase">Snow / Wind Load</div>
+<div class="font-headline-sm text-headline-sm font-bold text-on-surface">0.48 <span class="text-xs font-normal text-on-surface-variant">kN/m²</span></div>
+<div class="font-code-sm text-code-sm text-primary-container flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]" data-icon="check_circle">check_circle</span>
+                  PASS - EN 13031-1
+                </div>
+</div>
+<span class="material-symbols-outlined text-secondary text-[24px]" data-icon="air">air</span>
+</div>
+<div class="p-space-sm rounded bg-surface-container/60 border border-outline-variant/50 flex items-center justify-between">
+<div>
+<div class="font-telemetry-label text-telemetry-label text-on-surface-variant uppercase">Roof Vent Ratio</div>
+<div class="font-headline-sm text-headline-sm font-bold text-secondary">38.4%</div>
+<div class="font-code-sm text-code-sm text-on-surface-variant/80">Continuous Ridge Auto</div>
+</div>
+<span class="material-symbols-outlined text-secondary text-[24px]" data-icon="curtains">curtains</span>
+</div>
+</div>
+</section>
+<!-- ================= RIGHT PANEL: Biophysical Telemetry & CEA Optimization Engine (4 Cols) ================= -->
+<section class="lg:col-span-4 flex flex-col gap-space-md">
+<!-- Telemetry Header Container -->
+<div class="bg-surface-container-lowest/80 backdrop-blur-xl border border-outline-variant/40 rounded-xl p-space-md shadow-[0_4px_24px_rgba(0,0,0,0.5)]">
+<div class="flex items-center justify-between pb-space-sm border-b border-outline-variant/40">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container shadow-[0_0_8px_#00f5a0]"></span>
+<h2 class="font-headline-sm text-headline-sm font-semibold text-primary">BIOPHYSICAL ENGINE</h2>
+</div>
+<span class="font-telemetry-label text-telemetry-label text-on-surface-variant uppercase">CEA REAL-TIME</span>
+</div>
+<!-- Biophysical KPI Cards with Micro-Sparklines -->
+<div class="space-y-3 mt-space-sm">
+<!-- Card 1: VPD (Vapor Pressure Deficit) -->
+<div class="p-space-sm rounded-lg bg-surface-container-low border border-outline-variant/50 hover:border-primary-container/40 transition-colors">
+<div class="flex justify-between items-start">
+<div>
+<span class="font-telemetry-label text-telemetry-label text-on-surface-variant uppercase">Vapor Pressure Deficit (VPD)</span>
+<div class="flex items-baseline gap-2 mt-0.5">
+<span class="font-telemetry-readout text-telemetry-readout text-primary-fixed">1.05</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant">kPa</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded text-[10px] font-code-sm bg-primary-container/10 border border-primary-container/30 text-primary-fixed">
+                    OPTIMAL
+                  </span>
+</div>
+<!-- Micro-Sparkline VPD SVG -->
+<div class="mt-2 h-7 w-full flex items-end">
+<svg class="w-full h-6" fill="none" viewbox="0 0 100 24">
+<path d="M0 16 Q20 18 35 12 T70 11 T100 12" fill="none" stroke="#00f5a0" stroke-width="1.8"></path>
+<path d="M0 16 Q20 18 35 12 T70 11 T100 12 L100 24 L0 24 Z" fill="rgba(0,245,160,0.08)"></path>
+</svg>
+</div>
+<div class="flex justify-between text-[10px] font-telemetry-label text-on-surface-variant/80 mt-1">
+<span>Leaf Transpiration: Stable</span>
+<span>Range: 0.8 - 1.2 kPa</span>
+</div>
+</div>
+<!-- Card 2: DLI (Daily Light Integral) -->
+<div class="p-space-sm rounded-lg bg-surface-container-low border border-outline-variant/50 hover:border-secondary/40 transition-colors">
+<div class="flex justify-between items-start">
+<div>
+<span class="font-telemetry-label text-telemetry-label text-on-surface-variant uppercase">Daily Light Integral (DLI)</span>
+<div class="flex items-baseline gap-2 mt-0.5">
+<span class="font-telemetry-readout text-telemetry-readout text-secondary">28.5</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant">mol/m²/day</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded text-[10px] font-code-sm bg-secondary/10 border border-secondary/30 text-secondary">
+                    TARGET: 30.0
+                  </span>
+</div>
+<!-- Micro-Sparkline DLI SVG -->
+<div class="mt-2 h-7 w-full flex items-end">
+<svg class="w-full h-6" fill="none" viewbox="0 0 100 24">
+<path d="M0 22 L20 18 L40 12 L60 8 L80 6 L100 7" fill="none" stroke="#4cd7f6" stroke-width="1.8"></path>
+<path d="M0 22 L20 18 L40 12 L60 8 L80 6 L100 7 L100 24 L0 24 Z" fill="rgba(76,215,246,0.08)"></path>
+</svg>
+</div>
+<div class="flex justify-between text-[10px] font-telemetry-label text-on-surface-variant/80 mt-1">
+<span>Supplemental LED Dimming: 24%</span>
+<span>Photoperiod: 18h</span>
+</div>
+</div>
+<!-- Card 3: Heating Load & Buffer -->
+<div class="p-space-sm rounded-lg bg-surface-container-low border border-outline-variant/50 hover:border-primary-container/40 transition-colors">
+<div class="flex justify-between items-start">
+<div>
+<span class="font-telemetry-label text-telemetry-label text-on-surface-variant uppercase">Thermal Heating Load</span>
+<div class="flex items-baseline gap-2 mt-0.5">
+<span class="font-telemetry-readout text-telemetry-readout text-on-surface">185</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant">W/m²</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded text-[10px] font-code-sm bg-surface-container border border-outline-variant text-tertiary-fixed">
+                    BUFFER: 88°C
+                  </span>
+</div>
+<!-- Micro-Sparkline SVG -->
+<div class="mt-2 h-7 w-full flex items-end">
+<svg class="w-full h-6" fill="none" viewbox="0 0 100 24">
+<path d="M0 8 Q30 5 50 14 T100 16" fill="none" stroke="#ffb95f" stroke-width="1.8"></path>
+</svg>
+</div>
+<div class="flex justify-between text-[10px] font-telemetry-label text-on-surface-variant/80 mt-1">
+<span>Geothermal Offset Active</span>
+<span>Heat Pump COP: 4.8</span>
+</div>
+</div>
+<!-- Card 4: CO2 Enrichment Setpoint -->
+<div class="p-space-sm rounded-lg bg-surface-container-low border border-outline-variant/50 hover:border-primary-container/40 transition-colors">
+<div class="flex justify-between items-start">
+<div>
+<span class="font-telemetry-label text-telemetry-label text-on-surface-variant uppercase">CO2 Setpoint &amp; Dosing</span>
+<div class="flex items-baseline gap-2 mt-0.5">
+<span class="font-telemetry-readout text-telemetry-readout text-primary-fixed">800</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant">ppm</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded text-[10px] font-code-sm bg-primary-container/10 border border-primary-container/30 text-primary-fixed">
+                    FLUE GAS DOSING
+                  </span>
+</div>
+<!-- Micro-Sparkline SVG -->
+<div class="mt-2 h-7 w-full flex items-end">
+<svg class="w-full h-6" fill="none" viewbox="0 0 100 24">
+<path d="M0 14 L25 13 L50 10 L75 9 L100 10" fill="none" stroke="#00f5a0" stroke-width="1.8"></path>
+</svg>
+</div>
+<div class="flex justify-between text-[10px] font-telemetry-label text-on-surface-variant/80 mt-1">
+<span>Pure Boiler Flue Gas</span>
+<span>Canopy Assimilation High</span>
+</div>
+</div>
+</div>
+<!-- Subsystem Quick Status Matrix (EC, Runoff, Canopy Temp) -->
+<div class="mt-space-md pt-space-sm border-t border-outline-variant/40">
+<span class="font-telemetry-label text-telemetry-label text-on-surface-variant uppercase mb-2 block">Crop Rootzone Subsystems</span>
+<div class="grid grid-cols-3 gap-2 text-center">
+<div class="p-2 rounded bg-surface-container border border-outline-variant/30">
+<div class="font-telemetry-label text-telemetry-label text-outline uppercase">Root EC</div>
+<div class="font-headline-sm text-headline-sm text-primary font-bold">2.8</div>
+<div class="text-[10px] font-code-sm text-on-surface-variant">mS/cm</div>
+</div>
+<div class="p-2 rounded bg-surface-container border border-outline-variant/30">
+<div class="font-telemetry-label text-telemetry-label text-outline uppercase">Runoff</div>
+<div class="font-headline-sm text-headline-sm text-secondary font-bold">32%</div>
+<div class="text-[10px] font-code-sm text-on-surface-variant">Optimal 30-35%</div>
+</div>
+<div class="p-2 rounded bg-surface-container border border-outline-variant/30">
+<div class="font-telemetry-label text-telemetry-label text-outline uppercase">Canopy Temp</div>
+<div class="font-headline-sm text-headline-sm text-on-surface font-bold">21.4°</div>
+<div class="text-[10px] font-code-sm text-on-surface-variant">IR Radiometer</div>
+</div>
+</div>
+</div>
+<!-- Light Spectrum Distribution Bar (PPFD Breakdown) -->
+<div class="mt-space-md pt-space-sm border-t border-outline-variant/40 space-y-1.5">
+<div class="flex justify-between items-center text-xs">
+<span class="font-telemetry-label text-telemetry-label text-on-surface-variant uppercase">LED Spectrum Ratio (PAR 400-750nm)</span>
+<span class="font-code-sm text-code-sm text-secondary">650 μmol/m²/s</span>
+</div>
+<!-- Segmented Spectrum Bar -->
+<div class="h-2.5 w-full rounded flex overflow-hidden border border-outline-variant/50">
+<div class="bg-blue-500 h-full w-[15%]" title="Royal Blue 450nm (15%)"></div>
+<div class="bg-emerald-400 h-full w-[10%]" title="Full Spectrum White (10%)"></div>
+<div class="bg-red-500 h-full w-[55%]" title="Deep Red 660nm (55%)"></div>
+<div class="bg-red-800 h-full w-[20%]" title="Far-Red 730nm (20%)"></div>
+</div>
+<div class="flex justify-between text-[9px] font-code-sm text-on-surface-variant">
+<span class="text-blue-400">Blue 15%</span>
+<span class="text-red-400">Deep-Red 55%</span>
+<span class="text-red-600">Far-Red 20%</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- ================= HIGH-CONVERSION CTA GLASS BANNER (Docked Lower Section) ================= -->
+<section class="relative rounded-xl p-space-lg bg-surface-container-lowest/90 backdrop-blur-2xl border-2 border-primary-container/40 shadow-[0_0_40px_rgba(0,245,160,0.15)] overflow-hidden">
+<!-- Luminous Glow Radial Behind Card -->
+<div class="absolute -right-20 -top-20 w-96 h-96 bg-primary-container/10 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute -left-20 -bottom-20 w-96 h-96 bg-secondary/10 rounded-full blur-3xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-space-lg">
+<!-- Text Information -->
+<div class="space-y-space-xs max-w-3xl">
+<div class="flex flex-wrap items-center gap-2">
+<span class="px-2.5 py-0.5 rounded text-xs font-telemetry-label uppercase tracking-widest bg-primary-container/20 text-primary-fixed border border-primary-container/40">
+                2026 CEA Master Blueprint
+              </span>
+<span class="px-2 py-0.5 rounded text-xs font-code-sm bg-surface-container text-secondary border border-secondary/30">
+                Wageningen UR SOTA Validated
+              </span>
+</div>
+<h2 class="font-headline-md text-headline-md font-bold text-on-surface tracking-tight mt-1">
+              Download 2026 Commercial Greenhouse Master Operating System (Notion) &amp; Climate Engineering Whitepaper
+            </h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Comprehensive 140-page technical blueprint on Wageningen UR SOTA models, CAPEX payback models, Dutch high-tech Venlo automation, and thermodynamic simulation files.
+            </p>
+</div>
+<!-- Action Cluster -->
+<div class="flex flex-col sm:flex-row lg:flex-col items-center sm:items-end gap-2 shrink-0 w-full sm:w-auto">
+<button class="w-full sm:w-auto flex items-center justify-center gap-space-sm px-space-lg py-3 rounded bg-primary-container text-on-primary-fixed font-headline-sm text-headline-sm font-bold shadow-[0_0_24px_rgba(0,245,160,0.4)] hover:shadow-[0_0_36px_rgba(0,245,160,0.6)] hover:bg-primary-fixed transition-all active:scale-[0.98]">
+              Instant Access / Request B2B Audit
+              <span class="material-symbols-outlined text-[20px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<div class="flex items-center gap-1.5 text-xs font-code-sm text-on-surface-variant/90">
+<span class="material-symbols-outlined text-primary-container text-[14px]" data-icon="verified">verified</span>
+<span>Free Enterprise PDF + Notion Workspace Included</span>
+</div>
+</div>
+</div>
+</section>
+<!-- SYSTEM AUDIT & ENTERPRISE METADATA FOOTNOTE -->
+<footer class="flex flex-wrap items-center justify-between gap-space-sm border-t border-outline-variant/30 pt-space-md text-xs font-telemetry-label text-on-surface-variant/70">
+<div class="flex items-center gap-4">
+<span>INWOOVATION CEA ENGINE: v8.24-RC4</span>
+<span>SPATIAL RUNTIME: WebGL 2.0 / Parametric Mesh</span>
+<span>SECURITY: SOC2 TYPE II &amp; ISO 27001</span>
+</div>
+<div class="flex items-center gap-4">
+<a class="hover:text-primary transition-colors" href="#">API Docs</a>
+<a class="hover:text-primary transition-colors" href="#">WUR Calibration Data</a>
+<a class="hover:text-primary transition-colors" href="#">Subsidies Navigator</a>
+<span>© 2026 INWOOVATION LAB B.V.</span>
+</div>
+</footer>
+</div>
+</main>
+<!-- Lightweight Micro-Interaction Engine for Slider & Mode Toggles -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Connect interactive ranges to console updates
+      const sliders = document.querySelectorAll('input[type=range]');
+      sliders.forEach(slider => {
+        slider.addEventListener('input', (e) => {
+          const parent = e.target.closest('.space-y-1');
+          if (parent) {
+            const readout = parent.querySelector('.font-bold');
+            if (readout) {
+              const unit = readout.textContent.replace(/[\d\.]/g, '');
+              readout.textContent = e.target.value + unit;
+            }
+          }
+        });
+      });
+
+      // Quick toggle for Wireframe/FEM/Radiation buttons
+      const toggleButtons = document.querySelectorAll('.bg-surface-container-low button');
+      toggleButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const siblings = btn.parentElement.querySelectorAll('button');
+          siblings.forEach(s => {
+            s.classList.remove('bg-surface-container', 'text-primary-fixed', 'border', 'border-primary-container/40', 'shadow-[0_0_8px_rgba(0,245,160,0.2)]');
+            s.classList.add('text-on-surface-variant');
+          });
+          btn.classList.add('bg-surface-container', 'text-primary-fixed', 'border', 'border-primary-container/40', 'shadow-[0_0_8px_rgba(0,245,160,0.2)]');
+          btn.classList.remove('text-on-surface-variant');
+        });
+      });
+    });
+  </script>
+</body></html>

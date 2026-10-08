@@ -53,9 +53,12 @@
     const svpAir = 0.61078 * Math.exp((17.27 * tAir) / (tAir + 237.3));
     const svpLeaf = 0.61078 * Math.exp((17.27 * tLeaf) / (tLeaf + 237.3));
     const avp = svpAir * (rh / 100.0);
-
     const airVpd = Math.max(0, svpAir - avp);
     const leafVpd = Math.max(0, svpLeaf - avp);
+
+    const safeAvp = Math.max(0.0001, avp);
+    const lnRatio = Math.log(safeAvp / 0.61078);
+    const dewPoint = (237.3 * lnRatio) / (17.27 - lnRatio);
 
     return {
       airVpdKpa: Number(airVpd.toFixed(3)),
@@ -63,7 +66,7 @@
       svpAirKpa: Number(svpAir.toFixed(3)),
       svpLeafKpa: Number(svpLeaf.toFixed(3)),
       avpKpa: Number(avp.toFixed(3)),
-      dewPointC: Number(((237.3 * Math.log(avp / 0.61078)) / (17.27 - Math.log(avp / 0.61078))).toFixed(1))
+      dewPointC: Number(dewPoint.toFixed(1))
     };
   }
 
