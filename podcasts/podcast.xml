@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" 
+     xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" 
+     xmlns:atom="http://www.w3.org/2005/Atom"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <atom:link href="https://inwoovation.com/podcasts/feed.xml" rel="self" type="application/rss+xml"/>
+    <title>Deutscher Meisterfunk: Moderne Landwirtschaft, Nachrichten &amp; Technik</title>
+    <link>https://inwoovation.com/podcasts/</link>
+    <language>de</language>
+    <copyright>&#xA9; 2026 Inwoovation Engineering Lab</copyright>
+    <itunes:author>Inwoo Hwang &amp; Inwoovation Lab</itunes:author>
+    <itunes:type>episodic</itunes:type>
+    <itunes:summary>Der deutsche Lernpodcast für moderne Gewächshaustechnik, Politik, Wissenschaft und die Gärtnermeister-Karriere. Gesprochen in langsamem, klarem Deutsch (A2/B1).</itunes:summary>
+    <description>Der deutsche Lernpodcast für moderne Gewächshaustechnik, Politik, Wissenschaft und die Gärtnermeister-Karriere. Gesprochen in langsamem, klarem Deutsch (A2/B1).</description>
+    <itunes:owner>
+      <itunes:name>Inwoo Hwang</itunes:name>
+      <itunes:email>contact@inwoovation.com</itunes:email>
+    </itunes:owner>
+    <image>
+      <url>https://inwoovation.com/podcasts/cover.jpg</url>
+      <title>Deutscher Meisterfunk: Moderne Landwirtschaft, Nachrichten &amp; Technik</title>
+      <link>https://inwoovation.com/podcasts/</link>
+    </image>
+    <itunes:image href="https://inwoovation.com/podcasts/cover.jpg"/>
+    <itunes:category text="Education">
+      <itunes:category text="Language Learning"/>
+    </itunes:category>
+    <itunes:category text="Technology"/>
+    <itunes:category text="Science"/>
+    <itunes:explicit>false</itunes:explicit>
+    <item>
+      <title>Folge 1 (08.10.2026): Nachrichten aus Berlin, Geothermie im Gewächshaus &amp; Der Meister-Weg</title>
+      <itunes:title>Folge 1 (08.10.2026): Nachrichten aus Berlin, Geothermie im Gewächshaus &amp; Der Meister-Weg</itunes:title>
+      <itunes:episode>1</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:author>Inwoo Hwang &amp; Inwoovation Lab</itunes:author>
+      <itunes:image href="https://inwoovation.com/podcasts/cover.jpg"/>
+      <itunes:summary>In dieser ersten Tagesfolge sprechen Katja und Killian über die deutsche Politik unter Kanzler Friedrich Merz und das FEG-Einwanderungsgesetz, die Physik der Tiefengeothermie (DIN V 18599) und die Ausbildung bei Scherzer Gemüse in Nürnberg.</itunes:summary>
+      <description>In dieser ersten Tagesfolge sprechen Katja und Killian über die deutsche Politik unter Kanzler Friedrich Merz und das FEG-Einwanderungsgesetz, die Physik der Tiefengeothermie (DIN V 18599) und die Ausbildung bei Scherzer Gemüse in Nürnberg.</description>
+      <link>https://inwoovation.com/podcasts/</link>
+      <enclosure url="https://inwoovation.com/podcasts/episodes/episode_01_meisterfunk.mp3" length="1274544" type="audio/mpeg"/>
+      <guid isPermaLink="false">inwoovation-podcast-episode_01_meisterfunk</guid>
+      <pubDate>Thu, 08 Oct 2026 09:45:00 +0200</pubDate>
+      <itunes:duration>240</itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
+  </channel>
+</rss>
