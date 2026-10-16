@@ -1279,7 +1279,8 @@
 
       document.getElementById('resLedCoolingTons').innerText = coolingTons.toFixed(2) + " Tons";
       document.getElementById('resLedKw').innerText = totalKw.toFixed(1) + " kW";
-      document.getElementById('resLedPpf').innerText = totalPpf.toLocaleString('en-US', {maximumFractionDigits:0});
+      const elPpf = document.getElementById('resLedPpf');
+      if (elPpf) elPpf.innerText = totalPpf.toLocaleString('en-US', {maximumFractionDigits:0});
       document.getElementById('resLedKwh').innerText = dailyKwh.toFixed(1) + " kWh";
     }
 

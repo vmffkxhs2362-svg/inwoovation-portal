@@ -28,7 +28,7 @@
       "@type": "Person",
       "name": "Inwoovation Engineering Lab"
     },
-    "dateModified": "2026-10-08"
+    "dateModified": "2026-10-16"
   }
   </script>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8597809158257497" crossorigin="anonymous"></script>
@@ -644,10 +644,10 @@
 
     <div class="header-wizard">
       <span class="wizard-label">🧑‍🌾 Crop Preset:</span>
-      <button class="crop-pill active" onclick="applyCropPreset('tomato')">🍅 Tomato</button>
-      <button class="crop-pill" onclick="applyCropPreset('strawberry')">🍓 Strawberry</button>
-      <button class="crop-pill" onclick="applyCropPreset('greens')">🥬 Leafy Greens</button>
-      <button class="crop-pill" onclick="applyCropPreset('snow')">❄️ Heavy Snow</button>
+      <button class="crop-pill active" onclick="applyCropPreset('tomato', this)">🍅 Tomato</button>
+      <button class="crop-pill" onclick="applyCropPreset('strawberry', this)">🍓 Strawberry</button>
+      <button class="crop-pill" onclick="applyCropPreset('greens', this)">🥬 Leafy Greens</button>
+      <button class="crop-pill" onclick="applyCropPreset('snow', this)">❄️ Heavy Snow</button>
 
       <span class="wizard-label" style="margin-left: 6px;">Acreage:</span>
       <button class="pyeong-pill" onclick="applyPyeongPreset(300)">1,000 m² (0.25 ac)</button>
@@ -1098,7 +1098,7 @@
         <span style="font-size: 0.7rem; color: var(--accent-gold);">Export</span>
       </div>
 
-            <button class="btn btn-primary" id="btn-open-proposal" style="width: 100%; margin-bottom: 8px; background: linear-gradient(135deg, #1e40af, #2563eb, #38bdf8); border: none; font-weight: 800; font-size: 0.82rem; padding: 12px; box-shadow: 0 0 18px rgba(56, 189, 248, 0.4);" onclick="openProposalModal()">
+      <button class="btn btn-primary" id="btn-open-proposal" style="width: 100%; margin-bottom: 8px; background: linear-gradient(135deg, #1e40af, #2563eb, #38bdf8); border: none; font-weight: 800; font-size: 0.82rem; padding: 12px; box-shadow: 0 0 18px rgba(56, 189, 248, 0.4);">
         📑 B2B Commercial Proposal &amp; Quotation (CPQ)
       </button>
 
@@ -1120,7 +1120,7 @@
       </div>
 
       <div class="btn-row">
-        <button class="btn" id="btn-export-glb" style="grid-column: span 2; background: rgba(16, 185, 129, 0.15); border-color: rgba(16, 185, 129, 0.45); color: #34d399; font-weight: 700;" onclick="exportGLB()">
+        <button class="btn" id="btn-export-glb" style="grid-column: span 2; background: rgba(16, 185, 129, 0.15); border-color: rgba(16, 185, 129, 0.45); color: #34d399; font-weight: 700;">
           🌐 3D Standard Assembly (GLB / glTF)
         </button>
       </div>
@@ -1212,6 +1212,10 @@
     <div class="hud-item">
       <span class="hud-label">NEN 3859 Structural Safety</span>
       <span class="hud-value" id="hud-safety" style="color: var(--accent-emerald);">A+ (PASS)</span>
+    </div>
+    <div class="hud-item">
+      <span class="hud-label">ACH</span>
+      <span class="hud-val hud-value" id="hud-ach">0.0 /h</span>
     </div>
   </div>
 
@@ -2249,7 +2253,7 @@
 
       // Effective gap & opening area (m²)
       const hGap = thetaRad > 0.001 ? (L_vent * Math.sin(thetaRad)) : 0.002;
-      const Av = Math.max(0.6, activeSides * L * hGap);
+      const Av = (!params.showRoofVents || params.ventSide === 'closed' || (params.ventOpenPct || 0) <= 0) ? 0 : Math.max(0.6, activeSides * L * hGap);
 
       // Wind-driven ventilation G_wind (m³/s) - Wageningen Cw = 0.14
       const Cw = 0.14;
@@ -2890,6 +2894,55 @@
       }
     });
 
+    const rebuildGreenhouse = buildGreenhouse;
+
+    function setVentSide(side, btn) {
+      params.ventSide = side;
+      document.querySelectorAll('.vent-mode-pill').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+      rebuildGreenhouse();
+    }
+
+    let _ventAnimId = null;
+    function toggleVentAnimation() {
+      const btn = document.getElementById('btn-toggle-vent-anim') || document.getElementById('btn-vent-anim');
+      if (_ventAnimId) {
+        cancelAnimationFrame(_ventAnimId);
+        _ventAnimId = null;
+        if (btn) btn.textContent = '▶️ 동적 개폐 시뮬레이션';
+        return;
+      }
+      if (btn) btn.textContent = '⏸ 애니메이션 정지';
+      let t = 0;
+      const step = () => {
+        t += 0.04;
+        params.ventOpenPct = Math.round(50 + 50 * Math.sin(t));
+        const sl = document.getElementById('input-vent-open') || document.getElementById('inp-vent-open');
+        if (sl) sl.value = params.ventOpenPct;
+        const lbl = document.getElementById('val-vent-open');
+        if (lbl) lbl.innerText = `${params.ventOpenPct.toFixed(0)} % (${((params.ventOpenPct / 100.0) * 40.0).toFixed(1)}°)`;
+        rebuildGreenhouse();
+        _ventAnimId = requestAnimationFrame(step);
+      };
+      _ventAnimId = requestAnimationFrame(step);
+    }
+
+    function resetVentPreset(preset) {
+      if (_ventAnimId) toggleVentAnimation();
+      if (preset === 'summer') { params.ventOpenPct = 100; params.ventSide = 'both'; params.ambientWind = 4.5; }
+      else if (preset === 'winter') { params.ventOpenPct = 10; params.ventSide = 'leeward'; params.ambientWind = 2.0; }
+      else { params.ventOpenPct = 35; params.ventSide = 'both'; params.ambientWind = 3.0; }
+      const sl = document.getElementById('input-vent-open') || document.getElementById('inp-vent-open');
+      if (sl) sl.value = params.ventOpenPct;
+      const lbl = document.getElementById('val-vent-open');
+      if (lbl) lbl.innerText = `${params.ventOpenPct.toFixed(0)} % (${((params.ventOpenPct / 100.0) * 40.0).toFixed(1)}°)`;
+      const wsl = document.getElementById('input-ambient-wind') || document.getElementById('inp-ambient-wind');
+      if (wsl) wsl.value = params.ambientWind;
+      const wlbl = document.getElementById('val-ambient-wind');
+      if (wlbl) wlbl.innerText = `${params.ambientWind.toFixed(1)} m/s`;
+      rebuildGreenhouse();
+    }
+
     function switchTab(tabId, btn) {
       document.querySelectorAll('.tab-content').forEach(el => el.style.display = 'none');
       document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
@@ -2897,9 +2950,10 @@
       btn.classList.add('active');
     }
 
-    function applyCropPreset(cropType) {
-      document.querySelectorAll('.crop-pill').forEach(b => b.classList.remove('active'));
-      event.target.classList.add('active');
+    function applyCropPreset(cropType, btn) {
+      document.querySelectorAll('.header-wizard .crop-pill').forEach(b => b.classList.remove('active'));
+      const target = btn || (typeof event !== 'undefined' && event ? event.target : null);
+      if (target) target.classList.add('active');
 
       if (cropType === 'tomato') {
         setParams(8.0, 6.0, 4, 48.0, 22.0, '120x60x3.2', 15.0);
@@ -3222,6 +3276,10 @@
     }
 
     function loadFromHash() {
+      if (window.location.hash === '#consult') {
+        setTimeout(() => openConsultModal('hash'), 100);
+        return false;
+      }
       if (!window.location.hash || window.location.hash.length < 3) return false;
       try {
         const q = new URLSearchParams(window.location.hash.substring(1));
@@ -4120,7 +4178,7 @@
       document.getElementById('c-spec').innerText = `${W.toFixed(1)}m × ${bays} Bays × ${L.toFixed(1)}m`;
       document.getElementById('c-area').innerText = `${area} m² (${(area * 0.000247105).toFixed(2)} ac)`;
       document.getElementById('c-col').innerText = `${H.toFixed(1)}m / ${params.columnSize}`;
-      document.getElementById('c-cost').innerText = `~$${Math.round(totalEstimatedCost / 1360).toLocaleString()} USD`;
+      document.getElementById('c-cost').innerText = `~$${Math.round(sumCost / 1360).toLocaleString()} USD`;
 
       document.getElementById('consult-modal').style.display = 'flex';
 
@@ -4218,6 +4276,12 @@
       let sumCost = 0;
       items.forEach(it => sumCost += it.totalCost);
       const costManwon = Math.round(sumCost / 10000);
+      const subSpans = params.subSpans || 2;
+      const spanW = params.span || params.spanWidth;
+      const gutH = params.H || params.gutterHeight;
+      const pitchDeg = params.pitch || params.roofPitch;
+      const ridgeY = gutH + (spanW / (2 * subSpans)) * Math.tan(pitchDeg * Math.PI / 180);
+      const totalEstimatedCost = sumCost;
 
       const hash = `#span=${params.spanWidth}&gutter=${params.gutterHeight}&bays=${params.bays}&len=${params.totalLength}&post=${params.postSpacing}&pitch=${params.roofPitch}&wind=${params.windSpeed}&snow=${params.snowDepth}&crop=${params.cropLoad}&col=${encodeURIComponent(params.columnSize)}`;
       const shareUrl = window.location.origin + window.location.pathname + hash;

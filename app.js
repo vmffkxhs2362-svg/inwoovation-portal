@@ -91,7 +91,7 @@ function filterCategory(cat, element) {
     chips.forEach(c => c.classList.remove('active'));
     if (element) element.classList.add('active');
 
-    const cards = document.querySelectorAll('.blog-card, .card');
+    const cards = document.querySelectorAll('#articles .blog-card');
     cards.forEach(card => {
         const cardCat = card.getAttribute('data-category') || '';
         if (cat === 'all' || cardCat.includes(cat)) {
@@ -109,7 +109,7 @@ function filterCategory(cat, element) {
 const ALL_TOOLS_CATALOG = [
     {
         id: "venlocad_3d",
-        title: "VenloCAD 3D v2.5 Master Engine",
+        title: "VenloCAD 3D v3.0 Master Engine",
         url: "tools/venlocad-3d.html",
         icon: "📐",
         cat: "3D CAD & Structural",
