@@ -5,8 +5,8 @@
   <meta name="google-adsense-account" content="ca-pub-8597809158257497">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8597809158257497" crossorigin="anonymous"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Deutscher Gartenbau-Meister & KTBL-Standard Rechner | Inwoovation Lab</title>
-  <meta name="description" content="Offizielle deutsche Gartenbau-Normen (KTBL Datensammlung, DIN V 18599, DIN EN 13031-1). Heizwärmebedarf, Energieschirme, U-Werte und Meisterprüfung Teil III Übungsrechner für das Knoblauchsland Nürnberg und bundesweite Gemüsebaubetriebe.">
+  <title>Deutscher Gartenbau-Meister &amp; KTBL-Standard Rechner | Inwoovation Lab</title>
+  <meta name="description" content="Offizielle deutsche Gartenbau-Normen (KTBL Datensammlung, DIN V 18599, DIN EN 13031-1, QS-GAP 2026, IFS Food v8, SVLFG VSG 4.2). Heizwärmebedarf, Deckungsbeitragsrechner, ToBRFV-Desinfektion und Meisterprüfung Teil II &amp; III Übungsrechner für das Knoblauchsland Nürnberg.">
   <link rel="canonical" href="https://inwoovation.com/meister.html" />
 
   <!-- Structured Data (JSON-LD) -->
@@ -17,8 +17,8 @@
     "name": "Deutscher Gartenbau-Meister & KTBL-Standard Rechner",
     "url": "https://inwoovation.com/meister.html",
     "inLanguage": "de",
-    "description": "Offizielle deutsche Gartenbau-Normen (KTBL Datensammlung, DIN V 18599, DIN EN 13031-1). Heizwärmebedarf, Energieschirme und Meisterprüfung Teil III Übungsrechner.",
-    "dateModified": "2026-10-08",
+    "description": "Offizielle deutsche Gartenbau-Normen (KTBL Datensammlung, DIN V 18599, DIN EN 13031-1, QS-GAP 2026, SVLFG VSG 4.2). Heizwärmebedarf, Deckungsbeitrag I & II, ToBRFV-Desinfektion und Meisterprüfung Teil II & III Übungsrechner.",
+    "dateModified": "2026-10-18",
     "publisher": {
       "@type": "Organization",
       "name": "Inwoovation Lab",
@@ -26,7 +26,6 @@
     }
   }
   </script>
-
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-V4RYJBMEDE"></script>
@@ -42,7 +41,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=JetBrains+Mono:wght@500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="css/global-ui-enhancements.css?v=20260901_spotlight">
-  <script src="js/global-search-palette.js?v=20260901_spotlight"></script>
+  <script src="js/global-search-palette.js?v=20261018_spotlight"></script>
 
   <style>
     :root {
@@ -61,13 +60,13 @@
       flex-direction: column;
     }
     .meister-container {
-      max-width: 1140px;
+      max-width: 1180px;
       margin: 30px auto 80px;
       padding: 0 20px;
       flex: 1;
     }
     .hero-banner {
-      background: linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 0.95));
+      background: linear-gradient(135deg, rgba(30, 41, 59, 0.92), rgba(15, 23, 42, 0.96));
       border: 1px solid var(--border-color);
       border-radius: 20px;
       padding: 36px 32px;
@@ -80,7 +79,7 @@
       gap: 24px;
       margin-bottom: 36px;
     }
-    @media (max-width: 860px) {
+    @media (max-width: 880px) {
       .grid-2col { grid-template-columns: 1fr; }
     }
     .feature-card {
@@ -112,11 +111,11 @@
     .data-table {
       width: 100%;
       border-collapse: collapse;
-      font-size: 0.86rem;
+      font-size: 0.85rem;
       margin-top: 14px;
     }
     .data-table th, .data-table td {
-      padding: 10px 12px;
+      padding: 10px 10px;
       border-bottom: 1px solid rgba(255,255,255,0.08);
       text-align: left;
     }
@@ -132,7 +131,7 @@
       color: #34d399;
     }
     .calc-box {
-      background: rgba(15, 23, 42, 0.7);
+      background: rgba(15, 23, 42, 0.75);
       border-radius: 12px;
       padding: 16px;
       margin-top: 14px;
@@ -144,18 +143,19 @@
       align-items: center;
       margin-bottom: 10px;
       font-size: 0.88rem;
+      gap: 10px;
     }
     .calc-row label { color: #94a3b8; }
     .calc-row input, .calc-row select {
-      background: rgba(30, 41, 59, 0.9);
-      border: 1px solid rgba(255,255,255,0.15);
+      background: rgba(30, 41, 59, 0.95);
+      border: 1px solid rgba(255,255,255,0.18);
       color: #f8fafc;
       padding: 6px 10px;
       border-radius: 6px;
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.85rem;
       outline: none;
-      width: 140px;
+      width: 155px;
       text-align: right;
     }
     .result-display {
@@ -168,24 +168,45 @@
     }
     .result-val {
       font-family: 'Outfit', sans-serif;
-      font-size: 2rem;
+      font-size: 1.95rem;
       font-weight: 800;
       color: #34d399;
     }
-    .btn-lang {
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.15);
-      color: #cbd5e1;
-      font-size: 0.8rem;
-      font-weight: 700;
-      padding: 4px 10px;
-      border-radius: 6px;
-      cursor: pointer;
+    .kpi-mini-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-top: 12px;
     }
-    .btn-lang.active {
-      background: #0284c7;
-      color: white;
-      border-color: #38bdf8;
+    .kpi-mini-card {
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px;
+      padding: 10px 12px;
+      text-align: left;
+    }
+    .kpi-mini-label {
+      font-size: 0.74rem;
+      color: #94a3b8;
+    }
+    .kpi-mini-val {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #f8fafc;
+      margin-top: 2px;
+    }
+    .episode-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      background: rgba(15, 23, 42, 0.75);
+      border: 1px solid rgba(245, 158, 11, 0.25);
+      border-radius: 12px;
+      padding: 14px 18px;
+      margin-bottom: 12px;
     }
   </style>
 </head>
@@ -197,10 +218,12 @@
       🌱 Inwoo<span>vation Lab</span>
       <span style="font-size:0.75rem; background:linear-gradient(135deg,#f59e0b,#ef4444); color:#030712; font-weight:800; padding:2px 8px; border-radius:4px;">🇩🇪 DEUTSCHLAND</span>
     </a>
-    <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap;">
-      <a href="tools/index.html" style="color:#94a3b8; text-decoration:none; font-size:0.9rem; font-weight:600;">🛠️ 35 Tools</a>
+    <div style="display:flex; align-items:center; gap:14px; flex-wrap:wrap;">
+      <a href="tools/venlocad-3d.html" style="color:#38bdf8; text-decoration:none; font-size:0.9rem; font-weight:700;">📐 VenloCAD 3D v3.0</a>
+      <a href="tools/index.html" style="color:#94a3b8; text-decoration:none; font-size:0.9rem; font-weight:600;">🛠️ 37 Tools</a>
       <a href="troubleshoot.html" style="color:#94a3b8; text-decoration:none; font-size:0.9rem; font-weight:600;">🔍 Diagnostic</a>
-      <a href="meister.html" style="color:#38bdf8; text-decoration:none; font-size:0.9rem; font-weight:800;">🇩🇪 Meister Hub</a>
+      <a href="meister.html" style="color:#fbbf24; text-decoration:none; font-size:0.9rem; font-weight:800;">🇩🇪 Meister Hub</a>
+      <a href="podcasts/index.html" style="color:#f59e0b; text-decoration:none; font-size:0.9rem; font-weight:700;">🎙️ Meisterfunk</a>
       <a href="quiz.html" style="color:#94a3b8; text-decoration:none; font-size:0.9rem; font-weight:600;">🏆 10-Q Quiz</a>
       <button class="nav-search-trigger" onclick="window.InwooPalette.open()"><span>🔍 Spotlight Search</span> <kbd>Ctrl+K</kbd></button>
     </div>
@@ -209,20 +232,30 @@
   <main class="meister-container">
     <!-- Hero Banner -->
     <div class="hero-banner">
-      <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 12px;">
-        <div>
-          <span class="pill-badge">🇩🇪 KTBL &amp; DIN V 18599 DEUTSCHE GARTENBAU-NORMEN</span>
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 16px;">
+        <div style="flex: 1; min-width: 300px;">
+          <span class="pill-badge">🇩🇪 KTBL &bull; DIN V 18599 &bull; QS-GAP 2026 &bull; SVLFG VSG 4.2</span>
           <h1 style="font-family:'Outfit',sans-serif; font-size:2.2rem; font-weight:900; color:#f8fafc; margin: 8px 0 12px 0;">
             Deutscher Gartenbau-Meister &amp; KTBL-Standard Rechner
           </h1>
-          <p style="color:#94a3b8; font-size:1.05rem; line-height:1.65; max-width:820px; margin:0;">
-            Wissenschaftliche Berechnungsstandards und wirtschaftliche Richtwerte für deutsche Erwerbsgemüsebaubetriebe. Kalibriert für das <strong>Knoblauchsland Nürnberg (Bayern)</strong> und bundesweite Glashausanlagen nach KTBL-Datensammlungen, ZVG-Meisterprüfung Teil III und DIN V 18599.
+          <p style="color:#94a3b8; font-size:1.02rem; line-height:1.65; max-width:840px; margin:0;">
+            Wissenschaftliche Berechnungsstandards, Arbeitswirtschaft, Deckungsbeitragsrechnung und Phytosanitär-Compliance für deutsche Erwerbsgemüsebaubetriebe. Kalibriert für das <strong>Knoblauchsland Nürnberg (Bayern)</strong> und bundesweite Venlo-Glashausanlagen nach KTBL-Datensammlungen, ZVG-Meisterprüfung Teil I–III und DIN V 18599.
           </p>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:10px;">
+          <a href="podcasts/index.html" style="background:linear-gradient(135deg,#f59e0b,#d97706); color:#030712; text-decoration:none; font-weight:800; font-size:0.9rem; padding:10px 18px; border-radius:10px; display:inline-flex; align-items:center; gap:8px;">
+            <span>🎙️ Deutscher Meisterfunk (Folge 1–8)</span>
+            <span>→</span>
+          </a>
+          <a href="tools/venlocad-3d.html" style="background:rgba(56,189,248,0.15); border:1px solid rgba(56,189,248,0.4); color:#38bdf8; text-decoration:none; font-weight:700; font-size:0.88rem; padding:10px 18px; border-radius:10px; display:inline-flex; align-items:center; gap:8px;">
+            <span>📐 VenloCAD 3D v3.0 (DIN EN 13031-1)</span>
+            <span>→</span>
+          </a>
         </div>
       </div>
     </div>
 
-    <!-- 2 Column Section: KTBL Benchmarks & DIN V 18599 Rechner -->
+    <!-- Section 1: KTBL Benchmarks & DIN V 18599 Rechner -->
     <div class="grid-2col">
       <!-- Card 1: KTBL Benchmarks -->
       <div class="feature-card">
@@ -231,7 +264,7 @@
         </span>
         <h2>Standard-Wirtschaftswerte (Erwerbsgemüsebau)</h2>
         <p style="color:#94a3b8; font-size:0.88rem; line-height:1.6;">
-          Referenzwerte für Ertrag, Heizwärmebedarf und Kohlendioxidverbrauch pro m² Grundfläche (Venlo-Gewächshaus mit Energieschirm):
+          Referenzwerte für Ertrag, Ernteleistung, Heizwärmebedarf und CO₂-Verbrauch pro m² Grundfläche (Venlo-Gewächshaus mit Energieschirm):
         </p>
 
         <table class="data-table">
@@ -239,6 +272,7 @@
             <tr>
               <th>Kultur</th>
               <th>Ertrag (kg/m²)</th>
+              <th>Ernte (kg/AKh)</th>
               <th>Heizung (kWh/m²a)</th>
               <th>CO₂ (kg/m²a)</th>
             </tr>
@@ -247,37 +281,42 @@
             <tr>
               <td><strong>Rispentomaten</strong> (High-Wire)</td>
               <td class="val-num">48 – 56</td>
+              <td class="val-num">85 – 115</td>
               <td class="val-num">320 – 420</td>
               <td class="val-num">35 – 45</td>
             </tr>
             <tr>
               <td><strong>Salatgurken</strong> (V-System)</td>
               <td class="val-num">65 – 82</td>
+              <td class="val-num">110 – 145</td>
               <td class="val-num">380 – 510</td>
               <td class="val-num">40 – 50</td>
             </tr>
             <tr>
-              <td><strong>Erdbeeren</strong> (Frigopflanzen)</td>
+              <td><strong>Paprika</strong> (Blockpaprika bunt)</td>
+              <td class="val-num">28 – 35</td>
+              <td class="val-num">55 – 75</td>
+              <td class="val-num">340 – 440</td>
+              <td class="val-num">30 – 40</td>
+            </tr>
+            <tr>
+              <td><strong>Erdbeeren</strong> (Substratrinne)</td>
               <td class="val-num">9 – 13</td>
+              <td class="val-num">14 – 22</td>
               <td class="val-num">90 – 140</td>
               <td class="val-num">12 – 18</td>
             </tr>
             <tr>
-              <td><strong>Salate / Kräuter</strong> (NFT Rinnen)</td>
+              <td><strong>Salate / Feldsalat</strong> (NFT/Erde)</td>
               <td class="val-num">36 – 45</td>
+              <td class="val-num">25 – 40</td>
               <td class="val-num">160 – 240</td>
               <td class="val-num">18 – 25</td>
-            </tr>
-            <tr>
-              <td><strong>Paprika</strong> (Blockpaprika bunt)</td>
-              <td class="val-num">28 – 35</td>
-              <td class="val-num">340 – 440</td>
-              <td class="val-num">30 – 40</td>
             </tr>
           </tbody>
         </table>
         <div style="margin-top: 14px; font-size: 0.78rem; color: #64748b;">
-          * Quelle: KTBL-Datensammlung Gartenbau &amp; Landesanstalt für Weinbau und Gartenbau (LWG Bayern).
+          * Quelle: KTBL-Datensammlung Unterglasgemüsebau &amp; Landesanstalt für Weinbau und Gartenbau (LWG Bayern / Veitshöchheim).
         </div>
       </div>
 
@@ -306,7 +345,7 @@
           </div>
           <div class="calc-row">
             <label>Eindeckungsmaterial:</label>
-            <select id="deGlazing" onchange="calcGermanHeating()" style="width:160px;">
+            <select id="deGlazing" onchange="calcGermanHeating()" style="width:170px;">
               <option value="6.2">Einfachglas 4mm (6.2 W/m²K)</option>
               <option value="3.1" selected>Doppelglas ISO (3.1 W/m²K)</option>
               <option value="2.9">Stegdoppelplatte 16mm (2.9 W/m²K)</option>
@@ -314,7 +353,7 @@
           </div>
           <div class="calc-row">
             <label>Energieschirm:</label>
-            <select id="deScreen" onchange="calcGermanHeating()" style="width:160px;">
+            <select id="deScreen" onchange="calcGermanHeating()" style="width:170px;">
               <option value="0">Kein Schirm (0%)</option>
               <option value="0.38" selected>Aluminium-Schirm (38%)</option>
               <option value="0.54">Doppelschirm (54%)</option>
@@ -330,7 +369,147 @@
       </div>
     </div>
 
-    <!-- Section 2: ZVG Meisterprüfung Teil III Practice Hub -->
+    <!-- NEW Section 2: KTBL Deckungsbeitrags- & Arbeitswirtschafts-Rechner + QS-GAP / ToBRFV Rechner -->
+    <div class="grid-2col">
+      <!-- Calculator 2: KTBL Deckungsbeitrags- & Arbeitswirtschafts-Rechner -->
+      <div class="feature-card">
+        <span class="pill-badge" style="background:rgba(245,158,11,0.15); color:#fbbf24; border-color:rgba(245,158,11,0.35);">
+          💶 MEISTERPRÜFUNG TEIL II &amp; III &bull; KTBL BETRIEBSWIRTSCHAFT
+        </span>
+        <h2>Deckungsbeitrags- &amp; Arbeitszeit-Rechner (DB I &amp; II)</h2>
+        <p style="color:#94a3b8; font-size:0.86rem; line-height:1.55;">
+          Interaktive Kalkulation von <strong>Marktleistung</strong>, <strong>Direktkostenfreier Leistung (DKfL)</strong>, <strong>Ernteleistung (kg/AKh)</strong> und <strong>Deckungsbeitrag I</strong> für Unterglaskulturen:
+        </p>
+
+        <div class="calc-box">
+          <div class="calc-row">
+            <label>Kulturverfahren:</label>
+            <select id="dbCrop" onchange="applyDbPreset()" style="width:185px;">
+              <option value="tomato" selected>🍅 Rispentomate (52 kg/m²)</option>
+              <option value="cucumber">🥒 Salatgurke V-System (72 kg/m²)</option>
+              <option value="paprika">🫑 Blockpaprika bunt (32 kg/m²)</option>
+              <option value="feldsalat">🥬 Feldsalat / Babyleaf (12 kg/m²)</option>
+            </select>
+          </div>
+          <div class="calc-row">
+            <label>Netto-Kulturfläche (m²):</label>
+            <input type="number" id="dbArea" value="10000" step="1000" oninput="calcDeckungsbeitrag()">
+          </div>
+          <div class="calc-row">
+            <label>Vermarktbarer Ertrag (kg/m²):</label>
+            <input type="number" id="dbYield" value="52" step="1" oninput="calcDeckungsbeitrag()">
+          </div>
+          <div class="calc-row">
+            <label>Erzeugerpreis Ø (€/kg):</label>
+            <input type="number" id="dbPrice" value="1.85" step="0.05" oninput="calcDeckungsbeitrag()">
+          </div>
+          <div class="calc-row">
+            <label>Direktkosten (Saat, Energie, Dünger €/m²):</label>
+            <input type="number" id="dbDirectCost" value="44.50" step="1.0" oninput="calcDeckungsbeitrag()">
+          </div>
+          <div class="calc-row">
+            <label>Ernteleistung (kg/AKh):</label>
+            <input type="number" id="dbHarvestRate" value="95" step="5" oninput="calcDeckungsbeitrag()">
+          </div>
+          <div class="calc-row">
+            <label>Pflege- &amp; Abräumarbeit (AKh/m²):</label>
+            <input type="number" id="dbCareAkh" value="0.58" step="0.05" oninput="calcDeckungsbeitrag()">
+          </div>
+          <div class="calc-row">
+            <label>Tariflohn inkl. Lohnnebenkosten (€/AKh):</label>
+            <input type="number" id="dbWage" value="17.50" step="0.50" oninput="calcDeckungsbeitrag()">
+          </div>
+
+          <div class="kpi-mini-grid">
+            <div class="kpi-mini-card">
+              <div class="kpi-mini-label">Marktleistung (Umsatz)</div>
+              <div class="kpi-mini-val" id="dbOutRevenue" style="color:#38bdf8;">96.20 €/m²</div>
+            </div>
+            <div class="kpi-mini-card">
+              <div class="kpi-mini-label">Direktkostenfreie Leistung (DKfL)</div>
+              <div class="kpi-mini-val" id="dbOutDkfl" style="color:#fbbf24;">51.70 €/m²</div>
+            </div>
+            <div class="kpi-mini-card">
+              <div class="kpi-mini-label">Gesamt-Arbeitszeitbedarf</div>
+              <div class="kpi-mini-val" id="dbOutAkh">1.13 AKh/m² (11,274 AKh)</div>
+            </div>
+            <div class="kpi-mini-card">
+              <div class="kpi-mini-label">Variable Lohnkosten</div>
+              <div class="kpi-mini-val" id="dbOutLaborCost" style="color:#f87171;">19.73 €/m²</div>
+            </div>
+          </div>
+
+          <div class="result-display">
+            <div style="font-size:0.82rem; color:#94a3b8; font-weight:700; text-transform:uppercase;">Deckungsbeitrag I (DB I nach variablen Lohnkosten):</div>
+            <div class="result-val" id="dbOutDb1">31.97 €/m²</div>
+            <div style="font-size:0.88rem; color:#38bdf8; margin-top:4px; font-weight:700;" id="dbOutTotal">Betriebs-Deckungsbeitrag (10.000 m²): 319.705 € / Jahr</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Calculator 3: QS-GAP 2026, IFS Food v8 & ToBRFV Desinfektions-Rechner -->
+      <div class="feature-card">
+        <span class="pill-badge" style="background:rgba(239,68,68,0.15); color:#f87171; border-color:rgba(239,68,68,0.35);">
+          🛡️ QS-GAP 2026 &bull; IFS FOOD V8 &bull; SVLFG VSG 4.2
+        </span>
+        <h2>ToBRFV-Desinfektions- &amp; Rückverfolgbarkeits-Rechner</h2>
+        <p style="color:#94a3b8; font-size:0.86rem; line-height:1.55;">
+          Berechnung der viruziden <strong>Menno Florades (90 g/L Benzoesäure)</strong> Gebrauchslösung inkl. pH-Pufferung (Zitronensäure auf <strong>pH 3,0–4,5</strong>) gegen das Jordanvirus (ToBRFV) sowie 4h-Chargencode:
+        </p>
+
+        <div class="calc-box">
+          <div class="calc-row">
+            <label>Behandlungsfläche im Glashaus (m²):</label>
+            <input type="number" id="qsArea" value="2500" step="250" oninput="calcToBRFV()">
+          </div>
+          <div class="calc-row">
+            <label>Zielkonzentration Menno Florades:</label>
+            <select id="qsConc" onchange="calcToBRFV()" style="width:185px;">
+              <option value="1.0">1,0 % (Routine-Oberflächen)</option>
+              <option value="2.0" selected>2,0 % (ToBRFV / Quarantäne)</option>
+              <option value="3.0">3,0 % (Kisten- &amp; Messer-Tauchbad)</option>
+            </select>
+          </div>
+          <div class="calc-row">
+            <label>Karbonathärte Rohwasser (°dH):</label>
+            <input type="number" id="qsWaterHardness" value="14" step="1" oninput="calcToBRFV()">
+          </div>
+          <div class="calc-row">
+            <label>Gewächshaus-Abteilung (Chargen-ID):</label>
+            <input type="text" id="qsBlockId" value="GH02-R14" oninput="calcToBRFV()">
+          </div>
+
+          <div class="kpi-mini-grid">
+            <div class="kpi-mini-card">
+              <div class="kpi-mini-label">Spritz-/Schaumbrühe (0,4 L/m²)</div>
+              <div class="kpi-mini-val" id="qsOutWater" style="color:#38bdf8;">1.000 Liter</div>
+            </div>
+            <div class="kpi-mini-card">
+              <div class="kpi-mini-label">Menno Florades Bedarf</div>
+              <div class="kpi-mini-val" id="qsOutMenno" style="color:#34d399;">20,0 Liter</div>
+            </div>
+            <div class="kpi-mini-card">
+              <div class="kpi-mini-label">Zitronensäure (pH 3,0–4,5 Puffer)</div>
+              <div class="kpi-mini-val" id="qsOutCitric" style="color:#fbbf24;">1.120 g (1,12 kg)</div>
+            </div>
+            <div class="kpi-mini-card">
+              <div class="kpi-mini-label">Mindesteinwirkzeit (Schaum)</div>
+              <div class="kpi-mini-val" id="qsOutTime">16 – 24 Stunden</div>
+            </div>
+          </div>
+
+          <div style="margin-top:12px; background:rgba(15,23,42,0.9); border:1px solid rgba(56,189,248,0.3); border-radius:10px; padding:12px;">
+            <div style="font-size:0.75rem; color:#94a3b8; font-weight:700; text-transform:uppercase;">QS-GAP / IFS Food v8 Chargen-Code (4h-Traceability):</div>
+            <div style="font-family:'JetBrains Mono',monospace; font-size:1.05rem; font-weight:800; color:#38bdf8; margin-top:4px;" id="qsOutLotCode">LOT: DE-BY-KNL-20261018-GH02-R14</div>
+            <div style="font-size:0.76rem; color:#cbd5e1; margin-top:6px; line-height:1.45;">
+              ⚠️ <strong>SVLFG VSG 4.2 Pflicht-PSA (Kat. III):</strong> Chemikalienschutzanzug Typ 3B/4B, Vollmaske mit Kombinationsfilter <strong>ABEK2P3</strong>, Nitril-Schutzhandschuhe, Freigabe erst nach Lüftung!
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 3: ZVG Meisterprüfung Teil III Practice Hub -->
     <div class="feature-card" style="margin-bottom:36px;">
       <span class="pill-badge">🎓 ZVG MEISTERPRÜFUNG TEIL III PRAXIS-SIMULATION</span>
       <h2>Wirtschaftlichkeitsrechnung: Groß-Wärmepumpe vs. Gasbrennwert</h2>
@@ -362,6 +541,50 @@
       </div>
     </div>
 
+    <!-- NEW Section 4: Deutscher Meisterfunk Podcast Audio Showcase -->
+    <div class="feature-card" style="margin-bottom:36px; border-color: rgba(245, 158, 11, 0.45);">
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:14px;">
+        <div>
+          <span class="pill-badge" style="margin-bottom:6px;">🎙️ DEUTSCHER MEISTERFUNK &bull; TÄGLICHER FACHPODCAST</span>
+          <h2 style="margin:0;">Hörtraining für angehende Gärtnermeister (A2/B1 ➔ Fachdeutsch)</h2>
+        </div>
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <a href="podcasts/index.html" style="background:linear-gradient(135deg,#f59e0b,#d97706); color:#030712; text-decoration:none; font-weight:800; font-size:0.85rem; padding:8px 16px; border-radius:8px;">Alle 8 Folgen &amp; Vokabeln →</a>
+          <a href="podcasts/feed.xml" style="background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.2); color:#f8fafc; text-decoration:none; font-weight:700; font-size:0.85rem; padding:8px 14px; border-radius:8px;">📡 RSS Feed (YouTube Music)</a>
+        </div>
+      </div>
+      <p style="color:#94a3b8; font-size:0.9rem; line-height:1.6; margin-bottom:18px;">
+        Jede Folge verbindet aktuelle Weltnachrichten, Spitzenforschung (Pflanzenphysiologie &amp; Biophysik) und eine tiefgehende Lektion für die deutsche Gärtnermeisterprüfung im Gemüsebau:
+      </p>
+
+      <div class="episode-row">
+        <div style="flex:1; min-width:260px;">
+          <div style="font-size:0.75rem; color:#fbbf24; font-weight:800;">FOLGE 8 &bull; 18. OKTOBER 2026</div>
+          <div style="font-weight:800; color:#f8fafc; font-size:1rem; margin:2px 0;">QS-GAP 2026, IFS Food v8, ToBRFV-Hygiene &amp; SVLFG Arbeitsschutz</div>
+          <div style="font-size:0.82rem; color:#94a3b8;">Menno Florades (pH 3,0–4,5), 4-Stunden-Rückverfolgbarkeit, Gefährdungsbeurteilung und PSA Kategorie III.</div>
+        </div>
+        <audio controls preload="none" src="podcasts/episodes/2026-10-18-meisterfunk-ep8.mp3" style="height:38px; max-width:300px;"></audio>
+      </div>
+
+      <div class="episode-row">
+        <div style="flex:1; min-width:260px;">
+          <div style="font-size:0.75rem; color:#38bdf8; font-weight:800;">FOLGE 7 &bull; 17. OKTOBER 2026</div>
+          <div style="font-weight:800; color:#f8fafc; font-size:1rem; margin:2px 0;">KTBL Deckungsbeitragsrechnung, Ernteleistung &amp; Knoblauchsland Marktwege</div>
+          <div style="font-size:0.82rem; color:#94a3b8;">Marktleistung, Direktkostenfreie Leistung, AKh-Kalkulation, Großmarkt Nürnberg vs. LEH-Direktvermarktung.</div>
+        </div>
+        <audio controls preload="none" src="podcasts/episodes/2026-10-17-meisterfunk-ep7.mp3" style="height:38px; max-width:300px;"></audio>
+      </div>
+
+      <div class="episode-row" style="margin-bottom:0;">
+        <div style="flex:1; min-width:260px;">
+          <div style="font-size:0.75rem; color:#34d399; font-weight:800;">FOLGE 6 &bull; 16. OKTOBER 2026</div>
+          <div style="font-weight:800; color:#f8fafc; font-size:1rem; margin:2px 0;">Biologischer Pflanzenschutz (IPM), Nützlingseinsatz &amp; Bestäubermanagement</div>
+          <div style="font-size:0.82rem; color:#94a3b8;">Encarsia formosa, Macrolophus pygmaeus, Phytoseiulus persimilis und Bombus terrestris im Venlo-Glashaus.</div>
+        </div>
+        <audio controls preload="none" src="podcasts/episodes/2026-10-16-meisterfunk-ep6.mp3" style="height:38px; max-width:300px;"></audio>
+      </div>
+    </div>
+
     <!-- AdSense High-Impact In-Feed Display Unit -->
     <div style="margin: 30px auto; max-width: 900px; overflow: hidden; border-radius: 12px; background: rgba(15, 23, 42, 0.6); padding: 12px; border: 1px solid rgba(255,255,255,0.08);">
       <ins class="adsbygoogle"
@@ -372,7 +595,7 @@
       <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
     </div>
 
-    <!-- Section 3: Knoblauchsland Nürnberg Regional Hub -->
+    <!-- Section 5: Knoblauchsland Nürnberg Regional Hub -->
     <div class="feature-card">
       <span class="pill-badge" style="background:rgba(56,189,248,0.15); color:#38bdf8; border-color:rgba(56,189,248,0.35);">
         📍 STANDORT-STECKBRIEF: KNOBLAUCHSLAND NÜRNBERG
@@ -405,7 +628,7 @@
 
   <footer style="text-align:center; padding:30px 20px; color:#64748b; font-size:0.85rem; border-top:1px solid rgba(255,255,255,0.06); margin-top:auto;">
     © 2026 Inwoovation Engineering Lab (Nürnberg Knoblauchsland &amp; Seoul). 100% Free &amp; Open Source.<br>
-    <a href="index.html" style="color:#94a3b8;">Home</a> | <a href="tools/index.html" style="color:#94a3b8;">Tools Suite</a> | <a href="meister.html" style="color:#38bdf8;">Meister Hub</a> | <a href="quiz.html" style="color:#94a3b8;">Biophysics Quiz</a> | <a href="terms-of-service.html" style="color:#94a3b8;">Terms</a>
+    <a href="index.html" style="color:#94a3b8;">Home</a> | <a href="tools/venlocad-3d.html" style="color:#38bdf8;">VenloCAD 3D v3.0</a> | <a href="tools/index.html" style="color:#94a3b8;">37 Tools Suite</a> | <a href="meister.html" style="color:#fbbf24;">Meister Hub</a> | <a href="podcasts/index.html" style="color:#f59e0b;">Meisterfunk Podcast</a> | <a href="quiz.html" style="color:#94a3b8;">Biophysics Quiz</a> | <a href="terms-of-service.html" style="color:#94a3b8;">Terms</a>
   </footer>
 
   <script>
@@ -423,7 +646,7 @@
       const hTrans = envelope * uVal * delta;
       // Infiltration loss (0.5 h^-1, 4.5m Höhe)
       const hInf = 0.5 * (area * 4.5) * 0.34 * delta;
-      let totalW = (hTrans + hInf) * (1 - screenSave);
+      const totalW = (hTrans + hInf) * (1 - screenSave);
 
       const totalKw = totalW / 1000;
       const spec = totalW / area;
@@ -432,7 +655,72 @@
       document.getElementById('deSpecLoad').textContent = 'Spezifische Last: ' + spec.toFixed(1) + ' W/m²';
     }
 
+    const DB_PRESETS = {
+      tomato:    { yield: 52, price: 1.85, directCost: 44.50, harvestRate: 95,  careAkh: 0.58 },
+      cucumber:  { yield: 72, price: 1.35, directCost: 46.00, harvestRate: 125, careAkh: 0.52 },
+      paprika:   { yield: 32, price: 2.65, directCost: 41.00, harvestRate: 65,  careAkh: 0.50 },
+      feldsalat: { yield: 12, price: 6.80, directCost: 19.50, harvestRate: 28,  careAkh: 0.35 }
+    };
+
+    function applyDbPreset() {
+      const crop = document.getElementById('dbCrop').value;
+      const p = DB_PRESETS[crop] || DB_PRESETS.tomato;
+      document.getElementById('dbYield').value = p.yield;
+      document.getElementById('dbPrice').value = p.price.toFixed(2);
+      document.getElementById('dbDirectCost').value = p.directCost.toFixed(2);
+      document.getElementById('dbHarvestRate').value = p.harvestRate;
+      document.getElementById('dbCareAkh').value = p.careAkh.toFixed(2);
+      calcDeckungsbeitrag();
+    }
+
+    function calcDeckungsbeitrag() {
+      const area = Math.max(100, parseFloat(document.getElementById('dbArea').value) || 10000);
+      const yld = Math.max(0, parseFloat(document.getElementById('dbYield').value) || 52);
+      const price = Math.max(0, parseFloat(document.getElementById('dbPrice').value) || 1.85);
+      const directCost = Math.max(0, parseFloat(document.getElementById('dbDirectCost').value) || 44.5);
+      const harvestRate = Math.max(1, parseFloat(document.getElementById('dbHarvestRate').value) || 95);
+      const careAkh = Math.max(0, parseFloat(document.getElementById('dbCareAkh').value) || 0.58);
+      const wage = Math.max(0, parseFloat(document.getElementById('dbWage').value) || 17.5);
+
+      const revenuePerM2 = yld * price;
+      const dkflPerM2 = revenuePerM2 - directCost;
+      const harvestAkhPerM2 = yld / harvestRate;
+      const totalAkhPerM2 = harvestAkhPerM2 + careAkh;
+      const totalAkhAll = Math.round(totalAkhPerM2 * area);
+      const laborCostPerM2 = totalAkhPerM2 * wage;
+      const db1PerM2 = dkflPerM2 - laborCostPerM2;
+      const db1Total = Math.round(db1PerM2 * area);
+
+      document.getElementById('dbOutRevenue').textContent = revenuePerM2.toFixed(2) + ' €/m²';
+      document.getElementById('dbOutDkfl').textContent = dkflPerM2.toFixed(2) + ' €/m²';
+      document.getElementById('dbOutAkh').textContent = totalAkhPerM2.toFixed(2) + ' AKh/m² (' + totalAkhAll.toLocaleString('de-DE') + ' AKh)';
+      document.getElementById('dbOutLaborCost').textContent = laborCostPerM2.toFixed(2) + ' €/m²';
+      document.getElementById('dbOutDb1').textContent = db1PerM2.toFixed(2) + ' €/m²';
+      document.getElementById('dbOutTotal').textContent = 'Betriebs-Deckungsbeitrag (' + area.toLocaleString('de-DE') + ' m²): ' + db1Total.toLocaleString('de-DE') + ' € / Jahr';
+    }
+
+    function calcToBRFV() {
+      const area = Math.max(50, parseFloat(document.getElementById('qsArea').value) || 2500);
+      const conc = parseFloat(document.getElementById('qsConc').value) || 2.0;
+      const dH = Math.max(0, parseFloat(document.getElementById('qsWaterHardness').value) || 14);
+      const blockId = (document.getElementById('qsBlockId').value || 'GH02-R14').trim().toUpperCase();
+
+      // Standard-Schaumaufwandmenge im Gewächshaus: 0.4 L Spritzbrühe pro m² Oberfläche
+      const waterLiters = Math.round(area * 0.4);
+      const mennoLiters = (waterLiters * (conc / 100.0));
+      // Zitronensäure-Pufferung: ca. 80 g pro 1000 L je °dH zur sicheren Absenkung auf pH 3.0 - 4.5
+      const citricGrams = Math.round((waterLiters / 1000.0) * dH * 80);
+
+      document.getElementById('qsOutWater').textContent = waterLiters.toLocaleString('de-DE') + ' Liter';
+      document.getElementById('qsOutMenno').textContent = mennoLiters.toFixed(1).replace('.', ',') + ' Liter';
+      document.getElementById('qsOutCitric').textContent = citricGrams.toLocaleString('de-DE') + ' g (' + (citricGrams / 1000).toFixed(2).replace('.', ',') + ' kg)';
+      document.getElementById('qsOutTime').textContent = conc >= 2.0 ? '16 – 24 Stunden' : '4 – 8 Stunden';
+      document.getElementById('qsOutLotCode').textContent = 'LOT: DE-BY-KNL-20261018-' + blockId;
+    }
+
     calcGermanHeating();
+    calcDeckungsbeitrag();
+    calcToBRFV();
   </script>
 </body>
 </html>

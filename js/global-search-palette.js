@@ -6,7 +6,9 @@
 (function() {
   const ECOSYSTEM_INDEX = [
     // 🛠️ TOOLS
-    { title: "VenloCAD 3D v2.5 Parametric CAD Engine", cat: "tool", url: "tools/venlocad-3d.html", icon: "📐", desc: "Institutional WebGL 3D CAD: 4 Glazing Shaders, S355JR structural checks, roof vent kinematics, A4 Spec Sheet PDF & 1:1 Care", tags: "venlocad 3d cad webgl parametric nen3859 structural glazing diffuse polycarbonate acrylic s355jr gutters heating rails vent kinematics dxf stl pdf consultation" },
+    { title: "VenloCAD 3D v3.0 Parametric CAD & Structural Engine", cat: "tool", url: "tools/venlocad-3d.html", icon: "📐", desc: "Institutional WebGL 3D CAD: 4 Glazing Shaders, S355JR structural checks, roof vent kinematics, A4 Spec Sheet PDF & 1:1 Care", tags: "venlocad 3d v3.0 cad webgl parametric nen3859 en13031 structural glazing diffuse polycarbonate acrylic s355jr gutters heating rails vent kinematics dxf stl pdf consultation" },
+    { title: "Deutscher Gartenbau-Meister & KTBL-Standard Rechner", cat: "tool", url: "meister.html", icon: "🇩🇪", desc: "KTBL Deckungsbeitragsrechner (DB I & II), DIN V 18599 Heizlast, QS-GAP 2026 / ToBRFV Menno Florades Desinfektion & ZVG Meisterprüfung Teil III", tags: "deutschland meister gartenbau ktbl deckungsbeitrag dbi din18599 qsgap ifs tobrfv menno florades svlfg knoblauchsland nuernberg" },
+    { title: "Deutscher Meisterfunk — Gartenbau & Wissenschaftspodcast (Folge 1–8)", cat: "article", url: "podcasts/index.html", icon: "🎙️", desc: "Täglicher Fachpodcast (A2/B1 bis Fachdeutsch): Weltnachrichten, Pflanzenphysiologie, VPD, IPM, KTBL & QS-GAP 2026 mit Audio-Player & RSS", tags: "podcast meisterfunk deutsch hoertraining audio mp3 rss youtube music gartenbau meisterpruefung" },
     { title: "3D WebGL Venlo Greenhouse Digital Twin", cat: "tool", url: "tools/greenhouse-3d-digital-twin-simulator.html", icon: "🌟", desc: "Three.js solar tracking, roof vent kinematics, thermal screen & fogging simulator", tags: "3d webgl threejs venlo digital twin physics solar shadow screen vent fogging" },
     { title: "AgriVision™ AI Crop Disease & Leaf Pathology Analyzer", cat: "tool", url: "tools/agrivision-ai-crop-disease-analyzer.html", icon: "🔬", desc: "In-browser WebRTC camera AI leaf pathology & biological IPM prescription", tags: "ai computer vision leaf pathology blight mildew chlorosis spider mite ipm" },
     { title: "Natural Ventilation & Buoyancy Airflow Calculator", cat: "tool", url: "tools/greenhouse-natural-ventilation-buoyancy-airflow-calculator.html", icon: "💨", desc: "ASABE stack effect & wind-driven air exchange (ACH) rate calculator", tags: "natural ventilation buoyancy airflow stack effect wind asabe ach" },
@@ -22,7 +24,7 @@
     { title: "Global Agri-Subsidy & Grant Navigator (CA/USDA/EU/KR)", cat: "tool", url: "tools/global-agri-subsidy-grant-navigator.html", icon: "🌐", desc: "California CDFA (SWEEP/HSP/AMMP/FPIP), USDA EQIP/REAP, EU BLE, and Korea smart farm subsidies with 7-point verified dossiers and grant ROI modeling", tags: "subsidy grant sweep cdfa hsp ammp fpip reap eqip ble smartfarm funding incentive california" },
     { title: "Commercial CEA Feasibility & Grant Dossier Generator", cat: "tool", url: "tools/commercial-feasibility-grant-dossier-generator.html", icon: "🏛️", desc: "Bank-grade financial modeler & non-dilutive grant stacking engine across 50 US states producing printable PDF dossiers", tags: "feasibility grant dossier capex opex usda reap eqip cdfa sweep commercial bankable pdf roi" },
     { title: "Industrial Vacuum Systems & Semiconductor Equipment Suite", cat: "part", url: "parts/vacuum-systems.html", icon: "🔬", desc: "Ultra-high vacuum evaporators (DEV), magnetron sputtering (DSP), inert glove boxes (DGB) & Swagelok fittings", tags: "vacuum semiconductor evaporator sputter glove box swagelok uhv pump pvd kf cf fittings" },
-    { title: "Master 36 Enterprise Tools Suite Directory", cat: "tool", url: "tools/index.html", icon: "🛠️", desc: "Full catalog of 36 industrial-grade CEA simulators and calculation engines", tags: "all tools directory index calculators suite" },
+    { title: "Master 37 Enterprise Tools Suite Directory", cat: "tool", url: "tools/index.html", icon: "🛠️", desc: "Full catalog of 37 industrial-grade CEA simulators and calculation engines", tags: "all tools directory index calculators suite" },
 
     // 🌱 CROPS ATLAS (10)
     { title: "Commercial Greenhouse Tomato Microclimate & VPD Guide", cat: "crop", url: "crops/greenhouse-tomato-microclimate-vpd-steering-guide.html", icon: "🍅", desc: "VPD 0.8-1.2 kPa, DLI 25-35 mol, Calcium BER mitigation and DIF steering", tags: "tomato solanaceae vine vpd dli blossom end rot high wire" },
@@ -90,7 +92,7 @@
   // Helper to determine relative root path
   function getRootPrefix() {
     const p = window.location.pathname;
-    if (p.includes('/tools/') || p.includes('/crops/') || p.includes('/climate/') || p.includes('/articles/') || p.includes('/smartfarm/') || p.includes('/wiki/') || p.includes('/parts/')) {
+    if (p.includes('/tools/') || p.includes('/crops/') || p.includes('/climate/') || p.includes('/articles/') || p.includes('/smartfarm/') || p.includes('/wiki/') || p.includes('/parts/') || p.includes('/podcasts/')) {
       if (p.includes('/articles/de/') || p.includes('/articles/ja/')) {
         return '../../';
       }
@@ -115,7 +117,7 @@
         </div>
         <div class="inwoo-palette-tabs">
           <button class="inwoo-pal-tab active" data-cat="all">✨ All (220+)</button>
-          <button class="inwoo-pal-tab" data-cat="tool">🛠️ Tools (35)</button>
+          <button class="inwoo-pal-tab" data-cat="tool">🛠️ Tools (37)</button>
           <button class="inwoo-pal-tab" data-cat="sim">🧪 Simulators (15)</button>
           <button class="inwoo-pal-tab" data-cat="wiki">📚 Wiki (52)</button>
           <button class="inwoo-pal-tab" data-cat="part">⚙️ Parts</button>
