@@ -28,7 +28,7 @@
       "@type": "Person",
       "name": "Inwoovation Engineering Lab"
     },
-    "dateModified": "2026-10-16"
+    "dateModified": "2026-10-18"
   }
   </script>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8597809158257497" crossorigin="anonymous"></script>
@@ -68,11 +68,31 @@
 
     /* Floating Ribbon Header with Crop Wizard & Quick Save Bar */
     header {
-      position: absolute; top: 16px; left: 20px; z-index: 20;
+      position: absolute; top: 16px; left: 20px; max-width: calc(100vw - 40px); z-index: 20;
       display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
       background: var(--panel-bg); backdrop-filter: blur(18px);
       padding: 10px 18px; border-radius: 14px; border: 1px solid var(--panel-border);
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    }
+    @media (max-width: 768px) {
+      html, body { max-width: 100vw; overflow-x: hidden; }
+      header {
+        left: 8px; right: 8px; top: 8px; max-width: calc(100vw - 16px);
+        padding: 8px 10px; gap: 6px; overflow-x: hidden;
+      }
+      .header-wizard, .save-toolbar {
+        margin-left: 0 !important; padding-left: 0 !important; border-left: none !important;
+        max-width: 100%; flex-wrap: wrap !important;
+      }
+      #sidebar {
+        left: 8px !important; width: calc(100vw - 52px) !important; max-width: 340px !important;
+      }
+      .sidebar-toggle-btn {
+        left: min(calc(100vw - 40px), 352px) !important;
+      }
+      .sidebar-toggle-btn.collapsed {
+        left: 12px !important;
+      }
     }
     .header-home-btn {
       display: inline-flex;

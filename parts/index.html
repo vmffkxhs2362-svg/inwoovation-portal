@@ -601,6 +601,10 @@
             font-size: 0.8rem;
         }
 
+        html, body {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
         /* Slide-over BOM Drawer */
         .bom-drawer-backdrop {
             position: fixed;
@@ -626,12 +630,14 @@
             border-left: 1px solid var(--border-glass);
             z-index: 310;
             box-shadow: -15px 0 40px rgba(0, 0, 0, 0.6);
-            transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.35s;
+            visibility: hidden;
             display: flex;
             flex-direction: column;
         }
         .bom-drawer.open {
             right: 0;
+            visibility: visible;
         }
         .bom-drawer.open + .bom-drawer-backdrop,
         .bom-drawer.open ~ .bom-drawer-backdrop {

@@ -31,6 +31,8 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    max-width: 100%;
 }
 
 body {
@@ -41,6 +43,7 @@ body {
     display: flex;
     flex-direction: column;
     overflow-x: hidden;
+    max-width: 100%;
     position: relative;
 }
 

@@ -265,7 +265,7 @@
         /* Equipment Grid */
         .equipment-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr));
             gap: 1.75rem;
             margin-bottom: 3.5rem;
         }
@@ -600,12 +600,23 @@
             margin: 3rem 0;
             text-align: center;
             min-height: 100px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            display: block;
+            width: 100%;
+            overflow: hidden;
             background: rgba(15, 23, 42, 0.4);
             border: 1px dashed rgba(255, 255, 255, 0.1);
             border-radius: 14px;
+        }
+
+        html, body {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 100%;
+            overflow-x: hidden;
+            box-sizing: border-box;
         }
 
         /* Footer */
@@ -650,7 +661,7 @@
             </a>
             <div class="nav-links">
                 <a href="../index.html" class="nav-item">🏠 Portal Home</a>
-                <a href="../tools/index.html" class="nav-item">🧮 Simulators (36)</a>
+                <a href="../tools/index.html" class="nav-item">🧮 Simulators (37)</a>
                 <a href="index.html" class="nav-item">⚙️ AgriMaster Parts</a>
                 <a href="vacuum-systems.html" class="nav-item nav-item-highlight">🔬 Vacuum Engineering</a>
                 <a href="../articles/article-62-us-50-state-agricultural-grant-playbook.html" class="nav-item">💰 Grants</a>
@@ -686,10 +697,9 @@
             <ins class="adsbygoogle"
                  style="display:block"
                  data-ad-client="ca-pub-8597809158257497"
-                 data-ad-slot="9876543210"
                  data-ad-format="auto"
                  data-full-width-responsive="true"></ins>
-            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            <script>try { (adsbygoogle = window.adsbygoogle || []).push({}); } catch(e) {}</script>
         </div>
 
         <!-- Category Filter Bar -->
@@ -839,10 +849,9 @@
             <ins class="adsbygoogle"
                  style="display:block"
                  data-ad-client="ca-pub-8597809158257497"
-                 data-ad-slot="9876543211"
                  data-ad-format="auto"
                  data-full-width-responsive="true"></ins>
-            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            <script>try { (adsbygoogle = window.adsbygoogle || []).push({}); } catch(e) {}</script>
         </div>
 
         <!-- Footer -->
