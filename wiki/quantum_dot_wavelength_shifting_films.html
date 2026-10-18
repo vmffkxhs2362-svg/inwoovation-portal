@@ -353,9 +353,14 @@
             header {
                 padding: 0 1rem;
             }
+            html, body { max-width: 100%; overflow-x: hidden; }
+            header { padding: 0 0.75rem !important; gap: 0.4rem !important; }
+            header > div:first-child { gap: 0.5rem !important; min-width: 0; flex: 1; justify-content: space-between; }
+            .logo { font-size: 1.15rem !important; white-space: nowrap; }
             .header-right {
-                display: none; /* Hide search and translate on very small screens, or adjust them */
+                display: none !important;
             }
+            table { display: block; width: 100%; max-width: 100%; overflow-x: auto; }
         }
     </style>
     <link rel="canonical" href="https://inwoovation.com/wiki/quantum_dot_wavelength_shifting_films.html" />

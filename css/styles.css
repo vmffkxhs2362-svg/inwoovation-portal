@@ -1,3 +1,38 @@
 /* Inwoovation Lab - Canonical CSS Bridge */
 @import url('../styles.css');
 @import url('global-ui-enhancements.css');
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+.article-container, .article-body, main, article {
+  min-width: 0;
+  max-width: 100%;
+  width: 100%;
+  padding-left: 16px;
+  padding-right: 16px;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+h1, h2, h3, p, td, th, code {
+  overflow-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
+}
+.code-box, pre {
+  max-width: 100%;
+  overflow-x: auto;
+  box-sizing: border-box;
+}
+@media (max-width: 768px) {
+  table, .data-table {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+

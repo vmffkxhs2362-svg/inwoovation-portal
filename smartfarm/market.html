@@ -97,7 +97,7 @@
 <body>
 <main class="container"><header>
 <div class="header-top-bar" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 0.8rem;">
-<div class="badge" id="header-badge" style="margin-bottom: 0;">Last Updated: October 08, 2026</div>
+<div class="badge" id="header-badge" style="margin-bottom: 0;">Last Updated: October 18, 2026</div>
 <div style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap;">
     <a href="https://inwoovation.com/" target="_blank" rel="noopener noreferrer" style="background: rgba(30, 41, 59, 0.9); border: 1px solid rgba(255, 255, 255, 0.18); color: #f8fafc; font-weight: 700; font-size: 0.85rem; padding: 0.45rem 0.9rem; border-radius: 100px; text-decoration: none; display: inline-flex; align-items: center; gap: 0.4rem; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); transition: all 0.25s ease;">
         🌐 Inwoovation Lab
@@ -423,15 +423,6 @@
 <script src="https://cdn.jsdelivr.net/npm/moment@2.29.4/moment.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-moment@1.0.1/dist/chartjs-adapter-moment.min.js"></script>
-<script src="common.js?v=2.2"></script><script type="text/javascript">
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement({
-        pageLanguage: 'en',
-        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-        autoDisplay: false
-      }, 'google_translate_element');
-    }
-    </script><script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" type="text/javascript"></script>
     
     <!-- Global Market Dashboard Logic -->
     <script>
@@ -447,8 +438,7 @@
 
         async function initMarketDashboard() {
             try {
-                const isHttp = window.location.protocol.startsWith('http');
-                const jsonPath = isHttp ? '/data/global_prices.json' : 'data/global_prices.json';
+                const jsonPath = 'data/global_prices.json';
                 const response = await fetch(jsonPath + '?t=' + new Date().getTime());
                 globalData = await response.json();
                 document.getElementById('update-timestamp').innerText = `Last Checked: ${globalData.last_updated}`;

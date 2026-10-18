@@ -820,4 +820,6 @@ footer p {
     .blog-grid { grid-template-columns: 1fr; }
     .grid { grid-template-columns: 1fr; }
     .articles-callout { padding: 2rem; flex-direction: column; align-items: flex-start; }
+    table, .data-table { display: block; width: 100%; max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .code-box, pre { max-width: 100%; overflow-x: auto; }
 }

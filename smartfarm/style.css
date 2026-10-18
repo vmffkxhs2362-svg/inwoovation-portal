@@ -25,6 +25,11 @@
             padding: 0;
         }
 
+        html {
+            overflow-x: hidden;
+            max-width: 100%;
+        }
+
         body {
             background-color: var(--bg-dark);
             background-image: 
@@ -41,6 +46,7 @@
             line-height: 1.5;
             position: relative;
             overflow-x: hidden;
+            max-width: 100%;
         }
 
         /* Ambient Glowing Background Orbs */
@@ -1686,3 +1692,8 @@
             gap: 0.3rem;
         }
     
+
+@media (max-width: 768px) {
+  .container, .card, main { min-width: 0; max-width: 100%; overflow-x: hidden; }
+  table { display: block; width: 100%; max-width: 100%; overflow-x: auto; }
+}

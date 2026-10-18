@@ -89,6 +89,11 @@
             padding: 0;
         }
 
+        html, body {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
         body {
             font-family: 'Roboto', sans-serif;
             background: var(--bg-gradient);
@@ -98,6 +103,10 @@
             flex-direction: column;
             align-items: center;
             padding: 3rem 1.5rem;
+        }
+        @media (max-width: 768px) {
+            body > * { min-width: 0; max-width: 100%; }
+            table { display: block; width: 100%; max-width: 100%; overflow-x: auto; }
         }
 
         header {

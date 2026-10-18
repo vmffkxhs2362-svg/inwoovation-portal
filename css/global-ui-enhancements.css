@@ -525,3 +525,30 @@ html, body {
   }
 }
 
+/* Universal Mobile Table, Code & Container Overflow Protection */
+.article-container, .article-body, main, article, .container {
+  min-width: 0;
+  max-width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+.code-box, pre {
+  max-width: 100%;
+  overflow-x: auto;
+  box-sizing: border-box;
+}
+.code-box code, pre code, code {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+@media (max-width: 768px) {
+  table, .data-table {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+
