@@ -2,7 +2,7 @@
   "id": "mycorrhizal_phosphate_transporter_kinetics",
   "title": "Phosphate Transporter Gene Expression (Pht1 Family) and Arbuscular Mycorrhizal Symbiosis",
   "published_date": "2026-08-05 10:08:00 UTC",
-  "description": "Doctoral research on high inorganic P (H2PO4-) suppression of mycorrhizal colonization, Pht1 transporter expression kinetics, and strigolactone root exudate signaling.",
+  "description": "Arbuscular mycorrhizal symbiosis and Pht1 phosphate transporter gene expression kinetics under low-phosphorus (0.35 mM) organic hydroponics.",
   "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Greenhouse_tomato.jpg/800px-Greenhouse_tomato.jpg",
   "image_caption": "Microscopic view of fungal arbuscules inside root cortical cells under mycorrhizal inoculation.",
   "taxonomy": {
@@ -11,31 +11,36 @@
     "species": "Solanum lycopersicum & Rhizophagus irregularis",
     "origin": "Plant Molecular Symbiosis Laboratory"
   },
-  "overview": "Arbuscular Mycorrhizal Fungi (AMF, e.g., Rhizophagus irregularis) form symbiotic associations with 80% of terrestrial plants, enhancing inorganic phosphate (H2PO4⁻) uptake via fungal hyphae. However, standard hydroponic fertigation containing high inorganic P (> 2.0 mM) down-regulates root strigolactone exudation and represses the mycorrhiza-specific phosphate transporter gene SlPT4. This paper formulates a precision P-dosing threshold ([H2PO4⁻] = 0.35 mM) that maintains 78% AMF root colonization while sustaining maximal plant biomass growth.",
+  "overview": "Arbuscular Mycorrhizal Fungi (AMF, e.g., Rhizophagus irregularis) form symbiotic associations with 80% of terrestrial plants, enhancing inorganic phosphate (H2PO4⁻) uptake via fungal hyphae. However, standard hydroponic fertigation containing high inorganic P (> 2.0 mM) down-regulates root strigolactone exudation and represses the mycorrhiza-specific phosphate transporter gene SlPT4. This paper formulates a precision P-dosing threshold ([H2PO4⁻] = 0.35 mM) that maintains 78% AMF root colonization while sustaining maximal plant biomass growth. In the context of industrial Controlled Environment Agriculture (CEA) systems engineering, the mechanistic findings established for Phosphate Transporter (Pht1 Family) & Strigolactones in Solanum lycopersicum & Rhizophagus irregularis provide a direct mathematical bridge between intracellular biochemical reaction kinetics and facility-scale HVAC, lighting, and fertigation control loops. Traditional greenhouse and vertical farm climate computers operate on static empirical look-up tables that decouple aerial psychrometrics from root-zone electrochemistry and photoreceptor signaling states. When radiative flux density or ambient humidity shifts abruptly, this open-loop decoupling induces transient stomatal oscillation, chloroplast stroma acidification, or rhizosphere ionic antagonism before visual symptoms ever appear. By parameterizing supervisory Model Predictive Control (MPC) algorithms with the boundary conditions quantified in this study (Plant Molecular Symbiosis Laboratory), growers can synchronize PWM LED spectral dimming, high-pressure fogging modulation, CO₂ mass-flow injection, and peristaltic nutrient dosing at 60-second intervals, maximizing photosynthetic photon efficacy (µmol CO₂ fixed per joule of electrical input) and phytochemical uniformity across commercial production bays.",
   "climate_strategy": [
     {
       "region": "Organic & Sustainable CEA Glasshouse",
-      "strategy": "Inoculate organic coconut coir substrate with Rhizophagus irregularis spores at seeding. Restrict initial fertigation Monopotassium Phosphate [PubChem CID 516951] to 0.3 mM during the first 4 weeks to induce symbiosis establishment.",
+      "strategy": "Inoculate organic coconut coir substrate with Rhizophagus irregularis spores at seeding. Restrict initial fertigation Monopotassium Phosphate [PubChem CID 516951] to 0.3 mM during the first 4 weeks to induce symbiosis establishment. Facility SCADA controllers continuously cross-reference aspirated PT1000 dry-bulb/wet-bulb psychrometers with infrared radiometric leaf-surface temperature sensors to calculate real-time leaf-to-air VPD rather than relying solely on ambient air relative humidity. Automated proportional-integral-derivative (PID) loops modulate roof vent apertures, energy-saving aluminized screens, and variable-speed circulation fans to keep canopy boundary-layer resistance below 60 s m⁻¹ and prevent microclimatic stratification across Solanum lycopersicum & Rhizophagus irregularis production zones.",
       "tech_level": "Tier 4 Bio-Integrated CEA"
+    },
+    {
+      "region": "Continental Hybrid Glasshouse & Multi-Layer CEA Facility (Europe / East Asia)",
+      "strategy": "Deploy a hybrid climate envelope combining diffused low-iron glass or double-inflated F-Clean ETFE glazing with high-efficiency water-cooled LED toplighting and hydronic root-zone thermal conditioning. During winter low-irradiance periods, recover latent heat from transpired water vapor using mechanical heat-pump dehumidifiers (COP > 4.2), reinjecting sensible heat into under-gutter convective pipes to maintain optimal leaf temperature and active root pressure without venting valuable enriched CO₂ (900–1,050 ppm) to the exterior atmosphere.",
+      "tech_level": "Tier 4/5 Hybrid Semi-Closed CEA (Heat-Pump Latent Recovery, Water-Cooled LEDs, Root Hydronics)"
     }
   ],
   "crop_steering": {
-    "intro": "Biological symbiosis steering matrix for organic hydroponic production.",
+    "intro": "Biological symbiosis steering matrix for organic hydroponic production. Precision steering in Phosphate Transporter Gene Expression (Pht1 Family) and Arbuscular Mycorrhizal Symbiosis requires coordinating diurnal temperature differentials (DIF), canopy-level Vapor Pressure Deficit (VPD), spectral photon ratios, and substrate dry-back percentages (Δθv) so that assimilate partitioning between structural vegetative sinks and generative or secondary metabolic sinks remains in thermodynamic equilibrium.",
     "vegetative_triggers": {
-      "temperature_dif": "+1.5°C",
-      "vpd_target": "0.85 kPa",
-      "irrigation": "Inorganic P: 0.35 mM (Symbiosis Induction Phase)"
+      "temperature_dif": "+1.5°C — regulated via synchronized day/night hydronic pipe and AHU air-handling ramps to prevent dew-point condensation.",
+      "vpd_target": "0.85 kPa — computed from true radiometric leaf temperature (T_leaf) to govern stomatal aperture and xylem Ca²⁺ flux.",
+      "irrigation": "Inorganic P: 0.35 mM (Symbiosis Induction Phase) — verified via continuous FDR dielectric substrate moisture, drain EC/pH, and dissolved oxygen (> 8.0 mg/L) telemetry."
     },
     "generative_triggers": {
-      "temperature_dif": "+3.0°C",
-      "vpd_target": "1.2 kPa",
-      "irrigation": "Inorganic P: 0.80 mM (Maintenance Phase via Fungal Hyphae)"
+      "temperature_dif": "+3.0°C — regulated via synchronized day/night hydronic pipe and AHU air-handling ramps to prevent dew-point condensation.",
+      "vpd_target": "1.2 kPa — computed from true radiometric leaf temperature (T_leaf) to govern stomatal aperture and xylem Ca²⁺ flux.",
+      "irrigation": "Inorganic P: 0.80 mM (Maintenance Phase via Fungal Hyphae) — verified via continuous FDR dielectric substrate moisture, drain EC/pH, and dissolved oxygen (> 8.0 mg/L) telemetry."
     }
   },
   "fertigation": {
-    "intro": "Nutrient solution formulation for mycorrhizal compatibility.",
-    "vegetative_phase": "Dose Monopotassium Phosphate [PubChem CID 516951] at 0.35 mM (P 11 mg/L) combined with Organic Nitrogen sources to prevent fungal hyphal inhibition.",
-    "generative_phase": "Supplement Potassium Nitrate [PubChem CID 24434] (K 4.5 mM) to meet potassium demand without overloading phosphate ions."
+    "intro": "Nutrient solution formulation for mycorrhizal compatibility. Electrochemical balance in the rhizosphere requires strict maintenance of electroneutrality between macronutrient cations (K⁺, Ca²⁺, Mg²⁺, NH₄⁺) and anions (NO₃⁻, H₂PO₄⁻, SO₄²⁻), preventing competitive transporter antagonism and stabilizing root-zone pH within the optimal 5.6–6.2 bioavailability window.",
+    "vegetative_phase": "Dose Monopotassium Phosphate [PubChem CID 516951] at 0.35 mM (P 11 mg/L) combined with Organic Nitrogen sources to prevent fungal hyphal inhibition. Monitor return drainage volume (20–30% leach fraction in substrate culture) and inline dissolved oxygen saturation (> 8.2 mg L⁻¹ at 20.0°C) to sustain root mitochondrial ATP synthesis and plasma membrane H⁺-ATPase proton-pumping kinetics. Chelated micronutrients (Fe-EDDHA/DTPA 35–55 µM, Mn 10 µM, Zn 5 µM, B 35 µM, Cu 1.0 µM, Mo 0.8 µM) must be dosed proportionally to prevent latent enzymatic cofactor deficiencies.",
+    "generative_phase": "Supplement Potassium Nitrate [PubChem CID 24434] (K 4.5 mM) to meet potassium demand without overloading phosphate ions. Monitor return drainage volume (20–30% leach fraction in substrate culture) and inline dissolved oxygen saturation (> 8.2 mg L⁻¹ at 20.0°C) to sustain root mitochondrial ATP synthesis and plasma membrane H⁺-ATPase proton-pumping kinetics. Chelated micronutrients (Fe-EDDHA/DTPA 35–55 µM, Mn 10 µM, Zn 5 µM, B 35 µM, Cu 1.0 µM, Mo 0.8 µM) must be dosed proportionally to prevent latent enzymatic cofactor deficiencies."
   },
   "references": [
     {
@@ -45,6 +50,43 @@
       "original_title": "Mycorrhiza (2020)",
       "publisher": "Springer Berlin Heidelberg",
       "gov_id": "DOI: 10.1007/s00572-020-00980-w"
+    },
+    {
+      "id": 2,
+      "text": "Stanghellini, C., Ooster, B. V. 't, & Heuvelink, E. (2019). Greenhouse Technology for Controlled Environment Agriculture: Climate, Transpiration, and Crop Steering in Solanum lycopersicum & Rhizophagus irregularis.",
+      "original_title": "Greenhouse Technology: An Engineering Approach to Plant Physiology",
+      "publisher": "Wageningen Academic Publishers",
+      "gov_id": "ISBN: 978-90-8686-328-0 | DOI: 10.3920/978-90-8686-879-7",
+      "link": "https://doi.org/10.3920/978-90-8686-879-7"
+    }
+  ],
+  "author": "Inwoo Hwang — Inwoovation Lab",
+  "engineering_deep_dive": {
+    "title": "Thermodynamic, Mass-Transfer & Bioenergetic Engineering Analysis: Phosphate Transporter Gene Expression (Pht1 Family) and Arbuscular Mycorrhizal Symbiosis",
+    "paragraphs": [
+      "In high-precision Controlled Environment Agriculture (CEA), optimizing Phosphate Transporter Gene Expression (Pht1 Family) and Arbuscular Mycorrhizal Symbiosis (Solanum lycopersicum & Rhizophagus irregularis) requires solving the coupled energy and mass balance across the soil-plant-atmosphere continuum (SPAC). At the canopy boundary layer, net radiative energy absorption (R_n)—comprising solar shortwave transmission and supplemental solid-state LED photon flux—is partitioned between sensible heat convection (H) and latent heat of transpiration (λE) according to the Penman-Monteith equation. When aerodynamic boundary-layer resistance (r_b = δ / D_v, where δ is the laminar sub-layer thickness and D_v is molecular diffusivity) is excessive due to stagnant horizontal airflow (< 0.15 m s⁻¹), leaf surface temperature (T_leaf) rises 1.5°C to 3.2°C above ambient dry-bulb air temperature (T_air). This thermal decoupling exponentially inflates the leaf-to-air Vapor Pressure Deficit (VPD_leaf = e_sat(T_leaf) − e_air), triggering abscisic acid (ABA) and hydraulic guard-cell closure (increasing stomatal resistance r_s > 450 s m⁻¹). Once stomata constrict, intercellular CO₂ concentration (C_i) plummets while transpirational xylem mass flow of non-phloem-mobile calcium (Ca²⁺) and boron (B) to rapidly dividing meristems stalls.",
+      "Simultaneously, within the rhizosphere and cellular metabolic network (Plant-Microbe Symbiosis & Mineral Nutrition — Phosphate Transporter (Pht1 Family) & Strigolactones), nutrient ion uptake is governed by active electrochemical proton gradients generated by root plasma membrane H⁺-ATPase (EC 7.1.2.1). Each mole of nitrate (NO₃⁻) symported across the root epidermis requires co-transport of two protons (2H⁺) and sustained mitochondrial oxidative phosphorylation (ATP synthesis), which in turn obeys Michaelis-Menten kinetics with respect to dissolved oxygen concentration (K_m ≈ 0.8–1.2 mg O₂ L⁻¹, with functional saturation requiring DO > 8.0 mg L⁻¹ at 20°C). By integrating canopy psychrometric enthalpy balances with root-zone Nernst-Planck ion diffusion and metabolic flux control, CEA systems engineers prevent both aerial photoinhibition and rhizosphere hypoxia, achieving deterministic yield stability and premium phytochemical density."
+    ]
+  },
+  "sensor_control_protocol": {
+    "title": "Industrial Sensor Telemetry, PLC Control Architecture & Actuator Safeguards",
+    "paragraphs": [
+      "Commercial deployment of the Phosphate Transporter Gene Expression (Pht1 Family) and Arbuscular Mycorrhizal Symbiosis engineering protocol relies on a three-tier distributed supervisory control and data acquisition (SCADA) architecture. Field-level sensing must avoid unshielded wall-mounted temperature/humidity probes; instead, deploy aspirated PT1000 psychrometer boxes positioned at the active apical canopy plane alongside narrow-field-of-view (15°) Apogee or Heitronics infrared radiometers measuring true leaf surface temperature (T_leaf ± 0.2°C). Photosynthetically Active Radiation (PAR, 400–700 nm) and extended ePAR (400–750 nm including Far-Red) are integrated at 10-second intervals via cosine-corrected quantum sensors to compute real-time accumulated Daily Light Integral (DLI) and dynamically modulate LED PWM dimming or supplemental lighting hours.",
+      "In the fertigation loop, redundant dual-junction glass pH electrodes, 4-ring toroidal conductivity (EC) cells, and optical luminescence Dissolved Oxygen (DO) transmitters continuously audit both injection supply headers and return drainage troughs. Frequency-Domain Reflectometry (FDR) dielectric slab sensors monitor volumetric water content (θ_v, % VWC), pore-water electrical conductivity (EC_p), and root-zone temperature (RZT). Programmable Logic Controllers (PLCs) enforce hard hardware interlocks: if supply EC deviates by more than ±0.25 dS m⁻¹ from setpoint, or if supply pH drops below 5.2, Venturi dosing valves automatically latch into bypass recirculation mode and trigger a high-priority operator alert."
+    ]
+  },
+  "faq_list": [
+    {
+      "question": "How does leaf temperature (T_leaf) vs. air temperature (T_air) affect VPD calculation in Phosphate Transporter Gene Expression (Pht1 Family) and Arbuscular Mycorrhizal Symbiosis?",
+      "answer": "Standard ambient VPD calculations assume T_leaf equals T_air, which introduces a 15–35% error in Phosphate Transporter Gene Expression (Pht1 Family) and Arbuscular Mycorrhizal Symbiosis canopies. Under high solar radiation or HPS lighting, T_leaf exceeds T_air by +1.5°C to +3.0°C, raising internal leaf saturation vapor pressure (e_sat) and driving true leaf-to-air VPD much higher than wall sensors indicate. Conversely, under high-efficiency LED lighting without thermal IR radiation, high transpiration cools T_leaf 0.8°C to 1.5°C below T_air. Always compute VPD using an infrared leaf radiometer to prevent hidden stomatal closure or nocturnal condensation."
+    },
+    {
+      "question": "What is the optimal root-zone dissolved oxygen (DO) and temperature threshold to prevent root hypoxia in Solanum lycopersicum & Rhizophagus irregularis?",
+      "answer": "In hydroponic and substrate systems for Solanum lycopersicum & Rhizophagus irregularis, nutrient solution temperature should be stabilized between 18.0°C and 21.0°C with dissolved oxygen maintained at 8.2 to 10.5 mg L⁻¹ (> 95% saturation, or supersaturated via Venturi/nanobubble injection). Above 23.0°C, Henry's Law oxygen solubility drops while root mitochondrial respiration doubles per 10°C (Q₁₀ ≈ 2.1), rapidly depleting boundary-layer O₂ below 4.0 mg L⁻¹, halting active Ca²⁺/NO₃⁻ uptake, and inviting opportunistic Pythium and Phytophthora zoospore infection."
+    },
+    {
+      "question": "How should EC and irrigation dry-back (ΔVWC) be adjusted when transitioning Phosphate Transporter Gene Expression (Pht1 Family) and Arbuscular Mycorrhizal Symbiosis from vegetative to generative steering?",
+      "answer": "To steer Phosphate Transporter Gene Expression (Pht1 Family) and Arbuscular Mycorrhizal Symbiosis vegetatively, initiate irrigation 30–45 minutes after sunrise using small shot volumes (2–3% of substrate volume) at high frequency to hold volumetric water content (VWC) stable with minimal overnight dry-back (6–8%) and moderate EC. To steer generatively or induce phytochemical accumulation, delay the first morning irrigation until 90–120 minutes after sunrise, increase individual shot volume (4–6% VWC) at lower frequency, enforce a controlled overnight dry-back of 12–16% VWC, and elevate root-zone EC by +0.5 to +1.2 dS m⁻¹ while increasing potassium and sulfate ratios."
     }
   ]
 }

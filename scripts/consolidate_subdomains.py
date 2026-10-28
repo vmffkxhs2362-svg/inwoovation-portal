@@ -67,7 +67,7 @@ def ensure_legacy_301_redirectors():
             dest_url = "https://inwoovation.com/parts/" if item == "index.html" else f"https://inwoovation.com/parts/{item}"
             with open(f, "w", encoding="utf-8") as fh:
                 fh.write(make_redirect_html(dest_url))
-    print(f"  ✅ Enforced 301 redirects in AgriMaster_Portal")
+    print("  ✅ Enforced 301 redirects in AgriMaster_Portal")
 
 SITEMAP_SKIP_DIRS = {".git", "__pycache__", "node_modules", "embed", "scripts", "data",
                      "digital_assets", "handbooks", "css", "js"}
@@ -75,9 +75,9 @@ DATE_MODIFIED_RE = re.compile(r'"dateModified"\s*:\s*"(\d{4}-\d{2}-\d{2})')
 
 
 def _is_publishable(rel_path, html):
-    """A page belongs in the sitemap if it is real content, not a template/verification/redirect stub."""
+    """A page belongs in the sitemap if it is real content, not a template/verification/redirect/404 stub."""
     name = os.path.basename(rel_path)
-    if name.startswith(("_", "old_", "naver", "google")):
+    if name.startswith(("_", "old_", "naver", "google")) or name == "404.html":
         return False
     return not re.search(r'http-equiv=["\']refresh', html, re.I)
 

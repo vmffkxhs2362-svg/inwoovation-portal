@@ -16,23 +16,52 @@
      gtag('config', 'G-V4RYJBMEDE');
   </script>
   <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8597809158257497" crossorigin="anonymous"></script>
+  <!-- Open Graph & Twitter Card -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://inwoovation.com/benchmarks/greenhouse-led-vs-hps-lighting-efficiency-roi.html">
+  <meta property="og:title" content="Greenhouse LED Toplighting vs HPS 5-Year Energy & ROI Benchmark | Inwoovation Lab">
+  <meta property="og:description" content="Comprehensive technical comparison between Horticultural LED fixtures (3.5 µmol/J) and High-Pressure Sodium (1.8 µmol/J) lamps. 5-year electricity OPEX and thermal heat compensation modeling.">
+  <meta property="og:image" content="https://inwoovation.com/og-cover.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Greenhouse LED Toplighting vs HPS 5-Year Energy & ROI Benchmark | Inwoovation Lab">
+  <meta name="twitter:description" content="Comprehensive technical comparison between Horticultural LED fixtures (3.5 µmol/J) and High-Pressure Sodium (1.8 µmol/J) lamps. 5-year electricity OPEX and thermal heat compensation modeling.">
+  <meta name="twitter:image" content="https://inwoovation.com/og-cover.jpg">
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "TechArticle",
-    "headline": "Horticultural LED vs HPS Lighting Efficiency & ROI Benchmark",
-    "url": "https://inwoovation.com/benchmarks/greenhouse-led-vs-hps-lighting-efficiency-roi.html",
-    "description": "Comprehensive comparative benchmark of LED vs High Pressure Sodium fixtures: PPF efficacy, HVAC cooling impact, spectral quality, and 5-year capital payback.",
-    "author": {
-      "@type": "Person",
-      "name": "Inwoo Park",
-      "jobTitle": "Horticultural Engineer & Master Craftsman"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Inwoovation Lab"
-    }
+    "@graph": [
+      {
+        "@type": "TechArticle",
+        "headline": "Horticultural LED vs HPS Lighting Efficiency & ROI Benchmark",
+        "url": "https://inwoovation.com/benchmarks/greenhouse-led-vs-hps-lighting-efficiency-roi.html",
+        "description": "Comprehensive comparative benchmark of LED vs High Pressure Sodium fixtures: PPF efficacy, HVAC cooling impact, spectral quality, and 5-year capital payback.",
+        "author": {
+          "@type": "Person",
+          "name": "Inwoo Hwang",
+          "jobTitle": "Horticultural & CEA Systems Engineer"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Inwoovation Lab",
+          "url": "https://inwoovation.com"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Should growers install a hybrid HPS + LED layout or go 100% full LED?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "In modern greenhouses equipped with double thermal screens and adequate tube-rail heating capacity, 100% multi-channel LED toplighting (3.5–3.8 µmol/J) with 5–8% far-red (730 nm) and dimmable drivers is superior, cutting electrical power draw by ~50% while enabling dynamic tariff harvesting."
+            }
+          }
+        ]
+      }
+    ]
   }
   </script>
   
@@ -112,6 +141,16 @@
       text-transform: uppercase;
       font-weight: 700;
     }
+    .bench-table { width: 100%; border-collapse: collapse; margin: 18px 0; font-size: 0.88rem; background: rgba(15, 23, 42, 0.65); border-radius: 12px; overflow: hidden; }
+    .bench-table th, .bench-table td { padding: 12px 14px; text-align: left; border-bottom: 1px solid rgba(255, 255, 255, 0.08); color: #cbd5e1; vertical-align: top; }
+    .bench-table th { background: rgba(56, 189, 248, 0.14); color: #38bdf8; font-weight: 700; font-family: 'Outfit', sans-serif; }
+    .bench-table tr:last-child td { border-bottom: none; }
+    .bench-prose h2 { font-family: 'Outfit', sans-serif; font-size: 1.4rem; color: #f8fafc; margin: 0 0 14px; }
+    .bench-prose h3 { font-family: 'Outfit', sans-serif; font-size: 1.1rem; color: #38bdf8; margin: 18px 0 8px; }
+    .bench-prose p, .bench-prose li { color: #cbd5e1; font-size: 0.96rem; line-height: 1.8; }
+    .eeat-bench-box { background: linear-gradient(135deg, rgba(15, 23, 42, 0.88), rgba(30, 41, 59, 0.78)); border: 1px solid rgba(56, 189, 248, 0.28); border-radius: 16px; padding: 22px 26px; margin-top: 24px; }
+    .eeat-bench-box h3 { font-family: 'Outfit', sans-serif; font-size: 1.05rem; color: #f8fafc; margin: 0 0 8px; }
+    .eeat-bench-box p { color: #94a3b8; font-size: 0.9rem; line-height: 1.65; margin: 0; }
   </style>
 </head>
 <body>
@@ -208,6 +247,139 @@
           </button>
         </div>
       </div>
+      <!-- BENCH_DEEP_DIVE_START -->
+      <div class="bench-card bench-prose">
+        <h2>💡 Photobiological &amp; Thermodynamic Analysis: LED (3.5–3.8 µmol/J) vs. 1000W DE HPS (1.8 µmol/J)</h2>
+        <p>Supplemental assimilation lighting is the single largest electrical cost center in high-latitude commercial greenhouses producing winter tomatoes, cucumbers, sweet peppers, strawberries, cut roses, and medicinal cannabis. For decades, the industry standard was the 1,000 W double-ended (DE) High-Pressure Sodium (HPS) lamp operating on a 400 V high-frequency electronic ballast, achieving a photosynthetic photon efficacy (PPE) of <strong>1.75 to 1.90 µmol/J</strong>. Modern horticultural light-emitting diodes (LEDs)—combining Gallium Nitride (GaN) blue/white pump diodes at 450 nm with Aluminum Gallium Indium Phosphide (AlGaInP) deep-red diodes at 660 nm—now achieve certified DLC V3.0 / ASABE S640 efficacies of <strong>3.40 to 3.85 µmol/J</strong>.</p>
+
+        <h3>1. Radiative Energy Partitioning &amp; Canopy Leaf Temperature Balance</h3>
+        <p>Understanding the total energy balance of a lighting retrofit requires analyzing where every watt of electrical input ($P_{\text{elec}}$) flows inside the greenhouse envelope. Because 1 mole of PAR photons carries roughly $0.205\text{–}0.215\text{ MJ}$ of radiant quantum energy (depending on spectral distribution via Planck's relation $E = N_A h c / \lambda$), the energy partitioning between HPS and LED differs fundamentally:</p>
+        <div style="overflow-x:auto;">
+          <table class="bench-table">
+            <thead>
+              <tr>
+                <th>Energy Partitioning &amp; Hardware Metric</th>
+                <th>1000W Double-Ended HPS (1,045W System)</th>
+                <th>SOTA Toplighting LED (660nm/450nm/White)</th>
+                <th>Hybrid Interlighting + Toplighting LED</th>
+                <th>Agronomic &amp; HVAC Engineering Impact</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Photosynthetic Photon Efficacy (PPE)</strong></td>
+                <td>1.80 µmol / J</td>
+                <td>3.50 – 3.75 µmol / J</td>
+                <td>3.60 µmol / J</td>
+                <td>LED cuts electrical power draw by 48.6–52.0% at identical canopy PPFD.</td>
+              </tr>
+              <tr>
+                <td><strong>Electrical Power Density (at 200 µmol/m²/s)</strong></td>
+                <td>111.1 W / m²</td>
+                <td>57.1 W / m²</td>
+                <td>55.6 W / m²</td>
+                <td>Reduces transformer capacity and peak kVA demand charges by ~54 W/m².</td>
+              </tr>
+              <tr>
+                <td><strong>PAR Radiant Conversion Efficiency (400–700 nm)</strong></td>
+                <td>~36% of Input Watts</td>
+                <td>~68–72% of Input Watts</td>
+                <td>~70% of Input Watts</td>
+                <td>Nearly double the fraction of input electricity becomes photosynthetically active light.</td>
+              </tr>
+              <tr>
+                <td><strong>Near-Infrared (NIR &gt; 700 nm) Forward Radiation</strong></td>
+                <td>~42–45% (~48 W/m²)</td>
+                <td>&lt; 2–4% (or Tunable 730 nm Far-Red)</td>
+                <td>&lt; 3%</td>
+                <td>HPS beams radiant heat directly onto upper leaves (+2.2 °C leaf temp); LED requires +10–15 W/m² pipe heat in winter.</td>
+              </tr>
+              <tr>
+                <td><strong>Convective Heat Sink Dissipation</strong></td>
+                <td>~19–22% (Upward to Roof)</td>
+                <td>~26–30% (Passive Fin or Water-Cooled)</td>
+                <td>~27% (Within Canopy)</td>
+                <td>LED convective heat rises softly or can be captured via water-cooled hydronic heat recovery.</td>
+              </tr>
+              <tr>
+                <td><strong>Photon Flux Maintenance (Lifespan)</strong></td>
+                <td>Q90 at 10,000 hrs (Bulb relamping required)</td>
+                <td>Q90 at 50,000 hrs (12–15 yr service life)</td>
+                <td>Q90 at 50,000 hrs</td>
+                <td>Eliminates $12–$18/fixture periodic HPS lamp replacement and mercury disposal.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>2. The Winter Thermal Compensation Effect (Boiler Offset Accounting)</h3>
+        <p>When transitioning from 100% HPS to 100% LED in cold winter climates, removing $54\text{ W/m}^2$ of electrical heat input—specifically the $45\%$ downward NIR radiative beam from HPS reflectors—reduces radiative warming of the apical meristem. To maintain an identical 24-hour canopy meristem temperature and transpiration rate, the greenhouse climate computer must increase hydronic heating pipe temperatures, supplying roughly <strong>35% to 45% of the removed electrical wattage</strong> as supplemental thermal heat ($+12\text{ to }+20\text{ W/m}^2$ during dark winter hours). Even after deducting this additional natural gas or heat-pump thermal cost, LED retrofits generate massive net savings because thermal energy ($\$0.03\text{–}\$0.06/\text{kWh}_{th}$) is 3 to 5 times cheaper than electrical energy ($\$0.12\text{–}\$0.25/\text{kWh}_e$).</p>
+
+        <h3>3. 5-Year &amp; 10-Year TCO Sensitivity Across Electricity Tariffs (1 Hectare @ 200 µmol/m²/s, 3,000 hrs/yr)</h3>
+        <div style="overflow-x:auto;">
+          <table class="bench-table">
+            <thead>
+              <tr>
+                <th>Electricity Tariff ($/kWh)</th>
+                <th>HPS Annual Power Cost (3.33 GWh/yr)</th>
+                <th>LED Annual Power Cost (1.71 GWh/yr)</th>
+                <th>Gross Annual Power Savings</th>
+                <th>Net Savings (After Winter Heat Offset)</th>
+                <th>Simple Payback ($550k Net CAPEX)</th>
+                <th>10-Year Cumulative Net Cashflow</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>$0.08 / kWh</strong> (Hydro/Low-Tariff)</td>
+                <td>$266,640</td>
+                <td>$137,140</td>
+                <td>$129,500 / yr</td>
+                <td>$114,500 / yr</td>
+                <td>4.8 Years</td>
+                <td>+$595,000</td>
+              </tr>
+              <tr>
+                <td><strong>$0.14 / kWh</strong> (Industrial Baseline)</td>
+                <td>$466,620</td>
+                <td>$240,000</td>
+                <td>$226,620 / yr</td>
+                <td>$211,620 / yr</td>
+                <td>2.6 Years</td>
+                <td>+$1,566,200</td>
+              </tr>
+              <tr>
+                <td><strong>$0.22 / kWh</strong> (Central Europe / East Asia)</td>
+                <td>$733,260</td>
+                <td>$377,140</td>
+                <td>$356,120 / yr</td>
+                <td>$341,120 / yr</td>
+                <td>1.6 Years</td>
+                <td>+$2,861,200</td>
+              </tr>
+              <tr>
+                <td><strong>$0.30 / kWh</strong> (Peak Grid / Island Grid)</td>
+                <td>$999,900</td>
+                <td>$514,280</td>
+                <td>$485,620 / yr</td>
+                <td>$470,620 / yr</td>
+                <td>1.2 Years</td>
+                <td>+$4,156,200</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>4. Frequently Asked Engineering Questions (LED vs. HPS)</h3>
+        <p><strong>Should growers install a hybrid HPS + LED layout or go 100% full LED?</strong><br>
+        In unscreened legacy glasshouses with undersized heating pipes, a 50/50 hybrid checkerboard layout preserves half of the HPS radiative leaf warming while cutting power draw by 25%. However, in modern greenhouses equipped with double thermal screens and adequate tube-rail/grow-pipe capacity, <strong>100% multi-channel LED toplighting</strong> with 5–8% far-red (730 nm) and dimmable drivers is superior, allowing dynamic DLI harvesting when spot electricity prices are negative or low and summer operation without overheating the canopy.</p>
+
+        <div class="eeat-bench-box">
+          <h3>👨‍🔬 Photobiology &amp; Electrical Engineering Review — Inwoovation Lab</h3>
+          <p><strong>Authored &amp; Verified by Inwoo Hwang</strong> — Horticultural &amp; CEA Systems Engineer at Inwoovation Lab. Photon efficacy metrics, L90/Q90 diode depreciation curves, and radiative-convective HVAC heat balances follow ANSI/ASABE S640, IES LM-80 / TM-21, and Wageningen UR LightLab experimental benchmarks.</p>
+        </div>
+      </div>
+      <!-- BENCH_DEEP_DIVE_END -->
     </div>
 
     <script>

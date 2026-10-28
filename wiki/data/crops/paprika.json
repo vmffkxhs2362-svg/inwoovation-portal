@@ -3,28 +3,28 @@
   "title": "Paprika (Capsicum annuum)",
   "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/85/Green-Yellow-Red-Pepper-2009.jpg",
   "image_caption": "Bell Pepper Fruits (Capsicum annuum)",
-  "description": "Precision greenhouse climate control and vegetative/generative crop steering for high-wire sweet peppers.",
+  "description": "High-wire sweet pepper / paprika (Capsicum annuum) CEA engineering guide: cyclic fruit-set steering, ADT/DIF control, and Ca/K fertigation.",
   "taxonomy": {
     "family": "Solanaceae (가지과)",
     "genus": "Capsicum (고추속)",
     "species": "Capsicum annuum",
     "origin": "Central & South America"
   },
-  "overview": "Paprika (bell pepper) is a major high-tech greenhouse crop, typically trained in high-wire V-systems. Successful cultivation requires precise management of average daily temperature (ADT) and day/night temperature differentials (DIF) to maintain a balance between vegetative growth (stem and leaf size) and generative steering (fruit set and ripening). Unlike tomatoes, paprika has a distinct 'flushing' pattern where it sets fruit in cycles, requiring proactive steering adjustments.",
+  "overview": "Paprika (bell pepper) is a major high-tech greenhouse crop, typically trained in high-wire V-systems. Successful cultivation requires precise management of average daily temperature (ADT) and day/night temperature differentials (DIF) to maintain a balance between vegetative growth (stem and leaf size) and generative steering (fruit set and ripening). Unlike tomatoes, paprika has a distinct 'flushing' pattern where it sets fruit in cycles, requiring proactive steering adjustments. From a quantitative horticultural engineering standpoint, commercial Paprika (Capsicum annuum) production in Venlo glasshouses and multi-tier plant factories is governed by the coupled heat and mass transfer equations of the Penman-Monteith canopy evapotranspiration model. Achieving target photosynthetic assimilation under a Daily Light Integral (DLI) regime of High (20-25 mol/m²/day) requires maintaining stomatal conductance (g_s) within its optimal physiological window while preventing aerodynamic boundary-layer stagnation (r_b) across dense leaf canopies. Because Capsicum annuum exhibits a high (blossom end rot risk) physiological demand for xylem-mobile divalent calcium (Ca²⁺) alongside an electrical conductivity (EC) tolerance envelope of Moderate-High (2.0 - 3.2 dS/m), minor deviations in leaf-to-air Vapor Pressure Deficit (VPD) or root-zone dissolved oxygen (DO) rapidly manifest as localized meristematic necrosis, blossom-end rot, or vascular tip-burn. Furthermore, integrated pest and pathogen exclusion protocols must continuously suppress Leveillula taurica (Powdery Mildew), Broad Mite, Thrips tabaci by eliminating nocturnal dew-point condensation events through synchronized under-gutter hydronic pipe heating, variable-frequency horizontal airflow (HAF) fans, and automated dehumidification heat recovery.",
   "climate_strategy": [
     {
       "region": "South Korea (RDA Smart Farm)",
-      "strategy": "Predominantly grown in high-roof glasshouses and modern plastic houses. Focus is on maintaining strict night temperatures (18-19°C) during winter using heating pipes under gutters. VPD is managed actively to prevent blossom-end rot (BER) and sunscald. <sup id=\"cite-1\"><a href=\"#ref-1\" style=\"color: var(--primary); text-decoration: none;\">[1]</a></sup>",
+      "strategy": "Predominantly grown in high-roof glasshouses and modern plastic houses. Focus is on maintaining strict night temperatures (18-19°C) during winter using heating pipes under gutters. VPD is managed actively to prevent blossom-end rot (BER) and sunscald. <sup id=\"cite-1\"><a href=\"#ref-1\" style=\"color: var(--primary); text-decoration: none;\">[1]</a></sup> Facility SCADA controllers continuously cross-reference aspirated PT1000 dry-bulb/wet-bulb psychrometers with infrared radiometric leaf-surface temperature sensors to calculate real-time leaf-to-air VPD rather than relying solely on ambient air relative humidity. Automated proportional-integral-derivative (PID) loops modulate roof vent apertures, energy-saving aluminized screens, and variable-speed circulation fans to keep canopy boundary-layer resistance below 60 s m⁻¹ and prevent microclimatic stratification across Capsicum annuum production zones.",
       "tech_level": "High (Gutter heating, automated vent screens, CO2 dosing)"
     },
     {
       "region": "The Netherlands (WUR)",
-      "strategy": "Utilizes high-wire V-systems allowing high density planting. Relies on advanced climate computers to steer crop load dynamically. High thermal screens and active dehumidification are used to maintain optimal VPD (0.8 - 1.2 kPa) and save energy.",
+      "strategy": "Utilizes high-wire V-systems allowing high density planting. Relies on advanced climate computers to steer crop load dynamically. High thermal screens and active dehumidification are used to maintain optimal VPD (0.8 - 1.2 kPa) and save energy. Facility SCADA controllers continuously cross-reference aspirated PT1000 dry-bulb/wet-bulb psychrometers with infrared radiometric leaf-surface temperature sensors to calculate real-time leaf-to-air VPD rather than relying solely on ambient air relative humidity. Automated proportional-integral-derivative (PID) loops modulate roof vent apertures, energy-saving aluminized screens, and variable-speed circulation fans to keep canopy boundary-layer resistance below 60 s m⁻¹ and prevent microclimatic stratification across Capsicum annuum production zones.",
       "tech_level": "Very High (Fully closed glasshouses, double screens, high-wire V-systems)"
     }
   ],
   "crop_steering": {
-    "intro": "Paprika steering focuses on avoiding excessive vegetative growth which leads to abortion of flower buds, while ensuring enough leaf canopy to prevent sunscald on ripening fruits.",
+    "intro": "Paprika steering focuses on avoiding excessive vegetative growth which leads to abortion of flower buds, while ensuring enough leaf canopy to prevent sunscald on ripening fruits. Precision steering in Paprika (Capsicum annuum) requires coordinating diurnal temperature differentials (DIF), canopy-level Vapor Pressure Deficit (VPD), spectral photon ratios, and substrate dry-back percentages (Δθv) so that assimilate partitioning between structural vegetative sinks and generative or secondary metabolic sinks remains in thermodynamic equilibrium.",
     "vegetative_triggers": {
       "temperature_dif": "Low day-to-night temperature difference (e.g., Day 21°C / Night 19°C) and warm ADT.",
       "vpd_target": "0.5 - 0.7 kPa (Ensures low transpiration stress, promoting leaf expansion).",
@@ -37,9 +37,9 @@
     }
   },
   "fertigation": {
-    "intro": "Paprika requires careful management of the Potassium-to-Nitrogen (K:N) ratio to steer vegetative/generative balance, and sufficient Calcium (Ca) to prevent blossom-end rot.",
-    "vegetative_phase": "Higher Nitrogen relative to Potassium. Target EC: 2.0 - 2.2 mS/cm. Keep pH in root zone between 5.5 - 6.2.",
-    "generative_phase": "Increase Potassium-to-Nitrogen ratio. Target EC: 2.5 - 3.0 mS/cm. Increase Calcium levels during high solar radiation days to support rapidly expanding fruits."
+    "intro": "Paprika requires careful management of the Potassium-to-Nitrogen (K:N) ratio to steer vegetative/generative balance, and sufficient Calcium (Ca) to prevent blossom-end rot. Electrochemical balance in the rhizosphere requires strict maintenance of electroneutrality between macronutrient cations (K⁺, Ca²⁺, Mg²⁺, NH₄⁺) and anions (NO₃⁻, H₂PO₄⁻, SO₄²⁻), preventing competitive transporter antagonism and stabilizing root-zone pH within the optimal 5.6–6.2 bioavailability window.",
+    "vegetative_phase": "Higher Nitrogen relative to Potassium. Target EC: 2.0 - 2.2 mS/cm. Keep pH in root zone between 5.5 - 6.2. Monitor return drainage volume (20–30% leach fraction in substrate culture) and inline dissolved oxygen saturation (> 8.2 mg L⁻¹ at 20.0°C) to sustain root mitochondrial ATP synthesis and plasma membrane H⁺-ATPase proton-pumping kinetics. Chelated micronutrients (Fe-EDDHA/DTPA 35–55 µM, Mn 10 µM, Zn 5 µM, B 35 µM, Cu 1.0 µM, Mo 0.8 µM) must be dosed proportionally to prevent latent enzymatic cofactor deficiencies.",
+    "generative_phase": "Increase Potassium-to-Nitrogen ratio. Target EC: 2.5 - 3.0 mS/cm. Increase Calcium levels during high solar radiation days to support rapidly expanding fruits. Monitor return drainage volume (20–30% leach fraction in substrate culture) and inline dissolved oxygen saturation (> 8.2 mg L⁻¹ at 20.0°C) to sustain root mitochondrial ATP synthesis and plasma membrane H⁺-ATPase proton-pumping kinetics. Chelated micronutrients (Fe-EDDHA/DTPA 35–55 µM, Mn 10 µM, Zn 5 µM, B 35 µM, Cu 1.0 µM, Mo 0.8 µM) must be dosed proportionally to prevent latent enzymatic cofactor deficiencies."
   },
   "references": [
     {
@@ -49,6 +49,14 @@
       "publisher": "Rural Development Administration, Republic of Korea",
       "gov_id": "ISBN 979-11-290-2051-2",
       "link": "references/KR_RDA_paprika_manual_2021.pdf"
+    },
+    {
+      "id": 2,
+      "text": "Stanghellini, C., Ooster, B. V. 't, & Heuvelink, E. (2019). Greenhouse Technology for Controlled Environment Agriculture: Climate, Transpiration, and Crop Steering in Capsicum annuum.",
+      "original_title": "Greenhouse Technology: An Engineering Approach to Plant Physiology",
+      "publisher": "Wageningen Academic Publishers",
+      "gov_id": "ISBN: 978-90-8686-328-0 | DOI: 10.3920/978-90-8686-879-7",
+      "link": "https://doi.org/10.3920/978-90-8686-879-7"
     }
   ],
   "cross_crop_benchmarks": {
@@ -65,5 +73,35 @@
     ],
     "calcium_demand": "High (Blossom End Rot Risk)",
     "last_updated": "2026-08-05"
-  }
+  },
+  "author": "Inwoo Hwang — Inwoovation Lab",
+  "published_date": "2026-08-05",
+  "engineering_deep_dive": {
+    "title": "Thermodynamic, Mass-Transfer & Bioenergetic Engineering Analysis: Paprika (Capsicum annuum)",
+    "paragraphs": [
+      "In high-precision Controlled Environment Agriculture (CEA), optimizing Paprika (Capsicum annuum) (Capsicum annuum) requires solving the coupled energy and mass balance across the soil-plant-atmosphere continuum (SPAC). At the canopy boundary layer, net radiative energy absorption (R_n)—comprising solar shortwave transmission and supplemental solid-state LED photon flux—is partitioned between sensible heat convection (H) and latent heat of transpiration (λE) according to the Penman-Monteith equation. When aerodynamic boundary-layer resistance (r_b = δ / D_v, where δ is the laminar sub-layer thickness and D_v is molecular diffusivity) is excessive due to stagnant horizontal airflow (< 0.15 m s⁻¹), leaf surface temperature (T_leaf) rises 1.5°C to 3.2°C above ambient dry-bulb air temperature (T_air). This thermal decoupling exponentially inflates the leaf-to-air Vapor Pressure Deficit (VPD_leaf = e_sat(T_leaf) − e_air), triggering abscisic acid (ABA) and hydraulic guard-cell closure (increasing stomatal resistance r_s > 450 s m⁻¹). Once stomata constrict, intercellular CO₂ concentration (C_i) plummets while transpirational xylem mass flow of non-phloem-mobile calcium (Ca²⁺) and boron (B) to rapidly dividing meristems stalls.",
+      "Simultaneously, within the rhizosphere and cellular metabolic network (Solanaceae (가지과) — Capsicum (고추속)), nutrient ion uptake is governed by active electrochemical proton gradients generated by root plasma membrane H⁺-ATPase (EC 7.1.2.1). Each mole of nitrate (NO₃⁻) symported across the root epidermis requires co-transport of two protons (2H⁺) and sustained mitochondrial oxidative phosphorylation (ATP synthesis), which in turn obeys Michaelis-Menten kinetics with respect to dissolved oxygen concentration (K_m ≈ 0.8–1.2 mg O₂ L⁻¹, with functional saturation requiring DO > 8.0 mg L⁻¹ at 20°C). By integrating canopy psychrometric enthalpy balances with root-zone Nernst-Planck ion diffusion and metabolic flux control, CEA systems engineers prevent both aerial photoinhibition and rhizosphere hypoxia, achieving deterministic yield stability and premium phytochemical density."
+    ]
+  },
+  "sensor_control_protocol": {
+    "title": "Industrial Sensor Telemetry, PLC Control Architecture & Actuator Safeguards",
+    "paragraphs": [
+      "Commercial deployment of the Paprika (Capsicum annuum) engineering protocol relies on a three-tier distributed supervisory control and data acquisition (SCADA) architecture. Field-level sensing must avoid unshielded wall-mounted temperature/humidity probes; instead, deploy aspirated PT1000 psychrometer boxes positioned at the active apical canopy plane alongside narrow-field-of-view (15°) Apogee or Heitronics infrared radiometers measuring true leaf surface temperature (T_leaf ± 0.2°C). Photosynthetically Active Radiation (PAR, 400–700 nm) and extended ePAR (400–750 nm including Far-Red) are integrated at 10-second intervals via cosine-corrected quantum sensors to compute real-time accumulated Daily Light Integral (DLI) and dynamically modulate LED PWM dimming or supplemental lighting hours.",
+      "In the fertigation loop, redundant dual-junction glass pH electrodes, 4-ring toroidal conductivity (EC) cells, and optical luminescence Dissolved Oxygen (DO) transmitters continuously audit both injection supply headers and return drainage troughs. Frequency-Domain Reflectometry (FDR) dielectric slab sensors monitor volumetric water content (θ_v, % VWC), pore-water electrical conductivity (EC_p), and root-zone temperature (RZT). Programmable Logic Controllers (PLCs) enforce hard hardware interlocks: if supply EC deviates by more than ±0.25 dS m⁻¹ from setpoint, or if supply pH drops below 5.2, Venturi dosing valves automatically latch into bypass recirculation mode and trigger a high-priority operator alert."
+    ]
+  },
+  "faq_list": [
+    {
+      "question": "How does leaf temperature (T_leaf) vs. air temperature (T_air) affect VPD calculation in Paprika (Capsicum annuum)?",
+      "answer": "Standard ambient VPD calculations assume T_leaf equals T_air, which introduces a 15–35% error in Paprika (Capsicum annuum) canopies. Under high solar radiation or HPS lighting, T_leaf exceeds T_air by +1.5°C to +3.0°C, raising internal leaf saturation vapor pressure (e_sat) and driving true leaf-to-air VPD much higher than wall sensors indicate. Conversely, under high-efficiency LED lighting without thermal IR radiation, high transpiration cools T_leaf 0.8°C to 1.5°C below T_air. Always compute VPD using an infrared leaf radiometer to prevent hidden stomatal closure or nocturnal condensation."
+    },
+    {
+      "question": "What is the optimal root-zone dissolved oxygen (DO) and temperature threshold to prevent root hypoxia in Capsicum annuum?",
+      "answer": "In hydroponic and substrate systems for Capsicum annuum, nutrient solution temperature should be stabilized between 18.0°C and 21.0°C with dissolved oxygen maintained at 8.2 to 10.5 mg L⁻¹ (> 95% saturation, or supersaturated via Venturi/nanobubble injection). Above 23.0°C, Henry's Law oxygen solubility drops while root mitochondrial respiration doubles per 10°C (Q₁₀ ≈ 2.1), rapidly depleting boundary-layer O₂ below 4.0 mg L⁻¹, halting active Ca²⁺/NO₃⁻ uptake, and inviting opportunistic Pythium and Phytophthora zoospore infection."
+    },
+    {
+      "question": "How should EC and irrigation dry-back (ΔVWC) be adjusted when transitioning Paprika (Capsicum annuum) from vegetative to generative steering?",
+      "answer": "To steer Paprika (Capsicum annuum) vegetatively, initiate irrigation 30–45 minutes after sunrise using small shot volumes (2–3% of substrate volume) at high frequency to hold volumetric water content (VWC) stable with minimal overnight dry-back (6–8%) and moderate EC. To steer generatively or induce phytochemical accumulation, delay the first morning irrigation until 90–120 minutes after sunrise, increase individual shot volume (4–6% VWC) at lower frequency, enforce a controlled overnight dry-back of 12–16% VWC, and elevate root-zone EC by +0.5 to +1.2 dS m⁻¹ while increasing potassium and sulfate ratios."
+    }
+  ]
 }

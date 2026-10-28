@@ -3,7 +3,7 @@
   "name": "Arugula",
   "title": "Arugula / Rocket (Eruca vesicaria)",
   "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Eruca_sativa_001.JPG/800px-Eruca_sativa_001.JPG",
-  "description": "Fast-turnover pungent culinary leafy green requiring high DLI photoperiods, glucosinolate flavor steering, and precise EC management.",
+  "description": "Precision CEA engineering guide for hydroponic arugula (Eruca vesicaria): DLI photoperiod steering, sulfur-glucosinolate kinetics, and NFT EC control.",
   "category": "Aromatic Brassicaceae",
   "summary": "Fast-turnover (18-22 day) pungent culinary leafy green requiring high DLI photoperiods and glucosinolate flavor optimization.",
   "ideal_vpd_kPa": {
@@ -72,5 +72,92 @@
     ],
     "calcium_demand": "Moderate (Rapid 18-day Growth)",
     "last_updated": "2026-08-05"
-  }
+  },
+  "id": "arugula",
+  "author": "Inwoo Hwang — Inwoovation Lab",
+  "published_date": "2026-08-05",
+  "image_caption": "High-density hydroponic arugula (Eruca vesicaria subsp. sativa) canopy under controlled blue-enriched LED lighting",
+  "taxonomy": {
+    "family": "Brassicaceae (Crucifer / Mustard Family)",
+    "genus": "Eruca",
+    "species": "Eruca vesicaria subsp. sativa",
+    "origin": "Mediterranean Basin & High-Tech NFT Vertical CEA"
+  },
+  "overview": "Arugula (Eruca vesicaria subsp. sativa, commonly known as salad rocket) is a rapid-turnover, high-value leafy Brassicaceae crop cultivated extensively in Nutrient Film Technique (NFT) channels, Deep Water Culture (DWC) rafts, and multi-tier indoor vertical plant factories. Operating on an accelerated 18-to-22-day seed-to-harvest cycle, arugula demands precise coordination of Daily Light Integral (DLI 15–20 mol m⁻² d⁻¹), leaf-to-air Vapor Pressure Deficit (VPD 0.75–1.05 kPa), and sulfate-driven secondary metabolite steering. The commercial quality of culinary rocket is governed by the stoichiometric accumulation of aliphatic and indolic glucosinolates—primarily glucoraphanin and glucosativin—which hydrolyze via endogenous myrosinase (EC 3.2.1.147) upon mastication to yield pungent isothiocyanates. In high-density CEA canopies, excessive boundary-layer resistance (r_b > 180 s m⁻¹) or elevated night temperatures (> 18°C) suppress myrosinase activity, accelerate premature bolting, and induce petiole elongation that compromises mechanical harvestability. Conversely, combining a +5.0°C diurnal temperature differential (Day 19.0°C / Night 14.0°C) with 25% blue (450 nm) photon flux and elevated root-zone sulfate (SO₄²⁻ 70 ppm / 2.2 mM) maximizes leaf lamina thickness, chlorophyll density, and volatile isothiocyanate pungency while restricting vacuolar nitrate accumulation well below European Commission Regulation (EU) 2023/915 thresholds. From a quantitative horticultural engineering standpoint, commercial Arugula / Rocket (Eruca vesicaria) production in Venlo glasshouses and multi-tier plant factories is governed by the coupled heat and mass transfer equations of the Penman-Monteith canopy evapotranspiration model. Achieving target photosynthetic assimilation under a Daily Light Integral (DLI) regime of Moderate-High (15-20 mol/m²/day) requires maintaining stomatal conductance (g_s) within its optimal physiological window while preventing aerodynamic boundary-layer stagnation (r_b) across dense leaf canopies. Because Eruca vesicaria subsp. sativa exhibits a moderate (rapid 18-day growth) physiological demand for xylem-mobile divalent calcium (Ca²⁺) alongside an electrical conductivity (EC) tolerance envelope of Moderate (1.4 - 2.0 dS/m), minor deviations in leaf-to-air Vapor Pressure Deficit (VPD) or root-zone dissolved oxygen (DO) rapidly manifest as localized meristematic necrosis, blossom-end rot, or vascular tip-burn. Furthermore, integrated pest and pathogen exclusion protocols must continuously suppress Hyaloperonospora parasitica (Downy Mildew), Flea Beetles by eliminating nocturnal dew-point condensation events through synchronized under-gutter hydronic pipe heating, variable-frequency horizontal airflow (HAF) fans, and automated dehumidification heat recovery.",
+  "climate_strategy": [
+    {
+      "region": "Multi-Tier Indoor Vertical Plant Factory (Sole-Source LED)",
+      "strategy": "Maintain an 18-hour photoperiod at 270 µmol m⁻² s⁻¹ PPFD (DLI 17.5 mol m⁻² d⁻¹) with a spectral distribution of 25% Blue (450 nm), 15% Green (525 nm), and 60% Red (660 nm). Regulate daytime air temperature at 19.0°C and night temperature at 14.0°C (DIF +5.0°C) with relative humidity clamped at 68–72% (VPD 0.85–0.95 kPa). Deploy horizontal perforated air-socks delivering 0.35–0.45 m s⁻¹ micro-vectored airflow across the canopy crown to strip stagnant moisture, prevent Hyaloperonospora parasitica (downy mildew) spore germination, and sustain transpirational calcium flux into rapidly expanding inner leaves.",
+      "tech_level": "Tier 5 Closed-Loop Vertical CEA (Variable Spectrum LED, Dehumidification HVAC, CFD Airflow)"
+    },
+    {
+      "region": "Semi-Closed Glasshouse & Hydroponic NFT Gutter Complex",
+      "strategy": "Utilize automated movable NFT gullies with dynamic spacing to maximize light interception efficiency from transplant (800 plants m⁻²) to final harvest (320 plants m⁻²). During summer solar peaks, deploy 45% aluminized diffusive thermal screens when solar irradiance exceeds 550 W m⁻² and chill recirculating nutrient solution to 17.5°C using titanium plate heat exchangers. Chilled root-zone management preserves dissolved oxygen saturation above 8.4 mg L⁻¹ and prevents thermally induced bolting and Pythium root colonization.",
+      "tech_level": "Tier 4 Automated NFT Glasshouse (Hydronic Chilling, Diffusive Screens, Mobile Gullies)"
+    }
+  ],
+  "crop_steering": {
+    "intro": "Arugula crop steering balances rapid vegetative lamina expansion during days 1–14 against pre-harvest phytochemical and structural hardening during days 15–21, preventing petiole stretching and nitrate excess while amplifying glucosinolate flavor compounds. Precision steering in Arugula / Rocket (Eruca vesicaria) requires coordinating diurnal temperature differentials (DIF), canopy-level Vapor Pressure Deficit (VPD), spectral photon ratios, and substrate dry-back percentages (Δθv) so that assimilate partitioning between structural vegetative sinks and generative or secondary metabolic sinks remains in thermodynamic equilibrium.",
+    "vegetative_triggers": {
+      "temperature_dif": "Moderate DIF +3.0°C (Day 19.5°C / Night 16.5°C) for rapid cotyledon and primary leaf lamina expansion.",
+      "vpd_target": "0.75 – 0.85 kPa (Low stomatal resistance g_s > 0.32 mol m⁻² s⁻¹, maximizing cell turgor expansion).",
+      "irrigation": "Continuous or high-frequency NFT film flow (1.5 L min⁻¹ per gully), EC 1.4 dS m⁻¹, pH 5.8–6.0, 18h photoperiod at 240 µmol m⁻² s⁻¹ PPFD."
+    },
+    "generative_triggers": {
+      "temperature_dif": "High positive DIF +5.5°C (Day 19.0°C / Night 13.5°C) during final 5 days pre-harvest to thicken leaf blades and lock in compact rosette architecture.",
+      "vpd_target": "0.95 – 1.10 kPa (Controlled transpirational pull to concentrate dry matter content > 8.5% and prevent post-harvest wilting).",
+      "irrigation": "Intermittent NFT pulse steering (15 min ON / 15 min OFF), elevate EC to 1.9–2.0 dS m⁻¹ with SO₄²⁻ boosted to 70 ppm and 25% Blue + EOD UV-A elicitation."
+    }
+  },
+  "fertigation": {
+    "intro": "Arugula requires a sulfur-enriched, nitrate-balanced hydroponic formulation. Sulfur is a mandatory structural precursor for the synthesis of 3'-phosphoadenosine-5'-phosphosulfate (PAPS) and the sulfonated oxime moiety of glucosinolates. Electrochemical balance in the rhizosphere requires strict maintenance of electroneutrality between macronutrient cations (K⁺, Ca²⁺, Mg²⁺, NH₄⁺) and anions (NO₃⁻, H₂PO₄⁻, SO₄²⁻), preventing competitive transporter antagonism and stabilizing root-zone pH within the optimal 5.6–6.2 bioavailability window.",
+    "vegetative_phase": "Formulate solution at EC 1.4–1.6 mS cm⁻¹ and pH 5.8–6.0 with target elemental stoichiometry: NO₃⁻-N 155 ppm (11.1 mM), NH₄⁺-N 10 ppm (0.7 mM), P 42 ppm (1.35 mM), K 190 ppm (4.86 mM), Ca 125 ppm (3.12 mM), Mg 45 ppm (1.85 mM), S 70 ppm (2.18 mM as SO₄²⁻), and Fe-DTPA 3.2 ppm (57 µM). Maintain NO₃⁻:NH₄⁺ molar ratio above 14:1 to prevent rhizosphere acidification and ammonium-induced marginal chlorosis.",
+    "generative_phase": "During the final 96 hours prior to harvest, increase total EC to 1.8–2.0 mS cm⁻¹ using Magnesium Sulfate [PubChem CID 24083] and Potassium Sulfate [PubChem CID 24507] while reducing NO₃⁻-N by 35% (down to 100 ppm / 7.1 mM) and delivering a 4-hour pre-harvest supplemental blue/red light pulse. This activates plastidic Nitrate Reductase (EC 1.7.1.1), purging vacuolar nitrate pools while driving maximal glucosativin and sulforaphane precursor density."
+  },
+  "references": [
+    {
+      "id": 1,
+      "text": "Bell, L., & Wagstaff, C. (2019). Rocket science: A review of phytochemical & health-related research in Eruca & Diplotaxis species.",
+      "original_title": "Food Chemistry: X (2019), Vol. 1, 100002",
+      "publisher": "Elsevier BV",
+      "gov_id": "DOI: 10.1016/j.fochx.2018.100002",
+      "link": "https://doi.org/10.1016/j.fochx.2018.100002"
+    },
+    {
+      "id": 2,
+      "text": "Signore, A., Somma, A., Leoni, B., & Santamaria, P. (2020). Optimizing Nitrogen and Sulfur Fertigation for Yield and Glucosinolate Profile in Hydroponic Rocket.",
+      "original_title": "Agronomy Journal (MDPI), 10(4), 544",
+      "publisher": "MDPI AG",
+      "gov_id": "DOI: 10.3390/agronomy10040544",
+      "link": "https://doi.org/10.3390/agronomy10040544"
+    }
+  ],
+  "engineering_deep_dive": {
+    "title": "Thermodynamic, Mass-Transfer & Bioenergetic Engineering Analysis: Arugula / Rocket (Eruca vesicaria)",
+    "paragraphs": [
+      "In high-precision Controlled Environment Agriculture (CEA), optimizing Arugula / Rocket (Eruca vesicaria) (Eruca vesicaria subsp. sativa) requires solving the coupled energy and mass balance across the soil-plant-atmosphere continuum (SPAC). At the canopy boundary layer, net radiative energy absorption (R_n)—comprising solar shortwave transmission and supplemental solid-state LED photon flux—is partitioned between sensible heat convection (H) and latent heat of transpiration (λE) according to the Penman-Monteith equation. When aerodynamic boundary-layer resistance (r_b = δ / D_v, where δ is the laminar sub-layer thickness and D_v is molecular diffusivity) is excessive due to stagnant horizontal airflow (< 0.15 m s⁻¹), leaf surface temperature (T_leaf) rises 1.5°C to 3.2°C above ambient dry-bulb air temperature (T_air). This thermal decoupling exponentially inflates the leaf-to-air Vapor Pressure Deficit (VPD_leaf = e_sat(T_leaf) − e_air), triggering abscisic acid (ABA) and hydraulic guard-cell closure (increasing stomatal resistance r_s > 450 s m⁻¹). Once stomata constrict, intercellular CO₂ concentration (C_i) plummets while transpirational xylem mass flow of non-phloem-mobile calcium (Ca²⁺) and boron (B) to rapidly dividing meristems stalls.",
+      "Simultaneously, within the rhizosphere and cellular metabolic network (Brassicaceae (Crucifer / Mustard Family) — Eruca), nutrient ion uptake is governed by active electrochemical proton gradients generated by root plasma membrane H⁺-ATPase (EC 7.1.2.1). Each mole of nitrate (NO₃⁻) symported across the root epidermis requires co-transport of two protons (2H⁺) and sustained mitochondrial oxidative phosphorylation (ATP synthesis), which in turn obeys Michaelis-Menten kinetics with respect to dissolved oxygen concentration (K_m ≈ 0.8–1.2 mg O₂ L⁻¹, with functional saturation requiring DO > 8.0 mg L⁻¹ at 20°C). By integrating canopy psychrometric enthalpy balances with root-zone Nernst-Planck ion diffusion and metabolic flux control, CEA systems engineers prevent both aerial photoinhibition and rhizosphere hypoxia, achieving deterministic yield stability and premium phytochemical density."
+    ]
+  },
+  "sensor_control_protocol": {
+    "title": "Industrial Sensor Telemetry, PLC Control Architecture & Actuator Safeguards",
+    "paragraphs": [
+      "Commercial deployment of the Arugula / Rocket (Eruca vesicaria) engineering protocol relies on a three-tier distributed supervisory control and data acquisition (SCADA) architecture. Field-level sensing must avoid unshielded wall-mounted temperature/humidity probes; instead, deploy aspirated PT1000 psychrometer boxes positioned at the active apical canopy plane alongside narrow-field-of-view (15°) Apogee or Heitronics infrared radiometers measuring true leaf surface temperature (T_leaf ± 0.2°C). Photosynthetically Active Radiation (PAR, 400–700 nm) and extended ePAR (400–750 nm including Far-Red) are integrated at 10-second intervals via cosine-corrected quantum sensors to compute real-time accumulated Daily Light Integral (DLI) and dynamically modulate LED PWM dimming or supplemental lighting hours.",
+      "In the fertigation loop, redundant dual-junction glass pH electrodes, 4-ring toroidal conductivity (EC) cells, and optical luminescence Dissolved Oxygen (DO) transmitters continuously audit both injection supply headers and return drainage troughs. Frequency-Domain Reflectometry (FDR) dielectric slab sensors monitor volumetric water content (θ_v, % VWC), pore-water electrical conductivity (EC_p), and root-zone temperature (RZT). Programmable Logic Controllers (PLCs) enforce hard hardware interlocks: if supply EC deviates by more than ±0.25 dS m⁻¹ from setpoint, or if supply pH drops below 5.2, Venturi dosing valves automatically latch into bypass recirculation mode and trigger a high-priority operator alert."
+    ]
+  },
+  "faq_list": [
+    {
+      "question": "How does leaf temperature (T_leaf) vs. air temperature (T_air) affect VPD calculation in Arugula / Rocket (Eruca vesicaria)?",
+      "answer": "Standard ambient VPD calculations assume T_leaf equals T_air, which introduces a 15–35% error in Arugula / Rocket (Eruca vesicaria) canopies. Under high solar radiation or HPS lighting, T_leaf exceeds T_air by +1.5°C to +3.0°C, raising internal leaf saturation vapor pressure (e_sat) and driving true leaf-to-air VPD much higher than wall sensors indicate. Conversely, under high-efficiency LED lighting without thermal IR radiation, high transpiration cools T_leaf 0.8°C to 1.5°C below T_air. Always compute VPD using an infrared leaf radiometer to prevent hidden stomatal closure or nocturnal condensation."
+    },
+    {
+      "question": "What is the optimal root-zone dissolved oxygen (DO) and temperature threshold to prevent root hypoxia in Eruca vesicaria subsp. sativa?",
+      "answer": "In hydroponic and substrate systems for Eruca vesicaria subsp. sativa, nutrient solution temperature should be stabilized between 18.0°C and 21.0°C with dissolved oxygen maintained at 8.2 to 10.5 mg L⁻¹ (> 95% saturation, or supersaturated via Venturi/nanobubble injection). Above 23.0°C, Henry's Law oxygen solubility drops while root mitochondrial respiration doubles per 10°C (Q₁₀ ≈ 2.1), rapidly depleting boundary-layer O₂ below 4.0 mg L⁻¹, halting active Ca²⁺/NO₃⁻ uptake, and inviting opportunistic Pythium and Phytophthora zoospore infection."
+    },
+    {
+      "question": "How should EC and irrigation dry-back (ΔVWC) be adjusted when transitioning Arugula / Rocket (Eruca vesicaria) from vegetative to generative steering?",
+      "answer": "To steer Arugula / Rocket (Eruca vesicaria) vegetatively, initiate irrigation 30–45 minutes after sunrise using small shot volumes (2–3% of substrate volume) at high frequency to hold volumetric water content (VWC) stable with minimal overnight dry-back (6–8%) and moderate EC. To steer generatively or induce phytochemical accumulation, delay the first morning irrigation until 90–120 minutes after sunrise, increase individual shot volume (4–6% VWC) at lower frequency, enforce a controlled overnight dry-back of 12–16% VWC, and elevate root-zone EC by +0.5 to +1.2 dS m⁻¹ while increasing potassium and sulfate ratios."
+    }
+  ]
 }

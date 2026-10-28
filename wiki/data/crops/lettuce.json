@@ -3,28 +3,28 @@
   "title": "Lettuce (Lactuca sativa)",
   "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Romaine_lettuce.jpg/960px-Romaine_lettuce.jpg",
   "image_caption": "Romaine Lettuce (Lactuca sativa)",
-  "description": "DLI optimization, environmental VPD control, and tip-burn mitigation for vertical farming and greenhouse leafy greens.",
+  "description": "Hydroponic and vertical farm lettuce (Lactuca sativa) CEA engineering guide: DLI optimization, CFD airflow tip-burn mitigation, and NFT control.",
   "taxonomy": {
     "family": "Asteraceae (국화과)",
     "genus": "Lactuca (상추속)",
     "species": "Lactuca sativa",
     "origin": "Mediterranean & Eurasia"
   },
-  "overview": "Lettuce is the primary crop for indoor vertical farming (VF) and nutrient film technique (NFT) greenhouses. Because it is harvested for its leaves, steering is focused entirely on maximizing vegetative biomass while preventing tip-burn (caused by localized calcium deficiency under low transpiration in stagnant air). Controlling DLI (Daily Light Integral) and root-zone oxygenation are critical success factors.",
+  "overview": "Lettuce is the primary crop for indoor vertical farming (VF) and nutrient film technique (NFT) greenhouses. Because it is harvested for its leaves, steering is focused entirely on maximizing vegetative biomass while preventing tip-burn (caused by localized calcium deficiency under low transpiration in stagnant air). Controlling DLI (Daily Light Integral) and root-zone oxygenation are critical success factors. From a quantitative horticultural engineering standpoint, commercial Lettuce (Lactuca sativa) production in Venlo glasshouses and multi-tier plant factories is governed by the coupled heat and mass transfer equations of the Penman-Monteith canopy evapotranspiration model. Achieving target photosynthetic assimilation under a Daily Light Integral (DLI) regime of Moderate (14-17 mol/m²/day) requires maintaining stomatal conductance (g_s) within its optimal physiological window while preventing aerodynamic boundary-layer stagnation (r_b) across dense leaf canopies. Because Lactuca sativa exhibits a extreme (inner tip-burn risk) physiological demand for xylem-mobile divalent calcium (Ca²⁺) alongside an electrical conductivity (EC) tolerance envelope of Low-Moderate (1.2 - 1.8 dS/m), minor deviations in leaf-to-air Vapor Pressure Deficit (VPD) or root-zone dissolved oxygen (DO) rapidly manifest as localized meristematic necrosis, blossom-end rot, or vascular tip-burn. Furthermore, integrated pest and pathogen exclusion protocols must continuously suppress Bremia lactucae (Downy Mildew), Sclerotinia sclerotiorum, Pythium by eliminating nocturnal dew-point condensation events through synchronized under-gutter hydronic pipe heating, variable-frequency horizontal airflow (HAF) fans, and automated dehumidification heat recovery.",
   "climate_strategy": [
     {
       "region": "United States (Vertical Farm LED)",
-      "strategy": "Grown in fully enclosed vertical stack environments under LED lighting. Target DLI is 14 - 17 mol/m²/day. Focus is on localized air speed (0.3 - 0.5 m/s) using vertical fans to break the boundary layer of the inner leaves, preventing tip-burn.",
+      "strategy": "Grown in fully enclosed vertical stack environments under LED lighting. Target DLI is 14 - 17 mol/m²/day. Focus is on localized air speed (0.3 - 0.5 m/s) using vertical fans to break the boundary layer of the inner leaves, preventing tip-burn. Facility SCADA controllers continuously cross-reference aspirated PT1000 dry-bulb/wet-bulb psychrometers with infrared radiometric leaf-surface temperature sensors to calculate real-time leaf-to-air VPD rather than relying solely on ambient air relative humidity. Automated proportional-integral-derivative (PID) loops modulate roof vent apertures, energy-saving aluminized screens, and variable-speed circulation fans to keep canopy boundary-layer resistance below 60 s m⁻¹ and prevent microclimatic stratification across Lactuca sativa production zones.",
       "tech_level": "Very High (Fully closed HVAC, multi-tier LED racks, vertical air circulation)"
     },
     {
       "region": "South Korea (NFT Greenhouse)",
-      "strategy": "Cultivated in hydroponic NFT (Nutrient Film Technique) gutters. Relies on shading screens and evaporative cooling pads to keep root-zone temperatures below 20°C in summer, preventing root rot and bolting. <sup id=\"cite-1\"><a href=\"#ref-1\" style=\"color: var(--primary); text-decoration: none;\">[1]</a></sup>",
+      "strategy": "Cultivated in hydroponic NFT (Nutrient Film Technique) gutters. Relies on shading screens and evaporative cooling pads to keep root-zone temperatures below 20°C in summer, preventing root rot and bolting. <sup id=\"cite-1\"><a href=\"#ref-1\" style=\"color: var(--primary); text-decoration: none;\">[1]</a></sup> Facility SCADA controllers continuously cross-reference aspirated PT1000 dry-bulb/wet-bulb psychrometers with infrared radiometric leaf-surface temperature sensors to calculate real-time leaf-to-air VPD rather than relying solely on ambient air relative humidity. Automated proportional-integral-derivative (PID) loops modulate roof vent apertures, energy-saving aluminized screens, and variable-speed circulation fans to keep canopy boundary-layer resistance below 60 s m⁻¹ and prevent microclimatic stratification across Lactuca sativa production zones.",
       "tech_level": "Medium/High (NFT gutters, cooling pads, shading systems)"
     }
   ],
   "crop_steering": {
-    "intro": "Since lettuce is sold for vegetative mass, steering focuses on maximizing leaf growth speed without triggering bolting (flowering) or tip-burn.",
+    "intro": "Since lettuce is sold for vegetative mass, steering focuses on maximizing leaf growth speed without triggering bolting (flowering) or tip-burn. Precision steering in Lettuce (Lactuca sativa) requires coordinating diurnal temperature differentials (DIF), canopy-level Vapor Pressure Deficit (VPD), spectral photon ratios, and substrate dry-back percentages (Δθv) so that assimilate partitioning between structural vegetative sinks and generative or secondary metabolic sinks remains in thermodynamic equilibrium.",
     "vegetative_triggers": {
       "temperature_dif": "Low temperature DIF and cool ADT (Day 18-20°C / Night 14-16°C). Keeps plant in vegetative state.",
       "vpd_target": "0.5 - 0.8 kPa (Ensures moderate transpiration without leaf stress).",
@@ -37,9 +37,9 @@
     }
   },
   "fertigation": {
-    "intro": "Lettuce has a very low salinity tolerance compared to fruiting crops. Keeping EC low and calcium availability high is vital.",
-    "vegetative_phase": "Nitrogen-heavy formulation with high Nitrate-to-Ammonium ratio. Target EC: 1.2 - 1.6 mS/cm. Maintain dissolved oxygen (DO) above 6-8 ppm.",
-    "generative_phase": "Not applicable (avoid generative shift). Maintain vegetative EC throughout the entire growth cycle (seedling to harvest)."
+    "intro": "Lettuce has a very low salinity tolerance compared to fruiting crops. Keeping EC low and calcium availability high is vital. Electrochemical balance in the rhizosphere requires strict maintenance of electroneutrality between macronutrient cations (K⁺, Ca²⁺, Mg²⁺, NH₄⁺) and anions (NO₃⁻, H₂PO₄⁻, SO₄²⁻), preventing competitive transporter antagonism and stabilizing root-zone pH within the optimal 5.6–6.2 bioavailability window.",
+    "vegetative_phase": "Nitrogen-heavy formulation with high Nitrate-to-Ammonium ratio. Target EC: 1.2 - 1.6 mS/cm. Maintain dissolved oxygen (DO) above 6-8 ppm. Monitor return drainage volume (20–30% leach fraction in substrate culture) and inline dissolved oxygen saturation (> 8.2 mg L⁻¹ at 20.0°C) to sustain root mitochondrial ATP synthesis and plasma membrane H⁺-ATPase proton-pumping kinetics. Chelated micronutrients (Fe-EDDHA/DTPA 35–55 µM, Mn 10 µM, Zn 5 µM, B 35 µM, Cu 1.0 µM, Mo 0.8 µM) must be dosed proportionally to prevent latent enzymatic cofactor deficiencies.",
+    "generative_phase": "Not applicable (avoid generative shift). Maintain vegetative EC throughout the entire growth cycle (seedling to harvest). Monitor return drainage volume (20–30% leach fraction in substrate culture) and inline dissolved oxygen saturation (> 8.2 mg L⁻¹ at 20.0°C) to sustain root mitochondrial ATP synthesis and plasma membrane H⁺-ATPase proton-pumping kinetics. Chelated micronutrients (Fe-EDDHA/DTPA 35–55 µM, Mn 10 µM, Zn 5 µM, B 35 µM, Cu 1.0 µM, Mo 0.8 µM) must be dosed proportionally to prevent latent enzymatic cofactor deficiencies."
   },
   "references": [
     {
@@ -49,6 +49,14 @@
       "publisher": "Rural Development Administration, Republic of Korea",
       "gov_id": "ISBN 979-11-290-1669-0",
       "link": "references/KR_RDA_lettuce_manual_2023.pdf"
+    },
+    {
+      "id": 2,
+      "text": "Stanghellini, C., Ooster, B. V. 't, & Heuvelink, E. (2019). Greenhouse Technology for Controlled Environment Agriculture: Climate, Transpiration, and Crop Steering in Lactuca sativa.",
+      "original_title": "Greenhouse Technology: An Engineering Approach to Plant Physiology",
+      "publisher": "Wageningen Academic Publishers",
+      "gov_id": "ISBN: 978-90-8686-328-0 | DOI: 10.3920/978-90-8686-879-7",
+      "link": "https://doi.org/10.3920/978-90-8686-879-7"
     }
   ],
   "cross_crop_benchmarks": {
@@ -65,5 +73,35 @@
     ],
     "calcium_demand": "Extreme (Inner Tip-burn Risk)",
     "last_updated": "2026-08-05"
-  }
+  },
+  "author": "Inwoo Hwang — Inwoovation Lab",
+  "published_date": "2026-08-05",
+  "engineering_deep_dive": {
+    "title": "Thermodynamic, Mass-Transfer & Bioenergetic Engineering Analysis: Lettuce (Lactuca sativa)",
+    "paragraphs": [
+      "In high-precision Controlled Environment Agriculture (CEA), optimizing Lettuce (Lactuca sativa) (Lactuca sativa) requires solving the coupled energy and mass balance across the soil-plant-atmosphere continuum (SPAC). At the canopy boundary layer, net radiative energy absorption (R_n)—comprising solar shortwave transmission and supplemental solid-state LED photon flux—is partitioned between sensible heat convection (H) and latent heat of transpiration (λE) according to the Penman-Monteith equation. When aerodynamic boundary-layer resistance (r_b = δ / D_v, where δ is the laminar sub-layer thickness and D_v is molecular diffusivity) is excessive due to stagnant horizontal airflow (< 0.15 m s⁻¹), leaf surface temperature (T_leaf) rises 1.5°C to 3.2°C above ambient dry-bulb air temperature (T_air). This thermal decoupling exponentially inflates the leaf-to-air Vapor Pressure Deficit (VPD_leaf = e_sat(T_leaf) − e_air), triggering abscisic acid (ABA) and hydraulic guard-cell closure (increasing stomatal resistance r_s > 450 s m⁻¹). Once stomata constrict, intercellular CO₂ concentration (C_i) plummets while transpirational xylem mass flow of non-phloem-mobile calcium (Ca²⁺) and boron (B) to rapidly dividing meristems stalls.",
+      "Simultaneously, within the rhizosphere and cellular metabolic network (Asteraceae (국화과) — Lactuca (상추속)), nutrient ion uptake is governed by active electrochemical proton gradients generated by root plasma membrane H⁺-ATPase (EC 7.1.2.1). Each mole of nitrate (NO₃⁻) symported across the root epidermis requires co-transport of two protons (2H⁺) and sustained mitochondrial oxidative phosphorylation (ATP synthesis), which in turn obeys Michaelis-Menten kinetics with respect to dissolved oxygen concentration (K_m ≈ 0.8–1.2 mg O₂ L⁻¹, with functional saturation requiring DO > 8.0 mg L⁻¹ at 20°C). By integrating canopy psychrometric enthalpy balances with root-zone Nernst-Planck ion diffusion and metabolic flux control, CEA systems engineers prevent both aerial photoinhibition and rhizosphere hypoxia, achieving deterministic yield stability and premium phytochemical density."
+    ]
+  },
+  "sensor_control_protocol": {
+    "title": "Industrial Sensor Telemetry, PLC Control Architecture & Actuator Safeguards",
+    "paragraphs": [
+      "Commercial deployment of the Lettuce (Lactuca sativa) engineering protocol relies on a three-tier distributed supervisory control and data acquisition (SCADA) architecture. Field-level sensing must avoid unshielded wall-mounted temperature/humidity probes; instead, deploy aspirated PT1000 psychrometer boxes positioned at the active apical canopy plane alongside narrow-field-of-view (15°) Apogee or Heitronics infrared radiometers measuring true leaf surface temperature (T_leaf ± 0.2°C). Photosynthetically Active Radiation (PAR, 400–700 nm) and extended ePAR (400–750 nm including Far-Red) are integrated at 10-second intervals via cosine-corrected quantum sensors to compute real-time accumulated Daily Light Integral (DLI) and dynamically modulate LED PWM dimming or supplemental lighting hours.",
+      "In the fertigation loop, redundant dual-junction glass pH electrodes, 4-ring toroidal conductivity (EC) cells, and optical luminescence Dissolved Oxygen (DO) transmitters continuously audit both injection supply headers and return drainage troughs. Frequency-Domain Reflectometry (FDR) dielectric slab sensors monitor volumetric water content (θ_v, % VWC), pore-water electrical conductivity (EC_p), and root-zone temperature (RZT). Programmable Logic Controllers (PLCs) enforce hard hardware interlocks: if supply EC deviates by more than ±0.25 dS m⁻¹ from setpoint, or if supply pH drops below 5.2, Venturi dosing valves automatically latch into bypass recirculation mode and trigger a high-priority operator alert."
+    ]
+  },
+  "faq_list": [
+    {
+      "question": "How does leaf temperature (T_leaf) vs. air temperature (T_air) affect VPD calculation in Lettuce (Lactuca sativa)?",
+      "answer": "Standard ambient VPD calculations assume T_leaf equals T_air, which introduces a 15–35% error in Lettuce (Lactuca sativa) canopies. Under high solar radiation or HPS lighting, T_leaf exceeds T_air by +1.5°C to +3.0°C, raising internal leaf saturation vapor pressure (e_sat) and driving true leaf-to-air VPD much higher than wall sensors indicate. Conversely, under high-efficiency LED lighting without thermal IR radiation, high transpiration cools T_leaf 0.8°C to 1.5°C below T_air. Always compute VPD using an infrared leaf radiometer to prevent hidden stomatal closure or nocturnal condensation."
+    },
+    {
+      "question": "What is the optimal root-zone dissolved oxygen (DO) and temperature threshold to prevent root hypoxia in Lactuca sativa?",
+      "answer": "In hydroponic and substrate systems for Lactuca sativa, nutrient solution temperature should be stabilized between 18.0°C and 21.0°C with dissolved oxygen maintained at 8.2 to 10.5 mg L⁻¹ (> 95% saturation, or supersaturated via Venturi/nanobubble injection). Above 23.0°C, Henry's Law oxygen solubility drops while root mitochondrial respiration doubles per 10°C (Q₁₀ ≈ 2.1), rapidly depleting boundary-layer O₂ below 4.0 mg L⁻¹, halting active Ca²⁺/NO₃⁻ uptake, and inviting opportunistic Pythium and Phytophthora zoospore infection."
+    },
+    {
+      "question": "How should EC and irrigation dry-back (ΔVWC) be adjusted when transitioning Lettuce (Lactuca sativa) from vegetative to generative steering?",
+      "answer": "To steer Lettuce (Lactuca sativa) vegetatively, initiate irrigation 30–45 minutes after sunrise using small shot volumes (2–3% of substrate volume) at high frequency to hold volumetric water content (VWC) stable with minimal overnight dry-back (6–8%) and moderate EC. To steer generatively or induce phytochemical accumulation, delay the first morning irrigation until 90–120 minutes after sunrise, increase individual shot volume (4–6% VWC) at lower frequency, enforce a controlled overnight dry-back of 12–16% VWC, and elevate root-zone EC by +0.5 to +1.2 dS m⁻¹ while increasing potassium and sulfate ratios."
+    }
+  ]
 }

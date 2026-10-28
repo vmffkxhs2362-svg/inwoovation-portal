@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="google-adsense-account" content="ca-pub-8597809158257497">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AgriMaster | Precision CEA Greenhouse Parts & Parametric Component Search | Inwoovation Lab</title>
     <meta name="description" content="Industrial parametric search engine for commercial greenhouse components, fertigation valves, LED toplights, climate sensors, and Dutch bucket supplies. Cross-referenced with Inwoovation biophysical calculators and 50km dealer networks.">
@@ -16,6 +17,10 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://inwoovation.com/parts/">
     <meta property="og:image" content="https://inwoovation.com/og-cover.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AgriMaster | Global CEA Component & Equipment Search Engine">
+    <meta name="twitter:description" content="Precision parametric search for agricultural parts, cross-referenced with biophysical solvers and 50km local dealer locators.">
+    <meta name="twitter:image" content="https://inwoovation.com/og-cover.jpg">
 
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
@@ -1033,7 +1038,69 @@
         <div class="parts-grid" id="parts-container">
             <!-- Dynamic Part Cards Rendered via app.js -->
         </div>
-    </div>
+
+        <!-- PARTS_DEEP_DIVE_START -->
+        <section style="background: rgba(30, 41, 59, 0.72); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 20px; padding: 32px; margin-bottom: 48px; line-height: 1.8; color: #cbd5e1;">
+            <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #f8fafc; margin-bottom: 14px;">⚙️ CEA Hardware Engineering &amp; Parametric Procurement Guide</h2>
+            <p style="margin-bottom: 16px;">Selecting commercial greenhouse actuators, fertigation manifolds, environmental sensors, and horticultural lighting requires rigorous dimensional and thermodynamic matching. Under-sizing a solenoid valve or selecting an unshielded microclimate probe introduces hydraulic pressure drops, water hammer transients, and climate computer PID oscillations across multi-hectare facilities. The <strong>AgriMaster Parametric Engine</strong> links individual OEM hardware SKUs directly to Inwoovation Lab's biophysical calculators so engineers can move seamlessly from mathematical simulation to Bill of Materials (BOM) specification.</p>
+
+            <h3 style="font-family: 'Outfit', sans-serif; font-size: 1.18rem; color: #38bdf8; margin: 22px 0 10px;">1. Hydraulic Flow Coefficient (K<sub>v</sub> / C<sub>v</sub>) &amp; Fertigation Valve Sizing</h3>
+            <p style="margin-bottom: 14px;">When specifying 2-way diaphragm solenoid valves for irrigation zones or 3-way motorized mixing valves for hydronic rail heating and Venturi A/B stock injection, engineers size ports by the metric flow coefficient $K_v$ (flow in $\text{m}^3/\text{h}$ of water at $16\text{ °C}$ producing a $\Delta P = 1.0\text{ bar}$ pressure drop) rather than nominal pipe diameter alone:</p>
+            <div style="font-family: monospace; background: rgba(15, 23, 42, 0.85); padding: 12px 18px; border-radius: 10px; border: 1px solid rgba(56, 189, 248, 0.25); color: #38bdf8; margin-bottom: 16px;">
+                K_v = Q × √(SG / ΔP) &nbsp;&nbsp;|&nbsp;&nbsp; C_v = 1.156 × K_v &nbsp;&nbsp;(Target Valve Authority: N = ΔP_valve / ΔP_loop ∈ [0.35, 0.55])
+            </div>
+            <p style="margin-bottom: 16px;">For high-frequency drip pulsing (e.g., 100 mL shots every 90 J/cm² on rockwool slabs), select slow-closing EPDM/Viton diaphragm valves rated for 24V AC/DC with non-drain check valves (opening pressure $0.3\text{ bar}$, closing pressure $0.15\text{ bar}$) to prevent line syphoning into low-elevation gutters after valve closure.</p>
+
+            <h3 style="font-family: 'Outfit', sans-serif; font-size: 1.18rem; color: #38bdf8; margin: 22px 0 10px;">2. Subsystem Component Specification &amp; Tolerance Matrix</h3>
+            <div style="overflow-x: auto; margin-bottom: 18px;">
+                <table style="width: 100%; border-collapse: collapse; font-size: 0.88rem; background: rgba(15, 23, 42, 0.65); border-radius: 12px; overflow: hidden;">
+                    <thead>
+                        <tr style="background: rgba(16, 185, 129, 0.15); color: #34d399; text-align: left; font-family: 'Outfit', sans-serif;">
+                            <th style="padding: 12px 14px;">Hardware Category</th>
+                            <th style="padding: 12px 14px;">Critical Engineering Parameter</th>
+                            <th style="padding: 12px 14px;">Industrial CEA Standard / Rating</th>
+                            <th style="padding: 12px 14px;">Failure Mode Prevented</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.08);">
+                            <td style="padding: 12px 14px;"><strong>Drip Fertigation &amp; Venturi</strong></td>
+                            <td style="padding: 12px 14px;">Chemical Resistance &amp; Flow C<sub>v</sub></td>
+                            <td style="padding: 12px 14px;">PVDF / Viton Seals (HNO₃ &amp; H₃PO₄ Acid Safe); PN10 / PN16</td>
+                            <td style="padding: 12px 14px;">Elastomer swelling, acid injector cavitation &amp; emitter clogging.</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.08);">
+                            <td style="padding: 12px 14px;"><strong>Microclimate Sensors</strong></td>
+                            <td style="padding: 12px 14px;">Aspirated Shielding &amp; Bus Protocol</td>
+                            <td style="padding: 12px 14px;">RS485 Modbus RTU / SDI-12; IP67; Fan-Aspirated Solar Shield</td>
+                            <td style="padding: 12px 14px;">Radiative heating error (+2–4 °C false high temp) &amp; VPD drift.</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.08);">
+                            <td style="padding: 12px 14px;"><strong>Root-Zone TDR Probes</strong></td>
+                            <td style="padding: 12px 14px;">Dielectric Frequency (70–150 MHz)</td>
+                            <td style="padding: 12px 14px;">316L Stainless Waveguides; Bulk &amp; Pore-Water EC Compensation</td>
+                            <td style="padding: 12px 14px;">Polarization error at high slab EC (&gt;4.0 mS/cm) in stone wool.</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 12px 14px;"><strong>Horticultural LED Drivers</strong></td>
+                            <td style="padding: 12px 14px;">PPE Efficacy &amp; Ingress Protection</td>
+                            <td style="padding: 12px 14px;">3.5–3.8 µmol/J (DLC Hort V3.0); IP66 Wet-Location; 0–10V / DALI</td>
+                            <td style="padding: 12px 14px;">Sulfur/humidity diode corrosion &amp; inrush breaker tripping.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3 style="font-family: 'Outfit', sans-serif; font-size: 1.18rem; color: #38bdf8; margin: 22px 0 10px;">3. Industrial Telemetry, IP67 Sealing &amp; Sulfur Resistance</h3>
+            <p style="margin-bottom: 14px;">Greenhouse atmospheres combine high relative humidity (75–90% RH), foliar spray chemicals, and elemental sulfur burner vapors used for powdery mildew prophylaxis. Electronic PCBs, LED phosphor coatings, and sensor connectors must specify <strong>IP66/IP67 conformal sealing</strong> and gold-plated M12 industrial circular connectors over twisted-pair EIA-485 (RS485) shielded cabling. Dual-beam Non-Dispersive Infrared (NDIR) $\text{CO}_2$ sensors should utilize hydrophobic PTFE membrane filters and automatic baseline calibration references to maintain $\pm 30\text{ ppm}$ accuracy across 0–2,000 ppm enrichment spans.</p>
+
+            <div style="background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 14px; padding: 18px 22px; margin-top: 20px;">
+                <div style="font-family: 'Outfit', sans-serif; font-weight: 700; color: #f8fafc; margin-bottom: 6px;">👨‍🔬 Hardware Taxonomy &amp; Engineering Verification — Inwoovation Lab</div>
+                <p style="font-size: 0.88rem; color: #94a3b8; margin: 0;"><strong>Curated &amp; Verified by Inwoo Hwang</strong> — Horticultural &amp; CEA Systems Engineer at Inwoovation Lab. Component specifications, hydraulic $K_v$ formulas, and sensor communication standards align with ISO 9261 (agricultural irrigation equipment), IEC 60529 (ingress protection), and commercial Dutch/German greenhouse automation architectures.</p>
+            </div>
+        </section>
+        <!-- PARTS_DEEP_DIVE_END -->
+</div>
 
     <!-- Floating BOM Trigger Widget -->
     <div class="bom-floating-widget" id="bom-floating-trigger" onclick="toggleBomDrawer()">

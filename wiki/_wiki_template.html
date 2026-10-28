@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{TITLE}}</title>
     <meta name="description" content="{{DESC}}">
+    <meta name="author" content="Inwoo Hwang — Inwoovation Lab">
     
     <!-- Favicon -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌍</text></svg>">
@@ -13,10 +14,12 @@
     <meta property="og:title" content="{{TITLE}}">
     <meta property="og:description" content="{{DESC}}">
     <meta property="og:image" content="{{OG_IMAGE}}">
-    <meta property="og:type" content="website">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="AgriAtlas CEA Engineering Wiki — Inwoovation Lab">
     <meta name="google-site-verification" content="Y7d3dVoTQHBbG1GoKc4E_LUZb6YBmv491pv7G01mOk8" />
     
-    <!-- Google AdSense Script -->
+    <!-- Google AdSense Meta & Script -->
+    <meta name="google-adsense-account" content="ca-pub-8597809158257497">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8597809158257497" crossorigin="anonymous"></script>
     
     <!-- Google tag (gtag.js) -->
@@ -181,6 +184,7 @@
             margin-bottom: 1rem;
             display: flex;
             gap: 0.5rem;
+            flex-wrap: wrap;
         }
 
         .breadcrumb span { color: var(--text-muted); }
@@ -195,10 +199,11 @@
 
         .metadata {
             display: flex;
-            gap: 1.5rem;
+            gap: 1.2rem;
+            flex-wrap: wrap;
             font-size: 0.9rem;
             color: var(--text-muted);
-            margin-bottom: 3rem;
+            margin-bottom: 2.5rem;
             padding-bottom: 1rem;
             border-bottom: 1px solid var(--border);
         }
@@ -210,7 +215,7 @@
             padding: 2rem;
             margin-bottom: 2rem;
             line-height: 1.7;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
         }
 
         .content-box h2 {
@@ -225,7 +230,7 @@
             position: sticky;
             top: 70px;
             height: calc(100vh - 70px);
-            width: 340px; /* 300px ad space + 40px padding */
+            width: 340px;
             flex-shrink: 0;
             box-sizing: border-box;
             background: var(--bg-surface);
@@ -264,7 +269,7 @@
             text-align: center;
             color: var(--text-muted);
             font-size: 0.9rem;
-            margin-bottom: 2rem; /* Ad is at the top, pushes content down */
+            margin-bottom: 2rem;
             border-radius: 4px;
         }
 
@@ -348,41 +353,23 @@
                 left: 0;
             }
             .sidebar-right {
-                display: none; /* Hide references sidebar on mobile to save space */
+                display: none;
             }
             header {
                 padding: 0 1rem;
             }
-            html, body { max-width: 100%; overflow-x: hidden; }
-            header { padding: 0 0.75rem !important; gap: 0.4rem !important; }
-            header > div:first-child { gap: 0.5rem !important; min-width: 0; flex: 1; justify-content: space-between; }
-            .logo { font-size: 1.15rem !important; white-space: nowrap; }
             .header-right {
-                display: none !important;
+                display: none;
             }
-            table { display: block; width: 100%; max-width: 100%; overflow-x: auto; }
         }
     </style>
-
-    <!-- Auto-Generated Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Article",
-      "headline": "{{TITLE}}",
-      "description": "{{DESC}}",
-      "publisher": {
-        "@type": "Organization",
-        "name": "Inwoovation Lab"
-      }
-    }
-    </script>
 </head>
 <body>
 
     <header>
-        <div style="display: flex; align-items: center; gap: 1.5rem;">
+        <div style="display: flex; align-items: center; gap: 1.2rem; flex-wrap: wrap;">
             <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+            <a href="https://inwoovation.com/" style="color: var(--text-muted); text-decoration: none; font-size: 0.85rem; font-weight: 600; border: 1px solid var(--border); padding: 0.35rem 0.75rem; border-radius: 8px;">← Inwoovation Portal</a>
             <a href="index.html" class="logo">🌍 Agri<span>Atlas</span> Wiki</a>
             <a href="research.html" style="color: var(--primary); font-weight: 700; text-decoration: none; font-size: 0.95rem; background: rgba(56, 189, 248, 0.1); padding: 0.4rem 0.9rem; border-radius: 20px; border: 1px solid rgba(56, 189, 248, 0.3); display: flex; align-items: center; gap: 0.4rem;">🔬 <span>Scientific Research</span></a>
         </div>
@@ -401,9 +388,21 @@
 <div class="container">
     <nav class="sidebar-left" id="mobileSidebar">
         <div class="nav-group">
+            <div class="nav-title">🏛️ Inwoovation Ecosystem</div>
+            <a href="https://inwoovation.com/" class="nav-link">🏠 Inwoovation Hub Home</a>
+            <a href="https://inwoovation.com/smartfarm/vpd.html" class="nav-link">🌡️ VPD & Psychrometric Suite</a>
+            <a href="https://inwoovation.com/smartfarm/heat_loss.html" class="nav-link">🔥 Greenhouse Heat Loss</a>
+        </div>
+
+        <div class="nav-group">
             <div class="nav-title">📚 Crop Encyclopedia</div>
             <!-- Alphabetical Crop List -->
             {{CROP_NAVIGATION}}
+        </div>
+
+        <div class="nav-group">
+            <div class="nav-title">🌱 Specialized CEA Topics</div>
+            {{TOPIC_NAVIGATION}}
         </div>
         
         <div class="nav-group">
@@ -419,8 +418,8 @@
     {{RIGHT_SIDEBAR}}
 </div>
 
-<footer style="margin-top: 4rem; padding: 2rem 0; border-top: 1px solid var(--border); text-align: center; color: var(--text-muted); font-size: 0.85rem;">
-    <p>© 2026 Inwoovation Lab. AgriAtlas Wiki. All rights reserved. | <a href="https://forms.gle/SC3ehhA4r6sPEZxV7" target="_blank" style="color: var(--primary); font-weight: 700; text-decoration: none;">Send Feedback 📩</a></p>
+<footer style="margin-top: 4rem; padding: 2rem 1rem; border-top: 1px solid var(--border); text-align: center; color: var(--text-muted); font-size: 0.85rem;">
+    <p>© 2026 Inwoovation Lab (Inwoo Hwang — Horticultural &amp; CEA Systems Engineer). AgriAtlas Wiki. All rights reserved. | <a href="https://inwoovation.com/" style="color: var(--primary); text-decoration: none;">Inwoovation Portal</a> | <a href="https://forms.gle/SC3ehhA4r6sPEZxV7" target="_blank" style="color: var(--primary); font-weight: 700; text-decoration: none;">Send Feedback 📩</a></p>
 </footer>
 
 <!-- Floating Feedback Button (FAB) -->
@@ -437,7 +436,6 @@
     }
 
     // Client-side Search Engine (uses searchIndex variable from search_index.js)
-
     const searchInput = document.getElementById('searchInput');
     const searchResults = document.getElementById('searchResults');
 

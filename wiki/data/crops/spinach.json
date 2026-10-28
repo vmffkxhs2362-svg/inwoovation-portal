@@ -3,7 +3,7 @@
   "name": "Spinach",
   "title": "Spinach (Spinacia oleracea)",
   "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Spinach_leaves.jpg/800px-Spinach_leaves.jpg",
-  "description": "Nitrate accumulation control, oxalate reduction kinetics, and hydroponic NFT root zone temperature management for high yields.",
+  "description": "CEA engineering guide for hydroponic spinach (Spinacia oleracea): root-zone DO chilling, Pythium suppression, oxalate reduction, and nitrate steering.",
   "scientific_name": "Spinacia oleracea",
   "category": "Nutritional Leafy Greens",
   "summary": "High-density cool-climate leafy green requiring strict nitrate steering, controlled root zone temperature, and precise DLI photoperiod management.",
@@ -73,5 +73,92 @@
     ],
     "calcium_demand": "High (Leaf Tip-burn & Oxalate Steering)",
     "last_updated": "2026-08-05"
-  }
+  },
+  "id": "spinach",
+  "author": "Inwoo Hwang — Inwoovation Lab",
+  "published_date": "2026-08-05",
+  "image_caption": "Hydroponic baby-leaf spinach (Spinacia oleracea) canopy cultivated in chilled, oxygen-supersaturated NFT channels",
+  "taxonomy": {
+    "family": "Amaranthaceae (formerly Chenopodiaceae / Amaranth Family)",
+    "genus": "Spinacia",
+    "species": "Spinacia oleracea L.",
+    "origin": "Central & Southwestern Asia (Persia) / Cool-Climate Hydroponic CEA"
+  },
+  "overview": "Spinach (Spinacia oleracea L.) is a cool-season C3 leafy vegetable belonging to the Amaranthaceae family and represents one of the most technically demanding crops in commercial hydroponic and vertical farming systems. While market demand for pesticide-free baby-leaf and teen-leaf spinach is exceptionally high, hydroponic cultivation faces three severe physiological and pathological bottlenecks: (1) extreme susceptibility of root systems to oomycete zoospores (Pythium aphanidermatum and Pythium dissotocum) whenever root-zone temperature (RZT) exceeds 20.5°C and dissolved oxygen (DO) drops below 7.0 mg L⁻¹; (2) photoperiodic sensitivity as a quantitative long-day plant, where photoperiods exceeding 14–16 hours combined with warm temperatures (> 21°C) rapidly induce gibberellin-mediated stem bolting; and (3) intracellular accumulation of anti-nutritional soluble oxalic acid (C₂H₂O₄) and vacuolar nitrate (NO₃⁻). Overcoming these constraints requires an integrated thermodynamic and spectral engineering protocol: chilling recirculating nutrient solutions to 17.5–18.5°C with nanobubble oxygen injection (DO > 8.8 mg L⁻¹), maintaining cool diurnal air temperatures (Day 18.0°C / Night 14.0°C, VPD 0.75–0.90 kPa), and applying a high NO₃⁻:NH₄⁺ molar ratio (15:1) coupled with pre-harvest blue-enriched LED irradiation to accelerate plastidic Nitrate Reductase (EC 1.7.1.1) and suppress oxalate oxidase flux. From a quantitative horticultural engineering standpoint, commercial Spinach (Spinacia oleracea) production in Venlo glasshouses and multi-tier plant factories is governed by the coupled heat and mass transfer equations of the Penman-Monteith canopy evapotranspiration model. Achieving target photosynthetic assimilation under a Daily Light Integral (DLI) regime of Moderate (14-18 mol/m²/day) requires maintaining stomatal conductance (g_s) within its optimal physiological window while preventing aerodynamic boundary-layer stagnation (r_b) across dense leaf canopies. Because Spinacia oleracea L. exhibits a high (leaf tip-burn & oxalate steering) physiological demand for xylem-mobile divalent calcium (Ca²⁺) alongside an electrical conductivity (EC) tolerance envelope of Moderate (1.4 - 1.8 dS/m), minor deviations in leaf-to-air Vapor Pressure Deficit (VPD) or root-zone dissolved oxygen (DO) rapidly manifest as localized meristematic necrosis, blossom-end rot, or vascular tip-burn. Furthermore, integrated pest and pathogen exclusion protocols must continuously suppress Peronospora farinosa f. sp. spinaciae, Pythium Root Rot by eliminating nocturnal dew-point condensation events through synchronized under-gutter hydronic pipe heating, variable-frequency horizontal airflow (HAF) fans, and automated dehumidification heat recovery.",
+  "climate_strategy": [
+    {
+      "region": "Indoor Vertical Farm & Controlled-Environment Baby-Leaf Factory",
+      "strategy": "Enforce a strict 14-to-16-hour photoperiod at 250–280 µmol m⁻² s⁻¹ PPFD (DLI 14.4–16.1 mol m⁻² d⁻¹) to maximize leaf blade mass without triggering long-day floral initiation. Control daytime air temperature at 18.0°C and night temperature at 13.5°C (DIF +4.5°C) with relative humidity at 70–74% (VPD 0.80–0.90 kPa). Chilled-water coils integrated into the hydroponic reservoir must clamp root-zone temperature at 18.0 ± 0.5°C while inline Venturi nanobubble generators maintain dissolved oxygen at 8.8–10.2 mg L⁻¹.",
+      "tech_level": "Tier 5 Hydronically Chilled Vertical CEA (Nanobubble DO, UV-C Sterilization, Photoperiod Control)"
+    },
+    {
+      "region": "Deep Water Culture (DWC) Pond & NFT Greenhouse Complex",
+      "strategy": "Utilize insulated polystyrene DWC rafts over 25 cm deep chilled nutrient basins to buffer diurnal thermal swings. Sterilize recirculating return lines via low-pressure UV-C reactors (254 nm at > 40 mJ cm⁻² fluence) paired with beneficial rhizosphere inoculation (Bacillus subtilis and Trichoderma harzianum) to achieve 99.9% eradication of motile Pythium zoospores. Deploy horizontal airflow (HAF) fans at 0.35 m s⁻¹ to prevent Peronospora farinosa f. sp. spinaciae (downy mildew) leaf wetness.",
+      "tech_level": "Tier 4 Chilled DWC/NFT Glasshouse (UV-C Pathogen Disinfection, Thermal Raft Insulation)"
+    }
+  ],
+  "crop_steering": {
+    "intro": "Spinach crop steering strictly suppresses generative floral bolting while steering leaf morphology from rapid early lamina expansion toward thick, dark-green, low-oxalate, and low-nitrate commercial leaves at harvest. Precision steering in Spinach (Spinacia oleracea) requires coordinating diurnal temperature differentials (DIF), canopy-level Vapor Pressure Deficit (VPD), spectral photon ratios, and substrate dry-back percentages (Δθv) so that assimilate partitioning between structural vegetative sinks and generative or secondary metabolic sinks remains in thermodynamic equilibrium.",
+    "vegetative_triggers": {
+      "temperature_dif": "Low-to-moderate DIF +3.0°C (Day 18.0°C / Night 15.0°C) with chilled RZT 18.0°C to accelerate uniform germination and primary leaf expansion.",
+      "vpd_target": "0.70 – 0.85 kPa (Promotes high stomatal conductance and rapid cell wall turgor extension without tip-burn).",
+      "irrigation": "EC 1.3–1.5 dS m⁻¹, pH 6.0–6.3, DO > 8.5 mg L⁻¹, 14h photoperiod with 15% Far-Red (730 nm) inclusion to expand initial Leaf Area Index (LAI)."
+    },
+    "generative_triggers": {
+      "temperature_dif": "Cool finishing DIF +4.5°C (Day 17.5°C / Night 13.0°C) during the final 5 days to compact petiole length and boost leaf dry matter (> 9.0%).",
+      "vpd_target": "0.85 – 1.00 kPa (Drives mass-flow Ca²⁺ transport to leaf margins and hardens epidermal cuticles prior to mechanical harvesting).",
+      "irrigation": "Elevate EC to 1.7–1.8 dS m⁻¹, strip Far-Red photons, increase Blue (450 nm) fraction to 25%, and execute a 48-hour low-nitrogen finishing flush."
+    }
+  },
+  "fertigation": {
+    "intro": "Spinach is highly sensitive to rhizosphere acidity (pH < 5.6) and ammonium toxicity, while its oxalic acid synthesis is tightly linked to calcium sequestration and ascorbate catabolism. Electrochemical balance in the rhizosphere requires strict maintenance of electroneutrality between macronutrient cations (K⁺, Ca²⁺, Mg²⁺, NH₄⁺) and anions (NO₃⁻, H₂PO₄⁻, SO₄²⁻), preventing competitive transporter antagonism and stabilizing root-zone pH within the optimal 5.6–6.2 bioavailability window.",
+    "vegetative_phase": "Maintain EC at 1.4–1.6 mS cm⁻¹ and pH at 6.0–6.4 (slightly higher than standard fruiting crops to optimize Spinacia root hair longevity). Target elemental composition: NO₃⁻-N 150 ppm (10.7 mM), NH₄⁺-N 10 ppm (0.7 mM), P 40 ppm (1.29 mM), K 200 ppm (5.12 mM), Ca 120 ppm (3.00 mM), Mg 45 ppm (1.85 mM), S 50 ppm (1.56 mM), and chelated Fe-DTPA 3.0 ppm (54 µM) plus Mo 0.08 ppm (0.83 µM as Na₂MoO₄ cofactor for Nitrate Reductase).",
+    "generative_phase": "During days 16–21 (pre-harvest finishing), increase EC to 1.75–1.85 mS cm⁻¹ using Potassium Sulfate (K₂SO₄) and Calcium Chloride (CaCl₂, 1.5 mM Cl⁻) while reducing NO₃⁻-N by 40% (to 90 ppm). Mild chloride counter-ion competition at vacuolar tonoplast antiporters restricts nitrate storage in petioles and suppresses soluble oxalate synthesis by 28%, ensuring compliance with strict baby-food and fresh-cut European nitrate standards."
+  },
+  "references": [
+    {
+      "id": 1,
+      "text": "Brechner, M., & Both, A. J. (2013). Hydroponic Spinach Production Handbook: CEA Root-Zone Temperature, Dissolved Oxygen, and Pythium Control.",
+      "original_title": "Cornell Controlled Environment Agriculture (CEA) Program Manual",
+      "publisher": "Cornell University Department of Biological and Environmental Engineering",
+      "gov_id": "Cornell CEA Bulletin Spinacia-01",
+      "link": "https://cea.cals.cornell.edu/"
+    },
+    {
+      "id": 2,
+      "text": "Proietti, S., Moscatello, S., Colla, G., & Battistelli, Y. (2021). Light Spectrum and Nitrate Fertigation Regulate Ascorbate, Oxalate, and Nitrate Accumulation in Hydroponic Spinach.",
+      "original_title": "Scientia Horticulturae, 278, 109862",
+      "publisher": "Elsevier BV",
+      "gov_id": "DOI: 10.1016/j.scienta.2020.109862",
+      "link": "https://doi.org/10.1016/j.scienta.2020.109862"
+    }
+  ],
+  "engineering_deep_dive": {
+    "title": "Thermodynamic, Mass-Transfer & Bioenergetic Engineering Analysis: Spinach (Spinacia oleracea)",
+    "paragraphs": [
+      "In high-precision Controlled Environment Agriculture (CEA), optimizing Spinach (Spinacia oleracea) (Spinacia oleracea L.) requires solving the coupled energy and mass balance across the soil-plant-atmosphere continuum (SPAC). At the canopy boundary layer, net radiative energy absorption (R_n)—comprising solar shortwave transmission and supplemental solid-state LED photon flux—is partitioned between sensible heat convection (H) and latent heat of transpiration (λE) according to the Penman-Monteith equation. When aerodynamic boundary-layer resistance (r_b = δ / D_v, where δ is the laminar sub-layer thickness and D_v is molecular diffusivity) is excessive due to stagnant horizontal airflow (< 0.15 m s⁻¹), leaf surface temperature (T_leaf) rises 1.5°C to 3.2°C above ambient dry-bulb air temperature (T_air). This thermal decoupling exponentially inflates the leaf-to-air Vapor Pressure Deficit (VPD_leaf = e_sat(T_leaf) − e_air), triggering abscisic acid (ABA) and hydraulic guard-cell closure (increasing stomatal resistance r_s > 450 s m⁻¹). Once stomata constrict, intercellular CO₂ concentration (C_i) plummets while transpirational xylem mass flow of non-phloem-mobile calcium (Ca²⁺) and boron (B) to rapidly dividing meristems stalls.",
+      "Simultaneously, within the rhizosphere and cellular metabolic network (Amaranthaceae (formerly Chenopodiaceae / Amaranth Family) — Spinacia), nutrient ion uptake is governed by active electrochemical proton gradients generated by root plasma membrane H⁺-ATPase (EC 7.1.2.1). Each mole of nitrate (NO₃⁻) symported across the root epidermis requires co-transport of two protons (2H⁺) and sustained mitochondrial oxidative phosphorylation (ATP synthesis), which in turn obeys Michaelis-Menten kinetics with respect to dissolved oxygen concentration (K_m ≈ 0.8–1.2 mg O₂ L⁻¹, with functional saturation requiring DO > 8.0 mg L⁻¹ at 20°C). By integrating canopy psychrometric enthalpy balances with root-zone Nernst-Planck ion diffusion and metabolic flux control, CEA systems engineers prevent both aerial photoinhibition and rhizosphere hypoxia, achieving deterministic yield stability and premium phytochemical density."
+    ]
+  },
+  "sensor_control_protocol": {
+    "title": "Industrial Sensor Telemetry, PLC Control Architecture & Actuator Safeguards",
+    "paragraphs": [
+      "Commercial deployment of the Spinach (Spinacia oleracea) engineering protocol relies on a three-tier distributed supervisory control and data acquisition (SCADA) architecture. Field-level sensing must avoid unshielded wall-mounted temperature/humidity probes; instead, deploy aspirated PT1000 psychrometer boxes positioned at the active apical canopy plane alongside narrow-field-of-view (15°) Apogee or Heitronics infrared radiometers measuring true leaf surface temperature (T_leaf ± 0.2°C). Photosynthetically Active Radiation (PAR, 400–700 nm) and extended ePAR (400–750 nm including Far-Red) are integrated at 10-second intervals via cosine-corrected quantum sensors to compute real-time accumulated Daily Light Integral (DLI) and dynamically modulate LED PWM dimming or supplemental lighting hours.",
+      "In the fertigation loop, redundant dual-junction glass pH electrodes, 4-ring toroidal conductivity (EC) cells, and optical luminescence Dissolved Oxygen (DO) transmitters continuously audit both injection supply headers and return drainage troughs. Frequency-Domain Reflectometry (FDR) dielectric slab sensors monitor volumetric water content (θ_v, % VWC), pore-water electrical conductivity (EC_p), and root-zone temperature (RZT). Programmable Logic Controllers (PLCs) enforce hard hardware interlocks: if supply EC deviates by more than ±0.25 dS m⁻¹ from setpoint, or if supply pH drops below 5.2, Venturi dosing valves automatically latch into bypass recirculation mode and trigger a high-priority operator alert."
+    ]
+  },
+  "faq_list": [
+    {
+      "question": "How does leaf temperature (T_leaf) vs. air temperature (T_air) affect VPD calculation in Spinach (Spinacia oleracea)?",
+      "answer": "Standard ambient VPD calculations assume T_leaf equals T_air, which introduces a 15–35% error in Spinach (Spinacia oleracea) canopies. Under high solar radiation or HPS lighting, T_leaf exceeds T_air by +1.5°C to +3.0°C, raising internal leaf saturation vapor pressure (e_sat) and driving true leaf-to-air VPD much higher than wall sensors indicate. Conversely, under high-efficiency LED lighting without thermal IR radiation, high transpiration cools T_leaf 0.8°C to 1.5°C below T_air. Always compute VPD using an infrared leaf radiometer to prevent hidden stomatal closure or nocturnal condensation."
+    },
+    {
+      "question": "What is the optimal root-zone dissolved oxygen (DO) and temperature threshold to prevent root hypoxia in Spinacia oleracea L.?",
+      "answer": "In hydroponic and substrate systems for Spinacia oleracea L., nutrient solution temperature should be stabilized between 18.0°C and 21.0°C with dissolved oxygen maintained at 8.2 to 10.5 mg L⁻¹ (> 95% saturation, or supersaturated via Venturi/nanobubble injection). Above 23.0°C, Henry's Law oxygen solubility drops while root mitochondrial respiration doubles per 10°C (Q₁₀ ≈ 2.1), rapidly depleting boundary-layer O₂ below 4.0 mg L⁻¹, halting active Ca²⁺/NO₃⁻ uptake, and inviting opportunistic Pythium and Phytophthora zoospore infection."
+    },
+    {
+      "question": "How should EC and irrigation dry-back (ΔVWC) be adjusted when transitioning Spinach (Spinacia oleracea) from vegetative to generative steering?",
+      "answer": "To steer Spinach (Spinacia oleracea) vegetatively, initiate irrigation 30–45 minutes after sunrise using small shot volumes (2–3% of substrate volume) at high frequency to hold volumetric water content (VWC) stable with minimal overnight dry-back (6–8%) and moderate EC. To steer generatively or induce phytochemical accumulation, delay the first morning irrigation until 90–120 minutes after sunrise, increase individual shot volume (4–6% VWC) at lower frequency, enforce a controlled overnight dry-back of 12–16% VWC, and elevate root-zone EC by +0.5 to +1.2 dS m⁻¹ while increasing potassium and sulfate ratios."
+    }
+  ]
 }

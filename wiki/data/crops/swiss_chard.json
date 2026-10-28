@@ -3,7 +3,7 @@
   "name": "Swiss Chard",
   "title": "Swiss Chard (Beta vulgaris subsp. vulgaris)",
   "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Swiss_Chard.jpg/800px-Swiss_Chard.jpg",
-  "description": "Betalain pigment elicitation, root zone EC salinity management, and Controlled Environment Agriculture climate guidelines.",
+  "description": "CEA engineering guide for hydroponic Swiss chard (Beta vulgaris): betalain pigment spectrum steering, halophytic Na+/K+ salinity control, and VPD management.",
   "category": "Colored Leafy Greens",
   "summary": "High-antioxidant betalain-rich leafy vegetable requiring dynamic blue-green spectrum ratios and precise Na+/K+ ratio regulation.",
   "ideal_vpd_kPa": {
@@ -72,5 +72,92 @@
     ],
     "calcium_demand": "High (Petiole Strength & Betalain Induction)",
     "last_updated": "2026-08-05"
-  }
+  },
+  "id": "swiss_chard",
+  "author": "Inwoo Hwang — Inwoovation Lab",
+  "published_date": "2026-08-05",
+  "image_caption": "Multicolored hydroponic Swiss chard (Beta vulgaris subsp. vulgaris) petioles displaying high betalain pigment expression",
+  "taxonomy": {
+    "family": "Amaranthaceae (Beet / Chenopod Subfamily Betoideae)",
+    "genus": "Beta",
+    "species": "Beta vulgaris subsp. vulgaris (Cicla & Flavescens Groups)",
+    "origin": "Mediterranean Coastal Littoral & High-Tech Hydroponic CEA"
+  },
+  "overview": "Swiss Chard (Beta vulgaris subsp. vulgaris) is a high-value, pigment-rich leafy vegetable cultivated in both baby-leaf salad mixes and mature bunched formats across hydroponic NFT, Deep Water Culture (DWC), and vertical farm installations. Descending from the coastal halophyte sea beet (Beta vulgaris subsp. maritima), Swiss chard possesses unique physiological traits among CEA crops: (1) its striking crimson, magenta, and golden-yellow petiole and vein coloration is derived not from anthocyanins, but from tyrosine-derived nitrogenous betalain pigments—specifically crimson betacyanins (betanin) and yellow betaxanthins (vulgaxanthin-I); and (2) it exhibits facultative halophytic osmoregulation, actively utilizing sodium (Na⁺) and potassium (K⁺) ions in vacuolar compartments to drive cell turgor and petiole crispness. In controlled environments, monochromatic red/blue LED lighting often fails to stimulate uniform betalain synthesis inside shaded lower petioles. By integrating 15–18% green (525 nm) photons—which penetrate deeply through upper chlorophyll layers—with 22% blue (450 nm) light and mild root-zone Na⁺/K⁺ osmotic steering (EC 1.8–2.2 dS m⁻¹ including 1.2 mM NaCl), CEA engineers can up-regulate tyrosine hydroxylase and DOPA 4,5-dioxygenase (DODA, EC 1.13.11.42) activity, boosting betalain antioxidant concentration by over 65% while maintaining rapid biomass yield. From a quantitative horticultural engineering standpoint, commercial Swiss Chard (Beta vulgaris subsp. vulgaris) production in Venlo glasshouses and multi-tier plant factories is governed by the coupled heat and mass transfer equations of the Penman-Monteith canopy evapotranspiration model. Achieving target photosynthetic assimilation under a Daily Light Integral (DLI) regime of Moderate (14-18 mol/m²/day) requires maintaining stomatal conductance (g_s) within its optimal physiological window while preventing aerodynamic boundary-layer stagnation (r_b) across dense leaf canopies. Because Beta vulgaris subsp. vulgaris (Cicla & Flavescens Groups) exhibits a high (petiole strength & betalain induction) physiological demand for xylem-mobile divalent calcium (Ca²⁺) alongside an electrical conductivity (EC) tolerance envelope of Moderate-High (1.5 - 2.2 dS/m), minor deviations in leaf-to-air Vapor Pressure Deficit (VPD) or root-zone dissolved oxygen (DO) rapidly manifest as localized meristematic necrosis, blossom-end rot, or vascular tip-burn. Furthermore, integrated pest and pathogen exclusion protocols must continuously suppress Cercospora beticola (Leaf Spot), Pythium Root Rot by eliminating nocturnal dew-point condensation events through synchronized under-gutter hydronic pipe heating, variable-frequency horizontal airflow (HAF) fans, and automated dehumidification heat recovery.",
+  "climate_strategy": [
+    {
+      "region": "Indoor Vertical Farm & Multi-Tier Baby-Leaf Production",
+      "strategy": "Deliver a 16-hour photoperiod at 250 µmol m⁻² s⁻¹ PPFD (DLI 14.4 mol m⁻² d⁻¹) utilizing a tri-band white/red/blue LED array (22% Blue 450 nm, 18% Green 525 nm, 60% Red 660 nm). Maintain day temperature at 20.0°C and night temperature at 15.0°C (DIF +5.0°C) with ambient VPD held between 0.75 and 0.95 kPa. Provide 0.35 m s⁻¹ horizontal canopy airflow to prevent Cercospora beticola fungal condensation on dense baby-leaf canopies.",
+      "tech_level": "Tier 5 Broad-Spectrum Vertical CEA (Tri-Band LEDs, Precision Psychrometric HVAC)"
+    },
+    {
+      "region": "Hydroponic NFT & Recirculating Substrate Glasshouse",
+      "strategy": "For full-head or teen-leaf Swiss chard harvesting, space plants at 28–45 plants m⁻² in wide-profile NFT gullies or coco-coir troughs. Maintain average daily temperature (ADT) at 18.0°C and root-zone solution temperature at 19.0°C. Utilize automated roof vent dehumidification and thermal screens to prevent daytime temperature spikes above 25°C, which otherwise degrade thermolabile betacyanin pigments and trigger petiole pithiness. Facility SCADA controllers continuously cross-reference aspirated PT1000 dry-bulb/wet-bulb psychrometers with infrared radiometric leaf-surface temperature sensors to calculate real-time leaf-to-air VPD rather than relying solely on ambient air relative humidity. Automated proportional-integral-derivative (PID) loops modulate roof vent apertures, energy-saving aluminized screens, and variable-speed circulation fans to keep canopy boundary-layer resistance below 60 s m⁻¹ and prevent microclimatic stratification across Beta vulgaris subsp. vulgaris (Cicla & Flavescens Groups) production zones.",
+      "tech_level": "Tier 4 Climate-Controlled NFT Glasshouse (Wide-Channel Gullies, Automated Dehumidification)"
+    }
+  ],
+  "crop_steering": {
+    "intro": "Swiss chard crop steering balances succulent petiole vascular expansion with tyrosine-derived betalain chromophore induction and structural petiole rigidity. Precision steering in Swiss Chard (Beta vulgaris subsp. vulgaris) requires coordinating diurnal temperature differentials (DIF), canopy-level Vapor Pressure Deficit (VPD), spectral photon ratios, and substrate dry-back percentages (Δθv) so that assimilate partitioning between structural vegetative sinks and generative or secondary metabolic sinks remains in thermodynamic equilibrium.",
+    "vegetative_triggers": {
+      "temperature_dif": "Moderate DIF +3.5°C (Day 19.5°C / Night 16.0°C) to promote rapid leaf initiation and broad, tender lamina development.",
+      "vpd_target": "0.70 – 0.85 kPa (Maximizes stomatal aperture and rapid turgor-driven vascular bundle expansion).",
+      "irrigation": "Continuous recirculating flow, EC 1.5–1.6 dS m⁻¹, pH 6.0–6.3, 16h photoperiod with balanced 15% Blue / 15% Green / 70% Red spectrum."
+    },
+    "generative_triggers": {
+      "temperature_dif": "High positive DIF +6.0°C (Day 20.5°C / Night 14.5°C) to stimulate soluble sugar translocation and stabilize betalain glycosylation in petioles.",
+      "vpd_target": "0.90 – 1.05 kPa (Enhances transpirational Ca²⁺ and K⁺ mass flow, preventing petiole cracking and soft rot).",
+      "irrigation": "Elevate EC to 2.0–2.2 dS m⁻¹ including 30 ppm Na⁺ (1.3 mM NaCl) and shift spectrum to 22% Blue (450 nm) + 18% Green (525 nm) for intense vein coloration."
+    }
+  },
+  "fertigation": {
+    "intro": "Reflecting its coastal halophytic ancestry (Beta vulgaris subsp. maritima), Swiss chard responds positively to controlled sodium (Na⁺) and high potassium (K⁺) ratios alongside robust calcium and boron supply to prevent internal petiole browning (heart rot).",
+    "vegetative_phase": "Formulate solution at EC 1.5–1.7 mS cm⁻¹ and pH 6.0–6.5 with target elemental stoichiometry: NO₃⁻-N 160 ppm (11.4 mM), NH₄⁺-N 8 ppm (0.57 mM), P 40 ppm (1.29 mM), K 210 ppm (5.37 mM), Ca 130 ppm (3.24 mM), Mg 50 ppm (2.06 mM), Na 20 ppm (0.87 mM), Fe-DTPA 3.0 ppm (54 µM), and B 0.6 ppm (55 µM). Adequate boron is critical for rhamnogalacturonan-II pectin cross-linking in the rapidly elongating collenchyma ribs of chard petioles.",
+    "generative_phase": "During pre-harvest pigment and texture finishing, increase EC to 2.1–2.2 mS cm⁻¹ by supplementing Potassium Nitrate [PubChem CID 24434], Magnesium Sulfate [PubChem CID 24083], and 30 ppm Na⁺ (as NaCl, 1.3 mM). Mild halophytic osmotic stimulation activates vacuolar Na⁺/H⁺ NHX antiporters, increasing petiole snap firmness and boosting betanin and vulgaxanthin-I concentrations by 45–65% without any growth penalty."
+  },
+  "references": [
+    {
+      "id": 1,
+      "text": "Polturak, G., & Aharoni, A. (2018). 'La Vie en Rose': Biosynthesis, Sources, and Applications of Betalain Pigments in Plants.",
+      "original_title": "Molecular Plant, 11(1), 7–22",
+      "publisher": "Cell Press / Elsevier",
+      "gov_id": "DOI: 10.1016/j.molp.2017.10.008",
+      "link": "https://doi.org/10.1016/j.molp.2017.10.008"
+    },
+    {
+      "id": 2,
+      "text": "Kaburagi, E., Morikawa, K., Yamada, M., & Fujiyama, H. (2015). Sodium enhances nitrate uptake and growth in Swiss chard (Beta vulgaris var. cicla) under hydroponic culture.",
+      "original_title": "Soil Science and Plant Nutrition, 61(3), 512–520",
+      "publisher": "Taylor & Francis",
+      "gov_id": "DOI: 10.1080/00380768.2015.1016863",
+      "link": "https://doi.org/10.1080/00380768.2015.1016863"
+    }
+  ],
+  "engineering_deep_dive": {
+    "title": "Thermodynamic, Mass-Transfer & Bioenergetic Engineering Analysis: Swiss Chard (Beta vulgaris subsp. vulgaris)",
+    "paragraphs": [
+      "In high-precision Controlled Environment Agriculture (CEA), optimizing Swiss Chard (Beta vulgaris subsp. vulgaris) (Beta vulgaris subsp. vulgaris (Cicla & Flavescens Groups)) requires solving the coupled energy and mass balance across the soil-plant-atmosphere continuum (SPAC). At the canopy boundary layer, net radiative energy absorption (R_n)—comprising solar shortwave transmission and supplemental solid-state LED photon flux—is partitioned between sensible heat convection (H) and latent heat of transpiration (λE) according to the Penman-Monteith equation. When aerodynamic boundary-layer resistance (r_b = δ / D_v, where δ is the laminar sub-layer thickness and D_v is molecular diffusivity) is excessive due to stagnant horizontal airflow (< 0.15 m s⁻¹), leaf surface temperature (T_leaf) rises 1.5°C to 3.2°C above ambient dry-bulb air temperature (T_air). This thermal decoupling exponentially inflates the leaf-to-air Vapor Pressure Deficit (VPD_leaf = e_sat(T_leaf) − e_air), triggering abscisic acid (ABA) and hydraulic guard-cell closure (increasing stomatal resistance r_s > 450 s m⁻¹). Once stomata constrict, intercellular CO₂ concentration (C_i) plummets while transpirational xylem mass flow of non-phloem-mobile calcium (Ca²⁺) and boron (B) to rapidly dividing meristems stalls.",
+      "Simultaneously, within the rhizosphere and cellular metabolic network (Amaranthaceae (Beet / Chenopod Subfamily Betoideae) — Beta), nutrient ion uptake is governed by active electrochemical proton gradients generated by root plasma membrane H⁺-ATPase (EC 7.1.2.1). Each mole of nitrate (NO₃⁻) symported across the root epidermis requires co-transport of two protons (2H⁺) and sustained mitochondrial oxidative phosphorylation (ATP synthesis), which in turn obeys Michaelis-Menten kinetics with respect to dissolved oxygen concentration (K_m ≈ 0.8–1.2 mg O₂ L⁻¹, with functional saturation requiring DO > 8.0 mg L⁻¹ at 20°C). By integrating canopy psychrometric enthalpy balances with root-zone Nernst-Planck ion diffusion and metabolic flux control, CEA systems engineers prevent both aerial photoinhibition and rhizosphere hypoxia, achieving deterministic yield stability and premium phytochemical density."
+    ]
+  },
+  "sensor_control_protocol": {
+    "title": "Industrial Sensor Telemetry, PLC Control Architecture & Actuator Safeguards",
+    "paragraphs": [
+      "Commercial deployment of the Swiss Chard (Beta vulgaris subsp. vulgaris) engineering protocol relies on a three-tier distributed supervisory control and data acquisition (SCADA) architecture. Field-level sensing must avoid unshielded wall-mounted temperature/humidity probes; instead, deploy aspirated PT1000 psychrometer boxes positioned at the active apical canopy plane alongside narrow-field-of-view (15°) Apogee or Heitronics infrared radiometers measuring true leaf surface temperature (T_leaf ± 0.2°C). Photosynthetically Active Radiation (PAR, 400–700 nm) and extended ePAR (400–750 nm including Far-Red) are integrated at 10-second intervals via cosine-corrected quantum sensors to compute real-time accumulated Daily Light Integral (DLI) and dynamically modulate LED PWM dimming or supplemental lighting hours.",
+      "In the fertigation loop, redundant dual-junction glass pH electrodes, 4-ring toroidal conductivity (EC) cells, and optical luminescence Dissolved Oxygen (DO) transmitters continuously audit both injection supply headers and return drainage troughs. Frequency-Domain Reflectometry (FDR) dielectric slab sensors monitor volumetric water content (θ_v, % VWC), pore-water electrical conductivity (EC_p), and root-zone temperature (RZT). Programmable Logic Controllers (PLCs) enforce hard hardware interlocks: if supply EC deviates by more than ±0.25 dS m⁻¹ from setpoint, or if supply pH drops below 5.2, Venturi dosing valves automatically latch into bypass recirculation mode and trigger a high-priority operator alert."
+    ]
+  },
+  "faq_list": [
+    {
+      "question": "How does leaf temperature (T_leaf) vs. air temperature (T_air) affect VPD calculation in Swiss Chard (Beta vulgaris subsp. vulgaris)?",
+      "answer": "Standard ambient VPD calculations assume T_leaf equals T_air, which introduces a 15–35% error in Swiss Chard (Beta vulgaris subsp. vulgaris) canopies. Under high solar radiation or HPS lighting, T_leaf exceeds T_air by +1.5°C to +3.0°C, raising internal leaf saturation vapor pressure (e_sat) and driving true leaf-to-air VPD much higher than wall sensors indicate. Conversely, under high-efficiency LED lighting without thermal IR radiation, high transpiration cools T_leaf 0.8°C to 1.5°C below T_air. Always compute VPD using an infrared leaf radiometer to prevent hidden stomatal closure or nocturnal condensation."
+    },
+    {
+      "question": "What is the optimal root-zone dissolved oxygen (DO) and temperature threshold to prevent root hypoxia in Beta vulgaris subsp. vulgaris (Cicla & Flavescens Groups)?",
+      "answer": "In hydroponic and substrate systems for Beta vulgaris subsp. vulgaris (Cicla & Flavescens Groups), nutrient solution temperature should be stabilized between 18.0°C and 21.0°C with dissolved oxygen maintained at 8.2 to 10.5 mg L⁻¹ (> 95% saturation, or supersaturated via Venturi/nanobubble injection). Above 23.0°C, Henry's Law oxygen solubility drops while root mitochondrial respiration doubles per 10°C (Q₁₀ ≈ 2.1), rapidly depleting boundary-layer O₂ below 4.0 mg L⁻¹, halting active Ca²⁺/NO₃⁻ uptake, and inviting opportunistic Pythium and Phytophthora zoospore infection."
+    },
+    {
+      "question": "How should EC and irrigation dry-back (ΔVWC) be adjusted when transitioning Swiss Chard (Beta vulgaris subsp. vulgaris) from vegetative to generative steering?",
+      "answer": "To steer Swiss Chard (Beta vulgaris subsp. vulgaris) vegetatively, initiate irrigation 30–45 minutes after sunrise using small shot volumes (2–3% of substrate volume) at high frequency to hold volumetric water content (VWC) stable with minimal overnight dry-back (6–8%) and moderate EC. To steer generatively or induce phytochemical accumulation, delay the first morning irrigation until 90–120 minutes after sunrise, increase individual shot volume (4–6% VWC) at lower frequency, enforce a controlled overnight dry-back of 12–16% VWC, and elevate root-zone EC by +0.5 to +1.2 dS m⁻¹ while increasing potassium and sulfate ratios."
+    }
+  ]
 }

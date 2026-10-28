@@ -8,6 +8,16 @@
   <title>Greenhouse Cultivation & Facility Troubleshooting Wizard | Inwoovation Lab</title>
   <meta name="description" content="Instant diagnostic wizard for commercial greenhouse and indoor farm issues. Identify root causes for tip burn, blossom-end rot, condensation, and heating spikes with 3-step actionable protocols and biophysical calculators.">
   <link rel="canonical" href="https://inwoovation.com/troubleshoot.html" />
+  <!-- Open Graph & Twitter Card -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://inwoovation.com/troubleshoot.html">
+  <meta property="og:title" content="Greenhouse Cultivation & Facility Troubleshooting Wizard | Inwoovation Lab">
+  <meta property="og:description" content="Instant diagnostic wizard for commercial greenhouse and indoor farm issues. Identify root causes for tip burn, blossom-end rot, condensation, and heating spikes.">
+  <meta property="og:image" content="https://inwoovation.com/og-cover.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Greenhouse Cultivation & Facility Troubleshooting Wizard | Inwoovation Lab">
+  <meta name="twitter:description" content="Instant diagnostic wizard for commercial greenhouse and indoor farm issues: tip burn, blossom-end rot, condensation, and heating spikes.">
+  <meta name="twitter:image" content="https://inwoovation.com/og-cover.jpg">
 
   <!-- Structured Data (JSON-LD) -->
   <script type="application/ld+json">
@@ -19,7 +29,7 @@
     "description": "Diagnostic wizard for commercial greenhouse issues (tip burn, blossom-end rot, condensation, heating spikes) with actionable biophysical protocols.",
     "applicationCategory": "DiagnosticApplication, AgriculturalTool",
     "operatingSystem": "All",
-    "dateModified": "2026-10-08",
+    "dateModified": "2026-10-27",
     "provider": {
       "@type": "Organization",
       "name": "Inwoovation Lab",
@@ -247,6 +257,67 @@
     <div class="symptom-grid" id="symptomGrid">
       <!-- Cards rendered via JS -->
     </div>
+
+    <!-- TROUBLE_DEEP_DIVE_START -->
+    <section class="hero-banner" style="margin-top: 32px; line-height: 1.8; color: #cbd5e1;">
+      <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #f8fafc; margin: 0 0 14px;">🩺 Field Diagnostic Reference Manual: Symptom-to-Biophysics Matrix</h2>
+      <p style="margin-bottom: 16px;">In commercial greenhouses and vertical farms, visible crop stress is almost always the downstream manifestation of an upstream psychrometric, aerodynamic, or ionic mass-balance failure. Applying chemical fungicides to <em>Botrytis cinerea</em> without correcting nocturnal dew-point crossing, or spraying foliar calcium onto lettuce heads without breaking the stagnant meristem boundary layer, treats only the symptom while the physical root cause persists. Use the comprehensive diagnostic reference matrix below alongside the interactive cards above to audit your facility:</p>
+
+      <div style="overflow-x: auto; margin-bottom: 20px;">
+        <table style="width: 100%; border-collapse: collapse; font-size: 0.88rem; background: rgba(15, 23, 42, 0.75); border-radius: 12px; overflow: hidden;">
+          <thead>
+            <tr style="background: rgba(56, 189, 248, 0.15); color: #38bdf8; text-align: left; font-family: 'Outfit', sans-serif;">
+              <th style="padding: 12px 14px;">Observed Field Symptom</th>
+              <th style="padding: 12px 14px;">Primary Biophysical Root Cause</th>
+              <th style="padding: 12px 14px;">Critical Sensor Threshold Trigger</th>
+              <th style="padding: 12px 14px;">Deterministic Climate / Fertigation Fix</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid rgba(255,255,255,0.08);">
+              <td style="padding: 12px 14px;"><strong>Distal Fruit Blossom-End Rot (BER)</strong><br><span style="font-size:0.78rem;color:#94a3b8;">Tomato, Sweet Pepper, Eggplant</span></td>
+              <td style="padding: 12px 14px;">Foliar transpiration monopolizes xylem water flux during high radiation spikes; high slab salinity or NH₄⁺ blocks root Ca²⁺ uptake.</td>
+              <td style="padding: 12px 14px;">Midday VPD &gt; 1.45 kPa; Slab EC &gt; 4.8 mS/cm; Solar &gt; 750 W/m²</td>
+              <td style="padding: 12px 14px;">Deploy diffuse shade screen &gt; 650 W/m²; mist to hold VPD 0.85–1.15 kPa; keep night RH 80–84% for root guttation Ca²⁺ push.</td>
+            </tr>
+            <tr style="border-bottom: 1px solid rgba(255,255,255,0.08);">
+              <td style="padding: 12px 14px;"><strong>Inner Heart Apical Tipburn</strong><br><span style="font-size:0.78rem;color:#94a3b8;">Vertical Farm Lettuce, Strawberry Calyx</span></td>
+              <td style="padding: 12px 14px;">Thick laminar boundary layer ($r_b$) over enclosed meristem suppresses local transpiration despite abundant root-zone Ca²⁺.</td>
+              <td style="padding: 12px 14px;">Canopy airspeed &lt; 0.15 m/s; DLI &gt; 17 mol/m²/d; Night VPD &gt; 0.8 kPa</td>
+              <td style="padding: 12px 14px;">Direct 0.35–0.55 m/s downward/horizontal airflow into heart; provide 3–4 hr humid night window (RH &gt; 85%) for guttation transport.</td>
+            </tr>
+            <tr style="border-bottom: 1px solid rgba(255,255,255,0.08);">
+              <td style="padding: 12px 14px;"><strong>Nocturnal Dew &amp; Botrytis Stem/Bud Rot</strong><br><span style="font-size:0.78rem;color:#94a3b8;">Cannabis, Rose, Tomato, Cucumber</span></td>
+              <td style="padding: 12px 14px;">Rapid post-sunset air cooling or cold pre-dawn fruit thermal mass drops surface temperature ($T_s$) below indoor air dew point ($T_{dp}$).</td>
+              <td style="padding: 12px 14px;">$T_{	ext{surface}} - T_{	ext{dewpoint}} &lt; 1.0	ext{ °C}$; Night VPD &lt; 0.30 kPa (RH &gt; 88%)</td>
+              <td style="padding: 12px 14px;">Run minimum heating pipe (40–45 °C) 45 min before sunrise &amp; sunset with 2–5% leeward vent crack or mechanical dehumidifier.</td>
+            </tr>
+            <tr style="border-bottom: 1px solid rgba(255,255,255,0.08);">
+              <td style="padding: 12px 14px;"><strong>Rhizosphere pH Crash (&lt; 5.0) &amp; Root Pythium</strong><br><span style="font-size:0.78rem;color:#94a3b8;">Rockwool, Cocopeat, NFT Channels</span></td>
+              <td style="padding: 12px 14px;">Excessive $	ext{NH}_4^+$ cation uptake releases $	ext{H}^+$ protons into slab; warm stagnant solution (&gt;25 °C) depletes dissolved oxygen.</td>
+              <td style="padding: 12px 14px;">Drain pH &lt; 5.1; $	ext{NH}_4^+ : 	ext{NO}_3^- &gt; 12\%$; Dissolved $	ext{O}_2 &lt; 5.5	ext{ mg/L}$</td>
+              <td style="padding: 12px 14px;">Reduce $	ext{NH}_4^+$ below 5% of total N; buffer feed with 0.8 mmol/L $	ext{HCO}_3^-$; chill nutrient tank to 19–21 °C ($DO \ge 8.0	ext{ mg/L}$).</td>
+            </tr>
+            <tr>
+              <td style="padding: 12px 14px;"><strong>Closed-Loop Sodium ($	ext{Na}^+$) Lockout</strong><br><span style="font-size:0.78rem;color:#94a3b8;">Recirculating Gutter Systems</span></td>
+              <td style="padding: 12px 14px;">Selective root exclusion of $	ext{Na}^+$ and $	ext{Cl}^-$ concentrates ballast ions in recycled leachate, raising non-nutritive osmotic EC.</td>
+              <td style="padding: 12px 14px;">Drain $	ext{Na}^+ &gt; 6.0	ext{ mmol/L}$ (Strawberry/Rose) or $&gt; 10.0	ext{ mmol/L}$ (Tomato)</td>
+              <td style="padding: 12px 14px;">Blend rainwater/RO permeate ($EC &lt; 0.1	ext{ mS/cm}$) into makeup water and execute partial leachate discharge when $	ext{Na}^+$ ceiling hits.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style="font-family: 'Outfit', sans-serif; font-size: 1.15rem; color: #34d399; margin: 18px 0 8px;">🔬 The 3-Layer Root-Cause Audit Protocol (Meister Standard)</h3>
+      <p style="margin-bottom: 12px;">Whenever an anomaly appears in a commercial bay, execute this sequential audit before altering fertilizer recipes or spraying crop protection agents:</p>
+      <ol style="padding-left: 20px; margin-bottom: 14px;">
+        <li><strong>Verify Sensor Calibration &amp; Aspirated Placement:</strong> Check whether the climate computer's Pt1000/capacitive RH box is aspirated (fan running at 3 m/s) and positioned at the active apical meristem height. An unshielded sensor in direct sunlight reads $3	ext{–}5	ext{ °C}$ too high, tricking the computer into over-ventilating and inducing severe midday VPD stress.</li>
+        <li><strong>Inspect Daily Drain Volume, EC &amp; pH Differential:</strong> Compare drip inflow EC/pH against slab leachate EC/pH every morning 3 hours after sunrise. If drain EC exceeds inflow EC by more than $+1.2	ext{ mS/cm}$ while drain percentage falls below $18\%$, the crop is under osmotic water stress regardless of aerial humidity.</li>
+        <li><strong>Audit Nocturnal Screen &amp; Pipe Transients:</strong> Overlay 5-minute time-series graphs of thermal screen position, rail pipe temperature, and indoor RH during the 2 hours following sunrise. Sudden screen retraction drops cold attic air ($10	ext{ °C}$) onto warm foliage ($19	ext{ °C}$), causing instantaneous thermal shock and condensation.</li>
+      </ol>
+      <p style="font-size: 0.86rem; color: #94a3b8; margin: 0;"><strong>Authored &amp; Verified by Inwoo Hwang</strong> — Horticultural &amp; CEA Systems Engineer, Inwoovation Lab.</p>
+    </section>
+    <!-- TROUBLE_DEEP_DIVE_END -->
 
     <!-- AdSense High-Impact In-Feed Display Unit -->
     <div style="margin: 30px auto 10px; max-width: 900px; overflow: hidden; border-radius: 12px; background: rgba(15, 23, 42, 0.6); padding: 12px; border: 1px solid rgba(255,255,255,0.08);">

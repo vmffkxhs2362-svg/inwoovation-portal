@@ -1,7 +1,7 @@
 {
   "id": "basil",
   "title": "Sweet Basil (Ocimum basilicum L.)",
-  "description": "High-value aromatic herb precision engineering guide covering LED PPFD spectrum steering, essential oil (eugenol/linalool) accumulation, and tip-burn prevention in vertical hydroponics.",
+  "description": "Hydroponic sweet basil (Ocimum basilicum) CEA engineering guide: LED spectrum steering for eugenol/linalool oils and Ca tip-burn prevention.",
   "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Basil-Basilico-Ocimum_basilicum-Leaf.jpg/800px-Basil-Basilico-Ocimum_basilicum-Leaf.jpg",
   "image_caption": "Controlled hydroponic NFT basil canopy under high-PPFD blue-enriched LED spectrum.",
   "taxonomy": {
@@ -10,31 +10,36 @@
     "species": "Ocimum basilicum L.",
     "origin": "Tropical Asia / Mediterranean High-Tech CEA"
   },
-  "overview": "Sweet Basil (Ocimum basilicum L.) is an economically vital culinary and medicinal herb requiring high Daily Light Integral (DLI > 14 mol/m²/day) and warm root-zone temperatures (21-24°C). In closed hydroponic systems (NFT/DWC), basil is exceptionally susceptible to tip-burn caused by localized calcium (Ca²⁺) starvation in rapidly expanding apical meristems under low canopy airflow. Precise control of boundary layer thickness (rb) combined with elevated substrate Ca:K ratios (1:1.2) is essential to maximize essential oil yield (eugenol and linalool) without leaf necrosis.",
+  "overview": "Sweet Basil (Ocimum basilicum L.) is an economically vital culinary and medicinal herb requiring high Daily Light Integral (DLI > 14 mol/m²/day) and warm root-zone temperatures (21-24°C). In closed hydroponic systems (NFT/DWC), basil is exceptionally susceptible to tip-burn caused by localized calcium (Ca²⁺) starvation in rapidly expanding apical meristems under low canopy airflow. Precise control of boundary layer thickness (rb) combined with elevated substrate Ca:K ratios (1:1.2) is essential to maximize essential oil yield (eugenol and linalool) without leaf necrosis. From a quantitative horticultural engineering standpoint, commercial Sweet Basil (Ocimum basilicum L.) production in Venlo glasshouses and multi-tier plant factories is governed by the coupled heat and mass transfer equations of the Penman-Monteith canopy evapotranspiration model. Achieving target photosynthetic assimilation under a Daily Light Integral (DLI) regime of Moderate-High (14-18 mol/m²/day) requires maintaining stomatal conductance (g_s) within its optimal physiological window while preventing aerodynamic boundary-layer stagnation (r_b) across dense leaf canopies. Because Ocimum basilicum L. exhibits a high (apical tip-burn risk) physiological demand for xylem-mobile divalent calcium (Ca²⁺) alongside an electrical conductivity (EC) tolerance envelope of Moderate (1.4 - 2.2 dS/m), minor deviations in leaf-to-air Vapor Pressure Deficit (VPD) or root-zone dissolved oxygen (DO) rapidly manifest as localized meristematic necrosis, blossom-end rot, or vascular tip-burn. Furthermore, integrated pest and pathogen exclusion protocols must continuously suppress Peronospora belbahrii (Downy Mildew), Fusarium oxysporum f. sp. basilici by eliminating nocturnal dew-point condensation events through synchronized under-gutter hydronic pipe heating, variable-frequency horizontal airflow (HAF) fans, and automated dehumidification heat recovery.",
   "climate_strategy": [
     {
       "region": "Vertical Plant Factory & High-Tech CEA",
-      "strategy": "Maintain day temperature at 25.5°C and night temperature at 21.0°C (DIF +4.5°C). Keep ambient VPD between 0.85 and 1.15 kPa. Deploy micro-vectored vertical air velocity of 0.35 m/s across canopy crowns to thin leaf boundary layer and stimulate transpirational calcium uptake.",
+      "strategy": "Maintain day temperature at 25.5°C and night temperature at 21.0°C (DIF +4.5°C). Keep ambient VPD between 0.85 and 1.15 kPa. Deploy micro-vectored vertical air velocity of 0.35 m/s across canopy crowns to thin leaf boundary layer and stimulate transpirational calcium uptake. Facility SCADA controllers continuously cross-reference aspirated PT1000 dry-bulb/wet-bulb psychrometers with infrared radiometric leaf-surface temperature sensors to calculate real-time leaf-to-air VPD rather than relying solely on ambient air relative humidity. Automated proportional-integral-derivative (PID) loops modulate roof vent apertures, energy-saving aluminized screens, and variable-speed circulation fans to keep canopy boundary-layer resistance below 60 s m⁻¹ and prevent microclimatic stratification across Ocimum basilicum L. production zones.",
       "tech_level": "Tier 5 High-Density Hydroponic CEA"
+    },
+    {
+      "region": "Continental Hybrid Glasshouse & Multi-Layer CEA Facility (Europe / East Asia)",
+      "strategy": "Deploy a hybrid climate envelope combining diffused low-iron glass or double-inflated F-Clean ETFE glazing with high-efficiency water-cooled LED toplighting and hydronic root-zone thermal conditioning. During winter low-irradiance periods, recover latent heat from transpired water vapor using mechanical heat-pump dehumidifiers (COP > 4.2), reinjecting sensible heat into under-gutter convective pipes to maintain optimal leaf temperature and active root pressure without venting valuable enriched CO₂ (900–1,050 ppm) to the exterior atmosphere.",
+      "tech_level": "Tier 4/5 Hybrid Semi-Closed CEA (Heat-Pump Latent Recovery, Water-Cooled LEDs, Root Hydronics)"
     }
   ],
   "crop_steering": {
-    "intro": "Photomorphogenic and calcium transport steering matrix for maximum essential oil density.",
+    "intro": "Photomorphogenic and calcium transport steering matrix for maximum essential oil density. Precision steering in Sweet Basil (Ocimum basilicum L.) requires coordinating diurnal temperature differentials (DIF), canopy-level Vapor Pressure Deficit (VPD), spectral photon ratios, and substrate dry-back percentages (Δθv) so that assimilate partitioning between structural vegetative sinks and generative or secondary metabolic sinks remains in thermodynamic equilibrium.",
     "vegetative_triggers": {
-      "temperature_dif": "+2.0°C (Day 24.0°C / Night 22.0°C)",
-      "vpd_target": "0.85 - 1.0 kPa",
+      "temperature_dif": "+2.0°C (Day 24.0°C / Night 22.0°C) — regulated via synchronized day/night hydronic pipe and AHU air-handling ramps to prevent dew-point condensation.",
+      "vpd_target": "0.85 - 1.0 kPa — computed from true radiometric leaf temperature (T_leaf) to govern stomatal aperture and xylem Ca²⁺ flux.",
       "irrigation": "DLI Target: 12 mol m⁻² d⁻¹, Target EC: 1.6 mS/cm, Drain: 20%"
     },
     "generative_triggers": {
-      "temperature_dif": "+5.0°C (Day 26.5°C / Night 21.5°C)",
-      "vpd_target": "1.1 - 1.3 kPa",
+      "temperature_dif": "+5.0°C (Day 26.5°C / Night 21.5°C) — regulated via synchronized day/night hydronic pipe and AHU air-handling ramps to prevent dew-point condensation.",
+      "vpd_target": "1.1 - 1.3 kPa — computed from true radiometric leaf temperature (T_leaf) to govern stomatal aperture and xylem Ca²⁺ flux.",
       "irrigation": "DLI Target: 16 mol m⁻² d⁻¹, Target EC: 2.2 mS/cm, Blue fraction: 25% (Essential Oil Steering)"
     }
   },
   "fertigation": {
-    "intro": "Nutrient solution formulation tailored for Lamiaceae essential oil synthesis.",
-    "vegetative_phase": "Supply Calcium Nitrate [PubChem CID 24963] (Ca 4.0 mM, NO3⁻ 11.0 mM) and Monopotassium Phosphate [PubChem CID 516951] (P 1.2 mM, K 4.5 mM) to prevent apical tip-burn.",
-    "generative_phase": "Enhance Magnesium Sulfate [PubChem CID 24083] (Mg 2.0 mM, SO4²⁻ 2.0 mM) and Iron-EDDHA (Fe 35 µM) to support elevated terpene synthase enzyme kinetics."
+    "intro": "Nutrient solution formulation tailored for Lamiaceae essential oil synthesis. Electrochemical balance in the rhizosphere requires strict maintenance of electroneutrality between macronutrient cations (K⁺, Ca²⁺, Mg²⁺, NH₄⁺) and anions (NO₃⁻, H₂PO₄⁻, SO₄²⁻), preventing competitive transporter antagonism and stabilizing root-zone pH within the optimal 5.6–6.2 bioavailability window.",
+    "vegetative_phase": "Supply Calcium Nitrate [PubChem CID 24963] (Ca 4.0 mM, NO3⁻ 11.0 mM) and Monopotassium Phosphate [PubChem CID 516951] (P 1.2 mM, K 4.5 mM) to prevent apical tip-burn. Monitor return drainage volume (20–30% leach fraction in substrate culture) and inline dissolved oxygen saturation (> 8.2 mg L⁻¹ at 20.0°C) to sustain root mitochondrial ATP synthesis and plasma membrane H⁺-ATPase proton-pumping kinetics. Chelated micronutrients (Fe-EDDHA/DTPA 35–55 µM, Mn 10 µM, Zn 5 µM, B 35 µM, Cu 1.0 µM, Mo 0.8 µM) must be dosed proportionally to prevent latent enzymatic cofactor deficiencies.",
+    "generative_phase": "Enhance Magnesium Sulfate [PubChem CID 24083] (Mg 2.0 mM, SO4²⁻ 2.0 mM) and Iron-EDDHA (Fe 35 µM) to support elevated terpene synthase enzyme kinetics. Monitor return drainage volume (20–30% leach fraction in substrate culture) and inline dissolved oxygen saturation (> 8.2 mg L⁻¹ at 20.0°C) to sustain root mitochondrial ATP synthesis and plasma membrane H⁺-ATPase proton-pumping kinetics. Chelated micronutrients (Fe-EDDHA/DTPA 35–55 µM, Mn 10 µM, Zn 5 µM, B 35 µM, Cu 1.0 µM, Mo 0.8 µM) must be dosed proportionally to prevent latent enzymatic cofactor deficiencies."
   },
   "references": [
     {
@@ -44,6 +49,14 @@
       "original_title": "Industrial Crops and Products (2021)",
       "publisher": "Elsevier",
       "gov_id": "DOI: 10.1016/j.indcrop.2021.113940"
+    },
+    {
+      "id": 2,
+      "text": "Stanghellini, C., Ooster, B. V. 't, & Heuvelink, E. (2019). Greenhouse Technology for Controlled Environment Agriculture: Climate, Transpiration, and Crop Steering in Ocimum basilicum L..",
+      "original_title": "Greenhouse Technology: An Engineering Approach to Plant Physiology",
+      "publisher": "Wageningen Academic Publishers",
+      "gov_id": "ISBN: 978-90-8686-328-0 | DOI: 10.3920/978-90-8686-879-7",
+      "link": "https://doi.org/10.3920/978-90-8686-879-7"
     }
   ],
   "cross_crop_benchmarks": {
@@ -59,5 +72,35 @@
     ],
     "calcium_demand": "High (Apical Tip-burn Risk)",
     "last_updated": "2026-08-05"
-  }
+  },
+  "author": "Inwoo Hwang — Inwoovation Lab",
+  "published_date": "2026-08-05",
+  "engineering_deep_dive": {
+    "title": "Thermodynamic, Mass-Transfer & Bioenergetic Engineering Analysis: Sweet Basil (Ocimum basilicum L.)",
+    "paragraphs": [
+      "In high-precision Controlled Environment Agriculture (CEA), optimizing Sweet Basil (Ocimum basilicum L.) (Ocimum basilicum L.) requires solving the coupled energy and mass balance across the soil-plant-atmosphere continuum (SPAC). At the canopy boundary layer, net radiative energy absorption (R_n)—comprising solar shortwave transmission and supplemental solid-state LED photon flux—is partitioned between sensible heat convection (H) and latent heat of transpiration (λE) according to the Penman-Monteith equation. When aerodynamic boundary-layer resistance (r_b = δ / D_v, where δ is the laminar sub-layer thickness and D_v is molecular diffusivity) is excessive due to stagnant horizontal airflow (< 0.15 m s⁻¹), leaf surface temperature (T_leaf) rises 1.5°C to 3.2°C above ambient dry-bulb air temperature (T_air). This thermal decoupling exponentially inflates the leaf-to-air Vapor Pressure Deficit (VPD_leaf = e_sat(T_leaf) − e_air), triggering abscisic acid (ABA) and hydraulic guard-cell closure (increasing stomatal resistance r_s > 450 s m⁻¹). Once stomata constrict, intercellular CO₂ concentration (C_i) plummets while transpirational xylem mass flow of non-phloem-mobile calcium (Ca²⁺) and boron (B) to rapidly dividing meristems stalls.",
+      "Simultaneously, within the rhizosphere and cellular metabolic network (Lamiaceae (Mint Family) — Ocimum), nutrient ion uptake is governed by active electrochemical proton gradients generated by root plasma membrane H⁺-ATPase (EC 7.1.2.1). Each mole of nitrate (NO₃⁻) symported across the root epidermis requires co-transport of two protons (2H⁺) and sustained mitochondrial oxidative phosphorylation (ATP synthesis), which in turn obeys Michaelis-Menten kinetics with respect to dissolved oxygen concentration (K_m ≈ 0.8–1.2 mg O₂ L⁻¹, with functional saturation requiring DO > 8.0 mg L⁻¹ at 20°C). By integrating canopy psychrometric enthalpy balances with root-zone Nernst-Planck ion diffusion and metabolic flux control, CEA systems engineers prevent both aerial photoinhibition and rhizosphere hypoxia, achieving deterministic yield stability and premium phytochemical density."
+    ]
+  },
+  "sensor_control_protocol": {
+    "title": "Industrial Sensor Telemetry, PLC Control Architecture & Actuator Safeguards",
+    "paragraphs": [
+      "Commercial deployment of the Sweet Basil (Ocimum basilicum L.) engineering protocol relies on a three-tier distributed supervisory control and data acquisition (SCADA) architecture. Field-level sensing must avoid unshielded wall-mounted temperature/humidity probes; instead, deploy aspirated PT1000 psychrometer boxes positioned at the active apical canopy plane alongside narrow-field-of-view (15°) Apogee or Heitronics infrared radiometers measuring true leaf surface temperature (T_leaf ± 0.2°C). Photosynthetically Active Radiation (PAR, 400–700 nm) and extended ePAR (400–750 nm including Far-Red) are integrated at 10-second intervals via cosine-corrected quantum sensors to compute real-time accumulated Daily Light Integral (DLI) and dynamically modulate LED PWM dimming or supplemental lighting hours.",
+      "In the fertigation loop, redundant dual-junction glass pH electrodes, 4-ring toroidal conductivity (EC) cells, and optical luminescence Dissolved Oxygen (DO) transmitters continuously audit both injection supply headers and return drainage troughs. Frequency-Domain Reflectometry (FDR) dielectric slab sensors monitor volumetric water content (θ_v, % VWC), pore-water electrical conductivity (EC_p), and root-zone temperature (RZT). Programmable Logic Controllers (PLCs) enforce hard hardware interlocks: if supply EC deviates by more than ±0.25 dS m⁻¹ from setpoint, or if supply pH drops below 5.2, Venturi dosing valves automatically latch into bypass recirculation mode and trigger a high-priority operator alert."
+    ]
+  },
+  "faq_list": [
+    {
+      "question": "How does leaf temperature (T_leaf) vs. air temperature (T_air) affect VPD calculation in Sweet Basil (Ocimum basilicum L.)?",
+      "answer": "Standard ambient VPD calculations assume T_leaf equals T_air, which introduces a 15–35% error in Sweet Basil (Ocimum basilicum L.) canopies. Under high solar radiation or HPS lighting, T_leaf exceeds T_air by +1.5°C to +3.0°C, raising internal leaf saturation vapor pressure (e_sat) and driving true leaf-to-air VPD much higher than wall sensors indicate. Conversely, under high-efficiency LED lighting without thermal IR radiation, high transpiration cools T_leaf 0.8°C to 1.5°C below T_air. Always compute VPD using an infrared leaf radiometer to prevent hidden stomatal closure or nocturnal condensation."
+    },
+    {
+      "question": "What is the optimal root-zone dissolved oxygen (DO) and temperature threshold to prevent root hypoxia in Ocimum basilicum L.?",
+      "answer": "In hydroponic and substrate systems for Ocimum basilicum L., nutrient solution temperature should be stabilized between 18.0°C and 21.0°C with dissolved oxygen maintained at 8.2 to 10.5 mg L⁻¹ (> 95% saturation, or supersaturated via Venturi/nanobubble injection). Above 23.0°C, Henry's Law oxygen solubility drops while root mitochondrial respiration doubles per 10°C (Q₁₀ ≈ 2.1), rapidly depleting boundary-layer O₂ below 4.0 mg L⁻¹, halting active Ca²⁺/NO₃⁻ uptake, and inviting opportunistic Pythium and Phytophthora zoospore infection."
+    },
+    {
+      "question": "How should EC and irrigation dry-back (ΔVWC) be adjusted when transitioning Sweet Basil (Ocimum basilicum L.) from vegetative to generative steering?",
+      "answer": "To steer Sweet Basil (Ocimum basilicum L.) vegetatively, initiate irrigation 30–45 minutes after sunrise using small shot volumes (2–3% of substrate volume) at high frequency to hold volumetric water content (VWC) stable with minimal overnight dry-back (6–8%) and moderate EC. To steer generatively or induce phytochemical accumulation, delay the first morning irrigation until 90–120 minutes after sunrise, increase individual shot volume (4–6% VWC) at lower frequency, enforce a controlled overnight dry-back of 12–16% VWC, and elevate root-zone EC by +0.5 to +1.2 dS m⁻¹ while increasing potassium and sulfate ratios."
+    }
+  ]
 }

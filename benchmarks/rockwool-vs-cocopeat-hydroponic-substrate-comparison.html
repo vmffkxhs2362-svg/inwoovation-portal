@@ -16,23 +16,60 @@
      gtag('config', 'G-V4RYJBMEDE');
   </script>
   <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8597809158257497" crossorigin="anonymous"></script>
+  <!-- Open Graph & Twitter Card -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://inwoovation.com/benchmarks/rockwool-vs-cocopeat-hydroponic-substrate-comparison.html">
+  <meta property="og:title" content="Rockwool vs Cocopeat Hydroponic Substrate Agronomic & Cost Benchmark | Inwoovation Lab">
+  <meta property="og:description" content="Agronomic comparison between Grodan Rockwool stone wool slabs and Cocopeat (coir) substrate. Water retention curves, cation exchange capacity (CEC), steerability, and disposal cost.">
+  <meta property="og:image" content="https://inwoovation.com/og-cover.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Rockwool vs Cocopeat Hydroponic Substrate Agronomic & Cost Benchmark | Inwoovation Lab">
+  <meta name="twitter:description" content="Agronomic comparison between Grodan Rockwool stone wool slabs and Cocopeat (coir) substrate. Water retention curves, cation exchange capacity (CEC), steerability, and disposal cost.">
+  <meta name="twitter:image" content="https://inwoovation.com/og-cover.jpg">
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "TechArticle",
-    "headline": "Rockwool vs Cocopeat Substrate Comparison Benchmark",
-    "url": "https://inwoovation.com/benchmarks/rockwool-vs-cocopeat-hydroponic-substrate-comparison.html",
-    "description": "Agronomic comparison between horticultural stone wool slabs and buffered coco coir: CEC dynamics, capillary action, and water retention curves.",
-    "author": {
-      "@type": "Person",
-      "name": "Inwoo Park",
-      "jobTitle": "Horticultural Engineer & Master Craftsman"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Inwoovation Lab"
-    }
+    "@graph": [
+      {
+        "@type": "TechArticle",
+        "headline": "Rockwool vs Cocopeat Substrate Comparison Benchmark",
+        "url": "https://inwoovation.com/benchmarks/rockwool-vs-cocopeat-hydroponic-substrate-comparison.html",
+        "description": "Agronomic comparison between horticultural stone wool slabs and buffered coco coir: CEC dynamics, capillary action, and water retention curves.",
+        "author": {
+          "@type": "Person",
+          "name": "Inwoo Hwang",
+          "jobTitle": "Horticultural & CEA Systems Engineer"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Inwoovation Lab",
+          "url": "https://inwoovation.com"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Which substrate is superior for high-wire tomatoes and cucumbers under winter LED lighting?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Horticultural stone wool (Rockwool) is preferred for high-wire lit tomato and cucumber crops because its zero CEC and steep pF water release curve allow precise hour-by-hour EC and VWC steering via TDR sensors."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "When does Cocopeat outperform Rockwool?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Cocopeat is favored for table-top strawberries, cut roses, blueberries, and semi-arid greenhouses where summer radiation spikes are intense, pump interruptions pose desiccation risks, or municipal regulations impose surcharges on mineral wool disposal."
+            }
+          }
+        ]
+      }
+    ]
   }
   </script>
   
@@ -112,6 +149,16 @@
       text-transform: uppercase;
       font-weight: 700;
     }
+    .bench-table { width: 100%; border-collapse: collapse; margin: 18px 0; font-size: 0.88rem; background: rgba(15, 23, 42, 0.65); border-radius: 12px; overflow: hidden; }
+    .bench-table th, .bench-table td { padding: 12px 14px; text-align: left; border-bottom: 1px solid rgba(255, 255, 255, 0.08); color: #cbd5e1; vertical-align: top; }
+    .bench-table th { background: rgba(56, 189, 248, 0.14); color: #38bdf8; font-weight: 700; font-family: 'Outfit', sans-serif; }
+    .bench-table tr:last-child td { border-bottom: none; }
+    .bench-prose h2 { font-family: 'Outfit', sans-serif; font-size: 1.4rem; color: #f8fafc; margin: 0 0 14px; }
+    .bench-prose h3 { font-family: 'Outfit', sans-serif; font-size: 1.1rem; color: #38bdf8; margin: 18px 0 8px; }
+    .bench-prose p, .bench-prose li { color: #cbd5e1; font-size: 0.96rem; line-height: 1.8; }
+    .eeat-bench-box { background: linear-gradient(135deg, rgba(15, 23, 42, 0.88), rgba(30, 41, 59, 0.78)); border: 1px solid rgba(56, 189, 248, 0.28); border-radius: 16px; padding: 22px 26px; margin-top: 24px; }
+    .eeat-bench-box h3 { font-family: 'Outfit', sans-serif; font-size: 1.05rem; color: #f8fafc; margin: 0 0 8px; }
+    .eeat-bench-box p { color: #94a3b8; font-size: 0.9rem; line-height: 1.65; margin: 0; }
   </style>
 </head>
 <body>
@@ -161,6 +208,88 @@
           </div>
         </div>
       </div>
+      <!-- BENCH_DEEP_DIVE_START -->
+      <div class="bench-card bench-prose">
+        <h2>🌱 Rhizosphere Physics: Water Retention Curves (pF), Cation Exchange Capacity &amp; Generative Steerability</h2>
+        <p>In high-tech soilless cultivation, the root-zone substrate functions as a dynamic hydraulic and chemical reactor. Commercial growers primarily select between two industry-dominant media: <strong>horticultural stone wool (Rockwool, e.g., Grodan GT Master / Prestige)</strong> manufactured by spinning molten basaltic diabase rock and limestone at $1,500\text{ °C}$ with a hydrophilic binder, and <strong>organic coco coir (Cocopeat)</strong> derived from the mesocarp pith and fibers of <em>Cocos nucifera</em> husks. While both media achieve comparable maximum yields under expert management, their physical hydraulic conductivity curves ($K(\theta)$) and surface electrochemistry require fundamentally different irrigation and fertigation protocols.</p>
+
+        <h3>1. Matric Potential (pF Curve) &amp; Volumetric Water Content (VWC) Dynamics</h3>
+        <p>Water availability in porous hydroponic slabs is governed by matric suction tension, expressed in centimeters of water head ($\text{cm H}_2\text{O}$) or logarithmic $pF = \log_{10}(|\psi_m|)$. In a standard $10\text{ cm}$ tall stone wool slab, total porosity exceeds <strong>95–97%</strong>. Between container capacity ($pF\text{ }1.0$, $-10\text{ cm}$ suction, where VWC is $80\text{–}85\%$ and Air-Filled Porosity AFP is $15\text{–}17\%$) and $pF\text{ }1.5$ ($-32\text{ cm}$ suction, VWC $\approx 25\%$), stone wool releases over <strong>55% of its total volume as easily available water</strong> with almost zero matric resistance. This steep retention curve enables rapid, deterministic overnight dry-backs ($15\%$ to $35\%$ VWC drop) and instant re-saturation upon morning drip pulses.</p>
+        <p>Conversely, cocopeat combines macroporous short fibers (which provide oxygen channels) with microporous spongy pith particles. While cocopeat holds high water content at saturation ($65\text{–}75\%$ VWC with $12\text{–}22\%$ AFP depending on chip-to-pith grading), a larger fraction of its water is held tightly inside internal pith micropores at higher tensions ($pF\text{ }1.7\text{–}2.2$). Consequently, cocopeat exhibits a flatter moisture release curve: it dries down more gradually and resists rapid osmotic swings, acting as a forgiving hydraulic buffer in hot climates but offering slower vegetative-to-generative steering responsiveness during low-light winters.</p>
+
+        <h3>2. Comprehensive Physical, Chemical &amp; Economic Benchmark Matrix</h3>
+        <div style="overflow-x:auto;">
+          <table class="bench-table">
+            <thead>
+              <tr>
+                <th>Rhizosphere Parameter</th>
+                <th>Horticultural Stone Wool (Rockwool)</th>
+                <th>Buffered Cocopeat (70:30 Pith/Chip Coir)</th>
+                <th>Precision Crop Steering &amp; Operational Implication</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Bulk Density &amp; Total Porosity</strong></td>
+                <td>55–75 kg/m³ | 95–97% Total Porosity</td>
+                <td>70–95 kg/m³ | 88–93% Total Porosity</td>
+                <td>Rockwool provides slightly higher initial total pore volume and uniform vertical fiber orientation.</td>
+              </tr>
+              <tr>
+                <td><strong>Operative VWC Working Range</strong></td>
+                <td>45% – 82% VWC (Wide 37% Steerable Span)</td>
+                <td>48% – 72% VWC (Narrower 24% Working Span)</td>
+                <td>Rockwool allows deeper generative dry-backs without crossing into permanent wilting matric tension.</td>
+              </tr>
+              <tr>
+                <td><strong>Cation Exchange Capacity (CEC)</strong></td>
+                <td>0 meq / 100g (Chemically Inert)</td>
+                <td>60 – 100 meq / 100g (Active Lignin-Cellulose Sites)</td>
+                <td>Rockwool pore water equals drip feed immediately; Cocopeat adsorbs Ca²⁺/Mg²⁺ and releases K⁺/Na⁺ if unbuffered.</td>
+              </tr>
+              <tr>
+                <td><strong>Initial pH &amp; Pre-Planting Prep</strong></td>
+                <td>pH 6.2–6.8 (Requires pH 5.5 nutrient wetting)</td>
+                <td>pH 5.6–6.3 (Requires Calcium Nitrate pre-buffering)</td>
+                <td>Unbuffered raw coir locks out Calcium and causes early-season Blossom-End Rot; always buy RHP-certified washed/buffered coir.</td>
+              </tr>
+              <tr>
+                <td><strong>Irrigation Pulse Shot Size &amp; Frequency</strong></td>
+                <td>2.5–4.0% of slab volume/shot (e.g., 100 mL); fast drain response</td>
+                <td>3.5–6.0% of slab volume/shot; capillary wicking across bag</td>
+                <td>Cocopeat requires slightly larger or less frequent shots in winter to prevent root hypoxia from pith over-saturation.</td>
+              </tr>
+              <tr>
+                <td><strong>Structural Longevity &amp; Reuse</strong></td>
+                <td>1–2 Cropping Years (Steam sterilization possible once)</td>
+                <td>2–3 Cropping Years (Gradual pith decomposition lowers AFP)</td>
+                <td>Over multi-year berry/rose cycles, coir requires 30–40% crushed husk chips to prevent slumping and root asphyxiation.</td>
+              </tr>
+              <tr>
+                <td><strong>Annualized Cost &amp; End-of-Life Disposal</strong></td>
+                <td>~$4.20–$5.50 / m²/yr + Recycling/Landfill fee ($40–$90/t)</td>
+                <td>~$3.40–$4.60 / m²/yr + Zero disposal cost (Soil amendment)</td>
+                <td>Cocopeat eliminates mineral waste disposal fees and can be incorporated into open-field agricultural soils post-crop.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>3. Electrochemistry of Coir Cation Exchange &amp; Calcium Buffering</h3>
+        <p>Because coconut palms grow in coastal tropical soils rich in sodium ($\text{Na}^+$) and potassium ($\text{K}^+$), raw coconut mesocarp pith arrives with its negatively charged uronic acid and phenolic exchange sites saturated with monovalent $\text{Na}^+$ and $\text{K}^+$ ions. In accordance with the <strong>Lyotropic Cation Replacement Series</strong> ($\text{Ca}^{2+} > \text{Mg}^{2+} > \text{K}^+ > \text{NH}_4^+ > \text{Na}^+$), divalent calcium ($\text{Ca}^{2+}$) in a grower's hydroponic nutrient solution will aggressively displace monovalent $\text{Na}^+$ and $\text{K}^+$ from the coir matrix. If an unbuffered cocopeat bag is planted directly, the substrate strips $\text{Ca}^{2+}$ and $\text{Mg}^{2+}$ out of the root-zone solution for the first 4–6 weeks while dumping toxic $\text{Na}^+$ and excess $\text{K}^+$ into the leachate. Industrial RHP-grade cocopeat is pre-soaked in a concentrated $17\text{ mmol/L } \text{Ca(NO}_3)_2$ bath for 24–48 hours and flushed with clean water ($EC < 0.5\text{ mS/cm}$) before compression.</p>
+
+        <h3>4. Frequently Asked Agronomic Questions (Rockwool vs. Cocopeat)</h3>
+        <p><strong>Which substrate is superior for high-wire tomatoes and cucumbers under winter LED lighting?</strong><br>
+        Horticultural stone wool (Rockwool) is generally preferred for high-wire lit tomato and cucumber crops in Northern Europe and North America because its zero CEC and steep $pF$ curve allow precise hour-by-hour EC and VWC steering via TDR sensors (e.g., Grodan GroSens), enabling growers to trigger generative fruit set during dark winter weeks.</p>
+        <p><strong>When does Cocopeat outperform Rockwool?</strong><br>
+        Cocopeat is widely favored for table-top strawberries, cut roses, blueberries, and unheated or semi-arid greenhouses (such as Spain, Mexico, and Korea) where summer radiation spikes are intense, power/pump interruptions pose desiccation risks, or municipal landfill regulations impose heavy surcharges on mineral wool disposal.</p>
+
+        <div class="eeat-bench-box">
+          <h3>👨‍🔬 Root-Zone Physics &amp; Fertigation Review — Inwoovation Lab</h3>
+          <p><strong>Authored &amp; Verified by Inwoo Hwang</strong> — Horticultural &amp; CEA Systems Engineer at Inwoovation Lab. Substrate matric retention curves ($pF$), Cation Exchange Capacity (CEC) stoichiometry, and RHP quality standards are grounded in Wageningen UR Glasshouse Horticulture research and DIN EN 13041 physical substrate testing methods.</p>
+        </div>
+      </div>
+      <!-- BENCH_DEEP_DIVE_END -->
     </div>
 
     <!-- Legal Disclaimer -->

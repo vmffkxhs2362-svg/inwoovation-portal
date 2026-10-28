@@ -20,6 +20,10 @@
     <meta property="og:title" content="Global Ag-Climate Atlas: 40 Greenhouse Climate Hubs | Inwoovation Lab">
     <meta property="og:description" content="Compare 40 commercial greenhouse regions by latitude, Köppen climate class and seasonal Daily Light Integral (DLI) to plan screens, lighting and heating.">
     <meta property="og:image" content="https://inwoovation.com/og-cover.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Global Ag-Climate Atlas: 40 Greenhouse Climate Hubs | Inwoovation Lab">
+    <meta name="twitter:description" content="Compare 40 commercial greenhouse regions by latitude, Köppen climate class and seasonal Daily Light Integral (DLI) to plan screens, lighting and heating.">
+    <meta name="twitter:image" content="https://inwoovation.com/og-cover.jpg">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8597809158257497" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -43,6 +47,9 @@
         .atlas-card dt { color: #94a3b8; font-size: 0.72rem; text-transform: uppercase; letter-spacing: .04em; }
         .atlas-card dd { color: #f8fafc; font-weight: 700; font-family: 'Outfit', sans-serif; }
         .atlas-empty { display: none; text-align: center; color: #94a3b8; margin-top: 24px; }
+        .atlas-methodology { margin-top: 48px; background: rgba(30,41,59,0.6); border: 1px solid rgba(255,255,255,0.08); border-radius: 18px; padding: 32px; color: #cbd5e1; line-height: 1.8; }
+        .atlas-methodology h2 { font-family: 'Outfit', sans-serif; color: #f8fafc; font-size: 1.4rem; margin-bottom: 14px; }
+        .atlas-methodology h3 { font-family: 'Outfit', sans-serif; color: #38bdf8; font-size: 1.1rem; margin: 20px 0 8px; }
         footer { text-align: center; color: #94a3b8; font-size: 0.85rem; padding: 32px 16px; }
         footer a { color: #94a3b8; }
     </style>
@@ -52,6 +59,11 @@
   "@type": "CollectionPage",
   "name": "Global Ag-Climate Atlas for Greenhouse Engineering",
   "url": "https://inwoovation.com/climate/",
+  "author": {
+    "@type": "Person",
+    "name": "Inwoo Hwang",
+    "jobTitle": "Horticultural & CEA Systems Engineer"
+  },
   "publisher": {
     "@type": "Organization",
     "name": "Inwoovation Lab",
@@ -1800,6 +1812,16 @@
         </a>
     </section>
     <p class="atlas-empty" id="atlas-empty">No hub matches that filter.</p>
+
+    <section class="atlas-methodology">
+        <h2>🌍 Comparative Agro-Climatology &amp; CEA Engineering Methodology</h2>
+        <p>Designing a commercially viable controlled environment agriculture (CEA) facility requires matching structural typology—such as high-tech Dutch Venlo glasshouses, semi-closed positive-pressure houses, or Mediterranean Parral/Raspa y Amagado polyethylene structures—to local solar radiation and psychrometric boundary conditions. This Global Ag-Climate Atlas synthesizes <strong>40 major horticultural clusters</strong> spanning from 56.0°N in Northern Europe to 43.5°S in Oceania.</p>
+        <h3>1. Solar Daily Light Integral (DLI) &amp; Structural Transmittance</h3>
+        <p>Outdoor Daily Light Integral quantifies the cumulative photosynthetically active radiation (PAR, 400–700 nm) delivered per square meter per day (mol/m²/day). Because greenhouse superstructure frames, gutters, glazing panes, and retractable screen packages intercept 22–35% of incident photons, engineers multiply outdoor DLI by the structural hemispherical transmittance coefficient ($\tau_{\text{PAR}} \approx 0.65\text{–}0.78$) to determine true canopy DLI. High-latitude maritime and continental zones (e.g., Westland at 52.0°N, Leamington at 42.1°N, Hokkaido at 43.1°N) experience winter outdoor minimums of 4–10 mol/m²/day, requiring 160–280 µmol/m²/s of high-efficacy LED assimilation lighting and double aluminum energy screens to sustain fruiting crops.</p>
+        <h3>2. Psychrometric Enthalpy, Bowen Ratio &amp; Cooling Selection</h3>
+        <p>In arid and semi-arid subtropics (e.g., Almería, Culiacán, Yuma, Riyadh, Dalby), summer DLI exceeds 50–60 mol/m²/day while ambient wet-bulb depression remains large ($\Delta T_{wb} > 10\text{ °C}$). Here, evaporative pad-and-fan systems or 70–100 bar high-pressure fogging achieve high adiabatic cooling efficiency. Conversely, in humid subtropical and tropical monsoon zones (e.g., Toyohashi, Gimje, Kunming, Cameron Highlands, Dalat), elevated ambient vapor pressure limits evaporative cooling potential, necessitating tall gutter heights (6.0–7.0 m), continuous ridge buoyancy ventilation, infrared-reflective shading screens, and active mechanical dehumidification.</p>
+        <p style="margin-top:16px; font-size:0.9rem; color:#94a3b8;"><strong>Curated &amp; Verified by Inwoo Hwang</strong> — Horticultural &amp; CEA Systems Engineer, Inwoovation Lab. Grounded in NASA POWER satellite climatology, EN 13031-1 structural design standards, and DIN V 18599 thermal energy modeling.</p>
+    </section>
 </main>
 <footer>
     <p>© 2026 Inwoovation Lab | <a href="/privacy-policy.html">Privacy Policy</a> | <a href="/terms-of-service.html">Terms of Service</a> | <a href="/about.html">About</a> | <a href="/contact.html">Contact</a></p>

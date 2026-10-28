@@ -3,21 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home | AgriAtlas</title>
-    <link rel="canonical" href="https://inwoovation.com/wiki/" />
-    <meta name="description" content="Global Database for CEA Engineering">
+    <title>AgriAtlas CEA Engineering Encyclopedia | Inwoovation Lab</title>
+    <meta name="description" content="AgriAtlas CEA Engineering Encyclopedia: quantitative crop steering, psychrometric VPD control, hydroponic fertigation, and plant physiology research.">
+    <meta name="author" content="Inwoo Hwang — Inwoovation Lab">
     
     <!-- Favicon -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌍</text></svg>">
     
     <!-- OpenGraph SEO Tags -->
-    <meta property="og:title" content="Home | AgriAtlas">
-    <meta property="og:description" content="Global Database for CEA Engineering">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=800&q=80">
-    <meta property="og:type" content="website">
+    <meta property="og:title" content="AgriAtlas CEA Engineering Encyclopedia | Inwoovation Lab">
+    <meta property="og:description" content="AgriAtlas CEA Engineering Encyclopedia: quantitative crop steering, psychrometric VPD control, hydroponic fertigation, and plant physiology research.">
+    <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Greenhouse_tomato.jpg/800px-Greenhouse_tomato.jpg">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="AgriAtlas CEA Engineering Wiki — Inwoovation Lab">
     <meta name="google-site-verification" content="Y7d3dVoTQHBbG1GoKc4E_LUZb6YBmv491pv7G01mOk8" />
     
-    <!-- Google AdSense Script -->
+    <!-- Google AdSense Meta & Script -->
+    <meta name="google-adsense-account" content="ca-pub-8597809158257497">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8597809158257497" crossorigin="anonymous"></script>
     
     <!-- Google tag (gtag.js) -->
@@ -182,6 +184,7 @@
             margin-bottom: 1rem;
             display: flex;
             gap: 0.5rem;
+            flex-wrap: wrap;
         }
 
         .breadcrumb span { color: var(--text-muted); }
@@ -196,10 +199,11 @@
 
         .metadata {
             display: flex;
-            gap: 1.5rem;
+            gap: 1.2rem;
+            flex-wrap: wrap;
             font-size: 0.9rem;
             color: var(--text-muted);
-            margin-bottom: 3rem;
+            margin-bottom: 2.5rem;
             padding-bottom: 1rem;
             border-bottom: 1px solid var(--border);
         }
@@ -211,7 +215,7 @@
             padding: 2rem;
             margin-bottom: 2rem;
             line-height: 1.7;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
         }
 
         .content-box h2 {
@@ -226,7 +230,7 @@
             position: sticky;
             top: 70px;
             height: calc(100vh - 70px);
-            width: 340px; /* 300px ad space + 40px padding */
+            width: 340px;
             flex-shrink: 0;
             box-sizing: border-box;
             background: var(--bg-surface);
@@ -265,7 +269,7 @@
             text-align: center;
             color: var(--text-muted);
             font-size: 0.9rem;
-            margin-bottom: 2rem; /* Ad is at the top, pushes content down */
+            margin-bottom: 2rem;
             border-radius: 4px;
         }
 
@@ -349,41 +353,59 @@
                 left: 0;
             }
             .sidebar-right {
-                display: none; /* Hide references sidebar on mobile to save space */
+                display: none;
             }
             header {
                 padding: 0 1rem;
             }
-            html, body { max-width: 100%; overflow-x: hidden; }
-            header { padding: 0 0.75rem !important; gap: 0.4rem !important; }
-            header > div:first-child { gap: 0.5rem !important; min-width: 0; flex: 1; justify-content: space-between; }
-            .logo { font-size: 1.15rem !important; white-space: nowrap; }
             .header-right {
-                display: none !important;
+                display: none;
             }
-            table { display: block; width: 100%; max-width: 100%; overflow-x: auto; }
         }
     </style>
-
-    <!-- Auto-Generated Structured Data -->
+    <link rel="canonical" href="https://inwoovation.com/wiki/" />
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Article",
-      "headline": "Home | AgriAtlas",
-      "description": "Global Database for CEA Engineering",
-      "publisher": {
-        "@type": "Organization",
-        "name": "Inwoovation Lab"
-      }
-    }
-    </script>
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "AgriAtlas CEA Engineering Encyclopedia | Inwoovation Lab",
+  "description": "AgriAtlas CEA Engineering Encyclopedia: quantitative crop steering, psychrometric VPD control, hydroponic fertigation, and plant physiology research.",
+  "image": [
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Greenhouse_tomato.jpg/800px-Greenhouse_tomato.jpg"
+  ],
+  "datePublished": "2026-08-05",
+  "dateModified": "2026-10-27",
+  "author": {
+    "@type": "Person",
+    "name": "Inwoo Hwang",
+    "jobTitle": "Horticultural & CEA Systems Engineer",
+    "affiliation": {
+      "@type": "Organization",
+      "name": "Inwoovation Lab"
+    },
+    "url": "https://inwoovation.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Inwoovation Lab",
+    "url": "https://inwoovation.com/"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://inwoovation.com/wiki/"
+  }
+}
+</script>
+
+    <meta property="og:url" content="https://inwoovation.com/wiki/">
+    <meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
 
     <header>
-        <div style="display: flex; align-items: center; gap: 1.5rem;">
+        <div style="display: flex; align-items: center; gap: 1.2rem; flex-wrap: wrap;">
             <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+            <a href="https://inwoovation.com/" style="color: var(--text-muted); text-decoration: none; font-size: 0.85rem; font-weight: 600; border: 1px solid var(--border); padding: 0.35rem 0.75rem; border-radius: 8px;">← Inwoovation Portal</a>
             <a href="index.html" class="logo">🌍 Agri<span>Atlas</span> Wiki</a>
             <a href="research.html" style="color: var(--primary); font-weight: 700; text-decoration: none; font-size: 0.95rem; background: rgba(56, 189, 248, 0.1); padding: 0.4rem 0.9rem; border-radius: 20px; border: 1px solid rgba(56, 189, 248, 0.3); display: flex; align-items: center; gap: 0.4rem;">🔬 <span>Scientific Research</span></a>
         </div>
@@ -402,6 +424,13 @@
 <div class="container">
     <nav class="sidebar-left" id="mobileSidebar">
         <div class="nav-group">
+            <div class="nav-title">🏛️ Inwoovation Ecosystem</div>
+            <a href="https://inwoovation.com/" class="nav-link">🏠 Inwoovation Hub Home</a>
+            <a href="https://inwoovation.com/smartfarm/vpd.html" class="nav-link">🌡️ VPD & Psychrometric Suite</a>
+            <a href="https://inwoovation.com/smartfarm/heat_loss.html" class="nav-link">🔥 Greenhouse Heat Loss</a>
+        </div>
+
+        <div class="nav-group">
             <div class="nav-title">📚 Crop Encyclopedia</div>
             <!-- Alphabetical Crop List -->
             <a href="arugula.html" class="nav-link">Arugula</a>
@@ -416,10 +445,15 @@
             <a href="tomato.html" class="nav-link">Tomato (Solanum lycopersicum)</a>
             
         </div>
+
+        <div class="nav-group">
+            <div class="nav-title">🌱 Specialized CEA Topics</div>
+            <a href="care_farming.html" class="nav-link">Care Farming (치유농업)</a>
+            
+        </div>
         
         <div class="nav-group">
             <div class="nav-title">🔬 Scientific Research</div>
-            <a href="care_farming.html" class="nav-link">🌿 Care Farming (Horticultural Therapy)</a>
             <a href="research.html" class="nav-link" style="color: var(--primary); font-weight: 700;">📖 All Research Papers →</a>
         </div>
     </nav>
@@ -427,131 +461,186 @@
     <main>
         
         <div class="breadcrumb">
-            <span style="color: var(--text-muted);">AgriAtlas Home</span>
+            <a href="https://inwoovation.com/" style="color: var(--primary); text-decoration: none;">Inwoovation</a>
+            <span>/</span> <span style="color: var(--text-muted);">AgriAtlas CEA Engineering Home</span>
         </div>
         
-        <h1 id="overview">Welcome to AgriAtlas</h1>
-        <p style="font-size: 1.15rem; color: #cbd5e1; margin-bottom: 3rem; line-height: 1.6;">
-            The world's most advanced, data-driven engineering repository for Controlled Environment Agriculture (CEA).
-            Select a crop or topic from the navigation menu to explore deep-dive engineering strategies, or browse the grid below.
+        <h1 id="overview">AgriAtlas: Controlled Environment Agriculture (CEA) &amp; Plant Systems Engineering Encyclopedia</h1>
+        <p style="font-size: 1.15rem; color: #cbd5e1; margin-bottom: 2rem; line-height: 1.75;">
+            Welcome to <strong>AgriAtlas</strong>, the quantitative engineering reference library and biophysical knowledge substrate developed by <strong>Inwoo Hwang at Inwoovation Lab</strong>. Designed for commercial Venlo glasshouse operators, indoor vertical plant factory architects, and horticultural systems engineers, AgriAtlas bridges first-principles thermodynamics, boundary-layer fluid mechanics, and enzymatic plant physiology into deterministic environmental and fertigation control laws.
         </p>
+
+        <div class="content-box" style="margin-bottom: 3rem;">
+            <h2 style="margin-top: 0; color: var(--primary); font-size: 1.5rem;">⚙️ Quantitative Engineering Architecture of Modern CEA Facilities</h2>
+            <p style="color: #e2e8f0; font-size: 1rem; line-height: 1.75;">
+                Unlike traditional empirical agronomy, industrial Controlled Environment Agriculture treats the greenhouse or multi-tier vertical growth chamber as a coupled heat, mass, and photon transfer reactor. Across every crop monograph and doctoral research paper in AgriAtlas, environmental setpoints are derived from four foundational biophysical pillars:
+            </p>
+            <ul style="color: #cbd5e1; font-size: 0.98rem; line-height: 1.8; padding-left: 1.3rem;">
+                <li><strong>Psychrometric Enthalpy &amp; Canopy Transpiration Governance:</strong> Utilizing the modified greenhouse Penman-Monteith equation, AgriAtlas quantifies how solar shortwave irradiance, supplemental LED photon flux, and horizontal/vertical air velocity (0.30–0.50 m s⁻¹) govern laminar boundary-layer resistance (<em>r<sub>b</sub></em>) and stomatal conductance (<em>g<sub>s</sub></em>). Maintaining leaf-to-air Vapor Pressure Deficit (VPD) within species-specific thermodynamic windows (typically 0.75–1.25 kPa) sustains continuous xylem mass flow of non-mobile divalent calcium (Ca²⁺) to rapidly dividing apical meristems and developing fruits, eliminating tip-burn and blossom-end rot.</li>
+                <li><strong>Vegetative vs. Generative Crop Steering &amp; Photomorphogenesis:</strong> By manipulating diurnal temperature differentials (DIF = T<sub>day</sub> − T<sub>night</sub>), root-zone volumetric water content dry-backs (Δθ<sub>v</sub>), and spectral photon ratios—including Blue (450 nm) cryptochrome activation, Red (660 nm) to Far-Red (730 nm) Phytochrome Photostationary State (PSS = P<sub>fr</sub>/P<sub>total</sub>), and pulsed UV-A/UV-B (285–385 nm) UVR8 photoreceptor elicitation—growers can deterministically partition assimilated carbon between structural leaf expansion (Leaf Area Index closure) and high-Brix generative fruit or secondary antioxidant accumulation (glucosinolates, anthocyanins, betalains, lutein, and sulforaphane).</li>
+                <li><strong>Rhizosphere Electrochemistry &amp; Stoichiometric Fertigation:</strong> Root ion uptake is modeled as an active bioenergetic process driven by plasma membrane H⁺-ATPase proton pumping and mitochondrial oxidative phosphorylation. AgriAtlas provides complete millimolar (mM) and parts-per-million (ppm) ionic formulations balancing NO₃⁻:NH₄⁺ ratios to stabilize rhizosphere pH without chemical acid/base overshoot, alongside root-zone temperature chilling (18.0–20.5°C) and nanobubble Dissolved Oxygen (DO &gt; 8.5 mg L⁻¹) protocols to prevent root hypoxia and <em>Pythium</em> colonization.</li>
+                <li><strong>Live Telemetry &amp; Biochemical Pathway Integration:</strong> All 31 peer-referenced scientific papers and 10 crop engineering guides cross-reference enzyme kinetic constants (Michaelis-Menten <em>K<sub>m</sub></em> and <em>V<sub>max</sub></em>) from the Kyoto Encyclopedia of Genes and Genomes (KEGG), molecular stoichiometry from NIH PubChem, agroclimatological irradiance series from NASA POWER, and wholesale elasticity data from USDA MARS.</li>
+            </ul>
+        </div>
         
-        <h2 style="color: white; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; margin-bottom: 1.5rem;">📚 Crop Encyclopedia</h2>
-        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1.5rem; margin-bottom: 4rem;">
+        <h2 style="color: white; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; margin-bottom: 1.5rem;">📚 Crop Engineering Encyclopedia (10 Commercial CEA Profiles)</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.5rem; margin-bottom: 4rem;">
     
-            <a href="arugula.html" style="text-decoration: none; color: inherit; background: var(--bg-surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; transition: transform 0.2s, border-color 0.2s;">
-                <div style="height: 150px; background: #000; overflow: hidden;">
-                    <img alt="Arugula / Rocket (Eruca vesicaria)" src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=80" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8;">
+            <a href="arugula.html" style="text-decoration: none; color: inherit; background: var(--bg-surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; transition: transform 0.2s, border-color 0.2s; display: flex; flex-direction: column;">
+                <div style="height: 155px; background: #000; overflow: hidden;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Eruca_sativa_001.JPG/800px-Eruca_sativa_001.JPG" alt="High-density hydroponic arugula (Eruca vesicaria subsp. sativa) canopy under controlled blue-enriched LED lighting" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.85;">
                 </div>
-                <div style="padding: 1.5rem;">
-                    <h3 style="margin: 0 0 0.5rem 0; color: var(--primary);">Arugula / Rocket (Eruca vesicaria)</h3>
-                    <p style="margin: 0; color: var(--text-muted); font-size: 0.9rem;">Fast-turnover pungent culinary leafy green requiring high DLI photoperiods, glucosinolate flavor ste...</p>
-                </div>
-            </a>
-        
-            <a href="cucumber.html" style="text-decoration: none; color: inherit; background: var(--bg-surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; transition: transform 0.2s, border-color 0.2s;">
-                <div style="height: 150px; background: #000; overflow: hidden;">
-                    <img alt="Cucumber (Cucumis sativus)" src="https://upload.wikimedia.org/wikipedia/commons/9/96/ARS_cucumber.jpg" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8;">
-                </div>
-                <div style="padding: 1.5rem;">
-                    <h3 style="margin: 0 0 0.5rem 0; color: var(--primary);">Cucumber (Cucumis sativus)</h3>
-                    <p style="margin: 0; color: var(--text-muted); font-size: 0.9rem;">Transpiration management, leaf area index (LAI) optimization, and steering strategies for greenhouse...</p>
+                <div style="padding: 1.4rem; flex: 1;">
+                    <h3 style="margin: 0 0 0.5rem 0; color: var(--primary); font-size: 1.15rem;">Arugula / Rocket (Eruca vesicaria)</h3>
+                    <p style="margin: 0; color: var(--text-muted); font-size: 0.9rem; line-height: 1.5;">Precision CEA engineering guide for hydroponic arugula (Eruca vesicaria): DLI photoperiod steering, sulfur-glucosinolate kinetics, and NFT EC control.</p>
                 </div>
             </a>
         
-            <a href="kale.html" style="text-decoration: none; color: inherit; background: var(--bg-surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; transition: transform 0.2s, border-color 0.2s;">
-                <div style="height: 150px; background: #000; overflow: hidden;">
-                    <img alt="Curly Kale (Brassica oleracea var. sabellica)" src="https://images.unsplash.com/photo-1524179091875-bf99a9a6af57?auto=format&fit=crop&w=800&q=80" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8;">
+            <a href="cucumber.html" style="text-decoration: none; color: inherit; background: var(--bg-surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; transition: transform 0.2s, border-color 0.2s; display: flex; flex-direction: column;">
+                <div style="height: 155px; background: #000; overflow: hidden;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/ARS_cucumber.jpg" alt="Cucumber Fruits (Cucumis sativus)" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.85;">
                 </div>
-                <div style="padding: 1.5rem;">
-                    <h3 style="margin: 0 0 0.5rem 0; color: var(--primary);">Curly Kale (Brassica oleracea var. sabellica)</h3>
-                    <p style="margin: 0; color: var(--text-muted); font-size: 0.9rem;">Cold temperature stress elicitation, anthocyanin accumulation, and vertical farm LED light spectrum ...</p>
-                </div>
-            </a>
-        
-            <a href="lettuce.html" style="text-decoration: none; color: inherit; background: var(--bg-surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; transition: transform 0.2s, border-color 0.2s;">
-                <div style="height: 150px; background: #000; overflow: hidden;">
-                    <img alt="Lettuce (Lactuca sativa)" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Romaine_lettuce.jpg/960px-Romaine_lettuce.jpg" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8;">
-                </div>
-                <div style="padding: 1.5rem;">
-                    <h3 style="margin: 0 0 0.5rem 0; color: var(--primary);">Lettuce (Lactuca sativa)</h3>
-                    <p style="margin: 0; color: var(--text-muted); font-size: 0.9rem;">DLI optimization, environmental VPD control, and tip-burn mitigation for vertical farming and greenh...</p>
+                <div style="padding: 1.4rem; flex: 1;">
+                    <h3 style="margin: 0 0 0.5rem 0; color: var(--primary); font-size: 1.15rem;">Cucumber (Cucumis sativus)</h3>
+                    <p style="margin: 0; color: var(--text-muted); font-size: 0.9rem; line-height: 1.5;">High-wire greenhouse cucumber (Cucumis sativus) CEA engineering guide: high-LAI transpiration modeling, VPD steering, and K-dominant fertigation.</p>
                 </div>
             </a>
         
-            <a href="paprika.html" style="text-decoration: none; color: inherit; background: var(--bg-surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; transition: transform 0.2s, border-color 0.2s;">
-                <div style="height: 150px; background: #000; overflow: hidden;">
-                    <img alt="Paprika (Capsicum annuum)" src="https://upload.wikimedia.org/wikipedia/commons/8/85/Green-Yellow-Red-Pepper-2009.jpg" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8;">
+            <a href="kale.html" style="text-decoration: none; color: inherit; background: var(--bg-surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; transition: transform 0.2s, border-color 0.2s; display: flex; flex-direction: column;">
+                <div style="height: 155px; background: #000; overflow: hidden;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Kale_Leaf.jpg/800px-Kale_Leaf.jpg" alt="Hydroponic curly kale (Brassica oleracea var. sabellica) exhibiting dense frilled leaf margins under high-PPFD LED illumination" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.85;">
                 </div>
-                <div style="padding: 1.5rem;">
-                    <h3 style="margin: 0 0 0.5rem 0; color: var(--primary);">Paprika (Capsicum annuum)</h3>
-                    <p style="margin: 0; color: var(--text-muted); font-size: 0.9rem;">Precision greenhouse climate control and vegetative/generative crop steering for high-wire sweet pep...</p>
-                </div>
-            </a>
-        
-            <a href="spinach.html" style="text-decoration: none; color: inherit; background: var(--bg-surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; transition: transform 0.2s, border-color 0.2s;">
-                <div style="height: 150px; background: #000; overflow: hidden;">
-                    <img alt="Spinach (Spinacia oleracea)" src="https://images.unsplash.com/photo-1576045057995-568f588f82fb?auto=format&fit=crop&w=800&q=80" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8;">
-                </div>
-                <div style="padding: 1.5rem;">
-                    <h3 style="margin: 0 0 0.5rem 0; color: var(--primary);">Spinach (Spinacia oleracea)</h3>
-                    <p style="margin: 0; color: var(--text-muted); font-size: 0.9rem;">Nitrate accumulation control, oxalate reduction kinetics, and hydroponic NFT root zone temperature m...</p>
+                <div style="padding: 1.4rem; flex: 1;">
+                    <h3 style="margin: 0 0 0.5rem 0; color: var(--primary); font-size: 1.15rem;">Curly Kale (Brassica oleracea var. sabellica)</h3>
+                    <p style="margin: 0; color: var(--text-muted); font-size: 0.9rem; line-height: 1.5;">CEA engineering guide for hydroponic curly kale: cold-stress DIF steering, glucosinolate and anthocyanin biosynthesis, and vertical farm LED spectrum.</p>
                 </div>
             </a>
         
-            <a href="strawberry.html" style="text-decoration: none; color: inherit; background: var(--bg-surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; transition: transform 0.2s, border-color 0.2s;">
-                <div style="height: 150px; background: #000; overflow: hidden;">
-                    <img alt="Strawberry (Fragaria × ananassa)" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Garden_strawberry_%28Fragaria_%C3%97_ananassa%29_single2.jpg/960px-Garden_strawberry_%28Fragaria_%C3%97_ananassa%29_single2.jpg" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8;">
+            <a href="lettuce.html" style="text-decoration: none; color: inherit; background: var(--bg-surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; transition: transform 0.2s, border-color 0.2s; display: flex; flex-direction: column;">
+                <div style="height: 155px; background: #000; overflow: hidden;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Romaine_lettuce.jpg/960px-Romaine_lettuce.jpg" alt="Romaine Lettuce (Lactuca sativa)" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.85;">
                 </div>
-                <div style="padding: 1.5rem;">
-                    <h3 style="margin: 0 0 0.5rem 0; color: var(--primary);">Strawberry (Fragaria × ananassa)</h3>
-                    <p style="margin: 0; color: var(--text-muted); font-size: 0.9rem;">Precision climate control and fertigation strategies for winter and day-neutral strawberries....</p>
-                </div>
-            </a>
-        
-            <a href="basil.html" style="text-decoration: none; color: inherit; background: var(--bg-surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; transition: transform 0.2s, border-color 0.2s;">
-                <div style="height: 150px; background: #000; overflow: hidden;">
-                    <img alt="Sweet Basil (Ocimum basilicum L.)" src="https://images.unsplash.com/photo-1618375569909-3c8616cf7733?auto=format&fit=crop&w=800&q=80" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8;">
-                </div>
-                <div style="padding: 1.5rem;">
-                    <h3 style="margin: 0 0 0.5rem 0; color: var(--primary);">Sweet Basil (Ocimum basilicum L.)</h3>
-                    <p style="margin: 0; color: var(--text-muted); font-size: 0.9rem;">High-value aromatic herb precision engineering guide covering LED PPFD spectrum steering, essential ...</p>
+                <div style="padding: 1.4rem; flex: 1;">
+                    <h3 style="margin: 0 0 0.5rem 0; color: var(--primary); font-size: 1.15rem;">Lettuce (Lactuca sativa)</h3>
+                    <p style="margin: 0; color: var(--text-muted); font-size: 0.9rem; line-height: 1.5;">Hydroponic and vertical farm lettuce (Lactuca sativa) CEA engineering guide: DLI optimization, CFD airflow tip-burn mitigation, and NFT control.</p>
                 </div>
             </a>
         
-            <a href="swiss_chard.html" style="text-decoration: none; color: inherit; background: var(--bg-surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; transition: transform 0.2s, border-color 0.2s;">
-                <div style="height: 150px; background: #000; overflow: hidden;">
-                    <img alt="Swiss Chard (Beta vulgaris subsp. vulgaris)" src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=80" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8;">
+            <a href="paprika.html" style="text-decoration: none; color: inherit; background: var(--bg-surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; transition: transform 0.2s, border-color 0.2s; display: flex; flex-direction: column;">
+                <div style="height: 155px; background: #000; overflow: hidden;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/85/Green-Yellow-Red-Pepper-2009.jpg" alt="Bell Pepper Fruits (Capsicum annuum)" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.85;">
                 </div>
-                <div style="padding: 1.5rem;">
-                    <h3 style="margin: 0 0 0.5rem 0; color: var(--primary);">Swiss Chard (Beta vulgaris subsp. vulgaris)</h3>
-                    <p style="margin: 0; color: var(--text-muted); font-size: 0.9rem;">Betalain pigment elicitation, root zone EC salinity management, and Controlled Environment Agricultu...</p>
+                <div style="padding: 1.4rem; flex: 1;">
+                    <h3 style="margin: 0 0 0.5rem 0; color: var(--primary); font-size: 1.15rem;">Paprika (Capsicum annuum)</h3>
+                    <p style="margin: 0; color: var(--text-muted); font-size: 0.9rem; line-height: 1.5;">High-wire sweet pepper / paprika (Capsicum annuum) CEA engineering guide: cyclic fruit-set steering, ADT/DIF control, and Ca/K fertigation.</p>
                 </div>
             </a>
         
-            <a href="tomato.html" style="text-decoration: none; color: inherit; background: var(--bg-surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; transition: transform 0.2s, border-color 0.2s;">
-                <div style="height: 150px; background: #000; overflow: hidden;">
-                    <img alt="Tomato (Solanum lycopersicum)" src="https://upload.wikimedia.org/wikipedia/commons/8/89/Tomato_je.jpg" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8;">
+            <a href="spinach.html" style="text-decoration: none; color: inherit; background: var(--bg-surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; transition: transform 0.2s, border-color 0.2s; display: flex; flex-direction: column;">
+                <div style="height: 155px; background: #000; overflow: hidden;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Spinach_leaves.jpg/800px-Spinach_leaves.jpg" alt="Hydroponic baby-leaf spinach (Spinacia oleracea) canopy cultivated in chilled, oxygen-supersaturated NFT channels" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.85;">
                 </div>
-                <div style="padding: 1.5rem;">
-                    <h3 style="margin: 0 0 0.5rem 0; color: var(--primary);">Tomato (Solanum lycopersicum)</h3>
-                    <p style="margin: 0; color: var(--text-muted); font-size: 0.9rem;">Comprehensive engineering data for greenhouse tomato climate control, crop steering, and fertigation...</p>
+                <div style="padding: 1.4rem; flex: 1;">
+                    <h3 style="margin: 0 0 0.5rem 0; color: var(--primary); font-size: 1.15rem;">Spinach (Spinacia oleracea)</h3>
+                    <p style="margin: 0; color: var(--text-muted); font-size: 0.9rem; line-height: 1.5;">CEA engineering guide for hydroponic spinach (Spinacia oleracea): root-zone DO chilling, Pythium suppression, oxalate reduction, and nitrate steering.</p>
+                </div>
+            </a>
+        
+            <a href="strawberry.html" style="text-decoration: none; color: inherit; background: var(--bg-surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; transition: transform 0.2s, border-color 0.2s; display: flex; flex-direction: column;">
+                <div style="height: 155px; background: #000; overflow: hidden;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Garden_strawberry_%28Fragaria_%C3%97_ananassa%29_single2.jpg/960px-Garden_strawberry_%28Fragaria_%C3%97_ananassa%29_single2.jpg" alt="Greenhouse Strawberry Cultivation" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.85;">
+                </div>
+                <div style="padding: 1.4rem; flex: 1;">
+                    <h3 style="margin: 0 0 0.5rem 0; color: var(--primary); font-size: 1.15rem;">Strawberry (Fragaria × ananassa)</h3>
+                    <p style="margin: 0; color: var(--text-muted); font-size: 0.9rem; line-height: 1.5;">Greenhouse strawberry (Fragaria x ananassa) CEA engineering guide: chill-unit steering, Botrytis VPD control, and low-salinity fertigation.</p>
+                </div>
+            </a>
+        
+            <a href="basil.html" style="text-decoration: none; color: inherit; background: var(--bg-surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; transition: transform 0.2s, border-color 0.2s; display: flex; flex-direction: column;">
+                <div style="height: 155px; background: #000; overflow: hidden;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Basil-Basilico-Ocimum_basilicum-Leaf.jpg/800px-Basil-Basilico-Ocimum_basilicum-Leaf.jpg" alt="Controlled hydroponic NFT basil canopy under high-PPFD blue-enriched LED spectrum." style="width: 100%; height: 100%; object-fit: cover; opacity: 0.85;">
+                </div>
+                <div style="padding: 1.4rem; flex: 1;">
+                    <h3 style="margin: 0 0 0.5rem 0; color: var(--primary); font-size: 1.15rem;">Sweet Basil (Ocimum basilicum L.)</h3>
+                    <p style="margin: 0; color: var(--text-muted); font-size: 0.9rem; line-height: 1.5;">Hydroponic sweet basil (Ocimum basilicum) CEA engineering guide: LED spectrum steering for eugenol/linalool oils and Ca tip-burn prevention.</p>
+                </div>
+            </a>
+        
+            <a href="swiss_chard.html" style="text-decoration: none; color: inherit; background: var(--bg-surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; transition: transform 0.2s, border-color 0.2s; display: flex; flex-direction: column;">
+                <div style="height: 155px; background: #000; overflow: hidden;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Swiss_Chard.jpg/800px-Swiss_Chard.jpg" alt="Multicolored hydroponic Swiss chard (Beta vulgaris subsp. vulgaris) petioles displaying high betalain pigment expression" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.85;">
+                </div>
+                <div style="padding: 1.4rem; flex: 1;">
+                    <h3 style="margin: 0 0 0.5rem 0; color: var(--primary); font-size: 1.15rem;">Swiss Chard (Beta vulgaris subsp. vulgaris)</h3>
+                    <p style="margin: 0; color: var(--text-muted); font-size: 0.9rem; line-height: 1.5;">CEA engineering guide for hydroponic Swiss chard (Beta vulgaris): betalain pigment spectrum steering, halophytic Na+/K+ salinity control, and VPD management.</p>
+                </div>
+            </a>
+        
+            <a href="tomato.html" style="text-decoration: none; color: inherit; background: var(--bg-surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; transition: transform 0.2s, border-color 0.2s; display: flex; flex-direction: column;">
+                <div style="height: 155px; background: #000; overflow: hidden;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Tomato_je.jpg" alt="Tomato Fruit (Solanum lycopersicum)" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.85;">
+                </div>
+                <div style="padding: 1.4rem; flex: 1;">
+                    <h3 style="margin: 0 0 0.5rem 0; color: var(--primary); font-size: 1.15rem;">Tomato (Solanum lycopersicum)</h3>
+                    <p style="margin: 0; color: var(--text-muted); font-size: 0.9rem; line-height: 1.5;">Precision CEA engineering guide for greenhouse tomato (Solanum lycopersicum): VPD psychrometrics, DIF crop steering, and EC/Brix fertigation.</p>
                 </div>
             </a>
         
         </div>
         
-        <h2 style="color: white; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; margin-bottom: 1.5rem;" id="research">🔬 Scientific Research Library</h2>
-        <p style="color: #cbd5e1; margin-bottom: 2rem; font-size: 1.05rem;">
-            Explore in-depth plant physiology, bioenergetics, and climate steering papers, cross-referenced with live datasets from NASA POWER, NCBI PubMed, NIH PubChem, and KEGG.
+        <h2 style="color: white; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; margin-bottom: 1.5rem;" id="research">🔬 Scientific Research Library (31 Doctoral &amp; Kinetic Papers)</h2>
+        <p style="color: #cbd5e1; margin-bottom: 2rem; font-size: 1.05rem; line-height: 1.7;">
+            Explore our chronological repository of 31 quantitative plant physiology, bioenergetics, fluid dynamics, and climate steering papers, cross-referenced with datasets from NASA POWER, NCBI PubMed, NIH PubChem, and KEGG.
         </p>
 
         <div style="background: var(--bg-surface); border: 1px solid var(--border); border-radius: 12px; padding: 2.5rem; text-align: center; margin-bottom: 3rem;">
-            <h3 style="margin-top: 0; color: var(--primary); font-size: 1.6rem;">Agricultural Science Research Notes</h3>
-            <p style="color: #cbd5e1; max-width: 650px; margin: 1rem auto 2rem auto; font-size: 1.05rem; line-height: 1.6;">
-                Articles are published in chronological order, integrating live meteorological telemetry, enzymatic reaction kinetics, and empirical crop steering matrices.
+            <h3 style="margin-top: 0; color: var(--primary); font-size: 1.6rem;">Peer-Referenced CEA Biophysics &amp; Metabolic Flux Papers</h3>
+            <p style="color: #cbd5e1; max-width: 680px; margin: 1rem auto 2rem auto; font-size: 1.05rem; line-height: 1.65;">
+                Every paper includes full enzymatic EC identifiers, KEGG pathway mappings, climate computer PID strategies, vegetative/generative steering tables, and closed-loop sensor telemetry protocols.
             </p>
-            <a href="research.html" style="display: inline-block; background: var(--primary); color: #0f172a; font-weight: bold; padding: 1rem 2.5rem; border-radius: 8px; text-decoration: none; font-size: 1.1rem;">Explore All Research Papers →</a>
+            <a href="research.html" style="display: inline-block; background: var(--primary); color: #0f172a; font-weight: bold; padding: 1rem 2.5rem; border-radius: 8px; text-decoration: none; font-size: 1.1rem;">Explore All 31 Research Papers →</a>
+        </div>
+
+        <h2 style="color: white; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; margin-bottom: 1.5rem;" id="cea-faq">❓ Core CEA Systems Engineering FAQ</h2>
+        <div style="display: flex; flex-direction: column; gap: 1.2rem; margin-bottom: 3rem;">
+            <div class="content-box" style="margin-bottom: 0; padding: 1.5rem;">
+                <h3 style="margin-top: 0; margin-bottom: 0.6rem; color: var(--primary); font-size: 1.12rem;">Q: How do I translate AgriAtlas VPD and DIF tables into automated greenhouse climate computer setpoints?</h3>
+                <p style="margin: 0; color: #cbd5e1; font-size: 0.96rem; line-height: 1.7;">First, verify true canopy leaf temperature using an infrared radiometer to calculate leaf-to-air VPD via our <a href="https://inwoovation.com/smartfarm/vpd.html" style="color: var(--primary);">Psychrometric VPD Suite</a>. Program your climate PLC to ramp heating pipes and ventilation apertures 45 minutes prior to sunrise so that leaf temperature exceeds air dew-point by at least +2.5°C, preventing morning condensation and fungal spore germination while hitting the target diurnal DIF.</p>
+            </div>
+            <div class="content-box" style="margin-bottom: 0; padding: 1.5rem;">
+                <h3 style="margin-top: 0; margin-bottom: 0.6rem; color: var(--primary); font-size: 1.12rem;">Q: Why does tip-burn occur in hydroponic leafy greens even when calcium is abundant in the nutrient solution?</h3>
+                <p style="margin: 0; color: #cbd5e1; font-size: 0.96rem; line-height: 1.7;">Calcium (Ca²⁺) is transported almost exclusively via passive apoplastic xylem flow driven by transpiration; it cannot be remobilized via the phloem. In stagnant vertical farm or greenhouse canopies (air speed &lt; 0.15 m s⁻¹), high leaf boundary-layer resistance suppresses localized transpiration at enclosed inner meristems. Delivering 0.35–0.45 m s⁻¹ vertical airflow and maintaining nighttime VPD below 0.35 kPa (to promote root-pressure guttation) resolves meristematic Ca²⁺ starvation.</p>
+            </div>
+        </div>
+    
+        <section id="eeat-author-box" style="background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(56, 189, 248, 0.35); border-left: 5px solid var(--primary); border-radius: 12px; padding: 2rem; margin-bottom: 2.5rem;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem;">
+                <div>
+                    <div style="font-size: 0.78rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--primary); font-weight: 700; margin-bottom: 0.3rem;">Verified CEA Systems Engineering &amp; Agronomic Review</div>
+                    <h3 style="margin: 0; color: #f8fafc; font-size: 1.35rem;">Inwoo Hwang — Horticultural &amp; CEA Systems Engineer, Inwoovation Lab</h3>
+                </div>
+                <span style="background: rgba(16, 185, 129, 0.15); color: #6ee7b7; border: 1px solid rgba(16, 185, 129, 0.35); padding: 0.35rem 0.8rem; border-radius: 20px; font-size: 0.8rem; font-weight: 700;">✓ Peer-Referenced &amp; Thermodynamically Audited</span>
+            </div>
+            <p style="color: #cbd5e1; font-size: 0.96rem; line-height: 1.65; margin: 0 0 1rem 0;">
+                All psychrometric setpoints, Penman-Monteith boundary-layer mass-transfer equations, KEGG enzymatic flux pathways, and stoichiometric hydroponic fertigation matrices published in the AgriAtlas Knowledge Base are engineered and audited by <strong>Inwoo Hwang</strong> at <strong>Inwoovation Lab</strong>. Quantitative crop steering parameters are cross-validated against Wageningen University &amp; Research (WUR) greenhouse physics benchmarks, Republic of Korea Rural Development Administration (RDA) smart farm manuals, NASA POWER satellite agroclimatology telemetry, and NCBI PubMed / NIH PubChem biochemical databases.
+            </p>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap; font-size: 0.85rem; color: var(--text-muted);">
+                <span>🏛️ <strong>Affiliation:</strong> Inwoovation Lab (<a href="https://inwoovation.com/" style="color: var(--primary); text-decoration: none;">inwoovation.com</a>)</span>
+                <span>🔬 <strong>Domain:</strong> Venlo Glasshouse Thermodynamics, Hydroponic Ion Kinetics &amp; Photobiology</span>
+                <span>📅 <strong>Last Technical Audit:</strong> October 2026</span>
+            </div>
+        </section>
+    
+        <div id="calculators" style="background: linear-gradient(135deg, rgba(16,185,129,0.1) 0%, rgba(56,189,248,0.1) 100%); border: 1px solid rgba(16,185,129,0.3); padding: 2.5rem; border-radius: 12px; text-align: center; margin-bottom: 2rem;">
+            <h2 style="margin-top: 0; color: white; font-size: 1.8rem;">Ready to Steer Your Facility with Precision?</h2>
+            <p style="color: #cbd5e1; font-size: 1.05rem; margin-bottom: 2rem; max-width: 680px; margin-left: auto; margin-right: auto; line-height: 1.6;">
+                AgriAtlas provides the biophysical and thermodynamic governing theory, while our interactive engineering simulators compute exact psychrometric Vapor Pressure Deficit (VPD), leaf boundary-layer transpiration, and structural U-value heating loads for your specific greenhouse or vertical farm geometry.
+            </p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="https://inwoovation.com/smartfarm/vpd.html" style="display: inline-block; background: var(--primary); color: #0f172a; font-weight: bold; padding: 0.95rem 1.8rem; border-radius: 8px; text-decoration: none; font-size: 1.05rem; transition: transform 0.2s;">Run VPD Calculator</a>
+                <a href="https://inwoovation.com/smartfarm/heat_loss.html" style="display: inline-block; background: transparent; border: 2px solid var(--accent-green); color: var(--accent-green); font-weight: bold; padding: 0.95rem 1.8rem; border-radius: 8px; text-decoration: none; font-size: 1.05rem; transition: transform 0.2s;">Calculate Heat Loss</a>
+                <a href="https://inwoovation.com/" style="display: inline-block; background: rgba(255,255,255,0.06); border: 1px solid var(--border); color: #f8fafc; font-weight: 600; padding: 0.95rem 1.8rem; border-radius: 8px; text-decoration: none; font-size: 1.05rem;">Explore Inwoovation Hub</a>
+            </div>
         </div>
     
     </main>
@@ -559,8 +648,8 @@
     
 </div>
 
-<footer style="margin-top: 4rem; padding: 2rem 0; border-top: 1px solid var(--border); text-align: center; color: var(--text-muted); font-size: 0.85rem;">
-    <p>© 2026 Inwoovation Lab. AgriAtlas Wiki. All rights reserved. | <a href="https://forms.gle/SC3ehhA4r6sPEZxV7" target="_blank" style="color: var(--primary); font-weight: 700; text-decoration: none;">Send Feedback 📩</a></p>
+<footer style="margin-top: 4rem; padding: 2rem 1rem; border-top: 1px solid var(--border); text-align: center; color: var(--text-muted); font-size: 0.85rem;">
+    <p>© 2026 Inwoovation Lab (Inwoo Hwang — Horticultural &amp; CEA Systems Engineer). AgriAtlas Wiki. All rights reserved. | <a href="https://inwoovation.com/" style="color: var(--primary); text-decoration: none;">Inwoovation Portal</a> | <a href="https://forms.gle/SC3ehhA4r6sPEZxV7" target="_blank" style="color: var(--primary); font-weight: 700; text-decoration: none;">Send Feedback 📩</a></p>
 </footer>
 
 <!-- Floating Feedback Button (FAB) -->
@@ -577,7 +666,6 @@
     }
 
     // Client-side Search Engine (uses searchIndex variable from search_index.js)
-
     const searchInput = document.getElementById('searchInput');
     const searchResults = document.getElementById('searchResults');
 

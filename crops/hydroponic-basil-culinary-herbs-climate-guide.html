@@ -23,6 +23,11 @@
     <meta property="og:title" content="Sweet Basil Precision CEA Steering Guide">
     <meta property="og:description" content="Commercial greenhouse Sweet Basil microclimate parameters, VPD, DLI, and fertigation physics.">
     <meta property="og:image" content="https://inwoovation.com/og-cover.jpg">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Hydroponic Greenhouse Sweet Basil &amp; Culinary Herbs (Ocimum basilicum) Microclimate, VPD &amp; DLI Precision Steering Guide | Inwoovation Lab">
+    <meta name="twitter:description" content="Precision CEA engineering guide for Hydroponic Greenhouse Sweet Basil &amp; Culinary Herbs (Ocimum basilicum). Optimal VPD bands (0.7 - 1.1 kPa), DLI targets (16 - 22 mol/m²/d), day/night temperature DIF, fertigation EC/pH, and biological IPM predator rates.">
+    <meta name="twitter:image" content="https://inwoovation.com/og-cover.jpg">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -46,27 +51,73 @@
         .back-link { display: inline-flex; align-items: center; gap: 6px; color: #38bdf8; text-decoration: none; font-weight: 600; font-size: 0.95rem; margin-bottom: 20px; }
         .back-link:hover { text-decoration: underline; }
         .ad-slot { background: rgba(15, 23, 42, 0.4); border: 1px dashed rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 16px; text-align: center; margin: 24px 0; }
+        .crop-matrix-table { width: 100%; border-collapse: collapse; margin: 18px 0; font-size: 0.88rem; background: rgba(15, 23, 42, 0.55); border-radius: 12px; overflow: hidden; }
+        .crop-matrix-table th, .crop-matrix-table td { padding: 11px 13px; text-align: left; border-bottom: 1px solid rgba(255, 255, 255, 0.08); color: #cbd5e1; vertical-align: top; }
+        .crop-matrix-table th { background: rgba(16, 185, 129, 0.14); color: #10b981; font-weight: 700; font-family: 'Outfit', sans-serif; }
+        .crop-matrix-table tr:last-child td { border-bottom: none; }
+        .eeat-crop-box { background: linear-gradient(135deg, rgba(15, 23, 42, 0.85), rgba(30, 41, 59, 0.75)); border: 1px solid rgba(16, 185, 129, 0.28); border-radius: 16px; padding: 22px 26px; margin-top: 24px; }
+        .eeat-crop-box h3 { font-family: 'Outfit', sans-serif; font-size: 1.05rem; color: #f8fafc; margin: 0 0 8px 0; }
+        .eeat-crop-box p { color: #94a3b8; font-size: 0.9rem; line-height: 1.65; margin: 0; }
     </style>
     <!-- Schema.org TechArticle & FAQPage -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@graph": [
-            {
-                "@type": "TechArticle",
-                "headline": "Hydroponic Greenhouse Sweet Basil & Culinary Herbs (Ocimum basilicum) Precision Microclimate & VPD Steering Guide",
-                "description": "Commercial greenhouse basil requires high temperatures (never below 15°C to avoid chilling injury) and moderate VPD. Managing night humidity and air c",
-                "author": { "@type": "Organization", "name": "Inwoovation Lab" },
-                "datePublished": "2026-09-01",
-                "dateModified": "2026-10-08",
-                "publisher": { "@type": "Organization", "name": "Inwoovation Lab", "url": "https://inwoovation.com" }
+{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "TechArticle",
+            "headline": "Sweet Basil (Ocimum basilicum) Precision Microclimate, VPD & Hydroponic Steering Guide",
+            "description": "Precision CEA engineering guide for Hydroponic Greenhouse Sweet Basil & Culinary Herbs (Ocimum basilicum). Optimal VPD bands (0.7 - 1.1 kPa), DLI targets (16 - 22 mol/m²/d), day/night temperature DIF, fertigation EC/pH, and biological IPM predator rates.",
+            "url": "https://inwoovation.com/crops/hydroponic-basil-culinary-herbs-climate-guide.html",
+            "author": {
+                "@type": "Person",
+                "name": "Inwoo Hwang",
+                "jobTitle": "Horticultural & CEA Systems Engineer",
+                "affiliation": {
+                    "@type": "Organization",
+                    "name": "Inwoovation Lab",
+                    "url": "https://inwoovation.com"
+                }
             },
-            {
-                "@type": "FAQPage",
-                "mainEntity": [{"@type": "Question", "name": "Why is night temperature critical for basil?", "acceptedAnswer": {"@type": "Answer", "text": "Basil is of tropical origin and suffers severe physiological chilling injury when exposed to temperatures below 12°C. Cold foliage also condensates dew, instantly triggering Basil Downy Mildew sporulation."}}]
+            "datePublished": "2026-09-01",
+            "dateModified": "2026-10-27",
+            "publisher": {
+                "@type": "Organization",
+                "name": "Inwoovation Lab",
+                "url": "https://inwoovation.com"
             }
-        ]
-    }
+        },
+        {
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "Why is night temperature critical for basil?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Basil is of tropical origin and suffers severe physiological chilling injury when exposed to temperatures below 12°C. Cold foliage also condensates dew, instantly triggering Basil Downy Mildew sporulation."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "How do you prevent Peronospora belbahrii (Basil Downy Mildew) without fungicides?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Peronospora belbahrii sporangia require at least 3–4 hours of continuous leaf wetness or relative humidity above 88% in darkness to infect stomata. Maintaining night VPD >= 0.55 kPa (RH < 78% at 20 °C), running 0.5 m/s horizontal airflow fans, and using brief nocturnal red-light interruption or pre-dawn dehumidification breaks the pathogen's sporulation cycle."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Why does UV-C water sterilization require continuous iron chelate re-dosing in NFT basil?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "High-dose UV-C disinfection (254 nm at 100–250 mJ/cm² to eradicate Pythium and Fusarium oxysporum spores) photolytically cleaves organic chelate rings (EDTA, DTPA, EDDHA), precipitating ferric hydroxide out of solution. Commercial recirculating systems inject fresh Fe-DTPA downstream of the UV-C reactor daily."
+                    }
+                }
+            ]
+        }
+    ]
+}
     </script>
 </head>
 <body>
@@ -132,6 +183,158 @@
             <p>Target root-zone drain fraction: <strong>NFT Recirculating</strong> to avoid substrate EC accumulation and root hypoxia.</p>
         </div>
 
+        <!-- CROP_DEEP_DIVE_START -->
+        <div class="section-box">
+            <h2>📊 Stage-by-Stage Phenological Climate &amp; VPD Steering Matrix</h2>
+            <p>Precision crop steering for <strong>Sweet Basil (Ocimum basilicum)</strong> in <strong>Recirculating NFT Channels or Deep Water Culture (DWC) Rafts (35–60 plants/m²)</strong> requires dynamically adjusting photoperiod, Daily Light Integral (DLI), day/night temperature differential (DIF), and Vapor Pressure Deficit (VPD) across five distinct developmental phases. Vegetative steering uses smaller overnight substrate dry-backs (<strong>Continuous thin-film flow (1.5–2.0 L/min per NFT gully)</strong>) and moderate VPD to expand Leaf Area Index (LAI), whereas generative steering employs deeper overnight dry-backs (<strong>Dissolved Oxygen (DO) &gt;= 7.5 mg/L at 22–24 °C solution temp</strong>) and positive DIF to partition photoassimilates into reproductive sinks:</p>
+            <div style="overflow-x:auto;">
+                <table class="crop-matrix-table">
+                    <thead>
+                        <tr>
+                            <th>Phenological Stage</th>
+                            <th>Photoperiod</th>
+                            <th>Target PPFD / DLI</th>
+                            <th>Day / Night Temp &amp; DIF</th>
+                            <th>Canopy VPD &amp; RH</th>
+                            <th>Feed EC &amp; pH</th>
+                            <th>Primary Physiological &amp; Steering Objective</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>1. Germination &amp; Cotyledon Emergence (Days 1–5)</strong></td>
+                            <td>16–18 hr</td>
+                            <td>8–12 mol/m²/d (140–200 PPFD)</td>
+                            <td>24–26 °C / 22–24 °C (+2 °C DIF)</td>
+                            <td>0.45–0.65 kPa (78–85% RH)</td>
+                            <td>0.6–0.8 mS/cm (pH 5.7)</td>
+                            <td>Mucilaginous seed coat hydration on oasis/peat/rockwool plugs at 25 °C.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>2. First True Leaf Pair (Days 6–12)</strong></td>
+                            <td>16–18 hr</td>
+                            <td>12–16 mol/m²/d (200–260 PPFD)</td>
+                            <td>24–26 °C / 20–22 °C (+4 °C DIF)</td>
+                            <td>0.65–0.85 kPa (70–76% RH)</td>
+                            <td>1.0–1.3 mS/cm (pH 5.8)</td>
+                            <td>Primary root emergence from plug bottom prior to NFT channel transplant.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>3. Vegetative Canopy Expansion (Days 13–21)</strong></td>
+                            <td>16–18 hr</td>
+                            <td>16–20 mol/m²/d (260–320 PPFD)</td>
+                            <td>25–27 °C / 20–21 °C (+5 °C DIF)</td>
+                            <td>0.75–1.05 kPa (65–72% RH)</td>
+                            <td>1.4–1.6 mS/cm (pH 5.8)</td>
+                            <td>Rapid internode &amp; lamina expansion; enrich CO₂ to 800–1000 ppm.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>4. Essential Oil &amp; Phenylpropanoid Finish (Days 22–28)</strong></td>
+                            <td>16–18 hr</td>
+                            <td>18–22 mol/m²/d (300–360 PPFD)</td>
+                            <td>25–28 °C / 19–21 °C (+6 °C DIF)</td>
+                            <td>0.85–1.15 kPa (60–68% RH)</td>
+                            <td>1.6–1.8 mS/cm (pH 5.9)</td>
+                            <td>Blue/UV-A supplemental spectrum boosts peltate glandular trichome linalool &amp; eugenol.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>5. Harvest &amp; Post-Harvest Cooling</strong></td>
+                            <td>16–18 hr</td>
+                            <td>16–20 mol/m²/d</td>
+                            <td>23–25 °C / 19–20 °C (+4 °C DIF)</td>
+                            <td>0.90–1.15 kPa (60–65% RH)</td>
+                            <td>1.4–1.6 mS/cm (pH 5.9)</td>
+                            <td>Harvest strictly dry foliage; store at 12–14 °C (never &lt; 10 °C) to prevent chilling blackening.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="section-box">
+            <h2>🧪 Hydroponic Ionic Stoichiometry &amp; Root-Zone Mass Balance</h2>
+            <p>Maintaining ionic balance in the rhizosphere prevents antagonistic cation lockouts ($\text{K}^+ : \text{Ca}^{2+} : \text{Mg}^{2+}$) and osmotic drift. The table below specifies standard Dutch/Meister A/B tank hydroponic nutrient formulations for <strong>Sweet Basil (Ocimum basilicum)</strong> at 100% RO/rainwater baseline, alongside target slab/drain concentration envelopes:</p>
+            <div style="overflow-x:auto;">
+                <table class="crop-matrix-table">
+                    <thead>
+                        <tr>
+                            <th>Macro / Micro Ion</th>
+                            <th>Vegetative Feed Target</th>
+                            <th>Generative / Bulking Feed</th>
+                            <th>Root-Zone / Drain Envelope</th>
+                            <th>Physiological Role &amp; Uptake Kinetics</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Nitrate (NO₃⁻)</strong></td>
+                            <td>11.0 mmol/L (154 ppm N)</td>
+                            <td>12.0 mmol/L (168 ppm N)</td>
+                            <td>10.0–13.5 mmol/L</td>
+                            <td>Drives rapid leafy biomass and dark green chlorophyll pigmentation.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Ammonium (NH₄⁺)</strong></td>
+                            <td>0.8 mmol/L (11 ppm N)</td>
+                            <td>0.5 mmol/L (7 ppm N)</td>
+                            <td>&lt; 0.4 mmol/L</td>
+                            <td>Stabilizes recirculating NFT pH against nitrate uptake alkalinization.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Dihydrogen Phosphate (H₂PO₄⁻)</strong></td>
+                            <td>1.2 mmol/L (37 ppm P)</td>
+                            <td>1.4 mmol/L (43 ppm P)</td>
+                            <td>1.0–1.6 mmol/L</td>
+                            <td>Supports pyrophosphate intermediates in monoterpene and phenylpropanoid pathways.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Potassium (K⁺)</strong></td>
+                            <td>4.8 mmol/L (188 ppm K)</td>
+                            <td>5.5 mmol/L (215 ppm K)</td>
+                            <td>4.5–6.5 mmol/L</td>
+                            <td>Maintains leaf turgor and post-harvest shelf life.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Calcium (Ca²⁺)</strong></td>
+                            <td>3.5 mmol/L (140 ppm Ca)</td>
+                            <td>3.8 mmol/L (152 ppm Ca)</td>
+                            <td>3.2–4.5 mmol/L</td>
+                            <td>Prevents cupped-leaf marginal necrosis under high LED DLI.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Magnesium (Mg²⁺)</strong></td>
+                            <td>1.4 mmol/L (34 ppm Mg)</td>
+                            <td>1.6 mmol/L (39 ppm Mg)</td>
+                            <td>1.3–2.0 mmol/L</td>
+                            <td>Prevents lower-leaf interveinal chlorosis in dense 50 plants/m² canopies.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Sulfate (SO₄²⁻)</strong></td>
+                            <td>1.5 mmol/L (48 ppm S)</td>
+                            <td>2.0 mmol/L (64 ppm S)</td>
+                            <td>1.5–2.8 mmol/L</td>
+                            <td>Enhances volatile aromatic oil concentration.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Micronutrients (Fe / Mn / Zn / B / Cu / Mo)</strong></td>
+                            <td>30 / 10 / 5 / 25 / 0.8 / 0.5 µmol/L</td>
+                            <td>35 / 10 / 5 / 28 / 0.8 / 0.5 µmol/L</td>
+                            <td>Fe-DTPA + UV-C Safe</td>
+                            <td>If UV-C sterilization is used on return drain, dose Fe-DTPA continuously post-filter.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p style="margin-top:12px;"><strong>Rhizosphere Oxygenation &amp; Dry-Back Kinetics:</strong> Ensure dissolved oxygen (DO) in the irrigation supply exceeds <strong>7.5–8.5 mg/L</strong> at 20 °C. Monitor substrate volumetric water content (WC%) and pore-water electrical conductivity ($EC_p$) via Time-Domain Reflectometry (TDR) or frequency-domain capacitance sensors to verify that daily leachate pH remains within <strong>5.6–6.2</strong>.</p>
+        </div>
+
+        <div class="section-box">
+            <h2>🌬️ Boundary-Layer Aerodynamics &amp; Physiological Disorder Prevention</h2>
+            <p>In protected cultivation of <strong>Sweet Basil (Ocimum basilicum)</strong>, the primary physiological disorder risk is <strong>Basil Downy Mildew (Peronospora belbahrii) &amp; Chilling Necrosis (&lt;12 °C)</strong>. According to the Penman-Monteith combination equation, canopy transpiration ($E$) is governed by the series coupling of stomatal conductance ($g_s$) and aerodynamic boundary-layer conductance ($g_a$):</p>
+            <p>When indoor air velocity falls below 0.15 m/s, a thick laminar leaf boundary layer traps water vapor and suppresses convective heat transfer, decoupling leaf temperature ($T_L$) from ambient air temperature ($T_a$) and stalling xylem mass flow of phloem-immobile calcium ($\text{Ca}^{2+}$). Installing horizontal or vertical airflow (HAF/VAF) fans engineered for <strong>0.45–0.70 m/s continuous canopy airspeed</strong> compresses the leaf boundary-layer resistance ($r_b \propto \sqrt{d / u}$, where $d$ is characteristic leaf dimension and $u$ is wind speed). This homogenizes microclimate pockets, prevents localized dew-point condensation during night transitions, and sustains continuous root-to-shoot calcium delivery.</p>
+        </div>
+        <!-- CROP_DEEP_DIVE_END -->
+
         <!-- IPM Biological Control -->
         <div class="section-box">
             <h2>🐞 Biological Pest Management (IPM) & Key Pathogens</h2>
@@ -166,8 +369,23 @@
             <h3 style="font-family:'Outfit',sans-serif; color:#f8fafc; font-size:1.1rem; margin-bottom:8px;">❓ Why is night temperature critical for basil?</h3>
             <p style="color:#cbd5e1; font-size:0.95rem; line-height:1.7; margin:0;">Basil is of tropical origin and suffers severe physiological chilling injury when exposed to temperatures below 12°C. Cold foliage also condensates dew, instantly triggering Basil Downy Mildew sporulation.</p>
         </div>
-    
+        <!-- CROP_EXTRA_FAQ_START -->
+        <div style="background:rgba(15,23,42,0.6); border:1px solid rgba(255,255,255,0.06); border-radius:12px; padding:18px; margin-bottom:14px;">
+            <h3 style="font-family:'Outfit',sans-serif; color:#f8fafc; font-size:1.1rem; margin-bottom:8px;">❓ How do you prevent Peronospora belbahrii (Basil Downy Mildew) without fungicides?</h3>
+            <p style="color:#cbd5e1; font-size:0.95rem; line-height:1.7; margin:0;">Peronospora belbahrii sporangia require at least 3–4 hours of continuous leaf wetness or relative humidity above 88% in darkness to infect stomata. Maintaining night VPD &gt;= 0.55 kPa (RH &lt; 78% at 20 °C), running 0.5 m/s horizontal airflow fans, and using brief nocturnal red-light interruption or pre-dawn dehumidification breaks the pathogen&#x27;s sporulation cycle.</p>
         </div>
+        <div style="background:rgba(15,23,42,0.6); border:1px solid rgba(255,255,255,0.06); border-radius:12px; padding:18px; margin-bottom:14px;">
+            <h3 style="font-family:'Outfit',sans-serif; color:#f8fafc; font-size:1.1rem; margin-bottom:8px;">❓ Why does UV-C water sterilization require continuous iron chelate re-dosing in NFT basil?</h3>
+            <p style="color:#cbd5e1; font-size:0.95rem; line-height:1.7; margin:0;">High-dose UV-C disinfection (254 nm at 100–250 mJ/cm² to eradicate Pythium and Fusarium oxysporum spores) photolytically cleaves organic chelate rings (EDTA, DTPA, EDDHA), precipitating ferric hydroxide out of solution. Commercial recirculating systems inject fresh Fe-DTPA downstream of the UV-C reactor daily.</p>
+        </div>
+        <!-- CROP_EXTRA_FAQ_END -->
+        </div>
+        <!-- CROP_EEAT_START -->
+        <div class="eeat-crop-box">
+            <h3>👨‍🔬 Horticultural Engineering &amp; Agronomic Review — Inwoovation Lab</h3>
+            <p><strong>Authored &amp; Verified by Inwoo Hwang</strong> — Horticultural &amp; CEA Systems Engineer at Inwoovation Lab. All phenological VPD steering targets, A/B tank ionic stoichiometry recipes (mmol/L &amp; ppm), and boundary-layer aerodynamic models for <strong>Sweet Basil (Ocimum basilicum)</strong> are calibrated against Wageningen UR greenhouse horticulture standards, German Gärtnermeister crop steering protocols, and commercial Penman-Monteith transpiration models.</p>
+        </div>
+        <!-- CROP_EEAT_END -->
     </div>
 </div>
 <footer>
