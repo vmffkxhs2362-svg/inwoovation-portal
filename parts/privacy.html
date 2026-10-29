@@ -21,7 +21,8 @@
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-V4RYJBMEDE"></script>
     <script>
-       window.dataLayer = window.dataLayer || [];
+       if (navigator.webdriver || /HeadlessChrome|PhantomJS|Lighthouse|PTST|bot|crawler|spider|slurp/i.test(navigator.userAgent) || location.hostname === 'localhost' || location.hostname === '127.0.0.1' || (screen.width === 1366 && screen.height === 1366) || (screen.width === 800 && screen.height === 600) || screen.height >= 5000) { window['ga-disable-G-V4RYJBMEDE'] = true; }
+    window.dataLayer = window.dataLayer || [];
        function gtag(){dataLayer.push(arguments);}
        gtag('js', new Date());
        gtag('config', 'G-V4RYJBMEDE');
@@ -78,7 +79,7 @@
 
     <div class="container">
         <h1>Privacy Policy &amp; Data Governance Statement</h1>
-        <p><em>Effective Date: August 08, 2026 | Last Updated: October 27, 2026</em></p>
+        <p><em>Effective Date: August 08, 2026 | Last Updated: October 28, 2026</em></p>
 
         <div class="policy-card">
             <p>At <strong>AgriMaster &amp; Vacuum Engineering Suite (operated by Inwoovation Lab)</strong>, accessible at <code>https://inwoovation.com/parts/</code>, safeguarding the technical, operational, and personal privacy of agricultural engineers, greenhouse facility managers, and researchers is a foundational architectural requirement. This Privacy Policy details the categories of information processed when you interact with our parametric component catalog, Bill of Materials (BOM) builder, and 50 km dealer locator, as well as your statutory privacy rights under the European Union General Data Protection Regulation (GDPR), the California Consumer Privacy Act (CCPA/CPRA), and Korea's Personal Information Protection Act (PIPA).</p>

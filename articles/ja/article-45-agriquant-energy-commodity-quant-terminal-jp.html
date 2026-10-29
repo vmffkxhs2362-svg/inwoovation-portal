@@ -4,7 +4,8 @@
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-V4RYJBMEDE"></script>
     <script>
-       window.dataLayer = window.dataLayer || [];
+       if (navigator.webdriver || /HeadlessChrome|PhantomJS|Lighthouse|PTST|bot|crawler|spider|slurp/i.test(navigator.userAgent) || location.hostname === 'localhost' || location.hostname === '127.0.0.1' || (screen.width === 1366 && screen.height === 1366) || (screen.width === 800 && screen.height === 600) || screen.height >= 5000) { window['ga-disable-G-V4RYJBMEDE'] = true; }
+    window.dataLayer = window.dataLayer || [];
        function gtag(){dataLayer.push(arguments);}
        gtag('js', new Date());
        gtag('config', 'G-V4RYJBMEDE');
@@ -48,7 +49,7 @@
     "url": "https://inwoovation.com"
   },
   "datePublished": "2026-09-01",
-  "dateModified": "2026-10-27",
+  "dateModified": "2026-10-28",
   "mainEntityOfPage": "https://inwoovation.com/articles/ja/article-45-agriquant-energy-commodity-quant-terminal-jp.html"
 }
   </script>

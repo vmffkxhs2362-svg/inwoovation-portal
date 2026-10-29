@@ -21,7 +21,8 @@
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-V4RYJBMEDE"></script>
     <script>
-       window.dataLayer = window.dataLayer || [];
+       if (navigator.webdriver || /HeadlessChrome|PhantomJS|Lighthouse|PTST|bot|crawler|spider|slurp/i.test(navigator.userAgent) || location.hostname === 'localhost' || location.hostname === '127.0.0.1' || (screen.width === 1366 && screen.height === 1366) || (screen.width === 800 && screen.height === 600) || screen.height >= 5000) { window['ga-disable-G-V4RYJBMEDE'] = true; }
+    window.dataLayer = window.dataLayer || [];
        function gtag(){dataLayer.push(arguments);}
        gtag('js', new Date());
        gtag('config', 'G-V4RYJBMEDE');
@@ -78,7 +79,7 @@
 
     <div class="container">
         <h1>Terms of Service &amp; Engineering Disclaimer</h1>
-        <p><em>Effective Date: August 08, 2026 | Last Updated: October 27, 2026</em></p>
+        <p><em>Effective Date: August 08, 2026 | Last Updated: October 28, 2026</em></p>
 
         <div class="terms-card">
             <p>Welcome to <strong>AgriMaster &amp; Vacuum Engineering Suite</strong> (<code>https://inwoovation.com/parts/</code>), an industrial parametric hardware search engine and mechatronics reference catalog operated by <strong>Inwoovation Lab</strong>. By accessing, browsing, or exporting Bill of Materials (BOM) specifications from our platform, you acknowledge that you have read, understood, and agreed to be bound by these Terms of Service.</p>

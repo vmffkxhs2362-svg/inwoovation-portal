@@ -642,10 +642,37 @@ def sync_all():
 
     print(f"✅ Added/Updated {len(NEW_CALIFORNIA_PROGRAMS)} high-value California programs ({added_count} brand new).")
 
-    # 4. Update JSON Metadata
+    # 4. Dynamically refresh applicationWindow status & daysRemaining against current date
+    today_dt = datetime.now().date()
+    today_str = today_dt.strftime("%Y-%m-%d")
+    for p in programs:
+        win = p.get("applicationWindow")
+        if not isinstance(win, dict):
+            continue
+        end_str = win.get("endDate", "")
+        if re.match(r"^\d{4}-\d{2}-\d{2}$", end_str):
+            try:
+                end_dt = datetime.strptime(end_str, "%Y-%m-%d").date()
+                delta_days = (end_dt - today_dt).days
+                if delta_days < 0:
+                    win["daysRemaining"] = 0
+                    if win.get("status") in ("open", "closing_soon"):
+                        win["status"] = "upcoming"
+                        win["statusLabel"] = "🔵 차기 공모 대기 (Next Cycle 2027 Q1/Q2)"
+                        if "Next Cycle" not in win.get("deadlineDisplay", ""):
+                            win["deadlineDisplay"] = f"{end_str} (2026 Batch Closed · Next Cycle 2027 Q1)"
+                else:
+                    win["daysRemaining"] = delta_days
+                    if delta_days <= 14 and win.get("status") == "open":
+                        win["status"] = "closing_soon"
+                        win["statusLabel"] = f"🟡 공모 마감 임박 (D-{delta_days})"
+            except ValueError:
+                pass
+
+    # Update JSON Metadata
     data["programs"] = programs
     data["metadata"]["totalPrograms"] = len(programs)
-    data["metadata"]["lastUpdated"] = datetime.now().strftime("%Y-%m-%d")
+    data["metadata"]["lastUpdated"] = today_str
     data["metadata"]["pilotJurisdiction"] = "California (CDFA OARS / CARB / CEC / DWR / CDTFA / DPR / USDA CA)"
 
     # Save JSON Feed
