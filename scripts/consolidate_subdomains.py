@@ -18,8 +18,29 @@ def make_redirect_html(dest_url):
 <head>
   <meta charset="utf-8">
   <meta name="google-adsense-account" content="ca-pub-8597809158257497">
+  <meta name="google-site-verification" content="Y7d3dVoTQHBbG1GoKc4E_LUZb6YBmv491pv7G01mOk8">
+  <meta name="google-site-verification" content="xHzmAhcxMgyf-hP2TujQwCGF3-7GrLBkLU9PoHShaps">
   <title>Redirecting to Inwoovation Lab...</title>
   <link rel="canonical" href="{dest_url}">
+  <!-- Google tag (gtag.js) with Antigravity Bot & Self-Traffic Guard -->
+  <script>
+    (function() {{
+      var ua = navigator.userAgent || '';
+      var isBot = navigator.webdriver === true || /HeadlessChrome|PhantomJS|Lighthouse|PTST|bot|crawler|spider|slurp|ScrapingBee|AhrefsBot|SemrushBot|MJ12bot|DotBot|Bytespider|GPTBot|ClaudeBot|PerplexityBot|PetalBot|YandexBot|Baiduspider/i.test(ua);
+      var isLocal = location.hostname === 'localhost' || location.hostname === '127.0.0.1' || location.protocol === 'file:';
+      var isBotRes = (window.screen && ((screen.width === 1366 && screen.height === 1366) || (screen.width === 800 && screen.height === 600) || (screen.width === 1024 && screen.height === 1024) || screen.height >= 5000));
+      if (isBot || isLocal || isBotRes) {{
+        window['ga-disable-G-V4RYJBMEDE'] = true;
+      }}
+    }})();
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V4RYJBMEDE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){{dataLayer.push(arguments);}}
+    gtag('js', new Date());
+    gtag('config', 'G-V4RYJBMEDE', {{ 'send_page_view': true, 'anonymize_ip': true }});
+  </script>
   <meta http-equiv="refresh" content="0; url={dest_url}">
   <script>window.location.replace("{dest_url}" + window.location.search + window.location.hash);</script>
 </head>
@@ -31,9 +52,9 @@ def make_redirect_html(dest_url):
 def ensure_legacy_301_redirectors():
     print("\n🔀 Verifying and enforcing 301 Meta-Refresh & Canonical Redirectors in legacy repos...")
     
-    # 1. Smart Farm legacy redirects
+    # 1. Smart Farm legacy redirects (never overwrite _template.html!)
     sf_html_files = [f for f in glob.glob(os.path.join(SMARTFARM_DIR, "*.html")) 
-                     if not os.path.basename(f).startswith("old_") and not os.path.basename(f).startswith("naverbce")]
+                     if not os.path.basename(f).startswith(("_", "old_", "naverbce", "google"))]
     for f in sf_html_files:
         filename = os.path.basename(f)
         dest_url = "https://inwoovation.com/smartfarm/" if filename == "index.html" else f"https://inwoovation.com/smartfarm/{filename}"
