@@ -30,7 +30,7 @@ def _first(pattern, text, default=""):
 
 
 def _kpi(text, label_fragment):
-    pattern = r'<div class="kpi-val"[^>]*>(.*?)</div>\s*<div class="kpi-lbl">[^<]*' + label_fragment
+    pattern = r'<div class="kpi-val"[^>]*>([^<]*)</div>\s*<div class="kpi-lbl">[^<]*' + label_fragment
     return _first(pattern, text, "—")
 
 
@@ -359,14 +359,16 @@ def enrich_guide_file(guide):
     new_jsonld = f'<script type="application/ld+json">\n{render_guide_jsonld(guide, m)}\n    </script>'
     page = JSONLD_RE.sub(lambda _: new_jsonld, page, count=1)
 
-    # 4. Inject or replace CEA_DEEP_DIVE block before <!-- Relevant Tools Linkage -->
-    page = DEEP_DIVE_RE.sub("\n\n", page)
+    # 4. Inject or replace CEA_DEEP_DIVE block in-place (or before Relevant Tools / Footer)
     deep_dive_html = render_deep_dive_html(guide, m)
-    target_anchor = "        <!-- Relevant Tools Linkage -->"
-    if target_anchor in page:
-        page = page.replace(target_anchor, deep_dive_html + "\n\n" + target_anchor, 1)
-    else:
+    if DEEP_DIVE_RE.search(page):
+        page = DEEP_DIVE_RE.sub(lambda _: "\n\n" + deep_dive_html + "\n\n", page, count=1)
+    elif "        <!-- Relevant Tools Linkage -->" in page:
+        page = page.replace("        <!-- Relevant Tools Linkage -->", deep_dive_html + "\n\n        <!-- Relevant Tools Linkage -->", 1)
+    elif "        <!-- AdSense Bottom Banner -->" in page:
         page = page.replace("        <!-- AdSense Bottom Banner -->", deep_dive_html + "\n\n        <!-- AdSense Bottom Banner -->", 1)
+    else:
+        page = page.replace("    </main>", deep_dive_html + "\n    </main>", 1)
 
     # 5. Repoint backlink idempotently
     page = BACKLINK_RE.sub(lambda match: f'<a href="/climate/"{match.group(1)}>{match.group(2)}{NEW_BACKLINK_TEXT}', page)
