@@ -56,6 +56,7 @@
     { title: "Lake Naivasha, Kenya Geothermal Floriculture Guide", cat: "climate", url: "climate/lake-naivasha-kenya-geothermal-floriculture-guide.html", icon: "🇰🇪", desc: "Equatorial Rift Valley floriculture. Geothermal steam heating & sawtooth vents", tags: "naivasha kenya rift valley geothermal rose export" },
 
     // 📚 ARTICLES & CORE
+    { title: "EU Greenhouse Energy Audit (DIN V 18599), BLE 40% Grants & Hofnachfolge (Vol. 78)", cat: "article", url: "articles/article-78-eu-greenhouse-energy-audit-din-18599-ble-grant-hofnachfolge.html", icon: "🇩🇪", desc: "DIN V 18599 U-value retrofits, German BLE 40% grants, BEHG/ETS-2 carbon tax & 10-year Ertragspacht/Stille Beteiligung buyout engineering", tags: "article 78 eu germany din 18599 ble grant behg ets2 carbon tax hofnachfolge ertragspacht stille beteiligung ktbl" },
     { title: "72 Multilingual Precision Engineering Articles Directory", cat: "article", url: "guides.html", icon: "📚", desc: "Peer-reviewed publications on biophysics, MPC, photobiology & AI", tags: "articles guides publications papers research vpd mpc" },
     { title: "Autonomous Greenhouse AI: Reinforcement Learning & MPC (Vol. 51)", cat: "article", url: "articles/article-51-autonomous-greenhouse-ai-mpc-reinforcement-learning.html", icon: "🧠", desc: "24-hour predictive trajectory optimization saving 22.4% heating gas", tags: "autonomous ai reinforcement learning mpc gas savings article" },
     // 🧪 SMART FARM LAB SIMULATORS (15)
