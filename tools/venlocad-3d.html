@@ -29,7 +29,7 @@
       "@type": "Person",
       "name": "Inwoovation Engineering Lab"
     },
-    "dateModified": "2026-10-28"
+    "dateModified": "2026-11-02"
   }
   </script>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8597809158257497" crossorigin="anonymous"></script>
@@ -1086,7 +1086,7 @@
           </div>
           <div style="display: flex; justify-content: space-between; margin-bottom: 3px;">
             <span>Positive Static Pressure:</span>
-            <span class="param-val" style="color: #34d399; font-weight: 700;">+22.4 Pa (Insect Exclusion Shield)</span>
+            <span id="metric-atu-pressure" class="param-val" style="color: #34d399; font-weight: 700;">+24.5 Pa (Insect Exclusion Shield)</span>
           </div>
           <div style="display: flex; justify-content: space-between;">
             <span>CO₂ Retention &amp; Conservation:</span>
@@ -1506,7 +1506,7 @@
                 <strong id="prop-subtotal">₩ 0</strong>
               </div>
               <div class="prop-total-line">
-                <span>Tax / VAT (10%):</span>
+                <span id="prop-tax-label">Tax / VAT (10% Domestic):</span>
                 <strong id="prop-vat">₩ 0</strong>
               </div>
               <div class="prop-total-line grand">
@@ -2257,7 +2257,7 @@
       triggerAutoSave();
     }
 
-    // --- 4.5 Wageningen Natural Ventilation & Biophysics Engine ---
+    // --- 4.5 Wageningen Natural Ventilation & Biophysics Engine (v3.2 Coupled Thermodynamics) ---
     function computeVentilationMetrics() {
       const W = params.spanWidth;
       const H = params.gutterHeight;
@@ -2297,29 +2297,48 @@
       const buoyVelocity = Math.sqrt(Math.max(0.01, 2 * g * deltaH * (deltaT / Tmean)));
       const G_temp = Cd * (Av / 2) * buoyVelocity;
 
+      // Greenhouse Internal Air Volume (m³) & Floor Area (m²)
+      const floorArea = bays * W * L;
+      const V_gh = floorArea * (H + subGableRise / 2);
+
+      // V2: ASABE EP406.4 / EN 13031-1 Airtight Venlo Glasshouse Infiltration (0.50 + 0.08 * vWind ACH)
+      const ACH_infil = 0.50 + 0.08 * vWind;
+      const G_infil_m3s = (ACH_infil * V_gh) / 3600;
+
       // Combined Total Airflow (m³/h)
-      const G_tot_m3s = Math.sqrt(G_wind * G_wind + G_temp * G_temp);
+      const G_vent_m3s = Math.sqrt(G_wind * G_wind + G_temp * G_temp);
+      const G_tot_m3s = Av > 0 ? G_vent_m3s : G_infil_m3s;
       const G_tot_m3h = G_tot_m3s * 3600;
-
-      // Greenhouse Internal Air Volume (m³)
-      const V_gh = bays * W * L * (H + subGableRise / 2);
-
-      // Air Changes per Hour (ACH, 1/h)
       const ACH = G_tot_m3h / V_gh;
 
-      // Natural Cooling Drop (°C)
-      const floorArea = bays * W * L;
-      const Q_solar = floorArea * 400.0;
-      const rho_Cp = 1.2 * 1005;
-      const deltaT_excess = Q_solar / (rho_Cp * G_tot_m3s + 5.0 * floorArea * 1.2);
-      const deltaT_closed = Q_solar / (rho_Cp * (0.8 * V_gh / 3600) + 5.0 * floorArea * 1.2);
-      const coolingDrop = Math.max(0.0, deltaT_closed - deltaT_excess);
+      // V3: Coupled Solar Radiation Flux Q_solar_Wm2 from Latitude, Season & Hour
+      const solar = (typeof updateSolarPosition === 'function')
+        ? updateSolarPosition()
+        : { alphaDeg: 45.0, transmittance: 78.7, isNight: false };
+      const Q_solar_Wm2 = solar.isNight
+        ? 0
+        : Math.max(0, Math.round(950 * Math.sin((solar.alphaDeg * Math.PI) / 180) * (solar.transmittance / 100)));
+      const Q_solar = floorArea * Q_solar_Wm2;
 
-      // SOTA Semi-Closed Positive Pressure Airflow Override
+      const rho_Cp = 1.2 * 1005;
+      const U_A = 5.0 * floorArea * 1.2;
+      const deltaT_closed = Q_solar > 0 ? Q_solar / (rho_Cp * G_infil_m3s + U_A) : 0.0;
+      const deltaT_excess = Q_solar > 0 ? Q_solar / (rho_Cp * G_tot_m3s + U_A) : 0.0;
+      const coolingDrop = Av > 0 ? Math.max(0.0, deltaT_closed - deltaT_excess) : 0.0;
+
+      // V1: SOTA Semi-Closed Positive Pressure ATU Thermodynamic & Static Pressure Balance
       if (params.semiClosed) {
-        const G_atu_m3h = floorArea * 85.0; // 85 m³/m²·h positive pressure design capacity
+        const q_atu = 85.0; // 85 m³/m²·h positive pressure design capacity
+        const G_atu_m3h = floorArea * q_atu;
+        const G_atu_m3s = G_atu_m3h / 3600;
         const ACH_atu = G_atu_m3h / V_gh;
-        const atuCoolingDrop = 7.8; // Adiabatic cooling in ATU chamber
+        const ventRatioPct = (Av / Math.max(1, floorArea)) * 100;
+        const pressurePa = Number(Math.max(4.5, 24.5 - 1.15 * ventRatioPct).toFixed(1));
+        const evapDepression = solar.isNight ? 0.8 : (3.2 + 0.0085 * Q_solar_Wm2);
+        const deltaT_atu_excess = Q_solar > 0
+          ? Math.max(0.5, (Q_solar / (rho_Cp * G_atu_m3s + U_A)) - evapDepression * 0.45)
+          : 0.0;
+        const atuCoolingDrop = Number(Math.max(0.8, (deltaT_closed - deltaT_atu_excess) + evapDepression * 0.55).toFixed(2));
         return {
           Av,
           G_wind_m3h: G_wind * 3600,
@@ -2328,9 +2347,10 @@
           ACH: ACH_atu,
           thetaDeg,
           coolingDrop: atuCoolingDrop,
-          deltaT_excess: Math.max(1.2, deltaT_excess - 4.5),
+          deltaT_excess: deltaT_atu_excess,
           V_gh,
-          pressurePa: 22.4
+          pressurePa,
+          Q_solar_Wm2
         };
       }
 
@@ -2343,7 +2363,8 @@
         thetaDeg,
         coolingDrop,
         deltaT_excess,
-        V_gh
+        V_gh,
+        Q_solar_Wm2
       };
     }
 
@@ -2376,7 +2397,8 @@
       const tributaryArea = S * W;                                    // m² interior column
 
       const w_wind_line = qp_kN * S * 0.8;
-      const k_share = 0.45;
+      // W1: EN 13031-1 multi-span portal frame wind distribution factor (0.45 at 3 bays; scales 0.38..0.60)
+      const k_share = Math.min(0.60, Math.max(0.38, 0.35 + 0.30 / Math.max(1, params.bays || 3)));
       const M_wind = k_share * (w_wind_line * Math.pow(H, 2)) / 8;   // kN·m (characteristic)
       const N_perm = (G_ROOF + crop_kN) * tributaryArea;             // kN
       const N_snow = S_snow * tributaryArea;                          // kN
@@ -2403,6 +2425,7 @@
       return {
         qp_kN: qp_kN.toFixed(2),
         snow_kN: S_snow.toFixed(2),
+        k_share: k_share.toFixed(2),
         moment_kNm: governing.M.toFixed(2),
         axial_kN: governing.N.toFixed(1),
         bucklingResistance_kN: Nb_Rd.toFixed(1),
@@ -2496,10 +2519,14 @@
       const mCool = document.getElementById('metric-vent-cooling');
       if (mCool) mCool.innerText = `-${vent.coolingDrop.toFixed(1)} °C Drop (Indoor +${vent.deltaT_excess.toFixed(1)}°C)`;
 
+      const atuPressEl = document.getElementById('metric-atu-pressure');
+      if (atuPressEl && vent.pressurePa !== undefined) {
+        atuPressEl.innerText = `+${vent.pressurePa.toFixed(1)} Pa (Insect Exclusion Shield)`;
+      }
       const vBadge = document.getElementById('vent-flow-badge');
       if (vBadge) {
         if (params.semiClosed) {
-          vBadge.innerText = '🌀 Semi-Closed (+22.4Pa / Optimal)';
+          vBadge.innerText = `🌀 Semi-Closed (+${(vent.pressurePa || 22.4).toFixed(1)}Pa / Optimal)`;
           vBadge.style.color = '#38bdf8';
           vBadge.style.background = 'rgba(56, 189, 248, 0.2)';
         } else if (!params.showRoofVents || params.ventSide === 'closed' || params.ventOpenPct === 0) {
@@ -2799,11 +2826,13 @@
         const min = (val % 1 === 0.5) ? '30' : '00';
         document.getElementById('val-solar-hour').innerText = `${hr}:${min}`;
         updateSolarPosition();
+        updateHUDandMetrics(computeStructuralSafety());
       });
 
       document.getElementById('select-solar-season').addEventListener('change', (e) => {
         params.solarSeason = e.target.value;
         updateSolarPosition();
+        updateHUDandMetrics(computeStructuralSafety());
       });
 
       const locSel = document.getElementById('select-solar-location');
@@ -2811,6 +2840,7 @@
         locSel.addEventListener('change', (e) => {
           params.latitude = parseFloat(e.target.value);
           updateSolarPosition();
+          updateHUDandMetrics(computeStructuralSafety());
         });
       }
 
@@ -3910,8 +3940,8 @@
     let currentProposalCurrency = 'KRW';
     const PROPOSAL_FX = {
       KRW: 1.0,
-      USD: 1 / 1339.10,
-      EUR: 1 / 1465.00
+      USD: 1 / 1337.98,
+      EUR: 1 / 1458.40
     };
     const PROPOSAL_SYMBOLS = {
       KRW: '₩',
@@ -4000,7 +4030,7 @@
       const vent = computeVentilationMetrics();
       if (params.semiClosed) {
         document.getElementById('pp-vent-area').innerText = `${vent.Av.toFixed(1)} m² (Semi-Closed Pressurized)`;
-        document.getElementById('pp-vent-ach').innerText = `${vent.ACH.toFixed(1)} ACH (+22.4Pa Positive Pressure)`;
+        document.getElementById('pp-vent-ach').innerText = `${vent.ACH.toFixed(1)} ACH (+${(vent.pressurePa || 22.4).toFixed(1)}Pa Positive Pressure)`;
         document.getElementById('pp-vent-gtot').innerText = `${Math.round(vent.G_tot_m3h).toLocaleString()} m³/h`;
         document.getElementById('pp-vent-cooling').innerText = `-${vent.coolingDrop.toFixed(1)} °C Drop (ATU Active Cooling)`;
       } else {
@@ -4091,7 +4121,19 @@
       `;
       tbody.appendChild(trLabor);
 
-      const vatKRW = Math.round(subtotalKRW * 0.10);
+      let taxRate = 0.10;
+      let taxLabel = 'Tax / VAT (10% Domestic):';
+      if (currentProposalCurrency === 'EUR') {
+        taxRate = 0.19;
+        taxLabel = 'Tax / MwSt (19% DE/EU Standard):';
+      } else if (currentProposalCurrency === 'USD') {
+        taxRate = 0.00;
+        taxLabel = 'Export Tax (0% FOB Export):';
+      }
+      const taxLabelEl = document.getElementById('prop-tax-label');
+      if (taxLabelEl) taxLabelEl.innerText = taxLabel;
+
+      const vatKRW = Math.round(subtotalKRW * taxRate);
       const grandTotalKRW = subtotalKRW + vatKRW;
 
       document.getElementById('prop-subtotal').innerText = formatProposalMoney(subtotalKRW);

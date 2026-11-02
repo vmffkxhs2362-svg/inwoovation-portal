@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V4RYJBMEDE"></script>
+    <script>
+       if (navigator.webdriver || /HeadlessChrome|PhantomJS|Lighthouse|PTST|bot|crawler|spider|slurp/i.test(navigator.userAgent) || location.hostname === 'localhost' || location.hostname === '127.0.0.1' || (screen.width === 1366 && screen.height === 1366) || (screen.width === 800 && screen.height === 600) || screen.height >= 5000) { window['ga-disable-G-V4RYJBMEDE'] = true; }
+    window.dataLayer = window.dataLayer || [];
+       function gtag(){dataLayer.push(arguments);}
+       gtag('js', new Date());
+       gtag('config', 'G-V4RYJBMEDE');
+    </script>
+  <meta charset="UTF-8">
+  <meta name="google-adsense-account" content="ca-pub-8597809158257497">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EU Greenhouse Energy Audit (DIN V 18599 / BLE Grant) & Farm Succession (Hofnachfolge) ROI Simulator | Inwoovation</title>
+  <meta name="description" content="Interactive European glasshouse energy modernization (DIN V 18599, EN 13031-1, BLE 40% CAPEX grant, BEHG CO2 tax savings) and German farm succession (Hofnachfolge, Ertragspacht, Stille Beteiligung) 10-year equity buyout calculator.">
+  <link rel="canonical" href="https://inwoovation.com/tools/eu-greenhouse-energy-hofnachfolge-roi-simulator.html" />
+  <link rel="stylesheet" href="css/digital_twin_styles.css">
+  <link rel="stylesheet" href="../css/global-ui-enhancements.css?v=20260901_spotlight">
+  <script src="../js/global-search-palette.js?v=20260901_spotlight"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+
+  <style>
+    .calc-card {
+      background: rgba(30, 41, 59, 0.85);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+    .preset-bar {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+    .preset-pill {
+      background: rgba(15, 23, 42, 0.75);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      color: #cbd5e1;
+      padding: 8px 14px;
+      border-radius: 10px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .preset-pill:hover, .preset-pill.active {
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.25), rgba(2, 132, 199, 0.3));
+      border-color: #34d399;
+      color: #ffffff;
+      box-shadow: 0 4px 14px rgba(16, 185, 129, 0.25);
+    }
+    .sim-grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      gap: 20px;
+    }
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+    .res-box {
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 16px;
+      text-align: center;
+    }
+    .res-val {
+      font-family: var(--font-mono);
+      font-size: 1.55rem;
+      font-weight: 800;
+      color: var(--accent-emerald);
+      margin-top: 6px;
+    }
+    .res-sub {
+      font-size: 0.75rem;
+      color: #94a3b8;
+      margin-top: 4px;
+    }
+    .chart-box {
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      border-radius: 14px;
+      padding: 20px;
+      margin-top: 22px;
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "EU Greenhouse Energy Audit (DIN V 18599 / BLE Subsidy) & Farm Succession (Hofnachfolge) ROI Simulator",
+    "url": "https://inwoovation.com/tools/eu-greenhouse-energy-hofnachfolge-roi-simulator.html",
+    "description": "Computes DIN V 18599 / EN 13031-1 greenhouse thermal retrofit energy savings, German Federal BLE 40% CAPEX grant stack, BEHG CO2 carbon tax avoidance, and 10-year Hofnachfolge (Ertragspacht & Stille Beteiligung) farm equity acquisition trajectories.",
+    "applicationCategory": "FinancialApplication, EngineeringTool",
+    "operatingSystem": "All",
+    "author": {
+      "@type": "Organization",
+      "name": "Inwoovation Engineering Lab"
+    },
+    "datePublished": "2026-11-02",
+    "dateModified": "2026-11-02"
+  }
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8597809158257497" crossorigin="anonymous"></script>
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="EU Greenhouse Energy Audit (DIN V 18599 / BLE Grant) & Farm Succession (Hofnachfolge) ROI Simulator | Inwoovation">
+  <meta property="og:description" content="Interactive European glasshouse energy modernization (DIN V 18599, EN 13031-1, BLE 40% CAPEX grant) and German farm succession (Hofnachfolge, Ertragspacht, Stille Beteiligung) 10-year equity buyout calculator.">
+  <meta property="og:url" content="https://inwoovation.com/tools/eu-greenhouse-energy-hofnachfolge-roi-simulator.html">
+  <meta property="og:image" content="https://inwoovation.com/og-cover.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://inwoovation.com/og-cover.jpg">
+</head>
+<body>
+  <!-- Top OpenCEA Open Source Ribbon -->
+  <div style="background: linear-gradient(90deg, rgba(6, 182, 212, 0.18), rgba(16, 185, 129, 0.18)); border-bottom: 1px solid rgba(16, 185, 129, 0.35); padding: 8px 20px; font-size: 0.85rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; color: #e2e8f0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+    <div style="display: flex; align-items: center; gap: 8px;">
+      <span style="font-size: 1.1rem;">🇩🇪</span>
+      <span><strong>EU / German CEA Engineering &amp; Ag-Finance Suite:</strong> DIN V 18599 Thermal Audit, BLE Bundesprogramm 40% Subsidy &amp; Hofnachfolge Equity Modeler.</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 8px;">
+      <a href="/" style="background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(56, 189, 248, 0.4); color: #38bdf8; font-weight: 700; font-size: 0.8rem; padding: 5px 14px; border-radius: 6px; text-decoration: none; display: inline-flex; align-items: center; gap: 5px;">🏠 Home</a>
+      <a href="/tools/" style="background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(16, 185, 129, 0.4); color: #34d399; font-weight: 700; font-size: 0.8rem; padding: 5px 14px; border-radius: 6px; text-decoration: none;">🛠️ All Tools</a>
+      <a href="/meister.html" style="background: linear-gradient(135deg, #f59e0b, #d97706); color: #030712; font-weight: 800; font-size: 0.8rem; padding: 5px 14px; border-radius: 6px; text-decoration: none;">🇩🇪 Meister Hub</a>
+    </div>
+  </div>
+
+  <div class="sim-container">
+    <header class="sim-header">
+      <h1>🇩🇪 EU Greenhouse Energy Audit (DIN V 18599 / BLE) &amp; Hofnachfolge Equity Simulator</h1>
+      <p>Coupled Thermodynamic Retrofit (Double/Triple Thermal Screens &amp; Industrial Heat Pump), German BLE 40% Federal Grant Stack &amp; 10-Year Farm Succession (Ertragspacht / Stille Beteiligung) Wealth Engine</p>
+    </header>
+
+    <!-- Regional Climate & Regulatory Presets -->
+    <div class="calc-card">
+      <h3 class="control-section-title">🌍 1. European &amp; Global Reference Climate Hub Presets</h3>
+      <div class="preset-bar">
+        <button type="button" class="preset-pill active" id="preset-nuernberg" onclick="applyEuPreset('nuernberg')">
+          🇩🇪 Nürnberg-Knoblauchsland (49.45°N · Vegetable/Herb Glasshouse)
+        </button>
+        <button type="button" class="preset-pill" id="preset-bodensee" onclick="applyEuPreset('bodensee')">
+          🇩🇪 Bodensee / Reichenau (47.69°N · Intensive Bio-Horticulture)
+        </button>
+        <button type="button" class="preset-pill" id="preset-westland" onclick="applyEuPreset('westland')">
+          🇳🇱 Westland / Oostland (52.00°N · High-Wire Semi-Closed Venlo)
+        </button>
+        <button type="button" class="preset-pill" id="preset-daejeon" onclick="applyEuPreset('daejeon')">
+          🇰🇷 Central Korea Smart Farm (36.35°N · Export Venlo Benchmark)
+        </button>
+      </div>
+
+      <div class="sim-grid-2">
+        <!-- Module A: DIN V 18599 & BLE Energy Modernization -->
+        <div>
+          <h4 style="color: #38bdf8; margin: 0 0 12px 0; font-size: 0.95rem;">🔥 Module A: DIN V 18599 Thermal Envelope &amp; BLE Grant</h4>
+
+          <div class="control-group">
+            <div class="control-label-row">
+              <span>Production Glasshouse Floor Area</span>
+              <span id="lbl-area">1.5 Hectares (15,000 m²)</span>
+            </div>
+            <input type="range" id="slider-area" min="0.5" max="10.0" value="1.5" step="0.25">
+          </div>
+
+          <div class="control-group">
+            <div class="control-label-row">
+              <span>Heating Degree-Hours (GTZ / Kh per Year)</span>
+              <span id="lbl-gtz">78,000 Kh/yr (Bavaria / Franconia)</span>
+            </div>
+            <input type="range" id="slider-gtz" min="45000" max="110000" value="78000" step="1000">
+          </div>
+
+          <div class="control-group">
+            <div class="control-label-row">
+              <span>Envelope U-Value Reduction (Screens + Diffused AR Glass)</span>
+              <span id="lbl-u-drop">42 % Heat Loss Reduction (U: 6.2 → 3.6 W/m²K)</span>
+            </div>
+            <input type="range" id="slider-u-drop" min="15" max="60" value="42" step="1">
+          </div>
+
+          <div class="control-group">
+            <div class="control-label-row">
+              <span>BLE Federal Energy Efficiency Grant Rate (Fördersatz)</span>
+              <span id="lbl-ble-grant">35 % Non-Dilutive Grant (Max 40% w/ CO₂ Audit)</span>
+            </div>
+            <input type="range" id="slider-ble-grant" min="0" max="40" value="35" step="5">
+          </div>
+        </div>
+
+        <!-- Module B: Hofnachfolge (Ertragspacht & Equity Buy-In) -->
+        <div>
+          <h4 style="color: #34d399; margin: 0 0 12px 0; font-size: 0.95rem;">🤝 Module B: Hofnachfolge (Pacht &amp; Equity Tranche Buyout)</h4>
+
+          <div class="control-group">
+            <div class="control-label-row">
+              <span>Baseline Operational EBITDA Margin (€ / m² / yr)</span>
+              <span id="lbl-ebitda-m2">€ 18.50 / m² / yr</span>
+            </div>
+            <input type="range" id="slider-ebitda-m2" min="8.0" max="38.0" value="18.5" step="0.5">
+          </div>
+
+          <div class="control-group">
+            <div class="control-label-row">
+              <span>Succession Equity Stake Target (Beteiligungsquote)</span>
+              <span id="lbl-equity-pct">35 % Silent / Active Partnership (GmbH &amp; Co. KG)</span>
+            </div>
+            <input type="range" id="slider-equity-pct" min="10" max="100" value="35" step="5">
+          </div>
+
+          <div class="control-group">
+            <div class="control-label-row">
+              <span>Annual Leasehold / Vendor Note Rate (Pacht / Rentenbank)</span>
+              <span id="lbl-interest">3.2 % p.a. (Landwirtschaftliche Rentenbank)</span>
+            </div>
+            <input type="range" id="slider-interest" min="1.5" max="6.5" value="3.2" step="0.1">
+          </div>
+
+          <div class="control-group">
+            <div class="control-label-row">
+              <span>BEHG / EU ETS-2 Carbon Price (€ / ton CO₂)</span>
+              <span id="lbl-co2-price">€ 65 / t CO₂</span>
+            </div>
+            <input type="range" id="slider-co2-price" min="45" max="140" value="65" step="5">
+          </div>
+        </div>
+      </div>
+
+      <!-- Primary Telemetry Cards -->
+      <div class="results-grid">
+        <div class="res-box">
+          <div style="font-size: 0.76rem; color: var(--text-muted); font-weight: 700;">ANNUAL ENERGY + CO₂ SAVINGS</div>
+          <div class="res-val" id="res-energy-save" style="color: #38bdf8;">€ 142,800 / yr</div>
+          <div class="res-sub" id="res-co2-tons">384 t CO₂/yr Avoided (BEHG)</div>
+        </div>
+        <div class="res-box">
+          <div style="font-size: 0.76rem; color: var(--text-muted); font-weight: 700;">NET RETROFIT CAPEX (POST-BLE)</div>
+          <div class="res-val" id="res-net-capex" style="color: #facc15;">€ 438,750</div>
+          <div class="res-sub" id="res-ble-subsidy">BLE Grant: € 236,250</div>
+        </div>
+        <div class="res-box">
+          <div style="font-size: 0.76rem; color: var(--text-muted); font-weight: 700;">POST-RETROFIT FACILITY EBITDA</div>
+          <div class="res-val" id="res-total-ebitda" style="color: var(--accent-emerald);">€ 420,300 / yr</div>
+          <div class="res-sub" id="res-payback-yrs">Retrofit Payback: 3.1 Years</div>
+        </div>
+        <div class="res-box">
+          <div style="font-size: 0.76rem; color: var(--text-muted); font-weight: 700;">10-YR OPERATOR NET EQUITY WEALTH</div>
+          <div class="res-val" id="res-operator-wealth" style="color: #a78bfa;">€ 1,185,400</div>
+          <div class="res-sub" id="res-equity-share-detail">35% Stake + Cumulative Cash</div>
+        </div>
+      </div>
+
+      <!-- 10-Year Cumulative Equity & Cash-Flow SVG Trajectory -->
+      <div class="chart-box">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 12px;">
+          <strong style="color: #f8fafc; font-size: 0.92rem;">📈 10-Year Hofnachfolge Equity Accumulation vs. Salaried Plant Manager Trajectory (2026–2036)</strong>
+          <div style="display: flex; gap: 14px; font-size: 0.78rem;">
+            <span style="color: #34d399; font-weight: 700;">● Hofnachfolge Equity + Profit Share (€)</span>
+            <span style="color: #38bdf8; font-weight: 700;">● Cumulative BLE Energy Savings (€)</span>
+          </div>
+        </div>
+        <svg id="hofnachfolge-svg-chart" viewBox="0 0 760 220" style="width: 100%; height: auto; display: block;" role="img" aria-label="10-Year Hofnachfolge Equity and Energy Savings Trajectory Chart"></svg>
+      </div>
+
+      <!-- 1-Click PDF Export -->
+      <div style="text-align:center; margin-top:24px;">
+        <button type="button" onclick="exportEuSuccessionAuditPDF()" style="background:linear-gradient(135deg, #10b981, #0284c7); color:#fff; border:1px solid rgba(255,255,255,0.2); padding:12px 24px; border-radius:12px; font-weight:700; font-size:0.95rem; cursor:pointer; display:inline-flex; align-items:center; gap:8px; box-shadow:0 4px 14px rgba(16,185,129,0.35);">
+          📄 Download DIN V 18599 Energy &amp; Hofnachfolge Bankability Dossier (PDF)
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/audit-pdf-generator.js"></script>
+
+  <!-- High-RPM Native Golden-Zone AdSense Unit -->
+  <div class="inw-ad-container inw-golden-zone">
+    <div class="inw-ad-label">Sponsored / Commercial Intelligence</div>
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-8597809158257497"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+      try {
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      } catch (e) {}
+    </script>
+  </div>
+
+  <!-- Technical Theory, Mathematical Formulation & Agricultural Finance Documentation -->
+  <div class="tool-editorial-wrapper">
+    <section class="editorial-card">
+      <h2><span>🔬</span> Engineering Theory: DIN V 18599 Thermal Retrofit &amp; German Hofnachfolge Finance</h2>
+      <p>
+        European commercial horticulture faces a dual structural transition between 2026 and 2036: rising fossil heating costs driven by the German National Emissions Trading System (<strong>BEHG CO₂-Bepreisung</strong> transitioning into <strong>EU ETS-2</strong>) and a generational succession wave (<strong>Hofnachfolge</strong>) across established family-owned glasshouse enterprises in Bavaria (Nürnberg-Knoblauchsland, Bamberg), Baden-Württemberg (Bodensee/Reichenau), and North Rhine-Westphalia (Niederrhein/Straelen).
+      </p>
+      <p>
+        For certified Master Horticulturists (<strong>Gärtnermeister</strong>) and agricultural engineers, combining technical energy modernization with structured lease-to-own (<strong>Ertragspacht</strong>) or phased silent/active partnership buyouts (<strong>Stille Beteiligung / GmbH &amp; Co. KG</strong>) unlocks non-dilutive federal capital while funding equity acquisition directly out of operational energy savings.
+      </p>
+
+      <h3>1. Governing Equations: DIN V 18599 &amp; EN 13031-1 Thermal Load Reduction</h3>
+      <p>
+        Following published engineering standards (<strong>DIN V 18599</strong>, <strong>EN 13031-1</strong>, and <strong>ASABE EP406.4</strong>), annual greenhouse heating energy demand $Q_{\text{heat}}$ (kWh/yr) is governed by the envelope heat transfer coefficient $U'$ (W/m²K), the ratio of glazing surface area to ground floor area $(A_c / A_f \approx 1.28 \text{ for multi-span Venlo})$, and regional Heating Degree-Hours ($GTZ_{\text{hourly}}$, in Kh/yr):
+      </p>
+      <div class="formula-box">
+Annual Heating Demand &amp; Retrofit Savings:
+  Q_baseline (kWh/yr) = (A_c / A_f) · A_floor · U_base · GTZ_hourly / 1000
+  Q_retrofit (kWh/yr) = Q_baseline · (1 - η_screen_HP)
+  ΔCost_energy (€/yr) = (Q_baseline - Q_retrofit) · (c_fuel + EF_CO2 · P_BEHG)
+
+Ertragspacht &amp; Hofnachfolge Equity Valuation (Gordon Growth / Rentenbank DCF):
+  V_Ertragswert (€)   = (EBITDA_baseline + γ_share · ΔCost_energy - Maintenance_CapEx) / r_cap
+  Debt_Service (€/yr) = Equity_Tranche · [ i · (1 + i)^n ] / [ (1 + i)^n - 1 ]
+      </div>
+
+      <h3>2. German Federal BLE Energy Efficiency Grant &amp; Regional Benchmarks</h3>
+      <p>
+        Under the German Federal Ministry of Food and Agriculture (BMEL / <strong>BLE Bundesprogramm Energieeffizienz in der Landwirtschaft und im Gartenbau</strong>), commercial glasshouse retrofits incorporating double/triple thermal screens (<em>Energieschirme</em>), heat-recovery Air Treatment Units (ATU), and industrial heat pumps (<em>Großwärmepumpen</em>) qualify for up to <strong>30% to 40% non-dilutive CAPEX grants</strong> when verified by a certified energy audit (<em>Energieberatungsbericht</em>).
+      </p>
+      <div class="benchmark-table-wrapper">
+        <table class="benchmark-table">
+          <thead>
+            <tr>
+              <th>Horticultural Cluster</th>
+              <th>Heating Degree-Hours (Kh/yr)</th>
+              <th>Baseline U-Value (W/m²K)</th>
+              <th>Typical Succession Structure</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Nürnberg-Knoblauchsland (49.45°N)</strong></td>
+              <td>76,000 – 82,000 Kh/yr</td>
+              <td>5.8 – 6.4 W/m²K (Single Float Glass)</td>
+              <td>GmbH &amp; Co. KG Phased Buy-In (25–49%) + BLE Retrofit</td>
+            </tr>
+            <tr>
+              <td><strong>Bodensee / Insel Reichenau (47.69°N)</strong></td>
+              <td>70,000 – 75,000 Kh/yr</td>
+              <td>5.5 – 6.2 W/m²K (Bio-Vegetable Venlo)</td>
+              <td>Long-Term Ertragspacht (12–18 yrs) + Cooperative Offtake</td>
+            </tr>
+            <tr>
+              <td><strong>Westland / Oostland NL (52.00°N)</strong></td>
+              <td>68,000 – 74,000 Kh/yr (Maritime)</td>
+              <td>3.8 – 4.8 W/m²K (Diffused AR + Dual Screen)</td>
+              <td>B.V. Equity Tranche + Geothermal / CHP Co-Generation</td>
+            </tr>
+            <tr>
+              <td><strong>Central Korea Smart Farm (36.35°N)</strong></td>
+              <td>58,000 – 66,000 Kh/yr (Continental Winter)</td>
+              <td>4.5 – 5.6 W/m²K (Venlo / Multi-Span)</td>
+              <td>Smart Farm Innovation Valley Lease-to-Own + Policy Loan</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="editorial-card">
+      <h2><span>❓</span> Frequently Asked Engineering &amp; Ag-Finance Questions (FAQ)</h2>
+      <div class="faq-accordion">
+        <details class="faq-item">
+          <summary class="faq-summary">How does Ertragswert (capitalized earnings value) differ from Substanzwert (asset replacement value) in German Hofnachfolge? <span>▾</span></summary>
+          <div class="faq-content">
+            In German agricultural appraisal (<em>Landwirtschaftliche Taxationslehre</em>), <strong>Substanzwert</strong> measures the physical replacement cost of land, glasshouses, and boilers, which often exceeds €3M–€6M. However, commercial farm succession (<strong>Hofnachfolge</strong>) and <strong>Landwirtschaftliche Rentenbank</strong> financing evaluate the operation primarily on <strong>Ertragswert</strong>—the capitalized sustainable net operating cash flow (EBITDA minus operator remuneration and reinvestment). Structuring a succession via <em>Ertragspacht</em> or phased equity tranches anchored to Ertragswert prevents over-leveraging the incoming Meister operator.
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-summary">What technical measures unlock the maximum 40% BLE federal grant rate in Germany? <span>▾</span></summary>
+          <div class="faq-content">
+            Individual component replacements (such as installing thermal screens or LED fixtures) typically qualify for base grant tiers, whereas holistic system modernizations verified by an accredited energy auditor—combining multi-layer thermal/blackout screens, hydronic buffer tanks, heat-pump integration, and climate computer predictive control achieving &ge;25% primary CO₂ reduction—unlock the highest BLE subsidy tiers (up to 35%–40% of eligible investment costs).
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-summary">How does the BEHG carbon price affect greenhouse heating ROI between 2026 and 2030? <span>▾</span></summary>
+          <div class="faq-content">
+            Natural gas combustion emits approximately 0.201 kg CO₂ per kWh of thermal energy. As carbon pricing transitions from national fixed corridors into the European ETS-2 market (€65 to €120+ per metric ton of CO₂), every 1,000 MWh of natural gas saved avoids 201 tons of CO₂ liability, accelerating the payback period of double thermal screens and heat pumps by 1.2 to 2.0 years.
+          </div>
+        </details>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    const EU_PRESETS = {
+      nuernberg: { area: 1.5, gtz: 78000, uDrop: 42, ble: 35, ebitdaM2: 18.5, equityPct: 35, interest: 3.2, co2Price: 65, label: "Bavaria / Franconia" },
+      bodensee:  { area: 1.25, gtz: 72000, uDrop: 40, ble: 35, ebitdaM2: 21.0, equityPct: 40, interest: 3.1, co2Price: 65, label: "Bodensee / Reichenau" },
+      westland:  { area: 3.5, gtz: 70000, uDrop: 46, ble: 30, ebitdaM2: 24.0, equityPct: 25, interest: 3.5, co2Price: 75, label: "Westland NL Maritime" },
+      daejeon:   { area: 1.0, gtz: 62000, uDrop: 38, ble: 30, ebitdaM2: 19.5, equityPct: 50, interest: 2.5, co2Price: 45, label: "Central Korea Export Venlo" }
+    };
+
+    let currentRegionLabel = "Bavaria / Franconia";
+
+    function applyEuPreset(key) {
+      const p = EU_PRESETS[key];
+      if (!p) return;
+      currentRegionLabel = p.label;
+      document.querySelectorAll('.preset-pill').forEach(btn => btn.classList.remove('active'));
+      const activeBtn = document.getElementById('preset-' + key);
+      if (activeBtn) activeBtn.classList.add('active');
+
+      document.getElementById('slider-area').value = p.area;
+      document.getElementById('slider-gtz').value = p.gtz;
+      document.getElementById('slider-u-drop').value = p.uDrop;
+      document.getElementById('slider-ble-grant').value = p.ble;
+      document.getElementById('slider-ebitda-m2').value = p.ebitdaM2;
+      document.getElementById('slider-equity-pct').value = p.equityPct;
+      document.getElementById('slider-interest').value = p.interest;
+      document.getElementById('slider-co2-price').value = p.co2Price;
+      calculateEuSuccession();
+    }
+
+    function calculateEuSuccession() {
+      const areaHa = parseFloat(document.getElementById('slider-area').value);
+      const gtz = parseFloat(document.getElementById('slider-gtz').value);
+      const uDropPct = parseFloat(document.getElementById('slider-u-drop').value);
+      const blePct = parseFloat(document.getElementById('slider-ble-grant').value);
+      const ebitdaM2 = parseFloat(document.getElementById('slider-ebitda-m2').value);
+      const equityPct = parseFloat(document.getElementById('slider-equity-pct').value);
+      const interestPct = parseFloat(document.getElementById('slider-interest').value);
+      const co2Price = parseFloat(document.getElementById('slider-co2-price').value);
+
+      const areaM2 = areaHa * 10000;
+      const uBase = 6.2;
+      const uNew = uBase * (1 - uDropPct / 100);
+
+      document.getElementById('lbl-area').innerText = `${areaHa.toFixed(2)} Hectares (${areaM2.toLocaleString()} m²)`;
+      document.getElementById('lbl-gtz').innerText = `${gtz.toLocaleString()} Kh/yr (${currentRegionLabel})`;
+      document.getElementById('lbl-u-drop').innerText = `${uDropPct}% Heat Loss Reduction (U: ${uBase.toFixed(1)} → ${uNew.toFixed(1)} W/m²K)`;
+      document.getElementById('lbl-ble-grant').innerText = `${blePct}% Non-Dilutive Grant`;
+      document.getElementById('lbl-ebitda-m2').innerText = `€ ${ebitdaM2.toFixed(2)} / m² / yr`;
+      document.getElementById('lbl-equity-pct').innerText = `${equityPct}% Partnership Stake (GmbH & Co. KG)`;
+      document.getElementById('lbl-interest').innerText = `${interestPct.toFixed(1)}% p.a. (Rentenbank / Vendor Note)`;
+      document.getElementById('lbl-co2-price').innerText = `€ ${co2Price} / t CO₂`;
+
+      // 1. DIN V 18599 Thermal Calculation
+      const surfaceRatio = 1.28; // Venlo roof + sidewall to floor ratio
+      const baselineKwh = (surfaceRatio * areaM2 * uBase * gtz) / 1000;
+      const savedKwh = baselineKwh * (uDropPct / 100);
+      const gasPricePerKwh = 0.068; // €/kWh natural gas commercial baseline
+      const co2TonsSaved = (savedKwh * 0.201) / 1000; // 0.201 kg CO2/kWh
+      const co2CostSaved = co2TonsSaved * co2Price;
+      const annualEnergySavings = savedKwh * gasPricePerKwh + co2CostSaved;
+
+      // 2. Retrofit CAPEX & BLE Grant
+      const grossRetrofitCapex = areaM2 * 45.0; // €45/m² for double energy screen + hybrid heat pump buffer
+      const bleSubsidy = grossRetrofitCapex * (blePct / 100);
+      const netRetrofitCapex = grossRetrofitCapex - bleSubsidy;
+      const paybackYears = netRetrofitCapex / Math.max(1, annualEnergySavings);
+
+      // 3. Post-Retrofit Facility EBITDA & Hofnachfolge 10-Yr Operator Wealth
+      const baseEbitda = areaM2 * ebitdaM2;
+      const postRetrofitEbitda = baseEbitda + annualEnergySavings;
+      const enterpriseValuation = postRetrofitEbitda * 5.2; // 5.2x sustainable horticultural Ertragswert multiple
+      const targetEquityValue = enterpriseValuation * (equityPct / 100);
+
+      // Vendor / Rentenbank debt service over 10 years for buying the equity stake (with 15% initial downpayment)
+      const financedPrincipal = targetEquityValue * 0.85;
+      const r = interestPct / 100;
+      const annualDebtService = r > 0
+        ? financedPrincipal * (r * Math.pow(1 + r, 10)) / (Math.pow(1 + r, 10) - 1)
+        : financedPrincipal / 10;
+
+      const annualOperatorProfitShare = postRetrofitEbitda * (equityPct / 100);
+      const annualNetCashFlowToOperator = annualOperatorProfitShare - annualDebtService * 0.65;
+
+      const seriesWealth = [];
+      const seriesEnergy = [];
+      let cumCash = 0;
+      let cumEnergy = 0;
+      for (let yr = 1; yr <= 10; yr++) {
+        cumCash += Math.max(12000, annualNetCashFlowToOperator);
+        cumEnergy += annualEnergySavings;
+        const principalPaidRatio = yr / 10;
+        const netEquityBuilt = targetEquityValue * (0.15 + 0.85 * principalPaidRatio) + cumCash * 0.55;
+        seriesWealth.push(Math.round(netEquityBuilt));
+        seriesEnergy.push(Math.round(cumEnergy));
+      }
+
+      const year10Wealth = seriesWealth[9];
+
+      document.getElementById('res-energy-save').innerText = '€ ' + Math.round(annualEnergySavings).toLocaleString();
+      document.getElementById('res-co2-tons').innerText = `${Math.round(co2TonsSaved).toLocaleString()} t CO₂/yr Avoided (€${Math.round(co2CostSaved).toLocaleString()} BEHG)`;
+      document.getElementById('res-net-capex').innerText = '€ ' + Math.round(netRetrofitCapex).toLocaleString();
+      document.getElementById('res-ble-subsidy').innerText = `BLE Grant: € ${Math.round(bleSubsidy).toLocaleString()} (${blePct}%)`;
+      document.getElementById('res-total-ebitda').innerText = '€ ' + Math.round(postRetrofitEbitda).toLocaleString() + ' / yr';
+      document.getElementById('res-payback-yrs').innerText = `Retrofit Payback: ${paybackYears.toFixed(1)} Years`;
+      document.getElementById('res-operator-wealth').innerText = '€ ' + year10Wealth.toLocaleString();
+      document.getElementById('res-equity-share-detail').innerText = `${equityPct}% Stake (€${Math.round(targetEquityValue).toLocaleString()}) + Cash`;
+
+      renderSuccessionChart(seriesWealth, seriesEnergy);
+    }
+
+    function renderSuccessionChart(wealthArr, energyArr) {
+      const svg = document.getElementById('hofnachfolge-svg-chart');
+      if (!svg) return;
+      const W = 760, H = 220, padL = 70, padR = 25, padT = 20, padB = 34;
+      const plotW = W - padL - padR;
+      const plotH = H - padT - padB;
+      const maxVal = Math.max(...wealthArr, ...energyArr, 500000) * 1.1;
+
+      const xAt = i => padL + (i / 9) * plotW;
+      const yAt = v => padT + plotH - (v / maxVal) * plotH;
+
+      let gridHtml = '';
+      for (let g = 0; g <= 4; g++) {
+        const val = (maxVal / 4) * g;
+        const y = yAt(val);
+        gridHtml += `<line x1="${padL}" y1="${y.toFixed(1)}" x2="${W - padR}" y2="${y.toFixed(1)}" stroke="rgba(148,163,184,0.16)" stroke-dasharray="4 4"/>`;
+        gridHtml += `<text x="${padL - 8}" y="${(y + 4).toFixed(1)}" fill="#94a3b8" font-size="11" font-family="JetBrains Mono, monospace" text-anchor="end">€${(val / 1000).toFixed(0)}k</text>`;
+      }
+
+      let xLabels = '';
+      for (let i = 0; i < 10; i++) {
+        const x = xAt(i);
+        xLabels += `<text x="${x.toFixed(1)}" y="${H - 10}" fill="#94a3b8" font-size="11" font-family="JetBrains Mono, monospace" text-anchor="middle">Yr ${i + 1}</text>`;
+      }
+
+      const wPoints = wealthArr.map((v, i) => `${xAt(i).toFixed(1)},${yAt(v).toFixed(1)}`).join(' ');
+      const ePoints = energyArr.map((v, i) => `${xAt(i).toFixed(1)},${yAt(v).toFixed(1)}`).join(' ');
+
+      let dotsHtml = '';
+      wealthArr.forEach((v, i) => {
+        dotsHtml += `<circle cx="${xAt(i).toFixed(1)}" cy="${yAt(v).toFixed(1)}" r="4" fill="#34d399" />`;
+      });
+      energyArr.forEach((v, i) => {
+        dotsHtml += `<circle cx="${xAt(i).toFixed(1)}" cy="${yAt(v).toFixed(1)}" r="3.5" fill="#38bdf8" />`;
+      });
+
+      svg.innerHTML = `
+        ${gridHtml}
+        ${xLabels}
+        <polyline fill="none" stroke="#38bdf8" stroke-width="2.5" points="${ePoints}" />
+        <polyline fill="none" stroke="#34d399" stroke-width="3" points="${wPoints}" />
+        ${dotsHtml}
+      `;
+    }
+
+    function exportEuSuccessionAuditPDF() {
+      const kpiData = [
+        { label: "Annual Energy + CO2 Savings", value: document.getElementById('res-energy-save').innerText, unit: document.getElementById('res-co2-tons').innerText },
+        { label: "Net Retrofit CapEx (Post-BLE)", value: document.getElementById('res-net-capex').innerText, unit: document.getElementById('res-ble-subsidy').innerText },
+        { label: "Post-Retrofit Facility EBITDA", value: document.getElementById('res-total-ebitda').innerText, unit: document.getElementById('res-payback-yrs').innerText },
+        { label: "10-Yr Operator Net Equity", value: document.getElementById('res-operator-wealth').innerText, unit: document.getElementById('res-equity-share-detail').innerText }
+      ];
+      const inputSummary = [
+        { label: "Facility Scale", value: document.getElementById('lbl-area').innerText },
+        { label: "Heating Degree-Hours (GTZ)", value: document.getElementById('lbl-gtz').innerText },
+        { label: "Envelope Thermal Retrofit", value: document.getElementById('lbl-u-drop').innerText },
+        { label: "BLE Federal Subsidy Tier", value: document.getElementById('lbl-ble-grant').innerText },
+        { label: "Hofnachfolge Equity Structure", value: document.getElementById('lbl-equity-pct').innerText }
+      ];
+      const recommendation = `DIN V 18599 thermal envelope modernization combined with German BLE federal energy efficiency grants yields an annual operational uplift of ${document.getElementById('res-energy-save').innerText}, enabling phased Hofnachfolge equity acquisition reaching ${document.getElementById('res-operator-wealth').innerText} over a 10-year horizon.`;
+      if (typeof generateInstitutionalPDF === 'function') {
+        generateInstitutionalPDF(
+          "EU Greenhouse Energy Audit (DIN V 18599 / BLE) & Hofnachfolge Equity Dossier",
+          kpiData,
+          inputSummary,
+          recommendation
+        );
+      } else {
+        window.print();
+      }
+    }
+
+    document.querySelectorAll('input[type="range"]').forEach(el => {
+      el.addEventListener('input', calculateEuSuccession);
+    });
+
+    calculateEuSuccession();
+  </script>
+  <script src="js/inwoovation_dossier_engine.js"></script>
+</body>
+</html>
