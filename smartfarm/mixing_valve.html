@@ -106,7 +106,7 @@
 <body>
 <main class="container"><header>
 <div class="header-top-bar" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 0.8rem;">
-<div class="badge" id="header-badge" style="margin-bottom: 0;">Last Updated: October 28, 2026</div>
+<div class="badge" id="header-badge" style="margin-bottom: 0;">Last Updated: November 03, 2026</div>
 <div style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap;">
     <a href="https://inwoovation.com/" target="_blank" rel="noopener noreferrer" style="background: rgba(30, 41, 59, 0.9); border: 1px solid rgba(255, 255, 255, 0.18); color: #f8fafc; font-weight: 700; font-size: 0.85rem; padding: 0.45rem 0.9rem; border-radius: 100px; text-decoration: none; display: inline-flex; align-items: center; gap: 0.4rem; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); transition: all 0.25s ease;">
         🌐 Inwoovation Lab
@@ -305,72 +305,72 @@
 
 <div class="academic-guide-lang">
 <h3>📚 Hydraulic Engineering of 3-Way Mixing Valves (Kv) and Pipe Sizing in Greenhouse Heating</h3>
-<p>Modern commercial greenhouses utilize hot water circulating through pipe rail networks to maintain microclimate thermal homogeneity. A 3-way mixing valve acts as the critical modulating actuator, blending high-temperature primary boiler/buffer tank supply water with cooler secondary return water. Precise valve sizing ($K_{vs}$ and authority calculations) is paramount to prevent control loop instability, actuator burnout, and root zone thermal shock.</p>
+<p>Modern commercial greenhouses utilize hot water circulating through pipe rail networks to maintain microclimate thermal homogeneity. A 3-way mixing valve acts as the critical modulating actuator, blending high-temperature primary boiler/buffer tank supply water with cooler secondary return water. Precise valve sizing (K<sub>vs</sub> and authority calculations) is paramount to prevent control loop instability, actuator burnout, and root zone thermal shock.</p>
 
-<h4>1. Physical Derivation of the Flow Coefficient ($K_v$ and $K_{vs}$)</h4>
-<p>The flow coefficient <code>K_v</code> is defined according to European standards (VDI/VDE 2173) as the volumetric flow rate of water ($5^\circ\text{C}$ to $40^\circ\text{C}$) in cubic meters per hour ($\text{m}^3/\text{h}$) that passes through the valve at an exact differential pressure of <strong>1.0 bar ($100\text{ kPa}$)</strong>. The full-stroke nominal flow capacity is designated as <strong>$K_{vs}$</strong>. The fundamental hydraulic relationship derived from Bernoulli's equation is:</p>
+<h4>1. Physical Derivation of the Flow Coefficient (K<sub>v</sub> and K<sub>vs</sub>)</h4>
+<p>The flow coefficient <code>K_v</code> is defined according to European standards (VDI/VDE 2173) as the volumetric flow rate of water (5°C to 40°C) in cubic meters per hour (m<sup>3</sup>/h) that passes through the valve at an exact differential pressure of <strong>1.0 bar (100 kPa)</strong>. The full-stroke nominal flow capacity is designated as <strong>K<sub>vs</sub></strong>. The fundamental hydraulic relationship derived from Bernoulli's equation is:</p>
 <ul>
-<li><code>K_v = \frac{Q}{\sqrt{\Delta P_v / \Delta P_0}} \approx \frac{Q}{\sqrt{\Delta P_v}}</code> (when $\Delta P_0 = 1\text{ bar}$ and water density $\rho \approx 1000\text{ kg/m}^3$).</li>
-<li>Where <code>Q</code> is the design volumetric flow rate ($\text{m}^3/\text{h}$) and <code>\Delta P_v</code> is the dynamic differential pressure across the valve body in bar.</li>
-<li>To convert to American imperial flow coefficient ($C_v$ in US GPM at $1\text{ psi}$ drop): <code>C_v = 1.156 \cdot K_v</code>.</li>
+<li><code>K_v = (Q)/(√(Δ P_v / Δ P_0)) ≈ (Q)/(√(Δ P_v))</code> (when Δ P<sub>0</sub> = 1 bar and water density ρ ≈ 1000 kg/m<sup>3</sup>).</li>
+<li>Where <code>Q</code> is the design volumetric flow rate (m<sup>3</sup>/h) and <code>Δ P_v</code> is the dynamic differential pressure across the valve body in bar.</li>
+<li>To convert to American imperial flow coefficient (C<sub>v</sub> in US GPM at 1 psi drop): <code>C_v = 1.156 · K_v</code>.</li>
 </ul>
 
-<h4>2. Valve Authority ($a$) and Non-Linear Characteristic Distortion</h4>
-<p>For high-fidelity proportional-integral-derivative (PID) climate control, the control valve must exert dominant dynamic authority over the secondary distribution loop. <strong>Valve Authority ($a$)</strong> is formulated as:</p>
+<h4>2. Valve Authority (a) and Non-Linear Characteristic Distortion</h4>
+<p>For high-fidelity proportional-integral-derivative (PID) climate control, the control valve must exert dominant dynamic authority over the secondary distribution loop. <strong>Valve Authority (a)</strong> is formulated as:</p>
 <div style="background: rgba(15, 23, 42, 0.4); padding: 0.8rem 1rem; border-radius: 8px; font-family: monospace; color: var(--cyan); margin: 0.8rem 0;">
-a = \frac{\Delta P_v}{\Delta P_v + \Delta P_{circuit}}
+a = (Δ P_v)/(Δ P_v + Δ P<sub>circuit</sub>)
 </div>
-<p>Where $\Delta P_{circuit}$ represents the combined dynamic friction and minor losses of the pipe rails, balancing valves, and manifold at design flow. In commercial practice:</p>
+<p>Where Δ P<sub>circuit</sub> represents the combined dynamic friction and minor losses of the pipe rails, balancing valves, and manifold at design flow. In commercial practice:</p>
 <ul>
-<li><strong>Optimal Authority ($0.40 \le a \le 0.60$)</strong>: The installed valve characteristic closely tracks its intrinsic logarithmic (equal percentage) curve, ensuring smooth, non-oscillating water temperature modulation between $30^\circ\text{C}$ and $75^\circ\text{C}$.</li>
+<li><strong>Optimal Authority (0.40 ≤ a ≤ 0.60)</strong>: The installed valve characteristic closely tracks its intrinsic logarithmic (equal percentage) curve, ensuring smooth, non-oscillating water temperature modulation between 30°C and 75°C.</li>
 <li><strong>Undersized Valve ($a &gt; 0.70$)</strong>: Excessive pressure drop forces oversized circulation pumps, generating acoustic noise, erosion, and high electrical parasitic loads.</li>
 <li><strong>Oversized Valve ($a &lt; 0.25$)</strong>: The valve acts like an On/Off switch in the lower 15% of its stroke. The climate computer experiences hunting, causing rapid temperature swings that stress crop transpiration and trigger calcium uptake disorders.</li>
 </ul>
 
-<h4>3. Volumetric Flow Rate ($Q$) & Thermodynamic Energy Transfer</h4>
-<p>The required mass flow rate of circulating water to deliver design heat output ($P$, in $\text{kW}$) is governed by the sensible heat equation:</p>
+<h4>3. Volumetric Flow Rate (Q) & Thermodynamic Energy Transfer</h4>
+<p>The required mass flow rate of circulating water to deliver design heat output (P, in kW) is governed by the sensible heat equation:</p>
 <ul>
-<li><code>Q = \frac{P}{\rho \cdot C_p \cdot \Delta T} \cdot 3600 = \frac{P \cdot 0.860}{\Delta T}</code> ($\text{m}^3/\text{h}$)</li>
-<li>Where $C_p = 4.186\text{ kJ}/(\text{kg}\cdot\text{K})$ (specific heat capacity of water) and $\Delta T$ is the design temperature difference between heating supply ($T_{supply}$) and return ($T_{return}$) water.</li>
-<li><strong>Engineering Rule of Thumb</strong>: For European Venlo pipe rails, standard design conditions specify $T_{supply} = 75^\circ\text{C}$ and $T_{return} = 55^\circ\text{C}$ ($\Delta T = 20\text{ K}$). Under low-temperature radiant floor or bench heating, $\Delta T$ is often compressed to $10\text{ K}$ ($45^\circ\text{C} / 35^\circ\text{C}$), which doubles required circulating volume.</li>
+<li><code>Q = (P)/(ρ · C_p · Δ T) · 3600 = (P · 0.860)/(Δ T)</code> (m<sup>3</sup>/h)</li>
+<li>Where C<sub>p</sub> = 4.186 kJ/(kg·K) (specific heat capacity of water) and Δ T is the design temperature difference between heating supply (T<sub>supply</sub>) and return (T<sub>return</sub>) water.</li>
+<li><strong>Engineering Rule of Thumb</strong>: For European Venlo pipe rails, standard design conditions specify T<sub>supply</sub> = 75°C and T<sub>return</sub> = 55°C (Δ T = 20 K). Under low-temperature radiant floor or bench heating, Δ T is often compressed to 10 K (45°C / 35°C), which doubles required circulating volume.</li>
 </ul>
 
 <h4>4. Pipe Sizing (Nominal Diameter DN) and Hydraulic Velocity Limits</h4>
-<p>Piping nominal diameter ($DN$, $\text{mm}$) is determined by fluid velocity constraints according to DIN EN 14336:</p>
+<p>Piping nominal diameter (DN, mm) is determined by fluid velocity constraints according to DIN EN 14336:</p>
 <ul>
-<li><code>v = \frac{4 \cdot Q}{\pi \cdot d_i^2 \cdot 3600} \text{ [m/s]}</code></li>
+<li><code>v = (4 · Q)/(π · d_i^2 · 3600)  [m/s]</code></li>
 <li><strong>Permissible Velocity Boundaries</strong>:
   <ul>
-    <li>Secondary greenhouse distribution pipes: <strong>$0.5\text{ m/s} \le v \le 1.0\text{ m/s}$</strong>.</li>
-    <li>Primary boiler manifold mains: <strong>$1.0\text{ m/s} \le v \le 1.5\text{ m/s}$</strong>.</li>
-    <li>Velocity below $0.4\text{ m/s}$ allows microbubbles to coalesce and cause air-locks, while velocity above $1.2\text{ m/s}$ triggers erosive wear and excessive cavitation in bronze/cast-iron valve seats.</li>
+    <li>Secondary greenhouse distribution pipes: <strong>0.5 m/s ≤ v ≤ 1.0 m/s</strong>.</li>
+    <li>Primary boiler manifold mains: <strong>1.0 m/s ≤ v ≤ 1.5 m/s</strong>.</li>
+    <li>Velocity below 0.4 m/s allows microbubbles to coalesce and cause air-locks, while velocity above 1.2 m/s triggers erosive wear and excessive cavitation in bronze/cast-iron valve seats.</li>
   </ul>
 </li>
 </ul>
 
 <h4>5. Sizing Walkthrough: 1,000 m² Venlo Tomato Greenhouse</h4>
-<p>Consider a $1,000\text{ m}^2$ glasshouse with a peak winter heat demand of $120\text{ kW}$ under outdoor design conditions of $-10^\circ\text{C}$:</p>
+<p>Consider a 1,000 m<sup>2</sup> glasshouse with a peak winter heat demand of 120 kW under outdoor design conditions of -10°C:</p>
 <ol>
-<li><strong>Volumetric Flow Rate</strong>: $Q = (120\text{ kW} \cdot 0.860) / 20\text{ K} = 5.16\text{ m}^3/\text{h}$.</li>
-<li><strong>Target Valve Pressure Drop</strong>: Select $\Delta P_v = 10.0\text{ kPa} = 0.10\text{ bar}$ to achieve $a \approx 0.45$ against a $12\text{ kPa}$ circuit pipe resistance.</li>
-<li><strong>Calculated Required $K_v$</strong>: $K_v = 5.16 / \sqrt{0.10} = 16.32\text{ m}^3/\text{h}$.</li>
-<li><strong>Commercial Valve Selection</strong>: Standard commercial valves feature normalized $K_{vs}$ steps ($10, 16, 25, 40$). A standard <strong>$DN32$ ($K_{vs} = 16\text{ m}^3/\text{h}$)</strong> or <strong>$DN40$ ($K_{vs} = 20\text{ m}^3/\text{h}$)</strong> 3-way flanged valve is specified.</li>
-<li><strong>Header Pipe Sizing</strong>: For $5.16\text{ m}^3/\text{h}$ at $v \approx 0.8\text{ m/s}$, the ideal pipe diameter is $d_i = \sqrt{(4 \cdot 5.16) / (\pi \cdot 0.8 \cdot 3600)} = 47.7\text{ mm} \rightarrow$ <strong>$DN50$ ($2"$ steel rail header)</strong>.</li>
+<li><strong>Volumetric Flow Rate</strong>: Q = (120 kW · 0.860) / 20 K = 5.16 m<sup>3</sup>/h.</li>
+<li><strong>Target Valve Pressure Drop</strong>: Select Δ P<sub>v</sub> = 10.0 kPa = 0.10 bar to achieve a ≈ 0.45 against a 12 kPa circuit pipe resistance.</li>
+<li><strong>Calculated Required K<sub>v</sub></strong>: K<sub>v</sub> = 5.16 / √(0.10) = 16.32 m<sup>3</sup>/h.</li>
+<li><strong>Commercial Valve Selection</strong>: Standard commercial valves feature normalized K<sub>vs</sub> steps ($10, 16, 25, 40$). A standard <strong>DN32 (K<sub>vs</sub> = 16 m<sup>3</sup>/h)</strong> or <strong>DN40 (K<sub>vs</sub> = 20 m<sup>3</sup>/h)</strong> 3-way flanged valve is specified.</li>
+<li><strong>Header Pipe Sizing</strong>: For 5.16 m<sup>3</sup>/h at v ≈ 0.8 m/s, the ideal pipe diameter is d<sub>i</sub> = √((4 · 5.16) / (π · 0.8 · 3600)) = 47.7 mm → <strong>DN50 ($2"$ steel rail header)</strong>.</li>
 </ol>
 
 <h4>6. Frequently Asked Questions (FAQ)</h4>
 <div class="faq-block" style="margin-top: 1rem;">
-  <p><strong>Q1: What is valve authority ($a$) and why is it critical in greenhouse heating loops?</strong><br/>
-  Valve authority is the ratio of dynamic pressure drop across the control valve to total circuit resistance ($a = \Delta P_v / (\Delta P_v + \Delta P_{circuit})$). Maintaining authority above $0.35$ preserves the valve's equal-percentage flow modulation. If authority collapses below $0.25$, the valve acts unpredictably like an On/Off gate, causing rapid temperature swings that damage sensitive crop roots.</p>
+  <p><strong>Q1: What is valve authority (a) and why is it critical in greenhouse heating loops?</strong><br/>
+  Valve authority is the ratio of dynamic pressure drop across the control valve to total circuit resistance (a = Δ P<sub>v</sub> / (Δ P<sub>v</sub> + Δ P<sub>circuit</sub>)). Maintaining authority above $0.35$ preserves the valve's equal-percentage flow modulation. If authority collapses below $0.25$, the valve acts unpredictably like an On/Off gate, causing rapid temperature swings that damage sensitive crop roots.</p>
 
   <p><strong>Q2: What is the physical difference between a 3-way mixing valve and a 3-way diverting valve?</strong><br/>
   A 3-way mixing valve has two inlet ports (hot boiler water and cold return water) and one blended outlet connected to the circulation pump, keeping circulating water volume through the greenhouse pipe rails 100% constant. A 3-way diverting valve has one inlet and two outlets, splitting flow to vary delivery volume.</p>
 
   <p><strong>Q3: Why should greenhouse heating loops avoid oversized mixing valves?</strong><br/>
-  An oversized valve ($K_{vs}$ too high) produces nominal design flow at only 10% to 20% opening stroke. In this micro-lift zone, the actuator resolution is insufficient, causing continuous cycling, actuator motor burnout, and severe thermal stratification across the growing canopy.</p>
+  An oversized valve (K<sub>vs</sub> too high) produces nominal design flow at only 10% to 20% opening stroke. In this micro-lift zone, the actuator resolution is insufficient, causing continuous cycling, actuator motor burnout, and severe thermal stratification across the growing canopy.</p>
 
   <p><strong>Q4: How does return water temperature impact condensing boiler and heat pump efficiency?</strong><br/>
-  Flue gas moisture in high-efficiency natural gas condensing boilers begins condensing at $57^\circ\text{C}$ (dew point). Maintaining heating return water below $50^\circ\text{C}$ through a high $\Delta T$ ($20\text{K}$) allows full latent heat recovery, raising system thermal efficiency up to $108\%$ (based on lower heating value). For heat pumps, each $1\text{ K}$ reduction in return water temperature improves the seasonal Coefficient of Performance (COP) by approximately $2.5\%$.</p>
+  Flue gas moisture in high-efficiency natural gas condensing boilers begins condensing at 57°C (dew point). Maintaining heating return water below 50°C through a high Δ T (20K) allows full latent heat recovery, raising system thermal efficiency up to 108% (based on lower heating value). For heat pumps, each 1 K reduction in return water temperature improves the seasonal Coefficient of Performance (COP) by approximately 2.5%.</p>
 </div>
 </div>
 </div>
@@ -528,7 +528,7 @@ a = \frac{\Delta P_v}{\Delta P_v + \Delta P_{circuit}}
         autoDisplay: false
       }, 'google_translate_element');
     }
-    </script><script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" type="text/javascript"></script>
+    </script><script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" type="text/javascript"></script>
 <!-- 100% Free Open Source Engine (No Paywalls) -->
 
 </body></html>

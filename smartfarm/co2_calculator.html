@@ -102,7 +102,7 @@
 <main class="container">
 <header>
 <div class="header-top-bar" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 0.8rem;">
-<div class="badge" id="header-badge">Last Updated: October 28, 2026</div>
+<div class="badge" id="header-badge">Last Updated: November 03, 2026</div>
 <div style="display: flex; gap: 0.5rem; align-items: center;">
     <button class="lang-btn" id="btn-farm-profile" onclick="toggleFarmProfileDrawer()" style="border-color: var(--primary); color: var(--primary); display: inline-flex; align-items: center; gap: 0.3rem; font-weight: 600; padding: 0.4rem 0.8rem; border-radius: 10px; cursor: pointer; background: transparent; border: 1px solid;">
         📋 <span>My Farm</span>
@@ -225,24 +225,24 @@ Targeting 1200 ppm CO2 under 0.75 ACH air exchange provides optimal carbon satur
   <h2 style="color: var(--primary); font-size: 1.4rem; font-weight: 700; margin-bottom: 1rem;">📚 Theoretical Foundations of CEA Carbon Enrichment & RuBisCO Kinetics</h2>
   
   <p style="color: #cbd5e1; line-height: 1.7; font-size: 0.95rem; margin-bottom: 1.2rem;">
-    In commercial Controlled Environment Agriculture (CEA), carbon dioxide ($CO_2$) is a primary gaseous fertilizer. Under ambient atmospheric conditions ($CO_2 \approx 420\text{ ppm}$), C3 photosynthetic crops—including Solanaceae (tomatoes, sweet peppers, eggplants) and Cucurbitaceae (cucumbers)—operate far below the saturation point of the primary carboxylating enzyme, <strong>Ribulose-1,5-bisphosphate carboxylase-oxygenase (RuBisCO)</strong>. When supplemental LED or HPS lighting provides intense photosynthetic photon flux density ($\text{PPFD} > 300\text{ }\mu\text{mol}\cdot\text{m}^{-2}\cdot\text{s}^{-1}$), vigorous canopies rapidly exhaust internal $CO_2$ to sub-ambient levels ($200-280\text{ ppm}$), severely depressing biomass synthesis.
+    In commercial Controlled Environment Agriculture (CEA), carbon dioxide (CO<sub>2</sub>) is a primary gaseous fertilizer. Under ambient atmospheric conditions (CO<sub>2</sub> ≈ 420 ppm), C3 photosynthetic crops—including Solanaceae (tomatoes, sweet peppers, eggplants) and Cucurbitaceae (cucumbers)—operate far below the saturation point of the primary carboxylating enzyme, <strong>Ribulose-1,5-bisphosphate carboxylase-oxygenase (RuBisCO)</strong>. When supplemental LED or HPS lighting provides intense photosynthetic photon flux density (PPFD > 300 μmol·m<sup>-2</sup>·s<sup>-1</sup>), vigorous canopies rapidly exhaust internal CO<sub>2</sub> to sub-ambient levels (200-280 ppm), severely depressing biomass synthesis.
   </p>
 
   <h3 style="color: var(--cyan); font-size: 1.15rem; font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.6rem;">1. The Biophysical Mass-Balance Equation</h3>
   <p style="color: #cbd5e1; line-height: 1.7; font-size: 0.95rem; margin-bottom: 0.8rem;">
-    The net accumulation of gaseous carbon dioxide within an enclosed greenhouse volume ($V_{gh}$, $\text{m}^3$) is governed by a first-order dynamic mass-balance differential equation:
+    The net accumulation of gaseous carbon dioxide within an enclosed greenhouse volume (V<sub>gh</sub>, m<sup>3</sup>) is governed by a first-order dynamic mass-balance differential equation:
   </p>
   <div style="background: rgba(0,0,0,0.4); border: 1px solid rgba(56, 189, 248, 0.2); border-radius: 8px; padding: 1rem; margin: 1rem 0; font-family: monospace; color: #38bdf8; font-size: 0.95rem;">
-    V_{gh} · (dC / dt) = Φ_{inj}(t) - LAI · A_{net}(C, I, T) - ACH(t) · V_{gh} · (C - C_{ambient})
+    V<sub>gh</sub> · (dC / dt) = Φ<sub>inj</sub>(t) - LAI · A<sub>net</sub>(C, I, T) - ACH(t) · V<sub>gh</sub> · (C - C<sub>ambient</sub>)
   </div>
   <p style="color: #cbd5e1; line-height: 1.7; font-size: 0.95rem;">
     Where:
   </p>
   <ul style="color: #94a3b8; font-size: 0.9rem; line-height: 1.7; margin-left: 1.5rem; margin-bottom: 1.2rem;">
-    <li><strong>Φ_{inj}(t)</strong>: Mass flow injection rate of pure liquid $CO_2$ or boiler flue gas ($\text{kg}\cdot\text{h}^{-1}$).</li>
-    <li><strong>LAI · A_{net}</strong>: Canopy assimilation rate based on Leaf Area Index ($m^2/m^2$) and Farquhar-von Caemmerer-Berry net photosynthetic uptake.</li>
-    <li><strong>ACH(t)</strong>: Air Changes per Hour ($\text{h}^{-1}$), representing ventilation leakage and fan air exchange.</li>
-    <li><strong>C - C_{ambient}</strong>: Partial pressure concentration gradient driving outward molecular dispersion.</li>
+    <li><strong>Φ<sub>inj</sub>(t)</strong>: Mass flow injection rate of pure liquid CO<sub>2</sub> or boiler flue gas (kg·h<sup>-1</sup>).</li>
+    <li><strong>LAI · A<sub>net</sub></strong>: Canopy assimilation rate based on Leaf Area Index (m<sup>2</sup>/m<sup>2</sup>) and Farquhar-von Caemmerer-Berry net photosynthetic uptake.</li>
+    <li><strong>ACH(t)</strong>: Air Changes per Hour (h<sup>-1</sup>), representing ventilation leakage and fan air exchange.</li>
+    <li><strong>C - C<sub>ambient</sub></strong>: Partial pressure concentration gradient driving outward molecular dispersion.</li>
   </ul>
 
   <h3 style="color: var(--cyan); font-size: 1.15rem; font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.6rem;">2. Recommended CO2 Enrichment Targets by Crop Species</h3>
@@ -292,19 +292,19 @@ Targeting 1200 ppm CO2 under 0.75 ACH air exchange provides optimal carbon satur
 
   <h3 style="color: var(--cyan); font-size: 1.15rem; font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.6rem;">3. Ventilation Gating & Marginal Economic Optimization</h3>
   <p style="color: #cbd5e1; line-height: 1.7; font-size: 0.95rem; margin-bottom: 0.8rem;">
-    A common operational error in commercial greenhouse facilities is injecting pure $CO_2$ at static setpoints throughout the day. When ambient solar irradiance drives greenhouse temperatures higher, ridge roof vents automatically open. When vents open past 15–20% ($ACH > 2.0\text{ h}^{-1}$), <strong>more than 80% of injected $CO_2$ is immediately swept out to the exterior</strong>, resulting in severe financial loss without biological benefit. Modern Dutch and German climate computers (Priva, Hoogendoorn, Ridder) enforce dynamic ventilation gating:
+    A common operational error in commercial greenhouse facilities is injecting pure CO<sub>2</sub> at static setpoints throughout the day. When ambient solar irradiance drives greenhouse temperatures higher, ridge roof vents automatically open. When vents open past 15–20% (ACH > 2.0 h<sup>-1</sup>), <strong>more than 80% of injected CO<sub>2</sub> is immediately swept out to the exterior</strong>, resulting in severe financial loss without biological benefit. Modern Dutch and German climate computers (Priva, Hoogendoorn, Ridder) enforce dynamic ventilation gating:
   </p>
   <ul style="color: #94a3b8; font-size: 0.9rem; line-height: 1.7; margin-left: 1.5rem; margin-bottom: 1.2rem;">
     <li><strong>Closed Screen / Low ACH (&lt; 0.5/hr)</strong>: Target peak enrichment (1,000 – 1,200 ppm). Maximum dosing efficiency.</li>
     <li><strong>Partial Venting (0.5 – 1.5 ACH)</strong>: Throttle setpoint to 600 – 800 ppm to maintain positive assimilation while curbing gas loss.</li>
-    <li><strong>Heavy Summer Venting (&gt; 2.5 ACH)</strong>: Maintain ambient setpoint (420 – 450 ppm). Do not dose pure liquid $CO_2$.</li>
+    <li><strong>Heavy Summer Venting (&gt; 2.5 ACH)</strong>: Maintain ambient setpoint (420 – 450 ppm). Do not dose pure liquid CO<sub>2</sub>.</li>
   </ul>
 
   <h3 style="color: var(--cyan); font-size: 1.15rem; font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.6rem;">4. Frequently Asked Questions (FAQ)</h3>
   <div style="display: flex; flex-direction: column; gap: 1rem; margin-top: 1rem;">
     <div style="background: rgba(15, 23, 42, 0.4); border: 1px solid rgba(255,255,255,0.06); border-radius: 8px; padding: 1rem;">
       <h4 style="color: #f8fafc; font-size: 0.95rem; margin-bottom: 0.4rem;">Q: Can elevated CO2 compensate for lower greenhouse temperatures?</h4>
-      <p style="color: #94a3b8; font-size: 0.88rem; line-height: 1.5;">Yes. Elevating $CO_2$ shifts the optimum temperature for C3 photosynthesis upward by 2°C to 4°C. High $CO_2$ competitively inhibits the oxygenase activity of RuBisCO, thereby suppressing photorespiration which normally escalates as temperatures rise.</p>
+      <p style="color: #94a3b8; font-size: 0.88rem; line-height: 1.5;">Yes. Elevating CO<sub>2</sub> shifts the optimum temperature for C3 photosynthesis upward by 2°C to 4°C. High CO<sub>2</sub> competitively inhibits the oxygenase activity of RuBisCO, thereby suppressing photorespiration which normally escalates as temperatures rise.</p>
     </div>
     <div style="background: rgba(15, 23, 42, 0.4); border: 1px solid rgba(255,255,255,0.06); border-radius: 8px; padding: 1rem;">
       <h4 style="color: #f8fafc; font-size: 0.95rem; margin-bottom: 0.4rem;">Q: What is the risk of excessive CO2 levels (&gt; 1,600 ppm)?</h4>

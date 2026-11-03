@@ -49,7 +49,7 @@
     "url": "https://inwoovation.com"
   },
   "datePublished": "2026-09-01",
-  "dateModified": "2026-10-28",
+  "dateModified": "2026-11-03",
   "mainEntityOfPage": "https://inwoovation.com/articles/de/article-34-uvc-entkeimung-geschlossene-hydrokultur.html"
 }
   </script>
@@ -80,10 +80,10 @@
     </header>
 
     <div class="article-body">
-      <p class="lead">Die Wiederverwendung von Drainagewasser ohne effektive Desinfektion birgt das Risiko verheerender Virusepidemien (*ToBRFV*). Eine kontrollierte <strong>UV-C-Fluenzdosis von $\ge 250\text{ mJ/cm}^2$</strong> garantiert eine $99,999\%$-ige Entkeimungsrate (5-Log-Stufe) ohne chemische Rückstände.</p>
+      <p class="lead">Die Wiederverwendung von Drainagewasser ohne effektive Desinfektion birgt das Risiko verheerender Virusepidemien (*ToBRFV*). Eine kontrollierte <strong>UV-C-Fluenzdosis von ≥ 250 mJ/cm<sup>2</sup></strong> garantiert eine 99,999%-ige Entkeimungsrate (5-Log-Stufe) ohne chemische Rückstände.</p>
 
       <h2>1. Kinetische Chick-Watson-Modellierung</h2>
-      <p>Die Abtötungsrate hängt exponentiell von der UV-C-Dosis und der optischen Transmission ($UVT\%$) der Nährlösung ab.</p>
+      <p>Die Abtötungsrate hängt exponentiell von der UV-C-Dosis und der optischen Transmission (UVT%) der Nährlösung ab.</p>
 
       <h2>2. Interaktiver UV-C-Kalkulator</h2>
       <p>Dimensionieren Sie Ihre UV-C-Reaktoranlage online:</p>
@@ -169,29 +169,29 @@
         </div>
 
         <h2>Section C: Geschlossene Regelkreisarchitektur (PID / MPC) &amp; Sensorkalibrierungs-Protokoll</h2>
-        <p>Um Regelschwingungen (Hunting) und Stellgliedverschleiß an Dreiwege-Mischventilen, Firstlüftungswinden, Hochdruck-Nebelstationen und Dosierpumpen zu vermeiden, wird eine kaskadierte Regelarchitektur aus <strong>Modellprädiktiver Regelung (MPC)</strong> im übergeordneten Führungsregler (Abtastintervall $\Delta t = 300\text{ s}$) und unterlagerten <strong>PID-Regelkreisen mit Anti-Windup</strong> ($\Delta t = 1–5\text{ s}$) eingesetzt:</p>
+        <p>Um Regelschwingungen (Hunting) und Stellgliedverschleiß an Dreiwege-Mischventilen, Firstlüftungswinden, Hochdruck-Nebelstationen und Dosierpumpen zu vermeiden, wird eine kaskadierte Regelarchitektur aus <strong>Modellprädiktiver Regelung (MPC)</strong> im übergeordneten Führungsregler (Abtastintervall Δ t = 300 s) und unterlagerten <strong>PID-Regelkreisen mit Anti-Windup</strong> (Δ t = 1–5 s) eingesetzt:</p>
         <ul>
-          <li><strong>Hysterese-Totzonen (Deadbands) &amp; Stellratenbegrenzung:</strong> Lüftungsklappen arbeiten mit einer Totzone von $\pm 0,3\text{ °C}$ bzw. $\pm 0,05\text{ kPa}$ VPD und einer maximalen Verstellrate von $2,5\%\text{ pro Minute}$, um Kaltlufteinbrüche auf das obere Kronendach zu unterbinden.</li>
-          <li><strong>Messtechnische Kalibrierung &amp; Redundanz:</strong> Aspirierte Messboxen (PT1000 Klasse A, kapazitive Polymer-Feuchtesensoren, zweistrahlige NDIR-$CO_2$-Sensoren mit automatischer Baseline-Kalibrierung bei $420\text{ ppm}$ sowie TDR-Wellenleiter und doppelt-elektrolytische pH/EC-Sonden) werden im 14-tägigen Wartungsintervall gegen rückführbare Referenzlösungen ($\text{pH } 4,01 / 7,00$; $\text{EC } 1,413 / 5,00\text{ dS/m}$) geprüft.</li>
-          <li><strong>Fail-Safe-Störfallroutinen:</strong> Bei Sensorausfall (Plausibilitätsprüfung mittels Kalman-Filter-Residuum $|r_k| > 3\sigma$) schaltet die speicherprogrammierbare Steuerung (SPS) unterbrechungsfrei auf den redundanten Referenzfühler der Nachbarabteilung um und sichert Frostschutz- sowie Notbelüftungsgrenzwerte hardwareseitig ab.</li>
+          <li><strong>Hysterese-Totzonen (Deadbands) &amp; Stellratenbegrenzung:</strong> Lüftungsklappen arbeiten mit einer Totzone von ± 0,3 °C bzw. ± 0,05 kPa VPD und einer maximalen Verstellrate von 2,5% pro Minute, um Kaltlufteinbrüche auf das obere Kronendach zu unterbinden.</li>
+          <li><strong>Messtechnische Kalibrierung &amp; Redundanz:</strong> Aspirierte Messboxen (PT1000 Klasse A, kapazitive Polymer-Feuchtesensoren, zweistrahlige NDIR-CO<sub>2</sub>-Sensoren mit automatischer Baseline-Kalibrierung bei 420 ppm sowie TDR-Wellenleiter und doppelt-elektrolytische pH/EC-Sonden) werden im 14-tägigen Wartungsintervall gegen rückführbare Referenzlösungen (pH 4,01 / 7,00; EC 1,413 / 5,00 dS/m) geprüft.</li>
+          <li><strong>Fail-Safe-Störfallroutinen:</strong> Bei Sensorausfall (Plausibilitätsprüfung mittels Kalman-Filter-Residuum |r<sub>k</sub>| > 3σ) schaltet die speicherprogrammierbare Steuerung (SPS) unterbrechungsfrei auf den redundanten Referenzfühler der Nachbarabteilung um und sichert Frostschutz- sowie Notbelüftungsgrenzwerte hardwareseitig ab.</li>
         </ul>
 
         <h2>Section D: Kommerzielle Gewächshaus-Fallstudie &amp; Techno-Ökonomische Bewertung (1,0 ha Venlo-Block)</h2>
-        <p>In einer 12-monatigen Betriebsauswertung eines <strong>$10.000\text{ m}^2$ ($1,0\text{ ha}$) Venlo-Glashauses</strong> (Stehwandhöhe $6,80\text{ m}$, doppeltes Energieschirmsystem, $51\text{ mm}$ Schienenrohrheizung und geschlossene Tropfbewässerung) führte die Implementierung dieses modellbasierten Regelkonzepts zu folgenden verifizierten Kennzahlen:</p>
+        <p>In einer 12-monatigen Betriebsauswertung eines <strong>10.000 m<sup>2</sup> (1,0 ha) Venlo-Glashauses</strong> (Stehwandhöhe 6,80 m, doppeltes Energieschirmsystem, 51 mm Schienenrohrheizung und geschlossene Tropfbewässerung) führte die Implementierung dieses modellbasierten Regelkonzepts zu folgenden verifizierten Kennzahlen:</p>
         <ul>
-          <li><strong>Spezifische Primärenergieeinsparung:</strong> Reduktion des thermischen und elektrischen Gesamtenergiebedarfs um <strong>$24,8\%$</strong> (Einsparung von $68,4\text{ kWh}_{\text{th}}\cdot\text{m}^{-2}\cdot\text{a}^{-1}$ Erdgas/Fernwärme durch prädiktive Schirm- und Vorlauftemperaturführung).</li>
-          <li><strong>Vermarktungsfähiger Ertragszuwachs:</strong> Steigerung der Klasse-I-Erntemenge um <strong>$+11,6\%$</strong> (von $74,2\text{ kg/m}^2$ auf $82,8\text{ kg/m}^2$ Jahresertrag) bei gleichzeitiger Senkung des Ausschusses durch physiologische Störungen unter $0,8\%$.</li>
-          <li><strong>Kapitalrendite (ROI &amp; Amortisation):</strong> Bei einer Netto-Investition von $48.500\text{ EUR/ha}$ für Sensorik, Aktorik-Upgrades und MPC-Aufschaltung resultiert ein jährlicher Deckungsbeitragszuwachs von $89.200\text{ EUR/ha}$, was einer <strong>statischen Amortisationszeit von $6,5\text{ Monaten}$</strong> und einem internen Zinsfuß ($\text{IRR}$) von über $42\%$ entspricht.</li>
+          <li><strong>Spezifische Primärenergieeinsparung:</strong> Reduktion des thermischen und elektrischen Gesamtenergiebedarfs um <strong>24,8%</strong> (Einsparung von 68,4 kWh<sub>th</sub>·m<sup>-2</sup>·a<sup>-1</sup> Erdgas/Fernwärme durch prädiktive Schirm- und Vorlauftemperaturführung).</li>
+          <li><strong>Vermarktungsfähiger Ertragszuwachs:</strong> Steigerung der Klasse-I-Erntemenge um <strong>+11,6%</strong> (von 74,2 kg/m<sup>2</sup> auf 82,8 kg/m<sup>2</sup> Jahresertrag) bei gleichzeitiger Senkung des Ausschusses durch physiologische Störungen unter 0,8%.</li>
+          <li><strong>Kapitalrendite (ROI &amp; Amortisation):</strong> Bei einer Netto-Investition von 48.500 EUR/ha für Sensorik, Aktorik-Upgrades und MPC-Aufschaltung resultiert ein jährlicher Deckungsbeitragszuwachs von 89.200 EUR/ha, was einer <strong>statischen Amortisationszeit von 6,5 Monaten</strong> und einem internen Zinsfuß (IRR) von über 42% entspricht.</li>
         </ul>
 
         <h2>Section E: Häufig gestellte Ingenieurfragen (FAQ)</h2>
         <div class="faq-block" style="margin-top: 14px;">
           <p><strong>F1: Wie verhindert man bei geschlossenen Energieschirmen einen gefährlichen Feuchtestau im Bestand?</strong><br>
-          Durch einen geregelten <em>Feuchtespalt (Screen Gap)</em> von $1,5\%$ bis $4,0\%$ in Kombination mit einer Mindest-Rohrtemperatur von $38–42\text{ °C}$ wird ein definierter konvektiver Auftrieb erzeugt, der Wasserdampf an die kalte Glasdachfläche transportiert, wo er kontrolliert an den Kondensatrinne-Profilen abgeleitet wird.</p>
+          Durch einen geregelten <em>Feuchtespalt (Screen Gap)</em> von 1,5% bis 4,0% in Kombination mit einer Mindest-Rohrtemperatur von 38–42 °C wird ein definierter konvektiver Auftrieb erzeugt, der Wasserdampf an die kalte Glasdachfläche transportiert, wo er kontrolliert an den Kondensatrinne-Profilen abgeleitet wird.</p>
           <p><strong>F2: Welches Abtastintervall ist für die Kopplung von Strahlungssumme und Bewässerungs- bzw. Klimasteuerung optimal?</strong><br>
-          Strahlungs- und Mikroklimadaten werden im $5\text{-Sekunden-Takt}$ erfasst, über ein gleitendes $60\text{-Sekunden-Fenster}$ gefiltert und alle $5\text{ Minuten}$ an den MPC-Optimierer übergeben, während Bewässerungsimpulse direkt über das kumulierte Einstrahlungsintegral ($\text{J/cm}^2$) ausgelöst werden.</p>
+          Strahlungs- und Mikroklimadaten werden im 5-Sekunden-Takt erfasst, über ein gleitendes 60-Sekunden-Fenster gefiltert und alle 5 Minuten an den MPC-Optimierer übergeben, während Bewässerungsimpulse direkt über das kumulierte Einstrahlungsintegral (J/cm<sup>2</sup>) ausgelöst werden.</p>
           <p><strong>F3: Wie lassen sich die physikalischen Parameter dieses Artikels für das eigene Gewächshaus berechnen?</strong><br>
-          Nutzen Sie direkt unseren interaktiven <a href="/smartfarm/nutrient.html" style="color: #10b981; font-weight: 700;">Interactive CEA Engineering Calculator</a> sowie die unten verlinkten Simulationswerkzeuge von Inwoovation Lab.</p>
+          Nutzen Sie direkt unseren interaktiven <a href="/tools/hydroponic-nutrient-solution-calculator.html" style="color: #10b981; font-weight: 700;">Interactive CEA Engineering Calculator</a> sowie die unten verlinkten Simulationswerkzeuge von Inwoovation Lab.</p>
         </div>
       </section>
 <!-- INW-DEEP-ENG-END -->
@@ -204,8 +204,8 @@
           <a href="/smartfarm/heat_loss.html" style="display: inline-block; padding: 8px 14px; background: #0f172a; color: #38bdf8; border: 1px solid #334155; border-radius: 6px; text-decoration: none; font-size: 0.88rem; font-weight: 600;">🔥 Greenhouse Heat Loss (DIN V 18599)</a>
           <a href="/smartfarm/dli_calculator.html" style="display: inline-block; padding: 8px 14px; background: #0f172a; color: #38bdf8; border: 1px solid #334155; border-radius: 6px; text-decoration: none; font-size: 0.88rem; font-weight: 600;">☀️ DLI &amp; LED Spectrum Calculator</a>
           <a href="/smartfarm/co2_calculator.html" style="display: inline-block; padding: 8px 14px; background: #0f172a; color: #38bdf8; border: 1px solid #334155; border-radius: 6px; text-decoration: none; font-size: 0.88rem; font-weight: 600;">💨 CO2 Enrichment Kinetics</a>
-          <a href="/smartfarm/nutrient.html" style="display: inline-block; padding: 8px 14px; background: #0f172a; color: #38bdf8; border: 1px solid #334155; border-radius: 6px; text-decoration: none; font-size: 0.88rem; font-weight: 600;">🧪 Hydroponic Ion Stoichiometry</a>
-          <a href="/tools/psychrometric-chart.html" style="display: inline-block; padding: 8px 14px; background: #0f172a; color: #38bdf8; border: 1px solid #334155; border-radius: 6px; text-decoration: none; font-size: 0.88rem; font-weight: 600;">📈 Mollier Psychrometric Chart</a>
+          <a href="/tools/hydroponic-nutrient-solution-calculator.html" style="display: inline-block; padding: 8px 14px; background: #0f172a; color: #38bdf8; border: 1px solid #334155; border-radius: 6px; text-decoration: none; font-size: 0.88rem; font-weight: 600;">🧪 Hydroponic Ion Stoichiometry</a>
+          <a href="/tools/psychrometric-mollier-greenhouse-dehumidifier.html" style="display: inline-block; padding: 8px 14px; background: #0f172a; color: #38bdf8; border: 1px solid #334155; border-radius: 6px; text-decoration: none; font-size: 0.88rem; font-weight: 600;">📈 Mollier Psychrometric Chart</a>
           <a href="/tools/venlocad-3d.html" style="display: inline-block; padding: 8px 14px; background: #10b981; color: #022c22; border-radius: 6px; text-decoration: none; font-size: 0.88rem; font-weight: 700;">🏗️ VenloCAD 3D Architect</a>
         </div>
       </div>

@@ -49,7 +49,7 @@
     "url": "https://inwoovation.com"
   },
   "datePublished": "2026-09-01",
-  "dateModified": "2026-10-28",
+  "dateModified": "2026-11-03",
   "mainEntityOfPage": "https://inwoovation.com/articles/ja/article-42-substrate-matric-potential-pf-curves-jp.html"
 }
   </script>
@@ -75,15 +75,15 @@
 <article class="article-container">
     <header class="article-header">
       <div class="category-tag">培地水力学＆土壌物理学</div>
-      <h1>培地マトリックポテンシャル（$\Psi_m$）、$pF$ 水分保持曲線およびファン・ヘヌフテン理論</h1>
+      <h1>培地マトリックポテンシャル（Ψ<sub>m</sub>）、pF 水分保持曲線およびファン・ヘヌフテン理論</h1>
       <div class="article-meta">公開日: 2026-09-01 • 執筆者: Inwoo Hwang • 読了時間: 10分</div>
     </header>
 
     <div class="article-body">
-      <p class="lead">体積含水率（$VWC\%$）は水分の絶対量を示すに過ぎず、植物根が水を吸い上げるために必要なエネルギー仕事量を表しません。<strong>マトリック吸引圧（$\Psi_m$、hPa または $pF = \log_{10}|\text{hPa}|$）</strong>こそが水分の有効性を決定づけます。ロックウール培地における易有効水分（EAW）は、<strong>$pF\ 1.0\text{（10 hPa）}〜pF\ 2.0\text{（100 hPa）}$</strong>の極めて狭い範囲に存在します。</p>
+      <p class="lead">体積含水率（VWC%）は水分の絶対量を示すに過ぎず、植物根が水を吸い上げるために必要なエネルギー仕事量を表しません。<strong>マトリック吸引圧（Ψ<sub>m</sub>、hPa または pF = log<sub>10</sub>|hPa|）</strong>こそが水分の有効性を決定づけます。ロックウール培地における易有効水分（EAW）は、<strong>pF\ 1.0（10 hPa）〜pF\ 2.0（100 hPa）</strong>の極めて狭い範囲に存在します。</p>
 
       <h2>1. ファン・ヘヌフテン水分保持関数</h2>
-      <p>$pF > 2.2$ を超えると根の通水コンダクタンスが急激に低下し、気孔閉鎖を引き起こします。</p>
+      <p>pF > 2.2 を超えると根の通水コンダクタンスが急激に低下し、気孔閉鎖を引き起こします。</p>
 
       <h2>2. オンライン培地吸引圧計算ツール</h2>
       <p>マトリックポテンシャルおよびpF値を試算できます：</p>
@@ -94,7 +94,7 @@
 <!-- INW-DEEP-ENG-START -->
       <section class="inw-deep-engineering" style="margin-top: 36px; border-top: 2px solid rgba(16, 185, 129, 0.35); padding-top: 28px;">
         <h2>Section A: 熱力学および生物物理学の基礎方程式 / 支配方程式 ( Thermodynamic &amp; Biophysical Governing Equations : Substrate Matric Potential (Psi_m), pF Curves &amp; van Genuchten Model ( CEA Systems Engineering ) )</h2>
-        <p>商業用フェンロー型連棟温室 ( Commercial Venlo Greenhouse ) および完全人工光型植物工場 ( Vertical Plant Factory / CEA ) における <strong>培地マトリックポテンシャル（$\Psi_m$）、$pF$ 水分保持曲線およびファン・ヘヌフテン理論</strong> の精密環境制御・設備設計では 、 熱収支 ( Heat Balance ) ・ 物質収支 ( Mass Balance ) ・ 光量子放射伝達 ( Photon Radiative Transfer ) を連立微分方程式として定式化する必要があります 。 定常状態 ( Steady-State ) および非定常動的状態 ( Dynamic Transient State ) における SI 単位系の支配方程式は以下の通りです ：</p>
+        <p>商業用フェンロー型連棟温室 ( Commercial Venlo Greenhouse ) および完全人工光型植物工場 ( Vertical Plant Factory / CEA ) における <strong>培地マトリックポテンシャル（Ψ<sub>m</sub>）、pF 水分保持曲線およびファン・ヘヌフテン理論</strong> の精密環境制御・設備設計では 、 熱収支 ( Heat Balance ) ・ 物質収支 ( Mass Balance ) ・ 光量子放射伝達 ( Photon Radiative Transfer ) を連立微分方程式として定式化する必要があります 。 定常状態 ( Steady-State ) および非定常動的状態 ( Dynamic Transient State ) における SI 単位系の支配方程式は以下の通りです ：</p>
         <div class="code-box" style="background: rgba(15, 23, 42, 0.06); border-left: 4px solid #10b981; padding: 14px 18px; border-radius: 8px; font-family: monospace; margin: 16px 0; overflow-x: auto;">
           <code>Theta(h) = Theta_r + (Theta_s - Theta_r) / [1 + (alpha * |h|)^n]^m ; pF = log10(|h_cm_H2O|)</code><br>
           <code>dX_state / dt = A_sys * X_state + B_control * U_actuator + E_disturbance * D_ambient</code>
@@ -191,7 +191,7 @@
           <p><strong>Q2: 日射量に応じた灌水および CO2 施用の最適サンプリング周期はどのくらいですか？</strong><br>
           A2: 日射強度 ( W/m2 ) と葉温・飽差 ( VPD ) は 5 秒周期で計測・移動平均処理を行い 、 積算日射量 70 〜 100 J/cm2 ごとに 100 mL/株の精密パルス灌水を実行し 、 換気窓開度 ( ACH ) に連動して CO2 目標濃度 ( 600 〜 1,050 ppm ) を 5 分周期で動的最適化します 。</p>
           <p><strong>Q3: 自社温室の条件に合わせた具体的な設計値・負荷計算はどこで行えますか？</strong><br>
-          A3: Inwoovation Lab が提供する無料の <a href="/smartfarm/nutrient.html" style="color: #10b981; font-weight: 700;">Interactive CEA Engineering Calculator</a> および下部の関連エンジニアリング計算ツール群をそのままブラウザ上でご利用いただけます 。</p>
+          A3: Inwoovation Lab が提供する無料の <a href="/tools/hydroponic-nutrient-solution-calculator.html" style="color: #10b981; font-weight: 700;">Interactive CEA Engineering Calculator</a> および下部の関連エンジニアリング計算ツール群をそのままブラウザ上でご利用いただけます 。</p>
         </div>
       </section>
 <!-- INW-DEEP-ENG-END -->
@@ -204,8 +204,8 @@
           <a href="/smartfarm/heat_loss.html" style="display: inline-block; padding: 8px 14px; background: #0f172a; color: #38bdf8; border: 1px solid #334155; border-radius: 6px; text-decoration: none; font-size: 0.88rem; font-weight: 600;">🔥 Greenhouse Heat Loss (DIN V 18599)</a>
           <a href="/smartfarm/dli_calculator.html" style="display: inline-block; padding: 8px 14px; background: #0f172a; color: #38bdf8; border: 1px solid #334155; border-radius: 6px; text-decoration: none; font-size: 0.88rem; font-weight: 600;">☀️ DLI &amp; LED Spectrum Calculator</a>
           <a href="/smartfarm/co2_calculator.html" style="display: inline-block; padding: 8px 14px; background: #0f172a; color: #38bdf8; border: 1px solid #334155; border-radius: 6px; text-decoration: none; font-size: 0.88rem; font-weight: 600;">💨 CO2 Enrichment Kinetics</a>
-          <a href="/smartfarm/nutrient.html" style="display: inline-block; padding: 8px 14px; background: #0f172a; color: #38bdf8; border: 1px solid #334155; border-radius: 6px; text-decoration: none; font-size: 0.88rem; font-weight: 600;">🧪 Hydroponic Ion Stoichiometry</a>
-          <a href="/tools/psychrometric-chart.html" style="display: inline-block; padding: 8px 14px; background: #0f172a; color: #38bdf8; border: 1px solid #334155; border-radius: 6px; text-decoration: none; font-size: 0.88rem; font-weight: 600;">📈 Mollier Psychrometric Chart</a>
+          <a href="/tools/hydroponic-nutrient-solution-calculator.html" style="display: inline-block; padding: 8px 14px; background: #0f172a; color: #38bdf8; border: 1px solid #334155; border-radius: 6px; text-decoration: none; font-size: 0.88rem; font-weight: 600;">🧪 Hydroponic Ion Stoichiometry</a>
+          <a href="/tools/psychrometric-mollier-greenhouse-dehumidifier.html" style="display: inline-block; padding: 8px 14px; background: #0f172a; color: #38bdf8; border: 1px solid #334155; border-radius: 6px; text-decoration: none; font-size: 0.88rem; font-weight: 600;">📈 Mollier Psychrometric Chart</a>
           <a href="/tools/venlocad-3d.html" style="display: inline-block; padding: 8px 14px; background: #10b981; color: #022c22; border-radius: 6px; text-decoration: none; font-size: 0.88rem; font-weight: 700;">🏗️ VenloCAD 3D Architect</a>
         </div>
       </div>

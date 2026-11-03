@@ -37,7 +37,7 @@
     "@type": "CollectionPage",
     "name": "Commercial Crop Precision Steering Atlas: 10 Greenhouse Crops",
     "url": "https://inwoovation.com/crops/",
-    "dateModified": "2026-10-28",
+    "dateModified": "2026-11-03",
     "description": "Biophysical crop steering blueprints for 10 major commercial greenhouse and vertical farm crops: Tomato, Strawberry, Cucumber, Sweet Pepper, Lettuce, Rose, Phalaenopsis Orchid, Eggplant, Basil, and Cannabis.",
     "author": {
       "@type": "Person",
@@ -199,11 +199,11 @@
         <p>In modern Dutch and German high-tech horticulture (<em>Gartenbau-Meister / Plant Empowerment</em>), climate and irrigation computers do not merely maintain static temperature or humidity setpoints. Instead, growers steer the physiological balance between <strong>vegetative leaf/stem capacity (Source)</strong> and <strong>generative flower/fruit sink strength (Sink)</strong> across three coupled physical balances: the Energy Balance, the Water Balance, and the Assimilate (CO₂) Balance.</p>
 
         <h3>1. The Radiation-to-Temperature Ratio (RTR) &amp; 24-Hour Thermal Integration</h3>
-        <p>Plant photosynthesis is driven photochemically by Photosynthetically Active Radiation ($PAR$, 400–700 nm), which has a low temperature sensitivity ($Q_{10} \approx 1.1\text{–}1.3$ at elevated $\text{CO}_2$). Conversely, dark respiration, phloem loading, meristem cell division, and truss development rate follow enzymatic Arrhenius kinetics ($Q_{10} \approx 2.0$). Consequently, the <strong>24-hour average greenhouse temperature ($T_{24h}$)</strong> must scale linearly with the Daily Light Integral ($DLI$, $\text{mol}\cdot\text{m}^{-2}\cdot\text{d}^{-1}$):</p>
+        <p>Plant photosynthesis is driven photochemically by Photosynthetically Active Radiation (PAR, 400–700 nm), which has a low temperature sensitivity (Q<sub>10</sub> ≈ 1.1–1.3 at elevated CO<sub>2</sub>). Conversely, dark respiration, phloem loading, meristem cell division, and truss development rate follow enzymatic Arrhenius kinetics (Q<sub>10</sub> ≈ 2.0). Consequently, the <strong>24-hour average greenhouse temperature (T<sub>24h</sub>)</strong> must scale linearly with the Daily Light Integral (DLI, mol·m<sup>-2</sup>·d<sup>-1</sup>):</p>
         <p style="font-family:'JetBrains Mono',monospace; background:rgba(15,23,42,0.85); padding:14px 18px; border-radius:10px; border:1px solid rgba(16,185,129,0.25); color:#34d399;">
           T_24h_target (°C) = T_base_crop + k_RTR × (DLI_actual / 10 mol·m⁻²·d⁻¹)
         </p>
-        <p>If $T_{24h}$ exceeds the assimilate supply supported by the day's $DLI$, the crop depletes non-structural carbohydrates via night respiration, producing thin stems, weak flower trusses, and blossom abortion. Conversely, if $T_{24h}$ is too low relative to $DLI$, sink translocation stalls and starch accumulates in chloroplasts, triggering feedback inhibition of Rubisco and purple leaf anthocyanin stress.</p>
+        <p>If T<sub>24h</sub> exceeds the assimilate supply supported by the day's DLI, the crop depletes non-structural carbohydrates via night respiration, producing thin stems, weak flower trusses, and blossom abortion. Conversely, if T<sub>24h</sub> is too low relative to DLI, sink translocation stalls and starch accumulates in chloroplasts, triggering feedback inhibition of Rubisco and purple leaf anthocyanin stress.</p>
 
         <h3>2. Comparative Crop Biophysical Setpoint Matrix</h3>
         <div style="overflow-x:auto;">
@@ -307,8 +307,8 @@
         <p>Every crop monograph in this atlas links directly to our deterministic physics calculators so you can test site-specific climate and fertigation changes in real time:</p>
         <ul>
           <li><a href="../tools/crop-steering-generative-vegetative-matrix.html" style="color:#38bdf8; font-weight:600;">Generative vs. Vegetative Crop Steering Matrix</a> — Compute stone wool Volumetric Water Content (VWC) dry-back curves, shot sizes, and DIF thermal differentials.</li>
-          <li><a href="../tools/evapotranspiration-penman-monteith-calculator.html" style="color:#38bdf8; font-weight:600;">ASCE / Stanghellini Greenhouse Evapotranspiration Calculator</a> — Predict hourly crop transpiration ($\text{g}\cdot\text{m}^{-2}\cdot\text{h}^{-1}$) and irrigation drain percentage.</li>
-          <li><a href="../tools/hydroponic-nutrient-solution-calculator.html" style="color:#38bdf8; font-weight:600;">Hydroponic Ion-Balance &amp; A/B Tank Formulation Engine</a> — Calculate millimolar ($\text{mmol/L}$) $\text{NO}_3^-$, $\text{K}^+$, $\text{Ca}^{2+}$, $\text{Mg}^{2+}$, and $\text{SO}_4^{2-}$ ratios for vegetative vs. generative stages.</li>
+          <li><a href="../tools/evapotranspiration-penman-monteith-calculator.html" style="color:#38bdf8; font-weight:600;">ASCE / Stanghellini Greenhouse Evapotranspiration Calculator</a> — Predict hourly crop transpiration (g·m<sup>-2</sup>·h<sup>-1</sup>) and irrigation drain percentage.</li>
+          <li><a href="../tools/hydroponic-nutrient-solution-calculator.html" style="color:#38bdf8; font-weight:600;">Hydroponic Ion-Balance &amp; A/B Tank Formulation Engine</a> — Calculate millimolar (mmol/L) NO<sub>3</sub><sup>-</sup>, K<sup>+</sup>, Ca<sup>2+</sup>, Mg<sup>2+</sup>, and SO<sub>4</sub><sup>2-</sup> ratios for vegetative vs. generative stages.</li>
           <li><a href="../tools/venlocad-3d.html" style="color:#38bdf8; font-weight:600;">VenloCAD 3D Parametric Greenhouse Engine</a> — Size bay geometry, roof ventilation ACH, and DIN EN 13031-1 structural loads for your target crop.</li>
         </ul>
 

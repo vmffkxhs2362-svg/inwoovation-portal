@@ -65,7 +65,7 @@
       "@type": "Person",
       "name": "Inwoo Hwang"
     },
-    "dateModified": "2026-10-28"
+    "dateModified": "2026-11-03"
   }
   </script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8597809158257497" crossorigin="anonymous"></script>
@@ -94,7 +94,7 @@
   <div class="sim-container">
     <header class="sim-header">
       <h1>🏗️ Greenhouse Structural Load (EN 13031-1 / NEN 3859) Engine</h1>
-      <p>Wind Dynamic Pressure ($q_w$), Snow Load ($q_s$), High-Wire Crop Trellis Load & Steel Column Moment</p>
+      <p>Wind Dynamic Pressure (q<sub>w</sub>), Snow Load (q<sub>s</sub>), High-Wire Crop Trellis Load & Steel Column Moment</p>
     </header>
 
     <div class="calc-card">
@@ -102,7 +102,7 @@
       <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px;">
         <div class="control-group">
           <div class="control-label-row">
-            <span>Gutter Height ($H_{gutter}$)</span>
+            <span>Gutter Height (H<sub>gutter</sub>)</span>
             <span id="lbl-gh">6.5 m</span>
           </div>
           <input type="range" id="slider-gh" min="4.0" max="9.0" value="6.5" step="0.5">
@@ -110,7 +110,7 @@
 
         <div class="control-group">
           <div class="control-label-row">
-            <span>Design Wind Speed ($v_{wind}$)</span>
+            <span>Design Wind Speed (v<sub>wind</sub>)</span>
             <span id="lbl-wind">28.0 m/s (100.8 km/h)</span>
           </div>
           <input type="range" id="slider-wind" min="15.0" max="45.0" value="28.0" step="1.0">
@@ -118,7 +118,7 @@
 
         <div class="control-group">
           <div class="control-label-row">
-            <span>Crop Trellis Load ($P_{crop}$)</span>
+            <span>Crop Trellis Load (P<sub>crop</sub>)</span>
             <span id="lbl-crop-load">15.0 kg/m² (Heavy Tomato)</span>
           </div>
           <input type="range" id="slider-crop-load" min="5.0" max="30.0" value="15.0" step="1.0">
@@ -129,7 +129,7 @@
     <!-- Results Telemetry -->
     <div class="results-grid">
       <div class="res-box">
-        <div style="font-size: 0.8rem; color: var(--text-muted);">DYNAMIC WIND SUCTION ($q_w$)</div>
+        <div style="font-size: 0.8rem; color: var(--text-muted);">DYNAMIC WIND SUCTION (q<sub>w</sub>)</div>
         <div class="res-val" id="res-wind-q" style="color: var(--accent-cyan);">0.49 kN/m²</div>
       </div>
       <div class="res-box">

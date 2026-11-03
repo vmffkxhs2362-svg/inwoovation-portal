@@ -49,7 +49,7 @@
     "url": "https://inwoovation.com"
   },
   "datePublished": "2026-09-01",
-  "dateModified": "2026-10-28",
+  "dateModified": "2026-11-03",
   "mainEntityOfPage": "https://inwoovation.com/articles/ja/article-48-greenhouse-capex-opex-irr-npv-financial-model-jp.html"
 }
   </script>
@@ -80,7 +80,7 @@
     </header>
 
     <div class="article-body">
-      <p class="lead">大規模フェンロー型温室の建設には巨額の設備投資（CapEx: 25,000〜45,000円/$\text{m}^2$）が伴います。本稿では、10年間のDCF法、正味現在価値（NPV）、および内部収益率（IRR）の数理モデルを解説します。</p>
+      <p class="lead">大規模フェンロー型温室の建設には巨額の設備投資（CapEx: 25,000〜45,000円/m<sup>2</sup>）が伴います。本稿では、10年間のDCF法、正味現在価値（NPV）、および内部収益率（IRR）の数理モデルを解説します。</p>
 
       <h2>1. 正味現在価値（NPV）の算定</h2>
       <p>将来発生するEBITDAキャッシュフローを資本コスト（8%）で割り引き、投資妥当性を検証します。</p>
@@ -95,7 +95,7 @@
         <h2>Section A: 熱力学および生物物理学の基礎方程式 / 支配方程式 ( Thermodynamic &amp; Biophysical Governing Equations : Commercial Greenhouse 10-Year CapEx, OpEx, NPV &amp; IRR Financial Model ( CEA Systems Engineering ) )</h2>
         <p>商業用フェンロー型連棟温室 ( Commercial Venlo Greenhouse ) および完全人工光型植物工場 ( Vertical Plant Factory / CEA ) における <strong>大規模ハイテク温室10カ年CapEx/OpEx・IRR・NPV投資採算性工学</strong> の精密環境制御・設備設計では 、 熱収支 ( Heat Balance ) ・ 物質収支 ( Mass Balance ) ・ 光量子放射伝達 ( Photon Radiative Transfer ) を連立微分方程式として定式化する必要があります 。 定常状態 ( Steady-State ) および非定常動的状態 ( Dynamic Transient State ) における SI 単位系の支配方程式は以下の通りです ：</p>
         <div class="code-box" style="background: rgba(15, 23, 42, 0.06); border-left: 4px solid #10b981; padding: 14px 18px; border-radius: 8px; font-family: monospace; margin: 16px 0; overflow-x: auto;">
-          <code>NPV = Sum_{t=1..10}[ (EBITDA_t - Tax_t - CapEx_maint_t) / (1 + WACC)^t ] - CAPEX_initial [EUR]</code><br>
+          <code>NPV = Sum<sub>t=1..10</sub>[ (EBITDA_t - Tax_t - CapEx_maint_t) / (1 + WACC)^t ] - CAPEX_initial [EUR]</code><br>
           <code>dX_state / dt = A_sys * X_state + B_control * U_actuator + E_disturbance * D_ambient</code>
         </div>
         <p><strong>状態変数および境界条件の定義 ( State Variables &amp; Boundary Conditions ) ：</strong> X_state は微気象および根圏の状態ベクトル ( 温度 T_in 、 飽差 VPD 、 培養液イオン濃度 C_i 、 光量子束 PPFD ) 、 U_actuator は制御アクチュエータ出力 ( 0 - 100 % ) 、 D_ambient は外部気象外乱ベクトルを表します。 オランダ ( Westland ) ・ ドイツ ( Niederrhein / Knoblauchsland ) ・ 日本国内の先進スマート園芸施設において 、 これらの物理モデルをリアルタイム制御ループ ( Real-Time Closed-Loop Control ) に実装することで 、 葉面結露 ( Dew Point Condensation ) や根圏低酸素ストレス ( Rootzone Hypoxia ) 、 カルシウム欠乏症 ( Tipburn / Blossom-End Rot : BER ) を未然に防ぎ 、 光合成純同化速度 ( Net Assimilation Rate : A_net [ μmol CO2 m-2 s-1 ] ) を最大化します 。</p>
@@ -203,8 +203,8 @@
           <a href="/smartfarm/heat_loss.html" style="display: inline-block; padding: 8px 14px; background: #0f172a; color: #38bdf8; border: 1px solid #334155; border-radius: 6px; text-decoration: none; font-size: 0.88rem; font-weight: 600;">🔥 Greenhouse Heat Loss (DIN V 18599)</a>
           <a href="/smartfarm/dli_calculator.html" style="display: inline-block; padding: 8px 14px; background: #0f172a; color: #38bdf8; border: 1px solid #334155; border-radius: 6px; text-decoration: none; font-size: 0.88rem; font-weight: 600;">☀️ DLI &amp; LED Spectrum Calculator</a>
           <a href="/smartfarm/co2_calculator.html" style="display: inline-block; padding: 8px 14px; background: #0f172a; color: #38bdf8; border: 1px solid #334155; border-radius: 6px; text-decoration: none; font-size: 0.88rem; font-weight: 600;">💨 CO2 Enrichment Kinetics</a>
-          <a href="/smartfarm/nutrient.html" style="display: inline-block; padding: 8px 14px; background: #0f172a; color: #38bdf8; border: 1px solid #334155; border-radius: 6px; text-decoration: none; font-size: 0.88rem; font-weight: 600;">🧪 Hydroponic Ion Stoichiometry</a>
-          <a href="/tools/psychrometric-chart.html" style="display: inline-block; padding: 8px 14px; background: #0f172a; color: #38bdf8; border: 1px solid #334155; border-radius: 6px; text-decoration: none; font-size: 0.88rem; font-weight: 600;">📈 Mollier Psychrometric Chart</a>
+          <a href="/tools/hydroponic-nutrient-solution-calculator.html" style="display: inline-block; padding: 8px 14px; background: #0f172a; color: #38bdf8; border: 1px solid #334155; border-radius: 6px; text-decoration: none; font-size: 0.88rem; font-weight: 600;">🧪 Hydroponic Ion Stoichiometry</a>
+          <a href="/tools/psychrometric-mollier-greenhouse-dehumidifier.html" style="display: inline-block; padding: 8px 14px; background: #0f172a; color: #38bdf8; border: 1px solid #334155; border-radius: 6px; text-decoration: none; font-size: 0.88rem; font-weight: 600;">📈 Mollier Psychrometric Chart</a>
           <a href="/tools/venlocad-3d.html" style="display: inline-block; padding: 8px 14px; background: #10b981; color: #022c22; border-radius: 6px; text-decoration: none; font-size: 0.88rem; font-weight: 700;">🏗️ VenloCAD 3D Architect</a>
         </div>
       </div>

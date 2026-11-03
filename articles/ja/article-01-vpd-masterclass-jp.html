@@ -62,7 +62,7 @@
     "url": "https://inwoovation.com"
   },
   "datePublished": "2026-09-01",
-  "dateModified": "2026-10-28",
+  "dateModified": "2026-11-03",
   "mainEntityOfPage": "https://inwoovation.com/articles/ja/article-01-vpd-masterclass-jp.html"
 }
   </script>
@@ -96,30 +96,30 @@
 
         <p>オランダ型フェンロー温室や最先端の人工光型植物工場（PFAL）において、単なる相対湿度（RH）の管理だけでは十分な生産効率を達成できません。植物の根からの水・養分吸収（特にカルシウム）、気孔開度、および純光合成速度を決定づける本質的な物理指標は、葉内と周囲空気との間の<strong>飽差（Vapour Pressure Deficit, VPD）</strong>です。</p>
 
-        <h2>1. 飽和水蒸気圧（$e_s$）を求めるテテンス（Tetens）の式</h2>
-        <p>温度 $T$（°C）における空気の飽和水蒸気圧は、熱力学的なマグヌス・テテンスの公式により極めて高い精度で算出されます：</p>
+        <h2>1. 飽和水蒸気圧（e<sub>s</sub>）を求めるテテンス（Tetens）の式</h2>
+        <p>温度 T（°C）における空気の飽和水蒸気圧は、熱力学的なマグヌス・テテンスの公式により極めて高い精度で算出されます：</p>
 
         <div class="equation-box">
-            $$e_s(T) = 0.61078 \cdot \exp\left( \frac{17.27 \cdot T}{T + 237.3} \right) \quad [\text{kPa}]$$
+            e<sub>s</sub>(T) = 0.61078 · exp( (17.27 · T)/(T + 237.3) ) [kPa]
         </div>
 
-        <p>温室内の実水蒸気圧（$e_a$）は、相対湿度（$\text{RH}$ %）を乗じることで求まります：</p>
+        <p>温室内の実水蒸気圧（e<sub>a</sub>）は、相対湿度（RH %）を乗じることで求まります：</p>
 
         <div class="equation-box">
-            $$e_a = e_s(T_{air}) \cdot \frac{\text{RH}}{100} \quad [\text{kPa}]$$
+            e<sub>a</sub> = e<sub>s</sub>(T<sub>air</sub>) · (RH)/(100) [kPa]
         </div>
 
-        <h2>2. 葉温飽差（$VPD_{leaf}$）と空気飽差（$VPD_{air}$）の決定的な違い</h2>
-        <p>蒸散による気化熱冷却や日射吸収により、<strong>実際の葉温（$T_{leaf}$）は室温（$T_{air}$）と1.5°C〜2.5°C乖離</strong>します。真の蒸散駆動力を正確に把握するには、赤外線放射温度計を用いた葉温基準の飽差（$\text{VPD}_{leaf}$）制御が不可欠です：</p>
+        <h2>2. 葉温飽差（VPD<sub>leaf</sub>）と空気飽差（VPD<sub>air</sub>）の決定的な違い</h2>
+        <p>蒸散による気化熱冷却や日射吸収により、<strong>実際の葉温（T<sub>leaf</sub>）は室温（T<sub>air</sub>）と1.5°C〜2.5°C乖離</strong>します。真の蒸散駆動力を正確に把握するには、赤外線放射温度計を用いた葉温基準の飽差（VPD<sub>leaf</sub>）制御が不可欠です：</p>
 
         <div class="equation-box">
-            $$\text{VPD}_{leaf} = e_s(T_{leaf}) - e_a \quad [\text{kPa}]$$
+            VPD<sub>leaf</sub> = e<sub>s</sub>(T<sub>leaf</sub>) - e<sub>a</sub> [kPa]
         </div>
 
         <ul>
-            <li><strong>最適制御領域（トマト・キュウリ等）</strong>: $0.85\text{ 〜 }1.25\text{ kPa}$。気孔が十分に開き、健全な蒸散と光合成が持続するゴールデンゾーン。</li>
-            <li><strong>低飽差リスク（$< 0.4\text{ kPa}$）</strong>: 蒸散が停止し、カルシウムが果実先端に届かず<strong>尻腐れ病（Blossom End Rot）</strong>が発生。過剰な溢泌水により灰色かび病等の菌害を誘発。</li>
-            <li><strong>高飽差リスク（$> 1.6\text{ kPa}$）</strong>: 植物が水ストレスを感知し気孔を閉鎖。光合成速度が激減し生育が停止。</li>
+            <li><strong>最適制御領域（トマト・キュウリ等）</strong>: 0.85 〜 1.25 kPa。気孔が十分に開き、健全な蒸散と光合成が持続するゴールデンゾーン。</li>
+            <li><strong>低飽差リスク（< 0.4 kPa）</strong>: 蒸散が停止し、カルシウムが果実先端に届かず<strong>尻腐れ病（Blossom End Rot）</strong>が発生。過剰な溢泌水により灰色かび病等の菌害を誘発。</li>
+            <li><strong>高飽差リスク（> 1.6 kPa）</strong>: 植物が水ストレスを感知し気孔を閉鎖。光合成速度が激減し生育が停止。</li>
         </ul>
 
         <div class="cta-box">
@@ -243,8 +243,8 @@
           <a href="/smartfarm/heat_loss.html" style="display: inline-block; padding: 8px 14px; background: #0f172a; color: #38bdf8; border: 1px solid #334155; border-radius: 6px; text-decoration: none; font-size: 0.88rem; font-weight: 600;">🔥 Greenhouse Heat Loss (DIN V 18599)</a>
           <a href="/smartfarm/dli_calculator.html" style="display: inline-block; padding: 8px 14px; background: #0f172a; color: #38bdf8; border: 1px solid #334155; border-radius: 6px; text-decoration: none; font-size: 0.88rem; font-weight: 600;">☀️ DLI &amp; LED Spectrum Calculator</a>
           <a href="/smartfarm/co2_calculator.html" style="display: inline-block; padding: 8px 14px; background: #0f172a; color: #38bdf8; border: 1px solid #334155; border-radius: 6px; text-decoration: none; font-size: 0.88rem; font-weight: 600;">💨 CO2 Enrichment Kinetics</a>
-          <a href="/smartfarm/nutrient.html" style="display: inline-block; padding: 8px 14px; background: #0f172a; color: #38bdf8; border: 1px solid #334155; border-radius: 6px; text-decoration: none; font-size: 0.88rem; font-weight: 600;">🧪 Hydroponic Ion Stoichiometry</a>
-          <a href="/tools/psychrometric-chart.html" style="display: inline-block; padding: 8px 14px; background: #0f172a; color: #38bdf8; border: 1px solid #334155; border-radius: 6px; text-decoration: none; font-size: 0.88rem; font-weight: 600;">📈 Mollier Psychrometric Chart</a>
+          <a href="/tools/hydroponic-nutrient-solution-calculator.html" style="display: inline-block; padding: 8px 14px; background: #0f172a; color: #38bdf8; border: 1px solid #334155; border-radius: 6px; text-decoration: none; font-size: 0.88rem; font-weight: 600;">🧪 Hydroponic Ion Stoichiometry</a>
+          <a href="/tools/psychrometric-mollier-greenhouse-dehumidifier.html" style="display: inline-block; padding: 8px 14px; background: #0f172a; color: #38bdf8; border: 1px solid #334155; border-radius: 6px; text-decoration: none; font-size: 0.88rem; font-weight: 600;">📈 Mollier Psychrometric Chart</a>
           <a href="/tools/venlocad-3d.html" style="display: inline-block; padding: 8px 14px; background: #10b981; color: #022c22; border-radius: 6px; text-decoration: none; font-size: 0.88rem; font-weight: 700;">🏗️ VenloCAD 3D Architect</a>
         </div>
       </div>

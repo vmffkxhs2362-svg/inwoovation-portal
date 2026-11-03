@@ -102,7 +102,7 @@
 <main class="container">
 <header>
 <div class="header-top-bar" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 0.8rem;">
-<div class="badge" id="header-badge">Last Updated: October 28, 2026</div>
+<div class="badge" id="header-badge">Last Updated: November 03, 2026</div>
 <div style="display: flex; gap: 0.5rem; align-items: center;">
     <button class="lang-btn" id="btn-farm-profile" onclick="toggleFarmProfileDrawer()" style="border-color: var(--primary); color: var(--primary); display: inline-flex; align-items: center; gap: 0.3rem; font-weight: 600; padding: 0.4rem 0.8rem; border-radius: 10px; cursor: pointer; background: transparent; border: 1px solid;">
         📋 <span>My Farm</span>
@@ -247,7 +247,7 @@ Your photoperiod of 16.0 hours under 200 μmol/m²/s PPFD provides an ideal phot
   <h2 style="color: var(--primary); font-size: 1.4rem; font-weight: 700; margin-bottom: 1rem;">💡 Biophysical Photobiology: Daily Light Integral (DLI) &amp; Quantum Fluence</h2>
   
   <p style="color: #cbd5e1; line-height: 1.7; font-size: 0.95rem; margin-bottom: 1.2rem;">
-    In Controlled Environment Agriculture (CEA) and commercial greenhouse production, instantaneous light intensity—measured as <strong>Photosynthetic Photon Flux Density (PPFD, $\mu\text{mol}\cdot\text{m}^{-2}\cdot\text{s}^{-1}$)</strong>—only tells half the story. Plants accumulate photon energy over time. The <strong>Daily Light Integral (DLI, $\text{mol}\cdot\text{m}^{-2}\cdot\text{d}^{-1}$)</strong> quantifies the cumulative moles of photosynthetic photons delivered to a one-square-meter canopy area during an entire 24-hour cycle. DLI is the primary driver of carbohydrate synthesis, plant dry weight accretion, and commercial fruit yield.
+    In Controlled Environment Agriculture (CEA) and commercial greenhouse production, instantaneous light intensity—measured as <strong>Photosynthetic Photon Flux Density (PPFD, μmol·m<sup>-2</sup>·s<sup>-1</sup>)</strong>—only tells half the story. Plants accumulate photon energy over time. The <strong>Daily Light Integral (DLI, mol·m<sup>-2</sup>·d<sup>-1</sup>)</strong> quantifies the cumulative moles of photosynthetic photons delivered to a one-square-meter canopy area during an entire 24-hour cycle. DLI is the primary driver of carbohydrate synthesis, plant dry weight accretion, and commercial fruit yield.
   </p>
 
   <h3 style="color: var(--cyan); font-size: 1.15rem; font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.6rem;">1. Mathematical Formulation of Photon Fluence</h3>
@@ -255,13 +255,13 @@ Your photoperiod of 16.0 hours under 200 μmol/m²/s PPFD provides an ideal phot
     Integrating instantaneous PPFD over a continuous photoperiod yields the cumulative photon sum:
   </p>
   <div style="background: rgba(0,0,0,0.4); border: 1px solid rgba(56, 189, 248, 0.2); border-radius: 8px; padding: 1rem; margin: 1rem 0; font-family: monospace; color: #38bdf8; font-size: 0.95rem;">
-    DLI (\text{mol}\cdot\text{m}^{-2}\cdot\text{d}^{-1}) = \frac{\text{PPFD} \times t_{photo}\text{ (seconds)}}{1,000,000} = \text{PPFD} \times \text{Hours} \times 0.0036
+    DLI (mol·m<sup>-2</sup>·d<sup>-1</sup>) = (PPFD × t<sub>photo</sub> (seconds))/(1,000,000) = PPFD × Hours × 0.0036
   </div>
   <p style="color: #cbd5e1; line-height: 1.7; font-size: 0.95rem;">
     For hybrid greenhouses combining natural daylight with supplemental LED luminaires:
   </p>
   <div style="background: rgba(0,0,0,0.4); border: 1px solid rgba(56, 189, 248, 0.2); border-radius: 8px; padding: 1rem; margin: 1rem 0; font-family: monospace; color: #38bdf8; font-size: 0.95rem;">
-    DLI_{total} = DLI_{solar} \cdot \tau_{glazing} \cdot (1 - \text{Shading}) + DLI_{supplemental\_LED}
+    DLI<sub>total</sub> = DLI<sub>solar</sub> · τ<sub>glazing</sub> · (1 - Shading) + DLI<sub>supplemental_LED</sub>
   </div>
 
   <h3 style="color: var(--cyan); font-size: 1.15rem; font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.6rem;">2. Recommended Target DLI by Commercial Horticultural Crop</h3>
@@ -318,7 +318,7 @@ Your photoperiod of 16.0 hours under 200 μmol/m²/s PPFD provides an ideal phot
 
   <h3 style="color: var(--cyan); font-size: 1.15rem; font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.6rem;">3. Electricity Economics &amp; Off-Peak Arbitrage</h3>
   <p style="color: #cbd5e1; line-height: 1.7; font-size: 0.95rem; margin-bottom: 0.8rem;">
-    Because $DLI = \text{PPFD} \times \text{Hours} \times 0.0036$, growers possess an operational trade-off between <strong>instantaneous fixture intensity</strong> and <strong>photoperiod duration</strong>. Delivering 17.28 mol/m²/day can be accomplished with 300 $\mu\text{mol}\cdot\text{m}^{-2}\cdot\text{s}^{-1}$ over 16 hours, or 250 $\mu\text{mol}\cdot\text{m}^{-2}\cdot\text{s}^{-1}$ over 19.2 hours. By stretching photoperiods into off-peak nighttime electricity tariffs (or negative EPEX Spot intervals), growers cut lighting energy expenditure by <strong>25% to 40%</strong> without sacrificing photon accumulation.
+    Because DLI = PPFD × Hours × 0.0036, growers possess an operational trade-off between <strong>instantaneous fixture intensity</strong> and <strong>photoperiod duration</strong>. Delivering 17.28 mol/m²/day can be accomplished with 300 μmol·m<sup>-2</sup>·s<sup>-1</sup> over 16 hours, or 250 μmol·m<sup>-2</sup>·s<sup>-1</sup> over 19.2 hours. By stretching photoperiods into off-peak nighttime electricity tariffs (or negative EPEX Spot intervals), growers cut lighting energy expenditure by <strong>25% to 40%</strong> without sacrificing photon accumulation.
   </p>
 
   <h3 style="color: var(--cyan); font-size: 1.15rem; font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.6rem;">4. Frequently Asked Questions (FAQ)</h3>

@@ -54,6 +54,165 @@ CLAIM_REWRITES = [
 ]
 EXPLORE_FIX = (r"Explore In-depth plant physiology", "Explore in-depth plant physiology")
 
+CTRL_FIXES = [
+    ("\x09ext{", r"\text{"),
+    ("\x09imes", r"\times"),
+    ("\x09au", r"\tau"),
+    ("\x09heta", r"\theta"),
+    ("\x07pprox", r"\approx"),
+    ("\x07lpha", r"\alpha"),
+    ("\x08eta", r"\beta"),
+    ("\x0barepsilon", r"\varepsilon"),
+    ("\x0crac{", r"\frac{"),
+]
+
+GREEK_AND_SYMBOLS = [
+    (r"\\Delta(?![a-zA-Z])", "Δ"),
+    (r"\\Gamma(?![a-zA-Z])", "Γ"),
+    (r"\\Theta(?![a-zA-Z])", "Θ"),
+    (r"\\Lambda(?![a-zA-Z])", "Λ"),
+    (r"\\Phi(?![a-zA-Z])", "Φ"),
+    (r"\\Psi(?![a-zA-Z])", "Ψ"),
+    (r"\\Omega(?![a-zA-Z])", "Ω"),
+    (r"\\alpha(?![a-zA-Z])", "α"),
+    (r"\\beta(?![a-zA-Z])", "β"),
+    (r"\\gamma(?![a-zA-Z])", "γ"),
+    (r"\\delta(?![a-zA-Z])", "δ"),
+    (r"\\varepsilon(?![a-zA-Z])", "ε"),
+    (r"\\epsilon(?![a-zA-Z])", "ε"),
+    (r"\\zeta(?![a-zA-Z])", "ζ"),
+    (r"\\eta(?![a-zA-Z])", "η"),
+    (r"\\theta(?![a-zA-Z])", "θ"),
+    (r"\\kappa(?![a-zA-Z])", "κ"),
+    (r"\\lambda(?![a-zA-Z])", "λ"),
+    (r"\\mu(?![a-zA-Z])", "μ"),
+    (r"\\nu(?![a-zA-Z])", "ν"),
+    (r"\\xi(?![a-zA-Z])", "ξ"),
+    (r"\\pi(?![a-zA-Z])", "π"),
+    (r"\\rho(?![a-zA-Z])", "ρ"),
+    (r"\\sigma(?![a-zA-Z])", "σ"),
+    (r"\\tau(?![a-zA-Z])", "τ"),
+    (r"\\phi(?![a-zA-Z])", "φ"),
+    (r"\\chi(?![a-zA-Z])", "χ"),
+    (r"\\psi(?![a-zA-Z])", "ψ"),
+    (r"\\omega(?![a-zA-Z])", "ω"),
+    (r"\\cdot(?![a-zA-Z])", "·"),
+    (r"\\times(?![a-zA-Z])", "×"),
+    (r"\\pm(?![a-zA-Z])", "±"),
+    (r"\\mp(?![a-zA-Z])", "∓"),
+    (r"\\ge(?![a-zA-Z])", "≥"),
+    (r"\\geq(?![a-zA-Z])", "≥"),
+    (r"\\le(?![a-zA-Z])", "≤"),
+    (r"\\leq(?![a-zA-Z])", "≤"),
+    (r"\\ne(?![a-zA-Z])", "≠"),
+    (r"\\neq(?![a-zA-Z])", "≠"),
+    (r"\\approx(?![a-zA-Z])", "≈"),
+    (r"\\sim(?![a-zA-Z])", "∼"),
+    (r"\\propto(?![a-zA-Z])", "∝"),
+    (r"\\infty(?![a-zA-Z])", "∞"),
+    (r"\\partial(?![a-zA-Z])", "∂"),
+    (r"\\nabla(?![a-zA-Z])", "∇"),
+    (r"\\int(?![a-zA-Z])", "∫"),
+    (r"\\sum(?![a-zA-Z])", "∑"),
+    (r"\\prod(?![a-zA-Z])", "∏"),
+    (r"\\xrightarrow\{([^}]*)\}", r"→(\1)"),
+    (r"\\rightarrow(?![a-zA-Z])", "→"),
+    (r"\\to(?![a-zA-Z])", "→"),
+    (r"\\leftarrow(?![a-zA-Z])", "←"),
+    (r"\\downarrow(?![a-zA-Z])", "↓"),
+    (r"\\uparrow(?![a-zA-Z])", "↑"),
+    (r"\\implies(?![a-zA-Z])", "⇒"),
+    (r"\\Rightarrow(?![a-zA-Z])", "⇒"),
+    (r"\\in(?![a-zA-Z])", "∈"),
+    (r"\\ll(?![a-zA-Z])", "≪"),
+    (r"\\gg(?![a-zA-Z])", "≫"),
+    (r"\\circ(?![a-zA-Z])", "°"),
+    (r"\^\{\\circ\}", "°"),
+    (r"\^°", "°"),
+    (r"\\%", "%"),
+    (r"\\quad(?![a-zA-Z])", " "),
+    (r"\\,", " "),
+    (r"\\;", " "),
+    (r"\\left\s*([(\[\{|])", r"\1"),
+    (r"\\right\s*([)\]\}|])", r"\1"),
+    (r"\\exp(?![a-zA-Z])", "exp"),
+    (r"\\ln(?![a-zA-Z])", "ln"),
+    (r"\\log(?![a-zA-Z])", "log"),
+    (r"\\min(?![a-zA-Z])", "min"),
+    (r"\\max(?![a-zA-Z])", "max"),
+    (r"\\sin(?![a-zA-Z])", "sin"),
+    (r"\\cos(?![a-zA-Z])", "cos"),
+    (r"\\tan(?![a-zA-Z])", "tan"),
+]
+
+LATEX_DOLLAR_RE = re.compile(
+    r"\$(?!\d[\d,]*\.?\d*\s+(?:to|and|or|per|in|for|of|million|billion|thousand|USD|k|M|B)\b)"
+    r"([^$\n]{1,160})\$"
+)
+
+
+def _convert_math_inner(expr):
+    s = expr.strip()
+    for bad, good in CTRL_FIXES:
+        s = s.replace(bad, good)
+    s = s.replace("{,}", ",")
+    s = s.replace(r"\_", "_")
+    for pat, rep in GREEK_AND_SYMBOLS:
+        s = re.sub(pat, rep, s)
+    for _ in range(5):
+        s = re.sub(r"\\(?:text|mathrm|textit|mathcal)\{([^{}]*)\}", r"\1", s)
+        s = re.sub(r"\\mathbf\{([^{}]*)\}", r"<strong>\1</strong>", s)
+        s = re.sub(r"\\dot\{([^{}]*)\}", r"\1&#775;", s)
+        s = re.sub(r"\\vec\{([^{}]*)\}", r"\1&#8407;", s)
+        s = re.sub(r"_\{([^{}]+)\}", r"<sub>\1</sub>", s)
+        s = re.sub(r"\^\{([^{}]+)\}", r"<sup>\1</sup>", s)
+        s = re.sub(r"\\sqrt\{([^{}]*)\}", r"√(\1)", s)
+        s = re.sub(r"\\frac\{([^{}]*)\}\{([^{}]*)\}", r"(\1)/(\2)", s)
+    s = re.sub(r"_([a-zA-Z0-9+\-]+)", r"<sub>\1</sub>", s)
+    s = re.sub(r"\^([a-zA-Z0-9+\-]+)", r"<sup>\1</sup>", s)
+    s = s.replace("{", "").replace("}", "")
+    s = re.sub(r"\s{2,}", " ", s)
+    return s
+
+
+def fix_html_math_and_escapes(html):
+    """Heal control-character escape corruptions and render raw LaTeX ($...$, \\(...\\)) into semantic HTML."""
+    parts = re.split(r"(<(?:script|style)\b[^>]*>.*?</(?:script|style)>)", html, flags=re.S | re.I)
+    for i in range(0, len(parts), 2):
+        chunk = parts[i]
+        for bad, good in CTRL_FIXES:
+            chunk = chunk.replace(bad, good)
+        chunk = re.sub(r"\\\[(.*?)\\\]", lambda m: _convert_math_inner(m.group(1)), chunk, flags=re.S)
+        chunk = re.sub(r"\$\$(.*?)\$\$", lambda m: _convert_math_inner(m.group(1)), chunk, flags=re.S)
+        chunk = re.sub(r"\\\(([^)\n]{1,160})\\\)", lambda m: _convert_math_inner(m.group(1)), chunk)
+
+        def _replace_dollar(m):
+            inner = m.group(1)
+            if re.search(r"</?[a-zA-Z]", inner):
+                return m.group(0)
+            if re.search(r"\\|[_^%]|[=<>±×·Δσλτμρηαβγθ]", inner) or re.fullmatch(r"[A-Za-z0-9_+\-]+", inner):
+                return _convert_math_inner(inner)
+            return m.group(0)
+
+        chunk = LATEX_DOLLAR_RE.sub(_replace_dollar, chunk)
+        # Convert any residual bare LaTeX commands (\frac, \sqrt, \dot, \text, \cdot, etc.) outside $...$
+        if any(tok in chunk for tok in ("\\frac{", "\\sqrt{", "\\dot{", "\\text{", "\\cdot", "\\times", "\\approx", "\\pm", "\\Delta", "_{", "^{")):
+            chunk = chunk.replace("{,}", ",")
+            chunk = chunk.replace(r"\_", "_")
+            for pat, rep in GREEK_AND_SYMBOLS:
+                chunk = re.sub(pat, rep, chunk)
+            for _ in range(5):
+                chunk = re.sub(r"\\(?:text|mathrm|textit|mathcal)\{([^{}]*)\}", r"\1", chunk)
+                chunk = re.sub(r"\\mathbf\{([^{}]*)\}", r"<strong>\1</strong>", chunk)
+                chunk = re.sub(r"\\dot\{([^{}]*)\}", r"\1&#775;", chunk)
+                chunk = re.sub(r"\\vec\{([^{}]*)\}", r"\1&#8407;", chunk)
+                chunk = re.sub(r"_\{([^{}]+)\}", r"<sub>\1</sub>", chunk)
+                chunk = re.sub(r"\^\{([^{}]+)\}", r"<sup>\1</sup>", chunk)
+                chunk = re.sub(r"\\sqrt\{([^{}]*)\}", r"√(\1)", chunk)
+                chunk = re.sub(r"\\frac\{([^{}]*)\}\{([^{}]*)\}", r"(\1)/(\2)", chunk)
+        parts[i] = chunk
+    return "".join(parts)
+
 
 def visible_words(html):
     body = re.sub(r"<(script|style)[^>]*>.*?</\1>", " ", html, flags=re.S | re.I)
@@ -61,10 +220,14 @@ def visible_words(html):
 
 
 def fix_dead_host(html):
-    """smartfarm.inwoovation.com is a dead legacy host; its pages live at /smartfarm/."""
+    """smartfarm.inwoovation.com is a dead legacy host; also heal legacy broken internal tool links."""
     html = re.sub(r"https?://smartfarm\.inwoovation\.com/?", SITE + "smartfarm/", html)
     html = html.replace("smartfarm.inwoovation.com", "inwoovation.com/smartfarm")
     html = re.sub(r"https?://wiki\.inwoovation\.com/?", SITE + "wiki/", html)
+    # Heal legacy internal tool links & protocol-relative scripts
+    html = html.replace('href="/smartfarm/nutrient.html"', 'href="/tools/hydroponic-nutrient-solution-calculator.html"')
+    html = html.replace('href="/tools/psychrometric-chart.html"', 'href="/tools/psychrometric-mollier-greenhouse-dehumidifier.html"')
+    html = html.replace('src="//translate.google.com/translate_a/element.js', 'src="https://translate.google.com/translate_a/element.js')
     return html
 
 
@@ -124,14 +287,12 @@ def fix_meta_description(html):
     if not re.search(r"</title>", html, re.I):
         return html
     desc = _extract_meta_desc(html)
-    # Replace empty description tags if any
     html = re.sub(
         r'<meta\s+[^>]*name=["\']description["\'][^>]*content=["\']\s*["\'][^>]*>',
         f'<meta name="description" content="{desc}">',
         html,
         flags=re.I,
     )
-    # Normalize reversed attribute order <meta content="..." name="description"/>
     html = re.sub(
         r'<meta\s+content=["\']([^"\']+)["\']\s+name=["\']description["\']\s*/?>',
         r'<meta name="description" content="\1">',
@@ -153,7 +314,6 @@ def fix_opengraph(html, rel_path):
     url = self_url(rel_path)
     og_type = "article" if rel_path.startswith(("articles/", "wiki/", "crops/", "climate/", "benchmarks/")) else "website"
 
-    # Fix empty og:description or og:image attributes
     html = re.sub(
         r'<meta\s+[^>]*property=["\']og:description["\'][^>]*content=["\']\s*["\'][^>]*>',
         f'<meta property="og:description" content="{desc}">',
@@ -190,14 +350,14 @@ def fix_opengraph(html, rel_path):
 def fix_img_alt(html):
     """Ensure every <img> tag has a non-empty alt attribute."""
     title = _extract_title(html).split("|")[0].strip() or "CEA Engineering Visual"
-    # Replace empty alt=""
     html = re.sub(r'(<img\b[^>]*?)\balt=["\']\s*["\']', rf'\1alt="{title}"', html, flags=re.I)
-    # Add alt attribute if missing entirely
+
     def _ensure_alt(match):
         tag = match.group(0)
         if re.search(r'\balt\s*=', tag, re.I):
             return tag
         return tag[:-1] + f' alt="{title}">'
+
     return re.sub(r"<img\b[^>]*>", _ensure_alt, html, flags=re.I)
 
 
@@ -260,6 +420,7 @@ def is_live(rel_path, html):
 
 def transform(rel_path, html):
     html = fix_dead_host(html)
+    html = fix_html_math_and_escapes(html)
     if not is_live(rel_path, html):
         return html
     html = fix_claims(html)
