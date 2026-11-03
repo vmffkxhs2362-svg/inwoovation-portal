@@ -40,24 +40,57 @@
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "TechArticle",
-  "headline": "Daily Light Integral (DLI) & Photonic Efficacy Engineering in Vertical Plant Factories",
-  "description": "Calculated PPFD (µmol/m²/s) and DLI (mol/m²/day) formulations for indoor LED vertical farming to maximize dry biomass yield per kWh of electricity.",
-  "url": "https://inwoovation.com/articles/article-02-dli-vertical-farming.html",
-  "inLanguage": "en-US",
-  "author": {
-    "@type": "Person",
-    "name": "Inwoo Hwang",
-    "jobTitle": "Horticultural & CEA Systems Engineer"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Inwoovation Lab",
-    "url": "https://inwoovation.com"
-  },
-  "datePublished": "2026-09-01",
-  "dateModified": "2026-11-03",
-  "mainEntityOfPage": "https://inwoovation.com/articles/article-02-dli-vertical-farming.html"
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "headline": "Daily Light Integral (DLI) & Photonic Efficacy Engineering in Vertical Plant Factories",
+      "description": "Calculated PPFD (µmol/m²/s) and DLI (mol/m²/day) formulations for indoor LED vertical farming to maximize dry biomass yield per kWh of electricity.",
+      "url": "https://inwoovation.com/articles/article-02-dli-vertical-farming.html",
+      "inLanguage": "en-US",
+      "author": {
+        "@type": "Person",
+        "name": "Inwoo Hwang",
+        "jobTitle": "Horticultural & CEA Systems Engineer"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Inwoovation Lab",
+        "url": "https://inwoovation.com"
+      },
+      "datePublished": "2026-09-01",
+      "dateModified": "2026-11-03",
+      "mainEntityOfPage": "https://inwoovation.com/articles/article-02-dli-vertical-farming.html"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do operators prevent humidity spikes when thermal screens are closed over 95%?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "By coordinating a controlled 1.5%–4.0% moisture purge gap (Screen Gap) with a minimum pipe-rail temperature of 38–42 °C, gentle buoyancy-driven convection transports excess water vapor into the upper roof plenum where it condenses on the cold glass envelope and drains via gutter channels."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What sampling frequency is required to synchronize solar radiation with irrigation and climate actuators?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Quantum PAR and pyranometer sensors are sampled every 5 seconds, filtered over a 60-second rolling window, and integrated into cumulative radiation sums (J/cm2) to trigger precision 100 mL drip shots while updating MPC climate trajectories every 5 minutes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where can I simulate these exact thermodynamic and agronomic equations for my own facility?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Launch our interactive DLI &amp; Photonic Efficacy Calculator or explore the full suite of CEA engineering calculators linked below."
+          }
+        }
+      ]
+    }
+  ]
 }
   </script>
 </head>
@@ -210,6 +243,17 @@
         </div>
       </section>
 <!-- INW-DEEP-ENG-END -->
+
+<!-- INW-LIVE-WIDGET-START -->
+<section class="inw-live-widget-sandbox" style="margin: 32px 0; padding: 24px; background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 16px; box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);">
+  <h3 style="margin: 0 0 8px 0; font-size: 1.2rem; color: #38bdf8; font-weight: 800;">☀️ Interactive Live Daily Light Integral (DLI) & Photoperiod Simulator</h3>
+  <p style="margin: 0 0 16px 0; font-size: 0.92rem; color: #94a3b8; line-height: 1.6;">Test canopy PPFD (µmol·m⁻²·s⁻¹) and photoperiod hours below to compute cumulative daily PAR photon flux (mol·m⁻²·d⁻¹).</p>
+  <div style="display: flex; justify-content: center; width: 100%; overflow: hidden;">
+    <iframe src="/embed/dli-calculator.html" width="380" height="390" loading="lazy" title="☀️ Interactive Live Daily Light Integral (DLI) & Photoperiod Simulator" style="border: none; border-radius: 14px; max-width: 100%;"></iframe>
+  </div>
+</section>
+<!-- INW-LIVE-WIDGET-END -->
+
 <!-- INW-EEAT-BOX-START -->
     <section id="inw-eeat-standard-block" style="margin-top: 32px; padding-top: 24px; border-top: 1px solid rgba(148, 163, 184, 0.3); box-sizing: border-box;">
       <div class="inw-calculators-box" style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 12px; padding: 20px; margin-bottom: 24px;">
