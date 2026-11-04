@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V4RYJBMEDE"></script>
+    <script>
+       if (navigator.webdriver || /HeadlessChrome|PhantomJS|Lighthouse|PTST|bot|crawler|spider|slurp/i.test(navigator.userAgent) || location.hostname === 'localhost' || location.hostname === '127.0.0.1' || (screen.width === 1366 && screen.height === 1366) || (screen.width === 800 && screen.height === 600) || screen.height >= 5000) { window['ga-disable-G-V4RYJBMEDE'] = true; }
+    window.dataLayer = window.dataLayer || [];
+       function gtag(){dataLayer.push(arguments);}
+       gtag('js', new Date());
+       gtag('config', 'G-V4RYJBMEDE');
+    </script>
+  <meta charset="UTF-8">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8597809158257497" crossorigin="anonymous"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stündliche Penman-Monteith-Evapotranspiration (ET₀), Strahlungssummen-Bewässerung &amp; Autonome Klimacomputer (RAM CC600 / Priva Operator) | Inwoovation Lab</title>
+  <link rel="stylesheet" href="../../css/styles.css">
+  <link rel="canonical" href="https://inwoovation.com/articles/de/article-05-penman-monteith-transpiration-automatisierung-ram-priva.html">
+  <link rel="alternate" hreflang="en" href="https://inwoovation.com/articles/article-05-penman-monteith-transpiration.html">
+  <link rel="alternate" hreflang="de" href="https://inwoovation.com/articles/de/article-05-penman-monteith-transpiration-automatisierung-ram-priva.html">
+
+  <meta name="google-adsense-account" content="ca-pub-8597809158257497">
+  <meta name="description" content="Biophysikalische Modellierung der FAO-56 Penman-Monteith-Transpiration (ET₀), Strahlungssummen-Tropfbewässerung und dezentrale Klimacomputer-Fernsteuerung (RAM CC600 &amp; Priva Connext/Operator) im deutschen Unterglasgartenbau.">
+  <meta property="og:title" content="Stündliche Penman-Monteith-Evapotranspiration (ET₀), Strahlungssummen-Bewässerung &amp; Autonome Klimacomputer (RAM CC600 / Priva Operator) | Inwoovation Lab">
+  <meta property="og:description" content="Biophysikalische Modellierung der FAO-56 Penman-Monteith-Transpiration (ET₀), Strahlungssummen-Tropfbewässerung und dezentrale Klimacomputer-Fernsteuerung (RAM CC600 &amp; Priva Connext/Operator) im deutschen Unterglasgartenbau.">
+  <meta property="og:image" content="https://inwoovation.com/og-cover.jpg">
+  <meta property="og:url" content="https://inwoovation.com/articles/de/article-05-penman-monteith-transpiration-automatisierung-ram-priva.html">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Stündliche Penman-Monteith-Evapotranspiration (ET₀), Strahlungssummen-Bewässerung &amp; Autonome Klimacomputer (RAM CC600 / Priva Operator) | Inwoovation Lab">
+  <meta name="twitter:description" content="Biophysikalische Modellierung der FAO-56 Penman-Monteith-Transpiration (ET₀), Strahlungssummen-Tropfbewässerung und dezentrale Klimacomputer-Fernsteuerung (RAM CC600 &amp; Priva Connext/Operator) im deutschen Unterglasgartenbau.">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "headline": "Stündliche Penman-Monteith-Evapotranspiration (ET₀), Strahlungssummen-Bewässerung und Autonome Klimacomputer-Architekturen (RAM CC600 & Priva Operator)",
+      "description": "Biophysikalische Modellierung der FAO-56 Penman-Monteith-Transpiration (ET₀), Strahlungssummen-Tropfbewässerung und dezentrale Klimacomputer-Fernsteuerung (RAM CC600 & Priva Connext/Operator) im deutschen Unterglasgartenbau.",
+      "url": "https://inwoovation.com/articles/de/article-05-penman-monteith-transpiration-automatisierung-ram-priva.html",
+      "inLanguage": "de-DE",
+      "author": {
+        "@type": "Person",
+        "name": "Inwoo Hwang",
+        "jobTitle": "Horticultural & CEA Systems Engineer"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Inwoovation Lab",
+        "url": "https://inwoovation.com"
+      },
+      "datePublished": "2026-11-05",
+      "dateModified": "2026-11-05",
+      "mainEntityOfPage": "https://inwoovation.com/articles/de/article-05-penman-monteith-transpiration-automatisierung-ram-priva.html"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Wie verknüpfen moderne Klimacomputer wie RAM CC600 und Priva Connext die Penman-Monteith-Transpiration mit der Tropfbewässerung?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Über Pyranometer und Substratwaagen berechnen die Prozessrechner im 5-Sekunden-Takt die kumulative Strahlungssumme (J/cm²) sowie das Dampfdruckdefizit (VPD) und lösen bei Erreichen von 1,5 bis 2,0 J/cm² präzise 75–100 mL Einzelgaben aus, um 20–30 % Dränwasseranteil bei stabilem Substrat-Wassergehalt (65–75 % VWC) zu halten."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Was bedeutet dezentrale Autarkie beim RAM CC600 und Outgoing-only-Sicherheit bei Priva Connected?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Beim RAM CC600 (Baureihe 660) regeln bis zu 32 vernetzte Unterstationen über TCI-Bus oder Ethernet ihre Gewächshausabteilungen autonom weiter, selbst wenn eine Leitung oder der Leitrechner ausfällt. Bei Priva Connected baut das Gateway ausschließlich ausgehende Verbindungen zur Microsoft-Azure-Cloud auf, sodass der Klimacomputer von außen unsichtbar gegen Cyberangriffe geschützt ist."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wie entkoppelt die Prozessautomatisierung den Arbeitsalltag des Gärtnermeisters von nächtlichen Kontrollgängen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Durch autonome Algorithmen (Weihenstephaner Modell, Cool-Morning-Strategie), Fernwärme-Pufferspeichermanagement und mehrstufige Plausibilitätsfilter im Alarmmanagement (Priva Notification Center / VisuRAM) herrscht von 00:00 bis 06:00 Uhr volle Nachtruhe; ab 16:30 Uhr genügt eine passive Smartphone-Rufbereitschaft (§ 5 ArbZG Ruhezeit)."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+<!-- INW-STD-NAV-START -->
+<nav class="inw-top-nav" aria-label="Main Navigation" style="background: #0f172a; border-bottom: 1px solid #1e293b; padding: 12px 20px; font-family: system-ui, -apple-system, sans-serif; box-sizing: border-box; width: 100%;">
+  <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px;">
+    <a href="/index.html" style="color: #10b981; font-weight: 800; font-size: 1.15rem; text-decoration: none; letter-spacing: -0.02em;">Inwoovation Lab</a>
+    <div style="display: flex; flex-wrap: wrap; gap: 14px; font-size: 0.9rem;">
+      <a href="/index.html" style="color: #e2e8f0; text-decoration: none;">Startseite</a>
+      <a href="/smartfarm/vpd.html" style="color: #e2e8f0; text-decoration: none;">Rechner</a>
+      <a href="/articles/index.html" style="color: #38bdf8; font-weight: 600; text-decoration: none;">Fachartikel</a>
+      <a href="/wiki/index.html" style="color: #e2e8f0; text-decoration: none;">Wiki</a>
+      <a href="/climate/index.html" style="color: #e2e8f0; text-decoration: none;">Klima-Hub</a>
+      <a href="/crops/index.html" style="color: #e2e8f0; text-decoration: none;">Kulturen</a>
+      <a href="/tools/venlocad-3d.html" style="color: #10b981; font-weight: 600; text-decoration: none;">VenloCAD 3D</a>
+      <a href="/about.html" style="color: #e2e8f0; text-decoration: none;">Über uns</a>
+    </div>
+  </div>
+</nav>
+<!-- INW-STD-NAV-END -->
+<article class="article-container" style="max-width: 880px; margin: 40px auto; padding: 35px; background: #ffffff; border-radius: 16px; border: 1px solid #e2e8f0; line-height: 1.85; color: #334155;">
+  <header class="article-header">
+    <div class="category-tag" style="color: #10b981; font-weight: 700; font-size: 0.9rem; text-transform: uppercase;">Biophysik, Bewässerung &amp; Prozessautomatisierung (Band 05 • Ausgabe 2026/2027)</div>
+    <h1 style="font-size: 2rem; color: #0f172a; margin: 10px 0 15px 0; border-bottom: 3px solid #10b981; padding-bottom: 12px; line-height: 1.3;">Stündliche Penman-Monteith-Evapotranspiration (ET₀), Strahlungssummen-Bewässerung und Autonome Klimacomputer-Architekturen (RAM CC600 &amp; Priva Operator)</h1>
+    <div class="article-meta" style="color: #64748b; font-size: 0.92rem; margin-bottom: 28px; background: #f8fafc; padding: 10px 16px; border-radius: 8px;">
+      📅 Aktualisiert: 2026-11-05 • ✍️ Inwoo Hwang (CEA Systems Engineer &amp; Gärtnermeister-Track) • 🌐 <a href="/articles/article-05-penman-monteith-transpiration.html" style="color: #0284c7; text-decoration: none; font-weight: 600;">English Version</a>
+    </div>
+  </header>
+
+  <div class="article-body">
+    <h2>1. Biophysikalische Evapotranspirationskinetik (FAO-56 Penman-Monteith) in der Substratkultur</h2>
+    <p>In hochproduktiven bayerischen Unterglasbetrieben — etwa im 40-Hektar-Fruchtgemüseverbund des Nürnberger Knoblauchslands, Dinkelsbühls und Feulersdorfs — hat die echtzeitbasierte Transpirationsmodellierung nach <strong>FAO-56 Penman-Monteith</strong> starre Zeitschaltuhren vollständig abgelöst. Unterbewässerung im Steinwoll- oder Kokossubstrat provoziert osmotische EC-Spitzen und Blütenendfäule (Calcium-Mangel im Xylemstrom), während Überbewässerung den Luftporenanteil verdrängt und Wurzelpathogene wie <em>Pythium</em> fördert. Die stündliche Referenz-Evapotranspiration (ET<sub>0</sub>) koppelt den Strahlungsterm (R<sub>n</sub> - G) direkt mit dem aerodynamischen Dampfdruckdefizit-Term (e<sub>s</sub> - e<sub>a</sub>), dem Grenzschichtwiderstand (r<sub>a</sub>) und dem stomatären Widerstand (r<sub>s</sub>).</p>
+
+    <h2>2. Systemarchitektur moderner DDC-Klimacomputer: RAM CC600 und Priva Connext / Operator</h2>
+    <p>Die numerische Lösung der Transpirations- und Wärmebilanzgleichungen erfolgt 2026/2027 auf zwei führenden Prozessrechner-Plattformen, die die biologische Kulturentwicklung von der physischen Präsenz des Gärtnermeisters entkoppeln:</p>
+    <ul>
+      <li><strong>RAM CC600 (Baureihe 660, OS ab Version 8.0):</strong> Mikroprozessorbasiertes DDC-System (max. 30 VA Leistungsaufnahme) für die Hutschienenmontage. Über eine zweiadrige TCI-Busleitung (bis 1.000 m) oder Ethernet (10/100 MBit/s) lassen sich bis zu <strong>32 CC600-Unterstationen</strong> vernetzen. Dank <em>dezentraler Autarkie</em> regelt jede Station ihre Abteilung bei Leitungsausfall selbstständig weiter, während ein beliebiger Rechner die Rolle des <strong>Leitrechners</strong> übernimmt. Integrierter Webserver, <strong>VisuRAM 4.x</strong> und <strong>VisuData</strong> erlauben direkten Smartphone-Zugriff sowie ModBus-TCP/RTU-, M-Bus- und DALI-Kopplung.</li>
+      <li><strong>Priva Connext, Compact CC &amp; Priva Compass (Microsoft Azure Cloud):</strong> Koppelt den Prozessrechner über ein lokal abgesichertes Gateway mit der Cloud. Der lokale Cloud Connector baut ausschließlich ausgehende Verbindungen (<em>outgoing connections only</em>) auf, sodass der Gewächshausrechner von außen unsichtbar bleibt (OAuth2 &amp; Access Control). Über <strong>Priva Operator</strong> und das <strong>Priva Notification Center</strong> überwacht und übersteuert der Produktionsleiter Ventile, Dosierpumpen (FertiDos / Dosatron) und Lüftungsklappen ortsunabhängig in Echtzeit.</li>
+    </ul>
+
+    <h2>3. Chronobiologische Entkopplung, Tagesablauf und Arbeitszeitgesetz (ArbZG)</h2>
+    <p>Durch das Zusammenspiel aus <strong>Weihenstephaner Modell</strong> (dynamische Temperatursummenregelung), <strong>Cool-Morning-Strategie</strong>, überbetrieblichen Biomasse-Fernwärmetrassen (z. B. 1.850 m DN 150/200 Trasse der BioEnergie Knoblauchsland GmbH &amp; Co. KG inkl. Großpufferspeicher) und intelligentem Alarmmanagement genießt der Produktionsleiter von <strong>00:00 bis 06:00 Uhr vollständige Nachtruhe</strong>. Nach einem 30-minütigen Remote-Pre-Check beim Frühstück (06:00–06:30 Uhr per App) gliedert sich der Kerntag von <strong>07:00 bis 16:30 Uhr</strong> (tariflich 38,5–39,0 h/Woche bzw. 7,8 h/Tag auf dem <strong>Ampelkonto</strong> bei 169,65 verstetigten Monatsstunden) in Erntelogistik für die <em>Franken-Gemüse Knoblauchsland eG</em>, visuelle <strong>Pflanzenbonitur</strong> (Nützlingseinsatz &amp; Dränwasser-EC/pH) und 6-Wochen-Datenanalyse im klimatisierten Leitstand. Ab 16:30 Uhr besteht lediglich eine passive Smartphone-<strong>Rufbereitschaft</strong>, die nach § 5 Abs. 3 ArbZG rechtlich als Ruhezeit gilt (mit 10–20 % Bereitschaftspauschale und steuerfreien SFN-Zuschlägen von 25–125 % bei aktivem Eingriff).</p>
+  </div>
+
+<!-- INW-DEEP-ENG-START -->
+  <section class="inw-deep-engineering" style="margin-top: 36px; border-top: 2px solid rgba(16, 185, 129, 0.35); padding-top: 28px;">
+    <h2>Section A: Biophysikalische Grundgleichungen (Penman-Monteith &amp; Strahlungssummen-Regelung)</h2>
+    <p>Die stündliche Bestands-Evapotranspiration (ET<sub>c</sub>) und die daraus abgeleitete Tropfbewässerungs-Einzelgabe (V<sub>shot</sub>) berechnen sich im DDC-Klimacomputer nach:</p>
+    <div class="code-box" style="background: rgba(15, 23, 42, 0.06); border-left: 4px solid #10b981; padding: 14px 18px; border-radius: 8px; font-family: monospace; margin: 16px 0; overflow-x: auto;">
+      <code>ET_0 = [ Delta * (R_n - G) + (3600 * rho_a * c_p * VPD) / r_a ] / [ lambda_v * (Delta + gamma * (1 + r_s / r_a)) ] [mm h-1]</code><br>
+      <code>V_shot = (K_c * Integral(I_glob dt) / lambda_v) * (1 + f_drain_target) [mL / Pflanze bei 1,5 - 2,0 J cm-2]</code>
+    </div>
+    <p>Hierbei bezeichnet &Delta; die Steigung der Sättigungsdampfdruckkurve (kPa·K<sup>&minus;1</sup>), R<sub>n</sub> die Nettostrahlung im Bestand (MJ·m<sup>&minus;2</sup>·h<sup>&minus;1</sup>), &rho;<sub>a</sub> die Luftdichte (kg·m<sup>&minus;3</sup>), c<sub>p</sub> die spezifische Wärmekapazität feuchter Luft (1,013·10<sup>&minus;3</sup> MJ·kg<sup>&minus;1</sup>·K<sup>&minus;1</sup>), &lambda;<sub>v</sub> die latente Verdampfungswärme (2,45 MJ·kg<sup>&minus;1</sup>) und f<sub>drain_target</sub> die Ziel-Dränrate von 20–30 % zur Vermeidung von Natrium-/Chlorid-Akkumulation im Substrat.</p>
+
+    <h2>Section B: Quantitative Engineering- &amp; Betriebsführungs-Matrix (Knoblauchsland 2026/2027)</h2>
+    <div class="table-responsive" style="overflow-x: auto; margin: 18px 0;">
+      <table class="data-table" style="width: 100%; border-collapse: collapse; font-size: 0.92rem;">
+        <thead>
+          <tr style="background: rgba(16, 185, 129, 0.12); border-bottom: 2px solid #10b981; text-align: left;">
+            <th style="padding: 10px 12px;">Subsystem / Parameter</th>
+            <th style="padding: 10px 12px;">Kennwert / Sollwert (SI)</th>
+            <th style="padding: 10px 12px;">Randbedingung</th>
+            <th style="padding: 10px 12px;">Hardware / Schnittstelle</th>
+            <th style="padding: 10px 12px;">Regel- &amp; Rechtsrahmen</th>
+            <th style="padding: 10px 12px;">Praxis-Benchmark</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom: 1px solid rgba(148, 163, 184, 0.25);">
+            <td style="padding: 10px 12px; font-weight: 600;">Strahlungssummen-Bewässerung</td>
+            <td style="padding: 10px 12px; font-family: monospace;">1,5 – 2,0 J·cm⁻² Schwelle</td>
+            <td style="padding: 10px 12px;">VPD &gt; 1,2 kPa, 20–30 % Dränrate</td>
+            <td style="padding: 10px 12px;">Pyranometer + Substratwaage</td>
+            <td style="padding: 10px 12px;">75–100 mL Einzelgabe (FertiDos)</td>
+            <td style="padding: 10px 12px; font-weight: 600; color: #10b981;">65–75 % VWC ohne Wurzelanoxie</td>
+          </tr>
+          <tr style="border-bottom: 1px solid rgba(148, 163, 184, 0.25);">
+            <td style="padding: 10px 12px; font-weight: 600;">RAM CC600 DDC-Architektur</td>
+            <td style="padding: 10px 12px; font-family: monospace;">Bis 32 Stationen / max. 30 VA</td>
+            <td style="padding: 10px 12px;">TCI-Bus (1.000 m) / Ethernet</td>
+            <td style="padding: 10px 12px;">Baureihe 660 + VisuRAM 4.x</td>
+            <td style="padding: 10px 12px;">Dezentrale Autarkie + ModBus/DALI</td>
+            <td style="padding: 10px 12px; font-weight: 600; color: #10b981;">0 % Ausfallrisiko bei Busstörung</td>
+          </tr>
+          <tr style="border-bottom: 1px solid rgba(148, 163, 184, 0.25);">
+            <td style="padding: 10px 12px; font-weight: 600;">Priva Cloud &amp; Operator</td>
+            <td style="padding: 10px 12px; font-family: monospace;">Outgoing-only / OAuth2</td>
+            <td style="padding: 10px 12px;">&gt;75 Azure-Sicherheitsstandards</td>
+            <td style="padding: 10px 12px;">Priva Connext / Compass Gateway</td>
+            <td style="padding: 10px 12px;">6-Wochen-Chart-Overlay &amp; Override</td>
+            <td style="padding: 10px 12px; font-weight: 600; color: #10b981;">Fernquittierung ohne Anfahrt</td>
+          </tr>
+          <tr style="border-bottom: 1px solid rgba(148, 163, 184, 0.25);">
+            <td style="padding: 10px 12px; font-weight: 600;">Jahresarbeitszeit &amp; Ampelkonto</td>
+            <td style="padding: 10px 12px; font-family: monospace;">39,0 h/Woche (7,8 h/Tag)</td>
+            <td style="padding: 10px 12px;">169,65 h/Monat (2.035,8 h/Jahr)</td>
+            <td style="padding: 10px 12px;">07:00–16:30 Uhr Präsenzphase</td>
+            <td style="padding: 10px 12px;">§ 3 / § 5 (11h Ruhe) / § 11 ArbZG</td>
+            <td style="padding: 10px 12px; font-weight: 600; color: #10b981;">Mind. 15 freie Sonntage + Ersatzruhetag</td>
+          </tr>
+          <tr style="border-bottom: 1px solid rgba(148, 163, 184, 0.25);">
+            <td style="padding: 10px 12px; font-weight: 600;">Vergütung Betriebsleiter (2026/27)</td>
+            <td style="padding: 10px 12px; font-family: monospace;">52.212 € – 66.312 € / Jahr</td>
+            <td style="padding: 10px 12px;">Großbetrieb (15–40 ha): 120–150 k€+</td>
+            <td style="padding: 10px 12px;">Inkl. Dienstwagen &amp; 13. Gehalt (72 %)</td>
+            <td style="padding: 10px 12px;">§ 3b EStG SFN-Zuschläge (25–125 %)</td>
+            <td style="padding: 10px 12px; font-weight: 600; color: #10b981;">30h-Teilzeitmodell: ~40.000 €/Jahr</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Section C: Häufig gestellte Ingenieurfragen (FAQ für Gärtnermeister &amp; Produktionsleiter)</h2>
+    <div class="faq-block" style="margin-top: 14px;">
+      <p><strong>F1: Wie verknüpfen moderne Klimacomputer wie RAM CC600 und Priva Connext die Penman-Monteith-Transpiration mit der Tropfbewässerung?</strong><br>
+      Über Pyranometer und Substratwaagen berechnen die Prozessrechner im 5-Sekunden-Takt die kumulative Strahlungssumme (J/cm²) sowie das Dampfdruckdefizit (VPD) und lösen bei Erreichen von 1,5 bis 2,0 J/cm² präzise 75–100 mL Einzelgaben aus, um 20–30 % Dränwasseranteil bei stabilem Substrat-Wassergehalt (65–75 % VWC) zu halten.</p>
+      <p><strong>F2: Was bedeutet dezentrale Autarkie beim RAM CC600 und Outgoing-only-Sicherheit bei Priva Connected?</strong><br>
+      Beim RAM CC600 (Baureihe 660) regeln bis zu 32 vernetzte Unterstationen über TCI-Bus oder Ethernet ihre Gewächshausabteilungen autonom weiter, selbst wenn eine Leitung oder der Leitrechner ausfällt. Bei Priva Connected baut das Gateway ausschließlich ausgehende Verbindungen zur Microsoft-Azure-Cloud auf, sodass der Klimacomputer von außen unsichtbar gegen Cyberangriffe geschützt ist.</p>
+      <p><strong>F3: Wie entkoppelt die Prozessautomatisierung den Arbeitsalltag des Gärtnermeisters von nächtlichen Kontrollgängen?</strong><br>
+      Durch autonome Algorithmen (Weihenstephaner Modell, Cool-Morning-Strategie), Fernwärme-Pufferspeichermanagement und mehrstufige Plausibilitätsfilter im Alarmmanagement (Priva Notification Center / VisuRAM) herrscht von 00:00 bis 06:00 Uhr volle Nachtruhe; ab 16:30 Uhr genügt eine passive Smartphone-Rufbereitschaft (§ 5 ArbZG Ruhezeit).</p>
+    </div>
+  </section>
+<!-- INW-DEEP-ENG-END -->
+
+<!-- INW-LIVE-WIDGET-START -->
+<section class="inw-live-widget-sandbox" style="margin: 32px 0; padding: 24px; background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 16px; box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);">
+  <h3 style="margin: 0 0 8px 0; font-size: 1.2rem; color: #38bdf8; font-weight: 800;">💧 Interaktiver Echtzeit-VPD- &amp; Mikroklima-Simulator</h3>
+  <p style="margin: 0 0 16px 0; font-size: 0.92rem; color: #94a3b8; line-height: 1.6;">Passen Sie Lufttemperatur, relative Luftfeuchtigkeit und Blatttemperatur-Differenz direkt an, um das Dampfdruckdefizit (kPa) und den Transpirationsstrom live zu berechnen.</p>
+  <div style="display: flex; justify-content: center; width: 100%; overflow: hidden;">
+    <iframe src="/embed/vpd-gauge.html" width="380" height="390" loading="lazy" title="💧 Interaktiver Echtzeit-VPD- &amp; Mikroklima-Simulator" style="border: none; border-radius: 14px; max-width: 100%;"></iframe>
+  </div>
+</section>
+<!-- INW-LIVE-WIDGET-END -->
+
+<!-- INW-EEAT-BOX-START -->
+  <section id="inw-eeat-standard-block" style="margin-top: 32px; padding-top: 24px; border-top: 1px solid rgba(148, 163, 184, 0.3); box-sizing: border-box;">
+    <div class="inw-calculators-box" style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 12px; padding: 20px; margin-bottom: 24px;">
+      <h3 style="margin-top: 0; margin-bottom: 12px; font-size: 1.15rem; color: #10b981;">⚙️ Verwandte Interaktive Ingenieur-Rechner &amp; Simulationstools</h3>
+      <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+        <a href="/smartfarm/transpiration.html" style="display: inline-block; padding: 8px 14px; background: #0f172a; color: #38bdf8; border: 1px solid #334155; border-radius: 6px; text-decoration: none; font-size: 0.88rem; font-weight: 600;">🌿 Penman-Monteith ET₀ Engine</a>
+        <a href="/smartfarm/vpd.html" style="display: inline-block; padding: 8px 14px; background: #0f172a; color: #38bdf8; border: 1px solid #334155; border-radius: 6px; text-decoration: none; font-size: 0.88rem; font-weight: 600;">💧 VPD &amp; Leaf-Air Psychrometrics</a>
+        <a href="/tools/eu-greenhouse-energy-hofnachfolge-roi-simulator.html" style="display: inline-block; padding: 8px 14px; background: #0f172a; color: #38bdf8; border: 1px solid #334155; border-radius: 6px; text-decoration: none; font-size: 0.88rem; font-weight: 600;">🇪🇺 BLE Fördermittel &amp; Hofnachfolge ROI</a>
+        <a href="/tools/venlocad-3d.html" style="display: inline-block; padding: 8px 14px; background: #10b981; color: #022c22; border-radius: 6px; text-decoration: none; font-size: 0.88rem; font-weight: 700;">🏗️ VenloCAD 3D Architect</a>
+      </div>
+    </div>
+
+    <div class="inw-eeat-author-box" style="background: rgba(30, 41, 59, 0.06); border: 1px solid rgba(148, 163, 184, 0.35); border-radius: 12px; padding: 20px;">
+      <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; color: #10b981; font-weight: 700; margin-bottom: 4px;">E-E-A-T Technical Review &amp; Authorship</div>
+      <h3 style="margin: 0 0 8px 0; font-size: 1.1rem;">Inwoo Hwang — Horticultural &amp; CEA Systems Engineer, Inwoovation Lab</h3>
+      <p style="margin: 0; font-size: 0.92rem; line-height: 1.6; opacity: 0.9;">Spezialisiert auf thermodynamische Gewächshausmodellierung nach DIN V 18599 und DIN EN 13031-1, psychrometrische VPD- und Penman-Monteith-Transpirationskinetik, geschlossene Hydrokultur-Stöchiometrie sowie KI-gestützte modellprädiktive Klimaregelung (MPC) im modernen Unterglasanbau.</p>
+    </div>
+  </section>
+<!-- INW-EEAT-BOX-END -->
+</article>
+<!-- INW-STD-FOOTER-START -->
+<footer class="inw-site-footer" style="margin-top: 48px; padding: 28px 20px; background: #0f172a; color: #94a3b8; border-top: 1px solid #1e293b; text-align: center; font-size: 0.9rem; font-family: system-ui, -apple-system, sans-serif; box-sizing: border-box; width: 100%;">
+  <div style="max-width: 1100px; margin: 0 auto;">
+    <p style="margin: 0 0 10px 0;">&copy; 2026 Inwoovation Lab. Precision Controlled Environment Agriculture &amp; Horticultural Engineering.</p>
+    <p style="margin: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 16px;">
+      <a href="/index.html" style="color: #cbd5e1; text-decoration: none;">Home</a>
+      <a href="/articles/index.html" style="color: #cbd5e1; text-decoration: none;">Engineering Articles</a>
+      <a href="/privacy-policy.html" style="color: #cbd5e1; text-decoration: none;">Privacy Policy</a>
+      <a href="/terms-of-service.html" style="color: #cbd5e1; text-decoration: none;">Terms of Service</a>
+      <a href="/about.html" style="color: #cbd5e1; text-decoration: none;">About</a>
+      <a href="/contact.html" style="color: #cbd5e1; text-decoration: none;">Contact</a>
+    </p>
+  </div>
+</footer>
+<!-- INW-STD-FOOTER-END -->
+</body>
+</html>
