@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V4RYJBMEDE"></script>
+    <script>
+       if (navigator.webdriver || /HeadlessChrome|PhantomJS|Lighthouse|PTST|bot|crawler|spider|slurp/i.test(navigator.userAgent) || location.hostname === 'localhost' || location.hostname === '127.0.0.1' || (screen.width === 1366 && screen.height === 1366) || (screen.width === 800 && screen.height === 600) || screen.height >= 5000) { window['ga-disable-G-V4RYJBMEDE'] = true; }
+    window.dataLayer = window.dataLayer || [];
+       function gtag(){dataLayer.push(arguments);}
+       gtag('js', new Date());
+       gtag('config', 'G-V4RYJBMEDE');
+    </script>
+  <meta charset="UTF-8">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8597809158257497" crossorigin="anonymous"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wärmedurchgangskoeffizienten (U'-Werte), Kittlose Verglasung &amp; Mehrlagenschirm-Thermodynamik im Venlo-Gewächshaus | Inwoovation Lab</title>
+  <link rel="stylesheet" href="../../css/styles.css">
+  <link rel="canonical" href="https://inwoovation.com/articles/de/article-04-gewaechshaus-waermeverlust-u-wert-energieschirme.html">
+  <link rel="alternate" hreflang="en" href="https://inwoovation.com/articles/article-04-greenhouse-heating-loss.html">
+  <link rel="alternate" hreflang="de" href="https://inwoovation.com/articles/de/article-04-gewaechshaus-waermeverlust-u-wert-energieschirme.html">
+
+  <meta name="google-adsense-account" content="ca-pub-8597809158257497">
+  <meta name="description" content="Bauphysikalische Berechnung von Spitzenheizlasten (Q = U'·A·ΔT), kittloser Verglasung, Kamineffekt, Mehrlagenschirmen (Luxous 1147 FR) und Latentwärmerückgewinnung im geschlossenen Venlo-Gewächshaus.">
+  <meta property="og:title" content="Wärmedurchgangskoeffizienten (U'-Werte), Kittlose Verglasung &amp; Mehrlagenschirm-Thermodynamik im Venlo-Gewächshaus | Inwoovation Lab">
+  <meta property="og:description" content="Bauphysikalische Berechnung von Spitzenheizlasten (Q = U'·A·ΔT), kittloser Verglasung, Kamineffekt, Mehrlagenschirmen (Luxous 1147 FR) und Latentwärmerückgewinnung im geschlossenen Venlo-Gewächshaus.">
+  <meta property="og:image" content="https://inwoovation.com/og-cover.jpg">
+  <meta property="og:url" content="https://inwoovation.com/articles/de/article-04-gewaechshaus-waermeverlust-u-wert-energieschirme.html">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Wärmedurchgangskoeffizienten (U'-Werte), Kittlose Verglasung &amp; Mehrlagenschirm-Thermodynamik im Venlo-Gewächshaus | Inwoovation Lab">
+  <meta name="twitter:description" content="Bauphysikalische Berechnung von Spitzenheizlasten (Q = U'·A·ΔT), kittloser Verglasung, Kamineffekt, Mehrlagenschirmen (Luxous 1147 FR) und Latentwärmerückgewinnung im geschlossenen Venlo-Gewächshaus.">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "headline": "Wärmedurchgangskoeffizienten (U'-Werte), Kittlose Verglasung und Mehrlagenschirm-Thermodynamik im Venlo-Gewächshaus",
+      "description": "Bauphysikalische Berechnung von Spitzenheizlasten (Q = U'·A·ΔT), kittloser Verglasung, Kamineffekt, Mehrlagenschirmen (Luxous 1147 FR) und Latentwärmerückgewinnung im geschlossenen Venlo-Gewächshaus.",
+      "url": "https://inwoovation.com/articles/de/article-04-gewaechshaus-waermeverlust-u-wert-energieschirme.html",
+      "inLanguage": "de-DE",
+      "author": {
+        "@type": "Person",
+        "name": "Inwoo Hwang",
+        "jobTitle": "Horticultural & CEA Systems Engineer"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Inwoovation Lab",
+        "url": "https://inwoovation.com"
+      },
+      "datePublished": "2026-11-04",
+      "dateModified": "2026-11-04",
+      "mainEntityOfPage": "https://inwoovation.com/articles/de/article-04-gewaechshaus-waermeverlust-u-wert-energieschirme.html"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Wie verhindert man im geschlossenen Gewächshaus bei 100 % Schirmschluss eine Kaltluftdusche und hohen Befallsdruck durch Botrytis?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Anstatt den Energieschirm auf Spalt zu öffnen (Trockenheizen), entziehen aktive Kondensations-Luftentfeuchter mit Latentwärmerückgewinnung (z. B. DryGair DG-12 mit 43 L/h Wasserentzug und 4,5 L/kWh Effizienz) der Bestandsluft die Feuchtigkeit bei geschlossenem Schirm und führen die Kondensationswärme vollständig als sensible Wärme in die Kulturzone zurück."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Warum wird im Dachbereich von Venlo-Gewächshäusern hochtransparentes Einfachglas mit Stegdoppelplatten an den Stehwänden kombiniert?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Da 10 % mehr PAR-Lichteinfall den Heizenergiebedarf um rund 3 % senkt und die Assimilation direkt steigert, sichert kittlos verglastes Einfachglas im Dach maximale Winterlichtausbeute, während hochdämmende Stehwände und Giebel (25 % der Außenhaut) plus XPS-Sockeldämmung bereits 10 % der Gesamtheizenergie einsparen."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wie funktioniert die dreiphasige Temperaturintegralführung nach dem Weihenstephaner Modell?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Am Spätnachmittag ('Warm Evening') wird die Lüftungsschwelle auf 25–27 °C angehoben, um solare Wärme kostenlos zu speichern; nachts schließen Mehrlagenschirme und Rollschürzen vollständig; vor Sonnenaufgang ('Cool Morning') wird die Heiztemperatur abgesenkt, ohne die Lüftung zu öffnen, sodass die Morgensonne die Wiedererwärmung übernimmt."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+<!-- INW-STD-NAV-START -->
+<nav class="inw-top-nav" aria-label="Main Navigation" style="background: #0f172a; border-bottom: 1px solid #1e293b; padding: 12px 20px; font-family: system-ui, -apple-system, sans-serif; box-sizing: border-box; width: 100%;">
+  <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px;">
+    <a href="/index.html" style="color: #10b981; font-weight: 800; font-size: 1.15rem; text-decoration: none; letter-spacing: -0.02em;">Inwoovation Lab</a>
+    <div style="display: flex; flex-wrap: wrap; gap: 14px; font-size: 0.9rem;">
+      <a href="/index.html" style="color: #e2e8f0; text-decoration: none;">Startseite</a>
+      <a href="/smartfarm/vpd.html" style="color: #e2e8f0; text-decoration: none;">Rechner</a>
+      <a href="/articles/index.html" style="color: #38bdf8; font-weight: 600; text-decoration: none;">Fachartikel</a>
+      <a href="/wiki/index.html" style="color: #e2e8f0; text-decoration: none;">Wiki</a>
+      <a href="/climate/index.html" style="color: #e2e8f0; text-decoration: none;">Klima-Hub</a>
+      <a href="/crops/index.html" style="color: #e2e8f0; text-decoration: none;">Kulturen</a>
+      <a href="/tools/venlocad-3d.html" style="color: #10b981; font-weight: 600; text-decoration: none;">VenloCAD 3D</a>
+      <a href="/about.html" style="color: #e2e8f0; text-decoration: none;">Über uns</a>
+    </div>
+  </div>
+</nav>
+<!-- INW-STD-NAV-END -->
+<article class="article-container" style="max-width: 880px; margin: 40px auto; padding: 35px; background: #ffffff; border-radius: 16px; border: 1px solid #e2e8f0; line-height: 1.85; color: #334155;">
+  <header class="article-header">
+    <div class="category-tag" style="color: #10b981; font-weight: 700; font-size: 0.9rem; text-transform: uppercase;">Bauphysik &amp; Gewächshaus-Thermodynamik (Band 04 • Ausgabe 2026/2027)</div>
+    <h1 style="font-size: 2rem; color: #0f172a; margin: 10px 0 15px 0; border-bottom: 3px solid #10b981; padding-bottom: 12px; line-height: 1.3;">Wärmedurchgangskoeffizienten (U'-Werte), Kittlose Verglasung und Mehrlagenschirm-Thermodynamik im Venlo-Gewächshaus</h1>
+    <div class="article-meta" style="color: #64748b; font-size: 0.92rem; margin-bottom: 28px; background: #f8fafc; padding: 10px 16px; border-radius: 8px;">
+      📅 Aktualisiert: 2026-11-04 • ✍️ Inwoo Hwang (CEA Systems Engineer &amp; Gärtnermeister-Track) • 🌐 <a href="/articles/article-04-greenhouse-heating-loss.html" style="color: #0284c7; text-decoration: none; font-weight: 600;">English Version</a>
+    </div>
+  </header>
+
+  <div class="article-body">
+    <h2>1. Bauphysik der Venlo-Gewächshaushülle und Tragwerksklasse A30 (DIN EN 13031-1)</h2>
+    <p>In der mitteleuropäischen Unterglasproduktion (insbesondere in bayerischen Intensivanbaugebieten wie dem Nürnberger Knoblauchsland und Oberfranken) entfallen durchschnittlich <strong>86 % der gesamten Energiekosten auf die Bereitstellung von Heizwärme</strong> zwischen September und Mai. Bei einer Solltemperatur von 16 °C benötigt ein ungedämmtes Bestandsgewächshaus rund 300 bis 350 kWh/(m²·a) Heizenergie. Gleichzeitig erzwingt die hohe Investitionsdichte moderner Innenausbauten — dreilagige Energieschirmsysteme, LED-Assimilationsbelichtung, hängende Substrat-Rinnenkulturen und Entfeuchtungsaggregate am Gitterbinder — eine statische Bemessung nach <strong>DIN EN 13031-1:2021-12 in der Klasse A30</strong> (30 Jahre Nutzungsdauer, Anpassungsfaktor K<sub>FI,G</sub> = 0,95 für ständige Lasten als Leiteinwirkung).</p>
+
+    <h2>2. Hybride Hüllstrategie: PAR-Lichttransmission vs. Wärmedurchgangskoeffizient (U'-Wert)</h2>
+    <p>Die bauphysikalische Auslegung unterliegt dem fundamentalen Zielkonflikt zwischen Wärmedämmung (Minimierung des U'-Wertes) und photosynthetisch aktiver Strahlungstransmission (PAR). Als gartenbauwissenschaftliche Faustregel senken <strong>10 % mehr Lichteinfall den Heizenergieverbrauch um rund 3 %</strong> und steigern die Assimilationsleistung unmittelbar:</p>
+    <ul>
+      <li><strong>Dachfläche (Kittlose Verglasung):</strong> Hochtransparentes 4 mm Einscheiben-Sicherheitsglas (U' ≈ 6,2–7,6 W/(m²·K)) oder Low-E-Antireflexglas wird ohne alterungsanfälligen Kitt über elastische EPDM-Gummiklemmprofile in Aluminiumsprossen gefasst. Diese <em>kittlose Verglasung</em> spart 10–20 % Heizenergie durch Luftdichtheit und unterbindet den gefürchteten <strong>Kamineffekt</strong>.</li>
+      <li><strong>Stehwände, Giebel &amp; Rollschürzen (25 % der Außenhaut):</strong> Der Einsatz von Isolierglas oder 16 mm Stegdoppelplatten (U' ≈ 3,2–3,6 W/(m²·K)) in Kombination mit vertikalen Roll- oder Faltschürzen senkt den Gesamtheizenergiebedarf um rund 10 %.</li>
+      <li><strong>Sockel- &amp; Randdämmung:</strong> Extrudiertes Polystyrol (XPS) im Fundament- und Sockelbereich reduziert lokale Wärmebrückenverluste auf der gedämmten Fläche um bis zu 70 %.</li>
+    </ul>
+
+    <h2>3. Mehrlagenschirme, Kaltluftdusche und Aktive Kondensations-Luftentfeuchtung</h2>
+    <p>Moderne Hochleistungsgewebe wie der <strong>Svensson Luxous 1147 Eco FR</strong> kombinieren einen minimalen Schattierwert von nur 11 % am Tag mit <strong>47 % Heizenergieeinsparung</strong> im geschlossenen Zustand. Im Verbund eines zweilagigen Schirmsystems sinkt der effektive Wärmedurchgangskoeffizient auf U<sub>eff</sub> = 2,0–2,3 W/(m²·K). Um das Risiko einer <strong>Kaltluftdusche</strong> und hohe thermische Lüftungsverluste beim konventionellen Trockenheizen (Spaltlüftung) zu eliminieren, setzen führende Betriebe 2026/2027 auf das <strong>Geschlossene Gewächshaus</strong>: Aktive Kondensations-Entfeuchter mit Latentwärmerückgewinnung (z. B. DryGair DG-12, 43 L/h Wasserentzug bei 18 °C / 80 % RH, 4,5 L/kWh elektrische Effizienz, 20.000 m³/h horizontale Luftumwälzung) halten Schirme und Dachlüftung zu 100 % geschlossen, verhindern Botrytis cinerea chemiefrei und gewinnen im wasserknappen Knoblauchsland wertvolles Transpirationswasser für die geschlossene Tropfbewässerung zurück.</p>
+  </div>
+
+<!-- INW-DEEP-ENG-START -->
+  <section class="inw-deep-engineering" style="margin-top: 36px; border-top: 2px solid rgba(16, 185, 129, 0.35); padding-top: 28px;">
+    <h2>Section A: Thermodynamische &amp; Biophysikalische Grundgleichungen (DIN V 18599 &amp; Weihenstephaner Modell)</h2>
+    <p>Der stationäre und instationäre Wärmestrom durch die Gewächshaushülle berechnet sich unter Berücksichtigung von Transmission, Luftwechsel-Infiltration (ACH) und langwelliger Abstrahlung gegen den Nachthimmel in SI-Einheiten nach:</p>
+    <div class="code-box" style="background: rgba(15, 23, 42, 0.06); border-left: 4px solid #10b981; padding: 14px 18px; border-radius: 8px; font-family: monospace; margin: 16px 0; overflow-x: auto;">
+      <code>Q_total = U_eff * A_cover * (T_in - T_out) + 0.34 * ACH * V_gh * (T_in - T_out) + Q_sky_rad - Q_latent_rec [W]</code><br>
+      <code>U_eff = [ (1 / h_in) + (d_glass / lambda_g) + R_screen_1 + R_screen_2 + (1 / h_out(v_wind)) ]^-1 [W m-2 K-1]</code>
+    </div>
+    <p><strong>Dynamische Temperaturintegralführung (Weihenstephaner Modell &amp; MPC):</strong> In Phase 1 (<em>Warm Evening</em>, 3 h vor Sonnenuntergang) wird die Lüftungsschwelle auf 25–27 °C angehoben, um solare Strahlungswärme kostenlos im Bestand zu speichern. In Phase 2 schließen Mehrlagenschirme und Rollschürzen zu 100 %. In Phase 3 (<em>Cool Morning</em>, 1–2 h vor Sonnenaufgang) wird ausschließlich die Heiztemperatur abgesenkt, ohne durch Lüftungsöffnung Energie zu vernichten. Eine Absenkung der Tagesmitteltemperatur (TMT) von 18 °C auf 16 °C halbiert den Heizbedarf in der Kurztagsphase von 61 auf 31 kWh/Netto-m².</p>
+
+    <h2>Section B: Quantitative Engineering-Parameter &amp; Sollwert-Matrix (2026/2027 Referenz)</h2>
+    <div class="table-responsive" style="overflow-x: auto; margin: 18px 0;">
+      <table class="data-table" style="width: 100%; border-collapse: collapse; font-size: 0.92rem;">
+        <thead>
+          <tr style="background: rgba(16, 185, 129, 0.12); border-bottom: 2px solid #10b981; text-align: left;">
+            <th style="padding: 10px 12px;">Subsystem / Bauphysik</th>
+            <th style="padding: 10px 12px;">Kennwert / Sollwert (SI)</th>
+            <th style="padding: 10px 12px;">Randbedingung</th>
+            <th style="padding: 10px 12px;">Messtechnik / Norm</th>
+            <th style="padding: 10px 12px;">Regelstrategie</th>
+            <th style="padding: 10px 12px;">Einspar-Benchmark</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom: 1px solid rgba(148, 163, 184, 0.25);">
+            <td style="padding: 10px 12px; font-weight: 600;">Tragwerksbemessung Venlo A30</td>
+            <td style="padding: 10px 12px; font-family: monospace;">K_FI,G = 0,95 / K_FI,Q = 0,90</td>
+            <td style="padding: 10px 12px;">n_d = 30 Jahre, Glas ohne Toleranz</td>
+            <td style="padding: 10px 12px;">DIN EN 13031-1:2021-12 NA</td>
+            <td style="padding: 10px 12px;">Dreilagenschirm + LED + Rinnenlast</td>
+            <td style="padding: 10px 12px; font-weight: 600; color: #10b981;">Volle Bank- &amp; Versicherungsfähigkeit</td>
+          </tr>
+          <tr style="border-bottom: 1px solid rgba(148, 163, 184, 0.25);">
+            <td style="padding: 10px 12px; font-weight: 600;">Einfachglas + Luxous 1147 Eco FR</td>
+            <td style="padding: 10px 12px; font-family: monospace;">U_eff: 3,1 – 3,5 W·m⁻²·K⁻¹</td>
+            <td style="padding: 10px 12px;">Schattierwert am Tag nur 11 %</td>
+            <td style="padding: 10px 12px;">Strahlungsbilanzgeber &lt; 20 W/m²</td>
+            <td style="padding: 10px 12px;">Längerer Tagschirmschluss morgens</td>
+            <td style="padding: 10px 12px; font-weight: 600; color: #10b981;">47 % Heizenergieeinsparung nachts</td>
+          </tr>
+          <tr style="border-bottom: 1px solid rgba(148, 163, 184, 0.25);">
+            <td style="padding: 10px 12px; font-weight: 600;">Doppelschirm + Rollschürze + XPS</td>
+            <td style="padding: 10px 12px; font-family: monospace;">U_eff: 2,0 – 2,3 W·m⁻²·K⁻¹</td>
+            <td style="padding: 10px 12px;">ACH &lt; 0,25 h⁻¹ (kittlose Verglasung)</td>
+            <td style="padding: 10px 12px;">Thermografie-Leckageprüfung</td>
+            <td style="padding: 10px 12px;">Lückenlose Abdichtung am Gitterbinder</td>
+            <td style="padding: 10px 12px; font-weight: 600; color: #10b981;">50–62 % Reduktion Spitzenheizlast</td>
+          </tr>
+          <tr style="border-bottom: 1px solid rgba(148, 163, 184, 0.25);">
+            <td style="padding: 10px 12px; font-weight: 600;">Kondensations-Entfeuchtung (DG-12)</td>
+            <td style="padding: 10px 12px; font-family: monospace;">43 L·h⁻¹ / 4,5 L·kWh_el⁻¹</td>
+            <td style="padding: 10px 12px;">18 °C / 80 % RH, 100 % Schirmschluss</td>
+            <td style="padding: 10px 12px;">Aspirierte Fühlerbox PT1000 ±0,1 °C</td>
+            <td style="padding: 10px 12px;">Taupunktregelung + EC-Ventilatoren IE5</td>
+            <td style="padding: 10px 12px; font-weight: 600; color: #10b981;">Bis 40 % Gesamtwärmeeinsparung</td>
+          </tr>
+          <tr style="border-bottom: 1px solid rgba(148, 163, 184, 0.25);">
+            <td style="padding: 10px 12px; font-weight: 600;">BLE-Bundesprogramm Förderung</td>
+            <td style="padding: 10px 12px; font-family: monospace;">15 % – 30 % Zuschuss (max. 600 k€)</td>
+            <td style="padding: 10px 12px;">900 €/t CO₂ (1.500 €/t bei PV)</td>
+            <td style="padding: 10px 12px;">DIN V 18599-11 Klasse B / IE4–IE5</td>
+            <td style="padding: 10px 12px;">Antrag vor Maßnahmenbeginn Ende 2026</td>
+            <td style="padding: 10px 12px; font-weight: 600; color: #10b981;">9 Monate Bewilligungszeitraum 2027</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Section C: Häufig gestellte Ingenieurfragen (FAQ für Gärtnermeister &amp; Projektleiter)</h2>
+    <div class="faq-block" style="margin-top: 14px;">
+      <p><strong>F1: Wie verhindert man im geschlossenen Gewächshaus bei 100 % Schirmschluss eine Kaltluftdusche und hohen Befallsdruck durch Botrytis?</strong><br>
+      Anstatt den Energieschirm auf Spalt zu öffnen (Trockenheizen), entziehen aktive Kondensations-Luftentfeuchter mit Latentwärmerückgewinnung (z. B. DryGair DG-12 mit 43 L/h Wasserentzug und 4,5 L/kWh Effizienz) der Bestandsluft die Feuchtigkeit bei geschlossenem Schirm und führen die Kondensationswärme vollständig als sensible Wärme in die Kulturzone zurück.</p>
+      <p><strong>F2: Warum wird im Dachbereich von Venlo-Gewächshäusern hochtransparentes Einfachglas mit Stegdoppelplatten an den Stehwänden kombiniert?</strong><br>
+      Da 10 % mehr PAR-Lichteinfall den Heizenergiebedarf um rund 3 % senkt und die Assimilation direkt steigert, sichert kittlos verglastes Einfachglas im Dach maximale Winterlichtausbeute, während hochdämmende Stehwände und Giebel (25 % der Außenhaut) plus XPS-Sockeldämmung bereits 10 % der Gesamtheizenergie einsparen.</p>
+      <p><strong>F3: Wie funktioniert die dreiphasige Temperaturintegralführung nach dem Weihenstephaner Modell?</strong><br>
+      Am Spätnachmittag ('Warm Evening') wird die Lüftungsschwelle auf 25–27 °C angehoben, um solare Wärme kostenlos zu speichern; nachts schließen Mehrlagenschirme und Rollschürzen vollständig; vor Sonnenaufgang ('Cool Morning') wird die Heiztemperatur abgesenkt, ohne die Lüftung zu öffnen, sodass die Morgensonne die Wiedererwärmung übernimmt.</p>
+    </div>
+  </section>
+<!-- INW-DEEP-ENG-END -->
+
+<!-- INW-LIVE-WIDGET-START -->
+<section class="inw-live-widget-sandbox" style="margin: 32px 0; padding: 24px; background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 16px; box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);">
+  <h3 style="margin: 0 0 8px 0; font-size: 1.2rem; color: #38bdf8; font-weight: 800;">🔥 Interaktiver DIN V 18599 Heizlast- &amp; Energieschirm-Simulator</h3>
+  <p style="margin: 0 0 16px 0; font-size: 0.92rem; color: #94a3b8; line-height: 1.6;">Berechnen Sie Spitzenheizlast (kW), spezifische Heizleistung (W/m²) und Erdgasbedarf mit Energieschirm-Einsparung direkt im Artikel.</p>
+  <div style="display: flex; justify-content: center; width: 100%; overflow: hidden;">
+    <iframe src="/embed/heating-loss-widget.html" width="380" height="460" loading="lazy" title="🔥 Interaktiver DIN V 18599 Heizlast- &amp; Energieschirm-Simulator" style="border: none; border-radius: 14px; max-width: 100%;"></iframe>
+  </div>
+</section>
+<!-- INW-LIVE-WIDGET-END -->
+
+<!-- INW-EEAT-BOX-START -->
+  <section id="inw-eeat-standard-block" style="margin-top: 32px; padding-top: 24px; border-top: 1px solid rgba(148, 163, 184, 0.3); box-sizing: border-box;">
+    <div class="inw-calculators-box" style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 12px; padding: 20px; margin-bottom: 24px;">
+      <h3 style="margin-top: 0; margin-bottom: 12px; font-size: 1.15rem; color: #10b981;">⚙️ Verwandte Interaktive Ingenieur-Rechner &amp; Simulationstools</h3>
+      <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+        <a href="/smartfarm/heat_loss.html" style="display: inline-block; padding: 8px 14px; background: #0f172a; color: #38bdf8; border: 1px solid #334155; border-radius: 6px; text-decoration: none; font-size: 0.88rem; font-weight: 600;">🔥 Greenhouse Heat Loss (DIN V 18599)</a>
+        <a href="/tools/eu-greenhouse-energy-hofnachfolge-roi-simulator.html" style="display: inline-block; padding: 8px 14px; background: #0f172a; color: #38bdf8; border: 1px solid #334155; border-radius: 6px; text-decoration: none; font-size: 0.88rem; font-weight: 600;">🇪🇺 BLE Fördermittel &amp; Hofnachfolge ROI</a>
+        <a href="/tools/psychrometric-mollier-greenhouse-dehumidifier.html" style="display: inline-block; padding: 8px 14px; background: #0f172a; color: #38bdf8; border: 1px solid #334155; border-radius: 6px; text-decoration: none; font-size: 0.88rem; font-weight: 600;">📈 Mollier Entfeuchtungs-Rechner</a>
+        <a href="/tools/venlocad-3d.html" style="display: inline-block; padding: 8px 14px; background: #10b981; color: #022c22; border-radius: 6px; text-decoration: none; font-size: 0.88rem; font-weight: 700;">🏗️ VenloCAD 3D Architect</a>
+      </div>
+    </div>
+
+    <div class="inw-eeat-author-box" style="background: rgba(30, 41, 59, 0.06); border: 1px solid rgba(148, 163, 184, 0.35); border-radius: 12px; padding: 20px;">
+      <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; color: #10b981; font-weight: 700; margin-bottom: 4px;">E-E-A-T Technical Review &amp; Authorship</div>
+      <h3 style="margin: 0 0 8px 0; font-size: 1.1rem;">Inwoo Hwang — Horticultural &amp; CEA Systems Engineer, Inwoovation Lab</h3>
+      <p style="margin: 0; font-size: 0.92rem; line-height: 1.6; opacity: 0.9;">Spezialisiert auf thermodynamische Gewächshausmodellierung nach DIN V 18599 und DIN EN 13031-1, psychrometrische VPD- und Penman-Monteith-Transpirationskinetik, geschlossene Hydrokultur-Stöchiometrie sowie KI-gestützte modellprädiktive Klimaregelung (MPC) im modernen Unterglasanbau.</p>
+    </div>
+  </section>
+<!-- INW-EEAT-BOX-END -->
+</article>
+<!-- INW-STD-FOOTER-START -->
+<footer class="inw-site-footer" style="margin-top: 48px; padding: 28px 20px; background: #0f172a; color: #94a3b8; border-top: 1px solid #1e293b; text-align: center; font-size: 0.9rem; font-family: system-ui, -apple-system, sans-serif; box-sizing: border-box; width: 100%;">
+  <div style="max-width: 1100px; margin: 0 auto;">
+    <p style="margin: 0 0 10px 0;">&copy; 2026 Inwoovation Lab. Precision Controlled Environment Agriculture &amp; Horticultural Engineering.</p>
+    <p style="margin: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 16px;">
+      <a href="/index.html" style="color: #cbd5e1; text-decoration: none;">Home</a>
+      <a href="/articles/index.html" style="color: #cbd5e1; text-decoration: none;">Engineering Articles</a>
+      <a href="/privacy-policy.html" style="color: #cbd5e1; text-decoration: none;">Privacy Policy</a>
+      <a href="/terms-of-service.html" style="color: #cbd5e1; text-decoration: none;">Terms of Service</a>
+      <a href="/about.html" style="color: #cbd5e1; text-decoration: none;">About</a>
+      <a href="/contact.html" style="color: #cbd5e1; text-decoration: none;">Contact</a>
+    </p>
+  </div>
+</footer>
+<!-- INW-STD-FOOTER-END -->
+</body>
+</html>
