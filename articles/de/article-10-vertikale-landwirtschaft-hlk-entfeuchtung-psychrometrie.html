@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V4RYJBMEDE"></script>
+    <script>
+       if (navigator.webdriver || /HeadlessChrome|PhantomJS|Lighthouse|PTST|bot|crawler|spider|slurp/i.test(navigator.userAgent) || location.hostname === 'localhost' || location.hostname === '127.0.0.1' || (screen.width === 1366 && screen.height === 1366) || (screen.width === 800 && screen.height === 600) || screen.height >= 5000) { window['ga-disable-G-V4RYJBMEDE'] = true; }
+    window.dataLayer = window.dataLayer || [];
+       function gtag(){dataLayer.push(arguments);}
+       gtag('js', new Date());
+       gtag('config', 'G-V4RYJBMEDE');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HLK-Dimensionierung und psychrometrische Entfeuchtung in der vertikalen Landwirtschaft (Vertical Farming): Sensible vs. latente Kühllast &amp; CFD-Strömung | Inwoovation Lab</title>
+    <meta name="description" content="Ingenieurleitfaden (DE Vol. 10) zur HLK-Auslegung für kommerzielle Indoor Vertical Farms: Berechnung sensibler und latenter Kühllasten (SHR), Mollier-h-x-Psychrometrie, Wärmerückgewinnung und CFD-Luftführung gegen Tipburn.">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="google-adsense-account" content="ca-pub-8597809158257497">
+    <link rel="canonical" href="https://inwoovation.com/articles/de/article-10-vertikale-landwirtschaft-hlk-entfeuchtung-psychrometrie.html" />
+    <link rel="alternate" hreflang="de" href="https://inwoovation.com/articles/de/article-10-vertikale-landwirtschaft-hlk-entfeuchtung-psychrometrie.html" />
+    <link rel="alternate" hreflang="en" href="https://inwoovation.com/articles/article-10-vertical-farm-hvac-design.html" />
+    <link rel="alternate" hreflang="x-default" href="https://inwoovation.com/articles/article-10-vertical-farm-hvac-design.html" />
+    <meta property="og:title" content="HLK-Dimensionierung und psychrometrische Entfeuchtung in der vertikalen Landwirtschaft (Vertical Farming) | Inwoovation Lab">
+    <meta property="og:description" content="Ingenieurleitfaden (DE Vol. 10) zur HLK-Auslegung für kommerzielle Indoor Vertical Farms: Berechnung sensibler und latenter Kühllasten (SHR), Mollier-h-x-Psychrometrie und CFD-Luftführung.">
+    <meta property="og:image" content="https://inwoovation.com/og-cover.jpg">
+    <meta property="og:url" content="https://inwoovation.com/articles/de/article-10-vertikale-landwirtschaft-hlk-entfeuchtung-psychrometrie.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="HLK-Dimensionierung und psychrometrische Entfeuchtung in der vertikalen Landwirtschaft | Inwoovation Lab">
+    <meta name="twitter:description" content="Sensible vs. latente Kühllast (SHR), Mollier-h-x-Entfeuchtung und CFD-Grenzschichtströmung in mehrlagigen Indoor-Kultursystemen.">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8597809158257497" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+        .article-container { max-width: 860px; margin: 40px auto; padding: 36px; background: #ffffff; border-radius: 16px; border: 1px solid #e2e8f0; line-height: 1.85; color: #334155; }
+        .article-container h1 { font-size: 1.95rem; color: #0f172a; margin-bottom: 16px; border-bottom: 3px solid #10b981; padding-bottom: 12px; line-height: 1.32; }
+        .article-meta { color: #64748b; font-size: 0.92rem; margin-bottom: 28px; display: flex; flex-wrap: wrap; gap: 14px; background: #f8fafc; padding: 10px 16px; border-radius: 8px; font-weight: 500; }
+        .article-container h2 { font-size: 1.35rem; color: #065f46; margin-top: 34px; margin-bottom: 14px; background: #ecfdf5; padding: 9px 16px; border-left: 4px solid #10b981; border-radius: 4px; }
+        .article-container h3 { font-size: 1.12rem; color: #1e293b; margin-top: 24px; margin-bottom: 10px; font-weight: 700; }
+        .article-container p { margin-bottom: 18px; text-align: justify; }
+        .article-container ul, .article-container ol { margin-left: 24px; margin-bottom: 20px; }
+        .formula-box { background: #0f172a; color: #f8fafc; padding: 18px 22px; border-radius: 10px; font-family: 'Courier New', monospace; margin: 20px 0; overflow-x: auto; border-left: 4px solid #38bdf8; }
+        .data-table { width: 100%; border-collapse: collapse; margin: 22px 0; font-size: 0.92rem; }
+        .data-table th, .data-table td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+        .data-table th { background: #f1f5f9; color: #0f172a; font-weight: 700; }
+        .back-link { display: inline-block; margin-bottom: 18px; color: #10b981; text-decoration: none; font-weight: 600; }
+        .back-link:hover { text-decoration: underline; }
+        .lang-switch { display: inline-block; margin-left: 14px; font-size: 0.9rem; color: #0284c7; font-weight: 600; text-decoration: none; }
+    </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "TechArticle",
+          "headline": "HLK-Dimensionierung und psychrometrische Entfeuchtung in der vertikalen Landwirtschaft (Vertical Farming): Sensible vs. latente Kühllast & CFD-Strömung",
+          "description": "Ingenieurleitfaden (DE Vol. 10) zur HLK-Auslegung für kommerzielle Indoor Vertical Farms: Berechnung sensibler und latenter Kühllasten (SHR), Mollier-h-x-Psychrometrie, Wärmerückgewinnung und CFD-Luftführung gegen Tipburn.",
+          "url": "https://inwoovation.com/articles/de/article-10-vertikale-landwirtschaft-hlk-entfeuchtung-psychrometrie.html",
+          "inLanguage": "de-DE",
+          "author": {
+            "@type": "Person",
+            "name": "Inwoo Hwang",
+            "jobTitle": "Horticultural & CEA Systems Engineer"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Inwoovation Lab",
+            "url": "https://inwoovation.com"
+          },
+          "datePublished": "2026-11-06",
+          "dateModified": "2026-11-06",
+          "mainEntityOfPage": "https://inwoovation.com/articles/de/article-10-vertikale-landwirtschaft-hlk-entfeuchtung-psychrometrie.html"
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Warum versagen Standard-Komfortklimaanlagen in kommerziellen Vertical Farms?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Standard-Komfortklimaanlagen sind auf ein Sensible Heat Ratio (SHR) von 0,75 bis 0,85 ausgelegt (überwiegend sensible Temperaturabsenkung). In einer dicht bepflanzten Indoor Vertical Farm wird jedoch 50 % bis 70 % der gesamten zugeführten elektrischen LED-Energie durch stomatäre Transpiration in latenten Wasserdampf umgewandelt (SHR = 0,30 bis 0,45). Ohne dedizierte Entfeuchtungsregister und Nacherhitzung steigt die relative Luftfeuchtigkeit über 88 % r. F."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Welche horizontale Luftgeschwindigkeit verhindert Innenbrand (Tipburn) bei Kopfsalat in mehrlagigen Regalsystemen?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Eine gleichmäßige horizontale Grenzschichtströmung von 0,30 bis 0,65 m/s direkt über dem Meristem reduziert den aerodynamischen Grenzschichtwiderstand (r_b < 50 s/m), hält den Massenstrom der Transpiration aufrecht und sichert den xylembasierten Kalziumtransport (Ca2+) in die jungen Herzblätter."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+    <div class="article-container">
+        <div>
+            <a href="../../guides.html" class="back-link">&larr; Zurück zur Übersicht (Engineering Guides)</a>
+            <a href="../article-10-vertical-farm-hvac-design.html" class="lang-switch">🌐 Read in English (EN Vol. 10)</a>
+        </div>
+
+        <h1>HLK-Dimensionierung und psychrometrische Entfeuchtung in der vertikalen Landwirtschaft (Vertical Farming): Sensible vs. latente Kühllast &amp; CFD-Strömung</h1>
+
+        <div class="article-meta">
+            <span>📘 DE Serie Vol. 10</span>
+            <span>⏱️ Lesezeit: 14 Min.</span>
+            <span>🔬 Fachgebiet: HLK-Psychrometrie (Mollier-h-x) &amp; Indoor-Klimatechnik</span>
+            <span>📅 Aktualisiert: 06.11.2026</span>
+        </div>
+
+        <p>Der häufigste und teuerste Planungsfehler beim Bau kommerzieller Indoor Vertical Farms (mehrlagige geschlossene Pflanzenfabriken, PFAL) ist die Fehldimensionierung der <strong>Heizungs-, Lüftungs- und Klimatechnik (HLK / HVAC)</strong>. Während Ingenieure der Gebäudetechnik gewohnt sind, Büro- oder Serverräume nach der thermischen Abwärme (sensible Last) auszulegen, verhält sich ein geschlossener Pflanzenbestand thermodynamisch wie ein hochaktiver biologischer Verdunstungskühler. Bis zu <strong>65 % der gesamten elektrischen LED-Anschlussleistung</strong> müssen nicht als fühlbare Wärme, sondern als <strong>latente Kondensationsenthalpie ($\dot{Q}_{\text{lat}}$)</strong> aus dem Luftstrom entfernt werden.</p>
+
+        <h2>1. Energiebilanz im geschlossenen Kulturraum: Sensible vs. Latente Last (SHR)</h2>
+        <p>In einer thermisch isolierten Indoor-Anlage (U-Wert der Sandwichpaneele $&lt; 0{,}22\text{ W m}^{-2}\text{ K}^{-1}$) wird die Gesamtenergiebilanz nahezu vollständig durch die installierte LED-Beleuchtungsleistung ($P_{\text{LED}}$) und die Transpirationsrate des Bestandes ($\dot{m}_{\text{Transp}}$) bestimmt. Bei einem modernen LED-System mit einem Systemwirkungsgrad von $\eta_{\text{PAR}} \approx 0{,}62$ (entspricht ca. $3{,}0\text{ }\mu\text{mol J}^{-1}$) werden $38\text{ \%}$ der elektrischen Leistung unmittelbar als Konvektions- und Strahlungswärme am Kühlkörper frei, während $62\text{ \%}$ als photosynthetisch aktive Photonen auf das Blätterdach treffen.</p>
+
+        <div class="formula-box">
+Q_ges = P_LED + P_Aux ≈ Q_sens + Q_lat   [kW]
+Q_lat = m_dot_Transp · h_fg              (mit h_fg ≈ 2.442 kJ/kg bei 24 °C)
+Q_sens = Q_ges - Q_lat                   (Sensible Wärmelast)
+SHR = Q_sens / (Q_sens + Q_lat)          (Sensible Heat Ratio: typ. 0,32 – 0,48)
+        </div>
+
+        <p>Lediglich $1\text{–}2\text{ \%}$ der PAR-Strahlung werden dauerhaft als chemische Bindungsenergie in der Biomasse (Assimilate) gespeichert. Die übrigen $60\text{ \%}$ treffen auf die Blattoberfläche und treiben dort den Phasenwechsel von flüssigem Xylemwasser zu Wasserdampf an. Das resultierende <strong>Sensible Heat Ratio ($\text{SHR}$)</strong> sinkt bei geschlossenem Bestand ($LAI &gt; 3{,}5$) während der Lichtphase auf Werte zwischen <strong>$0{,}32$ und $0{,}45$</strong>.</p>
+
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Betriebsphase / Bestandsdichte</th>
+                    <th>Typischer SHR-Wert</th>
+                    <th>Sensibler Anteil ($\dot{Q}_{\text{sens}}$)</th>
+                    <th>Latenter Anteil ($\dot{Q}_{\text{lat}}$)</th>
+                    <th>Dominante HLK-Anforderung</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Keimung / Jungpflanzen ($LAI &lt; 0{,}8$)</strong></td>
+                    <td><code>0,70 – 0,82</code></td>
+                    <td>70 % – 82 %</td>
+                    <td>18 % – 30 %</td>
+                    <td>Abfuhr sensibler LED-Treiberwärme</td>
+                </tr>
+                <tr>
+                    <td><strong>Vegetative Hauptkultur (Photoperiode, $LAI \ge 3{,}0$)</strong></td>
+                    <td><code>0,34 – 0,44</code></td>
+                    <td>34 % – 44 %</td>
+                    <td>56 % – 66 %</td>
+                    <td>Simultane Kühlung &amp; Hochleistungs-Entfeuchtung</td>
+                </tr>
+                <tr>
+                    <td><strong>Dunkelphase (Nacht, LED = 0 kW)</strong></td>
+                    <td><code>0,05 – 0,15</code></td>
+                    <td>5 % – 15 %</td>
+                    <td>85 % – 95 %</td>
+                    <td>Isotherme Entfeuchtung mit Nacherhitzung (Reheat)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>2. Psychrometrische Prozessführung im Mollier-$h$-$x$-Diagramm</h2>
+        <p>Um bei einer Ziel-Raumlufttemperatur von $T_{\text{Raum}} = 22{,}0\text{ }^\circ\text{C}$ und einer relativen Luftfeuchte von $RH = 72\text{ \%}$ ($\text{VPD} \approx 0{,}74\text{ kPa}$, absoluter Wassergehalt $x_{\text{Raum}} \approx 11{,}9\text{ g/kg}_{\text{tr.L.}}$) die kontinuierliche Feuchteabgabe der Pflanzen abzuführen, muss die Umluft im Kühlregister deutlich unter die Taupunkttemperatur ($T_{\text{Tau}} \approx 16{,}7\text{ }^\circ\text{C}$) abgekühlt werden:</p>
+        <ol>
+            <li><strong>Zustand 1 (Abluft aus dem Kulturregal):</strong> $T_1 = 23{,}5\text{ }^\circ\text{C}$, $RH_1 = 76\text{ }\%$, $x_1 = 13{,}9\text{ g/kg}$, Enthalpie $h_1 \approx 58{,}9\text{ kJ/kg}$.</li>
+            <li><strong>Zustand 2 (Nach dem Taupunkt-Kühlregister):</strong> Abkühlung auf $T_2 = 12{,}5\text{ }^\circ\text{C}$ ($RH_2 \approx 96\text{ }\%$), wodurch Wasser auskondensiert und der absolute Feuchtegehalt auf $x_2 = 8{,}7\text{ g/kg}$ sinkt ($\Delta x = 5{,}2\text{ g Wasser pro kg trockener Luft}$).</li>
+            <li><strong>Zustand 3 (Nacherhitzung / Reheat via Heißgas-Kondensator oder Kreuzstrom-WT):</strong> Würde die $12{,}5\text{ }^\circ\text{C}$ kalte Luft direkt in die Regale eingeblasen, käme es zu massivem Kälteschock und Kondensation an den Luftkanälen. Durch energetisch kostenlose <strong>Heißgas-Nacherhitzung (Hot-Gas Reheat)</strong> aus dem Kältekreislauf wird die Luft bei konstantem Wassergehalt ($x_3 = x_2 = 8{,}7\text{ g/kg}$) auf $T_3 = 19{,}0\text{ }^\circ\text{C}$ ($RH_3 \approx 63\text{ }\%$) erwärmt.</li>
+        </ol>
+
+        <h2>3. CFD-Mikroklima und Perforierte Luftschläuche gegen Tipburn (Innenbrand)</h2>
+        <p>Selbst wenn der Raum im Durchschnitt einen idealen VPD-Wert von $0{,}85\text{ kPa}$ aufweist, bildet sich in dichten mehrlagigen Regalen (Abstand zwischen Substratrinne und LED-Panel oft nur $28\text{–}40\text{ cm}$) ohne gezielte Luftführung eine stagnierende feuchte Grenzschicht ($RH_{\text{Blatt}} &gt; 94\text{ }\%$). Dadurch bricht der Transpirationsstrom im Inneren der Kopfsalat-Rosette zusammen. Da <strong>Kalzium ($\text{Ca}^{2+}$)</strong> ausschließlich passiv mit dem Xylem-Transpirationsstrom transportiert wird, entsteht innerhalb von 48 Stunden <strong>Innenbrand (Tipburn / Nekrose der Meristemränder)</strong>.</p>
+        <ul>
+            <li><strong>Ziel-Strömungsgeschwindigkeit am Bestand:</strong> $v_{\text{Luft}} = 0{,}35\text{ bis }0{,}65\text{ m s}^{-1}$ (laminar-turbulenter Übergangsbereich zur Minimierung von $r_b$).</li>
+            <li><strong>Vertikale Entkopplung:</strong> Einsatz von mikroperforierten Textil- oder PE-Luftkanälen direkt in jeder Regalebene anstelle reiner Deckenauslässe, um Temperaturgradienten $\Delta T &lt; 1{,}2\text{ K}$ über alle Etagen hinweg zu garantieren.</li>
+        </ul>
+
+        <!-- INW-LIVE-WIDGET-START -->
+        <div class="live-calc-widget" style="background: #f8fafc; border: 2px solid #10b981; border-radius: 12px; padding: 24px; margin: 30px 0;">
+            <h3 style="margin-top: 0; color: #065f46;">🧮 Interaktiver Vertical-Farm-HLK &amp; SHR-Lastrechner (DE Vol. 10)</h3>
+            <p style="font-size: 0.92rem; color: #475569; margin-bottom: 16px;">Berechnen Sie die sensible und latente Kühllast, das Sensible Heat Ratio (SHR), die stündliche Kondensatmenge sowie den benötigten Umluftvolumenstrom für Ihre Indoor-Kulturanlage:</p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin-bottom: 18px;">
+                <div>
+                    <label style="display:block; font-weight:600; font-size:0.86rem; margin-bottom:4px;">Kulturfläche gesamt (alle Ebenen, m²)</label>
+                    <input type="number" id="vf_area" value="500" min="10" max="50000" step="10" style="width:100%; padding:8px; border:1px solid #cbd5e1; border-radius:6px;">
+                </div>
+                <div>
+                    <label style="display:block; font-weight:600; font-size:0.86rem; margin-bottom:4px;">Spezifische LED-Leistung (W/m²)</label>
+                    <input type="number" id="vf_led" value="180" min="40" max="600" step="10" style="width:100%; padding:8px; border:1px solid #cbd5e1; border-radius:6px;">
+                </div>
+                <div>
+                    <label style="display:block; font-weight:600; font-size:0.86rem; margin-bottom:4px;">Transpirationsrate (g H₂O / m²·h)</label>
+                    <input type="number" id="vf_transp" value="190" min="20" max="600" step="10" style="width:100%; padding:8px; border:1px solid #cbd5e1; border-radius:6px;">
+                </div>
+                <div>
+                    <label style="display:block; font-weight:600; font-size:0.86rem; margin-bottom:4px;">Entfeuchtungshub Δx im Register (g/kg)</label>
+                    <input type="number" id="vf_dx" value="4.5" min="1.5" max="10" step="0.5" style="width:100%; padding:8px; border:1px solid #cbd5e1; border-radius:6px;">
+                </div>
+            </div>
+            <div id="vf_output" style="background: #0f172a; color: #f8fafc; padding: 16px; border-radius: 8px; font-family: monospace; font-size: 0.93rem; line-height: 1.7;"></div>
+        </div>
+        <script>
+        (function() {
+            function calcVF() {
+                const area = parseFloat(document.getElementById('vf_area').value) || 500;
+                const ledW = parseFloat(document.getElementById('vf_led').value) || 180;
+                const transpG = parseFloat(document.getElementById('vf_transp').value) || 190;
+                const dx = parseFloat(document.getElementById('vf_dx').value) || 4.5;
+
+                const pLedKw = (area * ledW) / 1000.0;
+                const waterKgPerH = (area * transpG) / 1000.0;
+                const qLatKw = (waterKgPerH * 2442.0) / 3600.0;
+                const qSensKw = Math.max(5.0, pLedKw * 1.08 - qLatKw);
+                const qTotKw = qSensKw + qLatKw;
+                const shr = qSensKw / qTotKw;
+                const airMassKgPerH = (waterKgPerH * 1000.0) / dx;
+                const airVolM3PerH = airMassKgPerH / 1.19;
+
+                document.getElementById('vf_output').innerHTML =
+                    `⚡ Elektrische LED-Gesamtleistung: <strong>${pLedKw.toFixed(1)} kW</strong> | Kondensatanfall: <strong>${waterKgPerH.toFixed(1)} L/h (${(waterKgPerH*16).toFixed(0)} L bei 16h Licht)</strong><br>` +
+                    `💧 Latente Entfeuchtungslast (Q_lat): <strong>${qLatKw.toFixed(1)} kW</strong> | 🔥 Sensible Kühllast (Q_sens): <strong>${qSensKw.toFixed(1)} kW</strong><br>` +
+                    `📊 Gesamtkälteleistung: <strong>${qTotKw.toFixed(1)} kW</strong> | <strong>Sensible Heat Ratio (SHR): ${shr.toFixed(2)}</strong><br>` +
+                    `🌬️ Erforderlicher Umluftvolumenstrom (bei Δx = ${dx.toFixed(1)} g/kg): <strong>${Math.round(airVolM3PerH).toLocaleString('de-DE')} m³/h</strong>`;
+            }
+            ['vf_area', 'vf_led', 'vf_transp', 'vf_dx'].forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.addEventListener('input', calcVF);
+            });
+            calcVF();
+        })();
+        </script>
+        <!-- INW-LIVE-WIDGET-END -->
+
+        <h2>4. Weiterführende Werkzeuge &amp; Artikel im Inwoovation Lab</h2>
+        <ul>
+            <li><a href="../../tools/psychrometric-chart-mollier-hx-diagram.html">Interaktives Mollier-h-x-Psychrometrie-Diagramm (Live Tool)</a></li>
+            <li><a href="article-01-vpd-meisterklasse.html">DE Vol. 01: VPD-Meisterklasse — Dampfdruckdefizit und Grenzschichtphysik</a></li>
+            <li><a href="article-09-stomata-leitfaehigkeit-co2-assimilation-gaswechsel-kinetik.html">DE Vol. 09: Stomatäre Leitfähigkeit (g_s) und FvCB-Photosynthesekinetik</a></li>
+            <li><a href="article-38-xylem-kalzium-bluetenendfaeule.html">DE Vol. 38: Xylem-Kalziumtransport und Vermeidung von Tipburn / Blütenendfäule</a></li>
+        </ul>
+    </div>
+</body>
+</html>
