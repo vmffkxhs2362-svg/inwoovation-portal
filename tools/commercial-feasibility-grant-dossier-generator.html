@@ -21,7 +21,9 @@
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
     {
-      "@context": "https://schema.org",
+  "@context": "https://schema.org",
+  "@graph": [
+    {
       "@type": "SoftwareApplication",
       "name": "Commercial CEA Feasibility & Grant Dossier Generator",
       "url": "https://inwoovation.com/tools/commercial-feasibility-grant-dossier-generator.html",
@@ -32,7 +34,32 @@
         "@type": "Organization",
         "name": "Inwoovation Lab"
       }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inwoovation Lab",
+          "item": "https://inwoovation.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Enterprise Engineering Tools",
+          "item": "https://inwoovation.com/tools/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Commercial CEA Feasibility &Non-Dilutive Grant Dossier Generator",
+          "item": "https://inwoovation.com/tools/commercial-feasibility-grant-dossier-generator.html"
+        }
+      ]
     }
+  ]
+}
     </script>
 
     <!-- Google tag (gtag.js) -->
@@ -502,6 +529,7 @@
     </style>
 
     <meta name="twitter:card" content="summary_large_image">
+    <script src="/js/global-search-palette.js?v=20261105" defer></script>
 </head>
 <body>
 

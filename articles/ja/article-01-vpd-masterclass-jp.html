@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>施設園芸・スマート農業のための飽差（VPD）最適化マスタークラス | Inwoovation Lab</title>
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <link rel="canonical" href="https://inwoovation.com/articles/ja/article-01-vpd-masterclass-jp.html" />
     <link rel="alternate" hreflang="en" href="https://inwoovation.com/articles/article-01-vpd-master-class.html" />
     <link rel="alternate" hreflang="de" href="https://inwoovation.com/articles/de/article-01-vpd-meisterklasse.html" />
     <link rel="alternate" hreflang="ja" href="https://inwoovation.com/articles/ja/article-01-vpd-masterclass-jp.html" />
+    <link rel="alternate" hreflang="x-default" href="https://inwoovation.com/articles/article-01-vpd-master-class.html" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-V4RYJBMEDE"></script>
     <script>
@@ -46,26 +48,55 @@
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "TechArticle",
-  "headline": "施設園芸・スマート農業のための飽差（VPD）最適化マスタークラス：物理計算と気候制御",
-  "description": "温室栽培および植物工場における飽差（Vapour Pressure Deficit, VPD）の物理計算、葉温と気温差による蒸散ダイナミクス、カルシウム欠乏（尻腐れ病）防止制御。",
-  "url": "https://inwoovation.com/articles/ja/article-01-vpd-masterclass-jp.html",
-  "inLanguage": "ja-JP",
-  "author": {
-    "@type": "Person",
-    "name": "Inwoo Hwang",
-    "jobTitle": "Horticultural & CEA Systems Engineer"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Inwoovation Lab",
-    "url": "https://inwoovation.com"
-  },
-  "datePublished": "2026-09-01",
-  "dateModified": "2026-11-03",
-  "mainEntityOfPage": "https://inwoovation.com/articles/ja/article-01-vpd-masterclass-jp.html"
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "headline": "施設園芸・スマート農業のための飽差（VPD）最適化マスタークラス：物理計算と気候制御",
+      "description": "温室栽培および植物工場における飽差（Vapour Pressure Deficit, VPD）の物理計算、葉温と気温差による蒸散ダイナミクス、カルシウム欠乏（尻腐れ病）防止制御。",
+      "url": "https://inwoovation.com/articles/ja/article-01-vpd-masterclass-jp.html",
+      "inLanguage": "ja-JP",
+      "author": {
+        "@type": "Person",
+        "name": "Inwoo Hwang",
+        "jobTitle": "Horticultural & CEA Systems Engineer"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Inwoovation Lab",
+        "url": "https://inwoovation.com"
+      },
+      "datePublished": "2026-09-01",
+      "dateModified": "2026-11-05",
+      "mainEntityOfPage": "https://inwoovation.com/articles/ja/article-01-vpd-masterclass-jp.html"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inwoovation Lab",
+          "item": "https://inwoovation.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Precision CEA Articles (JA)",
+          "item": "https://inwoovation.com/guides.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "施設園芸・スマート農業のための飽差（VPD）最適化マスタークラス：物理計算と気候制御",
+          "item": "https://inwoovation.com/articles/ja/article-01-vpd-masterclass-jp.html"
+        }
+      ]
+    }
+  ]
 }
   </script>
+    <link rel="stylesheet" href="/css/global-ui-enhancements.css?v=20261105">
+    <script src="/js/global-search-palette.js?v=20261105" defer></script>
 </head>
 <body>
 <!-- INW-STD-NAV-START -->
@@ -80,6 +111,7 @@
       <a href="/climate/index.html" style="color: #e2e8f0; text-decoration: none;">気象ハブ (Climate)</a>
       <a href="/crops/index.html" style="color: #e2e8f0; text-decoration: none;">作物 (Crops)</a>
       <a href="/tools/venlocad-3d.html" style="color: #10b981; font-weight: 600; text-decoration: none;">VenloCAD 3D</a>
+      <button type="button" onclick="window.InwooPalette && window.InwooPalette.open()" style="background: rgba(15, 23, 42, 0.9); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.4); padding: 6px 12px; border-radius: 6px; font-size: 0.85rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">🔍 Search <kbd style="background: rgba(255,255,255,0.1); padding: 1px 5px; border-radius: 4px; font-size: 0.72rem;">Ctrl+K</kbd></button>
       <a href="/about.html" style="color: #e2e8f0; text-decoration: none;">概要 (About)</a>
     </div>
   </div>
@@ -89,6 +121,7 @@
         <a href="../../index.html" class="back-link">&larr; Inwoovation Lab ポータルへ戻る</a>
         
         <h1>施設園芸・スマート農業のための飽差（VPD）最適化マスタークラス：物理計算と気候制御</h1>
+        <div class="inw-lang-switcher-bar"><span class="inw-lang-switcher-label">🌐 第01巻 多言語エディション:</span><a href="/articles/article-01-vpd-master-class.html" class="inw-lang-pill">🇬🇧 English</a><a href="/articles/de/article-01-vpd-meisterklasse.html" class="inw-lang-pill">🇩🇪 Deutsch</a><a href="/articles/ja/article-01-vpd-masterclass-jp.html" class="inw-lang-pill active">🇯🇵 日本語</a></div>
         
         <div class="article-meta">
             <span>執筆: Inwoo Hwang</span> &bull; <span>2026年9月1日</span> &bull; <span>施設園芸工学 &amp; 植物生理学</span>
@@ -126,9 +159,6 @@
             <h3>オンライン飽差（VPD）計算ツール</h3>
             <p>温室や栽培室の環境数値を入力して、リアルタイムの飽差・露点をシミュレーションできます。</p>
             <a href="https://inwoovation.com/smartfarm/vpd.html" class="cta-btn" target="_blank">VPD計算ツールを起動 &rarr;</a>
-        </div>
-    </div>
-
 
 <!-- INW-DEEP-ENG-START -->
       <section class="inw-deep-engineering" style="margin-top: 36px; border-top: 2px solid rgba(16, 185, 129, 0.35); padding-top: 28px;">
@@ -234,6 +264,17 @@
         </div>
       </section>
 <!-- INW-DEEP-ENG-END -->
+
+<!-- INW-LIVE-WIDGET-START -->
+<section class="inw-live-widget-sandbox" style="margin: 32px 0; padding: 24px; background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 16px; box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);">
+  <h3 style="margin: 0 0 8px 0; font-size: 1.2rem; color: #38bdf8; font-weight: 800;">💧 リアルタイム飽差 (VPD) & 葉面微気象シミュレーター</h3>
+  <p style="margin: 0 0 16px 0; font-size: 0.92rem; color: #94a3b8; line-height: 1.6;">気温・相対湿度・葉温オフセットをスライダーで調整し、群落の飽差 (kPa) と蒸散ストレスをリアルタイムに検証できます。</p>
+  <div style="display: flex; justify-content: center; width: 100%; overflow: hidden;">
+    <iframe src="/embed/vpd-gauge.html" width="380" height="390" loading="lazy" title="💧 リアルタイム飽差 (VPD) & 葉面微気象シミュレーター" style="border: none; border-radius: 14px; max-width: 100%;"></iframe>
+  </div>
+</section>
+<!-- INW-LIVE-WIDGET-END -->
+
 <!-- INW-EEAT-BOX-START -->
     <section id="inw-eeat-standard-block" style="margin-top: 32px; padding-top: 24px; border-top: 1px solid rgba(148, 163, 184, 0.3); box-sizing: border-box;">
       <div class="inw-calculators-box" style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 12px; padding: 20px; margin-bottom: 24px;">
@@ -256,6 +297,9 @@
       </div>
     </section>
 <!-- INW-EEAT-BOX-END -->
+        </div>
+    </div>
+
 
 <!-- INW-STD-FOOTER-START -->
 <footer class="inw-site-footer" style="margin-top: 48px; padding: 28px 20px; background: #0f172a; color: #94a3b8; border-top: 1px solid #1e293b; text-align: center; font-size: 0.9rem; font-family: system-ui, -apple-system, sans-serif; box-sizing: border-box; width: 100%;">

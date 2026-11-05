@@ -5,6 +5,7 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Greenhouse CO2 Enrichment & Cylinder Sizing Calculator | Smart Farm Lab</title>
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <link rel="canonical" href="https://inwoovation.com/smartfarm/co2_calculator.html" />
   <!-- Open Graph / Twitter Card -->
   <meta property="og:type" content="website">
@@ -36,24 +37,51 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "Greenhouse CO2 Enrichment & Cylinder Sizing Calculator",
-  "operatingSystem": "All",
-  "applicationCategory": "EngineeringApplication",
-  "description": "Calculate greenhouse CO2 injection mass flow rates, Farquhar-von Caemmerer-Berry photosynthetic kinetics, cylinder consumption schedules, and hourly enrichment costs.",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "author": {
-    "@type": "Person",
-    "name": "Inwoo Hwang"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Inwoovation Smart Farming"
-  }
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "Greenhouse CO2 Enrichment & Cylinder Sizing Calculator",
+      "operatingSystem": "All",
+      "applicationCategory": "EngineeringApplication",
+      "description": "Calculate greenhouse CO2 injection mass flow rates, Farquhar-von Caemmerer-Berry photosynthetic kinetics, cylinder consumption schedules, and hourly enrichment costs.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Inwoo Hwang"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Inwoovation Smart Farming"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inwoovation Lab",
+          "item": "https://inwoovation.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Smart Farm Simulator Lab",
+          "item": "https://inwoovation.com/smartfarm/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "🧪 CO2 Injection Parameters",
+          "item": "https://inwoovation.com/smartfarm/co2_calculator.html"
+        }
+      ]
+    }
+  ]
 }
 </script>
 
@@ -97,12 +125,14 @@
   ]
 }
 </script>
+    <link rel="stylesheet" href="/css/global-ui-enhancements.css?v=20261105">
+    <script src="/js/global-search-palette.js?v=20261105" defer></script>
 </head>
 <body>
 <main class="container">
 <header>
 <div class="header-top-bar" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 0.8rem;">
-<div class="badge" id="header-badge">Last Updated: November 03, 2026</div>
+<div class="badge" id="header-badge">Last Updated: November 05, 2026</div>
 <div style="display: flex; gap: 0.5rem; align-items: center;">
     <button class="lang-btn" id="btn-farm-profile" onclick="toggleFarmProfileDrawer()" style="border-color: var(--primary); color: var(--primary); display: inline-flex; align-items: center; gap: 0.3rem; font-weight: 600; padding: 0.4rem 0.8rem; border-radius: 10px; cursor: pointer; background: transparent; border: 1px solid;">
         📋 <span>My Farm</span>

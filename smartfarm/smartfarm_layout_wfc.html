@@ -6,6 +6,7 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Smartfarm WFC Bed & Hydronic Layout Planner | Automated Commercial Greenhouse Spatial Optimizer</title>
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <meta name="description" content="Autonomous Wave Function Collapse (WFC) and A* pathfinding algorithm for smart farm greenhouse design. Automatically routes cultivation gutters, main supply/return hydronic headers, harvesting pathways, and computes instant Bill of Materials (BOM) & plant density.">
 <meta name="keywords" content="smartfarm layout, wave function collapse, greenhouse CAD planner, hydroponic gutter layout, commercial greenhouse planning, A* pathfinding, greenhouse BOM calculator, vertical farm bed optimization">
 <meta name="google-site-verification" content="Y7d3dVoTQHBbG1GoKc4E_LUZb6YBmv491pv7G01mOk8">
@@ -40,74 +41,99 @@
 <!-- SEO JSON-LD Structured Data -->
 <script type="application/ld+json">
   {
-   "@context": "https://schema.org",
-   "@graph": [
-     {
-       "@type": "WebApplication",
-       "name": "Smartfarm WFC Bed & Hydronic Layout Planner | Automated Commercial Greenhouse Spatial Optimizer",
-       "operatingSystem": "All",
-       "applicationCategory": "EducationalApplication",
-       "browserRequirements": "Requires HTML5, Javascript, CSS3",
-       "softwareVersion": "2.2",
-       "inLanguage": "en",
-       "description": "Autonomous Wave Function Collapse (WFC) and A* pathfinding algorithm for smart farm greenhouse design. Automatically routes cultivation gutters, main supply/return hydronic headers, harvesting pathways, and computes instant Bill of Materials (BOM) & plant density.",
-       "url": "https://inwoovation.com/smartfarm/smartfarm_layout_wfc.html",
-       "publisher": {
-         "@type": "Organization",
-         "name": "Inwoovation Smart Farm Lab",
-         "url": "https://inwoovation.com/smartfarm/"
-       },
-       "offers": {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Smartfarm WFC Bed & Hydronic Layout Planner | Automated Commercial Greenhouse Spatial Optimizer",
+      "operatingSystem": "All",
+      "applicationCategory": "EducationalApplication",
+      "browserRequirements": "Requires HTML5, Javascript, CSS3",
+      "softwareVersion": "2.2",
+      "inLanguage": "en",
+      "description": "Autonomous Wave Function Collapse (WFC) and A* pathfinding algorithm for smart farm greenhouse design. Automatically routes cultivation gutters, main supply/return hydronic headers, harvesting pathways, and computes instant Bill of Materials (BOM) & plant density.",
+      "url": "https://inwoovation.com/smartfarm/smartfarm_layout_wfc.html",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Inwoovation Smart Farm Lab",
+        "url": "https://inwoovation.com/smartfarm/"
+      },
+      "offers": {
         "@type": "Offer",
         "price": "0",
         "priceCurrency": "USD"
-       }
-     },
-     {
-       "@type": "FAQPage",
-       "mainEntity": [
-         {
-           "@type": "Question",
-           "name": "What is Wave Function Collapse (WFC) in greenhouse layout planning?",
-           "acceptedAnswer": {
-             "@type": "Answer",
-             "text": "Wave Function Collapse (WFC) is a constraint-satisfaction procedural algorithm that treats greenhouse spatial planning as a grid of superposed cell possibilities. By enforcing strict adjacency rules (e.g. gutters must align with pipe-rails, walkways must connect to central corridors, and drip lines must terminate at return drainage manifolds), WFC autonomously generates globally consistent, conflict-free greenhouse CAD layouts."
-           }
-         },
-         {
-           "@type": "Question",
-           "name": "What are standard Venlo greenhouse bay widths and row spacings?",
-           "acceptedAnswer": {
-             "@type": "Answer",
-             "text": "Modern commercial Venlo glasshouses typically utilize 8.0 m, 9.6 m, or 12.8 m post-to-post span widths. In an 8.0 m bay, growers standardly install 5 crop rows spaced at 1.60 m (for tomatoes or cucumbers) or 4 rows spaced at 2.00 m (for wide canopies). In 9.6 m bays, 6 crop rows spaced at 1.60 m are universally preferred."
-           }
-         },
-         {
-           "@type": "Question",
-           "name": "How is the diameter of the main irrigation header pipe calculated?",
-           "acceptedAnswer": {
-             "@type": "Answer",
-             "text": "Main supply header pipe sizing is calculated from peak volumetric flow rate: Q = (Total Drippers × Emitter Discharge) / 1000 m³/h. Pipe internal diameter is sized using D = sqrt(4Q / (π × v)), targeting a fluid velocity (v) between 1.0 m/s and 1.5 m/s to prevent excessive friction head loss and water hammer."
-           }
-         },
-         {
-           "@type": "Question",
-           "name": "Why is gutter orientation (North-South vs East-West) critical?",
-           "acceptedAnswer": {
-             "@type": "Answer",
-             "text": "North-South gutter orientation provides the most uniform diurnal light distribution across crop rows as the sun sweeps from east to west, minimizing static row shading. East-West gutter orientation is primarily used in single-span passive solar solar greenhouses in extreme northern latitudes to maximize southern winter solar elevation capture."
-           }
-         }
-       ]
-     }
-   ]
-  }
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is Wave Function Collapse (WFC) in greenhouse layout planning?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Wave Function Collapse (WFC) is a constraint-satisfaction procedural algorithm that treats greenhouse spatial planning as a grid of superposed cell possibilities. By enforcing strict adjacency rules (e.g. gutters must align with pipe-rails, walkways must connect to central corridors, and drip lines must terminate at return drainage manifolds), WFC autonomously generates globally consistent, conflict-free greenhouse CAD layouts."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are standard Venlo greenhouse bay widths and row spacings?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Modern commercial Venlo glasshouses typically utilize 8.0 m, 9.6 m, or 12.8 m post-to-post span widths. In an 8.0 m bay, growers standardly install 5 crop rows spaced at 1.60 m (for tomatoes or cucumbers) or 4 rows spaced at 2.00 m (for wide canopies). In 9.6 m bays, 6 crop rows spaced at 1.60 m are universally preferred."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is the diameter of the main irrigation header pipe calculated?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Main supply header pipe sizing is calculated from peak volumetric flow rate: Q = (Total Drippers × Emitter Discharge) / 1000 m³/h. Pipe internal diameter is sized using D = sqrt(4Q / (π × v)), targeting a fluid velocity (v) between 1.0 m/s and 1.5 m/s to prevent excessive friction head loss and water hammer."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why is gutter orientation (North-South vs East-West) critical?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "North-South gutter orientation provides the most uniform diurnal light distribution across crop rows as the sun sweeps from east to west, minimizing static row shading. East-West gutter orientation is primarily used in single-span passive solar solar greenhouses in extreme northern latitudes to maximize southern winter solar elevation capture."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inwoovation Lab",
+          "item": "https://inwoovation.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Smart Farm Simulator Lab",
+          "item": "https://inwoovation.com/smartfarm/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "📐 WFC Smartfarm Layout Planner",
+          "item": "https://inwoovation.com/smartfarm/smartfarm_layout_wfc.html"
+        }
+      ]
+    }
+  ]
+}
   </script>
-<link href="style.css?v=3.3" rel="stylesheet"/></head>
+<link href="style.css?v=3.3" rel="stylesheet"/>    <link rel="stylesheet" href="/css/global-ui-enhancements.css?v=20261105">
+    <script src="/js/global-search-palette.js?v=20261105" defer></script>
+</head>
 <body>
 <main class="container"><header>
 <div class="header-top-bar" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 0.8rem;">
-<div class="badge" id="header-badge" style="margin-bottom: 0;">Last Updated: November 03, 2026</div>
+<div class="badge" id="header-badge" style="margin-bottom: 0;">Last Updated: November 05, 2026</div>
 <div style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap;">
     <a href="https://inwoovation.com/" target="_blank" rel="noopener noreferrer" style="background: rgba(30, 41, 59, 0.9); border: 1px solid rgba(255, 255, 255, 0.18); color: #f8fafc; font-weight: 700; font-size: 0.85rem; padding: 0.45rem 0.9rem; border-radius: 100px; text-decoration: none; display: inline-flex; align-items: center; gap: 0.4rem; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); transition: all 0.25s ease;">
         🌐 Inwoovation Lab

@@ -6,6 +6,7 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Boiler vs Heat Pump ROI Simulator | Greenhouse Heating Cost Analysis</title>
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <meta name="description" content="Compare annual heating costs between conventional boilers (gas, oil, LPG) and heat pumps. Calculate payback period, energy savings, and return on investment for greenhouse heating system transitions.">
 <meta name="keywords" content="heat pump ROI, boiler vs heat pump, greenhouse heating cost, COP calculator, energy savings, payback period, agricultural heat pump, LPG heating cost, greenhouse energy transition">
 <meta name="google-site-verification" content="Y7d3dVoTQHBbG1GoKc4E_LUZb6YBmv491pv7G01mOk8">
@@ -40,74 +41,99 @@
 <!-- SEO JSON-LD Structured Data -->
 <script type="application/ld+json">
   {
-   "@context": "https://schema.org",
-   "@graph": [
-     {
-       "@type": "WebApplication",
-       "name": "Boiler vs Heat Pump ROI Simulator | Greenhouse Heating Cost Analysis",
-       "operatingSystem": "All",
-       "applicationCategory": "EducationalApplication",
-       "browserRequirements": "Requires HTML5, Javascript, CSS3",
-       "softwareVersion": "2.2",
-       "inLanguage": "en",
-       "description": "Compare annual heating costs between conventional boilers (gas, oil, LPG) and heat pumps. Calculate payback period, energy savings, and return on investment for greenhouse heating system transitions.",
-       "url": "https://inwoovation.com/smartfarm/roi_simulator.html",
-       "publisher": {
-         "@type": "Organization",
-         "name": "Inwoovation Smart Farm Lab",
-         "url": "https://inwoovation.com/smartfarm/"
-       },
-       "offers": {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Boiler vs Heat Pump ROI Simulator | Greenhouse Heating Cost Analysis",
+      "operatingSystem": "All",
+      "applicationCategory": "EducationalApplication",
+      "browserRequirements": "Requires HTML5, Javascript, CSS3",
+      "softwareVersion": "2.2",
+      "inLanguage": "en",
+      "description": "Compare annual heating costs between conventional boilers (gas, oil, LPG) and heat pumps. Calculate payback period, energy savings, and return on investment for greenhouse heating system transitions.",
+      "url": "https://inwoovation.com/smartfarm/roi_simulator.html",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Inwoovation Smart Farm Lab",
+        "url": "https://inwoovation.com/smartfarm/"
+      },
+      "offers": {
         "@type": "Offer",
         "price": "0",
         "priceCurrency": "USD"
-       }
-     },
-     {
-       "@type": "FAQPage",
-       "mainEntity": [
-         {
-           "@type": "Question",
-           "name": "What is the Coefficient of Performance (COP) in agricultural heat pumps?",
-           "acceptedAnswer": {
-             "@type": "Answer",
-             "text": "The Coefficient of Performance (COP) is the ratio of thermal energy output delivered to electrical energy input consumed. A heat pump operating at a COP of 3.5 generates 3.5 kWh of heat into the greenhouse water loop for every 1.0 kWh of grid electricity consumed, effectively achieving an equivalent thermal efficiency of 350%."
-           }
-         },
-         {
-           "@type": "Question",
-           "name": "How do you calculate annual greenhouse heating energy using Heating Degree Days (HDD)?",
-           "acceptedAnswer": {
-             "@type": "Answer",
-             "text": "Annual greenhouse heating load is modeled using Heating Degree Days (HDD): E_annual = 24 × (Q_design / ΔT_design) × HDD_base. By multiplying design peak capacity by the cumulative degree days below the heating base temperature (typically 15°C to 18°C), growers calculate total annual MWh of thermal demand."
-           }
-         },
-         {
-           "@type": "Question",
-           "name": "When does a heat pump become more cost-effective than a natural gas or LPG boiler?",
-           "acceptedAnswer": {
-             "@type": "Answer",
-             "text": "A heat pump delivers lower operational cost when the spark spread satisfies: (Electricity Price / SCOP) < (Fuel Price / Boiler Efficiency). In jurisdictions with favorable agricultural electricity tariffs (e.g. Korea Ag-rate ~80 KRW/kWh or German night tariffs), heat pumps reduce operational heating costs by 40% to 65% compared to diesel, LPG, or standard natural gas."
-           }
-         },
-         {
-           "@type": "Question",
-           "name": "What is the typical payback period for converting a commercial greenhouse to heat pumps?",
-           "acceptedAnswer": {
-             "@type": "Answer",
-             "text": "The simple payback period is calculated as Additional Capital Expenditure (CapEx) divided by Annual Operational Fuel Savings (OpEx). For high-heat crops like winter tomatoes or strawberries, well-designed air-to-water or groundwater heat pumps achieve full capital payback within 2.5 to 4.5 years, particularly when paired with insulated hot water buffer storage tanks."
-           }
-         }
-       ]
-     }
-   ]
-  }
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the Coefficient of Performance (COP) in agricultural heat pumps?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Coefficient of Performance (COP) is the ratio of thermal energy output delivered to electrical energy input consumed. A heat pump operating at a COP of 3.5 generates 3.5 kWh of heat into the greenhouse water loop for every 1.0 kWh of grid electricity consumed, effectively achieving an equivalent thermal efficiency of 350%."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you calculate annual greenhouse heating energy using Heating Degree Days (HDD)?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Annual greenhouse heating load is modeled using Heating Degree Days (HDD): E_annual = 24 × (Q_design / ΔT_design) × HDD_base. By multiplying design peak capacity by the cumulative degree days below the heating base temperature (typically 15°C to 18°C), growers calculate total annual MWh of thermal demand."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "When does a heat pump become more cost-effective than a natural gas or LPG boiler?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A heat pump delivers lower operational cost when the spark spread satisfies: (Electricity Price / SCOP) < (Fuel Price / Boiler Efficiency). In jurisdictions with favorable agricultural electricity tariffs (e.g. Korea Ag-rate ~80 KRW/kWh or German night tariffs), heat pumps reduce operational heating costs by 40% to 65% compared to diesel, LPG, or standard natural gas."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the typical payback period for converting a commercial greenhouse to heat pumps?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The simple payback period is calculated as Additional Capital Expenditure (CapEx) divided by Annual Operational Fuel Savings (OpEx). For high-heat crops like winter tomatoes or strawberries, well-designed air-to-water or groundwater heat pumps achieve full capital payback within 2.5 to 4.5 years, particularly when paired with insulated hot water buffer storage tanks."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inwoovation Lab",
+          "item": "https://inwoovation.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Smart Farm Simulator Lab",
+          "item": "https://inwoovation.com/smartfarm/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Energy Price & Equipment Specs",
+          "item": "https://inwoovation.com/smartfarm/roi_simulator.html"
+        }
+      ]
+    }
+  ]
+}
   </script>
-<link href="style.css?v=3.3" rel="stylesheet"/></head>
+<link href="style.css?v=3.3" rel="stylesheet"/>    <link rel="stylesheet" href="/css/global-ui-enhancements.css?v=20261105">
+    <script src="/js/global-search-palette.js?v=20261105" defer></script>
+</head>
 <body>
 <main class="container"><header>
 <div class="header-top-bar" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 0.8rem;">
-<div class="badge" id="header-badge" style="margin-bottom: 0;">Last Updated: November 03, 2026</div>
+<div class="badge" id="header-badge" style="margin-bottom: 0;">Last Updated: November 05, 2026</div>
 <div style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap;">
     <a href="https://inwoovation.com/" target="_blank" rel="noopener noreferrer" style="background: rgba(30, 41, 59, 0.9); border: 1px solid rgba(255, 255, 255, 0.18); color: #f8fafc; font-weight: 700; font-size: 0.85rem; padding: 0.45rem 0.9rem; border-radius: 100px; text-decoration: none; display: inline-flex; align-items: center; gap: 0.4rem; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); transition: all 0.25s ease;">
         🌐 Inwoovation Lab

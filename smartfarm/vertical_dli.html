@@ -6,6 +6,7 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Vertical Farming DLI Calculator | LED PPFD & Thermal Output Analyzer</title>
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <meta name="description" content="Calculate Daily Light Integral (DLI), LED PPFD requirements, photoperiod optimization, and thermal heat dissipation for vertical farming and indoor growing systems. Supports leafy greens, strawberries, and herbs.">
 <meta name="keywords" content="DLI calculator, vertical farming, LED PPFD, daily light integral, photoperiod, indoor growing, LED thermal output, vertical farm lighting, grow light calculator, plant factory">
 <meta name="google-site-verification" content="Y7d3dVoTQHBbG1GoKc4E_LUZb6YBmv491pv7G01mOk8">
@@ -40,74 +41,99 @@
 <!-- SEO JSON-LD Structured Data -->
 <script type="application/ld+json">
   {
-   "@context": "https://schema.org",
-   "@graph": [
-     {
-       "@type": "WebApplication",
-       "name": "Vertical Farming DLI Calculator | LED PPFD & Thermal Output Analyzer",
-       "operatingSystem": "All",
-       "applicationCategory": "EducationalApplication",
-       "browserRequirements": "Requires HTML5, Javascript, CSS3",
-       "softwareVersion": "2.2",
-       "inLanguage": "en",
-       "description": "Calculate Daily Light Integral (DLI), LED PPFD requirements, photoperiod optimization, and thermal heat dissipation for vertical farming and indoor growing systems. Supports leafy greens, strawberries, and herbs.",
-       "url": "https://inwoovation.com/smartfarm/vertical_dli.html",
-       "publisher": {
-         "@type": "Organization",
-         "name": "Inwoovation Smart Farm Lab",
-         "url": "https://inwoovation.com/smartfarm/"
-       },
-       "offers": {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Vertical Farming DLI Calculator | LED PPFD & Thermal Output Analyzer",
+      "operatingSystem": "All",
+      "applicationCategory": "EducationalApplication",
+      "browserRequirements": "Requires HTML5, Javascript, CSS3",
+      "softwareVersion": "2.2",
+      "inLanguage": "en",
+      "description": "Calculate Daily Light Integral (DLI), LED PPFD requirements, photoperiod optimization, and thermal heat dissipation for vertical farming and indoor growing systems. Supports leafy greens, strawberries, and herbs.",
+      "url": "https://inwoovation.com/smartfarm/vertical_dli.html",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Inwoovation Smart Farm Lab",
+        "url": "https://inwoovation.com/smartfarm/"
+      },
+      "offers": {
         "@type": "Offer",
         "price": "0",
         "priceCurrency": "USD"
-       }
-     },
-     {
-       "@type": "FAQPage",
-       "mainEntity": [
-         {
-           "@type": "Question",
-           "name": "How do you calculate Daily Light Integral (DLI) in vertical indoor farms?",
-           "acceptedAnswer": {
-             "@type": "Answer",
-             "text": "Daily Light Integral (DLI) is calculated using the formula DLI = PPFD (μmol/m²·s) × Photoperiod (hours) × 0.0036. For instance, maintaining an indoor canopy under 250 μmol/m²·s PPFD for 18 hours per day delivers exactly 16.2 mol/m²·day of Photosynthetically Active Radiation (PAR)."
-           }
-         },
-         {
-           "@type": "Question",
-           "name": "What is the role of Far-Red (730 nm) light in indoor plant factories?",
-           "acceptedAnswer": {
-             "@type": "Answer",
-             "text": "Far-red photons (700 to 750 nm) activate Photosystem I and reverse phytochrome photo-equilibrium (Pfr to Pr), stimulating leaf expansion and increasing light interception. When delivered alongside red photons (the Emerson Enhancement Effect), far-red photons accelerate gross photosynthesis beyond standard 400-700 nm PAR predictions."
-           }
-         },
-         {
-           "@type": "Question",
-           "name": "How does LED junction temperature (Tj) affect luminaire lifespan and efficacy?",
-           "acceptedAnswer": {
-             "@type": "Answer",
-             "text": "LED diode efficiency drops as junction temperature (Tj) rises. Exceeding 80°C to 85°C degrades silicone encapsulation and phosphor conversion layers, accelerating lumen depreciation (L90B50 rating) and shifting emission wavelengths. Maintaining heatsink convection ensures diodes remain below 65°C."
-           }
-         },
-         {
-           "@type": "Question",
-           "name": "How much HVAC cooling capacity is needed for vertical farming LED lighting?",
-           "acceptedAnswer": {
-             "@type": "Answer",
-             "text": "In a sealed vertical farm, nearly 100% of electrical power fed to LED fixtures is ultimately converted to sensible and latent room heat (the fraction radiated as photons is absorbed by leaves and benches and re-emitted as convective or transpirational heat). Each 1 kW of electrical grow light requires approximately 0.284 Tons of Refrigeration (TR) or 3,412 BTU/h of active HVAC chiller cooling."
-           }
-         }
-       ]
-     }
-   ]
-  }
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do you calculate Daily Light Integral (DLI) in vertical indoor farms?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Daily Light Integral (DLI) is calculated using the formula DLI = PPFD (μmol/m²·s) × Photoperiod (hours) × 0.0036. For instance, maintaining an indoor canopy under 250 μmol/m²·s PPFD for 18 hours per day delivers exactly 16.2 mol/m²·day of Photosynthetically Active Radiation (PAR)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the role of Far-Red (730 nm) light in indoor plant factories?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Far-red photons (700 to 750 nm) activate Photosystem I and reverse phytochrome photo-equilibrium (Pfr to Pr), stimulating leaf expansion and increasing light interception. When delivered alongside red photons (the Emerson Enhancement Effect), far-red photons accelerate gross photosynthesis beyond standard 400-700 nm PAR predictions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does LED junction temperature (Tj) affect luminaire lifespan and efficacy?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "LED diode efficiency drops as junction temperature (Tj) rises. Exceeding 80°C to 85°C degrades silicone encapsulation and phosphor conversion layers, accelerating lumen depreciation (L90B50 rating) and shifting emission wavelengths. Maintaining heatsink convection ensures diodes remain below 65°C."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much HVAC cooling capacity is needed for vertical farming LED lighting?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In a sealed vertical farm, nearly 100% of electrical power fed to LED fixtures is ultimately converted to sensible and latent room heat (the fraction radiated as photons is absorbed by leaves and benches and re-emitted as convective or transpirational heat). Each 1 kW of electrical grow light requires approximately 0.284 Tons of Refrigeration (TR) or 3,412 BTU/h of active HVAC chiller cooling."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inwoovation Lab",
+          "item": "https://inwoovation.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Smart Farm Simulator Lab",
+          "item": "https://inwoovation.com/smartfarm/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Photosynthetic Photon Flux & DLI Optimizer",
+          "item": "https://inwoovation.com/smartfarm/vertical_dli.html"
+        }
+      ]
+    }
+  ]
+}
   </script>
-<link href="style.css?v=3.3" rel="stylesheet"/></head>
+<link href="style.css?v=3.3" rel="stylesheet"/>    <link rel="stylesheet" href="/css/global-ui-enhancements.css?v=20261105">
+    <script src="/js/global-search-palette.js?v=20261105" defer></script>
+</head>
 <body>
 <main class="container"><header>
 <div class="header-top-bar" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 0.8rem;">
-<div class="badge" id="header-badge" style="margin-bottom: 0;">Last Updated: November 03, 2026</div>
+<div class="badge" id="header-badge" style="margin-bottom: 0;">Last Updated: November 05, 2026</div>
 <div style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap;">
     <a href="https://inwoovation.com/" target="_blank" rel="noopener noreferrer" style="background: rgba(30, 41, 59, 0.9); border: 1px solid rgba(255, 255, 255, 0.18); color: #f8fafc; font-weight: 700; font-size: 0.85rem; padding: 0.45rem 0.9rem; border-radius: 100px; text-decoration: none; display: inline-flex; align-items: center; gap: 0.4rem; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); transition: all 0.25s ease;">
         🌐 Inwoovation Lab

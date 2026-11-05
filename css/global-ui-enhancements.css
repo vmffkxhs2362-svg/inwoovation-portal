@@ -551,4 +551,194 @@ html, body {
   }
 }
 
+/* === 2026-11-05 FULL-SITE READER CONVENIENCE & UX ENHANCEMENTS === */
 
+/* 1. Top Reading Progress Bar */
+#inw-reading-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3.5px;
+  width: 0%;
+  z-index: 9998;
+  background: linear-gradient(90deg, #10b981 0%, #38bdf8 55%, #8b5cf6 100%);
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.55);
+  transition: width 0.08s linear;
+  pointer-events: none;
+}
+
+/* 2. Multilingual Edition Switcher Bar */
+.inw-lang-switcher-bar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 14px 0 18px 0;
+  padding: 10px 14px;
+  background: rgba(15, 23, 42, 0.92);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  border-radius: 12px;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: 0.82rem;
+  box-sizing: border-box;
+}
+.inw-lang-switcher-label {
+  color: #94a3b8;
+  font-weight: 700;
+  margin-right: 4px;
+}
+.inw-lang-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 11px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-decoration: none !important;
+  color: #cbd5e1 !important;
+  background: rgba(30, 41, 59, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  transition: all 0.18s ease;
+}
+.inw-lang-pill:hover {
+  color: #ffffff !important;
+  border-color: #38bdf8;
+  background: rgba(56, 189, 248, 0.22);
+}
+.inw-lang-pill.active {
+  color: #10b981 !important;
+  border-color: #10b981;
+  background: rgba(16, 185, 129, 0.16);
+}
+
+/* 3. Interactive Reader Utility Toolbar & Auto Quick-Jump TOC */
+.inw-reader-utility-wrap {
+  margin: 16px 0 22px 0;
+  background: #0f172a;
+  border: 1px solid rgba(56, 189, 248, 0.28);
+  border-radius: 14px;
+  padding: 12px 16px;
+  color: #e2e8f0;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.22);
+  box-sizing: border-box;
+}
+.inw-reader-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.inw-reader-btn-group {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.inw-reader-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(30, 41, 59, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: #e2e8f0;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  font-family: inherit;
+}
+.inw-reader-btn:hover {
+  border-color: #38bdf8;
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.12);
+}
+.inw-quick-toc-panel {
+  display: none;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+.inw-quick-toc-panel.open {
+  display: block;
+}
+.inw-quick-toc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr));
+  gap: 6px 14px;
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.inw-quick-toc-grid li {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.inw-quick-toc-grid li a {
+  display: block;
+  color: #cbd5e1 !important;
+  text-decoration: none !important;
+  font-size: 0.82rem;
+  padding: 5px 8px;
+  border-radius: 6px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: all 0.15s ease;
+}
+.inw-quick-toc-grid li a:hover {
+  color: #38bdf8 !important;
+  background: rgba(56, 189, 248, 0.12);
+}
+
+/* 4. Floating Bottom-Right Quick Action Bar (Search + Back to Top) */
+#inw-floating-fab {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 9990;
+  display: flex;
+  gap: 8px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+#inw-floating-fab.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.inw-fab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(15, 23, 42, 0.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  color: #f8fafc;
+  padding: 8px 13px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+  transition: all 0.18s ease;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+.inw-fab-btn:hover {
+  background: rgba(56, 189, 248, 0.22);
+  border-color: #38bdf8;
+  transform: translateY(-2px);
+}
+
+@media print {
+  .inw-top-nav, #inwoo-command-palette-modal, #inw-floating-fab, #inw-reading-progress-bar, .inw-reader-utility-wrap, .nav-search-trigger, .adsbygoogle {
+    display: none !important;
+  }
+}

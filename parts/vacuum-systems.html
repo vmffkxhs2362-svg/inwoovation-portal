@@ -25,7 +25,9 @@
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
     {
-      "@context": "https://schema.org",
+  "@context": "https://schema.org",
+  "@graph": [
+    {
       "@type": "WebApplication",
       "name": "Industrial Vacuum Systems & Semiconductor Equipment Engineering Suite",
       "url": "https://inwoovation.com/parts/vacuum-systems.html",
@@ -36,7 +38,32 @@
         "@type": "Organization",
         "name": "Inwoovation Lab"
       }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inwoovation Lab",
+          "item": "https://inwoovation.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "AgriMaster Equipment & Parts",
+          "item": "https://inwoovation.com/parts/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Industrial Vacuum & SemiconductorEquipment Engineering Suite",
+          "item": "https://inwoovation.com/parts/vacuum-systems.html"
+        }
+      ]
     }
+  ]
+}
     </script>
 
     <!-- Google tag (gtag.js) -->
@@ -652,6 +679,7 @@
             color: var(--primary-cyan);
         }
     </style>
+    <script src="/js/global-search-palette.js?v=20261105" defer></script>
 </head>
 <body>
 
