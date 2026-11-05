@@ -23,7 +23,7 @@ html, body {
   background-color: var(--bg-dark);
   color: var(--text-main);
   font-family: var(--font-sans);
-  overflow-x: hidden;
+  overflow-x: clip;
   max-width: 100%;
 }
 

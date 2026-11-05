@@ -26,7 +26,7 @@
         }
 
         html {
-            overflow-x: hidden;
+            overflow-x: clip;
             max-width: 100%;
         }
 
@@ -45,7 +45,7 @@
             padding: 2.5rem 1.5rem;
             line-height: 1.5;
             position: relative;
-            overflow-x: hidden;
+            overflow-x: clip;
             max-width: 100%;
         }
 
@@ -1694,6 +1694,6 @@
     
 
 @media (max-width: 768px) {
-  .container, .card, main { min-width: 0; max-width: 100%; overflow-x: hidden; }
+  .container, .card, main { min-width: 0; max-width: 100%; overflow-x: clip; }
   table { display: block; width: 100%; max-width: 100%; overflow-x: auto; }
 }
