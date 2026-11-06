@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V4RYJBMEDE"></script>
+    <script>
+       if (navigator.webdriver || /HeadlessChrome|PhantomJS|Lighthouse|PTST|bot|crawler|spider|slurp/i.test(navigator.userAgent) || location.hostname === 'localhost' || location.hostname === '127.0.0.1' || (screen.width === 1366 && screen.height === 1366) || (screen.width === 800 && screen.height === 600) || screen.height >= 5000) { window['ga-disable-G-V4RYJBMEDE'] = true; }
+    window.dataLayer = window.dataLayer || [];
+       function gtag(){dataLayer.push(arguments);}
+       gtag('js', new Date());
+       gtag('config', 'G-V4RYJBMEDE');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unterglas-Erdbeeranbau auf Stellagen: Blütenknospendifferenzierung, Kältesummen-Steuerung &amp; Tag-Nacht-Temperaturdifferenz (DIF) | Inwoovation Lab</title>
+    <meta name="description" content="Ingenieurleitfaden (DE Vol. 11) für den kommerziellen Erdbeeranbau im Venlo-Gewächshaus: Kurztag-Blüteninduktion, Kältesummen, Stickstoff-Restriktion (&lt; 3 meq/L NO3-), DIF-Klimaführung und Botrytis-Taupunktprävention.">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="google-adsense-account" content="ca-pub-8597809158257497">
+    <link rel="canonical" href="https://inwoovation.com/articles/de/article-11-erdbeeranbau-unterglas-blueteninduktion-dif-klimafuehrung.html" />
+    <link rel="alternate" hreflang="de" href="https://inwoovation.com/articles/de/article-11-erdbeeranbau-unterglas-blueteninduktion-dif-klimafuehrung.html" />
+    <link rel="alternate" hreflang="en" href="https://inwoovation.com/articles/article-11-strawberry-greenhouse-climate.html" />
+    <link rel="alternate" hreflang="x-default" href="https://inwoovation.com/articles/article-11-strawberry-greenhouse-climate.html" />
+    <meta property="og:title" content="Unterglas-Erdbeeranbau auf Stellagen: Blütenknospendifferenzierung &amp; DIF-Klimaführung | Inwoovation Lab">
+    <meta property="og:description" content="Ingenieurleitfaden (DE Vol. 11) für den kommerziellen Erdbeeranbau im Venlo-Gewächshaus: Blüteninduktion, Kältesummen, Stickstoff-Restriktion und DIF-Steuerung.">
+    <meta property="og:image" content="https://inwoovation.com/og-cover.jpg">
+    <meta property="og:url" content="https://inwoovation.com/articles/de/article-11-erdbeeranbau-unterglas-blueteninduktion-dif-klimafuehrung.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Unterglas-Erdbeeranbau auf Stellagen: Blütenknospendifferenzierung &amp; DIF-Klimaführung | Inwoovation Lab">
+    <meta name="twitter:description" content="Kurztag-Blüteninduktion, Kältesummen, Stickstoff-Restriktion und DIF-Temperaturführung im modernen Unterglas-Erdbeeranbau.">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8597809158257497" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+        .article-container { max-width: 860px; margin: 40px auto; padding: 36px; background: #ffffff; border-radius: 16px; border: 1px solid #e2e8f0; line-height: 1.85; color: #334155; }
+        .article-container h1 { font-size: 1.95rem; color: #0f172a; margin-bottom: 16px; border-bottom: 3px solid #10b981; padding-bottom: 12px; line-height: 1.32; }
+        .article-meta { color: #64748b; font-size: 0.92rem; margin-bottom: 28px; display: flex; flex-wrap: wrap; gap: 14px; background: #f8fafc; padding: 10px 16px; border-radius: 8px; font-weight: 500; }
+        .article-container h2 { font-size: 1.35rem; color: #065f46; margin-top: 34px; margin-bottom: 14px; background: #ecfdf5; padding: 9px 16px; border-left: 4px solid #10b981; border-radius: 4px; }
+        .article-container h3 { font-size: 1.12rem; color: #1e293b; margin-top: 24px; margin-bottom: 10px; font-weight: 700; }
+        .article-container p { margin-bottom: 18px; text-align: justify; }
+        .article-container ul, .article-container ol { margin-left: 24px; margin-bottom: 20px; }
+        .formula-box { background: #0f172a; color: #f8fafc; padding: 18px 22px; border-radius: 10px; font-family: 'Courier New', monospace; margin: 20px 0; overflow-x: auto; border-left: 4px solid #38bdf8; }
+        .data-table { width: 100%; border-collapse: collapse; margin: 22px 0; font-size: 0.92rem; }
+        .data-table th, .data-table td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+        .data-table th { background: #f1f5f9; color: #0f172a; font-weight: 700; }
+        .back-link { display: inline-block; margin-bottom: 18px; color: #10b981; text-decoration: none; font-weight: 600; }
+        .back-link:hover { text-decoration: underline; }
+        .lang-switch { display: inline-block; margin-left: 14px; font-size: 0.9rem; color: #0284c7; font-weight: 600; text-decoration: none; }
+    </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "TechArticle",
+          "headline": "Unterglas-Erdbeeranbau auf Stellagen: Blütenknospendifferenzierung, Kältesummen-Steuerung & Tag-Nacht-Temperaturdifferenz (DIF)",
+          "description": "Ingenieurleitfaden (DE Vol. 11) für den kommerziellen Erdbeeranbau im Venlo-Gewächshaus: Kurztag-Blüteninduktion, Kältesummen, Stickstoff-Restriktion (< 3 meq/L NO3-), DIF-Klimaführung und Botrytis-Taupunktprävention.",
+          "url": "https://inwoovation.com/articles/de/article-11-erdbeeranbau-unterglas-blueteninduktion-dif-klimafuehrung.html",
+          "inLanguage": "de-DE",
+          "author": {
+            "@type": "Person",
+            "name": "Inwoo Hwang",
+            "jobTitle": "Horticultural & CEA Systems Engineer"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Inwoovation Lab",
+            "url": "https://inwoovation.com"
+          },
+          "datePublished": "2026-11-07",
+          "dateModified": "2026-11-07",
+          "mainEntityOfPage": "https://inwoovation.com/articles/de/article-11-erdbeeranbau-unterglas-blueteninduktion-dif-klimafuehrung.html"
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Welche drei Umweltfaktoren steuern die Blütenknospendifferenzierung bei Kurztag-Erdbeersorten im Gewächshaus?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Die generative Blütenknospeninduktion bei Fragaria x ananassa wird durch das Zusammenspiel aus (1) einer Kurztag-Photoperiode von unter 10 bis 12 Stunden, (2) kühlen Nachttemperaturen zwischen 10 und 14 °C im Kronenmeristem sowie (3) einer gezielten Stickstoff-Restriktion in der Wurzelzone (Nitrat < 3,0 meq/L für 14–21 Tage zur Unterdrückung vegetativer Gibberellinsynthese) ausgelöst."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Wie verhindert man Grauschimmel (Botrytis cinerea) und Rhizoctonia im Herz der Erdbeerpflanze bei geschlossenen Energieschirmen?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Das Dampfdruckdefizit (VPD) in unmittelbarer Nähe der Erdbeerkrone darf nachts nicht unter 0,30 kPa fallen. Durch ein mindestens 38–42 °C warmes Wachstumsrohr direkt unter der Substratrinne in Kombination mit einem kontrollierten Schirmspalt (1,5 % bis 3,5 %) wird Taupunktunterschreitung am Blütenboden und an jungen Kelchblättern sicher vermieden."
+              }
+            }
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Inwoovation Lab",
+              "item": "https://inwoovation.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Precision CEA Articles",
+              "item": "https://inwoovation.com/guides.html"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Unterglas-Erdbeeranbau auf Stellagen (DE Vol. 11)",
+              "item": "https://inwoovation.com/articles/de/article-11-erdbeeranbau-unterglas-blueteninduktion-dif-klimafuehrung.html"
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+    <link rel="stylesheet" href="/css/global-ui-enhancements.css?v=20261107">
+    <script src="/js/global-search-palette.js?v=20261107" defer></script>
+</head>
+<body>
+<!-- INW-STD-NAV-START -->
+<nav class="inw-top-nav" aria-label="Main Navigation" style="background: #0f172a; border-bottom: 1px solid #1e293b; padding: 12px 20px; font-family: system-ui, -apple-system, sans-serif; box-sizing: border-box; width: 100%;">
+  <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px;">
+    <a href="/index.html" style="color: #10b981; font-weight: 800; font-size: 1.15rem; text-decoration: none; letter-spacing: -0.02em;">Inwoovation Lab</a>
+    <div style="display: flex; flex-wrap: wrap; gap: 14px; font-size: 0.9rem;">
+      <a href="/index.html" style="color: #e2e8f0; text-decoration: none;">Home</a>
+      <a href="/smartfarm/vpd.html" style="color: #e2e8f0; text-decoration: none;">Calculators</a>
+      <a href="/articles/index.html" style="color: #38bdf8; font-weight: 600; text-decoration: none;">Articles</a>
+      <a href="/wiki/index.html" style="color: #e2e8f0; text-decoration: none;">Wiki</a>
+      <a href="/climate/index.html" style="color: #e2e8f0; text-decoration: none;">Climate Hub</a>
+      <a href="/crops/index.html" style="color: #e2e8f0; text-decoration: none;">Crops</a>
+      <a href="/tools/venlocad-3d.html" style="color: #10b981; font-weight: 600; text-decoration: none;">VenloCAD 3D</a>
+      <button type="button" onclick="window.InwooPalette && window.InwooPalette.open()" style="background: rgba(15, 23, 42, 0.9); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.4); padding: 6px 12px; border-radius: 6px; font-size: 0.85rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">🔍 Search <kbd style="background: rgba(255,255,255,0.1); padding: 1px 5px; border-radius: 4px; font-size: 0.72rem;">Ctrl+K</kbd></button>
+      <a href="/about.html" style="color: #e2e8f0; text-decoration: none;">About</a>
+    </div>
+  </div>
+</nav>
+<!-- INW-STD-NAV-END -->
+    <div class="article-container">
+        <div>
+            <a href="../../guides.html" class="back-link">&larr; Zurück zur Übersicht (Engineering Guides)</a>
+            <a href="../article-11-strawberry-greenhouse-climate.html" class="lang-switch">🌐 Read in English (EN Vol. 11)</a>
+        </div>
+
+        <h1>Unterglas-Erdbeeranbau auf Stellagen: Blütenknospendifferenzierung, Kältesummen-Steuerung &amp; Tag-Nacht-Temperaturdifferenz (DIF)</h1>
+
+        <div class="article-meta">
+            <span>📘 DE Serie Vol. 11</span>
+            <span>⏱️ Lesezeit: 14 Min.</span>
+            <span>🔬 Fachgebiet: Beerenobst unter Glas (Stellagenkultur) &amp; Thermoperiodik</span>
+            <span>📅 Aktualisiert: 07.11.2026</span>
+        </div>
+
+        <p>Der erwerbsmäßige Anbau von Gewächshauserdbeeren (<em>Fragaria × ananassa</em>, z.&nbsp;B. Sorten wie &lsquo;Elsanta&rsquo;, &lsquo;Sonsation&rsquo;, &lsquo;Malling Centenary&rsquo;, &lsquo;Favori&rsquo; oder &lsquo;Seolhyang&rsquo;) auf hängenden oder aufgeständerten Substrat-Stellagen (Table-Top-Rinnensystemen) zählt zu den technisch anspruchsvollsten Disziplinen im modernen Unterglasgartenbau. Anders als bei indeterminierten Fruchtgemüsearten wie der Rispen-Tomate entscheidet sich das Ertragspotenzial eines Erdbeer-Erntesatzes bereits Wochen vor dem ersten sichtbaren Blütenstand: bei der <strong>mikroskopischen Blütenknospendifferenzierung (Blüteninduktion)</strong> im apikalen Kronenmeristem. Fehlt in dieser kritischen Phase das präzise Zusammenspiel aus Photoperiode, Kronentemperatur und Stickstoff-Restriktion, kippt die Pflanze in rein vegetatives Wachstum, bildet unproduktive Ausläufer (Stolonen) und verliert die frühe Hochpreis-Erntewelle.</p>
+
+        <h2>1. Die Trias der Blütenknospendifferenzierung: Photoperiode, Temperatur &amp; Stickstoff-Bremse</h2>
+        <p>Um das vegetative Apikalmeristem im Erdbeerherz (Rhizomkrone) zuverlässig in reproduktive Blütenprimordien umzuwandeln und eine hohe Anzahl kräftiger Blütenstände (Infloreszenzen) anzulegen, müssen im Gewächshaus oder im vorgeschalteten Trayfeld drei physiologische Steuergrößen synchronisiert werden:</p>
+        <ul>
+            <li><strong>Kurztag-Photoperiode (Tageslänge):</strong> Klassische einmaltragende Kurztagsorten (Junebearer) benötigen eine Unterschreitung der kritischen Tageslänge von 10 bis 12 Stunden, um das florale Signalprotein <em>FaFT1 / SOC1</em>-Netzwerk zu regulieren. Bei remontierenden (tagneutralen) Sorten dominiert hingegen das Temperatursignal.</li>
+            <li><strong>Thermoinduktion &amp; Kältesummen-Akkumulation:</strong> Optimale Induktionstemperaturen liegen tagsüber bei 16–18 °C und nachts bei 10–13 °C. Steigt die 24-Stunden-Mitteltemperatur über 23–25 °C, wird die Blütenknospenanlage physiologisch blockiert und stattdessen die Ausläuferbildung aktiviert. Für Frigopflanzen und überwinterte Satzkulturen ist zudem eine sortenspezifische Kältesumme (400 bis 900 Kältestunden bei T &lt; 7,0 °C) erforderlich, um die Endodormanz vollständig zu brechen.</li>
+            <li><strong>Gezielte Stickstoff-Restriktion (N-Hungerphase):</strong> Ein Überangebot an Nitrat (NO<sub>3</sub><sup>-</sup>) im Kokos- oder Torf-Perlit-Substrat fördert die endogene Synthese von Gibberellinen (GA<sub>3</sub>), die als direkter Antagonist der Blüteninduktion wirken. Daher wird die Nitratkonzentration im Gießwasser 2 bis 3 Wochen vor der geplanten Induktionsphase gezielt auf <strong>&lt; 3,0 meq L<sup>-1</sup> (EC<sub>Tropf</sub> ≈ 0,8–1,1 dS m<sup>-1</sup>)</strong> abgesenkt, während Kalium (K<sup>+</sup>) und Phosphat (H<sub>2PO</sub><sub>4</sub><sup>-</sup>) stabil gehalten werden.</li>
+        </ul>
+
+        <div class="formula-box">
+GDD_Erdbeere = Σ max(0 ; ((T_max + T_min) / 2) - T_Basis)   mit T_Basis = 4,0 °C
+DIF = T_Tag - T_Nacht                                       [K] (Ziel Blüte/Reife: +10 bis +14 K)
+CH_7C = Σ Stunden mit (0,0 °C ≤ T_Krone ≤ 7,0 °C)           [h] (Kältesumme zur Brechung der Dormanz)
+        </div>
+
+        <h2>2. Phänologische DIF-Klimaführung, Brix-Zuckereinlagerung &amp; Kronen-Taupunktschutz</h2>
+        <p>Sobald der Blütenstand aus der Krone schiebt und die Anthese (Blüte) beginnt, wechselt die Regelstrategie auf eine stark ausgeprägte positive <strong>Tag-Nacht-Temperaturdifferenz (DIF = T<sub>Tag</sub> - T<sub>Nacht</sub>)</strong>:</p>
+        <ol>
+            <li><strong>Blüte &amp; Bestäubungsphase (Hummelflug):</strong> Tagestemperaturen von 20–23 °C bei einer relativen Luftfeuchte von 60–70 % (VPD ≈ 0,80–1,10 kPa) sichern eine optimale Pollenkeimung und maximale Flugaktivität der eingesetzten Erdhummeln (<em>Bombus terrestris</em>). Zu hohe Luftfeuchte (&gt; 82 %) lässt den Pollen verklumpen, was zu verkrüppelten Früchten (Katzenaugen / Sammelnussfrucht-Deformation) führt.</li>
+            <li><strong>Fruchtschwellung &amp; Assimilat-Partitionierung (Brix-Maximierung):</strong> Durch kühle Nächte (8,0 bis 10,5 °C) sinkt die nächtliche Dunkelatmung (R<sub>d</sub>) der Früchte drastisch ab. Gleichzeitig verlängert sich die Reifeperiode von der Blüte bis zur Pflückreife auf 32–40 Tage (≈ 420–480 GDD<sub>4</sub>), wodurch signifikant mehr Saccharose, Fruktose und Aromastoffe in das Rezeptakulum eingelagert werden (Brix-Wert ≥ 9,5–11,5 °Bx sowie hohe Fruchtfestigkeit für die Vermarktung).</li>
+            <li><strong>Kronenfeuchte- &amp; Taupunkt-Management gegen <em>Botrytis cinerea</em>:</strong> Da Erdbeerbestände auf Stellagen eine dichte Mikro-Grenzschicht um das Herz bilden, droht in den frühen Morgenstunden bei geschlossenem Energieschirm Taupunktunterschreitung (VPD<sub>Krone</sub> &lt; 0,25 kPa). Ein dediziertes <strong>Wachstumsrohr (Rinnenheizrohr Ø 28–38 mm direkt unter der Stellage mit 38–45 °C Vorlauftemperatur)</strong> erzeugt ab 2 Stunden vor Sonnenaufgang einen trockenen thermischen Auftriebsstrom durch das Blätterdach und unterbindet Grauschimmel (<em>Botrytis cinerea</em>) sowie Echten Mehltau (<em>Podosphaera aphanis</em>) ohne Fungizideinsatz.</li>
+        </ol>
+
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Kulturstadium (Stellagen-Erdbeere)</th>
+                    <th>Tagestemperatur (T<sub>Tag</sub>)</th>
+                    <th>Nachttemperatur (T<sub>Nacht</sub>)</th>
+                    <th>DIF (T<sub>Tag</sub> - T<sub>Nacht</sub>)</th>
+                    <th>Ziel-VPD / RH</th>
+                    <th>Tropf-EC / NO<sub>3</sub><sup>-</sup>-Steuerung</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>1. Blütenknospeninduktion (Kurztag &lt; 11 h)</strong></td>
+                    <td><code>16,0 – 18,5 °C</code></td>
+                    <td><code>10,0 – 12,5 °C</code></td>
+                    <td><code>+5,0 bis +6,5 K</code></td>
+                    <td><code>0,55 – 0,85 kPa (68–76 %)</code></td>
+                    <td><code>EC 0,9–1,1 dS/m (NO₃⁻ &lt; 3,0 meq/L)</code></td>
+                </tr>
+                <tr>
+                    <td><strong>2. Rispenstreckung &amp; Vollblüte (Hummelflug)</strong></td>
+                    <td><code>21,0 – 23,5 °C</code></td>
+                    <td><code>8,5 – 10,5 °C</code></td>
+                    <td><code>+11,5 bis +13,5 K</code></td>
+                    <td><code>0,80 – 1,15 kPa (60–70 %)</code></td>
+                    <td><code>EC 1,4–1,6 dS/m (Ca²⁺/Bor-Betonung)</code></td>
+                </tr>
+                <tr>
+                    <td><strong>3. Fruchtschwellung &amp; Färbung (Brix-Phase)</strong></td>
+                    <td><code>19,5 – 21,5 °C</code></td>
+                    <td><code>8,0 – 9,5 °C</code></td>
+                    <td><code>+10,5 bis +12,5 K</code></td>
+                    <td><code>0,75 – 1,05 kPa (62–72 %)</code></td>
+                    <td><code>EC 1,6–1,9 dS/m (K⁺:Ca²⁺ = 1,8 : 1)</code></td>
+                </tr>
+                <tr>
+                    <td><strong>4. Morgendliche Taupunkt-Entfeuchtung (Vor Sonnenaufgang)</strong></td>
+                    <td><code>Anstieg +1,5 K/h</code></td>
+                    <td><code>Min. Rohr 40 °C</code></td>
+                    <td><code>Schirmspalt 2–3 %</code></td>
+                    <td><code>VPD &ge; 0,40 kPa (&lt; 82 %)</code></td>
+                    <td><code>Erster Tropfimpuls erst ab 120 J/cm²</code></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- INW-LIVE-WIDGET-START -->
+        <div class="live-calc-widget" style="background: #f8fafc; border: 2px solid #10b981; border-radius: 12px; padding: 24px; margin: 30px 0;">
+            <h3 style="margin-top: 0; color: #065f46;">🍓 Interaktiver Erdbeer-DIF-, Wachstumsgradtage- (GDD) &amp; Reifezeit-Simulator (DE Vol. 11)</h3>
+            <p style="font-size: 0.92rem; color: #475569; margin-bottom: 16px;">Simulieren Sie die Tag-Nacht-Temperaturdifferenz (DIF), die tägliche Wärmesumme (GDD bei T<sub>Basis</sub> = 4,0 °C), die erwartete Reifedauer von der Blüte bis zur Ernte sowie das Botrytis-Taupunktrisiko:</p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(195px, 1fr)); gap: 14px; margin-bottom: 18px;">
+                <div>
+                    <label style="display:block; font-weight:600; font-size:0.86rem; margin-bottom:4px;">Tagestemperatur T_Tag (°C)</label>
+                    <input type="number" id="sb_tday" value="21.0" min="10" max="32" step="0.5" style="width:100%; padding:8px; border:1px solid #cbd5e1; border-radius:6px;">
+                </div>
+                <div>
+                    <label style="display:block; font-weight:600; font-size:0.86rem; margin-bottom:4px;">Nachttemperatur T_Nacht (°C)</label>
+                    <input type="number" id="sb_tnight" value="9.0" min="2" max="24" step="0.5" style="width:100%; padding:8px; border:1px solid #cbd5e1; border-radius:6px;">
+                </div>
+                <div>
+                    <label style="display:block; font-weight:600; font-size:0.86rem; margin-bottom:4px;">Relative Luftfeuchte Nacht (%)</label>
+                    <input type="number" id="sb_rh" value="76" min="40" max="98" step="1" style="width:100%; padding:8px; border:1px solid #cbd5e1; border-radius:6px;">
+                </div>
+                <div>
+                    <label style="display:block; font-weight:600; font-size:0.86rem; margin-bottom:4px;">Ziel-Wärmesumme Blüte→Reife (GDD₄)</label>
+                    <input type="number" id="sb_gdd_target" value="440" min="320" max="600" step="10" style="width:100%; padding:8px; border:1px solid #cbd5e1; border-radius:6px;">
+                </div>
+            </div>
+            <div id="sb_output" style="background: #0f172a; color: #f8fafc; padding: 16px; border-radius: 8px; font-family: monospace; font-size: 0.93rem; line-height: 1.7;"></div>
+        </div>
+        <script>
+        (function() {
+            function calcStrawberry() {
+                const tDay = parseFloat(document.getElementById('sb_tday').value) || 21.0;
+                const tNight = parseFloat(document.getElementById('sb_tnight').value) || 9.0;
+                const rhNight = parseFloat(document.getElementById('sb_rh').value) || 76.0;
+                const gddTarget = parseFloat(document.getElementById('sb_gdd_target').value) || 440.0;
+
+                const tMean = (tDay + tNight) / 2.0;
+                const dif = tDay - tNight;
+                const dailyGdd = Math.max(0.5, tMean - 4.0);
+                const daysToHarvest = gddTarget / dailyGdd;
+
+                // Night VPD & Dewpoint at T_Nacht
+                const esNight = 0.61078 * Math.exp((17.27 * tNight) / (tNight + 237.3));
+                const eaNight = esNight * (rhNight / 100.0);
+                const vpdNight = Math.max(0.0, esNight - eaNight);
+
+                // Estimated Brix potential from DIF & maturation window
+                const estBrix = Math.min(13.2, Math.max(6.8, 7.2 + 0.18 * dif + 0.045 * Math.min(42, daysToHarvest)));
+                const botrytisStatus = vpdNight >= 0.30
+                    ? '<span style="color:#34d399;">✅ Sicher (Kein Kondensationsrisiko an der Krone)</span>'
+                    : '<span style="color:#f87171;">⚠️ Botrytis-Warnung! Rinnenheizrohr (min. 40 °C) &amp; Schirmspalt aktivieren!</span>';
+
+                document.getElementById('sb_output').innerHTML =
+                    `🌡️ 24h-Mitteltemperatur: <strong>${tMean.toFixed(1)} °C</strong> | Tag-Nacht-Differenz (DIF): <strong>+${dif.toFixed(1)} K</strong><br>` +
+                    `📈 Tägliche Wärmesumme (GDD₄): <strong>${dailyGdd.toFixed(1)} °C·d</strong> | Prognostizierte Reifedauer (Blüte → Ernte): <strong>${daysToHarvest.toFixed(1)} Tage</strong><br>` +
+                    `🍓 Erwartetes Zuckerniveau (Assimilat-Bilanz): <strong>ca. ${estBrix.toFixed(1)} °Brix</strong><br>` +
+                    `💧 Nächtliches Kronen-VPD: <strong>${vpdNight.toFixed(2)} kPa</strong> &rarr; ${botrytisStatus}`;
+            }
+            ['sb_tday', 'sb_tnight', 'sb_rh', 'sb_gdd_target'].forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.addEventListener('input', calcStrawberry);
+            });
+            calcStrawberry();
+        })();
+        </script>
+        <!-- INW-LIVE-WIDGET-END -->
+
+<!-- INW-EEAT-BOX-START -->
+    <section id="inw-eeat-standard-block" style="margin-top: 32px; padding-top: 24px; border-top: 1px solid rgba(148, 163, 184, 0.3); box-sizing: border-box;">
+      <div class="inw-calculators-box" style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 12px; padding: 20px; margin-bottom: 24px;">
+        <h3 style="margin-top: 0; margin-bottom: 12px; font-size: 1.15rem; color: #065f46;">⚙️ Weiterführende Ingenieur-Rechner &amp; Deutsche Fachartikel</h3>
+        <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+          <a href="/smartfarm/vpd.html" style="display: inline-block; padding: 8px 14px; background: #0f172a; color: #38bdf8; border: 1px solid #334155; border-radius: 6px; text-decoration: none; font-size: 0.88rem; font-weight: 600;">💧 VPD &amp; Stomata-Rechner</a>
+          <a href="/crops/commercial-strawberry-greenhouse-climate-dli-guide.html" style="display: inline-block; padding: 8px 14px; background: #0f172a; color: #38bdf8; border: 1px solid #334155; border-radius: 6px; text-decoration: none; font-size: 0.88rem; font-weight: 600;">🍓 Erdbeer-Kulturleitfaden (Crop Atlas)</a>
+          <a href="article-06-naehrloesungsberechnung-stammbehaelter-ab-ec-duengung.html" style="display: inline-block; padding: 8px 14px; background: #0f172a; color: #38bdf8; border: 1px solid #334155; border-radius: 6px; text-decoration: none; font-size: 0.88rem; font-weight: 600;">🧪 DE Vol. 06: A/B-Nährlösungsberechnung</a>
+          <a href="article-33-praezisions-pflanzensteuerung-dif-vpd.html" style="display: inline-block; padding: 8px 14px; background: #0f172a; color: #38bdf8; border: 1px solid #334155; border-radius: 6px; text-decoration: none; font-size: 0.88rem; font-weight: 600;">📊 DE Vol. 33: Präzisions-Pflanzensteuerung (DIF)</a>
+          <a href="/tools/venlocad-3d.html" style="display: inline-block; padding: 8px 14px; background: #10b981; color: #022c22; border-radius: 6px; text-decoration: none; font-size: 0.88rem; font-weight: 700;">🏗️ VenloCAD 3D Architect</a>
+        </div>
+      </div>
+
+      <div class="inw-eeat-author-box" style="background: rgba(30, 41, 59, 0.06); border: 1px solid rgba(148, 163, 184, 0.35); border-radius: 12px; padding: 20px;">
+        <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; color: #059669; font-weight: 700; margin-bottom: 4px;">E-E-A-T Fachprüfung &amp; Autorenschaft</div>
+        <h3 style="margin: 0 0 8px 0; font-size: 1.1rem;">Inwoo Hwang — Horticultural &amp; CEA Systems Engineer, Inwoovation Lab</h3>
+        <p style="margin: 0; font-size: 0.92rem; line-height: 1.6; opacity: 0.9;">Spezialisiert auf Venlo-Gewächshausthermodynamik (DIN V 18599 &amp; DIN EN 13031-1), psychrometrische VPD- und Penman-Monteith-Transpirationskinetik, geschlossene Hydrokultur-Stöchiometrie sowie modellprädiktive Klimaregelung (MPC).</p>
+      </div>
+    </section>
+<!-- INW-EEAT-BOX-END -->
+    </div>
+</body>
+</html>
