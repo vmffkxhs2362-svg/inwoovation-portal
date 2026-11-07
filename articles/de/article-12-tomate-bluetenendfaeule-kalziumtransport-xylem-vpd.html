@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V4RYJBMEDE"></script>
+    <script>
+       if (navigator.webdriver || /HeadlessChrome|PhantomJS|Lighthouse|PTST|bot|crawler|spider|slurp/i.test(navigator.userAgent) || location.hostname === 'localhost' || location.hostname === '127.0.0.1' || (screen.width === 1366 && screen.height === 1366) || (screen.width === 800 && screen.height === 600) || screen.height >= 5000) { window['ga-disable-G-V4RYJBMEDE'] = true; }
+    window.dataLayer = window.dataLayer || [];
+       function gtag(){dataLayer.push(arguments);}
+       gtag('js', new Date());
+       gtag('config', 'G-V4RYJBMEDE');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blütenendfäule (BER) bei Gewächshaustomaten: Apoplastischer Xylem-Kalziumtransport, Kationen-Antagonismus &amp; Nächtliche Wurzeldruck-Steuerung | Inwoovation Lab</title>
+    <meta name="description" content="Ingenieurleitfaden (DE Vol. 12) zur Vermeidung der Blütenendfäule (Blossom-End Rot, BER) im Tomaten- und Paprikaanbau unter Glas: Apoplastische Ca2+-Xylempartitionierung, VPD-Spitzenpufferung, Kationen-Konkurrenz (K+/NH4+/Mg2+) und nächtlicher Wurzeldruck.">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="google-adsense-account" content="ca-pub-8597809158257497">
+    <link rel="canonical" href="https://inwoovation.com/articles/de/article-12-tomate-bluetenendfaeule-kalziumtransport-xylem-vpd.html" />
+    <link rel="alternate" hreflang="de" href="https://inwoovation.com/articles/de/article-12-tomate-bluetenendfaeule-kalziumtransport-xylem-vpd.html" />
+    <link rel="alternate" hreflang="en" href="https://inwoovation.com/articles/article-12-tomato-blossom-end-rot-calcium.html" />
+    <link rel="alternate" hreflang="x-default" href="https://inwoovation.com/articles/article-12-tomato-blossom-end-rot-calcium.html" />
+    <meta property="og:title" content="Blütenendfäule (BER) bei Gewächshaustomaten: Xylem-Kalziumtransport &amp; VPD-Steuerung | Inwoovation Lab">
+    <meta property="og:description" content="Ingenieurleitfaden (DE Vol. 12) zur Vermeidung der Blütenendfäule (BER) im Unterglas-Gemüsebau: Xylem-Kalziumpartitionierung, VPD-Pufferung und nächtlicher Wurzeldruck.">
+    <meta property="og:image" content="https://inwoovation.com/og-cover.jpg">
+    <meta property="og:url" content="https://inwoovation.com/articles/de/article-12-tomate-bluetenendfaeule-kalziumtransport-xylem-vpd.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Blütenendfäule (BER) bei Gewächshaustomaten: Xylem-Kalziumtransport &amp; VPD-Steuerung | Inwoovation Lab">
+    <meta name="twitter:description" content="Apoplastischer Xylem-Kalziumtransport, Kationen-Antagonismus und nächtliche Wurzeldruck-Steuerung im Venlo-Gewächshaus.">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8597809158257497" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+        .article-container { max-width: 860px; margin: 40px auto; padding: 36px; background: #ffffff; border-radius: 16px; border: 1px solid #e2e8f0; line-height: 1.85; color: #334155; }
+        .article-container h1 { font-size: 1.95rem; color: #0f172a; margin-bottom: 16px; border-bottom: 3px solid #10b981; padding-bottom: 12px; line-height: 1.32; }
+        .article-meta { color: #64748b; font-size: 0.92rem; margin-bottom: 28px; display: flex; flex-wrap: wrap; gap: 14px; background: #f8fafc; padding: 10px 16px; border-radius: 8px; font-weight: 500; }
+        .article-container h2 { font-size: 1.35rem; color: #065f46; margin-top: 34px; margin-bottom: 14px; background: #ecfdf5; padding: 9px 16px; border-left: 4px solid #10b981; border-radius: 4px; }
+        .article-container h3 { font-size: 1.12rem; color: #1e293b; margin-top: 24px; margin-bottom: 10px; font-weight: 700; }
+        .article-container p { margin-bottom: 18px; text-align: justify; }
+        .article-container ul, .article-container ol { margin-left: 24px; margin-bottom: 20px; }
+        .formula-box { background: #0f172a; color: #f8fafc; padding: 18px 22px; border-radius: 10px; font-family: 'Courier New', monospace; margin: 20px 0; overflow-x: auto; border-left: 4px solid #38bdf8; }
+        .data-table { width: 100%; border-collapse: collapse; margin: 22px 0; font-size: 0.92rem; }
+        .data-table th, .data-table td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+        .data-table th { background: #f1f5f9; color: #0f172a; font-weight: 700; }
+        .back-link { display: inline-block; margin-bottom: 18px; color: #10b981; text-decoration: none; font-weight: 600; }
+        .back-link:hover { text-decoration: underline; }
+        .lang-switch { display: inline-block; margin-left: 14px; font-size: 0.9rem; color: #0284c7; font-weight: 600; text-decoration: none; }
+    </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "TechArticle",
+          "headline": "Blütenendfäule (BER) bei Gewächshaustomaten: Apoplastischer Xylem-Kalziumtransport, Kationen-Antagonismus & Nächtliche Wurzeldruck-Steuerung",
+          "description": "Ingenieurleitfaden (DE Vol. 12) zur Vermeidung der Blütenendfäule (Blossom-End Rot, BER) im Tomaten- und Paprikaanbau unter Glas: Apoplastische Ca2+-Xylempartitionierung, VPD-Spitzenpufferung, Kationen-Konkurrenz und nächtlicher Wurzeldruck.",
+          "url": "https://inwoovation.com/articles/de/article-12-tomate-bluetenendfaeule-kalziumtransport-xylem-vpd.html",
+          "inLanguage": "de-DE",
+          "author": {
+            "@type": "Person",
+            "name": "Inwoo Hwang",
+            "jobTitle": "Horticultural & CEA Systems Engineer"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Inwoovation Lab",
+            "url": "https://inwoovation.com"
+          },
+          "datePublished": "2026-11-07",
+          "dateModified": "2026-11-07",
+          "mainEntityOfPage": "https://inwoovation.com/articles/de/article-12-tomate-bluetenendfaeule-kalziumtransport-xylem-vpd.html"
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Warum tritt Blütenendfäule (BER) bei Tomaten und Paprika trotz ausreichendem Kalziumgehalt in der Nährlösung auf?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Blütenendfäule ist fast nie ein absoluter Kalziummangel im Substrat, sondern eine biophysikalische Verteilungsstörung. Da Kalzium (Ca2+) im Phloem immobil ist und ausschließlich passiv mit dem Transpirationsstrom im Xylem transportiert wird, strömt bei hohem Mittags-VPD (> 1,5 kPa) über 95 % des Xylemwassers in die stark transpirierenden Laubblätter, während die kaum transpirierenden jungen Früchte (vor allem am distalen Blütenende) unter akutem lokalem Ca2+-Defizit leiden."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Welche Rolle spielt der nächtliche Wurzeldruck bei der Kalziumversorgung junger Tomatenfrüchte?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Während der Nacht ruht die stomatäre Blatttranspiration nahezu vollständig. Bei moderatem Substrat-EC (2,6–3,2 dS/m), einer Wurzelzonentemperatur von 18–20 °C und einem niedrigen nächtlichen Gewächshaus-VPD (0,25–0,45 kPa) baut die Wurzel aktiv einen positiven osmotischen Wurzeldruck auf, der kalziumreichen Xylemsaft gezielt in die wachsenden Fruchtrispen presst."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Wie beeinflusst das Kationenverhältnis (K+, NH4+, Mg2+ zu Ca2+) in der Steinwollematte das Risiko für Blütenendfäule?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Einwertige Kationen wie Ammonium (NH4+) und Kalium (K+) konkurrieren an der Wurzeloberfläche direkt mit zweiwertigem Kalzium (Ca2+) um die elektrochemische Aufnahme. Im Sommer sollte der NH4+-Anteil auf unter 5 % des Gesamtstickstoffs begrenzt und ein ausgewogenes K+:Ca2+-Äquivalentverhältnis von 1,4:1 bis 1,8:1 in der Dränlösung eingehalten werden."
+              }
+            }
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Inwoovation Lab",
+              "item": "https://inwoovation.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Precision CEA Articles",
+              "item": "https://inwoovation.com/guides.html"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Blütenendfäule (BER) & Xylem-Kalziumtransport bei Tomaten (DE Vol. 12)",
+              "item": "https://inwoovation.com/articles/de/article-12-tomate-bluetenendfaeule-kalziumtransport-xylem-vpd.html"
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+    <link rel="stylesheet" href="/css/global-ui-enhancements.css?v=20261107">
+    <script src="/js/global-search-palette.js?v=20261107" defer></script>
+</head>
+<body>
+<!-- INW-STD-NAV-START -->
+<nav class="inw-top-nav" aria-label="Main Navigation" style="background: #0f172a; border-bottom: 1px solid #1e293b; padding: 12px 20px; font-family: system-ui, -apple-system, sans-serif; box-sizing: border-box; width: 100%;">
+  <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px;">
+    <a href="/index.html" style="color: #10b981; font-weight: 800; font-size: 1.15rem; text-decoration: none; letter-spacing: -0.02em;">Inwoovation Lab</a>
+    <div style="display: flex; flex-wrap: wrap; gap: 14px; font-size: 0.9rem;">
+      <a href="/index.html" style="color: #e2e8f0; text-decoration: none;">Home</a>
+      <a href="/smartfarm/vpd.html" style="color: #e2e8f0; text-decoration: none;">Calculators</a>
+      <a href="/articles/index.html" style="color: #38bdf8; font-weight: 600; text-decoration: none;">Articles</a>
+      <a href="/wiki/index.html" style="color: #e2e8f0; text-decoration: none;">Wiki</a>
+      <a href="/climate/index.html" style="color: #e2e8f0; text-decoration: none;">Climate Hub</a>
+      <a href="/crops/index.html" style="color: #e2e8f0; text-decoration: none;">Crops</a>
+      <a href="/tools/venlocad-3d.html" style="color: #10b981; font-weight: 600; text-decoration: none;">VenloCAD 3D</a>
+      <button type="button" onclick="window.InwooPalette && window.InwooPalette.open()" style="background: rgba(15, 23, 42, 0.9); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.4); padding: 6px 12px; border-radius: 6px; font-size: 0.85rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">🔍 Search <kbd style="background: rgba(255,255,255,0.1); padding: 1px 5px; border-radius: 4px; font-size: 0.72rem;">Ctrl+K</kbd></button>
+      <a href="/about.html" style="color: #e2e8f0; text-decoration: none;">About</a>
+    </div>
+  </div>
+</nav>
+<!-- INW-STD-NAV-END -->
+    <div class="article-container">
+        <div>
+            <a href="../../guides.html" class="back-link">&larr; Zurück zur Übersicht (Engineering Guides)</a>
+            <a href="../article-12-tomato-blossom-end-rot-calcium.html" class="lang-switch">🌐 Read in English (EN Vol. 12)</a>
+        </div>
+
+        <h1>Blütenendfäule (BER) bei Gewächshaustomaten: Apoplastischer Xylem-Kalziumtransport, Kationen-Antagonismus &amp; Nächtliche Wurzeldruck-Steuerung</h1>
+
+        <div class="article-meta">
+            <span>📘 DE Serie Vol. 12</span>
+            <span>⏱️ Lesezeit: 6 Min.</span>
+            <span>🔬 Fachgebiet: Pflanzenernährung, Xylem-Biophysik &amp; Unterglas-Fruchtgemüsebau</span>
+            <span>📅 Aktualisiert: 07.11.2026</span>
+        </div>
+
+        <p>Die <strong>Blütenendfäule (engl. <em>Blossom-End Rot</em>, BER)</strong> ist eine der wirtschaftlich bedeutendsten nicht-parasitären (physiologischen) Fruchterkrankungen im erwerbsmäßigen Unterglasanbau von Rispen-, Cocktail- und Fleischtomaten (<em>Solanum lycopersicum</em>) sowie Blockpaprika (<em>Capsicum annuum</em>). Typischerweise zeigen sich 10 bis 21 Tage nach der Anthese (Blüte) – genau in der Phase der stärksten Zellstreckung der jungen Frucht – zunächst glasige, wässrige Flecken am distalen Blütenpol, die rasch zu eingesunkenen, lederartigen, dunkelbraunen bis schwarzen Nekrosen eintrocknen. Obwohl das Schadbild durch einen lokalen Mangel an zweiwertigen Kalziumionen (Ca<sup>2+</sup>) im distalen Perikarp ausgelöst wird, liegt im modernen Hydrokultur-Gewächshaus fast nie ein absoluter Kalziummangel in der Tropflösung vor. Vielmehr handelt es sich um ein <strong>gekoppeltes hydraulisch-thermodynamisches Verteilungsproblem zwischen Blatt-Transpirationssog und Fruchtwachstumsrate</strong>.</p>
+
+        <h2>1. Zelluläre Pathophysiologie: Pektin-Quervernetzung, Plasmamembran-Integrität &amp; Phloem-Immobilität</h2>
+        <p>Auf zellulärer Ebene erfüllt das zweiwertige Kation Ca<sup>2+</sup> zwei unersetzliche Strukturfunktionen in der schnell wachsenden Beerenfrucht:</p>
+        <ul>
+            <li><strong>Stabilisierung der Mittellamelle (Calciumpektat):</strong> In der primären Zellwand vernetzt Ca<sup>2+</sup> die freien Carboxylgruppen (-COO<sup>-</sup>) der Polygalacturonsäureketten (Pektine) nach dem sogenannten „Egg-Box-Modell“. Gleichzeitig hemmt freies apoplastisches Ca<sup>2+</sup> das wandauflösende Enzym Polygalacturonase.</li>
+            <li><strong>Abdichtung der Plasmamembran (Plasmalemma):</strong> Ca<sup>2+</sup> überbrückt negativ geladene Phospholipid-Kopfgruppen und Proteine an der Außenseite der Zellmembran. Sinkt die lokale apoplastische Ca<sup>2+</sup>-Konzentration im distalen Fruchtgewebe während einer Strahlungsspitze unter den kritischen Schwellenwert von ca. 0,10–0,15 mmol L<sup>-1</sup>, verliert die Membran ihre Semipermeabilität: Zellsaft tritt in den Apoplasten aus (glasige Verfärbung), woraufhin das Parenchymgewebe kollabiert und nekrotisiert.</li>
+            <li><strong>Strikte Phloem-Immobilität:</strong> Anders als Kalium (K<sup>+</sup>), Magnesium (Mg<sup>2+</sup>), Phosphor oder Stickstoff, die über den Assimilatstrom im Siebröhrensystem (Phloem) gemeinsam mit Saccharose in die Frucht gepumpt werden, ist Ca<sup>2+</sup> im Phloem nahezu vollständig immobil. Einmal in ein älteres Laubblatt eingelagertes Kalzium kann physiologisch <strong>nicht</strong> mehr in junge Früchte umverlagert werden.</li>
+        </ul>
+
+        <div class="formula-box">
+J_Ca,Frucht = J_Xylem,ges * [Ca2+]_Xylem * (g_Frucht / (g_Blatt + g_Frucht))   [mmol Ca m^-2 h^-1]
+Ψ_Wurzel = Ψ_osmotisch + Ψ_Matrix ≈ -0,036 * EC_Substrat (bei 25 °C)            [MPa]
+BER_Risiko ∝ (E_Blatt * R_Fruchtstreckung) / (P_Wurzeldruck,Nacht * a_Ca2+)
+        </div>
+
+        <h2>2. Hydraulische Konkurrenz im Xylem: Warum hohe VPD-Spitzen die Frucht aushungern</h2>
+        <p>Da Kalzium ausschließlich passiv im apoplastischen Wasserstrom der Holzgefäße (Xylem) mitgeführt wird, folgt seine Verteilung im Spross strikt den hydraulischen Leitfähigkeiten und Transpirationsraten der einzelnen Organe:</p>
+        <ol>
+            <li><strong>Asymmetrie der Spaltöffnungen (Stomata):</strong> Während das Laubdach einer hochgezogenen Tomatenkultur eine hohe Stomatadichte und eine große transpirierende Blattfläche (LAI = 2,8–3,5 m<sup>2</sup> m<sup>-2</sup>) besitzt, weist die junge Tomatenfrucht eine wachsartige Kutikula ohne funktionsfähige Stomata auf. Ihre Kutikulartranspiration beträgt weniger als 2 bis 5 % der Blatttranspiration.</li>
+            <li><strong>Mittags-VPD-Stress (&gt; 1,5 kPa) und Xylem-Rückfluss:</strong> Steigt an strahlungsreichen Frühjahrs- oder Sommertagen das Dampfdruckdefizit (VPD) im Gewächshaus über 1,5–1,8 kPa an, zieht der enorme Transpirationssog der Blätter nahezu 96–99 % des gesamten Xylemwasserstroms in das Laubdach ab. Gleichzeitig schrumpft die anatomische Querschnittsfläche funktionstüchtiger Xylemgefäße im distalen Drittel der Tomatenfrucht ab dem 12. Tag nach der Blüte stark, während die Versorgung der Frucht zunehmend auf das (kalziumarme) Phloem umschaltet.</li>
+            <li><strong>Assimilat-Wachstumsbeschleunigung bei hoher Temperatur:</strong> Hohe Fruchttemperaturen (&gt; 26 °C) und hohe PAR-Einstrahlung beschleunigen die Phloem-Zuckereinlagerung und die Zellstreckung der Frucht. Wächst das Fruchtvolumen schneller als Xylem-Kalzium nachgeliefert werden kann, reißt die Pektinmatrix am Blütenpol auf.</li>
+        </ol>
+
+        <h2>3. Drei-Säulen-Ingenieurstrategie zur 100%igen BER-Prävention im Venlo-Gewächshaus</h2>
+        <p>In der modernen deutschen und niederländischen Unterglas-Kulturführung (nach KTBL- und Weihenstephaner Richtwerten) wird Blütenendfäule nicht durch reines Nachdüngen von Kalziumnitrat bekämpft, sondern über drei gekoppelte Regelkreise verhindert:</p>
+
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Steuerungsebene</th>
+                    <th>Physikalischer Regelparameter</th>
+                    <th>Kritische Gefahrenschwelle</th>
+                    <th>Sollwert (Zielbereich)</th>
+                    <th>Technische Stellgröße im Gewächshaus</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>1. Mittags-Mikroklima (Blattsog-Dämpfung)</strong></td>
+                    <td><code>VPD_Luft / VPD_Blatt</code></td>
+                    <td><code>&gt; 1,50 kPa (RH &lt; 52 %)</code></td>
+                    <td><code>0,85 – 1,25 kPa (RH 65–74 %)</code></td>
+                    <td><code>70-bar-Hochdrucknebel + Schattierschirm ab 650 W/m²</code></td>
+                </tr>
+                <tr>
+                    <td><strong>2. Wurzelzonen-Osmose (Steinwolle / Kokos)</strong></td>
+                    <td><code>EC_Matte (Porenwasser)</code></td>
+                    <td><code>&gt; 4,5 dS/m (Ψ &lt; -0,16 MPa)</code></td>
+                    <td><code>2,8 – 3,6 dS/m (Drän 30–40 %)</code></td>
+                    <td><code>Vorverlegung 1. Gabe + kürzere Strahlungsintervalle (80 J/cm²)</code></td>
+                </tr>
+                <tr>
+                    <td><strong>3. Kationen-Stöchiometrie (Antagonismus)</strong></td>
+                    <td><code>K⁺ : Ca²⁺ / NH₄⁺-Anteil</code></td>
+                    <td><code>K:Ca &gt; 2,4:1 oder NH₄⁺ &gt; 10 %</code></td>
+                    <td><code>K:Ca = 1,5:1 | NH₄⁺ &le; 4 %</code></td>
+                    <td><code>Reduktion K₂SO₄ / NH₄NO₃ bei Sommerstrahlung; Ca²⁺ ≥ 5,5 mmol/L</code></td>
+                </tr>
+                <tr>
+                    <td><strong>4. Nächtlicher Wurzeldruck (Vornacht-Phase)</strong></td>
+                    <td><code>VPD_Nacht &amp; T_Substrat</code></td>
+                    <td><code>VPD_Nacht &gt; 0,75 kPa (zu trocken)</code></td>
+                    <td><code>VPD 0,25–0,45 kPa | T_Matte 19 °C</code></td>
+                    <td><code>Später Abendschluss ohne Überheizen; aktiver Xylemdruck in Frucht</code></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Praxis-Fokus: Nächtlicher Wurzeldruck als „biologische Kalziumpumpe“</h3>
+        <p>Da junge Früchte tagsüber im Wettbewerb um den Xylemstrom gegen die Blätter unterliegen, findet bis zu <strong>60–75 % des effektiven Kalziumtransports in die Tomatenfrucht während der Nacht und in den frühen Morgenstunden</strong> statt. Wenn die Stomata der Blätter geschlossen sind und das nächtliche VPD im Gewächshaus zwischen 0,25 und 0,45 kPa (ca. 80–86 % relative Luftfeuchte bei 17–18 °C) gehalten wird, pumpt das Wurzelsystem durch aktive Ionenaufnahme in den Zentralzylinder osmotisch Wasser nach oben. Dieser positive hydrostatische <strong>Wurzeldruck (0,08 bis 0,20 MPa)</strong> drückt Ca<sup>2+</sup>-reichen Xylemsaft direkt in die kaum transpirierenden jungen Früchte. Ein zu hoher EC-Wert in der Steinwollematte (&gt; 4,5–5,0 dS m<sup>-1</sup>) oder eine zu starke nächtliche Rohrheizung (VPD &gt; 0,8 kPa) zerstört diesen Wurzeldruck sofort und löst binnen weniger Tage eine Welle von Blütenendfäule aus.</p>
+
+        <!-- INW-LIVE-WIDGET-START -->
+        <div class="live-calc-widget" style="background: #f8fafc; border: 2px solid #10b981; border-radius: 12px; padding: 24px; margin: 30px 0;">
+            <h3 style="margin-top: 0; color: #065f46;">🍅 Interaktiver Xylem-Kalziumfluss- &amp; Blütenendfäule-(BER)-Risiko-Simulator (DE Vol. 12)</h3>
+            <p style="font-size: 0.92rem; color: #475569; margin-bottom: 16px;">Berechnen Sie live den xylemseitigen Kalziumanteil der Frucht, das osmotische Wurzelzonenpotenzial (MPa) sowie den resultierenden Blütenendfäule-Risikoindex unter Ihren aktuellen Klima- und Substratbedingungen:</p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(195px, 1fr)); gap: 14px; margin-bottom: 18px;">
+                <div>
+                    <label style="display:block; font-weight:600; font-size:0.86rem; margin-bottom:4px;">Mittags-VPD im Bestand (kPa)</label>
+                    <input type="number" id="ber_vpd_day" value="1.15" min="0.3" max="3.0" step="0.05" style="width:100%; padding:8px; border:1px solid #cbd5e1; border-radius:6px;">
+                </div>
+                <div>
+                    <label style="display:block; font-weight:600; font-size:0.86rem; margin-bottom:4px;">Nacht-VPD (Wurzeldruckphase, kPa)</label>
+                    <input type="number" id="ber_vpd_night" value="0.35" min="0.1" max="1.5" step="0.05" style="width:100%; padding:8px; border:1px solid #cbd5e1; border-radius:6px;">
+                </div>
+                <div>
+                    <label style="display:block; font-weight:600; font-size:0.86rem; margin-bottom:4px;">Substrat-/Drän-EC in der Matte (dS/m)</label>
+                    <input type="number" id="ber_ec_slab" value="3.2" min="1.2" max="7.5" step="0.1" style="width:100%; padding:8px; border:1px solid #cbd5e1; border-radius:6px;">
+                </div>
+                <div>
+                    <label style="display:block; font-weight:600; font-size:0.86rem; margin-bottom:4px;">K⁺ : Ca²⁺ Äquivalentverhältnis</label>
+                    <input type="number" id="ber_k_ca" value="1.6" min="0.8" max="3.5" step="0.1" style="width:100%; padding:8px; border:1px solid #cbd5e1; border-radius:6px;">
+                </div>
+            </div>
+            <div id="ber_output" style="background: #0f172a; color: #f8fafc; padding: 16px; border-radius: 8px; font-family: monospace; font-size: 0.93rem; line-height: 1.7;"></div>
+        </div>
+        <script>
+        (function() {
+            function calcBerRisk() {
+                const vpdDay = parseFloat(document.getElementById('ber_vpd_day').value) || 1.15;
+                const vpdNight = parseFloat(document.getElementById('ber_vpd_night').value) || 0.35;
+                const ecSlab = parseFloat(document.getElementById('ber_ec_slab').value) || 3.2;
+                const kCa = parseFloat(document.getElementById('ber_k_ca').value) || 1.6;
+
+                // Osmotic potential in root zone (MPa)
+                const psiOsm = -0.036 * ecSlab;
+                // Relative nighttime root pressure efficiency (0..100%)
+                const rootPressEff = Math.max(5, Math.min(100, 100 - Math.max(0, (ecSlab - 2.8) * 18) - Math.max(0, (vpdNight - 0.35) * 55)));
+                // Estimated distal fruit Ca concentration (mmol/kg DW, critical threshold = 18.0)
+                const fruitCa = Math.max(6.0, 28.5 - Math.max(0, (vpdDay - 0.9) * 7.2) - Math.max(0, (ecSlab - 2.8) * 2.6) - Math.max(0, (kCa - 1.5) * 4.2) + (rootPressEff - 60) * 0.11);
+                // Composite BER risk score (0..100)
+                const riskScore = Math.min(99, Math.max(2, Math.round(100 - (fruitCa / 26.0) * 85)));
+
+                let statusHtml = '';
+                if (fruitCa >= 19.5) {
+                    statusHtml = '<span style="color:#34d399;">✅ NIEDRIGES RISIKO (Optimale Xylem-Ca²⁺-Versorgung der jungen Fruchtrispen)</span>';
+                } else if (fruitCa >= 15.5) {
+                    statusHtml = '<span style="color:#fbbf24;">⚠️ MITTLERES RISIKO (Latenter Ca²⁺-Engpass bei Strahlungsspitzen — Drän-EC &amp; Mittags-VPD prüfen!)</span>';
+                } else {
+                    statusHtml = '<span style="color:#f87171;">🚨 AKUTE BER-WARNUNG! Distales Perikarp unterversorgt (&lt; 15,5 mmol/kg TM) — Sofort Matten-EC spülen &amp; Nacht-Wurzeldruck fördern!</span>';
+                }
+
+                document.getElementById('ber_output').innerHTML =
+                    `💧 Osmotisches Wurzelpotenzial (Ψ_osm): <strong>${psiOsm.toFixed(3)} MPa</strong> | Nächtliche Wurzeldruck-Effizienz: <strong>${rootPressEff.toFixed(0)} %</strong><br>` +
+                    `🧬 Prognostizierte Ca²⁺-Konzentration im distalen Fruchtgewebe: <strong>${fruitCa.toFixed(1)} mmol/kg TM</strong> (Kritischer Grenzwert: 18,0 mmol/kg TM)<br>` +
+                    `📊 Blütenendfäule-Risikoindex (BER-Score): <strong>${riskScore} / 100</strong><br>` +
+                    `🛡️ Diagnose: ${statusHtml}`;
+            }
+            ['ber_vpd_day', 'ber_vpd_night', 'ber_ec_slab', 'ber_k_ca'].forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.addEventListener('input', calcBerRisk);
+            });
+            calcBerRisk();
+        })();
+        </script>
+        <!-- INW-LIVE-WIDGET-END -->
+
+<!-- INW-EEAT-BOX-START -->
+    <section id="inw-eeat-standard-block" style="margin-top: 32px; padding-top: 24px; border-top: 1px solid rgba(148, 163, 184, 0.3); box-sizing: border-box;">
+      <div class="inw-calculators-box" style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 12px; padding: 20px; margin-bottom: 24px;">
+        <h3 style="margin-top: 0; margin-bottom: 12px; font-size: 1.15rem; color: #065f46;">⚙️ Weiterführende Ingenieur-Rechner &amp; Deutsche Fachartikel</h3>
+        <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+          <a href="/tools/crop-transpiration-calcium-blossom-end-rot-risk-model.html" style="display: inline-block; padding: 8px 14px; background: #0f172a; color: #38bdf8; border: 1px solid #334155; border-radius: 6px; text-decoration: none; font-size: 0.88rem; font-weight: 600;">🍅 Xylem-Kalzium &amp; BER-Risikorechner</a>
+          <a href="/crops/greenhouse-tomato-microclimate-vpd-steering-guide.html" style="display: inline-block; padding: 8px 14px; background: #0f172a; color: #38bdf8; border: 1px solid #334155; border-radius: 6px; text-decoration: none; font-size: 0.88rem; font-weight: 600;">🌱 Tomaten-Klimasteuerung (Crop Atlas)</a>
+          <a href="article-06-naehrloesungsberechnung-stammbehaelter-ab-ec-duengung.html" style="display: inline-block; padding: 8px 14px; background: #0f172a; color: #38bdf8; border: 1px solid #334155; border-radius: 6px; text-decoration: none; font-size: 0.88rem; font-weight: 600;">🧪 DE Vol. 06: A/B-Nährlösungsberechnung</a>
+          <a href="article-38-xylem-kalzium-bluetenendfaeule.html" style="display: inline-block; padding: 8px 14px; background: #0f172a; color: #38bdf8; border: 1px solid #334155; border-radius: 6px; text-decoration: none; font-size: 0.88rem; font-weight: 600;">📘 DE Vol. 38: Xylem-Kalzium-Vertiefung</a>
+          <a href="/tools/venlocad-3d.html" style="display: inline-block; padding: 8px 14px; background: #10b981; color: #022c22; border-radius: 6px; text-decoration: none; font-size: 0.88rem; font-weight: 700;">🏗️ VenloCAD 3D Architect</a>
+        </div>
+      </div>
+
+      <div class="inw-eeat-author-box" style="background: rgba(30, 41, 59, 0.06); border: 1px solid rgba(148, 163, 184, 0.35); border-radius: 12px; padding: 20px;">
+        <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; color: #059669; font-weight: 700; margin-bottom: 4px;">E-E-A-T Fachprüfung &amp; Autorenschaft</div>
+        <h3 style="margin: 0 0 8px 0; font-size: 1.1rem;">Inwoo Hwang — Horticultural &amp; CEA Systems Engineer, Inwoovation Lab</h3>
+        <p style="margin: 0; font-size: 0.92rem; line-height: 1.6; opacity: 0.9;">Spezialisiert auf Venlo-Gewächshausthermodynamik (DIN V 18599 &amp; DIN EN 13031-1), psychrometrische VPD- und Penman-Monteith-Transpirationskinetik, geschlossene Hydrokultur-Stöchiometrie sowie modellprädiktive Klimaregelung (MPC).</p>
+      </div>
+    </section>
+<!-- INW-EEAT-BOX-END -->
+    </div>
+
+  <footer style="max-width:1100px; margin:40px auto 24px; padding:0 20px; text-align:center;">
+    <div class="inw-trust-links" style="margin-top:16px; padding-top:14px; border-top:1px solid rgba(148,163,184,0.16); display:flex; justify-content:center; align-items:center; flex-wrap:wrap; gap:16px; font-size:0.84rem; color:#94a3b8;">
+      <a href="/index.html" style="color:#94a3b8; text-decoration:none; font-weight:600;">Home</a>
+      <a href="/about.html" style="color:#94a3b8; text-decoration:none; font-weight:600;">About Lab</a>
+      <a href="/contact.html" style="color:#94a3b8; text-decoration:none; font-weight:600;">Contact</a>
+      <a href="/privacy-policy.html" style="color:#94a3b8; text-decoration:none; font-weight:600;">Privacy Policy</a>
+      <a href="/terms-of-service.html" style="color:#94a3b8; text-decoration:none; font-weight:600;">Terms of Service</a>
+    </div>
+  </footer>
+</body>
+</html>
