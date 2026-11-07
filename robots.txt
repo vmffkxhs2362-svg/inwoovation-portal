@@ -1,5 +1,15 @@
+User-agent: Mediapartners-Google
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+Disallow: /smartfarm/_template.html
+Disallow: /wiki/_wiki_template.html
+
 User-agent: *
 Allow: /
+Disallow: /smartfarm/_template.html
+Disallow: /wiki/_wiki_template.html
 
 Sitemap: https://inwoovation.com/sitemap.xml
 # AI / LLM Indexing Guide: https://inwoovation.com/llms.txt

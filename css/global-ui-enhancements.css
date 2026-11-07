@@ -742,3 +742,88 @@ html, body {
     display: none !important;
   }
 }
+
+
+/* 5. GDPR & Google AdSense Cookie Consent Banner */
+#inw-gdpr-consent-bar {
+  position: fixed;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  max-width: 920px;
+  margin: 0 auto;
+  z-index: 9995;
+  background: rgba(15, 23, 42, 0.96);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  border-radius: 14px;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.6);
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  color: #cbd5e1;
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+#inw-gdpr-consent-bar a {
+  color: #38bdf8;
+  text-decoration: underline;
+  font-weight: 600;
+}
+.inw-gdpr-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+.inw-gdpr-btn-accept {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+.inw-gdpr-btn-accept:hover {
+  transform: translateY(-1px);
+}
+.inw-gdpr-btn-essential {
+  background: rgba(30, 41, 59, 0.9);
+  color: #94a3b8;
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.inw-gdpr-btn-essential:hover {
+  color: #f8fafc;
+  border-color: #94a3b8;
+}
+@media (max-width: 640px) {
+  #inw-gdpr-consent-bar {
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    padding: 12px 14px;
+    font-size: 0.76rem;
+  }
+  .inw-gdpr-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}
+@media print {
+  #inw-gdpr-consent-bar {
+    display: none !important;
+  }
+}

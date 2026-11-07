@@ -406,10 +406,52 @@ def fix_social_image(html):
 
 def fix_home_schema(html, rel_path):
     """Homepage ResearchOrganization: logo pointed at a non-existent file; sameAs listed own dead host."""
+    if rel_path == "about.html":
+        html = html.replace('<div class="stat-number">42</div>\r\n                    <div class="stat-label">Engineering Tools</div>',
+                            '<div class="stat-number">330+</div>\r\n                    <div class="stat-label">Live Engineering Pages</div>')
+        html = html.replace('<div class="stat-number">74</div>\r\n                    <div class="stat-label">Technical Articles</div>',
+                            '<div class="stat-number">79</div>\r\n                    <div class="stat-label">Monographs (95 EN/DE/JA Editions)</div>')
+        return html
     if rel_path != "index.html":
         return html
     html = html.replace('"logo": "https://inwoovation.com/cover.png"', '"logo": "https://inwoovation.com/og-cover.jpg"')
     return re.sub(r',\s*"sameAs":\s*\[[^\]]*\]', "", html, count=1)
+
+
+def fix_embed_widgets(html, rel_path):
+    """Raw iframe widgets in embed/ (except embed/index.html) must be noindex and must not load adsbygoogle.js."""
+    if not rel_path.startswith("embed/") or os.path.basename(rel_path) == "index.html":
+        return html
+    html = re.sub(r'\s*<meta\s+name=["\']google-adsense-account["\'][^>]*>', "", html, flags=re.I)
+    html = re.sub(r'\s*<script[^>]*adsbygoogle\.js[^>]*></script>', "", html, flags=re.I)
+    if not re.search(r'name=["\']robots["\'][^>]*noindex', html, re.I):
+        html = re.sub(r"(<head[^>]*>)", r'\1\n  <meta name="robots" content="noindex, nofollow">', html, count=1, flags=re.I)
+    return html
+
+
+TRUST_FOOTER_BAR = """    <div class="inw-trust-links" style="margin-top:16px; padding-top:14px; border-top:1px solid rgba(148,163,184,0.16); display:flex; justify-content:center; align-items:center; flex-wrap:wrap; gap:16px; font-size:0.84rem; color:#94a3b8;">
+      <a href="/index.html" style="color:#94a3b8; text-decoration:none; font-weight:600;">Home</a>
+      <a href="/about.html" style="color:#94a3b8; text-decoration:none; font-weight:600;">About Lab</a>
+      <a href="/contact.html" style="color:#94a3b8; text-decoration:none; font-weight:600;">Contact</a>
+      <a href="/privacy-policy.html" style="color:#94a3b8; text-decoration:none; font-weight:600;">Privacy Policy</a>
+      <a href="/terms-of-service.html" style="color:#94a3b8; text-decoration:none; font-weight:600;">Terms of Service</a>
+    </div>"""
+
+
+def fix_trust_footer(html, rel_path):
+    """Ensure every live content page contains crawlable links to About, Contact, Privacy Policy, and Terms of Service."""
+    has_priv = bool(re.search(r'href=["\'][^"\']*?(?:privacy-policy\.html|privacy\.html|/privacy(?:["\'#?]|$))', html, re.I)) or ("privacy" in rel_path)
+    has_terms = bool(re.search(r'href=["\'][^"\']*?(?:terms-of-service\.html|terms\.html|/terms(?:["\'#?]|$))', html, re.I)) or ("terms" in rel_path)
+    has_about = bool(re.search(r'href=["\'][^"\']*?(?:about\.html|/about(?:["\'#?]|$))', html, re.I)) or ("about" in rel_path)
+    has_contact = bool(re.search(r'href=["\'][^"\']*?(?:contact\.html|/contact(?:["\'#?]|$))', html, re.I)) or ("contact" in rel_path)
+    if has_priv and has_terms and has_about and has_contact:
+        return html
+    if re.search(r"</footer>", html, re.I):
+        return re.sub(r"(</footer>)", lambda m: TRUST_FOOTER_BAR + "\n  " + m.group(1), html, count=1, flags=re.I)
+    if re.search(r"</body>", html, re.I):
+        footer_wrap = f'\n  <footer style="max-width:1100px; margin:40px auto 24px; padding:0 20px; text-align:center;">\n{TRUST_FOOTER_BAR}\n  </footer>\n'
+        return re.sub(r"(</body>)", lambda m: footer_wrap + m.group(1), html, count=1, flags=re.I)
+    return html
 
 
 def is_live(rel_path, html):
@@ -421,6 +463,7 @@ def is_live(rel_path, html):
 def transform(rel_path, html):
     html = fix_dead_host(html)
     html = fix_html_math_and_escapes(html)
+    html = fix_embed_widgets(html, rel_path)
     if not is_live(rel_path, html):
         return html
     html = fix_claims(html)
@@ -433,6 +476,7 @@ def transform(rel_path, html):
     html = fix_opengraph(html, rel_path)
     html = fix_social_image(html)
     html = fix_img_alt(html)
+    html = fix_trust_footer(html, rel_path)
     return fix_home_schema(html, rel_path)
 
 

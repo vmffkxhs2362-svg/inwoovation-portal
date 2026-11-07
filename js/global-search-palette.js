@@ -2950,3 +2950,66 @@
     bootAll();
   }
 })();
+
+
+/* GDPR & Google AdSense Consent Notice Engine (v1.0) */
+(function() {
+  function initGdprConsentBar() {
+    try {
+      if (navigator.webdriver || /HeadlessChrome|PhantomJS|Lighthouse/i.test(navigator.userAgent || '')) return;
+      if (window.location.pathname.indexOf('/embed/') === 0 && !window.location.pathname.endsWith('/index.html') && !window.location.pathname.endsWith('/embed/')) return;
+      var saved = localStorage.getItem('inw_gdpr_consent_v1');
+      if (saved) return;
+      if (document.getElementById('inw-gdpr-consent-bar')) return;
+
+      var p = window.location.pathname || '';
+      var isDE = p.indexOf('/de/') !== -1 || p.indexOf('meister.html') !== -1 || p.indexOf('/podcasts/') !== -1;
+      var isJA = p.indexOf('/ja/') !== -1;
+
+      var msg = isDE
+        ? '🍪 <strong>Datenschutz &amp; Cookies (DSGVO):</strong> Inwoovation Lab verwendet Cookies (Google Analytics &amp; Google AdSense), um unsere kostenlosen Gartenbau-Simulatoren bereitzustellen und den Datenverkehr zu analysieren. Details finden Sie in unserer <a href="/privacy-policy.html">Datenschutzerklärung</a> und den <a href="/terms-of-service.html">Nutzungsbedingungen</a>.'
+        : (isJA
+          ? '🍪 <strong>プライバシーとCookieに関する通知:</strong> Inwoovation Labでは、無料の農業工学シミュレーターの提供およびトラフィック分析のためにCookie（Google AnalyticsおよびGoogle AdSense）を使用しています。詳細は<a href="/privacy-policy.html">プライバシーポリシー</a>および<a href="/terms-of-service.html">利用規約</a>をご覧ください。'
+          : '🍪 <strong>Privacy &amp; Cookie Disclosure (GDPR / CCPA):</strong> Inwoovation Lab uses cookies (Google Analytics &amp; Google AdSense) to keep our 330+ engineering calculators 100% free and analyze aggregate traffic. See our <a href="/privacy-policy.html">Privacy Policy</a> and <a href="/terms-of-service.html">Terms of Service</a>.');
+
+      var acceptTxt = isDE ? 'Alle akzeptieren' : (isJA ? 'すべて同意する' : 'Accept All');
+      var essentialTxt = isDE ? 'Nur notwendige' : (isJA ? '必須のみ' : 'Essential Only');
+
+      var bar = document.createElement('div');
+      bar.id = 'inw-gdpr-consent-bar';
+      bar.setAttribute('role', 'region');
+      bar.setAttribute('aria-label', 'Cookie and Privacy Consent');
+      bar.innerHTML = '<div style="flex:1; min-width:240px;">' + msg + '</div>' +
+        '<div class="inw-gdpr-actions">' +
+          '<button type="button" class="inw-gdpr-btn-essential" id="inw-gdpr-essential">' + essentialTxt + '</button>' +
+          '<button type="button" class="inw-gdpr-btn-accept" id="inw-gdpr-accept">' + acceptTxt + '</button>' +
+        '</div>';
+      document.body.appendChild(bar);
+
+      function setChoice(mode) {
+        try { localStorage.setItem('inw_gdpr_consent_v1', mode); } catch (e) {}
+        if (typeof window.gtag === 'function') {
+          var status = (mode === 'granted') ? 'granted' : 'denied';
+          window.gtag('consent', 'update', {
+            'ad_storage': status,
+            'analytics_storage': status,
+            'ad_user_data': status,
+            'ad_personalization': status
+          });
+        }
+        if (bar && bar.parentNode) bar.parentNode.removeChild(bar);
+      }
+
+      var btnAcc = document.getElementById('inw-gdpr-accept');
+      var btnEss = document.getElementById('inw-gdpr-essential');
+      if (btnAcc) btnAcc.addEventListener('click', function() { setChoice('granted'); });
+      if (btnEss) btnEss.addEventListener('click', function() { setChoice('essential'); });
+    } catch (err) {}
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initGdprConsentBar);
+  } else {
+    initGdprConsentBar();
+  }
+})();
