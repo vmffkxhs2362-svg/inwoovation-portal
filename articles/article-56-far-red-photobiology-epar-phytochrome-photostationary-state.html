@@ -52,7 +52,7 @@
         "url": "https://inwoovation.com"
       },
       "datePublished": "2026-09-01",
-      "dateModified": "2026-11-05",
+      "dateModified": "2026-11-08",
       "mainEntityOfPage": "https://inwoovation.com/articles/article-56-far-red-photobiology-epar-phytochrome-photostationary-state.html"
     },
     {
@@ -75,6 +75,35 @@
           "position": 3,
           "name": "Far-Red Photobiology (ePAR 400–750 nm) & Phytochrome Photostationary State (PSS) in Greenhouse Horticulture",
           "item": "https://inwoovation.com/articles/article-56-far-red-photobiology-epar-phytochrome-photostationary-state.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do you convert PPFD (µmol/m²/s) into Daily Light Integral (DLI in mol/m²/day)?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Multiply canopy PPFD (µmol·m⁻²·s⁻¹) by photoperiod hours per day, then multiply by 0.0036 (since 3,600 seconds/hour divided by 1,000,000 µmol/mol equals 0.0036). For example, 250 µmol·m⁻²·s⁻¹ for 16 hours yields exactly 14.4 mol·m⁻²·d⁻¹."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What DLI target is required for commercial greenhouse tomatoes, strawberries, and leafy greens?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Butterhead and crisphead lettuce require 14 to 17 mol·m⁻²·d⁻¹ (above which tipburn risk rises without vertical airflow), greenhouse strawberries require 15 to 22 mol·m⁻²·d⁻¹, and high-wire fruiting tomatoes and bell peppers require 22 to 35+ mol·m⁻²·d⁻¹."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you calculate supplemental LED fixture wattage and electricity ROI per square meter?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Divide the required supplemental PPFD (µmol·m⁻²·s⁻¹) by the fixture photosynthetic photon efficacy (PPE, typically 2.8 to 3.6 µmol/J) to obtain electrical power density (W/m²), then multiply by operating hours and kWh tariff."
+          }
         }
       ]
     }
@@ -236,6 +265,17 @@
   
 
 
+
+
+<!-- INW-LIVE-WIDGET-START -->
+<section class="inw-live-widget-sandbox" style="margin: 32px 0; padding: 24px; background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 16px; box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);">
+  <h3 style="margin: 0 0 8px 0; font-size: 1.2rem; color: #38bdf8; font-weight: 800;">☀️ Interactive Live Daily Light Integral (DLI) & Photoperiod Simulator</h3>
+  <p style="margin: 0 0 16px 0; font-size: 0.92rem; color: #94a3b8; line-height: 1.6;">Test canopy PPFD (µmol·m⁻²·s⁻¹) and photoperiod hours below to compute cumulative daily PAR photon flux (mol·m⁻²·d⁻¹).</p>
+  <div style="display: flex; justify-content: center; width: 100%; overflow: hidden;">
+    <iframe src="/embed/dli-calculator.html" width="380" height="390" loading="lazy" title="☀️ Interactive Live Daily Light Integral (DLI) & Photoperiod Simulator" style="border: none; border-radius: 14px; max-width: 100%;"></iframe>
+  </div>
+</section>
+<!-- INW-LIVE-WIDGET-END -->
 
 <!-- INW-EEAT-BOX-START -->
     <section id="inw-eeat-standard-block" style="margin-top: 32px; padding-top: 24px; border-top: 1px solid rgba(148, 163, 184, 0.3); box-sizing: border-box;">

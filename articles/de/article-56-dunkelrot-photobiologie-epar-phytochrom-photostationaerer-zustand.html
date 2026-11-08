@@ -52,7 +52,7 @@
         "url": "https://inwoovation.com"
       },
       "datePublished": "2026-09-01",
-      "dateModified": "2026-11-05",
+      "dateModified": "2026-11-08",
       "mainEntityOfPage": "https://inwoovation.com/articles/de/article-56-dunkelrot-photobiologie-epar-phytochrom-photostationaerer-zustand.html"
     },
     {
@@ -75,6 +75,35 @@
           "position": 3,
           "name": "Dunkelrot-Photobiologie (ePAR 400–750 nm) & Phytochrom-Photostationärer Zustand (PSS) im Unterglasanbau",
           "item": "https://inwoovation.com/articles/de/article-56-dunkelrot-photobiologie-epar-phytochrom-photostationaerer-zustand.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Wie rechnet man PPFD (µmol/m²/s) in das tägliche Lichtintegral (DLI in mol/m²/Tag) um?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Multiplizieren Sie die PPFD (µmol·m⁻²·s⁻¹) mit den täglichen Belichtungsstunden und dem Faktor 0,0036 (3.600 s/h geteilt durch 10⁶ µmol/mol). Beispiel: 250 µmol·m⁻²·s⁻¹ über 16 Stunden ergeben exakt 14,4 mol·m⁻²·d⁻¹."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Welcher DLI-Zielwert wird für Kopfsalat, Erdbeeren und Rispen-Tomaten benötigt?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Hydroponischer Salat benötigt 14–17 mol·m⁻²·d⁻¹, Gewächshaus-Erdbeeren 15–22 mol·m⁻²·d⁻¹ und hochdrahtkultivierte Fruchtgemüse (Tomate, Paprika, Gurke) 22–35+ mol·m⁻²·d⁻¹."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wie berechnet man die elektrische Anschlussleistung (W/m²) von LED-Assimilationsbelichtung?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Teilen Sie die erforderliche Zusatz-PPFD (µmol·m⁻²·s⁻¹) durch die Systemeffizienz (PPE, moderne Top-LEDs erreichen 3,0–3,6 µmol/J), um die spezifische elektrische Leistungsaufnahme in W/m² zu erhalten."
+          }
         }
       ]
     }
@@ -208,6 +237,17 @@
   
 
 
+
+
+<!-- INW-LIVE-WIDGET-START -->
+<section class="inw-live-widget-sandbox" style="margin: 32px 0; padding: 24px; background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 16px; box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);">
+  <h3 style="margin: 0 0 8px 0; font-size: 1.2rem; color: #38bdf8; font-weight: 800;">☀️ Interaktiver Echtzeit-DLI- & Belichtungs-Simulator</h3>
+  <p style="margin: 0 0 16px 0; font-size: 0.92rem; color: #94a3b8; line-height: 1.6;">Simulieren Sie PPFD (µmol·m⁻²·s⁻¹) und Belichtungsdauer (Stunden), um das tägliche Lichtintegral (mol·m⁻²·d⁻¹) live zu bestimmen.</p>
+  <div style="display: flex; justify-content: center; width: 100%; overflow: hidden;">
+    <iframe src="/embed/dli-calculator.html" width="380" height="390" loading="lazy" title="☀️ Interaktiver Echtzeit-DLI- & Belichtungs-Simulator" style="border: none; border-radius: 14px; max-width: 100%;"></iframe>
+  </div>
+</section>
+<!-- INW-LIVE-WIDGET-END -->
 
 <!-- INW-EEAT-BOX-START -->
     <section id="inw-eeat-standard-block" style="margin-top: 32px; padding-top: 24px; border-top: 1px solid rgba(148, 163, 184, 0.3); box-sizing: border-box;">

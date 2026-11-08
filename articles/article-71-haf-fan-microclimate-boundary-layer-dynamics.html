@@ -82,7 +82,7 @@
         "url": "https://inwoovation.com"
       },
       "datePublished": "2026-09-01",
-      "dateModified": "2026-11-05",
+      "dateModified": "2026-11-08",
       "mainEntityOfPage": "https://inwoovation.com/articles/article-71-haf-fan-microclimate-boundary-layer-dynamics.html"
     },
     {
@@ -105,6 +105,35 @@
           "position": 3,
           "name": "Horizontal Air Flow (HAF) Aerodynamics & Boundary Layer Decoupling in Venlo Greenhouses: Microclimate Stratification, Sherwood Mass Transfer Kinetics, and Heat Recovery Dehumidification",
           "item": "https://inwoovation.com/articles/article-71-haf-fan-microclimate-boundary-layer-dynamics.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do you calculate greenhouse Vapor Pressure Deficit (VPD) accurately using leaf temperature?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "True canopy VPD must be calculated from saturated vapor pressure at actual radiometric leaf temperature (es(T_leaf) via the Tetens equation) minus ambient air vapor pressure (ea(T_air, RH)). Assuming T_leaf = T_air introduces a 0.25 to 0.45 kPa error under high solar radiation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the optimal VPD target range for commercial greenhouse crops?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Vegetative propagation requires 0.4 to 0.7 kPa, active vegetative growth thrives at 0.8 to 1.1 kPa, and generative fruit set in tomato, bell pepper, and strawberry performs best between 1.1 and 1.4 kPa to balance stomatal CO2 uptake with xylem calcium mass flow."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you size a greenhouse dehumidifier or Air Treatment Unit (ATU) for night-time latent moisture removal?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Multiply canopy night-time transpiration rate (typically 15 to 35 g/m²·h) by cultivated floor area (m²), then divide by the specific moisture extraction rate (L/kWh) at the target dew-point temperature on the Mollier h-x psychrometric chart."
+          }
         }
       ]
     }
@@ -319,6 +348,17 @@ Latent Energy Recovery:   E<sub>recovered</sub> = m&#775;<sub>condensate</sub> �
         
 
 
+
+
+<!-- INW-LIVE-WIDGET-START -->
+<section class="inw-live-widget-sandbox" style="margin: 32px 0; padding: 24px; background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 16px; box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);">
+  <h3 style="margin: 0 0 8px 0; font-size: 1.2rem; color: #38bdf8; font-weight: 800;">💧 Interactive Live VPD & Canopy Transpiration Simulator</h3>
+  <p style="margin: 0 0 16px 0; font-size: 0.92rem; color: #94a3b8; line-height: 1.6;">Adjust air temperature, relative humidity, and leaf-to-air ΔT below to compute real-time Vapor Pressure Deficit (kPa) and stomatal stress.</p>
+  <div style="display: flex; justify-content: center; width: 100%; overflow: hidden;">
+    <iframe src="/embed/vpd-gauge.html" width="380" height="390" loading="lazy" title="💧 Interactive Live VPD & Canopy Transpiration Simulator" style="border: none; border-radius: 14px; max-width: 100%;"></iframe>
+  </div>
+</section>
+<!-- INW-LIVE-WIDGET-END -->
 
 <!-- INW-EEAT-BOX-START -->
     <section id="inw-eeat-standard-block" style="margin-top: 32px; padding-top: 24px; border-top: 1px solid rgba(148, 163, 184, 0.3); box-sizing: border-box;">

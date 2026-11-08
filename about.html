@@ -172,6 +172,35 @@
           "item": "https://inwoovation.com/about.html"
         }
       ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do you calculate peak greenhouse heating load (kW and W/m²) under DIN V 18599 / ASABE standards?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Total peak heat loss Q_total = (U_glazing × A_surface × (1 - η_screen) + 0.34 × V_house × ACH_infiltration) × (T_indoor - T_outdoor_design). A single aluminized thermal screen typically reduces radiative and convective U-value by 40% to 47%."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How are bivalent heat pumps and gas peaking boilers sized for commercial Venlo glasshouses?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Size the high-COP heat pump (COP 3.8–4.8) to cover 35% to 45% of peak winter thermal capacity—which supplies 75% to 85% of total annual heating degree-hours—while using condensing gas boilers + thermal buffer tanks for extreme cold snaps."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What government grants and subsidies are available for greenhouse energy retrofits in 2026?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In Germany, the BLE Bundesprogramm Energieeffizienz funds up to 40% of eligible HVAC/LED/screen CAPEX; in the United States, USDA REAP provides 25%–50% grant coverage alongside utility kWh rebates; in the Netherlands, EIA/SDE++ supports geothermal and heat-pump decarbonization."
+          }
+        }
+      ]
     }
   ]
 }
@@ -214,8 +243,8 @@
                     <div class="stat-label">Live Engineering Pages</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">79</div>
-                    <div class="stat-label">Monographs (95 EN/DE/JA Editions)</div>
+                    <div class="stat-number">153</div>
+                    <div class="stat-label">Multilingual Monographs (79 EN / 44 DE / 30 JA)</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-number">3</div>
@@ -268,7 +297,20 @@
             </ul>
         </div>
 
-        <!-- Open Source & Community -->
+        
+        <!-- INW-ABOUT-METHODOLOGY-CHARTER-START -->
+        <div class="about-section" style="border: 1px solid rgba(16, 185, 129, 0.35);">
+            <h2>📐 Governing Physical Equations &amp; Engineering Validation Charter</h2>
+            <p>Every calculator, monograph, and crop steering atlas published by Inwoovation Lab is governed by strict deterministic biophysics rather than empirical rules of thumb. Before deployment, our computational kernels are verified against our automated 20-unit biophysics regression suite:</p>
+            <ul>
+                <li><strong>Evapotranspiration &amp; Canopy Microclimate (FAO-56 / Stanghellini Penman-Monteith)</strong> — Full coupling of net isothermal radiation (R<sub>n</sub>), aerodynamic boundary-layer resistance (r<sub>a</sub>), and light/VPD-modulated stomatal resistance (r<sub>s</sub>), incorporating radiometric leaf-to-air temperature offsets (ΔT<sub>leaf</sub>) via the Magnus-Tetens saturation vapor pressure curve.</li>
+                <li><strong>Photosynthetic Carbon Assimilation (Farquhar-von Caemmerer-Berry C<sub>3</sub> Model)</strong> — Mechanistic calculation of Rubisco carboxylation capacity (V<sub>cmax</sub>), RuBP regeneration electron transport rate (J<sub>max</sub>), and Arrhenius temperature kinetics for supplemental CO<sub>2</sub> enrichment optimization.</li>
+                <li><strong>Hydroponic Ion Speciation &amp; Electroneutrality (Davies &amp; Extended Debye-Hückel)</strong> — Activity coefficient corrections for divalent cations (Ca<sup>2+</sup>, Mg<sup>2+</sup>) and sulfate/phosphate complexation in closed-loop rockwool and cocopeat fertigation systems, paired with Van Genuchten substrate matric potential curves.</li>
+                <li><strong>Greenhouse Thermodynamics &amp; Structural Mechanics (DIN V 18599 &amp; EN 13031-1)</strong> — Hourly dynamic heating/cooling balance, multi-layer aluminized thermal screen U-value reduction, Mollier h-x psychrometric dehumidification state transitions, and Eurocode wind/snow structural truss verification.</li>
+            </ul>
+            <p style="margin-top: 14px;">Explore our live interactive suites directly: <a href="/index.html" style="color:#10b981; font-weight:700;">42 Engineering Calculators</a> · <a href="/guides.html" style="color:#38bdf8; font-weight:700;">153 Multilingual Monographs</a> · <a href="/crops/index.html" style="color:#a78bfa; font-weight:700;">Commercial Crop Steering Atlases</a> · <a href="/climate/index.html" style="color:#fbbf24; font-weight:700;">40-Region Global Climate Atlas</a> · <a href="/podcasts/index.html" style="color:#f472b6; font-weight:700;">Deutscher Meisterfunk Podcast</a>.</p>
+        </div>
+        <!-- INW-ABOUT-METHODOLOGY-CHARTER-END --><!-- Open Source & Community -->
         <div class="about-section">
             <h2>🌱 Open Access Commitment</h2>
             <p>Inwoovation Lab believes that precision agriculture knowledge should not be locked behind paywalls. Our tools are <strong>free for every grower on earth</strong> — from a small-scale farmer in Kenya to a 100-hectare Venlo glasshouse operator in the Netherlands.</p>
