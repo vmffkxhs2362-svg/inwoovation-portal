@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta name="google-adsense-account" content="ca-pub-8597809158257497">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAO-56 Penman-Monteith 蒸散モデル・気孔コンダクタンス・飽差 (VPD) 統合環境制御と日射比例灌水設計 | Inwoovation Lab</title>
+  <meta name="description" content="施設園芸におけるFAO-56 Penman-Monteith蒸発散方程式 (ET₀)・Stanghellini温室群落モデル、空気力学的境界層抵抗 (r_a) と気孔抵抗 (r_s)、飽差 (VPD) 制御、および積算日射比例灌水トリガーの設計。">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <link rel="canonical" href="https://inwoovation.com/articles/ja/article-05-penman-monteith-transpiration-vpd-environmental-control.html">
+  <link rel="alternate" hreflang="en" href="https://inwoovation.com/articles/article-05-penman-monteith-transpiration.html">
+  <link rel="alternate" hreflang="x-default" href="https://inwoovation.com/articles/article-05-penman-monteith-transpiration.html">
+  <link rel="alternate" hreflang="de" href="https://inwoovation.com/articles/de/article-05-penman-monteith-transpiration-automatisierung-ram-priva.html">
+  <link rel="alternate" hreflang="ja" href="https://inwoovation.com/articles/ja/article-05-penman-monteith-transpiration-vpd-environmental-control.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="FAO-56 Penman-Monteith 蒸散モデル・気孔コンダクタンス・飽差 (VPD) 統合環境制御と日射比例灌水設計 | Inwoovation Lab">
+  <meta property="og:description" content="施設園芸におけるFAO-56 Penman-Monteith蒸発散方程式 (ET₀)・Stanghellini温室群落モデル、空気力学的境界層抵抗 (r_a) と気孔抵抗 (r_s)、飽差 (VPD) 制御、および積算日射比例灌水トリガーの設計。">
+  <meta property="og:url" content="https://inwoovation.com/articles/ja/article-05-penman-monteith-transpiration-vpd-environmental-control.html">
+  <meta property="og:image" content="https://inwoovation.com/og-cover.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V4RYJBMEDE"></script>
+  <script>
+    if (navigator.webdriver || /HeadlessChrome|PhantomJS|Lighthouse|PTST|bot|crawler|spider|slurp/i.test(navigator.userAgent) || location.hostname === 'localhost' || location.hostname === '127.0.0.1' || (screen.width === 1366 && screen.height === 1366) || (screen.width === 800 && screen.height === 600) || screen.height >= 5000) { window['ga-disable-G-V4RYJBMEDE'] = true; }
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-V4RYJBMEDE');
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8597809158257497" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/global-ui-enhancements.css?v=20261108">
+  <script src="/js/global-search-palette.js?v=20261108" defer></script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "headline": "FAO-56 Penman-Monteith 蒸散モデル・気孔コンダクタンス・飽差 (VPD) 統合環境制御と日射比例灌水設計 | Inwoovation Lab",
+      "description": "施設園芸におけるFAO-56 Penman-Monteith蒸発散方程式 (ET₀)・Stanghellini温室群落モデル、空気力学的境界層抵抗 (r_a) と気孔抵抗 (r_s)、飽差 (VPD) 制御、および積算日射比例灌水トリガーの設計。",
+      "inLanguage": "ja",
+      "datePublished": "2026-11-08",
+      "dateModified": "2026-11-08",
+      "mainEntityOfPage": "https://inwoovation.com/articles/ja/article-05-penman-monteith-transpiration-vpd-environmental-control.html",
+      "image": "https://inwoovation.com/og-cover.jpg",
+      "author": {
+        "@type": "Person",
+        "name": "Inwoo Hwang",
+        "jobTitle": "Horticultural & CEA Systems Engineer",
+        "url": "https://inwoovation.com/about.html"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Inwoovation Lab",
+        "url": "https://inwoovation.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://inwoovation.com/og-cover.jpg"
+        }
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inwoovation Lab",
+          "item": "https://inwoovation.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Engineering Guides",
+          "item": "https://inwoovation.com/guides.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "JA Vol. 05: Penman-Monteith 蒸散モデル & VPD 環境制御",
+          "item": "https://inwoovation.com/articles/ja/article-05-penman-monteith-transpiration-vpd-environmental-control.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "FAO-56 Penman-Monteith 方程式で計算した蒸散量から、1日の点滴灌水量 (L/m²/day) を決める方法は？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Penman-Monteith 式または積算日射モデルで算出した1日の群落純蒸散量 E_crop [L/m²/d] を、培地の塩類集積（EC上昇）を防ぐための目標排液率 f_drain（通常 0.25〜0.35、すなわち 25〜35%）を用いて V_irr = E_crop / (1 − f_drain) で割り戻します。例えば晴天日のトマト群落の純蒸散量が 4.2 L/m²/d、目標排液率が 30% の場合、1日の総給液量は 4.2 / (1 − 0.30) = 6.0 L/m²/d（排液量 1.8 L/m²/d）となります。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "なぜ気温と相対湿度だけでなく「葉温 (T_leaf)」を測定して飽差 (VPD) を計算しなければならないのですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "気孔内部の細胞間隙は常に「葉温 T_leaf における飽和蒸気圧 es(T_leaf)」で満たされているため、蒸散を駆動する真の圧力差は VPD_leaf = es(T_leaf) − ea(T_air, RH) だからです。強日射下で気孔が閉じ始めると葉温は気温より +2〜+4 ℃ 高くなり、気温ベースの VPD が 1.2 kPa であっても実際の葉面飽差 VPD_leaf は 1.6〜1.9 kPa に達しており、深刻な水ストレスを見落とす原因になります。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "積算日射比例灌水において、栄養生長（Vegetative）と生殖生長（Generative）を切り替える具体的な設定値は？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "草勢を強める「栄養生長（Vegetative Steering）」では、1回あたりの給液ショット量を小さめ（培地体積の 2.5〜3.5%）にして日射トリガー間隔を短く（80〜100 J/cm² ごと）設定し、夜間ドライバックを 8〜10% に抑えます。一方、着果と果実肥大を促す「生殖生長（Generative Steering）」では、1回あたりのショット量を大きく（培地体積の 4.5〜6.0%）、トリガー間隔を長く（130〜170 J/cm² ごと）して給液間の培地EC変化（ドライダウン）を与え、夜間ドライバックを 12〜16% に深めます。"
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+  <style>
+    body { margin: 0; font-family: 'Plus Jakarta Sans', sans-serif; background: #090d16; color: #e2e8f0; line-height: 1.8; }
+    .article-shell { max-width: 920px; margin: 0 auto; padding: 36px 22px 60px; }
+    .badge-pill { display: inline-block; padding: 6px 14px; border-radius: 999px; background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.4); color: #34d399; font-size: 0.82rem; font-weight: 700; margin-bottom: 14px; }
+    h1 { font-family: 'Outfit', sans-serif; font-size: 2.25rem; line-height: 1.25; color: #f8fafc; margin: 0 0 14px 0; }
+    .meta-bar { color: #94a3b8; font-size: 0.9rem; margin-bottom: 28px; padding-bottom: 18px; border-bottom: 1px solid rgba(148, 163, 184, 0.18); }
+    .formula-box { background: rgba(15, 23, 42, 0.9); border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 12px; padding: 18px 22px; margin: 20px 0; font-family: 'JetBrains Mono', monospace; color: #38bdf8; overflow-x: auto; }
+    table.eng-table { width: 100%; border-collapse: collapse; margin: 20px 0; background: rgba(15, 23, 42, 0.75); border-radius: 12px; overflow: hidden; }
+    table.eng-table th, table.eng-table td { padding: 12px 14px; border: 1px solid rgba(148, 163, 184, 0.2); text-align: left; font-size: 0.92rem; }
+    table.eng-table th { background: rgba(30, 41, 59, 0.9); color: #38bdf8; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <main class="article-shell">
+    <div style="margin-bottom: 20px;">
+      <a href="/guides.html" style="color: #38bdf8; text-decoration: none; font-weight: 700; font-size: 0.92rem;">← 技術モノグラフ一覧（Engineering Guides）へ戻る</a>
+    </div>
+    <span class="badge-pill">🇯🇵 JA Vol. 05 · 植物生物物理学・群落蒸散モデル＆統合環境制御エンジニアリング</span>
+    <h1>FAO-56 Penman-Monteith 群落蒸散モデルと気孔コンダクタンスの生物物理学：飽差 (VPD) 統合環境制御・積算日射灌水アルゴリズムの実装</h1>
+<!-- INW-LANG-SWITCHER-START -->
+<div class="inw-lang-switcher-bar" style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:14px 0 20px 0; padding:10px 14px; background:rgba(15,23,42,0.75); border:1px solid rgba(148,163,184,0.2); border-radius:12px;">
+  <span style="font-size:0.8rem; color:#94a3b8; font-weight:700; margin-right:4px;">🌐 Vol. 05 Editions:</span>
+  <a href="/articles/article-05-penman-monteith-transpiration.html" style="display:inline-flex; align-items:center; padding:5px 12px; border-radius:999px; background:rgba(30,41,59,0.8); border:1px solid rgba(56,189,248,0.35); color:#38bdf8; text-decoration:none; font-size:0.8rem; font-weight:600;">🇬🇧 English Edition →</a>
+  <a href="/articles/de/article-05-penman-monteith-transpiration-automatisierung-ram-priva.html" style="display:inline-flex; align-items:center; padding:5px 12px; border-radius:999px; background:rgba(30,41,59,0.8); border:1px solid rgba(56,189,248,0.35); color:#38bdf8; text-decoration:none; font-size:0.8rem; font-weight:600;">🇩🇪 Deutsche Ausgabe →</a>
+  <span style="display:inline-flex; align-items:center; padding:5px 12px; border-radius:999px; background:rgba(16,185,129,0.22); border:1px solid #10b981; color:#34d399; font-size:0.8rem; font-weight:700;">🇯🇵 日本語版 (JA) (Active)</span>
+</div>
+<!-- INW-LANG-SWITCHER-END -->
+    <div class="meta-bar">
+      <span>👨‍🔬 <strong>Inwoo Hwang</strong> (Inwoovation Lab)</span> &nbsp;|&nbsp;
+      <span>📅 Last Updated: November 08, 2026</span> &nbsp;|&nbsp;
+      <span>⏱️ 15分 (読了目安)</span>
+    </div>
+
+      <section style="margin-bottom: 34px;">
+        <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px; margin-bottom: 16px;">1. FAO-56 Penman-Monteith 方程式と温室群落 Stanghellini モデルの熱収支</h2>
+        <p>施設園芸および養液栽培（ロックウール・ココピート高設栽培）における作物の水消費量と潜熱放散速度（Latent Heat Flux: <code>λ · E [W · m⁻²]</code>）は、群落が吸収する<strong>正味放射エネルギー（Net Radiation項: <code>R_n − G</code>）</strong>と、葉面から周囲空気への<strong>蒸気圧勾配（飽差 VPD / 空力拡散項）</strong>の結合収支によって決定されます。国際標準である <strong>FAO-56 Penman-Monteith 方程式（Allen et al., 1998）</strong> および温室内の低風速・多重反射葉群（葉面積指数 <code>LAI [m² · m⁻²]</code>）に特化した <strong>Stanghellini (1987) / Baille 温室蒸散モデル</strong> は以下の式で定式化されます：</p>
+        <div class="formula-box">
+          λ · E_trans [W · m⁻²] = [ Δ · ( R_n − G ) + ( 2 · LAI · ρ_a · c_p / r_a ) · ( e_s(T_leaf) − e_a ) ] / [ Δ + γ · ( 1 + r_s / r_a ) ]<br>
+          時間あたり蒸散量 E_hourly [kg · m⁻² · h⁻¹ = L · m⁻² · h⁻¹] = ( λ · E_trans [W · m⁻²] × 3,600 [s · h⁻¹] ) / λ_vap [2.45 × 10⁶ J · kg⁻¹]
+        </div>
+        <p>ここで <code>Δ [kPa · K⁻¹]</code> は飽和蒸気圧曲線の勾配（気温 <code>20 ℃</code> で約 <code>0.145 kPa · K⁻¹</code>、<code>25 ℃</code> で <code>0.189 kPa · K⁻¹</code>）、<code>γ [kPa · K⁻¹]</code> は乾湿計定数（標準大気圧下で <code>≈ 0.0665 kPa · K⁻¹</code>）、<code>ρ_a · c_p [≈ 1,200 J · m⁻³ · K⁻¹]</code> は空気の容積比熱、<code>r_a [s · m⁻¹]</code> は<strong>葉面空気力学的境界層抵抗（Aerodynamic Boundary Layer Resistance）</strong>、そして <code>r_s [s · m⁻¹]</code> は<strong>群落気孔抵抗（Canopy Stomatal Resistance）</strong>を表します。</p>
+        <p>Baille et al. (1994) の簡略化実用式では、温室内の作物蒸散速度 <code>E_crop [g · m⁻² · h⁻¹]</code> を「日射主導の昼間放射項 <code>A · τ · I_ext</code>」と「飽差主導の対流蒸気圧項 <code>B · LAI · VPD</code>」の2成分に分解してリアルタイム予測します。これにより、晴天日中の急激な日射変動にも、夜間暖房時の暗期蒸散（<code>15 〜 35 g · m⁻² · h⁻¹</code>）にも1つの統合モデルで追従できます。</p>
+      </section>
+      <section style="margin-bottom: 34px;">
+        <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px; margin-bottom: 16px;">2. 気孔コンダクタンス (g_s = 1 / r_s) の Jarvis 多変数応答と境界層抵抗 (r_a) の流体力学</h2>
+        <p>植物は光合成のために気孔（Stomata）を開いて <code>CO₂</code> を取り込むと同時に、不可避的に水蒸気を放出します。気孔抵抗 <code>r_s [s · m⁻¹]</code>（またはその逆数である気孔コンダクタンス <code>g_s = 1 / r_s [m · s⁻¹ または mmol · m⁻² · s⁻¹]</code>）は固定値ではなく、<strong>Jarvis (1976) の乗算型環境応答モデル</strong>に従い、光量子束密度（<code>PPFD</code>）、飽差（<code>VPD</code>）、葉温（<code>T_leaf</code>）、室内 <code>CO₂</code> 濃度、および培地マトリック水ポテンシャル（<code>ψ_m</code>）の5変数によって動的に制御されます：</p>
+        <div class="formula-box">
+          g_s(PPFD, VPD, T_leaf, CO₂) = g_s,max × f_1(PPFD) × f_2(VPD) × f_3(T_leaf) × f_4(CO₂)<br>
+          葉面境界層抵抗 (混合対流モデル): r_a [s · m⁻¹] ≈ 220 · ( d_leaf [m] )^0.2 / ( v_air [m · s⁻¹] )^0.8
+        </div>
+        <p>ここで極めて重要な物理現象が、<strong>「気孔閉鎖による蒸散自己抑制（Stomatal Closure under High VPD）」</strong>と<strong>「微風速下での境界層デカップリング（McNaughton-Jarvis Decoupling Factor Ω）」</strong>です：</p>
+        <ul>
+          <li><strong>高飽差（<code>VPD &gt; 1.5 〜 1.8 kPa</code>）での気孔閉鎖：</strong> 空気が乾燥しすぎると、孔辺細胞（Guard Cells）の膨圧低下とアブシジン酸（ABA）シグナルによって気孔抵抗 <code>r_s</code> が <code>80 s/m → 450 s/m 以上</code> へ急増します。結果として蒸散による気化冷却が止まり、葉温 <code>T_leaf</code> が気温より <code>+ 3.0 〜 + 5.0 ℃</code> 上昇して光合成酵素（RuBisCO Activase）の熱失活と尻腐れ果（Blossom-End Rot）を招きます。</li>
+          <li><strong>低飽差・無風（<code>VPD &lt; 0.40 kPa</code> かつ <code>v_air &lt; 0.10 m/s</code>）での境界層停滞：</strong> 葉面境界層抵抗 <code>r_a</code> が <code>350 〜 500 s/m</code> に肥大し、葉の表面近傍が相対湿度 <code>98 〜 100 % RH</code> の飽和蒸気膜で覆われます。これにより蒸散流（木部導管のカルシウム <code>Ca²⁺</code> およびホウ素 <code>B</code> のマスフロー輸送）が完全停止し、チップバーン（心腐れ症）および灰色かび病（<em>Botrytis cinerea</em>）が爆発的に発生します。</li>
+        </ul>
+        <table class="eng-table">
+          <thead>
+            <tr>
+              <th>環境制御レジーム (Microclimate Regime)</th>
+              <th>葉面飽差 VPD_leaf (kPa)</th>
+              <th>気孔抵抗 r_s (s · m⁻¹)</th>
+              <th>境界層抵抗 r_a (s · m⁻¹)</th>
+              <th>植物生理状態・カルシウム輸送・病害リスク診断</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>過湿・無風停滞域 (Stagnant Wet Zone)</strong></td>
+              <td>0.10 – 0.35 kPa</td>
+              <td>120 – 180</td>
+              <td>350 – 550 (風速 &lt; 0.1 m/s)</td>
+              <td>蒸散停止・葉面結露・木部 Ca²⁺ 輸送不全（チップバーン・灰色かび病の危険域）</td>
+            </tr>
+            <tr>
+              <td><strong>育苗・活着・高湿度制御域 (Propagation)</strong></td>
+              <td>0.40 – 0.70 kPa</td>
+              <td>70 – 110</td>
+              <td>180 – 260 (風速 0.2 m/s)</td>
+              <td>発根前の苗の萎れを防ぎつつ、最小限の蒸散流を維持する活着促進ゾーン</td>
+            </tr>
+            <tr>
+              <td><strong>栄養生長・光合成最大化域 (Vegetative)</strong></td>
+              <td>0.75 – 1.10 kPa</td>
+              <td>50 – 85 (最小・全開)</td>
+              <td>100 – 160 (風速 0.35 m/s)</td>
+              <td>気孔コンダクタンス g_s が最大化し、CO₂ 同化速度と葉面積拡大が最高効率</td>
+            </tr>
+            <tr>
+              <td><strong>生殖生長・着果＆高糖度誘導域 (Generative)</strong></td>
+              <td>1.10 – 1.45 kPa</td>
+              <td>85 – 140</td>
+              <td>80 – 130 (風速 0.50 m/s)</td>
+              <td>適度な蒸散負荷により同化産物の果実転流（シンク強度）と根圏吸水・Ca輸送を促進</td>
+            </tr>
+            <tr>
+              <td><strong>過乾燥・気孔閉鎖ストレス域 (Water Stress)</strong></td>
+              <td>&gt; 1.60 kPa</td>
+              <td>350 – 800+ (気孔閉鎖)</td>
+              <td>60 – 110</td>
+              <td>水ポテンシャル低下により気孔が強制閉鎖。葉温急上昇・光合成停止・尻腐れ果多発</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <section style="margin-bottom: 34px;">
+        <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px; margin-bottom: 16px;">3. 積算日射比例灌水 (Radiation-Sum Irrigation Trigger) と培地含水率 (VWC) ドライバック制御</h2>
+        <p>Penman-Monteith 方程式の昼間放射項が示す通り、日中の群落蒸散量の <strong><code>75 〜 85 %</code> は積算日射量（Cumulative Solar Radiation Sum: <code>J · cm⁻²</code> または <code>MJ · m⁻²</code>）に比例</strong>します。水 <code>1 g</code>（<code>= 1 mL</code>）の蒸発潜熱は約 <code>2,450 J</code> であるため、もし屋外日射の <code>100 %</code> が温室内に透過してすべて蒸散に使われたと仮定すると、屋外積算日射 <code>100 J · cm⁻²（= 1.0 MJ · m⁻²）</code> あたり最大約 <code>408 mL · m⁻²</code> の水が蒸発計算になります。実際には温室構造・被覆材の光透過率（<code>τ_cov ≈ 0.65 〜 0.75</code>）および正味放射のうち潜熱へ配分される蒸散変換効率（<code>f_trans ≈ 0.60 〜 0.75</code>）を乗じるため、<strong>成熟したLAI 3.0 以上のトマト・パプリカ・キュウリ群落では、屋外積算日射 <code>100 J · cm⁻²</code> あたり約 <code>180 〜 240 mL · m⁻²</code> の実蒸散</strong>が発生します。</p>
+        <div class="formula-box">
+          1回あたり必要給液量 V_shot [mL · m⁻²] = [ 日射トリガー閾値 I_trig [J · cm⁻²] × 作物蒸散係数 k_rad [1.8 〜 2.4 mL · m⁻² / (J · cm⁻²)] ] / ( 1 − 目標排液率 f_drain )<br>
+          実務基準： 屋外積算日射 100 J · cm⁻² ごとに 蒸散 200 mL/m² ＋ 排液率 30 % を見込み 約 260 〜 300 mL/m² を分割給液
+        </div>
+        <p>商業用の統合環境制御システム（<strong>Priva Connext / Operator、Ridder Synopta、RAM CC600、誠和 プロファインダー / トマトパーク方式</strong>）では、この物理法則に基づき、固定タイマーではなく<strong>「積算日射量トリガー（Radiation Sum Start）＋ 飽差 VPD 補正（Vapor Deficit Rest Inhibition）」</strong>によって点滴灌水バルブを自動制御します：</p>
+        <ol>
+          <li><strong>第1期（日の出〜排液開始まで / Morning Fill Phase）：</strong> 夜間ドライバック（<code>ΔVWC = − 8 〜 − 14 %</code>）によって低下したロックウール・ココピート培地の含水率を段階的に回復させます。日の出後 <code>1.5 〜 2.5 時間</code> 経過し、最初の日射トリガー（<code>50 〜 80 J · cm⁻²</code>）で給液を開始し、第 <code>3 〜 4 回目</code> のショットで初排液（First Drain）が出るように1回あたりのショット量（ロックウールスラブ体積の <code>3.0 〜 4.5 %</code>、すなわち約 <code>80 〜 120 mL / 株</code>）を設定します。</li>
+          <li><strong>第2期（日中ピーク蒸散期 / Peak Radiation &amp; VPD Compensation Phase）：</strong> 積算日射が <code>80 〜 120 J · cm⁻²</code> に達するごとに1ショットを給液します。さらに曇天時や高湿度時には過湿（根圏酸欠）を防ぐため「最大休止時間（Max Rest Time）」を延ばし、逆に強光・高飽差（<code>VPD &gt; 1.3 kPa</code>）時には Penman-Monteith の飽差項による追加蒸散を補うためトリガー閾値を自動的に <code>10 〜 20 %</code> 短縮して給液頻度を上げます。</li>
+          <li><strong>第3期（最終給液〜夜間ドライバック誘導 / Afternoon Stop &amp; Generative Dryback Phase）：</strong> 日没の <code>2.0 〜 3.5 時間前</code>（または日没までの残り予測積算日射が <code>150 〜 200 J · cm⁻²</code> を切った時点）で当日の給液を完全停止します。これにより夜間の根圏含水率（VWC）を意図的に <code>8 〜 10 %</code>（栄養生長誘導）または <code>12 〜 16 %</code>（生殖生長・着果誘導）低下させ、培地内への新鮮な酸素（<code>O₂</code>）導入と根毛の発達を促します。</li>
+        </ol>
+      </section>
+      <section style="margin-bottom: 34px;">
+        <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px; margin-bottom: 16px;">4. 統合環境制御コンピュータにおける高圧細霧冷房 (High-Pressure Fogging) と CO₂・天窓連成制御</h2>
+        <p>夏季および春季の強日射条件下（屋外日射 <code>&gt; 650 〜 850 W · m⁻²</code>）では、天窓換気のみでは温室内気温の上昇と相対湿度の急低下（<code>VPD &gt; 1.8 〜 2.5 kPa</code>）を防げず、午後1時以降に気孔が閉じて光合成が停止する「昼寝現象（Midday Depression of Photosynthesis）」が発生します。これを防ぐには、圧力 <strong><code>6.0 〜 10.0 MPa（60 〜 100 bar）</code></strong> のプランジャーポンプとセラミックノズルからザウター平均粒径 <strong><code>D_32 &lt; 10 〜 15 µm</code></strong> の超微細水滴を噴霧する<strong>高圧細霧冷房（High-Pressure Fogging System）</strong>と Penman-Monteith モデルを連成させます。</p>
+        <div class="formula-box">
+          細霧蒸発冷却能力 Q_fog [W · m⁻²] = 細霧噴霧量 m_fog [g · m⁻² · s⁻¹] × 蒸発潜熱 λ [2,450 J · g⁻¹] × 空中蒸発効率 η_evap [0.85 〜 0.95]<br>
+          エンタルピー等温変化： 乾球温度 T_air が − 3.0 〜 − 5.5 ℃ 低下し、同時に VPD が 2.2 kPa → 1.1 kPa の最適域へ復帰
+        </div>
+        <p>空気線図（Mollier <code>h-x</code> Diagram）上の等エンタルピー加湿冷却プロセスにより、葉面を濡らすことなく空気の顕熱を蒸発潜熱へ変換し、天窓開度を最小限に抑えたまま葉温と飽差を最適域（<code>VPD = 0.9 〜 1.2 kPa</code>）に維持できます。その結果、天窓全開による室内 <code>CO₂</code> の外部流出を防ぎ、強光下でも <code>CO₂ 600 〜 800 ppm</code> × <code>気孔全開</code> の高収量光合成レジームを持続させることが可能となります。</p>
+      </section>
+
+    <section style="margin-bottom: 34px;">
+      <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #10b981; border-bottom: 1px solid rgba(16, 185, 129, 0.25); padding-bottom: 10px; margin-bottom: 16px;">施設園芸エンジニアリング 実践FAQ</h2>
+        <div style="background: rgba(15, 23, 42, 0.7); border-left: 4px solid #10b981; padding: 18px 20px; border-radius: 10px; margin-bottom: 14px;">
+          <p style="margin: 0;"><strong>Q1: FAO-56 Penman-Monteith 方程式で計算した蒸散量から、1日の点滴灌水量 (L/m²/day) を決める方法は？</strong><br>Penman-Monteith 式または積算日射モデルで算出した1日の群落純蒸散量 E_crop [L/m²/d] を、培地の塩類集積（EC上昇）を防ぐための目標排液率 f_drain（通常 0.25〜0.35、すなわち 25〜35%）を用いて V_irr = E_crop / (1 − f_drain) で割り戻します。例えば晴天日のトマト群落の純蒸散量が 4.2 L/m²/d、目標排液率が 30% の場合、1日の総給液量は 4.2 / (1 − 0.30) = 6.0 L/m²/d（排液量 1.8 L/m²/d）となります。</p>
+        </div>
+        <div style="background: rgba(15, 23, 42, 0.7); border-left: 4px solid #10b981; padding: 18px 20px; border-radius: 10px; margin-bottom: 14px;">
+          <p style="margin: 0;"><strong>Q2: なぜ気温と相対湿度だけでなく「葉温 (T_leaf)」を測定して飽差 (VPD) を計算しなければならないのですか？</strong><br>気孔内部の細胞間隙は常に「葉温 T_leaf における飽和蒸気圧 es(T_leaf)」で満たされているため、蒸散を駆動する真の圧力差は VPD_leaf = es(T_leaf) − ea(T_air, RH) だからです。強日射下で気孔が閉じ始めると葉温は気温より +2〜+4 ℃ 高くなり、気温ベースの VPD が 1.2 kPa であっても実際の葉面飽差 VPD_leaf は 1.6〜1.9 kPa に達しており、深刻な水ストレスを見落とす原因になります。</p>
+        </div>
+        <div style="background: rgba(15, 23, 42, 0.7); border-left: 4px solid #10b981; padding: 18px 20px; border-radius: 10px; margin-bottom: 14px;">
+          <p style="margin: 0;"><strong>Q3: 積算日射比例灌水において、栄養生長（Vegetative）と生殖生長（Generative）を切り替える具体的な設定値は？</strong><br>草勢を強める「栄養生長（Vegetative Steering）」では、1回あたりの給液ショット量を小さめ（培地体積の 2.5〜3.5%）にして日射トリガー間隔を短く（80〜100 J/cm² ごと）設定し、夜間ドライバックを 8〜10% に抑えます。一方、着果と果実肥大を促す「生殖生長（Generative Steering）」では、1回あたりのショット量を大きく（培地体積の 4.5〜6.0%）、トリガー間隔を長く（130〜170 J/cm² ごと）して給液間の培地EC変化（ドライダウン）を与え、夜間ドライバックを 12〜16% に深めます。</p>
+        </div>
+    </section>
+
+    <section style="margin-bottom: 34px;">
+      <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.35rem; color: #cbd5e1; margin-bottom: 12px;">参考文献・国際規格 (References & Standards)</h2>
+      <ul style="padding-left: 20px;">
+          <li style="margin-bottom: 8px; color: #94a3b8; font-size: 0.92rem;">Allen, R. G., Pereira, L. S., Raes, D., & Smith, M. (1998). Crop evapotranspiration — Guidelines for computing crop water requirements (FAO Irrigation and Drainage Paper 56). FAO, Rome.</li>
+          <li style="margin-bottom: 8px; color: #94a3b8; font-size: 0.92rem;">Stanghellini, C. (1987). Transpiration of greenhouse crops: an aid to climate management. PhD Thesis, IMAG / Wageningen University.</li>
+          <li style="margin-bottom: 8px; color: #94a3b8; font-size: 0.92rem;">Baille, M., Baille, A., & Laury, J. C. (1994). A simplified model for predicting evapotranspiration rate of nine ornamental species vs. climate factors and leaf area. Scientia Horticulturae, 59(3-4), 217-232.</li>
+          <li style="margin-bottom: 8px; color: #94a3b8; font-size: 0.92rem;">Jarvis, P. G. (1976). The interpretation of the variations in leaf water potential and stomatal conductance found in canopies in the field. Philosophical Transactions of the Royal Society of London B, 273(927), 593-610.</li>
+          <li style="margin-bottom: 8px; color: #94a3b8; font-size: 0.92rem;">Monteith, J. L., & Unsworth, M. H. (2013). Principles of Environmental Physics: Plants, Animals, and the Atmosphere (4th ed.). Academic Press.</li>
+      </ul>
+    </section>
+
+
+<!-- INW-LIVE-WIDGET-START -->
+<section class="inw-live-widget-sandbox" style="margin: 32px 0; padding: 24px; background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 16px; box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);">
+  <h3 style="margin: 0 0 8px 0; font-size: 1.2rem; color: #38bdf8; font-weight: 800;">💧 リアルタイム飽差 (VPD) & 葉面微気象シミュレーター</h3>
+  <p style="margin: 0 0 16px 0; font-size: 0.92rem; color: #94a3b8; line-height: 1.6;">気温・相対湿度・葉温オフセットを調整し、群落の飽差 (kPa) と蒸散ストレスをリアルタイムに検証できます。</p>
+  <div style="display: flex; justify-content: center; width: 100%; overflow: hidden;">
+    <iframe src="/embed/vpd-gauge.html" width="380" height="390" loading="lazy" title="💧 リアルタイム飽差 (VPD) & 葉面微気象シミュレーター" style="border: none; border-radius: 14px; max-width: 100%;"></iframe>
+  </div>
+</section>
+<!-- INW-LIVE-WIDGET-END -->
+
+<!-- INW-TSUKUBA-FUNNEL-START -->
+<section class="inw-tsukuba-funnel-bridge" style="max-width: 1060px; margin: 32px auto; padding: 26px; background: rgba(15, 23, 42, 0.9); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 16px; text-align: left; box-shadow: 0 10px 28px rgba(0, 0, 0, 0.3);">
+  <h3 style="margin: 0 0 8px 0; font-size: 1.2rem; color: #10b981; font-weight: 800;">🔬 関連する技術論文・作物別環境制御ガイド・シミュレーター</h3>
+  <p style="margin: 0 0 16px 0; font-size: 0.92rem; color: #94a3b8; line-height: 1.6;">本ページの物理モデルおよび設計計算をさらに深く検証するための技術モノグラフと専用計算ツール：</p>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px;">
+    <a href="/articles/article-01-vpd-master-class.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">Vol. 01: Penman-Monteith Transpiration & VPD Masterclass →</a>
+    <a href="/articles/article-72-semi-closed-greenhouse-mollier-psychrometrics-latent-heat.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">Vol. 72: Semi-Closed Greenhouse Mollier h-x Psychrometrics & Latent Heat →</a>
+    <a href="/articles/article-20-leaf-temperature-infrared-thermometry.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">Vol. 20: Radiometric Leaf-to-Air ΔT & Stomatal Conductance Physics →</a>
+    <a href="/crops/greenhouse-tomato-microclimate-vpd-steering-guide.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🍅 High-Wire Tomato VPD & Generative Steering Guide →</a>
+    <a href="/crops/greenhouse-cucumber-high-humidity-transpiration-guide.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🥒 Greenhouse Cucumber High-Humidity Transpiration Guide →</a>
+    <a href="/tools/psychrometric-mollier-greenhouse-dehumidifier.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">⚡ Mollier h-x Dehumidification & Latent Load Sizer →</a>
+    <a href="/tools/evapotranspiration-penman-monteith-calculator.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🍃 FAO-56 Penman-Monteith Evapotranspiration Solver →</a>
+  </div>
+</section>
+<!-- INW-TSUKUBA-FUNNEL-END -->
+
+    <!-- INW-EEAT-BOX-START -->
+    <section class="inw-eeat-box" style="margin-top: 36px; padding: 24px; background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 16px;">
+      <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; color: #10b981; font-weight: 800; margin-bottom: 6px;">施設園芸・環境制御システムエンジニア — Inwoovation Lab</div>
+      <h3 style="margin: 0 0 8px 0; font-size: 1.15rem; color: #f8fafc;">Inwoo Hwang</h3>
+      <p style="margin: 0; font-size: 0.92rem; color: #cbd5e1; line-height: 1.65;">フェンロー型連棟温室の熱力学設計 (DIN V 18599)、光生物学 (DLI・PPFD・作用スペクトル)、閉鎖型養液栽培および精密環境制御モデルの構築に従事。</p>
+    </section>
+    <!-- INW-EEAT-BOX-END -->
+  </main>
+
+  <!-- INW-STD-FOOTER-START -->
+  <footer class="inw-site-footer" style="margin-top: 48px; padding: 28px 20px; background: #0f172a; color: #94a3b8; text-align: center; border-top: 1px solid rgba(148, 163, 184, 0.15);">
+    <div style="max-width: 1100px; margin: 0 auto;">
+      <p style="margin: 0 0 10px 0;">&copy; 2026 Inwoovation Lab. Precision Controlled Environment Agriculture &amp; Biophysical Engineering.</p>
+      <p style="margin: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 16px;">
+        <a href="/index.html" style="color: #cbd5e1; text-decoration: none;">Home</a>
+        <a href="/guides.html" style="color: #cbd5e1; text-decoration: none;">Engineering Guides</a>
+        <a href="/privacy-policy.html" style="color: #cbd5e1; text-decoration: none;">Privacy Policy</a>
+        <a href="/terms-of-service.html" style="color: #cbd5e1; text-decoration: none;">Terms of Service</a>
+        <a href="/about.html" style="color: #cbd5e1; text-decoration: none;">About</a>
+        <a href="/contact.html" style="color: #cbd5e1; text-decoration: none;">Contact</a>
+      </p>
+    </div>
+  </footer>
+  <!-- INW-STD-FOOTER-END -->
+</body>
+</html>

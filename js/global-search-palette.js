@@ -690,6 +690,14 @@
     "tags": "articles de article 07 belichtungsspektrum par epar photomorphogenese led gartenbau html photomorphogenese par epar spektralqualität din 5031 10 amp emerson effekt in der led gewächshausbeli"
   },
   {
+    "title": "Vol. 08: Monstera deliciosa im Erwerbsgartenbau — Epiphyten-Substratphysik (Luftkapazität ≥ 25 %), Fenestrations-Photobiologie & DLI/VPD-Steuerung",
+    "cat": "article",
+    "url": "articles/de/article-08-monstera-deliciosa-kulturfuehrung-epiphyten-substrat-vpd.html",
+    "icon": "🇩🇪",
+    "desc": "Ingenieur-Monographie zur Kulturführung von Monstera deliciosa (Araceae): Hemiepiphytische Wurzelphysiologie, luftführende Substratporosität (ε_a ≥ 25 %), progr",
+    "tags": "articles de article 08 monstera deliciosa kulturfuehrung epiphyten substrat vpd html vol 08 monstera deliciosa im erwerbsgartenbau epiphyten substratphysik luftkapazität 25 fenestrations pho"
+  },
+  {
     "title": "Stomatäre Leitfähigkeit (Ball-Berry), FvCB-Photosynthesekinetik &amp; CO2-Assimilationssteuerung im Gewächshaus",
     "cat": "article",
     "url": "articles/de/article-09-stomata-leitfaehigkeit-co2-assimilation-gaswechsel-kinetik.html",
@@ -736,6 +744,14 @@
     "icon": "🇩🇪",
     "desc": "Ingenieurleitfaden zur HVAC- und Entfeuchtungsauslegung im Vertical Farming und Indoor-Gartenbau: Latente Dampfmassenbilanz, Sensible-Heat-Ratio (SHR), Mollier-",
     "tags": "articles de article 14 vertical farming hvac entfeuchtung kondensation waermerueckgewinnung html vertical farming hvac entfeuchtung berechnen latente transpirationslast mollier h x wärmerück"
+  },
+  {
+    "title": "Vol. 16: Gärtnermeister-Klimasteuerung im Venlo-Gewächshaus — Mollier-h-x-Diagramm, Taupunktabstand & Heizrohr-Regelung",
+    "cat": "article",
+    "url": "articles/de/article-16-gaertnermeister-gewaechshaus-klimasteuerung-taupunkt-heizrohr.html",
+    "icon": "🇩🇪",
+    "desc": "Ingenieur-Monographie zur deutschen Gärtnermeister-Klimasteuerung nach KTBL und DIN EN 13031-1: Mollier-h-x-Psychrometrie, Taupunktabstand ΔT_Tau, Mindest-Rohrt",
+    "tags": "articles de article 16 gaertnermeister gewaechshaus klimasteuerung taupunkt heizrohr html vol 16 gärtnermeister klimasteuerung im venlo gewächshaus mollier h x diagramm taupunktabstand heizr"
   },
   {
     "title": "Optimierung des Dunkelrot (730nm) & Hellrot (660nm) LED-Spektrums",
@@ -1040,6 +1056,22 @@
     "icon": "🇯🇵",
     "desc": "商業温室におけるセイヨウオオマルハナバチ・クロマルハナバチの振動受粉微気象条件（VPD・温度）、農薬残留半減期 (DT50) の一次減衰計算、および作業者再入場待機期間 (REI) を解説する技術モノグラフ。",
     "tags": "articles ja article 03 pollinator safety bumblebee ipm rei jp html 施設園芸におけるマルハナバチ訪花受粉とipm天敵保護 農薬再入場待機期間 rei の数理モデル 商業温室におけるセイヨウオオマルハナバチ クロマルハナバチの振動受粉微気象条件 vpd 温度 農薬残留半減期 dt50 の一次減衰計算 および作業者再"
+  },
+  {
+    "title": "施設園芸の熱貫流率 (U'値)・多層保温カーテン・隙間換気熱損失・潜熱回収ヒートポンプ設計 (DIN V 18599)",
+    "cat": "article",
+    "url": "articles/ja/article-04-greenhouse-heat-loss-u-value-thermal-screen-design.html",
+    "icon": "🇯🇵",
+    "desc": "フェンロー型連棟温室および大型園芸施設におけるピーク暖房負荷計算式 (Q = U'·A·ΔT)、パテ無しガラスの煙突効果、多層保温カーテン (Luxous 1147 FR) の放射・対流抑制、および潜熱回収ヒートポンプ・蓄熱槽の設計指針。",
+    "tags": "articles ja article 04 greenhouse heat loss u value thermal screen design html 施設園芸の熱貫流率 u 値 多層保温カ テン 隙間換気熱損失 潜熱回収ヒ トポンプ設計 din v 18599 フェンロ 型連棟温室および大型園芸施設におけるピ ク暖房負荷計算式 q u a t パテ無しガラスの煙突効果 "
+  },
+  {
+    "title": "FAO-56 Penman-Monteith 蒸散モデル・気孔コンダクタンス・飽差 (VPD) 統合環境制御と日射比例灌水設計",
+    "cat": "article",
+    "url": "articles/ja/article-05-penman-monteith-transpiration-vpd-environmental-control.html",
+    "icon": "🇯🇵",
+    "desc": "施設園芸におけるFAO-56 Penman-Monteith蒸発散方程式 (ET₀)・Stanghellini温室群落モデル、空気力学的境界層抵抗 (r_a) と気孔抵抗 (r_s)、飽差 (VPD) 制御、および積算日射比例灌水トリガーの設計。",
+    "tags": "articles ja article 05 penman monteith transpiration vpd environmental control html fao 56 penman monteith 蒸散モデル 気孔コンダクタンス 飽差 vpd 統合環境制御と日射比例灌水設計 施設園芸におけるfao 56 penman monteith蒸発散方程式 et stan"
   },
   {
     "title": "スマート温室の精密センサ校正工学：ネルンスト式 (pH/EC)・TDR/FDR培地誘電率・NDIR式CO₂ドリフト補償",
@@ -1730,12 +1762,12 @@
     "tags": "crops vertical farm lettuce leafy greens tipburn prevention guide html controlled environment leafy greens lettuce lactuca sativa microclimate vpd dli precision steering guide precision cea "
   },
   {
-    "title": "Precision CEA & Horticultural Engineering Articles (78 Volumes / 158 Multilingual Editions)",
+    "title": "Precision CEA & Horticultural Engineering Articles (78 Volumes / 162 Multilingual Editions)",
     "cat": "article",
     "url": "guides.html",
     "icon": "📚",
-    "desc": "78-volume (158 multilingual editions) open-access Controlled Environment Agriculture (CEA) archive — VPD physics, biomass CHP, photobiology, closed-loop fertiga",
-    "tags": "guides html precision cea horticultural engineering articles 78 volumes 158 multilingual editions 78 volume 158 multilingual editions open access controlled environment agriculture cea archi"
+    "desc": "78-volume (162 multilingual editions) open-access Controlled Environment Agriculture (CEA) archive — VPD physics, biomass CHP, photobiology, closed-loop fertiga",
+    "tags": "guides html precision cea horticultural engineering articles 78 volumes 162 multilingual editions 78 volume 162 multilingual editions open access controlled environment agriculture cea archi"
   },
   {
     "title": "Inwoovation Lab",
@@ -2704,13 +2736,13 @@
       <div class="inwoo-palette-box" role="dialog" aria-modal="true" aria-label="Inwoovation Spotlight Search">
         <div class="inwoo-palette-header">
           <span class="inwoo-palette-search-icon">🔍</span>
-          <input type="text" id="inwoo-palette-input" placeholder="Search all 334 tools, simulators, wiki, crops, climate hubs & EN/DE/JA articles..." autocomplete="off" />
+          <input type="text" id="inwoo-palette-input" placeholder="Search all 338 tools, simulators, wiki, crops, climate hubs & EN/DE/JA articles..." autocomplete="off" />
           <span class="inwoo-palette-esc-badge" onclick="window.InwooPalette.close()">ESC</span>
         </div>
         <div class="inwoo-palette-tabs">
-          <button class="inwoo-pal-tab active" data-cat="all">✨ All (334)</button>
+          <button class="inwoo-pal-tab active" data-cat="all">✨ All (338)</button>
           <button class="inwoo-pal-tab" data-cat="tool">🛠️ Tools (48)</button>
-          <button class="inwoo-pal-tab" data-cat="article">📚 Articles (161)</button>
+          <button class="inwoo-pal-tab" data-cat="article">📚 Articles (165)</button>
           <button class="inwoo-pal-tab" data-cat="wiki">🧬 Wiki (44)</button>
           <button class="inwoo-pal-tab" data-cat="climate">🌍 Climate (41)</button>
           <button class="inwoo-pal-tab" data-cat="sim">🧪 Simulators (21)</button>
@@ -2724,7 +2756,7 @@
             <span><kbd>↵</kbd> Open</span>
             <span><kbd>Esc</kbd> Close</span>
           </div>
-          <div style="color: #64748b; font-size: 0.75rem;">Inwoovation Universal Spotlight (334 Indexed Pages)</div>
+          <div style="color: #64748b; font-size: 0.75rem;">Inwoovation Universal Spotlight (338 Indexed Pages)</div>
         </div>
       </div>
     `;

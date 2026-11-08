@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta name="google-adsense-account" content="ca-pub-8597809158257497">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>施設園芸の熱貫流率 (U'値)・多層保温カーテン・隙間換気熱損失・潜熱回収ヒートポンプ設計 (DIN V 18599) | Inwoovation Lab</title>
+  <meta name="description" content="フェンロー型連棟温室および大型園芸施設におけるピーク暖房負荷計算式 (Q = U'·A·ΔT)、パテ無しガラスの煙突効果、多層保温カーテン (Luxous 1147 FR) の放射・対流抑制、および潜熱回収ヒートポンプ・蓄熱槽の設計指針。">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <link rel="canonical" href="https://inwoovation.com/articles/ja/article-04-greenhouse-heat-loss-u-value-thermal-screen-design.html">
+  <link rel="alternate" hreflang="en" href="https://inwoovation.com/articles/article-04-greenhouse-heating-loss.html">
+  <link rel="alternate" hreflang="x-default" href="https://inwoovation.com/articles/article-04-greenhouse-heating-loss.html">
+  <link rel="alternate" hreflang="de" href="https://inwoovation.com/articles/de/article-04-gewaechshaus-waermeverlust-u-wert-energieschirme.html">
+  <link rel="alternate" hreflang="ja" href="https://inwoovation.com/articles/ja/article-04-greenhouse-heat-loss-u-value-thermal-screen-design.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="施設園芸の熱貫流率 (U'値)・多層保温カーテン・隙間換気熱損失・潜熱回収ヒートポンプ設計 (DIN V 18599) | Inwoovation Lab">
+  <meta property="og:description" content="フェンロー型連棟温室および大型園芸施設におけるピーク暖房負荷計算式 (Q = U'·A·ΔT)、パテ無しガラスの煙突効果、多層保温カーテン (Luxous 1147 FR) の放射・対流抑制、および潜熱回収ヒートポンプ・蓄熱槽の設計指針。">
+  <meta property="og:url" content="https://inwoovation.com/articles/ja/article-04-greenhouse-heat-loss-u-value-thermal-screen-design.html">
+  <meta property="og:image" content="https://inwoovation.com/og-cover.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V4RYJBMEDE"></script>
+  <script>
+    if (navigator.webdriver || /HeadlessChrome|PhantomJS|Lighthouse|PTST|bot|crawler|spider|slurp/i.test(navigator.userAgent) || location.hostname === 'localhost' || location.hostname === '127.0.0.1' || (screen.width === 1366 && screen.height === 1366) || (screen.width === 800 && screen.height === 600) || screen.height >= 5000) { window['ga-disable-G-V4RYJBMEDE'] = true; }
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-V4RYJBMEDE');
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8597809158257497" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/global-ui-enhancements.css?v=20261108">
+  <script src="/js/global-search-palette.js?v=20261108" defer></script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "headline": "施設園芸の熱貫流率 (U'値)・多層保温カーテン・隙間換気熱損失・潜熱回収ヒートポンプ設計 (DIN V 18599) | Inwoovation Lab",
+      "description": "フェンロー型連棟温室および大型園芸施設におけるピーク暖房負荷計算式 (Q = U'·A·ΔT)、パテ無しガラスの煙突効果、多層保温カーテン (Luxous 1147 FR) の放射・対流抑制、および潜熱回収ヒートポンプ・蓄熱槽の設計指針。",
+      "inLanguage": "ja",
+      "datePublished": "2026-11-08",
+      "dateModified": "2026-11-08",
+      "mainEntityOfPage": "https://inwoovation.com/articles/ja/article-04-greenhouse-heat-loss-u-value-thermal-screen-design.html",
+      "image": "https://inwoovation.com/og-cover.jpg",
+      "author": {
+        "@type": "Person",
+        "name": "Inwoo Hwang",
+        "jobTitle": "Horticultural & CEA Systems Engineer",
+        "url": "https://inwoovation.com/about.html"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Inwoovation Lab",
+        "url": "https://inwoovation.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://inwoovation.com/og-cover.jpg"
+        }
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inwoovation Lab",
+          "item": "https://inwoovation.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Engineering Guides",
+          "item": "https://inwoovation.com/guides.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "JA Vol. 04: 温室熱損失・U値・多層保温カーテン設計",
+          "item": "https://inwoovation.com/articles/ja/article-04-greenhouse-heat-loss-u-value-thermal-screen-design.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "DIN V 18599 および施設園芸設計基準に基づく温室ピーク暖房負荷 (kW・W/m²) の正確な計算式は？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ピーク暖房負荷 Q_tot [W] = [ U'_glazing × A_cov × (1 − η_screen) + 0.34 × V_house × N_ach ] × (T_in − T_out,design) で算出されます。例えば床面積 10,000 m² (1 ha)・外皮面積 12,200 m²・設定室温 18 ℃・外気設計温度 −7 ℃ (ΔT = 25 K) のフェンロー温室において、二重保温カーテン (η_screen = 0.64, U'_eff = 2.3 W/m²K) と高気密構造 (N_ach = 0.25 h⁻¹) を採用した場合、ピーク暖房負荷は無カーテン時の約 2,150 kW (215 W/m²) から約 815 kW (81.5 W/m²) へと 62 % 削減されます。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "保温カーテンを二重化（透明省エネ層＋アルミ反射層）すると日積算光量 (DLI) は低下しませんか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "最新のスリット折り畳み機構（ワイヤー駆動システム）と高透明スリットフィルム（Svensson Luxous 1147 FR 等）を使用した場合、日中収納時の束幅（バンドルサイズ）はスパンあたりわずか 40〜60 mm に収まり、日中の光量ロスは 1.5〜2.0 % 未満に抑えられます。一方、厳寒期の朝夕や夜間の熱損失は 62〜67 % 削減され、ガラス屋根面の放射冷却を防ぐことで上位葉の葉温が +1.5〜2.2 ℃ 高く保たれ、結果として光合成活性と果実肥大が向上します。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "温室用ハイブリッドヒートポンプと蓄熱バッファタンクの最適容量比率（バイバレント設計）は？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "年間暖房負荷持続曲線の解析上、冬季ピーク暖房負荷の 35〜45 %（例：45〜60 W/m²）を高効率ヒートポンプ（COP 4.2〜5.0）でカバーする設計を行えば、年間の総暖房熱量（kWh/年）の 78〜86 % をヒートポンプのみで供給可能です。残りの年数回しか発生しない極寒夜間のピーク負荷（14〜22 % の熱量）を既存の凝縮ガス/重油ボイラーと温湯蓄熱タンク（150〜250 m³/ha）で補完するバイバレント構成が、初期投資（CAPEX）を半減させ最短の投資回収（ROI）を実現します。"
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+  <style>
+    body { margin: 0; font-family: 'Plus Jakarta Sans', sans-serif; background: #090d16; color: #e2e8f0; line-height: 1.8; }
+    .article-shell { max-width: 920px; margin: 0 auto; padding: 36px 22px 60px; }
+    .badge-pill { display: inline-block; padding: 6px 14px; border-radius: 999px; background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.4); color: #34d399; font-size: 0.82rem; font-weight: 700; margin-bottom: 14px; }
+    h1 { font-family: 'Outfit', sans-serif; font-size: 2.25rem; line-height: 1.25; color: #f8fafc; margin: 0 0 14px 0; }
+    .meta-bar { color: #94a3b8; font-size: 0.9rem; margin-bottom: 28px; padding-bottom: 18px; border-bottom: 1px solid rgba(148, 163, 184, 0.18); }
+    .formula-box { background: rgba(15, 23, 42, 0.9); border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 12px; padding: 18px 22px; margin: 20px 0; font-family: 'JetBrains Mono', monospace; color: #38bdf8; overflow-x: auto; }
+    table.eng-table { width: 100%; border-collapse: collapse; margin: 20px 0; background: rgba(15, 23, 42, 0.75); border-radius: 12px; overflow: hidden; }
+    table.eng-table th, table.eng-table td { padding: 12px 14px; border: 1px solid rgba(148, 163, 184, 0.2); text-align: left; font-size: 0.92rem; }
+    table.eng-table th { background: rgba(30, 41, 59, 0.9); color: #38bdf8; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <main class="article-shell">
+    <div style="margin-bottom: 20px;">
+      <a href="/guides.html" style="color: #38bdf8; text-decoration: none; font-weight: 700; font-size: 0.92rem;">← 技術モノグラフ一覧（Engineering Guides）へ戻る</a>
+    </div>
+    <span class="badge-pill">🇯🇵 JA Vol. 04 · 温室熱力学・暖房負荷＆省エネ設備エンジニアリング</span>
+    <h1>施設園芸における熱貫流率 (U'値) と暖房負荷の熱力学：多層保温カーテン・隙間換気損失・潜熱回収ヒートポンプの最適設計</h1>
+<!-- INW-LANG-SWITCHER-START -->
+<div class="inw-lang-switcher-bar" style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:14px 0 20px 0; padding:10px 14px; background:rgba(15,23,42,0.75); border:1px solid rgba(148,163,184,0.2); border-radius:12px;">
+  <span style="font-size:0.8rem; color:#94a3b8; font-weight:700; margin-right:4px;">🌐 Vol. 04 Editions:</span>
+  <a href="/articles/article-04-greenhouse-heating-loss.html" style="display:inline-flex; align-items:center; padding:5px 12px; border-radius:999px; background:rgba(30,41,59,0.8); border:1px solid rgba(56,189,248,0.35); color:#38bdf8; text-decoration:none; font-size:0.8rem; font-weight:600;">🇬🇧 English Edition →</a>
+  <a href="/articles/de/article-04-gewaechshaus-waermeverlust-u-wert-energieschirme.html" style="display:inline-flex; align-items:center; padding:5px 12px; border-radius:999px; background:rgba(30,41,59,0.8); border:1px solid rgba(56,189,248,0.35); color:#38bdf8; text-decoration:none; font-size:0.8rem; font-weight:600;">🇩🇪 Deutsche Ausgabe →</a>
+  <span style="display:inline-flex; align-items:center; padding:5px 12px; border-radius:999px; background:rgba(16,185,129,0.22); border:1px solid #10b981; color:#34d399; font-size:0.8rem; font-weight:700;">🇯🇵 日本語版 (JA) (Active)</span>
+</div>
+<!-- INW-LANG-SWITCHER-END -->
+    <div class="meta-bar">
+      <span>👨‍🔬 <strong>Inwoo Hwang</strong> (Inwoovation Lab)</span> &nbsp;|&nbsp;
+      <span>📅 Last Updated: November 08, 2026</span> &nbsp;|&nbsp;
+      <span>⏱️ 15分 (読了目安)</span>
+    </div>
+
+      <section style="margin-bottom: 34px;">
+        <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px; margin-bottom: 16px;">1. 温室ピーク暖房負荷の物理モデル：貫流熱損失 (Q_trans) と隙間換気熱損失 (Q_inf)</h2>
+        <p>フェンロー型連棟ガラス温室（Venlo Glasshouse）および高軒高プラスチックハウスにおける冬季ピーク暖房負荷（Peak Heating Load: <code>Q_tot [W]</code>）は、単純な床面積（<code>A_floor [m²]</code>）あたりの経験値ではなく、外皮被覆面積（<code>A_cov [m²]</code>）を通じた<strong>熱貫流損失（Transmission Heat Loss: <code>Q_trans</code>）</strong>、構造材の隙間を通じた<strong>隙間換気熱損失（Infiltration Heat Loss: <code>Q_inf</code>）</strong>、および土壌への<strong>地中伝導熱損失（Ground Conduction Loss: <code>Q_ground</code>）</strong>の総和として厳密に定式化されます（DIN V 18599 / EN 13031-1 / ASABE EP406.4 準拠）：</p>
+        <div class="formula-box">
+          Q_tot [W] = Q_trans + Q_inf + Q_ground<br>
+          Q_trans [W] = Σ ( U'_i [W · m⁻² · K⁻¹] × A_cov,i [m²] ) × ( T_in − T_out,design ) × ( 1 − η_screen )<br>
+          Q_inf [W] = ( c_p,air · ρ_air / 3,600 ) × V_house [m³] × N_ach [h⁻¹] × ( T_in − T_out,design ) ≈ 0.34 × V_house × N_ach × ΔT
+        </div>
+        <p>ここで <code>T_in [℃]</code> は目標室内設定温度（例：ハイワイヤートマト夜温 <code>16.0 〜 18.0 ℃</code>、パプリカ <code>18.5 ℃</code>）、<code>T_out,design [℃]</code> は地域別の冬季設計用外気最低温度（例：つくば・北関東 <code>− 6.0 ℃</code>、北海道 <code>− 15.0 ℃</code>、オランダ Westland <code>− 10.0 ℃</code>、ドイツ北ライン＝ヴェストファーレン <code>− 12.0 ℃</code>）、<code>V_house [m³]</code> は温室気積、<code>N_ach [h⁻¹]</code> は天窓全閉時の自然隙間換気回数（Air Changes per Hour）を表します。空気の容積比熱 <code>c_p,air · ρ_air / 3,600</code> は標準状態で約 <strong><code>0.34 W · h · m⁻³ · K⁻¹</code></strong> となります。</p>
+      </section>
+      <section style="margin-bottom: 34px;">
+        <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px; margin-bottom: 16px;">2. 被覆材の熱貫流率 (U'値) と風速依存境界層・長波長放射冷却 (Sky Radiation)</h2>
+        <p>一般建築用の垂直窓ガラスと異なり、温室の屋根面ガラス（板厚 <code>4.0 mm</code> フロートガラスまたは散乱光 AR コーティング強化ガラス）は、① 外部風速 <code>v_wind [m · s⁻¹]</code> による外部対流熱伝達率 <code>h_out</code> の増大、② 晴天夜間における天頂大気温度（Effective Sky Temperature: <code>T_sky ≈ T_out − 12 〜 20 K</code>）への<strong>長波長赤外線放射損失（波長 <code>8 〜 14 µm</code>）</strong>、および ③ 室内暖房管の対流循環による内部熱伝達率 <code>h_in</code> の変化を強く受けます。実効熱貫流率 <code>U' [W · m⁻² · K⁻¹]</code> は以下の複合抵抗モデルで表されます：</p>
+        <div class="formula-box">
+          1 / U' = ( 1 / h_in ) + ( d_glass / λ_glass ) + ( 1 / ( h_out,conv(v_wind) + h_out,rad(ε_ir, T_sky) ) )<br>
+          風速補正近似式 (ASABE / Kittas): U'(v_wind) ≈ U'_0 + b_w · ( v_wind )^0.8 &nbsp; （単層 4 mm ガラス設計基準値 U' ≈ 6.2 〜 6.8 W · m⁻² · K⁻¹）
+        </div>
+        <p>特に伝統的なパテ無し重ねガラス（Lapped Glazing）や経年劣化したゴムガスケット構造では、温室内外の温度差 <code>ΔT = 25 〜 30 K</code> によって生じる浮力差（<strong>煙突効果 / Stack Effect: <code>ΔP_stack = Δρ · g · H</code></strong>）により、屋根棟部から暖気が流出し側窓下部から冷気が流入する隙間換気回数 <code>N_ach</code> が <code>0.8 〜 1.5 h⁻¹</code> に達します。これに対し、現代の気密型アルミ形材・EPDM トリプルリップガスケットを備えた最新フェンロー温室（軒高 <code>6.0 〜 7.0 m</code>）では <code>N_ach = 0.15 〜 0.35 h⁻¹</code> まで低減され、隙間換気損失だけで <code>15 〜 25 %</code> の暖房燃料削減が達成されます。</p>
+        <table class="eng-table">
+          <thead>
+            <tr>
+              <th>被覆材・構造仕様 (Glazing &amp; Cladding System)</th>
+              <th>PAR 光透過率 τ_PAR (%)</th>
+              <th>長波長赤外線透過率 τ_IR (%)</th>
+              <th>設計用熱貫流率 U' (W · m⁻² · K⁻¹)</th>
+              <th>熱工学および結露・放射特性の評価</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>単層 4 mm フロートガラス (Single Float Glass)</strong></td>
+              <td>89 – 91 %</td>
+              <td>&lt; 3 % (不透過・高放射率 ε = 0.89)</td>
+              <td>6.2 – 6.8</td>
+              <td>光透過率は最高水準だが、無カーテン時は夜間の放射冷却と結露が激しい</td>
+            </tr>
+            <tr>
+              <td><strong>単層 AR 散乱光ガラス + Low-E コーティング</strong></td>
+              <td>91 – 93 % (Haze 50 %)</td>
+              <td>&lt; 2 % (低放射率 ε = 0.25)</td>
+              <td>4.8 – 5.3</td>
+              <td>ガラス表面の赤外線放射率を下げ、晴天夜間の放射熱損失を 20 % 以上抑制</td>
+            </tr>
+            <tr>
+              <td><strong>二重空気膜 PO フィルム (Double Inflated Poly)</strong></td>
+              <td>78 – 83 %</td>
+              <td>15 – 28 % (IR 吸収剤配合時)</td>
+              <td>3.8 – 4.3</td>
+              <td>空気層 (20 – 50 mm) により断熱性は高いが、日積算光量 (DLI) が約 8 – 10 % 低下</td>
+            </tr>
+            <tr>
+              <td><strong>複層ポリカーボネート中空板 (16 mm Twin/Triple PC)</strong></td>
+              <td>74 – 80 %</td>
+              <td>&lt; 5 %</td>
+              <td>2.4 – 2.9</td>
+              <td>北面外壁・妻面・ gable 側壁の断熱構造材として最適（屋根面は光量減に注意）</td>
+            </tr>
+            <tr>
+              <td><strong>フッ素樹脂 ETFE 二重フィルム (F-Clean Double Layer)</strong></td>
+              <td>86 – 90 %</td>
+              <td>10 – 18 %</td>
+              <td>3.6 – 4.1</td>
+              <td>日本の高軒高施設で普及。紫外線透過性と 20 年以上の耐候性・高断熱性を両立</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <section style="margin-bottom: 34px;">
+        <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px; margin-bottom: 16px;">3. 多層保温カーテン (Double / Triple Thermal Screens) の直列熱抵抗とアルミ蒸着放射遮蔽</h2>
+        <p>ガラス被覆自体の二重化は通年の日積算光量（DLI: <code>mol · m⁻² · d⁻¹</code>）を恒久的に低下させ、「光量 1 % 減少 ＝ 収量 0.7 〜 1.0 % 減少」の収量ペナルティを招きます。そのためオランダ・ドイツ・日本の先進施設園芸では、日中は完全に収納して光透過率を最大化し、夜間および厳寒時のみ展開する<strong>多層水平保温カーテン（Multi-Layer Movable Thermal Screens：例 Svensson Luxous 1147 FR + Obscura / Harmony シリーズ）</strong>が標準設計となっています。</p>
+        <p>保温カーテンを <code>n</code> 層展開した際の実効熱貫流率 <code>U'_screened</code> は、カーテン上部の屋根裏空間（Attic Airspace）の対流抑制による静止空気層熱抵抗 <code>R_airspace [m² · K · W⁻¹]</code> と、カーテン繊維（透明ポリエステルストリップまたはアルミニウム蒸着ストリップ）による長波長放射遮蔽抵抗 <code>R_screen,k</code> の直列和として算出されます：</p>
+        <div class="formula-box">
+          U'_screened [W · m⁻² · K⁻¹] = 1 / [ ( 1 / U'_unscreened ) + Σ R_screen,k + Σ R_airspace,k ]<br>
+          カーテン省エネ率 η_screen = 1 − ( U'_screened / U'_unscreened ) &nbsp; （単層透明スクリーン: 43 〜 47 %、二重スクリーン: 62 〜 68 %）
+        </div>
+        <p>また冬季の日の出直後に上層カーテンを急激に全開すると、屋根裏に溜まった <code>2 〜 5 ℃</code> の極低温空気塊（Cold AirAvalanche / 冷気塊落下）が一気に作物生長点（Apical Meristem）へ落下し、葉温の急低下による気孔閉鎖・結露発生（灰色かび病 <em>Botrytis cinerea</em> の胞子発芽リスク）および温湯暖房ボイラーの急激なオーバーシュートを引き起こします。これを防ぐため、環境制御コンピュータ（Priva Connext / Ridder Synopta / 誠和 プロファインダー）では、日の出前 <code>45 〜 60 分</code> をかけて <code>2 % → 5 % → 10 % → 100 %</code> と段階的に隙間を開ける<strong>段階的ギャップ開放制御（Stepwise Screen Gapping &amp; Cold-Air Mixing）</strong>を実行します。</p>
+        <table class="eng-table">
+          <thead>
+            <tr>
+              <th>保温カーテン構成 (Thermal Screen Configuration)</th>
+              <th>実効熱貫流率 U'_eff (W · m⁻² · K⁻¹)</th>
+              <th>ピーク熱損失削減率 η_screen (%)</th>
+              <th>透湿・放射特性と運用上のメリット (Operational Characteristics)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>カーテン無し (Unscreened Single 4 mm Glass)</strong></td>
+              <td>6.40</td>
+              <td>0 % (基準)</td>
+              <td>夜間暖房負荷が最大（ΔT = 25 K で約 160 – 180 W/m² のピーク放熱）</td>
+            </tr>
+            <tr>
+              <td><strong>単層 透明省エネカーテン (Luxous 1147 FR 等)</strong></td>
+              <td>3.45 – 3.60</td>
+              <td>43 – 47 %</td>
+              <td>高い光透過率（89 %）を維持しつつ、早朝・夕方の展開でも光量ロスを最小化</td>
+            </tr>
+            <tr>
+              <td><strong>単層 アルミ蒸着カーテン (Tempa / Energy Alu 55 %)</strong></td>
+              <td>2.85 – 3.15</td>
+              <td>50 – 55 %</td>
+              <td>アルミ面（赤外線反射率 &gt; 80 %）が葉面から天井への長波長放射冷却を強力に遮断</td>
+            </tr>
+            <tr>
+              <td><strong>二重保温カーテン (透明省エネ + アルミ調光/保温層)</strong></td>
+              <td>2.10 – 2.40</td>
+              <td>62 – 67 %</td>
+              <td>上下カーテン間に 150 – 250 mm の独立断熱空気層を形成し、暖房エネルギーを 2/3 削減</td>
+            </tr>
+            <tr>
+              <td><strong>三重カーテン (二重保温 + 側面ロールスクリーン完全密閉)</strong></td>
+              <td>1.65 – 1.90</td>
+              <td>70 – 74 %</td>
+              <td>寒冷地・ヒートポンプ主体のゼロエミッション温室における最高水準の断熱仕様</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <section style="margin-bottom: 34px;">
+        <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px; margin-bottom: 16px;">4. 潜熱回収ヒートポンプ・温湯蓄熱バッファタンクとバイバレント暖房設計 (Bivalent Sizing)</h2>
+        <p>多層カーテンによって温室の気密性と断熱性を高めると、夜間の作物蒸散（<code>15 〜 35 g · m⁻² · h⁻¹</code>）によって室内の相対湿度が <code>88 〜 95 % RH</code> に達し、除湿のために天窓を少し開けて暖房を焚く「焚き捨て除湿（Heating-with-Ventilation）」を行うと、せっかくのカーテン断熱効果が大きく損なわれます。これを根本的に解決するのが、<strong>空調除湿ユニット一体型・潜熱回収ヒートポンプ（Latent Heat Recovery Heat Pump / Mechanical Dehumidification ATU）</strong>です。</p>
+        <p>蒸散によって空気中に放出された水蒸気 <code>1.0 kg</code> は、約 <strong><code>2,450 kJ（≈ 0.68 kWh）</code></strong> の蒸発潜熱（Latent Heat of Vaporization <code>h_fg</code>）を保持しています。冷却コイルで露点温度以下に冷却して結露水を凝縮回収し、その凝縮潜熱と顕熱をヒートポンプ（成績係数 <code>COP = 4.2 〜 5.2</code>）で昇温して温湯暖房管（Rail-Pipe / Grow-Pipe）へ戻すことで、窓を一切開けずに除湿と暖房を同時に完結させることができます。</p>
+        <div class="formula-box">
+          回収潜熱パワー Q_latent [kW · ha⁻¹] = 夜間蒸散量 m_trans [kg · h⁻¹ · ha⁻¹] × 蒸発潜熱 h_fg [2,450 kJ · kg⁻¹] / 3,600<br>
+          バイバレント最適設計比率： ヒートポンプ定格出力 = ピーク暖房負荷 Q_max の 35 〜 45 % （年間暖房熱量の 78 〜 86 % をカバー）
+        </div>
+        <p>さらに年間暖房負荷持続曲線（Annual Heating Load Duration Curve）を解析すると、設計最低外気温（<code>T_out,design</code>）が発生するのは年間 <code>8,760 時間</code> のうちわずか <code>50 〜 120 時間</code> に過ぎません。したがって、ピーク負荷 <code>100 %</code>（例：<code>120 〜 150 W/m²</code>）をすべて高価なヒートポンプで賄うのではなく、<strong>ピーク負荷の <code>35 〜 45 %</code>（<code>45 〜 65 W/m²</code>）を高効率ヒートポンプ（ベースロード機）で設計し、残りの極寒ピーク時のみ高効率エコジョーズ凝縮ボイラー（またはバイオマス・CHP）と <code>150 〜 250 m³/ha</code> の温湯蓄熱バッファタンク（Thermal Stratification Buffer Tank）で補完するバイバレント（二元熱源）システム</strong>が、設備投資回収期間（Simple Payback: <code>3.2 〜 4.8 年</code>）および生涯正味現在価値（NPV）を最大化するゴールデンスタンダードとなります。</p>
+      </section>
+
+    <section style="margin-bottom: 34px;">
+      <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #10b981; border-bottom: 1px solid rgba(16, 185, 129, 0.25); padding-bottom: 10px; margin-bottom: 16px;">施設園芸エンジニアリング 実践FAQ</h2>
+        <div style="background: rgba(15, 23, 42, 0.7); border-left: 4px solid #10b981; padding: 18px 20px; border-radius: 10px; margin-bottom: 14px;">
+          <p style="margin: 0;"><strong>Q1: DIN V 18599 および施設園芸設計基準に基づく温室ピーク暖房負荷 (kW・W/m²) の正確な計算式は？</strong><br>ピーク暖房負荷 Q_tot [W] = [ U'_glazing × A_cov × (1 − η_screen) + 0.34 × V_house × N_ach ] × (T_in − T_out,design) で算出されます。例えば床面積 10,000 m² (1 ha)・外皮面積 12,200 m²・設定室温 18 ℃・外気設計温度 −7 ℃ (ΔT = 25 K) のフェンロー温室において、二重保温カーテン (η_screen = 0.64, U'_eff = 2.3 W/m²K) と高気密構造 (N_ach = 0.25 h⁻¹) を採用した場合、ピーク暖房負荷は無カーテン時の約 2,150 kW (215 W/m²) から約 815 kW (81.5 W/m²) へと 62 % 削減されます。</p>
+        </div>
+        <div style="background: rgba(15, 23, 42, 0.7); border-left: 4px solid #10b981; padding: 18px 20px; border-radius: 10px; margin-bottom: 14px;">
+          <p style="margin: 0;"><strong>Q2: 保温カーテンを二重化（透明省エネ層＋アルミ反射層）すると日積算光量 (DLI) は低下しませんか？</strong><br>最新のスリット折り畳み機構（ワイヤー駆動システム）と高透明スリットフィルム（Svensson Luxous 1147 FR 等）を使用した場合、日中収納時の束幅（バンドルサイズ）はスパンあたりわずか 40〜60 mm に収まり、日中の光量ロスは 1.5〜2.0 % 未満に抑えられます。一方、厳寒期の朝夕や夜間の熱損失は 62〜67 % 削減され、ガラス屋根面の放射冷却を防ぐことで上位葉の葉温が +1.5〜2.2 ℃ 高く保たれ、結果として光合成活性と果実肥大が向上します。</p>
+        </div>
+        <div style="background: rgba(15, 23, 42, 0.7); border-left: 4px solid #10b981; padding: 18px 20px; border-radius: 10px; margin-bottom: 14px;">
+          <p style="margin: 0;"><strong>Q3: 温室用ハイブリッドヒートポンプと蓄熱バッファタンクの最適容量比率（バイバレント設計）は？</strong><br>年間暖房負荷持続曲線の解析上、冬季ピーク暖房負荷の 35〜45 %（例：45〜60 W/m²）を高効率ヒートポンプ（COP 4.2〜5.0）でカバーする設計を行えば、年間の総暖房熱量（kWh/年）の 78〜86 % をヒートポンプのみで供給可能です。残りの年数回しか発生しない極寒夜間のピーク負荷（14〜22 % の熱量）を既存の凝縮ガス/重油ボイラーと温湯蓄熱タンク（150〜250 m³/ha）で補完するバイバレント構成が、初期投資（CAPEX）を半減させ最短の投資回収（ROI）を実現します。</p>
+        </div>
+    </section>
+
+    <section style="margin-bottom: 34px;">
+      <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.35rem; color: #cbd5e1; margin-bottom: 12px;">参考文献・国際規格 (References & Standards)</h2>
+      <ul style="padding-left: 20px;">
+          <li style="margin-bottom: 8px; color: #94a3b8; font-size: 0.92rem;">DIN V 18599-10 (2018). Energetische Bewertung von Gebäuden — Berechnung des Nutz-, End- und Primärenergiebedarfs. Deutsches Institut für Normung.</li>
+          <li style="margin-bottom: 8px; color: #94a3b8; font-size: 0.92rem;">ASABE EP406.4 (2020). Heating, Ventilating and Cooling Greenhouses. American Society of Agricultural and Biological Engineers.</li>
+          <li style="margin-bottom: 8px; color: #94a3b8; font-size: 0.92rem;">Bailey, B. J. (1981). The reduction of thermal radiation in glasshouses by thermal screens. Journal of Agricultural Engineering Research, 26(3), 215-224.</li>
+          <li style="margin-bottom: 8px; color: #94a3b8; font-size: 0.92rem;">Tantau, H.-J., Meyer, J., & Schmidt, U. (2011). Low energy greenhouse — A system approach. Acta Horticulturae, 893, 75-84.</li>
+          <li style="margin-bottom: 8px; color: #94a3b8; font-size: 0.92rem;">Bot, G. P. A. (1983). Greenhouse climate: from physical processes to a dynamic model. PhD Thesis, Wageningen University.</li>
+      </ul>
+    </section>
+
+
+<!-- INW-LIVE-WIDGET-START -->
+<section class="inw-live-widget-sandbox" style="margin: 32px 0; padding: 24px; background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 16px; box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);">
+  <h3 style="margin: 0 0 8px 0; font-size: 1.2rem; color: #38bdf8; font-weight: 800;">🔥 DIN V 18599 温室ピーク暖房負荷 & 保温カーテン省エネシミュレーター</h3>
+  <p style="margin: 0 0 16px 0; font-size: 0.92rem; color: #94a3b8; line-height: 1.6;">温室面積・外気設計温度・被覆材U値・保温カーテンを選択し、ピーク暖房負荷 (kW) と燃料消費量をリアルタイムに試算します。</p>
+  <div style="display: flex; justify-content: center; width: 100%; overflow: hidden;">
+    <iframe src="/embed/heating-loss-widget.html" width="380" height="460" loading="lazy" title="🔥 DIN V 18599 温室ピーク暖房負荷 & 保温カーテン省エネシミュレーター" style="border: none; border-radius: 14px; max-width: 100%;"></iframe>
+  </div>
+</section>
+<!-- INW-LIVE-WIDGET-END -->
+
+<!-- INW-TSUKUBA-FUNNEL-START -->
+<section class="inw-tsukuba-funnel-bridge" style="max-width: 1060px; margin: 32px auto; padding: 26px; background: rgba(15, 23, 42, 0.9); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 16px; text-align: left; box-shadow: 0 10px 28px rgba(0, 0, 0, 0.3);">
+  <h3 style="margin: 0 0 8px 0; font-size: 1.2rem; color: #10b981; font-weight: 800;">🔬 関連する技術論文・作物別環境制御ガイド・シミュレーター</h3>
+  <p style="margin: 0 0 16px 0; font-size: 0.92rem; color: #94a3b8; line-height: 1.6;">本ページの物理モデルおよび設計計算をさらに深く検証するための技術モノグラフと専用計算ツール：</p>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px;">
+    <a href="/articles/article-26-greenhouse-heating-load-din-v-18599.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">Vol. 26: DIN V 18599 Greenhouse Thermal Energy Balance & Screen Physics →</a>
+    <a href="/articles/article-43-greenhouse-structural-standards-en13031.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">Vol. 43: EN 13031-1 Commercial Venlo Structural Wind & Snow Load Engineering →</a>
+    <a href="/articles/article-28-greenhouse-co2-enrichment-economics.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">Vol. 28: CHP Cogeneration & CO₂ Enrichment Economics →</a>
+    <a href="/crops/greenhouse-tomato-microclimate-vpd-steering-guide.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🍅 Commercial High-Wire Tomato Thermal & Rail-Pipe Heating Guide →</a>
+    <a href="/crops/greenhouse-sweet-pepper-climate-blossom-end-rot-guide.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🫑 Sweet Pepper Night Temperature & Pipe-Rail Radiation Guide →</a>
+    <a href="/tools/venlocad-3d.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🏗️ VenloCAD 3D Structural & EN 13031-1 BOM Architect →</a>
+    <a href="/tools/global-agri-subsidy-grant-navigator.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🏛️ Global Agri-Subsidy & USDA REAP / German BLE Grant Navigator →</a>
+  </div>
+</section>
+<!-- INW-TSUKUBA-FUNNEL-END -->
+
+    <!-- INW-EEAT-BOX-START -->
+    <section class="inw-eeat-box" style="margin-top: 36px; padding: 24px; background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 16px;">
+      <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; color: #10b981; font-weight: 800; margin-bottom: 6px;">施設園芸・環境制御システムエンジニア — Inwoovation Lab</div>
+      <h3 style="margin: 0 0 8px 0; font-size: 1.15rem; color: #f8fafc;">Inwoo Hwang</h3>
+      <p style="margin: 0; font-size: 0.92rem; color: #cbd5e1; line-height: 1.65;">フェンロー型連棟温室の熱力学設計 (DIN V 18599)、光生物学 (DLI・PPFD・作用スペクトル)、閉鎖型養液栽培および精密環境制御モデルの構築に従事。</p>
+    </section>
+    <!-- INW-EEAT-BOX-END -->
+  </main>
+
+  <!-- INW-STD-FOOTER-START -->
+  <footer class="inw-site-footer" style="margin-top: 48px; padding: 28px 20px; background: #0f172a; color: #94a3b8; text-align: center; border-top: 1px solid rgba(148, 163, 184, 0.15);">
+    <div style="max-width: 1100px; margin: 0 auto;">
+      <p style="margin: 0 0 10px 0;">&copy; 2026 Inwoovation Lab. Precision Controlled Environment Agriculture &amp; Biophysical Engineering.</p>
+      <p style="margin: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 16px;">
+        <a href="/index.html" style="color: #cbd5e1; text-decoration: none;">Home</a>
+        <a href="/guides.html" style="color: #cbd5e1; text-decoration: none;">Engineering Guides</a>
+        <a href="/privacy-policy.html" style="color: #cbd5e1; text-decoration: none;">Privacy Policy</a>
+        <a href="/terms-of-service.html" style="color: #cbd5e1; text-decoration: none;">Terms of Service</a>
+        <a href="/about.html" style="color: #cbd5e1; text-decoration: none;">About</a>
+        <a href="/contact.html" style="color: #cbd5e1; text-decoration: none;">Contact</a>
+      </p>
+    </div>
+  </footer>
+  <!-- INW-STD-FOOTER-END -->
+</body>
+</html>

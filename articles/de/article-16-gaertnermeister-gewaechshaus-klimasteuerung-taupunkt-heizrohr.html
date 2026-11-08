@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta name="google-adsense-account" content="ca-pub-8597809158257497">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vol. 16: Gärtnermeister-Klimasteuerung im Venlo-Gewächshaus — Mollier-h-x-Diagramm, Taupunktabstand & Heizrohr-Regelung | Inwoovation Lab</title>
+  <meta name="description" content="Ingenieur-Monographie zur deutschen Gärtnermeister-Klimasteuerung nach KTBL und DIN EN 13031-1: Mollier-h-x-Psychrometrie, Taupunktabstand ΔT_Tau, Mindest-Rohrtemperatur (Schienenrohr vs. Vegetationsheizung) und PID-Regelung mit Priva Connext & RAM CC600.">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <link rel="canonical" href="https://inwoovation.com/articles/de/article-16-gaertnermeister-gewaechshaus-klimasteuerung-taupunkt-heizrohr.html">
+  <link rel="alternate" hreflang="en" href="https://inwoovation.com/articles/article-16-german-meister-greenhouse-climate.html">
+  <link rel="alternate" hreflang="x-default" href="https://inwoovation.com/articles/article-16-german-meister-greenhouse-climate.html">
+  <link rel="alternate" hreflang="de" href="https://inwoovation.com/articles/de/article-16-gaertnermeister-gewaechshaus-klimasteuerung-taupunkt-heizrohr.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Vol. 16: Gärtnermeister-Klimasteuerung im Venlo-Gewächshaus — Mollier-h-x-Diagramm, Taupunktabstand & Heizrohr-Regelung | Inwoovation Lab">
+  <meta property="og:description" content="Ingenieur-Monographie zur deutschen Gärtnermeister-Klimasteuerung nach KTBL und DIN EN 13031-1: Mollier-h-x-Psychrometrie, Taupunktabstand ΔT_Tau, Mindest-Rohrtemperatur (Schienenrohr vs. Vegetationsheizung) und PID-Regelung mit Priva Connext & RAM CC600.">
+  <meta property="og:url" content="https://inwoovation.com/articles/de/article-16-gaertnermeister-gewaechshaus-klimasteuerung-taupunkt-heizrohr.html">
+  <meta property="og:image" content="https://inwoovation.com/og-cover.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V4RYJBMEDE"></script>
+  <script>
+    if (navigator.webdriver || /HeadlessChrome|PhantomJS|Lighthouse|PTST|bot|crawler|spider|slurp/i.test(navigator.userAgent) || location.hostname === 'localhost' || location.hostname === '127.0.0.1' || (screen.width === 1366 && screen.height === 1366) || (screen.width === 800 && screen.height === 600) || screen.height >= 5000) { window['ga-disable-G-V4RYJBMEDE'] = true; }
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-V4RYJBMEDE');
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8597809158257497" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/global-ui-enhancements.css?v=20261108">
+  <script src="/js/global-search-palette.js?v=20261108" defer></script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "headline": "Vol. 16: Gärtnermeister-Klimasteuerung im Venlo-Gewächshaus — Mollier-h-x-Diagramm, Taupunktabstand & Heizrohr-Regelung | Inwoovation Lab",
+      "description": "Ingenieur-Monographie zur deutschen Gärtnermeister-Klimasteuerung nach KTBL und DIN EN 13031-1: Mollier-h-x-Psychrometrie, Taupunktabstand ΔT_Tau, Mindest-Rohrtemperatur (Schienenrohr vs. Vegetationsheizung) und PID-Regelung mit Priva Connext & RAM CC600.",
+      "inLanguage": "de",
+      "datePublished": "2026-11-08",
+      "dateModified": "2026-11-08",
+      "mainEntityOfPage": "https://inwoovation.com/articles/de/article-16-gaertnermeister-gewaechshaus-klimasteuerung-taupunkt-heizrohr.html",
+      "image": "https://inwoovation.com/og-cover.jpg",
+      "author": {
+        "@type": "Person",
+        "name": "Inwoo Hwang",
+        "jobTitle": "Horticultural & CEA Systems Engineer",
+        "url": "https://inwoovation.com/about.html"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Inwoovation Lab",
+        "url": "https://inwoovation.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://inwoovation.com/og-cover.jpg"
+        }
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inwoovation Lab",
+          "item": "https://inwoovation.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Engineering Guides",
+          "item": "https://inwoovation.com/guides.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "DE Vol. 16: Gärtnermeister-Klimasteuerung & Taupunkt",
+          "item": "https://inwoovation.com/articles/de/article-16-gaertnermeister-gewaechshaus-klimasteuerung-taupunkt-heizrohr.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Wie groß muss der Taupunktabstand (ΔT_Tau) im Gewächshaus sein, um Botrytis sicher zu verhindern?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In der deutschen Gärtnermeister-Praxis gilt ein minimaler Sicherheitsabstand von ΔT_Tau = T_Pflanzenorgan − T_Taupunkt ≥ 1,5 bis 2,0 Kelvin als Pflichtgrenze. Dies entspricht bei 18 bis 22 °C einer maximalen relativen Luftfeuchtigkeit von ca. 82 bis 85 % bzw. einem Feuchtedefizit (FD) von mindestens 2,5 bis 3,0 g/m³."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Warum darf beim Sonnenaufgang im Gewächshaus nicht schneller als 1,0 bis 1,5 K pro Stunde aufgeheizt werden?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Dichte Pflanzenorgane wie Tomatenfrüchte, Gurken oder Stängelbasen besitzen eine hohe thermische Masse und erwärmen sich deutlich langsamer als die Gewächshausluft. Steigt die Lufttemperatur und durch einsetzende Transpiration der Taupunkt schneller an als die Fruchttemperatur, unterschreitet die Fruchtoberfläche den Taupunkt der Luft, und es bildet sich freies Kondenswasser (Schwitzwasser)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Was ist der Unterschied zwischen Schienenrohrheizung und Vegetationsheizung?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Die Schienenrohrheizung (Ø 51 mm am Boden) liefert mit 40 bis 85 °C Vorlauf die thermische Grundlast und treibt die vertikale Konvektionsströmung durch den gesamten Bestand an. Die Vegetationsheizung (Ø 28–32 mm mitten im Laub) arbeitet mit milden 30 bis 50 °C und erwärmt gezielt Blätter und Früchte durch kurzstreckige Wärmestrahlung zur Förderung der Blütenentwicklung und Fruchtreife."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wie verhindert man den Kaltluftfall beim morgendlichen Öffnen des Energieschirms?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Der Energieschirm darf bei großer Temperaturdifferenz zwischen unterem Kulturraum und kaltem Dachraum (ΔT > 5 K) niemals in einem Zug geöffnet werden. Stattdessen fährt der Klimacomputer (z. B. RAM CC600 oder Priva Connext) zunächst in kleinen Intervallen einen Spalt von 1 bis 3 % auf, damit sich die warme Unterluft langsam mit dem kalten Dachpolster vermischt, bevor der Schirm komplett auffährt."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+  <style>
+    body { margin: 0; font-family: 'Plus Jakarta Sans', sans-serif; background: #090d16; color: #e2e8f0; line-height: 1.8; }
+    .article-shell { max-width: 920px; margin: 0 auto; padding: 36px 22px 60px; }
+    .badge-pill { display: inline-block; padding: 6px 14px; border-radius: 999px; background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.4); color: #34d399; font-size: 0.82rem; font-weight: 700; margin-bottom: 14px; }
+    h1 { font-family: 'Outfit', sans-serif; font-size: 2.25rem; line-height: 1.25; color: #f8fafc; margin: 0 0 14px 0; }
+    .meta-bar { color: #94a3b8; font-size: 0.9rem; margin-bottom: 28px; padding-bottom: 18px; border-bottom: 1px solid rgba(148, 163, 184, 0.18); }
+    .formula-box { background: rgba(15, 23, 42, 0.9); border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 12px; padding: 18px 22px; margin: 20px 0; font-family: 'JetBrains Mono', monospace; color: #38bdf8; overflow-x: auto; }
+    table.eng-table { width: 100%; border-collapse: collapse; margin: 20px 0; background: rgba(15, 23, 42, 0.75); border-radius: 12px; overflow: hidden; }
+    table.eng-table th, table.eng-table td { padding: 12px 14px; border: 1px solid rgba(148, 163, 184, 0.2); text-align: left; font-size: 0.92rem; }
+    table.eng-table th { background: rgba(30, 41, 59, 0.9); color: #38bdf8; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <main class="article-shell">
+    <div style="margin-bottom: 20px;">
+      <a href="/guides.html" style="color: #38bdf8; text-decoration: none; font-weight: 700; font-size: 0.92rem;">← Zurück zum Engineering-Archiv (Alle Fachartikel)</a>
+    </div>
+    <span class="badge-pill">🇩🇪 DEUTSCHE INGENIEUR-AUSGABE · VOL. 16 · GÄRTNERMEISTER-KLIMATECHNIK</span>
+    <h1>Gärtnermeister-Klimasteuerung im Venlo-Gewächshaus: Mollier-h-x-Psychrometrie, Taupunktabstand (ΔT<sub>Tau</sub>) und Heizrohr-Hydraulik</h1>
+<!-- INW-LANG-SWITCHER-START -->
+<div class="inw-lang-switcher-bar" style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:14px 0 20px 0; padding:10px 14px; background:rgba(15,23,42,0.75); border:1px solid rgba(148,163,184,0.2); border-radius:12px;">
+  <span style="font-size:0.8rem; color:#94a3b8; font-weight:700; margin-right:4px;">🌐 Vol. 16 Editions:</span>
+  <a href="/articles/article-16-german-meister-greenhouse-climate.html" style="display:inline-flex; align-items:center; padding:5px 12px; border-radius:999px; background:rgba(30,41,59,0.8); border:1px solid rgba(56,189,248,0.35); color:#38bdf8; text-decoration:none; font-size:0.8rem; font-weight:600;">🇬🇧 English Edition →</a>
+  <span style="display:inline-flex; align-items:center; padding:5px 12px; border-radius:999px; background:rgba(16,185,129,0.22); border:1px solid #10b981; color:#34d399; font-size:0.8rem; font-weight:700;">🇩🇪 Deutsche Ausgabe (Active)</span>
+</div>
+<!-- INW-LANG-SWITCHER-END -->
+    <div class="meta-bar">
+      <span>👨‍🔬 <strong>Inwoo Hwang</strong> (Inwoovation Lab)</span> &nbsp;|&nbsp;
+      <span>📅 Last Updated: November 08, 2026</span> &nbsp;|&nbsp;
+      <span>⏱️ 16 min read</span>
+    </div>
+
+      <section style="margin-bottom: 34px;">
+        <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px; margin-bottom: 16px;">1. Einführung: Warum die deutsche Gärtnermeister-Schule Klimasteuerung als angewandte Thermodynamik begreift</h2>
+        <p>In der deutschen Gärtnermeister-Ausbildung (Fachrichtungen Gemüsebau und Zierpflanzenbau an Lehr- und Versuchsanstalten wie Geisenheim, Weihenstephan, Hannover-Ahlem, Dresden-Pillnitz und Straelen) wird die Gewächshaus-Klimaführung niemals als bloßes Halten einer konstanten Lufttemperatur verstanden. Ein modernes Venlo-Großraumgewächshaus nach <strong>DIN EN 13031-1</strong> und <strong>DIN V 18599</strong> ist ein hochdynamischer, halboffener Bioreaktor, in dem kurzwellige Globalstrahlung, langwellige nächtliche Abstrahlung gegen den kalten Himmel, latente Transpirationswärmeströme des Pflanzenbestandes und sensible Konvektionsströme der Rohrheizung in Echtzeit miteinander gekoppelt sind.</p>
+<p>Wer als Betriebsleiter oder Gärtnermeister ausschließlich auf das Luftthermometer blickt, übersieht die beiden kritischsten Verlust- und Schadensmechanismen im mitteleuropäischen Unterglasgartenbau: Erstens die <strong>Taupunktunterschreitung an kühlen Pflanzenorganen</strong> (Stängelbasis, reifende Tomatenfrüchte, dichte Kopfsalat-Herzen oder <em>Cyclamen</em>-Knollen) während des morgendlichen Temperaturanstiegs, die innerhalb weniger Stunden zur Keimung von <em>Botrytis cinerea</em>, <em>Didymella bryoniae</em> oder <em>Bremia lactucae</em> führt. Zweitens die <strong>thermische Entkopplung unter geschlossenen Energieschirmen</strong>, bei der über dem Schirm ein Kaltluftsee entsteht, der beim unkontrollierten Öffnen am Morgen als kälteschockartiger Kaltluftfall (<em>Cold Air Downdraft</em>) in den empfindlichen Triebspitzenbereich stürzt.</p>
+<p>Diese Ingenieur-Monographie verbindet die prüfungsrelevante Fachpraxis der deutschen Gärtnermeister-Qualifikation (KTBL-Datensammlungen, ZVG-Richtlinien) mit der exakten Psychrometrie des <strong>Mollier-h-x-Diagramms</strong>, der Auslegung gestaffelter Heizkreise (Schienenrohr-, Untertisch- und Vegetationsheizung) sowie den mehrstufigen PID-Kaskadenreglern moderner Klimacomputer wie <strong>RAM Herrsching CC600</strong> und <strong>Priva Connext</strong>.</p>
+      </section>
+      <section style="margin-bottom: 34px;">
+        <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px; margin-bottom: 16px;">2. Psychrometrische Grundlagen nach Mollier (h-x): Sättigungsdampfdruck, Mischungsverhältnis und Enthalpie</h2>
+        <p>Im europäischen Klima-Engineering (im Gegensatz zum angelsächsischen Carrier-Diagramm) bildet das von Richard Mollier entwickelte <strong>h-x-Diagramm für feuchte Luft</strong> das fundamentale Rechenwerkzeug. Auf der Abszisse wird der absolute Wassergehalt (Feuchtegrad bzw. Mischungsverhältnis <em>x</em> in g Wasserdampf pro kg trockener Luft) aufgetragen, während die schräg verlaufende Ordinate die spezifische Enthalpie <em>h</em> (in kJ pro kg trockener Luft) abbildet. Für einen Luftzustand bei der Lufttemperatur <em>T<sub>Luft</sub></em> (°C) und der relativen Luftfeuchtigkeit <em>rF</em> (%) gilt zunächst die Magnus-Tetens-Gleichung für den Sättigungsdampfdruck <em>e<sub>s</sub>(T)</em> in Hektopascal (hPa) bzw. Kilopascal (kPa):</p>
+<div class="formula-box">
+e<sub>s</sub>(T) = 0,61078 &middot; exp[ (17,27 &middot; T) / (T + 237,3) ] &nbsp;&nbsp;[kPa]<br>
+e<sub>a</sub>(T<sub>Luft</sub>, rF) = e<sub>s</sub>(T<sub>Luft</sub>) &middot; (rF / 100) &nbsp;&nbsp;[kPa]<br>
+x = 621,98 &middot; [ e<sub>a</sub> / (p<sub>atm</sub> &minus; e<sub>a</sub>) ] &nbsp;&nbsp;[g H<sub>2</sub>O / kg trockene Luft]<br>
+h = c<sub>p,Luft</sub> &middot; T<sub>Luft</sub> + (x / 1000) &middot; (r<sub>0</sub> + c<sub>p,Dampf</sub> &middot; T<sub>Luft</sub>) &nbsp;&nbsp;[kJ / kg trockene Luft]
+</div>
+<p>Hierbei bezeichnet <em>p<sub>atm</sub></em> den barometrischen Gesamtdruck (Standard: 101,325 kPa), <em>c<sub>p,Luft</sub></em> = 1,006 kJ/(kg&middot;K) die spezifische Wärmekapazität trockener Luft, <em>r<sub>0</sub></em> = 2501 kJ/kg die spezifische Verdampfungsenthalpie von Wasser bei 0 °C und <em>c<sub>p,Dampf</sub></em> = 1,86 kJ/(kg&middot;K) die spezifische Wärmekapazität des überhitzten Wasserdampfes. Für das pflanzenphysiologisch entscheidende <strong>Dampfdruckdefizit des Bestandes (VPD<sub>Bestand</sub>)</strong> muss zwingend die wahre radiometrische Blatttemperatur <em>T<sub>Blatt</sub></em> herangezogen werden:</p>
+<div class="formula-box">
+VPD<sub>Bestand</sub> = e<sub>s</sub>(T<sub>Blatt</sub>) &minus; e<sub>a</sub>(T<sub>Luft</sub>, rF) &nbsp;&nbsp;[kPa]<br>
+FD<sub>abs</sub> = &rho;<sub>Dampf,sätt</sub>(T<sub>Blatt</sub>) &minus; &rho;<sub>Dampf,aktuell</sub>(T<sub>Luft</sub>, rF) &nbsp;&nbsp;[g/m<sup>3</sup> Feuchtedefizit]
+</div>
+<p>In deutschen Klimacomputern (insbesondere RAM CC600 und Priva Connext) wird neben dem VPD in kPa häufig das <strong>Feuchtedefizit (FD bzw. HD — Humidity Deficit)</strong> in Gramm Wasserdampf pro Kubikmeter Luft (g/m<sup>3</sup>) als primäre Führungsgröße genutzt. Ein Feuchtedefizit von 3,5 bis 7,0 g/m<sup>3</sup> korrespondiert im Temperaturbereich von 18 bis 24 °C exakt mit dem optimalen stomatären Leitfähigkeitsfenster von 0,6 bis 1,2 kPa, in dem die CO<sub>2</sub>-Diffusion durch die Spaltöffnungen maximiert wird, ohne dass ein hydraulischer Turgorverlust oder ein Zusammenbruch des akropetalen Kalziumtransports im Xylem auftritt.</p>
+      </section>
+      <section style="margin-bottom: 34px;">
+        <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px; margin-bottom: 16px;">3. Taupunkttemperatur (T_Tau) und die Kondensationsfalle beim Sonnenaufgang (Pre-Dawn Ramp)</h2>
+        <p>Die Taupunkttemperatur <em>T<sub>Tau</sub></em> ist definiert als jene Temperatur, auf die ein Luftpaket bei konstantem Wasserdampfpartialdruck <em>e<sub>a</sub></em> und konstantem Luftdruck abgekühlt werden muss, um die Sättigungslinie (<em>rF</em> = 100 %) zu erreichen. Aus der Invertierung der Magnus-Gleichung folgt mit dem Hilfsterm &gamma;(T, rF) = ln(rF / 100) + (17,27 &middot; T) / (T + 237,3):</p>
+<div class="formula-box">
+T<sub>Tau</sub> = (237,3 &middot; &gamma;) / (17,27 &minus; &gamma;) &nbsp;&nbsp;[°C]<br>
+&Delta;T<sub>Tau,Organ</sub> = T<sub>Organ</sub> &minus; T<sub>Tau</sub> &ge; 1,5 K bis 2,5 K &nbsp;&nbsp;(Sicherheitsabstand gegen Tauwasserbildung)
+</div>
+<p>Warum kommt es im Frühjahr und Herbst in schlecht geregelten Gewächshäusern regelmäßig zwischen 05:30 Uhr und 08:30 Uhr zu verheerendem Pilzbefall, obwohl die Luftfeuchte laut Hygrometer nur 84 % beträgt? Die Ursache liegt in der <strong>thermischen Trägheit massiver Pflanzenorgane</strong>: Während der Nacht kühlen dicht gepackte Tomatenrispen, Gurkenfrüchte, Stängelbasen oder Topfballen auf die nächtliche Heiztemperatur von beispielsweise 16,0 °C (oder durch langwellige Strahlungsverluste an das kalte Glasdach sogar auf 15,2 °C) ab. Steigt nun nach Sonnenaufgang die Gewächshauslufttemperatur rasch um 3 bis 4 K pro Stunde auf 20,0 °C an und beginnt der obere Blätterdachbereich bereits zu transpirieren, klettert die relative Luftfeuchte auf 85 %.</p>
+<p>Bei <em>T<sub>Luft</sub></em> = 20,0 °C und <em>rF</em> = 85 % beträgt die Taupunkttemperatur <em>T<sub>Tau</sub></em> = <strong>17,4 °C</strong>! Da die schweren Tomatenfrüchte im unteren Drittel aufgrund ihrer hohen spezifischen Wärmekapazität (<em>c<sub>p</sub></em> &approx; 3,95 kJ/(kg&middot;K)) um 07:30 Uhr erst eine Eigentemperatur von <em>T<sub>Organ</sub></em> = 16,3 °C erreicht haben, gilt <em>T<sub>Organ</sub></em> (16,3 °C) &lt; <em>T<sub>Tau</sub></em> (17,4 °C). Die Folge ist sofortige, flächenhafte Tropfenkondensation auf der Fruchthaut und den Kelchblättern. Die Gärtnermeister-Regel lautet daher zwingend: Der <strong>Morgenanstieg (Ramp-up)</strong> muss bereits 90 bis 120 Minuten <em>vor</em> astronomischem Sonnenaufgang mit einer streng begrenzten Aufheizrate von <strong>maximal 1,0 bis 1,5 K pro Stunde</strong> über die untere Rohrheizung eingeleitet werden, damit Stängel und Früchte vor dem Einsetzen der Strahlungstranspiration sicher über dem Taupunkt liegen.</p>
+      </section>
+      <section style="margin-bottom: 34px;">
+        <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px; margin-bottom: 16px;">4. Gestaffelte Heizkreise im Venlo-System: Schienenrohr, Vegetationsheizung und Mindest-Rohrtemperatur</h2>
+        <p>In modernen deutschen Produktionsgewächshäusern wird die Heizenergie niemals über ein einziges Heizregister eingebracht, sondern hydraulisch in mindestens zwei bis drei unabhängig geregelte Mischkreise (jeweils mit Dreiwege-Mischventil und drehzahlgeregelter Umwälzpumpe) aufgeteilt. Jeder Heizkreis erfüllt eine spezifische mikroklimatische und pflanzenbauliche Funktion:</p>
+<table class="eng-table">
+  <thead>
+    <tr>
+      <th>Heizkreis-System</th>
+      <th>Rohrdimension &amp; Position</th>
+      <th>Vorlauftemperatur-Bereich</th>
+      <th>Primäre thermodynamische &amp; pflanzenbauliche Funktion</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Primärheizung / Schienenrohrheizung (Rail Pipe)</strong></td>
+      <td>Stahlrohr &Oslash; 51 mm (5/4&quot;), ca. 10–15 cm über dem Boden als Erntewagenschiene verlegt</td>
+      <td>40 °C bis 85 °C (Mindestrohr: 38–45 °C bei Feuchtestau)</td>
+      <td>Grundlastdeckung (65–75 % der Wärmelast); erzeugt vertikale Thermik-Walze durch den gesamten Bestand und hält Stängelbasis trocken.</td>
+    </tr>
+    <tr>
+      <td><strong>Vegetationsheizung / Wachstumsrohr (Grow Pipe)</strong></td>
+      <td>Stahlrohr &Oslash; 28–32 mm, höhenverstellbar direkt im/unter dem aktiven Blatt- und Fruchtbereich</td>
+      <td>30 °C bis 52 °C (begrenzt gegen Strahlungsschäden am Blatt)</td>
+      <td>Gezielte Strahlungswärme auf generative Organe (Blüten, reifende Rispen); beschleunigt Assimilattransport (Phloem-Entladung) ohne Überhitzung der Hausluft.</td>
+    </tr>
+    <tr>
+      <td><strong>Untertisch- / Rinnen- / Wurzelzonenheizung</strong></td>
+      <td>PE-RT/Alu-Verbundrohr &Oslash; 16–25 mm unter Ebbe-Flut-Tischen oder Substrat-Rinnen</td>
+      <td>25 °C bis 38 °C (Niedertemperatur-Abwärme / Wärmepumpe)</td>
+      <td>Hält Wurzeltemperatur (19–22 °C) im optimalen Aquaporin- und Nährstoffaufnahmefenster; erlaubt Absenkung der Lufttemperatur um 1,5–2,0 K.</td>
+    </tr>
+    <tr>
+      <td><strong>Obere Rohrheizung / Schneelast- &amp; Schirmheizung</strong></td>
+      <td>Stahlrohr &Oslash; 32–51 mm im Binderfeld unter der Stehwand / Dachrinne</td>
+      <td>35 °C bis 80 °C (bedarfsgesteuert bei Frost/Schnee)</td>
+      <td>Abtauen von Dachschneelasten nach DIN EN 13031-1; Kompensation von Kaltluftabfall an Stehwänden und Giebelflächen.</td>
+    </tr>
+  </tbody>
+</table>
+<p>Ein klassisches Instrument der niederländisch-deutschen Kulturführung (<em>Het Nieuwe Telen / Next Generation Growing</em>) ist die <strong>Mindest-Rohrtemperatur (Minimum Pipe Temperature)</strong>. Selbst wenn die Soll-Lufttemperatur im Gewächshaus bereits erreicht ist, hält der Klimacomputer das untere Schienenrohr bei überhöhter Luftfeuchtigkeit (z. B. <em>FD</em> &lt; 2,5 g/m<sup>3</sup>) auf einer Vorlauftemperatur von 40 bis 48 °C, während gleichzeitig die leeseitige Dachlüftung um 2 bis 6 % geöffnet wird. Die vom 51-mm-Rohr abgegebene Wärmeleistung <em>q<sub>Rohr</sub></em> (in W pro laufendem Meter Rohr) folgt der kombinierten Konvektions- und Strahlungsgleichung nach Stefan-Boltzmann:</p>
+<div class="formula-box">
+q<sub>Rohr</sub> = &pi; &middot; D<sub>a</sub> &middot; [ &alpha;<sub>konv</sub> &middot; (T<sub>Rohr</sub> &minus; T<sub>Luft</sub>) + &epsilon;<sub>Rohr</sub> &middot; &sigma; &middot; (T<sub>Rohr,K</sub><sup>4</sup> &minus; T<sub>Umg,K</sub><sup>4</sup>) ] &nbsp;&nbsp;[W/m]<br>
+Beispiel (&Oslash; 51 mm bei T<sub>Rohr</sub> = 45 °C, T<sub>Luft</sub> = 19 °C): q<sub>Rohr</sub> &approx; 36 bis 42 W pro laufendem Meter Rohr
+</div>
+<p>Durch dieses gezielte Zusammenspiel von Mindestrohr und Minimalspaltlüftung („Heizen-Lüften-Kopplung“) wird einerseits die latente Transpirationspumpe des Bestandes (Xylem-Massenstrom für Bor und Kalzium in junge Blätter) aktiv gehalten und andererseits feuchtegesättigte Grenzschichtluft aus dem Bestand nach oben ausgetrieben. Um den thermischen Energieverlust dieser Methode zu minimieren, ersetzen moderne Betriebe das klassische Heizen-Lüften zunehmend durch mechanische <strong>Entfeuchtungs-Luftbehandlungseinheiten (ATU / Schläuche unter den Kulturrinnen)</strong> mit integrierter Wärmerückgewinnung.</p>
+      </section>
+      <section style="margin-bottom: 34px;">
+        <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px; margin-bottom: 16px;">5. Energieschirm-Strategie, Strahlungskühlung und Vermeidung des Kaltluftfalls</h2>
+        <p>In klaren Winternächten (bewölkungsfreier Himmel) sinkt die effektive Strahlungstemperatur des Himmelsgewölbes <em>T<sub>Himmel</sub></em> auf &minus;15 °C bis &minus;30 °C ab. Ohne geschlossenen Energieschirm verliert die oberste Blattschicht des Bestandes durch langwellige Infrarot-Abstrahlung (Wellenlängenbereich 8 bis 14 &mu;m, für den normales Floatglas nahezu vollständig absorptionsfähig ist und die Wärme nach außen abgibt) beträchtliche Energiemengen. Die Folge ist, dass die Triebspitzen 1,5 bis 3,0 K kälter werden als die umgebende Gewächshausluft — der Taupunkt wird exakt an der empfindlichsten Vegetationsspitze unterschritten.</p>
+<p>Das Schließen eines aluminisierten oder hochtransparenten <strong>Energieschirms (z. B. Svensson Luxous 1147 FR)</strong> reduziert nicht nur den gesamten Wärmedurchgangskoeffizienten (U-Wert) des Gewächshauses nach KTBL von ca. 6,2 W/(m<sup>2</sup>&middot;K) (Einfachglas ohne Schirm) auf <strong>3,3 bis 3,6 W/(m<sup>2</sup>&middot;K)</strong> (entsprechend einer Heizenergieeinsparung von 42 bis 47 %), sondern hebt auch die effektive Strahlungstemperatur der Decke über dem Bestand um 6 bis 9 K an. Dadurch bleiben die Pflanzenspitzen warm und trocken.</p>
+<p>Allerdings entsteht über dem geschlossenen Schirm im Dachraum ein isoliertes Kaltluftvolumen, das im Winter auf 4 bis 8 °C abkühlt. Würde der Schirm bei Sonnenaufgang in einem Schritt um 20 % geöffnet, fiele diese schwere, kalte Luft (höhere Dichte &rho; &approx; 1,27 kg/m<sup>3</sup> gegenüber 1,20 kg/m<sup>3</sup> bei 20 °C) schlagartig auf die warmen Pflanzen. In der Gärtnermeister-Praxis wird deshalb im Klimacomputer eine <strong>mehrstufige Schirm-Spalt-Automatik (Screen Gap / Kippen)</strong> programmiert:</p>
+<ul>
+  <li><strong>Stufe 1 (Feuchte-Spalt / Moisture Gap):</strong> Überschreitet die relative Feuchte unter dem Schirm den Grenzwert von 85 % (bzw. unterschreitet das Feuchtedefizit 2,2 g/m<sup>3</sup>), zieht der Computer einen <strong>Minimalspalt von 1,5 bis 3,0 %</strong> auf. Durch diesen schmalen Spalt entweicht feuchtwarme Luft langsam nach oben und kondensiert kontrolliert an der kalten Glasinnenseite (Dachkondensation wirkt als natürlicher Entfeuchter!), ohne dass kalte Luft nach unten durchbricht.</li>
+  <li><strong>Stufe 2 (Temperaturdifferenz-abhängige Morgenöffnung):</strong> Beim morgendlichen Auffahren wird die Öffnungsgeschwindigkeit streng über die gemessene Temperaturdifferenz &Delta;T<sub>Schirm</sub> = T<sub>unter Schirm</sub> &minus; T<sub>über Schirm</sub> geregelt. Bei &Delta;T<sub>Schirm</sub> &gt; 8 K öffnet der Schirm in Mikroschritten von 1 % alle 4 bis 6 Minuten (Spalt-Mischphase), bis sich die Luftmassen über und unter dem Schirm auf &Delta;T<sub>Schirm</sub> &lt; 3 K angeglichen haben. Erst danach fährt der Schirm vollständig auf.</li>
+</ul>
+      </section>
+      <section style="margin-bottom: 34px;">
+        <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px; margin-bottom: 16px;">6. PID-Kaskadenregelung in RAM CC600 & Priva Connext: P-Band, I-Zeit und Wind-Lee-Lüftung</h2>
+        <p>Die technische Umsetzung dieser Klimastrategien erfolgt in deutschen Gartenbaubetrieben über spezialisierte Prozessleitsysteme (<strong>RAM Klimacomputer CC600 / VisuRAM</strong>, <strong>Priva Connext</strong> oder <strong>Hoogendoorn IIVO</strong>). Anders als einfache Zweipunkt-Thermostate arbeiten diese Systeme mit gekoppelten <strong>PID-Kaskadenreglern (Proportional-Integral-Differential)</strong>:</p>
+<div class="formula-box">
+u(t) = u<sub>0</sub> + K<sub>p</sub> &middot; [ e(t) + (1 / T<sub>I</sub>) &middot; &int; e(&tau;) d&tau; + T<sub>D</sub> &middot; (de(t) / dt) ] &nbsp;&nbsp;mit P-Band X<sub>p</sub> = 100 % / K<sub>p</sub>
+</div>
+<p>Für die <strong>Firstlüftung (Lee- und Luv-Klappen)</strong> ist die korrekte Parametrierung des <strong>Proportionalbandes (P-Band X<sub>p</sub> in Kelvin)</strong> entscheidend, um ein permanentes Auf- und Zufahren der Zahnstangen-Antriebe (Regelschwingungen) und abrupte VPD-Sprünge im Bestand zu verhindern:</p>
+<table class="eng-table">
+  <thead>
+    <tr>
+      <th>Witterungs- &amp; Außentemperatur-Szenario</th>
+      <th>Empfohlenes P-Band (X<sub>p</sub>) Lüftung</th>
+      <th>Nachstellzeit (T<sub>I</sub>)</th>
+      <th>Luv-/Lee-Differenz &amp; Windschutz-Logik</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Winter / Frost (T<sub>Außen</sub> &lt; 5 °C)</strong></td>
+      <td>4,0 K bis 6,0 K (breites P-Band)</td>
+      <td>12 bis 18 min</td>
+      <td>Nur Lee-Lüftung (windabgewandt) max. 8–15 % freigeben; Luv-Seite bleibt 100 % geschlossen gegen Kaltlufteintritt.</td>
+    </tr>
+    <tr>
+      <td><strong>Übergangszeit (T<sub>Außen</sub> = 5–16 °C)</strong></td>
+      <td>2,5 K bis 4,0 K (mittleres P-Band)</td>
+      <td>8 bis 12 min</td>
+      <td>Lee-Lüftung führt; Luv-Lüftung folgt erst ab 25 % Lee-Öffnung mit 15–20 % Nachlauf-Offset.</td>
+    </tr>
+    <tr>
+      <td><strong>Hochsommer / Strahlungstag (T<sub>Außen</sub> &gt; 22 °C)</strong></td>
+      <td>1,2 K bis 2,0 K (enges P-Band)</td>
+      <td>4 bis 6 min</td>
+      <td>Lee und Luv synchron bis 100 % zur Maximierung des Kamin- und Winddruck-Luftwechsels (30–60 h<sup>&minus;1</sup>); ab Wind &gt; 8 m/s Sturmsicherung.</td>
+    </tr>
+  </tbody>
+</table>
+<p>Zusätzlich integriert die moderne Gärtnermeister-Klimaführung die <strong>Strahlungssummen- und Lichtabhängige Temperaturführung (24-Stunden-Temperaturintegral / Temperatursummenregelung)</strong>: Da die Assimilatbildungsrate tagsüber proportional zum täglichen Lichtintegral (DLI in mol&middot;m<sup>&minus;2</sup>&middot;d<sup>&minus;1</sup>) steigt, hebt der Klimacomputer an sonnigen Tagen ab einer Globalstrahlung von 250 W/m<sup>2</sup> den Heiz- und Lüftungssollwert automatisch um +0,5 bis +2,5 K an (Strahlungserhöhung). Gleichzeitig überwacht das System das <strong>RTR-Verhältnis (Radiation-to-Temperature Ratio)</strong>, sodass die 24-Stunden-Durchschnittstemperatur exakt zum kummulierten DLI passt und das vegetative/generative Gleichgewicht der Kultur über Wochen hinweg stabil bleibt.</p>
+      </section>
+
+    <section style="margin-bottom: 34px;">
+      <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #10b981; border-bottom: 1px solid rgba(16, 185, 129, 0.25); padding-bottom: 10px; margin-bottom: 16px;">Häufig gestellte Ingenieurfragen (Praxis-FAQ)</h2>
+        <div style="background: rgba(15, 23, 42, 0.7); border-left: 4px solid #10b981; padding: 18px 20px; border-radius: 10px; margin-bottom: 14px;">
+          <p style="margin: 0;"><strong>F1: Wie groß muss der Taupunktabstand (ΔT_Tau) im Gewächshaus sein, um Botrytis sicher zu verhindern?</strong><br>In der deutschen Gärtnermeister-Praxis gilt ein minimaler Sicherheitsabstand von ΔT_Tau = T_Pflanzenorgan − T_Taupunkt ≥ 1,5 bis 2,0 Kelvin als Pflichtgrenze. Dies entspricht bei 18 bis 22 °C einer maximalen relativen Luftfeuchtigkeit von ca. 82 bis 85 % bzw. einem Feuchtedefizit (FD) von mindestens 2,5 bis 3,0 g/m³.</p>
+        </div>
+        <div style="background: rgba(15, 23, 42, 0.7); border-left: 4px solid #10b981; padding: 18px 20px; border-radius: 10px; margin-bottom: 14px;">
+          <p style="margin: 0;"><strong>F2: Warum darf beim Sonnenaufgang im Gewächshaus nicht schneller als 1,0 bis 1,5 K pro Stunde aufgeheizt werden?</strong><br>Dichte Pflanzenorgane wie Tomatenfrüchte, Gurken oder Stängelbasen besitzen eine hohe thermische Masse und erwärmen sich deutlich langsamer als die Gewächshausluft. Steigt die Lufttemperatur und durch einsetzende Transpiration der Taupunkt schneller an als die Fruchttemperatur, unterschreitet die Fruchtoberfläche den Taupunkt der Luft, und es bildet sich freies Kondenswasser (Schwitzwasser).</p>
+        </div>
+        <div style="background: rgba(15, 23, 42, 0.7); border-left: 4px solid #10b981; padding: 18px 20px; border-radius: 10px; margin-bottom: 14px;">
+          <p style="margin: 0;"><strong>F3: Was ist der Unterschied zwischen Schienenrohrheizung und Vegetationsheizung?</strong><br>Die Schienenrohrheizung (Ø 51 mm am Boden) liefert mit 40 bis 85 °C Vorlauf die thermische Grundlast und treibt die vertikale Konvektionsströmung durch den gesamten Bestand an. Die Vegetationsheizung (Ø 28–32 mm mitten im Laub) arbeitet mit milden 30 bis 50 °C und erwärmt gezielt Blätter und Früchte durch kurzstreckige Wärmestrahlung zur Förderung der Blütenentwicklung und Fruchtreife.</p>
+        </div>
+        <div style="background: rgba(15, 23, 42, 0.7); border-left: 4px solid #10b981; padding: 18px 20px; border-radius: 10px; margin-bottom: 14px;">
+          <p style="margin: 0;"><strong>F4: Wie verhindert man den Kaltluftfall beim morgendlichen Öffnen des Energieschirms?</strong><br>Der Energieschirm darf bei großer Temperaturdifferenz zwischen unterem Kulturraum und kaltem Dachraum (ΔT > 5 K) niemals in einem Zug geöffnet werden. Stattdessen fährt der Klimacomputer (z. B. RAM CC600 oder Priva Connext) zunächst in kleinen Intervallen einen Spalt von 1 bis 3 % auf, damit sich die warme Unterluft langsam mit dem kalten Dachpolster vermischt, bevor der Schirm komplett auffährt.</p>
+        </div>
+    </section>
+
+    <section style="margin-bottom: 34px;">
+      <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.35rem; color: #cbd5e1; margin-bottom: 12px;">Wissenschaftliche Literatur & Normen</h2>
+      <ul style="padding-left: 20px;">
+          <li style="margin-bottom: 8px; color: #94a3b8; font-size: 0.92rem;">DIN EN 13031-1 (2020): Gewächshäuser — Bemessung und Konstruktion — Teil 1: Kulturgewächshäuser. Beuth Verlag, Berlin.</li>
+          <li style="margin-bottom: 8px; color: #94a3b8; font-size: 0.92rem;">KTBL (Kuratorium für Technik und Bauwesen in der Landwirtschaft): Betriebsplanung Gartenbau — Datensammlung für Gewächshaustechnik, Heizlastberechnung und Klimaführung. Darmstadt.</li>
+          <li style="margin-bottom: 8px; color: #94a3b8; font-size: 0.92rem;">Tantau, H.-J. (2012): Energieeinsparung und Klimasteuerung im Gewächshaus (Zierpflanzenbau & Gemüsebau). Eugen Ulmer Verlag / Institut für Gartenbauliche Produktionssysteme, Leibniz Universität Hannover.</li>
+          <li style="margin-bottom: 8px; color: #94a3b8; font-size: 0.92rem;">von Zabeltitz, C. (2011): Integrated Greenhouse Systems for Mild Climates & Central Europe: Climate Control, Heating and Energy Screens. Springer-Verlag.</li>
+          <li style="margin-bottom: 8px; color: #94a3b8; font-size: 0.92rem;">Bakker, J. C., Bot, G. P. A., Challa, H., & Van de Braak, N. J. (1995): Greenhouse Climate Control: An Integrated Approach. Wageningen Pers.</li>
+      </ul>
+    </section>
+
+
+<!-- INW-LIVE-WIDGET-START -->
+<section class="inw-live-widget-sandbox" style="margin: 32px 0; padding: 24px; background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 16px; box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);">
+  <h3 style="margin: 0 0 8px 0; font-size: 1.2rem; color: #38bdf8; font-weight: 800;">💧 Interaktiver Echtzeit-VPD- & Mikroklima-Simulator</h3>
+  <p style="margin: 0 0 16px 0; font-size: 0.92rem; color: #94a3b8; line-height: 1.6;">Passen Sie Lufttemperatur, relative Luftfeuchtigkeit und Blatttemperatur-Differenz an, um das Dampfdruckdefizit (kPa) live zu berechnen.</p>
+  <div style="display: flex; justify-content: center; width: 100%; overflow: hidden;">
+    <iframe src="/embed/vpd-gauge.html" width="380" height="390" loading="lazy" title="💧 Interaktiver Echtzeit-VPD- & Mikroklima-Simulator" style="border: none; border-radius: 14px; max-width: 100%;"></iframe>
+  </div>
+</section>
+<!-- INW-LIVE-WIDGET-END -->
+
+<!-- INW-TSUKUBA-FUNNEL-START -->
+<section class="inw-tsukuba-funnel-bridge" style="max-width: 1060px; margin: 32px auto; padding: 26px; background: rgba(15, 23, 42, 0.9); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 16px; text-align: left; box-shadow: 0 10px 28px rgba(0, 0, 0, 0.3);">
+  <h3 style="margin: 0 0 8px 0; font-size: 1.2rem; color: #10b981; font-weight: 800;">🔬 Weiterführende Fachartikel, Kulturleitfäden & Simulatoren (Tsukuba-Funnel)</h3>
+  <p style="margin: 0 0 16px 0; font-size: 0.92rem; color: #94a3b8; line-height: 1.6;">Vertiefen Sie die physikalischen Gleichungen dieser Seite mit unseren validierten Ingenieur-Monographien und interaktiven Echtzeit-Rechnern:</p>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px;">
+    <a href="/articles/article-01-vpd-master-class.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">Vol. 01: Penman-Monteith Transpiration & VPD Masterclass →</a>
+    <a href="/articles/article-72-semi-closed-greenhouse-mollier-psychrometrics-latent-heat.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">Vol. 72: Semi-Closed Greenhouse Mollier h-x Psychrometrics & Latent Heat →</a>
+    <a href="/articles/article-20-leaf-temperature-infrared-thermometry.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">Vol. 20: Radiometric Leaf-to-Air ΔT & Stomatal Conductance Physics →</a>
+    <a href="/crops/greenhouse-tomato-microclimate-vpd-steering-guide.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🍅 High-Wire Tomato VPD & Generative Steering Guide →</a>
+    <a href="/crops/greenhouse-cucumber-high-humidity-transpiration-guide.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🥒 Greenhouse Cucumber High-Humidity Transpiration Guide →</a>
+    <a href="/tools/psychrometric-mollier-greenhouse-dehumidifier.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">⚡ Mollier h-x Dehumidification & Latent Load Sizer →</a>
+    <a href="/tools/evapotranspiration-penman-monteith-calculator.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🍃 FAO-56 Penman-Monteith Evapotranspiration Solver →</a>
+  </div>
+</section>
+<!-- INW-TSUKUBA-FUNNEL-END -->
+
+    <!-- INW-EEAT-BOX-START -->
+    <section class="inw-eeat-box" style="margin-top: 36px; padding: 24px; background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 16px;">
+      <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; color: #10b981; font-weight: 800; margin-bottom: 6px;">Gärtnermeister-Kandidat & CEA-Systemingenieur — Inwoovation Lab</div>
+      <h3 style="margin: 0 0 8px 0; font-size: 1.15rem; color: #f8fafc;">Inwoo Hwang</h3>
+      <p style="margin: 0; font-size: 0.92rem; color: #cbd5e1; line-height: 1.65;">Spezialisiert auf Venlo-Gewächshausthermodynamik (DIN V 18599), Photobiologie (DLI/PPFD), geschlossene Hydroponik-Kreisläufe und präzise Kultursteuerung.</p>
+    </section>
+    <!-- INW-EEAT-BOX-END -->
+  </main>
+
+  <!-- INW-STD-FOOTER-START -->
+  <footer class="inw-site-footer" style="margin-top: 48px; padding: 28px 20px; background: #0f172a; color: #94a3b8; text-align: center; border-top: 1px solid rgba(148, 163, 184, 0.15);">
+    <div style="max-width: 1100px; margin: 0 auto;">
+      <p style="margin: 0 0 10px 0;">&copy; 2026 Inwoovation Lab. Precision Controlled Environment Agriculture &amp; Biophysical Engineering.</p>
+      <p style="margin: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 16px;">
+        <a href="/index.html" style="color: #cbd5e1; text-decoration: none;">Home</a>
+        <a href="/guides.html" style="color: #cbd5e1; text-decoration: none;">Engineering Guides</a>
+        <a href="/privacy-policy.html" style="color: #cbd5e1; text-decoration: none;">Privacy Policy</a>
+        <a href="/terms-of-service.html" style="color: #cbd5e1; text-decoration: none;">Terms of Service</a>
+        <a href="/about.html" style="color: #cbd5e1; text-decoration: none;">About</a>
+        <a href="/contact.html" style="color: #cbd5e1; text-decoration: none;">Contact</a>
+      </p>
+    </div>
+  </footer>
+  <!-- INW-STD-FOOTER-END -->
+</body>
+</html>
