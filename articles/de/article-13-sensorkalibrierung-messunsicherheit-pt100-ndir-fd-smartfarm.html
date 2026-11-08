@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V4RYJBMEDE"></script>
+    <script>
+       if (navigator.webdriver || /HeadlessChrome|PhantomJS|Lighthouse|PTST|bot|crawler|spider|slurp/i.test(navigator.userAgent) || location.hostname === 'localhost' || location.hostname === '127.0.0.1' || (screen.width === 1366 && screen.height === 1366) || (screen.width === 800 && screen.height === 600) || screen.height >= 5000) { window['ga-disable-G-V4RYJBMEDE'] = true; }
+    window.dataLayer = window.dataLayer || [];
+       function gtag(){dataLayer.push(arguments);}
+       gtag('js', new Date());
+       gtag('config', 'G-V4RYJBMEDE');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Präzisions-Sensorkalibrierung im Smart-Greenhouse: Nernst-Gleichung (pH/EC), TDR/FDR-Substratfeuchte &amp; NDIR-CO2-Driftkompensation | Inwoovation Lab</title>
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <link rel="canonical" href="https://inwoovation.com/articles/de/article-13-sensorkalibrierung-messunsicherheit-pt100-ndir-fd-smartfarm.html" />
+    <link rel="alternate" hreflang="de" href="https://inwoovation.com/articles/de/article-13-sensorkalibrierung-messunsicherheit-pt100-ndir-fd-smartfarm.html" />
+    <link rel="alternate" hreflang="en" href="https://inwoovation.com/articles/article-13-smartfarm-sensor-calibration.html" />
+    <link rel="alternate" hreflang="x-default" href="https://inwoovation.com/articles/article-13-smartfarm-sensor-calibration.html" />
+    <meta name="google-adsense-account" content="ca-pub-8597809158257497">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8597809158257497" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+        .article-container { max-width: 850px; margin: 40px auto; padding: 35px; background: #ffffff; border-radius: 16px; border: 1px solid #e2e8f0; line-height: 1.85; color: #334155; }
+        .article-container h1 { font-size: 2rem; color: #0f172a; margin-bottom: 15px; border-bottom: 3px solid #10b981; padding-bottom: 12px; line-height: 1.3; }
+        .article-meta { color: #64748b; font-size: 0.95rem; margin-bottom: 30px; display: flex; gap: 15px; flex-wrap: wrap; background: #f8fafc; padding: 10px 16px; border-radius: 8px; font-weight: 500; }
+        .article-container h2 { font-size: 1.35rem; color: #065f46; margin-top: 35px; margin-bottom: 14px; background: #ecfdf5; padding: 8px 16px; border-left: 4px solid #10b981; border-radius: 4px; }
+        .article-container h3 { font-size: 1.1rem; color: #1e293b; margin-top: 24px; margin-bottom: 10px; font-weight: 700; }
+        .article-container p { margin-bottom: 18px; text-align: justify; }
+        .article-container ul, .article-container ol { margin-left: 24px; margin-bottom: 20px; }
+        .back-link { display: inline-block; margin-bottom: 20px; color: #10b981; text-decoration: none; font-weight: 600; }
+        .back-link:hover { text-decoration: underline; }
+        .lang-switch-bar { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }
+        .lang-pill { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: 999px; font-size: 0.82rem; font-weight: 700; text-decoration: none; border: 1px solid #cbd5e1; color: #334155; background: #f8fafc; }
+        .lang-pill.active { background: #10b981; color: #ffffff; border-color: #059669; }
+        .formula-card { background: #0f172a; color: #e2e8f0; padding: 18px 22px; border-radius: 10px; font-family: 'JetBrains Mono', monospace; font-size: 0.92rem; margin: 18px 0; border-left: 4px solid #38bdf8; overflow-x: auto; }
+        .spec-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.92rem; }
+        .spec-table th, .spec-table td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+        .spec-table th { background: #f1f5f9; color: #0f172a; font-weight: 700; }
+    </style>
+    <meta name="description" content="Ingenieurleitfaden zur Sensorkalibrierung im Unterglasgartenbau: Zweipunkt-Kalibrierung nach der Nernst-Gleichung (pH 7,00/4,01), Temperaturkompensation der elektrischen Leitfähigkeit (EC 25 °C), dielektrische TDR/FDR-Substratfeuchte und optische NDIR-CO2-Driftkompensation.">
+    <meta property="og:title" content="Präzisions-Sensorkalibrierung im Smart-Greenhouse: Nernst-Gleichung (pH/EC), TDR/FDR-Substratfeuchte &amp; NDIR-CO2-Driftkompensation | Inwoovation Lab">
+    <meta property="og:description" content="Ingenieurleitfaden zur Sensorkalibrierung im Unterglasgartenbau: Zweipunkt-Kalibrierung nach der Nernst-Gleichung (pH 7,00/4,01), Temperaturkompensation der elektrischen Leitfähigkeit (EC 25 °C), dielektrische TDR/FDR-Substratfeuchte und optische NDIR-CO2-Driftkompensation.">
+    <meta property="og:image" content="https://inwoovation.com/og-cover.jpg">
+    <meta property="og:url" content="https://inwoovation.com/articles/de/article-13-sensorkalibrierung-messunsicherheit-pt100-ndir-fd-smartfarm.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Präzisions-Sensorkalibrierung im Smart-Greenhouse: Nernst-Gleichung (pH/EC), TDR/FDR-Substratfeuchte &amp; NDIR-CO2-Driftkompensation | Inwoovation Lab">
+    <meta name="twitter:description" content="Ingenieurleitfaden zur Sensorkalibrierung im Unterglasgartenbau: Zweipunkt-Kalibrierung nach der Nernst-Gleichung (pH 7,00/4,01), Temperaturkompensation der elektrischen Leitfähigkeit (EC 25 °C), dielektrische TDR/FDR-Substratfeuchte und optische NDIR-CO2-Driftkompensation.">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "TechArticle",
+          "headline": "Präzisions-Sensorkalibrierung im Smart-Greenhouse: Nernst-Gleichung (pH/EC), TDR/FDR-Substratfeuchte & NDIR-CO2-Driftkompensation",
+          "description": "Ingenieurleitfaden zur Sensorkalibrierung im Unterglasgartenbau: Zweipunkt-Kalibrierung nach der Nernst-Gleichung (pH 7,00/4,01), Temperaturkompensation der elektrischen Leitfähigkeit (EC 25 °C), dielektrische TDR/FDR-Substratfeuchte und optische NDIR-CO2-Driftkompensation.",
+          "url": "https://inwoovation.com/articles/de/article-13-sensorkalibrierung-messunsicherheit-pt100-ndir-fd-smartfarm.html",
+          "inLanguage": "de-DE",
+          "author": {
+            "@type": "Person",
+            "name": "Inwoo Hwang",
+            "jobTitle": "Horticultural & CEA Systems Engineer"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Inwoovation Lab",
+            "url": "https://inwoovation.com"
+          },
+          "datePublished": "2026-11-08",
+          "dateModified": "2026-11-08",
+          "mainEntityOfPage": "https://inwoovation.com/articles/de/article-13-sensorkalibrierung-messunsicherheit-pt100-ndir-fd-smartfarm.html"
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Wann muss eine potentiometrische pH-Glaselektrode im Bewässerungscomputer ausgetauscht werden?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Bei einer Zweipunkt-Kalibrierung mit zertifizierten NIST/PTB-Pufferlösungen (pH 7,00 und pH 4,01 bei 25 °C) beträgt die theoretische Nernst-Steilheit -59,16 mV pro pH-Einheit. Fällt die gemessene Elektrodensteilheit nach einer Reinigung in 0,1 M HCl unter 90 % (weniger als 53,2 mV/pH) oder überschreitet das Nullpunktpotential (Asymmetriepotential bei pH 7,00) ±25 mV, ist die Glasmembran gealtert und die Sonde zwingend auszutauschen."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Warum ist im Gewächshaus ein belüftetes Aspirationspsychrometer (PT100/PT1000) gegenüber unbelüfteten Sensoren unverzichtbar?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Ohne zwangsbelüftete Messkammer (Luftgeschwindigkeit >= 3 m/s) erwärmt sich das Sensorgehäuse unter direkter Sonneneinstrahlung (> 600 W/m²) durch Strahlungsabsorption um 2,5 bis 4,5 K über die wahre Lufttemperatur. Dies führt zu einer systematischen Überschätzung des Dampfdruckdefizits (VPD) um bis zu 0,45 kPa und provoziert Fehlsteuerungen der Firstlüftung und Hochdrucknebelanlage."
+              }
+            }
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Inwoovation Lab",
+              "item": "https://inwoovation.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Precision CEA Articles",
+              "item": "https://inwoovation.com/guides.html"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Sensorkalibrierung & Messunsicherheit im Smart-Greenhouse (DE Vol. 13)",
+              "item": "https://inwoovation.com/articles/de/article-13-sensorkalibrierung-messunsicherheit-pt100-ndir-fd-smartfarm.html"
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+    <link rel="stylesheet" href="/css/global-ui-enhancements.css?v=20261108">
+    <script src="/js/global-search-palette.js?v=20261108" defer></script>
+</head>
+<body>
+<!-- INW-STD-NAV-START -->
+<nav class="inw-top-nav" aria-label="Main Navigation" style="background: #0f172a; border-bottom: 1px solid #1e293b; padding: 12px 20px; font-family: system-ui, -apple-system, sans-serif; box-sizing: border-box; width: 100%;">
+  <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px;">
+    <a href="/index.html" style="color: #10b981; font-weight: 800; font-size: 1.15rem; text-decoration: none; letter-spacing: -0.02em;">Inwoovation Lab</a>
+    <div style="display: flex; flex-wrap: wrap; gap: 14px; font-size: 0.9rem;">
+      <a href="/index.html" style="color: #e2e8f0; text-decoration: none;">Home</a>
+      <a href="/smartfarm/vpd.html" style="color: #e2e8f0; text-decoration: none;">Calculators</a>
+      <a href="/articles/index.html" style="color: #38bdf8; font-weight: 600; text-decoration: none;">Articles</a>
+      <a href="/wiki/index.html" style="color: #e2e8f0; text-decoration: none;">Wiki</a>
+      <a href="/climate/index.html" style="color: #e2e8f0; text-decoration: none;">Climate Hub</a>
+      <a href="/crops/index.html" style="color: #e2e8f0; text-decoration: none;">Crops</a>
+      <a href="/tools/venlocad-3d.html" style="color: #10b981; font-weight: 600; text-decoration: none;">VenloCAD 3D</a>
+      <button type="button" onclick="window.InwooPalette && window.InwooPalette.open()" style="background: rgba(15, 23, 42, 0.9); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.4); padding: 6px 12px; border-radius: 6px; font-size: 0.85rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">🔍 Search <kbd style="background: rgba(255,255,255,0.1); padding: 1px 5px; border-radius: 4px; font-size: 0.72rem;">Ctrl+K</kbd></button>
+      <a href="/about.html" style="color: #e2e8f0; text-decoration: none;">About</a>
+    </div>
+  </div>
+</nav>
+<!-- INW-STD-NAV-END -->
+
+<div class="container">
+    <a href="/guides.html" class="back-link">← Zurück zur Übersicht der Fachartikel (Inwoovation Lab)</a>
+    <div class="article-container">
+        <div class="lang-switch-bar">
+            <a href="../article-13-smartfarm-sensor-calibration.html" class="lang-pill">🇬🇧 English Version</a>
+            <span class="lang-pill active">🇩🇪 Deutsche Originalausgabe (DE Vol. 13)</span>
+        </div>
+
+        <h1>Präzisions-Sensorkalibrierung im Smart-Greenhouse: Nernst-Gleichung (pH/EC), TDR/FDR-Substratfeuchte &amp; NDIR-CO<sub>2</sub>-Driftkompensation</h1>
+        <div class="article-meta">
+            <span>📅 2026-11-08</span>
+            <span>🏷️ Messtechnik, Sensorik &amp; Prozessleittechnik (RAM / Priva)</span>
+            <span>✍️ Inwoo Hwang (Horticultural &amp; CEA Systems Engineer)</span>
+            <span>⏱️ Reading Time: 4 min</span>
+        </div>
+
+        <h2>1. Sensordrift und Messunsicherheit in der autonomen Gewächshausregelung</h2>
+        <p>Moderne Prozessleitsysteme im geschützten Gartenbau (wie <em>RAM CC600</em> oder <em>Priva Connext</em>) arbeiten mit hochfrequenten Regelkreisen für die Lüftungs-, Heizungs-, CO<sub>2</sub>- und Bewässerungssteuerung. Die Regelgüte jeder modellprädiktiven Steuerung (MPC) ist jedoch durch die metrologische Integrität ihrer Primärsensoren begrenzt. Im kommerziellen Venlo-Gewächshaus sind Messfühler extremen Umgebungsbedingungen ausgesetzt: relativer Luftfeuchtigkeit über 90 %, Pflanzenschutz-Aerosolen, Biofilmbildung in Mischbehältern, Kalkausfällungen sowie täglichen Temperaturzyklen von über 20 K.</p>
+        <p>Eine unbemerkte Nullpunkt- oder Steilheitsdrift (engl. <em>Zero and Span Drift</em>) von nur +0,4 pH-Einheiten an der Vorlauf-Mischstation führt bereits zur Ausfällung von Eisen- und Phosphationen, während ein um +1,5 K durch Strahlungsfehler überhöhter Temperatursensor die Firstlüftung vorzeitig öffnet und jährlich bis zu 12 % Heizenergie sowie wertvolles technisches CO<sub>2</sub> verschwendet.</p>
+
+        <h2>2. Elektrochemie der Zweipunkt-pH-Kalibrierung (Nernst-Gleichung) und Temperaturkompensation der Leitfähigkeit (EC)</h2>
+        <p>Potentiometrische pH-Glaselektroden messen die Aktivität der Wasserstoffionen über eine ionenselektive Glasmembran relativ zu einer Silber/Silberchlorid-Referenzelektrode (Ag/AgCl in 3 M KCl-Elektrolyt). Das elektrochemische Zellpotential folgt streng der <strong>Nernst-Gleichung</strong>:</p>
+        <div class="formula-card">
+            E<sub>gemessen</sub> = E<sub>0</sub> &minus; S(T) &middot; (pH &minus; 7,00) &nbsp; [mV]<br>
+            S<sub>theoretisch</sub>(T) = (2,3026 &middot; R &middot; T) / F = 0,1984 &middot; T<sub>Kelvin</sub> &nbsp; [mV/pH] &nbsp; (&rArr; 59,16 mV/pH bei 25,0 &deg;C)<br>
+            Steilheitseffizienz &eta;<sub>S</sub> = (S<sub>real</sub> / S<sub>theoretisch</sub>) &middot; 100 % &nbsp; (Sollbereich: 92 % bis 102 %)
+        </div>
+        <p>Bei der obligatorischen <strong>Zweipunkt-Kalibrierung</strong> mit rückführbaren NIST/PTB-Pufferlösungen (zuerst Puffer <strong>pH 7,00</strong> zur Bestimmung des Asymmetrie- bzw. Nullpunktpotentials E<sub>0</sub>, anschließend Puffer <strong>pH 4,01</strong> zur Bestimmung der Steilheit S<sub>real</sub>) sind folgende Meister-Regeln einzuhalten:</p>
+        <ul>
+            <li><strong>Redundante Doppelsensorik an der Bewässerungsanlage:</strong> Hochleistungs-Fertigationsanlagen nutzen zwei parallele pH- und EC-Sonden im Mischstrom. Überschreitet die Differenz ΔpH > 0,25 oder ΔEC > 0,20 mS/cm, blockiert der Leitrechner sofort die Säure-/Laugendosierung (Salpetersäure HNO<sub>3</sub>) und löst einen Alarm aus.</li>
+            <li><strong>Temperaturkompensation der elektrischen Leitfähigkeit (EC<sub>25</sub>):</strong> Da die Ionenbeweglichkeit in wässrigen Nährlösungen um durchschnittlich α ≈ 0,0191 K<sup>-1</sup> (ca. 1,9 % bis 2,0 % pro Kelvin) mit der Wassertemperatur steigt, müssen alle Messwerte über einen integrierten PT1000-Fühler auf die Referenztemperatur von 25,0 °C normiert werden:
+            EC<sub>25</sub> = (EC<sub>T</sub>)/(1 + α · (T - 25,0))</li>
+        </ul>
+
+        <h2>3. Dielektrische Substratfeuchte (TDR / FDR), NDIR-CO<sub>2</sub> und Aspirationspsychrometer</h2>
+        <p>Neben der Flüssigphasenanalyse im Mischbehälter bestimmen drei physikalische Messverfahren das Mikroklima und den Wurzelraum:</p>
+        <table class="spec-table">
+            <thead>
+                <tr>
+                    <th>Sensortyp &amp; Messgröße</th>
+                    <th>Physikalisches Messprinzip</th>
+                    <th>Typische Fehlerquelle (Drift)</th>
+                    <th>Wartungs- &amp; Kalibrierintervall (SOP)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>pH-Glaselektrode</strong><br>(Vorlauf / Rücklauf)</td>
+                    <td>Potentiometrie (Nernst-Potential über H<sup>+</sup>-sensitive Glasmembran)</td>
+                    <td>Diaphragma-Verblockung durch Kalk/Biofilm, KCl-Verarmung</td>
+                    <td>Alle 14 Tage Reinigung (0,1 M HCl / Pepsin); alle 30 Tage 2-Punkt-Kalibrierung (pH 7,00 &amp; 4,01)</td>
+                </tr>
+                <tr>
+                    <td><strong>Induktive / 4-Pol-EC-Sonde</strong><br>(Nährlösungs-EC)</td>
+                    <td>Konduktometrie (Zellkonstante K in cm<sup>-1</sup> + PT1000 Kompensation)</td>
+                    <td>Belagsbildung (Kalziumsulfat/Eisenoxid) verändert Geometriefaktor K</td>
+                    <td>Monatliche Prüfung in Standardlösung 1,413 mS/cm und 2,76 mS/cm bei 25 °C</td>
+                </tr>
+                <tr>
+                    <td><strong>FDR / TDR-Substratsensor</strong><br>(VWC % &amp; Poren-EC)</td>
+                    <td>Scheinbare Dielektrizitätszahl ε<sub>a</sub> (ε<sub>Wasser</sub> ≈ 80 vs. ε<sub>Matrix</sub> ≈ 3--5)</td>
+                    <td>Luftspaltbildung um die Messnadeln, substratspezifische Rohdichte</td>
+                    <td>Substratspezifische Kennlinie (Steinwolle vs. Kokos/Perlit); fester Sitz zwischen zwei Tropfern</td>
+                </tr>
+                <tr>
+                    <td><strong>NDIR-CO<sub>2</sub>-Gasanalysator</strong><br>(400–1.500 ppm)</td>
+                    <td>Nicht-dispersive Infrarotabsorption bei λ = 4,26 μm (Beer-Lambert)</td>
+                    <td>Alterung der IR-Strahlungsquelle, Staub auf der optischen Küvette</td>
+                    <td>Zweistrahl-Referenzkanal oder monatlicher Frischluft-Nullpunktabgleich (420 ppm Außenluft)</td>
+                </tr>
+                <tr>
+                    <td><strong>Aspirationspsychrometer</strong><br>(PT100/PT1000 + kapazitive rF)</td>
+                    <td>Zwangsbelüftete Messbox (v ≥ 3,0 m/s) gegen Strahlungsfehler</td>
+                    <td>Ausfall des Aspirationslüfters (+3 bis +4,5 K Strahlungsfehler!)</td>
+                    <td>Wöchentliche Lüfter- und Staubfilterkontrolle; jährlicher Abgleich mit Referenz-Psychrometer</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- INW-LIVE-WIDGET-START -->
+        <div class="inw-live-widget-box" style="margin: 32px 0; padding: 24px; background: linear-gradient(135deg, #f0fdf4 0%, #f8fafc 100%); border: 2px solid #10b981; border-radius: 14px;">
+            <h3 style="margin-top: 0; color: #065f46; font-size: 1.25rem;">🔬 Interaktiver Kalibrier- &amp; Drift-Simulator: Nernst-pH-Steilheit, EC<sub>25</sub>-Normierung &amp; VPD-Strahlungsfehler</h3>
+            <p style="font-size: 0.92rem; color: #475569; margin-bottom: 16px;">Überprüfen Sie in Echtzeit die Elektrodensteilheit Ihrer pH-Sonde bei der Zweipunkt-Kalibrierung, die Temperaturkompensation der Leitfähigkeit (EC<sub>25</sub>) sowie den VPD-Messfehler bei Ausfall des Aspirationslüfters:</p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 14px; margin-bottom: 18px;">
+                <div>
+                    <label for="cal_mv7" style="display:block; font-size:0.85rem; font-weight:700; color:#1e293b; margin-bottom:4px;">Spannung bei Puffer pH 7,00 (mV)</label>
+                    <input type="number" id="cal_mv7" value="4.5" step="0.5" min="-50" max="50" style="width:100%; padding:8px; border:1px solid #cbd5e1; border-radius:6px; font-weight:700;">
+                </div>
+                <div>
+                    <label for="cal_mv4" style="display:block; font-size:0.85rem; font-weight:700; color:#1e293b; margin-bottom:4px;">Spannung bei Puffer pH 4,01 (mV)</label>
+                    <input type="number" id="cal_mv4" value="176.2" step="0.5" min="100" max="220" style="width:100%; padding:8px; border:1px solid #cbd5e1; border-radius:6px; font-weight:700;">
+                </div>
+                <div>
+                    <label for="cal_ec_raw" style="display:block; font-size:0.85rem; font-weight:700; color:#1e293b; margin-bottom:4px;">Unkompensierter Roh-EC (mS/cm)</label>
+                    <input type="number" id="cal_ec_raw" value="2.45" step="0.05" min="0.5" max="6.0" style="width:100%; padding:8px; border:1px solid #cbd5e1; border-radius:6px; font-weight:700;">
+                </div>
+                <div>
+                    <label for="cal_twater" style="display:block; font-size:0.85rem; font-weight:700; color:#1e293b; margin-bottom:4px;">Wassertemperatur (°C)</label>
+                    <input type="number" id="cal_twater" value="18.5" step="0.5" min="8.0" max="35.0" style="width:100%; padding:8px; border:1px solid #cbd5e1; border-radius:6px; font-weight:700;">
+                </div>
+            </div>
+            <div id="cal_output" style="background: #0f172a; color: #f8fafc; padding: 16px; border-radius: 8px; font-family: monospace; font-size: 0.93rem; line-height: 1.75;"></div>
+        </div>
+        <script>
+        (function() {
+            function runCalSim() {
+                const mv7 = parseFloat(document.getElementById('cal_mv7').value) || 0.0;
+                const mv4 = parseFloat(document.getElementById('cal_mv4').value) || 175.0;
+                const ecRaw = parseFloat(document.getElementById('cal_ec_raw').value) || 2.45;
+                const tWater = parseFloat(document.getElementById('cal_twater').value) || 18.5;
+
+                const deltaPh = 7.00 - 4.01;
+                const actualSlope = (mv4 - mv7) / deltaPh;
+                const theoSlope = 0.1984 * (tWater + 273.15);
+                const slopeEff = (actualSlope / theoSlope) * 100.0;
+
+                const alpha = 0.0191;
+                const ec25 = ecRaw / (1.0 + alpha * (tWater - 25.0));
+                const ecErrorPct = ((ecRaw - ec25) / ec25) * 100.0;
+
+                let probeStatus = '<span style="color:#34d399;">✅ Sonde intakt (Freigabe für autonome Säure-/Laugendosierung)</span>';
+                if (slopeEff < 90.0 || Math.abs(mv7) > 25.0) {
+                    probeStatus = '<span style="color:#f87171;">🚨 Kritisch! Steilheit &lt; 90 % oder Offset &gt; ±25 mV &rarr; pH-Elektrode sofort reinigen/austauschen!</span>';
+                } else if (slopeEff < 94.0 || Math.abs(mv7) > 15.0) {
+                    probeStatus = '<span style="color:#fbbf24;">⚠️ Alterung erkennbar &rarr; 14-tägige Reinigung in 0,1 M HCl durchführen</span>';
+                }
+
+                document.getElementById('cal_output').innerHTML =
+                    `⚡ Nullpunkt-Offset (bei pH 7,00): <strong>${mv7 >= 0 ? '+' : ''}${mv7.toFixed(1)} mV</strong> (Grenzwert: &plusmn;25,0 mV)<br>` +
+                    `📐 Gemessene Nernst-Steilheit: <strong>${actualSlope.toFixed(2)} mV/pH</strong> (Theorie bei ${tWater.toFixed(1)} °C: ${theoSlope.toFixed(2)} mV/pH) &rarr; Effizienz: <strong>${slopeEff.toFixed(1)} %</strong><br>` +
+                    `🧪 Temperaturkompensierter Leitwert (EC₂₅): <strong>${ec25.toFixed(2)} mS/cm</strong> (Rohwert-Abweichung ohne Kompensation: ${ecErrorPct >= 0 ? '+' : ''}${ecErrorPct.toFixed(1)} %)<br>` +
+                    `🛡️ Metrologische Diagnose: ${probeStatus}`;
+            }
+            ['cal_mv7', 'cal_mv4', 'cal_ec_raw', 'cal_twater'].forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.addEventListener('input', runCalSim);
+            });
+            runCalSim();
+        })();
+        </script>
+        <!-- INW-LIVE-WIDGET-END -->
+
+<!-- INW-EEAT-BOX-START -->
+    <section id="inw-eeat-standard-block" style="margin-top: 32px; padding-top: 24px; border-top: 1px solid rgba(148, 163, 184, 0.3); box-sizing: border-box;">
+      <div class="inw-calculators-box" style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 12px; padding: 20px; margin-bottom: 24px;">
+        <h3 style="margin-top: 0; margin-bottom: 12px; font-size: 1.15rem; color: #065f46;">⚙️ Weiterführende Ingenieur-Rechner &amp; Deutsche Fachartikel</h3>
+        <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+          <a href="/smartfarm/fertigation.html" style="display: inline-block; padding: 8px 14px; background: #0f172a; color: #38bdf8; border: 1px solid #334155; border-radius: 6px; text-decoration: none; font-size: 0.88rem; font-weight: 600;">🧪 A/B-Fertigations- &amp; EC-Rechner</a>
+          <a href="/smartfarm/vpd.html" style="display: inline-block; padding: 8px 14px; background: #0f172a; color: #38bdf8; border: 1px solid #334155; border-radius: 6px; text-decoration: none; font-size: 0.88rem; font-weight: 600;">💧 Psychrometrie &amp; VPD-Rechner</a>
+          <a href="article-05-penman-monteith-transpiration-automatisierung-ram-priva.html" style="display: inline-block; padding: 8px 14px; background: #0f172a; color: #38bdf8; border: 1px solid #334155; border-radius: 6px; text-decoration: none; font-size: 0.88rem; font-weight: 600;">⚙️ DE Vol. 05: RAM CC600 &amp; Priva Automatisierung</a>
+          <a href="article-06-naehrloesungsberechnung-stammbehaelter-ab-ec-duengung.html" style="display: inline-block; padding: 8px 14px; background: #0f172a; color: #38bdf8; border: 1px solid #334155; border-radius: 6px; text-decoration: none; font-size: 0.88rem; font-weight: 600;">📘 DE Vol. 06: Nährlösungsberechnung</a>
+          <a href="article-12-tomate-bluetenendfaeule-kalziumtransport-xylem-vpd.html" style="display: inline-block; padding: 8px 14px; background: #0f172a; color: #38bdf8; border: 1px solid #334155; border-radius: 6px; text-decoration: none; font-size: 0.88rem; font-weight: 600;">🍅 DE Vol. 12: Tomaten-Blütenendfäule (BER)</a>
+        </div>
+      </div>
+
+      <div class="inw-eeat-author-box" style="background: rgba(30, 41, 59, 0.06); border: 1px solid rgba(148, 163, 184, 0.35); border-radius: 12px; padding: 20px;">
+        <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; color: #059669; font-weight: 700; margin-bottom: 4px;">E-E-A-T Fachprüfung &amp; Autorenschaft</div>
+        <h3 style="margin: 0 0 8px 0; font-size: 1.1rem;">Inwoo Hwang — Horticultural &amp; CEA Systems Engineer, Inwoovation Lab</h3>
+        <p style="margin: 0; font-size: 0.92rem; line-height: 1.6; opacity: 0.9;">Spezialisiert auf Venlo-Gewächshausthermodynamik (DIN V 18599 &amp; DIN EN 13031-1), psychrometrische VPD- und Penman-Monteith-Transpirationskinetik, geschlossene Hydrokultur-Stöchiometrie sowie modellprädiktive Klimaregelung (MPC).</p>
+      </div>
+    </section>
+<!-- INW-EEAT-BOX-END -->
+    </div>
+
+  <footer style="max-width:1100px; margin:40px auto 24px; padding:0 20px; text-align:center;">
+    <div class="inw-trust-links" style="margin-top:16px; padding-top:14px; border-top:1px solid rgba(148,163,184,0.16); display:flex; justify-content:center; align-items:center; flex-wrap:wrap; gap:16px; font-size:0.84rem; color:#94a3b8;">
+      <a href="/index.html" style="color:#94a3b8; text-decoration:none; font-weight:600;">Home</a>
+      <a href="/about.html" style="color:#94a3b8; text-decoration:none; font-weight:600;">About Lab</a>
+      <a href="/contact.html" style="color:#94a3b8; text-decoration:none; font-weight:600;">Contact</a>
+      <a href="/privacy-policy.html" style="color:#94a3b8; text-decoration:none; font-weight:600;">Privacy Policy</a>
+      <a href="/terms-of-service.html" style="color:#94a3b8; text-decoration:none; font-weight:600;">Terms of Service</a>
+    </div>
+  </footer>
+</div>
+</body>
+</html>
