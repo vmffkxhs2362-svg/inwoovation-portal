@@ -754,6 +754,14 @@
     "tags": "articles de article 16 gaertnermeister gewaechshaus klimasteuerung taupunkt heizrohr html vol 16 gärtnermeister klimasteuerung im venlo gewächshaus mollier h x diagramm taupunktabstand heizr"
   },
   {
+    "title": "Vol. 17: Biophysikalische Substratphysik im Erwerbsgartenbau — Luftkapazität (AFP), pF-Wasserretentionskurven & Wurzelzonen-Sauerstoffdiffusion",
+    "cat": "article",
+    "url": "articles/de/article-17-substratphysik-luftkapazitaet-wasserretention-wurzelbelueftung.html",
+    "icon": "🇩🇪",
+    "desc": "Ingenieur-Monographie zur Substratphysik im Topf- und Containerbau: Gesamtporenvolumen (GPV), Luftkapazität bei pF 1,0, Stauwasserzone (Perched Water Table), Va",
+    "tags": "articles de article 17 substratphysik luftkapazitaet wasserretention wurzelbelueftung html vol 17 biophysikalische substratphysik im erwerbsgartenbau luftkapazität afp pf wasserretentionskur"
+  },
+  {
     "title": "Optimierung des Dunkelrot (730nm) & Hellrot (660nm) LED-Spektrums",
     "cat": "article",
     "url": "articles/de/article-24-far-red-deep-red-spektrum-optimierung.html",
@@ -1762,12 +1770,12 @@
     "tags": "crops vertical farm lettuce leafy greens tipburn prevention guide html controlled environment leafy greens lettuce lactuca sativa microclimate vpd dli precision steering guide precision cea "
   },
   {
-    "title": "Precision CEA & Horticultural Engineering Articles (78 Volumes / 162 Multilingual Editions)",
+    "title": "Precision CEA & Horticultural Engineering Articles (78 Volumes / 163 Multilingual Editions)",
     "cat": "article",
     "url": "guides.html",
     "icon": "📚",
-    "desc": "78-volume (162 multilingual editions) open-access Controlled Environment Agriculture (CEA) archive — VPD physics, biomass CHP, photobiology, closed-loop fertiga",
-    "tags": "guides html precision cea horticultural engineering articles 78 volumes 162 multilingual editions 78 volume 162 multilingual editions open access controlled environment agriculture cea archi"
+    "desc": "78-volume (163 multilingual editions) open-access Controlled Environment Agriculture (CEA) archive — VPD physics, biomass CHP, photobiology, closed-loop fertiga",
+    "tags": "guides html precision cea horticultural engineering articles 78 volumes 163 multilingual editions 78 volume 163 multilingual editions open access controlled environment agriculture cea archi"
   },
   {
     "title": "Inwoovation Lab",
@@ -2736,13 +2744,13 @@
       <div class="inwoo-palette-box" role="dialog" aria-modal="true" aria-label="Inwoovation Spotlight Search">
         <div class="inwoo-palette-header">
           <span class="inwoo-palette-search-icon">🔍</span>
-          <input type="text" id="inwoo-palette-input" placeholder="Search all 338 tools, simulators, wiki, crops, climate hubs & EN/DE/JA articles..." autocomplete="off" />
+          <input type="text" id="inwoo-palette-input" placeholder="Search all 339 tools, simulators, wiki, crops, climate hubs & EN/DE/JA articles..." autocomplete="off" />
           <span class="inwoo-palette-esc-badge" onclick="window.InwooPalette.close()">ESC</span>
         </div>
         <div class="inwoo-palette-tabs">
-          <button class="inwoo-pal-tab active" data-cat="all">✨ All (338)</button>
+          <button class="inwoo-pal-tab active" data-cat="all">✨ All (339)</button>
           <button class="inwoo-pal-tab" data-cat="tool">🛠️ Tools (48)</button>
-          <button class="inwoo-pal-tab" data-cat="article">📚 Articles (165)</button>
+          <button class="inwoo-pal-tab" data-cat="article">📚 Articles (166)</button>
           <button class="inwoo-pal-tab" data-cat="wiki">🧬 Wiki (44)</button>
           <button class="inwoo-pal-tab" data-cat="climate">🌍 Climate (41)</button>
           <button class="inwoo-pal-tab" data-cat="sim">🧪 Simulators (21)</button>
@@ -2756,7 +2764,7 @@
             <span><kbd>↵</kbd> Open</span>
             <span><kbd>Esc</kbd> Close</span>
           </div>
-          <div style="color: #64748b; font-size: 0.75rem;">Inwoovation Universal Spotlight (338 Indexed Pages)</div>
+          <div style="color: #64748b; font-size: 0.75rem;">Inwoovation Universal Spotlight (339 Indexed Pages)</div>
         </div>
       </div>
     `;
