@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta name="google-adsense-account" content="ca-pub-8597809158257497">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vertical Farming HVAC & Entfeuchtung berechnen: Latente Transpirationslast, Mollier-h-x & Wärmerückgewinnung | Inwoovation Lab</title>
+  <meta name="description" content="Ingenieurleitfaden zur HVAC- und Entfeuchtungsauslegung im Vertical Farming und Indoor-Gartenbau: Latente Dampfmassenbilanz, Sensible-Heat-Ratio (SHR), Mollier-h-x-Taupunktregelung und Wärmepumpen-COP.">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <link rel="canonical" href="https://inwoovation.com/articles/de/article-14-vertical-farming-hvac-entfeuchtung-kondensation-waermerueckgewinnung.html">
+  <link rel="alternate" hreflang="en" href="https://inwoovation.com/articles/article-14-ausbildung-horticulture-germany.html">
+  <link rel="alternate" hreflang="x-default" href="https://inwoovation.com/articles/article-14-ausbildung-horticulture-germany.html">
+  <link rel="alternate" hreflang="de" href="https://inwoovation.com/articles/de/article-14-vertical-farming-hvac-entfeuchtung-kondensation-waermerueckgewinnung.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Vertical Farming HVAC & Entfeuchtung berechnen: Latente Transpirationslast, Mollier-h-x & Wärmerückgewinnung | Inwoovation Lab">
+  <meta property="og:description" content="Ingenieurleitfaden zur HVAC- und Entfeuchtungsauslegung im Vertical Farming und Indoor-Gartenbau: Latente Dampfmassenbilanz, Sensible-Heat-Ratio (SHR), Mollier-h-x-Taupunktregelung und Wärmepumpen-COP.">
+  <meta property="og:url" content="https://inwoovation.com/articles/de/article-14-vertical-farming-hvac-entfeuchtung-kondensation-waermerueckgewinnung.html">
+  <meta property="og:image" content="https://inwoovation.com/og-cover.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V4RYJBMEDE"></script>
+  <script>
+    if (navigator.webdriver || /HeadlessChrome|PhantomJS|Lighthouse|PTST|bot|crawler|spider|slurp/i.test(navigator.userAgent) || location.hostname === 'localhost' || location.hostname === '127.0.0.1' || (screen.width === 1366 && screen.height === 1366) || (screen.width === 800 && screen.height === 600) || screen.height >= 5000) { window['ga-disable-G-V4RYJBMEDE'] = true; }
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-V4RYJBMEDE');
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8597809158257497" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/global-ui-enhancements.css?v=20261108">
+  <script src="/js/global-search-palette.js?v=20261108" defer></script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "headline": "Vertical Farming HVAC & Entfeuchtung berechnen: Latente Transpirationslast, Mollier-h-x & Wärmerückgewinnung | Inwoovation Lab",
+      "description": "Ingenieurleitfaden zur HVAC- und Entfeuchtungsauslegung im Vertical Farming und Indoor-Gartenbau: Latente Dampfmassenbilanz, Sensible-Heat-Ratio (SHR), Mollier-h-x-Taupunktregelung und Wärmepumpen-COP.",
+      "inLanguage": "de",
+      "datePublished": "2026-11-08",
+      "dateModified": "2026-11-08",
+      "mainEntityOfPage": "https://inwoovation.com/articles/de/article-14-vertical-farming-hvac-entfeuchtung-kondensation-waermerueckgewinnung.html",
+      "image": "https://inwoovation.com/og-cover.jpg",
+      "author": {
+        "@type": "Person",
+        "name": "Inwoo Hwang",
+        "jobTitle": "Horticultural & CEA Systems Engineer",
+        "url": "https://inwoovation.com/about.html"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Inwoovation Lab",
+        "url": "https://inwoovation.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://inwoovation.com/og-cover.jpg"
+        }
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inwoovation Lab",
+          "item": "https://inwoovation.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Engineering Guides",
+          "item": "https://inwoovation.com/guides.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "DE Vol. 14: Vertical Farming HVAC & Entfeuchtung",
+          "item": "https://inwoovation.com/articles/de/article-14-vertical-farming-hvac-entfeuchtung-kondensation-waermerueckgewinnung.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Warum ist die Nachtphase (Dunkelphase) bei der Entfeuchtung im Vertical Farming und Gewächshaus besonders kritisch?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Wenn die LEDs ausschalten, fällt die sensible Wärmelast sofort weg, während die Pflanzen und das feuchte Substrat weiter Wasserdampf abgeben (SHR sinkt auf 0,10–0,20). Eine reine Kühlung würde den Raum unterkühlen; deshalb ist ein Entfeuchter mit interner Wärmerückgewinnung (Heißgas-Reheat) unverzichtbar."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wie berechnet man die stündliche Wassermenge (kg/h), die ein HVAC-System im Vertical Farming abführen muss?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Multiplizieren Sie die gesamte bestückte Kulturfläche (alle Regalebenen in m²) mit der täglichen Transpirationsrate (typisch 3,5–5,0 L/m²/Tag), wobei ca. 80–85 % dieser Wassermenge während der Lichtstunden und 15–20 % in der Dunkelphase anfallen."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kann das aus der Raumluft gewonnene Kondensatwasser wieder als Gießwasser für die Hydroponik verwendet werden?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja! Sofern die Kühlregister aus korrosionsfreiem Edelstahl oder lebensmittelecht beschichtetem Aluminium bestehen (keine unbeschichteten Kupferlamellen wegen Cu²⁺-Phytotoxizität!) und das Kondensat eine UV-C-Entkeimung durchläuft, lassen sich über 90 % des Gießwassers im geschlossenen Kreislauf recyceln."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+  <style>
+    body { margin: 0; font-family: 'Plus Jakarta Sans', sans-serif; background: #090d16; color: #e2e8f0; line-height: 1.8; }
+    .article-shell { max-width: 920px; margin: 0 auto; padding: 36px 22px 60px; }
+    .badge-pill { display: inline-block; padding: 6px 14px; border-radius: 999px; background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.4); color: #34d399; font-size: 0.82rem; font-weight: 700; margin-bottom: 14px; }
+    h1 { font-family: 'Outfit', sans-serif; font-size: 2.25rem; line-height: 1.25; color: #f8fafc; margin: 0 0 14px 0; }
+    .meta-bar { color: #94a3b8; font-size: 0.9rem; margin-bottom: 28px; padding-bottom: 18px; border-bottom: 1px solid rgba(148, 163, 184, 0.18); }
+    .formula-box { background: rgba(15, 23, 42, 0.9); border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 12px; padding: 18px 22px; margin: 20px 0; font-family: 'JetBrains Mono', monospace; color: #38bdf8; overflow-x: auto; }
+    table.eng-table { width: 100%; border-collapse: collapse; margin: 20px 0; background: rgba(15, 23, 42, 0.75); border-radius: 12px; overflow: hidden; }
+    table.eng-table th, table.eng-table td { padding: 12px 14px; border: 1px solid rgba(148, 163, 184, 0.2); text-align: left; font-size: 0.92rem; }
+    table.eng-table th { background: rgba(30, 41, 59, 0.9); color: #38bdf8; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <main class="article-shell">
+    <div style="margin-bottom: 20px;">
+      <a href="/guides.html" style="color: #38bdf8; text-decoration: none; font-weight: 700; font-size: 0.92rem;">← Zurück zum Engineering-Archiv (Alle Fachartikel)</a>
+    </div>
+    <span class="badge-pill">🇩🇪 DE Vol. 14 · Klimatechnik (HVAC), Thermodynamik & Mollier-h-x-Entfeuchtung</span>
+    <h1>HVAC- & Entfeuchtungsauslegung im Vertical Farming: Latente Transpirationslast, Sensible Heat Ratio (SHR) & Mollier-h-x-Kondensation</h1>
+<!-- INW-LANG-SWITCHER-START -->
+<div class="inw-lang-switcher-bar" style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:14px 0 20px 0; padding:10px 14px; background:rgba(15,23,42,0.75); border:1px solid rgba(148,163,184,0.2); border-radius:12px;">
+  <span style="font-size:0.8rem; color:#94a3b8; font-weight:700; margin-right:4px;">🌐 Vol. 14 Editions:</span>
+  <a href="/articles/article-14-ausbildung-horticulture-germany.html" style="display:inline-flex; align-items:center; padding:5px 12px; border-radius:999px; background:rgba(30,41,59,0.8); border:1px solid rgba(56,189,248,0.35); color:#38bdf8; text-decoration:none; font-size:0.8rem; font-weight:600;">🇬🇧 English Edition →</a>
+  <span style="display:inline-flex; align-items:center; padding:5px 12px; border-radius:999px; background:rgba(16,185,129,0.22); border:1px solid #10b981; color:#34d399; font-size:0.8rem; font-weight:700;">🇩🇪 Deutsche Ausgabe (Active)</span>
+</div>
+<!-- INW-LANG-SWITCHER-END -->
+    <div class="meta-bar">
+      <span>👨‍🔬 <strong>Inwoo Hwang</strong> (Inwoovation Lab)</span> &nbsp;|&nbsp;
+      <span>📅 Last Updated: November 08, 2026</span> &nbsp;|&nbsp;
+      <span>⏱️ 15 Min. Lesezeit</span>
+    </div>
+
+      <section style="margin-bottom: 34px;">
+        <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px; margin-bottom: 16px;">1. Warum herkömmliche Komfort-Klimaanlagen im Vertical Farming versagen (Das SHR-Paradoxon)</h2>
+        <p>In einer thermisch isolierten Indoor-Farm (Vertical Farm mit mehrlagigen Kulturregalen) werden über <strong>97 % des zugeführten Gießwassers</strong> nicht in der Pflanzenbiomasse gespeichert, sondern über die Spaltöffnungen (Stomata) als Wasserdampf in die Raumluft transpiriert. Während klassische Büro- oder Gewerbeklimaanlagen für ein <strong>Sensible Heat Ratio (SHR — Verhältnis von sensibler Kühllast zu Gesamtkühllast)</strong> von <code>0,75 bis 0,85</code> ausgelegt sind, kehrt sich dieses Verhältnis in einer vollbestückten Pflanzenkammer komplett um: Durch die hohe Transpirationsrate der Pflanzen bei gleichzeitig hoher LED-Effizienz (PPE &gt; 3,4 µmol/J) liegt das reale SHR im Vertical Farming bei <strong>0,30 bis 0,45</strong> — mehr als 55 bis 70 % der gesamten thermischen Last bestehen aus <em>latenter Verdampfungsenthalpie</em> (<code>h_fg ≈ 2.450 kJ/kg</code> bei 20 °C)!</p>
+        <div class="formula-box">
+          Latenter Dampfmassenstrom ṁ_Dampf [kg·h⁻¹] = A_Kultur [m²] × E_Bestand [L·m⁻²·d⁻¹] / t_Belichtung [h·d⁻¹]<br>
+          Latente Kühllast Q̇_latent [kW] = ṁ_Dampf [kg·h⁻¹] × 2.450 [kJ·kg⁻¹] / 3.600 [s·h⁻¹] = ṁ_Dampf × 0,6806 kW/(kg/h)
+        </div>
+        <p>Praxisbeispiel für eine 1.000 m² mehrlagige Salat-Indoor-Farm: Bei einer täglichen Transpirationsrate von <code>4,2 L·m⁻²·d⁻¹</code> während einer 16-stündigen Lichtphase müssen stündlich <code>(1.000 × 4,2) / 16 = 262,5 kg/h</code> Wasser aus der Raumluft auskondensiert werden. Allein diese latente Entfeuchtung erfordert eine thermische Kondensationsleistung von <strong>178,6 kW</strong>!</p>
+      </section>
+      <section style="margin-bottom: 34px;">
+        <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px; margin-bottom: 16px;">2. Kopplung von LED-Abwärme und Bestandstranspiration in der Energiebilanz</h2>
+        <p>In einem luftdichten Kulturraum (zur Aufrechterhaltung einer CO₂-Anreicherung von 1.000 bis 1.200 ppm ohne Außenluftverluste) muss die gesamte elektrisch aufgenommene LED- und Ventilatorleistung <code>P_el,ges</code> im stationären Zustand vollständig über das Kaltwassernetz oder Direktverdampfer-Register abgeführt werden. Dabei teilt sich die auf das Blätterdach treffende PAR-Strahlung in zwei Pfade auf: Etwa 2 bis 3 % werden chemisch in Kohlenhydraten gebunden, während der Rest das Blatt erwärmt und dadurch die Verdunstung (Transpiration) antreibt — ein interner adiabater Kühlprozess, der sensible Strahlungswärme in latente Dampfenthalpie umwandelt.</p>
+        <table class="eng-table">
+          <thead>
+            <tr>
+              <th>Betriebsphase &amp; Bestandsdichte (LAI)</th>
+              <th>Sensible Last Q̇_sens (%)</th>
+              <th>Latente Last Q̇_lat (%)</th>
+              <th>Erforderliches Anlagen-SHR</th>
+              <th>Taupunkt-Sollwert T_dp (°C)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Keimung &amp; Jungpflanzen (LAI &lt; 0,8)</strong></td>
+              <td>65 – 75 %</td>
+              <td>25 – 35 %</td>
+              <td>0,65 – 0,75</td>
+              <td>16,5 – 18,0 °C (bei 22 °C / 75 % rF)</td>
+            </tr>
+            <tr>
+              <td><strong>Vegetative Hauptphase (LAI 1,5 – 2,5)</strong></td>
+              <td>45 – 55 %</td>
+              <td>45 – 55 %</td>
+              <td>0,45 – 0,55</td>
+              <td>13,5 – 15,0 °C (bei 21 °C / 65 % rF)</td>
+            </tr>
+            <tr>
+              <td><strong>Erntereifer Vollbestand (LAI &gt; 3,0)</strong></td>
+              <td>30 – 40 %</td>
+              <td>60 – 70 %</td>
+              <td>0,30 – 0,40</td>
+              <td>11,5 – 13,0 °C (bei 20 °C / 60 % rF)</td>
+            </tr>
+            <tr>
+              <td><strong>Dunkelphase (LEDs aus, Stomata teiloffen)</strong></td>
+              <td>10 – 20 %</td>
+              <td>80 – 90 %</td>
+              <td>0,10 – 0,20</td>
+              <td>10,5 – 12,0 °C (Re-Heat zwingend erforderlich!)</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <section style="margin-bottom: 34px;">
+        <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px; margin-bottom: 16px;">3. Mollier-h-x-Zustandsänderung: Unterkühlung, Kondensation & Interne Nacherwärmung (Re-Heat)</h2>
+        <p>Um im Mollier-h-x-Diagramm aus einem Raumluftzustand von beispielsweise <code>T_Luft = 21,0 °C</code> und <code>rF = 68 %</code> (absolute Feuchte <code>x₁ = 10,6 g/kg</code> trockener Luft, Taupunkt <code>T_dp = 14,9 °C</code>) eine präzise Entfeuchtung durchzuführen, muss der Luftstrom am Kühlregister deutlich unter den Taupunkt auf etwa <code>T_Kühl = 9,0 bis 11,0 °C</code> (<code>x₂ = 7,6 bis 8,2 g/kg</code>) abgekühlt werden. Würde man diese 10 °C kalte, zu 100 % gesättigte Zuluft direkt in die Kulturregale einblasen, käme es sofort zu Kälteschocks, Kondensatbildung auf den Blättern (<em>Botrytis</em>-Gefahr) und lokalem VPD-Zusammenbruch.</p>
+        <p>Hochwertige CEA-Luftbehandlungsanlagen (Air Handling Units, AHU) schalten daher unmittelbar hinter das Kühlregister ein <strong>Heißgas-Nacherwärmungsregister (Hot-Gas Re-Heat)</strong> oder einen Kreuzstrom-Plattenwärmetauscher: Die bei der Kältemittelkondensation anfallende Abwärme erwärmt den entfeuchteten Luftstrom bei konstanter absoluter Feuchte (<code>x₂ = const.</code>) isobar zurück auf <code>20,0 bis 21,0 °C</code>. Auf diese Weise wird kostenlose Kompressor-Abwärme für den Re-Heat genutzt, statt teure elektrische Heizregister einzusetzen.</p>
+      </section>
+      <section style="margin-bottom: 34px;">
+        <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px; margin-bottom: 16px;">4. Kondensat-Wasserrückgewinnung & Spezifische Entfeuchtungseffizienz (SMER in L/kWh)</h2>
+        <p>Die wirtschaftliche Güte einer Gewächshaus- oder Vertical-Farm-Entfeuchtung wird über die <strong>Specific Moisture Extraction Rate (SMER)</strong> in Litern auskondensiertem Wasser pro Kilowattstunde elektrischer Antriebsenergie (<code>L/kWh</code>) bewertet. Während einfache Direktverdampfer ohne Wärmerückgewinnung lediglich 1,4 bis 1,8 L/kWh erreichen, erzielen zweistufige Wärmepumpen-AHUs mit Vorkühl-Wärmetauscher (Sensible Heat Pipe / Enthalpierad) <strong>2,8 bis 4,2 L/kWh</strong>. Zudem ist das am Edelstahl-Wärmetauscher anfallende Kondensat nahezu vollentsalztes Reinwasser (<code>EC &lt; 0,05 mS/cm</code>): Nach einer UV-C-Entkeimung (<code>254 nm, ≥ 40 mJ/cm²</code>) lassen sich bis zu <strong>92 % des gesamten Transpirationswassers</strong> direkt in den Hydroponik-Mischbehälter zurückführen!</p>
+      </section>
+
+    <section style="margin-bottom: 34px;">
+      <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #10b981; border-bottom: 1px solid rgba(16, 185, 129, 0.25); padding-bottom: 10px; margin-bottom: 16px;">Häufig gestellte Ingenieurfragen (Praxis-FAQ)</h2>
+        <div style="background: rgba(15, 23, 42, 0.7); border-left: 4px solid #10b981; padding: 18px 20px; border-radius: 10px; margin-bottom: 14px;">
+          <p style="margin: 0;"><strong>F1: Warum ist die Nachtphase (Dunkelphase) bei der Entfeuchtung im Vertical Farming und Gewächshaus besonders kritisch?</strong><br>Wenn die LEDs ausschalten, fällt die sensible Wärmelast sofort weg, während die Pflanzen und das feuchte Substrat weiter Wasserdampf abgeben (SHR sinkt auf 0,10–0,20). Eine reine Kühlung würde den Raum unterkühlen; deshalb ist ein Entfeuchter mit interner Wärmerückgewinnung (Heißgas-Reheat) unverzichtbar.</p>
+        </div>
+        <div style="background: rgba(15, 23, 42, 0.7); border-left: 4px solid #10b981; padding: 18px 20px; border-radius: 10px; margin-bottom: 14px;">
+          <p style="margin: 0;"><strong>F2: Wie berechnet man die stündliche Wassermenge (kg/h), die ein HVAC-System im Vertical Farming abführen muss?</strong><br>Multiplizieren Sie die gesamte bestückte Kulturfläche (alle Regalebenen in m²) mit der täglichen Transpirationsrate (typisch 3,5–5,0 L/m²/Tag), wobei ca. 80–85 % dieser Wassermenge während der Lichtstunden und 15–20 % in der Dunkelphase anfallen.</p>
+        </div>
+        <div style="background: rgba(15, 23, 42, 0.7); border-left: 4px solid #10b981; padding: 18px 20px; border-radius: 10px; margin-bottom: 14px;">
+          <p style="margin: 0;"><strong>F3: Kann das aus der Raumluft gewonnene Kondensatwasser wieder als Gießwasser für die Hydroponik verwendet werden?</strong><br>Ja! Sofern die Kühlregister aus korrosionsfreiem Edelstahl oder lebensmittelecht beschichtetem Aluminium bestehen (keine unbeschichteten Kupferlamellen wegen Cu²⁺-Phytotoxizität!) und das Kondensat eine UV-C-Entkeimung durchläuft, lassen sich über 90 % des Gießwassers im geschlossenen Kreislauf recyceln.</p>
+        </div>
+    </section>
+
+    <section style="margin-bottom: 34px;">
+      <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.35rem; color: #cbd5e1; margin-bottom: 12px;">Wissenschaftliche Literatur & Normen</h2>
+      <ul style="padding-left: 20px;">
+          <li style="margin-bottom: 8px; color: #94a3b8; font-size: 0.92rem;">Graamans, L., Baeza, E., van den Dobbelsteen, A., Tsafaras, I., & Stanghellini, C. (2018). Plant factories versus greenhouses: Comparison of resource use efficiency. Agricultural Systems, 160, 31-43.</li>
+          <li style="margin-bottom: 8px; color: #94a3b8; font-size: 0.92rem;">ASHRAE Handbook — HVAC Applications (Chapter 24: Environmental Control for Animals and Plants — Controlled Environment Agriculture).</li>
+          <li style="margin-bottom: 8px; color: #94a3b8; font-size: 0.92rem;">VDI 2078 / DIN V 18599-3: Berechnung der Kühllast und Raumtemperaturen sowie energetische Bewertung von raumlufttechnischen Anlagen.</li>
+      </ul>
+    </section>
+
+
+<!-- INW-LIVE-WIDGET-START -->
+<section class="inw-live-widget-sandbox" style="margin: 32px 0; padding: 24px; background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 16px; box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);">
+  <h3 style="margin: 0 0 8px 0; font-size: 1.2rem; color: #38bdf8; font-weight: 800;">💧 Interaktiver Echtzeit-VPD- & Mikroklima-Simulator</h3>
+  <p style="margin: 0 0 16px 0; font-size: 0.92rem; color: #94a3b8; line-height: 1.6;">Passen Sie Lufttemperatur, relative Luftfeuchtigkeit und Blatttemperatur-Differenz an, um das Dampfdruckdefizit (kPa) live zu berechnen.</p>
+  <div style="display: flex; justify-content: center; width: 100%; overflow: hidden;">
+    <iframe src="/embed/vpd-gauge.html" width="380" height="390" loading="lazy" title="💧 Interaktiver Echtzeit-VPD- & Mikroklima-Simulator" style="border: none; border-radius: 14px; max-width: 100%;"></iframe>
+  </div>
+</section>
+<!-- INW-LIVE-WIDGET-END -->
+
+<!-- INW-TSUKUBA-FUNNEL-START -->
+<section class="inw-tsukuba-funnel-bridge" style="max-width: 1060px; margin: 32px auto; padding: 26px; background: rgba(15, 23, 42, 0.9); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 16px; text-align: left; box-shadow: 0 10px 28px rgba(0, 0, 0, 0.3);">
+  <h3 style="margin: 0 0 8px 0; font-size: 1.2rem; color: #10b981; font-weight: 800;">🔬 Weiterführende Fachartikel, Kulturleitfäden & Simulatoren (Tsukuba-Funnel)</h3>
+  <p style="margin: 0 0 16px 0; font-size: 0.92rem; color: #94a3b8; line-height: 1.6;">Vertiefen Sie die physikalischen Gleichungen dieser Seite mit unseren validierten Ingenieur-Monographien und interaktiven Echtzeit-Rechnern:</p>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px;">
+    <a href="/articles/article-01-vpd-master-class.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">Vol. 01: Penman-Monteith Transpiration & VPD Masterclass →</a>
+    <a href="/articles/article-72-semi-closed-greenhouse-mollier-psychrometrics-latent-heat.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">Vol. 72: Semi-Closed Greenhouse Mollier h-x Psychrometrics & Latent Heat →</a>
+    <a href="/articles/article-20-leaf-temperature-infrared-thermometry.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">Vol. 20: Radiometric Leaf-to-Air ΔT & Stomatal Conductance Physics →</a>
+    <a href="/crops/greenhouse-tomato-microclimate-vpd-steering-guide.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🍅 High-Wire Tomato VPD & Generative Steering Guide →</a>
+    <a href="/crops/greenhouse-cucumber-high-humidity-transpiration-guide.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🥒 Greenhouse Cucumber High-Humidity Transpiration Guide →</a>
+    <a href="/tools/psychrometric-mollier-greenhouse-dehumidifier.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">⚡ Mollier h-x Dehumidification & Latent Load Sizer →</a>
+    <a href="/tools/evapotranspiration-penman-monteith-calculator.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🍃 FAO-56 Penman-Monteith Evapotranspiration Solver →</a>
+  </div>
+</section>
+<!-- INW-TSUKUBA-FUNNEL-END -->
+
+    <!-- INW-EEAT-BOX-START -->
+    <section class="inw-eeat-box" style="margin-top: 36px; padding: 24px; background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 16px;">
+      <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; color: #10b981; font-weight: 800; margin-bottom: 6px;">Gärtnermeister-Kandidat & CEA-Systemingenieur — Inwoovation Lab</div>
+      <h3 style="margin: 0 0 8px 0; font-size: 1.15rem; color: #f8fafc;">Inwoo Hwang</h3>
+      <p style="margin: 0; font-size: 0.92rem; color: #cbd5e1; line-height: 1.65;">Spezialisiert auf Venlo-Gewächshausthermodynamik (DIN V 18599), Photobiologie (DLI/PPFD), geschlossene Hydroponik-Kreisläufe und präzise Kultursteuerung.</p>
+    </section>
+    <!-- INW-EEAT-BOX-END -->
+  </main>
+
+  <!-- INW-STD-FOOTER-START -->
+  <footer class="inw-site-footer" style="margin-top: 48px; padding: 28px 20px; background: #0f172a; color: #94a3b8; text-align: center; border-top: 1px solid rgba(148, 163, 184, 0.15);">
+    <div style="max-width: 1100px; margin: 0 auto;">
+      <p style="margin: 0 0 10px 0;">&copy; 2026 Inwoovation Lab. Precision Controlled Environment Agriculture &amp; Biophysical Engineering.</p>
+      <p style="margin: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 16px;">
+        <a href="/index.html" style="color: #cbd5e1; text-decoration: none;">Home</a>
+        <a href="/guides.html" style="color: #cbd5e1; text-decoration: none;">Engineering Guides</a>
+        <a href="/privacy-policy.html" style="color: #cbd5e1; text-decoration: none;">Privacy Policy</a>
+        <a href="/terms-of-service.html" style="color: #cbd5e1; text-decoration: none;">Terms of Service</a>
+        <a href="/about.html" style="color: #cbd5e1; text-decoration: none;">About</a>
+        <a href="/contact.html" style="color: #cbd5e1; text-decoration: none;">Contact</a>
+      </p>
+    </div>
+  </footer>
+  <!-- INW-STD-FOOTER-END -->
+</body>
+</html>

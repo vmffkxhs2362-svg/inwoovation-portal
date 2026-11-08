@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta name="google-adsense-account" content="ca-pub-8597809158257497">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>スマート温室の精密センサ校正工学：ネルンスト式 (pH/EC)・TDR/FDR培地誘電率・NDIR式CO₂ドリフト補償 | Inwoovation Lab</title>
+  <meta name="description" content="施設園芸・養液栽培におけるガラス電極pHセンサ（ネルンスト勾配と非対称電位）、温度補償EC（25℃基準換算）、TDR/FDR培地体積含水率（Topp式）、および二重波長NDIR式CO₂センサの校正・不確かさ解析。">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <link rel="canonical" href="https://inwoovation.com/articles/ja/article-13-smartfarm-sensor-calibration-nernst-tdr-ndir-jp.html">
+  <link rel="alternate" hreflang="en" href="https://inwoovation.com/articles/article-13-smartfarm-sensor-calibration.html">
+  <link rel="alternate" hreflang="x-default" href="https://inwoovation.com/articles/article-13-smartfarm-sensor-calibration.html">
+  <link rel="alternate" hreflang="de" href="https://inwoovation.com/articles/de/article-13-sensorkalibrierung-messunsicherheit-pt100-ndir-fd-smartfarm.html">
+  <link rel="alternate" hreflang="ja" href="https://inwoovation.com/articles/ja/article-13-smartfarm-sensor-calibration-nernst-tdr-ndir-jp.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="スマート温室の精密センサ校正工学：ネルンスト式 (pH/EC)・TDR/FDR培地誘電率・NDIR式CO₂ドリフト補償 | Inwoovation Lab">
+  <meta property="og:description" content="施設園芸・養液栽培におけるガラス電極pHセンサ（ネルンスト勾配と非対称電位）、温度補償EC（25℃基準換算）、TDR/FDR培地体積含水率（Topp式）、および二重波長NDIR式CO₂センサの校正・不確かさ解析。">
+  <meta property="og:url" content="https://inwoovation.com/articles/ja/article-13-smartfarm-sensor-calibration-nernst-tdr-ndir-jp.html">
+  <meta property="og:image" content="https://inwoovation.com/og-cover.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V4RYJBMEDE"></script>
+  <script>
+    if (navigator.webdriver || /HeadlessChrome|PhantomJS|Lighthouse|PTST|bot|crawler|spider|slurp/i.test(navigator.userAgent) || location.hostname === 'localhost' || location.hostname === '127.0.0.1' || (screen.width === 1366 && screen.height === 1366) || (screen.width === 800 && screen.height === 600) || screen.height >= 5000) { window['ga-disable-G-V4RYJBMEDE'] = true; }
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-V4RYJBMEDE');
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8597809158257497" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/global-ui-enhancements.css?v=20261108">
+  <script src="/js/global-search-palette.js?v=20261108" defer></script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "headline": "スマート温室の精密センサ校正工学：ネルンスト式 (pH/EC)・TDR/FDR培地誘電率・NDIR式CO₂ドリフト補償 | Inwoovation Lab",
+      "description": "施設園芸・養液栽培におけるガラス電極pHセンサ（ネルンスト勾配と非対称電位）、温度補償EC（25℃基準換算）、TDR/FDR培地体積含水率（Topp式）、および二重波長NDIR式CO₂センサの校正・不確かさ解析。",
+      "inLanguage": "ja",
+      "datePublished": "2026-11-08",
+      "dateModified": "2026-11-08",
+      "mainEntityOfPage": "https://inwoovation.com/articles/ja/article-13-smartfarm-sensor-calibration-nernst-tdr-ndir-jp.html",
+      "image": "https://inwoovation.com/og-cover.jpg",
+      "author": {
+        "@type": "Person",
+        "name": "Inwoo Hwang",
+        "jobTitle": "Horticultural & CEA Systems Engineer",
+        "url": "https://inwoovation.com/about.html"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Inwoovation Lab",
+        "url": "https://inwoovation.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://inwoovation.com/og-cover.jpg"
+        }
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inwoovation Lab",
+          "item": "https://inwoovation.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Engineering Guides",
+          "item": "https://inwoovation.com/guides.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "JA Vol. 13: スマート温室 精密センサ校正工学",
+          "item": "https://inwoovation.com/articles/ja/article-13-smartfarm-sensor-calibration-nernst-tdr-ndir-jp.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "養液栽培のpHセンサはどのくらいの頻度で2点校正（pH 7.00 / 4.01）を行うべきですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "商業用養液混合機では最低2〜4週間に1回の2点校正を推奨します。また主制御用pHプローブと監視用（ベリファイ用）pHプローブの二重化（デュアルセンサ構成）を行い、両者の偏差が 0.25 pH を超えた時点でアラームを発報させることで酸・アルカリの過剰注入事故を完全に防げます。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "なぜ一般的な土壌水分センサをロックウールやココピートに挿すと含水率が不正確になるのですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "鉱質土壌用の標準校正曲線（Toppの式）はかさ密度 1.4 g/cm³ 前後の土壌を前提としています。空隙率が 90% を超えるロックウールやココピートでは見かけの比誘電率の立ち上がりが異なるため、必ず培地別の誘電率校正プロファイル（Substrate-Specific Calibration）を選択する必要があります。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "温室用CO₂センサで「ABC（自動ベースライン補正）」をオフにしなければならない理由は？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "夜間密閉される温室では植物と培地微生物の呼吸によりCO₂濃度が外気（400 ppm）まで下がらず 550〜700 ppm で推移するため、ABC機能がその高濃度を 400 ppm と誤学習してしまい、深刻なゼロ点ドリフトを引き起こすためです。"
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+  <style>
+    body { margin: 0; font-family: 'Plus Jakarta Sans', sans-serif; background: #090d16; color: #e2e8f0; line-height: 1.8; }
+    .article-shell { max-width: 920px; margin: 0 auto; padding: 36px 22px 60px; }
+    .badge-pill { display: inline-block; padding: 6px 14px; border-radius: 999px; background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.4); color: #34d399; font-size: 0.82rem; font-weight: 700; margin-bottom: 14px; }
+    h1 { font-family: 'Outfit', sans-serif; font-size: 2.25rem; line-height: 1.25; color: #f8fafc; margin: 0 0 14px 0; }
+    .meta-bar { color: #94a3b8; font-size: 0.9rem; margin-bottom: 28px; padding-bottom: 18px; border-bottom: 1px solid rgba(148, 163, 184, 0.18); }
+    .formula-box { background: rgba(15, 23, 42, 0.9); border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 12px; padding: 18px 22px; margin: 20px 0; font-family: 'JetBrains Mono', monospace; color: #38bdf8; overflow-x: auto; }
+    table.eng-table { width: 100%; border-collapse: collapse; margin: 20px 0; background: rgba(15, 23, 42, 0.75); border-radius: 12px; overflow: hidden; }
+    table.eng-table th, table.eng-table td { padding: 12px 14px; border: 1px solid rgba(148, 163, 184, 0.2); text-align: left; font-size: 0.92rem; }
+    table.eng-table th { background: rgba(30, 41, 59, 0.9); color: #38bdf8; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <main class="article-shell">
+    <div style="margin-bottom: 20px;">
+      <a href="/guides.html" style="color: #38bdf8; text-decoration: none; font-weight: 700; font-size: 0.92rem;">← 技術モノグラフ一覧（Engineering Guides）へ戻る</a>
+    </div>
+    <span class="badge-pill">🇯🇵 JA Vol. 13 · 計測制御工学・センサ校正＆電気化学テレメトリ</span>
+    <h1>スマート温室における精密センサ校正と計測不確かさ：ネルンスト式 (pH/EC)・TDR/FDR培地誘電率・NDIR式CO₂自動ドリフト補償</h1>
+<!-- INW-LANG-SWITCHER-START -->
+<div class="inw-lang-switcher-bar" style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:14px 0 20px 0; padding:10px 14px; background:rgba(15,23,42,0.75); border:1px solid rgba(148,163,184,0.2); border-radius:12px;">
+  <span style="font-size:0.8rem; color:#94a3b8; font-weight:700; margin-right:4px;">🌐 Vol. 13 Editions:</span>
+  <a href="/articles/article-13-smartfarm-sensor-calibration.html" style="display:inline-flex; align-items:center; padding:5px 12px; border-radius:999px; background:rgba(30,41,59,0.8); border:1px solid rgba(56,189,248,0.35); color:#38bdf8; text-decoration:none; font-size:0.8rem; font-weight:600;">🇬🇧 English Edition →</a>
+  <a href="/articles/de/article-13-sensorkalibrierung-messunsicherheit-pt100-ndir-fd-smartfarm.html" style="display:inline-flex; align-items:center; padding:5px 12px; border-radius:999px; background:rgba(30,41,59,0.8); border:1px solid rgba(56,189,248,0.35); color:#38bdf8; text-decoration:none; font-size:0.8rem; font-weight:600;">🇩🇪 Deutsche Ausgabe →</a>
+  <span style="display:inline-flex; align-items:center; padding:5px 12px; border-radius:999px; background:rgba(16,185,129,0.22); border:1px solid #10b981; color:#34d399; font-size:0.8rem; font-weight:700;">🇯🇵 日本語版 (JA) (Active)</span>
+</div>
+<!-- INW-LANG-SWITCHER-END -->
+    <div class="meta-bar">
+      <span>👨‍🔬 <strong>Inwoo Hwang</strong> (Inwoovation Lab)</span> &nbsp;|&nbsp;
+      <span>📅 Last Updated: November 08, 2026</span> &nbsp;|&nbsp;
+      <span>⏱️ 14分 (読了目安)</span>
+    </div>
+
+      <section style="margin-bottom: 34px;">
+        <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px; margin-bottom: 16px;">1. 養液pHガラス電極の電気化学：ネルンスト勾配 (Nernst Slope) と非対称電位ドリフト</h2>
+        <p>循環式養液栽培（ロックウール・ココピート耕）における施肥混入機（ファーティゲータ）のpH制御は、水素イオン活量 <code>a_H+</code> に応答するガラス膜電極と銀-塩化銀（<code>Ag/AgCl</code>）参照電極間の起電力 <code>E</code> に依存しています。熱力学的平衡状態における電極電位は <strong>ネルンストの式（Nernst Equation）</strong> によって厳密に記述されます：</p>
+        <div class="formula-box">
+          E(T) = E₀ + (2.3026 · R · T / F) · (7.00 − pH)<br>
+          25.0 ℃ (298.15 K) における理論ネルンスト勾配 S_25 = 59.16 mV / pH単位
+        </div>
+        <p>しかし連続稼働する養液ラインでは、①参照電極の液絡部（多孔質セラミックジャンクション）へのリン酸カルシウムやバイオフィルムの付着による<strong>ゼロ点オフセット（非対称電位 <code>E₀</code> のシフト）</strong>、および ②ガラス水和ゲル層の経年劣化による<strong>感度スロープ <code>S</code> の低下</strong>が不可避的に進行します。したがって、pH 7.00 と pH 4.01 の標準緩衝液を用いた<strong>2点校正（Two-Point Calibration）</strong>を実施した際、算出された実測スロープが <strong>54.0 mV/pH 未満（理論感度の 91.3% 未満）</strong>、またはゼロ点オフセットが <strong>±30 mV（±0.5 pH相当）</strong> を超えた電極は、校正ソフト上で無理に補正するのではなく直ちに新品プローブへ交換しなければなりません。</p>
+      </section>
+      <section style="margin-bottom: 34px;">
+        <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px; margin-bottom: 16px;">2. 電気伝導度 (EC) の25℃基準温度補償と4電極式（トロイダル）セルの優位性</h2>
+        <p>養液中のイオン移動度は液温が <strong>1 ℃ 上昇するごとに約 1.9%〜2.1% 増加</strong>します。そのため、冬季の原水（10 ℃）と夏季の排液（30 ℃）を同一基準で比較するには、Pt100 または Pt1000 白金測温抵抗体を内蔵した自動温度補償（ATC）により、<strong>基準温度 25.0 ℃ における換算電気伝導度 <code>EC₂₅</code></strong> へ正規化する必要があります：</p>
+        <div class="formula-box">
+          EC₂₅ [mS·cm⁻¹] = EC_raw(T) / [ 1 + α · (T − 25.0) ] &nbsp; （栄養塩類の標準温度係数 α ≈ 0.0195 ℃⁻¹）
+        </div>
+        <p>従来の2極接触式ECセンサは高EC領域（&gt; 3.0 mS/cm）において電極表面の分極インピーダンス（二重層容量）や鉄キレート被膜による感度低下を起こしやすいのに対し、<strong>4電極式または電磁誘導式（トロイダル）ECトランスミッタ</strong>は分極影響を原理的に排除できるため、1年間でドリフト誤差を <code>±0.05 mS/cm</code> 以内に抑えることが可能です。</p>
+      </section>
+      <section style="margin-bottom: 34px;">
+        <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px; margin-bottom: 16px;">3. TDR / FDR 培地水分センサの誘電率物理：Topp多項式から有機ココピート補正へ</h2>
+        <p>ロックウールスラブ（Rockwool Slab）やココピートバッグ（Coco-Peat Growbag）内の体積含水率（Volumetric Water Content, VWC: <code>θ_v [m³ · m⁻³]</code>）および間隙水EC（Pore-Water EC: <code>σ_p [dS · m⁻¹]</code>）を計測する TDR（Time-Domain Reflectometry：時間領域反射法）および FDR（Frequency-Domain Reflectometry：周波数領域反射法 <code>70 〜 150 MHz</code>）センサは、乾燥基質（比誘電率 <code>ε_s ≈ 3.0 〜 5.0</code>）・空気（<code>ε_a = 1.0</code>）と自由水（20.0 ℃ で <strong><code>ε_w ≈ 80.1</code></strong>）の巨大な見かけ比誘電率（Apparent Dielectric Permittivity <code>ε_b</code>）の差を利用しています。鉱質土壌における標準 Topp 三次多項式（Topp et al., 1980）および Hilhorst (2000) の間隙水 EC モデルは以下の通りです：</p>
+        <div class="formula-box">
+          θ_v (Topp) = − 0.053 + 0.0292 · ε_b − 5.5 × 10⁻⁴ · ε_b² + 4.3 × 10⁻⁶ · ε_b³<br>
+          間隙水 EC (Hilhorst) σ_p = ( ε_w · σ_b ) / ( ε_b − ε_σb=0 ) &nbsp; （オフセット誘電率 ε_σb=0 ≈ 4.1）
+        </div>
+        <table class="eng-table">
+          <thead>
+            <tr>
+              <th>培地タイプ (Substrate Type)</th>
+              <th>かさ密度 ρ_b (g / cm³)</th>
+              <th>全孔隙率 / 気相率 (%)</th>
+              <th>誘電率校正モデルと現場での注意点 (Calibration Model)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>鉱質土壌 (Mineral Soil / Sandy Loam)</strong></td>
+              <td>1.30 – 1.55</td>
+              <td>40 – 50 % (気相 10 – 18 %)</td>
+              <td>標準 Topp 三次多項式がそのまま適用可能（不確かさ ± 2.0 % VWC）</td>
+            </tr>
+            <tr>
+              <td><strong>ロックウール (Stonewool / Grodan Slab)</strong></td>
+              <td>0.06 – 0.09</td>
+              <td>95 – 97 % (気相 15 – 35 %)</td>
+              <td>高空隙率のため専用 Stonewool 線形屈折率モデル (√ε_b) が必須</td>
+            </tr>
+            <tr>
+              <td><strong>ココピート (Coco Coir / Organic Peat)</strong></td>
+              <td>0.08 – 0.14</td>
+              <td>85 – 92 % (気相 12 – 28 %)</td>
+              <td>有機繊維表面の結合水 (Bound Water) が多く、鉱質土設定では 8 〜 12 % 過小評価</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <section style="margin-bottom: 34px;">
+        <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px; margin-bottom: 16px;">4. 二重波長NDIR式CO₂センサのランベルト・ベール吸収と夜間ABC自動ゼロ校正の罠</h2>
+        <p>温室内の二酸化炭素濃度（<code>400 〜 1,500 ppm</code>）を測定する非分散型赤外線（NDIR: Non-Dispersive Infrared）センサは、波長 <strong><code>4.26 µm</code></strong> における CO₂ 分子の赤外線吸収（Lambert-Beer Law: <code>I = I₀ · exp( − k · C · L )</code>）を検出します。ここで施設園芸現場で最も頻繁に発生するトラブルが <strong>ABC（Automatic Baseline Correction：自動ベースライン補正）アルゴリズムの誤作動</strong> です。一般ビル空調用 NDIR センサの ABC 機能は「過去 7 〜 14 日間で最も低かった測定値を外気レベルの <code>400 ppm</code> とみなしてゼロ点を自動シフトする」仕組みですが、夜間に有機質培地の微生物呼吸（Soil Respiration）と作物暗呼吸（Dark Respiration）が続く密閉温室では、夜間最低 CO₂ 濃度が <strong><code>550 〜 700 ppm</code></strong> までしか下がりません。結果として ABC 機能が <code>600 ppm</code> を <code>400 ppm</code> と誤認識し、日中の CO₂ 施用量が <code>+ 200 ppm</code> 以上過剰になる事故が多発します。したがって農業用温室では<strong>ABC 機能を必ず OFF（無効化）にし、<code>3.91 µm</code> 参照波長を備えた二重波長（Dual-Beam Pyroelectric）NDIR センサを年 1 回純窒素ガス（99.999 % N₂）または外気強制パージ（420 ppm）で手動スパン校正する</strong>ことが鉄則です。</p>
+      </section>
+
+    <section style="margin-bottom: 34px;">
+      <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #10b981; border-bottom: 1px solid rgba(16, 185, 129, 0.25); padding-bottom: 10px; margin-bottom: 16px;">施設園芸エンジニアリング 実践FAQ</h2>
+        <div style="background: rgba(15, 23, 42, 0.7); border-left: 4px solid #10b981; padding: 18px 20px; border-radius: 10px; margin-bottom: 14px;">
+          <p style="margin: 0;"><strong>Q1: 養液栽培のpHセンサはどのくらいの頻度で2点校正（pH 7.00 / 4.01）を行うべきですか？</strong><br>商業用養液混合機では最低2〜4週間に1回の2点校正を推奨します。また主制御用pHプローブと監視用（ベリファイ用）pHプローブの二重化（デュアルセンサ構成）を行い、両者の偏差が 0.25 pH を超えた時点でアラームを発報させることで酸・アルカリの過剰注入事故を完全に防げます。</p>
+        </div>
+        <div style="background: rgba(15, 23, 42, 0.7); border-left: 4px solid #10b981; padding: 18px 20px; border-radius: 10px; margin-bottom: 14px;">
+          <p style="margin: 0;"><strong>Q2: なぜ一般的な土壌水分センサをロックウールやココピートに挿すと含水率が不正確になるのですか？</strong><br>鉱質土壌用の標準校正曲線（Toppの式）はかさ密度 1.4 g/cm³ 前後の土壌を前提としています。空隙率が 90% を超えるロックウールやココピートでは見かけの比誘電率の立ち上がりが異なるため、必ず培地別の誘電率校正プロファイル（Substrate-Specific Calibration）を選択する必要があります。</p>
+        </div>
+        <div style="background: rgba(15, 23, 42, 0.7); border-left: 4px solid #10b981; padding: 18px 20px; border-radius: 10px; margin-bottom: 14px;">
+          <p style="margin: 0;"><strong>Q3: 温室用CO₂センサで「ABC（自動ベースライン補正）」をオフにしなければならない理由は？</strong><br>夜間密閉される温室では植物と培地微生物の呼吸によりCO₂濃度が外気（400 ppm）まで下がらず 550〜700 ppm で推移するため、ABC機能がその高濃度を 400 ppm と誤学習してしまい、深刻なゼロ点ドリフトを引き起こすためです。</p>
+        </div>
+    </section>
+
+    <section style="margin-bottom: 34px;">
+      <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.35rem; color: #cbd5e1; margin-bottom: 12px;">参考文献・国際規格 (References & Standards)</h2>
+      <ul style="padding-left: 20px;">
+          <li style="margin-bottom: 8px; color: #94a3b8; font-size: 0.92rem;">Topp, G. C., Davis, J. L., & Annan, A. P. (1980). Electromagnetic determination of soil water content: Measurements in coaxial transmission lines. Water Resources Research, 16(3), 574-582.</li>
+          <li style="margin-bottom: 8px; color: #94a3b8; font-size: 0.92rem;">Hilhorst, M. A. (2000). A pore water conductivity sensor. Soil Science Society of America Journal, 64(6), 1922-1925.</li>
+          <li style="margin-bottom: 8px; color: #94a3b8; font-size: 0.92rem;">Bates, R. G. (1973). Determination of pH: Theory and Practice. John Wiley & Sons.</li>
+      </ul>
+    </section>
+
+
+<!-- INW-LIVE-WIDGET-START -->
+<section class="inw-live-widget-sandbox" style="margin: 32px 0; padding: 24px; background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 16px; box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);">
+  <h3 style="margin: 0 0 8px 0; font-size: 1.2rem; color: #38bdf8; font-weight: 800;">🧪 リアルタイム養液栽培 A/B 原液タンク & EC 希釈シミュレーター</h3>
+  <p style="margin: 0 0 16px 0; font-size: 0.92rem; color: #94a3b8; line-height: 1.6;">原水EC・目標EC・希釈倍率から、A/B原液タンク注入量と必要肥料塩類質量をリアルタイムに計算します。</p>
+  <div style="display: flex; justify-content: center; width: 100%; overflow: hidden;">
+    <iframe src="/embed/fertigation-ec-widget.html" width="380" height="460" loading="lazy" title="🧪 リアルタイム養液栽培 A/B 原液タンク & EC 希釈シミュレーター" style="border: none; border-radius: 14px; max-width: 100%;"></iframe>
+  </div>
+</section>
+<!-- INW-LIVE-WIDGET-END -->
+
+<!-- INW-TSUKUBA-FUNNEL-START -->
+<section class="inw-tsukuba-funnel-bridge" style="max-width: 1060px; margin: 32px auto; padding: 26px; background: rgba(15, 23, 42, 0.9); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 16px; text-align: left; box-shadow: 0 10px 28px rgba(0, 0, 0, 0.3);">
+  <h3 style="margin: 0 0 8px 0; font-size: 1.2rem; color: #10b981; font-weight: 800;">🔬 関連する技術論文・作物別環境制御ガイド・シミュレーター</h3>
+  <p style="margin: 0 0 16px 0; font-size: 0.92rem; color: #94a3b8; line-height: 1.6;">本ページの物理モデルおよび設計計算をさらに深く検証するための技術モノグラフと専用計算ツール：</p>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px;">
+    <a href="/articles/article-06-hydroponic-nutrient-formulation.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">Vol. 06: Hydroponic A/B Nutrient Formulation & Electroneutrality →</a>
+    <a href="/articles/article-73-closed-loop-nutrient-recirculation-davies-ion-balance.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">Vol. 73: Closed-Loop Recirculation & Davies Ion Speciation Physics →</a>
+    <a href="/articles/article-18-recirculating-nutrient-sterilization.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">Vol. 18: Recirculating Drain UV-C & Ozone Pathogen Disinfection →</a>
+    <a href="/crops/greenhouse-sweet-pepper-climate-blossom-end-rot-guide.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🫑 Sweet Pepper Calcium Transport & Blossom-End Rot Prevention Guide →</a>
+    <a href="/crops/greenhouse-cut-flower-rose-microclimate-guide.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🌹 Cut-Flower Rose Substrate EC & Recirculation Steering Guide →</a>
+    <a href="/tools/hydroponic-nutrient-solution-calculator.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🧪 A/B Tank Hydroponic Nutrient & Ion Balance Calculator →</a>
+    <a href="/tools/soil-matrix-water-potential-matric-suction-calculator.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🌱 Van Genuchten Substrate Water Potential & Dryback Calculator →</a>
+  </div>
+</section>
+<!-- INW-TSUKUBA-FUNNEL-END -->
+
+    <!-- INW-EEAT-BOX-START -->
+    <section class="inw-eeat-box" style="margin-top: 36px; padding: 24px; background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 16px;">
+      <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; color: #10b981; font-weight: 800; margin-bottom: 6px;">施設園芸・環境制御システムエンジニア — Inwoovation Lab</div>
+      <h3 style="margin: 0 0 8px 0; font-size: 1.15rem; color: #f8fafc;">Inwoo Hwang</h3>
+      <p style="margin: 0; font-size: 0.92rem; color: #cbd5e1; line-height: 1.65;">フェンロー型連棟温室の熱力学設計 (DIN V 18599)、光生物学 (DLI・PPFD・作用スペクトル)、閉鎖型養液栽培および精密環境制御モデルの構築に従事。</p>
+    </section>
+    <!-- INW-EEAT-BOX-END -->
+  </main>
+
+  <!-- INW-STD-FOOTER-START -->
+  <footer class="inw-site-footer" style="margin-top: 48px; padding: 28px 20px; background: #0f172a; color: #94a3b8; text-align: center; border-top: 1px solid rgba(148, 163, 184, 0.15);">
+    <div style="max-width: 1100px; margin: 0 auto;">
+      <p style="margin: 0 0 10px 0;">&copy; 2026 Inwoovation Lab. Precision Controlled Environment Agriculture &amp; Biophysical Engineering.</p>
+      <p style="margin: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 16px;">
+        <a href="/index.html" style="color: #cbd5e1; text-decoration: none;">Home</a>
+        <a href="/guides.html" style="color: #cbd5e1; text-decoration: none;">Engineering Guides</a>
+        <a href="/privacy-policy.html" style="color: #cbd5e1; text-decoration: none;">Privacy Policy</a>
+        <a href="/terms-of-service.html" style="color: #cbd5e1; text-decoration: none;">Terms of Service</a>
+        <a href="/about.html" style="color: #cbd5e1; text-decoration: none;">About</a>
+        <a href="/contact.html" style="color: #cbd5e1; text-decoration: none;">Contact</a>
+      </p>
+    </div>
+  </footer>
+  <!-- INW-STD-FOOTER-END -->
+</body>
+</html>
