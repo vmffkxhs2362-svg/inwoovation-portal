@@ -1,5 +1,12 @@
 User-agent: Mediapartners-Google
 Allow: /
+Disallow: /smartfarm/_template.html
+Disallow: /wiki/_wiki_template.html
+Disallow: /embed/vpd-gauge.html
+Disallow: /embed/dli-calculator.html
+Disallow: /embed/heating-loss-widget.html
+Disallow: /embed/fertigation-ec-widget.html
+Disallow: /embed/co2-enrichment-widget.html
 
 User-agent: Googlebot
 Allow: /

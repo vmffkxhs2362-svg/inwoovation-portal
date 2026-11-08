@@ -419,13 +419,16 @@ def fix_home_schema(html, rel_path):
 
 
 def fix_embed_widgets(html, rel_path):
-    """Raw iframe widgets in embed/ (except embed/index.html) must be noindex and must not load adsbygoogle.js."""
-    if not rel_path.startswith("embed/") or os.path.basename(rel_path) == "index.html":
+    """Raw iframe widgets in embed/ (except embed/index.html) and redirect stubs must be noindex and must not load adsbygoogle.js."""
+    is_raw_embed = rel_path.startswith("embed/") and os.path.basename(rel_path) != "index.html"
+    is_redirect = bool(re.search(r'http-equiv=["\']refresh', html, re.I))
+    if not (is_raw_embed or is_redirect):
         return html
     html = re.sub(r'\s*<meta\s+name=["\']google-adsense-account["\'][^>]*>', "", html, flags=re.I)
     html = re.sub(r'\s*<script[^>]*adsbygoogle\.js[^>]*></script>', "", html, flags=re.I)
     if not re.search(r'name=["\']robots["\'][^>]*noindex', html, re.I):
-        html = re.sub(r"(<head[^>]*>)", r'\1\n  <meta name="robots" content="noindex, nofollow">', html, count=1, flags=re.I)
+        robots_val = "noindex, follow" if is_redirect else "noindex, nofollow"
+        html = re.sub(r"(<head[^>]*>)", rf'\1\n  <meta name="robots" content="{robots_val}">', html, count=1, flags=re.I)
     return html
 
 
