@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta name="google-adsense-account" content="ca-pub-8597809158257497">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>日積算光量 (DLI) と植物工場・温室LED補光の計算式：PPFD換算・作用スペクトル・電力ROI | Inwoovation Lab</title>
+  <meta name="description" content="光合成有効光量子束密度 (PPFD: µmol/m²/s) から日積算光量 (DLI: mol/m²/d) への換算式、McCree作用スペクトル、遠赤色光 (ePAR) 制御、および補光用LEDの消費電力・投資回収 (ROI) を解説する技術モノグラフ。">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <link rel="canonical" href="https://inwoovation.com/articles/ja/article-02-dli-vertical-farming-led-photobiology-jp.html">
+  <link rel="alternate" hreflang="en" href="https://inwoovation.com/articles/article-02-dli-vertical-farming.html">
+  <link rel="alternate" hreflang="x-default" href="https://inwoovation.com/articles/article-02-dli-vertical-farming.html">
+  <link rel="alternate" hreflang="de" href="https://inwoovation.com/articles/de/article-02-dli-tageslichtintegral-vertikale-landwirtschaft-led-roi.html">
+  <link rel="alternate" hreflang="ja" href="https://inwoovation.com/articles/ja/article-02-dli-vertical-farming-led-photobiology-jp.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="日積算光量 (DLI) と植物工場・温室LED補光の計算式：PPFD換算・作用スペクトル・電力ROI | Inwoovation Lab">
+  <meta property="og:description" content="光合成有効光量子束密度 (PPFD: µmol/m²/s) から日積算光量 (DLI: mol/m²/d) への換算式、McCree作用スペクトル、遠赤色光 (ePAR) 制御、および補光用LEDの消費電力・投資回収 (ROI) を解説する技術モノグラフ。">
+  <meta property="og:url" content="https://inwoovation.com/articles/ja/article-02-dli-vertical-farming-led-photobiology-jp.html">
+  <meta property="og:image" content="https://inwoovation.com/og-cover.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V4RYJBMEDE"></script>
+  <script>
+    if (navigator.webdriver || /HeadlessChrome|PhantomJS|Lighthouse|PTST|bot|crawler|spider|slurp/i.test(navigator.userAgent) || location.hostname === 'localhost' || location.hostname === '127.0.0.1' || (screen.width === 1366 && screen.height === 1366) || (screen.width === 800 && screen.height === 600) || screen.height >= 5000) { window['ga-disable-G-V4RYJBMEDE'] = true; }
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-V4RYJBMEDE');
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8597809158257497" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/global-ui-enhancements.css?v=20261108">
+  <script src="/js/global-search-palette.js?v=20261108" defer></script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "headline": "日積算光量 (DLI) と植物工場・温室LED補光の計算式：PPFD換算・作用スペクトル・電力ROI | Inwoovation Lab",
+      "description": "光合成有効光量子束密度 (PPFD: µmol/m²/s) から日積算光量 (DLI: mol/m²/d) への換算式、McCree作用スペクトル、遠赤色光 (ePAR) 制御、および補光用LEDの消費電力・投資回収 (ROI) を解説する技術モノグラフ。",
+      "inLanguage": "ja",
+      "datePublished": "2026-11-08",
+      "dateModified": "2026-11-08",
+      "mainEntityOfPage": "https://inwoovation.com/articles/ja/article-02-dli-vertical-farming-led-photobiology-jp.html",
+      "image": "https://inwoovation.com/og-cover.jpg",
+      "author": {
+        "@type": "Person",
+        "name": "Inwoo Hwang",
+        "jobTitle": "Horticultural & CEA Systems Engineer",
+        "url": "https://inwoovation.com/about.html"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Inwoovation Lab",
+        "url": "https://inwoovation.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://inwoovation.com/og-cover.jpg"
+        }
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inwoovation Lab",
+          "item": "https://inwoovation.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Engineering Guides",
+          "item": "https://inwoovation.com/guides.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "JA Vol. 02: 日積算光量 (DLI) & LED光生物学",
+          "item": "https://inwoovation.com/articles/ja/article-02-dli-vertical-farming-led-photobiology-jp.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "PPFD (µmol/m²/s) から日積算光量 (DLI: mol/m²/day) への正確な換算方法は？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "群落上部の平均 PPFD (µmol·m⁻²·s⁻¹) に1日の照射時間 (h/d) と係数 0.0036（3,600秒÷100万µmol）を乗じて算出します。例えば PPFD 250 µmol·m⁻²·s⁻¹ を16時間照射した場合、DLI は 14.4 mol·m⁻²·d⁻¹ となります。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "植物工場レタスでDLIを高めた際に発生するチップバーン（縁腐れ症）の防止策は？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "DLI 17 mol·m⁻²·d⁻¹ 以上では成長点の細胞伸長に対してカルシウム (Ca²⁺) の木部輸送が不足しやすくなります。成長点付近へ垂直気流（風速 0.35〜0.50 m/s）を当てて葉面境界層抵抗を下げ、夜間も適度な飽差（VPD 0.6〜0.8 kPa）を維持して蒸散流を確保することが有効です。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "HPSランプ（1.8 µmol/J）から高効率LED（3.4 µmol/J）への更新で消費電力は何%削減できますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "同一の目標PPFDを維持する場合、消費電力密度 (W/m²) は約 47% 削減されます。年間2,500時間・200 µmol·m⁻²·s⁻¹ の補光条件では、1ヘクタールあたり年間約 1,300 MWh 以上の電力削減効果が得られます。"
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+  <style>
+    body { margin: 0; font-family: 'Plus Jakarta Sans', sans-serif; background: #090d16; color: #e2e8f0; line-height: 1.8; }
+    .article-shell { max-width: 920px; margin: 0 auto; padding: 36px 22px 60px; }
+    .badge-pill { display: inline-block; padding: 6px 14px; border-radius: 999px; background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.4); color: #34d399; font-size: 0.82rem; font-weight: 700; margin-bottom: 14px; }
+    h1 { font-family: 'Outfit', sans-serif; font-size: 2.25rem; line-height: 1.25; color: #f8fafc; margin: 0 0 14px 0; }
+    .meta-bar { color: #94a3b8; font-size: 0.9rem; margin-bottom: 28px; padding-bottom: 18px; border-bottom: 1px solid rgba(148, 163, 184, 0.18); }
+    .formula-box { background: rgba(15, 23, 42, 0.9); border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 12px; padding: 18px 22px; margin: 20px 0; font-family: 'JetBrains Mono', monospace; color: #38bdf8; overflow-x: auto; }
+    table.eng-table { width: 100%; border-collapse: collapse; margin: 20px 0; background: rgba(15, 23, 42, 0.75); border-radius: 12px; overflow: hidden; }
+    table.eng-table th, table.eng-table td { padding: 12px 14px; border: 1px solid rgba(148, 163, 184, 0.2); text-align: left; font-size: 0.92rem; }
+    table.eng-table th { background: rgba(30, 41, 59, 0.9); color: #38bdf8; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <main class="article-shell">
+    <div style="margin-bottom: 20px;">
+      <a href="/guides.html" style="color: #38bdf8; text-decoration: none; font-weight: 700; font-size: 0.92rem;">← 技術モノグラフ一覧（Engineering Guides）へ戻る</a>
+    </div>
+    <span class="badge-pill">🇯🇵 JA Vol. 02 · 光生物学・植物工場＆温室LED補光エンジニアリング</span>
+    <h1>日積算光量 (DLI) と施設園芸・植物工場のLED光生物学：PPFD換算式・ePARスペクトル制御・電力ROI設計</h1>
+    <div class="meta-bar">
+      <span>👨‍🔬 <strong>Inwoo Hwang</strong> (Inwoovation Lab)</span> &nbsp;|&nbsp;
+      <span>📅 Last Updated: November 08, 2026</span> &nbsp;|&nbsp;
+      <span>⏱️ 14分 (読了目安)</span>
+    </div>
+
+      <section style="margin-bottom: 34px;">
+        <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px; margin-bottom: 16px;">1. 基礎物理方程式：瞬間光量子束密度 (PPFD) から日積算光量 (DLI) への積分</h2>
+        <p>完全人工光型植物工場（Vertical Farming）および高軒高フェンロー型温室の補光設計において、人間の視感度（555 nmピーク）に基づく照度（Lux：ルクス）は光合成速度の指標としては不適切です。植物のカルビン・ベンソン回路を駆動するのは波長 400〜700 nm の光合成有効放射（PAR）に含まれる光子（フォトン）の数であり、群落受光面における瞬間的な光子密度を <strong>PPFD（光合成有効光量子束密度：<code>µmol·m⁻²·s⁻¹</code>）</strong>、それを1日の明期時間（<code>t_day</code>：時間）にわたって積分した総光子量を <strong>日積算光量（DLI：Daily Light Integral、単位 <code>mol·m⁻²·d⁻¹</code>）</strong> と定義します。</p>
+        <div class="formula-box">
+          DLI [mol·m⁻²·d⁻¹] = PPFD [µmol·m⁻²·s⁻¹] × 明期時間 t_day [h·d⁻¹] × 3,600 [s·h⁻¹] × 10⁻⁶ [mol·µmol⁻¹]<br>
+          <strong>実務設計の換算式： DLI = PPFD × 照射時間 (h) × 0.0036</strong>
+        </div>
+        <p>例えば、多段式植物工場でリーフレタスに対して PPFD 250 µmol·m⁻²·s⁻¹ を1日16時間照射する場合、日積算光量は <code>250 × 16 × 0.0036 = 14.40 mol·m⁻²·d⁻¹</code> となります。光飽和点以下の領域では、DLI が 1% 増加するごとに乾物生産量および収量が約 0.7〜1.0% 増加する比例関係（オランダ施設園芸における「1%ルール」）が成立するため、目標収量から逆算して必要補光PPFDを決定することが可能です。</p>
+      </section>
+      <section style="margin-bottom: 34px;">
+        <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px; margin-bottom: 16px;">2. 作物別の最適DLIターゲットとチップバーン（縁腐れ症）回避の境界層物理</h2>
+        <p>作物の種類および生育ステージによって要求される目標DLIは大きく異なります。特に閉鎖型植物工場におけるレタス・ハーブ類では、DLI を 17 mol·m⁻²·d⁻¹ 以上に高めると光合成による新葉の細胞分裂速度が急増する一方、成長点付近の未展開葉における蒸散流（木部導管を介した <code>Ca²⁺</code> イオンのマスフロー輸送）が追いつかなくなり、<strong>チップバーン（心腐れ・縁腐れ症）</strong> が多発します。これを防ぐには、単純に光量を下げるのではなく、垂直方向の気流速度を <code>0.35〜0.50 m/s</code> 以上確保して葉面境界層抵抗（<code>r_a</code>）を低下させ、成長点の局所蒸散を促進する微気象設計が不可欠です。</p>
+        <table class="eng-table">
+          <thead>
+            <tr>
+              <th>対象作物・栽培システム</th>
+              <th>推奨 PPFD (µmol·m⁻²·s⁻¹)</th>
+              <th>明期時間 (h/d)</th>
+              <th>目標 DLI (mol·m⁻²·d⁻¹)</th>
+              <th>環境制御上の重要管理ポイント</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>マイクログリーン・閉鎖型育苗</strong></td>
+              <td>120 – 180</td>
+              <td>16 – 18</td>
+              <td>7.0 – 11.5</td>
+              <td>青色光 (450 nm) 15〜20%配合により徒長（胚軸伸長）を抑制</td>
+            </tr>
+            <tr>
+              <td><strong>植物工場レタス・バジル</strong></td>
+              <td>220 – 280</td>
+              <td>16 – 18</td>
+              <td>14.0 – 17.0</td>
+              <td>17 mol/m²/d超では垂直送風（風速0.35 m/s以上）でCa欠乏を防止</td>
+            </tr>
+            <tr>
+              <td><strong>促成イチゴ（高設養液栽培）</strong></td>
+              <td>250 – 350</td>
+              <td>14 – 16</td>
+              <td>15.0 – 22.0</td>
+              <td>果実糖度 (°Brix) はDLIと昼夜温度差 (DIF) の積算値に強く依存</td>
+            </tr>
+            <tr>
+              <td><strong>ハイワイヤートマト・パプリカ</strong></td>
+              <td>300 – 500 (+自然光)</td>
+              <td>16 – 18</td>
+              <td>22.0 – 35.0+</td>
+              <td>群落内補光 (Interlighting) により下位葉の光補償点割れを解消</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <section style="margin-bottom: 34px;">
+        <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px; margin-bottom: 16px;">3. McCree作用スペクトル・エマーソン効果と拡張光合成有効放射 ePAR (400–750 nm)</h2>
+        <p>McCree (1972) の相対量子収率曲線が示す通り、波長 660 nm 付近の赤色光子（クロロフィルaの吸収極大）は、1光子あたりのエネルギー（<code>E = h·c/λ</code>）が青色光（450 nm）より低いため、投入電力1ジュールあたりの光子発生効率（µmol/J）が最も高くなります。しかし赤色光単独ではクリプトクロムおよびフォトトロピン受容体が活性化されず、気孔開度の低下や葉肉組織の菲薄化（Red-Light Syndrome）が生じるため、全光量子束の 8〜15% の青色光を混合する必要があります。</p>
+        <p>さらに近年の光生物学研究（Zhen &amp; Bugbee, 2020）により、従来のPAR（400〜700 nm）に遠赤色光（Far-Red: 700〜750 nm）を加えた <strong>拡張光合成有効放射（ePAR: 400〜750 nm）</strong> の重要性が確立されました。光化学系II（PSII: 680 nm駆動）と光化学系I（PSI: 700 nm以上駆動）を同時に励起する<strong>エマーソン相乗効果（Emerson Enhancement Effect）</strong>により、5〜10%の遠赤色光を付加することでチラコイド膜の電子伝達速度が向上するとともに、フィトクロム光平衡（<code>P_fr / P_total</code>）の調整によって葉面積指数（LAI）の拡大と受光量の最大化が達成されます。</p>
+      </section>
+      <section style="margin-bottom: 34px;">
+        <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px; margin-bottom: 16px;">4. 補光用LEDのシステム効率 (PPE) と電力密度・冷방負荷の連成計算</h2>
+        <p>商業施設園芸におけるLED設備投資（CAPEX）および電力ランニングコスト（OPEX）の算定では、器具の <strong>光合成光量子効力（PPE：単位 <code>µmol/J</code>）</strong> が最重要指標となります。従来の高圧ナトリウムランプ（HPS: 1.7〜1.9 µmol/J）から最新の高効率LED器具（<strong>3.2〜3.8 µmol/J</strong>）へ更新することで、同一PPFDを得るための消費電力密度（W/m²）を 45〜50% 削減できます。</p>
+        <div class="formula-box">
+          必要電力密度 P_el [W·m⁻²] = 目標補光PPFD [µmol·m⁻²·s⁻¹] / (器具PPE [µmol·J⁻¹] × 光学利用効率 η)<br>
+          日間電力コスト [円·m⁻²·d⁻¹] = (P_el [W·m⁻²] / 1,000) × 照射時間 [h·d⁻¹] × 電力単価 [円·kWh⁻¹]
+        </div>
+        <p>また閉鎖型植物工場においては、投入したLED消費電力の 95% 以上が最終的に顕熱（ヒートシンク放熱）および潜熱（群落蒸散による水蒸気放出）へと変換されるため、空調・除湿機（HVAC）の冷房COPを含めた総合エネルギー収支で光周期と照射強度を最適化する必要があります。</p>
+      </section>
+
+    <section style="margin-bottom: 34px;">
+      <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #10b981; border-bottom: 1px solid rgba(16, 185, 129, 0.25); padding-bottom: 10px; margin-bottom: 16px;">施設園芸エンジニアリング 実践FAQ</h2>
+        <div style="background: rgba(15, 23, 42, 0.7); border-left: 4px solid #10b981; padding: 18px 20px; border-radius: 10px; margin-bottom: 14px;">
+          <p style="margin: 0;"><strong>Q1: PPFD (µmol/m²/s) から日積算光量 (DLI: mol/m²/day) への正確な換算方法は？</strong><br>群落上部の平均 PPFD (µmol·m⁻²·s⁻¹) に1日の照射時間 (h/d) と係数 0.0036（3,600秒÷100万µmol）を乗じて算出します。例えば PPFD 250 µmol·m⁻²·s⁻¹ を16時間照射した場合、DLI は 14.4 mol·m⁻²·d⁻¹ となります。</p>
+        </div>
+        <div style="background: rgba(15, 23, 42, 0.7); border-left: 4px solid #10b981; padding: 18px 20px; border-radius: 10px; margin-bottom: 14px;">
+          <p style="margin: 0;"><strong>Q2: 植物工場レタスでDLIを高めた際に発生するチップバーン（縁腐れ症）の防止策は？</strong><br>DLI 17 mol·m⁻²·d⁻¹ 以上では成長点の細胞伸長に対してカルシウム (Ca²⁺) の木部輸送が不足しやすくなります。成長点付近へ垂直気流（風速 0.35〜0.50 m/s）を当てて葉面境界層抵抗を下げ、夜間も適度な飽差（VPD 0.6〜0.8 kPa）を維持して蒸散流を確保することが有効です。</p>
+        </div>
+        <div style="background: rgba(15, 23, 42, 0.7); border-left: 4px solid #10b981; padding: 18px 20px; border-radius: 10px; margin-bottom: 14px;">
+          <p style="margin: 0;"><strong>Q3: HPSランプ（1.8 µmol/J）から高効率LED（3.4 µmol/J）への更新で消費電力は何%削減できますか？</strong><br>同一の目標PPFDを維持する場合、消費電力密度 (W/m²) は約 47% 削減されます。年間2,500時間・200 µmol·m⁻²·s⁻¹ の補光条件では、1ヘクタールあたり年間約 1,300 MWh 以上の電力削減効果が得られます。</p>
+        </div>
+    </section>
+
+    <section style="margin-bottom: 34px;">
+      <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.35rem; color: #cbd5e1; margin-bottom: 12px;">参考文献・国際規格 (References & Standards)</h2>
+      <ul style="padding-left: 20px;">
+          <li style="margin-bottom: 8px; color: #94a3b8; font-size: 0.92rem;">McCree, K. J. (1972). The action spectrum, absorptance and quantum yield of photosynthesis in crop plants. Agricultural Meteorology, 9, 191-216.</li>
+          <li style="margin-bottom: 8px; color: #94a3b8; font-size: 0.92rem;">Zhen, S., & Bugbee, B. (2020). Far-red photons have equivalent efficiency to traditional photosynthetic photons: Implications for redefining photosynthetically active radiation. Plant, Cell & Environment, 43(5), 1259-1272.</li>
+          <li style="margin-bottom: 8px; color: #94a3b8; font-size: 0.92rem;">Kozai, T., Niu, G., & Takagaki, M. (Eds.). (2019). Plant Factory: An Indoor Vertical Farming System for Efficient Quality Food Production. Academic Press.</li>
+          <li style="margin-bottom: 8px; color: #94a3b8; font-size: 0.92rem;">Marcelis, L. F. M., et al. (2006). Quantification of the growth response to light quantity of greenhouse grown crops. Acta Horticulturae, 711, 97-104.</li>
+      </ul>
+    </section>
+
+
+<!-- INW-LIVE-WIDGET-START -->
+<section class="inw-live-widget-sandbox" style="margin: 32px 0; padding: 24px; background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 16px; box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);">
+  <h3 style="margin: 0 0 8px 0; font-size: 1.2rem; color: #38bdf8; font-weight: 800;">☀️ リアルタイム日積算光量 (DLI) & 光周期シミュレーター</h3>
+  <p style="margin: 0 0 16px 0; font-size: 0.92rem; color: #94a3b8; line-height: 1.6;">光合成有効光量子束密度 (PPFD) と日長時間を調整し、1日あたりの積算光量 (mol·m⁻²·d⁻¹) を即座に算出します。</p>
+  <div style="display: flex; justify-content: center; width: 100%; overflow: hidden;">
+    <iframe src="/embed/dli-calculator.html" width="380" height="390" loading="lazy" title="☀️ リアルタイム日積算光量 (DLI) & 光周期シミュレーター" style="border: none; border-radius: 14px; max-width: 100%;"></iframe>
+  </div>
+</section>
+<!-- INW-LIVE-WIDGET-END -->
+
+<!-- INW-TSUKUBA-FUNNEL-START -->
+<section class="inw-tsukuba-funnel-bridge" style="max-width: 1060px; margin: 32px auto; padding: 26px; background: rgba(15, 23, 42, 0.9); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 16px; text-align: left; box-shadow: 0 10px 28px rgba(0, 0, 0, 0.3);">
+  <h3 style="margin: 0 0 8px 0; font-size: 1.2rem; color: #10b981; font-weight: 800;">🔬 関連する技術論文・作物別環境制御ガイド・シミュレーター</h3>
+  <p style="margin: 0 0 16px 0; font-size: 0.92rem; color: #94a3b8; line-height: 1.6;">本ページの物理モデルおよび設計計算をさらに深く検証するための技術モノグラフと専用計算ツール：</p>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px;">
+    <a href="/articles/article-02-dli-vertical-farming.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">Vol. 02: Daily Light Integral (DLI) & Photobiology Optimization →</a>
+    <a href="/articles/article-40-beer-lambert-canopy-light-extinction.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">Vol. 40: Beer-Lambert Canopy Light Extinction & Interlighting Physics →</a>
+    <a href="/articles/article-21-chlorophyll-a-fluorescence-fvfm-stress.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">Vol. 21: PAM Chlorophyll-a Fluorescence (Fv/Fm) & Photoinhibition →</a>
+    <a href="/crops/commercial-strawberry-greenhouse-climate-dli-guide.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🍓 Commercial Strawberry Greenhouse DLI & Crown Temperature Guide →</a>
+    <a href="/crops/vertical-farm-lettuce-leafy-greens-tipburn-prevention-guide.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🥬 Vertical Farm Leafy Greens DLI & Tipburn Prevention Guide →</a>
+    <a href="/tools/dli-spectrum-photomorphogenesis-calculator.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">💡 DLI Spectrum & Photomorphogenesis Calculator →</a>
+    <a href="/tools/crop-yield-biomass-dli-forecaster.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">📈 Radiation Use Efficiency (RUE) & DLI Yield Forecaster →</a>
+  </div>
+</section>
+<!-- INW-TSUKUBA-FUNNEL-END -->
+
+    <!-- INW-EEAT-BOX-START -->
+    <section class="inw-eeat-box" style="margin-top: 36px; padding: 24px; background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 16px;">
+      <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; color: #10b981; font-weight: 800; margin-bottom: 6px;">施設園芸・環境制御システムエンジニア — Inwoovation Lab</div>
+      <h3 style="margin: 0 0 8px 0; font-size: 1.15rem; color: #f8fafc;">Inwoo Hwang</h3>
+      <p style="margin: 0; font-size: 0.92rem; color: #cbd5e1; line-height: 1.65;">フェンロー型連棟温室の熱力学設計 (DIN V 18599)、光生物学 (DLI・PPFD・作用スペクトル)、閉鎖型養液栽培および精密環境制御モデルの構築に従事。</p>
+    </section>
+    <!-- INW-EEAT-BOX-END -->
+  </main>
+
+  <!-- INW-STD-FOOTER-START -->
+  <footer class="inw-site-footer" style="margin-top: 48px; padding: 28px 20px; background: #0f172a; color: #94a3b8; text-align: center; border-top: 1px solid rgba(148, 163, 184, 0.15);">
+    <div style="max-width: 1100px; margin: 0 auto;">
+      <p style="margin: 0 0 10px 0;">&copy; 2026 Inwoovation Lab. Precision Controlled Environment Agriculture &amp; Biophysical Engineering.</p>
+      <p style="margin: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 16px;">
+        <a href="/index.html" style="color: #cbd5e1; text-decoration: none;">Home</a>
+        <a href="/guides.html" style="color: #cbd5e1; text-decoration: none;">Engineering Guides</a>
+        <a href="/privacy-policy.html" style="color: #cbd5e1; text-decoration: none;">Privacy Policy</a>
+        <a href="/terms-of-service.html" style="color: #cbd5e1; text-decoration: none;">Terms of Service</a>
+        <a href="/about.html" style="color: #cbd5e1; text-decoration: none;">About</a>
+        <a href="/contact.html" style="color: #cbd5e1; text-decoration: none;">Contact</a>
+      </p>
+    </div>
+  </footer>
+  <!-- INW-STD-FOOTER-END -->
+</body>
+</html>

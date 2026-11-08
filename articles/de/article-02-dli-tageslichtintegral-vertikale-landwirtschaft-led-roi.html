@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta name="google-adsense-account" content="ca-pub-8597809158257497">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tägliches Lichtintegral (DLI) & LED-Belichtung berechnen: PPFD-Formel, Photobiologie & ROI | Inwoovation Lab</title>
+  <meta name="description" content="Praxisleitfaden und Berechnung für das tägliche Lichtintegral (DLI in mol/m²/d) aus PPFD (µmol/m²/s), McCree-Aktionsspektrum, Far-Red-Steuerung und LED-Stromkosten im Gewächshaus und Vertical Farming.">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <link rel="canonical" href="https://inwoovation.com/articles/de/article-02-dli-tageslichtintegral-vertikale-landwirtschaft-led-roi.html">
+  <link rel="alternate" hreflang="en" href="https://inwoovation.com/articles/article-02-dli-vertical-farming.html">
+  <link rel="alternate" hreflang="x-default" href="https://inwoovation.com/articles/article-02-dli-vertical-farming.html">
+  <link rel="alternate" hreflang="de" href="https://inwoovation.com/articles/de/article-02-dli-tageslichtintegral-vertikale-landwirtschaft-led-roi.html">
+  <link rel="alternate" hreflang="ja" href="https://inwoovation.com/articles/ja/article-02-dli-vertical-farming-led-photobiology-jp.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Tägliches Lichtintegral (DLI) & LED-Belichtung berechnen: PPFD-Formel, Photobiologie & ROI | Inwoovation Lab">
+  <meta property="og:description" content="Praxisleitfaden und Berechnung für das tägliche Lichtintegral (DLI in mol/m²/d) aus PPFD (µmol/m²/s), McCree-Aktionsspektrum, Far-Red-Steuerung und LED-Stromkosten im Gewächshaus und Vertical Farming.">
+  <meta property="og:url" content="https://inwoovation.com/articles/de/article-02-dli-tageslichtintegral-vertikale-landwirtschaft-led-roi.html">
+  <meta property="og:image" content="https://inwoovation.com/og-cover.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V4RYJBMEDE"></script>
+  <script>
+    if (navigator.webdriver || /HeadlessChrome|PhantomJS|Lighthouse|PTST|bot|crawler|spider|slurp/i.test(navigator.userAgent) || location.hostname === 'localhost' || location.hostname === '127.0.0.1' || (screen.width === 1366 && screen.height === 1366) || (screen.width === 800 && screen.height === 600) || screen.height >= 5000) { window['ga-disable-G-V4RYJBMEDE'] = true; }
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-V4RYJBMEDE');
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8597809158257497" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/global-ui-enhancements.css?v=20261108">
+  <script src="/js/global-search-palette.js?v=20261108" defer></script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "headline": "Tägliches Lichtintegral (DLI) & LED-Belichtung berechnen: PPFD-Formel, Photobiologie & ROI | Inwoovation Lab",
+      "description": "Praxisleitfaden und Berechnung für das tägliche Lichtintegral (DLI in mol/m²/d) aus PPFD (µmol/m²/s), McCree-Aktionsspektrum, Far-Red-Steuerung und LED-Stromkosten im Gewächshaus und Vertical Farming.",
+      "inLanguage": "de",
+      "datePublished": "2026-11-08",
+      "dateModified": "2026-11-08",
+      "mainEntityOfPage": "https://inwoovation.com/articles/de/article-02-dli-tageslichtintegral-vertikale-landwirtschaft-led-roi.html",
+      "image": "https://inwoovation.com/og-cover.jpg",
+      "author": {
+        "@type": "Person",
+        "name": "Inwoo Hwang",
+        "jobTitle": "Horticultural & CEA Systems Engineer",
+        "url": "https://inwoovation.com/about.html"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Inwoovation Lab",
+        "url": "https://inwoovation.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://inwoovation.com/og-cover.jpg"
+        }
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inwoovation Lab",
+          "item": "https://inwoovation.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Engineering Guides",
+          "item": "https://inwoovation.com/guides.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "DE Vol. 02: DLI & LED-Photobiologie",
+          "item": "https://inwoovation.com/articles/de/article-02-dli-tageslichtintegral-vertikale-landwirtschaft-led-roi.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Wie rechnet man PPFD (µmol/m²/s) in das tägliche Lichtintegral (DLI in mol/m²/Tag) um?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Multiplizieren Sie die auf Bestandshöhe gemessene PPFD (µmol·m⁻²·s⁻¹) mit den täglichen Belichtungsstunden (h/d) und dem Umrechnungsfaktor 0,0036 (3.600 Sekunden pro Stunde geteilt durch 1.000.000 µmol/mol). Beispiel: 250 µmol·m⁻²·s⁻¹ × 16 h × 0,0036 = 14,4 mol·m⁻²·d⁻¹."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Warum tritt bei Salat im Vertical Farming ab einem DLI über 17 mol/m²/d häufig Tipburn (Innenbrand) auf?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Bei hohem DLI wächst das Herzblatt schneller, als Kalziumionen (Ca²⁺) über den Xylem-Transpirationsstrom in die kaum belüfteten Innenblätter transportiert werden können. Abhilfe schaffen vertikale Umluftventilatoren (Luftgeschwindigkeit ≥ 0,35 m/s am Blatt) zur Senkung des Grenzschichtwiderstands sowie ein moderates Nacht-VPD."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wie viel Strom spart die Umrüstung von HPS-Natriumdampflampen (1,8 µmol/J) auf Hochleistungs-LEDs (3,4 µmol/J)?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Bei identischer Ziel-PPFD sinkt die elektrische Anschlussleistung (W/m²) um rund 47 % ((1 - 1,8 / 3,4) × 100 %). Bei 2.500 Belichtungsstunden pro Jahr und 200 µmol·m⁻²·s⁻¹ reduziert sich der Stromverbrauch von 277,8 kWh/m²/a auf 147,1 kWh/m²/a — eine Einsparung von über 1.300 MWh pro Hektar und Jahr."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+  <style>
+    body { margin: 0; font-family: 'Plus Jakarta Sans', sans-serif; background: #090d16; color: #e2e8f0; line-height: 1.8; }
+    .article-shell { max-width: 920px; margin: 0 auto; padding: 36px 22px 60px; }
+    .badge-pill { display: inline-block; padding: 6px 14px; border-radius: 999px; background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.4); color: #34d399; font-size: 0.82rem; font-weight: 700; margin-bottom: 14px; }
+    h1 { font-family: 'Outfit', sans-serif; font-size: 2.25rem; line-height: 1.25; color: #f8fafc; margin: 0 0 14px 0; }
+    .meta-bar { color: #94a3b8; font-size: 0.9rem; margin-bottom: 28px; padding-bottom: 18px; border-bottom: 1px solid rgba(148, 163, 184, 0.18); }
+    .formula-box { background: rgba(15, 23, 42, 0.9); border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 12px; padding: 18px 22px; margin: 20px 0; font-family: 'JetBrains Mono', monospace; color: #38bdf8; overflow-x: auto; }
+    table.eng-table { width: 100%; border-collapse: collapse; margin: 20px 0; background: rgba(15, 23, 42, 0.75); border-radius: 12px; overflow: hidden; }
+    table.eng-table th, table.eng-table td { padding: 12px 14px; border: 1px solid rgba(148, 163, 184, 0.2); text-align: left; font-size: 0.92rem; }
+    table.eng-table th { background: rgba(30, 41, 59, 0.9); color: #38bdf8; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <main class="article-shell">
+    <div style="margin-bottom: 20px;">
+      <a href="/guides.html" style="color: #38bdf8; text-decoration: none; font-weight: 700; font-size: 0.92rem;">← Zurück zum Engineering-Archiv (Alle Fachartikel)</a>
+    </div>
+    <span class="badge-pill">🇩🇪 DE Vol. 02 · Photobiologie & Assimilationsbelichtung (Gärtnermeister-Praxis)</span>
+    <h1>Tägliches Lichtintegral (DLI) & LED-Photobiologie im Erwerbsgartenbau: PPFD-Umrechnung, Spektralsteuerung & Stromkosten-ROI</h1>
+    <div class="meta-bar">
+      <span>👨‍🔬 <strong>Inwoo Hwang</strong> (Inwoovation Lab)</span> &nbsp;|&nbsp;
+      <span>📅 Last Updated: November 08, 2026</span> &nbsp;|&nbsp;
+      <span>⏱️ 14 Min. Lesezeit</span>
+    </div>
+
+      <section style="margin-bottom: 34px;">
+        <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px; margin-bottom: 16px;">1. Physikalische Grundlagen: Von der Momentan-PPFD zum Täglichen Lichtintegral (DLI)</h2>
+        <p>In der modernen Gewächshaustechnik und im mehrlagigen Vertical Farming (Indoor-Farming) entscheidet nicht die subjektive Beleuchtungsstärke in Lux (Lumen pro Quadratmeter, gewichtet nach der menschlichen Augenempfindlichkeit bei 555 nm), sondern ausschließlich der photosynthetisch aktive Photonenfluss im Wellenlängenbereich von 400 bis 700 nm (PAR — Photosynthetically Active Radiation) über die Kohlenstoffassimilation der Pflanze. Während die <strong>PPFD (Photosynthetic Photon Flux Density)</strong> in Mikromol Photonen pro Quadratmeter und Sekunde (<code>µmol·m⁻²·s⁻¹</code>) den momentanen Strahlungsfluss auf Bestandsebene beschreibt, integriert das <strong>Tägliche Lichtintegral (DLI — Daily Light Integral)</strong> diese Photonenmenge über die gesamte tägliche Belichtungsperiode (Photoperiode <code>t_Tag</code> in Stunden) zu einer Tagesdosis in Mol Photonen pro Quadratmeter und Tag (<code>mol·m⁻²·d⁻¹</code>).</p>
+        <div class="formula-box">
+          DLI [mol·m⁻²·d⁻¹] = PPFD [µmol·m⁻²·s⁻¹] × t_Tag [h·d⁻¹] × 3.600 [s·h⁻¹] × 10⁻⁶ [mol·µmol⁻¹]<br>
+          <strong>Kurzformel für den Meisterbetrieb: DLI = PPFD × Belichtungsstunden × 0,0036</strong>
+        </div>
+        <p>Ein praktisches Rechenbeispiel für die Kulturplanung im Winterhalbjahr: Wird ein Kopfsalat- oder Erdbeerbestand über 16 Stunden täglich mit einer konstanten LED-PPFD von 250 µmol·m⁻²·s⁻¹ belichtet, ergibt sich ein tägliches Lichtintegral von <code>250 × 16 × 0,0036 = 14,40 mol·m⁻²·d⁻¹</code>. Jedes zusätzliche Mol DLI steigert im lichtlimitierten Bereich (unterhalb des Lichtsättigungspunkts der Rubisco-Carboxylierung) die Trockenmasseproduktion proportional um etwa 0,7 bis 1,1 % bei Fruchtgemüse und Blattgemüse — die sogenannte Ein-Prozent-Regel des niederländischen und deutschen Erwerbsgartenbaus.</p>
+      </section>
+      <section style="margin-bottom: 34px;">
+        <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px; margin-bottom: 16px;">2. Kulturspezifische DLI-Zielwerte & Tipburn-Grenzwerte im Vergleich</h2>
+        <p>Die Auslegung einer LED-Assimilationsbelichtung im Venlo-Gewächshaus oder in einer geschlossenen Klimakammer erfordert eine präzise Abstimmung zwischen dem genetischen Lichtsättigungspunkt der Kultur, der nächtlichen Dunkelatmung (Respiration) und dem Kalzium-Massentransport im Xylem. Wird bei schnellwachsenden Blattgemüsen wie Kopfsalat (<em>Lactuca sativa</em>) ein DLI von 17 mol·m⁻²·d⁻¹ ohne ausreichende vertikale Luftbewegung (<code>v_Luft ≥ 0,35 m/s</code> zur Reduktion des Grenzschichtwiderstands <code>r_a</code>) überschritten, übersteigt die Zellteilungsrate der jungen Innenblätter den transpirationsgetriebenen Kalzium-Nachschub, was unweigerlich zu <strong>Innenbrand (Tipburn)</strong> führt.</p>
+        <table class="eng-table">
+          <thead>
+            <tr>
+              <th>Kultur / Produktionssystem</th>
+              <th>Empfohlene PPFD (µmol·m⁻²·s⁻¹)</th>
+              <th>Photoperiode (h/d)</th>
+              <th>Ziel-DLI (mol·m⁻²·d⁻¹)</th>
+              <th>Kulturtechnischer Engpass &amp; Steuerung</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Mikrogemüse &amp; Jungpflanzen (Anzucht)</strong></td>
+              <td>120 – 180</td>
+              <td>16 – 18</td>
+              <td>7,0 – 11,5</td>
+              <td>Kompaktes Hypokotyl durch 15–20 % Blauanteil (450 nm)</td>
+            </tr>
+            <tr>
+              <td><strong>Hydroponischer Salat &amp; Basilikum</strong></td>
+              <td>220 – 280</td>
+              <td>16 – 18</td>
+              <td>14,0 – 17,0</td>
+              <td>Ab 17,5 mol/m²/d akutes Tipburn-Risiko ohne Vertikalventilatoren</td>
+            </tr>
+            <tr>
+              <td><strong>Gewächshaus-Erdbeere (Remontierend)</strong></td>
+              <td>250 – 350</td>
+              <td>14 – 16</td>
+              <td>15,0 – 22,0</td>
+              <td>Zuckereinlagerung (°Brix) korreliert linear mit DLI und Tag/Nacht-DIF</td>
+            </tr>
+            <tr>
+              <td><strong>Hochdraht-Tomate &amp; Paprika (Venlo)</strong></td>
+              <td>300 – 500 (+ Solar)</td>
+              <td>16 – 18</td>
+              <td>22,0 – 35,0+</td>
+              <td>Interlighting im Mittelbestand verhindert vorzeitige Blattalterung</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <section style="margin-bottom: 34px;">
+        <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px; margin-bottom: 16px;">3. McCree-Aktionsspektrum, Emerson-Effekt & Erweiterter ePAR-Bereich (400–750 nm)</h2>
+        <p>Nach der klassischen Quantenausbeutekurve von Keith McCree (1972) weisen rote Photonen im Bereich von 660 nm (Absorptionsmaximum von Chlorophyll a) die höchste energetische Quanteneffizienz pro eingestrahlter Joule elektrischer Energie auf, da sie eine geringere Photonenenergie (Plancksches Wirkungsquantum <code>E = h · c / λ</code>) benötigen als kurzwellige blaue Photonen bei 450 nm. Dennoch führt ein rein monochromatisches Rotspektrum zum sogenannten <em>Red-Light-Syndrome</em> mit gestreckten Internodien, dünnem Blattparenchym und gestörter Stomata-Öffnungskinetik, weil die Cryptochrom- und Phototropin-Photorezeptoren zwingend blaues Licht (8 bis 15 % des Gesamtspektrums) benötigen, um den Kalium-Einstrom in die Schließzellen zu aktivieren.</p>
+        <p>Moderne photobiologische Forschungen (Zhen &amp; Bugbee, 2020) belegen zudem den <strong>Emerson-Enhancement-Effekt</strong> im erweiterten Spektralbereich <strong>ePAR (400–750 nm)</strong>: Während das Photosystem II (PSII) bevorzugt bei 680 nm arbeitet, wird das Photosystem I (PSI) durch dunkelrote Photonen (Far-Red, 700–750 nm) selektiv angeregt. Eine gezielte Ergänzung von 5 bis 10 % Dunkelrot (730 nm) beschleunigt nicht nur den linearen Elektronentransport zwischen PSII und PSI, sondern senkt auch das Phytochrom-Gleichgewicht (<code>P_fr / P_total</code>). Dadurch vergrößert die Pflanze ihre Blattfläche (Leaf Area Index, LAI), fängt im Jungpflanzenstadium bis zu 18 % mehr Licht ein und schaltet bei Langtagkulturen schneller in die generative Blüteninduktion.</p>
+      </section>
+      <section style="margin-bottom: 34px;">
+        <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px; margin-bottom: 16px;">4. Elektrische Leistungsdichte, PPE-Wirkungsgrad & B2B-Stromkosten-Kalkulation</h2>
+        <p>Für die Investitionsrechnung (CAPEX/OPEX nach Teil III der Gärtnermeisterprüfung) ist die <strong>Photosynthetische Photoneneffizienz (PPE)</strong> der LED-Leuchte in Mikromol pro Joule (<code>µmol/J</code>) die zentrale Kenngröße. Während ältere Hochdruck-Natriumdampflampen (HPS / SON-T, 1.000 W) lediglich 1,7 bis 1,9 µmol/J erreichen und einen Großteil der Energie als kurzwellige Infrarot-Strahlungswärme direkt auf die Triebspitzen abgeben, erzielen moderne wasser- oder passivgekühlte Top-LED-Module Systemwirkungsgrade von <strong>3,2 bis 3,8 µmol/J</strong>.</p>
+        <div class="formula-box">
+          Spezifische elektrische Leistung P_el [W·m⁻²] = Ziel-PPFD [µmol·m⁻²·s⁻¹] / (PPE [µmol·J⁻¹] × η_Optik)<br>
+          Tägliche Stromkosten [€·m⁻²·d⁻¹] = (P_el [W·m⁻²] / 1.000) × t_Tag [h·d⁻¹] × Strompreis [€·kWh⁻¹]
+        </div>
+        <p>Gleichzeitig muss in der Heizlastbilanz nach DIN V 18599 berücksichtigt werden, dass jede im geschlossenen Gewächshaus aufgenommene Kilowattstunde LED-Strom letztlich zu über 95 % in sensible Wärme (Konvektion am Kühlkörper) oder latente Verdunstungswärme (Transpiration der Blätter) umgewandelt wird. Im bivalenten Betrieb mit Wärmepumpen und Wärmespeichern (Pufferspeicher) lässt sich die Belichtungsperiode über dynamische Börsenstromtarife (EPEX Spot) exakt in die Stunden niedriger oder negativer Strompreise verschieben, solange die artspezifische Mindest-Dunkelphase (z. B. 6 Stunden bei Tomaten zur Vermeidung von Blattchlorosen) eingehalten wird.</p>
+      </section>
+
+    <section style="margin-bottom: 34px;">
+      <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #10b981; border-bottom: 1px solid rgba(16, 185, 129, 0.25); padding-bottom: 10px; margin-bottom: 16px;">Häufig gestellte Ingenieurfragen (Praxis-FAQ)</h2>
+        <div style="background: rgba(15, 23, 42, 0.7); border-left: 4px solid #10b981; padding: 18px 20px; border-radius: 10px; margin-bottom: 14px;">
+          <p style="margin: 0;"><strong>F1: Wie rechnet man PPFD (µmol/m²/s) in das tägliche Lichtintegral (DLI in mol/m²/Tag) um?</strong><br>Multiplizieren Sie die auf Bestandshöhe gemessene PPFD (µmol·m⁻²·s⁻¹) mit den täglichen Belichtungsstunden (h/d) und dem Umrechnungsfaktor 0,0036 (3.600 Sekunden pro Stunde geteilt durch 1.000.000 µmol/mol). Beispiel: 250 µmol·m⁻²·s⁻¹ × 16 h × 0,0036 = 14,4 mol·m⁻²·d⁻¹.</p>
+        </div>
+        <div style="background: rgba(15, 23, 42, 0.7); border-left: 4px solid #10b981; padding: 18px 20px; border-radius: 10px; margin-bottom: 14px;">
+          <p style="margin: 0;"><strong>F2: Warum tritt bei Salat im Vertical Farming ab einem DLI über 17 mol/m²/d häufig Tipburn (Innenbrand) auf?</strong><br>Bei hohem DLI wächst das Herzblatt schneller, als Kalziumionen (Ca²⁺) über den Xylem-Transpirationsstrom in die kaum belüfteten Innenblätter transportiert werden können. Abhilfe schaffen vertikale Umluftventilatoren (Luftgeschwindigkeit ≥ 0,35 m/s am Blatt) zur Senkung des Grenzschichtwiderstands sowie ein moderates Nacht-VPD.</p>
+        </div>
+        <div style="background: rgba(15, 23, 42, 0.7); border-left: 4px solid #10b981; padding: 18px 20px; border-radius: 10px; margin-bottom: 14px;">
+          <p style="margin: 0;"><strong>F3: Wie viel Strom spart die Umrüstung von HPS-Natriumdampflampen (1,8 µmol/J) auf Hochleistungs-LEDs (3,4 µmol/J)?</strong><br>Bei identischer Ziel-PPFD sinkt die elektrische Anschlussleistung (W/m²) um rund 47 % ((1 - 1,8 / 3,4) × 100 %). Bei 2.500 Belichtungsstunden pro Jahr und 200 µmol·m⁻²·s⁻¹ reduziert sich der Stromverbrauch von 277,8 kWh/m²/a auf 147,1 kWh/m²/a — eine Einsparung von über 1.300 MWh pro Hektar und Jahr.</p>
+        </div>
+    </section>
+
+    <section style="margin-bottom: 34px;">
+      <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.35rem; color: #cbd5e1; margin-bottom: 12px;">Wissenschaftliche Literatur & Normen</h2>
+      <ul style="padding-left: 20px;">
+          <li style="margin-bottom: 8px; color: #94a3b8; font-size: 0.92rem;">McCree, K. J. (1972). The action spectrum, absorptance and quantum yield of photosynthesis in crop plants. Agricultural Meteorology, 9, 191-216.</li>
+          <li style="margin-bottom: 8px; color: #94a3b8; font-size: 0.92rem;">Zhen, S., & Bugbee, B. (2020). Far-red photons have equivalent efficiency to traditional photosynthetic photons: Implications for redefining photosynthetically active radiation. Plant, Cell & Environment, 43(5), 1259-1272.</li>
+          <li style="margin-bottom: 8px; color: #94a3b8; font-size: 0.92rem;">Marcelis, L. F. M., et al. (2006). Quantification of the growth response to light quantity of greenhouse grown crops. Acta Horticulturae, 711, 97-104.</li>
+          <li style="margin-bottom: 8px; color: #94a3b8; font-size: 0.92rem;">DIN V 18599-10 / EN 13031-1: Energetische Bewertung und Auslegung von Gewächshaussystemen und Assimilationsbelichtung.</li>
+      </ul>
+    </section>
+
+
+<!-- INW-LIVE-WIDGET-START -->
+<section class="inw-live-widget-sandbox" style="margin: 32px 0; padding: 24px; background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 16px; box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);">
+  <h3 style="margin: 0 0 8px 0; font-size: 1.2rem; color: #38bdf8; font-weight: 800;">☀️ Interaktiver Echtzeit-DLI- & Belichtungs-Simulator</h3>
+  <p style="margin: 0 0 16px 0; font-size: 0.92rem; color: #94a3b8; line-height: 1.6;">Simulieren Sie PPFD (µmol·m⁻²·s⁻¹) und Belichtungsdauer (Stunden), um das tägliche Lichtintegral (mol·m⁻²·d⁻¹) live zu bestimmen.</p>
+  <div style="display: flex; justify-content: center; width: 100%; overflow: hidden;">
+    <iframe src="/embed/dli-calculator.html" width="380" height="390" loading="lazy" title="☀️ Interaktiver Echtzeit-DLI- & Belichtungs-Simulator" style="border: none; border-radius: 14px; max-width: 100%;"></iframe>
+  </div>
+</section>
+<!-- INW-LIVE-WIDGET-END -->
+
+<!-- INW-TSUKUBA-FUNNEL-START -->
+<section class="inw-tsukuba-funnel-bridge" style="max-width: 1060px; margin: 32px auto; padding: 26px; background: rgba(15, 23, 42, 0.9); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 16px; text-align: left; box-shadow: 0 10px 28px rgba(0, 0, 0, 0.3);">
+  <h3 style="margin: 0 0 8px 0; font-size: 1.2rem; color: #10b981; font-weight: 800;">🔬 Weiterführende Fachartikel, Kulturleitfäden & Simulatoren (Tsukuba-Funnel)</h3>
+  <p style="margin: 0 0 16px 0; font-size: 0.92rem; color: #94a3b8; line-height: 1.6;">Vertiefen Sie die physikalischen Gleichungen dieser Seite mit unseren validierten Ingenieur-Monographien und interaktiven Echtzeit-Rechnern:</p>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px;">
+    <a href="/articles/article-02-dli-vertical-farming.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">Vol. 02: Daily Light Integral (DLI) & Photobiology Optimization →</a>
+    <a href="/articles/article-40-beer-lambert-canopy-light-extinction.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">Vol. 40: Beer-Lambert Canopy Light Extinction & Interlighting Physics →</a>
+    <a href="/articles/article-21-chlorophyll-a-fluorescence-fvfm-stress.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">Vol. 21: PAM Chlorophyll-a Fluorescence (Fv/Fm) & Photoinhibition →</a>
+    <a href="/crops/commercial-strawberry-greenhouse-climate-dli-guide.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🍓 Commercial Strawberry Greenhouse DLI & Crown Temperature Guide →</a>
+    <a href="/crops/vertical-farm-lettuce-leafy-greens-tipburn-prevention-guide.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🥬 Vertical Farm Leafy Greens DLI & Tipburn Prevention Guide →</a>
+    <a href="/tools/dli-spectrum-photomorphogenesis-calculator.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">💡 DLI Spectrum & Photomorphogenesis Calculator →</a>
+    <a href="/tools/crop-yield-biomass-dli-forecaster.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">📈 Radiation Use Efficiency (RUE) & DLI Yield Forecaster →</a>
+  </div>
+</section>
+<!-- INW-TSUKUBA-FUNNEL-END -->
+
+    <!-- INW-EEAT-BOX-START -->
+    <section class="inw-eeat-box" style="margin-top: 36px; padding: 24px; background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 16px;">
+      <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; color: #10b981; font-weight: 800; margin-bottom: 6px;">Gärtnermeister-Kandidat & CEA-Systemingenieur — Inwoovation Lab</div>
+      <h3 style="margin: 0 0 8px 0; font-size: 1.15rem; color: #f8fafc;">Inwoo Hwang</h3>
+      <p style="margin: 0; font-size: 0.92rem; color: #cbd5e1; line-height: 1.65;">Spezialisiert auf Venlo-Gewächshausthermodynamik (DIN V 18599), Photobiologie (DLI/PPFD), geschlossene Hydroponik-Kreisläufe und präzise Kultursteuerung.</p>
+    </section>
+    <!-- INW-EEAT-BOX-END -->
+  </main>
+
+  <!-- INW-STD-FOOTER-START -->
+  <footer class="inw-site-footer" style="margin-top: 48px; padding: 28px 20px; background: #0f172a; color: #94a3b8; text-align: center; border-top: 1px solid rgba(148, 163, 184, 0.15);">
+    <div style="max-width: 1100px; margin: 0 auto;">
+      <p style="margin: 0 0 10px 0;">&copy; 2026 Inwoovation Lab. Precision Controlled Environment Agriculture &amp; Biophysical Engineering.</p>
+      <p style="margin: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 16px;">
+        <a href="/index.html" style="color: #cbd5e1; text-decoration: none;">Home</a>
+        <a href="/guides.html" style="color: #cbd5e1; text-decoration: none;">Engineering Guides</a>
+        <a href="/privacy-policy.html" style="color: #cbd5e1; text-decoration: none;">Privacy Policy</a>
+        <a href="/terms-of-service.html" style="color: #cbd5e1; text-decoration: none;">Terms of Service</a>
+        <a href="/about.html" style="color: #cbd5e1; text-decoration: none;">About</a>
+        <a href="/contact.html" style="color: #cbd5e1; text-decoration: none;">Contact</a>
+      </p>
+    </div>
+  </footer>
+  <!-- INW-STD-FOOTER-END -->
+</body>
+</html>
