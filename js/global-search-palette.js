@@ -1854,8 +1854,8 @@
     "cat": "tool",
     "url": "index.html",
     "icon": "🛠️",
-    "desc": "Inwoovation Lab - Precision AgTech biophysical simulators, real-time VPD microclimate engines, plant disease diagnostics, 78-volume (147 multilingual editions) ",
-    "tags": "index html inwoovation lab inwoovation lab precision agtech biophysical simulators real time vpd microclimate engines plant disease diagnostics 78 volume 147 multilingual editions"
+    "desc": "Inwoovation Lab — Unified CEA engineering command center: 106 verified global agricultural grants (California, Germany, Japan, Netherlands, France, Spain, Korea",
+    "tags": "index html inwoovation lab inwoovation lab unified cea engineering command center 106 verified global agricultural grants california germany japan netherlands france spain korea"
   },
   {
     "title": "Deutscher Gartenbau-Meister &amp; KTBL-Standard Rechner",
