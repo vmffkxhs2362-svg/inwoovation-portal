@@ -746,6 +746,14 @@
     "tags": "articles de article 14 vertical farming hvac entfeuchtung kondensation waermerueckgewinnung html vertical farming hvac entfeuchtung berechnen latente transpirationslast mollier h x wärmerück"
   },
   {
+    "title": "Vol. 15: Innenraumbegrünung & Biophiles Design — Lichtkompensationspunkt (LCP), Lux-PPFD-Konversion, Living-Wall-Hydraulik & VOC-Phytoremediation",
+    "cat": "article",
+    "url": "articles/de/article-15-innenraumbegruenung-biophiles-design-lichtkompensationspunkt-voc.html",
+    "icon": "🇩🇪",
+    "desc": "Ingenieur-Monographie zur professionellen Innenraumbegrünung nach FLL-Richtlinien: Lichtkompensationspunkt (LCP), spektrale Lux-zu-PPFD-Umrechnung, Hydrokultur-",
+    "tags": "articles de article 15 innenraumbegruenung biophiles design lichtkompensationspunkt voc html vol 15 innenraumbegrünung biophiles design lichtkompensationspunkt lcp lux ppfd konversion living"
+  },
+  {
     "title": "Vol. 16: Gärtnermeister-Klimasteuerung im Venlo-Gewächshaus — Mollier-h-x-Diagramm, Taupunktabstand & Heizrohr-Regelung",
     "cat": "article",
     "url": "articles/de/article-16-gaertnermeister-gewaechshaus-klimasteuerung-taupunkt-heizrohr.html",
@@ -760,6 +768,54 @@
     "icon": "🇩🇪",
     "desc": "Ingenieur-Monographie zur Substratphysik im Topf- und Containerbau: Gesamtporenvolumen (GPV), Luftkapazität bei pF 1,0, Stauwasserzone (Perched Water Table), Va",
     "tags": "articles de article 17 substratphysik luftkapazitaet wasserretention wurzelbelueftung html vol 17 biophysikalische substratphysik im erwerbsgartenbau luftkapazität afp pf wasserretentionskur"
+  },
+  {
+    "title": "Vol. 18: Rezirkulierende Nährlösungsentkeimung im geschlossenen Gewächshaus — UV-C-Dosis (254 nm), Ozon-Redoxpotential, Thermodesinfektion & Fe-Chelat-Photolyse",
+    "cat": "article",
+    "url": "articles/de/article-18-rezirkulierende-naehrloesungsentkeimung-uv-c-ozon-ultrafiltration-chelat.html",
+    "icon": "🇩🇪",
+    "desc": "Ingenieur-Monographie zur Dränwasser-Entkeimung im geschlossenen Hydroponik-Kreislauf nach WHG/DüV: Beer-Lambert-Transmission (T10), UV-C-Inaktivierungskinetik ",
+    "tags": "articles de article 18 rezirkulierende naehrloesungsentkeimung uv c ozon ultrafiltration chelat html vol 18 rezirkulierende nährlösungsentkeimung im geschlossenen gewächshaus uv c dosis 254 "
+  },
+  {
+    "title": "Vol. 19: Vertikale Landwirtschaft (PFAL) & Biomasse-Konversionseffizienz — Lichtnutzungseffizienz (LUE/PUE), Ernteindex (HI) & Strom-zu-Biomasse-Kinetik",
+    "cat": "article",
+    "url": "articles/de/article-19-vertikale-landwirtschaft-biomasse-konversionseffizienz-lue-ernteindex.html",
+    "icon": "🇩🇪",
+    "desc": "Ingenieur-Monographie zur Photonen- und Energiekonversion in der Vertikalen Landwirtschaft (Vertical Farming): Lichtnutzungseffizienz LUE (g/mol), LED-Effizienz",
+    "tags": "articles de article 19 vertikale landwirtschaft biomasse konversionseffizienz lue ernteindex html vol 19 vertikale landwirtschaft pfal biomasse konversionseffizienz lichtnutzungseffizienz lu"
+  },
+  {
+    "title": "Vol. 20: Blatttemperatur-Infrarot-Thermometrie, Emissionsgrad (ε = 0,98), Blatt-Energiebilanz & Crop Water Stress Index (CWSI)",
+    "cat": "article",
+    "url": "articles/de/article-20-blatttemperatur-infrarot-thermometrie-emissionsgrad-energiebilanz.html",
+    "icon": "🇩🇪",
+    "desc": "Ingenieur-Monographie zur radiometrischen Blatttemperaturmessung im Gewächshaus: Stefan-Boltzmann-Gesetz, kutikulärer Emissionsgrad (0,98), Blatt-Energiebilanz,",
+    "tags": "articles de article 20 blatttemperatur infrarot thermometrie emissionsgrad energiebilanz html vol 20 blatttemperatur infrarot thermometrie emissionsgrad 0 98 blatt energiebilanz crop water s"
+  },
+  {
+    "title": "Vol. 21: Chlorophyll-a-Fluoreszenzkinetik (Fv/Fm &amp; OJIP), PAM-Fluorometrie &amp; präsymptomatische Pflanzenstress-Metrologie",
+    "cat": "article",
+    "url": "articles/de/article-21-chlorophyllfluoreszenz-fvfm-quantenausbeute-pflanzenstress-pam.html",
+    "icon": "🇩🇪",
+    "desc": "Ingenieur-Monographie zur zerstörungsfreien Echtzeit-Diagnose im Unterglasgartenbau: Kautsky-Effekt, maximale PSII-Quantenausbeute (Fv/Fm), effektive Quantenaus",
+    "tags": "articles de article 21 chlorophyllfluoreszenz fvfm quantenausbeute pflanzenstress pam html vol 21 chlorophyll a fluoreszenzkinetik fv fm amp ojip pam fluorometrie amp präsymptomatische pflan"
+  },
+  {
+    "title": "Vol. 22: HPS- vs. LED-Assimilationsbelichtung im Venlo-Gewächshaus — Photonenausbeute (µmol/J), Dunkelrot-Emerson-Effekt, Strahlungswärmebilanz &amp; Wirtschaftlichkeit",
+    "cat": "article",
+    "url": "articles/de/article-22-hps-vs-led-assimilation-belichtung-strahlungsheizung-wirtschaftlichkeit.html",
+    "icon": "🇩🇪",
+    "desc": "Ingenieur-Monographie zum Systemvergleich von 1000-W-Natriumdampf-Hochdrucklampen (SON-T/HPS) und Voll- bzw. Hybrid-LED-Belichtung: Elektrische Photonenausbeute",
+    "tags": "articles de article 22 hps vs led assimilation belichtung strahlungsheizung wirtschaftlichkeit html vol 22 hps vs led assimilationsbelichtung im venlo gewächshaus photonenausbeute mol j dunk"
+  },
+  {
+    "title": "Vol. 23: Geschlossene Tiefwasserkultur (DWC) &amp; Mikrodosierungs-Automatisierung — Henry-Sauerstoffsättigung (DO), Venturi-Nano-Begasung, ORP &amp; Mehrkanal-PID-Fertigation",
+    "cat": "article",
+    "url": "articles/de/article-23-geschlossene-tiefwasserkultur-dwc-sauerstoffsaettigung-venturi-automatisierung.html",
+    "icon": "🇩🇪",
+    "desc": "Ingenieur-Monographie für rezirkulierende Tiefwasserkultur (DWC / Floating Raft) und NFT-Systeme: Gelöstsauerstoff-Kinetik nach dem Henry-Gesetz, Q10-Wurzelatmu",
+    "tags": "articles de article 23 geschlossene tiefwasserkultur dwc sauerstoffsaettigung venturi automatisierung html vol 23 geschlossene tiefwasserkultur dwc amp mikrodosierungs automatisierung henry "
   },
   {
     "title": "Optimierung des Dunkelrot (730nm) & Hellrot (660nm) LED-Spektrums",
@@ -1080,6 +1136,22 @@
     "icon": "🇯🇵",
     "desc": "施設園芸におけるFAO-56 Penman-Monteith蒸発散方程式 (ET₀)・Stanghellini温室群落モデル、空気力学的境界層抵抗 (r_a) と気孔抵抗 (r_s)、飽差 (VPD) 制御、および積算日射比例灌水トリガーの設計。",
     "tags": "articles ja article 05 penman monteith transpiration vpd environmental control html fao 56 penman monteith 蒸散モデル 気孔コンダクタンス 飽差 vpd 統合環境制御と日射比例灌水設計 施設園芸におけるfao 56 penman monteith蒸発散方程式 et stan"
+  },
+  {
+    "title": "Vol. 06: 閉鎖型養液栽培におけるモル化学量論・Sonneveld/Steiner イオン当量収支 (meq/L) と A/B 原液タンク・EC/pH 制御工学",
+    "cat": "article",
+    "url": "articles/ja/article-06-hydroponic-nutrient-formulation-ab-stock-tank-ec-ph-jp.html",
+    "icon": "🇯🇵",
+    "desc": "施設園芸および植物工場の閉鎖型循環式養液栽培におけるイオン当量設計 (mmol/L・meq/L)：Sonneveld・Steiner・山崎処方の比較、陽イオン・陰イオン電気的中性条件、A/B原液タンクの溶解度積 (Ksp・石膏沈殿防止)、NO₃⁻/NH₄⁺比による根圏pH自律緩衝、および排液循環ブレンド制御。",
+    "tags": "articles ja article 06 hydroponic nutrient formulation ab stock tank ec ph jp html vol 06 閉鎖型養液栽培におけるモル化学量論 sonneveld steiner イオン当量収支 meq l と a b 原液タンク ec ph 制御工学 施設園芸および植物工場の閉鎖型循環式養液栽培におけるイ"
+  },
+  {
+    "title": "Vol. 07: 植物工場・施設園芸のLED光質制御と光形態形成：McCree作用スペクトル・拡張光合成有効放射 (ePAR 400–750 nm)・フィトクロム光平衡 (PSS) とエマーソン相乗効果",
+    "cat": "article",
+    "url": "articles/ja/article-07-horticultural-lighting-spectrum-par-epar-photomorphogenesis-jp.html",
+    "icon": "🇯🇵",
+    "desc": "植物工場 (PFAL) および施設園芸補光における光生物学・半導体照明工学：McCree・稲田の相対量子収率曲線、ePAR (400–750 nm)、フィトクロム光平衡 (PSS = Pfr/Ptotal)、クリプトクロム気孔開口、730 nm 遠赤色光によるエマーソン効果、および高効率LED (PPE ≥ 3.6 µ",
+    "tags": "articles ja article 07 horticultural lighting spectrum par epar photomorphogenesis jp html vol 07 植物工場 施設園芸のled光質制御と光形態形成 mccree作用スペクトル 拡張光合成有効放射 epar 400 750 nm フィトクロム光平衡 pss とエマ ソン相乗効果 植物工"
   },
   {
     "title": "スマート温室の精密センサ校正工学：ネルンスト式 (pH/EC)・TDR/FDR培地誘電率・NDIR式CO₂ドリフト補償",
@@ -1770,12 +1842,12 @@
     "tags": "crops vertical farm lettuce leafy greens tipburn prevention guide html controlled environment leafy greens lettuce lactuca sativa microclimate vpd dli precision steering guide precision cea "
   },
   {
-    "title": "Precision CEA & Horticultural Engineering Articles (78 Volumes / 163 Multilingual Editions)",
+    "title": "Precision CEA & Horticultural Engineering Articles (78 Volumes / 172 Multilingual Editions)",
     "cat": "article",
     "url": "guides.html",
     "icon": "📚",
-    "desc": "78-volume (163 multilingual editions) open-access Controlled Environment Agriculture (CEA) archive — VPD physics, biomass CHP, photobiology, closed-loop fertiga",
-    "tags": "guides html precision cea horticultural engineering articles 78 volumes 163 multilingual editions 78 volume 163 multilingual editions open access controlled environment agriculture cea archi"
+    "desc": "78-volume (172 multilingual editions) open-access Controlled Environment Agriculture (CEA) archive — VPD physics, biomass CHP, photobiology, closed-loop fertiga",
+    "tags": "guides html precision cea horticultural engineering articles 78 volumes 172 multilingual editions 78 volume 172 multilingual editions open access controlled environment agriculture cea archi"
   },
   {
     "title": "Inwoovation Lab",
@@ -2744,13 +2816,13 @@
       <div class="inwoo-palette-box" role="dialog" aria-modal="true" aria-label="Inwoovation Spotlight Search">
         <div class="inwoo-palette-header">
           <span class="inwoo-palette-search-icon">🔍</span>
-          <input type="text" id="inwoo-palette-input" placeholder="Search all 339 tools, simulators, wiki, crops, climate hubs & EN/DE/JA articles..." autocomplete="off" />
+          <input type="text" id="inwoo-palette-input" placeholder="Search all 348 tools, simulators, wiki, crops, climate hubs & EN/DE/JA articles..." autocomplete="off" />
           <span class="inwoo-palette-esc-badge" onclick="window.InwooPalette.close()">ESC</span>
         </div>
         <div class="inwoo-palette-tabs">
-          <button class="inwoo-pal-tab active" data-cat="all">✨ All (339)</button>
+          <button class="inwoo-pal-tab active" data-cat="all">✨ All (348)</button>
           <button class="inwoo-pal-tab" data-cat="tool">🛠️ Tools (48)</button>
-          <button class="inwoo-pal-tab" data-cat="article">📚 Articles (166)</button>
+          <button class="inwoo-pal-tab" data-cat="article">📚 Articles (175)</button>
           <button class="inwoo-pal-tab" data-cat="wiki">🧬 Wiki (44)</button>
           <button class="inwoo-pal-tab" data-cat="climate">🌍 Climate (41)</button>
           <button class="inwoo-pal-tab" data-cat="sim">🧪 Simulators (21)</button>
@@ -2764,7 +2836,7 @@
             <span><kbd>↵</kbd> Open</span>
             <span><kbd>Esc</kbd> Close</span>
           </div>
-          <div style="color: #64748b; font-size: 0.75rem;">Inwoovation Universal Spotlight (339 Indexed Pages)</div>
+          <div style="color: #64748b; font-size: 0.75rem;">Inwoovation Universal Spotlight (348 Indexed Pages)</div>
         </div>
       </div>
     `;

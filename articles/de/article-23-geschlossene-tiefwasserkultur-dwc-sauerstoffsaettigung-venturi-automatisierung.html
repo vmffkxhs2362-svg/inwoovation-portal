@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta name="google-adsense-account" content="ca-pub-8597809158257497">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vol. 23: Geschlossene Tiefwasserkultur (DWC) &amp; Mikrodosierungs-Automatisierung — Henry-Sauerstoffsättigung (DO), Venturi-Nano-Begasung, ORP &amp; Mehrkanal-PID-Fertigation | Inwoovation Lab</title>
+  <meta name="description" content="Ingenieur-Monographie für rezirkulierende Tiefwasserkultur (DWC / Floating Raft) und NFT-Systeme: Gelöstsauerstoff-Kinetik nach dem Henry-Gesetz, Q10-Wurzelatmung, Venturi- und Nanobubble-Eintrag, Redoxpotential (ORP) und ionenselektive PID-Düngerdosierung.">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://inwoovation.com/articles/de/article-23-geschlossene-tiefwasserkultur-dwc-sauerstoffsaettigung-venturi-automatisierung.html">
+  <link rel="alternate" hreflang="en" href="https://inwoovation.com/articles/article-23-closed-loop-dwc-automation.html">
+  <link rel="alternate" hreflang="x-default" href="https://inwoovation.com/articles/article-23-closed-loop-dwc-automation.html">
+  <link rel="alternate" hreflang="de" href="https://inwoovation.com/articles/de/article-23-geschlossene-tiefwasserkultur-dwc-sauerstoffsaettigung-venturi-automatisierung.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Vol. 23: Geschlossene Tiefwasserkultur (DWC) &amp; Mikrodosierungs-Automatisierung — Henry-Sauerstoffsättigung (DO), Venturi-Nano-Begasung, ORP &amp; Mehrkanal-PID-Fertigation | Inwoovation Lab">
+  <meta property="og:description" content="Ingenieur-Monographie für rezirkulierende Tiefwasserkultur (DWC / Floating Raft) und NFT-Systeme: Gelöstsauerstoff-Kinetik nach dem Henry-Gesetz, Q10-Wurzelatmung, Venturi- und Nanobubble-Eintrag, Redoxpotential (ORP) und ionenselektive PID-Düngerdosierung.">
+  <meta property="og:url" content="https://inwoovation.com/articles/de/article-23-geschlossene-tiefwasserkultur-dwc-sauerstoffsaettigung-venturi-automatisierung.html">
+  <meta property="og:image" content="https://inwoovation.com/og-cover.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V4RYJBMEDE"></script>
+  <script>
+    if (navigator.webdriver || /HeadlessChrome|PhantomJS|Lighthouse|PTST|bot|crawler|spider|slurp/i.test(navigator.userAgent) || location.hostname === 'localhost' || location.hostname === '127.0.0.1' || (screen.width === 1366 && screen.height === 1366) || (screen.width === 800 && screen.height === 600) || screen.height >= 5000) { window['ga-disable-G-V4RYJBMEDE'] = true; }
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-V4RYJBMEDE');
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8597809158257497" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/global-ui-enhancements.css?v=20261110">
+  <script src="/js/global-search-palette.js?v=20261110" defer></script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "headline": "Vol. 23: Geschlossene Tiefwasserkultur (DWC) & Mikrodosierungs-Automatisierung — Henry-Sauerstoffsättigung (DO), Venturi-Nano-Begasung, ORP & Mehrkanal-PID-Fertigation | Inwoovation Lab",
+      "description": "Ingenieur-Monographie für rezirkulierende Tiefwasserkultur (DWC / Floating Raft) und NFT-Systeme: Gelöstsauerstoff-Kinetik nach dem Henry-Gesetz, Q10-Wurzelatmung, Venturi- und Nanobubble-Eintrag, Redoxpotential (ORP) und ionenselektive PID-Düngerdosierung.",
+      "inLanguage": "de",
+      "datePublished": "2026-11-10",
+      "dateModified": "2026-11-10",
+      "mainEntityOfPage": "https://inwoovation.com/articles/de/article-23-geschlossene-tiefwasserkultur-dwc-sauerstoffsaettigung-venturi-automatisierung.html",
+      "image": "https://inwoovation.com/og-cover.jpg",
+      "author": {
+        "@type": "Person",
+        "name": "Inwoo Hwang",
+        "jobTitle": "Horticultural & CEA Systems Engineer",
+        "url": "https://inwoovation.com/about.html"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Inwoovation Lab",
+        "url": "https://inwoovation.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://inwoovation.com/og-cover.jpg"
+        }
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inwoovation Lab",
+          "item": "https://inwoovation.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Engineering Guides",
+          "item": "https://inwoovation.com/guides.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "DE Vol. 23: Geschlossene Tiefwasserkultur (DWC), DO & PID-Automatisierung",
+          "item": "https://inwoovation.com/articles/de/article-23-geschlossene-tiefwasserkultur-dwc-sauerstoffsaettigung-venturi-automatisierung.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Warum geraten Wurzeln in der Tiefwasserkultur (DWC) ab einer Nährlösungstemperatur von über 23 °C akut in Hypoxie- und Pythium-Gefahr?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Es wirkt eine physikalisch-physiologische Doppelzange: Nach dem Henry-Dalton-Gesetz sinkt die maximale Gleichgewichtslöslichkeit von Luftsauerstoff in Wasser von 9,46 mg/L bei 18 °C auf nur noch 8,10 mg/L bei 26 °C. Gleichzeitig verdoppelt sich gemäß der Van-'t-Hoffschen Q10-Regel (Q10 ≈ 2,0 bis 2,2) die mitochondriale Wurzelatmungsrate (Sauerstoffzehrung) pro 10 K Temperaturanstieg. Ohne aktive Kühlung auf 18 bis 20 °C oder technische Übersättigung mittels O2-Nanobubbles fällt der Gelöstsauerstoff (DO) in der Wurzelgrenzschicht unter den kritischen Schwellenwert von 5,0 mg/L."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Welchen Vorteil bieten Ultrafeinblasen (Nanobubbles, d < 200 nm) gegenüber klassischen Ausströmersteinen und Venturi-Injektoren?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Makroblasen aus Kompressor-Belüftersteinen (d = 2–5 mm) steigen nach dem Gesetz von Stokes mit hoher Geschwindigkeit zur Wasseroberfläche auf und platzen nach wenigen Sekunden bei geringem Stoffübergangskoeffizienten kLa. Nanobubbles (d = 80–200 nm) unterliegen hingegen der Brownschen Molekularbewegung, besitzen praktisch keinen hydrostatischen Auftrieb, tragen ein stark negatives Zeta-Potential (−25 bis −40 mV, das Koaleszenz verhindert) und verbleiben tagelang als Sauerstoffdepot in der Nährlösung, wodurch DO-Konzentrationen von 14 bis 22 mg/L stabil bis ans Ende eines 80 Meter langen DWC-Beckens transportiert werden."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Warum reicht eine reine EC-Summenmessung in geschlossenen DWC-Kreisläufen über mehrere Kulturwochen nicht aus?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Die elektrische Leitfähigkeit (EC in mS/cm) erfasst lediglich die unspezifische Gesamtionenstärke der Lösung. Da Pflanzen Kationen und Anionen mit völlig unterschiedlichen Aufnahmegeschwindigkeiten resorbieren (schnelle Aufnahme von NO3⁻, K⁺ und H2PO4⁻; langsame, rein passiv-transpirationsgetriebene Aufnahme von Ca²⁺, Mg²⁺ und SO4²⁻ sowie nahezu null Aufnahme von Na⁺ und Cl⁻), verschiebt sich das Ionenverhältnis bei konstant gehaltenem Ziel-EC schleichend: Ballastsalze (Natrium, Chlorid, Sulfat) reichern sich an, während Kalium und Stickstoff verarmen. Ionenselektive Elektroden (ISE) ermöglichen hier eine einzelionengenaue Nachdosierung."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "In welchem Redoxpotential-Fenster (ORP in mV) sollte eine rezirkulierende DWC-Nährlösung im Bestand geführt werden?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Während im externen Ozon-Entkeimungsreaktor kurzzeitig 750 bis 800 mV zur Abtötung von Pathogenen gefahren werden, muss das Redoxpotential (ORP nach der Nernst-Gleichung) direkt im durchwurzelten DWC-Kulturbecken strikt im Bereich von +320 mV bis +420 mV gehalten werden. Werte unter +250 mV zeigen anaerobe Reduktionszonen und Biofilmbildung an; Werte über +500 mV im Wurzelraum führen hingegen zu oxidativen Schäden an den feinen Wurzelhaaren (Rhizodermis) und zur Ausfällung von Mangan und Eisenchelaten."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+  <style>
+    body { margin: 0; font-family: 'Plus Jakarta Sans', sans-serif; background: #090d16; color: #e2e8f0; line-height: 1.8; }
+    .article-shell { max-width: 920px; margin: 0 auto; padding: 36px 22px 60px; }
+    .badge-pill { display: inline-block; padding: 6px 14px; border-radius: 999px; background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.4); color: #34d399; font-size: 0.82rem; font-weight: 700; margin-bottom: 14px; }
+    h1 { font-family: 'Outfit', sans-serif; font-size: 2.25rem; line-height: 1.25; color: #f8fafc; margin: 0 0 14px 0; }
+    .meta-bar { color: #94a3b8; font-size: 0.9rem; margin-bottom: 28px; padding-bottom: 18px; border-bottom: 1px solid rgba(148, 163, 184, 0.18); }
+    .formula-box { background: rgba(15, 23, 42, 0.9); border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 12px; padding: 18px 22px; margin: 20px 0; font-family: 'JetBrains Mono', monospace; color: #38bdf8; overflow-x: auto; }
+    table.eng-table { width: 100%; border-collapse: collapse; margin: 20px 0; background: rgba(15, 23, 42, 0.75); border-radius: 12px; overflow: hidden; }
+    table.eng-table th, table.eng-table td { padding: 12px 14px; border: 1px solid rgba(148, 163, 184, 0.2); text-align: left; font-size: 0.92rem; }
+    table.eng-table th { background: rgba(30, 41, 59, 0.9); color: #38bdf8; font-weight: 700; }
+  </style>
+</head>
+<body>
+<!-- INW-STD-NAV-START -->
+<nav class="inw-top-nav" aria-label="Main Navigation" style="background: #0f172a; border-bottom: 1px solid #1e293b; padding: 12px 20px; font-family: system-ui, -apple-system, sans-serif; box-sizing: border-box; width: 100%;">
+  <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px;">
+    <a href="/index.html" style="color: #10b981; font-weight: 800; font-size: 1.15rem; text-decoration: none; letter-spacing: -0.02em;">Inwoovation Lab</a>
+    <div style="display: flex; flex-wrap: wrap; gap: 14px; font-size: 0.9rem;">
+      <a href="/index.html" style="color: #e2e8f0; text-decoration: none;">Home</a>
+      <a href="/smartfarm/vpd.html" style="color: #e2e8f0; text-decoration: none;">Calculators</a>
+      <a href="/articles/index.html" style="color: #38bdf8; font-weight: 600; text-decoration: none;">Articles</a>
+      <a href="/wiki/index.html" style="color: #e2e8f0; text-decoration: none;">Wiki</a>
+      <a href="/climate/index.html" style="color: #e2e8f0; text-decoration: none;">Climate Hub</a>
+      <a href="/crops/index.html" style="color: #e2e8f0; text-decoration: none;">Crops</a>
+      <a href="/tools/venlocad-3d.html" style="color: #10b981; font-weight: 600; text-decoration: none;">VenloCAD 3D</a>
+      <button type="button" onclick="window.InwooPalette && window.InwooPalette.open()" style="background: rgba(15, 23, 42, 0.9); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.4); padding: 6px 12px; border-radius: 6px; font-size: 0.85rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">🔍 Search <kbd style="background: rgba(255,255,255,0.1); padding: 1px 5px; border-radius: 4px; font-size: 0.72rem;">Ctrl+K</kbd></button>
+      <a href="/about.html" style="color: #e2e8f0; text-decoration: none;">About</a>
+    </div>
+  </div>
+</nav>
+<!-- INW-STD-NAV-END -->
+  <main class="article-shell">
+    <div style="margin-bottom: 20px;">
+      <a href="/guides.html" style="color: #38bdf8; text-decoration: none; font-weight: 700; font-size: 0.92rem;">← Zurück zum Engineering-Archiv (Alle Fachartikel)</a>
+    </div>
+    <span class="badge-pill">🇩🇪 Gärtnermeister-Fachmonographie · Hydroponik-Verfahrenstechnik &amp; Prozessautomatisierung (Vol. 23)</span>
+    <h1>Geschlossene Tiefwasserkultur (DWC / Floating Raft) &amp; Mikrodosierungs-Automatisierung: Henry-Sauerstoffsättigung (DO), Venturi-Nanobubble-Begasung, ORP-Metrologie &amp; Mehrkanal-PID-Fertigation</h1>
+<!-- INW-LANG-SWITCHER-START -->
+<div class="inw-lang-switcher-bar" style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:14px 0 20px 0; padding:10px 14px; background:rgba(15,23,42,0.75); border:1px solid rgba(148,163,184,0.2); border-radius:12px;">
+  <span style="font-size:0.8rem; color:#94a3b8; font-weight:700; margin-right:4px;">🌐 Vol. 23 Editions:</span>
+  <a href="/articles/article-23-closed-loop-dwc-automation.html" style="display:inline-flex; align-items:center; padding:5px 12px; border-radius:999px; background:rgba(30,41,59,0.8); border:1px solid rgba(56,189,248,0.35); color:#38bdf8; text-decoration:none; font-size:0.8rem; font-weight:600;">🇬🇧 English Edition →</a>
+  <span style="display:inline-flex; align-items:center; padding:5px 12px; border-radius:999px; background:rgba(16,185,129,0.22); border:1px solid #10b981; color:#34d399; font-size:0.8rem; font-weight:700;">🇩🇪 Deutsche Ausgabe (Active)</span>
+</div>
+<!-- INW-LANG-SWITCHER-END -->
+    <div class="meta-bar">
+      <span>👨‍🔬 <strong>Inwoo Hwang</strong> (Inwoovation Lab)</span> &nbsp;|&nbsp;
+      <span>📅 Last Updated: November 10, 2026</span> &nbsp;|&nbsp;
+      <span>⏱️ 17 Min. Lesezeit</span>
+    </div>
+
+    <section style="margin-bottom: 34px;">
+      <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px; margin-bottom: 16px;">1. Gelöstsauerstoff-Kinetik (DO) nach dem Henry-Dalton-Gesetz und die Q<sub>10</sub>-Wurzelatmungsfalle</h2>
+      <p>In der industriellen Produktion von Schnittsalaten (<em>Lactuca sativa</em> Typ Batavia, Lollo, Salanova), Basilikum und Blattgemüse in hochtechnisierten Venlo-Gewächshäusern und vertikalen Indoor-Farmen hat sich die <strong>rezirkulierende Tiefwasserkultur (Deep Water Culture, DWC / Teichkultur auf schwimmenden Polystyrol-Flößen, engl. <em>Floating Raft System</em>)</strong> gegenüber der <a href="/articles/de/article-17-substratphysik-luftkapazitaet-wasserretention-wurzelbelueftung.html" style="color: #38bdf8;">Substratkultur</a> und der Nährstoff-Film-Technik (NFT) als thermisch trägestes und produktivstes Verfahren durchgesetzt. Mit einer Wassertiefe von 20 bis 30 cm (200 bis 300 L Nährlösung pro m² Kulturfläche) puffert das DWC-Becken kurzzeitige Temperatur- und pH-Schwankungen hervorragend ab und erreicht eine <strong>Wassernutzungseffizienz (WUE) von über 96 %</strong>.</p>
+      <p>Der entscheidende verfahrenstechnische Flaschenhals jeder submersen Wasserkultur ist jedoch der <strong>Stoffübergang von molekularem Sauerstoff (O<sub>2</sub>) in die flüssige Phase</strong>. Pflanzenwurzeln betreiben zur Aufrechterhaltung der H<sup>+</sup>-ATPasen und des aktiven Ionentransports (insbesondere der energieabhängigen Aufnahme von NO<sub>3</sub><sup>&minus;</sup>, H<sub>2</sub>PO<sub>4</sub><sup>&minus;</sup> und K<sup>+</sup> gegen das elektrochemische Potentialgefälle) eine intensive aerobe Zellatmung (Cytochrom-c-Oxidase). Nach dem <strong>Henry-Dalton-Gesetz</strong> ist die maximale Gleichgewichtssättigungskonzentration an gelöstem Sauerstoff <em>C</em><sub>DO</sub>* [mg&middot;L<sup>&minus;1</sup>] bei Kontakt mit atmosphärischer Luft (Partialdruck <em>p</em><sub>O2</sub> = 0,2095 bar) streng umgekehrt proportional zur Wassertemperatur <em>T</em><sub>W</sub> und zur Ionenstärke (<a href="/articles/de/article-06-naehrloesungsberechnung-stammbehaelter-ab-ec-duengung.html" style="color: #38bdf8;">EC-Aussalzungseffekt</a>):</p>
+      <div class="formula-box">
+        Henry-Dalton-Sättigungsgleichgewicht: C<sub>DO</sub>*(T<sub>W</sub>, EC) = k<sub>H,O2</sub>(T<sub>W</sub>) &times; p<sub>O2</sub> &times; M<sub>O2</sub> &times; (1 &minus; 0,0065 &middot; EC)<br>
+        Stoffübergangs- &amp; Zehrungsbilanz im DWC-Becken: dC<sub>DO</sub> / dt = k<sub>L</sub>a &middot; (C<sub>DO</sub>* &minus; C<sub>DO</sub>) &minus; R<sub>Wurzel,20</sub> &middot; Q<sub>10</sub><sup>(T<sub>W</sub> &minus; 20) / 10</sup> &middot; (m<sub>Wurzel</sub> / V<sub>Becken</sub>)
+      </div>
+      <p>Steigt die Nährlösungstemperatur im Sommer von <strong>18 &deg;C auf 26 &deg;C</strong> an, sinkt die physikalische Luftsättigungsgrenze von 9,46 mg&middot;L<sup>&minus;1</sup> auf 8,10 mg&middot;L<sup>&minus;1</sup>, während sich gleichzeitig die spezifische Sauerstoffzehrung der Wurzelmasse und der rhizosphere-assoziierten Mikroflora gemäß der <strong>Van-'t-Hoffschen Regel (Q<sub>10</sub> &approx; 2,0 bis 2,2)</strong> nahezu verdoppelt. Unterschreitet der Gelöstsauerstoff in der diffusiven Grenzschicht der Wurzeloberfläche den kritischen Grenzwert von <strong>5,0 mg&middot;L<sup>&minus;1</sup></strong>, schaltet der Wurzelstoffwechsel auf anaerobe Glykolyse (Äthanol- und Laktatgärung) um: Die aktive Kalzium- und Kaliumaufnahme bricht ein (<a href="/articles/de/article-12-tomate-bluetenendfaeule-kalziumtransport-xylem-vpd.html" style="color: #38bdf8;">Tipburn / Innenbrand am Salatkopf</a>), Zellmembranen werden permeabel und freigesetzte Zucker-Exsudate locken chemotaktisch die begeißelten Zoosporen von <em>Pythium aphanidermatum</em> und <em>Pythium ultimum</em> an.</p>
+    </section>
+
+    <section style="margin-bottom: 34px;">
+      <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px; margin-bottom: 16px;">2. Begasungsverfahren im Vergleich: Venturi-Injektor, Reinsauerstoff-Konzentrator &amp; Ultrafeinblasen (Nanobubbles)</h2>
+      <p>Um in einem 50 bis 100 Meter langen DWC-Rinnen- oder Teichsystem vom Zulauf bis zum Ablauf durchgehend <strong>DO &ge; 7,5 bis 12,0 mg&middot;L<sup>&minus;1</sup></strong> zu garantieren, reicht das einfache Einblasen von Druckluft über grobporige Ausströmersteine (Makroblasen <em>d</em> = 2–5 mm) nicht aus. Nach der <strong>Stokesschen Aufstiegsgleichung</strong> wächst die Blasenaufstiegsgeschwindigkeit quadratisch mit dem Blasendurchmesser (<em>v</em><sub>Aufstieg</sub> &prop; <em>d</em><sup>2</sup>): Große Luftblasen steigen mit 15 bis 25 cm&middot;s<sup>&minus;1</sup> sofort zur Wasseroberfläche auf und entweichen ungenutzt in die Gewächshausluft.</p>
+      <p>Moderne Großanlagen setzen daher auf hydrodynamische <strong>Venturi-Kavitationsdüsen</strong> im Hauptumwälzstrom kombiniert mit <strong>PSA-Sauerstoffkonzentratoren (Pressure Swing Adsorption, 93 % reines O<sub>2</sub>-Gas)</strong> und <strong>Ultrafeinblasen-Generatoren (Micro-/Nanobubbles, MNB mit <em>d</em> = 80 bis 200 nm)</strong>. Da durch reines O<sub>2</sub>-Gas der Partialdruck <em>p</em><sub>O2</sub> im Injektor von 0,21 bar auf nahezu 1,0 bar verfünffacht wird, steigt die theoretische Henry-Sättigungsgrenze auf über 40 mg&middot;L<sup>&minus;1</sup>. In der Praxis wird eine kontrollierte <strong>Übersättigung von 12,0 bis 18,0 mg&middot;L<sup>&minus;1</sup> (140–200 % Luftsättigung)</strong> gefahren.</p>
+      <table class="eng-table">
+        <thead>
+          <tr>
+            <th>Begasungstechnologie im DWC-Kreislauf</th>
+            <th>Mittlerer Blasendurchmesser &amp; Physik</th>
+            <th>Erreichbarer DO-Wert bei 22 &deg;C</th>
+            <th>Gärtnermeister-Beurteilung &amp; Wirtschaftlichkeit</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Niederdruck-Gebläse &amp; Ausströmersteine</strong></td>
+            <td>2.000 – 5.000 &mu;m (Makroblasen); rascher Auftrieb nach Stokes</td>
+            <td>6,2 – 7,8 mg/L (max. 90 % Sättigung)</td>
+            <td>Hoher Wartungsaufwand durch Biofouling der Poren; bei &gt; 22 &deg;C im Sommer nicht Pythium-sicher.</td>
+          </tr>
+          <tr>
+            <td><strong>Venturi-Injektor im Bypass (Luftansaugung)</strong></td>
+            <td>100 – 500 &mu;m (Mikroblasen durch Scherkavitation)</td>
+            <td>7,8 – 8,6 mg/L (ca. 98 % Sättigung)</td>
+            <td>Sehr robust und wartungsfrei; benötigt ca. 1,5–2,5 bar Differenzdruck an der Umwälzpumpe.</td>
+          </tr>
+          <tr>
+            <td><strong>Venturi / Lösungsreaktor + PSA-O<sub>2</sub> (93 %)</strong></td>
+            <td>Gelöstes molekulares O<sub>2</sub> durch erhöhten Partialdruck</td>
+            <td><strong>12,0 – 16,0 mg/L</strong> (140–185 % Übersättigung)</td>
+            <td>Hohe Betriebssicherheit bei warmen Sommertagen; kompensiert hohe Wurzelatmung sofort.</td>
+          </tr>
+          <tr>
+            <td><strong>Nanobubble-Generator (MNB + O<sub>2</sub>-Gas)</strong></td>
+            <td><strong>80 – 200 nm</strong>; Brownsche Bewegung, Zeta-Potential &minus;35 mV</td>
+            <td><strong>15,0 – 22,0 mg/L</strong> (tagelang stabil in Schwebe)</td>
+            <td><strong>Referenzstandard:</strong> Kein Auftriebsverlust, baut Biofilme an Rohrwandungen ab, fördert Feinwurzelhaarbildung.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section style="margin-bottom: 34px;">
+      <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px; margin-bottom: 16px;">3. Redoxpotential-Metrologie (ORP nach Nernst) &amp; Ionenselektive Elektroden (ISE) statt Summen-EC</h2>
+      <p>Neben der optischen Lumineszenz-Sauerstoffsonde (LDO, driftfrei ohne Membranverbrauch) überwachen moderne DWC-Leitstände kontinuierlich das <strong>Redoxpotential (Oxidation-Reduction Potential, ORP bzw. E<sub>h</sub> in mV)</strong> über eine Platin-Ag/AgCl-Einstabmesskette nach der <strong>Nernst-Gleichung</strong>:</p>
+      <div class="formula-box">
+        Nernst-Redoxpotential: E<sub>h</sub> = E<sup>0</sup> + (R &middot; T &divide; (z &middot; F)) &middot; ln(a<sub>Ox</sub> &divide; a<sub>Red</sub>) &nbsp;[mV]<br>
+        Zielkorridor im durchwurzelten DWC-Becken: E<sub>h,Becken</sub> = +320 mV &hellip; +420 mV &nbsp;(Wurzeltoxizitätsgrenze: &gt; +500 mV)
+      </div>
+      <p>Während in der vorgeschalteten <a href="/articles/de/article-18-rezirkulierende-naehrloesungsentkeimung-uv-c-ozon-ultrafiltration-chelat.html" style="color: #38bdf8;">Dränwasser-Entkeimung (Vol. 18)</a> kurzzeitig 750 mV zur Virusinaktivierung genutzt werden, dient das ORP im DWC-Becken als hygienisches Frühwarnsystem: Fällt das ORP unter +250 mV ab, signalisiert dies eine Anreicherung reduzierender organischer Wurzelexsudate und anaerobe Mikrozonen. Durch eine fein geregelte Mikro-Injektion von elektrochemisch aktiviertem Wasser (ECA / hypochlorige Säure HOCl in Spuren von 0,15–0,30 mg&middot;L<sup>&minus;1</sup> freiem Chloräquivalent) oder Wasserstoffperoxid wird das Becken-ORP exakt bei <strong>+360 bis +420 mV</strong> stabilisiert — hoch genug, um Zoosporen von <em>Pythium</em> zu unterdrücken, aber schonend genug, um Wurzelhaare und <a href="/articles/de/article-06-naehrloesungsberechnung-stammbehaelter-ab-ec-duengung.html" style="color: #38bdf8;">Fe-DTPA/EDDHA-Chelate</a> vollkommen intakt zu lassen.</p>
+      <p>Gleichzeitig ersetzt die <strong>Ionenselektive Messtechnik (ISE-Arrays für NO<sub>3</sub><sup>&minus;</sup>, K<sup>+</sup>, Ca<sup>2+</sup>, NH<sub>4</sub><sup>+</sup> und Na<sup>+</sup>)</strong> die blinde Steuerung nach Summen-EC. Da die elektrische Leitfähigkeit nicht zwischen wertvollem Kaliumnitrat und schädlichem Natriumchlorid unterscheiden kann, führt eine reine EC-Regelung im geschlossenen DWC-Kreislauf nach 3 bis 4 Wochen zu einer schleichenden Natrium-Akkumulation und Kalium-Verarmung. Ein ISE-gestützter Mehrkanal-Fertigationscomputer dosiert daher Einzel-Stammlösungen (KNO<sub>3</sub>, Ca(NO<sub>3</sub>)<sub>2</sub>, KH<sub>2</sub>PO<sub>4</sub>, MgSO<sub>4</sub>) exakt nach der tatsächlichen Ionen-Entzugsrate des Pflanzenbestands nach.</p>
+    </section>
+
+    <section style="margin-bottom: 34px;">
+      <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px; margin-bottom: 16px;">4. Mehrkanal-PID-Mikrodosierungsarchitektur gegen Totzeit-Schwingungen (pH- &amp; EC-Overshoot)</h2>
+      <p>In großen DWC-Anlagen mit 100 bis 500 m³ Systemvolumen besteht zwischen der Säure-/Düngerinjektion im Mischrohr und der Antwort der pH-/EC-Messzelle im Rücklauf eine beträchtliche <strong>hydraulische Totzeit (&tau;<sub>d</sub> = 45 bis 180 Sekunden)</strong>. Einfache Zweipunktregler (Ein/Aus) führen hier unweigerlich zu gefährlichen Überschwingern (<em>pH-Overshoot</em> unter pH 4,5 mit Wurzelverätzung und Hydrogencarbonat-Zerstörung). Deshalb arbeiten industrielle Düngecomputer mit einem zeitdiskreten <strong>PID-Regelalgorithmus mit Totzeitkompensation (Smith-Prädiktor) und Pulsweitenmodulation (PWM)</strong> der Magnetmembran- bzw. Peristaltikpumpen:</p>
+      <div class="formula-box">
+        Zeitdiskretes PID-Stellsignal: u(t) = K<sub>p</sub> &middot; e(t) + K<sub>i</sub> &middot; &int;<sub>0</sub><sup>t</sup> e(&tau;) d&tau; + K<sub>d</sub> &middot; (de(t) &divide; dt) &nbsp;&nbsp;mit Regeldifferenz e(t) = w<sub>Soll</sub> &minus; y<sub>Ist</sub>(t &minus; &tau;<sub>d</sub>)<br>
+        Säure-Pufferkapazität (Alkalinität): &Delta;[HNO<sub>3</sub>] &approx; [HCO<sub>3</sub><sup>&minus;</sup>]<sub>Rohwasser</sub> &minus; 0,5 mmol/L &nbsp;(Restpuffer für stabile pH-Führung bei 5,6–5,8)
+      </div>
+      <p>Durch ein definiertes <strong>Totband (Deadband von &plusmn;0,05 pH-Einheiten und &plusmn;0,04 mS&middot;cm<sup>&minus;1</sup> EC)</strong> sowie eine Anti-Windup-Begrenzung des Integralanteils wird sichergestellt, dass Salpetersäure (HNO<sub>3</sub>, 38–53 %) bzw. Phosphorsäure (H<sub>3</sub>PO<sub>4</sub>) in präzisen Milliliter-Impulsen in eine hochturbulente statische Mischstrecke eingespritzt wird, bevor das aufbereitete Wasser in die Wurzelzone strömt.</p>
+    </section>
+
+<!-- INW-LIVE-WIDGET-START -->
+    <section class="inw-live-widget-sandbox" style="margin: 34px 0; padding: 26px; background: linear-gradient(145deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.9)); border: 1px solid rgba(16, 185, 129, 0.45); border-radius: 16px; box-shadow: 0 14px 34px rgba(0, 0, 0, 0.4);">
+      <h2 style="margin: 0 0 8px 0; font-family: 'Outfit', sans-serif; font-size: 1.4rem; color: #34d399;">🫧 Interaktiver DWC-Gelöstsauerstoff- (Henry-Gesetz), Q<sub>10</sub>-Wurzelatmungs- &amp; Umwälz-Simulator</h2>
+      <p style="margin: 0 0 18px 0; font-size: 0.92rem; color: #cbd5e1;">Berechnen Sie live die physikalische Sauerstoffsättigungsgrenze C<sub>DO</sub>* (mg/L), die temperaturabhängige Q<sub>10</sub>-Sauerstoffzehrung Ihres Bestandes, den resultierenden DO-Gehalt am Beckenende sowie die erforderliche Umwälzrate:</p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(215px, 1fr)); gap: 16px; margin-bottom: 18px;">
+        <div style="background: rgba(9, 13, 22, 0.7); padding: 14px; border-radius: 10px; border: 1px solid rgba(148, 163, 184, 0.2);">
+          <label for="dwc_temp" style="display:block; font-size:0.82rem; color:#94a3b8; font-weight:700; margin-bottom:6px;">Nährlösungstemperatur T<sub>W</sub> (&deg;C): <span id="dwc_temp_val" style="color:#38bdf8;">20,0</span> &deg;C</label>
+          <input id="dwc_temp" type="range" min="14" max="30" step="0.5" value="20" style="width:100%; accent-color:#10b981;" oninput="calcDWC23()">
+        </div>
+        <div style="background: rgba(9, 13, 22, 0.7); padding: 14px; border-radius: 10px; border: 1px solid rgba(148, 163, 184, 0.2);">
+          <label for="dwc_ec" style="display:block; font-size:0.82rem; color:#94a3b8; font-weight:700; margin-bottom:6px;">Elektrische Leitfähigkeit EC (mS/cm): <span id="dwc_ec_val" style="color:#38bdf8;">2,2</span></label>
+          <input id="dwc_ec" type="range" min="1.0" max="4.5" step="0.1" value="2.2" style="width:100%; accent-color:#38bdf8;" oninput="calcDWC23()">
+        </div>
+        <div style="background: rgba(9, 13, 22, 0.7); padding: 14px; border-radius: 10px; border: 1px solid rgba(148, 163, 184, 0.2);">
+          <label for="dwc_mode" style="display:block; font-size:0.82rem; color:#94a3b8; font-weight:700; margin-bottom:6px;">Begasungssystem im Zulauf:</label>
+          <select id="dwc_mode" onchange="calcDWC23()" style="width:100%; padding:8px; border-radius:8px; background:#0f172a; color:#f8fafc; border:1px solid #334155; font-weight:600;">
+            <option value="venturi" selected>Venturi-Luftinjektor (98 % Luftsättigung)</option>
+            <option value="airstone">Ausströmersteine (82 % Luftsättigung)</option>
+            <option value="nanobubble">O₂-Nanobubble-Generator (165 % Übersättigung)</option>
+          </select>
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(195px, 1fr)); gap: 12px;">
+        <div style="background: rgba(15, 23, 42, 0.9); padding: 14px; border-radius: 10px; border-left: 4px solid #38bdf8;">
+          <div style="font-size:0.78rem; color:#94a3b8;">Henry-Luftsättigung C<sub>DO</sub>*</div>
+          <div id="out_dosat23" style="font-size:1.25rem; font-weight:800; color:#f8fafc; font-family:'JetBrains Mono',monospace;">8,96 mg/L</div>
+        </div>
+        <div style="background: rgba(15, 23, 42, 0.9); padding: 14px; border-radius: 10px; border-left: 4px solid #f59e0b;">
+          <div style="font-size:0.78rem; color:#94a3b8;">Rel. Q<sub>10</sub>-Wurzelatmungsrate</div>
+          <div id="out_q10_23" style="font-size:1.25rem; font-weight:800; color:#fbbf24; font-family:'JetBrains Mono',monospace;">100 % (Norm)</div>
+        </div>
+        <div style="background: rgba(15, 23, 42, 0.9); padding: 14px; border-radius: 10px; border-left: 4px solid #10b981;">
+          <div style="font-size:0.78rem; color:#94a3b8;">DO am Beckenablauf (Effektiv)</div>
+          <div id="out_doout23" style="font-size:1.22rem; font-weight:800; color:#34d399; font-family:'JetBrains Mono',monospace;">6,98 mg/L (Vital ✓)</div>
+        </div>
+        <div style="background: rgba(15, 23, 42, 0.9); padding: 14px; border-radius: 10px; border-left: 4px solid #a855f7;">
+          <div style="font-size:0.78rem; color:#94a3b8;">Empfohlene Becken-Umwälzung</div>
+          <div id="out_turn23" style="font-size:1.18rem; font-weight:800; color:#c084fc; font-family:'JetBrains Mono',monospace;">1,2 &times; pro Stunde</div>
+        </div>
+      </div>
+      <script>
+        function calcDWC23() {
+          var tw = parseFloat(document.getElementById('dwc_temp').value) || 20;
+          var ec = parseFloat(document.getElementById('dwc_ec').value) || 2.2;
+          var mode = document.getElementById('dwc_mode').value;
+
+          document.getElementById('dwc_temp_val').textContent = tw.toFixed(1).replace('.', ',');
+          document.getElementById('dwc_ec_val').textContent = ec.toFixed(1).replace('.', ',');
+
+          var doPure = 14.62 - 0.3898 * tw + 0.006969 * tw * tw - 0.00005897 * tw * tw * tw;
+          var doSat = doPure * (1.0 - 0.0065 * ec);
+          var q10Factor = Math.pow(2.05, (tw - 20.0) / 10.0);
+          var q10Pct = Math.round(q10Factor * 100);
+
+          var effFactor = mode === 'nanobubble' ? 1.65 : (mode === 'venturi' ? 0.98 : 0.82);
+          var doInlet = doSat * effFactor;
+          var respDrop = 1.80 * q10Factor;
+          var doOutlet = Math.max(1.5, doInlet - respDrop);
+          var turnover = Math.max(0.8, 1.2 * q10Factor);
+
+          document.getElementById('out_dosat23').textContent = doSat.toFixed(2).replace('.', ',') + ' mg/L';
+          document.getElementById('out_q10_23').textContent = q10Pct + ' % (' + (q10Pct > 135 ? 'Hohe Zehrung ⚠' : 'Norm') + ')';
+
+          var outEl = document.getElementById('out_doout23');
+          var status = doOutlet >= 6.5 ? 'Vital ✓' : (doOutlet >= 5.0 ? 'Grenzwertig ⚠' : 'Hypoxie/Pythium 🚨');
+          outEl.textContent = doOutlet.toFixed(2).replace('.', ',') + ' mg/L (' + status + ')';
+          outEl.style.color = doOutlet >= 6.5 ? '#34d399' : (doOutlet >= 5.0 ? '#fbbf24' : '#f87171');
+
+          document.getElementById('out_turn23').textContent = turnover.toFixed(1).replace('.', ',') + ' × pro Stunde';
+        }
+        calcDWC23();
+      </script>
+    </section>
+<!-- INW-LIVE-WIDGET-END -->
+
+    <section style="margin-bottom: 34px;">
+      <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #10b981; border-bottom: 1px solid rgba(16, 185, 129, 0.25); padding-bottom: 10px; margin-bottom: 16px;">Häufig gestellte Ingenieurfragen (Praxis-FAQ)</h2>
+      <div style="background: rgba(15, 23, 42, 0.7); border-left: 4px solid #10b981; padding: 18px 20px; border-radius: 10px; margin-bottom: 14px;">
+        <p style="margin: 0;"><strong>F1: Warum geraten Wurzeln in der Tiefwasserkultur (DWC) ab einer Nährlösungstemperatur von über 23 &deg;C akut in Hypoxie- und Pythium-Gefahr?</strong><br>Es wirkt eine physikalisch-physiologische Doppelzange: Nach dem Henry-Dalton-Gesetz sinkt die maximale Gleichgewichtslöslichkeit von Luftsauerstoff in Wasser von 9,46 mg/L bei 18 &deg;C auf nur noch 8,10 mg/L bei 26 &deg;C. Gleichzeitig verdoppelt sich gemäß der Van-'t-Hoffschen Q<sub>10</sub>-Regel (Q<sub>10</sub> &approx; 2,0 bis 2,2) die mitochondriale Wurzelatmungsrate (Sauerstoffzehrung) pro 10 K Temperaturanstieg. Ohne aktive Kühlung auf 18 bis 20 &deg;C oder technische Übersättigung mittels O<sub>2</sub>-Nanobubbles fällt der Gelöstsauerstoff (DO) in der Wurzelgrenzschicht unter den kritischen Schwellenwert von 5,0 mg/L.</p>
+      </div>
+      <div style="background: rgba(15, 23, 42, 0.7); border-left: 4px solid #10b981; padding: 18px 20px; border-radius: 10px; margin-bottom: 14px;">
+        <p style="margin: 0;"><strong>F2: Welchen Vorteil bieten Ultrafeinblasen (Nanobubbles, d &lt; 200 nm) gegenüber klassischen Ausströmersteinen und Venturi-Injektoren?</strong><br>Makroblasen aus Kompressor-Belüftersteinen (d = 2–5 mm) steigen nach dem Gesetz von Stokes mit hoher Geschwindigkeit zur Wasseroberfläche auf und platzen nach wenigen Sekunden. Nanobubbles (d = 80–200 nm) unterliegen hingegen der Brownschen Molekularbewegung, besitzen praktisch keinen hydrostatischen Auftrieb, tragen ein stark negatives Zeta-Potential (&minus;25 bis &minus;40 mV) und verbleiben tagelang als Sauerstoffdepot in der Nährlösung, wodurch DO-Konzentrationen von 14 bis 22 mg/L stabil bis ans Ende langer DWC-Becken transportiert werden.</p>
+      </div>
+      <div style="background: rgba(15, 23, 42, 0.7); border-left: 4px solid #10b981; padding: 18px 20px; border-radius: 10px; margin-bottom: 14px;">
+        <p style="margin: 0;"><strong>F3: Warum reicht eine reine EC-Summenmessung in geschlossenen DWC-Kreisläufen über mehrere Kulturwochen nicht aus?</strong><br>Die elektrische Leitfähigkeit (EC in mS/cm) erfasst lediglich die unspezifische Gesamtionenstärke der Lösung. Da Pflanzen Kationen und Anionen mit völlig unterschiedlichen Aufnahmegeschwindigkeiten resorbieren (schnelle Aufnahme von NO<sub>3</sub><sup>&minus;</sup>, K<sup>+</sup> und H<sub>2</sub>PO<sub>4</sub><sup>&minus;</sup>; langsame Aufnahme von Ca<sup>2+</sup>, Mg<sup>2+</sup> und SO<sub>4</sub><sup>2&minus;</sup> sowie nahezu null Aufnahme von Na<sup>+</sup> und Cl<sup>&minus;</sup>), verschiebt sich das Ionenverhältnis bei konstant gehaltenem Ziel-EC schleichend: Ballastsalze reichern sich an, während Kalium und Stickstoff verarmen. Ionenselektive Elektroden (ISE) ermöglichen hier eine einzelionengenaue Nachdosierung.</p>
+      </div>
+      <div style="background: rgba(15, 23, 42, 0.7); border-left: 4px solid #10b981; padding: 18px 20px; border-radius: 10px; margin-bottom: 14px;">
+        <p style="margin: 0;"><strong>F4: In welchem Redoxpotential-Fenster (ORP in mV) sollte eine rezirkulierende DWC-Nährlösung im Bestand geführt werden?</strong><br>Während im externen Ozon-Entkeimungsreaktor kurzzeitig 750 bis 800 mV zur Abtötung von Pathogenen gefahren werden, muss das Redoxpotential (ORP nach der Nernst-Gleichung) direkt im durchwurzelten DWC-Kulturbecken strikt im Bereich von +320 mV bis +420 mV gehalten werden. Werte unter +250 mV zeigen anaerobe Reduktionszonen und Biofilmbildung an; Werte über +500 mV im Wurzelraum führen hingegen zu oxidativen Schäden an den feinen Wurzelhaaren und zur Ausfällung von Eisenchelaten.</p>
+      </div>
+    </section>
+
+    <section style="margin-bottom: 34px;">
+      <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.45rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px; margin-bottom: 16px;">🇩🇪 Gärtnermeister-Praxis &amp; Fachbegriffe (DE / EN / KR)</h2>
+      <table class="eng-table">
+        <thead>
+          <tr>
+            <th>Deutscher Fachbegriff (Meisterpraxis)</th>
+            <th>Englischer Ingenieurbegriff (EN)</th>
+            <th>Koreanisches Äquivalent (KR)</th>
+            <th>Physikalisch-pflanzenbauliche Bedeutung</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Tiefwasserkultur (DWC / Floating Raft)</strong></td>
+            <td>Deep Water Culture / Floating Raft System</td>
+            <td>담액수경 (DWC / 부유식 수경재배)</td>
+            <td>Submerse Hydroponik auf schwimmenden Polystyrol-Platten mit 20–30 cm Nährlösungstiefe und hoher thermischer Pufferung.</td>
+          </tr>
+          <tr>
+            <td><strong>Gelöstsauerstoff (DO-Konzentration)</strong></td>
+            <td>Dissolved Oxygen (DO, mg/L)</td>
+            <td>용존산소량 (DO, mg/L)</td>
+            <td>Konzentration an physikalisch gelöstem O<sub>2</sub> im Wasser nach dem Henry-Gesetz; Mindestsollwert in der Wurzelzone &ge; 6,5–8,5 mg/L.</td>
+          </tr>
+          <tr>
+            <td><strong>Ultrafeinblasen (Nanobubbles, MNB)</strong></td>
+            <td>Micro- &amp; Nanobubble (MNB) Oxygenation</td>
+            <td>마이크로·나노버블 산소 공급 기술</td>
+            <td>Gasblasen &lt; 200 nm mit negativem Zeta-Potential, die ohne Auftriebsverlust tagelang als O<sub>2</sub>-Reservoir im Wasser schweben.</td>
+          </tr>
+          <tr>
+            <td><strong>Venturi-Kavitationsinjektor</strong></td>
+            <td>Venturi Differential Pressure Injector</td>
+            <td>벤투리 차압 인젝터 (기액 혼합기)</td>
+            <td>Strömungsmechanische Verengungsdüse nach dem Gesetz von Bernoulli zur selbstansaugenden Gas- und Düngereinmischung.</td>
+          </tr>
+          <tr>
+            <td><strong>Redoxpotential (ORP / E<sub>h</sub>-Wert)</strong></td>
+            <td>Oxidation-Reduction Potential (ORP, mV)</td>
+            <td>산화환원전위 (ORP, mV)</td>
+            <td>Elektrochemisches Maß für die oxidative Hygiene der Nährlösung (Zielbereich im DWC-Kulturbecken: +320 bis +420 mV).</td>
+          </tr>
+          <tr>
+            <td><strong>Ionenselektive Elektrode (ISE)</strong></td>
+            <td>Ion-Selective Electrode (ISE) Array</td>
+            <td>이온선택성 전극 (개별 이온 계측 센서)</td>
+            <td>Membransensorik zur Einzelmessung von NO<sub>3</sub><sup>&minus;</sup>, K<sup>+</sup>, Ca<sup>2+</sup> und Na<sup>+</sup> jenseits der unspezifischen Summen-EC.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section style="margin-bottom: 34px;">
+      <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.35rem; color: #cbd5e1; margin-bottom: 12px;">Wissenschaftliche Literatur &amp; Richtlinien</h2>
+      <ul style="padding-left: 20px;">
+        <li style="margin-bottom: 8px; color: #94a3b8; font-size: 0.92rem;">Sonneveld, C., &amp; Voogt, W. (2009): Plant Nutrition of Greenhouse Crops. Springer, Dordrecht (Kapitel Solution Culture &amp; Root Zone Oxygenation).</li>
+        <li style="margin-bottom: 8px; color: #94a3b8; font-size: 0.92rem;">Ebina, K. et al. (2013): Oxygen and air nanobubble water solution promote the growth of plants, fishes, and mice. PLOS ONE, 8(6), e65339.</li>
+        <li style="margin-bottom: 8px; color: #94a3b8; font-size: 0.92rem;">Jung, D. H. et al. (2019): Automated management of nutrient solutions using ion-selective electrodes in closed-loop hydroponic systems. Computers and Electronics in Agriculture, 161, 145–156.</li>
+        <li style="margin-bottom: 8px; color: #94a3b8; font-size: 0.92rem;">Forschungsanstalt Geisenheim &amp; KTBL (2025): Verfahrenstechnik rinnen- und teichbasierter Hydroponiksysteme (NFT / DWC) im geschlossenen Kreislauf.</li>
+      </ul>
+    </section>
+
+<!-- INW-TSUKUBA-FUNNEL-START -->
+<section class="inw-tsukuba-funnel-bridge" style="max-width: 1060px; margin: 32px auto; padding: 26px; background: rgba(15, 23, 42, 0.9); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 16px; text-align: left; box-shadow: 0 10px 28px rgba(0, 0, 0, 0.3);">
+  <h3 style="margin: 0 0 8px 0; font-size: 1.2rem; color: #10b981; font-weight: 800;">🔬 Weiterführende Fachartikel, Kulturleitfäden &amp; Simulatoren (Tsukuba-Funnel)</h3>
+  <p style="margin: 0 0 16px 0; font-size: 0.92rem; color: #94a3b8; line-height: 1.6;">Vertiefen Sie die Hydroponik- und Fertigationsphysik dieser Monographie mit unseren deutschen Fachkapiteln und Echtzeit-Rechnern:</p>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px;">
+    <a href="/articles/de/article-06-naehrloesungsberechnung-stammbehaelter-ab-ec-duengung.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem;">🇩🇪 DE Vol. 06: A/B-Stammlösungen, Sonneveld meq/L &amp; Fe-DTPA →</a>
+    <a href="/articles/de/article-18-rezirkulierende-naehrloesungsentkeimung-uv-c-ozon-ultrafiltration-chelat.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem;">🇩🇪 DE Vol. 18: Dränwasser-Entkeimung (UV-C, Ozon) &amp; Chelat-Photolyse →</a>
+    <a href="/articles/de/article-17-substratphysik-luftkapazitaet-wasserretention-wurzelbelueftung.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem;">🇩🇪 DE Vol. 17: Substratphysik, Luftkapazität (AFP) &amp; Wurzelbelüftung →</a>
+    <a href="/tools/hydroponic-nutrient-solution-calculator.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem;">🧪 Hydroponic Nutrient &amp; A/B Tank Stoichiometry Solver →</a>
+    <a href="/tools/evapotranspiration-penman-monteith-calculator.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem;">🍃 FAO-56 Penman-Monteith Evapotranspiration &amp; Drain Solver →</a>
+    <a href="/tools/venlocad-3d.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem;">🏗️ VenloCAD 3D Gewächshaus-Architekt →</a>
+  </div>
+</section>
+<!-- INW-TSUKUBA-FUNNEL-END -->
+
+    <!-- INW-EEAT-BOX-START -->
+    <section class="inw-eeat-box" style="margin-top: 36px; padding: 24px; background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 16px;">
+      <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; color: #10b981; font-weight: 800; margin-bottom: 6px;">Gärtnermeister-Kandidat &amp; CEA-Systemingenieur — Inwoovation Lab</div>
+      <h3 style="margin: 0 0 8px 0; font-size: 1.15rem; color: #f8fafc;">Inwoo Hwang</h3>
+      <p style="margin: 0; font-size: 0.92rem; color: #cbd5e1; line-height: 1.65;">Spezialisiert auf Venlo-Gewächshausthermodynamik (DIN V 18599), Photobiologie (DLI/PPFD), geschlossene Hydroponik-Kreisläufe und präzise Kultursteuerung.</p>
+    </section>
+    <!-- INW-EEAT-BOX-END -->
+  </main>
+
+  <!-- INW-STD-FOOTER-START -->
+  <footer class="inw-site-footer" style="margin-top: 48px; padding: 28px 20px; background: #0f172a; color: #94a3b8; text-align: center; border-top: 1px solid rgba(148, 163, 184, 0.15);">
+    <div style="max-width: 1100px; margin: 0 auto;">
+      <p style="margin: 0 0 10px 0;">&copy; 2026 Inwoovation Lab. Precision Controlled Environment Agriculture &amp; Biophysical Engineering.</p>
+      <p style="margin: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 16px;">
+        <a href="/index.html" style="color: #cbd5e1; text-decoration: none;">Home</a>
+        <a href="/guides.html" style="color: #cbd5e1; text-decoration: none;">Engineering Guides</a>
+        <a href="/privacy-policy.html" style="color: #cbd5e1; text-decoration: none;">Privacy Policy</a>
+        <a href="/terms-of-service.html" style="color: #cbd5e1; text-decoration: none;">Terms of Service</a>
+        <a href="/about.html" style="color: #cbd5e1; text-decoration: none;">About</a>
+        <a href="/contact.html" style="color: #cbd5e1; text-decoration: none;">Contact</a>
+      </p>
+    </div>
+  </footer>
+  <!-- INW-STD-FOOTER-END -->
+</body>
+</html>
