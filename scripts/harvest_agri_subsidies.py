@@ -318,9 +318,22 @@ def harvest_portal(portal, ledger, db_conn):
     found_count = 0
     cur = db_conn.cursor() if db_conn else None
 
-    # Scan all links and headers
+    # Scan all links and headers (Multilingual keyword radar: EN / DE / JP / NL / FR / ES / KR)
     anchors = soup.find_all("a", href=True)
-    keywords = ["grant", "program", "funding", "application", "incentive", "sweep", "dairy", "soil", "equipment", "farmer", "water", "bond"]
+    keywords = [
+        # English (US / CA / EU)
+        "grant", "program", "funding", "application", "incentive", "sweep", "dairy", "soil", "equipment", "farmer", "water", "bond", "rebate", "voucher",
+        # German (BLE / Bayern / BAFA / Rentenbank)
+        "förderung", "foerderung", "bundesprogramm", "richtlinie", "zuschuss", "energieeffizienz", "gartenbau", "investition", "bekanntmachung",
+        # Japanese (MAFF / NARO Tsukuba)
+        "補助金", "交付金", "公募", "支援", "スマート農業", "みどり", "施設園芸", "省エネ", "事業",
+        # Dutch (RVO Glastuinbouw)
+        "subsidie", "regeling", "glastuinbouw", "energie", "investering", "sde", "eia",
+        # French & Spanish (FranceAgriMer / MAPA)
+        "aide", "subvention", "serre", "transition", "ayuda", "subvención", "convocatoria", "invernadero",
+        # Korean (MAFRA / EPIS SmartFarm Korea)
+        "공고", "모집", "지원사업", "보조금", "스마트팜", "시설원예", "에너지"
+    ]
 
     for a in anchors:
         text = a.get_text(strip=True)
@@ -392,6 +405,13 @@ def main():
     print("=" * 60)
 
     ledger = load_ledger()
+    today_prefix = datetime.now().strftime("%Y-%m-%d")
+    last_run_str = ledger.get("last_run") or ""
+    if "--daily-auto" in sys.argv and last_run_str.startswith(today_prefix):
+        print(f"⚡ Daily government portal scan already completed today ({last_run_str}).")
+        print(f"📊 State Ledger: {len(ledger.get('known_hashes', {}))} verified notices indexed across 20 US/DE/JP/NL/FR/ES/KR portals.")
+        return 0
+
     print(f"📊 State Ledger: {len(ledger.get('known_hashes', {}))} previously verified notices indexed.")
 
     db_conn = None
