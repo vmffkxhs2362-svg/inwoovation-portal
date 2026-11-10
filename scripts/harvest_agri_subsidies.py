@@ -165,6 +165,86 @@ TARGET_PORTALS = [
         "agency": "NYS Department of Agriculture and Markets (AGM)",
         "pinned_selectors": [".pinned-row", ".announcement"],
         "max_age_days": 90
+    },
+    {
+        "id": "DE_BLE_ENERGIE",
+        "name": "Germany BLE Bundesprogramm Energieeffizienz im Gartenbau",
+        "url": "https://www.ble.de/DE/Projektfoerderung/Foerderungen-Auftraege/Bundesprogramm-Energieeffizienz/bundesprogramm-energieeffizienz_node.html",
+        "region": "DE",
+        "country": "DE",
+        "agency": "Bundesanstalt für Landwirtschaft und Ernährung (BLE)",
+        "pinned_selectors": [".teaser", ".aktuelles"],
+        "max_age_days": 90
+    },
+    {
+        "id": "DE_BY_BAYSL",
+        "name": "Bavaria StMELF Bayerisches Sonderprogramm Landwirtschaft & Gartenbau (BaySL)",
+        "url": "https://www.stmelf.bayern.de/foerderung/bayerisches-sonderprogramm-landwirtschaft-baysl/index.html",
+        "region": "DE",
+        "country": "DE",
+        "agency": "Bayerisches Staatsministerium für Ernährung, Landwirtschaft, Forsten und Tourismus (StMELF)",
+        "pinned_selectors": [".teaser", ".notice"],
+        "max_age_days": 90
+    },
+    {
+        "id": "JP_MAFF_MIDORI",
+        "name": "Japan MAFF Green Food System Strategy & Smart Horticulture Grants",
+        "url": "https://www.maff.go.jp/j/kanbo/kankyo/seisaku/midori/",
+        "region": "JP",
+        "country": "JP",
+        "agency": "Ministry of Agriculture, Forestry and Fisheries (農林水産省)",
+        "pinned_selectors": [".topics", ".news"],
+        "max_age_days": 90
+    },
+    {
+        "id": "JP_NARO_SMART",
+        "name": "Japan NARO Tsukuba / BRAIN Smart Agriculture Deployment Consortia",
+        "url": "https://www.naro.go.jp/laboratory/brain/smart-nogyo/",
+        "region": "JP",
+        "country": "JP",
+        "agency": "National Agriculture and Food Research Organization (農研機構 NARO Tsukuba)",
+        "pinned_selectors": [".news_list", ".topics"],
+        "max_age_days": 90
+    },
+    {
+        "id": "NL_RVO_GLASTUINBOUW",
+        "name": "Netherlands RVO Glastuinbouw Subsidies (MEI / EG / SDE++ / EIA)",
+        "url": "https://www.rvo.nl/onderwerpen/glastuinbouw",
+        "region": "NL",
+        "country": "NL",
+        "agency": "Rijksdienst voor Ondernemend Nederland (RVO)",
+        "pinned_selectors": [".card", ".highlight"],
+        "max_age_days": 90
+    },
+    {
+        "id": "FR_FRANCEAGRIMER",
+        "name": "FranceAgriMer Transition Énergétique & Serres Maraîchères",
+        "url": "https://www.franceagrimer.fr/Accompagner/Planification-ecologique-et-transition-energetique",
+        "region": "FR",
+        "country": "FR",
+        "agency": "FranceAgriMer / France 2030",
+        "pinned_selectors": [".actualite", ".aide"],
+        "max_age_days": 90
+    },
+    {
+        "id": "ES_MAPA_INVERNADEROS",
+        "name": "Spain MAPA Modernización de Invernaderos y Regadíos (PEPAC)",
+        "url": "https://www.mapa.gob.es/es/agricultura/temas/producciones-agricolas/hortofruticolas/",
+        "region": "ES",
+        "country": "ES",
+        "agency": "Ministerio de Agricultura, Pesca y Alimentación (MAPA)",
+        "pinned_selectors": [".destacado", ".novedades"],
+        "max_age_days": 90
+    },
+    {
+        "id": "KR_SMARTFARM_KOREA",
+        "name": "South Korea MAFRA / EPIS SmartFarm Korea Notices",
+        "url": "https://www.smartfarmkorea.net/",
+        "region": "KR",
+        "country": "KR",
+        "agency": "Ministry of Agriculture, Food and Rural Affairs (MAFRA / EPIS)",
+        "pinned_selectors": [".notice", ".board-pinned"],
+        "max_age_days": 90
     }
 ]
 
