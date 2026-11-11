@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta name="google-adsense-account" content="ca-pub-8597809158257497">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vol. 58: Dynamische CO₂-Begasungskinetik &amp; RuBisCO-Carboxylierungsthermodynamik im Hochdraht-Venlo-Gewächshaus (Farquhar-FvCB-Modell) | Inwoovation Lab</title>
+  <meta name="description" content="Ingenieur-Monographie zur dynamischen CO₂-Anreicherung im Venlo-Gewächshaus: Biochemische Farquhar-von-Caemmerer-Berry-(FvCB)-Kinetik der RuBisCO, Unterdrückung der Photorespiration, Lüftungs-Massenbilanz und wirtschaftliches Grenzprodukt von Flüssig-CO₂ vs. BHKW-Rauchgas.">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://inwoovation.com/articles/de/article-58-dynamic-co2-enrichment-kinetics-rubisco-carboxylation-venlo.html">
+  <link rel="alternate" hreflang="en" href="https://inwoovation.com/articles/article-58-dynamic-co2-enrichment-kinetics-rubisco-carboxylation-venlo.html">
+  <link rel="alternate" hreflang="x-default" href="https://inwoovation.com/articles/article-58-dynamic-co2-enrichment-kinetics-rubisco-carboxylation-venlo.html">
+  <link rel="alternate" hreflang="de" href="https://inwoovation.com/articles/de/article-58-dynamic-co2-enrichment-kinetics-rubisco-carboxylation-venlo.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Vol. 58: Dynamische CO₂-Begasungskinetik &amp; RuBisCO-Carboxylierungsthermodynamik im Hochdraht-Venlo-Gewächshaus | Inwoovation Lab">
+  <meta property="og:description" content="Ingenieur-Monographie zur dynamischen CO₂-Anreicherung im Venlo-Gewächshaus: Farquhar-FvCB-Kinetik der RuBisCO, Photorespiration, Firstlüftungs-Luftwechselzahl und Grenzökonomie.">
+  <meta property="og:url" content="https://inwoovation.com/articles/de/article-58-dynamic-co2-enrichment-kinetics-rubisco-carboxylation-venlo.html">
+  <meta property="og:image" content="https://inwoovation.com/og-cover.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V4RYJBMEDE"></script>
+  <script>
+    if (navigator.webdriver || /HeadlessChrome|PhantomJS|Lighthouse|PTST|bot|crawler|spider|slurp/i.test(navigator.userAgent) || location.hostname === 'localhost' || location.hostname === '127.0.0.1' || (screen.width === 1366 && screen.height === 1366) || (screen.width === 800 && screen.height === 600) || screen.height >= 5000) { window['ga-disable-G-V4RYJBMEDE'] = true; }
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-V4RYJBMEDE');
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8597809158257497" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/global-ui-enhancements.css?v=20261111">
+  <script src="/js/global-search-palette.js?v=20261111" defer></script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "headline": "Vol. 58: Dynamische CO₂-Begasungskinetik & RuBisCO-Carboxylierungsthermodynamik im Hochdraht-Venlo-Gewächshaus (Farquhar-FvCB-Modell)",
+      "description": "Ingenieur-Monographie zur dynamischen CO₂-Anreicherung im Venlo-Gewächshaus: Biochemische Farquhar-von-Caemmerer-Berry-(FvCB)-Kinetik der RuBisCO, Unterdrückung der Photorespiration, Lüftungs-Massenbilanz und wirtschaftliches Grenzprodukt.",
+      "inLanguage": "de",
+      "datePublished": "2026-11-11",
+      "dateModified": "2026-11-11",
+      "mainEntityOfPage": "https://inwoovation.com/articles/de/article-58-dynamic-co2-enrichment-kinetics-rubisco-carboxylation-venlo.html",
+      "image": "https://inwoovation.com/og-cover.jpg",
+      "author": {
+        "@type": "Person",
+        "name": "Inwoo Hwang",
+        "jobTitle": "Horticultural & CEA Systems Engineer",
+        "url": "https://inwoovation.com/about.html"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Inwoovation Lab",
+        "url": "https://inwoovation.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://inwoovation.com/og-cover.jpg"
+        }
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inwoovation Lab",
+          "item": "https://inwoovation.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Engineering Guides",
+          "item": "https://inwoovation.com/guides.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "DE Vol. 58: Dynamische CO₂-Begasungskinetik & RuBisCO-Thermodynamik",
+          "item": "https://inwoovation.com/articles/de/article-58-dynamic-co2-enrichment-kinetics-rubisco-carboxylation-venlo.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Warum steigt der optimale CO₂-Sollwert von C3-Gemüsekulturen (Tomate, Gurke, Paprika) bei hohen Blatttemperaturen von 26–30 °C deutlich an?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Mit steigender Blatttemperatur sinkt zum einen die Löslichkeit von CO₂ im Mesophyllwasser stärker als die von O₂, zum anderen verschiebt sich die kinetische Spezifität des Enzyms RuBisCO zugunsten der Oxygenase-Reaktion (Photorespiration). Bei 28 °C und Außenluft-CO₂ (420 ppm) gehen bis zu 30–35 % des fixierten Kohlenstoffs durch Lichtatmung verloren. Eine Anhebung der interzellulären CO₂-Konzentration auf 800 bis 1.000 ppm unterdrückt die Oxygenierung kompetitiv und verschiebt das Temperaturoptimum der Netto-Assimilation um 3 bis 5 K nach oben."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wann wird die CO₂-Dosierung im Venlo-Gewächshaus bei geöffneten Firstlüftungsklappen unwirtschaftlich?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Der konvektive CO₂-Verluststrom ist direkt proportional zur Luftwechselzahl N (h⁻¹) und zur Konzentrationsdifferenz (C_innen − C_außen). Bei geschlossener Lüftung (N ≈ 0,1–0,2 h⁻¹) verbleiben über 85 % des dosierten CO₂ im Pflanzenbestand. Ab einer Lüftungsöffnung von > 25–30 % bzw. N > 8–12 h⁻¹ entweichen mehr als 75 % des Gases ungenutzt über das Dach; daher regeln dynamische Klimacomputer den CO₂-Sollwert ab diesem Punkt gleitend auf ein wirtschaftliches Erhaltungsniveau von 450–550 ppm zurück, um schädliche CO₂-Verarmung (< 320 ppm) im dichten Blätterdach zu verhindern."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Welche phytotoxischen Spurengase müssen bei der BHKW-Rauchgas-CO₂-Düngung zwingend überwacht werden?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Bei der Nutzung gereinigter Abgase aus Erdgas-Blockheizkraftwerken (BHKW mit SCR-DeNOx- und Oxidationskatalysator) sind Ethylen (C₂H₄ < 5–10 ppb; verursacht Blütenfall und Epinastie bei Tomaten), Stickstoffmonoxid und Stickstoffdioxid (NOx < 100–250 ppb; hemmt die Photosynthese schleichend) sowie Kohlenmonoxid (CO < 5 ppm Arbeitsschutz / Katalysatorindikator) kontinuierlich online zu überwachen."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+  <style>
+    body { margin: 0; font-family: 'Plus Jakarta Sans', sans-serif; background: #090d16; color: #e2e8f0; line-height: 1.8; }
+    .article-shell { max-width: 920px; margin: 0 auto; padding: 36px 22px 60px; }
+    .badge-pill { display: inline-block; padding: 6px 14px; border-radius: 999px; background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.4); color: #34d399; font-size: 0.82rem; font-weight: 700; margin-bottom: 14px; }
+    h1 { font-family: 'Outfit', sans-serif; font-size: 2.22rem; line-height: 1.26; color: #f8fafc; margin: 0 0 14px 0; }
+    .meta-bar { color: #94a3b8; font-size: 0.9rem; margin-bottom: 28px; padding-bottom: 18px; border-bottom: 1px solid rgba(148, 163, 184, 0.18); }
+    .formula-box { background: rgba(15, 23, 42, 0.9); border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 12px; padding: 18px 22px; margin: 20px 0; font-family: 'JetBrains Mono', monospace; color: #38bdf8; overflow-x: auto; }
+    table.eng-table { width: 100%; border-collapse: collapse; margin: 20px 0; background: rgba(15, 23, 42, 0.75); border-radius: 12px; overflow: hidden; }
+    table.eng-table th, table.eng-table td { padding: 12px 14px; border: 1px solid rgba(148, 163, 184, 0.2); text-align: left; font-size: 0.92rem; }
+    table.eng-table th { background: rgba(30, 41, 59, 0.9); color: #38bdf8; font-weight: 700; }
+  </style>
+</head>
+<body>
+<!-- INW-STD-NAV-START -->
+<nav class="inw-top-nav" aria-label="Main Navigation" style="background: #0f172a; border-bottom: 1px solid #1e293b; padding: 12px 20px; font-family: system-ui, -apple-system, sans-serif; box-sizing: border-box; width: 100%;">
+  <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px;">
+    <a href="/index.html" style="color: #10b981; font-weight: 800; font-size: 1.15rem; text-decoration: none; letter-spacing: -0.02em;">Inwoovation Lab</a>
+    <div style="display: flex; flex-wrap: wrap; gap: 14px; font-size: 0.9rem;">
+      <a href="/index.html" style="color: #e2e8f0; text-decoration: none;">Home</a>
+      <a href="/smartfarm/vpd.html" style="color: #e2e8f0; text-decoration: none;">Calculators</a>
+      <a href="/articles/index.html" style="color: #38bdf8; font-weight: 600; text-decoration: none;">Articles</a>
+      <a href="/wiki/index.html" style="color: #e2e8f0; text-decoration: none;">Wiki</a>
+      <a href="/climate/index.html" style="color: #e2e8f0; text-decoration: none;">Climate Hub</a>
+      <a href="/crops/index.html" style="color: #e2e8f0; text-decoration: none;">Crops</a>
+      <a href="/tools/venlocad-3d.html" style="color: #10b981; font-weight: 600; text-decoration: none;">VenloCAD 3D</a>
+      <button type="button" onclick="window.InwooPalette && window.InwooPalette.open()" style="background: rgba(15, 23, 42, 0.9); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.4); padding: 6px 12px; border-radius: 6px; font-size: 0.85rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">🔍 Search <kbd style="background: rgba(255,255,255,0.1); padding: 1px 5px; border-radius: 4px; font-size: 0.72rem;">Ctrl+K</kbd></button>
+      <a href="/about.html" style="color: #e2e8f0; text-decoration: none;">About</a>
+    </div>
+  </div>
+</nav>
+<!-- INW-STD-NAV-END -->
+  <main class="article-shell">
+    <div style="margin-bottom: 20px;">
+      <a href="/guides.html" style="color: #38bdf8; text-decoration: none; font-weight: 700; font-size: 0.92rem;">← Zurück zum Engineering-Archiv (Alle Fachartikel)</a>
+    </div>
+    <span class="badge-pill">🇩🇪 Gärtnermeister-Fachmonographie · Assimilationskinetik &amp; Gewächshaus-Gasbilanz (Vol. 58)</span>
+    <h1>Dynamische CO<sub>2</sub>-Begasungskinetik &amp; RuBisCO-Carboxylierungsthermodynamik im Hochdraht-Venlo-Gewächshaus: Farquhar-FvCB-Modell, Lüftungsverlustbilanz &amp; BHKW- vs. Flüssiggas-Ökonomie</h1>
+<!-- INW-LANG-SWITCHER-START -->
+<div class="inw-lang-switcher-bar" style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:14px 0 20px 0; padding:10px 14px; background:rgba(15,23,42,0.75); border:1px solid rgba(148,163,184,0.2); border-radius:12px;">
+  <span style="font-size:0.8rem; color:#94a3b8; font-weight:700; margin-right:4px;">🌐 Vol. 58 Editions:</span>
+  <a href="/articles/article-58-dynamic-co2-enrichment-kinetics-rubisco-carboxylation-venlo.html" style="display:inline-flex; align-items:center; padding:5px 12px; border-radius:999px; background:rgba(30,41,59,0.8); border:1px solid rgba(56,189,248,0.35); color:#38bdf8; text-decoration:none; font-size:0.8rem; font-weight:600;">🇬🇧 English Edition →</a>
+  <span style="display:inline-flex; align-items:center; padding:5px 12px; border-radius:999px; background:rgba(16,185,129,0.22); border:1px solid #10b981; color:#34d399; font-size:0.8rem; font-weight:700;">🇩🇪 Deutsche Ausgabe (Active)</span>
+</div>
+<!-- INW-LANG-SWITCHER-END -->
+    <div class="meta-bar">
+      <span>👨‍🔬 <strong>Inwoo Hwang</strong> (Inwoovation Lab)</span> &nbsp;|&nbsp;
+      <span>📅 Last Updated: November 11, 2026</span> &nbsp;|&nbsp;
+      <span>⏱️ 18 Min. Lesezeit</span>
+    </div>
+
+    <section style="margin-bottom: 34px;">
+      <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px; margin-bottom: 16px;">1. Biochemische Grundlagen der C<sub>3</sub>-Kohlenstofffixierung: Das Farquhar-von-Caemmerer-Berry-(FvCB)-Modell</h2>
+      <p>Im modernen geschützten Gemüsebau unter Glas (<em>Solanum lycopersicum</em>, <em>Cucumis sativus</em>, <em>Capsicum annuum</em> im Hochdrahtverfahren) gehört die technische <strong>Kohlendioxid-Begasung (CO<sub>2</sub>-Düngung)</strong> zu den wirkungsvollsten Stellgrößen der Ertragsbildung. Ein produktiver Tomatenbestand mit einem Blattflächenindex (LAI) von 3,2 bis 3,8 m<sup>2</sup>&middot;m<sup>&minus;2</sup> entzieht der Gewächshausluft an einem sonnigen Frühjahrstag bei einer <a href="/articles/de/article-02-dli-tageslichtintegral-vertikale-landwirtschaft-led-roi.html" style="color: #38bdf8;">photosynthetisch aktiven Strahlung (PPFD)</a> von 700 &mu;mol&middot;m<sup>&minus;2</sup>&middot;s<sup>&minus;1</sup> stündlich rund <strong>3,5 bis 5,5 g CO<sub>2</sub>&middot;m<sup>&minus;2</sup>&middot;h<sup>&minus;1</sup> (35 bis 55 kg&middot;ha<sup>&minus;1</sup>&middot;h<sup>&minus;1</sup>)</strong>. Ohne aktive Nachdosierung fällt die Raumkonzentration bei geschlossener Firstlüftung binnen 30 Minuten von atmosphärischen 420 &mu;mol&middot;mol<sup>&minus;1</sup> (ppm) auf unter <strong>220 ppm</strong> — nahe den biochemischen CO<sub>2</sub>-Kompensationspunkt &Gamma;*, wodurch die Netto-Photosynthese nahezu zum Erliegen kommt.</p>
+      <p>Das international maßgebliche <strong>biochemische Assimilationsmodell nach Farquhar, von Caemmerer und Berry (FvCB, 1980)</strong> beschreibt die Netto-Blattassimilationsrate <em>A</em><sub>n</sub> [&mu;mol CO<sub>2</sub>&middot;m<sup>&minus;2</sup>&middot;s<sup>&minus;1</sup>] als das Minimum aus der RuBisCO-limitierten Carboxylierungsrate <em>W</em><sub>c</sub> und der durch den Elektronentransport (RuBP-Regeneration am Photosystem II) limitierten Rate <em>W</em><sub>j</sub> abzüglich der mitochondrialen Dunkelatmung im Licht <em>R</em><sub>d</sub>:</p>
+      <div class="formula-box">
+        FvCB-Netto-Assimilation: A<sub>n</sub> = (1 &minus; &Gamma;* &divide; C<sub>i</sub>) &middot; min(W<sub>c</sub>, W<sub>j</sub>) &minus; R<sub>d</sub><br>
+        RuBisCO-Limitierung: W<sub>c</sub> = (V<sub>cmax</sub> &middot; C<sub>i</sub>) &divide; [C<sub>i</sub> + K<sub>c</sub> &middot; (1 + O &divide; K<sub>o</sub>)]<br>
+        RuBP-Regenerationslimitierung: W<sub>j</sub> = (J(PPFD) &middot; C<sub>i</sub>) &divide; (4 &middot; C<sub>i</sub> + 8 &middot; &Gamma;*)
+      </div>
+      <p>Hierbei bezeichnet <em>C</em><sub>i</sub> den interzellulären CO<sub>2</sub>-Partialdruck im Mesophyll, <em>O</em> die Sauerstoffkonzentration (210 mmol&middot;mol<sup>&minus;1</sup>) und <em>K</em><sub>c</sub> bzw. <em>K</em><sub>o</sub> die temperaturabhängigen Michaelis-Menten-Konstanten des bifunktionalen Enzyms <strong>Ribulose-1,5-bisphosphat-Carboxylase/-Oxygenase (RuBisCO)</strong>. Steigt die <a href="/articles/de/article-20-blatttemperatur-infrarot-thermometrie-emissionsgrad-energiebilanz.html" style="color: #38bdf8;">Blatttemperatur</a> im Sommer auf 28 bis 31 &deg;C an, wächst &Gamma;* exponentiell nach der Arrhenius-Beziehung an, weil O<sub>2</sub> zunehmend mit CO<sub>2</sub> um das aktive Zentrum der RuBisCO konkurriert (<strong>Photorespiration / Lichtatmung</strong>). Durch Erhöhung der Raumluftkonzentration auf <strong>800 bis 1.000 ppm</strong> wird die Photorespiration um über 60 % zurückgedrängt und der Trockenmasseertrag um <strong>22 bis 32 %</strong> gesteigert.</p>
+    </section>
+
+    <section style="margin-bottom: 34px;">
+      <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px; margin-bottom: 16px;">2. Massenbilanz im Venlo-Gewächshaus: Der Zielkonflikt zwischen Firstlüftung und CO<sub>2</sub>-Verluststrom</h2>
+      <p>In der gärtnerischen Verfahrenstechnik wird die tatsächlich erforderliche Dosierleistung <em>&Phi;</em><sub>Dos</sub> [g CO<sub>2</sub>&middot;m<sup>&minus;2</sup>&middot;h<sup>&minus;1</sup>] nicht allein vom Pflanzenentzug bestimmt, sondern maßgeblich vom konvektiven Luftaustausch über Undichtigkeiten und geöffnete Dachlüftungsklappen. Die instationäre Gas-Massenbilanz eines Gewächshauses mit der mittleren Luftdichte <em>&rho;</em><sub>CO2</sub> (&approx; 1,83 kg&middot;m<sup>&minus;3</sup> bei 20 &deg;C), der mittleren Bauhöhe <em>h</em><sub>m</sub> (bei modernen Venlo-Häusern 6,0 bis 7,2 m) und der stündlichen <strong>Luftwechselzahl <em>N</em> [h<sup>&minus;1</sup>]</strong> lautet:</p>
+      <div class="formula-box">
+        Gewächshaus-CO<sub>2</sub>-Massenbilanz: h<sub>m</sub> &middot; (dC<sub>in</sub> / dt) = &Phi;<sub>Dos</sub> + R<sub>Boden</sub> &minus; P<sub>Bestand</sub>(PPFD, C<sub>in</sub>, T<sub>Blatt</sub>) &minus; N &middot; h<sub>m</sub> &middot; &rho;<sub>CO2</sub> &middot; (C<sub>in</sub> &minus; C<sub>außen</sub>) &times; 10<sup>&minus;3</sup>
+      </div>
+      <p>Bei geschlossener Lüftung im Winter und Frühjahr liegt die reine Fugendurchlässigkeit eines dichten Venlo-Glashauses bei <em>N</em> = 0,10 bis 0,25 h<sup>&minus;1</sup>: Über 85 % des eingespeisten Gases werden direkt in Fruchtzucker umgewandelt. Sobald jedoch bei hoher Globalstrahlung (&gt; 550 W&middot;m<sup>&minus;2</sup>) die Firstlüftung zur Abfuhr sensibler und latenter Wärme geöffnet werden muss, steigt <em>N</em> rasch auf <strong>10 bis 35 h<sup>&minus;1</sup></strong> an. In halbgeschlossenen Gewächshäusern (<em>Semi-Closed Venlo</em> mit Klimaschläuchen und aktiver <a href="/articles/de/article-01-vpd-meisterklasse.html" style="color: #38bdf8;">VPD-Entfeuchtung</a>) bleibt das Dach deutlich länger geschlossen, wodurch jährlich 15 bis 20 % Mehrertrag allein über die verlängerte 900-ppm-Begasungsdauer realisiert werden.</p>
+      <table class="eng-table">
+        <thead>
+          <tr>
+            <th>Betriebszustand im Venlo-Haus (h<sub>m</sub> = 6,5 m)</th>
+            <th>Luftwechselzahl N (h<sup>&minus;1</sup>)</th>
+            <th>Wirtschaftlicher CO<sub>2</sub>-Sollwert</th>
+            <th>Erforderliche Dosierleistung (kg&middot;ha<sup>&minus;1</sup>&middot;h<sup>&minus;1</sup>)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Geschlossenes Dach + Energieschirm offen (Morgen/Frühjahr)</strong></td>
+            <td>0,15 – 0,35 h<sup>&minus;1</sup></td>
+            <td><strong>850 – 1.000 ppm</strong></td>
+            <td>45 – 65 kg/(ha&middot;h) — höchste CO<sub>2</sub>-Nutzungseffizienz (&gt; 80 %)</td>
+          </tr>
+          <tr>
+            <td><strong>Leichte Spaltlüftung zur Entfeuchtung (10–20 % Lee-Klappe)</strong></td>
+            <td>2,5 – 5,0 h<sup>&minus;1</sup></td>
+            <td><strong>650 – 750 ppm</strong></td>
+            <td>90 – 140 kg/(ha&middot;h) — gleitende Sollwertabsenkung aktiv</td>
+          </tr>
+          <tr>
+            <td><strong>Sommer-Hochlastlüftung (&gt; 40 % Lee + Luv offen)</strong></td>
+            <td>15,0 – 35,0 h<sup>&minus;1</sup></td>
+            <td><strong>430 – 500 ppm</strong> (Anti-Depletion)</td>
+            <td>110 – 180 kg/(ha&middot;h) — verhindert Absinken unter 350 ppm im Bestand</td>
+          </tr>
+          <tr>
+            <td><strong>Semi-Closed Venlo / Aktive Wärmepumpen-Kühlung</strong></td>
+            <td>0,25 – 1,2 h<sup>&minus;1</sup></td>
+            <td><strong>900 – 1.100 ppm</strong></td>
+            <td>55 – 85 kg/(ha&middot;h) — maximale Sommer-Assimilationsrate</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section style="margin-bottom: 34px;">
+      <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px; margin-bottom: 16px;">3. CO<sub>2</sub>-Quellen, Rauchgas-Katalysatortechnik (BHKW) &amp; Grenzökonomische Optimierung</h2>
+      <p>In mitteleuropäischen Gemüsebaubetrieben konkurrieren zwei technische Bereitstellungspfade: (1) <strong>Technisches Flüssig-CO<sub>2</sub></strong> aus kryogenen Isoliertanks (&minus;20 &deg;C, 20 bar, Einkaufspreis typisch 0,18 bis 0,32 &euro;&middot;kg<sup>&minus;1</sup>) und (2) die gekoppelte Nutzung gereinigter Abgase aus <strong>Erdgas-Blockheizkraftwerken (BHKW / Kraft-Wärme-Kopplung)</strong> mit einem zweistufigen Abgasreinigungssystem (SCR-Harnstoff-Entstickung + Platin-Oxidationskatalysator, sog. <em>CODinox</em>-Einheit). Bei der stöchiometrischen Verbrennung von 1 Nm<sup>3</sup> Erdgas entstehen rund <strong>1,85 bis 1,96 kg CO<sub>2</sub></strong>; die Tagsüber erzeugte Abwärme wird in großvolumigen Tagesspeichern (Pufferspeicher 250–400 m<sup>3</sup>&middot;ha<sup>&minus;1</sup>) für die kommende Nacht zwischengespeichert.</p>
+      <p>Zwingend einzuhalten sind dabei die strengen <strong>Phytotoxizitäts-Grenzwerte</strong> im eingespeisten Verteilnetz (perforierte PE-Darmschläuche direkt unter den Kulturrinnen): <strong>Ethylen (C<sub>2</sub>H<sub>4</sub>) &lt; 5 ppb</strong> (bereits 20 ppb lösen bei Rispen- und Cocktailtomaten massiven Blütenabwurf aus), <strong>NO<sub>x</sub> &lt; 150 ppb</strong> und <strong>CO &lt; 5 ppm</strong>. Klimacomputer lösen die dynamische Dosierung in Echtzeit nach dem ökonomischen Grenzwertprinzip: Solange der monetäre Grenzertrag des zusätzlich gebildeten Ernteguts die Grenzkosten für ein Kilogramm CO<sub>2</sub> übersteigt (&part;Erlös / &part;[CO<sub>2</sub>] &ge; Preis<sub>CO2</sub>), wird nachdosiert.</p>
+    </section>
+
+<!-- INW-LIVE-WIDGET-START -->
+    <section class="inw-live-widget-sandbox" style="margin: 34px 0; padding: 26px; background: linear-gradient(145deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.9)); border: 1px solid rgba(16, 185, 129, 0.45); border-radius: 16px; box-shadow: 0 14px 34px rgba(0, 0, 0, 0.4);">
+      <h2 style="margin: 0 0 8px 0; font-family: 'Outfit', sans-serif; font-size: 1.4rem; color: #34d399;">🌿 Interaktiver FvCB-CO<sub>2</sub>-Assimilations-, Firstlüftungs- &amp; Grenzökonomie-Simulator</h2>
+      <p style="margin: 0 0 18px 0; font-size: 0.92rem; color: #cbd5e1;">Simulieren Sie live die Netto-Photosyntheseleistung A<sub>n</sub>, den Lüftungsverluststrom und die stündliche Wirtschaftlichkeit Ihrer CO<sub>2</sub>-Begasung im Venlo-Gewächshaus (1,0 ha Referenz):</p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(205px, 1fr)); gap: 14px; margin-bottom: 18px;">
+        <div style="background: rgba(9, 13, 22, 0.7); padding: 14px; border-radius: 10px; border: 1px solid rgba(148, 163, 184, 0.2);">
+          <label for="co2_ppm" style="display:block; font-size:0.82rem; color:#94a3b8; font-weight:700; margin-bottom:6px;">Ziel-CO<sub>2</sub> im Bestand: <span id="co2_ppm_val" style="color:#38bdf8;">850</span> ppm</label>
+          <input id="co2_ppm" type="range" min="350" max="1200" step="25" value="850" style="width:100%; accent-color:#10b981;" oninput="calcFvCB58()">
+        </div>
+        <div style="background: rgba(9, 13, 22, 0.7); padding: 14px; border-radius: 10px; border: 1px solid rgba(148, 163, 184, 0.2);">
+          <label for="co2_ppfd" style="display:block; font-size:0.82rem; color:#94a3b8; font-weight:700; margin-bottom:6px;">Bestands-PPFD: <span id="co2_ppfd_val" style="color:#38bdf8;">650</span> &mu;mol/(m²&middot;s)</label>
+          <input id="co2_ppfd" type="range" min="150" max="1200" step="50" value="650" style="width:100%; accent-color:#38bdf8;" oninput="calcFvCB58()">
+        </div>
+        <div style="background: rgba(9, 13, 22, 0.7); padding: 14px; border-radius: 10px; border: 1px solid rgba(148, 163, 184, 0.2);">
+          <label for="co2_ach" style="display:block; font-size:0.82rem; color:#94a3b8; font-weight:700; margin-bottom:6px;">Luftwechselzahl N: <span id="co2_ach_val" style="color:#38bdf8;">1,5</span> h<sup>&minus;1</sup></label>
+          <input id="co2_ach" type="range" min="0.2" max="20.0" step="0.2" value="1.5" style="width:100%; accent-color:#f59e0b;" oninput="calcFvCB58()">
+        </div>
+        <div style="background: rgba(9, 13, 22, 0.7); padding: 14px; border-radius: 10px; border: 1px solid rgba(148, 163, 184, 0.2);">
+          <label for="co2_price" style="display:block; font-size:0.82rem; color:#94a3b8; font-weight:700; margin-bottom:6px;">CO<sub>2</sub>-Kostenquelle:</label>
+          <select id="co2_price" onchange="calcFvCB58()" style="width:100%; padding:8px; border-radius:8px; background:#0f172a; color:#f8fafc; border:1px solid #334155; font-weight:600;">
+            <option value="0.09" selected>BHKW-Rauchgas mit Pufferspeicher (0,09 €/kg)</option>
+            <option value="0.24">Flüssig-CO₂ Kryotank (0,24 €/kg)</option>
+            <option value="0.34">Flüssig-CO₂ Sommer-Spitzentarif (0,34 €/kg)</option>
+          </select>
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(195px, 1fr)); gap: 12px;">
+        <div style="background: rgba(15, 23, 42, 0.9); padding: 14px; border-radius: 10px; border-left: 4px solid #10b981;">
+          <div style="font-size:0.78rem; color:#94a3b8;">FvCB Netto-Assimilation A<sub>n</sub></div>
+          <div id="out_an58" style="font-size:1.22rem; font-weight:800; color:#34d399; font-family:'JetBrains Mono',monospace;">24,8 &mu;mol/(m²&middot;s)</div>
+        </div>
+        <div style="background: rgba(15, 23, 42, 0.9); padding: 14px; border-radius: 10px; border-left: 4px solid #38bdf8;">
+          <div style="font-size:0.78rem; color:#94a3b8;">Mehrertrag ggü. 420 ppm</div>
+          <div id="out_gain58" style="font-size:1.22rem; font-weight:800; color:#38bdf8; font-family:'JetBrains Mono',monospace;">+28,4 % Assimilation</div>
+        </div>
+        <div style="background: rgba(15, 23, 42, 0.9); padding: 14px; border-radius: 10px; border-left: 4px solid #f59e0b;">
+          <div style="font-size:0.78rem; color:#94a3b8;">Dosierbedarf (1,0 ha Venlo)</div>
+          <div id="out_dose58" style="font-size:1.20rem; font-weight:800; color:#fbbf24; font-family:'JetBrains Mono',monospace;">118,5 kg/(ha&middot;h)</div>
+        </div>
+        <div style="background: rgba(15, 23, 42, 0.9); padding: 14px; border-radius: 10px; border-left: 4px solid #a855f7;">
+          <div style="font-size:0.78rem; color:#94a3b8;">Ökonomisches Urteil (Netto/h)</div>
+          <div id="out_econ58" style="font-size:1.14rem; font-weight:800; color:#c084fc; font-family:'JetBrains Mono',monospace;">+21,60 €/(ha&middot;h) Rentabel ✓</div>
+        </div>
+      </div>
+      <script>
+        function calcFvCB58() {
+          var ca = parseFloat(document.getElementById('co2_ppm').value) || 850;
+          var ppfd = parseFloat(document.getElementById('co2_ppfd').value) || 650;
+          var ach = parseFloat(document.getElementById('co2_ach').value) || 1.5;
+          var priceKg = parseFloat(document.getElementById('co2_price').value) || 0.09;
+
+          document.getElementById('co2_ppm_val').textContent = Math.round(ca);
+          document.getElementById('co2_ppfd_val').textContent = Math.round(ppfd);
+          document.getElementById('co2_ach_val').textContent = ach.toFixed(1).replace('.', ',');
+
+          function modelAn(ppm) {
+            var ci = 0.72 * ppm;
+            var gammaStar = 42.75;
+            var kcEff = 404.9 * (1 + 210 / 278.4);
+            var vcmax = 92.0;
+            var jmax = 175.0;
+            var j = (0.34 * ppfd * jmax) / Math.sqrt(Math.pow(0.34 * ppfd, 2) + Math.pow(jmax, 2));
+            var wc = (vcmax * ci) / (ci + kcEff);
+            var wj = (j * ci) / (4 * ci + 8 * gammaStar);
+            var an = (1 - gammaStar / ci) * Math.min(wc, wj) - 1.35;
+            return Math.max(0.5, an);
+          }
+
+          var anNow = modelAn(ca);
+          var anAmb = modelAn(420);
+          var gainPct = ((anNow - anAmb) / anAmb) * 100;
+
+          var cropUptakeKgHaH = anNow * 1.584 * 1.35;
+          var ventLossKgHaH = Math.max(0, ach * 6.5 * 1.83 * ((ca - 420) * 1e-6) * 10000);
+          var totalDoseKgHaH = cropUptakeKgHaH + ventLossKgHaH;
+
+          var deltaUptakeKg = Math.max(0, (anNow - anAmb) * 1.584 * 1.35);
+          var grossRevEurHaH = deltaUptakeKg * 0.68 * 2.15;
+          var costEurHaH = totalDoseKgHaH * priceKg;
+          var netMargin = grossRevEurHaH - costEurHaH;
+
+          document.getElementById('out_an58').textContent = anNow.toFixed(1).replace('.', ',') + ' μmol/(m²·s)';
+          document.getElementById('out_gain58').textContent = (gainPct >= 0 ? '+' : '') + gainPct.toFixed(1).replace('.', ',') + ' % ggü. 420 ppm';
+          document.getElementById('out_dose58').textContent = totalDoseKgHaH.toFixed(1).replace('.', ',') + ' kg/(ha·h)';
+
+          var econEl = document.getElementById('out_econ58');
+          var sign = netMargin >= 0 ? '+' : '';
+          var label = netMargin >= 3 ? 'Rentabel ✓' : (netMargin >= -2 ? 'Grenzwertig ⚠' : 'Sollwert senken 🚨');
+          econEl.textContent = sign + netMargin.toFixed(2).replace('.', ',') + ' €/(ha·h) ' + label;
+          econEl.style.color = netMargin >= 3 ? '#34d399' : (netMargin >= -2 ? '#fbbf24' : '#f87171');
+        }
+        calcFvCB58();
+      </script>
+    </section>
+<!-- INW-LIVE-WIDGET-END -->
+
+    <section style="margin-bottom: 34px;">
+      <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #10b981; border-bottom: 1px solid rgba(16, 185, 129, 0.25); padding-bottom: 10px; margin-bottom: 16px;">Häufig gestellte Ingenieurfragen (Praxis-FAQ)</h2>
+      <div style="background: rgba(15, 23, 42, 0.7); border-left: 4px solid #10b981; padding: 18px 20px; border-radius: 10px; margin-bottom: 14px;">
+        <p style="margin: 0;"><strong>F1: Warum steigt der optimale CO<sub>2</sub>-Sollwert von C<sub>3</sub>-Gemüsekulturen bei hohen Blatttemperaturen von 26–30 &deg;C deutlich an?</strong><br>Mit steigender Blatttemperatur sinkt die Löslichkeit von CO<sub>2</sub> im Mesophyllwasser stärker als die von O<sub>2</sub>, und die Spezifität des Enzyms RuBisCO verschiebt sich zugunsten der Photorespiration. Eine Anhebung auf 800–1.000 ppm unterdrückt die Oxygenierung kompetitiv und verschiebt das Temperaturoptimum der Netto-Assimilation um 3 bis 5 K nach oben.</p>
+      </div>
+      <div style="background: rgba(15, 23, 42, 0.7); border-left: 4px solid #10b981; padding: 18px 20px; border-radius: 10px; margin-bottom: 14px;">
+        <p style="margin: 0;"><strong>F2: Wann wird die CO<sub>2</sub>-Dosierung im Venlo-Gewächshaus bei geöffneten Firstlüftungsklappen unwirtschaftlich?</strong><br>Ab einer Luftwechselzahl N &gt; 8–12 h<sup>&minus;1</sup> entweichen über 75 % des dosierten Gases durch das Dach. Dynamische Klimacomputer senken den Sollwert dann gleitend auf 450–550 ppm ab, um lediglich eine ertragsmindernde Unterversorgung (&lt; 350 ppm) im dichten Bestand zu verhindern.</p>
+      </div>
+      <div style="background: rgba(15, 23, 42, 0.7); border-left: 4px solid #10b981; padding: 18px 20px; border-radius: 10px; margin-bottom: 14px;">
+        <p style="margin: 0;"><strong>F3: Welche phytotoxischen Spurengase müssen bei der BHKW-Rauchgas-CO<sub>2</sub>-Düngung überwacht werden?</strong><br>Zwingend online zu überwachen sind Ethylen (C<sub>2</sub>H<sub>4</sub> &lt; 5–10 ppb gegen Blütenabwurf), Stickoxide (NO<sub>x</sub> &lt; 100–250 ppb gegen schleichende Assimilationshemmung) und Kohlenmonoxid (CO &lt; 5 ppm als Indikator für die Katalysatoraktivität und den Arbeitsschutz; MAK-Wert CO<sub>2</sub> am Arbeitsplatz beachten: 5.000 ppm).</p>
+      </div>
+    </section>
+
+    <section style="margin-bottom: 34px;">
+      <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.45rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px; margin-bottom: 16px;">🇩🇪 Gärtnermeister-Praxis &amp; Fachbegriffe (DE / EN / KR)</h2>
+      <table class="eng-table">
+        <thead>
+          <tr>
+            <th>Deutscher Fachbegriff (Meisterpraxis)</th>
+            <th>Englischer Ingenieurbegriff (EN)</th>
+            <th>Koreanisches Äquivalent (KR)</th>
+            <th>Physikalisch-pflanzenbauliche Bedeutung</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>CO<sub>2</sub>-Kompensationspunkt (&Gamma;*)</strong></td>
+            <td>CO<sub>2</sub> Compensation Point</td>
+            <td>이산화탄소 보상점 (&Gamma;*)</td>
+            <td>CO<sub>2</sub>-Konzentration, bei der photosynthetische Bindung und Photorespirationsverlust exakt gleich groß sind (Netto-Gewinn = 0).</td>
+          </tr>
+          <tr>
+            <td><strong>Photorespiration (Lichtatmung)</strong></td>
+            <td>Photorespiration (RuBisCO Oxygenation)</td>
+            <td>광호흡 (루비스코 산소화 반응)</td>
+            <td>Energieverzehrende Nebenreaktion der RuBisCO mit O<sub>2</sub> bei hohen Temperaturen und niedrigem C<sub>i</sub>.</td>
+          </tr>
+          <tr>
+            <td><strong>Luftwechselzahl (N in h<sup>&minus;1</sup>)</strong></td>
+            <td>Air Exchange Rate (ACH, h<sup>&minus;1</sup>)</td>
+            <td>시간당 환기회수 (N, 회/h)</td>
+            <td>Anzahl der vollständigen Raumluftaustausche pro Stunde über Fugen und Firstlüftung; Haupttreiber des CO<sub>2</sub>-Verlusts.</td>
+          </tr>
+          <tr>
+            <td><strong>BHKW-Rauchgasreinigung (SCR / Kat)</strong></td>
+            <td>CHP Flue-Gas Catalytic Scrubbing</td>
+            <td>열병합발전(CHP) 배기가스 정화 탄산시비</td>
+            <td>Katalytische Entstickung und Oxidation von Erdgas-Abgasen zur gleichzeitigen Wärme-, Strom- und CO<sub>2</sub>-Gewinnung.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+<!-- INW-TSUKUBA-FUNNEL-START -->
+<section class="inw-tsukuba-funnel-bridge" style="max-width: 1060px; margin: 32px auto; padding: 26px; background: rgba(15, 23, 42, 0.9); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 16px; text-align: left; box-shadow: 0 10px 28px rgba(0, 0, 0, 0.3);">
+  <h3 style="margin: 0 0 8px 0; font-size: 1.2rem; color: #10b981; font-weight: 800;">🔬 Weiterführende Fachartikel, Kulturleitfäden &amp; Simulatoren (Tsukuba-Funnel)</h3>
+  <p style="margin: 0 0 16px 0; font-size: 0.92rem; color: #94a3b8; line-height: 1.6;">Vertiefen Sie die Assimilations- und Gewächshausphysik dieser Monographie mit unseren deutschen Fachkapiteln und Echtzeit-Simulatoren:</p>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px;">
+    <a href="/articles/de/article-02-dli-tageslichtintegral-vertikale-landwirtschaft-led-roi.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem;">🇩🇪 DE Vol. 02: Tagessumme Licht (DLI), PPFD &amp; Belichtungssteuerung →</a>
+    <a href="/articles/de/article-20-blatttemperatur-infrarot-thermometrie-emissionsgrad-energiebilanz.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem;">🇩🇪 DE Vol. 20: Blatttemperatur, IR-Thermometrie &amp; Blatt-Energiebilanz →</a>
+    <a href="/tools/global-agri-subsidy-grant-navigator.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem;">🌾 Global Hyper-Local Agri-Subsidy &amp; Grant Navigator (8 Länder) →</a>
+    <a href="/tools/eu-greenhouse-energy-hofnachfolge-roi-simulator.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem;">🇩🇪 BLE-Energieeffizienz &amp; Hofnachfolge ROI-Simulator →</a>
+  </div>
+</section>
+<!-- INW-TSUKUBA-FUNNEL-END -->
+
+    <!-- INW-EEAT-BOX-START -->
+    <section class="inw-eeat-box" style="margin-top: 36px; padding: 24px; background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 16px;">
+      <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; color: #10b981; font-weight: 800; margin-bottom: 6px;">Gärtnermeister-Kandidat &amp; CEA-Systemingenieur — Inwoovation Lab</div>
+      <h3 style="margin: 0 0 8px 0; font-size: 1.15rem; color: #f8fafc;">Inwoo Hwang</h3>
+      <p style="margin: 0; font-size: 0.92rem; color: #cbd5e1; line-height: 1.65;">Spezialisiert auf Venlo-Gewächshausthermodynamik (DIN V 18599), Photobiologie (DLI/PPFD), geschlossene Hydroponik-Kreisläufe und präzise Kultursteuerung.</p>
+    </section>
+    <!-- INW-EEAT-BOX-END -->
+  </main>
+
+  <!-- INW-STD-FOOTER-START -->
+  <footer class="inw-site-footer" style="margin-top: 48px; padding: 28px 20px; background: #0f172a; color: #94a3b8; text-align: center; border-top: 1px solid rgba(148, 163, 184, 0.15);">
+    <div style="max-width: 1100px; margin: 0 auto;">
+      <p style="margin: 0 0 10px 0;">&copy; 2026 Inwoovation Lab. Precision Controlled Environment Agriculture &amp; Biophysical Engineering.</p>
+      <p style="margin: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 16px;">
+        <a href="/index.html" style="color: #cbd5e1; text-decoration: none;">Home</a>
+        <a href="/guides.html" style="color: #cbd5e1; text-decoration: none;">Engineering Guides</a>
+        <a href="/privacy-policy.html" style="color: #cbd5e1; text-decoration: none;">Privacy Policy</a>
+        <a href="/terms-of-service.html" style="color: #cbd5e1; text-decoration: none;">Terms of Service</a>
+        <a href="/about.html" style="color: #cbd5e1; text-decoration: none;">About</a>
+        <a href="/contact.html" style="color: #cbd5e1; text-decoration: none;">Contact</a>
+      </p>
+    </div>
+  </footer>
+  <!-- INW-STD-FOOTER-END -->
+</body>
+</html>

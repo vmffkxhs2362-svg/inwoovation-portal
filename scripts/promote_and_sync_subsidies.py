@@ -625,12 +625,18 @@ def sync_all():
     programs = data.get("programs", [])
     programs = update_legacy_oefi(programs)
 
-    # 3. Merge 6 New Programs
+    # 3. Merge 6 New California Programs + Curated 8-Country Hyper-Local Promotions
+    hyperlocal_path = os.path.join(PORTAL_DIR, "data", "curated_hyperlocal_promotions.json")
+    hyperlocal_programs = []
+    if os.path.exists(hyperlocal_path):
+        with open(hyperlocal_path, "r", encoding="utf-8") as hf:
+            hyperlocal_programs = json.load(hf)
+
+    all_curated = list(NEW_CALIFORNIA_PROGRAMS) + list(hyperlocal_programs)
     existing_ids = {p["id"] for p in programs}
     added_count = 0
-    for np in NEW_CALIFORNIA_PROGRAMS:
+    for np in all_curated:
         if np["id"] in existing_ids:
-            # Update existing
             for idx, existing_p in enumerate(programs):
                 if existing_p["id"] == np["id"]:
                     programs[idx] = np
@@ -640,15 +646,43 @@ def sync_all():
             existing_ids.add(np["id"])
             added_count += 1
 
-    print(f"✅ Added/Updated {len(NEW_CALIFORNIA_PROGRAMS)} high-value California programs ({added_count} brand new).")
+    print(f"✅ Added/Updated {len(all_curated)} curated California & 8-Country Hyper-Local programs ({added_count} brand new).")
 
-    # 4. Dynamically refresh applicationWindow status & daysRemaining against current date
+    # 3b. Enrich admin_tier, region_scope, filing_authority & verify linkedCalculator paths across all programs
+    tools_dir = os.path.join(PORTAL_DIR, "tools")
+    for p in programs:
+        pid = p.get("id", "")
+        reg = p.get("region", "")
+        if not p.get("admin_tier"):
+            if reg in ("US-FED", "DE-FED", "NL-NAT", "JP-NAT", "FR-NAT", "ES-NAT", "CA-FED", "KR-NAT", "EU-ALL") or pid.startswith(("US-FED", "USDA-", "DE-BLE", "DE-BMEL", "DE-AFBG", "DE-RENTENBANK", "JP-MAFF", "JP-METI", "JP-NARO", "NL-RVO", "FR-FAM", "FR-CEE", "ES-MAPA", "KR-MAFRA", "CA-AAFC")):
+                p["admin_tier"] = "Federal"
+            elif any(tok in pid for tok in ("LOCAL", "SJVAPCD", "SCAQMD", "TSUKUBA", "EMD", "ATC")):
+                p["admin_tier"] = "Municipal / Local"
+            else:
+                p["admin_tier"] = "Regional / State"
+        if not p.get("region_scope"):
+            p["region_scope"] = f"{p.get('regionName', p.get('countryName', 'Global'))} ({p.get('jurisdictionLabel', reg)})"
+        if not p.get("filing_authority"):
+            p["filing_authority"] = f"{p.get('agency', 'Official Authority')} ({p.get('portalName', 'Electronic Portal')})"
+        calc = p.get("linkedCalculator", "")
+        if calc and not os.path.exists(os.path.join(tools_dir, os.path.basename(calc))):
+            p["linkedCalculator"] = "eu-greenhouse-energy-hofnachfolge-roi-simulator.html" if p.get("country") in ("DE", "NL", "FR", "ES") else "greenhouse-heating-load-thermal-screen-calculator.html"
+
+    # 4. Dynamically refresh applicationWindow status & daysRemaining against current date (Clean English UI Labels)
     today_dt = datetime.now().date()
     today_str = today_dt.strftime("%Y-%m-%d")
     for p in programs:
         win = p.get("applicationWindow")
         if not isinstance(win, dict):
             continue
+        # Normalize any legacy Korean statusLabel strings to institutional English
+        lbl = win.get("statusLabel", "")
+        if "차기 공모 대기" in lbl:
+            win["statusLabel"] = "🔵 Upcoming Cycle (Next Intake 2027 Q1/Q2)"
+        elif "공모 마감 임박" in lbl:
+            win["statusLabel"] = f"🟡 Closing Soon (D-{win.get('daysRemaining', 7)})"
+        elif "상시" in lbl or "접수중" in lbl:
+            win["statusLabel"] = "🟢 Open (Active Solicitation)"
         end_str = win.get("endDate", "")
         if re.match(r"^\d{4}-\d{2}-\d{2}$", end_str):
             try:
@@ -658,14 +692,14 @@ def sync_all():
                     win["daysRemaining"] = 0
                     if win.get("status") in ("open", "closing_soon"):
                         win["status"] = "upcoming"
-                        win["statusLabel"] = "🔵 차기 공모 대기 (Next Cycle 2027 Q1/Q2)"
+                        win["statusLabel"] = "🔵 Upcoming Cycle (Next Intake 2027 Q1/Q2)"
                         if "Next Cycle" not in win.get("deadlineDisplay", ""):
                             win["deadlineDisplay"] = f"{end_str} (2026 Batch Closed · Next Cycle 2027 Q1)"
                 else:
                     win["daysRemaining"] = delta_days
                     if delta_days <= 14 and win.get("status") == "open":
                         win["status"] = "closing_soon"
-                        win["statusLabel"] = f"🟡 공모 마감 임박 (D-{delta_days})"
+                        win["statusLabel"] = f"🟡 Closing Soon (D-{delta_days})"
             except ValueError:
                 pass
 
@@ -673,7 +707,9 @@ def sync_all():
     data["programs"] = programs
     data["metadata"]["totalPrograms"] = len(programs)
     data["metadata"]["lastUpdated"] = today_str
-    data["metadata"]["pilotJurisdiction"] = "California (CDFA OARS / CARB / CEC / DWR / CDTFA / DPR / USDA CA)"
+    data["metadata"]["lastVerified"] = today_str
+    data["metadata"]["version"] = "5.0.0-hyperlocal-3tier-radar"
+    data["metadata"]["pilotJurisdiction"] = "8-Country 3-Tier Hyper-Local Matrix (US / DE / JP / NL / FR / ES / CA / KR — 73 Portals)"
 
     # Save JSON Feed
     with open(DATA_JSON_PATH, "w", encoding="utf-8") as f:

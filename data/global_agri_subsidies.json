@@ -1,11 +1,11 @@
 {
   "metadata": {
     "title": "Global Agricultural Subsidies, Grants & Financial Incentive Database",
-    "version": "4.0.0-ga4-target-radar",
-    "lastUpdated": "2026-11-10",
+    "version": "5.0.0-hyperlocal-3tier-radar",
+    "lastUpdated": "2026-11-11",
     "curator": "Inwoovation Engineering Intelligence / Antigravity Operations",
-    "pilotJurisdiction": "California (CDFA OARS / CARB / CEC / DWR / CDTFA / DPR / USDA CA)",
-    "totalPrograms": 106,
+    "pilotJurisdiction": "8-Country 3-Tier Hyper-Local Matrix (US / DE / JP / NL / FR / ES / CA / KR — 73 Portals)",
+    "totalPrograms": 124,
     "countriesCovered": [
       "US",
       "DE",
@@ -24,7 +24,7 @@
       "Real-time Application Window & D-Day Tracking",
       "Payback Compression Modeling"
     ],
-    "lastVerified": "2026-11-10",
+    "lastVerified": "2026-11-11",
     "coverageNote": "All 50 US States (California 23-Program Deep Cluster) + Germany (Bund/Bayern/NRW/NDS/BW/AFBG) + Japan (MAFF Midori GX/Strong Agri/Fuel Safety/NARO Tsukuba/METI) + Netherlands (RVO EG/SDE++/MEI/EIA/SWG) + France (FranceAgriMer/CEE) + Spain (MAPA/PERTE) + South Korea (MAFRA) + Canada (AAFC)"
   },
   "categories": [
@@ -599,11 +599,11 @@
       "deepGuide": "Step 1: Obtain a certified pump efficiency test from an electric utility (PG&E/SCE). Step 2: Model water and GHG reduction using the CDFA calculator. Step 3: Secure 3 vendor bids. Step 4: Submit via CDFA AmpliFund portal.",
       "applicationWindow": {
         "status": "closing_soon",
-        "statusLabel": "🟡 공모 마감 임박 (D-14)",
+        "statusLabel": "🟡 Closing Soon (D-5)",
         "startDate": "2026-08-01",
         "endDate": "2026-11-15",
         "deadlineDisplay": "2026-11-15 (D-69)",
-        "daysRemaining": 5,
+        "daysRemaining": 4,
         "cycleFrequency": "Annual Fall Solicitation Window",
         "submissionPortal": "CDFA AmpliFund Grant Portal"
       },
@@ -654,7 +654,10 @@
           "Missing Utility Baseline: Minimum 12 consecutive months of electric/fuel utility bills matching the pump meter APN must be provided."
         ],
         "stackingRules": "100% stackable with USDA REAP (covering up to 50% of solar generation costs) and PG&E/SCE utility rebates (covering up to 12% of VFD motor costs), provided total grant coverage does not exceed 100% of eligible out-of-pocket expenses."
-      }
+      },
+      "admin_tier": "Regional / State",
+      "region_scope": "California (Statewide) (California (CDFA))",
+      "filing_authority": "California Department of Food and Agriculture (CDFA) - OARS (Office of Agricultural Resilience and Sustainability) (CDFA AmpliFund Grant Portal)"
     },
     {
       "id": "US-CA-CDFA-HSP",
@@ -717,7 +720,7 @@
         "startDate": "2026-05-01",
         "endDate": "2026-12-31",
         "deadlineDisplay": "First-Come Rolling Intake (Until Funds Exhausted)",
-        "daysRemaining": 51,
+        "daysRemaining": 50,
         "cycleFrequency": "Year-Round Continuous Batching",
         "submissionPortal": "CDFA AmpliFund Online Portal"
       },
@@ -757,7 +760,10 @@
           "Lack of Baseline Soil Tests: Must provide baseline soil organic matter (SOM) laboratory analysis within 30 days of project commencement."
         ],
         "stackingRules": "Can be combined with USDA NRCS EQIP Soil Health Practice Standards (CPS 327, 340, 484) and local Resource Conservation District (RCD) technical grants."
-      }
+      },
+      "admin_tier": "Regional / State",
+      "region_scope": "California (Statewide) (California (CDFA))",
+      "filing_authority": "California Department of Food and Agriculture (CDFA) - OARS (Office of Agricultural Resilience and Sustainability) (CDFA Grants Online Portal)"
     },
     {
       "id": "US-CA-CEC-FPIP",
@@ -816,7 +822,7 @@
       "deepGuide": "Requires a formal PE energy audit. Highly competitive. Focus heavily on verified therms and kWh saved per dollar of grant requested.",
       "applicationWindow": {
         "status": "upcoming",
-        "statusLabel": "🔵 차기 공모 대기 (Next Cycle 2027 Q1/Q2)",
+        "statusLabel": "🔵 Upcoming Cycle (Next Intake 2027 Q1/Q2)",
         "startDate": "2026-07-01",
         "endDate": "2026-09-30",
         "deadlineDisplay": "2026-09-30 (2026 Batch Closed · Next Cycle 2027 Q1)",
@@ -862,7 +868,10 @@
           "Simple payback period exceeding 12 years without matching fund enhancement."
         ],
         "stackingRules": "Stackable with CPUC/PG&E/SCE utility custom energy efficiency rebates (up to $250k) and USDA REAP federal grants."
-      }
+      },
+      "admin_tier": "Regional / State",
+      "region_scope": "California (Statewide) (California (CEC / CDFA))",
+      "filing_authority": "California Energy Commission (CEC) & CDFA (CEC Energy Commission Grants Gateway)"
     },
     {
       "id": "US-CA-CDFA-AMMP",
@@ -920,7 +929,7 @@
       "deepGuide": "Ensure coordination with your local Regional Water Quality Control Board prior to submission. Scoring hinges on metric tons of CO2e reduced.",
       "applicationWindow": {
         "status": "upcoming",
-        "statusLabel": "🔵 차기 공모 대기 (Next Cycle 2027 Q1/Q2)",
+        "statusLabel": "🔵 Upcoming Cycle (Next Intake 2027 Q1/Q2)",
         "startDate": "2026-07-15",
         "endDate": "2026-10-31",
         "deadlineDisplay": "2026-10-31 (2026 Batch Closed · Next Cycle 2027 Q1)",
@@ -964,7 +973,10 @@
           "Failure to prove commercial dairy herd census of at least 50 animal units."
         ],
         "stackingRules": "Stackable with Natural Resources Conservation Service (NRCS) EQIP Waste Storage Facility (Code 313) incentives."
-      }
+      },
+      "admin_tier": "Regional / State",
+      "region_scope": "California (Statewide) (California (CDFA))",
+      "filing_authority": "California Department of Food and Agriculture (CDFA) - OARS (Office of Agricultural Resilience and Sustainability) (CDFA OEFI Portal)"
     },
     {
       "id": "US-CA-CDFA-SCBGP",
@@ -1026,7 +1038,7 @@
         "startDate": "2026-11-01",
         "endDate": "2027-01-15",
         "deadlineDisplay": "November 2026 Upcoming Solicitation (Opens D-55)",
-        "daysRemaining": 66,
+        "daysRemaining": 65,
         "cycleFrequency": "Annual Specialty Crop Block Grant Cycle",
         "submissionPortal": "CDFA Grants Office / AmpliFund"
       },
@@ -1068,7 +1080,10 @@
           "Non-specialty crops: Agronomic row crops (corn, wheat, cotton, rice) are strictly excluded by USDA statutory mandate."
         ],
         "stackingRules": "Can be complemented by University of California Cooperative Extension (UCCE) demonstration funding and CDFA Specialty Crop technical assistance."
-      }
+      },
+      "admin_tier": "Regional / State",
+      "region_scope": "California (Statewide) (California (CDFA / USDA))",
+      "filing_authority": "CDFA / USDA Agricultural Marketing Service (AMS) (CDFA SCBGP Gateway)"
     },
     {
       "id": "US-FED-USDA-EQIP-CA",
@@ -1131,7 +1146,7 @@
         "startDate": "2026-01-01",
         "endDate": "2026-12-31",
         "deadlineDisplay": "Continuous Intake (Quarterly Batch Ranking)",
-        "daysRemaining": 51,
+        "daysRemaining": 50,
         "cycleFrequency": "Quarterly Ranking & Allocation Batches",
         "submissionPortal": "USDA Farmers.gov / Local NRCS Service Center"
       },
@@ -1173,7 +1188,10 @@
           "Implementing conservation practice prior to formal NRCS contract execution."
         ],
         "stackingRules": "Complements CDFA SWEEP, HSP, and local Resource Conservation District (RCD) implementation grants."
-      }
+      },
+      "admin_tier": "Federal",
+      "region_scope": "California (NRCS State Office) (California (USDA-NRCS))",
+      "filing_authority": "USDA Natural Resources Conservation Service (California State Office, Davis CA) (Farmers.gov / NRCS California Service Centers)"
     },
     {
       "id": "US-FED-USDA-REAP",
@@ -1236,7 +1254,7 @@
         "startDate": "2026-07-01",
         "endDate": "2026-12-31",
         "deadlineDisplay": "2026-12-31 (Q4 Batch Deadline)",
-        "daysRemaining": 51,
+        "daysRemaining": 50,
         "cycleFrequency": "Continuous Quarterly Application Windows",
         "submissionPortal": "USDA Rural Development Online Portal"
       },
@@ -1277,7 +1295,10 @@
           "Starting installation before environmental review (NEPA) sign-off by USDA Rural Development."
         ],
         "stackingRules": "Pairs seamlessly with CDFA SWEEP (30%) and PG&E/SCE utility rebates (12%) for an aggregate grant coverage up to 92%."
-      }
+      },
+      "admin_tier": "Federal",
+      "region_scope": "United States (Federal & California Allocation) (United States (USDA-RD))",
+      "filing_authority": "USDA Rural Development (National & California State Office) (USDA Rural Development Grants Gateway)"
     },
     {
       "id": "DE-BLE-ENERGIE",
@@ -1339,7 +1360,7 @@
         "startDate": "2026-01-01",
         "endDate": "2026-12-31",
         "deadlineDisplay": "2026-12-31 (Year-Round Rolling Intake)",
-        "daysRemaining": 51,
+        "daysRemaining": 50,
         "cycleFrequency": "Continuous Rolling Submission",
         "submissionPortal": "BLE Förderportal (foerderportal.bund.de)"
       },
@@ -1378,7 +1399,10 @@
           "Used or second-hand greenhouse equipment is strictly excluded."
         ],
         "stackingRules": "Cumulative public funding may not exceed EU GBER (AGVO) ceilings (typically 65% max). Can be paired with Landwirtschaftliche Rentenbank promotional loans."
-      }
+      },
+      "admin_tier": "Federal",
+      "region_scope": "Germany (Federal) (Germany (BLE / BMEL))",
+      "filing_authority": "Bundesanstalt für Landwirtschaft und Ernährung (BLE) / BMEL (BLE Förderportal easy-Online)"
     },
     {
       "id": "DE-AFP-NRW",
@@ -1436,7 +1460,7 @@
       "deepGuide": "Ensure building permits are fully granted prior to the application deadline. The scoring rubric gives heavy preference to closed-loop water recirculation.",
       "applicationWindow": {
         "status": "upcoming",
-        "statusLabel": "🔵 차기 공모 대기 (Next Cycle 2027 Q1/Q2)",
+        "statusLabel": "🔵 Upcoming Cycle (Next Intake 2027 Q1/Q2)",
         "startDate": "2026-06-01",
         "endDate": "2026-09-30",
         "deadlineDisplay": "2026-09-30 (2026 Batch Closed · Next Cycle 2027 Q1)",
@@ -1480,7 +1504,10 @@
           "Replacement investments without measurable environmental, water, or energy efficiency improvement."
         ],
         "stackingRules": "Can be combined with Rentenbank 'Zukunftsfelder' loans and NRW.BANK Agrar-Kredit within EU CAP maximum subsidy intensity limits."
-      }
+      },
+      "admin_tier": "Regional / State",
+      "region_scope": "North Rhine-Westphalia (Germany (LWK NRW))",
+      "filing_authority": "Landwirtschaftskammer Nordrhein-Westfalen (LWK NRW) (LWK NRW Portal)"
     },
     {
       "id": "DE-EU-JUNGLANDWIRTE",
@@ -1541,7 +1568,7 @@
         "startDate": "2027-03-01",
         "endDate": "2027-05-15",
         "deadlineDisplay": "Spring 2027 Annual Window Expected",
-        "daysRemaining": 186,
+        "daysRemaining": 185,
         "cycleFrequency": "Annual Spring GAP Direct Payment Window",
         "submissionPortal": "Agrarförderung Online (ANDI/ZeaSys)"
       },
@@ -1579,7 +1606,10 @@
           "Holding less than 50% voting control or failing to prove effective managerial control in a GmbH/GbR."
         ],
         "stackingRules": "100% stackable with AFP Young Farmer investment bonus (+10%), Aufstiegs-BAföG Meisterbonus, and BLE Energieeffizienz grants."
-      }
+      },
+      "admin_tier": "Regional / State",
+      "region_scope": "Germany (EU CAP) (Germany (EU CAP))",
+      "filing_authority": "Landwirtschaftskammer / EU CAP (BMEL / Federal States Agricultural Portals)"
     },
     {
       "id": "KR-MAFRA-ICT",
@@ -1635,7 +1665,7 @@
       "deepGuide": "Applications are scored heavily on agricultural education hours and business plan feasibility. Priority points are awarded to Youth Farming Champions and GAP certified growers.",
       "applicationWindow": {
         "status": "upcoming",
-        "statusLabel": "🔵 차기 공모 대기 (Next Cycle 2027 Q1/Q2)",
+        "statusLabel": "🔵 Upcoming Cycle (Next Intake 2027 Q1/Q2)",
         "startDate": "2026-08-01",
         "endDate": "2026-10-15",
         "deadlineDisplay": "2026-10-15 (2026 Batch Closed · Next Cycle 2027 Q1)",
@@ -1680,7 +1710,10 @@
           "Purchasing equipment prior to municipal grant confirmation."
         ],
         "stackingRules": "Combines 50% central/local grant + 30% NH Nonghyup policy loan (1.5%-2.0%) + 20% self-pay. Cannot double-claim the exact same hardware under MAFRA Energy."
-      }
+      },
+      "admin_tier": "Federal",
+      "region_scope": "South Korea (Nationwide) (South Korea (MAFRA))",
+      "filing_authority": "Ministry of Agriculture, Food and Rural Affairs (MAFRA) (Agrix Smart Agriculture Portal)"
     },
     {
       "id": "KR-MAFRA-ENERGY",
@@ -1736,7 +1769,7 @@
       "deepGuide": "Pre-design heating load verification is mandatory. Projects incorporating multi-layer thermal screens alongside heat pumps receive maximum scoring tiers.",
       "applicationWindow": {
         "status": "upcoming",
-        "statusLabel": "🔵 차기 공모 대기 (Next Cycle 2027 Q1/Q2)",
+        "statusLabel": "🔵 Upcoming Cycle (Next Intake 2027 Q1/Q2)",
         "startDate": "2026-07-01",
         "endDate": "2026-09-25",
         "deadlineDisplay": "2026-09-25 (2026 Batch Closed · Next Cycle 2027 Q1)",
@@ -1779,7 +1812,10 @@
           "Operating unauthorized groundwater extraction wells without municipal water permits."
         ],
         "stackingRules": "Stackable with KEPCO (한전) Agricultural Power (농사용 전력 을) tariff and KEA Carbon Neutrality Emissions Trading (외부사업 인증실적 KOC) credits."
-      }
+      },
+      "admin_tier": "Federal",
+      "region_scope": "South Korea (Nationwide) (South Korea (MAFRA))",
+      "filing_authority": "Ministry of Agriculture, Food and Rural Affairs (MAFRA) (Municipal Agricultural Department & Agrix)"
     },
     {
       "id": "KR-MAFRA-YOUTH",
@@ -1840,7 +1876,7 @@
         "startDate": "2026-12-01",
         "endDate": "2027-01-31",
         "deadlineDisplay": "December 2026 Annual Call Expected",
-        "daysRemaining": 82,
+        "daysRemaining": 81,
         "cycleFrequency": "Annual National Solicitation",
         "submissionPortal": "Agrix Portal (Ministry of Agriculture)"
       },
@@ -1877,7 +1913,10 @@
           "Using the Nonghyup Zero-Pay Youth Voucher card for non-approved luxury or non-farming personal expenses."
         ],
         "stackingRules": "Fully stackable with MAFRA Smart Farm ICT 50% Grant and Rural Housing / Farmland Bank (농지은행) long-term lease programs."
-      }
+      },
+      "admin_tier": "Federal",
+      "region_scope": "South Korea (Nationwide) (South Korea (MAFRA))",
+      "filing_authority": "Ministry of Agriculture / EPIS Korea (Agrix Agricultural Management Portal)"
     },
     {
       "id": "NL-RVO-EG",
@@ -1936,7 +1975,7 @@
         "startDate": "2026-04-01",
         "endDate": "2026-11-30",
         "deadlineDisplay": "2026-11-30 (D-84)",
-        "daysRemaining": 20,
+        "daysRemaining": 19,
         "cycleFrequency": "Annual Greenhouse Energy Solicitation",
         "submissionPortal": "RVO Mijn Rijksdienst Portal"
       },
@@ -1975,7 +2014,10 @@
           "Applying for a first standard energy screen (only 2nd/3rd screens or advanced HNT dehumidification qualify)."
         ],
         "stackingRules": "Can be combined with Energie-investeringsaftrek (EIA 40% tax deduction) and Groenbank low-interest financing, subject to EU state-aid limits."
-      }
+      },
+      "admin_tier": "Federal",
+      "region_scope": "Netherlands (National) (Netherlands (RVO))",
+      "filing_authority": "Rijksdienst voor Ondernemend Nederland (RVO) (Mijn RVO Portal)"
     },
     {
       "id": "NL-RVO-SDE",
@@ -2024,13 +2066,13 @@
       "portalName": "Mijn RVO Portal",
       "contactPhone": "+31 88 042 42 42",
       "contactEmail": "sde@rvo.nl",
-      "linkedCalculator": "aquifer-thermal-energy-storage-ates-heat-pump.html",
+      "linkedCalculator": "eu-greenhouse-energy-hofnachfolge-roi-simulator.html",
       "linkedToolTitle": "ATES & Industrial Heat Pump",
       "summary": "The Netherlands' flagship 15-year operational subsidy funding deep geothermal and massive industrial heat pumps for glasshouse clusters.",
       "deepGuide": "Timing is critical: the application phases open in weekly tiers based on €/ton CO2 threshold. Apply in the earliest possible phase to secure budget allocation.",
       "applicationWindow": {
         "status": "upcoming",
-        "statusLabel": "🔵 차기 공모 대기 (Next Cycle 2027 Q1/Q2)",
+        "statusLabel": "🔵 Upcoming Cycle (Next Intake 2027 Q1/Q2)",
         "startDate": "2026-09-01",
         "endDate": "2026-10-05",
         "deadlineDisplay": "2026-10-05 (2026 Batch Closed · Next Cycle 2027 Q1)",
@@ -2074,7 +2116,10 @@
           "Submitting with a draft rather than an irrevocable environmental permit."
         ],
         "stackingRules": "Operational OPEX subsidy; cannot be stacked with CAPEX grants on the exact same MWh generation asset beyond EU state-aid thresholds."
-      }
+      },
+      "admin_tier": "Federal",
+      "region_scope": "Netherlands (National) (Netherlands (RVO))",
+      "filing_authority": "Rijksdienst voor Ondernemend Nederland (RVO) (Mijn RVO Portal)"
     },
     {
       "id": "CA-AAFC-ACT",
@@ -2134,7 +2179,7 @@
         "startDate": "2026-01-01",
         "endDate": "2026-12-31",
         "deadlineDisplay": "Rolling Intake (Subject to Budget Availability)",
-        "daysRemaining": 51,
+        "daysRemaining": 50,
         "cycleFrequency": "Year-Round First-Come Continuous Intake",
         "submissionPortal": "Agriculture and Agri-Food Canada Online Services"
       },
@@ -2175,7 +2220,10 @@
           "New greenhouse acreage expansion (only energy-saving retrofits or verified clean-tech displacements qualify)."
         ],
         "stackingRules": "Stackable with provincial utility incentives (Enbridge Gas / Save on Energy Ontario / FortisBC) up to 75%-85% total government assistance cap."
-      }
+      },
+      "admin_tier": "Federal",
+      "region_scope": "Canada (Federal) (Canada (AAFC))",
+      "filing_authority": "Agriculture and Agri-Food Canada (AAFC) (AAFC Online Services Portal)"
     },
     {
       "id": "JP-MAFF-SMART",
@@ -2231,7 +2279,7 @@
       "deepGuide": "Submitted via the e-MAFF electronic portal. Applications formed as joint consortia with regional extension centers or research universities receive top-tier scoring priority.",
       "applicationWindow": {
         "status": "upcoming",
-        "statusLabel": "🔵 차기 공모 대기 (Next Cycle 2027 Q1/Q2)",
+        "statusLabel": "🔵 Upcoming Cycle (Next Intake 2027 Q1/Q2)",
         "startDate": "2026-07-01",
         "endDate": "2026-10-31",
         "deadlineDisplay": "2026-10-31 (2026 Batch Closed · Next Cycle 2027 Q1)",
@@ -2275,7 +2323,10 @@
           "Missing GbizID Prime (gBizIDプライム) digital authentication account for jGrants/e-MAFF submission."
         ],
         "stackingRules": "Can be paired with Japan Finance Corporation (日本政策金融公庫) Super L-Loan (0% interest initial 5 years for certified farmers) for the 50% grower match."
-      }
+      },
+      "admin_tier": "Federal",
+      "region_scope": "Japan (National) (Japan (農林水産省))",
+      "filing_authority": "Ministry of Agriculture, Forestry and Fisheries (MAFF Japan) (e-MAFF Digital Portal)"
     },
     {
       "id": "US-CA-CARB-FARMER",
@@ -2337,7 +2388,7 @@
         "startDate": "2026-06-01",
         "endDate": "2026-11-30",
         "deadlineDisplay": "2026-11-30 (D-84 / Ongoing District Batching)",
-        "daysRemaining": 20,
+        "daysRemaining": 19,
         "cycleFrequency": "Continuous Intake & Quarterly District Ranking",
         "submissionPortal": "Local Air Pollution Control District (SJVAPCD / SCAQMD Portal)"
       },
@@ -2378,7 +2429,10 @@
           "Out-of-State Operation: Equipment must operate at least 80% of annual operating hours within California agricultural parcels for a minimum 3-year term."
         ],
         "stackingRules": "Stackable with Clean Off-Road Equipment Voucher Incentive Project (CORE) for electric utility vehicles and federal USDA EQIP cost-share programs."
-      }
+      },
+      "admin_tier": "Regional / State",
+      "region_scope": "California (Statewide) (California (CARB))",
+      "filing_authority": "California Air Resources Board (CARB) & Local Air Districts (SJVAPCD, SCAQMD, BAAQMD) (CARB / Local Air District Grant Management Portal)"
     },
     {
       "id": "US-CA-CDFA-PHP",
@@ -2436,7 +2490,7 @@
       "deepGuide": "Step 1: Partner with an RCD or pollinator expert to design native seed mix. Step 2: Calculate establishment irrigation needs. Step 3: Submit budget via CDFA AmpliFund.",
       "applicationWindow": {
         "status": "upcoming",
-        "statusLabel": "🔵 차기 공모 대기 (Next Cycle 2027 Q1/Q2)",
+        "statusLabel": "🔵 Upcoming Cycle (Next Intake 2027 Q1/Q2)",
         "startDate": "2026-08-15",
         "endDate": "2026-10-30",
         "deadlineDisplay": "2026-10-30 (2026 Batch Closed · Next Cycle 2027 Q1)",
@@ -2457,7 +2511,10 @@
           "water"
         ],
         "trackScope": "pure_ag"
-      }
+      },
+      "admin_tier": "Regional / State",
+      "region_scope": "California (Statewide) (California (CDFA))",
+      "filing_authority": "California Department of Food and Agriculture (CDFA) - OARS (Office of Agricultural Resilience and Sustainability) (CDFA AmpliFund Grant Portal)"
     },
     {
       "id": "US-CA-CDFA-OTPP",
@@ -2508,13 +2565,13 @@
       "portalName": "CDFA State Organic Program Portal",
       "contactPhone": "(916) 900-5030",
       "contactEmail": "cdfa.organic@cdfa.ca.gov",
-      "linkedCalculator": "greenhouse-fertilizer-ec-ppm-stock-tank-blending-calculator.html",
+      "linkedCalculator": "greenhouse-heating-load-thermal-screen-calculator.html",
       "linkedToolTitle": "Fertigation & Nutrients",
       "summary": "Supports California growers transitioning to certified organic production with up to $50,000 in direct transition equipment grants plus 75% annual organic certification audit fee rebates.",
       "deepGuide": "Step 1: File your Organic System Plan (OSP) with CCOF. Step 2: Register with CDFA SOP. Step 3: Submit receipts for 75% fee reimbursement and apply for transition block grants.",
       "applicationWindow": {
         "status": "upcoming",
-        "statusLabel": "🔵 차기 공모 대기 (Next Cycle 2027 Q1/Q2)",
+        "statusLabel": "🔵 Upcoming Cycle (Next Intake 2027 Q1/Q2)",
         "startDate": "2026-06-01",
         "endDate": "2026-11-01",
         "deadlineDisplay": "2026-11-01 (2026 Batch Closed · Next Cycle 2027 Q1)",
@@ -2535,7 +2592,10 @@
           "smartfarm"
         ],
         "trackScope": "pure_ag"
-      }
+      },
+      "admin_tier": "Regional / State",
+      "region_scope": "California (Statewide) (California (CDFA))",
+      "filing_authority": "California Department of Food and Agriculture (CDFA) & USDA Organic Cost Share (OCCSP) (CDFA State Organic Program Portal)"
     },
     {
       "id": "US-CA-SJVAPCD-BURN",
@@ -2596,7 +2656,7 @@
         "startDate": "2026-01-01",
         "endDate": "2026-12-31",
         "deadlineDisplay": "Year-Round First-Come Continuous Intake",
-        "daysRemaining": 51,
+        "daysRemaining": 50,
         "cycleFrequency": "Year-Round Open Intake",
         "submissionPortal": "SJVAPCD Online Grant Portal"
       },
@@ -2636,7 +2696,10 @@
           "Commencing chipping before receiving official District Voucher."
         ],
         "stackingRules": "Fully stackable with CDFA Healthy Soils Program ($1,000/acre) for Whole Orchard Recycling."
-      }
+      },
+      "admin_tier": "Municipal / Local",
+      "region_scope": "San Joaquin Valley (CA) (California (SJVAPCD))",
+      "filing_authority": "San Joaquin Valley Air Pollution Control District (SJVAPCD) (Valley Air District Online Grant Portal)"
     },
     {
       "id": "US-CA-CDFA-WETA",
@@ -2683,7 +2746,7 @@
       "portalName": "CDFA WETA Provider Network",
       "contactPhone": "(916) 900-5075",
       "contactEmail": "cdfa.oars@cdfa.ca.gov",
-      "linkedCalculator": "greenhouse-irrigation-run-time-leaching-fraction-calculator.html",
+      "linkedCalculator": "greenhouse-heating-load-thermal-screen-calculator.html",
       "linkedToolTitle": "Irrigation Run-Time Calc",
       "summary": "100% free technical assistance providing certified irrigation pump testing, mobile irrigation uniformity audits, and one-on-one engineering support to prepare winning CDFA SWEEP applications.",
       "deepGuide": "Step 1: Sign up with your local UCCE or RCD technical partner. Step 2: Irrigation specialist visits farm to test pump and system uniformity. Step 3: Receive official report to attach to your SWEEP grant.",
@@ -2693,7 +2756,7 @@
         "startDate": "2026-01-01",
         "endDate": "2026-12-31",
         "deadlineDisplay": "Year-Round Free Service Application",
-        "daysRemaining": 51,
+        "daysRemaining": 50,
         "cycleFrequency": "Year-Round Continuous Intake",
         "submissionPortal": "CDFA / Local RCD Intake Portal"
       },
@@ -2710,7 +2773,10 @@
           "smartfarm"
         ],
         "trackScope": "pure_ag"
-      }
+      },
+      "admin_tier": "Regional / State",
+      "region_scope": "California (Statewide) (California (CDFA))",
+      "filing_authority": "CDFA Office of Environmental Farming & University of California Cooperative Extension (UCCE) (CDFA WETA Provider Network)"
     },
     {
       "id": "US-CA-CEC-EPIC",
@@ -2771,7 +2837,7 @@
         "startDate": "2026-08-01",
         "endDate": "2026-12-01",
         "deadlineDisplay": "2026-12-01 (D-85)",
-        "daysRemaining": 21,
+        "daysRemaining": 20,
         "cycleFrequency": "Annual Clean Energy Innovation Solicitation",
         "submissionPortal": "California ECAMS Portal"
       },
@@ -2788,7 +2854,10 @@
           "smartfarm"
         ],
         "trackScope": "pure_ag"
-      }
+      },
+      "admin_tier": "Regional / State",
+      "region_scope": "California (Statewide) (California (CEC))",
+      "filing_authority": "California Energy Commission (CEC) - Energy Research and Development Division (CEC Energy Commission Agreement Management System (ECAMS))"
     },
     {
       "id": "us-ca-calseed-concept-award",
@@ -2854,7 +2923,7 @@
         "startDate": "2026-08-15",
         "endDate": "2026-11-30",
         "deadlineDisplay": "2026-11-30 (D-84)",
-        "daysRemaining": 20,
+        "daysRemaining": 19,
         "cycleFrequency": "Annual CleanTech Cohort Window",
         "submissionPortal": "CalSEED Submittable Portal"
       },
@@ -2896,7 +2965,10 @@
           "Venture has raised more than $1,000,000 in private equity capital prior to application."
         ],
         "stackingRules": "Winners automatically eligible to compete for CalSEED Prototype Award (additional $450,000 non-dilutive follow-on capital)."
-      }
+      },
+      "admin_tier": "Regional / State",
+      "region_scope": "California (California (CEC EPIC / CalSEED))",
+      "filing_authority": "California Energy Commission (CEC) & California Clean Energy Fund (CalCEF) (CalSEED Online Application Portal (Submittable))"
     },
     {
       "id": "US-CA-IOU-PGE-AG",
@@ -2957,7 +3029,7 @@
         "startDate": "2026-01-01",
         "endDate": "2026-12-31",
         "deadlineDisplay": "Continuous Rolling Budget Window",
-        "daysRemaining": 51,
+        "daysRemaining": 50,
         "cycleFrequency": "Continuous Annual Budget Cycle",
         "submissionPortal": "PG&E Trade Pro & Business Rebates Portal"
       },
@@ -2998,7 +3070,10 @@
           "Failing to submit final documentation within 90 days of installation."
         ],
         "stackingRules": "Combines with USDA REAP (50%) and CDFA SWEEP (30%) for up to 92% project cost coverage."
-      }
+      },
+      "admin_tier": "Regional / State",
+      "region_scope": "California (PG&E Service Territory) (California (PG&E / CPUC))",
+      "filing_authority": "Pacific Gas and Electric Company (PG&E) / CPUC (PG&E Trade Pro & Business Rebates Center)"
     },
     {
       "id": "US-CA-IOU-SCE-AG",
@@ -3056,7 +3131,7 @@
         "startDate": "2026-01-01",
         "endDate": "2026-12-31",
         "deadlineDisplay": "Continuous Rolling Budget Window",
-        "daysRemaining": 51,
+        "daysRemaining": 50,
         "cycleFrequency": "Annual Budget Cycle",
         "submissionPortal": "SCE Business Energy Solutions Portal"
       },
@@ -3094,7 +3169,10 @@
           "Unauthorized equipment substitution without SCE written concurrence."
         ],
         "stackingRules": "Stackable with USDA REAP and CARB FARMER programs."
-      }
+      },
+      "admin_tier": "Regional / State",
+      "region_scope": "California (SCE Service Territory) (California (SCE / CPUC))",
+      "filing_authority": "Southern California Edison (SCE) / CPUC (SCE Business Rebates Gateway)"
     },
     {
       "id": "US-CA-IOU-SMUD-AG",
@@ -3152,7 +3230,7 @@
         "startDate": "2026-01-01",
         "endDate": "2026-12-31",
         "deadlineDisplay": "Continuous Rolling Budget Window",
-        "daysRemaining": 51,
+        "daysRemaining": 50,
         "cycleFrequency": "Annual Rolling Program",
         "submissionPortal": "SMUD Commercial Rebates Center"
       },
@@ -3190,7 +3268,10 @@
           "Installing uncertified fixtures lacking DLC Horticultural listing."
         ],
         "stackingRules": "Stackable with federal USDA REAP energy efficiency grants."
-      }
+      },
+      "admin_tier": "Regional / State",
+      "region_scope": "California (Sacramento / Central Valley) (California (SMUD))",
+      "filing_authority": "Sacramento Municipal Utility District (SMUD) (SMUD Commercial Rebates Center)"
     },
     {
       "id": "US-CA-CAEATFA-STE",
@@ -3239,7 +3320,7 @@
       "portalName": "California State Treasurer Online Portal",
       "contactPhone": "(916) 651-8657",
       "contactEmail": "caeatfa@treasurer.ca.gov",
-      "linkedCalculator": "penman-monteith-irrigation-sensor-calculator.html",
+      "linkedCalculator": "greenhouse-heating-load-thermal-screen-calculator.html",
       "linkedToolTitle": "Smart Irrigation Tool",
       "summary": "State statutory incentive providing 100% exemption from California sales and use tax (saving 8.25% - 10.25%) on up to $10M of automated AgTech, robotics, and clean food manufacturing machinery.",
       "deepGuide": "Step 1: Compile your capital equipment procurement schedule. Step 2: Run the CAEATFA net benefits evaluation model. Step 3: Submit application for CAEATFA board approval. Step 4: Present your STE Certificate to equipment vendors for zero sales tax.",
@@ -3249,7 +3330,7 @@
         "startDate": "2026-01-01",
         "endDate": "2026-12-31",
         "deadlineDisplay": "Monthly Board Review Cycle",
-        "daysRemaining": 51,
+        "daysRemaining": 50,
         "cycleFrequency": "Monthly Board Meeting Cycles",
         "submissionPortal": "California State Treasurer CAEATFA Portal"
       },
@@ -3289,7 +3370,10 @@
           "Failure to semi-annually report purchase data to the State Treasurer."
         ],
         "stackingRules": "Completely stackable with any grant or rebate program because this is a statutory sales tax exemption."
-      }
+      },
+      "admin_tier": "Regional / State",
+      "region_scope": "California (Statewide) (California (CAEATFA / State Treasurer))",
+      "filing_authority": "California Alternative Energy and Advanced Transportation Financing Authority (CAEATFA) (California State Treasurer Online Portal)"
     },
     {
       "id": "US-CA-CDFA-DAIRYPLUS",
@@ -3344,13 +3428,13 @@
       "portalName": "CDFA AmpliFund Grant Portal",
       "contactPhone": "(916) 900-5075",
       "contactEmail": "cdfa.oars@cdfa.ca.gov",
-      "linkedCalculator": "mixing_valve.html",
+      "linkedCalculator": "greenhouse-heating-load-thermal-screen-calculator.html",
       "linkedToolTitle": "Water & Fertigation Valve Calc",
       "summary": "Premier California dairy grant providing up to $2,000,000 at 100% funding for advanced vermifiltration, centrifuges, weeping walls, and subsurface drip lagoon fertigation to cut methane and manage nitrate salts.",
       "deepGuide": "Step 1: Partner with California Dairy Quality Assurance Program (CDQAP) for free technical assistance. Step 2: Model methane and salt reductions using the official AMMP calculator. Step 3: Secure 3 itemized equipment bids. Step 4: Submit via CDFA AmpliFund portal.",
       "applicationWindow": {
         "status": "upcoming",
-        "statusLabel": "🔵 차기 공모 대기 (Next Cycle 2027 Q1/Q2)",
+        "statusLabel": "🔵 Upcoming Cycle (Next Intake 2027 Q1/Q2)",
         "startDate": "2026-06-15",
         "endDate": "2026-09-14",
         "deadlineDisplay": "2026-09-14 (2026 Batch Closed · Next Cycle 2027 Q1)",
@@ -3396,7 +3480,10 @@
           "Failing to attach active Regional Water Board General Order inspection compliance letters."
         ],
         "stackingRules": "Pairs exceptionally well with USDA EQIP (Practice 313/632) and PG&E/SCE pump electrification rebates. Cannot double-fund identical capital invoices."
-      }
+      },
+      "admin_tier": "Regional / State",
+      "region_scope": "California (Statewide) (California (CDFA OARS / CDRF))",
+      "filing_authority": "California Department of Food and Agriculture (CDFA) - OARS & CDRF (CDFA AmpliFund Grant Portal)"
     },
     {
       "id": "US-CA-CDFA-DDRDP",
@@ -3457,7 +3544,7 @@
         "startDate": "2026-10-01",
         "endDate": "2026-12-15",
         "deadlineDisplay": "2026 Q4 Batch Solicitation",
-        "daysRemaining": 35,
+        "daysRemaining": 34,
         "cycleFrequency": "연 1회 정기 공모",
         "submissionPortal": "CDFA AmpliFund Grant Portal"
       },
@@ -3495,7 +3582,10 @@
           "Unsecured gas interconnect: applications without utility interconnection study are automatically rejected."
         ],
         "stackingRules": "Fully stackable with California Low Carbon Fuel Standard (LCFS) credits, federal Renewable Fuel Standard (RINs), and Inflation Reduction Act Section 48 Investment Tax Credits (ITC 30-50%)."
-      }
+      },
+      "admin_tier": "Regional / State",
+      "region_scope": "California (Statewide) (California (CDFA OARS))",
+      "filing_authority": "California Department of Food and Agriculture (CDFA) - OARS (CDFA AmpliFund Grant Portal)"
     },
     {
       "id": "US-CA-CDFA-PROP4-RFESPP",
@@ -3547,7 +3637,7 @@
       "portalName": "CDFA AmpliFund Grant Portal",
       "contactPhone": "(916) 900-5075",
       "contactEmail": "cdfa.oars@cdfa.ca.gov",
-      "linkedCalculator": "korean_greenhouse_3d.html",
+      "linkedCalculator": "greenhouse-heating-load-thermal-screen-calculator.html",
       "linkedToolTitle": "Smart Farm 3D Machinery Modeler",
       "summary": "Historic $15,000,000 California Climate Bond program offering up to $500,000 at 100% grant funding to fund shared precision machinery, electric tractors, and mobile cold chains for farmer cooperatives.",
       "deepGuide": "Step 1: Form an equipment sharing consortium with 5+ local growers or connect with local RCD. Step 2: Select eligible zero-emission or precision machinery. Step 3: Draft cooperative bylaws and maintenance escrow plan. Step 4: Submit via CDFA portal in Winter 2026.",
@@ -3557,7 +3647,7 @@
         "startDate": "2026-11-15",
         "endDate": "2027-01-31",
         "deadlineDisplay": "Winter 2026 (Guidelines Finalized)",
-        "daysRemaining": 82,
+        "daysRemaining": 81,
         "cycleFrequency": "신규 캘리포니아 기후채권 1회차 공모",
         "submissionPortal": "CDFA AmpliFund Grant Portal"
       },
@@ -3596,7 +3686,10 @@
           "Attempting to register grant-funded equipment in the name of an individual private operator."
         ],
         "stackingRules": "Can be complemented by CARB FARMER incentive vouchers for electric utility vehicle matching and CDFA HSP demonstration grants."
-      }
+      },
+      "admin_tier": "Regional / State",
+      "region_scope": "California (Statewide) (California (CDFA OARS - Proposition 4))",
+      "filing_authority": "California Department of Food and Agriculture (CDFA) - OARS (CDFA AmpliFund Grant Portal)"
     },
     {
       "id": "US-CA-CDTFA-AG-TAX",
@@ -3645,17 +3738,17 @@
       "portalName": "CDTFA Tax Portal / Point of Sale",
       "contactPhone": "(800) 400-7115",
       "contactEmail": "customer.service@cdtfa.ca.gov",
-      "linkedCalculator": "solar-pv-battery-microgrid-irrigation-payback-calculator.html",
+      "linkedCalculator": "greenhouse-heating-load-thermal-screen-calculator.html",
       "linkedToolTitle": "Solar Ag Payback Calculator",
       "summary": "Permanent 5.00% California state sales tax discount on tractors, irrigation systems, commercial greenhouses, and ag solar arrays. Eliminates ~60% of sales tax on every equipment invoice without grant competition.",
       "deepGuide": "Step 1: Download CDTFA Form 230-M. Step 2: Fill out farm tax ID and parcel information. Step 3: Hand signed certificate to tractor, greenhouse, or solar dealer prior to invoice generation to deduct 5.0% immediately.",
       "applicationWindow": {
         "status": "open",
-        "statusLabel": "🟢 연중 상시 감면 (Permanent Statutory Entitlement)",
+        "statusLabel": "🟢 Open (Active Solicitation)",
         "startDate": "2026-01-01",
         "endDate": "2026-12-31",
         "deadlineDisplay": "연중 상시 적용 (구매 시점 즉시 공제)",
-        "daysRemaining": 51,
+        "daysRemaining": 50,
         "cycleFrequency": "연중 상시 비경쟁 권리형 혜택",
         "submissionPortal": "Point-of-Sale Vendor Filing via CDTFA Form 230-M"
       },
@@ -3695,7 +3788,10 @@
           "Failing to submit the form at purchase: retroactively claiming requires filing CDTFA Form 101 refund claim within 3 years."
         ],
         "stackingRules": "100% stackable with CDFA SWEEP, CARB FARMER, USDA REAP, and CEC grants. Reduces total gross purchase price before applying grant proceeds."
-      }
+      },
+      "admin_tier": "Regional / State",
+      "region_scope": "California (Statewide) (California (CDTFA State Board))",
+      "filing_authority": "California Department of Tax and Fee Administration (CDTFA) (CDTFA Tax Portal / Point of Sale)"
     },
     {
       "id": "US-CA-DWR-LANDFLEX",
@@ -3756,7 +3852,7 @@
         "startDate": "2026-04-01",
         "endDate": "2026-11-30",
         "deadlineDisplay": "2026-11-30 (GSA Regional Allocation)",
-        "daysRemaining": 20,
+        "daysRemaining": 19,
         "cycleFrequency": "수자원국 기금 충원에 따른 상시 배치 공모",
         "submissionPortal": "Local Groundwater Sustainability Agency (GSA) Portal"
       },
@@ -3794,7 +3890,10 @@
           "Pumping groundwater on enrolled acres during the contract period triggers 100% repayment penalty."
         ],
         "stackingRules": "Can be combined with CDFA Healthy Soils Program for cover crops on fallowed ground, and Proposition 4 groundwater bond allocations."
-      }
+      },
+      "admin_tier": "Regional / State",
+      "region_scope": "California (Central Valley & Critically Overdrafted Basins) (California (DWR & Dept of Conservation))",
+      "filing_authority": "California Department of Water Resources (DWR) & Department of Conservation (DOC) (DWR / Local Groundwater Sustainability Agency (GSA) Portal)"
     },
     {
       "id": "US-CA-DPR-SPM",
@@ -3845,7 +3944,7 @@
       "portalName": "DPR Grants Management Portal",
       "contactPhone": "(916) 445-3884",
       "contactEmail": "dprspmgrants@cdpr.ca.gov",
-      "linkedCalculator": "mixing_valve.html",
+      "linkedCalculator": "greenhouse-heating-load-thermal-screen-calculator.html",
       "linkedToolTitle": "Fertigation & Spray Mixing Calc",
       "summary": "California state grant funding up to $500,000 at 100% coverage to adopt AI precision spot sprayers, biological insect dispersal drones, pheromone disruption, and non-chemical weeding robots.",
       "deepGuide": "Step 1: Identify target pest and benchmark existing chemical PUR reports. Step 2: Select eligible biological or precision AI robotics solution. Step 3: Assemble grower coalition or trial plots. Step 4: Submit DPR grant application.",
@@ -3855,7 +3954,7 @@
         "startDate": "2026-10-15",
         "endDate": "2026-12-15",
         "deadlineDisplay": "Fall 2026 Concept Proposals",
-        "daysRemaining": 35,
+        "daysRemaining": 34,
         "cycleFrequency": "연 1회 정기 공모 (Pre-proposal / Full Proposal 2단계)",
         "submissionPortal": "DPR Grants Management Portal"
       },
@@ -3894,7 +3993,10 @@
           "Proposals that merely test chemical conventional pesticides with no biological or precision mechanical innovation."
         ],
         "stackingRules": "Complements CDFA Healthy Soils Program, Organic Transition Program, and USDA EQIP Pest Management Conservation Practice (CPS 595)."
-      }
+      },
+      "admin_tier": "Regional / State",
+      "region_scope": "California (Statewide) (California (DPR))",
+      "filing_authority": "California Department of Pesticide Regulation (DPR) (DPR Grants Management Portal)"
     },
     {
       "id": "US-OR-ETO-GREENHOUSE",
@@ -3953,11 +4055,11 @@
       "deepGuide": "Step 1: Contact Energy Trust ag energy advisor before purchasing. Step 2: Model heating load reductions with Inwoovation Thermal Screen calculator. Step 3: Receive written incentive pre-approval. Step 4: Install hardware and submit final invoice for reimbursement check.",
       "applicationWindow": {
         "status": "open",
-        "statusLabel": "🟢 연중 상시 접수 (Continuous Rolling Rebates)",
+        "statusLabel": "🟢 Open (Active Solicitation)",
         "startDate": "2026-01-01",
         "endDate": "2026-12-31",
         "deadlineDisplay": "연중 상시 접수 (사전 승인 필수)",
-        "daysRemaining": 51,
+        "daysRemaining": 50,
         "cycleFrequency": "연중 상시 비경쟁 환급",
         "submissionPortal": "Energy Trust of Oregon Trade Ally Portal"
       },
@@ -3995,7 +4097,10 @@
           "Installing curtains or boilers prior to written Energy Trust formal pre-approval reservation."
         ],
         "stackingRules": "100% stackable with USDA REAP 50% grants. Combined net grower out-of-pocket can drop to 15%."
-      }
+      },
+      "admin_tier": "Regional / State",
+      "region_scope": "Oregon (Statewide PGE & Pacific Power) (Oregon (Energy Trust of Oregon))",
+      "filing_authority": "Energy Trust of Oregon (ETO) / Oregon Public Utility Commission (OPUC) (Energy Trust of Oregon Portal)"
     },
     {
       "id": "US-OR-OWEB-WATER",
@@ -4052,7 +4157,7 @@
       "deepGuide": "Step 1: Contact your local Soil and Water Conservation District (SWCD). Step 2: Quantify water savings using Penman-Monteith crop ET model. Step 3: File OWRD Conserved Water application. Step 4: Submit OWEB grant package in OGMS.",
       "applicationWindow": {
         "status": "upcoming",
-        "statusLabel": "🔵 차기 공모 대기 (Next Cycle 2027 Q1/Q2)",
+        "statusLabel": "🔵 Upcoming Cycle (Next Intake 2027 Q1/Q2)",
         "startDate": "2026-08-01",
         "endDate": "2026-11-02",
         "deadlineDisplay": "2026-11-02 (2026 Batch Closed · Next Cycle 2027 Q1)",
@@ -4096,7 +4201,10 @@
           "Projects that expand total irrigated acreage using conserved water without state permit."
         ],
         "stackingRules": "Can be combined with USDA NRCS EQIP (Practice 441) and Energy Trust of Oregon irrigation pump rebates."
-      }
+      },
+      "admin_tier": "Regional / State",
+      "region_scope": "Oregon (Klamath, Deschutes, Willamette, & Malheur Basins) (Oregon (OWEB & ODA))",
+      "filing_authority": "Oregon Watershed Enhancement Board (OWEB) & Oregon Department of Agriculture (ODA) (OWEB Online Grant Application (OGMS))"
     },
     {
       "id": "US-WA-WSDA-CEF",
@@ -4147,7 +4255,7 @@
       "portalName": "WSDA Grants Management System",
       "contactPhone": "(360) 902-1800",
       "contactEmail": "agcleanenergy@agr.wa.gov",
-      "linkedCalculator": "solar-pv-battery-microgrid-irrigation-payback-calculator.html",
+      "linkedCalculator": "greenhouse-heating-load-thermal-screen-calculator.html",
       "linkedToolTitle": "Agrivoltaic & Battery Payback",
       "summary": "Premier Washington State grant providing up to $500,000 (50% match) for agrivoltaic dual-use solar, electric farm machinery, and greenhouse heat pumps to decarbonize agricultural operations.",
       "deepGuide": "Step 1: Model solar and battery ROI using Inwoovation Microgrid Calculator. Step 2: Secure utility interconnection study. Step 3: Formulate crop production plan under panels. Step 4: Submit via WSDA Grants Portal.",
@@ -4157,7 +4265,7 @@
         "startDate": "2026-10-01",
         "endDate": "2026-12-15",
         "deadlineDisplay": "Fall 2026 (Opening Soon)",
-        "daysRemaining": 35,
+        "daysRemaining": 34,
         "cycleFrequency": "연 1회 정기 공모",
         "submissionPortal": "WSDA Grants Portal"
       },
@@ -4197,7 +4305,10 @@
           "Ground-mount solar projects that terminate farming operations on designated prime soils."
         ],
         "stackingRules": "Can be stacked with federal USDA REAP (up to 50%) and federal Section 48 Investment Tax Credits (30%)."
-      }
+      },
+      "admin_tier": "Regional / State",
+      "region_scope": "Washington (Statewide) (Washington (WSDA Clean Energy))",
+      "filing_authority": "Washington State Department of Agriculture (WSDA) & Washington Dept of Commerce (WSDA Grants Management System)"
     },
     {
       "id": "US-WA-SCC-WIEGP",
@@ -4254,11 +4365,11 @@
       "deepGuide": "Step 1: Contact local Conservation District for water right review. Step 2: District engineer prepares 100% funded irrigation design. Step 3: Calculate conserved water volume. Step 4: State pays equipment vendors directly.",
       "applicationWindow": {
         "status": "open",
-        "statusLabel": "🟢 상시 접수 중 (Continuous Rolling Reviews)",
+        "statusLabel": "🟢 Open (Active Solicitation)",
         "startDate": "2026-01-01",
         "endDate": "2026-12-31",
         "deadlineDisplay": "상시 접수 (지역 보존지구 분기별 심사)",
-        "daysRemaining": 51,
+        "daysRemaining": 50,
         "cycleFrequency": "분기별 배치 평가 (연중 상시)",
         "submissionPortal": "Local Conservation District Submission"
       },
@@ -4298,7 +4409,10 @@
           "Water rights with periods of 5+ consecutive years of non-use are subject to state relinquishment."
         ],
         "stackingRules": "Cannot stack with other state grants for identical water rights, but can pair with USDA EQIP for non-water infrastructure."
-      }
+      },
+      "admin_tier": "Regional / State",
+      "region_scope": "Washington (Yakima Basin, Columbia Basin, & Chehalis River) (Washington (Conservation Commission))",
+      "filing_authority": "Washington State Conservation Commission (SCC) & Local Conservation Districts (Washington State Conservation Commission Portal)"
     },
     {
       "id": "US-TX-TWDB-AG-WATER",
@@ -4359,7 +4473,7 @@
         "startDate": "2026-10-15",
         "endDate": "2026-12-15",
         "deadlineDisplay": "Fall 2026 Solicitations",
-        "daysRemaining": 35,
+        "daysRemaining": 34,
         "cycleFrequency": "연 1회 정기 공모",
         "submissionPortal": "TWDB Online Portal"
       },
@@ -4399,7 +4513,10 @@
           "Applications with missing GCD coordination letters are ranked ineligible."
         ],
         "stackingRules": "Can be complemented by USDA EQIP Ogallala Aquifer Initiative (OAI) for additional per-acre cost-share."
-      }
+      },
+      "admin_tier": "Regional / State",
+      "region_scope": "Texas (High Plains, Winter Garden, & Rio Grande Valley) (Texas (TWDB & TDA))",
+      "filing_authority": "Texas Water Development Board (TWDB) (TWDB Financial Assistance Portal)"
     },
     {
       "id": "US-TX-TDA-YFG",
@@ -4450,13 +4567,13 @@
       "portalName": "Texas Agriculture Grants Portal",
       "contactPhone": "(512) 463-7476",
       "contactEmail": "Grants@TexasAgriculture.gov",
-      "linkedCalculator": "korean_greenhouse_3d.html",
+      "linkedCalculator": "greenhouse-heating-load-thermal-screen-calculator.html",
       "linkedToolTitle": "Smart Farm 3D Modeler",
       "summary": "Popular Texas grant providing up to $20,000 (1:1 cash match) for young/beginning Texas growers (ages 18-45) to fund commercial greenhouses, drip fertigation, and packhouse refrigeration.",
       "deepGuide": "Step 1: Verify age (18-45) and secure $20,000 in dedicated business bank account. Step 2: Formulate 3-year production plan. Step 3: Get 2 equipment quotes. Step 4: Submit via TDA portal during active window.",
       "applicationWindow": {
         "status": "upcoming",
-        "statusLabel": "🔵 차기 공모 대기 (Next Cycle 2027 Q1/Q2)",
+        "statusLabel": "🔵 Upcoming Cycle (Next Intake 2027 Q1/Q2)",
         "startDate": "2026-08-15",
         "endDate": "2026-10-01",
         "deadlineDisplay": "2026-10-01 (2026 Batch Closed · Next Cycle 2027 Q1)",
@@ -4501,7 +4618,10 @@
           "Applicants turning 46 prior to the grant deadline are disqualified by statutory charter."
         ],
         "stackingRules": "Pairs perfectly with FSA Microloans ($50,000) to supply the matching funds, and USDA Beginning Farmer EQIP incentives."
-      }
+      },
+      "admin_tier": "Regional / State",
+      "region_scope": "Texas (Statewide) (Texas (TDA & TAFA))",
+      "filing_authority": "Texas Department of Agriculture (TDA) & Texas Agricultural Finance Authority (TAFA) (Texas Agriculture Grants Portal)"
     },
     {
       "id": "US-NY-NYSERDA-AEEP",
@@ -4559,11 +4679,11 @@
       "deepGuide": "Step 1: Sign up for 100% free NYSERDA Ag Energy Audit. Step 2: Use Inwoovation Thermal Screen calculator to project BTU savings. Step 3: Secure vendor quotes for DLC LEDs or screens. Step 4: Submit application via NYSERDA portal.",
       "applicationWindow": {
         "status": "open",
-        "statusLabel": "🟢 연중 상시 접수 (Continuous Open Enrollment)",
+        "statusLabel": "🟢 Open (Active Solicitation)",
         "startDate": "2026-01-01",
         "endDate": "2026-12-31",
         "deadlineDisplay": "연중 상시 접수 (기금 소진 시까지)",
-        "daysRemaining": 51,
+        "daysRemaining": 50,
         "cycleFrequency": "연중 상시 선착순 접수",
         "submissionPortal": "NYSERDA Online Application System"
       },
@@ -4602,7 +4722,10 @@
           "Purchasing equipment before NYSERDA application approval and award agreement signature."
         ],
         "stackingRules": "Can be stacked with federal USDA REAP 50% grants and federal Section 48 clean energy tax credits."
-      }
+      },
+      "admin_tier": "Regional / State",
+      "region_scope": "New York (Statewide) (New York (NYSERDA))",
+      "filing_authority": "New York State Energy Research and Development Authority (NYSERDA) (NYSERDA Portal)"
     },
     {
       "id": "US-NY-AGM-CRF",
@@ -4653,7 +4776,7 @@
       "portalName": "NYS Grants Gateway / SWCD Portal",
       "contactPhone": "(518) 457-3738",
       "contactEmail": "crf@agriculture.ny.gov",
-      "linkedCalculator": "mixing_valve.html",
+      "linkedCalculator": "greenhouse-heating-load-thermal-screen-calculator.html",
       "linkedToolTitle": "Fertigation & Water Mixing Calc",
       "summary": "High-funding New York agricultural grant providing up to 87.5% (up to $400,000) for farm water management, cover cropping, and dairy manure storage covers to mitigate climate change.",
       "deepGuide": "Step 1: Contact your county Soil and Water Conservation District (SWCD). Step 2: Complete free AEM Tier 1 and 2 farm assessments. Step 3: Select project track (Water, Soil Health, or Manure). Step 4: SWCD submits state grant on your behalf.",
@@ -4663,7 +4786,7 @@
         "startDate": "2026-11-01",
         "endDate": "2027-01-15",
         "deadlineDisplay": "Winter 2026 / 2027 Solicitation",
-        "daysRemaining": 66,
+        "daysRemaining": 65,
         "cycleFrequency": "연 1회 정기 공모",
         "submissionPortal": "NYS Grants Gateway via County SWCD"
       },
@@ -4703,7 +4826,10 @@
           "Submitting directly as a grower: Applications MUST be sponsored and submitted by a County SWCD."
         ],
         "stackingRules": "Complements USDA EQIP and New York State Non-Point Source Abatement grants."
-      }
+      },
+      "admin_tier": "Regional / State",
+      "region_scope": "New York (Statewide / Hudson Valley, Finger Lakes, Western NY) (New York (NYS AGM & SWCC))",
+      "filing_authority": "New York State Department of Agriculture and Markets (AGM) & Soil and Water Conservation Committee (NYS Grants Gateway / SWCD Portal)"
     },
     {
       "id": "US-FL-FDACS-BMP",
@@ -4760,11 +4886,11 @@
       "deepGuide": "Step 1: File an NOI through your local FDACS field representative. Step 2: Obtain an itemized quote for telemetry probes or VFDs. Step 3: Execute cost-share agreement prior to purchasing equipment. Step 4: Submit paid invoices for direct state reimbursement.",
       "applicationWindow": {
         "status": "open",
-        "statusLabel": "🟢 상시 접수 (Continuous Allocation)",
+        "statusLabel": "🟢 Open (Active Solicitation)",
         "startDate": "2026-07-01",
         "endDate": "2027-06-30",
         "deadlineDisplay": "Rolling Continuous",
-        "daysRemaining": 232,
+        "daysRemaining": 231,
         "cycleFrequency": "회계연도 연중 수시 배정"
       },
       "facets": {
@@ -4780,7 +4906,10 @@
           "small_family"
         ],
         "usdaRegion": "south"
-      }
+      },
+      "admin_tier": "Regional / State",
+      "region_scope": "Florida (Statewide) (Florida (FDACS / OAWP))",
+      "filing_authority": "Florida Department of Agriculture and Consumer Services (FDACS) - Office of Ag Water Policy (FDACS Agricultural Water Policy Portal)"
     },
     {
       "id": "US-IA-IDALS-WQI",
@@ -4828,7 +4957,7 @@
       "portalName": "IDALS Water Resources Bureau",
       "contactPhone": "(515) 281-5321",
       "contactEmail": "cleanwater@iowaagriculture.gov",
-      "linkedCalculator": "mixing_valve.html",
+      "linkedCalculator": "greenhouse-heating-load-thermal-screen-calculator.html",
       "linkedToolTitle": "Nutrient Dilution & Fertigation Calc",
       "summary": "Iowa flagship water quality grant offering 75% to 100% funding for bioreactors, saturated buffers, cover crops, and variable-rate nutrient injection systems.",
       "deepGuide": "Contact your local county Soil and Water Conservation District (SWCD) commissioner to schedule an engineering survey, then submit the WQI batch application.",
@@ -4838,7 +4967,7 @@
         "startDate": "2026-01-01",
         "endDate": "2026-12-31",
         "deadlineDisplay": "2026-12-31 (Batch Review)",
-        "daysRemaining": 51,
+        "daysRemaining": 50,
         "cycleFrequency": "봄/가을 반기별 배치 심사"
       },
       "facets": {
@@ -4854,7 +4983,10 @@
           "small_family"
         ],
         "usdaRegion": "midwest"
-      }
+      },
+      "admin_tier": "Regional / State",
+      "region_scope": "Iowa (Statewide) (Iowa (IDALS - Division of Soil Conservation))",
+      "filing_authority": "Iowa Department of Agriculture and Land Stewardship (IDALS) (IDALS Water Resources Bureau)"
     },
     {
       "id": "US-IL-IDOA-CONSERV",
@@ -4899,7 +5031,7 @@
       "portalName": "Illinois Ag Conservation Portal",
       "contactPhone": "(217) 782-6297",
       "contactEmail": "agr.soil@illinois.gov",
-      "linkedCalculator": "mixing_valve.html",
+      "linkedCalculator": "greenhouse-heating-load-thermal-screen-calculator.html",
       "linkedToolTitle": "Soil & Fertigation Calc",
       "summary": "Illinois Department of Agriculture incentive offering $5/acre crop insurance discounts plus 75% cost-share for no-till drill retrofits and cover crop interseeders.",
       "deepGuide": "Register acreage in the IDOA online portal in late fall immediately following winter cover seeding.",
@@ -4909,7 +5041,7 @@
         "startDate": "2026-10-01",
         "endDate": "2026-12-15",
         "deadlineDisplay": "2026-12-15",
-        "daysRemaining": 35,
+        "daysRemaining": 34,
         "cycleFrequency": "연 1회 가을 정기 공모"
       },
       "facets": {
@@ -4925,7 +5057,10 @@
           "small_family"
         ],
         "usdaRegion": "midwest"
-      }
+      },
+      "admin_tier": "Regional / State",
+      "region_scope": "Illinois (Statewide) (Illinois (IDOA Bureau of Land and Water))",
+      "filing_authority": "Illinois Department of Agriculture (IDOA) (Illinois Ag Conservation Portal)"
     },
     {
       "id": "US-MN-MDA-AGRI",
@@ -4979,7 +5114,7 @@
       "deepGuide": "Submit project narrative detailing energy and water savings with clear demonstration metrics through the MDA online grant portal.",
       "applicationWindow": {
         "status": "upcoming",
-        "statusLabel": "🔵 차기 공모 대기 (Next Cycle 2027 Q1/Q2)",
+        "statusLabel": "🔵 Upcoming Cycle (Next Intake 2027 Q1/Q2)",
         "startDate": "2026-08-15",
         "endDate": "2026-11-04",
         "deadlineDisplay": "2026-11-04 (2026 Batch Closed · Next Cycle 2027 Q1)",
@@ -5000,7 +5135,10 @@
           "beginning_farmer"
         ],
         "usdaRegion": "midwest"
-      }
+      },
+      "admin_tier": "Regional / State",
+      "region_scope": "Minnesota (Statewide) (Minnesota (MDA AGRI Program))",
+      "filing_authority": "Minnesota Department of Agriculture (MDA) (Minnesota MDA Grants Portal)"
     },
     {
       "id": "US-WI-DATCP-PRODUCER",
@@ -5046,13 +5184,13 @@
       "portalName": "DATCP Land and Water Resources Portal",
       "contactPhone": "(608) 224-4605",
       "contactEmail": "DATCPproducerledgrants@wisconsin.gov",
-      "linkedCalculator": "mixing_valve.html",
+      "linkedCalculator": "greenhouse-heating-load-thermal-screen-calculator.html",
       "linkedToolTitle": "Water & Fertigation Valve Calc",
       "summary": "Wisconsin DATCP 100% grant funding up to $40,000 annually for farmer-led groups implementing low-disturbance manure injection, cover cropping, and watershed water monitoring.",
       "deepGuide": "Form a 5-grower coalition, collaborate with your county conservationist, and submit via DATCP's annual RFP.",
       "applicationWindow": {
         "status": "upcoming",
-        "statusLabel": "🔵 차기 공모 대기 (Next Cycle 2027 Q1/Q2)",
+        "statusLabel": "🔵 Upcoming Cycle (Next Intake 2027 Q1/Q2)",
         "startDate": "2026-07-01",
         "endDate": "2026-09-28",
         "deadlineDisplay": "2026-09-28 (2026 Batch Closed · Next Cycle 2027 Q1)",
@@ -5073,7 +5211,10 @@
           "small_family"
         ],
         "usdaRegion": "midwest"
-      }
+      },
+      "admin_tier": "Municipal / Local",
+      "region_scope": "Wisconsin (Statewide) (Wisconsin (DATCP ARM Division))",
+      "filing_authority": "Wisconsin Department of Agriculture, Trade and Consumer Protection (DATCP) (DATCP Land and Water Resources Portal)"
     },
     {
       "id": "US-CO-CDA-ACRE3",
@@ -5126,7 +5267,7 @@
       "deepGuide": "Conduct an NRCS AgEMP or utility audit, pair with USDA REAP for up to 90% total combined subsidy, and apply via CDA quarterly batches.",
       "applicationWindow": {
         "status": "upcoming",
-        "statusLabel": "🔵 차기 공모 대기 (Next Cycle 2027 Q1/Q2)",
+        "statusLabel": "🔵 Upcoming Cycle (Next Intake 2027 Q1/Q2)",
         "startDate": "2026-07-01",
         "endDate": "2026-10-31",
         "deadlineDisplay": "2026-10-31 (2026 Batch Closed · Next Cycle 2027 Q1)",
@@ -5147,7 +5288,10 @@
           "small_family"
         ],
         "usdaRegion": "mountain"
-      }
+      },
+      "admin_tier": "Regional / State",
+      "region_scope": "Colorado (Statewide) (Colorado (CDA - Markets Division))",
+      "filing_authority": "Colorado Department of Agriculture (CDA) & Colorado Energy Office (Colorado Department of Agriculture ACRE3 Portal)"
     },
     {
       "id": "US-AZ-ADA-WATER",
@@ -5200,11 +5344,11 @@
       "deepGuide": "Calculate baseline acre-feet usage using our Penman-Monteith ET tool, get certified contractor bids, and file through WIFA/ADA portal.",
       "applicationWindow": {
         "status": "closing_soon",
-        "statusLabel": "🟡 공모 마감 임박 (D-14)",
+        "statusLabel": "🟡 Closing Soon (D-5)",
         "startDate": "2026-08-01",
         "endDate": "2026-11-15",
         "deadlineDisplay": "2026-11-15",
-        "daysRemaining": 5,
+        "daysRemaining": 4,
         "cycleFrequency": "연 2회 정기 배치 공모"
       },
       "facets": {
@@ -5220,7 +5364,10 @@
           "small_family"
         ],
         "usdaRegion": "mountain"
-      }
+      },
+      "admin_tier": "Regional / State",
+      "region_scope": "Arizona (Statewide) (Arizona (ADA / ADWR / WIFA))",
+      "filing_authority": "Arizona Department of Agriculture (ADA) & Water Infrastructure Finance Authority (WIFA) (Arizona Department of Agriculture Water Resources)"
     },
     {
       "id": "US-GA-GDA-AGWATER",
@@ -5272,7 +5419,7 @@
       "deepGuide": "Verify your EPD permit number, model water savings with our ET calculator, and apply through GDA's water conservation portal.",
       "applicationWindow": {
         "status": "upcoming",
-        "statusLabel": "🔵 차기 공모 대기 (Next Cycle 2027 Q1/Q2)",
+        "statusLabel": "🔵 Upcoming Cycle (Next Intake 2027 Q1/Q2)",
         "startDate": "2026-08-01",
         "endDate": "2026-10-31",
         "deadlineDisplay": "2026-10-31 (2026 Batch Closed · Next Cycle 2027 Q1)",
@@ -5292,7 +5439,10 @@
           "small_family"
         ],
         "usdaRegion": "south"
-      }
+      },
+      "admin_tier": "Regional / State",
+      "region_scope": "Georgia (Statewide) (Georgia (GDA / EPD))",
+      "filing_authority": "Georgia Department of Agriculture (GDA) & Environmental Protection Division (EPD) (Georgia Department of Agriculture Water Program)"
     },
     {
       "id": "US-NC-NCDA-AGWRAP",
@@ -5345,7 +5495,7 @@
       "deepGuide": "Contact your local county Soil & Water Conservation District office to develop an engineering plan before submitting the AgWRAP application.",
       "applicationWindow": {
         "status": "upcoming",
-        "statusLabel": "🔵 차기 공모 대기 (Next Cycle 2027 Q1/Q2)",
+        "statusLabel": "🔵 Upcoming Cycle (Next Intake 2027 Q1/Q2)",
         "startDate": "2026-08-01",
         "endDate": "2026-10-15",
         "deadlineDisplay": "2026-10-15 (2026 Batch Closed · Next Cycle 2027 Q1)",
@@ -5365,7 +5515,10 @@
           "beginning_farmer"
         ],
         "usdaRegion": "south"
-      }
+      },
+      "admin_tier": "Regional / State",
+      "region_scope": "North Carolina (Statewide) (North Carolina (NCDA&CS Division of Soil & Water))",
+      "filing_authority": "North Carolina Department of Agriculture and Consumer Services (NCDA&CS) (NCDA&CS Soil and Water Conservation)"
     },
     {
       "id": "US-PA-PDA-AGENERGY",
@@ -5418,11 +5571,11 @@
       "deepGuide": "Conduct an on-farm energy audit, stack with USDA REAP up to 75% total funding, and submit through the Pennsylvania Single Application for Assistance.",
       "applicationWindow": {
         "status": "closing_soon",
-        "statusLabel": "🟡 공모 마감 임박 (D-14)",
+        "statusLabel": "🟡 Closing Soon (D-10)",
         "startDate": "2026-08-01",
         "endDate": "2026-11-20",
         "deadlineDisplay": "2026-11-20",
-        "daysRemaining": 10,
+        "daysRemaining": 9,
         "cycleFrequency": "연 1회 정기 공모"
       },
       "facets": {
@@ -5438,7 +5591,10 @@
           "small_family"
         ],
         "usdaRegion": "northeast"
-      }
+      },
+      "admin_tier": "Regional / State",
+      "region_scope": "Pennsylvania (Statewide) (Pennsylvania (PDA / DEP))",
+      "filing_authority": "Pennsylvania Department of Agriculture (PDA) & PA DEP Energy Programs Office (Pennsylvania Department of Agriculture Farm Bill Portal)"
     },
     {
       "id": "US-MI-MDARD-VALUE",
@@ -5485,13 +5641,13 @@
       "portalName": "MDARD Agriculture Development Grants",
       "contactPhone": "(800) 292-3939",
       "contactEmail": "mda-grants@michigan.gov",
-      "linkedCalculator": "mixing_valve.html",
+      "linkedCalculator": "greenhouse-heating-load-thermal-screen-calculator.html",
       "linkedToolTitle": "Nutrient & Climate Control Calc",
       "summary": "Michigan MDARD grant providing up to $100,000 for smart post-harvest controlled atmosphere cold storage, optical sorting robotics, and CEA greenhouse automation.",
       "deepGuide": "Prepare a business feasibility plan detailing economic impact, gather three vendor quotes, and apply via MDARD's online grants portal.",
       "applicationWindow": {
         "status": "upcoming",
-        "statusLabel": "🔵 차기 공모 대기 (Next Cycle 2027 Q1/Q2)",
+        "statusLabel": "🔵 Upcoming Cycle (Next Intake 2027 Q1/Q2)",
         "startDate": "2026-08-15",
         "endDate": "2026-10-24",
         "deadlineDisplay": "2026-10-24 (2026 Batch Closed · Next Cycle 2027 Q1)",
@@ -5511,7 +5667,10 @@
           "food_processor"
         ],
         "usdaRegion": "midwest"
-      }
+      },
+      "admin_tier": "Regional / State",
+      "region_scope": "Michigan (Statewide) (Michigan (MDARD))",
+      "filing_authority": "Michigan Department of Agriculture and Rural Development (MDARD) (MDARD Agriculture Development Grants)"
     },
     {
       "id": "US-MA-MDAR-ENER",
@@ -5565,11 +5724,11 @@
       "deepGuide": "Complete an MDAR-approved energy audit, calculate thermal screen savings with our calculator, and submit through the Mass.gov online portal.",
       "applicationWindow": {
         "status": "closing_soon",
-        "statusLabel": "🟡 공모 마감 임박 (D-13)",
+        "statusLabel": "🟡 Closing Soon (D-4)",
         "startDate": "2026-08-01",
         "endDate": "2026-11-14",
         "deadlineDisplay": "2026-11-14",
-        "daysRemaining": 4,
+        "daysRemaining": 3,
         "cycleFrequency": "연 1회 가을 정기 공모"
       },
       "facets": {
@@ -5586,7 +5745,10 @@
           "small_family"
         ],
         "usdaRegion": "northeast"
-      }
+      },
+      "admin_tier": "Regional / State",
+      "region_scope": "Massachusetts (Statewide) (Massachusetts (MDAR))",
+      "filing_authority": "Massachusetts Department of Agricultural Resources (MDAR) (Mass.gov Energy and Environmental Affairs)"
     },
     {
       "id": "US-OH-ODA-H2OHIO",
@@ -5632,13 +5794,13 @@
       "portalName": "H2Ohio Agricultural Initiative",
       "contactPhone": "(614) 265-6610",
       "contactEmail": "H2Ohio@agri.ohio.gov",
-      "linkedCalculator": "mixing_valve.html",
+      "linkedCalculator": "greenhouse-heating-load-thermal-screen-calculator.html",
       "linkedToolTitle": "Nutrient Injection & Dilution Calc",
       "summary": "Flagship Ohio initiative offering 100% practice cost reimbursement and 75% equipment funding for precision variable-rate nutrient injection, drainage water management, and cover crops.",
       "deepGuide": "Obtain a free certified VNMP from your local Soil & Water Conservation District, enroll your fields, and receive direct annual incentive payments.",
       "applicationWindow": {
         "status": "upcoming",
-        "statusLabel": "🔵 차기 공모 대기 (Next Cycle 2027 Q1/Q2)",
+        "statusLabel": "🔵 Upcoming Cycle (Next Intake 2027 Q1/Q2)",
         "startDate": "2026-07-01",
         "endDate": "2026-10-30",
         "deadlineDisplay": "2026-10-30 (2026 Batch Closed · Next Cycle 2027 Q1)",
@@ -5659,7 +5821,10 @@
           "small_family"
         ],
         "usdaRegion": "midwest"
-      }
+      },
+      "admin_tier": "Regional / State",
+      "region_scope": "Ohio (Statewide) (Ohio (ODA Division of Soil and Water))",
+      "filing_authority": "Ohio Department of Agriculture (ODA) - Division of Soil and Water Conservation (H2Ohio Agricultural Initiative)"
     },
     {
       "id": "US-IN-ISDA-CWI",
@@ -5705,13 +5870,13 @@
       "portalName": "ISDA Clean Water Indiana Portal",
       "contactPhone": "(317) 232-8770",
       "contactEmail": "ISDAResponse@isda.in.gov",
-      "linkedCalculator": "mixing_valve.html",
+      "linkedCalculator": "greenhouse-heating-load-thermal-screen-calculator.html",
       "linkedToolTitle": "Water & Fertigation Calc",
       "summary": "Indiana state cost-share program granting up to 75% ($100,000) for no-till planter conversions, cover cropping, and drainage water management structures.",
       "deepGuide": "Contact your local Indiana county SWCD to prepare an application before the November 1 state board deadline.",
       "applicationWindow": {
         "status": "upcoming",
-        "statusLabel": "🔵 차기 공모 대기 (Next Cycle 2027 Q1/Q2)",
+        "statusLabel": "🔵 Upcoming Cycle (Next Intake 2027 Q1/Q2)",
         "startDate": "2026-08-01",
         "endDate": "2026-11-01",
         "deadlineDisplay": "2026-11-01 (2026 Batch Closed · Next Cycle 2027 Q1)",
@@ -5731,7 +5896,10 @@
           "small_family"
         ],
         "usdaRegion": "midwest"
-      }
+      },
+      "admin_tier": "Regional / State",
+      "region_scope": "Indiana (Statewide) (Indiana (ISDA / SSCB))",
+      "filing_authority": "Indiana State Department of Agriculture (ISDA) & State Soil Conservation Board (ISDA Clean Water Indiana Portal)"
     },
     {
       "id": "US-MO-MDA-VALUE",
@@ -5778,13 +5946,13 @@
       "portalName": "Missouri Department of Agriculture MASBDA",
       "contactPhone": "(573) 751-2129",
       "contactEmail": "masbda@mda.mo.gov",
-      "linkedCalculator": "mixing_valve.html",
+      "linkedCalculator": "greenhouse-heating-load-thermal-screen-calculator.html",
       "linkedToolTitle": "Water & Fertigation Calc",
       "summary": "Missouri MASBDA matching grant providing up to $200,000 for smart high-tunnel automation, post-harvest optical grading lines, and cold storage refrigeration.",
       "deepGuide": "Draft a business plan highlighting Missouri commodity value-add, obtain 2 vendor bids, and submit through the MASBDA online application.",
       "applicationWindow": {
         "status": "upcoming",
-        "statusLabel": "🔵 차기 공모 대기 (Next Cycle 2027 Q1/Q2)",
+        "statusLabel": "🔵 Upcoming Cycle (Next Intake 2027 Q1/Q2)",
         "startDate": "2026-08-01",
         "endDate": "2026-10-15",
         "deadlineDisplay": "2026-10-15 (2026 Batch Closed · Next Cycle 2027 Q1)",
@@ -5804,7 +5972,10 @@
           "beginning_farmer"
         ],
         "usdaRegion": "midwest"
-      }
+      },
+      "admin_tier": "Regional / State",
+      "region_scope": "Missouri (Statewide) (Missouri (MDA / MASBDA))",
+      "filing_authority": "Missouri Department of Agriculture (MDA) - MASBDA (Missouri Department of Agriculture MASBDA)"
     },
     {
       "id": "US-KS-KDA-WATER",
@@ -5857,7 +6028,7 @@
       "deepGuide": "Apply through your local conservation district with proof of Ogallala water right savings.",
       "applicationWindow": {
         "status": "upcoming",
-        "statusLabel": "🔵 차기 공모 대기 (Next Cycle 2027 Q1/Q2)",
+        "statusLabel": "🔵 Upcoming Cycle (Next Intake 2027 Q1/Q2)",
         "startDate": "2026-07-01",
         "endDate": "2026-10-31",
         "deadlineDisplay": "2026-10-31 (2026 Batch Closed · Next Cycle 2027 Q1)",
@@ -5877,7 +6048,10 @@
           "small_family"
         ],
         "usdaRegion": "midwest"
-      }
+      },
+      "admin_tier": "Regional / State",
+      "region_scope": "Kansas (Statewide) (Kansas (KDA - Division of Water Resources))",
+      "filing_authority": "Kansas Department of Agriculture (KDA) (KDA Division of Conservation)"
     },
     {
       "id": "US-NE-NDA-NRD-WATER",
@@ -5930,11 +6104,11 @@
       "deepGuide": "Enroll via your local Natural Resources District office before the fall irrigation review.",
       "applicationWindow": {
         "status": "closing_soon",
-        "statusLabel": "🟡 공모 마감 임박 (D-14)",
+        "statusLabel": "🟡 Closing Soon (D-5)",
         "startDate": "2026-08-01",
         "endDate": "2026-11-15",
         "deadlineDisplay": "2026-11-15",
-        "daysRemaining": 5,
+        "daysRemaining": 4,
         "cycleFrequency": "연 2회 NRD 정기 공모"
       },
       "facets": {
@@ -5950,7 +6124,10 @@
           "small_family"
         ],
         "usdaRegion": "midwest"
-      }
+      },
+      "admin_tier": "Regional / State",
+      "region_scope": "Nebraska (Statewide) (Nebraska (NDA / NRD))",
+      "filing_authority": "Nebraska Department of Agriculture (NDA) & Natural Resources Districts (NRD) (Nebraska Department of Agriculture)"
     },
     {
       "id": "US-ND-NDDA-SCBGP",
@@ -6007,7 +6184,7 @@
         "startDate": "2026-09-01",
         "endDate": "2026-12-01",
         "deadlineDisplay": "2026-12-01",
-        "daysRemaining": 21,
+        "daysRemaining": 20,
         "cycleFrequency": "연 1회 정기 공모"
       },
       "facets": {
@@ -6023,7 +6200,10 @@
           "small_family"
         ],
         "usdaRegion": "midwest"
-      }
+      },
+      "admin_tier": "Regional / State",
+      "region_scope": "North Dakota (Statewide) (North Dakota (NDDA))",
+      "filing_authority": "North Dakota Department of Agriculture (NDDA) (NDDA Marketing Division)"
     },
     {
       "id": "US-SD-DANR-WATER",
@@ -6070,13 +6250,13 @@
       "portalName": "South Dakota DANR Division of Conservation",
       "contactPhone": "(605) 773-3151",
       "contactEmail": "danrmail@state.sd.us",
-      "linkedCalculator": "solar-pv-battery-microgrid-irrigation-payback-calculator.html",
+      "linkedCalculator": "greenhouse-heating-load-thermal-screen-calculator.html",
       "linkedToolTitle": "Solar Water Pump Calc",
       "summary": "South Dakota DANR cost-share grant covering up to 75% ($75,000) for solar-powered livestock water pumps, riparian exclusion fencing, and precision irrigation retrofits.",
       "deepGuide": "Apply in coordination with your local Conservation District for DANR funding.",
       "applicationWindow": {
         "status": "upcoming",
-        "statusLabel": "🔵 차기 공모 대기 (Next Cycle 2027 Q1/Q2)",
+        "statusLabel": "🔵 Upcoming Cycle (Next Intake 2027 Q1/Q2)",
         "startDate": "2026-08-01",
         "endDate": "2026-10-31",
         "deadlineDisplay": "2026-10-31 (2026 Batch Closed · Next Cycle 2027 Q1)",
@@ -6096,7 +6276,10 @@
           "small_family"
         ],
         "usdaRegion": "midwest"
-      }
+      },
+      "admin_tier": "Regional / State",
+      "region_scope": "South Dakota (Statewide) (South Dakota (DANR))",
+      "filing_authority": "South Dakota Department of Agriculture and Natural Resources (DANR) (South Dakota DANR Division of Conservation)"
     },
     {
       "id": "US-SC-SCDA-AGRIBUS",
@@ -6148,11 +6331,11 @@
       "deepGuide": "Submit your application and 3 bids through the SCDA Grants portal.",
       "applicationWindow": {
         "status": "closing_soon",
-        "statusLabel": "🟡 공모 마감 임박 (D-14)",
+        "statusLabel": "🟡 Closing Soon (D-5)",
         "startDate": "2026-08-15",
         "endDate": "2026-11-15",
         "deadlineDisplay": "2026-11-15",
-        "daysRemaining": 5,
+        "daysRemaining": 4,
         "cycleFrequency": "연 1회 가을 정기 공모"
       },
       "facets": {
@@ -6169,7 +6352,10 @@
           "food_processor"
         ],
         "usdaRegion": "south"
-      }
+      },
+      "admin_tier": "Regional / State",
+      "region_scope": "South Carolina (Statewide) (South Carolina (SCDA))",
+      "filing_authority": "South Carolina Department of Agriculture (SCDA) (SCDA Grants Administration)"
     },
     {
       "id": "US-AL-ADAI-IRRIG",
@@ -6222,7 +6408,7 @@
       "deepGuide": "File through your local county soil conservation district before the October deadline.",
       "applicationWindow": {
         "status": "upcoming",
-        "statusLabel": "🔵 차기 공모 대기 (Next Cycle 2027 Q1/Q2)",
+        "statusLabel": "🔵 Upcoming Cycle (Next Intake 2027 Q1/Q2)",
         "startDate": "2026-07-01",
         "endDate": "2026-10-31",
         "deadlineDisplay": "2026-10-31 (2026 Batch Closed · Next Cycle 2027 Q1)",
@@ -6242,7 +6428,10 @@
           "small_family"
         ],
         "usdaRegion": "south"
-      }
+      },
+      "admin_tier": "Regional / State",
+      "region_scope": "Alabama (Statewide) (Alabama (ADAI / SWCC))",
+      "filing_authority": "Alabama Department of Agriculture and Industries (ADAI) & Soil & Water Conservation Committee (Alabama Department of Agriculture & Industries)"
     },
     {
       "id": "US-MS-MDAC-WATER",
@@ -6299,7 +6488,7 @@
         "startDate": "2026-08-01",
         "endDate": "2026-11-30",
         "deadlineDisplay": "2026-11-30",
-        "daysRemaining": 20,
+        "daysRemaining": 19,
         "cycleFrequency": "연 2회 정기 공모"
       },
       "facets": {
@@ -6315,7 +6504,10 @@
           "small_family"
         ],
         "usdaRegion": "south"
-      }
+      },
+      "admin_tier": "Regional / State",
+      "region_scope": "Mississippi (Statewide) (Mississippi (MDAC / MDEQ))",
+      "filing_authority": "Mississippi Department of Agriculture and Commerce (MDAC) & MDEQ (Mississippi Department of Agriculture and Commerce)"
     },
     {
       "id": "US-TN-TDA-TAEP",
@@ -6369,7 +6561,7 @@
       "deepGuide": "Strict 1-week October application window; secure your Master Producer certificate beforehand for maximum 50% funding.",
       "applicationWindow": {
         "status": "upcoming",
-        "statusLabel": "🔵 차기 공모 대기 (Next Cycle 2027 Q1/Q2)",
+        "statusLabel": "🔵 Upcoming Cycle (Next Intake 2027 Q1/Q2)",
         "startDate": "2026-10-01",
         "endDate": "2026-10-07",
         "deadlineDisplay": "2026-10-07 (2026 Batch Closed · Next Cycle 2027 Q1)",
@@ -6390,7 +6582,10 @@
           "small_family"
         ],
         "usdaRegion": "south"
-      }
+      },
+      "admin_tier": "Regional / State",
+      "region_scope": "Tennessee (Statewide) (Tennessee (TDA))",
+      "filing_authority": "Tennessee Department of Agriculture (TDA) (TDA TAEP Administration)"
     },
     {
       "id": "US-KY-KADF-COUNTY",
@@ -6437,7 +6632,7 @@
       "portalName": "Kentucky Governor's Office of Ag Policy",
       "contactPhone": "(502) 564-4627",
       "contactEmail": "goap@ky.gov",
-      "linkedCalculator": "mixing_valve.html",
+      "linkedCalculator": "greenhouse-heating-load-thermal-screen-calculator.html",
       "linkedToolTitle": "Fertigation & Valve Calc",
       "summary": "Kentucky KADF grant providing up to 50% ($20k-$50k) for greenhouse climate/fertigation controllers, walk-in cold storage, and no-till seeders.",
       "deepGuide": "Apply directly through your county Agricultural Development Council (CADC) at monthly meetings.",
@@ -6447,7 +6642,7 @@
         "startDate": "2026-01-01",
         "endDate": "2026-12-31",
         "deadlineDisplay": "Rolling Monthly Reviews",
-        "daysRemaining": 51,
+        "daysRemaining": 50,
         "cycleFrequency": "매월 카운티 위원회 정기 심사"
       },
       "facets": {
@@ -6464,7 +6659,10 @@
           "small_family"
         ],
         "usdaRegion": "south"
-      }
+      },
+      "admin_tier": "Regional / State",
+      "region_scope": "Kentucky (Statewide) (Kentucky (KDA / KADF))",
+      "filing_authority": "Kentucky Department of Agriculture & Governor's Office of Agricultural Policy (GOAP) (Kentucky Governor's Office of Ag Policy)"
     },
     {
       "id": "US-AR-AAD-WATER",
@@ -6517,7 +6715,7 @@
       "deepGuide": "Submit engineering designs to the local conservation district prior to the annual October 31 review.",
       "applicationWindow": {
         "status": "upcoming",
-        "statusLabel": "🔵 차기 공모 대기 (Next Cycle 2027 Q1/Q2)",
+        "statusLabel": "🔵 Upcoming Cycle (Next Intake 2027 Q1/Q2)",
         "startDate": "2026-07-01",
         "endDate": "2026-10-31",
         "deadlineDisplay": "2026-10-31 (2026 Batch Closed · Next Cycle 2027 Q1)",
@@ -6537,7 +6735,10 @@
           "small_family"
         ],
         "usdaRegion": "south"
-      }
+      },
+      "admin_tier": "Regional / State",
+      "region_scope": "Arkansas (Statewide) (Arkansas (AAD / ANRC))",
+      "filing_authority": "Arkansas Department of Agriculture (AAD) - Natural Resources Commission (ANRC) (Arkansas Department of Agriculture ANRC)"
     },
     {
       "id": "US-LA-LDAF-WATER",
@@ -6590,11 +6791,11 @@
       "deepGuide": "Engage with your local parish Soil and Water Conservation District to prepare the submission package.",
       "applicationWindow": {
         "status": "closing_soon",
-        "statusLabel": "🟡 공모 마감 임박 (D-14)",
+        "statusLabel": "🟡 Closing Soon (D-5)",
         "startDate": "2026-08-01",
         "endDate": "2026-11-15",
         "deadlineDisplay": "2026-11-15",
-        "daysRemaining": 5,
+        "daysRemaining": 4,
         "cycleFrequency": "연 1회 정기 공모"
       },
       "facets": {
@@ -6610,7 +6811,10 @@
           "small_family"
         ],
         "usdaRegion": "south"
-      }
+      },
+      "admin_tier": "Regional / State",
+      "region_scope": "Louisiana (Statewide) (Louisiana (LDAF / OSWC))",
+      "filing_authority": "Louisiana Department of Agriculture and Forestry (LDAF) - Office of Soil & Water (LDAF Office of Soil and Water Conservation)"
     },
     {
       "id": "US-OK-ODAFF-AGDEV",
@@ -6657,13 +6861,13 @@
       "portalName": "ODAFF Market Development Services",
       "contactPhone": "(405) 522-5509",
       "contactEmail": "jason.harvey@ag.ok.gov",
-      "linkedCalculator": "mixing_valve.html",
+      "linkedCalculator": "greenhouse-heating-load-thermal-screen-calculator.html",
       "linkedToolTitle": "Fertigation & Valve Calc",
       "summary": "Oklahoma ODAFF grant providing up to $20,000 for greenhouse climate controls, drip fertigation units, and specialty crop washing/sorting machinery.",
       "deepGuide": "Submit your business plan to ODAFF for review at quarterly board meetings.",
       "applicationWindow": {
         "status": "upcoming",
-        "statusLabel": "🔵 차기 공모 대기 (Next Cycle 2027 Q1/Q2)",
+        "statusLabel": "🔵 Upcoming Cycle (Next Intake 2027 Q1/Q2)",
         "startDate": "2026-07-01",
         "endDate": "2026-10-01",
         "deadlineDisplay": "2026-10-01 (2026 Batch Closed · Next Cycle 2027 Q1)",
@@ -6684,7 +6888,10 @@
           "beginning_farmer"
         ],
         "usdaRegion": "south"
-      }
+      },
+      "admin_tier": "Regional / State",
+      "region_scope": "Oklahoma (Statewide) (Oklahoma (ODAFF))",
+      "filing_authority": "Oklahoma Department of Agriculture, Food, and Forestry (ODAFF) (ODAFF Market Development Services)"
     },
     {
       "id": "US-NM-NMDA-HSP",
@@ -6731,13 +6938,13 @@
       "portalName": "NMDA Healthy Soil Program",
       "contactPhone": "(575) 646-3007",
       "contactEmail": "healthysoil@nmda.nmsu.edu",
-      "linkedCalculator": "mixing_valve.html",
+      "linkedCalculator": "greenhouse-heating-load-thermal-screen-calculator.html",
       "linkedToolTitle": "Fertigation & Soil Calc",
       "summary": "New Mexico NMDA 100% grant providing up to $50,000 for no-till drills, roller crimpers, cover crops, and on-farm aerated compost tea brewers.",
       "deepGuide": "Partner with an Eligible Entity (SWCD or tribe) and submit directly through NMDA's portal.",
       "applicationWindow": {
         "status": "upcoming",
-        "statusLabel": "🔵 차기 공모 대기 (Next Cycle 2027 Q1/Q2)",
+        "statusLabel": "🔵 Upcoming Cycle (Next Intake 2027 Q1/Q2)",
         "startDate": "2026-08-01",
         "endDate": "2026-10-15",
         "deadlineDisplay": "2026-10-15 (2026 Batch Closed · Next Cycle 2027 Q1)",
@@ -6758,7 +6965,10 @@
           "small_family"
         ],
         "usdaRegion": "mountain"
-      }
+      },
+      "admin_tier": "Regional / State",
+      "region_scope": "New Mexico (Statewide) (New Mexico (NMDA))",
+      "filing_authority": "New Mexico Department of Agriculture (NMDA) (NMDA Healthy Soil Program)"
     },
     {
       "id": "US-UT-UDAF-AWOP",
@@ -6811,7 +7021,7 @@
       "deepGuide": "Verify water rights with the State Engineer, calculate savings, and apply via UDAF's online portal.",
       "applicationWindow": {
         "status": "upcoming",
-        "statusLabel": "🔵 차기 공모 대기 (Next Cycle 2027 Q1/Q2)",
+        "statusLabel": "🔵 Upcoming Cycle (Next Intake 2027 Q1/Q2)",
         "startDate": "2026-08-01",
         "endDate": "2026-10-31",
         "deadlineDisplay": "2026-10-31 (2026 Batch Closed · Next Cycle 2027 Q1)",
@@ -6831,7 +7041,10 @@
           "small_family"
         ],
         "usdaRegion": "mountain"
-      }
+      },
+      "admin_tier": "Regional / State",
+      "region_scope": "Utah (Statewide) (Utah (UDAF))",
+      "filing_authority": "Utah Department of Agriculture and Food (UDAF) (UDAF Conservation Division)"
     },
     {
       "id": "US-NV-NDA-WATER",
@@ -6884,11 +7097,11 @@
       "deepGuide": "File through the Nevada Department of Agriculture grants portal with proof of water rights.",
       "applicationWindow": {
         "status": "closing_soon",
-        "statusLabel": "🟡 공모 마감 임박 (D-14)",
+        "statusLabel": "🟡 Closing Soon (D-10)",
         "startDate": "2026-08-15",
         "endDate": "2026-11-20",
         "deadlineDisplay": "2026-11-20",
-        "daysRemaining": 10,
+        "daysRemaining": 9,
         "cycleFrequency": "연 1회 정기 공모"
       },
       "facets": {
@@ -6904,7 +7117,10 @@
           "small_family"
         ],
         "usdaRegion": "mountain"
-      }
+      },
+      "admin_tier": "Regional / State",
+      "region_scope": "Nevada (Statewide) (Nevada (NDA / DWR))",
+      "filing_authority": "Nevada Department of Agriculture (NDA) (Nevada Department of Agriculture)"
     },
     {
       "id": "US-ID-ISDA-CLEANWATER",
@@ -6957,7 +7173,7 @@
       "deepGuide": "Coordinate with local Soil and Water Conservation Districts and submit to ISDA.",
       "applicationWindow": {
         "status": "upcoming",
-        "statusLabel": "🔵 차기 공모 대기 (Next Cycle 2027 Q1/Q2)",
+        "statusLabel": "🔵 Upcoming Cycle (Next Intake 2027 Q1/Q2)",
         "startDate": "2026-08-01",
         "endDate": "2026-10-31",
         "deadlineDisplay": "2026-10-31 (2026 Batch Closed · Next Cycle 2027 Q1)",
@@ -6977,7 +7193,10 @@
           "small_family"
         ],
         "usdaRegion": "mountain"
-      }
+      },
+      "admin_tier": "Regional / State",
+      "region_scope": "Idaho (Statewide) (Idaho (ISDA / IDWR))",
+      "filing_authority": "Idaho State Department of Agriculture (ISDA) (ISDA Division of Conservation)"
     },
     {
       "id": "US-MT-MDA-GROW",
@@ -7023,13 +7242,13 @@
       "portalName": "Montana Department of Agriculture GTA Program",
       "contactPhone": "(406) 444-2402",
       "contactEmail": "agr@mt.gov",
-      "linkedCalculator": "solar-pv-battery-microgrid-irrigation-payback-calculator.html",
+      "linkedCalculator": "greenhouse-heating-load-thermal-screen-calculator.html",
       "linkedToolTitle": "Solar Irrigation & Heating Calc",
       "summary": "Montana Growth Through Agriculture (GTA) grant offering up to $50,000 for center pivot telemetry, solar livestock pumping skids, high tunnels, and optical sorting machinery.",
       "deepGuide": "Submit your business narrative and matching fund commitments through Montana's WebGrants portal.",
       "applicationWindow": {
         "status": "upcoming",
-        "statusLabel": "🔵 차기 공모 대기 (Next Cycle 2027 Q1/Q2)",
+        "statusLabel": "🔵 Upcoming Cycle (Next Intake 2027 Q1/Q2)",
         "startDate": "2026-08-01",
         "endDate": "2026-10-14",
         "deadlineDisplay": "2026-10-14 (2026 Batch Closed · Next Cycle 2027 Q1)",
@@ -7050,7 +7269,10 @@
           "small_family"
         ],
         "usdaRegion": "mountain"
-      }
+      },
+      "admin_tier": "Regional / State",
+      "region_scope": "Montana (Statewide) (Montana (MDA / DNRC))",
+      "filing_authority": "Montana Department of Agriculture (MDA) & DNRC (Montana Department of Agriculture GTA Program)"
     },
     {
       "id": "US-WY-WDA-WATER",
@@ -7097,13 +7319,13 @@
       "portalName": "Wyoming Water Development Commission",
       "contactPhone": "(307) 777-7626",
       "contactEmail": "wwdc-info@wyo.gov",
-      "linkedCalculator": "solar-pv-battery-microgrid-irrigation-payback-calculator.html",
+      "linkedCalculator": "greenhouse-heating-load-thermal-screen-calculator.html",
       "linkedToolTitle": "Solar Water Pump Calc",
       "summary": "Wyoming WWDC/WDA matching grant providing up to 50% ($135,000) for ditch-to-pipe conversions, solar rangeland water pumps, and small irrigation retention reservoirs.",
       "deepGuide": "Apply in partnership with your local Wyoming conservation district before November 1.",
       "applicationWindow": {
         "status": "upcoming",
-        "statusLabel": "🔵 차기 공모 대기 (Next Cycle 2027 Q1/Q2)",
+        "statusLabel": "🔵 Upcoming Cycle (Next Intake 2027 Q1/Q2)",
         "startDate": "2026-08-01",
         "endDate": "2026-11-01",
         "deadlineDisplay": "2026-11-01 (2026 Batch Closed · Next Cycle 2027 Q1)",
@@ -7123,7 +7345,10 @@
           "small_family"
         ],
         "usdaRegion": "mountain"
-      }
+      },
+      "admin_tier": "Regional / State",
+      "region_scope": "Wyoming (Statewide) (Wyoming (WDA / WWDC))",
+      "filing_authority": "Wyoming Department of Agriculture (WDA) & Water Development Commission (WWDC) (Wyoming Water Development Commission)"
     },
     {
       "id": "US-NJ-NJDA-SOILWATER",
@@ -7180,7 +7405,7 @@
         "startDate": "2026-08-01",
         "endDate": "2026-11-30",
         "deadlineDisplay": "2026-11-30",
-        "daysRemaining": 20,
+        "daysRemaining": 19,
         "cycleFrequency": "연 1회 정기 공모"
       },
       "facets": {
@@ -7196,7 +7421,10 @@
           "small_family"
         ],
         "usdaRegion": "northeast"
-      }
+      },
+      "admin_tier": "Regional / State",
+      "region_scope": "New Jersey (Statewide) (New Jersey (NJDA / SADC))",
+      "filing_authority": "New Jersey Department of Agriculture (NJDA) & State Agriculture Development Committee (State Agriculture Development Committee (SADC))"
     },
     {
       "id": "US-CT-DOAG-FARMTRANS",
@@ -7248,7 +7476,7 @@
       "deepGuide": "Prepare a business plan and apply via the State of Connecticut DoAg online portal.",
       "applicationWindow": {
         "status": "upcoming",
-        "statusLabel": "🔵 차기 공모 대기 (Next Cycle 2027 Q1/Q2)",
+        "statusLabel": "🔵 Upcoming Cycle (Next Intake 2027 Q1/Q2)",
         "startDate": "2026-08-15",
         "endDate": "2026-10-28",
         "deadlineDisplay": "2026-10-28 (2026 Batch Closed · Next Cycle 2027 Q1)",
@@ -7269,7 +7497,10 @@
           "small_family"
         ],
         "usdaRegion": "northeast"
-      }
+      },
+      "admin_tier": "Regional / State",
+      "region_scope": "Connecticut (Statewide) (Connecticut (CT DoAg))",
+      "filing_authority": "Connecticut Department of Agriculture (CT DoAg) (Connecticut Department of Agriculture)"
     },
     {
       "id": "US-ME-DACF-AIIP",
@@ -7320,11 +7551,11 @@
       "summary": "Maine DACF grant covering up to 80% ($100,000) for cold-climate high tunnels, LED top-lighting, post-harvest wash/pack lines, and cold storage facilities.",
       "deepGuide": "Submit your proposal through the Maine DACF grants portal before November 10.",
       "applicationWindow": {
-        "status": "closing_soon",
-        "statusLabel": "🟡 공모 마감 임박 (D-13)",
+        "status": "upcoming",
+        "statusLabel": "🔵 Upcoming Cycle (Next Intake 2027 Q1/Q2)",
         "startDate": "2026-08-01",
         "endDate": "2026-11-10",
-        "deadlineDisplay": "2026-11-10",
+        "deadlineDisplay": "2026-11-10 (2026 Batch Closed · Next Cycle 2027 Q1)",
         "daysRemaining": 0,
         "cycleFrequency": "연 1회 가을 정기 공모"
       },
@@ -7342,7 +7573,10 @@
           "beginning_farmer"
         ],
         "usdaRegion": "northeast"
-      }
+      },
+      "admin_tier": "Regional / State",
+      "region_scope": "Maine (Statewide) (Maine (DACF))",
+      "filing_authority": "Maine Department of Agriculture, Conservation and Forestry (DACF) (Maine DACF Bureau of Agriculture)"
     },
     {
       "id": "US-VT-VAAFM-CEAP",
@@ -7389,13 +7623,13 @@
       "portalName": "VAAFM Water Quality Division",
       "contactPhone": "(802) 828-2430",
       "contactEmail": "AGR.WaterQuality@vermont.gov",
-      "linkedCalculator": "mixing_valve.html",
+      "linkedCalculator": "greenhouse-heating-load-thermal-screen-calculator.html",
       "linkedToolTitle": "Fertigation & Valve Calc",
       "summary": "Vermont VAAFM 90% grant ($60,000) for no-till drills, roller crimpers, low-disturbance manure injection toolbars, and cover crop interseeders.",
       "deepGuide": "Apply directly via VAAFM's Water Quality Division online portal.",
       "applicationWindow": {
         "status": "upcoming",
-        "statusLabel": "🔵 차기 공모 대기 (Next Cycle 2027 Q1/Q2)",
+        "statusLabel": "🔵 Upcoming Cycle (Next Intake 2027 Q1/Q2)",
         "startDate": "2026-08-15",
         "endDate": "2026-11-01",
         "deadlineDisplay": "2026-11-01 (2026 Batch Closed · Next Cycle 2027 Q1)",
@@ -7416,7 +7650,10 @@
           "small_family"
         ],
         "usdaRegion": "northeast"
-      }
+      },
+      "admin_tier": "Regional / State",
+      "region_scope": "Vermont (Statewide) (Vermont (VAAFM))",
+      "filing_authority": "Vermont Agency of Agriculture, Food and Markets (VAAFM) (VAAFM Water Quality Division)"
     },
     {
       "id": "US-NH-NHDAMF-SPECIALTY",
@@ -7473,7 +7710,7 @@
         "startDate": "2026-09-01",
         "endDate": "2026-12-05",
         "deadlineDisplay": "2026-12-05",
-        "daysRemaining": 25,
+        "daysRemaining": 24,
         "cycleFrequency": "연 1회 정기 공모"
       },
       "facets": {
@@ -7490,7 +7727,10 @@
           "small_family"
         ],
         "usdaRegion": "northeast"
-      }
+      },
+      "admin_tier": "Regional / State",
+      "region_scope": "New Hampshire (Statewide) (New Hampshire (NHDAMF))",
+      "filing_authority": "New Hampshire Department of Agriculture, Markets & Food (NHDAMF) (NHDAMF Agricultural Development)"
     },
     {
       "id": "US-RI-RIDEM-LASA",
@@ -7547,7 +7787,7 @@
         "startDate": "2026-09-01",
         "endDate": "2026-11-30",
         "deadlineDisplay": "2026-11-30",
-        "daysRemaining": 20,
+        "daysRemaining": 19,
         "cycleFrequency": "연 1회 가을 정기 공모"
       },
       "facets": {
@@ -7564,7 +7804,10 @@
           "small_family"
         ],
         "usdaRegion": "northeast"
-      }
+      },
+      "admin_tier": "Regional / State",
+      "region_scope": "Rhode Island (Statewide) (Rhode Island (RIDEM))",
+      "filing_authority": "Rhode Island Department of Environmental Management (RIDEM) - Division of Agriculture (RIDEM Division of Agriculture)"
     },
     {
       "id": "US-MD-MDA-MACS",
@@ -7617,11 +7860,11 @@
       "deepGuide": "Apply through your local Maryland county Soil Conservation District office.",
       "applicationWindow": {
         "status": "open",
-        "statusLabel": "🟢 체사피크 수계 상시 접수",
+        "statusLabel": "🟢 Open (Active Solicitation)",
         "startDate": "2026-01-01",
         "endDate": "2026-12-31",
         "deadlineDisplay": "Rolling Continuous",
-        "daysRemaining": 51,
+        "daysRemaining": 50,
         "cycleFrequency": "매월 지구별 정기 심사"
       },
       "facets": {
@@ -7638,7 +7881,10 @@
           "small_family"
         ],
         "usdaRegion": "northeast"
-      }
+      },
+      "admin_tier": "Regional / State",
+      "region_scope": "Maryland (Statewide) (Maryland (MDA))",
+      "filing_authority": "Maryland Department of Agriculture (MDA) (MDA Resource Conservation)"
     },
     {
       "id": "US-DE-DDA-WATER",
@@ -7691,7 +7937,7 @@
       "deepGuide": "Enroll with your local county conservation district before the October 31 deadline.",
       "applicationWindow": {
         "status": "upcoming",
-        "statusLabel": "🔵 차기 공모 대기 (Next Cycle 2027 Q1/Q2)",
+        "statusLabel": "🔵 Upcoming Cycle (Next Intake 2027 Q1/Q2)",
         "startDate": "2026-08-01",
         "endDate": "2026-10-31",
         "deadlineDisplay": "2026-10-31 (2026 Batch Closed · Next Cycle 2027 Q1)",
@@ -7712,7 +7958,10 @@
           "small_family"
         ],
         "usdaRegion": "northeast"
-      }
+      },
+      "admin_tier": "Regional / State",
+      "region_scope": "Delaware (Statewide) (Delaware (DDA / DNREC))",
+      "filing_authority": "Delaware Department of Agriculture (DDA) & DNREC Division of Watershed Stewardship (Delaware Department of Agriculture Conservation)"
     },
     {
       "id": "US-VA-DCR-VACS",
@@ -7765,11 +8014,11 @@
       "deepGuide": "Sign up at your local Virginia Soil and Water Conservation District (SWCD) office.",
       "applicationWindow": {
         "status": "open",
-        "statusLabel": "🟢 버지니아 VACS 상시 접수",
+        "statusLabel": "🟢 Open (Active Solicitation)",
         "startDate": "2026-07-01",
         "endDate": "2027-06-30",
         "deadlineDisplay": "Rolling Batch Review",
-        "daysRemaining": 232,
+        "daysRemaining": 231,
         "cycleFrequency": "매월 지구별 정기 심사"
       },
       "facets": {
@@ -7786,7 +8035,10 @@
           "small_family"
         ],
         "usdaRegion": "northeast"
-      }
+      },
+      "admin_tier": "Regional / State",
+      "region_scope": "Virginia (Statewide) (Virginia (VDACS / DCR))",
+      "filing_authority": "Virginia Department of Conservation and Recreation (DCR) & VDACS (Virginia DCR Soil and Water Conservation)"
     },
     {
       "id": "US-WV-WVCA-AGEP",
@@ -7839,7 +8091,7 @@
       "deepGuide": "Apply directly through your local West Virginia conservation district office.",
       "applicationWindow": {
         "status": "upcoming",
-        "statusLabel": "🔵 차기 공모 대기 (Next Cycle 2027 Q1/Q2)",
+        "statusLabel": "🔵 Upcoming Cycle (Next Intake 2027 Q1/Q2)",
         "startDate": "2026-08-01",
         "endDate": "2026-10-31",
         "deadlineDisplay": "2026-10-31 (2026 Batch Closed · Next Cycle 2027 Q1)",
@@ -7860,7 +8112,10 @@
           "small_family"
         ],
         "usdaRegion": "northeast"
-      }
+      },
+      "admin_tier": "Regional / State",
+      "region_scope": "West Virginia (Statewide) (West Virginia (WVDA / WVCA))",
+      "filing_authority": "West Virginia Department of Agriculture (WVDA) & West Virginia Conservation Agency (WVDA & WV Conservation Agency)"
     },
     {
       "id": "US-HI-HDOA-MICRO",
@@ -7907,17 +8162,17 @@
       "portalName": "Hawaii Department of Agriculture Agricultural Development",
       "contactPhone": "(808) 973-9594",
       "contactEmail": "hdoa.grants@hawaii.gov",
-      "linkedCalculator": "solar-pv-battery-microgrid-irrigation-payback-calculator.html",
+      "linkedCalculator": "greenhouse-heating-load-thermal-screen-calculator.html",
       "linkedToolTitle": "Solar Water Pump & Catchment Calc",
       "summary": "Hawaii HDOA 100% grant providing up to $10,000-$50,000 for solar agricultural water pumps, rainwater catchment cisterns, automated drip, and hydroponic systems.",
       "deepGuide": "Apply online through the State of Hawaii HDOA web portal with an active tax clearance certificate.",
       "applicationWindow": {
         "status": "closing_soon",
-        "statusLabel": "🟡 공모 마감 임박 (D-14)",
+        "statusLabel": "🟡 Closing Soon (D-5)",
         "startDate": "2026-08-15",
         "endDate": "2026-11-15",
         "deadlineDisplay": "2026-11-15",
-        "daysRemaining": 5,
+        "daysRemaining": 4,
         "cycleFrequency": "연 1회 정기 공모"
       },
       "facets": {
@@ -7934,7 +8189,10 @@
           "small_family"
         ],
         "usdaRegion": "pacific"
-      }
+      },
+      "admin_tier": "Regional / State",
+      "region_scope": "Hawaii (Statewide) (Hawaii (HDOA))",
+      "filing_authority": "Hawaii Department of Agriculture (HDOA) (Hawaii Department of Agriculture Agricultural Development)"
     },
     {
       "id": "US-AK-DOA-MICRO",
@@ -7991,7 +8249,7 @@
         "startDate": "2026-09-01",
         "endDate": "2026-11-30",
         "deadlineDisplay": "2026-11-30",
-        "daysRemaining": 20,
+        "daysRemaining": 19,
         "cycleFrequency": "연 1회 정기 공모"
       },
       "facets": {
@@ -8008,7 +8266,10 @@
           "small_family"
         ],
         "usdaRegion": "pacific"
-      }
+      },
+      "admin_tier": "Regional / State",
+      "region_scope": "Alaska (Statewide) (Alaska (AKDOA))",
+      "filing_authority": "Alaska Department of Natural Resources - Division of Agriculture (AKDOA) (Alaska Division of Agriculture)"
     },
     {
       "id": "DE-BY-BAYSL-GARTENBAU",
@@ -8063,11 +8324,11 @@
       "deepGuide": "Log into iBALIS with your Bavarian Betriebsnummer and PIN. Consult your local Amt für Ernährung, Landwirtschaft und Forsten (AELF) Gartenbauzentren (e.g., AELF Fürth / Kitzingen / Landshut) prior to filing.",
       "applicationWindow": {
         "status": "open",
-        "statusLabel": "🟢 연중 상시 접수 (iBALIS Open Intake)",
+        "statusLabel": "🟢 Open (Active Solicitation)",
         "startDate": "2026-01-01",
         "endDate": "2026-12-31",
         "deadlineDisplay": "2026-12-31 (Continuous iBALIS Bavaria Submission)",
-        "daysRemaining": 51,
+        "daysRemaining": 50,
         "cycleFrequency": "Year-Round State Budget Window",
         "submissionPortal": "StMELF iBALIS Portal"
       },
@@ -8109,7 +8370,10 @@
           "Combining BaySL with federal BLE Energieeffizienz on the exact same invoice line item."
         ],
         "stackingRules": "Can be combined with Bavarian AFP for larger structural glasshouse investments (>€400k) on separate subsystems and Rentenbank promotional loans."
-      }
+      },
+      "admin_tier": "Regional / State",
+      "region_scope": "Bavaria (Freising / Weihenstephan / München) (Germany (Bayern StMELF / BaySL))",
+      "filing_authority": "Bayerisches Staatsministerium für Ernährung, Landwirtschaft, Forsten und Tourismus (StMELF) (iBALIS Bayern Förderportal)"
     },
     {
       "id": "DE-BAFA-EEW-MODUL4",
@@ -8157,17 +8421,17 @@
       "portalName": "BAFA Online-Portal / KfW Bank",
       "contactPhone": "+49 6196 908-1880",
       "contactEmail": "eew@bafa.bund.de",
-      "linkedCalculator": "aquifer-thermal-energy-storage-ates-heat-pump.html",
+      "linkedCalculator": "eu-greenhouse-energy-hofnachfolge-roi-simulator.html",
       "linkedToolTitle": "Industrial Heat Pump & ATES Calc",
       "summary": "Germany's high-ceiling federal industrial & CEA decarbonization grant covering up to 40%-55% (up to €15M) for large heat pumps, biomass heating, and process waste-heat recovery.",
       "deepGuide": "For pure agricultural primary producers, check whether BLE Bundesprogramm Energieeffizienz or BAFA EEW offers the higher rate for your specific NACE/WZ 2008 code; food/packhouse and indoor vertical farms frequently leverage BAFA EEW.",
       "applicationWindow": {
         "status": "open",
-        "statusLabel": "🟢 연중 상시 접수 (Continuous Federal Intake)",
+        "statusLabel": "🟢 Open (Active Solicitation)",
         "startDate": "2026-01-01",
         "endDate": "2026-12-31",
         "deadlineDisplay": "2026-12-31 (Continuous BAFA Online Intake)",
-        "daysRemaining": 51,
+        "daysRemaining": 50,
         "cycleFrequency": "Continuous Federal Rolling Intake",
         "submissionPortal": "BAFA ELAN-K2 Portal"
       },
@@ -8208,7 +8472,10 @@
           "Double-claiming with BLE Bundesprogramm Energieeffizienz on the same thermal unit."
         ],
         "stackingRules": "Can be financed either as a direct BAFA cash grant OR as a KfW 295 promotional loan with repayment bonus (Tilgungszuschuss)."
-      }
+      },
+      "admin_tier": "Regional / State",
+      "region_scope": "Germany (Federal BAFA / KfW) (Germany (BAFA / BMWK))",
+      "filing_authority": "Bundesamt für Wirtschaft und Ausfuhrkontrolle (BAFA) & KfW Bankengruppe (BAFA Online-Portal / KfW Bank)"
     },
     {
       "id": "DE-BLE-TORFMINDERUNG",
@@ -8256,7 +8523,7 @@
       "portalName": "BLE Projektträger / easy-Online",
       "contactPhone": "+49 228 6845-2931",
       "contactEmail": "torfminderung@ble.de",
-      "linkedCalculator": "soil-matrix-water-potential-irrigation-trigger.html",
+      "linkedCalculator": "eu-greenhouse-energy-hofnachfolge-roi-simulator.html",
       "linkedToolTitle": "Substrate Matric Potential Calc",
       "summary": "Federal German climate grant supporting commercial nurseries and greenhouses transitioning to peat-free substrates (wood fiber, coir, bark humus) with precision fertigation and moisture telemetry.",
       "deepGuide": "Because wood fiber and bark substrates have lower buffer capacity and higher N-immobilization than peat, BLE heavily favors projects pairing substrate substitution with automated FDR moisture and EC fertigation control.",
@@ -8266,7 +8533,7 @@
         "startDate": "2026-01-01",
         "endDate": "2026-12-31",
         "deadlineDisplay": "2026-12-31 (Ongoing BMEL Torfminderungsstrategie)",
-        "daysRemaining": 51,
+        "daysRemaining": 50,
         "cycleFrequency": "Rolling Federal Climate Initiative",
         "submissionPortal": "BLE easy-Online Portal"
       },
@@ -8306,7 +8573,10 @@
           "Proposals that fail to document baseline peat consumption or lack scientific monitoring."
         ],
         "stackingRules": "Complements state AFP / BaySL closed-loop irrigation grants on separate hardware components."
-      }
+      },
+      "admin_tier": "Federal",
+      "region_scope": "Germany (Federal BMEL / BLE) (Germany (BMEL / BLE Torfminderung))",
+      "filing_authority": "Bundesministerium für Ernährung und Landwirtschaft (BMEL) / BLE (BLE Projektträger / easy-Online)"
     },
     {
       "id": "DE-RENTENBANK-ZUKUNFT",
@@ -8360,11 +8630,11 @@
       "deepGuide": "Always combine Rentenbank 'Junglandwirte' or 'Nachhaltigkeit' loans with BLE Energieeffizienz (40% grant) or state AFP (30% grant). Rentenbank explicitly permits stacking its subsidized loans with federal/state grants.",
       "applicationWindow": {
         "status": "rolling",
-        "statusLabel": "🔄 연중 상시 대출 접수 (Daily Hausbank Intake)",
+        "statusLabel": "🟢 Open (Active Solicitation)",
         "startDate": "2026-01-01",
         "endDate": "2026-12-31",
         "deadlineDisplay": "Year-Round Daily Processing via Hausbank",
-        "daysRemaining": 51,
+        "daysRemaining": 50,
         "cycleFrequency": "Continuous Daily Refinancing Window",
         "submissionPortal": "Hausbank (Sparkasse / VR-Bank / Rabobank)"
       },
@@ -8406,7 +8676,10 @@
           "Signing binding construction contracts before the Hausbank logs the formal Rentenbank application."
         ],
         "stackingRules": "100% stackable as the co-financing vehicle alongside BLE Bundesprogramm Energieeffizienz, AFP, and BaySL grants."
-      }
+      },
+      "admin_tier": "Federal",
+      "region_scope": "Germany (Federal Rentenbank) (Germany (Rentenbank))",
+      "filing_authority": "Landwirtschaftliche Rentenbank (Anstalt des öffentlichen Rechts, Frankfurt am Main) (Rentenbank / Hausbank Portal)"
     },
     {
       "id": "DE-NDS-AFP-GARTENBAU",
@@ -8453,7 +8726,7 @@
       "portalName": "LWK Niedersachsen Förderportal",
       "contactPhone": "+49 441 801-0",
       "contactEmail": "info@lwk-niedersachsen.de",
-      "linkedCalculator": "greenhouse-irrigation-run-time-leaching-fraction-calculator.html",
+      "linkedCalculator": "eu-greenhouse-energy-hofnachfolge-roi-simulator.html",
       "linkedToolTitle": "Irrigation & Leaching Calc",
       "summary": "Lower Saxony's premier horticultural CAPEX grant supporting the Papenburg vegetable glasshouse and Ammerland nursery clusters with up to 40% funding on €2.5M investments.",
       "deepGuide": "Coordinate early with the LWK Niedersachsen Zentrum für Gartenbau und Technik (Ahlem / Bad Zwischenahn) to maximize environmental ranking points before the Stichtag.",
@@ -8463,7 +8736,7 @@
         "startDate": "2027-01-15",
         "endDate": "2027-03-31",
         "deadlineDisplay": "Spring 2027 Cut-Off Window",
-        "daysRemaining": 141,
+        "daysRemaining": 140,
         "cycleFrequency": "Biannual Stichtag Selection",
         "submissionPortal": "LWK Niedersachsen Bewilligungsstelle"
       },
@@ -8503,7 +8776,10 @@
           "Submitting an incomplete Baugenehmigung at the Stichtag cut-off."
         ],
         "stackingRules": "Combinable with Rentenbank loans and Junglandwirte-Niederlassungsprämie."
-      }
+      },
+      "admin_tier": "Regional / State",
+      "region_scope": "Lower Saxony (Papenburg / Oldenburg / Hannover) (Germany (LWK Niedersachsen AFP))",
+      "filing_authority": "Landwirtschaftskammer Niedersachsen (LWK Niedersachsen) / ML Niedersachsen (LWK Niedersachsen Förderportal)"
     },
     {
       "id": "DE-BW-AFP-GARTENBAU",
@@ -8550,17 +8826,17 @@
       "portalName": "FIONA Baden-Württemberg Portal",
       "contactPhone": "+49 711 126-0",
       "contactEmail": "poststelle@mlr.bwl.de",
-      "linkedCalculator": "semi-closed-greenhouse-air-treatment-unit-mollier.html",
+      "linkedCalculator": "eu-greenhouse-energy-hofnachfolge-roi-simulator.html",
       "linkedToolTitle": "Semi-Closed ATU Mollier Calc",
       "summary": "Baden-Württemberg's flagship grant for protected vegetable and specialty crop horticulture (Insel Reichenau, Kurpfalz, Lake Constance), funding up to 35%-45% of modern glasshouses and closed-loop water systems.",
       "deepGuide": "Work with an accredited Landesanstalt für Landwirtschaft (LEL Schwäbisch Gmünd) or LVG Heidelberg advisor to prepare the mandatory Unternehmensentwicklungsplan (UEP).",
       "applicationWindow": {
         "status": "open",
-        "statusLabel": "🟢 상시 접수 후 분기별 심사 (FIONA Cut-Off)",
+        "statusLabel": "🟢 Open (Active Solicitation)",
         "startDate": "2026-09-01",
         "endDate": "2027-02-15",
         "deadlineDisplay": "2027-02-15 (Winter Selection Cut-Off)",
-        "daysRemaining": 97,
+        "daysRemaining": 96,
         "cycleFrequency": "Biannual Selection Cut-Offs",
         "submissionPortal": "FIONA Baden-Württemberg"
       },
@@ -8601,7 +8877,10 @@
           "Commencing groundwork prior to Regierungspräsidium written approval."
         ],
         "stackingRules": "Stackable with Rentenbank promotional loans and BW Meistergründungsprämie (€10,000)."
-      }
+      },
+      "admin_tier": "Regional / State",
+      "region_scope": "Baden-Württemberg (Reichenau / Bodensee / Stuttgart) (Germany (MLR Baden-Württemberg AFP))",
+      "filing_authority": "Ministerium für Ernährung, Ländlichen Raum und Verbraucherschutz Baden-Württemberg (MLR) (FIONA Baden-Württemberg Portal)"
     },
     {
       "id": "DE-AFBG-MEISTER-NRW",
@@ -8653,11 +8932,11 @@
       "deepGuide": "Under the reformed AFBG, the monthly living allowance (Unterhaltsbeitrag) during full-time Fachschule (e.g., 1-year Meisterschule in Essen, Veitshöchheim, or Hohenheim) is a 100% non-repayable grant! Upon passing the Gärtnermeister exam, 50% of the remaining course loan is forgiven, and another 100% is forgiven if you establish or take over a horticultural business within 3 years.",
       "applicationWindow": {
         "status": "open",
-        "statusLabel": "🟢 연중 상시 법적 권리 (100% Statutory Entitlement)",
+        "statusLabel": "🟢 Open (Active Solicitation)",
         "startDate": "2026-01-01",
         "endDate": "2026-12-31",
         "deadlineDisplay": "Year-Round (Submit before Meisterschule Semester Start)",
-        "daysRemaining": 51,
+        "daysRemaining": 50,
         "cycleFrequency": "Permanent Statutory Entitlement",
         "submissionPortal": "AFBG Online (aufstiegs-bafoeg.de)"
       },
@@ -8695,7 +8974,10 @@
           "Applying for the Unterhaltsbeitrag retroactively after the school semester has ended (monthly living grant starts only from the month of application)."
         ],
         "stackingRules": "Directly unlocks eligibility for GAP Junglandwirte-Niederlassungsprämie (€70,000), AFP +10% Young Farmer Bonus, and Rentenbank Junglandwirte loans!"
-      }
+      },
+      "admin_tier": "Federal",
+      "region_scope": "Germany (Federal BMBF + Bayern/NRW/BW Meisterbonus) (Germany (AFBG Aufstiegs-BAföG & Meisterprämie))",
+      "filing_authority": "Bundesministerium für Bildung und Forschung (BMBF) & Länder (StMELF Bayern / MUNV NRW / MLR BW) (AFBG Digital Portal / LWK Meisterbonus)"
     },
     {
       "id": "JP-MAFF-MIDORI-GX",
@@ -8743,7 +9025,7 @@
       "portalName": "e-MAFF / Prefectural Horticultural Division",
       "contactPhone": "+81-3-3502-8111",
       "contactEmail": "midori_gx@maff.go.jp",
-      "linkedCalculator": "crops/commercial-strawberry-greenhouse-climate-dli-guide.html",
+      "linkedCalculator": "greenhouse-heating-load-thermal-screen-calculator.html",
       "linkedToolTitle": "Strawberry Crown & DLI Guide",
       "summary": "Japan's flagship 'Midori Strategy' decarbonization grant funding 50% (up to ¥100M) of heat pumps, strawberry crown-heating systems, UV-B/UV-C pathogen control, and semi-closed CO2 greenhouses.",
       "deepGuide": "Obtain 'Midori Certification' (みどり認定) from your prefecture first! Certified Midori growers receive priority points across all MAFF grants plus special tax depreciation (みどり投資促進税制) allowing immediate 50% bonus depreciation on smart greenhouse hardware.",
@@ -8753,7 +9035,7 @@
         "startDate": "2026-11-01",
         "endDate": "2027-02-28",
         "deadlineDisplay": "2027-02-28 (FY2026 Supplementary / FY2027 Initial Call)",
-        "daysRemaining": 110,
+        "daysRemaining": 109,
         "cycleFrequency": "Biannual (Initial Budget + Autumn Supplementary Budget 補正予算)",
         "submissionPortal": "e-MAFF / Prefectural Midori Council"
       },
@@ -8795,7 +9077,10 @@
           "Placing equipment orders before formal Prefectural Grant Award Notice (交付決定前着工の禁止)."
         ],
         "stackingRules": "Stackable with the Midori Investment Promotion Tax System (みどり投資促進税制) and JFC interest-free Super L Loans."
-      }
+      },
+      "admin_tier": "Federal",
+      "region_scope": "Japan (Nationwide / MAFF Midori GX) (Japan (農林水産省 みどりの食料システム))",
+      "filing_authority": "Ministry of Agriculture, Forestry and Fisheries (農林水産省 農産局・環境バイオマス政策課) (e-MAFF / Prefectural Horticultural Division)"
     },
     {
       "id": "JP-MAFF-STRONG-AGRI",
@@ -8853,7 +9138,7 @@
         "startDate": "2026-10-15",
         "endDate": "2027-01-31",
         "deadlineDisplay": "2027-01-31 (Prefectural Demand Survey & Allocation)",
-        "daysRemaining": 82,
+        "daysRemaining": 81,
         "cycleFrequency": "Biannual (Main Budget + Supplementary Budget)",
         "submissionPortal": "Municipal / Prefectural Agriculture Department"
       },
@@ -8894,7 +9179,10 @@
           "Exceeding MAFF's per-square-meter unit cost ceiling without engineering justification."
         ],
         "stackingRules": "Can be financed alongside Japan Finance Corporation (日本政策金融公庫) long-term facility loans and prefectural top-up subsidies."
-      }
+      },
+      "admin_tier": "Federal",
+      "region_scope": "Japan (Nationwide / Next-Gen Facility Horticulture) (Japan (農林水産省 強い農業づくり))",
+      "filing_authority": "Ministry of Agriculture, Forestry and Fisheries (農林水産省 農産局園芸作物課) (Prefectural / Municipal Agricultural Administration)"
     },
     {
       "id": "JP-MAFF-FUEL-SAFETY",
@@ -8950,7 +9238,7 @@
         "startDate": "2026-10-01",
         "endDate": "2027-01-20",
         "deadlineDisplay": "2027-01-20 (Winter Heating Season Batch)",
-        "daysRemaining": 71,
+        "daysRemaining": 70,
         "cycleFrequency": "Annual Autumn/Winter Solicitation",
         "submissionPortal": "Prefectural Facility Horticulture Council (都道府県施設園芸支援協議会)"
       },
@@ -8988,7 +9276,10 @@
           "Failing to submit monthly fuel purchase receipts during the winter heating season."
         ],
         "stackingRules": "Fuel price compensation is 100% compatible with MAFF Midori GX and Smart Agriculture equipment grants on distinct hardware items."
-      }
+      },
+      "admin_tier": "Federal",
+      "region_scope": "Japan (Nationwide / Facility Horticulture Safety Net) (Japan (施設園芸セーフティネット・省エネ支援))",
+      "filing_authority": "Japan Greenhouse Horticulture Association (一般社団法人日本施設園芸協会 JGHA) / MAFF (JGHA / Prefectural Facility Horticulture Support Council)"
     },
     {
       "id": "JP-NARO-BRAIN-SMART",
@@ -9045,7 +9336,7 @@
         "startDate": "2026-12-15",
         "endDate": "2027-02-15",
         "deadlineDisplay": "Winter 2026/2027 e-Rad Public Solicitation",
-        "daysRemaining": 97,
+        "daysRemaining": 96,
         "cycleFrequency": "Annual National R&D & Field Deployment Call",
         "submissionPortal": "e-Rad (https://www.e-rad.go.jp/)"
       },
@@ -9085,7 +9376,10 @@
           "Incomplete e-Rad researcher ID registration prior to the 17:00 JST closing timestamp."
         ],
         "stackingRules": "Graduating technologies receive fast-track listing for MAFF 50% Smart Agriculture implementation subsidies and JFC low-interest financing."
-      }
+      },
+      "admin_tier": "Federal",
+      "region_scope": "Japan (Tsukuba NARO / BRAIN National R&D & Commercialization) (Japan (農研機構 NARO Tsukuba / BRAIN))",
+      "filing_authority": "National Agriculture and Food Research Organization (農研機構 NARO, Tsukuba) / Bio-oriented Technology Research Advancement Institution (BRAIN) (e-Rad (府省共通研究開発管理システム) / NARO BRAIN)"
     },
     {
       "id": "JP-METI-SII-PFAL",
@@ -9129,7 +9423,7 @@
       "portalName": "SII Energy Efficiency Grant Portal",
       "contactPhone": "+81-3-5565-4460",
       "contactEmail": "info@sii.or.jp",
-      "linkedCalculator": "led-supplemental-lighting-dli-energy-calculator.html",
+      "linkedCalculator": "greenhouse-heating-load-thermal-screen-calculator.html",
       "linkedToolTitle": "LED DLI & PPFD Energy Calc",
       "summary": "METI's major industrial energy grant covering up to 50% of high-efficiency HVAC heat pumps, chillers, and LED lighting upgrades for commercial plant factories and indoor CEA.",
       "deepGuide": "Under Track C (指定設備導入事業), selecting pre-certified high-COP heat pumps and chillers from the SII approved catalog dramatically simplifies the application without requiring an external energy auditor.",
@@ -9139,7 +9433,7 @@
         "startDate": "2027-03-01",
         "endDate": "2027-04-25",
         "deadlineDisplay": "Spring 2027 Round 1 Solicitation",
-        "daysRemaining": 166,
+        "daysRemaining": 165,
         "cycleFrequency": "2-3 Rounds Annually",
         "submissionPortal": "SII Online Portal"
       },
@@ -9178,7 +9472,10 @@
           "Ordering equipment prior to SII 交付決定 (Grant Award)."
         ],
         "stackingRules": "Cannot be stacked with MAFF grants on the same invoice, but allows plant factories ineligible for traditional farmland grants to access 50% CAPEX funding."
-      }
+      },
+      "admin_tier": "Federal",
+      "region_scope": "Japan (Nationwide / METI SII Plant Factory & CEA Energy) (Japan (経済産業省 SII 省エネ補助金))",
+      "filing_authority": "Ministry of Economy, Trade and Industry (経済産業省) / Sustainable open Innovation Initiative (SII 環境共創イニシアチブ) (SII Energy Efficiency Grant Portal)"
     },
     {
       "id": "JP-MAFF-NEXT-GROWER",
@@ -9235,7 +9532,7 @@
         "startDate": "2026-10-01",
         "endDate": "2027-02-28",
         "deadlineDisplay": "2027-02-28 (FY2027 Spring Municipal Certification)",
-        "daysRemaining": 110,
+        "daysRemaining": 109,
         "cycleFrequency": "Biannual Municipal Selection",
         "submissionPortal": "Municipal Agriculture Division (市町村農政課)"
       },
@@ -9274,7 +9571,10 @@
           "Purchasing greenhouse structures before obtaining formal 認定新規就農者 certification and grant approval."
         ],
         "stackingRules": "Management Development Grant (75% CAPEX) + Living Stipend (¥1.5M/yr x 3 yrs) + JFC 0% Youth Loan (up to ¥37M) are designed to be stacked together."
-      }
+      },
+      "admin_tier": "Federal",
+      "region_scope": "Japan (Nationwide / Young & New Farmer Startup) (Japan (農林水産省 新規就農者育成))",
+      "filing_authority": "Ministry of Agriculture, Forestry and Fisheries (農林水産省 経営局就農・女性課) (Municipal Agricultural Department / National Chamber of Agriculture)"
     },
     {
       "id": "NL-RVO-MEI",
@@ -9322,7 +9622,7 @@
       "portalName": "Mijn RVO Portal",
       "contactPhone": "+31 88 042 42 42",
       "contactEmail": "mei@rvo.nl",
-      "linkedCalculator": "semi-closed-greenhouse-air-treatment-unit-mollier.html",
+      "linkedCalculator": "eu-greenhouse-energy-hofnachfolge-roi-simulator.html",
       "linkedToolTitle": "Semi-Closed ATU Mollier Simulator",
       "summary": "The Netherlands' premier €1.5M innovation grant funding up to 50% of semi-closed Air Treatment Unit (ATU) greenhouses, latent-heat dehumidification, and fossil-free glasshouse concepts.",
       "deepGuide": "Directly matched to our Middenmeer (Agriport A7) and Westland visitors: use our Semi-Closed ATU Mollier Simulator to quantify sensible vs. latent enthalpy recovery (kWh/m2/yr) for the mandatory RVO thermodynamic dossier.",
@@ -9332,7 +9632,7 @@
         "startDate": "2027-04-01",
         "endDate": "2027-06-30",
         "deadlineDisplay": "Q2 2027 Annual MEI Tender Window",
-        "daysRemaining": 232,
+        "daysRemaining": 231,
         "cycleFrequency": "Annual Competitive Tender",
         "submissionPortal": "Mijn RVO (eHerkenning 3)"
       },
@@ -9370,7 +9670,10 @@
           "Applying for a technology that has already exceeded the RVO market-penetration count cap."
         ],
         "stackingRules": "Combinable with EIA (40% tax deduction) and Groenlabel Kas (MIA/Vamil) within EU agricultural state-aid ceilings."
-      }
+      },
+      "admin_tier": "Federal",
+      "region_scope": "Netherlands (Middenmeer / Westland / Oostland) (Netherlands (RVO MEI Glastuinbouw))",
+      "filing_authority": "Rijksdienst voor Ondernemend Nederland (RVO) / Kas als Energiebron (Mijn RVO Portal)"
     },
     {
       "id": "NL-RVO-EIA-MIA",
@@ -9416,17 +9719,17 @@
       "portalName": "Mijn RVO eLoket",
       "contactPhone": "+31 88 042 42 42",
       "contactEmail": "eia@rvo.nl",
-      "linkedCalculator": "led-supplemental-lighting-dli-energy-calculator.html",
+      "linkedCalculator": "eu-greenhouse-energy-hofnachfolge-roi-simulator.html",
       "linkedToolTitle": "LED Efficacy & DLI Calc",
       "summary": "The backbone fiscal incentive of Dutch horticulture: deduct 40% of energy-efficient LED, heat pump, and dehumidifier investments (EIA) plus up to 45% of Groenlabel Kas sustainable greenhouses (MIA) directly from taxable profit.",
       "deepGuide": "CRITICAL RULE: Unlike direct grants where you apply BEFORE ordering, for EIA and MIA/Vamil you apply AFTER signing the purchase order, MUST submit via Mijn RVO within strictly 3 months of the order date!",
       "applicationWindow": {
         "status": "open",
-        "statusLabel": "🟢 연중 상시 세제 혜택 (File within 3 Months of Order)",
+        "statusLabel": "🟢 Open (Active Solicitation)",
         "startDate": "2026-01-01",
         "endDate": "2026-12-31",
         "deadlineDisplay": "Continuous (Strictly within 3 months of purchase contract)",
-        "daysRemaining": 51,
+        "daysRemaining": 50,
         "cycleFrequency": "Year-Round Statutory Tax Entitlement",
         "submissionPortal": "Mijn RVO Portal"
       },
@@ -9467,7 +9770,10 @@
           "Missing the 3-month post-contract filing deadline by even 1 day results in automatic statutory rejection."
         ],
         "stackingRules": "EIA CAN be stacked with EG-subsidie or MEI-subsidie! (You simply deduct the received cash grant from the gross investment amount before applying the 40% EIA deduction)."
-      }
+      },
+      "admin_tier": "Federal",
+      "region_scope": "Netherlands (Nationwide Fiscal Entitlement) (Netherlands (RVO EIA 40% & MIA/Vamil Groenlabel Kas))",
+      "filing_authority": "Rijksdienst voor Ondernemend Nederland (RVO) & Belastingdienst (Mijn RVO eLoket)"
     },
     {
       "id": "NL-RVO-SWG",
@@ -9511,7 +9817,7 @@
       "portalName": "Mijn RVO Portal",
       "contactPhone": "+31 88 042 42 42",
       "contactEmail": "glastuinbouw@rvo.nl",
-      "linkedCalculator": "aquifer-thermal-energy-storage-ates-heat-pump.html",
+      "linkedCalculator": "eu-greenhouse-energy-hofnachfolge-roi-simulator.html",
       "linkedToolTitle": "ATES & Geothermal Heat Calc",
       "summary": "Dutch capital grant funding up to €7.5M (30%-50%) for glasshouse enterprises and clusters connecting to deep geothermal doublets, residual heat networks, and collective seasonal thermal storage.",
       "deepGuide": "Designed to bridge the internal glasshouse adaptation costs (low-temperature heating pipes, heat exchangers, buffer tanks) alongside SDE++ geothermal production wells.",
@@ -9521,7 +9827,7 @@
         "startDate": "2026-09-01",
         "endDate": "2027-01-31",
         "deadlineDisplay": "2027-01-31 (RVO Glastuinbouw Energy Transition)",
-        "daysRemaining": 82,
+        "daysRemaining": 81,
         "cycleFrequency": "Annual Cluster Infrastructure Call",
         "submissionPortal": "Mijn RVO Portal"
       },
@@ -9558,7 +9864,10 @@
           "Commencing pipeline installation before RVO grant submission."
         ],
         "stackingRules": "Complements SDE++ (which funds the geothermal well operator) by funding the grower's on-site heat connection and LT pipe retrofit."
-      }
+      },
+      "admin_tier": "Federal",
+      "region_scope": "Netherlands (Geothermal & District Heat Clusters) (Netherlands (RVO SWG Warmtevoorziening))",
+      "filing_authority": "Rijksdienst voor Ondernemend Nederland (RVO) (Mijn RVO Portal)"
     },
     {
       "id": "FR-AGRIMER-SERRE",
@@ -9606,17 +9915,17 @@
       "portalName": "FranceAgriMer Téléprocédures & ADEME Agir",
       "contactPhone": "+33 1 73 30 30 00",
       "contactEmail": "aide-investissement@franceagrimer.fr",
-      "linkedCalculator": "semi-closed-greenhouse-air-treatment-unit-mollier.html",
+      "linkedCalculator": "eu-greenhouse-energy-hofnachfolge-roi-simulator.html",
       "linkedToolTitle": "Semi-Closed ATU Mollier Simulator",
       "summary": "France's flagship greenhouse modernization and decarbonization framework (FranceAgriMer + ADEME Fonds Chaleur + CEE) funding 30%-50% of semi-closed ATU greenhouses, thermal screens, heat pumps, and tensiometric irrigation across Provence (Avignon), Nantes, and Brittany.",
       "deepGuide": "Directly tailored to our Avignon (INRAE PACA / Provence) visitors: combine FranceAgriMer's direct investment grant with France's standardized Energy Savings Certificates (Fiches CEE Agriculture: AGRI-TH-102 for thermal screens, AGRI-EQ-104 for dehumidification heat pumps, AGRI-SE-101 for climate computers) to cover up to 50%-65% of total CAPEX!",
       "applicationWindow": {
         "status": "open",
-        "statusLabel": "🟢 프랑스 2030 / CEE 상시 접수 중 (Guichet FranceAgriMer & CEE Open)",
+        "statusLabel": "🟢 Open (Active Solicitation)",
         "startDate": "2026-01-01",
         "endDate": "2026-12-31",
         "deadlineDisplay": "2026-12-31 (France 2030 & 6th Period CEE Entitlement)",
-        "daysRemaining": 51,
+        "daysRemaining": 50,
         "cycleFrequency": "Rolling Guichet + Permanent CEE Certificates",
         "submissionPortal": "FranceAgriMer e-Services (pad.franceagrimer.fr)"
       },
@@ -9657,7 +9966,10 @@
           "Signing the Devis or paying a deposit before the official FranceAgriMer digital timestamp (Accusé de réception)."
         ],
         "stackingRules": "Stack FranceAgriMer regional/national grants + ADEME Fonds Chaleur (for biomass/geothermal) + CEE energy certificates within EU agricultural state-aid limits."
-      }
+      },
+      "admin_tier": "Regional / State",
+      "region_scope": "France (Avignon PACA / Pays de la Loire / Bretagne / Nationwide) (France (FranceAgriMer / France 2030 & ADEME))",
+      "filing_authority": "FranceAgriMer (Ministère de l'Agriculture et de la Souveraineté Alimentaire) & ADEME (FranceAgriMer Téléprocédures & ADEME Agir)"
     },
     {
       "id": "ES-MAPA-PERTE-INVERNADEROS",
@@ -9705,7 +10017,7 @@
       "portalName": "Sede Electrónica MAPA / GVA Generalitat Valenciana / Junta de Andalucía",
       "contactPhone": "+34 91 347 50 00",
       "contactEmail": "informacion@mapa.es",
-      "linkedCalculator": "soil-matrix-water-potential-irrigation-trigger.html",
+      "linkedCalculator": "eu-greenhouse-energy-hofnachfolge-roi-simulator.html",
       "linkedToolTitle": "Soil Matric Potential & Drip Calc",
       "summary": "Spain's premier greenhouse modernization grant (Real Decreto MAPA / PEPAC) funding 40% to 80% (up to €3M–€15M) for multi-tunnel greenhouses, precision drip/hydroponics, rainwater basins, and solar irrigation in Valencia, Almería, and Murcia.",
       "deepGuide": "Directly tailored to our Valencia (Comunitat Valenciana) and Mediterranean visitors: request the mandatory 'Acta de No Inicio' inspection from your Conselleria de Agricultura BEFORE moving any earth or ordering greenhouse steel.",
@@ -9715,7 +10027,7 @@
         "startDate": "2026-09-15",
         "endDate": "2027-01-31",
         "deadlineDisplay": "2027-01-31 (PEPAC / GVA Valencia & Andalucía Window)",
-        "daysRemaining": 82,
+        "daysRemaining": 81,
         "cycleFrequency": "Annual PEPAC Autonomous Community Call",
         "submissionPortal": "Sede Electrónica GVA / Junta de Andalucía"
       },
@@ -9757,7 +10069,10 @@
           "Lacking a valid legal water right concession from the Confederación Hidrográfica."
         ],
         "stackingRules": "Can be paired with OPFH Operational Funds (Fondos Operativos 50% EU match on distinct investments) and ICO-MAPA-SAECA subsidized credit."
-      }
+      },
+      "admin_tier": "Federal",
+      "region_scope": "Spain (Comunitat Valenciana / Andalucía Almería / Región de Murcia) (Spain (MAPA / PERTE Invernaderos & Regadíos))",
+      "filing_authority": "Ministerio de Agricultura, Pesca y Alimentación (MAPA) & Comunidades Autónomas (GVA Valencia / Junta de Andalucía) (Sede Electrónica MAPA / GVA Generalitat Valenciana / Junta de Andalucía)"
     },
     {
       "id": "KR-MAFRA-FACILITY-MOD",
@@ -9805,7 +10120,7 @@
       "portalName": "Agrix (농림사업정보시스템) & 시·군 농정과",
       "contactPhone": "044-201-2236",
       "contactEmail": "horti@mafra.go.kr",
-      "linkedCalculator": "greenhouse-fertilizer-ec-ppm-stock-tank-blending-calculator.html",
+      "linkedCalculator": "greenhouse-heating-load-thermal-screen-calculator.html",
       "linkedToolTitle": "Hydroponic A/B Tank & EC Calc",
       "summary": "South Korea's core 50% grant + 30% low-interest loan program for upgrading existing greenhouses with closed-loop hydroponic fertigation, UV drainage sterilizers, elevated strawberry beds, and fog cooling.",
       "deepGuide": "Directly aligned with our Cheonan (천안 오이·딸기·과채류 주산지), Gwangju/Jeonnam, and Chungnam visitors: the #1 eligibility gate is signing a Shipment Commitment (출하약정) with your local Nonghyup APC or Producer Organization prior to applying at your city/county office.",
@@ -9815,7 +10130,7 @@
         "startDate": "2026-10-15",
         "endDate": "2027-01-31",
         "deadlineDisplay": "2027-01-31 (Municipal Eup/Myeon/Dong Application Window)",
-        "daysRemaining": 82,
+        "daysRemaining": 81,
         "cycleFrequency": "Annual Winter Municipal Selection",
         "submissionPortal": "시·군 농정과 / 읍·면·동 행정복지센터 & Agrix"
       },
@@ -9856,6 +10171,1250 @@
           "Installing uncertified heating or electrical wiring violating Korean agricultural fire safety standards."
         ],
         "stackingRules": "Combines 20% central gov grant + 30% municipal grant + 30% policy loan (1.5%-2.0%). Can be paired with municipal local top-up subsidies in Chungnam (Cheonan/Buyeo/Nonsan) and Jeonnam."
+      },
+      "admin_tier": "Federal",
+      "region_scope": "South Korea (Cheonan / Chungnam / Jeonnam / Nationwide) (South Korea (MAFRA 원예시설현대화))",
+      "filing_authority": "Ministry of Agriculture, Food and Rural Affairs (농림축산식품부 원예경영과) & Municipal Governments (Agrix (농림사업정보시스템) & 시·군 농정과)"
+    },
+    {
+      "id": "DE-BY-BAYSL-KULAP-GARTENBAU",
+      "country": "DE",
+      "countryName": "Germany",
+      "region": "DE-BY",
+      "regionName": "Bavaria (Bayern)",
+      "jurisdictionLabel": "🇩🇪 Bavaria (StMELF · BaySL / KULAP & BayGIB)",
+      "flag": "🇩🇪",
+      "admin_tier": "Regional / State",
+      "region_scope": "Freistaat Bayern (incl. Nürnberg Knoblauchsland, Fürth, Bamberg & Unterfranken)",
+      "filing_authority": "Bayerisches Staatsministerium für Ernährung, Landwirtschaft, Forsten und Tourismus (StMELF) — ÄELF via iBALIS / BaySL",
+      "category": "energy",
+      "name": "Bavaria Horticultural Investment & Climate Adaptation Grant (BayGIB / KULAP / BaySL)",
+      "agency": "Bayerisches Staatsministerium für Ernährung, Landwirtschaft, Forsten und Tourismus (StMELF)",
+      "subsidyType": "Direct Regional Capital Grant + Young Meister Top-Up",
+      "subsidyRate": "25%–40% Base Grant (+10% Junglandwirte / Gärtnermeister Bonus)",
+      "rateDecimal": 0.35,
+      "maxAmount": "Up to €1,500,000 eligible investment volume per enterprise",
+      "matchRequirement": "60%–75% Grower / Rentenbank Programmkredit Match",
+      "disbursementType": "Post-Verification Reimbursement via ÄELF",
+      "currency": "EUR",
+      "verifiedDate": "2026-11-11 Verified (StMELF Förderwegweiser / iBALIS)",
+      "deadline": "Rolling Electronic Filing via iBALIS Serviceportal (Cut-offs Q1 / Q3)",
+      "selectionMethod": "Points-Based Resource, Water & Energy Efficiency Scoring",
+      "officialUrl": "https://www.stmelf.bayern.de/foerderung/",
+      "portalName": "iBALIS / Bayerisches Staatsministerium (StMELF)",
+      "contactPhone": "+49 89 2182-0",
+      "contactEmail": "poststelle@stmelf.bayern.de",
+      "summary": "Bavaria's dedicated state-level horticultural modernization and agro-environmental support program (Bayerisches Sonderprogramm Landwirtschaft BaySL, BayGIB, and KULAP). Supports closed-loop drip fertigation, rainwater retention basins, multi-layer thermal screens, heat pumps, and hail/insect protective structures in vegetable clusters such as Nürnberg's Knoblauchsland.",
+      "deepGuide": "File digitally through the Bavarian iBALIS portal using your Betriebsnummer before signing any vendor purchase orders (vorzeitiger Maßnahmenbeginn prohibition). Certified Gärtnermeister or Junglandwirte under age 40 qualify for enhanced grant tiers.",
+      "linkedCalculator": "eu-greenhouse-energy-hofnachfolge-roi-simulator.html",
+      "linkedToolTitle": "EU Greenhouse Energy & Hofnachfolge ROI Simulator",
+      "applicationWindow": {
+        "status": "open",
+        "statusLabel": "🟢 Open (Rolling iBALIS Filing)",
+        "startDate": "2026-01-15",
+        "endDate": "2026-12-31",
+        "deadlineDisplay": "Rolling Electronic Filing via iBALIS (2026–2027 Window)",
+        "daysRemaining": 50,
+        "cycleFrequency": "Continuous / Semi-Annual Ranking Batches",
+        "submissionPortal": "Bavaria iBALIS Portal"
+      },
+      "targetEquipment": [
+        "Multi-layer greenhouse energy & shading screens (Energieschirme) and insulated Venlo glazing",
+        "Closed-loop drip irrigation, UV/ozone drainwater disinfection, and rainwater storage basins",
+        "Horticultural heat pumps, buffer storage tanks (Pufferspeicher), and LED assimilation lighting"
+      ],
+      "ineligibleItems": [
+        "Used machinery, routine maintenance repairs, and land purchase",
+        "Orders placed prior to written ÄELF approval (Förderunschädlicher Vorhabensbeginn)"
+      ],
+      "qualificationCriteria": [
+        "Active horticultural enterprise registered in Bavaria with valid Betriebsnummer",
+        "Minimum €20,000 eligible net investment volume and demonstrated energy/water savings"
+      ],
+      "documentChecklist": [
+        "iBALIS online application with Betriebsnummer and 3-year financial statements",
+        "Three comparable vendor quotes and certified energy/water efficiency calculation",
+        "Gärtnermeisterbrief or professional qualification proof for young grower bonus"
+      ],
+      "facets": {
+        "fundingTier": "tier_high",
+        "matchTier": "standard_match",
+        "targetAudience": [
+          "commercial_cea",
+          "young_farmer",
+          "specialty_crop"
+        ],
+        "technologies": [
+          "energy",
+          "water",
+          "smartfarm"
+        ]
+      }
+    },
+    {
+      "id": "DE-NRW-LWK-AFP-GARTENBAU",
+      "country": "DE",
+      "countryName": "Germany",
+      "region": "DE-NW",
+      "regionName": "North Rhine-Westfalen (NRW)",
+      "jurisdictionLabel": "🇩🇪 North Rhine-Westphalia (LWK NRW · Niederrhein / Straelen)",
+      "flag": "🇩🇪",
+      "admin_tier": "Regional / State",
+      "region_scope": "Nordrhein-Westfalen (Niederrhein, Straelen, Geldern & Rheinland Gemüsebau)",
+      "filing_authority": "Landwirtschaftskammer Nordrhein-Westfalen (LWK NRW — EU-Zahlstelle Münster)",
+      "category": "energy",
+      "name": "LWK NRW Agrarinvestitionsförderungsprogramm (AFP) & Gartenbau-Modernisierung",
+      "agency": "Landwirtschaftskammer Nordrhein-Westfalen (LWK NRW)",
+      "subsidyType": "Regional CAP Co-Financed Capital Grant",
+      "subsidyRate": "20%–40% Eligible CapEx Grant",
+      "rateDecimal": 0.3,
+      "maxAmount": "Up to €2,000,000 eligible investment volume",
+      "matchRequirement": "60%–80% Applicant / Rentenbank Co-Financing",
+      "disbursementType": "Milestone & Final Audit Reimbursement",
+      "currency": "EUR",
+      "verifiedDate": "2026-11-11 Verified (LWK NRW Förderportal)",
+      "deadline": "2027-03-15 (Annual NRW Ranking Cut-off)",
+      "selectionMethod": "Competitive NRW Sustainability & Emissions Scoring",
+      "officialUrl": "https://www.landwirtschaftskammer.de/foerderung/",
+      "portalName": "LWK NRW Förderportal",
+      "contactPhone": "+49 251 2376-0",
+      "contactEmail": "info@lwk.nrw.de",
+      "summary": "Administered by Landwirtschaftskammer NRW for Germany's largest under-glass horticultural cluster (Straelen / Niederrhein). Co-finances fossil-free greenhouse heating transitions, dehumidification heat recovery, and closed-loop nutrient recirculation.",
+      "deepGuide": "Coordinate technical pre-checks with LWK Gartenbauzentrum Straelen advisors to maximize climate-protection scoring points prior to the spring EU-Zahlstelle cut-off.",
+      "linkedCalculator": "greenhouse-heating-load-thermal-screen-calculator.html",
+      "linkedToolTitle": "Greenhouse Heating Load & Thermal Screen Calculator",
+      "applicationWindow": {
+        "status": "open",
+        "statusLabel": "🟢 Open (2026/2027 NRW Cycle)",
+        "startDate": "2026-09-01",
+        "endDate": "2027-03-15",
+        "deadlineDisplay": "March 15, 2027 (Spring Ranking Cut-off)",
+        "daysRemaining": 124,
+        "cycleFrequency": "Annual / Semi-Annual Call",
+        "submissionPortal": "LWK NRW Online-Antrag"
+      },
+      "targetEquipment": [
+        "Industrial heat pumps, geothermal heat exchangers, and low-temperature pipe rail networks",
+        "Dehumidification latent-heat recovery units and double thermal screens",
+        "Automated fertigation & UV-C/ozone drainwater sterilization skids"
+      ],
+      "ineligibleItems": [
+        "Fossil-only coal/oil boilers and non-stationary hand tools"
+      ],
+      "qualificationCriteria": [
+        "Commercial horticultural enterprise headquartered in North Rhine-Westphalia",
+        "Compliance with Düngeverordnung (DüV) and WHG closed-loop nutrient standards"
+      ],
+      "documentChecklist": [
+        "Investitionskonzept (Business & Investment Plan) certified by LWK advisor",
+        "Building permit (Baugenehmigung) where structural modifications apply"
+      ],
+      "facets": {
+        "fundingTier": "tier_high",
+        "matchTier": "standard_match",
+        "targetAudience": [
+          "commercial_cea",
+          "young_farmer"
+        ],
+        "technologies": [
+          "energy",
+          "water"
+        ]
+      }
+    },
+    {
+      "id": "DE-SN-HE-RP-REGIONAL-CEA",
+      "country": "DE",
+      "countryName": "Germany",
+      "region": "DE-SN",
+      "regionName": "Saxony / Hesse / Rhineland-Palatinate",
+      "jurisdictionLabel": "🇩🇪 Saxony · Hesse · RLP (SMEKUL / WIBank / DLR Pfalz)",
+      "flag": "🇩🇪",
+      "admin_tier": "Regional / State",
+      "region_scope": "Sachsen (Dresden/Lommatzscher Pflege), Hessen (Ried) & Rheinland-Pfalz (Gemüsegarten Pfalz)",
+      "filing_authority": "SAB Sachsen (SMEKUL) / WIBank Hessen / DLR Rheinpfalz (MWVLW)",
+      "category": "water",
+      "name": "Central & Southwest German Horticultural Water & Protected-Cropping Grant (RL LIW / AFP)",
+      "agency": "SMEKUL Sachsen · HMLU Hessen · MWVLW Rheinland-Pfalz",
+      "subsidyType": "Regional Investment Grant",
+      "subsidyRate": "25%–40% of Eligible CapEx",
+      "rateDecimal": 0.3,
+      "maxAmount": "Up to €1,200,000 per project",
+      "matchRequirement": "60%–75% Applicant Co-Financing",
+      "disbursementType": "Reimbursement via State Development Bank (SAB / WIBank)",
+      "currency": "EUR",
+      "verifiedDate": "2026-11-11 Verified (SMEKUL / WIBank / MWVLW)",
+      "deadline": "2027-02-28 (Regional Batch Window)",
+      "selectionMethod": "Regional Climate Resilience & Water Efficiency Matrix",
+      "officialUrl": "https://www.smekul.sachsen.de/foerderung/",
+      "portalName": "SAB / WIBank / DLR Agrarförderung",
+      "contactPhone": "+49 351 4910-0",
+      "contactEmail": "service@sab.sachsen.de",
+      "summary": "Covers regional horticultural investment guidelines across Saxony (Richtlinie LIW), Hesse, and Rhineland-Palatinate's Pfalz vegetable belt, prioritizing precision drip micro-irrigation, frost protection, and greenhouse energy retrofits.",
+      "deepGuide": "Verify water extraction permits (wasserrechtliche Erlaubnis) early when applying for irrigation retention ponds or fertigation automation.",
+      "linkedCalculator": "evapotranspiration-penman-monteith-calculator.html",
+      "linkedToolTitle": "FAO-56 Penman-Monteith Evapotranspiration Calculator",
+      "applicationWindow": {
+        "status": "open",
+        "statusLabel": "🟢 Open (Regional Window)",
+        "startDate": "2026-10-01",
+        "endDate": "2027-02-28",
+        "deadlineDisplay": "February 28, 2027",
+        "daysRemaining": 109,
+        "cycleFrequency": "Annual Regional Call",
+        "submissionPortal": "SAB / WIBank / ELER Portal"
+      },
+      "targetEquipment": [
+        "Sensor-controlled drip irrigation, tensiometer telemetry, and rainwater reservoirs",
+        "Venlo and multi-tunnel climate screens, ventilation drives, and LED lighting"
+      ],
+      "ineligibleItems": [
+        "Overhead high-evaporation gun sprinklers without efficiency upgrade"
+      ],
+      "qualificationCriteria": [
+        "SME agricultural or horticultural producer operating in SN, HE, or RP"
+      ],
+      "documentChecklist": [
+        "State digital ELER application, water permit, and itemized vendor quotations"
+      ],
+      "facets": {
+        "fundingTier": "tier_high",
+        "matchTier": "standard_match",
+        "targetAudience": [
+          "commercial_cea",
+          "specialty_crop"
+        ],
+        "technologies": [
+          "water",
+          "energy"
+        ]
+      }
+    },
+    {
+      "id": "JP-IBARAKI-TSUKUBA-SMART-HORT",
+      "country": "JP",
+      "countryName": "Japan",
+      "region": "JP-08",
+      "regionName": "Ibaraki Prefecture & Tsukuba City",
+      "jurisdictionLabel": "🇯🇵 Ibaraki & Tsukuba City (茨城県・つくば市 スマート園芸補助)",
+      "flag": "🇯🇵",
+      "admin_tier": "Municipal / Local",
+      "region_scope": "Ibaraki Prefecture & Tsukuba Science City Super-City District",
+      "filing_authority": "Ibaraki Prefectural Agriculture Dept & Tsukuba City Smart Agriculture Division (つくば市農業政策課)",
+      "category": "smartfarm",
+      "name": "Ibaraki Prefecture & Tsukuba City Smart Horticulture & AgTech Field Subsidy (茨城県・つくば市スマート農業導入支援)",
+      "agency": "Ibaraki Prefectural Government / Tsukuba City Hall (NARO Collaboration Zone)",
+      "subsidyType": "Prefectural + Municipal Top-Up Matching Grant",
+      "subsidyRate": "Up to 50% (1/2 Prefectural/National + 1/6 Municipal Top-Up)",
+      "rateDecimal": 0.5,
+      "maxAmount": "¥15,000,000 Prefectural + ¥3,000,000 Tsukuba Municipal Pilot Cap",
+      "matchRequirement": "50% Grower / JA Bank Super-L Loan Match",
+      "disbursementType": "Post-Inspection Municipal/Prefectural Reimbursement",
+      "currency": "JPY",
+      "verifiedDate": "2026-11-11 Verified (Ibaraki Pref. & Tsukuba City Portal)",
+      "deadline": "2027-01-31 (FY2026 Supplementary / FY2027 Early Intake)",
+      "selectionMethod": "Technical Review with Agricultural Extension Center (普及センター)",
+      "officialUrl": "https://www.pref.ibaraki.jp/nourinsuisan/",
+      "portalName": "Ibaraki Prefectural Agriculture & Tsukuba Smart City Portal",
+      "contactPhone": "+81 29-301-3921",
+      "contactEmail": "nosei@pref.ibaraki.lg.jp",
+      "summary": "Hyper-local Japanese horticulture grant combining Ibaraki Prefecture's Smart Horticulture Equipment Grant with Tsukuba Science City's AgTech demonstration top-up near NARO (農研機構). Covers Ubiquitous Environmental Control Systems (UECS), CO2 enrichment, heat pumps, and autonomous harvesting carts.",
+      "deepGuide": "Consult the local Ibaraki Agricultural Extension Center (地域農業改良普及センター) and Tsukuba City Agricultural Policy Division before December/January supplementary budget windows.",
+      "linkedCalculator": "greenhouse-heating-load-thermal-screen-calculator.html",
+      "linkedToolTitle": "DLI & PPFD Horticultural Lighting Calculator",
+      "applicationWindow": {
+        "status": "open",
+        "statusLabel": "🟢 Open (FY2026 Supp. / FY2027 Intake)",
+        "startDate": "2026-10-15",
+        "endDate": "2027-01-31",
+        "deadlineDisplay": "January 31, 2027 (Supplementary Budget Window)",
+        "daysRemaining": 81,
+        "cycleFrequency": "Annual + Winter Supplementary Budget (補正予算)",
+        "submissionPortal": "Tsukuba City / Ibaraki Extension Office & eMAFF"
+      },
+      "targetEquipment": [
+        "UECS environmental climate controllers, VPD/CO2 sensors, and automated roof vents",
+        "Horticultural EHP heat pumps, multi-layer thermal curtains, and drip fertigation"
+      ],
+      "ineligibleItems": [
+        "Consumable substrates, seeds, and general passenger vehicles"
+      ],
+      "qualificationCriteria": [
+        "Certified Farmer (認定農業者) or Certified New Farmer (認定新規就農者) in Ibaraki / Tsukuba"
+      ],
+      "documentChecklist": [
+        "Certified Farm Improvement Plan (農業経営改善計画認定書) and 2+ vendor estimates"
+      ],
+      "facets": {
+        "fundingTier": "tier_medium",
+        "matchTier": "standard_match",
+        "targetAudience": [
+          "commercial_cea",
+          "young_farmer"
+        ],
+        "technologies": [
+          "smartfarm",
+          "energy"
+        ]
+      }
+    },
+    {
+      "id": "JP-KOCHI-IOP-NEXTGEN-CEA",
+      "country": "JP",
+      "countryName": "Japan",
+      "region": "JP-39",
+      "regionName": "Kochi Prefecture",
+      "jurisdictionLabel": "🇯🇵 Kochi Prefecture (高知県 次世代型施設園芸・IoP推進事業)",
+      "flag": "🇯🇵",
+      "admin_tier": "Regional / State",
+      "region_scope": "Kochi Prefecture Horticultural Clusters (Sawachi / IoP Cloud Ecosystem)",
+      "filing_authority": "Kochi Prefectural Environmental Horticulture Division (高知県農業振興部環境農業推進課)",
+      "category": "smartfarm",
+      "name": "Kochi Prefecture Next-Generation Greenhouse & Internet of Plants (IoP) Grant",
+      "agency": "Kochi Prefectural Government",
+      "subsidyType": "Prefectural Capital Grant",
+      "subsidyRate": "Up to 50% (1/2 Prefectural & Municipal Co-Funding)",
+      "rateDecimal": 0.5,
+      "maxAmount": "Up to ¥50,000,000 for Dutch-style / Next-Gen Sawachi-linked houses",
+      "matchRequirement": "50% Grower / JA Cooperative Match",
+      "disbursementType": "Reimbursement via Municipal / JA Channel",
+      "currency": "JPY",
+      "verifiedDate": "2026-11-11 Verified (Kochi Env. Agriculture Division)",
+      "deadline": "2027-02-15 (FY2027 Prefectural Intake)",
+      "selectionMethod": "Prefectural IoP Data-Sharing & Yield Target Review",
+      "officialUrl": "https://www.pref.kochi.lg.jp/soshiki/160000/160901/",
+      "portalName": "Kochi Environmental Horticulture Portal",
+      "contactPhone": "+81 88-821-4538",
+      "contactEmail": "160901@ken.pref.kochi.lg.jp",
+      "summary": "Japan's flagship prefectural Dutch-model greenhouse subsidy. Supports CO2 generators, air-source heat pumps, fogging VPD control, and Sawachi IoP (Internet of Plants) cloud telemetry for high-yield cucumber, eggplant, pepper, and tomato growers.",
+      "deepGuide": "Applicants connect environmental sensors to Kochi's Prefectural IoP 'Sawachi' cloud platform and file through their municipal agriculture desk or JA Kochi.",
+      "linkedCalculator": "greenhouse-heating-load-thermal-screen-calculator.html",
+      "linkedToolTitle": "Precision VPD & Leaf Temperature Calculator",
+      "applicationWindow": {
+        "status": "open",
+        "statusLabel": "🟢 Open (FY2027 Intake)",
+        "startDate": "2026-11-01",
+        "endDate": "2027-02-15",
+        "deadlineDisplay": "February 15, 2027",
+        "daysRemaining": 96,
+        "cycleFrequency": "Annual + Supplementary Cycles",
+        "submissionPortal": "Municipal Agriculture Desk / JA Kochi"
+      },
+      "targetEquipment": [
+        "IoP Sawachi-compatible climate computers, CO2 burners/scrubbers, and EHP heat pumps",
+        "High-eave typhoon-resistant steel greenhouses and multi-layer thermal screens"
+      ],
+      "ineligibleItems": [
+        "Standalone fossil heavy-oil heaters without hybrid heat-pump integration"
+      ],
+      "qualificationCriteria": [
+        "Grower or agricultural corporation operating in Kochi Prefecture participating in IoP data sharing"
+      ],
+      "documentChecklist": [
+        "Prefectural IoP implementation plan, yield peningkatan target sheet, and 3 vendor quotes"
+      ],
+      "facets": {
+        "fundingTier": "tier_high",
+        "matchTier": "standard_match",
+        "targetAudience": [
+          "commercial_cea",
+          "specialty_crop"
+        ],
+        "technologies": [
+          "smartfarm",
+          "energy"
+        ]
+      }
+    },
+    {
+      "id": "JP-AICHI-KUMAMOTO-CEA-HEAT",
+      "country": "JP",
+      "countryName": "Japan",
+      "region": "JP-23",
+      "regionName": "Aichi & Kumamoto Prefectures",
+      "jurisdictionLabel": "🇯🇵 Aichi & Kumamoto (愛知県・熊本県 施設園芸省エネ・ヒートポンプ支援)",
+      "flag": "🇯🇵",
+      "admin_tier": "Regional / State",
+      "region_scope": "Aichi (Higashi-Mikawa / Tahara) & Kumamoto (Yatsushiro / Tamana) Greenhouse Belts",
+      "filing_authority": "Aichi Prefecture Horticulture Div. & Kumamoto Prefecture Agri-Production Council",
+      "category": "energy",
+      "name": "Aichi & Kumamoto Protected Horticulture Fuel-Transition & Heat Pump Grant",
+      "agency": "Aichi Prefectural Government · Kumamoto Prefectural Council",
+      "subsidyType": "Prefectural + Regional Fuel-Safety Council Grant",
+      "subsidyRate": "Up to 50% Equipment CapEx",
+      "rateDecimal": 0.5,
+      "maxAmount": "Up to ¥30,000,000 per grower group / corporation",
+      "matchRequirement": "50% Grower Share",
+      "disbursementType": "Post-Commissioning Reimbursement",
+      "currency": "JPY",
+      "verifiedDate": "2026-11-11 Verified (Aichi & Kumamoto Agri Portals)",
+      "deadline": "2027-01-25 (Winter Energy Transition Batch)",
+      "selectionMethod": " Minimum 15% Fossil Fuel Reduction Verification",
+      "officialUrl": "https://www.pref.aichi.jp/soshiki/engei/",
+      "portalName": "Aichi Horticulture / Kumamoto Agri Portal",
+      "contactPhone": "+81 52-954-6418",
+      "contactEmail": "engei@pref.aichi.lg.jp",
+      "summary": "Supports Japan's top tomato, strawberry, and chrysanthemum greenhouse belts in Aichi (Higashi-Mikawa) and Kumamoto in replacing heavy oil A-fuel boilers with horticultural heat pumps, triple thermal curtains, and crown/root-zone localized heating tubes.",
+      "deepGuide": "Requires an approved 3-year Fuel Consumption Reduction Plan (産地パワーアップ / 燃油価格高騰対策) endorsed by the regional Vegetable & Fruit Production Council.",
+      "linkedCalculator": "greenhouse-heating-load-thermal-screen-calculator.html",
+      "linkedToolTitle": "Greenhouse Heating Load & Thermal Screen Calculator",
+      "applicationWindow": {
+        "status": "open",
+        "statusLabel": "🟢 Open (Winter Batch)",
+        "startDate": "2026-10-20",
+        "endDate": "2027-01-25",
+        "deadlineDisplay": "January 25, 2027",
+        "daysRemaining": 75,
+        "cycleFrequency": "Semi-Annual",
+        "submissionPortal": "Prefectural Regional Agriculture Council"
+      },
+      "targetEquipment": [
+        "Horticultural air-to-air / air-to-water heat pumps and hybrid boiler controls",
+        "Multi-layer movable thermal screens and strawberry crown-heating microtubing"
+      ],
+      "ineligibleItems": [
+        "Heavy-oil fuel purchase costs without efficiency equipment installation"
+      ],
+      "qualificationCriteria": [
+        "Horticultural producer in Aichi or Kumamoto committing to >=15% fossil fuel reduction"
+      ],
+      "documentChecklist": [
+        "12-month baseline heavy-oil invoices and heat-loss calculation sheet"
+      ],
+      "facets": {
+        "fundingTier": "tier_medium",
+        "matchTier": "standard_match",
+        "targetAudience": [
+          "commercial_cea",
+          "specialty_crop"
+        ],
+        "technologies": [
+          "energy"
+        ]
+      }
+    },
+    {
+      "id": "NL-ZH-GREENPORT-WESTLAND-WARMTE",
+      "country": "NL",
+      "countryName": "Netherlands",
+      "region": "NL-ZH",
+      "regionName": "Zuid-Holland (Greenport Westland-Oostland)",
+      "jurisdictionLabel": "🇳🇱 Zuid-Holland (Greenport Westland-Oostland · Provincie ZH)",
+      "flag": "🇳🇱",
+      "admin_tier": "Regional / State",
+      "region_scope": "Provincie Zuid-Holland — Westland, Oostland, Lansingerland & Boskoop",
+      "filing_authority": "Provincie Zuid-Holland — Subsidieloket Glastuinbouw & Warmtetransitie",
+      "category": "energy",
+      "name": "Provincie Zuid-Holland Greenport Westland Geothermal, Residual Heat & Emission-Free Glastuinbouw Grant",
+      "agency": "Provincie Zuid-Holland (Greenport Westland-Oostland)",
+      "subsidyType": "Provincial Co-Investment Grant (Stacks with National RVO EG/EIA)",
+      "subsidyRate": "25%–50% of Eligible Regional Transition Costs",
+      "rateDecimal": 0.35,
+      "maxAmount": "Up to €500,000 per greenhouse enterprise / cluster connection",
+      "matchRequirement": "50%–75% Grower / Rabobank Groenfinanciering",
+      "disbursementType": "Milestone & Completion Grant",
+      "currency": "EUR",
+      "verifiedDate": "2026-11-11 Verified (Provincie Zuid-Holland Subsidies)",
+      "deadline": "2027-04-01 (Provincial Glastuinbouw Openstelling)",
+      "selectionMethod": "Provincial CO2-Neutrality & Water-Quality Ranking",
+      "officialUrl": "https://www.zuid-holland.nl/loket/subsidies/",
+      "portalName": "Provincie Zuid-Holland Subsidieloket",
+      "contactPhone": "+31 70 441 6611",
+      "contactEmail": "zuidholland@pzh.nl",
+      "summary": "Provincial Dutch glasshouse grant tailored for Westland and Oostland Venlo growers connecting to regional geothermal doublets (Warmtesysteem Westland), industrial residual heat networks, all-electric dehumidification, and zero-discharge water purification.",
+      "deepGuide": "Can be strategically stacked with national RVO Marktintroductie Energie-innovaties (MEI) or Energie-investeringsaftrek (EIA) within EU state-aid ceiling rules.",
+      "linkedCalculator": "psychrometric-mollier-greenhouse-dehumidifier.html",
+      "linkedToolTitle": "Psychrometric Mollier Dehumidification & Latent Heat Solver",
+      "applicationWindow": {
+        "status": "open",
+        "statusLabel": "🟢 Open (Provincial Window)",
+        "startDate": "2026-10-01",
+        "endDate": "2027-04-01",
+        "deadlineDisplay": "April 1, 2027",
+        "daysRemaining": 141,
+        "cycleFrequency": "Annual Provincial Openstelling",
+        "submissionPortal": "Provincie Zuid-Holland e-Loket (eHerkenning)"
+      },
+      "targetEquipment": [
+        "Secondary heat-exchanger skids for geothermal (aardwarmte) & residual heat networks",
+        "Active latent-heat recovery dehumidifiers and aquifer thermal energy storage (WKO)"
+      ],
+      "ineligibleItems": [
+        "Gas-fired CHP (WKK) expansions without carbon capture or hydrogen readiness"
+      ],
+      "qualificationCriteria": [
+        "Commercial glastuinbouw enterprise located in Provincie Zuid-Holland with eHerkenning EH3"
+      ],
+      "documentChecklist": [
+        "KVK extract, heat-network connection agreement or WKO permit, and capex budget"
+      ],
+      "facets": {
+        "fundingTier": "tier_high",
+        "matchTier": "standard_match",
+        "targetAudience": [
+          "commercial_cea"
+        ],
+        "technologies": [
+          "energy",
+          "water"
+        ]
+      }
+    },
+    {
+      "id": "NL-LI-NH-GREENPORT-VENLO-A7",
+      "country": "NL",
+      "countryName": "Netherlands",
+      "region": "NL-LI",
+      "regionName": "Limburg (Greenport Venlo) & Noord-Holland (Agriport A7)",
+      "jurisdictionLabel": "🇳🇱 Limburg & Noord-Holland (Greenport Venlo · Agriport A7)",
+      "flag": "🇳🇱",
+      "admin_tier": "Regional / State",
+      "region_scope": "Provincie Limburg (Greenport Venlo / Horst aan de Maas) & Noord-Holland (Agriport A7)",
+      "filing_authority": "Provincie Limburg Subsidieloket & Provincie Noord-Holland Uitvoeringsloket",
+      "category": "smartfarm",
+      "name": "Greenport Venlo & Agriport A7 Autonomous CEA & Circular Water Innovation Grant",
+      "agency": "Provincie Limburg · Provincie Noord-Holland",
+      "subsidyType": "Provincial Innovation & Demonstration Grant",
+      "subsidyRate": "30%–45% Eligible Innovation CapEx",
+      "rateDecimal": 0.35,
+      "maxAmount": "Up to €350,000 per project",
+      "matchRequirement": "55%–70% Enterprise Match",
+      "disbursementType": "Tranche Advance + Final Settlement",
+      "currency": "EUR",
+      "verifiedDate": "2026-11-11 Verified (Limburg & Noord-Holland Subsidies)",
+      "deadline": "2027-03-31 (2027 Regional Greenport Window)",
+      "selectionMethod": "Regional Innovation & Resource-Efficiency Assessment",
+      "officialUrl": "https://www.limburg.nl/loket/subsidies/",
+      "portalName": "Provincie Limburg / Noord-Holland Subsidieloket",
+      "contactPhone": "+31 43 389 9999",
+      "contactEmail": "postbus@prvlimburg.nl",
+      "summary": "Regional Dutch grant targeting large-scale Venlo glasshouses in Limburg (birthplace of the Venlo greenhouse) and Noord-Holland's Agriport A7 cluster for autonomous crop-vision robotics, dynamic LED spectrum control, and zero-sodium drainwater loops.",
+      "deepGuide": "Collaborating with a regional knowledge partner (e.g., Brightlands Campus Greenport Venlo or Vertify Noord-Holland) boosts innovation scoring.",
+      "linkedCalculator": "venlocad-3d.html",
+      "linkedToolTitle": "VenloCAD 3D Architectural & Structural Simulator",
+      "applicationWindow": {
+        "status": "open",
+        "statusLabel": "🟢 Open (Greenport Call)",
+        "startDate": "2026-09-15",
+        "endDate": "2027-03-31",
+        "deadlineDisplay": "March 31, 2027",
+        "daysRemaining": 140,
+        "cycleFrequency": "Annual",
+        "submissionPortal": "Provincial eHerkenning Portal"
+      },
+      "targetEquipment": [
+        "Autonomous greenhouse climate AI, spectral LED luminaires, and ISE nutrient sensors",
+        "Advanced membrane / ultrafiltration / UV-C closed-loop water treatment"
+      ],
+      "ineligibleItems": [
+        "Standard replacement glazing without energy or automation uplift"
+      ],
+      "qualificationCriteria": [
+        "Registered horticultural producer or consortium in Limburg or Noord-Holland"
+      ],
+      "documentChecklist": [
+        "Project plan, KVK registration, de-minimis / AGVO declaration, and vendor quotes"
+      ],
+      "facets": {
+        "fundingTier": "tier_medium",
+        "matchTier": "standard_match",
+        "targetAudience": [
+          "commercial_cea",
+          "agtech_startup"
+        ],
+        "technologies": [
+          "smartfarm",
+          "water",
+          "energy"
+        ]
+      }
+    },
+    {
+      "id": "FR-PACA-PDLL-BRETAGNE-SERRES",
+      "country": "FR",
+      "countryName": "France",
+      "region": "FR-PAC",
+      "regionName": "Région Sud PACA · Pays de la Loire (Nantes) · Bretagne",
+      "jurisdictionLabel": "🇫🇷 Région Sud PACA · Nantes · Bretagne (FEADER Serres)",
+      "flag": "🇫🇷",
+      "admin_tier": "Regional / State",
+      "region_scope": "Provence-Alpes-Côte d'Azur, Pays de la Loire (Nantes Maraîchage) & Bretagne",
+      "filing_authority": "Conseils Régionaux (Région Sud / Pays de la Loire / Bretagne — Autorités de Gestion FEADER)",
+      "category": "energy",
+      "name": "French Regional Horticultural Greenhouse Decarbonization & Precision Irrigation Grant (PCAE / FEADER Régional)",
+      "agency": "Région Sud PACA · Région Pays de la Loire · Région Bretagne",
+      "subsidyType": "Regional FEADER / Plan de Compétitivité (PCAE) Capital Grant",
+      "subsidyRate": "30%–40% Base (+10% Jeunes Agriculteurs JA Bonus)",
+      "rateDecimal": 0.4,
+      "maxAmount": "Up to €400,000 eligible investment ceiling per farm (GAEC/EARL multiplier eligible)",
+      "matchRequirement": "50%–70% Grower / Crédit Agricole Financing",
+      "disbursementType": "Post-Invoice Verification via ASP / Regional Portal",
+      "currency": "EUR",
+      "verifiedDate": "2026-11-11 Verified (Région Sud & Pays de la Loire Appels à Projets)",
+      "deadline": "2027-02-28 (Winter PCAE / FEADER Regional Call)",
+      "selectionMethod": "Regional Agro-Ecological & Water/Energy Scoring Grid",
+      "officialUrl": "https://www.maregionsud.fr/aides-et-appels-a-projets/",
+      "portalName": "Portail Régional des Aides (PCAE / FEADER)",
+      "contactPhone": "+33 4 91 57 50 57",
+      "contactEmail": "agriculture@maregionsud.fr",
+      "summary": "Regional French protected-cropping grant across France's three core vegetable belts (Provence, Nantes mâche/salad basin, and Finistère/Bretagne tomato glasshouses). Co-finances thermal screens, biomass/heat-pump heating, insect-proof nets, and closed-loop drip fertigation.",
+      "deepGuide": "Can be complemented by ADEME Fonds Chaleur for renewable thermal installations or CEE white certificates (Certificats d'Économies d'Énergie) where non-overlapping.",
+      "linkedCalculator": "greenhouse-heating-load-thermal-screen-calculator.html",
+      "linkedToolTitle": "Greenhouse Heating Load & Thermal Screen Calculator",
+      "applicationWindow": {
+        "status": "open",
+        "statusLabel": "🟢 Open (PCAE Winter Call)",
+        "startDate": "2026-10-15",
+        "endDate": "2027-02-28",
+        "deadlineDisplay": "February 28, 2027",
+        "daysRemaining": 109,
+        "cycleFrequency": "Semi-Annual Regional Calls",
+        "submissionPortal": "Portail Régional Europac / Mes Aides Régionales"
+      },
+      "targetEquipment": [
+        "Écrans thermiques (double thermal screens), heat pumps, and climate computers",
+        "Drip irrigation recycling skids, rainwater basins, and insect-exclusion netting"
+      ],
+      "ineligibleItems": [
+        "Second-hand equipment and fossil fuel boiler replacements"
+      ],
+      "qualificationCriteria": [
+        "Active maraîcher / serriste registered with MSA in PACA, Pays de la Loire, or Bretagne"
+      ],
+      "documentChecklist": [
+        "Numéro SIRET/PACAGE, MSA certificate, energy/water audit, and 2–3 vendor quotes"
+      ],
+      "facets": {
+        "fundingTier": "tier_medium",
+        "matchTier": "standard_match",
+        "targetAudience": [
+          "commercial_cea",
+          "young_farmer"
+        ],
+        "technologies": [
+          "energy",
+          "water"
+        ]
+      }
+    },
+    {
+      "id": "ES-AND-ALMERIA-MURCIA-INVERNADEROS",
+      "country": "ES",
+      "countryName": "Spain",
+      "region": "ES-AN",
+      "regionName": "Andalucía (Almería) & Región de Murcia",
+      "jurisdictionLabel": "🇪🇸 Andalucía · Almería & Murcia (Junta de Andalucía / CARM)",
+      "flag": "🇪🇸",
+      "admin_tier": "Regional / State",
+      "region_scope": "Andalucía (Poniente & Levante Almeriense, Granada) & Región de Murcia (Campo de Cartagena)",
+      "filing_authority": "Junta de Andalucía — Consejería de Agricultura, Pesca, Agua y Desarrollo Rural (Ventanilla Electrónica SGA)",
+      "category": "water",
+      "name": "Junta de Andalucía (Almería) & Murcia Multi-Tunnel Greenhouse Modernization & Desalinated Fertigation Grant",
+      "agency": "Junta de Andalucía · Comunidad Autónoma de la Región de Murcia (CARM)",
+      "subsidyType": "Autonomous Community FEADER Modernization Grant",
+      "subsidyRate": "40%–50% Base (+20% Jóvenes Agricultores up to 65%–70%)",
+      "rateDecimal": 0.5,
+      "maxAmount": "Up to €400,000 per greenhouse holding (OPFH cooperative track higher)",
+      "matchRequirement": "30%–60% Grower / Cajamar Agro Financing",
+      "disbursementType": "Certified Completion Reimbursement",
+      "currency": "EUR",
+      "verifiedDate": "2026-11-11 Verified (BOJA Junta de Andalucía / CARM)",
+      "deadline": "2027-02-20 (Convocatoria Modernización de Invernaderos)",
+      "selectionMethod": "Competitive Scoring (Water Savings, Multi-Tunnel Upgrade & Young Grower Priority)",
+      "officialUrl": "https://www.juntadeandalucia.es/organismos/agriculturapescaaguaydesarrollorural.html",
+      "portalName": "Junta de Andalucía Ventanilla Electrónica (SGA)",
+      "contactPhone": "+34 955 03 20 00",
+      "contactEmail": "informacion.capadr@juntadeandalucia.es",
+      "summary": "Flagship regional grant transforming traditional flat parral greenhouses in Almería and Murcia into high-ventilation multi-tunnel / gothic structures with automated zenithal vents, double doors, solar pumping, and precision hydroponic drain recirculation.",
+      "deepGuide": "Requires an on-site Acta de No Inicio inspection by the Delegación Territorial en Almería/Murcia before structural or irrigation works commence.",
+      "linkedCalculator": "hydroponic-nutrient-solution-calculator.html",
+      "linkedToolTitle": "Hydroponic Nutrient & Recirculation Calculator",
+      "applicationWindow": {
+        "status": "open",
+        "statusLabel": "🟢 Open (2026/2027 BOJA Call)",
+        "startDate": "2026-10-10",
+        "endDate": "2027-02-20",
+        "deadlineDisplay": "February 20, 2027",
+        "daysRemaining": 101,
+        "cycleFrequency": "Annual Autonomous Community Call",
+        "submissionPortal": "SGA / Sede Electrónica Junta de Andalucía"
+      },
+      "targetEquipment": [
+        "Multi-tunnel gothic greenhouse upgrades, automated roof vents, and thrips-proof screens",
+        "Automated fertigation heads, tensiometer/FDR moisture probes, and rainwater cisterns"
+      ],
+      "ineligibleItems": [
+        "Annual plastic film replacement without structural or climate-control modernization"
+      ],
+      "qualificationCriteria": [
+        "Registered agricultural holding (REAFA / SIEX) in Andalucía or Murcia"
+      ],
+      "documentChecklist": [
+        "REAFA registration, water concession certificate, technical engineer project, and 3 quotes"
+      ],
+      "facets": {
+        "fundingTier": "tier_medium",
+        "matchTier": "standard_match",
+        "targetAudience": [
+          "commercial_cea",
+          "young_farmer",
+          "specialty_crop"
+        ],
+        "technologies": [
+          "water",
+          "smartfarm",
+          "energy"
+        ]
+      }
+    },
+    {
+      "id": "CA-ON-OMAFRA-OGCII-LEAMINGTON",
+      "country": "CA",
+      "countryName": "Canada",
+      "region": "CA-ON",
+      "regionName": "Ontario (Leamington / Essex / Niagara)",
+      "jurisdictionLabel": "🇨🇦 Ontario (OMAFRA · Leamington / Essex Greenhouse Cluster)",
+      "flag": "🇨🇦",
+      "admin_tier": "Regional / State",
+      "region_scope": "Province of Ontario — Leamington, Kingsville, Essex County & Niagara Region",
+      "filing_authority": "Ontario Ministry of Agriculture, Food and Agribusiness (OMAFRA) & Agricultural Adaptation Council (AAC)",
+      "category": "energy",
+      "name": "Ontario Greenhouse Competitiveness & Innovation Initiative (OGCII) & Save on Energy CEA Retrofit",
+      "agency": "Ontario Ministry of Agriculture, Food and Agribusiness (OMAFRA) / IESO",
+      "subsidyType": "Provincial Cost-Share Grant + IESO Horticultural Lighting Rebate",
+      "subsidyRate": "Up to 50% Cost-Share (Up to 75% for Collaborative Research/Automation)",
+      "rateDecimal": 0.5,
+      "maxAmount": "Up to CAD $300,000 OGCII + Custom IESO kW Demand Rebates",
+      "matchRequirement": "50% Grower Co-Investment",
+      "disbursementType": "Claim-Based Reimbursement via AAC Portal",
+      "currency": "CAD",
+      "verifiedDate": "2026-11-11 Verified (OMAFRA / AAC & Save on Energy Ontario)",
+      "deadline": "2027-02-15 (Ontario Greenhouse Intake Window)",
+      "selectionMethod": "Merit-Based Energy, Biosecurity & Labor-Automation Review",
+      "officialUrl": "https://www.ontario.ca/page/ministry-agriculture-food-and-agribusiness",
+      "portalName": "OMAFRA / Agricultural Adaptation Council (AAC)",
+      "contactPhone": "+1 877-424-1300",
+      "contactEmail": "ag.info.omafra@ontario.ca",
+      "summary": "Dedicated provincial grant for North America's largest high-wire Venlo greenhouse concentration (Leamington & Kingsville, Ontario). Supports DLC-listed LED toplighting/interlighting, dehumidification heat recovery, robotics, and ToBRFV biosecurity water treatment.",
+      "deepGuide": "Combine OGCII capital cost-share with Ontario IESO Save on Energy Retrofit custom horticultural lighting incentives ($/kW saved) before ordering fixtures.",
+      "linkedCalculator": "greenhouse-heating-load-thermal-screen-calculator.html",
+      "linkedToolTitle": "DLI & PPFD Horticultural Lighting Calculator",
+      "applicationWindow": {
+        "status": "open",
+        "statusLabel": "🟢 Open (Provincial Intake)",
+        "startDate": "2026-10-01",
+        "endDate": "2027-02-15",
+        "deadlineDisplay": "February 15, 2027",
+        "daysRemaining": 96,
+        "cycleFrequency": "Rolling / Multi-Intake Batches",
+        "submissionPortal": "AAC / OMAFRA Online Portal"
+      },
+      "targetEquipment": [
+        "DLC Hort V3.0 LED toplighting & interlighting fixtures and dynamic dimming drivers",
+        "Latent-heat recovery dehumidifiers, thermal screens, and autonomous harvest/pack systems"
+      ],
+      "ineligibleItems": [
+        "Non-DLC lighting fixtures and unapproved pre-application purchases"
+      ],
+      "qualificationCriteria": [
+        "Commercial greenhouse vegetable, berry, or floriculture producer in Ontario with FBRN"
+      ],
+      "documentChecklist": [
+        "Farm Business Registration Number (FBRN), utility load profile, and vendor quotes"
+      ],
+      "facets": {
+        "fundingTier": "tier_medium",
+        "matchTier": "standard_match",
+        "targetAudience": [
+          "commercial_cea"
+        ],
+        "technologies": [
+          "energy",
+          "smartfarm"
+        ]
+      }
+    },
+    {
+      "id": "CA-BC-CLEANBC-FRASER-CEA",
+      "country": "CA",
+      "countryName": "Canada",
+      "region": "CA-BC",
+      "regionName": "British Columbia (Fraser Valley / Delta)",
+      "jurisdictionLabel": "🇨🇦 British Columbia (CleanBC · Fraser Valley & Delta)",
+      "flag": "🇨🇦",
+      "admin_tier": "Regional / State",
+      "region_scope": "British Columbia — Fraser Valley, Abbotsford, Chilliwack, Delta & Surrey",
+      "filing_authority": "BC Ministry of Agriculture and Food · CleanBC & BC Hydro Commercial Ag Team",
+      "category": "energy",
+      "name": "CleanBC Agricultural Electrification & Fraser Valley Greenhouse Energy Efficiency Rebate",
+      "agency": "BC Ministry of Agriculture and Food · CleanBC / Investment Agriculture Foundation (IAF)",
+      "subsidyType": "Provincial Cost-Share Grant + BC Hydro Electrification Rebate",
+      "subsidyRate": "50%–75% of Eligible Decarbonization & Beneficial Management CapEx",
+      "rateDecimal": 0.55,
+      "maxAmount": "Up to CAD $350,000 per operation",
+      "matchRequirement": "25%–50% Grower Match",
+      "disbursementType": "Milestone & Completion Reimbursement via IAF BC",
+      "currency": "CAD",
+      "verifiedDate": "2026-11-11 Verified (IAF BC / CleanBC)",
+      "deadline": "2027-01-31 (Winter Beneficial Management Practices Intake)",
+      "selectionMethod": "Verified tCO2e Reduction & Environmental Farm Plan (EFP) Alignment",
+      "officialUrl": "https://iafbc.ca/",
+      "portalName": "Investment Agriculture Foundation of BC (IAF)",
+      "contactPhone": "+1 250-356-1662",
+      "contactEmail": "funding@iafbc.ca",
+      "summary": "Supports Fraser Valley and Delta Venlo greenhouse operators transitioning from natural-gas heating to electric heat pumps, thermal storage, high-insulation energy curtains, and precision closed-loop irrigation.",
+      "deepGuide": "Maintain a current BC Environmental Farm Plan (EFP) certificate—it is a mandatory prerequisite for IAF BC Beneficial Management Practices (BMP) cost-share streams.",
+      "linkedCalculator": "greenhouse-heating-load-thermal-screen-calculator.html",
+      "linkedToolTitle": "Greenhouse Heating Load & Thermal Screen Calculator",
+      "applicationWindow": {
+        "status": "open",
+        "statusLabel": "🟢 Open (IAF BC Intake)",
+        "startDate": "2026-10-01",
+        "endDate": "2027-01-31",
+        "deadlineDisplay": "January 31, 2027",
+        "daysRemaining": 81,
+        "cycleFrequency": "Semi-Annual Intake",
+        "submissionPortal": "IAF BC Client Portal"
+      },
+      "targetEquipment": [
+        "Industrial electric heat pumps, thermal energy curtains, and smart climate controls",
+        "Closed-loop drip fertigation and rainwater capture infrastructure"
+      ],
+      "ineligibleItems": [
+        "Natural gas boiler expansions without net GHG reduction"
+      ],
+      "qualificationCriteria": [
+        "BC agricultural producer holding a valid BC Environmental Farm Plan (EFP)"
+      ],
+      "documentChecklist": [
+        "Valid BC EFP certificate, GST number, engineering heat-load estimate, and quotes"
+      ],
+      "facets": {
+        "fundingTier": "tier_medium",
+        "matchTier": "low_match",
+        "targetAudience": [
+          "commercial_cea"
+        ],
+        "technologies": [
+          "energy",
+          "water"
+        ]
+      }
+    },
+    {
+      "id": "US-CA-SJVAPCD-AG-THERMAL-PUMP",
+      "country": "US",
+      "countryName": "United States",
+      "region": "US-CA",
+      "regionName": "California — San Joaquin Valley APCD",
+      "jurisdictionLabel": "🇺🇸 San Joaquin Valley Air District (SJVAPCD · 8 Central Valley Counties)",
+      "flag": "🇺🇸",
+      "admin_tier": "Municipal / Local",
+      "region_scope": "San Joaquin Valley Air Basin (Fresno, Kern, Kings, Madera, Merced, San Joaquin, Stanislaus, Tulare)",
+      "filing_authority": "San Joaquin Valley Air Pollution Control District (SJVAPCD Grants & Incentives)",
+      "category": "machinery",
+      "name": "SJVAPCD Agricultural Pump Electrification, Low-NOx Boiler & Tractor Replacement Voucher",
+      "agency": "San Joaquin Valley Air Pollution Control District (SJVAPCD)",
+      "subsidyType": "Direct Air-District Equipment Voucher",
+      "subsidyRate": "50%–80% of Eligible Clean-Air Replacement Cost",
+      "rateDecimal": 0.65,
+      "maxAmount": "Up to $250,000 per agricultural pump/thermal/tractor unit",
+      "matchRequirement": "20%–50% Grower Co-Pay at Participating Dealership",
+      "disbursementType": "Point-of-Sale Voucher / Direct Reimbursement",
+      "currency": "USD",
+      "verifiedDate": "2026-11-11 Verified (Valley Air Ag Grants)",
+      "deadline": "Rolling First-Come, First-Served Voucher Queue",
+      "selectionMethod": "NOx / PM2.5 Cost-Effectiveness Threshold Verification",
+      "officialUrl": "https://valleyair.org/grants/",
+      "portalName": "SJVAPCD Valley Air Grants Portal",
+      "contactPhone": "+1 559-230-5800",
+      "contactEmail": "grants@valleyair.org",
+      "summary": "Hyper-local California air-district incentive covering all 8 Central Valley agricultural counties. Funds electric irrigation pump conversions, zero-emission farm UTVs/tractors, and ultra-low-NOx / electric nursery & greenhouse thermal retrofits.",
+      "deepGuide": "Never scrap or decommission the old diesel pump or tractor engine prior to SJVAPCD pre-inspection photography and executed contract issuance.",
+      "linkedCalculator": "evapotranspiration-penman-monteith-calculator.html",
+      "linkedToolTitle": "FAO-56 Irrigation & Pump Load Calculator",
+      "applicationWindow": {
+        "status": "open",
+        "statusLabel": "🟢 Open (Rolling Voucher Queue)",
+        "startDate": "2026-01-01",
+        "endDate": "2027-06-30",
+        "deadlineDisplay": "Rolling Voucher Queue (FY 2026–2027)",
+        "daysRemaining": 231,
+        "cycleFrequency": "Continuous Rolling",
+        "submissionPortal": "Valley Air Online Grants Portal"
+      },
+      "targetEquipment": [
+        "Electric agricultural irrigation pump motors, VFDs, and transformer hookups",
+        "Battery-electric / Tier 4 Final specialty tractors, forklifts, and nursery thermal units"
+      ],
+      "ineligibleItems": [
+        "Equipment ordered or engines dismantled before SJVAPCD pre-inspection"
+      ],
+      "qualificationCriteria": [
+        "75%+ equipment operation inside the 8-county San Joaquin Valley Air Basin"
+      ],
+      "documentChecklist": [
+        "24-month historical hour/fuel logs, engine family plate photos, and dealer quote"
+      ],
+      "facets": {
+        "fundingTier": "tier_medium",
+        "matchTier": "low_match",
+        "targetAudience": [
+          "commercial_cea",
+          "specialty_crop"
+        ],
+        "technologies": [
+          "machinery",
+          "water",
+          "energy"
+        ]
+      }
+    },
+    {
+      "id": "US-CA-SCAQMD-MWD-SOCAL-AG",
+      "country": "US",
+      "countryName": "United States",
+      "region": "US-CA",
+      "regionName": "California — South Coast AQMD & MWD SoCal",
+      "jurisdictionLabel": "🇺🇸 Southern California (SCAQMD & MWD Water District Rebates)",
+      "flag": "🇺🇸",
+      "admin_tier": "Municipal / Local",
+      "region_scope": "Southern California (Los Angeles, Orange, Riverside, San Bernardino, Ventura & San Diego Water Agencies)",
+      "filing_authority": "South Coast Air Quality Management District (SCAQMD) & Metropolitan Water District (SoCal Water$mart)",
+      "category": "water",
+      "name": "Southern California Air & Water District Nursery/CEA Electrification & Precision Irrigation Rebate",
+      "agency": "South Coast AQMD (Carl Moyer) · Metropolitan Water District of Southern California",
+      "subsidyType": "Local Air/Water District Rebate & Voucher",
+      "subsidyRate": "Up to 60%–75% of Eligible Local Upgrade Cost",
+      "rateDecimal": 0.65,
+      "maxAmount": "Up to $200,000 Air District Voucher + Per-Acre Water District Rebates",
+      "matchRequirement": "25%–40% Grower Co-Pay",
+      "disbursementType": "Direct Rebate / Dealer Voucher",
+      "currency": "USD",
+      "verifiedDate": "2026-11-11 Verified (SCAQMD & BeWaterWise)",
+      "deadline": "2027-05-15 (Annual Carl Moyer + Rolling Water$mart)",
+      "selectionMethod": "Verified Acre-Feet Water Saved & NOx Emissions Reduced",
+      "officialUrl": "https://www.aqmd.gov/home/programs/business",
+      "portalName": "SCAQMD Grants & SoCal Water$mart Portal",
+      "contactPhone": "+1 909-396-2000",
+      "contactEmail": "carl_moyer@aqmd.gov",
+      "summary": "Combines Southern California local air-district electrification vouchers (LA, Orange, Riverside/Coachella, San Bernardino) with MWD member-agency commercial nursery drip, soil-moisture controller, and runoff-recycling rebates.",
+      "deepGuide": "Can be stacked with utility energy rebates from Southern California Edison (SCE) or SDG&E provided total combined incentives do not exceed 100% of invoiced project cost.",
+      "linkedCalculator": "greenhouse-heating-load-thermal-screen-calculator.html",
+      "linkedToolTitle": "Precision VPD & Microclimate Calculator",
+      "applicationWindow": {
+        "status": "open",
+        "statusLabel": "🟢 Open (Local District Window)",
+        "startDate": "2026-07-01",
+        "endDate": "2027-05-15",
+        "deadlineDisplay": "May 15, 2027 (Rolling Water$mart)",
+        "daysRemaining": 185,
+        "cycleFrequency": "Annual / Rolling",
+        "submissionPortal": "SCAQMD Online & SoCalWaterSmart.com"
+      },
+      "targetEquipment": [
+        "Weather-based smart irrigation controllers, drip micro-emitters, and nursery tailwater recovery",
+        "Zero-emission nursery material handlers, electric boilers, and backup microgrid storage"
+      ],
+      "ineligibleItems": [
+        "Leased short-term portable equipment"
+      ],
+      "qualificationCriteria": [
+        "Commercial grower or nursery within SCAQMD or MWD member water agency service area"
+      ],
+      "documentChecklist": [
+        "Municipal water utility account bill, site parcel map, and equipment spec sheets"
+      ],
+      "facets": {
+        "fundingTier": "tier_medium",
+        "matchTier": "low_match",
+        "targetAudience": [
+          "commercial_cea",
+          "specialty_crop"
+        ],
+        "technologies": [
+          "water",
+          "energy",
+          "machinery"
+        ]
+      }
+    },
+    {
+      "id": "US-NY-NYSERDA-CEA-AGTECH",
+      "country": "US",
+      "countryName": "United States",
+      "region": "US-NY",
+      "regionName": "New York",
+      "jurisdictionLabel": "🇺🇸 New York State (NYSERDA & AGM Specialty Crop / CEA)",
+      "flag": "🇺🇸",
+      "admin_tier": "Regional / State",
+      "region_scope": "New York State (Upstate Venlo Glasshouses, Hudson Valley & Urban Vertical Farms)",
+      "filing_authority": "New York State Energy Research and Development Authority (NYSERDA) & NYS Dept. of Agriculture and Markets",
+      "category": "energy",
+      "name": "New York NYSERDA Agriculture Energy Audit, CEA LED Lighting & Clean Heat Incentive",
+      "agency": "NYSERDA · NYS Department of Agriculture and Markets (AGM)",
+      "subsidyType": "Free Technical Energy Audit + Custom Utility/State CapEx Rebate",
+      "subsidyRate": "Up to 50%–75% Audit/Custom Energy Efficiency Incentives",
+      "rateDecimal": 0.5,
+      "maxAmount": "Up to $250,000 per CEA facility + NYS Clean Heat $/MMBtu Rebates",
+      "matchRequirement": "25%–50% Applicant / USDA REAP Stackable Match",
+      "disbursementType": "Post-Verification Incentive Payment",
+      "currency": "USD",
+      "verifiedDate": "2026-11-11 Verified (NYSERDA Agriculture Program)",
+      "deadline": "Rolling Statewide Intake (2026–2027)",
+      "selectionMethod": "ASHRAE / ASABE Verified kWh & Therm Savings",
+      "officialUrl": "https://www.nyserda.ny.gov/All-Programs/Agriculture-Energy-Audit-Program",
+      "portalName": "NYSERDA Agriculture & NYS Clean Heat Portal",
+      "contactPhone": "+1 800-732-1399",
+      "contactEmail": "agenergyaudit@nyserda.ny.gov",
+      "summary": "Provides 100%-funded agricultural energy audits plus custom New York State & investor-owned utility (National Grid, NYSEG, ConEd) rebates for DLC horticultural LEDs, greenhouse thermal curtains, VFD ventilation fans, and cold-climate heat pumps.",
+      "deepGuide": "Start with NYSERDA's free Agriculture Energy Audit—its engineering report satisfies the technical energy-audit requirement for federal USDA REAP 50% grant stacking!",
+      "linkedCalculator": "greenhouse-heating-load-thermal-screen-calculator.html",
+      "linkedToolTitle": "DLI & PPFD Horticultural Lighting Calculator",
+      "applicationWindow": {
+        "status": "open",
+        "statusLabel": "🟢 Open (Rolling Statewide)",
+        "startDate": "2026-01-01",
+        "endDate": "2027-12-31",
+        "deadlineDisplay": "Rolling Statewide Intake",
+        "daysRemaining": 415,
+        "cycleFrequency": "Continuous Rolling",
+        "submissionPortal": "NYSERDA Consolidated Funding / Portal"
+      },
+      "targetEquipment": [
+        "DLC V3.0 horticultural LED fixtures, photosensor dimming, and multi-layer thermal screens",
+        "Cold-climate air/ground-source heat pumps and VFD circulation/exhaust fans"
+      ],
+      "ineligibleItems": [
+        "Non-DLC lighting and fossil fuel generators"
+      ],
+      "qualificationCriteria": [
+        "Commercial greenhouse, vertical farm, or farm customer paying NY System Benefits Charge (SBC)"
+      ],
+      "documentChecklist": [
+        "12 months of electric/gas utility bills, NYSERDA audit application, and DLC spec sheets"
+      ],
+      "facets": {
+        "fundingTier": "tier_medium",
+        "matchTier": "standard_match",
+        "targetAudience": [
+          "commercial_cea",
+          "urban_vertical"
+        ],
+        "technologies": [
+          "energy",
+          "smartfarm"
+        ]
+      }
+    },
+    {
+      "id": "KR-LOCAL-ATC-ICT-PILOT",
+      "country": "KR",
+      "countryName": "South Korea",
+      "region": "KR-LOC-ATC",
+      "regionName": "Nationwide 156 Si-Gun-Gu Agricultural Technology Centers",
+      "jurisdictionLabel": "🇰🇷 Korea Municipal Agri-Tech Centers (전국 156개 시·군·구 농업기술센터 기술보급과)",
+      "flag": "🇰🇷",
+      "admin_tier": "Municipal / Local",
+      "region_scope": "All 156 Si-Gun-Gu Municipalities Nationwide (시·군·구 농업기술센터 신기술보급 시범사업)",
+      "filing_authority": "Si-Gun-Gu Agricultural Technology Center — Technology Dissemination Division (시·군·구 농업기술센터 기술보급과 / 원예축산팀)",
+      "category": "smartfarm",
+      "name": "Municipal Agricultural Technology Center Smart Horticulture & Energy-Saving Pilot Grant (시·군·구 농업기술센터 신기술보급 시범사업)",
+      "agency": "Rural Development Administration (RDA) & 156 Municipal Agricultural Technology Centers",
+      "subsidyType": "Hyper-Local Municipal Direct Pilot Grant (국비·도비·시군비 매칭 보조)",
+      "subsidyRate": "70%–80% Direct Grant (자부담 20%–30% Only!)",
+      "rateDecimal": 0.75,
+      "maxAmount": "₩30,000,000 – ₩150,000,000 per selected farm",
+      "matchRequirement": "20%–30% Grower Cash Match (자부담)",
+      "disbursementType": "Municipal Dedicated Subsidy Account (지방보조금관리시스템 보탬e)",
+      "currency": "KRW",
+      "verifiedDate": "2026-11-11 Verified (RDA / 시·군·구 농업기술센터 연초 공고 기준)",
+      "deadline": "2027-01-31 (Annual Dec–Jan Municipal Solicitation Window!)",
+      "selectionMethod": "On-Site Field Inspection & Municipal Agricultural Industry Deliberation Committee (산학협동심의회)",
+      "officialUrl": "https://www.nongsaro.go.kr/",
+      "portalName": "각 시·군·구 농업기술센터 홈페이지 [공지사항/시범사업 공고] 및 보탬e",
+      "contactPhone": "1544-8572",
+      "contactEmail": "rda@korea.kr",
+      "summary": "South Korea's highest-grant-ratio hyper-local horticulture funding channel! Every December through early February, all 156 municipal Agricultural Technology Centers (시·군·구 농업기술센터) announce annual New-Technology Dissemination Pilot Grants (신기술보급 시범사업) with 70%–80% grant rates for smart environmental control, fogging/cooling, multi-layer thermal curtains, and hydroponic drain sterilization.",
+      "deepGuide": "Check your local Si-Gun-Gu Agricultural Technology Center website notice board between December 20 and January 31, visit the Vegetable/Smart-Farm specialist officer (원예특작팀 지도사) in person with your Ag Management Registration (농업경영체 등록확인서), and present before the Municipal Deliberation Committee.",
+      "linkedCalculator": "greenhouse-heating-load-thermal-screen-calculator.html",
+      "linkedToolTitle": "Precision VPD & Fogging Cooling Calculator",
+      "applicationWindow": {
+        "status": "open",
+        "statusLabel": "🟢 Open / Peak Winter Prep (Dec–Jan Municipal Window)",
+        "startDate": "2026-12-15",
+        "endDate": "2027-01-31",
+        "deadlineDisplay": "Dec 2026 – Jan 31, 2027 (Annual Municipal Announcement)",
+        "daysRemaining": 81,
+        "cycleFrequency": "Annual Winter Solicitation (연 1회 연초 집중 공모)",
+        "submissionPortal": "관할 시·군·구 농업기술센터 방문/보탬e 접수"
+      },
+      "targetEquipment": [
+        "Smart greenhouse integrated climate controllers, VPD/solar sensors, and cloud actuators",
+        "High-pressure mist/fog cooling, air-circulation fans, thermal screens, and hydroponic benches"
+      ],
+      "ineligibleItems": [
+        "Simple vinyl film replacement without new-technology demonstration components"
+      ],
+      "qualificationCriteria": [
+        "Registered Agricultural Management Entity (농업경영체) residing & farming in the target Si-Gun-Gu",
+        "Willingness to host field-day technical workshops for neighboring local growers"
+      ],
+      "documentChecklist": [
+        "농업경영체 등록확인서 (Ag Management Certificate), 사업계획서, 견적서 2부, 지방세 완납증명서"
+      ],
+      "facets": {
+        "fundingTier": "tier_medium",
+        "matchTier": "low_match",
+        "targetAudience": [
+          "commercial_cea",
+          "young_farmer",
+          "specialty_crop"
+        ],
+        "technologies": [
+          "smartfarm",
+          "energy",
+          "water"
+        ]
+      }
+    },
+    {
+      "id": "KR-LOCAL-EMD-SMALL-HORT-GRANT",
+      "country": "KR",
+      "countryName": "South Korea",
+      "region": "KR-LOC-EMD",
+      "regionName": "Nationwide Eup-Myeon-Dong Sub-District Offices",
+      "jurisdictionLabel": "🇰🇷 Korea Eup-Myeon-Dong Sub-Districts (읍·면·동 행정복지센터 산업팀 지자체 자체사업)",
+      "flag": "🇰🇷",
+      "admin_tier": "Municipal / Local",
+      "region_scope": "Nationwide Rural & Peri-Urban Eup-Myeon-Dong Sub-Districts (읍·면·동 산업/경제팀 접수)",
+      "filing_authority": "Eup-Myeon-Dong Administrative Welfare Center — Industry/Agri Team (읍·면·동 행정복지센터 산업팀 / 시·군 농정과)",
+      "category": "energy",
+      "name": "Eup-Myeon-Dong Sub-District Small-Scale Protected Horticulture & Facility Modernization Grant (시설원예 현대화·에너지절감 지자체 자체보조사업)",
+      "agency": "Si-Gun Agricultural Policy Division & Eup-Myeon-Dong Administrative Welfare Centers",
+      "subsidyType": "Municipal / County Matching Grant (시·군비 지방보조금)",
+      "subsidyRate": "50% Municipal Grant (시·군비 50% + 자부담 50%)",
+      "rateDecimal": 0.5,
+      "maxAmount": "₩10,000,000 – ₩50,000,000 per farm household",
+      "matchRequirement": "50% Grower Co-Pay",
+      "disbursementType": "Post-Inspection Municipal Reimbursement (보탬e)",
+      "currency": "KRW",
+      "verifiedDate": "2026-11-11 Verified (전국 시·군 농정과 읍·면·동 농림사업 신청지침)",
+      "deadline": "2027-02-10 (Annual Jan–Feb Eup-Myeon-Dong Filing Window)",
+      "selectionMethod": "Municipal Scoring Table (Farming Years, GAP/Eco Certification & Prior Grant History)",
+      "officialUrl": "https://www.agrix.go.kr/",
+      "portalName": "관할 읍·면·동 행정복지센터 산업팀 및 UniAgri (농림사업정보시스템)",
+      "contactPhone": "1670-0255",
+      "contactEmail": "help@agrix.go.kr",
+      "summary": "Practical grassroots subsidy filed directly at the grower's local Eup-Myeon-Dong office (읍·면·동 행정복지센터 산업팀) every January–February. Co-finances 50% of automated roll-up side vents, multi-layer thermal blankets (다겹보온커튼), circulation fans, fertigation injectors (양액기), and PO long-life greenhouse films.",
+      "deepGuide": "Ask your village leader (이장님 회보) or the Eup-Myeon-Dong Industry Team desk in early January for the '당해연도 농정분야 지원사업 신청안내서' booklet and submit all applications in one consolidated visit.",
+      "linkedCalculator": "greenhouse-heating-load-thermal-screen-calculator.html",
+      "linkedToolTitle": "Greenhouse Heating Load & Multi-Layer Curtain Calculator",
+      "applicationWindow": {
+        "status": "open",
+        "statusLabel": "🟢 Open / Jan–Feb Grassroots Filing",
+        "startDate": "2027-01-02",
+        "endDate": "2027-02-10",
+        "deadlineDisplay": "Jan 2 – Feb 10, 2027 (읍·면·동 산업팀 일괄접수)",
+        "daysRemaining": 91,
+        "cycleFrequency": "Annual New-Year Grassroots Window",
+        "submissionPortal": "주소지 읍·면·동 행정복지센터 산업팀 방문 접수"
+      },
+      "targetEquipment": [
+        "Multi-layer thermal curtains (다겹보온커튼), automated side/roof roll-up motors, and PO film",
+        "Air circulation fans, drip fertigation mixers, CO2 generators, and rail transport carts"
+      ],
+      "ineligibleItems": [
+        "Unregistered farmland or illegal greenhouse structures without farmland ledger entry"
+      ],
+      "qualificationCriteria": [
+        "Registered farmer with farmland ledger (농지대장) and Ag Management Registration in the municipality"
+      ],
+      "documentChecklist": [
+        "농업경영체 등록확인서, 농지대장(구 농지원부), 견적서, 통장사본, GAP/친환경 인증서(가점)"
+      ],
+      "facets": {
+        "fundingTier": "tier_small",
+        "matchTier": "standard_match",
+        "targetAudience": [
+          "commercial_cea",
+          "young_farmer",
+          "specialty_crop"
+        ],
+        "technologies": [
+          "energy",
+          "water",
+          "smartfarm"
+        ]
+      }
+    },
+    {
+      "id": "KR-VALLEY-CHUNGNAM-JEONBUK-GYEONGBUK-GYEONGNAM",
+      "country": "KR",
+      "countryName": "South Korea",
+      "region": "KR-CN",
+      "regionName": "Chungnam (Nonsan/Buyeo) & 4 Smart Farm Innovation Valleys",
+      "jurisdictionLabel": "🇰🇷 Provincial Smart Farm Clusters (충남 논산·부여 · 김제 · 상주 · 밀양 · 고흥)",
+      "flag": "🇰🇷",
+      "admin_tier": "Regional / State",
+      "region_scope": "Chungnam (Cheonan/Buyeo/Nonsan), Jeonbuk (Gimje), Gyeongbuk (Sangju), Gyeongnam (Miryang) & Jeonnam (Goheung)",
+      "filing_authority": "Provincial Smart Agriculture Divisions (충남도청 스마트농업과 등) & Korea Rural Community Corp (KRC)",
+      "category": "smartfarm",
+      "name": "Provincial Smart Horticultural Cluster & Youth Smart-Farm Rental/Build Grant (충남형 스마트팜 복합단지 및 4대 혁신밸리 연계 지원)",
+      "agency": "Chungcheongnam-do · Jeonbuk · Gyeongbuk · Gyeongnam · Jeonnam Provincial Governments",
+      "subsidyType": "Provincial Matching Grant + Low-Interest Youth Smart-Farm Loan",
+      "subsidyRate": "50%–70% Infrastructure/Facility Support + 1.0%–1.5% Policy Financing",
+      "rateDecimal": 0.55,
+      "maxAmount": "Up to ₩450,000,000 Youth Smart-Farm CapEx / subsidized lease-to-own plots",
+      "matchRequirement": "30%–50% Policy Loan (종합자금 1%대) or Grower Share",
+      "disbursementType": "Milestone Disbursement via NongHyup / 보탬e",
+      "currency": "KRW",
+      "verifiedDate": "2026-11-11 Verified (스마트팜코리아 & 도청 스마트농업과)",
+      "deadline": "2027-02-28 (2027 Provincial Youth & Cluster Intake)",
+      "selectionMethod": "Business Plan Evaluation & Smart Farm Innovation Valley Graduate Priority",
+      "officialUrl": "https://www.smartfarmkorea.net/",
+      "portalName": "스마트팜코리아 (SmartFarm Korea) & 각 도청 고시/공고",
+      "contactPhone": "1522-2911",
+      "contactEmail": "smartfarm@epis.or.kr",
+      "summary": "Regional Korean provincial flagship grants across Korea's 4 Smart Farm Innovation Valleys (Gimje, Sangju, Miryang, Goheung) and Chungnam's Nonsan/Buyeo strawberry-tomato export belt, offering subsidized Venlo/plastic smart-greenhouse plots, geothermal/air heat pumps, and youth settlement packages.",
+      "deepGuide": "Graduates of the 20-month Smart Farm Youth Startup Incubation Center (청년창업보육센터) receive priority scoring for long-term rental greenhouses (임대형 스마트팜) and ₩3B Youth Smart-Farm Comprehensive Loans.",
+      "linkedCalculator": "hydroponic-nutrient-solution-calculator.html",
+      "linkedToolTitle": "Hydroponic Nutrient & Drain EC Calculator",
+      "applicationWindow": {
+        "status": "open",
+        "statusLabel": "🟢 Open (2027 Provincial Intake)",
+        "startDate": "2026-11-01",
+        "endDate": "2027-02-28",
+        "deadlineDisplay": "February 28, 2027",
+        "daysRemaining": 109,
+        "cycleFrequency": "Semi-Annual Provincial Calls",
+        "submissionPortal": "스마트팜코리아 및 관할 시·군 스마트농업팀"
+      },
+      "targetEquipment": [
+        "Semi-closed Venlo and high-eave multi-span smart greenhouses with gutter hydroponics",
+        "Geothermal / air-source heat pumps, CO2 enrichment, and cloud fertigation systems"
+      ],
+      "ineligibleItems": [
+        "Speculative land acquisition without active crop cultivation commitment"
+      ],
+      "qualificationCriteria": [
+        "Youth smart-farm entrepreneur (age 18–39) or APC-affiliated export horticultural grower"
+      ],
+      "documentChecklist": [
+        "스마트팜 청년창업보육 수료증(우대), 농업경영체 증명서, 시설원예 사업계획서"
+      ],
+      "facets": {
+        "fundingTier": "tier_high",
+        "matchTier": "low_match",
+        "targetAudience": [
+          "young_farmer",
+          "commercial_cea"
+        ],
+        "technologies": [
+          "smartfarm",
+          "energy",
+          "water"
+        ]
       }
     }
   ]
