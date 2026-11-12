@@ -1,7 +1,7 @@
 /**
  * Inwoovation Global Command Palette (Spotlight Search) & Reader Convenience Engine (v3.0)
  * Triggers on Ctrl+K / Cmd+K or clicking any search trigger button.
- * Dynamically indexes all 327 live pages across Tools, Simulators, Wiki, Crops, Climate Hubs, and Multilingual Articles (EN/DE/JA).
+ * Dynamically indexes all 360 live pages across Tools, Simulators, Wiki, Crops, Climate Hubs, and Multilingual Articles (EN/DE/JA).
  * Also mounts:
  *  1) Top Reading Progress Bar (#inw-reading-progress-bar)
  *  2) Collapsible Quick-Jump Table of Contents (TOC) + 1-Click Citation Copy & PDF Print Toolbar
@@ -1890,6 +1890,14 @@
     "tags": "crops vertical farm lettuce leafy greens tipburn prevention guide html controlled environment leafy greens lettuce lactuca sativa microclimate vpd dli precision steering guide precision cea "
   },
   {
+    "title": "Complete CEA Engineering Directory &amp; Index (360 Pages)",
+    "cat": "part",
+    "url": "directory.html",
+    "icon": "⚙️",
+    "desc": "Master HTML sitemap and engineering taxonomy indexing all 360 calculators, 150 global agricultural grants, EN/DE/JA monographs, crop guides, and climate hubs.",
+    "tags": "directory html complete cea engineering directory amp index 360 pages master html sitemap and engineering taxonomy indexing all 360 calculators 150 global agricultural grants en de ja monogr"
+  },
+  {
     "title": "Precision CEA & Horticultural Engineering Articles (78 Volumes / 178 Multilingual Editions)",
     "cat": "article",
     "url": "guides.html",
@@ -1902,8 +1910,8 @@
     "cat": "tool",
     "url": "index.html",
     "icon": "🛠️",
-    "desc": "Inwoovation Lab — Unified CEA engineering command center: 106 verified global agricultural grants (California, Germany, Japan, Netherlands, France, Spain, Korea",
-    "tags": "index html inwoovation lab inwoovation lab unified cea engineering command center 106 verified global agricultural grants california germany japan netherlands france spain korea"
+    "desc": "Inwoovation Lab — Unified CEA engineering command center: 150 verified global agricultural grants across 8 countries (US, Germany, Japan, Netherlands, Korea, Fr",
+    "tags": "index html inwoovation lab inwoovation lab unified cea engineering command center 150 verified global agricultural grants across 8 countries us germany japan netherlands korea fr"
   },
   {
     "title": "Deutscher Gartenbau-Meister &amp; KTBL-Standard Rechner",
@@ -2872,18 +2880,18 @@
       <div class="inwoo-palette-box" role="dialog" aria-modal="true" aria-label="Inwoovation Spotlight Search">
         <div class="inwoo-palette-header">
           <span class="inwoo-palette-search-icon">🔍</span>
-          <input type="text" id="inwoo-palette-input" placeholder="Search all 355 tools, simulators, wiki, crops, climate hubs & EN/DE/JA articles..." autocomplete="off" />
+          <input type="text" id="inwoo-palette-input" placeholder="Search all 356 tools, simulators, wiki, crops, climate hubs & EN/DE/JA articles..." autocomplete="off" />
           <span class="inwoo-palette-esc-badge" onclick="window.InwooPalette.close()">ESC</span>
         </div>
         <div class="inwoo-palette-tabs">
-          <button class="inwoo-pal-tab active" data-cat="all">✨ All (355)</button>
+          <button class="inwoo-pal-tab active" data-cat="all">✨ All (356)</button>
           <button class="inwoo-pal-tab" data-cat="tool">🛠️ Tools (49)</button>
           <button class="inwoo-pal-tab" data-cat="article">📚 Articles (181)</button>
           <button class="inwoo-pal-tab" data-cat="wiki">🧬 Wiki (44)</button>
           <button class="inwoo-pal-tab" data-cat="climate">🌍 Climate (41)</button>
           <button class="inwoo-pal-tab" data-cat="sim">🧪 Simulators (21)</button>
           <button class="inwoo-pal-tab" data-cat="crop">🌱 Crops (11)</button>
-          <button class="inwoo-pal-tab" data-cat="part">⚙️ Benchmarks & Parts (8)</button>
+          <button class="inwoo-pal-tab" data-cat="part">⚙️ Benchmarks & Parts (9)</button>
         </div>
         <div class="inwoo-palette-results" id="inwoo-palette-results"></div>
         <div class="inwoo-palette-footer">
@@ -2892,7 +2900,7 @@
             <span><kbd>↵</kbd> Open</span>
             <span><kbd>Esc</kbd> Close</span>
           </div>
-          <div style="color: #64748b; font-size: 0.75rem;">Inwoovation Universal Spotlight (355 Indexed Pages)</div>
+          <div style="color: #64748b; font-size: 0.75rem;">Inwoovation Universal Spotlight (356 Indexed Pages)</div>
         </div>
       </div>
     `;
@@ -3172,68 +3180,5 @@
     document.addEventListener('DOMContentLoaded', bootAll);
   } else {
     bootAll();
-  }
-})();
-
-
-/* GDPR & Google AdSense Consent Notice Engine (v1.0) */
-(function() {
-  function initGdprConsentBar() {
-    try {
-      if (navigator.webdriver || /HeadlessChrome|PhantomJS|Lighthouse/i.test(navigator.userAgent || '')) return;
-      if (window.location.pathname.indexOf('/embed/') === 0 && !window.location.pathname.endsWith('/index.html') && !window.location.pathname.endsWith('/embed/')) return;
-      var saved = localStorage.getItem('inw_gdpr_consent_v1');
-      if (saved) return;
-      if (document.getElementById('inw-gdpr-consent-bar')) return;
-
-      var p = window.location.pathname || '';
-      var isDE = p.indexOf('/de/') !== -1 || p.indexOf('meister.html') !== -1 || p.indexOf('/podcasts/') !== -1;
-      var isJA = p.indexOf('/ja/') !== -1;
-
-      var msg = isDE
-        ? '🍪 <strong>Datenschutz &amp; Cookies (DSGVO):</strong> Inwoovation Lab verwendet Cookies (Google Analytics &amp; Google AdSense), um unsere kostenlosen Gartenbau-Simulatoren bereitzustellen und den Datenverkehr zu analysieren. Details finden Sie in unserer <a href="/privacy-policy.html">Datenschutzerklärung</a> und den <a href="/terms-of-service.html">Nutzungsbedingungen</a>.'
-        : (isJA
-          ? '🍪 <strong>プライバシーとCookieに関する通知:</strong> Inwoovation Labでは、無料の農業工学シミュレーターの提供およびトラフィック分析のためにCookie（Google AnalyticsおよびGoogle AdSense）を使用しています。詳細は<a href="/privacy-policy.html">プライバシーポリシー</a>および<a href="/terms-of-service.html">利用規約</a>をご覧ください。'
-          : '🍪 <strong>Privacy &amp; Cookie Disclosure (GDPR / CCPA):</strong> Inwoovation Lab uses cookies (Google Analytics &amp; Google AdSense) to keep our 330+ engineering calculators 100% free and analyze aggregate traffic. See our <a href="/privacy-policy.html">Privacy Policy</a> and <a href="/terms-of-service.html">Terms of Service</a>.');
-
-      var acceptTxt = isDE ? 'Alle akzeptieren' : (isJA ? 'すべて同意する' : 'Accept All');
-      var essentialTxt = isDE ? 'Nur notwendige' : (isJA ? '必須のみ' : 'Essential Only');
-
-      var bar = document.createElement('div');
-      bar.id = 'inw-gdpr-consent-bar';
-      bar.setAttribute('role', 'region');
-      bar.setAttribute('aria-label', 'Cookie and Privacy Consent');
-      bar.innerHTML = '<div style="flex:1; min-width:240px;">' + msg + '</div>' +
-        '<div class="inw-gdpr-actions">' +
-          '<button type="button" class="inw-gdpr-btn-essential" id="inw-gdpr-essential">' + essentialTxt + '</button>' +
-          '<button type="button" class="inw-gdpr-btn-accept" id="inw-gdpr-accept">' + acceptTxt + '</button>' +
-        '</div>';
-      document.body.appendChild(bar);
-
-      function setChoice(mode) {
-        try { localStorage.setItem('inw_gdpr_consent_v1', mode); } catch (e) {}
-        if (typeof window.gtag === 'function') {
-          var status = (mode === 'granted') ? 'granted' : 'denied';
-          window.gtag('consent', 'update', {
-            'ad_storage': status,
-            'analytics_storage': status,
-            'ad_user_data': status,
-            'ad_personalization': status
-          });
-        }
-        if (bar && bar.parentNode) bar.parentNode.removeChild(bar);
-      }
-
-      var btnAcc = document.getElementById('inw-gdpr-accept');
-      var btnEss = document.getElementById('inw-gdpr-essential');
-      if (btnAcc) btnAcc.addEventListener('click', function() { setChoice('granted'); });
-      if (btnEss) btnEss.addEventListener('click', function() { setChoice('essential'); });
-    } catch (err) {}
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initGdprConsentBar);
-  } else {
-    initGdprConsentBar();
   }
 })();

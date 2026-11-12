@@ -20,10 +20,18 @@ DEFAULT_OG_IMAGE = SITE + "og-cover.jpg"
 WORDS_PER_MINUTE = 200
 SKIP_DIRS = {".git", "__pycache__", "node_modules"}
 
+BOT_GUARD_JS = (
+    "if (navigator.webdriver || /HeadlessChrome|PhantomJS|Lighthouse|PTST|bot|crawler|spider|slurp/i.test(navigator.userAgent) "
+    "|| location.hostname === 'localhost' || location.hostname === '127.0.0.1' "
+    "|| (screen.width === 1366 && screen.height === 1366) || (screen.width === 800 && screen.height === 600) || screen.height >= 5000) "
+    "{ window['ga-disable-G-V4RYJBMEDE'] = true; }"
+)
+
 GA4_SNIPPET = f"""
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id={GA4_ID}"></script>
     <script>
+       {BOT_GUARD_JS}
        window.dataLayer = window.dataLayer || [];
        function gtag(){{dataLayer.push(arguments);}}
        gtag('js', new Date());
@@ -243,19 +251,38 @@ def fix_reading_time(html):
 
 
 def fix_ga4(html):
-    if GA4_ID in html or not re.search(r"<head[^>]*>", html, re.I):
+    if not re.search(r"<head[^>]*>", html, re.I):
+        return html
+    if GA4_ID in html:
+        if "ga-disable-G-V4RYJBMEDE" not in html and "window.dataLayer = window.dataLayer || [];" in html:
+            return html.replace(
+                "window.dataLayer = window.dataLayer || [];",
+                BOT_GUARD_JS + "\n       window.dataLayer = window.dataLayer || [];",
+                1,
+            )
         return html
     return re.sub(r"(<head[^>]*>)", lambda m: m.group(1) + GA4_SNIPPET, html, count=1, flags=re.I)
 
 
+INVALID_AUTO_SLOT_RE = re.compile(
+    r'\s*(?:<!--[^>]*AdSense[^>]*-->\s*)?<div[^>]*>\s*<ins\s+class=["\']adsbygoogle["\'][^>]*data-ad-slot=["\']auto["\'][^>]*>\s*</ins>\s*'
+    r'(?:<script>\s*\(adsbygoogle\s*=\s*window\.adsbygoogle\s*\|\|\s*\[\]\)\.push\(\{\}\);\s*</script>\s*)?</div>'
+    r'|\s*<ins\s+class=["\']adsbygoogle["\'][^>]*data-ad-slot=["\']auto["\'][^>]*>\s*</ins>\s*'
+    r'(?:<script>\s*\(adsbygoogle\s*=\s*window\.adsbygoogle\s*\|\|\s*\[\]\)\.push\(\{\}\);\s*</script>)?',
+    re.I | re.S,
+)
+
+
 def fix_adsense(html, rel_path):
-    """Ensure every live content page (except 404.html) carries AdSense account meta & script."""
+    """Ensure every live content page (except 404.html) carries AdSense account meta & script and zero invalid auto-slots."""
     if os.path.basename(rel_path) == "404.html" or not re.search(r"<head[^>]*>", html, re.I):
         return html
     if not re.search(r'name=["\']google-adsense-account["\']', html, re.I):
         html = re.sub(r"(<head[^>]*>)", lambda m: m.group(1) + ADSENSE_META_SNIPPET, html, count=1, flags=re.I)
     if "adsbygoogle.js" not in html:
         html = re.sub(r"(</head>)", lambda m: ADSENSE_SCRIPT_SNIPPET + "\n" + m.group(1), html, count=1, flags=re.I)
+    if 'data-ad-slot="auto"' in html or "data-ad-slot='auto'" in html:
+        html = INVALID_AUTO_SLOT_RE.sub("", html)
     return html
 
 
