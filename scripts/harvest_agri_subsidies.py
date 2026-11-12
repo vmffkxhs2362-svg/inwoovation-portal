@@ -32,6 +32,7 @@ import hashlib
 import sqlite3
 import argparse
 import urllib.request
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime
 from bs4 import BeautifulSoup
 
@@ -996,12 +997,11 @@ def fetch_html(url, timeout=10):
         return None
 
 
-def harvest_portal(portal, ledger, db_conn, timeout=10):
+def harvest_portal(portal, ledger, db_conn, timeout=5, prefetched_html=None):
     url = portal["url"]
     tier = portal.get("tier", "Regional")
     region = portal.get("region", portal.get("country", ""))
-    print(f"  📡 [{portal['id']}] ({portal['country']} · {tier}) Scraping {portal['name']}...")
-    html = fetch_html(url, timeout=timeout)
+    html = prefetched_html if prefetched_html is not None else fetch_html(url, timeout=timeout)
     if not html:
         return 0
 
@@ -1183,8 +1183,10 @@ def parse_args(argv):
                         help="Filter live scrape by tier (Federal, Regional, Municipal)")
     parser.add_argument("--limit", type=int, default=0,
                         help="Maximum number of portals to scrape in live mode (0 = all)")
-    parser.add_argument("--timeout", type=int, default=10,
-                        help="Per-portal HTTP timeout in seconds (default: 10)")
+    parser.add_argument("--timeout", type=int, default=5,
+                        help="Per-portal HTTP timeout in seconds (default: 5)")
+    parser.add_argument("--workers", type=int, default=16,
+                        help="Concurrent HTTP worker threads for live scraping (default: 16)")
     return parser.parse_args(argv)
 
 
@@ -1225,10 +1227,24 @@ def main():
         selected_portals = selected_portals[:args.limit]
 
     total_new = 0
-    print(f"\n🔍 Inspecting {len(selected_portals)} Target Registries for Active Solicitations (timeout={args.timeout}s)...")
+    t_live = time.perf_counter()
+    print(f"\n🔍 Parallel-Inspecting {len(selected_portals)} Target Registries (workers={args.workers}, timeout={args.timeout}s)...")
+    prefetched = {}
+    with ThreadPoolExecutor(max_workers=max(1, args.workers)) as pool:
+        fut_map = {pool.submit(fetch_html, p["url"], args.timeout): p["id"] for p in selected_portals}
+        for fut in as_completed(fut_map):
+            pid = fut_map[fut]
+            try:
+                prefetched[pid] = fut.result()
+            except Exception:
+                prefetched[pid] = None
+
     for portal in selected_portals:
-        new_items = harvest_portal(portal, ledger, db_conn, timeout=args.timeout)
-        total_new += new_items
+        html_doc = prefetched.get(portal["id"])
+        if html_doc:
+            new_items = harvest_portal(portal, ledger, db_conn, timeout=args.timeout, prefetched_html=html_doc)
+            total_new += new_items
+    print(f"  ⚡ Parallel HTTP scan across {len(selected_portals)} portals finished in {time.perf_counter() - t_live:.2f}s.")
 
     if not args.limit and not args.country and not args.tier:
         ledger["last_run"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")

@@ -62,8 +62,16 @@
     "facets": {
       "fundingTier": "tier_high",
       "matchTier": "standard_match",
-      "targetAudience": ["commercial_cea", "young_farmer", "specialty_crop"],
-      "technologies": ["energy", "water", "smartfarm"]
+      "targetAudience": [
+        "commercial_cea",
+        "young_farmer",
+        "specialty_crop"
+      ],
+      "technologies": [
+        "energy",
+        "water",
+        "smartfarm"
+      ]
     }
   },
   {
@@ -82,7 +90,7 @@
     "agency": "Landwirtschaftskammer Nordrhein-Westfalen (LWK NRW)",
     "subsidyType": "Regional CAP Co-Financed Capital Grant",
     "subsidyRate": "20%–40% Eligible CapEx Grant",
-    "rateDecimal": 0.30,
+    "rateDecimal": 0.3,
     "maxAmount": "Up to €2,000,000 eligible investment volume",
     "matchRequirement": "60%–80% Applicant / Rentenbank Co-Financing",
     "disbursementType": "Milestone & Final Audit Reimbursement",
@@ -127,8 +135,14 @@
     "facets": {
       "fundingTier": "tier_high",
       "matchTier": "standard_match",
-      "targetAudience": ["commercial_cea", "young_farmer"],
-      "technologies": ["energy", "water"]
+      "targetAudience": [
+        "commercial_cea",
+        "young_farmer"
+      ],
+      "technologies": [
+        "energy",
+        "water"
+      ]
     }
   },
   {
@@ -147,7 +161,7 @@
     "agency": "SMEKUL Sachsen · HMLU Hessen · MWVLW Rheinland-Pfalz",
     "subsidyType": "Regional Investment Grant",
     "subsidyRate": "25%–40% of Eligible CapEx",
-    "rateDecimal": 0.30,
+    "rateDecimal": 0.3,
     "maxAmount": "Up to €1,200,000 per project",
     "matchRequirement": "60%–75% Applicant Co-Financing",
     "disbursementType": "Reimbursement via State Development Bank (SAB / WIBank)",
@@ -189,8 +203,14 @@
     "facets": {
       "fundingTier": "tier_high",
       "matchTier": "standard_match",
-      "targetAudience": ["commercial_cea", "specialty_crop"],
-      "technologies": ["water", "energy"]
+      "targetAudience": [
+        "commercial_cea",
+        "specialty_crop"
+      ],
+      "technologies": [
+        "water",
+        "energy"
+      ]
     }
   },
   {
@@ -209,7 +229,7 @@
     "agency": "Ibaraki Prefectural Government / Tsukuba City Hall (NARO Collaboration Zone)",
     "subsidyType": "Prefectural + Municipal Top-Up Matching Grant",
     "subsidyRate": "Up to 50% (1/2 Prefectural/National + 1/6 Municipal Top-Up)",
-    "rateDecimal": 0.50,
+    "rateDecimal": 0.5,
     "maxAmount": "¥15,000,000 Prefectural + ¥3,000,000 Tsukuba Municipal Pilot Cap",
     "matchRequirement": "50% Grower / JA Bank Super-L Loan Match",
     "disbursementType": "Post-Inspection Municipal/Prefectural Reimbursement",
@@ -251,8 +271,14 @@
     "facets": {
       "fundingTier": "tier_medium",
       "matchTier": "standard_match",
-      "targetAudience": ["commercial_cea", "young_farmer"],
-      "technologies": ["smartfarm", "energy"]
+      "targetAudience": [
+        "commercial_cea",
+        "young_farmer"
+      ],
+      "technologies": [
+        "smartfarm",
+        "energy"
+      ]
     }
   },
   {
@@ -271,7 +297,7 @@
     "agency": "Kochi Prefectural Government",
     "subsidyType": "Prefectural Capital Grant",
     "subsidyRate": "Up to 50% (1/2 Prefectural & Municipal Co-Funding)",
-    "rateDecimal": 0.50,
+    "rateDecimal": 0.5,
     "maxAmount": "Up to ¥50,000,000 for Dutch-style / Next-Gen Sawachi-linked houses",
     "matchRequirement": "50% Grower / JA Cooperative Match",
     "disbursementType": "Reimbursement via Municipal / JA Channel",
@@ -313,8 +339,14 @@
     "facets": {
       "fundingTier": "tier_high",
       "matchTier": "standard_match",
-      "targetAudience": ["commercial_cea", "specialty_crop"],
-      "technologies": ["smartfarm", "energy"]
+      "targetAudience": [
+        "commercial_cea",
+        "specialty_crop"
+      ],
+      "technologies": [
+        "smartfarm",
+        "energy"
+      ]
     }
   },
   {
@@ -333,7 +365,7 @@
     "agency": "Aichi Prefectural Government · Kumamoto Prefectural Council",
     "subsidyType": "Prefectural + Regional Fuel-Safety Council Grant",
     "subsidyRate": "Up to 50% Equipment CapEx",
-    "rateDecimal": 0.50,
+    "rateDecimal": 0.5,
     "maxAmount": "Up to ¥30,000,000 per grower group / corporation",
     "matchRequirement": "50% Grower Share",
     "disbursementType": "Post-Commissioning Reimbursement",
@@ -375,8 +407,13 @@
     "facets": {
       "fundingTier": "tier_medium",
       "matchTier": "standard_match",
-      "targetAudience": ["commercial_cea", "specialty_crop"],
-      "technologies": ["energy"]
+      "targetAudience": [
+        "commercial_cea",
+        "specialty_crop"
+      ],
+      "technologies": [
+        "energy"
+      ]
     }
   },
   {
@@ -437,8 +474,13 @@
     "facets": {
       "fundingTier": "tier_high",
       "matchTier": "standard_match",
-      "targetAudience": ["commercial_cea"],
-      "technologies": ["energy", "water"]
+      "targetAudience": [
+        "commercial_cea"
+      ],
+      "technologies": [
+        "energy",
+        "water"
+      ]
     }
   },
   {
@@ -499,8 +541,15 @@
     "facets": {
       "fundingTier": "tier_medium",
       "matchTier": "standard_match",
-      "targetAudience": ["commercial_cea", "agtech_startup"],
-      "technologies": ["smartfarm", "water", "energy"]
+      "targetAudience": [
+        "commercial_cea",
+        "agtech_startup"
+      ],
+      "technologies": [
+        "smartfarm",
+        "water",
+        "energy"
+      ]
     }
   },
   {
@@ -519,7 +568,7 @@
     "agency": "Région Sud PACA · Région Pays de la Loire · Région Bretagne",
     "subsidyType": "Regional FEADER / Plan de Compétitivité (PCAE) Capital Grant",
     "subsidyRate": "30%–40% Base (+10% Jeunes Agriculteurs JA Bonus)",
-    "rateDecimal": 0.40,
+    "rateDecimal": 0.4,
     "maxAmount": "Up to €400,000 eligible investment ceiling per farm (GAEC/EARL multiplier eligible)",
     "matchRequirement": "50%–70% Grower / Crédit Agricole Financing",
     "disbursementType": "Post-Invoice Verification via ASP / Regional Portal",
@@ -561,8 +610,14 @@
     "facets": {
       "fundingTier": "tier_medium",
       "matchTier": "standard_match",
-      "targetAudience": ["commercial_cea", "young_farmer"],
-      "technologies": ["energy", "water"]
+      "targetAudience": [
+        "commercial_cea",
+        "young_farmer"
+      ],
+      "technologies": [
+        "energy",
+        "water"
+      ]
     }
   },
   {
@@ -581,7 +636,7 @@
     "agency": "Junta de Andalucía · Comunidad Autónoma de la Región de Murcia (CARM)",
     "subsidyType": "Autonomous Community FEADER Modernization Grant",
     "subsidyRate": "40%–50% Base (+20% Jóvenes Agricultores up to 65%–70%)",
-    "rateDecimal": 0.50,
+    "rateDecimal": 0.5,
     "maxAmount": "Up to €400,000 per greenhouse holding (OPFH cooperative track higher)",
     "matchRequirement": "30%–60% Grower / Cajamar Agro Financing",
     "disbursementType": "Certified Completion Reimbursement",
@@ -623,8 +678,16 @@
     "facets": {
       "fundingTier": "tier_medium",
       "matchTier": "standard_match",
-      "targetAudience": ["commercial_cea", "young_farmer", "specialty_crop"],
-      "technologies": ["water", "smartfarm", "energy"]
+      "targetAudience": [
+        "commercial_cea",
+        "young_farmer",
+        "specialty_crop"
+      ],
+      "technologies": [
+        "water",
+        "smartfarm",
+        "energy"
+      ]
     }
   },
   {
@@ -643,7 +706,7 @@
     "agency": "Ontario Ministry of Agriculture, Food and Agribusiness (OMAFRA) / IESO",
     "subsidyType": "Provincial Cost-Share Grant + IESO Horticultural Lighting Rebate",
     "subsidyRate": "Up to 50% Cost-Share (Up to 75% for Collaborative Research/Automation)",
-    "rateDecimal": 0.50,
+    "rateDecimal": 0.5,
     "maxAmount": "Up to CAD $300,000 OGCII + Custom IESO kW Demand Rebates",
     "matchRequirement": "50% Grower Co-Investment",
     "disbursementType": "Claim-Based Reimbursement via AAC Portal",
@@ -685,8 +748,13 @@
     "facets": {
       "fundingTier": "tier_medium",
       "matchTier": "standard_match",
-      "targetAudience": ["commercial_cea"],
-      "technologies": ["energy", "smartfarm"]
+      "targetAudience": [
+        "commercial_cea"
+      ],
+      "technologies": [
+        "energy",
+        "smartfarm"
+      ]
     }
   },
   {
@@ -747,8 +815,13 @@
     "facets": {
       "fundingTier": "tier_medium",
       "matchTier": "low_match",
-      "targetAudience": ["commercial_cea"],
-      "technologies": ["energy", "water"]
+      "targetAudience": [
+        "commercial_cea"
+      ],
+      "technologies": [
+        "energy",
+        "water"
+      ]
     }
   },
   {
@@ -809,8 +882,15 @@
     "facets": {
       "fundingTier": "tier_medium",
       "matchTier": "low_match",
-      "targetAudience": ["commercial_cea", "specialty_crop"],
-      "technologies": ["machinery", "water", "energy"]
+      "targetAudience": [
+        "commercial_cea",
+        "specialty_crop"
+      ],
+      "technologies": [
+        "machinery",
+        "water",
+        "energy"
+      ]
     }
   },
   {
@@ -871,8 +951,15 @@
     "facets": {
       "fundingTier": "tier_medium",
       "matchTier": "low_match",
-      "targetAudience": ["commercial_cea", "specialty_crop"],
-      "technologies": ["water", "energy", "machinery"]
+      "targetAudience": [
+        "commercial_cea",
+        "specialty_crop"
+      ],
+      "technologies": [
+        "water",
+        "energy",
+        "machinery"
+      ]
     }
   },
   {
@@ -891,7 +978,7 @@
     "agency": "NYSERDA · NYS Department of Agriculture and Markets (AGM)",
     "subsidyType": "Free Technical Energy Audit + Custom Utility/State CapEx Rebate",
     "subsidyRate": "Up to 50%–75% Audit/Custom Energy Efficiency Incentives",
-    "rateDecimal": 0.50,
+    "rateDecimal": 0.5,
     "maxAmount": "Up to $250,000 per CEA facility + NYS Clean Heat $/MMBtu Rebates",
     "matchRequirement": "25%–50% Applicant / USDA REAP Stackable Match",
     "disbursementType": "Post-Verification Incentive Payment",
@@ -933,8 +1020,14 @@
     "facets": {
       "fundingTier": "tier_medium",
       "matchTier": "standard_match",
-      "targetAudience": ["commercial_cea", "urban_vertical"],
-      "technologies": ["energy", "smartfarm"]
+      "targetAudience": [
+        "commercial_cea",
+        "urban_vertical"
+      ],
+      "technologies": [
+        "energy",
+        "smartfarm"
+      ]
     }
   },
   {
@@ -996,8 +1089,16 @@
     "facets": {
       "fundingTier": "tier_medium",
       "matchTier": "low_match",
-      "targetAudience": ["commercial_cea", "young_farmer", "specialty_crop"],
-      "technologies": ["smartfarm", "energy", "water"]
+      "targetAudience": [
+        "commercial_cea",
+        "young_farmer",
+        "specialty_crop"
+      ],
+      "technologies": [
+        "smartfarm",
+        "energy",
+        "water"
+      ]
     }
   },
   {
@@ -1016,7 +1117,7 @@
     "agency": "Si-Gun Agricultural Policy Division & Eup-Myeon-Dong Administrative Welfare Centers",
     "subsidyType": "Municipal / County Matching Grant (시·군비 지방보조금)",
     "subsidyRate": "50% Municipal Grant (시·군비 50% + 자부담 50%)",
-    "rateDecimal": 0.50,
+    "rateDecimal": 0.5,
     "maxAmount": "₩10,000,000 – ₩50,000,000 per farm household",
     "matchRequirement": "50% Grower Co-Pay",
     "disbursementType": "Post-Inspection Municipal Reimbursement (보탬e)",
@@ -1058,8 +1159,16 @@
     "facets": {
       "fundingTier": "tier_small",
       "matchTier": "standard_match",
-      "targetAudience": ["commercial_cea", "young_farmer", "specialty_crop"],
-      "technologies": ["energy", "water", "smartfarm"]
+      "targetAudience": [
+        "commercial_cea",
+        "young_farmer",
+        "specialty_crop"
+      ],
+      "technologies": [
+        "energy",
+        "water",
+        "smartfarm"
+      ]
     }
   },
   {
@@ -1120,8 +1229,1992 @@
     "facets": {
       "fundingTier": "tier_high",
       "matchTier": "low_match",
-      "targetAudience": ["young_farmer", "commercial_cea"],
-      "technologies": ["smartfarm", "energy", "water"]
+      "targetAudience": [
+        "young_farmer",
+        "commercial_cea"
+      ],
+      "technologies": [
+        "smartfarm",
+        "energy",
+        "water"
+      ]
     }
+  },
+  {
+    "id": "DE-BY-NUERNBERG-KLIMAFONDS",
+    "country": "DE",
+    "countryName": "Germany",
+    "region": "DE-BY",
+    "regionName": "Mittelfranken · Stadt Nürnberg (Knoblauchsland)",
+    "jurisdictionLabel": "Stadt Nürnberg / N-ERGIE Klimaschutzfonds",
+    "flag": "🇩🇪",
+    "category": "energy",
+    "name": "Stadt Nürnberg & N-ERGIE CO2-Minderungsprogramm (Knoblauchsland Unterglasgartenbau)",
+    "agency": "Stadt Nürnberg — Umweltreferat & N-ERGIE Aktiengesellschaft",
+    "subsidyType": "Municipal Direct CO2-Abatement Grant",
+    "subsidyRate": "20% - 35% Municipal Investment Bonus per tCO2 Saved",
+    "rateDecimal": 0.3,
+    "maxAmount": "€50,000 per operating site (stackable with BaySL / KfW)",
+    "matchRequirement": "65% - 80% Grower / KfW Co-Financing",
+    "disbursementType": "Post-Audit Milestone & Verified Invoice Reimbursement",
+    "currency": "EUR",
+    "verifiedDate": "2026-11-12 Verified (v6.0 3-Tier Audit)",
+    "deadline": "Rolling 2026/2027 Municipal & Regional Intake Windows",
+    "selectionMethod": "Technical Efficiency Threshold & Statutory Eligibility Audit",
+    "targetEquipment": [
+      "High-temperature brine/air-to-water heat pumps replacing fossil peak boilers in vegetable greenhouses",
+      "Multi-layer aluminized thermal energy screens (Energieschirme) reducing nocturnal U-value >= 45%",
+      "Commercial rooftop PV + LFP battery storage (BESS) on packhouses and irrigation pump stations",
+      "High-efficiency EC circulation fans and climate computer VPD dehumidification upgrades"
+    ],
+    "ineligibleItems": [
+      "Retroactive equipment orders placed prior to official grant approval / Vorhabenbeginn clearance",
+      "Used or uncertified secondhand machinery without OEM efficiency warranty",
+      "Routine consumable inputs (fertilizer salts, seeds, growing media, seasonal labor)"
+    ],
+    "qualificationCriteria": [
+      "Registered horticultural or commercial site located within Nuremberg municipal boundaries (including Knoblauchsland)",
+      "Active N-ERGIE commercial electricity or heat connection (for N-ERGIE CO2-Minderungsprogramm track)",
+      "Demonstrated minimum 15% specific CO2 reduction verified by DIN V 18599 / horticultural heat balance"
+    ],
+    "documentChecklist": [
+      "Engineering CO2-savings calculation sheet (Wärmebedarfs- & CO2-Einsparnachweis)",
+      "Three (3) itemized vendor quotes (Vergleichsangebote) dated prior to commissioning",
+      "Gewerbeanmeldung / LfStat Betriebsnachweis Gartenbau & de-minimis declaration"
+    ],
+    "officialUrl": "https://www.nuernberg.de/internet/umweltreferat/foerderprogramme.html",
+    "portalName": "Stadt Nürnberg Umweltreferat / N-ERGIE Förderportal",
+    "contactPhone": "+49 911 231-2332",
+    "contactEmail": "klima@stadt.nuernberg.de",
+    "linkedCalculator": "greenhouse-energy-tariff-bess-p2h-arbitrage-calculator.html",
+    "linkedToolTitle": "EPEX Power-to-Heat & BESS Simulator",
+    "summary": "Targeted municipal climate grant for horticultural enterprises in Nuremberg's Knoblauchsland vegetable belt co-funding heat pumps, LED assimilation retrofits, thermal screens, and N-ERGIE grid-interactive PV storage.",
+    "deepGuide": "Step 1: Obtain baseline CO2 balance via certified energy advisor. Step 2: File N-ERGIE / Umweltreferat application BEFORE signing vendor contracts (Vorhabenbeginn). Step 3: Stack with Bavarian BaySL or BLE Modul 4 within EU de-minimis / AGVO caps.",
+    "applicationWindow": {
+      "status": "open",
+      "statusLabel": "🟢 Open (2026/2027 Active Window)",
+      "startDate": "2026-01-15",
+      "endDate": "2027-06-30",
+      "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
+      "daysRemaining": 230,
+      "cycleFrequency": "Annual / Rolling Budget Allocation",
+      "submissionPortal": "Stadt Nürnberg Umweltreferat / N-ERGIE Förderportal"
+    },
+    "facets": {
+      "fundingTier": "tier_micro",
+      "matchTier": "half_match",
+      "targetAudience": [
+        "commercial_cea",
+        "small_family",
+        "beginning_farmer"
+      ],
+      "technologies": [
+        "energy",
+        "renewables",
+        "smartfarm"
+      ],
+      "trackScope": "pure_ag"
+    },
+    "admin_tier": "Municipal / Local",
+    "region_scope": "Mittelfranken · Stadt Nürnberg (Knoblauchsland) (Stadt Nürnberg / N-ERGIE Klimaschutzfonds)",
+    "filing_authority": "Stadt Nürnberg — Umweltreferat & N-ERGIE Aktiengesellschaft (Stadt Nürnberg Umweltreferat / N-ERGIE Förderportal)"
+  },
+  {
+    "id": "DE-BY-FUERTH-SOLAR-SPEICHER",
+    "country": "DE",
+    "countryName": "Germany",
+    "region": "DE-BY",
+    "regionName": "Mittelfranken · Stadt & Landkreis Fürth",
+    "jurisdictionLabel": "Stadt & Landkreis Fürth Klimaschutzförderung",
+    "flag": "🇩🇪",
+    "category": "renewables",
+    "name": "Kommunales Förderprogramm Photovoltaik, Wärmespeicher & Elektromobilität (Raum Fürth)",
+    "agency": "Stadt Fürth — Amt für Umwelt, Ordnung und Verbraucherschutz / Landkreis Fürth",
+    "subsidyType": "Municipal Capital Rebate",
+    "subsidyRate": "Up to 25% Municipal Hardware Bonus (Cap-Indexed per kWh/kWp)",
+    "rateDecimal": 0.25,
+    "maxAmount": "€25,000 per municipal commercial/horticultural parcel",
+    "matchRequirement": "75% Applicant Equity / Rentenbank Loan",
+    "disbursementType": "Post-Audit Milestone & Verified Invoice Reimbursement",
+    "currency": "EUR",
+    "verifiedDate": "2026-11-12 Verified (v6.0 3-Tier Audit)",
+    "deadline": "Rolling 2026/2027 Municipal & Regional Intake Windows",
+    "selectionMethod": "Technical Efficiency Threshold & Statutory Eligibility Audit",
+    "targetEquipment": [
+      "Stationary lithium iron phosphate (LFP) battery storage coupled with packhouse/greenhouse PV",
+      "Waste-heat recovery exchangers on vegetable pre-cooling and hydro-cooling refrigeration units",
+      "Smart bidirectional EV/forklift charging stations for electric intralogistics fleets"
+    ],
+    "ineligibleItems": [
+      "Retroactive equipment orders placed prior to official grant approval / Vorhabenbeginn clearance",
+      "Used or uncertified secondhand machinery without OEM efficiency warranty",
+      "Routine consumable inputs (fertilizer salts, seeds, growing media, seasonal labor)"
+    ],
+    "qualificationCriteria": [
+      "Operating site situated in Stadt Fürth or participating Landkreis Fürth municipalities",
+      "Installation performed by certified electrical/HVAC Meisterbetrieb"
+    ],
+    "documentChecklist": [
+      "Pre-purchase municipal online registration receipt (Eingangsbestätigung)",
+      "Itemized installer invoice + Marktstammdatenregister (MaStR) certificate"
+    ],
+    "officialUrl": "https://www.fuerth.de/umwelt-klima/klimaschutz-und-energie/foerderprogramme/",
+    "portalName": "Bürgerserviceportal Fürth — Klimaschutzförderung",
+    "contactPhone": "+49 911 974-1470",
+    "contactEmail": "klimaschutz@fuerth.de",
+    "linkedCalculator": "greenhouse-energy-tariff-bess-p2h-arbitrage-calculator.html",
+    "linkedToolTitle": "EPEX Power-to-Heat & BESS Simulator",
+    "summary": "Local municipal incentive covering Nuremberg-Fürth-Erlangen garlic-land (Knoblauchsland) growers installing commercial battery energy storage (BESS), packhouse PV arrays, and electrified cold-storage heat recovery.",
+    "deepGuide": "Step 1: Register parcel in Fürth climate portal prior to hardware purchase. Step 2: Submit MaStR (Marktstammdatenregister) registration and VDE-AR-N 4105/4110 grid compliance after commissioning.",
+    "applicationWindow": {
+      "status": "open",
+      "statusLabel": "🟢 Open (2026/2027 Active Window)",
+      "startDate": "2026-01-15",
+      "endDate": "2027-06-30",
+      "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
+      "daysRemaining": 230,
+      "cycleFrequency": "Annual / Rolling Budget Allocation",
+      "submissionPortal": "Bürgerserviceportal Fürth — Klimaschutzförderung"
+    },
+    "facets": {
+      "fundingTier": "tier_micro",
+      "matchTier": "half_match",
+      "targetAudience": [
+        "commercial_cea",
+        "small_family",
+        "beginning_farmer"
+      ],
+      "technologies": [
+        "renewables",
+        "energy"
+      ],
+      "trackScope": "pure_ag"
+    },
+    "admin_tier": "Municipal / Local",
+    "region_scope": "Mittelfranken · Stadt & Landkreis Fürth (Stadt & Landkreis Fürth Klimaschutzförderung)",
+    "filing_authority": "Stadt Fürth — Amt für Umwelt, Ordnung und Verbraucherschutz / Landkreis Fürth (Bürgerserviceportal Fürth — Klimaschutzförderung)"
+  },
+  {
+    "id": "DE-NW-STRAELEN-NIEDERRHEIN-AGRO",
+    "country": "DE",
+    "countryName": "Germany",
+    "region": "DE-NW",
+    "regionName": "Nordrhein-Westfalen · Kreis Kleve / Straelen",
+    "jurisdictionLabel": "Kreis Kleve / Agrobusiness Niederrhein Kommunal",
+    "flag": "🇩🇪",
+    "category": "water",
+    "name": "Niederrhein Unterglas-Gartenbau Wasser- & Abwärmeverbund-Förderung (Kreis Kleve / Straelen)",
+    "agency": "Kreis Kleve Wirtschaftsförderung & Stadt Straelen Klimaschutzmanagement",
+    "subsidyType": "Municipal / District Cluster Co-Funding",
+    "subsidyRate": "30% - 40% District Innovation & Water Resilience Grant",
+    "rateDecimal": 0.35,
+    "maxAmount": "€75,000 per Venlo greenhouse operation",
+    "matchRequirement": "60% - 70% Grower / NRW.BANK Co-Financing",
+    "disbursementType": "Post-Audit Milestone & Verified Invoice Reimbursement",
+    "currency": "EUR",
+    "verifiedDate": "2026-11-12 Verified (v6.0 3-Tier Audit)",
+    "deadline": "Rolling 2026/2027 Municipal & Regional Intake Windows",
+    "selectionMethod": "Technical Efficiency Threshold & Statutory Eligibility Audit",
+    "targetEquipment": [
+      "Closed-loop hydroponic drain disinfection skids (UV-C, ozone, ultrafiltration)",
+      "Lined rainwater harvesting basins with floating evaporation/algae covers",
+      "Potentiometric ion-selective electrode (ISE) inline fertigation analyzers"
+    ],
+    "ineligibleItems": [
+      "Retroactive equipment orders placed prior to official grant approval / Vorhabenbeginn clearance",
+      "Used or uncertified secondhand machinery without OEM efficiency warranty",
+      "Routine consumable inputs (fertilizer salts, seeds, growing media, seasonal labor)"
+    ],
+    "qualificationCriteria": [
+      "Commercial horticulture operation in Kreis Kleve / Niederrhein cluster",
+      "Compliance with WHG (Wasserhaushaltsgesetz) & DüV zero-runoff targets"
+    ],
+    "documentChecklist": [
+      "LWK Nordrhein-Westfalen horticultural advisory endorsement",
+      "Water mass-balance schematic & 3 independent equipment tenders"
+    ],
+    "officialUrl": "https://www.kreis-kleve.de/aufgaben/bauen-und-umwelt/klimaschutz",
+    "portalName": "Kreis Kleve Klimaschutz- & Wirtschaftsförderportal",
+    "contactPhone": "+49 2821 85-0",
+    "contactEmail": "klimaschutz@kreis-kleve.de",
+    "linkedCalculator": "closed-loop-nutrient-recirculation-ion-balance-simulator.html",
+    "linkedToolTitle": "Closed-Loop Ion Balance Simulator",
+    "summary": "District-level horticultural cluster grant in Germany's largest Venlo glasshouse hub (Straelen/Geldern/Kleve) supporting closed-loop drain water UV/ozone sterilization, rainwater retention basins, and industrial residual heat tie-ins.",
+    "deepGuide": "Step 1: Coordinate water permit pre-check with Untere Wasserbehörde Kreis Kleve. Step 2: Submit closed-loop nutrient zero-discharge balance alongside LWK NRW technical endorsement.",
+    "applicationWindow": {
+      "status": "open",
+      "statusLabel": "🟢 Open (2026/2027 Active Window)",
+      "startDate": "2026-01-15",
+      "endDate": "2027-06-30",
+      "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
+      "daysRemaining": 230,
+      "cycleFrequency": "Annual / Rolling Budget Allocation",
+      "submissionPortal": "Kreis Kleve Klimaschutz- & Wirtschaftsförderportal"
+    },
+    "facets": {
+      "fundingTier": "tier_micro",
+      "matchTier": "half_match",
+      "targetAudience": [
+        "commercial_cea",
+        "small_family",
+        "beginning_farmer"
+      ],
+      "technologies": [
+        "water",
+        "smartfarm",
+        "energy"
+      ],
+      "trackScope": "pure_ag"
+    },
+    "admin_tier": "Municipal / Local",
+    "region_scope": "Nordrhein-Westfalen · Kreis Kleve / Straelen (Kreis Kleve / Agrobusiness Niederrhein Kommunal)",
+    "filing_authority": "Kreis Kleve Wirtschaftsförderung & Stadt Straelen Klimaschutzmanagement (Kreis Kleve Klimaschutz- & Wirtschaftsförderportal)"
+  },
+  {
+    "id": "DE-NI-PAPENBURG-EMSLAND-GEWAECHSHAUS",
+    "country": "DE",
+    "countryName": "Germany",
+    "region": "DE-NI",
+    "regionName": "Niedersachsen · Landkreis Emsland / Papenburg",
+    "jurisdictionLabel": "Landkreis Emsland / Stadt Papenburg Gartenbaufonds",
+    "flag": "🇩🇪",
+    "category": "energy",
+    "name": "Papenburg & Emsland Unterglas-Kompetenzfonds: Abwärme, LED & Schirmtechnik",
+    "agency": "Landkreis Emsland — Fachbereich Umwelt / Stadt Papenburg",
+    "subsidyType": "Municipal Cluster Modernization Grant",
+    "subsidyRate": "Up to 35% Capital Grant",
+    "rateDecimal": 0.35,
+    "maxAmount": "€100,000 per vegetable/herb greenhouse enterprise",
+    "matchRequirement": "65% Grower Match / NBank Co-Loan",
+    "disbursementType": "Post-Audit Milestone & Verified Invoice Reimbursement",
+    "currency": "EUR",
+    "verifiedDate": "2026-11-12 Verified (v6.0 3-Tier Audit)",
+    "deadline": "Rolling 2026/2027 Municipal & Regional Intake Windows",
+    "selectionMethod": "Technical Efficiency Threshold & Statutory Eligibility Audit",
+    "targetEquipment": [
+      "High-efficacy (>3.6 umol/J) dynamic multi-channel LED toplighting and interlighting",
+      "District heating substations coupling industrial/biomass waste heat to Venlo pipe-rail loops",
+      "Double thermal/blackout screen retrofits with automated gap dehumidification control"
+    ],
+    "ineligibleItems": [
+      "Retroactive equipment orders placed prior to official grant approval / Vorhabenbeginn clearance",
+      "Used or uncertified secondhand machinery without OEM efficiency warranty",
+      "Routine consumable inputs (fertilizer salts, seeds, growing media, seasonal labor)"
+    ],
+    "qualificationCriteria": [
+      "Commercial vegetable or ornamental glasshouse located in Landkreis Emsland / Papenburg",
+      "Minimum 20% primary fossil energy reduction per m2 cultivation area"
+    ],
+    "documentChecklist": [
+      "Gartenbauzentrum Papenburg / certified energy consultant heat-load verification",
+      "Three competitive vendor quotes and parcel site plan"
+    ],
+    "officialUrl": "https://www.emsland.de/bauen-umwelt/klimaschutz/foerderprogramme.html",
+    "portalName": "Landkreis Emsland Förderportal",
+    "contactPhone": "+49 5931 44-0",
+    "contactEmail": "klimaschutz@emsland.de",
+    "linkedCalculator": "greenhouse-lighting-led-thermal-cfd-optimizer.html",
+    "linkedToolTitle": "LED Thermal & PAR CFD Optimizer",
+    "summary": "Local district modernization fund tailored for Papenburg's commercial vegetable glasshouse cooperative cluster, accelerating HPS-to-LED conversion, biomass/industrial district heat coupling, and double thermal screens.",
+    "deepGuide": "Step 1: Obtain energy baseline audit via LWK Niedersachsen Gartenbauzentrum Papenburg. Step 2: File district co-funding application prior to equipment procurement.",
+    "applicationWindow": {
+      "status": "open",
+      "statusLabel": "🟢 Open (2026/2027 Active Window)",
+      "startDate": "2026-01-15",
+      "endDate": "2027-06-30",
+      "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
+      "daysRemaining": 230,
+      "cycleFrequency": "Annual / Rolling Budget Allocation",
+      "submissionPortal": "Landkreis Emsland Förderportal"
+    },
+    "facets": {
+      "fundingTier": "tier_micro",
+      "matchTier": "half_match",
+      "targetAudience": [
+        "commercial_cea",
+        "small_family",
+        "beginning_farmer"
+      ],
+      "technologies": [
+        "energy",
+        "smartfarm"
+      ],
+      "trackScope": "pure_ag"
+    },
+    "admin_tier": "Municipal / Local",
+    "region_scope": "Niedersachsen · Landkreis Emsland / Papenburg (Landkreis Emsland / Stadt Papenburg Gartenbaufonds)",
+    "filing_authority": "Landkreis Emsland — Fachbereich Umwelt / Stadt Papenburg (Landkreis Emsland Förderportal)"
+  },
+  {
+    "id": "DE-HH-VIERLANDE-GARTENBAU-KLIMA",
+    "country": "DE",
+    "countryName": "Germany",
+    "region": "DE-HH",
+    "regionName": "Hamburg · Bezirk Bergedorf (Vier- und Marschlande)",
+    "jurisdictionLabel": "Hamburg IFB / Vier- und Marschlande Gartenbau",
+    "flag": "🇩🇪",
+    "category": "energy",
+    "name": "Hamburger Klimaschutzförderung Unterglasgartenbau (Vier- und Marschlande)",
+    "agency": "Hamburgische Investitions- und Förderbank (IFB Hamburg) & BUKEA",
+    "subsidyType": "City-State Municipal Climate Grant",
+    "subsidyRate": "30% - 45% Non-Repayable Modernization Grant",
+    "rateDecimal": 0.4,
+    "maxAmount": "€150,000 per horticultural operation",
+    "matchRequirement": "55% - 70% Grower / KfW Co-Financing",
+    "disbursementType": "Post-Audit Milestone & Verified Invoice Reimbursement",
+    "currency": "EUR",
+    "verifiedDate": "2026-11-12 Verified (v6.0 3-Tier Audit)",
+    "deadline": "Rolling 2026/2027 Municipal & Regional Intake Windows",
+    "selectionMethod": "Technical Efficiency Threshold & Statutory Eligibility Audit",
+    "targetEquipment": [
+      "Industrial heat pumps and stratified diurnal thermal storage tanks (Pufferspeicher)",
+      "Double glazing / diffuse AR-coated Venlo roof modernization",
+      "Automated fertigation recirculation and rainwater storage infrastructure"
+    ],
+    "ineligibleItems": [
+      "Retroactive equipment orders placed prior to official grant approval / Vorhabenbeginn clearance",
+      "Used or uncertified secondhand machinery without OEM efficiency warranty",
+      "Routine consumable inputs (fertilizer salts, seeds, growing media, seasonal labor)"
+    ],
+    "qualificationCriteria": [
+      "Horticultural production facility in Hamburg (e.g., Bergedorf / Vier- und Marschlande)",
+      "Verified CO2 emission reduction cost-effectiveness above IFB UfR benchmark"
+    ],
+    "documentChecklist": [
+      "IFB UfR CO2 calculation workbook signed by accredited energy consultant",
+      "Itemized contractor quotes and commercial registry extract"
+    ],
+    "officialUrl": "https://www.ifbhh.de/foerderprogramm/unternehmen-fuer-ressourcenschutz",
+    "portalName": "IFB Hamburg — Unternehmen für Ressourcenschutz (UfR)",
+    "contactPhone": "+49 40 24846-533",
+    "contactEmail": "ufr@ifbhh.de",
+    "linkedCalculator": "greenhouse-heating-load-thermal-screen-calculator.html",
+    "linkedToolTitle": "Thermal Screen & Heat Loss Calculator",
+    "summary": "Hamburg city-state resource efficiency grant (UfR) heavily utilized by Vier- und Marschlande horticultural enterprises for heat pumps, thermal buffer tanks, diffuse insulating glass, and closed irrigation loops.",
+    "deepGuide": "Step 1: Book free IFB Hamburg UfR pre-check consultation. Step 2: Quantify annual CO2 and kWh savings using certified resource efficiency matrix. Step 3: Submit via IFB electronic portal before ordering.",
+    "applicationWindow": {
+      "status": "open",
+      "statusLabel": "🟢 Open (2026/2027 Active Window)",
+      "startDate": "2026-01-15",
+      "endDate": "2027-06-30",
+      "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
+      "daysRemaining": 230,
+      "cycleFrequency": "Annual / Rolling Budget Allocation",
+      "submissionPortal": "IFB Hamburg — Unternehmen für Ressourcenschutz (UfR)"
+    },
+    "facets": {
+      "fundingTier": "tier_medium",
+      "matchTier": "half_match",
+      "targetAudience": [
+        "commercial_cea",
+        "small_family",
+        "beginning_farmer"
+      ],
+      "technologies": [
+        "energy",
+        "water",
+        "renewables"
+      ],
+      "trackScope": "pure_ag"
+    },
+    "admin_tier": "Municipal / Local",
+    "region_scope": "Hamburg · Bezirk Bergedorf (Vier- und Marschlande) (Hamburg IFB / Vier- und Marschlande Gartenbau)",
+    "filing_authority": "Hamburgische Investitions- und Förderbank (IFB Hamburg) & BUKEA (IFB Hamburg — Unternehmen für Ressourcenschutz (UfR))"
+  },
+  {
+    "id": "DE-RP-PFALZ-GEMUESEBAU-BEWAESSERUNG",
+    "country": "DE",
+    "countryName": "Germany",
+    "region": "DE-RP",
+    "regionName": "Rheinland-Pfalz · Vorderpfalz",
+    "jurisdictionLabel": "Rheinland-Pfalz MWVLW / ADD Agrarförderung",
+    "flag": "🇩🇪",
+    "category": "water",
+    "name": "Rheinland-Pfalz EULLE / AFP Wasser- & Ressourceneffizienz im Gemüsebau (Vorderpfalz)",
+    "agency": "Ministerium für Wirtschaft, Verkehr, Landwirtschaft und Weinbau (MWVLW) Rheinland-Pfalz",
+    "subsidyType": "State Capital Co-Financing Grant",
+    "subsidyRate": "25% - 40% Investment Grant (+10% Junglandwirte Bonus)",
+    "rateDecimal": 0.35,
+    "maxAmount": "€400,000 eligible investment volume",
+    "matchRequirement": "60% - 75% Applicant Co-Financing",
+    "disbursementType": "Post-Audit Milestone & Verified Invoice Reimbursement",
+    "currency": "EUR",
+    "verifiedDate": "2026-11-12 Verified (v6.0 3-Tier Audit)",
+    "deadline": "Rolling 2026/2027 Municipal & Regional Intake Windows",
+    "selectionMethod": "Technical Efficiency Threshold & Statutory Eligibility Audit",
+    "targetEquipment": [
+      "Pressure-compensated drip and micro-sprinkler irrigation networks with VFD pump stations",
+      "Automated soil matric potential (pF / tensiometer) and FDR moisture sensor telemetry",
+      "Multi-span protected vegetable tunnels and rainwater storage reservoirs"
+    ],
+    "ineligibleItems": [
+      "Retroactive equipment orders placed prior to official grant approval / Vorhabenbeginn clearance",
+      "Used or uncertified secondhand machinery without OEM efficiency warranty",
+      "Routine consumable inputs (fertilizer salts, seeds, growing media, seasonal labor)"
+    ],
+    "qualificationCriteria": [
+      "Active horticultural enterprise in Rheinland-Pfalz meeting minimum labor/income threshold",
+      "Valid water extraction permit or documented water-saving substitution >= 15%"
+    ],
+    "documentChecklist": [
+      "Investitionskonzept (Business & Financial Viability Plan via DLR Rheinpfalz)",
+      "Water authority clearance & 3 vendor quotes"
+    ],
+    "officialUrl": "https://mwvlw.rlp.de/themen/landwirtschaft/foerderung/einzelbetriebliche-investitionsfoerderung",
+    "portalName": "DLR Rheinpfalz / Mein EULLE Portal RLP",
+    "contactPhone": "+49 6321 671-0",
+    "contactEmail": "poststelle@dlr.rlp.de",
+    "linkedCalculator": "soil-matrix-water-potential-matric-suction-calculator.html",
+    "linkedToolTitle": "Matric Water Potential & Drip Calculator",
+    "summary": "Regional investment grant supporting Germany's largest open-field and protected vegetable garden ('Gemüsegarten Vorderpfalz') with precision subsurface drip irrigation, soil tensiometer networks, and foil/glasshouse modernization.",
+    "deepGuide": "Step 1: Consult DLR Rheinpfalz (Neustadt an der Weinstraße) for water rights & AFP investment concept. Step 2: Submit online via EULLE portal during state ranking window.",
+    "applicationWindow": {
+      "status": "open",
+      "statusLabel": "🟢 Open (2026/2027 Active Window)",
+      "startDate": "2026-01-15",
+      "endDate": "2027-06-30",
+      "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
+      "daysRemaining": 230,
+      "cycleFrequency": "Annual / Rolling Budget Allocation",
+      "submissionPortal": "DLR Rheinpfalz / Mein EULLE Portal RLP"
+    },
+    "facets": {
+      "fundingTier": "tier_medium",
+      "matchTier": "half_match",
+      "targetAudience": [
+        "commercial_cea",
+        "small_family",
+        "beginning_farmer"
+      ],
+      "technologies": [
+        "water",
+        "smartfarm"
+      ],
+      "trackScope": "pure_ag"
+    },
+    "admin_tier": "Regional / State",
+    "region_scope": "Rheinland-Pfalz · Vorderpfalz (Rheinland-Pfalz MWVLW / ADD Agrarförderung)",
+    "filing_authority": "Ministerium für Wirtschaft, Verkehr, Landwirtschaft und Weinbau (MWVLW) Rheinland-Pfalz (DLR Rheinpfalz / Mein EULLE Portal RLP)"
+  },
+  {
+    "id": "DE-RENTENBANK-ZUKUNFTSFELDER",
+    "country": "DE",
+    "countryName": "Germany",
+    "region": "DE-FED",
+    "regionName": "Germany (Federal Nationwide)",
+    "jurisdictionLabel": "Landwirtschaftliche Rentenbank (Bund)",
+    "flag": "🇩🇪",
+    "category": "smartfarm",
+    "name": "Rentenbank Programm Zukunftsfelder & Nachhaltigkeit: KI-Robotik, CEA & Kreislauf-Hydroponik",
+    "agency": "Landwirtschaftliche Rentenbank (Anstalt des öffentlichen Rechts)",
+    "subsidyType": "Federal Subsidized Low-Interest Loan + Tilgungszuschuss (Repayment Grant)",
+    "subsidyRate": "Up to 20% Repayment Grant + Sub-Market Promotional Interest",
+    "rateDecimal": 0.2,
+    "maxAmount": "€2,000,000 promotional credit line per enterprise",
+    "matchRequirement": "Hausbank Principle (80% Principal Repayment over 4-20 yrs)",
+    "disbursementType": "Post-Audit Milestone & Verified Invoice Reimbursement",
+    "currency": "EUR",
+    "verifiedDate": "2026-11-12 Verified (v6.0 3-Tier Audit)",
+    "deadline": "Rolling 2026/2027 Municipal & Regional Intake Windows",
+    "selectionMethod": "Technical Efficiency Threshold & Statutory Eligibility Audit",
+    "targetEquipment": [
+      "Autonomous greenhouse harvesting, de-leafing, and UV-C crop protection robots",
+      "Closed-loop hydroponic gutter systems and automated climate/fertigation computers",
+      "Young Gärtnermeister farm takeover (Hofnachfolge) and greenhouse modernization packages"
+    ],
+    "ineligibleItems": [
+      "Retroactive equipment orders placed prior to official grant approval / Vorhabenbeginn clearance",
+      "Used or uncertified secondhand machinery without OEM efficiency warranty",
+      "Routine consumable inputs (fertilizer salts, seeds, growing media, seasonal labor)"
+    ],
+    "qualificationCriteria": [
+      "Commercial agricultural or horticultural SME operating in Germany",
+      "Application routed through a German commercial bank (Hausbankverfahren) prior to order"
+    ],
+    "documentChecklist": [
+      "Rentenbank Zusatzblatt Zukunftsfelder / Junglandwirte",
+      "3-year historical financial statements + projected cash-flow serviceability",
+      "Gärtnermeisterbrief or horticultural qualification certificate (for young farmer bonus)"
+    ],
+    "officialUrl": "https://www.rentenbank.de/foerderangebote/landwirtschaft/",
+    "portalName": "Rentenbank Förderportal (via Hausbank)",
+    "contactPhone": "+49 69 2107-700",
+    "contactEmail": "office@rentenbank.de",
+    "linkedCalculator": "eu-greenhouse-energy-hofnachfolge-roi-simulator.html",
+    "linkedToolTitle": "EU Energy & Hofnachfolge ROI Simulator",
+    "summary": "Federal promotional finance facility from Germany's agricultural development bank backing autonomous harvesting robotics, AI climate MPC controllers, closed-loop hydroponics, and Gärtnermeister farm succession (Hofnachfolge).",
+    "deepGuide": "Step 1: Select machine/infrastructure from Rentenbank positive list. Step 2: Route promotional loan + Tilgungszuschuss request through your commercial Hausbank before signing purchase contracts.",
+    "applicationWindow": {
+      "status": "open",
+      "statusLabel": "🟢 Open (2026/2027 Active Window)",
+      "startDate": "2026-01-15",
+      "endDate": "2027-06-30",
+      "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
+      "daysRemaining": 230,
+      "cycleFrequency": "Annual / Rolling Budget Allocation",
+      "submissionPortal": "Rentenbank Förderportal (via Hausbank)"
+    },
+    "facets": {
+      "fundingTier": "tier_mega",
+      "matchTier": "half_match",
+      "targetAudience": [
+        "commercial_cea",
+        "small_family",
+        "beginning_farmer"
+      ],
+      "technologies": [
+        "smartfarm",
+        "energy",
+        "machinery"
+      ],
+      "trackScope": "pure_ag"
+    },
+    "admin_tier": "Federal",
+    "region_scope": "Germany (Federal Nationwide) (Landwirtschaftliche Rentenbank (Bund))",
+    "filing_authority": "Landwirtschaftliche Rentenbank (Anstalt des öffentlichen Rechts) (Rentenbank Förderportal (via Hausbank))"
+  },
+  {
+    "id": "NL-ZH-GEMEENTE-WESTLAND-DUURZAAMHEID",
+    "country": "NL",
+    "countryName": "Netherlands",
+    "region": "NL-ZH",
+    "regionName": "Zuid-Holland · Gemeente Westland",
+    "jurisdictionLabel": "Gemeente Westland / Greenport West-Holland",
+    "flag": "🇳🇱",
+    "category": "energy",
+    "name": "Gemeente Westland Stimuleringsregeling Duurzame Glastuinbouw & Warmtenet Aansluiting",
+    "agency": "Gemeente Westland — Cluster Ruimte, Economie & Energietransitie",
+    "subsidyType": "Municipal Energy Transition & Heat-Grid Voucher/Grant",
+    "subsidyRate": "Up to 35% Municipal Connection & Feasibility Subsidy",
+    "rateDecimal": 0.35,
+    "maxAmount": "€60,000 per Westland glasshouse parcel",
+    "matchRequirement": "65% Grower / SDE++ / BNG Co-Financing",
+    "disbursementType": "Post-Audit Milestone & Verified Invoice Reimbursement",
+    "currency": "EUR",
+    "verifiedDate": "2026-11-12 Verified (v6.0 3-Tier Audit)",
+    "deadline": "Rolling 2026/2027 Municipal & Regional Intake Windows",
+    "selectionMethod": "Technical Efficiency Threshold & Statutory Eligibility Audit",
+    "targetEquipment": [
+      "Heat-transfer substations connecting Venlo glasshouses to municipal geothermal district networks",
+      "Closed-loop drain water ozone/UV purification meeting 2027 WFD zero-emission mandate",
+      "OCAP pure CO2 distribution metering and buffer manifold installations"
+    ],
+    "ineligibleItems": [
+      "Retroactive equipment orders placed prior to official grant approval / Vorhabenbeginn clearance",
+      "Used or uncertified secondhand machinery without OEM efficiency warranty",
+      "Routine consumable inputs (fertilizer salts, seeds, growing media, seasonal labor)"
+    ],
+    "qualificationCriteria": [
+      "Registered glastuinbouw enterprise located within Gemeente Westland",
+      "Compliance with Dutch Glastuinbouw Waterproof zero-nitrogen/phosphate discharge standards"
+    ],
+    "documentChecklist": [
+      "KvK (Kamer van Koophandel) extract & eHerkenning EH3 login",
+      "Warmtenet / OCAP connection engineering quote & parcel Klic map"
+    ],
+    "officialUrl": "https://www.gemeentewestland.nl/ondernemen/glastuinbouw-en-greenport",
+    "portalName": "Gemeente Westland Ondernemersloket (eHerkenning)",
+    "contactPhone": "+31 174 673 673",
+    "contactEmail": "info@gemeentewestland.nl",
+    "linkedCalculator": "ates-aquifer-thermal-energy-storage-heat-pump-simulator.html",
+    "linkedToolTitle": "ATES & Geothermal Heat Pump Simulator",
+    "summary": "Municipal horticultural transition incentive in the world's densest Venlo glasshouse municipality (Westland), co-funding tie-ins to Warmtesysteem Westland geothermal district heating, OCAP CO2 grids, and zero-emission water rooms.",
+    "deepGuide": "Step 1: Verify parcel location within Warmtesysteem Westland / Trias Westland cluster zone. Step 2: Submit eHerkenning application for heat-exchanger substation or water purification upgrade.",
+    "applicationWindow": {
+      "status": "open",
+      "statusLabel": "🟢 Open (2026/2027 Active Window)",
+      "startDate": "2026-01-15",
+      "endDate": "2027-06-30",
+      "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
+      "daysRemaining": 230,
+      "cycleFrequency": "Annual / Rolling Budget Allocation",
+      "submissionPortal": "Gemeente Westland Ondernemersloket (eHerkenning)"
+    },
+    "facets": {
+      "fundingTier": "tier_micro",
+      "matchTier": "half_match",
+      "targetAudience": [
+        "commercial_cea",
+        "small_family",
+        "beginning_farmer"
+      ],
+      "technologies": [
+        "energy",
+        "water",
+        "renewables"
+      ],
+      "trackScope": "pure_ag"
+    },
+    "admin_tier": "Municipal / Local",
+    "region_scope": "Zuid-Holland · Gemeente Westland (Gemeente Westland / Greenport West-Holland)",
+    "filing_authority": "Gemeente Westland — Cluster Ruimte, Economie & Energietransitie (Gemeente Westland Ondernemersloket (eHerkenning))"
+  },
+  {
+    "id": "NL-LI-VENLO-GREENPORT-INNOVATIE",
+    "country": "NL",
+    "countryName": "Netherlands",
+    "region": "NL-LI",
+    "regionName": "Limburg · Gemeente Venlo / Noord-Limburg",
+    "jurisdictionLabel": "Gemeente Venlo / Brightlands Campus Greenport Venlo",
+    "flag": "🇳🇱",
+    "category": "smartfarm",
+    "name": "Greenport Venlo & Regio Noord-Limburg Innovatiefonds Circulaire Glastuinbouw",
+    "agency": "Gemeente Venlo & Regio Noord-Limburg / LIOF",
+    "subsidyType": "Municipal / Regional AgTech Co-Investment Grant",
+    "subsidyRate": "25% - 45% Innovation & Circularity Grant",
+    "rateDecimal": 0.4,
+    "maxAmount": "€100,000 per collaborative CEA pilot or farm deployment",
+    "matchRequirement": "55% - 75% Private Co-Investment",
+    "disbursementType": "Post-Audit Milestone & Verified Invoice Reimbursement",
+    "currency": "EUR",
+    "verifiedDate": "2026-11-12 Verified (v6.0 3-Tier Audit)",
+    "deadline": "Rolling 2026/2027 Municipal & Regional Intake Windows",
+    "selectionMethod": "Technical Efficiency Threshold & Statutory Eligibility Audit",
+    "targetEquipment": [
+      "Semi-closed Air Treatment Units (ATU) with enthalpy recovery wheels",
+      "Autonomous greenhouse AI vision cameras and sap-flow / stomatal sensors",
+      "Circular organic substrate steaming and peat-free bio-fiber fertigation skids"
+    ],
+    "ineligibleItems": [
+      "Retroactive equipment orders placed prior to official grant approval / Vorhabenbeginn clearance",
+      "Used or uncertified secondhand machinery without OEM efficiency warranty",
+      "Routine consumable inputs (fertilizer salts, seeds, growing media, seasonal labor)"
+    ],
+    "qualificationCriteria": [
+      "Horticultural grower or CEA tech SME operating in Gemeente Venlo / Noord-Limburg",
+      "Quantified reduction in fossil gas, peat volume, or chemical crop protection"
+    ],
+    "documentChecklist": [
+      "Project innovation canvas, itemized budget, and KvK registration",
+      "De-minimis state-aid declaration & 2+ vendor quotes"
+    ],
+    "officialUrl": "https://www.venlo.nl/ondernemen",
+    "portalName": "Gemeente Venlo / LIOF Subsidieloket",
+    "contactPhone": "+31 77 359 6666",
+    "contactEmail": "ondernemersloket@venlo.nl",
+    "linkedCalculator": "semi-closed-greenhouse-atu-mollier-simulator.html",
+    "linkedToolTitle": "Semi-Closed Venlo ATU Mollier Simulator",
+    "summary": "Local innovation grant in the birthplace of the Venlo greenhouse (Gemeente Venlo / Brightlands Campus), funding AI autonomous climate control, circular substrate recycling, and cross-border Limburg-NRW clean energy pilots.",
+    "deepGuide": "Step 1: Align project with Brightlands Campus Greenport Venlo circular horticulture themes. Step 2: File joint or single-SME voucher/grant via LIOF/Venlo Ondernemersloket.",
+    "applicationWindow": {
+      "status": "open",
+      "statusLabel": "🟢 Open (2026/2027 Active Window)",
+      "startDate": "2026-01-15",
+      "endDate": "2027-06-30",
+      "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
+      "daysRemaining": 230,
+      "cycleFrequency": "Annual / Rolling Budget Allocation",
+      "submissionPortal": "Gemeente Venlo / LIOF Subsidieloket"
+    },
+    "facets": {
+      "fundingTier": "tier_micro",
+      "matchTier": "half_match",
+      "targetAudience": [
+        "commercial_cea",
+        "small_family",
+        "beginning_farmer"
+      ],
+      "technologies": [
+        "smartfarm",
+        "energy",
+        "water"
+      ],
+      "trackScope": "pure_ag"
+    },
+    "admin_tier": "Municipal / Local",
+    "region_scope": "Limburg · Gemeente Venlo / Noord-Limburg (Gemeente Venlo / Brightlands Campus Greenport Venlo)",
+    "filing_authority": "Gemeente Venlo & Regio Noord-Limburg / LIOF (Gemeente Venlo / LIOF Subsidieloket)"
+  },
+  {
+    "id": "NL-NH-GREENPORT-AALSMEER-ENERGIE",
+    "country": "NL",
+    "countryName": "Netherlands",
+    "region": "NL-NH",
+    "regionName": "Noord-Holland · Aalsmeer / Haarlemmermeer",
+    "jurisdictionLabel": "Gemeente Aalsmeer / Greenport Aalsmeer",
+    "flag": "🇳🇱",
+    "category": "energy",
+    "name": "Greenport Aalsmeer Lokale Energieregeling: All-Electric Kas, LED & Warmtebuffering",
+    "agency": "Gemeente Aalsmeer & Greenport Aalsmeer Duurzaamheidsfonds",
+    "subsidyType": "Municipal Sustainability Voucher & CapEx Subsidy",
+    "subsidyRate": "Up to 30% Municipal Transition Contribution",
+    "rateDecimal": 0.3,
+    "maxAmount": "€50,000 per glasshouse enterprise",
+    "matchRequirement": "70% Grower / EIA / MEI Co-Financing",
+    "disbursementType": "Post-Audit Milestone & Verified Invoice Reimbursement",
+    "currency": "EUR",
+    "verifiedDate": "2026-11-12 Verified (v6.0 3-Tier Audit)",
+    "deadline": "Rolling 2026/2027 Municipal & Regional Intake Windows",
+    "selectionMethod": "Technical Efficiency Threshold & Statutory Eligibility Audit",
+    "targetEquipment": [
+      "Full-spectrum dimmable LED assimilation fixtures with far-red photomorphogenesis channels",
+      "Condensing dehumidification heat pumps recovering latent transpiration enthalpy",
+      "Triple-screen thermal/light-abatement curtain retrofits"
+    ],
+    "ineligibleItems": [
+      "Retroactive equipment orders placed prior to official grant approval / Vorhabenbeginn clearance",
+      "Used or uncertified secondhand machinery without OEM efficiency warranty",
+      "Routine consumable inputs (fertilizer salts, seeds, growing media, seasonal labor)"
+    ],
+    "qualificationCriteria": [
+      "Active greenhouse facility in the Greenport Aalsmeer municipal covenant area",
+      "Compliance with Dutch light-emission abatement (lichtuitstoot) shutter rules"
+    ],
+    "documentChecklist": [
+      "Certified energy scan report & lamp efficacy datasheet (umol/J)",
+      "KvK registration and itemized supplier quotations"
+    ],
+    "officialUrl": "https://greenportaalsmeer.nl/themas/duurzaamheid-energie/",
+    "portalName": "Greenport Aalsmeer / Gemeente Aalsmeer Loket",
+    "contactPhone": "+31 297 387 575",
+    "contactEmail": "info@greenportaalsmeer.nl",
+    "linkedCalculator": "dli-spectrum-photomorphogenesis-calculator.html",
+    "linkedToolTitle": "DLI & LED Spectrum Calculator",
+    "summary": "Municipal cluster program supporting Aalsmeer/Amstelveen/Haarlemmermeer glasshouses transitioning away from gas CHP toward all-electric heat pumps, multi-tier LED lighting, and dehumidification air-handling.",
+    "deepGuide": "Step 1: Complete Greenport Aalsmeer energy scan. Step 2: Stack municipal transition subsidy with national RVO EIA (40% tax deduction) and MEI grant.",
+    "applicationWindow": {
+      "status": "open",
+      "statusLabel": "🟢 Open (2026/2027 Active Window)",
+      "startDate": "2026-01-15",
+      "endDate": "2027-06-30",
+      "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
+      "daysRemaining": 230,
+      "cycleFrequency": "Annual / Rolling Budget Allocation",
+      "submissionPortal": "Greenport Aalsmeer / Gemeente Aalsmeer Loket"
+    },
+    "facets": {
+      "fundingTier": "tier_micro",
+      "matchTier": "half_match",
+      "targetAudience": [
+        "commercial_cea",
+        "small_family",
+        "beginning_farmer"
+      ],
+      "technologies": [
+        "energy",
+        "smartfarm"
+      ],
+      "trackScope": "pure_ag"
+    },
+    "admin_tier": "Municipal / Local",
+    "region_scope": "Noord-Holland · Aalsmeer / Haarlemmermeer (Gemeente Aalsmeer / Greenport Aalsmeer)",
+    "filing_authority": "Gemeente Aalsmeer & Greenport Aalsmeer Duurzaamheidsfonds (Greenport Aalsmeer / Gemeente Aalsmeer Loket)"
+  },
+  {
+    "id": "NL-ZH-OOSTLAND-LANDBOUWTRANSITIE",
+    "country": "NL",
+    "countryName": "Netherlands",
+    "region": "NL-ZH",
+    "regionName": "Zuid-Holland · Lansingerland (Greenport Oostland)",
+    "jurisdictionLabel": "Gemeente Lansingerland / Greenport Oostland",
+    "flag": "🇳🇱",
+    "category": "renewables",
+    "name": "Gemeente Lansingerland & Oostland Glastuinbouw Warmte- & Watertransitie Regeling",
+    "agency": "Gemeente Lansingerland (Bleiswijk / Bergschenhoek / Berkel en Rodenrijs)",
+    "subsidyType": "Municipal Cluster Infrastructure Grant",
+    "subsidyRate": "Up to 35% Feasibility & Connection Co-Funding",
+    "rateDecimal": 0.35,
+    "maxAmount": "€75,000 per Oostland greenhouse operation",
+    "matchRequirement": "65% Grower Equity / Rabobank Groenfinanciering",
+    "disbursementType": "Post-Audit Milestone & Verified Invoice Reimbursement",
+    "currency": "EUR",
+    "verifiedDate": "2026-11-12 Verified (v6.0 3-Tier Audit)",
+    "deadline": "Rolling 2026/2027 Municipal & Regional Intake Windows",
+    "selectionMethod": "Technical Efficiency Threshold & Statutory Eligibility Audit",
+    "targetEquipment": [
+      "Aquifer Thermal Energy Storage (WKO / ATES) doublet well heat exchangers",
+      "WarmtelinQ industrial waste-heat secondary greenhouse manifolds",
+      "Automated UV-C and biological IPM dispenser rail systems"
+    ],
+    "ineligibleItems": [
+      "Retroactive equipment orders placed prior to official grant approval / Vorhabenbeginn clearance",
+      "Used or uncertified secondhand machinery without OEM efficiency warranty",
+      "Routine consumable inputs (fertilizer salts, seeds, growing media, seasonal labor)"
+    ],
+    "qualificationCriteria": [
+      "Commercial glasshouse operating in Lansingerland / Greenport Oostland",
+      "Zero fossil boiler expansion commitment"
+    ],
+    "documentChecklist": [
+      "Provincial groundwater WKO permit (Omgevingsdienst Haaglanden) & technical quotes",
+      "KvK extract & eHerkenning submission"
+    ],
+    "officialUrl": "https://www.lansingerland.nl/ondernemen/glastuinbouw/",
+    "portalName": "Gemeente Lansingerland Ondernemersplein",
+    "contactPhone": "+31 10 800 4000",
+    "contactEmail": "info@lansingerland.nl",
+    "linkedCalculator": "ates-aquifer-thermal-energy-storage-heat-pump-simulator.html",
+    "linkedToolTitle": "ATES & Heat Pump Simulator",
+    "summary": "Municipal glasshouse transition grant centered around Bleiswijk (WUR Glastuinbouw hub) in Lansingerland, backing ATES (WKO) aquifer thermal storage, WarmtelinQ residual heat connections, and autonomous IPM biocontrol.",
+    "deepGuide": "Step 1: Register with Lansingerland Glastuinbouw desk. Step 2: Submit WKO/ATES hydro-thermal permit and energy balance alongside RVO SDE++/MEI co-application.",
+    "applicationWindow": {
+      "status": "open",
+      "statusLabel": "🟢 Open (2026/2027 Active Window)",
+      "startDate": "2026-01-15",
+      "endDate": "2027-06-30",
+      "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
+      "daysRemaining": 230,
+      "cycleFrequency": "Annual / Rolling Budget Allocation",
+      "submissionPortal": "Gemeente Lansingerland Ondernemersplein"
+    },
+    "facets": {
+      "fundingTier": "tier_micro",
+      "matchTier": "half_match",
+      "targetAudience": [
+        "commercial_cea",
+        "small_family",
+        "beginning_farmer"
+      ],
+      "technologies": [
+        "renewables",
+        "energy",
+        "water"
+      ],
+      "trackScope": "pure_ag"
+    },
+    "admin_tier": "Municipal / Local",
+    "region_scope": "Zuid-Holland · Lansingerland (Greenport Oostland) (Gemeente Lansingerland / Greenport Oostland)",
+    "filing_authority": "Gemeente Lansingerland (Bleiswijk / Bergschenhoek / Berkel en Rodenrijs) (Gemeente Lansingerland Ondernemersplein)"
+  },
+  {
+    "id": "FR-FAM-SERRE-DECARBONATION",
+    "country": "FR",
+    "countryName": "France",
+    "region": "FR-NAT",
+    "regionName": "France (National)",
+    "jurisdictionLabel": "FranceAgriMer — Plan de Souveraineté Fruits & Légumes",
+    "flag": "🇫🇷",
+    "category": "energy",
+    "name": "FranceAgriMer : Aide aux Investissements de Décarbonation et Modernisation des Serres",
+    "agency": "FranceAgriMer — Ministère de l'Agriculture et de la Souveraineté Alimentaire",
+    "subsidyType": "Federal Direct Capital Grant",
+    "subsidyRate": "30% - 40% Grant (+10% Jeunes Agriculteurs / OP Bonus)",
+    "rateDecimal": 0.4,
+    "maxAmount": "€400,000 grant cap per horticultural exploitation",
+    "matchRequirement": "60% Grower / Crédit Agricole Co-Financing",
+    "disbursementType": "Post-Audit Milestone & Verified Invoice Reimbursement",
+    "currency": "EUR",
+    "verifiedDate": "2026-11-12 Verified (v6.0 3-Tier Audit)",
+    "deadline": "Rolling 2026/2027 Municipal & Regional Intake Windows",
+    "selectionMethod": "Technical Efficiency Threshold & Statutory Eligibility Audit",
+    "targetEquipment": [
+      "Multi-layer thermal and shading screens (écrans thermiques double couche)",
+      "Horticultural air-to-water and geothermal heat pumps (pompes à chaleur serres)",
+      "Dynamic climate control computers, VPD sensors, and drip recirculation skids"
+    ],
+    "ineligibleItems": [
+      "Retroactive equipment orders placed prior to official grant approval / Vorhabenbeginn clearance",
+      "Used or uncertified secondhand machinery without OEM efficiency warranty",
+      "Routine consumable inputs (fertilizer salts, seeds, growing media, seasonal labor)"
+    ],
+    "qualificationCriteria": [
+      "Active agricultural exploitation (SIRET agricole / MSA affiliation) in France",
+      "Equipment listed on FranceAgriMer official eligible Annex equipment catalog",
+      "Quotes MUST remain unsigned (aucun commencement d'exécution) until PAD acknowledgment"
+    ],
+    "documentChecklist": [
+      "Attestation d'affiliation MSA & Kbis / numéro SIRET",
+      "Unsigned itemized vendor quotes (devis détaillés non signés)",
+      "Jeune Agriculteur (JA) or Producer Organization (OP) membership certificate for +10% bonus"
+    ],
+    "officialUrl": "https://www.franceagrimer.fr/Accompagner/Planification-ecologique/Plan-de-souverainete-fruits-et-legumes",
+    "portalName": "FranceAgriMer — Plateforme d'Acquisition de Données (PAD)",
+    "contactPhone": "+33 1 73 30 30 00",
+    "contactEmail": "accueil@franceagrimer.fr",
+    "linkedCalculator": "greenhouse-heating-load-thermal-screen-calculator.html",
+    "linkedToolTitle": "Thermal Screen & Heating Calculator",
+    "summary": "Flagship French national horticultural sovereignty grant financing multi-layer thermal screens, climate computers, heat pumps, dehumidification, and fossil-free modernization of vegetable and berry greenhouses.",
+    "deepGuide": "Step 1: Create account on FranceAgriMer PAD teleprocedure portal before guichet closes. Step 2: Attach certified thermal diagnostic and 2+ detailed French supplier quotes (devis non signés).",
+    "applicationWindow": {
+      "status": "open",
+      "statusLabel": "🟢 Open (2026/2027 Active Window)",
+      "startDate": "2026-01-15",
+      "endDate": "2027-06-30",
+      "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
+      "daysRemaining": 230,
+      "cycleFrequency": "Annual / Rolling Budget Allocation",
+      "submissionPortal": "FranceAgriMer — Plateforme d'Acquisition de Données (PAD)"
+    },
+    "facets": {
+      "fundingTier": "tier_medium",
+      "matchTier": "half_match",
+      "targetAudience": [
+        "commercial_cea",
+        "small_family",
+        "beginning_farmer"
+      ],
+      "technologies": [
+        "energy",
+        "smartfarm",
+        "water"
+      ],
+      "trackScope": "pure_ag"
+    },
+    "admin_tier": "Federal",
+    "region_scope": "France (National) (FranceAgriMer — Plan de Souveraineté Fruits & Légumes)",
+    "filing_authority": "FranceAgriMer — Ministère de l'Agriculture et de la Souveraineté Alimentaire (FranceAgriMer — Plateforme d'Acquisition de Données (PAD))"
+  },
+  {
+    "id": "FR-ADEME-FONDS-CHALEUR-SERRE",
+    "country": "FR",
+    "countryName": "France",
+    "region": "FR-NAT",
+    "regionName": "France (National)",
+    "jurisdictionLabel": "ADEME — Fonds Chaleur Renouvelable",
+    "flag": "🇫🇷",
+    "category": "renewables",
+    "name": "ADEME Fonds Chaleur : Biomasse, Géothermie & Récupération de Chaleur Fatale sous Serres",
+    "agency": "ADEME (Agence de la Transition Écologique)",
+    "subsidyType": "Federal Renewable Thermal CapEx Grant",
+    "subsidyRate": "40% - 60% Capital Grant on Renewable Thermal Plant",
+    "rateDecimal": 0.5,
+    "maxAmount": "€2,500,000 per greenhouse thermal decarbonization project",
+    "matchRequirement": "40% - 60% Grower / Bank Debt (non-stackable with CEE on same capex)",
+    "disbursementType": "Post-Audit Milestone & Verified Invoice Reimbursement",
+    "currency": "EUR",
+    "verifiedDate": "2026-11-12 Verified (v6.0 3-Tier Audit)",
+    "deadline": "Rolling 2026/2027 Municipal & Regional Intake Windows",
+    "selectionMethod": "Technical Efficiency Threshold & Statutory Eligibility Audit",
+    "targetEquipment": [
+      "Automated wood-chip biomass boiler plants with electrostatic flue-gas precipitators",
+      "Deep geothermal doublets and groundwater heat-pump loops for heated glasshouses",
+      "Insulated district heat transfer pipelines from industrial/waste-to-energy plants to greenhouses",
+      "Large stratified hot-water buffer tanks (ballons tampons hydro-accumulateurs)"
+    ],
+    "ineligibleItems": [
+      "Retroactive equipment orders placed prior to official grant approval / Vorhabenbeginn clearance",
+      "Used or uncertified secondhand machinery without OEM efficiency warranty",
+      "Routine consumable inputs (fertilizer salts, seeds, growing media, seasonal labor)"
+    ],
+    "qualificationCriteria": [
+      "Commercial greenhouse replacing existing natural gas/propane heating or proving zero-fossil expansion",
+      "Mandatory RGE (Reconnu Garant de l'Environnement) feasibility study prior to investment"
+    ],
+    "documentChecklist": [
+      "Étude de faisabilité RGE conforme au cahier des charges ADEME",
+      "10-year thermal load curve & biomass feedstock sustainability sourcing contract",
+      "Financial business plan showing IRR with and without Fonds Chaleur aid"
+    ],
+    "officialUrl": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2026/fonds-chaleur",
+    "portalName": "ADEME — Plateforme AGIR pour la Transition",
+    "contactPhone": "+33 2 41 20 41 20",
+    "contactEmail": "fonds.chaleur@ademe.fr",
+    "linkedCalculator": "greenhouse-biomass-chp-energy-roi-calculator.html",
+    "linkedToolTitle": "Biomass & CHP Thermal ROI Calculator",
+    "summary": "Major French federal renewable heat grant subsidizing up to 60% of wood-chip biomass boilers, deep/shallow geothermal doublets, solar thermal fields, and industrial waste-heat pipelines heating commercial Venlo greenhouses.",
+    "deepGuide": "Step 1: Commission an ADEME-qualified RGE engineering study (étude de faisabilité préalable). Step 2: File project dossier on ADEME AGIR portal with 20-year MWh_th renewable heat production commitment.",
+    "applicationWindow": {
+      "status": "open",
+      "statusLabel": "🟢 Open (2026/2027 Active Window)",
+      "startDate": "2026-01-15",
+      "endDate": "2027-06-30",
+      "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
+      "daysRemaining": 230,
+      "cycleFrequency": "Annual / Rolling Budget Allocation",
+      "submissionPortal": "ADEME — Plateforme AGIR pour la Transition"
+    },
+    "facets": {
+      "fundingTier": "tier_mega",
+      "matchTier": "half_match",
+      "targetAudience": [
+        "commercial_cea",
+        "small_family",
+        "beginning_farmer"
+      ],
+      "technologies": [
+        "renewables",
+        "energy"
+      ],
+      "trackScope": "pure_ag"
+    },
+    "admin_tier": "Federal",
+    "region_scope": "France (National) (ADEME — Fonds Chaleur Renouvelable)",
+    "filing_authority": "ADEME (Agence de la Transition Écologique) (ADEME — Plateforme AGIR pour la Transition)"
+  },
+  {
+    "id": "FR-PDL-NANTES-MARAICHAGE-SOBRIETE",
+    "country": "FR",
+    "countryName": "France",
+    "region": "FR-PDL",
+    "regionName": "Pays de la Loire · Nantes Métropole / Loire-Atlantique",
+    "jurisdictionLabel": "Nantes Métropole & Région Pays de la Loire",
+    "flag": "🇫🇷",
+    "category": "water",
+    "name": "Nantes Métropole & Loire-Atlantique : Plan Maraîchage Sous Abri, Eau & Énergie",
+    "agency": "Nantes Métropole — Direction Agriculture & Chambre d'Agriculture Pays de la Loire",
+    "subsidyType": "Municipal / Metropolitan Horticultural Cluster Grant",
+    "subsidyRate": "30% - 45% Local Co-Investment Grant",
+    "rateDecimal": 0.4,
+    "maxAmount": "€80,000 per maraîchage greenhouse exploitation",
+    "matchRequirement": "55% - 70% Grower Co-Financing",
+    "disbursementType": "Post-Audit Milestone & Verified Invoice Reimbursement",
+    "currency": "EUR",
+    "verifiedDate": "2026-11-12 Verified (v6.0 3-Tier Audit)",
+    "deadline": "Rolling 2026/2027 Municipal & Regional Intake Windows",
+    "selectionMethod": "Technical Efficiency Threshold & Statutory Eligibility Audit",
+    "targetEquipment": [
+      "Closed-loop sand/UV filtration and fertigation recycling skids for greenhouse gutters",
+      "Covered rainwater harvesting basins reducing borehole/Loire summer abstraction",
+      "Automated multi-chapelle roof ventilation and thermal screen retrofits"
+    ],
+    "ineligibleItems": [
+      "Retroactive equipment orders placed prior to official grant approval / Vorhabenbeginn clearance",
+      "Used or uncertified secondhand machinery without OEM efficiency warranty",
+      "Routine consumable inputs (fertilizer salts, seeds, growing media, seasonal labor)"
+    ],
+    "qualificationCriteria": [
+      "Commercial market-garden (maraîchage) operating in Nantes Métropole / Loire-Atlantique",
+      "Minimum 20% irrigation water saving or closed-loop drainage capture"
+    ],
+    "documentChecklist": [
+      "Diagnostic hydrique Chambre d'Agriculture 44 / CDDM",
+      "Unsigned supplier quotes (devis) & MSA farm certificate"
+    ],
+    "officialUrl": "https://paysdelaloire.chambres-agriculture.fr/",
+    "portalName": "Guichet Agriculture Nantes Métropole / Pays de la Loire",
+    "contactPhone": "+33 2 53 46 60 00",
+    "contactEmail": "accueil@pl.chambagri.fr",
+    "linkedCalculator": "closed-loop-nutrient-recirculation-ion-balance-simulator.html",
+    "linkedToolTitle": "Closed-Loop Fertigation Simulator",
+    "summary": "Metropolitan cluster incentive in France's #1 lamb's lettuce (mâche nantaise), radish, and cucumber greenhouse basin (Nantes/Loire-Atlantique), funding closed-loop irrigation, rainwater reservoirs, and solar ventilation.",
+    "deepGuide": "Step 1: Complete diagnostic Eau-Énergie with CDDM / Chambre d'Agriculture 44. Step 2: Submit metropolitan co-funding dossier before signing supplier quotes.",
+    "applicationWindow": {
+      "status": "open",
+      "statusLabel": "🟢 Open (2026/2027 Active Window)",
+      "startDate": "2026-01-15",
+      "endDate": "2027-06-30",
+      "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
+      "daysRemaining": 230,
+      "cycleFrequency": "Annual / Rolling Budget Allocation",
+      "submissionPortal": "Guichet Agriculture Nantes Métropole / Pays de la Loire"
+    },
+    "facets": {
+      "fundingTier": "tier_micro",
+      "matchTier": "half_match",
+      "targetAudience": [
+        "commercial_cea",
+        "small_family",
+        "beginning_farmer"
+      ],
+      "technologies": [
+        "water",
+        "energy",
+        "smartfarm"
+      ],
+      "trackScope": "pure_ag"
+    },
+    "admin_tier": "Municipal / Local",
+    "region_scope": "Pays de la Loire · Nantes Métropole / Loire-Atlantique (Nantes Métropole & Région Pays de la Loire)",
+    "filing_authority": "Nantes Métropole — Direction Agriculture & Chambre d'Agriculture Pays de la Loire (Guichet Agriculture Nantes Métropole / Pays de la Loire)"
+  },
+  {
+    "id": "FR-BRE-FINISTERE-HAUT-LEON-SERRES",
+    "country": "FR",
+    "countryName": "France",
+    "region": "FR-BRE",
+    "regionName": "Bretagne · Finistère / Haut-Léon (Saint-Pol-de-Léon)",
+    "jurisdictionLabel": "Haut-Léon Communauté / Bretagne Agri-Énergie",
+    "flag": "🇫🇷",
+    "category": "energy",
+    "name": "Bretagne & Haut-Léon : Modernisation Thermique et Biocontrôle des Serres Maraîchères",
+    "agency": "Haut-Léon Communauté & Conseil Régional de Bretagne (Breizh Agri)",
+    "subsidyType": "Municipal / Regional Co-Funded Grant",
+    "subsidyRate": "35% - 45% Capital Modernization Grant",
+    "rateDecimal": 0.4,
+    "maxAmount": "€120,000 per glasshouse site",
+    "matchRequirement": "55% - 65% Grower / OP Cerafel Co-Financing",
+    "disbursementType": "Post-Audit Milestone & Verified Invoice Reimbursement",
+    "currency": "EUR",
+    "verifiedDate": "2026-11-12 Verified (v6.0 3-Tier Audit)",
+    "deadline": "Rolling 2026/2027 Municipal & Regional Intake Windows",
+    "selectionMethod": "Technical Efficiency Threshold & Statutory Eligibility Audit",
+    "targetEquipment": [
+      "Fine-mesh insect-exclusion netting with forced enthalpy-recovery ventilation",
+      "Condensing greenhouse dehumidifiers preventing Botrytis without fungicide sprays",
+      "Double energy curtains and pipe-rail CO2 dosing distribution networks"
+    ],
+    "ineligibleItems": [
+      "Retroactive equipment orders placed prior to official grant approval / Vorhabenbeginn clearance",
+      "Used or uncertified secondhand machinery without OEM efficiency warranty",
+      "Routine consumable inputs (fertilizer salts, seeds, growing media, seasonal labor)"
+    ],
+    "qualificationCriteria": [
+      "Horticultural enterprise headquartered in Finistère / Haut-Léon vegetable zone",
+      "Commitment to Pesticide Reduction Charter / HVE or Saveol/Prince de Bretagne IPM standards"
+    ],
+    "documentChecklist": [
+      "Bilan énergétique & phytosanitaire initial",
+      "Two independent equipment quotes & MSA active status"
+    ],
+    "officialUrl": "https://www.bretagne.bzh/aides/",
+    "portalName": "Portail des Aides Région Bretagne / Haut-Léon",
+    "contactPhone": "+33 2 98 69 10 44",
+    "contactEmail": "agriculture@bretagne.bzh",
+    "linkedCalculator": "greenhouse-biological-pest-control-ipm-calculator.html",
+    "linkedToolTitle": "Biological IPM Predator Calculator",
+    "summary": "Local horticultural grant serving Brittany's premier glasshouse tomato and strawberry belt (Saint-Pol-de-Léon / Brest / Morlaix), co-financing insect-proof semi-closed ventilation, dehumidifiers, and thermal screens.",
+    "deepGuide": "Step 1: Validate technical specification with Caté experimental station / Cerafel OP. Step 2: File Breizh Agri / Haut-Léon electronic application prior to equipment order.",
+    "applicationWindow": {
+      "status": "open",
+      "statusLabel": "🟢 Open (2026/2027 Active Window)",
+      "startDate": "2026-01-15",
+      "endDate": "2027-06-30",
+      "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
+      "daysRemaining": 230,
+      "cycleFrequency": "Annual / Rolling Budget Allocation",
+      "submissionPortal": "Portail des Aides Région Bretagne / Haut-Léon"
+    },
+    "facets": {
+      "fundingTier": "tier_medium",
+      "matchTier": "half_match",
+      "targetAudience": [
+        "commercial_cea",
+        "small_family",
+        "beginning_farmer"
+      ],
+      "technologies": [
+        "energy",
+        "soils",
+        "smartfarm"
+      ],
+      "trackScope": "pure_ag"
+    },
+    "admin_tier": "Municipal / Local",
+    "region_scope": "Bretagne · Finistère / Haut-Léon (Saint-Pol-de-Léon) (Haut-Léon Communauté / Bretagne Agri-Énergie)",
+    "filing_authority": "Haut-Léon Communauté & Conseil Régional de Bretagne (Breizh Agri) (Portail des Aides Région Bretagne / Haut-Léon)"
+  },
+  {
+    "id": "FR-OCC-PERPIGNAN-EAU-SERRE-SOLAIRE",
+    "country": "FR",
+    "countryName": "France",
+    "region": "FR-OCC",
+    "regionName": "Occitanie · Perpignan Méditerranée (Pyrénées-Orientales)",
+    "jurisdictionLabel": "Perpignan Méditerranée Métropole / Agence de l'Eau RMC",
+    "flag": "🇫🇷",
+    "category": "water",
+    "name": "Perpignan Méditerranée : Résilience Hydrique, REUT & Serres Bioclimatiques Roussillon",
+    "agency": "Perpignan Méditerranée Métropole & Agence de l'Eau Rhône Méditerranée Corse",
+    "subsidyType": "Municipal / Water-Basin Resilience Grant",
+    "subsidyRate": "40% - 60% Drought Adaptation Grant",
+    "rateDecimal": 0.5,
+    "maxAmount": "€150,000 per Mediterranean greenhouse operation",
+    "matchRequirement": "40% - 60% Grower Co-Share",
+    "disbursementType": "Post-Audit Milestone & Verified Invoice Reimbursement",
+    "currency": "EUR",
+    "verifiedDate": "2026-11-12 Verified (v6.0 3-Tier Audit)",
+    "deadline": "Rolling 2026/2027 Municipal & Regional Intake Windows",
+    "selectionMethod": "Technical Efficiency Threshold & Statutory Eligibility Audit",
+    "targetEquipment": [
+      "Closed-loop substrate gutter collection and UV/ultrafiltration recycling skids",
+      "Tertiary filtration tie-ins for reclaimed municipal water (REUT) irrigation",
+      "Automated radiation-sum and tensiometer drip scheduling controllers"
+    ],
+    "ineligibleItems": [
+      "Retroactive equipment orders placed prior to official grant approval / Vorhabenbeginn clearance",
+      "Used or uncertified secondhand machinery without OEM efficiency warranty",
+      "Routine consumable inputs (fertilizer salts, seeds, growing media, seasonal labor)"
+    ],
+    "qualificationCriteria": [
+      "Protected horticultural grower in Perpignan Méditerranée / Pyrénées-Orientales",
+      "Verified >= 25% reduction in quaternary aquifer groundwater withdrawal"
+    ],
+    "documentChecklist": [
+      "Hydrogeological / meter baseline (3 years of borehole flowmeter readings)",
+      "Unsigned engineering quotes & CETA/Chambre d'Agriculture technical sheet"
+    ],
+    "officialUrl": "https://www.eaurmc.fr/jaccorde-une-aide.html",
+    "portalName": "Portail Aides Agence de l'Eau RMC & Perpignan Métropole",
+    "contactPhone": "+33 4 68 08 60 00",
+    "contactEmail": "contact@perpignan-mediterranee.org",
+    "linkedCalculator": "closed-loop-reverse-osmosis-desalination-energy-optimizer.html",
+    "linkedToolTitle": "RO Desalination & Water Optimizer",
+    "summary": "High-intensity municipal and river-basin grant addressing severe Roussillon drought in Perpignan's greenhouse cluster via closed-loop hydroponic recycling, treated wastewater reuse (REUT), and capacitance drip control.",
+    "deepGuide": "Step 1: Complete Roussillon aquifer abstraction reduction audit with Chambre d'Agriculture 66. Step 2: Submit joint Perpignan Métropole + Agence de l'Eau RMC dossier.",
+    "applicationWindow": {
+      "status": "open",
+      "statusLabel": "🟢 Open (2026/2027 Active Window)",
+      "startDate": "2026-01-15",
+      "endDate": "2027-06-30",
+      "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
+      "daysRemaining": 230,
+      "cycleFrequency": "Annual / Rolling Budget Allocation",
+      "submissionPortal": "Portail Aides Agence de l'Eau RMC & Perpignan Métropole"
+    },
+    "facets": {
+      "fundingTier": "tier_medium",
+      "matchTier": "half_match",
+      "targetAudience": [
+        "commercial_cea",
+        "small_family",
+        "beginning_farmer"
+      ],
+      "technologies": [
+        "water",
+        "smartfarm"
+      ],
+      "trackScope": "pure_ag"
+    },
+    "admin_tier": "Municipal / Local",
+    "region_scope": "Occitanie · Perpignan Méditerranée (Pyrénées-Orientales) (Perpignan Méditerranée Métropole / Agence de l'Eau RMC)",
+    "filing_authority": "Perpignan Méditerranée Métropole & Agence de l'Eau Rhône Méditerranée Corse (Portail Aides Agence de l'Eau RMC & Perpignan Métropole)"
+  },
+  {
+    "id": "ES-IDAE-PRTR-TERMICAS-AGRO",
+    "country": "ES",
+    "countryName": "Spain",
+    "region": "ES-NAT",
+    "regionName": "Spain (National)",
+    "jurisdictionLabel": "IDAE — Ministerio para la Transición Ecológica (MITECO)",
+    "flag": "🇪🇸",
+    "category": "renewables",
+    "name": "IDAE Programa de Incentivos a Energías Renovables Térmicas en el Sector Agrario (Invernaderos)",
+    "agency": "Instituto para la Diversificación y Ahorro de la Energía (IDAE)",
+    "subsidyType": "Federal Renewable Thermal Direct Grant",
+    "subsidyRate": "35% - 55% Non-Repayable Grant (+5-10% SME/Demographic Challenge Bonus)",
+    "rateDecimal": 0.45,
+    "maxAmount": "€1,500,000 per agricultural thermal installation",
+    "matchRequirement": "45% - 65% Applicant Equity / ICO Loan",
+    "disbursementType": "Post-Audit Milestone & Verified Invoice Reimbursement",
+    "currency": "EUR",
+    "verifiedDate": "2026-11-12 Verified (v6.0 3-Tier Audit)",
+    "deadline": "Rolling 2026/2027 Municipal & Regional Intake Windows",
+    "selectionMethod": "Technical Efficiency Threshold & Statutory Eligibility Audit",
+    "targetEquipment": [
+      "Olive-pit (hueso de aceituna) and pruning-pellet biomass boilers for greenhouses",
+      "Shallow/deep geothermal heat-pump loops and solar thermal collectors with buffer storage",
+      "Biogas upgrading and micro-cogeneration units on agro-horticultural estates"
+    ],
+    "ineligibleItems": [
+      "Retroactive equipment orders placed prior to official grant approval / Vorhabenbeginn clearance",
+      "Used or uncertified secondhand machinery without OEM efficiency warranty",
+      "Routine consumable inputs (fertilizer salts, seeds, growing media, seasonal labor)"
+    ],
+    "qualificationCriteria": [
+      "Registered agricultural SME or cooperative in Spain (CNAE 0113 / REGEPA)",
+      "Strict compliance with DNSH (Do No Significant Harm) and particulate emission limits"
+    ],
+    "documentChecklist": [
+      "Memoria Técnica signed by Ingeniero Agrónomo or Ingeniero Industrial colegiado",
+      "Three (3) independent supplier quotes for capital expenditures > €40,000 (Ley 38/2003)",
+      "Certificado de estar al corriente con AEAT y Seguridad Social"
+    ],
+    "officialUrl": "https://www.idae.es/ayudas-y-financiacion/para-empresas-y-profesionales",
+    "portalName": "Sede Electrónica IDAE / Comunidades Autónomas",
+    "contactPhone": "+34 913 146 673",
+    "contactEmail": "ciudadano@idae.es",
+    "linkedCalculator": "greenhouse-biomass-chp-energy-roi-calculator.html",
+    "linkedToolTitle": "Biomass & Renewable Heat Calculator",
+    "summary": "Spanish national renewable thermal grant financing olive-pit/almond-shell biomass boilers, geothermal heat pumps, and solar thermal buffer arrays for high-tech greenhouses across Spain.",
+    "deepGuide": "Step 1: Verify regional autonomous window delegation under IDAE Royal Decree framework. Step 2: Submit PE-signed memoria técnica and 3 independent vendor quotes (Ley 38/2003 Art. 31.3) prior to start.",
+    "applicationWindow": {
+      "status": "open",
+      "statusLabel": "🟢 Open (2026/2027 Active Window)",
+      "startDate": "2026-01-15",
+      "endDate": "2027-06-30",
+      "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
+      "daysRemaining": 230,
+      "cycleFrequency": "Annual / Rolling Budget Allocation",
+      "submissionPortal": "Sede Electrónica IDAE / Comunidades Autónomas"
+    },
+    "facets": {
+      "fundingTier": "tier_mega",
+      "matchTier": "half_match",
+      "targetAudience": [
+        "commercial_cea",
+        "small_family",
+        "beginning_farmer"
+      ],
+      "technologies": [
+        "renewables",
+        "energy"
+      ],
+      "trackScope": "pure_ag"
+    },
+    "admin_tier": "Federal",
+    "region_scope": "Spain (National) (IDAE — Ministerio para la Transición Ecológica (MITECO))",
+    "filing_authority": "Instituto para la Diversificación y Ahorro de la Energía (IDAE) (Sede Electrónica IDAE / Comunidades Autónomas)"
+  },
+  {
+    "id": "ES-MU-MURCIA-CARM-RIEGO-PRECISION",
+    "country": "ES",
+    "countryName": "Spain",
+    "region": "ES-MU",
+    "regionName": "Región de Murcia (Campo de Cartagena / Guadalentín)",
+    "jurisdictionLabel": "CARM Región de Murcia — Consejería de Agua y Agricultura",
+    "flag": "🇪🇸",
+    "category": "water",
+    "name": "Región de Murcia : Subvenciones Modernización de Fertirrigación, Sondas y Protección Mar Menor",
+    "agency": "Consejería de Agua, Agricultura, Ganadería y Pesca — Región de Murcia",
+    "subsidyType": "Regional Precision Water & Nitrate Abatement Grant",
+    "subsidyRate": "40% - 60% Direct Capital Grant",
+    "rateDecimal": 0.5,
+    "maxAmount": "€150,000 per horticultural exploitation",
+    "matchRequirement": "40% - 60% Grower Match",
+    "disbursementType": "Post-Audit Milestone & Verified Invoice Reimbursement",
+    "currency": "EUR",
+    "verifiedDate": "2026-11-12 Verified (v6.0 3-Tier Audit)",
+    "deadline": "Rolling 2026/2027 Municipal & Regional Intake Windows",
+    "selectionMethod": "Technical Efficiency Threshold & Statutory Eligibility Audit",
+    "targetEquipment": [
+      "Closed-loop hydroponic coconut-coir/perlite drainage collection and disinfection skids",
+      "Multi-depth FDR soil moisture and pore-water EC/nitrate telemetry probes",
+      "Impermeable HDPE rainwater & brine containment reservoirs with leak detection"
+    ],
+    "ineligibleItems": [
+      "Retroactive equipment orders placed prior to official grant approval / Vorhabenbeginn clearance",
+      "Used or uncertified secondhand machinery without OEM efficiency warranty",
+      "Routine consumable inputs (fertilizer salts, seeds, growing media, seasonal labor)"
+    ],
+    "qualificationCriteria": [
+      "Registered REGEPA horticultural holding in Región de Murcia",
+      "Full compliance with Ley 3/2020 de Recuperación y Protección del Mar Menor"
+    ],
+    "documentChecklist": [
+      "Proyecto técnico agronómico visado + REGEPA extract",
+      "3 independent vendor quotes (presupuestos comparativos) & Confederación Hidrográfica water title"
+    ],
+    "officialUrl": "https://sede.carm.es/web/pagina?IDCONTENIDO=1&IDTIPO=180",
+    "portalName": "Sede Electrónica CARM (Procedimientos Agricultura y Agua)",
+    "contactPhone": "+34 968 362 000",
+    "contactEmail": "informacion-agricultura@listas.carm.es",
+    "linkedCalculator": "closed-loop-nutrient-recirculation-ion-balance-simulator.html",
+    "linkedToolTitle": "Closed-Loop Nitrate & Ion Simulator",
+    "summary": "High-priority regional grant in Murcia (Campo de Cartagena & Mazarrón/Águilas greenhouse belt) funding zero-leachate hydroponic recirculation, FDR capacitance moisture probes, and denitrification bio-reactors under Ley Mar Menor.",
+    "deepGuide": "Step 1: Obtain Operador Agroambiental validation for Mar Menor watershed compliance. Step 2: File electronic application on Sede CARM with agronomic water/nitrate balance.",
+    "applicationWindow": {
+      "status": "open",
+      "statusLabel": "🟢 Open (2026/2027 Active Window)",
+      "startDate": "2026-01-15",
+      "endDate": "2027-06-30",
+      "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
+      "daysRemaining": 230,
+      "cycleFrequency": "Annual / Rolling Budget Allocation",
+      "submissionPortal": "Sede Electrónica CARM (Procedimientos Agricultura y Agua)"
+    },
+    "facets": {
+      "fundingTier": "tier_medium",
+      "matchTier": "half_match",
+      "targetAudience": [
+        "commercial_cea",
+        "small_family",
+        "beginning_farmer"
+      ],
+      "technologies": [
+        "water",
+        "smartfarm",
+        "soils"
+      ],
+      "trackScope": "pure_ag"
+    },
+    "admin_tier": "Regional / State",
+    "region_scope": "Región de Murcia (Campo de Cartagena / Guadalentín) (CARM Región de Murcia — Consejería de Agua y Agricultura)",
+    "filing_authority": "Consejería de Agua, Agricultura, Ganadería y Pesca — Región de Murcia (Sede Electrónica CARM (Procedimientos Agricultura y Agua))"
+  },
+  {
+    "id": "ES-VC-VALENCIA-IVACE-AGROENERGIA",
+    "country": "ES",
+    "countryName": "Spain",
+    "region": "ES-VC",
+    "regionName": "Comunitat Valenciana (Alicante / Valencia)",
+    "jurisdictionLabel": "IVACE+i Energía — Generalitat Valenciana",
+    "flag": "🇪🇸",
+    "category": "energy",
+    "name": "IVACE Comunitat Valenciana : Ahorro, Eficiencia Energética y Autoconsumo en Explotaciones Agrarias",
+    "agency": "Institut Valencià de Competitivitat Empresarial (IVACE+i Energía)",
+    "subsidyType": "Regional Energy Efficiency & Solar BESS Grant",
+    "subsidyRate": "30% - 45% Capital Grant",
+    "rateDecimal": 0.4,
+    "maxAmount": "€200,000 per agricultural / greenhouse project",
+    "matchRequirement": "55% - 70% Grower Equity",
+    "disbursementType": "Post-Audit Milestone & Verified Invoice Reimbursement",
+    "currency": "EUR",
+    "verifiedDate": "2026-11-12 Verified (v6.0 3-Tier Audit)",
+    "deadline": "Rolling 2026/2027 Municipal & Regional Intake Windows",
+    "selectionMethod": "Technical Efficiency Threshold & Statutory Eligibility Audit",
+    "targetEquipment": [
+      "Off-grid and grid-tied PV + LFP battery microgrids for fertigation and desalination pumps",
+      "High-efficiency IE4/IE5 pump motors with Variable Frequency Drives (variadores de frecuencia)",
+      "Automated thermal screens and climate control actuators in multi-tunnel greenhouses"
+    ],
+    "ineligibleItems": [
+      "Retroactive equipment orders placed prior to official grant approval / Vorhabenbeginn clearance",
+      "Used or uncertified secondhand machinery without OEM efficiency warranty",
+      "Routine consumable inputs (fertilizer salts, seeds, growing media, seasonal labor)"
+    ],
+    "qualificationCriteria": [
+      "Horticultural SME or irrigation community operating in Comunitat Valenciana",
+      "Minimum 20% primary energy reduction verified by engineer certificate"
+    ],
+    "documentChecklist": [
+      "Memoria técnica energética & Certificado de eficiencia pre/post",
+      "3 presupuestos independientes & Certificado digital ACCV/FNMT"
+    ],
+    "officialUrl": "https://www.ivace.es/index.php/es/ayudas/energia",
+    "portalName": "Sede Electrónica IVACE Energía",
+    "contactPhone": "+34 961 209 600",
+    "contactEmail": "energia.ivace@gva.es",
+    "linkedCalculator": "greenhouse-energy-tariff-bess-p2h-arbitrage-calculator.html",
+    "linkedToolTitle": "Solar BESS & Tariff Arbitrage Calculator",
+    "summary": "Valencian regional energy grant supporting Alicante/Vega Baja and Valencia protected vegetable/citrus nurseries installing VFD fertigation pumps, solar PV + BESS microgrids, and automated greenhouse climate screens.",
+    "deepGuide": "Step 1: Perform pre-retrofit energy audit (auditoría energética previa). Step 2: Submit electronic dossier via IVACE portal with digital certificate before equipment invoicing.",
+    "applicationWindow": {
+      "status": "open",
+      "statusLabel": "🟢 Open (2026/2027 Active Window)",
+      "startDate": "2026-01-15",
+      "endDate": "2027-06-30",
+      "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
+      "daysRemaining": 230,
+      "cycleFrequency": "Annual / Rolling Budget Allocation",
+      "submissionPortal": "Sede Electrónica IVACE Energía"
+    },
+    "facets": {
+      "fundingTier": "tier_medium",
+      "matchTier": "half_match",
+      "targetAudience": [
+        "commercial_cea",
+        "small_family",
+        "beginning_farmer"
+      ],
+      "technologies": [
+        "energy",
+        "renewables",
+        "water"
+      ],
+      "trackScope": "pure_ag"
+    },
+    "admin_tier": "Regional / State",
+    "region_scope": "Comunitat Valenciana (Alicante / Valencia) (IVACE+i Energía — Generalitat Valenciana)",
+    "filing_authority": "Institut Valencià de Competitivitat Empresarial (IVACE+i Energía) (Sede Electrónica IVACE Energía)"
+  },
+  {
+    "id": "ES-AN-EL-EJIDO-ECONOMIA-CIRCULAR",
+    "country": "ES",
+    "countryName": "Spain",
+    "region": "ES-AN",
+    "regionName": "Andalucía · Almería · Municipio de El Ejido",
+    "jurisdictionLabel": "Ayuntamiento de El Ejido / Poniente Almeriense",
+    "flag": "🇪🇸",
+    "category": "soils",
+    "name": "El Ejido & Poniente Almeriense : Subvención Municipal Control Biológico, Clima Raspa-y-Amagado y Economía Circular",
+    "agency": "Ayuntamiento de El Ejido — Área de Agricultura y Medio Ambiente / Diputación de Almería",
+    "subsidyType": "Municipal Greenhouse Sustainability & Biocontrol Incentive",
+    "subsidyRate": "Up to 40% Municipal Direct Rebate / Tax & Fee Offset",
+    "rateDecimal": 0.4,
+    "maxAmount": "€30,000 per Poniente greenhouse farm (stackable with Junta de Andalucía OPFH)",
+    "matchRequirement": "60% Grower / OPFH Operational Fund",
+    "disbursementType": "Post-Audit Milestone & Verified Invoice Reimbursement",
+    "currency": "EUR",
+    "verifiedDate": "2026-11-12 Verified (v6.0 3-Tier Audit)",
+    "deadline": "Rolling 2026/2027 Municipal & Regional Intake Windows",
+    "selectionMethod": "Technical Efficiency Threshold & Statutory Eligibility Audit",
+    "targetEquipment": [
+      "Double-door negative/positive pressure insect-exclusion vestibules (doble puerta 10x20 mesh)",
+      "Automated zenithal ridge vents (ventilación cenital motorizada) for Raspa-y-Amagado greenhouses",
+      "Certified compostable/biodegradable crop trellising clips and twine enabling green-waste composting",
+      "Perimeter native insectary hedgerows hosting Orius and Nesidiocoris beneficial predators"
+    ],
+    "ineligibleItems": [
+      "Retroactive equipment orders placed prior to official grant approval / Vorhabenbeginn clearance",
+      "Used or uncertified secondhand machinery without OEM efficiency warranty",
+      "Routine consumable inputs (fertilizer salts, seeds, growing media, seasonal labor)"
+    ],
+    "qualificationCriteria": [
+      "Active greenhouse parcel registered in SIGPAC within El Ejido / Poniente Almeriense",
+      "Valid contract with municipal-accredited plant-residue recycling plant (ausencia de rafia plástica)"
+    ],
+    "documentChecklist": [
+      "Certificado SIGPAC / REAFA Andalucía",
+      "Accredited green-waste delivery certificate + itemized supplier invoices"
+    ],
+    "officialUrl": "https://elejido.es/agricultura-y-medio-ambiente/",
+    "portalName": "Sede Electrónica Ayuntamiento de El Ejido",
+    "contactPhone": "+34 950 541 000",
+    "contactEmail": "agricultura@elejido.es",
+    "linkedCalculator": "greenhouse-biological-pest-control-ipm-calculator.html",
+    "linkedToolTitle": "Biological IPM Predator Calculator",
+    "summary": "Municipal horticultural support in Europe's single largest greenhouse municipality (~13,000 ha in El Ejido, Almería), incentivizing ecological hedgerow islands (islas de biodiversidad), double-door thrips/whitefly vestibules, and raffia-free biodegradable trellising.",
+    "deepGuide": "Step 1: Register greenhouse parcel (polígono/parcela SIGPAC) in El Ejido Agricultura registry. Step 2: Submit certified biodegradable twine/biocontrol invoices and Frutilados/Ejidomed circular waste certificate.",
+    "applicationWindow": {
+      "status": "open",
+      "statusLabel": "🟢 Open (2026/2027 Active Window)",
+      "startDate": "2026-01-15",
+      "endDate": "2027-06-30",
+      "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
+      "daysRemaining": 230,
+      "cycleFrequency": "Annual / Rolling Budget Allocation",
+      "submissionPortal": "Sede Electrónica Ayuntamiento de El Ejido"
+    },
+    "facets": {
+      "fundingTier": "tier_micro",
+      "matchTier": "half_match",
+      "targetAudience": [
+        "commercial_cea",
+        "small_family",
+        "beginning_farmer"
+      ],
+      "technologies": [
+        "soils",
+        "smartfarm"
+      ],
+      "trackScope": "pure_ag"
+    },
+    "admin_tier": "Municipal / Local",
+    "region_scope": "Andalucía · Almería · Municipio de El Ejido (Ayuntamiento de El Ejido / Poniente Almeriense)",
+    "filing_authority": "Ayuntamiento de El Ejido — Área de Agricultura y Medio Ambiente / Diputación de Almería (Sede Electrónica Ayuntamiento de El Ejido)"
+  },
+  {
+    "id": "ES-AN-NIJAR-AGUA-DESALADA-BALSAS",
+    "country": "ES",
+    "countryName": "Spain",
+    "region": "ES-AN",
+    "regionName": "Andalucía · Almería · Municipio de Níjar",
+    "jurisdictionLabel": "Ayuntamiento de Níjar / Campo de Níjar CUCN",
+    "flag": "🇪🇸",
+    "category": "water",
+    "name": "Campo de Níjar : Subvención Local Interconexión Agua Desalada, Mezcla EC y Eficiencia Hídrica en Invernaderos",
+    "agency": "Ayuntamiento de Níjar — Concejalía de Agricultura & Comunidad de Usuarios Comarca de Níjar",
+    "subsidyType": "Municipal / Irrigation-District Water Infrastructure Subsidy",
+    "subsidyRate": "35% - 50% Local Infrastructure Co-Funding",
+    "rateDecimal": 0.45,
+    "maxAmount": "€45,000 per organic/conventional greenhouse farm",
+    "matchRequirement": "50% - 65% Grower / Junta Andalucía Co-Share",
+    "disbursementType": "Post-Audit Milestone & Verified Invoice Reimbursement",
+    "currency": "EUR",
+    "verifiedDate": "2026-11-12 Verified (v6.0 3-Tier Audit)",
+    "deadline": "Rolling 2026/2027 Municipal & Regional Intake Windows",
+    "selectionMethod": "Technical Efficiency Threshold & Statutory Eligibility Audit",
+    "targetEquipment": [
+      "Automated inline EC/pH/Ca-Mg remineralization blending skids for desalinated irrigation water",
+      "Anti-evaporation floating covers on farm irrigation regulation ponds (balsas de riego)",
+      "Precision root-zone drainage lysimeters and pulse-drip controllers"
+    ],
+    "ineligibleItems": [
+      "Retroactive equipment orders placed prior to official grant approval / Vorhabenbeginn clearance",
+      "Used or uncertified secondhand machinery without OEM efficiency warranty",
+      "Routine consumable inputs (fertilizer salts, seeds, growing media, seasonal labor)"
+    ],
+    "qualificationCriteria": [
+      "Registered greenhouse holding in Municipio de Níjar (Almería)",
+      "Documented substitution of over-exploited aquifer water with desalinated or regenerated water"
+    ],
+    "documentChecklist": [
+      "Water allocation certificate (Comunidad de Regantes / CUCN) & SIGPAC parcel map",
+      "Itemized engineering quotes & digital filing on Sede Níjar"
+    ],
+    "officialUrl": "https://www.nijar.es/Servicios/cmsdipro/index.nsf/tablon.xsp",
+    "portalName": "Sede Electrónica Ayuntamiento de Níjar",
+    "contactPhone": "+34 950 360 012",
+    "contactEmail": "agricultura@nijar.es",
+    "linkedCalculator": "closed-loop-reverse-osmosis-desalination-energy-optimizer.html",
+    "linkedToolTitle": "Desalination & EC Blending Optimizer",
+    "summary": "Local municipal and water-user incentive in Níjar (Europe's organic greenhouse tomato capital near Carboneras desalination plant) funding automated desalinated-to-brackish EC/Ca2+/Mg2+ remineralization blenders and covered irrigation ponds.",
+    "deepGuide": "Step 1: Confirm active Carboneras / Mar de Alborán desalinated water allocation meter. Step 2: File Níjar municipal water-efficiency dossier with inline EC/pH blending schematic.",
+    "applicationWindow": {
+      "status": "open",
+      "statusLabel": "🟢 Open (2026/2027 Active Window)",
+      "startDate": "2026-01-15",
+      "endDate": "2027-06-30",
+      "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
+      "daysRemaining": 230,
+      "cycleFrequency": "Annual / Rolling Budget Allocation",
+      "submissionPortal": "Sede Electrónica Ayuntamiento de Níjar"
+    },
+    "facets": {
+      "fundingTier": "tier_micro",
+      "matchTier": "half_match",
+      "targetAudience": [
+        "commercial_cea",
+        "small_family",
+        "beginning_farmer"
+      ],
+      "technologies": [
+        "water",
+        "smartfarm"
+      ],
+      "trackScope": "pure_ag"
+    },
+    "admin_tier": "Municipal / Local",
+    "region_scope": "Andalucía · Almería · Municipio de Níjar (Ayuntamiento de Níjar / Campo de Níjar CUCN)",
+    "filing_authority": "Ayuntamiento de Níjar — Concejalía de Agricultura & Comunidad de Usuarios Comarca de Níjar (Sede Electrónica Ayuntamiento de Níjar)"
+  },
+  {
+    "id": "CA-QC-MAPAQ-HYDRO-SERRES-DEL",
+    "country": "CA",
+    "countryName": "Canada",
+    "region": "CA-QC",
+    "regionName": "Quebec (Province-wide)",
+    "jurisdictionLabel": "MAPAQ Québec & Hydro-Québec Tarif L / Serres",
+    "flag": "🇨🇦",
+    "category": "energy",
+    "name": "MAPAQ Croissance des Serres & Hydro-Québec Appui Financier Éclairage DEL et Écrans Thermiques",
+    "agency": "Ministère de l'Agriculture, des Pêcheries et de l'Alimentation du Québec (MAPAQ) & Hydro-Québec",
+    "subsidyType": "Provincial Grant + Utility kWh Rebate Stack",
+    "subsidyRate": "Up to 50% Combined Grant & Hydro-Québec Solutions Efficaces Rebate",
+    "rateDecimal": 0.5,
+    "maxAmount": "CAD $750,000 combined provincial + utility cap per greenhouse complex",
+    "matchRequirement": "50% Grower / La Financière agricole du Québec",
+    "disbursementType": "Post-Audit Milestone & Verified Invoice Reimbursement",
+    "currency": "CAD",
+    "verifiedDate": "2026-11-12 Verified (v6.0 3-Tier Audit)",
+    "deadline": "Rolling 2026/2027 Municipal & Regional Intake Windows",
+    "selectionMethod": "Technical Efficiency Threshold & Statutory Eligibility Audit",
+    "targetEquipment": [
+      "DLC-qualified horticultural LED toplighting and interlighting arrays",
+      "Mechanical heat-recovery greenhouse dehumidifiers and electric/biomass boilers",
+      "Multi-layer aluminized energy curtains reducing peak winter kW demand"
+    ],
+    "ineligibleItems": [
+      "Retroactive equipment orders placed prior to official grant approval / Vorhabenbeginn clearance",
+      "Used or uncertified secondhand machinery without OEM efficiency warranty",
+      "Routine consumable inputs (fertilizer salts, seeds, growing media, seasonal labor)"
+    ],
+    "qualificationCriteria": [
+      "Registered Quebec agricultural enterprise (NIM active with MAPAQ)",
+      "Pre-purchase authorization letter from Hydro-Québec Solutions Efficaces prior to PO"
+    ],
+    "documentChecklist": [
+      "NIM registration certificate & PE-stamped lighting/load schedule",
+      "DLC Horticultural QPL spec sheets & 2+ itemized CAD vendor quotes"
+    ],
+    "officialUrl": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/agriculture/aide-financiere-agriculture",
+    "portalName": "MAPAQ Services en Ligne & Hydro-Québec OSE Portal",
+    "contactPhone": "+1 888 222-6272",
+    "contactEmail": "info@mapaq.gouv.qc.ca",
+    "linkedCalculator": "dli-spectrum-photomorphogenesis-calculator.html",
+    "linkedToolTitle": "LED Efficacy & DLI Calculator",
+    "summary": "High-impact Quebec greenhouse expansion and electrification stack combining MAPAQ capital grants with Hydro-Québec's Solutions Efficaces rebates + preferential greenhouse electricity tariff for DLC-listed LED lighting and dehumidification.",
+    "deepGuide": "Step 1: Register NIM (Numéro d'identification ministériel) with MAPAQ and pre-qualify kW demand on Hydro-Québec OSE portal BEFORE ordering fixtures. Step 2: Select DLC Horticultural QPL fixtures >= 3.2 umol/J.",
+    "applicationWindow": {
+      "status": "open",
+      "statusLabel": "🟢 Open (2026/2027 Active Window)",
+      "startDate": "2026-01-15",
+      "endDate": "2027-06-30",
+      "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
+      "daysRemaining": 230,
+      "cycleFrequency": "Annual / Rolling Budget Allocation",
+      "submissionPortal": "MAPAQ Services en Ligne & Hydro-Québec OSE Portal"
+    },
+    "facets": {
+      "fundingTier": "tier_large",
+      "matchTier": "half_match",
+      "targetAudience": [
+        "commercial_cea",
+        "small_family",
+        "beginning_farmer"
+      ],
+      "technologies": [
+        "energy",
+        "renewables",
+        "smartfarm"
+      ],
+      "trackScope": "pure_ag"
+    },
+    "admin_tier": "Regional / State",
+    "region_scope": "Quebec (Province-wide) (MAPAQ Québec & Hydro-Québec Tarif L / Serres)",
+    "filing_authority": "Ministère de l'Agriculture, des Pêcheries et de l'Alimentation du Québec (MAPAQ) & Hydro-Québec (MAPAQ Services en Ligne & Hydro-Québec OSE Portal)"
+  },
+  {
+    "id": "CA-ON-LEAMINGTON-KINGSVILLE-CEA-INFRA",
+    "country": "CA",
+    "countryName": "Canada",
+    "region": "CA-ON",
+    "regionName": "Ontario · Essex County (Leamington / Kingsville)",
+    "jurisdictionLabel": "Municipality of Leamington & Town of Kingsville / ERCA",
+    "flag": "🇨🇦",
+    "category": "water",
+    "name": "Leamington & Kingsville Greenhouse Nutrient Recycling, Stormwater & Light-Abatement Incentive",
+    "agency": "Municipality of Leamington / Essex Region Conservation Authority (ERCA)",
+    "subsidyType": "Municipal / Conservation-Authority Cluster Cost-Share",
+    "subsidyRate": "35% - 50% Municipal Environmental & Water Cost-Share",
+    "rateDecimal": 0.45,
+    "maxAmount": "CAD $85,000 per Essex County glasshouse facility",
+    "matchRequirement": "50% - 65% Grower / OMAFRA SCAP Co-Share",
+    "disbursementType": "Post-Audit Milestone & Verified Invoice Reimbursement",
+    "currency": "CAD",
+    "verifiedDate": "2026-11-12 Verified (v6.0 3-Tier Audit)",
+    "deadline": "Rolling 2026/2027 Municipal & Regional Intake Windows",
+    "selectionMethod": "Technical Efficiency Threshold & Statutory Eligibility Audit",
+    "targetEquipment": [
+      "Closed-loop leachate UV-C / ozone sterilization skids eliminating Lake Erie nutrient runoff",
+      "Automated sidewall and roof 100% light-abatement blackout screen systems",
+      "Stormwater retention and bio-filtration wetlands engineered for multi-hectare glasshouse roofs"
+    ],
+    "ineligibleItems": [
+      "Retroactive equipment orders placed prior to official grant approval / Vorhabenbeginn clearance",
+      "Used or uncertified secondhand machinery without OEM efficiency warranty",
+      "Routine consumable inputs (fertilizer salts, seeds, growing media, seasonal labor)"
+    ],
+    "qualificationCriteria": [
+      "Licensed commercial greenhouse parcel in Municipality of Leamington or Town of Kingsville",
+      "Active Ontario Farm Business Registration Number (FBRN) & Environmental Farm Plan (EFP)"
+    ],
+    "documentChecklist": [
+      "Ontario MECP ECA / GNF registration & municipal site-plan approval",
+      "4th Edition Environmental Farm Plan (EFP) certificate & vendor quotes"
+    ],
+    "officialUrl": "https://www.leamington.ca/en/business-and-development/greenhouse-development.aspx",
+    "portalName": "Municipality of Leamington Greenhouse Compliance & ERCA Portal",
+    "contactPhone": "+1 519-326-5761",
+    "contactEmail": "planning@leamington.ca",
+    "linkedCalculator": "uvc-drainage-pathogen-disinfection-calculator.html",
+    "linkedToolTitle": "UV-C Pathogen Disinfection Calculator",
+    "summary": "Local cluster cost-share in North America's largest greenhouse concentration (>3,500 acres in Leamington/Kingsville, Ontario), supporting Lake Erie phosphorus zero-discharge recycling, UV/ozone drain treatment, and mandatory municipal blackout curtains.",
+    "deepGuide": "Step 1: Align engineering plans with Leamington Greenhouse Light Abatement By-law & MECP Greenhouse Nutrient Feedwater (GNF)/ECA rules. Step 2: Submit joint ERCA/municipal cost-share application.",
+    "applicationWindow": {
+      "status": "open",
+      "statusLabel": "🟢 Open (2026/2027 Active Window)",
+      "startDate": "2026-01-15",
+      "endDate": "2027-06-30",
+      "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
+      "daysRemaining": 230,
+      "cycleFrequency": "Annual / Rolling Budget Allocation",
+      "submissionPortal": "Municipality of Leamington Greenhouse Compliance & ERCA Portal"
+    },
+    "facets": {
+      "fundingTier": "tier_micro",
+      "matchTier": "half_match",
+      "targetAudience": [
+        "commercial_cea",
+        "small_family",
+        "beginning_farmer"
+      ],
+      "technologies": [
+        "water",
+        "energy",
+        "smartfarm"
+      ],
+      "trackScope": "pure_ag"
+    },
+    "admin_tier": "Municipal / Local",
+    "region_scope": "Ontario · Essex County (Leamington / Kingsville) (Municipality of Leamington & Town of Kingsville / ERCA)",
+    "filing_authority": "Municipality of Leamington / Essex Region Conservation Authority (ERCA) (Municipality of Leamington Greenhouse Compliance & ERCA Portal)"
+  },
+  {
+    "id": "CA-BC-ABBOTSFORD-DELTA-AG-CLEAN",
+    "country": "CA",
+    "countryName": "Canada",
+    "region": "CA-BC",
+    "regionName": "British Columbia · Fraser Valley (Abbotsford / Delta)",
+    "jurisdictionLabel": "City of Abbotsford / City of Delta & FortisBC CEA",
+    "flag": "🇨🇦",
+    "category": "energy",
+    "name": "Fraser Valley (Abbotsford & Delta) Municipal & FortisBC Greenhouse Thermal Curtain & Condensing Efficiency Rebate",
+    "agency": "City of Abbotsford Ag Enhancement / FortisBC Commercial Custom Greenhouse Program",
+    "subsidyType": "Municipal Cluster + Utility Prescriptive/Custom Rebate",
+    "subsidyRate": "Up to 50% Rebate on Thermal Screens & Condensing Flue Economizers",
+    "rateDecimal": 0.5,
+    "maxAmount": "CAD $200,000 per Fraser Valley greenhouse site",
+    "matchRequirement": "50% Grower / CleanBC Co-Share",
+    "disbursementType": "Post-Audit Milestone & Verified Invoice Reimbursement",
+    "currency": "CAD",
+    "verifiedDate": "2026-11-12 Verified (v6.0 3-Tier Audit)",
+    "deadline": "Rolling 2026/2027 Municipal & Regional Intake Windows",
+    "selectionMethod": "Technical Efficiency Threshold & Statutory Eligibility Audit",
+    "targetEquipment": [
+      "Secondary condensing flue-gas heat recovery economizers for CO2 and low-temp rail heating",
+      "Automated double horizontal/sidewall thermal energy curtains",
+      "Hybrid air-to-water heat pumps paired with stratified hot-water buffer storage"
+    ],
+    "ineligibleItems": [
+      "Retroactive equipment orders placed prior to official grant approval / Vorhabenbeginn clearance",
+      "Used or uncertified secondhand machinery without OEM efficiency warranty",
+      "Routine consumable inputs (fertilizer salts, seeds, growing media, seasonal labor)"
+    ],
+    "qualificationCriteria": [
+      "Commercial ALR (Agricultural Land Reserve) greenhouse in Abbotsford, Delta, Surrey, or Langley",
+      "Active FortisBC commercial rate class account & pre-installation approval code"
+    ],
+    "documentChecklist": [
+      "12-month GJ natural gas & kWh electricity utility history",
+      "Screen U-value / energy-saving datasheet & itemized contractor quote"
+    ],
+    "officialUrl": "https://www.fortisbc.com/rebates-and-energy-savings/rebates-and-offers/rebates-business",
+    "portalName": "FortisBC Commercial Rebate Portal & Abbotsford Ag Hub",
+    "contactPhone": "+1 888-224-2710",
+    "contactEmail": "businessrebates@fortisbc.com",
+    "linkedCalculator": "chp-flue-gas-scr-urea-dosing-calculator.html",
+    "linkedToolTitle": "CHP Flue-Gas & Condenser Calculator",
+    "summary": "Local Fraser Valley greenhouse incentive serving Abbotsford, Delta, and Surrey pepper/tomato/cucumber growers with up to 50% rebates on double energy curtains, boiler flue-gas condensing economizers, and electric heat-pump hybrids.",
+    "deepGuide": "Step 1: Obtain FortisBC pre-approval inspection on existing greenhouse GJ/m2 baseline BEFORE ordering screens or economizers. Step 2: Stack with CleanBC Industrial Incentive / IAFBC.",
+    "applicationWindow": {
+      "status": "open",
+      "statusLabel": "🟢 Open (2026/2027 Active Window)",
+      "startDate": "2026-01-15",
+      "endDate": "2027-06-30",
+      "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
+      "daysRemaining": 230,
+      "cycleFrequency": "Annual / Rolling Budget Allocation",
+      "submissionPortal": "FortisBC Commercial Rebate Portal & Abbotsford Ag Hub"
+    },
+    "facets": {
+      "fundingTier": "tier_medium",
+      "matchTier": "half_match",
+      "targetAudience": [
+        "commercial_cea",
+        "small_family",
+        "beginning_farmer"
+      ],
+      "technologies": [
+        "energy",
+        "renewables"
+      ],
+      "trackScope": "pure_ag"
+    },
+    "admin_tier": "Municipal / Local",
+    "region_scope": "British Columbia · Fraser Valley (Abbotsford / Delta) (City of Abbotsford / City of Delta & FortisBC CEA)",
+    "filing_authority": "City of Abbotsford Ag Enhancement / FortisBC Commercial Custom Greenhouse Program (FortisBC Commercial Rebate Portal & Abbotsford Ag Hub)"
+  },
+  {
+    "id": "JP-AICHI-TOYOHASHI-SMART-HORT",
+    "country": "JP",
+    "countryName": "Japan",
+    "region": "JP-23",
+    "regionName": "Aichi Prefecture · Toyohashi / Higashi-Mikawa",
+    "jurisdictionLabel": "豊橋市農政課 (Toyohashi Municipal Smart Horticulture)",
+    "flag": "🇯🇵",
+    "category": "smartfarm",
+    "name": "豊橋市・東三河 スマート施設園芸・高軒高環境制御ハウス導入支援補助金 (Toyohashi Municipal CEA Grant)",
+    "agency": "豊橋市 産業部 農政課 / あいち豊橋農業協同組合 (JA豊橋) 連携",
+    "subsidyType": "Municipal Direct Capital Subsidy",
+    "subsidyRate": "Up to 1/3 - 1/2 Municipal + Prefectural Co-Subsidy",
+    "rateDecimal": 0.45,
+    "maxAmount": "¥15,000,000 per certified Toyohashi greenhouse grower",
+    "matchRequirement": "50% - 67% Grower / Japan Finance Corp (日本政策金融公庫) Super L Loan",
+    "disbursementType": "Post-Audit Milestone & Verified Invoice Reimbursement",
+    "currency": "JPY",
+    "verifiedDate": "2026-11-12 Verified (v6.0 3-Tier Audit)",
+    "deadline": "Rolling 2026/2027 Municipal & Regional Intake Windows",
+    "selectionMethod": "Technical Efficiency Threshold & Statutory Eligibility Audit",
+    "targetEquipment": [
+      "UECS-compliant integrated greenhouse climate, VPD misting, and CO2 dosing controllers",
+      "Horticultural inverter heat pumps (施設園芸用ヒートポンプ) cutting heavy-oil A重油 consumption",
+      "High-eave Venlo/Dutch-style multi-span greenhouse structural & screen upgrades"
+    ],
+    "ineligibleItems": [
+      "Retroactive equipment orders placed prior to official grant approval / Vorhabenbeginn clearance",
+      "Used or uncertified secondhand machinery without OEM efficiency warranty",
+      "Routine consumable inputs (fertilizer salts, seeds, growing media, seasonal labor)"
+    ],
+    "qualificationCriteria": [
+      "Certified Farmer (認定農業者) or Certified New Entrant (認定新規就農者) operating in Toyohashi City",
+      "Submission of MAFF Midori Check Sheet (みどりのチェックシート) environmental compliance"
+    ],
+    "documentChecklist": [
+      "豊橋市補助金等交付申請書 & 事業計画書 (3-year yield/revenue projection)",
+      "認定農業者証の写し & みどりのチェックシート",
+      "2社以上の見積書 (Itemized quotes from >= 2 independent Japanese vendors)"
+    ],
+    "officialUrl": "https://www.city.toyohashi.lg.jp/6909.htm",
+    "portalName": "豊橋市 電子申請・届出システム / 農政課窓口",
+    "contactPhone": "+81 532-51-2472",
+    "contactEmail": "nosei@city.toyohashi.lg.jp",
+    "linkedCalculator": "co2-enrichment-leaf-photosynthesis-farquhar-calculator.html",
+    "linkedToolTitle": "CO2 Photosynthesis Kinetics Calculator",
+    "summary": "Municipal smart-greenhouse grant in Japan's #1 agricultural municipality by horticultural output density (Toyohashi, Aichi), co-funding Ubiquitous Environmental Control Systems (UECS), CO2 enrichment, mist cooling, and hybrid heat pumps.",
+    "deepGuide": "Step 1: Consult Toyohashi Municipal Agriculture Policy Division (農政課) and JA Toyohashi technical extension prior to spring municipal budget intake. Step 2: File 認定農業者 plan + みどりのチェックシート.",
+    "applicationWindow": {
+      "status": "open",
+      "statusLabel": "🟢 Open (2026/2027 Active Window)",
+      "startDate": "2026-01-15",
+      "endDate": "2027-06-30",
+      "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
+      "daysRemaining": 230,
+      "cycleFrequency": "Annual / Rolling Budget Allocation",
+      "submissionPortal": "豊橋市 電子申請・届出システム / 農政課窓口"
+    },
+    "facets": {
+      "fundingTier": "tier_medium",
+      "matchTier": "half_match",
+      "targetAudience": [
+        "commercial_cea",
+        "small_family",
+        "beginning_farmer"
+      ],
+      "technologies": [
+        "smartfarm",
+        "energy"
+      ],
+      "trackScope": "pure_ag"
+    },
+    "admin_tier": "Municipal / Local",
+    "region_scope": "Aichi Prefecture · Toyohashi / Higashi-Mikawa (豊橋市農政課 (Toyohashi Municipal Smart Horticulture))",
+    "filing_authority": "豊橋市 産業部 農政課 / あいち豊橋農業協同組合 (JA豊橋) 連携 (豊橋市 電子申請・届出システム / 農政課窓口)"
+  },
+  {
+    "id": "KR-DJ-YUSEONG-URBAN-SMARTFARM",
+    "country": "KR",
+    "countryName": "South Korea",
+    "region": "KR-30",
+    "regionName": "Daejeon Metropolitan City · Yuseong-gu",
+    "jurisdictionLabel": "대전광역시 농업기술센터 / 유성구 지역경제·농정",
+    "flag": "🇰🇷",
+    "category": "smartfarm",
+    "name": "대전광역시 농업기술센터 · 유성구 도시근교형 스마트온실 환경제어·에너지절감 시범보조사업",
+    "agency": "대전광역시 농업기술센터 (기술보급과) & 대전 유성구청",
+    "subsidyType": "Municipal Technology Pilot Grant (시비·구비 매칭 시범보조)",
+    "subsidyRate": "70% Municipal Grant / 30% Grower Self-Pay",
+    "rateDecimal": 0.7,
+    "maxAmount": "₩50,000,000 per selected Daejeon/Yuseong demonstration farm",
+    "matchRequirement": "30% Grower Dedicated Co-Pay Account Deposit (자부담 선입금 필수)",
+    "disbursementType": "Post-Audit Milestone & Verified Invoice Reimbursement",
+    "currency": "KRW",
+    "verifiedDate": "2026-11-12 Verified (v6.0 3-Tier Audit)",
+    "deadline": "Rolling 2026/2027 Municipal & Regional Intake Windows",
+    "selectionMethod": "Technical Efficiency Threshold & Statutory Eligibility Audit",
+    "targetEquipment": [
+      "Integrated smartphone/cloud greenhouse ICT sensor & roof/curtain actuator panels",
+      "Multi-layer aluminized thermal energy curtains and circulation fans",
+      "High-pressure micro-fogging evaporative cooling and EC/pH automated fertigation skids"
+    ],
+    "ineligibleItems": [
+      "Retroactive equipment orders placed prior to official grant approval / Vorhabenbeginn clearance",
+      "Used or uncertified secondhand machinery without OEM efficiency warranty",
+      "Routine consumable inputs (fertilizer salts, seeds, growing media, seasonal labor)"
+    ],
+    "qualificationCriteria": [
+      "Registered Agricultural Management Entity (농업경영체) with cultivation parcel in Daejeon / Yuseong-gu",
+      "No local tax arrears and mandatory attendance at Botam-e (보탬e) subsidy accounting briefing"
+    ],
+    "documentChecklist": [
+      "시범사업 신청서 및 사업계획서 (Daejeon ATC official form)",
+      "농업경영체 등록확인서 (국립농산물품질관리원 발급) 및 토지대장/임대차계약서",
+      "견적서 2부 이상 및 지방세·국세 완납증명서"
+    ],
+    "officialUrl": "https://www.daejeon.go.kr/far/index.do",
+    "portalName": "대전광역시 농업기술센터 공고 / 지방보조금관리시스템(보탬e)",
+    "contactPhone": "+82 42-270-6980",
+    "contactEmail": "djfarm@korea.kr",
+    "linkedCalculator": "evapotranspiration-penman-monteith-calculator.html",
+    "linkedToolTitle": "Penman-Monteith & VPD Irrigation Calculator",
+    "summary": "Municipal smart-horticulture pilot subsidy in Daejeon (Yuseong-gu / Jinjam-dong / Noeun peri-urban greenhouse belt) covering 70% of ICT climate controllers, multi-layer thermal curtains, recirculation fertigation, and summer fog cooling.",
+    "deepGuide": "Step 1: Monitor January-February annual pilot solicitation (새해농업인실용교육 및 시범사업 공고) at Daejeon Agricultural Technology Center. Step 2: Register Farm Management Entity (농업경영체 등록확인서) and file via 보탬e (losims.go.kr).",
+    "applicationWindow": {
+      "status": "open",
+      "statusLabel": "🟢 Open (2026/2027 Active Window)",
+      "startDate": "2026-01-15",
+      "endDate": "2027-06-30",
+      "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
+      "daysRemaining": 230,
+      "cycleFrequency": "Annual / Rolling Budget Allocation",
+      "submissionPortal": "대전광역시 농업기술센터 공고 / 지방보조금관리시스템(보탬e)"
+    },
+    "facets": {
+      "fundingTier": "tier_micro",
+      "matchTier": "low_match",
+      "targetAudience": [
+        "commercial_cea",
+        "small_family",
+        "beginning_farmer"
+      ],
+      "technologies": [
+        "smartfarm",
+        "energy",
+        "water"
+      ],
+      "trackScope": "pure_ag"
+    },
+    "admin_tier": "Municipal / Local",
+    "region_scope": "Daejeon Metropolitan City · Yuseong-gu (대전광역시 농업기술센터 / 유성구 지역경제·농정)",
+    "filing_authority": "대전광역시 농업기술센터 (기술보급과) & 대전 유성구청 (대전광역시 농업기술센터 공고 / 지방보조금관리시스템(보탬e))"
   }
 ]

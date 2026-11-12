@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta name="google-adsense-account" content="ca-pub-8597809158257497">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vol. 09: 気孔コンダクタンス (gs) と光合成ガス交換動力学：Ball-Berry-Leuning (BBL) モデル・葉面境界層抵抗 (rb)・飽差 (VPD) ストレス応答と C3 群落統合環境制御 | Inwoovation Lab</title>
+  <meta name="description" content="施設園芸および太陽光利用型植物工場における気孔コンダクタンス (gs) と光合成ガス交換動力学の統合モデル。Farquhar-von Caemmerer-Berry (FvCB) 生化学モデルと Ball-Berry-Leuning (BBL) / Medlyn 気孔モデルの連成解法、葉面境界層抵抗 (rb)、飽差 (VPD) ストレス応答、C3 群落 CO2 拡散抵抗および統合環境制御を解説。">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://inwoovation.com/articles/ja/article-09-stomata-conductance-photosynthesis-jp.html">
+  <link rel="alternate" hreflang="en" href="https://inwoovation.com/articles/article-09-stomata-conductance-photosynthesis.html">
+  <link rel="alternate" hreflang="x-default" href="https://inwoovation.com/articles/article-09-stomata-conductance-photosynthesis.html">
+  <link rel="alternate" hreflang="de" href="https://inwoovation.com/articles/de/article-09-stomata-leitfaehigkeit-co2-assimilation-gaswechsel-kinetik.html">
+  <link rel="alternate" hreflang="ja" href="https://inwoovation.com/articles/ja/article-09-stomata-conductance-photosynthesis-jp.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Vol. 09: 気孔コンダクタンス (gs) と光合成ガス交換動力学：Ball-Berry-Leuning (BBL) モデル・葉面境界層抵抗 (rb)・VPDストレス応答 | Inwoovation Lab">
+  <meta property="og:description" content="施設園芸・太陽光利用型植物工場における Ball-Berry-Leuning (BBL) 気孔コンダクタンスモデル、FvCB 光合成連成動力学、葉面境界層抵抗 (rb)、VPD ストレス応答および C3 群落 CO2 施用制御の完全技術モノグラフ。">
+  <meta property="og:url" content="https://inwoovation.com/articles/ja/article-09-stomata-conductance-photosynthesis-jp.html">
+  <meta property="og:image" content="https://inwoovation.com/og-cover.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Vol. 09: 気孔コンダクタンス (gs) と光合成ガス交換動力学：BBLモデル・葉面境界層抵抗・VPD応答 | Inwoovation Lab">
+  <meta name="twitter:description" content="施設園芸・太陽光利用型植物工場における Ball-Berry-Leuning (BBL) 気孔コンダクタンスモデル、FvCB 光合成連成動力学、葉面境界層抵抗 (rb)、VPD ストレス応答の完全技術モノグラフ。">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V4RYJBMEDE"></script>
+  <script>
+    if (navigator.webdriver || /HeadlessChrome|PhantomJS|Lighthouse|PTST|bot|crawler|spider|slurp/i.test(navigator.userAgent) || location.hostname === 'localhost' || location.hostname === '127.0.0.1' || (screen.width === 1366 && screen.height === 1366) || (screen.width === 800 && screen.height === 600) || screen.height >= 5000) { window['ga-disable-G-V4RYJBMEDE'] = true; }
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-V4RYJBMEDE');
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8597809158257497" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/styles.css">
+  <script src="/js/global-search-palette.js?v=20261110" defer></script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "headline": "Vol. 09: 気孔コンダクタンス (gs) と光合成ガス交換動力学：Ball-Berry-Leuning (BBL) モデル・葉面境界層抵抗 (rb)・飽差 (VPD) ストレス応答と C3 群落統合環境制御",
+      "description": "施設園芸および太陽光利用型植物工場における気孔コンダクタンス (gs) と光合成ガス交換動力学の統合モデル。Farquhar-von Caemmerer-Berry (FvCB) 生化学モデルと Ball-Berry-Leuning (BBL) 気孔モデルの連成解法、葉面境界層抵抗 (rb)、飽差 (VPD) ストレス応答、C3 群落 CO2 拡散抵抗および統合環境制御を解説。",
+      "inLanguage": "ja",
+      "datePublished": "2026-11-12",
+      "dateModified": "2026-11-12",
+      "mainEntityOfPage": "https://inwoovation.com/articles/ja/article-09-stomata-conductance-photosynthesis-jp.html",
+      "image": "https://inwoovation.com/og-cover.jpg",
+      "author": {
+        "@type": "Organization",
+        "name": "Inwoovation Engineering Research Lab",
+        "url": "https://inwoovation.com/about.html"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Inwoovation Engineering Research Lab",
+        "url": "https://inwoovation.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://inwoovation.com/og-cover.jpg"
+        }
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inwoovation Lab",
+          "item": "https://inwoovation.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Engineering Guides",
+          "item": "https://inwoovation.com/guides.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "JA Vol. 09: 気孔コンダクタンスと光合成ガス交換動力学",
+          "item": "https://inwoovation.com/articles/ja/article-09-stomata-conductance-photosynthesis-jp.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "水蒸気に対する気孔コンダクタンス (gsw) と CO2 に対する気孔コンダクタンス (gsc) の換算比が 1.60 となり、葉面境界層では 1.37 となる物理的根拠は何ですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "気孔間隙内部のガス移動は静止空気中の純粋な分子拡散（Fick の法則）に支配されるため、水蒸気（分子量 18.015 g/mol、空気中拡散係数 約 2.42×10⁻⁵ m²/s）と CO2（分子量 44.01 g/mol、拡散係数 約 1.51×10⁻⁵ m²/s）の二成分拡散係数比 D_H2O / D_CO2 ≈ 1.60 がそのまま gsw / gsc = 1.60 の比率になります。一方、葉面境界層（rb）では層流対流物質移動が支配的となり、シャーウッド数 Sh ∝ Sc^(1/3) の関係から拡散係数比の 2/3 乗である (1.60)^(2/3) ≈ 1.37 が水蒸気境界層コンダクタンス gbw と CO2 境界層コンダクタンス gbc の換算係数となります。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "従来の Ball-Woodrow-Berry モデルに対し、Ball-Berry-Leuning (BBL) モデルや Medlyn モデルが施設園芸の環境制御において優れている点は何ですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "初期の Ball-Woodrow-Berry (1987) モデルは葉面相対湿度 hs に比例する定式化であったため、気温変化時や高飽差環境下での孔辺細胞の水ポテンシャル応答を正確に表現できませんでした。Leuning (1995) の BBL モデルは相対湿度 hs を葉面飽差 Ds の双曲線減衰関数 1 / (1 + Ds / D0) に置換し、さらに CO2 補償点 Γ* を導入することで蒸散駆動力に対する生理的閉鎖応答を精密化しました。また Medlyn et al. (2011) の統一最適気孔モデルは限界水利用効率（∂A/∂E = 一定）の変分原理から 1 + g1 / √Ds の平方根依存性を導出し、パラメータ g1 に明確な作物生理学的意味を与えています。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "無風状態の温室内で CO2 を 1,000 ppm に施用しても、期待した光合成促進効果が得られないのはなぜですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "群落内風速 u が 0.08 m/s 未満の無風状態では、葉面境界層抵抗 rbw が 350〜500 s/m 以上に増大し、厚い静止空気の断熱・拡散バリアが形成されます。その結果、通路上の NDIR センサーが Ca = 1,000 ppm を示していても、活発に同化する葉面直上の CO2 濃度 Cs は 520〜600 ppm まで局所枯渇します。同時に蒸散潜熱放散が阻害されて葉温 Tleaf が気温より 3〜4 K 上昇し、実効葉面飽差 VPDleaf が 1.6 kPa を超えて気孔閉鎖を誘発するためです。HAF 循環扇等で群落風速 0.30〜0.55 m/s を確保し、rbw を 80〜130 s/m 以下へ低減することが不可欠です。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "高濃度 CO2 施用（800〜1,200 ppm）を行う際、温度や飽差（VPD）の設定値をどのように連動補正すべきですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "外気 CO2 濃度の上昇に伴い細胞間隙 CO2 濃度 Ci が高まると、BBL 式に従い孔辺細胞は気孔コンダクタンス gsw を 15〜25% 縮小させて水分損失を節約します。この部分的な気孔閉鎖により蒸散冷却フラックス（λ·E）が減少し、強光下では葉温が 0.6〜1.2 K 上昇します。同時に Rubisco の酸素化反応（光呼吸）が抑制されるため、純光合成速度 An の最適葉温自体が通常の 22〜24 °C から 26〜29 °C へと高温側へシフトします。したがって高 CO2 施用時は換気開始温度を +2〜3 K 引き上げつつ、VPDleaf が 0.85〜1.15 kPa の適正帯を逸脱しないよう細霧冷房や循環気流を協調制御する必要があります。"
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+  <style>
+    body { margin: 0; font-family: 'Plus Jakarta Sans', sans-serif; background: #090d16; color: #e2e8f0; line-height: 1.82; }
+    .article-shell { max-width: 920px; margin: 0 auto; padding: 36px 22px 60px; }
+    .badge-pill { display: inline-block; padding: 6px 14px; border-radius: 999px; background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.4); color: #34d399; font-size: 0.82rem; font-weight: 700; margin-bottom: 14px; }
+    h1 { font-family: 'Outfit', sans-serif; font-size: 2.18rem; line-height: 1.3; color: #f8fafc; margin: 0 0 14px 0; }
+    .meta-bar { color: #94a3b8; font-size: 0.9rem; margin-bottom: 28px; padding-bottom: 18px; border-bottom: 1px solid rgba(148, 163, 184, 0.18); }
+    .formula-box { background: rgba(15, 23, 42, 0.92); border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 12px; padding: 18px 22px; margin: 20px 0; font-family: 'JetBrains Mono', monospace; font-size: 0.92rem; line-height: 1.75; color: #38bdf8; overflow-x: auto; }
+    .callout-box { background: rgba(16, 185, 129, 0.08); border-left: 4px solid #10b981; border-radius: 8px; padding: 16px 20px; margin: 20px 0; color: #cbd5e1; }
+    table.eng-table { width: 100%; border-collapse: collapse; margin: 22px 0; background: rgba(15, 23, 42, 0.78); border-radius: 12px; overflow: hidden; }
+    table.eng-table th, table.eng-table td { padding: 12px 14px; border: 1px solid rgba(148, 163, 184, 0.2); text-align: left; font-size: 0.91rem; vertical-align: top; }
+    table.eng-table th { background: rgba(30, 41, 59, 0.92); color: #38bdf8; font-weight: 700; }
+    details.faq-item { background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(148, 163, 184, 0.22); border-radius: 12px; padding: 16px 20px; margin-bottom: 14px; }
+    details.faq-item summary { font-weight: 700; color: #f8fafc; cursor: pointer; font-size: 1.0rem; }
+    details.faq-item p { margin: 12px 0 0 0; color: #cbd5e1; font-size: 0.94rem; line-height: 1.75; }
+  </style>
+</head>
+<body>
+<!-- INW-STD-NAV-START -->
+<nav class="inw-top-nav" aria-label="Main Navigation" style="background: #0f172a; border-bottom: 1px solid #1e293b; padding: 12px 20px; font-family: system-ui, -apple-system, sans-serif; box-sizing: border-box; width: 100%;">
+  <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px;">
+    <a href="/index.html" style="color: #10b981; font-weight: 800; font-size: 1.15rem; text-decoration: none; letter-spacing: -0.02em;">Inwoovation Lab</a>
+    <div style="display: flex; flex-wrap: wrap; gap: 14px; font-size: 0.9rem;">
+      <a href="/index.html" style="color: #e2e8f0; text-decoration: none;">Home</a>
+      <a href="/smartfarm/vpd.html" style="color: #e2e8f0; text-decoration: none;">Calculators</a>
+      <a href="/articles/index.html" style="color: #38bdf8; font-weight: 600; text-decoration: none;">Articles</a>
+      <a href="/wiki/index.html" style="color: #e2e8f0; text-decoration: none;">Wiki</a>
+      <a href="/climate/index.html" style="color: #e2e8f0; text-decoration: none;">Climate Hub</a>
+      <a href="/crops/index.html" style="color: #e2e8f0; text-decoration: none;">Crops</a>
+      <a href="/tools/venlocad-3d.html" style="color: #10b981; font-weight: 600; text-decoration: none;">VenloCAD 3D</a>
+      <button type="button" onclick="window.InwooPalette && window.InwooPalette.open()" style="background: rgba(15, 23, 42, 0.9); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.4); padding: 6px 12px; border-radius: 6px; font-size: 0.85rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">🔍 Search <kbd style="background: rgba(255,255,255,0.1); padding: 1px 5px; border-radius: 4px; font-size: 0.72rem;">Ctrl+K</kbd></button>
+      <a href="/about.html" style="color: #e2e8f0; text-decoration: none;">About</a>
+    </div>
+  </div>
+</nav>
+<!-- INW-STD-NAV-END -->
+
+  <main class="article-shell">
+    <div style="margin-bottom: 20px;">
+      <a href="/guides.html" style="color: #38bdf8; text-decoration: none; font-weight: 700; font-size: 0.92rem;">← 技術モノグラフ一覧（Engineering Guides）へ戻る</a>
+    </div>
+    <span class="badge-pill">🇯🇵 JA Vol. 09 · 施設園芸・太陽光利用型植物工場 植物生物物理学＆ガス交換制御工学</span>
+    <h1>気孔コンダクタンス（g<sub>s</sub>）と光合成ガス交換動力学：Ball-Berry-Leuning（BBL）モデル、葉面境界層抵抗（r<sub>b</sub>）、飽差（VPD）ストレス応答および C<sub>3</sub> 群落統合環境制御</h1>
+
+<!-- INW-LANG-SWITCHER-START -->
+<div class="inw-lang-switcher-bar" style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:14px 0 20px 0; padding:10px 14px; background:rgba(15,23,42,0.75); border:1px solid rgba(148,163,184,0.2); border-radius:12px;">
+  <span style="font-size:0.8rem; color:#94a3b8; font-weight:700; margin-right:4px;">🌐 Vol. 09 Editions:</span>
+  <a href="/articles/article-09-stomata-conductance-photosynthesis.html" style="display:inline-flex; align-items:center; padding:5px 12px; border-radius:999px; background:rgba(30,41,59,0.8); border:1px solid rgba(56,189,248,0.35); color:#38bdf8; text-decoration:none; font-size:0.8rem; font-weight:600;">🇬🇧 English Edition →</a>
+  <a href="/articles/de/article-09-stomata-leitfaehigkeit-co2-assimilation-gaswechsel-kinetik.html" style="display:inline-flex; align-items:center; padding:5px 12px; border-radius:999px; background:rgba(30,41,59,0.8); border:1px solid rgba(56,189,248,0.35); color:#38bdf8; text-decoration:none; font-size:0.8rem; font-weight:600;">🇩🇪 Deutsche Ausgabe →</a>
+  <span style="display:inline-flex; align-items:center; padding:5px 12px; border-radius:999px; background:rgba(16,185,129,0.22); border:1px solid #10b981; color:#34d399; font-size:0.8rem; font-weight:700;">🇯🇵 日本語版 (JA) (Active)</span>
+</div>
+<!-- INW-LANG-SWITCHER-END -->
+
+    <div class="meta-bar">
+      <span>🔬 <strong>Inwoovation Engineering Research Lab</strong></span> &nbsp;|&nbsp;
+      <span>📅 Last Updated: November 12, 2026</span> &nbsp;|&nbsp;
+      <span>⏱️ 22分 (読了目安 · 施設園芸・植物工場工学モノグラフ)</span>
+    </div>
+
+    <section style="margin-bottom: 36px;">
+      <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px; margin-bottom: 16px;">1. C<sub>3</sub> 園芸作物のガス交換ジレンマと直列拡散抵抗ネットワーク（C<sub>a</sub> → C<sub>s</sub> → C<sub>i</sub> → C<sub>c</sub>）</h2>
+      <p>フェンロー型連棟温室（太陽光利用型植物工場）および完全人工光型植物工場（PFAL）において栽培される主要園芸作物（トマト、パプリカ、キュウリ、イチゴ、リーフレタス等）はすべて <strong>C<sub>3</sub> 光合成経路</strong>を持つ高等植物です。陸上植物の葉の表皮は疎水性のクチクラワックス層で覆われており、大気中の二酸化炭素（CO<sub>2</sub>）を葉肉細胞の葉緑体ストロマへ取り込むためには、一対の孔辺細胞（Guard Cells）が形成する<strong>気孔（Stomata）</strong>を開口しなければなりません。しかし、気孔間隙の内部は相対湿度ほぼ <code>100%</code>（水蒸気飽和状態）に保たれているため、CO<sub>2</sub> 流入のために気孔を開くと同時に、駆動ポテンシャル差（飽差）が数十倍大きい水蒸気が大気中へと大量に逸散します。通常、C<sub>3</sub> 作物が CO<sub>2</sub> 分子を <code>1 mol</code> 固定する間に、実に <strong><code>200〜500 mol</code> もの水分子が蒸散によって失われる（蒸散比 Transpiration Ratio）</strong>という宿命的な熱力学・物質移動上のトレードオフが存在します。</p>
+      <p>生物環境工学（矢吹万寿による葉面境界層研究、千葉大学・農研機構および農業施設学会における群落ガス交換体系）では、施設内バルク空気（CO<sub>2</sub> モル分率 <i>C<sub>a</sub></i>）から葉緑体ストロマ内の RuBisCO 活性部位（<i>C<sub>c</sub></i>）に至る CO<sub>2</sub> 輸送経路を、電気回路のオームの法則と等価な<strong>直列拡散抵抗網（または逆数であるコンダクタンス直列合成系）</strong>として定式化します。ここで重要な物理定数は、空気中における水蒸気（分子量 <code>18.015 g · mol⁻¹</code>、25 °C における二成分拡散係数 <i>D</i><sub>H2O</sub> ≈ <code>2.42 × 10⁻⁵ m² · s⁻¹</code>）と CO<sub>2</sub>（分子量 <code>44.01 g · mol⁻¹</code>、<i>D</i><sub>CO2</sub> ≈ <code>1.51 × 10⁻⁵ m² · s⁻¹</code>）の分子拡散速度差です。</p>
+      <div class="formula-box">
+        水蒸気蒸散フラックス： E = g<sub>tw</sub> · (w<sub>i</sub> − w<sub>a</sub>) ≈ g<sub>tw</sub> · (VPD<sub>leaf</sub> / P<sub>atm</sub>) &nbsp; [mol H<sub>2</sub>O · m<sup>−2</sup> · s<sup>−1</sup>]<br>
+        水蒸気全コンダクタンス： 1 / g<sub>tw</sub> = 1 / g<sub>bw</sub> + 1 / g<sub>sw</sub> &nbsp; （r<sub>tw</sub> = r<sub>bw</sub> + r<sub>sw</sub>）<br>
+        境界層・気孔における拡散換算比： g<sub>bc</sub> = g<sub>bw</sub> / 1.37 , &nbsp; g<sub>sc</sub> = g<sub>sw</sub> / 1.60<br>
+        CO<sub>2</sub> 全気相コンダクタンス： 1 / g<sub>tc</sub> = 1.37 / g<sub>bw</sub> + 1.60 / g<sub>sw</sub><br>
+        Fick の第一法則による純同化速度： A<sub>n</sub> = g<sub>tc</sub> · (C<sub>a</sub> − C<sub>i</sub>) = g<sub>m</sub> · (C<sub>i</sub> − C<sub>c</sub>) &nbsp; [µmol CO<sub>2</sub> · m<sup>−2</sup> · s<sup>−1</sup>]<br>
+        ストロマ有効 CO<sub>2</sub> モル分率： C<sub>c</sub> = C<sub>a</sub> − A<sub>n</sub> · (1.37 / g<sub>bw</sub> + 1.60 / g<sub>sw</sub> + 1 / g<sub>m</sub>)
+      </div>
+      <p>なぜ気孔内部では換算係数が <code>1.60</code> なのに対し、葉面境界層では <code>1.37</code> になるのでしょうか。気孔孔隙（孔径数 µm〜十数 µm）の内部では空気は完全に静止しており、純粋な分子拡散（Fick の法則）に従うため <i>D</i><sub>H2O</sub> / <i>D</i><sub>CO2</sub> = <code>1.60</code> がそのまま適用されます。これに対し、葉の表面を覆う<strong>葉面境界層（Leaf Boundary Layer）</strong>では粘性流体の層流強制対流物質移動が支配的であり、シャーウッド数 <i>Sh</i> がシュミット数 <i>Sc</i> = ν / <i>D</i> の <code>1/3</code> 乗に比例する境界層相似則（<i>g<sub>b</sub></i> ∝ <i>D</i><sup>2/3</sup>）から、(1.60)<sup>2/3</sup> ≈ <strong><code>1.37</code></strong> が導出されます。さらに気孔下腔（<i>C<sub>i</sub></i>）に到達した CO<sub>2</sub> は、細胞壁の水相へ溶解し、原形質膜（CO<sub>2</sub> 透過性アクアポリン PIP 群）、細胞質ゾル、炭酸脱水酵素（Carbonic Anhydrase）平衡、および葉緑体包膜を通過してストロマ（<i>C<sub>c</sub></i>）へ達します。この液相・膜透過コンダクタンスが<strong>葉肉コンダクタンス（<i>g<sub>m</sub></i>：施設トマト・キュウリで概ね <code>0.15〜0.35 mol · m⁻² · s⁻¹ · bar⁻¹</code>）</strong>であり、低温ストレスや塩類ストレス（高 EC 根圏）下では <i>g<sub>s</sub></i> だけでなく <i>g<sub>m</sub></i> の低下も光合成律速の主要因となります。</p>
+      <div class="callout-box">
+        <strong>実務単位換算（モル単位系 vs 速度単位系）：</strong> ポータブル光合成蒸散測定装置（LI-6800 等）や植物生理学モデルではモルフラックス単位 <code>g_sw [mol · m⁻² · s⁻¹]</code>（または <code>mmol · m⁻² · s⁻¹</code>）を用いますが、温室空調・Penman-Monteith 蒸発散式では拡散抵抗 <code>r_sw [s · m⁻¹]</code> が汎用されます。理想気体の状態方程式（25 °C、101.325 kPa において空気モル体積 <code>V_m ≈ 0.02447 m³ · mol⁻¹</code>、モル密度 <code>ρ_mol ≈ 40.87 mol · m⁻³</code>）より、<strong><code>g_sw [mol · m⁻² · s⁻¹] ≈ 40.9 / r_sw [s · m⁻¹]</code></strong> と相互換算できます。例えば盛んに光合成するトマト上位葉の <code>g_sw = 0.40 mol · m⁻² · s⁻¹ (400 mmol · m⁻² · s⁻¹)</code> は <code>r_sw ≈ 102 s · m⁻¹</code> に相当します。
+      </div>
+    </section>
+
+    <section style="margin-bottom: 36px;">
+      <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px; margin-bottom: 16px;">2. Farquhar-von Caemmerer-Berry（FvCB）生化学モデルと Ball-Berry-Leuning（BBL）・Medlyn 最適気孔モデルの連成解法</h2>
+      <p>施設園芸のデジタルツインおよびモデル予測制御（MPC）において、群落の CO<sub>2</sub> 吸収速度 <i>A<sub>n</sub></i> と蒸散速度 <i>E</i> を環境変数（PPFD、<i>T<sub>leaf</sub></i>、<i>C<sub>a</sub></i>、VPD、風速 <i>u</i>）から決定論的に予測するためには、<strong>生化学的需要式（FvCB モデル）</strong>と<strong>気孔拡散供給式（BBL または Medlyn モデル）</strong>を連立させて自己無撞着に解く必要があります。Farquhar, von Caemmerer &amp; Berry (1980) ならびに Sharkey (1985) によれば、C<sub>3</sub> 葉の純 CO<sub>2</sub> 同化速度 <i>A<sub>n</sub></i> は以下の3つの生化学プロセスの最小律速速度からミトコンドリア明呼吸速度 <i>R<sub>d</sub></i> を差し引いた値で与えられます。</p>
+      <div class="formula-box">
+        FvCB 生化学3律速モデル： A<sub>n</sub> = min( W<sub>c</sub> , W<sub>j</sub> , W<sub>p</sub> ) · (1 − Γ* / C<sub>i</sub>) − R<sub>d</sub> &nbsp; （厳密形では C<sub>c</sub> 基準）<br>
+        (1) Rubisco カルボキシラーゼ律速速度： W<sub>c</sub> = [ V<sub>cmax</sub> · C<sub>i</sub> ] / [ C<sub>i</sub> + K<sub>c</sub> · (1 + O / K<sub>o</sub>) ]<br>
+        (2) RuBP 再生（電子伝達 J）律速速度： W<sub>j</sub> = [ J(PPFD) · C<sub>i</sub> ] / [ 4 · C<sub>i</sub> + 8 · Γ* ]<br>
+        非直角双曲線電子伝達速度： θ · J<sup>2</sup> − (α<sub>leaf</sub> · Φ<sub>PSII,max</sub> · PPFD + J<sub>max</sub>) · J + α<sub>leaf</sub> · Φ<sub>PSII,max</sub> · PPFD · J<sub>max</sub> = 0<br>
+        (3) トリオースリン酸利用（TPU）律速： W<sub>p</sub> = 3 · T<sub>p</sub> · C<sub>i</sub> / (C<sub>i</sub> − Γ*)
+      </div>
+      <p>ここで <i>V<sub>cmax</sub></i> は最大 Rubisco カルボキシラーゼ活性（トマト成葉 25 °C 基準で <code>75〜115 µmol · m⁻² · s⁻¹</code>）、<i>J<sub>max</sub></i> は最大線形電子伝達速度（概ね <i>J<sub>max</sub></i> / <i>V<sub>cmax</sub></i> ≈ <code>1.65〜2.0</code>）、<i>K<sub>c</sub></i>（<code>≈ 404.9 µmol · mol⁻¹</code>）および <i>K<sub>o</sub></i>（<code>≈ 278.4 mmol · mol⁻¹</code>）はそれぞれ CO<sub>2</sub> と O<sub>2</sub>（<i>O</i> = <code>210 mmol · mol⁻¹</code>）に対するミカエリス定数、Γ*（25 °C で <code>≈ 42.75 µmol · mol⁻¹</code>）は光呼吸による CO<sub>2</sub> 放出とカルボキシラーゼ固定が均衡する葉緑体 CO<sub>2</sub> 補償点です。これらの生化学パラメータはすべて Arrhenius 式（または高温失活項を含む Peaked Arrhenius 関数）に従い<strong>葉温 <i>T<sub>leaf</sub></i> の非線形関数</strong>として変化します。</p>
+      <p>一方、孔辺細胞が環境と葉内同化状態に応じて気孔コンダクタンス <i>g<sub>sw</sub></i> をどのように調節するかを記述する半経験・理論モデルとして、以下の3世代の定式化が国際標準として確立されています。</p>
+      <div class="formula-box">
+        [第1世代] Ball-Woodrow-Berry (BWB, 1987) 式：<br>
+        &nbsp;&nbsp;g<sub>sw</sub> = g<sub>0</sub> + m · (A<sub>n</sub> · h<sub>s</sub>) / C<sub>s</sub><br>
+        [第2世代] Ball-Berry-Leuning (BBL, Leuning 1995) 式：<br>
+        &nbsp;&nbsp;g<sub>sw</sub> = g<sub>0</sub> + [ a<sub>1</sub> · A<sub>n</sub> ] / [ (C<sub>s</sub> − Γ*) · (1 + D<sub>s</sub> / D<sub>0</sub>) ]<br>
+        [第3世代] Medlyn 統一最適気孔モデル (Medlyn et al., 2011)：<br>
+        &nbsp;&nbsp;g<sub>sw</sub> = g<sub>0</sub> + 1.60 · ( 1 + g<sub>1</sub> / √D<sub>s</sub> ) · ( A<sub>n</sub> / C<sub>s</sub> )
+      </div>
+      <ul>
+        <li><strong>残余（クチクラ・不完全閉鎖）コンダクタンス <i>g</i><sub>0</sub>：</strong> 暗期または <i>A<sub>n</sub></i> → 0 における最小コンダクタンス（健全な温室作物で <code>0.008〜0.025 mol · m⁻² · s⁻¹</code>）。ただし長期間の高湿度（VPD &lt; 0.35 kPa）で育った軟弱徒長葉では気孔の閉鎖不全（Stomatal Malfunctioning）が生じ、<i>g</i><sub>0</sub> が <code>0.06 mol · m⁻² · s⁻¹</code> 以上に跳ね上がって晴天急変時に激しい萎凋を引き起こします。</li>
+        <li><strong>BWB から BBL への進化理由：</strong> 初期の Ball-Woodrow-Berry 式は葉面相対湿度 <i>h<sub>s</sub></i>（0〜1）を用いたため、異なる葉温で同じ相対湿度であっても飽差 <i>D<sub>s</sub></i> が倍増する物理効果を区別できませんでした。<strong>Leuning (1995) の BBL モデル</strong>は葉面飽差 <i>D<sub>s</sub></i> [kPa] と基準飽差感度パラメータ <i>D</i><sub>0</sub>（C<sub>3</sub> 果菜類で <code>1.2〜1.6 kPa</code>）による双曲線減衰項 <code>1 / (1 + D_s / D_0)</code> を導入し、さらに分母を <code>C_s − Γ*</code> とすることで低 CO<sub>2</sub> 光補償点近傍での整合性を確立しました（スロープ係数 <i>a</i><sub>1</sub> ≈ <code>9.0〜12.5</code>）。</li>
+        <li><strong>Medlyn 最適気孔理論（Cowan &amp; Farquhar 1977 の解析解）：</strong> 植物が一定期間の利用可能水量を制約条件として炭素獲得総量を最大化する変分問題 <code>∂A_n / ∂E = λ = const.</code>（限界水利用効率一定則）を RuBP 再生律速下で解析的に解くと、<code>1 + g_1 / √D_s</code> という飽差の平方根逆数依存性が厳密に導かれます。ここで <i>g</i><sub>1</sub> [kPa<sup>0.5</sup>] は限界水コスト <code>√λ</code> に比例する単一パラメータであり、乾燥耐性作物では小さく（<code>g_1 ≈ 2.0〜3.0</code>）、潤沢に灌水される施設水耕トマト・キュウリ・レタスでは大きな値（<code>g_1 ≈ 4.2〜5.8 kPa^0.5</code>）を示します。</li>
+      </ul>
+      <p>数値シミュレーション上の実装では、未知数ベクトル <code>X = [A_n, g_sw, C_i, T_leaf]</code> が互いに循環参照しています（<i>T<sub>leaf</sub></i> が飽差 <i>D<sub>s</sub></i> と酵素速度 <i>V<sub>cmax</sub>, J<sub>max</sub></i> を決め、それが <i>A<sub>n</sub></i> を決め、<i>A<sub>n</sub></i> が <i>g<sub>sw</sub></i> を決め、<i>g<sub>sw</sub></i> が蒸散冷却 <i>λE</i> を通じて再び <i>T<sub>leaf</sub></i> を更新する）。高精度シミュレーターでは、(1) 外側ループで葉面熱収支式から <i>T<sub>leaf</sub></i> を収束させ、(2) 内側ループで FvCB の二次方程式と BBL 式から得られる <i>C<sub>i</sub></i> の三次代数方程式（または緩和係数 <code>ω = 0.5</code> の減衰固定点反復・Brent 法）を <code>|ΔC_i| &lt; 0.05 µmol · mol⁻¹</code> まで 5〜12 回反復して厳密解を求めます。</p>
+    </section>
+
+    <section style="margin-bottom: 36px;">
+      <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px; margin-bottom: 16px;">3. 葉面境界層抵抗（r<sub>b</sub>）の流体力学：レイノルズ数・シャーウッド数・デカップリング係数（Ω）と循環気流設計</h2>
+      <p>どれほど気孔が大きく開口していても（高い <i>g<sub>sw</sub></i>、低い <i>r<sub>sw</sub></i>）、葉の表面に厚い静止空気の膜（葉面境界層：Leaf Boundary Layer）が張り付いていれば、大気から気孔入口への CO<sub>2</sub> 供給と気孔からの水蒸気・顕熱放散はすべて境界層抵抗 <strong><i>r<sub>b</sub></i></strong> によって頭打ちになります。流体力学の平板層流境界層理論（Blasius 解および Pohlhausen 物質移動相関）によれば、風速 <i>u</i> [m · s<sup>−1</sup>]、気流方向の代表葉長 <i>d<sub>leaf</sub></i> [m]（葉幅に約 <code>0.72</code> を乗じた特性長）における境界層厚さ δ<sub>bl</sub> と水蒸気境界層抵抗 <i>r<sub>bw</sub></i> は次式で支配されます。</p>
+      <div class="formula-box">
+        葉面レイノルズ数： Re = (u · d<sub>leaf</sub>) / ν<sub>air</sub> &nbsp; （25 °C 空気動粘性係数 ν<sub>air</sub> ≈ 1.56 × 10<sup>−5</sup> m<sup>2</sup> · s<sup>−1</sup>）<br>
+        層流強制対流シャーウッド数： Sh = 0.664 · Re<sup>1/2</sup> · Sc<sup>1/3</sup> · β<sub>turb</sub> &nbsp; （屋外・循環扇乱流増強係数 β<sub>turb</sub> ≈ 1.25〜1.50）<br>
+        境界層厚さスケーリング： δ<sub>bl</sub> ≈ 4.0 · √( d<sub>leaf</sub> / u ) &nbsp; [mm] &nbsp; （d<sub>leaf</sub> [m], u [m · s<sup>−1</sup>]）<br>
+        水蒸気境界層抵抗の実用工学式： r<sub>bw</sub> ≈ 180 · √( d<sub>leaf</sub> / u ) &nbsp; [s · m<sup>−1</sup>] &nbsp; ⇒ &nbsp; g<sub>bw</sub> ≈ 0.227 · √( u / d<sub>leaf</sub> ) &nbsp; [mol · m<sup>−2</sup> · s<sup>−1</sup>]<br>
+        Jarvis-McNaughton 結合係数（Decoupling Factor）： Ω = (Δ / γ + 1) / (Δ / γ + 1 + g<sub>bw</sub> / g<sub>sw</sub>) &nbsp; （0 ≤ Ω ≤ 1）
+      </div>
+      <p>この平方根則 <code>r_bw ∝ √(d_leaf / u)</code> は、施設園芸の気流設計において極めて重要な3つの定量的帰結をもたらします。</p>
+      <ol>
+        <li><strong>葉サイズ効果（キュウリ大葉 vs トマト複葉）：</strong> 小葉に分かれたミニトマト（<i>d<sub>leaf</sub></i> ≈ <code>0.04 m</code>）に比べ、大葉のキュウリやメロン（<i>d<sub>leaf</sub></i> ≈ <code>0.20〜0.25 m</code>）は同じ風速下でも境界層抵抗 <i>r<sub>bw</sub></i> が <strong><code>2.2〜2.5倍</code></strong> 大きくなります。したがって大葉作物群落ほど高い気流速度が要求されます。</li>
+        <li><strong>無風デッドゾーンの非線形ペナルティ：</strong> 冬季の密閉温室で循環扇を停止し群落内風速が <code>u = 0.05 m · s⁻¹</code> まで低下すると、<i>d<sub>leaf</sub></i> = <code>0.12 m</code> の葉で <code>r_bw ≈ 279 s · m⁻¹</code>（CO<sub>2</sub> 換算で <code>r_bc = 1.37 × 279 ≈ 382 s · m⁻¹</code>）に達し、開いた気孔自身の抵抗（<code>r_sw ≈ 110 s · m⁻¹</code>）の2.5倍以上のボトルネックとなります。このとき室内通路の CO<sub>2</sub> 濃度が <code>900 ppm</code> でも葉面 <i>C<sub>s</sub></i> は <code>560 ppm</code> 前後まで低下し、高価な液化 CO<sub>2</sub> 施用コストの大半が無駄になります。</li>
+        <li><strong>デカップリング係数 Ω と微気象乖離：</strong> Jarvis &amp; McNaughton (1986) のデカップリング係数 Ω が <code>1</code> に近い（風速が低く葉が大きく <i>g<sub>bw</sub></i> / <i>g<sub>sw</sub></i> が小さい）温室群落では、蒸散は室内 VPD よりも正味放射 <i>R<sub>n</sub></i> に強く支配され、強日射下で葉温が室温より <code>+3.0〜+4.5 K</code> 急上昇します。水平循環扇（HAF ファン）または株元ダクト送風により群落内風速を <strong><code>u = 0.30〜0.60 m · s⁻¹</code></strong> の最適帯へ引き上げると、<code>r_bw</code> は <code>80〜115 s · m⁻¹</code> まで急減し、葉温と気温の乖離が <code>±1.0 K</code> 以内に収束して純光合成速度 <i>A<sub>n</sub></i> が <code>+18〜+32%</code> 向上します。なお、<code>u &gt; 1.0〜1.2 m · s⁻¹</code> の過度な強風は葉の機械的揺動と過蒸散による気孔閉鎖を招くため逆効果となります。</li>
+      </ol>
+
+      <table class="eng-table">
+        <thead>
+          <tr>
+            <th>群落内風速 u [m·s⁻¹]</th>
+            <th>境界層厚さ δ<sub>bl</sub> (d=0.10m)</th>
+            <th>水蒸気境界層抵抗 r<sub>bw</sub> [s·m⁻¹]</th>
+            <th>CO<sub>2</sub> 境界層コンダクタンス g<sub>bc</sub> [mol·m⁻²·s⁻¹]</th>
+            <th>強日射下 (R<sub>n</sub>=400 W·m⁻²) の葉温偏差 ΔT = T<sub>leaf</sub>−T<sub>air</sub></th>
+            <th>群落ガス交換・微気象ステータス</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>0.04 m·s⁻¹</strong>（無風・自然対流のみ）</td>
+            <td><code>6.3 mm</code></td>
+            <td><code>285 s·m⁻¹</code></td>
+            <td><code>0.105 mol·m⁻²·s⁻¹</code></td>
+            <td><code>+3.4 〜 +4.6 K</code></td>
+            <td><strong>深刻な拡散律速：</strong> 葉面 CO<sub>2</sub> 局所枯渇・葉温急騰による高 VPD 気孔閉鎖／灰色かび病結露リスク大</td>
+          </tr>
+          <tr>
+            <td><strong>0.15 m·s⁻¹</strong>（弱風・HAF 不足）</td>
+            <td><code>3.3 mm</code></td>
+            <td><code>147 s·m⁻¹</code></td>
+            <td><code>0.203 mol·m⁻²·s⁻¹</code></td>
+            <td><code>+1.6 〜 +2.4 K</code></td>
+            <td><strong>準律速状態：</strong> 密植群落中下層で気流停滞、CO<sub>2</sub> 施用効率が理論値の約 68〜75% に留まる</td>
+          </tr>
+          <tr>
+            <td><strong>0.40 m·s⁻¹</strong>（最適 HAF・ダクト気流）</td>
+            <td><code>2.0 mm</code></td>
+            <td><code>90 s·m⁻¹</code></td>
+            <td><code>0.332 mol·m⁻²·s⁻¹</code></td>
+            <td><code>+0.4 〜 +1.0 K</code></td>
+            <td><strong>最適設計スイートスポット：</strong> 境界層抵抗が最小化され、最大純光合成速度 A<sub>n</sub> と旺盛な Ca<sup>2+</sup> 蒸散流を達成</td>
+          </tr>
+          <tr>
+            <td><strong>0.75 m·s⁻¹</strong>（強循環・高密度 PFAL）</td>
+            <td><code>1.5 mm</code></td>
+            <td><code>66 s·m⁻¹</code></td>
+            <td><code>0.453 mol·m⁻²·s⁻¹</code></td>
+            <td><code>−0.2 〜 +0.4 K</code></td>
+            <td><strong>高PPFD対応域：</strong> PPFD ≥ 500 µmol·m⁻²·s⁻¹ 下のチップバーン防止に有効（低湿度時は過蒸散に注意）</td>
+          </tr>
+          <tr>
+            <td><strong>1.30 m·s⁻¹</strong>（過剰風速）</td>
+            <td><code>1.1 mm</code></td>
+            <td><code>50 s·m⁻¹</code></td>
+            <td><code>0.597 mol·m⁻²·s⁻¹</code></td>
+            <td><code>−0.6 〜 0.0 K</code></td>
+            <td><strong>機械的・水ポテンシャル阻害：</strong> 葉柄擦傷、局所水欠乏による気孔の防御的閉鎖で逆に A<sub>n</sub> が低下</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section style="margin-bottom: 36px;">
+      <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px; margin-bottom: 16px;">4. 飽差（VPD）ストレス応答と気孔開閉カイネティクス：昼寝現象（Midday Depression）・ABA シグナル・変動光追従遅れ</h2>
+      <p>温室の環境制御盤が表示する「室内気温・室内相対湿度から計算した空気飽差（VPD<sub>air</sub>）」ではなく、孔辺細胞が実際に晒されている熱力学的駆動力は<strong>葉温 <i>T<sub>leaf</sub></i> 基準の葉面飽差（Leaf-to-Air VPD: VPD<sub>leaf</sub>）</strong>です。Tetens-Magnus 式による飽和蒸気圧 <i>e<sub>sat</sub></i>(<i>T</i>) を用いると、VPD<sub>leaf</sub> は次式で厳密に定義されます。</p>
+      <div class="formula-box">
+        飽和蒸気圧 (Tetens 式)： e<sub>sat</sub>(T) = 0.61078 · exp[ (17.2694 · T) / (T + 237.29) ] &nbsp; [kPa] &nbsp; （T [°C]）<br>
+        実効葉面飽差： VPD<sub>leaf</sub> = e<sub>sat</sub>(T<sub>leaf</sub>) − e<sub>air</sub> = e<sub>sat</sub>(T<sub>leaf</sub>) − (RH<sub>air</sub> / 100) · e<sub>sat</sub>(T<sub>air</sub>) &nbsp; [kPa]<br>
+        水ポテンシャル連続式（SPAC）： Ψ<sub>leaf</sub> = Ψ<sub>root</sub> − ρ<sub>w</sub> · g · h<sub>c</sub> − E · R<sub>hyd,plant</sub> &nbsp; [MPa]
+      </div>
+      <p>例えば室温 <code>T_air = 25.0 °C</code>、相対湿度 <code>RH_air = 65%</code> のとき、空気飽差は <code>VPD_air = 3.168 × (1 − 0.65) = 1.11 kPa</code> と一見適正に見えます。しかし強日射下で気流が弱く葉温が <code>T_leaf = 28.5 °C</code>（<code>e_sat = 3.891 kPa</code>）まで上昇していると、実際の葉面飽差は <strong><code>VPD_leaf = 3.891 − 2.059 = 1.83 kPa</code></strong> に達し、作物は深刻な高飽差乾燥ストレス下に置かれます。気孔の VPD 応答は、以下の3つのレジームと時間スケールで進行します。</p>
+      <ul>
+        <li><strong>過湿・低飽差レジーム（VPD<sub>leaf</sub> &lt; 0.45 kPa）：</strong> 蒸散駆動力が失われ、木部道管（Xylem）のマスフローに完全依存して輸送される非移動性養分——とりわけ細胞壁ペクチン架橋に不可欠な<strong>カルシウムイオン（Ca<sup>2+</sup>）</strong>とホウ素（B）——の成長点・果実先端への供給が途絶し、トマト・パプリカの<strong>尻腐れ症（Blossom-End Rot: BER）</strong>やレタス・イチゴの<strong>チップバーン（縁腐れ症）</strong>を誘発します。さらに葉面境界層で局所結露が生じ、灰色かび病（<i>Botrytis cinerea</i>）やべと病の分生子発芽条件を満たしてしまいます。</li>
+        <li><strong>最適光合成・蒸散協調バンド（VPD<sub>leaf</sub> = 0.75 〜 1.20 kPa）：</strong> 育苗・活着期は <code>0.60〜0.85 kPa</code>、栄養成長〜生殖成長盛期は <code>0.85〜1.20 kPa</code> において、孔辺細胞の高い膨圧が維持されて気孔コンダクタンス <i>g<sub>sw</sub></i> が極大化し、<i>C<sub>i</sub> / C<sub>a</sub></i> 比が <code>0.72〜0.82</code> の高水準に保たれます。</li>
+        <li><strong>高飽差ストレス・昼寝現象（Midday Stomatal Closure, VPD<sub>leaf</sub> &gt; 1.45 〜 1.60 kPa）：</strong> 蒸散要求量 <i>E</i> が根系・茎木部の水理コンダクタンス供給能力（<i>K<sub>plant</sub> = 1 / R<sub>hyd,plant</sub></i>）を上回ると、葉水ポテンシャル Ψ<sub>leaf</sub> が臨界値（トマトで <code>−0.9〜−1.2 MPa</code>）を下回ります。最初は表皮・孔辺細胞からの直接脱水による<strong>ハイドロパッシブ反応（一時的な逆接開口 Wrong-Way Response を経た急閉鎖）</strong>が起こり、続いて葉肉および維管束柔細胞で生合成・脱抱合された植物ホルモン<strong>アブシジン酸（ABA）</strong>が孔辺細胞の PYR/PYL/RCAR 受容体 → <code>OST1 (SnRK2.6)</code> キナーゼ → S型アニオンチャネル <code>SLAC1</code> を活性化します。Cl<sup>−</sup> とリンゴ酸イオンの流出に伴う膜脱分極が外向き整流性 K<sup>+</sup> チャネル（<code>GORK</code>）を開き、浸透圧低下に伴う水流出によって気孔が強力に閉鎖されます（<strong>ハイドロアクティブ閉鎖</strong>）。一度 ABA 誘導性の閉鎖が起きると、午後に日射が緩み VPD が回復しても気孔開度の回復には <code>45〜90分</code> の強いヒステリシス（履歴遅れ）が残り、1日の積算同化量が <code>15〜30%</code> 失われます。</li>
+        <li><strong>動的変動光に対する気孔の時定数遅れと青色光プライミング：</strong> 太陽光利用型温室で雲の通過により PPFD が <code>150 → 900 µmol · m⁻² · s⁻¹</code> へステップ状に急増した際、チラコイド電子伝達は数ミリ秒、Rubisco activase による生化学誘導は <code>1〜3分</code> で立ち上がるのに対し、イオン輸送と水流入を伴う<strong>気孔開口の時定数 τ<sub>open</sub> は <code>8〜20分</code></strong> を要します（Vialet-Chabrand et al., 2017）。この開口遅れ期間中は <i>C<sub>i</sub></i> が急落して CO<sub>2</sub> 供給律速が生じます。最新のハイブリッド LED 補光戦略では、早朝日の出前や曇天変動時に低強度（<code>25〜40 µmol · m⁻² · s⁻¹</code>）の<strong>450 nm 青色 LED 光</strong>を照射し、孔辺細胞特異的な青色光受容体フォトトロピン（<code>PHOT1 / PHOT2</code>）→ 細胞膜 <code>H⁺-ATPase</code> リン酸化活性化を介して気孔をあらかじめ予備開口（Stomatal Priming）させておくことで、直後の自然光スパイクを逃さず同化へと変換します。</li>
+      </ul>
+    </section>
+
+<!-- INW-LIVE-WIDGET-START -->
+<section class="inw-live-widget-sandbox" style="margin: 32px 0; padding: 24px; background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 16px; box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);">
+  <h3 style="margin: 0 0 8px 0; font-size: 1.2rem; color: #38bdf8; font-weight: 800;">💧 リアルタイム葉面飽差（VPD<sub>leaf</sub>）＆気孔蒸散ストレス・インタラクティブ計算機</h3>
+  <p style="margin: 0 0 16px 0; font-size: 0.92rem; color: #94a3b8; line-height: 1.6;">施設内気温・相対湿度・放射葉温オフセット（ΔT = T<sub>leaf</sub> − T<sub>air</sub>）をスライダーで操作し、実効葉面飽差（kPa）と気孔コンダクタンス活性帯をリアルタイムに検証できます。</p>
+  <div style="display: flex; justify-content: center; width: 100%; overflow: hidden;">
+    <iframe src="/embed/vpd-gauge.html" width="380" height="390" loading="lazy" title="リアルタイム葉面飽差 VPD および気孔蒸散ストレスシミュレーター" style="border: none; border-radius: 14px; max-width: 100%;"></iframe>
+  </div>
+</section>
+<!-- INW-LIVE-WIDGET-END -->
+
+    <section style="margin-bottom: 36px;">
+      <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px; margin-bottom: 16px;">5. 太陽光利用型植物工場・半閉鎖型温室における CO<sub>2</sub> 施用収支と統合環境制御アーキテクチャ</h2>
+      <p>C<sub>3</sub> 作物の現在の外気 CO<sub>2</sub> 濃度（<code>C_out ≈ 425 µmol · mol⁻¹</code>）は Rubisco の CO<sub>2</sub> 飽和濃度を大きく下回っており、光合成と競合する<strong>光呼吸（Photorespiration：Rubisco による O<sub>2</sub> 固定反応）</strong>によってせっかく固定した炭素の <code>20〜30%</code> が失われています。施設内 CO<sub>2</sub> 濃度 <i>C<sub>a</sub></i> を <strong><code>800〜1,100 µmol · mol⁻¹ (ppm)</code></strong> に高めると、<i>C<sub>i</sub></i> が上昇して光呼吸が劇的に抑制され、純光合成速度 <i>A<sub>n</sub></i> は <strong><code>+22〜+38%</code> 増加</strong>します。同時に BBL 式（<code>g_sw ∝ A_n / (C_s − Γ*)</code>）から明らかなように、分母の <i>C<sub>s</sub></i> 増大率が分子の <i>A<sub>n</sub></i> 増大率を上回るため、気孔コンダクタンス <i>g<sub>sw</sub></i> は <code>15〜25%</code> 緩やかに縮小し、<strong>固有水利用効率（Intrinsic Water Use Efficiency: iWUE = <i>A<sub>n</sub></i> / <i>g<sub>sw</sub></i>）が <code>1.5〜1.8倍</code> に向上</strong>します。</p>
+      <p>ただし、春季〜秋季の日射が強い時間帯に天窓を全開にして換気を行う従来型温室では、施用した CO<sub>2</sub> が毎時 <code>15〜40回</code> の換気回数（<i>N<sub>vent</sub></i>）によって屋外へ流出し、高濃度維持の経済性が崩壊します。温室単位床面積あたりの CO<sub>2</sub> 動的物質収支と経済的最適設定値 <i>C<sub>a</sub></i>* は次式で記述されます。</p>
+      <div class="formula-box">
+        温室 CO<sub>2</sub> 動的物質収支： h<sub>gh</sub> · ρ<sub>air</sub> · (dC<sub>a</sub> / dt) = Φ<sub>CO2,inj</sub> − Φ<sub>vent</sub> − P<sub>canopy,net</sub>(PPFD, C<sub>a</sub>, T<sub>leaf</sub>, VPD<sub>leaf</sub>)<br>
+        換気流出フラックス： Φ<sub>vent</sub> = N<sub>vent</sub> · h<sub>gh</sub> · ρ<sub>air</sub> · (C<sub>a</sub> − C<sub>out</sub>) &nbsp; [g CO<sub>2</sub> · m<sup>−2</sup> · h<sup>−1</sup>]<br>
+        群落アップスケーリング同化量（Sunlit / Shaded 二葉モデル）：<br>
+        &nbsp;&nbsp;P<sub>canopy,net</sub> = LAI<sub>sun</sub> · A<sub>n</sub>(I<sub>sun</sub>, g<sub>s,sun</sub>) + LAI<sub>shd</sub> · A<sub>n</sub>(I<sub>shd</sub>, g<sub>s,shd</sub>)<br>
+        経済的限界最適条件（MPC 目的関数）： ∂[ p<sub>crop</sub> · HI · ε<sub>bio</sub> · P<sub>canopy,net</sub>(C<sub>a</sub>) ] / ∂C<sub>a</sub> = p<sub>CO2</sub> · ( ∂Φ<sub>CO2,inj</sub> / ∂C<sub>a</sub> )
+      </div>
+      <p>ここで <i>h<sub>gh</sub></i> は温室平均軒高（現代のオランダ・日本型ハイワイヤー温室で <code>5.5〜6.8 m</code>）、<i>p<sub>crop</sub></i> は収穫果実単価、<i>HI</i> は収穫指数（Harvest Index、トマトで <code>0.65〜0.72</code>）、<i>ε<sub>bio</sub></i> は CO<sub>2</sub> 1 g から乾物・新鮮重への変換係数、<i>p<sub>CO2</sub></i> は液化炭酸ガスまたは CHP（コージェネレーション SCR 脱硝精製排ガス）の CO<sub>2</sub> 単位コストです。この連立問題に対する最先端の工学的解決策が、(1) <strong>高圧細霧冷房（High-Pressure Fogging：粒径 <code>5〜15 µm</code>、圧力 <code>7〜10 MPa</code>）による蒸発冷却と VPD 維持</strong>（天窓開度を最小化して <i>N<sub>vent</sub></i> を抑えつつ <code>VPD_leaf = 0.9〜1.1 kPa</code> を死守）、および (2) 空調ユニット（ATU）やヒートポンプで顕熱・潜熱を回収し天窓を閉じたまま高 CO<sub>2</sub>（<code>1,000 ppm</code>）を終日維持する<strong>半閉鎖型温室（Semi-Closed Greenhouse）＋局所株間 CO<sub>2</sub> チューブ施用</strong>です。</p>
+
+      <table class="eng-table">
+        <thead>
+          <tr>
+            <th>制御サブシステム・対象指標</th>
+            <th>目標設定レンジ（SI単位）</th>
+            <th>境界条件・生理学的根拠</th>
+            <th>推奨センサー仕様・校正精度</th>
+            <th>アクチュエータ協調制御ロジック（MPC / 複合環境制御）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>葉面飽差（VPD<sub>leaf</sub>）</strong></td>
+            <td><code>0.80 〜 1.15 kPa</code>（栄養〜果実肥大期）<br><code>0.65 〜 0.85 kPa</code>（定植活着・育苗期）</td>
+            <td>0.45 kPa 未満で Ca<sup>2+</sup> 欠乏・結露、1.45 kPa 超で ABA 誘導性気孔閉鎖</td>
+            <td>強制通風筒入 PT1000 (±0.1 °C) ＋ 静電容量湿度計 (±1.5% RH) ＋ 赤外放射葉温計 IRT (±0.2 °C)</td>
+            <td>高圧細霧ノズル間欠噴霧（VPD &gt; 1.20 kPa）＋ 除湿ヒートポンプ／最低換気暖房連動（VPD &lt; 0.55 kPa）</td>
+          </tr>
+          <tr>
+            <td><strong>気孔コンダクタンス（g<sub>sw</sub>）</strong></td>
+            <td><code>0.28 〜 0.55 mol·m⁻²·s⁻¹</code>（強光期上位成葉）</td>
+            <td>C<sub>i</sub> / C<sub>a</sub> ≈ 0.72〜0.80 を維持し RuBP 再生・Rubisco 活性を最大化</td>
+            <td>サップフロー（茎熱収支ゲージ）・リシメータ重量蒸散速度からの逆解析推定</td>
+            <td>早朝日の出 30 分前からの段階昇温＋青色光プライミングにより気孔開口時定数遅れを解消</td>
+          </tr>
+          <tr>
+            <td><strong>葉面境界層風速（u<sub>canopy</sub>）</strong></td>
+            <td><code>0.30 〜 0.60 m·s⁻¹</code></td>
+            <td>r<sub>bw</sub> ≤ 100 s·m⁻¹、葉面 CO<sub>2</sub> 枯渇解消および ΔT<sub>leaf-air</sub> ≤ 1.0 K</td>
+            <td>熱線式または2次元超音波微風速計（分解能 0.01 m·s⁻¹）</td>
+            <td>EC インバータ HAF 循環扇（推力 3〜5 N / 100 m²）＋ 株元ポリダクト等速送風</td>
+          </tr>
+          <tr>
+            <td><strong>CO<sub>2</sub> 施用濃度（C<sub>a</sub>）</strong></td>
+            <td><code>800 〜 1,100 µmol·mol⁻¹</code>（閉窓・微開窓時）<br><code>450 〜 550 µmol·mol⁻¹</code>（強換気時）</td>
+            <td>光呼吸を 60% 以上抑制しつつ限界収益 ≥ 限界ガスコストを満たす最適点</td>
+            <td>自動ゼロ点較正機能付 二波長 NDIR センサー（±15 ppm、群落成長点高さ設置）</td>
+            <td>PPFD 比例フィードフォワード注入 ＋ 天窓開度・風速から推定した換気回数 N<sub>vent</sub> による上限クランプ</td>
+          </tr>
+          <tr>
+            <td><strong>光合成最適葉温（T<sub>leaf,opt</sub>）</strong></td>
+            <td><code>22.5 〜 25.0 °C</code>（420 ppm 時）<br><code>26.0 〜 28.5 °C</code>（1,000 ppm 時）</td>
+            <td>高 CO<sub>2</sub> 下での Rubisco カルボキシラーゼ／オキシゲナーゼ比改善に伴う高温シフト</td>
+            <td>群落頂部非接触赤外線サーモパイルアレイ（放射率 ε = 0.96〜0.98 設定）</td>
+            <td>CO<sub>2</sub> 濃度と積算日射量（RTR 法）に連動して換気開始温度設定値を動的に +2.0〜+3.0 K シフト</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section style="margin-bottom: 36px;">
+      <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px; margin-bottom: 16px;">6. 施設園芸・植物工場エンジニアのための実務 FAQ（気孔・光合成ガス交換動力学）</h2>
+
+      <details class="faq-item" open>
+        <summary>Q1. 水蒸気に対する気孔コンダクタンス（g<sub>sw</sub>）と CO<sub>2</sub> に対する気孔コンダクタンス（g<sub>sc</sub>）の換算比が 1.60 となり、葉面境界層では 1.37 となる物理的根拠は何ですか？</summary>
+        <p>気孔孔隙内部のガス移動は静止空気中の純粋な分子拡散（Fick の第一法則）に支配されるため、水蒸気（分子量 18.015 g·mol⁻¹、拡散係数 約 2.42×10⁻⁵ m²·s⁻¹）と CO<sub>2</sub>（分子量 44.01 g·mol⁻¹、拡散係数 約 1.51×10⁻⁵ m²·s⁻¹）の空気中二成分拡散係数比 D<sub>H2O</sub> / D<sub>CO2</sub> ≈ 1.60 がそのまま g<sub>sw</sub> / g<sub>sc</sub> = 1.60 の比率になります。一方、葉面境界層（r<sub>b</sub>）では層流強制対流物質移動が支配的となり、シャーウッド数 Sh ∝ Sc<sup>1/3</sup> の境界層相似則から拡散係数比の 2/3 乗である (1.60)<sup>2/3</sup> ≈ 1.37 が水蒸気境界層コンダクタンス g<sub>bw</sub> と CO<sub>2</sub> 境界層コンダクタンス g<sub>bc</sub> の換算係数となります。</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Q2. 従来の Ball-Woodrow-Berry モデルに対し、Ball-Berry-Leuning（BBL）モデルや Medlyn モデルが施設園芸の環境制御において優れている点は何ですか？</summary>
+        <p>初期の Ball-Woodrow-Berry (1987) モデルは葉面相対湿度 h<sub>s</sub> に比例する定式化であったため、気温変化時や高飽差環境下での孔辺細胞の水ポテンシャル応答を正確に分離できませんでした。Leuning (1995) の BBL モデルは相対湿度 h<sub>s</sub> を葉面飽差 D<sub>s</sub> の双曲線減衰関数 1 / (1 + D<sub>s</sub> / D<sub>0</sub>) に置換し、さらに CO<sub>2</sub> 補償点 Γ* を導入することで蒸散駆動力に対する生理的閉鎖応答を精密化しました。また Medlyn et al. (2011) の統一最適気孔モデルは限界水利用効率（∂A/∂E = 一定）の変分原理から 1 + g<sub>1</sub> / √D<sub>s</sub> の平方根依存性を導出し、パラメータ g<sub>1</sub> に作物ごとの水利用戦略という明確な生物物理学的意味を与えています。</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Q3. 無風状態の温室内で CO<sub>2</sub> を 1,000 ppm に施用しても、期待した光合成促進効果が得られないのはなぜですか？</summary>
+        <p>群落内風速 u が 0.08 m·s⁻¹ 未満の無風状態では、葉面境界層抵抗 r<sub>bw</sub> が 350〜500 s·m⁻¹ 以上に増大し、厚い静止空気の断熱・拡散バリアが形成されます。その結果、通路上の NDIR センサーが C<sub>a</sub> = 1,000 ppm を示していても、活発に同化する葉面直上の CO<sub>2</sub> 濃度 C<sub>s</sub> は 520〜600 ppm まで局所枯渇します。同時に蒸散潜熱放散が阻害されて葉温 T<sub>leaf</sub> が気温より 3〜4 K 上昇し、実効葉面飽差 VPD<sub>leaf</sub> が 1.6 kPa を超えて気孔閉鎖を誘発するためです。HAF 循環扇等で群落風速 0.30〜0.55 m·s⁻¹ を確保し、r<sub>bw</sub> を 80〜130 s·m⁻¹ 以下へ低減することが不可欠です。</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Q4. 高濃度 CO<sub>2</sub> 施用（800〜1,200 ppm）を行う際、温度や飽差（VPD）の設定値をどのように連動補正すべきですか？</summary>
+        <p>外気 CO<sub>2</sub> 濃度の上昇に伴い細胞間隙 CO<sub>2</sub> 濃度 C<sub>i</sub> が高まると、BBL 式に従い孔辺細胞は気孔コンダクタンス g<sub>sw</sub> を 15〜25% 縮小させて水分損失を節約します。この部分的な気孔閉鎖により蒸散冷却フラックス（λ·E）が減少し、強光下では葉温が 0.6〜1.2 K 上昇します。同時に Rubisco の酸素化反応（光呼吸）が抑制されるため、純光合成速度 A<sub>n</sub> の最適葉温自体が通常の 22〜24 °C から 26〜29 °C へと高温側へシフトします。したがって高 CO<sub>2</sub> 施用時は換気開始温度を +2〜3 K 引き上げつつ、VPD<sub>leaf</sub> が 0.85〜1.15 kPa の適正帯を逸脱しないよう細霧冷房や循環気流を協調制御する必要があります。</p>
+      </details>
+    </section>
+
+    <section style="margin-bottom: 36px;">
+      <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.35rem; color: #94a3b8; margin-bottom: 12px;">主要学術参考文献（References &amp; Standards）</h2>
+      <ul style="padding-left: 20px; margin: 0;">
+        <li style="margin-bottom: 8px; color: #94a3b8; font-size: 0.9rem;">Farquhar, G. D., von Caemmerer, S., &amp; Berry, J. A. (1980). A biochemical model of photosynthetic CO<sub>2</sub> assimilation in leaves of C<sub>3</sub> species. <i>Planta</i>, 149(1), 78–90.</li>
+        <li style="margin-bottom: 8px; color: #94a3b8; font-size: 0.9rem;">Ball, J. T., Woodrow, I. E., &amp; Berry, J. A. (1987). A model predicting stomatal conductance and its contribution to the control of photosynthesis under different environmental conditions. <i>Progress in Photosynthesis Research</i>, Vol. 4, 221–224.</li>
+        <li style="margin-bottom: 8px; color: #94a3b8; font-size: 0.9rem;">Leuning, R. (1995). A critical appraisal of a combined stomatal-photosynthesis model for C<sub>3</sub> plants. <i>Plant, Cell &amp; Environment</i>, 18(4), 339–355.</li>
+        <li style="margin-bottom: 8px; color: #94a3b8; font-size: 0.9rem;">Medlyn, B. E., Duursma, R. A., Eamus, D., et al. (2011). Reconciling the optimal and empirical approaches to modelling stomatal conductance. <i>Global Change Biology</i>, 17(6), 2134–2144.</li>
+        <li style="margin-bottom: 8px; color: #94a3b8; font-size: 0.9rem;">矢吹万寿 (1985). 『植物の動的環境 — 風と光合成・蒸散の境界層解析』 朝倉書店 / 日本生物環境工学会・農業施設学会 施設園芸環境制御基準.</li>
+        <li style="margin-bottom: 8px; color: #94a3b8; font-size: 0.9rem;">Vialet-Chabrand, S., Matthews, J. S., McAusland, L., Blatt, M. R., Griffiths, H., &amp; Lawson, T. (2017). Temporal dynamics of stomatal behavior: Modeling and implications for photosynthesis and water use. <i>Plant Physiology</i>, 174(2), 603–613.</li>
+      </ul>
+    </section>
+
+<!-- INW-TSUKUBA-FUNNEL-START -->
+<section class="inw-tsukuba-funnel-bridge" style="max-width: 1060px; margin: 32px auto; padding: 26px; background: rgba(15, 23, 42, 0.9); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 16px; text-align: left; box-shadow: 0 10px 28px rgba(0, 0, 0, 0.3);">
+  <h3 style="margin: 0 0 8px 0; font-size: 1.2rem; color: #10b981; font-weight: 800;">🔬 関連する技術モノグラフ・光合成＆微気象シミュレーター (Engineering Hub)</h3>
+  <p style="margin: 0 0 16px 0; font-size: 0.92rem; color: #94a3b8; line-height: 1.6;">本モノグラフの気孔コンダクタンス・FvCB 同化動力学・境界層気流設計を実際の施設運用へ展開するための関連ガイドと計算ツール：</p>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px;">
+    <a href="/articles/ja/article-01-vpd-masterclass-jp.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem;">🇯🇵 JA Vol. 01: 飽差（VPD）マスタークラスと蒸散熱力学 →</a>
+    <a href="/articles/ja/article-05-penman-monteith-transpiration-vpd-environmental-control.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem;">🇯🇵 JA Vol. 05: Penman-Monteith 蒸発散方程式と統合環境制御 →</a>
+    <a href="/articles/ja/article-28-greenhouse-co2-enrichment-economics-jp.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem;">🇯🇵 JA Vol. 28: 温室 CO₂ 施用経済性と換気損失最適化 →</a>
+    <a href="/articles/ja/article-35-greenhouse-haf-fan-cfd-modeling-jp.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem;">🇯🇵 JA Vol. 35: 水平循環扇（HAF）CFD モデリングと境界層制御 →</a>
+    <a href="/articles/ja/article-41-farquhar-photosynthesis-fvcb-co2-jp.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem;">🇯🇵 JA Vol. 41: Farquhar (FvCB) 光合成生化学モデル詳細 →</a>
+    <a href="/tools/co2-enrichment-leaf-photosynthesis-farquhar-calculator.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem;">💨 FvCB 光合成 &amp; CO₂ 施用インタラクティブ計算機 →</a>
+    <a href="/tools/evapotranspiration-penman-monteith-calculator.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem;">💧 Penman-Monteith 群落蒸発散ソルバー →</a>
+    <a href="/tools/venlocad-3d.html" style="display:block; padding:12px 16px; background:rgba(16,185,129,0.2); border:1px solid #10b981; border-radius:10px; color:#34d399; text-decoration:none; font-weight:700; font-size:0.92rem;">🏗️ VenloCAD 3D 温室設計アーキテクト →</a>
+  </div>
+</section>
+<!-- INW-TSUKUBA-FUNNEL-END -->
+
+    <!-- INW-EEAT-BOX-START -->
+    <section class="inw-eeat-box" style="margin-top: 36px; padding: 24px; background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 16px;">
+      <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; color: #10b981; font-weight: 800; margin-bottom: 6px;">E-E-A-T Technical Review &amp; Authorship</div>
+      <h3 style="margin: 0 0 8px 0; font-size: 1.15rem; color: #f8fafc;">Inwoovation Engineering Research Lab</h3>
+      <p style="margin: 0; font-size: 0.92rem; color: #cbd5e1; line-height: 1.65;">フェンロー型連棟温室および植物工場における熱力学設計（DIN V 18599 / EN 13031-1）、気孔コンダクタンス・FvCB 光合成連成モデル、Penman-Monteith 蒸発散動力学、閉鎖系循環式養液イオン化学量論およびモデル予測環境制御（MPC）の研究開発機関。</p>
+    </section>
+    <!-- INW-EEAT-BOX-END -->
+  </main>
+
+  <!-- INW-STD-FOOTER-START -->
+  <footer class="inw-site-footer" style="margin-top: 48px; padding: 28px 20px; background: #0f172a; color: #94a3b8; text-align: center; border-top: 1px solid rgba(148, 163, 184, 0.15);">
+    <div style="max-width: 1100px; margin: 0 auto;">
+      <p style="margin: 0 0 10px 0;">&copy; 2026 Inwoovation Engineering Research Lab. Precision Controlled Environment Agriculture &amp; Biophysical Engineering.</p>
+      <p style="margin: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 16px;">
+        <a href="/index.html" style="color: #cbd5e1; text-decoration: none;">Home</a>
+        <a href="/guides.html" style="color: #cbd5e1; text-decoration: none;">Engineering Guides</a>
+        <a href="/privacy-policy.html" style="color: #cbd5e1; text-decoration: none;">Privacy Policy</a>
+        <a href="/terms-of-service.html" style="color: #cbd5e1; text-decoration: none;">Terms of Service</a>
+        <a href="/about.html" style="color: #cbd5e1; text-decoration: none;">About</a>
+        <a href="/contact.html" style="color: #cbd5e1; text-decoration: none;">Contact</a>
+      </p>
+    </div>
+  </footer>
+  <!-- INW-STD-FOOTER-END -->
+</body>
+</html>

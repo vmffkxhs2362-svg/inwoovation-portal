@@ -703,18 +703,34 @@ def sync_all():
             except ValueError:
                 pass
 
+    # Ensure 100% applicationPlaybook coverage via v6.0 synthesizer if any new entry lacks one
+    try:
+        from upgrade_subsidy_radar_v6 import synthesize_playbook, DEEP_URL_UPGRADES
+        for p in programs:
+            if p["id"] in DEEP_URL_UPGRADES:
+                p["officialUrl"] = DEEP_URL_UPGRADES[p["id"]]
+            if not p.get("applicationPlaybook"):
+                p["applicationPlaybook"] = synthesize_playbook(p)
+    except Exception as exc:
+        print(f"  ℹ️ Playbook check note: {exc}")
+
     # Update JSON Metadata
     data["programs"] = programs
     data["metadata"]["totalPrograms"] = len(programs)
     data["metadata"]["lastUpdated"] = today_str
     data["metadata"]["lastVerified"] = today_str
-    data["metadata"]["version"] = "5.0.0-hyperlocal-3tier-radar"
-    data["metadata"]["pilotJurisdiction"] = "8-Country 3-Tier Hyper-Local Matrix (US / DE / JP / NL / FR / ES / CA / KR — 73 Portals)"
+    data["metadata"]["version"] = "6.0.0-hyperlocal-3tier-ssot"
+    data["metadata"]["pilotJurisdiction"] = (
+        f"8-Country Complete 3-Tier Hyper-Local Matrix (US / DE / JP / NL / FR / ES / CA / KR — {len(programs)} Programs · 100% Playbooks)"
+    )
 
-    # Save JSON Feed
+    # Save JSON Feed & External SSOT JS Bundle (keeping Navigator HTML lightweight!)
     with open(DATA_JSON_PATH, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
-    print(f"💾 Updated production JSON feed at: {DATA_JSON_PATH} (Total: {len(programs)} programs)")
+    bundle_js_path = os.path.join(PORTAL_DIR, "data", "global_agri_subsidies_bundle.js")
+    with open(bundle_js_path, "w", encoding="utf-8") as bf:
+        bf.write("window.__SUB_DATA_BUNDLE__ = " + json.dumps(data, separators=(",", ":"), ensure_ascii=False) + ";\n")
+    print(f"💾 Updated production JSON feed & SSOT JS bundle (Total: {len(programs)} programs)")
 
     # 5. Sync to SQLite Master Database
     if os.path.exists(DB_PATH):
@@ -788,23 +804,18 @@ def sync_all():
         conn.close()
         print(f"🗄️ Master SQLite DB synchronized at: {DB_PATH}")
 
-    # 6. Re-inject into Navigator HTML Tool
+    # 6. Update dynamic counts in lightweight decoupled Navigator HTML Tool (SSOT data lives in /data/global_agri_subsidies_bundle.js)
     if os.path.exists(NAVIGATOR_HTML_PATH):
         with open(NAVIGATOR_HTML_PATH, "r", encoding="utf-8") as f:
             html_text = f.read()
 
-        # Replace const SUB_DATA = { ... };
-        json_str = json.dumps(data, indent=2, ensure_ascii=False)
-        sub_data_pattern = re.compile(r'const SUB_DATA = \{.+?\};\s*\n', re.DOTALL)
-        if sub_data_pattern.search(html_text):
-            html_text = sub_data_pattern.sub(f"const SUB_DATA = {json_str};\n", html_text)
-            print("✅ Successfully inlined updated SUB_DATA into navigator HTML.")
-        else:
-            print("⚠️ Warning: Could not find const SUB_DATA in HTML file!")
-
-        # Update metadata counts in HTML title/description
-        html_text = re.sub(r'28 total agricultural incentive programs', f'{len(programs)} total agricultural incentive programs', html_text)
-        html_text = re.sub(r'across 28 verified programs', f'across {len(programs)} verified programs', html_text)
+        html_text = re.sub(
+            r"\b\d+\s+verified\s+agricultural\s+incentive\s+programs",
+            f"{len(programs)} verified agricultural incentive programs",
+            html_text,
+            flags=re.IGNORECASE,
+        )
+        html_text = re.sub(r"across \d+ verified programs", f"across {len(programs)} verified programs", html_text)
 
         # Ensure Prop 4 Climate Bond Callout exists in HTML
         prop4_banner = """

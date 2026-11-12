@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta name="google-adsense-account" content="ca-pub-8597809158257497">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vol. 10: 完全人工光型植物工場 (PFAL) の空調・潜熱除湿熱力学設計：湿り空気線図 (Psychrometrics)・顕熱比 (SHR)・再熱除湿サイクル・COP最適化と多段栽培棚CFD気流均一化 | Inwoovation Lab</title>
+  <meta name="description" content="完全人工光型植物工場 (PFAL) および垂直農業における空調・潜熱除湿の熱力学設計モノグラフ。湿り空気線図 (Psychrometrics)、低顕熱比 (SHR = Qs / Qtot = 0.32–0.45)、蒸散潜熱負荷、ホットガス再熱除湿サイクル、システムCOP最適化、および多段栽培棚のチップバーンを根絶するCFD気流均一化設計を体系化。">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://inwoovation.com/articles/ja/article-10-vertical-farm-hvac-design-jp.html">
+  <link rel="alternate" hreflang="en" href="https://inwoovation.com/articles/article-10-vertical-farm-hvac-design.html">
+  <link rel="alternate" hreflang="x-default" href="https://inwoovation.com/articles/article-10-vertical-farm-hvac-design.html">
+  <link rel="alternate" hreflang="de" href="https://inwoovation.com/articles/de/article-10-vertikale-landwirtschaft-hlk-entfeuchtung-psychrometrie.html">
+  <link rel="alternate" hreflang="ja" href="https://inwoovation.com/articles/ja/article-10-vertical-farm-hvac-design-jp.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Vol. 10: 完全人工光型植物工場 (PFAL) の空調・潜熱除湿熱力学設計：湿り空気線図・顕熱比 (SHR)・再熱除湿・CFD気流設計 | Inwoovation Lab">
+  <meta property="og:description" content="完全人工光型植物工場 (PFAL) における湿り空気線図解析、顕熱比 (SHR)、蒸散潜熱除湿、ホットガス再熱・水冷LEDによるCOP最適化、および多段栽培棚CFD気流均一化設計の完全技術ガイド。">
+  <meta property="og:url" content="https://inwoovation.com/articles/ja/article-10-vertical-farm-hvac-design-jp.html">
+  <meta property="og:image" content="https://inwoovation.com/og-cover.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Vol. 10: 完全人工光型植物工場 (PFAL) の空調・潜熱除湿熱力学設計：SHR・再熱除湿・CFD気流均一化 | Inwoovation Lab">
+  <meta name="twitter:description" content="完全人工光型植物工場 (PFAL) における湿り空気線図解析、顕熱比 (SHR)、蒸散潜熱除湿、ホットガス再熱・COP最適化、および多段栽培棚CFD気流均一化設計。">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V4RYJBMEDE"></script>
+  <script>
+    if (navigator.webdriver || /HeadlessChrome|PhantomJS|Lighthouse|PTST|bot|crawler|spider|slurp/i.test(navigator.userAgent) || location.hostname === 'localhost' || location.hostname === '127.0.0.1' || (screen.width === 1366 && screen.height === 1366) || (screen.width === 800 && screen.height === 600) || screen.height >= 5000) { window['ga-disable-G-V4RYJBMEDE'] = true; }
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-V4RYJBMEDE');
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8597809158257497" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/styles.css">
+  <script src="/js/global-search-palette.js?v=20261110" defer></script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "headline": "Vol. 10: 完全人工光型植物工場 (PFAL) の空調・潜熱除湿熱力学設計：湿り空気線図 (Psychrometrics)・顕熱比 (SHR)・再熱除湿サイクル・COP最適化と多段栽培棚CFD気流均一化",
+      "description": "完全人工光型植物工場 (PFAL) および垂直農業における空調・潜熱除湿の熱力学設計モノグラフ。湿り空気線図 (Psychrometrics)、低顕熱比 (SHR = Qs / Qtot = 0.32–0.45)、蒸散潜熱負荷、ホットガス再熱除湿サイクル、システムCOP最適化、および多段栽培棚CFD気流均一化設計を体系化。",
+      "inLanguage": "ja",
+      "datePublished": "2026-11-12",
+      "dateModified": "2026-11-12",
+      "mainEntityOfPage": "https://inwoovation.com/articles/ja/article-10-vertical-farm-hvac-design-jp.html",
+      "image": "https://inwoovation.com/og-cover.jpg",
+      "author": {
+        "@type": "Organization",
+        "name": "Inwoovation Engineering Research Lab",
+        "url": "https://inwoovation.com/about.html"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Inwoovation Engineering Research Lab",
+        "url": "https://inwoovation.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://inwoovation.com/og-cover.jpg"
+        }
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inwoovation Lab",
+          "item": "https://inwoovation.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Engineering Guides",
+          "item": "https://inwoovation.com/guides.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "JA Vol. 10: 完全人工光型植物工場 (PFAL) の空調・潜熱除湿熱力学設計",
+          "item": "https://inwoovation.com/articles/ja/article-10-vertical-farm-hvac-design-jp.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "なぜ完全人工光型植物工場（PFAL）にオフィス・店舗用の汎用パッケージエアコンを導入すると湿度制御が破綻するのですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "商業ビル・オフィス用の汎用パッケージ空調機は顕熱比（SHR = 顕熱能力 / 全熱能力）が 0.75〜0.85 となるよう蒸発器温度と風量が設計されています。これに対し、葉面積指数（LAI ≥ 3.0）に達した完全人工光型植物工場では、投入した LED 照明電力の 55〜68% が作物の蒸散によって水蒸気の潜熱（蒸発潜熱 約 2,448 kJ/kg）へと変換されるため、明期の室内負荷の顕熱比 SHR は 0.32〜0.45、暗期（消灯時）には 0.05〜0.15 まで低下します。汎用エアコンでは潜熱除湿が完了する前に室温だけが設定温度に達してサーモオフ（圧縮機停止）してしまうため、室内相対湿度が 90% 以上に暴走し、結露・灰色かび病・チップバーンを引き起こします。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "過冷却除湿後の再熱（Reheat）において、電気ヒータではなくホットガス再熱や直交平板型顕熱熱交換器を採用すべき熱力学的理由は何ですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "露点温度以下（例：11.5 °C）まで冷却除湿した空気を電気ヒータで吹出温度（18.5〜20.0 °C）へ再加熱すると、電気ヒータの投入電力自体が新たな室内顕熱負荷となり、冷却電力と加熱電力の二重損失によって実効除湿 COP が 1.2〜1.6 まで悪化します。圧縮機吐出高温冷媒ガスを室内再熱コイルへバイパスするホットガス・リヒート方式や、冷却コイル前後の還気と低温空気の間で顕熱のみをパッシブ交換するラップアラウンド・ヒートパイプ／直交平板型顕熱熱交換器（温度交換効率 45〜60%）を用いれば、追加の加熱電力をゼロに抑えつつ装置全体の見かけの SHR を 0.35〜0.42 へ自在に整合でき、システム COP を 3.8〜5.2 以上に維持できます。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "10段以上の多段栽培棚においてリーフレタスやイチゴに発生するチップバーン（縁腐れ症）を CFD 気流設計でどのように防止しますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "チップバーンは根圏のカルシウム不足ではなく、高 PPFD・高 CO2 による急速成長下で結球・ロゼット中心の成長点（メリステム）周辺の静止境界層が飽和湿度に達し、木部道管の蒸散流に乗った Ca2+ イオン輸送が局所停止することで48時間以内に発症します。天井吹出のみの空調では冷気が通路（アイル）へ短絡し、棚間隔 28〜38 cm の棚中央部で風速 0.08 m/s 未満の死水域が生じます。これを根絶するには、各段ごとにマイクロパンチング・エアソックス（微細多孔ダクト）または鉛直下方吹付けノズルを配置し、全段・全長にわたり成長点近傍で風速 0.35〜0.65 m/s、上下段温度偏差 ±0.8 K 以内を確保する CFD 設計が不可欠です。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "完全人工光型植物工場（PFAL）における凝縮除湿水の回収量はどの程度になり、水利用効率（WUE）にどう寄与しますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "閉鎖度が高い PFAL（換気回数 N < 0.015 h⁻¹）では、灌水として供給された養液水分のうち作物の生体新鮮重として収穫物に固定されるのは約 3〜5% に過ぎず、残りの 95〜97% は気孔から蒸散して室内空気中へ放出されます。実栽培面積 6,000 m²（LED 投入電力 420 kW）規模の工場では、空調冷却コイルから 1 日あたり約 7,000〜8,500 L の低 EC 凝縮水（EC < 0.03 dS/m）が回収されます。SUS316L または耐食コーティング熱交換器で重金属溶出を防ぎ、UF 膜ろ過および 254 nm UV-C 殺菌（40 mJ/cm² 以上）を経て原水タンクへ循環再利用することで、露地栽培の 30〜50倍、一般温室の 10倍以上に達する究極の水利用効率（WUE ≈ 0.95〜0.98 回収率）を達成できます。"
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+  <style>
+    body { margin: 0; font-family: 'Plus Jakarta Sans', sans-serif; background: #090d16; color: #e2e8f0; line-height: 1.82; }
+    .article-shell { max-width: 920px; margin: 0 auto; padding: 36px 22px 60px; }
+    .badge-pill { display: inline-block; padding: 6px 14px; border-radius: 999px; background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.4); color: #34d399; font-size: 0.82rem; font-weight: 700; margin-bottom: 14px; }
+    h1 { font-family: 'Outfit', sans-serif; font-size: 2.18rem; line-height: 1.3; color: #f8fafc; margin: 0 0 14px 0; }
+    .meta-bar { color: #94a3b8; font-size: 0.9rem; margin-bottom: 28px; padding-bottom: 18px; border-bottom: 1px solid rgba(148, 163, 184, 0.18); }
+    .formula-box { background: rgba(15, 23, 42, 0.92); border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 12px; padding: 18px 22px; margin: 20px 0; font-family: 'JetBrains Mono', monospace; font-size: 0.92rem; line-height: 1.75; color: #38bdf8; overflow-x: auto; }
+    .callout-box { background: rgba(16, 185, 129, 0.08); border-left: 4px solid #10b981; border-radius: 8px; padding: 16px 20px; margin: 20px 0; color: #cbd5e1; }
+    table.eng-table { width: 100%; border-collapse: collapse; margin: 22px 0; background: rgba(15, 23, 42, 0.78); border-radius: 12px; overflow: hidden; }
+    table.eng-table th, table.eng-table td { padding: 12px 14px; border: 1px solid rgba(148, 163, 184, 0.2); text-align: left; font-size: 0.91rem; vertical-align: top; }
+    table.eng-table th { background: rgba(30, 41, 59, 0.92); color: #38bdf8; font-weight: 700; }
+    details.faq-item { background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(148, 163, 184, 0.22); border-radius: 12px; padding: 16px 20px; margin-bottom: 14px; }
+    details.faq-item summary { font-weight: 700; color: #f8fafc; cursor: pointer; font-size: 1.0rem; }
+    details.faq-item p { margin: 12px 0 0 0; color: #cbd5e1; font-size: 0.94rem; line-height: 1.75; }
+  </style>
+</head>
+<body>
+<!-- INW-STD-NAV-START -->
+<nav class="inw-top-nav" aria-label="Main Navigation" style="background: #0f172a; border-bottom: 1px solid #1e293b; padding: 12px 20px; font-family: system-ui, -apple-system, sans-serif; box-sizing: border-box; width: 100%;">
+  <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px;">
+    <a href="/index.html" style="color: #10b981; font-weight: 800; font-size: 1.15rem; text-decoration: none; letter-spacing: -0.02em;">Inwoovation Lab</a>
+    <div style="display: flex; flex-wrap: wrap; gap: 14px; font-size: 0.9rem;">
+      <a href="/index.html" style="color: #e2e8f0; text-decoration: none;">Home</a>
+      <a href="/smartfarm/vpd.html" style="color: #e2e8f0; text-decoration: none;">Calculators</a>
+      <a href="/articles/index.html" style="color: #38bdf8; font-weight: 600; text-decoration: none;">Articles</a>
+      <a href="/wiki/index.html" style="color: #e2e8f0; text-decoration: none;">Wiki</a>
+      <a href="/climate/index.html" style="color: #e2e8f0; text-decoration: none;">Climate Hub</a>
+      <a href="/crops/index.html" style="color: #e2e8f0; text-decoration: none;">Crops</a>
+      <a href="/tools/venlocad-3d.html" style="color: #10b981; font-weight: 600; text-decoration: none;">VenloCAD 3D</a>
+      <button type="button" onclick="window.InwooPalette && window.InwooPalette.open()" style="background: rgba(15, 23, 42, 0.9); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.4); padding: 6px 12px; border-radius: 6px; font-size: 0.85rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">🔍 Search <kbd style="background: rgba(255,255,255,0.1); padding: 1px 5px; border-radius: 4px; font-size: 0.72rem;">Ctrl+K</kbd></button>
+      <a href="/about.html" style="color: #e2e8f0; text-decoration: none;">About</a>
+    </div>
+  </div>
+</nav>
+<!-- INW-STD-NAV-END -->
+
+  <main class="article-shell">
+    <div style="margin-bottom: 20px;">
+      <a href="/guides.html" style="color: #38bdf8; text-decoration: none; font-weight: 700; font-size: 0.92rem;">← 技術モノグラフ一覧（Engineering Guides）へ戻る</a>
+    </div>
+    <span class="badge-pill">🇯🇵 JA Vol. 10 · 完全人工光型植物工場（PFAL）熱力学・潜熱除湿空調＆CFD気流工学</span>
+    <h1>完全人工光型植物工場（PFAL）の空調・潜熱除湿熱力学設計：湿り空気線図（Psychrometrics）、顕熱比（SHR = Q<sub>s</sub> / Q<sub>tot</sub>）、再熱除湿サイクル、COP最適化および多段栽培棚CFD気流均一化設計</h1>
+
+<!-- INW-LANG-SWITCHER-START -->
+<div class="inw-lang-switcher-bar" style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:14px 0 20px 0; padding:10px 14px; background:rgba(15,23,42,0.75); border:1px solid rgba(148,163,184,0.2); border-radius:12px;">
+  <span style="font-size:0.8rem; color:#94a3b8; font-weight:700; margin-right:4px;">🌐 Vol. 10 Editions:</span>
+  <a href="/articles/article-10-vertical-farm-hvac-design.html" style="display:inline-flex; align-items:center; padding:5px 12px; border-radius:999px; background:rgba(30,41,59,0.8); border:1px solid rgba(56,189,248,0.35); color:#38bdf8; text-decoration:none; font-size:0.8rem; font-weight:600;">🇬🇧 English Edition →</a>
+  <a href="/articles/de/article-10-vertikale-landwirtschaft-hlk-entfeuchtung-psychrometrie.html" style="display:inline-flex; align-items:center; padding:5px 12px; border-radius:999px; background:rgba(30,41,59,0.8); border:1px solid rgba(56,189,248,0.35); color:#38bdf8; text-decoration:none; font-size:0.8rem; font-weight:600;">🇩🇪 Deutsche Ausgabe →</a>
+  <span style="display:inline-flex; align-items:center; padding:5px 12px; border-radius:999px; background:rgba(16,185,129,0.22); border:1px solid #10b981; color:#34d399; font-size:0.8rem; font-weight:700;">🇯🇵 日本語版 (JA) (Active)</span>
+</div>
+<!-- INW-LANG-SWITCHER-END -->
+
+    <div class="meta-bar">
+      <span>🔬 <strong>Inwoovation Engineering Research Lab</strong></span> &nbsp;|&nbsp;
+      <span>📅 Last Updated: November 12, 2026</span> &nbsp;|&nbsp;
+      <span>⏱️ 23分 (読了目安 · 施設園芸・植物工場工学モノグラフ)</span>
+    </div>
+
+    <section style="margin-bottom: 36px;">
+      <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px; margin-bottom: 16px;">1. 完全人工光型植物工場（PFAL）の閉鎖系熱・水分収支と顕熱比（SHR = Q<sub>s</sub> / Q<sub>tot</sub>）の逆転現象</h2>
+      <p>千葉大学の古在豊樹（Toyoki Kozai）らによって工学体系が確立された<strong>完全人工光型植物工場（PFAL: Plant Factory with Artificial Lighting / 垂直農業 Vertical Farming）</strong>は、太陽光利用型温室とは熱力学的な境界条件が根本的に異なります。硬質ウレタンフォーム断熱パネル（熱貫流率 <i>U</i> ≤ <code>0.18〜0.24 W · m⁻² · K⁻¹</code>）で構築され、気密性が極めて高い閉鎖型栽培室（自然換気回数 <i>N</i> &lt; <code>0.01〜0.02 h⁻¹</code>）では、外壁を通じた熱貫流や隙間風の影響は全負荷の <code>3%</code> 未満に過ぎません。その代わり、多段栽培棚に高密度実装された LED 照明器具・電源ドライバ・循環ファン・養液ポンプへ投入される電気エネルギー <i>P<sub>elec,in</sub></i> のうち、光合成によって炭水化物の化学結合エネルギー（約 <code>17.5 MJ · kg⁻¹ DW</code>）として固定されるのはわずか <strong><code>1.0〜2.2%</code></strong> であり、残りの <strong><code>98% 以上</code> が栽培室内部で顕熱（Sensible Heat: <i>Q<sub>s</sub></i>）または蒸散潜熱（Latent Heat: <i>Q<sub>L</sub></i>）へと変換</strong>されます。</p>
+      <p>商業用 PFAL の空調設計において最も多くの失敗事例を生んできた原因は、「LED 投入電力 ＝ そのまま顕熱冷房負荷になる」と誤認し、オフィスビルや店舗用の汎用パッケージエアコンを選定してしまうことにあります。確かに最新の高効率園芸用 LED（PPE = <code>3.2〜3.8 µmol · J⁻¹</code>、電力・光放射変換効率 <i>η<sub>PAR</sub></i> ≈ <code>0.58〜0.68</code>）では、投入電力の <code>32〜42%</code> が LED 基板および電源ドライバからの直接顕熱放散となります。しかし、残りの <code>58〜68%</code> として照射された PAR 光放射エネルギーの大半は葉群（LAI ≥ <code>3.0〜4.5</code>）に吸収され、気孔からの活発な水蒸気蒸散を駆動して<strong>相変化潜熱（22 °C における水の蒸発潜熱 λ<sub>v</sub> ≈ <code>2,449 kJ · kg⁻¹</code>）へと形態転換</strong>します。</p>
+      <div class="formula-box">
+        閉鎖型栽培室の定常全熱負荷： Q<sub>tot</sub> = P<sub>LED</sub> · (1 − η<sub>chem</sub>) + P<sub>fan,pump</sub> + Q<sub>env</sub> ≈ Q<sub>s</sub> + Q<sub>L</sub> &nbsp; [kW]<br>
+        作物蒸散による潜熱負荷： Q<sub>L</sub> = ṁ<sub>trans</sub> · λ<sub>v</sub> &nbsp; [kW] &nbsp; （ṁ<sub>trans</sub> [kg H<sub>2</sub>O · s<sup>−1</sup>], λ<sub>v</sub> ≈ 2449 kJ · kg<sup>−1</sup>）<br>
+        室内顕熱負荷（エネルギー保存差）： Q<sub>s</sub> = Q<sub>tot</sub> − Q<sub>L</sub> &nbsp; [kW]<br>
+        室内顕熱比（Sensible Heat Ratio）： SHR = Q<sub>s</sub> / Q<sub>tot</sub> = Q<sub>s</sub> / (Q<sub>s</sub> + Q<sub>L</sub>)<br>
+        明期（成株 LAI ≥ 3.2）： SHR = 0.32 〜 0.45 ｜ 暗期（LED 消灯時）： SHR = 0.05 〜 0.15
+      </div>
+      <p>オフィス・商業建築用の標準パッケージ空調機は、人体顕熱とOA機器発熱を主対象とするため <strong><code>SHR = 0.75〜0.85</code></strong>（全冷却能力の約8割が温度低下、2割のみが除湿）となるよう蒸発器伝熱面積と送風量が設計されています。この汎用機を <code>SHR = 0.38</code> の PFAL に設置すると、水蒸気（潜熱）を半分も除去できていない段階で室温だけが設定値（例：<code>22.0 °C</code>）に到達してサーモオフ（圧縮機停止またはインバータ最低回転）に陥ります。その結果、室内相対湿度は瞬く間に <code>88〜96% RH</code>（VPD &lt; <code>0.25 kPa</code>）へ暴走し、天井・ダクト結露、灰色かび病・軟腐病の蔓延、および Ca<sup>2+</sup> 輸送停止による全面的なチップバーンを引き起こします。</p>
+
+      <div class="callout-box">
+        <strong>定量設計ベンチマーク（実栽培面積 6,000 m² 商業用リーフレタス PFAL）：</strong> 床面積 <code>1,000 m²</code> に 10 段栽培棚（有効栽培面積 <i>A<sub>crop</sub></i> = <code>6,000 m²</code>）を配置し、PPFD = <code>220 µmol · m⁻² · s⁻¹</code>・システム効率 PPE = <code>3.3 µmol · J⁻¹</code> で照射する場合、LED 総消費電力は <code>P_LED = (6000 × 220) / 3.3 = 400 kW</code>（補機ファン含め全熱負荷 <code>Q_tot ≈ 418 kW</code>）となります。成株群落の蒸散速度が <code>ṁ_trans = 0.068 kg · m⁻² · h⁻¹</code> のとき、工場全体の蒸散水量は毎時 <strong><code>408 kg · h⁻¹</code>（16時間明期で約 6,530 L）</strong>に達し、潜熱負荷は <code>Q_L = (408 / 3600) × 2449 = 277.6 kW</code>、顕熱負荷は <code>Q_s = 418 − 277.6 = 140.4 kW</code>、すなわち要求顕熱比は <strong><code>SHR = 140.4 / 418 = 0.336</code></strong> となります。
+      </div>
+
+      <table class="eng-table">
+        <thead>
+          <tr>
+            <th>生育ステージ・運転フェーズ</th>
+            <th>葉面積指数（LAI）</th>
+            <th>室内顕熱比（SHR）</th>
+            <th>顕熱比率（Q<sub>s</sub>）</th>
+            <th>潜熱比率（Q<sub>L</sub>）</th>
+            <th>支配的な熱力学モードと要求される空調制御動作</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>播種・緑化・初期育苗期</strong></td>
+            <td><code>0.2 〜 0.8</code></td>
+            <td><code>0.70 〜 0.84</code></td>
+            <td><code>70% 〜 84%</code></td>
+            <td><code>16% 〜 30%</code></td>
+            <td><strong>顕熱冷却支配：</strong> 培地表面蒸発が主体。高蒸発温度運転による高 COP 顕熱除去＋局所過乾燥防止</td>
+          </tr>
+          <tr>
+            <td><strong>中期生育（定植第1パネル）</strong></td>
+            <td><code>1.2 〜 2.4</code></td>
+            <td><code>0.48 〜 0.62</code></td>
+            <td><code>48% 〜 62%</code></td>
+            <td><code>38% 〜 52%</code></td>
+            <td><strong>遷移バランス域：</strong> 葉面積拡大に伴い蒸散潜熱が急増。冷水流量・露点温度の動的シフトが必要</td>
+          </tr>
+          <tr>
+            <td><strong>後期群落閉鎖期（明期ピーク）</strong></td>
+            <td><code>3.0 〜 4.8</code></td>
+            <td><code>0.32 〜 0.44</code></td>
+            <td><code>32% 〜 44%</code></td>
+            <td><code>56% 〜 68%</code></td>
+            <td><strong>大潜熱同時冷却除湿：</strong> 露点以下への深冷却除湿 ＋ ホットガス再熱／顕熱熱交換による SHR 整合運転</td>
+          </tr>
+          <tr>
+            <td><strong>暗期（夜間消灯フェーズ）</strong></td>
+            <td><code>3.0 〜 4.8</code></td>
+            <td><code>0.05 〜 0.15</code></td>
+            <td><code>5% 〜 15%</code></td>
+            <td><code>85% 〜 95%</code></td>
+            <td><strong>等温潜熱除湿（Isothermal Dehumidification）：</strong> LED 発熱ゼロ下で気孔残余蒸散 g<sub>0</sub> を回収する 100% 再熱除湿運転</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section style="margin-bottom: 36px;">
+      <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px; margin-bottom: 16px;">2. 湿り空気線図（Psychrometric Chart / Mollier h–x 線図）による状態点設計と物質・エンタルピー収支</h2>
+      <p>空気調和・衛生工学会（SHASE）および ASHRAE Fundamentals の湿り空気熱力学に基づき、標準大気圧 <i>P<sub>atm</sub></i> = <code>101.325 kPa</code> における乾き空気 <code>1 kg</code> あたりの絶対湿度 <i>x</i> [kg<sub>w</sub> · kg<sub>da</sub><sup>−1</sup>]、比エンタルピー <i>h</i> [kJ · kg<sub>da</sub><sup>−1</sup>]、および状態変化プロセスを厳密に定式化します。</p>
+      <div class="formula-box">
+        水蒸気分圧： e<sub>v</sub> = (RH / 100) · 0.61078 · exp[ (17.2694 · T) / (T + 237.29) ] &nbsp; [kPa]<br>
+        絶対湿度（混合比）： x = 0.62198 · [ e<sub>v</sub> / (P<sub>atm</sub> − e<sub>v</sub>) ] &nbsp; [kg<sub>w</sub> · kg<sub>da</sub><sup>−1</sup>]<br>
+        湿り空気比エンタルピー： h = c<sub>pa</sub> · T + x · (r<sub>0</sub> + c<sub>pv</sub> · T) ≈ 1.006 · T + x · (2501 + 1.86 · T) &nbsp; [kJ · kg<sub>da</sub><sup>−1</sup>]<br>
+        必要循環乾き空気質量流量： ṁ<sub>da</sub> = ṁ<sub>trans</sub> / (x<sub>RA</sub> − x<sub>SA</sub>) = Q<sub>s</sub> / [ c<sub>pm</sub> · (T<sub>RA</sub> − T<sub>SA</sub>) ] &nbsp; [kg<sub>da</sub> · s<sup>−1</sup>]<br>
+        装置状態線勾配（エンタルピー水分比）： Δh / Δx = Q<sub>tot</sub> / ṁ<sub>trans</sub> = λ<sub>v</sub> / (1 − SHR) &nbsp; [kJ · kg<sub>w</sub><sup>−1</sup>]
+      </div>
+      <p>具体例として、明期の栽培棚目標環境を室温 <code>T_RA = 23.0 °C</code>、相対湿度 <code>RH_RA = 74.0%</code>（飽差 <code>VPD_air = 0.73 kPa</code>、露点温度 <code>T_dp = 18.1 °C</code>）とし、室内負荷が <code>SHR = 0.36</code> である場合の専用空調機（AHU）内部の<strong>3段階空気状態プロセス</strong>を追跡します。</p>
+      <ol>
+        <li><strong>状態点 1（栽培棚還気 Return Air: RA）：</strong> 乾球温度 <code>T_1 = 23.0 °C</code>、相対湿度 <code>RH_1 = 74.0%</code>、絶対湿度 <code>x_1 = 13.06 g · kg_da⁻¹</code>（<code>0.01306 kg · kg_da⁻¹</code>）、比エンタルピー <code>h_1 = 56.40 kJ · kg_da⁻¹</code>。</li>
+        <li><strong>状態点 2（冷却除湿コイル出口 Off-Coil / Apparatus Dew Point）：</strong> <code>7.0 °C</code> 往・<code>12.0 °C</code> 還の冷水コイル（または直膨蒸発器）を通過させ、露点温度より十分低い <strong><code>T_2 = 11.5 °C</code></strong>（<code>RH_2 = 96.0%</code>）まで過冷却減湿します。このとき絶対湿度は <code>x_2 = 8.12 g · kg_da⁻¹</code>、比エンタルピーは <code>h_2 = 32.04 kJ · kg_da⁻¹</code> まで低下し、乾き空気 <code>1 kg</code> あたり <strong><code>Δx = 13.06 − 8.12 = 4.94 g</code> の水蒸気が凝縮ドレン水として除去</strong>されます（コイル全熱除去量 <code>Δh_12 = 24.36 kJ · kg_da⁻¹</code>）。</li>
+        <li><strong>状態点 3（再熱器出口・栽培棚給気 Supply Air: SA）：</strong> もし状態点 2 の <code>11.5 °C・RH 96%</code> の冷気をそのまま多段棚へ吹き出すと、室内顕熱に対して過冷却となり（吹出温度差 <code>ΔT = 11.5 K</code> によるコイル見かけ SHR ≈ <code>0.48</code> &gt; 室内要求 <code>0.36</code>）、給気ダクト外面結露と吹出口直近株の低温障害を招きます。そこで絶対湿度 <code>x_3 = x_2 = 8.12 g · kg_da⁻¹</code> を保ったまま<strong>等絶対湿度再熱（Sensible Reheat）</strong>を行い、給気状態を <strong><code>T_3 = 16.0 °C</code>、<code>RH_3 = 71.5%</code>、<code>h_3 = 36.60 kJ · kg_da⁻¹</code></strong> へ調整します。これにより室内への正味有効エンタルピー差は <code>h_1 − h_3 = 19.80 kJ · kg_da⁻¹</code>、そのうち正味顕熱差は <code>1.02 · (23.0 − 16.0) = 7.14 kJ · kg_da⁻¹</code> となり、比率 <code>7.14 / 19.80 = 0.361</code> が<strong>室内の要求顕熱比 <code>SHR = 0.36</code> と完全一致</strong>します。</li>
+      </ol>
+    </section>
+
+    <section style="margin-bottom: 36px;">
+      <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px; margin-bottom: 16px;">3. 再熱除湿サイクルの熱力学比較とシステム COP 最適化（ホットガス再熱・顕熱熱交換・水冷式 LED）</h2>
+      <p>PFAL の総生産原価のうち電力費は <code>25〜35%</code> を占め、その内訳は LED 照明が約 <code>60〜70%</code>、空調・除湿設備が約 <code>22〜32%</code> です。従来型植物工場では <strong>L-COP（照明電力に対する空調電力の逆数指標）または空調システム総合成績係数 COP<sub>HVAC,sys</sub></strong> が <code>2.5〜3.2</code> に留まっていましたが、最新の熱回収アーキテクチャを組み合わせることで <strong><code>COP_HVAC,sys = 5.0〜7.8</code></strong> への飛躍的省エネが可能です。</p>
+      <ul>
+        <li><strong>電気ヒータ再熱の厳禁：</strong> 状態点 2 → 3 の再熱に電気シーズヒータを使うと、<code>1 kW</code> の再熱を行うために <code>1 kW</code> の高品質電力（エクセルギー）を投入したうえ、その <code>1 kW</code> 分を再び冷凍機で冷却しなければならず、実効除湿効率（SMER: Specific Moisture Extraction Rate）が <code>1.1〜1.5 kg · kWh⁻¹</code> まで暴落します。</li>
+        <li><strong>ホットガス・バイパス再熱（Hot-Gas Reheat Dedicated Outdoor/Indoor Air System）：</strong> 蒸気圧縮冷凍サイクルの圧縮機から吐出される高温高圧冷媒ガス（R32 / R1234ze(E)、<code>55〜75 °C</code>）を室外凝縮器ですべて大気放熱するのではなく、三方比例制御弁で室内冷却コイル後段の再熱コンデンサへ分岐させます。本来屋外に捨てていた凝縮排熱を無料で再熱源に転用し、しかも冷媒過冷却度（Subcooling）が増大して蒸発器エンタルピー差が広がるため、<strong>追加消費電力ゼロで SHR = 0.05〜0.80 の無段階連続制御</strong>を実現します（SMER = <code>2.6〜3.4 kg · kWh⁻¹</code>）。</li>
+        <li><strong>ラップアラウンド・ヒートパイプ／直交平板型顕熱熱交換器（Run-Around / Plate Sensible Heat Recovery）：</strong> 冷却除湿コイルの上流（高温還気 <code>23.0 °C</code>）と下流（過冷却空気 <code>11.5 °C</code>）を直交アルミ平板熱交換器または二相サーモサイフォン・ヒートパイプで熱結合します。ファン静圧損失わずか <code>80〜140 Pa</code> のみで還気が <code>23.0 → 17.8 °C</code> へ<strong>無料予冷（Pre-cooling）</strong>され、同時にコイル出口空気が <code>11.5 → 16.7 °C</code> へ<strong>無料再熱（Re-heating）</strong>されます（温度交換効率 <i>ε<sub>s</sub></i> = <code>0.45〜0.58</code>）。これにより冷凍機自体の所要冷却容量を <code>20〜28%</code> 直接削減できます。</li>
+        <li><strong>水冷式 LED（Water-Cooled LED Luminaires）＋冬季フリークーリング統合：</strong> そもそも室内で SHR の不均衡や空調負荷増大が起きる一因は、LED 素子ジャンクションおよび電源ドライバの顕熱を「いったん室内空気へ放散してから空気冷却で回収する」点にあります。LED アルミヒートシンク内部に冷却水チャンネルを設け、<code>24〜28 °C</code> の循環水で顕熱の <code>60〜75%</code> を直接屋外のドライクーラ／密閉式冷却塔へ排熱（または冬季温室・事務所暖房へ熱回収）すれば、空調機送風量を半減でき、外気温 <code>12 °C</code> 以下の季節にはチラー圧縮機を停止する<strong>フリークーリング（COP &gt; 12〜18）</strong>との相乗効果で年間空調電力を <code>45〜55%</code> 削減できます。</li>
+      </ul>
+
+      <table class="eng-table">
+        <thead>
+          <tr>
+            <th>PFAL 空調・除湿システム構成</th>
+            <th>SHR 制御範囲</th>
+            <th>システム実効 COP<sub>sys</sub></th>
+            <th>除湿効率 SMER [kg·kWh⁻¹]</th>
+            <th>E<sub>HVAC</sub> / E<sub>LED</sub> 電力比</th>
+            <th>工学的評価・適用スケール</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>汎用パッケージエアコン ＋ 電気ヒータ再熱</strong></td>
+            <td><code>0.30 〜 0.85</code></td>
+            <td><code>1.4 〜 2.1</code></td>
+            <td><code>1.1 〜 1.5</code></td>
+            <td><code>0.42 〜 0.58</code></td>
+            <td><strong>不適（OPEX 破綻）：</strong> 冷却と電気加熱の二重消費により電力原単位が悪化</td>
+          </tr>
+          <tr>
+            <td><strong>直膨インバータ ＋ ホットガス再熱専用機</strong></td>
+            <td><code>0.05 〜 0.80</code></td>
+            <td><code>3.4 〜 4.3</code></td>
+            <td><code>2.5 〜 3.2</code></td>
+            <td><code>0.24 〜 0.30</code></td>
+            <td><strong>中小〜中規模 PFAL 標準：</strong> 暗期の等温除湿（SHR≈0.1）まで1台で高精度追従</td>
+          </tr>
+          <tr>
+            <td><strong>変流量チラー AHU ＋ 直交顕熱交換器（Wrap-Around）</strong></td>
+            <td><code>0.25 〜 0.75</code></td>
+            <td><code>4.5 〜 5.8</code></td>
+            <td><code>3.3 〜 4.2</code></td>
+            <td><code>0.18 〜 0.23</code></td>
+            <td><strong>大規模商業 PFAL（≥3,000 m²）推奨：</strong> 予冷・再熱パッシブ回収＋冬季フリークーリング対応</td>
+          </tr>
+          <tr>
+            <td><strong>水冷式 LED 排熱分離 ＋ 潜熱特化型デシカント／低温チラー</strong></td>
+            <td><code>0.10 〜 0.60</code></td>
+            <td><code>5.6 〜 7.8</code></td>
+            <td><code>3.8 〜 4.9</code></td>
+            <td><code>0.13 〜 0.18</code></td>
+            <td><strong>次世代フラッグシップ構成：</strong> 送風ダクト断面を 45% 縮小し棚段数・栽植密度を最大化</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section style="margin-bottom: 36px;">
+      <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px; margin-bottom: 16px;">4. 多段栽培棚（10〜16段ラック）の CFD 微気象均一化設計とチップバーン（縁腐れ症）根絶工学</h2>
+      <p>空調機（AHU）出口でどれほど理想的な温湿度（例：<code>T = 22.0 °C, RH = 72%, VPD = 0.74 kPa</code>）を作り出しても、高さ <code>6〜10 m</code>・棚段数 <code>10〜16段</code>・1段あたりの垂直クリアランスわずか <strong><code>280〜380 mm</code></strong> という超高密度多段ラック内部へ均一に空気を届けられなければ商業生産は成立しません。天井アネモスタットからの一括吹出方式では、冷気ジェットが抵抗の小さい通路（アイル）空間のみを下降して還気口へ短絡（ショートサーキット）し、奥行 <code>1.2〜1.8 m</code>・長さ <code>15〜30 m</code> の栽培ベッド中央部では<strong>風速 <code>u &lt; 0.06 m · s⁻¹</code> の完全死水域（Stagnant Dead Zone）</strong>が形成されます。その結果、最上段と最下段で <code>ΔT_vert = 3.5〜5.0 K</code> もの熱成層（Thermal Stratification）が生じ、生育速度と収穫適期が段ごとにバラバラになります。</p>
+      <p>さらに深刻な生理障害が、リーフレタス・結球レタス・イチゴの高収量運転（PPFD ≥ <code>220 µmol · m⁻² · s⁻¹</code>、CO<sub>2</sub> ≥ <code>1,000 ppm</code>）において商品価値を一夜にして全滅させる<strong>チップバーン（Tipburn：新葉縁部のカルシウム欠乏壊死）</strong>です。カルシウムイオン（Ca<sup>2+</sup>）は篩管（Phloem）を移動できず、<strong>100% 木部道管（Xylem）の蒸散流マスフローに乗ってのみ輸送</strong>されます。ロゼット中心の成長点（メリステム）を包む若い内葉は外気から遮蔽されているため、無風下では局所境界層の相対湿度が <code>96〜99%</code> に達して局所蒸散がゼロとなり、根圏養液に十分な Ca<sup>2+</sup> が存在していても成長点細胞壁への Ca<sup>2+</sup> フラックスが途絶えて <code>36〜48時間以内</code> に細胞崩壊を発症します。</p>
+      <div class="formula-box">
+        CFD 群落多孔質媒体（Darcy-Forchheimer）運動量シンク項：<br>
+        &nbsp;&nbsp;S<sub>i</sub> = − [ (μ / α<sub>perm</sub>) · u<sub>i</sub> + C<sub>D</sub> · LAD · ρ<sub>air</sub> · |u| · u<sub>i</sub> ] &nbsp; [N · m<sup>−3</sup>]<br>
+        多孔ダクト静圧回復（Static Pressure Regain）設計式：<br>
+        &nbsp;&nbsp;ΔP<sub>duct</sub>(z) = P<sub>0</sub> + (ρ<sub>air</sub> / 2) · [ v<sub>in</sub><sup>2</sup> − v(z)<sup>2</sup> ] − ∫<sub>0</sub><sup>z</sup> (f<sub>D</sub> / D<sub>h</sub>) · (ρ<sub>air</sub> · v<sup>2</sup> / 2) dz<br>
+        多段栽培棚 CFD 合格基準（KPI）：<br>
+        &nbsp;&nbsp;群落面風速 u<sub>canopy</sub> = 0.35 〜 0.65 m · s<sup>−1</sup> ｜ 全段温度標準偏差 σ<sub>T</sub> ≤ 0.45 K（最大幅 ±0.8 K） ｜ ΔVPD ≤ ±0.10 kPa
+      </div>
+      <p>ここで <i>LAD</i> [m<sup>2</sup> · m<sup>−3</sup>] は葉面積密度（Leaf Area Density）、<i>C<sub>D</sub></i>（レタス群落で <code>0.20〜0.32</code>）は葉群抗力係数です。3次元定常 RANS（<code>k-ω SST</code> または Realizable <code>k-ε</code> 乱流モデル）を用いた最新の多段棚気流設計では、以下の3原則を標準実装します。</p>
+      <ol>
+        <li><strong>各段独立マイクロパンチング・エアソックス／スリットチューブ給気（Per-Tier Micro-Perforated Ducting）：</strong> 天井一括吹出を廃止し、すべての栽培段のLED照明バー間（またはベッド両側面）に難燃ポリエステル製マイクロパンチングダクト（孔径 <code>1.5〜4.0 mm</code>、レーザー穿孔）を敷設します。ダクト上流から末端へ向けて流速低下に伴う静圧上昇（ベルヌーイの静圧回復）が生じるため、長手方向の位置 <i>z</i> に応じて開口率を段階的に変化させるテーパ穿孔設計により、<code>24 m</code> 棚の始端から終端まで吹出風量偏差を <strong><code>±6% 以内</code></strong> に抑え込みます。</li>
+        <li><strong>成長点直撃の鉛直下方気流（Vertical Downward Jet Targeting Meristem）：</strong> 千葉大学・アリゾナ大学（Zhang &amp; Kacira, 2020）の実証研究により、水平横風よりも照明面から株中心の成長点へ向かって鉛直下方（<code>0.40〜0.60 m · s⁻¹</code>）に微風を吹き下ろす方式の方が、内葉ロゼット内部の静止境界層を効率よく破壊し、同等の総送風量でもチップバーン発生率を <code>85% → 2% 未満</code> へと劇的に抑制できることが証明されています。</li>
+        <li><strong>通路排気リターン分離（Hot/Humid Aisle Containment）：</strong> データセンターのコールドアイル／ホットアイル分離と同様に、棚内を通過して顕熱と水蒸気を吸収した空気を背面または側面リターンダクトから直接 AHU へ吸い込み、給気と還気の再混合（ショートサーキット）を遮断します。</li>
+      </ol>
+    </section>
+
+<!-- INW-LIVE-WIDGET-START -->
+<section class="inw-live-widget-sandbox" style="margin: 32px 0; padding: 24px; background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 16px; box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);">
+  <h3 style="margin: 0 0 8px 0; font-size: 1.2rem; color: #38bdf8; font-weight: 800;">🔥 施設外皮熱損失・断熱U値＆空調熱負荷インタラクティブ計算機</h3>
+  <p style="margin: 0 0 16px 0; font-size: 0.92rem; color: #94a3b8; line-height: 1.6;">栽培施設面積・内外温度差・外皮断熱仕様（高断熱パネル〜複層被覆）を調整し、外皮貫流熱負荷（kW）と空調・ヒートポンプ容量バランスをリアルタイムに検証できます。</p>
+  <div style="display: flex; justify-content: center; width: 100%; overflow: hidden;">
+    <iframe src="/embed/heating-loss-widget.html" width="380" height="460" loading="lazy" title="施設外皮熱損失および空調ヒートポンプ熱負荷シミュレーター" style="border: none; border-radius: 14px; max-width: 100%;"></iframe>
+  </div>
+</section>
+<!-- INW-LIVE-WIDGET-END -->
+
+    <section style="margin-bottom: 36px;">
+      <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px; margin-bottom: 16px;">5. 暗期等温除湿シーケンス・クリーンルーム陽圧制御（+15 Pa）・凝縮ドレン水完全循環再利用</h2>
+      <p>商業スケール PFAL の連続安定稼働（年間 365 日・無農薬栽培）を完成させるためには、定常明期計算に加えて以下の3つの動的・衛生プロセス設計が不可欠です。</p>
+      <ul>
+        <li><strong>明期→暗期遷移時の「消灯結露スパイク」防止制御：</strong> 全棚の LED を一斉消灯すると、顕熱入力 <i>Q<sub>s</sub></i> は 1 秒でゼロになる一方、作物の気孔閉鎖には <code>10〜25分</code> の生理的時定数遅れがあるため蒸散 <i>Q<sub>L</sub></i> が継続し、同時に室温設定値を暗期温度（例：<code>23 °C → 19 °C</code>）へ急降下させると空気の飽和蒸気圧が低下して相対湿度が一気に <code>98〜100%</code>（葉面結露）へ到達します。これを防ぐには、(1) 栽培区画を 2〜3 ブロックに分割して明暗周期を逆位相で平準化（契約電力デマンドピークも <code>40%</code> 削減）し、(2) 消灯前 <code>30分間</code> の段階調光（Dimming Ramp-Down）と消灯後 <code>45分間</code> のホットガス最大再熱除湿モードをプリプログラムします。</li>
+        <li><strong>ISO クラス 8 相当の陽圧クリーンルーム微差圧維持（ΔP = +10 〜 +20 Pa）：</strong> 外部からのアザミウマ・アブラムシ・コナジラミおよび糸状菌胞子の侵入を物理的に完封しつつ、<code>1,000〜1,200 ppm</code> に維持した高濃度 CO<sub>2</sub> の漏出を最小化するため、エアシャワー前室に対して栽培室を常時 <strong><code>+15 Pa</code> 前後の陽圧</strong>に保ちます。外気取入（OA）は必要最小限の CO<sub>2</sub> 保安換気量に絞り、中性能フィルタ（MERV 14 / F8）＋ HEPA フィルタを経由させます。</li>
+        <li><strong>凝縮除湿水の重金属フリー回収と養液原水へのクローズドループ統合：</strong> 前述の通り、PFAL では投入灌水量の <code>95〜97%</code> が蒸散水蒸気となって空調冷却コイル上で再凝縮します。一般空調用の銅管・未処理アルミフィン熱交換器では弱酸性の凝縮水（溶存 CO<sub>2</sub> により pH <code>5.2〜5.7</code>）に銅イオン（Cu<sup>2+</sup>）やアルミニウムイオン（Al<sup>3+</sup>）が微量溶出し、水耕根系に薬害（根端褐変）を及ぼす事例が報告されています。植物工場専用コイルには<strong>親水性エポキシ／カチオン電着防食コーティングまたは SUS316L ステンレス伝熱管</strong>を指定し、回収ドレン水（EC &lt; <code>0.02 dS · m⁻¹</code>）を活性炭・限外ろ過膜（UF）および <strong><code>254 nm</code> UV-C 紫外線殺菌リアクタ（照射線量 ≥ <code>40 mJ · cm⁻²</code>）</strong>で処理して養液調合タンクへ戻すことで、水利用効率 <strong>WUE = <code>0.96〜0.98</code>（露地比約 40 倍の節水）</strong>を達成します。</li>
+      </ul>
+    </section>
+
+    <section style="margin-bottom: 36px;">
+      <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px; margin-bottom: 16px;">6. 植物工場（PFAL）空調・環境制御エンジニアのための実務 FAQ</h2>
+
+      <details class="faq-item" open>
+        <summary>Q1. なぜ完全人工光型植物工場（PFAL）にオフィス・店舗用の汎用パッケージエアコンを導入すると湿度制御が破綻するのですか？</summary>
+        <p>商業ビル・オフィス用の汎用パッケージ空調機は顕熱比（SHR = 顕熱能力 / 全熱能力）が 0.75〜0.85 となるよう蒸発器温度と風量が設計されています。これに対し、葉面積指数（LAI ≥ 3.0）に達した完全人工光型植物工場では、投入した LED 照明電力の 55〜68% が作物の蒸散によって水蒸気の潜熱（蒸発潜熱 約 2,449 kJ·kg⁻¹）へと変換されるため、明期の室内負荷の顕熱比 SHR は 0.32〜0.45、暗期（消灯時）には 0.05〜0.15 まで低下します。汎用エアコンでは潜熱除湿が完了する前に室温だけが設定温度に達してサーモオフ（圧縮機停止）してしまうため、室内相対湿度が 90% 以上に暴走し、結露・灰色かび病・チップバーンを引き起こします。</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Q2. 過冷却除湿後の再熱（Reheat）において、電気ヒータではなくホットガス再熱や直交平板型顕熱熱交換器を採用すべき熱力学的理由は何ですか？</summary>
+        <p>露点温度以下（例：11.5 °C）まで冷却除湿した空気を電気ヒータで吹出温度（16.0〜19.5 °C）へ再加熱すると、電気ヒータの投入電力自体が新たな室内顕熱負荷となり、冷却電力と加熱電力の二重損失によって実効除湿 COP が 1.4〜2.0 まで悪化します。圧縮機吐出高温冷媒ガスを室内再熱コイルへバイパスするホットガス・リヒート方式や、冷却コイル前後の還気と低温空気の間で顕熱のみをパッシブ交換するラップアラウンド・ヒートパイプ／直交平板型顕熱熱交換器（温度交換効率 45〜58%）を用いれば、追加の加熱電力をゼロに抑えつつ装置全体の見かけの SHR を 0.32〜0.42 へ自在に整合でき、システム COP を 3.8〜5.8 以上に維持できます。</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Q3. 10段以上の多段栽培棚においてリーフレタスやイチゴに発生するチップバーン（縁腐れ症）を CFD 気流設計でどのように防止しますか？</summary>
+        <p>チップバーンは根圏のカルシウム不足ではなく、高 PPFD・高 CO<sub>2</sub> による急速成長下で結球・ロゼット中心の成長点（メリステム）周辺の静止境界層が飽和湿度に達し、木部道管の蒸散流に乗った Ca<sup>2+</sup> イオン輸送が局所停止することで 36〜48 時間以内に発症します。天井吹出のみの空調では冷気が通路（アイル）へ短絡し、棚間隔 28〜38 cm の棚中央部で風速 0.08 m·s⁻¹ 未満の死水域が生じます。これを根絶するには、各段ごとにマイクロパンチング・エアソックス（微細多孔ダクト）または鉛直下方吹付けノズルを配置し、全段・全長にわたり成長点近傍で風速 0.35〜0.65 m·s⁻¹、上下段温度偏差 ±0.8 K 以内を確保する CFD 設計が不可欠です。</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Q4. 完全人工光型植物工場（PFAL）における凝縮除湿水の回収量はどの程度になり、水利用効率（WUE）にどう寄与しますか？</summary>
+        <p>閉鎖度が高い PFAL（換気回数 N &lt; 0.015 h⁻¹）では、灌水として供給された養液水分のうち作物の生体新鮮重として収穫物に固定されるのは約 3〜5% に過ぎず、残りの 95〜97% は気孔から蒸散して室内空気中へ放出されます。実栽培面積 6,000 m²（LED 投入電力 400〜420 kW）規模の工場では、空調冷却コイルから 1 日あたり約 7,000〜8,500 L の低 EC 凝縮水（EC &lt; 0.03 dS·m⁻¹）が回収されます。防食コーティングまたは SUS316L 熱交換器で銅・アルミ溶出を防ぎ、UF 膜ろ過および 254 nm UV-C 殺菌（40 mJ·cm⁻² 以上）を経て原水タンクへ循環再利用することで、露地栽培の 30〜50 倍に達する水利用効率（水回収率 96〜98%）を達成できます。</p>
+      </details>
+    </section>
+
+    <section style="margin-bottom: 36px;">
+      <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.35rem; color: #94a3b8; margin-bottom: 12px;">主要学術参考文献・設計基準（References &amp; Standards）</h2>
+      <ul style="padding-left: 20px; margin: 0;">
+        <li style="margin-bottom: 8px; color: #94a3b8; font-size: 0.9rem;">Kozai, T., Niu, G., &amp; Takagaki, M. (Eds.). (2020). <i>Plant Factory: An Indoor Vertical Farming System for Efficient Quality Food Production</i> (2nd ed.). Academic Press.（古在豊樹 編著『人工光型植物工場』オーム社／養賢堂）</li>
+        <li style="margin-bottom: 8px; color: #94a3b8; font-size: 0.9rem;">Graamans, L., Baeza, E., van den Dobbelsteen, A., Tsafaras, I., &amp; Stanghellini, C. (2018). Plant factories versus greenhouses: Comparison of resource use efficiency. <i>Agricultural Systems</i>, 160, 31–43.</li>
+        <li style="margin-bottom: 8px; color: #94a3b8; font-size: 0.9rem;">Zhang, Y., &amp; Kacira, M. (2020). Analysis of environmental uniformity in a plant factory using computational fluid dynamics (CFD) analysis. <i>Acta Horticulturae</i>, 1296, 605–612.</li>
+        <li style="margin-bottom: 8px; color: #94a3b8; font-size: 0.9rem;">ASHRAE (2023). <i>ASHRAE Handbook — HVAC Applications</i>, Chapter 24: Environmental Control for Animals and Plants (Controlled-Environment Rooms &amp; Vertical Farms).</li>
+        <li style="margin-bottom: 8px; color: #94a3b8; font-size: 0.9rem;">空気調和・衛生工学会 (SHASE) 『空気調和・衛生工学便覧 第14版 — 湿り空気線図および産業用低温除湿プロセス設計』 / 日本生物環境工学会 植物工場部会ガイドライン.</li>
+      </ul>
+    </section>
+
+<!-- INW-TSUKUBA-FUNNEL-START -->
+<section class="inw-tsukuba-funnel-bridge" style="max-width: 1060px; margin: 32px auto; padding: 26px; background: rgba(15, 23, 42, 0.9); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 16px; text-align: left; box-shadow: 0 10px 28px rgba(0, 0, 0, 0.3);">
+  <h3 style="margin: 0 0 8px 0; font-size: 1.2rem; color: #10b981; font-weight: 800;">🔬 関連する技術モノグラフ・湿り空気線図＆CFDシミュレーター (Engineering Hub)</h3>
+  <p style="margin: 0 0 16px 0; font-size: 0.92rem; color: #94a3b8; line-height: 1.6;">本モノグラフの湿り空気除湿プロセス・LED 排熱回収・多段棚気流設計をさらに定量検証するための関連ガイドと計算ツール：</p>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px;">
+    <a href="/articles/ja/article-01-vpd-masterclass-jp.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem;">🇯🇵 JA Vol. 01: 飽差（VPD）マスタークラスと気孔蒸散制御 →</a>
+    <a href="/articles/ja/article-02-dli-vertical-farming-led-photobiology-jp.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem;">🇯🇵 JA Vol. 02: 垂直農業における日積算光量子量（DLI）とLED設計 →</a>
+    <a href="/articles/ja/article-04-greenhouse-heat-loss-u-value-thermal-screen-design.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem;">🇯🇵 JA Vol. 04: 施設外皮熱貫流率（U値）と熱負荷設計 →</a>
+    <a href="/articles/ja/article-32-horticultural-led-thermal-junction-temperature-jp.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem;">🇯🇵 JA Vol. 32: 園芸用 LED ジャンクション温度と水冷排熱回収 →</a>
+    <a href="/articles/ja/article-38-xylem-calcium-flux-blossom-end-rot-jp.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem;">🇯🇵 JA Vol. 38: 木部道管カルシウム（Ca²⁺）輸送と生理障害予防 →</a>
+    <a href="/tools/psychrometric-mollier-greenhouse-dehumidifier.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem;">📈 Mollier 湿り空気線図・除湿再熱シミュレーター →</a>
+    <a href="/tools/greenhouse-microclimate-cfd-air-velocity-optimizer.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem;">🌬️ 群落微気象 CFD 風速・境界層抵抗オプティマイザー →</a>
+    <a href="/tools/venlocad-3d.html" style="display:block; padding:12px 16px; background:rgba(16,185,129,0.2); border:1px solid #10b981; border-radius:10px; color:#34d399; text-decoration:none; font-weight:700; font-size:0.92rem;">🏗️ VenloCAD 3D 施設設計アーキテクト →</a>
+  </div>
+</section>
+<!-- INW-TSUKUBA-FUNNEL-END -->
+
+    <!-- INW-EEAT-BOX-START -->
+    <section class="inw-eeat-box" style="margin-top: 36px; padding: 24px; background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 16px;">
+      <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; color: #10b981; font-weight: 800; margin-bottom: 6px;">E-E-A-T Technical Review &amp; Authorship</div>
+      <h3 style="margin: 0 0 8px 0; font-size: 1.15rem; color: #f8fafc;">Inwoovation Engineering Research Lab</h3>
+      <p style="margin: 0; font-size: 0.92rem; color: #cbd5e1; line-height: 1.65;">完全人工光型植物工場（PFAL）およびフェンロー型連棟温室における湿り空気線図・潜熱除湿空調システム設計、多段栽培棚 CFD 微気象モデリング、LED 光生物学、閉鎖系養液循環化学量論および自律型モデル予測制御（MPC）の研究開発機関。</p>
+    </section>
+    <!-- INW-EEAT-BOX-END -->
+  </main>
+
+  <!-- INW-STD-FOOTER-START -->
+  <footer class="inw-site-footer" style="margin-top: 48px; padding: 28px 20px; background: #0f172a; color: #94a3b8; text-align: center; border-top: 1px solid rgba(148, 163, 184, 0.15);">
+    <div style="max-width: 1100px; margin: 0 auto;">
+      <p style="margin: 0 0 10px 0;">&copy; 2026 Inwoovation Engineering Research Lab. Precision Controlled Environment Agriculture &amp; Biophysical Engineering.</p>
+      <p style="margin: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 16px;">
+        <a href="/index.html" style="color: #cbd5e1; text-decoration: none;">Home</a>
+        <a href="/guides.html" style="color: #cbd5e1; text-decoration: none;">Engineering Guides</a>
+        <a href="/privacy-policy.html" style="color: #cbd5e1; text-decoration: none;">Privacy Policy</a>
+        <a href="/terms-of-service.html" style="color: #cbd5e1; text-decoration: none;">Terms of Service</a>
+        <a href="/about.html" style="color: #cbd5e1; text-decoration: none;">About</a>
+        <a href="/contact.html" style="color: #cbd5e1; text-decoration: none;">Contact</a>
+      </p>
+    </div>
+  </footer>
+  <!-- INW-STD-FOOTER-END -->
+</body>
+</html>

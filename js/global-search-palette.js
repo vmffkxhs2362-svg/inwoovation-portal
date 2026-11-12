@@ -1106,6 +1106,22 @@
     "tags": "articles de article 59 epex spot negativstrompreise bess power to heat elektrokessel venlo html epex spot negativstrompreis arbitrage power to heat elektrokessel schichtenspeicher hybrid bes"
   },
   {
+    "title": "Potentiometrische Ionenselektive Elektroden (ISE), Nikolsky-Eisenman-Selektivität & Geschlossene Hydroponik im Venlo-Gewächshaus",
+    "cat": "article",
+    "url": "articles/de/article-60-potentiometrische-ionenselektive-elektroden-ise-geschlossene-hydroponik.html",
+    "icon": "🇩🇪",
+    "desc": "Ingenieurwissenschaftliche Analyse potentiometrischer ionenselektiver Elektroden (ISE: NO3-, K+, Ca2+, Na+, Cl-), Nernst-Gleichung, Nikolsky-Eisenman-Korrektur,",
+    "tags": "articles de article 60 potentiometrische ionenselektive elektroden ise geschlossene hydroponik html potentiometrische ionenselektive elektroden ise nikolsky eisenman selektivität geschlossen"
+  },
+  {
+    "title": "Thermodynamik der Energieschirm-Spaltöffnung, Latente Transpirationswärme, Kaltluftabfall & Botrytis-Prävention im Venlo-Gewächshaus",
+    "cat": "article",
+    "url": "articles/de/article-61-energieschirm-spaltoeffnung-transpiration-latente-waerme-kaltluftabfall.html",
+    "icon": "🇩🇪",
+    "desc": "Ingenieurwissenschaftliche Analyse zu Schirmspalt (Kierstand), gekoppeltem sensiblem und latentem Wärmetransport durch poröse Gewebe, Rayleigh-/Archimedes-Kaltl",
+    "tags": "articles de article 61 energieschirm spaltoeffnung transpiration latente waerme kaltluftabfall html thermodynamik der energieschirm spaltöffnung latente transpirationswärme kaltluftabfall bo"
+  },
+  {
     "title": "CEA &amp; Greenhouse Engineering Articles Library (EN / DE / JA)",
     "cat": "article",
     "url": "articles/index.html",
@@ -1168,6 +1184,22 @@
     "icon": "🇯🇵",
     "desc": "植物工場 (PFAL) および施設園芸補光における光生物学・半導体照明工学：McCree・稲田の相対量子収率曲線、ePAR (400–750 nm)、フィトクロム光平衡 (PSS = Pfr/Ptotal)、クリプトクロム気孔開口、730 nm 遠赤色光によるエマーソン効果、および高効率LED (PPE ≥ 3.6 µ",
     "tags": "articles ja article 07 horticultural lighting spectrum par epar photomorphogenesis jp html vol 07 植物工場 施設園芸のled光質制御と光形態形成 mccree作用スペクトル 拡張光合成有効放射 epar 400 750 nm フィトクロム光平衡 pss とエマ ソン相乗効果 植物工"
+  },
+  {
+    "title": "Vol. 09: 気孔コンダクタンス (gs) と光合成ガス交換動力学：Ball-Berry-Leuning (BBL) モデル・葉面境界層抵抗 (rb)・飽差 (VPD) ストレス応答と C3 群落統合環境制御",
+    "cat": "article",
+    "url": "articles/ja/article-09-stomata-conductance-photosynthesis-jp.html",
+    "icon": "🇯🇵",
+    "desc": "施設園芸および太陽光利用型植物工場における気孔コンダクタンス (gs) と光合成ガス交換動力学の統合モデル。Farquhar-von Caemmerer-Berry (FvCB) 生化学モデルと Ball-Berry-Leuning (BBL) / Medlyn 気孔モデルの連成解法、葉面境界層抵抗 (rb)、飽差 (",
+    "tags": "articles ja article 09 stomata conductance photosynthesis jp html vol 09 気孔コンダクタンス gs と光合成ガス交換動力学 ball berry leuning bbl モデル 葉面境界層抵抗 rb 飽差 vpd ストレス応答と c3 群落統合環境制御 施設園芸および太陽光利用型植物工場における気孔コンダク"
+  },
+  {
+    "title": "Vol. 10: 完全人工光型植物工場 (PFAL) の空調・潜熱除湿熱力学設計：湿り空気線図 (Psychrometrics)・顕熱比 (SHR)・再熱除湿サイクル・COP最適化と多段栽培棚CFD気流均一化",
+    "cat": "article",
+    "url": "articles/ja/article-10-vertical-farm-hvac-design-jp.html",
+    "icon": "🇯🇵",
+    "desc": "完全人工光型植物工場 (PFAL) および垂直農業における空調・潜熱除湿の熱力学設計モノグラフ。湿り空気線図 (Psychrometrics)、低顕熱比 (SHR = Qs / Qtot = 0.32–0.45)、蒸散潜熱負荷、ホットガス再熱除湿サイクル、システムCOP最適化、および多段栽培棚のチップバーンを根絶するC",
+    "tags": "articles ja article 10 vertical farm hvac design jp html vol 10 完全人工光型植物工場 pfal の空調 潜熱除湿熱力学設計 湿り空気線図 psychrometrics 顕熱比 shr 再熱除湿サイクル cop最適化と多段栽培棚cfd気流均一化 完全人工光型植物工場 pfal および垂直農業における空調 潜熱除湿の熱"
   },
   {
     "title": "スマート温室の精密センサ校正工学：ネルンスト式 (pH/EC)・TDR/FDR培地誘電率・NDIR式CO₂ドリフト補償",
@@ -1858,12 +1890,12 @@
     "tags": "crops vertical farm lettuce leafy greens tipburn prevention guide html controlled environment leafy greens lettuce lactuca sativa microclimate vpd dli precision steering guide precision cea "
   },
   {
-    "title": "Precision CEA & Horticultural Engineering Articles (78 Volumes / 174 Multilingual Editions)",
+    "title": "Precision CEA & Horticultural Engineering Articles (78 Volumes / 178 Multilingual Editions)",
     "cat": "article",
     "url": "guides.html",
     "icon": "📚",
-    "desc": "78-volume (174 multilingual editions) open-access Controlled Environment Agriculture (CEA) archive — VPD physics, biomass CHP, photobiology, closed-loop fertiga",
-    "tags": "guides html precision cea horticultural engineering articles 78 volumes 174 multilingual editions 78 volume 174 multilingual editions open access controlled environment agriculture cea archi"
+    "desc": "78-volume (178 multilingual editions) open-access Controlled Environment Agriculture (CEA) archive — VPD physics, biomass CHP, photobiology, closed-loop fertiga",
+    "tags": "guides html precision cea horticultural engineering articles 78 volumes 178 multilingual editions 78 volume 178 multilingual editions open access controlled environment agriculture cea archi"
   },
   {
     "title": "Inwoovation Lab",
@@ -2298,6 +2330,14 @@
     "tags": "tools greenhouse co2 enrichment optimizer html greenhouse co2 enrichment economics optimizer industrial co2 dosing kinetics and economics optimizer calculate pure liquid vs flue gas dosing c"
   },
   {
+    "title": "EPEX SPOT Dynamic Tariff, Power-to-Heat (20 kV Boiler), Heat Pump &amp; BESS Arbitrage Simulator",
+    "cat": "tool",
+    "url": "tools/greenhouse-energy-tariff-bess-p2h-arbitrage-calculator.html",
+    "icon": "🛠️",
+    "desc": "Commercial greenhouse EPEX SPOT negative electricity price, 20 kV Power-to-Heat electrode boiler, industrial heat pump, LFP-BESS, and stratified thermal buffer ",
+    "tags": "tools greenhouse energy tariff bess p2h arbitrage calculator html epex spot dynamic tariff power to heat 20 kv boiler heat pump amp bess arbitrage simulator commercial greenhouse epex spot n"
+  },
+  {
     "title": "Greenhouse Heating Load, Thermal Screen & Green Energy Transition Sizer (DIN V 18599)",
     "cat": "tool",
     "url": "tools/greenhouse-heating-load-thermal-screen-calculator.html",
@@ -2362,12 +2402,12 @@
     "tags": "tools hydroponic nutrient solution calculator html hydroponic nutrient formulation ion balance calculator industrial grade commercial hydroponic nutrient solution calculator optimize hoaglan"
   },
   {
-    "title": "Greenhouse & Controlled Environment Engineering Tools Suite (41 Enterprise Tools)",
+    "title": "Greenhouse & Controlled Environment Engineering Tools Suite (42 Enterprise Tools)",
     "cat": "tool",
     "url": "tools/index.html",
     "icon": "🛠️",
-    "desc": "A comprehensive suite of 41 industrial-grade commercial greenhouse engineering calculators, 3D WebGL digital twin simulators, global agri-subsidy navigators, an",
-    "tags": "tools index html greenhouse controlled environment engineering tools suite 41 enterprise tools a comprehensive suite of 41 industrial grade commercial greenhouse engineering calculators 3d w"
+    "desc": "A comprehensive suite of 42 industrial-grade commercial greenhouse engineering calculators, 3D WebGL digital twin simulators, 150-grant global agri-subsidy navi",
+    "tags": "tools index html greenhouse controlled environment engineering tools suite 42 enterprise tools a comprehensive suite of 42 industrial grade commercial greenhouse engineering calculators 3d w"
   },
   {
     "title": "Greenhouse Nutrient Uptake Concentration Factor (UCF) & Drain-to-Waste Analyzer",
@@ -2832,13 +2872,13 @@
       <div class="inwoo-palette-box" role="dialog" aria-modal="true" aria-label="Inwoovation Spotlight Search">
         <div class="inwoo-palette-header">
           <span class="inwoo-palette-search-icon">🔍</span>
-          <input type="text" id="inwoo-palette-input" placeholder="Search all 350 tools, simulators, wiki, crops, climate hubs & EN/DE/JA articles..." autocomplete="off" />
+          <input type="text" id="inwoo-palette-input" placeholder="Search all 355 tools, simulators, wiki, crops, climate hubs & EN/DE/JA articles..." autocomplete="off" />
           <span class="inwoo-palette-esc-badge" onclick="window.InwooPalette.close()">ESC</span>
         </div>
         <div class="inwoo-palette-tabs">
-          <button class="inwoo-pal-tab active" data-cat="all">✨ All (350)</button>
-          <button class="inwoo-pal-tab" data-cat="tool">🛠️ Tools (48)</button>
-          <button class="inwoo-pal-tab" data-cat="article">📚 Articles (177)</button>
+          <button class="inwoo-pal-tab active" data-cat="all">✨ All (355)</button>
+          <button class="inwoo-pal-tab" data-cat="tool">🛠️ Tools (49)</button>
+          <button class="inwoo-pal-tab" data-cat="article">📚 Articles (181)</button>
           <button class="inwoo-pal-tab" data-cat="wiki">🧬 Wiki (44)</button>
           <button class="inwoo-pal-tab" data-cat="climate">🌍 Climate (41)</button>
           <button class="inwoo-pal-tab" data-cat="sim">🧪 Simulators (21)</button>
@@ -2852,7 +2892,7 @@
             <span><kbd>↵</kbd> Open</span>
             <span><kbd>Esc</kbd> Close</span>
           </div>
-          <div style="color: #64748b; font-size: 0.75rem;">Inwoovation Universal Spotlight (350 Indexed Pages)</div>
+          <div style="color: #64748b; font-size: 0.75rem;">Inwoovation Universal Spotlight (355 Indexed Pages)</div>
         </div>
       </div>
     `;

@@ -1,0 +1,1297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-adsense-account" content="ca-pub-8597809158257497">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8597809158257497" crossorigin="anonymous"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EPEX SPOT Dynamic Tariff, Power-to-Heat (20 kV Boiler), Heat Pump &amp; BESS Arbitrage Simulator | Inwoovation Lab</title>
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="description" content="Commercial greenhouse EPEX SPOT negative electricity price, 20 kV Power-to-Heat electrode boiler, industrial heat pump, LFP-BESS, and stratified thermal buffer tank arbitrage simulator.">
+  <link rel="canonical" href="https://inwoovation.com/tools/greenhouse-energy-tariff-bess-p2h-arbitrage-calculator.html" />
+
+  <!-- OpenGraph / Twitter -->
+  <meta property="og:title" content="EPEX SPOT Dynamic Tariff, Power-to-Heat &amp; BESS Greenhouse Arbitrage Simulator">
+  <meta property="og:description" content="Simulate 24-hour day-ahead negative electricity pricing, 20 kV electrode boiler Power-to-Heat charging, heat pump merit-order crossover, Richardson thermocline stability, and BLE 40% grant ROI.">
+  <meta property="og:url" content="https://inwoovation.com/tools/greenhouse-energy-tariff-bess-p2h-arbitrage-calculator.html">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://inwoovation.com/og-cover.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V4RYJBMEDE"></script>
+  <script>
+    if (navigator.webdriver || /HeadlessChrome|PhantomJS|Lighthouse|PTST|bot|crawler|spider|slurp/i.test(navigator.userAgent) || location.hostname === 'localhost' || location.hostname === '127.0.0.1' || (screen.width === 1366 && screen.height === 1366) || (screen.width === 800 && screen.height === 600) || screen.height >= 5000) { window['ga-disable-G-V4RYJBMEDE'] = true; }
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-V4RYJBMEDE');
+  </script>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/digital_twin_styles.css">
+  <link rel="stylesheet" href="../css/global-ui-enhancements.css?v=20261112_spotlight">
+  <script src="../js/global-search-palette.js?v=20261112_spotlight"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-dark: #0f172a;
+      --card-bg: rgba(30, 41, 59, 0.86);
+      --border-glass: rgba(255, 255, 255, 0.1);
+      --accent-cyan: #38bdf8;
+      --accent-emerald: #10b981;
+      --accent-amber: #f59e0b;
+      --accent-rose: #f43f5e;
+      --accent-violet: #a78bfa;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+    }
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    body {
+      background-color: var(--bg-dark);
+      color: #cbd5e1;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    .app-container {
+      max-width: 1400px;
+      margin: 26px auto 80px;
+      padding: 0 18px;
+      width: 100%;
+    }
+    .tool-header {
+      text-align: center;
+      margin-bottom: 26px;
+      border-bottom: 1px solid var(--border-glass);
+      padding-bottom: 22px;
+    }
+    .tool-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(16, 185, 129, 0.16);
+      color: #34d399;
+      font-weight: 800;
+      font-size: 0.82rem;
+      padding: 6px 14px;
+      border-radius: 100px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 12px;
+      border: 1px solid rgba(16, 185, 129, 0.35);
+      max-width: 100%;
+    }
+    .tool-header h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(1.55rem, 3.6vw, 2.25rem);
+      font-weight: 800;
+      color: var(--text-main);
+      margin: 0 0 10px;
+      line-height: 1.25;
+    }
+    .tool-header p {
+      font-size: 0.98rem;
+      color: var(--text-muted);
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .mode-switch-bar {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    @media (max-width: 820px) {
+      .mode-switch-bar {
+        grid-template-columns: 1fr;
+      }
+    }
+    .mode-btn {
+      padding: 11px 12px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 0.86rem;
+      cursor: pointer;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(15, 23, 42, 0.78);
+      color: var(--text-muted);
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      text-align: center;
+    }
+    .mode-btn.active-solar {
+      background: rgba(16, 185, 129, 0.2);
+      border-color: var(--accent-emerald);
+      color: #6ee7b7;
+    }
+    .mode-btn.active-wind {
+      background: rgba(56, 189, 248, 0.2);
+      border-color: var(--accent-cyan);
+      color: var(--accent-cyan);
+    }
+    .mode-btn.active-stress {
+      background: rgba(245, 158, 11, 0.2);
+      border-color: var(--accent-amber);
+      color: #fcd34d;
+    }
+    .grid-layout {
+      display: grid;
+      grid-template-columns: 420px minmax(0, 1fr);
+      gap: 24px;
+    }
+    @media (max-width: 1060px) {
+      .grid-layout {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+    .calc-card {
+      background: var(--card-bg);
+      backdrop-filter: blur(14px);
+      border: 1px solid var(--border-glass);
+      border-radius: 16px;
+      padding: 22px;
+      margin-bottom: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      min-width: 0;
+    }
+    .calc-card h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin: 0 0 15px 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+      padding-bottom: 10px;
+    }
+    .input-group {
+      margin-bottom: 13px;
+    }
+    .input-label {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 8px;
+      font-size: 0.86rem;
+      font-weight: 600;
+      color: var(--text-main);
+      margin-bottom: 5px;
+      flex-wrap: wrap;
+    }
+    .input-val-badge {
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--accent-cyan);
+      font-weight: 700;
+      font-size: 0.84rem;
+    }
+    input[type="range"] {
+      width: 100%;
+      height: 6px;
+      background: rgba(15, 23, 42, 0.85);
+      border-radius: 4px;
+      outline: none;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--accent-cyan);
+      cursor: pointer;
+      box-shadow: 0 0 8px rgba(56, 189, 248, 0.6);
+    }
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(165px, 1fr));
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .kpi-card {
+      background: rgba(15, 23, 42, 0.78);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 15px 12px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      min-width: 0;
+    }
+    .kpi-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent-cyan), var(--accent-emerald));
+    }
+    .kpi-title {
+      font-size: 0.76rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 5px;
+    }
+    .kpi-value {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.55rem;
+      font-weight: 800;
+      color: var(--text-main);
+      word-break: break-word;
+    }
+    .kpi-unit {
+      font-size: 0.78rem;
+      color: var(--accent-cyan);
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .canvas-container {
+      background: #020617;
+      border: 1px solid var(--border-glass);
+      border-radius: 14px;
+      padding: 12px;
+      margin-bottom: 20px;
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+    }
+    canvas {
+      width: 100%;
+      height: 410px;
+      display: block;
+      border-radius: 8px;
+    }
+    .legend-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      margin-top: 10px;
+      font-size: 0.78rem;
+      color: #cbd5e1;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .legend-dot {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 3px;
+      margin-right: 5px;
+      vertical-align: middle;
+    }
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+    .action-btn {
+      flex: 1 1 200px;
+      background: linear-gradient(135deg, #0284c7, #10b981);
+      color: #ffffff;
+      font-weight: 700;
+      border: none;
+      padding: 12px 14px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: transform 0.2s, box-shadow 0.2s;
+      text-align: center;
+    }
+    .action-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 14px rgba(2, 132, 199, 0.4);
+    }
+    .action-btn.secondary {
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid var(--border-glass);
+      color: #cbd5e1;
+    }
+    .action-btn.secondary:hover {
+      border-color: var(--accent-cyan);
+    }
+    .formula-tag {
+      background: rgba(15, 23, 42, 0.92);
+      border-left: 3px solid var(--accent-cyan);
+      padding: 12px 15px;
+      border-radius: 0 8px 8px 0;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.83rem;
+      color: var(--accent-cyan);
+      margin: 14px 0;
+      overflow-x: auto;
+      max-width: 100%;
+    }
+    .table-scroll {
+      width: 100%;
+      overflow-x: auto;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .dispatch-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.78rem;
+      min-width: 560px;
+    }
+    .dispatch-table th, .dispatch-table td {
+      padding: 8px 10px;
+      text-align: right;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .dispatch-table th:first-child, .dispatch-table td:first-child {
+      text-align: left;
+    }
+    .dispatch-table th {
+      background: rgba(15, 23, 42, 0.9);
+      color: #94a3b8;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    .rfq-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    @media (max-width: 560px) {
+      .rfq-grid-2 {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+
+  <!-- Schema.org WebApplication, FAQPage & BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "EPEX SPOT Dynamic Tariff, Power-to-Heat (20 kV Boiler), Heat Pump & BESS Arbitrage Simulator",
+        "url": "https://inwoovation.com/tools/greenhouse-energy-tariff-bess-p2h-arbitrage-calculator.html",
+        "description": "Commercial greenhouse day-ahead electricity arbitrage simulator modeling EPEX SPOT negative pricing, 20 kV electrode boilers, industrial heat pumps, LFP-BESS, and stratified hot water buffer tanks.",
+        "applicationCategory": "EngineeringApplication, EnergyArbitrageSimulator",
+        "operatingSystem": "All",
+        "dateModified": "2026-11-12",
+        "author": {
+          "@type": "Organization",
+          "name": "Inwoovation Engineering Research Lab"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How do commercial Venlo greenhouses monetize negative EPEX SPOT electricity prices?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "When solar PV or North Sea wind surges push day-ahead wholesale electricity prices on EPEX SPOT below zero (for example -40 to -85 EUR/MWh), greenhouses equipped with a medium-voltage 20 kV Power-to-Heat electrode boiler (99% efficiency) and an industrial heat pump absorb surplus grid power to charge a stratified atmospheric hot water buffer tank (42 C to 92 C). When spot price plus reduced grid fees falls below zero, the facility is paid to generate thermal megawatt-hours while shutting down natural gas boilers."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the exact electricity crossover price where a greenhouse heat pump or electrode boiler beats natural gas?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Given a natural gas plus CO2 carbon tax price P_gas (in EUR/MWh LHV) and condensing boiler efficiency eta_gas, the marginal fossil heat cost is C_th_gas = P_gas / eta_gas. An industrial heat pump with seasonal COP beats gas whenever total delivered electricity price is below C_th_gas multiplied by COP. A 20 kV electrode boiler (eta_P2H = 0.99) beats gas whenever delivered electricity price drops below C_th_gas multiplied by 0.99."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why must the Richardson number exceed 5.0 in a greenhouse thermal buffer tank during rapid Power-to-Heat charging?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "High-power 20 kV electrode boilers inject large volumetric water flows into atmospheric storage tanks. If radial diffuser inlet velocity u_in is too high, turbulent mixing destroys the thermocline separating 92 C top supply water from 42 C bottom return water, degrading storage capacity and heat pump subcooling COP. Maintaining a Richardson number Ri = (g * beta * Delta_T * H) / u_in^2 above 5.0 guarantees buoyancy-dominated laminar stratification."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which European and municipal grants subsidize greenhouse BESS, heat pumps, and thermal storage?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "In Germany, the Federal BLE Energieeffizienzprogramm Gartenbau funds up to 40% of eligible heat pump, buffer tank, and electrical energy storage CAPEX, complemented by § 19 Abs. 2 StromNEV atypical grid fee reductions and municipal climate funds (such as Nürnberg Knoblauchsland Klimafonds and Fürth Solar+Speicher). In the Netherlands, SDE++ and EIA (40% tax deduction) support e-boilers and geothermal/heat-pump integration."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Inwoovation Lab",
+            "item": "https://inwoovation.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Enterprise Engineering Tools",
+            "item": "https://inwoovation.com/tools/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "EPEX SPOT Power-to-Heat & BESS Arbitrage Simulator",
+            "item": "https://inwoovation.com/tools/greenhouse-energy-tariff-bess-p2h-arbitrage-calculator.html"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<div class="app-container">
+  <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:16px;">
+    <div style="display:flex; align-items:center; flex-wrap:wrap; gap:8px;">
+      <a href="/" style="color:#34d399; font-weight:700; text-decoration:none; font-size:0.9rem;">🏠 Inwoovation Home</a>
+      <span style="color:#64748b;">/</span>
+      <a href="/tools/index.html" style="color:var(--accent-cyan); text-decoration:none; font-weight:600; font-size:0.9rem;">← All 42 Engineering Tools</a>
+      <span style="color:#64748b;">/</span>
+      <a href="/tools/global-agri-subsidy-grant-navigator.html" style="color:#fcd34d; text-decoration:none; font-weight:600; font-size:0.9rem;">🌐 150-Grant Subsidy Radar</a>
+    </div>
+    <button class="nav-search-trigger" onclick="window.InwooPalette.open()" title="Open Spotlight Search (Ctrl+K)"><span>🔍 Spotlight Search</span> <kbd>Ctrl+K</kbd></button>
+  </div>
+
+  <header class="tool-header">
+    <span class="tool-badge">⚡ Flagship Tool 42 • Wholesale Grid Arbitrage &amp; Power-to-Heat MPC</span>
+    <h1>EPEX SPOT Dynamic Tariff, Power-to-Heat (20 kV Boiler), Heat Pump &amp; BESS Arbitrage Simulator</h1>
+    <p>Co-optimize 24-hour day-ahead negative electricity pricing, medium-voltage 20 kV electrode boilers (Elektrokessel), industrial R717/R290 heat pumps, LFP battery storage, and Richardson-stratified thermal buffer tanks under German BLE (40%), § 19 StromNEV, and Dutch SDE++ frameworks.</p>
+  </header>
+
+  <!-- Market Regime Preset Bar -->
+  <div class="mode-switch-bar">
+    <button id="btnSolarDuck" class="mode-btn active-solar" onclick="setMarketRegime('solar')">
+      <span>☀️ Solar Duck Curve (-65 €/MWh Midday Trough)</span>
+    </button>
+    <button id="btnWindSurge" class="mode-btn" onclick="setMarketRegime('wind')">
+      <span>🌬️ Winter Wind Surge (-25 €/MWh Night Trough)</span>
+    </button>
+    <button id="btnDunkelflaute" class="mode-btn" onclick="setMarketRegime('stress')">
+      <span>⚡ Dunkelflaute Peak Defense (+260 €/MWh Spike)</span>
+    </button>
+  </div>
+
+  <div class="grid-layout">
+    <!-- Left Column: Input Controls -->
+    <div>
+      <div class="calc-card">
+        <h2>📈 1. Facility &amp; Day-Ahead Spot Market</h2>
+
+        <div class="input-group">
+          <div class="input-label">
+            <span>Venlo Cultivation Area (ha)</span>
+            <span id="txtArea" class="input-val-badge">4.0 ha</span>
+          </div>
+          <input type="range" id="rngArea" min="0.5" max="20.0" step="0.5" value="4.0" oninput="runArbitrageSim()">
+        </div>
+
+        <div class="input-group">
+          <div class="input-label">
+            <span>Average Daily Thermal Load (W/m²)</span>
+            <span id="txtHeatLoad" class="input-val-badge">95 W/m²</span>
+          </div>
+          <input type="range" id="rngHeatLoad" min="35" max="210" step="5" value="95" oninput="runArbitrageSim()">
+        </div>
+
+        <div class="input-group">
+          <div class="input-label">
+            <span>Spot Trough Minimum (€/MWh)</span>
+            <span id="txtSpotMin" class="input-val-badge">-65 €/MWh</span>
+          </div>
+          <input type="range" id="rngSpotMin" min="-130" max="60" step="5" value="-65" oninput="runArbitrageSim()">
+        </div>
+
+        <div class="input-group">
+          <div class="input-label">
+            <span>Spot Evening Peak (€/MWh)</span>
+            <span id="txtSpotMax" class="input-val-badge">175 €/MWh</span>
+          </div>
+          <input type="range" id="rngSpotMax" min="80" max="340" step="5" value="175" oninput="runArbitrageSim()">
+        </div>
+
+        <div class="input-group">
+          <div class="input-label">
+            <span>Grid Fee &amp; Levy Adder (§ 19 StromNEV)</span>
+            <span id="txtGridAdder" class="input-val-badge">26 €/MWh</span>
+          </div>
+          <input type="range" id="rngGridAdder" min="8" max="95" step="2" value="26" oninput="runArbitrageSim()">
+        </div>
+      </div>
+
+      <div class="calc-card">
+        <h2>🔥 2. Tri-Source Thermal Merit Order</h2>
+
+        <div class="input-group">
+          <div class="input-label">
+            <span>20 kV Electrode Boiler Power (P2H)</span>
+            <span id="txtP2H" class="input-val-badge">5.0 MW_th</span>
+          </div>
+          <input type="range" id="rngP2H" min="0.0" max="15.0" step="0.5" value="5.0" oninput="runArbitrageSim()">
+        </div>
+
+        <div class="input-group">
+          <div class="input-label">
+            <span>Industrial Heat Pump Capacity</span>
+            <span id="txtHP" class="input-val-badge">2.5 MW_th</span>
+          </div>
+          <input type="range" id="rngHP" min="0.5" max="10.0" step="0.5" value="2.5" oninput="runArbitrageSim()">
+        </div>
+
+        <div class="input-group">
+          <div class="input-label">
+            <span>Heat Pump Seasonal COP</span>
+            <span id="txtCOP" class="input-val-badge">4.40</span>
+          </div>
+          <input type="range" id="rngCOP" min="3.0" max="5.8" step="0.1" value="4.4" oninput="runArbitrageSim()">
+        </div>
+
+        <div class="input-group">
+          <div class="input-label">
+            <span>Natural Gas + CO₂ Tax (€/MWh LHV)</span>
+            <span id="txtGasPrice" class="input-val-badge">68 €/MWh</span>
+          </div>
+          <input type="range" id="rngGasPrice" min="35" max="150" step="2" value="68" oninput="runArbitrageSim()">
+        </div>
+      </div>
+
+      <div class="calc-card">
+        <h2>🔋 3. Buffer Tank &amp; LFP-BESS Storage</h2>
+
+        <div class="input-group">
+          <div class="input-label">
+            <span>Stratified Buffer Tank Volume</span>
+            <span id="txtTankVol" class="input-val-badge">2,200 m³</span>
+          </div>
+          <input type="range" id="rngTankVol" min="200" max="8000" step="100" value="2200" oninput="runArbitrageSim()">
+        </div>
+
+        <div class="input-group">
+          <div class="input-label">
+            <span>Buffer Tank Spread ΔT (T_hot − T_ret)</span>
+            <span id="txtDeltaT" class="input-val-badge">48 K (90/42 °C)</span>
+          </div>
+          <input type="range" id="rngDeltaT" min="25" max="55" step="1" value="48" oninput="runArbitrageSim()">
+        </div>
+
+        <div class="input-group">
+          <div class="input-label">
+            <span>LFP Battery Storage (MWh_el, 89% RTE)</span>
+            <span id="txtBESS" class="input-val-badge">4.0 MWh_el</span>
+          </div>
+          <input type="range" id="rngBESS" min="0.0" max="20.0" step="0.5" value="4.0" oninput="runArbitrageSim()">
+        </div>
+
+        <div class="input-group">
+          <div class="input-label">
+            <span>BLE / SDE++ / Municipal Grant Share</span>
+            <span id="txtGrant" class="input-val-badge">40% CAPEX Grant</span>
+          </div>
+          <input type="range" id="rngGrant" min="0" max="55" step="5" value="40" oninput="runArbitrageSim()">
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Column: Canvas Visualizer, KPI Matrix & Hourly Dispatch -->
+    <div>
+      <div class="canvas-container">
+        <canvas id="arbitrageCanvas"></canvas>
+        <div class="legend-row">
+          <span><i class="legend-dot" style="background:#38bdf8;"></i>EPEX Spot + Grid (€/MWh)</span>
+          <span><i class="legend-dot" style="background:#10b981;"></i>20 kV P2H Dispatch</span>
+          <span><i class="legend-dot" style="background:#a78bfa;"></i>Heat Pump Dispatch</span>
+          <span><i class="legend-dot" style="background:#f59e0b;"></i>Buffer Tank SOC (%)</span>
+          <span><i class="legend-dot" style="background:#f43f5e;"></i>Gas Backup</span>
+        </div>
+      </div>
+
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <div class="kpi-title">Heat Pump Crossover</div>
+          <div id="kpiCrossHP" class="kpi-value">299</div>
+          <div class="kpi-unit">€/MWh Spot Max</div>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-title">20 kV P2H Crossover</div>
+          <div id="kpiCrossP2H" class="kpi-value">47.2</div>
+          <div class="kpi-unit">€/MWh Spot Max</div>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-title">Buffer Storage Capacity</div>
+          <div id="kpiBufMWh" class="kpi-value">122.8</div>
+          <div class="kpi-unit">MWh_th (Stratified)</div>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-title">Richardson Number (Ri)</div>
+          <div id="kpiRichardson" class="kpi-value">14.8</div>
+          <div class="kpi-unit">Ri ≥ 5.0 Laminar</div>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-title">Fossil Gas Displaced</div>
+          <div id="kpiFossilFree" class="kpi-value">94.2%</div>
+          <div class="kpi-unit">24h Thermal Share</div>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-title">Daily Arbitrage Gain</div>
+          <div id="kpiDailySave" class="kpi-value">€4,180</div>
+          <div class="kpi-unit">vs Gas Boiler Baseline</div>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-title">Annual Net Savings</div>
+          <div id="kpiAnnualSave" class="kpi-value">€642,000</div>
+          <div class="kpi-unit">P2H + HP + BESS</div>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-title">Subsidized Payback</div>
+          <div id="kpiPayback" class="kpi-value">3.1</div>
+          <div class="kpi-unit">Years (40% Grant)</div>
+        </div>
+      </div>
+
+      <!-- Thermocline & Merit-Order Engineering Card -->
+      <div class="calc-card">
+        <h2>📐 Merit-Order Crossover &amp; Thermocline Physics</h2>
+        <p style="margin:0 0 10px 0; font-size:0.92rem;">Every hour t ∈ [0, 23], the Model Predictive Controller compares delivered electricity price P<sub>deliv</sub>(t) = P<sub>spot</sub>(t) + C<sub>grid</sub> against fossil natural gas + BEHG/ETS-2 carbon cost:</p>
+
+        <div class="formula-tag">
+          Marginal Gas Heat Cost: C_th,gas = P_gas,CO2 / η_condensing   (η_condensing = 0.92)<br>
+          Heat Pump Spot Threshold: P_spot,HP ≤ (C_th,gas × COP_seasonal) − C_grid   [€/MWh_el]<br>
+          20 kV Boiler Spot Threshold: P_spot,P2H ≤ (C_th,gas × 0.99) − C_grid   [€/MWh_el]<br>
+          Buffer Capacity: E_th,max = V_tank × ρ_w × c_p × ΔT / 3.6×10⁶ ≈ 0.001163 × V_tank × ΔT   [MWh_th]<br>
+          Richardson Stratification Number: Ri = (g · β · ΔT · H_tank) / u_diffuser² ≥ 5.0
+        </div>
+
+        <div id="riComplianceBanner" style="font-size:0.9rem; color:#10b981; font-weight:700; margin-top:10px;">
+          ✅ Radial Diffuser Thermocline Verified: Ri = 14.8 ≥ 5.0 (Zero turbulent mixing during 5.0 MW P2H rapid charging).
+        </div>
+
+        <div class="btn-row">
+          <button class="action-btn" onclick="exportHourlyArbitrageCSV()">
+            <span>📥 Export 24h Dispatch CSV</span>
+          </button>
+          <button class="action-btn secondary" onclick="window.print()">
+            <span>🖨️ Print Engineering Spec</span>
+          </button>
+          <button class="action-btn" onclick="openArbitrageRfqModal()">
+            <span>🤝 Request 20 kV P2H &amp; BESS Quote</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- 24-Hour Representative Dispatch Table -->
+      <div class="calc-card">
+        <h2>⏱️ Key 24-Hour MPC Dispatch Windows</h2>
+        <div class="table-scroll">
+          <table class="dispatch-table">
+            <thead>
+              <tr>
+                <th>Hour (CET)</th>
+                <th>Spot (€/MWh)</th>
+                <th>Deliv. (€/MWh)</th>
+                <th>P2H (MW_th)</th>
+                <th>HP (MW_th)</th>
+                <th>Buffer SOC</th>
+                <th>BESS Action</th>
+              </tr>
+            </thead>
+            <tbody id="dispatchTableBody">
+              <!-- Populated dynamically -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Deep Theoretical Monograph & FAQ Section -->
+      <div class="calc-card">
+        <h2>📚 Power-to-Heat (20 kV Elektrokessel), Negative Spot Pricing &amp; Buffer Tank Engineering</h2>
+        <p style="font-size:0.94rem; line-height:1.75; color:#cbd5e1;">
+          Across the European interconnected grid (EPEX SPOT in Germany, the Netherlands, Belgium, and France), rapid expansion of utility-scale solar photovoltaics and North Sea offshore wind has structurally transformed commercial horticulture from a passive fossil-gas consumer into an active flexible grid-balancing asset. Between April and September, midday solar surges routinely push day-ahead auction prices between 11:00 and 15:00 CET into deep negative territory (-30 to -110 €/MWh). Conversely, sunset ramps between 18:00 and 21:00 CET trigger steep evening price spikes exceeding +170 €/MWh.
+        </p>
+        <p style="font-size:0.94rem; line-height:1.75; color:#cbd5e1;">
+          Modern Venlo glasshouses exploit this volatility by decoupling heat generation from instantaneous crop demand. Instead of firing natural gas boilers at night when crop heating demand peaks, an autonomous Model Predictive Controller (MPC) activates a medium-voltage 20 kV electrode boiler (Power-to-Heat Elektrokessel, thermal conversion efficiency η = 99.0%) alongside an industrial ammonia (R717) or propane (R290) heat pump during negative-price solar or wind windows. The resulting 88–92 °C hot water is stored inside an insulated atmospheric steel buffer tank (Pufferspeicher, typically 500 to 1,000 m<sup>3</sup> per hectare) and discharged smoothly through low-temperature pipe-rail networks overnight.
+        </p>
+
+        <h3 style="font-size:1.12rem; color:#38bdf8; margin:18px 0 8px;">1. Medium-Voltage 20 kV Electrode Boilers vs. Resistance Heaters</h3>
+        <p style="font-size:0.91rem; line-height:1.7; color:#94a3b8;">
+          Above 2.0 MW<sub>el</sub>, low-voltage 400 V metallic resistance heating elements suffer from excessive copper busbar currents, thermal fatigue, and slow switching transients. Industrial 10 kV to 20 kV electrode boilers pass alternating current directly through conductivity-controlled boiler water (typically 250–600 µS/cm trisodium phosphate dosing), eliminating metallic heating element burn-out and achieving 0-to-100% ramp times under 30 seconds for lucrative secondary frequency-restoration reserve (aFRR / Regelenergie) prequalification.
+        </p>
+
+        <h3 style="font-size:1.12rem; color:#38bdf8; margin:18px 0 8px;">2. § 19 Abs. 2 StromNEV Grid Fee Optimization &amp; LFP-BESS Co-Location</h3>
+        <p style="font-size:0.91rem; line-height:1.7; color:#94a3b8;">
+          Spot price arbitrage succeeds only when network charges (Netzentgelte) do not erase wholesale discounts. By avoiding transformer draw during the grid operator's published high-load windows (Hochlastzeitfenster) via behind-the-meter Lithium Iron Phosphate (LFP) battery storage (89% round-trip efficiency, 6,000+ cycle life), commercial greenhouses qualify for atypical grid usage under § 19 Abs. 2 Satz 1 StromNEV, slashing capacity charges by up to 80%. Simultaneously, LFP-BESS shifts zero-cost midday megawatt-hours into evening supplemental LED photoperiods.
+        </p>
+
+        <h3 style="font-size:1.12rem; color:#38bdf8; margin:18px 0 8px;">3. Non-Dilutive Capital Subsidies Across 8 Horticulture Jurisdictions</h3>
+        <p style="font-size:0.91rem; line-height:1.7; color:#94a3b8;">
+          Combining federal and municipal decarbonization grants compresses turnkey P2H + Heat Pump + BESS payback from 5.8 years to 2.6–3.4 years. Eligible programs indexed in our <a href="/tools/global-agri-subsidy-grant-navigator.html" style="color:#34d399; font-weight:700;">150-Program Global Agri-Subsidy Navigator</a> include the German Federal BLE Energieeffizienzprogramm (up to 40% CAPEX), Nürnberg Knoblauchsland Klimafonds, Fürth Solar+Speicher Bonus, Dutch RVO SDE++ E-Boiler &amp; EIA (40% tax deduction), French ADEME Fonds Chaleur, Spanish IVACE Agro-Energía, and California CPUC SGIP / TECH Clean California incentives.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  let currentRegime = 'solar';
+  let latestHourlyRows = [];
+
+  // Base normalized 24-hour profiles [0..1] where 0 = spotMin and 1 = spotMax
+  const REGIME_SHAPES = {
+    solar:  [0.42,0.38,0.35,0.34,0.38,0.48,0.64,0.78,0.62,0.36,0.14,0.03,0.00,0.02,0.08,0.28,0.56,0.84,1.00,0.96,0.80,0.64,0.52,0.45],
+    wind:   [0.08,0.03,0.00,0.01,0.05,0.18,0.52,0.78,0.84,0.72,0.60,0.54,0.50,0.52,0.58,0.70,0.88,1.00,0.95,0.76,0.54,0.34,0.20,0.12],
+    stress: [0.35,0.30,0.28,0.28,0.34,0.52,0.76,0.90,0.94,0.86,0.78,0.74,0.72,0.75,0.82,0.90,0.98,1.00,0.96,0.86,0.70,0.56,0.45,0.38]
+  };
+
+  // Relative greenhouse hourly thermal load multipliers (higher at night/dawn, lower midday)
+  const HEAT_LOAD_SHAPE = [1.28,1.32,1.35,1.38,1.42,1.45,1.30,1.05,0.82,0.65,0.52,0.45,0.42,0.45,0.55,0.72,0.95,1.12,1.18,1.20,1.22,1.24,1.25,1.26];
+
+  function setMarketRegime(regime) {
+    currentRegime = regime;
+    document.getElementById('btnSolarDuck').className = 'mode-btn' + (regime === 'solar' ? ' active-solar' : '');
+    document.getElementById('btnWindSurge').className = 'mode-btn' + (regime === 'wind' ? ' active-wind' : '');
+    document.getElementById('btnDunkelflaute').className = 'mode-btn' + (regime === 'stress' ? ' active-stress' : '');
+
+    if (regime === 'solar') {
+      document.getElementById('rngSpotMin').value = -65;
+      document.getElementById('rngSpotMax').value = 175;
+      document.getElementById('rngHeatLoad').value = 95;
+    } else if (regime === 'wind') {
+      document.getElementById('rngSpotMin').value = -25;
+      document.getElementById('rngSpotMax').value = 195;
+      document.getElementById('rngHeatLoad').value = 145;
+    } else {
+      document.getElementById('rngSpotMin').value = 55;
+      document.getElementById('rngSpotMax').value = 260;
+      document.getElementById('rngHeatLoad').value = 165;
+    }
+    runArbitrageSim();
+  }
+
+  function runArbitrageSim() {
+    const areaHa = parseFloat(document.getElementById('rngArea').value);
+    const avgHeatWm2 = parseFloat(document.getElementById('rngHeatLoad').value);
+    const spotMin = parseFloat(document.getElementById('rngSpotMin').value);
+    const spotMax = Math.max(spotMin + 20, parseFloat(document.getElementById('rngSpotMax').value));
+    const gridAdder = parseFloat(document.getElementById('rngGridAdder').value);
+
+    const capP2H = parseFloat(document.getElementById('rngP2H').value);
+    const capHP = parseFloat(document.getElementById('rngHP').value);
+    const copHP = parseFloat(document.getElementById('rngCOP').value);
+    const gasPriceMWh = parseFloat(document.getElementById('rngGasPrice').value);
+
+    const tankVolM3 = parseFloat(document.getElementById('rngTankVol').value);
+    const deltaTK = parseFloat(document.getElementById('rngDeltaT').value);
+    const bessCapMWh = parseFloat(document.getElementById('rngBESS').value);
+    const grantPct = parseFloat(document.getElementById('rngGrant').value);
+
+    // Update Input Badges
+    document.getElementById('txtArea').textContent = areaHa.toFixed(1) + ' ha';
+    document.getElementById('txtHeatLoad').textContent = avgHeatWm2 + ' W/m²';
+    document.getElementById('txtSpotMin').textContent = (spotMin > 0 ? '+' : '') + spotMin + ' €/MWh';
+    document.getElementById('txtSpotMax').textContent = '+' + spotMax + ' €/MWh';
+    document.getElementById('txtGridAdder').textContent = gridAdder + ' €/MWh';
+    document.getElementById('txtP2H').textContent = capP2H.toFixed(1) + ' MW_th';
+    document.getElementById('txtHP').textContent = capHP.toFixed(1) + ' MW_th';
+    document.getElementById('txtCOP').textContent = copHP.toFixed(2);
+    document.getElementById('txtGasPrice').textContent = gasPriceMWh + ' €/MWh';
+    document.getElementById('txtTankVol').textContent = tankVolM3.toLocaleString() + ' m³';
+    document.getElementById('txtDeltaT').textContent = deltaTK + ' K (' + (42 + deltaTK) + '/42 °C)';
+    document.getElementById('txtBESS').textContent = bessCapMWh.toFixed(1) + ' MWh_el';
+    document.getElementById('txtGrant').textContent = grantPct + '% CAPEX Grant';
+
+    // Thermodynamic Constants & Crossover Prices
+    const etaGas = 0.92;
+    const etaP2H = 0.99;
+    const cGasThermal = gasPriceMWh / etaGas; // €/MWh_th
+    const crossSpotHP = (cGasThermal * copHP) - gridAdder;
+    const crossSpotP2H = (cGasThermal * etaP2H) - gridAdder;
+
+    // Buffer Tank Storage Capacity & Richardson Number
+    // E_th = V * 1.163e-3 * dT [MWh_th]
+    const bufMaxMWh = Math.max(2.0, tankVolM3 * 0.001163 * deltaTK);
+    // Tank geometry: aspect ratio H/D ~ 1.15 -> V = (pi/4)*D^2*H
+    const tankDiam = Math.pow((4 * tankVolM3) / (Math.PI * 1.15), 1 / 3);
+    const tankHeight = 1.15 * tankDiam;
+    // Peak volumetric flow from P2H + HP charging: V_dot = P_charge_MW / (4.186 * dT) [m³/s]
+    const maxChargeMW = Math.max(0.5, capP2H + capHP);
+    const flowM3s = maxChargeMW / (4.186 * deltaTK);
+    // Radial diffuser perimeter slot area (0.14 m effective slot height around diffuser circumference 0.45*D)
+    const diffuserArea = Math.max(0.18, Math.PI * (0.48 * tankDiam) * 0.16);
+    const uInlet = Math.max(0.03, flowM3s / diffuserArea);
+    const gBeta = 9.81 * 0.00055; // g * thermal expansion beta at ~65 C mean
+    const richardson = (gBeta * deltaTK * tankHeight) / (uInlet * uInlet);
+
+    // 24-Hour Dynamic Merit-Order Dispatch Simulation
+    const shape = REGIME_SHAPES[currentRegime] || REGIME_SHAPES.solar;
+    const avgFacilityMW = (areaHa * 10000 * avgHeatWm2) / 1e6;
+
+    let socMWh = bufMaxMWh * 0.42; // initial morning buffer state
+    let bessSocMWh = bessCapMWh * 0.35;
+    const bessMaxPowerMW = bessCapMWh * 0.5; // 0.5C rate
+
+    let baselineGasCost = 0;
+    let smartNetCost = 0;
+    let totalDemandMWh = 0;
+    let totalGasBackupMWh = 0;
+    latestHourlyRows = [];
+
+    for (let h = 0; h < 24; h++) {
+      const spot = spotMin + shape[h] * (spotMax - spotMin);
+      const deliv = spot + gridAdder;
+      const loadMW = avgFacilityMW * HEAT_LOAD_SHAPE[h];
+      totalDemandMWh += loadMW;
+      baselineGasCost += loadMW * cGasThermal;
+
+      let p2hMW = 0;
+      let hpMW = 0;
+      let gasMW = 0;
+      let bessAction = 'Idle';
+      let bessDeltaCost = 0;
+
+      // BESS Arbitrage: charge in lowest quartile, discharge in evening peak
+      if (bessCapMWh > 0) {
+        const chargeThreshold = spotMin + 0.22 * (spotMax - spotMin);
+        const dischargeThreshold = spotMin + 0.78 * (spotMax - spotMin);
+        if (spot <= chargeThreshold && bessSocMWh < bessCapMWh) {
+          const chg = Math.min(bessMaxPowerMW, (bessCapMWh - bessSocMWh) / 0.94);
+          bessSocMWh += chg * 0.94;
+          bessDeltaCost += chg * deliv;
+          bessAction = 'Charge +' + chg.toFixed(1) + ' MW';
+        } else if (spot >= dischargeThreshold && bessSocMWh > 0.1) {
+          const dis = Math.min(bessMaxPowerMW, bessSocMWh * 0.94);
+          bessSocMWh -= dis / 0.94;
+          // Displaces grid / feeds local LED or heat pump load + LCOS wear 18 €/MWh
+          bessDeltaCost -= dis * (deliv - 18);
+          bessAction = 'Discharge -' + dis.toFixed(1) + ' MW';
+        }
+      }
+
+      // 1) 20 kV Electrode Boiler charging when cheaper than gas (especially negative or ultra-low prices!)
+      const freeHeadroom = Math.max(0, bufMaxMWh - socMWh);
+      if (capP2H > 0 && spot <= crossSpotP2H) {
+        // Aggressive full-power buffer charging when delivered electricity <= 20 €/MWh, else load + 50% headroom
+        const targetP2H = deliv <= 25 ? (loadMW + freeHeadroom) : (loadMW + freeHeadroom * 0.45);
+        p2hMW = Math.min(capP2H, Math.max(0, targetP2H));
+      }
+
+      // 2) Industrial Heat Pump merit order when cheaper than gas
+      const remainingRoom = Math.max(0, (loadMW + freeHeadroom) - p2hMW);
+      if (capHP > 0 && spot <= crossSpotHP && remainingRoom > 0) {
+        const wantStore = spot <= (spotMin + 0.45 * (spotMax - spotMin));
+        const targetHP = wantStore ? remainingRoom : Math.max(0, loadMW - p2hMW);
+        hpMW = Math.min(capHP, targetHP);
+      }
+
+      // Update thermal buffer SOC with generated heat vs greenhouse demand
+      const netThermalToBuffer = (p2hMW + hpMW) - loadMW;
+      if (netThermalToBuffer >= 0) {
+        socMWh = Math.min(bufMaxMWh, socMWh + netThermalToBuffer * 0.985);
+      } else {
+        const deficit = -netThermalToBuffer;
+        const fromBuf = Math.min(socMWh, deficit);
+        socMWh -= fromBuf;
+        gasMW = Math.max(0, deficit - fromBuf);
+      }
+
+      totalGasBackupMWh += gasMW;
+      const p2hElecCost = (p2hMW / etaP2H) * deliv;
+      const hpElecCost = (hpMW / copHP) * deliv;
+      const gasBackupCost = gasMW * cGasThermal;
+
+      smartNetCost += (p2hElecCost + hpElecCost + gasBackupCost + bessDeltaCost);
+
+      latestHourlyRows.push({
+        hour: h,
+        spot: spot,
+        deliv: deliv,
+        loadMW: loadMW,
+        p2hMW: p2hMW,
+        hpMW: hpMW,
+        gasMW: gasMW,
+        socPct: (socMWh / bufMaxMWh) * 100,
+        bessAction: bessAction
+      });
+    }
+
+    const dailyGain = Math.max(0, baselineGasCost - smartNetCost);
+    // Equivalent 185 active thermal/arbitrage days per year + aFRR capacity reserve bonus (€18,000/MW_P2H + €28,000/MWh_BESS)
+    const afrrBonus = (capP2H * 14000) + (bessCapMWh * 22000);
+    const annualSavings = (dailyGain * 185) + afrrBonus;
+    const fossilDisplacedPct = totalDemandMWh > 0 ? Math.max(0, Math.min(100, (1 - totalGasBackupMWh / totalDemandMWh) * 100)) : 0;
+
+    // Turnkey CAPEX model:
+    // 20 kV P2H + MV Transformer: €115,000 / MW_th
+    // Industrial R717/R290 Heat Pump: €340,000 / MW_th
+    // Insulated Steel Buffer Tank + Radial Diffusers: €195 / m³
+    // LFP-BESS Container + PCS: €245,000 / MWh_el
+    const grossCapex = (capP2H * 115000) + (capHP * 340000) + (tankVolM3 * 195) + (bessCapMWh * 245000);
+    const netCapex = grossCapex * (1 - grantPct / 100);
+    const paybackYrs = annualSavings > 1000 ? (netCapex / annualSavings) : 99;
+
+    // Populate KPI Cards
+    document.getElementById('kpiCrossHP').textContent = (crossSpotHP > 0 ? '+' : '') + Math.round(crossSpotHP);
+    document.getElementById('kpiCrossP2H').textContent = (crossSpotP2H > 0 ? '+' : '') + crossSpotP2H.toFixed(1);
+    document.getElementById('kpiBufMWh').textContent = bufMaxMWh.toFixed(1);
+    document.getElementById('kpiRichardson').textContent = Math.min(99.9, richardson).toFixed(1);
+    document.getElementById('kpiFossilFree').textContent = fossilDisplacedPct.toFixed(1) + '%';
+    document.getElementById('kpiDailySave').textContent = '€' + Math.round(dailyGain).toLocaleString();
+    document.getElementById('kpiAnnualSave').textContent = '€' + Math.round(annualSavings).toLocaleString();
+    document.getElementById('kpiPayback').textContent = paybackYrs < 30 ? paybackYrs.toFixed(1) : '> 25';
+
+    const riBanner = document.getElementById('riComplianceBanner');
+    if (richardson >= 5.0) {
+      riBanner.innerHTML = `✅ Radial Diffuser Thermocline Verified: Ri = ${Math.min(99.9, richardson).toFixed(1)} ≥ 5.0 (Buoyancy-stabilized 90/42 °C thermocline intact during ${maxChargeMW.toFixed(1)} MW charging).`;
+      riBanner.style.color = '#10b981';
+    } else {
+      riBanner.innerHTML = `⚠️ Thermocline Mixing Alert: Ri = ${richardson.toFixed(2)} < 5.0! Increase buffer tank volume or ΔT spread to lower radial diffuser inlet velocity (${uInlet.toFixed(2)} m/s).`;
+      riBanner.style.color = '#f59e0b';
+    }
+
+    renderDispatchTable();
+    drawArbitrageCanvas(crossSpotP2H + gridAdder);
+  }
+
+  function renderDispatchTable() {
+    const tbody = document.getElementById('dispatchTableBody');
+    const sampleHours = [2, 6, 10, 12, 13, 14, 18, 20, 22];
+    tbody.innerHTML = sampleHours.map(idx => {
+      const r = latestHourlyRows[idx];
+      const spotColor = r.spot < 0 ? '#34d399' : (r.spot > 140 ? '#fb7185' : '#e2e8f0');
+      const hh = String(r.hour).padStart(2, '0') + ':00';
+      return `<tr>
+        <td style="color:#f8fafc; font-weight:700;">${hh}</td>
+        <td style="color:${spotColor}; font-weight:700;">${r.spot >= 0 ? '+' : ''}${r.spot.toFixed(1)}</td>
+        <td>${r.deliv >= 0 ? '+' : ''}${r.deliv.toFixed(1)}</td>
+        <td style="color:#10b981;">${r.p2hMW.toFixed(2)}</td>
+        <td style="color:#a78bfa;">${r.hpMW.toFixed(2)}</td>
+        <td style="color:#f59e0b;">${r.socPct.toFixed(0)}%</td>
+        <td style="color:#38bdf8;">${r.bessAction}</td>
+      </tr>`;
+    }).join('');
+  }
+
+  function drawArbitrageCanvas(p2hDelivThreshold) {
+    const canvas = document.getElementById('arbitrageCanvas');
+    if (!canvas || !latestHourlyRows.length) return;
+    const ctx = canvas.getContext('2d');
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const cssW = Math.max(280, canvas.parentElement.clientWidth - 24);
+    const cssH = 410;
+    canvas.width = cssW * dpr;
+    canvas.height = cssH * dpr;
+    canvas.style.height = cssH + 'px';
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+    ctx.fillStyle = '#020617';
+    ctx.fillRect(0, 0, cssW, cssH);
+
+    const padL = 48;
+    const padR = 44;
+    const plotW = cssW - padL - padR;
+
+    // Top Panel (y: 26..190): Delivered Electricity Tariff & Zero Line
+    const topY0 = 28;
+    const topH = 158;
+    const delivVals = latestHourlyRows.map(r => r.deliv);
+    const minP = Math.min(-40, ...delivVals) - 15;
+    const maxP = Math.max(180, ...delivVals) + 20;
+    const yPrice = val => topY0 + topH - ((val - minP) / (maxP - minP)) * topH;
+
+    // Grid & Zero Price Line
+    ctx.strokeStyle = 'rgba(148, 163, 184, 0.14)';
+    ctx.lineWidth = 1;
+    for (let i = 0; i <= 4; i++) {
+      const yy = topY0 + (topH * i) / 4;
+      ctx.beginPath();
+      ctx.moveTo(padL, yy);
+      ctx.lineTo(padL + plotW, yy);
+      ctx.stroke();
+      const pVal = maxP - ((maxP - minP) * i) / 4;
+      ctx.fillStyle = '#64748b';
+      ctx.font = '10px "JetBrains Mono"';
+      ctx.fillText(Math.round(pVal) + '€', 6, yy + 3);
+    }
+
+    if (minP < 0 && maxP > 0) {
+      const yZero = yPrice(0);
+      ctx.strokeStyle = 'rgba(16, 185, 129, 0.55)';
+      ctx.setLineDash([4, 4]);
+      ctx.beginPath();
+      ctx.moveTo(padL, yZero);
+      ctx.lineTo(padL + plotW, yZero);
+      ctx.stroke();
+      ctx.setLineDash([]);
+      ctx.fillStyle = '#34d399';
+      ctx.font = 'bold 10px "JetBrains Mono"';
+      ctx.fillText('0 €/MWh (Paid-to-Consume Below)', padL + 6, yZero - 5);
+    }
+
+    // P2H Crossover Line
+    if (p2hDelivThreshold >= minP && p2hDelivThreshold <= maxP) {
+      const yCross = yPrice(p2hDelivThreshold);
+      ctx.strokeStyle = 'rgba(245, 158, 11, 0.55)';
+      ctx.setLineDash([6, 4]);
+      ctx.beginPath();
+      ctx.moveTo(padL, yCross);
+      ctx.lineTo(padL + plotW, yCross);
+      ctx.stroke();
+      ctx.setLineDash([]);
+    }
+
+    // Tariff Curve
+    ctx.strokeStyle = '#38bdf8';
+    ctx.lineWidth = 2.6;
+    ctx.beginPath();
+    latestHourlyRows.forEach((r, idx) => {
+      const xx = padL + (idx / 23) * plotW;
+      const yy = yPrice(r.deliv);
+      if (idx === 0) ctx.moveTo(xx, yy);
+      else ctx.lineTo(xx, yy);
+    });
+    ctx.stroke();
+
+    ctx.fillStyle = '#e2e8f0';
+    ctx.font = 'bold 11px "Outfit", sans-serif';
+    ctx.fillText('24h Delivered Electricity Price (EPEX Spot + Grid Adder €/MWh)', padL, 17);
+
+    // Bottom Panel (y: 222..378): Stacked Thermal Dispatch Bars + Buffer SOC Line
+    const botY0 = 224;
+    const botH = 152;
+    const maxMW = Math.max(4, ...latestHourlyRows.map(r => Math.max(r.loadMW, r.p2hMW + r.hpMW + r.gasMW))) * 1.15;
+
+    ctx.fillStyle = '#e2e8f0';
+    ctx.font = 'bold 11px "Outfit", sans-serif';
+    ctx.fillText('Hourly Thermal Dispatch (MW_th) & Stratified Buffer SOC (%)', padL, 212);
+
+    const barSlot = plotW / 24;
+    const barW = Math.max(4, barSlot * 0.66);
+
+    latestHourlyRows.forEach((r, idx) => {
+      const xBar = padL + idx * barSlot + (barSlot - barW) / 2;
+      let yCursor = botY0 + botH;
+
+      // P2H Bar (Emerald)
+      if (r.p2hMW > 0) {
+        const hP2H = (r.p2hMW / maxMW) * botH;
+        ctx.fillStyle = 'rgba(16, 185, 129, 0.88)';
+        ctx.fillRect(xBar, yCursor - hP2H, barW, hP2H);
+        yCursor -= hP2H;
+      }
+      // Heat Pump Bar (Violet)
+      if (r.hpMW > 0) {
+        const hHP = (r.hpMW / maxMW) * botH;
+        ctx.fillStyle = 'rgba(167, 139, 250, 0.88)';
+        ctx.fillRect(xBar, yCursor - hHP, barW, hHP);
+        yCursor -= hHP;
+      }
+      // Gas Backup Bar (Rose)
+      if (r.gasMW > 0) {
+        const hGas = (r.gasMW / maxMW) * botH;
+        ctx.fillStyle = 'rgba(244, 63, 94, 0.85)';
+        ctx.fillRect(xBar, yCursor - hGas, barW, hGas);
+      }
+
+      if (idx % 3 === 0) {
+        ctx.fillStyle = '#94a3b8';
+        ctx.font = '10px "JetBrains Mono"';
+        ctx.fillText(String(idx).padStart(2, '0') + 'h', xBar - 2, botY0 + botH + 15);
+      }
+    });
+
+    // Buffer SOC Trajectory (Amber)
+    ctx.strokeStyle = '#f59e0b';
+    ctx.lineWidth = 2.4;
+    ctx.beginPath();
+    latestHourlyRows.forEach((r, idx) => {
+      const xx = padL + idx * barSlot + barSlot / 2;
+      const yy = botY0 + botH - (r.socPct / 100) * botH;
+      if (idx === 0) ctx.moveTo(xx, yy);
+      else ctx.lineTo(xx, yy);
+    });
+    ctx.stroke();
+
+    // Left MW axis & Right SOC axis labels
+    ctx.fillStyle = '#64748b';
+    ctx.font = '10px "JetBrains Mono"';
+    ctx.fillText(maxMW.toFixed(1) + 'MW', 4, botY0 + 8);
+    ctx.fillText('0MW', 16, botY0 + botH);
+    ctx.fillStyle = '#f59e0b';
+    ctx.fillText('100%', padL + plotW + 4, botY0 + 8);
+    ctx.fillText('0%', padL + plotW + 6, botY0 + botH);
+  }
+
+  function exportHourlyArbitrageCSV() {
+    if (!latestHourlyRows.length) return;
+    let csv = 'Hour_CET,Spot_EUR_MWh,Delivered_EUR_MWh,Crop_Demand_MWth,P2H_20kV_MWth,HeatPump_MWth,Gas_Backup_MWth,Buffer_SOC_Pct,BESS_Action\n';
+    latestHourlyRows.forEach(r => {
+      csv += `${String(r.hour).padStart(2,'0')}:00,${r.spot.toFixed(2)},${r.deliv.toFixed(2)},${r.loadMW.toFixed(3)},${r.p2hMW.toFixed(3)},${r.hpMW.toFixed(3)},${r.gasMW.toFixed(3)},${r.socPct.toFixed(1)},"${r.bessAction}"\n`;
+    });
+    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = 'EPEX_P2H_BESS_Greenhouse_Arbitrage_24h_Inwoovation.csv';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+  }
+
+  function openArbitrageRfqModal() {
+    const area = document.getElementById('txtArea').textContent;
+    const p2h = document.getElementById('txtP2H').textContent;
+    const hp = document.getElementById('txtHP').textContent;
+    const bess = document.getElementById('txtBESS').textContent;
+    const tank = document.getElementById('txtTankVol').textContent;
+    const save = document.getElementById('kpiAnnualSave').textContent;
+    const pb = document.getElementById('kpiPayback').textContent;
+
+    document.getElementById('rfqSummaryBox').innerHTML =
+      `<strong>Configured Turnkey Spec:</strong><br>` +
+      `• Glasshouse: ${area} | 20 kV Boiler: ${p2h} | Heat Pump: ${hp}<br>` +
+      `• Buffer Tank: ${tank} | LFP-BESS: ${bess}<br>` +
+      `• Est. Annual Savings: ${save} | Subsidized Payback: ${pb} Yrs`;
+    document.getElementById('rfqModal').style.display = 'flex';
+  }
+
+  function closeArbitrageRfqModal() {
+    document.getElementById('rfqModal').style.display = 'none';
+  }
+
+  function submitArbitrageRfq(e) {
+    e.preventDefault();
+    const name = document.getElementById('rfqName').value;
+    const company = document.getElementById('rfqCompany').value;
+    const email = document.getElementById('rfqEmail').value;
+    const loc = document.getElementById('rfqLocation').value;
+    const specs = document.getElementById('rfqSummaryBox').innerText;
+
+    const rfqData = { name, company, email, loc, specs, tool: 'EPEX_P2H_BESS_42', timestamp: new Date().toISOString() };
+    const existing = JSON.parse(localStorage.getItem('inw_b2b_rfqs') || '[]');
+    existing.push(rfqData);
+    localStorage.setItem('inw_b2b_rfqs', JSON.stringify(existing));
+
+    const subject = encodeURIComponent(`[B2B RFQ] 20 kV Power-to-Heat + BESS Greenhouse System - ${company}`);
+    const body = encodeURIComponent(`Name: ${name}\nCompany: ${company}\nLocation: ${loc}\nEmail: ${email}\n\n${specs}`);
+    window.open(`mailto:contact@inwoovation.com?subject=${subject}&body=${body}`, '_blank');
+
+    document.getElementById('rfqForm').style.display = 'none';
+    document.getElementById('rfqSuccessMsg').style.display = 'block';
+  }
+
+  window.addEventListener('load', runArbitrageSim);
+  window.addEventListener('resize', runArbitrageSim);
+</script>
+
+<!-- B2B RFQ Modal -->
+<div id="rfqModal" style="display:none; position:fixed; inset:0; background:rgba(7,11,20,0.86); backdrop-filter:blur(10px); z-index:9999; justify-content:center; align-items:center; padding:16px;">
+  <div style="background:#0f172a; border:1px solid rgba(56,189,248,0.3); border-radius:18px; max-width:560px; width:100%; padding:24px; box-shadow:0 25px 60px rgba(0,0,0,0.8); color:#f8fafc;">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:10px;">
+      <h3 style="font-family:'Outfit',sans-serif; font-size:1.25rem; color:#38bdf8; margin:0;">🤝 20 kV Power-to-Heat, Heat Pump &amp; BESS RFQ</h3>
+      <button onclick="closeArbitrageRfqModal()" style="background:none; border:none; color:#94a3b8; font-size:1.2rem; cursor:pointer;">✕</button>
+    </div>
+    <p style="font-size:0.86rem; color:#cbd5e1; margin-bottom:14px;">
+      Request engineering sizing &amp; grant-compliant quotes for medium-voltage electrode boilers, R717/R290 heat pumps, atmospheric buffer tanks, and LFP-BESS containers.
+    </p>
+    <div style="background:rgba(15,23,42,0.9); border:1px solid rgba(255,255,255,0.08); border-radius:10px; padding:12px 14px; margin-bottom:14px; font-family:'JetBrains Mono',monospace; font-size:0.8rem; color:#38bdf8;" id="rfqSummaryBox"></div>
+    <form id="rfqForm" onsubmit="submitArbitrageRfq(event)">
+      <div class="rfq-grid-2">
+        <div>
+          <label style="font-size:0.78rem; color:#94a3b8; display:block; margin-bottom:4px;">Full Name *</label>
+          <input type="text" id="rfqName" required style="width:100%; background:#1e293b; border:1px solid rgba(255,255,255,0.15); border-radius:6px; padding:8px 10px; color:#fff; font-size:0.88rem;">
+        </div>
+        <div>
+          <label style="font-size:0.78rem; color:#94a3b8; display:block; margin-bottom:4px;">Facility / Company *</label>
+          <input type="text" id="rfqCompany" required style="width:100%; background:#1e293b; border:1px solid rgba(255,255,255,0.15); border-radius:6px; padding:8px 10px; color:#fff; font-size:0.88rem;">
+        </div>
+      </div>
+      <div class="rfq-grid-2">
+        <div>
+          <label style="font-size:0.78rem; color:#94a3b8; display:block; margin-bottom:4px;">Business Email *</label>
+          <input type="email" id="rfqEmail" required style="width:100%; background:#1e293b; border:1px solid rgba(255,255,255,0.15); border-radius:6px; padding:8px 10px; color:#fff; font-size:0.88rem;">
+        </div>
+        <div>
+          <label style="font-size:0.78rem; color:#94a3b8; display:block; margin-bottom:4px;">Grid Zone / Country *</label>
+          <input type="text" id="rfqLocation" placeholder="e.g. TenneT DE / Westland NL" required style="width:100%; background:#1e293b; border:1px solid rgba(255,255,255,0.15); border-radius:6px; padding:8px 10px; color:#fff; font-size:0.88rem;">
+        </div>
+      </div>
+      <button type="submit" style="width:100%; background:linear-gradient(135deg, #0284c7, #10b981); color:#fff; font-weight:800; font-family:'Outfit',sans-serif; font-size:0.98rem; padding:12px; border:none; border-radius:8px; cursor:pointer;">
+        🚀 Generate B2B Turnkey Inquiry
+      </button>
+    </form>
+    <div id="rfqSuccessMsg" style="display:none; text-align:center; padding:14px; background:rgba(16,185,129,0.15); border:1px solid #10b981; border-radius:8px; margin-top:12px; color:#10b981; font-weight:700;">
+      ✅ Inquiry prepared! Certified P2H &amp; BESS engineering partners respond within 1 business day.
+    </div>
+  </div>
+</div>
+
+<!-- INW-TSUKUBA-FUNNEL-START -->
+<section class="inw-tsukuba-funnel-bridge" style="max-width: 1060px; margin: 32px auto; padding: 26px; background: rgba(15, 23, 42, 0.9); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 16px; text-align: left; box-shadow: 0 10px 28px rgba(0, 0, 0, 0.3);">
+  <h3 style="margin: 0 0 8px 0; font-size: 1.2rem; color: #10b981; font-weight: 800;">🔬 Validated Engineering Monographs, Crop Guides & Simulators</h3>
+  <p style="margin: 0 0 16px 0; font-size: 0.92rem; color: #94a3b8; line-height: 1.6;">Explore the governing physical derivations, crop-specific microclimate targets, and full-screen engineering solvers connected to this page:</p>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px;">
+    <a href="/articles/article-06-hydroponic-nutrient-formulation.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">Vol. 06: Hydroponic A/B Nutrient Formulation & Electroneutrality →</a>
+    <a href="/articles/article-73-closed-loop-nutrient-recirculation-davies-ion-balance.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">Vol. 73: Closed-Loop Recirculation & Davies Ion Speciation Physics →</a>
+    <a href="/articles/article-18-recirculating-nutrient-sterilization.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">Vol. 18: Recirculating Drain UV-C & Ozone Pathogen Disinfection →</a>
+    <a href="/crops/greenhouse-sweet-pepper-climate-blossom-end-rot-guide.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🫑 Sweet Pepper Calcium Transport & Blossom-End Rot Prevention Guide →</a>
+    <a href="/crops/greenhouse-cut-flower-rose-microclimate-guide.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🌹 Cut-Flower Rose Substrate EC & Recirculation Steering Guide →</a>
+    <a href="/tools/hydroponic-nutrient-solution-calculator.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🧪 A/B Tank Hydroponic Nutrient & Ion Balance Calculator →</a>
+    <a href="/tools/soil-matrix-water-potential-matric-suction-calculator.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🌱 Van Genuchten Substrate Water Potential & Dryback Calculator →</a>
+  </div>
+  <h3 style="margin: 24px 0 12px 0; font-size: 1.15rem; color: #10b981; font-weight: 800;">❓ Frequently Asked Engineering Questions (Technical FAQ)</h3>
+  <div>
+    <div style="margin-bottom:14px; padding:14px 18px; background:rgba(15,23,42,0.65); border-left:3px solid #10b981; border-radius:8px;">
+      <h4 style="margin:0 0 6px 0; color:#f8fafc; font-size:0.98rem;">Why must calcium nitrate and sulfate/phosphate fertilizers be separated into A and B stock tanks?</h4>
+      <p style="margin:0; color:#cbd5e1; font-size:0.9rem; line-height:1.65;">Mixing concentrated calcium ions (Ca²⁺) with sulfate (SO₄²⁻) or orthophosphate (H₂PO₄⁻) in the same stock tank causes immediate precipitation of insoluble gypsum (CaSO₄·2H₂O) and calcium phosphate once the solubility product (Ksp) is exceeded.</p>
+    </div><div style="margin-bottom:14px; padding:14px 18px; background:rgba(15,23,42,0.65); border-left:3px solid #10b981; border-radius:8px;">
+      <h4 style="margin:0 0 6px 0; color:#f8fafc; font-size:0.98rem;">How do you calculate the required acid volume for hydroponic bicarbonate (HCO₃⁻) alkalinity neutralization?</h4>
+      <p style="margin:0; color:#cbd5e1; font-size:0.9rem; line-height:1.65;">Subtract target residual buffer alkalinity (typically 0.5 to 0.8 mmol/L HCO₃⁻ for pH 5.6–5.8 stability) from raw water bicarbonate concentration, then stoichiometry-match with nitric acid (HNO₃) or phosphoric acid (H₃PO₄) normality.</p>
+    </div><div style="margin-bottom:14px; padding:14px 18px; background:rgba(15,23,42,0.65); border-left:3px solid #10b981; border-radius:8px;">
+      <h4 style="margin:0 0 6px 0; color:#f8fafc; font-size:0.98rem;">What drain percentage and slab EC dryback should be targeted in rockwool and cocopeat substrates?</h4>
+      <p style="margin:0; color:#cbd5e1; font-size:0.9rem; line-height:1.65;">During high-radiation summer days, target 25% to 35% daily drainage fraction with an overnight volumetric water content (VWC) dryback of 8% to 12% for vegetative steering, or 12% to 18% dryback for generative steering.</p>
+    </div>
+  </div>
+</section>
+<!-- INW-TSUKUBA-FUNNEL-END -->
+
+<footer style="max-width:1100px; margin:40px auto 24px; padding:0 20px; text-align:center;">
+  <div class="inw-trust-links" style="margin-top:16px; padding-top:14px; border-top:1px solid rgba(148,163,184,0.16); display:flex; justify-content:center; align-items:center; flex-wrap:wrap; gap:16px; font-size:0.84rem; color:#94a3b8;">
+    <a href="/index.html" style="color:#94a3b8; text-decoration:none; font-weight:600;">Home</a>
+    <a href="/about.html" style="color:#94a3b8; text-decoration:none; font-weight:600;">About Lab</a>
+    <a href="/contact.html" style="color:#94a3b8; text-decoration:none; font-weight:600;">Contact</a>
+    <a href="/privacy-policy.html" style="color:#94a3b8; text-decoration:none; font-weight:600;">Privacy Policy</a>
+    <a href="/terms-of-service.html" style="color:#94a3b8; text-decoration:none; font-weight:600;">Terms of Service</a>
+  </div>
+</footer>
+</body>
+</html>

@@ -16,8 +16,9 @@
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <link rel="stylesheet" href="../css/styles.css">
   <link rel="canonical" href="https://inwoovation.com/articles/article-60-potentiometric-ion-selective-electrode-ise-closed-loop-hydroponics.html">
-    <link rel="alternate" hreflang="en" href="https://inwoovation.com/articles/article-60-potentiometric-ion-selective-electrode-ise-closed-loop-hydroponics.html" />
-    <link rel="alternate" hreflang="x-default" href="https://inwoovation.com/articles/article-60-potentiometric-ion-selective-electrode-ise-closed-loop-hydroponics.html" />
+  <link rel="alternate" hreflang="en" href="https://inwoovation.com/articles/article-60-potentiometric-ion-selective-electrode-ise-closed-loop-hydroponics.html">
+  <link rel="alternate" hreflang="x-default" href="https://inwoovation.com/articles/article-60-potentiometric-ion-selective-electrode-ise-closed-loop-hydroponics.html">
+  <link rel="alternate" hreflang="de" href="https://inwoovation.com/articles/de/article-60-potentiometrische-ionenselektive-elektroden-ise-geschlossene-hydroponik.html">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8597809158257497" crossorigin="anonymous"></script>
 
       <meta name="google-adsense-account" content="ca-pub-8597809158257497">
@@ -51,7 +52,7 @@
         "url": "https://inwoovation.com"
       },
       "datePublished": "2026-09-01",
-      "dateModified": "2026-11-08",
+      "dateModified": "2026-11-12",
       "mainEntityOfPage": "https://inwoovation.com/articles/article-60-potentiometric-ion-selective-electrode-ise-closed-loop-hydroponics.html"
     },
     {
@@ -135,6 +136,13 @@
     <header class="article-header">
       <div class="category-tag">Horticultural Chemistry &amp; Closed-Loop Automation</div>
       <h1>Real-Time Ion-Selective Electrode (ISE) Arrays, Nicolsky-Eisenman Potentiometry &amp; Closed-Loop Autonomous Nutrient Dosing in Commercial High-Wire Hydroponics</h1>
+<!-- INW-LANG-SWITCHER-START -->
+<div class="inw-lang-switcher-bar" style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:14px 0 20px 0; padding:10px 14px; background:rgba(15,23,42,0.75); border:1px solid rgba(148,163,184,0.2); border-radius:12px;">
+  <span style="font-size:0.8rem; color:#94a3b8; font-weight:700; margin-right:4px;">🌐 Vol. 60 Editions:</span>
+  <span style="display:inline-flex; align-items:center; padding:5px 12px; border-radius:999px; background:rgba(16,185,129,0.22); border:1px solid #10b981; color:#34d399; font-size:0.8rem; font-weight:700;">🇬🇧 English Edition (Active)</span>
+  <a href="/articles/de/article-60-potentiometrische-ionenselektive-elektroden-ise-geschlossene-hydroponik.html" style="display:inline-flex; align-items:center; padding:5px 12px; border-radius:999px; background:rgba(30,41,59,0.8); border:1px solid rgba(56,189,248,0.35); color:#38bdf8; text-decoration:none; font-size:0.8rem; font-weight:600;">🇩🇪 Deutsche Ausgabe →</a>
+</div>
+<!-- INW-LANG-SWITCHER-END -->
       <div class="article-meta">Published: 2026-09-11 • Author: Inwoo Hwang • Reading Time: 11 min</div>
     </header>
 
@@ -263,13 +271,13 @@
         <code>E<sub>cal, 1</sub> = E^0(t) + S(t) log<sub>10</sub>(a<sub>std, 1</sub>),   E<sub>cal, 2</sub> = E^0(t) + S(t) log<sub>10</sub>(a<sub>std, 2</sub>)</code>
       </div>
 
-      <p>By measuring two certified, cross-calibrated standard matrix solutions (Std<sub>A</sub> and Std<sub>B</sub>), the edge micro-controller solves for instantaneous slope $S(t)$ and baseline offset E<sup>0</sup>(t):</p>
+      <p>By measuring two certified, cross-calibrated standard matrix solutions (Std<sub>A</sub> and Std<sub>B</sub>), the edge micro-controller solves for instantaneous slope <i>S</i>(<i>t</i>) and baseline offset E<sup>0</sup>(t):</p>
 
       <div class="code-box">
         <code>S(t) = (E<sub>cal, 1</sub> - E<sub>cal, 2</sub>)/(log<sub>10</sub>(a<sub>std, 1</sub>) - log<sub>10</sub>(a<sub>std, 2</sub>)),   E^0(t) = E<sub>cal, 1</sub> - S(t) log<sub>10</sub>(a<sub>std, 1</sub>)</code>
       </div>
 
-      <p>If the calculated slope $S(t)$ degrades below <strong>82%</strong> of theoretical Nernstian response or the baseline shift (dE<sup>0</sup>)/(dt) &gt; 1.5 mV/hour, the controller triggers an automated ultrasonic cavitation flush followed by a mild enzyme-based surfactant pulse, restoring the membrane interface without manual intervention.</p>
+      <p>If the calculated slope <i>S</i>(<i>t</i>) degrades below <strong>82%</strong> of theoretical Nernstian response or the baseline shift (dE<sup>0</sup>)/(dt) &gt; 1.5 mV/hour, the controller triggers an automated ultrasonic cavitation flush followed by a mild enzyme-based surfactant pulse, restoring the membrane interface without manual intervention.</p>
 
       <h2>5. Closed-Loop Multi-Component Dosing Matrix Algorithm</h2>
       <p>Once real-time ion concentrations C&#8407;<sub>measured</sub> = [C<sub>NO3</sub>, C<sub>H2PO4</sub>, C<sub>K</sub>, C<sub>Ca</sub>, C<sub>Mg</sub>]<sup>T</sup> are resolved, the system departs completely from conventional binary A/B dosing. Instead, an array of 5 dedicated single/binary salt stock tanks is modulated via precision positive-displacement dosing pumps:</p>
@@ -291,7 +299,7 @@
       <p>Because negative dosing volumes (v<sub>k</sub> &lt; 0) are physically impossible (nutrients cannot be extracted except via crop uptake or reverse-osmosis bleed), the dosing command is resolved via <strong>Constrained Non-Negative Least Squares (NNLS)</strong> optimization:</p>
 
       <div class="code-box">
-        <code>min<sub>V&#8407;<sub>stock</sub></sub> \left\| <strong>A</strong> V&#8407;<sub>stock</sub> - V<sub>sys</sub> (C&#8407;<sub>target</sub> - C&#8407;<sub>measured</sub>) \right\|_2^2 + λ \|V&#8407;<sub>stock</sub>\|_1   s.t.   0 ≤ v_k ≤ v<sub>k,max</sub></code>
+        <code>min<sub>V&#8407;<sub>stock</sub></sub> ‖ <strong>A</strong> V&#8407;<sub>stock</sub> − V<sub>sys</sub> (C&#8407;<sub>target</sub> − C&#8407;<sub>measured</sub>) ‖<sub>2</sub><sup>2</sup> + λ ‖V&#8407;<sub>stock</sub>‖<sub>1</sub>   s.t.   0 ≤ v<sub>k</sub> ≤ v<sub>k,max</sub></code>
       </div>
 
       <p>Where λ is an L<sub>1</sub> regularization penalty that prevents excessive pump cycling and maintains high dosing hydraulic stability.</p>
