@@ -167,7 +167,7 @@ def render_deep_dive_html(guide, m):
         <div id="cea-engineering-deep-dive">
             <div class="section-panel">
                 <h2>🌡️ Psychrometric &amp; Enthalpy Regime Analysis ({lat_str})</h2>
-                <p>Operating a high-efficiency commercial greenhouse in <strong>{name}</strong> requires balancing sensible and latent energy fluxes across a <strong>{koppen}</strong> boundary layer. Between the winter solstice minimum of <strong>{esc(guide['dli_winter'])} mol/m²/day</strong> (mean midday photosynthetic photon flux density of ~{m['winter_ppfd']} µmol/m²/s) and the summer peak of <strong>{esc(guide['dli_summer'])} mol/m²/day</strong> (peak global solar irradiance reaching ~{m['peak_wm2']} W/m² or ~{m['peak_ppfd']} µmol/m²/s PAR), canopy stomatal conductance shifts dramatically. When solar radiation exceeds 650 W/m², up to 70% of net radiation absorbed by a dense <strong>{crops}</strong> canopy (Leaf Area Index LAI 3.0–3.8) is partitioned into latent heat of vaporization ($\\lambda E$), driving high transpiration rates that must be evacuated via <strong>{cooling}</strong> to prevent leaf temperature elevation above the 28 °C rubisco deactivation threshold.</p>
+                <p>Operating a high-efficiency commercial greenhouse in <strong>{name}</strong> requires balancing sensible and latent energy fluxes across a <strong>{koppen}</strong> boundary layer. Between the winter solstice minimum of <strong>{esc(guide['dli_winter'])} mol/m²/day</strong> (mean midday photosynthetic photon flux density of ~{m['winter_ppfd']} µmol/m²/s) and the summer peak of <strong>{esc(guide['dli_summer'])} mol/m²/day</strong> (peak global solar irradiance reaching ~{m['peak_wm2']} W/m² or ~{m['peak_ppfd']} µmol/m²/s PAR), canopy stomatal conductance shifts dramatically. When solar radiation exceeds 650 W/m², up to 70% of net radiation absorbed by a dense <strong>{crops}</strong> canopy (Leaf Area Index LAI 3.0–3.8) is partitioned into latent heat of vaporization (<i>λE</i>), driving high transpiration rates that must be evacuated via <strong>{cooling}</strong> to prevent leaf temperature elevation above the 28 °C rubisco deactivation threshold.</p>
                 <p>Conversely, during winter and shoulder-season nights under <strong>{heat_lbl}</strong> conditions, outward longwave radiative cooling toward the sky vault drops the interior glazing surface temperature below the indoor air dew point. Without active vapor pressure deficit (VPD) steering and minimum pipe heating, boundary-layer relative humidity exceeds 88%, triggering film condensation on structural gutters and leaf surfaces. Engineers in {name} target a daytime VPD envelope of <strong>0.85–1.25 kPa</strong> and a nighttime hygrometric safety margin of <strong>0.45–0.70 kPa</strong>, utilizing enthalpy-recovery ventilation or mechanical dehumidification to decouple latent moisture removal from sensible heat loss.</p>
             </div>
 
@@ -208,7 +208,7 @@ def render_deep_dive_html(guide, m):
                                 <td>{esc(guide['dli_summer'])}<br><span style="font-size:0.8rem;color:#f59e0b;">(Peak ~{m['peak_wm2']} W/m²)</span></td>
                                 <td>24.5–27.5 °C Day<br>18.5–20.5 °C Night<br><em>(Zero/Low DIF)</em></td>
                                 <td>1.00–1.35 kPa Day<br>0.65–0.85 kPa Night<br>(62–74% RH)</td>
-                                <td>Primary cooling via <strong>{cooling}</strong>; maintain HAF fan velocity at 0.5–0.8 m/s across canopy to compress leaf boundary layer resistance ($r_b$).</td>
+                                <td>Primary cooling via <strong>{cooling}</strong>; maintain HAF fan velocity at 0.5–0.8 m/s across canopy to compress leaf boundary layer resistance (<i>r</i><sub>b</sub>).</td>
                                 <td>Deploy shade/diffuse screen when outdoor global radiation &gt; 650 W/m² to cap canopy leaf temperature below 27.5 °C and prevent Ca²⁺ tipburn/BER.</td>
                             </tr>
                             <tr>
@@ -217,7 +217,7 @@ def render_deep_dive_html(guide, m):
                                 <td>20.5–23.0 °C Day<br>16.0–17.5 °C Night<br><em>(+4.0 °C DIF)</em></td>
                                 <td>0.75–1.05 kPa Day<br>0.50–0.70 kPa Night<br>(70–80% RH)</td>
                                 <td>Activate grow-pipe (38–45 °C) 60 min before sunset to accelerate fruit ripening and purge afternoon humidity prior to night screen closure.</td>
-                                <td>Close energy screen at dusk once latent humidity purge completes; clean glazing exterior to maximize winter PAR transmittance ($\\tau_{{\\text{{PAR}}}} \\ge 78\\%$).</td>
+                                <td>Close energy screen at dusk once latent humidity purge completes; clean glazing exterior to maximize winter PAR transmittance (<i>τ</i><sub>PAR</sub> ≥ 78%).</td>
                             </tr>
                         </tbody>
                     </table>
@@ -226,16 +226,16 @@ def render_deep_dive_html(guide, m):
 
             <div class="section-panel">
                 <h2>🏗️ Structural Glazing, Thermal Screen &amp; HVAC Sizing Protocol (EN 13031-1)</h2>
-                <p>Greenhouse structural engineering in <strong>{name}</strong> must adhere to <strong>EN 13031-1</strong> (or equivalent regional ASCE 7 / JIS A 8901 agricultural structure codes) for wind uplift, snow load, and seismic resilience. For commercial Venlo glass or multi-span gothic arch facilities in this latitude band ({lat_str}), unscreened single-layer glazing exhibits a nominal overall heat transfer coefficient ($U$-value) of approximately <strong>{m['u_unscreened']} W/m²·K</strong>. Deploying the recommended <strong>{screen}</strong> reduces the nocturnal effective $U$-value to <strong>{m['u_screened']} W/m²·K</strong>, cutting convective and radiative sky heat loss by 42–50% and yielding an estimated annual heating energy baseline of <strong>~{m['annual_heat_kwh']} kWh/m²/year</strong> under standard 24-hour temperature integration.</p>
-                <p>To prevent carbon dioxide depletion when vents are closed during winter mornings or midday summer misting cycles, CO₂ enrichment should be dosed to <strong>800–1,000 ppm</strong> during peak PAR hours (falling back to 450–550 ppm when roof ventilation exceeds 25% aperture). Where <strong>{cooling}</strong> is active during summer peak irradiation ({esc(guide['dli_summer'])} mol/m²/day), nozzle atomization or evaporative pad saturation efficiency ($\\eta_{{\\text{{evap}}}} = 78\\text{{–}}85\\%$) must be interlocked with exhaust or roof buoyancy airflows to prevent wet-foliage accumulation after 16:00 solar time.</p>
+                <p>Greenhouse structural engineering in <strong>{name}</strong> must adhere to <strong>EN 13031-1</strong> (or equivalent regional ASCE 7 / JIS A 8901 agricultural structure codes) for wind uplift, snow load, and seismic resilience. For commercial Venlo glass or multi-span gothic arch facilities in this latitude band ({lat_str}), unscreened single-layer glazing exhibits a nominal overall heat transfer coefficient (<i>U</i>-value) of approximately <strong>{m['u_unscreened']} W/m²·K</strong>. Deploying the recommended <strong>{screen}</strong> reduces the nocturnal effective <i>U</i>-value to <strong>{m['u_screened']} W/m²·K</strong>, cutting convective and radiative sky heat loss by 42–50% and yielding an estimated annual heating energy baseline of <strong>~{m['annual_heat_kwh']} kWh/m²/year</strong> under standard 24-hour temperature integration.</p>
+                <p>To prevent carbon dioxide depletion when vents are closed during winter mornings or midday summer misting cycles, CO₂ enrichment should be dosed to <strong>800–1,000 ppm</strong> during peak PAR hours (falling back to 450–550 ppm when roof ventilation exceeds 25% aperture). Where <strong>{cooling}</strong> is active during summer peak irradiation ({esc(guide['dli_summer'])} mol/m²/day), nozzle atomization or evaporative pad saturation efficiency (<i>η</i><sub>evap</sub> = 78–85%) must be interlocked with exhaust or roof buoyancy airflows to prevent wet-foliage accumulation after 16:00 solar time.</p>
             </div>
 
             <div class="section-panel">
                 <h2>💧 Regional Crop Fertigation &amp; Root-Zone EC Steering</h2>
-                <p>Root-zone osmotic potential and ionic stoichiometry must track seasonal solar radiation in <strong>{name}</strong>. Because water uptake per unit of nutrient assimilation scales directly with cumulative solar radiation ($J/\\text{{cm}}^2$), irrigation scheduling for <strong>{crops}</strong> transitions from low-frequency, high-EC generative steering in winter to high-frequency, low-EC vegetative/cooling pulses in summer:</p>
+                <p>Root-zone osmotic potential and ionic stoichiometry must track seasonal solar radiation in <strong>{name}</strong>. Because water uptake per unit of nutrient assimilation scales directly with cumulative solar radiation (J/cm²), irrigation scheduling for <strong>{crops}</strong> transitions from low-frequency, high-EC generative steering in winter to high-frequency, low-EC vegetative/cooling pulses in summer:</p>
                 <ul>
-                    <li><strong>Winter Low-Light Regime ({esc(guide['dli_winter'])} mol/m²/d):</strong> Maintain drip irrigation feed EC at <strong>2.8–3.6 mS/cm</strong> (slab/root-zone EC 3.8–4.8 mS/cm, pH 5.6–5.8) with an elevated potassium-to-nitrogen ratio ($\\text{{K:N}} = 1.6\\text{{:}}1$) to harden cell walls, maintain fruit Brix soluble solids, and prevent watery vegetative stretching. Target daily drainage fraction: 15–22% initiated 2.5 hours after sunrise.</li>
-                    <li><strong>Summer Peak Radiation Regime ({esc(guide['dli_summer'])} mol/m²/d):</strong> Lower drip feed EC to <strong>1.8–2.4 mS/cm</strong> (root-zone EC 2.4–3.2 mS/cm) using 80–120 mL/plant irrigation shots triggered every 80–110 J/cm² of accumulated outdoor global solar radiation. Ensure calcium ($\\text{{Ca}}^{{2+}} \\ge 4.5\\text{{ mmol/L}}$) and boron ($\\text{{B}} \\ge 30\\text{{ µmol/L}}$) availability to support rapid xylem mass flow and prevent blossom-end rot or marginal tipburn during high-evapotranspiration afternoons.</li>
+                    <li><strong>Winter Low-Light Regime ({esc(guide['dli_winter'])} mol/m²/d):</strong> Maintain drip irrigation feed EC at <strong>2.8–3.6 mS/cm</strong> (slab/root-zone EC 3.8–4.8 mS/cm, pH 5.6–5.8) with an elevated potassium-to-nitrogen ratio (K:N = 1.6:1) to harden cell walls, maintain fruit Brix soluble solids, and prevent watery vegetative stretching. Target daily drainage fraction: 15–22% initiated 2.5 hours after sunrise.</li>
+                    <li><strong>Summer Peak Radiation Regime ({esc(guide['dli_summer'])} mol/m²/d):</strong> Lower drip feed EC to <strong>1.8–2.4 mS/cm</strong> (root-zone EC 2.4–3.2 mS/cm) using 80–120 mL/plant irrigation shots triggered every 80–110 J/cm² of accumulated outdoor global solar radiation. Ensure calcium (Ca<sup>2+</sup> ≥ 4.5 mmol/L) and boron (B ≥ 30 µmol/L) availability to support rapid xylem mass flow and prevent blossom-end rot or marginal tipburn during high-evapotranspiration afternoons.</li>
                 </ul>
             </div>
 
@@ -263,7 +263,7 @@ def render_deep_dive_html(guide, m):
         <!-- CEA_DEEP_DIVE_END -->"""
 
 
-def render_guide_jsonld(guide, m):
+def render_guide_jsonld(guide, m, date_modified="2026-10-27"):
     url = f"{HUB_URL}{guide['file']}"
     faq_entities = [
         {
@@ -311,7 +311,7 @@ def render_guide_jsonld(guide, m):
                     "affiliation": {"@type": "Organization", "name": "Inwoovation Lab", "url": "https://inwoovation.com"}
                 },
                 "datePublished": "2026-09-01",
-                "dateModified": "2026-10-27",
+                "dateModified": date_modified,
                 "publisher": {"@type": "Organization", "name": "Inwoovation Lab", "url": "https://inwoovation.com"}
             },
             {
@@ -323,15 +323,24 @@ def render_guide_jsonld(guide, m):
     return json.dumps(graph, ensure_ascii=False, indent=4)
 
 
-DEEP_DIVE_RE = re.compile(r"\s*<!-- CEA_DEEP_DIVE_START -->.*?<!-- CEA_DEEP_DIVE_END -->\s*", re.S)
+DEEP_DIVE_RE = re.compile(r"<!-- CEA_DEEP_DIVE_START -->[\s\S]*?<!-- CEA_DEEP_DIVE_END -->")
 JSONLD_RE = re.compile(r'<script type="application/ld\+json">.*?</script>', re.S)
 TWITTER_RE = re.compile(r'\s*<!-- Twitter Card -->.*?(?=\s*<!-- Google Fonts -->)', re.S)
+WIDGET_BLOCK_RE = re.compile(r"<!-- INW-LIVE-WIDGET-START -->[\s\S]*?<!-- INW-LIVE-WIDGET-END -->")
+TSUKUBA_BLOCK_RE = re.compile(r"<!-- INW-TSUKUBA-FUNNEL-START -->[\s\S]*?<!-- INW-TSUKUBA-FUNNEL-END -->")
 
 
 def enrich_guide_file(guide):
     path = os.path.join(CLIMATE_DIR, guide["file"])
-    with open(path, encoding="utf-8", newline="") as fh:
-        page = fh.read()
+    with open(path, encoding="utf-8") as fh:
+        orig_page = fh.read()
+    page = orig_page
+
+    # Preserve existing dateModified and embedded widget/funnel blocks so repeated builds don't churn!
+    dm_match = re.search(r'"dateModified":\s*"(\d{4}-\d{2}-\d{2})"', page)
+    date_mod = dm_match.group(1) if dm_match else "2026-10-27"
+    existing_widget = WIDGET_BLOCK_RE.search(page)
+    existing_tsukuba = TSUKUBA_BLOCK_RE.search(page)
 
     m = _compute_engineering_metrics(guide)
 
@@ -340,15 +349,15 @@ def enrich_guide_file(guide):
         page = page.replace("    </style>", EXTRA_CSS + "\n    </style>", 1)
 
     # 2. Ensure Twitter Card metadata in <head>
-    page = TWITTER_RE.sub("", page)
-    twitter_block = (
-        f'\n    <!-- Twitter Card -->\n'
-        f'    <meta name="twitter:card" content="summary_large_image">\n'
-        f'    <meta name="twitter:title" content="{html_lib.escape(guide["name"])} Greenhouse Climate Engineering Guide">\n'
-        f'    <meta name="twitter:description" content="{html_lib.escape(guide["desc"])}">\n'
-        f'    <meta name="twitter:image" content="https://inwoovation.com/og-cover.jpg">'
-    )
     if 'name="twitter:card"' not in page:
+        page = TWITTER_RE.sub("", page)
+        twitter_block = (
+            f'\n    <!-- Twitter Card -->\n'
+            f'    <meta name="twitter:card" content="summary_large_image">\n'
+            f'    <meta name="twitter:title" content="{html_lib.escape(guide["name"])} Greenhouse Climate Engineering Guide">\n'
+            f'    <meta name="twitter:description" content="{html_lib.escape(guide["desc"])}">\n'
+            f'    <meta name="twitter:image" content="https://inwoovation.com/og-cover.jpg">'
+        )
         page = page.replace(
             '<meta property="og:image" content="https://inwoovation.com/og-cover.jpg">',
             '<meta property="og:image" content="https://inwoovation.com/og-cover.jpg">' + twitter_block,
@@ -356,13 +365,25 @@ def enrich_guide_file(guide):
         )
 
     # 3. Update JSON-LD schema with TechArticle (author: Inwoo Hwang) + FAQPage
-    new_jsonld = f'<script type="application/ld+json">\n{render_guide_jsonld(guide, m)}\n    </script>'
+    new_jsonld = f'<script type="application/ld+json">\n{render_guide_jsonld(guide, m, date_modified=date_mod)}\n    </script>'
     page = JSONLD_RE.sub(lambda _: new_jsonld, page, count=1)
 
-    # 4. Inject or replace CEA_DEEP_DIVE block in-place (or before Relevant Tools / Footer)
+    # 4. Inject or replace CEA_DEEP_DIVE block in-place while preserving existing widget & Tsukuba blocks
     deep_dive_html = render_deep_dive_html(guide, m)
+    preserved_addons = ""
+    if existing_widget:
+        preserved_addons += "\n" + existing_widget.group(0) + "\n"
+    if existing_tsukuba:
+        preserved_addons += existing_tsukuba.group(0) + "\n"
+    if preserved_addons:
+        deep_dive_html = deep_dive_html.replace(
+            '            <div class="eeat-box">',
+            preserved_addons + '            <div class="eeat-box">',
+            1,
+        )
+
     if DEEP_DIVE_RE.search(page):
-        page = DEEP_DIVE_RE.sub(lambda _: "\n\n" + deep_dive_html + "\n\n", page, count=1)
+        page = DEEP_DIVE_RE.sub(lambda _: deep_dive_html.strip(), page, count=1)
     elif "        <!-- Relevant Tools Linkage -->" in page:
         page = page.replace("        <!-- Relevant Tools Linkage -->", deep_dive_html + "\n\n        <!-- Relevant Tools Linkage -->", 1)
     elif "        <!-- AdSense Bottom Banner -->" in page:
@@ -373,13 +394,18 @@ def enrich_guide_file(guide):
     # 5. Repoint backlink idempotently
     page = BACKLINK_RE.sub(lambda match: f'<a href="/climate/"{match.group(1)}>{match.group(2)}{NEW_BACKLINK_TEXT}', page)
 
-    with open(path, "w", encoding="utf-8", newline="") as fh:
-        fh.write(page)
+    if page != orig_page:
+        with open(path, "w", encoding="utf-8", newline="\n") as fh:
+            fh.write(page)
+        return True
+    return False
 
 
 def load_guides():
+    from concurrent.futures import ThreadPoolExecutor
     files = sorted(f for f in os.listdir(CLIMATE_DIR) if f.endswith(".html") and f != "index.html")
-    guides = [parse_guide(f) for f in files]
+    with ThreadPoolExecutor(max_workers=16) as pool:
+        guides = list(pool.map(parse_guide, files))
     return sorted(guides, key=lambda g: -(g["lat"] if g["lat"] is not None else -999))
 
 
@@ -499,9 +525,9 @@ def render_hub(guides):
         <h2>🌍 Comparative Agro-Climatology &amp; CEA Engineering Methodology</h2>
         <p>Designing a commercially viable controlled environment agriculture (CEA) facility requires matching structural typology—such as high-tech Dutch Venlo glasshouses, semi-closed positive-pressure houses, or Mediterranean Parral/Raspa y Amagado polyethylene structures—to local solar radiation and psychrometric boundary conditions. This Global Ag-Climate Atlas synthesizes <strong>{count} major horticultural clusters</strong> spanning from 56.0°N in Northern Europe to 43.5°S in Oceania.</p>
         <h3>1. Solar Daily Light Integral (DLI) &amp; Structural Transmittance</h3>
-        <p>Outdoor Daily Light Integral quantifies the cumulative photosynthetically active radiation (PAR, 400–700 nm) delivered per square meter per day (mol/m²/day). Because greenhouse superstructure frames, gutters, glazing panes, and retractable screen packages intercept 22–35% of incident photons, engineers multiply outdoor DLI by the structural hemispherical transmittance coefficient ($\\tau_{{\\text{{PAR}}}} \\approx 0.65\\text{{–}}0.78$) to determine true canopy DLI. High-latitude maritime and continental zones (e.g., Westland at 52.0°N, Leamington at 42.1°N, Hokkaido at 43.1°N) experience winter outdoor minimums of 4–10 mol/m²/day, requiring 160–280 µmol/m²/s of high-efficacy LED assimilation lighting and double aluminum energy screens to sustain fruiting crops.</p>
+        <p>Outdoor Daily Light Integral quantifies the cumulative photosynthetically active radiation (PAR, 400–700 nm) delivered per square meter per day (mol/m²/day). Because greenhouse superstructure frames, gutters, glazing panes, and retractable screen packages intercept 22–35% of incident photons, engineers multiply outdoor DLI by the structural hemispherical transmittance coefficient (τ<sub>PAR</sub> ≈ 0.65–0.78) to determine true canopy DLI. High-latitude maritime and continental zones (e.g., Westland at 52.0°N, Leamington at 42.1°N, Hokkaido at 43.1°N) experience winter outdoor minimums of 4–10 mol/m²/day, requiring 160–280 µmol/m²/s of high-efficacy LED assimilation lighting and double aluminum energy screens to sustain fruiting crops.</p>
         <h3>2. Psychrometric Enthalpy, Bowen Ratio &amp; Cooling Selection</h3>
-        <p>In arid and semi-arid subtropics (e.g., Almería, Culiacán, Yuma, Riyadh, Dalby), summer DLI exceeds 50–60 mol/m²/day while ambient wet-bulb depression remains large ($\\Delta T_{{wb}} > 10\\text{{ °C}}$). Here, evaporative pad-and-fan systems or 70–100 bar high-pressure fogging achieve high adiabatic cooling efficiency. Conversely, in humid subtropical and tropical monsoon zones (e.g., Toyohashi, Gimje, Kunming, Cameron Highlands, Dalat), elevated ambient vapor pressure limits evaporative cooling potential, necessitating tall gutter heights (6.0–7.0 m), continuous ridge buoyancy ventilation, infrared-reflective shading screens, and active mechanical dehumidification.</p>
+        <p>In arid and semi-arid subtropics (e.g., Almería, Culiacán, Yuma, Riyadh, Dalby), summer DLI exceeds 50–60 mol/m²/day while ambient wet-bulb depression remains large (Δ T<sub>wb</sub> > 10 °C). Here, evaporative pad-and-fan systems or 70–100 bar high-pressure fogging achieve high adiabatic cooling efficiency. Conversely, in humid subtropical and tropical monsoon zones (e.g., Toyohashi, Gimje, Kunming, Cameron Highlands, Dalat), elevated ambient vapor pressure limits evaporative cooling potential, necessitating tall gutter heights (6.0–7.0 m), continuous ridge buoyancy ventilation, infrared-reflective shading screens, and active mechanical dehumidification.</p>
         <p style="margin-top:16px; font-size:0.9rem; color:#94a3b8;"><strong>Curated &amp; Verified by Inwoo Hwang</strong> — Horticultural &amp; CEA Systems Engineer, Inwoovation Lab. Grounded in NASA POWER satellite climatology, EN 13031-1 structural design standards, and DIN V 18599 thermal energy modeling.</p>
     </section>
 </main>
@@ -534,15 +560,32 @@ BACKLINK_RE = re.compile(r'<a href="/guides\.html"([^>]*)>(\s*)← Return to Gui
 
 
 def build():
+    from concurrent.futures import ThreadPoolExecutor
     guides = load_guides()
     unparsed = [g["file"] for g in guides if g["lat"] is None]
     if unparsed:
         raise SystemExit(f"❌ Climate hub: latitude badge not found in {unparsed}")
-    for guide in guides:
-        enrich_guide_file(guide)
-    with open(HUB_PATH, "w", encoding="utf-8", newline="") as fh:
-        fh.write(render_hub(guides))
-    print(f"🌍 Climate hub built & enriched: {len(guides)} guides + climate/index.html")
+    with ThreadPoolExecutor(max_workers=16) as pool:
+        enriched_flags = list(pool.map(enrich_guide_file, guides))
+    changed_guides = sum(1 for f in enriched_flags if f)
+
+    new_hub = render_hub(guides)
+    old_hub = ""
+    if os.path.exists(HUB_PATH):
+        with open(HUB_PATH, encoding="utf-8") as fh:
+            old_hub = fh.read()
+        old_tsukuba = TSUKUBA_BLOCK_RE.search(old_hub)
+        if old_tsukuba and "<!-- INW-TSUKUBA-FUNNEL-START -->" not in new_hub:
+            new_hub = new_hub.replace("\n<footer>", "\n" + old_tsukuba.group(0) + "\n<footer>", 1)
+        old_ld = JSONLD_RE.search(old_hub)
+        if old_ld and '"FAQPage"' in old_ld.group(0) and f'"numberOfItems": {len(guides)}' in old_ld.group(0):
+            new_hub = JSONLD_RE.sub(lambda _: old_ld.group(0), new_hub, count=1)
+
+    hub_changed = new_hub != old_hub
+    if hub_changed:
+        with open(HUB_PATH, "w", encoding="utf-8", newline="\n") as fh:
+            fh.write(new_hub)
+    print(f"🌍 Climate hub verified: {len(guides)} guides ({changed_guides} updated), hub_updated={hub_changed}")
     return guides
 
 

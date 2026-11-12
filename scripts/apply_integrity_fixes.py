@@ -494,10 +494,19 @@ def iter_targets():
 
 
 def run_all(dry_run=False):
-    changed = []
-    for path, rel_path in iter_targets():
+    from concurrent.futures import ThreadPoolExecutor
+    targets = list(iter_targets())
+
+    def _read_target(item):
+        path, rel_path = item
         with open(path, encoding="utf-8", newline="") as fh:
-            original = fh.read()
+            return path, rel_path, fh.read()
+
+    with ThreadPoolExecutor(max_workers=16) as pool:
+        loaded = list(pool.map(_read_target, targets))
+
+    changed = []
+    for path, rel_path, original in loaded:
         updated = fix_dead_host(original) if rel_path.endswith(".js") else transform(rel_path, original)
         if updated != original:
             changed.append(rel_path)

@@ -724,90 +724,108 @@ def sync_all():
         f"8-Country Complete 3-Tier Hyper-Local Matrix (US / DE / JP / NL / FR / ES / CA / KR — {len(programs)} Programs · 100% Playbooks)"
     )
 
-    # Save JSON Feed & External SSOT JS Bundle (keeping Navigator HTML lightweight!)
-    with open(DATA_JSON_PATH, "w", encoding="utf-8") as f:
-        json.dump(data, f, indent=2, ensure_ascii=False)
+    # Save JSON Feed & External SSOT JS Bundle ONLY when changed (keeping Navigator HTML lightweight!)
+    new_json_text = json.dumps(data, indent=2, ensure_ascii=False)
+    old_json_text = ""
+    if os.path.exists(DATA_JSON_PATH):
+        with open(DATA_JSON_PATH, "r", encoding="utf-8") as f:
+            old_json_text = f.read()
     bundle_js_path = os.path.join(PORTAL_DIR, "data", "global_agri_subsidies_bundle.js")
-    with open(bundle_js_path, "w", encoding="utf-8") as bf:
-        bf.write("window.__SUB_DATA_BUNDLE__ = " + json.dumps(data, separators=(",", ":"), ensure_ascii=False) + ";\n")
-    print(f"💾 Updated production JSON feed & SSOT JS bundle (Total: {len(programs)} programs)")
+    new_bundle_text = "window.__SUB_DATA_BUNDLE__ = " + json.dumps(data, separators=(",", ":"), ensure_ascii=False) + ";\n"
+    old_bundle_text = ""
+    if os.path.exists(bundle_js_path):
+        with open(bundle_js_path, "r", encoding="utf-8") as bf:
+            old_bundle_text = bf.read()
 
-    # 5. Sync to SQLite Master Database
-    if os.path.exists(DB_PATH):
-        conn = sqlite3.connect(DB_PATH)
-        cur = conn.cursor()
-        for p in programs:
-            cur.execute("""
-                INSERT OR REPLACE INTO programs (
-                    id, country, country_name, region, region_name, jurisdiction_label, flag,
-                    category, name, agency, subsidy_type, subsidy_rate, rate_decimal,
-                    max_amount, match_requirement, disbursement_type, currency,
-                    verified_date, deadline, selection_method, official_url, portal_name,
-                    contact_phone, contact_email, summary, deep_guide,
-                    linked_calculator, linked_tool_title, updated_at
-                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP)
-            """, (
-                p["id"], p["country"], p["countryName"], p["region"], p["regionName"], p["jurisdictionLabel"], p.get("flag", ""),
-                p["category"], p["name"], p["agency"], p["subsidyType"], p["subsidyRate"], p["rateDecimal"],
-                p["maxAmount"], p["matchRequirement"], p["disbursementType"], p["currency"],
-                p["verifiedDate"], p.get("deadline", ""), p.get("selectionMethod", ""), p.get("officialUrl", ""), p.get("portalName", ""),
-                p.get("contactPhone", ""), p.get("contactEmail", ""), p.get("summary", ""), p.get("deepGuide", ""),
-                p.get("linkedCalculator", ""), p.get("linkedToolTitle", "")
-            ))
+    json_changed = (new_json_text != old_json_text)
+    if json_changed:
+        with open(DATA_JSON_PATH, "w", encoding="utf-8") as f:
+            f.write(new_json_text)
+    if new_bundle_text != old_bundle_text:
+        with open(bundle_js_path, "w", encoding="utf-8") as bf:
+            bf.write(new_bundle_text)
 
-            # Application Window
-            app = p.get("applicationWindow", {})
-            cur.execute("""
-                INSERT OR REPLACE INTO application_windows (
-                    program_id, status, status_label, start_date, end_date,
-                    deadline_display, days_remaining, cycle_frequency, submission_portal
-                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
-            """, (
-                p["id"], app.get("status", "open"), app.get("statusLabel", "🟢 Open"),
-                app.get("startDate", ""), app.get("endDate", ""),
-                app.get("deadlineDisplay", p.get("deadline", "")), app.get("daysRemaining", -1),
-                app.get("cycleFrequency", ""), app.get("submissionPortal", p.get("portalName", ""))
-            ))
+    if not json_changed and os.path.exists(DB_PATH):
+        print(f"⚡ Subsidy JSON feed, JS bundle & SQLite DB already up to date (Total: {len(programs)} programs)")
+    else:
+        print(f"💾 Updated production JSON feed & SSOT JS bundle (Total: {len(programs)} programs)")
+        # 5. Sync to SQLite Master Database
+        if os.path.exists(DB_PATH):
+            conn = sqlite3.connect(DB_PATH)
+            cur = conn.cursor()
+            for p in programs:
+                cur.execute("""
+                    INSERT OR REPLACE INTO programs (
+                        id, country, country_name, region, region_name, jurisdiction_label, flag,
+                        category, name, agency, subsidy_type, subsidy_rate, rate_decimal,
+                        max_amount, match_requirement, disbursement_type, currency,
+                        verified_date, deadline, selection_method, official_url, portal_name,
+                        contact_phone, contact_email, summary, deep_guide,
+                        linked_calculator, linked_tool_title, updated_at
+                    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP)
+                """, (
+                    p["id"], p["country"], p["countryName"], p["region"], p["regionName"], p["jurisdictionLabel"], p.get("flag", ""),
+                    p["category"], p["name"], p["agency"], p["subsidyType"], p["subsidyRate"], p["rateDecimal"],
+                    p["maxAmount"], p["matchRequirement"], p["disbursementType"], p["currency"],
+                    p["verifiedDate"], p.get("deadline", ""), p.get("selectionMethod", ""), p.get("officialUrl", ""), p.get("portalName", ""),
+                    p.get("contactPhone", ""), p.get("contactEmail", ""), p.get("summary", ""), p.get("deepGuide", ""),
+                    p.get("linkedCalculator", ""), p.get("linkedToolTitle", "")
+                ))
 
-            # Target equipment
-            cur.execute("DELETE FROM target_equipment WHERE program_id = ?", (p["id"],))
-            for eq in p.get("targetEquipment", []):
-                cur.execute("INSERT INTO target_equipment (program_id, item_description, is_eligible) VALUES (?, ?, 1)", (p["id"], eq))
-            for ineq in p.get("ineligibleItems", []):
-                cur.execute("INSERT INTO target_equipment (program_id, item_description, is_eligible) VALUES (?, ?, 0)", (p["id"], ineq))
+                # Application Window
+                app = p.get("applicationWindow", {})
+                cur.execute("""
+                    INSERT OR REPLACE INTO application_windows (
+                        program_id, status, status_label, start_date, end_date,
+                        deadline_display, days_remaining, cycle_frequency, submission_portal
+                    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+                """, (
+                    p["id"], app.get("status", "open"), app.get("statusLabel", "🟢 Open"),
+                    app.get("startDate", ""), app.get("endDate", ""),
+                    app.get("deadlineDisplay", p.get("deadline", "")), app.get("daysRemaining", -1),
+                    app.get("cycleFrequency", ""), app.get("submissionPortal", p.get("portalName", ""))
+                ))
 
-            # Criteria
-            cur.execute("DELETE FROM qualification_criteria WHERE program_id = ?", (p["id"],))
-            for qc in p.get("qualificationCriteria", []):
-                cur.execute("INSERT INTO qualification_criteria (program_id, criterion) VALUES (?, ?)", (p["id"], qc))
+                # Target equipment
+                cur.execute("DELETE FROM target_equipment WHERE program_id = ?", (p["id"],))
+                for eq in p.get("targetEquipment", []):
+                    cur.execute("INSERT INTO target_equipment (program_id, item_description, is_eligible) VALUES (?, ?, 1)", (p["id"], eq))
+                for ineq in p.get("ineligibleItems", []):
+                    cur.execute("INSERT INTO target_equipment (program_id, item_description, is_eligible) VALUES (?, ?, 0)", (p["id"], ineq))
 
-            # Documents
-            cur.execute("DELETE FROM document_checklist WHERE program_id = ?", (p["id"],))
-            for doc in p.get("documentChecklist", []):
-                cur.execute("INSERT INTO document_checklist (program_id, document_name, is_mandatory) VALUES (?, ?, 1)", (p["id"], doc))
+                # Criteria
+                cur.execute("DELETE FROM qualification_criteria WHERE program_id = ?", (p["id"],))
+                for qc in p.get("qualificationCriteria", []):
+                    cur.execute("INSERT INTO qualification_criteria (program_id, criterion) VALUES (?, ?)", (p["id"], qc))
 
-            # Facets
-            facets = p.get("facets", {})
-            cur.execute("""
-                INSERT OR REPLACE INTO program_facets (
-                    program_id, funding_tier, match_tier, target_audience, technologies
-                ) VALUES (?, ?, ?, ?, ?)
-            """, (
-                p["id"], facets.get("fundingTier", "tier_medium"), facets.get("matchTier", "zero_match"),
-                json.dumps(facets.get("targetAudience", ["commercial_cea"]), ensure_ascii=False),
-                json.dumps(facets.get("technologies", [p["category"]]), ensure_ascii=False)
-            ))
+                # Documents
+                cur.execute("DELETE FROM document_checklist WHERE program_id = ?", (p["id"],))
+                for doc in p.get("documentChecklist", []):
+                    cur.execute("INSERT INTO document_checklist (program_id, document_name, is_mandatory) VALUES (?, ?, 1)", (p["id"], doc))
 
-        # Promote candidates
-        cur.execute("UPDATE discovered_candidates SET status = 'promoted' WHERE opportunity_title LIKE '%Dairy Plus%' OR opportunity_title LIKE '%Pesticide Regulation%'")
-        conn.commit()
-        conn.close()
-        print(f"🗄️ Master SQLite DB synchronized at: {DB_PATH}")
+                # Facets
+                facets = p.get("facets", {})
+                cur.execute("""
+                    INSERT OR REPLACE INTO program_facets (
+                        program_id, funding_tier, match_tier, target_audience, technologies
+                    ) VALUES (?, ?, ?, ?, ?)
+                """, (
+                    p["id"], facets.get("fundingTier", "tier_medium"), facets.get("matchTier", "zero_match"),
+                    json.dumps(facets.get("targetAudience", ["commercial_cea"]), ensure_ascii=False),
+                    json.dumps(facets.get("technologies", [p["category"]]), ensure_ascii=False)
+                ))
 
-    # 6. Update dynamic counts in lightweight decoupled Navigator HTML Tool (SSOT data lives in /data/global_agri_subsidies_bundle.js)
+            # Promote candidates
+            cur.execute("UPDATE discovered_candidates SET status = 'promoted' WHERE opportunity_title LIKE '%Dairy Plus%' OR opportunity_title LIKE '%Pesticide Regulation%'")
+            conn.commit()
+            conn.close()
+            print(f"🗄️ Master SQLite DB synchronized at: {DB_PATH}")
+
+    # 6. Update dynamic counts in lightweight decoupled Navigator HTML Tool ONLY if changed
     if os.path.exists(NAVIGATOR_HTML_PATH):
         with open(NAVIGATOR_HTML_PATH, "r", encoding="utf-8") as f:
-            html_text = f.read()
+            orig_html_text = f.read()
+        html_text = orig_html_text
 
         html_text = re.sub(
             r"\b\d+\s+verified\s+agricultural\s+incentive\s+programs",
@@ -849,9 +867,10 @@ def sync_all():
                 html_text = html_text.replace('<div class="container">', '<div class="container">\n' + prop4_banner, 1)
             print("✅ Injected Proposition 4 Climate Bond Real-Time Briefing Card into HTML.")
 
-        with open(NAVIGATOR_HTML_PATH, "w", encoding="utf-8") as f:
-            f.write(html_text)
-        print(f"💾 Updated live Navigator HTML at: {NAVIGATOR_HTML_PATH}")
+        if html_text != orig_html_text:
+            with open(NAVIGATOR_HTML_PATH, "w", encoding="utf-8") as f:
+                f.write(html_text)
+            print(f"💾 Updated live Navigator HTML at: {NAVIGATOR_HTML_PATH}")
 
     print("\n🎉 ALL PIPELINES SYNCHRONIZED SUCCESSFULLY!")
     print(f"   Total Verified Programs: {len(programs)}")

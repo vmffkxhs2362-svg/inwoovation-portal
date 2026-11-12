@@ -49,18 +49,30 @@ def make_redirect_html(dest_url):
 </body>
 </html>"""
 
+def _write_if_changed(path, text):
+    old = None
+    if os.path.exists(path):
+        with open(path, "r", encoding="utf-8", errors="ignore") as fh:
+            old = fh.read()
+    if old != text:
+        with open(path, "w", encoding="utf-8") as fh:
+            fh.write(text)
+        return True
+    return False
+
 def ensure_legacy_301_redirectors():
     print("\n🔀 Verifying and enforcing 301 Meta-Refresh & Canonical Redirectors in legacy repos...")
     
     # 1. Smart Farm legacy redirects (never overwrite _template.html!)
     sf_html_files = [f for f in glob.glob(os.path.join(SMARTFARM_DIR, "*.html")) 
                      if not os.path.basename(f).startswith(("_", "old_", "naverbce", "google"))]
+    sf_writes = 0
     for f in sf_html_files:
         filename = os.path.basename(f)
         dest_url = "https://inwoovation.com/smartfarm/" if filename == "index.html" else f"https://inwoovation.com/smartfarm/{filename}"
-        with open(f, "w", encoding="utf-8") as fh:
-            fh.write(make_redirect_html(dest_url))
-    print(f"  ✅ Enforced {len(sf_html_files)} 301 redirects in Passive_Income_Hub")
+        if _write_if_changed(f, make_redirect_html(dest_url)):
+            sf_writes += 1
+    print(f"  ✅ Verified {len(sf_html_files)} 301 redirects in Passive_Income_Hub ({sf_writes} updated)")
     sf_sitemap = os.path.join(SMARTFARM_DIR, "sitemap.xml")
     if os.path.exists(sf_sitemap):
         with open(sf_sitemap, "r", encoding="utf-8", errors="ignore") as f:
@@ -74,21 +86,23 @@ def ensure_legacy_301_redirectors():
     # 2. Wiki legacy redirects
     wiki_html_files = [f for f in glob.glob(os.path.join(WIKI_DIR, "*.html")) 
                        if not os.path.basename(f).startswith("_")]
+    wiki_writes = 0
     for f in wiki_html_files:
         filename = os.path.basename(f)
         dest_url = "https://inwoovation.com/wiki/" if filename == "index.html" else f"https://inwoovation.com/wiki/{filename}"
-        with open(f, "w", encoding="utf-8") as fh:
-            fh.write(make_redirect_html(dest_url))
-    print(f"  ✅ Enforced {len(wiki_html_files)} 301 redirects in AgTech_Wiki")
+        if _write_if_changed(f, make_redirect_html(dest_url)):
+            wiki_writes += 1
+    print(f"  ✅ Verified {len(wiki_html_files)} 301 redirects in AgTech_Wiki ({wiki_writes} updated)")
 
     # 3. AgriMaster legacy redirects
+    am_writes = 0
     for item in ["index.html", "privacy.html", "terms.html"]:
         f = os.path.join(AGRIMASTER_DIR, item)
         if os.path.exists(f):
             dest_url = "https://inwoovation.com/parts/" if item == "index.html" else f"https://inwoovation.com/parts/{item}"
-            with open(f, "w", encoding="utf-8") as fh:
-                fh.write(make_redirect_html(dest_url))
-    print("  ✅ Enforced 301 redirects in AgriMaster_Portal")
+            if _write_if_changed(f, make_redirect_html(dest_url)):
+                am_writes += 1
+    print(f"  ✅ Verified 301 redirects in AgriMaster_Portal ({am_writes} updated)")
 
 SITEMAP_SKIP_DIRS = {".git", "__pycache__", "node_modules", "embed", "scripts", "data",
                      "digital_assets", "handbooks", "css", "js"}
@@ -105,7 +119,8 @@ def _is_publishable(rel_path, html):
 
 def collect_sitemap_entries(portal_dir=PORTAL_DIR):
     """Walk the portal and return sorted [(url, lastmod)] derived purely from files on disk."""
-    entries = []
+    from concurrent.futures import ThreadPoolExecutor
+    candidates = []
     for root, dirs, files in os.walk(portal_dir):
         dirs[:] = [d for d in dirs if d not in SITEMAP_SKIP_DIRS]
         for name in files:
@@ -113,13 +128,20 @@ def collect_sitemap_entries(portal_dir=PORTAL_DIR):
                 continue
             path = os.path.join(root, name)
             rel_path = os.path.relpath(path, portal_dir).replace("\\", "/")
-            with open(path, "r", encoding="utf-8", errors="ignore") as fh:
-                html = fh.read()
-            if not _is_publishable(rel_path, html):
-                continue
-            url_path = rel_path[:-len("index.html")] if name == "index.html" else rel_path
-            match = DATE_MODIFIED_RE.search(html)
-            entries.append((f"https://inwoovation.com/{url_path}", match.group(1) if match else TODAY_ISO))
+            candidates.append((path, rel_path, name))
+
+    def _inspect(item):
+        path, rel_path, name = item
+        with open(path, "r", encoding="utf-8", errors="ignore") as fh:
+            html = fh.read()
+        if not _is_publishable(rel_path, html):
+            return None
+        url_path = rel_path[:-len("index.html")] if name == "index.html" else rel_path
+        match = DATE_MODIFIED_RE.search(html)
+        return (f"https://inwoovation.com/{url_path}", match.group(1) if match else TODAY_ISO)
+
+    with ThreadPoolExecutor(max_workers=16) as pool:
+        entries = [res for res in pool.map(_inspect, candidates) if res is not None]
     return sorted(entries)
 
 
@@ -145,9 +167,9 @@ def update_unified_sitemap():
                 "    <changefreq>weekly</changefreq>", f"    <priority>{_priority_for(url)}</priority>",
                 "  </url>"]
     xml.append('</urlset>')
-    with open(sitemap_path, "w", encoding="utf-8") as f:
-        f.write("\n".join(xml))
-    print(f"  ✅ Unified sitemap written with {len(entries)} URLs to {sitemap_path}")
+    wrote = _write_if_changed(sitemap_path, "\n".join(xml))
+    status = "updated" if wrote else "unchanged"
+    print(f"  ✅ Unified sitemap verified ({status}) with {len(entries)} URLs at {sitemap_path}")
 
 if __name__ == "__main__":
     print("=" * 60)
