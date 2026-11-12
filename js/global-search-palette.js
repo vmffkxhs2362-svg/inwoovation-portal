@@ -502,7 +502,7 @@
     "cat": "article",
     "url": "articles/article-62-us-50-state-agricultural-grant-playbook.html",
     "icon": "📚",
-    "desc": "Comprehensive 50-state commercial agricultural subsidy and grant playbook. How US farmers, CEA greenhouse operators, and agribusinesses secure up to maximize ph",
+    "desc": "Comprehensive 50-state commercial agricultural subsidy and grant playbook. How US farmers, CEA greenhouse operators, and agribusinesses secure up to 90% CAPEX r",
     "tags": "articles article 62 us 50 state agricultural grant playbook html 2026 2027 us 50 state agricultural grant amp subsidy playbook non dilutive capital for smart farms amp cea growers comprehens"
   },
   {
@@ -1120,6 +1120,14 @@
     "icon": "🇩🇪",
     "desc": "Ingenieurwissenschaftliche Analyse zu Schirmspalt (Kierstand), gekoppeltem sensiblem und latentem Wärmetransport durch poröse Gewebe, Rayleigh-/Archimedes-Kaltl",
     "tags": "articles de article 61 energieschirm spaltoeffnung transpiration latente waerme kaltluftabfall html thermodynamik der energieschirm spaltöffnung latente transpirationswärme kaltluftabfall bo"
+  },
+  {
+    "title": "Agrar- &amp; Gewächshausförderung in allen 50 US-Bundesstaaten (2026–2027): USDA REAP, NRCS EQIP &amp; Nicht-Verwässernde Kapitalarchitektur im Systemvergleich mit Deutschland",
+    "cat": "article",
+    "url": "articles/de/article-62-us-50-bundesstaaten-agrarfoerderung-eqip-reap-cea-leitfaden.html",
+    "icon": "🇩🇪",
+    "desc": "Ingenieur- und finanzwirtschaftlicher Leitfaden zur nicht-verwässernden Agrar- und CEA-Investitionsförderung in allen 50 US-Bundesstaaten (USDA REAP, NRCS EQIP ",
+    "tags": "articles de article 62 us 50 bundesstaaten agrarfoerderung eqip reap cea leitfaden html agrar amp gewächshausförderung in allen 50 us bundesstaaten 2026 2027 usda reap nrcs eqip amp nicht ve"
   },
   {
     "title": "CEA &amp; Greenhouse Engineering Articles Library (EN / DE / JA)",
@@ -1890,20 +1898,20 @@
     "tags": "crops vertical farm lettuce leafy greens tipburn prevention guide html controlled environment leafy greens lettuce lactuca sativa microclimate vpd dli precision steering guide precision cea "
   },
   {
-    "title": "Complete CEA Engineering Directory &amp; Index (360 Pages)",
+    "title": "Complete CEA Engineering Directory &amp; Index (361 Pages)",
     "cat": "part",
     "url": "directory.html",
     "icon": "⚙️",
-    "desc": "Master HTML sitemap and engineering taxonomy indexing all 360 calculators, 150 global agricultural grants, EN/DE/JA monographs, crop guides, and climate hubs.",
-    "tags": "directory html complete cea engineering directory amp index 360 pages master html sitemap and engineering taxonomy indexing all 360 calculators 150 global agricultural grants en de ja monogr"
+    "desc": "Master HTML sitemap and engineering taxonomy indexing all 361 calculators, 150 global agricultural grants, EN/DE/JA monographs, crop guides, and climate hubs.",
+    "tags": "directory html complete cea engineering directory amp index 361 pages master html sitemap and engineering taxonomy indexing all 361 calculators 150 global agricultural grants en de ja monogr"
   },
   {
-    "title": "Precision CEA & Horticultural Engineering Articles (78 Volumes / 178 Multilingual Editions)",
+    "title": "Precision CEA & Horticultural Engineering Articles (78 Volumes / 179 Multilingual Editions)",
     "cat": "article",
     "url": "guides.html",
     "icon": "📚",
-    "desc": "78-volume (178 multilingual editions) open-access Controlled Environment Agriculture (CEA) archive — VPD physics, biomass CHP, photobiology, closed-loop fertiga",
-    "tags": "guides html precision cea horticultural engineering articles 78 volumes 178 multilingual editions 78 volume 178 multilingual editions open access controlled environment agriculture cea archi"
+    "desc": "78-volume (179 multilingual editions) open-access Controlled Environment Agriculture (CEA) archive — VPD physics, biomass CHP, photobiology, closed-loop fertiga",
+    "tags": "guides html precision cea horticultural engineering articles 78 volumes 179 multilingual editions 78 volume 179 multilingual editions open access controlled environment agriculture cea archi"
   },
   {
     "title": "Inwoovation Lab",
@@ -2880,13 +2888,13 @@
       <div class="inwoo-palette-box" role="dialog" aria-modal="true" aria-label="Inwoovation Spotlight Search">
         <div class="inwoo-palette-header">
           <span class="inwoo-palette-search-icon">🔍</span>
-          <input type="text" id="inwoo-palette-input" placeholder="Search all 356 tools, simulators, wiki, crops, climate hubs & EN/DE/JA articles..." autocomplete="off" />
+          <input type="text" id="inwoo-palette-input" placeholder="Search all 357 tools, simulators, wiki, crops, climate hubs & EN/DE/JA articles..." autocomplete="off" />
           <span class="inwoo-palette-esc-badge" onclick="window.InwooPalette.close()">ESC</span>
         </div>
         <div class="inwoo-palette-tabs">
-          <button class="inwoo-pal-tab active" data-cat="all">✨ All (356)</button>
+          <button class="inwoo-pal-tab active" data-cat="all">✨ All (357)</button>
           <button class="inwoo-pal-tab" data-cat="tool">🛠️ Tools (49)</button>
-          <button class="inwoo-pal-tab" data-cat="article">📚 Articles (181)</button>
+          <button class="inwoo-pal-tab" data-cat="article">📚 Articles (182)</button>
           <button class="inwoo-pal-tab" data-cat="wiki">🧬 Wiki (44)</button>
           <button class="inwoo-pal-tab" data-cat="climate">🌍 Climate (41)</button>
           <button class="inwoo-pal-tab" data-cat="sim">🧪 Simulators (21)</button>
@@ -2900,7 +2908,7 @@
             <span><kbd>↵</kbd> Open</span>
             <span><kbd>Esc</kbd> Close</span>
           </div>
-          <div style="color: #64748b; font-size: 0.75rem;">Inwoovation Universal Spotlight (356 Indexed Pages)</div>
+          <div style="color: #64748b; font-size: 0.75rem;">Inwoovation Universal Spotlight (357 Indexed Pages)</div>
         </div>
       </div>
     `;
