@@ -3026,10 +3026,10 @@
       if (_ventAnimId) {
         cancelAnimationFrame(_ventAnimId);
         _ventAnimId = null;
-        if (btn) btn.textContent = '▶️ 동적 개폐 시뮬레이션';
+        if (btn) btn.textContent = '▶️ Dynamic Vent Simulation';
         return;
       }
-      if (btn) btn.textContent = '⏸ 애니메이션 정지';
+      if (btn) btn.textContent = '⏸ Pause Animation';
       let t = 0;
       const step = () => {
         t += 0.04;

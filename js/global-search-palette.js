@@ -1130,6 +1130,14 @@
     "tags": "articles de article 62 us 50 bundesstaaten agrarfoerderung eqip reap cea leitfaden html agrar amp gewächshausförderung in allen 50 us bundesstaaten 2026 2027 usda reap nrcs eqip amp nicht ve"
   },
   {
+    "title": "Präzisionsbewässerung, Wassermanagement & Agrarsubventionen: FDACS BMP und TWDB im Vergleich zur EU-WRRL",
+    "cat": "article",
+    "url": "articles/de/article-63-praezisionsbewaesserung-wassermanagement-agrarsubventionen-florida-texas-vergleich.html",
+    "icon": "🇩🇪",
+    "desc": "Ingenieurhandbuch zu Bodenmatrixpotenzial-Telemetrie, Penman-Monteith-Bewässerungssteuerung, US-Wasserförderprogrammen (FDACS BMP 75-87,5 %, TWDB) sowie dem deu",
+    "tags": "articles de article 63 praezisionsbewaesserung wassermanagement agrarsubventionen florida texas vergleich html präzisionsbewässerung wassermanagement agrarsubventionen fdacs bmp und twdb im "
+  },
+  {
     "title": "Tiefengeothermie, Fernwärme & industrielle Großwärmepumpen (NH₃/R290) im Venlo-Gewächshaus",
     "cat": "article",
     "url": "articles/de/article-67-tiefengeothermie-fernwaerme-grosswaermepumpen-gewaechshaus-dekarbonisierung.html",
@@ -1224,6 +1232,14 @@
     "icon": "🇯🇵",
     "desc": "日本および欧州の商業施設イチゴ（Fragaria × ananassa）高設養液栽培における花芽分化検鏡基準（NO3-N管理・短日夜冷）、クラウン部局所加温・冷却、DIF温度差制御、VPDと灰色かび病予防の熱力学・生理学完全ガイド。",
     "tags": "articles ja article 11 strawberry high bench flower bud differentiation dif crown heating jp html 施設イチゴ高設養液栽培の環境制御工学 花芽分化 クラウン局所温度制御 dif vpd精密管理 日本および欧州の商業施設イチゴ fragaria ananassa 高設養液栽培における花"
+  },
+  {
+    "title": "トマト尻腐れ果 (BER) の木部カルシウム輸送機構と夜間VPD・根圧・養液イオン拮抗の統合制御",
+    "cat": "article",
+    "url": "articles/ja/article-12-tomato-blossom-end-rot-calcium-xylem-transport-night-vpd-jp.html",
+    "icon": "🇯🇵",
+    "desc": "施設トマトの尻腐れ果 (Blossom-End Rot) を根絶するための技術詳解。Ca²⁺の師部非移動性と木部質量流、日中蒸散分配と夜間根圧制御 (VPD 0.35〜0.65 kPa)、K⁺/NH₄⁺カチオン拮抗比、最新研究に基づく環境・養液統合プロトコルを解説。",
+    "tags": "articles ja article 12 tomato blossom end rot calcium xylem transport night vpd jp html トマト尻腐れ果 ber の木部カルシウム輸送機構と夜間vpd 根圧 養液イオン拮抗の統合制御 施設トマトの尻腐れ果 blossom end rot を根絶するための技術詳解 ca の師部非移動性と木部質量"
   },
   {
     "title": "スマート温室の精密センサ校正工学：ネルンスト式 (pH/EC)・TDR/FDR培地誘電率・NDIR式CO₂ドリフト補償",
@@ -1914,20 +1930,20 @@
     "tags": "crops vertical farm lettuce leafy greens tipburn prevention guide html controlled environment leafy greens lettuce lactuca sativa microclimate vpd dli precision steering guide precision cea "
   },
   {
-    "title": "Complete CEA Engineering Directory &amp; Index (363 Pages)",
+    "title": "Complete CEA Engineering Directory &amp; Index (365 Pages)",
     "cat": "part",
     "url": "directory.html",
     "icon": "⚙️",
-    "desc": "Master HTML sitemap and engineering taxonomy indexing all 363 calculators, 150 global agricultural grants, EN/DE/JA monographs, crop guides, and climate hubs.",
-    "tags": "directory html complete cea engineering directory amp index 363 pages master html sitemap and engineering taxonomy indexing all 363 calculators 150 global agricultural grants en de ja monogr"
+    "desc": "Master HTML sitemap and engineering taxonomy indexing all 365 calculators, 150 global agricultural grants, EN/DE/JA monographs, crop guides, and climate hubs.",
+    "tags": "directory html complete cea engineering directory amp index 365 pages master html sitemap and engineering taxonomy indexing all 365 calculators 150 global agricultural grants en de ja monogr"
   },
   {
-    "title": "Precision CEA & Horticultural Engineering Articles (78 Volumes / 181 Multilingual Editions)",
+    "title": "Precision CEA & Horticultural Engineering Articles (78 Volumes / 183 Multilingual Editions)",
     "cat": "article",
     "url": "guides.html",
     "icon": "📚",
-    "desc": "78-volume (181 multilingual editions) open-access Controlled Environment Agriculture (CEA) archive — VPD physics, biomass CHP, photobiology, closed-loop fertiga",
-    "tags": "guides html precision cea horticultural engineering articles 78 volumes 181 multilingual editions 78 volume 181 multilingual editions open access controlled environment agriculture cea archi"
+    "desc": "78-volume (183 multilingual editions) open-access Controlled Environment Agriculture (CEA) archive — VPD physics, biomass CHP, photobiology, closed-loop fertiga",
+    "tags": "guides html precision cea horticultural engineering articles 78 volumes 183 multilingual editions 78 volume 183 multilingual editions open access controlled environment agriculture cea archi"
   },
   {
     "title": "Inwoovation Lab",
@@ -2486,8 +2502,8 @@
     "cat": "tool",
     "url": "tools/semi-closed-greenhouse-atu-mollier-simulator.html",
     "icon": "🛠️",
-    "desc": "산업용 반밀폐 온실(Semi-Closed Greenhouse) 공조기(ATU) 및 몰리에르 선도(Mollier h-x) 실시간 3D 열역학 시뮬레이터. Kubo Ultra-Clima & Van der Hoeven ModulAIR 벤치마크, 타공 덕트 기류, 양압(+20Pa) 해충 차폐 ",
-    "tags": "tools semi closed greenhouse atu mollier simulator html semi closed greenhouse atu mollier h x psychrometric 3d simulator semi closed greenhouse atu mollier h x 3d kubo ultra clima van der h"
+    "desc": "Interactive 3D Semi-Closed Greenhouse Air Treatment Unit (ATU) & Mollier h-x psychrometric simulator. Model Kubo Ultra-Clima & ModulAIR adiabatic fogging, under",
+    "tags": "tools semi closed greenhouse atu mollier simulator html semi closed greenhouse atu mollier h x psychrometric 3d simulator interactive 3d semi closed greenhouse air treatment unit atu mollier"
   },
   {
     "title": "Substrate Matric Potential (pF Curve & van Genuchten) Calculator",
@@ -2904,13 +2920,13 @@
       <div class="inwoo-palette-box" role="dialog" aria-modal="true" aria-label="Inwoovation Spotlight Search">
         <div class="inwoo-palette-header">
           <span class="inwoo-palette-search-icon">🔍</span>
-          <input type="text" id="inwoo-palette-input" placeholder="Search all 359 tools, simulators, wiki, crops, climate hubs & EN/DE/JA articles..." autocomplete="off" />
+          <input type="text" id="inwoo-palette-input" placeholder="Search all 361 tools, simulators, wiki, crops, climate hubs & EN/DE/JA articles..." autocomplete="off" />
           <span class="inwoo-palette-esc-badge" onclick="window.InwooPalette.close()">ESC</span>
         </div>
         <div class="inwoo-palette-tabs">
-          <button class="inwoo-pal-tab active" data-cat="all">✨ All (359)</button>
+          <button class="inwoo-pal-tab active" data-cat="all">✨ All (361)</button>
           <button class="inwoo-pal-tab" data-cat="tool">🛠️ Tools (49)</button>
-          <button class="inwoo-pal-tab" data-cat="article">📚 Articles (184)</button>
+          <button class="inwoo-pal-tab" data-cat="article">📚 Articles (186)</button>
           <button class="inwoo-pal-tab" data-cat="wiki">🧬 Wiki (44)</button>
           <button class="inwoo-pal-tab" data-cat="climate">🌍 Climate (41)</button>
           <button class="inwoo-pal-tab" data-cat="sim">🧪 Simulators (21)</button>
@@ -2924,7 +2940,7 @@
             <span><kbd>↵</kbd> Open</span>
             <span><kbd>Esc</kbd> Close</span>
           </div>
-          <div style="color: #64748b; font-size: 0.75rem;">Inwoovation Universal Spotlight (359 Indexed Pages)</div>
+          <div style="color: #64748b; font-size: 0.75rem;">Inwoovation Universal Spotlight (361 Indexed Pages)</div>
         </div>
       </div>
     `;
