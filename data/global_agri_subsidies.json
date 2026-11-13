@@ -1306,32 +1306,32 @@
       "countryName": "Germany",
       "region": "DE",
       "regionName": "Germany (Federal)",
-      "jurisdictionLabel": "Germany (BLE / BMEL)",
+      "jurisdictionLabel": "Germany (FNR / BMEL)",
       "flag": "🇩🇪",
       "category": "energy",
       "name": "Bundesprogramm Energieeffizienz in Landwirtschaft und Gartenbau",
-      "agency": "Bundesanstalt für Landwirtschaft und Ernährung (BLE) / BMEL",
+      "agency": "Fachagentur Nachwachsende Rohstoffe e.V. (FNR) / BMEL (Transferred from BLE)",
       "subsidyType": "Direct Non-Repayable Capital Grant (Zuschuss)",
-      "subsidyRate": "30% - 40% of Total Investment Cost",
-      "rateDecimal": 0.35,
+      "subsidyRate": "40% - 50% of Eligible Investment (Federal KTF Paused -> 20% State Länder-AFP Active)",
+      "rateDecimal": 0.4,
       "maxAmount": "€600,000 per project (€1.2M for combined consortium measures)",
       "matchRequirement": "60% - 70% Enterprise Match (Own equity or commercial bank loan)",
       "disbursementType": "Progress Reimbursement based on verified invoices and consultant certification",
       "currency": "EUR",
-      "verifiedDate": "2026-11-10 Verified (GA4 Target-Region Audit)",
-      "deadline": "Rolling Intake / Continuous Federal Budget Window",
+      "verifiedDate": "2026-11-13 Verified (FNR Jurisdiction & KTF Antragsstopp Audit)",
+      "deadline": "Federal KTF Intake Paused (Antragsstopp since 2026-05-31) — Route via State Länder-AFP",
       "selectionMethod": "First-Come, First-Served for verified applications meeting ≥20% CO2 savings threshold",
       "targetEquipment": [
-        "High-performance thermal climate screens (Energieschirme: Svensson, Bonar, Phormium)",
-        "Industrial horticultural LED lighting fixtures replacing high-pressure sodium",
-        "Insulating greenhouse glazing retrofits (Doppelstegplatten, diffuse isolierglas)",
-        "Flue gas heat recovery condensers, buffer tanks, and latent heat exchangers"
+        "Multi-layer greenhouse covers & double thermal/energy screen retrofits (Energieschirme achieving ≤452.2 kWh/m²/a and ≥80% renewable/waste heat)",
+        "Flue gas condensers, heat pumps, stratified thermal buffer tanks (Wärmespeicher), and heat recovery exchangers",
+        "Automated climate control computers & precision HVAC actuator modernization",
+        "Fallback Route (Active Now): State-level Agrarinvestitionsförderungsprogramm (Länder-AFP, 20% base grant) via LWK NRW / StMELF Bayern / LWK Niedersachsen"
       ],
       "ineligibleItems": [
-        "Greenhouse construction or expansion without proven energy savings",
-        "Measures ordered or commenced prior to official Zuwendungsbescheid approval",
-        "Second-hand or used horticultural machinery",
-        "General operational expenditure and production consumables"
+        "Horticultural LED supplemental lighting fixtures & industrial air compressors (explicitly excluded under revised FNR Module guidelines)",
+        "New Federal KTF applications while temporary intake freeze (Antragsstopp since 2026-05-31) remains in effect",
+        "Vorzeitiger Maßnahmenbeginn: Any purchase order or contract signed prior to written Zuwendungsbescheid",
+        "Second-hand machinery or greenhouse expansion without certified ≥15%–20% CO2/primary energy savings"
       ],
       "qualificationCriteria": [
         "Commercial horticultural and agricultural enterprises located in Germany",
@@ -1346,23 +1346,23 @@
         "Commercial Register Excerpt (Handelsregisterauszug / Gewerbeanmeldung)",
         "De-minimis declaration and KMU self-assessment declaration"
       ],
-      "officialUrl": "https://www.ble.de/DE/Projektfoerderung/Foerderungen-Auftraege/Bundesprogramm-Energieeffizienz/bundesprogramm-energieeffizienz_node.html",
-      "portalName": "BLE Förderportal easy-Online",
-      "contactPhone": "+49 228 6845-3800",
-      "contactEmail": "energieeffizienz@ble.de",
+      "officialUrl": "https://energieeffizienz.fnr.de/foerderprogramm/ueberblick",
+      "portalName": "FNR Förderportal Energieeffizienz (energieeffizienz.fnr.de)",
+      "contactPhone": "+49 3843 6930-0",
+      "contactEmail": "energieeffizienz@fnr.de",
       "linkedCalculator": "greenhouse-heating-load-thermal-screen-calculator.html",
       "linkedToolTitle": "Thermal Screen Heat Savings",
-      "summary": "Germany's flagship greenhouse modernization grant covering up to 40% of capital costs for thermal screens, LED conversion, and greenhouse insulation with €600,000 grant ceiling.",
-      "deepGuide": "Must hire an accredited Energieberater before purchasing any equipment. The grant contract must be formally issued by BLE before placing purchase orders.",
+      "summary": "Germany's federal greenhouse energy efficiency grant (now administered by FNR, 40%–50% up to €600k for double thermal screens ≤452.2 kWh/m²/a & heat recovery; LEDs/compressors excluded). Note: Federal KTF new intake is paused (Antragsstopp since May 31, 2026) — active German CEA projects should route immediately through state Länder-AFP (20% grant) + Rentenbank promotional loans.",
+      "deepGuide": "CRITICAL 2026 REGULATORY UPDATE: Administration transferred from BLE to FNR (energieeffizienz.fnr.de), LEDs and compressors are excluded, and new federal KTF intake entered temporary Antragsstopp on 2026-05-31. Until federal KTF reopens, route greenhouse screen/HVAC capex through your state Länder-AFP (20% base grant + Junglandwirte bonus) paired with Landwirtschaftliche Rentenbank credit, and NEVER sign vendor orders before formal Zuwendungsbescheid approval.",
       "applicationWindow": {
-        "status": "open",
-        "statusLabel": "🟢 Open for Applications",
+        "status": "closing_soon",
+        "statusLabel": "🟡 Federal KTF Paused (Antragsstopp) — Route via Länder-AFP (20%)",
         "startDate": "2026-01-01",
         "endDate": "2026-12-31",
-        "deadlineDisplay": "2026-12-31 (Year-Round Rolling Intake)",
+        "deadlineDisplay": "KTF Paused since 2026-05-31 (State Länder-AFP Active)",
         "daysRemaining": 48,
         "cycleFrequency": "Continuous Rolling Submission",
-        "submissionPortal": "BLE Förderportal (foerderportal.bund.de)"
+        "submissionPortal": "FNR Portal (energieeffizienz.fnr.de) / State Länder-AFP Fallback"
       },
       "facets": {
         "fundingTier": "tier_large",
@@ -1379,10 +1379,10 @@
       "applicationPlaybook": {
         "officialCalculators": [
           {
-            "name": "BLE CO2-Minderungsberechnung & Energieberatungsbericht",
+            "name": "FNR CO2-Minderungsberechnung & Energieberatungsbericht",
             "format": "Official BLE Excel Portal Tool (.xlsx)",
             "description": "Quantifies minimum 15%-20% CO2 and primary energy savings across thermal screens, LED retrofits, heat pumps, and climate computers.",
-            "url": "https://www.ble.de/DE/Projektfoerderung/Foerderungen-Auftraege/Bundesprogramm-Energieeffizienz/bundesprogramm-energieeffizienz_node.html"
+            "url": "https://energieeffizienz.fnr.de/foerderprogramm/ueberblick"
           }
         ],
         "scoringCheatSheet": {
@@ -1401,8 +1401,8 @@
         "stackingRules": "Cumulative public funding may not exceed EU GBER (AGVO) ceilings (typically 65% max). Can be paired with Landwirtschaftliche Rentenbank promotional loans."
       },
       "admin_tier": "Federal",
-      "region_scope": "Germany (Federal) (Germany (BLE / BMEL))",
-      "filing_authority": "Bundesanstalt für Landwirtschaft und Ernährung (BLE) / BMEL (BLE Förderportal easy-Online)"
+      "region_scope": "Germany (Federal) (Germany (FNR / BMEL))",
+      "filing_authority": "Fachagentur Nachwachsende Rohstoffe e.V. (FNR) / BMEL (FNR Förderportal Energieeffizienz)"
     },
     {
       "id": "DE-AFP-NRW",

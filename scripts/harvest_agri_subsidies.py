@@ -80,12 +80,12 @@ TARGET_PORTALS = [
     },
     {
         "id": "DE_BLE_ENERGIE",
-        "name": "Germany BLE Bundesprogramm Energieeffizienz im Gartenbau",
-        "url": "https://www.bundesprogramm-energieeffizienz.de/",
+        "name": "Germany FNR / BMEL Bundesprogramm Energieeffizienz in Landwirtschaft und Gartenbau",
+        "url": "https://energieeffizienz.fnr.de/foerderprogramm/ueberblick",
         "tier": "Federal",
         "region": "DE-FED",
         "country": "DE",
-        "agency": "Bundesanstalt für Landwirtschaft und Ernährung (BLE)",
+        "agency": "Fachagentur Nachwachsende Rohstoffe e.V. (FNR) / BMEL",
         "pinned_selectors": [".teaser", ".aktuelles"],
         "max_age_days": 90
     },
