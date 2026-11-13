@@ -811,19 +811,203 @@ html, body {
 }
 @media (max-width: 640px) {
   #inw-gdpr-consent-bar {
-    left: 10px;
-    right: 10px;
-    bottom: 10px;
-    padding: 12px 14px;
-    font-size: 0.76rem;
+    left: 8px;
+    right: 8px;
+    bottom: 8px;
+    padding: 8px 12px !important;
+    font-size: 0.72rem !important;
+    line-height: 1.35 !important;
+    gap: 8px;
+    border-radius: 10px;
   }
   .inw-gdpr-actions {
     width: 100%;
     justify-content: flex-end;
+    gap: 6px;
+  }
+  .inw-gdpr-btn-accept,
+  .inw-gdpr-btn-essential {
+    padding: 5px 10px !important;
+    font-size: 0.72rem !important;
   }
 }
 @media print {
-  #inw-gdpr-consent-bar {
+  #inw-gdpr-consent-bar,
+  .inw-workspace-bar,
+  .instant-demo-strip,
+  #inw-recent-workspace-bar {
     display: none !important;
+  }
+}
+
+/* 6. My CEA Workspace Persistence Bar & Homepage Quick-Resume / Demo Strips */
+.inw-workspace-bar {
+  max-width: 1400px;
+  margin: 12px auto 14px auto;
+  padding: 10px 14px;
+  background: rgba(15, 23, 42, 0.88);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  border-radius: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  box-sizing: border-box;
+  font-family: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+}
+.inw-ws-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #34d399;
+}
+.inw-ws-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+.inw-ws-pill {
+  background: rgba(30, 41, 59, 0.92);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  color: #e2e8f0;
+  font-size: 0.76rem;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.16s ease;
+  white-space: nowrap;
+}
+.inw-ws-pill:hover {
+  border-color: #38bdf8;
+  background: rgba(56, 189, 248, 0.18);
+  color: #ffffff;
+}
+.inw-ws-pill-share {
+  background: rgba(16, 185, 129, 0.14);
+  border-color: rgba(16, 185, 129, 0.45);
+  color: #34d399;
+}
+@media (max-width: 640px) {
+  .inw-workspace-bar {
+    margin: 10px 8px;
+    padding: 8px 10px;
+  }
+  .inw-ws-status {
+    font-size: 0.72rem;
+  }
+  .inw-ws-pill {
+    font-size: 0.71rem;
+    padding: 5px 9px;
+  }
+}
+
+/* 7. Fallback Precision Hardware Card Styles for Custom Simulators */
+.amazon-showcase {
+  background: linear-gradient(180deg, rgba(30, 41, 59, 0.85) 0%, rgba(15, 23, 42, 0.95) 100%);
+  border: 1px solid rgba(245, 158, 11, 0.25);
+  border-radius: 16px;
+  padding: 24px;
+  margin: 24px auto;
+  max-width: 1400px;
+  box-sizing: border-box;
+  box-shadow: 0 12px 30px -5px rgba(0, 0, 0, 0.4);
+}
+.amazon-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 12px;
+}
+.amazon-header h3 {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #fbbf24;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.amazon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+}
+.amazon-card {
+  background: rgba(15, 23, 42, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+.amazon-badge {
+  display: inline-block;
+  align-self: flex-start;
+  background: rgba(245, 158, 11, 0.15);
+  color: #f59e0b;
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.amazon-product-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #f8fafc;
+  margin: 0 0 8px 0;
+  line-height: 1.38;
+}
+.amazon-product-desc {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  line-height: 1.5;
+  margin: 0 0 14px 0;
+  flex-grow: 1;
+}
+.amazon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  color: #0f172a;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 0.85rem;
+  padding: 10px 14px;
+  border-radius: 8px;
+}
+.affiliate-disclosure {
+  margin-top: 14px;
+  padding: 10px 12px;
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 6px;
+  font-size: 0.74rem;
+  color: #64748b;
+  line-height: 1.45;
+  text-align: center;
+}
+@media (max-width: 640px) {
+  .amazon-showcase {
+    padding: 16px 12px;
+  }
+  .amazon-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
   }
 }

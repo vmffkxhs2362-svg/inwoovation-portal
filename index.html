@@ -199,8 +199,85 @@
         }
         @media (max-width: 640px) {
             .dock-tabs {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: repeat(2, minmax(0, 1fr));
             }
+            .omnibox-input-row {
+                flex-wrap: wrap;
+                padding: 8px 10px;
+                gap: 6px;
+            }
+            .omnibox-input {
+                min-width: 0;
+                width: 100%;
+                font-size: 0.9rem;
+            }
+        }
+        /* Instant 1-Click Flagship Demo Strip & Returning-Visitor Resume Strip */
+        .instant-demo-strip {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin: 10px auto 6px;
+            max-width: 880px;
+        }
+        .instant-demo-label {
+            font-size: 0.78rem;
+            font-weight: 800;
+            color: #34d399;
+            letter-spacing: 0.02em;
+        }
+        .instant-demo-pill {
+            text-decoration: none;
+            font-size: 0.76rem;
+            font-weight: 700;
+            padding: 5px 11px;
+            border-radius: 999px;
+            background: rgba(15, 23, 42, 0.88);
+            border: 1px solid rgba(56, 189, 248, 0.35);
+            color: #e2e8f0;
+            transition: all 0.16s ease;
+        }
+        .instant-demo-pill:hover {
+            border-color: #34d399;
+            color: #34d399;
+            transform: translateY(-1px);
+        }
+        #inw-recent-workspace-bar {
+            display: none;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin: 12px auto 4px;
+            padding: 10px 14px;
+            max-width: 880px;
+            background: rgba(16, 185, 129, 0.08);
+            border: 1px solid rgba(16, 185, 129, 0.35);
+            border-radius: 14px;
+        }
+        #inw-recent-workspace-list {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 7px;
+        }
+        .inw-recent-pill {
+            text-decoration: none;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 999px;
+            background: rgba(15, 23, 42, 0.9);
+            border: 1px solid rgba(52, 211, 153, 0.45);
+            color: #a7f3d0;
+            transition: all 0.16s ease;
+        }
+        .inw-recent-pill:hover {
+            border-color: #38bdf8;
+            color: #38bdf8;
         }
         .dock-tab-btn {
             background: rgba(30, 41, 59, 0.75);
@@ -378,7 +455,7 @@
       "url": "https://inwoovation.com",
       "description": "Engineered agricultural models, 106 global CEA grant dossiers, 3D Venlo CAD, and client-side biophysical simulators for commercial growers and agricultural engineers.",
       "datePublished": "2026-06-17",
-      "dateModified": "2026-11-12"
+      "dateModified": "2026-11-13"
     }
     </script>
 
@@ -443,11 +520,11 @@
                 <a href="tools/global-agri-subsidy-grant-navigator.html" class="nav-item nav-item-highlight">🏛️ 150 Grants Radar</a>
                 <a href="tools/venlocad-3d.html" class="nav-item" style="border-color: rgba(14, 165, 233, 0.5) !important; color: #38bdf8 !important;">📐 VenloCAD 3D</a>
                 <a href="tools/index.html" class="nav-item">🛠️ 42 Calculators</a>
-                <a href="guides.html" class="nav-item">📚 178 Monographs</a>
+                <a href="guides.html" class="nav-item">📚 181 Monographs</a>
                 <a href="crops/greenhouse-tomato-microclimate-vpd-steering-guide.html" class="nav-item">🌱 10 Crops</a>
                 <a href="climate/" class="nav-item">🌍 40 Climate Hubs</a>
                 <a href="meister.html" class="nav-item" style="color: #fbbf24 !important;">🇩🇪 Meister &amp; Podcast</a>
-                <a href="directory.html" class="nav-item" style="border-color: rgba(52, 211, 153, 0.45) !important; color: #34d399 !important;">🗂️ All 360 Index</a>
+                <a href="directory.html" class="nav-item" style="border-color: rgba(52, 211, 153, 0.45) !important; color: #34d399 !important;">🗂️ All 363 Index</a>
                 <a href="store.html" class="nav-item" style="border-color: rgba(245, 158, 11, 0.45) !important; color: #fbbf24 !important;">💎 Store</a>
                 <a href="about.html" class="nav-item">About</a>
             </nav>
@@ -468,9 +545,26 @@
                 <div class="omnibox-input-row">
                     <span style="font-size: 1.15rem; margin-right: 8px;">🔎</span>
                     <input type="text" id="home-quick-finder" class="omnibox-input" placeholder="Type to find any tool, country subsidy, or crop guide (e.g. Grant, Heat Pump, Strawberry, VPD, UV-C, VenloCAD)..." oninput="filterQuickDirectory(this.value)" autocomplete="off">
-                    <button type="button" onclick="window.InwooPalette.open()" style="background: rgba(56, 189, 248, 0.15); border: 1px solid rgba(56, 189, 248, 0.4); color: #38bdf8; padding: 7px 12px; border-radius: 10px; font-weight: 700; font-size: 0.78rem; cursor: pointer; white-space: nowrap;">Ctrl+K All 360 Pages</button>
+                    <button type="button" onclick="window.InwooPalette.open()" style="background: rgba(56, 189, 248, 0.15); border: 1px solid rgba(56, 189, 248, 0.4); color: #38bdf8; padding: 7px 12px; border-radius: 10px; font-weight: 700; font-size: 0.78rem; cursor: pointer; white-space: nowrap;">Ctrl+K All 363 Pages</button>
                 </div>
                 <div id="omnibox-results" class="omnibox-results"></div>
+            </div>
+
+            <!-- 1-Click Instant Flagship Launch Strip (< 3s Onboarding) -->
+            <div class="instant-demo-strip" aria-label="1-Click Live Simulators">
+                <span class="instant-demo-label">🚀 1-Click Live Launch:</span>
+                <a href="tools/semi-closed-greenhouse-atu-mollier-simulator.html" class="instant-demo-pill">🌀 3D Semi-Closed ATU</a>
+                <a href="tools/venlocad-3d.html" class="instant-demo-pill">📐 VenloCAD 3D</a>
+                <a href="tools/global-agri-subsidy-grant-navigator.html" class="instant-demo-pill">🏛️ 150 Global Grants</a>
+                <a href="tools/greenhouse-energy-tariff-bess-p2h-arbitrage-calculator.html" class="instant-demo-pill">⚡ EPEX BESS/P2H</a>
+                <a href="tools/hydroponic-nutrient-solution-calculator.html" class="instant-demo-pill">🧪 Hydroponic A/B Solver</a>
+            </div>
+
+            <!-- Dynamic Returning-Visitor Workspace Resume Bar (populated from localStorage) -->
+            <div id="inw-recent-workspace-bar" role="region" aria-label="Recent Engineering Workspace">
+                <span style="font-size: 0.78rem; font-weight: 800; color: #34d399;">🔄 Resume Your Recent Workspace:</span>
+                <div id="inw-recent-workspace-list"></div>
+                <button type="button" id="inw-clear-recent-btn" style="background: transparent; border: 1px solid rgba(148, 163, 184, 0.35); color: #94a3b8; font-size: 0.72rem; padding: 3px 8px; border-radius: 999px; cursor: pointer;">× Clear</button>
             </div>
         </section>
 
@@ -502,7 +596,7 @@
                 <button type="button" class="dock-tab-btn" id="dock-btn-library" onclick="switchDockTab('library')">
                     <span class="tab-emoji">📚</span>
                     <span>5. Monographs &amp; 40 Hubs</span>
-                    <span class="tab-sub">78 EN · 61 DE · 39 JA · Climate Atlas</span>
+                    <span class="tab-sub">78 EN · 63 DE · 40 JA · Climate Atlas</span>
                 </button>
                 <button type="button" class="dock-tab-btn" id="dock-btn-meister" onclick="switchDockTab('meister')">
                     <span class="tab-emoji">🇩🇪</span>

@@ -1130,6 +1130,14 @@
     "tags": "articles de article 62 us 50 bundesstaaten agrarfoerderung eqip reap cea leitfaden html agrar amp gewächshausförderung in allen 50 us bundesstaaten 2026 2027 usda reap nrcs eqip amp nicht ve"
   },
   {
+    "title": "Tiefengeothermie, Fernwärme & industrielle Großwärmepumpen (NH₃/R290) im Venlo-Gewächshaus",
+    "cat": "article",
+    "url": "articles/de/article-67-tiefengeothermie-fernwaerme-grosswaermepumpen-gewaechshaus-dekarbonisierung.html",
+    "icon": "🇩🇪",
+    "desc": "Ingenieurhandbuch zur Integration hydrothermaler Tiefengeothermie, BEW-Wärmenetze und industrieller NH3/R290-Großwärmepumpen nach DIN V 18599 & VDI 4640 im Erwe",
+    "tags": "articles de article 67 tiefengeothermie fernwaerme grosswaermepumpen gewaechshaus dekarbonisierung html tiefengeothermie fernwärme industrielle großwärmepumpen nh r290 im venlo gewächshaus i"
+  },
+  {
     "title": "CEA &amp; Greenhouse Engineering Articles Library (EN / DE / JA)",
     "cat": "article",
     "url": "articles/index.html",
@@ -1208,6 +1216,14 @@
     "icon": "🇯🇵",
     "desc": "完全人工光型植物工場 (PFAL) および垂直農業における空調・潜熱除湿の熱力学設計モノグラフ。湿り空気線図 (Psychrometrics)、低顕熱比 (SHR = Qs / Qtot = 0.32–0.45)、蒸散潜熱負荷、ホットガス再熱除湿サイクル、システムCOP最適化、および多段栽培棚のチップバーンを根絶するC",
     "tags": "articles ja article 10 vertical farm hvac design jp html vol 10 完全人工光型植物工場 pfal の空調 潜熱除湿熱力学設計 湿り空気線図 psychrometrics 顕熱比 shr 再熱除湿サイクル cop最適化と多段栽培棚cfd気流均一化 完全人工光型植物工場 pfal および垂直農業における空調 潜熱除湿の熱"
+  },
+  {
+    "title": "施設イチゴ高設養液栽培の環境制御工学：花芽分化・クラウン局所温度制御・DIF・VPD精密管理",
+    "cat": "article",
+    "url": "articles/ja/article-11-strawberry-high-bench-flower-bud-differentiation-dif-crown-heating-jp.html",
+    "icon": "🇯🇵",
+    "desc": "日本および欧州の商業施設イチゴ（Fragaria × ananassa）高設養液栽培における花芽分化検鏡基準（NO3-N管理・短日夜冷）、クラウン部局所加温・冷却、DIF温度差制御、VPDと灰色かび病予防の熱力学・生理学完全ガイド。",
+    "tags": "articles ja article 11 strawberry high bench flower bud differentiation dif crown heating jp html 施設イチゴ高設養液栽培の環境制御工学 花芽分化 クラウン局所温度制御 dif vpd精密管理 日本および欧州の商業施設イチゴ fragaria ananassa 高設養液栽培における花"
   },
   {
     "title": "スマート温室の精密センサ校正工学：ネルンスト式 (pH/EC)・TDR/FDR培地誘電率・NDIR式CO₂ドリフト補償",
@@ -1898,20 +1914,20 @@
     "tags": "crops vertical farm lettuce leafy greens tipburn prevention guide html controlled environment leafy greens lettuce lactuca sativa microclimate vpd dli precision steering guide precision cea "
   },
   {
-    "title": "Complete CEA Engineering Directory &amp; Index (361 Pages)",
+    "title": "Complete CEA Engineering Directory &amp; Index (363 Pages)",
     "cat": "part",
     "url": "directory.html",
     "icon": "⚙️",
-    "desc": "Master HTML sitemap and engineering taxonomy indexing all 361 calculators, 150 global agricultural grants, EN/DE/JA monographs, crop guides, and climate hubs.",
-    "tags": "directory html complete cea engineering directory amp index 361 pages master html sitemap and engineering taxonomy indexing all 361 calculators 150 global agricultural grants en de ja monogr"
+    "desc": "Master HTML sitemap and engineering taxonomy indexing all 363 calculators, 150 global agricultural grants, EN/DE/JA monographs, crop guides, and climate hubs.",
+    "tags": "directory html complete cea engineering directory amp index 363 pages master html sitemap and engineering taxonomy indexing all 363 calculators 150 global agricultural grants en de ja monogr"
   },
   {
-    "title": "Precision CEA & Horticultural Engineering Articles (78 Volumes / 179 Multilingual Editions)",
+    "title": "Precision CEA & Horticultural Engineering Articles (78 Volumes / 181 Multilingual Editions)",
     "cat": "article",
     "url": "guides.html",
     "icon": "📚",
-    "desc": "78-volume (179 multilingual editions) open-access Controlled Environment Agriculture (CEA) archive — VPD physics, biomass CHP, photobiology, closed-loop fertiga",
-    "tags": "guides html precision cea horticultural engineering articles 78 volumes 179 multilingual editions 78 volume 179 multilingual editions open access controlled environment agriculture cea archi"
+    "desc": "78-volume (181 multilingual editions) open-access Controlled Environment Agriculture (CEA) archive — VPD physics, biomass CHP, photobiology, closed-loop fertiga",
+    "tags": "guides html precision cea horticultural engineering articles 78 volumes 181 multilingual editions 78 volume 181 multilingual editions open access controlled environment agriculture cea archi"
   },
   {
     "title": "Inwoovation Lab",
@@ -2888,13 +2904,13 @@
       <div class="inwoo-palette-box" role="dialog" aria-modal="true" aria-label="Inwoovation Spotlight Search">
         <div class="inwoo-palette-header">
           <span class="inwoo-palette-search-icon">🔍</span>
-          <input type="text" id="inwoo-palette-input" placeholder="Search all 357 tools, simulators, wiki, crops, climate hubs & EN/DE/JA articles..." autocomplete="off" />
+          <input type="text" id="inwoo-palette-input" placeholder="Search all 359 tools, simulators, wiki, crops, climate hubs & EN/DE/JA articles..." autocomplete="off" />
           <span class="inwoo-palette-esc-badge" onclick="window.InwooPalette.close()">ESC</span>
         </div>
         <div class="inwoo-palette-tabs">
-          <button class="inwoo-pal-tab active" data-cat="all">✨ All (357)</button>
+          <button class="inwoo-pal-tab active" data-cat="all">✨ All (359)</button>
           <button class="inwoo-pal-tab" data-cat="tool">🛠️ Tools (49)</button>
-          <button class="inwoo-pal-tab" data-cat="article">📚 Articles (182)</button>
+          <button class="inwoo-pal-tab" data-cat="article">📚 Articles (184)</button>
           <button class="inwoo-pal-tab" data-cat="wiki">🧬 Wiki (44)</button>
           <button class="inwoo-pal-tab" data-cat="climate">🌍 Climate (41)</button>
           <button class="inwoo-pal-tab" data-cat="sim">🧪 Simulators (21)</button>
@@ -2908,7 +2924,7 @@
             <span><kbd>↵</kbd> Open</span>
             <span><kbd>Esc</kbd> Close</span>
           </div>
-          <div style="color: #64748b; font-size: 0.75rem;">Inwoovation Universal Spotlight (357 Indexed Pages)</div>
+          <div style="color: #64748b; font-size: 0.75rem;">Inwoovation Universal Spotlight (359 Indexed Pages)</div>
         </div>
       </div>
     `;
@@ -3179,9 +3195,214 @@
     }
   }
 
+  function initWorkspacePersistenceUX() {
+    if (typeof window === 'undefined' || !document.body) return;
+    const path = window.location.pathname || '/';
+    const RECENT_KEY = 'inw_recent_tools_v1';
+
+    function safeGet(key) {
+      try { return window.localStorage.getItem(key); } catch (e) { return null; }
+    }
+    function safeSet(key, val) {
+      try { window.localStorage.setItem(key, val); } catch (e) {}
+    }
+    function safeRemove(key) {
+      try { window.localStorage.removeItem(key); } catch (e) {}
+    }
+
+    // A. Homepage Returning-Visitor Workspace Resume Bar
+    const recentBar = document.getElementById('inw-recent-workspace-bar');
+    const recentList = document.getElementById('inw-recent-workspace-list');
+    const clearRecentBtn = document.getElementById('inw-clear-recent-btn');
+    if (recentBar && recentList) {
+      try {
+        const items = JSON.parse(safeGet(RECENT_KEY) || '[]');
+        if (Array.isArray(items) && items.length > 0) {
+          recentList.innerHTML = items.slice(0, 5).map(it => {
+            const safeUrl = (it.path || '/tools/').replace(/"/g, '&quot;');
+            const safeTitle = String(it.title || 'Simulator').replace(/</g, '&lt;').slice(0, 42);
+            return `<a href="${safeUrl}" class="inw-recent-pill">⚡ ${safeTitle}</a>`;
+          }).join('');
+          recentBar.style.display = 'flex';
+        }
+      } catch (e) {}
+      if (clearRecentBtn) {
+        clearRecentBtn.addEventListener('click', function() {
+          safeRemove(RECENT_KEY);
+          recentBar.style.display = 'none';
+        });
+      }
+      return;
+    }
+
+    // B. Tool Pages (/tools/*.html excluding /tools/ and /tools/index.html)
+    const isToolPage = path.includes('/tools/') && !path.endsWith('/tools/') && !path.endsWith('/tools/index.html');
+    if (!isToolPage) return;
+
+    // Record tool visit in recent list
+    try {
+      const cleanTitle = (document.title || path).split('|')[0].trim();
+      let recent = JSON.parse(safeGet(RECENT_KEY) || '[]');
+      if (!Array.isArray(recent)) recent = [];
+      recent = recent.filter(item => item && item.path !== path);
+      recent.unshift({ path: path, title: cleanTitle, ts: Date.now() });
+      safeSet(RECENT_KEY, JSON.stringify(recent.slice(0, 6)));
+    } catch (e) {}
+
+    // Collect persistable controls with explicit IDs
+    const IGNORED_IDS = new Set(['inw-palette-input', 'home-quick-finder', 'rfqName', 'rfqCompany', 'rfqEmail', 'rfqLocation']);
+    function getPersistableControls() {
+      return Array.from(document.querySelectorAll('input[type="range"], input[type="number"], select')).filter(el => {
+        if (!el.id || IGNORED_IDS.has(el.id)) return false;
+        if (el.closest('#inwoo-command-palette-modal, #rfqModal, #dossierModal')) return false;
+        return true;
+      });
+    }
+
+    const controls = getPersistableControls();
+    if (controls.length < 2) return;
+
+    const CFG_KEY = 'inw_tool_cfg_' + path;
+
+    function snapshotConfig() {
+      const out = {};
+      getPersistableControls().forEach(el => {
+        out[el.id] = el.value;
+      });
+      return out;
+    }
+
+    function applyConfig(cfgObj) {
+      if (!cfgObj || typeof cfgObj !== 'object') return false;
+      let changed = false;
+      Object.keys(cfgObj).forEach(id => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        const val = String(cfgObj[id]);
+        if (el.value !== val) {
+          el.value = val;
+          el.dispatchEvent(new Event('input', { bubbles: true }));
+          el.dispatchEvent(new Event('change', { bubbles: true }));
+          changed = true;
+        }
+      });
+      return changed;
+    }
+
+    // Mount Workspace Utility Pill Bar cleanly (skip fixed fullscreen canvas VenloCAD header)
+    if (!document.getElementById('inw-workspace-bar') && !path.includes('venlocad-3d.html')) {
+      const bar = document.createElement('div');
+      bar.id = 'inw-workspace-bar';
+      bar.className = 'inw-workspace-bar';
+      bar.innerHTML = `
+        <span class="inw-ws-status" id="inw-ws-status">💾 Workspace Ready (Auto-Saves Locally)</span>
+        <div class="inw-ws-actions">
+          <button type="button" class="inw-ws-pill inw-ws-pill-share" id="inw-ws-share-btn">🔗 Share Setup Link</button>
+          <button type="button" class="inw-ws-pill" id="inw-ws-reset-btn">↺ Reset Defaults</button>
+        </div>
+      `;
+      const simHeader = document.querySelector('.sim-header, .tool-header, .tool-hero');
+      const bodyHeader = document.querySelector('body > header');
+      const simContainer = document.querySelector('.sim-container, .app-container, .api-hub-container, .nav-container');
+      if (simHeader && simHeader.parentNode) {
+        simHeader.insertAdjacentElement('afterend', bar);
+      } else if (bodyHeader && bodyHeader.parentNode) {
+        bodyHeader.insertAdjacentElement('afterend', bar);
+      } else if (simContainer) {
+        simContainer.insertAdjacentElement('afterbegin', bar);
+      }
+    }
+
+    // Restore saved or shared setup after tool scripts bind listeners
+    function restoreSavedOrShared() {
+      let restoredSource = null;
+      try {
+        const sp = new URLSearchParams(window.location.search);
+        const rawCfg = sp.get('inw_cfg');
+        if (rawCfg) {
+          const parsed = JSON.parse(decodeURIComponent(rawCfg));
+          if (applyConfig(parsed)) restoredSource = '🔗 Loaded Shared Setup from URL';
+        } else {
+          const savedRaw = safeGet(CFG_KEY);
+          if (savedRaw) {
+            const parsed = JSON.parse(savedRaw);
+            if (applyConfig(parsed)) restoredSource = '💾 Restored Last Saved Setup';
+          }
+        }
+      } catch (e) {}
+      const statusEl = document.getElementById('inw-ws-status');
+      if (statusEl && restoredSource) statusEl.textContent = restoredSource;
+    }
+
+    if (document.readyState === 'complete') {
+      setTimeout(restoreSavedOrShared, 80);
+    } else {
+      window.addEventListener('load', () => setTimeout(restoreSavedOrShared, 80));
+    }
+
+    // Auto-save edits with 250ms debounce
+    let saveTimer = null;
+    document.addEventListener('input', onControlChange, true);
+    document.addEventListener('change', onControlChange, true);
+    function onControlChange(ev) {
+      const t = ev.target;
+      if (!t || !t.id || IGNORED_IDS.has(t.id)) return;
+      if (!t.matches('input[type="range"], input[type="number"], select')) return;
+      clearTimeout(saveTimer);
+      saveTimer = setTimeout(() => {
+        safeSet(CFG_KEY, JSON.stringify(snapshotConfig()));
+        const statusEl = document.getElementById('inw-ws-status');
+        if (statusEl) {
+          const now = new Date();
+          const hhmm = String(now.getHours()).padStart(2, '0') + ':' + String(now.getMinutes()).padStart(2, '0');
+          statusEl.textContent = `✅ Auto-Saved Locally (${hhmm})`;
+        }
+      }, 250);
+    }
+
+    const shareBtn = document.getElementById('inw-ws-share-btn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', function() {
+        try {
+          const cfg = snapshotConfig();
+          const url = new URL(window.location.href);
+          url.searchParams.set('inw_cfg', JSON.stringify(cfg));
+          const finalUrl = url.toString();
+          safeSet(CFG_KEY, JSON.stringify(cfg));
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(finalUrl).then(() => {
+              const orig = shareBtn.textContent;
+              shareBtn.textContent = '✅ Setup URL Copied!';
+              setTimeout(() => { shareBtn.textContent = orig; }, 2200);
+            }).catch(() => {
+              window.history.replaceState(null, '', finalUrl);
+              shareBtn.textContent = '✅ URL Updated in Address Bar';
+              setTimeout(() => { shareBtn.textContent = '🔗 Share Setup Link'; }, 2400);
+            });
+          } else {
+            window.history.replaceState(null, '', finalUrl);
+            shareBtn.textContent = '✅ URL Updated in Address Bar';
+            setTimeout(() => { shareBtn.textContent = '🔗 Share Setup Link'; }, 2400);
+          }
+        } catch (e) {}
+      });
+    }
+
+    const resetBtn = document.getElementById('inw-ws-reset-btn');
+    if (resetBtn) {
+      resetBtn.addEventListener('click', function() {
+        safeRemove(CFG_KEY);
+        const url = new URL(window.location.href);
+        url.searchParams.delete('inw_cfg');
+        window.location.href = url.toString();
+      });
+    }
+  }
+
   function bootAll() {
     initPaletteModal();
     initReaderConvenienceUX();
+    initWorkspacePersistenceUX();
   }
 
   if (document.readyState === 'loading') {

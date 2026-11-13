@@ -48,7 +48,7 @@
         "@type": "Person",
         "name": "Inwoo Hwang"
       },
-      "dateModified": "2026-11-12"
+      "dateModified": "2026-11-13"
     },
     {
       "@type": "BreadcrumbList",
@@ -1188,7 +1188,19 @@
         overflow-wrap: anywhere;
       }
       .calc-grid, .calc-metrics-row, .financial-strip {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .card-detail-tabs {
+        flex-wrap: wrap;
+        max-width: 100%;
+      }
+      .card-tab-btn {
+        white-space: normal;
+        text-align: left;
+      }
+      .grant-card > *, .feed-toolbar, .feed-sort-wrapper, .sort-select {
+        min-width: 0;
+        max-width: 100%;
       }
       .timeline-row {
         flex-direction: column;

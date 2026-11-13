@@ -24,7 +24,7 @@
         "@type": "Person",
         "name": "Inwoo Hwang"
       },
-      "dateModified": "2026-11-08"
+      "dateModified": "2026-11-13"
     },
     {
       "@type": "BreadcrumbList",
@@ -285,6 +285,53 @@
       background: #020617; border-left: 3px solid var(--accent-cyan); padding: 12px 16px;
       border-radius: 0 8px 8px 0; font-family: var(--font-mono); font-size: 0.75rem; color: #38bdf8;
       margin: 10px 0; line-height: 1.5;
+    }
+
+    /* Mobile Responsive Overhaul (<= 960px & <= 640px) */
+    @media (max-width: 960px) {
+      body, html { height: auto; min-height: 100%; }
+      header {
+        height: auto; min-height: 54px; padding: 10px 12px;
+        flex-wrap: wrap; gap: 8px;
+      }
+      .header-brand { width: 100%; flex-wrap: wrap; gap: 6px; }
+      .header-brand h1 { font-size: 0.95rem; line-height: 1.25; }
+      .header-presets {
+        width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch;
+        padding-bottom: 4px; flex-wrap: nowrap;
+      }
+      .preset-pill { flex: 0 0 auto; white-space: nowrap; padding: 5px 10px; font-size: 0.68rem; }
+      .workstation-container {
+        grid-template-columns: minmax(0, 1fr) !important;
+        min-height: auto;
+      }
+      .main-viewport-grid {
+        order: -1; max-height: none !important; overflow: visible !important; min-width: 0;
+      }
+      .sidebar-panel {
+        order: 2; max-height: none !important; overflow: visible !important;
+        border-right: none; border-top: 1px solid var(--panel-border);
+        padding: 16px 14px; min-width: 0;
+      }
+      .viewport-3d-wrap { height: 260px; }
+      .viewport-overlay-badges { top: 10px; left: 10px; right: 10px; flex-wrap: wrap; gap: 4px; }
+      .vp-badge { font-size: 0.64rem; padding: 3px 7px; }
+      .kpi-hud-strip {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 8px; padding: 12px;
+      }
+      .kpi-value { font-size: 1.05rem; }
+      .mollier-analytics-wrap {
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 14px; padding: 12px;
+      }
+      .mollier-chart-card, .state-matrix-card {
+        padding: 12px; min-width: 0; max-width: 100%; overflow-x: auto;
+      }
+      #mollierCanvas { height: 260px; max-width: 100%; }
+      .btn-row { grid-template-columns: minmax(0, 1fr); }
+      .editorial-section { padding: 14px 12px; }
+      .editorial-card { padding: 14px; overflow-x: auto; }
     }
 
     /* Print Styles */
@@ -1275,6 +1322,43 @@
   </div>
 
   
+
+<!-- INW-AMAZON-HARDWARE-START -->
+<section class="amazon-showcase" style="max-width: 1060px; margin: 28px auto;">
+  <div class="amazon-header">
+    <h3><span>🛒</span> Recommended Precision Field Hardware (Amazon)</h3>
+    <span style="font-size:0.8rem; color:#94a3b8;">Store ID: <strong>inwoovation20-20</strong></span>
+  </div>
+  <p style="font-size:0.9rem; color:#cbd5e1; margin-bottom:18px;">
+    Commercial precision horticulture demands calibrated sensors and field diagnostic instrumentation.
+    These industrial-grade tools are matched directly to validate the inputs and physics outputs of this workstation:
+  </p>
+  <div class="amazon-grid">
+        <div class="amazon-card">
+          <span class="amazon-badge">ATU Duct Psychrometrics</span>
+          <h4 class="amazon-product-name">Testo 605i Smart Probe Thermohygrometer (Dry-Bulb / RH / Dew Point)</h4>
+          <p class="amazon-product-desc">Verify mixed-air (P3), post-fogging (P4), and under-gutter perforated duct supply (P5) enthalpy directly inside ATU plenums.</p>
+          <a href="https://www.amazon.com/s?k=Testo+605i+thermohygrometer&tag=inwoovation20-20" target="_blank" rel="nofollow noopener noreferrer" class="amazon-btn">
+            <span>🛒 Check Price on Amazon</span> <span>↗</span>
+          </a>
+        </div>
+
+        <div class="amazon-card">
+          <span class="amazon-badge">+20 Pa Insect Exclusion</span>
+          <h4 class="amazon-product-name">Testo 510i Differential Pressure Manometer (+0 to 150 hPa)</h4>
+          <p class="amazon-product-desc">Calibrate semi-closed greenhouse positive overpressure (+15 to +25 Pa) to eliminate thrips and whitefly ingress through ridge vents.</p>
+          <a href="https://www.amazon.com/s?k=Testo+510i+differential+pressure+manometer&tag=inwoovation20-20" target="_blank" rel="nofollow noopener noreferrer" class="amazon-btn">
+            <span>🛒 Check Price on Amazon</span> <span>↗</span>
+          </a>
+        </div>
+  </div>
+  <div class="affiliate-disclosure">
+    <strong>Affiliate Disclosure:</strong> As an Amazon Associate, inwoovation.com earns from qualifying purchases.
+    Hardware instruments are independently selected for commercial greenhouse diagnostics at zero extra cost to you.
+  </div>
+</section>
+<!-- INW-AMAZON-HARDWARE-END -->
+
 <!-- INW-TSUKUBA-FUNNEL-START -->
 <section class="inw-tsukuba-funnel-bridge" style="max-width: 1060px; margin: 32px auto; padding: 26px; background: rgba(15, 23, 42, 0.9); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 16px; text-align: left; box-shadow: 0 10px 28px rgba(0, 0, 0, 0.3);">
   <h3 style="margin: 0 0 8px 0; font-size: 1.2rem; color: #10b981; font-weight: 800;">🔬 Validated Engineering Monographs, Crop Guides & Simulators</h3>

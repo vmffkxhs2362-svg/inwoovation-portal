@@ -28,6 +28,19 @@
       grid-template-columns: 1fr 1fr;
       gap: 20px;
     }
+    .terminal-grid > *, .terminal-card {
+      min-width: 0;
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+    @media (max-width: 900px) {
+      .terminal-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .terminal-card {
+        padding: 16px 12px;
+      }
+    }
     .terminal-card {
       background: rgba(15, 23, 42, 0.85);
       backdrop-filter: blur(12px);
@@ -71,7 +84,7 @@
         "@type": "Person",
         "name": "Inwoo Hwang"
       },
-      "dateModified": "2026-11-08"
+      "dateModified": "2026-11-13"
     },
     {
       "@type": "BreadcrumbList",

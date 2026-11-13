@@ -71,7 +71,21 @@
       margin-top: 16px;
     }
     @media (max-width: 820px) {
-      .playground-grid { grid-template-columns: 1fr; }
+      .playground-grid { grid-template-columns: minmax(0, 1fr); }
+    }
+    .playground-grid > *, .console-pane {
+      min-width: 0;
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+    .code-textarea, .output-pre {
+      max-width: 100%;
+      overflow-x: auto;
+    }
+    @media (max-width: 640px) {
+      .api-hub-container { padding: 18px 12px 60px; }
+      .console-pane { padding: 14px 12px; }
+      .endpoint-tab { max-width: 100%; white-space: normal; word-break: break-word; }
     }
     .console-pane {
       background: #0b1329;

@@ -67,7 +67,25 @@
       color: #38bdf8;
       height: 380px;
       overflow-y: auto;
+      overflow-x: auto;
+      max-width: 100%;
+      min-width: 0;
+      box-sizing: border-box;
       white-space: pre-wrap;
+      word-break: break-word;
+    }
+    .fleet-grid > div {
+      min-width: 0;
+      max-width: 100%;
+    }
+    @media (max-width: 900px) {
+      .fleet-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .sim-header > div {
+        flex-wrap: wrap;
+        gap: 12px;
+      }
     }
   </style>
 
@@ -86,7 +104,7 @@
         "@type": "Person",
         "name": "Inwoo Hwang"
       },
-      "dateModified": "2026-11-08"
+      "dateModified": "2026-11-13"
     },
     {
       "@type": "BreadcrumbList",
