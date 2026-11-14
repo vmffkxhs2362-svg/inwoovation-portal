@@ -518,7 +518,7 @@
     "cat": "article",
     "url": "articles/article-64-midwest-corn-belt-water-quality-soil-health-subsidies.html",
     "icon": "📚",
-    "desc": "Technical guide for Midwest row-crop producers and livestock operators to access 75% to 100% grant funding for edge-of-field bioreactors, saturated.",
+    "desc": "Technical guide for Midwest producers to access 75% to 100% grant funding for NRCS CPS 605 woodchip nitrate bioreactors, saturated buffers, and manure injection",
     "tags": "articles article 64 midwest corn belt water quality soil health subsidies html midwest amp corn belt soil health grants iowa wqi ohio h2ohio and minnesota agri programs technical guide for m"
   },
   {
@@ -1136,6 +1136,14 @@
     "icon": "🇩🇪",
     "desc": "Ingenieurhandbuch zu Bodenmatrixpotenzial-Telemetrie, Penman-Monteith-Bewässerungssteuerung, US-Wasserförderprogrammen (FDACS BMP 75-87,5 %, TWDB) sowie dem deu",
     "tags": "articles de article 63 praezisionsbewaesserung wassermanagement agrarsubventionen florida texas vergleich html präzisionsbewässerung wassermanagement agrarsubventionen fdacs bmp und twdb im "
+  },
+  {
+    "title": "Wasserqualität, Denitrifikations-Bioreaktoren &amp; Agrarförderung: US-Corn-Belt (NRCS CPS 605 / Iowa WQI / H2Ohio) vs. EU-WRRL &amp; DüV",
+    "cat": "article",
+    "url": "articles/de/article-64-wasserqualitaet-bodenfruchtbarkeit-denitrifikationsbioreaktor-agrarfoerderung-vergleich.html",
+    "icon": "🇩🇪",
+    "desc": "Ingenieurhandbuch zu Holzhackschnitzel-Denitrifikationsbioreaktoren (NRCS CPS 605, HRT >= 4 h), gesättigten Uferrandstreifen (CPS 604), DIN 38409-7 Karbonathärt",
+    "tags": "articles de article 64 wasserqualitaet bodenfruchtbarkeit denitrifikationsbioreaktor agrarfoerderung vergleich html wasserqualität denitrifikations bioreaktoren amp agrarförderung us corn be"
   },
   {
     "title": "Tiefengeothermie, Fernwärme & industrielle Großwärmepumpen (NH₃/R290) im Venlo-Gewächshaus",
@@ -1930,20 +1938,20 @@
     "tags": "crops vertical farm lettuce leafy greens tipburn prevention guide html controlled environment leafy greens lettuce lactuca sativa microclimate vpd dli precision steering guide precision cea "
   },
   {
-    "title": "Complete CEA Engineering Directory &amp; Index (365 Pages)",
+    "title": "Complete CEA Engineering Directory &amp; Index (366 Pages)",
     "cat": "part",
     "url": "directory.html",
     "icon": "⚙️",
-    "desc": "Master HTML sitemap and engineering taxonomy indexing all 365 calculators, 150 global agricultural grants, EN/DE/JA monographs, crop guides, and climate hubs.",
-    "tags": "directory html complete cea engineering directory amp index 365 pages master html sitemap and engineering taxonomy indexing all 365 calculators 150 global agricultural grants en de ja monogr"
+    "desc": "Master HTML sitemap and engineering taxonomy indexing all 366 calculators, 150 global agricultural grants, EN/DE/JA monographs, crop guides, and climate hubs.",
+    "tags": "directory html complete cea engineering directory amp index 366 pages master html sitemap and engineering taxonomy indexing all 366 calculators 150 global agricultural grants en de ja monogr"
   },
   {
-    "title": "Precision CEA & Horticultural Engineering Articles (78 Volumes / 183 Multilingual Editions)",
+    "title": "Precision CEA & Horticultural Engineering Articles (78 Volumes / 184 Multilingual Editions)",
     "cat": "article",
     "url": "guides.html",
     "icon": "📚",
-    "desc": "78-volume (183 multilingual editions) open-access Controlled Environment Agriculture (CEA) archive — VPD physics, biomass CHP, photobiology, closed-loop fertiga",
-    "tags": "guides html precision cea horticultural engineering articles 78 volumes 183 multilingual editions 78 volume 183 multilingual editions open access controlled environment agriculture cea archi"
+    "desc": "78-volume (184 multilingual editions) open-access Controlled Environment Agriculture (CEA) archive — VPD physics, biomass CHP, photobiology, closed-loop fertiga",
+    "tags": "guides html precision cea horticultural engineering articles 78 volumes 184 multilingual editions 78 volume 184 multilingual editions open access controlled environment agriculture cea archi"
   },
   {
     "title": "Inwoovation Lab",
@@ -2920,13 +2928,13 @@
       <div class="inwoo-palette-box" role="dialog" aria-modal="true" aria-label="Inwoovation Spotlight Search">
         <div class="inwoo-palette-header">
           <span class="inwoo-palette-search-icon">🔍</span>
-          <input type="text" id="inwoo-palette-input" placeholder="Search all 361 tools, simulators, wiki, crops, climate hubs & EN/DE/JA articles..." autocomplete="off" />
+          <input type="text" id="inwoo-palette-input" placeholder="Search all 362 tools, simulators, wiki, crops, climate hubs & EN/DE/JA articles..." autocomplete="off" />
           <span class="inwoo-palette-esc-badge" onclick="window.InwooPalette.close()">ESC</span>
         </div>
         <div class="inwoo-palette-tabs">
-          <button class="inwoo-pal-tab active" data-cat="all">✨ All (361)</button>
+          <button class="inwoo-pal-tab active" data-cat="all">✨ All (362)</button>
           <button class="inwoo-pal-tab" data-cat="tool">🛠️ Tools (49)</button>
-          <button class="inwoo-pal-tab" data-cat="article">📚 Articles (186)</button>
+          <button class="inwoo-pal-tab" data-cat="article">📚 Articles (187)</button>
           <button class="inwoo-pal-tab" data-cat="wiki">🧬 Wiki (44)</button>
           <button class="inwoo-pal-tab" data-cat="climate">🌍 Climate (41)</button>
           <button class="inwoo-pal-tab" data-cat="sim">🧪 Simulators (21)</button>
@@ -2940,7 +2948,7 @@
             <span><kbd>↵</kbd> Open</span>
             <span><kbd>Esc</kbd> Close</span>
           </div>
-          <div style="color: #64748b; font-size: 0.75rem;">Inwoovation Universal Spotlight (361 Indexed Pages)</div>
+          <div style="color: #64748b; font-size: 0.75rem;">Inwoovation Universal Spotlight (362 Indexed Pages)</div>
         </div>
       </div>
     `;
