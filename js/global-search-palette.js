@@ -1154,6 +1154,14 @@
     "tags": "articles de article 65 gewaechshaus energieeffizienz energieschirme agrarfoerderung vergleich html gewächshaus energieeffizienz energieschirme amp agrarförderung us pnw nordost eto wsda nyse"
   },
   {
+    "title": "Präzisionsbewässerung, Frequenzumrichter-Pumpenphysik &amp; Wasserförderung: Kalifornien SWEEP &amp; Texas TWDB im Vergleich zu Bayern (BaySL, Wasserverband Knoblauchsland, EO &amp; Rentenbank)",
+    "cat": "article",
+    "url": "articles/de/article-66-kalifornien-sweep-vs-texas-twdb-bewaesserungsfoerderung-pumpeffizienz-vergleich.html",
+    "icon": "🇩🇪",
+    "desc": "Ingenieurhandbuch zur Pumpen-Affinitätsphysik (Drehzahlgesetz P ~ N³), spezifischen Förderenergie (kWh/m³), FDR/Tensiometer-Steuerung und Bewässerungsförderung:",
+    "tags": "articles de article 66 kalifornien sweep vs texas twdb bewaesserungsfoerderung pumpeffizienz vergleich html präzisionsbewässerung frequenzumrichter pumpenphysik amp wasserförderung kaliforni"
+  },
+  {
     "title": "Tiefengeothermie, Fernwärme & industrielle Großwärmepumpen (NH₃/R290) im Venlo-Gewächshaus",
     "cat": "article",
     "url": "articles/de/article-67-tiefengeothermie-fernwaerme-grosswaermepumpen-gewaechshaus-dekarbonisierung.html",
@@ -1162,12 +1170,12 @@
     "tags": "articles de article 67 tiefengeothermie fernwaerme grosswaermepumpen gewaechshaus dekarbonisierung html tiefengeothermie fernwärme industrielle großwärmepumpen nh r290 im venlo gewächshaus i"
   },
   {
-    "title": "Deutsche Gartenbau-Meister Fachartikel &amp; CEA-Technik (66 Monographien)",
+    "title": "Deutsche Gartenbau-Meister Fachartikel &amp; CEA-Technik (67 Monographien)",
     "cat": "article",
     "url": "articles/de/index.html",
     "icon": "🇩🇪",
-    "desc": "Vollständige deutschsprachige Wissensdatenbank mit 66 technischen Fachartikeln zu VPD-Psychrometrie, DIN V 18599 Heizlast, EN 13031-1 Venlo-Statik, FvCB-CO2-Kin",
-    "tags": "articles de index html deutsche gartenbau meister fachartikel amp cea technik 66 monographien vollständige deutschsprachige wissensdatenbank mit 66 technischen fachartikeln zu vpd psychromet"
+    "desc": "Vollständige deutschsprachige Wissensdatenbank mit 67 technischen Fachartikeln zu VPD-Psychrometrie, DIN V 18599 Heizlast, EN 13031-1 Venlo-Statik, FvCB-CO2-Kin",
+    "tags": "articles de index html deutsche gartenbau meister fachartikel amp cea technik 67 monographien vollständige deutschsprachige wissensdatenbank mit 67 technischen fachartikeln zu vpd psychromet"
   },
   {
     "title": "CEA &amp; Greenhouse Engineering Articles Library (EN / DE / JA)",
@@ -1962,20 +1970,20 @@
     "tags": "crops vertical farm lettuce leafy greens tipburn prevention guide html controlled environment leafy greens lettuce lactuca sativa microclimate vpd dli precision steering guide precision cea "
   },
   {
-    "title": "Complete CEA Engineering Directory &amp; Index (369 Pages)",
+    "title": "Complete CEA Engineering Directory &amp; Index (370 Pages)",
     "cat": "part",
     "url": "directory.html",
     "icon": "⚙️",
-    "desc": "Master HTML sitemap and engineering taxonomy indexing all 369 calculators, 150 global agricultural grants, EN/DE/JA monographs, crop guides, and climate hubs.",
-    "tags": "directory html complete cea engineering directory amp index 369 pages master html sitemap and engineering taxonomy indexing all 369 calculators 150 global agricultural grants en de ja monogr"
+    "desc": "Master HTML sitemap and engineering taxonomy indexing all 370 calculators, 150 global agricultural grants, EN/DE/JA monographs, crop guides, and climate hubs.",
+    "tags": "directory html complete cea engineering directory amp index 370 pages master html sitemap and engineering taxonomy indexing all 370 calculators 150 global agricultural grants en de ja monogr"
   },
   {
-    "title": "Precision CEA & Horticultural Engineering Articles (78 Volumes / 185 Multilingual Editions)",
+    "title": "Precision CEA & Horticultural Engineering Articles (78 Volumes / 186 Multilingual Editions)",
     "cat": "article",
     "url": "guides.html",
     "icon": "📚",
-    "desc": "78-volume (185 multilingual editions) open-access Controlled Environment Agriculture (CEA) archive — VPD physics, biomass CHP, photobiology, closed-loop fertiga",
-    "tags": "guides html precision cea horticultural engineering articles 78 volumes 185 multilingual editions 78 volume 185 multilingual editions open access controlled environment agriculture cea archi"
+    "desc": "78-volume (186 multilingual editions) open-access Controlled Environment Agriculture (CEA) archive — VPD physics, biomass CHP, photobiology, closed-loop fertiga",
+    "tags": "guides html precision cea horticultural engineering articles 78 volumes 186 multilingual editions 78 volume 186 multilingual editions open access controlled environment agriculture cea archi"
   },
   {
     "title": "Inwoovation Lab",
@@ -2952,13 +2960,13 @@
       <div class="inwoo-palette-box" role="dialog" aria-modal="true" aria-label="Inwoovation Spotlight Search">
         <div class="inwoo-palette-header">
           <span class="inwoo-palette-search-icon">🔍</span>
-          <input type="text" id="inwoo-palette-input" placeholder="Search all 365 tools, simulators, wiki, crops, climate hubs & EN/DE/JA articles..." autocomplete="off" />
+          <input type="text" id="inwoo-palette-input" placeholder="Search all 366 tools, simulators, wiki, crops, climate hubs & EN/DE/JA articles..." autocomplete="off" />
           <span class="inwoo-palette-esc-badge" onclick="window.InwooPalette.close()">ESC</span>
         </div>
         <div class="inwoo-palette-tabs">
-          <button class="inwoo-pal-tab active" data-cat="all">✨ All (365)</button>
+          <button class="inwoo-pal-tab active" data-cat="all">✨ All (366)</button>
           <button class="inwoo-pal-tab" data-cat="tool">🛠️ Tools (49)</button>
-          <button class="inwoo-pal-tab" data-cat="article">📚 Articles (190)</button>
+          <button class="inwoo-pal-tab" data-cat="article">📚 Articles (191)</button>
           <button class="inwoo-pal-tab" data-cat="wiki">🧬 Wiki (44)</button>
           <button class="inwoo-pal-tab" data-cat="climate">🌍 Climate (41)</button>
           <button class="inwoo-pal-tab" data-cat="sim">🧪 Simulators (21)</button>
@@ -2972,7 +2980,7 @@
             <span><kbd>↵</kbd> Open</span>
             <span><kbd>Esc</kbd> Close</span>
           </div>
-          <div style="color: #64748b; font-size: 0.75rem;">Inwoovation Universal Spotlight (365 Indexed Pages)</div>
+          <div style="color: #64748b; font-size: 0.75rem;">Inwoovation Universal Spotlight (366 Indexed Pages)</div>
         </div>
       </div>
     `;
