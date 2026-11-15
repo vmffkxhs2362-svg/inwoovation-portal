@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <!-- Google tag (gtag.js) -->
+    <!-- Google tag (gtag.js) with Client-Side Bot/Headless Guard -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-V4RYJBMEDE"></script>
     <script>
        if (navigator.webdriver || /HeadlessChrome|PhantomJS|Lighthouse|PTST|bot|crawler|spider|slurp/i.test(navigator.userAgent) || location.hostname === 'localhost' || location.hostname === '127.0.0.1' || (screen.width === 1366 && screen.height === 1366) || (screen.width === 800 && screen.height === 600) || screen.height >= 5000) { window['ga-disable-G-V4RYJBMEDE'] = true; }
@@ -27,16 +27,43 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "PodcastSeries",
-    "name": "Deutscher Meisterfunk",
-    "description": "Der deutsche Lernpodcast für moderne Gewächshaustechnik, Nachrichten, Wissenschaft und die Gärtnermeister-Karriere.",
-    "url": "https://inwoovation.com/podcasts/",
-    "inLanguage": "de",
-    "dateModified": "2026-11-15",
-    "webFeed": "https://inwoovation.com/podcasts/feed.xml"
+    "@graph": [
+      {
+        "@type": "PodcastSeries",
+        "name": "Deutscher Meisterfunk",
+        "description": "Der deutsche Lernpodcast für moderne Gewächshaustechnik, Nachrichten, Wissenschaft und die Gärtnermeister-Karriere.",
+        "url": "https://inwoovation.com/podcasts/",
+        "inLanguage": "de",
+        "dateModified": "2026-11-16",
+        "webFeed": "https://inwoovation.com/podcasts/feed.xml"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Für wen ist der Podcast Deutscher Meisterfunk gedacht?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Für angehende Gärtnermeister im Gemüsebau, Ingenieure für Gewächshaustechnik (Venlo, DIN V 18599, VPD) und internationale Fachkräfte auf dem Sprachniveau A2 bis B2."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Welche Fachartikel und Rechner ergänzen die Podcast-Episoden?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Jede Episode verknüpft direkt auf den Gärtnermeister-Hub (/meister.html), das interaktive Meister-Quiz (/quiz.html), über 60 deutsche Fachartikel unter /articles/de/ sowie die 42 biophysikalischen Web-Rechner."
+            }
+          }
+        ]
+      }
+    ]
   }
   </script>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/global-ui-enhancements.css?v=20261115">
+  <script src="/js/global-search-palette.js?v=20261115" defer></script>
   <style>
     :root {
       --bg: #090d16;
@@ -170,10 +197,16 @@
 </head>
 <body>
   <div class="container">
-    <div style="margin-bottom: 24px;">
+    <div style="margin-bottom: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
       <a href="/" style="display: inline-flex; align-items: center; gap: 8px; color: var(--cyan); text-decoration: none; font-weight: 700; font-size: 0.95rem;">
         ← Zurück zu Inwoovation Lab
       </a>
+      <div style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center; font-size: 0.88rem;">
+        <a href="/meister.html" style="color: #fbbf24; text-decoration: none; font-weight: 700;">🇩🇪 Gärtnermeister Hub</a>
+        <a href="/quiz.html" style="color: #34d399; text-decoration: none; font-weight: 700;">🎯 Meister Quiz</a>
+        <a href="/guides.html" style="color: #38bdf8; text-decoration: none; font-weight: 700;">📚 DE Fachartikel</a>
+        <button class="nav-search-trigger" onclick="window.InwooPalette && window.InwooPalette.open()"><span>🔍 Spotlight Search</span> <kbd>Ctrl+K</kbd></button>
+      </div>
     </div>
     <div class="header-hero">
       <img src="cover.jpg" alt="Deutscher Meisterfunk Podcast Cover" class="cover-img">
@@ -187,6 +220,23 @@
 
     <div class="episodes-list">
       
+      <div class="episode-card">
+        <div class="ep-header">
+          <span class="ep-badge">EPISODE #35</span>
+          <span class="ep-date">Sun, 15 Nov 2026</span>
+        </div>
+        <h3 class="ep-title">Folge 35 (16.11.2026): Ruhiger Wochenstart bei D-418, Bunker-Stabilität, DAC-Festamin-CO₂ im Gewächshaus (DE Band 68) &amp; B1-10 Hörbad Passiv mit Modalverben</h3>
+        <p class="ep-desc">Am Montagmorgen, dem 16. November 2026 (D-418 bis zum Abflug nach Deutschland am 8. Januar 2028), starten wir mit ruhigem Fokus in eine viertägige Arbeitswoche vor dem langen Wochenende am Freitag und Samstag. Auf dem Arbeitsplan stehen die planmäßige Wocheninventur, sorgfältige Etikettenkontrolle und pünktliches Abschließen ohne Überlastung bis siebzehn Uhr. Finanziell ist heute der Dollar-Betrag aus dem Tausch von USFR-Anteilen sauber gutgeschrieben – unser Schutzbunker aus kurzlaufenden Staatsanleihen, Gold-ETF und bereitem Dry Powder bleibt stabil. Im Technik-Teil tauchen wir in das neue deutsche Fachkapitel Band 68 (lückenlos Band 01 bis 68!) ein: Direct Air Capture (DAC) mit Festamin-Sorbentien bei 65 bis 85 Grad Celsius aus Wärmepumpen-Abwärme statt teurem Flüssig-CO₂. Abschließend gibt es ein entspanntes B1-10-Hörbad zum Passiv mit Modalverben für typische Gewächshaus- und Betriebsprozesse.</p>
+        <audio controls preload="none" class="audio-player">
+          <source src="episodes/episode_35_meisterfunk.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+        <div class="ep-footer">
+          <a href="episodes/episode_35_meisterfunk.mp3" download class="btn-dl">⬇️ Download MP3</a>
+          <span class="ep-speed">🐢 -22% Slow &amp; Clear German</span>
+        </div>
+      </div>
+
       <div class="episode-card">
         <div class="ep-header">
           <span class="ep-badge">EPISODE #34</span>
@@ -464,7 +514,7 @@
           <span class="ep-badge">EPISODE #18</span>
           <span class="ep-date">Fri, 30 Oct 2026</span>
         </div>
-        <h3 class="ep-title">Folge 18 (30.10.2026): Willkommen zurück in Korea! 장거리 노선 Bord-WLAN-Rückerstattung, CEA-Entfeuchtung &amp; Samstags-Einsatzplan Standort Süd</h3>
+        <h3 class="ep-title">Folge 18 (30.10.2026): Willkommen zurück in Korea! Langstreckenflug Bord-WLAN-Rückerstattung, CEA-Entfeuchtung &amp; Samstags-Einsatzplan Standort Süd</h3>
         <p class="ep-desc">Willkommen zurück in Daejeon nach dem Transpazifikflug! In Folge 18 analysieren Katja und Killian die erfolgreiche Reklamation des Bord-WLANs (20,95 USD Rückerstattung wegen Zeitüberschreitung am Gateway), die Semiclosed-Gewächshaustechnik mit Entfeuchtung und Wärmerückgewinnung (A2-14 Relativsätze) sowie das komplette Briefing für Inwoos ersten Arbeitstag nach dem Urlaub am Samstag (Monatsendinventur, Einmal-Ausdruck des Jahresgehaltsvertrags, Personalkostenquote 23,0 % und die 5 Hygiene-Fokuspunkte).</p>
         <audio controls preload="none" class="audio-player">
           <source src="episodes/episode_18_meisterfunk.mp3" type="audio/mpeg">
@@ -781,13 +831,21 @@
     <section class="inw-tsukuba-funnel-bridge" style="margin: 32px 0; padding: 24px; background: rgba(15, 23, 42, 0.9); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 16px;">
       <h3 style="margin: 0 0 12px 0; font-size: 1.15rem; color: #10b981; font-weight: 800;">🔬 Begleitende Deutsche Fachartikel &amp; Ingenieur-Simulatoren</h3>
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 12px;">
-        <a href="/articles/de/article-13-sensorkalibrierung-messunsicherheit-pt100-ndir-fd-smartfarm.html" style="display:block; padding:12px 14px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.9rem;">🇩🇪 DE Vol. 13: Sensorkalibrierung (Nernst pH/EC &amp; TDR/FDR) →</a>
+        <a href="/meister.html" style="display:block; padding:12px 14px; background:rgba(30,41,59,0.75); border:1px solid rgba(251,191,36,0.35); border-radius:10px; color:#fbbf24; text-decoration:none; font-weight:700; font-size:0.9rem;">🇩🇪 Gärtnermeister Hub (KTBL, RTI &amp; 34 DE-Förderungen) →</a>
+        <a href="/quiz.html" style="display:block; padding:12px 14px; background:rgba(30,41,59,0.75); border:1px solid rgba(16,185,129,0.35); border-radius:10px; color:#34d399; text-decoration:none; font-weight:700; font-size:0.9rem;">🎯 Interaktives Gärtnermeister- &amp; CEA-Fachquiz →</a>
         <a href="/articles/de/article-01-vpd-meisterklasse.html" style="display:block; padding:12px 14px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.9rem;">🇩🇪 DE Vol. 01: Penman-Monteith &amp; VPD-Steuerung →</a>
+        <a href="/articles/de/article-26-gewaechshaus-heizlast-din-v-18599.html" style="display:block; padding:12px 14px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.9rem;">🇩🇪 DE Vol. 26: Gewächshaus-Heizlast (DIN V 18599) →</a>
         <a href="/tools/venlocad-3d.html" style="display:block; padding:12px 14px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.9rem;">🏗️ VenloCAD 3D Gewächshaus-Architekt →</a>
         <a href="/tools/hydroponic-nutrient-solution-calculator.html" style="display:block; padding:12px 14px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.9rem;">🧪 Hydroponik A/B-Stammlösungs-Rechner →</a>
       </div>
     </section>
     <!-- INW-TSUKUBA-FUNNEL-END -->
+
+    <section style="margin: 28px 0; padding: 22px; background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(148, 163, 184, 0.2); border-radius: 16px;">
+      <h2 style="margin: 0 0 12px 0; font-family: 'Outfit', sans-serif; font-size: 1.2rem; color: #f8fafc;">❓ Häufig gestellte Fragen (FAQ) zum Gärtnermeister-Podcast</h2>
+      <p style="margin: 0 0 10px 0; color: #cbd5e1; font-size: 0.92rem;"><strong>Für wen ist der Podcast Deutscher Meisterfunk gedacht?</strong><br>Für angehende Gärtnermeister im Gemüsebau, Ingenieure für Gewächshaustechnik (Venlo, DIN V 18599, VPD) und internationale Fachkräfte auf dem Sprachniveau A2 bis B2.</p>
+      <p style="margin: 0; color: #cbd5e1; font-size: 0.92rem;"><strong>Welche Fachartikel und Rechner ergänzen die Podcast-Episoden?</strong><br>Jede Episode verknüpft direkt auf den <a href="/meister.html" style="color:#fbbf24;">Gärtnermeister-Hub</a>, das <a href="/quiz.html" style="color:#34d399;">interaktive Meister-Quiz</a>, deutsche Fachartikel im <a href="/handbooks/index.html" style="color:#38bdf8;">Handbuch-Kompendium</a> sowie alle <a href="/tools/index.html" style="color:#38bdf8;">42 biophysikalischen Web-Rechner</a>.</p>
+    </section>
 
     <footer style="margin-top: 50px; text-align: center; border-top: 1px solid var(--border); padding-top: 25px; color: var(--text-muted); font-size: 0.85rem;">
       <p>© 2026 Inwoovation Lab. All rights reserved. | <a href="/" style="color: var(--cyan); text-decoration: none;">Home</a> | <a href="/about.html" style="color: var(--cyan); text-decoration: none;">About</a> | <a href="/contact.html" style="color: var(--cyan); text-decoration: none;">Contact</a> | <a href="/privacy-policy.html" style="color: var(--cyan); text-decoration: none;">Privacy Policy</a> | <a href="/terms-of-service.html" style="color: var(--cyan); text-decoration: none;">Terms of Service</a></p>

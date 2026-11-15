@@ -5,22 +5,15 @@ import os
 from datetime import datetime
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-WIKI_SRC_DIR = r"g:\Meine Ablage\Antigravity\Headquater\Career\AgTech_Wiki"
-WIKI_PORTAL_DIR = r"g:\Meine Ablage\Antigravity\Headquater\Career\Inwoovation_Portal\wiki"
-
-if not os.path.exists(WIKI_SRC_DIR):
-    WIKI_SRC_DIR = BASE_DIR
+WIKI_SRC_DIR = BASE_DIR
+WIKI_PORTAL_DIR = BASE_DIR
 
 TEMPLATE_PATH = os.path.join(WIKI_SRC_DIR, "_wiki_template.html")
 CROPS_DIR = os.path.join(WIKI_SRC_DIR, "data", "crops")
 TOPICS_DIR = os.path.join(WIKI_SRC_DIR, "data", "topics")
 RESEARCH_DIR = os.path.join(WIKI_SRC_DIR, "data", "research")
 
-OUT_DIRS = [WIKI_SRC_DIR]
-if os.path.exists(os.path.dirname(WIKI_PORTAL_DIR)):
-    os.makedirs(WIKI_PORTAL_DIR, exist_ok=True)
-    if os.path.normcase(WIKI_PORTAL_DIR) != os.path.normcase(WIKI_SRC_DIR):
-        OUT_DIRS.append(WIKI_PORTAL_DIR)
+OUT_DIRS = [WIKI_PORTAL_DIR]
 
 
 def write_to_all_outputs(filename, content):
@@ -30,18 +23,35 @@ def write_to_all_outputs(filename, content):
             f.write(content)
 
 
-def build_json_ld(headline, description, image_url, page_id, date_published="2026-08-05"):
+def _default_wiki_faqs(title):
+    return [
+        {
+            "question": f"How are {title} setpoints applied in commercial CEA climate computers?",
+            "answer": "Measure apical leaf surface temperature with an infrared radiometer, compute true leaf-to-air VPD in kPa, and pair diurnal temperature integration (DIF) with solar radiation-triggered irrigation dry-back (10–16% ΔVWC) using Inwoovation Lab interactive simulators."
+        },
+        {
+            "question": f"Which biophysical standards govern the {title} engineering parameters?",
+            "answer": "All psychrometric, radiative, and fertigation mass-balance parameters are parameterized from FAO-56 Penman-Monteith evapotranspiration, DIN V 18599 thermal transmission physics, Stanghellini canopy boundary-layer conductance, and stoichiometric ion equilibria."
+        }
+    ]
+
+
+def build_json_ld(headline, description, image_url, page_id, date_published="2026-08-05", faq_list=None, page_type="Article"):
     clean_date = str(date_published).split(" ")[0]
     if not clean_date or len(clean_date) < 8:
         clean_date = "2026-08-05"
-    schema_obj = {
-        "@context": "https://schema.org",
-        "@type": "Article",
+    canonical_url = "https://inwoovation.com/wiki/" if page_id == "index" else f"https://inwoovation.com/wiki/{page_id}.html"
+    safe_img = image_url if (image_url and "wikimedia" not in image_url) else "https://inwoovation.com/og-cover.jpg"
+    faqs = faq_list if (faq_list and len(faq_list) > 0) else _default_wiki_faqs(headline.split(" | ")[0])
+
+    main_entity = {
+        "@type": page_type,
         "headline": headline,
+        "name": headline,
         "description": description,
-        "image": [image_url] if image_url else ["https://inwoovation.com/og-cover.jpg"],
+        "image": [safe_img],
         "datePublished": clean_date,
-        "dateModified": "2026-10-28",
+        "dateModified": "2026-11-15",
         "author": {
             "@type": "Person",
             "name": "Inwoo Hwang",
@@ -59,8 +69,36 @@ def build_json_ld(headline, description, image_url, page_id, date_published="202
         },
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": f"https://inwoovation.com/wiki/{page_id}.html"
+            "@id": canonical_url
         }
+    }
+
+    breadcrumb_items = [
+        {"@type": "ListItem", "position": 1, "name": "Inwoovation Lab", "item": "https://inwoovation.com/"},
+        {"@type": "ListItem", "position": 2, "name": "AgriAtlas Wiki", "item": "https://inwoovation.com/wiki/"}
+    ]
+    if page_id != "index":
+        breadcrumb_items.append({"@type": "ListItem", "position": 3, "name": headline.split(" | ")[0], "item": canonical_url})
+
+    faq_node = {
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": item.get("question", ""),
+                "acceptedAnswer": {"@type": "Answer", "text": item.get("answer", "")}
+            }
+            for item in faqs
+        ]
+    }
+
+    schema_obj = {
+        "@context": "https://schema.org",
+        "@graph": [
+            main_entity,
+            {"@type": "BreadcrumbList", "itemListElement": breadcrumb_items},
+            faq_node
+        ]
     }
     return f'<script type="application/ld+json">\n{json.dumps(schema_obj, indent=2, ensure_ascii=False)}\n</script>'
 
@@ -81,7 +119,7 @@ def render_eeat_author_box():
             <div style="display: flex; gap: 1rem; flex-wrap: wrap; font-size: 0.85rem; color: var(--text-muted);">
                 <span>🏛️ <strong>Affiliation:</strong> Inwoovation Lab (<a href="https://inwoovation.com/" style="color: var(--primary); text-decoration: none;">inwoovation.com</a>)</span>
                 <span>🔬 <strong>Domain:</strong> Venlo Glasshouse Thermodynamics, Hydroponic Ion Kinetics &amp; Photobiology</span>
-                <span>📅 <strong>Last Technical Audit:</strong> October 2026</span>
+                <span>📅 <strong>Last Technical Audit:</strong> November 2026</span>
             </div>
         </section>
     """
@@ -89,15 +127,22 @@ def render_eeat_author_box():
 
 def render_calculator_cta():
     return """
-        <div id="calculators" style="background: linear-gradient(135deg, rgba(16,185,129,0.1) 0%, rgba(56,189,248,0.1) 100%); border: 1px solid rgba(16,185,129,0.3); padding: 2.5rem; border-radius: 12px; text-align: center; margin-bottom: 2rem;">
-            <h2 style="margin-top: 0; color: white; font-size: 1.8rem;">Ready to Steer Your Facility with Precision?</h2>
-            <p style="color: #cbd5e1; font-size: 1.05rem; margin-bottom: 2rem; max-width: 680px; margin-left: auto; margin-right: auto; line-height: 1.6;">
-                AgriAtlas provides the biophysical and thermodynamic governing theory, while our interactive engineering simulators compute exact psychrometric Vapor Pressure Deficit (VPD), leaf boundary-layer transpiration, and structural U-value heating loads for your specific greenhouse or vertical farm geometry.
+        <div id="calculators" style="background: linear-gradient(135deg, rgba(16,185,129,0.1) 0%, rgba(56,189,248,0.1) 100%); border: 1px solid rgba(16,185,129,0.3); padding: 2.2rem; border-radius: 12px; text-align: center; margin-bottom: 2rem;">
+            <h2 style="margin-top: 0; color: white; font-size: 1.7rem;">Ready to Steer Your Facility with Precision?</h2>
+            <p style="color: #cbd5e1; font-size: 1.02rem; margin-bottom: 1.6rem; max-width: 720px; margin-left: auto; margin-right: auto; line-height: 1.6;">
+                AgriAtlas provides the biophysical governing theory, while our v2026 flagship interactive simulators compute exact leaf-to-air Vapor Pressure Deficit (VPD), structural U-value heating loads, and crop-steering targets in real time.
             </p>
-            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                <a href="https://inwoovation.com/smartfarm/vpd.html" style="display: inline-block; background: var(--primary); color: #0f172a; font-weight: bold; padding: 0.95rem 1.8rem; border-radius: 8px; text-decoration: none; font-size: 1.05rem; transition: transform 0.2s;">Run VPD Calculator</a>
-                <a href="https://inwoovation.com/smartfarm/heat_loss.html" style="display: inline-block; background: transparent; border: 2px solid var(--accent-green); color: var(--accent-green); font-weight: bold; padding: 0.95rem 1.8rem; border-radius: 8px; text-decoration: none; font-size: 1.05rem; transition: transform 0.2s;">Calculate Heat Loss</a>
-                <a href="https://inwoovation.com/" style="display: inline-block; background: rgba(255,255,255,0.06); border: 1px solid var(--border); color: #f8fafc; font-weight: 600; padding: 0.95rem 1.8rem; border-radius: 8px; text-decoration: none; font-size: 1.05rem;">Explore Inwoovation Hub</a>
+            <div style="display: flex; gap: 0.85rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.8rem;">
+                <a href="/tools/psychrometric-mollier-greenhouse-dehumidifier.html" style="display: inline-block; background: var(--primary); color: #0f172a; font-weight: bold; padding: 0.85rem 1.4rem; border-radius: 8px; text-decoration: none; font-size: 0.96rem;">🌡️ Run VPD Engine</a>
+                <a href="/tools/greenhouse-heating-load-thermal-screen-calculator.html" style="display: inline-block; background: transparent; border: 2px solid var(--accent-green); color: var(--accent-green); font-weight: bold; padding: 0.85rem 1.4rem; border-radius: 8px; text-decoration: none; font-size: 0.96rem;">🔥 Calculate Heat Load</a>
+                <a href="/crops/index.html" style="display: inline-block; background: rgba(255,255,255,0.06); border: 1px solid var(--border); color: #f8fafc; font-weight: 600; padding: 0.85rem 1.4rem; border-radius: 8px; text-decoration: none; font-size: 0.96rem;">🌱 Crop Steering Guides</a>
+                <a href="/handbooks/index.html" style="display: inline-block; background: rgba(255,255,255,0.06); border: 1px solid var(--border); color: #f8fafc; font-weight: 600; padding: 0.85rem 1.4rem; border-radius: 8px; text-decoration: none; font-size: 0.96rem;">📘 Master Handbook</a>
+                <a href="/benchmarks/index.html" style="display: inline-block; background: rgba(255,255,255,0.06); border: 1px solid var(--border); color: #f8fafc; font-weight: 600; padding: 0.85rem 1.4rem; border-radius: 8px; text-decoration: none; font-size: 0.96rem;">⚖️ Benchmarks</a>
+                <a href="/troubleshoot.html" style="display: inline-block; background: rgba(255,255,255,0.06); border: 1px solid var(--border); color: #f8fafc; font-weight: 600; padding: 0.85rem 1.4rem; border-radius: 8px; text-decoration: none; font-size: 0.96rem;">🩺 Diagnostics</a>
+            </div>
+            <div id="live-biophysics-widget" style="max-width: 760px; margin: 0 auto; text-align: left;">
+                <div style="font-size: 0.82rem; font-weight: 700; color: #38bdf8; margin-bottom: 0.5rem;">⚡ Live Interactive VPD Psychrometric Gauge (Zero-Latency Embed)</div>
+                <iframe src="/embed/vpd-gauge.html" loading="lazy" title="Live CEA Psychrometric VPD Gauge" style="width: 100%; height: 320px; border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 12px; background: #020617;"></iframe>
             </div>
         </div>
     """
@@ -117,7 +162,8 @@ def generate_navigation(items, active_id):
 def build_page(template, data, crop_nav_html, topic_nav_html):
     page_id = data["id"]
     title = data["title"]
-    img_url = data.get("image_url") or "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Greenhouse_tomato.jpg/800px-Greenhouse_tomato.jpg"
+    img_url = data.get("image_url") or "https://inwoovation.com/og-cover.jpg"
+    og_img = img_url if (img_url and "wikimedia" not in img_url) else "https://inwoovation.com/og-cover.jpg"
     img_alt = (data.get("image_caption") or f"{title} — AgriAtlas CEA Engineering Profile").strip()
     desc = (data.get("description") or f"Precision CEA engineering and plant physiology guide for {title} by Inwoovation Lab.").strip()
     pub_date = data.get("published_date") or data.get("date") or "2026-08-05"
@@ -348,38 +394,44 @@ def build_page(template, data, crop_nav_html, topic_nav_html):
         content_html += "</div>"
 
     # Section 8: Frequently Asked Engineering Questions (FAQ)
-    if "faq_list" in data and len(data["faq_list"]) > 0:
-        content_html += """
-            <h2 style="color: white; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; margin-bottom: 1.5rem;" id="engineering-faq">❓ Frequently Asked CEA Engineering Questions (FAQ)</h2>
-            <div style="display: flex; flex-direction: column; gap: 1.2rem; margin-bottom: 3rem;">
+    faq_items = data.get("faq_list") if (data.get("faq_list") and len(data["faq_list"]) > 0) else _default_wiki_faqs(title)
+    content_html += """
+        <h2 style="color: white; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; margin-bottom: 1.5rem;" id="engineering-faq">❓ Frequently Asked CEA Engineering Questions (FAQ)</h2>
+        <div style="display: flex; flex-direction: column; gap: 1.2rem; margin-bottom: 3rem;">
+    """
+    for faq in faq_items:
+        content_html += f"""
+            <div class="content-box" style="margin-bottom: 0; padding: 1.5rem;">
+                <h3 style="margin-top: 0; margin-bottom: 0.7rem; color: var(--primary); font-size: 1.12rem;">Q: {faq.get('question', '')}</h3>
+                <p style="margin: 0; color: #cbd5e1; font-size: 0.96rem; line-height: 1.7;">{faq.get('answer', '')}</p>
+            </div>
         """
-        for faq in data["faq_list"]:
-            content_html += f"""
-                <div class="content-box" style="margin-bottom: 0; padding: 1.5rem;">
-                    <h3 style="margin-top: 0; margin-bottom: 0.7rem; color: var(--primary); font-size: 1.12rem;">Q: {faq.get('question', '')}</h3>
-                    <p style="margin: 0; color: #cbd5e1; font-size: 0.96rem; line-height: 1.7;">{faq.get('answer', '')}</p>
-                </div>
-            """
-        content_html += "</div>"
+    content_html += "</div>"
 
     # E-E-A-T Author Box + Calculators CTA
     content_html += render_eeat_author_box()
     content_html += render_calculator_cta()
 
-    sidebar_html = ""
-    if "references" in data and len(data["references"]) > 0:
-        sidebar_html = """
+    sidebar_html = """
     <aside class="sidebar-right">
-        <div style="background: rgba(0,0,0,0.5); border: 1px dashed var(--border); border-radius: 8px; padding: 1rem; text-align: center; margin-bottom: 2rem; color: var(--text-muted); font-size: 0.85rem;">
-            <div style="width: 300px; height: 250px; background: rgba(255,255,255,0.02); display: flex; align-items: center; justify-content: center; margin: 0 auto;">
-                Academic Literature Reference Index<br>&amp; Telemetry Citations
+        <div class="content-box" style="margin-bottom: 1.5rem; padding: 1.1rem; font-size: 0.85rem;">
+            <div style="font-weight: 800; color: #38bdf8; margin-bottom: 0.5rem;">⚡ Live CEA Simulators &amp; Guides</div>
+            <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+                <a href="/tools/psychrometric-mollier-greenhouse-dehumidifier.html" style="color: #e2e8f0; text-decoration: none;">🌡️ VPD &amp; Psychrometric Engine →</a>
+                <a href="/tools/greenhouse-heating-load-thermal-screen-calculator.html" style="color: #e2e8f0; text-decoration: none;">🔥 DIN V 18599 Heat Load →</a>
+                <a href="/crops/index.html" style="color: #e2e8f0; text-decoration: none;">🌱 Crop Steering Guides →</a>
+                <a href="/benchmarks/index.html" style="color: #e2e8f0; text-decoration: none;">⚖️ Hardware Benchmarks →</a>
+                <a href="/handbooks/index.html" style="color: #e2e8f0; text-decoration: none;">📘 Master Engineering Handbook →</a>
             </div>
         </div>
+    """
+    if "references" in data and len(data["references"]) > 0:
+        sidebar_html += """
         <div class="toc-title" style="margin-bottom: 1rem; color: #cbd5e1; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem;">References &amp; Citations</div>
         <div style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; padding-right: 0.5rem;">
         """
         for ref in data["references"]:
-            orig_t = ref.get("original_title") or "Peer-Reviewed Agricultural Engineering Publication"
+            orig_t = ref.get("original_title") or "Peer-Referenced Agricultural Engineering Publication"
             pub_t = ref.get("publisher") or "International Horticultural Science Press"
             gov_t = ref.get("gov_id") or "Verified Citation"
             sidebar_html += f"""
@@ -397,17 +449,17 @@ def build_page(template, data, crop_nav_html, topic_nav_html):
             """
         sidebar_html += """
         </div>
-    </aside>
         """
+    sidebar_html += "\n    </aside>"
 
     full_title = f"{title} | AgriAtlas CEA Engineering Wiki"
     canonical_tag = f'<link rel="canonical" href="https://inwoovation.com/wiki/{page_id}.html" />'
-    json_ld_tag = build_json_ld(full_title, desc, img_url, page_id, pub_date)
+    json_ld_tag = build_json_ld(full_title, desc, og_img, page_id, pub_date, faq_list=faq_items, page_type="Article")
 
     output = template.replace("{{TITLE}}", full_title)
     output = output.replace("</head>", f"    {canonical_tag}\n    {json_ld_tag}\n</head>")
     output = output.replace("{{DESC}}", html.escape(desc, quote=True))
-    output = output.replace("{{OG_IMAGE}}", img_url)
+    output = output.replace("{{OG_IMAGE}}", og_img)
     output = output.replace("{{CONTENT}}", content_html)
     output = output.replace("{{CROP_NAVIGATION}}", crop_nav_html)
     output = output.replace("{{TOPIC_NAVIGATION}}", topic_nav_html)
@@ -418,7 +470,7 @@ def build_page(template, data, crop_nav_html, topic_nav_html):
 
 def build_index_page(template, crops, topics, research, crop_nav_html, topic_nav_html):
     desc = "AgriAtlas CEA Engineering Encyclopedia: quantitative crop steering, psychrometric VPD control, hydroponic fertigation, and plant physiology research."
-    og_img = "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Greenhouse_tomato.jpg/800px-Greenhouse_tomato.jpg"
+    og_img = "https://inwoovation.com/og-cover.jpg"
 
     content_html = f"""
         <div class="breadcrumb">
@@ -485,7 +537,7 @@ def build_index_page(template, crops, topics, research, crop_nav_html, topic_nav
         <div style="display: flex; flex-direction: column; gap: 1.2rem; margin-bottom: 3rem;">
             <div class="content-box" style="margin-bottom: 0; padding: 1.5rem;">
                 <h3 style="margin-top: 0; margin-bottom: 0.6rem; color: var(--primary); font-size: 1.12rem;">Q: How do I translate AgriAtlas VPD and DIF tables into automated greenhouse climate computer setpoints?</h3>
-                <p style="margin: 0; color: #cbd5e1; font-size: 0.96rem; line-height: 1.7;">First, verify true canopy leaf temperature using an infrared radiometer to calculate leaf-to-air VPD via our <a href="https://inwoovation.com/smartfarm/vpd.html" style="color: var(--primary);">Psychrometric VPD Suite</a>. Program your climate PLC to ramp heating pipes and ventilation apertures 45 minutes prior to sunrise so that leaf temperature exceeds air dew-point by at least +2.5°C, preventing morning condensation and fungal spore germination while hitting the target diurnal DIF.</p>
+                <p style="margin: 0; color: #cbd5e1; font-size: 0.96rem; line-height: 1.7;">First, verify true canopy leaf temperature using an infrared radiometer to calculate leaf-to-air VPD via our <a href="/tools/psychrometric-mollier-greenhouse-dehumidifier.html" style="color: var(--primary);">Psychrometric VPD Engine</a>. Program your climate PLC to ramp heating pipes and ventilation apertures 45 minutes prior to sunrise so that leaf temperature exceeds air dew-point by at least +2.5°C, preventing morning condensation and fungal spore germination while hitting the target diurnal DIF.</p>
             </div>
             <div class="content-box" style="margin-bottom: 0; padding: 1.5rem;">
                 <h3 style="margin-top: 0; margin-bottom: 0.6rem; color: var(--primary); font-size: 1.12rem;">Q: Why does tip-burn occur in hydroponic leafy greens even when calcium is abundant in the nutrient solution?</h3>
@@ -497,9 +549,19 @@ def build_index_page(template, crops, topics, research, crop_nav_html, topic_nav
     content_html += render_eeat_author_box()
     content_html += render_calculator_cta()
 
+    index_faqs = [
+        {
+            "question": "How do I translate AgriAtlas VPD and DIF tables into automated greenhouse climate computer setpoints?",
+            "answer": "Verify canopy leaf temperature using an infrared radiometer to compute leaf-to-air VPD in the Psychrometric VPD Engine, then ramp pre-sunrise pipe heating and venting so leaf temperature stays at least +2.5 C above air dew-point while hitting the daily DIF envelope."
+        },
+        {
+            "question": "Why does tip-burn occur in hydroponic leafy greens even when calcium is abundant in the nutrient solution?",
+            "answer": "Calcium (Ca2+) is transported via passive transpiration xylem flow rather than phloem remobilization. Maintaining 0.35-0.45 m/s vertical airflow and nocturnal VPD below 0.35 kPa sustains meristematic Ca2+ delivery."
+        }
+    ]
     full_title = "AgriAtlas CEA Engineering Encyclopedia | Inwoovation Lab"
-    canonical_tag = '<link rel="canonical" href="https://inwoovation.com/wiki/index.html" />'
-    json_ld_tag = build_json_ld(full_title, desc, og_img, "index", "2026-08-05")
+    canonical_tag = '<link rel="canonical" href="https://inwoovation.com/wiki/" />'
+    json_ld_tag = build_json_ld(full_title, desc, og_img, "index", "2026-08-05", faq_list=index_faqs, page_type="CollectionPage")
 
     output = template.replace("{{TITLE}}", full_title)
     output = output.replace("</head>", f"    {canonical_tag}\n    {json_ld_tag}\n</head>")
@@ -516,7 +578,7 @@ def build_index_page(template, crops, topics, research, crop_nav_html, topic_nav
 def build_research_page(template, research, crop_nav_html, topic_nav_html):
     topics_sorted = sorted(research, key=lambda x: x.get("published_date", "2026-08-05"), reverse=True)
     desc = "Chronological Index of PhD-Level CEA Plant Physiology, Bioenergetics, and Climate Steering Research Papers by Inwoovation Lab."
-    og_img = "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Greenhouse_tomato.jpg/800px-Greenhouse_tomato.jpg"
+    og_img = "https://inwoovation.com/og-cover.jpg"
 
     content_html = f"""
         <div class="breadcrumb">
@@ -557,7 +619,7 @@ def build_research_page(template, research, crop_nav_html, topic_nav_html):
             <div class="research-card" data-search="{search_attr}" style="background: var(--bg-surface); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; transition: border-color 0.2s;">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; flex-wrap: wrap; gap: 0.5rem;">
                     <span style="font-size: 0.85rem; color: var(--primary); font-weight: 700; background: rgba(56, 189, 248, 0.1); padding: 0.3rem 0.8rem; border-radius: 20px; border: 1px solid rgba(56, 189, 248, 0.3);">🗓️ Published: {pub_date}</span>
-                    <span style="font-size: 0.85rem; color: var(--accent-green); font-weight: 600;">📚 {ref_count} Peer-Reviewed Citations | ✍️ Inwoo Hwang</span>
+                    <span style="font-size: 0.85rem; color: var(--accent-green); font-weight: 600;">📚 {ref_count} Peer-Referenced Citations | ✍️ Inwoo Hwang</span>
                 </div>
                 
                 <h2 style="margin: 0.5rem 0 1rem 0; font-size: 1.65rem; color: white;">
@@ -606,12 +668,26 @@ def build_research_page(template, research, crop_nav_html, topic_nav_html):
         </script>
     """
 
+    research_faqs = _default_wiki_faqs("AgriAtlas Scientific Research Library")
+    content_html += """
+        <h2 style="color: white; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; margin-bottom: 1.5rem;" id="research-faq">❓ Research Library Methodology FAQ</h2>
+        <div style="display: flex; flex-direction: column; gap: 1.2rem; margin-bottom: 3rem;">
+    """
+    for faq in research_faqs:
+        content_html += f"""
+            <div class="content-box" style="margin-bottom: 0; padding: 1.5rem;">
+                <h3 style="margin-top: 0; margin-bottom: 0.6rem; color: var(--primary); font-size: 1.12rem;">Q: {faq['question']}</h3>
+                <p style="margin: 0; color: #cbd5e1; font-size: 0.96rem; line-height: 1.7;">{faq['answer']}</p>
+            </div>
+        """
+    content_html += "</div>"
+
     content_html += render_eeat_author_box()
     content_html += render_calculator_cta()
 
     full_title = "Scientific Research Library | AgriAtlas CEA Engineering Wiki"
     canonical_tag = '<link rel="canonical" href="https://inwoovation.com/wiki/research.html" />'
-    json_ld_tag = build_json_ld(full_title, desc, og_img, "research", "2026-08-05")
+    json_ld_tag = build_json_ld(full_title, desc, og_img, "research", "2026-08-05", faq_list=research_faqs, page_type="CollectionPage")
 
     output = template.replace("{{TITLE}}", full_title)
     output = output.replace("</head>", f"    {canonical_tag}\n    {json_ld_tag}\n</head>")
@@ -745,9 +821,6 @@ def main():
 
     generate_search_index(crops_data, topics_data, research_data)
     print("Generated: search_index.js")
-
-    generate_sitemap_and_robots(crops_data, topics_data, research_data)
-    print("Generated: sitemap.xml & robots.txt")
 
 
 if __name__ == "__main__":

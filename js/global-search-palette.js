@@ -1170,12 +1170,20 @@
     "tags": "articles de article 67 tiefengeothermie fernwaerme grosswaermepumpen gewaechshaus dekarbonisierung html tiefengeothermie fernwärme industrielle großwärmepumpen nh r290 im venlo gewächshaus i"
   },
   {
-    "title": "Deutsche Gartenbau-Meister Fachartikel &amp; CEA-Technik (67 Monographien)",
+    "title": "Direct Air Capture (DAC) &amp; Festamin-CO₂-Desorption im Venlo-Gewächshaus: Wärmepumpen-Abwärmenutzung &amp; Förderung",
+    "cat": "article",
+    "url": "articles/de/article-68-direct-air-capture-festamin-co2-desorption-waermepumpen-gewaechshaus.html",
+    "icon": "🇩🇪",
+    "desc": "Ingenieurhandbuch zur Festamin-TVSA-CO₂-Abscheidung aus Umgebungsluft (DAC) gekoppelt mit Großwärmepumpen (65 °C–85 °C) nach DIN EN 13031, KTBL, BMEL und IRA 45",
+    "tags": "articles de article 68 direct air capture festamin co2 desorption waermepumpen gewaechshaus html direct air capture dac amp festamin co desorption im venlo gewächshaus wärmepumpen abwärmenut"
+  },
+  {
+    "title": "Deutsche Gartenbau-Meister Fachartikel &amp; CEA-Technik (68 Monographien)",
     "cat": "article",
     "url": "articles/de/index.html",
     "icon": "🇩🇪",
-    "desc": "Vollständige deutschsprachige Wissensdatenbank mit 67 technischen Fachartikeln zu VPD-Psychrometrie, DIN V 18599 Heizlast, EN 13031-1 Venlo-Statik, FvCB-CO2-Kin",
-    "tags": "articles de index html deutsche gartenbau meister fachartikel amp cea technik 67 monographien vollständige deutschsprachige wissensdatenbank mit 67 technischen fachartikeln zu vpd psychromet"
+    "desc": "Vollständige deutschsprachige Wissensdatenbank mit 68 technischen Fachartikeln zu VPD-Psychrometrie, DIN V 18599 Heizlast, EN 13031-1 Venlo-Statik, FvCB-CO2-Kin",
+    "tags": "articles de index html deutsche gartenbau meister fachartikel amp cea technik 68 monographien vollständige deutschsprachige wissensdatenbank mit 68 technischen fachartikeln zu vpd psychromet"
   },
   {
     "title": "CEA &amp; Greenhouse Engineering Articles Library (EN / DE / JA)",
@@ -1520,6 +1528,14 @@
     "icon": "🇯🇵",
     "desc": "商業用 Venlo 型ガラス温室の VPD 飽差熱力学・DIN V 18599 暖房負荷・EN 13031-1 構造設計・FvCB CO2 施用・養液化学平衡を解説する 41 編の日本語技術論文アーカイブ。",
     "tags": "articles ja index html 日本語 施設園芸 スマ ト農業工学モノグラフ一覧 41 論文 商業用 venlo 型ガラス温室の vpd 飽差熱力学 din v 18599 暖房負荷 en 13031 1 構造設計 fvcb co2 施用 養液化学平衡を解説する 41 編の日本語技術論文ア カイブ"
+  },
+  {
+    "title": "Diffuse AR Glass vs. Multi-Layer PO Film: Greenhouse Roof Cladding ROI",
+    "cat": "part",
+    "url": "benchmarks/diffuse-glass-vs-po-film-greenhouse-glazing-roi.html",
+    "icon": "⚙️",
+    "desc": "5-year commercial greenhouse glazing ROI benchmark comparing 4mm low-iron AR diffuse glass (91% hemispherical PAR, 65% haze) vs double-layer anti-drip PO poly f",
+    "tags": "benchmarks diffuse glass vs po film greenhouse glazing roi html diffuse ar glass vs multi layer po film greenhouse roof cladding roi 5 year commercial greenhouse glazing roi benchmark compar"
   },
   {
     "title": "Greenhouse Heat Pump vs Natural Gas Boiler Heating Cost Benchmark",
@@ -1974,24 +1990,32 @@
     "cat": "part",
     "url": "directory.html",
     "icon": "⚙️",
-    "desc": "Master HTML sitemap and engineering taxonomy indexing all 370 calculators, 150 global agricultural grants, EN/DE/JA monographs, crop guides, and climate hubs.",
-    "tags": "directory html complete cea engineering directory amp index 370 pages master html sitemap and engineering taxonomy indexing all 370 calculators 150 global agricultural grants en de ja monogr"
+    "desc": "Master HTML sitemap and engineering taxonomy indexing all 370 calculators, 192 global agricultural grants, EN/DE/JA monographs, crop guides, and climate hubs.",
+    "tags": "directory html complete cea engineering directory amp index 370 pages master html sitemap and engineering taxonomy indexing all 370 calculators 192 global agricultural grants en de ja monogr"
   },
   {
-    "title": "Precision CEA & Horticultural Engineering Articles (78 Volumes / 186 Multilingual Editions)",
+    "title": "Precision CEA & Horticultural Engineering Articles (78 Volumes / 187 Multilingual Editions)",
     "cat": "article",
     "url": "guides.html",
     "icon": "📚",
-    "desc": "78-volume (186 multilingual editions) open-access Controlled Environment Agriculture (CEA) archive — VPD physics, biomass CHP, photobiology, closed-loop fertiga",
-    "tags": "guides html precision cea horticultural engineering articles 78 volumes 186 multilingual editions 78 volume 186 multilingual editions open access controlled environment agriculture cea archi"
+    "desc": "78-volume (187 multilingual editions) open-access Controlled Environment Agriculture (CEA) archive — VPD physics, biomass CHP, photobiology, closed-loop fertiga",
+    "tags": "guides html precision cea horticultural engineering articles 78 volumes 187 multilingual editions 78 volume 187 multilingual editions open access controlled environment agriculture cea archi"
+  },
+  {
+    "title": "The CEA Biophysics &amp; Greenhouse Engineering Handbook (78 Volumes / 187 Editions)",
+    "cat": "article",
+    "url": "handbooks/index.html",
+    "icon": "📖",
+    "desc": "Open-access six-part Controlled Environment Agriculture compendium indexing 78 volumes (187 EN/DE/JA editions), 42 live biophysical calculators, and 192 agricul",
+    "tags": "handbooks index html the cea biophysics amp greenhouse engineering handbook 78 volumes 187 editions open access six part controlled environment agriculture compendium indexing 78 volumes 187"
   },
   {
     "title": "Inwoovation Lab",
     "cat": "tool",
     "url": "index.html",
     "icon": "🛠️",
-    "desc": "Inwoovation Lab — Unified CEA engineering command center: 150 verified global agricultural grants across 8 countries (US, Germany, Japan, Netherlands, Korea, Fr",
-    "tags": "index html inwoovation lab inwoovation lab unified cea engineering command center 150 verified global agricultural grants across 8 countries us germany japan netherlands korea fr"
+    "desc": "Inwoovation Lab — Unified CEA engineering command center: 192 verified global agricultural grants across 8 countries (US, Germany, Japan, Netherlands, Korea, Fr",
+    "tags": "index html inwoovation lab inwoovation lab unified cea engineering command center 192 verified global agricultural grants across 8 countries us germany japan netherlands korea fr"
   },
   {
     "title": "Deutscher Gartenbau-Meister &amp; KTBL-Standard Rechner",
@@ -2008,22 +2032,6 @@
     "icon": "⚙️",
     "desc": "Industrial parametric search engine for commercial greenhouse components, fertigation valves, LED toplights, climate sensors, and Dutch bucket supplies. Cross-r",
     "tags": "parts index html agrimaster industrial parametric search engine for commercial greenhouse components fertigation valves led toplights climate sensors and dutch bucket supplies cross r"
-  },
-  {
-    "title": "Privacy Policy &amp; Data Protection Statement",
-    "cat": "part",
-    "url": "parts/privacy.html",
-    "icon": "⚙️",
-    "desc": "Comprehensive Privacy Policy for AgriMaster (Inwoovation Lab) Global CEA Parts & Vacuum Engineering Catalog. GDPR, CCPA/CPRA, Google AdSense DART cookie, and lo",
-    "tags": "parts privacy html privacy policy amp data protection statement comprehensive privacy policy for agrimaster inwoovation lab global cea parts vacuum engineering catalog gdpr ccpa cpra google "
-  },
-  {
-    "title": "Terms of Service &amp; Engineering Liability Notice",
-    "cat": "part",
-    "url": "parts/terms.html",
-    "icon": "⚙️",
-    "desc": "Terms of Service and Engineering Disclaimer for AgriMaster (Inwoovation Lab) Global CEA Parts, Fertigation Hardware, and Vacuum Systems Engineering Suite.",
-    "tags": "parts terms html terms of service amp engineering liability notice terms of service and engineering disclaimer for agrimaster inwoovation lab global cea parts fertigation hardware and vacuum"
   },
   {
     "title": "Vacuum Systems Engineering & Semiconductor Equipment Catalog",
@@ -2162,14 +2170,6 @@
     "tags": "smartfarm mixing valve html greenhouse 3 way mixing valve kv calculator calculate the correct kv coefficient dn pipe diameter and flow rates for greenhouse heating 3 way mixing valves includ"
   },
   {
-    "title": "Privacy Policy",
-    "cat": "sim",
-    "url": "smartfarm/privacy.html",
-    "icon": "🧪",
-    "desc": "Comprehensive GDPR, CCPA, and Google AdSense compliant privacy policy for Smart Farm Engineering Lab.",
-    "tags": "smartfarm privacy html privacy policy comprehensive gdpr ccpa and google adsense compliant privacy policy for smart farm engineering lab"
-  },
-  {
     "title": "Boiler vs Heat Pump ROI Simulator",
     "cat": "sim",
     "url": "smartfarm/roi_simulator.html",
@@ -2184,14 +2184,6 @@
     "icon": "🧪",
     "desc": "Autonomous Wave Function Collapse (WFC) and A* pathfinding algorithm for smart farm greenhouse design. Automatically routes cultivation gutters, main supply/ret",
     "tags": "smartfarm smartfarm layout wfc html smartfarm wfc bed hydronic layout planner autonomous wave function collapse wfc and a pathfinding algorithm for smart farm greenhouse design automatically"
-  },
-  {
-    "title": "Terms of Service",
-    "cat": "sim",
-    "url": "smartfarm/terms.html",
-    "icon": "🧪",
-    "desc": "Terms of service and usage disclaimers for Smart Farm Engineering Lab's free online greenhouse calculators and agricultural engineering simulation tools.",
-    "tags": "smartfarm terms html terms of service terms of service and usage disclaimers for smart farm engineering lab s free online greenhouse calculators and agricultural engineering simulation tools"
   },
   {
     "title": "Plant Transpiration Calculator",
@@ -2229,9 +2221,9 @@
     "title": "OpenCEA Pro: Commercial Controlled Environment Agriculture Suite",
     "cat": "tool",
     "url": "suite/index.html",
-    "icon": "🛠️",
-    "desc": "OpenCEA Pro is an always-updated commercial CEA biophysics suite with 24/7 AI Agronomist Co-Pilot and 33 specialized greenhouse engineering engines.",
-    "tags": "suite index html opencea pro commercial controlled environment agriculture suite opencea pro is an always updated commercial cea biophysics suite with 24 7 ai agronomist co pilot and 33 spec"
+    "icon": "🚀",
+    "desc": "100% Free open-access OpenCEA engineering suite with 42 commercial CEA greenhouse physics calculators, Python CLI tools, and rule-based field diagnostic triage.",
+    "tags": "suite index html opencea pro commercial controlled environment agriculture suite 100 free open access opencea engineering suite with 42 commercial cea greenhouse physics calculators python c"
   },
   {
     "title": "AgriQuant Commercial CEA Energy & Commodity Terminal",
@@ -2618,7 +2610,7 @@
     "tags": "wiki calcium channel xylem transport html xylem mediated calcium translocation kinetics and root pressure driven guttation steering xylem mediated calcium translocation kinetics mechanosensi"
   },
   {
-    "title": "Care Farming (치유농업)",
+    "title": "Care Farming",
     "cat": "wiki",
     "url": "wiki/care_farming.html",
     "icon": "🧬",
@@ -2960,18 +2952,18 @@
       <div class="inwoo-palette-box" role="dialog" aria-modal="true" aria-label="Inwoovation Spotlight Search">
         <div class="inwoo-palette-header">
           <span class="inwoo-palette-search-icon">🔍</span>
-          <input type="text" id="inwoo-palette-input" placeholder="Search all 366 tools, simulators, wiki, crops, climate hubs & EN/DE/JA articles..." autocomplete="off" />
+          <input type="text" id="inwoo-palette-input" placeholder="Search all 365 tools, simulators, wiki, crops, climate hubs & EN/DE/JA articles..." autocomplete="off" />
           <span class="inwoo-palette-esc-badge" onclick="window.InwooPalette.close()">ESC</span>
         </div>
         <div class="inwoo-palette-tabs">
-          <button class="inwoo-pal-tab active" data-cat="all">✨ All (366)</button>
+          <button class="inwoo-pal-tab active" data-cat="all">✨ All (365)</button>
           <button class="inwoo-pal-tab" data-cat="tool">🛠️ Tools (49)</button>
-          <button class="inwoo-pal-tab" data-cat="article">📚 Articles (191)</button>
+          <button class="inwoo-pal-tab" data-cat="article">📚 Articles (193)</button>
           <button class="inwoo-pal-tab" data-cat="wiki">🧬 Wiki (44)</button>
           <button class="inwoo-pal-tab" data-cat="climate">🌍 Climate (41)</button>
-          <button class="inwoo-pal-tab" data-cat="sim">🧪 Simulators (21)</button>
+          <button class="inwoo-pal-tab" data-cat="sim">🧪 Simulators (19)</button>
           <button class="inwoo-pal-tab" data-cat="crop">🌱 Crops (11)</button>
-          <button class="inwoo-pal-tab" data-cat="part">⚙️ Benchmarks & Parts (9)</button>
+          <button class="inwoo-pal-tab" data-cat="part">⚙️ Benchmarks & Parts (8)</button>
         </div>
         <div class="inwoo-palette-results" id="inwoo-palette-results"></div>
         <div class="inwoo-palette-footer">
@@ -2980,7 +2972,7 @@
             <span><kbd>↵</kbd> Open</span>
             <span><kbd>Esc</kbd> Close</span>
           </div>
-          <div style="color: #64748b; font-size: 0.75rem;">Inwoovation Universal Spotlight (366 Indexed Pages)</div>
+          <div style="color: #64748b; font-size: 0.75rem;">Inwoovation Universal Spotlight (365 Indexed Pages)</div>
         </div>
       </div>
     `;

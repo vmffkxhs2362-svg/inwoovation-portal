@@ -22,16 +22,16 @@
   
   <!-- Structured Data (JSON-LD) -->
   <script type="application/ld+json">
-  {
+{
   "@context": "https://schema.org",
   "@graph": [
     {
       "@type": "Quiz",
       "name": "OpenCEA Biophysics Mastery Quiz & Free Certificate Engine",
       "url": "https://inwoovation.com/quiz.html",
-      "description": "Test your precision CEA horticultural biophysics knowledge on VPD, DLI, DIN V 18599, and fertigation to earn a verifiable Certificate.",
+      "description": "30-question multi-track horticultural biophysics, German Gärtnermeister (KTBL/DIN), and closed-loop hydrochemistry certification exam.",
       "educationalLevel": "Professional / Advanced",
-      "dateModified": "2026-11-07",
+      "dateModified": "2026-11-16",
       "provider": {
         "@type": "Organization",
         "name": "Inwoovation Lab",
@@ -52,6 +52,35 @@
           "position": 2,
           "name": "🏆 OpenCEA Horticultural Biophysics Mastery Assessment",
           "item": "https://inwoovation.com/quiz.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How is the OpenCEA 3-Track Biophysics & Meister Exam structured?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can select any focused 10-question specialization track (CEA Biophysics in English, German Gaertnermeister KTBL/DIN Standards, or Hydrochemistry and Greenhouse Energy) or take the comprehensive 30-question Full Mastery assessment."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What score is required to generate the verifiable Canvas certificate?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Achieving 70% or higher unlocks instant generation of a stamped high-resolution 1200x850 PNG credential bearing your name, track title, verification ID, and score grade completely free of charge."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does every quiz explanation link to a live simulation calculator?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. After answering any question, the explanation box renders the physical derivation alongside a direct link into the matching OpenCEA simulator or Meister calculator so you can test parameter sensitivities immediately."
+          }
         }
       ]
     }
@@ -300,10 +329,10 @@
       <span style="font-size:0.75rem; background:linear-gradient(135deg,#06b6d4,#10b981); color:#030712; font-weight:800; padding:2px 8px; border-radius:4px;">ACADEMY</span>
     </a>
     <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap;">
-      <a href="tools/index.html" style="color:#94a3b8; text-decoration:none; font-size:0.9rem; font-weight:600;">🛠️ 35 Tools</a>
+      <a href="tools/index.html" style="color:#94a3b8; text-decoration:none; font-size:0.9rem; font-weight:600;">🛠️ 42 Tools</a>
       <a href="troubleshoot.html" style="color:#94a3b8; text-decoration:none; font-size:0.9rem; font-weight:600;">🔍 Diagnostic</a>
       <a href="meister.html" style="color:#94a3b8; text-decoration:none; font-size:0.9rem; font-weight:600;">🇩🇪 Meister Hub</a>
-      <a href="quiz.html" style="color:#38bdf8; text-decoration:none; font-size:0.9rem; font-weight:800;">🏆 10-Q Quiz</a>
+      <a href="quiz.html" style="color:#38bdf8; text-decoration:none; font-size:0.9rem; font-weight:800;">🏆 30-Q Quiz</a>
       <button class="nav-search-trigger" onclick="window.InwooPalette.open()"><span>🔍 Search</span> <kbd>Ctrl+K</kbd></button>
     </div>
   </header>
@@ -333,8 +362,15 @@
         </ul>
       </div>
 
-      <button class="btn-action" style="display:inline-block;" onclick="startQuiz()">
-        🚀 Start Assessment (10 Questions) →
+      
+      <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:18px;" id="trackSelector">
+        <button type="button" class="pill-btn track-btn active" data-track="track_a" onclick="selectTrack('track_a', this)" style="background:rgba(56,189,248,0.18); border:1px solid #38bdf8; color:#f8fafc; padding:8px 14px; border-radius:100px; cursor:pointer; font-weight:700; font-size:0.84rem;">🌿 Track A: CEA Biophysics (EN · 10 Qs)</button>
+        <button type="button" class="pill-btn track-btn" data-track="track_b" onclick="selectTrack('track_b', this)" style="background:rgba(15,23,42,0.7); border:1px solid rgba(255,255,255,0.15); color:#cbd5e1; padding:8px 14px; border-radius:100px; cursor:pointer; font-weight:700; font-size:0.84rem;">🇩🇪 Track B: Gärtnermeister (DE · 10 Qs)</button>
+        <button type="button" class="pill-btn track-btn" data-track="track_c" onclick="selectTrack('track_c', this)" style="background:rgba(15,23,42,0.7); border:1px solid rgba(255,255,255,0.15); color:#cbd5e1; padding:8px 14px; border-radius:100px; cursor:pointer; font-weight:700; font-size:0.84rem;">⚗️ Track C: Hydrochemistry &amp; Energy (10 Qs)</button>
+        <button type="button" class="pill-btn track-btn" data-track="all" onclick="selectTrack('all', this)" style="background:rgba(16,185,129,0.12); border:1px solid rgba(16,185,129,0.35); color:#34d399; padding:8px 14px; border-radius:100px; cursor:pointer; font-weight:700; font-size:0.84rem;">🏆 Full Mastery Exam (30 Qs)</button>
+      </div>
+<button class="btn-action" id="startQuizBtn" style="display:inline-block;" onclick="startQuiz()">
+        🚀 Start Track A Assessment (10 Questions) →
       </button>
     </div>
 
@@ -403,10 +439,10 @@
 
       <div id="certRetryBlock" style="display:none; margin-top:20px;">
         <p style="color:#f87171; font-size:1rem; margin-bottom:16px;">
-          A score of 70% or higher is required to unlock the verifiable certificate. Review our free 37 tools and retake the test!
+          A score of 70% or higher is required to unlock the verifiable certificate. Review our free 42 tools and retake the test!
         </p>
         <div style="display:flex; justify-content:center; gap:12px;">
-          <a href="tools/index.html" class="share-btn" style="background:#0284c7; color:white; text-decoration:none;">🛠️ Review 37 Tools</a>
+          <a href="tools/index.html" class="share-btn" style="background:#0284c7; color:white; text-decoration:none;">🛠️ Review 42 Tools</a>
           <button class="share-btn btn-download" onclick="resetQuiz()">🔄 Retake Assessment</button>
         </div>
       </div>
@@ -469,6 +505,38 @@
            data-full-width-responsive="true"></ins>
       <script>try { (adsbygoogle = window.adsbygoogle || []).push({}); } catch(e) {}</script>
     </div>
+  
+    <!-- Ecosystem Study & Practice Bridges -->
+    <section class="quiz-card" style="margin-top:26px;">
+      <h2 style="font-family:'Outfit',sans-serif; font-size:1.35rem; color:#f8fafc; margin:0 0 10px 0;">🧭 Exam Preparation Hubs &amp; Interactive Practice Resources</h2>
+      <p style="color:#94a3b8; font-size:0.92rem; line-height:1.65; margin:0 0 16px 0;">Strengthen weak domains with hands-on greenhouse calculators, German Fachdeutsch audio episodes, 186 downloadable technical handbooks, and 20 symptom protocols:</p>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:12px;">
+        <a href="/meister.html" style="display:block; padding:12px 14px; background:rgba(15,23,42,0.75); border:1px solid rgba(245,158,11,0.3); border-radius:10px; color:#fbbf24; text-decoration:none; font-weight:700; font-size:0.88rem;">🇩🇪 Meister Hub (DE/KTBL) →</a>
+        <a href="/handbooks/index.html" style="display:block; padding:12px 14px; background:rgba(15,23,42,0.75); border:1px solid rgba(56,189,248,0.3); border-radius:10px; color:#38bdf8; text-decoration:none; font-weight:700; font-size:0.88rem;">📖 186 Technical Handbooks →</a>
+        <a href="/podcasts/index.html" style="display:block; padding:12px 14px; background:rgba(15,23,42,0.75); border:1px solid rgba(245,158,11,0.3); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:700; font-size:0.88rem;">🎙️ Meisterfunk Audio Study →</a>
+        <a href="/troubleshoot.html" style="display:block; padding:12px 14px; background:rgba(15,23,42,0.75); border:1px solid rgba(16,185,129,0.3); border-radius:10px; color:#34d399; text-decoration:none; font-weight:700; font-size:0.88rem;">🔍 20-Protocol Troubleshooter →</a>
+      </div>
+    </section>
+
+    <!-- Quiz FAQ (Synced with JSON-LD FAQPage) -->
+    <section class="quiz-card" id="quiz-faq" style="margin-top:26px;" aria-label="Assessment FAQ">
+      <h2 style="font-family:'Outfit',sans-serif; font-size:1.35rem; color:#f8fafc; margin:0 0 18px 0;">❓ Certification Exam Frequently Asked Questions</h2>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:18px;">
+        <div>
+          <strong style="display:block; color:#38bdf8; font-size:0.94rem; margin-bottom:6px;">How is the OpenCEA 3-Track Biophysics &amp; Meister Exam structured?</strong>
+          <p style="color:#94a3b8; font-size:0.88rem; line-height:1.65; margin:0;">You can select any focused 10-question specialization track (CEA Biophysics in English, German Gärtnermeister KTBL/DIN Standards, or Hydrochemistry &amp; Greenhouse Energy) or take the comprehensive 30-question Full Mastery assessment.</p>
+        </div>
+        <div>
+          <strong style="display:block; color:#38bdf8; font-size:0.94rem; margin-bottom:6px;">What score is required to generate the verifiable Canvas certificate?</strong>
+          <p style="color:#94a3b8; font-size:0.88rem; line-height:1.65; margin:0;">Achieving 70% or higher unlocks instant generation of a stamped high-resolution 1200×850 PNG credential bearing your name, track title, verification ID, and score grade completely free of charge.</p>
+        </div>
+        <div>
+          <strong style="display:block; color:#38bdf8; font-size:0.94rem; margin-bottom:6px;">Does every quiz explanation link to a live simulation calculator?</strong>
+          <p style="color:#94a3b8; font-size:0.88rem; line-height:1.65; margin:0;">Yes. After answering any question, the explanation box renders the physical derivation alongside a direct link into the matching OpenCEA simulator or Meister calculator so you can test parameter sensitivities immediately.</p>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <footer style="text-align:center; padding:30px 20px; color:#64748b; font-size:0.85rem; border-top:1px solid rgba(255,255,255,0.06); margin-top:auto;">
@@ -484,135 +552,521 @@
   </footer>
 
   <script>
-    const QUESTIONS = [
+    const ALL_QUESTIONS = [
       {
-        cat: "VPD & Psychrometrics",
-        q: "In a commercial tomato glasshouse, air temperature is 24.0°C with 65% RH. The thermal infrared camera measures a leaf temperature of 22.0°C (2.0°C canopy depression). Which is the true Leaf-to-Air Vapor Pressure Deficit (VPD_leaf)?",
-        options: [
-          "0.70 kPa (Healthy transpiration zone)",
-          "1.05 kPa (Extreme drought stress)",
-          "0.32 kPa (Severe condensation danger)",
-          "1.85 kPa (Stomatal closure induced)"
-        ],
-        answer: 0,
-        explanation: "At 22.0°C leaf temperature, saturation vapor pressure e_sat(leaf) = 2.643 kPa. At 24.0°C air and 65% RH, air vapor pressure e_air = 0.65 × 2.983 = 1.939 kPa. Leaf VPD = 2.643 - 1.939 = 0.704 kPa. This is right in the ideal commercial steer zone (0.6 - 1.0 kPa)."
+            "track": "track_a",
+            "trackName": "Track A: CEA Biophysics (EN)",
+            "cat": "VPD & Psychrometrics",
+            "q": "In a commercial tomato glasshouse, air temperature is 24.0 °C with 65% RH and leaf temperature measured via IR radiometer is 22.0 °C. What is the true Leaf-to-Air VPD (VPD_leaf)?",
+            "options": [
+                  "0.70 kPa (Healthy stomatal transpiration zone)",
+                  "1.05 kPa (High midday drought stress)",
+                  "0.32 kPa (Condensation risk Zone)",
+                  "1.85 kPa (ABA stomatal closure)"
+            ],
+            "answer": 0,
+            "explanation": "At 22.0 °C leaf temp, saturation pressure es(leaf) = 2.643 kPa. At 24.0 °C air and 65% RH, e_air = 0.65 × 2.983 = 1.939 kPa. Subtracting yields VPD_leaf = 0.704 kPa.",
+            "toolUrl": "/smartfarm/vpd.html",
+            "toolLabel": "Open VPD Calculator"
       },
       {
-        cat: "Photobiology & Lighting",
-        q: "A commercial vertical farm operates horticultural LED fixtures providing a constant 350 µmol/m²s PPFD at canopy level for an 18-hour photoperiod. What is the cumulative Daily Light Integral (DLI)?",
-        options: [
-          "15.12 mol/m²/day",
-          "22.68 mol/m²/day",
-          "18.90 mol/m²/day",
-          "11.34 mol/m²/day"
-        ],
-        answer: 1,
-        explanation: "DLI = (PPFD × photoperiod_seconds) / 1,000,000 = (350 × 18 × 3600) / 1,000,000 = 22,680,000 / 1,000,000 = 22.68 mol/m²/day. Perfect for high-yielding baby greens and fruiting strawberries."
+            "track": "track_a",
+            "trackName": "Track A: CEA Biophysics (EN)",
+            "cat": "DLI & Photobiology",
+            "q": "A vertical farm shelf operates at 220 µmol·m⁻²·s⁻¹ PPFD for a 16-hour photoperiod. What is the exact Daily Light Integral (DLI)?",
+            "options": [
+                  "12.67 mol·m⁻²·d⁻¹",
+                  "8.45 mol·m⁻²·d⁻¹",
+                  "16.20 mol·m⁻²·d⁻¹",
+                  "22.00 mol·m⁻²·d⁻¹"
+            ],
+            "answer": 0,
+            "explanation": "DLI = PPFD × photoperiod(h) × 0.0036 = 220 × 16 × 0.0036 = 12.672 mol·m⁻²·d⁻¹.",
+            "toolUrl": "/tools/dli-spectrum-photomorphogenesis-calculator.html",
+            "toolLabel": "Open DLI & Spectrum Calculator"
       },
       {
-        cat: "DIN V 18599 Thermodynamics",
-        q: "According to German greenhouse energy standards (DIN V 18599 / KTBL), what is the typical heat transmission coefficient (U-value) for standard single float glass, and how much energy savings can a modern aluminized thermal screen provide when closed at night?",
-        options: [
-          "U = 3.0 W/m²K, with 10–15% energy savings",
-          "U = 6.0–6.5 W/m²K, with 30–45% energy savings",
-          "U = 1.1 W/m²K, with 60–75% energy savings",
-          "U = 8.5 W/m²K, with 5% energy savings"
-        ],
-        answer: 1,
-        explanation: "Single horticultural glass has an uninsulated U-value of 6.0 to 6.5 W/m²K. Deploying an aluminized thermal screen creates an insulating stagnant air boundary and reflects long-wave thermal radiation, reliably reducing peak nocturnal heating load by 30% to 45%."
+            "track": "track_a",
+            "trackName": "Track A: CEA Biophysics (EN)",
+            "cat": "FvCB Photosynthesis",
+            "q": "In the Farquhar-von Caemmerer-Berry (FvCB) C3 model, why does raising indoor CO₂ from 420 ppm to 900 ppm boost net leaf assimilation by 25–38%?",
+            "options": [
+                  "Suppresses Rubisco RuBP oxygenation (photorespiration) and increases carboxylation velocity",
+                  "Raises chloroplast leaf temperature by 4 °C via radiative trapping",
+                  "Eliminates plant requirement for root-zone potassium and calcium uptake",
+                  "Increases stomatal pore aperture permanently across dark photoperiods"
+            ],
+            "answer": 0,
+            "explanation": "Rubisco is a bifunctional enzyme. Elevated intercellular CO₂ competitively inhibits O₂ binding (reducing photorespiratory CO₂ loss by up to 40%) while accelerating RuBP carboxylation.",
+            "toolUrl": "/tools/co2-enrichment-leaf-photosynthesis-farquhar-calculator.html",
+            "toolLabel": "Open Farquhar CO₂ Engine"
       },
       {
-        cat: "Hydroponics & Fertigation",
-        q: "A grower mixes an A/B concentrated stock tank at a standard 1:100 injector ratio. If the raw municipal water has an EC of 0.3 mS/cm and the desired drip irrigation delivery EC is 2.5 mS/cm, what is the required delta EC contributed by the dosed salts?",
-        options: [
-          "Delta EC = 2.2 mS/cm (approx. 1.4 g/L dry salt density in delivery)",
-          "Delta EC = 2.8 mS/cm",
-          "Delta EC = 1.0 mS/cm",
-          "Delta EC = 0.5 mS/cm"
-        ],
-        answer: 0,
-        explanation: "Delta EC = Target EC - Raw Water EC = 2.5 - 0.3 = 2.2 mS/cm. Under Sonneveld hydroponic calibration (0.64 g/L per 1.0 mS/cm), this represents ~1.408 g/L of dissolved salts delivered to the rootzone."
+            "track": "track_a",
+            "trackName": "Track A: CEA Biophysics (EN)",
+            "cat": "Far-Red & Phytochrome",
+            "q": "Adding 8% Far-Red photons (730 nm) alongside a high-Red LED fixture alters plant morphology primarily by:",
+            "options": [
+                  "Lowering the Phytochrome Photostationary State (P_fr/P_total) and invoking Emerson enhancement",
+                  "Blocking Photosystem II electron transport at plastoquinone",
+                  "Destroying anthocyanin pigments in red lettuce cultivars",
+                  "Halving stomatal transpiration regardless of air VPD"
+            ],
+            "answer": 0,
+            "explanation": "730 nm radiation converts active P_fr phytochrome back to P_r, triggering mild shade-avoidance leaf expansion while feeding Photosystem I cleanly (Emerson enhancement).",
+            "toolUrl": "/tools/par-far-red-canopy-extinction-beer-lambert-calculator.html",
+            "toolLabel": "Open PAR & Far-Red Canopy Engine"
       },
       {
-        cat: "Plant Physiology & Calcium",
-        q: "Why does prolonged high relative humidity (VPD < 0.20 kPa) during nighttime lead to distal Blossom-End Rot (BER) in rapidly growing fruit, even when the hydroponic nutrient solution has abundant Calcium (Ca²⁺)?",
-        options: [
-          "Calcium is phloem-mobile and moves away from fruit to root tissue in high humidity",
-          "Calcium is phloem-immobile and relies strictly on xylem water transpiration; low VPD halts daytime transpiration, while absence of night guttation leaves fruit tips starved of calcium",
-          "High humidity converts Calcium into insoluble calcium carbonate in the substrate",
-          "Excess moisture causes roots to excrete calcium back into drainage"
-        ],
-        answer: 1,
-        explanation: "Calcium moves almost exclusively via xylem mass flow driven by transpiration. If daytime VPD is too high, leaves steal all the water/calcium; if night humidity has zero root pressure/guttation, distal fruit tissues develop localized calcium deficiency, causing Blossom-End Rot (BER)."
+            "track": "track_a",
+            "trackName": "Track A: CEA Biophysics (EN)",
+            "cat": "Airflow & Tipburn",
+            "q": "What minimum vertical/downward canopy air velocity prevents inner-leaf calcium tipburn in multi-tier lettuce racks at 16 mol/m²/d DLI?",
+            "options": [
+                  "0.40 – 0.65 m/s across developing heart foliage",
+                  "0.05 – 0.10 m/s laminar stagnation",
+                  "3.5 – 5.0 m/s centrifugal jet shear",
+                  "0.00 m/s during dark hours only"
+            ],
+            "answer": 0,
+            "explanation": "Stagnant humid pockets around tightly cupped lettuce meristems thicken boundary-layer resistance; 0.40–0.65 m/s air movement erodes boundary resistance and keeps xylem Ca²⁺ transport active.",
+            "toolUrl": "/tools/greenhouse-microclimate-cfd-air-velocity-optimizer.html",
+            "toolLabel": "Open CFD Air Velocity Optimizer"
       },
       {
-        cat: "Enthalpy & Evaporative Cooling",
-        q: "When 70-bar high-pressure fogging nozzles atomize water into 10–15 micron droplets inside a summer greenhouse, what thermodynamic process causes the indoor air dry-bulb temperature to drop without mechanical chillers?",
-        options: [
-          "Sensible heat of the air is converted into latent heat of water vaporization along the constant wet-bulb enthalpy line",
-          "The water droplets act as physical mirrors blocking solar PAR radiation",
-          "Endothermic reaction of dissolved minerals absorbs infrared wavelengths",
-          "Isothermal air compression releases cooler nitrogen gas"
-        ],
-        answer: 0,
-        explanation: "Evaporating 1 kg of water absorbs ~2,450 kJ of sensible heat from the surrounding air. This is a classic adiabatic psychrometric process where dry-bulb temperature falls toward wet-bulb temperature while air moisture content (specific humidity) rises along a line of constant enthalpy."
+            "track": "track_a",
+            "trackName": "Track A: CEA Biophysics (EN)",
+            "cat": "Evapotranspiration",
+            "q": "In the Stanghellini greenhouse Penman-Monteith transpiration equation, how does closing a translucent energy screen affect canopy latent heat flux?",
+            "options": [
+                  "Lowers long-wave radiative loss to cold glass and lowers net radiation driving daytime ET",
+                  "Doubles canopy leaf temperature above ambient roof temperature",
+                  "Completely halts root osmotic water uptake",
+                  "Triples aerodynamic boundary resistance outside the greenhouse"
+            ],
+            "answer": 0,
+            "explanation": "Closed screens intercept long-wave thermal radiation toward cold glazing at night (warming leaf surfaces slightly above dew point) and shade excess irradiance by day.",
+            "toolUrl": "/tools/evapotranspiration-penman-monteith-calculator.html",
+            "toolLabel": "Open Penman-Monteith ET Engine"
       },
       {
-        cat: "CO2 Optimization & Farquhar",
-        q: "Under the Farquhar, von Caemmerer & Berry (FvCB) biochemical model of C3 photosynthesis (tomatoes, cucumbers), what happens when ambient CO2 is enriched from 400 ppm to 900 ppm under saturating PPFD (800 µmol/m²s)?",
-        options: [
-          "Photosynthesis decreases due to stomatal poisoning",
-          "Rubisco oxygenase activity (photorespiration) is suppressed and carboxylation efficiency increases, boosting net CO2 assimilation rate (A_net) by 25–40%",
-          "RuBP regeneration becomes completely inactive",
-          "Leaf respiration ceases entirely"
-        ],
-        answer: 1,
-        explanation: "Rubisco is bifunctional (carboxylase and oxygenase). Enriching CO2 competitively inhibits photorespiratory carbon oxidation (PCO) cycle and shifts Rubisco toward carbon fixation, increasing net C3 canopy biomass gain by 25% to 40% under adequate light."
+            "track": "track_a",
+            "trackName": "Track A: CEA Biophysics (EN)",
+            "cat": "Plant Balance (RTR)",
+            "q": "When consecutive cloudy days drop outdoor DLI from 26 to 8 mol·m⁻²·d⁻¹ in a high-wire tomato crop, how must the climate computer adjust the 24-hour mean temperature?",
+            "options": [
+                  "Decrease 24h mean temperature by 2–3 °C to preserve Radiation-to-Temperature Ratio (RTR)",
+                  "Raise night temperature to 23 °C to accelerate vegetative stem elongation",
+                  "Raise slab EC to 8.0 dS/m immediately without changing temperature",
+                  "Disable roof dehumidification across sunset"
+            ],
+            "answer": 0,
+            "explanation": "Dark respiration doubles roughly every +10 °C (Q10 ≈ 2). Lowering T_24h in step with lower DLI prevents assimilate depletion, thin apical heads, and blossom abortion.",
+            "toolUrl": "/tools/crop-steering-generative-vegetative-matrix.html",
+            "toolLabel": "Open Crop Steering Matrix"
       },
       {
-        cat: "Crop Steering & Morphogenesis",
-        q: "In commercial vine crop steering (Grodan Rockwool method), which environmental setting pushes the plant toward Generative (fruiting, reproductive) development?",
-        options: [
-          "High 24h average temperature, small Day-Night difference (DIF), high substrate moisture (WC > 80%), low EC",
-          "Large Day-Night temperature drop (+DIF), higher electrical conductivity (EC), larger dryback before first irrigation, and higher daytime VPD",
-          "Continuous nighttime lighting, low VPD, and low EC",
-          "Zero ventilation, low humidity, and high irrigation shot volume"
-        ],
-        answer: 1,
-        explanation: "Generative steering puts mild osmotic and evaporative demand on the crop: higher rootzone EC (+0.5 mS/cm), larger drybacks (10–15%), higher daytime VPD (1.0–1.2 kPa), and a distinct day/night temperature drop (+DIF). This signals the crop to invest sugars into flowers and fruit rather than thick stems."
+            "track": "track_a",
+            "trackName": "Track A: CEA Biophysics (EN)",
+            "cat": "Fogging & Cooling",
+            "q": "Why do commercial semi-closed greenhouses prefer 70–100 bar high-pressure fog nozzles over low-pressure 5 bar misting lines?",
+            "options": [
+                  "Droplets ≤10–15 µm flash-evaporate before reaching foliage, yielding pure latent cooling without wet leaves",
+                  "High pressure raises relative humidity to 100% condensation on fruit clusters",
+                  "It eliminates the need for reverse-osmosis pre-filtration of source water",
+                  "Larger 200 µm droplets reflect incoming PAR radiation"
+            ],
+            "answer": 0,
+            "explanation": "Fine 5–15 µm droplets at 70–100 bar evaporate adiabatically in mid-air (2,450 kJ/kg latent cooling), preventing foliar Botrytis wetness when paired with RO water.",
+            "toolUrl": "/tools/fogging-nozzle-droplet-evaporative-cooling-engine.html",
+            "toolLabel": "Open 100-Bar Fog Cooling Engine"
       },
       {
-        cat: "Photobiology & Far-Red",
-        q: "What photomorphogenic response occurs when far-red light (730 nm) is added to a 400–700 nm PAR spectrum, lowering the Phytochrome Photostationary State (PSS)?",
-        options: [
-          "Canopy dwarfing and shortened internodes",
-          "Shade avoidance response: stimulated stem elongation, leaf expansion, and increased Emerson enhancement effect",
-          "Immediate flower abortion",
-          "Total chlorosis of leaves"
-        ],
-        answer: 1,
-        explanation: "Lowering PSS (Pfr/Ptot) triggers the evolutionary shade avoidance mechanism: cells expand faster, petioles elongate, and leaf area expands to capture more photons. Combined with 660 nm red light, 730 nm far-red also increases photochemical quantum yield (Emerson effect)."
+            "track": "track_a",
+            "trackName": "Track A: CEA Biophysics (EN)",
+            "cat": "CAM & Orchids",
+            "q": "Which greenhouse climate trigger initiates reproductive flower spike emergence in commercial Phalaenopsis orchids?",
+            "options": [
+                  "Dropping 24h cooling setpoint from 27–28 °C vegetative growth down to 18–19 °C cooling",
+                  "Continuous 32 °C root-zone heating under 50 mol/m²/d PPFD",
+                  "Daytime CO₂ enrichment at 1,500 ppm with closed stomates",
+                  "Halving substrate bark drainage below 5%"
+            ],
+            "answer": 0,
+            "explanation": "Phalaenopsis relies on Crassulacean Acid Metabolism (nocturnal malate fixation) and requires a sustained 18–19 °C cooling phase over several weeks after 27 °C vegetative leaf production to break floral dormancy.",
+            "toolUrl": "/crops/greenhouse-phalaenopsis-orchid-climate-spike-induction-guide.html",
+            "toolLabel": "Open Phalaenopsis CAM Blueprint"
       },
       {
-        cat: "Closed-Loop Hydroponic Recirculation",
-        q: "In closed-loop commercial drain recycling (Dutch Westland protocol), what is the typical threshold for Sodium (Na⁺) accumulation where recirculation must be partially drained or discharged to prevent osmotic yield loss in tomatoes?",
-        options: [
-          "Na⁺ > 8.0–10.0 mmol/L (≈ 180–230 mg/L)",
-          "Na⁺ > 0.5 mmol/L",
-          "Na⁺ > 45.0 mmol/L",
-          "Na⁺ never accumulates in closed loops"
-        ],
-        answer: 0,
-        explanation: "Tomatoes exclude sodium at the root membrane. As water is transpired, Na+ accumulates in the recirculating drain water. Above 8.0–10.0 mmol/L, high osmotic pressure and antagonism against K+ and Ca2+ causes crop yield loss, requiring partial drain discharge or reverse osmosis desalination."
+            "track": "track_a",
+            "trackName": "Track A: CEA Biophysics (EN)",
+            "cat": "Mollier Dehumidification",
+            "q": "In a semi-closed Air Treatment Unit (ATU), if cold brine condensation dehumidifies return air and Latent Heat Pump recovery heats supply air, what happens to enthalpy and VPD?",
+            "options": [
+                  "Specific humidity (g water/kg dry air) drops sharply while recovered sensible heat stabilizes supply VPD",
+                  "Dew point increases above dry-bulb temperature inside ducts",
+                  "Specific enthalpy remains identical across condensation cooling",
+                  "External unheated freezing air must enter at 10 ACH"
+            ],
+            "answer": 0,
+            "explanation": "Cooling humid return air below its dew point strips water vapor (reducing g/kg moisture content), and heat-pump condenser recovery reheats the dry stream cleanly.",
+            "toolUrl": "/tools/semi-closed-greenhouse-atu-mollier-simulator.html",
+            "toolLabel": "Open Semi-Closed ATU Simulator"
+      },
+      {
+            "track": "track_b",
+            "trackName": "Track B: Gärtnermeister (DE/KTBL)",
+            "cat": "KTBL Deckungsbeitrag",
+            "q": "Wie berechnet man in der deutschen KTBL-Betriebswirtschaft den Deckungsbeitrag I (DB I) je Quadratmeter Gewächshausfläche korrekt?",
+            "options": [
+                  "Marktleistung (€/m²) minus Direktkosten (€/m², Heizung/Jungpflanzen/Substrat/Dünger) minus variable Saison-Arbeitskosten",
+                  "Brutto-Umsatz plus Mehrwertsteuer minus Abschreibung der Venlo-Konstruktion",
+                  "Ernteleistung (kg/AKh) multipliziert mit dem Mindestlohn ohne Direktkosten",
+                  "Fixe Pachtkosten geteilt durch den jährlichen CO₂-Verbrauch"
+            ],
+            "answer": 0,
+            "explanation": "Nach KTBL-Definition ergibt Marktleistung minus Direktkosten die direktkostenfreie Leistung (DKfL); nach Abzug variabler Lohn- und Maschinenkosten resultiert Deckungsbeitrag I.",
+            "toolUrl": "/meister.html",
+            "toolLabel": "Zum Meister- & KTBL-Rechner"
+      },
+      {
+            "track": "track_b",
+            "trackName": "Track B: Gärtnermeister (DE/KTBL)",
+            "cat": "QS-GAP & ToBRFV Hygiene",
+            "q": "Welcher Spritzbrühe-pH und welche Wirkungsdauer sind beim Einsatz von Benzoesäure-Desinfektionsschaum (z. B. Menno Florades 2%) gegen ToBRFV vorgeschrieben?",
+            "options": [
+                  "Sauer gepufferter pH 3,0–4,5 (mit Zitronensäure je °dH Wasserhärte) und ≥ 16 Stunden Kontaktzeit bei Virusbelastung",
+                  "Alkalischer pH 9,5 mit maximal 10 Minuten Abspülzeit",
+                  "Neutraler pH 7,0 mit reiner Kaltwasserdusche ohne Säurepufferung",
+                  "Nur bei Bodentemperaturen über 38 °C wirksam"
+            ],
+            "answer": 0,
+            "explanation": "Benzoesäure wirkt nur in undissoziierter Form bei pH 3,0–4,5 zuverlässig gegen stabile Tobamoviren (ToBRFV); hartes Beregnungswasser erfordert vorab Zitronensäure-Pufferung.",
+            "toolUrl": "/meister.html",
+            "toolLabel": "ToBRFV-Rechner im Meister Hub"
+      },
+      {
+            "track": "track_b",
+            "trackName": "Track B: Gärtnermeister (DE/KTBL)",
+            "cat": "DIN V 18599 & U-Wert",
+            "q": "Welchen typischen Wärmedurchgangskoeffizienten (U-Wert) weist ein einfachverglastes Venlo-Gewächshaus (4 mm Floatglas) im Vergleich zur doppelten Energieschirm-Schließung auf?",
+            "options": [
+                  "Unbeschirmt ca. 5,8–6,2 W/m²K; mit Energieschirm sinkt der effektive U_eff auf ca. 2,9–3,3 W/m²K (35–45% Einsparung)",
+                  "Unbeschirmt 0,8 W/m²K; mit Energieschirm 4,5 W/m²K",
+                  "Beide Zustände besitzen exakt 1,5 W/m²K nach DIN EN 13031",
+                  "Energieschirme verändern ausschließlich die Schneelast, nicht den U-Wert"
+            ],
+            "answer": 0,
+            "explanation": "Einfachglas leitet Wärme stark (U ≈ 6,0 W/m²K). Ein dicht schließender Energieschirm bildet ruhende Luftpolster und reduziert konvektiven wie langwelligen Strahlungsverlust erheblich.",
+            "toolUrl": "/tools/greenhouse-heating-load-thermal-screen-calculator.html",
+            "toolLabel": "DIN V 18599 Heizlastrechner"
+      },
+      {
+            "track": "track_b",
+            "trackName": "Track B: Gärtnermeister (DE/KTBL)",
+            "cat": "DIN EN 13031-1 Statik",
+            "q": "Welche europäische Bemessungsnorm regelt verbindlich Wind-, Schnee- und Kulturanhängelasten moderner Erwerbsgewächshäuser (Venlo-System)?",
+            "options": [
+                  "DIN EN 13031-1 (Gewächshäuser — Bemessung und Konstruktion, Klasse A15)",
+                  "ISO 9261 (Tropfrohre und Mikrobewässerung)",
+                  "VDI 4640 (Erdwärmesonden und ATES-Speicher)",
+                  "DVGW W 291 (Trinkwasser-Desinfektion)"
+            ],
+            "answer": 0,
+            "explanation": "DIN EN 13031-1 definiert die Tragwerkszuverlässigkeit (z. B. 15-jährige Bezugsdauer A15), Schneelasten auf geschmolzene/beheizte Dächer und Tomaten-/Pflanzenanhängelasten am Riegel.",
+            "toolUrl": "/tools/greenhouse-structural-wind-snow-load-nen3859-calculator.html",
+            "toolLabel": "EN 13031 / NEN 3859 Statikrechner"
+      },
+      {
+            "track": "track_b",
+            "trackName": "Track B: Gärtnermeister (DE/KTBL)",
+            "cat": "BLE Energieeffizienz 40%",
+            "q": "Welcher typische Förder-Grundzuschuss lässt sich im deutschen BLE-Bundesprogramm Energieeffizienz (Modul 4) für regenerative Gewächshaus-Wärmepumpen oder Energieschirme beantragen?",
+            "options": [
+                  "Bis zu 40% – 55% Investitionszuschuss bei mindestens 30% nachgewiesener CO₂-/Endenergie-Einsparung (KMU)",
+                  "Pauschal 100% Vollfinanzierung ohne Energieaudit",
+                  "Maximal 2% Steuerstundung auf dieselbetriebene Notstromaggregate",
+                  "Förderung gilt ausschließlich für Freiland-Kartoffelbau"
+            ],
+            "answer": 0,
+            "explanation": "Das BLE-Bundesprogramm zur Steigerung der Energieeffizienz in der Landwirtschaft und im Gartenbau belohnt thermische Sanierung, Abwärmenutzung und Groß-Wärmepumpen mit 30–55% Zuschuss.",
+            "toolUrl": "/tools/eu-greenhouse-energy-hofnachfolge-roi-simulator.html",
+            "toolLabel": "BLE Förder- & Hofnachfolge-Rechner"
+      },
+      {
+            "track": "track_b",
+            "trackName": "Track B: Gärtnermeister (DE/KTBL)",
+            "cat": "Düngeverordnung (DüV)",
+            "q": "Warum betreiben bayerische High-Wire-Tomatenbetriebe im Knoblauchsland zwingend geschlossene Dränwasser-Kreisläufe mit UV-C- oder H₂O₂-Entkeimung?",
+            "options": [
+                  "Zur Einhaltung der DüV-Nährstoffsalden, Minimierung von Nitrat-/Phosphat-Einträgen und Senkung des Düngerverbrauchs um 25–35%",
+                  "Weil Tomaten im geschlossenen Kreislauf kein Licht für die Photosynthese benötigen",
+                  "Zur Verdreifachung der Natrium-Konzentration am Tropfer",
+                  "Damit kein EC-Messgerät im Rücklauf erforderlich ist"
+            ],
+            "answer": 0,
+            "explanation": "Geschlossene Rezirkulationssysteme verhindern Sickerwasserverluste ins Grundwasser gemäß Düngeverordnung (DüV) und sparen Wasser sowie mineralische Nährsalze erheblich ein.",
+            "toolUrl": "/tools/uvc-drainage-pathogen-disinfection-calculator.html",
+            "toolLabel": "UV-C Dränwasser-Desinfektion"
+      },
+      {
+            "track": "track_b",
+            "trackName": "Track B: Gärtnermeister (DE/KTBL)",
+            "cat": "Nützlinge & Bestäubung",
+            "q": "Welche Nützlings-Kombination kontrolliert Weiße Fliegen (Trialeurodes/Bemisia) im geschützten Tomatenanbau nach dem IPM-Leitfaden ohne Bienen-Wartezeit?",
+            "options": [
+                  "Erzwespe Encarsia formosa in Kombination mit der Raubwanze Macrolophus pygmaeus",
+                  "Hochdosierte Breitspektrum-Neonikotinoide während aktiver Hummelbestäubung",
+                  "Elementarer Schwefelverdampfer direkt über den Hummelnistkästen bei 35 °C",
+                  "Ausschließliches Absenken der Nachttemperatur auf +2 °C"
+            ],
+            "answer": 0,
+            "explanation": "Encarsia formosa parasitiert Puparien, während Macrolophus pygmaeus Eiablagen und Larven flexibel jagt — verträglich mit Bombus-terrestris-Hummelvölkern.",
+            "toolUrl": "/tools/greenhouse-biological-pest-control-ipm-calculator.html",
+            "toolLabel": "Biologischer IPM-Nützlingsrechner"
+      },
+      {
+            "track": "track_b",
+            "trackName": "Track B: Gärtnermeister (DE/KTBL)",
+            "cat": "Arbeitswirtschaft (AKh)",
+            "q": "Mit welcher Richt-Ernteleistung rechnet die KTBL-Kalkulation bei High-Wire-Rispentomaten (50–54 kg/m² Jahresertrag) unter geübten Kulturkräften?",
+            "options": [
+                  "85 – 115 kg/AKh Ernteleistung (entspricht ca. 0,48–0,60 AKh/m² für die Ernte zzgl. Pflege)",
+                  "5 – 8 kg/AKh wie bei Hand-Feinerdbeeren",
+                  "450 – 600 kg/AKh ohne Transportwagen",
+                  "0,02 kg/AKh im Vollautomatik-Status"
+            ],
+            "answer": 0,
+            "explanation": "KTBL weist für Rispentomaten am Rohrschienensystem 85–115 kg pro Arbeitskraftstunde (AKh) als planungsrelevante Basisgröße aus; Laub-/Dreharbeiten kommen separat hinzu.",
+            "toolUrl": "/meister.html",
+            "toolLabel": "AKh- & DB-Kalkulator öffnen"
+      },
+      {
+            "track": "track_b",
+            "trackName": "Track B: Gärtnermeister (DE/KTBL)",
+            "cat": "SVLFG VSG 4.2 Sicherheit",
+            "q": "Welche gesetzliche Pflicht greift nach SVLFG VSG 4.2 beim Arbeiten auf Rohrschienenwagen über 2,0 m Kulturhöhe im Hochdrahtgewächshaus?",
+            "options": [
+                  "Dokumentierte Gefährdungsbeurteilung, geprüfte Scherenbühnen mit umlaufendem Geländer und jährliche UVV-Prüfung",
+                  "Freihändiges Stehen auf losen Substratkisten ohne Seitenschutz",
+                  "Verzicht auf Unterweisung für Saisonarbeitskräfte",
+                  "Abschalten sämtlicher CO₂-Sensoren im geschlossenen Block"
+            ],
+            "answer": 0,
+            "explanation": "VSG 4.2 der SVLFG (Gartenbau) schreibt standsichere, UVV-geprüfte Hebearbeitsbühnen, Geländerhöhen ≥ 1,0 m sowie nachweisbare Mitarbeiterunterweisungen verbindlich vor.",
+            "toolUrl": "/articles/de/article-01-vpd-meisterklasse.html",
+            "toolLabel": "Deutsche Fachartikel lesen"
+      },
+      {
+            "track": "track_b",
+            "trackName": "Track B: Gärtnermeister (DE/KTBL)",
+            "cat": "Knoblauchsland Klimazone 7",
+            "q": "Welche Auslegungs-Normaußentemperatur und jährliche Globalstrahlung kennzeichnen den bayerischen Gemüsebaustandort Knoblauchsland (Nürnberg)?",
+            "options": [
+                  "-12,0 °C Auslegungs-Außentemperatur (Klimazone 7) bei ca. 1.120 kWh/m²a Globalstrahlung (DWD)",
+                  "+4,0 °C Mindesttemperatur bei 2.400 kWh/m²a wie Südspanien",
+                  "-32,0 °C arktisches Minimum bei 550 kWh/m²a",
+                  "0,0 °C ganzjährig ohne Heizwärmebedarf"
+            ],
+            "answer": 0,
+            "explanation": "Nach DIN/TS 12831-1 liegt der Großraum Nürnberg-Fürth-Erlangen bei -12 °C Bemessungstemperatur mit etwa 1.120 kWh/m²a Globalstrahlung — entscheidend für Spitzenkessel- und Wärmepumpenauslegung.",
+            "toolUrl": "/tools/global-agri-subsidy-grant-navigator.html",
+            "toolLabel": "34 DE Förderprogramme ansehen"
+      },
+      {
+            "track": "track_c",
+            "trackName": "Track C: Hydrochemistry & Energy",
+            "cat": "Stock Tank Precipitation",
+            "q": "Why must Calcium Nitrate Ca(NO₃)₂ always stay separated in Tank A away from Sulfates (K₂SO₄/MgSO₄) and Phosphates (KH₂PO₄) in Tank B?",
+            "options": [
+                  "Mixing concentrated Ca²⁺ with SO₄²⁻ or H₂PO₄⁻ exceeds Ksp and precipitates insoluble gypsum & calcium phosphate sludge",
+                  "Tank A becomes explosively flammable in ambient greenhouse air",
+                  "It immediately raises reservoir pH to 12.5 regardless of acid dosing",
+                  "Nitrogen turns into gaseous N₂ inside HDPE tanks within 60 seconds"
+            ],
+            "answer": 0,
+            "explanation": "Gypsum (CaSO₄·2H₂O) and brushite/apatite calcium phosphates have low solubility products; separating Ca²⁺ (Tank A) from SO₄²⁻/PO₄³⁻ (Tank B) at 100× stock prevents irreversible precipitation.",
+            "toolUrl": "/tools/hydroponic-chemical-speciation-precipitation-index.html",
+            "toolLabel": "Open Ionic Precipitation Index"
+      },
+      {
+            "track": "track_c",
+            "trackName": "Track C: Hydrochemistry & Energy",
+            "cat": "Bicarbonate Alkalinity",
+            "q": "Raw well water contains 3.2 mmol/L bicarbonate (HCO₃⁻). If you target 0.6 mmol/L residual alkalinity for pH stability, how much H⁺ acid must neutralize each liter?",
+            "options": [
+                  "2.6 mmol H⁺ per liter (or 2.6 meq/L of HNO₃ or H₃PO₄ monoprotic neutralization)",
+                  "0.6 mmol H⁺ per liter",
+                  "6.4 mmol KOH base per liter",
+                  "0.0 mmol H⁺ because CO₃²⁻ buffers downwards automatically"
+            ],
+            "answer": 0,
+            "explanation": "Titrating HCO₃⁻ + H⁺ -> H₂O + CO₂ is 1:1 stoichiometric near pH 5.6. Leaving 0.5–0.8 mmol/L HCO₃⁻ preserves gentle pH buffering against root proton extrusion.",
+            "toolUrl": "/tools/hydroponic-nutrient-solution-calculator.html",
+            "toolLabel": "Open Nutrient & Acid Formulator"
+      },
+      {
+            "track": "track_c",
+            "trackName": "Track C: Hydrochemistry & Energy",
+            "cat": "Closed-Loop Na⁺ Bleed",
+            "q": "At what recirculating drain Sodium (Na⁺) threshold should a commercial rockwool tomato greenhouse initiate partial drain discharge or RO bleed?",
+            "options": [
+                  "Above 8.0 – 10.0 mmol/L Na⁺ to prevent K⁺/Ca²⁺ antagonism and yield suppression",
+                  "At 0.2 mmol/L Na⁺ every 12 hours",
+                  "Only after slab EC hits 22.0 dS/m",
+                  "Sodium evaporates proportionally to VPD so never accumulates"
+            ],
+            "answer": 0,
+            "explanation": "Tomato roots selectively exclude Na⁺; above 8–10 mmol/L Na⁺ raises non-nutritive osmotic EC, inducing fruit size loss and Blossom End Rot.",
+            "toolUrl": "/tools/closed-loop-nutrient-recirculation-ion-balance-simulator.html",
+            "toolLabel": "Open Closed-Loop Ion Balance"
+      },
+      {
+            "track": "track_c",
+            "trackName": "Track C: Hydrochemistry & Energy",
+            "cat": "Van Genuchten Retention",
+            "q": "Why does generative crop steering stop afternoon rockwool irrigation 2.5 hours before sunset for tomatoes or sweet peppers?",
+            "options": [
+                  "To drive a controlled 10–15% overnight Volumetric Water Content (VWC) dryback and build root osmotic tension",
+                  "To completely desiccate slabs down to 5% VWC wilting point",
+                  "To push nighttime slab EC below raw water EC",
+                  "To block root respiration after 18:00"
+            ],
+            "answer": 0,
+            "explanation": "A 10–15% overnight VWC dryback oxygenates root hairs cleanly before dawn while shifting plant hormonal balance away from overly lush vegetative leafing toward fruit load.",
+            "toolUrl": "/tools/rockwool-substrate-tdr-moisture-drain-optimizer.html",
+            "toolLabel": "Open TDR Dryback Optimizer"
+      },
+      {
+            "track": "track_c",
+            "trackName": "Track C: Hydrochemistry & Energy",
+            "cat": "Fe Chelate pH Windows",
+            "q": "If recirculating substrate pH drifts to 6.8 while dosing iron strictly as Fe-EDTA, why do apical leaves turn chlorotic?",
+            "options": [
+                  "Fe-EDTA loses ferric chelation stability above pH 6.5, precipitating Fe³⁺ as insoluble hydroxide — switch to Fe-DTPA or Fe-EDDHA",
+                  "Fe-EDTA turns toxic above EC 1.0 dS/m",
+                  "EDTA decomposes sunlight into pure chlorine gas",
+                  "Ammonium oxidizes potassium chelates directly into nitrates"
+            ],
+            "answer": 0,
+            "explanation": "Fe-EDTA dissociates rapidly at pH > 6.5. Fe-DTPA holds iron soluble up to pH 7.0–7.2, and o,o-Fe-EDDHA stays plant-available up to pH 9.0.",
+            "toolUrl": "/tools/nutrient-uptake-concentration-factor-analyzer.html",
+            "toolLabel": "Open Uptake CF Analyzer"
+      },
+      {
+            "track": "track_c",
+            "trackName": "Track C: Hydrochemistry & Energy",
+            "cat": "ATES & Aquifer Heat Pumps",
+            "q": "In a Dutch/German ATES (Aquifer Thermal Energy Storage) semi-closed greenhouse, what thermal advantage is achieved during winter night heating?",
+            "options": [
+                  "Extracting +14–18 °C summer solar waste heat stored underground boosts heat-pump COP from ~3.0 to 4.8–5.5",
+                  "Pumping groundwater directly at -15 °C reduces chiller electrical draw",
+                  "Eliminates the need for indoor CO₂ enrichment during cloudy winters",
+                  "Forces boiler flue gases underground into rock strata"
+            ],
+            "answer": 0,
+            "explanation": "Storing summer daytime cooling heat in warm groundwater wells keeps winter evaporator source temperatures mild (14–18 °C), dramatically elevating Heat Pump COP vs. cold outdoor air-source units.",
+            "toolUrl": "/tools/ates-aquifer-thermal-energy-storage-heat-pump-simulator.html",
+            "toolLabel": "Open ATES Heat Pump Simulator"
+      },
+      {
+            "track": "track_c",
+            "trackName": "Track C: Hydrochemistry & Energy",
+            "cat": "CHP SCR CO₂ Dosing",
+            "q": "When routing natural gas CHP (Combined Heat & Power) exhaust directly into a greenhouse for CO₂ enrichment, why is an SCR catalytic converter + urea dosing essential?",
+            "options": [
+                  "It strips phytotoxic NOx (NO/NO₂) and ethylene below 50–100 ppb before flue gas enters the crop canopy",
+                  "Urea fertilizes tomato trusses directly through leaf stomata as atmospheric liquid",
+                  "It cools exhaust gas directly to -5 °C without a heat exchanger",
+                  "It converts CO₂ back into pure methane for night boilers"
+            ],
+            "answer": 0,
+            "explanation": "Unscrubbed engine exhaust contains toxic NOx and ethylene (causing flower drop and leaf epinasty). Dual Selective Catalytic Reduction (SCR) + CO oxidation polishes exhaust safe for crop dosing.",
+            "toolUrl": "/tools/chp-flue-gas-scr-urea-dosing-calculator.html",
+            "toolLabel": "Open CHP SCR Urea Calculator"
+      },
+      {
+            "track": "track_c",
+            "trackName": "Track C: Hydrochemistry & Energy",
+            "cat": "BESS & Power-to-Heat",
+            "q": "How does coupling a hot-water Thermal Buffer Tank with Battery Energy Storage (BESS) improve greenhouse electricity ROI under dynamic day-ahead spot tariffs?",
+            "options": [
+                  "Charges buffer heat and batteries during negative/low-price solar wind noon troughs and discharges during evening peak tariff spikes",
+                  "Runs grow lights solely at 0.1 Hz pulsing frequency",
+                  "Converts rockwool moisture directly into peak grid frequency regulation",
+                  "Doubles CHP natural gas burn during highest tariff prices"
+            ],
+            "answer": 0,
+            "explanation": "Power-to-Heat (P2H) electrode boilers + stratified hot water tanks absorb cheap/negative renewable grid surpluses thermally, cutting daytime CHP/LED peak electricity charges.",
+            "toolUrl": "/tools/greenhouse-energy-tariff-bess-p2h-arbitrage-calculator.html",
+            "toolLabel": "Open Energy Tariff & BESS Arbitrage"
+      },
+      {
+            "track": "track_c",
+            "trackName": "Track C: Hydrochemistry & Energy",
+            "cat": "Hydraulic Kv Sizing",
+            "q": "When sizing a 3-way mixing valve for greenhouse rail heating loops, what Valve Authority (N = ΔP_valve / ΔP_loop) guarantees controllable modulation?",
+            "options": [
+                  "Target N between 0.35 and 0.55 using the exact flow coefficient Kv = Q × √(SG / ΔP)",
+                  "N < 0.02 oversized by two pipe nominal diameters",
+                  "N = 1.00 zero piping head loss",
+                  "Valves should only operate full-open / full-closed regardless of loop pressure"
+            ],
+            "answer": 0,
+            "explanation": "Oversized control valves with authority N < 0.2 distort linear equal-percentage flow curves into step-hunting oscillations; Kv sizing targets N = 0.35–0.55.",
+            "toolUrl": "/parts/index.html",
+            "toolLabel": "Inspect Valve Specs in Parts Hub"
+      },
+      {
+            "track": "track_c",
+            "trackName": "Track C: Hydrochemistry & Energy",
+            "cat": "UV-C Drainage Transmittance",
+            "q": "Why must drain water be pre-filtered to ≥ 5 µm and monitored for UVT₂₅₄ (UV Transmittance) before passing through an annular UV-C disinfection reactor?",
+            "options": [
+                  "Tannins/humic chelates and suspended solids absorb 254 nm photons exponentially (Beer-Lambert), dropping lethal pathogen dose if UVT falls",
+                  "5 µm filters neutralize all nitric acid inside stock solutions",
+                  "UV-C light heats drain water past 95 °C at >90% UVT",
+                  "Fe-EDDHA chelates are immune to UV photolysis"
+            ],
+            "answer": 0,
+            "explanation": "Fe-DTPA/EDDHA and peat extracts strongly absorb 254 nm UV-C; measuring UVT₂₅₄% allows true delivered fluence (mJ/cm²) calculation (250 mJ/cm² for Tobamoviruses/Fusarium).",
+            "toolUrl": "/tools/uvc-drainage-pathogen-disinfection-calculator.html",
+            "toolLabel": "Open UV-C Reactor Sizing Engine"
       }
-    ];
+];
 
+    let selectedTrack = 'track_a';
+    let QUESTIONS = ALL_QUESTIONS.filter(q => q.track === 'track_a');
     let currentIdx = 0;
     let score = 0;
     let userAnswers = [];
     let certHash = "OCEA-" + Math.floor(100000 + Math.random() * 900000) + "-2026";
 
+    function selectTrack(track, btn) {
+      selectedTrack = track;
+      document.querySelectorAll('.track-btn').forEach(b => {
+        b.classList.remove('active');
+        b.style.background = b.dataset.track === 'all' ? 'rgba(16,185,129,0.12)' : 'rgba(15,23,42,0.7)';
+        b.style.borderColor = b.dataset.track === 'all' ? 'rgba(16,185,129,0.35)' : 'rgba(255,255,255,0.15)';
+      });
+      btn.classList.add('active');
+      btn.style.background = 'rgba(56,189,248,0.22)';
+      btn.style.borderColor = '#38bdf8';
+      QUESTIONS = track === 'all' ? [...ALL_QUESTIONS] : ALL_QUESTIONS.filter(q => q.track === track);
+      const startBtn = document.getElementById('startQuizBtn');
+      if (startBtn) {
+        const labelMap = {
+          track_a: 'Track A (10 Questions)',
+          track_b: 'Track B Meister DE (10 Questions)',
+          track_c: 'Track C Hydro & Energy (10 Questions)',
+          all: 'Full Mastery Exam (30 Questions)'
+        };
+        startBtn.textContent = `🚀 Start ${labelMap[track] || 'Assessment'} →`;
+      }
+    }
+
     function startQuiz() {
+      QUESTIONS = selectedTrack === 'all' ? [...ALL_QUESTIONS] : ALL_QUESTIONS.filter(q => q.track === selectedTrack);
       document.getElementById('introCard').style.display = 'none';
       document.getElementById('qCard').style.display = 'block';
       currentIdx = 0;
@@ -623,7 +1077,7 @@
 
     function showQuestion() {
       const q = QUESTIONS[currentIdx];
-      document.getElementById('qCategory').textContent = q.cat;
+      document.getElementById('qCategory').textContent = `${q.trackName} • ${q.cat}`;
       document.getElementById('qCounter').textContent = `Question ${currentIdx + 1} of ${QUESTIONS.length}`;
       document.getElementById('qText').textContent = q.q;
 
@@ -666,9 +1120,13 @@
       const exp = document.getElementById('explanationBox');
       exp.style.display = 'block';
       exp.className = 'explanation-box ' + (isCorrect ? 'correct' : 'wrong');
+      const toolAnchor = q.toolUrl
+        ? `<div style="margin-top:10px;"><a href="${q.toolUrl}" style="color:#38bdf8; font-weight:700; text-decoration:none;">⚙️ Practice in Simulator: ${q.toolLabel || 'Launch Tool'} →</a></div>`
+        : '';
       exp.innerHTML = `
         <strong>${isCorrect ? '✓ Correct!' : '✗ Incorrect.'}</strong><br>
         ${q.explanation}
+        ${toolAnchor}
       `;
 
       document.getElementById('nextBtn').style.display = 'inline-block';
@@ -787,7 +1245,8 @@
       ctx.fillText('★ VERIFIED ★', sealX, sealY - 10);
       ctx.fillStyle = '#34d399';
       ctx.font = 'bold 12px JetBrains Mono, monospace';
-      ctx.fillText('GRADE: 100%', sealX, sealY + 12);
+      const finalPct = Math.round((score / QUESTIONS.length) * 100);
+      ctx.fillText('GRADE: ' + finalPct + '%', sealX, sealY + 12);
       ctx.fillText('DIN-ASAE', sealX, sealY + 28);
       ctx.restore();
 

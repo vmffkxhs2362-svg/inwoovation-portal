@@ -433,12 +433,6 @@ def fix_social_image(html):
 
 def fix_home_schema(html, rel_path):
     """Homepage ResearchOrganization: logo pointed at a non-existent file; sameAs listed own dead host."""
-    if rel_path == "about.html":
-        html = html.replace('<div class="stat-number">42</div>\r\n                    <div class="stat-label">Engineering Tools</div>',
-                            '<div class="stat-number">330+</div>\r\n                    <div class="stat-label">Live Engineering Pages</div>')
-        html = html.replace('<div class="stat-number">74</div>\r\n                    <div class="stat-label">Technical Articles</div>',
-                            '<div class="stat-number">79</div>\r\n                    <div class="stat-label">Monographs (95 EN/DE/JA Editions)</div>')
-        return html
     if rel_path != "index.html":
         return html
     html = html.replace('"logo": "https://inwoovation.com/cover.png"', '"logo": "https://inwoovation.com/og-cover.jpg"')
@@ -487,7 +481,8 @@ def fix_trust_footer(html, rel_path):
 def is_live(rel_path, html):
     if os.path.basename(rel_path) == "404.html":
         return False
-    return not rel_path.startswith("embed/") and not re.search(r'http-equiv=["\']refresh', html, re.I)
+    is_embed_widget = rel_path.startswith("embed/") and os.path.basename(rel_path) != "index.html"
+    return not is_embed_widget and not re.search(r'http-equiv=["\']refresh', html, re.I)
 
 
 def transform(rel_path, html):

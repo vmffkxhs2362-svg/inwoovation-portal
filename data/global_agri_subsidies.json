@@ -2,7 +2,7 @@
   "metadata": {
     "title": "Global Agricultural Subsidies, Grants & Financial Incentive Database",
     "version": "6.0.0-hyperlocal-3tier-ssot",
-    "lastUpdated": "2026-11-15",
+    "lastUpdated": "2026-11-16",
     "curator": "Inwoovation Engineering Intelligence / Antigravity Operations",
     "pilotJurisdiction": "8-Country Complete 3-Tier Hyper-Local Matrix (US / DE / JP / NL / FR / ES / CA / KR — 192 Programs · 100% Playbooks)",
     "totalPrograms": 192,
@@ -24,7 +24,7 @@
       "Real-time Application Window & D-Day Tracking",
       "Payback Compression Modeling"
     ],
-    "lastVerified": "2026-11-15",
+    "lastVerified": "2026-11-16",
     "coverageNote": "Complete 3-Tier (Federal · Regional/State · Municipal/Local) Verified v7.0 Matrix across all 8 Target Countries (192 total): Germany (34: Bund/Rentenbank/BAMF/BA + Bayern/Nürnberg/Fürth/Knoblauchsland/Franken-Gemüse eG/Kitzingen/Bamberg + Straelen/Landgard eG/NRW.BANK + Papenburg/Gartenbauzentrale eG + Reichenau/BW + Südhessisches Ried/HE + Hamburg), Netherlands (13: RVO SDE++/EIA/MEI + Greenport Venlo/Limburg + Westland/Aalsmeer), France (7), Spain (7), Canada (6), Japan (11), South Korea (10: MAFRA + Chungnam Youth Smart Farm + Daejeon ATC/Yuseong), United States (104: All 50 States + USDA REAP/EQIP/VAPG + California 25-Program Deep Cluster + 22 Multi-Layer State/Utility CEA & Water Programs)."
   },
   "categories": [
@@ -598,11 +598,11 @@
       "summary": "California's premier water and clean energy grant covering up to $200,000 at 100% funding to upgrade irrigation pumps to solar/VFD and install real-time soil moisture telemetry.",
       "deepGuide": "Step 1: Obtain a certified pump efficiency test from an electric utility (PG&E/SCE). Step 2: Model water and GHG reduction using the CDFA calculator. Step 3: Secure 3 vendor bids. Step 4: Submit via CDFA AmpliFund portal.",
       "applicationWindow": {
-        "status": "closing_soon",
-        "statusLabel": "🟡 Closing Soon (D-5)",
+        "status": "upcoming",
+        "statusLabel": "🔵 Upcoming Cycle (Next Intake 2027 Q1/Q2)",
         "startDate": "2026-08-01",
         "endDate": "2026-11-15",
-        "deadlineDisplay": "2026-11-15 (D-69)",
+        "deadlineDisplay": "2026-11-15 (2026 Batch Closed · Next Cycle 2027 Q1)",
         "daysRemaining": 0,
         "cycleFrequency": "Annual Fall Solicitation Window",
         "submissionPortal": "CDFA AmpliFund Grant Portal"
@@ -720,7 +720,7 @@
         "startDate": "2026-05-01",
         "endDate": "2026-12-31",
         "deadlineDisplay": "First-Come Rolling Intake (Until Funds Exhausted)",
-        "daysRemaining": 46,
+        "daysRemaining": 45,
         "cycleFrequency": "Year-Round Continuous Batching",
         "submissionPortal": "CDFA AmpliFund Online Portal"
       },
@@ -1038,7 +1038,7 @@
         "startDate": "2026-11-01",
         "endDate": "2027-01-15",
         "deadlineDisplay": "November 2026 Upcoming Solicitation (Opens D-55)",
-        "daysRemaining": 61,
+        "daysRemaining": 60,
         "cycleFrequency": "Annual Specialty Crop Block Grant Cycle",
         "submissionPortal": "CDFA Grants Office / AmpliFund"
       },
@@ -1146,7 +1146,7 @@
         "startDate": "2026-01-01",
         "endDate": "2026-12-31",
         "deadlineDisplay": "Continuous Intake (Quarterly Batch Ranking)",
-        "daysRemaining": 46,
+        "daysRemaining": 45,
         "cycleFrequency": "Quarterly Ranking & Allocation Batches",
         "submissionPortal": "USDA Farmers.gov / Local NRCS Service Center"
       },
@@ -1254,7 +1254,7 @@
         "startDate": "2026-07-01",
         "endDate": "2026-12-31",
         "deadlineDisplay": "2026-12-31 (Q4 Batch Deadline)",
-        "daysRemaining": 46,
+        "daysRemaining": 45,
         "cycleFrequency": "Continuous Quarterly Application Windows",
         "submissionPortal": "USDA Rural Development Online Portal"
       },
@@ -1360,7 +1360,7 @@
         "startDate": "2026-01-01",
         "endDate": "2026-12-31",
         "deadlineDisplay": "KTF Paused since 2026-05-31 (State Länder-AFP Active)",
-        "daysRemaining": 46,
+        "daysRemaining": 45,
         "cycleFrequency": "Continuous Rolling Submission",
         "submissionPortal": "FNR Portal (energieeffizienz.fnr.de) / State Länder-AFP Fallback"
       },
@@ -1568,7 +1568,7 @@
         "startDate": "2027-03-01",
         "endDate": "2027-05-15",
         "deadlineDisplay": "Spring 2027 Annual Window Expected",
-        "daysRemaining": 181,
+        "daysRemaining": 180,
         "cycleFrequency": "Annual Spring GAP Direct Payment Window",
         "submissionPortal": "Agrarförderung Online (ANDI/ZeaSys)"
       },
@@ -1876,7 +1876,7 @@
         "startDate": "2026-12-01",
         "endDate": "2027-01-31",
         "deadlineDisplay": "December 2026 Annual Call Expected",
-        "daysRemaining": 77,
+        "daysRemaining": 76,
         "cycleFrequency": "Annual National Solicitation",
         "submissionPortal": "Agrix Portal (Ministry of Agriculture)"
       },
@@ -1970,12 +1970,12 @@
       "summary": "Dutch national program supporting Venlo glasshouse growers in cutting natural gas dependency via secondary thermal screens, diffuse glass, and latent heat air handling units.",
       "deepGuide": "Ensure you have eHerkenning Level 3 ready. The Dutch government prioritizes the 'Het Nieuwe Telen' (Next Generation Growing) methodology.",
       "applicationWindow": {
-        "status": "open",
-        "statusLabel": "🟢 Open for Applications",
+        "status": "closing_soon",
+        "statusLabel": "🟡 Closing Soon (D-14)",
         "startDate": "2026-04-01",
         "endDate": "2026-11-30",
         "deadlineDisplay": "2026-11-30 (D-84)",
-        "daysRemaining": 15,
+        "daysRemaining": 14,
         "cycleFrequency": "Annual Greenhouse Energy Solicitation",
         "submissionPortal": "RVO Mijn Rijksdienst Portal"
       },
@@ -2179,7 +2179,7 @@
         "startDate": "2026-01-01",
         "endDate": "2026-12-31",
         "deadlineDisplay": "Rolling Intake (Subject to Budget Availability)",
-        "daysRemaining": 46,
+        "daysRemaining": 45,
         "cycleFrequency": "Year-Round First-Come Continuous Intake",
         "submissionPortal": "Agriculture and Agri-Food Canada Online Services"
       },
@@ -2383,12 +2383,12 @@
       "summary": "California's multi-million dollar clean air fund covering 50%-80% (up to $450,000) to scrap older diesel tractors and irrigation pumps in favor of Tier 4 Final or zero-emission electric machinery.",
       "deepGuide": "Step 1: Check your local air district allocation (San Joaquin, South Coast, etc.). Step 2: Document 24 months of fuel/hour records for existing diesel tractor. Step 3: Get dealership quote for Tier 4 or electric unit. Step 4: Submit application before purchasing.",
       "applicationWindow": {
-        "status": "open",
-        "statusLabel": "🟢 Open for Applications",
+        "status": "closing_soon",
+        "statusLabel": "🟡 Closing Soon (D-14)",
         "startDate": "2026-06-01",
         "endDate": "2026-11-30",
         "deadlineDisplay": "2026-11-30 (D-84 / Ongoing District Batching)",
-        "daysRemaining": 15,
+        "daysRemaining": 14,
         "cycleFrequency": "Continuous Intake & Quarterly District Ranking",
         "submissionPortal": "Local Air Pollution Control District (SJVAPCD / SCAQMD Portal)"
       },
@@ -2720,7 +2720,7 @@
         "startDate": "2026-01-01",
         "endDate": "2026-12-31",
         "deadlineDisplay": "Year-Round First-Come Continuous Intake",
-        "daysRemaining": 46,
+        "daysRemaining": 45,
         "cycleFrequency": "Year-Round Open Intake",
         "submissionPortal": "SJVAPCD Online Grant Portal"
       },
@@ -2820,7 +2820,7 @@
         "startDate": "2026-01-01",
         "endDate": "2026-12-31",
         "deadlineDisplay": "Year-Round Free Service Application",
-        "daysRemaining": 46,
+        "daysRemaining": 45,
         "cycleFrequency": "Year-Round Continuous Intake",
         "submissionPortal": "CDFA / Local RCD Intake Portal"
       },
@@ -2933,7 +2933,7 @@
         "startDate": "2026-08-01",
         "endDate": "2026-12-01",
         "deadlineDisplay": "2026-12-01 (D-85)",
-        "daysRemaining": 16,
+        "daysRemaining": 15,
         "cycleFrequency": "Annual Clean Energy Innovation Solicitation",
         "submissionPortal": "California ECAMS Portal"
       },
@@ -3046,12 +3046,12 @@
       "summary": "Premier California cross-domain clean energy concept grant providing $150,000 in non-dilutive grant funding for early-stage AgTech, greenhouse microgrids, and agricultural energy efficiency innovations.",
       "deepGuide": "100% equity-free cash grant. Scored on clean energy impact, technological innovation, California benefits, and team capability. Awardees gain eligibility for the follow-on $450,000 CalSEED Cleantech Award.",
       "applicationWindow": {
-        "status": "open",
-        "statusLabel": "🟢 Open for Applications",
+        "status": "closing_soon",
+        "statusLabel": "🟡 Closing Soon (D-14)",
         "startDate": "2026-08-15",
         "endDate": "2026-11-30",
         "deadlineDisplay": "2026-11-30 (D-84)",
-        "daysRemaining": 15,
+        "daysRemaining": 14,
         "cycleFrequency": "Annual CleanTech Cohort Window",
         "submissionPortal": "CalSEED Submittable Portal"
       },
@@ -3157,7 +3157,7 @@
         "startDate": "2026-01-01",
         "endDate": "2026-12-31",
         "deadlineDisplay": "Continuous Rolling Budget Window",
-        "daysRemaining": 46,
+        "daysRemaining": 45,
         "cycleFrequency": "Continuous Annual Budget Cycle",
         "submissionPortal": "PG&E Trade Pro & Business Rebates Portal"
       },
@@ -3259,7 +3259,7 @@
         "startDate": "2026-01-01",
         "endDate": "2026-12-31",
         "deadlineDisplay": "Continuous Rolling Budget Window",
-        "daysRemaining": 46,
+        "daysRemaining": 45,
         "cycleFrequency": "Annual Budget Cycle",
         "submissionPortal": "SCE Business Energy Solutions Portal"
       },
@@ -3358,7 +3358,7 @@
         "startDate": "2026-01-01",
         "endDate": "2026-12-31",
         "deadlineDisplay": "Continuous Rolling Budget Window",
-        "daysRemaining": 46,
+        "daysRemaining": 45,
         "cycleFrequency": "Annual Rolling Program",
         "submissionPortal": "SMUD Commercial Rebates Center"
       },
@@ -3458,7 +3458,7 @@
         "startDate": "2026-01-01",
         "endDate": "2026-12-31",
         "deadlineDisplay": "Monthly Board Review Cycle",
-        "daysRemaining": 46,
+        "daysRemaining": 45,
         "cycleFrequency": "Monthly Board Meeting Cycles",
         "submissionPortal": "California State Treasurer CAEATFA Portal"
       },
@@ -3672,7 +3672,7 @@
         "startDate": "2026-10-01",
         "endDate": "2026-12-15",
         "deadlineDisplay": "2026 Q4 Batch Solicitation",
-        "daysRemaining": 30,
+        "daysRemaining": 29,
         "cycleFrequency": "연 1회 정기 공모",
         "submissionPortal": "CDFA AmpliFund Grant Portal"
       },
@@ -3775,7 +3775,7 @@
         "startDate": "2026-11-15",
         "endDate": "2027-01-31",
         "deadlineDisplay": "Winter 2026 (Guidelines Finalized)",
-        "daysRemaining": 77,
+        "daysRemaining": 76,
         "cycleFrequency": "신규 캘리포니아 기후채권 1회차 공모",
         "submissionPortal": "CDFA AmpliFund Grant Portal"
       },
@@ -3876,7 +3876,7 @@
         "startDate": "2026-01-01",
         "endDate": "2026-12-31",
         "deadlineDisplay": "연중 상시 적용 (구매 시점 즉시 공제)",
-        "daysRemaining": 46,
+        "daysRemaining": 45,
         "cycleFrequency": "연중 상시 비경쟁 권리형 혜택",
         "submissionPortal": "Point-of-Sale Vendor Filing via CDTFA Form 230-M"
       },
@@ -3975,12 +3975,12 @@
       "summary": "High-impact drought relief program paying California growers up to $2,000/acre in direct cash compensation to fallow low-yield fields or construct on-farm groundwater recharge basins near drinking water wells.",
       "deepGuide": "Step 1: Verify if your parcel falls within an eligible critically overdrafted GSA. Step 2: Document 3-year pumping history. Step 3: Choose transition pathway (seasonal fallowing, native habitat, or recharge basin). Step 4: Execute agreement through your local GSA.",
       "applicationWindow": {
-        "status": "open",
-        "statusLabel": "🟢 지역 GSA별 모집 중 (Active GSA Enrollment)",
+        "status": "closing_soon",
+        "statusLabel": "🟡 Closing Soon (D-14)",
         "startDate": "2026-04-01",
         "endDate": "2026-11-30",
         "deadlineDisplay": "2026-11-30 (GSA Regional Allocation)",
-        "daysRemaining": 15,
+        "daysRemaining": 14,
         "cycleFrequency": "수자원국 기금 충원에 따른 상시 배치 공모",
         "submissionPortal": "Local Groundwater Sustainability Agency (GSA) Portal"
       },
@@ -4082,7 +4082,7 @@
         "startDate": "2026-10-15",
         "endDate": "2026-12-15",
         "deadlineDisplay": "Fall 2026 Concept Proposals",
-        "daysRemaining": 30,
+        "daysRemaining": 29,
         "cycleFrequency": "연 1회 정기 공모 (Pre-proposal / Full Proposal 2단계)",
         "submissionPortal": "DPR Grants Management Portal"
       },
@@ -4187,7 +4187,7 @@
         "startDate": "2026-01-01",
         "endDate": "2026-12-31",
         "deadlineDisplay": "연중 상시 접수 (사전 승인 필수)",
-        "daysRemaining": 46,
+        "daysRemaining": 45,
         "cycleFrequency": "연중 상시 비경쟁 환급",
         "submissionPortal": "Energy Trust of Oregon Trade Ally Portal"
       },
@@ -4393,7 +4393,7 @@
         "startDate": "2026-10-01",
         "endDate": "2026-12-15",
         "deadlineDisplay": "Fall 2026 (Opening Soon)",
-        "daysRemaining": 30,
+        "daysRemaining": 29,
         "cycleFrequency": "연 1회 정기 공모",
         "submissionPortal": "WSDA Grants Portal"
       },
@@ -4497,7 +4497,7 @@
         "startDate": "2026-01-01",
         "endDate": "2026-12-31",
         "deadlineDisplay": "상시 접수 (지역 보존지구 분기별 심사)",
-        "daysRemaining": 46,
+        "daysRemaining": 45,
         "cycleFrequency": "분기별 배치 평가 (연중 상시)",
         "submissionPortal": "Local Conservation District Submission"
       },
@@ -4601,7 +4601,7 @@
         "startDate": "2026-10-15",
         "endDate": "2026-12-15",
         "deadlineDisplay": "Fall 2026 Solicitations",
-        "daysRemaining": 30,
+        "daysRemaining": 29,
         "cycleFrequency": "연 1회 정기 공모",
         "submissionPortal": "TWDB Online Portal"
       },
@@ -4811,7 +4811,7 @@
         "startDate": "2026-01-01",
         "endDate": "2026-12-31",
         "deadlineDisplay": "연중 상시 접수 (기금 소진 시까지)",
-        "daysRemaining": 46,
+        "daysRemaining": 45,
         "cycleFrequency": "연중 상시 선착순 접수",
         "submissionPortal": "NYSERDA Online Application System"
       },
@@ -4914,7 +4914,7 @@
         "startDate": "2026-11-01",
         "endDate": "2027-01-15",
         "deadlineDisplay": "Winter 2026 / 2027 Solicitation",
-        "daysRemaining": 61,
+        "daysRemaining": 60,
         "cycleFrequency": "연 1회 정기 공모",
         "submissionPortal": "NYS Grants Gateway via County SWCD"
       },
@@ -5018,7 +5018,7 @@
         "startDate": "2026-07-01",
         "endDate": "2027-06-30",
         "deadlineDisplay": "Rolling Continuous",
-        "daysRemaining": 227,
+        "daysRemaining": 226,
         "cycleFrequency": "회계연도 연중 수시 배정"
       },
       "facets": {
@@ -5127,7 +5127,7 @@
         "startDate": "2026-01-01",
         "endDate": "2026-12-31",
         "deadlineDisplay": "2026-12-31 (Batch Review)",
-        "daysRemaining": 46,
+        "daysRemaining": 45,
         "cycleFrequency": "봄/가을 반기별 배치 심사"
       },
       "facets": {
@@ -5233,7 +5233,7 @@
         "startDate": "2026-10-01",
         "endDate": "2026-12-15",
         "deadlineDisplay": "2026-12-15",
-        "daysRemaining": 30,
+        "daysRemaining": 29,
         "cycleFrequency": "연 1회 가을 정기 공모"
       },
       "facets": {
@@ -5663,11 +5663,11 @@
       "summary": "Flagship Arizona water conservation grant delivering up to $250,000 at 80% cost-share for subsurface drip irrigation (SDI), disc filtration skids, and automated telemetry in the Colorado River basin.",
       "deepGuide": "Calculate baseline acre-feet usage using our Penman-Monteith ET tool, get certified contractor bids, and file through WIFA/ADA portal.",
       "applicationWindow": {
-        "status": "closing_soon",
-        "statusLabel": "🟡 Closing Soon (D-5)",
+        "status": "upcoming",
+        "statusLabel": "🔵 Upcoming Cycle (Next Intake 2027 Q1/Q2)",
         "startDate": "2026-08-01",
         "endDate": "2026-11-15",
-        "deadlineDisplay": "2026-11-15",
+        "deadlineDisplay": "2026-11-15 (2026 Batch Closed · Next Cycle 2027 Q1)",
         "daysRemaining": 0,
         "cycleFrequency": "연 2회 정기 배치 공모"
       },
@@ -5991,7 +5991,7 @@
         "startDate": "2026-08-01",
         "endDate": "2026-11-20",
         "deadlineDisplay": "2026-11-20",
-        "daysRemaining": 5,
+        "daysRemaining": 4,
         "cycleFrequency": "연 1회 정기 공모"
       },
       "facets": {
@@ -6743,11 +6743,11 @@
       "summary": "Nebraska NRD cooperative grant providing up to 60-75% funding for variable rate irrigation (VRI), center pivot nozzle packages, and soil moisture telemetry probes.",
       "deepGuide": "Enroll via your local Natural Resources District office before the fall irrigation review.",
       "applicationWindow": {
-        "status": "closing_soon",
-        "statusLabel": "🟡 Closing Soon (D-5)",
+        "status": "upcoming",
+        "statusLabel": "🔵 Upcoming Cycle (Next Intake 2027 Q1/Q2)",
         "startDate": "2026-08-01",
         "endDate": "2026-11-15",
-        "deadlineDisplay": "2026-11-15",
+        "deadlineDisplay": "2026-11-15 (2026 Batch Closed · Next Cycle 2027 Q1)",
         "daysRemaining": 0,
         "cycleFrequency": "연 2회 NRD 정기 공모"
       },
@@ -6856,7 +6856,7 @@
         "startDate": "2026-09-01",
         "endDate": "2026-12-01",
         "deadlineDisplay": "2026-12-01",
-        "daysRemaining": 16,
+        "daysRemaining": 15,
         "cycleFrequency": "연 1회 정기 공모"
       },
       "facets": {
@@ -7066,11 +7066,11 @@
       "summary": "South Carolina SCDA matching grant providing up to $150,000 for greenhouse climate computers, motorized shade screens, hydro-cooling, and automated packing equipment.",
       "deepGuide": "Submit your application and 3 bids through the SCDA Grants portal.",
       "applicationWindow": {
-        "status": "closing_soon",
-        "statusLabel": "🟡 Closing Soon (D-5)",
+        "status": "upcoming",
+        "statusLabel": "🔵 Upcoming Cycle (Next Intake 2027 Q1/Q2)",
         "startDate": "2026-08-15",
         "endDate": "2026-11-15",
-        "deadlineDisplay": "2026-11-15",
+        "deadlineDisplay": "2026-11-15 (2026 Batch Closed · Next Cycle 2027 Q1)",
         "daysRemaining": 0,
         "cycleFrequency": "연 1회 가을 정기 공모"
       },
@@ -7283,12 +7283,12 @@
       "summary": "Mississippi MDAC grant providing up to 75% ($120,000) for tailwater recovery systems, computerized polypipe surge irrigation, and subsurface drip in the Delta alluvial aquifer.",
       "deepGuide": "Contact MDAC water resources office and apply prior to the late-fall cutoff.",
       "applicationWindow": {
-        "status": "open",
-        "statusLabel": "🟢 델타 수계 접수 중",
+        "status": "closing_soon",
+        "statusLabel": "🟡 Closing Soon (D-14)",
         "startDate": "2026-08-01",
         "endDate": "2026-11-30",
         "deadlineDisplay": "2026-11-30",
-        "daysRemaining": 15,
+        "daysRemaining": 14,
         "cycleFrequency": "연 2회 정기 공모"
       },
       "facets": {
@@ -7506,7 +7506,7 @@
         "startDate": "2026-01-01",
         "endDate": "2026-12-31",
         "deadlineDisplay": "Rolling Monthly Reviews",
-        "daysRemaining": 46,
+        "daysRemaining": 45,
         "cycleFrequency": "매월 카운티 위원회 정기 심사"
       },
       "facets": {
@@ -7718,11 +7718,11 @@
       "summary": "Louisiana LDAF grant covering up to 75% ($75,000) for precision surface drainage, specialty crop subsurface drip, and solar livestock water pumps.",
       "deepGuide": "Engage with your local parish Soil and Water Conservation District to prepare the submission package.",
       "applicationWindow": {
-        "status": "closing_soon",
-        "statusLabel": "🟡 Closing Soon (D-5)",
+        "status": "upcoming",
+        "statusLabel": "🔵 Upcoming Cycle (Next Intake 2027 Q1/Q2)",
         "startDate": "2026-08-01",
         "endDate": "2026-11-15",
-        "deadlineDisplay": "2026-11-15",
+        "deadlineDisplay": "2026-11-15 (2026 Batch Closed · Next Cycle 2027 Q1)",
         "daysRemaining": 0,
         "cycleFrequency": "연 1회 정기 공모"
       },
@@ -8157,7 +8157,7 @@
         "startDate": "2026-08-15",
         "endDate": "2026-11-20",
         "deadlineDisplay": "2026-11-20",
-        "daysRemaining": 5,
+        "daysRemaining": 4,
         "cycleFrequency": "연 1회 정기 공모"
       },
       "facets": {
@@ -8584,12 +8584,12 @@
       "summary": "New Jersey SADC cost-share grant funding up to 50% ($50,000) for micro-drip irrigation, greenhouse runoff recycling cisterns, and underground irrigation mainlines.",
       "deepGuide": "Submit your application through your county Soil Conservation District.",
       "applicationWindow": {
-        "status": "open",
-        "statusLabel": "🟢 SADC 정기 접수 진행 중",
+        "status": "closing_soon",
+        "statusLabel": "🟡 Closing Soon (D-14)",
         "startDate": "2026-08-01",
         "endDate": "2026-11-30",
         "deadlineDisplay": "2026-11-30",
-        "daysRemaining": 15,
+        "daysRemaining": 14,
         "cycleFrequency": "연 1회 정기 공모"
       },
       "facets": {
@@ -9022,7 +9022,7 @@
         "startDate": "2026-09-01",
         "endDate": "2026-12-05",
         "deadlineDisplay": "2026-12-05",
-        "daysRemaining": 20,
+        "daysRemaining": 19,
         "cycleFrequency": "연 1회 정기 공모"
       },
       "facets": {
@@ -9126,12 +9126,12 @@
       "summary": "Rhode Island RIDEM 100% grant funding up to $20,000 for small farm high-tunnels, drip irrigation kits, germination chambers, and walk-in refrigeration.",
       "deepGuide": "Complete the online LASA application through RIDEM before November 30.",
       "applicationWindow": {
-        "status": "open",
-        "statusLabel": "🟢 로드아일랜드 LASA 공모 중",
+        "status": "closing_soon",
+        "statusLabel": "🟡 Closing Soon (D-14)",
         "startDate": "2026-09-01",
         "endDate": "2026-11-30",
         "deadlineDisplay": "2026-11-30",
-        "daysRemaining": 15,
+        "daysRemaining": 14,
         "cycleFrequency": "연 1회 가을 정기 공모"
       },
       "facets": {
@@ -9240,7 +9240,7 @@
         "startDate": "2026-01-01",
         "endDate": "2026-12-31",
         "deadlineDisplay": "Rolling Continuous",
-        "daysRemaining": 46,
+        "daysRemaining": 45,
         "cycleFrequency": "매월 지구별 정기 심사"
       },
       "facets": {
@@ -9458,7 +9458,7 @@
         "startDate": "2026-07-01",
         "endDate": "2027-06-30",
         "deadlineDisplay": "Rolling Batch Review",
-        "daysRemaining": 227,
+        "daysRemaining": 226,
         "cycleFrequency": "매월 지구별 정기 심사"
       },
       "facets": {
@@ -9671,11 +9671,11 @@
       "summary": "Hawaii HDOA 100% grant providing up to $10,000-$50,000 for solar agricultural water pumps, rainwater catchment cisterns, automated drip, and hydroponic systems.",
       "deepGuide": "Apply online through the State of Hawaii HDOA web portal with an active tax clearance certificate.",
       "applicationWindow": {
-        "status": "closing_soon",
-        "statusLabel": "🟡 Closing Soon (D-5)",
+        "status": "upcoming",
+        "statusLabel": "🔵 Upcoming Cycle (Next Intake 2027 Q1/Q2)",
         "startDate": "2026-08-15",
         "endDate": "2026-11-15",
-        "deadlineDisplay": "2026-11-15",
+        "deadlineDisplay": "2026-11-15 (2026 Batch Closed · Next Cycle 2027 Q1)",
         "daysRemaining": 0,
         "cycleFrequency": "연 1회 정기 공모"
       },
@@ -9780,12 +9780,12 @@
       "summary": "Alaska Division of Agriculture 100% grant funding up to $20,000 for reinforced cold-climate high tunnels, LED supplemental lighting, thermal screens, and root zone heating.",
       "deepGuide": "Submit proposal through the Alaska DNR Division of Agriculture website before November 30.",
       "applicationWindow": {
-        "status": "open",
-        "statusLabel": "🟢 알래스카 정기 공모 중",
+        "status": "closing_soon",
+        "statusLabel": "🟡 Closing Soon (D-14)",
         "startDate": "2026-09-01",
         "endDate": "2026-11-30",
         "deadlineDisplay": "2026-11-30",
-        "daysRemaining": 15,
+        "daysRemaining": 14,
         "cycleFrequency": "연 1회 정기 공모"
       },
       "facets": {
@@ -9896,7 +9896,7 @@
         "startDate": "2026-01-01",
         "endDate": "2026-12-31",
         "deadlineDisplay": "2026-12-31 (Continuous iBALIS Bavaria Submission)",
-        "daysRemaining": 46,
+        "daysRemaining": 45,
         "cycleFrequency": "Year-Round State Budget Window",
         "submissionPortal": "StMELF iBALIS Portal"
       },
@@ -9999,7 +9999,7 @@
         "startDate": "2026-01-01",
         "endDate": "2026-12-31",
         "deadlineDisplay": "2026-12-31 (Continuous BAFA Online Intake)",
-        "daysRemaining": 46,
+        "daysRemaining": 45,
         "cycleFrequency": "Continuous Federal Rolling Intake",
         "submissionPortal": "BAFA ELAN-K2 Portal"
       },
@@ -10101,7 +10101,7 @@
         "startDate": "2026-01-01",
         "endDate": "2026-12-31",
         "deadlineDisplay": "2026-12-31 (Ongoing BMEL Torfminderungsstrategie)",
-        "daysRemaining": 46,
+        "daysRemaining": 45,
         "cycleFrequency": "Rolling Federal Climate Initiative",
         "submissionPortal": "BLE easy-Online Portal"
       },
@@ -10202,7 +10202,7 @@
         "startDate": "2026-01-01",
         "endDate": "2026-12-31",
         "deadlineDisplay": "Year-Round Daily Processing via Hausbank",
-        "daysRemaining": 46,
+        "daysRemaining": 45,
         "cycleFrequency": "Continuous Daily Refinancing Window",
         "submissionPortal": "Hausbank (Sparkasse / VR-Bank / Rabobank)"
       },
@@ -10304,7 +10304,7 @@
         "startDate": "2027-01-15",
         "endDate": "2027-03-31",
         "deadlineDisplay": "Spring 2027 Cut-Off Window",
-        "daysRemaining": 136,
+        "daysRemaining": 135,
         "cycleFrequency": "Biannual Stichtag Selection",
         "submissionPortal": "LWK Niedersachsen Bewilligungsstelle"
       },
@@ -10404,7 +10404,7 @@
         "startDate": "2026-09-01",
         "endDate": "2027-02-15",
         "deadlineDisplay": "2027-02-15 (Winter Selection Cut-Off)",
-        "daysRemaining": 92,
+        "daysRemaining": 91,
         "cycleFrequency": "Biannual Selection Cut-Offs",
         "submissionPortal": "FIONA Baden-Württemberg"
       },
@@ -10504,7 +10504,7 @@
         "startDate": "2026-01-01",
         "endDate": "2026-12-31",
         "deadlineDisplay": "Year-Round (Submit before Meisterschule Semester Start)",
-        "daysRemaining": 46,
+        "daysRemaining": 45,
         "cycleFrequency": "Permanent Statutory Entitlement",
         "submissionPortal": "AFBG Online (aufstiegs-bafoeg.de)"
       },
@@ -10603,7 +10603,7 @@
         "startDate": "2026-11-01",
         "endDate": "2027-02-28",
         "deadlineDisplay": "2027-02-28 (FY2026 Supplementary / FY2027 Initial Call)",
-        "daysRemaining": 105,
+        "daysRemaining": 104,
         "cycleFrequency": "Biannual (Initial Budget + Autumn Supplementary Budget 補正予算)",
         "submissionPortal": "e-MAFF / Prefectural Midori Council"
       },
@@ -10706,7 +10706,7 @@
         "startDate": "2026-10-15",
         "endDate": "2027-01-31",
         "deadlineDisplay": "2027-01-31 (Prefectural Demand Survey & Allocation)",
-        "daysRemaining": 77,
+        "daysRemaining": 76,
         "cycleFrequency": "Biannual (Main Budget + Supplementary Budget)",
         "submissionPortal": "Municipal / Prefectural Agriculture Department"
       },
@@ -10806,7 +10806,7 @@
         "startDate": "2026-10-01",
         "endDate": "2027-01-20",
         "deadlineDisplay": "2027-01-20 (Winter Heating Season Batch)",
-        "daysRemaining": 66,
+        "daysRemaining": 65,
         "cycleFrequency": "Annual Autumn/Winter Solicitation",
         "submissionPortal": "Prefectural Facility Horticulture Council (都道府県施設園芸支援協議会)"
       },
@@ -10904,7 +10904,7 @@
         "startDate": "2026-12-15",
         "endDate": "2027-02-15",
         "deadlineDisplay": "Winter 2026/2027 e-Rad Public Solicitation",
-        "daysRemaining": 92,
+        "daysRemaining": 91,
         "cycleFrequency": "Annual National R&D & Field Deployment Call",
         "submissionPortal": "e-Rad (https://www.e-rad.go.jp/)"
       },
@@ -11001,7 +11001,7 @@
         "startDate": "2027-03-01",
         "endDate": "2027-04-25",
         "deadlineDisplay": "Spring 2027 Round 1 Solicitation",
-        "daysRemaining": 161,
+        "daysRemaining": 160,
         "cycleFrequency": "2-3 Rounds Annually",
         "submissionPortal": "SII Online Portal"
       },
@@ -11100,7 +11100,7 @@
         "startDate": "2026-10-01",
         "endDate": "2027-02-28",
         "deadlineDisplay": "2027-02-28 (FY2027 Spring Municipal Certification)",
-        "daysRemaining": 105,
+        "daysRemaining": 104,
         "cycleFrequency": "Biannual Municipal Selection",
         "submissionPortal": "Municipal Agriculture Division (市町村農政課)"
       },
@@ -11200,7 +11200,7 @@
         "startDate": "2027-04-01",
         "endDate": "2027-06-30",
         "deadlineDisplay": "Q2 2027 Annual MEI Tender Window",
-        "daysRemaining": 227,
+        "daysRemaining": 226,
         "cycleFrequency": "Annual Competitive Tender",
         "submissionPortal": "Mijn RVO (eHerkenning 3)"
       },
@@ -11297,7 +11297,7 @@
         "startDate": "2026-01-01",
         "endDate": "2026-12-31",
         "deadlineDisplay": "Continuous (Strictly within 3 months of purchase contract)",
-        "daysRemaining": 46,
+        "daysRemaining": 45,
         "cycleFrequency": "Year-Round Statutory Tax Entitlement",
         "submissionPortal": "Mijn RVO Portal"
       },
@@ -11395,7 +11395,7 @@
         "startDate": "2026-09-01",
         "endDate": "2027-01-31",
         "deadlineDisplay": "2027-01-31 (RVO Glastuinbouw Energy Transition)",
-        "daysRemaining": 77,
+        "daysRemaining": 76,
         "cycleFrequency": "Annual Cluster Infrastructure Call",
         "submissionPortal": "Mijn RVO Portal"
       },
@@ -11493,7 +11493,7 @@
         "startDate": "2026-01-01",
         "endDate": "2026-12-31",
         "deadlineDisplay": "2026-12-31 (France 2030 & 6th Period CEE Entitlement)",
-        "daysRemaining": 46,
+        "daysRemaining": 45,
         "cycleFrequency": "Rolling Guichet + Permanent CEE Certificates",
         "submissionPortal": "FranceAgriMer e-Services (pad.franceagrimer.fr)"
       },
@@ -11595,7 +11595,7 @@
         "startDate": "2026-09-15",
         "endDate": "2027-01-31",
         "deadlineDisplay": "2027-01-31 (PEPAC / GVA Valencia & Andalucía Window)",
-        "daysRemaining": 77,
+        "daysRemaining": 76,
         "cycleFrequency": "Annual PEPAC Autonomous Community Call",
         "submissionPortal": "Sede Electrónica GVA / Junta de Andalucía"
       },
@@ -11698,7 +11698,7 @@
         "startDate": "2026-10-15",
         "endDate": "2027-01-31",
         "deadlineDisplay": "2027-01-31 (Municipal Eup/Myeon/Dong Application Window)",
-        "daysRemaining": 77,
+        "daysRemaining": 76,
         "cycleFrequency": "Annual Winter Municipal Selection",
         "submissionPortal": "시·군 농정과 / 읍·면·동 행정복지센터 & Agrix"
       },
@@ -11782,7 +11782,7 @@
         "startDate": "2026-01-15",
         "endDate": "2026-12-31",
         "deadlineDisplay": "Rolling Electronic Filing via iBALIS (2026–2027 Window)",
-        "daysRemaining": 46,
+        "daysRemaining": 45,
         "cycleFrequency": "Continuous / Semi-Annual Ranking Batches",
         "submissionPortal": "Bavaria iBALIS Portal"
       },
@@ -11889,7 +11889,7 @@
         "startDate": "2026-09-01",
         "endDate": "2027-03-15",
         "deadlineDisplay": "March 15, 2027 (Spring Ranking Cut-off)",
-        "daysRemaining": 120,
+        "daysRemaining": 119,
         "cycleFrequency": "Annual / Semi-Annual Call",
         "submissionPortal": "LWK NRW Online-Antrag"
       },
@@ -11992,7 +11992,7 @@
         "startDate": "2026-10-01",
         "endDate": "2027-02-28",
         "deadlineDisplay": "February 28, 2027",
-        "daysRemaining": 105,
+        "daysRemaining": 104,
         "cycleFrequency": "Annual Regional Call",
         "submissionPortal": "SAB / WIBank / ELER Portal"
       },
@@ -12092,7 +12092,7 @@
         "startDate": "2026-10-15",
         "endDate": "2027-01-31",
         "deadlineDisplay": "January 31, 2027 (Supplementary Budget Window)",
-        "daysRemaining": 77,
+        "daysRemaining": 76,
         "cycleFrequency": "Annual + Winter Supplementary Budget (補正予算)",
         "submissionPortal": "Tsukuba City / Ibaraki Extension Office & eMAFF"
       },
@@ -12192,7 +12192,7 @@
         "startDate": "2026-11-01",
         "endDate": "2027-02-15",
         "deadlineDisplay": "February 15, 2027",
-        "daysRemaining": 92,
+        "daysRemaining": 91,
         "cycleFrequency": "Annual + Supplementary Cycles",
         "submissionPortal": "Municipal Agriculture Desk / JA Kochi"
       },
@@ -12292,7 +12292,7 @@
         "startDate": "2026-10-20",
         "endDate": "2027-01-25",
         "deadlineDisplay": "January 25, 2027",
-        "daysRemaining": 71,
+        "daysRemaining": 70,
         "cycleFrequency": "Semi-Annual",
         "submissionPortal": "Prefectural Regional Agriculture Council"
       },
@@ -12391,7 +12391,7 @@
         "startDate": "2026-10-01",
         "endDate": "2027-04-01",
         "deadlineDisplay": "April 1, 2027",
-        "daysRemaining": 137,
+        "daysRemaining": 136,
         "cycleFrequency": "Annual Provincial Openstelling",
         "submissionPortal": "Provincie Zuid-Holland e-Loket (eHerkenning)"
       },
@@ -12490,7 +12490,7 @@
         "startDate": "2026-09-15",
         "endDate": "2027-03-31",
         "deadlineDisplay": "March 31, 2027",
-        "daysRemaining": 136,
+        "daysRemaining": 135,
         "cycleFrequency": "Annual",
         "submissionPortal": "Provincial eHerkenning Portal"
       },
@@ -12591,7 +12591,7 @@
         "startDate": "2026-10-15",
         "endDate": "2027-02-28",
         "deadlineDisplay": "February 28, 2027",
-        "daysRemaining": 105,
+        "daysRemaining": 104,
         "cycleFrequency": "Semi-Annual Regional Calls",
         "submissionPortal": "Portail Régional Europac / Mes Aides Régionales"
       },
@@ -12691,7 +12691,7 @@
         "startDate": "2026-10-10",
         "endDate": "2027-02-20",
         "deadlineDisplay": "February 20, 2027",
-        "daysRemaining": 97,
+        "daysRemaining": 96,
         "cycleFrequency": "Annual Autonomous Community Call",
         "submissionPortal": "SGA / Sede Electrónica Junta de Andalucía"
       },
@@ -12793,7 +12793,7 @@
         "startDate": "2026-10-01",
         "endDate": "2027-02-15",
         "deadlineDisplay": "February 15, 2027",
-        "daysRemaining": 92,
+        "daysRemaining": 91,
         "cycleFrequency": "Rolling / Multi-Intake Batches",
         "submissionPortal": "AAC / OMAFRA Online Portal"
       },
@@ -12892,7 +12892,7 @@
         "startDate": "2026-10-01",
         "endDate": "2027-01-31",
         "deadlineDisplay": "January 31, 2027",
-        "daysRemaining": 77,
+        "daysRemaining": 76,
         "cycleFrequency": "Semi-Annual Intake",
         "submissionPortal": "IAF BC Client Portal"
       },
@@ -12991,7 +12991,7 @@
         "startDate": "2026-01-01",
         "endDate": "2027-06-30",
         "deadlineDisplay": "Rolling Voucher Queue (FY 2026–2027)",
-        "daysRemaining": 227,
+        "daysRemaining": 226,
         "cycleFrequency": "Continuous Rolling",
         "submissionPortal": "Valley Air Online Grants Portal"
       },
@@ -13092,7 +13092,7 @@
         "startDate": "2026-07-01",
         "endDate": "2027-05-15",
         "deadlineDisplay": "May 15, 2027 (Rolling Water$mart)",
-        "daysRemaining": 181,
+        "daysRemaining": 180,
         "cycleFrequency": "Annual / Rolling",
         "submissionPortal": "SCAQMD Online & SoCalWaterSmart.com"
       },
@@ -13193,7 +13193,7 @@
         "startDate": "2026-01-01",
         "endDate": "2027-12-31",
         "deadlineDisplay": "Rolling Statewide Intake",
-        "daysRemaining": 411,
+        "daysRemaining": 410,
         "cycleFrequency": "Continuous Rolling",
         "submissionPortal": "NYSERDA Consolidated Funding / Portal"
       },
@@ -13293,7 +13293,7 @@
         "startDate": "2026-12-15",
         "endDate": "2027-01-31",
         "deadlineDisplay": "Dec 2026 – Jan 31, 2027 (Annual Municipal Announcement)",
-        "daysRemaining": 77,
+        "daysRemaining": 76,
         "cycleFrequency": "Annual Winter Solicitation (연 1회 연초 집중 공모)",
         "submissionPortal": "관할 시·군·구 농업기술센터 방문/보탬e 접수"
       },
@@ -13396,7 +13396,7 @@
         "startDate": "2027-01-02",
         "endDate": "2027-02-10",
         "deadlineDisplay": "Jan 2 – Feb 10, 2027 (읍·면·동 산업팀 일괄접수)",
-        "daysRemaining": 87,
+        "daysRemaining": 86,
         "cycleFrequency": "Annual New-Year Grassroots Window",
         "submissionPortal": "주소지 읍·면·동 행정복지센터 산업팀 방문 접수"
       },
@@ -13498,7 +13498,7 @@
         "startDate": "2026-11-01",
         "endDate": "2027-02-28",
         "deadlineDisplay": "February 28, 2027",
-        "daysRemaining": 105,
+        "daysRemaining": 104,
         "cycleFrequency": "Semi-Annual Provincial Calls",
         "submissionPortal": "스마트팜코리아 및 관할 시·군 스마트농업팀"
       },
@@ -13617,7 +13617,7 @@
         "startDate": "2026-01-15",
         "endDate": "2027-06-30",
         "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
-        "daysRemaining": 227,
+        "daysRemaining": 226,
         "cycleFrequency": "Annual / Rolling Budget Allocation",
         "submissionPortal": "Stadt Nürnberg Umweltreferat / N-ERGIE Förderportal"
       },
@@ -13725,7 +13725,7 @@
         "startDate": "2026-01-15",
         "endDate": "2027-06-30",
         "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
-        "daysRemaining": 227,
+        "daysRemaining": 226,
         "cycleFrequency": "Annual / Rolling Budget Allocation",
         "submissionPortal": "Bürgerserviceportal Fürth — Klimaschutzförderung"
       },
@@ -13832,7 +13832,7 @@
         "startDate": "2026-01-15",
         "endDate": "2027-06-30",
         "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
-        "daysRemaining": 227,
+        "daysRemaining": 226,
         "cycleFrequency": "Annual / Rolling Budget Allocation",
         "submissionPortal": "Kreis Kleve Klimaschutz- & Wirtschaftsförderportal"
       },
@@ -13940,7 +13940,7 @@
         "startDate": "2026-01-15",
         "endDate": "2027-06-30",
         "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
-        "daysRemaining": 227,
+        "daysRemaining": 226,
         "cycleFrequency": "Annual / Rolling Budget Allocation",
         "submissionPortal": "Landkreis Emsland Förderportal"
       },
@@ -14047,7 +14047,7 @@
         "startDate": "2026-01-15",
         "endDate": "2027-06-30",
         "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
-        "daysRemaining": 227,
+        "daysRemaining": 226,
         "cycleFrequency": "Annual / Rolling Budget Allocation",
         "submissionPortal": "IFB Hamburg — Unternehmen für Ressourcenschutz (UfR)"
       },
@@ -14155,7 +14155,7 @@
         "startDate": "2026-01-15",
         "endDate": "2027-06-30",
         "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
-        "daysRemaining": 227,
+        "daysRemaining": 226,
         "cycleFrequency": "Annual / Rolling Budget Allocation",
         "submissionPortal": "DLR Rheinpfalz / Mein EULLE Portal RLP"
       },
@@ -14263,7 +14263,7 @@
         "startDate": "2026-01-15",
         "endDate": "2027-06-30",
         "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
-        "daysRemaining": 227,
+        "daysRemaining": 226,
         "cycleFrequency": "Annual / Rolling Budget Allocation",
         "submissionPortal": "Rentenbank Förderportal (via Hausbank)"
       },
@@ -14371,7 +14371,7 @@
         "startDate": "2026-01-15",
         "endDate": "2027-06-30",
         "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
-        "daysRemaining": 227,
+        "daysRemaining": 226,
         "cycleFrequency": "Annual / Rolling Budget Allocation",
         "submissionPortal": "Gemeente Westland Ondernemersloket (eHerkenning)"
       },
@@ -14479,7 +14479,7 @@
         "startDate": "2026-01-15",
         "endDate": "2027-06-30",
         "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
-        "daysRemaining": 227,
+        "daysRemaining": 226,
         "cycleFrequency": "Annual / Rolling Budget Allocation",
         "submissionPortal": "Gemeente Venlo / LIOF Subsidieloket"
       },
@@ -14587,7 +14587,7 @@
         "startDate": "2026-01-15",
         "endDate": "2027-06-30",
         "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
-        "daysRemaining": 227,
+        "daysRemaining": 226,
         "cycleFrequency": "Annual / Rolling Budget Allocation",
         "submissionPortal": "Greenport Aalsmeer / Gemeente Aalsmeer Loket"
       },
@@ -14694,7 +14694,7 @@
         "startDate": "2026-01-15",
         "endDate": "2027-06-30",
         "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
-        "daysRemaining": 227,
+        "daysRemaining": 226,
         "cycleFrequency": "Annual / Rolling Budget Allocation",
         "submissionPortal": "Gemeente Lansingerland Ondernemersplein"
       },
@@ -14804,7 +14804,7 @@
         "startDate": "2026-01-15",
         "endDate": "2027-06-30",
         "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
-        "daysRemaining": 227,
+        "daysRemaining": 226,
         "cycleFrequency": "Annual / Rolling Budget Allocation",
         "submissionPortal": "FranceAgriMer — Plateforme d'Acquisition de Données (PAD)"
       },
@@ -14914,7 +14914,7 @@
         "startDate": "2026-01-15",
         "endDate": "2027-06-30",
         "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
-        "daysRemaining": 227,
+        "daysRemaining": 226,
         "cycleFrequency": "Annual / Rolling Budget Allocation",
         "submissionPortal": "ADEME — Plateforme AGIR pour la Transition"
       },
@@ -15021,7 +15021,7 @@
         "startDate": "2026-01-15",
         "endDate": "2027-06-30",
         "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
-        "daysRemaining": 227,
+        "daysRemaining": 226,
         "cycleFrequency": "Annual / Rolling Budget Allocation",
         "submissionPortal": "Guichet Agriculture Nantes Métropole / Pays de la Loire"
       },
@@ -15129,7 +15129,7 @@
         "startDate": "2026-01-15",
         "endDate": "2027-06-30",
         "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
-        "daysRemaining": 227,
+        "daysRemaining": 226,
         "cycleFrequency": "Annual / Rolling Budget Allocation",
         "submissionPortal": "Portail des Aides Région Bretagne / Haut-Léon"
       },
@@ -15237,7 +15237,7 @@
         "startDate": "2026-01-15",
         "endDate": "2027-06-30",
         "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
-        "daysRemaining": 227,
+        "daysRemaining": 226,
         "cycleFrequency": "Annual / Rolling Budget Allocation",
         "submissionPortal": "Portail Aides Agence de l'Eau RMC & Perpignan Métropole"
       },
@@ -15345,7 +15345,7 @@
         "startDate": "2026-01-15",
         "endDate": "2027-06-30",
         "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
-        "daysRemaining": 227,
+        "daysRemaining": 226,
         "cycleFrequency": "Annual / Rolling Budget Allocation",
         "submissionPortal": "Sede Electrónica IDAE / Comunidades Autónomas"
       },
@@ -15452,7 +15452,7 @@
         "startDate": "2026-01-15",
         "endDate": "2027-06-30",
         "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
-        "daysRemaining": 227,
+        "daysRemaining": 226,
         "cycleFrequency": "Annual / Rolling Budget Allocation",
         "submissionPortal": "Sede Electrónica CARM (Procedimientos Agricultura y Agua)"
       },
@@ -15560,7 +15560,7 @@
         "startDate": "2026-01-15",
         "endDate": "2027-06-30",
         "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
-        "daysRemaining": 227,
+        "daysRemaining": 226,
         "cycleFrequency": "Annual / Rolling Budget Allocation",
         "submissionPortal": "Sede Electrónica IVACE Energía"
       },
@@ -15669,7 +15669,7 @@
         "startDate": "2026-01-15",
         "endDate": "2027-06-30",
         "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
-        "daysRemaining": 227,
+        "daysRemaining": 226,
         "cycleFrequency": "Annual / Rolling Budget Allocation",
         "submissionPortal": "Sede Electrónica Ayuntamiento de El Ejido"
       },
@@ -15776,7 +15776,7 @@
         "startDate": "2026-01-15",
         "endDate": "2027-06-30",
         "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
-        "daysRemaining": 227,
+        "daysRemaining": 226,
         "cycleFrequency": "Annual / Rolling Budget Allocation",
         "submissionPortal": "Sede Electrónica Ayuntamiento de Níjar"
       },
@@ -15883,7 +15883,7 @@
         "startDate": "2026-01-15",
         "endDate": "2027-06-30",
         "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
-        "daysRemaining": 227,
+        "daysRemaining": 226,
         "cycleFrequency": "Annual / Rolling Budget Allocation",
         "submissionPortal": "MAPAQ Services en Ligne & Hydro-Québec OSE Portal"
       },
@@ -15991,7 +15991,7 @@
         "startDate": "2026-01-15",
         "endDate": "2027-06-30",
         "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
-        "daysRemaining": 227,
+        "daysRemaining": 226,
         "cycleFrequency": "Annual / Rolling Budget Allocation",
         "submissionPortal": "Municipality of Leamington Greenhouse Compliance & ERCA Portal"
       },
@@ -16099,7 +16099,7 @@
         "startDate": "2026-01-15",
         "endDate": "2027-06-30",
         "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
-        "daysRemaining": 227,
+        "daysRemaining": 226,
         "cycleFrequency": "Annual / Rolling Budget Allocation",
         "submissionPortal": "FortisBC Commercial Rebate Portal & Abbotsford Ag Hub"
       },
@@ -16207,7 +16207,7 @@
         "startDate": "2026-01-15",
         "endDate": "2027-06-30",
         "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
-        "daysRemaining": 227,
+        "daysRemaining": 226,
         "cycleFrequency": "Annual / Rolling Budget Allocation",
         "submissionPortal": "豊橋市 電子申請・届出システム / 農政課窓口"
       },
@@ -16315,7 +16315,7 @@
         "startDate": "2026-01-15",
         "endDate": "2027-06-30",
         "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
-        "daysRemaining": 227,
+        "daysRemaining": 226,
         "cycleFrequency": "Annual / Rolling Budget Allocation",
         "submissionPortal": "대전광역시 농업기술센터 공고 / 지방보조금관리시스템(보탬e)"
       },
@@ -16424,7 +16424,7 @@
         "startDate": "2026-01-15",
         "endDate": "2027-06-30",
         "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
-        "daysRemaining": 227,
+        "daysRemaining": 226,
         "cycleFrequency": "Annual / Rolling Budget Allocation",
         "submissionPortal": "Bayerische Landesanstalt für Landwirtschaft (LfL) — Berufsbildung Gartenbau"
       },
@@ -16533,7 +16533,7 @@
         "startDate": "2026-01-15",
         "endDate": "2027-06-30",
         "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
-        "daysRemaining": 227,
+        "daysRemaining": 226,
         "cycleFrequency": "Annual / Rolling Budget Allocation",
         "submissionPortal": "AFBG Digital — Amt für Ausbildungsförderung Bayern"
       },
@@ -16642,7 +16642,7 @@
         "startDate": "2026-01-15",
         "endDate": "2027-06-30",
         "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
-        "daysRemaining": 227,
+        "daysRemaining": 226,
         "cycleFrequency": "Annual / Rolling Budget Allocation",
         "submissionPortal": "StMELF Bayern / Franken-Gemüse Knoblauchsland eG (Nürnberg)"
       },
@@ -16752,7 +16752,7 @@
         "startDate": "2026-01-15",
         "endDate": "2027-06-30",
         "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
-        "daysRemaining": 227,
+        "daysRemaining": 226,
         "cycleFrequency": "Annual / Rolling Budget Allocation",
         "submissionPortal": "Wasserverband Knoblauchsland Geschäftsstelle (Nürnberg-Boxdorf)"
       },
@@ -16860,7 +16860,7 @@
         "startDate": "2026-01-15",
         "endDate": "2027-06-30",
         "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
-        "daysRemaining": 227,
+        "daysRemaining": 226,
         "cycleFrequency": "Annual / Rolling Budget Allocation",
         "submissionPortal": "Rentenbank Förderportal über Hausbank (Sparkasse / VR-Bank)"
       },
@@ -16967,7 +16967,7 @@
         "startDate": "2026-01-15",
         "endDate": "2027-06-30",
         "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
-        "daysRemaining": 227,
+        "daysRemaining": 226,
         "cycleFrequency": "Annual / Rolling Budget Allocation",
         "submissionPortal": "Bayerisches Serviceportal iBALIS / AELF Kitzingen-Würzburg"
       },
@@ -17074,7 +17074,7 @@
         "startDate": "2026-01-15",
         "endDate": "2027-06-30",
         "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
-        "daysRemaining": 227,
+        "daysRemaining": 226,
         "cycleFrequency": "Annual / Rolling Budget Allocation",
         "submissionPortal": "Stadt Bamberg Umwelt- & Gartenbauförderung"
       },
@@ -17183,7 +17183,7 @@
         "startDate": "2026-01-15",
         "endDate": "2027-06-30",
         "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
-        "daysRemaining": 227,
+        "daysRemaining": 226,
         "cycleFrequency": "Annual / Rolling Budget Allocation",
         "submissionPortal": "Agentur für Arbeit Nürnberg / BAMF-Trägerverzeichnis"
       },
@@ -17290,7 +17290,7 @@
         "startDate": "2026-01-15",
         "endDate": "2027-06-30",
         "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
-        "daysRemaining": 227,
+        "daysRemaining": 226,
         "cycleFrequency": "Annual / Rolling Budget Allocation",
         "submissionPortal": "BA eServices Portal & VGN Nürnberg Ausbildungsnachweis"
       },
@@ -17396,7 +17396,7 @@
         "startDate": "2026-01-15",
         "endDate": "2027-06-30",
         "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
-        "daysRemaining": 227,
+        "daysRemaining": 226,
         "cycleFrequency": "Annual / Rolling Budget Allocation",
         "submissionPortal": "NRW.BANK Förderportal über Hausbank"
       },
@@ -17504,7 +17504,7 @@
         "startDate": "2026-01-15",
         "endDate": "2027-06-30",
         "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
-        "daysRemaining": 227,
+        "daysRemaining": 226,
         "cycleFrequency": "Annual / Rolling Budget Allocation",
         "submissionPortal": "Landgard Erzeugermanagement (Straelen-Herongen) / LWK NRW EU-Zahlstelle"
       },
@@ -17612,7 +17612,7 @@
         "startDate": "2026-01-15",
         "endDate": "2027-06-30",
         "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
-        "daysRemaining": 227,
+        "daysRemaining": 226,
         "cycleFrequency": "Annual / Rolling Budget Allocation",
         "submissionPortal": "Gartenbauzentrale Papenburg eG (Schulze-Delitzsch-Str. 10, Papenburg)"
       },
@@ -17720,7 +17720,7 @@
         "startDate": "2026-01-15",
         "endDate": "2027-06-30",
         "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
-        "daysRemaining": 227,
+        "daysRemaining": 226,
         "cycleFrequency": "Annual / Rolling Budget Allocation",
         "submissionPortal": "L-Bank Baden-Württemberg — Förderprogramm Klimaschutz-Plus"
       },
@@ -17827,7 +17827,7 @@
         "startDate": "2026-01-15",
         "endDate": "2027-06-30",
         "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
-        "daysRemaining": 227,
+        "daysRemaining": 226,
         "cycleFrequency": "Annual / Rolling Budget Allocation",
         "submissionPortal": "WIBank Hessen Kundenportal & LLH Gartenbauzentrum Geisenheim/Griesheim"
       },
@@ -17935,7 +17935,7 @@
         "startDate": "2026-01-15",
         "endDate": "2027-06-30",
         "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
-        "daysRemaining": 227,
+        "daysRemaining": 226,
         "cycleFrequency": "Annual / Rolling Budget Allocation",
         "submissionPortal": "Provincie Limburg Subsidieloket (eHerkenning)"
       },
@@ -18043,7 +18043,7 @@
         "startDate": "2026-01-15",
         "endDate": "2027-06-30",
         "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
-        "daysRemaining": 227,
+        "daysRemaining": 226,
         "cycleFrequency": "Annual / Rolling Budget Allocation",
         "submissionPortal": "Mijn RVO (eHerkenning Niveau 3)"
       },
@@ -18152,7 +18152,7 @@
         "startDate": "2026-01-15",
         "endDate": "2027-06-30",
         "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
-        "daysRemaining": 227,
+        "daysRemaining": 226,
         "cycleFrequency": "Annual / Rolling Budget Allocation",
         "submissionPortal": "충청남도 스마트농업과 / 관할 시·군 농업기술센터"
       },
@@ -18260,7 +18260,7 @@
         "startDate": "2026-01-15",
         "endDate": "2027-06-30",
         "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
-        "daysRemaining": 227,
+        "daysRemaining": 226,
         "cycleFrequency": "Annual / Rolling Budget Allocation",
         "submissionPortal": "대전광역시 농업기술센터 공고·접수 창구 (유성구 교촌동)"
       },
@@ -18369,7 +18369,7 @@
         "startDate": "2026-01-15",
         "endDate": "2027-06-30",
         "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
-        "daysRemaining": 227,
+        "daysRemaining": 226,
         "cycleFrequency": "Annual / Rolling Budget Allocation",
         "submissionPortal": "USDA Service Center / Farmers.gov Portal"
       },
@@ -18478,7 +18478,7 @@
         "startDate": "2026-01-15",
         "endDate": "2027-06-30",
         "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
-        "daysRemaining": 227,
+        "daysRemaining": 226,
         "cycleFrequency": "Annual / Rolling Budget Allocation",
         "submissionPortal": "Grants.gov / USDA Rural Development State Office"
       },
@@ -18585,7 +18585,7 @@
         "startDate": "2026-01-15",
         "endDate": "2027-06-30",
         "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
-        "daysRemaining": 227,
+        "daysRemaining": 226,
         "cycleFrequency": "Annual / Rolling Budget Allocation",
         "submissionPortal": "Texas Commercial Standard Offer Program (CSOP) / CPS SaveNow Portal"
       },
@@ -18693,7 +18693,7 @@
         "startDate": "2026-01-15",
         "endDate": "2027-06-30",
         "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
-        "daysRemaining": 227,
+        "daysRemaining": 226,
         "cycleFrequency": "Annual / Rolling Budget Allocation",
         "submissionPortal": "SWFWMD / SJRWMD FARMS Engineering Portal"
       },
@@ -18800,7 +18800,7 @@
         "startDate": "2026-01-15",
         "endDate": "2027-06-30",
         "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
-        "daysRemaining": 227,
+        "daysRemaining": 226,
         "cycleFrequency": "Annual / Rolling Budget Allocation",
         "submissionPortal": "Ohio Department of Development / Efficiency Smart Agribusiness Portal"
       },
@@ -18907,7 +18907,7 @@
         "startDate": "2026-01-15",
         "endDate": "2027-06-30",
         "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
-        "daysRemaining": 227,
+        "daysRemaining": 226,
         "cycleFrequency": "Annual / Rolling Budget Allocation",
         "submissionPortal": "Consumers Energy / DTE Business Energy Efficiency Portal"
       },
@@ -19014,7 +19014,7 @@
         "startDate": "2026-01-15",
         "endDate": "2027-06-30",
         "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
-        "daysRemaining": 227,
+        "daysRemaining": 226,
         "cycleFrequency": "Annual / Rolling Budget Allocation",
         "submissionPortal": "SRP Business Solutions / APS Solutions for Business Portal"
       },
@@ -19122,7 +19122,7 @@
         "startDate": "2026-01-15",
         "endDate": "2027-06-30",
         "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
-        "daysRemaining": 227,
+        "daysRemaining": 226,
         "cycleFrequency": "Annual / Rolling Budget Allocation",
         "submissionPortal": "NC State Extension NC AgVentures Portal & Duke Energy Smart $aver"
       },
@@ -19230,7 +19230,7 @@
         "startDate": "2026-01-15",
         "endDate": "2027-06-30",
         "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
-        "daysRemaining": 227,
+        "daysRemaining": 226,
         "cycleFrequency": "Annual / Rolling Budget Allocation",
         "submissionPortal": "Georgia Power Commercial Energy Efficiency Rebate Center"
       },
@@ -19337,7 +19337,7 @@
         "startDate": "2026-01-15",
         "endDate": "2027-06-30",
         "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
-        "daysRemaining": 227,
+        "daysRemaining": 226,
         "cycleFrequency": "Annual / Rolling Budget Allocation",
         "submissionPortal": "PA State Conservation Commission REAP Online Portal"
       },
@@ -19445,7 +19445,7 @@
         "startDate": "2026-01-15",
         "endDate": "2027-06-30",
         "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
-        "daysRemaining": 227,
+        "daysRemaining": 226,
         "cycleFrequency": "Annual / Rolling Budget Allocation",
         "submissionPortal": "Colorado Department of Agriculture Conservation Portal & Xcel Energy Business"
       },
@@ -19553,7 +19553,7 @@
         "startDate": "2026-01-15",
         "endDate": "2027-06-30",
         "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
-        "daysRemaining": 227,
+        "daysRemaining": 226,
         "cycleFrequency": "Annual / Rolling Budget Allocation",
         "submissionPortal": "ComEd Energy Efficiency Indoor Agriculture Portal / Ameren ActOnEnergy"
       },
@@ -19660,7 +19660,7 @@
         "startDate": "2026-01-15",
         "endDate": "2027-06-30",
         "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
-        "daysRemaining": 227,
+        "daysRemaining": 226,
         "cycleFrequency": "Annual / Rolling Budget Allocation",
         "submissionPortal": "Focus on Energy Agribusiness Rebate Portal"
       },
@@ -19767,7 +19767,7 @@
         "startDate": "2026-01-15",
         "endDate": "2027-06-30",
         "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
-        "daysRemaining": 227,
+        "daysRemaining": 226,
         "cycleFrequency": "Annual / Rolling Budget Allocation",
         "submissionPortal": "Minnesota Department of Agriculture Online Grant Portal"
       },
@@ -19874,7 +19874,7 @@
         "startDate": "2026-01-15",
         "endDate": "2027-06-30",
         "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
-        "daysRemaining": 227,
+        "daysRemaining": 226,
         "cycleFrequency": "Annual / Rolling Budget Allocation",
         "submissionPortal": "VDACS Office of Agriculture and Forestry Development"
       },
@@ -19981,7 +19981,7 @@
         "startDate": "2026-01-15",
         "endDate": "2027-06-30",
         "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
-        "daysRemaining": 227,
+        "daysRemaining": 226,
         "cycleFrequency": "Annual / Rolling Budget Allocation",
         "submissionPortal": "PSE&G / JCP&L / ACE Business Energy Efficiency Portal"
       },
@@ -20088,7 +20088,7 @@
         "startDate": "2026-01-15",
         "endDate": "2027-06-30",
         "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
-        "daysRemaining": 227,
+        "daysRemaining": 226,
         "cycleFrequency": "Annual / Rolling Budget Allocation",
         "submissionPortal": "Maryland Energy Administration Grant Portal"
       },
@@ -20195,7 +20195,7 @@
         "startDate": "2026-01-15",
         "endDate": "2027-06-30",
         "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
-        "daysRemaining": 227,
+        "daysRemaining": 226,
         "cycleFrequency": "Annual / Rolling Budget Allocation",
         "submissionPortal": "Energize CT Business & Ag Energy Portal"
       },
@@ -20302,7 +20302,7 @@
         "startDate": "2026-01-15",
         "endDate": "2027-06-30",
         "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
-        "daysRemaining": 227,
+        "daysRemaining": 226,
         "cycleFrequency": "Annual / Rolling Budget Allocation",
         "submissionPortal": "IDALS Choose Iowa Grant Portal & Alliant/MidAmerican Ag Efficiency"
       },
@@ -20409,7 +20409,7 @@
         "startDate": "2026-01-15",
         "endDate": "2027-06-30",
         "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
-        "daysRemaining": 227,
+        "daysRemaining": 226,
         "cycleFrequency": "Annual / Rolling Budget Allocation",
         "submissionPortal": "ISDA Grants Portal & AES Indiana / NIPSCO / Duke Business Rebates"
       },
@@ -20517,7 +20517,7 @@
         "startDate": "2026-01-15",
         "endDate": "2027-06-30",
         "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
-        "daysRemaining": 227,
+        "daysRemaining": 226,
         "cycleFrequency": "Annual / Rolling Budget Allocation",
         "submissionPortal": "Kansas Department of Agriculture — Conservation District CSIMS Portal"
       },
@@ -20624,7 +20624,7 @@
         "startDate": "2026-01-15",
         "endDate": "2027-06-30",
         "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
-        "daysRemaining": 227,
+        "daysRemaining": 226,
         "cycleFrequency": "Annual / Rolling Budget Allocation",
         "submissionPortal": "Rocky Mountain Power Wattsmart Business Portal (Utah)"
       },
@@ -20732,7 +20732,7 @@
         "startDate": "2026-01-15",
         "endDate": "2027-06-30",
         "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
-        "daysRemaining": 227,
+        "daysRemaining": 226,
         "cycleFrequency": "Annual / Rolling Budget Allocation",
         "submissionPortal": "Idaho Power Agricultural Efficiency Portal & IDWR IWRB Grants"
       },
@@ -20840,7 +20840,7 @@
         "startDate": "2026-01-15",
         "endDate": "2027-06-30",
         "deadlineDisplay": "2027-06-30 (Continuous / Annual Municipal Intake)",
-        "daysRemaining": 227,
+        "daysRemaining": 226,
         "cycleFrequency": "Annual / Rolling Budget Allocation",
         "submissionPortal": "NM EMNRD Clean Energy Tax Portal & Local Soil and Water Conservation District"
       },

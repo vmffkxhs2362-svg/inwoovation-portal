@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="robots" content="noindex, nofollow">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{TITLE}}</title>
@@ -20,6 +20,8 @@
     <meta name="google-site-verification" content="Y7d3dVoTQHBbG1GoKc4E_LUZb6YBmv491pv7G01mOk8" />
     
     <!-- Google AdSense Meta & Script -->
+    <meta name="google-adsense-account" content="ca-pub-8597809158257497">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8597809158257497" crossorigin="anonymous"></script>
     
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-V4RYJBMEDE"></script>
@@ -35,6 +37,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/global-ui-enhancements.css?v=20261115">
+    <script src="/js/global-search-palette.js?v=20261115" defer></script>
     
     <style>
         :root {
@@ -258,29 +262,14 @@
             line-height: 1.4;
         }
         
-        .ad-placeholder {
-            width: 300px;
-            height: 250px;
-            background: rgba(0,0,0,0.3);
-            border: 1px dashed var(--text-muted);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            margin-bottom: 2rem;
-            border-radius: 4px;
-        }
-
         /* Mobile Responsive */
         @media (max-width: 1200px) {
             aside.sidebar-right { width: 280px; }
-            .ad-placeholder { width: 100%; height: auto; aspect-ratio: 1.2; }
         }
         @media (max-width: 1024px) {
             .container { flex-direction: column; }
-            nav.sidebar-left, aside.sidebar-right { display: none; }
+            nav.sidebar-left { display: none; }
+            aside.sidebar-right { display: block; width: 100%; height: auto; position: static; border-left: none; border-top: 1px solid var(--border); }
             main { padding: 2rem; max-width: 100%; }
         }
 
@@ -352,9 +341,6 @@
             .sidebar-left.open {
                 left: 0;
             }
-            .sidebar-right {
-                display: none;
-            }
             header {
                 padding: 0 1rem;
             }
@@ -369,19 +355,17 @@
     <header>
         <div style="display: flex; align-items: center; gap: 1.2rem; flex-wrap: wrap;">
             <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
-            <a href="https://inwoovation.com/" style="color: var(--text-muted); text-decoration: none; font-size: 0.85rem; font-weight: 600; border: 1px solid var(--border); padding: 0.35rem 0.75rem; border-radius: 8px;">← Inwoovation Portal</a>
+            <a href="/" style="color: var(--text-muted); text-decoration: none; font-size: 0.85rem; font-weight: 600; border: 1px solid var(--border); padding: 0.35rem 0.75rem; border-radius: 8px;">← Inwoovation Portal</a>
             <a href="index.html" class="logo">🌍 Agri<span>Atlas</span> Wiki</a>
             <a href="research.html" style="color: var(--primary); font-weight: 700; text-decoration: none; font-size: 0.95rem; background: rgba(56, 189, 248, 0.1); padding: 0.4rem 0.9rem; border-radius: 20px; border: 1px solid rgba(56, 189, 248, 0.3); display: flex; align-items: center; gap: 0.4rem;">🔬 <span>Scientific Research</span></a>
         </div>
         
-        <div class="header-right" style="display: flex; align-items: center; gap: 1rem;">
+        <div class="header-right" style="display: flex; align-items: center; gap: 0.8rem;">
             <div class="search-container">
-                <input type="text" id="searchInput" class="search-bar" placeholder="Search crops, climates, data...">
+                <input type="text" id="searchInput" class="search-bar" placeholder="Search wiki crops, climates, papers...">
                 <div id="searchResults" class="search-results"></div>
             </div>
-            
-            <!-- Google Translate Widget -->
-            <div id="google_translate_element"></div>
+            <button type="button" class="nav-search-trigger" onclick="window.InwooPalette && window.InwooPalette.open()" title="Open Global Spotlight Search (Ctrl+K)" style="background: rgba(56, 189, 248, 0.14); border: 1px solid rgba(56, 189, 248, 0.35); color: #e2e8f0; border-radius: 999px; padding: 0.42rem 0.85rem; cursor: pointer; font-weight: 700; font-size: 0.82rem;">🔍 Portal <kbd>Ctrl+K</kbd></button>
         </div>
     </header>
 
@@ -389,9 +373,14 @@
     <nav class="sidebar-left" id="mobileSidebar">
         <div class="nav-group">
             <div class="nav-title">🏛️ Inwoovation Ecosystem</div>
-            <a href="https://inwoovation.com/" class="nav-link">🏠 Inwoovation Hub Home</a>
-            <a href="https://inwoovation.com/smartfarm/vpd.html" class="nav-link">🌡️ VPD & Psychrometric Suite</a>
-            <a href="https://inwoovation.com/smartfarm/heat_loss.html" class="nav-link">🔥 Greenhouse Heat Loss</a>
+            <a href="/" class="nav-link">🏠 Inwoovation Hub Home</a>
+            <a href="/tools/psychrometric-mollier-greenhouse-dehumidifier.html" class="nav-link">🌡️ VPD &amp; Psychrometric Engine</a>
+            <a href="/tools/greenhouse-heating-load-thermal-screen-calculator.html" class="nav-link">🔥 DIN V 18599 Heat Load</a>
+            <a href="/crops/index.html" class="nav-link">🌱 Crop Steering Guides</a>
+            <a href="/handbooks/index.html" class="nav-link">📘 Master Engineering Handbook</a>
+            <a href="/benchmarks/index.html" class="nav-link">⚖️ Hardware Benchmarks</a>
+            <a href="/troubleshoot.html" class="nav-link">🩺 Symptom Diagnostics</a>
+            <a href="/directory.html" class="nav-link">🗂️ Full Portal Directory</a>
         </div>
 
         <div class="nav-group">
@@ -419,7 +408,7 @@
 </div>
 
 <footer style="margin-top: 4rem; padding: 2rem 1rem; border-top: 1px solid var(--border); text-align: center; color: var(--text-muted); font-size: 0.85rem;">
-    <p>© 2026 Inwoovation Lab (Inwoo Hwang — Horticultural &amp; CEA Systems Engineer). AgriAtlas Wiki. All rights reserved. | <a href="https://inwoovation.com/" style="color: var(--primary); text-decoration: none;">Inwoovation Portal</a> | <a href="https://forms.gle/SC3ehhA4r6sPEZxV7" target="_blank" style="color: var(--primary); font-weight: 700; text-decoration: none;">Send Feedback 📩</a></p>
+    <p>© 2026 Inwoovation Lab (Inwoo Hwang — Horticultural &amp; CEA Systems Engineer). AgriAtlas Wiki. All rights reserved. | <a href="/directory.html" style="color: var(--primary); text-decoration: none; font-weight: 700;">Directory</a> | <a href="/tools/index.html" style="color: var(--primary); text-decoration: none;">42 Calculators</a> | <a href="/handbooks/index.html" style="color: var(--primary); text-decoration: none;">Handbook</a> | <a href="/podcasts/" style="color: var(--primary); text-decoration: none;">Podcasts</a> | <a href="/privacy-policy.html" style="color: var(--primary); text-decoration: none;">Privacy Policy</a> | <a href="/terms-of-service.html" style="color: var(--primary); text-decoration: none;">Terms of Service</a> | <a href="/about.html" style="color: var(--primary); text-decoration: none;">About</a> | <a href="/contact.html" style="color: var(--primary); text-decoration: none;">Contact</a> | <a href="https://forms.gle/SC3ehhA4r6sPEZxV7" target="_blank" style="color: var(--primary); font-weight: 700; text-decoration: none;">Send Feedback 📩</a></p>
 </footer>
 
 <!-- Floating Feedback Button (FAB) -->
@@ -484,17 +473,6 @@
         }
     });
 </script>
-
-<!-- Google Translate Script (Loaded Asynchronously at the bottom) -->
-<script type="text/javascript">
-    function googleTranslateElementInit() {
-        new google.translate.TranslateElement({
-            pageLanguage: 'en',
-            layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-        }, 'google_translate_element');
-    }
-</script>
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async defer></script>
 
 </body>
 </html>

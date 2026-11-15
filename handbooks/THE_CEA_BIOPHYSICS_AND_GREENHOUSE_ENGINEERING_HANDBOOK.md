@@ -1,995 +1,714 @@
 # 📘 The CEA Biophysics & Greenhouse Engineering Handbook
-## Complete First Edition: 56 Technical Volumes on High-Performance Commercial Horticulture
+## OpenCEA Compendium: 78 Volumes (187 Multilingual Editions) & 42 Live Simulators
 
-> **Author**: Inwoovation Engineering Group / Antigravity Operations  
-> **Target Market**: Commercial Greenhouse Operators, Plant Factory Systems Engineers, Gärtnermeister Candidates, Agronomists  
-> **Publication Standards**: Strict Peer-Reviewed Physics, Zero-Hallucination Verified Models, Interactive Web Tool Synchronized  
-
----
-
-## 📌 Executive Abstract & Product Profile
-This technical compendium consolidates 56 foundational volumes of commercial Controlled Environment Agriculture (CEA) science. Covering photobiology, atmospheric thermodynamics, closed-loop hydroponic chemistry, crop steering, and greenhouse digital twins, each chapter bridges advanced physiological theory with field-tested engineering equations and empirical control rules.
-
-### 💎 Digital Asset Specifications (KDP & Gumroad Master Edition)
-- **Volumes Compiled**: 56 Distinct Engineering Monographs (Vol 01 - Vol 56)
-- **Mathematical Rigor**: Fully indexed biophysical formulas (Penman-Monteith, Farquhar FvCB, Beer-Lambert, Tetens, Mollier, McCree Action Spectrum)
-- **Interactive Verification**: Direct integration with 34 Inwoovation Lab live web simulators
-- **Dual-Language Ecosystem**: English Technical Edition & Deutsche Gärtnermeister Edition
+> **Author**: Inwoovation Lab (Inwoo Hwang)  
+> **Target Audience**: Commercial Greenhouse Operators, Plant Factory Systems Engineers, Gärtnermeister Candidates, Agronomists  
+> **Publication Standard**: Verified Biophysical Equations (Magnus-Tetens, Penman-Monteith, Farquhar FvCB, DIN V 18599, Debye-Hückel), Interactive Simulator Synchronized (`2026-11-16`)  
 
 ---
 
-## 📑 Comprehensive Master Table of Contents
+## 📌 Executive Abstract & Compendium Profile
+This open-access technical compendium organizes all **78 English engineering monographs** (**187 total EN/DE/JA editions**) alongside **42 client-side biophysical simulators** and **192 hyper-local agricultural grant programs** into six engineering domains.
 
-### Part I: Atmospheric Thermodynamics & Greenhouse Microclimate
+---
+
+## 🗂️ Master Six-Part Table of Contents
+
+### Part I: Atmospheric Thermodynamics, Psychrometrics & Transpiration
+*VPD psychrometrics, Stanghellini & Penman-Monteith evapotranspiration, high-pressure fogging, HAF ventilation CFD, and multi-layer thermal screen energy transfer.*
 - **Volume 01**: [Biophysical Foundations of Vapor Pressure Deficit (VPD) Thermodynamics in CEA Greenhouses](#chapter-01-article-01-vpd-master-class)
-- **Volume 03**: [Greenhouse Bumblebee Protection & Restricted-Entry Intervals (REI) in Precision CEA](#chapter-03-article-03-pollinator-safety-rei)
+- **Volume 04**: [Greenhouse Envelope Peak Heat Loss Coefficients (U-Values) & Thermodynamic Thermal Screen Modeling](#chapter-04-article-04-greenhouse-heating-loss)
 - **Volume 05**: [Hourly Penman-Monteith Evapotranspiration (ET0) Modeling & Stomatal Resistance Kinetics](#chapter-05-article-05-penman-monteith-transpiration)
-- **Volume 08**: [Horticultural Physics & Environmental Physiology of Monstera deliciosa: Hydroponics & VPD Optimization](#chapter-08-article-08-monstera-deliciosa-care-guide)
-- **Volume 12**: [Xylem Calcium Partitioning & Transpirational Prevention of Blossom-End Rot (BER) in Greenhouse Tomatoes](#chapter-12-article-12-tomato-blossom-end-rot-calcium)
-- **Volume 17**: [Biophysical Soil Physics: Air Porosity, Water Retention Curves & Root Zone Aeration](#chapter-17-article-17-indoor-plant-soil-aeration-porosity)
-- **Volume 21**: [Chlorophyll a Fluorescence Kinetics (Fv/Fm & OJIP) & Pre-Symptomatic Stress Metrology](#chapter-21-article-21-chlorophyll-a-fluorescence-fvfm-stress)
-- **Volume 25**: [Closed-Loop Nutrient Recirculation & Nanobubble Dissolved Oxygen Kinetics in Commercial Greenhouses](#chapter-25-article-25-closed-loop-hydroponic-nanobubble-oxygenation)
+- **Volume 10**: [Commercial Vertical Farming HVAC Sizing: Dehumidification Latent Loads & Microclimate Fluid Dynamics](#chapter-10-article-10-vertical-farm-hvac-design)
+- **Volume 11**: [High-Wire Strawberry Greenhouse Microclimate: Flower Bud Differentiation & Diurnal Temperature Integration](#chapter-11-article-11-strawberry-greenhouse-climate)
+- **Volume 18**: [Closed-Loop Hydroponic Drain Water Disinfection: UV-C, Ozone, Heat & Ultrafiltration](#chapter-18-article-18-recirculating-nutrient-sterilization)
+- **Volume 26**: [Greenhouse Heating Load Modeling & Thermal Screen Dynamics under DIN V 18599 Standards](#chapter-26-article-26-greenhouse-heating-load-din-v-18599)
 - **Volume 29**: [Hourly Penman-Monteith Evapotranspiration Modeling & Stomatal Resistance Dynamics](#chapter-29-article-29-hourly-penman-monteith-evapotranspiration)
-- **Volume 33**: [Precision Crop Steering Dynamics: Balancing Generative vs Vegetative Growth](#chapter-33-article-33-precision-crop-steering-dif-vpd-drydown)
-- **Volume 38**: [Xylem Calcium Transport Dynamics & Blossom-End Rot ($BER$) Prevention](#chapter-38-article-38-xylem-calcium-flux-blossom-end-rot)
-- **Volume 44**: [Meister-Deutsch: Open-Source Horticultural German SRS & Phonetic Engine](#chapter-44-article-44-meister-deutsch-open-source-srs-engine)
-- **Volume 49**: [Hydroponic Chemical Speciation, Debye-Hückel Activity & Saturation Indices](#chapter-49-article-49-hydroponic-chemical-speciation-debye-huckel)
-- **Volume 53**: [Biomass CHP Flue Gas SCR Cleaning & Biogenic CO2 Direct Enrichment in Venlo Glasshouses](#chapter-53-article-53-biomass-chp-scr-co2-recovery-horticulture)
+- **Volume 31**: [High-Pressure (70 bar) Fogging Physics & Sauter Droplet Evaporative Cooling](#chapter-31-article-31-high-pressure-fogging-droplet-physics)
+- **Volume 35**: [Computational Fluid Dynamics (CFD) of Horizontal Air Flow (HAF) Fans](#chapter-35-article-35-greenhouse-haf-fan-cfd-modeling)
+- **Volume 61**: [Dynamic Thermal Screen Gap Control, Evaporative Transpiration Latent Heat & Psychrometric Energy Optimization in Semi-Closed Venlo Greenhouses](#chapter-61-article-61-thermal-screen-gap-transpiration-latent-heat-greenhouse-energy)
+- **Volume 69**: [Biomass-Fired CHP District Energy Integration in Venlo Greenhouses: High-Temperature Flue Gas Cleaning, Substrate Heating, and Cross-Sector Municipal Heat Sharing](#chapter-69-article-69-biomass-chp-flue-gas-scr-district-heating-greenhouse)
+- **Volume 71**: [Horizontal Air Flow (HAF) Aerodynamics & Boundary Layer Decoupling in Venlo Greenhouses: Microclimate Stratification, Sherwood Mass Transfer Kinetics, and Heat Recovery Dehumidification](#chapter-71-article-71-haf-fan-microclimate-boundary-layer-dynamics)
+- **Volume 72**: [Thermodynamic Optimization of Semi-Closed Venlo Greenhouses: High-Pressure Fogging, Active Mechanical Dehumidification, and Latent Heat Recovery](#chapter-72-article-72-semi-closed-greenhouse-mollier-psychrometrics-latent-heat)
+- **Volume 74**: [Semi-Closed Greenhouse Corridor Air Treatment Units (ATU): Positive-Pressure Insect Exclusion (+20~25 Pa), Mollier Enthalpy Balancing, and 1-Click VenloCAD 3D Integration](#chapter-74-article-74-semi-closed-greenhouse-atu-mollier-venlocad-integration)
+- **Volume 76**: [High-Tech Venlo Greenhouse Climate Engineering & Biocontrol Cybernetics in Knoblauchsland](#chapter-76-article-76-knoblauchsland-greenhouse-climate-vpd-biocontrol-oecd)
 
-### Part II: Quantum Photobiology & Radiation Dynamics
+### Part II: Photobiology, LED Quantum Spectra & Crop Steering
+*McCree photosynthetic action spectra, ePAR far-red phytochrome equilibrium, Farquhar-von Caemmerer-Berry carbon assimilation, Beer-Lambert canopy extinction, and DIF crop steering.*
 - **Volume 02**: [Daily Light Integral (DLI) & Photonic Efficacy Engineering in Vertical Plant Factories](#chapter-02-article-02-dli-vertical-farming)
 - **Volume 07**: [Photomorphogenesis & PAR Spectral Quality: Red/Blue Ratios and Emerson Enhancement Effect](#chapter-07-article-07-indoor-plant-lighting-spectrum)
-- **Volume 11**: [High-Wire Strawberry Greenhouse Microclimate: Flower Bud Differentiation & Diurnal Temperature Integration](#chapter-11-article-11-strawberry-greenhouse-climate)
-- **Volume 16**: [German Master Grower (Gärtnermeister) Greenhouse Climate Steering Strategy for Solanaceae](#chapter-16-article-16-german-meister-greenhouse-climate)
-- **Volume 20**: [Leaf Temperature Infrared Thermometry & Crop Water Stress Index (CWSI) Sensing](#chapter-20-article-20-leaf-temperature-infrared-thermometry)
+- **Volume 09**: [Stomatal Conductance Dynamics & Farquhar-von Caemmerer-Berry (FvCB) Photosynthesis Coupling](#chapter-09-article-09-stomata-conductance-photosynthesis)
 - **Volume 24**: [Optimizing Far-Red (730nm) & Deep-Red (660nm) Spectral Ratios for Commercial Greenhouse Crops](#chapter-24-article-24-far-red-deep-red-led-spectrum-optimization)
-- **Volume 28**: [Greenhouse CO₂ Enrichment Kinetics & Economic Thresholds under Dynamic Ventilation](#chapter-28-article-28-greenhouse-co2-enrichment-economics)
-- **Volume 32**: [Horticultural LED Fixture Thermal Management & Diode Junction Temperature ($T_j$) Dynamics](#chapter-32-article-32-horticultural-led-thermal-junction-temperature)
-- **Volume 37**: [Hot Water Buffer Tank Stratification & Thermal Energy Storage Sizing](#chapter-37-article-37-thermal-buffer-tank-stratification-sizing)
-- **Volume 43**: [Greenhouse Structural Standards (EN 13031-1 & NEN 3859): Wind, Snow & Crop Loads](#chapter-43-article-43-greenhouse-structural-standards-en13031)
-- **Volume 48**: [Commercial Greenhouse 10-Year CapEx, OpEx & IRR Investment Modeling](#chapter-48-article-48-greenhouse-capex-opex-irr-npv-financial-model)
-- **Volume 52**: [Aquifer Thermal Energy Storage (ATES) & Industrial Heat Pumps in Dutch Venlo Greenhouses](#chapter-52-article-52-aquifer-thermal-energy-storage-ates-heat-pump)
+- **Volume 27**: [Predictive Biomass Accumulation & Light Use Efficiency (LUE) Under Dynamic DLI](#chapter-27-article-27-crop-yield-biomass-light-use-efficiency)
+- **Volume 32**: [Horticultural LED Fixture Thermal Management & Diode Junction Temperature (Tj) Dynamics](#chapter-32-article-32-horticultural-led-thermal-junction-temperature)
+- **Volume 33**: [Precision Crop Steering Dynamics: Balancing Generative vs Vegetative Growth](#chapter-33-article-33-precision-crop-steering-dif-vpd-drydown)
+- **Volume 40**: [Canopy Light Extinction (Beer-Lambert Law) & Diffuse Glass Transmission](#chapter-40-article-40-beer-lambert-canopy-light-extinction)
+- **Volume 41**: [The Biochemical Farquhar (FvCB) Photosynthesis Model & CO₂ Dosing Dynamics](#chapter-41-article-41-farquhar-photosynthesis-fvcb-co2)
 - **Volume 56**: [Far-Red Photobiology (ePAR 400–750 nm) & Phytochrome Photostationary State (PSS) in Greenhouse Horticulture](#chapter-56-article-56-far-red-photobiology-epar-phytochrome-photostationary-state)
 
-### Part III: Hydrochemistry & Root-Zone Biophysics
-- **Volume 04**: [Greenhouse Envelope Peak Heat Loss Coefficients (U-Values) & Thermodynamic Thermal Screen Modeling](#chapter-04-article-04-greenhouse-heating-loss)
-- **Volume 09**: [Stomatal Conductance Dynamics & Farquhar-von Caemmerer-Berry (FvCB) Photosynthesis Coupling](#chapter-09-article-09-stomata-conductance-photosynthesis)
-- **Volume 14**: [Dual Horticultural Education & Vocational Engineering in Germany: Gärtner Ausbildung to Meister](#chapter-14-article-14-ausbildung-horticulture-germany)
-- **Volume 19**: [Photon Use Efficiency (PUE) & Electric Power to Fresh Biomass Kinetics in Vertical Farming](#chapter-19-article-19-vertical-farm-biomass-conversion-efficiency)
-- **Volume 23**: [Closed-Loop DWC & Micro-Dosing Automation: Dissolved Oxygen, Ion-Selective ORP Metrology & PID Fertigation](#chapter-23-article-23-closed-loop-dwc-automation)
-- **Volume 27**: [Predictive Biomass Accumulation & Light Use Efficiency (LUE) Under Dynamic DLI](#chapter-27-article-27-crop-yield-biomass-light-use-efficiency)
-- **Volume 31**: [High-Pressure (70 bar) Fogging Physics & Sauter Droplet Evaporative Cooling](#chapter-31-article-31-high-pressure-fogging-droplet-physics)
-- **Volume 36**: [Combined Heat & Power (CHP) Flue Gas SCR Denitrification & Safe CO₂ Dosing](#chapter-36-article-36-chp-flue-gas-scr-denitrification)
-- **Volume 42**: [Substrate Matric Potential ($\Psi_m$), $pF$ Water Retention Curves & van Genuchten Physics](#chapter-42-article-42-substrate-matric-potential-pf-curves)
-- **Volume 47**: [Computer Vision & Multispectral Disease Diagnostics in Protected Cropping](#chapter-47-article-47-computer-vision-crop-disease-diagnostics)
-- **Volume 51**: [Autonomous Greenhouse AI: Reinforcement Learning & Model Predictive Control](#chapter-51-article-51-autonomous-greenhouse-ai-mpc-reinforcement-learning)
-- **Volume 55**: [Nutrient Uptake Concentration Factor (UCF) in Recirculating Hydroponics: Closed-Loop Mass Balance & Ion Dynamics](#chapter-55-article-55-nutrient-uptake-concentration-factor-recirculating-hydroponics)
-
-### Part IV: Crop Steering, Plant Physiology & Transport Models
+### Part III: Closed-Loop Hydroponics, Ion Speciation & Substrates
+*Extended Debye-Hückel & Davies aqueous speciation, A/B stock formulation, nanobubble dissolved oxygen, TDR substrate moisture, Van Genuchten pF curves, RO desalination, and ISE sensing.*
 - **Volume 06**: [Molar Stoichiometry & Sonneveld/Steiner Ion Balancing (meq/L) in Closed-Loop Hydroponics](#chapter-06-article-06-hydroponic-nutrient-formulation)
-- **Volume 10**: [Commercial Vertical Farming HVAC Sizing: Dehumidification Latent Loads & Microclimate Fluid Dynamics](#chapter-10-article-10-vertical-farm-hvac-design)
-- **Volume 15**: [Biophilic Architecture & Indoor Environmental Physics in Commercial Living Spaces](#chapter-15-article-15-plant-interior-biophilic-design)
-- **Volume 18**: [Closed-Loop Hydroponic Drain Water Disinfection: UV-C, Ozone, Heat & Ultrafiltration](#chapter-18-article-18-recirculating-nutrient-sterilization)
+- **Volume 14**: [Dual Horticultural Education & Vocational Engineering in Germany: Gärtner Ausbildung to Meister](#chapter-14-article-14-ausbildung-horticulture-germany)
+- **Volume 17**: [Biophysical Soil Physics: Air Porosity, Water Retention Curves & Root Zone Aeration](#chapter-17-article-17-indoor-plant-soil-aeration-porosity)
+- **Volume 21**: [Chlorophyll a Fluorescence Kinetics (Fv/Fm & OJIP) & Pre-Symptomatic Stress Metrology](#chapter-21-article-21-chlorophyll-a-fluorescence-fvfm-stress)
 - **Volume 22**: [HPS vs. LED Supplemental Lighting Physics: Photon Efficacy, Far-Red Kinetics & Greenhouse Heat Balance](#chapter-22-article-22-hps-vs-led-supplemental-lighting)
-- **Volume 26**: [Greenhouse Heating Load Modeling & Thermal Screen Dynamics under DIN V 18599 Standards](#chapter-26-article-26-greenhouse-heating-load-din-v-18599)
+- **Volume 23**: [Closed-Loop DWC & Micro-Dosing Automation: Dissolved Oxygen, Ion-Selective ORP Metrology & PID Fertigation](#chapter-23-article-23-closed-loop-dwc-automation)
+- **Volume 25**: [Closed-Loop Nutrient Recirculation & Nanobubble Dissolved Oxygen Kinetics in Commercial Greenhouses](#chapter-25-article-25-closed-loop-hydroponic-nanobubble-oxygenation)
 - **Volume 30**: [Rockwool Slab Hydrodynamics, TDR Moisture Sensors & Drainage EC Balancing](#chapter-30-article-30-rockwool-slab-tdr-moisture-drain-ec)
-- **Volume 35**: [Computational Fluid Dynamics (CFD) of Horizontal Air Flow (HAF) Fans](#chapter-35-article-35-greenhouse-haf-fan-cfd-modeling)
-- **Volume 41**: [The Biochemical Farquhar (FvCB) Photosynthesis Model & CO₂ Dosing Dynamics](#chapter-41-article-41-farquhar-photosynthesis-fvcb-co2)
-- **Volume 46**: [OpenCEA: Open-Source Python Micro-Framework for Greenhouse Physics](#chapter-46-article-46-opencea-python-micro-framework-release)
+- **Volume 38**: [Xylem Calcium Transport Dynamics & Blossom-End Rot (BER) Prevention](#chapter-38-article-38-xylem-calcium-flux-blossom-end-rot)
+- **Volume 39**: [Closed-Loop Reverse Osmosis (RO) Desalination & Sodium (Na+) Rejection Kinetics](#chapter-39-article-39-closed-loop-ro-desalination-energy)
+- **Volume 42**: [Substrate Matric Potential (Ψm), pF Water Retention Curves & van Genuchten Physics](#chapter-42-article-42-substrate-matric-potential-pf-curves)
+- **Volume 49**: [Hydroponic Chemical Speciation, Debye-Hückel Activity & Saturation Indices](#chapter-49-article-49-hydroponic-chemical-speciation-debye-huckel)
+- **Volume 55**: [Nutrient Uptake Concentration Factor (UCF) in Recirculating Hydroponics: Closed-Loop Mass Balance & Ion Dynamics](#chapter-55-article-55-nutrient-uptake-concentration-factor-recirculating-hydroponics)
+- **Volume 60**: [Real-Time Ion-Selective Electrode (ISE) Arrays, Nicolsky-Eisenman Potentiometry & Closed-Loop Autonomous Nutrient Dosing in Commercial High-Wire Hydroponics](#chapter-60-article-60-potentiometric-ion-selective-electrode-ise-closed-loop-hydroponics)
+- **Volume 73**: [Closed-Loop Hydroponic Drainage Recirculation: Davies Chemical Speciation, Multi-Cycle Ballast Ion (Na⁺/Cl⁻) Accumulation Kinetics, and German DüV Zero-Discharge Economics](#chapter-73-article-73-closed-loop-nutrient-recirculation-davies-ion-balance)
+- **Volume 75**: [Aquifer Thermal Energy Storage (ATES) & Industrial Heat Pump Integration in Commercial Greenhouses](#chapter-75-article-75-ates-aquifer-thermal-energy-storage-heat-pumps-greenhouse)
+
+### Part IV: Biosecurity, IPM Pollination, Sensors & Autonomous AI MPC
+*Bombus terrestris REI protection, UV-C recirculating drain disinfection, NDIR/TDR sensor calibration, computer vision diagnostics, MQTT edge fleets, and reinforcement-learning climate MPC.*
+- **Volume 03**: [Greenhouse Bumblebee Protection & Restricted-Entry Intervals (REI) in Precision CEA](#chapter-03-article-03-pollinator-safety-rei)
+- **Volume 13**: [Precision Agricultural Sensor Calibration: NDIR CO2, TDR Soil Moisture, EC & pH Electrochemistry](#chapter-13-article-13-smartfarm-sensor-calibration)
+- **Volume 19**: [Photon Use Efficiency (PUE) & Electric Power to Fresh Biomass Kinetics in Vertical Farming](#chapter-19-article-19-vertical-farm-biomass-conversion-efficiency)
+- **Volume 20**: [Leaf Temperature Infrared Thermometry & Crop Water Stress Index (CWSI) Sensing](#chapter-20-article-20-leaf-temperature-infrared-thermometry)
+- **Volume 34**: [Closed-Loop UV-C Disinfection & Viral Pathogen Inactivation Kinetics](#chapter-34-article-34-closed-loop-uvc-drain-disinfection)
+- **Volume 44**: [Meister-Deutsch: Open-Source Horticultural German SRS & Phonetic Engine](#chapter-44-article-44-meister-deutsch-open-source-srs-engine)
+- **Volume 47**: [Computer Vision & Multispectral Disease Diagnostics in Protected Cropping](#chapter-47-article-47-computer-vision-crop-disease-diagnostics)
 - **Volume 50**: [Smart Greenhouse Edge IoT & MQTT Fleet Telemetry Architecture](#chapter-50-article-50-smart-greenhouse-mqtt-edge-iot-fleet)
+- **Volume 51**: [Autonomous Greenhouse AI: Reinforcement Learning & Model Predictive Control](#chapter-51-article-51-autonomous-greenhouse-ai-mpc-reinforcement-learning)
 - **Volume 54**: [AI-Driven Model Predictive Control (MPC) in Commercial Venlo Greenhouses: Real-Time Energy-Yield Optimization](#chapter-54-article-54-ai-model-predictive-control-mpc-venlo-greenhouse)
 
-### Part V: Biological IPM, Biosecurity & Crop Protection
-- **Volume 13**: [Precision Agricultural Sensor Calibration: NDIR CO2, TDR Soil Moisture, EC & pH Electrochemistry](#chapter-13-article-13-smartfarm-sensor-calibration)
-- **Volume 34**: [Closed-Loop UV-C Disinfection & Viral Pathogen Inactivation Kinetics](#chapter-34-article-34-closed-loop-uvc-drain-disinfection)
-- **Volume 39**: [Closed-Loop Reverse Osmosis (RO) Desalination & Sodium ($Na^+$) Rejection Kinetics](#chapter-39-article-39-closed-loop-ro-desalination-energy)
-- **Volume 40**: [Canopy Light Extinction (Beer-Lambert Law) & Diffuse Glass Transmission](#chapter-40-article-40-beer-lambert-canopy-light-extinction)
+### Part V: Structural Mechanics, CHP Energy, ATES & AgriQuant Finance
+*DIN EN 13031-1 Venlo truss mechanics, stratified heat buffers, biomass CHP with SCR NOx reduction, ATES aquifer storage, EPEX negative-price Power-to-Heat, DAC CO2, and CAPEX/IRR financial modeling.*
+- **Volume 08**: [Horticultural Physics & Environmental Physiology of Monstera deliciosa: Hydroponics & VPD Optimization](#chapter-08-article-08-monstera-deliciosa-care-guide)
+- **Volume 12**: [Xylem Calcium Partitioning & Transpirational Prevention of Blossom-End Rot (BER) in Greenhouse Tomatoes](#chapter-12-article-12-tomato-blossom-end-rot-calcium)
+- **Volume 15**: [Biophilic Architecture & Indoor Environmental Physics in Commercial Living Spaces](#chapter-15-article-15-plant-interior-biophilic-design)
+- **Volume 16**: [German Master Grower (Gärtnermeister) Greenhouse Climate Steering Strategy for Solanaceae](#chapter-16-article-16-german-meister-greenhouse-climate)
+- **Volume 28**: [Greenhouse CO₂ Enrichment Kinetics & Economic Thresholds under Dynamic Ventilation](#chapter-28-article-28-greenhouse-co2-enrichment-economics)
+- **Volume 36**: [Combined Heat & Power (CHP) Flue Gas SCR Denitrification & Safe CO₂ Dosing](#chapter-36-article-36-chp-flue-gas-scr-denitrification)
+- **Volume 37**: [Hot Water Buffer Tank Stratification & Thermal Energy Storage Sizing](#chapter-37-article-37-thermal-buffer-tank-stratification-sizing)
+- **Volume 43**: [Greenhouse Structural Standards (EN 13031-1 & NEN 3859): Wind, Snow & Crop Loads](#chapter-43-article-43-greenhouse-structural-standards-en13031)
 - **Volume 45**: [AgriQuant: Open-Source Greenhouse Energy & Commodity Quant Terminal](#chapter-45-article-45-agriquant-energy-commodity-quant-terminal)
+- **Volume 46**: [OpenCEA: Open-Source Python Micro-Framework for Greenhouse Physics](#chapter-46-article-46-opencea-python-micro-framework-release)
+- **Volume 48**: [Commercial Greenhouse 10-Year CapEx, OpEx & IRR Investment Modeling](#chapter-48-article-48-greenhouse-capex-opex-irr-npv-financial-model)
+- **Volume 52**: [Aquifer Thermal Energy Storage (ATES) & Industrial Heat Pumps in Dutch Venlo Greenhouses](#chapter-52-article-52-aquifer-thermal-energy-storage-ates-heat-pump)
+- **Volume 53**: [Biomass CHP Flue Gas SCR Cleaning & Biogenic CO2 Direct Enrichment in Venlo Glasshouses](#chapter-53-article-53-biomass-chp-scr-co2-recovery-horticulture)
+- **Volume 58**: [Dynamic CO2 Enrichment Kinetics & RuBisCO Carboxylation Thermodynamics in High-Wire Venlo Greenhouses](#chapter-58-article-58-dynamic-co2-enrichment-kinetics-rubisco-carboxylation-venlo)
+- **Volume 59**: [EPEX Spot Negative Day-Ahead Arbitrage, Hybrid BESS Sizing & Power-to-Heat Thermal Buffering in Modern European Venlo Greenhouses](#chapter-59-article-59-epex-spot-negative-pricing-bess-power-to-heat-greenhouse)
+- **Volume 67**: [Deep Geothermal Heating & Industrial Heat Pumps in Commercial Venlo Greenhouses: German Meister Engineering (VDI 4640 / DIN EN 13031) vs. US DOE & USDA REAP Grants](#chapter-67-article-67-geothermal-district-heating-industrial-heat-pumps-greenhouse)
+- **Volume 68**: [Direct Air Capture (DAC) & Low-Temperature Solid-Amine CO₂ Desorption in Decarbonized Venlo Greenhouses: Resolving the Carbon Deficit via Heat Pump Thermal Cascading & 45Q Grants](#chapter-68-article-68-direct-air-capture-solid-amine-co2-greenhouse-heat-pumps)
+- **Volume 77**: [High-Tech Greenhouse Postharvest Intralogistics & Cold Chain Engineering](#chapter-77-article-77-greenhouse-postharvest-intralogistics-cold-chain-quality)
 
-### Part VI: Greenhouse Systems Engineering, Energy & Digital Twins
-
----
-
-# Part I: Atmospheric Thermodynamics & Greenhouse Microclimate
-
-## Chapter 01: Biophysical Foundations of Vapor Pressure Deficit (VPD) Thermodynamics in CEA Greenhouses
-*Anchor ID*: `<a id="chapter-01-article-01-vpd-master-class"></a>`  
-*Original Source*: [`articles/article-01-vpd-master-class.html`](../articles/article-01-vpd-master-class.html)  
-
-### 🎯 Core Engineering Synopsis
-Mastering VPD (kPa) computation over relative humidity (RH%) to eliminate crop stress, balance stomatal conductance, and drive transpirational xylem flow.
-
-### 🔬 Key Technical Sections
-- 1. Introduction: Why VPD Supersedes Relative Humidity (RH%)
-- 2. Mathematical Equations & Thermodynamic Principles
-- 3. Crop Steering Targets & Micro-Climate Control
-
----
-
-## Chapter 03: Greenhouse Bumblebee Protection & Restricted-Entry Intervals (REI) in Precision CEA
-*Anchor ID*: `<a id="chapter-03-article-03-pollinator-safety-rei"></a>`  
-*Original Source*: [`articles/article-03-pollinator-safety-rei.html`](../articles/article-03-pollinator-safety-rei.html)  
-
-### 🎯 Core Engineering Synopsis
-Biological pollinator stewardship in commercial greenhouses: protecting Bombus terrestris from pesticide residue toxicity, REI mathematical models, and hive recovery protocols.
-
-### 🔬 Key Technical Sections
-- 1. Ecological Pollination Partners in High-Wire CEA: Bombus terrestris
-- 2. Chemical Toxicity Classes & Mathematical Restricted-Entry Intervals (REI)
-- 3. Integrated Three-Stage Hive Protection & Reintroduction Protocols
+### Part VI: Transatlantic & Global CEA Agricultural Subsidy Playbooks
+*Verified federal, state/Land, and municipal grant stacking frameworks covering US USDA REAP/CDFA SWEEP/TX TWDB, German BLE/BAFA/KfW/AFP/Hofnachfolge, and European CAP modernization.*
+- **Volume 57**: [The 8% Out-of-Pocket Playbook: Stacking USDA REAP, CDFA SWEEP, and IOU Utility Rebates for California CEA Greenhouses](#chapter-57-article-57-california-cea-greenhouse-electrification-rebate-grant-stacking)
+- **Volume 62**: [2026-2027 US 50-State Agricultural Grant & Subsidy Playbook: Non-Dilutive Capital for Smart Farms & CEA Growers](#chapter-62-article-62-us-50-state-agricultural-grant-playbook)
+- **Volume 63**: [Precision Irrigation & Water Grants in Florida & Texas: FDACS BMP Cost-Share and TWDB Funding Guide](#chapter-63-article-63-florida-texas-agricultural-water-irrigation-grants)
+- **Volume 64**: [Midwest & Corn Belt Soil Health Grants: Iowa WQI, Ohio H2Ohio, and Minnesota AGRI Programs](#chapter-64-article-64-midwest-corn-belt-water-quality-soil-health-subsidies)
+- **Volume 65**: [Greenhouse Energy Efficiency & Thermal Screen Grants: Oregon ETO, Washington WSDA, and NYSERDA Guide](#chapter-65-article-65-pnw-northeast-cea-greenhouse-energy-grants)
+- **Volume 66**: [California SWEEP vs. Texas TWDB Agricultural Water Grants: Precision Irrigation & Cost-Share Architecture](#chapter-66-article-66-california-sweep-vs-texas-twdb-agricultural-water-grants)
+- **Volume 70**: [Nanobubble Oxy-Fertigation & Cavitation Physics in Closed-Loop Venlo Hydroponics: Dissolved Oxygen Supersaturation (DO > 30 mg/L), Pythium Suppression, and Rootzone Respiration Kinetics](#chapter-70-article-70-nanobubble-dissolved-oxygen-pythium-suppression-rockwool)
+- **Volume 78**: [EU Commercial Greenhouse Energy Auditing (DIN V 18599 / EN 13031-1), German Federal BLE 40% Decarbonization Grants, and 10-Year Hofnachfolge Equity Succession Engineering](#chapter-78-article-78-eu-greenhouse-energy-audit-din-18599-ble-grant-hofnachfolge)
 
 ---
 
-## Chapter 05: Hourly Penman-Monteith Evapotranspiration (ET0) Modeling & Stomatal Resistance Kinetics
-*Anchor ID*: `<a id="chapter-05-article-05-penman-monteith-transpiration"></a>`  
-*Original Source*: [`articles/article-05-penman-monteith-transpiration.html`](../articles/article-05-penman-monteith-transpiration.html)  
+# Part I: Atmospheric Thermodynamics, Psychrometrics & Transpiration
 
-### 🎯 Core Engineering Synopsis
-Mathematical implementation of the FAO-56 Penman-Monteith equation for commercial greenhouse irrigation steering, canopy energy balance, and solar radiation integration.
+## Volume 01: Biophysical Foundations of Vapor Pressure Deficit (VPD) Thermodynamics in CEA Greenhouses
+<a id="chapter-01-article-01-vpd-master-class"></a>
+- **EN Monograph**: [../articles/article-01-vpd-master-class.html](../articles/article-01-vpd-master-class.html)
+- **DE Edition**: [../articles/de/article-01-vpd-meisterklasse.html](../articles/de/article-01-vpd-meisterklasse.html)
+- **JA Edition**: [../articles/ja/article-01-vpd-masterclass-jp.html](../articles/ja/article-01-vpd-masterclass-jp.html)
+- **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
+- **Synopsis**: Mastering VPD (kPa) computation over relative humidity (RH%) to eliminate crop stress, balance stomatal conductance, and drive transpirational xylem flow.
 
-### 🔬 Key Technical Sections
-- 1. Precision Hydroponic Steering via Biophysical Evapotranspiration Kinetics
-- 2. Mathematical Structure of the FAO-56 Penman-Monteith Equation
-- 3. Algorithmic Irrigation Dosing & Substrate Water Depletion Integration
+## Volume 04: Greenhouse Envelope Peak Heat Loss Coefficients (U-Values) & Thermodynamic Thermal Screen Modeling
+<a id="chapter-04-article-04-greenhouse-heating-loss"></a>
+- **EN Monograph**: [../articles/article-04-greenhouse-heating-loss.html](../articles/article-04-greenhouse-heating-loss.html)
+- **DE Edition**: [../articles/de/article-04-gewaechshaus-waermeverlust-u-wert-energieschirme.html](../articles/de/article-04-gewaechshaus-waermeverlust-u-wert-energieschirme.html)
+- **JA Edition**: [../articles/ja/article-04-greenhouse-heat-loss-u-value-thermal-screen-design.html](../articles/ja/article-04-greenhouse-heat-loss-u-value-thermal-screen-design.html)
+- **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
+- **Synopsis**: Engineering greenhouse heating loads using Q = U·A·ΔT heat transfer dynamics, cover glazing U-values, wind infiltration friction, and multilayer.
 
----
+## Volume 05: Hourly Penman-Monteith Evapotranspiration (ET0) Modeling & Stomatal Resistance Kinetics
+<a id="chapter-05-article-05-penman-monteith-transpiration"></a>
+- **EN Monograph**: [../articles/article-05-penman-monteith-transpiration.html](../articles/article-05-penman-monteith-transpiration.html)
+- **DE Edition**: [../articles/de/article-05-penman-monteith-transpiration-automatisierung-ram-priva.html](../articles/de/article-05-penman-monteith-transpiration-automatisierung-ram-priva.html)
+- **JA Edition**: [../articles/ja/article-05-penman-monteith-transpiration-vpd-environmental-control.html](../articles/ja/article-05-penman-monteith-transpiration-vpd-environmental-control.html)
+- **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
+- **Synopsis**: Mathematical implementation of the FAO-56 Penman-Monteith equation for commercial greenhouse irrigation steering, canopy energy balance, and solar.
 
-## Chapter 08: Horticultural Physics & Environmental Physiology of Monstera deliciosa: Hydroponics & VPD Optimization
-*Anchor ID*: `<a id="chapter-08-article-08-monstera-deliciosa-care-guide"></a>`  
-*Original Source*: [`articles/article-08-monstera-deliciosa-care-guide.html`](../articles/article-08-monstera-deliciosa-care-guide.html)  
+## Volume 10: Commercial Vertical Farming HVAC Sizing: Dehumidification Latent Loads & Microclimate Fluid Dynamics
+<a id="chapter-10-article-10-vertical-farm-hvac-design"></a>
+- **EN Monograph**: [../articles/article-10-vertical-farm-hvac-design.html](../articles/article-10-vertical-farm-hvac-design.html)
+- **DE Edition**: [../articles/de/article-10-vertikale-landwirtschaft-hlk-entfeuchtung-psychrometrie.html](../articles/de/article-10-vertikale-landwirtschaft-hlk-entfeuchtung-psychrometrie.html)
+- **JA Edition**: [../articles/ja/article-10-vertical-farm-hvac-design-jp.html](../articles/ja/article-10-vertical-farm-hvac-design-jp.html)
+- **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
+- **Synopsis**: HVAC and psychrometric dehumidification engineering for commercial indoor vertical farms: calculating sensible vs latent cooling loads, airflow.
 
-### 🎯 Core Engineering Synopsis
-Commercial tropical foliage engineering: hydroponic cultivation of Monstera deliciosa, leaf marginal necrosis prevention via VPD steering, and rhizosphere dissolved oxygen dynamics.
+## Volume 11: High-Wire Strawberry Greenhouse Microclimate: Flower Bud Differentiation & Diurnal Temperature Integration
+<a id="chapter-11-article-11-strawberry-greenhouse-climate"></a>
+- **EN Monograph**: [../articles/article-11-strawberry-greenhouse-climate.html](../articles/article-11-strawberry-greenhouse-climate.html)
+- **DE Edition**: [../articles/de/article-11-erdbeeranbau-unterglas-blueteninduktion-dif-klimafuehrung.html](../articles/de/article-11-erdbeeranbau-unterglas-blueteninduktion-dif-klimafuehrung.html)
+- **JA Edition**: [../articles/ja/article-11-strawberry-high-bench-flower-bud-differentiation-dif-crown-heating-jp.html](../articles/ja/article-11-strawberry-high-bench-flower-bud-differentiation-dif-crown-heating-jp.html)
+- **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
+- **Synopsis**: Precision microclimate management for day-neutral and short-day greenhouse strawberries: chilling hour accumulation, flower bud initiation, and diurnal.
 
-### 🔬 Key Technical Sections
-- 1. Botanical Architecture & Environmental Physiology of Monstera deliciosa
-- 2. Quantitative Microclimatic Target Metrics: PPFD, DLI, and VPD Boundaries
-- 3. Rhizosphere Dissolved Oxygen (DO) & Hydroponic Substrate Porosity
+## Volume 18: Closed-Loop Hydroponic Drain Water Disinfection: UV-C, Ozone, Heat & Ultrafiltration
+<a id="chapter-18-article-18-recirculating-nutrient-sterilization"></a>
+- **EN Monograph**: [../articles/article-18-recirculating-nutrient-sterilization.html](../articles/article-18-recirculating-nutrient-sterilization.html)
+- **DE Edition**: [../articles/de/article-18-rezirkulierende-naehrloesungsentkeimung-uv-c-ozon-ultrafiltration-chelat.html](../articles/de/article-18-rezirkulierende-naehrloesungsentkeimung-uv-c-ozon-ultrafiltration-chelat.html)
+- **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
+- **Synopsis**: Engineering recirculating hydroponic drain water disinfection: UV-C irradiance dosage (mJ/cm2), ozone oxidation redox potential (ORP), and automated climate control.
 
----
+## Volume 26: Greenhouse Heating Load Modeling & Thermal Screen Dynamics under DIN V 18599 Standards
+<a id="chapter-26-article-26-greenhouse-heating-load-din-v-18599"></a>
+- **EN Monograph**: [../articles/article-26-greenhouse-heating-load-din-v-18599.html](../articles/article-26-greenhouse-heating-load-din-v-18599.html)
+- **DE Edition**: [../articles/de/article-26-gewaechshaus-heizlast-din-v-18599.html](../articles/de/article-26-gewaechshaus-heizlast-din-v-18599.html)
+- **JA Edition**: [../articles/ja/article-26-greenhouse-heating-load-din-v-18599-jp.html](../articles/ja/article-26-greenhouse-heating-load-din-v-18599-jp.html)
+- **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
+- **Synopsis**: Comprehensive engineering analysis of peak heat transmission, thermal screen radiative resistance, and pipe rail hydraulics in commercial Venlo.
 
-## Chapter 12: Xylem Calcium Partitioning & Transpirational Prevention of Blossom-End Rot (BER) in Greenhouse Tomatoes
-*Anchor ID*: `<a id="chapter-12-article-12-tomato-blossom-end-rot-calcium"></a>`  
-*Original Source*: [`articles/article-12-tomato-blossom-end-rot-calcium.html`](../articles/article-12-tomato-blossom-end-rot-calcium.html)  
+## Volume 29: Hourly Penman-Monteith Evapotranspiration Modeling & Stomatal Resistance Dynamics
+<a id="chapter-29-article-29-hourly-penman-monteith-evapotranspiration"></a>
+- **EN Monograph**: [../articles/article-29-hourly-penman-monteith-evapotranspiration.html](../articles/article-29-hourly-penman-monteith-evapotranspiration.html)
+- **DE Edition**: [../articles/de/article-29-stundengenaue-penman-monteith-evapotranspiration.html](../articles/de/article-29-stundengenaue-penman-monteith-evapotranspiration.html)
+- **JA Edition**: [../articles/ja/article-29-hourly-penman-monteith-evapotranspiration-jp.html](../articles/ja/article-29-hourly-penman-monteith-evapotranspiration-jp.html)
+- **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
+- **Synopsis**: Engineering analysis of hourly crop evapotranspiration (ETc), stomatal resistance (rs), aerodynamic boundary layer resistance (ra), and precision.
 
-### 🎯 Core Engineering Synopsis
-Apoplastic calcium transport mechanics, xylem-to-phloem immobility, root hydraulic pressure, and nighttime VPD steering to prevent Blossom-End Rot (BER) in commercial Solanaceae.
+## Volume 31: High-Pressure (70 bar) Fogging Physics & Sauter Droplet Evaporative Cooling
+<a id="chapter-31-article-31-high-pressure-fogging-droplet-physics"></a>
+- **EN Monograph**: [../articles/article-31-high-pressure-fogging-droplet-physics.html](../articles/article-31-high-pressure-fogging-droplet-physics.html)
+- **DE Edition**: [../articles/de/article-31-hochdruck-nebel-tropfenphysik.html](../articles/de/article-31-hochdruck-nebel-tropfenphysik.html)
+- **JA Edition**: [../articles/ja/article-31-high-pressure-fogging-droplet-physics-jp.html](../articles/ja/article-31-high-pressure-fogging-droplet-physics-jp.html)
+- **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
+- **Synopsis**: Industrial engineering analysis of 70 bar high-pressure fogging, Sauter Mean Diameter (D32 < 10µm), flash evaporative cooling, and VPD.
 
-### 🔬 Key Technical Sections
-- 1. Cellular Etiology of Blossom-End Rot (BER): Calcium Deficiency in Distal Pericarp
-- 2. Biophysics of Apoplastic Calcium Transport: Transpiration Pull vs Root Pressure
-- 3. The Triad Engineering Solution for BER Prevention in High-Wire Greenhouses
+## Volume 35: Computational Fluid Dynamics (CFD) of Horizontal Air Flow (HAF) Fans
+<a id="chapter-35-article-35-greenhouse-haf-fan-cfd-modeling"></a>
+- **EN Monograph**: [../articles/article-35-greenhouse-haf-fan-cfd-modeling.html](../articles/article-35-greenhouse-haf-fan-cfd-modeling.html)
+- **DE Edition**: [../articles/de/article-35-gewaechshaus-haf-ventilatoren-cfd.html](../articles/de/article-35-gewaechshaus-haf-ventilatoren-cfd.html)
+- **JA Edition**: [../articles/ja/article-35-greenhouse-haf-fan-cfd-modeling-jp.html](../articles/ja/article-35-greenhouse-haf-fan-cfd-modeling-jp.html)
+- **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
+- **Synopsis**: Industrial CFD modeling of Horizontal Air Flow (HAF) fan spacing, jet velocity decay, Bernoulli air entrainment, and canopy boundary layer.
 
----
+## Volume 61: Dynamic Thermal Screen Gap Control, Evaporative Transpiration Latent Heat & Psychrometric Energy Optimization in Semi-Closed Venlo Greenhouses
+<a id="chapter-61-article-61-thermal-screen-gap-transpiration-latent-heat-greenhouse-energy"></a>
+- **EN Monograph**: [../articles/article-61-thermal-screen-gap-transpiration-latent-heat-greenhouse-energy.html](../articles/article-61-thermal-screen-gap-transpiration-latent-heat-greenhouse-energy.html)
+- **DE Edition**: [../articles/de/article-61-energieschirm-spaltoeffnung-transpiration-latente-waerme-kaltluftabfall.html](../articles/de/article-61-energieschirm-spaltoeffnung-transpiration-latente-waerme-kaltluftabfall.html)
+- **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
+- **Synopsis**: Thermodynamic modeling of thermal screen gaps, Rayleigh-Bénard cold downdraft convection, crop latent heat transpiration, and active psychrometric.
 
-## Chapter 17: Biophysical Soil Physics: Air Porosity, Water Retention Curves & Root Zone Aeration
-*Anchor ID*: `<a id="chapter-17-article-17-indoor-plant-soil-aeration-porosity"></a>`  
-*Original Source*: [`articles/article-17-indoor-plant-soil-aeration-porosity.html`](../articles/article-17-indoor-plant-soil-aeration-porosity.html)  
+## Volume 69: Biomass-Fired CHP District Energy Integration in Venlo Greenhouses: High-Temperature Flue Gas Cleaning, Substrate Heating, and Cross-Sector Municipal Heat Sharing
+<a id="chapter-69-article-69-biomass-chp-flue-gas-scr-district-heating-greenhouse"></a>
+- **EN Monograph**: [../articles/article-69-biomass-chp-flue-gas-scr-district-heating-greenhouse.html](../articles/article-69-biomass-chp-flue-gas-scr-district-heating-greenhouse.html)
+- **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
+- **Synopsis**: Technical whitepaper on biomass-fired combined heat and power (CHP) in high-wire Venlo greenhouses: fluidized bed combustion, catalytic SCR DeNOx for commercial high-tech greenhouses.
 
-### 🎯 Core Engineering Synopsis
-Engineering potting media physics: Total Porosity, Container Capacity (CC), and Air-Filled Porosity (AFP) to eliminate root hypoxia in containerized horticulture.
+## Volume 71: Horizontal Air Flow (HAF) Aerodynamics & Boundary Layer Decoupling in Venlo Greenhouses: Microclimate Stratification, Sherwood Mass Transfer Kinetics, and Heat Recovery Dehumidification
+<a id="chapter-71-article-71-haf-fan-microclimate-boundary-layer-dynamics"></a>
+- **EN Monograph**: [../articles/article-71-haf-fan-microclimate-boundary-layer-dynamics.html](../articles/article-71-haf-fan-microclimate-boundary-layer-dynamics.html)
+- **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
+- **Synopsis**: Technical whitepaper on horizontal air flow (HAF) aerodynamics in commercial Venlo greenhouses: microclimate stratification elimination, boundary layer.
 
-### 🔬 Key Technical Sections
-- 1. The Geometry of Containerized Root Media
-- 2. Key Physical Parameters: TP, CC, and AFP
-- 3. Optimizing Substrate Particle Size Distribution
+## Volume 72: Thermodynamic Optimization of Semi-Closed Venlo Greenhouses: High-Pressure Fogging, Active Mechanical Dehumidification, and Latent Heat Recovery
+<a id="chapter-72-article-72-semi-closed-greenhouse-mollier-psychrometrics-latent-heat"></a>
+- **EN Monograph**: [../articles/article-72-semi-closed-greenhouse-mollier-psychrometrics-latent-heat.html](../articles/article-72-semi-closed-greenhouse-mollier-psychrometrics-latent-heat.html)
+- **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
+- **Synopsis**: Technical engineering monograph on semi-closed Venlo greenhouse thermodynamics: positive-pressure air distribution ducts, Mollier h-x psychrometric.
 
----
+## Volume 74: Semi-Closed Greenhouse Corridor Air Treatment Units (ATU): Positive-Pressure Insect Exclusion (+20~25 Pa), Mollier Enthalpy Balancing, and 1-Click VenloCAD 3D Integration
+<a id="chapter-74-article-74-semi-closed-greenhouse-atu-mollier-venlocad-integration"></a>
+- **EN Monograph**: [../articles/article-74-semi-closed-greenhouse-atu-mollier-venlocad-integration.html](../articles/article-74-semi-closed-greenhouse-atu-mollier-venlocad-integration.html)
+- **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
+- **Synopsis**: Technical engineering monograph on semi-closed greenhouse corridor Air Treatment Units (ATU): positive-pressure insect exclusion (+20~25 Pa), Mollier.
 
-## Chapter 21: Chlorophyll a Fluorescence Kinetics (Fv/Fm & OJIP) & Pre-Symptomatic Stress Metrology
-*Anchor ID*: `<a id="chapter-21-article-21-chlorophyll-a-fluorescence-fvfm-stress"></a>`  
-*Original Source*: [`articles/article-21-chlorophyll-a-fluorescence-fvfm-stress.html`](../articles/article-21-chlorophyll-a-fluorescence-fvfm-stress.html)  
-
-### 🎯 Core Engineering Synopsis
-Photosystem II maximum quantum yield (Fv/Fm), OJIP induction curves, and non-photochemical quenching (NPQ) for real-time non-destructive plant stress detection in CEA.
-
-### 🔬 Key Technical Sections
-- 1. The Kautsky Effect & Fate of Absorbed Photons
-- 2. Dark-Adapted PSII Maximum Quantum Yield (Fv/Fm)
-- 3. Rapid OJIP Polyphasic Transients & Electron Transport Steps
-- 4. Closed-Loop Integration with CEA Lighting & DLI Steering
-
----
-
-## Chapter 25: Closed-Loop Nutrient Recirculation & Nanobubble Dissolved Oxygen Kinetics in Commercial Greenhouses
-*Anchor ID*: `<a id="chapter-25-article-25-closed-loop-hydroponic-nanobubble-oxygenation"></a>`  
-*Original Source*: [`articles/article-25-closed-loop-hydroponic-nanobubble-oxygenation.html`](../articles/article-25-closed-loop-hydroponic-nanobubble-oxygenation.html)  
-
-### 🎯 Core Engineering Synopsis
-Engineering analysis of closed-loop hydroponic recirculation, rhizosphere dissolved oxygen (DO > 8.5 mg/L), and Pythium root-rot suppression in commercial greenhouses.
-
-### 🔬 Key Technical Sections
-- 1. The Cellular Kinetics of Rhizosphere Oxygen Depletion
-- 2. Nanobubble Super-Oxygenation ($DO > 8.5\text{ mg/L}$)
-- 3. Interactive Formulation & Optimization Tools
-
-### 🛠️ Paired Interactive Lab Calculators
-- [Hydroponic Nutrient Solution Calculator](../tools/hydroponic-nutrient-solution-calculator.html)
-- [Psychrometric Mollier Greenhouse Dehumidifier](../tools/psychrometric-mollier-greenhouse-dehumidifier.html)
-
----
-
-## Chapter 29: Hourly Penman-Monteith Evapotranspiration Modeling & Stomatal Resistance Dynamics
-*Anchor ID*: `<a id="chapter-29-article-29-hourly-penman-monteith-evapotranspiration"></a>`  
-*Original Source*: [`articles/article-29-hourly-penman-monteith-evapotranspiration.html`](../articles/article-29-hourly-penman-monteith-evapotranspiration.html)  
-
-### 🎯 Core Engineering Synopsis
-Engineering analysis of hourly crop evapotranspiration (ETc), stomatal resistance (rs), aerodynamic boundary layer resistance (ra), and precision irrigation scheduling.
-
-### 🔬 Key Technical Sections
-- 1. The Coupled Energy Balance Formulation
-- 2. Interactive Calculation Tool
-
-### 🛠️ Paired Interactive Lab Calculators
-- [Evapotranspiration Penman Monteith Calculator](../tools/evapotranspiration-penman-monteith-calculator.html)
-
----
-
-## Chapter 33: Precision Crop Steering Dynamics: Balancing Generative vs Vegetative Growth
-*Anchor ID*: `<a id="chapter-33-article-33-precision-crop-steering-dif-vpd-drydown"></a>`  
-*Original Source*: [`articles/article-33-precision-crop-steering-dif-vpd-drydown.html`](../articles/article-33-precision-crop-steering-dif-vpd-drydown.html)  
-
-### 🎯 Core Engineering Synopsis
-Industrial crop steering masterclass: Balancing vegetative stem growth vs generative flowering using 24h DIF, diurnal VPD differentials, and slab dry-down kinetics.
-
-### 🔬 Key Technical Sections
-- 1. The 3 Primary Steering Levers
-- 2. Interactive Steering Calculator
-
-### 🛠️ Paired Interactive Lab Calculators
-- [Crop Steering Generative Vegetative Matrix](../tools/crop-steering-generative-vegetative-matrix.html)
-
----
-
-## Chapter 38: Xylem Calcium Transport Dynamics & Blossom-End Rot ($BER$) Prevention
-*Anchor ID*: `<a id="chapter-38-article-38-xylem-calcium-flux-blossom-end-rot"></a>`  
-*Original Source*: [`articles/article-38-xylem-calcium-flux-blossom-end-rot.html`](../articles/article-38-xylem-calcium-flux-blossom-end-rot.html)  
-
-### 🎯 Core Engineering Synopsis
-Plant physiology analysis of xylem transpirational calcium flux, distal fruit cell membrane stability, and Blossom-End Rot (BER) prevention via VPD and root pressure steering.
-
-### 🔬 Key Technical Sections
-- 1. The Calcium Accumulation Flux Equation
-- 2. Interactive BER Risk Model
-
-### 🛠️ Paired Interactive Lab Calculators
-- [Crop Transpiration Calcium Blossom End Rot Risk Model](../tools/crop-transpiration-calcium-blossom-end-rot-risk-model.html)
+## Volume 76: High-Tech Venlo Greenhouse Climate Engineering & Biocontrol Cybernetics in Knoblauchsland
+<a id="chapter-76-article-76-knoblauchsland-greenhouse-climate-vpd-biocontrol-oecd"></a>
+- **EN Monograph**: [../articles/article-76-knoblauchsland-greenhouse-climate-vpd-biocontrol-oecd.html](../articles/article-76-knoblauchsland-greenhouse-climate-vpd-biocontrol-oecd.html)
+- **Paired Live Simulator**: [`tools/index.html`](../tools/index.html)
+- **Synopsis**: Technical engineering monograph on modern CEA greenhouse management in Nuremberg Knoblauchsland: AR diffuse glass (96% transmission, 25% haze), VPD.
 
 ---
 
-## Chapter 44: Meister-Deutsch: Open-Source Horticultural German SRS & Phonetic Engine
-*Anchor ID*: `<a id="chapter-44-article-44-meister-deutsch-open-source-srs-engine"></a>`  
-*Original Source*: [`articles/article-44-meister-deutsch-open-source-srs-engine.html`](../articles/article-44-meister-deutsch-open-source-srs-engine.html)  
+# Part II: Photobiology, LED Quantum Spectra & Crop Steering
 
-### 🎯 Core Engineering Synopsis
-Open-source Spaced Repetition System (SRS) for German Meisterprüfung horticulture, Web Speech API pronunciation synthesis, and botanical taxonomy.
+## Volume 02: Daily Light Integral (DLI) & Photonic Efficacy Engineering in Vertical Plant Factories
+<a id="chapter-02-article-02-dli-vertical-farming"></a>
+- **EN Monograph**: [../articles/article-02-dli-vertical-farming.html](../articles/article-02-dli-vertical-farming.html)
+- **DE Edition**: [../articles/de/article-02-dli-tageslichtintegral-vertikale-landwirtschaft-led-roi.html](../articles/de/article-02-dli-tageslichtintegral-vertikale-landwirtschaft-led-roi.html)
+- **JA Edition**: [../articles/ja/article-02-dli-vertical-farming-led-photobiology-jp.html](../articles/ja/article-02-dli-vertical-farming-led-photobiology-jp.html)
+- **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
+- **Synopsis**: Calculated PPFD (µmol/m²/s) and DLI (mol/m²/day) formulations for indoor LED vertical farming to maximize dry biomass yield per kWh of electricity.
 
-### 🔬 Key Technical Sections
-- 1. The SM-2 Interval Function
-- 2. Launch the Open-Source App
+## Volume 07: Photomorphogenesis & PAR Spectral Quality: Red/Blue Ratios and Emerson Enhancement Effect
+<a id="chapter-07-article-07-indoor-plant-lighting-spectrum"></a>
+- **EN Monograph**: [../articles/article-07-indoor-plant-lighting-spectrum.html](../articles/article-07-indoor-plant-lighting-spectrum.html)
+- **DE Edition**: [../articles/de/article-07-belichtungsspektrum-par-epar-photomorphogenese-led-gartenbau.html](../articles/de/article-07-belichtungsspektrum-par-epar-photomorphogenese-led-gartenbau.html)
+- **JA Edition**: [../articles/ja/article-07-horticultural-lighting-spectrum-par-epar-photomorphogenesis-jp.html](../articles/ja/article-07-horticultural-lighting-spectrum-par-epar-photomorphogenesis-jp.html)
+- **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
+- **Synopsis**: Photobiological plant responses across McCree action spectra, phytochrome photoequilibria (Pfr/Pr), far-red Emerson enhancement, and spectral tailoring.
 
-### 🛠️ Paired Interactive Lab Calculators
-- [Meister Deutsch Srs Learning Engine](../tools/meister-deutsch-srs-learning-engine.html)
+## Volume 09: Stomatal Conductance Dynamics & Farquhar-von Caemmerer-Berry (FvCB) Photosynthesis Coupling
+<a id="chapter-09-article-09-stomata-conductance-photosynthesis"></a>
+- **EN Monograph**: [../articles/article-09-stomata-conductance-photosynthesis.html](../articles/article-09-stomata-conductance-photosynthesis.html)
+- **DE Edition**: [../articles/de/article-09-stomata-leitfaehigkeit-co2-assimilation-gaswechsel-kinetik.html](../articles/de/article-09-stomata-leitfaehigkeit-co2-assimilation-gaswechsel-kinetik.html)
+- **JA Edition**: [../articles/ja/article-09-stomata-conductance-photosynthesis-jp.html](../articles/ja/article-09-stomata-conductance-photosynthesis-jp.html)
+- **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
+- **Synopsis**: Coupled Farquhar-von Caemmerer-Berry photosynthesis and Ball-Berry stomatal conductance models under elevated CO2 enrichment and light-saturated.
 
----
+## Volume 24: Optimizing Far-Red (730nm) & Deep-Red (660nm) Spectral Ratios for Commercial Greenhouse Crops
+<a id="chapter-24-article-24-far-red-deep-red-led-spectrum-optimization"></a>
+- **EN Monograph**: [../articles/article-24-far-red-deep-red-led-spectrum-optimization.html](../articles/article-24-far-red-deep-red-led-spectrum-optimization.html)
+- **DE Edition**: [../articles/de/article-24-far-red-deep-red-spektrum-optimierung.html](../articles/de/article-24-far-red-deep-red-spektrum-optimierung.html)
+- **JA Edition**: [../articles/ja/article-24-far-red-deep-red-led-spectrum-optimization-jp.html](../articles/ja/article-24-far-red-deep-red-led-spectrum-optimization-jp.html)
+- **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
+- **Synopsis**: A comprehensive engineering masterclass on the Emerson Enhancement Effect, Photosystem I/II excitation balance, and Far-Red (730nm) spectrum.
 
-## Chapter 49: Hydroponic Chemical Speciation, Debye-Hückel Activity & Saturation Indices
-*Anchor ID*: `<a id="chapter-49-article-49-hydroponic-chemical-speciation-debye-huckel"></a>`  
-*Original Source*: [`articles/article-49-hydroponic-chemical-speciation-debye-huckel.html`](../articles/article-49-hydroponic-chemical-speciation-debye-huckel.html)  
+## Volume 27: Predictive Biomass Accumulation & Light Use Efficiency (LUE) Under Dynamic DLI
+<a id="chapter-27-article-27-crop-yield-biomass-light-use-efficiency"></a>
+- **EN Monograph**: [../articles/article-27-crop-yield-biomass-light-use-efficiency.html](../articles/article-27-crop-yield-biomass-light-use-efficiency.html)
+- **DE Edition**: [../articles/de/article-27-pflanzenertrag-biomasse-lichtnutzungseffizienz.html](../articles/de/article-27-pflanzenertrag-biomasse-lichtnutzungseffizienz.html)
+- **JA Edition**: [../articles/ja/article-27-crop-yield-biomass-light-use-efficiency-jp.html](../articles/ja/article-27-crop-yield-biomass-light-use-efficiency-jp.html)
+- **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
+- **Synopsis**: Commercial greenhouse yield forecasting based on cumulative DLI, Light Use Efficiency (LUE = 2.8 - 3.4 g/mol), and Harvest Index (HI) modeling.
 
-### 🎯 Core Engineering Synopsis
-Chemical thermodynamics of closed-loop hydroponic nutrient solutions: Debye-Hückel ionic strength, ion activity coefficients, and Saturation Index (SI) for drip irrigation anti-scaling.
+## Volume 32: Horticultural LED Fixture Thermal Management & Diode Junction Temperature (Tj) Dynamics
+<a id="chapter-32-article-32-horticultural-led-thermal-junction-temperature"></a>
+- **EN Monograph**: [../articles/article-32-horticultural-led-thermal-junction-temperature.html](../articles/article-32-horticultural-led-thermal-junction-temperature.html)
+- **DE Edition**: [../articles/de/article-32-led-waermemanagement-sperrschichttemperatur.html](../articles/de/article-32-led-waermemanagement-sperrschichttemperatur.html)
+- **JA Edition**: [../articles/ja/article-32-horticultural-led-thermal-junction-temperature-jp.html](../articles/ja/article-32-horticultural-led-thermal-junction-temperature-jp.html)
+- **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
+- **Synopsis**: Engineering analysis of LED diode junction temperature (Tj), thermal resistance (Rth), spectral photon efficacy derating, and canopy convective heat.
 
-### 🔬 Key Technical Sections
-- 1. The Debye-Hückel Equation
-- 2. Interactive Speciation Engine
+## Volume 33: Precision Crop Steering Dynamics: Balancing Generative vs Vegetative Growth
+<a id="chapter-33-article-33-precision-crop-steering-dif-vpd-drydown"></a>
+- **EN Monograph**: [../articles/article-33-precision-crop-steering-dif-vpd-drydown.html](../articles/article-33-precision-crop-steering-dif-vpd-drydown.html)
+- **DE Edition**: [../articles/de/article-33-praezisions-pflanzensteuerung-dif-vpd.html](../articles/de/article-33-praezisions-pflanzensteuerung-dif-vpd.html)
+- **JA Edition**: [../articles/ja/article-33-precision-crop-steering-dif-vpd-drydown-jp.html](../articles/ja/article-33-precision-crop-steering-dif-vpd-drydown-jp.html)
+- **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
+- **Synopsis**: Industrial crop steering masterclass: Balancing vegetative stem growth vs generative flowering using 24h DIF, diurnal VPD differentials, and slab.
 
-### 🛠️ Paired Interactive Lab Calculators
-- [Hydroponic Chemical Speciation Precipitation Index](../tools/hydroponic-chemical-speciation-precipitation-index.html)
+## Volume 40: Canopy Light Extinction (Beer-Lambert Law) & Diffuse Glass Transmission
+<a id="chapter-40-article-40-beer-lambert-canopy-light-extinction"></a>
+- **EN Monograph**: [../articles/article-40-beer-lambert-canopy-light-extinction.html](../articles/article-40-beer-lambert-canopy-light-extinction.html)
+- **DE Edition**: [../articles/de/article-40-beer-lambert-lichtextinktion-diffusglas.html](../articles/de/article-40-beer-lambert-lichtextinktion-diffusglas.html)
+- **JA Edition**: [../articles/ja/article-40-beer-lambert-canopy-light-extinction-jp.html](../articles/ja/article-40-beer-lambert-canopy-light-extinction-jp.html)
+- **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
+- **Synopsis**: Industrial plant physiology analysis of Beer-Lambert light extinction, canopy extinction coefficient (k), Leaf Area Index (LAI), and diffuse glass.
 
----
+## Volume 41: The Biochemical Farquhar (FvCB) Photosynthesis Model & CO₂ Dosing Dynamics
+<a id="chapter-41-article-41-farquhar-photosynthesis-fvcb-co2"></a>
+- **EN Monograph**: [../articles/article-41-farquhar-photosynthesis-fvcb-co2.html](../articles/article-41-farquhar-photosynthesis-fvcb-co2.html)
+- **DE Edition**: [../articles/de/article-41-farquhar-fvcb-photosynthese-co2.html](../articles/de/article-41-farquhar-fvcb-photosynthese-co2.html)
+- **JA Edition**: [../articles/ja/article-41-farquhar-photosynthesis-fvcb-co2-jp.html](../articles/ja/article-41-farquhar-photosynthesis-fvcb-co2-jp.html)
+- **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
+- **Synopsis**: Industrial plant physiology analysis of the Farquhar-von Caemmerer-Berry (FvCB) model, Rubisco kinetics (Vcmax), electron transport (Jmax), and CO2.
 
-## Chapter 53: Biomass CHP Flue Gas SCR Cleaning & Biogenic CO2 Direct Enrichment in Venlo Glasshouses
-*Anchor ID*: `<a id="chapter-53-article-53-biomass-chp-scr-co2-recovery-horticulture"></a>`  
-*Original Source*: [`articles/article-53-biomass-chp-scr-co2-recovery-horticulture.html`](../articles/article-53-biomass-chp-scr-co2-recovery-horticulture.html)  
-
-### 🎯 Core Engineering Synopsis
-Engineering thermodynamics of biomass combined heat and power (CHP), Selective Catalytic Reduction (SCR) DeNOx, ethylene scrubbers, and safe biogenic CO2 crop fertilization in commercial CEA.
-
-### 🔬 Key Technical Sections
-- 1. Flue Gas Purification & Phytotoxicity Thresholds
-- 2. High-Temperature SCR DeNOx & Oxidation Catalysis
-- 3. Rubisco Kinetics & Photosynthetic Enrichment Dynamics
-- 4. Integrated Climate & Energy Calculators
-
-### 🛠️ Paired Interactive Lab Calculators
-- [Greenhouse Co2 Enrichment Calculator](../tools/greenhouse-co2-enrichment-calculator.html)
-- [Greenhouse Heating Load Thermal Screen Calculator](../tools/greenhouse-heating-load-thermal-screen-calculator.html)
-
----
-
-# Part II: Quantum Photobiology & Radiation Dynamics
-
-## Chapter 02: Daily Light Integral (DLI) & Photonic Efficacy Engineering in Vertical Plant Factories
-*Anchor ID*: `<a id="chapter-02-article-02-dli-vertical-farming"></a>`  
-*Original Source*: [`articles/article-02-dli-vertical-farming.html`](../articles/article-02-dli-vertical-farming.html)  
-
-### 🎯 Core Engineering Synopsis
-Calculated PPFD (µmol/m²/s) and DLI (mol/m²/day) formulations for indoor LED vertical farming to maximize dry biomass yield per kWh of electricity.
-
-### 🔬 Key Technical Sections
-- 1. DLI Computation & Photonic Efficacy
-- 2. Target DLI Benchmarks for Commercial Crops
-
----
-
-## Chapter 07: Photomorphogenesis & PAR Spectral Quality: Red/Blue Ratios and Emerson Enhancement Effect
-*Anchor ID*: `<a id="chapter-07-article-07-indoor-plant-lighting-spectrum"></a>`  
-*Original Source*: [`articles/article-07-indoor-plant-lighting-spectrum.html`](../articles/article-07-indoor-plant-lighting-spectrum.html)  
-
-### 🎯 Core Engineering Synopsis
-Photobiological plant responses across McCree action spectra, phytochrome photoequilibria (Pfr/Pr), far-red Emerson enhancement, and spectral tailoring for indoor CEA.
-
-### 🔬 Key Technical Sections
-- 1. Biophysics of the McCree Action Spectrum & Photosystem Excitation
-- 2. Functional Photobiology of Discrete Wavebands: Blue, Red, Green, and Far-Red
-- 3. The Emerson Enhancement Effect & Dual-Photosystem Energy Balance
-
----
-
-## Chapter 11: High-Wire Strawberry Greenhouse Microclimate: Flower Bud Differentiation & Diurnal Temperature Integration
-*Anchor ID*: `<a id="chapter-11-article-11-strawberry-greenhouse-climate"></a>`  
-*Original Source*: [`articles/article-11-strawberry-greenhouse-climate.html`](../articles/article-11-strawberry-greenhouse-climate.html)  
-
-### 🎯 Core Engineering Synopsis
-Precision microclimate management for day-neutral and short-day greenhouse strawberries: chilling hour accumulation, flower bud initiation, and diurnal DIF temperature steering.
-
-### 🔬 Key Technical Sections
-- 1. The Physiology of High-Yield Strawberry Production: Flower Bud Differentiation
-- 2. Triad of Environmental Drivers: Photoperiod, Temperature, and Nitrogen Starvation
-- 3. Phenological Climate Management: DIF Optimization & Humidity Regulation
+## Volume 56: Far-Red Photobiology (ePAR 400–750 nm) & Phytochrome Photostationary State (PSS) in Greenhouse Horticulture
+<a id="chapter-56-article-56-far-red-photobiology-epar-phytochrome-photostationary-state"></a>
+- **EN Monograph**: [../articles/article-56-far-red-photobiology-epar-phytochrome-photostationary-state.html](../articles/article-56-far-red-photobiology-epar-phytochrome-photostationary-state.html)
+- **DE Edition**: [../articles/de/article-56-dunkelrot-photobiologie-epar-phytochrom-photostationaerer-zustand.html](../articles/de/article-56-dunkelrot-photobiologie-epar-phytochrom-photostationaerer-zustand.html)
+- **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
+- **Synopsis**: Engineering biophysics of far-red photon efficacy, ePAR extended photosynthetic range (400-750 nm), phytochrome photostationary state (PSS), and automated climate control.
 
 ---
 
-## Chapter 16: German Master Grower (Gärtnermeister) Greenhouse Climate Steering Strategy for Solanaceae
-*Anchor ID*: `<a id="chapter-16-article-16-german-meister-greenhouse-climate"></a>`  
-*Original Source*: [`articles/article-16-german-meister-greenhouse-climate.html`](../articles/article-16-german-meister-greenhouse-climate.html)  
+# Part III: Closed-Loop Hydroponics, Ion Speciation & Substrates
 
-### 🎯 Core Engineering Synopsis
-Advanced European greenhouse climate steering: 24-hour temperature integration (RTI), pre-night temperature drops (DIP), and 3-way mixing valve heating control.
+## Volume 06: Molar Stoichiometry & Sonneveld/Steiner Ion Balancing (meq/L) in Closed-Loop Hydroponics
+<a id="chapter-06-article-06-hydroponic-nutrient-formulation"></a>
+- **EN Monograph**: [../articles/article-06-hydroponic-nutrient-formulation.html](../articles/article-06-hydroponic-nutrient-formulation.html)
+- **DE Edition**: [../articles/de/article-06-naehrloesungsberechnung-stammbehaelter-ab-ec-duengung.html](../articles/de/article-06-naehrloesungsberechnung-stammbehaelter-ab-ec-duengung.html)
+- **JA Edition**: [../articles/ja/article-06-hydroponic-nutrient-formulation-ab-stock-tank-ec-ph-jp.html](../articles/ja/article-06-hydroponic-nutrient-formulation-ab-stock-tank-ec-ph-jp.html)
+- **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
+- **Synopsis**: Precision closed-loop hydroponic nutrient balancing: milliequivalent calculations, Steiner cation-anion stoichiometry, salt solubility products, and automated climate control.
 
-### 🔬 Key Technical Sections
-- 1. The 24-Hour Radiation-Temperature Integration (RTI)
-- 2. Pre-Night Temperature Drop (Der Vornacht-DIP)
-- 3. 3-Way Mixing Valve Pipe Rail Heat Modulation
+## Volume 14: Dual Horticultural Education & Vocational Engineering in Germany: Gärtner Ausbildung to Meister
+<a id="chapter-14-article-14-ausbildung-horticulture-germany"></a>
+- **EN Monograph**: [../articles/article-14-ausbildung-horticulture-germany.html](../articles/article-14-ausbildung-horticulture-germany.html)
+- **DE Edition**: [../articles/de/article-14-vertical-farming-hvac-entfeuchtung-kondensation-waermerueckgewinnung.html](../articles/de/article-14-vertical-farming-hvac-entfeuchtung-kondensation-waermerueckgewinnung.html)
+- **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
+- **Synopsis**: Comprehensive structural guide to Germany's dual vocational education system (Duale Ausbildung) in commercial production horticulture (Gartenbau).
 
----
+## Volume 17: Biophysical Soil Physics: Air Porosity, Water Retention Curves & Root Zone Aeration
+<a id="chapter-17-article-17-indoor-plant-soil-aeration-porosity"></a>
+- **EN Monograph**: [../articles/article-17-indoor-plant-soil-aeration-porosity.html](../articles/article-17-indoor-plant-soil-aeration-porosity.html)
+- **DE Edition**: [../articles/de/article-17-substratphysik-luftkapazitaet-wasserretention-wurzelbelueftung.html](../articles/de/article-17-substratphysik-luftkapazitaet-wasserretention-wurzelbelueftung.html)
+- **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
+- **Synopsis**: Engineering potting media physics: Total Porosity, Container Capacity (CC), and Air-Filled Porosity (AFP) to eliminate root hypoxia in containerized.
 
-## Chapter 20: Leaf Temperature Infrared Thermometry & Crop Water Stress Index (CWSI) Sensing
-*Anchor ID*: `<a id="chapter-20-article-20-leaf-temperature-infrared-thermometry"></a>`  
-*Original Source*: [`articles/article-20-leaf-temperature-infrared-thermometry.html`](../articles/article-20-leaf-temperature-infrared-thermometry.html)  
+## Volume 21: Chlorophyll a Fluorescence Kinetics (Fv/Fm & OJIP) & Pre-Symptomatic Stress Metrology
+<a id="chapter-21-article-21-chlorophyll-a-fluorescence-fvfm-stress"></a>
+- **EN Monograph**: [../articles/article-21-chlorophyll-a-fluorescence-fvfm-stress.html](../articles/article-21-chlorophyll-a-fluorescence-fvfm-stress.html)
+- **DE Edition**: [../articles/de/article-21-chlorophyllfluoreszenz-fvfm-quantenausbeute-pflanzenstress-pam.html](../articles/de/article-21-chlorophyllfluoreszenz-fvfm-quantenausbeute-pflanzenstress-pam.html)
+- **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
+- **Synopsis**: Photosystem II maximum quantum yield (Fv/Fm), OJIP induction curves, and non-photochemical quenching (NPQ) for real-time non-destructive plant stress.
 
-### 🎯 Core Engineering Synopsis
-Physics of infrared canopy radiometry: Stefan-Boltzmann law, leaf-to-air temperature differential (ΔT), and Crop Water Stress Index (CWSI) for automated irrigation.
+## Volume 22: HPS vs. LED Supplemental Lighting Physics: Photon Efficacy, Far-Red Kinetics & Greenhouse Heat Balance
+<a id="chapter-22-article-22-hps-vs-led-supplemental-lighting"></a>
+- **EN Monograph**: [../articles/article-22-hps-vs-led-supplemental-lighting.html](../articles/article-22-hps-vs-led-supplemental-lighting.html)
+- **DE Edition**: [../articles/de/article-22-hps-vs-led-assimilation-belichtung-strahlungsheizung-wirtschaftlichkeit.html](../articles/de/article-22-hps-vs-led-assimilation-belichtung-strahlungsheizung-wirtschaftlichkeit.html)
+- **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
+- **Synopsis**: Comparative biophysics of High-Pressure Sodium (HPS) and LED supplemental fixtures: PAR photon efficacy (µmol/J), Far-Red Emerson enhancement, and automated climate control.
 
-### 🔬 Key Technical Sections
-- 1. Why Ambient Air Temperature Is Insufficient
-- 2. Stefan-Boltzmann Law & Infrared Radiometry
-- 3. Integrating IR Leaf Sensors with VPD Control
+## Volume 23: Closed-Loop DWC & Micro-Dosing Automation: Dissolved Oxygen, Ion-Selective ORP Metrology & PID Fertigation
+<a id="chapter-23-article-23-closed-loop-dwc-automation"></a>
+- **EN Monograph**: [../articles/article-23-closed-loop-dwc-automation.html](../articles/article-23-closed-loop-dwc-automation.html)
+- **DE Edition**: [../articles/de/article-23-geschlossene-tiefwasserkultur-dwc-sauerstoffsaettigung-venturi-automatisierung.html](../articles/de/article-23-geschlossene-tiefwasserkultur-dwc-sauerstoffsaettigung-venturi-automatisierung.html)
+- **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
+- **Synopsis**: Engineering recirculating Deep Water Culture (DWC) systems: Henry's Law dissolved oxygen (DO) dynamics, ion-selective electrode (ISE) feedback.
 
----
+## Volume 25: Closed-Loop Nutrient Recirculation & Nanobubble Dissolved Oxygen Kinetics in Commercial Greenhouses
+<a id="chapter-25-article-25-closed-loop-hydroponic-nanobubble-oxygenation"></a>
+- **EN Monograph**: [../articles/article-25-closed-loop-hydroponic-nanobubble-oxygenation.html](../articles/article-25-closed-loop-hydroponic-nanobubble-oxygenation.html)
+- **DE Edition**: [../articles/de/article-25-geschlossene-hydrokultur-nanoblasen-sauerstoff.html](../articles/de/article-25-geschlossene-hydrokultur-nanoblasen-sauerstoff.html)
+- **JA Edition**: [../articles/ja/article-25-closed-loop-hydroponic-nanobubble-oxygenation-jp.html](../articles/ja/article-25-closed-loop-hydroponic-nanobubble-oxygenation-jp.html)
+- **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
+- **Synopsis**: Engineering analysis of closed-loop hydroponic recirculation, rhizosphere dissolved oxygen (DO > 8.5 mg/L), and Pythium root-rot suppression in commercial controlled environment agriculture.
 
-## Chapter 24: Optimizing Far-Red (730nm) & Deep-Red (660nm) Spectral Ratios for Commercial Greenhouse Crops
-*Anchor ID*: `<a id="chapter-24-article-24-far-red-deep-red-led-spectrum-optimization"></a>`  
-*Original Source*: [`articles/article-24-far-red-deep-red-led-spectrum-optimization.html`](../articles/article-24-far-red-deep-red-led-spectrum-optimization.html)  
+## Volume 30: Rockwool Slab Hydrodynamics, TDR Moisture Sensors & Drainage EC Balancing
+<a id="chapter-30-article-30-rockwool-slab-tdr-moisture-drain-ec"></a>
+- **EN Monograph**: [../articles/article-30-rockwool-slab-tdr-moisture-drain-ec.html](../articles/article-30-rockwool-slab-tdr-moisture-drain-ec.html)
+- **DE Edition**: [../articles/de/article-30-steinwolle-tdr-feuchte-drain-ec.html](../articles/de/article-30-steinwolle-tdr-feuchte-drain-ec.html)
+- **JA Edition**: [../articles/ja/article-30-rockwool-slab-tdr-moisture-drain-ec-jp.html](../articles/ja/article-30-rockwool-slab-tdr-moisture-drain-ec-jp.html)
+- **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
+- **Synopsis**: Engineering analysis of volumetric water content (VWC %), overnight dry-down kinetics, and drainage EC balancing in commercial rockwool hydroponics.
 
-### 🎯 Core Engineering Synopsis
-A comprehensive engineering masterclass on the Emerson Enhancement Effect, Photosystem I/II excitation balance, and Far-Red (730nm) spectrum optimization in commercial greenhouse crops.
+## Volume 38: Xylem Calcium Transport Dynamics & Blossom-End Rot (BER) Prevention
+<a id="chapter-38-article-38-xylem-calcium-flux-blossom-end-rot"></a>
+- **EN Monograph**: [../articles/article-38-xylem-calcium-flux-blossom-end-rot.html](../articles/article-38-xylem-calcium-flux-blossom-end-rot.html)
+- **DE Edition**: [../articles/de/article-38-xylem-kalzium-bluetenendfaeule.html](../articles/de/article-38-xylem-kalzium-bluetenendfaeule.html)
+- **JA Edition**: [../articles/ja/article-38-xylem-calcium-flux-blossom-end-rot-jp.html](../articles/ja/article-38-xylem-calcium-flux-blossom-end-rot-jp.html)
+- **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
+- **Synopsis**: Plant physiology analysis of xylem transpirational calcium flux, distal fruit cell membrane stability, and Blossom-End Rot (BER) prevention via VPD and precision environmental control.
 
-### 🔬 Key Technical Sections
-- 1. The Biophysics of Photosystem Coordination
-- 2. Practical Engineering Target Ratios
-- 3. Interactive Calculator Tool
-- 4. Phytochrome Photostationary State (PSS)
-- 5. Commercial Case Studies
-- References
+## Volume 39: Closed-Loop Reverse Osmosis (RO) Desalination & Sodium (Na+) Rejection Kinetics
+<a id="chapter-39-article-39-closed-loop-ro-desalination-energy"></a>
+- **EN Monograph**: [../articles/article-39-closed-loop-ro-desalination-energy.html](../articles/article-39-closed-loop-ro-desalination-energy.html)
+- **DE Edition**: [../articles/de/article-39-umkehrosmose-entsalzung-energieeffizienz.html](../articles/de/article-39-umkehrosmose-entsalzung-energieeffizienz.html)
+- **JA Edition**: [../articles/ja/article-39-closed-loop-ro-desalination-energy-jp.html](../articles/ja/article-39-closed-loop-ro-desalination-energy-jp.html)
+- **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
+- **Synopsis**: Industrial engineering analysis of greenhouse reverse osmosis (RO) membrane flux (LMH), sodium (Na+) rejection (99.2%), energy recovery devices (PX).
 
-### 🛠️ Paired Interactive Lab Calculators
-- [Dli Spectrum Photomorphogenesis Calculator](../tools/dli-spectrum-photomorphogenesis-calculator.html)
+## Volume 42: Substrate Matric Potential (Ψm), pF Water Retention Curves & van Genuchten Physics
+<a id="chapter-42-article-42-substrate-matric-potential-pf-curves"></a>
+- **EN Monograph**: [../articles/article-42-substrate-matric-potential-pf-curves.html](../articles/article-42-substrate-matric-potential-pf-curves.html)
+- **DE Edition**: [../articles/de/article-42-substrat-matrixpotential-pf-kurven.html](../articles/de/article-42-substrat-matrixpotential-pf-kurven.html)
+- **JA Edition**: [../articles/ja/article-42-substrate-matric-potential-pf-curves-jp.html](../articles/ja/article-42-substrate-matric-potential-pf-curves-jp.html)
+- **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
+- **Synopsis**: Industrial agricultural physics analysis of substrate matric suction potential (Psi_m), pF retention curves, van Genuchten hydraulic models, and plant.
 
----
+## Volume 49: Hydroponic Chemical Speciation, Debye-Hückel Activity & Saturation Indices
+<a id="chapter-49-article-49-hydroponic-chemical-speciation-debye-huckel"></a>
+- **EN Monograph**: [../articles/article-49-hydroponic-chemical-speciation-debye-huckel.html](../articles/article-49-hydroponic-chemical-speciation-debye-huckel.html)
+- **DE Edition**: [../articles/de/article-49-hydrokultur-chemische-speziation-debye-hueckel.html](../articles/de/article-49-hydrokultur-chemische-speziation-debye-hueckel.html)
+- **JA Edition**: [../articles/ja/article-49-hydroponic-chemical-speciation-debye-huckel-jp.html](../articles/ja/article-49-hydroponic-chemical-speciation-debye-huckel-jp.html)
+- **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
+- **Synopsis**: Chemical thermodynamics of closed-loop hydroponic nutrient solutions: Debye-Hückel ionic strength, ion activity coefficients, and Saturation Index (SI).
 
-## Chapter 28: Greenhouse CO₂ Enrichment Kinetics & Economic Thresholds under Dynamic Ventilation
-*Anchor ID*: `<a id="chapter-28-article-28-greenhouse-co2-enrichment-economics"></a>`  
-*Original Source*: [`articles/article-28-greenhouse-co2-enrichment-economics.html`](../articles/article-28-greenhouse-co2-enrichment-economics.html)  
+## Volume 55: Nutrient Uptake Concentration Factor (UCF) in Recirculating Hydroponics: Closed-Loop Mass Balance & Ion Dynamics
+<a id="chapter-55-article-55-nutrient-uptake-concentration-factor-recirculating-hydroponics"></a>
+- **EN Monograph**: [../articles/article-55-nutrient-uptake-concentration-factor-recirculating-hydroponics.html](../articles/article-55-nutrient-uptake-concentration-factor-recirculating-hydroponics.html)
+- **DE Edition**: [../articles/de/article-55-naehrstoff-aufnahmekonzentrationsfaktor-geschlossene-hydrokultur.html](../articles/de/article-55-naehrstoff-aufnahmekonzentrationsfaktor-geschlossene-hydrokultur.html)
+- **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
+- **Synopsis**: Engineering mass balance formulation of nutrient uptake concentration factors (UCF), ion accumulation kinetics, sodium salinity limits, and optimal.
 
-### 🎯 Core Engineering Synopsis
-Industrial analysis of pure liquid CO2 vs CHP flue gas dosing, ventilation exchange losses, and net economic ROI thresholds in commercial horticulture.
+## Volume 60: Real-Time Ion-Selective Electrode (ISE) Arrays, Nicolsky-Eisenman Potentiometry & Closed-Loop Autonomous Nutrient Dosing in Commercial High-Wire Hydroponics
+<a id="chapter-60-article-60-potentiometric-ion-selective-electrode-ise-closed-loop-hydroponics"></a>
+- **EN Monograph**: [../articles/article-60-potentiometric-ion-selective-electrode-ise-closed-loop-hydroponics.html](../articles/article-60-potentiometric-ion-selective-electrode-ise-closed-loop-hydroponics.html)
+- **DE Edition**: [../articles/de/article-60-potentiometrische-ionenselektive-elektroden-ise-geschlossene-hydroponik.html](../articles/de/article-60-potentiometrische-ionenselektive-elektroden-ise-geschlossene-hydroponik.html)
+- **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
+- **Synopsis**: Engineering principles of real-time multi-ion sensing (NO3-, K+, Ca2+, Mg2+, H2PO4-), Nicolsky-Eisenman interference correction, Davies activity.
 
-### 🔬 Key Technical Sections
-- 1. The Ventilation Purge Dilemma
-- 2. Interactive ROI Optimization Tool
+## Volume 73: Closed-Loop Hydroponic Drainage Recirculation: Davies Chemical Speciation, Multi-Cycle Ballast Ion (Na⁺/Cl⁻) Accumulation Kinetics, and German DüV Zero-Discharge Economics
+<a id="chapter-73-article-73-closed-loop-nutrient-recirculation-davies-ion-balance"></a>
+- **EN Monograph**: [../articles/article-73-closed-loop-nutrient-recirculation-davies-ion-balance.html](../articles/article-73-closed-loop-nutrient-recirculation-davies-ion-balance.html)
+- **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
+- **Synopsis**: Technical engineering monograph on closed-loop hydroponic drainage recirculation: Davies ionic activity speciation, multi-cycle sodium and chloride.
 
-### 🛠️ Paired Interactive Lab Calculators
-- [Greenhouse Co2 Enrichment Optimizer](../tools/greenhouse-co2-enrichment-optimizer.html)
-
----
-
-## Chapter 32: Horticultural LED Fixture Thermal Management & Diode Junction Temperature ($T_j$) Dynamics
-*Anchor ID*: `<a id="chapter-32-article-32-horticultural-led-thermal-junction-temperature"></a>`  
-*Original Source*: [`articles/article-32-horticultural-led-thermal-junction-temperature.html`](../articles/article-32-horticultural-led-thermal-junction-temperature.html)  
-
-### 🎯 Core Engineering Synopsis
-Engineering analysis of LED diode junction temperature (Tj), thermal resistance (Rth), spectral photon efficacy derating, and canopy convective heat flux in commercial greenhouses.
-
-### 🔬 Key Technical Sections
-- 1. The 1D Thermal Resistance Network
-- 2. Interactive Thermal Optimizer
-
-### 🛠️ Paired Interactive Lab Calculators
-- [Greenhouse Lighting Led Thermal Cfd Optimizer](../tools/greenhouse-lighting-led-thermal-cfd-optimizer.html)
-
----
-
-## Chapter 37: Hot Water Buffer Tank Stratification & Thermal Energy Storage Sizing
-*Anchor ID*: `<a id="chapter-37-article-37-thermal-buffer-tank-stratification-sizing"></a>`  
-*Original Source*: [`articles/article-37-thermal-buffer-tank-stratification-sizing.html`](../articles/article-37-thermal-buffer-tank-stratification-sizing.html)  
-
-### 🎯 Core Engineering Synopsis
-Industrial engineering analysis of greenhouse hot-water thermal buffer tanks, thermocline Richardson number stability, and night peak heating discharge duration.
-
-### 🔬 Key Technical Sections
-- 1. The Thermocline Richardson Number
-- 2. Interactive Buffer Tank Calculator
-
-### 🛠️ Paired Interactive Lab Calculators
-- [Solar Thermal Buffer Tank Stratification Calculator](../tools/solar-thermal-buffer-tank-stratification-calculator.html)
-
----
-
-## Chapter 43: Greenhouse Structural Standards (EN 13031-1 & NEN 3859): Wind, Snow & Crop Loads
-*Anchor ID*: `<a id="chapter-43-article-43-greenhouse-structural-standards-en13031"></a>`  
-*Original Source*: [`articles/article-43-greenhouse-structural-standards-en13031.html`](../articles/article-43-greenhouse-structural-standards-en13031.html)  
-
-### 🎯 Core Engineering Synopsis
-Civil engineering analysis of commercial Venlo greenhouse structural design according to EN 13031-1 and NEN 3859, wind suction (qw), snow drift, and high-wire crop loads.
-
-### 🔬 Key Technical Sections
-- 1. The Ultimate Limit State (ULS) Equation
-- 2. Interactive Structural Load Calculator
-
-### 🛠️ Paired Interactive Lab Calculators
-- [Greenhouse Structural Wind Snow Load Nen3859 Calculator](../tools/greenhouse-structural-wind-snow-load-nen3859-calculator.html)
-
----
-
-## Chapter 48: Commercial Greenhouse 10-Year CapEx, OpEx & IRR Investment Modeling
-*Anchor ID*: `<a id="chapter-48-article-48-greenhouse-capex-opex-irr-npv-financial-model"></a>`  
-*Original Source*: [`articles/article-48-greenhouse-capex-opex-irr-npv-financial-model.html`](../articles/article-48-greenhouse-capex-opex-irr-npv-financial-model.html)  
-
-### 🎯 Core Engineering Synopsis
-Bankable financial feasibility analysis for high-tech commercial Venlo glasshouse projects: Turnkey CapEx ($180-$320/m²), Discounted Cash Flows, IRR, and NPV.
-
-### 🔬 Key Technical Sections
-- 1. The Net Present Value (NPV) Valuation
-- 2. Interactive Investment Calculator
-
-### 🛠️ Paired Interactive Lab Calculators
-- [Greenhouse Capex Opex 10Year Roi Calculator](../tools/greenhouse-capex-opex-10year-roi-calculator.html)
+## Volume 75: Aquifer Thermal Energy Storage (ATES) & Industrial Heat Pump Integration in Commercial Greenhouses
+<a id="chapter-75-article-75-ates-aquifer-thermal-energy-storage-heat-pumps-greenhouse"></a>
+- **EN Monograph**: [../articles/article-75-ates-aquifer-thermal-energy-storage-heat-pumps-greenhouse.html](../articles/article-75-ates-aquifer-thermal-energy-storage-heat-pumps-greenhouse.html)
+- **Paired Live Simulator**: [`tools/index.html`](../tools/index.html)
+- **Synopsis**: Technical engineering monograph on Aquifer Thermal Energy Storage (ATES) and industrial heat pump integration in commercial CEA greenhouses.
 
 ---
 
-## Chapter 52: Aquifer Thermal Energy Storage (ATES) & Industrial Heat Pumps in Dutch Venlo Greenhouses
-*Anchor ID*: `<a id="chapter-52-article-52-aquifer-thermal-energy-storage-ates-heat-pump"></a>`  
-*Original Source*: [`articles/article-52-aquifer-thermal-energy-storage-ates-heat-pump.html`](../articles/article-52-aquifer-thermal-energy-storage-ates-heat-pump.html)  
+# Part IV: Biosecurity, IPM Pollination, Sensors & Autonomous AI MPC
 
-### 🎯 Core Engineering Synopsis
-Thermodynamic modeling of Aquifer Thermal Energy Storage (ATES / WKO) doublet systems, seasonal heat recovery efficiency, and high-temperature industrial heat pump COP in commercial CEA.
+## Volume 03: Greenhouse Bumblebee Protection & Restricted-Entry Intervals (REI) in Precision CEA
+<a id="chapter-03-article-03-pollinator-safety-rei"></a>
+- **EN Monograph**: [../articles/article-03-pollinator-safety-rei.html](../articles/article-03-pollinator-safety-rei.html)
+- **DE Edition**: [../articles/de/article-03-hummelbestaeubung-nuetzlinge-wartezeit-pflanzenschutz-gewaechshaus.html](../articles/de/article-03-hummelbestaeubung-nuetzlinge-wartezeit-pflanzenschutz-gewaechshaus.html)
+- **JA Edition**: [../articles/ja/article-03-pollinator-safety-bumblebee-ipm-rei-jp.html](../articles/ja/article-03-pollinator-safety-bumblebee-ipm-rei-jp.html)
+- **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
+- **Synopsis**: Biological pollinator stewardship in commercial greenhouses: protecting Bombus terrestris from pesticide residue toxicity, REI mathematical models, and automated climate control.
 
-### 🔬 Key Technical Sections
-- 1. ATES Doublet Thermal Capacity & Hydrogeology
-- 2. Heat Pump Carnot & Lorenz COP Modeling
-- 3. Interactive Heating & Energy Engineering Hub
+## Volume 13: Precision Agricultural Sensor Calibration: NDIR CO2, TDR Soil Moisture, EC & pH Electrochemistry
+<a id="chapter-13-article-13-smartfarm-sensor-calibration"></a>
+- **EN Monograph**: [../articles/article-13-smartfarm-sensor-calibration.html](../articles/article-13-smartfarm-sensor-calibration.html)
+- **DE Edition**: [../articles/de/article-13-sensorkalibrierung-messunsicherheit-pt100-ndir-fd-smartfarm.html](../articles/de/article-13-sensorkalibrierung-messunsicherheit-pt100-ndir-fd-smartfarm.html)
+- **JA Edition**: [../articles/ja/article-13-smartfarm-sensor-calibration-nernst-tdr-ndir-jp.html](../articles/ja/article-13-smartfarm-sensor-calibration-nernst-tdr-ndir-jp.html)
+- **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
+- **Synopsis**: Engineering calibration protocols for CEA instrumentation: NDIR dual-beam optical drift, two-point pH/EC Nernstian slope correction, and dielectric.
 
-### 🛠️ Paired Interactive Lab Calculators
-- [Greenhouse Heating Load Thermal Screen Calculator](../tools/greenhouse-heating-load-thermal-screen-calculator.html)
+## Volume 19: Photon Use Efficiency (PUE) & Electric Power to Fresh Biomass Kinetics in Vertical Farming
+<a id="chapter-19-article-19-vertical-farm-biomass-conversion-efficiency"></a>
+- **EN Monograph**: [../articles/article-19-vertical-farm-biomass-conversion-efficiency.html](../articles/article-19-vertical-farm-biomass-conversion-efficiency.html)
+- **DE Edition**: [../articles/de/article-19-vertikale-landwirtschaft-biomasse-konversionseffizienz-lue-ernteindex.html](../articles/de/article-19-vertikale-landwirtschaft-biomasse-konversionseffizienz-lue-ernteindex.html)
+- **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
+- **Synopsis**: Quantifying photon use efficiency (g/mol) and energy yield (g/kWh) in indoor plant factories with artificial lighting (PFAL) across leafy greens.
 
----
+## Volume 20: Leaf Temperature Infrared Thermometry & Crop Water Stress Index (CWSI) Sensing
+<a id="chapter-20-article-20-leaf-temperature-infrared-thermometry"></a>
+- **EN Monograph**: [../articles/article-20-leaf-temperature-infrared-thermometry.html](../articles/article-20-leaf-temperature-infrared-thermometry.html)
+- **DE Edition**: [../articles/de/article-20-blatttemperatur-infrarot-thermometrie-emissionsgrad-energiebilanz.html](../articles/de/article-20-blatttemperatur-infrarot-thermometrie-emissionsgrad-energiebilanz.html)
+- **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
+- **Synopsis**: Physics of infrared canopy radiometry: Stefan-Boltzmann law, leaf-to-air temperature differential (ΔT), and Crop Water Stress Index (CWSI) for commercial high-tech greenhouses.
 
-## Chapter 56: Far-Red Photobiology (ePAR 400–750 nm) & Phytochrome Photostationary State (PSS) in Greenhouse Horticulture
-*Anchor ID*: `<a id="chapter-56-article-56-far-red-photobiology-epar-phytochrome-photostationary-state"></a>`  
-*Original Source*: [`articles/article-56-far-red-photobiology-epar-phytochrome-photostationary-state.html`](../articles/article-56-far-red-photobiology-epar-phytochrome-photostationary-state.html)  
+## Volume 34: Closed-Loop UV-C Disinfection & Viral Pathogen Inactivation Kinetics
+<a id="chapter-34-article-34-closed-loop-uvc-drain-disinfection"></a>
+- **EN Monograph**: [../articles/article-34-closed-loop-uvc-drain-disinfection.html](../articles/article-34-closed-loop-uvc-drain-disinfection.html)
+- **DE Edition**: [../articles/de/article-34-uvc-entkeimung-geschlossene-hydrokultur.html](../articles/de/article-34-uvc-entkeimung-geschlossene-hydrokultur.html)
+- **JA Edition**: [../articles/ja/article-34-closed-loop-uvc-drain-disinfection-jp.html](../articles/ja/article-34-closed-loop-uvc-drain-disinfection-jp.html)
+- **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
+- **Synopsis**: Engineering analysis of UV-C radiation dose (250 mJ/cm2), UVT% transmission correction, and viral/fungal log-reduction in recirculating greenhouse.
 
-### 🎯 Core Engineering Synopsis
-Engineering biophysics of far-red photon efficacy, ePAR extended photosynthetic range (400-750 nm), phytochrome photostationary state (PSS), and end-of-day (EOD) dynamics in commercial high-wire greenhouse crops.
+## Volume 44: Meister-Deutsch: Open-Source Horticultural German SRS & Phonetic Engine
+<a id="chapter-44-article-44-meister-deutsch-open-source-srs-engine"></a>
+- **EN Monograph**: [../articles/article-44-meister-deutsch-open-source-srs-engine.html](../articles/article-44-meister-deutsch-open-source-srs-engine.html)
+- **DE Edition**: [../articles/de/article-44-meister-deutsch-open-source-srs-lernsystem.html](../articles/de/article-44-meister-deutsch-open-source-srs-lernsystem.html)
+- **JA Edition**: [../articles/ja/article-44-meister-deutsch-open-source-srs-engine-jp.html](../articles/ja/article-44-meister-deutsch-open-source-srs-engine-jp.html)
+- **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
+- **Synopsis**: Open-source Spaced Repetition System (SRS) for German Meisterprüfung horticulture, Web Speech API pronunciation synthesis, and botanical taxonomy.
 
-### 🔬 Key Technical Sections
-- 1. The Paradigm Shift: From PAR (400–700 nm) to ePAR (400–750 nm)
-- 2. Mathematical Modeling of Phytochrome Photostationary State (PSS)
-- 3. Horticultural Steering: Canopy Expansion vs. Harvest Index
-- 4. End-of-Day (EOD) vs. Continuous Daytime Far-Red Regimes
-- 5. Energy Efficacy and Venlo Greenhouse Thermal Balance
-- 6. Conclusion: Engineering Guidelines for Modern CEA Operators
+## Volume 47: Computer Vision & Multispectral Disease Diagnostics in Protected Cropping
+<a id="chapter-47-article-47-computer-vision-crop-disease-diagnostics"></a>
+- **EN Monograph**: [../articles/article-47-computer-vision-crop-disease-diagnostics.html](../articles/article-47-computer-vision-crop-disease-diagnostics.html)
+- **DE Edition**: [../articles/de/article-47-computer-vision-pflanzenkrankheiten-diagnostik.html](../articles/de/article-47-computer-vision-pflanzenkrankheiten-diagnostik.html)
+- **JA Edition**: [../articles/ja/article-47-computer-vision-crop-disease-diagnostics-jp.html](../articles/ja/article-47-computer-vision-crop-disease-diagnostics-jp.html)
+- **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
+- **Synopsis**: Computer vision edge algorithms for early detection of Botrytis cinerea, iron chlorosis, and foliar necrotic lesions in commercial high-wire greenhouses.
 
----
+## Volume 50: Smart Greenhouse Edge IoT & MQTT Fleet Telemetry Architecture
+<a id="chapter-50-article-50-smart-greenhouse-mqtt-edge-iot-fleet"></a>
+- **EN Monograph**: [../articles/article-50-smart-greenhouse-mqtt-edge-iot-fleet.html](../articles/article-50-smart-greenhouse-mqtt-edge-iot-fleet.html)
+- **DE Edition**: [../articles/de/article-50-smart-gewaechshaus-mqtt-edge-iot-flotte.html](../articles/de/article-50-smart-gewaechshaus-mqtt-edge-iot-flotte.html)
+- **JA Edition**: [../articles/ja/article-50-smart-greenhouse-mqtt-edge-iot-fleet-jp.html](../articles/ja/article-50-smart-greenhouse-mqtt-edge-iot-fleet-jp.html)
+- **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
+- **Synopsis**: Industrial IoT architecture for commercial protected cropping: LoRaWAN, MQTT broker topologies, JSON schema telemetry, and edge anomaly detection.
 
-# Part III: Hydrochemistry & Root-Zone Biophysics
+## Volume 51: Autonomous Greenhouse AI: Reinforcement Learning & Model Predictive Control
+<a id="chapter-51-article-51-autonomous-greenhouse-ai-mpc-reinforcement-learning"></a>
+- **EN Monograph**: [../articles/article-51-autonomous-greenhouse-ai-mpc-reinforcement-learning.html](../articles/article-51-autonomous-greenhouse-ai-mpc-reinforcement-learning.html)
+- **DE Edition**: [../articles/de/article-51-autonome-gewaechshaeuser-ki-mpc-reinforcement-learning.html](../articles/de/article-51-autonome-gewaechshaeuser-ki-mpc-reinforcement-learning.html)
+- **JA Edition**: [../articles/ja/article-51-autonomous-greenhouse-ai-mpc-reinforcement-learning-jp.html](../articles/ja/article-51-autonomous-greenhouse-ai-mpc-reinforcement-learning-jp.html)
+- **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
+- **Synopsis**: Autonomous climate computer optimization using Reinforcement Learning and Model Predictive Control (MPC). Optimizes 24h temperature trajectories and precision environmental control.
 
-## Chapter 04: Greenhouse Envelope Peak Heat Loss Coefficients (U-Values) & Thermodynamic Thermal Screen Modeling
-*Anchor ID*: `<a id="chapter-04-article-04-greenhouse-heating-loss"></a>`  
-*Original Source*: [`articles/article-04-greenhouse-heating-loss.html`](../articles/article-04-greenhouse-heating-loss.html)  
-
-### 🎯 Core Engineering Synopsis
-Engineering greenhouse heating loads using Q = U·A·ΔT heat transfer dynamics, cover glazing U-values, wind infiltration friction, and multilayer thermal curtain energy savings.
-
-### 🔬 Key Technical Sections
-- 1. Winter CEA Energy Economics: Nocturnal Envelope Heat Loss Dynamics
-- 2. Fundamental Thermodynamic Heat Load Transfer Equations
-- 3. Glazing Material U-Values, Multilayer Thermal Curtains, and Infiltration Losses
-
----
-
-## Chapter 09: Stomatal Conductance Dynamics & Farquhar-von Caemmerer-Berry (FvCB) Photosynthesis Coupling
-*Anchor ID*: `<a id="chapter-09-article-09-stomata-conductance-photosynthesis"></a>`  
-*Original Source*: [`articles/article-09-stomata-conductance-photosynthesis.html`](../articles/article-09-stomata-conductance-photosynthesis.html)  
-
-### 🎯 Core Engineering Synopsis
-Coupled Farquhar-von Caemmerer-Berry photosynthesis and Ball-Berry stomatal conductance models under elevated CO2 enrichment and light-saturated CEA canopies.
-
-### 🔬 Key Technical Sections
-- 1. Limiting Factors of Carbon Assimilation: The CO2 Saturation Plateau
-- 2. The A-Ci Curve, Rubisco Carboxylation Kinetics, and Ball-Berry Stomatal Resistance
-- 3. Engineering Daytime CO2 Dosing & Boundary Layer Exchange Optimization
-
----
-
-## Chapter 14: Dual Horticultural Education & Vocational Engineering in Germany: Gärtner Ausbildung to Meister
-*Anchor ID*: `<a id="chapter-14-article-14-ausbildung-horticulture-germany"></a>`  
-*Original Source*: [`articles/article-14-ausbildung-horticulture-germany.html`](../articles/article-14-ausbildung-horticulture-germany.html)  
-
-### 🎯 Core Engineering Synopsis
-Comprehensive structural guide to Germany
-
-### 🔬 Key Technical Sections
-- 1. The German Meister Tradition in Protected Horticulture: The Dual Ausbildung Framework
-- 2. Three-Year Curricular Architecture: Soil Science, CEA Engineering, and Crop Physiology
-- 3. Professional Pathways: Advanced Certifications, Meisterprüfung, and International Engineering Practice
-
----
-
-## Chapter 19: Photon Use Efficiency (PUE) & Electric Power to Fresh Biomass Kinetics in Vertical Farming
-*Anchor ID*: `<a id="chapter-19-article-19-vertical-farm-biomass-conversion-efficiency"></a>`  
-*Original Source*: [`articles/article-19-vertical-farm-biomass-conversion-efficiency.html`](../articles/article-19-vertical-farm-biomass-conversion-efficiency.html)  
-
-### 🎯 Core Engineering Synopsis
-Quantifying photon use efficiency (g/mol) and energy yield (g/kWh) in indoor plant factories with artificial lighting (PFAL) across leafy greens and herbs.
-
-### 🔬 Key Technical Sections
-- 1. Energy Economics of Artificial Lighting
-- 2. Mathematical Formulations of PUE and Biomass Yield
-- 3. Canopy Light Interception and Dynamic Dimming
+## Volume 54: AI-Driven Model Predictive Control (MPC) in Commercial Venlo Greenhouses: Real-Time Energy-Yield Optimization
+<a id="chapter-54-article-54-ai-model-predictive-control-mpc-venlo-greenhouse"></a>
+- **EN Monograph**: [../articles/article-54-ai-model-predictive-control-mpc-venlo-greenhouse.html](../articles/article-54-ai-model-predictive-control-mpc-venlo-greenhouse.html)
+- **DE Edition**: [../articles/de/article-54-ki-modellpraediktive-regelung-mpc-venlo-gewaechshaus.html](../articles/de/article-54-ki-modellpraediktive-regelung-mpc-venlo-gewaechshaus.html)
+- **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
+- **Synopsis**: Engineering mathematical formulation of Model Predictive Control (MPC), transient thermodynamic microclimate modeling, dynamic assimilation lighting.
 
 ---
 
-## Chapter 23: Closed-Loop DWC & Micro-Dosing Automation: Dissolved Oxygen, Ion-Selective ORP Metrology & PID Fertigation
-*Anchor ID*: `<a id="chapter-23-article-23-closed-loop-dwc-automation"></a>`  
-*Original Source*: [`articles/article-23-closed-loop-dwc-automation.html`](../articles/article-23-closed-loop-dwc-automation.html)  
+# Part V: Structural Mechanics, CHP Energy, ATES & AgriQuant Finance
 
-### 🎯 Core Engineering Synopsis
-Engineering recirculating Deep Water Culture (DWC) systems: Henry
+## Volume 08: Horticultural Physics & Environmental Physiology of Monstera deliciosa: Hydroponics & VPD Optimization
+<a id="chapter-08-article-08-monstera-deliciosa-care-guide"></a>
+- **EN Monograph**: [../articles/article-08-monstera-deliciosa-care-guide.html](../articles/article-08-monstera-deliciosa-care-guide.html)
+- **DE Edition**: [../articles/de/article-08-monstera-deliciosa-kulturfuehrung-epiphyten-substrat-vpd.html](../articles/de/article-08-monstera-deliciosa-kulturfuehrung-epiphyten-substrat-vpd.html)
+- **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
+- **Synopsis**: Commercial tropical foliage engineering: hydroponic cultivation of Monstera deliciosa, leaf marginal necrosis prevention via VPD steering, and automated climate control.
 
-### 🔬 Key Technical Sections
-- 1. Dissolved Oxygen (DO) Kinetics & Henry's Law Saturation
-- 2. Oxidation-Reduction Potential (ORP) & Cleanliness Metrology
-- 3. Ion-Selective Electrodes (ISE) vs. Bulk Electrical Conductivity (EC)
-- 4. Multi-Channel PID Dosing Architecture
+## Volume 12: Xylem Calcium Partitioning & Transpirational Prevention of Blossom-End Rot (BER) in Greenhouse Tomatoes
+<a id="chapter-12-article-12-tomato-blossom-end-rot-calcium"></a>
+- **EN Monograph**: [../articles/article-12-tomato-blossom-end-rot-calcium.html](../articles/article-12-tomato-blossom-end-rot-calcium.html)
+- **DE Edition**: [../articles/de/article-12-tomate-bluetenendfaeule-kalziumtransport-xylem-vpd.html](../articles/de/article-12-tomate-bluetenendfaeule-kalziumtransport-xylem-vpd.html)
+- **JA Edition**: [../articles/ja/article-12-tomato-blossom-end-rot-calcium-xylem-transport-night-vpd-jp.html](../articles/ja/article-12-tomato-blossom-end-rot-calcium-xylem-transport-night-vpd-jp.html)
+- **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
+- **Synopsis**: Apoplastic calcium transport mechanics, xylem-to-phloem immobility, root hydraulic pressure, and nighttime VPD steering to prevent Blossom-End Rot.
 
-### 📐 Governing Biophysical Equations
-$$
-C_{DO}^* = \frac{k_H(T) \cdot P_{O_2}}{M_{O_2}} \quad [\text{mg} \cdot \text{L}^{-1}]
-$$
-$$
-E_{h} = E^0 - \frac{RT}{nF} \ln \left( \frac{[\text{Red}]}{[\text{Ox}]} \right) \quad [\text{mV}]
-$$
-$$
-u(t) = K_p e(t) + K_i \int_{0}^{t} e(\tau) d\tau + K_d \frac{de(t)}{dt}
-$$
+## Volume 15: Biophilic Architecture & Indoor Environmental Physics in Commercial Living Spaces
+<a id="chapter-15-article-15-plant-interior-biophilic-design"></a>
+- **EN Monograph**: [../articles/article-15-plant-interior-biophilic-design.html](../articles/article-15-plant-interior-biophilic-design.html)
+- **DE Edition**: [../articles/de/article-15-innenraumbegruenung-biophiles-design-lichtkompensationspunkt-voc.html](../articles/de/article-15-innenraumbegruenung-biophiles-design-lichtkompensationspunkt-voc.html)
+- **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
+- **Synopsis**: Architectural integration of living vegetation in high-performance buildings: daylight factor modeling, sub-irrigation hydraulics, particulate matter.
 
----
+## Volume 16: German Master Grower (Gärtnermeister) Greenhouse Climate Steering Strategy for Solanaceae
+<a id="chapter-16-article-16-german-meister-greenhouse-climate"></a>
+- **EN Monograph**: [../articles/article-16-german-meister-greenhouse-climate.html](../articles/article-16-german-meister-greenhouse-climate.html)
+- **DE Edition**: [../articles/de/article-16-gaertnermeister-gewaechshaus-klimasteuerung-taupunkt-heizrohr.html](../articles/de/article-16-gaertnermeister-gewaechshaus-klimasteuerung-taupunkt-heizrohr.html)
+- **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
+- **Synopsis**: Advanced European greenhouse climate steering: 24-hour temperature integration (RTI), pre-night temperature drops (DIP), and 3-way mixing valve heating.
 
-## Chapter 27: Predictive Biomass Accumulation & Light Use Efficiency (LUE) Under Dynamic DLI
-*Anchor ID*: `<a id="chapter-27-article-27-crop-yield-biomass-light-use-efficiency"></a>`  
-*Original Source*: [`articles/article-27-crop-yield-biomass-light-use-efficiency.html`](../articles/article-27-crop-yield-biomass-light-use-efficiency.html)  
+## Volume 28: Greenhouse CO₂ Enrichment Kinetics & Economic Thresholds under Dynamic Ventilation
+<a id="chapter-28-article-28-greenhouse-co2-enrichment-economics"></a>
+- **EN Monograph**: [../articles/article-28-greenhouse-co2-enrichment-economics.html](../articles/article-28-greenhouse-co2-enrichment-economics.html)
+- **DE Edition**: [../articles/de/article-28-gewaechshaus-co2-duengung-oekonomie.html](../articles/de/article-28-gewaechshaus-co2-duengung-oekonomie.html)
+- **JA Edition**: [../articles/ja/article-28-greenhouse-co2-enrichment-economics-jp.html](../articles/ja/article-28-greenhouse-co2-enrichment-economics-jp.html)
+- **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
+- **Synopsis**: Industrial analysis of pure liquid CO2 vs CHP flue gas dosing, ventilation exchange losses, and net economic ROI thresholds in commercial horticulture.
 
-### 🎯 Core Engineering Synopsis
-Commercial greenhouse yield forecasting based on cumulative DLI, Light Use Efficiency (LUE = 2.8 - 3.4 g/mol), and Harvest Index (HI) modeling.
+## Volume 36: Combined Heat & Power (CHP) Flue Gas SCR Denitrification & Safe CO₂ Dosing
+<a id="chapter-36-article-36-chp-flue-gas-scr-denitrification"></a>
+- **EN Monograph**: [../articles/article-36-chp-flue-gas-scr-denitrification.html](../articles/article-36-chp-flue-gas-scr-denitrification.html)
+- **DE Edition**: [../articles/de/article-36-bhkw-rauchgas-scr-entstickung.html](../articles/de/article-36-bhkw-rauchgas-scr-entstickung.html)
+- **JA Edition**: [../articles/ja/article-36-chp-flue-gas-scr-denitrification-jp.html](../articles/ja/article-36-chp-flue-gas-scr-denitrification-jp.html)
+- **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
+- **Synopsis**: Industrial engineering analysis of gas engine Selective Catalytic Reduction (SCR), stoichiometric urea injection, NOx < 5 ppm elimination, and automated climate control.
 
-### 🔬 Key Technical Sections
-- 1. The Fundamental Biomass Equation
-- 2. Interactive Biomass Forecaster
+## Volume 37: Hot Water Buffer Tank Stratification & Thermal Energy Storage Sizing
+<a id="chapter-37-article-37-thermal-buffer-tank-stratification-sizing"></a>
+- **EN Monograph**: [../articles/article-37-thermal-buffer-tank-stratification-sizing.html](../articles/article-37-thermal-buffer-tank-stratification-sizing.html)
+- **DE Edition**: [../articles/de/article-37-waermepufferspeicher-schichtung-auslegung.html](../articles/de/article-37-waermepufferspeicher-schichtung-auslegung.html)
+- **JA Edition**: [../articles/ja/article-37-thermal-buffer-tank-stratification-sizing-jp.html](../articles/ja/article-37-thermal-buffer-tank-stratification-sizing-jp.html)
+- **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
+- **Synopsis**: Industrial engineering analysis of greenhouse hot-water thermal buffer tanks, thermocline Richardson number stability, and night peak heating discharge.
 
-### 🛠️ Paired Interactive Lab Calculators
-- [Crop Yield Biomass Dli Forecaster](../tools/crop-yield-biomass-dli-forecaster.html)
+## Volume 43: Greenhouse Structural Standards (EN 13031-1 & NEN 3859): Wind, Snow & Crop Loads
+<a id="chapter-43-article-43-greenhouse-structural-standards-en13031"></a>
+- **EN Monograph**: [../articles/article-43-greenhouse-structural-standards-en13031.html](../articles/article-43-greenhouse-structural-standards-en13031.html)
+- **DE Edition**: [../articles/de/article-43-gewaechshaus-tragwerksplanung-din-en-13031.html](../articles/de/article-43-gewaechshaus-tragwerksplanung-din-en-13031.html)
+- **JA Edition**: [../articles/ja/article-43-greenhouse-structural-standards-en13031-jp.html](../articles/ja/article-43-greenhouse-structural-standards-en13031-jp.html)
+- **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
+- **Synopsis**: Civil engineering analysis of commercial Venlo greenhouse structural design according to EN 13031-1 and NEN 3859, wind suction (qw), snow drift, and automated climate control.
 
----
+## Volume 45: AgriQuant: Open-Source Greenhouse Energy & Commodity Quant Terminal
+<a id="chapter-45-article-45-agriquant-energy-commodity-quant-terminal"></a>
+- **EN Monograph**: [../articles/article-45-agriquant-energy-commodity-quant-terminal.html](../articles/article-45-agriquant-energy-commodity-quant-terminal.html)
+- **DE Edition**: [../articles/de/article-45-agriquant-energie-rohstoff-quant-terminal.html](../articles/de/article-45-agriquant-energie-rohstoff-quant-terminal.html)
+- **JA Edition**: [../articles/ja/article-45-agriquant-energy-commodity-quant-terminal-jp.html](../articles/ja/article-45-agriquant-energy-commodity-quant-terminal-jp.html)
+- **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
+- **Synopsis**: Open-source financial engineering and energy analytics terminal for commercial greenhouses. Simulates Dutch TTF natural gas spark spreads, electricity.
 
-## Chapter 31: High-Pressure (70 bar) Fogging Physics & Sauter Droplet Evaporative Cooling
-*Anchor ID*: `<a id="chapter-31-article-31-high-pressure-fogging-droplet-physics"></a>`  
-*Original Source*: [`articles/article-31-high-pressure-fogging-droplet-physics.html`](../articles/article-31-high-pressure-fogging-droplet-physics.html)  
+## Volume 46: OpenCEA: Open-Source Python Micro-Framework for Greenhouse Physics
+<a id="chapter-46-article-46-opencea-python-micro-framework-release"></a>
+- **EN Monograph**: [../articles/article-46-opencea-python-micro-framework-release.html](../articles/article-46-opencea-python-micro-framework-release.html)
+- **DE Edition**: [../articles/de/article-46-opencea-python-framework-veroeffentlichung.html](../articles/de/article-46-opencea-python-framework-veroeffentlichung.html)
+- **JA Edition**: [../articles/ja/article-46-opencea-python-micro-framework-release-jp.html](../articles/ja/article-46-opencea-python-micro-framework-release-jp.html)
+- **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
+- **Synopsis**: Release of OpenCEA, an open-source Python micro-framework for commercial greenhouse physics, crop photobiology, substrate hydrodynamics, and climate.
 
-### 🎯 Core Engineering Synopsis
-Industrial engineering analysis of 70 bar high-pressure fogging, Sauter Mean Diameter (D32 < 10µm), flash evaporative cooling, and VPD stabilization in commercial greenhouses.
+## Volume 48: Commercial Greenhouse 10-Year CapEx, OpEx & IRR Investment Modeling
+<a id="chapter-48-article-48-greenhouse-capex-opex-irr-npv-financial-model"></a>
+- **EN Monograph**: [../articles/article-48-greenhouse-capex-opex-irr-npv-financial-model.html](../articles/article-48-greenhouse-capex-opex-irr-npv-financial-model.html)
+- **DE Edition**: [../articles/de/article-48-gewaechshaus-capex-opex-irr-investitionsrechnung.html](../articles/de/article-48-gewaechshaus-capex-opex-irr-investitionsrechnung.html)
+- **JA Edition**: [../articles/ja/article-48-greenhouse-capex-opex-irr-npv-financial-model-jp.html](../articles/ja/article-48-greenhouse-capex-opex-irr-npv-financial-model-jp.html)
+- **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
+- **Synopsis**: Bankable financial feasibility analysis for high-tech commercial Venlo glasshouse projects: Turnkey CapEx (180-320/m²), Discounted Cash Flows.
 
-### 🔬 Key Technical Sections
-- 1. The d² Evaporation Law
-- 2. Interactive Fogging Engine
+## Volume 52: Aquifer Thermal Energy Storage (ATES) & Industrial Heat Pumps in Dutch Venlo Greenhouses
+<a id="chapter-52-article-52-aquifer-thermal-energy-storage-ates-heat-pump"></a>
+- **EN Monograph**: [../articles/article-52-aquifer-thermal-energy-storage-ates-heat-pump.html](../articles/article-52-aquifer-thermal-energy-storage-ates-heat-pump.html)
+- **DE Edition**: [../articles/de/article-52-aquifer-waermespeicher-ates-waermepumpen.html](../articles/de/article-52-aquifer-waermespeicher-ates-waermepumpen.html)
+- **JA Edition**: [../articles/ja/article-52-aquifer-thermal-energy-storage-ates-heat-pump-jp.html](../articles/ja/article-52-aquifer-thermal-energy-storage-ates-heat-pump-jp.html)
+- **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
+- **Synopsis**: Thermodynamic modeling of Aquifer Thermal Energy Storage (ATES / WKO) doublet systems, seasonal heat recovery efficiency, and high-temperature.
 
-### 🛠️ Paired Interactive Lab Calculators
-- [Fogging Nozzle Droplet Evaporative Cooling Engine](../tools/fogging-nozzle-droplet-evaporative-cooling-engine.html)
+## Volume 53: Biomass CHP Flue Gas SCR Cleaning & Biogenic CO2 Direct Enrichment in Venlo Glasshouses
+<a id="chapter-53-article-53-biomass-chp-scr-co2-recovery-horticulture"></a>
+- **EN Monograph**: [../articles/article-53-biomass-chp-scr-co2-recovery-horticulture.html](../articles/article-53-biomass-chp-scr-co2-recovery-horticulture.html)
+- **DE Edition**: [../articles/de/article-53-biomasse-bhkw-scr-co2-rueckgewinnung-gartenbau.html](../articles/de/article-53-biomasse-bhkw-scr-co2-rueckgewinnung-gartenbau.html)
+- **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
+- **Synopsis**: Engineering thermodynamics of biomass combined heat and power (CHP), Selective Catalytic Reduction (SCR) DeNOx, ethylene scrubbers, and safe biogenic.
 
----
+## Volume 58: Dynamic CO2 Enrichment Kinetics & RuBisCO Carboxylation Thermodynamics in High-Wire Venlo Greenhouses
+<a id="chapter-58-article-58-dynamic-co2-enrichment-kinetics-rubisco-carboxylation-venlo"></a>
+- **EN Monograph**: [../articles/article-58-dynamic-co2-enrichment-kinetics-rubisco-carboxylation-venlo.html](../articles/article-58-dynamic-co2-enrichment-kinetics-rubisco-carboxylation-venlo.html)
+- **DE Edition**: [../articles/de/article-58-dynamic-co2-enrichment-kinetics-rubisco-carboxylation-venlo.html](../articles/de/article-58-dynamic-co2-enrichment-kinetics-rubisco-carboxylation-venlo.html)
+- **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
+- **Synopsis**: Engineering biophysics and microeconomic modeling of dynamic CO2 enrichment, RuBisCO carboxylation kinetics (Farquhar FvCB model), stomatal conductance.
 
-## Chapter 36: Combined Heat & Power (CHP) Flue Gas SCR Denitrification & Safe CO₂ Dosing
-*Anchor ID*: `<a id="chapter-36-article-36-chp-flue-gas-scr-denitrification"></a>`  
-*Original Source*: [`articles/article-36-chp-flue-gas-scr-denitrification.html`](../articles/article-36-chp-flue-gas-scr-denitrification.html)  
+## Volume 59: EPEX Spot Negative Day-Ahead Arbitrage, Hybrid BESS Sizing & Power-to-Heat Thermal Buffering in Modern European Venlo Greenhouses
+<a id="chapter-59-article-59-epex-spot-negative-pricing-bess-power-to-heat-greenhouse"></a>
+- **EN Monograph**: [../articles/article-59-epex-spot-negative-pricing-bess-power-to-heat-greenhouse.html](../articles/article-59-epex-spot-negative-pricing-bess-power-to-heat-greenhouse.html)
+- **DE Edition**: [../articles/de/article-59-epex-spot-negativstrompreise-bess-power-to-heat-elektrokessel-venlo.html](../articles/de/article-59-epex-spot-negativstrompreise-bess-power-to-heat-elektrokessel-venlo.html)
+- **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
+- **Synopsis**: Engineering thermodynamics and quantitative energy arbitrage: electrode boilers, heat pump integration, atmospheric thermocline buffer tanks, and BESS.
 
-### 🎯 Core Engineering Synopsis
-Industrial engineering analysis of gas engine Selective Catalytic Reduction (SCR), stoichiometric urea injection, NOx < 5 ppm elimination, and pure CO2 dosing in commercial greenhouses.
+## Volume 67: Deep Geothermal Heating & Industrial Heat Pumps in Commercial Venlo Greenhouses: German Meister Engineering (VDI 4640 / DIN EN 13031) vs. US DOE & USDA REAP Grants
+<a id="chapter-67-article-67-geothermal-district-heating-industrial-heat-pumps-greenhouse"></a>
+- **EN Monograph**: [../articles/article-67-geothermal-district-heating-industrial-heat-pumps-greenhouse.html](../articles/article-67-geothermal-district-heating-industrial-heat-pumps-greenhouse.html)
+- **DE Edition**: [../articles/de/article-67-tiefengeothermie-fernwaerme-grosswaermepumpen-gewaechshaus-dekarbonisierung.html](../articles/de/article-67-tiefengeothermie-fernwaerme-grosswaermepumpen-gewaechshaus-dekarbonisierung.html)
+- **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
+- **Synopsis**: Technical engineering guide to deep geothermal doublets, industrial heat pumps (R717/R1233zd(E)), VDI 4640 / DIN EN 13031 standards, root-zone.
 
-### 🔬 Key Technical Sections
-- 1. The Stoichiometric Catalytic Reaction
-- 2. Interactive SCR Dosing Calculator
+## Volume 68: Direct Air Capture (DAC) & Low-Temperature Solid-Amine CO₂ Desorption in Decarbonized Venlo Greenhouses: Resolving the Carbon Deficit via Heat Pump Thermal Cascading & 45Q Grants
+<a id="chapter-68-article-68-direct-air-capture-solid-amine-co2-greenhouse-heat-pumps"></a>
+- **EN Monograph**: [../articles/article-68-direct-air-capture-solid-amine-co2-greenhouse-heat-pumps.html](../articles/article-68-direct-air-capture-solid-amine-co2-greenhouse-heat-pumps.html)
+- **DE Edition**: [../articles/de/article-68-direct-air-capture-festamin-co2-desorption-waermepumpen-gewaechshaus.html](../articles/de/article-68-direct-air-capture-festamin-co2-desorption-waermepumpen-gewaechshaus.html)
+- **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
+- **Synopsis**: Technical guide to solid-amine TVSA Direct Air Capture (DAC) integrated with heat pump low-grade thermal waste heat (65°C–80°C) for fossil-free Venlo.
 
-### 🛠️ Paired Interactive Lab Calculators
-- [Chp Flue Gas Scr Urea Dosing Calculator](../tools/chp-flue-gas-scr-urea-dosing-calculator.html)
-
----
-
-## Chapter 42: Substrate Matric Potential ($\Psi_m$), $pF$ Water Retention Curves & van Genuchten Physics
-*Anchor ID*: `<a id="chapter-42-article-42-substrate-matric-potential-pf-curves"></a>`  
-*Original Source*: [`articles/article-42-substrate-matric-potential-pf-curves.html`](../articles/article-42-substrate-matric-potential-pf-curves.html)  
-
-### 🎯 Core Engineering Synopsis
-Industrial agricultural physics analysis of substrate matric suction potential (Psi_m), pF retention curves, van Genuchten hydraulic models, and plant available water in commercial rockwool and coir.
-
-### 🔬 Key Technical Sections
-- 1. The van Genuchten Soil Water Retention Curve
-- 2. Interactive Matric Potential Engine
-
-### 🛠️ Paired Interactive Lab Calculators
-- [Soil Matrix Water Potential Matric Suction Calculator](../tools/soil-matrix-water-potential-matric-suction-calculator.html)
-
----
-
-## Chapter 47: Computer Vision & Multispectral Disease Diagnostics in Protected Cropping
-*Anchor ID*: `<a id="chapter-47-article-47-computer-vision-crop-disease-diagnostics"></a>`  
-*Original Source*: [`articles/article-47-computer-vision-crop-disease-diagnostics.html`](../articles/article-47-computer-vision-crop-disease-diagnostics.html)  
-
-### 🎯 Core Engineering Synopsis
-Computer vision edge algorithms for early detection of Botrytis cinerea, iron chlorosis, and foliar necrotic lesions in commercial high-wire greenhouses.
-
-### 🔬 Key Technical Sections
-- 1. Hue-Saturation-Value (HSV) Lesion Extraction
-- 2. Interactive Diagnostic Tool
-
-### 🛠️ Paired Interactive Lab Calculators
-- [Agrivision Ai Crop Disease Analyzer](../tools/agrivision-ai-crop-disease-analyzer.html)
-
----
-
-## Chapter 51: Autonomous Greenhouse AI: Reinforcement Learning & Model Predictive Control
-*Anchor ID*: `<a id="chapter-51-article-51-autonomous-greenhouse-ai-mpc-reinforcement-learning"></a>`  
-*Original Source*: [`articles/article-51-autonomous-greenhouse-ai-mpc-reinforcement-learning.html`](../articles/article-51-autonomous-greenhouse-ai-mpc-reinforcement-learning.html)  
-
-### 🎯 Core Engineering Synopsis
-Autonomous climate computer optimization using Reinforcement Learning and Model Predictive Control (MPC). Optimizes 24h temperature trajectories and cuts heating energy by 22.4%.
-
-### 🔬 Key Technical Sections
-- 1. The MPC Cost Objective Function
-- 2. Interactive MPC Simulator
-
-### 🛠️ Paired Interactive Lab Calculators
-- [Greenhouse Autonomous Ai Climate Controller](../tools/greenhouse-autonomous-ai-climate-controller.html)
-
----
-
-## Chapter 55: Nutrient Uptake Concentration Factor (UCF) in Recirculating Hydroponics: Closed-Loop Mass Balance & Ion Dynamics
-*Anchor ID*: `<a id="chapter-55-article-55-nutrient-uptake-concentration-factor-recirculating-hydroponics"></a>`  
-*Original Source*: [`articles/article-55-nutrient-uptake-concentration-factor-recirculating-hydroponics.html`](../articles/article-55-nutrient-uptake-concentration-factor-recirculating-hydroponics.html)  
-
-### 🎯 Core Engineering Synopsis
-Engineering mass balance formulation of nutrient uptake concentration factors (UCF), ion accumulation kinetics, sodium salinity limits, and optimal leaching fractions in commercial closed-loop CEA hydroponics.
-
-### 🔬 Key Technical Sections
-- 1. The Physical Concept of Uptake Concentration Factor (UCF)
-- 2. Mathematical Mass Balance Formulation of the Root Zone
-- 3. The Sodium Accumulation Crisis in Closed-Loop Facilities
-- 4. Practical Engineering Strategies for Closed-Loop Recirculation
-- 5. Interactive Engineering Calculators & Simulators
-
-### 🛠️ Paired Interactive Lab Calculators
-- [Closed Loop Reverse Osmosis Desalination Energy Optimizer](../tools/closed-loop-reverse-osmosis-desalination-energy-optimizer.html)
-- [Hydroponic Nutrient Solution Calculator](../tools/hydroponic-nutrient-solution-calculator.html)
-- [Nutrient Uptake Concentration Factor Analyzer](../tools/nutrient-uptake-concentration-factor-analyzer.html)
+## Volume 77: High-Tech Greenhouse Postharvest Intralogistics & Cold Chain Engineering
+<a id="chapter-77-article-77-greenhouse-postharvest-intralogistics-cold-chain-quality"></a>
+- **EN Monograph**: [../articles/article-77-greenhouse-postharvest-intralogistics-cold-chain-quality.html](../articles/article-77-greenhouse-postharvest-intralogistics-cold-chain-quality.html)
+- **Paired Live Simulator**: [`tools/psychrometric-mollier-greenhouse-dehumidifier.html`](../tools/psychrometric-mollier-greenhouse-dehumidifier.html)
+- **Synopsis**: Technical monograph on modern CEA postharvest engineering: AGV/FTS fleet intralogistics, forced-air precooling thermodynamics (12–15°C), chilling.
 
 ---
 
-# Part IV: Crop Steering, Plant Physiology & Transport Models
+# Part VI: Transatlantic & Global CEA Agricultural Subsidy Playbooks
 
-## Chapter 06: Molar Stoichiometry & Sonneveld/Steiner Ion Balancing (meq/L) in Closed-Loop Hydroponics
-*Anchor ID*: `<a id="chapter-06-article-06-hydroponic-nutrient-formulation"></a>`  
-*Original Source*: [`articles/article-06-hydroponic-nutrient-formulation.html`](../articles/article-06-hydroponic-nutrient-formulation.html)  
+## Volume 57: The 8% Out-of-Pocket Playbook: Stacking USDA REAP, CDFA SWEEP, and IOU Utility Rebates for California CEA Greenhouses
+<a id="chapter-57-article-57-california-cea-greenhouse-electrification-rebate-grant-stacking"></a>
+- **EN Monograph**: [../articles/article-57-california-cea-greenhouse-electrification-rebate-grant-stacking.html](../articles/article-57-california-cea-greenhouse-electrification-rebate-grant-stacking.html)
+- **DE Edition**: [../articles/de/article-57-gewaechshaus-energieeffizienz-foerderung-ble-kfw-din13031.html](../articles/de/article-57-gewaechshaus-energieeffizienz-foerderung-ble-kfw-din13031.html)
+- **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
+- **Synopsis**: Engineering and grant stacking playbook for California commercial greenhouses, nurseries, and vertical farms to achieve up to 92% non-dilutive capital.
 
-### 🎯 Core Engineering Synopsis
-Precision closed-loop hydroponic nutrient balancing: milliequivalent calculations, Steiner cation-anion stoichiometry, salt solubility products, and rootzone pH/EC regulation.
+## Volume 62: 2026-2027 US 50-State Agricultural Grant & Subsidy Playbook: Non-Dilutive Capital for Smart Farms & CEA Growers
+<a id="chapter-62-article-62-us-50-state-agricultural-grant-playbook"></a>
+- **EN Monograph**: [../articles/article-62-us-50-state-agricultural-grant-playbook.html](../articles/article-62-us-50-state-agricultural-grant-playbook.html)
+- **DE Edition**: [../articles/de/article-62-us-50-bundesstaaten-agrarfoerderung-eqip-reap-cea-leitfaden.html](../articles/de/article-62-us-50-bundesstaaten-agrarfoerderung-eqip-reap-cea-leitfaden.html)
+- **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
+- **Synopsis**: Comprehensive 50-state commercial agricultural subsidy and grant playbook. How US farmers, CEA greenhouse operators, and agribusinesses secure up to 90% CAPEX recovery via USDA REAP, NRCS EQIP, state grants, and utility rebates.
 
-### 🔬 Key Technical Sections
-- 1. Foundations of Closed-Loop Fertigation: Milliequivalent (meq/L) Concentration Dynamics
-- 2. Anion-Cation Electrochemical Equivalence & Steiner Recipe Formulations
-- 3. Substrate Rootzone pH Drift, Antagonistic Ion Competition, and EC Accumulation
+## Volume 63: Precision Irrigation & Water Grants in Florida & Texas: FDACS BMP Cost-Share and TWDB Funding Guide
+<a id="chapter-63-article-63-florida-texas-agricultural-water-irrigation-grants"></a>
+- **EN Monograph**: [../articles/article-63-florida-texas-agricultural-water-irrigation-grants.html](../articles/article-63-florida-texas-agricultural-water-irrigation-grants.html)
+- **DE Edition**: [../articles/de/article-63-praezisionsbewaesserung-wassermanagement-agrarsubventionen-florida-texas-vergleich.html](../articles/de/article-63-praezisionsbewaesserung-wassermanagement-agrarsubventionen-florida-texas-vergleich.html)
+- **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
+- **Synopsis**: Technical guide for Florida and Texas commercial agricultural producers to secure up to 87.5% cost-share for precision micro-irrigation, subsurface.
 
----
+## Volume 64: Midwest & Corn Belt Soil Health Grants: Iowa WQI, Ohio H2Ohio, and Minnesota AGRI Programs
+<a id="chapter-64-article-64-midwest-corn-belt-water-quality-soil-health-subsidies"></a>
+- **EN Monograph**: [../articles/article-64-midwest-corn-belt-water-quality-soil-health-subsidies.html](../articles/article-64-midwest-corn-belt-water-quality-soil-health-subsidies.html)
+- **DE Edition**: [../articles/de/article-64-wasserqualitaet-bodenfruchtbarkeit-denitrifikationsbioreaktor-agrarfoerderung-vergleich.html](../articles/de/article-64-wasserqualitaet-bodenfruchtbarkeit-denitrifikationsbioreaktor-agrarfoerderung-vergleich.html)
+- **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
+- **Synopsis**: Technical guide for Midwest producers to access 75% to 100% grant funding for NRCS CPS 605 woodchip nitrate bioreactors, saturated buffers, and manure injection.
 
-## Chapter 10: Commercial Vertical Farming HVAC Sizing: Dehumidification Latent Loads & Microclimate Fluid Dynamics
-*Anchor ID*: `<a id="chapter-10-article-10-vertical-farm-hvac-design"></a>`  
-*Original Source*: [`articles/article-10-vertical-farm-hvac-design.html`](../articles/article-10-vertical-farm-hvac-design.html)  
+## Volume 65: Greenhouse Energy Efficiency & Thermal Screen Grants: Oregon ETO, Washington WSDA, and NYSERDA Guide
+<a id="chapter-65-article-65-pnw-northeast-cea-greenhouse-energy-grants"></a>
+- **EN Monograph**: [../articles/article-65-pnw-northeast-cea-greenhouse-energy-grants.html](../articles/article-65-pnw-northeast-cea-greenhouse-energy-grants.html)
+- **DE Edition**: [../articles/de/article-65-gewaechshaus-energieeffizienz-energieschirme-agrarfoerderung-vergleich.html](../articles/de/article-65-gewaechshaus-energieeffizienz-energieschirme-agrarfoerderung-vergleich.html)
+- **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
+- **Synopsis**: Technical guide for commercial greenhouse and CEA nursery growers in Oregon, Washington, New York, and Massachusetts to capture up to 85% grant funding.
 
-### 🎯 Core Engineering Synopsis
-HVAC and psychrometric dehumidification engineering for commercial indoor vertical farms: calculating sensible vs latent cooling loads, airflow velocity, and rack boundary layer dissipation.
+## Volume 66: California SWEEP vs. Texas TWDB Agricultural Water Grants: Precision Irrigation & Cost-Share Architecture
+<a id="chapter-66-article-66-california-sweep-vs-texas-twdb-agricultural-water-grants"></a>
+- **EN Monograph**: [../articles/article-66-california-sweep-vs-texas-twdb-agricultural-water-grants.html](../articles/article-66-california-sweep-vs-texas-twdb-agricultural-water-grants.html)
+- **DE Edition**: [../articles/de/article-66-kalifornien-sweep-vs-texas-twdb-bewaesserungsfoerderung-pumpeffizienz-vergleich.html](../articles/de/article-66-kalifornien-sweep-vs-texas-twdb-bewaesserungsfoerderung-pumpeffizienz-vergleich.html)
+- **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
+- **Synopsis**: Technical comparison of California CDFA SWEEP ($200,000 cap) and Texas TWDB Agricultural Water Conservation Grants ($500,000 cap). Detailed engineering.
 
-### 🔬 Key Technical Sections
-- 1. Core Pillars of Indoor Vertical Farming HVAC: Latent Dehumidification & Microclimate Airflow
-- 2. Mathematical Formulation of Daily Canopy Latent Transpiration Loads
-- 3. Rack Air Velocity Sizing (0.3–0.5 m/s) to Eliminate Thermal Micro-Stratification
+## Volume 70: Nanobubble Oxy-Fertigation & Cavitation Physics in Closed-Loop Venlo Hydroponics: Dissolved Oxygen Supersaturation (DO > 30 mg/L), Pythium Suppression, and Rootzone Respiration Kinetics
+<a id="chapter-70-article-70-nanobubble-dissolved-oxygen-pythium-suppression-rockwool"></a>
+- **EN Monograph**: [../articles/article-70-nanobubble-dissolved-oxygen-pythium-suppression-rockwool.html](../articles/article-70-nanobubble-dissolved-oxygen-pythium-suppression-rockwool.html)
+- **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
+- **Synopsis**: Technical whitepaper on nanobubble oxy-fertigation in high-wire Venlo greenhouses: Young-Laplace internal bubble pressure, zeta potential stability.
 
----
-
-## Chapter 15: Biophilic Architecture & Indoor Environmental Physics in Commercial Living Spaces
-*Anchor ID*: `<a id="chapter-15-article-15-plant-interior-biophilic-design"></a>`  
-*Original Source*: [`articles/article-15-plant-interior-biophilic-design.html`](../articles/article-15-plant-interior-biophilic-design.html)  
-
-### 🎯 Core Engineering Synopsis
-Architectural integration of living vegetation in high-performance buildings: daylight factor modeling, sub-irrigation hydraulics, particulate matter filtration, and acoustic damping.
-
-### 🔬 Key Technical Sections
-- 1. Biophysical Foundations of Human Affinity for Living Nature: Biophilic Design
-- 2. Photometric Lighting Tiers & Species Selection Modules (Lux, PPFD, Spectral Quality)
-- 3. Automated Sub-Irrigation Hydraulics, Modular Living Wall BOM, and Maintenance Engineering
-
----
-
-## Chapter 18: Closed-Loop Hydroponic Drain Water Disinfection: UV-C, Ozone, Heat & Ultrafiltration
-*Anchor ID*: `<a id="chapter-18-article-18-recirculating-nutrient-sterilization"></a>`  
-*Original Source*: [`articles/article-18-recirculating-nutrient-sterilization.html`](../articles/article-18-recirculating-nutrient-sterilization.html)  
-
-### 🎯 Core Engineering Synopsis
-Engineering recirculating hydroponic drain water disinfection: UV-C irradiance dosage (mJ/cm2), ozone oxidation redox potential (ORP), and ultrafiltration membrane sizing.
-
-### 🔬 Key Technical Sections
-- 1. The Closed-Loop Recirculation Mandate
-- 2. Disinfection Modalities & Engineering Parameters
-- 3. Iron Chelate Preservation Strategies
-
----
-
-## Chapter 22: HPS vs. LED Supplemental Lighting Physics: Photon Efficacy, Far-Red Kinetics & Greenhouse Heat Balance
-*Anchor ID*: `<a id="chapter-22-article-22-hps-vs-led-supplemental-lighting"></a>`  
-*Original Source*: [`articles/article-22-hps-vs-led-supplemental-lighting.html`](../articles/article-22-hps-vs-led-supplemental-lighting.html)  
-
-### 🎯 Core Engineering Synopsis
-Comparative biophysics of High-Pressure Sodium (HPS) and LED supplemental fixtures: PAR photon efficacy (µmol/J), Far-Red Emerson enhancement, and thermodynamic heating integration in Venlo greenhouses.
-
-### 🔬 Key Technical Sections
-- 1. Electrical Photon Efficacy ($\eta_{photon}$) & Spectral Distribution
-- 2. Far-Red (730 nm) Kinetics & The Emerson Enhancement Effect
-- 3. Greenhouse Thermodynamic Heat Balance Disruption
-- 4. Economic Payback & Hybrid Lighting Architecture
-
-### 📐 Governing Biophysical Equations
-$$
-\eta_{photon} = \frac{\Phi_{PPF}}{P_{elec}} \quad [\mu\text{mol} \cdot \text{J}^{-1}]
-$$
-$$
-Y_{photosynthesis}(\text{Combined } \lambda_{660} + \lambda_{730}) > Y(\lambda_{660}) + Y(\lambda_{730})
-$$
+## Volume 78: EU Commercial Greenhouse Energy Auditing (DIN V 18599 / EN 13031-1), German Federal BLE 40% Decarbonization Grants, and 10-Year Hofnachfolge Equity Succession Engineering
+<a id="chapter-78-article-78-eu-greenhouse-energy-audit-din-18599-ble-grant-hofnachfolge"></a>
+- **EN Monograph**: [../articles/article-78-eu-greenhouse-energy-audit-din-18599-ble-grant-hofnachfolge.html](../articles/article-78-eu-greenhouse-energy-audit-din-18599-ble-grant-hofnachfolge.html)
+- **Paired Live Simulator**: [`tools/eu-greenhouse-energy-hofnachfolge-roi-simulator.html`](../tools/eu-greenhouse-energy-hofnachfolge-roi-simulator.html)
+- **Synopsis**: Technical engineering and agri-finance monograph on EU commercial greenhouse energy auditing (DIN V 18599 / EN 13031-1), German Federal BLE 40% decarbonization grants, BEHG/ETS-2 carbon pricing, and 10-year Hofnachfolge farm equity succession via Ertragspacht and Stille Beteiligung.
 
 ---
-
-## Chapter 26: Greenhouse Heating Load Modeling & Thermal Screen Dynamics under DIN V 18599 Standards
-*Anchor ID*: `<a id="chapter-26-article-26-greenhouse-heating-load-din-v-18599"></a>`  
-*Original Source*: [`articles/article-26-greenhouse-heating-load-din-v-18599.html`](../articles/article-26-greenhouse-heating-load-din-v-18599.html)  
-
-### 🎯 Core Engineering Synopsis
-Comprehensive engineering analysis of peak heat transmission, thermal screen radiative resistance, and pipe rail hydraulics in commercial Venlo greenhouses.
-
-### 🔬 Key Technical Sections
-- 1. The Four Component Transmission Model
-- 2. Interactive Sizing Tool
-
-### 🛠️ Paired Interactive Lab Calculators
-- [Greenhouse Heating Load Thermal Screen Calculator](../tools/greenhouse-heating-load-thermal-screen-calculator.html)
-
----
-
-## Chapter 30: Rockwool Slab Hydrodynamics, TDR Moisture Sensors & Drainage EC Balancing
-*Anchor ID*: `<a id="chapter-30-article-30-rockwool-slab-tdr-moisture-drain-ec"></a>`  
-*Original Source*: [`articles/article-30-rockwool-slab-tdr-moisture-drain-ec.html`](../articles/article-30-rockwool-slab-tdr-moisture-drain-ec.html)  
-
-### 🎯 Core Engineering Synopsis
-Engineering analysis of volumetric water content (VWC %), overnight dry-down kinetics, and drainage EC balancing in commercial rockwool hydroponics.
-
-### 🔬 Key Technical Sections
-- 1. The Overnight Dry-Down Rule
-- 2. Interactive Substrate Optimizer
-
-### 🛠️ Paired Interactive Lab Calculators
-- [Rockwool Substrate Tdr Moisture Drain Optimizer](../tools/rockwool-substrate-tdr-moisture-drain-optimizer.html)
-
----
-
-## Chapter 35: Computational Fluid Dynamics (CFD) of Horizontal Air Flow (HAF) Fans
-*Anchor ID*: `<a id="chapter-35-article-35-greenhouse-haf-fan-cfd-modeling"></a>`  
-*Original Source*: [`articles/article-35-greenhouse-haf-fan-cfd-modeling.html`](../articles/article-35-greenhouse-haf-fan-cfd-modeling.html)  
-
-### 🎯 Core Engineering Synopsis
-Industrial CFD modeling of Horizontal Air Flow (HAF) fan spacing, jet velocity decay, Bernoulli air entrainment, and canopy boundary layer destratification.
-
-### 🔬 Key Technical Sections
-- 1. The Navier-Stokes Jet Entrainment Equation
-- 2. Interactive HAF CFD Engine
-
-### 🛠️ Paired Interactive Lab Calculators
-- [Greenhouse Microclimate Cfd Air Velocity Optimizer](../tools/greenhouse-microclimate-cfd-air-velocity-optimizer.html)
-
----
-
-## Chapter 41: The Biochemical Farquhar (FvCB) Photosynthesis Model & CO₂ Dosing Dynamics
-*Anchor ID*: `<a id="chapter-41-article-41-farquhar-photosynthesis-fvcb-co2"></a>`  
-*Original Source*: [`articles/article-41-farquhar-photosynthesis-fvcb-co2.html`](../articles/article-41-farquhar-photosynthesis-fvcb-co2.html)  
-
-### 🎯 Core Engineering Synopsis
-Industrial plant physiology analysis of the Farquhar-von Caemmerer-Berry (FvCB) model, Rubisco kinetics (Vcmax), electron transport (Jmax), and CO2 enrichment saturation kinetics.
-
-### 🔬 Key Technical Sections
-- 1. The FvCB Mathematical Formulation
-- 2. Interactive Photosynthesis Simulator
-
-### 🛠️ Paired Interactive Lab Calculators
-- [Co2 Enrichment Leaf Photosynthesis Farquhar Calculator](../tools/co2-enrichment-leaf-photosynthesis-farquhar-calculator.html)
-
----
-
-## Chapter 46: OpenCEA: Open-Source Python Micro-Framework for Greenhouse Physics
-*Anchor ID*: `<a id="chapter-46-article-46-opencea-python-micro-framework-release"></a>`  
-*Original Source*: [`articles/article-46-opencea-python-micro-framework-release.html`](../articles/article-46-opencea-python-micro-framework-release.html)  
-
-### 🎯 Core Engineering Synopsis
-Release of OpenCEA, an open-source Python micro-framework for commercial greenhouse physics, crop photobiology, substrate hydrodynamics, and climate automation.
-
-### 🔬 Key Technical Sections
-- 1. Pip Install & Code Architecture
-- 2. Interactive Web Playground
-
-### 🛠️ Paired Interactive Lab Calculators
-- [Opencea Python Micro Framework Playground](../tools/opencea-python-micro-framework-playground.html)
-
----
-
-## Chapter 50: Smart Greenhouse Edge IoT & MQTT Fleet Telemetry Architecture
-*Anchor ID*: `<a id="chapter-50-article-50-smart-greenhouse-mqtt-edge-iot-fleet"></a>`  
-*Original Source*: [`articles/article-50-smart-greenhouse-mqtt-edge-iot-fleet.html`](../articles/article-50-smart-greenhouse-mqtt-edge-iot-fleet.html)  
-
-### 🎯 Core Engineering Synopsis
-Industrial IoT architecture for commercial protected cropping: LoRaWAN, MQTT broker topologies, JSON schema telemetry, and edge anomaly detection across 100+ greenhouse zones.
-
-### 🔬 Key Technical Sections
-- 1. MQTT Topic Hierarchy
-- 2. Interactive IoT Fleet Simulator
-
-### 🛠️ Paired Interactive Lab Calculators
-- [Greenhouse Mqtt Edge Iot Fleet Simulator](../tools/greenhouse-mqtt-edge-iot-fleet-simulator.html)
-
----
-
-## Chapter 54: AI-Driven Model Predictive Control (MPC) in Commercial Venlo Greenhouses: Real-Time Energy-Yield Optimization
-*Anchor ID*: `<a id="chapter-54-article-54-ai-model-predictive-control-mpc-venlo-greenhouse"></a>`  
-*Original Source*: [`articles/article-54-ai-model-predictive-control-mpc-venlo-greenhouse.html`](../articles/article-54-ai-model-predictive-control-mpc-venlo-greenhouse.html)  
-
-### 🎯 Core Engineering Synopsis
-Engineering mathematical formulation of Model Predictive Control (MPC), transient thermodynamic microclimate modeling, dynamic assimilation lighting, and autonomous climate computer integration in commercial CEA.
-
-### 🔬 Key Technical Sections
-- 1. The Fundamental Physics & State-Space Energy Balance
-- 2. Transient Vapor Pressure Deficit (VPD) & Moisture Flux
-- 3. The Non-Linear MPC Multi-Objective Optimization Problem
-- 4. Integration with Day-Ahead Spot Power Markets (EPEX SPOT)
-- 5. Comparison: Traditional PID Rule-Based vs. AI-MPC
-- 6. Interactive Engineering Tools & Simulators
-
-### 🛠️ Paired Interactive Lab Calculators
-- [Greenhouse Co2 Enrichment Calculator](../tools/greenhouse-co2-enrichment-calculator.html)
-- [Greenhouse Heating Load Thermal Screen Calculator](../tools/greenhouse-heating-load-thermal-screen-calculator.html)
-
----
-
-# Part V: Biological IPM, Biosecurity & Crop Protection
-
-## Chapter 13: Precision Agricultural Sensor Calibration: NDIR CO2, TDR Soil Moisture, EC & pH Electrochemistry
-*Anchor ID*: `<a id="chapter-13-article-13-smartfarm-sensor-calibration"></a>`  
-*Original Source*: [`articles/article-13-smartfarm-sensor-calibration.html`](../articles/article-13-smartfarm-sensor-calibration.html)  
-
-### 🎯 Core Engineering Synopsis
-Engineering calibration protocols for CEA instrumentation: NDIR dual-beam optical drift, two-point pH/EC Nernstian slope correction, and dielectric permittivity in substrate TDR probes.
-
-### 🔬 Key Technical Sections
-- 1. The Problem of Sensor Drift and Measurement Uncertainty in Autonomous CEA
-- 2. Two-Point Linear Calibration Algorithms for Potentiometric pH and Conductometric EC Probes
-- 3. Calibration Schedule, Buffer Traceability, and NDIR CO2 Zero/Span Alignment
-
----
-
-## Chapter 34: Closed-Loop UV-C Disinfection & Viral Pathogen Inactivation Kinetics
-*Anchor ID*: `<a id="chapter-34-article-34-closed-loop-uvc-drain-disinfection"></a>`  
-*Original Source*: [`articles/article-34-closed-loop-uvc-drain-disinfection.html`](../articles/article-34-closed-loop-uvc-drain-disinfection.html)  
-
-### 🎯 Core Engineering Synopsis
-Engineering analysis of UV-C radiation dose (250 mJ/cm2), UVT% transmission correction, and viral/fungal log-reduction in recirculating greenhouse drainage water.
-
-### 🔬 Key Technical Sections
-- 1. The Chick-Watson Disinfection Model
-- 2. Interactive UV-C Calculation Tool
-
-### 🛠️ Paired Interactive Lab Calculators
-- [Uvc Drainage Pathogen Disinfection Calculator](../tools/uvc-drainage-pathogen-disinfection-calculator.html)
-
----
-
-## Chapter 39: Closed-Loop Reverse Osmosis (RO) Desalination & Sodium ($Na^+$) Rejection Kinetics
-*Anchor ID*: `<a id="chapter-39-article-39-closed-loop-ro-desalination-energy"></a>`  
-*Original Source*: [`articles/article-39-closed-loop-ro-desalination-energy.html`](../articles/article-39-closed-loop-ro-desalination-energy.html)  
-
-### 🎯 Core Engineering Synopsis
-Industrial engineering analysis of greenhouse reverse osmosis (RO) membrane flux (LMH), sodium (Na+) rejection (99.2%), energy recovery devices (PX), and zero-runoff closed loop recirculation.
-
-### 🔬 Key Technical Sections
-- 1. The Solution-Diffusion Permeation Model
-- 2. Interactive RO Desalination Optimizer
-
-### 🛠️ Paired Interactive Lab Calculators
-- [Closed Loop Reverse Osmosis Desalination Energy Optimizer](../tools/closed-loop-reverse-osmosis-desalination-energy-optimizer.html)
-
----
-
-## Chapter 40: Canopy Light Extinction (Beer-Lambert Law) & Diffuse Glass Transmission
-*Anchor ID*: `<a id="chapter-40-article-40-beer-lambert-canopy-light-extinction"></a>`  
-*Original Source*: [`articles/article-40-beer-lambert-canopy-light-extinction.html`](../articles/article-40-beer-lambert-canopy-light-extinction.html)  
-
-### 🎯 Core Engineering Synopsis
-Industrial plant physiology analysis of Beer-Lambert light extinction, canopy extinction coefficient (k), Leaf Area Index (LAI), and diffuse glass photon penetration.
-
-### 🔬 Key Technical Sections
-- 1. The Beer-Lambert Canopy Extinction Law
-- 2. Interactive Canopy Light Engine
-
-### 🛠️ Paired Interactive Lab Calculators
-- [Par Far Red Canopy Extinction Beer Lambert Calculator](../tools/par-far-red-canopy-extinction-beer-lambert-calculator.html)
-
----
-
-## Chapter 45: AgriQuant: Open-Source Greenhouse Energy & Commodity Quant Terminal
-*Anchor ID*: `<a id="chapter-45-article-45-agriquant-energy-commodity-quant-terminal"></a>`  
-*Original Source*: [`articles/article-45-agriquant-energy-commodity-quant-terminal.html`](../articles/article-45-agriquant-energy-commodity-quant-terminal.html)  
-
-### 🎯 Core Engineering Synopsis
-Open-source financial engineering and energy analytics terminal for commercial greenhouses. Simulates Dutch TTF natural gas spark spreads, electricity arbitrage, and fertilizer ROI.
-
-### 🔬 Key Technical Sections
-- 1. The Clean Spark Spread (CSS) Formula
-- 2. Interactive Quant Terminal
-
-### 🛠️ Paired Interactive Lab Calculators
-- [Agriquant Greenhouse Energy Commodity Terminal](../tools/agriquant-greenhouse-energy-commodity-terminal.html)
-
----
-
-# Part VI: Greenhouse Systems Engineering, Energy & Digital Twins

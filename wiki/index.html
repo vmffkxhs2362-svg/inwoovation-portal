@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AgriAtlas CEA Engineering Encyclopedia | Inwoovation Lab</title>
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="description" content="AgriAtlas CEA Engineering Encyclopedia: quantitative crop steering, psychrometric VPD control, hydroponic fertigation, and plant physiology research.">
     <meta name="author" content="Inwoo Hwang — Inwoovation Lab">
     
@@ -14,7 +14,7 @@
     <!-- OpenGraph SEO Tags -->
     <meta property="og:title" content="AgriAtlas CEA Engineering Encyclopedia | Inwoovation Lab">
     <meta property="og:description" content="AgriAtlas CEA Engineering Encyclopedia: quantitative crop steering, psychrometric VPD control, hydroponic fertigation, and plant physiology research.">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=800&q=80">
+    <meta property="og:image" content="https://inwoovation.com/og-cover.jpg">
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="AgriAtlas CEA Engineering Wiki — Inwoovation Lab">
     <meta name="google-site-verification" content="Y7d3dVoTQHBbG1GoKc4E_LUZb6YBmv491pv7G01mOk8" />
@@ -37,6 +37,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/global-ui-enhancements.css?v=20261115">
+    <script src="/js/global-search-palette.js?v=20261115" defer></script>
     
     <style>
         :root {
@@ -260,29 +262,14 @@
             line-height: 1.4;
         }
         
-        .ad-placeholder {
-            width: 300px;
-            height: 250px;
-            background: rgba(0,0,0,0.3);
-            border: 1px dashed var(--text-muted);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            margin-bottom: 2rem;
-            border-radius: 4px;
-        }
-
         /* Mobile Responsive */
         @media (max-width: 1200px) {
             aside.sidebar-right { width: 280px; }
-            .ad-placeholder { width: 100%; height: auto; aspect-ratio: 1.2; }
         }
         @media (max-width: 1024px) {
             .container { flex-direction: column; }
-            nav.sidebar-left, aside.sidebar-right { display: none; }
+            nav.sidebar-left { display: none; }
+            aside.sidebar-right { display: block; width: 100%; height: auto; position: static; border-left: none; border-top: 1px solid var(--border); }
             main { padding: 2rem; max-width: 100%; }
         }
 
@@ -354,9 +341,6 @@
             .sidebar-left.open {
                 left: 0;
             }
-            .sidebar-right {
-                display: none;
-            }
             header {
                 padding: 0 1rem;
             }
@@ -371,14 +355,15 @@
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Article",
+      "@type": "CollectionPage",
       "headline": "AgriAtlas CEA Engineering Encyclopedia | Inwoovation Lab",
+      "name": "AgriAtlas CEA Engineering Encyclopedia | Inwoovation Lab",
       "description": "AgriAtlas CEA Engineering Encyclopedia: quantitative crop steering, psychrometric VPD control, hydroponic fertigation, and plant physiology research.",
       "image": [
-        "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=800&q=80"
+        "https://inwoovation.com/og-cover.jpg"
       ],
       "datePublished": "2026-08-05",
-      "dateModified": "2026-11-08",
+      "dateModified": "2026-11-15",
       "author": {
         "@type": "Person",
         "name": "Inwoo Hwang",
@@ -411,7 +396,7 @@
         {
           "@type": "ListItem",
           "position": 2,
-          "name": "AgTech Plant Physiology Wiki",
+          "name": "AgriAtlas Wiki",
           "item": "https://inwoovation.com/wiki/"
         }
       ]
@@ -421,26 +406,18 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "How do you calculate greenhouse Vapor Pressure Deficit (VPD) accurately using leaf temperature?",
+          "name": "How do I translate AgriAtlas VPD and DIF tables into automated greenhouse climate computer setpoints?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "True canopy VPD must be calculated from saturated vapor pressure at actual radiometric leaf temperature (es(T_leaf) via the Tetens equation) minus ambient air vapor pressure (ea(T_air, RH)). Assuming T_leaf = T_air introduces a 0.25 to 0.45 kPa error under high solar radiation."
+            "text": "Verify canopy leaf temperature using an infrared radiometer to compute leaf-to-air VPD in the Psychrometric VPD Engine, then ramp pre-sunrise pipe heating and venting so leaf temperature stays at least +2.5 C above air dew-point while hitting the daily DIF envelope."
           }
         },
         {
           "@type": "Question",
-          "name": "What is the optimal VPD target range for commercial greenhouse crops?",
+          "name": "Why does tip-burn occur in hydroponic leafy greens even when calcium is abundant in the nutrient solution?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Vegetative propagation requires 0.4 to 0.7 kPa, active vegetative growth thrives at 0.8 to 1.1 kPa, and generative fruit set in tomato, bell pepper, and strawberry performs best between 1.1 and 1.4 kPa to balance stomatal CO2 uptake with xylem calcium mass flow."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How do you size a greenhouse dehumidifier or Air Treatment Unit (ATU) for night-time latent moisture removal?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Multiply canopy night-time transpiration rate (typically 15 to 35 g/m²·h) by cultivated floor area (m²), then divide by the specific moisture extraction rate (L/kWh) at the target dew-point temperature on the Mollier h-x psychrometric chart."
+            "text": "Calcium (Ca2+) is transported via passive transpiration xylem flow rather than phloem remobilization. Maintaining 0.35-0.45 m/s vertical airflow and nocturnal VPD below 0.35 kPa sustains meristematic Ca2+ delivery."
           }
         }
       ]
@@ -451,27 +428,23 @@
 
     <meta property="og:url" content="https://inwoovation.com/wiki/">
     <meta name="twitter:card" content="summary_large_image">
-    <link rel="stylesheet" href="/css/global-ui-enhancements.css?v=20261105">
-    <script src="/js/global-search-palette.js?v=20261105" defer></script>
 </head>
 <body>
 
     <header>
         <div style="display: flex; align-items: center; gap: 1.2rem; flex-wrap: wrap;">
             <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
-            <a href="https://inwoovation.com/" style="color: var(--text-muted); text-decoration: none; font-size: 0.85rem; font-weight: 600; border: 1px solid var(--border); padding: 0.35rem 0.75rem; border-radius: 8px;">← Inwoovation Portal</a>
+            <a href="/" style="color: var(--text-muted); text-decoration: none; font-size: 0.85rem; font-weight: 600; border: 1px solid var(--border); padding: 0.35rem 0.75rem; border-radius: 8px;">← Inwoovation Portal</a>
             <a href="index.html" class="logo">🌍 Agri<span>Atlas</span> Wiki</a>
             <a href="research.html" style="color: var(--primary); font-weight: 700; text-decoration: none; font-size: 0.95rem; background: rgba(56, 189, 248, 0.1); padding: 0.4rem 0.9rem; border-radius: 20px; border: 1px solid rgba(56, 189, 248, 0.3); display: flex; align-items: center; gap: 0.4rem;">🔬 <span>Scientific Research</span></a>
         </div>
         
-        <div class="header-right" style="display: flex; align-items: center; gap: 1rem;">
+        <div class="header-right" style="display: flex; align-items: center; gap: 0.8rem;">
             <div class="search-container">
-                <input type="text" id="searchInput" class="search-bar" placeholder="Search crops, climates, data...">
+                <input type="text" id="searchInput" class="search-bar" placeholder="Search wiki crops, climates, papers...">
                 <div id="searchResults" class="search-results"></div>
             </div>
-            
-            <!-- Google Translate Widget -->
-            <div id="google_translate_element"></div>
+            <button type="button" class="nav-search-trigger" onclick="window.InwooPalette && window.InwooPalette.open()" title="Open Global Spotlight Search (Ctrl+K)" style="background: rgba(56, 189, 248, 0.14); border: 1px solid rgba(56, 189, 248, 0.35); color: #e2e8f0; border-radius: 999px; padding: 0.42rem 0.85rem; cursor: pointer; font-weight: 700; font-size: 0.82rem;">🔍 Portal <kbd>Ctrl+K</kbd></button>
         </div>
     </header>
 
@@ -479,9 +452,14 @@
     <nav class="sidebar-left" id="mobileSidebar">
         <div class="nav-group">
             <div class="nav-title">🏛️ Inwoovation Ecosystem</div>
-            <a href="https://inwoovation.com/" class="nav-link">🏠 Inwoovation Hub Home</a>
-            <a href="https://inwoovation.com/smartfarm/vpd.html" class="nav-link">🌡️ VPD & Psychrometric Suite</a>
-            <a href="https://inwoovation.com/smartfarm/heat_loss.html" class="nav-link">🔥 Greenhouse Heat Loss</a>
+            <a href="/" class="nav-link">🏠 Inwoovation Hub Home</a>
+            <a href="/tools/psychrometric-mollier-greenhouse-dehumidifier.html" class="nav-link">🌡️ VPD &amp; Psychrometric Engine</a>
+            <a href="/tools/greenhouse-heating-load-thermal-screen-calculator.html" class="nav-link">🔥 DIN V 18599 Heat Load</a>
+            <a href="/crops/index.html" class="nav-link">🌱 Crop Steering Guides</a>
+            <a href="/handbooks/index.html" class="nav-link">📘 Master Engineering Handbook</a>
+            <a href="/benchmarks/index.html" class="nav-link">⚖️ Hardware Benchmarks</a>
+            <a href="/troubleshoot.html" class="nav-link">🩺 Symptom Diagnostics</a>
+            <a href="/directory.html" class="nav-link">🗂️ Full Portal Directory</a>
         </div>
 
         <div class="nav-group">
@@ -502,7 +480,7 @@
 
         <div class="nav-group">
             <div class="nav-title">🌱 Specialized CEA Topics</div>
-            <a href="care_farming.html" class="nav-link">Care Farming (치유농업)</a>
+            <a href="care_farming.html" class="nav-link">Care Farming</a>
             
         </div>
         
@@ -542,7 +520,7 @@
     
             <a href="arugula.html" style="text-decoration: none; color: inherit; background: var(--bg-surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; transition: transform 0.2s, border-color 0.2s; display: flex; flex-direction: column;">
                 <div style="height: 155px; background: #000; overflow: hidden;">
-                    <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=80" alt="High-density hydroponic arugula (Eruca vesicaria subsp. sativa) canopy under controlled blue-enriched LED lighting" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.85;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Eruca_sativa_001.JPG/800px-Eruca_sativa_001.JPG" alt="High-density hydroponic arugula (Eruca vesicaria subsp. sativa) canopy under controlled blue-enriched LED lighting" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.85;">
                 </div>
                 <div style="padding: 1.4rem; flex: 1;">
                     <h3 style="margin: 0 0 0.5rem 0; color: var(--primary); font-size: 1.15rem;">Arugula / Rocket (Eruca vesicaria)</h3>
@@ -562,7 +540,7 @@
         
             <a href="kale.html" style="text-decoration: none; color: inherit; background: var(--bg-surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; transition: transform 0.2s, border-color 0.2s; display: flex; flex-direction: column;">
                 <div style="height: 155px; background: #000; overflow: hidden;">
-                    <img src="https://images.unsplash.com/photo-1524179091875-bf99a9a6af57?auto=format&fit=crop&w=800&q=80" alt="Hydroponic curly kale (Brassica oleracea var. sabellica) exhibiting dense frilled leaf margins under high-PPFD LED illumination" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.85;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Kale_Leaf.jpg/800px-Kale_Leaf.jpg" alt="Hydroponic curly kale (Brassica oleracea var. sabellica) exhibiting dense frilled leaf margins under high-PPFD LED illumination" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.85;">
                 </div>
                 <div style="padding: 1.4rem; flex: 1;">
                     <h3 style="margin: 0 0 0.5rem 0; color: var(--primary); font-size: 1.15rem;">Curly Kale (Brassica oleracea var. sabellica)</h3>
@@ -592,7 +570,7 @@
         
             <a href="spinach.html" style="text-decoration: none; color: inherit; background: var(--bg-surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; transition: transform 0.2s, border-color 0.2s; display: flex; flex-direction: column;">
                 <div style="height: 155px; background: #000; overflow: hidden;">
-                    <img src="https://images.unsplash.com/photo-1576045057995-568f588f82fb?auto=format&fit=crop&w=800&q=80" alt="Hydroponic baby-leaf spinach (Spinacia oleracea) canopy cultivated in chilled, oxygen-supersaturated NFT channels" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.85;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Spinach_leaves.jpg/800px-Spinach_leaves.jpg" alt="Hydroponic baby-leaf spinach (Spinacia oleracea) canopy cultivated in chilled, oxygen-supersaturated NFT channels" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.85;">
                 </div>
                 <div style="padding: 1.4rem; flex: 1;">
                     <h3 style="margin: 0 0 0.5rem 0; color: var(--primary); font-size: 1.15rem;">Spinach (Spinacia oleracea)</h3>
@@ -612,7 +590,7 @@
         
             <a href="basil.html" style="text-decoration: none; color: inherit; background: var(--bg-surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; transition: transform 0.2s, border-color 0.2s; display: flex; flex-direction: column;">
                 <div style="height: 155px; background: #000; overflow: hidden;">
-                    <img src="https://images.unsplash.com/photo-1618375569909-3c8616cf7733?auto=format&fit=crop&w=800&q=80" alt="Controlled hydroponic NFT basil canopy under high-PPFD blue-enriched LED spectrum." style="width: 100%; height: 100%; object-fit: cover; opacity: 0.85;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Basil-Basilico-Ocimum_basilicum-Leaf.jpg/800px-Basil-Basilico-Ocimum_basilicum-Leaf.jpg" alt="Controlled hydroponic NFT basil canopy under high-PPFD blue-enriched LED spectrum." style="width: 100%; height: 100%; object-fit: cover; opacity: 0.85;">
                 </div>
                 <div style="padding: 1.4rem; flex: 1;">
                     <h3 style="margin: 0 0 0.5rem 0; color: var(--primary); font-size: 1.15rem;">Sweet Basil (Ocimum basilicum L.)</h3>
@@ -622,7 +600,7 @@
         
             <a href="swiss_chard.html" style="text-decoration: none; color: inherit; background: var(--bg-surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; transition: transform 0.2s, border-color 0.2s; display: flex; flex-direction: column;">
                 <div style="height: 155px; background: #000; overflow: hidden;">
-                    <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=80" alt="Multicolored hydroponic Swiss chard (Beta vulgaris subsp. vulgaris) petioles displaying high betalain pigment expression" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.85;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Swiss_Chard.jpg/800px-Swiss_Chard.jpg" alt="Multicolored hydroponic Swiss chard (Beta vulgaris subsp. vulgaris) petioles displaying high betalain pigment expression" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.85;">
                 </div>
                 <div style="padding: 1.4rem; flex: 1;">
                     <h3 style="margin: 0 0 0.5rem 0; color: var(--primary); font-size: 1.15rem;">Swiss Chard (Beta vulgaris subsp. vulgaris)</h3>
@@ -659,7 +637,7 @@
         <div style="display: flex; flex-direction: column; gap: 1.2rem; margin-bottom: 3rem;">
             <div class="content-box" style="margin-bottom: 0; padding: 1.5rem;">
                 <h3 style="margin-top: 0; margin-bottom: 0.6rem; color: var(--primary); font-size: 1.12rem;">Q: How do I translate AgriAtlas VPD and DIF tables into automated greenhouse climate computer setpoints?</h3>
-                <p style="margin: 0; color: #cbd5e1; font-size: 0.96rem; line-height: 1.7;">First, verify true canopy leaf temperature using an infrared radiometer to calculate leaf-to-air VPD via our <a href="https://inwoovation.com/smartfarm/vpd.html" style="color: var(--primary);">Psychrometric VPD Suite</a>. Program your climate PLC to ramp heating pipes and ventilation apertures 45 minutes prior to sunrise so that leaf temperature exceeds air dew-point by at least +2.5°C, preventing morning condensation and fungal spore germination while hitting the target diurnal DIF.</p>
+                <p style="margin: 0; color: #cbd5e1; font-size: 0.96rem; line-height: 1.7;">First, verify true canopy leaf temperature using an infrared radiometer to calculate leaf-to-air VPD via our <a href="/tools/psychrometric-mollier-greenhouse-dehumidifier.html" style="color: var(--primary);">Psychrometric VPD Engine</a>. Program your climate PLC to ramp heating pipes and ventilation apertures 45 minutes prior to sunrise so that leaf temperature exceeds air dew-point by at least +2.5°C, preventing morning condensation and fungal spore germination while hitting the target diurnal DIF.</p>
             </div>
             <div class="content-box" style="margin-bottom: 0; padding: 1.5rem;">
                 <h3 style="margin-top: 0; margin-bottom: 0.6rem; color: var(--primary); font-size: 1.12rem;">Q: Why does tip-burn occur in hydroponic leafy greens even when calcium is abundant in the nutrient solution?</h3>
@@ -681,19 +659,26 @@
             <div style="display: flex; gap: 1rem; flex-wrap: wrap; font-size: 0.85rem; color: var(--text-muted);">
                 <span>🏛️ <strong>Affiliation:</strong> Inwoovation Lab (<a href="https://inwoovation.com/" style="color: var(--primary); text-decoration: none;">inwoovation.com</a>)</span>
                 <span>🔬 <strong>Domain:</strong> Venlo Glasshouse Thermodynamics, Hydroponic Ion Kinetics &amp; Photobiology</span>
-                <span>📅 <strong>Last Technical Audit:</strong> October 2026</span>
+                <span>📅 <strong>Last Technical Audit:</strong> November 2026</span>
             </div>
         </section>
     
-        <div id="calculators" style="background: linear-gradient(135deg, rgba(16,185,129,0.1) 0%, rgba(56,189,248,0.1) 100%); border: 1px solid rgba(16,185,129,0.3); padding: 2.5rem; border-radius: 12px; text-align: center; margin-bottom: 2rem;">
-            <h2 style="margin-top: 0; color: white; font-size: 1.8rem;">Ready to Steer Your Facility with Precision?</h2>
-            <p style="color: #cbd5e1; font-size: 1.05rem; margin-bottom: 2rem; max-width: 680px; margin-left: auto; margin-right: auto; line-height: 1.6;">
-                AgriAtlas provides the biophysical and thermodynamic governing theory, while our interactive engineering simulators compute exact psychrometric Vapor Pressure Deficit (VPD), leaf boundary-layer transpiration, and structural U-value heating loads for your specific greenhouse or vertical farm geometry.
+        <div id="calculators" style="background: linear-gradient(135deg, rgba(16,185,129,0.1) 0%, rgba(56,189,248,0.1) 100%); border: 1px solid rgba(16,185,129,0.3); padding: 2.2rem; border-radius: 12px; text-align: center; margin-bottom: 2rem;">
+            <h2 style="margin-top: 0; color: white; font-size: 1.7rem;">Ready to Steer Your Facility with Precision?</h2>
+            <p style="color: #cbd5e1; font-size: 1.02rem; margin-bottom: 1.6rem; max-width: 720px; margin-left: auto; margin-right: auto; line-height: 1.6;">
+                AgriAtlas provides the biophysical governing theory, while our v2026 flagship interactive simulators compute exact leaf-to-air Vapor Pressure Deficit (VPD), structural U-value heating loads, and crop-steering targets in real time.
             </p>
-            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                <a href="https://inwoovation.com/smartfarm/vpd.html" style="display: inline-block; background: var(--primary); color: #0f172a; font-weight: bold; padding: 0.95rem 1.8rem; border-radius: 8px; text-decoration: none; font-size: 1.05rem; transition: transform 0.2s;">Run VPD Calculator</a>
-                <a href="https://inwoovation.com/smartfarm/heat_loss.html" style="display: inline-block; background: transparent; border: 2px solid var(--accent-green); color: var(--accent-green); font-weight: bold; padding: 0.95rem 1.8rem; border-radius: 8px; text-decoration: none; font-size: 1.05rem; transition: transform 0.2s;">Calculate Heat Loss</a>
-                <a href="https://inwoovation.com/" style="display: inline-block; background: rgba(255,255,255,0.06); border: 1px solid var(--border); color: #f8fafc; font-weight: 600; padding: 0.95rem 1.8rem; border-radius: 8px; text-decoration: none; font-size: 1.05rem;">Explore Inwoovation Hub</a>
+            <div style="display: flex; gap: 0.85rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.8rem;">
+                <a href="/tools/psychrometric-mollier-greenhouse-dehumidifier.html" style="display: inline-block; background: var(--primary); color: #0f172a; font-weight: bold; padding: 0.85rem 1.4rem; border-radius: 8px; text-decoration: none; font-size: 0.96rem;">🌡️ Run VPD Engine</a>
+                <a href="/tools/greenhouse-heating-load-thermal-screen-calculator.html" style="display: inline-block; background: transparent; border: 2px solid var(--accent-green); color: var(--accent-green); font-weight: bold; padding: 0.85rem 1.4rem; border-radius: 8px; text-decoration: none; font-size: 0.96rem;">🔥 Calculate Heat Load</a>
+                <a href="/crops/index.html" style="display: inline-block; background: rgba(255,255,255,0.06); border: 1px solid var(--border); color: #f8fafc; font-weight: 600; padding: 0.85rem 1.4rem; border-radius: 8px; text-decoration: none; font-size: 0.96rem;">🌱 Crop Steering Guides</a>
+                <a href="/handbooks/index.html" style="display: inline-block; background: rgba(255,255,255,0.06); border: 1px solid var(--border); color: #f8fafc; font-weight: 600; padding: 0.85rem 1.4rem; border-radius: 8px; text-decoration: none; font-size: 0.96rem;">📘 Master Handbook</a>
+                <a href="/benchmarks/index.html" style="display: inline-block; background: rgba(255,255,255,0.06); border: 1px solid var(--border); color: #f8fafc; font-weight: 600; padding: 0.85rem 1.4rem; border-radius: 8px; text-decoration: none; font-size: 0.96rem;">⚖️ Benchmarks</a>
+                <a href="/troubleshoot.html" style="display: inline-block; background: rgba(255,255,255,0.06); border: 1px solid var(--border); color: #f8fafc; font-weight: 600; padding: 0.85rem 1.4rem; border-radius: 8px; text-decoration: none; font-size: 0.96rem;">🩺 Diagnostics</a>
+            </div>
+            <div id="live-biophysics-widget" style="max-width: 760px; margin: 0 auto; text-align: left;">
+                <div style="font-size: 0.82rem; font-weight: 700; color: #38bdf8; margin-bottom: 0.5rem;">⚡ Live Interactive VPD Psychrometric Gauge (Zero-Latency Embed)</div>
+                <iframe src="/embed/vpd-gauge.html" loading="lazy" title="Live CEA Psychrometric VPD Gauge" style="width: 100%; height: 320px; border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 12px; background: #020617;"></iframe>
             </div>
         </div>
     
@@ -701,7 +686,6 @@
 
     
 </div>
-
 
 <!-- INW-TSUKUBA-FUNNEL-START -->
 <section class="inw-tsukuba-funnel-bridge" style="max-width: 1060px; margin: 32px auto; padding: 26px; background: rgba(15, 23, 42, 0.9); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 16px; text-align: left; box-shadow: 0 10px 28px rgba(0, 0, 0, 0.3);">
@@ -731,17 +715,9 @@
   </div>
 </section>
 <!-- INW-TSUKUBA-FUNNEL-END -->
-
 <footer style="margin-top: 4rem; padding: 2rem 1rem; border-top: 1px solid var(--border); text-align: center; color: var(--text-muted); font-size: 0.85rem;">
-    <p>© 2026 Inwoovation Lab (Inwoo Hwang — Horticultural &amp; CEA Systems Engineer). AgriAtlas Wiki. All rights reserved. | <a href="https://inwoovation.com/" style="color: var(--primary); text-decoration: none;">Inwoovation Portal</a> | <a href="https://forms.gle/SC3ehhA4r6sPEZxV7" target="_blank" style="color: var(--primary); font-weight: 700; text-decoration: none;">Send Feedback 📩</a></p>
-    <div class="inw-trust-links" style="margin-top:16px; padding-top:14px; border-top:1px solid rgba(148,163,184,0.16); display:flex; justify-content:center; align-items:center; flex-wrap:wrap; gap:16px; font-size:0.84rem; color:#94a3b8;">
-      <a href="/index.html" style="color:#94a3b8; text-decoration:none; font-weight:600;">Home</a>
-      <a href="/about.html" style="color:#94a3b8; text-decoration:none; font-weight:600;">About Lab</a>
-      <a href="/contact.html" style="color:#94a3b8; text-decoration:none; font-weight:600;">Contact</a>
-      <a href="/privacy-policy.html" style="color:#94a3b8; text-decoration:none; font-weight:600;">Privacy Policy</a>
-      <a href="/terms-of-service.html" style="color:#94a3b8; text-decoration:none; font-weight:600;">Terms of Service</a>
-    </div>
-  </footer>
+    <p>© 2026 Inwoovation Lab (Inwoo Hwang — Horticultural &amp; CEA Systems Engineer). AgriAtlas Wiki. All rights reserved. | <a href="/directory.html" style="color: var(--primary); text-decoration: none; font-weight: 700;">Directory</a> | <a href="/tools/index.html" style="color: var(--primary); text-decoration: none;">42 Calculators</a> | <a href="/handbooks/index.html" style="color: var(--primary); text-decoration: none;">Handbook</a> | <a href="/podcasts/" style="color: var(--primary); text-decoration: none;">Podcasts</a> | <a href="/privacy-policy.html" style="color: var(--primary); text-decoration: none;">Privacy Policy</a> | <a href="/terms-of-service.html" style="color: var(--primary); text-decoration: none;">Terms of Service</a> | <a href="/about.html" style="color: var(--primary); text-decoration: none;">About</a> | <a href="/contact.html" style="color: var(--primary); text-decoration: none;">Contact</a> | <a href="https://forms.gle/SC3ehhA4r6sPEZxV7" target="_blank" style="color: var(--primary); font-weight: 700; text-decoration: none;">Send Feedback 📩</a></p>
+</footer>
 
 <!-- Floating Feedback Button (FAB) -->
 <a class="feedback-fab" href="https://forms.gle/SC3ehhA4r6sPEZxV7" id="btn-feedback" target="_blank" style="position: fixed; bottom: 2rem; right: 2rem; background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(56, 189, 248, 0.4); color: #e2e8f0; padding: 0.8rem 1.3rem; border-radius: 50px; font-size: 0.9rem; font-weight: 700; text-decoration: none; display: flex; align-items: center; gap: 0.5rem; box-shadow: 0 8px 25px rgba(56, 189, 248, 0.25); z-index: 1000; transition: all 0.3s ease;">
@@ -805,17 +781,6 @@
         }
     });
 </script>
-
-<!-- Google Translate Script (Loaded Asynchronously at the bottom) -->
-<script type="text/javascript">
-    function googleTranslateElementInit() {
-        new google.translate.TranslateElement({
-            pageLanguage: 'en',
-            layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-        }, 'google_translate_element');
-    }
-</script>
-<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async defer></script>
 
 </body>
 </html>

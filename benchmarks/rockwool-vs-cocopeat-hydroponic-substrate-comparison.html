@@ -205,6 +205,49 @@
       </div>
 
       <div class="bench-card">
+        <h2 style="font-family:'Outfit',sans-serif; font-size:1.35rem; color:#f8fafc; margin-bottom:18px;">⚙️ 5-Year Hydroponic Substrate TCO &amp; Early-Yield Interactive Model</h2>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:18px; margin-bottom:20px;">
+          <div>
+            <div class="slider-row"><span>Greenhouse Production Area</span><span id="lbl-sub-area" class="slider-val">10,000 m² (1 ha)</span></div>
+            <input type="range" id="sl-sub-area" min="1000" max="50000" step="1000" value="10000" style="width:100%;">
+          </div>
+          <div>
+            <div class="slider-row"><span>Rockwool Tipping / Recycling Fee</span><span id="lbl-sub-tip" class="slider-val">$65 / tonne</span></div>
+            <input type="range" id="sl-sub-tip" min="20" max="150" step="5" value="65" style="width:100%;">
+          </div>
+          <div>
+            <div class="slider-row"><span>Winter Generative Yield Lift (Rockwool)</span><span id="lbl-sub-lift" class="slider-val">+1.10 kg/m²/yr</span></div>
+            <input type="range" id="sl-sub-lift" min="0" max="2.5" step="0.1" value="1.1" style="width:100%;">
+          </div>
+          <div>
+            <div class="slider-row"><span>Weighted Wholesale Produce Price</span><span id="lbl-sub-price" class="slider-val">$2.10 / kg</span></div>
+            <input type="range" id="sl-sub-price" min="1.2" max="4.5" step="0.1" value="2.1" style="width:100%;">
+          </div>
+        </div>
+
+        <div class="bench-kpi-grid">
+          <div class="kpi-card">
+            <div class="kpi-lbl">5-Year Rockwool Cost</div>
+            <div class="kpi-val" id="res-rw-tco" style="color:#38bdf8;">$265,000</div>
+            <div style="font-size:0.75rem; color:#94a3b8;">Slabs + End-of-Life Disposal</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-lbl">5-Year Cocopeat Cost</div>
+            <div class="kpi-val" id="res-coir-tco">$195,000</div>
+            <div style="font-size:0.75rem; color:#94a3b8;">Slabs + Pre-Buffer Flushing</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-lbl">5-Year Early Yield Revenue</div>
+            <div class="kpi-val" id="res-rw-rev" style="color:#facc15;">+ $115,500</div>
+            <div style="font-size:0.75rem; color:#94a3b8;">From Rapid Winter Steering</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-lbl">Net 5-Yr Substrate Advantage</div>
+            <div class="kpi-val" id="res-net-sub">+ $45,500 (RW)</div>
+            <div id="res-sub-winner" style="font-size:0.75rem; color:#34d399;">After Yield &amp; Disposal</div>
+          </div>
+        </div>
+
         <div class="compare-grid">
           <div class="tech-box" style="border-color:rgba(56,189,248,0.3);">
             <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
@@ -232,7 +275,82 @@
             </ul>
           </div>
         </div>
+
+        <div style="text-align:center; margin-top:20px;">
+          <button onclick="exportSubstrateAuditPDF()" style="background:linear-gradient(135deg, #0284c7, #0369a1); color:#fff; border:1px solid rgba(255,255,255,0.2); padding:12px 24px; border-radius:12px; font-weight:700; font-size:0.95rem; cursor:pointer; display:inline-flex; align-items:center; gap:8px;">
+            📄 Download Rockwool vs. Cocopeat Feasibility Audit (PDF)
+          </button>
+        </div>
       </div>
+
+      <script>
+        function calculateSubstrate() {
+          const area = parseFloat(document.getElementById('sl-sub-area').value);
+          const tipFee = parseFloat(document.getElementById('sl-sub-tip').value);
+          const yieldLift = parseFloat(document.getElementById('sl-sub-lift').value);
+          const price = parseFloat(document.getElementById('sl-sub-price').value);
+
+          document.getElementById('lbl-sub-area').innerText = `${area.toLocaleString()} m² (${(area/10000).toFixed(1)} ha)`;
+          document.getElementById('lbl-sub-tip').innerText = `$${tipFee} / tonne`;
+          document.getElementById('lbl-sub-lift').innerText = `+${yieldLift.toFixed(2)} kg/m²/yr`;
+          document.getElementById('lbl-sub-price').innerText = `$${price.toFixed(2)} / kg`;
+
+          // Rockwool: $4.65/m2/yr slab + ~1.0 kg dry/wet slab weight -> ~0.0033 t/m2/yr disposal
+          const rwSlabCost5 = area * 4.65 * 5;
+          const rwDisposal5 = area * 0.0033 * tipFee * 5;
+          const rwTotal5 = rwSlabCost5 + rwDisposal5;
+
+          // Cocopeat: $3.90/m2/yr amortized 2-yr slabs + Ca(NO3)2 flush
+          const coirTotal5 = area * 3.90 * 5;
+
+          const extraYieldRev5 = area * yieldLift * price * 5;
+          const netRwAdv = (coirTotal5 - rwTotal5) + extraYieldRev5;
+
+          document.getElementById('res-rw-tco').innerText = `$${Math.round(rwTotal5).toLocaleString()}`;
+          document.getElementById('res-coir-tco').innerText = `$${Math.round(coirTotal5).toLocaleString()}`;
+          document.getElementById('res-rw-rev').innerText = `+ $${Math.round(extraYieldRev5).toLocaleString()}`;
+
+          const netEl = document.getElementById('res-net-sub');
+          if (netRwAdv >= 0) {
+            netEl.innerText = `+ $${Math.round(netRwAdv).toLocaleString()} (RW)`;
+            netEl.style.color = '#38bdf8';
+            document.getElementById('res-sub-winner').innerText = 'Rockwool Net 5-Year Advantage';
+          } else {
+            netEl.innerText = `+ $${Math.round(Math.abs(netRwAdv)).toLocaleString()} (Coir)`;
+            netEl.style.color = '#10b981';
+            document.getElementById('res-sub-winner').innerText = 'Cocopeat Net 5-Year Advantage';
+          }
+        }
+
+        function exportSubstrateAuditPDF() {
+          const area = document.getElementById('lbl-sub-area').innerText;
+          const rw = document.getElementById('res-rw-tco').innerText;
+          const coir = document.getElementById('res-coir-tco').innerText;
+          const rev = document.getElementById('res-rw-rev').innerText;
+          const net = document.getElementById('res-net-sub').innerText;
+          generateInstitutionalPDF(
+            'Hydroponic Substrate 5-Year TCO Audit (Rockwool vs. Cocopeat)',
+            [
+              { label: '5-Yr Rockwool Cost', value: rw, unit: 'Media + Disposal' },
+              { label: '5-Yr Cocopeat Cost', value: coir, unit: 'Media + Buffer' },
+              { label: '5-Yr Steering Yield Lift', value: rev, unit: 'Revenue Delta' },
+              { label: 'Net Substrate Advantage', value: net, unit: '5-Year Net' }
+            ],
+            [
+              { label: 'Facility Area', value: area },
+              { label: 'Disposal Tipping Fee', value: document.getElementById('lbl-sub-tip').innerText },
+              { label: 'Winter Yield Delta', value: document.getElementById('lbl-sub-lift').innerText },
+              { label: 'Farmgate Crop Price', value: document.getElementById('lbl-sub-price').innerText }
+            ],
+            `Over 5 years across ${area}, Rockwool total media/disposal cost is ${rw} vs. ${coir} for buffered Cocopeat. Factoring ${rev} in generative winter steering revenue yields a net advantage of ${net}.`
+          );
+        }
+
+        ['sl-sub-area', 'sl-sub-tip', 'sl-sub-lift', 'sl-sub-price'].forEach(id => {
+          document.getElementById(id).addEventListener('input', calculateSubstrate);
+        });
+        calculateSubstrate();
+      </script>
       <!-- BENCH_DEEP_DIVE_START -->
       <div class="bench-card bench-prose">
         <h2>🌱 Rhizosphere Physics: Water Retention Curves (pF), Cation Exchange Capacity &amp; Generative Steerability</h2>

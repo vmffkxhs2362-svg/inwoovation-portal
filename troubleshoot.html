@@ -22,7 +22,7 @@
 
   <!-- Structured Data (JSON-LD) -->
   <script type="application/ld+json">
-  {
+{
   "@context": "https://schema.org",
   "@graph": [
     {
@@ -32,7 +32,7 @@
       "description": "Diagnostic wizard for commercial greenhouse issues (tip burn, blossom-end rot, condensation, heating spikes) with actionable biophysical protocols.",
       "applicationCategory": "DiagnosticApplication, AgriculturalTool",
       "operatingSystem": "All",
-      "dateModified": "2026-11-07",
+      "dateModified": "2026-11-16",
       "provider": {
         "@type": "Organization",
         "name": "Inwoovation Lab",
@@ -53,6 +53,43 @@
           "position": 2,
           "name": "Commercial Greenhouse Troubleshooting Wizard",
           "item": "https://inwoovation.com/troubleshoot.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How can greenhouse growers distinguish calcium Blossom End Rot from fungal rot?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Blossom End Rot (BER) starts strictly at the dry, sunken, leathery blossom scar (distal apex) of rapidly expanding green fruit without surface mycelium. It is caused by inadequate xylem calcium transport under excessive VPD (>1.6 kPa) or salt stress rather than a primary pathogen."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does inner-leaf tipburn occur in vertical farms even when calcium feed exceeds 180 ppm?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Calcium travels almost exclusively in the xylem transpiration stream rather than phloem sap. Stagnant air (<0.15 m/s) traps a saturated boundary layer inside enclosed lettuce hearts, halting xylem flow into newly unfolded leaves regardless of reservoir concentration."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "When should Sodium (Na+) trigger recirculation drain bleed in rockwool greenhouses?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Crops exclude most sodium ions at the root membrane, causing recirculated drain Na+ to climb over weeks. Salt-sensitive strawberries require bleed above 1.5-2.5 mmol/L, whereas greenhouse tomatoes tolerate up to 8.0-10.0 mmol/L Na+ before osmotic yield penalty sets in."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much heating fuel is wasted by unsealed thermal screen edge gaps?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Because warm greenhouse air rises via buoyancy convection through open screen perimeter seams, leaving just 1% to 2% linear edge gap reduces true thermal energy retention by 25% to 35% on winter nights under DIN V 18599 heat balance modeling."
+          }
         }
       ]
     }
@@ -237,10 +274,10 @@
       <span style="font-size:0.75rem; background:linear-gradient(135deg,#10b981,#059669); color:#ffffff; font-weight:800; padding:2px 8px; border-radius:4px;">DIAGNOSTIC</span>
     </a>
     <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap;">
-      <a href="tools/index.html" style="color:#94a3b8; text-decoration:none; font-size:0.9rem; font-weight:600;">🛠️ 35 Tools</a>
+      <a href="tools/index.html" style="color:#94a3b8; text-decoration:none; font-size:0.9rem; font-weight:600;">🛠️ 42 Tools</a>
       <a href="troubleshoot.html" style="color:#38bdf8; text-decoration:none; font-size:0.9rem; font-weight:800;">🔍 Diagnostic</a>
       <a href="meister.html" style="color:#94a3b8; text-decoration:none; font-size:0.9rem; font-weight:600;">🇩🇪 Meister Hub</a>
-      <a href="quiz.html" style="color:#94a3b8; text-decoration:none; font-size:0.9rem; font-weight:600;">🏆 10-Q Quiz</a>
+      <a href="quiz.html" style="color:#94a3b8; text-decoration:none; font-size:0.9rem; font-weight:600;">🏆 30-Q Quiz</a>
       <button class="nav-search-trigger" onclick="window.InwooPalette.open()"><span>🔍 Spotlight Search</span> <kbd>Ctrl+K</kbd></button>
     </div>
   </header>
@@ -278,7 +315,446 @@
 
     <!-- Symptom Grid -->
     <div class="symptom-grid" id="symptomGrid">
-      <!-- Cards rendered via JS -->
+      <div class="symptom-card" data-cat="tomato">
+        <div class="card-top">
+          <div class="card-icon">🍅</div>
+          <div class="card-cat">TOMATO</div>
+          <h3 class="card-title">Blossom End Rot (BER) & Apical Calcium Necrosis</h3>
+          <p class="card-desc"><strong>Root Cause:</strong> Insufficient xylem mass-flow transport of calcium (Ca²⁺) to expanding distal fruit tissue caused by excessive daytime VPD (&gt;1.6 kPa), elevated K⁺/NH₄⁺ antagonism, or sub-20% drain cycles.</p>
+          <div class="action-steps">
+            <strong>🩺 3-Step Corrective Protocol:</strong><br>
+            1. Steer midday greenhouse VPD into 0.75–1.05 kPa via high-pressure fogging.<br>2. Maintain A/B feed Ca²⁺ ≥ 4.5 mmol/L and keep NH₄⁺ &lt; 8% of total nitrogen.<br>3. Maintain 0.5–1.0 cm root-pressure hydration overnight to preserve cell wall pectate integrity.
+          </div>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:8px; margin-top:16px;">
+          <a href="/tools/crop-transpiration-calcium-blossom-end-rot-risk-model.html" class="tool-link-btn" style="margin-top:0;">
+            <span>⚙️ Launch Fix: Calcium BER Transpiration Model</span>
+            <span>→</span>
+          </a>
+          <a href="/crops/greenhouse-tomato-microclimate-vpd-steering-guide.html" style="display:flex; justify-content:space-between; align-items:center; padding:8px 14px; border-radius:9px; background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.3); color:#34d399; text-decoration:none; font-size:0.82rem; font-weight:700;">
+            <span>📖 Reference: Tomato VPD & Steering Guide</span>
+            <span>↗</span>
+          </a>
+        </div>
+      </div>
+      <div class="symptom-card" data-cat="tomato">
+        <div class="card-top">
+          <div class="card-icon">🍅</div>
+          <div class="card-cat">TOMATO</div>
+          <h3 class="card-title">Thin Apical Heads & Weak Flower Trusses (RTR Imbalance)</h3>
+          <p class="card-desc"><strong>Root Cause:</strong> 24-hour mean temperature exceeds the assimilate supply generated by ambient Daily Light Integral (excess nocturnal dark respiration vs. low DLI).</p>
+          <div class="action-steps">
+            <strong>🩺 3-Step Corrective Protocol:</strong><br>
+            1. Lower target 24h mean temperature by 1.5–2.0 °C to restore the Radiation-to-Temperature Ratio (RTR).<br>2. Run a -3 °C pre-night drop for 2 hours after sunset to redirect carbohydrates into fruiting trusses.<br>3. Prune 1 older lower leaf per week or activate supplemental LED toplighting.
+          </div>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:8px; margin-top:16px;">
+          <a href="/tools/crop-steering-generative-vegetative-matrix.html" class="tool-link-btn" style="margin-top:0;">
+            <span>⚙️ Launch Fix: Generative/Vegetative Matrix</span>
+            <span>→</span>
+          </a>
+          <a href="/wiki/dli_photomorphogenesis_steering.html" style="display:flex; justify-content:space-between; align-items:center; padding:8px 14px; border-radius:9px; background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.3); color:#34d399; text-decoration:none; font-size:0.82rem; font-weight:700;">
+            <span>📖 Reference: DLI & Assimilate Steering Wiki</span>
+            <span>↗</span>
+          </a>
+        </div>
+      </div>
+      <div class="symptom-card" data-cat="tomato">
+        <div class="card-top">
+          <div class="card-icon">🍅</div>
+          <div class="card-cat">TOMATO</div>
+          <h3 class="card-title">Russet Mite (Aculops lycopersici) & Spider Mite Flare-Ups</h3>
+          <p class="card-desc"><strong>Root Cause:</strong> Warm, overly arid microclimates (T &gt; 27 °C, RH &lt; 45%, VPD &gt; 1.8 kPa) accelerate Tetranychus & Aculops generational turnover while desiccating beneficial Phytoseiulus predators.</p>
+          <div class="action-steps">
+            <strong>🩺 3-Step Corrective Protocol:</strong><br>
+            1. Activate misting/pad cooling to cap leaf VPD below 1.25 kPa around hotspots.<br>2. Introduce Amblydromalus limonicus or Amblyseius swirskii cleanly without sulfur residue overlap.<br>3. Model degree-day pest doubling rates and predator release ratios immediately.
+          </div>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:8px; margin-top:16px;">
+          <a href="/tools/greenhouse-biological-pest-control-ipm-calculator.html" class="tool-link-btn" style="margin-top:0;">
+            <span>⚙️ Launch Fix: Biological IPM Calculator</span>
+            <span>→</span>
+          </a>
+          <a href="/wiki/tomato.html" style="display:flex; justify-content:space-between; align-items:center; padding:8px 14px; border-radius:9px; background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.3); color:#34d399; text-decoration:none; font-size:0.82rem; font-weight:700;">
+            <span>📖 Reference: Tomato Botanical & IPM Wiki</span>
+            <span>↗</span>
+          </a>
+        </div>
+      </div>
+      <div class="symptom-card" data-cat="tomato">
+        <div class="card-top">
+          <div class="card-icon">🍅</div>
+          <div class="card-cat">TOMATO</div>
+          <h3 class="card-title">Cracked / Split Fruit Skins at Dawn (Root Pressure Surge)</h3>
+          <p class="card-desc"><strong>Root Cause:</strong> High root osmotic turgor combined with abrupt early-morning humid air closure (RH &gt; 90%) blocks transpiration while irrigation pulses begin too early.</p>
+          <div class="action-steps">
+            <strong>🩺 3-Step Corrective Protocol:</strong><br>
+            1. Delay morning P1 irrigation start until cumulative radiation reaches 80–120 J/cm².<br>2. Execute gentle sunrise minimum pipe heating (+35 °C rails) 45 min before lights-on to drop RH.<br>3. Raise late-afternoon slab EC by +0.4 dS/m to cushion osmotic turgor swings.
+          </div>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:8px; margin-top:16px;">
+          <a href="/tools/rockwool-substrate-tdr-moisture-drain-optimizer.html" class="tool-link-btn" style="margin-top:0;">
+            <span>⚙️ Launch Fix: Rockwool TDR Dryback Optimizer</span>
+            <span>→</span>
+          </a>
+          <a href="/articles/article-01-vpd-master-class.html" style="display:flex; justify-content:space-between; align-items:center; padding:8px 14px; border-radius:9px; background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.3); color:#34d399; text-decoration:none; font-size:0.82rem; font-weight:700;">
+            <span>📖 Reference: VPD Master Class Monograph</span>
+            <span>↗</span>
+          </a>
+        </div>
+      </div>
+      <div class="symptom-card" data-cat="strawberry">
+        <div class="card-top">
+          <div class="card-icon">🍓</div>
+          <div class="card-cat">STRAWBERRY</div>
+          <h3 class="card-title">Strawberry Leaf Tipburn & Ca Deficiency in Emerging Crown</h3>
+          <p class="card-desc"><strong>Root Cause:</strong> Rapid meristem expansion outpaces xylem-delivered calcium due to stagnant high nighttime humidity (&gt;92% RH) preventing guttation root pressure.</p>
+          <div class="action-steps">
+            <strong>🩺 3-Step Corrective Protocol:</strong><br>
+            1. Raise nocturnal humidity briefly above 95% RH or trigger gentle root guttation windows safely.<br>2. Target daytime VPD 0.65–0.90 kPa with gentle horizontal crown airflow (0.3–0.5 m/s).<br>3. Cap drip EC below 1.5 dS/m to protect root osmotic water uptake.
+          </div>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:8px; margin-top:16px;">
+          <a href="/tools/psychrometric-mollier-greenhouse-dehumidifier.html" class="tool-link-btn" style="margin-top:0;">
+            <span>⚙️ Launch Fix: Psychrometric Mollier Dehumidifier</span>
+            <span>→</span>
+          </a>
+          <a href="/crops/commercial-strawberry-greenhouse-climate-dli-guide.html" style="display:flex; justify-content:space-between; align-items:center; padding:8px 14px; border-radius:9px; background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.3); color:#34d399; text-decoration:none; font-size:0.82rem; font-weight:700;">
+            <span>📖 Reference: Strawberry Climate & Brix Guide</span>
+            <span>↗</span>
+          </a>
+        </div>
+      </div>
+      <div class="symptom-card" data-cat="strawberry">
+        <div class="card-top">
+          <div class="card-icon">🍓</div>
+          <div class="card-cat">STRAWBERRY</div>
+          <h3 class="card-title">Botrytis cinerea Gray Mold & Calyx Petal Infections</h3>
+          <p class="card-desc"><strong>Root Cause:</strong> Free moisture condensation onto chilled flower receptacles when dew-point temperature exceeds berry surface temperature at twilight.</p>
+          <div class="action-steps">
+            <strong>🩺 3-Step Corrective Protocol:</strong><br>
+            1. Monitor dew-point depression (keep berry temp ≥ T_dew + 1.5 °C across sunset).<br>2. Run crack ventilation + minimum pipe heat pulse during evening cooling transitions.<br>3. Remove senescing petals and adjust gutter drip spacing to keep crown foliage dry.
+          </div>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:8px; margin-top:16px;">
+          <a href="/tools/evapotranspiration-penman-monteith-calculator.html" class="tool-link-btn" style="margin-top:0;">
+            <span>⚙️ Launch Fix: Stanghellini ET & Dew Model</span>
+            <span>→</span>
+          </a>
+          <a href="/wiki/strawberry.html" style="display:flex; justify-content:space-between; align-items:center; padding:8px 14px; border-radius:9px; background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.3); color:#34d399; text-decoration:none; font-size:0.82rem; font-weight:700;">
+            <span>📖 Reference: Strawberry Agronomy Wiki</span>
+            <span>↗</span>
+          </a>
+        </div>
+      </div>
+      <div class="symptom-card" data-cat="strawberry">
+        <div class="card-top">
+          <div class="card-icon">🍓</div>
+          <div class="card-cat">STRAWBERRY</div>
+          <h3 class="card-title">Low Sugar (Brix &lt; 8°) & Soft Watery Berry Texture</h3>
+          <p class="card-desc"><strong>Root Cause:</strong> Insufficient DLI accumulation (&lt;14 mol/m²/d) paired with overly warm night temperatures (&gt;13 °C) burning assimilated hexoses before harvest.</p>
+          <div class="action-steps">
+            <strong>🩺 3-Step Corrective Protocol:</strong><br>
+            1. Maintain cool nights (8–10 °C) and warm bright days (19–22 °C) to maximize diurnal sugar storage.<br>2. Tune foliar K:Ca ratio toward 1.4:1 during fruit fill while keeping N moderate.<br>3. Size supplemental LED bar arrays to hold DLI between 16–20 mol/m²/d during winter.
+          </div>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:8px; margin-top:16px;">
+          <a href="/tools/dli-spectrum-photomorphogenesis-calculator.html" class="tool-link-btn" style="margin-top:0;">
+            <span>⚙️ Launch Fix: DLI & Spectral Photomorphogenesis</span>
+            <span>→</span>
+          </a>
+          <a href="/articles/article-11-strawberry-greenhouse-climate.html" style="display:flex; justify-content:space-between; align-items:center; padding:8px 14px; border-radius:9px; background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.3); color:#34d399; text-decoration:none; font-size:0.82rem; font-weight:700;">
+            <span>📖 Reference: Strawberry Climate Monograph</span>
+            <span>↗</span>
+          </a>
+        </div>
+      </div>
+      <div class="symptom-card" data-cat="strawberry">
+        <div class="card-top">
+          <div class="card-icon">🍓</div>
+          <div class="card-cat">STRAWBERRY</div>
+          <h3 class="card-title">Misshapen Fruit ('Catfacing') & Incomplete Achene Pollination</h3>
+          <p class="card-desc"><strong>Root Cause:</strong> Sub-14 °C pollination windows, high UV blockage under dirty glazing reducing Bombus terrestris navigation, or RH &gt; 85% clumping anther pollen.</p>
+          <div class="action-steps">
+            <strong>🩺 3-Step Corrective Protocol:</strong><br>
+            1. Maintain minimum 15–18 °C and 55–75% RH during 09:00–13:00 peak anther dehiscence.<br>2. Verify glazing UV-A transmission or add targeted UVA/violet hive navigation strips.<br>3. Recalibrate bumblebee hive placement away from hot-air exhaust vents.
+          </div>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:8px; margin-top:16px;">
+          <a href="/tools/greenhouse-natural-ventilation-buoyancy-airflow-calculator.html" class="tool-link-btn" style="margin-top:0;">
+            <span>⚙️ Launch Fix: Natural Ventilation & Airflow</span>
+            <span>→</span>
+          </a>
+          <a href="/articles/article-03-pollinator-safety-rei.html" style="display:flex; justify-content:space-between; align-items:center; padding:8px 14px; border-radius:9px; background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.3); color:#34d399; text-decoration:none; font-size:0.82rem; font-weight:700;">
+            <span>📖 Reference: Bumblebee Pollination & REI Safety</span>
+            <span>↗</span>
+          </a>
+        </div>
+      </div>
+      <div class="symptom-card" data-cat="greens">
+        <div class="card-top">
+          <div class="card-icon">🥬</div>
+          <div class="card-cat">GREENS</div>
+          <h3 class="card-title">Vertical Farm Inner-Leaf Lettuce Tipburn</h3>
+          <p class="card-desc"><strong>Root Cause:</strong> Excessive DLI (&gt;18 mol/m²/d) accelerates shoot expansion while stagnant boundary layers (&lt;0.15 m/s vertical airflow) halt leaf transpiration.</p>
+          <div class="action-steps">
+            <strong>🩺 3-Step Corrective Protocol:</strong><br>
+            1. Increase downward canopy air velocity across shelves to 0.45–0.70 m/s.<br>2. Trim peak daily PPFD or shorten photoperiod so DLI sits within 14–16 mol/m²/d.<br>3. Maintain dark-period root-pressure recovery (80–85% RH, 17 °C) for 6–8 hours nightly.
+          </div>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:8px; margin-top:16px;">
+          <a href="/tools/greenhouse-microclimate-cfd-air-velocity-optimizer.html" class="tool-link-btn" style="margin-top:0;">
+            <span>⚙️ Launch Fix: CFD Boundary Layer Optimizer</span>
+            <span>→</span>
+          </a>
+          <a href="/crops/vertical-farm-lettuce-leafy-greens-tipburn-prevention-guide.html" style="display:flex; justify-content:space-between; align-items:center; padding:8px 14px; border-radius:9px; background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.3); color:#34d399; text-decoration:none; font-size:0.82rem; font-weight:700;">
+            <span>📖 Reference: Lettuce Tipburn Prevention Guide</span>
+            <span>↗</span>
+          </a>
+        </div>
+      </div>
+      <div class="symptom-card" data-cat="greens">
+        <div class="card-top">
+          <div class="card-icon">🥬</div>
+          <div class="card-cat">GREENS</div>
+          <h3 class="card-title">Hypocotyl Leggy Stretching & Chlorosis in Seedlings</h3>
+          <p class="card-desc"><strong>Root Cause:</strong> High Far-Red (730 nm) reflection from close neighboring trays or insufficient Blue photon fraction (&lt;12% 400–500 nm) lowers Phytochrome Photostationary State.</p>
+          <div class="action-steps">
+            <strong>🩺 3-Step Corrective Protocol:</strong><br>
+            1. Deliver 18–25% Blue photon spectrum during days 1–10 germination.<br>2. Target 180–240 µmol/m²/s PPFD directly above tray surface with uniform fan shear.<br>3. Verify R:FR ratio exceeds 4.0 during dense nursery spacing.
+          </div>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:8px; margin-top:16px;">
+          <a href="/tools/par-far-red-canopy-extinction-beer-lambert-calculator.html" class="tool-link-btn" style="margin-top:0;">
+            <span>⚙️ Launch Fix: PAR & Far-Red Canopy Model</span>
+            <span>→</span>
+          </a>
+          <a href="/articles/article-07-indoor-plant-lighting-spectrum.html" style="display:flex; justify-content:space-between; align-items:center; padding:8px 14px; border-radius:9px; background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.3); color:#34d399; text-decoration:none; font-size:0.82rem; font-weight:700;">
+            <span>📖 Reference: LED Spectrum & Morphogenesis</span>
+            <span>↗</span>
+          </a>
+        </div>
+      </div>
+      <div class="symptom-card" data-cat="greens">
+        <div class="card-top">
+          <div class="card-icon">🥬</div>
+          <div class="card-cat">GREENS</div>
+          <h3 class="card-title">Cucumber High-Humidity Marginal Necrosis & Pythium Wilt</h3>
+          <p class="card-desc"><strong>Root Cause:</strong> Guttation toxicity paired with root-zone hypoxia (DO &lt; 4.5 mg/L) in poorly drained gullies at slab temperatures above 26 °C.</p>
+          <div class="action-steps">
+            <strong>🩺 3-Step Corrective Protocol:</strong><br>
+            1. Chilled fertigation + micro-bubble oxygenator to hold dissolved oxygen ≥ 7.5 mg/L.<br>2. Disinfect recirculating drain return with UV-C dosing (&gt;100 mJ/cm² transmittance).<br>3. Maintain daytime VPD 0.65–0.90 kPa to sustain smooth leaf cooling.
+          </div>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:8px; margin-top:16px;">
+          <a href="/tools/uvc-drainage-pathogen-disinfection-calculator.html" class="tool-link-btn" style="margin-top:0;">
+            <span>⚙️ Launch Fix: UV-C Pathogen Disinfection</span>
+            <span>→</span>
+          </a>
+          <a href="/crops/greenhouse-cucumber-high-humidity-transpiration-guide.html" style="display:flex; justify-content:space-between; align-items:center; padding:8px 14px; border-radius:9px; background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.3); color:#34d399; text-decoration:none; font-size:0.82rem; font-weight:700;">
+            <span>📖 Reference: Cucumber High-Humidity Guide</span>
+            <span>↗</span>
+          </a>
+        </div>
+      </div>
+      <div class="symptom-card" data-cat="greens">
+        <div class="card-top">
+          <div class="card-icon">🌿</div>
+          <div class="card-cat">GREENS</div>
+          <h3 class="card-title">Basil Downy Mildew (Peronospora belbahrii) & Chilling Necrosis</h3>
+          <p class="card-desc"><strong>Root Cause:</strong> Prolonged nocturnal RH &gt; 85% triggers sporangia germination, while air temperatures dropping below 12 °C collapse chill-sensitive basil cell membranes.</p>
+          <div class="action-steps">
+            <strong>🩺 3-Step Corrective Protocol:</strong><br>
+            1. Keep 24h air temperature strictly above 14.5 °C minimum (optimal 21–25 °C).<br>2. Run dehumidifying air-handling cycles at dusk to break leaf wetness windows.<br>3. Add supplemental far-red/blue evening sweeps shown to disrupt Peronospora sporulation.
+          </div>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:8px; margin-top:16px;">
+          <a href="/tools/semi-closed-greenhouse-atu-mollier-simulator.html" class="tool-link-btn" style="margin-top:0;">
+            <span>⚙️ Launch Fix: Semi-Closed ATU Mollier Engine</span>
+            <span>→</span>
+          </a>
+          <a href="/crops/hydroponic-basil-culinary-herbs-climate-guide.html" style="display:flex; justify-content:space-between; align-items:center; padding:8px 14px; border-radius:9px; background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.3); color:#34d399; text-decoration:none; font-size:0.82rem; font-weight:700;">
+            <span>📖 Reference: Sweet Basil Climate Blueprint</span>
+            <span>↗</span>
+          </a>
+        </div>
+      </div>
+      <div class="symptom-card" data-cat="climate">
+        <div class="card-top">
+          <div class="card-icon">🔥</div>
+          <div class="card-cat">CLIMATE</div>
+          <h3 class="card-title">Extreme Winter Heating Loss & Screen Edge Chimney Drafts</h3>
+          <p class="card-desc"><strong>Root Cause:</strong> Single-layer PE glazing with high U-value (&gt;5.8 W/m²K) or unsealed 1–2% screen edge gaps dropping thermal retention by 30%+.</p>
+          <div class="action-steps">
+            <strong>🩺 3-Step Corrective Protocol:</strong><br>
+            1. Close dual energy screens 30 min prior to sunset to capture residual solar heat.<br>2. Install perimeter baffle skirts and inspect screen drive cables for tight overlap.<br>3. Model peak heating load &amp; thermal buffer tank stratification for off-peak CHP/Heat Pump firing.
+          </div>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:8px; margin-top:16px;">
+          <a href="/tools/greenhouse-heating-load-thermal-screen-calculator.html" class="tool-link-btn" style="margin-top:0;">
+            <span>⚙️ Launch Fix: Thermal Screen & U-Value Engine</span>
+            <span>→</span>
+          </a>
+          <a href="/articles/article-04-greenhouse-heating-loss.html" style="display:flex; justify-content:space-between; align-items:center; padding:8px 14px; border-radius:9px; background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.3); color:#34d399; text-decoration:none; font-size:0.82rem; font-weight:700;">
+            <span>📖 Reference: Greenhouse Heat Loss Monograph</span>
+            <span>↗</span>
+          </a>
+        </div>
+      </div>
+      <div class="symptom-card" data-cat="climate">
+        <div class="card-top">
+          <div class="card-icon">🌡️</div>
+          <div class="card-cat">CLIMATE</div>
+          <h3 class="card-title">Solar Overheating (&gt;32 °C) with Low Transpiration Cooling</h3>
+          <p class="card-desc"><strong>Root Cause:</strong> Inadequate vent opening area or windward lock-out drops Air Changes Per Hour (ACH) while dry outside air induces stomatal closure.</p>
+          <div class="action-steps">
+            <strong>🩺 3-Step Corrective Protocol:</strong><br>
+            1. Deploy diffuse shade screens automatically at solar radiation &gt;650 W/m².<br>2. Pulse 100-bar high-pressure fogging in 15-second bursts to extract sensible heat latently.<br>3. Verify roof ridge buoyancy airflow opening percentages vs. external wind speed.
+          </div>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:8px; margin-top:16px;">
+          <a href="/tools/fogging-nozzle-droplet-evaporative-cooling-engine.html" class="tool-link-btn" style="margin-top:0;">
+            <span>⚙️ Launch Fix: 100-Bar Fog Cooling Engine</span>
+            <span>→</span>
+          </a>
+          <a href="/benchmarks/diffuse-glass-vs-po-film-greenhouse-glazing-roi.html" style="display:flex; justify-content:space-between; align-items:center; padding:8px 14px; border-radius:9px; background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.3); color:#34d399; text-decoration:none; font-size:0.82rem; font-weight:700;">
+            <span>📖 Reference: Diffuse Glazing ROI Benchmark</span>
+            <span>↗</span>
+          </a>
+        </div>
+      </div>
+      <div class="symptom-card" data-cat="climate">
+        <div class="card-top">
+          <div class="card-icon">💨</div>
+          <div class="card-cat">CLIMATE</div>
+          <h3 class="card-title">Unresponsive Stomata Despite CO₂ Enrichment (&gt;1,000 ppm)</h3>
+          <p class="card-desc"><strong>Root Cause:</strong> Thick stagnant leaf boundary layers or VPD &gt;1.6 kPa forcing ABA stomatal closure, wasting expensive pure or flue-gas CO₂.</p>
+          <div class="action-steps">
+            <strong>🩺 3-Step Corrective Protocol:</strong><br>
+            1. Verify HAF recirculation fans maintain 0.4–0.6 m/s cross-canopy velocity.<br>2. Cut CO₂ dosing proportionally whenever roof vents open beyond 15–20%.<br>3. Run Farquhar C3 photosynthetic response curves to identify the true Jmax vs. Vcmax plateau.
+          </div>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:8px; margin-top:16px;">
+          <a href="/tools/co2-enrichment-leaf-photosynthesis-farquhar-calculator.html" class="tool-link-btn" style="margin-top:0;">
+            <span>⚙️ Launch Fix: Farquhar CO₂ Assimilation Engine</span>
+            <span>→</span>
+          </a>
+          <a href="/wiki/co2_injection_canopy_assimilation_kinetics.html" style="display:flex; justify-content:space-between; align-items:center; padding:8px 14px; border-radius:9px; background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.3); color:#34d399; text-decoration:none; font-size:0.82rem; font-weight:700;">
+            <span>📖 Reference: CO₂ Canopy Assimilation Wiki</span>
+            <span>↗</span>
+          </a>
+        </div>
+      </div>
+      <div class="symptom-card" data-cat="climate">
+        <div class="card-top">
+          <div class="card-icon">💡</div>
+          <div class="card-cat">CLIMATE</div>
+          <h3 class="card-title">LED Driver Thermal Derating & Vertical Rack Hotspots</h3>
+          <p class="card-desc"><strong>Root Cause:</strong> Closed rack ceilings trap sensible fixture waste heat (&gt;45% of input W even at 3.5 µmol/J LEDs), baking upper lettuce heads.</p>
+          <div class="action-steps">
+            <strong>🩺 3-Step Corrective Protocol:</strong><br>
+            1. Remotely mount constant-current LED drivers outside conditioned cultivation bays.<br>2. Calculate exact sensible + latent HVAC tonnage required per kW of connected toplighting.<br>3. Specify water-cooled or finned passive extrusion fixtures checked for IP66 sulfur sealing.
+          </div>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:8px; margin-top:16px;">
+          <a href="/tools/greenhouse-lighting-led-thermal-cfd-optimizer.html" class="tool-link-btn" style="margin-top:0;">
+            <span>⚙️ Launch Fix: LED Thermal & CFD Optimizer</span>
+            <span>→</span>
+          </a>
+          <a href="/benchmarks/greenhouse-led-vs-hps-lighting-efficiency-roi.html" style="display:flex; justify-content:space-between; align-items:center; padding:8px 14px; border-radius:9px; background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.3); color:#34d399; text-decoration:none; font-size:0.82rem; font-weight:700;">
+            <span>📖 Reference: LED vs. HPS Efficiency Benchmark</span>
+            <span>↗</span>
+          </a>
+        </div>
+      </div>
+      <div class="symptom-card" data-cat="fertigation">
+        <div class="card-top">
+          <div class="card-icon">💧</div>
+          <div class="card-cat">FERTIGATION</div>
+          <h3 class="card-title">Closed-Loop Sodium (Na⁺) Escalation & Substrate EC Drift</h3>
+          <p class="card-desc"><strong>Root Cause:</strong> Source groundwater sodium (&gt;1.5 mmol/L) concentrates exponentially inside zero-discharge loops because crop roots exclude Na⁺ uptake.</p>
+          <div class="action-steps">
+            <strong>🩺 3-Step Corrective Protocol:</strong><br>
+            1. Analyze raw well water &amp; size reverse-osmosis permeate blending ratio immediately.<br>2. Track slab pore-water Na⁺/EC separately from total N-P-K ionic balance.<br>3. Trigger controlled bleed only when Na⁺ crosses 8.0 mmol/L threshold (10 mmol/L in tomato).
+          </div>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:8px; margin-top:16px;">
+          <a href="/tools/closed-loop-nutrient-recirculation-ion-balance-simulator.html" class="tool-link-btn" style="margin-top:0;">
+            <span>⚙️ Launch Fix: Closed-Loop Ion Balance Engine</span>
+            <span>→</span>
+          </a>
+          <a href="/tools/closed-loop-reverse-osmosis-desalination-energy-optimizer.html" style="display:flex; justify-content:space-between; align-items:center; padding:8px 14px; border-radius:9px; background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.3); color:#34d399; text-decoration:none; font-size:0.82rem; font-weight:700;">
+            <span>📖 Reference: RO Desalination Energy Optimizer</span>
+            <span>↗</span>
+          </a>
+        </div>
+      </div>
+      <div class="symptom-card" data-cat="fertigation">
+        <div class="card-top">
+          <div class="card-icon">🧪</div>
+          <div class="card-cat">FERTIGATION</div>
+          <h3 class="card-title">Emitter Clogging & Stock Tank Gypsum (CaSO₄) Precipitation</h3>
+          <p class="card-desc"><strong>Root Cause:</strong> Contamination between Tank A (Calcium Nitrate) and Tank B (Sulfate/Phosphate), or high source bicarbonate (HCO₃⁻) shifting dripper pH above 6.5.</p>
+          <div class="action-steps">
+            <strong>🩺 3-Step Corrective Protocol:</strong><br>
+            1. Verify A/B mixing stoichiometry and confirm zero PO₄³⁻/SO₄²⁻ intrusion into Tank A.<br>2. Neutralize source bicarbonate cleanly down to 0.5–0.8 mmol/L residual alkalinity with HNO₃.<br>3. Check Langelier Saturation Index &amp; ion activity products at overnight slab temperatures.
+          </div>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:8px; margin-top:16px;">
+          <a href="/tools/hydroponic-chemical-speciation-precipitation-index.html" class="tool-link-btn" style="margin-top:0;">
+            <span>⚙️ Launch Fix: Ionic Speciation & Ksp Checker</span>
+            <span>→</span>
+          </a>
+          <a href="/articles/article-06-hydroponic-nutrient-formulation.html" style="display:flex; justify-content:space-between; align-items:center; padding:8px 14px; border-radius:9px; background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.3); color:#34d399; text-decoration:none; font-size:0.82rem; font-weight:700;">
+            <span>📖 Reference: A/B Nutrient Formulation Monograph</span>
+            <span>↗</span>
+          </a>
+        </div>
+      </div>
+      <div class="symptom-card" data-cat="fertigation">
+        <div class="card-top">
+          <div class="card-icon">🌱</div>
+          <div class="card-cat">FERTIGATION</div>
+          <h3 class="card-title">Channeled Drainage & Low Overnight Dryback in Rockwool/Coir</h3>
+          <p class="card-desc"><strong>Root Cause:</strong> Oversized dripper shot volume (&gt;150 mL) channels straight through macropores while premature evening irrigation eliminates generative dryback.</p>
+          <div class="action-steps">
+            <strong>🩺 3-Step Corrective Protocol:</strong><br>
+            1. Halve individual irrigation shot volume to 2–3% of slab volume while doubling pulse frequency.<br>2. Stop P2 afternoon feeds 2.5 hours before sunset to hit 8–14% overnight VWC dryback.<br>3. Calibrate Van Genuchten water retention &amp; TDR bulk EC probes per block.
+          </div>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:8px; margin-top:16px;">
+          <a href="/tools/soil-matrix-water-potential-matric-suction-calculator.html" class="tool-link-btn" style="margin-top:0;">
+            <span>⚙️ Launch Fix: Van Genuchten Matric Potential</span>
+            <span>→</span>
+          </a>
+          <a href="/articles/article-16-german-meister-greenhouse-climate.html" style="display:flex; justify-content:space-between; align-items:center; padding:8px 14px; border-radius:9px; background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.3); color:#34d399; text-decoration:none; font-size:0.82rem; font-weight:700;">
+            <span>📖 Reference: Meister Climate & Substrate Control</span>
+            <span>↗</span>
+          </a>
+        </div>
+      </div>
+      <div class="symptom-card" data-cat="fertigation">
+        <div class="card-top">
+          <div class="card-icon">⚗️</div>
+          <div class="card-cat">FERTIGATION</div>
+          <h3 class="card-title">Iron Chlorosis in Upper Shoots Despite Lab Iron in Feed</h3>
+          <p class="card-desc"><strong>Root Cause:</strong> Substrate pH drifted &gt;6.6 (converting Fe-EDTA into insoluble ferric hydroxide) or high root HCO₃⁻ immobilized iron apoplastically.</p>
+          <div class="action-steps">
+            <strong>🩺 3-Step Corrective Protocol:</strong><br>
+            1. Drop drain pH cleanly to 5.6–5.9 via ammonium fraction modulation (4–7% NH₄⁺).<br>2. Switch chelate source from Fe-EDTA to Fe-DTPA (stable pH ≤7.0) or o,o-Fe-EDDHA.<br>3. Audit K:Mg and P:Fe ratios to relieve micronutrient uptake competition.
+          </div>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:8px; margin-top:16px;">
+          <a href="/tools/nutrient-uptake-concentration-factor-analyzer.html" class="tool-link-btn" style="margin-top:0;">
+            <span>⚙️ Launch Fix: Nutrient Uptake CF Analyzer</span>
+            <span>→</span>
+          </a>
+          <a href="/wiki/chlorophyll_fluorescence_pam_stress_kinetics.html" style="display:flex; justify-content:space-between; align-items:center; padding:8px 14px; border-radius:9px; background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.3); color:#34d399; text-decoration:none; font-size:0.82rem; font-weight:700;">
+            <span>📖 Reference: Chlorophyll Fluorescence & Fe Stress</span>
+            <span>↗</span>
+          </a>
+        </div>
+      </div>
     </div>
 
     <!-- TROUBLE_DEEP_DIVE_START -->
@@ -351,6 +827,44 @@
            data-full-width-responsive="true"></ins>
       <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
     </div>
+  
+    <!-- Cross-Portal Troubleshooting & Reference Bridges -->
+    <section style="background:rgba(15,23,42,0.85); border:1px solid rgba(56,189,248,0.28); border-radius:18px; padding:26px; margin-top:34px;">
+      <h2 style="font-family:'Outfit',sans-serif; font-size:1.35rem; color:#f8fafc; margin:0 0 10px 0;">🔗 Direct Biophysical Engineering &amp; Reference Bridges</h2>
+      <p style="color:#94a3b8; font-size:0.92rem; line-height:1.65; margin:0 0 16px 0;">Move directly from symptom diagnosis into parameter simulation, species-specific setpoints, hardware BOM selection, and full monograph theory:</p>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(210px, 1fr)); gap:12px;">
+        <a href="/tools/index.html" style="display:block; padding:12px 14px; background:rgba(30,41,59,0.8); border:1px solid rgba(56,189,248,0.28); border-radius:10px; color:#38bdf8; text-decoration:none; font-weight:700; font-size:0.88rem;">🛠️ 42 Physics Simulators →</a>
+        <a href="/crops/index.html" style="display:block; padding:12px 14px; background:rgba(30,41,59,0.8); border:1px solid rgba(16,185,129,0.28); border-radius:10px; color:#34d399; text-decoration:none; font-weight:700; font-size:0.88rem;">🌿 10 Crop Steering Guides →</a>
+        <a href="/wiki/index.html" style="display:block; padding:12px 14px; background:rgba(30,41,59,0.8); border:1px solid rgba(168,85,247,0.28); border-radius:10px; color:#c084fc; text-decoration:none; font-weight:700; font-size:0.88rem;">📚 Botanical AgTech Wiki →</a>
+        <a href="/handbooks/index.html" style="display:block; padding:12px 14px; background:rgba(30,41,59,0.8); border:1px solid rgba(245,158,11,0.28); border-radius:10px; color:#fbbf24; text-decoration:none; font-weight:700; font-size:0.88rem;">📖 186 CEA Handbooks →</a>
+        <a href="/parts/index.html" style="display:block; padding:12px 14px; background:rgba(30,41,59,0.8); border:1px solid rgba(56,189,248,0.28); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:700; font-size:0.88rem;">⚙️ Hardware &amp; Valve BOM →</a>
+        <a href="/benchmarks/index.html" style="display:block; padding:12px 14px; background:rgba(30,41,59,0.8); border:1px solid rgba(16,185,129,0.28); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:700; font-size:0.88rem;">📊 Hardware ROI Benchmarks →</a>
+      </div>
+    </section>
+
+    <!-- Diagnostic FAQ (Synced with JSON-LD FAQPage) -->
+    <section style="background:rgba(22,30,49,0.85); border:1px solid rgba(56,189,248,0.25); border-radius:18px; padding:28px; margin-top:26px;" aria-label="Troubleshooting FAQ">
+      <h2 style="font-family:'Outfit',sans-serif; font-size:1.35rem; color:#f8fafc; margin:0 0 18px 0;">❓ Greenhouse Troubleshooting Frequently Asked Questions</h2>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:18px;">
+        <div>
+          <strong style="display:block; color:#38bdf8; font-size:0.94rem; margin-bottom:6px;">How can greenhouse growers distinguish calcium Blossom End Rot from fungal rot?</strong>
+          <p style="color:#94a3b8; font-size:0.88rem; line-height:1.65; margin:0;">Blossom End Rot (BER) starts strictly at the dry, sunken, leathery blossom scar (distal apex) of rapidly expanding green fruit without surface mycelium. It is caused by inadequate xylem calcium transport under excessive VPD (&gt;1.6 kPa) or salt stress rather than a primary pathogen.</p>
+        </div>
+        <div>
+          <strong style="display:block; color:#38bdf8; font-size:0.94rem; margin-bottom:6px;">Why does inner-leaf tipburn occur in vertical farms even when calcium feed exceeds 180 ppm?</strong>
+          <p style="color:#94a3b8; font-size:0.88rem; line-height:1.65; margin:0;">Calcium travels almost exclusively in the xylem transpiration stream rather than phloem sap. Stagnant air (&lt;0.15 m/s) traps a saturated boundary layer inside enclosed lettuce hearts, halting xylem flow into newly unfolded leaves regardless of reservoir concentration.</p>
+        </div>
+        <div>
+          <strong style="display:block; color:#38bdf8; font-size:0.94rem; margin-bottom:6px;">When should Sodium (Na⁺) trigger recirculation drain bleed in rockwool greenhouses?</strong>
+          <p style="color:#94a3b8; font-size:0.88rem; line-height:1.65; margin:0;">Crops exclude most sodium ions at the root membrane, causing recirculated drain Na⁺ to climb over weeks. Salt-sensitive strawberries require bleed above 1.5–2.5 mmol/L, whereas greenhouse tomatoes tolerate up to 8.0–10.0 mmol/L Na⁺ before osmotic yield penalty sets in.</p>
+        </div>
+        <div>
+          <strong style="display:block; color:#38bdf8; font-size:0.94rem; margin-bottom:6px;">How much heating fuel is wasted by unsealed thermal screen edge gaps?</strong>
+          <p style="color:#94a3b8; font-size:0.88rem; line-height:1.65; margin:0;">Because warm greenhouse air rises via buoyancy convection through open screen perimeter seams, leaving just 1% to 2% linear edge gap reduces true thermal energy retention by 25% to 35% on winter nights under DIN V 18599 heat balance modeling.</p>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <footer style="text-align:center; padding:30px 20px; color:#64748b; font-size:0.85rem; border-top:1px solid rgba(255,255,255,0.06); margin-top:auto;">
@@ -368,96 +882,246 @@
   <script>
     const ISSUES = [
       {
-        id: "ber",
-        cat: "tomato",
-        icon: "🍅",
-        title: "Blossom-End Rot (BER) in Tomato / Pepper",
-        cause: "Localized Calcium (Ca²⁺) starvation in distal fruit tissue caused by high daytime VPD (> 1.4 kPa) forcing water to leaves, or zero nighttime root pressure / guttation.",
-        protocol: "1. Lower daytime VPD to 0.8–1.0 kPa via fogging or misting.<br>2. Maintain 80–85% night RH to allow root guttation pressure to pump Ca²⁺ into fruit.<br>3. Verify Ca:K ratio in rootzone >= 1:2.",
-        toolTitle: "Calcium & BER Risk Model",
-        toolUrl: "tools/crop-transpiration-calcium-blossom-end-rot-risk-model.html"
+            "id": "ber",
+            "cat": "tomato",
+            "icon": "🍅",
+            "title": "Blossom End Rot (BER) & Apical Calcium Necrosis",
+            "cause": "Insufficient xylem mass-flow transport of calcium (Ca²⁺) to expanding distal fruit tissue caused by excessive daytime VPD (&gt;1.6 kPa), elevated K⁺/NH₄⁺ antagonism, or sub-20% drain cycles.",
+            "protocol": "1. Steer midday greenhouse VPD into 0.75–1.05 kPa via high-pressure fogging.<br>2. Maintain A/B feed Ca²⁺ ≥ 4.5 mmol/L and keep NH₄⁺ &lt; 8% of total nitrogen.<br>3. Maintain 0.5–1.0 cm root-pressure hydration overnight to preserve cell wall pectate integrity.",
+            "toolUrl": "/tools/crop-transpiration-calcium-blossom-end-rot-risk-model.html",
+            "toolTitle": "Calcium BER Transpiration Model",
+            "guideUrl": "/crops/greenhouse-tomato-microclimate-vpd-steering-guide.html",
+            "guideTitle": "Tomato VPD & Steering Guide"
       },
       {
-        id: "botrytis",
-        cat: "climate",
-        icon: "🌧️",
-        title: "Night Condensation & Botrytis Blight",
-        cause: "Greenhouse indoor air drops below dew point temperature during sunset cooldown, forming liquid water films on leaves and glass where fungal spores germinate.",
-        protocol: "1. Deploy thermal screens 30 mins before sunset to trap ground radiant heat.<br>2. Fire heating pipes at minimum 35°C during sunset to prevent air dew-point cross.<br>3. Open leeward vents 2–5% with minimum heating pipe for active air drying.",
-        toolTitle: "Psychrometric Mollier Dehumidifier",
-        toolUrl: "tools/psychrometric-mollier-greenhouse-dehumidifier.html"
+            "id": "rtr",
+            "cat": "tomato",
+            "icon": "🍅",
+            "title": "Thin Apical Heads & Weak Flower Trusses (RTR Imbalance)",
+            "cause": "24-hour mean temperature exceeds the assimilate supply generated by ambient Daily Light Integral (excess nocturnal dark respiration vs. low DLI).",
+            "protocol": "1. Lower target 24h mean temperature by 1.5–2.0 °C to restore the Radiation-to-Temperature Ratio (RTR).<br>2. Run a -3 °C pre-night drop for 2 hours after sunset to redirect carbohydrates into fruiting trusses.<br>3. Prune 1 older lower leaf per week or activate supplemental LED toplighting.",
+            "toolUrl": "/tools/crop-steering-generative-vegetative-matrix.html",
+            "toolTitle": "Generative/Vegetative Matrix",
+            "guideUrl": "/wiki/dli_photomorphogenesis_steering.html",
+            "guideTitle": "DLI & Assimilate Steering Wiki"
       },
       {
-        id: "tipburn_straw",
-        cat: "strawberry",
-        icon: "🍓",
-        title: "Strawberry Leaf & Bract Tip Burn",
-        cause: "High boundary layer resistance in calm air restricting transpirational water flow to emerging young leaf margins and developing calyx tissues.",
-        protocol: "1. Ensure continuous gentle horizontal air movement (0.3–0.5 m/s) with circulation fans.<br>2. Lower daytime EC by 0.2 mS/cm to reduce osmotic resistance.<br>3. Provide a dryback period between daytime irrigation pulses.",
-        toolTitle: "Microclimate CFD Air Velocity Optimizer",
-        toolUrl: "tools/greenhouse-microclimate-cfd-air-velocity-optimizer.html"
+            "id": "mites",
+            "cat": "tomato",
+            "icon": "🍅",
+            "title": "Russet Mite (Aculops lycopersici) & Spider Mite Flare-Ups",
+            "cause": "Warm, overly arid microclimates (T &gt; 27 °C, RH &lt; 45%, VPD &gt; 1.8 kPa) accelerate Tetranychus & Aculops generational turnover while desiccating beneficial Phytoseiulus predators.",
+            "protocol": "1. Activate misting/pad cooling to cap leaf VPD below 1.25 kPa around hotspots.<br>2. Introduce Amblydromalus limonicus or Amblyseius swirskii cleanly without sulfur residue overlap.<br>3. Model degree-day pest doubling rates and predator release ratios immediately.",
+            "toolUrl": "/tools/greenhouse-biological-pest-control-ipm-calculator.html",
+            "toolTitle": "Biological IPM Calculator",
+            "guideUrl": "/wiki/tomato.html",
+            "guideTitle": "Tomato Botanical & IPM Wiki"
       },
       {
-        id: "inner_tipburn_greens",
-        cat: "greens",
-        icon: "🥬",
-        title: "Inner Heart Tip Burn in Vertical Greens",
-        cause: "Rapid vegetative biomass growth under high DLI (> 17 mol/m²d) outpaces vascular calcium transport into tightly folded young heart leaves.",
-        protocol: "1. Install vertical downward air tubes targeting the center of the heads.<br>2. Dim PPFD by 15% during peak vegetative expansion.<br>3. Lower night temperature by 3–4°C to slow cellular elongation rate.",
-        toolTitle: "DLI Spectrum Photomorphogenesis Tool",
-        toolUrl: "tools/dli-spectrum-photomorphogenesis-calculator.html"
+            "id": "cracking",
+            "cat": "tomato",
+            "icon": "🍅",
+            "title": "Cracked / Split Fruit Skins at Dawn (Root Pressure Surge)",
+            "cause": "High root osmotic turgor combined with abrupt early-morning humid air closure (RH &gt; 90%) blocks transpiration while irrigation pulses begin too early.",
+            "protocol": "1. Delay morning P1 irrigation start until cumulative radiation reaches 80–120 J/cm².<br>2. Execute gentle sunrise minimum pipe heating (+35 °C rails) 45 min before lights-on to drop RH.<br>3. Raise late-afternoon slab EC by +0.4 dS/m to cushion osmotic turgor swings.",
+            "toolUrl": "/tools/rockwool-substrate-tdr-moisture-drain-optimizer.html",
+            "toolTitle": "Rockwool TDR Dryback Optimizer",
+            "guideUrl": "/articles/article-01-vpd-master-class.html",
+            "guideTitle": "VPD Master Class Monograph"
       },
       {
-        id: "heating_spike",
-        cat: "climate",
-        icon: "❄️",
-        title: "Winter Heating Fuel & Gas Consumption Spike",
-        cause: "Severe infiltration air leakage (> 1.2 ACH) through unsealed gable vents, or uncalibrated thermal screen gaps allowing warm air buoyancy convection.",
-        protocol: "1. Seal thermal screen edges with perimeter seals to eliminate thermal chimney draft.<br>2. Recalibrate 3-way mixing valve (Kv) to prevent boiler water short-cycling.<br>3. Lower nocturnal setpoint by 1.5°C during lowest outdoor wind chill periods.",
-        toolTitle: "Greenhouse Heating Load Calculator",
-        toolUrl: "tools/greenhouse-heating-load-thermal-screen-calculator.html"
+            "id": "sb-tipburn",
+            "cat": "strawberry",
+            "icon": "🍓",
+            "title": "Strawberry Leaf Tipburn & Ca Deficiency in Emerging Crown",
+            "cause": "Rapid meristem expansion outpaces xylem-delivered calcium due to stagnant high nighttime humidity (&gt;92% RH) preventing guttation root pressure.",
+            "protocol": "1. Raise nocturnal humidity briefly above 95% RH or trigger gentle root guttation windows safely.<br>2. Target daytime VPD 0.65–0.90 kPa with gentle horizontal crown airflow (0.3–0.5 m/s).<br>3. Cap drip EC below 1.5 dS/m to protect root osmotic water uptake.",
+            "toolUrl": "/tools/psychrometric-mollier-greenhouse-dehumidifier.html",
+            "toolTitle": "Psychrometric Mollier Dehumidifier",
+            "guideUrl": "/crops/commercial-strawberry-greenhouse-climate-dli-guide.html",
+            "guideTitle": "Strawberry Climate & Brix Guide"
       },
       {
-        id: "sodium_buildup",
-        cat: "fertigation",
-        icon: "🧪",
-        title: "Sodium (Na⁺) Accumulation in Recirculating Drain",
-        cause: "Crops transpire pure water and exclude sodium at root membranes, leading to progressive Na⁺ concentration in closed-loop systems until osmotic toxicity occurs.",
-        protocol: "1. Test drain water Na⁺; if > 8.0 mmol/L, bleed 15–20% of drain volume.<br>2. Switch to reverse osmosis (RO) raw water for stock dilution.<br>3. Boost Potassium (K⁺) slightly to compete against sodium uptake.",
-        toolTitle: "Closed-Loop Desalination Optimizer",
-        toolUrl: "tools/closed-loop-reverse-osmosis-desalination-energy-optimizer.html"
+            "id": "botrytis",
+            "cat": "strawberry",
+            "icon": "🍓",
+            "title": "Botrytis cinerea Gray Mold & Calyx Petal Infections",
+            "cause": "Free moisture condensation onto chilled flower receptacles when dew-point temperature exceeds berry surface temperature at twilight.",
+            "protocol": "1. Monitor dew-point depression (keep berry temp ≥ T_dew + 1.5 °C across sunset).<br>2. Run crack ventilation + minimum pipe heat pulse during evening cooling transitions.<br>3. Remove senescing petals and adjust gutter drip spacing to keep crown foliage dry.",
+            "toolUrl": "/tools/evapotranspiration-penman-monteith-calculator.html",
+            "toolTitle": "Stanghellini ET & Dew Model",
+            "guideUrl": "/wiki/strawberry.html",
+            "guideTitle": "Strawberry Agronomy Wiki"
       },
       {
-        id: "flower_drop",
-        cat: "tomato",
-        icon: "🥀",
-        title: "Tomato Blossom Drop & Poor Fruit Set",
-        cause: "Day temperatures exceeding 30°C or night temperatures above 22°C causing pollen sterility, or extreme VPD (> 1.6 kPa) drying pollen grains on the stigma.",
-        protocol: "1. Activate high-pressure fogging to keep midday temps < 28°C and VPD < 1.2 kPa.<br>2. Introduce bumblebees (Bombus terrestris) and verify buzzing pollination marks.<br>3. Apply shade screens when outdoor solar radiation exceeds 850 W/m².",
-        toolTitle: "Crop Steering Generative/Vegetative Matrix",
-        toolUrl: "tools/crop-steering-generative-vegetative-matrix.html"
+            "id": "low-brix",
+            "cat": "strawberry",
+            "icon": "🍓",
+            "title": "Low Sugar (Brix &lt; 8°) & Soft Watery Berry Texture",
+            "cause": "Insufficient DLI accumulation (&lt;14 mol/m²/d) paired with overly warm night temperatures (&gt;13 °C) burning assimilated hexoses before harvest.",
+            "protocol": "1. Maintain cool nights (8–10 °C) and warm bright days (19–22 °C) to maximize diurnal sugar storage.<br>2. Tune foliar K:Ca ratio toward 1.4:1 during fruit fill while keeping N moderate.<br>3. Size supplemental LED bar arrays to hold DLI between 16–20 mol/m²/d during winter.",
+            "toolUrl": "/tools/dli-spectrum-photomorphogenesis-calculator.html",
+            "toolTitle": "DLI & Spectral Photomorphogenesis",
+            "guideUrl": "/articles/article-11-strawberry-greenhouse-climate.html",
+            "guideTitle": "Strawberry Climate Monograph"
       },
       {
-        id: "spider_mites",
-        cat: "tomato",
-        icon: "🕷️",
-        title: "Two-Spotted Spider Mite (Tetranychus urticae)",
-        cause: "Hot, dry microclimates (VPD > 1.5 kPa, RH < 50%) accelerate mite reproductive cycles from egg to adult in under 7 days.",
-        protocol: "1. Raise localized canopy humidity to 65–70% to inhibit mite egg hatching.<br>2. Release predatory mites (Phytoseiulus persimilis) at 5–10 mites/m².<br>3. Spot-treat hot spots with bio-pesticides or horticultural potassium salts.",
-        toolTitle: "Biological Pest Control (IPM) Calculator",
-        toolUrl: "tools/greenhouse-biological-pest-control-ipm-calculator.html"
+            "id": "catfacing",
+            "cat": "strawberry",
+            "icon": "🍓",
+            "title": "Misshapen Fruit ('Catfacing') & Incomplete Achene Pollination",
+            "cause": "Sub-14 °C pollination windows, high UV blockage under dirty glazing reducing Bombus terrestris navigation, or RH &gt; 85% clumping anther pollen.",
+            "protocol": "1. Maintain minimum 15–18 °C and 55–75% RH during 09:00–13:00 peak anther dehiscence.<br>2. Verify glazing UV-A transmission or add targeted UVA/violet hive navigation strips.<br>3. Recalibrate bumblebee hive placement away from hot-air exhaust vents.",
+            "toolUrl": "/tools/greenhouse-natural-ventilation-buoyancy-airflow-calculator.html",
+            "toolTitle": "Natural Ventilation & Airflow",
+            "guideUrl": "/articles/article-03-pollinator-safety-rei.html",
+            "guideTitle": "Bumblebee Pollination & REI Safety"
       },
       {
-        id: "ph_crash",
-        cat: "fertigation",
-        icon: "📉",
-        title: "Substrate Rootzone pH Crash (< 5.2)",
-        cause: "Excess ammonium (NH₄⁺) nitrogen uptake by roots causes active excretion of hydrogen ions (H⁺) into the rockwool slab or nutrient solution.",
-        protocol: "1. Replace ammonium with nitrate (NO₃⁻) in Tank A / B formulation.<br>2. Increase raw water bicarbonate buffer (HCO₃⁻) to 0.5–1.0 mmol/L.<br>3. Flush rootzone with 1.2x normal shot volume at pH 6.0.",
-        toolTitle: "Hydroponic Chemical Speciation Index",
-        toolUrl: "tools/hydroponic-chemical-speciation-precipitation-index.html"
+            "id": "lettuce-tipburn",
+            "cat": "greens",
+            "icon": "🥬",
+            "title": "Vertical Farm Inner-Leaf Lettuce Tipburn",
+            "cause": "Excessive DLI (&gt;18 mol/m²/d) accelerates shoot expansion while stagnant boundary layers (&lt;0.15 m/s vertical airflow) halt leaf transpiration.",
+            "protocol": "1. Increase downward canopy air velocity across shelves to 0.45–0.70 m/s.<br>2. Trim peak daily PPFD or shorten photoperiod so DLI sits within 14–16 mol/m²/d.<br>3. Maintain dark-period root-pressure recovery (80–85% RH, 17 °C) for 6–8 hours nightly.",
+            "toolUrl": "/tools/greenhouse-microclimate-cfd-air-velocity-optimizer.html",
+            "toolTitle": "CFD Boundary Layer Optimizer",
+            "guideUrl": "/crops/vertical-farm-lettuce-leafy-greens-tipburn-prevention-guide.html",
+            "guideTitle": "Lettuce Tipburn Prevention Guide"
+      },
+      {
+            "id": "leggy-seedlings",
+            "cat": "greens",
+            "icon": "🥬",
+            "title": "Hypocotyl Leggy Stretching & Chlorosis in Seedlings",
+            "cause": "High Far-Red (730 nm) reflection from close neighboring trays or insufficient Blue photon fraction (&lt;12% 400–500 nm) lowers Phytochrome Photostationary State.",
+            "protocol": "1. Deliver 18–25% Blue photon spectrum during days 1–10 germination.<br>2. Target 180–240 µmol/m²/s PPFD directly above tray surface with uniform fan shear.<br>3. Verify R:FR ratio exceeds 4.0 during dense nursery spacing.",
+            "toolUrl": "/tools/par-far-red-canopy-extinction-beer-lambert-calculator.html",
+            "toolTitle": "PAR & Far-Red Canopy Model",
+            "guideUrl": "/articles/article-07-indoor-plant-lighting-spectrum.html",
+            "guideTitle": "LED Spectrum & Morphogenesis"
+      },
+      {
+            "id": "pythium-cuke",
+            "cat": "greens",
+            "icon": "🥬",
+            "title": "Cucumber High-Humidity Marginal Necrosis & Pythium Wilt",
+            "cause": "Guttation toxicity paired with root-zone hypoxia (DO &lt; 4.5 mg/L) in poorly drained gullies at slab temperatures above 26 °C.",
+            "protocol": "1. Chilled fertigation + micro-bubble oxygenator to hold dissolved oxygen ≥ 7.5 mg/L.<br>2. Disinfect recirculating drain return with UV-C dosing (&gt;100 mJ/cm² transmittance).<br>3. Maintain daytime VPD 0.65–0.90 kPa to sustain smooth leaf cooling.",
+            "toolUrl": "/tools/uvc-drainage-pathogen-disinfection-calculator.html",
+            "toolTitle": "UV-C Pathogen Disinfection",
+            "guideUrl": "/crops/greenhouse-cucumber-high-humidity-transpiration-guide.html",
+            "guideTitle": "Cucumber High-Humidity Guide"
+      },
+      {
+            "id": "basil-mildew",
+            "cat": "greens",
+            "icon": "🌿",
+            "title": "Basil Downy Mildew (Peronospora belbahrii) & Chilling Necrosis",
+            "cause": "Prolonged nocturnal RH &gt; 85% triggers sporangia germination, while air temperatures dropping below 12 °C collapse chill-sensitive basil cell membranes.",
+            "protocol": "1. Keep 24h air temperature strictly above 14.5 °C minimum (optimal 21–25 °C).<br>2. Run dehumidifying air-handling cycles at dusk to break leaf wetness windows.<br>3. Add supplemental far-red/blue evening sweeps shown to disrupt Peronospora sporulation.",
+            "toolUrl": "/tools/semi-closed-greenhouse-atu-mollier-simulator.html",
+            "toolTitle": "Semi-Closed ATU Mollier Engine",
+            "guideUrl": "/crops/hydroponic-basil-culinary-herbs-climate-guide.html",
+            "guideTitle": "Sweet Basil Climate Blueprint"
+      },
+      {
+            "id": "heat-loss",
+            "cat": "climate",
+            "icon": "🔥",
+            "title": "Extreme Winter Heating Loss & Screen Edge Chimney Drafts",
+            "cause": "Single-layer PE glazing with high U-value (&gt;5.8 W/m²K) or unsealed 1–2% screen edge gaps dropping thermal retention by 30%+.",
+            "protocol": "1. Close dual energy screens 30 min prior to sunset to capture residual solar heat.<br>2. Install perimeter baffle skirts and inspect screen drive cables for tight overlap.<br>3. Model peak heating load &amp; thermal buffer tank stratification for off-peak CHP/Heat Pump firing.",
+            "toolUrl": "/tools/greenhouse-heating-load-thermal-screen-calculator.html",
+            "toolTitle": "Thermal Screen & U-Value Engine",
+            "guideUrl": "/articles/article-04-greenhouse-heating-loss.html",
+            "guideTitle": "Greenhouse Heat Loss Monograph"
+      },
+      {
+            "id": "overheating",
+            "cat": "climate",
+            "icon": "🌡️",
+            "title": "Solar Overheating (&gt;32 °C) with Low Transpiration Cooling",
+            "cause": "Inadequate vent opening area or windward lock-out drops Air Changes Per Hour (ACH) while dry outside air induces stomatal closure.",
+            "protocol": "1. Deploy diffuse shade screens automatically at solar radiation &gt;650 W/m².<br>2. Pulse 100-bar high-pressure fogging in 15-second bursts to extract sensible heat latently.<br>3. Verify roof ridge buoyancy airflow opening percentages vs. external wind speed.",
+            "toolUrl": "/tools/fogging-nozzle-droplet-evaporative-cooling-engine.html",
+            "toolTitle": "100-Bar Fog Cooling Engine",
+            "guideUrl": "/benchmarks/diffuse-glass-vs-po-film-greenhouse-glazing-roi.html",
+            "guideTitle": "Diffuse Glazing ROI Benchmark"
+      },
+      {
+            "id": "co2-lock",
+            "cat": "climate",
+            "icon": "💨",
+            "title": "Unresponsive Stomata Despite CO₂ Enrichment (&gt;1,000 ppm)",
+            "cause": "Thick stagnant leaf boundary layers or VPD &gt;1.6 kPa forcing ABA stomatal closure, wasting expensive pure or flue-gas CO₂.",
+            "protocol": "1. Verify HAF recirculation fans maintain 0.4–0.6 m/s cross-canopy velocity.<br>2. Cut CO₂ dosing proportionally whenever roof vents open beyond 15–20%.<br>3. Run Farquhar C3 photosynthetic response curves to identify the true Jmax vs. Vcmax plateau.",
+            "toolUrl": "/tools/co2-enrichment-leaf-photosynthesis-farquhar-calculator.html",
+            "toolTitle": "Farquhar CO₂ Assimilation Engine",
+            "guideUrl": "/wiki/co2_injection_canopy_assimilation_kinetics.html",
+            "guideTitle": "CO₂ Canopy Assimilation Wiki"
+      },
+      {
+            "id": "led-heat",
+            "cat": "climate",
+            "icon": "💡",
+            "title": "LED Driver Thermal Derating & Vertical Rack Hotspots",
+            "cause": "Closed rack ceilings trap sensible fixture waste heat (&gt;45% of input W even at 3.5 µmol/J LEDs), baking upper lettuce heads.",
+            "protocol": "1. Remotely mount constant-current LED drivers outside conditioned cultivation bays.<br>2. Calculate exact sensible + latent HVAC tonnage required per kW of connected toplighting.<br>3. Specify water-cooled or finned passive extrusion fixtures checked for IP66 sulfur sealing.",
+            "toolUrl": "/tools/greenhouse-lighting-led-thermal-cfd-optimizer.html",
+            "toolTitle": "LED Thermal & CFD Optimizer",
+            "guideUrl": "/benchmarks/greenhouse-led-vs-hps-lighting-efficiency-roi.html",
+            "guideTitle": "LED vs. HPS Efficiency Benchmark"
+      },
+      {
+            "id": "sodium-drift",
+            "cat": "fertigation",
+            "icon": "💧",
+            "title": "Closed-Loop Sodium (Na⁺) Escalation & Substrate EC Drift",
+            "cause": "Source groundwater sodium (&gt;1.5 mmol/L) concentrates exponentially inside zero-discharge loops because crop roots exclude Na⁺ uptake.",
+            "protocol": "1. Analyze raw well water &amp; size reverse-osmosis permeate blending ratio immediately.<br>2. Track slab pore-water Na⁺/EC separately from total N-P-K ionic balance.<br>3. Trigger controlled bleed only when Na⁺ crosses 8.0 mmol/L threshold (10 mmol/L in tomato).",
+            "toolUrl": "/tools/closed-loop-nutrient-recirculation-ion-balance-simulator.html",
+            "toolTitle": "Closed-Loop Ion Balance Engine",
+            "guideUrl": "/tools/closed-loop-reverse-osmosis-desalination-energy-optimizer.html",
+            "guideTitle": "RO Desalination Energy Optimizer"
+      },
+      {
+            "id": "gypsum-precip",
+            "cat": "fertigation",
+            "icon": "🧪",
+            "title": "Emitter Clogging & Stock Tank Gypsum (CaSO₄) Precipitation",
+            "cause": "Contamination between Tank A (Calcium Nitrate) and Tank B (Sulfate/Phosphate), or high source bicarbonate (HCO₃⁻) shifting dripper pH above 6.5.",
+            "protocol": "1. Verify A/B mixing stoichiometry and confirm zero PO₄³⁻/SO₄²⁻ intrusion into Tank A.<br>2. Neutralize source bicarbonate cleanly down to 0.5–0.8 mmol/L residual alkalinity with HNO₃.<br>3. Check Langelier Saturation Index &amp; ion activity products at overnight slab temperatures.",
+            "toolUrl": "/tools/hydroponic-chemical-speciation-precipitation-index.html",
+            "toolTitle": "Ionic Speciation & Ksp Checker",
+            "guideUrl": "/articles/article-06-hydroponic-nutrient-formulation.html",
+            "guideTitle": "A/B Nutrient Formulation Monograph"
+      },
+      {
+            "id": "dryback",
+            "cat": "fertigation",
+            "icon": "🌱",
+            "title": "Channeled Drainage & Low Overnight Dryback in Rockwool/Coir",
+            "cause": "Oversized dripper shot volume (&gt;150 mL) channels straight through macropores while premature evening irrigation eliminates generative dryback.",
+            "protocol": "1. Halve individual irrigation shot volume to 2–3% of slab volume while doubling pulse frequency.<br>2. Stop P2 afternoon feeds 2.5 hours before sunset to hit 8–14% overnight VWC dryback.<br>3. Calibrate Van Genuchten water retention &amp; TDR bulk EC probes per block.",
+            "toolUrl": "/tools/soil-matrix-water-potential-matric-suction-calculator.html",
+            "toolTitle": "Van Genuchten Matric Potential",
+            "guideUrl": "/articles/article-16-german-meister-greenhouse-climate.html",
+            "guideTitle": "Meister Climate & Substrate Control"
+      },
+      {
+            "id": "fe-chlorosis",
+            "cat": "fertigation",
+            "icon": "⚗️",
+            "title": "Iron Chlorosis in Upper Shoots Despite Lab Iron in Feed",
+            "cause": "Substrate pH drifted &gt;6.6 (converting Fe-EDTA into insoluble ferric hydroxide) or high root HCO₃⁻ immobilized iron apoplastically.",
+            "protocol": "1. Drop drain pH cleanly to 5.6–5.9 via ammonium fraction modulation (4–7% NH₄⁺).<br>2. Switch chelate source from Fe-EDTA to Fe-DTPA (stable pH ≤7.0) or o,o-Fe-EDDHA.<br>3. Audit K:Mg and P:Fe ratios to relieve micronutrient uptake competition.",
+            "toolUrl": "/tools/nutrient-uptake-concentration-factor-analyzer.html",
+            "toolTitle": "Nutrient Uptake CF Analyzer",
+            "guideUrl": "/wiki/chlorophyll_fluorescence_pam_stress_kinetics.html",
+            "guideTitle": "Chlorophyll Fluorescence & Fe Stress"
       }
-    ];
+];
 
     let currentCategory = "all";
 
@@ -497,10 +1161,16 @@
               ${item.protocol}
             </div>
           </div>
-          <a href="${item.toolUrl}" class="tool-link-btn">
-            <span>⚙️ Launch Fix: ${item.toolTitle}</span>
-            <span>→</span>
-          </a>
+          <div style="display:flex; flex-direction:column; gap:8px; margin-top:16px;">
+            <a href="${item.toolUrl}" class="tool-link-btn" style="margin-top:0;">
+              <span>⚙️ Launch Fix: ${item.toolTitle}</span>
+              <span>→</span>
+            </a>
+            <a href="${item.guideUrl}" style="display:flex; justify-content:space-between; align-items:center; padding:8px 14px; border-radius:9px; background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.3); color:#34d399; text-decoration:none; font-size:0.82rem; font-weight:700;">
+              <span>📖 Reference: ${item.guideTitle}</span>
+              <span>↗</span>
+            </a>
+          </div>
         </div>
       `).join('');
     }

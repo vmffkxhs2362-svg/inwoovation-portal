@@ -432,11 +432,47 @@ def render_card(guide):
 def render_jsonld(guides):
     items = [{"@type": "ListItem", "position": i + 1, "name": g["name"],
               "url": f"{HUB_URL}{g['file']}"} for i, g in enumerate(guides)]
-    data = {"@context": "https://schema.org", "@type": "CollectionPage",
-            "name": "Global Ag-Climate Atlas for Greenhouse Engineering", "url": HUB_URL,
-            "author": {"@type": "Person", "name": "Inwoo Hwang", "jobTitle": "Horticultural & CEA Systems Engineer"},
-            "publisher": {"@type": "Organization", "name": "Inwoovation Lab", "url": "https://inwoovation.com"},
-            "mainEntity": {"@type": "ItemList", "numberOfItems": len(items), "itemListElement": items}}
+    data = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "CollectionPage",
+                "name": "Global Ag-Climate Atlas for Greenhouse Engineering",
+                "url": HUB_URL,
+                "author": {"@type": "Person", "name": "Inwoo Hwang", "jobTitle": "Horticultural & CEA Systems Engineer"},
+                "publisher": {"@type": "Organization", "name": "Inwoovation Lab", "url": "https://inwoovation.com"},
+                "mainEntity": {"@type": "ItemList", "numberOfItems": len(items), "itemListElement": items},
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://inwoovation.com/"},
+                    {"@type": "ListItem", "position": 2, "name": "Global Ag-Climate Atlas", "item": HUB_URL},
+                ],
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "How should commercial greenhouse designers use regional DLI and Köppen curves?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Multiply outdoor solar Daily Light Integral (mol/m²/day) by canopy structural transmittance (typically 0.65–0.78) to size supplemental LED PPFD in winter, and size heating/cooling plant capacity from local extreme degree-hours and wet-bulb depression.",
+                        },
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Do regional climate hubs connect to local agricultural grants and crop steering profiles?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes. Each cluster pairs directly with the 192-program Global Agri-Subsidy Navigator (US, Germany BLE/BAFA/KfW, Netherlands RVO, Japan MAFF, Korea MAFRA) and the 10 Commercial Crop Steering Atlases under /crops/.",
+                        },
+                    },
+                ],
+            },
+        ],
+    }
     return json.dumps(data, ensure_ascii=False, indent=2)
 
 
@@ -478,6 +514,8 @@ def render_hub(guides):
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../css/global-ui-enhancements.css?v=20261115">
+    <script src="../js/global-search-palette.js?v=20261115" defer></script>
     <style>
         .atlas {{ max-width: 1180px; margin: 32px auto 64px; padding: 0 24px; }}
         .atlas-back {{ color: #38bdf8; text-decoration: none; font-weight: 600; font-size: 0.95rem; }}
@@ -508,7 +546,15 @@ def render_hub(guides):
 </head>
 <body>
 <main class="atlas">
-    <a class="atlas-back" href="/guides.html">← Guides &amp; Articles</a>
+    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:10px;">
+        <a class="atlas-back" href="/guides.html">← Guides &amp; Articles</a>
+        <div style="display:flex; flex-wrap:wrap; gap:12px; align-items:center;">
+            <a class="atlas-back" href="/tools/global-agri-subsidy-grant-navigator.html">🏛️ 192 Grants Radar</a>
+            <a class="atlas-back" href="/crops/index.html">🌱 Crop Atlases</a>
+            <a class="atlas-back" href="/handbooks/index.html">📖 Handbook</a>
+            <button class="nav-search-trigger" onclick="window.InwooPalette && window.InwooPalette.open()"><span>🔍 Spotlight Search</span> <kbd>Ctrl+K</kbd></button>
+        </div>
+    </div>
     <header class="atlas-head">
         <h1>Global Ag-Climate Atlas</h1>
         <p>{count} commercial greenhouse regions, ordered north to south. Each hub summarises latitude,
@@ -530,6 +576,9 @@ def render_hub(guides):
         <h3>2. Psychrometric Enthalpy, Bowen Ratio &amp; Cooling Selection</h3>
         <p>In arid and semi-arid subtropics (e.g., Almería, Culiacán, Yuma, Riyadh, Dalby), summer DLI exceeds 50–60 mol/m²/day while ambient wet-bulb depression remains large (Δ T<sub>wb</sub> > 10 °C). Here, evaporative pad-and-fan systems or 70–100 bar high-pressure fogging achieve high adiabatic cooling efficiency. Conversely, in humid subtropical and tropical monsoon zones (e.g., Toyohashi, Gimje, Kunming, Cameron Highlands, Dalat), elevated ambient vapor pressure limits evaporative cooling potential, necessitating tall gutter heights (6.0–7.0 m), continuous ridge buoyancy ventilation, infrared-reflective shading screens, and active mechanical dehumidification.</p>
         <p style="margin-top:16px; font-size:0.9rem; color:#94a3b8;"><strong>Curated &amp; Verified by Inwoo Hwang</strong> — Horticultural &amp; CEA Systems Engineer, Inwoovation Lab. Grounded in NASA POWER satellite climatology, EN 13031-1 structural design standards, and DIN V 18599 thermal energy modeling.</p>
+        <h3>3. Regional Subsidies, Crop Atlases &amp; FAQ</h3>
+        <p><strong>How should commercial greenhouse designers use regional DLI and Köppen curves?</strong><br>Multiply outdoor solar Daily Light Integral (mol/m²/day) by structural transmittance (typically 0.65–0.78) to size supplemental LED PPFD in winter, and size heating or evaporative cooling capacity from local heating degree-hours and wet-bulb depression using our <a href="/tools/greenhouse-heating-load-thermal-screen-calculator.html" style="color:#38bdf8;">DIN V 18599 Heating Solver</a>.</p>
+        <p><strong>Do regional climate hubs connect to local agricultural grants and crop steering profiles?</strong><br>Yes. Pair any regional climate cluster directly with the <a href="/tools/global-agri-subsidy-grant-navigator.html" style="color:#34d399; font-weight:700;">192-Program Global Agri-Subsidy Navigator</a>, the <a href="/crops/index.html" style="color:#a78bfa; font-weight:700;">10 Commercial Crop Steering Atlases</a>, <a href="/benchmarks/index.html" style="color:#38bdf8;">Hardware Benchmarks</a>, and <a href="/wiki/index.html" style="color:#38bdf8;">AgTech Reference Wiki</a>.</p>
     </section>
 </main>
 <footer>

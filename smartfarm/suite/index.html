@@ -1,23 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta name="robots" content="noindex, follow">
   <meta charset="utf-8">
+  <meta name="robots" content="noindex, follow">
+  <meta name="google-site-verification" content="Y7d3dVoTQHBbG1GoKc4E_LUZb6YBmv491pv7G01mOk8">
+  <meta name="google-site-verification" content="xHzmAhcxMgyf-hP2TujQwCGF3-7GrLBkLU9PoHShaps">
   <title>Redirecting to Inwoovation Lab...</title>
   <link rel="canonical" href="https://inwoovation.com/suite/">
-  <meta http-equiv="refresh" content="0; url=/suite/">
-  <script>window.location.replace("/suite/" + window.location.search + window.location.hash);</script>
-  <!-- Google tag (gtag.js) with Client-Side Bot/Headless Guard -->
+  <!-- Google tag (gtag.js) with Antigravity Bot & Self-Traffic Guard -->
+  <script>
+    (function() {
+      var ua = navigator.userAgent || '';
+      var isBot = navigator.webdriver === true || /HeadlessChrome|PhantomJS|Lighthouse|PTST|bot|crawler|spider|slurp|ScrapingBee|AhrefsBot|SemrushBot|MJ12bot|DotBot|Bytespider|GPTBot|ClaudeBot|PerplexityBot|PetalBot|YandexBot|Baiduspider/i.test(ua);
+      var isLocal = location.hostname === 'localhost' || location.hostname === '127.0.0.1' || location.protocol === 'file:';
+      var isBotRes = (window.screen && ((screen.width === 1366 && screen.height === 1366) || (screen.width === 800 && screen.height === 600) || (screen.width === 1024 && screen.height === 1024) || screen.height >= 5000));
+      if (isBot || isLocal || isBotRes) {
+        window['ga-disable-G-V4RYJBMEDE'] = true;
+      }
+    })();
+  </script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-V4RYJBMEDE"></script>
   <script>
-    if (navigator.webdriver || /HeadlessChrome|PhantomJS|Lighthouse|PTST|bot|crawler|spider|slurp/i.test(navigator.userAgent) || location.hostname === 'localhost' || location.hostname === '127.0.0.1' || (screen.width === 1366 && screen.height === 1366) || (screen.width === 800 && screen.height === 600) || screen.height >= 5000) { window['ga-disable-G-V4RYJBMEDE'] = true; }
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-V4RYJBMEDE');
+    gtag('config', 'G-V4RYJBMEDE', { 'send_page_view': true, 'anonymize_ip': true });
   </script>
+  <meta http-equiv="refresh" content="0; url=https://inwoovation.com/suite/">
+  <script>window.location.replace("https://inwoovation.com/suite/" + window.location.search + window.location.hash);</script>
 </head>
 <body style="background:#0b0f19;color:#f8fafc;font-family:sans-serif;display:flex;justify-content:center;align-items:center;height:100vh;margin:0;">
-  <p>Redirecting to <a href="/suite/" style="color:#38bdf8;">https://inwoovation.com/suite/</a>...</p>
+  <p>Redirecting to <a href="https://inwoovation.com/suite/" style="color:#38bdf8;">https://inwoovation.com/suite/</a>...</p>
 </body>
 </html>

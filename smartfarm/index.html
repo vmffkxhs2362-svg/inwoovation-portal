@@ -88,7 +88,7 @@
           "name": "What engineering standards and equations do these calculators use?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "All tools are implemented from peer-reviewed engineering standards: Tetens and Buck equations for saturation vapor pressure, ASABE EP406.4 and DIN 4701 for greenhouse heat transfer, FAO-56 Penman-Monteith for evapotranspiration, EN 1452 and Hazen-Williams for hydronic pipe flow, and the Stanghellini greenhouse canopy transpiration model."
+            "text": "All tools are implemented from peer-referenced engineering standards: Tetens and Buck equations for saturation vapor pressure, ASABE EP406.4 and DIN 4701 for greenhouse heat transfer, FAO-56 Penman-Monteith for evapotranspiration, EN 1452 and Hazen-Williams for hydronic pipe flow, and the Stanghellini greenhouse canopy transpiration model."
           }
         },
         {
@@ -127,7 +127,7 @@
 <body>
 <main class="container"><header>
 <div class="header-top-bar" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 0.8rem;">
-<div class="badge" id="header-badge" style="margin-bottom: 0;">Last Updated: November 08, 2026</div>
+<div class="badge" id="header-badge" style="margin-bottom: 0;">Last Updated: November 16, 2026</div>
 <div style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap;">
     <a href="https://inwoovation.com/" target="_blank" rel="noopener noreferrer" style="background: rgba(30, 41, 59, 0.9); border: 1px solid rgba(255, 255, 255, 0.18); color: #f8fafc; font-weight: 700; font-size: 0.85rem; padding: 0.45rem 0.9rem; border-radius: 100px; text-decoration: none; display: inline-flex; align-items: center; gap: 0.4rem; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); transition: all 0.25s ease;">
         🌐 Inwoovation Lab
@@ -140,7 +140,7 @@
 <button class="lang-btn active" id="unit-metric" onclick="changeUnit('metric')">Metric</button>
 <button class="lang-btn" id="unit-imperial" onclick="changeUnit('imperial')">Imperial</button>
 </div>
-<div id="google_translate_element" style="display: inline-block; margin-left: 0.5rem; vertical-align: middle;"></div></div>
+<button type="button" class="nav-search-trigger" onclick="window.InwooPalette && window.InwooPalette.open()" title="Open Spotlight Search (Ctrl+K)" style="background: rgba(56, 189, 248, 0.14); border: 1px solid rgba(56, 189, 248, 0.35); color: #e2e8f0; border-radius: 100px; padding: 0.4rem 0.85rem; cursor: pointer; font-weight: 700; font-size: 0.82rem;">🔍 Search <kbd>Ctrl+K</kbd></button></div>
 </div>
 <div id="header-title" onclick="resetToHome()" style="cursor: pointer; display: inline-block; font-size: 2em; font-weight: bold; margin: 0.67em 0;">Smart Farm Engineering Lab</div>
 <p id="header-desc">High-precision online engineering simulation & modeling suite for modern greenhouse designers, growers, and agricultural engineers.</p>
@@ -322,7 +322,7 @@
 <!-- SEO Content Section: Intro Text for Crawlers & Users -->
 <div class="info-card" style="margin-top: 2.5rem; border-left: 4px solid var(--primary); text-align: left;">
 <h3 style="color: var(--primary); font-size: 1.15rem; margin-bottom: 0.8rem; font-weight: 700;">🔬 Professional Greenhouse &amp; CEA Engineering Suite</h3>
-<p style="color: var(--text-gray); font-size: 0.92rem; line-height: 1.7;">Smart Farm Engineering Lab is a free, open-source suite of high-precision online calculators built for <strong>greenhouse growers, CEA (Controlled Environment Agriculture) designers, horticultural researchers, and agricultural engineers</strong>. Unlike generic farming apps, every tool here is grounded in peer-reviewed biophysical and thermodynamic models — from the Tetens equation for Vapor Pressure Deficit (VPD) to the Penman-Monteith transpiration model, DIN 4701 / ASABE EP406 greenhouse thermal loss, and EN 1452 hydronic pipe sizing standards.</p>
+<p style="color: var(--text-gray); font-size: 0.92rem; line-height: 1.7;">Smart Farm Engineering Lab is a free, open-source suite of high-precision online calculators built for <strong>greenhouse growers, CEA (Controlled Environment Agriculture) designers, horticultural researchers, and agricultural engineers</strong>. Unlike generic farming apps, every tool here is grounded in peer-referenced biophysical and thermodynamic models — from the Tetens equation for Vapor Pressure Deficit (VPD) to the Penman-Monteith transpiration model, DIN 4701 / ASABE EP406 greenhouse thermal loss, and EN 1452 hydronic pipe sizing standards.</p>
 </div>
 
 <div class="info-card" style="margin-top: 1rem; border-left: 4px solid var(--cyan); text-align: left;">
@@ -359,6 +359,32 @@
     </div> <!-- Close section-dashboard -->
 
 
+<!-- INW-SMARTFARM-FULL-DIRECTORY-START -->
+<section class="info-card" style="margin: 24px auto; max-width: 1060px; padding: 22px 24px; border-left: 4px solid #34d399; text-align: left;">
+  <h3 style="color: #34d399; font-size: 1.15rem; margin: 0 0 8px 0; font-weight: 800;">🧭 Complete SmartFarm Legacy Tools &amp; Lab Directory (All 18 Sibling Pages)</h3>
+  <p style="color: var(--text-gray); font-size: 0.9rem; margin: 0 0 14px 0;">Direct access to every SmartFarm precision simulator, 3D greenhouse viewer, DLI photobiology engine, and documentation page:</p>
+  <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 10px;">
+    <a href="vpd.html" style="display:block; padding:12px 14px; background:rgba(15,23,42,0.75); border:1px solid rgba(56,189,248,0.22); border-radius:10px; text-decoration:none; color:#f8fafc;"><div style="font-weight:700; font-size:0.9rem; color:#38bdf8;">🌡️ VPD Calculator</div><div style="font-size:0.78rem; color:#94a3b8; margin-top:3px;">Leaf-to-air vapor pressure deficit</div></a>
+    <a href="heat_loss.html" style="display:block; padding:12px 14px; background:rgba(15,23,42,0.75); border:1px solid rgba(56,189,248,0.22); border-radius:10px; text-decoration:none; color:#f8fafc;"><div style="font-weight:700; font-size:0.9rem; color:#38bdf8;">🔥 Heat Loss Estimator</div><div style="font-size:0.78rem; color:#94a3b8; margin-top:3px;">DIN 4701 greenhouse envelope loss</div></a>
+    <a href="mixing_valve.html" style="display:block; padding:12px 14px; background:rgba(15,23,42,0.75); border:1px solid rgba(56,189,248,0.22); border-radius:10px; text-decoration:none; color:#f8fafc;"><div style="font-weight:700; font-size:0.9rem; color:#38bdf8;">🎛️ Mixing Valve Kv/Cv</div><div style="font-size:0.78rem; color:#94a3b8; margin-top:3px;">3-way hydronic loop valve sizer</div></a>
+    <a href="fertigation.html" style="display:block; padding:12px 14px; background:rgba(15,23,42,0.75); border:1px solid rgba(56,189,248,0.22); border-radius:10px; text-decoration:none; color:#f8fafc;"><div style="font-weight:700; font-size:0.9rem; color:#38bdf8;">🧪 Stock Tank Fertigation</div><div style="font-size:0.78rem; color:#94a3b8; margin-top:3px;">A/B tank salt & acid solver</div></a>
+    <a href="roi_simulator.html" style="display:block; padding:12px 14px; background:rgba(15,23,42,0.75); border:1px solid rgba(56,189,248,0.22); border-radius:10px; text-decoration:none; color:#f8fafc;"><div style="font-weight:700; font-size:0.9rem; color:#38bdf8;">📊 Boiler vs Heat Pump ROI</div><div style="font-size:0.78rem; color:#94a3b8; margin-top:3px;">Fuel vs heat pump spark spread</div></a>
+    <a href="transpiration.html" style="display:block; padding:12px 14px; background:rgba(15,23,42,0.75); border:1px solid rgba(56,189,248,0.22); border-radius:10px; text-decoration:none; color:#f8fafc;"><div style="font-weight:700; font-size:0.9rem; color:#38bdf8;">🍃 PM Transpiration</div><div style="font-size:0.78rem; color:#94a3b8; margin-top:3px;">Penman-Monteith canopy water flux</div></a>
+    <a href="diagnosis.html" style="display:block; padding:12px 14px; background:rgba(15,23,42,0.75); border:1px solid rgba(56,189,248,0.22); border-radius:10px; text-decoration:none; color:#f8fafc;"><div style="font-weight:700; font-size:0.9rem; color:#38bdf8;">🐝 Crop Diagnosis & Bees</div><div style="font-size:0.78rem; color:#94a3b8; margin-top:3px;">Symptom triage & pollinator REI</div></a>
+    <a href="vertical_dli.html" style="display:block; padding:12px 14px; background:rgba(15,23,42,0.75); border:1px solid rgba(56,189,248,0.22); border-radius:10px; text-decoration:none; color:#f8fafc;"><div style="font-weight:700; font-size:0.9rem; color:#38bdf8;">🌱 Vertical Farm DLI</div><div style="font-size:0.78rem; color:#94a3b8; margin-top:3px;">Multi-tier PPFD & chiller load</div></a>
+    <a href="dli_calculator.html" style="display:block; padding:12px 14px; background:rgba(15,23,42,0.75); border:1px solid rgba(56,189,248,0.22); border-radius:10px; text-decoration:none; color:#f8fafc;"><div style="font-weight:700; font-size:0.9rem; color:#38bdf8;">☀️ DLI & LED Electricity ROI</div><div style="font-size:0.78rem; color:#94a3b8; margin-top:3px;">Solar + LED DLI & kWh payback</div></a>
+    <a href="co2_calculator.html" style="display:block; padding:12px 14px; background:rgba(15,23,42,0.75); border:1px solid rgba(56,189,248,0.22); border-radius:10px; text-decoration:none; color:#f8fafc;"><div style="font-weight:700; font-size:0.9rem; color:#38bdf8;">💨 CO2 Burner & Injection</div><div style="font-size:0.78rem; color:#94a3b8; margin-top:3px;">800-1200 ppm dosing & ACH loss</div></a>
+    <a href="lighting_efficacy.html" style="display:block; padding:12px 14px; background:rgba(15,23,42,0.75); border:1px solid rgba(56,189,248,0.22); border-radius:10px; text-decoration:none; color:#f8fafc;"><div style="font-weight:700; font-size:0.9rem; color:#38bdf8;">💡 HPS vs LED Efficacy</div><div style="font-size:0.78rem; color:#94a3b8; margin-top:3px;">μmol/J comparison & heat load</div></a>
+    <a href="smartfarm_layout_wfc.html" style="display:block; padding:12px 14px; background:rgba(15,23,42,0.75); border:1px solid rgba(56,189,248,0.22); border-radius:10px; text-decoration:none; color:#f8fafc;"><div style="font-weight:700; font-size:0.9rem; color:#38bdf8;">📐 WFC Spatial Planner</div><div style="font-size:0.78rem; color:#94a3b8; margin-top:3px;">Automated gutter & pipe routing</div></a>
+    <a href="korean_greenhouse_3d.html" style="display:block; padding:12px 14px; background:rgba(15,23,42,0.75); border:1px solid rgba(56,189,248,0.22); border-radius:10px; text-decoration:none; color:#f8fafc;"><div style="font-weight:700; font-size:0.9rem; color:#38bdf8;">🏗️ 3D Multi-Span Twin</div><div style="font-size:0.78rem; color:#94a3b8; margin-top:3px;">Arch-poly & Venlo WebGL viewer</div></a>
+    <a href="market.html" style="display:block; padding:12px 14px; background:rgba(15,23,42,0.75); border:1px solid rgba(56,189,248,0.22); border-radius:10px; text-decoration:none; color:#f8fafc;"><div style="font-weight:700; font-size:0.9rem; color:#38bdf8;">📈 Commodity Market Proxy</div><div style="font-size:0.78rem; color:#94a3b8; margin-top:3px;">Elasticity reference benchmark</div></a>
+    <a href="library_vpd_optimization_tomato.html" style="display:block; padding:12px 14px; background:rgba(15,23,42,0.75); border:1px solid rgba(56,189,248,0.22); border-radius:10px; text-decoration:none; color:#f8fafc;"><div style="font-weight:700; font-size:0.9rem; color:#38bdf8;">🍅 Tomato VPD Library</div><div style="font-size:0.78rem; color:#94a3b8; margin-top:3px;">VPD, calcium xylem & BER guide</div></a>
+    <a href="greenpocket.html" style="display:block; padding:12px 14px; background:rgba(15,23,42,0.75); border:1px solid rgba(56,189,248,0.22); border-radius:10px; text-decoration:none; color:#f8fafc;"><div style="font-weight:700; font-size:0.9rem; color:#38bdf8;">🪴 GreenPocket Kit Index</div><div style="font-size:0.78rem; color:#94a3b8; margin-top:3px;">Curated home hydroponic hardware</div></a>
+    <a href="about.html" style="display:block; padding:12px 14px; background:rgba(15,23,42,0.75); border:1px solid rgba(56,189,248,0.22); border-radius:10px; text-decoration:none; color:#f8fafc;"><div style="font-weight:700; font-size:0.9rem; color:#38bdf8;">ℹ️ About SmartFarm Lab</div><div style="font-size:0.78rem; color:#94a3b8; margin-top:3px;">Biophysical standards & methodology</div></a>
+    <a href="contact.html" style="display:block; padding:12px 14px; background:rgba(15,23,42,0.75); border:1px solid rgba(56,189,248,0.22); border-radius:10px; text-decoration:none; color:#f8fafc;"><div style="font-weight:700; font-size:0.9rem; color:#38bdf8;">📩 Lab Contact & Support</div><div style="font-size:0.78rem; color:#94a3b8; margin-top:3px;">Engineering inquiries & feedback</div></a>
+  </div>
+</section>
+<!-- INW-SMARTFARM-FULL-DIRECTORY-END -->
 <!-- INW-TSUKUBA-FUNNEL-START -->
 <section class="inw-tsukuba-funnel-bridge" style="max-width: 1060px; margin: 32px auto; padding: 26px; background: rgba(15, 23, 42, 0.9); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 16px; text-align: left; box-shadow: 0 10px 28px rgba(0, 0, 0, 0.3);">
   <h3 style="margin: 0 0 8px 0; font-size: 1.2rem; color: #10b981; font-weight: 800;">🔬 Validated Engineering Monographs, Crop Guides & Simulators</h3>
@@ -388,17 +414,39 @@
 </section>
 <!-- INW-TSUKUBA-FUNNEL-END -->
 
+<!-- INW-SMARTFARM-V2026-BRIDGE-START -->
+<section class="info-card" style="margin: 28px auto; max-width: 1060px; padding: 22px 24px; border: 1px solid rgba(56, 189, 248, 0.35); border-left: 5px solid #38bdf8; border-radius: 16px; background: rgba(15, 23, 42, 0.88); text-align: left;">
+  
+  <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 10px;">
+    <h3 style="margin: 0; font-size: 1.15rem; color: #38bdf8; font-weight: 800;">🚀 Launch v2026 Flagship Simulator &amp; Cross-Portal Resources</h3>
+    <span style="font-size: 0.75rem; font-weight: 700; color: #34d399; background: rgba(16, 185, 129, 0.14); padding: 3px 10px; border-radius: 99px; border: 1px solid rgba(16, 185, 129, 0.3);">$0.00 OPEN ACCESS</span>
+  </div>
+  <p style="margin: 0 0 14px 0; font-size: 0.92rem; color: #cbd5e1; line-height: 1.6;">Continue your workflow in the next-generation client-side Inwoovation Lab v2026 engines, or explore peer-referenced monographs and hardware benchmarks:</p>
+  <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+    <a href="/tools/index.html" style="background: linear-gradient(135deg, #38bdf8, #10b981); color: #020617; font-weight: 800; padding: 10px 16px; border-radius: 10px; text-decoration: none; font-size: 0.9rem;">⚡ Launch All 42 v2026 Engineering Simulators →</a>
+    <a href="/tools/venlocad-3d.html" style="background: rgba(30, 41, 59, 0.9); color: #f8fafc; border: 1px solid rgba(56, 189, 248, 0.35); font-weight: 700; padding: 10px 16px; border-radius: 10px; text-decoration: none; font-size: 0.9rem;">📐 VenloCAD 3D Parametric Glasshouse CAD →</a>
+    <a href="/crops/index.html" style="background: rgba(30, 41, 59, 0.8); color: #cbd5e1; border: 1px solid rgba(255, 255, 255, 0.14); font-weight: 600; padding: 10px 14px; border-radius: 10px; text-decoration: none; font-size: 0.86rem;">🌱 Crops Hub</a>
+    <a href="/wiki/index.html" style="background: rgba(30, 41, 59, 0.8); color: #cbd5e1; border: 1px solid rgba(255, 255, 255, 0.14); font-weight: 600; padding: 10px 14px; border-radius: 10px; text-decoration: none; font-size: 0.86rem;">🧬 AgriAtlas Wiki</a>
+    <a href="/handbooks/index.html" style="background: rgba(30, 41, 59, 0.8); color: #cbd5e1; border: 1px solid rgba(255, 255, 255, 0.14); font-weight: 600; padding: 10px 14px; border-radius: 10px; text-decoration: none; font-size: 0.86rem;">📘 Master Handbook</a>
+    <a href="/suite/index.html" style="background: rgba(30, 41, 59, 0.8); color: #cbd5e1; border: 1px solid rgba(255, 255, 255, 0.14); font-weight: 600; padding: 10px 14px; border-radius: 10px; text-decoration: none; font-size: 0.86rem;">⚡ OpenCEA Suite</a>
+  </div>
+</section>
+<!-- INW-SMARTFARM-V2026-BRIDGE-END -->
 <footer>
-<div style="display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 0.8rem; flex-wrap: wrap; font-size: 0.9rem;">
-<a href="index.html" style="color: var(--text-gray); text-decoration: none; font-weight: 600; hover: { color: var(--primary); }">Home</a>
-<a href="about.html" style="color: var(--text-gray); text-decoration: none; font-weight: 600;">About</a>
-<a href="contact.html" style="color: var(--text-gray); text-decoration: none; font-weight: 600;">Contact</a>
-<a href="terms.html" style="color: var(--text-gray); text-decoration: none; font-weight: 600;">Terms</a>
-<a href="privacy.html" style="color: var(--text-gray); text-decoration: none; font-weight: 600;">Privacy Policy</a>
+<div style="display: flex; justify-content: center; gap: 1.25rem; margin-bottom: 0.8rem; flex-wrap: wrap; font-size: 0.9rem;">
+<a href="/index.html" style="color: var(--text-gray); text-decoration: none; font-weight: 700;">🏠 Portal Home</a>
+<a href="index.html" style="color: var(--text-gray); text-decoration: none; font-weight: 600;">🌐 SmartFarm Hub</a>
+<a href="/tools/index.html" style="color: var(--text-gray); text-decoration: none; font-weight: 600;">⚡ 42 Simulators</a>
+<a href="/handbooks/index.html" style="color: var(--text-gray); text-decoration: none; font-weight: 600;">📘 Handbook</a>
+<a href="/wiki/index.html" style="color: var(--text-gray); text-decoration: none; font-weight: 600;">🧬 Wiki</a>
+<a href="/directory.html" style="color: var(--text-gray); text-decoration: none; font-weight: 600;">🗂️ Directory</a>
+<a href="/about.html" style="color: var(--text-gray); text-decoration: none; font-weight: 600;">About</a>
+<a href="/contact.html" style="color: var(--text-gray); text-decoration: none; font-weight: 600;">Contact</a>
+<a href="/privacy-policy.html" style="color: var(--text-gray); text-decoration: none; font-weight: 600;">Privacy Policy</a>
+<a href="/terms-of-service.html" style="color: var(--text-gray); text-decoration: none; font-weight: 600;">Terms of Service</a>
 </div>
-<p>© 2026 Smart Farm Engineering Lab. All rights reserved.</p>
-<p>Built for zero-cost static hosting. Designed by Inwoovation</p>
-<p id="footer-disclaimer" style="font-size: 0.75rem; color: var(--text-gray); opacity: 0.75; max-width: 800px; margin: 1.2rem auto 0 auto; line-height: 1.5; font-weight: 500; text-align: center;"><strong>Disclaimer:</strong> The simulations provided by this tool are for educational and informational purposes only. Inwoovation is not liable for any crop damage, equipment failure, or financial loss resulting from the use of these simulators. Always double-check simulation results and consult certified professionals before applying changes to commercial greenhouses.</p>
+<p>© 2026 Inwoovation Lab (Inwoo Hwang). Smart Farm Engineering Lab. All rights reserved.</p>
+<p id="footer-disclaimer" style="font-size: 0.78rem; color: var(--text-gray); opacity: 0.8; max-width: 820px; margin: 0.8rem auto 0 auto; line-height: 1.5; font-weight: 500; text-align: center;"><strong>Disclaimer:</strong> All simulations are modeled for preliminary agricultural engineering and educational use only. Verify commercial deployments with licensed engineers.</p>
 </footer>
 </div>
 <!-- Floating Inquiry Button (FAB) -->
@@ -516,15 +564,7 @@
     </div>
 </div>
 
-<script src="common.js?v=3.2"></script><script type="text/javascript">
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement({
-        pageLanguage: 'en',
-        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-        autoDisplay: false
-      }, 'google_translate_element');
-    }
-    </script><script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" type="text/javascript"></script>
+<script src="common.js?v=3.2"></script>
 <!-- 100% Free Open Source Engine (No Paywalls) -->
 
 </body></html>

@@ -24,7 +24,7 @@
 
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
-    {
+{
   "@context": "https://schema.org",
   "@graph": [
     {
@@ -61,10 +61,39 @@
           "item": "https://inwoovation.com/parts/vacuum-systems.html"
         }
       ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Why does pipe diameter scale molecular vacuum conductance to the third power (D3)?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Below 1e-3 Torr (Kn > 0.5), molecules collide primarily with chamber and foreline walls rather than each other. Knudsen diffuse wall scattering makes conductance proportional to D^3/L, meaning halving a foreline diameter chokes turbo-molecular pumping speed by ~87.5%."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "When should engineers choose ISO-KF Viton O-rings versus CF ConFlat knife-edge flanges?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ISO-KF quick-release flanges with Viton (FKM) rings are rated to ~1e-7 Torr and 150 C bakeouts, ideal for routine roughing, lyophilizers, and sputtering forelines. Copper-gasketed CF ConFlat flanges are required for UHV (<1e-9 Torr) and 450 C thermal desorption cycles."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does industrial vacuum engineering improve greenhouse post-harvest cold chains?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Vacuum precooling evacuates palletized leafy greens inside SUS304 chambers to 4.6-5.3 Torr, flashing ~1% surface water to extract ~2,490 kJ/kg latent heat directly from dense lettuce cores in 18-25 minutes for +7-10 days shelf-life extension."
+          }
+        }
+      ]
     }
   ]
 }
-    </script>
+  </script>
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-V4RYJBMEDE"></script>
@@ -695,10 +724,12 @@
             </a>
             <div class="nav-links">
                 <a href="../index.html" class="nav-item">🏠 Portal Home</a>
-                <a href="../tools/index.html" class="nav-item">🧮 Simulators (37)</a>
+                <a href="../tools/index.html" class="nav-item">🧮 Simulators (42)</a>
                 <a href="index.html" class="nav-item">⚙️ AgriMaster Parts</a>
                 <a href="vacuum-systems.html" class="nav-item nav-item-highlight">🔬 Vacuum Engineering</a>
-                <a href="../articles/article-62-us-50-state-agricultural-grant-playbook.html" class="nav-item">💰 Grants</a>
+                <a href="../benchmarks/index.html" class="nav-item">📊 Benchmarks</a>
+                <a href="../handbooks/index.html" class="nav-item">📖 Handbooks</a>
+                <button type="button" class="nav-search-trigger" onclick="window.InwooPalette && window.InwooPalette.open()"><span>🔍 Search</span> <kbd>Ctrl+K</kbd></button>
             </div>
         </header>
 
@@ -884,7 +915,7 @@
             <p style="margin-bottom: 1.2rem;">Designing high-vacuum PVD deposition chambers (Thermal Evaporators, Magnetron Sputtering), hermetic inert-gas glove boxes, and agricultural lyophilization / vacuum-cooling vessels requires quantifying gas transport across three distinct physical regimes defined by the dimensionless <strong>Knudsen Number (Kn = λ / D)</strong>, where λ is the molecular mean free path and D is the characteristic pipe diameter. For ambient air or nitrogen at 20 °C, the mean free path scales inversely with pressure: λ(cm) ≈ 5.0 × 10<sup>-3</sup> / P(Torr).</p>
 
             <h3 style="font-family: 'Outfit', sans-serif; font-size: 1.25rem; color: #38bdf8; margin: 1.5rem 0 0.75rem;">1. Viscous vs. Molecular Flow Conductance &amp; Net Pumping Speed</h3>
-            <p style="margin-bottom: 1rem;">In the <strong>Viscous / Continuum Regime ($Kn &lt; 0.01$, P &gt; 1 Torr)</strong> during initial roughing from atmosphere (760 Torr), gas molecules collide predominantly with each other, and pipe conductance (C<sub>visc</sub> in L/s) follows Poiseuille laminar flow (C<sub>visc</sub> = 180 · \barP · D<sup>4</sup> / L). Once chamber pressure drops below 10<sup>-3</sup> Torr into the <strong>Free Molecular Regime ($Kn &gt; 0.5$)</strong>, intermolecular collisions vanish and gas transport is governed purely by random thermal wall collisions (Knudsen effusion). For a cylindrical foreline or high-vacuum manifold of diameter D (cm) and length L (cm) at 20 °C air equivalent, molecular conductance and effective chamber pumping speed (S<sub>eff</sub>) are governed by:</p>
+            <p style="margin-bottom: 1rem;">In the <strong>Viscous / Continuum Regime (Kn &lt; 0.01, P &gt; 1 Torr)</strong> during initial roughing from atmosphere (760 Torr), gas molecules collide predominantly with each other, and pipe conductance (C<sub>visc</sub> in L/s) follows Poiseuille laminar flow (C<sub>visc</sub> = 180 · P<sub>avg</sub> · D<sup>4</sup> / L). Once chamber pressure drops below 10<sup>-3</sup> Torr into the <strong>Free Molecular Regime (Kn &gt; 0.5)</strong>, intermolecular collisions vanish and gas transport is governed purely by random thermal wall collisions (Knudsen effusion). For a cylindrical foreline or high-vacuum manifold of diameter D (cm) and length L (cm) at 20 °C air equivalent, molecular conductance and effective chamber pumping speed (S<sub>eff</sub>) are governed by:</p>
             <div style="font-family: 'JetBrains Mono', monospace; background: rgba(11, 17, 30, 0.9); padding: 1rem 1.4rem; border-radius: 12px; border: 1px solid rgba(56, 189, 248, 0.3); color: #38bdf8; margin-bottom: 1.2rem; font-size: 0.95rem;">
                 C_molecular = 12.1 × (D³ / L) [L/s] &nbsp;&nbsp;|&nbsp;&nbsp; 1 / S_effective = (1 / S_pump) + (1 / C_manifold) &nbsp;&nbsp;|&nbsp;&nbsp; P_base = Q_total / S_effective
             </div>
@@ -945,6 +976,26 @@
         </section>
         <!-- VACUUM_DEEP_DIVE_END -->
 
+        <!-- VACUUM FAQ (Synced with JSON-LD FAQPage) -->
+        <section style="background: rgba(18, 26, 43, 0.85); border: 1px solid rgba(56, 189, 248, 0.25); border-radius: 20px; padding: 2rem; margin-bottom: 2.5rem;">
+            <h3 style="font-family: 'Outfit', sans-serif; font-size: 1.35rem; color: #ffffff; margin: 0 0 1rem 0;">❓ High-Vacuum &amp; AgTech Lyophilization Engineering FAQ</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem;">
+                <div>
+                    <strong style="display:block; color:#38bdf8; font-size:0.92rem; margin-bottom:0.35rem;">Why does pipe diameter scale molecular vacuum conductance to the third power (D³)?</strong>
+                    <p style="color:#cbd5e1; font-size:0.86rem; line-height:1.6; margin:0;">Below 10⁻³ Torr (Kn &gt; 0.5), molecules collide primarily with chamber and foreline walls rather than each other. Knudsen diffuse wall scattering makes conductance proportional to D³/L, meaning halving a foreline diameter chokes turbo-molecular pumping speed by ~87.5%.</p>
+                </div>
+                <div>
+                    <strong style="display:block; color:#38bdf8; font-size:0.92rem; margin-bottom:0.35rem;">When should engineers choose ISO-KF Viton O-rings versus CF ConFlat knife-edge flanges?</strong>
+                    <p style="color:#cbd5e1; font-size:0.86rem; line-height:1.6; margin:0;">ISO-KF quick-release flanges with Viton (FKM) rings are rated to ~10⁻⁷ Torr and 150 °C bakeouts, ideal for routine roughing, lyophilizers, and sputtering forelines. Copper-gasketed CF ConFlat flanges are required for UHV (&lt;10⁻⁹ Torr) and 450 °C thermal desorption cycles.</p>
+                </div>
+                <div>
+                    <strong style="display:block; color:#38bdf8; font-size:0.92rem; margin-bottom:0.35rem;">How does industrial vacuum engineering improve greenhouse post-harvest cold chains?</strong>
+                    <p style="color:#cbd5e1; font-size:0.86rem; line-height:1.6; margin:0;">Vacuum precooling evacuates palletized leafy greens inside SUS304 chambers to 4.6–5.3 Torr, flashing ~1% surface water to extract ~2,490 kJ/kg latent heat directly from dense lettuce cores in 18–25 minutes for +7–10 days shelf-life extension.</p>
+                </div>
+            </div>
+        </section>
+
+
         <!-- Google AdSense Bottom Unit -->
         <div class="ad-container">
             <ins class="adsbygoogle"
@@ -980,7 +1031,7 @@
         const equipmentData = [
             {
                 id: "DEV",
-                name: "Thermal Evaporator (진공 열증착기)",
+                name: "Thermal Evaporator (High-Vacuum PVD)",
                 classification: "PVD Thin-Film Metal & Organic Deposition",
                 regime: "High Vacuum (10⁻⁶ to 10⁻⁷ Torr)",
                 badge: "PVD DEPOSITION",
@@ -992,7 +1043,7 @@
             },
             {
                 id: "DSP",
-                name: "Magnetron Sputter (스퍼터링 시스템)",
+                name: "Magnetron Sputter System (RF / DC)",
                 classification: "Plasma PVD Deposition (RF / DC)",
                 regime: "Base: 10⁻⁷ Torr / Process: 1-10 mTorr (Ar/O₂/N₂)",
                 badge: "PLASMA PVD",
@@ -1004,7 +1055,7 @@
             },
             {
                 id: "DGB",
-                name: "Inert Gas Glove Box (글러브박스)",
+                name: "Inert Gas Glove Box (N₂/Ar Purge)",
                 classification: "Hermetic Atmosphere Isolation System",
                 regime: "Positive Pressure (+2 to +6 mbar), H₂O/O₂ < 1 ppm",
                 badge: "ATMOSPHERE PURGE",
@@ -1016,7 +1067,7 @@
             },
             {
                 id: "DPB",
-                name: "Vacuum Pumping Station (진공 배기대)",
+                name: "Vacuum Pumping Station (TMP Mobile Cart)",
                 classification: "Modular Roughing & High Vacuum Cart",
                 regime: "Atmosphere to 10⁻⁸ Torr Mobile Bench",
                 badge: "VACUUM EXHAUST",

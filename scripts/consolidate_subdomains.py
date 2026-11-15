@@ -17,7 +17,7 @@ def make_redirect_html(dest_url):
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="google-adsense-account" content="ca-pub-8597809158257497">
+  <meta name="robots" content="noindex, follow">
   <meta name="google-site-verification" content="Y7d3dVoTQHBbG1GoKc4E_LUZb6YBmv491pv7G01mOk8">
   <meta name="google-site-verification" content="xHzmAhcxMgyf-hP2TujQwCGF3-7GrLBkLU9PoHShaps">
   <title>Redirecting to Inwoovation Lab...</title>
@@ -69,19 +69,17 @@ def ensure_legacy_301_redirectors():
     sf_writes = 0
     for f in sf_html_files:
         filename = os.path.basename(f)
-        dest_url = "https://inwoovation.com/smartfarm/" if filename == "index.html" else f"https://inwoovation.com/smartfarm/{filename}"
+        if filename == "index.html":
+            dest_url = "https://inwoovation.com/smartfarm/"
+        elif filename == "privacy.html":
+            dest_url = "https://inwoovation.com/privacy-policy.html"
+        elif filename == "terms.html":
+            dest_url = "https://inwoovation.com/terms-of-service.html"
+        else:
+            dest_url = f"https://inwoovation.com/smartfarm/{filename}"
         if _write_if_changed(f, make_redirect_html(dest_url)):
             sf_writes += 1
     print(f"  ✅ Verified {len(sf_html_files)} 301 redirects in Passive_Income_Hub ({sf_writes} updated)")
-    sf_sitemap = os.path.join(SMARTFARM_DIR, "sitemap.xml")
-    if os.path.exists(sf_sitemap):
-        with open(sf_sitemap, "r", encoding="utf-8", errors="ignore") as f:
-            s_content = f.read()
-        new_s_content = re.sub(r'<lastmod>[^<]+</lastmod>', f'<lastmod>{TODAY_ISO}</lastmod>', s_content)
-        if new_s_content != s_content:
-            with open(sf_sitemap, "w", encoding="utf-8") as f:
-                f.write(new_s_content)
-        print(f"  ✅ Synchronized Passive_Income_Hub sitemap.xml to {TODAY_ISO}")
 
     # 2. Wiki legacy redirects
     wiki_html_files = [f for f in glob.glob(os.path.join(WIKI_DIR, "*.html")) 
@@ -94,25 +92,73 @@ def ensure_legacy_301_redirectors():
             wiki_writes += 1
     print(f"  ✅ Verified {len(wiki_html_files)} 301 redirects in AgTech_Wiki ({wiki_writes} updated)")
 
-    # 3. AgriMaster legacy redirects
+    # 3. AgriMaster legacy redirects & Passive_Income_Hub sub-directory redirects
     am_writes = 0
-    for item in ["index.html", "privacy.html", "terms.html"]:
+    agrimaster_dests = {
+        "index.html": "https://inwoovation.com/parts/",
+        "report.html": "https://inwoovation.com/parts/",
+        "privacy.html": "https://inwoovation.com/privacy-policy.html",
+        "terms.html": "https://inwoovation.com/terms-of-service.html",
+    }
+    for item, dest_url in agrimaster_dests.items():
         f = os.path.join(AGRIMASTER_DIR, item)
         if os.path.exists(f):
-            dest_url = "https://inwoovation.com/parts/" if item == "index.html" else f"https://inwoovation.com/parts/{item}"
             if _write_if_changed(f, make_redirect_html(dest_url)):
                 am_writes += 1
-    print(f"  ✅ Verified 301 redirects in AgriMaster_Portal ({am_writes} updated)")
 
-SITEMAP_SKIP_DIRS = {".git", "__pycache__", "node_modules", "embed", "scripts", "data",
-                     "digital_assets", "handbooks", "css", "js"}
+    if os.path.exists(SMARTFARM_DIR):
+        pih_subdir_dests = [
+            (os.path.join(SMARTFARM_DIR, "Pollinator_Safety_Project", "index.html"), "https://inwoovation.com/smartfarm/"),
+            (os.path.join(SMARTFARM_DIR, "Vertical_Farming_Project", "index.html"), "https://inwoovation.com/smartfarm/vertical_dli.html"),
+            (os.path.join(SMARTFARM_DIR, "suite", "index.html"), "https://inwoovation.com/suite/"),
+        ]
+        src_pages_dir = os.path.join(SMARTFARM_DIR, "src_pages")
+        if os.path.isdir(src_pages_dir):
+            for fn in os.listdir(src_pages_dir):
+                if fn.endswith(".html"):
+                    dest = "https://inwoovation.com/smartfarm/" if fn == "index.html" else (
+                        "https://inwoovation.com/terms-of-service.html" if fn == "terms.html" else f"https://inwoovation.com/smartfarm/{fn}"
+                    )
+                    pih_subdir_dests.append((os.path.join(src_pages_dir, fn), dest))
+        for fp, dest_url in pih_subdir_dests:
+            if os.path.exists(fp):
+                if _write_if_changed(fp, make_redirect_html(dest_url)):
+                    am_writes += 1
+
+    # 4. Inwoovation_Portal duplicate legal pages -> canonical policy URLs (noindex redirect stubs)
+    dup_policy_dests = {
+        os.path.join(PORTAL_DIR, "privacy.html"): "https://inwoovation.com/privacy-policy.html",
+        os.path.join(PORTAL_DIR, "terms.html"): "https://inwoovation.com/terms-of-service.html",
+        os.path.join(PORTAL_DIR, "smartfarm", "privacy.html"): "https://inwoovation.com/privacy-policy.html",
+        os.path.join(PORTAL_DIR, "smartfarm", "terms.html"): "https://inwoovation.com/terms-of-service.html",
+        os.path.join(PORTAL_DIR, "smartfarm", "privacy-policy.html"): "https://inwoovation.com/privacy-policy.html",
+        os.path.join(PORTAL_DIR, "smartfarm", "terms-of-service.html"): "https://inwoovation.com/terms-of-service.html",
+        os.path.join(PORTAL_DIR, "smartfarm", "suite", "index.html"): "https://inwoovation.com/suite/",
+        os.path.join(PORTAL_DIR, "parts", "privacy.html"): "https://inwoovation.com/privacy-policy.html",
+        os.path.join(PORTAL_DIR, "parts", "terms.html"): "https://inwoovation.com/terms-of-service.html",
+    }
+    for fp, dest_url in dup_policy_dests.items():
+        if os.path.exists(fp):
+            if _write_if_changed(fp, make_redirect_html(dest_url)):
+                am_writes += 1
+    print(f"  ✅ Verified 301 redirects in AgriMaster_Portal & legacy sub-paths ({am_writes} updated)")
+
+SITEMAP_SKIP_DIRS = {".git", "__pycache__", "node_modules", "scripts", "data",
+                     "digital_assets", "css", "js"}
 DATE_MODIFIED_RE = re.compile(r'"dateModified"\s*:\s*"(\d{4}-\d{2}-\d{2})')
 
 
 def _is_publishable(rel_path, html):
-    """A page belongs in the sitemap if it is real content, not a template/verification/redirect/404 stub."""
-    name = os.path.basename(rel_path)
+    """A page belongs in the sitemap if it is real content, not a template/verification/redirect/raw-embed/noindex/404 stub."""
+    rel_norm = rel_path.replace("\\", "/")
+    name = os.path.basename(rel_norm)
     if name.startswith(("_", "old_", "naver", "google")) or name == "404.html":
+        return False
+    if rel_norm.startswith("embed/") and name != "index.html":
+        return False
+    if re.search(r'<meta[^>]+name=["\']robots["\'][^>]+noindex', html, re.I) or re.search(
+        r'<meta[^>]+content=["\'][^"\']*noindex[^"\']*["\'][^>]+name=["\']robots["\']', html, re.I
+    ):
         return False
     return not re.search(r'http-equiv=["\']refresh', html, re.I)
 
