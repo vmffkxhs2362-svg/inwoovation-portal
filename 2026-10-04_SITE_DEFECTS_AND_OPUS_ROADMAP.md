@@ -27,7 +27,7 @@
 7. **H7. Canonical 태그 누락 (7건 ➔ 0건)**:
    - 누락 페이지 전량에 표준 정규화 태그 자동 주입.
 8. **H8. 유입 링크가 전무한 고립 페이지(Orphan) (33건 ➔ 0건)**:
-   - 40개 기후 분석 문서를 묶는 신규 아틀라스 허브([`climate/index.html`](file:///g:/Meine%20Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/climate/index.html)) 신설.
+   - 40개 기후 분석 문서를 묶는 신규 아틀라스 허브([`climate/index.html`](./climate/index.html)) 신설.
    - `index.html`, `guides.html`, `wiki/index.html`, `smartfarm/index.html` 네비게이션에 벤치마크, 치유농업, 독일 지원금 가이드, 스마트팜 4종 도구를 상호 연결하여 고립 제로화.
 9. **H9. Canonical 비표준 및 확장자 불일치 (19건 ➔ 0건)**:
    - 확장자 누락(`library_vpd_optimization_tomato`), 디렉토리 슬래시 누락 등을 사이트맵 공식 URL과 1:1 일치시킴.
@@ -35,8 +35,8 @@
     - `suite/index.html`과 99.8% 동일하면서 상대경로가 깨져 있던 76KB 중복 파일을 제거하고, 공식 `/suite/`로 향하는 301 Meta-Refresh 리다이렉트 스텁으로 교체.
 
 ### 🛡️ 영구 안착된 하네스 (Master Build Pipeline)
-- **가짜 신선도(Fake Freshness) 영구 퇴출**: `build_all.py`가 날짜를 무조건 오늘로 덮어쓰던 문제를 제거하고, 본문 SHA-256 해시([`Engine/Data/portal_content_hashes.json`](file:///g:/Meine%20Ablage/Antigravity/Headquater/Engine/Data/portal_content_hashes.json))가 실제로 바뀐 페이지만 날짜를 갱신하도록 전면 개편.
-- **Fail-Closed 무결성 게이트 등록**: [`Engine/Gates/verify_site_integrity.py`](file:///g:/Meine%20Ablage/Antigravity/Headquater/Engine/Gates/verify_site_integrity.py)가 빌드 필수 단계로 등록되어 결함 재발 시 푸시를 원천 차단.
+- **가짜 신선도(Fake Freshness) 영구 퇴출**: `build_all.py`가 날짜를 무조건 오늘로 덮어쓰던 문제를 제거하고, 본문 SHA-256 해시(`Engine/Data/portal_content_hashes.json`)가 실제로 바뀐 페이지만 날짜를 갱신하도록 전면 개편.
+- **Fail-Closed 무결성 게이트 등록**: `Engine/Gates/verify_site_integrity.py`가 빌드 필수 단계로 등록되어 결함 재발 시 푸시를 원천 차단.
 
 ---
 

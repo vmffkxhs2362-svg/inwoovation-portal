@@ -1154,6 +1154,14 @@
     "tags": "articles de article 67 tiefengeothermie fernwaerme grosswaermepumpen gewaechshaus dekarbonisierung html tiefengeothermie fernwärme industrielle großwärmepumpen nh r290 im venlo gewächshaus i"
   },
   {
+    "title": "Deutsche Gartenbau-Meister Fachartikel &amp; CEA-Technik (65 Monographien)",
+    "cat": "article",
+    "url": "articles/de/index.html",
+    "icon": "🇩🇪",
+    "desc": "Vollständige deutschsprachige Wissensdatenbank mit 65 technischen Fachartikeln zu VPD-Psychrometrie, DIN V 18599 Heizlast, EN 13031-1 Venlo-Statik, FvCB-CO2-Kin",
+    "tags": "articles de index html deutsche gartenbau meister fachartikel amp cea technik 65 monographien vollständige deutschsprachige wissensdatenbank mit 65 technischen fachartikeln zu vpd psychromet"
+  },
+  {
     "title": "CEA &amp; Greenhouse Engineering Articles Library (EN / DE / JA)",
     "cat": "article",
     "url": "articles/index.html",
@@ -1488,6 +1496,14 @@
     "icon": "🇯🇵",
     "desc": "Venlo型温室における帯水層蓄熱（ATES / WKO）ダブレット井戸システム、季節蓄熱回収効率、および高温産業用ヒートポンプのCOP熱力学モデル。",
     "tags": "articles ja article 52 aquifer thermal energy storage ates heat pump jp html 帯水層蓄熱システム ates と産業用ヒ トポンプの温室熱工学モデル venlo型温室における帯水層蓄熱 ates wko ダブレット井戸システム 季節蓄熱回収効率 および高温産業用ヒ トポンプのcop熱力学モデル"
+  },
+  {
+    "title": "日本語 施設園芸・スマート農業工学モノグラフ一覧 (41 論文)",
+    "cat": "article",
+    "url": "articles/ja/index.html",
+    "icon": "🇯🇵",
+    "desc": "商業用 Venlo 型ガラス温室の VPD 飽差熱力学・DIN V 18599 暖房負荷・EN 13031-1 構造設計・FvCB CO2 施用・養液化学平衡を解説する 41 編の日本語技術論文アーカイブ。",
+    "tags": "articles ja index html 日本語 施設園芸 スマ ト農業工学モノグラフ一覧 41 論文 商業用 venlo 型ガラス温室の vpd 飽差熱力学 din v 18599 暖房負荷 en 13031 1 構造設計 fvcb co2 施用 養液化学平衡を解説する 41 編の日本語技術論文ア カイブ"
   },
   {
     "title": "Greenhouse Heat Pump vs Natural Gas Boiler Heating Cost Benchmark",
@@ -1938,12 +1954,12 @@
     "tags": "crops vertical farm lettuce leafy greens tipburn prevention guide html controlled environment leafy greens lettuce lactuca sativa microclimate vpd dli precision steering guide precision cea "
   },
   {
-    "title": "Complete CEA Engineering Directory &amp; Index (366 Pages)",
+    "title": "Complete CEA Engineering Directory &amp; Index (368 Pages)",
     "cat": "part",
     "url": "directory.html",
     "icon": "⚙️",
-    "desc": "Master HTML sitemap and engineering taxonomy indexing all 366 calculators, 150 global agricultural grants, EN/DE/JA monographs, crop guides, and climate hubs.",
-    "tags": "directory html complete cea engineering directory amp index 366 pages master html sitemap and engineering taxonomy indexing all 366 calculators 150 global agricultural grants en de ja monogr"
+    "desc": "Master HTML sitemap and engineering taxonomy indexing all 368 calculators, 150 global agricultural grants, EN/DE/JA monographs, crop guides, and climate hubs.",
+    "tags": "directory html complete cea engineering directory amp index 368 pages master html sitemap and engineering taxonomy indexing all 368 calculators 150 global agricultural grants en de ja monogr"
   },
   {
     "title": "Precision CEA & Horticultural Engineering Articles (78 Volumes / 184 Multilingual Editions)",
@@ -2928,13 +2944,13 @@
       <div class="inwoo-palette-box" role="dialog" aria-modal="true" aria-label="Inwoovation Spotlight Search">
         <div class="inwoo-palette-header">
           <span class="inwoo-palette-search-icon">🔍</span>
-          <input type="text" id="inwoo-palette-input" placeholder="Search all 362 tools, simulators, wiki, crops, climate hubs & EN/DE/JA articles..." autocomplete="off" />
+          <input type="text" id="inwoo-palette-input" placeholder="Search all 364 tools, simulators, wiki, crops, climate hubs & EN/DE/JA articles..." autocomplete="off" />
           <span class="inwoo-palette-esc-badge" onclick="window.InwooPalette.close()">ESC</span>
         </div>
         <div class="inwoo-palette-tabs">
-          <button class="inwoo-pal-tab active" data-cat="all">✨ All (362)</button>
+          <button class="inwoo-pal-tab active" data-cat="all">✨ All (364)</button>
           <button class="inwoo-pal-tab" data-cat="tool">🛠️ Tools (49)</button>
-          <button class="inwoo-pal-tab" data-cat="article">📚 Articles (187)</button>
+          <button class="inwoo-pal-tab" data-cat="article">📚 Articles (189)</button>
           <button class="inwoo-pal-tab" data-cat="wiki">🧬 Wiki (44)</button>
           <button class="inwoo-pal-tab" data-cat="climate">🌍 Climate (41)</button>
           <button class="inwoo-pal-tab" data-cat="sim">🧪 Simulators (21)</button>
@@ -2948,7 +2964,7 @@
             <span><kbd>↵</kbd> Open</span>
             <span><kbd>Esc</kbd> Close</span>
           </div>
-          <div style="color: #64748b; font-size: 0.75rem;">Inwoovation Universal Spotlight (362 Indexed Pages)</div>
+          <div style="color: #64748b; font-size: 0.75rem;">Inwoovation Universal Spotlight (364 Indexed Pages)</div>
         </div>
       </div>
     `;

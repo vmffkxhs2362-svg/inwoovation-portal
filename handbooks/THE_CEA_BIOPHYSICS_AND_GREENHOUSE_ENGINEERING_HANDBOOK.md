@@ -94,7 +94,7 @@ This technical compendium consolidates 56 foundational volumes of commercial Con
 
 ## Chapter 01: Biophysical Foundations of Vapor Pressure Deficit (VPD) Thermodynamics in CEA Greenhouses
 *Anchor ID*: `<a id="chapter-01-article-01-vpd-master-class"></a>`  
-*Original Source*: [`articles/article-01-vpd-master-class.html`](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/articles/article-01-vpd-master-class.html)  
+*Original Source*: [`articles/article-01-vpd-master-class.html`](../articles/article-01-vpd-master-class.html)  
 
 ### 🎯 Core Engineering Synopsis
 Mastering VPD (kPa) computation over relative humidity (RH%) to eliminate crop stress, balance stomatal conductance, and drive transpirational xylem flow.
@@ -108,7 +108,7 @@ Mastering VPD (kPa) computation over relative humidity (RH%) to eliminate crop s
 
 ## Chapter 03: Greenhouse Bumblebee Protection & Restricted-Entry Intervals (REI) in Precision CEA
 *Anchor ID*: `<a id="chapter-03-article-03-pollinator-safety-rei"></a>`  
-*Original Source*: [`articles/article-03-pollinator-safety-rei.html`](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/articles/article-03-pollinator-safety-rei.html)  
+*Original Source*: [`articles/article-03-pollinator-safety-rei.html`](../articles/article-03-pollinator-safety-rei.html)  
 
 ### 🎯 Core Engineering Synopsis
 Biological pollinator stewardship in commercial greenhouses: protecting Bombus terrestris from pesticide residue toxicity, REI mathematical models, and hive recovery protocols.
@@ -122,7 +122,7 @@ Biological pollinator stewardship in commercial greenhouses: protecting Bombus t
 
 ## Chapter 05: Hourly Penman-Monteith Evapotranspiration (ET0) Modeling & Stomatal Resistance Kinetics
 *Anchor ID*: `<a id="chapter-05-article-05-penman-monteith-transpiration"></a>`  
-*Original Source*: [`articles/article-05-penman-monteith-transpiration.html`](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/articles/article-05-penman-monteith-transpiration.html)  
+*Original Source*: [`articles/article-05-penman-monteith-transpiration.html`](../articles/article-05-penman-monteith-transpiration.html)  
 
 ### 🎯 Core Engineering Synopsis
 Mathematical implementation of the FAO-56 Penman-Monteith equation for commercial greenhouse irrigation steering, canopy energy balance, and solar radiation integration.
@@ -136,7 +136,7 @@ Mathematical implementation of the FAO-56 Penman-Monteith equation for commercia
 
 ## Chapter 08: Horticultural Physics & Environmental Physiology of Monstera deliciosa: Hydroponics & VPD Optimization
 *Anchor ID*: `<a id="chapter-08-article-08-monstera-deliciosa-care-guide"></a>`  
-*Original Source*: [`articles/article-08-monstera-deliciosa-care-guide.html`](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/articles/article-08-monstera-deliciosa-care-guide.html)  
+*Original Source*: [`articles/article-08-monstera-deliciosa-care-guide.html`](../articles/article-08-monstera-deliciosa-care-guide.html)  
 
 ### 🎯 Core Engineering Synopsis
 Commercial tropical foliage engineering: hydroponic cultivation of Monstera deliciosa, leaf marginal necrosis prevention via VPD steering, and rhizosphere dissolved oxygen dynamics.
@@ -150,7 +150,7 @@ Commercial tropical foliage engineering: hydroponic cultivation of Monstera deli
 
 ## Chapter 12: Xylem Calcium Partitioning & Transpirational Prevention of Blossom-End Rot (BER) in Greenhouse Tomatoes
 *Anchor ID*: `<a id="chapter-12-article-12-tomato-blossom-end-rot-calcium"></a>`  
-*Original Source*: [`articles/article-12-tomato-blossom-end-rot-calcium.html`](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/articles/article-12-tomato-blossom-end-rot-calcium.html)  
+*Original Source*: [`articles/article-12-tomato-blossom-end-rot-calcium.html`](../articles/article-12-tomato-blossom-end-rot-calcium.html)  
 
 ### 🎯 Core Engineering Synopsis
 Apoplastic calcium transport mechanics, xylem-to-phloem immobility, root hydraulic pressure, and nighttime VPD steering to prevent Blossom-End Rot (BER) in commercial Solanaceae.
@@ -164,7 +164,7 @@ Apoplastic calcium transport mechanics, xylem-to-phloem immobility, root hydraul
 
 ## Chapter 17: Biophysical Soil Physics: Air Porosity, Water Retention Curves & Root Zone Aeration
 *Anchor ID*: `<a id="chapter-17-article-17-indoor-plant-soil-aeration-porosity"></a>`  
-*Original Source*: [`articles/article-17-indoor-plant-soil-aeration-porosity.html`](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/articles/article-17-indoor-plant-soil-aeration-porosity.html)  
+*Original Source*: [`articles/article-17-indoor-plant-soil-aeration-porosity.html`](../articles/article-17-indoor-plant-soil-aeration-porosity.html)  
 
 ### 🎯 Core Engineering Synopsis
 Engineering potting media physics: Total Porosity, Container Capacity (CC), and Air-Filled Porosity (AFP) to eliminate root hypoxia in containerized horticulture.
@@ -178,7 +178,7 @@ Engineering potting media physics: Total Porosity, Container Capacity (CC), and 
 
 ## Chapter 21: Chlorophyll a Fluorescence Kinetics (Fv/Fm & OJIP) & Pre-Symptomatic Stress Metrology
 *Anchor ID*: `<a id="chapter-21-article-21-chlorophyll-a-fluorescence-fvfm-stress"></a>`  
-*Original Source*: [`articles/article-21-chlorophyll-a-fluorescence-fvfm-stress.html`](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/articles/article-21-chlorophyll-a-fluorescence-fvfm-stress.html)  
+*Original Source*: [`articles/article-21-chlorophyll-a-fluorescence-fvfm-stress.html`](../articles/article-21-chlorophyll-a-fluorescence-fvfm-stress.html)  
 
 ### 🎯 Core Engineering Synopsis
 Photosystem II maximum quantum yield (Fv/Fm), OJIP induction curves, and non-photochemical quenching (NPQ) for real-time non-destructive plant stress detection in CEA.
@@ -193,7 +193,7 @@ Photosystem II maximum quantum yield (Fv/Fm), OJIP induction curves, and non-pho
 
 ## Chapter 25: Closed-Loop Nutrient Recirculation & Nanobubble Dissolved Oxygen Kinetics in Commercial Greenhouses
 *Anchor ID*: `<a id="chapter-25-article-25-closed-loop-hydroponic-nanobubble-oxygenation"></a>`  
-*Original Source*: [`articles/article-25-closed-loop-hydroponic-nanobubble-oxygenation.html`](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/articles/article-25-closed-loop-hydroponic-nanobubble-oxygenation.html)  
+*Original Source*: [`articles/article-25-closed-loop-hydroponic-nanobubble-oxygenation.html`](../articles/article-25-closed-loop-hydroponic-nanobubble-oxygenation.html)  
 
 ### 🎯 Core Engineering Synopsis
 Engineering analysis of closed-loop hydroponic recirculation, rhizosphere dissolved oxygen (DO > 8.5 mg/L), and Pythium root-rot suppression in commercial greenhouses.
@@ -204,14 +204,14 @@ Engineering analysis of closed-loop hydroponic recirculation, rhizosphere dissol
 - 3. Interactive Formulation & Optimization Tools
 
 ### 🛠️ Paired Interactive Lab Calculators
-- [Hydroponic Nutrient Solution Calculator](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/tools/hydroponic-nutrient-solution-calculator.html)
-- [Psychrometric Mollier Greenhouse Dehumidifier](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/tools/psychrometric-mollier-greenhouse-dehumidifier.html)
+- [Hydroponic Nutrient Solution Calculator](../tools/hydroponic-nutrient-solution-calculator.html)
+- [Psychrometric Mollier Greenhouse Dehumidifier](../tools/psychrometric-mollier-greenhouse-dehumidifier.html)
 
 ---
 
 ## Chapter 29: Hourly Penman-Monteith Evapotranspiration Modeling & Stomatal Resistance Dynamics
 *Anchor ID*: `<a id="chapter-29-article-29-hourly-penman-monteith-evapotranspiration"></a>`  
-*Original Source*: [`articles/article-29-hourly-penman-monteith-evapotranspiration.html`](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/articles/article-29-hourly-penman-monteith-evapotranspiration.html)  
+*Original Source*: [`articles/article-29-hourly-penman-monteith-evapotranspiration.html`](../articles/article-29-hourly-penman-monteith-evapotranspiration.html)  
 
 ### 🎯 Core Engineering Synopsis
 Engineering analysis of hourly crop evapotranspiration (ETc), stomatal resistance (rs), aerodynamic boundary layer resistance (ra), and precision irrigation scheduling.
@@ -221,13 +221,13 @@ Engineering analysis of hourly crop evapotranspiration (ETc), stomatal resistanc
 - 2. Interactive Calculation Tool
 
 ### 🛠️ Paired Interactive Lab Calculators
-- [Evapotranspiration Penman Monteith Calculator](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/tools/evapotranspiration-penman-monteith-calculator.html)
+- [Evapotranspiration Penman Monteith Calculator](../tools/evapotranspiration-penman-monteith-calculator.html)
 
 ---
 
 ## Chapter 33: Precision Crop Steering Dynamics: Balancing Generative vs Vegetative Growth
 *Anchor ID*: `<a id="chapter-33-article-33-precision-crop-steering-dif-vpd-drydown"></a>`  
-*Original Source*: [`articles/article-33-precision-crop-steering-dif-vpd-drydown.html`](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/articles/article-33-precision-crop-steering-dif-vpd-drydown.html)  
+*Original Source*: [`articles/article-33-precision-crop-steering-dif-vpd-drydown.html`](../articles/article-33-precision-crop-steering-dif-vpd-drydown.html)  
 
 ### 🎯 Core Engineering Synopsis
 Industrial crop steering masterclass: Balancing vegetative stem growth vs generative flowering using 24h DIF, diurnal VPD differentials, and slab dry-down kinetics.
@@ -237,13 +237,13 @@ Industrial crop steering masterclass: Balancing vegetative stem growth vs genera
 - 2. Interactive Steering Calculator
 
 ### 🛠️ Paired Interactive Lab Calculators
-- [Crop Steering Generative Vegetative Matrix](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/tools/crop-steering-generative-vegetative-matrix.html)
+- [Crop Steering Generative Vegetative Matrix](../tools/crop-steering-generative-vegetative-matrix.html)
 
 ---
 
 ## Chapter 38: Xylem Calcium Transport Dynamics & Blossom-End Rot ($BER$) Prevention
 *Anchor ID*: `<a id="chapter-38-article-38-xylem-calcium-flux-blossom-end-rot"></a>`  
-*Original Source*: [`articles/article-38-xylem-calcium-flux-blossom-end-rot.html`](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/articles/article-38-xylem-calcium-flux-blossom-end-rot.html)  
+*Original Source*: [`articles/article-38-xylem-calcium-flux-blossom-end-rot.html`](../articles/article-38-xylem-calcium-flux-blossom-end-rot.html)  
 
 ### 🎯 Core Engineering Synopsis
 Plant physiology analysis of xylem transpirational calcium flux, distal fruit cell membrane stability, and Blossom-End Rot (BER) prevention via VPD and root pressure steering.
@@ -253,13 +253,13 @@ Plant physiology analysis of xylem transpirational calcium flux, distal fruit ce
 - 2. Interactive BER Risk Model
 
 ### 🛠️ Paired Interactive Lab Calculators
-- [Crop Transpiration Calcium Blossom End Rot Risk Model](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/tools/crop-transpiration-calcium-blossom-end-rot-risk-model.html)
+- [Crop Transpiration Calcium Blossom End Rot Risk Model](../tools/crop-transpiration-calcium-blossom-end-rot-risk-model.html)
 
 ---
 
 ## Chapter 44: Meister-Deutsch: Open-Source Horticultural German SRS & Phonetic Engine
 *Anchor ID*: `<a id="chapter-44-article-44-meister-deutsch-open-source-srs-engine"></a>`  
-*Original Source*: [`articles/article-44-meister-deutsch-open-source-srs-engine.html`](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/articles/article-44-meister-deutsch-open-source-srs-engine.html)  
+*Original Source*: [`articles/article-44-meister-deutsch-open-source-srs-engine.html`](../articles/article-44-meister-deutsch-open-source-srs-engine.html)  
 
 ### 🎯 Core Engineering Synopsis
 Open-source Spaced Repetition System (SRS) for German Meisterprüfung horticulture, Web Speech API pronunciation synthesis, and botanical taxonomy.
@@ -269,13 +269,13 @@ Open-source Spaced Repetition System (SRS) for German Meisterprüfung horticultu
 - 2. Launch the Open-Source App
 
 ### 🛠️ Paired Interactive Lab Calculators
-- [Meister Deutsch Srs Learning Engine](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/tools/meister-deutsch-srs-learning-engine.html)
+- [Meister Deutsch Srs Learning Engine](../tools/meister-deutsch-srs-learning-engine.html)
 
 ---
 
 ## Chapter 49: Hydroponic Chemical Speciation, Debye-Hückel Activity & Saturation Indices
 *Anchor ID*: `<a id="chapter-49-article-49-hydroponic-chemical-speciation-debye-huckel"></a>`  
-*Original Source*: [`articles/article-49-hydroponic-chemical-speciation-debye-huckel.html`](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/articles/article-49-hydroponic-chemical-speciation-debye-huckel.html)  
+*Original Source*: [`articles/article-49-hydroponic-chemical-speciation-debye-huckel.html`](../articles/article-49-hydroponic-chemical-speciation-debye-huckel.html)  
 
 ### 🎯 Core Engineering Synopsis
 Chemical thermodynamics of closed-loop hydroponic nutrient solutions: Debye-Hückel ionic strength, ion activity coefficients, and Saturation Index (SI) for drip irrigation anti-scaling.
@@ -285,13 +285,13 @@ Chemical thermodynamics of closed-loop hydroponic nutrient solutions: Debye-Hüc
 - 2. Interactive Speciation Engine
 
 ### 🛠️ Paired Interactive Lab Calculators
-- [Hydroponic Chemical Speciation Precipitation Index](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/tools/hydroponic-chemical-speciation-precipitation-index.html)
+- [Hydroponic Chemical Speciation Precipitation Index](../tools/hydroponic-chemical-speciation-precipitation-index.html)
 
 ---
 
 ## Chapter 53: Biomass CHP Flue Gas SCR Cleaning & Biogenic CO2 Direct Enrichment in Venlo Glasshouses
 *Anchor ID*: `<a id="chapter-53-article-53-biomass-chp-scr-co2-recovery-horticulture"></a>`  
-*Original Source*: [`articles/article-53-biomass-chp-scr-co2-recovery-horticulture.html`](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/articles/article-53-biomass-chp-scr-co2-recovery-horticulture.html)  
+*Original Source*: [`articles/article-53-biomass-chp-scr-co2-recovery-horticulture.html`](../articles/article-53-biomass-chp-scr-co2-recovery-horticulture.html)  
 
 ### 🎯 Core Engineering Synopsis
 Engineering thermodynamics of biomass combined heat and power (CHP), Selective Catalytic Reduction (SCR) DeNOx, ethylene scrubbers, and safe biogenic CO2 crop fertilization in commercial CEA.
@@ -303,8 +303,8 @@ Engineering thermodynamics of biomass combined heat and power (CHP), Selective C
 - 4. Integrated Climate & Energy Calculators
 
 ### 🛠️ Paired Interactive Lab Calculators
-- [Greenhouse Co2 Enrichment Calculator](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/tools/greenhouse-co2-enrichment-calculator.html)
-- [Greenhouse Heating Load Thermal Screen Calculator](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/tools/greenhouse-heating-load-thermal-screen-calculator.html)
+- [Greenhouse Co2 Enrichment Calculator](../tools/greenhouse-co2-enrichment-calculator.html)
+- [Greenhouse Heating Load Thermal Screen Calculator](../tools/greenhouse-heating-load-thermal-screen-calculator.html)
 
 ---
 
@@ -312,7 +312,7 @@ Engineering thermodynamics of biomass combined heat and power (CHP), Selective C
 
 ## Chapter 02: Daily Light Integral (DLI) & Photonic Efficacy Engineering in Vertical Plant Factories
 *Anchor ID*: `<a id="chapter-02-article-02-dli-vertical-farming"></a>`  
-*Original Source*: [`articles/article-02-dli-vertical-farming.html`](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/articles/article-02-dli-vertical-farming.html)  
+*Original Source*: [`articles/article-02-dli-vertical-farming.html`](../articles/article-02-dli-vertical-farming.html)  
 
 ### 🎯 Core Engineering Synopsis
 Calculated PPFD (µmol/m²/s) and DLI (mol/m²/day) formulations for indoor LED vertical farming to maximize dry biomass yield per kWh of electricity.
@@ -325,7 +325,7 @@ Calculated PPFD (µmol/m²/s) and DLI (mol/m²/day) formulations for indoor LED 
 
 ## Chapter 07: Photomorphogenesis & PAR Spectral Quality: Red/Blue Ratios and Emerson Enhancement Effect
 *Anchor ID*: `<a id="chapter-07-article-07-indoor-plant-lighting-spectrum"></a>`  
-*Original Source*: [`articles/article-07-indoor-plant-lighting-spectrum.html`](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/articles/article-07-indoor-plant-lighting-spectrum.html)  
+*Original Source*: [`articles/article-07-indoor-plant-lighting-spectrum.html`](../articles/article-07-indoor-plant-lighting-spectrum.html)  
 
 ### 🎯 Core Engineering Synopsis
 Photobiological plant responses across McCree action spectra, phytochrome photoequilibria (Pfr/Pr), far-red Emerson enhancement, and spectral tailoring for indoor CEA.
@@ -339,7 +339,7 @@ Photobiological plant responses across McCree action spectra, phytochrome photoe
 
 ## Chapter 11: High-Wire Strawberry Greenhouse Microclimate: Flower Bud Differentiation & Diurnal Temperature Integration
 *Anchor ID*: `<a id="chapter-11-article-11-strawberry-greenhouse-climate"></a>`  
-*Original Source*: [`articles/article-11-strawberry-greenhouse-climate.html`](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/articles/article-11-strawberry-greenhouse-climate.html)  
+*Original Source*: [`articles/article-11-strawberry-greenhouse-climate.html`](../articles/article-11-strawberry-greenhouse-climate.html)  
 
 ### 🎯 Core Engineering Synopsis
 Precision microclimate management for day-neutral and short-day greenhouse strawberries: chilling hour accumulation, flower bud initiation, and diurnal DIF temperature steering.
@@ -353,7 +353,7 @@ Precision microclimate management for day-neutral and short-day greenhouse straw
 
 ## Chapter 16: German Master Grower (Gärtnermeister) Greenhouse Climate Steering Strategy for Solanaceae
 *Anchor ID*: `<a id="chapter-16-article-16-german-meister-greenhouse-climate"></a>`  
-*Original Source*: [`articles/article-16-german-meister-greenhouse-climate.html`](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/articles/article-16-german-meister-greenhouse-climate.html)  
+*Original Source*: [`articles/article-16-german-meister-greenhouse-climate.html`](../articles/article-16-german-meister-greenhouse-climate.html)  
 
 ### 🎯 Core Engineering Synopsis
 Advanced European greenhouse climate steering: 24-hour temperature integration (RTI), pre-night temperature drops (DIP), and 3-way mixing valve heating control.
@@ -367,7 +367,7 @@ Advanced European greenhouse climate steering: 24-hour temperature integration (
 
 ## Chapter 20: Leaf Temperature Infrared Thermometry & Crop Water Stress Index (CWSI) Sensing
 *Anchor ID*: `<a id="chapter-20-article-20-leaf-temperature-infrared-thermometry"></a>`  
-*Original Source*: [`articles/article-20-leaf-temperature-infrared-thermometry.html`](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/articles/article-20-leaf-temperature-infrared-thermometry.html)  
+*Original Source*: [`articles/article-20-leaf-temperature-infrared-thermometry.html`](../articles/article-20-leaf-temperature-infrared-thermometry.html)  
 
 ### 🎯 Core Engineering Synopsis
 Physics of infrared canopy radiometry: Stefan-Boltzmann law, leaf-to-air temperature differential (ΔT), and Crop Water Stress Index (CWSI) for automated irrigation.
@@ -381,7 +381,7 @@ Physics of infrared canopy radiometry: Stefan-Boltzmann law, leaf-to-air tempera
 
 ## Chapter 24: Optimizing Far-Red (730nm) & Deep-Red (660nm) Spectral Ratios for Commercial Greenhouse Crops
 *Anchor ID*: `<a id="chapter-24-article-24-far-red-deep-red-led-spectrum-optimization"></a>`  
-*Original Source*: [`articles/article-24-far-red-deep-red-led-spectrum-optimization.html`](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/articles/article-24-far-red-deep-red-led-spectrum-optimization.html)  
+*Original Source*: [`articles/article-24-far-red-deep-red-led-spectrum-optimization.html`](../articles/article-24-far-red-deep-red-led-spectrum-optimization.html)  
 
 ### 🎯 Core Engineering Synopsis
 A comprehensive engineering masterclass on the Emerson Enhancement Effect, Photosystem I/II excitation balance, and Far-Red (730nm) spectrum optimization in commercial greenhouse crops.
@@ -395,13 +395,13 @@ A comprehensive engineering masterclass on the Emerson Enhancement Effect, Photo
 - References
 
 ### 🛠️ Paired Interactive Lab Calculators
-- [Dli Spectrum Photomorphogenesis Calculator](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/tools/dli-spectrum-photomorphogenesis-calculator.html)
+- [Dli Spectrum Photomorphogenesis Calculator](../tools/dli-spectrum-photomorphogenesis-calculator.html)
 
 ---
 
 ## Chapter 28: Greenhouse CO₂ Enrichment Kinetics & Economic Thresholds under Dynamic Ventilation
 *Anchor ID*: `<a id="chapter-28-article-28-greenhouse-co2-enrichment-economics"></a>`  
-*Original Source*: [`articles/article-28-greenhouse-co2-enrichment-economics.html`](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/articles/article-28-greenhouse-co2-enrichment-economics.html)  
+*Original Source*: [`articles/article-28-greenhouse-co2-enrichment-economics.html`](../articles/article-28-greenhouse-co2-enrichment-economics.html)  
 
 ### 🎯 Core Engineering Synopsis
 Industrial analysis of pure liquid CO2 vs CHP flue gas dosing, ventilation exchange losses, and net economic ROI thresholds in commercial horticulture.
@@ -411,13 +411,13 @@ Industrial analysis of pure liquid CO2 vs CHP flue gas dosing, ventilation excha
 - 2. Interactive ROI Optimization Tool
 
 ### 🛠️ Paired Interactive Lab Calculators
-- [Greenhouse Co2 Enrichment Optimizer](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/tools/greenhouse-co2-enrichment-optimizer.html)
+- [Greenhouse Co2 Enrichment Optimizer](../tools/greenhouse-co2-enrichment-optimizer.html)
 
 ---
 
 ## Chapter 32: Horticultural LED Fixture Thermal Management & Diode Junction Temperature ($T_j$) Dynamics
 *Anchor ID*: `<a id="chapter-32-article-32-horticultural-led-thermal-junction-temperature"></a>`  
-*Original Source*: [`articles/article-32-horticultural-led-thermal-junction-temperature.html`](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/articles/article-32-horticultural-led-thermal-junction-temperature.html)  
+*Original Source*: [`articles/article-32-horticultural-led-thermal-junction-temperature.html`](../articles/article-32-horticultural-led-thermal-junction-temperature.html)  
 
 ### 🎯 Core Engineering Synopsis
 Engineering analysis of LED diode junction temperature (Tj), thermal resistance (Rth), spectral photon efficacy derating, and canopy convective heat flux in commercial greenhouses.
@@ -427,13 +427,13 @@ Engineering analysis of LED diode junction temperature (Tj), thermal resistance 
 - 2. Interactive Thermal Optimizer
 
 ### 🛠️ Paired Interactive Lab Calculators
-- [Greenhouse Lighting Led Thermal Cfd Optimizer](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/tools/greenhouse-lighting-led-thermal-cfd-optimizer.html)
+- [Greenhouse Lighting Led Thermal Cfd Optimizer](../tools/greenhouse-lighting-led-thermal-cfd-optimizer.html)
 
 ---
 
 ## Chapter 37: Hot Water Buffer Tank Stratification & Thermal Energy Storage Sizing
 *Anchor ID*: `<a id="chapter-37-article-37-thermal-buffer-tank-stratification-sizing"></a>`  
-*Original Source*: [`articles/article-37-thermal-buffer-tank-stratification-sizing.html`](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/articles/article-37-thermal-buffer-tank-stratification-sizing.html)  
+*Original Source*: [`articles/article-37-thermal-buffer-tank-stratification-sizing.html`](../articles/article-37-thermal-buffer-tank-stratification-sizing.html)  
 
 ### 🎯 Core Engineering Synopsis
 Industrial engineering analysis of greenhouse hot-water thermal buffer tanks, thermocline Richardson number stability, and night peak heating discharge duration.
@@ -443,13 +443,13 @@ Industrial engineering analysis of greenhouse hot-water thermal buffer tanks, th
 - 2. Interactive Buffer Tank Calculator
 
 ### 🛠️ Paired Interactive Lab Calculators
-- [Solar Thermal Buffer Tank Stratification Calculator](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/tools/solar-thermal-buffer-tank-stratification-calculator.html)
+- [Solar Thermal Buffer Tank Stratification Calculator](../tools/solar-thermal-buffer-tank-stratification-calculator.html)
 
 ---
 
 ## Chapter 43: Greenhouse Structural Standards (EN 13031-1 & NEN 3859): Wind, Snow & Crop Loads
 *Anchor ID*: `<a id="chapter-43-article-43-greenhouse-structural-standards-en13031"></a>`  
-*Original Source*: [`articles/article-43-greenhouse-structural-standards-en13031.html`](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/articles/article-43-greenhouse-structural-standards-en13031.html)  
+*Original Source*: [`articles/article-43-greenhouse-structural-standards-en13031.html`](../articles/article-43-greenhouse-structural-standards-en13031.html)  
 
 ### 🎯 Core Engineering Synopsis
 Civil engineering analysis of commercial Venlo greenhouse structural design according to EN 13031-1 and NEN 3859, wind suction (qw), snow drift, and high-wire crop loads.
@@ -459,13 +459,13 @@ Civil engineering analysis of commercial Venlo greenhouse structural design acco
 - 2. Interactive Structural Load Calculator
 
 ### 🛠️ Paired Interactive Lab Calculators
-- [Greenhouse Structural Wind Snow Load Nen3859 Calculator](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/tools/greenhouse-structural-wind-snow-load-nen3859-calculator.html)
+- [Greenhouse Structural Wind Snow Load Nen3859 Calculator](../tools/greenhouse-structural-wind-snow-load-nen3859-calculator.html)
 
 ---
 
 ## Chapter 48: Commercial Greenhouse 10-Year CapEx, OpEx & IRR Investment Modeling
 *Anchor ID*: `<a id="chapter-48-article-48-greenhouse-capex-opex-irr-npv-financial-model"></a>`  
-*Original Source*: [`articles/article-48-greenhouse-capex-opex-irr-npv-financial-model.html`](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/articles/article-48-greenhouse-capex-opex-irr-npv-financial-model.html)  
+*Original Source*: [`articles/article-48-greenhouse-capex-opex-irr-npv-financial-model.html`](../articles/article-48-greenhouse-capex-opex-irr-npv-financial-model.html)  
 
 ### 🎯 Core Engineering Synopsis
 Bankable financial feasibility analysis for high-tech commercial Venlo glasshouse projects: Turnkey CapEx ($180-$320/m²), Discounted Cash Flows, IRR, and NPV.
@@ -475,13 +475,13 @@ Bankable financial feasibility analysis for high-tech commercial Venlo glasshous
 - 2. Interactive Investment Calculator
 
 ### 🛠️ Paired Interactive Lab Calculators
-- [Greenhouse Capex Opex 10Year Roi Calculator](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/tools/greenhouse-capex-opex-10year-roi-calculator.html)
+- [Greenhouse Capex Opex 10Year Roi Calculator](../tools/greenhouse-capex-opex-10year-roi-calculator.html)
 
 ---
 
 ## Chapter 52: Aquifer Thermal Energy Storage (ATES) & Industrial Heat Pumps in Dutch Venlo Greenhouses
 *Anchor ID*: `<a id="chapter-52-article-52-aquifer-thermal-energy-storage-ates-heat-pump"></a>`  
-*Original Source*: [`articles/article-52-aquifer-thermal-energy-storage-ates-heat-pump.html`](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/articles/article-52-aquifer-thermal-energy-storage-ates-heat-pump.html)  
+*Original Source*: [`articles/article-52-aquifer-thermal-energy-storage-ates-heat-pump.html`](../articles/article-52-aquifer-thermal-energy-storage-ates-heat-pump.html)  
 
 ### 🎯 Core Engineering Synopsis
 Thermodynamic modeling of Aquifer Thermal Energy Storage (ATES / WKO) doublet systems, seasonal heat recovery efficiency, and high-temperature industrial heat pump COP in commercial CEA.
@@ -492,13 +492,13 @@ Thermodynamic modeling of Aquifer Thermal Energy Storage (ATES / WKO) doublet sy
 - 3. Interactive Heating & Energy Engineering Hub
 
 ### 🛠️ Paired Interactive Lab Calculators
-- [Greenhouse Heating Load Thermal Screen Calculator](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/tools/greenhouse-heating-load-thermal-screen-calculator.html)
+- [Greenhouse Heating Load Thermal Screen Calculator](../tools/greenhouse-heating-load-thermal-screen-calculator.html)
 
 ---
 
 ## Chapter 56: Far-Red Photobiology (ePAR 400–750 nm) & Phytochrome Photostationary State (PSS) in Greenhouse Horticulture
 *Anchor ID*: `<a id="chapter-56-article-56-far-red-photobiology-epar-phytochrome-photostationary-state"></a>`  
-*Original Source*: [`articles/article-56-far-red-photobiology-epar-phytochrome-photostationary-state.html`](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/articles/article-56-far-red-photobiology-epar-phytochrome-photostationary-state.html)  
+*Original Source*: [`articles/article-56-far-red-photobiology-epar-phytochrome-photostationary-state.html`](../articles/article-56-far-red-photobiology-epar-phytochrome-photostationary-state.html)  
 
 ### 🎯 Core Engineering Synopsis
 Engineering biophysics of far-red photon efficacy, ePAR extended photosynthetic range (400-750 nm), phytochrome photostationary state (PSS), and end-of-day (EOD) dynamics in commercial high-wire greenhouse crops.
@@ -517,7 +517,7 @@ Engineering biophysics of far-red photon efficacy, ePAR extended photosynthetic 
 
 ## Chapter 04: Greenhouse Envelope Peak Heat Loss Coefficients (U-Values) & Thermodynamic Thermal Screen Modeling
 *Anchor ID*: `<a id="chapter-04-article-04-greenhouse-heating-loss"></a>`  
-*Original Source*: [`articles/article-04-greenhouse-heating-loss.html`](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/articles/article-04-greenhouse-heating-loss.html)  
+*Original Source*: [`articles/article-04-greenhouse-heating-loss.html`](../articles/article-04-greenhouse-heating-loss.html)  
 
 ### 🎯 Core Engineering Synopsis
 Engineering greenhouse heating loads using Q = U·A·ΔT heat transfer dynamics, cover glazing U-values, wind infiltration friction, and multilayer thermal curtain energy savings.
@@ -531,7 +531,7 @@ Engineering greenhouse heating loads using Q = U·A·ΔT heat transfer dynamics,
 
 ## Chapter 09: Stomatal Conductance Dynamics & Farquhar-von Caemmerer-Berry (FvCB) Photosynthesis Coupling
 *Anchor ID*: `<a id="chapter-09-article-09-stomata-conductance-photosynthesis"></a>`  
-*Original Source*: [`articles/article-09-stomata-conductance-photosynthesis.html`](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/articles/article-09-stomata-conductance-photosynthesis.html)  
+*Original Source*: [`articles/article-09-stomata-conductance-photosynthesis.html`](../articles/article-09-stomata-conductance-photosynthesis.html)  
 
 ### 🎯 Core Engineering Synopsis
 Coupled Farquhar-von Caemmerer-Berry photosynthesis and Ball-Berry stomatal conductance models under elevated CO2 enrichment and light-saturated CEA canopies.
@@ -545,7 +545,7 @@ Coupled Farquhar-von Caemmerer-Berry photosynthesis and Ball-Berry stomatal cond
 
 ## Chapter 14: Dual Horticultural Education & Vocational Engineering in Germany: Gärtner Ausbildung to Meister
 *Anchor ID*: `<a id="chapter-14-article-14-ausbildung-horticulture-germany"></a>`  
-*Original Source*: [`articles/article-14-ausbildung-horticulture-germany.html`](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/articles/article-14-ausbildung-horticulture-germany.html)  
+*Original Source*: [`articles/article-14-ausbildung-horticulture-germany.html`](../articles/article-14-ausbildung-horticulture-germany.html)  
 
 ### 🎯 Core Engineering Synopsis
 Comprehensive structural guide to Germany
@@ -559,7 +559,7 @@ Comprehensive structural guide to Germany
 
 ## Chapter 19: Photon Use Efficiency (PUE) & Electric Power to Fresh Biomass Kinetics in Vertical Farming
 *Anchor ID*: `<a id="chapter-19-article-19-vertical-farm-biomass-conversion-efficiency"></a>`  
-*Original Source*: [`articles/article-19-vertical-farm-biomass-conversion-efficiency.html`](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/articles/article-19-vertical-farm-biomass-conversion-efficiency.html)  
+*Original Source*: [`articles/article-19-vertical-farm-biomass-conversion-efficiency.html`](../articles/article-19-vertical-farm-biomass-conversion-efficiency.html)  
 
 ### 🎯 Core Engineering Synopsis
 Quantifying photon use efficiency (g/mol) and energy yield (g/kWh) in indoor plant factories with artificial lighting (PFAL) across leafy greens and herbs.
@@ -573,7 +573,7 @@ Quantifying photon use efficiency (g/mol) and energy yield (g/kWh) in indoor pla
 
 ## Chapter 23: Closed-Loop DWC & Micro-Dosing Automation: Dissolved Oxygen, Ion-Selective ORP Metrology & PID Fertigation
 *Anchor ID*: `<a id="chapter-23-article-23-closed-loop-dwc-automation"></a>`  
-*Original Source*: [`articles/article-23-closed-loop-dwc-automation.html`](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/articles/article-23-closed-loop-dwc-automation.html)  
+*Original Source*: [`articles/article-23-closed-loop-dwc-automation.html`](../articles/article-23-closed-loop-dwc-automation.html)  
 
 ### 🎯 Core Engineering Synopsis
 Engineering recirculating Deep Water Culture (DWC) systems: Henry
@@ -599,7 +599,7 @@ $$
 
 ## Chapter 27: Predictive Biomass Accumulation & Light Use Efficiency (LUE) Under Dynamic DLI
 *Anchor ID*: `<a id="chapter-27-article-27-crop-yield-biomass-light-use-efficiency"></a>`  
-*Original Source*: [`articles/article-27-crop-yield-biomass-light-use-efficiency.html`](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/articles/article-27-crop-yield-biomass-light-use-efficiency.html)  
+*Original Source*: [`articles/article-27-crop-yield-biomass-light-use-efficiency.html`](../articles/article-27-crop-yield-biomass-light-use-efficiency.html)  
 
 ### 🎯 Core Engineering Synopsis
 Commercial greenhouse yield forecasting based on cumulative DLI, Light Use Efficiency (LUE = 2.8 - 3.4 g/mol), and Harvest Index (HI) modeling.
@@ -609,13 +609,13 @@ Commercial greenhouse yield forecasting based on cumulative DLI, Light Use Effic
 - 2. Interactive Biomass Forecaster
 
 ### 🛠️ Paired Interactive Lab Calculators
-- [Crop Yield Biomass Dli Forecaster](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/tools/crop-yield-biomass-dli-forecaster.html)
+- [Crop Yield Biomass Dli Forecaster](../tools/crop-yield-biomass-dli-forecaster.html)
 
 ---
 
 ## Chapter 31: High-Pressure (70 bar) Fogging Physics & Sauter Droplet Evaporative Cooling
 *Anchor ID*: `<a id="chapter-31-article-31-high-pressure-fogging-droplet-physics"></a>`  
-*Original Source*: [`articles/article-31-high-pressure-fogging-droplet-physics.html`](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/articles/article-31-high-pressure-fogging-droplet-physics.html)  
+*Original Source*: [`articles/article-31-high-pressure-fogging-droplet-physics.html`](../articles/article-31-high-pressure-fogging-droplet-physics.html)  
 
 ### 🎯 Core Engineering Synopsis
 Industrial engineering analysis of 70 bar high-pressure fogging, Sauter Mean Diameter (D32 < 10µm), flash evaporative cooling, and VPD stabilization in commercial greenhouses.
@@ -625,13 +625,13 @@ Industrial engineering analysis of 70 bar high-pressure fogging, Sauter Mean Dia
 - 2. Interactive Fogging Engine
 
 ### 🛠️ Paired Interactive Lab Calculators
-- [Fogging Nozzle Droplet Evaporative Cooling Engine](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/tools/fogging-nozzle-droplet-evaporative-cooling-engine.html)
+- [Fogging Nozzle Droplet Evaporative Cooling Engine](../tools/fogging-nozzle-droplet-evaporative-cooling-engine.html)
 
 ---
 
 ## Chapter 36: Combined Heat & Power (CHP) Flue Gas SCR Denitrification & Safe CO₂ Dosing
 *Anchor ID*: `<a id="chapter-36-article-36-chp-flue-gas-scr-denitrification"></a>`  
-*Original Source*: [`articles/article-36-chp-flue-gas-scr-denitrification.html`](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/articles/article-36-chp-flue-gas-scr-denitrification.html)  
+*Original Source*: [`articles/article-36-chp-flue-gas-scr-denitrification.html`](../articles/article-36-chp-flue-gas-scr-denitrification.html)  
 
 ### 🎯 Core Engineering Synopsis
 Industrial engineering analysis of gas engine Selective Catalytic Reduction (SCR), stoichiometric urea injection, NOx < 5 ppm elimination, and pure CO2 dosing in commercial greenhouses.
@@ -641,13 +641,13 @@ Industrial engineering analysis of gas engine Selective Catalytic Reduction (SCR
 - 2. Interactive SCR Dosing Calculator
 
 ### 🛠️ Paired Interactive Lab Calculators
-- [Chp Flue Gas Scr Urea Dosing Calculator](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/tools/chp-flue-gas-scr-urea-dosing-calculator.html)
+- [Chp Flue Gas Scr Urea Dosing Calculator](../tools/chp-flue-gas-scr-urea-dosing-calculator.html)
 
 ---
 
 ## Chapter 42: Substrate Matric Potential ($\Psi_m$), $pF$ Water Retention Curves & van Genuchten Physics
 *Anchor ID*: `<a id="chapter-42-article-42-substrate-matric-potential-pf-curves"></a>`  
-*Original Source*: [`articles/article-42-substrate-matric-potential-pf-curves.html`](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/articles/article-42-substrate-matric-potential-pf-curves.html)  
+*Original Source*: [`articles/article-42-substrate-matric-potential-pf-curves.html`](../articles/article-42-substrate-matric-potential-pf-curves.html)  
 
 ### 🎯 Core Engineering Synopsis
 Industrial agricultural physics analysis of substrate matric suction potential (Psi_m), pF retention curves, van Genuchten hydraulic models, and plant available water in commercial rockwool and coir.
@@ -657,13 +657,13 @@ Industrial agricultural physics analysis of substrate matric suction potential (
 - 2. Interactive Matric Potential Engine
 
 ### 🛠️ Paired Interactive Lab Calculators
-- [Soil Matrix Water Potential Matric Suction Calculator](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/tools/soil-matrix-water-potential-matric-suction-calculator.html)
+- [Soil Matrix Water Potential Matric Suction Calculator](../tools/soil-matrix-water-potential-matric-suction-calculator.html)
 
 ---
 
 ## Chapter 47: Computer Vision & Multispectral Disease Diagnostics in Protected Cropping
 *Anchor ID*: `<a id="chapter-47-article-47-computer-vision-crop-disease-diagnostics"></a>`  
-*Original Source*: [`articles/article-47-computer-vision-crop-disease-diagnostics.html`](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/articles/article-47-computer-vision-crop-disease-diagnostics.html)  
+*Original Source*: [`articles/article-47-computer-vision-crop-disease-diagnostics.html`](../articles/article-47-computer-vision-crop-disease-diagnostics.html)  
 
 ### 🎯 Core Engineering Synopsis
 Computer vision edge algorithms for early detection of Botrytis cinerea, iron chlorosis, and foliar necrotic lesions in commercial high-wire greenhouses.
@@ -673,13 +673,13 @@ Computer vision edge algorithms for early detection of Botrytis cinerea, iron ch
 - 2. Interactive Diagnostic Tool
 
 ### 🛠️ Paired Interactive Lab Calculators
-- [Agrivision Ai Crop Disease Analyzer](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/tools/agrivision-ai-crop-disease-analyzer.html)
+- [Agrivision Ai Crop Disease Analyzer](../tools/agrivision-ai-crop-disease-analyzer.html)
 
 ---
 
 ## Chapter 51: Autonomous Greenhouse AI: Reinforcement Learning & Model Predictive Control
 *Anchor ID*: `<a id="chapter-51-article-51-autonomous-greenhouse-ai-mpc-reinforcement-learning"></a>`  
-*Original Source*: [`articles/article-51-autonomous-greenhouse-ai-mpc-reinforcement-learning.html`](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/articles/article-51-autonomous-greenhouse-ai-mpc-reinforcement-learning.html)  
+*Original Source*: [`articles/article-51-autonomous-greenhouse-ai-mpc-reinforcement-learning.html`](../articles/article-51-autonomous-greenhouse-ai-mpc-reinforcement-learning.html)  
 
 ### 🎯 Core Engineering Synopsis
 Autonomous climate computer optimization using Reinforcement Learning and Model Predictive Control (MPC). Optimizes 24h temperature trajectories and cuts heating energy by 22.4%.
@@ -689,13 +689,13 @@ Autonomous climate computer optimization using Reinforcement Learning and Model 
 - 2. Interactive MPC Simulator
 
 ### 🛠️ Paired Interactive Lab Calculators
-- [Greenhouse Autonomous Ai Climate Controller](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/tools/greenhouse-autonomous-ai-climate-controller.html)
+- [Greenhouse Autonomous Ai Climate Controller](../tools/greenhouse-autonomous-ai-climate-controller.html)
 
 ---
 
 ## Chapter 55: Nutrient Uptake Concentration Factor (UCF) in Recirculating Hydroponics: Closed-Loop Mass Balance & Ion Dynamics
 *Anchor ID*: `<a id="chapter-55-article-55-nutrient-uptake-concentration-factor-recirculating-hydroponics"></a>`  
-*Original Source*: [`articles/article-55-nutrient-uptake-concentration-factor-recirculating-hydroponics.html`](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/articles/article-55-nutrient-uptake-concentration-factor-recirculating-hydroponics.html)  
+*Original Source*: [`articles/article-55-nutrient-uptake-concentration-factor-recirculating-hydroponics.html`](../articles/article-55-nutrient-uptake-concentration-factor-recirculating-hydroponics.html)  
 
 ### 🎯 Core Engineering Synopsis
 Engineering mass balance formulation of nutrient uptake concentration factors (UCF), ion accumulation kinetics, sodium salinity limits, and optimal leaching fractions in commercial closed-loop CEA hydroponics.
@@ -708,9 +708,9 @@ Engineering mass balance formulation of nutrient uptake concentration factors (U
 - 5. Interactive Engineering Calculators & Simulators
 
 ### 🛠️ Paired Interactive Lab Calculators
-- [Closed Loop Reverse Osmosis Desalination Energy Optimizer](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/tools/closed-loop-reverse-osmosis-desalination-energy-optimizer.html)
-- [Hydroponic Nutrient Solution Calculator](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/tools/hydroponic-nutrient-solution-calculator.html)
-- [Nutrient Uptake Concentration Factor Analyzer](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/tools/nutrient-uptake-concentration-factor-analyzer.html)
+- [Closed Loop Reverse Osmosis Desalination Energy Optimizer](../tools/closed-loop-reverse-osmosis-desalination-energy-optimizer.html)
+- [Hydroponic Nutrient Solution Calculator](../tools/hydroponic-nutrient-solution-calculator.html)
+- [Nutrient Uptake Concentration Factor Analyzer](../tools/nutrient-uptake-concentration-factor-analyzer.html)
 
 ---
 
@@ -718,7 +718,7 @@ Engineering mass balance formulation of nutrient uptake concentration factors (U
 
 ## Chapter 06: Molar Stoichiometry & Sonneveld/Steiner Ion Balancing (meq/L) in Closed-Loop Hydroponics
 *Anchor ID*: `<a id="chapter-06-article-06-hydroponic-nutrient-formulation"></a>`  
-*Original Source*: [`articles/article-06-hydroponic-nutrient-formulation.html`](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/articles/article-06-hydroponic-nutrient-formulation.html)  
+*Original Source*: [`articles/article-06-hydroponic-nutrient-formulation.html`](../articles/article-06-hydroponic-nutrient-formulation.html)  
 
 ### 🎯 Core Engineering Synopsis
 Precision closed-loop hydroponic nutrient balancing: milliequivalent calculations, Steiner cation-anion stoichiometry, salt solubility products, and rootzone pH/EC regulation.
@@ -732,7 +732,7 @@ Precision closed-loop hydroponic nutrient balancing: milliequivalent calculation
 
 ## Chapter 10: Commercial Vertical Farming HVAC Sizing: Dehumidification Latent Loads & Microclimate Fluid Dynamics
 *Anchor ID*: `<a id="chapter-10-article-10-vertical-farm-hvac-design"></a>`  
-*Original Source*: [`articles/article-10-vertical-farm-hvac-design.html`](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/articles/article-10-vertical-farm-hvac-design.html)  
+*Original Source*: [`articles/article-10-vertical-farm-hvac-design.html`](../articles/article-10-vertical-farm-hvac-design.html)  
 
 ### 🎯 Core Engineering Synopsis
 HVAC and psychrometric dehumidification engineering for commercial indoor vertical farms: calculating sensible vs latent cooling loads, airflow velocity, and rack boundary layer dissipation.
@@ -746,7 +746,7 @@ HVAC and psychrometric dehumidification engineering for commercial indoor vertic
 
 ## Chapter 15: Biophilic Architecture & Indoor Environmental Physics in Commercial Living Spaces
 *Anchor ID*: `<a id="chapter-15-article-15-plant-interior-biophilic-design"></a>`  
-*Original Source*: [`articles/article-15-plant-interior-biophilic-design.html`](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/articles/article-15-plant-interior-biophilic-design.html)  
+*Original Source*: [`articles/article-15-plant-interior-biophilic-design.html`](../articles/article-15-plant-interior-biophilic-design.html)  
 
 ### 🎯 Core Engineering Synopsis
 Architectural integration of living vegetation in high-performance buildings: daylight factor modeling, sub-irrigation hydraulics, particulate matter filtration, and acoustic damping.
@@ -760,7 +760,7 @@ Architectural integration of living vegetation in high-performance buildings: da
 
 ## Chapter 18: Closed-Loop Hydroponic Drain Water Disinfection: UV-C, Ozone, Heat & Ultrafiltration
 *Anchor ID*: `<a id="chapter-18-article-18-recirculating-nutrient-sterilization"></a>`  
-*Original Source*: [`articles/article-18-recirculating-nutrient-sterilization.html`](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/articles/article-18-recirculating-nutrient-sterilization.html)  
+*Original Source*: [`articles/article-18-recirculating-nutrient-sterilization.html`](../articles/article-18-recirculating-nutrient-sterilization.html)  
 
 ### 🎯 Core Engineering Synopsis
 Engineering recirculating hydroponic drain water disinfection: UV-C irradiance dosage (mJ/cm2), ozone oxidation redox potential (ORP), and ultrafiltration membrane sizing.
@@ -774,7 +774,7 @@ Engineering recirculating hydroponic drain water disinfection: UV-C irradiance d
 
 ## Chapter 22: HPS vs. LED Supplemental Lighting Physics: Photon Efficacy, Far-Red Kinetics & Greenhouse Heat Balance
 *Anchor ID*: `<a id="chapter-22-article-22-hps-vs-led-supplemental-lighting"></a>`  
-*Original Source*: [`articles/article-22-hps-vs-led-supplemental-lighting.html`](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/articles/article-22-hps-vs-led-supplemental-lighting.html)  
+*Original Source*: [`articles/article-22-hps-vs-led-supplemental-lighting.html`](../articles/article-22-hps-vs-led-supplemental-lighting.html)  
 
 ### 🎯 Core Engineering Synopsis
 Comparative biophysics of High-Pressure Sodium (HPS) and LED supplemental fixtures: PAR photon efficacy (µmol/J), Far-Red Emerson enhancement, and thermodynamic heating integration in Venlo greenhouses.
@@ -797,7 +797,7 @@ $$
 
 ## Chapter 26: Greenhouse Heating Load Modeling & Thermal Screen Dynamics under DIN V 18599 Standards
 *Anchor ID*: `<a id="chapter-26-article-26-greenhouse-heating-load-din-v-18599"></a>`  
-*Original Source*: [`articles/article-26-greenhouse-heating-load-din-v-18599.html`](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/articles/article-26-greenhouse-heating-load-din-v-18599.html)  
+*Original Source*: [`articles/article-26-greenhouse-heating-load-din-v-18599.html`](../articles/article-26-greenhouse-heating-load-din-v-18599.html)  
 
 ### 🎯 Core Engineering Synopsis
 Comprehensive engineering analysis of peak heat transmission, thermal screen radiative resistance, and pipe rail hydraulics in commercial Venlo greenhouses.
@@ -807,13 +807,13 @@ Comprehensive engineering analysis of peak heat transmission, thermal screen rad
 - 2. Interactive Sizing Tool
 
 ### 🛠️ Paired Interactive Lab Calculators
-- [Greenhouse Heating Load Thermal Screen Calculator](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/tools/greenhouse-heating-load-thermal-screen-calculator.html)
+- [Greenhouse Heating Load Thermal Screen Calculator](../tools/greenhouse-heating-load-thermal-screen-calculator.html)
 
 ---
 
 ## Chapter 30: Rockwool Slab Hydrodynamics, TDR Moisture Sensors & Drainage EC Balancing
 *Anchor ID*: `<a id="chapter-30-article-30-rockwool-slab-tdr-moisture-drain-ec"></a>`  
-*Original Source*: [`articles/article-30-rockwool-slab-tdr-moisture-drain-ec.html`](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/articles/article-30-rockwool-slab-tdr-moisture-drain-ec.html)  
+*Original Source*: [`articles/article-30-rockwool-slab-tdr-moisture-drain-ec.html`](../articles/article-30-rockwool-slab-tdr-moisture-drain-ec.html)  
 
 ### 🎯 Core Engineering Synopsis
 Engineering analysis of volumetric water content (VWC %), overnight dry-down kinetics, and drainage EC balancing in commercial rockwool hydroponics.
@@ -823,13 +823,13 @@ Engineering analysis of volumetric water content (VWC %), overnight dry-down kin
 - 2. Interactive Substrate Optimizer
 
 ### 🛠️ Paired Interactive Lab Calculators
-- [Rockwool Substrate Tdr Moisture Drain Optimizer](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/tools/rockwool-substrate-tdr-moisture-drain-optimizer.html)
+- [Rockwool Substrate Tdr Moisture Drain Optimizer](../tools/rockwool-substrate-tdr-moisture-drain-optimizer.html)
 
 ---
 
 ## Chapter 35: Computational Fluid Dynamics (CFD) of Horizontal Air Flow (HAF) Fans
 *Anchor ID*: `<a id="chapter-35-article-35-greenhouse-haf-fan-cfd-modeling"></a>`  
-*Original Source*: [`articles/article-35-greenhouse-haf-fan-cfd-modeling.html`](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/articles/article-35-greenhouse-haf-fan-cfd-modeling.html)  
+*Original Source*: [`articles/article-35-greenhouse-haf-fan-cfd-modeling.html`](../articles/article-35-greenhouse-haf-fan-cfd-modeling.html)  
 
 ### 🎯 Core Engineering Synopsis
 Industrial CFD modeling of Horizontal Air Flow (HAF) fan spacing, jet velocity decay, Bernoulli air entrainment, and canopy boundary layer destratification.
@@ -839,13 +839,13 @@ Industrial CFD modeling of Horizontal Air Flow (HAF) fan spacing, jet velocity d
 - 2. Interactive HAF CFD Engine
 
 ### 🛠️ Paired Interactive Lab Calculators
-- [Greenhouse Microclimate Cfd Air Velocity Optimizer](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/tools/greenhouse-microclimate-cfd-air-velocity-optimizer.html)
+- [Greenhouse Microclimate Cfd Air Velocity Optimizer](../tools/greenhouse-microclimate-cfd-air-velocity-optimizer.html)
 
 ---
 
 ## Chapter 41: The Biochemical Farquhar (FvCB) Photosynthesis Model & CO₂ Dosing Dynamics
 *Anchor ID*: `<a id="chapter-41-article-41-farquhar-photosynthesis-fvcb-co2"></a>`  
-*Original Source*: [`articles/article-41-farquhar-photosynthesis-fvcb-co2.html`](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/articles/article-41-farquhar-photosynthesis-fvcb-co2.html)  
+*Original Source*: [`articles/article-41-farquhar-photosynthesis-fvcb-co2.html`](../articles/article-41-farquhar-photosynthesis-fvcb-co2.html)  
 
 ### 🎯 Core Engineering Synopsis
 Industrial plant physiology analysis of the Farquhar-von Caemmerer-Berry (FvCB) model, Rubisco kinetics (Vcmax), electron transport (Jmax), and CO2 enrichment saturation kinetics.
@@ -855,13 +855,13 @@ Industrial plant physiology analysis of the Farquhar-von Caemmerer-Berry (FvCB) 
 - 2. Interactive Photosynthesis Simulator
 
 ### 🛠️ Paired Interactive Lab Calculators
-- [Co2 Enrichment Leaf Photosynthesis Farquhar Calculator](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/tools/co2-enrichment-leaf-photosynthesis-farquhar-calculator.html)
+- [Co2 Enrichment Leaf Photosynthesis Farquhar Calculator](../tools/co2-enrichment-leaf-photosynthesis-farquhar-calculator.html)
 
 ---
 
 ## Chapter 46: OpenCEA: Open-Source Python Micro-Framework for Greenhouse Physics
 *Anchor ID*: `<a id="chapter-46-article-46-opencea-python-micro-framework-release"></a>`  
-*Original Source*: [`articles/article-46-opencea-python-micro-framework-release.html`](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/articles/article-46-opencea-python-micro-framework-release.html)  
+*Original Source*: [`articles/article-46-opencea-python-micro-framework-release.html`](../articles/article-46-opencea-python-micro-framework-release.html)  
 
 ### 🎯 Core Engineering Synopsis
 Release of OpenCEA, an open-source Python micro-framework for commercial greenhouse physics, crop photobiology, substrate hydrodynamics, and climate automation.
@@ -871,13 +871,13 @@ Release of OpenCEA, an open-source Python micro-framework for commercial greenho
 - 2. Interactive Web Playground
 
 ### 🛠️ Paired Interactive Lab Calculators
-- [Opencea Python Micro Framework Playground](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/tools/opencea-python-micro-framework-playground.html)
+- [Opencea Python Micro Framework Playground](../tools/opencea-python-micro-framework-playground.html)
 
 ---
 
 ## Chapter 50: Smart Greenhouse Edge IoT & MQTT Fleet Telemetry Architecture
 *Anchor ID*: `<a id="chapter-50-article-50-smart-greenhouse-mqtt-edge-iot-fleet"></a>`  
-*Original Source*: [`articles/article-50-smart-greenhouse-mqtt-edge-iot-fleet.html`](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/articles/article-50-smart-greenhouse-mqtt-edge-iot-fleet.html)  
+*Original Source*: [`articles/article-50-smart-greenhouse-mqtt-edge-iot-fleet.html`](../articles/article-50-smart-greenhouse-mqtt-edge-iot-fleet.html)  
 
 ### 🎯 Core Engineering Synopsis
 Industrial IoT architecture for commercial protected cropping: LoRaWAN, MQTT broker topologies, JSON schema telemetry, and edge anomaly detection across 100+ greenhouse zones.
@@ -887,13 +887,13 @@ Industrial IoT architecture for commercial protected cropping: LoRaWAN, MQTT bro
 - 2. Interactive IoT Fleet Simulator
 
 ### 🛠️ Paired Interactive Lab Calculators
-- [Greenhouse Mqtt Edge Iot Fleet Simulator](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/tools/greenhouse-mqtt-edge-iot-fleet-simulator.html)
+- [Greenhouse Mqtt Edge Iot Fleet Simulator](../tools/greenhouse-mqtt-edge-iot-fleet-simulator.html)
 
 ---
 
 ## Chapter 54: AI-Driven Model Predictive Control (MPC) in Commercial Venlo Greenhouses: Real-Time Energy-Yield Optimization
 *Anchor ID*: `<a id="chapter-54-article-54-ai-model-predictive-control-mpc-venlo-greenhouse"></a>`  
-*Original Source*: [`articles/article-54-ai-model-predictive-control-mpc-venlo-greenhouse.html`](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/articles/article-54-ai-model-predictive-control-mpc-venlo-greenhouse.html)  
+*Original Source*: [`articles/article-54-ai-model-predictive-control-mpc-venlo-greenhouse.html`](../articles/article-54-ai-model-predictive-control-mpc-venlo-greenhouse.html)  
 
 ### 🎯 Core Engineering Synopsis
 Engineering mathematical formulation of Model Predictive Control (MPC), transient thermodynamic microclimate modeling, dynamic assimilation lighting, and autonomous climate computer integration in commercial CEA.
@@ -907,8 +907,8 @@ Engineering mathematical formulation of Model Predictive Control (MPC), transien
 - 6. Interactive Engineering Tools & Simulators
 
 ### 🛠️ Paired Interactive Lab Calculators
-- [Greenhouse Co2 Enrichment Calculator](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/tools/greenhouse-co2-enrichment-calculator.html)
-- [Greenhouse Heating Load Thermal Screen Calculator](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/tools/greenhouse-heating-load-thermal-screen-calculator.html)
+- [Greenhouse Co2 Enrichment Calculator](../tools/greenhouse-co2-enrichment-calculator.html)
+- [Greenhouse Heating Load Thermal Screen Calculator](../tools/greenhouse-heating-load-thermal-screen-calculator.html)
 
 ---
 
@@ -916,7 +916,7 @@ Engineering mathematical formulation of Model Predictive Control (MPC), transien
 
 ## Chapter 13: Precision Agricultural Sensor Calibration: NDIR CO2, TDR Soil Moisture, EC & pH Electrochemistry
 *Anchor ID*: `<a id="chapter-13-article-13-smartfarm-sensor-calibration"></a>`  
-*Original Source*: [`articles/article-13-smartfarm-sensor-calibration.html`](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/articles/article-13-smartfarm-sensor-calibration.html)  
+*Original Source*: [`articles/article-13-smartfarm-sensor-calibration.html`](../articles/article-13-smartfarm-sensor-calibration.html)  
 
 ### 🎯 Core Engineering Synopsis
 Engineering calibration protocols for CEA instrumentation: NDIR dual-beam optical drift, two-point pH/EC Nernstian slope correction, and dielectric permittivity in substrate TDR probes.
@@ -930,7 +930,7 @@ Engineering calibration protocols for CEA instrumentation: NDIR dual-beam optica
 
 ## Chapter 34: Closed-Loop UV-C Disinfection & Viral Pathogen Inactivation Kinetics
 *Anchor ID*: `<a id="chapter-34-article-34-closed-loop-uvc-drain-disinfection"></a>`  
-*Original Source*: [`articles/article-34-closed-loop-uvc-drain-disinfection.html`](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/articles/article-34-closed-loop-uvc-drain-disinfection.html)  
+*Original Source*: [`articles/article-34-closed-loop-uvc-drain-disinfection.html`](../articles/article-34-closed-loop-uvc-drain-disinfection.html)  
 
 ### 🎯 Core Engineering Synopsis
 Engineering analysis of UV-C radiation dose (250 mJ/cm2), UVT% transmission correction, and viral/fungal log-reduction in recirculating greenhouse drainage water.
@@ -940,13 +940,13 @@ Engineering analysis of UV-C radiation dose (250 mJ/cm2), UVT% transmission corr
 - 2. Interactive UV-C Calculation Tool
 
 ### 🛠️ Paired Interactive Lab Calculators
-- [Uvc Drainage Pathogen Disinfection Calculator](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/tools/uvc-drainage-pathogen-disinfection-calculator.html)
+- [Uvc Drainage Pathogen Disinfection Calculator](../tools/uvc-drainage-pathogen-disinfection-calculator.html)
 
 ---
 
 ## Chapter 39: Closed-Loop Reverse Osmosis (RO) Desalination & Sodium ($Na^+$) Rejection Kinetics
 *Anchor ID*: `<a id="chapter-39-article-39-closed-loop-ro-desalination-energy"></a>`  
-*Original Source*: [`articles/article-39-closed-loop-ro-desalination-energy.html`](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/articles/article-39-closed-loop-ro-desalination-energy.html)  
+*Original Source*: [`articles/article-39-closed-loop-ro-desalination-energy.html`](../articles/article-39-closed-loop-ro-desalination-energy.html)  
 
 ### 🎯 Core Engineering Synopsis
 Industrial engineering analysis of greenhouse reverse osmosis (RO) membrane flux (LMH), sodium (Na+) rejection (99.2%), energy recovery devices (PX), and zero-runoff closed loop recirculation.
@@ -956,13 +956,13 @@ Industrial engineering analysis of greenhouse reverse osmosis (RO) membrane flux
 - 2. Interactive RO Desalination Optimizer
 
 ### 🛠️ Paired Interactive Lab Calculators
-- [Closed Loop Reverse Osmosis Desalination Energy Optimizer](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/tools/closed-loop-reverse-osmosis-desalination-energy-optimizer.html)
+- [Closed Loop Reverse Osmosis Desalination Energy Optimizer](../tools/closed-loop-reverse-osmosis-desalination-energy-optimizer.html)
 
 ---
 
 ## Chapter 40: Canopy Light Extinction (Beer-Lambert Law) & Diffuse Glass Transmission
 *Anchor ID*: `<a id="chapter-40-article-40-beer-lambert-canopy-light-extinction"></a>`  
-*Original Source*: [`articles/article-40-beer-lambert-canopy-light-extinction.html`](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/articles/article-40-beer-lambert-canopy-light-extinction.html)  
+*Original Source*: [`articles/article-40-beer-lambert-canopy-light-extinction.html`](../articles/article-40-beer-lambert-canopy-light-extinction.html)  
 
 ### 🎯 Core Engineering Synopsis
 Industrial plant physiology analysis of Beer-Lambert light extinction, canopy extinction coefficient (k), Leaf Area Index (LAI), and diffuse glass photon penetration.
@@ -972,13 +972,13 @@ Industrial plant physiology analysis of Beer-Lambert light extinction, canopy ex
 - 2. Interactive Canopy Light Engine
 
 ### 🛠️ Paired Interactive Lab Calculators
-- [Par Far Red Canopy Extinction Beer Lambert Calculator](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/tools/par-far-red-canopy-extinction-beer-lambert-calculator.html)
+- [Par Far Red Canopy Extinction Beer Lambert Calculator](../tools/par-far-red-canopy-extinction-beer-lambert-calculator.html)
 
 ---
 
 ## Chapter 45: AgriQuant: Open-Source Greenhouse Energy & Commodity Quant Terminal
 *Anchor ID*: `<a id="chapter-45-article-45-agriquant-energy-commodity-quant-terminal"></a>`  
-*Original Source*: [`articles/article-45-agriquant-energy-commodity-quant-terminal.html`](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/articles/article-45-agriquant-energy-commodity-quant-terminal.html)  
+*Original Source*: [`articles/article-45-agriquant-energy-commodity-quant-terminal.html`](../articles/article-45-agriquant-energy-commodity-quant-terminal.html)  
 
 ### 🎯 Core Engineering Synopsis
 Open-source financial engineering and energy analytics terminal for commercial greenhouses. Simulates Dutch TTF natural gas spark spreads, electricity arbitrage, and fertilizer ROI.
@@ -988,7 +988,7 @@ Open-source financial engineering and energy analytics terminal for commercial g
 - 2. Interactive Quant Terminal
 
 ### 🛠️ Paired Interactive Lab Calculators
-- [Agriquant Greenhouse Energy Commodity Terminal](file:///G:/Meine Ablage/Antigravity/Headquater/Career/Inwoovation_Portal/tools/agriquant-greenhouse-energy-commodity-terminal.html)
+- [Agriquant Greenhouse Energy Commodity Terminal](../tools/agriquant-greenhouse-energy-commodity-terminal.html)
 
 ---
 
