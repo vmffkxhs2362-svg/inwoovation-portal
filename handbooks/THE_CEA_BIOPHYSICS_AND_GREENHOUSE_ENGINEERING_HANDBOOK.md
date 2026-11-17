@@ -1,5 +1,5 @@
 # 📘 The CEA Biophysics & Greenhouse Engineering Handbook
-## OpenCEA Compendium: 78 Volumes (188 Multilingual Editions) & 42 Live Simulators
+## OpenCEA Compendium: 78 Volumes (189 Multilingual Editions) & 42 Live Simulators
 
 > **Author**: Inwoovation Lab (Inwoo Hwang)  
 > **Target Audience**: Commercial Greenhouse Operators, Plant Factory Systems Engineers, Gärtnermeister Candidates, Agronomists  
@@ -8,7 +8,7 @@
 ---
 
 ## 📌 Executive Abstract & Compendium Profile
-This open-access technical compendium organizes all **78 English engineering monographs** (**188 total EN/DE/JA editions**) alongside **42 client-side biophysical simulators** and **192 hyper-local agricultural grant programs** into six engineering domains.
+This open-access technical compendium organizes all **78 English engineering monographs** (**189 total EN/DE/JA editions**) alongside **42 client-side biophysical simulators** and **192 hyper-local agricultural grant programs** into six engineering domains.
 
 ---
 
@@ -703,6 +703,7 @@ This open-access technical compendium organizes all **78 English engineering mon
 ## Volume 70: Nanobubble Oxy-Fertigation & Cavitation Physics in Closed-Loop Venlo Hydroponics: Dissolved Oxygen Supersaturation (DO > 30 mg/L), Pythium Suppression, and Rootzone Respiration Kinetics
 <a id="chapter-70-article-70-nanobubble-dissolved-oxygen-pythium-suppression-rockwool"></a>
 - **EN Monograph**: [../articles/article-70-nanobubble-dissolved-oxygen-pythium-suppression-rockwool.html](../articles/article-70-nanobubble-dissolved-oxygen-pythium-suppression-rockwool.html)
+- **DE Edition**: [../articles/de/article-70-nanoblasen-geloestsauerstoff-pythium-unterdrueckung-steinwolle.html](../articles/de/article-70-nanoblasen-geloestsauerstoff-pythium-unterdrueckung-steinwolle.html)
 - **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
 - **Synopsis**: Technical whitepaper on nanobubble oxy-fertigation in high-wire Venlo greenhouses: Young-Laplace internal bubble pressure, zeta potential stability.
 
