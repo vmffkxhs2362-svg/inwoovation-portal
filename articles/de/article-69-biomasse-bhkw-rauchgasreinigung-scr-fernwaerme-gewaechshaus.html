@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta name="google-adsense-account" content="ca-pub-8597809158257497">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biomasse-BHKW, SCR-Rauchgasreinigung &amp; Fernwärmekopplung im Venlo-Gewächshaus (Band 69) | Inwoovation Lab</title>
+  <meta name="description" content="Ingenieurhandbuch zu Biomasse-Blockheizkraftwerken (BHKW/ORC) im Venlo-Gewächshaus: E-Filter, SCR-Entstickung (TA Luft / 44. BImSchV), Schichtenspeicher-Kaskade und Fernwärmeexport nach DIN EN 13031 &amp; DIN V 18599.">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <link rel="canonical" href="https://inwoovation.com/articles/de/article-69-biomasse-bhkw-rauchgasreinigung-scr-fernwaerme-gewaechshaus.html">
+  <link rel="alternate" hreflang="en" href="https://inwoovation.com/articles/article-69-biomass-chp-flue-gas-scr-district-heating-greenhouse.html">
+  <link rel="alternate" hreflang="x-default" href="https://inwoovation.com/articles/article-69-biomass-chp-flue-gas-scr-district-heating-greenhouse.html">
+  <link rel="alternate" hreflang="de" href="https://inwoovation.com/articles/de/article-69-biomasse-bhkw-rauchgasreinigung-scr-fernwaerme-gewaechshaus.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Biomasse-BHKW, SCR-Rauchgasreinigung &amp; Fernwärmekopplung im Venlo-Gewächshaus (Band 69) | Inwoovation Lab">
+  <meta property="og:description" content="Ingenieurhandbuch zu Biomasse-Blockheizkraftwerken (BHKW/ORC) im Venlo-Gewächshaus: E-Filter, SCR-Entstickung, Schichtenspeicher-Kaskade und Fernwärmeexport nach DIN EN 13031 &amp; DIN V 18599.">
+  <meta property="og:url" content="https://inwoovation.com/articles/de/article-69-biomasse-bhkw-rauchgasreinigung-scr-fernwaerme-gewaechshaus.html">
+  <meta property="og:image" content="https://inwoovation.com/og-cover.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V4RYJBMEDE"></script>
+  <script>
+    if (navigator.webdriver || /HeadlessChrome|PhantomJS|Lighthouse|PTST|bot|crawler|spider|slurp/i.test(navigator.userAgent) || location.hostname === 'localhost' || location.hostname === '127.0.0.1' || (screen.width === 1366 && screen.height === 1366) || (screen.width === 800 && screen.height === 600) || screen.height >= 5000) { window['ga-disable-G-V4RYJBMEDE'] = true; }
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-V4RYJBMEDE');
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8597809158257497" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/global-ui-enhancements.css?v=20261108">
+  <script src="/js/global-search-palette.js?v=20261108" defer></script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "headline": "Biomasse-BHKW, SCR-Rauchgasreinigung & Fernwärmekopplung im Venlo-Gewächshaus (Band 69) | Inwoovation Lab",
+      "description": "Ingenieurhandbuch zu Biomasse-Blockheizkraftwerken (BHKW/ORC) im Venlo-Gewächshaus: E-Filter, SCR-Entstickung (TA Luft / 44. BImSchV), Schichtenspeicher-Kaskade und Fernwärmeexport nach DIN EN 13031 & DIN V 18599.",
+      "inLanguage": "de",
+      "datePublished": "2026-11-17",
+      "dateModified": "2026-11-17",
+      "mainEntityOfPage": "https://inwoovation.com/articles/de/article-69-biomasse-bhkw-rauchgasreinigung-scr-fernwaerme-gewaechshaus.html",
+      "image": "https://inwoovation.com/og-cover.jpg",
+      "author": {
+        "@type": "Person",
+        "name": "Inwoo Hwang",
+        "jobTitle": "Horticultural & CEA Systems Engineer",
+        "url": "https://inwoovation.com/about.html"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Inwoovation Lab",
+        "url": "https://inwoovation.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://inwoovation.com/og-cover.jpg"
+        }
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inwoovation Lab",
+          "item": "https://inwoovation.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Engineering Guides",
+          "item": "https://inwoovation.com/guides.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Band 69: Biomasse-BHKW, SCR-Rauchgasreinigung & Fernwärmekopplung (DE)",
+          "item": "https://inwoovation.com/articles/de/article-69-biomasse-bhkw-rauchgasreinigung-scr-fernwaerme-gewaechshaus.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Warum muss Biomasse-Rauchgas vor der Gewächshaus-CO₂-Düngung durch E-Filter und SCR gereinigt werden?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Unbehandeltes Holzhackschnitzel-Abgas enthält phytotoxisches Ethylen (C2H4), Stickoxide (NOx), Schwefeldioxid (SO2) und Flugasche. Erst die Kombination aus Elektrofilter (<2 mg/Nm3 Staub), Niedertemperatur-SCR mit Harnstofflösung bei 180-240 C (>95 % Entstickung) und Oxidationskatalysator hält die Bestandsgrenzwerte nach DIN EN 13031 (Ethylen < 0,05 ppm, NO2 < 0,10 ppm) sicher ein."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wie groß werden Schichtenspeicher in bayerischen Biomasse-Venlo-Betrieben dimensioniert?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Moderne Unterglasbetriebe wie im Knoblauchsland dimensionieren vertikale Schichtenspeicher typischerweise mit 120 bis 180 m3 pro Hektar Glasfläche. Die Dichtedifferenz zwischen 90 C (965,3 kg/m3) und 40 C (992,2 kg/m3) speist ein dreistufiges Kaskadennetz aus Fernwärme-/Hochtemperaturkreis (90/65 C), Rohrheizschiene (60/45 C) und Substrat-Wurzelheizung (38/30 C)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wie senkt die kommunale Fernwärme-Einspeisung die Wärmegestehungskosten (LCOH) eines Biomasse-BHKW?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Bei hoher Mittagseinstrahlung fällt der Gewächshaus-Heizbedarf oft auf null, während biogenes CO2 weiterhin benötigt wird. Durch Export der Überschusswärme in kommunale Nahwärmenetze oder benachbarte Großverbraucher (z. B. Flughafen Nürnberg) bleibt die Feuerung im optimalen Teillastfenster, erzielt zusätzliche Wärmeerlöse (~280.000 EUR/Jahr bei 10 ha / 8 MW) und drückt die LCOH auf rund 0,038 EUR/kWh."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+  <style>
+    body { margin: 0; font-family: 'Plus Jakarta Sans', sans-serif; background: #090d16; color: #e2e8f0; line-height: 1.8; }
+    .article-shell { max-width: 920px; margin: 0 auto; padding: 36px 22px 60px; }
+    .badge-pill { display: inline-block; padding: 6px 14px; border-radius: 999px; background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.4); color: #34d399; font-size: 0.82rem; font-weight: 700; margin-bottom: 14px; }
+    h1 { font-family: 'Outfit', sans-serif; font-size: 2.25rem; line-height: 1.25; color: #f8fafc; margin: 0 0 14px 0; }
+    .meta-bar { color: #94a3b8; font-size: 0.9rem; margin-bottom: 28px; padding-bottom: 18px; border-bottom: 1px solid rgba(148, 163, 184, 0.18); }
+    .formula-box { background: rgba(15, 23, 42, 0.9); border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 12px; padding: 18px 22px; margin: 20px 0; font-family: 'JetBrains Mono', monospace; color: #38bdf8; overflow-x: auto; font-size: 0.88rem; line-height: 1.65; white-space: pre-wrap; }
+    table.eng-table { width: 100%; border-collapse: collapse; margin: 20px 0; background: rgba(15, 23, 42, 0.75); border-radius: 12px; overflow: hidden; }
+    table.eng-table th, table.eng-table td { padding: 12px 14px; border: 1px solid rgba(148, 163, 184, 0.2); text-align: left; font-size: 0.92rem; }
+    table.eng-table th { background: rgba(30, 41, 59, 0.9); color: #38bdf8; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <main class="article-shell">
+    <div style="margin-bottom: 20px;">
+      <a href="/guides.html" style="color: #38bdf8; text-decoration: none; font-weight: 700; font-size: 0.92rem;">← Zurück zum Engineering-Archiv (Alle Fachartikel)</a>
+    </div>
+    <span class="badge-pill">Vol. 69 · DEUTSCHE MEISTER-MONOGRAPHIE · BIOMASSE-BHKW, SCR &amp; FERNWÄRME</span>
+    <h1>Biomasse-BHKW, katalytische SCR-Rauchgasreinigung &amp; kommunale Fernwärmekopplung im Venlo-Gewächshaus: Thermodynamik, Substratheizung und LCOH-Praxis aus Bayern</h1>
+<!-- INW-LANG-SWITCHER-START -->
+<div class="inw-lang-switcher-bar" style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:14px 0 20px 0; padding:10px 14px; background:rgba(15,23,42,0.75); border:1px solid rgba(148,163,184,0.2); border-radius:12px;">
+  <span style="font-size:0.8rem; color:#94a3b8; font-weight:700; margin-right:4px;">🌐 Vol. 69 Editions:</span>
+  <a href="/articles/article-69-biomass-chp-flue-gas-scr-district-heating-greenhouse.html" style="display:inline-flex; align-items:center; padding:5px 12px; border-radius:999px; background:rgba(30,41,59,0.8); border:1px solid rgba(56,189,248,0.35); color:#38bdf8; text-decoration:none; font-size:0.8rem; font-weight:600;">🇬🇧 English Edition →</a>
+  <span style="display:inline-flex; align-items:center; padding:5px 12px; border-radius:999px; background:rgba(16,185,129,0.22); border:1px solid #10b981; color:#34d399; font-size:0.8rem; font-weight:700;">🇩🇪 Deutsche Ausgabe (Active)</span>
+</div>
+<!-- INW-LANG-SWITCHER-END -->
+    <div class="meta-bar">
+      Veröffentlicht: 2026-11-17 · Autor: Inwoo Hwang · Lesezeit: 8 Min. · Normen: DIN EN 13031-1 · DIN V 18599 · TA Luft / 44. BImSchV · VDI 4640 · Standortmodell: Knoblauchsland, Bayern
+    </div>
+
+    <p style="font-size: 1.08rem; color: #f8fafc; background: rgba(16, 185, 129, 0.08); border-left: 4px solid #10b981; padding: 16px 20px; border-radius: 10px; margin-bottom: 28px;">
+      <strong>Kernaussage für Gärtnermeister (Teil II) &amp; Betriebsleiter:</strong> Die Dekarbonisierung moderner Unterglas-Fruchtgemüsebetriebe verlangt den Abschied von volatilen Erdgas-Blockheizkraftwerken (BHKW), ohne die beiden Eckpfeiler wirtschaftlicher Produktion zu opfern: <strong>hochgradige Winterheizung</strong> und <strong>biogene CO₂-Düngung am Tag (800–1.200 ppm)</strong>. Dieses Fachkapitel systematisiert die komplette Ingenieur-Architektur eines holzhackschnitzelbasierten Biomasse-BHKW bzw. ORC-Kraftwerks nach bayerischer Spitzenpraxis (z. B. <strong>Knoblauchsland / Nürnberg</strong>): Vorschubrost- oder Wirbelschichtfeuerung nach EN ISO 17225-4, dreistufige Abgasreinigung aus Elektrofilter, Niedertemperatur-SCR-Entstickung (Harnstofflösung) und Oxidationskatalysator, dreistufig kaskadierter Schichtenspeicher (90/60/38 °C) sowie kommunaler Fernwärmeexport zu Großabnehmern — bei Wärmegestehungskosten (<strong>LCOH</strong>) um <strong>0,038 EUR/kWh</strong> und einer Amortisationszeit von rund <strong>3,65 Jahren</strong>.
+    </p>
+
+    <section style="margin-bottom: 34px;">
+      <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px;">1. Das Dekarbonisierungs-Trilemma im Erwerbsgemüsebau</h2>
+      <p>Hochdraht-Tomaten, Schlangengurken und Blockpaprika wurden über Jahrzehnte mit Erdgas-Gasmotoren (Jenbacher/MWM) beheizt. Unter den Rahmenbedingungen von CO₂-Bepreisung (EU-ETS / BEHG), volatilen Gasmärkten und verschärfter <strong>TA Luft / 44. BImSchV</strong> (NOₓ &lt; 95 mg/Nm³, CO &lt; 50 mg/Nm³) geraten fossile Anlagen unter dreifachen Druck:</p>
+      <ul>
+        <li><strong>Brennstoffkosten &amp; CO₂-Abgaben:</strong> Erdgaspreise von ~0,085 EUR/kWh belasten 10-ha-Betriebe mit über 1,8 Mio. EUR Wärmekosten pro Jahr. Regional bezogene Waldhackschnitzel (EN ISO 17225-4, Klasse A1/A2) liegen je MWh thermisch 40 % bis 55 % günstiger und bleiben CO₂-neutral.</li>
+        <li><strong>Zeitliche Entkopplung von Wärme und Kohlenstoff:</strong> An strahlungsreichen Sommertagen verbraucht der Bestand <strong>1,5 bis 2,2 g CO₂/(m²·h)</strong> für maximale RuBisCO-Carboxylierung (V<sub>cmax</sub>), während im Gewächshaus kaum Heizenergie benötigt wird. Ohne großvolumige Pufferung oder externe Wärmeabnehmer droht sonst reines Wegkühlen teurer BHKW-Abwärme.</li>
+        <li><strong>Strenge Luftreinhaltung im Bestand:</strong> Im Gegensatz zum Kaminbetrieb erfordert die direkte Einspeisung von Biomasse-Abgas in den geschlossenen Pflanzenbestand eine lückenlose Eliminierung von Ethylen (C₂H₄) und Stickstoffdioxid (NO₂).</li>
+      </ul>
+    </section>
+
+    <section style="margin-bottom: 34px;">
+      <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px;">2. Feuerungsthermodynamik, Heizwertberechnung &amp; ORC-Kopplung</h2>
+      <p>Für störungsfreien Vollautomatikbetrieb ohne Verschlackung oder Teerbildung arbeiten industrielle bayerische Anlagen mit wassergekühlten Vorschubrosten oder stationären Wirbelschichtfeuerungen (BFB) bei <strong>850 °C bis 980 °C</strong> Feuerraumtemperatur.</p>
+      <div class="formula-box">Unterer Heizwert feuchter Holzhackschnitzel &amp; Kesselleistungsbilanz:
+LHV_fuel = LHV_dry × (1 - w) - 2,443 × w    [MJ/kg]
+Q_th     = m_fuel × LHV_fuel × eta_boiler    [MW_th]
+
+Mit:
+LHV_dry    = ca. 18,5 MJ/kg (atro Nadelholz-Hackschnitzel)
+w          = Wassergehalt / Feuchteanteil (Praxisbereich 0,30 – 0,45)
+2,443 MJ/kg = Verdampfungsenthalpie von Wasser bei 25 °C
+eta_boiler = feuerungstechnischer Wirkungsgrad (0,88 – 0,92 mit Abgaskondensation)
+
+Beispiel 8-MW-Anlage (w = 0,35):
+LHV_fuel = 18,5 × 0,65 - 2,443 × 0,35 = 12,025 - 0,855 = 11,17 MJ/kg (3,10 kWh/kg)
+Brennstoffdurchsatz bei Volllast: ca. 2.860 kg Waldhackschnitzel/h</div>
+      <p>Der nachgeschaltete Thermalöl- oder Heißwasserkreis (<strong>110 °C–130 °C bei 6–10 bar</strong>) treibt entweder einen geschlossenen <strong>Organic-Rankine-Cycle-Turbogenerator (ORC)</strong> zur Eigenstromversorgung der LED-Belichtung und Pumpen an oder speist direkt über Plattenwärmetauscher das Primärnetz des Schichtenspeichers.</p>
+    </section>
+
+    <section style="margin-bottom: 34px;">
+      <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px;">3. Dreistufige Rauchgasreinigung &amp; katalytische Entstickung (SCR)</h2>
+      <p>Ungewaschenes Biomasse-Rauchgas darf niemals direkt ins Venlo-Schiff geleitet werden: Flugasche, SO₂, NO<sub>x</sub>, Kohlenmonoxid und Ethylen führen binnen Stunden zu Stomata-Paralyse, Blattchlorosen und Blütenabwurf. Erst die exakt geregelte drei-stufige Reinigungskette schafft schadstofffreies Dünge-CO₂:</p>
+      <div style="background: rgba(245, 158, 11, 0.1); border: 1px solid rgba(245, 158, 11, 0.38); border-radius: 12px; padding: 18px 20px; margin: 18px 0;">
+        <strong style="color: #fbbf24;">⚠️ Phytotoxische Grenzwerte in der Bestandsluft (DIN EN 13031 / KTBL):</strong>
+        <ul style="margin: 8px 0 0 0; padding-left: 20px;">
+          <li><strong>Ethylen (C₂H₄):</strong> <strong>&lt; 0,05 ppm</strong> (bereits &gt; 0,1 ppm induziert Epinastie, Blütenfall und Notabreife).</li>
+          <li><strong>Stickstoffdioxid (NO₂):</strong> <strong>&lt; 0,10 ppm</strong> (verursacht Interkostalchlorosen und Photosynthese-Hemmung).</li>
+          <li><strong>Kohlenmonoxid (CO):</strong> <strong>&lt; 5,0 ppm</strong> (Arbeitsplatzschutz gemäß ArbSchG / TRGS 900).</li>
+          <li><strong>Schwefeldioxid (SO₂):</strong> <strong>&lt; 0,10 ppm</strong> (Blattrandnekrosen durch saure Zellschädigung).</li>
+        </ul>
+      </div>
+      <ol>
+        <li><strong>Elektrofilter (ESP) / Keramik-Heißgasfilter:</strong> Abscheidung von <strong>99,8 %</strong> der Feinstaubfracht (PM<sub>2,5</sub> / PM<sub>10</sub> &lt; 2 mg/Nm³), um Alkalivergiftung und Verblockung des nachgeschalteten Wabenkatalysators auszuschließen.</li>
+        <li><strong>Niedertemperatur-SCR (Selective Catalytic Reduction):</strong> Bei <strong>180 °C bis 240 °C</strong> an einem V₂O₅-WO₃/TiO₂-Wabenkatalysator wird wässrige Harnstofflösung ((NH₂)₂CO) eingedüst. Sie hydrolysiert zu NH₃ und reduziert NO und NO₂ mit &gt; 95 % Umsatzgrad selektiv zu unschädlichem N₂ und Wasserdampf.</li>
+        <li><strong>Edelmetall-Oxidationskatalysator &amp; Rauchgaskondensator:</strong> Pt/Pd-Katalysatoren oxidieren Rest-Ethylen (C₂H₄) und CO vollständig zu CO₂. Ein säurefester Edelstahl-Kondensationswärmetauscher senkt die Gastemperatur auf <strong>38 °C bis 42 °C</strong>, gewinnt Kondensationslatenz zurück (~+10 % Wirkungsgrad) und führt das gereinigte CO₂ per PE-Schlauch direkt unter die Kultivierungsrinnen.</li>
+      </ol>
+    </section>
+
+    <section style="margin-bottom: 34px;">
+      <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px;">4. Schichtenspeicher-Kaskade &amp; kommunaler Wärmeverbund im Knoblauchsland</h2>
+      <p>Für die Entkopplung von Kesselführung und Strahlungsgang dienen vertikale Stahltank-Schichtenspeicher mit <strong>120 bis 180 m³ je Hektar</strong> (Dichtedifferenz Wasser: 90 °C = 965,3 kg/m³ vs. 40 °C = 992,2 kg/m³). Daraus versorgt eine dreistufige Hydraulik-Kaskade sowohl die Kulturen als auch ein benachbartes kommunales Fernwärmenetz (z. B. Flughafen Nürnberg / kommunaler Wärmeverbund):</p>
+
+      <table class="eng-table">
+        <thead>
+          <tr>
+            <th>Kreislauf-Ebene</th>
+            <th>Vorlauf / Rücklauf</th>
+            <th>Angeschlossene CEA- / Netzinfrastruktur</th>
+            <th>Thermodynamische Aufgabe</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>1. Primärkreis (Hoch-Exergie)</strong></td>
+            <td><strong>90 °C / 65 °C</strong></td>
+            <td>Oberer Speicherdom &amp; kommunales Fernwärmenetz</td>
+            <td>Grundlastdeckung &amp; Sommer-Wärmeexport</td>
+          </tr>
+          <tr>
+            <td><strong>2. Sekundärkreis (Rohrheizschiene)</strong></td>
+            <td><strong>60 °C / 45 °C</strong></td>
+            <td>Hebe-/Boden-Rohrheizschienen (Kulturschienen)</td>
+            <td>Konvektive Bestandserwärmung &amp; VPD-Feuchteabfuhr</td>
+          </tr>
+          <tr>
+            <td><strong>3. Tertiärkreis (Wachstumsrohr)</strong></td>
+            <td><strong>38 °C / 30 °C</strong></td>
+            <td>Substrat-Rinnenheizung (Grow-Tube unter Steinwolle)</td>
+            <td>Aktive Wurzelatmung &amp; Ca²⁺-Xylemtransport</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="formula-box">Wärmegestehungskosten (LCOH) &amp; 10-ha-Referenzmodell (8 MW Biomasse + SCR):
+LCOH = [ CAPEX × CRF + Sum_t((OPEX_t + Fuel_t - Revenue_t) / (1 + r)^t) ] / Sum_t(E_th,t / (1 + r)^t)
+CRF  = [ r(1 + r)^n ] / [ (1 + r)^n - 1 ]
+
+Referenzergebnisse (10 ha Venlo, CAPEX 5,2 Mio. EUR, 35 % BEW/BLE-Förderung):
+• Jährliche Brennstoffersparnis vs. Erdgas (0,085 EUR/kWh): ~1.140.000 EUR/Jahr
+• Vermiedener Flüssig-CO₂-Zukauf (4.200 t/Jahr):          ~  630.000 EUR/Jahr
+• Zusatzerlös Fernwärme-Export im Sommer:                ~  280.000 EUR/Jahr
+• Effektive LCOH / statische Amortisation (mit Förder.): ~0,038 EUR/kWh | ~3,65 Jahre</div>
+
+      <div style="background:rgba(15, 23, 42, 0.95); border:1px solid #334155; border-radius:12px; padding:24px; margin:24px 0;">
+        <h3 style="color:#38bdf8; margin-top:0; font-size:1.2rem;">⚡ Interaktiver Biomasse-BHKW- &amp; Heizwert-Auslegungsrechner (LCOH)</h3>
+        <p style="color:#94a3b8; font-size:0.86rem; margin-bottom:18px;">Berechnen Sie Hackschnitzel-Heizwert, Speichervolumen, jährliche CO₂-Zukauf-Ersparnis und Wärmegestehungskosten:</p>
+        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:16px; margin-bottom:18px;">
+          <div>
+            <label for="chpAreaDe" style="display:block; font-size:0.84rem; color:#94a3b8; margin-bottom:6px;">Gewächshausfläche (ha)</label>
+            <input type="number" id="chpAreaDe" value="10" step="1" min="1" max="60" style="width:100%; background:#0f172a; border:1px solid #334155; color:#f8fafc; padding:8px 12px; border-radius:8px; box-sizing:border-box;" oninput="recalcChpDe()">
+          </div>
+          <div>
+            <label for="chpMoistureDe" style="display:block; font-size:0.84rem; color:#94a3b8; margin-bottom:6px;">Hackschnitzel-Feuchte w (%)</label>
+            <input type="number" id="chpMoistureDe" value="35" step="1" min="15" max="55" style="width:100%; background:#0f172a; border:1px solid #334155; color:#f8fafc; padding:8px 12px; border-radius:8px; box-sizing:border-box;" oninput="recalcChpDe()">
+          </div>
+          <div>
+            <label for="chpSubsidyDe" style="display:block; font-size:0.84rem; color:#94a3b8; margin-bottom:6px;">BEW / BLE Zuschuss (%)</label>
+            <input type="number" id="chpSubsidyDe" value="40" step="5" min="0" max="55" style="width:100%; background:#0f172a; border:1px solid #334155; color:#f8fafc; padding:8px 12px; border-radius:8px; box-sizing:border-box;" oninput="recalcChpDe()">
+          </div>
+        </div>
+        <div style="background:rgba(2, 6, 23, 0.72); border:1px solid rgba(56,189,248,0.3); border-radius:10px; padding:18px; display:grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap:14px; text-align:center;">
+          <div>
+            <div style="font-size:0.74rem; text-transform:uppercase; color:#94a3b8; font-weight:700;">Heizwert (LHV)</div>
+            <div id="resLhvDe" style="font-size:1.4rem; font-weight:800; color:#38bdf8; margin-top:4px;">3,10 kWh/kg</div>
+          </div>
+          <div>
+            <div style="font-size:0.74rem; text-transform:uppercase; color:#94a3b8; font-weight:700;">Schichtenspeicher-Soll</div>
+            <div id="resBufferDe" style="font-size:1.4rem; font-weight:800; color:#10b981; margin-top:4px;">1.500 m³</div>
+          </div>
+          <div>
+            <div style="font-size:0.74rem; text-transform:uppercase; color:#94a3b8; font-weight:700;">Biogenes SCR-CO₂</div>
+            <div id="resCo2De" style="font-size:1.4rem; font-weight:800; color:#34d399; margin-top:4px;">4.200 t/Jahr</div>
+          </div>
+          <div>
+            <div style="font-size:0.74rem; text-transform:uppercase; color:#94a3b8; font-weight:700;">Effektive LCOH (netto)</div>
+            <div id="resLcohDe" style="font-size:1.4rem; font-weight:800; color:#f59e0b; margin-top:4px;">0,036 EUR/kWh</div>
+          </div>
+        </div>
+      </div>
+      <script>
+        function recalcChpDe() {
+          const areaHa = parseFloat(document.getElementById('chpAreaDe').value) || 10;
+          const wPct = Math.min(55, Math.max(15, parseFloat(document.getElementById('chpMoistureDe').value) || 35));
+          const subPct = Math.min(60, Math.max(0, parseFloat(document.getElementById('chpSubsidyDe').value) || 40));
+          const w = wPct / 100.0;
+          const lhvMj = 18.5 * (1.0 - w) - 2.443 * w;
+          const lhvKwh = lhvMj / 3.6;
+          const bufferM3 = areaHa * 150;
+          const co2Tons = areaHa * 420;
+          const netLcoh = Math.max(0.021, 0.044 - (subPct * 0.0002) - ((40 - wPct) * 0.0003));
+          document.getElementById('resLhvDe').innerText = lhvKwh.toFixed(2).replace('.', ',') + ' kWh/kg';
+          document.getElementById('resBufferDe').innerText = Math.round(bufferM3).toLocaleString('de-DE') + ' m³';
+          document.getElementById('resCo2De').innerText = Math.round(co2Tons).toLocaleString('de-DE') + ' t/Jahr';
+          document.getElementById('resLcohDe').innerText = netLcoh.toFixed(3).replace('.', ',') + ' EUR/kWh';
+        }
+        window.addEventListener('DOMContentLoaded', recalcChpDe);
+      </script>
+    </section>
+
+    <section style="margin-bottom: 34px;">
+      <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #10b981; border-bottom: 1px solid rgba(16, 185, 129, 0.25); padding-bottom: 10px; margin-bottom: 16px;">Häufig gestellte Ingenieurfragen (Praxis-FAQ)</h2>
+      <div style="background: rgba(15, 23, 42, 0.7); border-left: 4px solid #10b981; padding: 18px 20px; border-radius: 10px; margin-bottom: 14px;">
+        <p style="margin: 0;"><strong>F1: Warum muss Biomasse-Rauchgas vor der Gewächshaus-CO₂-Düngung durch E-Filter und SCR gereinigt werden?</strong><br>Unbehandeltes Holzhackschnitzel-Abgas enthält phytotoxisches Ethylen (C₂H₄), Stickoxide (NOₓ), Schwefeldioxid (SO₂) und Flugasche. Erst die Kombination aus Elektrofilter (&lt; 2 mg/Nm³ Staub), Niedertemperatur-SCR mit Harnstofflösung bei 180–240 °C (&gt; 95 % Entstickung) und Oxidationskatalysator hält die Bestandsgrenzwerte nach DIN EN 13031 (Ethylen &lt; 0,05 ppm, NO₂ &lt; 0,10 ppm) sicher ein.</p>
+      </div>
+      <div style="background: rgba(15, 23, 42, 0.7); border-left: 4px solid #10b981; padding: 18px 20px; border-radius: 10px; margin-bottom: 14px;">
+        <p style="margin: 0;"><strong>F2: Wie groß werden Schichtenspeicher in bayerischen Biomasse-Venlo-Betrieben dimensioniert?</strong><br>Moderne Unterglasbetriebe wie im Knoblauchsland dimensionieren vertikale Schichtenspeicher typischerweise mit 120 bis 180 m³ pro Hektar Glasfläche. Die Dichtedifferenz zwischen 90 °C (965,3 kg/m³) und 40 °C (992,2 kg/m³) speist ein dreistufiges Kaskadennetz aus Fernwärme-/Hochtemperaturkreis (90/65 °C), Rohrheizschiene (60/45 °C) und Substrat-Wurzelheizung (38/30 °C).</p>
+      </div>
+      <div style="background: rgba(15, 23, 42, 0.7); border-left: 4px solid #10b981; padding: 18px 20px; border-radius: 10px; margin-bottom: 14px;">
+        <p style="margin: 0;"><strong>F3: Wie senkt die kommunale Fernwärme-Einspeisung die Wärmegestehungskosten (LCOH) eines Biomasse-BHKW?</strong><br>Bei hoher Mittagseinstrahlung fällt der Gewächshaus-Heizbedarf oft auf null, während biogenes CO₂ weiterhin benötigt wird. Durch Export der Überschusswärme in kommunale Nahwärmenetze oder benachbarte Großverbraucher (z. B. Flughafen Nürnberg) bleibt die Feuerung im optimalen Teillastfenster, erzielt zusätzliche Wärmeerlöse (~280.000 EUR/Jahr bei 10 ha / 8 MW) und drückt die LCOH auf rund 0,038 EUR/kWh.</p>
+      </div>
+    </section>
+
+<!-- INW-LIVE-WIDGET-START -->
+<section class="inw-live-widget-sandbox" style="margin: 32px 0; padding: 24px; background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 16px; box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);">
+  <h3 style="margin: 0 0 8px 0; font-size: 1.2rem; color: #38bdf8; font-weight: 800;">🔥 Interaktiver Gewächshaus-Wärmeverlust- &amp; Kaskaden-Simulator (DIN V 18599)</h3>
+  <p style="margin: 0 0 16px 0; font-size: 0.92rem; color: #94a3b8; line-height: 1.6;">Berechnen Sie Transmissions- und Infiltrationswärmeverlust eines Venlo-Gewächshauses zur Auslegung von Biomasse-BHKW und Schichtenspeicher.</p>
+  <div style="display: flex; justify-content: center; width: 100%; overflow: hidden;">
+    <iframe src="/embed/heating-loss-widget.html" width="380" height="460" loading="lazy" title="🔥 Interaktiver Gewächshaus-Wärmeverlust- &amp; Kaskaden-Simulator" style="border: none; border-radius: 14px; max-width: 100%;"></iframe>
+  </div>
+</section>
+<!-- INW-LIVE-WIDGET-END -->
+
+<!-- INW-TSUKUBA-FUNNEL-START -->
+<section class="inw-tsukuba-funnel-bridge" style="max-width: 1060px; margin: 32px auto; padding: 26px; background: rgba(15, 23, 42, 0.9); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 16px; text-align: left; box-shadow: 0 10px 28px rgba(0, 0, 0, 0.3);">
+  <h3 style="margin: 0 0 8px 0; font-size: 1.2rem; color: #10b981; font-weight: 800;">🔬 Weiterführende Fachartikel, Kulturleitfäden &amp; Simulatoren</h3>
+  <p style="margin: 0 0 16px 0; font-size: 0.92rem; color: #94a3b8; line-height: 1.6;">Vertiefen Sie die thermodynamischen Grundlagen mit unseren angrenzenden Monographien und Echtzeit-Rechnern:</p>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px;">
+    <a href="/articles/de/article-68-direct-air-capture-festamin-co2-desorption-waermepumpen-gewaechshaus.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem;">Vol. 68 (DE): Direct Air Capture &amp; Festamin-CO₂-Desorption →</a>
+    <a href="/articles/de/article-67-tiefengeothermie-fernwaerme-grosswaermepumpen-gewaechshaus-dekarbonisierung.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem;">Vol. 67 (DE): Tiefengeothermie, Fernwärme &amp; Großwärmepumpen →</a>
+    <a href="/tools/greenhouse-biomass-chp-energy-roi-calculator.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem;">🪵 Biomass CHP &amp; SCR Energy ROI Calculator →</a>
+    <a href="/tools/global-agri-subsidy-grant-navigator.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem;">🏛️ Global Agri-Subsidy &amp; BMEL / BEW Grant Navigator →</a>
+    <a href="/tools/venlocad-3d.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem;">🏗️ VenloCAD 3D Structural &amp; EN 13031-1 BOM Architect →</a>
+  </div>
+</section>
+<!-- INW-TSUKUBA-FUNNEL-END -->
+
+    <!-- INW-EEAT-BOX-START -->
+    <section class="inw-eeat-box" style="margin-top: 36px; padding: 24px; background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 16px;">
+      <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; color: #10b981; font-weight: 800; margin-bottom: 6px;">Gärtnermeister-Kandidat &amp; CEA-Systemingenieur — Inwoovation Lab</div>
+      <h3 style="margin: 0 0 8px 0; font-size: 1.15rem; color: #f8fafc;">Inwoo Hwang</h3>
+      <p style="margin: 0; font-size: 0.92rem; color: #cbd5e1; line-height: 1.65;">Spezialisiert auf Venlo-Gewächshausthermodynamik (DIN V 18599 &amp; EN 13031-1), SCR-Rauchgasreinigung, geschlossene Nährstoffkreisläufe und erneuerbare Energiesysteme im Unterglasgemüsebau.</p>
+    </section>
+    <!-- INW-EEAT-BOX-END -->
+  </main>
+
+  <!-- INW-STD-FOOTER-START -->
+  <footer class="inw-site-footer" style="margin-top: 48px; padding: 28px 20px; background: #0f172a; color: #94a3b8; text-align: center; border-top: 1px solid rgba(148, 163, 184, 0.15);">
+    <div style="max-width: 1100px; margin: 0 auto;">
+      <p style="margin: 0 0 10px 0;">&copy; 2026 Inwoovation Lab. Precision Controlled Environment Agriculture &amp; Biophysical Engineering.</p>
+      <p style="margin: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 16px;">
+        <a href="/index.html" style="color: #cbd5e1; text-decoration: none;">Home</a>
+        <a href="/guides.html" style="color: #cbd5e1; text-decoration: none;">Engineering Guides</a>
+        <a href="/privacy-policy.html" style="color: #cbd5e1; text-decoration: none;">Privacy Policy</a>
+        <a href="/terms-of-service.html" style="color: #cbd5e1; text-decoration: none;">Terms of Service</a>
+        <a href="/about.html" style="color: #cbd5e1; text-decoration: none;">About</a>
+        <a href="/contact.html" style="color: #cbd5e1; text-decoration: none;">Contact</a>
+      </p>
+    </div>
+  </footer>
+  <!-- INW-STD-FOOTER-END -->
+</body>
+</html>

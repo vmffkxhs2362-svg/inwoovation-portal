@@ -1,14 +1,14 @@
 # 📘 The CEA Biophysics & Greenhouse Engineering Handbook
-## OpenCEA Compendium: 78 Volumes (187 Multilingual Editions) & 42 Live Simulators
+## OpenCEA Compendium: 78 Volumes (188 Multilingual Editions) & 42 Live Simulators
 
 > **Author**: Inwoovation Lab (Inwoo Hwang)  
 > **Target Audience**: Commercial Greenhouse Operators, Plant Factory Systems Engineers, Gärtnermeister Candidates, Agronomists  
-> **Publication Standard**: Verified Biophysical Equations (Magnus-Tetens, Penman-Monteith, Farquhar FvCB, DIN V 18599, Debye-Hückel), Interactive Simulator Synchronized (`2026-11-16`)  
+> **Publication Standard**: Verified Biophysical Equations (Magnus-Tetens, Penman-Monteith, Farquhar FvCB, DIN V 18599, Debye-Hückel), Interactive Simulator Synchronized (`2026-11-17`)  
 
 ---
 
 ## 📌 Executive Abstract & Compendium Profile
-This open-access technical compendium organizes all **78 English engineering monographs** (**187 total EN/DE/JA editions**) alongside **42 client-side biophysical simulators** and **192 hyper-local agricultural grant programs** into six engineering domains.
+This open-access technical compendium organizes all **78 English engineering monographs** (**188 total EN/DE/JA editions**) alongside **42 client-side biophysical simulators** and **192 hyper-local agricultural grant programs** into six engineering domains.
 
 ---
 
@@ -203,6 +203,7 @@ This open-access technical compendium organizes all **78 English engineering mon
 ## Volume 69: Biomass-Fired CHP District Energy Integration in Venlo Greenhouses: High-Temperature Flue Gas Cleaning, Substrate Heating, and Cross-Sector Municipal Heat Sharing
 <a id="chapter-69-article-69-biomass-chp-flue-gas-scr-district-heating-greenhouse"></a>
 - **EN Monograph**: [../articles/article-69-biomass-chp-flue-gas-scr-district-heating-greenhouse.html](../articles/article-69-biomass-chp-flue-gas-scr-district-heating-greenhouse.html)
+- **DE Edition**: [../articles/de/article-69-biomasse-bhkw-rauchgasreinigung-scr-fernwaerme-gewaechshaus.html](../articles/de/article-69-biomasse-bhkw-rauchgasreinigung-scr-fernwaerme-gewaechshaus.html)
 - **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
 - **Synopsis**: Technical whitepaper on biomass-fired combined heat and power (CHP) in high-wire Venlo greenhouses: fluidized bed combustion, catalytic SCR DeNOx for commercial high-tech greenhouses.
 
