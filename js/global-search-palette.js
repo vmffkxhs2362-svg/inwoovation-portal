@@ -574,8 +574,8 @@
     "cat": "article",
     "url": "articles/article-71-haf-fan-microclimate-boundary-layer-dynamics.html",
     "icon": "📚",
-    "desc": "Technical whitepaper on horizontal air flow (HAF) aerodynamics in commercial Venlo greenhouses: microclimate stratification elimination, boundary layer.",
-    "tags": "articles article 71 haf fan microclimate boundary layer dynamics html horizontal air flow haf dynamics boundary layer decoupling in venlo greenhouses vol 71 technical whitepaper on horizonta"
+    "desc": "Engineering monograph on Venlo greenhouse Horizontal Air Flow (HAF): boundary layer resistance ra, Sherwood mass transfer, fan sizing &amp; heat pump dehumidifi",
+    "tags": "articles article 71 haf fan microclimate boundary layer dynamics html horizontal air flow haf dynamics boundary layer decoupling in venlo greenhouses vol 71 engineering monograph on venlo gr"
   },
   {
     "title": "Thermodynamic Optimization of Semi-Closed Venlo Greenhouses: High-Pressure Fogging, Active Mechanical Dehumidification, and Latent Heat Recovery (Vol. 72)",
@@ -1194,12 +1194,20 @@
     "tags": "articles de article 70 nanoblasen geloestsauerstoff pythium unterdrueckung steinwolle html nanoblasen sauerstofffertigation amp pythium unterdrückung in steinwollrinnen band 70 ingenieurmono"
   },
   {
-    "title": "Deutsche Gartenbau-Meister Fachartikel &amp; CEA-Technik (70 Monographien)",
+    "title": "Horizontallüftung (HAF) &amp; Blattgrenzschicht-Entkopplung im Venlo-Gewächshaus (Band 71)",
+    "cat": "article",
+    "url": "articles/de/article-71-horizontallueftung-haf-grenzschicht-mikroklima-gewaechshaus.html",
+    "icon": "🇩🇪",
+    "desc": "Ingenieurmonographie zur Horizontallüftung (HAF) im Venlo-Gewächshaus: Blattgrenzschichtwiderstand, Sherwood-Stoffübergang, Racetrack-Auslegung und Wärmepumpen-",
+    "tags": "articles de article 71 horizontallueftung haf grenzschicht mikroklima gewaechshaus html horizontallüftung haf amp blattgrenzschicht entkopplung im venlo gewächshaus band 71 ingenieurmonograp"
+  },
+  {
+    "title": "Deutsche Gartenbau-Meister Fachartikel &amp; CEA-Technik (71 Monographien)",
     "cat": "article",
     "url": "articles/de/index.html",
     "icon": "🇩🇪",
-    "desc": "Vollständige deutschsprachige Wissensdatenbank mit 70 technischen Fachartikeln zu VPD-Psychrometrie, DIN V 18599 Heizlast, EN 13031-1 Venlo-Statik, FvCB-CO2-Kin",
-    "tags": "articles de index html deutsche gartenbau meister fachartikel amp cea technik 70 monographien vollständige deutschsprachige wissensdatenbank mit 70 technischen fachartikeln zu vpd psychromet"
+    "desc": "Vollständige deutschsprachige Wissensdatenbank mit 71 technischen Fachartikeln zu VPD-Psychrometrie, DIN V 18599 Heizlast, EN 13031-1 Venlo-Statik, FvCB-CO2-Kin",
+    "tags": "articles de index html deutsche gartenbau meister fachartikel amp cea technik 71 monographien vollständige deutschsprachige wissensdatenbank mit 71 technischen fachartikeln zu vpd psychromet"
   },
   {
     "title": "CEA &amp; Greenhouse Engineering Articles Library (EN / DE / JA)",
@@ -2002,28 +2010,28 @@
     "tags": "crops vertical farm lettuce leafy greens tipburn prevention guide html controlled environment leafy greens lettuce lactuca sativa microclimate vpd dli precision steering guide precision cea "
   },
   {
-    "title": "Complete CEA Engineering Directory &amp; Index (372 Pages)",
+    "title": "Complete CEA Engineering Directory &amp; Index (373 Pages)",
     "cat": "part",
     "url": "directory.html",
     "icon": "⚙️",
-    "desc": "Master HTML sitemap and engineering taxonomy indexing all 372 calculators, 192 global agricultural grants, EN/DE/JA monographs, crop guides, and climate hubs.",
-    "tags": "directory html complete cea engineering directory amp index 372 pages master html sitemap and engineering taxonomy indexing all 372 calculators 192 global agricultural grants en de ja monogr"
+    "desc": "Master HTML sitemap and engineering taxonomy indexing all 373 calculators, 192 global agricultural grants, EN/DE/JA monographs, crop guides, and climate hubs.",
+    "tags": "directory html complete cea engineering directory amp index 373 pages master html sitemap and engineering taxonomy indexing all 373 calculators 192 global agricultural grants en de ja monogr"
   },
   {
-    "title": "Precision CEA & Horticultural Engineering Articles (78 Volumes / 189 Multilingual Editions)",
+    "title": "Precision CEA & Horticultural Engineering Articles (78 Volumes / 190 Multilingual Editions)",
     "cat": "article",
     "url": "guides.html",
     "icon": "📚",
-    "desc": "78-volume (189 multilingual editions) open-access Controlled Environment Agriculture (CEA) archive — VPD physics, biomass CHP, photobiology, closed-loop fertiga",
-    "tags": "guides html precision cea horticultural engineering articles 78 volumes 189 multilingual editions 78 volume 189 multilingual editions open access controlled environment agriculture cea archi"
+    "desc": "78-volume (190 multilingual editions) open-access Controlled Environment Agriculture (CEA) archive — VPD physics, biomass CHP, photobiology, closed-loop fertiga",
+    "tags": "guides html precision cea horticultural engineering articles 78 volumes 190 multilingual editions 78 volume 190 multilingual editions open access controlled environment agriculture cea archi"
   },
   {
-    "title": "The CEA Biophysics &amp; Greenhouse Engineering Handbook (78 Volumes / 189 Editions)",
+    "title": "The CEA Biophysics &amp; Greenhouse Engineering Handbook (78 Volumes / 190 Editions)",
     "cat": "article",
     "url": "handbooks/index.html",
     "icon": "📖",
-    "desc": "Open-access six-part Controlled Environment Agriculture compendium indexing 78 volumes (189 EN/DE/JA editions), 42 live biophysical calculators, and 192 agricul",
-    "tags": "handbooks index html the cea biophysics amp greenhouse engineering handbook 78 volumes 189 editions open access six part controlled environment agriculture compendium indexing 78 volumes 189"
+    "desc": "Open-access six-part Controlled Environment Agriculture compendium indexing 78 volumes (190 EN/DE/JA editions), 42 live biophysical calculators, and 192 agricul",
+    "tags": "handbooks index html the cea biophysics amp greenhouse engineering handbook 78 volumes 190 editions open access six part controlled environment agriculture compendium indexing 78 volumes 190"
   },
   {
     "title": "Inwoovation Lab",
@@ -2968,13 +2976,13 @@
       <div class="inwoo-palette-box" role="dialog" aria-modal="true" aria-label="Inwoovation Spotlight Search">
         <div class="inwoo-palette-header">
           <span class="inwoo-palette-search-icon">🔍</span>
-          <input type="text" id="inwoo-palette-input" placeholder="Search all 367 tools, simulators, wiki, crops, climate hubs & EN/DE/JA articles..." autocomplete="off" />
+          <input type="text" id="inwoo-palette-input" placeholder="Search all 368 tools, simulators, wiki, crops, climate hubs & EN/DE/JA articles..." autocomplete="off" />
           <span class="inwoo-palette-esc-badge" onclick="window.InwooPalette.close()">ESC</span>
         </div>
         <div class="inwoo-palette-tabs">
-          <button class="inwoo-pal-tab active" data-cat="all">✨ All (367)</button>
+          <button class="inwoo-pal-tab active" data-cat="all">✨ All (368)</button>
           <button class="inwoo-pal-tab" data-cat="tool">🛠️ Tools (49)</button>
-          <button class="inwoo-pal-tab" data-cat="article">📚 Articles (195)</button>
+          <button class="inwoo-pal-tab" data-cat="article">📚 Articles (196)</button>
           <button class="inwoo-pal-tab" data-cat="wiki">🧬 Wiki (44)</button>
           <button class="inwoo-pal-tab" data-cat="climate">🌍 Climate (41)</button>
           <button class="inwoo-pal-tab" data-cat="sim">🧪 Simulators (19)</button>
@@ -2988,7 +2996,7 @@
             <span><kbd>↵</kbd> Open</span>
             <span><kbd>Esc</kbd> Close</span>
           </div>
-          <div style="color: #64748b; font-size: 0.75rem;">Inwoovation Universal Spotlight (367 Indexed Pages)</div>
+          <div style="color: #64748b; font-size: 0.75rem;">Inwoovation Universal Spotlight (368 Indexed Pages)</div>
         </div>
       </div>
     `;

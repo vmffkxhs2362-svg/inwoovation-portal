@@ -1,14 +1,14 @@
 # 📘 The CEA Biophysics & Greenhouse Engineering Handbook
-## OpenCEA Compendium: 78 Volumes (189 Multilingual Editions) & 42 Live Simulators
+## OpenCEA Compendium: 78 Volumes (190 Multilingual Editions) & 42 Live Simulators
 
 > **Author**: Inwoovation Lab (Inwoo Hwang)  
 > **Target Audience**: Commercial Greenhouse Operators, Plant Factory Systems Engineers, Gärtnermeister Candidates, Agronomists  
-> **Publication Standard**: Verified Biophysical Equations (Magnus-Tetens, Penman-Monteith, Farquhar FvCB, DIN V 18599, Debye-Hückel), Interactive Simulator Synchronized (`2026-11-17`)  
+> **Publication Standard**: Verified Biophysical Equations (Magnus-Tetens, Penman-Monteith, Farquhar FvCB, DIN V 18599, Debye-Hückel), Interactive Simulator Synchronized (`2026-11-18`)  
 
 ---
 
 ## 📌 Executive Abstract & Compendium Profile
-This open-access technical compendium organizes all **78 English engineering monographs** (**189 total EN/DE/JA editions**) alongside **42 client-side biophysical simulators** and **192 hyper-local agricultural grant programs** into six engineering domains.
+This open-access technical compendium organizes all **78 English engineering monographs** (**190 total EN/DE/JA editions**) alongside **42 client-side biophysical simulators** and **192 hyper-local agricultural grant programs** into six engineering domains.
 
 ---
 
@@ -210,8 +210,9 @@ This open-access technical compendium organizes all **78 English engineering mon
 ## Volume 71: Horizontal Air Flow (HAF) Aerodynamics & Boundary Layer Decoupling in Venlo Greenhouses: Microclimate Stratification, Sherwood Mass Transfer Kinetics, and Heat Recovery Dehumidification
 <a id="chapter-71-article-71-haf-fan-microclimate-boundary-layer-dynamics"></a>
 - **EN Monograph**: [../articles/article-71-haf-fan-microclimate-boundary-layer-dynamics.html](../articles/article-71-haf-fan-microclimate-boundary-layer-dynamics.html)
+- **DE Edition**: [../articles/de/article-71-horizontallueftung-haf-grenzschicht-mikroklima-gewaechshaus.html](../articles/de/article-71-horizontallueftung-haf-grenzschicht-mikroklima-gewaechshaus.html)
 - **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
-- **Synopsis**: Technical whitepaper on horizontal air flow (HAF) aerodynamics in commercial Venlo greenhouses: microclimate stratification elimination, boundary layer.
+- **Synopsis**: Engineering monograph on Venlo greenhouse Horizontal Air Flow (HAF): boundary layer resistance ra, Sherwood mass transfer, fan sizing & heat pump dehumidification.
 
 ## Volume 72: Thermodynamic Optimization of Semi-Closed Venlo Greenhouses: High-Pressure Fogging, Active Mechanical Dehumidification, and Latent Heat Recovery
 <a id="chapter-72-article-72-semi-closed-greenhouse-mollier-psychrometrics-latent-heat"></a>
