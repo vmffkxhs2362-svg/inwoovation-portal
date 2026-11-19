@@ -69,34 +69,26 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "What is the Coefficient of Performance (COP) in agricultural heat pumps?",
+          "name": "How do you convert PPFD (µmol/m²/s) into Daily Light Integral (DLI in mol/m²/day)?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "The Coefficient of Performance (COP) is the ratio of thermal energy output delivered to electrical energy input consumed. A heat pump operating at a COP of 3.5 generates 3.5 kWh of heat into the greenhouse water loop for every 1.0 kWh of grid electricity consumed, effectively achieving an equivalent thermal efficiency of 350%."
+            "text": "Multiply canopy PPFD (µmol·m⁻²·s⁻¹) by photoperiod hours per day, then multiply by 0.0036 (since 3,600 seconds/hour divided by 1,000,000 µmol/mol equals 0.0036). For example, 250 µmol·m⁻²·s⁻¹ for 16 hours yields exactly 14.4 mol·m⁻²·d⁻¹."
           }
         },
         {
           "@type": "Question",
-          "name": "How do you calculate annual greenhouse heating energy using Heating Degree Days (HDD)?",
+          "name": "What DLI target is required for commercial greenhouse tomatoes, strawberries, and leafy greens?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Annual greenhouse heating load is modeled using Heating Degree Days (HDD): E_annual = 24 × (Q_design / ΔT_design) × HDD_base. By multiplying design peak capacity by the cumulative degree days below the heating base temperature (typically 15°C to 18°C), growers calculate total annual MWh of thermal demand."
+            "text": "Butterhead and crisphead lettuce require 14 to 17 mol·m⁻²·d⁻¹ (above which tipburn risk rises without vertical airflow), greenhouse strawberries require 15 to 22 mol·m⁻²·d⁻¹, and high-wire fruiting tomatoes and bell peppers require 22 to 35+ mol·m⁻²·d⁻¹."
           }
         },
         {
           "@type": "Question",
-          "name": "When does a heat pump become more cost-effective than a natural gas or LPG boiler?",
+          "name": "How do you calculate supplemental LED fixture wattage and electricity ROI per square meter?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "A heat pump delivers lower operational cost when the spark spread satisfies: (Electricity Price / SCOP) < (Fuel Price / Boiler Efficiency). In jurisdictions with favorable agricultural electricity tariffs (e.g. Korea Ag-rate ~80 KRW/kWh or German night tariffs), heat pumps reduce operational heating costs by 40% to 65% compared to diesel, LPG, or standard natural gas."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What is the typical payback period for converting a commercial greenhouse to heat pumps?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "The simple payback period is calculated as Additional Capital Expenditure (CapEx) divided by Annual Operational Fuel Savings (OpEx). For high-heat crops like winter tomatoes or strawberries, well-designed air-to-water or groundwater heat pumps achieve full capital payback within 2.5 to 4.5 years, particularly when paired with insulated hot water buffer storage tanks."
+            "text": "Divide the required supplemental PPFD (µmol·m⁻²·s⁻¹) by the fixture photosynthetic photon efficacy (PPE, typically 2.8 to 3.6 µmol/J) to obtain electrical power density (W/m²), then multiply by operating hours and kWh tariff."
           }
         }
       ]
@@ -133,7 +125,7 @@
 <body>
 <main class="container"><header>
 <div class="header-top-bar" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 0.8rem;">
-<div class="badge" id="header-badge" style="margin-bottom: 0;">Last Updated: November 16, 2026</div>
+<div class="badge" id="header-badge" style="margin-bottom: 0;">Last Updated: November 19, 2026</div>
 <div style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap;">
     <a href="https://inwoovation.com/" target="_blank" rel="noopener noreferrer" style="background: rgba(30, 41, 59, 0.9); border: 1px solid rgba(255, 255, 255, 0.18); color: #f8fafc; font-weight: 700; font-size: 0.85rem; padding: 0.45rem 0.9rem; border-radius: 100px; text-decoration: none; display: inline-flex; align-items: center; gap: 0.4rem; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); transition: all 0.25s ease;">
         🌐 Inwoovation Lab

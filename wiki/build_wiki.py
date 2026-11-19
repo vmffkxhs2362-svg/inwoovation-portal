@@ -2,9 +2,27 @@ import glob
 import html
 import json
 import os
+import sys
 from datetime import datetime
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+PORTAL_SCRIPTS_DIR = os.path.join(os.path.dirname(BASE_DIR), "scripts")
+HQ_ENGINE_SCRIPTS_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(BASE_DIR))), "Engine", "Scripts")
+for _p in (PORTAL_SCRIPTS_DIR, HQ_ENGINE_SCRIPTS_DIR):
+    if _p not in sys.path:
+        sys.path.insert(0, _p)
+
+try:
+    import apply_integrity_fixes as _integrity_fixer
+except ImportError:
+    _integrity_fixer = None
+
+try:
+    from upgrade_portal_service_quality_v2 import build_tsukuba_bridge_block, match_profile
+except ImportError:
+    build_tsukuba_bridge_block = None
+    match_profile = None
+
 WIKI_SRC_DIR = BASE_DIR
 WIKI_PORTAL_DIR = BASE_DIR
 
@@ -14,13 +32,75 @@ TOPICS_DIR = os.path.join(WIKI_SRC_DIR, "data", "topics")
 RESEARCH_DIR = os.path.join(WIKI_SRC_DIR, "data", "research")
 
 OUT_DIRS = [WIKI_PORTAL_DIR]
+LIVE_ADSENSE_HEAD = (
+    '<!-- Google AdSense Meta & Script -->\n'
+    '    <meta name="google-adsense-account" content="ca-pub-8597809158257497">\n'
+    '    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8597809158257497" crossorigin="anonymous"></script>'
+)
+
+
+def _prepare_live_template(raw_template):
+    live_tpl = raw_template.replace(
+        '<meta name="robots" content="noindex, nofollow">',
+        '<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">',
+        1,
+    )
+    return live_tpl.replace("<!-- {{LIVE_ADSENSE_HEAD}} -->", LIVE_ADSENSE_HEAD, 1)
+
+
+def render_tsukuba_funnel(faq_items, page_id="index"):
+    if build_tsukuba_bridge_block is not None and match_profile is not None:
+        prof = match_profile(f"wiki/{page_id}.html")
+        return "\n" + build_tsukuba_bridge_block(prof, "en", include_faqs=True) + "\n"
+    faq_cards = []
+    for item in faq_items:
+        q_txt = html.escape(str(item.get("question", "")).strip())
+        a_txt = html.escape(str(item.get("answer", "")).strip())
+        faq_cards.append(
+            '    <div style="margin-bottom:14px; padding:14px 18px; background:rgba(15,23,42,0.65); border-left:3px solid #10b981; border-radius:8px;">\n'
+            f'      <h4 style="margin:0 0 6px 0; color:#f8fafc; font-size:0.98rem;">{q_txt}</h4>\n'
+            f'      <p style="margin:0; color:#cbd5e1; font-size:0.9rem; line-height:1.65;">{a_txt}</p>\n'
+            '    </div>'
+        )
+    faq_html = "".join(faq_cards)
+    return f"""<!-- INW-TSUKUBA-FUNNEL-START -->
+<section class="inw-tsukuba-funnel-bridge" style="max-width: 1060px; margin: 32px auto; padding: 26px; background: rgba(15, 23, 42, 0.9); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 16px; text-align: left; box-shadow: 0 10px 28px rgba(0, 0, 0, 0.3);">
+  <h3 style="margin: 0 0 8px 0; font-size: 1.2rem; color: #10b981; font-weight: 800;">🔬 Validated Engineering Monographs, Crop Guides &amp; Simulators</h3>
+  <p style="margin: 0 0 16px 0; font-size: 0.92rem; color: #94a3b8; line-height: 1.6;">Explore the governing physical derivations, crop-specific microclimate targets, and full-screen engineering solvers connected to this page:</p>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px;">
+    <a href="/articles/article-01-vpd-master-class.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">Vol. 01: Penman-Monteith Transpiration &amp; VPD Masterclass →</a>
+    <a href="/articles/article-72-semi-closed-greenhouse-mollier-psychrometrics-latent-heat.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">Vol. 72: Semi-Closed Greenhouse Mollier h-x Psychrometrics &amp; Latent Heat →</a>
+    <a href="/articles/article-20-leaf-temperature-infrared-thermometry.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">Vol. 20: Radiometric Leaf-to-Air ΔT &amp; Stomatal Conductance Physics →</a>
+    <a href="/crops/greenhouse-tomato-microclimate-vpd-steering-guide.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🍅 High-Wire Tomato VPD &amp; Generative Steering Guide →</a>
+    <a href="/crops/greenhouse-cucumber-high-humidity-transpiration-guide.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🥒 Greenhouse Cucumber High-Humidity Transpiration Guide →</a>
+    <a href="/tools/psychrometric-mollier-greenhouse-dehumidifier.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">⚡ Mollier h-x Dehumidification &amp; Latent Load Sizer →</a>
+    <a href="/tools/evapotranspiration-penman-monteith-calculator.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🍃 FAO-56 Penman-Monteith Evapotranspiration Solver →</a>
+  </div>
+  <h3 style="margin: 24px 0 12px 0; font-size: 1.15rem; color: #10b981; font-weight: 800;">❓ Frequently Asked Engineering Questions (Technical FAQ)</h3>
+  <div>
+{faq_html}
+  </div>
+</section>
+<!-- INW-TSUKUBA-FUNNEL-END -->"""
 
 
 def write_to_all_outputs(filename, content):
+    if filename.endswith(".html") and _integrity_fixer is not None:
+        content = _integrity_fixer.transform(f"wiki/{filename}", content)
+    elif filename.endswith(".js") and _integrity_fixer is not None:
+        content = _integrity_fixer.fix_dead_host(content)
+    wrote_any = False
     for out_dir in OUT_DIRS:
         out_path = os.path.join(out_dir, filename)
-        with open(out_path, "w", encoding="utf-8") as f:
-            f.write(content)
+        existing = None
+        if os.path.exists(out_path):
+            with open(out_path, "r", encoding="utf-8", newline="") as fh:
+                existing = fh.read()
+        if existing != content:
+            with open(out_path, "w", encoding="utf-8", newline="") as fh:
+                fh.write(content)
+            wrote_any = True
+    return wrote_any
 
 
 def _default_wiki_faqs(title):
@@ -456,7 +536,7 @@ def build_page(template, data, crop_nav_html, topic_nav_html):
     canonical_tag = f'<link rel="canonical" href="https://inwoovation.com/wiki/{page_id}.html" />'
     json_ld_tag = build_json_ld(full_title, desc, og_img, page_id, pub_date, faq_list=faq_items, page_type="Article")
 
-    output = template.replace("{{TITLE}}", full_title)
+    output = _prepare_live_template(template).replace("{{TITLE}}", full_title)
     output = output.replace("</head>", f"    {canonical_tag}\n    {json_ld_tag}\n</head>")
     output = output.replace("{{DESC}}", html.escape(desc, quote=True))
     output = output.replace("{{OG_IMAGE}}", og_img)
@@ -464,8 +544,9 @@ def build_page(template, data, crop_nav_html, topic_nav_html):
     output = output.replace("{{CROP_NAVIGATION}}", crop_nav_html)
     output = output.replace("{{TOPIC_NAVIGATION}}", topic_nav_html)
     output = output.replace("{{RIGHT_SIDEBAR}}", sidebar_html)
+    output = output.replace("{{TSUKUBA_FUNNEL}}", render_tsukuba_funnel(faq_items, page_id=page_id))
 
-    write_to_all_outputs(f"{page_id}.html", output)
+    return write_to_all_outputs(f"{page_id}.html", output)
 
 
 def build_index_page(template, crops, topics, research, crop_nav_html, topic_nav_html):
@@ -563,7 +644,7 @@ def build_index_page(template, crops, topics, research, crop_nav_html, topic_nav
     canonical_tag = '<link rel="canonical" href="https://inwoovation.com/wiki/" />'
     json_ld_tag = build_json_ld(full_title, desc, og_img, "index", "2026-08-05", faq_list=index_faqs, page_type="CollectionPage")
 
-    output = template.replace("{{TITLE}}", full_title)
+    output = _prepare_live_template(template).replace("{{TITLE}}", full_title)
     output = output.replace("</head>", f"    {canonical_tag}\n    {json_ld_tag}\n</head>")
     output = output.replace("{{DESC}}", html.escape(desc, quote=True))
     output = output.replace("{{OG_IMAGE}}", og_img)
@@ -571,8 +652,9 @@ def build_index_page(template, crops, topics, research, crop_nav_html, topic_nav
     output = output.replace("{{CROP_NAVIGATION}}", crop_nav_html)
     output = output.replace("{{TOPIC_NAVIGATION}}", topic_nav_html)
     output = output.replace("{{RIGHT_SIDEBAR}}", "")
+    output = output.replace("{{TSUKUBA_FUNNEL}}", render_tsukuba_funnel(index_faqs, page_id="index"))
 
-    write_to_all_outputs("index.html", output)
+    return write_to_all_outputs("index.html", output)
 
 
 def build_research_page(template, research, crop_nav_html, topic_nav_html):
@@ -689,7 +771,7 @@ def build_research_page(template, research, crop_nav_html, topic_nav_html):
     canonical_tag = '<link rel="canonical" href="https://inwoovation.com/wiki/research.html" />'
     json_ld_tag = build_json_ld(full_title, desc, og_img, "research", "2026-08-05", faq_list=research_faqs, page_type="CollectionPage")
 
-    output = template.replace("{{TITLE}}", full_title)
+    output = _prepare_live_template(template).replace("{{TITLE}}", full_title)
     output = output.replace("</head>", f"    {canonical_tag}\n    {json_ld_tag}\n</head>")
     output = output.replace("{{DESC}}", html.escape(desc, quote=True))
     output = output.replace("{{OG_IMAGE}}", og_img)
@@ -697,8 +779,9 @@ def build_research_page(template, research, crop_nav_html, topic_nav_html):
     output = output.replace("{{CROP_NAVIGATION}}", crop_nav_html)
     output = output.replace("{{TOPIC_NAVIGATION}}", topic_nav_html)
     output = output.replace("{{RIGHT_SIDEBAR}}", "")
+    output = output.replace("{{TSUKUBA_FUNNEL}}", render_tsukuba_funnel(research_faqs, page_id="research"))
 
-    write_to_all_outputs("research.html", output)
+    return write_to_all_outputs("research.html", output)
 
 
 def generate_search_index(crops, topics, research):

@@ -256,15 +256,74 @@
     };
   }
 
+  /**
+   * 7. Safe Numeric Input Parser (Zero-NaN / Zero-Infinity Guard)
+   * Parses raw string/number values from DOM inputs or JSON payloads and clamps strictly within [min, max].
+   */
+  function readSafeNumber(rawVal, min, max, fallback) {
+    const parsed = typeof rawVal === 'number' ? rawVal : parseFloat(String(rawVal ?? '').trim());
+    return clamp(parsed, min, max, fallback !== undefined ? fallback : min);
+  }
+
+  /**
+   * 8. Semi-Closed Greenhouse Mollier h-x Latent Heat Recovery & Condensate Engine
+   * Models moist air cooling across an Air Treatment Unit (ATU) evaporator coil and heat-pump condenser reheat.
+   */
+  function computeMollierLatentRecovery(params = {}) {
+    const tCanopy = clamp(params.tCanopyC, 5.0, 45.0, 24.0);
+    const rhCanopy = clamp(params.rhCanopyPct, 10.0, 100.0, 82.0);
+    const tCoil = clamp(params.tEvapCoilC, 2.0, 30.0, 12.0);
+    const airflowM3h = clamp(params.airflowM3h, 100.0, 5000000.0, 45000.0);
+    const copElec = clamp(params.copCompressor, 2.0, 8.0, 4.6);
+    const pAtmKpa = clamp(params.pressureKpa, 85.0, 108.0, 101.325);
+
+    const esCanopy = 0.61078 * Math.exp((17.27 * tCanopy) / (tCanopy + 237.3));
+    const eaCanopy = esCanopy * (rhCanopy / 100.0);
+    const x1KgKg = 0.62198 * eaCanopy / Math.max(1.0, pAtmKpa - eaCanopy);
+    const h1KjKg = 1.006 * tCanopy + x1KgKg * (2501.0 + 1.86 * tCanopy);
+
+    const esCoil = 0.61078 * Math.exp((17.27 * tCoil) / (tCoil + 237.3));
+    const xSatCoil = 0.62198 * esCoil / Math.max(1.0, pAtmKpa - esCoil);
+    const x2KgKg = Math.min(x1KgKg, xSatCoil);
+    const tOutCoil = Math.min(tCanopy, tCoil);
+    const h2KjKg = 1.006 * tOutCoil + x2KgKg * (2501.0 + 1.86 * tOutCoil);
+
+    const rhoDryAir = (pAtmKpa * 1000.0) / (287.058 * (tCanopy + 273.15));
+    const massFlowDryKgS = (airflowM3h * rhoDryAir) / 3600.0;
+
+    const deltaX = Math.max(0.0, x1KgKg - x2KgKg);
+    const condensateLh = massFlowDryKgS * deltaX * 3600.0;
+    const totalCoolingKw = Math.max(0.0, massFlowDryKgS * (h1KjKg - h2KjKg));
+    const latentCoolingKw = massFlowDryKgS * deltaX * 2450.0;
+    const compressorElecKw = totalCoolingKw > 0 ? totalCoolingKw / Math.max(1.0, copElec - 1.0) : 0.0;
+    const condenserHeatRecoveryKw = totalCoolingKw + compressorElecKw;
+    const effectiveCopTh = compressorElecKw > 0 ? condenserHeatRecoveryKw / compressorElecKw : copElec;
+
+    return {
+      humidityRatioInGKg: Number((x1KgKg * 1000.0).toFixed(2)),
+      humidityRatioOutGKg: Number((x2KgKg * 1000.0).toFixed(2)),
+      enthalpyInKjKg: Number(h1KjKg.toFixed(2)),
+      enthalpyOutKjKg: Number(h2KjKg.toFixed(2)),
+      condensateLitersPerHour: Number(condensateLh.toFixed(1)),
+      latentRecoveredKw: Number(latentCoolingKw.toFixed(2)),
+      totalCoolingKw: Number(totalCoolingKw.toFixed(2)),
+      compressorElecKw: Number(compressorElecKw.toFixed(2)),
+      condenserReheatKw: Number(condenserHeatRecoveryKw.toFixed(2)),
+      effectiveCopThermal: Number(effectiveCopTh.toFixed(2))
+    };
+  }
+
   // Public API Export
   return {
-    version: '1.0.0',
+    version: '2.0.0',
     clamp: clamp,
+    readSafeNumber: readSafeNumber,
     computeVPD: computeVPD,
     computeDLI: computeDLI,
     computeHeatingLoad: computeHeatingLoad,
     computeCO2Injection: computeCO2Injection,
     computeFertigationDilution: computeFertigationDilution,
-    computeLEDEfficacy: computeLEDEfficacy
+    computeLEDEfficacy: computeLEDEfficacy,
+    computeMollierLatentRecovery: computeMollierLatentRecovery
   };
 }));

@@ -697,6 +697,8 @@ def sync_all():
                             win["deadlineDisplay"] = f"{end_str} (2026 Batch Closed · Next Cycle 2027 Q1)"
                 else:
                     win["daysRemaining"] = delta_days
+                    if "(D-" in win.get("deadlineDisplay", ""):
+                        win["deadlineDisplay"] = re.sub(r"\(D-\d+", f"(D-{delta_days}", win["deadlineDisplay"])
                     if delta_days <= 14 and win.get("status") == "open":
                         win["status"] = "closing_soon"
                         win["statusLabel"] = f"🟡 Closing Soon (D-{delta_days})"
@@ -707,7 +709,7 @@ def sync_all():
     try:
         from upgrade_subsidy_radar_v6 import synthesize_playbook, DEEP_URL_UPGRADES
         for p in programs:
-            if p["id"] in DEEP_URL_UPGRADES:
+            if not p.get("officialUrl") and p["id"] in DEEP_URL_UPGRADES:
                 p["officialUrl"] = DEEP_URL_UPGRADES[p["id"]]
             if not p.get("applicationPlaybook"):
                 p["applicationPlaybook"] = synthesize_playbook(p)
@@ -715,11 +717,16 @@ def sync_all():
         print(f"  ℹ️ Playbook check note: {exc}")
 
     # Update JSON Metadata
+    active_countries = sorted(set(p["country"] for p in programs))
+    ordered_countries = [c for c in ["US", "DE", "KR", "NL", "CA", "JP", "FR", "ES"] if c in active_countries] + [
+        c for c in active_countries if c not in {"US", "DE", "KR", "NL", "CA", "JP", "FR", "ES"}
+    ]
     data["programs"] = programs
     data["metadata"]["totalPrograms"] = len(programs)
+    data["metadata"]["countriesCovered"] = ordered_countries
     data["metadata"]["lastUpdated"] = today_str
     data["metadata"]["lastVerified"] = today_str
-    data["metadata"]["version"] = "6.0.0-hyperlocal-3tier-ssot"
+    data["metadata"]["version"] = "7.1.0-audited-ssot"
     data["metadata"]["pilotJurisdiction"] = (
         f"8-Country Complete 3-Tier Hyper-Local Matrix (US / DE / JP / NL / FR / ES / CA / KR — {len(programs)} Programs · 100% Playbooks)"
     )
@@ -745,14 +752,38 @@ def sync_all():
         with open(bundle_js_path, "w", encoding="utf-8") as bf:
             bf.write(new_bundle_text)
 
-    if not json_changed and os.path.exists(DB_PATH):
+    db_needs_playbook_sync = False
+    if os.path.exists(DB_PATH):
+        try:
+            _chk = sqlite3.connect(DB_PATH)
+            _pb_cnt = _chk.execute("SELECT COUNT(*) FROM application_playbooks").fetchone()[0]
+            _pr_cnt = _chk.execute("SELECT COUNT(*) FROM programs").fetchone()[0]
+            _chk.close()
+            db_needs_playbook_sync = (_pb_cnt != len(programs)) or (_pr_cnt != len(programs))
+        except Exception:
+            db_needs_playbook_sync = True
+
+    if not json_changed and os.path.exists(DB_PATH) and not db_needs_playbook_sync:
         print(f"⚡ Subsidy JSON feed, JS bundle & SQLite DB already up to date (Total: {len(programs)} programs)")
     else:
         print(f"💾 Updated production JSON feed & SSOT JS bundle (Total: {len(programs)} programs)")
-        # 5. Sync to SQLite Master Database
+        # 5. Sync to SQLite Master Database (including 100% application_playbooks & pruning retired IDs)
         if os.path.exists(DB_PATH):
             conn = sqlite3.connect(DB_PATH)
             cur = conn.cursor()
+            active_ids = [p["id"] for p in programs]
+            placeholders = ",".join("?" for _ in active_ids)
+            for tbl, col in (
+                ("programs", "id"),
+                ("application_windows", "program_id"),
+                ("target_equipment", "program_id"),
+                ("qualification_criteria", "program_id"),
+                ("document_checklist", "program_id"),
+                ("program_facets", "program_id"),
+                ("application_playbooks", "program_id"),
+            ):
+                cur.execute(f"DELETE FROM {tbl} WHERE {col} NOT IN ({placeholders})", active_ids)
+
             for p in programs:
                 cur.execute("""
                     INSERT OR REPLACE INTO programs (
@@ -761,15 +792,16 @@ def sync_all():
                         max_amount, match_requirement, disbursement_type, currency,
                         verified_date, deadline, selection_method, official_url, portal_name,
                         contact_phone, contact_email, summary, deep_guide,
-                        linked_calculator, linked_tool_title, updated_at
-                    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP)
+                        linked_calculator, linked_tool_title, admin_tier, region_scope, filing_authority, updated_at
+                    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP)
                 """, (
                     p["id"], p["country"], p["countryName"], p["region"], p["regionName"], p["jurisdictionLabel"], p.get("flag", ""),
                     p["category"], p["name"], p["agency"], p["subsidyType"], p["subsidyRate"], p["rateDecimal"],
                     p["maxAmount"], p["matchRequirement"], p["disbursementType"], p["currency"],
                     p["verifiedDate"], p.get("deadline", ""), p.get("selectionMethod", ""), p.get("officialUrl", ""), p.get("portalName", ""),
                     p.get("contactPhone", ""), p.get("contactEmail", ""), p.get("summary", ""), p.get("deepGuide", ""),
-                    p.get("linkedCalculator", ""), p.get("linkedToolTitle", "")
+                    p.get("linkedCalculator", ""), p.get("linkedToolTitle", ""),
+                    p.get("admin_tier", "Regional / State"), p.get("region_scope", p.get("regionName", "")), p.get("filing_authority", p.get("agency", ""))
                 ))
 
                 # Application Window
@@ -788,20 +820,21 @@ def sync_all():
 
                 # Target equipment
                 cur.execute("DELETE FROM target_equipment WHERE program_id = ?", (p["id"],))
-                for eq in p.get("targetEquipment", []):
-                    cur.execute("INSERT INTO target_equipment (program_id, item_description, is_eligible) VALUES (?, ?, 1)", (p["id"], eq))
-                for ineq in p.get("ineligibleItems", []):
-                    cur.execute("INSERT INTO target_equipment (program_id, item_description, is_eligible) VALUES (?, ?, 0)", (p["id"], ineq))
+                eq_rows = [(p["id"], eq, 1) for eq in p.get("targetEquipment", [])] + [(p["id"], ineq, 0) for ineq in p.get("ineligibleItems", [])]
+                if eq_rows:
+                    cur.executemany("INSERT INTO target_equipment (program_id, item_description, is_eligible) VALUES (?, ?, ?)", eq_rows)
 
                 # Criteria
                 cur.execute("DELETE FROM qualification_criteria WHERE program_id = ?", (p["id"],))
-                for qc in p.get("qualificationCriteria", []):
-                    cur.execute("INSERT INTO qualification_criteria (program_id, criterion) VALUES (?, ?)", (p["id"], qc))
+                qc_rows = [(p["id"], qc) for qc in p.get("qualificationCriteria", [])]
+                if qc_rows:
+                    cur.executemany("INSERT INTO qualification_criteria (program_id, criterion) VALUES (?, ?)", qc_rows)
 
                 # Documents
                 cur.execute("DELETE FROM document_checklist WHERE program_id = ?", (p["id"],))
-                for doc in p.get("documentChecklist", []):
-                    cur.execute("INSERT INTO document_checklist (program_id, document_name, is_mandatory) VALUES (?, ?, 1)", (p["id"], doc))
+                doc_rows = [(p["id"], doc, 1) for doc in p.get("documentChecklist", [])]
+                if doc_rows:
+                    cur.executemany("INSERT INTO document_checklist (program_id, document_name, is_mandatory) VALUES (?, ?, ?)", doc_rows)
 
                 # Facets
                 facets = p.get("facets", {})
@@ -813,6 +846,22 @@ def sync_all():
                     p["id"], facets.get("fundingTier", "tier_medium"), facets.get("matchTier", "zero_match"),
                     json.dumps(facets.get("targetAudience", ["commercial_cea"]), ensure_ascii=False),
                     json.dumps(facets.get("technologies", [p["category"]]), ensure_ascii=False)
+                ))
+
+                # Application Playbook (100% 192/192 sync!)
+                pb = p.get("applicationPlaybook") or {}
+                cur.execute("""
+                    INSERT OR REPLACE INTO application_playbooks (
+                        program_id, official_calculators, scoring_cheat_sheet,
+                        vendor_quote_rules, disqualification_pitfalls, stacking_rules
+                    ) VALUES (?, ?, ?, ?, ?, ?)
+                """, (
+                    p["id"],
+                    json.dumps(pb.get("officialCalculators", []), ensure_ascii=False),
+                    json.dumps(pb.get("scoringCheatSheet", {}), ensure_ascii=False),
+                    json.dumps(pb.get("vendorQuoteRules", []), ensure_ascii=False),
+                    json.dumps(pb.get("disqualificationPitfalls", []), ensure_ascii=False),
+                    str(pb.get("stackingRules", "")),
                 ))
 
             # Promote candidates

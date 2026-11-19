@@ -1,4 +1,4 @@
-window.DIAGNOSIS_COLLECTOR_URL = "YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL";
+window.DIAGNOSIS_COLLECTOR_URL = "";
 
     // Pesticide Database
     const pesticideDB = [
@@ -1311,7 +1311,8 @@ window.DIAGNOSIS_COLLECTOR_URL = "YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL";
         }
 
         // Dew Point Calculation (Magnus-Tetens)
-        const alpha = Math.log(RH / 100) + (17.625 * T_air) / (243.04 + T_air);
+        const safeRh = Math.min(100, Math.max(1, isNaN(RH) ? 60 : RH));
+        const alpha = Math.log(safeRh / 100) + (17.625 * T_air) / (243.04 + T_air);
         const T_dp = (243.04 * alpha) / (17.625 - alpha);
         let displayT_dp = T_dp;
         if (currentTempUnit === 'F') {

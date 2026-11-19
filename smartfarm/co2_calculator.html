@@ -92,34 +92,18 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "What is the optimal CO2 concentration for greenhouse tomatoes and cucumbers?",
+      "name": "Can elevated CO2 compensate for lower greenhouse temperatures?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "For C3 greenhouse crops like high-wire tomatoes and cucumbers, optimal canopy CO2 concentration is 800 to 1,200 ppm under active photosynthetically active radiation (PPFD > 300 μmol/m²/s). Above 1,200 to 1,500 ppm, RuBisCO carboxylation saturates while stomatal conductance decreases, yielding diminishing returns."
+        "text": "Yes. Elevating CO 2 shifts the optimum temperature for C3 photosynthesis upward by 2°C to 4°C. High CO 2 competitively inhibits the oxygenase activity of RuBisCO, thereby suppressing photorespiration which normally escalates as temperatures rise."
       }
     },
     {
       "@type": "Question",
-      "name": "How does greenhouse ventilation affect CO2 enrichment economics?",
+      "name": "What is the risk of excessive CO2 levels (> 1,600 ppm)?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Greenhouse ventilation rapidly exchanges internal enriched air with ambient air. When air exchange exceeds 1.5 to 2.0 ACH (air changes per hour) due to open roof vents, over 80% of injected CO2 escapes into the atmosphere. Economic dosing algorithms restrict or pause pure liquid CO2 injection when roof vents open beyond 15-20%."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How is the required CO2 injection rate calculated?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The required CO2 injection rate (kg/h) equals the ventilation infiltration loss plus crop photosynthetic consumption: Rate = (Greenhouse Volume × ACH × Delta PPM × 10^-6 × CO2 Density) + (Canopy Area × Leaf Net Assimilation Rate). Standard CO2 density at 20°C and 1 atm is approximately 1.836 kg/m³."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can supplemental CO2 compensate for lower greenhouse temperatures?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes, elevating CO2 shifts the optimum temperature for C3 photosynthesis upward by 2°C to 4°C because high CO2 competitively inhibits photorespiration, which accelerates as temperatures rise. However, maintaining adequate root zone temperature is still required for nutrient transport."
+        "text": "Prolonged exposure to concentrations above 1,500–1,800 ppm induces partial stomatal closure, reducing transpiration and leading to localized calcium deficiency (tip-burn, blossom-end rot). Levels above 5,000 ppm also present human occupational health and safety hazards (OSHA 8-hour TWA limit is 5,000 ppm)."
       }
     }
   ]
@@ -132,7 +116,7 @@
 <main class="container">
 <header>
 <div class="header-top-bar" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 0.8rem;">
-<div class="badge" id="header-badge">Last Updated: November 16, 2026</div>
+<div class="badge" id="header-badge">Last Updated: November 19, 2026</div>
 <div style="display: flex; gap: 0.5rem; align-items: center;">
     <button class="lang-btn" id="btn-farm-profile" onclick="toggleFarmProfileDrawer()" style="border-color: var(--primary); color: var(--primary); display: inline-flex; align-items: center; gap: 0.3rem; font-weight: 600; padding: 0.4rem 0.8rem; border-radius: 10px; cursor: pointer; background: transparent; border: 1px solid;">
         📋 <span>My Farm</span>

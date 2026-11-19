@@ -82,7 +82,7 @@
         "url": "https://inwoovation.com"
       },
       "datePublished": "2026-09-01",
-      "dateModified": "2026-11-08",
+      "dateModified": "2026-11-19",
       "mainEntityOfPage": "https://inwoovation.com/articles/article-73-closed-loop-nutrient-recirculation-davies-ion-balance.html"
     },
     {
@@ -113,26 +113,26 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Why must calcium nitrate and sulfate/phosphate fertilizers be separated into A and B stock tanks?",
+          "name": "What happens when sodium reaches the crop threshold limit?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Mixing concentrated calcium ions (Ca²⁺) with sulfate (SO₄²⁻) or orthophosphate (H₂PO₄⁻) in the same stock tank causes immediate precipitation of insoluble gypsum (CaSO₄·2H₂O) and calcium phosphate once the solubility product (Ksp) is exceeded."
+            "text": "When the closed-loop sodium concentration reaches the crop safety threshold (8.0 mM for tomatoes, 4.0 mM for peppers), the climate computer triggers an automated \"partial purge\" or dilution cycle. Rather than dumping the entire tank, the system bleeds off 15% to 25% of the volume into a secondary green belt or retention wetland, instantly recharging the loop with pure rainwater or RO permeate to reset the accumulation timer."
           }
         },
         {
           "@type": "Question",
-          "name": "How do you calculate the required acid volume for hydroponic bicarbonate (HCO₃⁻) alkalinity neutralization?",
+          "name": "Can ion-selective electrodes (ISE) measure individual ions in real-time?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Subtract target residual buffer alkalinity (typically 0.5 to 0.8 mmol/L HCO₃⁻ for pH 5.6–5.8 stability) from raw water bicarbonate concentration, then stoichiometry-match with nitric acid (HNO₃) or phosphoric acid (H₃PO₄) normality."
+            "text": "Yes. Modern solid-state potentiometric and optical ISE sensor arrays (e.g., CleanGrow, NutriSense) measure K + , Ca 2+ , NO 3 - , and Na + directly in recirculating manifold streams. Because ISE sensors measure thermodynamic activity (a i ) rather than concentration (c i ), incorporating our Davies equation solver directly into the PLC software is essential to translate raw millivolt readings into exact stoichiometric dosing commands."
           }
         },
         {
           "@type": "Question",
-          "name": "What drain percentage and slab EC dryback should be targeted in rockwool and cocopeat substrates?",
+          "name": "How does rootzone organic exudate build-up affect closed-loop systems?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "During high-radiation summer days, target 25% to 35% daily drainage fraction with an overnight volumetric water content (VWC) dryback of 8% to 12% for vegetative steering, or 12% to 18% dryback for generative steering."
+            "text": "Over months of closed recirculation, root exudates (phenolic acids, sugars, amino acids) can accumulate, increasing Total Organic Carbon (TOC). High TOC can support heterotrophic bacterial blooms and reduce dissolved oxygen. Integrating continuous nanobubble dissolved oxygen injection (>20 mg/L DO) or biological slow sand filtration oxidizes these organic compounds safely without synthetic chemical algaecides."
           }
         }
       ]
@@ -179,16 +179,6 @@
 
         <div class="lead-abstract">
             <strong>Executive Summary:</strong> Modern protected horticulture faces stringent environmental and economic imperatives. Conventional "run-to-waste" (drain-to-waste) hydroponics discards between 25% and 40% of applied fertigation water to prevent salt accumulation in the rootzone, discharging hundreds of kilograms of nitrate (NO<sub>3</sub><sup>-</sup>) and phosphate (H<sub>2PO</sub><sub>4</sub><sup>-</sup>) per hectare directly into regional groundwater tables—a practice now strictly prohibited under the <strong>German Fertilizer Ordinance (Düngeverordnung - DüV)</strong> and the <strong>EU Water Framework Directive (2000/60/EC)</strong>. Transitioning to <strong>Closed-Loop Drainage Recirculation (Geschlossene Kreislaufsysteme)</strong> requires replacing naive EC-based dosing with non-ideal thermodynamic electrolyte chemistry. Utilizing the <strong>extended Davies Equation</strong> to calculate individual ionic activity coefficients (γ<sub>i</sub>) across variable ionic strengths (I = 0.015--0.045 mol/L), this monograph details multi-cycle accumulation kinetics of non-essential ballast ions (Na<sup>+</sup>, Cl<sup>-</sup>) governed by crop-specific <strong>Transpiration-Uptake Ratios (TUR)</strong>. We demonstrate how automated real-time ion balance replenishment, coupled with UVC/slow-sand pathogen barrier sanitation, achieves 100% zero-discharge compliance, reduces raw fertilizer expenditure by <strong>38.4%</strong>, conserves <strong>3,200--4,500 m<sup>3</sup>/ha·yr</strong> of fresh water, and extends closed-loop recirculation cycles prior to automated osmotic purge thresholds.
-        </div>
-
-        <!-- AdSense Top Banner -->
-        <div class="ad-slot">
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-8597809158257497"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
         </div>
 
         <!-- Section 1: The Zero-Discharge Imperative -->
@@ -498,16 +488,6 @@ M&#775;<sub>fert,i</sub> = V<sub>target</sub> · C<sub>target,i</sub> - ( V<sub>
                 </tbody>
             </table>
         </section>
-
-        <!-- AdSense Bottom Slot -->
-        <div class="ad-slot">
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-8597809158257497"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-        </div>
 
         <!-- Section 7: FAQ Accordion -->
         <section class="section-card">

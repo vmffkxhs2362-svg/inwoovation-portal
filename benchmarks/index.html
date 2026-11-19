@@ -72,26 +72,26 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "When should a greenhouse switch from a condensing gas boiler to an industrial heat pump?",
+          "name": "How do you convert PPFD (µmol/m²/s) into Daily Light Integral (DLI in mol/m²/day)?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Heat pump decarbonization delivers positive operational savings whenever its seasonal Coefficient of Performance (SCOP) exceeds the facility electricity-to-gas thermal tariff ratio (Spark Spread), typically achieving a 3 to 5 year payback when paired with aquifer or buffer thermal energy storage."
+            "text": "Multiply canopy PPFD (µmol·m⁻²·s⁻¹) by photoperiod hours per day, then multiply by 0.0036 (since 3,600 seconds/hour divided by 1,000,000 µmol/mol equals 0.0036). For example, 250 µmol·m⁻²·s⁻¹ for 16 hours yields exactly 14.4 mol·m⁻²·d⁻¹."
           }
         },
         {
           "@type": "Question",
-          "name": "How do Rockwool stone wool slabs compare with buffered Cocopeat over a 5-year cycle?",
+          "name": "What DLI target is required for commercial greenhouse tomatoes, strawberries, and leafy greens?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Rockwool offers 0 meq/100g CEC and steep pF water release for precise hour-by-hour EC and generative dry-back steering, whereas buffered Cocopeat provides 60-100 meq/100g cation buffering, 2-3 year multi-crop durability, and zero landfill disposal tipping fees."
+            "text": "Butterhead and crisphead lettuce require 14 to 17 mol·m⁻²·d⁻¹ (above which tipburn risk rises without vertical airflow), greenhouse strawberries require 15 to 22 mol·m⁻²·d⁻¹, and high-wire fruiting tomatoes and bell peppers require 22 to 35+ mol·m⁻²·d⁻¹."
           }
         },
         {
           "@type": "Question",
-          "name": "Does AR-coated diffuse glass outperform multi-layer PO film on 5-year commercial ROI?",
+          "name": "How do you calculate supplemental LED fixture wattage and electricity ROI per square meter?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Low-iron AR diffuse glass carries higher year-0 CAPEX than 5-year PO poly film, yet delivers 91% hemispherical PAR transmission with 50-70% haze diffusion, zero mid-life re-skinning shutdowns, +4 to +6% higher canopy fruit biomass, and a 25+ year structural life."
+            "text": "Divide the required supplemental PPFD (µmol·m⁻²·s⁻¹) by the fixture photosynthetic photon efficacy (PPE, typically 2.8 to 3.6 µmol/J) to obtain electrical power density (W/m²), then multiply by operating hours and kWh tariff."
           }
         }
       ]

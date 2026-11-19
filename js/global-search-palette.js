@@ -8,7 +8,101 @@
  *  3) Floating Bottom-Right Quick Action Bar (🔍 Ctrl+K + ↑ Top)
  */
 (function() {
+  // Google Consent Mode v2 (EEA / UK / CH Default Denied + Instant Persistence Restore)
+  const CONSENT_STORAGE_KEY = 'inw_gdpr_consent_v2';
+  const EEA_UK_CH_REGIONS = [
+    'AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IS','IE',
+    'IT','LV','LI','LT','LU','MT','NL','NO','PL','PT','RO','SK','SI','ES','SE','GB','CH'
+  ];
+  window.dataLayer = window.dataLayer || [];
+  function pushGtag() { window.dataLayer.push(arguments); }
+  const gtagFn = typeof window.gtag === 'function' ? window.gtag : pushGtag;
+  try {
+    gtagFn('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: 'denied',
+      wait_for_update: 500,
+      region: EEA_UK_CH_REGIONS
+    });
+    const priorChoice = window.localStorage ? window.localStorage.getItem(CONSENT_STORAGE_KEY) : null;
+    if (priorChoice === 'granted') {
+      gtagFn('consent', 'update', {
+        ad_storage: 'granted',
+        ad_user_data: 'granted',
+        ad_personalization: 'granted',
+        analytics_storage: 'granted'
+      });
+    } else if (priorChoice === 'essential') {
+      gtagFn('consent', 'update', {
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        analytics_storage: 'denied'
+      });
+    }
+  } catch (_consentInitErr) {
+    // Non-blocking storage fallback in strict private browsing modes
+  }
+
   const ECOSYSTEM_INDEX = [
+  {
+    "title": "Complete CEA Engineering Directory &amp; Index (374 Pages)",
+    "cat": "part",
+    "url": "directory.html",
+    "icon": "⚙️",
+    "desc": "Master HTML sitemap and engineering taxonomy indexing all 374 calculators, 192 global agricultural grants, EN/DE/JA monographs, crop guides, and climate hubs.",
+    "tags": "directory html complete cea engineering directory amp index 374 pages master html sitemap and engineering taxonomy indexing all 374 calculators 192 global agricultural grants en de ja monogr"
+  },
+  {
+    "title": "Precision CEA & Horticultural Engineering Articles (78 Volumes / 191 Multilingual Editions)",
+    "cat": "article",
+    "url": "guides.html",
+    "icon": "📚",
+    "desc": "78-volume (191 multilingual editions) open-access Controlled Environment Agriculture (CEA) archive — VPD physics, biomass CHP, photobiology, closed-loop fertiga",
+    "tags": "guides html precision cea horticultural engineering articles 78 volumes 191 multilingual editions 78 volume 191 multilingual editions open access controlled environment agriculture cea archi"
+  },
+  {
+    "title": "Inwoovation Lab",
+    "cat": "tool",
+    "url": "index.html",
+    "icon": "🛠️",
+    "desc": "Inwoovation Lab — Unified CEA engineering command center: 192 verified global agricultural grants across 8 countries (US, Germany, Japan, Netherlands, Korea, Fr",
+    "tags": "index html inwoovation lab inwoovation lab unified cea engineering command center 192 verified global agricultural grants across 8 countries us germany japan netherlands korea fr"
+  },
+  {
+    "title": "Deutscher Gartenbau-Meister &amp; KTBL-Standard Rechner",
+    "cat": "tool",
+    "url": "meister.html",
+    "icon": "🇩🇪",
+    "desc": "Offizielle deutsche Gartenbau-Normen (KTBL Datensammlung, DIN V 18599, DIN EN 13031-1, QS-GAP 2026, IFS Food v8, SVLFG VSG 4.2). Heizwärmebedarf, Deckungsbeitra",
+    "tags": "meister html deutscher gartenbau meister amp ktbl standard rechner offizielle deutsche gartenbau normen ktbl datensammlung din v 18599 din en 13031 1 qs gap 2026 ifs food v8 svlfg vsg 4 2 he"
+  },
+  {
+    "title": "OpenCEA Biophysics Mastery Quiz & Free Certificate Engine",
+    "cat": "tool",
+    "url": "quiz.html",
+    "icon": "🛠️",
+    "desc": "Test your precision CEA horticultural biophysics knowledge. Solve 10 questions on VPD, DLI, DIN V 18599, and fertigation to earn a free verifiable Certificate o",
+    "tags": "quiz html opencea biophysics mastery quiz free certificate engine test your precision cea horticultural biophysics knowledge solve 10 questions on vpd dli din v 18599 and fertigation to earn"
+  },
+  {
+    "title": "Open-Access AgTech Engineering Repository &amp; Digital Assets",
+    "cat": "tool",
+    "url": "store.html",
+    "icon": "🛠️",
+    "desc": "100% Free, open-access institutional engineering assets: Python fertigation solvers, 50-State USDA grant playbooks, smart greenhouse BOM estimators, and Bavaria",
+    "tags": "store html open access agtech engineering repository amp digital assets 100 free open access institutional engineering assets python fertigation solvers 50 state usda grant playbooks smart g"
+  },
+  {
+    "title": "Greenhouse Cultivation & Facility Troubleshooting Wizard",
+    "cat": "tool",
+    "url": "troubleshoot.html",
+    "icon": "🛠️",
+    "desc": "Instant diagnostic wizard for commercial greenhouse and indoor farm issues. Identify root causes for tip burn, blossom-end rot, condensation, and heating spikes",
+    "tags": "troubleshoot html greenhouse cultivation facility troubleshooting wizard instant diagnostic wizard for commercial greenhouse and indoor farm issues identify root causes for tip burn blossom "
+  },
   {
     "title": "Biophysical Foundations of Vapor Pressure Deficit (VPD) Thermodynamics in CEA Greenhouses",
     "cat": "article",
@@ -582,7 +676,7 @@
     "cat": "article",
     "url": "articles/article-72-semi-closed-greenhouse-mollier-psychrometrics-latent-heat.html",
     "icon": "📚",
-    "desc": "Technical engineering monograph on semi-closed Venlo greenhouse thermodynamics: positive-pressure air distribution ducts, Mollier h-x psychrometric.",
+    "desc": "Technical engineering monograph on semi-closed Venlo greenhouse thermodynamics: positive-pressure air distribution ducts, Mollier h-x psychrometric latent heat ",
     "tags": "articles article 72 semi closed greenhouse mollier psychrometrics latent heat html thermodynamic optimization of semi closed venlo greenhouses high pressure fogging active mechanical dehumid"
   },
   {
@@ -632,6 +726,14 @@
     "icon": "📚",
     "desc": "Technical engineering and agri-finance monograph on EU commercial greenhouse energy auditing (DIN V 18599 / EN 13031-1), German Federal BLE 40% decarbonization ",
     "tags": "articles article 78 eu greenhouse energy audit din 18599 ble grant hofnachfolge html eu commercial greenhouse energy auditing din v 18599 en 13031 1 german federal ble 40 decarbonization gra"
+  },
+  {
+    "title": "CEA &amp; Greenhouse Engineering Articles Library (EN / DE / JA)",
+    "cat": "article",
+    "url": "articles/index.html",
+    "icon": "📚",
+    "desc": "Multilingual library of 142 horticultural engineering articles on VPD psychrometrics, DIN V 18599 heating loads, FvCB CO2 kinetics, and MPC control.",
+    "tags": "articles index html cea amp greenhouse engineering articles library en de ja multilingual library of 142 horticultural engineering articles on vpd psychrometrics din v 18599 heating loads fv"
   },
   {
     "title": "VPD-Meisterklasse im Gewächshaus: Dampfdruckdefizit & Spaltöffnungs-Transpiration",
@@ -1102,7 +1204,7 @@
     "cat": "article",
     "url": "articles/de/article-59-epex-spot-negativstrompreise-bess-power-to-heat-elektrokessel-venlo.html",
     "icon": "🇩🇪",
-    "desc": "Ingenieurwissenschaftliche Analyse zu EPEX SPOT Negativstrompreisen (§ 51 EEG), 20-kV-Elektrokesseln, Richardson-Schichtenspeichern (Ri > 5,0) und LFP-BESS im V",
+    "desc": "Ingenieurwissenschaftliche Analyse zu EPEX SPOT Negativstrompreisen (§ 51 EEG), 20-kV-Elektrokesseln, Richardson-Schichtenspeichern (Ri &gt; 5,0) und LFP-BESS i",
     "tags": "articles de article 59 epex spot negativstrompreise bess power to heat elektrokessel venlo html epex spot negativstrompreis arbitrage power to heat elektrokessel schichtenspeicher hybrid bes"
   },
   {
@@ -1142,7 +1244,7 @@
     "cat": "article",
     "url": "articles/de/article-64-wasserqualitaet-bodenfruchtbarkeit-denitrifikationsbioreaktor-agrarfoerderung-vergleich.html",
     "icon": "🇩🇪",
-    "desc": "Ingenieurhandbuch zu Holzhackschnitzel-Denitrifikationsbioreaktoren (NRCS CPS 605, HRT >= 4 h), gesättigten Uferrandstreifen (CPS 604), DIN 38409-7 Karbonathärt",
+    "desc": "Ingenieurhandbuch zu Holzhackschnitzel-Denitrifikationsbioreaktoren (NRCS CPS 605, HRT &gt;= 4 h), gesättigten Uferrandstreifen (CPS 604), DIN 38409-7 Karbonath",
     "tags": "articles de article 64 wasserqualitaet bodenfruchtbarkeit denitrifikationsbioreaktor agrarfoerderung vergleich html wasserqualität denitrifikations bioreaktoren amp agrarförderung us corn be"
   },
   {
@@ -1202,20 +1304,20 @@
     "tags": "articles de article 71 horizontallueftung haf grenzschicht mikroklima gewaechshaus html horizontallüftung haf amp blattgrenzschicht entkopplung im venlo gewächshaus band 71 ingenieurmonograp"
   },
   {
-    "title": "Deutsche Gartenbau-Meister Fachartikel &amp; CEA-Technik (71 Monographien)",
+    "title": "Thermodynamische Optimierung halbgeschlossener Venlo-Gewächshäuser: Mollier-h,x-Psychrometrie, 70-bar-Hochdrucknebel &amp; Latentwärmerückgewinnung (Band 72)",
+    "cat": "article",
+    "url": "articles/de/article-72-semi-closed-greenhouse-mollier-psychrometrics-latent-heat.html",
+    "icon": "🇩🇪",
+    "desc": "Ingenieurwissenschaftliche Meister-Monographie zum halbgeschlossenen Venlo-Gewächshaus: Überdruck-Folientransportschläuche (+15 bis +35 Pa), Mollier-h,x-Feuchtl",
+    "tags": "articles de article 72 semi closed greenhouse mollier psychrometrics latent heat html thermodynamische optimierung halbgeschlossener venlo gewächshäuser mollier h x psychrometrie 70 bar hoch"
+  },
+  {
+    "title": "Deutsche Gartenbau-Meister Fachartikel &amp; CEA-Technik (72 Monographien)",
     "cat": "article",
     "url": "articles/de/index.html",
     "icon": "🇩🇪",
-    "desc": "Vollständige deutschsprachige Wissensdatenbank mit 71 technischen Fachartikeln zu VPD-Psychrometrie, DIN V 18599 Heizlast, EN 13031-1 Venlo-Statik, FvCB-CO2-Kin",
-    "tags": "articles de index html deutsche gartenbau meister fachartikel amp cea technik 71 monographien vollständige deutschsprachige wissensdatenbank mit 71 technischen fachartikeln zu vpd psychromet"
-  },
-  {
-    "title": "CEA &amp; Greenhouse Engineering Articles Library (EN / DE / JA)",
-    "cat": "article",
-    "url": "articles/index.html",
-    "icon": "📚",
-    "desc": "Multilingual library of 142 horticultural engineering articles on VPD psychrometrics, DIN V 18599 heating loads, FvCB CO2 kinetics, and MPC control.",
-    "tags": "articles index html cea amp greenhouse engineering articles library en de ja multilingual library of 142 horticultural engineering articles on vpd psychrometrics din v 18599 heating loads fv"
+    "desc": "Vollständige deutschsprachige Wissensdatenbank mit 72 technischen Fachartikeln zu VPD-Psychrometrie, DIN V 18599 Heizlast, EN 13031-1 Venlo-Statik, FvCB-CO2-Kin",
+    "tags": "articles de index html deutsche gartenbau meister fachartikel amp cea technik 72 monographien vollständige deutschsprachige wissensdatenbank mit 72 technischen fachartikeln zu vpd psychromet"
   },
   {
     "title": "施設園芸・スマート農業のための飽差（VPD）最適化マスタークラス",
@@ -2010,44 +2112,12 @@
     "tags": "crops vertical farm lettuce leafy greens tipburn prevention guide html controlled environment leafy greens lettuce lactuca sativa microclimate vpd dli precision steering guide precision cea "
   },
   {
-    "title": "Complete CEA Engineering Directory &amp; Index (373 Pages)",
-    "cat": "part",
-    "url": "directory.html",
-    "icon": "⚙️",
-    "desc": "Master HTML sitemap and engineering taxonomy indexing all 373 calculators, 192 global agricultural grants, EN/DE/JA monographs, crop guides, and climate hubs.",
-    "tags": "directory html complete cea engineering directory amp index 373 pages master html sitemap and engineering taxonomy indexing all 373 calculators 192 global agricultural grants en de ja monogr"
-  },
-  {
-    "title": "Precision CEA & Horticultural Engineering Articles (78 Volumes / 190 Multilingual Editions)",
-    "cat": "article",
-    "url": "guides.html",
-    "icon": "📚",
-    "desc": "78-volume (190 multilingual editions) open-access Controlled Environment Agriculture (CEA) archive — VPD physics, biomass CHP, photobiology, closed-loop fertiga",
-    "tags": "guides html precision cea horticultural engineering articles 78 volumes 190 multilingual editions 78 volume 190 multilingual editions open access controlled environment agriculture cea archi"
-  },
-  {
-    "title": "The CEA Biophysics &amp; Greenhouse Engineering Handbook (78 Volumes / 190 Editions)",
+    "title": "The CEA Biophysics &amp; Greenhouse Engineering Handbook (78 Volumes / 191 Editions)",
     "cat": "article",
     "url": "handbooks/index.html",
     "icon": "📖",
-    "desc": "Open-access six-part Controlled Environment Agriculture compendium indexing 78 volumes (190 EN/DE/JA editions), 42 live biophysical calculators, and 192 agricul",
-    "tags": "handbooks index html the cea biophysics amp greenhouse engineering handbook 78 volumes 190 editions open access six part controlled environment agriculture compendium indexing 78 volumes 190"
-  },
-  {
-    "title": "Inwoovation Lab",
-    "cat": "tool",
-    "url": "index.html",
-    "icon": "🛠️",
-    "desc": "Inwoovation Lab — Unified CEA engineering command center: 192 verified global agricultural grants across 8 countries (US, Germany, Japan, Netherlands, Korea, Fr",
-    "tags": "index html inwoovation lab inwoovation lab unified cea engineering command center 192 verified global agricultural grants across 8 countries us germany japan netherlands korea fr"
-  },
-  {
-    "title": "Deutscher Gartenbau-Meister &amp; KTBL-Standard Rechner",
-    "cat": "tool",
-    "url": "meister.html",
-    "icon": "🇩🇪",
-    "desc": "Offizielle deutsche Gartenbau-Normen (KTBL Datensammlung, DIN V 18599, DIN EN 13031-1, QS-GAP 2026, IFS Food v8, SVLFG VSG 4.2). Heizwärmebedarf, Deckungsbeitra",
-    "tags": "meister html deutscher gartenbau meister amp ktbl standard rechner offizielle deutsche gartenbau normen ktbl datensammlung din v 18599 din en 13031 1 qs gap 2026 ifs food v8 svlfg vsg 4 2 he"
+    "desc": "Open-access six-part Controlled Environment Agriculture compendium indexing 78 volumes (191 EN/DE/JA editions), 42 live biophysical calculators, and 192 agricul",
+    "tags": "handbooks index html the cea biophysics amp greenhouse engineering handbook 78 volumes 191 editions open access six part controlled environment agriculture compendium indexing 78 volumes 191"
   },
   {
     "title": "AgriMaster",
@@ -2072,14 +2142,6 @@
     "icon": "🎙️",
     "desc": "Der deutsche Lernpodcast für Gewächshaustechnik, Nachrichten, Wissenschaft und die Gärtnermeister-Karriere. Gesprochen in langsamem, deutlichem Deutsch (A2/B1).",
     "tags": "podcasts index html deutscher meisterfunk podcast für moderne landwirtschaft amp technik der deutsche lernpodcast für gewächshaustechnik nachrichten wissenschaft und die gärtnermeister karri"
-  },
-  {
-    "title": "OpenCEA Biophysics Mastery Quiz & Free Certificate Engine",
-    "cat": "tool",
-    "url": "quiz.html",
-    "icon": "🛠️",
-    "desc": "Test your precision CEA horticultural biophysics knowledge. Solve 10 questions on VPD, DLI, DIN V 18599, and fertigation to earn a free verifiable Certificate o",
-    "tags": "quiz html opencea biophysics mastery quiz free certificate engine test your precision cea horticultural biophysics knowledge solve 10 questions on vpd dli din v 18599 and fertigation to earn"
   },
   {
     "title": "About Smart Farm Engineering Lab",
@@ -2166,7 +2228,7 @@
     "cat": "sim",
     "url": "smartfarm/library_vpd_optimization_tomato.html",
     "icon": "🧪",
-    "desc": "Vapor pressure deficit (VPD) is a critical climate parameter that directly influences plant transpiration, nutrient uptake, and overall yield in contr...",
+    "desc": "Vapor pressure deficit (VPD) is a critical climate parameter that directly influences plant transpiration, calcium xylem mass-flow, Blossom-End Rot prevention, ",
     "tags": "smartfarm library vpd optimization tomato html optimization of vapor pressure deficit vpd for greenhouse tomato yield and quality vapor pressure deficit vpd is a critical climate parameter t"
   },
   {
@@ -2232,14 +2294,6 @@
     "icon": "🧪",
     "desc": "Calculate leaf-to-air Vapor Pressure Deficit (VPD) in real-time using the Tetens equation. Optimize greenhouse climate for seedling, vegetative, and flowering s",
     "tags": "smartfarm vpd html leaf vpd calculator calculate leaf to air vapor pressure deficit vpd in real time using the tetens equation optimize greenhouse climate for seedling vegetative and floweri"
-  },
-  {
-    "title": "Open-Access AgTech Engineering Repository &amp; Digital Assets",
-    "cat": "tool",
-    "url": "store.html",
-    "icon": "🛠️",
-    "desc": "100% Free, open-access institutional engineering assets: Python fertigation solvers, 50-State USDA grant playbooks, smart greenhouse BOM estimators, and Bavaria",
-    "tags": "store html open access agtech engineering repository amp digital assets 100 free open access institutional engineering assets python fertigation solvers 50 state usda grant playbooks smart g"
   },
   {
     "title": "OpenCEA Pro: Commercial Controlled Environment Agriculture Suite",
@@ -2374,7 +2428,7 @@
     "cat": "tool",
     "url": "tools/fogging-nozzle-droplet-evaporative-cooling-engine.html",
     "icon": "🛠️",
-    "desc": "Industrial 70 bar high-pressure fogging calculator. Compute Sauter Mean Diameter (D32 < 10µm), flash evaporation rates, adiabatic temperature drop, and leaf wet",
+    "desc": "Industrial 70 bar high-pressure fogging calculator. Compute Sauter Mean Diameter (D32 &lt; 10µm), flash evaporation rates, adiabatic temperature drop, and leaf ",
     "tags": "tools fogging nozzle droplet evaporative cooling engine html high pressure fogging evaporative cooling droplet engine industrial 70 bar high pressure fogging calculator compute sauter mean d"
   },
   {
@@ -2592,14 +2646,6 @@
     "icon": "🛠️",
     "desc": "Industrial 3D parametric CAD and structural engineering engine for Venlo greenhouses. Features real-time WebGL frame generation, NEN 3859 / EN 13031-1 structura",
     "tags": "tools venlocad 3d html venlocad 3d industrial parametric greenhouse cad structural engineering engine industrial 3d parametric cad and structural engineering engine for venlo greenhouses fea"
-  },
-  {
-    "title": "Greenhouse Cultivation & Facility Troubleshooting Wizard",
-    "cat": "tool",
-    "url": "troubleshoot.html",
-    "icon": "🛠️",
-    "desc": "Instant diagnostic wizard for commercial greenhouse and indoor farm issues. Identify root causes for tip burn, blossom-end rot, condensation, and heating spikes",
-    "tags": "troubleshoot html greenhouse cultivation facility troubleshooting wizard instant diagnostic wizard for commercial greenhouse and indoor farm issues identify root causes for tip burn blossom "
   },
   {
     "title": "Photomorphogenic Regulation of Anthocyanin Biosynthetic Genes via Blue-to-Red Spectral Ratios",
@@ -2976,13 +3022,13 @@
       <div class="inwoo-palette-box" role="dialog" aria-modal="true" aria-label="Inwoovation Spotlight Search">
         <div class="inwoo-palette-header">
           <span class="inwoo-palette-search-icon">🔍</span>
-          <input type="text" id="inwoo-palette-input" placeholder="Search all 368 tools, simulators, wiki, crops, climate hubs & EN/DE/JA articles..." autocomplete="off" />
+          <input type="text" id="inwoo-palette-input" placeholder="Search all 369 tools, simulators, wiki, crops, climate hubs & EN/DE/JA articles..." autocomplete="off" />
           <span class="inwoo-palette-esc-badge" onclick="window.InwooPalette.close()">ESC</span>
         </div>
         <div class="inwoo-palette-tabs">
-          <button class="inwoo-pal-tab active" data-cat="all">✨ All (368)</button>
+          <button class="inwoo-pal-tab active" data-cat="all">✨ All (369)</button>
           <button class="inwoo-pal-tab" data-cat="tool">🛠️ Tools (49)</button>
-          <button class="inwoo-pal-tab" data-cat="article">📚 Articles (196)</button>
+          <button class="inwoo-pal-tab" data-cat="article">📚 Articles (197)</button>
           <button class="inwoo-pal-tab" data-cat="wiki">🧬 Wiki (44)</button>
           <button class="inwoo-pal-tab" data-cat="climate">🌍 Climate (41)</button>
           <button class="inwoo-pal-tab" data-cat="sim">🧪 Simulators (19)</button>
@@ -2996,7 +3042,7 @@
             <span><kbd>↵</kbd> Open</span>
             <span><kbd>Esc</kbd> Close</span>
           </div>
-          <div style="color: #64748b; font-size: 0.75rem;">Inwoovation Universal Spotlight (368 Indexed Pages)</div>
+          <div style="color: #64748b; font-size: 0.75rem;">Inwoovation Universal Spotlight (369 Indexed Pages)</div>
         </div>
       </div>
     `;
@@ -3471,10 +3517,88 @@
     }
   }
 
+  function initGdprConsentBanner() {
+    if (document.getElementById('inw-gdpr-consent-bar')) return;
+    if (navigator.webdriver || /HeadlessChrome|PhantomJS|Lighthouse|PTST/i.test(navigator.userAgent || '')) return;
+    let saved = null;
+    try {
+      saved = window.localStorage ? window.localStorage.getItem(CONSENT_STORAGE_KEY) : null;
+    } catch (_err) {
+      saved = null;
+    }
+    if (saved === 'granted' || saved === 'essential') return;
+    // Defer if Google Funding Choices certified TCF v2.2 modal is active on page
+    if (window.googlefc && typeof window.googlefc.callbackQueue !== 'undefined') return;
+
+    const docLang = ((document.documentElement && document.documentElement.lang) || '').toLowerCase();
+    const pathLower = (window.location.pathname || '').toLowerCase();
+    let copy = {
+      msg: 'We use cookies & Google Consent Mode v2 for anonymous analytics and sustainable open-access CEA tools. ',
+      linkLabel: 'Privacy Policy',
+      essential: 'Essential Only',
+      accept: 'Accept All'
+    };
+    if (docLang.startsWith('de') || pathLower.indexOf('/de/') !== -1 || pathLower.indexOf('meister.html') !== -1) {
+      copy = {
+        msg: 'Wir nutzen Cookies & Google Consent Mode v2 für anonyme Analysen und den kostenfreien Betrieb unserer Gartenbau-Rechner. ',
+        linkLabel: 'Datenschutzerklärung',
+        essential: 'Nur Essenzielle',
+        accept: 'Alle akzeptieren'
+      };
+    } else if (docLang.startsWith('ja') || pathLower.indexOf('/ja/') !== -1) {
+      copy = {
+        msg: '当ラボは匿名アクセス解析および無料施設園芸シミュレーター運営のため Cookie と Google Consent Mode v2 を使用します。 ',
+        linkLabel: 'プライバシーポリシー',
+        essential: '必須のみ',
+        accept: 'すべて同意'
+      };
+    }
+
+    const bar = document.createElement('div');
+    bar.id = 'inw-gdpr-consent-bar';
+    bar.setAttribute('role', 'region');
+    bar.setAttribute('aria-label', 'Cookie & Privacy Consent');
+    bar.style.boxSizing = 'border-box';
+    bar.innerHTML =
+      '<div style="flex:1; min-width:220px;">' +
+        copy.msg +
+        '<a href="/privacy-policy.html">' + copy.linkLabel + '</a>' +
+      '</div>' +
+      '<div class="inw-gdpr-actions">' +
+        '<button type="button" class="inw-gdpr-btn-essential" id="inw-gdpr-reject-btn">' + copy.essential + '</button>' +
+        '<button type="button" class="inw-gdpr-btn-accept" id="inw-gdpr-accept-btn">' + copy.accept + '</button>' +
+      '</div>';
+
+    function applyChoice(choice) {
+      const granted = choice === 'granted';
+      const stateVal = granted ? 'granted' : 'denied';
+      try {
+        if (window.localStorage) window.localStorage.setItem(CONSENT_STORAGE_KEY, choice);
+      } catch (_storeErr) {
+        // Ignore storage quota errors
+      }
+      const fn = typeof window.gtag === 'function' ? window.gtag : function() { (window.dataLayer = window.dataLayer || []).push(arguments); };
+      fn('consent', 'update', {
+        ad_storage: stateVal,
+        ad_user_data: stateVal,
+        ad_personalization: stateVal,
+        analytics_storage: stateVal
+      });
+      if (bar && bar.parentNode) bar.parentNode.removeChild(bar);
+    }
+
+    document.body.appendChild(bar);
+    const acceptBtn = document.getElementById('inw-gdpr-accept-btn');
+    const rejectBtn = document.getElementById('inw-gdpr-reject-btn');
+    if (acceptBtn) acceptBtn.addEventListener('click', function() { applyChoice('granted'); });
+    if (rejectBtn) rejectBtn.addEventListener('click', function() { applyChoice('essential'); });
+  }
+
   function bootAll() {
     initPaletteModal();
     initReaderConvenienceUX();
     initWorkspacePersistenceUX();
+    initGdprConsentBanner();
   }
 
   if (document.readyState === 'loading') {

@@ -1,14 +1,14 @@
 # 📘 The CEA Biophysics & Greenhouse Engineering Handbook
-## OpenCEA Compendium: 78 Volumes (190 Multilingual Editions) & 42 Live Simulators
+## OpenCEA Compendium: 78 Volumes (191 Multilingual Editions) & 42 Live Simulators
 
 > **Author**: Inwoovation Lab (Inwoo Hwang)  
 > **Target Audience**: Commercial Greenhouse Operators, Plant Factory Systems Engineers, Gärtnermeister Candidates, Agronomists  
-> **Publication Standard**: Verified Biophysical Equations (Magnus-Tetens, Penman-Monteith, Farquhar FvCB, DIN V 18599, Debye-Hückel), Interactive Simulator Synchronized (`2026-11-18`)  
+> **Publication Standard**: Verified Biophysical Equations (Magnus-Tetens, Penman-Monteith, Farquhar FvCB, DIN V 18599, Debye-Hückel), Interactive Simulator Synchronized (`2026-11-19`)  
 
 ---
 
 ## 📌 Executive Abstract & Compendium Profile
-This open-access technical compendium organizes all **78 English engineering monographs** (**190 total EN/DE/JA editions**) alongside **42 client-side biophysical simulators** and **192 hyper-local agricultural grant programs** into six engineering domains.
+This open-access technical compendium organizes all **78 English engineering monographs** (**191 total EN/DE/JA editions**) alongside **42 client-side biophysical simulators** and **192 hyper-local agricultural grant programs** into six engineering domains.
 
 ---
 
@@ -217,8 +217,9 @@ This open-access technical compendium organizes all **78 English engineering mon
 ## Volume 72: Thermodynamic Optimization of Semi-Closed Venlo Greenhouses: High-Pressure Fogging, Active Mechanical Dehumidification, and Latent Heat Recovery
 <a id="chapter-72-article-72-semi-closed-greenhouse-mollier-psychrometrics-latent-heat"></a>
 - **EN Monograph**: [../articles/article-72-semi-closed-greenhouse-mollier-psychrometrics-latent-heat.html](../articles/article-72-semi-closed-greenhouse-mollier-psychrometrics-latent-heat.html)
+- **DE Edition**: [../articles/de/article-72-semi-closed-greenhouse-mollier-psychrometrics-latent-heat.html](../articles/de/article-72-semi-closed-greenhouse-mollier-psychrometrics-latent-heat.html)
 - **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
-- **Synopsis**: Technical engineering monograph on semi-closed Venlo greenhouse thermodynamics: positive-pressure air distribution ducts, Mollier h-x psychrometric.
+- **Synopsis**: Technical engineering monograph on semi-closed Venlo greenhouse thermodynamics: positive-pressure air distribution ducts, Mollier h-x psychrometric latent heat recovery (COP >= 4.4), high-pressure adiabatic fogging (70 bar), and daylight CO2 sequestration.
 
 ## Volume 74: Semi-Closed Greenhouse Corridor Air Treatment Units (ATU): Positive-Pressure Insect Exclusion (+20~25 Pa), Mollier Enthalpy Balancing, and 1-Click VenloCAD 3D Integration
 <a id="chapter-74-article-74-semi-closed-greenhouse-atu-mollier-venlocad-integration"></a>

@@ -373,22 +373,24 @@ def render_directory_html(records: list[dict[str, str]], date_modified: str) -> 
 
 def render_language_articles_hub(lang_code: str, items: list[dict[str, str]], date_modified: str) -> str:
     """Render an institutional multilingual article hub for /articles/de/ or /articles/ja/."""
+    article_items = [rec for rec in items if os.path.basename(rec["rel"]).startswith("article-")]
+    art_count = len(article_items)
     cfg = {
         "de": {
             "url": "https://inwoovation.com/articles/de/",
-            "title": f"Deutsche Gartenbau-Meister Fachartikel &amp; CEA-Technik ({len(items)} Monographien) | Inwoovation Lab",
-            "title_plain": f"Deutsche Gartenbau-Meister Fachartikel & CEA-Technik ({len(items)} Monographien)",
-            "desc": f"Vollständige deutschsprachige Wissensdatenbank mit {len(items)} technischen Fachartikeln zu VPD-Psychrometrie, DIN V 18599 Heizlast, EN 13031-1 Venlo-Statik, FvCB-CO2-Kinetik und BLE/KTBL-Förderprogrammen.",
-            "h1": f"Deutsche Fachartikel für Gewächshaustechnik &amp; Gartenbau-Meister ({len(items)} Monographien)",
+            "title": f"Deutsche Gartenbau-Meister Fachartikel &amp; CEA-Technik ({art_count} Monographien) | Inwoovation Lab",
+            "title_plain": f"Deutsche Gartenbau-Meister Fachartikel & CEA-Technik ({art_count} Monographien)",
+            "desc": f"Vollständige deutschsprachige Wissensdatenbank mit {art_count} technischen Fachartikeln zu VPD-Psychrometrie, DIN V 18599 Heizlast, EN 13031-1 Venlo-Statik, FvCB-CO2-Kinetik und BLE/KTBL-Förderprogrammen.",
+            "h1": f"Deutsche Fachartikel für Gewächshaustechnik &amp; Gartenbau-Meister ({art_count} Monographien)",
             "lead": "Kuratierte technische Bibliothek von <strong>Inwoovation Lab</strong> für Erwerbsgartenbau, Unterglasproduktion und Fachschulen für Gartenbau (<em>Gärtnermeister / Agrarbetriebswirt</em>). Alle Fachmonographien formulieren thermodynamische Bilanzen, Psychrometrie, Nährlösungs-Stöchiometrie und Fördermechanik auf Basis verbindlicher Normen wie DIN EN 13031-1, DIN V 18599, NEN 3859, FAO-56 Penman-Monteith sowie KTBL- und BLE-Richtwerten.",
             "search_ph": "Fachartikel filtern (z. B. VPD, Heizlast, DIN 18599, Mollier, Erdbeeren, Tomaten, BLE, CO2)...",
             "home_label": "← Zurück zur Übersicht",
             "en_pill": "🇺🇸 English Edition (/articles/)",
-            "de_pill": f"🇩🇪 Deutsch ({len(items)})",
+            "de_pill": f"🇩🇪 Deutsch ({art_count})",
             "ja_pill": "🇯🇵 日本語版 (/articles/ja/)",
             "tools_cta": "🏗️ VenloCAD 3D &amp; Berechnungstools",
             "dir_cta": "🗂️ Komplettes Verzeichnis",
-            "list_h2": f"📚 Alle {len(items)} deutschsprachigen Technik-Monographien",
+            "list_h2": f"📚 Alle {art_count} deutschsprachigen Technik-Monographien",
             "notes_h2": "🏛️ Methodische Standards, Normenbezug &amp; Praxis-FAQ",
             "notes_p1": "Die deutschsprachige Sektion von Inwoovation Lab übersetzt anspruchsvolle Gewächshausphysik und betriebswirtschaftliche Förderanalyse in sofort anwendbare Sollwerte für Produktionsleiter und Meisterschüler. Besonderer Fokus liegt auf der Entkopplung von Heizwärmebedarf, EPEX-Spot-Strompreissignalen, Power-to-Heat-Pufferspeichern, Aquiferspeichern (ATES) sowie geschlossener Hydrokultur mit Debye-Hückel-Speziation und UV-C-Entkeimung.",
             "notes_p2": "Die Themencluster umfassen (1) Psychrometrie & Aerodynamik (VPD, Mollier h-x, HAF, Adiabatische Hochdruck-Vernebelung), (2) Thermische & Konstruktive Auslegung (DIN EN 13031-1, NEN 3859, DIN V 18599, BHKW mit SCR-DeNOx), (3) Photobiologie & LED-SPEKTRUM (DLI, ePAR, FvCB, Beer-Lambert), sowie (4) Geschlossene Kreislaufdüngung & Ökonomie (Sonneveld, van Genuchten pF, IRR/NPV, BLE/KfW).",
@@ -397,23 +399,23 @@ def render_language_articles_hub(lang_code: str, items: list[dict[str, str]], da
             "faq2_q": "Wie verknüpfen diese Fachartikel deutsche Förderprogramme mit Gewächshaus-Investitionen?",
             "faq2_a": "Mehrere Monographien sowie der Global Agri-Subsidy Navigator dokumentieren das Zusammenspiel von BLE-Bundesprogramm Energieeffizienz, KfW-Krediten, Agrarinvestitionsförderprogramm (AFP) sowie kommunalen Klimabonus-Zuschüssen inklusive Amortisations- und Kapitalwertrechnung (IRR/NPV).",
             "faq3_q": "Stehen alle Fachartikel und Simulatoren ohne Paywall für Meisterschüler zur Verfügung?",
-            "faq3_a": "Ja. Alle 65 deutschsprachigen Monographien sowie die interaktiven Rechner (VenloCAD 3D, Heizlast-Rechner, VPD-Labor, Nährlösungs-Bilanzierung) sind frei zugänglich und verlinken direkt auf die passenden Rechenwerkzeuge.",
+            "faq3_a": f"Ja. Alle {art_count} deutschsprachigen Monographien sowie die interaktiven Rechner (VenloCAD 3D, Heizlast-Rechner, VPD-Labor, Nährlösungs-Bilanzierung) sind frei zugänglich und verlinken direkt auf die passenden Rechenwerkzeuge.",
         },
         "ja": {
             "url": "https://inwoovation.com/articles/ja/",
-            "title": f"日本語 施設園芸・スマート農業工学モノグラフ一覧 ({len(items)} 論文) | Inwoovation Lab",
-            "title_plain": f"日本語 施設園芸・スマート農業工学モノグラフ一覧 ({len(items)} 論文)",
-            "desc": f"商業用 Venlo 型ガラス温室の VPD 飽差熱力学・DIN V 18599 暖房負荷・EN 13031-1 構造設計・FvCB CO2 施用・養液化学平衡を解説する {len(items)} 編の日本語技術論文アーカイブ。",
-            "h1": f"施設園芸・スマート農業工学 日本語技術モノグラフ ({len(items)} 編)",
+            "title": f"日本語 施設園芸・スマート農業工学モノグラフ一覧 ({art_count} 論文) | Inwoovation Lab",
+            "title_plain": f"日本語 施設園芸・スマート農業工学モノグラフ一覧 ({art_count} 論文)",
+            "desc": f"商業用 Venlo 型ガラス温室の VPD 飽差熱力学・DIN V 18599 暖房負荷・EN 13031-1 構造設計・FvCB CO2 施用・養液化学平衡を解説する {art_count} 編の日本語技術論文アーカイブ。",
+            "h1": f"施設園芸・スマート農業工学 日本語技術モノグラフ ({art_count} 編)",
             "lead": "<strong>Inwoovation Lab</strong> が公開する商業用ガラス温室および完全人工光型植物工場 (PFAL / CEA) 向けの日本語技術研究アーカイブです。各技術論文は DIN EN 13031-1、NEN 3859、DIN V 18599、ASABE EP406、FAO-56 Penman-Monteith、Farquhar-von Caemmerer-Berry (FvCB) 光合成モデル、ならびに閉鎖系養液栽培における Debye-Hückel イオン活量・沈殿飽和指数 (SI) を第一原理に基づいて体系化しています。",
             "search_ph": "技術論文を検索 (例: VPD, DLI, DIN 18599, Mollier, CO2, イチゴ, トマト, イオン)...",
             "home_label": "← 工学ライブラリ トップへ",
             "en_pill": "🇺🇸 English Edition (/articles/)",
             "de_pill": "🇩🇪 Deutsche Ausgabe (/articles/de/)",
-            "ja_pill": f"🇯🇵 日本語 ({len(items)})",
+            "ja_pill": f"🇯🇵 日本語 ({art_count})",
             "tools_cta": "🏗️ VenloCAD 3D &amp; 工学シミュレーター",
             "dir_cta": "🗂️ 全ページ総索引",
-            "list_h2": f"📚 公開中の日本語 技術論文モノグラフ ({len(items)} 編)",
+            "list_h2": f"📚 公開中の日本語 技術論文モノグラフ ({art_count} 編)",
             "notes_h2": "🏛️ 物理モデリング基準・国際標準規格およびよくある質問 (FAQ)",
             "notes_p1": "本セクションでは、オランダ Westland / Bleiswijk、ドイツ Nürnberg / Freising、日本 つくば (Tsukuba) / 豊橋、韓国 全北 金堤 (Gimje) など世界主要 CEA クラスターの現場エンジニアに向けて、飽差 (VPD)・積算日射量 (DLI)・水平気流ファン (HAF)・Aquifer Thermal Energy Storage (ATES) ヒートポンプ・EPEX / 電力市場連動型 MPC 最適制御の設計理論と実務設定値を無料公開しています。",
             "notes_p2": "主要研究領域は以下の 5 つの工学ピラーで構成されています: (1) Vapor Pressure Deficit (VPD), Mollier h-x エンタルピー線図, Horizontal Air Flow (HAF), Adiabatic Fogging (70 bar D32) による微気象制御; (2) DIN EN 13031-1, Dutch NEN 3859 構造力学, DIN V 18599 熱負荷・多層保温スクリーン, Power-to-Heat (P2H) バッファータンク成層化 (Richardson Number Ri) 設計; (3) Extended PAR (400-750 nm), Daily Light Integral (DLI), Phytochrome Photostationary State (PSS), Beer-Lambert 群落吸光係数 (k) 光環境工学; (4) Closed-Loop Hydroponic Ion Stoichiometry (meq/L), Uptake Concentration Factor (UCF), Debye-Hückel &amp; Davies 活量係数, van Genuchten pF 水分曲線, Nanobubble Dissolved Oxygen (DO), Chick-Watson UV-C (254 nm) 殺菌; (5) Model Predictive Control (MPC), 10-Year CapEx/OpEx NPV &amp; IRR 投資財務分析および各国補助金制度比較 (USDA REAP / EQIP, German BLE / KfW, Japanese MAFF Smart Agriculture).",
@@ -422,11 +424,10 @@ def render_language_articles_hub(lang_code: str, items: list[dict[str, str]], da
             "faq2_q": "各技術論文に対応する対話型ブラウザ計算ツール (VPD / 暖房負荷 / 養液平衡) は無料で使えますか？",
             "faq2_a": "はい。すべての技術論文は VenloCAD 3D、VPD Calculator、DIN V 18599 Heating Load Simulator、Hydroponic Nutrient Stoichiometry 計算機およびグローバル補助金ナビゲーターと相互リンクしており、登録不要・完全無料でブラウザ上から即時検証できます。",
             "faq3_q": "英語版 (EN) やドイツ語版 (DE) の対応論文および植物工場・イチゴ・トマト栽培ガイドへどう移動できますか？",
-            "faq3_a": "各記事上部の言語スイッチャーまたは本ページ上部の /articles/ (English Edition) および /articles/de/ (Deutsche Ausgabe) ボタン、ならびに Ctrl+K Spotlight Search や Master Directory (/directory.html) から、全 368 ページの多言語リソースへ 1 クリックでアクセスできます。",
+            "faq3_a": "各記事上部の言語スイッチャーまたは本ページ上部の /articles/ (English Edition) および /articles/de/ (Deutsche Ausgabe) ボタン、ならびに Ctrl+K Spotlight Search や Master Directory (/directory.html) から、全公開ページの多言語リソースへ 1 クリックでアクセスできます。",
         },
     }[lang_code]
 
-    article_items = [rec for rec in items if os.path.basename(rec["rel"]).startswith("article-")]
     li_rows = "\n".join(
         f'        <li class="dir-item" data-search="{html_lib.escape((it["title"] + " " + it["href"]).lower())}">'
         f'<a href="{html_lib.escape(it["href"])}">{html_lib.escape(it["title"])}</a>'

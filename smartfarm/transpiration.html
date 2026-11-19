@@ -69,34 +69,26 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "What is the Penman-Monteith equation for greenhouse crop transpiration?",
+          "name": "How do you calculate greenhouse Vapor Pressure Deficit (VPD) accurately using leaf temperature?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "The Penman-Monteith equation is the biophysical gold standard for calculating crop evapotranspiration (ET). It balances the energy term (net solar radiation absorbed by the canopy) with the aerodynamic convective vapor transfer term (driven by Vapor Pressure Deficit, air density, and wind boundary layer resistance), throttled by internal stomatal resistance (rs)."
+            "text": "True canopy VPD must be calculated from saturated vapor pressure at actual radiometric leaf temperature (es(T_leaf) via the Tetens equation) minus ambient air vapor pressure (ea(T_air, RH)). Assuming T_leaf = T_air introduces a 0.25 to 0.45 kPa error under high solar radiation."
           }
         },
         {
           "@type": "Question",
-          "name": "How does Leaf Area Index (LAI) impact total greenhouse transpiration?",
+          "name": "What is the optimal VPD target range for commercial greenhouse crops?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Leaf Area Index (LAI) is the total single-sided leaf area per unit ground surface area (m²/m²). Through the Beer-Lambert law of radiation extinction, a mature canopy (LAI 2.5 to 3.5) intercepts 80% to 90% of incident light, drastically reducing canopy-level stomatal resistance and driving high hourly transpiration rates (0.3 to 0.7 L/m²·h under full sunlight)."
+            "text": "Vegetative propagation requires 0.4 to 0.7 kPa, active vegetative growth thrives at 0.8 to 1.1 kPa, and generative fruit set in tomato, bell pepper, and strawberry performs best between 1.1 and 1.4 kPa to balance stomatal CO2 uptake with xylem calcium mass flow."
           }
         },
         {
           "@type": "Question",
-          "name": "What is the difference between stomatal resistance (rs) and aerodynamic boundary layer resistance (ra)?",
+          "name": "How do you size a greenhouse dehumidifier or Air Treatment Unit (ATU) for night-time latent moisture removal?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Stomatal resistance (rs) represents the physiological resistance of plant guard cells to water vapor diffusion out of the stomatal pores, influenced by light intensity, VPD, and root hydration. Aerodynamic resistance (ra) is the physical boundary layer resistance of stagnant air clinging to the leaf surface, dictated by air circulation speed and leaf geometry."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How is hourly transpiration rate converted to greenhouse irrigation dosing?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Hourly transpiration (L/m²·h) is multiplied by total floor area and divided by crop plant density to calculate water consumption per plant. To maintain stable substrate electrical conductivity (EC) and prevent salt buildup in rockwool or coir, irrigation dosage is adjusted with a target drainage fraction: Dose = Transpiration / (1 - Target Drain Fraction)."
+            "text": "Multiply canopy night-time transpiration rate (typically 15 to 35 g/m²·h) by cultivated floor area (m²), then divide by the specific moisture extraction rate (L/kWh) at the target dew-point temperature on the Mollier h-x psychrometric chart."
           }
         }
       ]
@@ -133,7 +125,7 @@
 <body>
 <main class="container"><header>
 <div class="header-top-bar" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 0.8rem;">
-<div class="badge" id="header-badge" style="margin-bottom: 0;">Last Updated: November 16, 2026</div>
+<div class="badge" id="header-badge" style="margin-bottom: 0;">Last Updated: November 19, 2026</div>
 <div style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap;">
     <a href="https://inwoovation.com/" target="_blank" rel="noopener noreferrer" style="background: rgba(30, 41, 59, 0.9); border: 1px solid rgba(255, 255, 255, 0.18); color: #f8fafc; font-weight: 700; font-size: 0.85rem; padding: 0.45rem 0.9rem; border-radius: 100px; text-decoration: none; display: inline-flex; align-items: center; gap: 0.4rem; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); transition: all 0.25s ease;">
         🌐 Inwoovation Lab

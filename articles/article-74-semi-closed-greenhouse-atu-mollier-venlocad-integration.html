@@ -82,7 +82,7 @@
         "url": "https://inwoovation.com"
       },
       "datePublished": "2026-09-01",
-      "dateModified": "2026-11-08",
+      "dateModified": "2026-11-19",
       "mainEntityOfPage": "https://inwoovation.com/articles/article-74-semi-closed-greenhouse-atu-mollier-venlocad-integration.html"
     },
     {
@@ -113,26 +113,26 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "How do you calculate greenhouse Vapor Pressure Deficit (VPD) accurately using leaf temperature?",
+          "name": "How are condensation and water droplets prevented inside the air distribution ducts?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "True canopy VPD must be calculated from saturated vapor pressure at actual radiometric leaf temperature (es(T_leaf) via the Tetens equation) minus ambient air vapor pressure (ea(T_air, RH)). Assuming T_leaf = T_air introduces a 0.25 to 0.45 kPa error under high solar radiation."
+            "text": "Air treated inside the ATU chamber must never enter the poly-ducts in a supersaturated state. The climate control algorithm modulates high-pressure fogging to maintain supply air relative humidity at ≤ 92% RH. Furthermore, high-pressure 70-bar nozzles produce micro-droplets (10--15 μm) that flash-evaporate within 1.2 seconds inside the turbulent fan mixing plenum, ensuring completely dry air delivery into the perforated tubes."
           }
         },
         {
           "@type": "Question",
-          "name": "What is the optimal VPD target range for commercial greenhouse crops?",
+          "name": "Can a standard Venlo greenhouse be retrofitted into a semi-closed ATU system?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Vegetative propagation requires 0.4 to 0.7 kPa, active vegetative growth thrives at 0.8 to 1.1 kPa, and generative fruit set in tomato, bell pepper, and strawberry performs best between 1.1 and 1.4 kPa to balance stomatal CO2 uptake with xylem calcium mass flow."
+            "text": "Yes. Retrofitting involves constructing an external modular ATU corridor along the end gable, sealing ridge vent drive shafts with brush seals, installing under-gutter poly-ducts, and updating the climate computer software. As long as post height is ≥ 5.5 m to accommodate duct geometry beneath crop gutters, existing Venlo glasshouses can achieve 90% of the performance of a newly constructed semi-closed facility."
           }
         },
         {
           "@type": "Question",
-          "name": "How do you size a greenhouse dehumidifier or Air Treatment Unit (ATU) for night-time latent moisture removal?",
+          "name": "How does positive pressure affect greenhouse heating in winter?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Multiply canopy night-time transpiration rate (typically 15 to 35 g/m²·h) by cultivated floor area (m²), then divide by the specific moisture extraction rate (L/kWh) at the target dew-point temperature on the Mollier h-x psychrometric chart."
+            "text": "In winter, the ATU operates in 100% recirculation mode (α = 1.0) with outdoor dampers tightly sealed. The EC fans continuously draw warm air that naturally rises to the ridge and push it back down to the crop roots through the floor ducts. This completely eliminates vertical thermal inversion, reduces attic thermal loss through the roof glass, and decreases winter heating fuel consumption by 18% to 28%."
           }
         }
       ]
@@ -179,16 +179,6 @@
 
         <div class="lead-abstract">
             <strong>Executive Summary:</strong> The commercialization of modern semi-closed Venlo glasshouses (exemplified by the <em>Kubo Ultra-Clima</em> and <em>Van der Hoeven ModulAIR</em> paradigms) represents the most significant structural and aerodynamic leap in protected cultivation in fifty years. By concentrating all thermodynamic conditioning within dedicated <strong>End-Wall or Central Service Corridor Air Treatment Units (ATU)</strong>, growers decouple greenhouse microclimate control from ambient weather extremes. Operating under continuous positive static pressure (<strong>+20 to +25 Pa</strong>), semi-closed greenhouses establish an impermeable aerodynamic barrier that completely prevents the ingress of economic insect pests (<em>Frankliniella occidentalis</em>, <em>Bemisia tabaci</em>) and devastating viral vectors (ToBRFV) without the debilitating 50% airflow reduction of fine mesh insect netting. Utilizing the <strong>Mollier h-x psychrometric enthalpy diagram</strong>, the ATU chamber executes precise non-linear mixing of recirculated and outdoor air, coupled with 70-bar adiabatic aerosol fogging and deep under-gutter perforated poly-duct (<em>Folientransportschläuche</em>, Φ 750--800 mm) static regain aeration. Furthermore, through our direct <strong>1-Click VenloCAD 3D Parametric CAD Integration</strong>, project engineers can instantly transform psychrometric sizing specifications into fully rendered WebGL structural digital twins, complete with real-time Bill of Materials (BOM) and B2B commercial CPQ proposals.
-        </div>
-
-        <!-- AdSense Top Banner -->
-        <div class="ad-slot">
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-8597809158257497"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
         </div>
 
         <!-- Section 1: ATU Chamber Architecture -->
@@ -422,16 +412,6 @@ A<sub>holes</sub>(z) = (q&#775;<sub>target</sub>)/(C_d · √(2 · P<sub>static<
                 </tbody>
             </table>
         </section>
-
-        <!-- AdSense Bottom Slot -->
-        <div class="ad-slot">
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-8597809158257497"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-        </div>
 
         <!-- Section 7: FAQ Accordion -->
         <section class="section-card">

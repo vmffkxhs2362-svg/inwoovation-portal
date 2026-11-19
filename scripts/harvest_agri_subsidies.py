@@ -1065,34 +1065,38 @@ def harvest_portal(portal, ledger, db_conn, timeout=5, prefetched_html=None):
         found_count += 1
         print(f"    🌟 [NEW CANDIDATE] {text} ➔ {full_url}")
 
-        if cur:
-            try:
-                cur.execute("""
-                    INSERT OR IGNORE INTO discovered_candidates (
-                        source_platform, agency_name, opportunity_title, opportunity_url,
-                        category, est_funding_amount, deadline_text, is_cross_domain, matched_tracks,
-                        status, discovery_notes, tier, region, discovered_at
-                    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP)
-                """, (
-                    portal["id"],
-                    portal.get("agency", "Government Agency"),
-                    text,
-                    full_url,
-                    "Agriculture /CEA / Climate",
-                    "Check announcement",
-                    "Active Solicitation",
-                    1 if any(k in text.lower() for k in ["energy", "clean", "microgrid", "heat"]) else 0,
-                    json.dumps(["agriculture", portal["country"], region, tier]),
-                    "pending_review",
-                    f"Harvested via {portal['id']} ({tier}) on {datetime.now().strftime('%Y-%m-%d')}",
-                    tier,
-                    region
-                ))
-            except Exception as dbe:
-                print(f"    ⚠️ DB insert warning: {dbe}")
+        if cur is not None:
+            if not hasattr(harvest_portal, "_pending_rows"):
+                harvest_portal._pending_rows = []
+            harvest_portal._pending_rows.append((
+                portal["id"],
+                portal.get("agency", "Government Agency"),
+                text,
+                full_url,
+                "Agriculture /CEA / Climate",
+                "Check announcement",
+                "Active Solicitation",
+                1 if any(k in text.lower() for k in ["energy", "clean", "microgrid", "heat"]) else 0,
+                json.dumps(["agriculture", portal["country"], region, tier]),
+                "pending_review",
+                f"Harvested via {portal['id']} ({tier}) on {datetime.now().strftime('%Y-%m-%d')}",
+                tier,
+                region,
+            ))
 
-    if cur and db_conn:
-        db_conn.commit()
+    if cur is not None and getattr(harvest_portal, "_pending_rows", None):
+        try:
+            cur.executemany("""
+                INSERT OR IGNORE INTO discovered_candidates (
+                    source_platform, agency_name, opportunity_title, opportunity_url,
+                    category, est_funding_amount, deadline_text, is_cross_domain, matched_tracks,
+                    status, discovery_notes, tier, region, discovered_at
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP)
+            """, harvest_portal._pending_rows)
+        except Exception as dbe:
+            print(f"    ⚠️ DB batch insert warning: {dbe}")
+        finally:
+            harvest_portal._pending_rows = []
 
     print(f"    ✅ [{portal['id']}] Found {found_count} new potential notices.")
     return found_count
@@ -1251,6 +1255,7 @@ def main():
     save_ledger(ledger)
 
     if db_conn:
+        db_conn.commit()
         db_conn.close()
 
     print(f"\n🎉 Harvest audit complete across {len(selected_portals)} portals: {total_new} new candidates indexed.")

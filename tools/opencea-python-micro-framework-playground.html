@@ -321,16 +321,6 @@
       <span class="copy-badge" onclick="copyInstallCmd()">Copy Install Command</span>
     </div>
 
-    <!-- AdSense Top Banner -->
-    <div class="ad-card">
-      <ins class="adsbygoogle"
-           style="display:block"
-           data-ad-client="ca-pub-8597809158257497"
-           data-ad-format="auto"
-           data-full-width-responsive="true"></ins>
-    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-    </div>
-
     <!-- Endpoint Selector Tabs -->
     <div class="endpoint-tabs">
       <button class="endpoint-tab active" onclick="selectEndpoint('vpd', this)"><span class="method-badge">POST</span> /v1/physics/vpd</button>
@@ -660,7 +650,8 @@ Subject to State Constraints:
           const aSide = data.side_vent_area_m2 || 60;
           const aEff = (aRoof * aSide) / Math.sqrt(aRoof**2 + aSide**2);
           const cd = 0.6;
-          const qBuoyancy = cd * aEff * Math.sqrt(g * 2.0 * deltaT / tMeanK);
+          const deltaH = Math.max(0.2, data.vent_height_diff_m || 2.0);
+          const qBuoyancy = cd * aEff * Math.sqrt(2.0 * g * deltaH * deltaT / tMeanK);
           const qWind = cd * (aRoof + aSide) * (data.wind_speed_m_s || 2.8) * Math.sqrt(0.09);
           const qTotal = Math.sqrt(qBuoyancy**2 + qWind**2);
           const ach = (qTotal * 3600) / (data.greenhouse_volume_m3 || 5500);
@@ -757,9 +748,14 @@ Subject to State Constraints:
           const xMix = (1.0 - recRatio) * xOut + recRatio * xIn;
           const hMix = (1.0 - recRatio) * hOut + recRatio * hIn;
 
-          const twb = tMix * Math.atan(0.151977 * Math.pow(xMix * 1000 + 8.313659, 0.5)) +
-                      Math.atan(tMix + xMix * 1000) - Math.atan(xMix * 1000 - 1.676331) +
-                      0.00391838 * Math.pow(xMix * 1000, 1.5) * Math.atan(0.023101 * xMix * 1000) - 4.686035;
+          const esMix = 0.61078 * Math.exp((17.27 * tMix) / (tMix + 237.3));
+          const eaMix = (101.325 * xMix) / (0.622 + xMix);
+          const rhMixPct = Math.min(99.9, Math.max(5.0, (eaMix / esMix) * 100.0));
+
+          // Stull (2011) empirical wet-bulb equation using Relative Humidity (%)
+          const twb = tMix * Math.atan(0.151977 * Math.pow(rhMixPct + 8.313659, 0.5)) +
+                      Math.atan(tMix + rhMixPct) - Math.atan(rhMixPct - 1.676331) +
+                      0.00391838 * Math.pow(rhMixPct, 1.5) * Math.atan(0.023101 * rhMixPct) - 4.686035;
 
           const deltaTMax = Math.max(0, tMix - twb);
           const tSupply = tMix - (deltaTMax * fogEff);

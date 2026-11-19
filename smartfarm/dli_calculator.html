@@ -92,34 +92,18 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "What is the formula for calculating Daily Light Integral (DLI)?",
+      "name": "Can I run greenhouse lights 24 hours continuously to maximize DLI?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Daily Light Integral (DLI, mol/m²/day) is calculated by multiplying Photosynthetic Photon Flux Density (PPFD, μmol/m²/s) by the photoperiod in seconds and dividing by 1,000,000: DLI = PPFD × Photoperiod (hours) × 3,600 / 1,000,000, which simplifies to DLI = PPFD × Hours × 0.0036."
+        "text": "For most fruiting crops (Solanaceae like tomatoes and peppers), 24-hour continuous lighting induces severe leaf chlorosis, starch accumulation damage, and premature senescence. Tomatoes require a mandatory continuous dark rest period of at least 6 hours (maximum 18-hour photoperiod). However, some leafy greens and microgreens can tolerate 20 to 24 hours under low PPFD."
       }
     },
     {
       "@type": "Question",
-      "name": "What is the optimal DLI for high-wire tomatoes and cucumbers?",
+      "name": "What is the impact of Far-Red (700-750 nm) photons on DLI?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "For high-wire greenhouse tomatoes and cucumbers, optimal target DLI is 25 to 30 mol/m²/day. A minimum of 15 mol/m²/day is required to maintain vegetative-generative balance, with 1% additional light typically translating to a 0.8% to 1.0% yield increase below saturation."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How does photoperiod length affect electricity cost for the same DLI?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Delivering the same DLI over a longer photoperiod requires lower instantaneous PPFD and lower fixture wattage, reducing capital fixture costs and heat spikes. Furthermore, scheduling supplemental lighting during off-peak night hours significantly lowers electricity costs per kilowatt-hour."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is the difference between PAR (400-700 nm) and extended PAR (ePAR, 400-750 nm)?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Traditional PAR measures photons between 400 and 700 nm. Recent photobiological research confirms that Far-Red photons (700-750 nm) act synergistically with shorter wavelength photons through the Emerson enhancement effect, driving equal quantum yield of photosynthesis while accelerating leaf expansion."
+        "text": "Historically excluded from classical PAR (400-700 nm), Far-Red photons are now recognized under the extended PAR (ePAR) standard. Far-Red drives Photosystem I, stimulating the Emerson enhancement effect and promoting leaf expansion to capture more photons."
       }
     }
   ]
@@ -132,7 +116,7 @@
 <main class="container">
 <header>
 <div class="header-top-bar" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 0.8rem;">
-<div class="badge" id="header-badge">Last Updated: November 16, 2026</div>
+<div class="badge" id="header-badge">Last Updated: November 19, 2026</div>
 <div style="display: flex; gap: 0.5rem; align-items: center;">
     <button class="lang-btn" id="btn-farm-profile" onclick="toggleFarmProfileDrawer()" style="border-color: var(--primary); color: var(--primary); display: inline-flex; align-items: center; gap: 0.3rem; font-weight: 600; padding: 0.4rem 0.8rem; border-radius: 10px; cursor: pointer; background: transparent; border: 1px solid;">
         📋 <span>My Farm</span>
@@ -448,12 +432,12 @@ function applyCropPreset() {
 }
 
 function calculateDLI() {
-    const targetDli = parseFloat(document.getElementById('dli-target').value) || 0;
-    const sunDli = parseFloat(document.getElementById('dli-sun').value) || 0;
-    const ppfd = parseFloat(document.getElementById('led-ppfd').value) || 0;
-    const hours = parseFloat(document.getElementById('led-hours').value) || 0;
-    const powerW = parseFloat(document.getElementById('led-power').value) || 0;
-    const rate = parseFloat(document.getElementById('elec-rate').value) || 0;
+    const targetDli = Math.max(0, parseFloat(document.getElementById('dli-target').value) || 0);
+    const sunDli = Math.max(0, parseFloat(document.getElementById('dli-sun').value) || 0);
+    const ppfd = Math.max(0, parseFloat(document.getElementById('led-ppfd').value) || 0);
+    const hours = Math.min(24, Math.max(0, parseFloat(document.getElementById('led-hours').value) || 0));
+    const powerW = Math.max(0, parseFloat(document.getElementById('led-power').value) || 0);
+    const rate = Math.max(0, parseFloat(document.getElementById('elec-rate').value) || 0);
 
     // LED DLI Formula: (PPFD * Hours * 3600) / 1,000,000
     const ledDli = (ppfd * hours * 3600) / 1000000;
@@ -469,6 +453,11 @@ function calculateDLI() {
     // Update DOM
     document.getElementById('res-total-dli').innerText = totalDli.toFixed(2) + ' mol/m²/d';
     document.getElementById('res-led-dli').innerText = ledDli.toFixed(2) + ' mol/m²/d';
+    const effEl = document.getElementById('res-efficacy');
+    if (effEl) {
+        const effVal = powerW > 0 ? (ppfd / powerW) : 2.70;
+        effEl.innerText = effVal.toFixed(2) + ' μmol/J';
+    }
     document.getElementById('res-daily-kwh').innerText = dailyKwh.toFixed(1) + ' kWh';
     document.getElementById('res-daily-cost').innerText = '$' + dailyCost.toFixed(2) + ' / day';
     document.getElementById('res-monthly-cost').innerText = '$' + monthlyCost.toFixed(2) + ' / month';
@@ -478,7 +467,7 @@ function calculateDLI() {
         statusEl.innerText = `✅ Target DLI Satisfied (${satisfyPct.toFixed(1)}% of Target)`;
         statusEl.style.color = '#86efac';
     } else {
-        statusEl.innerText = `⚠️ Target Deficit: Short by ${(targetDli - totalDli).toFixed(2)} mol/m²/d (${satisfyPct.toFixed(1)}% met)`;
+        statusEl.innerText = `⚠️ Target Deficit: Short by ${Math.max(0, targetDli - totalDli).toFixed(2)} mol/m²/d (${satisfyPct.toFixed(1)}% met)`;
         statusEl.style.color = '#fca5a5';
     }
 
@@ -486,7 +475,12 @@ function calculateDLI() {
     if (hours > 20) {
         steeringEl.innerText = '⚠️ Photoperiod exceeds 20 hours/day. Watch out for chlorosis or starch buildup in mesophyll cells. Consider increasing PPFD and reducing photoperiod to 16-18 hours.';
     } else if (satisfyPct < 85) {
-        steeringEl.innerText = `💡 Light Deficit Warning: Increase supplemental LED PPFD by at least ${Math.ceil(((targetDli - totalDli) * 1000000) / (hours * 3600))} μmol/m²/s or extend photoperiod to hit target DLI.`;
+        if (hours <= 0) {
+            const reqPpfd16h = Math.ceil((Math.max(0, targetDli - totalDli) * 1000000) / (16 * 3600));
+            steeringEl.innerText = `💡 Light Deficit Warning: Set LED photoperiod above 0 hours (e.g., 16 h/day at ~${reqPpfd16h} μmol/m²/s) to close the ${(targetDli - totalDli).toFixed(2)} mol/m²/d deficit.`;
+        } else {
+            steeringEl.innerText = `💡 Light Deficit Warning: Increase supplemental LED PPFD by at least ${Math.ceil(((targetDli - totalDli) * 1000000) / (hours * 3600))} μmol/m²/s or extend photoperiod to hit target DLI.`;
+        }
     } else {
         steeringEl.innerText = `🌱 Optimal Steering: Your photoperiod of ${hours.toFixed(1)} hours under ${ppfd} μmol/m²/s PPFD provides ideal photosynthetic photon flux. Maintain root zone temperature at 18-20°C for optimal ATP synthesis.`;
     }

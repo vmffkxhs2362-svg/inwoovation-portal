@@ -701,19 +701,25 @@
       return out;
     }
 
+    function clampNum(raw, min, max, fallback) {
+      const n = parseFloat(raw);
+      if (isNaN(n) || !isFinite(n)) return fallback;
+      return Math.max(min, Math.min(max, n));
+    }
+
     // --- 3. Core Recirculation Simulation Engine ---
     function runSimulation() {
-      const areaM2 = parseFloat(document.getElementById('in-area').value);
-      const doseL = parseFloat(document.getElementById('in-dose').value);
-      const dfPct = parseFloat(document.getElementById('in-drain-pct').value) / 100.0;
-      const reusePct = parseFloat(document.getElementById('in-reuse-pct').value) / 100.0;
+      const areaM2 = clampNum(document.getElementById('in-area').value, 10, 500000, 10000);
+      const doseL = clampNum(document.getElementById('in-dose').value, 0.2, 50.0, 4.5);
+      const dfPct = clampNum(document.getElementById('in-drain-pct').value, 5.0, 80.0, 30.0) / 100.0;
+      const reusePct = clampNum(document.getElementById('in-reuse-pct').value, 0.0, 98.0, 85.0) / 100.0;
       
-      const rawEC = parseFloat(document.getElementById('in-raw-ec').value);
-      const rawNa = parseFloat(document.getElementById('in-raw-na').value);
-      const rawCl = parseFloat(document.getElementById('in-raw-cl').value);
-      const rawCa = parseFloat(document.getElementById('in-raw-ca').value);
-      const rawSO4 = parseFloat(document.getElementById('in-raw-so4').value);
-      const targetEC = parseFloat(document.getElementById('in-target-ec').value);
+      const rawEC = clampNum(document.getElementById('in-raw-ec').value, 0.0, 4.0, 0.35);
+      const rawNa = clampNum(document.getElementById('in-raw-na').value, 0.0, 30.0, 0.8);
+      const rawCl = clampNum(document.getElementById('in-raw-cl').value, 0.0, 30.0, 0.9);
+      const rawCa = clampNum(document.getElementById('in-raw-ca').value, 0.0, 15.0, 1.2);
+      const rawSO4 = clampNum(document.getElementById('in-raw-so4').value, 0.0, 15.0, 0.6);
+      const targetEC = clampNum(document.getElementById('in-target-ec').value, 0.5, 6.0, 2.5);
 
       const crop = CROP_PROFILES[currentCrop];
       const dailyTotalWaterL = areaM2 * doseL;
@@ -827,7 +833,7 @@
 
       const annualRecycledM3 = Math.round((data.dailyRecycledL * 365) / 1000);
       document.getElementById('kpi-water-m3').innerText = annualRecycledM3.toLocaleString();
-      const reusePctVal = parseFloat(document.getElementById('in-reuse-pct').value);
+      const reusePctVal = clampNum(document.getElementById('in-reuse-pct').value, 0.0, 98.0, 85.0);
       document.getElementById('kpi-water-saved').innerText = `${reusePctVal.toFixed(1)}%`;
 
       // Fertilizer savings calculation

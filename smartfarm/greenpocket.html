@@ -40,26 +40,26 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "What is the easiest hydroponic system for home indoor gardening?",
+          "name": "How do you convert PPFD (µmol/m²/s) into Daily Light Integral (DLI in mol/m²/day)?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "The passive Kratky method is the simplest home hydroponic technique because it requires no water pumps, aerators, or electricity. As plants consume the initial nutrient solution, an expanding air zone forms between the net pot and liquid level, allowing roots to breathe atmospheric oxygen while drinking water."
+            "text": "Multiply canopy PPFD (µmol·m⁻²·s⁻¹) by photoperiod hours per day, then multiply by 0.0036 (since 3,600 seconds/hour divided by 1,000,000 µmol/mol equals 0.0036). For example, 250 µmol·m⁻²·s⁻¹ for 16 hours yields exactly 14.4 mol·m⁻²·d⁻¹."
           }
         },
         {
           "@type": "Question",
-          "name": "What are optimal EC and pH targets for home hydroponic leafy greens?",
+          "name": "What DLI target is required for commercial greenhouse tomatoes, strawberries, and leafy greens?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Most home hydroponic greens (lettuce, spinach, basil, mint) thrive at a solution pH of 5.5 to 6.2 and an Electrical Conductivity (EC) between 1.2 and 1.8 mS/cm. Maintaining pH below 6.5 prevents micronutrient lockout (especially iron and manganese)."
+            "text": "Butterhead and crisphead lettuce require 14 to 17 mol·m⁻²·d⁻¹ (above which tipburn risk rises without vertical airflow), greenhouse strawberries require 15 to 22 mol·m⁻²·d⁻¹, and high-wire fruiting tomatoes and bell peppers require 22 to 35+ mol·m⁻²·d⁻¹."
           }
         },
         {
           "@type": "Question",
-          "name": "How many hours should grow lights run for indoor home plants?",
+          "name": "How do you calculate supplemental LED fixture wattage and electricity ROI per square meter?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "For indoor leafy herbs and greens, full-spectrum LED grow lights should run 14 to 16 hours per day at an intensity of 150 to 250 μmol/m²·s PPFD, delivering a Daily Light Integral (DLI) of 10 to 14 mol/m²·day."
+            "text": "Divide the required supplemental PPFD (µmol·m⁻²·s⁻¹) by the fixture photosynthetic photon efficacy (PPE, typically 2.8 to 3.6 µmol/J) to obtain electrical power density (W/m²), then multiply by operating hours and kWh tariff."
           }
         }
       ]
@@ -374,21 +374,6 @@
         <button class="nav-btn" id="btn-kit">Mini Hydroponic Kits</button>
         <button class="nav-btn" id="btn-led">Grow LED Lights</button>
         <button class="nav-btn" id="btn-nutrient">Nutrients & Sensors</button>
-    </div>
-
-    <!-- Google AdSense Top Banner -->
-    <div class="ad-space-container">
-        <div class="ad-space-placeholder">
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-8597809158257497"
-                 data-ad-slot="5405747210"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-            <script>
-                 (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-        </div>
     </div>
 
     <main class="grid" id="product-grid">

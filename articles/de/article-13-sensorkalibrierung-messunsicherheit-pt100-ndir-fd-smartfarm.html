@@ -51,74 +51,82 @@
     <meta name="twitter:description" content="Ingenieurleitfaden zur Sensorkalibrierung im Unterglasgartenbau: Zweipunkt-Kalibrierung nach der Nernst-Gleichung (pH 7,00/4,01), Temperaturkompensation der elektrischen Leitfähigkeit (EC 25 °C), dielektrische TDR/FDR-Substratfeuchte und optische NDIR-CO2-Driftkompensation.">
     <script type="application/ld+json">
     {
-      "@context": "https://schema.org",
-      "@graph": [
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "headline": "Präzisions-Sensorkalibrierung im Smart-Greenhouse: Nernst-Gleichung (pH/EC), TDR/FDR-Substratfeuchte & NDIR-CO2-Driftkompensation",
+      "description": "Ingenieurleitfaden zur Sensorkalibrierung im Unterglasgartenbau: Zweipunkt-Kalibrierung nach der Nernst-Gleichung (pH 7,00/4,01), Temperaturkompensation der elektrischen Leitfähigkeit (EC 25 °C), dielektrische TDR/FDR-Substratfeuchte und optische NDIR-CO2-Driftkompensation.",
+      "url": "https://inwoovation.com/articles/de/article-13-sensorkalibrierung-messunsicherheit-pt100-ndir-fd-smartfarm.html",
+      "inLanguage": "de-DE",
+      "author": {
+        "@type": "Person",
+        "name": "Inwoo Hwang",
+        "jobTitle": "Horticultural & CEA Systems Engineer"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Inwoovation Lab",
+        "url": "https://inwoovation.com"
+      },
+      "datePublished": "2026-11-08",
+      "dateModified": "2026-11-19",
+      "mainEntityOfPage": "https://inwoovation.com/articles/de/article-13-sensorkalibrierung-messunsicherheit-pt100-ndir-fd-smartfarm.html"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
         {
-          "@type": "TechArticle",
-          "headline": "Präzisions-Sensorkalibrierung im Smart-Greenhouse: Nernst-Gleichung (pH/EC), TDR/FDR-Substratfeuchte & NDIR-CO2-Driftkompensation",
-          "description": "Ingenieurleitfaden zur Sensorkalibrierung im Unterglasgartenbau: Zweipunkt-Kalibrierung nach der Nernst-Gleichung (pH 7,00/4,01), Temperaturkompensation der elektrischen Leitfähigkeit (EC 25 °C), dielektrische TDR/FDR-Substratfeuchte und optische NDIR-CO2-Driftkompensation.",
-          "url": "https://inwoovation.com/articles/de/article-13-sensorkalibrierung-messunsicherheit-pt100-ndir-fd-smartfarm.html",
-          "inLanguage": "de-DE",
-          "author": {
-            "@type": "Person",
-            "name": "Inwoo Hwang",
-            "jobTitle": "Horticultural & CEA Systems Engineer"
-          },
-          "publisher": {
-            "@type": "Organization",
-            "name": "Inwoovation Lab",
-            "url": "https://inwoovation.com"
-          },
-          "datePublished": "2026-11-08",
-          "dateModified": "2026-11-08",
-          "mainEntityOfPage": "https://inwoovation.com/articles/de/article-13-sensorkalibrierung-messunsicherheit-pt100-ndir-fd-smartfarm.html"
+          "@type": "Question",
+          "name": "Welche physikalischen und normativen Grundlagen bestimmen das Thema „Präzisions-Sensorkalibrierung im Smart-Greenhouse: Nernst-Gleichung (pH/EC), TDR/FDR-Substratfeuchte & NDIR-CO 2 -Driftkompensation“ im Erwerbsgartenbau?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ingenieurleitfaden zur Sensorkalibrierung im Unterglasgartenbau: Zweipunkt-Kalibrierung nach der Nernst-Gleichung (pH 7,00/4,01), Temperaturkompensation der elektrischen Leitfähigkeit (EC 25 °C), dielektrische TDR/FDR-Substratfeuchte und optische NDIR-CO2-Driftkompensation. Alle Auslegungsparameter orientieren sich an verbindlichen europäischen Ingenieurnormen (DIN EN 13031-1, DIN V 18599, FAO-56 Penman-Monteith sowie DWA-/KTBL-Richtwerten) für kommerzielle Venlo-Gewächshäuser."
+          }
         },
         {
-          "@type": "FAQPage",
-          "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "Wann muss eine potentiometrische pH-Glaselektrode im Bewässerungscomputer ausgetauscht werden?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Bei einer Zweipunkt-Kalibrierung mit zertifizierten NIST/PTB-Pufferlösungen (pH 7,00 und pH 4,01 bei 25 °C) beträgt die theoretische Nernst-Steilheit -59,16 mV pro pH-Einheit. Fällt die gemessene Elektrodensteilheit nach einer Reinigung in 0,1 M HCl unter 90 % (weniger als 53,2 mV/pH) oder überschreitet das Nullpunktpotential (Asymmetriepotential bei pH 7,00) ±25 mV, ist die Glasmembran gealtert und die Sonde zwingend auszutauschen."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Warum ist im Gewächshaus ein belüftetes Aspirationspsychrometer (PT100/PT1000) gegenüber unbelüfteten Sensoren unverzichtbar?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Ohne zwangsbelüftete Messkammer (Luftgeschwindigkeit >= 3 m/s) erwärmt sich das Sensorgehäuse unter direkter Sonneneinstrahlung (> 600 W/m²) durch Strahlungsabsorption um 2,5 bis 4,5 K über die wahre Lufttemperatur. Dies führt zu einer systematischen Überschätzung des Dampfdruckdefizits (VPD) um bis zu 0,45 kPa und provoziert Fehlsteuerungen der Firstlüftung und Hochdrucknebelanlage."
-              }
-            }
-          ]
+          "@type": "Question",
+          "name": "Wie lassen sich die Kennzahlen aus „Präzisions-Sensorkalibrierung im Smart-Greenhouse: Nernst-Gleichung (pH/EC), TDR/FDR-Substratfeuchte & NDIR-CO 2 -Driftkompensation“ in der Klimacomputer- und Kultursteuerung umsetzen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Produktionsleiter erfassen Blatttemperatur, Einstrahlung, Substratfeuchte und Drän-EC kontinuierlich über kalibrierte Sensoren und überführen die berechneten Zielgrößen als gleitende Sollwertkurven in die Klimacomputer- und Bewässerungsregelung."
+          }
         },
         {
-          "@type": "BreadcrumbList",
-          "itemListElement": [
-            {
-              "@type": "ListItem",
-              "position": 1,
-              "name": "Inwoovation Lab",
-              "item": "https://inwoovation.com/"
-            },
-            {
-              "@type": "ListItem",
-              "position": 2,
-              "name": "Precision CEA Articles",
-              "item": "https://inwoovation.com/guides.html"
-            },
-            {
-              "@type": "ListItem",
-              "position": 3,
-              "name": "Sensorkalibrierung & Messunsicherheit im Smart-Greenhouse (DE Vol. 13)",
-              "item": "https://inwoovation.com/articles/de/article-13-sensorkalibrierung-messunsicherheit-pt100-ndir-fd-smartfarm.html"
-            }
-          ]
+          "@type": "Question",
+          "name": "Welche Förderprogramme unterstützen entsprechende Effizienz- und Modernisierungsinvestitionen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Je nach Bundesland und Systemgrenze kommen das BLE-Bundesprogramm Energieeffizienz (Modul 1–4), Rentenbank-Umweltkredite (LR-Top/LR-Premium) sowie landesspezifische Agrarinvestitionsförderprogramme (AFP) in Betracht."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inwoovation Lab",
+          "item": "https://inwoovation.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Precision CEA Articles",
+          "item": "https://inwoovation.com/guides.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Sensorkalibrierung & Messunsicherheit im Smart-Greenhouse (DE Vol. 13)",
+          "item": "https://inwoovation.com/articles/de/article-13-sensorkalibrierung-messunsicherheit-pt100-ndir-fd-smartfarm.html"
         }
       ]
     }
+  ]
+}
     </script>
     <link rel="stylesheet" href="/css/global-ui-enhancements.css?v=20261108">
     <script src="/js/global-search-palette.js?v=20261108" defer></script>
@@ -164,7 +172,7 @@
             <span>📅 2026-11-08</span>
             <span>🏷️ Messtechnik, Sensorik &amp; Prozessleittechnik (RAM / Priva)</span>
             <span>✍️ Inwoo Hwang (Horticultural &amp; CEA Systems Engineer)</span>
-            <span>⏱️ Reading Time: 4 min</span>
+            <span>⏱️ Reading Time: 5 min</span>
         </div>
 
         <h2>1. Sensordrift und Messunsicherheit in der autonomen Gewächshausregelung</h2>
@@ -315,7 +323,25 @@
 <!-- INW-EEAT-BOX-END -->
     </div>
 
-  <footer style="max-width:1100px; margin:40px auto 24px; padding:0 20px; text-align:center;">
+  
+<section class="inw-synced-faq-section" style="max-width: 1060px; margin: 28px auto; padding: 24px; background: rgba(15, 23, 42, 0.88); border: 1px solid rgba(16, 185, 129, 0.32); border-radius: 16px; text-align: left;">
+  <h3 style="margin: 0 0 14px 0; font-size: 1.15rem; color: #10b981; font-weight: 800;">❓ Häufig gestellte Ingenieurfragen (Technische FAQ)</h3>
+  <div>
+    <div style="margin-bottom:14px; padding:14px 18px; background:rgba(15,23,42,0.65); border-left:3px solid #10b981; border-radius:8px;">
+      <h4 style="margin:0 0 6px 0; color:#f8fafc; font-size:0.98rem;">Welche physikalischen und normativen Grundlagen bestimmen das Thema „Präzisions-Sensorkalibrierung im Smart-Greenhouse: Nernst-Gleichung (pH/EC), TDR/FDR-Substratfeuchte &amp; NDIR-CO 2 -Driftkompensation“ im Erwerbsgartenbau?</h4>
+      <p style="margin:0; color:#cbd5e1; font-size:0.9rem; line-height:1.65;">Ingenieurleitfaden zur Sensorkalibrierung im Unterglasgartenbau: Zweipunkt-Kalibrierung nach der Nernst-Gleichung (pH 7,00/4,01), Temperaturkompensation der elektrischen Leitfähigkeit (EC 25 °C), dielektrische TDR/FDR-Substratfeuchte und optische NDIR-CO2-Driftkompensation. Alle Auslegungsparameter orientieren sich an verbindlichen europäischen Ingenieurnormen (DIN EN 13031-1, DIN V 18599, FAO-56 Penman-Monteith sowie DWA-/KTBL-Richtwerten) für kommerzielle Venlo-Gewächshäuser.</p>
+    </div>
+    <div style="margin-bottom:14px; padding:14px 18px; background:rgba(15,23,42,0.65); border-left:3px solid #10b981; border-radius:8px;">
+      <h4 style="margin:0 0 6px 0; color:#f8fafc; font-size:0.98rem;">Wie lassen sich die Kennzahlen aus „Präzisions-Sensorkalibrierung im Smart-Greenhouse: Nernst-Gleichung (pH/EC), TDR/FDR-Substratfeuchte &amp; NDIR-CO 2 -Driftkompensation“ in der Klimacomputer- und Kultursteuerung umsetzen?</h4>
+      <p style="margin:0; color:#cbd5e1; font-size:0.9rem; line-height:1.65;">Produktionsleiter erfassen Blatttemperatur, Einstrahlung, Substratfeuchte und Drän-EC kontinuierlich über kalibrierte Sensoren und überführen die berechneten Zielgrößen als gleitende Sollwertkurven in die Klimacomputer- und Bewässerungsregelung.</p>
+    </div>
+    <div style="margin-bottom:14px; padding:14px 18px; background:rgba(15,23,42,0.65); border-left:3px solid #10b981; border-radius:8px;">
+      <h4 style="margin:0 0 6px 0; color:#f8fafc; font-size:0.98rem;">Welche Förderprogramme unterstützen entsprechende Effizienz- und Modernisierungsinvestitionen?</h4>
+      <p style="margin:0; color:#cbd5e1; font-size:0.9rem; line-height:1.65;">Je nach Bundesland und Systemgrenze kommen das BLE-Bundesprogramm Energieeffizienz (Modul 1–4), Rentenbank-Umweltkredite (LR-Top/LR-Premium) sowie landesspezifische Agrarinvestitionsförderprogramme (AFP) in Betracht.</p>
+    </div>
+  </div>
+</section>
+<footer style="max-width:1100px; margin:40px auto 24px; padding:0 20px; text-align:center;">
     <div class="inw-trust-links" style="margin-top:16px; padding-top:14px; border-top:1px solid rgba(148,163,184,0.16); display:flex; justify-content:center; align-items:center; flex-wrap:wrap; gap:16px; font-size:0.84rem; color:#94a3b8;">
       <a href="/index.html" style="color:#94a3b8; text-decoration:none; font-weight:600;">Home</a>
       <a href="/about.html" style="color:#94a3b8; text-decoration:none; font-weight:600;">About Lab</a>

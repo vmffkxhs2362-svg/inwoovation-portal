@@ -92,7 +92,7 @@
         "@type": "Person",
         "name": "Inwoo Hwang"
       },
-      "dateModified": "2026-11-08"
+      "dateModified": "2026-11-19"
     },
     {
       "@type": "BreadcrumbList",
@@ -267,22 +267,6 @@
       </button>
     </div>
   </div>
-
-    
-    <!-- High-RPM Native Golden-Zone AdSense Unit (Option C) -->
-    <div class="inw-ad-container inw-golden-zone">
-      <div class="inw-ad-label">Sponsored / Commercial Intelligence</div>
-      <ins class="adsbygoogle"
-           style="display:block"
-           data-ad-client="ca-pub-8597809158257497"
-           data-ad-format="auto"
-           data-full-width-responsive="true"></ins>
-      <script>
-        try {
-          (adsbygoogle = window.adsbygoogle || []).push({});
-        } catch (e) {}
-      </script>
-    </div>
 
     <!-- START: INJECTED EDITORIAL & AMAZON ASSOCIATES HARDWARE MODULE -->
     <div class="tool-editorial-wrapper">
@@ -488,23 +472,22 @@ Where:
       const tbody = document.getElementById('ion-tbody');
       tbody.innerHTML = '';
 
-      let totalSaltGrams = 0;
-      let k_val = 0, ca_val = 0, mg_val = 0;
+      let k_val = 0, ca_val = 0, mg_val = 0, no3_val = 0, nh4_val = 0, h2po4_val = 0, so4_val = 0;
 
       recipe.ions.forEach(ion => {
         const adjMmol = ion.mmol * ecMult;
-        // Mol wt rough approximation (NO3=62, NH4=18, H2PO4=97, K=39.1, Ca=40.08, Mg=24.3, SO4=96)
-        let molWt = 62;
-        if (ion.name.includes("NH4")) molWt = 18;
-        else if (ion.name.includes("H2PO4")) molWt = 97;
-        else if (ion.name.includes("K+")) { molWt = 39.1; k_val = adjMmol; }
-        else if (ion.name.includes("Ca2+")) { molWt = 40.1; ca_val = adjMmol; }
-        else if (ion.name.includes("Mg2+")) { molWt = 24.3; mg_val = adjMmol; }
-        else if (ion.name.includes("SO4")) molWt = 96;
+        // Molar mass of ionic species (mg/mmol): NO3=62.0, NH4=18.04, H2PO4=96.99, K=39.10, Ca=40.08, Mg=24.31, SO4=96.06
+        let molWt = 62.0;
+        if (ion.name.includes("NO3")) { molWt = 62.0; no3_val = adjMmol; }
+        else if (ion.name.includes("NH4")) { molWt = 18.04; nh4_val = adjMmol; }
+        else if (ion.name.includes("H2PO4")) { molWt = 96.99; h2po4_val = adjMmol; }
+        else if (ion.name.includes("K+")) { molWt = 39.10; k_val = adjMmol; }
+        else if (ion.name.includes("Ca2+")) { molWt = 40.08; ca_val = adjMmol; }
+        else if (ion.name.includes("Mg2+")) { molWt = 24.31; mg_val = adjMmol; }
+        else if (ion.name.includes("SO4")) { molWt = 96.06; so4_val = adjMmol; }
 
         const ppm = adjMmol * molWt;
-        const saltGrams = (adjMmol * ion.mw_factor * vol * 0.1);
-        totalSaltGrams += saltGrams;
+        const ionMassGrams = (ppm * vol) / 1000.0;
 
         const tr = document.createElement('tr');
         tr.innerHTML = `
@@ -512,10 +495,32 @@ Where:
           <td class="${ion.type === 'Cation' ? 'cation' : 'anion'}">${ion.type}</td>
           <td>${adjMmol.toFixed(2)}</td>
           <td>${ppm.toFixed(1)} mg/L</td>
-          <td style="color: var(--accent-emerald); font-weight: 700;">${saltGrams.toFixed(0)} g</td>
+          <td style="color: var(--accent-emerald); font-weight: 700;">${ionMassGrams.toFixed(0)} g</td>
         `;
         tbody.appendChild(tr);
       });
+
+      // True binary A/B fertilizer salt stoichiometry (eliminates cation+anion double-counting):
+      // Tank A: Ca(NO3)2·4H2O (236.15 g/mol) + NH4NO3 (80.04 g/mol)
+      // Tank B: KH2PO4 (136.09 g/mol) + MgSO4·7H2O (246.47 g/mol) + KNO3 (101.10 g/mol) + K2SO4 (174.26 g/mol)
+      const mmolCaNitrate = ca_val;
+      const mmolAmmoniumNitrate = nh4_val;
+      const mmolMkp = h2po4_val;
+      const mmolMgSulfate = mg_val;
+      const remNo3 = Math.max(0, no3_val - 2.0 * mmolCaNitrate - mmolAmmoniumNitrate);
+      const mmolKno3 = Math.min(Math.max(0, k_val - mmolMkp), remNo3);
+      const remK = Math.max(0, k_val - mmolMkp - mmolKno3);
+      const mmolK2so4 = remK / 2.0;
+
+      const totalSaltPerLiterG = (
+        mmolCaNitrate * 0.23615 +
+        mmolAmmoniumNitrate * 0.08004 +
+        mmolMkp * 0.13609 +
+        mmolMgSulfate * 0.24647 +
+        mmolKno3 * 0.10110 +
+        mmolK2so4 * 0.17426
+      );
+      const totalSaltGrams = totalSaltPerLiterG * vol;
 
       document.getElementById('res-total-salt').innerText = Math.round(totalSaltGrams).toLocaleString() + ' g';
       

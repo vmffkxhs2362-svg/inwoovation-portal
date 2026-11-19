@@ -14,7 +14,7 @@
   <meta property="og:image" content="https://inwoovation.com/og-cover.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"WebApplication","name":"Embeddable AgTech & Greenhouse Widgets Generator | Inwoovation Lab","url":"https://inwoovation.com/embed/","dateModified": "2026-11-16","description":"Embed 0ms real-time VPD gauges, DLI lighting meters, DIN V 18599 heating solvers, and psychrometric widgets on your agricultural blog, farm portal, or university course page for free.","applicationCategory":"ScienceApplication","operatingSystem":"All","author":{"@type":"Person","name":"Inwoo Hwang","url":"https://inwoovation.com/about.html"}}
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Embeddable AgTech & Greenhouse Widgets Generator | Inwoovation Lab","url":"https://inwoovation.com/embed/","dateModified": "2026-11-19","description":"Embed 0ms real-time VPD gauges, DLI lighting meters, DIN V 18599 heating solvers, and psychrometric widgets on your agricultural blog, farm portal, or university course page for free.","applicationCategory":"ScienceApplication","operatingSystem":"All","author":{"@type":"Person","name":"Inwoo Hwang","url":"https://inwoovation.com/about.html"}}
   </script>
   <script type="application/ld+json">
   {
@@ -36,7 +36,7 @@
         "name": "Are Inwoovation Lab OpenCEA embeddable greenhouse widgets completely free and ad-free inside iframes?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. All five raw iframe widget endpoints under /embed/ load zero advertising scripts (adsbygoogle.js is omitted), set zero tracking cookies inside the sandboxed frame, carry noindex meta directives, and are 100% free for commercial greenhouses, universities, and technical blogs."
+          "text": "Yes. All six raw iframe widget endpoints under /embed/ load zero advertising scripts (adsbygoogle.js is omitted), set zero tracking cookies inside the sandboxed frame, carry noindex meta directives, and are 100% free for commercial greenhouses, universities, and technical blogs."
         }
       },
       {
@@ -177,7 +177,7 @@
       <a href="../index.html" style="color:#38bdf8; text-decoration:none; font-weight:700;">← Return to Inwoovation Lab Home</a>
       <div style="display:flex; gap:12px; align-items:center; flex-wrap:wrap;">
         <a href="../tools/index.html" style="color:#94a3b8; text-decoration:none; font-size:0.9rem; font-weight:600;">🛠️ Full 42-Calculator Suite</a>
-        <a href="../guides.html" style="color:#94a3b8; text-decoration:none; font-size:0.9rem; font-weight:600;">📚 186 Multilingual Monographs</a>
+        <a href="../guides.html" style="color:#94a3b8; text-decoration:none; font-size:0.9rem; font-weight:600;">📚 191 Multilingual Monographs</a>
         <a href="../handbooks/index.html" style="color:#94a3b8; text-decoration:none; font-size:0.9rem; font-weight:600;">📖 Compendium</a>
         <a href="../suite/index.html" style="color:#94a3b8; text-decoration:none; font-size:0.9rem; font-weight:600;">🚀 OpenCEA Launcher</a>
         <button class="nav-search-trigger" onclick="window.InwooPalette.open()"><span>🔍 Spotlight Search</span> <kbd>Ctrl+K</kbd></button>
@@ -287,6 +287,24 @@
         </div>
       </div>
 
+      <!-- Widget 6: Mollier h-x Latent Heat & ATU Condensate -->
+      <div class="embed-card">
+        <div>
+          <iframe src="mollier-latent-heat-widget.html" title="Mollier h-x Latent Heat and ATU Condensate Widget" width="100%" height="445" loading="lazy" style="border:none; border-radius:16px; overflow:hidden;"></iframe>
+        </div>
+        <div>
+          <div style="display:flex; align-items:center; gap:8px; margin-bottom:6px;">
+            <span style="background:rgba(56,189,248,0.2); color:#38bdf8; font-size:0.75rem; font-weight:800; padding:2px 8px; border-radius:4px;">SEMI-CLOSED ATU</span>
+            <h2 style="font-family:'Outfit',sans-serif; font-size:1.4rem; font-weight:700; color:#f8fafc; margin:0;">Mollier h-x Latent Heat &amp; Condensate</h2>
+          </div>
+          <p style="color:#94a3b8; font-size:0.92rem; line-height:1.65;">
+            Plots the live semi-closed Air Treatment Unit (ATU) psychrometric state vector (canopy air → evaporator coil dew-point → condenser reheat) on a canvas Mollier <em>h</em>–<em>x</em> chart while computing distillate condensate recovery (L/h), recovered latent + sensible reheat (kW<sub>th</sub>), and effective thermal COP (supports <code>?lang=de</code> &amp; <code>?lang=en</code>). Pairs with our <a href="../tools/semi-closed-greenhouse-atu-mollier-simulator.html" style="color:#38bdf8;">3D Semi-Closed ATU &amp; Mollier Simulator</a>.
+          </p>
+          <div class="code-box" id="code-mollier">&lt;iframe src="https://inwoovation.com/embed/mollier-latent-heat-widget.html" width="360" height="445" frameborder="0" loading="lazy" style="border-radius:16px;"&gt;&lt;/iframe&gt;</div>
+          <button class="copy-btn" onclick="copyCode('code-mollier', this)">📋 Copy Embed Code</button>
+        </div>
+      </div>
+
       <!-- Comprehensive SDK Documentation & Engineering Reference (AdSense High-Value Content) -->
       <section class="sdk-doc-section">
         <h2>📘 OpenCEA Embeddable Widget SDK: Technical Architecture &amp; Integration Guide</h2>
@@ -339,6 +357,12 @@
                 <td>Sonneveld &amp; Voogt (2009) Plant Nutrition of Greenhouse Crops</td>
                 <td>360 × 450 px</td>
               </tr>
+              <tr>
+                <td><strong>mollier-latent-heat-widget.html</strong></td>
+                <td>h = 1.006·T + x·(2501 + 1.86·T); m&#775;<sub>cond</sub> = m&#775;<sub>da</sub>·(x<sub>1</sub> − x<sub>sat</sub>(T<sub>coil</sub>)); COP<sub>th</sub> = Q<sub>reheat</sub> / P<sub>el</sub></td>
+                <td>Mollier (1923); Campen et al. (WUR); DIN V 18599</td>
+                <td>360 × 445 px</td>
+              </tr>
             </tbody>
           </table>
         </div>
@@ -361,7 +385,7 @@
         <div style="display:grid; gap:14px; margin-top:14px;">
           <div style="background:rgba(2,6,23,0.55); border:1px solid rgba(148,163,184,0.16); border-radius:12px; padding:16px;">
             <strong style="color:#f8fafc; display:block; margin-bottom:6px;">Are Inwoovation Lab OpenCEA embeddable greenhouse widgets completely free and ad-free inside iframes?</strong>
-            <p style="margin:0; font-size:0.9rem;">Yes. All five raw iframe widget endpoints under <code>/embed/</code> load zero advertising scripts (<code>adsbygoogle.js</code> is omitted), set zero tracking cookies inside the frame, carry <code>noindex</code> directives, and are 100% free for commercial farms, universities, and technical blogs.</p>
+            <p style="margin:0; font-size:0.9rem;">Yes. All six raw iframe widget endpoints under <code>/embed/</code> load zero advertising scripts (<code>adsbygoogle.js</code> is omitted), set zero tracking cookies inside the frame, carry <code>noindex</code> directives, and are 100% free for commercial farms, universities, and technical blogs.</p>
           </div>
           <div style="background:rgba(2,6,23,0.55); border:1px solid rgba(148,163,184,0.16); border-radius:12px; padding:16px;">
             <strong style="color:#f8fafc; display:block; margin-bottom:6px;">What Content Security Policy (CSP) directive is required to embed the widgets?</strong>

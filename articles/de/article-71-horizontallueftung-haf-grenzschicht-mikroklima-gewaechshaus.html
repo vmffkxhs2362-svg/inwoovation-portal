@@ -41,7 +41,7 @@
       "description": "Ingenieurmonographie zur Horizontallüftung (HAF) im Venlo-Gewächshaus: Blattgrenzschichtwiderstand, Sherwood-Stoffübergang, Racetrack-Auslegung und Wärmepumpen-Entfeuchtung.",
       "inLanguage": "de",
       "datePublished": "2026-11-18",
-      "dateModified": "2026-11-18",
+      "dateModified": "2026-11-19",
       "mainEntityOfPage": "https://inwoovation.com/articles/de/article-71-horizontallueftung-haf-grenzschicht-mikroklima-gewaechshaus.html",
       "image": "https://inwoovation.com/og-cover.jpg",
       "author": {
@@ -99,7 +99,7 @@
           "name": "Welche Racetrack-Auslegung und Einbauhöhe unter Energieschirmen gelten im Venlo-Gewächshaus?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Für eine stabile Ringströmung empfiehlt sich eine Umwälzrate von 2,0 bis 3,0 Raumvolumen pro Stunde, ein maximaler Ventilatorabstand von S_fan <= 30 * D_fan sowie ein spezifischer Schub von mindestens 0,08 N je 100 m². Die Geräte hängen mindestens 0,5 m unter dem geschlossenen Energieschirm (DIN V 18599) und 0,8 m über dem obersten Kulturgestänge."
+            "text": "Bewährt haben sich 2,0–3,0 Raumwechsel/h, ein Abstand S_fan <= 30 * D_fan sowie 0,04 bis 0,08 N/m² spezifischer Schub (4,0 bis 8,0 N je 100 m²). Die Aufhängung liegt >= 0,5 m unter dem Energieschirm (DIN V 18599) und >= 0,8 m über dem Bestand."
           }
         },
         {
@@ -170,13 +170,14 @@
     <section style="margin-bottom: 34px;">
       <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px;">1. Aerodynamische Physik des Blattgrenzschichtwiderstands (r<sub>a</sub>)</h2>
       <p>Jedes Pflanzenblatt in einem geschlossenen Gewächshausbestand ist von einer laminaren Grenzschicht umgeben – einem an der Kutikula haftenden Luftpolster, in dem der Stoff- und Wärmeaustausch primär über langsame molekulare Diffusion stattfindet. In windstillen Nachtphasen übersteigt dieser Grenzschichtwiderstand den stomatären Widerstand (r<sub>s</sub> &asymp; 80–150 s/m) deutlich:</p>
-      <div class="formula-box">Blattgrenzschichtwiderstand (beidseitiger Austausch):
-r_a = 307 × √(d / u)   [s/m]
+      <div class="formula-box">Blattgrenzschichtwiderstand (einseitig vs. beidseitig parallel):
+r_a,einseitig = 307 × √(d / u)   [s/m]
+r_a,eff       = 0,5 × 307 × √(d / u) = 153,5 × √(d / u)   [s/m]
 
 Referenz für Tomaten-Fiederblatt (d = 0,08 m):
-• Stagnierend (u = 0,08 m/s):   r_a = 307 × √(0,08 / 0,08) = 307,0 s/m
-• Optimal (u = 0,40 m/s):       r_a = 307 × √(0,08 / 0,40) = 137,3 s/m (einseitig) / ~68,6 s/m (effektiv)
-• Reduktion der Diffusionsbarriere gegenüber 0,08 m/s: −55 bis −62 %</div>
+• Stagnierend (u = 0,08 m/s):   r_a,einseitig = 307,0 s/m  |  r_a,eff = 153,5 s/m
+• Optimal (u = 0,40 m/s):       r_a,einseitig = 137,3 s/m  |  r_a,eff = 68,6 s/m
+• Reduktion der Diffusionsbarriere gegenüber 0,08 m/s: −55,3 %</div>
       <p>Sobald der Bestand über eine gleichmäßige Queranströmung entkoppelt wird, sinkt r<sub>a</sub> auf 55 bis 75 s/m. Damit bestimmt wieder die physiologische Spaltöffnungsregulation der Pflanze den Transpirationsstrom und die Aufnahme von CO₂ – nicht ein stagnierender Luftstau rund um die Blätter.</p>
     </section>
 
@@ -243,7 +244,7 @@ Konsequenz: Stoffübergang (h_m) und Wärmeübergang (h_c) skalieren mit u^(0,5)
       <div class="formula-box">Auslegungsregeln für Racetrack-EC-Ventilatoren:
 • Umwälzvolumenstrom:   Q_HAF = V_Gewächshaus × ACH_circ   (ACH_circ = 2,0 bis 3,0 h^-1)
 • Maximaler Abstand:     S_fan &le; 30 × D_fan   (z. B. 400-mm-Rotor &rarr; maximal 12,0 m Abstand)
-• Spezifischer Schub:    &ge; 0,08 N je 100 m² Grundfläche
+• Spezifischer Schub:    0,04 – 0,08 N/m² (4,0 – 8,0 N je 100 m² Grundfläche)
 • Einbauposition:        &ge; 0,5 m unter geschlossenem Energieschirm (DIN V 18599) und &ge; 0,8 m über Kulturkopf
 • Wärmepumpen-Kopplung:  COP_entfeucht = (Q_latent + Q_sensibel) / P_el &ge; 4,2  (2.450 kJ/kg Kondensat)</div>
       <p>Statt energieintensiver Mindestlüftung durch den Energieschirm hindurch leiten EC-geregelte HAF-Ventilatoren (über das Bundesprogramm Energieeffizienz <strong>BMLEH/BLE</strong> mit <strong>40–50 %</strong> förderfähig) feuchte Bestandesluft direkt an den Verdampfer von Entfeuchtungs-Wärmepumpen. Die frei werdende Kondensationswärme (2,45 MJ/kg) senkt den nächtlichen Kesselbetrieb in der Übergangszeit auf nahezu null.</p>
@@ -276,7 +277,7 @@ Konsequenz: Stoffübergang (h_m) und Wärmeübergang (h_c) skalieren mit u^(0,5)
           </div>
           <div>
             <div style="font-size:0.74rem; text-transform:uppercase; color:#94a3b8; font-weight:700;">Min. Schubbedarf</div>
-            <div id="resHafThrust" style="font-size:1.4rem; font-weight:800; color:#f59e0b; margin-top:4px;">8,0 N</div>
+            <div id="resHafThrust" style="font-size:1.4rem; font-weight:800; color:#f59e0b; margin-top:4px;">500,0 N</div>
           </div>
           <div>
             <div style="font-size:0.74rem; text-transform:uppercase; color:#94a3b8; font-weight:700;">Richtwert EC-Lüfter</div>
@@ -291,7 +292,7 @@ Konsequenz: Stoffübergang (h_m) und Wärmeübergang (h_c) skalieren mit u^(0,5)
           const dMm = Math.min(800, Math.max(200, parseFloat(document.getElementById('hafDiamDe').value) || 400));
           const raEff = 0.5 * 307 * Math.sqrt(0.08 / u);
           const spacingM = 30.0 * (dMm / 1000.0);
-          const thrustN = (area / 100.0) * 0.08;
+          const thrustN = area * 0.05;
           const fans = Math.max(2, Math.ceil(area / 250.0));
           document.getElementById('resHafRa').innerText = raEff.toFixed(1).replace('.', ',') + ' s/m';
           document.getElementById('resHafSpacing').innerText = spacingM.toFixed(1).replace('.', ',') + ' m';
@@ -308,7 +309,7 @@ Konsequenz: Stoffübergang (h_m) und Wärmeübergang (h_c) skalieren mit u^(0,5)
         <p style="margin: 0;"><strong>F1: Warum lösen Luftgeschwindigkeiten unter 0,10 m/s trotz moderater Raumfeuchte Botrytis und Innenbrand aus?</strong><br>Unter 0,10 m/s steigt der Grenzschichtwiderstand r<sub>a</sub> über 160 s/m. An den Spaltöffnungen bildet sich eine gesättigte Mikrohülle (&gt; 95 % rF) für <em>Botrytis</em>-Sporen, während fehlende Transpiration den aktiven Ca²⁺-Xylemfluss zu jungen Blättern und Früchten unterbricht.</p>
       </div>
       <div style="background: rgba(15, 23, 42, 0.7); border-left: 4px solid #10b981; padding: 18px 20px; border-radius: 10px; margin-bottom: 14px;">
-        <p style="margin: 0;"><strong>F2: Welche Racetrack-Auslegung und Einbauhöhe unter Energieschirmen gelten im Venlo-Gewächshaus?</strong><br>Bewährt haben sich 2,0–3,0 Raumwechsel/h, ein Abstand S<sub>fan</sub> &le; 30 &times; D<sub>fan</sub> sowie &ge; 0,08 N Schub je 100 m². Die Aufhängung liegt &ge; 0,5 m unter dem Energieschirm (DIN V 18599) und &ge; 0,8 m über dem Bestand.</p>
+        <p style="margin: 0;"><strong>F2: Welche Racetrack-Auslegung und Einbauhöhe unter Energieschirmen gelten im Venlo-Gewächshaus?</strong><br>Bewährt haben sich 2,0–3,0 Raumwechsel/h, ein Abstand S<sub>fan</sub> &le; 30 &times; D<sub>fan</sub> sowie 0,04 bis 0,08 N/m² spezifischer Schub (4,0 bis 8,0 N je 100 m²). Die Aufhängung liegt &ge; 0,5 m unter dem Energieschirm (DIN V 18599) und &ge; 0,8 m über dem Bestand.</p>
       </div>
       <div style="background: rgba(15, 23, 42, 0.7); border-left: 4px solid #10b981; padding: 18px 20px; border-radius: 10px; margin-bottom: 14px;">
         <p style="margin: 0;"><strong>F3: Wie senkt die Kopplung von HAF-Ventilatoren und Entfeuchtungs-Wärmepumpen den Heizwärmebedarf?</strong><br>HAF führt feuchte Bestandesluft verlustfrei zum Verdampfer der Wärmepumpe. Je kg Kondensat werden 2.450 kJ Latentwärme mit COP &ge; 4,2 zurückgewonnen – förderfähig über BMLEH/BLE (40–50 %).</p>

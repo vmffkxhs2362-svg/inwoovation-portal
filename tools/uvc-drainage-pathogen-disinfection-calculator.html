@@ -68,7 +68,7 @@
         "@type": "Person",
         "name": "Inwoo Hwang"
       },
-      "dateModified": "2026-11-08"
+      "dateModified": "2026-11-19"
     },
     {
       "@type": "BreadcrumbList",
@@ -208,22 +208,6 @@
     </div>
   </div>
 
-    
-    <!-- High-RPM Native Golden-Zone AdSense Unit (Option C) -->
-    <div class="inw-ad-container inw-golden-zone">
-      <div class="inw-ad-label">Sponsored / Commercial Intelligence</div>
-      <ins class="adsbygoogle"
-           style="display:block"
-           data-ad-client="ca-pub-8597809158257497"
-           data-ad-format="auto"
-           data-full-width-responsive="true"></ins>
-      <script>
-        try {
-          (adsbygoogle = window.adsbygoogle || []).push({});
-        } catch (e) {}
-      </script>
-    </div>
-
     <!-- START: INJECTED EDITORIAL & AMAZON ASSOCIATES HARDWARE MODULE -->
     <div class="tool-editorial-wrapper">
       
@@ -340,21 +324,30 @@ UV-C Germicidal Dose (mJ/cm²) = Fluence Rate (mW/cm²) × Exposure Residence Ti
       else if (pathogen === 'fusarium') targetDose = 150;
       else if (pathogen === 'bacteria') targetDose = 80;
 
-      // UVT correction factor (lower UVT requires higher lamp power)
-      const uvtFactor = Math.pow(100.0 / uvt, 1.45);
-      const reqPowerWatts = (flow * targetDose * 0.42) * uvtFactor;
-      const deliveredDose = targetDose * 1.05;
+      // Beer-Lambert UVT transmittance scaling & commercial 1.5 kW amalgam reactor array delivery
+      const safeUvt = Math.min(99, Math.max(20, isNaN(uvt) ? 75 : uvt));
+      const safeFlow = Math.max(0.5, isNaN(flow) ? 8.0 : flow);
+      const uvtFactor = Math.pow(100.0 / safeUvt, 1.45);
+      const reqPowerWatts = (safeFlow * targetDose * 0.42) * uvtFactor;
+      const installedArrayWatts = 1500.0;
+      const deliveredDose = (installedArrayWatts / (safeFlow * 0.42)) / uvtFactor;
 
-      const logKill = (deliveredDose / targetDose) * (pathogen === 'tobrfv' ? 5.0 : 4.0);
+      const baseLogAtTarget = (pathogen === 'tobrfv' ? 4.0 : 4.2);
+      const logKill = Math.min(6.0, Math.max(0.2, (deliveredDose / targetDose) * baseLogAtTarget));
+      const killPct = Math.min(99.9999, (1 - Math.pow(10, -logKill)) * 100);
+      const killDecimals = logKill >= 5 ? 4 : (logKill >= 4 ? 3 : 2);
 
       document.getElementById('res-dose').innerText = Math.round(deliveredDose) + ' mJ/cm²';
-      document.getElementById('res-log').innerText = logKill.toFixed(1) + '-Log (99.999%)';
+      document.getElementById('res-log').innerText = logKill.toFixed(1) + '-Log (' + killPct.toFixed(killDecimals) + '%)';
       document.getElementById('res-power').innerText = Math.round(reqPowerWatts).toLocaleString() + ' W';
 
       const stEl = document.getElementById('res-status');
       if (logKill >= 4.0) {
         stEl.innerText = 'STERILE (SAFE)';
         stEl.style.color = '#10b981';
+      } else if (logKill >= 3.0) {
+        stEl.innerText = 'MARGINAL (3-LOG)';
+        stEl.style.color = '#f59e0b';
       } else {
         stEl.innerText = 'UNDER-DOSED (RISK)';
         stEl.style.color = '#ef4444';

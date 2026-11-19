@@ -264,25 +264,51 @@ def fix_ga4(html):
     return re.sub(r"(<head[^>]*>)", lambda m: m.group(1) + GA4_SNIPPET, html, count=1, flags=re.I)
 
 
-INVALID_AUTO_SLOT_RE = re.compile(
-    r'\s*(?:<!--[^>]*AdSense[^>]*-->\s*)?<div[^>]*>\s*<ins\s+class=["\']adsbygoogle["\'][^>]*data-ad-slot=["\']auto["\'][^>]*>\s*</ins>\s*'
-    r'(?:<script>\s*\(adsbygoogle\s*=\s*window\.adsbygoogle\s*\|\|\s*\[\]\)\.push\(\{\}\);\s*</script>\s*)?</div>'
-    r'|\s*<ins\s+class=["\']adsbygoogle["\'][^>]*data-ad-slot=["\']auto["\'][^>]*>\s*</ins>\s*'
-    r'(?:<script>\s*\(adsbygoogle\s*=\s*window\.adsbygoogle\s*\|\|\s*\[\]\)\.push\(\{\}\);\s*</script>)?',
+DUMMY_OR_SLOTLESS_INS_RE = re.compile(
+    r'\s*(?:<!--[^>]*AdSense[^>]*-->\s*)?'
+    r'(?:<div\s+class=["\']ad-space-container["\'][^>]*>\s*<div\s+class=["\']ad-space-placeholder["\'][^>]*>\s*<ins\s+class=["\']adsbygoogle["\'][^>]*>\s*</ins>\s*(?:<script>\s*\(adsbygoogle\s*=\s*window\.adsbygoogle\s*\|\|\s*\[\]\)\.push\(\{\}\);\s*</script>\s*)?</div>\s*</div>'
+    r'|<div\s+class=["\']ad-(?:slot|banner|container|unit|box)[^"\']*["\'][^>]*>\s*(?:<div[^>]*>[^<]*</div>\s*)?<ins\s+class=["\']adsbygoogle["\'](?![^>]*data-ad-slot=["\'](?!1234567890|2345678901|3456789012|9876543210|5405747210)[0-9]{10}["\'])[^>]*>\s*</ins>\s*(?:<script>\s*\(adsbygoogle\s*=\s*window\.adsbygoogle\s*\|\|\s*\[\]\)\.push\(\{\}\);\s*</script>\s*)?</div>'
+    r'|<div[^>]*>\s*<ins\s+class=["\']adsbygoogle["\'](?![^>]*data-ad-slot=["\'](?!1234567890|2345678901|3456789012|9876543210|5405747210)[0-9]{10}["\'])[^>]*>\s*</ins>\s*(?:<script>\s*\(adsbygoogle\s*=\s*window\.adsbygoogle\s*\|\|\s*\[\]\)\.push\(\{\}\);\s*</script>\s*)?</div>'
+    r'|<ins\s+class=["\']adsbygoogle["\'](?![^>]*data-ad-slot=["\'](?!1234567890|2345678901|3456789012|9876543210|5405747210)[0-9]{10}["\'])[^>]*>\s*</ins>\s*(?:<script>\s*\(adsbygoogle\s*=\s*window\.adsbygoogle\s*\|\|\s*\[\]\)\.push\(\{\}\);\s*</script>)?)',
     re.I | re.S,
 )
 
 
+def fix_head_meta_inequalities(html):
+    """Escape raw > or < inside <meta ... content="..."> in <head> so regex/HTML parsers never split <meta> tags."""
+    head_m = re.search(r"<head\b[^>]*>.*?</head>", html, flags=re.I | re.S)
+    if not head_m:
+        return html
+    head = head_m.group(0)
+
+    def _escape_meta_attr(m):
+        prefix, quote, val, suffix = m.group(1), m.group(2), m.group(3), m.group(4)
+        if ">" not in val and "<" not in val:
+            return m.group(0)
+        val_clean = val.replace(">", "&gt;").replace("<", "&lt;")
+        return f"{prefix}{quote}{val_clean}{quote}{suffix}"
+
+    new_head = re.sub(
+        r'(<meta\b[^>]*?\bcontent=)(")([^"]*)("[^>]*?>)',
+        _escape_meta_attr,
+        head,
+        flags=re.I | re.S,
+    )
+    if new_head == head:
+        return html
+    return html[:head_m.start()] + new_head + html[head_m.end():]
+
+
 def fix_adsense(html, rel_path):
-    """Ensure every live content page (except 404.html) carries AdSense account meta & script and zero invalid auto-slots."""
+    """Ensure every live content page (except 404.html) carries AdSense account meta & script and zero dummy/slotless <ins>."""
     if os.path.basename(rel_path) == "404.html" or not re.search(r"<head[^>]*>", html, re.I):
         return html
     if not re.search(r'name=["\']google-adsense-account["\']', html, re.I):
         html = re.sub(r"(<head[^>]*>)", lambda m: m.group(1) + ADSENSE_META_SNIPPET, html, count=1, flags=re.I)
     if "adsbygoogle.js" not in html:
         html = re.sub(r"(</head>)", lambda m: ADSENSE_SCRIPT_SNIPPET + "\n" + m.group(1), html, count=1, flags=re.I)
-    if 'data-ad-slot="auto"' in html or "data-ad-slot='auto'" in html:
-        html = INVALID_AUTO_SLOT_RE.sub("", html)
+    if 'class="adsbygoogle"' in html or "class='adsbygoogle'" in html:
+        html = DUMMY_OR_SLOTLESS_INS_RE.sub("", html)
     return html
 
 
@@ -487,6 +513,7 @@ def is_live(rel_path, html):
 
 def transform(rel_path, html):
     html = fix_dead_host(html)
+    html = fix_head_meta_inequalities(html)
     html = fix_html_math_and_escapes(html)
     html = fix_embed_widgets(html, rel_path)
     if not is_live(rel_path, html):

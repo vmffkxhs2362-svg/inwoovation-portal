@@ -81,7 +81,7 @@
         "@type": "Person",
         "name": "Inwoo Hwang"
       },
-      "dateModified": "2026-11-08"
+      "dateModified": "2026-11-19"
     },
     {
       "@type": "BreadcrumbList",
@@ -111,35 +111,35 @@
   </script>
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Why does warm greenhouse air hold exponentially more water vapor?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "The saturation vapor pressure of air follows the Clausius-Clapeyron relation. For every 10°C rise in temperature, air's moisture-holding capacity nearly doubles, drastically altering latent heat content and condensation risks."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What causes evening condensation on Venlo greenhouse glazing and crop heads?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Radiant cooling to the cold sky drops leaf and glass surface temperatures below the microclimate dew point temperature, causing moisture to phase-change from vapor to liquid droplets, promoting Botrytis spore germination."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How does heat recovery mechanical dehumidification save energy over window purging?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Window purging vents sensible and latent heat outside, requiring boiler reheating. Mechanical dehumidifiers condense water onto evaporator coils and return latent heat of vaporization back into the canopy via the condenser, retaining up to 50% thermal energy."
-        }
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why is leaf temperature more critical than ambient air temperature for VPD? ▾",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Because stomata are located on the leaf surface, the saturation vapor pressure must be calculated at leaf temperature, not air temperature. High transpiration can cool leaves 2°C below ambient air, while intense solar radiation without air movement can heat leaves 3°C above air, shifting calculated VPD by over 30%."
       }
-    ]
-  }
+    },
+    {
+      "@type": "Question",
+      "name": "How does high-pressure fogging (70 bar) achieve adiabatic cooling without leaf wetting? ▾",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Operating water pressure at 70 bar shears droplet diameters below 10–15 microns (Sauter Mean Diameter D32). Droplets of this microscopic size flash-evaporate into the ambient air stream in under 1.5 seconds, extracting latent heat of vaporization (2.45 MJ/kg) before they can gravity-settle onto foliage."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the optimal air velocity through the greenhouse crop canopy? ▾",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Horizontal circulation fans should maintain an air speed of 0.3 to 0.5 m/s across leaves. This thins the laminar boundary layer resistance, replenishing localized CO2 supplies and preventing humid microclimates that invite fungal pathogens."
+      }
+    }
+  ]
+}
   </script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8597809158257497" crossorigin="anonymous"></script>
 
@@ -240,22 +240,6 @@
 
   <script src="../js/gauge-meter.js"></script>
   <script src="../js/audit-pdf-generator.js"></script>
-
-    
-    <!-- High-RPM Native Golden-Zone AdSense Unit (Option C) -->
-    <div class="inw-ad-container inw-golden-zone">
-      <div class="inw-ad-label">Sponsored / Commercial Intelligence</div>
-      <ins class="adsbygoogle"
-           style="display:block"
-           data-ad-client="ca-pub-8597809158257497"
-           data-ad-format="auto"
-           data-full-width-responsive="true"></ins>
-      <script>
-        try {
-          (adsbygoogle = window.adsbygoogle || []).push({});
-        } catch (e) {}
-      </script>
-    </div>
 
     <!-- START: INJECTED EDITORIAL & AMAZON ASSOCIATES HARDWARE MODULE -->
     <div class="tool-editorial-wrapper">
@@ -464,8 +448,10 @@ Where:
       const p_atm = 101.325;
       const x = 622 * (ea / (p_atm - ea));
 
-      // Dew Point
-      const dew = (237.3 * Math.log(ea / 0.61078)) / (17.27 - Math.log(ea / 0.61078));
+      // Dew Point (guarded against RH <= 0%)
+      const safeEa = Math.max(0.0001, ea);
+      const lnEa = Math.log(safeEa / 0.61078);
+      const dew = (237.3 * lnEa) / (17.27 - lnEa);
 
       // Enthalpy h = 1.006*T + x*(2501 + 1.86*T)/1000  (kJ/kg)
       const h_moist = 1.006 * t + (x / 1000) * (2501 + 1.86 * t);

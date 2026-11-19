@@ -320,18 +320,26 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "What is an Aquifer Thermal Energy Storage (ATES) doublet well system?",
+          "name": "Why must calcium nitrate and sulfate/phosphate fertilizers be separated into A and B stock tanks?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "An ATES doublet system consists of two separate deep groundwater wells: a Warm Well (typically 16°C to 22°C) and a Cold Well (typically 6°C to 9°C) drilled into a permeable sand/gravel aquifer. In summer, groundwater is pumped from the cold well to provide free greenhouse cooling and injected into the warm well. In winter, flow reverses: warm water is extracted to feed an industrial heat pump evaporator, delivering low-temperature heating (35°C–45°C) to the crop at COPs > 4.5."
+            "text": "Mixing concentrated calcium ions (Ca²⁺) with sulfate (SO₄²⁻) or orthophosphate (H₂PO₄⁻) in the same stock tank causes immediate precipitation of insoluble gypsum (CaSO₄·2H₂O) and calcium phosphate once the solubility product (Ksp) is exceeded."
           }
         },
         {
           "@type": "Question",
-          "name": "What well separation distance is required to avoid thermal breakthrough?",
+          "name": "How do you calculate the required acid volume for hydroponic bicarbonate (HCO₃⁻) alkalinity neutralization?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Under VDI 4640 and European hydrogeological standards, the thermal radius of influence is calculated as R_th = sqrt((c_w * V_seasonal) / (pi * H_aq * c_aq)). To prevent thermal breakthrough over a 25-year lifespan, warm and cold wells must be separated by at least 2.5 to 3.0 times the thermal radius (typically 100 to 180 meters)."
+            "text": "Subtract target residual buffer alkalinity (typically 0.5 to 0.8 mmol/L HCO₃⁻ for pH 5.6–5.8 stability) from raw water bicarbonate concentration, then stoichiometry-match with nitric acid (HNO₃) or phosphoric acid (H₃PO₄) normality."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What drain percentage and slab EC dryback should be targeted in rockwool and cocopeat substrates?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "During high-radiation summer days, target 25% to 35% daily drainage fraction with an overnight volumetric water content (VWC) dryback of 8% to 12% for vegetative steering, or 12% to 18% dryback for generative steering."
           }
         }
       ]
@@ -701,9 +709,9 @@
     // Pumping flow calculation
     // In winter: heating from warm well. Q_evap = peakHeatMW * (1 - 1/COP)
     // COP calculation: Carnot * 0.55
-    const TevapK = (Twarm - 3) + 273.15; // 3K approach
-    const TsupplyK = Tsupply + 273.15;
-    const copCarnot = TsupplyK / (TsupplyK - TevapK);
+    const TevapK = (Twarm - 3) + 273.15; // 3K evaporator approach
+    const TcondK = (Tsupply + 3) + 273.15; // 3K condenser pinch
+    const copCarnot = TcondK / Math.max(8.0, TcondK - TevapK);
     const copReal = Math.min(6.5, Math.max(3.2, copCarnot * 0.55));
 
     const QevapMW = peakHeatMW * (1 - 1 / copReal);
@@ -737,7 +745,7 @@
 
     const heatPumpElecKWh = (annualHeatMWh * 1000) / copReal;
     const pumpHead = Math.max(15, drawdown + 25); // meters total dynamic head
-    const pumpPowerKW = (1000 * 9.81 * (peakFlowM3h / 3600) * pumpHead) / (3600 * 0.72);
+    const pumpPowerKW = (1000 * 9.81 * (peakFlowM3h / 3600) * pumpHead) / (1000 * 0.72);
     const annualPumpElecKWh = pumpPowerKW * heatHours * 0.45;
     const totalElecKWh = heatPumpElecKWh + annualPumpElecKWh;
     const elecCost = totalElecKWh * elecPrice;

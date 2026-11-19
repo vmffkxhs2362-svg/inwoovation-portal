@@ -69,34 +69,26 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "How do you calculate Daily Light Integral (DLI) in vertical indoor farms?",
+          "name": "How do you convert PPFD (µmol/m²/s) into Daily Light Integral (DLI in mol/m²/day)?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Daily Light Integral (DLI) is calculated using the formula DLI = PPFD (μmol/m²·s) × Photoperiod (hours) × 0.0036. For instance, maintaining an indoor canopy under 250 μmol/m²·s PPFD for 18 hours per day delivers exactly 16.2 mol/m²·day of Photosynthetically Active Radiation (PAR)."
+            "text": "Multiply canopy PPFD (µmol·m⁻²·s⁻¹) by photoperiod hours per day, then multiply by 0.0036 (since 3,600 seconds/hour divided by 1,000,000 µmol/mol equals 0.0036). For example, 250 µmol·m⁻²·s⁻¹ for 16 hours yields exactly 14.4 mol·m⁻²·d⁻¹."
           }
         },
         {
           "@type": "Question",
-          "name": "What is the role of Far-Red (730 nm) light in indoor plant factories?",
+          "name": "What DLI target is required for commercial greenhouse tomatoes, strawberries, and leafy greens?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Far-red photons (700 to 750 nm) activate Photosystem I and reverse phytochrome photo-equilibrium (Pfr to Pr), stimulating leaf expansion and increasing light interception. When delivered alongside red photons (the Emerson Enhancement Effect), far-red photons accelerate gross photosynthesis beyond standard 400-700 nm PAR predictions."
+            "text": "Butterhead and crisphead lettuce require 14 to 17 mol·m⁻²·d⁻¹ (above which tipburn risk rises without vertical airflow), greenhouse strawberries require 15 to 22 mol·m⁻²·d⁻¹, and high-wire fruiting tomatoes and bell peppers require 22 to 35+ mol·m⁻²·d⁻¹."
           }
         },
         {
           "@type": "Question",
-          "name": "How does LED junction temperature (Tj) affect luminaire lifespan and efficacy?",
+          "name": "How do you calculate supplemental LED fixture wattage and electricity ROI per square meter?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "LED diode efficiency drops as junction temperature (Tj) rises. Exceeding 80°C to 85°C degrades silicone encapsulation and phosphor conversion layers, accelerating lumen depreciation (L90B50 rating) and shifting emission wavelengths. Maintaining heatsink convection ensures diodes remain below 65°C."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How much HVAC cooling capacity is needed for vertical farming LED lighting?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "In a sealed vertical farm, nearly 100% of electrical power fed to LED fixtures is ultimately converted to sensible and latent room heat (the fraction radiated as photons is absorbed by leaves and benches and re-emitted as convective or transpirational heat). Each 1 kW of electrical grow light requires approximately 0.284 Tons of Refrigeration (TR) or 3,412 BTU/h of active HVAC chiller cooling."
+            "text": "Divide the required supplemental PPFD (µmol·m⁻²·s⁻¹) by the fixture photosynthetic photon efficacy (PPE, typically 2.8 to 3.6 µmol/J) to obtain electrical power density (W/m²), then multiply by operating hours and kWh tariff."
           }
         }
       ]
@@ -133,7 +125,7 @@
 <body>
 <main class="container"><header>
 <div class="header-top-bar" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 0.8rem;">
-<div class="badge" id="header-badge" style="margin-bottom: 0;">Last Updated: November 16, 2026</div>
+<div class="badge" id="header-badge" style="margin-bottom: 0;">Last Updated: November 19, 2026</div>
 <div style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap;">
     <a href="https://inwoovation.com/" target="_blank" rel="noopener noreferrer" style="background: rgba(30, 41, 59, 0.9); border: 1px solid rgba(255, 255, 255, 0.18); color: #f8fafc; font-weight: 700; font-size: 0.85rem; padding: 0.45rem 0.9rem; border-radius: 100px; text-decoration: none; display: inline-flex; align-items: center; gap: 0.4rem; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); transition: all 0.25s ease;">
         🌐 Inwoovation Lab

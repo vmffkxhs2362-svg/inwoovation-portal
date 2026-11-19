@@ -384,83 +384,75 @@
   <!-- Schema.org WebApplication, FAQPage & BreadcrumbList -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebApplication",
-        "name": "EPEX SPOT Dynamic Tariff, Power-to-Heat (20 kV Boiler), Heat Pump & BESS Arbitrage Simulator",
-        "url": "https://inwoovation.com/tools/greenhouse-energy-tariff-bess-p2h-arbitrage-calculator.html",
-        "description": "Commercial greenhouse day-ahead electricity arbitrage simulator modeling EPEX SPOT negative pricing, 20 kV electrode boilers, industrial heat pumps, LFP-BESS, and stratified hot water buffer tanks.",
-        "applicationCategory": "EngineeringApplication, EnergyArbitrageSimulator",
-        "operatingSystem": "All",
-        "dateModified": "2026-11-13",
-        "author": {
-          "@type": "Organization",
-          "name": "Inwoovation Engineering Research Lab"
-        }
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "How do commercial Venlo greenhouses monetize negative EPEX SPOT electricity prices?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "When solar PV or North Sea wind surges push day-ahead wholesale electricity prices on EPEX SPOT below zero (for example -40 to -85 EUR/MWh), greenhouses equipped with a medium-voltage 20 kV Power-to-Heat electrode boiler (99% efficiency) and an industrial heat pump absorb surplus grid power to charge a stratified atmospheric hot water buffer tank (42 C to 92 C). When spot price plus reduced grid fees falls below zero, the facility is paid to generate thermal megawatt-hours while shutting down natural gas boilers."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What is the exact electricity crossover price where a greenhouse heat pump or electrode boiler beats natural gas?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Given a natural gas plus CO2 carbon tax price P_gas (in EUR/MWh LHV) and condensing boiler efficiency eta_gas, the marginal fossil heat cost is C_th_gas = P_gas / eta_gas. An industrial heat pump with seasonal COP beats gas whenever total delivered electricity price is below C_th_gas multiplied by COP. A 20 kV electrode boiler (eta_P2H = 0.99) beats gas whenever delivered electricity price drops below C_th_gas multiplied by 0.99."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Why must the Richardson number exceed 5.0 in a greenhouse thermal buffer tank during rapid Power-to-Heat charging?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "High-power 20 kV electrode boilers inject large volumetric water flows into atmospheric storage tanks. If radial diffuser inlet velocity u_in is too high, turbulent mixing destroys the thermocline separating 92 C top supply water from 42 C bottom return water, degrading storage capacity and heat pump subcooling COP. Maintaining a Richardson number Ri = (g * beta * Delta_T * H) / u_in^2 above 5.0 guarantees buoyancy-dominated laminar stratification."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Which European and municipal grants subsidize greenhouse BESS, heat pumps, and thermal storage?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "In Germany, the Federal BLE Energieeffizienzprogramm Gartenbau funds up to 40% of eligible heat pump, buffer tank, and electrical energy storage CAPEX, complemented by § 19 Abs. 2 StromNEV atypical grid fee reductions and municipal climate funds (such as Nürnberg Knoblauchsland Klimafonds and Fürth Solar+Speicher). In the Netherlands, SDE++ and EIA (40% tax deduction) support e-boilers and geothermal/heat-pump integration."
-            }
-          }
-        ]
-      },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Inwoovation Lab",
-            "item": "https://inwoovation.com/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Enterprise Engineering Tools",
-            "item": "https://inwoovation.com/tools/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "EPEX SPOT Power-to-Heat & BESS Arbitrage Simulator",
-            "item": "https://inwoovation.com/tools/greenhouse-energy-tariff-bess-p2h-arbitrage-calculator.html"
-          }
-        ]
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "EPEX SPOT Dynamic Tariff, Power-to-Heat (20 kV Boiler), Heat Pump & BESS Arbitrage Simulator",
+      "url": "https://inwoovation.com/tools/greenhouse-energy-tariff-bess-p2h-arbitrage-calculator.html",
+      "description": "Commercial greenhouse day-ahead electricity arbitrage simulator modeling EPEX SPOT negative pricing, 20 kV electrode boilers, industrial heat pumps, LFP-BESS, and stratified hot water buffer tanks.",
+      "applicationCategory": "EngineeringApplication, EnergyArbitrageSimulator",
+      "operatingSystem": "All",
+      "dateModified": "2026-11-19",
+      "author": {
+        "@type": "Organization",
+        "name": "Inwoovation Engineering Research Lab"
       }
-    ]
-  }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Why must calcium nitrate and sulfate/phosphate fertilizers be separated into A and B stock tanks?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Mixing concentrated calcium ions (Ca²⁺) with sulfate (SO₄²⁻) or orthophosphate (H₂PO₄⁻) in the same stock tank causes immediate precipitation of insoluble gypsum (CaSO₄·2H₂O) and calcium phosphate once the solubility product (Ksp) is exceeded."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you calculate the required acid volume for hydroponic bicarbonate (HCO₃⁻) alkalinity neutralization?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Subtract target residual buffer alkalinity (typically 0.5 to 0.8 mmol/L HCO₃⁻ for pH 5.6–5.8 stability) from raw water bicarbonate concentration, then stoichiometry-match with nitric acid (HNO₃) or phosphoric acid (H₃PO₄) normality."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What drain percentage and slab EC dryback should be targeted in rockwool and cocopeat substrates?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "During high-radiation summer days, target 25% to 35% daily drainage fraction with an overnight volumetric water content (VWC) dryback of 8% to 12% for vegetative steering, or 12% to 18% dryback for generative steering."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inwoovation Lab",
+          "item": "https://inwoovation.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Enterprise Engineering Tools",
+          "item": "https://inwoovation.com/tools/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "EPEX SPOT Power-to-Heat & BESS Arbitrage Simulator",
+          "item": "https://inwoovation.com/tools/greenhouse-energy-tariff-bess-p2h-arbitrage-calculator.html"
+        }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 <body>

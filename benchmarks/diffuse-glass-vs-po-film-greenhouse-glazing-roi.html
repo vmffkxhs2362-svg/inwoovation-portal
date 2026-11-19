@@ -40,7 +40,7 @@
       "url": "https://inwoovation.com/benchmarks/diffuse-glass-vs-po-film-greenhouse-glazing-roi.html",
       "description": "Engineering ROI comparison between AR-coated diffuse glass (91% hemispherical transmittance, 65% haze) and inflated double-layer PO film (U=3.4 W/m2K).",
       "datePublished": "2026-11-15",
-      "dateModified": "2026-11-16",
+      "dateModified": "2026-11-19",
       "author": {
         "@type": "Person",
         "name": "Inwoo Hwang",
@@ -57,18 +57,26 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Why does 50-70% haze diffuse glass increase high-wire tomato and cucumber yields?",
+          "name": "How do you convert PPFD (µmol/m²/s) into Daily Light Integral (DLI in mol/m²/day)?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Haze scatters incoming solar direct beam photons without lowering total hemispherical PAR transmittance, allowing light to penetrate deeper into middle and lower canopy leaves while eliminating apical leaf tip overheating and scorching."
+            "text": "Multiply canopy PPFD (µmol·m⁻²·s⁻¹) by photoperiod hours per day, then multiply by 0.0036 (since 3,600 seconds/hour divided by 1,000,000 µmol/mol equals 0.0036). For example, 250 µmol·m⁻²·s⁻¹ for 16 hours yields exactly 14.4 mol·m⁻²·d⁻¹."
           }
         },
         {
           "@type": "Question",
-          "name": "How much heating energy does double inflated PO film save compared to single glass?",
+          "name": "What DLI target is required for commercial greenhouse tomatoes, strawberries, and leafy greens?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "An air-inflated double PO film pillow lowers roof thermal U-value from ~5.8 W/(m2·K) for single glass to ~3.4 W/(m2·K), cutting conductive heating load by 30-40%, though with ~8-11% lower winter PAR transmission unless paired with thermal energy screens inside a Venlo glasshouse."
+            "text": "Butterhead and crisphead lettuce require 14 to 17 mol·m⁻²·d⁻¹ (above which tipburn risk rises without vertical airflow), greenhouse strawberries require 15 to 22 mol·m⁻²·d⁻¹, and high-wire fruiting tomatoes and bell peppers require 22 to 35+ mol·m⁻²·d⁻¹."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you calculate supplemental LED fixture wattage and electricity ROI per square meter?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Divide the required supplemental PPFD (µmol·m⁻²·s⁻¹) by the fixture photosynthetic photon efficacy (PPE, typically 2.8 to 3.6 µmol/J) to obtain electrical power density (W/m²), then multiply by operating hours and kWh tariff."
           }
         }
       ]

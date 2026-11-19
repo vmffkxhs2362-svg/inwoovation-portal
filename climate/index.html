@@ -326,26 +326,18 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "How do you convert PPFD (µmol/m²/s) into Daily Light Integral (DLI in mol/m²/day)?",
+          "name": "How should commercial greenhouse designers use regional DLI and Köppen curves?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Multiply canopy PPFD (µmol·m⁻²·s⁻¹) by photoperiod hours per day, then multiply by 0.0036 (since 3,600 seconds/hour divided by 1,000,000 µmol/mol equals 0.0036). For example, 250 µmol·m⁻²·s⁻¹ for 16 hours yields exactly 14.4 mol·m⁻²·d⁻¹."
+            "text": "Multiply outdoor solar Daily Light Integral (mol/m²/day) by structural transmittance (typically 0.65–0.78) to size supplemental LED PPFD in winter, and size heating or evaporative cooling capacity from local heating degree-hours and wet-bulb depression using our DIN V 18599 Heating Solver ."
           }
         },
         {
           "@type": "Question",
-          "name": "What DLI target is required for commercial greenhouse tomatoes, strawberries, and leafy greens?",
+          "name": "Do regional climate hubs connect to local agricultural grants and crop steering profiles?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Butterhead and crisphead lettuce require 14 to 17 mol·m⁻²·d⁻¹ (above which tipburn risk rises without vertical airflow), greenhouse strawberries require 15 to 22 mol·m⁻²·d⁻¹, and high-wire fruiting tomatoes and bell peppers require 22 to 35+ mol·m⁻²·d⁻¹."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How do you calculate supplemental LED fixture wattage and electricity ROI per square meter?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Divide the required supplemental PPFD (µmol·m⁻²·s⁻¹) by the fixture photosynthetic photon efficacy (PPE, typically 2.8 to 3.6 µmol/J) to obtain electrical power density (W/m²), then multiply by operating hours and kWh tariff."
+            "text": "Yes. Pair any regional climate cluster directly with the 192-Program Global Agri-Subsidy Navigator , the 10 Commercial Crop Steering Atlases , Hardware Benchmarks , and AgTech Reference Wiki ."
           }
         }
       ]

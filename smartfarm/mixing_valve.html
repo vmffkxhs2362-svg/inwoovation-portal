@@ -68,34 +68,34 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "What is valve authority and why is it critical in greenhouse heating loops?",
+          "name": "What is valve authority (a) and why is it critical in greenhouse heating loops?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Valve authority (a) is the ratio of the pressure drop across the fully open control valve to the total dynamic pressure drop of the entire variable flow circuit (a = ΔPv / (ΔPv + ΔPc)). In commercial greenhouses, maintaining an authority between 0.35 and 0.50 ensures that the control valve retains its designed logarithmic or linear flow characteristics, preventing severe temperature hunting and root zone thermal shock."
+            "text": "Valve authority is the ratio of dynamic pressure drop across the control valve to total circuit resistance (a = Δ P v / (Δ P v + Δ P circuit )). Maintaining authority above $0.35$ preserves the valve's equal-percentage flow modulation. If authority collapses below $0.25$, the valve acts unpredictably like an On/Off gate, causing rapid temperature swings that damage sensitive crop roots."
           }
         },
         {
           "@type": "Question",
-          "name": "What is the difference between a 3-way mixing valve and a 3-way diverting valve?",
+          "name": "What is the physical difference between a 3-way mixing valve and a 3-way diverting valve?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "A 3-way mixing valve has two fluid inlets (boiler supply water and circuit return water) and one blended outlet directed into the greenhouse pipe rails, allowing continuous variable-temperature modulation with constant volumetric flow. A 3-way diverting valve has one inlet and two outlets, splitting fluid between the circuit and a bypass line."
+            "text": "A 3-way mixing valve has two inlet ports (hot boiler water and cold return water) and one blended outlet connected to the circulation pump, keeping circulating water volume through the greenhouse pipe rails 100% constant. A 3-way diverting valve has one inlet and two outlets, splitting flow to vary delivery volume."
           }
         },
         {
           "@type": "Question",
-          "name": "How do you size pipe nominal diameter (DN) to prevent noise and erosion?",
+          "name": "Why should greenhouse heating loops avoid oversized mixing valves?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Pipe nominal diameter is calculated based on fluid flow velocity. For secondary greenhouse heating circuits, the target design velocity is strictly maintained between 0.5 m/s and 1.0 m/s (using v = 4Q / (π · d²)). Exceeding 1.2 m/s causes excessive friction head loss, pump wear, and cavitation noise, while velocities below 0.3 m/s fail to purge entrained air pockets."
+            "text": "An oversized valve (K vs too high) produces nominal design flow at only 10% to 20% opening stroke. In this micro-lift zone, the actuator resolution is insufficient, causing continuous cycling, actuator motor burnout, and severe thermal stratification across the growing canopy."
           }
         },
         {
           "@type": "Question",
-          "name": "Why is a large temperature drop (ΔT = 20K) beneficial for greenhouse boiler efficiency?",
+          "name": "How does return water temperature impact condensing boiler and heat pump efficiency?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Designing heating circuits with a wider ΔT (e.g., 75°C supply / 55°C return) reduces required pumping volume by 25% compared to ΔT = 15K, lowering electrical pump consumption and pipe diameter requirements. Furthermore, return water temperatures below 55°C allow high-efficiency condensing gas boilers and heat pumps to extract latent heat of condensation, boosting seasonal fuel efficiency up to 108%."
+            "text": "Flue gas moisture in high-efficiency natural gas condensing boilers begins condensing at 57°C (dew point). Maintaining heating return water below 50°C through a high Δ T (20K) allows full latent heat recovery, raising system thermal efficiency up to 108% (based on lower heating value). For heat pumps, each 1 K reduction in return water temperature improves the seasonal Coefficient of Performance (COP) by approximately 2.5%."
           }
         }
       ]
@@ -132,7 +132,7 @@
 <body>
 <main class="container"><header>
 <div class="header-top-bar" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 0.8rem;">
-<div class="badge" id="header-badge" style="margin-bottom: 0;">Last Updated: November 16, 2026</div>
+<div class="badge" id="header-badge" style="margin-bottom: 0;">Last Updated: November 19, 2026</div>
 <div style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap;">
     <a href="https://inwoovation.com/" target="_blank" rel="noopener noreferrer" style="background: rgba(30, 41, 59, 0.9); border: 1px solid rgba(255, 255, 255, 0.18); color: #f8fafc; font-weight: 700; font-size: 0.85rem; padding: 0.45rem 0.9rem; border-radius: 100px; text-decoration: none; display: inline-flex; align-items: center; gap: 0.4rem; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); transition: all 0.25s ease;">
         🌐 Inwoovation Lab

@@ -68,7 +68,7 @@
         "@type": "Person",
         "name": "Inwoo Hwang"
       },
-      "dateModified": "2026-11-08"
+      "dateModified": "2026-11-19"
     },
     {
       "@type": "BreadcrumbList",
@@ -225,22 +225,6 @@
     </div>
   </div>
 
-    
-    <!-- High-RPM Native Golden-Zone AdSense Unit (Option C) -->
-    <div class="inw-ad-container inw-golden-zone">
-      <div class="inw-ad-label">Sponsored / Commercial Intelligence</div>
-      <ins class="adsbygoogle"
-           style="display:block"
-           data-ad-client="ca-pub-8597809158257497"
-           data-ad-format="auto"
-           data-full-width-responsive="true"></ins>
-      <script>
-        try {
-          (adsbygoogle = window.adsbygoogle || []).push({});
-        } catch (e) {}
-      </script>
-    </div>
-
     <!-- START: INJECTED EDITORIAL & AMAZON ASSOCIATES HARDWARE MODULE -->
     <div class="tool-editorial-wrapper">
       
@@ -379,6 +363,11 @@ Where:
       const berRiskPct = Math.min(85, Math.max(1, (0.12 - distalCa) * 650 + (vpd > 1.8 ? 20 : 0)));
 
       document.getElementById('res-ca-distal').innerText = distalCa.toFixed(2) + ' % DM';
+      const phloemShare = Math.min(9.5, Math.max(2.2, (leafDiversion * 1.45 + osmoticStress * 1.35) * growthFactor));
+      const xylemEl = document.getElementById('res-xylem-ratio');
+      if (xylemEl) {
+        xylemEl.innerText = '1 : ' + phloemShare.toFixed(1);
+      }
 
       const riskEl = document.getElementById('res-ber-risk');
       const advEl = document.getElementById('res-advice');
@@ -427,7 +416,8 @@ Where:
       const ec = document.getElementById('lbl-ec').innerText;
       const ca = document.getElementById('res-ca-distal').innerText;
       const risk = document.getElementById('res-ber-risk').innerText;
-      const ratio = document.getElementById('res-xylem-ratio').innerText;
+      const ratioEl = document.getElementById('res-xylem-ratio');
+      const ratio = ratioEl ? ratioEl.innerText : '1 : 4.2';
       const advice = document.getElementById('res-advice').innerText;
 
       const kpiData = [
