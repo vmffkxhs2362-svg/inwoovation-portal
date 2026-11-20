@@ -1,5 +1,5 @@
 # 📘 The CEA Biophysics & Greenhouse Engineering Handbook
-## OpenCEA Compendium: 78 Volumes (197 Multilingual Editions) & 42 Live Simulators
+## OpenCEA Compendium: 78 Volumes (198 Multilingual Editions) & 42 Live Simulators
 
 > **Author**: Inwoovation Lab (Inwoo Hwang)  
 > **Target Audience**: Commercial Greenhouse Operators, Plant Factory Systems Engineers, Gärtnermeister Candidates, Agronomists  
@@ -8,7 +8,7 @@
 ---
 
 ## 📌 Executive Abstract & Compendium Profile
-This open-access technical compendium organizes all **78 English engineering monographs** (**197 total EN/DE/JA editions**) alongside **42 client-side biophysical simulators** and **192 hyper-local agricultural grant programs** into six engineering domains.
+This open-access technical compendium organizes all **78 English engineering monographs** (**198 total EN/DE/JA editions**) alongside **42 client-side biophysical simulators** and **192 hyper-local agricultural grant programs** into six engineering domains.
 
 ---
 
@@ -530,6 +530,7 @@ This open-access technical compendium organizes all **78 English engineering mon
 <a id="chapter-08-article-08-monstera-deliciosa-care-guide"></a>
 - **EN Monograph**: [../articles/article-08-monstera-deliciosa-care-guide.html](../articles/article-08-monstera-deliciosa-care-guide.html)
 - **DE Edition**: [../articles/de/article-08-monstera-deliciosa-kulturfuehrung-epiphyten-substrat-vpd.html](../articles/de/article-08-monstera-deliciosa-kulturfuehrung-epiphyten-substrat-vpd.html)
+- **JA Edition**: [../articles/ja/article-08-monstera-deliciosa-epiphyte-substrate-fenestration-vpd-jp.html](../articles/ja/article-08-monstera-deliciosa-epiphyte-substrate-fenestration-vpd-jp.html)
 - **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
 - **Synopsis**: Commercial tropical foliage engineering: hydroponic cultivation of Monstera deliciosa, leaf marginal necrosis prevention via VPD steering, and automated climate control.
 

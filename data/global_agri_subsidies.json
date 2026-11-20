@@ -1305,11 +1305,11 @@
       "countryName": "Germany",
       "region": "DE",
       "regionName": "Germany (Federal)",
-      "jurisdictionLabel": "Germany (FNR / BMEL)",
+      "jurisdictionLabel": "Germany (FNR / BMLEH)",
       "flag": "🇩🇪",
       "category": "energy",
       "name": "Bundesprogramm Energieeffizienz in Landwirtschaft und Gartenbau",
-      "agency": "Fachagentur Nachwachsende Rohstoffe e.V. (FNR) / BMEL (Transferred from BLE)",
+      "agency": "Fachagentur Nachwachsende Rohstoffe e.V. (FNR) / BMLEH (Transferred from BLE, Oct 8, 2025 Directive)",
       "subsidyType": "Direct Non-Repayable Capital Grant (Zuschuss)",
       "subsidyRate": "40% - 50% of Eligible Investment (Federal KTF Paused -> 20% State Länder-AFP Active)",
       "rateDecimal": 0.4,
@@ -1317,8 +1317,8 @@
       "matchRequirement": "60% - 70% Enterprise Match (Own equity or commercial bank loan)",
       "disbursementType": "Progress Reimbursement based on verified invoices and consultant certification",
       "currency": "EUR",
-      "verifiedDate": "2026-11-13 Verified (FNR Jurisdiction & KTF Antragsstopp Audit)",
-      "deadline": "Federal KTF Intake Paused (Antragsstopp since 2026-05-31) — Route via State Länder-AFP",
+      "verifiedDate": "2026-11-20 Verified (BMLEH Oct 2025 Directive, FNR Antragsstopp & 2027 Natural Refrigerants)",
+      "deadline": "Federal Intake Paused since 2026-05-31 (2027 Reopening Pending Federal Budget) — Prepare Dossier Now",
       "selectionMethod": "First-Come, First-Served for verified applications meeting ≥20% CO2 savings threshold",
       "targetEquipment": [
         "Multi-layer greenhouse covers & double thermal/energy screen retrofits (Energieschirme achieving ≤452.2 kWh/m²/a and ≥80% renewable/waste heat)",
@@ -1330,7 +1330,9 @@
         "Horticultural LED supplemental lighting fixtures & industrial air compressors (explicitly excluded under revised FNR Module guidelines)",
         "New Federal KTF applications while temporary intake freeze (Antragsstopp since 2026-05-31) remains in effect",
         "Vorzeitiger Maßnahmenbeginn: Any purchase order or contract signed prior to written Zuwendungsbescheid",
-        "Second-hand machinery or greenhouse expansion without certified ≥15%–20% CO2/primary energy savings"
+        "Second-hand machinery or greenhouse expansion without certified ≥15%–20% CO2/primary energy savings",
+        "Heat pumps with synthetic refrigerants applied from 2027-01-01 (natural refrigerants R290/NH3/CO2/water mandatory)",
+        "New CHP/KWK plants (excluded under BMLEH Oct 2025 directive; biomass >=700 kW subject to 20 mg/m3 dust & residue rules)"
       ],
       "qualificationCriteria": [
         "Commercial horticultural and agricultural enterprises located in Germany",
@@ -1340,7 +1342,7 @@
       ],
       "documentChecklist": [
         "Energieberatungsbericht (Certified Energy Concept prepared by an accredited consultant)",
-        "CO2-Minderungsberechnung (Official BLE carbon reduction calculation sheet)",
+        "Maßnahmenspezifisches CO2-Einsparkonzept (Prepared by FNR-accredited expert; Fördereffizienz cap €1,200/t CO2/a small / €900/t medium)",
         "Two to three detailed commercial quotes from certified horticultural builders",
         "Commercial Register Excerpt (Handelsregisterauszug / Gewerbeanmeldung)",
         "De-minimis declaration and KMU self-assessment declaration"
@@ -1351,14 +1353,14 @@
       "contactEmail": "energieeffizienz@fnr.de",
       "linkedCalculator": "greenhouse-heating-load-thermal-screen-calculator.html",
       "linkedToolTitle": "Thermal Screen Heat Savings",
-      "summary": "Germany's federal greenhouse energy efficiency grant (now administered by FNR, 40%–50% up to €600k for double thermal screens ≤452.2 kWh/m²/a & heat recovery; LEDs/compressors excluded). Note: Federal KTF new intake is paused (Antragsstopp since May 31, 2026) — active German CEA projects should route immediately through state Länder-AFP (20% grant) + Rentenbank promotional loans.",
-      "deepGuide": "CRITICAL 2026 REGULATORY UPDATE: Administration transferred from BLE to FNR (energieeffizienz.fnr.de), LEDs and compressors are excluded, and new federal KTF intake entered temporary Antragsstopp on 2026-05-31. Until federal KTF reopens, route greenhouse screen/HVAC capex through your state Länder-AFP (20% base grant + Junglandwirte bonus) paired with Landwirtschaftliche Rentenbank credit, and NEVER sign vendor orders before formal Zuwendungsbescheid approval.",
+      "summary": "Germany's federal greenhouse energy efficiency grant (transferred from BLE to FNR under the BMLEH Oct 8, 2025 directive; 40%–50% up to €600k, capped at €1,200/t CO2/a small / €900/t medium; >=€12,000 net capex and >2 yr unsubsidized payback). New intake paused after 2026-05-31 pending 2027 federal budget; from 2027-01-01 only natural-refrigerant heat pumps (R290/NH3/CO2/water) qualify while new CHP/KWK and LEDs are excluded.",
+      "deepGuide": "CRITICAL 2026/2027 REGULATORY UPDATE (BMLEH Oct 8, 2025 Directive -> FNR): Administration moved from BLE to FNR (energieeffizienz.fnr.de). Battery/PV/machinery applications paused 2026-03-04 and all new intake paused after 2026-05-31 pending the 2027 federal budget. Prepare your FNR-accredited CO2-Einsparkonzept over winter 2026/2027 so you can file immediately on reopening: from 2027-01-01 only heat pumps using natural refrigerants (propane, ammonia, CO2, water) are eligible, new KWK/CHP plants are excluded, biomass boilers >=700 kW face strict 20 mg/m3 particulate limits, and Fördereffizienz caps apply (€1,200/t CO2/a for small enterprises <50 staff/<=€10M turnover; €900/t for medium). NEVER sign orders before written Zuwendungsbescheid.",
       "applicationWindow": {
         "status": "closing_soon",
-        "statusLabel": "🟡 Federal KTF Paused (Antragsstopp) — Route via Länder-AFP (20%)",
+        "statusLabel": "🟡 Intake Paused Since 2026-05-31 (2027 Budget Reopening · Natural Refrigerants Mandatory 2027-01-01)",
         "startDate": "2026-01-01",
         "endDate": "2026-12-31",
-        "deadlineDisplay": "KTF Paused since 2026-05-31 (State Länder-AFP Active)",
+        "deadlineDisplay": "Paused Since 2026-05-31 (2027 Reopening Pending Budget; State AFP Active)",
         "daysRemaining": 41,
         "cycleFrequency": "Continuous Rolling Submission",
         "submissionPortal": "FNR Portal (energieeffizienz.fnr.de) / State Länder-AFP Fallback"
