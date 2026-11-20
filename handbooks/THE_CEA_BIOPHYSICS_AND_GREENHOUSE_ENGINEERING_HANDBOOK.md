@@ -1,14 +1,14 @@
 # 📘 The CEA Biophysics & Greenhouse Engineering Handbook
-## OpenCEA Compendium: 78 Volumes (191 Multilingual Editions) & 42 Live Simulators
+## OpenCEA Compendium: 78 Volumes (197 Multilingual Editions) & 42 Live Simulators
 
 > **Author**: Inwoovation Lab (Inwoo Hwang)  
 > **Target Audience**: Commercial Greenhouse Operators, Plant Factory Systems Engineers, Gärtnermeister Candidates, Agronomists  
-> **Publication Standard**: Verified Biophysical Equations (Magnus-Tetens, Penman-Monteith, Farquhar FvCB, DIN V 18599, Debye-Hückel), Interactive Simulator Synchronized (`2026-11-19`)  
+> **Publication Standard**: Verified Biophysical Equations (Magnus-Tetens, Penman-Monteith, Farquhar FvCB, DIN V 18599, Debye-Hückel), Interactive Simulator Synchronized (`2026-11-20`)  
 
 ---
 
 ## 📌 Executive Abstract & Compendium Profile
-This open-access technical compendium organizes all **78 English engineering monographs** (**191 total EN/DE/JA editions**) alongside **42 client-side biophysical simulators** and **192 hyper-local agricultural grant programs** into six engineering domains.
+This open-access technical compendium organizes all **78 English engineering monographs** (**197 total EN/DE/JA editions**) alongside **42 client-side biophysical simulators** and **192 hyper-local agricultural grant programs** into six engineering domains.
 
 ---
 
@@ -224,14 +224,16 @@ This open-access technical compendium organizes all **78 English engineering mon
 ## Volume 74: Semi-Closed Greenhouse Corridor Air Treatment Units (ATU): Positive-Pressure Insect Exclusion (+20~25 Pa), Mollier Enthalpy Balancing, and 1-Click VenloCAD 3D Integration
 <a id="chapter-74-article-74-semi-closed-greenhouse-atu-mollier-venlocad-integration"></a>
 - **EN Monograph**: [../articles/article-74-semi-closed-greenhouse-atu-mollier-venlocad-integration.html](../articles/article-74-semi-closed-greenhouse-atu-mollier-venlocad-integration.html)
+- **DE Edition**: [../articles/de/article-74-halbgeschlossenes-gewaechshaus-atu-mollier-venlocad-integration.html](../articles/de/article-74-halbgeschlossenes-gewaechshaus-atu-mollier-venlocad-integration.html)
 - **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
 - **Synopsis**: Technical engineering monograph on semi-closed greenhouse corridor Air Treatment Units (ATU): positive-pressure insect exclusion (+20~25 Pa), Mollier.
 
 ## Volume 76: High-Tech Venlo Greenhouse Climate Engineering & Biocontrol Cybernetics in Knoblauchsland
 <a id="chapter-76-article-76-knoblauchsland-greenhouse-climate-vpd-biocontrol-oecd"></a>
 - **EN Monograph**: [../articles/article-76-knoblauchsland-greenhouse-climate-vpd-biocontrol-oecd.html](../articles/article-76-knoblauchsland-greenhouse-climate-vpd-biocontrol-oecd.html)
+- **DE Edition**: [../articles/de/article-76-knoblauchsland-gewaechshausklima-vpd-nuetzlingseinsatz-oecd.html](../articles/de/article-76-knoblauchsland-gewaechshausklima-vpd-nuetzlingseinsatz-oecd.html)
 - **Paired Live Simulator**: [`tools/index.html`](../tools/index.html)
-- **Synopsis**: Technical engineering monograph on modern CEA greenhouse management in Nuremberg Knoblauchsland: AR diffuse glass (96% transmission, 25% haze), VPD.
+- **Synopsis**: Technical engineering monograph on modern CEA greenhouse management in Nuremberg Knoblauchsland: double-AR diffuse glass (96.2% transmission, 25% haze), 35/30 C pipe-rail hydronics, VPD biocontrol cybernetics (0.60 to 0.85 kPa), Wasserverband Knoblauchsland hydrology, and OECD/EPPO standards.
 
 ---
 
@@ -428,12 +430,14 @@ This open-access technical compendium organizes all **78 English engineering mon
 ## Volume 73: Closed-Loop Hydroponic Drainage Recirculation: Davies Chemical Speciation, Multi-Cycle Ballast Ion (Na⁺/Cl⁻) Accumulation Kinetics, and German DüV Zero-Discharge Economics
 <a id="chapter-73-article-73-closed-loop-nutrient-recirculation-davies-ion-balance"></a>
 - **EN Monograph**: [../articles/article-73-closed-loop-nutrient-recirculation-davies-ion-balance.html](../articles/article-73-closed-loop-nutrient-recirculation-davies-ion-balance.html)
+- **DE Edition**: [../articles/de/article-73-geschlossene-naehrloesungsrezirkulation-davies-ionenbilanz-steinwolle.html](../articles/de/article-73-geschlossene-naehrloesungsrezirkulation-davies-ionenbilanz-steinwolle.html)
 - **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
 - **Synopsis**: Technical engineering monograph on closed-loop hydroponic drainage recirculation: Davies ionic activity speciation, multi-cycle sodium and chloride.
 
 ## Volume 75: Aquifer Thermal Energy Storage (ATES) & Industrial Heat Pump Integration in Commercial Greenhouses
 <a id="chapter-75-article-75-ates-aquifer-thermal-energy-storage-heat-pumps-greenhouse"></a>
 - **EN Monograph**: [../articles/article-75-ates-aquifer-thermal-energy-storage-heat-pumps-greenhouse.html](../articles/article-75-ates-aquifer-thermal-energy-storage-heat-pumps-greenhouse.html)
+- **DE Edition**: [../articles/de/article-75-ates-aquifer-waermespeicher-grosswaermepumpen-gewaechshaus.html](../articles/de/article-75-ates-aquifer-waermespeicher-grosswaermepumpen-gewaechshaus.html)
 - **Paired Live Simulator**: [`tools/index.html`](../tools/index.html)
 - **Synopsis**: Technical engineering monograph on Aquifer Thermal Energy Storage (ATES) and industrial heat pump integration in commercial CEA greenhouses.
 
@@ -653,8 +657,9 @@ This open-access technical compendium organizes all **78 English engineering mon
 ## Volume 77: High-Tech Greenhouse Postharvest Intralogistics & Cold Chain Engineering
 <a id="chapter-77-article-77-greenhouse-postharvest-intralogistics-cold-chain-quality"></a>
 - **EN Monograph**: [../articles/article-77-greenhouse-postharvest-intralogistics-cold-chain-quality.html](../articles/article-77-greenhouse-postharvest-intralogistics-cold-chain-quality.html)
+- **DE Edition**: [../articles/de/article-77-gewaechshaus-nacherntelogistik-kuehlkette-qualitaetserhalt.html](../articles/de/article-77-gewaechshaus-nacherntelogistik-kuehlkette-qualitaetserhalt.html)
 - **Paired Live Simulator**: [`tools/psychrometric-mollier-greenhouse-dehumidifier.html`](../tools/psychrometric-mollier-greenhouse-dehumidifier.html)
-- **Synopsis**: Technical monograph on modern CEA postharvest engineering: AGV/FTS fleet intralogistics, forced-air precooling thermodynamics (12–15°C), chilling.
+- **Synopsis**: Technical monograph on modern CEA postharvest engineering: induction-guided AGV/FTS harvest fleets, Biot and Newton cooling kinetics in forced-air precooling (12 to 15 C), Q10 respiration, dew-point condensation prevention, and ToBRFV / IFS Food 8 biosecurity.
 
 ---
 
@@ -712,6 +717,7 @@ This open-access technical compendium organizes all **78 English engineering mon
 ## Volume 78: EU Commercial Greenhouse Energy Auditing (DIN V 18599 / EN 13031-1), German Federal BLE 40% Decarbonization Grants, and 10-Year Hofnachfolge Equity Succession Engineering
 <a id="chapter-78-article-78-eu-greenhouse-energy-audit-din-18599-ble-grant-hofnachfolge"></a>
 - **EN Monograph**: [../articles/article-78-eu-greenhouse-energy-audit-din-18599-ble-grant-hofnachfolge.html](../articles/article-78-eu-greenhouse-energy-audit-din-18599-ble-grant-hofnachfolge.html)
+- **DE Edition**: [../articles/de/article-78-eu-gewaechshaus-energieaudit-din-18599-ble-foerderung-hofnachfolge.html](../articles/de/article-78-eu-gewaechshaus-energieaudit-din-18599-ble-foerderung-hofnachfolge.html)
 - **Paired Live Simulator**: [`tools/eu-greenhouse-energy-hofnachfolge-roi-simulator.html`](../tools/eu-greenhouse-energy-hofnachfolge-roi-simulator.html)
 - **Synopsis**: Technical engineering and agri-finance monograph on EU commercial greenhouse energy auditing (DIN V 18599 / EN 13031-1), German Federal BLE 40% decarbonization grants, BEHG/ETS-2 carbon pricing, and 10-year Hofnachfolge farm equity succession via Ertragspacht and Stille Beteiligung.
 

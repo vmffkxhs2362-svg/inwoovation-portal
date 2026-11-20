@@ -48,20 +48,20 @@
 
   const ECOSYSTEM_INDEX = [
   {
-    "title": "Complete CEA Engineering Directory &amp; Index (374 Pages)",
+    "title": "Complete CEA Engineering Directory &amp; Index (380 Pages)",
     "cat": "part",
     "url": "directory.html",
     "icon": "⚙️",
-    "desc": "Master HTML sitemap and engineering taxonomy indexing all 374 calculators, 192 global agricultural grants, EN/DE/JA monographs, crop guides, and climate hubs.",
-    "tags": "directory html complete cea engineering directory amp index 374 pages master html sitemap and engineering taxonomy indexing all 374 calculators 192 global agricultural grants en de ja monogr"
+    "desc": "Master HTML sitemap and engineering taxonomy indexing all 380 calculators, 192 global agricultural grants, EN/DE/JA monographs, crop guides, and climate hubs.",
+    "tags": "directory html complete cea engineering directory amp index 380 pages master html sitemap and engineering taxonomy indexing all 380 calculators 192 global agricultural grants en de ja monogr"
   },
   {
-    "title": "Precision CEA & Horticultural Engineering Articles (78 Volumes / 191 Multilingual Editions)",
+    "title": "Precision CEA & Horticultural Engineering Articles (78 Volumes / 197 Multilingual Editions)",
     "cat": "article",
     "url": "guides.html",
     "icon": "📚",
-    "desc": "78-volume (191 multilingual editions) open-access Controlled Environment Agriculture (CEA) archive — VPD physics, biomass CHP, photobiology, closed-loop fertiga",
-    "tags": "guides html precision cea horticultural engineering articles 78 volumes 191 multilingual editions 78 volume 191 multilingual editions open access controlled environment agriculture cea archi"
+    "desc": "78-volume (197 multilingual editions) open-access Controlled Environment Agriculture (CEA) archive — VPD physics, biomass CHP, photobiology, closed-loop fertiga",
+    "tags": "guides html precision cea horticultural engineering articles 78 volumes 197 multilingual editions 78 volume 197 multilingual editions open access controlled environment agriculture cea archi"
   },
   {
     "title": "Inwoovation Lab",
@@ -92,8 +92,8 @@
     "cat": "tool",
     "url": "store.html",
     "icon": "🛠️",
-    "desc": "100% Free, open-access institutional engineering assets: Python fertigation solvers, 50-State USDA grant playbooks, smart greenhouse BOM estimators, and Bavaria",
-    "tags": "store html open access agtech engineering repository amp digital assets 100 free open access institutional engineering assets python fertigation solvers 50 state usda grant playbooks smart g"
+    "desc": "100% Free, open-access institutional engineering assets: Python fertigation solvers, 192-program global &amp; USDA grant playbooks, smart greenhouse BOM estimat",
+    "tags": "store html open access agtech engineering repository amp digital assets 100 free open access institutional engineering assets python fertigation solvers 192 program global amp usda grant pla"
   },
   {
     "title": "Greenhouse Cultivation & Facility Troubleshooting Wizard",
@@ -708,7 +708,7 @@
     "cat": "article",
     "url": "articles/article-76-knoblauchsland-greenhouse-climate-vpd-biocontrol-oecd.html",
     "icon": "📚",
-    "desc": "Technical engineering monograph on modern CEA greenhouse management in Nuremberg Knoblauchsland: AR diffuse glass (96% transmission, 25% haze), VPD.",
+    "desc": "Technical engineering monograph on modern CEA greenhouse management in Nuremberg Knoblauchsland: double-AR diffuse glass (96.2% transmission, 25% haze), 35/30 C",
     "tags": "articles article 76 knoblauchsland greenhouse climate vpd biocontrol oecd html high tech venlo greenhouse climate engineering amp biocontrol cybernetics in knoblauchsland ar diffuse glass op"
   },
   {
@@ -716,7 +716,7 @@
     "cat": "article",
     "url": "articles/article-77-greenhouse-postharvest-intralogistics-cold-chain-quality.html",
     "icon": "📚",
-    "desc": "Technical monograph on modern CEA postharvest engineering: AGV/FTS fleet intralogistics, forced-air precooling thermodynamics (12–15°C), chilling.",
+    "desc": "Technical monograph on modern CEA postharvest engineering: induction-guided AGV/FTS harvest fleets, Biot and Newton cooling kinetics in forced-air precooling (1",
     "tags": "articles article 77 greenhouse postharvest intralogistics cold chain quality html high tech greenhouse postharvest intralogistics amp cold chain engineering automated guided vehicles agv fts"
   },
   {
@@ -732,8 +732,8 @@
     "cat": "article",
     "url": "articles/index.html",
     "icon": "📚",
-    "desc": "Multilingual library of 142 horticultural engineering articles on VPD psychrometrics, DIN V 18599 heating loads, FvCB CO2 kinetics, and MPC control.",
-    "tags": "articles index html cea amp greenhouse engineering articles library en de ja multilingual library of 142 horticultural engineering articles on vpd psychrometrics din v 18599 heating loads fv"
+    "desc": "Multilingual library of 197 horticultural engineering articles on VPD psychrometrics, DIN V 18599 heating loads, FvCB CO2 kinetics, and MPC control.",
+    "tags": "articles index html cea amp greenhouse engineering articles library en de ja multilingual library of 197 horticultural engineering articles on vpd psychrometrics din v 18599 heating loads fv"
   },
   {
     "title": "VPD-Meisterklasse im Gewächshaus: Dampfdruckdefizit & Spaltöffnungs-Transpiration",
@@ -1312,12 +1312,60 @@
     "tags": "articles de article 72 semi closed greenhouse mollier psychrometrics latent heat html thermodynamische optimierung halbgeschlossener venlo gewächshäuser mollier h x psychrometrie 70 bar hoch"
   },
   {
-    "title": "Deutsche Gartenbau-Meister Fachartikel &amp; CEA-Technik (72 Monographien)",
+    "title": "Geschlossene Nährlösungsrezirkulation auf Steinwolle: Davies-Ionenaktivität, Na⁺/Cl⁻-Ballastsalzkinetik, selektive Entsalzung &amp; WHG/DüV-Null-Emission (Band 73)",
+    "cat": "article",
+    "url": "articles/de/article-73-geschlossene-naehrloesungsrezirkulation-davies-ionenbilanz-steinwolle.html",
+    "icon": "🇩🇪",
+    "desc": "Ingenieurwissenschaftliche Meister-Monographie zur geschlossenen Nährlösungsrezirkulation im Unterglasgemüsebau: Erweiterte Davies-Gleichung, Ca2+-Aktivitätsabs",
+    "tags": "articles de article 73 geschlossene naehrloesungsrezirkulation davies ionenbilanz steinwolle html geschlossene nährlösungsrezirkulation auf steinwolle davies ionenaktivität na cl ballastsalz"
+  },
+  {
+    "title": "Halbgeschlossenes Gewächshaus &amp; ATU-Klimakorridore: Überdruck-Vektorschutz (+15 bis +35 Pa), Mollier-h,x-Enthalpiebilanz &amp; VenloCAD-3D-Kopplung nach DIN EN 13031-1 (Band 74)",
+    "cat": "article",
+    "url": "articles/de/article-74-halbgeschlossenes-gewaechshaus-atu-mollier-venlocad-integration.html",
+    "icon": "🇩🇪",
+    "desc": "Ingenieurwissenschaftliche Meister-Monographie zu ATU-Klimakorridoren im halbgeschlossenen Venlo-Gewächshaus: Überdruck-Insektenbarriere (+15 bis +35 Pa), Molli",
+    "tags": "articles de article 74 halbgeschlossenes gewaechshaus atu mollier venlocad integration html halbgeschlossenes gewächshaus amp atu klimakorridore überdruck vektorschutz 15 bis 35 pa mollier h"
+  },
+  {
+    "title": "Aquifer-Wärmespeicher (ATES) &amp; Großwärmepumpen im Gewächshaus: Dublettenhydraulik, VDI 4640 Blatt 4, WHG-Wasserrecht &amp; BEW/BMLEH-Förderung (Band 75)",
+    "cat": "article",
+    "url": "articles/de/article-75-ates-aquifer-waermespeicher-grosswaermepumpen-gewaechshaus.html",
+    "icon": "🇩🇪",
+    "desc": "Ingenieurwissenschaftliche Meister-Monographie zu saisonalen Aquifer-Wärmespeichern (ATES) und Großwärmepumpen im Unterglasgartenbau: Dupuit-Thiem-Brunnenhydrau",
+    "tags": "articles de article 75 ates aquifer waermespeicher grosswaermepumpen gewaechshaus html aquifer wärmespeicher ates amp großwärmepumpen im gewächshaus dublettenhydraulik vdi 4640 blatt 4 whg w"
+  },
+  {
+    "title": "Klimatechnik &amp; Biokontroll-Kybernetik im Venlo-Gewächshaus des Nürnberger Knoblauchslands: Doppel-AR-Diffusglas, VPD-Regelung, Wasserverband-Ressourcenmanagement &amp; OECD-Qualitätsnormen (Band 76)",
+    "cat": "article",
+    "url": "articles/de/article-76-knoblauchsland-gewaechshausklima-vpd-nuetzlingseinsatz-oecd.html",
+    "icon": "🇩🇪",
+    "desc": "Ingenieurwissenschaftliche Fachmonographie zum Unterglasgemüsebau im Nürnberger Knoblauchsland: Doppel-AR-Diffusglas (96,2 % Transmission, 25 % Haze), 35/30-Gra",
+    "tags": "articles de article 76 knoblauchsland gewaechshausklima vpd nuetzlingseinsatz oecd html klimatechnik amp biokontroll kybernetik im venlo gewächshaus des nürnberger knoblauchslands doppel ar "
+  },
+  {
+    "title": "Nacherntelogistik &amp; Kühlkettentechnik im Hochleistungs-Gewächshaus: Induktionsgeführte FTS-Ernteflotten, Zwangslüftungs- vs. Vakuum-Vorkühlung, Q10-Atmungskinetik &amp; Taupunktschutz (Band 77)",
+    "cat": "article",
+    "url": "articles/de/article-77-gewaechshaus-nacherntelogistik-kuehlkette-qualitaetserhalt.html",
+    "icon": "🇩🇪",
+    "desc": "Ingenieurwissenschaftliche Monographie zur Nacherntelogistik im Unterglasgemüsebau: Induktionsgeführte FTS-Erntewagen, Biot- und Newton-Halbkühlzeit t1/2 bei Zw",
+    "tags": "articles de article 77 gewaechshaus nacherntelogistik kuehlkette qualitaetserhalt html nacherntelogistik amp kühlkettentechnik im hochleistungs gewächshaus induktionsgeführte fts ernteflotte"
+  },
+  {
+    "title": "Energieaudit im Erwerbsgartenbau nach DIN V 18599 &amp; DIN EN 16247-1, BMLEH/BLE-Förderung (40–50 %), Kapitaldienstgrenzen &amp; Hofnachfolge (Band 78)",
+    "cat": "article",
+    "url": "articles/de/article-78-eu-gewaechshaus-energieaudit-din-18599-ble-foerderung-hofnachfolge.html",
+    "icon": "🇩🇪",
+    "desc": "Ingenieur- und betriebswirtschaftliche Fachmonographie zum Gewächshaus-Energieaudit (DIN V 18599, DIN EN 16247-1), BMLEH/BLE-Zuschuss (40 bis 50 %), Rentenbank ",
+    "tags": "articles de article 78 eu gewaechshaus energieaudit din 18599 ble foerderung hofnachfolge html energieaudit im erwerbsgartenbau nach din v 18599 amp din en 16247 1 bmleh ble förderung 40 50 "
+  },
+  {
+    "title": "Deutsche Gartenbau-Meister Fachartikel &amp; CEA-Technik (78 Monographien)",
     "cat": "article",
     "url": "articles/de/index.html",
     "icon": "🇩🇪",
-    "desc": "Vollständige deutschsprachige Wissensdatenbank mit 72 technischen Fachartikeln zu VPD-Psychrometrie, DIN V 18599 Heizlast, EN 13031-1 Venlo-Statik, FvCB-CO2-Kin",
-    "tags": "articles de index html deutsche gartenbau meister fachartikel amp cea technik 72 monographien vollständige deutschsprachige wissensdatenbank mit 72 technischen fachartikeln zu vpd psychromet"
+    "desc": "Vollständige deutschsprachige Wissensdatenbank mit 78 technischen Fachartikeln zu VPD-Psychrometrie, DIN V 18599 Heizlast, EN 13031-1 Venlo-Statik, FvCB-CO2-Kin",
+    "tags": "articles de index html deutsche gartenbau meister fachartikel amp cea technik 78 monographien vollständige deutschsprachige wissensdatenbank mit 78 technischen fachartikeln zu vpd psychromet"
   },
   {
     "title": "施設園芸・スマート農業のための飽差（VPD）最適化マスタークラス",
@@ -2112,12 +2160,12 @@
     "tags": "crops vertical farm lettuce leafy greens tipburn prevention guide html controlled environment leafy greens lettuce lactuca sativa microclimate vpd dli precision steering guide precision cea "
   },
   {
-    "title": "The CEA Biophysics &amp; Greenhouse Engineering Handbook (78 Volumes / 191 Editions)",
+    "title": "The CEA Biophysics &amp; Greenhouse Engineering Handbook (78 Volumes / 197 Editions)",
     "cat": "article",
     "url": "handbooks/index.html",
     "icon": "📖",
-    "desc": "Open-access six-part Controlled Environment Agriculture compendium indexing 78 volumes (191 EN/DE/JA editions), 42 live biophysical calculators, and 192 agricul",
-    "tags": "handbooks index html the cea biophysics amp greenhouse engineering handbook 78 volumes 191 editions open access six part controlled environment agriculture compendium indexing 78 volumes 191"
+    "desc": "Open-access six-part Controlled Environment Agriculture compendium indexing 78 volumes (197 EN/DE/JA editions), 42 live biophysical calculators, and 192 agricul",
+    "tags": "handbooks index html the cea biophysics amp greenhouse engineering handbook 78 volumes 197 editions open access six part controlled environment agriculture compendium indexing 78 volumes 197"
   },
   {
     "title": "AgriMaster",
@@ -2228,8 +2276,8 @@
     "cat": "sim",
     "url": "smartfarm/library_vpd_optimization_tomato.html",
     "icon": "🧪",
-    "desc": "Vapor pressure deficit (VPD) is a critical climate parameter that directly influences plant transpiration, calcium xylem mass-flow, Blossom-End Rot prevention, ",
-    "tags": "smartfarm library vpd optimization tomato html optimization of vapor pressure deficit vpd for greenhouse tomato yield and quality vapor pressure deficit vpd is a critical climate parameter t"
+    "desc": "Leaf-to-air Vapor Pressure Deficit (VPD) governs stomatal transpiration, xylem calcium mass-flow, Blossom-End Rot prevention, and greenhouse tomato yield.",
+    "tags": "smartfarm library vpd optimization tomato html optimization of vapor pressure deficit vpd for greenhouse tomato yield and quality leaf to air vapor pressure deficit vpd governs stomatal tran"
   },
   {
     "title": "Greenhouse Supplemental Lighting Calculator",
@@ -3022,13 +3070,13 @@
       <div class="inwoo-palette-box" role="dialog" aria-modal="true" aria-label="Inwoovation Spotlight Search">
         <div class="inwoo-palette-header">
           <span class="inwoo-palette-search-icon">🔍</span>
-          <input type="text" id="inwoo-palette-input" placeholder="Search all 369 tools, simulators, wiki, crops, climate hubs & EN/DE/JA articles..." autocomplete="off" />
+          <input type="text" id="inwoo-palette-input" placeholder="Search all 375 tools, simulators, wiki, crops, climate hubs & EN/DE/JA articles..." autocomplete="off" />
           <span class="inwoo-palette-esc-badge" onclick="window.InwooPalette.close()">ESC</span>
         </div>
         <div class="inwoo-palette-tabs">
-          <button class="inwoo-pal-tab active" data-cat="all">✨ All (369)</button>
+          <button class="inwoo-pal-tab active" data-cat="all">✨ All (375)</button>
           <button class="inwoo-pal-tab" data-cat="tool">🛠️ Tools (49)</button>
-          <button class="inwoo-pal-tab" data-cat="article">📚 Articles (197)</button>
+          <button class="inwoo-pal-tab" data-cat="article">📚 Articles (203)</button>
           <button class="inwoo-pal-tab" data-cat="wiki">🧬 Wiki (44)</button>
           <button class="inwoo-pal-tab" data-cat="climate">🌍 Climate (41)</button>
           <button class="inwoo-pal-tab" data-cat="sim">🧪 Simulators (19)</button>
@@ -3042,7 +3090,7 @@
             <span><kbd>↵</kbd> Open</span>
             <span><kbd>Esc</kbd> Close</span>
           </div>
-          <div style="color: #64748b; font-size: 0.75rem;">Inwoovation Universal Spotlight (369 Indexed Pages)</div>
+          <div style="color: #64748b; font-size: 0.75rem;">Inwoovation Universal Spotlight (375 Indexed Pages)</div>
         </div>
       </div>
     `;

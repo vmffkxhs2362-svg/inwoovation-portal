@@ -2735,9 +2735,8 @@ window.DIAGNOSIS_COLLECTOR_URL = "";
     function sendDiagnosisToSheet(actionType) {
         if (!activeDiagnosisData) return;
         
-        const configUrl = window.DIAGNOSIS_COLLECTOR_URL || "";
-        if (!configUrl || configUrl === "YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL") {
-            console.log("Data collection skipped: Web App URL not configured.");
+        const configUrl = typeof window.DIAGNOSIS_COLLECTOR_URL === "string" ? window.DIAGNOSIS_COLLECTOR_URL.trim() : "";
+        if (!configUrl || !/^https:\/\//i.test(configUrl)) {
             return;
         }
 
@@ -2769,13 +2768,7 @@ window.DIAGNOSIS_COLLECTOR_URL = "";
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(payload)
-        })
-        .then(() => {
-            console.log("Diagnosis data logged successfully. Action: " + actionType);
-        })
-        .catch(err => {
-            console.error("Error logging diagnosis data:", err);
-        });
+        }).catch(() => {});
     }
 
     window.downloadDiagnosisPDF = function() {
