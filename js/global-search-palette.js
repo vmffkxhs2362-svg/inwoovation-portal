@@ -14,964 +14,964 @@
 
   const ECOSYSTEM_INDEX = [
   {
-    "title": "Complete CEA Engineering Directory &amp; Index (382 Pages)",
+    "title": "Complete CEA Engineering Directory &amp; Index",
     "cat": "part",
     "url": "directory.html",
     "icon": "⚙️",
     "desc": "Master HTML sitemap and engineering taxonomy indexing all 382 calculators, 192 global agricultural grants, EN/DE/JA monographs, crop guides, and climate hubs.",
-    "tags": "directory html complete cea engineering directory amp index 382 pages master html sitemap and engineering taxonomy indexing all 382 calculators 192 global agricultural grants en de ja monogr"
+    "tags": "directory html complete cea engineering directory amp index master html sitemap and engineering taxonomy indexing all 382 calculators 192 global agricultural grants en de ja monographs crop "
   },
   {
     "title": "CEA &amp; Greenhouse Engineering Articles",
     "cat": "article",
     "url": "guides.html",
     "icon": "📚",
-    "desc": "78-volume (199 multilingual editions) open-access Controlled Environment Agriculture (CEA) archive — VPD physics, biomass CHP, photobiology, closed-loop fertiga",
-    "tags": "guides html cea amp greenhouse engineering articles 78 volume 199 multilingual editions open access controlled environment agriculture cea archive vpd physics biomass chp photobiology closed"
+    "desc": "78-volume (199 EN/DE/JA editions) open-access CEA engineering library covering VPD physics, DLI photobiology, fertigation, CHP heat, and smart grants.",
+    "tags": "guides html cea amp greenhouse engineering articles 78 volume 199 en de ja editions open access cea engineering library covering vpd physics dli photobiology fertigation chp heat and smart g"
   },
   {
     "title": "Inwoovation Lab",
     "cat": "tool",
     "url": "index.html",
     "icon": "🛠️",
-    "desc": "Inwoovation Lab — Unified CEA engineering command center: 192 verified global agricultural grants across 8 countries (US, Germany, Japan, Netherlands, Korea, Fr",
-    "tags": "index html inwoovation lab inwoovation lab unified cea engineering command center 192 verified global agricultural grants across 8 countries us germany japan netherlands korea fr"
+    "desc": "Inwoovation Lab: 42 free CEA biophysics calculators, VenloCAD 3D glasshouse CAD, 192 global agricultural grants across 8 countries, and 199 monographs.",
+    "tags": "index html inwoovation lab inwoovation lab 42 free cea biophysics calculators venlocad 3d glasshouse cad 192 global agricultural grants across 8 countries and 199 monographs"
   },
   {
     "title": "Gärtnermeister &amp; KTBL Rechner",
     "cat": "tool",
     "url": "meister.html",
     "icon": "🇩🇪",
-    "desc": "Offizielle deutsche Gartenbau-Normen (KTBL Datensammlung, DIN V 18599, DIN EN 13031-1, QS-GAP 2026, IFS Food v8, SVLFG VSG 4.2). Heizwärmebedarf, Deckungsbeitra",
-    "tags": "meister html gärtnermeister amp ktbl rechner offizielle deutsche gartenbau normen ktbl datensammlung din v 18599 din en 13031 1 qs gap 2026 ifs food v8 svlfg vsg 4 2 heizwärmebedarf deckungs"
+    "desc": "Gartenbau-Meister &amp; KTBL Rechner für Deutschland: DIN V 18599 Heizwärmebedarf, Deckungsbeitrag, ToBRFV-Desinfektion, 34 Förderprogramme &amp; Podcast.",
+    "tags": "meister html gärtnermeister amp ktbl rechner gartenbau meister amp ktbl rechner für deutschland din v 18599 heizwärmebedarf deckungsbeitrag tobrfv desinfektion 34 förderprogramme amp podcast"
   },
   {
     "title": "OpenCEA Biophysics Quiz &amp; Certificate",
     "cat": "tool",
     "url": "quiz.html",
     "icon": "🛠️",
-    "desc": "Test your precision CEA horticultural biophysics knowledge. Solve 10 questions on VPD, DLI, DIN V 18599, and fertigation to earn a free verifiable Certificate o",
-    "tags": "quiz html opencea biophysics quiz amp certificate test your precision cea horticultural biophysics knowledge solve 10 questions on vpd dli din v 18599 and fertigation to earn a free verifiab"
+    "desc": "Test your greenhouse biophysics mastery across 10 engineering questions on VPD, DLI, DIN V 18599, and fertigation to earn a free digital certificate.",
+    "tags": "quiz html opencea biophysics quiz amp certificate test your greenhouse biophysics mastery across 10 engineering questions on vpd dli din v 18599 and fertigation to earn a free digital certif"
   },
   {
-    "title": "Open-Access AgTech Engineering Repository &amp; Digital Assets",
+    "title": "Open-Access AgTech Engineering Repository",
     "cat": "tool",
     "url": "store.html",
     "icon": "🛠️",
-    "desc": "100% Free, open-access institutional engineering assets: Python fertigation solvers, 192-program global &amp; USDA grant playbooks, smart greenhouse BOM estimat",
-    "tags": "store html open access agtech engineering repository amp digital assets 100 free open access institutional engineering assets python fertigation solvers 192 program global amp usda grant pla"
+    "desc": "Free open-access AgTech vault: Python fertigation solvers, 192 global &amp; USDA grant playbooks, VenloCAD 3D tools, and 42 biophysical calculators.",
+    "tags": "store html open access agtech engineering repository free open access agtech vault python fertigation solvers 192 global amp usda grant playbooks venlocad 3d tools and 42 biophysical calcula"
   },
   {
     "title": "Greenhouse Climate Troubleshooting",
     "cat": "tool",
     "url": "troubleshoot.html",
     "icon": "🛠️",
-    "desc": "Instant diagnostic wizard for commercial greenhouse and indoor farm issues. Identify root causes for tip burn, blossom-end rot, condensation, and heating spikes",
-    "tags": "troubleshoot html greenhouse climate troubleshooting instant diagnostic wizard for commercial greenhouse and indoor farm issues identify root causes for tip burn blossom end rot condensation"
+    "desc": "Instant greenhouse diagnostic wizard: pinpoint root causes of tipburn, blossom-end rot, condensation, and heat spikes with 3-step CEA action plans.",
+    "tags": "troubleshoot html greenhouse climate troubleshooting instant greenhouse diagnostic wizard pinpoint root causes of tipburn blossom end rot condensation and heat spikes with 3 step cea action "
   },
   {
-    "title": "Biophysical Foundations of Vapor Pressure Deficit (VPD) Thermodynamics in CEA Greenhouses",
+    "title": "Vapor Pressure Deficit (VPD) Thermodynamics in CEA",
     "cat": "article",
     "url": "articles/article-01-vpd-master-class.html",
     "icon": "📚",
     "desc": "Mastering VPD (kPa) computation over relative humidity (RH%) to eliminate crop stress, balance stomatal conductance, and drive transpirational xylem flow.",
-    "tags": "articles article 01 vpd master class html biophysical foundations of vapor pressure deficit vpd thermodynamics in cea greenhouses mastering vpd kpa computation over relative humidity rh to e"
+    "tags": "articles article 01 vpd master class html vapor pressure deficit vpd thermodynamics in cea mastering vpd kpa computation over relative humidity rh to eliminate crop stress balance stomatal c"
   },
   {
-    "title": "Daily Light Integral (DLI) & Photonic Efficacy Engineering in Vertical Plant Factories",
+    "title": "Daily Light Integral (DLI) &amp; Photonic Efficacy",
     "cat": "article",
     "url": "articles/article-02-dli-vertical-farming.html",
     "icon": "📚",
     "desc": "Calculated PPFD (µmol/m²/s) and DLI (mol/m²/day) formulations for indoor LED vertical farming to maximize dry biomass yield per kWh of electricity.",
-    "tags": "articles article 02 dli vertical farming html daily light integral dli photonic efficacy engineering in vertical plant factories calculated ppfd mol m s and dli mol m day formulations for in"
+    "tags": "articles article 02 dli vertical farming html daily light integral dli amp photonic efficacy calculated ppfd mol m s and dli mol m day formulations for indoor led vertical farming to maximiz"
   },
   {
-    "title": "Greenhouse Bumblebee Protection & Restricted-Entry Intervals (REI) in Precision CEA",
+    "title": "Greenhouse Bumblebee Protection &amp; Restricted-Entry",
     "cat": "article",
     "url": "articles/article-03-pollinator-safety-rei.html",
     "icon": "📚",
-    "desc": "Biological pollinator stewardship in commercial greenhouses: protecting Bombus terrestris from pesticide residue toxicity, REI mathematical models, and automate",
-    "tags": "articles article 03 pollinator safety rei html greenhouse bumblebee protection restricted entry intervals rei in precision cea biological pollinator stewardship in commercial greenhouses pro"
+    "desc": "Biological pollinator stewardship in commercial greenhouses: protecting Bombus terrestris from pesticide residue toxicity, REI mathematical models.",
+    "tags": "articles article 03 pollinator safety rei html greenhouse bumblebee protection amp restricted entry biological pollinator stewardship in commercial greenhouses protecting bombus terrestris f"
   },
   {
-    "title": "Greenhouse Envelope Peak Heat Loss Coefficients (U-Values) & Thermodynamic Thermal Screen Modeling",
+    "title": "Greenhouse Envelope Peak Heat Loss Coefficients",
     "cat": "article",
     "url": "articles/article-04-greenhouse-heating-loss.html",
     "icon": "📚",
     "desc": "Engineering greenhouse heating loads using Q = U·A·ΔT heat transfer dynamics, cover glazing U-values, wind infiltration friction, and multilayer.",
-    "tags": "articles article 04 greenhouse heating loss html greenhouse envelope peak heat loss coefficients u values thermodynamic thermal screen modeling engineering greenhouse heating loads using q u"
+    "tags": "articles article 04 greenhouse heating loss html greenhouse envelope peak heat loss coefficients engineering greenhouse heating loads using q u a t heat transfer dynamics cover glazing u val"
   },
   {
-    "title": "Hourly Penman-Monteith Evapotranspiration (ET0) Modeling & Stomatal Resistance Kinetics",
+    "title": "Hourly Penman-Monteith Evapotranspiration (ET0)",
     "cat": "article",
     "url": "articles/article-05-penman-monteith-transpiration.html",
     "icon": "📚",
     "desc": "Mathematical implementation of the FAO-56 Penman-Monteith equation for commercial greenhouse irrigation steering, canopy energy balance, and solar.",
-    "tags": "articles article 05 penman monteith transpiration html hourly penman monteith evapotranspiration et0 modeling stomatal resistance kinetics mathematical implementation of the fao 56 penman mo"
+    "tags": "articles article 05 penman monteith transpiration html hourly penman monteith evapotranspiration et0 mathematical implementation of the fao 56 penman monteith equation for commercial greenho"
   },
   {
-    "title": "Molar Stoichiometry & Sonneveld/Steiner Ion Balancing (meq/L) in Closed-Loop Hydroponics",
+    "title": "Molar Stoichiometry &amp; Sonneveld/Steiner Ion",
     "cat": "article",
     "url": "articles/article-06-hydroponic-nutrient-formulation.html",
     "icon": "📚",
-    "desc": "Precision closed-loop hydroponic nutrient balancing: milliequivalent calculations, Steiner cation-anion stoichiometry, salt solubility products, and automated c",
-    "tags": "articles article 06 hydroponic nutrient formulation html molar stoichiometry sonneveld steiner ion balancing meq l in closed loop hydroponics precision closed loop hydroponic nutrient balanc"
+    "desc": "Precision closed-loop hydroponic nutrient balancing: milliequivalent calculations, Steiner cation-anion stoichiometry, salt solubility products.",
+    "tags": "articles article 06 hydroponic nutrient formulation html molar stoichiometry amp sonneveld steiner ion precision closed loop hydroponic nutrient balancing milliequivalent calculations steine"
   },
   {
-    "title": "Photomorphogenesis & PAR Spectral Quality: Red/Blue Ratios and Emerson Enhancement Effect",
+    "title": "Photomorphogenesis &amp; PAR Spectral Quality",
     "cat": "article",
     "url": "articles/article-07-indoor-plant-lighting-spectrum.html",
     "icon": "📚",
     "desc": "Photobiological plant responses across McCree action spectra, phytochrome photoequilibria (Pfr/Pr), far-red Emerson enhancement, and spectral tailoring.",
-    "tags": "articles article 07 indoor plant lighting spectrum html photomorphogenesis par spectral quality red blue ratios and emerson enhancement effect photobiological plant responses across mccree a"
+    "tags": "articles article 07 indoor plant lighting spectrum html photomorphogenesis amp par spectral quality photobiological plant responses across mccree action spectra phytochrome photoequilibria p"
   },
   {
-    "title": "Horticultural Physics & Environmental Physiology of Monstera deliciosa: Hydroponics & VPD Optimization",
+    "title": "Horticultural Physics &amp; Environmental Physiology",
     "cat": "article",
     "url": "articles/article-08-monstera-deliciosa-care-guide.html",
     "icon": "📚",
-    "desc": "Commercial tropical foliage engineering: hydroponic cultivation of Monstera deliciosa, leaf marginal necrosis prevention via VPD steering, and automated climate",
-    "tags": "articles article 08 monstera deliciosa care guide html horticultural physics environmental physiology of monstera deliciosa hydroponics vpd optimization commercial tropical foliage engineeri"
+    "desc": "Commercial tropical foliage engineering: hydroponic cultivation of Monstera deliciosa, leaf marginal necrosis prevention via VPD steering, and automated.",
+    "tags": "articles article 08 monstera deliciosa care guide html horticultural physics amp environmental physiology commercial tropical foliage engineering hydroponic cultivation of monstera deliciosa"
   },
   {
-    "title": "Stomatal Conductance Dynamics & Farquhar-von Caemmerer-Berry (FvCB) Photosynthesis Coupling",
+    "title": "Stomatal Conductance Dynamics &amp; Farquhar-von",
     "cat": "article",
     "url": "articles/article-09-stomata-conductance-photosynthesis.html",
     "icon": "📚",
     "desc": "Coupled Farquhar-von Caemmerer-Berry photosynthesis and Ball-Berry stomatal conductance models under elevated CO2 enrichment and light-saturated.",
-    "tags": "articles article 09 stomata conductance photosynthesis html stomatal conductance dynamics farquhar von caemmerer berry fvcb photosynthesis coupling coupled farquhar von caemmerer berry photo"
+    "tags": "articles article 09 stomata conductance photosynthesis html stomatal conductance dynamics amp farquhar von coupled farquhar von caemmerer berry photosynthesis and ball berry stomatal conduct"
   },
   {
-    "title": "Commercial Vertical Farming HVAC Sizing: Dehumidification Latent Loads & Microclimate Fluid Dynamics",
+    "title": "Vertical Farming HVAC Sizing",
     "cat": "article",
     "url": "articles/article-10-vertical-farm-hvac-design.html",
     "icon": "📚",
     "desc": "HVAC and psychrometric dehumidification engineering for commercial indoor vertical farms: calculating sensible vs latent cooling loads, airflow.",
-    "tags": "articles article 10 vertical farm hvac design html commercial vertical farming hvac sizing dehumidification latent loads microclimate fluid dynamics hvac and psychrometric dehumidification e"
+    "tags": "articles article 10 vertical farm hvac design html vertical farming hvac sizing hvac and psychrometric dehumidification engineering for commercial indoor vertical farms calculating sensible "
   },
   {
-    "title": "High-Wire Strawberry Greenhouse Microclimate: Flower Bud Differentiation & Diurnal Temperature Integration",
+    "title": "High-Wire Strawberry Greenhouse Microclimate",
     "cat": "article",
     "url": "articles/article-11-strawberry-greenhouse-climate.html",
     "icon": "📚",
     "desc": "Precision microclimate management for day-neutral and short-day greenhouse strawberries: chilling hour accumulation, flower bud initiation, and diurnal.",
-    "tags": "articles article 11 strawberry greenhouse climate html high wire strawberry greenhouse microclimate flower bud differentiation diurnal temperature integration precision microclimate manageme"
+    "tags": "articles article 11 strawberry greenhouse climate html high wire strawberry greenhouse microclimate precision microclimate management for day neutral and short day greenhouse strawberries ch"
   },
   {
-    "title": "Xylem Calcium Partitioning & Transpirational Prevention of Blossom-End Rot (BER) in Greenhouse Tomatoes",
+    "title": "Xylem Calcium Partitioning &amp; Transpirational",
     "cat": "article",
     "url": "articles/article-12-tomato-blossom-end-rot-calcium.html",
     "icon": "📚",
     "desc": "Apoplastic calcium transport mechanics, xylem-to-phloem immobility, root hydraulic pressure, and nighttime VPD steering to prevent Blossom-End Rot.",
-    "tags": "articles article 12 tomato blossom end rot calcium html xylem calcium partitioning transpirational prevention of blossom end rot ber in greenhouse tomatoes apoplastic calcium transport mecha"
+    "tags": "articles article 12 tomato blossom end rot calcium html xylem calcium partitioning amp transpirational apoplastic calcium transport mechanics xylem to phloem immobility root hydraulic pressu"
   },
   {
-    "title": "Precision Agricultural Sensor Calibration: NDIR CO2, TDR Soil Moisture, EC & pH Electrochemistry",
+    "title": "Precision Agricultural Sensor Calibration",
     "cat": "article",
     "url": "articles/article-13-smartfarm-sensor-calibration.html",
     "icon": "📚",
     "desc": "Engineering calibration protocols for CEA instrumentation: NDIR dual-beam optical drift, two-point pH/EC Nernstian slope correction, and dielectric.",
-    "tags": "articles article 13 smartfarm sensor calibration html precision agricultural sensor calibration ndir co2 tdr soil moisture ec ph electrochemistry engineering calibration protocols for cea in"
+    "tags": "articles article 13 smartfarm sensor calibration html precision agricultural sensor calibration engineering calibration protocols for cea instrumentation ndir dual beam optical drift two poi"
   },
   {
-    "title": "Dual Horticultural Education & Vocational Engineering in Germany: Gärtner Ausbildung to Meister",
+    "title": "Dual Horticultural Education &amp; Vocational",
     "cat": "article",
     "url": "articles/article-14-ausbildung-horticulture-germany.html",
     "icon": "📚",
     "desc": "Comprehensive structural guide to Germany&#x27;s dual vocational education system (Duale Ausbildung) in commercial production horticulture (Gartenbau).",
-    "tags": "articles article 14 ausbildung horticulture germany html dual horticultural education vocational engineering in germany gärtner ausbildung to meister comprehensive structural guide to german"
+    "tags": "articles article 14 ausbildung horticulture germany html dual horticultural education amp vocational comprehensive structural guide to germany x27 s dual vocational education system duale au"
   },
   {
-    "title": "Biophilic Architecture & Indoor Environmental Physics in Commercial Living Spaces",
+    "title": "Biophilic Architecture &amp; Indoor Environmental",
     "cat": "article",
     "url": "articles/article-15-plant-interior-biophilic-design.html",
     "icon": "📚",
     "desc": "Architectural integration of living vegetation in high-performance buildings: daylight factor modeling, sub-irrigation hydraulics, particulate matter.",
-    "tags": "articles article 15 plant interior biophilic design html biophilic architecture indoor environmental physics in commercial living spaces architectural integration of living vegetation in hig"
+    "tags": "articles article 15 plant interior biophilic design html biophilic architecture amp indoor environmental architectural integration of living vegetation in high performance buildings daylight"
   },
   {
-    "title": "German Master Grower (Gärtnermeister) Greenhouse Climate Steering Strategy for Solanaceae",
+    "title": "German Master Grower (Gärtnermeister) Greenhouse",
     "cat": "article",
     "url": "articles/article-16-german-meister-greenhouse-climate.html",
     "icon": "📚",
     "desc": "Advanced European greenhouse climate steering: 24-hour temperature integration (RTI), pre-night temperature drops (DIP), and 3-way mixing valve heating.",
-    "tags": "articles article 16 german meister greenhouse climate html german master grower gärtnermeister greenhouse climate steering strategy for solanaceae advanced european greenhouse climate steeri"
+    "tags": "articles article 16 german meister greenhouse climate html german master grower gärtnermeister greenhouse advanced european greenhouse climate steering 24 hour temperature integration rti pr"
   },
   {
-    "title": "Biophysical Soil Physics: Air Porosity, Water Retention Curves & Root Zone Aeration",
+    "title": "Biophysical Soil Physics",
     "cat": "article",
     "url": "articles/article-17-indoor-plant-soil-aeration-porosity.html",
     "icon": "📚",
     "desc": "Engineering potting media physics: Total Porosity, Container Capacity (CC), and Air-Filled Porosity (AFP) to eliminate root hypoxia in containerized.",
-    "tags": "articles article 17 indoor plant soil aeration porosity html biophysical soil physics air porosity water retention curves root zone aeration engineering potting media physics total porosity "
+    "tags": "articles article 17 indoor plant soil aeration porosity html biophysical soil physics engineering potting media physics total porosity container capacity cc and air filled porosity afp to el"
   },
   {
-    "title": "Closed-Loop Hydroponic Drain Water Disinfection: UV-C, Ozone, Heat & Ultrafiltration",
+    "title": "Closed-Loop Hydroponic Drain Water Disinfection",
     "cat": "article",
     "url": "articles/article-18-recirculating-nutrient-sterilization.html",
     "icon": "📚",
-    "desc": "Engineering recirculating hydroponic drain water disinfection: UV-C irradiance dosage (mJ/cm2), ozone oxidation redox potential (ORP), and automated climate con",
-    "tags": "articles article 18 recirculating nutrient sterilization html closed loop hydroponic drain water disinfection uv c ozone heat ultrafiltration engineering recirculating hydroponic drain water"
+    "desc": "Engineering recirculating hydroponic drain water disinfection: UV-C irradiance dosage (mJ/cm2), ozone oxidation redox potential (ORP), and automated climate.",
+    "tags": "articles article 18 recirculating nutrient sterilization html closed loop hydroponic drain water disinfection engineering recirculating hydroponic drain water disinfection uv c irradiance do"
   },
   {
-    "title": "Photon Use Efficiency (PUE) & Electric Power to Fresh Biomass Kinetics in Vertical Farming",
+    "title": "Photon Use Efficiency (PUE) &amp; Electric Power",
     "cat": "article",
     "url": "articles/article-19-vertical-farm-biomass-conversion-efficiency.html",
     "icon": "📚",
     "desc": "Quantifying photon use efficiency (g/mol) and energy yield (g/kWh) in indoor plant factories with artificial lighting (PFAL) across leafy greens.",
-    "tags": "articles article 19 vertical farm biomass conversion efficiency html photon use efficiency pue electric power to fresh biomass kinetics in vertical farming quantifying photon use efficiency "
+    "tags": "articles article 19 vertical farm biomass conversion efficiency html photon use efficiency pue amp electric power quantifying photon use efficiency g mol and energy yield g kwh in indoor pla"
   },
   {
-    "title": "Leaf Temperature Infrared Thermometry & Crop Water Stress Index (CWSI) Sensing",
+    "title": "Leaf Temperature Infrared Thermometry &amp; Crop Water",
     "cat": "article",
     "url": "articles/article-20-leaf-temperature-infrared-thermometry.html",
     "icon": "📚",
-    "desc": "Physics of infrared canopy radiometry: Stefan-Boltzmann law, leaf-to-air temperature differential (ΔT), and Crop Water Stress Index (CWSI) for commercial high-t",
-    "tags": "articles article 20 leaf temperature infrared thermometry html leaf temperature infrared thermometry crop water stress index cwsi sensing physics of infrared canopy radiometry stefan boltzma"
+    "desc": "Physics of infrared canopy radiometry: Stefan-Boltzmann law, leaf-to-air temperature differential (ΔT), and Crop Water Stress Index (CWSI) for commercial.",
+    "tags": "articles article 20 leaf temperature infrared thermometry html leaf temperature infrared thermometry amp crop water physics of infrared canopy radiometry stefan boltzmann law leaf to air tem"
   },
   {
-    "title": "Chlorophyll a Fluorescence Kinetics (Fv/Fm & OJIP) & Pre-Symptomatic Stress Metrology",
+    "title": "Chlorophyll a Fluorescence Kinetics (Fv/Fm &amp; OJIP)",
     "cat": "article",
     "url": "articles/article-21-chlorophyll-a-fluorescence-fvfm-stress.html",
     "icon": "📚",
     "desc": "Photosystem II maximum quantum yield (Fv/Fm), OJIP induction curves, and non-photochemical quenching (NPQ) for real-time non-destructive plant stress.",
-    "tags": "articles article 21 chlorophyll a fluorescence fvfm stress html chlorophyll a fluorescence kinetics fv fm ojip pre symptomatic stress metrology photosystem ii maximum quantum yield fv fm oji"
+    "tags": "articles article 21 chlorophyll a fluorescence fvfm stress html chlorophyll a fluorescence kinetics fv fm amp ojip photosystem ii maximum quantum yield fv fm ojip induction curves and non ph"
   },
   {
-    "title": "HPS vs. LED Supplemental Lighting Physics: Photon Efficacy, Far-Red Kinetics & Greenhouse Heat Balance",
+    "title": "HPS vs. LED Supplemental Lighting Physics",
     "cat": "article",
     "url": "articles/article-22-hps-vs-led-supplemental-lighting.html",
     "icon": "📚",
-    "desc": "Comparative biophysics of High-Pressure Sodium (HPS) and LED supplemental fixtures: PAR photon efficacy (µmol/J), Far-Red Emerson enhancement, and automated cli",
-    "tags": "articles article 22 hps vs led supplemental lighting html hps vs led supplemental lighting physics photon efficacy far red kinetics greenhouse heat balance comparative biophysics of high pre"
+    "desc": "Comparative biophysics of High-Pressure Sodium (HPS) and LED supplemental fixtures: PAR photon efficacy (µmol/J), Far-Red Emerson enhancement, and automated.",
+    "tags": "articles article 22 hps vs led supplemental lighting html hps vs led supplemental lighting physics comparative biophysics of high pressure sodium hps and led supplemental fixtures par photon"
   },
   {
-    "title": "Closed-Loop DWC & Micro-Dosing Automation: Dissolved Oxygen, Ion-Selective ORP Metrology & PID Fertigation",
+    "title": "Closed-Loop DWC &amp; Micro-Dosing Automation",
     "cat": "article",
     "url": "articles/article-23-closed-loop-dwc-automation.html",
     "icon": "📚",
     "desc": "Engineering recirculating Deep Water Culture (DWC) systems: Henry&#x27;s Law dissolved oxygen (DO) dynamics, ion-selective electrode (ISE) feedback.",
-    "tags": "articles article 23 closed loop dwc automation html closed loop dwc micro dosing automation dissolved oxygen ion selective orp metrology pid fertigation engineering recirculating deep water "
+    "tags": "articles article 23 closed loop dwc automation html closed loop dwc amp micro dosing automation engineering recirculating deep water culture dwc systems henry x27 s law dissolved oxygen do d"
   },
   {
-    "title": "Optimizing Far-Red (730nm) & Deep-Red (660nm) LED Ratios for Maximum Photosynthetic Quantum Yield",
+    "title": "Optimizing Far-Red (730nm) &amp; Deep-Red (660nm) LED",
     "cat": "article",
     "url": "articles/article-24-far-red-deep-red-led-spectrum-optimization.html",
     "icon": "📚",
     "desc": "A comprehensive engineering masterclass on the Emerson Enhancement Effect, Photosystem I/II excitation balance, and Far-Red (730nm) spectrum.",
-    "tags": "articles article 24 far red deep red led spectrum optimization html optimizing far red 730nm deep red 660nm led ratios for maximum photosynthetic quantum yield a comprehensive engineering ma"
+    "tags": "articles article 24 far red deep red led spectrum optimization html optimizing far red 730nm amp deep red 660nm led a comprehensive engineering masterclass on the emerson enhancement effect "
   },
   {
-    "title": "Closed-Loop Nutrient Recirculation & Nanobubble Dissolved Oxygen Kinetics",
+    "title": "Closed-Loop Nutrient Recirculation &amp; Nanobubble",
     "cat": "article",
     "url": "articles/article-25-closed-loop-hydroponic-nanobubble-oxygenation.html",
     "icon": "📚",
-    "desc": "Engineering analysis of closed-loop hydroponic recirculation, rhizosphere dissolved oxygen (DO &gt; 8.5 mg/L), and Pythium root-rot suppression in commercial co",
-    "tags": "articles article 25 closed loop hydroponic nanobubble oxygenation html closed loop nutrient recirculation nanobubble dissolved oxygen kinetics engineering analysis of closed loop hydroponic "
+    "desc": "Engineering analysis of closed-loop hydroponic recirculation, rhizosphere dissolved oxygen (DO &gt; 8.5 mg/L), and Pythium root-rot suppression in commercial.",
+    "tags": "articles article 25 closed loop hydroponic nanobubble oxygenation html closed loop nutrient recirculation amp nanobubble engineering analysis of closed loop hydroponic recirculation rhizosph"
   },
   {
-    "title": "Greenhouse Heating Load Modeling & Thermal Screen Dynamics (DIN V 18599)",
+    "title": "Greenhouse Heating Load Modeling &amp; Thermal Screen",
     "cat": "article",
     "url": "articles/article-26-greenhouse-heating-load-din-v-18599.html",
     "icon": "📚",
     "desc": "Comprehensive engineering analysis of peak heat transmission, thermal screen radiative resistance, and pipe rail hydraulics in commercial Venlo.",
-    "tags": "articles article 26 greenhouse heating load din v 18599 html greenhouse heating load modeling thermal screen dynamics din v 18599 comprehensive engineering analysis of peak heat transmission"
+    "tags": "articles article 26 greenhouse heating load din v 18599 html greenhouse heating load modeling amp thermal screen comprehensive engineering analysis of peak heat transmission thermal screen r"
   },
   {
-    "title": "Predictive Crop Biomass Accumulation & Light Use Efficiency (LUE)",
+    "title": "Predictive Crop Biomass Accumulation &amp; Light Use",
     "cat": "article",
     "url": "articles/article-27-crop-yield-biomass-light-use-efficiency.html",
     "icon": "📚",
     "desc": "Commercial greenhouse yield forecasting based on cumulative DLI, Light Use Efficiency (LUE = 2.8 - 3.4 g/mol), and Harvest Index (HI) modeling.",
-    "tags": "articles article 27 crop yield biomass light use efficiency html predictive crop biomass accumulation light use efficiency lue commercial greenhouse yield forecasting based on cumulative dli"
+    "tags": "articles article 27 crop yield biomass light use efficiency html predictive crop biomass accumulation amp light use commercial greenhouse yield forecasting based on cumulative dli light use "
   },
   {
-    "title": "Greenhouse CO2 Enrichment Kinetics & Economic ROI Thresholds",
+    "title": "Greenhouse CO2 Enrichment Kinetics &amp; Economic ROI",
     "cat": "article",
     "url": "articles/article-28-greenhouse-co2-enrichment-economics.html",
     "icon": "📚",
     "desc": "Industrial analysis of pure liquid CO2 vs CHP flue gas dosing, ventilation exchange losses, and net economic ROI thresholds in commercial horticulture.",
-    "tags": "articles article 28 greenhouse co2 enrichment economics html greenhouse co2 enrichment kinetics economic roi thresholds industrial analysis of pure liquid co2 vs chp flue gas dosing ventilat"
+    "tags": "articles article 28 greenhouse co2 enrichment economics html greenhouse co2 enrichment kinetics amp economic roi industrial analysis of pure liquid co2 vs chp flue gas dosing ventilation exc"
   },
   {
-    "title": "Hourly Penman-Monteith Evapotranspiration Modeling in Greenhouses",
+    "title": "Hourly Penman-Monteith Evapotranspiration Modeling",
     "cat": "article",
     "url": "articles/article-29-hourly-penman-monteith-evapotranspiration.html",
     "icon": "📚",
     "desc": "Engineering analysis of hourly crop evapotranspiration (ETc), stomatal resistance (rs), aerodynamic boundary layer resistance (ra), and precision.",
-    "tags": "articles article 29 hourly penman monteith evapotranspiration html hourly penman monteith evapotranspiration modeling in greenhouses engineering analysis of hourly crop evapotranspiration et"
+    "tags": "articles article 29 hourly penman monteith evapotranspiration html hourly penman monteith evapotranspiration modeling engineering analysis of hourly crop evapotranspiration etc stomatal resi"
   },
   {
-    "title": "Rockwool Slab Hydrodynamics & TDR Moisture Sensor Calibration",
+    "title": "Rockwool Slab Hydrodynamics &amp; TDR Moisture Sensor",
     "cat": "article",
     "url": "articles/article-30-rockwool-slab-tdr-moisture-drain-ec.html",
     "icon": "📚",
     "desc": "Engineering analysis of volumetric water content (VWC %), overnight dry-down kinetics, and drainage EC balancing in commercial rockwool hydroponics.",
-    "tags": "articles article 30 rockwool slab tdr moisture drain ec html rockwool slab hydrodynamics tdr moisture sensor calibration engineering analysis of volumetric water content vwc overnight dry do"
+    "tags": "articles article 30 rockwool slab tdr moisture drain ec html rockwool slab hydrodynamics amp tdr moisture sensor engineering analysis of volumetric water content vwc overnight dry down kinet"
   },
   {
-    "title": "High-Pressure (70 bar) Fogging Physics & Sauter Droplet Dynamics",
+    "title": "High-Pressure (70 bar) Fogging Physics &amp; Sauter",
     "cat": "article",
     "url": "articles/article-31-high-pressure-fogging-droplet-physics.html",
     "icon": "📚",
     "desc": "Industrial engineering analysis of 70 bar high-pressure fogging, Sauter Mean Diameter (D32 &lt; 10µm), flash evaporative cooling, and VPD.",
-    "tags": "articles article 31 high pressure fogging droplet physics html high pressure 70 bar fogging physics sauter droplet dynamics industrial engineering analysis of 70 bar high pressure fogging sa"
+    "tags": "articles article 31 high pressure fogging droplet physics html high pressure 70 bar fogging physics amp sauter industrial engineering analysis of 70 bar high pressure fogging sauter mean dia"
   },
   {
-    "title": "Horticultural LED Fixture Thermal Management & Junction Temperature (Tj)",
+    "title": "Horticultural LED Fixture Thermal Management",
     "cat": "article",
     "url": "articles/article-32-horticultural-led-thermal-junction-temperature.html",
     "icon": "📚",
     "desc": "Engineering analysis of LED diode junction temperature (Tj), thermal resistance (Rth), spectral photon efficacy derating, and canopy convective heat.",
-    "tags": "articles article 32 horticultural led thermal junction temperature html horticultural led fixture thermal management junction temperature tj engineering analysis of led diode junction temper"
+    "tags": "articles article 32 horticultural led thermal junction temperature html horticultural led fixture thermal management engineering analysis of led diode junction temperature tj thermal resista"
   },
   {
-    "title": "Precision Crop Steering Dynamics (Generative vs Vegetative)",
+    "title": "Precision Crop Steering Dynamics",
     "cat": "article",
     "url": "articles/article-33-precision-crop-steering-dif-vpd-drydown.html",
     "icon": "📚",
     "desc": "Industrial crop steering masterclass: Balancing vegetative stem growth vs generative flowering using 24h DIF, diurnal VPD differentials, and slab.",
-    "tags": "articles article 33 precision crop steering dif vpd drydown html precision crop steering dynamics generative vs vegetative industrial crop steering masterclass balancing vegetative stem grow"
+    "tags": "articles article 33 precision crop steering dif vpd drydown html precision crop steering dynamics industrial crop steering masterclass balancing vegetative stem growth vs generative flowerin"
   },
   {
-    "title": "Closed-Loop UV-C Disinfection & Pathogen Inactivation Kinetics",
+    "title": "Closed-Loop UV-C Disinfection &amp; Pathogen",
     "cat": "article",
     "url": "articles/article-34-closed-loop-uvc-drain-disinfection.html",
     "icon": "📚",
     "desc": "Engineering analysis of UV-C radiation dose (250 mJ/cm2), UVT% transmission correction, and viral/fungal log-reduction in recirculating greenhouse.",
-    "tags": "articles article 34 closed loop uvc drain disinfection html closed loop uv c disinfection pathogen inactivation kinetics engineering analysis of uv c radiation dose 250 mj cm2 uvt transmissi"
+    "tags": "articles article 34 closed loop uvc drain disinfection html closed loop uv c disinfection amp pathogen engineering analysis of uv c radiation dose 250 mj cm2 uvt transmission correction and "
   },
   {
-    "title": "Computational Fluid Dynamics (CFD) of Greenhouse HAF Circulation Fans",
+    "title": "Computational Fluid Dynamics (CFD) of Greenhouse",
     "cat": "article",
     "url": "articles/article-35-greenhouse-haf-fan-cfd-modeling.html",
     "icon": "📚",
     "desc": "Industrial CFD modeling of Horizontal Air Flow (HAF) fan spacing, jet velocity decay, Bernoulli air entrainment, and canopy boundary layer.",
-    "tags": "articles article 35 greenhouse haf fan cfd modeling html computational fluid dynamics cfd of greenhouse haf circulation fans industrial cfd modeling of horizontal air flow haf fan spacing je"
+    "tags": "articles article 35 greenhouse haf fan cfd modeling html computational fluid dynamics cfd of greenhouse industrial cfd modeling of horizontal air flow haf fan spacing jet velocity decay bern"
   },
   {
-    "title": "Combined Heat & Power (CHP) Flue Gas SCR Denitrification",
+    "title": "Combined Heat &amp; Power (CHP) Flue Gas SCR",
     "cat": "article",
     "url": "articles/article-36-chp-flue-gas-scr-denitrification.html",
     "icon": "📚",
-    "desc": "Industrial engineering analysis of gas engine Selective Catalytic Reduction (SCR), stoichiometric urea injection, NOx &lt; 5 ppm elimination, and automated clim",
-    "tags": "articles article 36 chp flue gas scr denitrification html combined heat power chp flue gas scr denitrification industrial engineering analysis of gas engine selective catalytic reduction scr"
+    "desc": "Industrial engineering analysis of gas engine Selective Catalytic Reduction (SCR), stoichiometric urea injection, NOx &lt; 5 ppm elimination, and automated.",
+    "tags": "articles article 36 chp flue gas scr denitrification html combined heat amp power chp flue gas scr industrial engineering analysis of gas engine selective catalytic reduction scr stoichiomet"
   },
   {
-    "title": "Hot Water Buffer Tank Stratification & Thermal Storage Sizing",
+    "title": "Hot Water Buffer Tank Stratification &amp; Thermal",
     "cat": "article",
     "url": "articles/article-37-thermal-buffer-tank-stratification-sizing.html",
     "icon": "📚",
     "desc": "Industrial engineering analysis of greenhouse hot-water thermal buffer tanks, thermocline Richardson number stability, and night peak heating discharge.",
-    "tags": "articles article 37 thermal buffer tank stratification sizing html hot water buffer tank stratification thermal storage sizing industrial engineering analysis of greenhouse hot water thermal"
+    "tags": "articles article 37 thermal buffer tank stratification sizing html hot water buffer tank stratification amp thermal industrial engineering analysis of greenhouse hot water thermal buffer tan"
   },
   {
-    "title": "Xylem Calcium Transport & Blossom-End Rot (BER) Prevention",
+    "title": "Xylem Calcium Transport &amp; Blossom-End Rot (BER)",
     "cat": "article",
     "url": "articles/article-38-xylem-calcium-flux-blossom-end-rot.html",
     "icon": "📚",
-    "desc": "Plant physiology analysis of xylem transpirational calcium flux, distal fruit cell membrane stability, and Blossom-End Rot (BER) prevention via VPD and precisio",
-    "tags": "articles article 38 xylem calcium flux blossom end rot html xylem calcium transport blossom end rot ber prevention plant physiology analysis of xylem transpirational calcium flux distal frui"
+    "desc": "Plant physiology analysis of xylem transpirational calcium flux, distal fruit cell membrane stability, and Blossom-End Rot (BER) prevention via VPD.",
+    "tags": "articles article 38 xylem calcium flux blossom end rot html xylem calcium transport amp blossom end rot ber plant physiology analysis of xylem transpirational calcium flux distal fruit cell "
   },
   {
-    "title": "Closed-Loop RO Desalination & Sodium (Na+) Rejection",
+    "title": "Closed-Loop RO Desalination &amp; Sodium (Na+)",
     "cat": "article",
     "url": "articles/article-39-closed-loop-ro-desalination-energy.html",
     "icon": "📚",
     "desc": "Industrial engineering analysis of greenhouse reverse osmosis (RO) membrane flux (LMH), sodium (Na+) rejection (99.2%), energy recovery devices (PX).",
-    "tags": "articles article 39 closed loop ro desalination energy html closed loop ro desalination sodium na rejection industrial engineering analysis of greenhouse reverse osmosis ro membrane flux lmh"
+    "tags": "articles article 39 closed loop ro desalination energy html closed loop ro desalination amp sodium na industrial engineering analysis of greenhouse reverse osmosis ro membrane flux lmh sodiu"
   },
   {
-    "title": "Canopy Light Extinction (Beer-Lambert) & Diffuse Glass Physics",
+    "title": "Canopy Light Extinction (Beer-Lambert) &amp; Diffuse",
     "cat": "article",
     "url": "articles/article-40-beer-lambert-canopy-light-extinction.html",
     "icon": "📚",
     "desc": "Industrial plant physiology analysis of Beer-Lambert light extinction, canopy extinction coefficient (k), Leaf Area Index (LAI), and diffuse glass.",
-    "tags": "articles article 40 beer lambert canopy light extinction html canopy light extinction beer lambert diffuse glass physics industrial plant physiology analysis of beer lambert light extinction"
+    "tags": "articles article 40 beer lambert canopy light extinction html canopy light extinction beer lambert amp diffuse industrial plant physiology analysis of beer lambert light extinction canopy ex"
   },
   {
-    "title": "Biochemical Farquhar (FvCB) Photosynthesis & CO2 Assimilation",
+    "title": "Biochemical Farquhar (FvCB) Photosynthesis &amp; CO2",
     "cat": "article",
     "url": "articles/article-41-farquhar-photosynthesis-fvcb-co2.html",
     "icon": "📚",
     "desc": "Industrial plant physiology analysis of the Farquhar-von Caemmerer-Berry (FvCB) model, Rubisco kinetics (Vcmax), electron transport (Jmax), and CO2.",
-    "tags": "articles article 41 farquhar photosynthesis fvcb co2 html biochemical farquhar fvcb photosynthesis co2 assimilation industrial plant physiology analysis of the farquhar von caemmerer berry f"
+    "tags": "articles article 41 farquhar photosynthesis fvcb co2 html biochemical farquhar fvcb photosynthesis amp co2 industrial plant physiology analysis of the farquhar von caemmerer berry fvcb model"
   },
   {
-    "title": "Substrate Matric Potential (Ψm), pF Curves & van Genuchten Physics",
+    "title": "Substrate Matric Potential (Ψm), pF Curves &amp; van",
     "cat": "article",
     "url": "articles/article-42-substrate-matric-potential-pf-curves.html",
     "icon": "📚",
     "desc": "Industrial agricultural physics analysis of substrate matric suction potential (Psi_m), pF retention curves, van Genuchten hydraulic models, and plant.",
-    "tags": "articles article 42 substrate matric potential pf curves html substrate matric potential m pf curves van genuchten physics industrial agricultural physics analysis of substrate matric suctio"
+    "tags": "articles article 42 substrate matric potential pf curves html substrate matric potential m pf curves amp van industrial agricultural physics analysis of substrate matric suction potential ps"
   },
   {
-    "title": "Greenhouse Structural Standards (EN 13031-1 & NEN 3859)",
+    "title": "Greenhouse Structural Standards",
     "cat": "article",
     "url": "articles/article-43-greenhouse-structural-standards-en13031.html",
     "icon": "📚",
-    "desc": "Civil engineering analysis of commercial Venlo greenhouse structural design according to EN 13031-1 and NEN 3859, wind suction (qw), snow drift, and automated c",
-    "tags": "articles article 43 greenhouse structural standards en13031 html greenhouse structural standards en 13031 1 nen 3859 civil engineering analysis of commercial venlo greenhouse structural desi"
+    "desc": "Civil engineering analysis of commercial Venlo greenhouse structural design according to EN 13031-1 and NEN 3859, wind suction (qw), snow drift.",
+    "tags": "articles article 43 greenhouse structural standards en13031 html greenhouse structural standards civil engineering analysis of commercial venlo greenhouse structural design according to en 1"
   },
   {
-    "title": "Meister-Deutsch: Open-Source Horticultural German SRS Engine",
+    "title": "Meister-Deutsch: Open-Source Horticultural German",
     "cat": "article",
     "url": "articles/article-44-meister-deutsch-open-source-srs-engine.html",
     "icon": "📚",
     "desc": "Open-source Spaced Repetition System (SRS) for German Meisterprüfung horticulture, Web Speech API pronunciation synthesis, and botanical taxonomy.",
-    "tags": "articles article 44 meister deutsch open source srs engine html meister deutsch open source horticultural german srs engine open source spaced repetition system srs for german meisterprüfung"
+    "tags": "articles article 44 meister deutsch open source srs engine html meister deutsch open source horticultural german open source spaced repetition system srs for german meisterprüfung horticultu"
   },
   {
-    "title": "AgriQuant: Open-Source Greenhouse Energy & Commodity Quant Analytics",
+    "title": "AgriQuant: Open-Source Greenhouse Energy",
     "cat": "article",
     "url": "articles/article-45-agriquant-energy-commodity-quant-terminal.html",
     "icon": "📚",
     "desc": "Open-source financial engineering and energy analytics terminal for commercial greenhouses. Simulates Dutch TTF natural gas spark spreads, electricity.",
-    "tags": "articles article 45 agriquant energy commodity quant terminal html agriquant open source greenhouse energy commodity quant analytics open source financial engineering and energy analytics te"
+    "tags": "articles article 45 agriquant energy commodity quant terminal html agriquant open source greenhouse energy open source financial engineering and energy analytics terminal for commercial gree"
   },
   {
-    "title": "OpenCEA: Open-Source Python Micro-Framework for Greenhouse Physics",
+    "title": "OpenCEA: Open-Source Python Micro-Framework",
     "cat": "article",
     "url": "articles/article-46-opencea-python-micro-framework-release.html",
     "icon": "📚",
     "desc": "Release of OpenCEA, an open-source Python micro-framework for commercial greenhouse physics, crop photobiology, substrate hydrodynamics, and climate.",
-    "tags": "articles article 46 opencea python micro framework release html opencea open source python micro framework for greenhouse physics release of opencea an open source python micro framework for"
+    "tags": "articles article 46 opencea python micro framework release html opencea open source python micro framework release of opencea an open source python micro framework for commercial greenhouse "
   },
   {
-    "title": "Computer Vision & Multispectral Disease Diagnostics in Protected Cropping",
+    "title": "Computer Vision &amp; Multispectral Disease",
     "cat": "article",
     "url": "articles/article-47-computer-vision-crop-disease-diagnostics.html",
     "icon": "📚",
     "desc": "Computer vision edge algorithms for early detection of Botrytis cinerea, iron chlorosis, and foliar necrotic lesions in commercial high-wire greenhouses.",
-    "tags": "articles article 47 computer vision crop disease diagnostics html computer vision multispectral disease diagnostics in protected cropping computer vision edge algorithms for early detection "
+    "tags": "articles article 47 computer vision crop disease diagnostics html computer vision amp multispectral disease computer vision edge algorithms for early detection of botrytis cinerea iron chlor"
   },
   {
-    "title": "Commercial Greenhouse 10-Year CapEx, OpEx & IRR Investment Modeling",
+    "title": "10-Year CapEx, OpEx &amp; IRR Investment Modeling",
     "cat": "article",
     "url": "articles/article-48-greenhouse-capex-opex-irr-npv-financial-model.html",
     "icon": "📚",
     "desc": "Bankable financial feasibility analysis for high-tech commercial Venlo glasshouse projects: Turnkey CapEx (180-320/m²), Discounted Cash Flows.",
-    "tags": "articles article 48 greenhouse capex opex irr npv financial model html commercial greenhouse 10 year capex opex irr investment modeling bankable financial feasibility analysis for high tech "
+    "tags": "articles article 48 greenhouse capex opex irr npv financial model html 10 year capex opex amp irr investment modeling bankable financial feasibility analysis for high tech commercial venlo g"
   },
   {
-    "title": "Hydroponic Chemical Speciation, Debye-Hückel & Saturation Indices",
+    "title": "Hydroponic Chemical Speciation, Debye-Hückel",
     "cat": "article",
     "url": "articles/article-49-hydroponic-chemical-speciation-debye-huckel.html",
     "icon": "📚",
     "desc": "Chemical thermodynamics of closed-loop hydroponic nutrient solutions: Debye-Hückel ionic strength, ion activity coefficients, and Saturation Index (SI).",
-    "tags": "articles article 49 hydroponic chemical speciation debye huckel html hydroponic chemical speciation debye hückel saturation indices chemical thermodynamics of closed loop hydroponic nutrient"
+    "tags": "articles article 49 hydroponic chemical speciation debye huckel html hydroponic chemical speciation debye hückel chemical thermodynamics of closed loop hydroponic nutrient solutions debye hü"
   },
   {
-    "title": "Smart Greenhouse Edge IoT & MQTT Fleet Telemetry Architecture",
+    "title": "Smart Greenhouse Edge IoT &amp; MQTT Fleet Telemetry",
     "cat": "article",
     "url": "articles/article-50-smart-greenhouse-mqtt-edge-iot-fleet.html",
     "icon": "📚",
     "desc": "Industrial IoT architecture for commercial protected cropping: LoRaWAN, MQTT broker topologies, JSON schema telemetry, and edge anomaly detection.",
-    "tags": "articles article 50 smart greenhouse mqtt edge iot fleet html smart greenhouse edge iot mqtt fleet telemetry architecture industrial iot architecture for commercial protected cropping lorawa"
+    "tags": "articles article 50 smart greenhouse mqtt edge iot fleet html smart greenhouse edge iot amp mqtt fleet telemetry industrial iot architecture for commercial protected cropping lorawan mqtt br"
   },
   {
-    "title": "Autonomous Greenhouse AI: Reinforcement Learning & Model Predictive Control",
+    "title": "Autonomous Greenhouse AI",
     "cat": "article",
     "url": "articles/article-51-autonomous-greenhouse-ai-mpc-reinforcement-learning.html",
     "icon": "📚",
-    "desc": "Autonomous climate computer optimization using Reinforcement Learning and Model Predictive Control (MPC). Optimizes 24h temperature trajectories and precision e",
-    "tags": "articles article 51 autonomous greenhouse ai mpc reinforcement learning html autonomous greenhouse ai reinforcement learning model predictive control autonomous climate computer optimization"
+    "desc": "Autonomous climate computer optimization using Reinforcement Learning and Model Predictive Control (MPC).",
+    "tags": "articles article 51 autonomous greenhouse ai mpc reinforcement learning html autonomous greenhouse ai autonomous climate computer optimization using reinforcement learning and model predicti"
   },
   {
-    "title": "Aquifer Thermal Energy Storage (ATES) & Industrial Heat Pumps in Venlo Greenhouses",
+    "title": "Aquifer Thermal Energy Storage (ATES) &amp; Industrial",
     "cat": "article",
     "url": "articles/article-52-aquifer-thermal-energy-storage-ates-heat-pump.html",
     "icon": "📚",
     "desc": "Thermodynamic modeling of Aquifer Thermal Energy Storage (ATES / WKO) doublet systems, seasonal heat recovery efficiency, and high-temperature.",
-    "tags": "articles article 52 aquifer thermal energy storage ates heat pump html aquifer thermal energy storage ates industrial heat pumps in venlo greenhouses thermodynamic modeling of aquifer therma"
+    "tags": "articles article 52 aquifer thermal energy storage ates heat pump html aquifer thermal energy storage ates amp industrial thermodynamic modeling of aquifer thermal energy storage ates wko do"
   },
   {
-    "title": "Biomass CHP Flue Gas SCR Cleaning & Biogenic CO2 Direct Enrichment in Venlo Glasshouses",
+    "title": "Biomass CHP Flue Gas SCR Cleaning &amp; Biogenic CO2",
     "cat": "article",
     "url": "articles/article-53-biomass-chp-scr-co2-recovery-horticulture.html",
     "icon": "📚",
     "desc": "Engineering thermodynamics of biomass combined heat and power (CHP), Selective Catalytic Reduction (SCR) DeNOx, ethylene scrubbers, and safe biogenic.",
-    "tags": "articles article 53 biomass chp scr co2 recovery horticulture html biomass chp flue gas scr cleaning biogenic co2 direct enrichment in venlo glasshouses engineering thermodynamics of biomass"
+    "tags": "articles article 53 biomass chp scr co2 recovery horticulture html biomass chp flue gas scr cleaning amp biogenic co2 engineering thermodynamics of biomass combined heat and power chp select"
   },
   {
-    "title": "AI-Driven Model Predictive Control (MPC) in Commercial Venlo Greenhouses: Real-Time Energy-Yield Optimization",
+    "title": "AI-Driven Model Predictive Control (MPC)",
     "cat": "article",
     "url": "articles/article-54-ai-model-predictive-control-mpc-venlo-greenhouse.html",
     "icon": "📚",
     "desc": "Engineering mathematical formulation of Model Predictive Control (MPC), transient thermodynamic microclimate modeling, dynamic assimilation lighting.",
-    "tags": "articles article 54 ai model predictive control mpc venlo greenhouse html ai driven model predictive control mpc in commercial venlo greenhouses real time energy yield optimization engineeri"
+    "tags": "articles article 54 ai model predictive control mpc venlo greenhouse html ai driven model predictive control mpc engineering mathematical formulation of model predictive control mpc transien"
   },
   {
-    "title": "Nutrient Uptake Concentration Factor (UCF) in Recirculating Hydroponics: Ion Dynamics & Leaching Fractions",
+    "title": "Nutrient Uptake Concentration Factor (UCF)",
     "cat": "article",
     "url": "articles/article-55-nutrient-uptake-concentration-factor-recirculating-hydroponics.html",
     "icon": "📚",
     "desc": "Engineering mass balance formulation of nutrient uptake concentration factors (UCF), ion accumulation kinetics, sodium salinity limits, and optimal.",
-    "tags": "articles article 55 nutrient uptake concentration factor recirculating hydroponics html nutrient uptake concentration factor ucf in recirculating hydroponics ion dynamics leaching fractions "
+    "tags": "articles article 55 nutrient uptake concentration factor recirculating hydroponics html nutrient uptake concentration factor ucf engineering mass balance formulation of nutrient uptake conce"
   },
   {
-    "title": "Far-Red Photobiology (ePAR 400–750 nm) & Phytochrome Photostationary State (PSS) in Greenhouse Horticulture",
+    "title": "Far-Red Photobiology (ePAR 400–750 nm)",
     "cat": "article",
     "url": "articles/article-56-far-red-photobiology-epar-phytochrome-photostationary-state.html",
     "icon": "📚",
-    "desc": "Engineering biophysics of far-red photon efficacy, ePAR extended photosynthetic range (400-750 nm), phytochrome photostationary state (PSS), and automated clima",
-    "tags": "articles article 56 far red photobiology epar phytochrome photostationary state html far red photobiology epar 400 750 nm phytochrome photostationary state pss in greenhouse horticulture eng"
+    "desc": "Engineering biophysics of far-red photon efficacy, ePAR extended photosynthetic range (400-750 nm), phytochrome photostationary state (PSS), and automated.",
+    "tags": "articles article 56 far red photobiology epar phytochrome photostationary state html far red photobiology epar 400 750 nm engineering biophysics of far red photon efficacy epar extended phot"
   },
   {
-    "title": "The 8% Out-of-Pocket Playbook: Stacking USDA REAP, CDFA SWEEP, and IOU Utility Rebates for California CEA Greenhouses",
+    "title": "The 8% Out-of-Pocket Playbook",
     "cat": "article",
     "url": "articles/article-57-california-cea-greenhouse-electrification-rebate-grant-stacking.html",
     "icon": "📚",
     "desc": "Engineering and grant stacking playbook for California commercial greenhouses, nurseries, and vertical farms to achieve up to 92% non-dilutive capital.",
-    "tags": "articles article 57 california cea greenhouse electrification rebate grant stacking html the 8 out of pocket playbook stacking usda reap cdfa sweep and iou utility rebates for california cea"
+    "tags": "articles article 57 california cea greenhouse electrification rebate grant stacking html the 8 out of pocket playbook engineering and grant stacking playbook for california commercial greenh"
   },
   {
-    "title": "Dynamic CO2 Enrichment Kinetics & RuBisCO Carboxylation Thermodynamics in High-Wire Venlo Greenhouses",
+    "title": "Dynamic CO2 Enrichment Kinetics &amp; RuBisCO",
     "cat": "article",
     "url": "articles/article-58-dynamic-co2-enrichment-kinetics-rubisco-carboxylation-venlo.html",
     "icon": "📚",
     "desc": "Engineering biophysics and microeconomic modeling of dynamic CO2 enrichment, RuBisCO carboxylation kinetics (Farquhar FvCB model), stomatal conductance.",
-    "tags": "articles article 58 dynamic co2 enrichment kinetics rubisco carboxylation venlo html dynamic co2 enrichment kinetics rubisco carboxylation thermodynamics in high wire venlo greenhouses engin"
+    "tags": "articles article 58 dynamic co2 enrichment kinetics rubisco carboxylation venlo html dynamic co2 enrichment kinetics amp rubisco engineering biophysics and microeconomic modeling of dynamic "
   },
   {
-    "title": "EPEX Spot Negative Day-Ahead Arbitrage, Hybrid BESS Sizing & Power-to-Heat Thermal Buffering in Venlo Greenhouses",
+    "title": "EPEX Spot Negative Day-Ahead Arbitrage, Hybrid",
     "cat": "article",
     "url": "articles/article-59-epex-spot-negative-pricing-bess-power-to-heat-greenhouse.html",
     "icon": "📚",
     "desc": "Engineering thermodynamics and quantitative energy arbitrage: electrode boilers, heat pump integration, atmospheric thermocline buffer tanks, and BESS.",
-    "tags": "articles article 59 epex spot negative pricing bess power to heat greenhouse html epex spot negative day ahead arbitrage hybrid bess sizing power to heat thermal buffering in venlo greenhous"
+    "tags": "articles article 59 epex spot negative pricing bess power to heat greenhouse html epex spot negative day ahead arbitrage hybrid engineering thermodynamics and quantitative energy arbitrage e"
   },
   {
-    "title": "Real-Time Ion-Selective Electrode (ISE) Arrays, Nicolsky-Eisenman Potentiometry & Closed-Loop Autonomous Nutrient Dosing in Commercial High-Wire Hydroponics",
+    "title": "Real-Time Ion-Selective Electrode (ISE) Arrays",
     "cat": "article",
     "url": "articles/article-60-potentiometric-ion-selective-electrode-ise-closed-loop-hydroponics.html",
     "icon": "📚",
     "desc": "Engineering principles of real-time multi-ion sensing (NO3-, K+, Ca2+, Mg2+, H2PO4-), Nicolsky-Eisenman interference correction, Davies activity.",
-    "tags": "articles article 60 potentiometric ion selective electrode ise closed loop hydroponics html real time ion selective electrode ise arrays nicolsky eisenman potentiometry closed loop autonomou"
+    "tags": "articles article 60 potentiometric ion selective electrode ise closed loop hydroponics html real time ion selective electrode ise arrays engineering principles of real time multi ion sensing"
   },
   {
-    "title": "Dynamic Thermal Screen Gap Control, Evaporative Transpiration Latent Heat & Psychrometric Energy Optimization in Semi-Closed Venlo Greenhouses",
+    "title": "Dynamic Thermal Screen Gap Control, Evaporative",
     "cat": "article",
     "url": "articles/article-61-thermal-screen-gap-transpiration-latent-heat-greenhouse-energy.html",
     "icon": "📚",
     "desc": "Thermodynamic modeling of thermal screen gaps, Rayleigh-Bénard cold downdraft convection, crop latent heat transpiration, and active psychrometric.",
-    "tags": "articles article 61 thermal screen gap transpiration latent heat greenhouse energy html dynamic thermal screen gap control evaporative transpiration latent heat psychrometric energy optimiza"
+    "tags": "articles article 61 thermal screen gap transpiration latent heat greenhouse energy html dynamic thermal screen gap control evaporative thermodynamic modeling of thermal screen gaps rayleigh "
   },
   {
-    "title": "2026-2027 US 50-State Agricultural Grant &amp; Subsidy Playbook: Non-Dilutive Capital for Smart Farms &amp; CEA Growers",
+    "title": "2026-2027 US 50-State Agricultural Grant &amp; Subsidy",
     "cat": "article",
     "url": "articles/article-62-us-50-state-agricultural-grant-playbook.html",
     "icon": "📚",
-    "desc": "Comprehensive 50-state commercial agricultural subsidy and grant playbook. How US farmers, CEA greenhouse operators, and agribusinesses secure up to 90% CAPEX r",
-    "tags": "articles article 62 us 50 state agricultural grant playbook html 2026 2027 us 50 state agricultural grant amp subsidy playbook non dilutive capital for smart farms amp cea growers comprehens"
+    "desc": "Comprehensive 50-state commercial agricultural subsidy and grant playbook. How US farmers, CEA greenhouse operators, and agribusinesses secure up to 90%.",
+    "tags": "articles article 62 us 50 state agricultural grant playbook html 2026 2027 us 50 state agricultural grant amp subsidy comprehensive 50 state commercial agricultural subsidy and grant playboo"
   },
   {
-    "title": "Precision Irrigation &amp; Water Grants in Florida &amp; Texas: FDACS BMP Cost-Share and TWDB Funding Guide",
+    "title": "Precision Irrigation &amp; Water Grants in Florida",
     "cat": "article",
     "url": "articles/article-63-florida-texas-agricultural-water-irrigation-grants.html",
     "icon": "📚",
     "desc": "Technical guide for Florida and Texas commercial agricultural producers to secure up to 87.5% cost-share for precision micro-irrigation, subsurface.",
-    "tags": "articles article 63 florida texas agricultural water irrigation grants html precision irrigation amp water grants in florida amp texas fdacs bmp cost share and twdb funding guide technical g"
+    "tags": "articles article 63 florida texas agricultural water irrigation grants html precision irrigation amp water grants in florida technical guide for florida and texas commercial agricultural pro"
   },
   {
-    "title": "Midwest &amp; Corn Belt Soil Health Grants: Iowa WQI, Ohio H2Ohio, and Minnesota AGRI Programs",
+    "title": "Midwest &amp; Corn Belt Soil Health Grants",
     "cat": "article",
     "url": "articles/article-64-midwest-corn-belt-water-quality-soil-health-subsidies.html",
     "icon": "📚",
-    "desc": "Technical guide for Midwest producers to access 75% to 100% grant funding for NRCS CPS 605 woodchip nitrate bioreactors, saturated buffers, and manure injection",
-    "tags": "articles article 64 midwest corn belt water quality soil health subsidies html midwest amp corn belt soil health grants iowa wqi ohio h2ohio and minnesota agri programs technical guide for m"
+    "desc": "Technical guide for Midwest producers to access 75% to 100% grant funding for NRCS CPS 605 woodchip nitrate bioreactors, saturated buffers, and manure.",
+    "tags": "articles article 64 midwest corn belt water quality soil health subsidies html midwest amp corn belt soil health grants technical guide for midwest producers to access 75 to 100 grant fundin"
   },
   {
-    "title": "Greenhouse Energy Efficiency &amp; Thermal Screen Grants: Oregon ETO, Washington WSDA, and NYSERDA Guide",
+    "title": "Greenhouse Energy Efficiency &amp; Thermal Screen",
     "cat": "article",
     "url": "articles/article-65-pnw-northeast-cea-greenhouse-energy-grants.html",
     "icon": "📚",
     "desc": "Technical guide for commercial greenhouse and CEA nursery growers in Oregon, Washington, New York, and Massachusetts to capture up to 85% grant funding.",
-    "tags": "articles article 65 pnw northeast cea greenhouse energy grants html greenhouse energy efficiency amp thermal screen grants oregon eto washington wsda and nyserda guide technical guide for co"
+    "tags": "articles article 65 pnw northeast cea greenhouse energy grants html greenhouse energy efficiency amp thermal screen technical guide for commercial greenhouse and cea nursery growers in orego"
   },
   {
-    "title": "California SWEEP vs. Texas TWDB Agricultural Water Grants: Precision Irrigation &amp; Cost-Share Architecture",
+    "title": "California SWEEP vs. Texas TWDB Agricultural Water",
     "cat": "article",
     "url": "articles/article-66-california-sweep-vs-texas-twdb-agricultural-water-grants.html",
     "icon": "📚",
     "desc": "Technical comparison of California CDFA SWEEP ($200,000 cap) and Texas TWDB Agricultural Water Conservation Grants ($500,000 cap). Detailed engineering.",
-    "tags": "articles article 66 california sweep vs texas twdb agricultural water grants html california sweep vs texas twdb agricultural water grants precision irrigation amp cost share architecture te"
+    "tags": "articles article 66 california sweep vs texas twdb agricultural water grants html california sweep vs texas twdb agricultural water technical comparison of california cdfa sweep 200 000 cap "
   },
   {
-    "title": "Deep Geothermal Heating &amp; Industrial Heat Pumps in Venlo Greenhouses: German Meister Engineering (VDI 4640 / DIN EN 13031) vs. US DOE &amp; USDA REAP Grants",
+    "title": "Deep Geothermal Heating &amp; Industrial Heat Pumps",
     "cat": "article",
     "url": "articles/article-67-geothermal-district-heating-industrial-heat-pumps-greenhouse.html",
     "icon": "📚",
     "desc": "Technical engineering guide to deep geothermal doublets, industrial heat pumps (R717/R1233zd(E)), VDI 4640 / DIN EN 13031 standards, root-zone.",
-    "tags": "articles article 67 geothermal district heating industrial heat pumps greenhouse html deep geothermal heating amp industrial heat pumps in venlo greenhouses german meister engineering vdi 46"
+    "tags": "articles article 67 geothermal district heating industrial heat pumps greenhouse html deep geothermal heating amp industrial heat pumps technical engineering guide to deep geothermal doublet"
   },
   {
-    "title": "Direct Air Capture (DAC) &amp; Solid-Amine CO₂ Desorption in Decarbonized Greenhouses: Solving the Carbon Deficit via Heat Pump Integration &amp; 45Q Grants",
+    "title": "Direct Air Capture (DAC) &amp; Solid-Amine CO₂",
     "cat": "article",
     "url": "articles/article-68-direct-air-capture-solid-amine-co2-greenhouse-heat-pumps.html",
     "icon": "📚",
     "desc": "Technical guide to solid-amine TVSA Direct Air Capture (DAC) integrated with heat pump low-grade thermal waste heat (65°C–80°C) for fossil-free Venlo.",
-    "tags": "articles article 68 direct air capture solid amine co2 greenhouse heat pumps html direct air capture dac amp solid amine co desorption in decarbonized greenhouses solving the carbon deficit "
+    "tags": "articles article 68 direct air capture solid amine co2 greenhouse heat pumps html direct air capture dac amp solid amine co technical guide to solid amine tvsa direct air capture dac integra"
   },
   {
-    "title": "Biomass-Fired CHP District Energy Integration in Venlo Greenhouses: Flue Gas SCR & Municipal Heat Coupling (Vol. 69)",
+    "title": "Biomass-Fired CHP District Energy Integration",
     "cat": "article",
     "url": "articles/article-69-biomass-chp-flue-gas-scr-district-heating-greenhouse.html",
     "icon": "📚",
-    "desc": "Technical whitepaper on biomass-fired combined heat and power (CHP) in high-wire Venlo greenhouses: fluidized bed combustion, catalytic SCR DeNOx for commercial",
-    "tags": "articles article 69 biomass chp flue gas scr district heating greenhouse html biomass fired chp district energy integration in venlo greenhouses flue gas scr municipal heat coupling vol 69 t"
+    "desc": "Technical whitepaper on biomass-fired combined heat and power (CHP) in high-wire Venlo greenhouses: fluidized bed combustion, catalytic SCR DeNOx.",
+    "tags": "articles article 69 biomass chp flue gas scr district heating greenhouse html biomass fired chp district energy integration technical whitepaper on biomass fired combined heat and power chp "
   },
   {
-    "title": "Nanobubble Oxy-Fertigation & Cavitation Physics in Venlo Hydroponics: DO Supersaturation & Pythium Inactivation (Vol. 70)",
+    "title": "Nanobubble Oxy-Fertigation &amp; Cavitation Physics",
     "cat": "article",
     "url": "articles/article-70-nanobubble-dissolved-oxygen-pythium-suppression-rockwool.html",
     "icon": "📚",
     "desc": "Technical whitepaper on nanobubble oxy-fertigation in high-wire Venlo greenhouses: Young-Laplace internal bubble pressure, zeta potential stability.",
-    "tags": "articles article 70 nanobubble dissolved oxygen pythium suppression rockwool html nanobubble oxy fertigation cavitation physics in venlo hydroponics do supersaturation pythium inactivation v"
+    "tags": "articles article 70 nanobubble dissolved oxygen pythium suppression rockwool html nanobubble oxy fertigation amp cavitation physics technical whitepaper on nanobubble oxy fertigation in high"
   },
   {
-    "title": "Horizontal Air Flow (HAF) Dynamics & Boundary Layer Decoupling in Venlo Greenhouses (Vol. 71)",
+    "title": "Horizontal Air Flow (HAF) Dynamics &amp; Boundary",
     "cat": "article",
     "url": "articles/article-71-haf-fan-microclimate-boundary-layer-dynamics.html",
     "icon": "📚",
-    "desc": "Engineering monograph on Venlo greenhouse Horizontal Air Flow (HAF): boundary layer resistance ra, Sherwood mass transfer, fan sizing &amp; heat pump dehumidifi",
-    "tags": "articles article 71 haf fan microclimate boundary layer dynamics html horizontal air flow haf dynamics boundary layer decoupling in venlo greenhouses vol 71 engineering monograph on venlo gr"
+    "desc": "Engineering monograph on Venlo greenhouse Horizontal Air Flow (HAF): boundary layer resistance ra, Sherwood mass transfer, fan sizing &amp; heat pump.",
+    "tags": "articles article 71 haf fan microclimate boundary layer dynamics html horizontal air flow haf dynamics amp boundary engineering monograph on venlo greenhouse horizontal air flow haf boundary"
   },
   {
-    "title": "Thermodynamic Optimization of Semi-Closed Venlo Greenhouses: High-Pressure Fogging, Active Mechanical Dehumidification, and Latent Heat Recovery (Vol. 72)",
+    "title": "Thermodynamic Optimization of Semi-Closed Venlo",
     "cat": "article",
     "url": "articles/article-72-semi-closed-greenhouse-mollier-psychrometrics-latent-heat.html",
     "icon": "📚",
-    "desc": "Technical engineering monograph on semi-closed Venlo greenhouse thermodynamics: positive-pressure air distribution ducts, Mollier h-x psychrometric latent heat ",
-    "tags": "articles article 72 semi closed greenhouse mollier psychrometrics latent heat html thermodynamic optimization of semi closed venlo greenhouses high pressure fogging active mechanical dehumid"
+    "desc": "Technical engineering monograph on semi-closed Venlo greenhouse thermodynamics: positive-pressure air distribution ducts, Mollier h-x psychrometric latent.",
+    "tags": "articles article 72 semi closed greenhouse mollier psychrometrics latent heat html thermodynamic optimization of semi closed venlo technical engineering monograph on semi closed venlo greenh"
   },
   {
-    "title": "Closed-Loop Hydroponic Drainage Recirculation: Davies Chemical Speciation, Multi-Cycle Ballast Ion (Na+/Cl-) Accumulation Kinetics, and German DüV Zero-Discharge Economics (Vol. 73)",
+    "title": "Closed-Loop Hydroponic Drainage Recirculation",
     "cat": "article",
     "url": "articles/article-73-closed-loop-nutrient-recirculation-davies-ion-balance.html",
     "icon": "📚",
     "desc": "Technical engineering monograph on closed-loop hydroponic drainage recirculation: Davies ionic activity speciation, multi-cycle sodium and chloride.",
-    "tags": "articles article 73 closed loop nutrient recirculation davies ion balance html closed loop hydroponic drainage recirculation davies chemical speciation multi cycle ballast ion na cl accumula"
+    "tags": "articles article 73 closed loop nutrient recirculation davies ion balance html closed loop hydroponic drainage recirculation technical engineering monograph on closed loop hydroponic drainag"
   },
   {
-    "title": "Semi-Closed Greenhouse Corridor Air Treatment Units (ATU): Positive-Pressure Insect Exclusion (+20~25 Pa), Mollier Enthalpy Balancing, and 1-Click VenloCAD 3D Integration (Vol. 74)",
+    "title": "Semi-Closed Greenhouse Corridor Air Treatment",
     "cat": "article",
     "url": "articles/article-74-semi-closed-greenhouse-atu-mollier-venlocad-integration.html",
     "icon": "📚",
     "desc": "Technical engineering monograph on semi-closed greenhouse corridor Air Treatment Units (ATU): positive-pressure insect exclusion (+20~25 Pa), Mollier.",
-    "tags": "articles article 74 semi closed greenhouse atu mollier venlocad integration html semi closed greenhouse corridor air treatment units atu positive pressure insect exclusion 20 25 pa mollier e"
+    "tags": "articles article 74 semi closed greenhouse atu mollier venlocad integration html semi closed greenhouse corridor air treatment technical engineering monograph on semi closed greenhouse corri"
   },
   {
-    "title": "Aquifer Thermal Energy Storage (ATES) & Industrial Heat Pump Integration in Commercial Greenhouses: Doublet Well Hydraulics, Seasonal Thermal Recovery (η_th ≥ 82%), VDI 4640 Sizing, and Decarbonization Economics (Vol. 75)",
+    "title": "Aquifer Thermal Energy Storage (ATES) (Vol. 75)",
     "cat": "article",
     "url": "articles/article-75-ates-aquifer-thermal-energy-storage-heat-pumps-greenhouse.html",
     "icon": "📚",
     "desc": "Technical engineering monograph on Aquifer Thermal Energy Storage (ATES) and industrial heat pump integration in commercial CEA greenhouses.",
-    "tags": "articles article 75 ates aquifer thermal energy storage heat pumps greenhouse html aquifer thermal energy storage ates industrial heat pump integration in commercial greenhouses doublet well"
+    "tags": "articles article 75 ates aquifer thermal energy storage heat pumps greenhouse html aquifer thermal energy storage ates vol 75 technical engineering monograph on aquifer thermal energy storag"
   },
   {
-    "title": "High-Tech Venlo Greenhouse Climate Engineering &amp; Biocontrol Cybernetics in Knoblauchsland: AR Diffuse Glass Optics, VPD Microclimate Control (0.60–0.85 kPa), Low-Temp Hydronics, and OECD Tomato Postharvest Standards (Vol. 76)",
+    "title": "High-Tech Venlo Greenhouse Climate Engineering",
     "cat": "article",
     "url": "articles/article-76-knoblauchsland-greenhouse-climate-vpd-biocontrol-oecd.html",
     "icon": "📚",
-    "desc": "Technical engineering monograph on modern CEA greenhouse management in Nuremberg Knoblauchsland: double-AR diffuse glass (96.2% transmission, 25% haze), 35/30 C",
-    "tags": "articles article 76 knoblauchsland greenhouse climate vpd biocontrol oecd html high tech venlo greenhouse climate engineering amp biocontrol cybernetics in knoblauchsland ar diffuse glass op"
+    "desc": "Technical engineering monograph on modern CEA greenhouse management in Nuremberg Knoblauchsland: double-AR diffuse glass (96.2% transmission, 25% haze).",
+    "tags": "articles article 76 knoblauchsland greenhouse climate vpd biocontrol oecd html high tech venlo greenhouse climate engineering technical engineering monograph on modern cea greenhouse managem"
   },
   {
-    "title": "High-Tech Greenhouse Postharvest Intralogistics &amp; Cold Chain Engineering: Automated Guided Vehicles (AGV/FTS), Forced-Air Precooling Thermodynamics, Chilling Injury Prevention, and IFS Food 8 / UNECE Quality Compliance (Vol. 77)",
+    "title": "High-Tech Greenhouse Postharvest Intralogistics",
     "cat": "article",
     "url": "articles/article-77-greenhouse-postharvest-intralogistics-cold-chain-quality.html",
     "icon": "📚",
-    "desc": "Technical monograph on modern CEA postharvest engineering: induction-guided AGV/FTS harvest fleets, Biot and Newton cooling kinetics in forced-air precooling (1",
-    "tags": "articles article 77 greenhouse postharvest intralogistics cold chain quality html high tech greenhouse postharvest intralogistics amp cold chain engineering automated guided vehicles agv fts"
+    "desc": "Technical monograph on modern CEA postharvest engineering: induction-guided AGV/FTS harvest fleets, Biot and Newton cooling kinetics in forced-air precooling.",
+    "tags": "articles article 77 greenhouse postharvest intralogistics cold chain quality html high tech greenhouse postharvest intralogistics technical monograph on modern cea postharvest engineering in"
   },
   {
-    "title": "EU Commercial Greenhouse Energy Auditing (DIN V 18599 / EN 13031-1), German Federal BLE 40% Decarbonization Grants, BEHG/ETS-2 Carbon Pricing, and 10-Year Hofnachfolge Equity Succession Engineering (Vol. 78)",
+    "title": "EU Commercial Greenhouse Energy Auditing",
     "cat": "article",
     "url": "articles/article-78-eu-greenhouse-energy-audit-din-18599-ble-grant-hofnachfolge.html",
     "icon": "📚",
-    "desc": "Technical engineering and agri-finance monograph on EU commercial greenhouse energy auditing (DIN V 18599 / EN 13031-1), German Federal BLE 40% decarbonization ",
-    "tags": "articles article 78 eu greenhouse energy audit din 18599 ble grant hofnachfolge html eu commercial greenhouse energy auditing din v 18599 en 13031 1 german federal ble 40 decarbonization gra"
+    "desc": "Technical engineering and agri-finance monograph on EU commercial greenhouse energy auditing (DIN V 18599 / EN 13031-1), German Federal BLE 40%.",
+    "tags": "articles article 78 eu greenhouse energy audit din 18599 ble grant hofnachfolge html eu commercial greenhouse energy auditing technical engineering and agri finance monograph on eu commercia"
   },
   {
-    "title": "CEA &amp; Greenhouse Engineering Articles Library (EN / DE / JA)",
+    "title": "CEA &amp; Greenhouse Engineering Articles Library",
     "cat": "article",
     "url": "articles/index.html",
     "icon": "📚",
     "desc": "Multilingual library of 197 horticultural engineering articles on VPD psychrometrics, DIN V 18599 heating loads, FvCB CO2 kinetics, and MPC control.",
-    "tags": "articles index html cea amp greenhouse engineering articles library en de ja multilingual library of 197 horticultural engineering articles on vpd psychrometrics din v 18599 heating loads fv"
+    "tags": "articles index html cea amp greenhouse engineering articles library multilingual library of 197 horticultural engineering articles on vpd psychrometrics din v 18599 heating loads fvcb co2 ki"
   },
   {
-    "title": "VPD-Meisterklasse im Gewächshaus: Dampfdruckdefizit & Spaltöffnungs-Transpiration",
+    "title": "VPD-Meisterklasse im Gewächshaus",
     "cat": "article",
     "url": "articles/de/article-01-vpd-meisterklasse.html",
     "icon": "🇩🇪",
     "desc": "Physikalische Berechnung des Dampfdruckdefizits (VPD), Blatt-zu-Luft-Transpirationsdynamik und Vermeidung von Blütenendfäule im modernen Unterglasgartenbau.",
-    "tags": "articles de article 01 vpd meisterklasse html vpd meisterklasse im gewächshaus dampfdruckdefizit spaltöffnungs transpiration physikalische berechnung des dampfdruckdefizits vpd blatt zu luft"
+    "tags": "articles de article 01 vpd meisterklasse html vpd meisterklasse im gewächshaus physikalische berechnung des dampfdruckdefizits vpd blatt zu luft transpirationsdynamik und vermeidung von blüt"
   },
   {
-    "title": "Tägliches Lichtintegral (DLI) & LED-Belichtung berechnen: PPFD-Formel, Photobiologie & ROI",
+    "title": "Tägliches Lichtintegral (DLI) &amp; LED-Belichtung",
     "cat": "article",
     "url": "articles/de/article-02-dli-tageslichtintegral-vertikale-landwirtschaft-led-roi.html",
     "icon": "🇩🇪",
-    "desc": "Praxisleitfaden und Berechnung für das tägliche Lichtintegral (DLI in mol/m²/d) aus PPFD (µmol/m²/s), McCree-Aktionsspektrum, Far-Red-Steuerung und LED-Stromkos",
-    "tags": "articles de article 02 dli tageslichtintegral vertikale landwirtschaft led roi html tägliches lichtintegral dli led belichtung berechnen ppfd formel photobiologie roi praxisleitfaden und ber"
+    "desc": "Praxisleitfaden und Berechnung für das tägliche Lichtintegral (DLI in mol/m²/d) aus PPFD (µmol/m²/s), McCree-Aktionsspektrum, Far-Red-Steuerung.",
+    "tags": "articles de article 02 dli tageslichtintegral vertikale landwirtschaft led roi html tägliches lichtintegral dli amp led belichtung praxisleitfaden und berechnung für das tägliche lichtintegr"
   },
   {
-    "title": "Hummelbestäubung (Bombus terrestris), Nützlingseinsatz & Wartezeiten (REI / Bienenschutz B1–B4) im Gewächshaus",
+    "title": "Hummelbestäubung (Bombus terrestris)",
     "cat": "article",
     "url": "articles/de/article-03-hummelbestaeubung-nuetzlinge-wartezeit-pflanzenschutz-gewaechshaus.html",
     "icon": "🇩🇪",
-    "desc": "Leitfaden für den integrierten Pflanzenschutz (IPM) im Gewächshaus: Hummelbestäubung (Bombus terrestris), Mikroklima-Grenzen, Bienenschutzklassen B1–B4, Wiederb",
-    "tags": "articles de article 03 hummelbestaeubung nuetzlinge wartezeit pflanzenschutz gewaechshaus html hummelbestäubung bombus terrestris nützlingseinsatz wartezeiten rei bienenschutz b1 b4 im gewäc"
+    "desc": "Leitfaden für den integrierten Pflanzenschutz (IPM) im Gewächshaus: Hummelbestäubung (Bombus terrestris), Mikroklima-Grenzen, Bienenschutzklassen B1–B4.",
+    "tags": "articles de article 03 hummelbestaeubung nuetzlinge wartezeit pflanzenschutz gewaechshaus html hummelbestäubung bombus terrestris leitfaden für den integrierten pflanzenschutz ipm im gewächs"
   },
   {
-    "title": "Wärmedurchgangskoeffizienten (U'-Werte), Kittlose Verglasung &amp; Mehrlagenschirm-Thermodynamik im Venlo-Gewächshaus",
+    "title": "Wärmedurchgangskoeffizienten (U'-Werte), Kittlose",
     "cat": "article",
     "url": "articles/de/article-04-gewaechshaus-waermeverlust-u-wert-energieschirme.html",
     "icon": "🇩🇪",
-    "desc": "Bauphysikalische Berechnung von Spitzenheizlasten (Q = U'·A·ΔT), kittloser Verglasung, Kamineffekt, Mehrlagenschirmen (Luxous 1147 FR) und Latentwärmerückgewinn",
-    "tags": "articles de article 04 gewaechshaus waermeverlust u wert energieschirme html wärmedurchgangskoeffizienten u werte kittlose verglasung amp mehrlagenschirm thermodynamik im venlo gewächshaus b"
+    "desc": "Bauphysikalische Berechnung von Spitzenheizlasten (Q = U&#x27;·A·ΔT), kittloser Verglasung, Kamineffekt, Mehrlagenschirmen (Luxous 1147 FR).",
+    "tags": "articles de article 04 gewaechshaus waermeverlust u wert energieschirme html wärmedurchgangskoeffizienten u werte kittlose bauphysikalische berechnung von spitzenheizlasten q u x27 a t kittl"
   },
   {
-    "title": "Stündliche Penman-Monteith-Evapotranspiration (ET₀), Strahlungssummen-Bewässerung &amp; Autonome Klimacomputer (RAM CC600 / Priva Operator)",
+    "title": "Stündliche Penman-Monteith-Evapotranspiration",
     "cat": "article",
     "url": "articles/de/article-05-penman-monteith-transpiration-automatisierung-ram-priva.html",
     "icon": "🇩🇪",
-    "desc": "Biophysikalische Modellierung der FAO-56 Penman-Monteith-Transpiration (ET₀), Strahlungssummen-Tropfbewässerung und dezentrale Klimacomputer-Fernsteuerung (RAM ",
-    "tags": "articles de article 05 penman monteith transpiration automatisierung ram priva html stündliche penman monteith evapotranspiration et strahlungssummen bewässerung amp autonome klimacomputer r"
+    "desc": "Biophysikalische Modellierung der FAO-56 Penman-Monteith-Transpiration (ET₀), Strahlungssummen-Tropfbewässerung und dezentrale Klimacomputer-Fernsteuerung.",
+    "tags": "articles de article 05 penman monteith transpiration automatisierung ram priva html stündliche penman monteith evapotranspiration biophysikalische modellierung der fao 56 penman monteith tra"
   },
   {
-    "title": "Molare Stöchiometrie, Sonneveld/Steiner-Ionenbilanz (mmol/L &amp; meq/L) &amp; Geschlossene A/B-Fertigation im Unterglasgartenbau",
+    "title": "Molare Stöchiometrie, Sonneveld/Steiner-Ionenbilanz",
     "cat": "article",
     "url": "articles/de/article-06-naehrloesungsberechnung-stammbehaelter-ab-ec-duengung.html",
     "icon": "🇩🇪",
-    "desc": "Molare Nährlösungsberechnung (mmol/L &amp; meq/L) nach Sonneveld und Steiner, Kationen-Anionen-Äquivalenz, A/B-Stammlösungsbehälter (Gipsfällungsschutz) und ges",
-    "tags": "articles de article 06 naehrloesungsberechnung stammbehaelter ab ec duengung html molare stöchiometrie sonneveld steiner ionenbilanz mmol l amp meq l amp geschlossene a b fertigation im unte"
+    "desc": "Molare Nährlösungsberechnung (mmol/L &amp; meq/L) nach Sonneveld und Steiner, Kationen-Anionen-Äquivalenz, A/B-Stammlösungsbehälter (Gipsfällungsschutz).",
+    "tags": "articles de article 06 naehrloesungsberechnung stammbehaelter ab ec duengung html molare stöchiometrie sonneveld steiner ionenbilanz molare nährlösungsberechnung mmol l amp meq l nach sonnev"
   },
   {
-    "title": "Photomorphogenese, PAR/ePAR-Spektralqualität (DIN 5031-10) &amp; Emerson-Effekt in der LED-Gewächshausbelichtung",
+    "title": "Photomorphogenese, PAR/ePAR-Spektralqualität",
     "cat": "article",
     "url": "articles/de/article-07-belichtungsspektrum-par-epar-photomorphogenese-led-gartenbau.html",
     "icon": "🇩🇪",
-    "desc": "Photobiologische Steuerung im Unterglasgartenbau und Vertical Farming nach DIN 5031-10: McCree-Quantenspektrum, Phytochrom-Photogleichgewicht (PSS = Pfr/Ptotal)",
-    "tags": "articles de article 07 belichtungsspektrum par epar photomorphogenese led gartenbau html photomorphogenese par epar spektralqualität din 5031 10 amp emerson effekt in der led gewächshausbeli"
+    "desc": "Photobiologische Steuerung im Unterglasgartenbau und Vertical Farming nach DIN 5031-10: McCree-Quantenspektrum, Phytochrom-Photogleichgewicht.",
+    "tags": "articles de article 07 belichtungsspektrum par epar photomorphogenese led gartenbau html photomorphogenese par epar spektralqualität photobiologische steuerung im unterglasgartenbau und vert"
   },
   {
-    "title": "Vol. 08: Monstera deliciosa im Erwerbsgartenbau — Epiphyten-Substratphysik (Luftkapazität ≥ 25 %), Fenestrations-Photobiologie & DLI/VPD-Steuerung",
+    "title": "Vol. 08: Monstera deliciosa im Erwerbsgartenbau",
     "cat": "article",
     "url": "articles/de/article-08-monstera-deliciosa-kulturfuehrung-epiphyten-substrat-vpd.html",
     "icon": "🇩🇪",
-    "desc": "Ingenieur-Monographie zur Kulturführung von Monstera deliciosa (Araceae): Hemiepiphytische Wurzelphysiologie, luftführende Substratporosität (ε_a ≥ 25 %), progr",
-    "tags": "articles de article 08 monstera deliciosa kulturfuehrung epiphyten substrat vpd html vol 08 monstera deliciosa im erwerbsgartenbau epiphyten substratphysik luftkapazität 25 fenestrations pho"
+    "desc": "Ingenieur-Monographie zur Kulturführung von Monstera deliciosa (Araceae): Hemiepiphytische Wurzelphysiologie, luftführende Substratporosität (ε_a ≥ 25 %).",
+    "tags": "articles de article 08 monstera deliciosa kulturfuehrung epiphyten substrat vpd html vol 08 monstera deliciosa im erwerbsgartenbau ingenieur monographie zur kulturführung von monstera delici"
   },
   {
-    "title": "Stomatäre Leitfähigkeit (Ball-Berry), FvCB-Photosynthesekinetik &amp; CO2-Assimilationssteuerung im Gewächshaus",
+    "title": "Stomatäre Leitfähigkeit (Ball-Berry)",
     "cat": "article",
     "url": "articles/de/article-09-stomata-leitfaehigkeit-co2-assimilation-gaswechsel-kinetik.html",
     "icon": "🇩🇪",
-    "desc": "Pflanzenbiophysikalische Modellierung der stomatären Leitfähigkeit (gs) nach Ball-Berry-Leuning, Farquhar-von-Caemmerer-Berry (FvCB) A-Ci-Assimilationskurven un",
-    "tags": "articles de article 09 stomata leitfaehigkeit co2 assimilation gaswechsel kinetik html stomatäre leitfähigkeit ball berry fvcb photosynthesekinetik amp co2 assimilationssteuerung im gewächsh"
+    "desc": "Pflanzenbiophysikalische Modellierung der stomatären Leitfähigkeit (gs) nach Ball-Berry-Leuning, Farquhar-von-Caemmerer-Berry (FvCB) A-Ci-Assimilationskurven.",
+    "tags": "articles de article 09 stomata leitfaehigkeit co2 assimilation gaswechsel kinetik html stomatäre leitfähigkeit ball berry pflanzenbiophysikalische modellierung der stomatären leitfähigkeit g"
   },
   {
-    "title": "HLK-Dimensionierung und psychrometrische Entfeuchtung in der vertikalen Landwirtschaft (Vertical Farming): Sensible vs. latente Kühllast &amp; CFD-Strömung",
+    "title": "HLK-Dimensionierung und psychrometrische",
     "cat": "article",
     "url": "articles/de/article-10-vertikale-landwirtschaft-hlk-entfeuchtung-psychrometrie.html",
     "icon": "🇩🇪",
-    "desc": "Ingenieurleitfaden (DE Vol. 10) zur HLK-Auslegung für kommerzielle Indoor Vertical Farms: Berechnung sensibler und latenter Kühllasten (SHR), Mollier-h-x-Psychr",
-    "tags": "articles de article 10 vertikale landwirtschaft hlk entfeuchtung psychrometrie html hlk dimensionierung und psychrometrische entfeuchtung in der vertikalen landwirtschaft vertical farming se"
+    "desc": "Ingenieurleitfaden (DE Vol. 10) zur HLK-Auslegung für kommerzielle Indoor Vertical Farms: Berechnung sensibler und latenter Kühllasten (SHR).",
+    "tags": "articles de article 10 vertikale landwirtschaft hlk entfeuchtung psychrometrie html hlk dimensionierung und psychrometrische ingenieurleitfaden de vol 10 zur hlk auslegung für kommerzielle i"
   },
   {
-    "title": "Unterglas-Erdbeeranbau auf Stellagen: Blütenknospendifferenzierung, Kältesummen-Steuerung &amp; Tag-Nacht-Temperaturdifferenz (DIF)",
+    "title": "Unterglas-Erdbeeranbau auf Stellagen",
     "cat": "article",
     "url": "articles/de/article-11-erdbeeranbau-unterglas-blueteninduktion-dif-klimafuehrung.html",
     "icon": "🇩🇪",
-    "desc": "Ingenieurleitfaden (DE Vol. 11) für den kommerziellen Erdbeeranbau im Venlo-Gewächshaus: Kurztag-Blüteninduktion, Kältesummen, Stickstoff-Restriktion (&lt; 3 me",
-    "tags": "articles de article 11 erdbeeranbau unterglas blueteninduktion dif klimafuehrung html unterglas erdbeeranbau auf stellagen blütenknospendifferenzierung kältesummen steuerung amp tag nacht te"
+    "desc": "Ingenieurleitfaden (DE Vol. 11) für den kommerziellen Erdbeeranbau im Venlo-Gewächshaus: Kurztag-Blüteninduktion, Kältesummen, Stickstoff-Restriktion.",
+    "tags": "articles de article 11 erdbeeranbau unterglas blueteninduktion dif klimafuehrung html unterglas erdbeeranbau auf stellagen ingenieurleitfaden de vol 11 für den kommerziellen erdbeeranbau im "
   },
   {
-    "title": "Blütenendfäule (BER) bei Gewächshaustomaten: Apoplastischer Xylem-Kalziumtransport, Kationen-Antagonismus &amp; Nächtliche Wurzeldruck-Steuerung",
+    "title": "Blütenendfäule (BER) bei Gewächshaustomaten",
     "cat": "article",
     "url": "articles/de/article-12-tomate-bluetenendfaeule-kalziumtransport-xylem-vpd.html",
     "icon": "🇩🇪",
-    "desc": "Ingenieurleitfaden (DE Vol. 12) zur Vermeidung der Blütenendfäule (Blossom-End Rot, BER) im Tomaten- und Paprikaanbau unter Glas: Apoplastische Ca2+-Xylempartit",
-    "tags": "articles de article 12 tomate bluetenendfaeule kalziumtransport xylem vpd html blütenendfäule ber bei gewächshaustomaten apoplastischer xylem kalziumtransport kationen antagonismus amp nächt"
+    "desc": "Ingenieurleitfaden (DE Vol. 12) zur Vermeidung der Blütenendfäule (Blossom-End Rot, BER) im Tomaten- und Paprikaanbau unter Glas: Apoplastische.",
+    "tags": "articles de article 12 tomate bluetenendfaeule kalziumtransport xylem vpd html blütenendfäule ber bei gewächshaustomaten ingenieurleitfaden de vol 12 zur vermeidung der blütenendfäule blosso"
   },
   {
-    "title": "Präzisions-Sensorkalibrierung im Smart-Greenhouse: Nernst-Gleichung (pH/EC), TDR/FDR-Substratfeuchte &amp; NDIR-CO2-Driftkompensation",
+    "title": "Präzisions-Sensorkalibrierung im Smart-Greenhouse",
     "cat": "article",
     "url": "articles/de/article-13-sensorkalibrierung-messunsicherheit-pt100-ndir-fd-smartfarm.html",
     "icon": "🇩🇪",
-    "desc": "Ingenieurleitfaden zur Sensorkalibrierung im Unterglasgartenbau: Zweipunkt-Kalibrierung nach der Nernst-Gleichung (pH 7,00/4,01), Temperaturkompensation der ele",
-    "tags": "articles de article 13 sensorkalibrierung messunsicherheit pt100 ndir fd smartfarm html präzisions sensorkalibrierung im smart greenhouse nernst gleichung ph ec tdr fdr substratfeuchte amp n"
+    "desc": "Ingenieurleitfaden zur Sensorkalibrierung im Unterglasgartenbau: Zweipunkt-Kalibrierung nach der Nernst-Gleichung (pH 7,00/4,01), Temperaturkompensation.",
+    "tags": "articles de article 13 sensorkalibrierung messunsicherheit pt100 ndir fd smartfarm html präzisions sensorkalibrierung im smart greenhouse ingenieurleitfaden zur sensorkalibrierung im untergl"
   },
   {
-    "title": "Vertical Farming HVAC & Entfeuchtung berechnen: Latente Transpirationslast, Mollier-h-x & Wärmerückgewinnung",
+    "title": "Vertical Farming HVAC &amp; Entfeuchtung berechnen",
     "cat": "article",
     "url": "articles/de/article-14-vertical-farming-hvac-entfeuchtung-kondensation-waermerueckgewinnung.html",
     "icon": "🇩🇪",
-    "desc": "Ingenieurleitfaden zur HVAC- und Entfeuchtungsauslegung im Vertical Farming und Indoor-Gartenbau: Latente Dampfmassenbilanz, Sensible-Heat-Ratio (SHR), Mollier-",
-    "tags": "articles de article 14 vertical farming hvac entfeuchtung kondensation waermerueckgewinnung html vertical farming hvac entfeuchtung berechnen latente transpirationslast mollier h x wärmerück"
+    "desc": "Ingenieurleitfaden zur HVAC- und Entfeuchtungsauslegung im Vertical Farming und Indoor-Gartenbau: Latente Dampfmassenbilanz, Sensible-Heat-Ratio (SHR).",
+    "tags": "articles de article 14 vertical farming hvac entfeuchtung kondensation waermerueckgewinnung html vertical farming hvac amp entfeuchtung berechnen ingenieurleitfaden zur hvac und entfeuchtung"
   },
   {
-    "title": "Vol. 15: Innenraumbegrünung & Biophiles Design — Lichtkompensationspunkt (LCP), Lux-PPFD-Konversion, Living-Wall-Hydraulik & VOC-Phytoremediation",
+    "title": "Vol. 15: Innenraumbegrünung &amp; Biophiles Design",
     "cat": "article",
     "url": "articles/de/article-15-innenraumbegruenung-biophiles-design-lichtkompensationspunkt-voc.html",
     "icon": "🇩🇪",
-    "desc": "Ingenieur-Monographie zur professionellen Innenraumbegrünung nach FLL-Richtlinien: Lichtkompensationspunkt (LCP), spektrale Lux-zu-PPFD-Umrechnung, Hydrokultur-",
-    "tags": "articles de article 15 innenraumbegruenung biophiles design lichtkompensationspunkt voc html vol 15 innenraumbegrünung biophiles design lichtkompensationspunkt lcp lux ppfd konversion living"
+    "desc": "Ingenieur-Monographie zur professionellen Innenraumbegrünung nach FLL-Richtlinien: Lichtkompensationspunkt (LCP), spektrale Lux-zu-PPFD-Umrechnung.",
+    "tags": "articles de article 15 innenraumbegruenung biophiles design lichtkompensationspunkt voc html vol 15 innenraumbegrünung amp biophiles design ingenieur monographie zur professionellen innenrau"
   },
   {
-    "title": "Vol. 16: Gärtnermeister-Klimasteuerung im Venlo-Gewächshaus — Mollier-h-x-Diagramm, Taupunktabstand & Heizrohr-Regelung",
+    "title": "Vol. 16: Gärtnermeister-Klimasteuerung",
     "cat": "article",
     "url": "articles/de/article-16-gaertnermeister-gewaechshaus-klimasteuerung-taupunkt-heizrohr.html",
     "icon": "🇩🇪",
-    "desc": "Ingenieur-Monographie zur deutschen Gärtnermeister-Klimasteuerung nach KTBL und DIN EN 13031-1: Mollier-h-x-Psychrometrie, Taupunktabstand ΔT_Tau, Mindest-Rohrt",
-    "tags": "articles de article 16 gaertnermeister gewaechshaus klimasteuerung taupunkt heizrohr html vol 16 gärtnermeister klimasteuerung im venlo gewächshaus mollier h x diagramm taupunktabstand heizr"
+    "desc": "Ingenieur-Monographie zur deutschen Gärtnermeister-Klimasteuerung nach KTBL und DIN EN 13031-1: Mollier-h-x-Psychrometrie, Taupunktabstand ΔT_Tau.",
+    "tags": "articles de article 16 gaertnermeister gewaechshaus klimasteuerung taupunkt heizrohr html vol 16 gärtnermeister klimasteuerung ingenieur monographie zur deutschen gärtnermeister klimasteueru"
   },
   {
-    "title": "Vol. 17: Biophysikalische Substratphysik im Erwerbsgartenbau — Luftkapazität (AFP), pF-Wasserretentionskurven & Wurzelzonen-Sauerstoffdiffusion",
+    "title": "Vol. 17: Biophysikalische Substratphysik",
     "cat": "article",
     "url": "articles/de/article-17-substratphysik-luftkapazitaet-wasserretention-wurzelbelueftung.html",
     "icon": "🇩🇪",
-    "desc": "Ingenieur-Monographie zur Substratphysik im Topf- und Containerbau: Gesamtporenvolumen (GPV), Luftkapazität bei pF 1,0, Stauwasserzone (Perched Water Table), Va",
-    "tags": "articles de article 17 substratphysik luftkapazitaet wasserretention wurzelbelueftung html vol 17 biophysikalische substratphysik im erwerbsgartenbau luftkapazität afp pf wasserretentionskur"
+    "desc": "Ingenieur-Monographie zur Substratphysik im Topf- und Containerbau: Gesamtporenvolumen (GPV), Luftkapazität bei pF 1,0, Stauwasserzone (Perched Water Table).",
+    "tags": "articles de article 17 substratphysik luftkapazitaet wasserretention wurzelbelueftung html vol 17 biophysikalische substratphysik ingenieur monographie zur substratphysik im topf und contain"
   },
   {
-    "title": "Vol. 18: Rezirkulierende Nährlösungsentkeimung im geschlossenen Gewächshaus — UV-C-Dosis (254 nm), Ozon-Redoxpotential, Thermodesinfektion & Fe-Chelat-Photolyse",
+    "title": "Vol. 18: Rezirkulierende Nährlösungsentkeimung",
     "cat": "article",
     "url": "articles/de/article-18-rezirkulierende-naehrloesungsentkeimung-uv-c-ozon-ultrafiltration-chelat.html",
     "icon": "🇩🇪",
-    "desc": "Ingenieur-Monographie zur Dränwasser-Entkeimung im geschlossenen Hydroponik-Kreislauf nach WHG/DüV: Beer-Lambert-Transmission (T10), UV-C-Inaktivierungskinetik ",
-    "tags": "articles de article 18 rezirkulierende naehrloesungsentkeimung uv c ozon ultrafiltration chelat html vol 18 rezirkulierende nährlösungsentkeimung im geschlossenen gewächshaus uv c dosis 254 "
+    "desc": "Ingenieur-Monographie zur Dränwasser-Entkeimung im geschlossenen Hydroponik-Kreislauf nach WHG/DüV: Beer-Lambert-Transmission (T10).",
+    "tags": "articles de article 18 rezirkulierende naehrloesungsentkeimung uv c ozon ultrafiltration chelat html vol 18 rezirkulierende nährlösungsentkeimung ingenieur monographie zur dränwasser entkeim"
   },
   {
-    "title": "Vol. 19: Vertikale Landwirtschaft (PFAL) & Biomasse-Konversionseffizienz — Lichtnutzungseffizienz (LUE/PUE), Ernteindex (HI) & Strom-zu-Biomasse-Kinetik",
+    "title": "Vol. 19: Vertikale Landwirtschaft (PFAL)",
     "cat": "article",
     "url": "articles/de/article-19-vertikale-landwirtschaft-biomasse-konversionseffizienz-lue-ernteindex.html",
     "icon": "🇩🇪",
-    "desc": "Ingenieur-Monographie zur Photonen- und Energiekonversion in der Vertikalen Landwirtschaft (Vertical Farming): Lichtnutzungseffizienz LUE (g/mol), LED-Effizienz",
-    "tags": "articles de article 19 vertikale landwirtschaft biomasse konversionseffizienz lue ernteindex html vol 19 vertikale landwirtschaft pfal biomasse konversionseffizienz lichtnutzungseffizienz lu"
+    "desc": "Ingenieur-Monographie zur Photonen- und Energiekonversion in der Vertikalen Landwirtschaft (Vertical Farming): Lichtnutzungseffizienz LUE (g/mol).",
+    "tags": "articles de article 19 vertikale landwirtschaft biomasse konversionseffizienz lue ernteindex html vol 19 vertikale landwirtschaft pfal ingenieur monographie zur photonen und energiekonversio"
   },
   {
-    "title": "Vol. 20: Blatttemperatur-Infrarot-Thermometrie, Emissionsgrad (ε = 0,98), Blatt-Energiebilanz & Crop Water Stress Index (CWSI)",
+    "title": "Vol. 20: Blatttemperatur-Infrarot-Thermometrie",
     "cat": "article",
     "url": "articles/de/article-20-blatttemperatur-infrarot-thermometrie-emissionsgrad-energiebilanz.html",
     "icon": "🇩🇪",
-    "desc": "Ingenieur-Monographie zur radiometrischen Blatttemperaturmessung im Gewächshaus: Stefan-Boltzmann-Gesetz, kutikulärer Emissionsgrad (0,98), Blatt-Energiebilanz,",
-    "tags": "articles de article 20 blatttemperatur infrarot thermometrie emissionsgrad energiebilanz html vol 20 blatttemperatur infrarot thermometrie emissionsgrad 0 98 blatt energiebilanz crop water s"
+    "desc": "Ingenieur-Monographie zur radiometrischen Blatttemperaturmessung im Gewächshaus: Stefan-Boltzmann-Gesetz, kutikulärer Emissionsgrad (0,98).",
+    "tags": "articles de article 20 blatttemperatur infrarot thermometrie emissionsgrad energiebilanz html vol 20 blatttemperatur infrarot thermometrie ingenieur monographie zur radiometrischen blatttemp"
   },
   {
-    "title": "Vol. 21: Chlorophyll-a-Fluoreszenzkinetik (Fv/Fm &amp; OJIP), PAM-Fluorometrie &amp; präsymptomatische Pflanzenstress-Metrologie",
+    "title": "Vol. 21: Chlorophyll-a-Fluoreszenzkinetik",
     "cat": "article",
     "url": "articles/de/article-21-chlorophyllfluoreszenz-fvfm-quantenausbeute-pflanzenstress-pam.html",
     "icon": "🇩🇪",
-    "desc": "Ingenieur-Monographie zur zerstörungsfreien Echtzeit-Diagnose im Unterglasgartenbau: Kautsky-Effekt, maximale PSII-Quantenausbeute (Fv/Fm), effektive Quantenaus",
-    "tags": "articles de article 21 chlorophyllfluoreszenz fvfm quantenausbeute pflanzenstress pam html vol 21 chlorophyll a fluoreszenzkinetik fv fm amp ojip pam fluorometrie amp präsymptomatische pflan"
+    "desc": "Ingenieur-Monographie zur zerstörungsfreien Echtzeit-Diagnose im Unterglasgartenbau: Kautsky-Effekt, maximale PSII-Quantenausbeute (Fv/Fm), effektive.",
+    "tags": "articles de article 21 chlorophyllfluoreszenz fvfm quantenausbeute pflanzenstress pam html vol 21 chlorophyll a fluoreszenzkinetik ingenieur monographie zur zerstörungsfreien echtzeit diagno"
   },
   {
-    "title": "Vol. 22: HPS- vs. LED-Assimilationsbelichtung im Venlo-Gewächshaus — Photonenausbeute (µmol/J), Dunkelrot-Emerson-Effekt, Strahlungswärmebilanz &amp; Wirtschaftlichkeit",
+    "title": "Vol. 22: HPS- vs. LED-Assimilationsbelichtung",
     "cat": "article",
     "url": "articles/de/article-22-hps-vs-led-assimilation-belichtung-strahlungsheizung-wirtschaftlichkeit.html",
     "icon": "🇩🇪",
-    "desc": "Ingenieur-Monographie zum Systemvergleich von 1000-W-Natriumdampf-Hochdrucklampen (SON-T/HPS) und Voll- bzw. Hybrid-LED-Belichtung: Elektrische Photonenausbeute",
-    "tags": "articles de article 22 hps vs led assimilation belichtung strahlungsheizung wirtschaftlichkeit html vol 22 hps vs led assimilationsbelichtung im venlo gewächshaus photonenausbeute mol j dunk"
+    "desc": "Ingenieur-Monographie zum Systemvergleich von 1000-W-Natriumdampf-Hochdrucklampen (SON-T/HPS) und Voll- bzw.",
+    "tags": "articles de article 22 hps vs led assimilation belichtung strahlungsheizung wirtschaftlichkeit html vol 22 hps vs led assimilationsbelichtung ingenieur monographie zum systemvergleich von 10"
   },
   {
-    "title": "Vol. 23: Geschlossene Tiefwasserkultur (DWC) &amp; Mikrodosierungs-Automatisierung — Henry-Sauerstoffsättigung (DO), Venturi-Nano-Begasung, ORP &amp; Mehrkanal-PID-Fertigation",
+    "title": "Vol. 23: Geschlossene Tiefwasserkultur (DWC)",
     "cat": "article",
     "url": "articles/de/article-23-geschlossene-tiefwasserkultur-dwc-sauerstoffsaettigung-venturi-automatisierung.html",
     "icon": "🇩🇪",
-    "desc": "Ingenieur-Monographie für rezirkulierende Tiefwasserkultur (DWC / Floating Raft) und NFT-Systeme: Gelöstsauerstoff-Kinetik nach dem Henry-Gesetz, Q10-Wurzelatmu",
-    "tags": "articles de article 23 geschlossene tiefwasserkultur dwc sauerstoffsaettigung venturi automatisierung html vol 23 geschlossene tiefwasserkultur dwc amp mikrodosierungs automatisierung henry "
+    "desc": "Ingenieur-Monographie für rezirkulierende Tiefwasserkultur (DWC / Floating Raft) und NFT-Systeme: Gelöstsauerstoff-Kinetik nach dem Henry-Gesetz.",
+    "tags": "articles de article 23 geschlossene tiefwasserkultur dwc sauerstoffsaettigung venturi automatisierung html vol 23 geschlossene tiefwasserkultur dwc ingenieur monographie für rezirkulierende "
   },
   {
-    "title": "Optimierung des Dunkelrot (730nm) & Hellrot (660nm) LED-Spektrums",
+    "title": "Optimierung des Dunkelrot (730nm) &amp; Hellrot",
     "cat": "article",
     "url": "articles/de/article-24-far-red-deep-red-spektrum-optimierung.html",
     "icon": "🇩🇪",
     "desc": "Wissenschaftliche Analyse des Emerson-Effekts, des Photosystem-Gleichgewichts und der Dunkelrot-Zusatzbelichtung im erwerbsmäßigen Gewächshausanbau.",
-    "tags": "articles de article 24 far red deep red spektrum optimierung html optimierung des dunkelrot 730nm hellrot 660nm led spektrums wissenschaftliche analyse des emerson effekts des photosystem gl"
+    "tags": "articles de article 24 far red deep red spektrum optimierung html optimierung des dunkelrot 730nm amp hellrot wissenschaftliche analyse des emerson effekts des photosystem gleichgewichts und"
   },
   {
-    "title": "Geschlossene Nährlösungs-Kreisläufe & Nanoblasen-Sauerstoffbegasung",
+    "title": "Geschlossene Nährlösungs-Kreisläufe",
     "cat": "article",
     "url": "articles/de/article-25-geschlossene-hydrokultur-nanoblasen-sauerstoff.html",
     "icon": "🇩🇪",
-    "desc": "Ingenieurwissenschaftliche Analyse geschlossener Hydrokultursysteme, Rhizosphären-Sauerstoffgehalt (DO &gt; 8,5 mg/L) und Pythium-Prävention im geschlossenen Ge",
-    "tags": "articles de article 25 geschlossene hydrokultur nanoblasen sauerstoff html geschlossene nährlösungs kreisläufe nanoblasen sauerstoffbegasung ingenieurwissenschaftliche analyse geschlossener "
+    "desc": "Ingenieurwissenschaftliche Analyse geschlossener Hydrokultursysteme, Rhizosphären-Sauerstoffgehalt (DO &gt; 8,5 mg/L) und Pythium-Prävention im geschlossenen.",
+    "tags": "articles de article 25 geschlossene hydrokultur nanoblasen sauerstoff html geschlossene nährlösungs kreisläufe ingenieurwissenschaftliche analyse geschlossener hydrokultursysteme rhizosphäre"
   },
   {
-    "title": "Gewächshaus-Heizlastberechnung & Energieschirme (DIN V 18599)",
+    "title": "Gewächshaus-Heizlastberechnung &amp; Energieschirme",
     "cat": "article",
     "url": "articles/de/article-26-gewaechshaus-heizlast-din-v-18599.html",
     "icon": "🇩🇪",
     "desc": "Ingenieurwissenschaftliche Berechnung von Spitzenheizlasten, Rohrheizungs-Hydraulik und Energieschirmeinsparungen nach DIN V 18599.",
-    "tags": "articles de article 26 gewaechshaus heizlast din v 18599 html gewächshaus heizlastberechnung energieschirme din v 18599 ingenieurwissenschaftliche berechnung von spitzenheizlasten rohrheizun"
+    "tags": "articles de article 26 gewaechshaus heizlast din v 18599 html gewächshaus heizlastberechnung amp energieschirme ingenieurwissenschaftliche berechnung von spitzenheizlasten rohrheizungs hydra"
   },
   {
-    "title": "Biomasseakkumulation & Lichtnutzungseffizienz (LUE)",
+    "title": "Biomasseakkumulation &amp; Lichtnutzungseffizienz",
     "cat": "article",
     "url": "articles/de/article-27-pflanzenertrag-biomasse-lichtnutzungseffizienz.html",
     "icon": "🇩🇪",
     "desc": "Ertragsprognosen im erwerbsmäßigen Gewächshausanbau basierend auf dem kumulierten DLI und der Lichtnutzungseffizienz (LUE = 2,8 - 3,4 g/mol).",
-    "tags": "articles de article 27 pflanzenertrag biomasse lichtnutzungseffizienz html biomasseakkumulation lichtnutzungseffizienz lue ertragsprognosen im erwerbsmäßigen gewächshausanbau basierend auf d"
+    "tags": "articles de article 27 pflanzenertrag biomasse lichtnutzungseffizienz html biomasseakkumulation amp lichtnutzungseffizienz ertragsprognosen im erwerbsmäßigen gewächshausanbau basierend auf d"
   },
   {
-    "title": "CO2-Begasungskinetik & Wirtschaftlichkeitsgrenzen im Gewächshaus",
+    "title": "CO2-Begasungskinetik &amp; Wirtschaftlichkeitsgrenzen",
     "cat": "article",
     "url": "articles/de/article-28-gewaechshaus-co2-duengung-oekonomie.html",
     "icon": "🇩🇪",
     "desc": "Analyse der CO2-Düngung, Lüftungsverlust-Dynamik und ökonomischen ROI-Schwellenwerte im geschützten Erwerbsanbau.",
-    "tags": "articles de article 28 gewaechshaus co2 duengung oekonomie html co2 begasungskinetik wirtschaftlichkeitsgrenzen im gewächshaus analyse der co2 düngung lüftungsverlust dynamik und ökonomische"
+    "tags": "articles de article 28 gewaechshaus co2 duengung oekonomie html co2 begasungskinetik amp wirtschaftlichkeitsgrenzen analyse der co2 düngung lüftungsverlust dynamik und ökonomischen roi schwe"
   },
   {
     "title": "Stundengenaue Penman-Monteith Evapotranspiration",
     "cat": "article",
     "url": "articles/de/article-29-stundengenaue-penman-monteith-evapotranspiration.html",
     "icon": "🇩🇪",
-    "desc": "Ingenieurwissenschaftliche Modellierung der stündlichen Evapotranspiration (ETc), des Spaltöffnungswiderstands (rs) und der Präzisionsbewässerung im Unterglasan",
+    "desc": "Ingenieurwissenschaftliche Modellierung der stündlichen Evapotranspiration (ETc), des Spaltöffnungswiderstands (rs) und der Präzisionsbewässerung.",
     "tags": "articles de article 29 stundengenaue penman monteith evapotranspiration html stundengenaue penman monteith evapotranspiration ingenieurwissenschaftliche modellierung der stündlichen evapotra"
   },
   {
-    "title": "Steinwolle-Hydrodynamik & TDR-Feuchtesensoren",
+    "title": "Steinwolle-Hydrodynamik &amp; TDR-Feuchtesensoren",
     "cat": "article",
     "url": "articles/de/article-30-steinwolle-tdr-feuchte-drain-ec.html",
     "icon": "🇩🇪",
     "desc": "Ingenieuranalyse von volumetrischem Wassergehalt (VWC %), Nachtabtrocknung und Drainage-EC-Steuerung im Steinwolleanbau.",
-    "tags": "articles de article 30 steinwolle tdr feuchte drain ec html steinwolle hydrodynamik tdr feuchtesensoren ingenieuranalyse von volumetrischem wassergehalt vwc nachtabtrocknung und drainage ec "
+    "tags": "articles de article 30 steinwolle tdr feuchte drain ec html steinwolle hydrodynamik amp tdr feuchtesensoren ingenieuranalyse von volumetrischem wassergehalt vwc nachtabtrocknung und drainage"
   },
   {
-    "title": "Hochdruck-Nebeltechnik (70 bar) & Tropfenphysik",
+    "title": "Hochdruck-Nebeltechnik (70 bar) &amp; Tropfenphysik",
     "cat": "article",
     "url": "articles/de/article-31-hochdruck-nebel-tropfenphysik.html",
     "icon": "🇩🇪",
     "desc": "Ingenieuranalyse der 70-bar-Hochdruckvernebelung, Sauter-Durchmesser (D32 &lt; 10µm), adiabaten Verdunstungskühlung und VPD-Stabilisierung im Gewächshaus.",
-    "tags": "articles de article 31 hochdruck nebel tropfenphysik html hochdruck nebeltechnik 70 bar tropfenphysik ingenieuranalyse der 70 bar hochdruckvernebelung sauter durchmesser d32 lt 10 m adiabate"
+    "tags": "articles de article 31 hochdruck nebel tropfenphysik html hochdruck nebeltechnik 70 bar amp tropfenphysik ingenieuranalyse der 70 bar hochdruckvernebelung sauter durchmesser d32 lt 10 m adia"
   },
   {
-    "title": "LED-Wärmemanagement & Sperrschichttemperatur (Tj)",
+    "title": "LED-Wärmemanagement &amp; Sperrschichttemperatur (Tj)",
     "cat": "article",
     "url": "articles/de/article-32-led-waermemanagement-sperrschichttemperatur.html",
     "icon": "🇩🇪",
     "desc": "Ingenieurwissenschaftliche Berechnung von LED-Kühlkörpern, Sperrschichttemperaturen (Tj), thermischer Effizienzdegradation und Konvektionswärme im Gewächshaus.",
-    "tags": "articles de article 32 led waermemanagement sperrschichttemperatur html led wärmemanagement sperrschichttemperatur tj ingenieurwissenschaftliche berechnung von led kühlkörpern sperrschichtte"
+    "tags": "articles de article 32 led waermemanagement sperrschichttemperatur html led wärmemanagement amp sperrschichttemperatur tj ingenieurwissenschaftliche berechnung von led kühlkörpern sperrschic"
   },
   {
-    "title": "Präzisions-Pflanzensteuerung (Generativ vs Vegetativ)",
+    "title": "Präzisions-Pflanzensteuerung",
     "cat": "article",
     "url": "articles/de/article-33-praezisions-pflanzensteuerung-dif-vpd.html",
     "icon": "🇩🇪",
     "desc": "Gartenbauliche Pflanzensteuerung (Crop Steering): Steuerung des vegetativen Wachstums und Fruchtansatzes über Temperatur-DIF, VPD und Substratabtrocknung.",
-    "tags": "articles de article 33 praezisions pflanzensteuerung dif vpd html präzisions pflanzensteuerung generativ vs vegetativ gartenbauliche pflanzensteuerung crop steering steuerung des vegetativen"
+    "tags": "articles de article 33 praezisions pflanzensteuerung dif vpd html präzisions pflanzensteuerung gartenbauliche pflanzensteuerung crop steering steuerung des vegetativen wachstums und fruchtan"
   },
   {
-    "title": "UV-C Entkeimung in geschlossenen Hydrokultursystemen",
+    "title": "UV-C Entkeimung in geschlossenen",
     "cat": "article",
     "url": "articles/de/article-34-uvc-entkeimung-geschlossene-hydrokultur.html",
     "icon": "🇩🇪",
-    "desc": "Ingenieurwissenschaftliche Berechnung von UV-C-Strahlungsdosen (250 mJ/cm2), UVT%-Transmission und 5-Log-Pathogeninaktivierung (ToBRFV, Pythium) in commercial C",
-    "tags": "articles de article 34 uvc entkeimung geschlossene hydrokultur html uv c entkeimung in geschlossenen hydrokultursystemen ingenieurwissenschaftliche berechnung von uv c strahlungsdosen 250 mj"
+    "desc": "Ingenieurwissenschaftliche Berechnung von UV-C-Strahlungsdosen (250 mJ/cm2), UVT%-Transmission und 5-Log-Pathogeninaktivierung (ToBRFV, Pythium).",
+    "tags": "articles de article 34 uvc entkeimung geschlossene hydrokultur html uv c entkeimung in geschlossenen ingenieurwissenschaftliche berechnung von uv c strahlungsdosen 250 mj cm2 uvt transmissio"
   },
   {
     "title": "CFD-Strömungssimulation von HAF-Umluftventilatoren",
@@ -982,52 +982,52 @@
     "tags": "articles de article 35 gewaechshaus haf ventilatoren cfd html cfd strömungssimulation von haf umluftventilatoren numerische strömungsmechanik cfd von horizontalen umluftventilatoren haf wurf"
   },
   {
-    "title": "BHKW-Rauchgasreinigung & SCR-Katalysator",
+    "title": "BHKW-Rauchgasreinigung &amp; SCR-Katalysator",
     "cat": "article",
     "url": "articles/de/article-36-bhkw-rauchgas-scr-entstickung.html",
     "icon": "🇩🇪",
     "desc": "Ingenieurwissenschaftliche Auslegung von SCR-Entstickungsanlagen, Harnstoffdosierung (AdBlue) und Reingas-CO2-Düngung im Gewächshaus.",
-    "tags": "articles de article 36 bhkw rauchgas scr entstickung html bhkw rauchgasreinigung scr katalysator ingenieurwissenschaftliche auslegung von scr entstickungsanlagen harnstoffdosierung adblue un"
+    "tags": "articles de article 36 bhkw rauchgas scr entstickung html bhkw rauchgasreinigung amp scr katalysator ingenieurwissenschaftliche auslegung von scr entstickungsanlagen harnstoffdosierung adblu"
   },
   {
-    "title": "Wärmepufferspeicher-Schichtung & MWh-Auslegung",
+    "title": "Wärmepufferspeicher-Schichtung &amp; MWh-Auslegung",
     "cat": "article",
     "url": "articles/de/article-37-waermepufferspeicher-schichtung-auslegung.html",
     "icon": "🇩🇪",
     "desc": "Ingenieurwissenschaftliche Berechnung von Heißwasser-Wärmepufferspeichern, Thermokline-Richardson-Zahl und nächtlicher Entladedauer im Erwerbsgartenbau.",
-    "tags": "articles de article 37 waermepufferspeicher schichtung auslegung html wärmepufferspeicher schichtung mwh auslegung ingenieurwissenschaftliche berechnung von heißwasser wärmepufferspeichern t"
+    "tags": "articles de article 37 waermepufferspeicher schichtung auslegung html wärmepufferspeicher schichtung amp mwh auslegung ingenieurwissenschaftliche berechnung von heißwasser wärmepufferspeiche"
   },
   {
-    "title": "Xylem-Kalziumtransport & Blütenendfäule",
+    "title": "Xylem-Kalziumtransport &amp; Blütenendfäule",
     "cat": "article",
     "url": "articles/de/article-38-xylem-kalzium-bluetenendfaeule.html",
     "icon": "🇩🇪",
     "desc": "Pflanzenphysiologische Analyse des Xylem-Transpirationsstroms, Kalziumverteilung in der Frucht und Vorbeugung von Blütenendfäule (BER) im Unterglasanbau.",
-    "tags": "articles de article 38 xylem kalzium bluetenendfaeule html xylem kalziumtransport blütenendfäule pflanzenphysiologische analyse des xylem transpirationsstroms kalziumverteilung in der frucht"
+    "tags": "articles de article 38 xylem kalzium bluetenendfaeule html xylem kalziumtransport amp blütenendfäule pflanzenphysiologische analyse des xylem transpirationsstroms kalziumverteilung in der fr"
   },
   {
     "title": "Umkehrosmose-Entsalzung im geschlossenen Anbau",
     "cat": "article",
     "url": "articles/de/article-39-umkehrosmose-entsalzung-energieeffizienz.html",
     "icon": "🇩🇪",
-    "desc": "Ingenieurwissenschaftliche Berechnung von Niederdruck-Umkehrosmose (RO), Natriumrückhaltung (99,2%), Energierückgewinnung (PX) und geschlossener Kreislaufführun",
+    "desc": "Ingenieurwissenschaftliche Berechnung von Niederdruck-Umkehrosmose (RO), Natriumrückhaltung (99,2%), Energierückgewinnung (PX) und geschlossener.",
     "tags": "articles de article 39 umkehrosmose entsalzung energieeffizienz html umkehrosmose entsalzung im geschlossenen anbau ingenieurwissenschaftliche berechnung von niederdruck umkehrosmose ro natr"
   },
   {
-    "title": "Lichtextinktion (Beer-Lambert) & Diffusglas",
+    "title": "Lichtextinktion (Beer-Lambert) &amp; Diffusglas",
     "cat": "article",
     "url": "articles/de/article-40-beer-lambert-lichtextinktion-diffusglas.html",
     "icon": "🇩🇪",
     "desc": "Pflanzenphysiologische Berechnung der Lichtextinktion im Pflanzenbestand (Beer-Lambertsches Gesetz), Blattflächenindex (LAI) und Ertragssteigerung.",
-    "tags": "articles de article 40 beer lambert lichtextinktion diffusglas html lichtextinktion beer lambert diffusglas pflanzenphysiologische berechnung der lichtextinktion im pflanzenbestand beer lamb"
+    "tags": "articles de article 40 beer lambert lichtextinktion diffusglas html lichtextinktion beer lambert amp diffusglas pflanzenphysiologische berechnung der lichtextinktion im pflanzenbestand beer "
   },
   {
-    "title": "Farquhar (FvCB) Photosynthesemodell & CO2-Begasung",
+    "title": "Farquhar (FvCB) Photosynthesemodell &amp; CO2-Begasung",
     "cat": "article",
     "url": "articles/de/article-41-farquhar-fvcb-photosynthese-co2.html",
     "icon": "🇩🇪",
     "desc": "Biochemische Modellierung der C3-Photosynthese nach Farquhar, von Caemmerer und Berry (FvCB), Rubisco-Carboxylierungsrate (Vcmax) und Elektronentransport.",
-    "tags": "articles de article 41 farquhar fvcb photosynthese co2 html farquhar fvcb photosynthesemodell co2 begasung biochemische modellierung der c3 photosynthese nach farquhar von caemmerer und berr"
+    "tags": "articles de article 41 farquhar fvcb photosynthese co2 html farquhar fvcb photosynthesemodell amp co2 begasung biochemische modellierung der c3 photosynthese nach farquhar von caemmerer und "
   },
   {
     "title": "Substrat-Matrixpotential & pF-Kurven",
@@ -1038,28 +1038,28 @@
     "tags": "articles de article 42 substrat matrixpotential pf kurven html substrat matrixpotential pf kurven ingenieurwissenschaftliche bodenphysik matrixpotential psi m pf wasserspannungskurven van ge"
   },
   {
-    "title": "Gewächshaus-Tragwerksplanung (DIN EN 13031-1 & NEN 3859)",
+    "title": "Gewächshaus-Tragwerksplanung",
     "cat": "article",
     "url": "articles/de/article-43-gewaechshaus-tragwerksplanung-din-en-13031.html",
     "icon": "🇩🇪",
     "desc": "Bauingenieurtechnische Bemessung von Venlo-Gewächshäusern nach DIN EN 13031-1, Windlasten (qw), Schneelasten, Kulturpflanzenlasten und Fundamentbemessung.",
-    "tags": "articles de article 43 gewaechshaus tragwerksplanung din en 13031 html gewächshaus tragwerksplanung din en 13031 1 nen 3859 bauingenieurtechnische bemessung von venlo gewächshäusern nach din"
+    "tags": "articles de article 43 gewaechshaus tragwerksplanung din en 13031 html gewächshaus tragwerksplanung bauingenieurtechnische bemessung von venlo gewächshäusern nach din en 13031 1 windlasten q"
   },
   {
     "title": "Meister-Deutsch: Open-Source SRS-Lernsystem",
     "cat": "article",
     "url": "articles/de/article-44-meister-deutsch-open-source-srs-lernsystem.html",
     "icon": "🇩🇪",
-    "desc": "Open-Source Spaced Repetition System (SRS) für die deutsche Gärtnermeisterprüfung mit Web Speech API Sprachausgabe und farbenblindengerechter Benutzeroberfläche",
+    "desc": "Open-Source Spaced Repetition System (SRS) für die deutsche Gärtnermeisterprüfung mit Web Speech API Sprachausgabe und farbenblindengerechter.",
     "tags": "articles de article 44 meister deutsch open source srs lernsystem html meister deutsch open source srs lernsystem open source spaced repetition system srs für die deutsche gärtnermeisterprüf"
   },
   {
-    "title": "AgriQuant: Energie- & Rohstoff-Quant-Terminal",
+    "title": "AgriQuant: Energie- &amp; Rohstoff-Quant-Terminal",
     "cat": "article",
     "url": "articles/de/article-45-agriquant-energie-rohstoff-quant-terminal.html",
     "icon": "🇩🇪",
-    "desc": "Open-Source Finanz- und Energie-Quant-Terminal für den Erwerbsgartenbau. Berechnung von TTF-Erdgas-Spark-Spreads, Strombörsen-Arbitrage und CO2-Wirtschaftlichke",
-    "tags": "articles de article 45 agriquant energie rohstoff quant terminal html agriquant energie rohstoff quant terminal open source finanz und energie quant terminal für den erwerbsgartenbau berechn"
+    "desc": "Open-Source Finanz- und Energie-Quant-Terminal für den Erwerbsgartenbau. Berechnung von TTF-Erdgas-Spark-Spreads, Strombörsen-Arbitrage.",
+    "tags": "articles de article 45 agriquant energie rohstoff quant terminal html agriquant energie amp rohstoff quant terminal open source finanz und energie quant terminal für den erwerbsgartenbau ber"
   },
   {
     "title": "OpenCEA: Open-Source Python-Framework",
@@ -1070,12 +1070,12 @@
     "tags": "articles de article 46 opencea python framework veroeffentlichung html opencea open source python framework veröffentlichung von opencea quelloffenes python microframework für gewächshausthe"
   },
   {
-    "title": "Computer Vision & Schadbilddiagnose im Gartenbau",
+    "title": "Computer Vision &amp; Schadbilddiagnose im Gartenbau",
     "cat": "article",
     "url": "articles/de/article-47-computer-vision-pflanzenkrankheiten-diagnostik.html",
     "icon": "🇩🇪",
     "desc": "Einsatz von Computer Vision und HSV-Farbraumsegmentierung zur Früherkennung von Botrytis cinerea und Nährstoffmangel im modernen Erwerbsgartenbau.",
-    "tags": "articles de article 47 computer vision pflanzenkrankheiten diagnostik html computer vision schadbilddiagnose im gartenbau einsatz von computer vision und hsv farbraumsegmentierung zur früher"
+    "tags": "articles de article 47 computer vision pflanzenkrankheiten diagnostik html computer vision amp schadbilddiagnose im gartenbau einsatz von computer vision und hsv farbraumsegmentierung zur fr"
   },
   {
     "title": "Gewächshaus-Investitionsrechnung (CapEx/OpEx/IRR)",
@@ -1086,252 +1086,252 @@
     "tags": "articles de article 48 gewaechshaus capex opex irr investitionsrechnung html gewächshaus investitionsrechnung capex opex irr finanzmathematische investitions und wirtschaftlichkeitsrechnung "
   },
   {
-    "title": "Hydrokultur: Chemische Speziation & Debye-Hückel",
+    "title": "Hydrokultur: Chemische Speziation &amp; Debye-Hückel",
     "cat": "article",
     "url": "articles/de/article-49-hydrokultur-chemische-speziation-debye-hueckel.html",
     "icon": "🇩🇪",
-    "desc": "Chemische Thermodynamik geschlossener Nährlösungs-Kreisläufe: Debye-Hückel-Aktivitätskoeffizienten und Sättigungsindex (SI) zur Verhinderung von Düsenverstopfun",
-    "tags": "articles de article 49 hydrokultur chemische speziation debye hueckel html hydrokultur chemische speziation debye hückel chemische thermodynamik geschlossener nährlösungs kreisläufe debye hü"
+    "desc": "Chemische Thermodynamik geschlossener Nährlösungs-Kreisläufe: Debye-Hückel-Aktivitätskoeffizienten und Sättigungsindex (SI) zur Verhinderung von.",
+    "tags": "articles de article 49 hydrokultur chemische speziation debye hueckel html hydrokultur chemische speziation amp debye hückel chemische thermodynamik geschlossener nährlösungs kreisläufe deby"
   },
   {
-    "title": "Smart Greenhouse: MQTT & Edge-IoT-Sensornetzwerke",
+    "title": "Smart Greenhouse: MQTT &amp; Edge-IoT-Sensornetzwerke",
     "cat": "article",
     "url": "articles/de/article-50-smart-gewaechshaus-mqtt-edge-iot-flotte.html",
     "icon": "🇩🇪",
-    "desc": "Industrielle IoT-Architektur für den modernen Erwerbsgartenbau: MQTT-Broker-Topologien, JSON-Telemetrie und echtzeitfähige Edge-Anomalieerkennung über 100 Senso",
-    "tags": "articles de article 50 smart gewaechshaus mqtt edge iot flotte html smart greenhouse mqtt edge iot sensornetzwerke industrielle iot architektur für den modernen erwerbsgartenbau mqtt broker "
+    "desc": "Industrielle IoT-Architektur für den modernen Erwerbsgartenbau: MQTT-Broker-Topologien, JSON-Telemetrie und echtzeitfähige Edge-Anomalieerkennung über 100.",
+    "tags": "articles de article 50 smart gewaechshaus mqtt edge iot flotte html smart greenhouse mqtt amp edge iot sensornetzwerke industrielle iot architektur für den modernen erwerbsgartenbau mqtt bro"
   },
   {
-    "title": "Autonome Gewächshäuser: KI & Modellprädiktive Regelung (MPC)",
+    "title": "Autonome Gewächshäuser",
     "cat": "article",
     "url": "articles/de/article-51-autonome-gewaechshaeuser-ki-mpc-reinforcement-learning.html",
     "icon": "🇩🇪",
     "desc": "Moderne Klimacomputer-Regelung im Unterglasanbau: Modellprädiktive Regelung (MPC) und Reinforcement Learning zur Senkung des Heizenergiebedarfs um 22,4%.",
-    "tags": "articles de article 51 autonome gewaechshaeuser ki mpc reinforcement learning html autonome gewächshäuser ki modellprädiktive regelung mpc moderne klimacomputer regelung im unterglasanbau mo"
+    "tags": "articles de article 51 autonome gewaechshaeuser ki mpc reinforcement learning html autonome gewächshäuser moderne klimacomputer regelung im unterglasanbau modellprädiktive regelung mpc und r"
   },
   {
-    "title": "Aquifer-Wärmespeicher (ATES) & Industrielle Wärmepumpen im Venlo-Gewächshaus",
+    "title": "Aquifer-Wärmespeicher (ATES) &amp; Industrielle",
     "cat": "article",
     "url": "articles/de/article-52-aquifer-waermespeicher-ates-waermepumpen.html",
     "icon": "🇩🇪",
-    "desc": "Thermodynamische Modellierung von Aquifer-Wärmespeichern (ATES / WKO), saisonaler Wärmerückgewinnung und industrieller Wärmepumpen-COP für fossilfreie Gewächshä",
-    "tags": "articles de article 52 aquifer waermespeicher ates waermepumpen html aquifer wärmespeicher ates industrielle wärmepumpen im venlo gewächshaus thermodynamische modellierung von aquifer wärmes"
+    "desc": "Thermodynamische Modellierung von Aquifer-Wärmespeichern (ATES / WKO), saisonaler Wärmerückgewinnung und industrieller Wärmepumpen-COP für fossilfreie.",
+    "tags": "articles de article 52 aquifer waermespeicher ates waermepumpen html aquifer wärmespeicher ates amp industrielle thermodynamische modellierung von aquifer wärmespeichern ates wko saisonaler "
   },
   {
-    "title": "Biomasse-BHKW Rauchgas-SCR-Reinigung & Biogene CO2-Düngung im Venlo-Gewächshaus",
+    "title": "Biomasse-BHKW Rauchgas-SCR-Reinigung &amp; Biogene",
     "cat": "article",
     "url": "articles/de/article-53-biomasse-bhkw-scr-co2-rueckgewinnung-gartenbau.html",
     "icon": "🇩🇪",
-    "desc": "Thermodynamische Modellierung von Biomasse-Heizkraftwerken, selektiver katalytischer Reduktion (SCR), Ethylen-Katalysatoren und phytotoxizitätsfreier CO2-Begasu",
-    "tags": "articles de article 53 biomasse bhkw scr co2 rueckgewinnung gartenbau html biomasse bhkw rauchgas scr reinigung biogene co2 düngung im venlo gewächshaus thermodynamische modellierung von bio"
+    "desc": "Thermodynamische Modellierung von Biomasse-Heizkraftwerken, selektiver katalytischer Reduktion (SCR), Ethylen-Katalysatoren und phytotoxizitätsfreier.",
+    "tags": "articles de article 53 biomasse bhkw scr co2 rueckgewinnung gartenbau html biomasse bhkw rauchgas scr reinigung amp biogene thermodynamische modellierung von biomasse heizkraftwerken selekti"
   },
   {
-    "title": "KI-basierte Modellprädiktive Regelung (MPC) im Venlo-Gewächshaus: Echtzeit-Energie- und Ertragsoptimierung",
+    "title": "KI-basierte Modellprädiktive Regelung (MPC)",
     "cat": "article",
     "url": "articles/de/article-54-ki-modellpraediktive-regelung-mpc-venlo-gewaechshaus.html",
     "icon": "🇩🇪",
-    "desc": "Mathematische Zustandsraum-Modellierung der Gewächshaus-Thermodynamik, nichtlineare MPC-Kostenfunktions-Optimierung, Spotmarkt-Integration und autonome Klimareg",
-    "tags": "articles de article 54 ki modellpraediktive regelung mpc venlo gewaechshaus html ki basierte modellprädiktive regelung mpc im venlo gewächshaus echtzeit energie und ertragsoptimierung mathem"
+    "desc": "Mathematische Zustandsraum-Modellierung der Gewächshaus-Thermodynamik, nichtlineare MPC-Kostenfunktions-Optimierung, Spotmarkt-Integration und autonome.",
+    "tags": "articles de article 54 ki modellpraediktive regelung mpc venlo gewaechshaus html ki basierte modellprädiktive regelung mpc mathematische zustandsraum modellierung der gewächshaus thermodynam"
   },
   {
-    "title": "Nährstoff-Aufnahmekonzentrationsfaktor (UCF) in der geschlossenen Hydrokultur",
+    "title": "Nährstoff-Aufnahmekonzentrationsfaktor (UCF)",
     "cat": "article",
     "url": "articles/de/article-55-naehrstoff-aufnahmekonzentrationsfaktor-geschlossene-hydrokultur.html",
     "icon": "🇩🇪",
-    "desc": "Ingenieurwissenschaftliche Modellierung des Nährstoff-Aufnahmekonzentrationsfaktors (UCF), Ionenakkumulationskinetik, Natrium-Grenzwerte und Entleerungsinterval",
-    "tags": "articles de article 55 naehrstoff aufnahmekonzentrationsfaktor geschlossene hydrokultur html nährstoff aufnahmekonzentrationsfaktor ucf in der geschlossenen hydrokultur ingenieurwissenschaft"
+    "desc": "Ingenieurwissenschaftliche Modellierung des Nährstoff-Aufnahmekonzentrationsfaktors (UCF), Ionenakkumulationskinetik, Natrium-Grenzwerte.",
+    "tags": "articles de article 55 naehrstoff aufnahmekonzentrationsfaktor geschlossene hydrokultur html nährstoff aufnahmekonzentrationsfaktor ucf ingenieurwissenschaftliche modellierung des nährstoff "
   },
   {
-    "title": "Dunkelrot-Photobiologie (ePAR 400–750 nm) & Phytochrom-Photostationärer Zustand (PSS) im Unterglasanbau",
+    "title": "Dunkelrot-Photobiologie (ePAR 400–750 nm)",
     "cat": "article",
     "url": "articles/de/article-56-dunkelrot-photobiologie-epar-phytochrom-photostationaerer-zustand.html",
     "icon": "🇩🇪",
     "desc": "Ingenieurwissenschaftliche Photobiologie von Dunkelrot-Photonen (Far-Red), ePAR (400-750 nm), Phytochrom-Gleichgewicht (PSS) und End-of-Day-Steuerung.",
-    "tags": "articles de article 56 dunkelrot photobiologie epar phytochrom photostationaerer zustand html dunkelrot photobiologie epar 400 750 nm phytochrom photostationärer zustand pss im unterglasanba"
+    "tags": "articles de article 56 dunkelrot photobiologie epar phytochrom photostationaerer zustand html dunkelrot photobiologie epar 400 750 nm ingenieurwissenschaftliche photobiologie von dunkelrot p"
   },
   {
-    "title": "Gewächshaus-Energieeffizienz, BLE & KfW-Förderprogramme & DIN EN 13031-1 Standards (2026/2027)",
+    "title": "Gewächshaus-Energieeffizienz, BLE",
     "cat": "article",
     "url": "articles/de/article-57-gewaechshaus-energieeffizienz-foerderung-ble-kfw-din13031.html",
     "icon": "🇩🇪",
-    "desc": "Umfassender B2B-Leitfaden zur Energiewende im deutschen Gartenbau: BLE-Bundesprogramm Energieeffizienz, BAFA/KfW-Modul 4, DIN EN 13031-1 in commercial CEA syste",
-    "tags": "articles de article 57 gewaechshaus energieeffizienz foerderung ble kfw din13031 html gewächshaus energieeffizienz ble kfw förderprogramme din en 13031 1 standards 2026 2027 umfassender b2b "
+    "desc": "Umfassender B2B-Leitfaden zur Energiewende im deutschen Gartenbau: BLE-Bundesprogramm Energieeffizienz, BAFA/KfW-Modul 4, DIN EN 13031-1 in commercial CEA.",
+    "tags": "articles de article 57 gewaechshaus energieeffizienz foerderung ble kfw din13031 html gewächshaus energieeffizienz ble umfassender b2b leitfaden zur energiewende im deutschen gartenbau ble b"
   },
   {
-    "title": "Vol. 58: Dynamische CO₂-Begasungskinetik &amp; RuBisCO-Carboxylierungsthermodynamik im Hochdraht-Venlo-Gewächshaus (Farquhar-FvCB-Modell)",
+    "title": "Vol. 58: Dynamische CO₂-Begasungskinetik",
     "cat": "article",
     "url": "articles/de/article-58-dynamic-co2-enrichment-kinetics-rubisco-carboxylation-venlo.html",
     "icon": "🇩🇪",
-    "desc": "Ingenieur-Monographie zur dynamischen CO₂-Anreicherung im Venlo-Gewächshaus: Biochemische Farquhar-von-Caemmerer-Berry-(FvCB)-Kinetik der RuBisCO, Unterdrückung",
-    "tags": "articles de article 58 dynamic co2 enrichment kinetics rubisco carboxylation venlo html vol 58 dynamische co begasungskinetik amp rubisco carboxylierungsthermodynamik im hochdraht venlo gewä"
+    "desc": "Ingenieur-Monographie zur dynamischen CO₂-Anreicherung im Venlo-Gewächshaus: Biochemische Farquhar-von-Caemmerer-Berry-(FvCB)-Kinetik der RuBisCO.",
+    "tags": "articles de article 58 dynamic co2 enrichment kinetics rubisco carboxylation venlo html vol 58 dynamische co begasungskinetik ingenieur monographie zur dynamischen co anreicherung im venlo g"
   },
   {
-    "title": "EPEX SPOT Negativstrompreis-Arbitrage, Power-to-Heat-Elektrokessel, Schichtenspeicher & Hybrid-BESS im Venlo-Gewächshaus",
+    "title": "EPEX SPOT Negativstrompreis-Arbitrage",
     "cat": "article",
     "url": "articles/de/article-59-epex-spot-negativstrompreise-bess-power-to-heat-elektrokessel-venlo.html",
     "icon": "🇩🇪",
-    "desc": "Ingenieurwissenschaftliche Analyse zu EPEX SPOT Negativstrompreisen (§ 51 EEG), 20-kV-Elektrokesseln, Richardson-Schichtenspeichern (Ri &gt; 5,0) und LFP-BESS i",
-    "tags": "articles de article 59 epex spot negativstrompreise bess power to heat elektrokessel venlo html epex spot negativstrompreis arbitrage power to heat elektrokessel schichtenspeicher hybrid bes"
+    "desc": "Ingenieurwissenschaftliche Analyse zu EPEX SPOT Negativstrompreisen (§ 51 EEG), 20-kV-Elektrokesseln, Richardson-Schichtenspeichern (Ri &gt; 5,0) und LFP-BESS.",
+    "tags": "articles de article 59 epex spot negativstrompreise bess power to heat elektrokessel venlo html epex spot negativstrompreis arbitrage ingenieurwissenschaftliche analyse zu epex spot negativs"
   },
   {
-    "title": "Potentiometrische Ionenselektive Elektroden (ISE), Nikolsky-Eisenman-Selektivität & Geschlossene Hydroponik im Venlo-Gewächshaus",
+    "title": "Potentiometrische Ionenselektive Elektroden (ISE)",
     "cat": "article",
     "url": "articles/de/article-60-potentiometrische-ionenselektive-elektroden-ise-geschlossene-hydroponik.html",
     "icon": "🇩🇪",
-    "desc": "Ingenieurwissenschaftliche Analyse potentiometrischer ionenselektiver Elektroden (ISE: NO3-, K+, Ca2+, Na+, Cl-), Nernst-Gleichung, Nikolsky-Eisenman-Korrektur,",
-    "tags": "articles de article 60 potentiometrische ionenselektive elektroden ise geschlossene hydroponik html potentiometrische ionenselektive elektroden ise nikolsky eisenman selektivität geschlossen"
+    "desc": "Ingenieurwissenschaftliche Analyse potentiometrischer ionenselektiver Elektroden (ISE: NO3-, K+, Ca2+, Na+, Cl-), Nernst-Gleichung.",
+    "tags": "articles de article 60 potentiometrische ionenselektive elektroden ise geschlossene hydroponik html potentiometrische ionenselektive elektroden ise ingenieurwissenschaftliche analyse potenti"
   },
   {
-    "title": "Thermodynamik der Energieschirm-Spaltöffnung, Latente Transpirationswärme, Kaltluftabfall & Botrytis-Prävention im Venlo-Gewächshaus",
+    "title": "Thermodynamik der Energieschirm-Spaltöffnung",
     "cat": "article",
     "url": "articles/de/article-61-energieschirm-spaltoeffnung-transpiration-latente-waerme-kaltluftabfall.html",
     "icon": "🇩🇪",
-    "desc": "Ingenieurwissenschaftliche Analyse zu Schirmspalt (Kierstand), gekoppeltem sensiblem und latentem Wärmetransport durch poröse Gewebe, Rayleigh-/Archimedes-Kaltl",
-    "tags": "articles de article 61 energieschirm spaltoeffnung transpiration latente waerme kaltluftabfall html thermodynamik der energieschirm spaltöffnung latente transpirationswärme kaltluftabfall bo"
+    "desc": "Ingenieurwissenschaftliche Analyse zu Schirmspalt (Kierstand), gekoppeltem sensiblem und latentem Wärmetransport durch poröse Gewebe.",
+    "tags": "articles de article 61 energieschirm spaltoeffnung transpiration latente waerme kaltluftabfall html thermodynamik der energieschirm spaltöffnung ingenieurwissenschaftliche analyse zu schirms"
   },
   {
-    "title": "Agrar- &amp; Gewächshausförderung in allen 50 US-Bundesstaaten (2026–2027): USDA REAP, NRCS EQIP &amp; Nicht-Verwässernde Kapitalarchitektur im Systemvergleich mit Deutschland",
+    "title": "Agrar- &amp; Gewächshausförderung in allen 50",
     "cat": "article",
     "url": "articles/de/article-62-us-50-bundesstaaten-agrarfoerderung-eqip-reap-cea-leitfaden.html",
     "icon": "🇩🇪",
-    "desc": "Ingenieur- und finanzwirtschaftlicher Leitfaden zur nicht-verwässernden Agrar- und CEA-Investitionsförderung in allen 50 US-Bundesstaaten (USDA REAP, NRCS EQIP ",
-    "tags": "articles de article 62 us 50 bundesstaaten agrarfoerderung eqip reap cea leitfaden html agrar amp gewächshausförderung in allen 50 us bundesstaaten 2026 2027 usda reap nrcs eqip amp nicht ve"
+    "desc": "Ingenieur- und finanzwirtschaftlicher Leitfaden zur nicht-verwässernden Agrar- und CEA-Investitionsförderung in allen 50 US-Bundesstaaten.",
+    "tags": "articles de article 62 us 50 bundesstaaten agrarfoerderung eqip reap cea leitfaden html agrar amp gewächshausförderung in allen 50 ingenieur und finanzwirtschaftlicher leitfaden zur nicht ve"
   },
   {
-    "title": "Präzisionsbewässerung, Wassermanagement & Agrarsubventionen: FDACS BMP und TWDB im Vergleich zur EU-WRRL",
+    "title": "Präzisionsbewässerung, Wassermanagement",
     "cat": "article",
     "url": "articles/de/article-63-praezisionsbewaesserung-wassermanagement-agrarsubventionen-florida-texas-vergleich.html",
     "icon": "🇩🇪",
-    "desc": "Ingenieurhandbuch zu Bodenmatrixpotenzial-Telemetrie, Penman-Monteith-Bewässerungssteuerung, US-Wasserförderprogrammen (FDACS BMP 75-87,5 %, TWDB) sowie dem deu",
-    "tags": "articles de article 63 praezisionsbewaesserung wassermanagement agrarsubventionen florida texas vergleich html präzisionsbewässerung wassermanagement agrarsubventionen fdacs bmp und twdb im "
+    "desc": "Ingenieurhandbuch zu Bodenmatrixpotenzial-Telemetrie, Penman-Monteith-Bewässerungssteuerung, US-Wasserförderprogrammen (FDACS BMP 75-87,5 %, TWDB) sowie dem.",
+    "tags": "articles de article 63 praezisionsbewaesserung wassermanagement agrarsubventionen florida texas vergleich html präzisionsbewässerung wassermanagement ingenieurhandbuch zu bodenmatrixpotenzia"
   },
   {
-    "title": "Wasserqualität, Denitrifikations-Bioreaktoren &amp; Agrarförderung: US-Corn-Belt (NRCS CPS 605 / Iowa WQI / H2Ohio) vs. EU-WRRL &amp; DüV",
+    "title": "Wasserqualität, Denitrifikations-Bioreaktoren",
     "cat": "article",
     "url": "articles/de/article-64-wasserqualitaet-bodenfruchtbarkeit-denitrifikationsbioreaktor-agrarfoerderung-vergleich.html",
     "icon": "🇩🇪",
-    "desc": "Ingenieurhandbuch zu Holzhackschnitzel-Denitrifikationsbioreaktoren (NRCS CPS 605, HRT &gt;= 4 h), gesättigten Uferrandstreifen (CPS 604), DIN 38409-7 Karbonath",
-    "tags": "articles de article 64 wasserqualitaet bodenfruchtbarkeit denitrifikationsbioreaktor agrarfoerderung vergleich html wasserqualität denitrifikations bioreaktoren amp agrarförderung us corn be"
+    "desc": "Ingenieurhandbuch zu Holzhackschnitzel-Denitrifikationsbioreaktoren (NRCS CPS 605, HRT &gt;= 4 h), gesättigten Uferrandstreifen (CPS 604), DIN 38409-7.",
+    "tags": "articles de article 64 wasserqualitaet bodenfruchtbarkeit denitrifikationsbioreaktor agrarfoerderung vergleich html wasserqualität denitrifikations bioreaktoren ingenieurhandbuch zu holzhack"
   },
   {
-    "title": "Gewächshaus-Energieeffizienz, Energieschirme &amp; Agrarförderung: US PNW / Nordost (ETO, WSDA, NYSERDA, MDAR) vs. DIN V 18599, BMLEH/FNR &amp; Rentenbank",
+    "title": "Gewächshaus-Energieeffizienz, Energieschirme",
     "cat": "article",
     "url": "articles/de/article-65-gewaechshaus-energieeffizienz-energieschirme-agrarfoerderung-vergleich.html",
     "icon": "🇩🇪",
-    "desc": "Ingenieurhandbuch zur energetischen Venlo-Gewächshaussanierung nach DIN V 18599 (U-Wert 5,8 auf 2,2 W/m²K, Doppelenergieschirm, 1,5–4,0 % Entfeuchtungsspalt), t",
-    "tags": "articles de article 65 gewaechshaus energieeffizienz energieschirme agrarfoerderung vergleich html gewächshaus energieeffizienz energieschirme amp agrarförderung us pnw nordost eto wsda nyse"
+    "desc": "Ingenieurhandbuch zur energetischen Venlo-Gewächshaussanierung nach DIN V 18599.",
+    "tags": "articles de article 65 gewaechshaus energieeffizienz energieschirme agrarfoerderung vergleich html gewächshaus energieeffizienz energieschirme ingenieurhandbuch zur energetischen venlo gewäc"
   },
   {
-    "title": "Präzisionsbewässerung, Frequenzumrichter-Pumpenphysik &amp; Wasserförderung: Kalifornien SWEEP &amp; Texas TWDB im Vergleich zu Bayern (BaySL, Wasserverband Knoblauchsland, EO &amp; Rentenbank)",
+    "title": "Präzisionsbewässerung, Frequenzumrichter-Pumpenphys",
     "cat": "article",
     "url": "articles/de/article-66-kalifornien-sweep-vs-texas-twdb-bewaesserungsfoerderung-pumpeffizienz-vergleich.html",
     "icon": "🇩🇪",
-    "desc": "Ingenieurhandbuch zur Pumpen-Affinitätsphysik (Drehzahlgesetz P ~ N³), spezifischen Förderenergie (kWh/m³), FDR/Tensiometer-Steuerung und Bewässerungsförderung:",
-    "tags": "articles de article 66 kalifornien sweep vs texas twdb bewaesserungsfoerderung pumpeffizienz vergleich html präzisionsbewässerung frequenzumrichter pumpenphysik amp wasserförderung kaliforni"
+    "desc": "Ingenieurhandbuch zur Pumpen-Affinitätsphysik (Drehzahlgesetz P ~ N³), spezifischen Förderenergie (kWh/m³), FDR/Tensiometer-Steuerung.",
+    "tags": "articles de article 66 kalifornien sweep vs texas twdb bewaesserungsfoerderung pumpeffizienz vergleich html präzisionsbewässerung frequenzumrichter pumpenphys ingenieurhandbuch zur pumpen af"
   },
   {
-    "title": "Tiefengeothermie, Fernwärme & industrielle Großwärmepumpen (NH₃/R290) im Venlo-Gewächshaus",
+    "title": "Tiefengeothermie, Fernwärme &amp; industrielle",
     "cat": "article",
     "url": "articles/de/article-67-tiefengeothermie-fernwaerme-grosswaermepumpen-gewaechshaus-dekarbonisierung.html",
     "icon": "🇩🇪",
-    "desc": "Ingenieurhandbuch zur Integration hydrothermaler Tiefengeothermie, BEW-Wärmenetze und industrieller NH3/R290-Großwärmepumpen nach DIN V 18599 & VDI 4640 im Erwe",
-    "tags": "articles de article 67 tiefengeothermie fernwaerme grosswaermepumpen gewaechshaus dekarbonisierung html tiefengeothermie fernwärme industrielle großwärmepumpen nh r290 im venlo gewächshaus i"
+    "desc": "Ingenieurhandbuch zur Integration hydrothermaler Tiefengeothermie, BEW-Wärmenetze und industrieller NH3/R290-Großwärmepumpen nach DIN V 18599 &amp; VDI 4640.",
+    "tags": "articles de article 67 tiefengeothermie fernwaerme grosswaermepumpen gewaechshaus dekarbonisierung html tiefengeothermie fernwärme amp industrielle ingenieurhandbuch zur integration hydrothe"
   },
   {
-    "title": "Direct Air Capture (DAC) &amp; Festamin-CO₂-Desorption im Venlo-Gewächshaus: Wärmepumpen-Abwärmenutzung &amp; Förderung",
+    "title": "Direct Air Capture (DAC) &amp; Festamin-CO₂-Desorption",
     "cat": "article",
     "url": "articles/de/article-68-direct-air-capture-festamin-co2-desorption-waermepumpen-gewaechshaus.html",
     "icon": "🇩🇪",
-    "desc": "Ingenieurhandbuch zur Festamin-TVSA-CO₂-Abscheidung aus Umgebungsluft (DAC) gekoppelt mit Großwärmepumpen (65 °C–85 °C) nach DIN EN 13031, KTBL, BMEL und IRA 45",
-    "tags": "articles de article 68 direct air capture festamin co2 desorption waermepumpen gewaechshaus html direct air capture dac amp festamin co desorption im venlo gewächshaus wärmepumpen abwärmenut"
+    "desc": "Ingenieurhandbuch zur Festamin-TVSA-CO₂-Abscheidung aus Umgebungsluft (DAC) gekoppelt mit Großwärmepumpen (65 °C–85 °C) nach DIN EN 13031, KTBL, BMEL und IRA.",
+    "tags": "articles de article 68 direct air capture festamin co2 desorption waermepumpen gewaechshaus html direct air capture dac amp festamin co desorption ingenieurhandbuch zur festamin tvsa co absc"
   },
   {
-    "title": "Biomasse-BHKW, SCR-Rauchgasreinigung &amp; Fernwärmekopplung im Venlo-Gewächshaus (Band 69)",
+    "title": "Biomasse-BHKW, SCR-Rauchgasreinigung",
     "cat": "article",
     "url": "articles/de/article-69-biomasse-bhkw-rauchgasreinigung-scr-fernwaerme-gewaechshaus.html",
     "icon": "🇩🇪",
-    "desc": "Ingenieurhandbuch zu Biomasse-Blockheizkraftwerken (BHKW/ORC) im Venlo-Gewächshaus: E-Filter, SCR-Entstickung (TA Luft / 44. BImSchV), Schichtenspeicher-Kaskade",
-    "tags": "articles de article 69 biomasse bhkw rauchgasreinigung scr fernwaerme gewaechshaus html biomasse bhkw scr rauchgasreinigung amp fernwärmekopplung im venlo gewächshaus band 69 ingenieurhandbu"
+    "desc": "Ingenieurhandbuch zu Biomasse-Blockheizkraftwerken (BHKW/ORC) im Venlo-Gewächshaus: E-Filter, SCR-Entstickung (TA Luft / 44.",
+    "tags": "articles de article 69 biomasse bhkw rauchgasreinigung scr fernwaerme gewaechshaus html biomasse bhkw scr rauchgasreinigung ingenieurhandbuch zu biomasse blockheizkraftwerken bhkw orc im ven"
   },
   {
-    "title": "Nanoblasen-Sauerstofffertigation &amp; Pythium-Unterdrückung in Steinwollrinnen (Band 70)",
+    "title": "Nanoblasen-Sauerstofffertigation",
     "cat": "article",
     "url": "articles/de/article-70-nanoblasen-geloestsauerstoff-pythium-unterdrueckung-steinwolle.html",
     "icon": "🇩🇪",
-    "desc": "Ingenieurmonographie zur Nanoblasen-Sauerstoffanreicherung im Venlo-Gewächshaus: Young-Laplace-Innendruck, Zeta-Potenzial (ISO 20480-1), Michaelis-Menten-Wurzel",
-    "tags": "articles de article 70 nanoblasen geloestsauerstoff pythium unterdrueckung steinwolle html nanoblasen sauerstofffertigation amp pythium unterdrückung in steinwollrinnen band 70 ingenieurmono"
+    "desc": "Ingenieurmonographie zur Nanoblasen-Sauerstoffanreicherung im Venlo-Gewächshaus: Young-Laplace-Innendruck, Zeta-Potenzial (ISO 20480-1).",
+    "tags": "articles de article 70 nanoblasen geloestsauerstoff pythium unterdrueckung steinwolle html nanoblasen sauerstofffertigation ingenieurmonographie zur nanoblasen sauerstoffanreicherung im venl"
   },
   {
-    "title": "Horizontallüftung (HAF) &amp; Blattgrenzschicht-Entkopplung im Venlo-Gewächshaus (Band 71)",
+    "title": "Horizontallüftung (HAF)",
     "cat": "article",
     "url": "articles/de/article-71-horizontallueftung-haf-grenzschicht-mikroklima-gewaechshaus.html",
     "icon": "🇩🇪",
-    "desc": "Ingenieurmonographie zur Horizontallüftung (HAF) im Venlo-Gewächshaus: Blattgrenzschichtwiderstand, Sherwood-Stoffübergang, Racetrack-Auslegung und Wärmepumpen-",
-    "tags": "articles de article 71 horizontallueftung haf grenzschicht mikroklima gewaechshaus html horizontallüftung haf amp blattgrenzschicht entkopplung im venlo gewächshaus band 71 ingenieurmonograp"
+    "desc": "Ingenieurmonographie zur Horizontallüftung (HAF) im Venlo-Gewächshaus: Blattgrenzschichtwiderstand, Sherwood-Stoffübergang, Racetrack-Auslegung.",
+    "tags": "articles de article 71 horizontallueftung haf grenzschicht mikroklima gewaechshaus html horizontallüftung haf ingenieurmonographie zur horizontallüftung haf im venlo gewächshaus blattgrenzsc"
   },
   {
-    "title": "Thermodynamische Optimierung halbgeschlossener Venlo-Gewächshäuser: Mollier-h,x-Psychrometrie, 70-bar-Hochdrucknebel &amp; Latentwärmerückgewinnung (Band 72)",
+    "title": "Thermodynamische Optimierung halbgeschlossener",
     "cat": "article",
     "url": "articles/de/article-72-semi-closed-greenhouse-mollier-psychrometrics-latent-heat.html",
     "icon": "🇩🇪",
-    "desc": "Ingenieurwissenschaftliche Meister-Monographie zum halbgeschlossenen Venlo-Gewächshaus: Überdruck-Folientransportschläuche (+15 bis +35 Pa), Mollier-h,x-Feuchtl",
-    "tags": "articles de article 72 semi closed greenhouse mollier psychrometrics latent heat html thermodynamische optimierung halbgeschlossener venlo gewächshäuser mollier h x psychrometrie 70 bar hoch"
+    "desc": "Ingenieurwissenschaftliche Meister-Monographie zum halbgeschlossenen Venlo-Gewächshaus: Überdruck-Folientransportschläuche (+15 bis +35 Pa).",
+    "tags": "articles de article 72 semi closed greenhouse mollier psychrometrics latent heat html thermodynamische optimierung halbgeschlossener ingenieurwissenschaftliche meister monographie zum halbge"
   },
   {
-    "title": "Geschlossene Nährlösungsrezirkulation auf Steinwolle: Davies-Ionenaktivität, Na⁺/Cl⁻-Ballastsalzkinetik, selektive Entsalzung &amp; WHG/DüV-Null-Emission (Band 73)",
+    "title": "Geschlossene Nährlösungsrezirkulation auf",
     "cat": "article",
     "url": "articles/de/article-73-geschlossene-naehrloesungsrezirkulation-davies-ionenbilanz-steinwolle.html",
     "icon": "🇩🇪",
-    "desc": "Ingenieurwissenschaftliche Meister-Monographie zur geschlossenen Nährlösungsrezirkulation im Unterglasgemüsebau: Erweiterte Davies-Gleichung, Ca2+-Aktivitätsabs",
-    "tags": "articles de article 73 geschlossene naehrloesungsrezirkulation davies ionenbilanz steinwolle html geschlossene nährlösungsrezirkulation auf steinwolle davies ionenaktivität na cl ballastsalz"
+    "desc": "Ingenieurwissenschaftliche Meister-Monographie zur geschlossenen Nährlösungsrezirkulation im Unterglasgemüsebau: Erweiterte Davies-Gleichung.",
+    "tags": "articles de article 73 geschlossene naehrloesungsrezirkulation davies ionenbilanz steinwolle html geschlossene nährlösungsrezirkulation auf ingenieurwissenschaftliche meister monographie zur"
   },
   {
-    "title": "Halbgeschlossenes Gewächshaus &amp; ATU-Klimakorridore: Überdruck-Vektorschutz (+15 bis +35 Pa), Mollier-h,x-Enthalpiebilanz &amp; VenloCAD-3D-Kopplung nach DIN EN 13031-1 (Band 74)",
+    "title": "Halbgeschlossenes Gewächshaus &amp; ATU-Klimakorridore",
     "cat": "article",
     "url": "articles/de/article-74-halbgeschlossenes-gewaechshaus-atu-mollier-venlocad-integration.html",
     "icon": "🇩🇪",
-    "desc": "Ingenieurwissenschaftliche Meister-Monographie zu ATU-Klimakorridoren im halbgeschlossenen Venlo-Gewächshaus: Überdruck-Insektenbarriere (+15 bis +35 Pa), Molli",
-    "tags": "articles de article 74 halbgeschlossenes gewaechshaus atu mollier venlocad integration html halbgeschlossenes gewächshaus amp atu klimakorridore überdruck vektorschutz 15 bis 35 pa mollier h"
+    "desc": "Ingenieurwissenschaftliche Meister-Monographie zu ATU-Klimakorridoren im halbgeschlossenen Venlo-Gewächshaus: Überdruck-Insektenbarriere (+15 bis +35 Pa).",
+    "tags": "articles de article 74 halbgeschlossenes gewaechshaus atu mollier venlocad integration html halbgeschlossenes gewächshaus amp atu klimakorridore ingenieurwissenschaftliche meister monographi"
   },
   {
-    "title": "Aquifer-Wärmespeicher (ATES) &amp; Großwärmepumpen im Gewächshaus: Dublettenhydraulik, VDI 4640 Blatt 4, WHG-Wasserrecht &amp; BEW/BMLEH-Förderung (Band 75)",
+    "title": "Aquifer-Wärmespeicher (ATES) &amp; Großwärmepumpen",
     "cat": "article",
     "url": "articles/de/article-75-ates-aquifer-waermespeicher-grosswaermepumpen-gewaechshaus.html",
     "icon": "🇩🇪",
-    "desc": "Ingenieurwissenschaftliche Meister-Monographie zu saisonalen Aquifer-Wärmespeichern (ATES) und Großwärmepumpen im Unterglasgartenbau: Dupuit-Thiem-Brunnenhydrau",
-    "tags": "articles de article 75 ates aquifer waermespeicher grosswaermepumpen gewaechshaus html aquifer wärmespeicher ates amp großwärmepumpen im gewächshaus dublettenhydraulik vdi 4640 blatt 4 whg w"
+    "desc": "Ingenieurwissenschaftliche Meister-Monographie zu saisonalen Aquifer-Wärmespeichern (ATES) und Großwärmepumpen im Unterglasgartenbau.",
+    "tags": "articles de article 75 ates aquifer waermespeicher grosswaermepumpen gewaechshaus html aquifer wärmespeicher ates amp großwärmepumpen ingenieurwissenschaftliche meister monographie zu saison"
   },
   {
-    "title": "Klimatechnik &amp; Biokontroll-Kybernetik im Venlo-Gewächshaus des Nürnberger Knoblauchslands: Doppel-AR-Diffusglas, VPD-Regelung, Wasserverband-Ressourcenmanagement &amp; OECD-Qualitätsnormen (Band 76)",
+    "title": "Klimatechnik &amp; Biokontroll-Kybernetik",
     "cat": "article",
     "url": "articles/de/article-76-knoblauchsland-gewaechshausklima-vpd-nuetzlingseinsatz-oecd.html",
     "icon": "🇩🇪",
-    "desc": "Ingenieurwissenschaftliche Fachmonographie zum Unterglasgemüsebau im Nürnberger Knoblauchsland: Doppel-AR-Diffusglas (96,2 % Transmission, 25 % Haze), 35/30-Gra",
-    "tags": "articles de article 76 knoblauchsland gewaechshausklima vpd nuetzlingseinsatz oecd html klimatechnik amp biokontroll kybernetik im venlo gewächshaus des nürnberger knoblauchslands doppel ar "
+    "desc": "Ingenieurwissenschaftliche Fachmonographie zum Unterglasgemüsebau im Nürnberger Knoblauchsland: Doppel-AR-Diffusglas (96,2 % Transmission, 25 % Haze).",
+    "tags": "articles de article 76 knoblauchsland gewaechshausklima vpd nuetzlingseinsatz oecd html klimatechnik amp biokontroll kybernetik ingenieurwissenschaftliche fachmonographie zum unterglasgemüse"
   },
   {
-    "title": "Nacherntelogistik &amp; Kühlkettentechnik im Hochleistungs-Gewächshaus: Induktionsgeführte FTS-Ernteflotten, Zwangslüftungs- vs. Vakuum-Vorkühlung, Q10-Atmungskinetik &amp; Taupunktschutz (Band 77)",
+    "title": "Nacherntelogistik &amp; Kühlkettentechnik",
     "cat": "article",
     "url": "articles/de/article-77-gewaechshaus-nacherntelogistik-kuehlkette-qualitaetserhalt.html",
     "icon": "🇩🇪",
-    "desc": "Ingenieurwissenschaftliche Monographie zur Nacherntelogistik im Unterglasgemüsebau: Induktionsgeführte FTS-Erntewagen, Biot- und Newton-Halbkühlzeit t1/2 bei Zw",
-    "tags": "articles de article 77 gewaechshaus nacherntelogistik kuehlkette qualitaetserhalt html nacherntelogistik amp kühlkettentechnik im hochleistungs gewächshaus induktionsgeführte fts ernteflotte"
+    "desc": "Ingenieurwissenschaftliche Monographie zur Nacherntelogistik im Unterglasgemüsebau: Induktionsgeführte FTS-Erntewagen, Biot- und Newton-Halbkühlzeit t1/2.",
+    "tags": "articles de article 77 gewaechshaus nacherntelogistik kuehlkette qualitaetserhalt html nacherntelogistik amp kühlkettentechnik ingenieurwissenschaftliche monographie zur nacherntelogistik im"
   },
   {
-    "title": "Energieaudit im Erwerbsgartenbau nach DIN V 18599 &amp; DIN EN 16247-1, BMLEH/BLE-Förderung (40–50 %), Kapitaldienstgrenzen &amp; Hofnachfolge (Band 78)",
+    "title": "Energieaudit im Erwerbsgartenbau nach DIN V 18599",
     "cat": "article",
     "url": "articles/de/article-78-eu-gewaechshaus-energieaudit-din-18599-ble-foerderung-hofnachfolge.html",
     "icon": "🇩🇪",
-    "desc": "Ingenieur- und betriebswirtschaftliche Fachmonographie zum Gewächshaus-Energieaudit (DIN V 18599, DIN EN 16247-1), BMLEH/BLE-Zuschuss (40 bis 50 %), Rentenbank ",
-    "tags": "articles de article 78 eu gewaechshaus energieaudit din 18599 ble foerderung hofnachfolge html energieaudit im erwerbsgartenbau nach din v 18599 amp din en 16247 1 bmleh ble förderung 40 50 "
+    "desc": "Ingenieur- und betriebswirtschaftliche Fachmonographie zum Gewächshaus-Energieaudit (DIN V 18599, DIN EN 16247-1), BMLEH/BLE-Zuschuss (40 bis 50 %).",
+    "tags": "articles de article 78 eu gewaechshaus energieaudit din 18599 ble foerderung hofnachfolge html energieaudit im erwerbsgartenbau nach din v 18599 ingenieur und betriebswirtschaftliche fachmon"
   },
   {
-    "title": "Deutsche Gartenbau-Meister Fachartikel &amp; CEA-Technik (78 Monographien)",
+    "title": "Deutsche Gartenbau-Meister Fachartikel",
     "cat": "article",
     "url": "articles/de/index.html",
     "icon": "🇩🇪",
-    "desc": "Vollständige deutschsprachige Wissensdatenbank mit 78 technischen Fachartikeln zu VPD-Psychrometrie, DIN V 18599 Heizlast, EN 13031-1 Venlo-Statik, FvCB-CO2-Kin",
-    "tags": "articles de index html deutsche gartenbau meister fachartikel amp cea technik 78 monographien vollständige deutschsprachige wissensdatenbank mit 78 technischen fachartikeln zu vpd psychromet"
+    "desc": "Vollständige deutschsprachige Wissensdatenbank mit 78 technischen Fachartikeln zu VPD-Psychrometrie, DIN V 18599 Heizlast, EN 13031-1 Venlo-Statik.",
+    "tags": "articles de index html deutsche gartenbau meister fachartikel vollständige deutschsprachige wissensdatenbank mit 78 technischen fachartikeln zu vpd psychrometrie din v 18599 heizlast en 1303"
   },
   {
     "title": "施設園芸・スマート農業のための飽差（VPD）最適化マスタークラス",
@@ -1358,60 +1358,60 @@
     "tags": "articles ja article 03 pollinator safety bumblebee ipm rei jp html 施設園芸におけるマルハナバチ訪花受粉とipm天敵保護 農薬再入場待機期間 rei の数理モデル 商業温室におけるセイヨウオオマルハナバチ クロマルハナバチの振動受粉微気象条件 vpd 温度 農薬残留半減期 dt50 の一次減衰計算 および作業者再"
   },
   {
-    "title": "施設園芸の熱貫流率 (U'値)・多層保温カーテン・隙間換気熱損失・潜熱回収ヒートポンプ設計 (DIN V 18599)",
+    "title": "施設園芸の熱貫流率 (U'値)・多層保温カーテン・隙間換気熱損失・潜熱回収ヒートポンプ設計",
     "cat": "article",
     "url": "articles/ja/article-04-greenhouse-heat-loss-u-value-thermal-screen-design.html",
     "icon": "🇯🇵",
     "desc": "フェンロー型連棟温室および大型園芸施設におけるピーク暖房負荷計算式 (Q = U'·A·ΔT)、パテ無しガラスの煙突効果、多層保温カーテン (Luxous 1147 FR) の放射・対流抑制、および潜熱回収ヒートポンプ・蓄熱槽の設計指針。",
-    "tags": "articles ja article 04 greenhouse heat loss u value thermal screen design html 施設園芸の熱貫流率 u 値 多層保温カ テン 隙間換気熱損失 潜熱回収ヒ トポンプ設計 din v 18599 フェンロ 型連棟温室および大型園芸施設におけるピ ク暖房負荷計算式 q u a t パテ無しガラスの煙突効果 "
+    "tags": "articles ja article 04 greenhouse heat loss u value thermal screen design html 施設園芸の熱貫流率 u 値 多層保温カ テン 隙間換気熱損失 潜熱回収ヒ トポンプ設計 フェンロ 型連棟温室および大型園芸施設におけるピ ク暖房負荷計算式 q u a t パテ無しガラスの煙突効果 多層保温カ テン lux"
   },
   {
-    "title": "FAO-56 Penman-Monteith 蒸散モデル・気孔コンダクタンス・飽差 (VPD) 統合環境制御と日射比例灌水設計",
+    "title": "FAO-56 Penman-Monteith 蒸散モデル・気孔コンダクタンス・飽差 (VPD)",
     "cat": "article",
     "url": "articles/ja/article-05-penman-monteith-transpiration-vpd-environmental-control.html",
     "icon": "🇯🇵",
     "desc": "施設園芸におけるFAO-56 Penman-Monteith蒸発散方程式 (ET₀)・Stanghellini温室群落モデル、空気力学的境界層抵抗 (r_a) と気孔抵抗 (r_s)、飽差 (VPD) 制御、および積算日射比例灌水トリガーの設計。",
-    "tags": "articles ja article 05 penman monteith transpiration vpd environmental control html fao 56 penman monteith 蒸散モデル 気孔コンダクタンス 飽差 vpd 統合環境制御と日射比例灌水設計 施設園芸におけるfao 56 penman monteith蒸発散方程式 et stan"
+    "tags": "articles ja article 05 penman monteith transpiration vpd environmental control html fao 56 penman monteith 蒸散モデル 気孔コンダクタンス 飽差 vpd 施設園芸におけるfao 56 penman monteith蒸発散方程式 et stanghellini温室群落モデル "
   },
   {
-    "title": "Vol. 06: 閉鎖型養液栽培におけるモル化学量論・Sonneveld/Steiner イオン当量収支 (meq/L) と A/B 原液タンク・EC/pH 制御工学",
+    "title": "Vol. 06: 閉鎖型養液栽培におけるモル化学量論・Sonneveld/Steiner",
     "cat": "article",
     "url": "articles/ja/article-06-hydroponic-nutrient-formulation-ab-stock-tank-ec-ph-jp.html",
     "icon": "🇯🇵",
     "desc": "施設園芸および植物工場の閉鎖型循環式養液栽培におけるイオン当量設計 (mmol/L・meq/L)：Sonneveld・Steiner・山崎処方の比較、陽イオン・陰イオン電気的中性条件、A/B原液タンクの溶解度積 (Ksp・石膏沈殿防止)、NO₃⁻/NH₄⁺比による根圏pH自律緩衝、および排液循環ブレンド制御。",
-    "tags": "articles ja article 06 hydroponic nutrient formulation ab stock tank ec ph jp html vol 06 閉鎖型養液栽培におけるモル化学量論 sonneveld steiner イオン当量収支 meq l と a b 原液タンク ec ph 制御工学 施設園芸および植物工場の閉鎖型循環式養液栽培におけるイ"
+    "tags": "articles ja article 06 hydroponic nutrient formulation ab stock tank ec ph jp html vol 06 閉鎖型養液栽培におけるモル化学量論 sonneveld steiner 施設園芸および植物工場の閉鎖型循環式養液栽培におけるイオン当量設計 mmol l meq l sonneveld steiner"
   },
   {
-    "title": "Vol. 07: 植物工場・施設園芸のLED光質制御と光形態形成：McCree作用スペクトル・拡張光合成有効放射 (ePAR 400–750 nm)・フィトクロム光平衡 (PSS) とエマーソン相乗効果",
+    "title": "Vol. 07: 植物工場・施設園芸のLED光質制御と光形態形成：McCree作用スペクトル・拡張光合",
     "cat": "article",
     "url": "articles/ja/article-07-horticultural-lighting-spectrum-par-epar-photomorphogenesis-jp.html",
     "icon": "🇯🇵",
-    "desc": "植物工場 (PFAL) および施設園芸補光における光生物学・半導体照明工学：McCree・稲田の相対量子収率曲線、ePAR (400–750 nm)、フィトクロム光平衡 (PSS = Pfr/Ptotal)、クリプトクロム気孔開口、730 nm 遠赤色光によるエマーソン効果、および高効率LED (PPE ≥ 3.6 µ",
-    "tags": "articles ja article 07 horticultural lighting spectrum par epar photomorphogenesis jp html vol 07 植物工場 施設園芸のled光質制御と光形態形成 mccree作用スペクトル 拡張光合成有効放射 epar 400 750 nm フィトクロム光平衡 pss とエマ ソン相乗効果 植物工"
+    "desc": "植物工場 (PFAL) および施設園芸補光における光生物学・半導体照明工学：McCree・稲田の相対量子収率曲線、ePAR (400–750 nm)、フィトクロム光平衡 (PSS = Pfr/Ptotal)、クリプトクロム気孔開口、730 nm 遠赤色光によるエマーソン効果、および高効率LED.",
+    "tags": "articles ja article 07 horticultural lighting spectrum par epar photomorphogenesis jp html vol 07 植物工場 施設園芸のled光質制御と光形態形成 mccree作用スペクトル 拡張光合 植物工場 pfal および施設園芸補光における光生物学 半導体照明工学 mccree 稲田の相対量"
   },
   {
-    "title": "Vol. 08: モンステラ・デリシオサ (Monstera deliciosa) の商業施設園芸工学 — 着生植物培地物理学 (気相率 ≥ 25 %)・葉身裂孔光生物学 (PCD) と DLI / VPD 環境制御",
+    "title": "Vol. 08: モンステラ・デリシオサ (Monstera deliciosa)",
     "cat": "article",
     "url": "articles/ja/article-08-monstera-deliciosa-epiphyte-substrate-fenestration-vpd-jp.html",
     "icon": "🇯🇵",
     "desc": "サトイモ科半着生植物 Monstera deliciosa の施設園芸精密制御モノグラフ：気相率 ε_a ≥ 25 % の粗粒培地設計、Millington-Quirk 酸素拡散方程式、DLI 閾値とプログラム細胞死 (PCD) による葉身裂孔形成、および VPD 1.15 kPa 上限・溢液塩害防止制御。",
-    "tags": "articles ja article 08 monstera deliciosa epiphyte substrate fenestration vpd jp html vol 08 モンステラ デリシオサ monstera deliciosa の商業施設園芸工学 着生植物培地物理学 気相率 25 葉身裂孔光生物学 pcd と dli vpd 環境制御 サトイモ科半着生植物 "
+    "tags": "articles ja article 08 monstera deliciosa epiphyte substrate fenestration vpd jp html vol 08 モンステラ デリシオサ monstera deliciosa サトイモ科半着生植物 monstera deliciosa の施設園芸精密制御モノグラフ 気相率 a 25 の粗粒培地設計 mill"
   },
   {
-    "title": "Vol. 09: 気孔コンダクタンス (gs) と光合成ガス交換動力学：Ball-Berry-Leuning (BBL) モデル・葉面境界層抵抗 (rb)・飽差 (VPD) ストレス応答と C3 群落統合環境制御",
+    "title": "Vol. 09: 気孔コンダクタンス (gs) と光合成ガス交換動力学：Ball-Berry-Leun",
     "cat": "article",
     "url": "articles/ja/article-09-stomata-conductance-photosynthesis-jp.html",
     "icon": "🇯🇵",
-    "desc": "施設園芸および太陽光利用型植物工場における気孔コンダクタンス (gs) と光合成ガス交換動力学の統合モデル。Farquhar-von Caemmerer-Berry (FvCB) 生化学モデルと Ball-Berry-Leuning (BBL) / Medlyn 気孔モデルの連成解法、葉面境界層抵抗 (rb)、飽差 (",
-    "tags": "articles ja article 09 stomata conductance photosynthesis jp html vol 09 気孔コンダクタンス gs と光合成ガス交換動力学 ball berry leuning bbl モデル 葉面境界層抵抗 rb 飽差 vpd ストレス応答と c3 群落統合環境制御 施設園芸および太陽光利用型植物工場における気孔コンダク"
+    "desc": "施設園芸および太陽光利用型植物工場における気孔コンダクタンス (gs) と光合成ガス交換動力学の統合モデル。Farquhar-von Caemmerer-Berry (FvCB) 生化学モデルと Ball-Berry-Leuning (BBL) / Medlyn 気孔モデルの連成解法、葉面境界層抵抗.",
+    "tags": "articles ja article 09 stomata conductance photosynthesis jp html vol 09 気孔コンダクタンス gs と光合成ガス交換動力学 ball berry leun 施設園芸および太陽光利用型植物工場における気孔コンダクタンス gs と光合成ガス交換動力学の統合モデル farquhar von caemmerer b"
   },
   {
-    "title": "Vol. 10: 完全人工光型植物工場 (PFAL) の空調・潜熱除湿熱力学設計：湿り空気線図 (Psychrometrics)・顕熱比 (SHR)・再熱除湿サイクル・COP最適化と多段栽培棚CFD気流均一化",
+    "title": "Vol. 10: 完全人工光型植物工場 (PFAL) の空調・潜熱除湿熱力学設計：湿り空気線図",
     "cat": "article",
     "url": "articles/ja/article-10-vertical-farm-hvac-design-jp.html",
     "icon": "🇯🇵",
-    "desc": "完全人工光型植物工場 (PFAL) および垂直農業における空調・潜熱除湿の熱力学設計モノグラフ。湿り空気線図 (Psychrometrics)、低顕熱比 (SHR = Qs / Qtot = 0.32–0.45)、蒸散潜熱負荷、ホットガス再熱除湿サイクル、システムCOP最適化、および多段栽培棚のチップバーンを根絶するC",
-    "tags": "articles ja article 10 vertical farm hvac design jp html vol 10 完全人工光型植物工場 pfal の空調 潜熱除湿熱力学設計 湿り空気線図 psychrometrics 顕熱比 shr 再熱除湿サイクル cop最適化と多段栽培棚cfd気流均一化 完全人工光型植物工場 pfal および垂直農業における空調 潜熱除湿の熱"
+    "desc": "完全人工光型植物工場 (PFAL) および垂直農業における空調・潜熱除湿の熱力学設計モノグラフ。湿り空気線図 (Psychrometrics)、低顕熱比.",
+    "tags": "articles ja article 10 vertical farm hvac design jp html vol 10 完全人工光型植物工場 pfal の空調 潜熱除湿熱力学設計 湿り空気線図 完全人工光型植物工場 pfal および垂直農業における空調 潜熱除湿の熱力学設計モノグラフ 湿り空気線図 psychrometrics 低顕熱比"
   },
   {
     "title": "施設イチゴ高設養液栽培の環境制御工学：花芽分化・クラウン局所温度制御・DIF・VPD精密管理",
@@ -1430,28 +1430,28 @@
     "tags": "articles ja article 12 tomato blossom end rot calcium xylem transport night vpd jp html トマト尻腐れ果 ber の木部カルシウム輸送機構と夜間vpd 根圧 養液イオン拮抗の統合制御 施設トマトの尻腐れ果 blossom end rot を根絶するための技術詳解 ca の師部非移動性と木部質量"
   },
   {
-    "title": "スマート温室の精密センサ校正工学：ネルンスト式 (pH/EC)・TDR/FDR培地誘電率・NDIR式CO₂ドリフト補償",
+    "title": "スマート温室の精密センサ校正工学：ネルンスト式 (pH/EC)・TDR/FDR培地誘電率・NDIR式C",
     "cat": "article",
     "url": "articles/ja/article-13-smartfarm-sensor-calibration-nernst-tdr-ndir-jp.html",
     "icon": "🇯🇵",
     "desc": "施設園芸・養液栽培におけるガラス電極pHセンサ（ネルンスト勾配と非対称電位）、温度補償EC（25℃基準換算）、TDR/FDR培地体積含水率（Topp式）、および二重波長NDIR式CO₂センサの校正・不確かさ解析。",
-    "tags": "articles ja article 13 smartfarm sensor calibration nernst tdr ndir jp html スマ ト温室の精密センサ校正工学 ネルンスト式 ph ec tdr fdr培地誘電率 ndir式co ドリフト補償 施設園芸 養液栽培におけるガラス電極phセンサ ネルンスト勾配と非対称電位 温度補償ec 25 基準換算 tdr"
+    "tags": "articles ja article 13 smartfarm sensor calibration nernst tdr ndir jp html スマ ト温室の精密センサ校正工学 ネルンスト式 ph ec tdr fdr培地誘電率 ndir式c 施設園芸 養液栽培におけるガラス電極phセンサ ネルンスト勾配と非対称電位 温度補償ec 25 基準換算 tdr fdr培地体積"
   },
   {
-    "title": "Vol. 14: ドイツのデュアル園芸職業教育（Ausbildung）と園芸マイスター（Gärtnermeister）工学キャリア体系",
+    "title": "Vol. 14: ドイツのデュアル園芸職業教育（Ausbildung）と園芸マイスター（Gärtner",
     "cat": "article",
     "url": "articles/ja/article-14-ausbildung-horticulture-germany-jp.html",
     "icon": "🇯🇵",
-    "desc": "ドイツ連邦職業教育法 (BBiG) に基づくデュアル園芸職業訓練 (70 % 経営実習・30 % 職業学校)、GartMstrV § 2 法定 3 部構成の国家資格「園芸マイスター (Gärtnermeister)」、2026 年バイエルン州協約訓練手当、および § 16a AufenthG キャリア体系の精密工学モノ",
-    "tags": "articles ja article 14 ausbildung horticulture germany jp html vol 14 ドイツのデュアル園芸職業教育 ausbildung と園芸マイスタ gärtnermeister 工学キャリア体系 ドイツ連邦職業教育法 bbig に基づくデュアル園芸職業訓練 70 経営実習 30 職業学校 gartmstrv 2 法定 "
+    "desc": "ドイツ連邦職業教育法 (BBiG) に基づくデュアル園芸職業訓練 (70 % 経営実習・30 % 職業学校)、GartMstrV § 2 法定 3 部構成の国家資格「園芸マイスター (Gärtnermeister)」、2026 年バイエルン州協約訓練手当、および § 16a AufenthG.",
+    "tags": "articles ja article 14 ausbildung horticulture germany jp html vol 14 ドイツのデュアル園芸職業教育 ausbildung と園芸マイスタ gärtner ドイツ連邦職業教育法 bbig に基づくデュアル園芸職業訓練 70 経営実習 30 職業学校 gartmstrv 2 法定 3 部構成の国家資格 園芸マイス"
   },
   {
     "title": "遠赤色光（730nm）と深赤色光（660nm）の最適LEDスペクトル比率",
     "cat": "article",
     "url": "articles/ja/article-24-far-red-deep-red-led-spectrum-optimization-jp.html",
     "icon": "🇯🇵",
-    "desc": "商業用施設園芸におけるエマーソン効果、光化学系I・IIの励起バランス、および遠赤色光（730nm）補光最適化に関する専門技術解説。",
-    "tags": "articles ja article 24 far red deep red led spectrum optimization jp html 遠赤色光 730nm と深赤色光 660nm の最適ledスペクトル比率 商業用施設園芸におけるエマ ソン効果 光化学系i iiの励起バランス および遠赤色光 730nm 補光最適化に関する専門技術解説"
+    "desc": "商業用施設園芸におけるエマーソン効果、光化学系I・IIの励起バランス、および遠赤色光（730nm）補光最適化に関する専門技術解説 施設園芸・植物工場の定量工学解説と無料計算シミュレーターを公開 (Inwoovation Lab)。",
+    "tags": "articles ja article 24 far red deep red led spectrum optimization jp html 遠赤色光 730nm と深赤色光 660nm の最適ledスペクトル比率 商業用施設園芸におけるエマ ソン効果 光化学系i iiの励起バランス および遠赤色光 730nm 補光最適化に関する専門技術解説 施設園芸 植物工場の定量工学"
   },
   {
     "title": "完全閉鎖型循環式水耕栽培とナノバブル溶存酸素（DO）動態",
@@ -1498,32 +1498,32 @@
     "cat": "article",
     "url": "articles/ja/article-30-rockwool-slab-tdr-moisture-drain-ec-jp.html",
     "icon": "🇯🇵",
-    "desc": "商業用水耕栽培におけるロックウールスラブの体積含水率（VWC %）、夜間ドライダウン動態、および排液ECバランシングの解析。",
-    "tags": "articles ja article 30 rockwool slab tdr moisture drain ec jp html ロックウ ル培地の水力学とtdr水分センサ 較正 商業用水耕栽培におけるロックウ ルスラブの体積含水率 vwc 夜間ドライダウン動態 および排液ecバランシングの解析"
+    "desc": "商業用水耕栽培におけるロックウールスラブの体積含水率（VWC %）、夜間ドライダウン動態、および排液ECバランシングの解析 施設園芸・植物工場の定量工学解説と無料計算シミュレーターを公開 (Inwoovation Lab)。",
+    "tags": "articles ja article 30 rockwool slab tdr moisture drain ec jp html ロックウ ル培地の水力学とtdr水分センサ 較正 商業用水耕栽培におけるロックウ ルスラブの体積含水率 vwc 夜間ドライダウン動態 および排液ecバランシングの解析 施設園芸 植物工場の定量工学解説と無料計算シミュレ タ を公開 inwoova"
   },
   {
     "title": "高圧細霧冷房（70 bar）の液滴物理学とザウター平均粒径",
     "cat": "article",
     "url": "articles/ja/article-31-high-pressure-fogging-droplet-physics-jp.html",
     "icon": "🇯🇵",
-    "desc": "商業用温室における70 bar高圧フォグ、ザウター平均粒径（D32 &lt; 10µm）、断熱蒸発冷却、およびVPD安定化の工学的解析。",
-    "tags": "articles ja article 31 high pressure fogging droplet physics jp html 高圧細霧冷房 70 bar の液滴物理学とザウタ 平均粒径 商業用温室における70 bar高圧フォグ ザウタ 平均粒径 d32 lt 10 m 断熱蒸発冷却 およびvpd安定化の工学的解析"
+    "desc": "商業用温室における70 bar高圧フォグ、ザウター平均粒径（D32 &lt; 10µm）、断熱蒸発冷却、およびVPD安定化の工学的解析 施設園芸・植物工場の定量工学解説と無料計算シミュレーターを公開 (Inwoovation Lab)。",
+    "tags": "articles ja article 31 high pressure fogging droplet physics jp html 高圧細霧冷房 70 bar の液滴物理学とザウタ 平均粒径 商業用温室における70 bar高圧フォグ ザウタ 平均粒径 d32 lt 10 m 断熱蒸発冷却 およびvpd安定化の工学的解析 施設園芸 植物工場の定量工学解説と無料計算シミュレ "
   },
   {
     "title": "園芸用LEDの熱管理とジャンクション温度（Tj）解析",
     "cat": "article",
     "url": "articles/ja/article-32-horticultural-led-thermal-junction-temperature-jp.html",
     "icon": "🇯🇵",
-    "desc": "商業用温室における園芸用LED器具の放熱設計、ジャンクション温度（Tj）、熱抵抗（Rth）、および発光量子効率の熱劣化メカニズム。",
-    "tags": "articles ja article 32 horticultural led thermal junction temperature jp html 園芸用ledの熱管理とジャンクション温度 tj 解析 商業用温室における園芸用led器具の放熱設計 ジャンクション温度 tj 熱抵抗 rth および発光量子効率の熱劣化メカニズム"
+    "desc": "商業用温室における園芸用LED器具の放熱設計、ジャンクション温度（Tj）、熱抵抗（Rth）、および発光量子効率の熱劣化メカニズム 施設園芸・植物工場の定量工学解説と無料計算シミュレーターを公開 (Inwoovation Lab)。",
+    "tags": "articles ja article 32 horticultural led thermal junction temperature jp html 園芸用ledの熱管理とジャンクション温度 tj 解析 商業用温室における園芸用led器具の放熱設計 ジャンクション温度 tj 熱抵抗 rth および発光量子効率の熱劣化メカニズム 施設園芸 植物工場の定量工学解説と無料計算シ"
   },
   {
     "title": "精密クロップステアリング動態（栄養生長 vs 生殖生長）",
     "cat": "article",
     "url": "articles/ja/article-33-precision-crop-steering-dif-vpd-drydown-jp.html",
     "icon": "🇯🇵",
-    "desc": "商業用施設園芸におけるクロップステアリング技術：昼夜温差（DIF）、飽差（VPD）、および培地ドライダウンによる着花・着果最適化。",
-    "tags": "articles ja article 33 precision crop steering dif vpd drydown jp html 精密クロップステアリング動態 栄養生長 vs 生殖生長 商業用施設園芸におけるクロップステアリング技術 昼夜温差 dif 飽差 vpd および培地ドライダウンによる着花 着果最適化"
+    "desc": "商業用施設園芸におけるクロップステアリング技術：昼夜温差（DIF）、飽差（VPD）、および培地ドライダウンによる着花・着果最適化 施設園芸・植物工場の定量工学解説と無料計算シミュレーターを公開 (Inwoovation Lab)。",
+    "tags": "articles ja article 33 precision crop steering dif vpd drydown jp html 精密クロップステアリング動態 栄養生長 vs 生殖生長 商業用施設園芸におけるクロップステアリング技術 昼夜温差 dif 飽差 vpd および培地ドライダウンによる着花 着果最適化 施設園芸 植物工場の定量工学解説と無料計算シミュレ タ "
   },
   {
     "title": "完全循環式水耕栽培におけるUV-C殺菌速度論と病原体不活化",
@@ -1538,8 +1538,8 @@
     "cat": "article",
     "url": "articles/ja/article-35-greenhouse-haf-fan-cfd-modeling-jp.html",
     "icon": "🇯🇵",
-    "desc": "商業用温室における水平循環扇（HAF）の配置間隔、噴流到達距離、ベルヌーイ誘引効果、および群落内微気象均一化のCFD解析。",
-    "tags": "articles ja article 35 greenhouse haf fan cfd modeling jp html 温室循環扇 haf の数値流体力学 cfd 気流モデリング 商業用温室における水平循環扇 haf の配置間隔 噴流到達距離 ベルヌ イ誘引効果 および群落内微気象均一化のcfd解析"
+    "desc": "商業用温室における水平循環扇（HAF）の配置間隔、噴流到達距離、ベルヌーイ誘引効果、および群落内微気象均一化のCFD解析 施設園芸・植物工場の定量工学解説と無料計算シミュレーターを公開 (Inwoovation Lab)。",
+    "tags": "articles ja article 35 greenhouse haf fan cfd modeling jp html 温室循環扇 haf の数値流体力学 cfd 気流モデリング 商業用温室における水平循環扇 haf の配置間隔 噴流到達距離 ベルヌ イ誘引効果 および群落内微気象均一化のcfd解析 施設園芸 植物工場の定量工学解説と無料計算シミュレ タ を公開 inwo"
   },
   {
     "title": "コージェネ排ガスSCR脱硝と安全なCO2施用技術",
@@ -1562,8 +1562,8 @@
     "cat": "article",
     "url": "articles/ja/article-38-xylem-calcium-flux-blossom-end-rot-jp.html",
     "icon": "🇯🇵",
-    "desc": "植物生理学解析：木部蒸散流によるカルシウム分配機構、果頂部細胞壁の安定化、および昼夜VPD制御による尻腐れ病の完全予防技術。",
-    "tags": "articles ja article 38 xylem calcium flux blossom end rot jp html 木部導管カルシウム輸送動態と尻腐れ病 ber 予防 植物生理学解析 木部蒸散流によるカルシウム分配機構 果頂部細胞壁の安定化 および昼夜vpd制御による尻腐れ病の完全予防技術"
+    "desc": "植物生理学解析：木部蒸散流によるカルシウム分配機構、果頂部細胞壁の安定化、および昼夜VPD制御による尻腐れ病の完全予防技術 施設園芸・植物工場の定量工学解説と無料計算シミュレーターを公開 (Inwoovation Lab)。",
+    "tags": "articles ja article 38 xylem calcium flux blossom end rot jp html 木部導管カルシウム輸送動態と尻腐れ病 ber 予防 植物生理学解析 木部蒸散流によるカルシウム分配機構 果頂部細胞壁の安定化 および昼夜vpd制御による尻腐れ病の完全予防技術 施設園芸 植物工場の定量工学解説と無料計算シミュレ タ を公開 inwo"
   },
   {
     "title": "完全循環式水耕栽培の逆浸透（RO）脱塩とナトリウム除去技術",
@@ -1666,8 +1666,8 @@
     "cat": "article",
     "url": "articles/ja/article-51-autonomous-greenhouse-ai-mpc-reinforcement-learning-jp.html",
     "icon": "🇯🇵",
-    "desc": "大規模商業温室の自律環境制御。深層強化学習とモデル予測制御（MPC）を融合し、24時間の外気象予測に基づき暖房エネルギーを22.4%削減。",
-    "tags": "articles ja article 51 autonomous greenhouse ai mpc reinforcement learning jp html 自律型温室ai 強化学習 モデル予測制御 mpc 最適化 大規模商業温室の自律環境制御 深層強化学習とモデル予測制御 mpc を融合し 24時間の外気象予測に基づき暖房エネルギ を22 4 削減"
+    "desc": "大規模商業温室の自律環境制御。深層強化学習とモデル予測制御（MPC）を融合し、24時間の外気象予測に基づき暖房エネルギーを22.4%削減 施設園芸・植物工場の定量工学解説と無料計算シミュレーターを公開 (Inwoovation Lab)。",
+    "tags": "articles ja article 51 autonomous greenhouse ai mpc reinforcement learning jp html 自律型温室ai 強化学習 モデル予測制御 mpc 最適化 大規模商業温室の自律環境制御 深層強化学習とモデル予測制御 mpc を融合し 24時間の外気象予測に基づき暖房エネルギ を22 4 削減 施設園芸 植物工場"
   },
   {
     "title": "帯水層蓄熱システム (ATES) と産業用ヒートポンプの温室熱工学モデル",
@@ -1686,28 +1686,28 @@
     "tags": "articles ja index html 日本語 施設園芸 スマ ト農業工学モノグラフ一覧 43 論文 商業用 venlo 型ガラス温室の vpd 飽差熱力学 din v 18599 暖房負荷 en 13031 1 構造設計 fvcb co2 施用 養液化学平衡を解説する 43 編の日本語技術論文ア カイブ"
   },
   {
-    "title": "Diffuse AR Glass vs. Multi-Layer PO Film: Greenhouse Roof Cladding ROI",
+    "title": "Diffuse AR Glass vs. Multi-Layer PO Film",
     "cat": "part",
     "url": "benchmarks/diffuse-glass-vs-po-film-greenhouse-glazing-roi.html",
     "icon": "⚙️",
-    "desc": "5-year commercial greenhouse glazing ROI benchmark comparing 4mm low-iron AR diffuse glass (91% hemispherical PAR, 65% haze) vs double-layer anti-drip PO poly f",
-    "tags": "benchmarks diffuse glass vs po film greenhouse glazing roi html diffuse ar glass vs multi layer po film greenhouse roof cladding roi 5 year commercial greenhouse glazing roi benchmark compar"
+    "desc": "5-year commercial greenhouse glazing ROI benchmark comparing 4mm low-iron AR diffuse glass (91% hemispherical PAR, 65% haze) vs double-layer anti-drip PO.",
+    "tags": "benchmarks diffuse glass vs po film greenhouse glazing roi html diffuse ar glass vs multi layer po film 5 year commercial greenhouse glazing roi benchmark comparing 4mm low iron ar diffuse g"
   },
   {
-    "title": "Greenhouse Heat Pump vs Natural Gas Boiler Heating Cost Benchmark",
+    "title": "Greenhouse Heat Pump vs Natural Gas Boiler Heating",
     "cat": "part",
     "url": "benchmarks/greenhouse-heat-pump-vs-gas-boiler-heating-cost.html",
     "icon": "⚙️",
-    "desc": "Economic & carbon lifecycle comparison between Industrial Air/Water Heat Pumps (COP 3.8) and Condensing Natural Gas Boilers (95% efficiency). Spark spread and h",
-    "tags": "benchmarks greenhouse heat pump vs gas boiler heating cost html greenhouse heat pump vs natural gas boiler heating cost benchmark economic carbon lifecycle comparison between industrial air "
+    "desc": "Economic &amp; carbon lifecycle comparison between Industrial Air/Water Heat Pumps (COP 3.8) and Condensing Natural Gas Boilers (95% efficiency).",
+    "tags": "benchmarks greenhouse heat pump vs gas boiler heating cost html greenhouse heat pump vs natural gas boiler heating economic amp carbon lifecycle comparison between industrial air water heat "
   },
   {
-    "title": "Greenhouse LED Toplighting vs HPS 5-Year Energy & ROI Benchmark",
+    "title": "Greenhouse LED Toplighting vs HPS 5-Year Energy",
     "cat": "part",
     "url": "benchmarks/greenhouse-led-vs-hps-lighting-efficiency-roi.html",
     "icon": "⚙️",
-    "desc": "Comprehensive technical comparison between Horticultural LED fixtures (3.5 µmol/J) and High-Pressure Sodium (1.8 µmol/J) lamps. 5-year electricity OPEX and ther",
-    "tags": "benchmarks greenhouse led vs hps lighting efficiency roi html greenhouse led toplighting vs hps 5 year energy roi benchmark comprehensive technical comparison between horticultural led fixtu"
+    "desc": "Comprehensive technical comparison between Horticultural LED fixtures (3.5 µmol/J) and High-Pressure Sodium (1.8 µmol/J) lamps.",
+    "tags": "benchmarks greenhouse led vs hps lighting efficiency roi html greenhouse led toplighting vs hps 5 year energy comprehensive technical comparison between horticultural led fixtures 3 5 mol j "
   },
   {
     "title": "Greenhouse Hardware & Materials Benchmark Hub",
@@ -1718,156 +1718,156 @@
     "tags": "benchmarks index html greenhouse hardware materials benchmark hub engineering comparison benchmarks for cea growers led vs hps lighting heat pump vs gas boilers rockwool vs cocopeat substrat"
   },
   {
-    "title": "Rockwool vs Cocopeat Hydroponic Substrate Agronomic & Cost Benchmark",
+    "title": "Rockwool vs Cocopeat Hydroponic Substrate",
     "cat": "part",
     "url": "benchmarks/rockwool-vs-cocopeat-hydroponic-substrate-comparison.html",
     "icon": "⚙️",
-    "desc": "Agronomic comparison between Grodan Rockwool stone wool slabs and Cocopeat (coir) substrate. Water retention curves, cation exchange capacity (CEC), steerabilit",
-    "tags": "benchmarks rockwool vs cocopeat hydroponic substrate comparison html rockwool vs cocopeat hydroponic substrate agronomic cost benchmark agronomic comparison between grodan rockwool stone woo"
+    "desc": "Agronomic comparison between Grodan Rockwool stone wool slabs and Cocopeat (coir) substrate.",
+    "tags": "benchmarks rockwool vs cocopeat hydroponic substrate comparison html rockwool vs cocopeat hydroponic substrate agronomic comparison between grodan rockwool stone wool slabs and cocopeat coir"
   },
   {
-    "title": "Toyohashi, Aichi Prefecture, Japan Greenhouse Microclimate & CEA Engineering Almanac",
+    "title": "Toyohashi, Aichi Prefecture, Japan Climate Guide",
     "cat": "climate",
     "url": "climate/aichi-toyohashi-japan-protected-agriculture-guide.html",
     "icon": "🌍",
-    "desc": "Precision CEA engineering and climate guide for commercial greenhouses in Toyohashi, Aichi Prefecture, Japan (34.8°N). Solar DLI analysis (40-48 summer / 14-19 ",
-    "tags": "climate aichi toyohashi japan protected agriculture guide html toyohashi aichi prefecture japan greenhouse microclimate cea engineering almanac precision cea engineering and climate guide fo"
+    "desc": "Precision CEA engineering and climate guide for commercial greenhouses in Toyohashi, Aichi Prefecture, Japan (34.8°N).",
+    "tags": "climate aichi toyohashi japan protected agriculture guide html toyohashi aichi prefecture japan climate guide precision cea engineering and climate guide for commercial greenhouses in toyoha"
   },
   {
-    "title": "Al Ain, Abu Dhabi, United Arab Emirates Greenhouse Microclimate & CEA Engineering Almanac",
+    "title": "Al Ain, Abu Dhabi, United Arab Emirates Climate",
     "cat": "climate",
     "url": "climate/al-ain-abu-dhabi-uae-desert-greenhouse-guide.html",
     "icon": "🌍",
-    "desc": "Precision CEA engineering and climate guide for commercial greenhouses in Al Ain, Abu Dhabi, United Arab Emirates (24.2°N). Solar DLI analysis (58-68 summer / 2",
-    "tags": "climate al ain abu dhabi uae desert greenhouse guide html al ain abu dhabi united arab emirates greenhouse microclimate cea engineering almanac precision cea engineering and climate guide fo"
+    "desc": "Precision CEA engineering and climate guide for commercial greenhouses in Al Ain, Abu Dhabi, United Arab Emirates (24.2°N).",
+    "tags": "climate al ain abu dhabi uae desert greenhouse guide html al ain abu dhabi united arab emirates climate precision cea engineering and climate guide for commercial greenhouses in al ain abu d"
   },
   {
-    "title": "Almería, Spain Greenhouse Microclimate & CEA Engineering Almanac",
+    "title": "Almería, Spain Climate Guide",
     "cat": "climate",
     "url": "climate/almeria-spain-parral-greenhouse-climate-guide.html",
     "icon": "🌍",
-    "desc": "Comprehensive CEA microclimate engineering guide for commercial Parral greenhouses in Almería, Spain (36.8°N). Solar DLI analysis (50-58 summer / 18-22 winter m",
-    "tags": "climate almeria spain parral greenhouse climate guide html almer a spain greenhouse microclimate cea engineering almanac comprehensive cea microclimate engineering guide for commercial parra"
+    "desc": "Comprehensive CEA microclimate engineering guide for commercial Parral greenhouses in Almería, Spain (36.8°N).",
+    "tags": "climate almeria spain parral greenhouse climate guide html almer a spain climate guide comprehensive cea microclimate engineering guide for commercial parral greenhouses in almer a spain 36 "
   },
   {
-    "title": "Antalya (Aksu & Kumluca), Turkey Greenhouse Microclimate & CEA Engineering Almanac",
+    "title": "Antalya (Aksu &amp; Kumluca), Turkey Climate Guide",
     "cat": "climate",
     "url": "climate/antalya-turkey-mediterranean-greenhouse-guide.html",
     "icon": "🌍",
-    "desc": "Precision CEA engineering and climate guide for commercial greenhouses in Antalya (Aksu & Kumluca), Turkey (36.9°N). Solar DLI analysis (50-58 summer / 16-22 wi",
-    "tags": "climate antalya turkey mediterranean greenhouse guide html antalya aksu kumluca turkey greenhouse microclimate cea engineering almanac precision cea engineering and climate guide for commerc"
+    "desc": "Precision CEA engineering and climate guide for commercial greenhouses in Antalya (Aksu &amp; Kumluca), Turkey (36.9°N).",
+    "tags": "climate antalya turkey mediterranean greenhouse guide html antalya aksu amp kumluca turkey climate guide precision cea engineering and climate guide for commercial greenhouses in antalya aks"
   },
   {
-    "title": "Morehead (Appalachian Basin), Kentucky, USA Greenhouse Microclimate & CEA Engineering Almanac",
+    "title": "Morehead (Appalachian Basin), Kentucky, USA",
     "cat": "climate",
     "url": "climate/appharvest-morehead-kentucky-cea-guide.html",
     "icon": "🌍",
-    "desc": "Precision CEA engineering and climate guide for commercial greenhouses in Morehead (Appalachian Basin), Kentucky, USA (38.2°N). Solar DLI analysis (38-46 summer",
-    "tags": "climate appharvest morehead kentucky cea guide html morehead appalachian basin kentucky usa greenhouse microclimate cea engineering almanac precision cea engineering and climate guide for co"
+    "desc": "Precision CEA engineering and climate guide for commercial greenhouses in Morehead (Appalachian Basin), Kentucky, USA (38.2°N).",
+    "tags": "climate appharvest morehead kentucky cea guide html morehead appalachian basin kentucky usa precision cea engineering and climate guide for commercial greenhouses in morehead appalachian bas"
   },
   {
-    "title": "Arava Valley / Ein Yahav, Israel Greenhouse Microclimate & CEA Engineering Almanac",
+    "title": "Arava Valley / Ein Yahav, Israel Climate Guide",
     "cat": "climate",
     "url": "climate/arava-valley-israel-desert-fertigation-guide.html",
     "icon": "🌍",
-    "desc": "Precision CEA engineering and climate guide for commercial greenhouses in Arava Valley / Ein Yahav, Israel (30.5°N). Solar DLI analysis (58-68 summer / 24-30 wi",
-    "tags": "climate arava valley israel desert fertigation guide html arava valley ein yahav israel greenhouse microclimate cea engineering almanac precision cea engineering and climate guide for commer"
+    "desc": "Precision CEA engineering and climate guide for commercial greenhouses in Arava Valley / Ein Yahav, Israel (30.5°N).",
+    "tags": "climate arava valley israel desert fertigation guide html arava valley ein yahav israel climate guide precision cea engineering and climate guide for commercial greenhouses in arava valley e"
   },
   {
-    "title": "Bleiswijk, Netherlands Greenhouse Microclimate & CEA Engineering Almanac",
+    "title": "Bleiswijk, Netherlands Climate Guide",
     "cat": "climate",
     "url": "climate/bleiswijk-netherlands-cea-research-cluster.html",
     "icon": "🌍",
-    "desc": "Precision CEA engineering and climate guide for commercial greenhouses in Bleiswijk, Netherlands (52.0°N). Solar DLI analysis (34-40 summer / 6-9 winter mol/m²/",
-    "tags": "climate bleiswijk netherlands cea research cluster html bleiswijk netherlands greenhouse microclimate cea engineering almanac precision cea engineering and climate guide for commercial green"
+    "desc": "Precision CEA engineering and climate guide for commercial greenhouses in Bleiswijk, Netherlands (52.0°N).",
+    "tags": "climate bleiswijk netherlands cea research cluster html bleiswijk netherlands climate guide precision cea engineering and climate guide for commercial greenhouses in bleiswijk netherlands 52"
   },
   {
-    "title": "Bogotá Savanna, Colombia Greenhouse Microclimate & CEA Engineering Almanac",
+    "title": "Bogotá Savanna, Colombia Climate Guide",
     "cat": "climate",
     "url": "climate/bogota-savanna-colombia-cut-flower-guide.html",
     "icon": "🌍",
-    "desc": "Precision CEA engineering and climate guide for commercial greenhouses in Bogotá Savanna, Colombia (4.7°N). Solar DLI analysis (30-36 (12h constant) summer / 30",
-    "tags": "climate bogota savanna colombia cut flower guide html bogot savanna colombia greenhouse microclimate cea engineering almanac precision cea engineering and climate guide for commercial greenh"
+    "desc": "Precision CEA engineering and climate guide for commercial greenhouses in Bogotá Savanna, Colombia (4.7°N).",
+    "tags": "climate bogota savanna colombia cut flower guide html bogot savanna colombia climate guide precision cea engineering and climate guide for commercial greenhouses in bogot savanna colombia 4 "
   },
   {
-    "title": "Brittany (Finistère), France Greenhouse Microclimate & CEA Engineering Almanac",
+    "title": "Brittany (Finistère), France Climate Guide",
     "cat": "climate",
     "url": "climate/brittany-finistere-france-tomato-cluster-guide.html",
     "icon": "🌍",
-    "desc": "Precision CEA engineering and climate guide for commercial greenhouses in Brittany (Finistère), France (48.4°N). Solar DLI analysis (32-38 summer / 7-11 winter ",
-    "tags": "climate brittany finistere france tomato cluster guide html brittany finist re france greenhouse microclimate cea engineering almanac precision cea engineering and climate guide for commerci"
+    "desc": "Precision CEA engineering and climate guide for commercial greenhouses in Brittany (Finistère), France (48.4°N).",
+    "tags": "climate brittany finistere france tomato cluster guide html brittany finist re france climate guide precision cea engineering and climate guide for commercial greenhouses in brittany finist "
   },
   {
-    "title": "Buyeo (Geum River Basin), South Korea Greenhouse Microclimate & CEA Engineering Almanac",
+    "title": "Buyeo (Geum River Basin), South Korea Climate Guide",
     "cat": "climate",
     "url": "climate/buyeo-chungnam-korea-tomato-cluster-guide.html",
     "icon": "🌍",
-    "desc": "Precision CEA engineering and climate guide for commercial greenhouses in Buyeo (Geum River Basin), South Korea (36.2°N). Solar DLI analysis (36-44 summer / 12-",
-    "tags": "climate buyeo chungnam korea tomato cluster guide html buyeo geum river basin south korea greenhouse microclimate cea engineering almanac precision cea engineering and climate guide for comm"
+    "desc": "Precision CEA engineering and climate guide for commercial greenhouses in Buyeo (Geum River Basin), South Korea (36.2°N).",
+    "tags": "climate buyeo chungnam korea tomato cluster guide html buyeo geum river basin south korea climate guide precision cea engineering and climate guide for commercial greenhouses in buyeo geum r"
   },
   {
-    "title": "Cameron Highlands, Pahang, Malaysia Greenhouse Microclimate & CEA Engineering Almanac",
+    "title": "Cameron Highlands, Pahang, Malaysia Climate Guide",
     "cat": "climate",
     "url": "climate/cameron-highlands-malaysia-tropical-highland-guide.html",
     "icon": "🌍",
-    "desc": "Precision CEA engineering and climate guide for commercial greenhouses in Cameron Highlands, Pahang, Malaysia (4.5°N). Solar DLI analysis (28-34 summer / 28-34 ",
-    "tags": "climate cameron highlands malaysia tropical highland guide html cameron highlands pahang malaysia greenhouse microclimate cea engineering almanac precision cea engineering and climate guide "
+    "desc": "Precision CEA engineering and climate guide for commercial greenhouses in Cameron Highlands, Pahang, Malaysia (4.5°N).",
+    "tags": "climate cameron highlands malaysia tropical highland guide html cameron highlands pahang malaysia climate guide precision cea engineering and climate guide for commercial greenhouses in came"
   },
   {
-    "title": "Cayambe, Pichincha, Ecuador Greenhouse Microclimate & CEA Engineering Almanac",
+    "title": "Cayambe, Pichincha, Ecuador Climate Guide",
     "cat": "climate",
     "url": "climate/cayambe-pichincha-ecuador-hyper-radiation-guide.html",
     "icon": "🌍",
-    "desc": "Precision CEA engineering and climate guide for commercial greenhouses in Cayambe, Pichincha, Ecuador (0.0°N). Solar DLI analysis (35-42 (Extreme UV Index) summ",
-    "tags": "climate cayambe pichincha ecuador hyper radiation guide html cayambe pichincha ecuador greenhouse microclimate cea engineering almanac precision cea engineering and climate guide for commerc"
+    "desc": "Precision CEA engineering and climate guide for commercial greenhouses in Cayambe, Pichincha, Ecuador (0.0°N).",
+    "tags": "climate cayambe pichincha ecuador hyper radiation guide html cayambe pichincha ecuador climate guide precision cea engineering and climate guide for commercial greenhouses in cayambe pichinc"
   },
   {
-    "title": "Culiacán (Sinaloa Valley), Mexico Greenhouse Microclimate & CEA Engineering Almanac",
+    "title": "Culiacán (Sinaloa Valley), Mexico Climate Guide",
     "cat": "climate",
     "url": "climate/culiacan-sinaloa-mexico-winter-vegetable-guide.html",
     "icon": "🌍",
-    "desc": "Precision CEA engineering and climate guide for commercial greenhouses in Culiacán (Sinaloa Valley), Mexico (24.8°N). Solar DLI analysis (50-58 summer / 22-28 w",
-    "tags": "climate culiacan sinaloa mexico winter vegetable guide html culiac n sinaloa valley mexico greenhouse microclimate cea engineering almanac precision cea engineering and climate guide for com"
+    "desc": "Precision CEA engineering and climate guide for commercial greenhouses in Culiacán (Sinaloa Valley), Mexico (24.8°N).",
+    "tags": "climate culiacan sinaloa mexico winter vegetable guide html culiac n sinaloa valley mexico climate guide precision cea engineering and climate guide for commercial greenhouses in culiac n si"
   },
   {
-    "title": "Đà Lạt, Central Highlands, Vietnam Greenhouse Microclimate & CEA Engineering Almanac",
+    "title": "Đà Lạt, Central Highlands, Vietnam Climate Guide",
     "cat": "climate",
     "url": "climate/dalat-vietnam-central-highlands-horticulture-guide.html",
     "icon": "🌍",
-    "desc": "Precision CEA engineering and climate guide for commercial greenhouses in Đà Lạt, Central Highlands, Vietnam (11.9°N). Solar DLI analysis (32-38 summer / 30-36 ",
-    "tags": "climate dalat vietnam central highlands horticulture guide html l t central highlands vietnam greenhouse microclimate cea engineering almanac precision cea engineering and climate guide for "
+    "desc": "Precision CEA engineering and climate guide for commercial greenhouses in Đà Lạt, Central Highlands, Vietnam (11.9°N).",
+    "tags": "climate dalat vietnam central highlands horticulture guide html l t central highlands vietnam climate guide precision cea engineering and climate guide for commercial greenhouses in l t cent"
   },
   {
-    "title": "Delta / Fraser Valley, BC, Canada Greenhouse Microclimate & CEA Engineering Almanac",
+    "title": "Delta / Fraser Valley, BC, Canada Climate Guide",
     "cat": "climate",
     "url": "climate/delta-fraser-valley-bc-canada-greenhouse-guide.html",
     "icon": "🌍",
-    "desc": "Precision CEA engineering and climate guide for commercial greenhouses in Delta / Fraser Valley, BC, Canada (49.1°N). Solar DLI analysis (36-44 summer / 6-11 wi",
-    "tags": "climate delta fraser valley bc canada greenhouse guide html delta fraser valley bc canada greenhouse microclimate cea engineering almanac precision cea engineering and climate guide for comm"
+    "desc": "Precision CEA engineering and climate guide for commercial greenhouses in Delta / Fraser Valley, BC, Canada (49.1°N).",
+    "tags": "climate delta fraser valley bc canada greenhouse guide html delta fraser valley bc canada climate guide precision cea engineering and climate guide for commercial greenhouses in delta fraser"
   },
   {
-    "title": "Gimje Smart Farm Valley, South Korea Greenhouse Microclimate & CEA Engineering Almanac",
+    "title": "Gimje Smart Farm Valley, South Korea Climate Guide",
     "cat": "climate",
     "url": "climate/gimje-smart-farm-innovation-valley-korea-guide.html",
     "icon": "🌍",
-    "desc": "Precision CEA engineering and climate guide for commercial greenhouses in Gimje Smart Farm Valley, South Korea (35.8°N). Solar DLI analysis (38-46 summer / 12-1",
-    "tags": "climate gimje smart farm innovation valley korea guide html gimje smart farm valley south korea greenhouse microclimate cea engineering almanac precision cea engineering and climate guide fo"
+    "desc": "Precision CEA engineering and climate guide for commercial greenhouses in Gimje Smart Farm Valley, South Korea (35.8°N).",
+    "tags": "climate gimje smart farm innovation valley korea guide html gimje smart farm valley south korea climate guide precision cea engineering and climate guide for commercial greenhouses in gimje "
   },
   {
-    "title": "Guyra (New England Plateau), NSW, Australia Greenhouse Microclimate & CEA Engineering Almanac",
+    "title": "Guyra (New England Plateau), NSW, Australia",
     "cat": "climate",
     "url": "climate/guyra-new-south-wales-australia-highland-tomato-guide.html",
     "icon": "🌍",
-    "desc": "Precision CEA engineering and climate guide for commercial greenhouses in Guyra (New England Plateau), NSW, Australia (30.2°S). Solar DLI analysis (46-54 summer",
-    "tags": "climate guyra new south wales australia highland tomato guide html guyra new england plateau nsw australia greenhouse microclimate cea engineering almanac precision cea engineering and clima"
+    "desc": "Precision CEA engineering and climate guide for commercial greenhouses in Guyra (New England Plateau), NSW, Australia (30.2°S).",
+    "tags": "climate guyra new south wales australia highland tomato guide html guyra new england plateau nsw australia precision cea engineering and climate guide for commercial greenhouses in guyra new"
   },
   {
-    "title": "Ierapetra, Crete, Greece Greenhouse Microclimate & CEA Engineering Almanac",
+    "title": "Ierapetra, Crete, Greece Climate Guide",
     "cat": "climate",
     "url": "climate/ierapetra-crete-greece-solar-greenhouse-guide.html",
     "icon": "🌍",
-    "desc": "Precision CEA engineering and climate guide for commercial greenhouses in Ierapetra, Crete, Greece (35.0°N). Solar DLI analysis (54-62 summer / 20-25 winter mol",
-    "tags": "climate ierapetra crete greece solar greenhouse guide html ierapetra crete greece greenhouse microclimate cea engineering almanac precision cea engineering and climate guide for commercial g"
+    "desc": "Precision CEA engineering and climate guide for commercial greenhouses in Ierapetra, Crete, Greece (35.0°N).",
+    "tags": "climate ierapetra crete greece solar greenhouse guide html ierapetra crete greece climate guide precision cea engineering and climate guide for commercial greenhouses in ierapetra crete gree"
   },
   {
     "title": "Global Ag-Climate Atlas: 40 Greenhouse Climate Hubs",
@@ -1878,316 +1878,316 @@
     "tags": "climate index html global ag climate atlas 40 greenhouse climate hubs compare 40 commercial greenhouse regions by latitude köppen climate class and seasonal daily light integral dli to plan "
   },
   {
-    "title": "Kochi (Tosa Bay), Japan Greenhouse Microclimate & CEA Engineering Almanac",
+    "title": "Kochi (Tosa Bay), Japan Climate Guide",
     "cat": "climate",
     "url": "climate/kochi-japan-warm-climate-horticulture-guide.html",
     "icon": "🌍",
-    "desc": "Precision CEA engineering and climate guide for commercial greenhouses in Kochi (Tosa Bay), Japan (33.6°N). Solar DLI analysis (42-50 summer / 16-22 winter mol/",
-    "tags": "climate kochi japan warm climate horticulture guide html kochi tosa bay japan greenhouse microclimate cea engineering almanac precision cea engineering and climate guide for commercial green"
+    "desc": "Precision CEA engineering and climate guide for commercial greenhouses in Kochi (Tosa Bay), Japan (33.6°N).",
+    "tags": "climate kochi japan warm climate horticulture guide html kochi tosa bay japan climate guide precision cea engineering and climate guide for commercial greenhouses in kochi tosa bay japan 33 "
   },
   {
-    "title": "Kunming (Spring City), Yunnan, China Greenhouse Microclimate & CEA Engineering Almanac",
+    "title": "Kunming (Spring City), Yunnan, China Climate Guide",
     "cat": "climate",
     "url": "climate/kunming-yunnan-china-asian-flower-capital-guide.html",
     "icon": "🌍",
-    "desc": "Precision CEA engineering and climate guide for commercial greenhouses in Kunming (Spring City), Yunnan, China (25.0°N). Solar DLI analysis (38-46 summer / 22-2",
-    "tags": "climate kunming yunnan china asian flower capital guide html kunming spring city yunnan china greenhouse microclimate cea engineering almanac precision cea engineering and climate guide for "
+    "desc": "Precision CEA engineering and climate guide for commercial greenhouses in Kunming (Spring City), Yunnan, China (25.0°N).",
+    "tags": "climate kunming yunnan china asian flower capital guide html kunming spring city yunnan china climate guide precision cea engineering and climate guide for commercial greenhouses in kunming "
   },
   {
-    "title": "Lake Naivasha (Rift Valley), Kenya Greenhouse Microclimate & CEA Engineering Almanac",
+    "title": "Lake Naivasha (Rift Valley), Kenya Climate Guide",
     "cat": "climate",
     "url": "climate/lake-naivasha-kenya-geothermal-floriculture-guide.html",
     "icon": "🌍",
-    "desc": "Precision CEA engineering and climate guide for commercial greenhouses in Lake Naivasha (Rift Valley), Kenya (0.7°S). Solar DLI analysis (38-44 (12h Day) summer",
-    "tags": "climate lake naivasha kenya geothermal floriculture guide html lake naivasha rift valley kenya greenhouse microclimate cea engineering almanac precision cea engineering and climate guide for"
+    "desc": "Precision CEA engineering and climate guide for commercial greenhouses in Lake Naivasha (Rift Valley), Kenya (0.7°S).",
+    "tags": "climate lake naivasha kenya geothermal floriculture guide html lake naivasha rift valley kenya climate guide precision cea engineering and climate guide for commercial greenhouses in lake na"
   },
   {
-    "title": "Leamington / Kingsville, Ontario, Canada Greenhouse Microclimate & CEA Engineering Almanac",
+    "title": "Leamington / Kingsville, Ontario, Canada Climate",
     "cat": "climate",
     "url": "climate/leamington-ontario-canada-greenhouse-guide.html",
     "icon": "🌍",
-    "desc": "Precision CEA engineering and climate guide for commercial greenhouses in Leamington / Kingsville, Ontario, Canada (42.0°N). Solar DLI analysis (40-48 summer / ",
-    "tags": "climate leamington ontario canada greenhouse guide html leamington kingsville ontario canada greenhouse microclimate cea engineering almanac precision cea engineering and climate guide for c"
+    "desc": "Precision CEA engineering and climate guide for commercial greenhouses in Leamington / Kingsville, Ontario, Canada (42.0°N).",
+    "tags": "climate leamington ontario canada greenhouse guide html leamington kingsville ontario canada climate precision cea engineering and climate guide for commercial greenhouses in leamington king"
   },
   {
-    "title": "Marana & Tucson, Arizona, USA Greenhouse Microclimate & CEA Engineering Almanac",
+    "title": "Marana &amp; Tucson, Arizona, USA Climate Guide",
     "cat": "climate",
     "url": "climate/marana-tucson-arizona-hyper-solar-cea-guide.html",
     "icon": "🌍",
-    "desc": "Precision CEA engineering and desert microclimate guide for commercial greenhouses in Marana and Tucson, Arizona, USA (32.4°N). Hyper-solar DLI analysis (52-60 ",
-    "tags": "climate marana tucson arizona hyper solar cea guide html marana tucson arizona usa greenhouse microclimate cea engineering almanac precision cea engineering and desert microclimate guide for"
+    "desc": "Precision CEA engineering and desert microclimate guide for commercial greenhouses in Marana and Tucson, Arizona, USA (32.4°N).",
+    "tags": "climate marana tucson arizona hyper solar cea guide html marana amp tucson arizona usa climate guide precision cea engineering and desert microclimate guide for commercial greenhouses in mar"
   },
   {
-    "title": "Miryang, Gyeongnam, South Korea Greenhouse Microclimate & CEA Engineering Almanac",
+    "title": "Miryang, Gyeongnam, South Korea Climate Guide",
     "cat": "climate",
     "url": "climate/miryang-gyeongnam-korea-strawberry-capital-guide.html",
     "icon": "🌍",
-    "desc": "Precision CEA engineering and climate guide for commercial greenhouses in Miryang, Gyeongnam, South Korea (35.5°N). Solar DLI analysis (40-48 summer / 14-20 win",
-    "tags": "climate miryang gyeongnam korea strawberry capital guide html miryang gyeongnam south korea greenhouse microclimate cea engineering almanac precision cea engineering and climate guide for co"
+    "desc": "Precision CEA engineering and climate guide for commercial greenhouses in Miryang, Gyeongnam, South Korea (35.5°N).",
+    "tags": "climate miryang gyeongnam korea strawberry capital guide html miryang gyeongnam south korea climate guide precision cea engineering and climate guide for commercial greenhouses in miryang gy"
   },
   {
-    "title": "Murcia (Campo de Cartagena), Spain Greenhouse Microclimate & CEA Engineering Almanac",
+    "title": "Murcia (Campo de Cartagena), Spain Climate Guide",
     "cat": "climate",
     "url": "climate/murcia-spain-precision-hydroponics-guide.html",
     "icon": "🌍",
-    "desc": "Precision CEA engineering and climate guide for commercial greenhouses in Murcia (Campo de Cartagena), Spain (38.0°N). Solar DLI analysis (48-56 summer / 15-20 ",
-    "tags": "climate murcia spain precision hydroponics guide html murcia campo de cartagena spain greenhouse microclimate cea engineering almanac precision cea engineering and climate guide for commerci"
+    "desc": "Precision CEA engineering and climate guide for commercial greenhouses in Murcia (Campo de Cartagena), Spain (38.0°N).",
+    "tags": "climate murcia spain precision hydroponics guide html murcia campo de cartagena spain climate guide precision cea engineering and climate guide for commercial greenhouses in murcia campo de "
   },
   {
-    "title": "Naaldwijk (Westland East), Netherlands Greenhouse Microclimate & CEA Engineering Almanac",
+    "title": "Naaldwijk (Westland East), Netherlands Climate",
     "cat": "climate",
     "url": "climate/naaldwijk-netherlands-floriculture-hub-guide.html",
     "icon": "🌍",
-    "desc": "Precision CEA engineering and climate guide for commercial greenhouses in Naaldwijk (Westland East), Netherlands (52.0°N). Solar DLI analysis (35-41 summer / 6-",
-    "tags": "climate naaldwijk netherlands floriculture hub guide html naaldwijk westland east netherlands greenhouse microclimate cea engineering almanac precision cea engineering and climate guide for "
+    "desc": "Precision CEA engineering and climate guide for commercial greenhouses in Naaldwijk (Westland East), Netherlands (52.0°N).",
+    "tags": "climate naaldwijk netherlands floriculture hub guide html naaldwijk westland east netherlands climate precision cea engineering and climate guide for commercial greenhouses in naaldwijk west"
   },
   {
-    "title": "Nonsan, Chungnam, South Korea Greenhouse Microclimate & CEA Engineering Almanac",
+    "title": "Nonsan, Chungnam, South Korea Climate Guide",
     "cat": "climate",
     "url": "climate/nonsan-chungnam-korea-smart-berry-guide.html",
     "icon": "🌍",
-    "desc": "Precision CEA engineering and climate guide for commercial greenhouses in Nonsan, Chungnam, South Korea (36.2°N). Solar DLI analysis (36-44 summer / 12-17 winte",
-    "tags": "climate nonsan chungnam korea smart berry guide html nonsan chungnam south korea greenhouse microclimate cea engineering almanac precision cea engineering and climate guide for commercial gr"
+    "desc": "Precision CEA engineering and climate guide for commercial greenhouses in Nonsan, Chungnam, South Korea (36.2°N).",
+    "tags": "climate nonsan chungnam korea smart berry guide html nonsan chungnam south korea climate guide precision cea engineering and climate guide for commercial greenhouses in nonsan chungnam south"
   },
   {
-    "title": "Nürnberg / Knoblauchsland, Bavaria Greenhouse Microclimate & CEA Engineering Almanac",
+    "title": "Nürnberg / Knoblauchsland, Bavaria Climate Guide",
     "cat": "climate",
     "url": "climate/nuernberg-knoblauchsland-bavaria-greenhouse-climate-guide.html",
     "icon": "🌍",
-    "desc": "Precision CEA engineering and climate guide for commercial glasshouses in Nürnberg / Knoblauchsland, Bavaria (49.48°N). Solar DLI curves (38-45 summer / 7-10 wi",
-    "tags": "climate nuernberg knoblauchsland bavaria greenhouse climate guide html nürnberg knoblauchsland bavaria greenhouse microclimate cea engineering almanac precision cea engineering and climate g"
+    "desc": "Precision CEA engineering and climate guide for commercial glasshouses in Nürnberg / Knoblauchsland, Bavaria (49.48°N).",
+    "tags": "climate nuernberg knoblauchsland bavaria greenhouse climate guide html nürnberg knoblauchsland bavaria climate guide precision cea engineering and climate guide for commercial glasshouses in"
   },
   {
-    "title": "Pukekohe, Auckland Region, New Zealand Greenhouse Microclimate & CEA Engineering Almanac",
+    "title": "Pukekohe, Auckland Region, New Zealand Climate",
     "cat": "climate",
     "url": "climate/pukekohe-auckland-new-zealand-greenhouse-guide.html",
     "icon": "🌍",
-    "desc": "Precision CEA engineering and climate guide for commercial greenhouses in Pukekohe, Auckland Region, New Zealand (37.2°S). Solar DLI analysis (44-52 summer / 10",
-    "tags": "climate pukekohe auckland new zealand greenhouse guide html pukekohe auckland region new zealand greenhouse microclimate cea engineering almanac precision cea engineering and climate guide f"
+    "desc": "Precision CEA engineering and climate guide for commercial greenhouses in Pukekohe, Auckland Region, New Zealand (37.2°S).",
+    "tags": "climate pukekohe auckland new zealand greenhouse guide html pukekohe auckland region new zealand climate precision cea engineering and climate guide for commercial greenhouses in pukekohe au"
   },
   {
-    "title": "Querétaro (Agropark), Mexico Greenhouse Microclimate & CEA Engineering Almanac",
+    "title": "Querétaro (Agropark), Mexico Climate Guide",
     "cat": "climate",
     "url": "climate/queretaro-agropark-mexico-high-altitude-guide.html",
     "icon": "🌍",
-    "desc": "Precision CEA engineering and climate guide for commercial greenhouses in Querétaro (Agropark), Mexico (20.6°N). Solar DLI analysis (46-54 summer / 26-32 winter",
-    "tags": "climate queretaro agropark mexico high altitude guide html quer taro agropark mexico greenhouse microclimate cea engineering almanac precision cea engineering and climate guide for commercia"
+    "desc": "Precision CEA engineering and climate guide for commercial greenhouses in Querétaro (Agropark), Mexico (20.6°N).",
+    "tags": "climate queretaro agropark mexico high altitude guide html quer taro agropark mexico climate guide precision cea engineering and climate guide for commercial greenhouses in quer taro agropar"
   },
   {
-    "title": "Ragusa / Vittoria, Sicily, Italy Greenhouse Microclimate & CEA Engineering Almanac",
+    "title": "Ragusa / Vittoria, Sicily, Italy Climate Guide",
     "cat": "climate",
     "url": "climate/ragusa-sicily-italy-protected-cropping-guide.html",
     "icon": "🌍",
-    "desc": "Precision CEA engineering and climate guide for commercial greenhouses in Ragusa / Vittoria, Sicily, Italy (36.9°N). Solar DLI analysis (52-60 summer / 18-24 wi",
-    "tags": "climate ragusa sicily italy protected cropping guide html ragusa vittoria sicily italy greenhouse microclimate cea engineering almanac precision cea engineering and climate guide for commerc"
+    "desc": "Precision CEA engineering and climate guide for commercial greenhouses in Ragusa / Vittoria, Sicily, Italy (36.9°N).",
+    "tags": "climate ragusa sicily italy protected cropping guide html ragusa vittoria sicily italy climate guide precision cea engineering and climate guide for commercial greenhouses in ragusa vittoria"
   },
   {
-    "title": "Al-Kharj / Riyadh Oasis, Saudi Arabia Greenhouse Microclimate & CEA Engineering Almanac",
+    "title": "Al-Kharj / Riyadh Oasis, Saudi Arabia Climate Guide",
     "cat": "climate",
     "url": "climate/riyadh-al-kharj-saudi-arabia-desert-cea-guide.html",
     "icon": "🌍",
-    "desc": "Precision CEA engineering and climate guide for commercial greenhouses in Al-Kharj / Riyadh Oasis, Saudi Arabia (24.7°N). Solar DLI analysis (60-70 summer / 25-",
-    "tags": "climate riyadh al kharj saudi arabia desert cea guide html al kharj riyadh oasis saudi arabia greenhouse microclimate cea engineering almanac precision cea engineering and climate guide for "
+    "desc": "Precision CEA engineering and climate guide for commercial greenhouses in Al-Kharj / Riyadh Oasis, Saudi Arabia (24.7°N).",
+    "tags": "climate riyadh al kharj saudi arabia desert cea guide html al kharj riyadh oasis saudi arabia climate guide precision cea engineering and climate guide for commercial greenhouses in al kharj"
   },
   {
-    "title": "Salinas Valley, California, USA Greenhouse Microclimate & CEA Engineering Almanac",
+    "title": "Salinas Valley, California, USA Climate Guide",
     "cat": "climate",
     "url": "climate/salinas-valley-california-salad-bowl-guide.html",
     "icon": "🌍",
-    "desc": "Precision CEA engineering and climate guide for commercial greenhouses in Salinas Valley, California, USA (36.7°N). Solar DLI analysis (42-50 summer / 16-22 win",
-    "tags": "climate salinas valley california salad bowl guide html salinas valley california usa greenhouse microclimate cea engineering almanac precision cea engineering and climate guide for commerci"
+    "desc": "Precision CEA engineering and climate guide for commercial greenhouses in Salinas Valley, California, USA (36.7°N).",
+    "tags": "climate salinas valley california salad bowl guide html salinas valley california usa climate guide precision cea engineering and climate guide for commercial greenhouses in salinas valley c"
   },
   {
-    "title": "Santa Maria, California, USA Greenhouse Microclimate & CEA Engineering Almanac",
+    "title": "Santa Maria, California, USA Climate Guide",
     "cat": "climate",
     "url": "climate/santa-maria-valley-california-berry-tunnel-guide.html",
     "icon": "🌍",
-    "desc": "Precision CEA engineering and climate guide for commercial greenhouses in Santa Maria, California, USA (34.9°N). Solar DLI analysis (45-52 summer / 18-24 winter",
-    "tags": "climate santa maria valley california berry tunnel guide html santa maria california usa greenhouse microclimate cea engineering almanac precision cea engineering and climate guide for comme"
+    "desc": "Precision CEA engineering and climate guide for commercial greenhouses in Santa Maria, California, USA (34.9°N).",
+    "tags": "climate santa maria valley california berry tunnel guide html santa maria california usa climate guide precision cea engineering and climate guide for commercial greenhouses in santa maria c"
   },
   {
-    "title": "Shouguang, Shandong, China Greenhouse Microclimate & CEA Engineering Almanac",
+    "title": "Shouguang, Shandong, China Climate Guide",
     "cat": "climate",
     "url": "climate/shouguang-shandong-china-solar-greenhouse-guide.html",
     "icon": "🌍",
-    "desc": "Precision CEA engineering and climate guide for commercial greenhouses in Shouguang, Shandong, China (36.9°N). Solar DLI analysis (42-50 summer / 14-20 winter m",
-    "tags": "climate shouguang shandong china solar greenhouse guide html shouguang shandong china greenhouse microclimate cea engineering almanac precision cea engineering and climate guide for commerci"
+    "desc": "Precision CEA engineering and climate guide for commercial greenhouses in Shouguang, Shandong, China (36.9°N).",
+    "tags": "climate shouguang shandong china solar greenhouse guide html shouguang shandong china climate guide precision cea engineering and climate guide for commercial greenhouses in shouguang shando"
   },
   {
-    "title": "Souss-Massa Valley (Agadir), Morocco Greenhouse Microclimate & CEA Engineering Almanac",
+    "title": "Souss-Massa Valley (Agadir), Morocco Climate Guide",
     "cat": "climate",
     "url": "climate/souss-massa-agadir-morocco-export-greenhouse-guide.html",
     "icon": "🌍",
-    "desc": "Precision CEA engineering and climate guide for commercial greenhouses in Souss-Massa Valley (Agadir), Morocco (30.4°N). Solar DLI analysis (50-58 summer / 20-2",
-    "tags": "climate souss massa agadir morocco export greenhouse guide html souss massa valley agadir morocco greenhouse microclimate cea engineering almanac precision cea engineering and climate guide "
+    "desc": "Precision CEA engineering and climate guide for commercial greenhouses in Souss-Massa Valley (Agadir), Morocco (30.4°N).",
+    "tags": "climate souss massa agadir morocco export greenhouse guide html souss massa valley agadir morocco climate guide precision cea engineering and climate guide for commercial greenhouses in sous"
   },
   {
-    "title": "Stellenbosch / Boland, Western Cape, South Africa Greenhouse Microclimate & CEA Engineering Almanac",
+    "title": "Stellenbosch / Boland, Western Cape, South Africa",
     "cat": "climate",
     "url": "climate/stellenbosch-western-cape-south-africa-guide.html",
     "icon": "🌍",
-    "desc": "Precision CEA engineering and climate guide for commercial greenhouses in Stellenbosch / Boland, Western Cape, South Africa (33.9°S). Solar DLI analysis (48-56 ",
-    "tags": "climate stellenbosch western cape south africa guide html stellenbosch boland western cape south africa greenhouse microclimate cea engineering almanac precision cea engineering and climate "
+    "desc": "Precision CEA engineering and climate guide for commercial greenhouses in Stellenbosch / Boland, Western Cape, South Africa (33.9°S).",
+    "tags": "climate stellenbosch western cape south africa guide html stellenbosch boland western cape south africa precision cea engineering and climate guide for commercial greenhouses in stellenbosch"
   },
   {
-    "title": "Straelen / Lower Rhine, Germany Greenhouse Microclimate & CEA Engineering Almanac",
+    "title": "Straelen / Lower Rhine, Germany Climate Guide",
     "cat": "climate",
     "url": "climate/straelen-lower-rhine-germany-horticulture-guide.html",
     "icon": "🌍",
-    "desc": "Precision CEA engineering and climate guide for commercial greenhouses in Straelen / Lower Rhine, Germany (51.4°N). Solar DLI analysis (36-42 summer / 5-9 winte",
-    "tags": "climate straelen lower rhine germany horticulture guide html straelen lower rhine germany greenhouse microclimate cea engineering almanac precision cea engineering and climate guide for comm"
+    "desc": "Precision CEA engineering and climate guide for commercial greenhouses in Straelen / Lower Rhine, Germany (51.4°N).",
+    "tags": "climate straelen lower rhine germany horticulture guide html straelen lower rhine germany climate guide precision cea engineering and climate guide for commercial greenhouses in straelen low"
   },
   {
-    "title": "Adelaide Plains (Virginia), South Australia Greenhouse Microclimate & CEA Engineering Almanac",
+    "title": "Adelaide Plains (Virginia), South Australia",
     "cat": "climate",
     "url": "climate/virginia-adelaide-plains-australia-guide.html",
     "icon": "🌍",
-    "desc": "Precision CEA engineering and climate guide for commercial greenhouses in Adelaide Plains (Virginia), South Australia (34.7°S). Solar DLI analysis (52-62 summer",
-    "tags": "climate virginia adelaide plains australia guide html adelaide plains virginia south australia greenhouse microclimate cea engineering almanac precision cea engineering and climate guide for"
+    "desc": "Precision CEA engineering and climate guide for commercial greenhouses in Adelaide Plains (Virginia), South Australia (34.7°S).",
+    "tags": "climate virginia adelaide plains australia guide html adelaide plains virginia south australia precision cea engineering and climate guide for commercial greenhouses in adelaide plains virgi"
   },
   {
-    "title": "Westland, Netherlands Greenhouse Microclimate & CEA Engineering Almanac",
+    "title": "Westland, Netherlands Climate Guide",
     "cat": "climate",
     "url": "climate/westland-netherlands-greenhouse-climate-guide.html",
     "icon": "🌍",
-    "desc": "Precision CEA engineering and climate guide for commercial greenhouses in Westland, Netherlands (52.0°N). Solar DLI analysis (35-42 summer / 6-10 winter mol/m²/",
-    "tags": "climate westland netherlands greenhouse climate guide html westland netherlands greenhouse microclimate cea engineering almanac precision cea engineering and climate guide for commercial gre"
+    "desc": "Precision CEA engineering and climate guide for commercial greenhouses in Westland, Netherlands (52.0°N).",
+    "tags": "climate westland netherlands greenhouse climate guide html westland netherlands climate guide precision cea engineering and climate guide for commercial greenhouses in westland netherlands 5"
   },
   {
-    "title": "Commercial Greenhouse & Indoor Cannabis (Cannabis sativa) Microclimate, VPD & DLI Precision Steering Guide",
+    "title": "Indoor Cannabis (Cannabis sativa) CEA Steering",
     "cat": "crop",
     "url": "crops/commercial-cannabis-microclimate-vpd-photobiology-guide.html",
     "icon": "🌱",
-    "desc": "Precision CEA engineering guide for Commercial Greenhouse & Indoor Cannabis (Cannabis sativa). Optimal VPD bands (1.0 - 1.5 kPa), DLI targets (35 - 55 mol/m²/d)",
-    "tags": "crops commercial cannabis microclimate vpd photobiology guide html commercial greenhouse indoor cannabis cannabis sativa microclimate vpd dli precision steering guide precision cea engineeri"
+    "desc": "Precision CEA engineering guide for Commercial Greenhouse &amp; Indoor Cannabis (Cannabis sativa).",
+    "tags": "crops commercial cannabis microclimate vpd photobiology guide html indoor cannabis cannabis sativa cea steering precision cea engineering guide for commercial greenhouse amp indoor cannabis "
   },
   {
-    "title": "Commercial Greenhouse Strawberry (Fragaria × ananassa) Microclimate, VPD & DLI Precision Steering Guide",
+    "title": "Strawberry (Fragaria × ananassa) CEA Steering Guide",
     "cat": "crop",
     "url": "crops/commercial-strawberry-greenhouse-climate-dli-guide.html",
     "icon": "🌱",
-    "desc": "Precision CEA engineering guide for Commercial Greenhouse Strawberry (Fragaria × ananassa). Optimal VPD bands (0.7 - 1.1 kPa), DLI targets (16 - 24 mol/m²/d), d",
-    "tags": "crops commercial strawberry greenhouse climate dli guide html commercial greenhouse strawberry fragaria ananassa microclimate vpd dli precision steering guide precision cea engineering guide"
+    "desc": "Precision CEA engineering guide for Commercial Greenhouse Strawberry (Fragaria × ananassa).",
+    "tags": "crops commercial strawberry greenhouse climate dli guide html strawberry fragaria ananassa cea steering guide precision cea engineering guide for commercial greenhouse strawberry fragaria an"
   },
   {
-    "title": "Commercial Greenhouse Cucumber (Cucumis sativus) Microclimate, VPD & DLI Precision Steering Guide",
+    "title": "Cucumber (Cucumis sativus) CEA Steering Guide",
     "cat": "crop",
     "url": "crops/greenhouse-cucumber-high-humidity-transpiration-guide.html",
     "icon": "🌱",
-    "desc": "Precision CEA engineering guide for Commercial Greenhouse Cucumber (Cucumis sativus). Optimal VPD bands (0.6 - 1.0 kPa), DLI targets (20 - 30 mol/m²/d), day/nig",
-    "tags": "crops greenhouse cucumber high humidity transpiration guide html commercial greenhouse cucumber cucumis sativus microclimate vpd dli precision steering guide precision cea engineering guide "
+    "desc": "Precision CEA engineering guide for Commercial Greenhouse Cucumber (Cucumis sativus).",
+    "tags": "crops greenhouse cucumber high humidity transpiration guide html cucumber cucumis sativus cea steering guide precision cea engineering guide for commercial greenhouse cucumber cucumis sativu"
   },
   {
-    "title": "Commercial Greenhouse Cut Rose (Rosa hybrida) Microclimate, VPD & DLI Precision Steering Guide",
+    "title": "Cut Rose (Rosa hybrida) CEA Steering Guide",
     "cat": "crop",
     "url": "crops/greenhouse-cut-flower-rose-microclimate-guide.html",
     "icon": "🌱",
-    "desc": "Precision CEA engineering guide for Commercial Greenhouse Cut Rose (Rosa hybrida). Optimal VPD bands (0.8 - 1.2 kPa), DLI targets (20 - 30 mol/m²/d), day/night ",
-    "tags": "crops greenhouse cut flower rose microclimate guide html commercial greenhouse cut rose rosa hybrida microclimate vpd dli precision steering guide precision cea engineering guide for commerc"
+    "desc": "Precision CEA engineering guide for Commercial Greenhouse Cut Rose (Rosa hybrida).",
+    "tags": "crops greenhouse cut flower rose microclimate guide html cut rose rosa hybrida cea steering guide precision cea engineering guide for commercial greenhouse cut rose rosa hybrida"
   },
   {
-    "title": "Commercial Greenhouse Eggplant / Aubergine (Solanum melongena) Microclimate, VPD & DLI Precision Steering Guide",
+    "title": "Eggplant / Aubergine (Solanum melongena) CEA",
     "cat": "crop",
     "url": "crops/greenhouse-eggplant-aubergine-microclimate-guide.html",
     "icon": "🌱",
-    "desc": "Precision CEA engineering guide for Commercial Greenhouse Eggplant / Aubergine (Solanum melongena). Optimal VPD bands (0.8 - 1.2 kPa), DLI targets (22 - 30 mol/",
-    "tags": "crops greenhouse eggplant aubergine microclimate guide html commercial greenhouse eggplant aubergine solanum melongena microclimate vpd dli precision steering guide precision cea engineering"
+    "desc": "Precision CEA engineering guide for Commercial Greenhouse Eggplant / Aubergine (Solanum melongena).",
+    "tags": "crops greenhouse eggplant aubergine microclimate guide html eggplant aubergine solanum melongena cea precision cea engineering guide for commercial greenhouse eggplant aubergine solanum melo"
   },
   {
-    "title": "Commercial Phalaenopsis Orchid (CAM) Microclimate, VPD & Spike Induction Guide",
+    "title": "Phalaenopsis Orchid (CAM) Microclimate, VPD",
     "cat": "crop",
     "url": "crops/greenhouse-phalaenopsis-orchid-climate-spike-induction-guide.html",
     "icon": "🌱",
-    "desc": "Precision CEA engineering guide for Phalaenopsis Orchid Microclimate & Spike Induction Guide. Optimal VPD bands (0.5 - 0.9 kPa), DLI targets (6 - 10 mol/m²/d), ",
-    "tags": "crops greenhouse phalaenopsis orchid climate spike induction guide html commercial phalaenopsis orchid cam microclimate vpd spike induction guide precision cea engineering guide for phalaeno"
+    "desc": "Precision CEA engineering guide for Phalaenopsis Orchid Microclimate &amp; Spike Induction Guide.",
+    "tags": "crops greenhouse phalaenopsis orchid climate spike induction guide html phalaenopsis orchid cam microclimate vpd precision cea engineering guide for phalaenopsis orchid microclimate amp spik"
   },
   {
-    "title": "Commercial Greenhouse Sweet Pepper (Capsicum annuum) Microclimate, VPD & DLI Precision Steering Guide",
+    "title": "Sweet Pepper (Capsicum annuum) CEA Steering Guide",
     "cat": "crop",
     "url": "crops/greenhouse-sweet-pepper-climate-blossom-end-rot-guide.html",
     "icon": "🌱",
-    "desc": "Precision CEA engineering guide for Commercial Greenhouse Sweet Pepper (Capsicum annuum). Optimal VPD bands (0.9 - 1.3 kPa), DLI targets (22 - 32 mol/m²/d), day",
-    "tags": "crops greenhouse sweet pepper climate blossom end rot guide html commercial greenhouse sweet pepper capsicum annuum microclimate vpd dli precision steering guide precision cea engineering gu"
+    "desc": "Precision CEA engineering guide for Commercial Greenhouse Sweet Pepper (Capsicum annuum).",
+    "tags": "crops greenhouse sweet pepper climate blossom end rot guide html sweet pepper capsicum annuum cea steering guide precision cea engineering guide for commercial greenhouse sweet pepper capsic"
   },
   {
-    "title": "Commercial Greenhouse Tomato (Solanum lycopersicum) Microclimate, VPD & DLI Precision Steering Guide",
+    "title": "Tomato (Solanum lycopersicum) CEA Steering Guide",
     "cat": "crop",
     "url": "crops/greenhouse-tomato-microclimate-vpd-steering-guide.html",
     "icon": "🌱",
-    "desc": "Precision CEA engineering guide for Commercial Greenhouse Tomato (Solanum lycopersicum). Optimal VPD bands (0.8 - 1.2 kPa), DLI targets (25 - 35 mol/m²/d), day/",
-    "tags": "crops greenhouse tomato microclimate vpd steering guide html commercial greenhouse tomato solanum lycopersicum microclimate vpd dli precision steering guide precision cea engineering guide f"
+    "desc": "Precision CEA engineering guide for Commercial Greenhouse Tomato (Solanum lycopersicum).",
+    "tags": "crops greenhouse tomato microclimate vpd steering guide html tomato solanum lycopersicum cea steering guide precision cea engineering guide for commercial greenhouse tomato solanum lycopersi"
   },
   {
-    "title": "Hydroponic Greenhouse Sweet Basil & Culinary Herbs (Ocimum basilicum) Microclimate, VPD & DLI Precision Steering Guide",
+    "title": "Hydroponic Greenhouse Sweet Basil &amp; Culinary Herbs",
     "cat": "crop",
     "url": "crops/hydroponic-basil-culinary-herbs-climate-guide.html",
     "icon": "🌱",
-    "desc": "Precision CEA engineering guide for Hydroponic Greenhouse Sweet Basil & Culinary Herbs (Ocimum basilicum). Optimal VPD bands (0.7 - 1.1 kPa), DLI targets (16 - ",
-    "tags": "crops hydroponic basil culinary herbs climate guide html hydroponic greenhouse sweet basil culinary herbs ocimum basilicum microclimate vpd dli precision steering guide precision cea enginee"
+    "desc": "Precision CEA engineering guide for Hydroponic Greenhouse Sweet Basil &amp; Culinary Herbs (Ocimum basilicum).",
+    "tags": "crops hydroponic basil culinary herbs climate guide html hydroponic greenhouse sweet basil amp culinary herbs precision cea engineering guide for hydroponic greenhouse sweet basil amp culina"
   },
   {
-    "title": "Commercial Crop Precision Steering Atlas: 10 Greenhouse Crops",
+    "title": "Crop Precision Steering Atlas: 10 Greenhouse Crops",
     "cat": "crop",
     "url": "crops/index.html",
     "icon": "🌱",
-    "desc": "Biophysical crop steering blueprints for 10 major commercial greenhouse and vertical farm crops: Tomato, Strawberry, Cucumber, Sweet Pepper, Lettuce, Rose, Phal",
-    "tags": "crops index html commercial crop precision steering atlas 10 greenhouse crops biophysical crop steering blueprints for 10 major commercial greenhouse and vertical farm crops tomato strawberr"
+    "desc": "Biophysical crop steering blueprints for 10 major commercial greenhouse and vertical farm crops: Tomato, Strawberry, Cucumber, Sweet Pepper, Lettuce, Rose.",
+    "tags": "crops index html crop precision steering atlas 10 greenhouse crops biophysical crop steering blueprints for 10 major commercial greenhouse and vertical farm crops tomato strawberry cucumber "
   },
   {
-    "title": "Controlled Environment Leafy Greens & Lettuce (Lactuca sativa) Microclimate, VPD & DLI Precision Steering Guide",
+    "title": "Controlled Environment Leafy Greens &amp; Lettuce",
     "cat": "crop",
     "url": "crops/vertical-farm-lettuce-leafy-greens-tipburn-prevention-guide.html",
     "icon": "🌱",
-    "desc": "Precision CEA engineering guide for Controlled Environment Leafy Greens & Lettuce (Lactuca sativa). Optimal VPD bands (0.8 - 1.1 kPa), DLI targets (14 - 18 mol/",
-    "tags": "crops vertical farm lettuce leafy greens tipburn prevention guide html controlled environment leafy greens lettuce lactuca sativa microclimate vpd dli precision steering guide precision cea "
+    "desc": "Precision CEA engineering guide for Controlled Environment Leafy Greens &amp; Lettuce (Lactuca sativa).",
+    "tags": "crops vertical farm lettuce leafy greens tipburn prevention guide html controlled environment leafy greens amp lettuce precision cea engineering guide for controlled environment leafy greens"
   },
   {
-    "title": "The CEA Biophysics &amp; Greenhouse Engineering Handbook (78 Volumes / 199 Editions)",
+    "title": "The CEA Biophysics &amp; Greenhouse Engineering",
     "cat": "article",
     "url": "handbooks/index.html",
     "icon": "📖",
-    "desc": "Open-access six-part Controlled Environment Agriculture compendium indexing 78 volumes (199 EN/DE/JA editions), 42 live biophysical calculators, and 192 agricul",
-    "tags": "handbooks index html the cea biophysics amp greenhouse engineering handbook 78 volumes 199 editions open access six part controlled environment agriculture compendium indexing 78 volumes 199"
+    "desc": "Open-access six-part Controlled Environment Agriculture compendium indexing 78 volumes (199 EN/DE/JA editions), 42 live biophysical calculators, and 192.",
+    "tags": "handbooks index html the cea biophysics amp greenhouse engineering open access six part controlled environment agriculture compendium indexing 78 volumes 199 en de ja editions 42 live biophy"
   },
   {
     "title": "AgriMaster",
     "cat": "part",
     "url": "parts/index.html",
     "icon": "⚙️",
-    "desc": "Industrial parametric search engine for commercial greenhouse components, fertigation valves, LED toplights, climate sensors, and Dutch bucket supplies. Cross-r",
-    "tags": "parts index html agrimaster industrial parametric search engine for commercial greenhouse components fertigation valves led toplights climate sensors and dutch bucket supplies cross r"
+    "desc": "Industrial parametric search engine for commercial greenhouse components, fertigation valves, LED toplights, climate sensors, and Dutch bucket supplies.",
+    "tags": "parts index html agrimaster industrial parametric search engine for commercial greenhouse components fertigation valves led toplights climate sensors and dutch bucket supplies"
   },
   {
-    "title": "Vacuum Systems Engineering & Semiconductor Equipment Catalog",
+    "title": "Vacuum Systems Engineering &amp; Semiconductor",
     "cat": "part",
     "url": "parts/vacuum-systems.html",
     "icon": "⚙️",
-    "desc": "Industrial vacuum engineering catalog & mechatronics specification suite. Featuring thermal evaporators (DEV), magnetron sputtering systems (DSP), hermetic iner",
-    "tags": "parts vacuum systems html vacuum systems engineering semiconductor equipment catalog industrial vacuum engineering catalog mechatronics specification suite featuring thermal evaporators dev "
+    "desc": "Industrial vacuum engineering catalog &amp; mechatronics specification suite. Featuring thermal evaporators (DEV), magnetron sputtering systems (DSP), hermetic.",
+    "tags": "parts vacuum systems html vacuum systems engineering amp semiconductor industrial vacuum engineering catalog amp mechatronics specification suite featuring thermal evaporators dev magnetron "
   },
   {
-    "title": "Deutscher Meisterfunk: Podcast für moderne Landwirtschaft &amp; Technik",
+    "title": "Deutscher Meisterfunk: Podcast für moderne",
     "cat": "article",
     "url": "podcasts/index.html",
     "icon": "🎙️",
     "desc": "Der deutsche Lernpodcast für Gewächshaustechnik, Nachrichten, Wissenschaft und die Gärtnermeister-Karriere. Gesprochen in langsamem, deutlichem Deutsch (A2/B1).",
-    "tags": "podcasts index html deutscher meisterfunk podcast für moderne landwirtschaft amp technik der deutsche lernpodcast für gewächshaustechnik nachrichten wissenschaft und die gärtnermeister karri"
+    "tags": "podcasts index html deutscher meisterfunk podcast für moderne der deutsche lernpodcast für gewächshaustechnik nachrichten wissenschaft und die gärtnermeister karriere gesprochen in langsamem"
   },
   {
     "title": "About Smart Farm Engineering Lab",
     "cat": "sim",
     "url": "smartfarm/about.html",
     "icon": "🧪",
-    "desc": "Learn about Smart Farm Engineering Lab's mission to provide free, science-backed precision calculators for greenhouse growers, designers, and agricultural engin",
-    "tags": "smartfarm about html about smart farm engineering lab learn about smart farm engineering lab s mission to provide free science backed precision calculators for greenhouse growers designers a"
+    "desc": "Learn about Smart Farm Engineering Lab&#x27;s mission to provide free, science-backed precision calculators for greenhouse growers, designers, and agricultural.",
+    "tags": "smartfarm about html about smart farm engineering lab learn about smart farm engineering lab x27 s mission to provide free science backed precision calculators for greenhouse growers designe"
   },
   {
-    "title": "Greenhouse CO2 Enrichment & Cylinder Sizing Calculator",
+    "title": "Greenhouse CO2 Enrichment &amp; Cylinder Sizing",
     "cat": "sim",
     "url": "smartfarm/co2_calculator.html",
     "icon": "🧪",
     "desc": "Calculate greenhouse CO2 injection rates, target ppm enrichment, cylinder/tank consumption rates, and hourly enrichment costs for commercial growers.",
-    "tags": "smartfarm co2 calculator html greenhouse co2 enrichment cylinder sizing calculator calculate greenhouse co2 injection rates target ppm enrichment cylinder tank consumption rates and hourly e"
+    "tags": "smartfarm co2 calculator html greenhouse co2 enrichment amp cylinder sizing calculate greenhouse co2 injection rates target ppm enrichment cylinder tank consumption rates and hourly enrichme"
   },
   {
     "title": "Contact & Inquiry",
@@ -2198,43 +2198,43 @@
     "tags": "smartfarm contact html contact inquiry submit inquiries feature requests or partnership proposals for smart farm engineering lab s free greenhouse calculators and agtech precision tools"
   },
   {
-    "title": "Crop Disease & Pest Diagnosis Tool",
+    "title": "Crop Disease &amp; Pest Diagnosis Tool",
     "cat": "sim",
     "url": "smartfarm/diagnosis.html",
     "icon": "🧪",
-    "desc": "Free AI-powered crop disease and pest diagnosis for tomato, strawberry, blueberry, melon, and pepper. Includes pesticide bee toxicity database with Safe Re-entr",
-    "tags": "smartfarm diagnosis html crop disease pest diagnosis tool free ai powered crop disease and pest diagnosis for tomato strawberry blueberry melon and pepper includes pesticide bee toxicity dat"
+    "desc": "Free AI-powered crop disease and pest diagnosis for tomato, strawberry, blueberry, melon, and pepper.",
+    "tags": "smartfarm diagnosis html crop disease amp pest diagnosis tool free ai powered crop disease and pest diagnosis for tomato strawberry blueberry melon and pepper"
   },
   {
-    "title": "Daily Light Integral (DLI) & LED Electricity ROI Calculator",
+    "title": "Daily Light Integral (DLI) &amp; LED Electricity ROI",
     "cat": "sim",
     "url": "smartfarm/dli_calculator.html",
     "icon": "🧪",
-    "desc": "Calculate Daily Light Integral (DLI) targets, supplemental LED PPFD requirements, photoperiod hours, and daily/monthly electricity ROI costs for commercial CEA ",
-    "tags": "smartfarm dli calculator html daily light integral dli led electricity roi calculator calculate daily light integral dli targets supplemental led ppfd requirements photoperiod hours and dail"
+    "desc": "Calculate Daily Light Integral (DLI) targets, supplemental LED PPFD requirements, photoperiod hours, and daily/monthly electricity ROI costs for commercial.",
+    "tags": "smartfarm dli calculator html daily light integral dli amp led electricity roi calculate daily light integral dli targets supplemental led ppfd requirements photoperiod hours and daily month"
   },
   {
     "title": "Fertigation Stock Tank Calculator",
     "cat": "sim",
     "url": "smartfarm/fertigation.html",
     "icon": "🧪",
-    "desc": "Calculate precise raw fertilizer compounding weights and acid neutralization dosages for greenhouse stock tank fertigation. Supports multiple dilution ratios an",
-    "tags": "smartfarm fertigation html fertigation stock tank calculator calculate precise raw fertilizer compounding weights and acid neutralization dosages for greenhouse stock tank fertigation suppor"
+    "desc": "Calculate precise raw fertilizer compounding weights and acid neutralization dosages for greenhouse stock tank fertigation.",
+    "tags": "smartfarm fertigation html fertigation stock tank calculator calculate precise raw fertilizer compounding weights and acid neutralization dosages for greenhouse stock tank fertigation"
   },
   {
-    "title": "GreenPocket: Home Gardening & Smart Hydroponics Curation Directory",
+    "title": "GreenPocket: Home Gardening &amp; Smart Hydroponics",
     "cat": "sim",
     "url": "smartfarm/greenpocket.html",
     "icon": "🧪",
     "desc": "Curated selection of home indoor farming kits, grow LEDs, and nutrient sensors for urban gardeners.",
-    "tags": "smartfarm greenpocket html greenpocket home gardening smart hydroponics curation directory curated selection of home indoor farming kits grow leds and nutrient sensors for urban gardeners"
+    "tags": "smartfarm greenpocket html greenpocket home gardening amp smart hydroponics curated selection of home indoor farming kits grow leds and nutrient sensors for urban gardeners"
   },
   {
     "title": "Greenhouse Heat Loss Calculator",
     "cat": "sim",
     "url": "smartfarm/heat_loss.html",
     "icon": "🧪",
-    "desc": "Calculate maximum greenhouse heating load in kW and BTU/h using ASABE EP406 Q=UAΔT heat transfer formulas, wind infiltration modifiers, regional climate presets",
+    "desc": "Calculate maximum greenhouse heating load in kW and BTU/h using ASABE EP406 Q=UAΔT heat transfer formulas, wind infiltration modifiers, regional climate.",
     "tags": "smartfarm heat loss html greenhouse heat loss calculator calculate maximum greenhouse heating load in kw and btu h using asabe ep406 q ua t heat transfer formulas wind infiltration modifiers"
   },
   {
@@ -2242,31 +2242,31 @@
     "cat": "sim",
     "url": "smartfarm/index.html",
     "icon": "🧪",
-    "desc": "Free online precision engineering tools for greenhouse growers: VPD calculator, fertigation solver, heat loss estimator, mixing valve sizer, crop diagnosis, and",
+    "desc": "Free online precision engineering tools for greenhouse growers: VPD calculator, fertigation solver, heat loss estimator, mixing valve sizer, crop diagnosis.",
     "tags": "smartfarm index html smart farm engineering lab free online precision engineering tools for greenhouse growers vpd calculator fertigation solver heat loss estimator mixing valve sizer crop d"
   },
   {
-    "title": "3D Commercial Greenhouse Digital Twin & Physics Microclimate Simulator",
+    "title": "3D Commercial Greenhouse Digital Twin &amp; Physics",
     "cat": "sim",
     "url": "smartfarm/korean_greenhouse_3d.html",
     "icon": "🧪",
-    "desc": "Interactive 3D digital twin for multi-span arch poly and Venlo glass greenhouses. Real-time solar azimuth, roll-up roof/side ventilation, thermal screens, high-",
-    "tags": "smartfarm korean greenhouse 3d html 3d commercial greenhouse digital twin physics microclimate simulator interactive 3d digital twin for multi span arch poly and venlo glass greenhouses real"
+    "desc": "Interactive 3D digital twin for multi-span arch poly and Venlo glass greenhouses.",
+    "tags": "smartfarm korean greenhouse 3d html 3d commercial greenhouse digital twin amp physics interactive 3d digital twin for multi span arch poly and venlo glass greenhouses"
   },
   {
-    "title": "Optimization of Vapor Pressure Deficit (VPD) for Greenhouse Tomato Yield and Quality",
+    "title": "Optimization of Vapor Pressure Deficit (VPD)",
     "cat": "sim",
     "url": "smartfarm/library_vpd_optimization_tomato.html",
     "icon": "🧪",
     "desc": "Leaf-to-air Vapor Pressure Deficit (VPD) governs stomatal transpiration, xylem calcium mass-flow, Blossom-End Rot prevention, and greenhouse tomato yield.",
-    "tags": "smartfarm library vpd optimization tomato html optimization of vapor pressure deficit vpd for greenhouse tomato yield and quality leaf to air vapor pressure deficit vpd governs stomatal tran"
+    "tags": "smartfarm library vpd optimization tomato html optimization of vapor pressure deficit vpd leaf to air vapor pressure deficit vpd governs stomatal transpiration xylem calcium mass flow blosso"
   },
   {
     "title": "Greenhouse Supplemental Lighting Calculator",
     "cat": "sim",
     "url": "smartfarm/lighting_efficacy.html",
     "icon": "🧪",
-    "desc": "Calculate greenhouse supplemental PPFD, daily DLI contribution, electrical power demand, and financial payback ROI comparing 1000W HPS with high-efficacy LED to",
+    "desc": "Calculate greenhouse supplemental PPFD, daily DLI contribution, electrical power demand, and financial payback ROI comparing 1000W HPS with high-efficacy LED.",
     "tags": "smartfarm lighting efficacy html greenhouse supplemental lighting calculator calculate greenhouse supplemental ppfd daily dli contribution electrical power demand and financial payback roi c"
   },
   {
@@ -2282,39 +2282,39 @@
     "cat": "sim",
     "url": "smartfarm/mixing_valve.html",
     "icon": "🧪",
-    "desc": "Calculate the correct Kv coefficient, DN pipe diameter, and flow rates for greenhouse heating 3-way mixing valves. Includes heat load estimator and engineering ",
-    "tags": "smartfarm mixing valve html greenhouse 3 way mixing valve kv calculator calculate the correct kv coefficient dn pipe diameter and flow rates for greenhouse heating 3 way mixing valves includ"
+    "desc": "Calculate the correct Kv coefficient, DN pipe diameter, and flow rates for greenhouse heating 3-way mixing valves.",
+    "tags": "smartfarm mixing valve html greenhouse 3 way mixing valve kv calculator calculate the correct kv coefficient dn pipe diameter and flow rates for greenhouse heating 3 way mixing valves"
   },
   {
     "title": "Boiler vs Heat Pump ROI Simulator",
     "cat": "sim",
     "url": "smartfarm/roi_simulator.html",
     "icon": "🧪",
-    "desc": "Compare annual heating costs between conventional boilers (gas, oil, LPG) and heat pumps. Calculate payback period, energy savings, and return on investment for",
-    "tags": "smartfarm roi simulator html boiler vs heat pump roi simulator compare annual heating costs between conventional boilers gas oil lpg and heat pumps calculate payback period energy savings an"
+    "desc": "Compare annual heating costs between conventional boilers (gas, oil, LPG) and heat pumps.",
+    "tags": "smartfarm roi simulator html boiler vs heat pump roi simulator compare annual heating costs between conventional boilers gas oil lpg and heat pumps"
   },
   {
-    "title": "Smartfarm WFC Bed & Hydronic Layout Planner",
+    "title": "Smartfarm WFC Bed &amp; Hydronic Layout Planner",
     "cat": "sim",
     "url": "smartfarm/smartfarm_layout_wfc.html",
     "icon": "🧪",
-    "desc": "Autonomous Wave Function Collapse (WFC) and A* pathfinding algorithm for smart farm greenhouse design. Automatically routes cultivation gutters, main supply/ret",
-    "tags": "smartfarm smartfarm layout wfc html smartfarm wfc bed hydronic layout planner autonomous wave function collapse wfc and a pathfinding algorithm for smart farm greenhouse design automatically"
+    "desc": "Autonomous Wave Function Collapse (WFC) and A* pathfinding algorithm for smart farm greenhouse design.",
+    "tags": "smartfarm smartfarm layout wfc html smartfarm wfc bed amp hydronic layout planner autonomous wave function collapse wfc and a pathfinding algorithm for smart farm greenhouse design"
   },
   {
     "title": "Plant Transpiration Calculator",
     "cat": "sim",
     "url": "smartfarm/transpiration.html",
     "icon": "🧪",
-    "desc": "Calculate real-time crop transpiration rates using the biophysical Penman-Monteith equation. Supports tomato, pepper, cucumber, and strawberry stomatal resistan",
-    "tags": "smartfarm transpiration html plant transpiration calculator calculate real time crop transpiration rates using the biophysical penman monteith equation supports tomato pepper cucumber and st"
+    "desc": "Calculate real-time crop transpiration rates using the biophysical Penman-Monteith equation.",
+    "tags": "smartfarm transpiration html plant transpiration calculator calculate real time crop transpiration rates using the biophysical penman monteith equation"
   },
   {
     "title": "Vertical Farming DLI Calculator",
     "cat": "sim",
     "url": "smartfarm/vertical_dli.html",
     "icon": "🧪",
-    "desc": "Calculate Daily Light Integral (DLI), LED PPFD requirements, photoperiod optimization, and thermal heat dissipation for vertical farming and indoor growing syst",
+    "desc": "Calculate Daily Light Integral (DLI), LED PPFD requirements, photoperiod optimization, and thermal heat dissipation for vertical farming and indoor growing.",
     "tags": "smartfarm vertical dli html vertical farming dli calculator calculate daily light integral dli led ppfd requirements photoperiod optimization and thermal heat dissipation for vertical farmin"
   },
   {
@@ -2322,8 +2322,8 @@
     "cat": "sim",
     "url": "smartfarm/vpd.html",
     "icon": "🧪",
-    "desc": "Calculate leaf-to-air Vapor Pressure Deficit (VPD) in real-time using the Tetens equation. Optimize greenhouse climate for seedling, vegetative, and flowering s",
-    "tags": "smartfarm vpd html leaf vpd calculator calculate leaf to air vapor pressure deficit vpd in real time using the tetens equation optimize greenhouse climate for seedling vegetative and floweri"
+    "desc": "Calculate leaf-to-air Vapor Pressure Deficit (VPD) in real-time using the Tetens equation.",
+    "tags": "smartfarm vpd html leaf vpd calculator calculate leaf to air vapor pressure deficit vpd in real time using the tetens equation"
   },
   {
     "title": "OpenCEA Pro: Commercial Controlled Environment Agriculture Suite",
@@ -2334,356 +2334,356 @@
     "tags": "suite index html opencea pro commercial controlled environment agriculture suite 100 free open access opencea engineering suite with 42 commercial cea greenhouse physics calculators python c"
   },
   {
-    "title": "AgriQuant Commercial CEA Energy & Commodity Terminal",
+    "title": "AgriQuant Commercial CEA Energy &amp; Commodity",
     "cat": "tool",
     "url": "tools/agriquant-greenhouse-energy-commodity-terminal.html",
     "icon": "🛠️",
-    "desc": "Open-source financial and energy quant terminal for commercial high-tech greenhouses. Simulates Dutch TTF natural gas prices, electricity spark spreads, and fer",
-    "tags": "tools agriquant greenhouse energy commodity terminal html agriquant commercial cea energy commodity terminal open source financial and energy quant terminal for commercial high tech greenhou"
+    "desc": "Open-source financial and energy quant terminal for commercial high-tech greenhouses.",
+    "tags": "tools agriquant greenhouse energy commodity terminal html agriquant commercial cea energy amp commodity open source financial and energy quant terminal for commercial high tech greenhouses"
   },
   {
-    "title": "AgriVision: In-Browser AI Computer Vision Crop Disease & Deficiency Analyzer",
+    "title": "AgriVision: In-Browser AI Computer Vision Crop",
     "cat": "tool",
     "url": "tools/agrivision-ai-crop-disease-analyzer.html",
     "icon": "🛠️",
-    "desc": "Client-side AI computer vision analyzer for greenhouse leaf pathology. Real-time webcam or image upload, spectral chlorosis segmentation, bounding box lesion de",
-    "tags": "tools agrivision ai crop disease analyzer html agrivision in browser ai computer vision crop disease deficiency analyzer client side ai computer vision analyzer for greenhouse leaf pathology"
+    "desc": "Client-side AI computer vision analyzer for greenhouse leaf pathology. Real-time webcam or image upload, spectral chlorosis segmentation, bounding box lesion.",
+    "tags": "tools agrivision ai crop disease analyzer html agrivision in browser ai computer vision crop client side ai computer vision analyzer for greenhouse leaf pathology real time webcam or image u"
   },
   {
-    "title": "Aquifer Thermal Energy Storage (ATES) & Heat Pump Sizing Simulator",
+    "title": "Aquifer Thermal Energy Storage (ATES) &amp; Heat Pump",
     "cat": "tool",
     "url": "tools/ates-aquifer-thermal-energy-storage-heat-pump-simulator.html",
     "icon": "🛠️",
-    "desc": "Industrial CEA Aquifer Thermal Energy Storage (ATES) doublet well and heat pump simulator. Models warm/cold well seasonal hydraulics, Darcy drawdown, COP (VDI 4",
-    "tags": "tools ates aquifer thermal energy storage heat pump simulator html aquifer thermal energy storage ates heat pump sizing simulator industrial cea aquifer thermal energy storage ates doublet w"
+    "desc": "Industrial CEA Aquifer Thermal Energy Storage (ATES) doublet well and heat pump simulator.",
+    "tags": "tools ates aquifer thermal energy storage heat pump simulator html aquifer thermal energy storage ates amp heat pump industrial cea aquifer thermal energy storage ates doublet well and heat "
   },
   {
-    "title": "CHP Flue Gas SCR Denitrification & Urea Dosing Calculator",
+    "title": "CHP Flue Gas SCR Denitrification &amp; Urea Dosing",
     "cat": "tool",
     "url": "tools/chp-flue-gas-scr-urea-dosing-calculator.html",
     "icon": "🛠️",
-    "desc": "Industrial Selective Catalytic Reduction (SCR) calculator for natural gas CHP engines. Compute stoichiometric urea dosing, NOx to N2 conversion, and pure CO2 ou",
-    "tags": "tools chp flue gas scr urea dosing calculator html chp flue gas scr denitrification urea dosing calculator industrial selective catalytic reduction scr calculator for natural gas chp engines"
+    "desc": "Industrial Selective Catalytic Reduction (SCR) calculator for natural gas CHP engines.",
+    "tags": "tools chp flue gas scr urea dosing calculator html chp flue gas scr denitrification amp urea dosing industrial selective catalytic reduction scr calculator for natural gas chp engines"
   },
   {
-    "title": "Closed-Loop Hydroponic Drainage Recirculation & Ion Balance Simulator",
+    "title": "Closed-Loop Hydroponic Drainage [Tool]",
     "cat": "tool",
     "url": "tools/closed-loop-nutrient-recirculation-ion-balance-simulator.html",
     "icon": "🛠️",
-    "desc": "Commercial greenhouse closed-loop hydroponics drainage reuse simulator. Models multi-cycle Na/Cl accumulation, Davies ionic activity coefficients, and German Dü",
-    "tags": "tools closed loop nutrient recirculation ion balance simulator html closed loop hydroponic drainage recirculation ion balance simulator commercial greenhouse closed loop hydroponics drainage"
+    "desc": "Commercial greenhouse closed-loop hydroponics drainage reuse simulator. Models multi-cycle Na/Cl accumulation, Davies ionic activity coefficients, and German.",
+    "tags": "tools closed loop nutrient recirculation ion balance simulator html closed loop hydroponic drainage tool commercial greenhouse closed loop hydroponics drainage reuse simulator models multi c"
   },
   {
-    "title": "Closed-Loop RO Desalination & Energy Recovery Optimizer",
+    "title": "Closed-Loop RO Desalination &amp; Energy Recovery",
     "cat": "tool",
     "url": "tools/closed-loop-reverse-osmosis-desalination-energy-optimizer.html",
     "icon": "🛠️",
-    "desc": "Industrial engineering calculator for greenhouse reverse osmosis (RO) membrane flux (LMH), specific energy consumption (kWh/m3), sodium Na+ rejection, and conce",
-    "tags": "tools closed loop reverse osmosis desalination energy optimizer html closed loop ro desalination energy recovery optimizer industrial engineering calculator for greenhouse reverse osmosis ro"
+    "desc": "Industrial engineering calculator for greenhouse reverse osmosis (RO) membrane flux (LMH), specific energy consumption (kWh/m3), sodium Na+ rejection.",
+    "tags": "tools closed loop reverse osmosis desalination energy optimizer html closed loop ro desalination amp energy recovery industrial engineering calculator for greenhouse reverse osmosis ro membr"
   },
   {
-    "title": "Biochemical Farquhar (FvCB) Leaf Photosynthesis Calculator",
+    "title": "Biochemical Farquhar (FvCB) Leaf Photosynthesis",
     "cat": "tool",
     "url": "tools/co2-enrichment-leaf-photosynthesis-farquhar-calculator.html",
     "icon": "🛠️",
-    "desc": "Industrial plant physiology calculator for Farquhar-von Caemmerer-Berry (FvCB) C3 leaf photosynthesis, Rubisco kinetics (Vcmax), electron transport (J), and net",
-    "tags": "tools co2 enrichment leaf photosynthesis farquhar calculator html biochemical farquhar fvcb leaf photosynthesis calculator industrial plant physiology calculator for farquhar von caemmerer b"
+    "desc": "Industrial plant physiology calculator for Farquhar-von Caemmerer-Berry (FvCB) C3 leaf photosynthesis, Rubisco kinetics (Vcmax), electron transport (J).",
+    "tags": "tools co2 enrichment leaf photosynthesis farquhar calculator html biochemical farquhar fvcb leaf photosynthesis industrial plant physiology calculator for farquhar von caemmerer berry fvcb c"
   },
   {
-    "title": "Commercial CEA Feasibility & Grant Dossier Generator",
+    "title": "CEA Feasibility &amp; Grant Dossier Generator",
     "cat": "tool",
     "url": "tools/commercial-feasibility-grant-dossier-generator.html",
     "icon": "🛠️",
-    "desc": "Institutional agricultural feasibility modeler and non-dilutive grant dossier generator across 50 US states. Computes CAPEX, OPEX, USDA REAP/EQIP stacking, 10-y",
-    "tags": "tools commercial feasibility grant dossier generator html commercial cea feasibility grant dossier generator institutional agricultural feasibility modeler and non dilutive grant dossier gen"
+    "desc": "Institutional agricultural feasibility modeler and non-dilutive grant dossier generator across 50 US states.",
+    "tags": "tools commercial feasibility grant dossier generator html cea feasibility amp grant dossier generator institutional agricultural feasibility modeler and non dilutive grant dossier generator "
   },
   {
-    "title": "Commercial Crop Steering Matrix (Generative vs Vegetative)",
+    "title": "Crop Steering Matrix (Generative vs Vegetative)",
     "cat": "tool",
     "url": "tools/crop-steering-generative-vegetative-matrix.html",
     "icon": "🛠️",
-    "desc": "Industrial crop steering optimizer for high-wire greenhouse tomatoes, peppers, and cannabis. Calculate 24h DIF, VPD differential, and irrigation dry-down balanc",
-    "tags": "tools crop steering generative vegetative matrix html commercial crop steering matrix generative vs vegetative industrial crop steering optimizer for high wire greenhouse tomatoes peppers an"
+    "desc": "Industrial crop steering optimizer for high-wire greenhouse tomatoes, peppers, and cannabis.",
+    "tags": "tools crop steering generative vegetative matrix html crop steering matrix generative vs vegetative industrial crop steering optimizer for high wire greenhouse tomatoes peppers and cannabis"
   },
   {
-    "title": "Xylem Calcium Flux & Blossom-End Rot (BER) Risk Engine",
+    "title": "Xylem Calcium Flux &amp; Blossom-End Rot (BER) Risk",
     "cat": "tool",
     "url": "tools/crop-transpiration-calcium-blossom-end-rot-risk-model.html",
     "icon": "🛠️",
-    "desc": "Industrial plant physiology calculator for xylem calcium transport kinetics, transpiration pull, and Blossom-End Rot (BER) risk forecasting in commercial greenh",
-    "tags": "tools crop transpiration calcium blossom end rot risk model html xylem calcium flux blossom end rot ber risk engine industrial plant physiology calculator for xylem calcium transport kinetic"
+    "desc": "Industrial plant physiology calculator for xylem calcium transport kinetics, transpiration pull, and Blossom-End Rot (BER) risk forecasting in commercial.",
+    "tags": "tools crop transpiration calcium blossom end rot risk model html xylem calcium flux amp blossom end rot ber risk industrial plant physiology calculator for xylem calcium transport kinetics t"
   },
   {
-    "title": "Crop Yield & Biomass Accumulation DLI Forecaster",
+    "title": "Crop Yield &amp; Biomass Accumulation DLI Forecaster",
     "cat": "tool",
     "url": "tools/crop-yield-biomass-dli-forecaster.html",
     "icon": "🛠️",
-    "desc": "Predictive photosynthetic dry matter accumulation, Light Use Efficiency (LUE), and weekly commercial crop harvest yields based on cumulative Daily Light Integra",
-    "tags": "tools crop yield biomass dli forecaster html crop yield biomass accumulation dli forecaster predictive photosynthetic dry matter accumulation light use efficiency lue and weekly commercial c"
+    "desc": "Predictive photosynthetic dry matter accumulation, Light Use Efficiency (LUE), and weekly commercial crop harvest yields based on cumulative Daily Light.",
+    "tags": "tools crop yield biomass dli forecaster html crop yield amp biomass accumulation dli forecaster predictive photosynthetic dry matter accumulation light use efficiency lue and weekly commerci"
   },
   {
     "title": "Greenhouse Digital Twin Microclimate Simulator",
     "cat": "tool",
     "url": "tools/digital-twin-greenhouse-simulator.html",
     "icon": "🛠️",
-    "desc": "Industrial-grade interactive Venlo greenhouse digital twin simulator. Model real-time solar radiation, VPD, crop transpiration, thermal screens, and automated P",
+    "desc": "Industrial-grade interactive Venlo greenhouse digital twin simulator. Model real-time solar radiation, VPD, crop transpiration, thermal screens.",
     "tags": "tools digital twin greenhouse simulator html greenhouse digital twin microclimate simulator industrial grade interactive venlo greenhouse digital twin simulator model real time solar radiati"
   },
   {
-    "title": "Commercial Greenhouse DLI & LED Spectrum Photomorphogenesis Calculator",
+    "title": "DLI &amp; LED Spectrum Photomorphogenesis Calculator",
     "cat": "tool",
     "url": "tools/dli-spectrum-photomorphogenesis-calculator.html",
     "icon": "🛠️",
     "desc": "Industrial-grade Daily Light Integral (DLI) & Far-Red (730nm) Emerson Enhancement Effect spectral calculator for commercial greenhouse horticulture.",
-    "tags": "tools dli spectrum photomorphogenesis calculator html commercial greenhouse dli led spectrum photomorphogenesis calculator industrial grade daily light integral dli far red 730nm emerson enh"
+    "tags": "tools dli spectrum photomorphogenesis calculator html dli amp led spectrum photomorphogenesis calculator industrial grade daily light integral dli far red 730nm emerson enhancement effect sp"
   },
   {
-    "title": "EU Greenhouse Energy Audit (DIN V 18599 / BLE Grant) & Farm Succession (Hofnachfolge) ROI Simulator",
+    "title": "EU Greenhouse Energy Audit",
     "cat": "tool",
     "url": "tools/eu-greenhouse-energy-hofnachfolge-roi-simulator.html",
     "icon": "🇩🇪",
-    "desc": "Interactive European glasshouse energy modernization (DIN V 18599, EN 13031-1, BLE 40% CAPEX grant, BEHG CO2 tax savings) and German farm succession (Hofnachfol",
-    "tags": "tools eu greenhouse energy hofnachfolge roi simulator html eu greenhouse energy audit din v 18599 ble grant farm succession hofnachfolge roi simulator interactive european glasshouse energy "
+    "desc": "Interactive European glasshouse energy modernization (DIN V 18599, EN 13031-1, BLE 40% CAPEX grant, BEHG CO2 tax savings) and German farm succession.",
+    "tags": "tools eu greenhouse energy hofnachfolge roi simulator html eu greenhouse energy audit interactive european glasshouse energy modernization din v 18599 en 13031 1 ble 40 capex grant behg co2 "
   },
   {
-    "title": "Greenhouse Hourly Penman-Monteith Evapotranspiration (ETc) Calculator",
+    "title": "Greenhouse Hourly Penman-Monteith",
     "cat": "tool",
     "url": "tools/evapotranspiration-penman-monteith-calculator.html",
     "icon": "🛠️",
-    "desc": "Industrial FAO-56 Penman-Monteith hourly crop evapotranspiration (ETc), canopy resistance (rc), and aerodynamic resistance (ra) calculator for commercial greenh",
-    "tags": "tools evapotranspiration penman monteith calculator html greenhouse hourly penman monteith evapotranspiration etc calculator industrial fao 56 penman monteith hourly crop evapotranspiration "
+    "desc": "Industrial FAO-56 Penman-Monteith hourly crop evapotranspiration (ETc), canopy resistance (rc), and aerodynamic resistance (ra) calculator for commercial.",
+    "tags": "tools evapotranspiration penman monteith calculator html greenhouse hourly penman monteith industrial fao 56 penman monteith hourly crop evapotranspiration etc canopy resistance rc and aerod"
   },
   {
-    "title": "High-Pressure Fogging & Evaporative Cooling Droplet Engine",
+    "title": "High-Pressure Fogging &amp; Evaporative Cooling",
     "cat": "tool",
     "url": "tools/fogging-nozzle-droplet-evaporative-cooling-engine.html",
     "icon": "🛠️",
-    "desc": "Industrial 70 bar high-pressure fogging calculator. Compute Sauter Mean Diameter (D32 &lt; 10µm), flash evaporation rates, adiabatic temperature drop, and leaf ",
-    "tags": "tools fogging nozzle droplet evaporative cooling engine html high pressure fogging evaporative cooling droplet engine industrial 70 bar high pressure fogging calculator compute sauter mean d"
+    "desc": "Industrial 70 bar high-pressure fogging calculator. Compute Sauter Mean Diameter (D32 &lt; 10µm), flash evaporation rates, adiabatic temperature drop, and leaf.",
+    "tags": "tools fogging nozzle droplet evaporative cooling engine html high pressure fogging amp evaporative cooling industrial 70 bar high pressure fogging calculator compute sauter mean diameter d32"
   },
   {
-    "title": "Global Agri-Subsidy & Grant Navigator",
+    "title": "Global Agri-Subsidy &amp; Grant Navigator",
     "cat": "tool",
     "url": "tools/global-agri-subsidy-grant-navigator.html",
     "icon": "🛠️",
-    "desc": "Official California (CDFA SWEEP/HSP/AMMP/FPIP/PHP/OTPP, CARB FARMER, CEC), USDA, European (BLE/GAP), and South Korean agricultural subsidy intelligence. Explore",
-    "tags": "tools global agri subsidy grant navigator html global agri subsidy grant navigator official california cdfa sweep hsp ammp fpip php otpp carb farmer cec usda european ble gap and south korea"
+    "desc": "Official California (CDFA SWEEP/HSP/AMMP/FPIP/PHP/OTPP, CARB FARMER, CEC), USDA, European (BLE/GAP), and South Korean agricultural subsidy intelligence.",
+    "tags": "tools global agri subsidy grant navigator html global agri subsidy amp grant navigator official california cdfa sweep hsp ammp fpip php otpp carb farmer cec usda european ble gap and south k"
   },
   {
-    "title": "3D WebGL Venlo Greenhouse Digital Twin & Real-Time Physics Simulator",
+    "title": "3D WebGL Venlo Greenhouse Digital Twin &amp; Real-Time",
     "cat": "tool",
     "url": "tools/greenhouse-3d-digital-twin-simulator.html",
     "icon": "🛠️",
-    "desc": "Interactive 3D WebGL Venlo glasshouse digital twin. Real-time solar trajectory shadow mapping, dynamic thermal screen deployment, roof vent airflow dynamics, an",
-    "tags": "tools greenhouse 3d digital twin simulator html 3d webgl venlo greenhouse digital twin real time physics simulator interactive 3d webgl venlo glasshouse digital twin real time solar trajecto"
+    "desc": "Interactive 3D WebGL Venlo glasshouse digital twin. Real-time solar trajectory shadow mapping, dynamic thermal screen deployment, roof vent airflow dynamics.",
+    "tags": "tools greenhouse 3d digital twin simulator html 3d webgl venlo greenhouse digital twin amp real time interactive 3d webgl venlo glasshouse digital twin real time solar trajectory shadow mapp"
   },
   {
-    "title": "Autonomous Climate Computer AI & Model Predictive Control (MPC) Simulator",
+    "title": "Autonomous Climate Computer AI &amp; Model Predictive",
     "cat": "tool",
     "url": "tools/greenhouse-autonomous-ai-climate-controller.html",
     "icon": "🛠️",
-    "desc": "Reinforcement learning and Model Predictive Control (MPC) simulator for autonomous greenhouse climate computers, optimizing 24h temperature trajectories and sav",
-    "tags": "tools greenhouse autonomous ai climate controller html autonomous climate computer ai model predictive control mpc simulator reinforcement learning and model predictive control mpc simulator"
+    "desc": "Reinforcement learning and Model Predictive Control (MPC) simulator for autonomous greenhouse climate computers, optimizing 24h temperature trajectories.",
+    "tags": "tools greenhouse autonomous ai climate controller html autonomous climate computer ai amp model predictive reinforcement learning and model predictive control mpc simulator for autonomous gr"
   },
   {
-    "title": "Greenhouse Biological Pest Control (IPM) & Predator Release Calculator",
+    "title": "Greenhouse Biological Pest Control (IPM)",
     "cat": "tool",
     "url": "tools/greenhouse-biological-pest-control-ipm-calculator.html",
     "icon": "🛠️",
-    "desc": "Industrial Integrated Pest Management (IPM) bio-control calculator for commercial greenhouses. Calculate predatory mite (Phytoseiulus, Amblyseius) and parasitoi",
-    "tags": "tools greenhouse biological pest control ipm calculator html greenhouse biological pest control ipm predator release calculator industrial integrated pest management ipm bio control calculat"
+    "desc": "Industrial Integrated Pest Management (IPM) bio-control calculator for commercial greenhouses.",
+    "tags": "tools greenhouse biological pest control ipm calculator html greenhouse biological pest control ipm industrial integrated pest management ipm bio control calculator for commercial greenhouse"
   },
   {
-    "title": "Greenhouse Biomass CHP & Waste Heat ROI Simulator",
+    "title": "Greenhouse Biomass CHP &amp; Waste Heat ROI Simulator",
     "cat": "tool",
     "url": "tools/greenhouse-biomass-chp-energy-roi-calculator.html",
     "icon": "🛠️",
-    "desc": "Interactive precision engineering calculator for greenhouse biomass-fired CHP systems: model wood-chip fuel costs, fossil natural gas replacement, SCR CO2 dosin",
-    "tags": "tools greenhouse biomass chp energy roi calculator html greenhouse biomass chp waste heat roi simulator interactive precision engineering calculator for greenhouse biomass fired chp systems "
+    "desc": "Interactive precision engineering calculator for greenhouse biomass-fired CHP systems: model wood-chip fuel costs, fossil natural gas replacement, SCR CO2.",
+    "tags": "tools greenhouse biomass chp energy roi calculator html greenhouse biomass chp amp waste heat roi simulator interactive precision engineering calculator for greenhouse biomass fired chp syst"
   },
   {
-    "title": "Commercial Greenhouse 10-Year CapEx, OpEx, IRR & NPV Investment Engine",
+    "title": "10-Year CapEx, OpEx, IRR &amp; NPV Investment Engine",
     "cat": "tool",
     "url": "tools/greenhouse-capex-opex-10year-roi-calculator.html",
     "icon": "🛠️",
-    "desc": "Industrial financial engineering calculator for high-tech commercial glasshouse investments: CapEx breakdown, 10-year OpEx cash flows, Internal Rate of Return (",
-    "tags": "tools greenhouse capex opex 10year roi calculator html commercial greenhouse 10 year capex opex irr npv investment engine industrial financial engineering calculator for high tech commercial"
+    "desc": "Industrial financial engineering calculator for high-tech commercial glasshouse investments: CapEx breakdown, 10-year OpEx cash flows, Internal Rate.",
+    "tags": "tools greenhouse capex opex 10year roi calculator html 10 year capex opex irr amp npv investment engine industrial financial engineering calculator for high tech commercial glasshouse invest"
   },
   {
-    "title": "Greenhouse CO2 Enrichment & Economics Optimizer",
+    "title": "Greenhouse CO2 Enrichment &amp; Economics Optimizer",
     "cat": "tool",
     "url": "tools/greenhouse-co2-enrichment-optimizer.html",
     "icon": "🛠️",
     "desc": "Industrial CO2 dosing kinetics and economics optimizer. Calculate pure liquid vs flue gas dosing costs, ventilation purge losses, and net crop yield gains.",
-    "tags": "tools greenhouse co2 enrichment optimizer html greenhouse co2 enrichment economics optimizer industrial co2 dosing kinetics and economics optimizer calculate pure liquid vs flue gas dosing c"
+    "tags": "tools greenhouse co2 enrichment optimizer html greenhouse co2 enrichment amp economics optimizer industrial co2 dosing kinetics and economics optimizer calculate pure liquid vs flue gas dosi"
   },
   {
-    "title": "EPEX SPOT Dynamic Tariff, Power-to-Heat (20 kV Boiler), Heat Pump &amp; BESS Arbitrage Simulator",
+    "title": "EPEX SPOT Dynamic Tariff, Power-to-Heat",
     "cat": "tool",
     "url": "tools/greenhouse-energy-tariff-bess-p2h-arbitrage-calculator.html",
     "icon": "🛠️",
-    "desc": "Commercial greenhouse EPEX SPOT negative electricity price, 20 kV Power-to-Heat electrode boiler, industrial heat pump, LFP-BESS, and stratified thermal buffer ",
-    "tags": "tools greenhouse energy tariff bess p2h arbitrage calculator html epex spot dynamic tariff power to heat 20 kv boiler heat pump amp bess arbitrage simulator commercial greenhouse epex spot n"
+    "desc": "Commercial greenhouse EPEX SPOT negative electricity price, 20 kV Power-to-Heat electrode boiler, industrial heat pump, LFP-BESS, and stratified thermal.",
+    "tags": "tools greenhouse energy tariff bess p2h arbitrage calculator html epex spot dynamic tariff power to heat commercial greenhouse epex spot negative electricity price 20 kv power to heat electr"
   },
   {
-    "title": "Greenhouse Heating Load, Thermal Screen & Green Energy Transition Sizer (DIN V 18599)",
+    "title": "Greenhouse Heating Load, Thermal Screen &amp; Green",
     "cat": "tool",
     "url": "tools/greenhouse-heating-load-thermal-screen-calculator.html",
     "icon": "🛠️",
-    "desc": "Commercial engineering calculator for greenhouse peak heating demand, DIN V 18599 thermal screen savings, hydronic pipe rail sizing, and geothermal/biomass rene",
-    "tags": "tools greenhouse heating load thermal screen calculator html greenhouse heating load thermal screen green energy transition sizer din v 18599 commercial engineering calculator for greenhouse"
+    "desc": "Commercial engineering calculator for greenhouse peak heating demand, DIN V 18599 thermal screen savings, hydronic pipe rail sizing, and geothermal/biomass.",
+    "tags": "tools greenhouse heating load thermal screen calculator html greenhouse heating load thermal screen amp green commercial engineering calculator for greenhouse peak heating demand din v 18599"
   },
   {
-    "title": "Horticultural LED Thermal Heat-Sink & Junction Temperature (Tj) Optimizer",
+    "title": "Horticultural LED Thermal Heat-Sink &amp; Junction",
     "cat": "tool",
     "url": "tools/greenhouse-lighting-led-thermal-cfd-optimizer.html",
     "icon": "🛠️",
-    "desc": "Industrial engineering calculator for horticultural LED fixture thermal dissipation, junction temperature (Tj), photon efficacy derating, and canopy convective ",
-    "tags": "tools greenhouse lighting led thermal cfd optimizer html horticultural led thermal heat sink junction temperature tj optimizer industrial engineering calculator for horticultural led fixture"
+    "desc": "Industrial engineering calculator for horticultural LED fixture thermal dissipation, junction temperature (Tj), photon efficacy derating, and canopy.",
+    "tags": "tools greenhouse lighting led thermal cfd optimizer html horticultural led thermal heat sink amp junction industrial engineering calculator for horticultural led fixture thermal dissipation "
   },
   {
-    "title": "Greenhouse HAF Air Circulation & CFD Air Velocity Optimizer",
+    "title": "Greenhouse HAF Air Circulation &amp; CFD Air Velocity",
     "cat": "tool",
     "url": "tools/greenhouse-microclimate-cfd-air-velocity-optimizer.html",
     "icon": "🛠️",
-    "desc": "Industrial CFD calculator for horizontal air flow (HAF) fan spacing, jet throw distance, Bernoulli air entrainment, and microclimate boundary layer destratifica",
-    "tags": "tools greenhouse microclimate cfd air velocity optimizer html greenhouse haf air circulation cfd air velocity optimizer industrial cfd calculator for horizontal air flow haf fan spacing jet "
+    "desc": "Industrial CFD calculator for horizontal air flow (HAF) fan spacing, jet throw distance, Bernoulli air entrainment, and microclimate boundary layer.",
+    "tags": "tools greenhouse microclimate cfd air velocity optimizer html greenhouse haf air circulation amp cfd air velocity industrial cfd calculator for horizontal air flow haf fan spacing jet throw "
   },
   {
-    "title": "Smart Greenhouse Edge IoT & MQTT Telemetry Fleet Simulator",
+    "title": "Smart Greenhouse Edge IoT &amp; MQTT Telemetry Fleet",
     "cat": "tool",
     "url": "tools/greenhouse-mqtt-edge-iot-fleet-simulator.html",
     "icon": "🛠️",
-    "desc": "Industrial IoT simulator streaming real-time MQTT telemetry across 100 virtual greenhouse microclimate, slab TDR, and PAR sensor nodes with edge anomaly detecti",
-    "tags": "tools greenhouse mqtt edge iot fleet simulator html smart greenhouse edge iot mqtt telemetry fleet simulator industrial iot simulator streaming real time mqtt telemetry across 100 virtual gr"
+    "desc": "Industrial IoT simulator streaming real-time MQTT telemetry across 100 virtual greenhouse microclimate, slab TDR, and PAR sensor nodes with edge anomaly.",
+    "tags": "tools greenhouse mqtt edge iot fleet simulator html smart greenhouse edge iot amp mqtt telemetry fleet industrial iot simulator streaming real time mqtt telemetry across 100 virtual greenhou"
   },
   {
-    "title": "Greenhouse Natural Ventilation & Buoyancy-Driven Airflow Calculator",
+    "title": "Greenhouse Natural Ventilation &amp; Buoyancy-Driven",
     "cat": "tool",
     "url": "tools/greenhouse-natural-ventilation-buoyancy-airflow-calculator.html",
     "icon": "🛠️",
-    "desc": "Calculate natural ventilation rates, buoyancy-driven (stack effect) and wind-driven airflow through greenhouse vents using ASABE EP406.4 and De Jong & Bot therm",
-    "tags": "tools greenhouse natural ventilation buoyancy airflow calculator html greenhouse natural ventilation buoyancy driven airflow calculator calculate natural ventilation rates buoyancy driven st"
+    "desc": "Calculate natural ventilation rates, buoyancy-driven (stack effect) and wind-driven airflow through greenhouse vents using ASABE EP406.4 and De Jong &amp; Bot.",
+    "tags": "tools greenhouse natural ventilation buoyancy airflow calculator html greenhouse natural ventilation amp buoyancy driven calculate natural ventilation rates buoyancy driven stack effect and "
   },
   {
-    "title": "Greenhouse Structural Wind, Snow & Crop Load (EN 13031-1 / NEN 3859)",
+    "title": "Greenhouse Structural Wind, Snow &amp; Crop Load",
     "cat": "tool",
     "url": "tools/greenhouse-structural-wind-snow-load-nen3859-calculator.html",
     "icon": "🛠️",
-    "desc": "Industrial structural engineering calculator for Venlo greenhouse wind pressure (qw), snow load (qs), trellised crop wire weight, and column moment according to",
-    "tags": "tools greenhouse structural wind snow load nen3859 calculator html greenhouse structural wind snow crop load en 13031 1 nen 3859 industrial structural engineering calculator for venlo greenh"
+    "desc": "Industrial structural engineering calculator for Venlo greenhouse wind pressure (qw), snow load (qs), trellised crop wire weight, and column moment according.",
+    "tags": "tools greenhouse structural wind snow load nen3859 calculator html greenhouse structural wind snow amp crop load industrial structural engineering calculator for venlo greenhouse wind pressu"
   },
   {
-    "title": "Hydroponic Chemical Speciation & Mineral Precipitation Index (SI)",
+    "title": "Hydroponic Chemical Speciation &amp; Mineral",
     "cat": "tool",
     "url": "tools/hydroponic-chemical-speciation-precipitation-index.html",
     "icon": "🛠️",
-    "desc": "Industrial chemical speciation calculator for hydroponic nutrient solutions: Debye-Hückel ionic strength, ion activity coefficients, and Saturation Index (SI) f",
-    "tags": "tools hydroponic chemical speciation precipitation index html hydroponic chemical speciation mineral precipitation index si industrial chemical speciation calculator for hydroponic nutrient "
+    "desc": "Industrial chemical speciation calculator for hydroponic nutrient solutions: Debye-Hückel ionic strength, ion activity coefficients, and Saturation Index.",
+    "tags": "tools hydroponic chemical speciation precipitation index html hydroponic chemical speciation amp mineral industrial chemical speciation calculator for hydroponic nutrient solutions debye hüc"
   },
   {
-    "title": "Hydroponic Nutrient Formulation & Ion Balance Calculator",
+    "title": "Hydroponic Nutrient Formulation &amp; Ion Balance",
     "cat": "tool",
     "url": "tools/hydroponic-nutrient-solution-calculator.html",
     "icon": "🛠️",
-    "desc": "Industrial-grade commercial hydroponic nutrient solution calculator. Optimize Hoagland, Sonneveld, and Steiner ionic ratios (NO3, K, Ca, Mg, P) for greenhouse c",
-    "tags": "tools hydroponic nutrient solution calculator html hydroponic nutrient formulation ion balance calculator industrial grade commercial hydroponic nutrient solution calculator optimize hoaglan"
+    "desc": "Industrial-grade commercial hydroponic nutrient solution calculator. Optimize Hoagland, Sonneveld, and Steiner ionic ratios (NO3, K, Ca, Mg, P).",
+    "tags": "tools hydroponic nutrient solution calculator html hydroponic nutrient formulation amp ion balance industrial grade commercial hydroponic nutrient solution calculator optimize hoagland sonne"
   },
   {
-    "title": "Greenhouse & Controlled Environment Engineering Tools Suite (42 Enterprise Tools)",
+    "title": "Greenhouse &amp; Controlled Environment Engineering",
     "cat": "tool",
     "url": "tools/index.html",
     "icon": "🛠️",
-    "desc": "A comprehensive suite of 42 industrial-grade commercial greenhouse engineering calculators, 3D WebGL digital twin simulators, 150-grant global agri-subsidy navi",
-    "tags": "tools index html greenhouse controlled environment engineering tools suite 42 enterprise tools a comprehensive suite of 42 industrial grade commercial greenhouse engineering calculators 3d w"
+    "desc": "A comprehensive suite of 42 industrial-grade commercial greenhouse engineering calculators, 3D WebGL digital twin simulators, 150-grant global agri-subsidy.",
+    "tags": "tools index html greenhouse amp controlled environment engineering a comprehensive suite of 42 industrial grade commercial greenhouse engineering calculators 3d webgl digital twin simulators"
   },
   {
-    "title": "Greenhouse Nutrient Uptake Concentration Factor (UCF) & Drain-to-Waste Analyzer",
+    "title": "Greenhouse Nutrient Uptake Concentration Factor",
     "cat": "tool",
     "url": "tools/nutrient-uptake-concentration-factor-analyzer.html",
     "icon": "🛠️",
-    "desc": "Model nutrient uptake concentration factors in recirculating and drain-to-waste hydroponic systems. Simulate EC drift, ion accumulation, and optimal drain fract",
-    "tags": "tools nutrient uptake concentration factor analyzer html greenhouse nutrient uptake concentration factor ucf drain to waste analyzer model nutrient uptake concentration factors in recirculat"
+    "desc": "Model nutrient uptake concentration factors in recirculating and drain-to-waste hydroponic systems.",
+    "tags": "tools nutrient uptake concentration factor analyzer html greenhouse nutrient uptake concentration factor model nutrient uptake concentration factors in recirculating and drain to waste hydro"
   },
   {
-    "title": "OpenCEA Developer Hub & Interactive REST API / MCP Playground",
+    "title": "OpenCEA Developer Hub &amp; Interactive REST API / MCP",
     "cat": "tool",
     "url": "tools/opencea-python-micro-framework-playground.html",
     "icon": "🛠️",
-    "desc": "Open-access developer documentation, interactive REST API playground, and open-source MCP server for greenhouse physics, VPD, DLI, evapotranspiration, and IPM b",
-    "tags": "tools opencea python micro framework playground html opencea developer hub interactive rest api mcp playground open access developer documentation interactive rest api playground and open so"
+    "desc": "Open-access developer documentation, interactive REST API playground, and open-source MCP server for greenhouse physics, VPD, DLI, evapotranspiration.",
+    "tags": "tools opencea python micro framework playground html opencea developer hub amp interactive rest api mcp open access developer documentation interactive rest api playground and open source mc"
   },
   {
-    "title": "Canopy Light Extinction (Beer-Lambert & LAI) Calculator",
+    "title": "Canopy Light Extinction (Beer-Lambert &amp; LAI)",
     "cat": "tool",
     "url": "tools/par-far-red-canopy-extinction-beer-lambert-calculator.html",
     "icon": "🛠️",
-    "desc": "Industrial plant physiology calculator for multi-layer canopy light extinction (Beer-Lambert Law), Leaf Area Index (LAI), and diffuse vs direct photon penetrati",
-    "tags": "tools par far red canopy extinction beer lambert calculator html canopy light extinction beer lambert lai calculator industrial plant physiology calculator for multi layer canopy light extin"
+    "desc": "Industrial plant physiology calculator for multi-layer canopy light extinction (Beer-Lambert Law), Leaf Area Index (LAI), and diffuse vs direct photon.",
+    "tags": "tools par far red canopy extinction beer lambert calculator html canopy light extinction beer lambert amp lai industrial plant physiology calculator for multi layer canopy light extinction b"
   },
   {
-    "title": "Psychrometric Mollier Diagram & Greenhouse Dehumidification Optimizer",
+    "title": "Psychrometric Mollier Diagram &amp; Greenhouse",
     "cat": "tool",
     "url": "tools/psychrometric-mollier-greenhouse-dehumidifier.html",
     "icon": "🛠️",
     "desc": "Industrial psychrometric air state and greenhouse dehumidification energy optimizer. Compare mechanical heat pumps vs ridge vent purging.",
-    "tags": "tools psychrometric mollier greenhouse dehumidifier html psychrometric mollier diagram greenhouse dehumidification optimizer industrial psychrometric air state and greenhouse dehumidificatio"
+    "tags": "tools psychrometric mollier greenhouse dehumidifier html psychrometric mollier diagram amp greenhouse industrial psychrometric air state and greenhouse dehumidification energy optimizer comp"
   },
   {
-    "title": "Rockwool Slab TDR Moisture & Drain EC Balancing Optimizer",
+    "title": "Rockwool Slab TDR Moisture &amp; Drain EC Balancing",
     "cat": "tool",
     "url": "tools/rockwool-substrate-tdr-moisture-drain-optimizer.html",
     "icon": "🛠️",
     "desc": "Industrial substrate water content (VWC %), dry-down kinetics, and drainage EC balancing calculator for commercial rockwool slab hydroponics.",
-    "tags": "tools rockwool substrate tdr moisture drain optimizer html rockwool slab tdr moisture drain ec balancing optimizer industrial substrate water content vwc dry down kinetics and drainage ec ba"
+    "tags": "tools rockwool substrate tdr moisture drain optimizer html rockwool slab tdr moisture amp drain ec balancing industrial substrate water content vwc dry down kinetics and drainage ec balancin"
   },
   {
-    "title": "Semi-Closed Greenhouse ATU & Mollier h-x Psychrometric 3D Simulator",
+    "title": "Semi-Closed Greenhouse ATU &amp; Mollier h-x",
     "cat": "tool",
     "url": "tools/semi-closed-greenhouse-atu-mollier-simulator.html",
     "icon": "🛠️",
-    "desc": "Interactive 3D Semi-Closed Greenhouse Air Treatment Unit (ATU) & Mollier h-x psychrometric simulator. Model Kubo Ultra-Clima & ModulAIR adiabatic fogging, under",
-    "tags": "tools semi closed greenhouse atu mollier simulator html semi closed greenhouse atu mollier h x psychrometric 3d simulator interactive 3d semi closed greenhouse air treatment unit atu mollier"
+    "desc": "Interactive 3D Semi-Closed Greenhouse Air Treatment Unit (ATU) &amp; Mollier h-x psychrometric simulator.",
+    "tags": "tools semi closed greenhouse atu mollier simulator html semi closed greenhouse atu amp mollier h x interactive 3d semi closed greenhouse air treatment unit atu amp mollier h x psychrometric "
   },
   {
-    "title": "Substrate Matric Potential (pF Curve & van Genuchten) Calculator",
+    "title": "Substrate Matric Potential",
     "cat": "tool",
     "url": "tools/soil-matrix-water-potential-matric-suction-calculator.html",
     "icon": "🛠️",
-    "desc": "Industrial agricultural physics calculator for substrate matric water potential (Psi_m), pF retention curves, van Genuchten model, and field capacity vs wilting",
-    "tags": "tools soil matrix water potential matric suction calculator html substrate matric potential pf curve van genuchten calculator industrial agricultural physics calculator for substrate matric "
+    "desc": "Industrial agricultural physics calculator for substrate matric water potential (Psi_m), pF retention curves, van Genuchten model, and field capacity vs.",
+    "tags": "tools soil matrix water potential matric suction calculator html substrate matric potential industrial agricultural physics calculator for substrate matric water potential psi m pf retention"
   },
   {
-    "title": "Hot Water Buffer Tank Thermal Storage & Stratification Sizing",
+    "title": "Hot Water Buffer Tank Thermal Storage",
     "cat": "tool",
     "url": "tools/solar-thermal-buffer-tank-stratification-calculator.html",
     "icon": "🛠️",
-    "desc": "Industrial engineering calculator for greenhouse hot-water buffer tank thermal storage (MWh), thermocline stratification stability, and night peak heating disch",
-    "tags": "tools solar thermal buffer tank stratification calculator html hot water buffer tank thermal storage stratification sizing industrial engineering calculator for greenhouse hot water buffer t"
+    "desc": "Industrial engineering calculator for greenhouse hot-water buffer tank thermal storage (MWh), thermocline stratification stability, and night peak heating.",
+    "tags": "tools solar thermal buffer tank stratification calculator html hot water buffer tank thermal storage industrial engineering calculator for greenhouse hot water buffer tank thermal storage mw"
   },
   {
-    "title": "Closed-Loop UV-C Disinfection & Pathogen Log-Reduction Calculator",
+    "title": "Closed-Loop UV-C Disinfection &amp; Pathogen [Tool]",
     "cat": "tool",
     "url": "tools/uvc-drainage-pathogen-disinfection-calculator.html",
     "icon": "🛠️",
-    "desc": "Industrial UV-C radiation dose (mJ/cm2), UVT% water transmissivity, and Chick-Watson log-reduction kinetics for ToBRFV, Pythium, and Fusarium in hydroponic drai",
-    "tags": "tools uvc drainage pathogen disinfection calculator html closed loop uv c disinfection pathogen log reduction calculator industrial uv c radiation dose mj cm2 uvt water transmissivity and ch"
+    "desc": "Industrial UV-C radiation dose (mJ/cm2), UVT% water transmissivity, and Chick-Watson log-reduction kinetics for ToBRFV, Pythium, and Fusarium in hydroponic.",
+    "tags": "tools uvc drainage pathogen disinfection calculator html closed loop uv c disinfection amp pathogen tool industrial uv c radiation dose mj cm2 uvt water transmissivity and chick watson log r"
   },
   {
-    "title": "VenloCAD 3D - Industrial Parametric Greenhouse CAD & Structural Engineering Engine",
+    "title": "VenloCAD 3D - Industrial Parametric Greenhouse CAD",
     "cat": "tool",
     "url": "tools/venlocad-3d.html",
     "icon": "🛠️",
-    "desc": "Industrial 3D parametric CAD and structural engineering engine for Venlo greenhouses. Features real-time WebGL frame generation, NEN 3859 / EN 13031-1 structura",
-    "tags": "tools venlocad 3d html venlocad 3d industrial parametric greenhouse cad structural engineering engine industrial 3d parametric cad and structural engineering engine for venlo greenhouses fea"
+    "desc": "Industrial 3D parametric CAD and structural engineering engine for Venlo greenhouses.",
+    "tags": "tools venlocad 3d html venlocad 3d industrial parametric greenhouse cad industrial 3d parametric cad and structural engineering engine for venlo greenhouses"
   },
   {
-    "title": "Photomorphogenic Regulation of Anthocyanin Biosynthetic Genes via Blue-to-Red Spectral Ratios",
+    "title": "Photomorphogenic Regulation of Anthocyanin",
     "cat": "wiki",
     "url": "wiki/anthocyanin_led_spectral_kinetics.html",
     "icon": "🧬",
     "desc": "Photomorphogenic regulation of Chalcone Synthase (CHS) and DFR gene expression via blue-to-red LED spectral ratios for anthocyanin induction.",
-    "tags": "wiki anthocyanin led spectral kinetics html photomorphogenic regulation of anthocyanin biosynthetic genes via blue to red spectral ratios photomorphogenic regulation of chalcone synthase chs"
+    "tags": "wiki anthocyanin led spectral kinetics html photomorphogenic regulation of anthocyanin photomorphogenic regulation of chalcone synthase chs and dfr gene expression via blue to red led spectr"
   },
   {
     "title": "Arugula / Rocket (Eruca vesicaria)",
@@ -2702,12 +2702,12 @@
     "tags": "wiki basil html sweet basil ocimum basilicum l hydroponic sweet basil ocimum basilicum cea engineering guide led spectrum steering for eugenol linalool oils and ca tip burn prevention"
   },
   {
-    "title": "Xylem-Mediated Calcium Translocation Kinetics and Root-Pressure Driven Guttation Steering",
+    "title": "Xylem-Mediated Calcium Translocation Kinetics",
     "cat": "wiki",
     "url": "wiki/calcium_channel_xylem_transport.html",
     "icon": "🧬",
     "desc": "Xylem-mediated calcium translocation kinetics, mechanosensitive Ca2+ channels, and nocturnal root-pressure guttation steering in Solanaceae.",
-    "tags": "wiki calcium channel xylem transport html xylem mediated calcium translocation kinetics and root pressure driven guttation steering xylem mediated calcium translocation kinetics mechanosensi"
+    "tags": "wiki calcium channel xylem transport html xylem mediated calcium translocation kinetics xylem mediated calcium translocation kinetics mechanosensitive ca2 channels and nocturnal root pressur"
   },
   {
     "title": "Care Farming",
@@ -2718,20 +2718,20 @@
     "tags": "wiki care farming html care farming therapeutic care farming amp barrier free cea engineering clinical horticultural therapy ergonomic glasshouse design and sensory steering"
   },
   {
-    "title": "Pulse-Amplitude-Modulation (PAM) Fluorometry and Fv/Fm Quantum Yield Kinetics under Rapid Spectrum Transitions",
+    "title": "Pulse-Amplitude-Modulation (PAM) Fluorometry",
     "cat": "wiki",
     "url": "wiki/chlorophyll_fluorescence_pam_stress_kinetics.html",
     "icon": "🧬",
     "desc": "Pulse-Amplitude-Modulation (PAM) fluorometry modeling of PSII quantum yield (Fv/Fm) and NPQ relaxation kinetics during LED spectrum ramping.",
-    "tags": "wiki chlorophyll fluorescence pam stress kinetics html pulse amplitude modulation pam fluorometry and fv fm quantum yield kinetics under rapid spectrum transitions pulse amplitude modulation"
+    "tags": "wiki chlorophyll fluorescence pam stress kinetics html pulse amplitude modulation pam fluorometry pulse amplitude modulation pam fluorometry modeling of psii quantum yield fv fm and npq rela"
   },
   {
-    "title": "Canopy CO2 Enrichment Dynamics (1200 ppm) and Rubisco Carboxylation Kinetics under Variable PPFD Regimes",
+    "title": "Canopy CO2 Enrichment Dynamics (1200 ppm)",
     "cat": "wiki",
     "url": "wiki/co2_injection_canopy_assimilation_kinetics.html",
     "icon": "🧬",
     "desc": "Canopy CO2 enrichment dynamics (1200 ppm), Rubisco carboxylation velocity (Vcmax), and photorespiration suppression under high PPFD regimes.",
-    "tags": "wiki co2 injection canopy assimilation kinetics html canopy co2 enrichment dynamics 1200 ppm and rubisco carboxylation kinetics under variable ppfd regimes canopy co2 enrichment dynamics 120"
+    "tags": "wiki co2 injection canopy assimilation kinetics html canopy co2 enrichment dynamics 1200 ppm canopy co2 enrichment dynamics 1200 ppm rubisco carboxylation velocity vcmax and photorespiration"
   },
   {
     "title": "Cucumber (Cucumis sativus)",
@@ -2742,36 +2742,36 @@
     "tags": "wiki cucumber html cucumber cucumis sativus high wire greenhouse cucumber cucumis sativus cea engineering guide high lai transpiration modeling vpd steering and k dominant fertigation"
   },
   {
-    "title": "Thermodynamic Optimization of Daily Light Integral (DLI) and Phytochrome Photostationary State (PSS)",
+    "title": "Thermodynamic Optimization of Daily Light",
     "cat": "wiki",
     "url": "wiki/dli_photomorphogenesis_steering.html",
     "icon": "🧬",
     "desc": "Thermodynamic optimization of Daily Light Integral (DLI) and Phytochrome Photostationary State (Pfr/Ptotal) in LED vertical farming canopies.",
-    "tags": "wiki dli photomorphogenesis steering html thermodynamic optimization of daily light integral dli and phytochrome photostationary state pss thermodynamic optimization of daily light integral "
+    "tags": "wiki dli photomorphogenesis steering html thermodynamic optimization of daily light thermodynamic optimization of daily light integral dli and phytochrome photostationary state pfr ptotal in"
   },
   {
-    "title": "Far-Red (730nm) Photon Fraction Steering for Rapid Leaf Area Index Expansion without Stem Lodging",
+    "title": "Far-Red (730nm) Photon Fraction Steering",
     "cat": "wiki",
     "url": "wiki/far_red_shade_avoidance_yield_kinetics.html",
     "icon": "🧬",
     "desc": "End-of-day Far-Red (730 nm) phytochrome photo-equilibrium steering for 35% faster Leaf Area Index (LAI) closure without stem lodging.",
-    "tags": "wiki far red shade avoidance yield kinetics html far red 730nm photon fraction steering for rapid leaf area index expansion without stem lodging end of day far red 730 nm phytochrome photo e"
+    "tags": "wiki far red shade avoidance yield kinetics html far red 730nm photon fraction steering end of day far red 730 nm phytochrome photo equilibrium steering for 35 faster leaf area index lai clo"
   },
   {
-    "title": "Root Zone Temperature (RZT) Dynamics, Dissolved Oxygen (DO) Saturation, and ATP Yield in NFT Spinach Channels",
+    "title": "Root Zone Temperature (RZT) Dynamics",
     "cat": "wiki",
     "url": "wiki/hydroponic_root_zone_temperature_respiration.html",
     "icon": "🧬",
     "desc": "Hydroponic Root Zone Temperature (RZT 18°C) chilling, dissolved oxygen saturation, mitochondrial ATP yield, and Pythium root rot suppression.",
-    "tags": "wiki hydroponic root zone temperature respiration html root zone temperature rzt dynamics dissolved oxygen do saturation and atp yield in nft spinach channels hydroponic root zone temperatur"
+    "tags": "wiki hydroponic root zone temperature respiration html root zone temperature rzt dynamics hydroponic root zone temperature rzt 18 c chilling dissolved oxygen saturation mitochondrial atp yie"
   },
   {
-    "title": "400-1000nm Hyperspectral Leaf Reflectance Modeling for Early Discrimination of Fe vs N Chlorosis",
+    "title": "400-1000nm Hyperspectral Leaf Reflectance",
     "cat": "wiki",
     "url": "wiki/hyperspectral_leaf_reflectance_nutrient_stress.html",
     "icon": "🧬",
     "desc": "400-1000 nm hyperspectral leaf reflectance and SVM machine learning classification for pre-symptomatic Fe vs. N chlorosis detection in CEA.",
-    "tags": "wiki hyperspectral leaf reflectance nutrient stress html 400 1000nm hyperspectral leaf reflectance modeling for early discrimination of fe vs n chlorosis 400 1000 nm hyperspectral leaf refle"
+    "tags": "wiki hyperspectral leaf reflectance nutrient stress html 400 1000nm hyperspectral leaf reflectance 400 1000 nm hyperspectral leaf reflectance and svm machine learning classification for pre "
   },
   {
     "title": "AgriAtlas CEA Engineering Encyclopedia",
@@ -2782,12 +2782,12 @@
     "tags": "wiki index html agriatlas cea engineering encyclopedia agriatlas cea engineering encyclopedia quantitative crop steering psychrometric vpd control hydroponic fertigation and plant physiology"
   },
   {
-    "title": "Real-Time Closed-Loop Machine Learning Ionic Activity Balancing in Recirculating Hydroponic Systems",
+    "title": "Real-Time Closed-Loop Machine Learning Ionic",
     "cat": "wiki",
     "url": "wiki/ion_selective_electrode_fertigation_ml.html",
     "icon": "🧬",
     "desc": "Closed-loop LSTM neural network and solid-state Ion-Selective Electrode (ISE) array for zero-discharge recirculating hydroponic fertigation.",
-    "tags": "wiki ion selective electrode fertigation ml html real time closed loop machine learning ionic activity balancing in recirculating hydroponic systems closed loop lstm neural network and solid"
+    "tags": "wiki ion selective electrode fertigation ml html real time closed loop machine learning ionic closed loop lstm neural network and solid state ion selective electrode ise array for zero disch"
   },
   {
     "title": "Curly Kale (Brassica oleracea var. sabellica)",
@@ -2798,36 +2798,36 @@
     "tags": "wiki kale html curly kale brassica oleracea var sabellica cea engineering guide for hydroponic curly kale cold stress dif steering glucosinolate and anthocyanin biosynthesis and vertical far"
   },
   {
-    "title": "Glucosinolate Accumulation Kinetics and Cold-Stress Induced Anthocyanin Biosynthesis in Brassica oleracea",
+    "title": "Glucosinolate Accumulation Kinetics",
     "cat": "wiki",
     "url": "wiki/kale_glucosinolate_cold_stress.html",
     "icon": "🧬",
     "desc": "Cold-night DIF (+8°C) and sulfate fertigation kinetics driving myrosinase (EC 3.2.1.147), glucoraphanin, and anthocyanin synthesis in kale.",
-    "tags": "wiki kale glucosinolate cold stress html glucosinolate accumulation kinetics and cold stress induced anthocyanin biosynthesis in brassica oleracea cold night dif 8 c and sulfate fertigation "
+    "tags": "wiki kale glucosinolate cold stress html glucosinolate accumulation kinetics cold night dif 8 c and sulfate fertigation kinetics driving myrosinase ec 3 2 1 147 glucoraphanin and anthocyanin"
   },
   {
-    "title": "Stoichiometric & Kinetic Modeling of Rubisco Carboxylation Efficiency under CO2 Enrichment",
+    "title": "Stoichiometric &amp; Kinetic Modeling of Rubisco",
     "cat": "wiki",
     "url": "wiki/kegg_carbon_rubisco_kinetics.html",
     "icon": "🧬",
     "desc": "Farquhar-von Caemmerer-Berry (FVCB) modeling of Rubisco carboxylation (Vcmax, Jmax) and KEGG carbon fixation under 1000 ppm CO2 enrichment.",
-    "tags": "wiki kegg carbon rubisco kinetics html stoichiometric kinetic modeling of rubisco carboxylation efficiency under co2 enrichment farquhar von caemmerer berry fvcb modeling of rubisco carboxyl"
+    "tags": "wiki kegg carbon rubisco kinetics html stoichiometric amp kinetic modeling of rubisco farquhar von caemmerer berry fvcb modeling of rubisco carboxylation vcmax jmax and kegg carbon fixation "
   },
   {
-    "title": "KEGG Carotenoid Biosynthetic Pathway Flux and Lutein Xanthophyll Photoprotection under High PPFD Regimes",
+    "title": "KEGG Carotenoid Biosynthetic Pathway Flux",
     "cat": "wiki",
     "url": "wiki/kegg_carotenoid_lutein_photoprotection.html",
     "icon": "🧬",
     "desc": "KEGG carotenoid pathway (sly00906) flux and lycopene epsilon-cyclase up-regulation for lutein xanthophyll photoprotection under UV-A + high PPFD.",
-    "tags": "wiki kegg carotenoid lutein photoprotection html kegg carotenoid biosynthetic pathway flux and lutein xanthophyll photoprotection under high ppfd regimes kegg carotenoid pathway sly00906 flu"
+    "tags": "wiki kegg carotenoid lutein photoprotection html kegg carotenoid biosynthetic pathway flux kegg carotenoid pathway sly00906 flux and lycopene epsilon cyclase up regulation for lutein xanthop"
   },
   {
-    "title": "Metabolic Flux Analysis of Flavonoid Biosynthesis (KEGG sly00941) under Osmotic and Thermal Stress",
+    "title": "Metabolic Flux Analysis of Flavonoid",
     "cat": "wiki",
     "url": "wiki/kegg_flavonoid_secondary_metabolism.html",
     "icon": "🧬",
     "desc": "Metabolic flux analysis of the KEGG flavonoid biosynthesis pathway (sly00941) and flavonol synthase kinetics under thermal-osmotic steering.",
-    "tags": "wiki kegg flavonoid secondary metabolism html metabolic flux analysis of flavonoid biosynthesis kegg sly00941 under osmotic and thermal stress metabolic flux analysis of the kegg flavonoid b"
+    "tags": "wiki kegg flavonoid secondary metabolism html metabolic flux analysis of flavonoid metabolic flux analysis of the kegg flavonoid biosynthesis pathway sly00941 and flavonol synthase kinetics "
   },
   {
     "title": "Lettuce (Lactuca sativa)",
@@ -2838,60 +2838,60 @@
     "tags": "wiki lettuce html lettuce lactuca sativa hydroponic and vertical farm lettuce lactuca sativa cea engineering guide dli optimization cfd airflow tip burn mitigation and nft control"
   },
   {
-    "title": "Navier-Stokes Fluid Dynamics Modeling of Leaf Boundary Layer Thermal Transport under Micro-Vectored Airflow",
+    "title": "Navier-Stokes Fluid Dynamics Modeling of Leaf",
     "cat": "wiki",
     "url": "wiki/micro_airflow_boundary_layer_fluid_dynamics.html",
     "icon": "🧬",
     "desc": "3D Navier-Stokes fluid dynamics modeling of leaf boundary layer thickness (0.6 mm) and transpirational Ca2+ flux under 0.35 m/s vertical airflow.",
-    "tags": "wiki micro airflow boundary layer fluid dynamics html navier stokes fluid dynamics modeling of leaf boundary layer thermal transport under micro vectored airflow 3d navier stokes fluid dynam"
+    "tags": "wiki micro airflow boundary layer fluid dynamics html navier stokes fluid dynamics modeling of leaf 3d navier stokes fluid dynamics modeling of leaf boundary layer thickness 0 6 mm and trans"
   },
   {
-    "title": "Metagenomic Characterization of Rhizosphere PGPR Siderophore Production in Organic Substrates",
+    "title": "Metagenomic Characterization of Rhizosphere",
     "cat": "wiki",
     "url": "wiki/microbial_rhizosphere_metagenomics.html",
     "icon": "🧬",
     "desc": "16S rRNA metagenomic characterization of PGPR pyoverdine siderophore iron chelation and Pythium suppression in organic coir hydroponics.",
-    "tags": "wiki microbial rhizosphere metagenomics html metagenomic characterization of rhizosphere pgpr siderophore production in organic substrates 16s rrna metagenomic characterization of pgpr pyove"
+    "tags": "wiki microbial rhizosphere metagenomics html metagenomic characterization of rhizosphere 16s rrna metagenomic characterization of pgpr pyoverdine siderophore iron chelation and pythium suppr"
   },
   {
-    "title": "Pulsed Pre-Harvest UV-B (310nm) Irradiation for 3-Fold Expansion of Sulforaphane Content in Broccoli Microgreens",
+    "title": "Pulsed Pre-Harvest UV-B (310nm) Irradiation",
     "cat": "wiki",
     "url": "wiki/microgreens_sulforaphane_enhancement_lighting.html",
     "icon": "🧬",
     "desc": "Pulsed pre-harvest UV-B (310 nm) elicitation up-regulating CYP79F1 and MYB28 for a 310% expansion of sulforaphane in Brassica microgreens.",
-    "tags": "wiki microgreens sulforaphane enhancement lighting html pulsed pre harvest uv b 310nm irradiation for 3 fold expansion of sulforaphane content in broccoli microgreens pulsed pre harvest uv b"
+    "tags": "wiki microgreens sulforaphane enhancement lighting html pulsed pre harvest uv b 310nm irradiation pulsed pre harvest uv b 310 nm elicitation up regulating cyp79f1 and myb28 for a 310 expansi"
   },
   {
-    "title": "Phosphate Transporter Gene Expression (Pht1 Family) and Arbuscular Mycorrhizal Symbiosis",
+    "title": "Phosphate Transporter Gene Expression",
     "cat": "wiki",
     "url": "wiki/mycorrhizal_phosphate_transporter_kinetics.html",
     "icon": "🧬",
     "desc": "Arbuscular mycorrhizal symbiosis and Pht1 phosphate transporter gene expression kinetics under low-phosphorus (0.35 mM) organic hydroponics.",
-    "tags": "wiki mycorrhizal phosphate transporter kinetics html phosphate transporter gene expression pht1 family and arbuscular mycorrhizal symbiosis arbuscular mycorrhizal symbiosis and pht1 phosphat"
+    "tags": "wiki mycorrhizal phosphate transporter kinetics html phosphate transporter gene expression arbuscular mycorrhizal symbiosis and pht1 phosphate transporter gene expression kinetics under low "
   },
   {
-    "title": "Circadian Clock Gating of Plastidic Nitrate Reductase (NR) Activity under Photoperiod Extension",
+    "title": "Circadian Clock Gating of Plastidic Nitrate",
     "cat": "wiki",
     "url": "wiki/nitrate_reductase_circadian_rhythm.html",
     "icon": "🧬",
     "desc": "Circadian clock (CCA1/LHY) gating of plastidic Nitrate Reductase (EC 1.7.1.1) phosphorylation and vacuolar nitrate purging under 16h photoperiods.",
-    "tags": "wiki nitrate reductase circadian rhythm html circadian clock gating of plastidic nitrate reductase nr activity under photoperiod extension circadian clock cca1 lhy gating of plastidic nitrat"
+    "tags": "wiki nitrate reductase circadian rhythm html circadian clock gating of plastidic nitrate circadian clock cca1 lhy gating of plastidic nitrate reductase ec 1 7 1 1 phosphorylation and vacuola"
   },
   {
-    "title": "Osmotic Steering & Translocational Sucrose Accumulation Kinetics via Root-Zone EC Modulation",
+    "title": "Osmotic Steering &amp; Translocational Sucrose",
     "cat": "wiki",
     "url": "wiki/osmotic_brix_salt_stress_kinetics.html",
     "icon": "🧬",
     "desc": "Osmotic root-zone EC steering, Sucrose Synthase (EC 2.4.1.13) activation, and phloem sugar unloading kinetics for high-Brix CEA fruit crops.",
-    "tags": "wiki osmotic brix salt stress kinetics html osmotic steering translocational sucrose accumulation kinetics via root zone ec modulation osmotic root zone ec steering sucrose synthase ec 2 4 1"
+    "tags": "wiki osmotic brix salt stress kinetics html osmotic steering amp translocational sucrose osmotic root zone ec steering sucrose synthase ec 2 4 1 13 activation and phloem sugar unloading kine"
   },
   {
-    "title": "Oxalate Biosynthesis and Ascorbate Recycling Kinetics under Dynamic LED Spectrum in Spinacia oleracea",
+    "title": "Oxalate Biosynthesis and Ascorbate Recycling",
     "cat": "wiki",
     "url": "wiki/oxalate_biosynthesis_ascorbate_recycling.html",
     "icon": "🧬",
     "desc": "Metabolic flux control of L-galactono-1,4-lactone dehydrogenase and oxalate reduction in Spinacia oleracea via 25% blue LED spectral steering.",
-    "tags": "wiki oxalate biosynthesis ascorbate recycling html oxalate biosynthesis and ascorbate recycling kinetics under dynamic led spectrum in spinacia oleracea metabolic flux control of l galactono"
+    "tags": "wiki oxalate biosynthesis ascorbate recycling html oxalate biosynthesis and ascorbate recycling metabolic flux control of l galactono 1 4 lactone dehydrogenase and oxalate reduction in spina"
   },
   {
     "title": "Paprika (Capsicum annuum)",
@@ -2902,28 +2902,28 @@
     "tags": "wiki paprika html paprika capsicum annuum high wire sweet pepper paprika capsicum annuum cea engineering guide cyclic fruit set steering adt dif control and ca k fertigation"
   },
   {
-    "title": "Bioenergetic Modeling of Photorespiratory Nitrogen Flux & Stomatal Conductance",
+    "title": "Bioenergetic Modeling of Photorespiratory",
     "cat": "wiki",
     "url": "wiki/photorespiratory_nitrogen_kinetics.html",
     "icon": "🧬",
     "desc": "Bioenergetic model coupling VPD stomatal closure, mesophyll CO2 limitation, and GS-GOGAT photorespiratory nitrogen flux in CEA Solanaceae.",
-    "tags": "wiki photorespiratory nitrogen kinetics html bioenergetic modeling of photorespiratory nitrogen flux stomatal conductance bioenergetic model coupling vpd stomatal closure mesophyll co2 limit"
+    "tags": "wiki photorespiratory nitrogen kinetics html bioenergetic modeling of photorespiratory bioenergetic model coupling vpd stomatal closure mesophyll co2 limitation and gs gogat photorespiratory"
   },
   {
-    "title": "Acoustic Wave Resonance (1-5 kHz) Inducing Stomatal Pore Expansion for Enhanced Micro-Foliar Uptake",
+    "title": "Acoustic Wave Resonance (1-5 kHz) Inducing",
     "cat": "wiki",
     "url": "wiki/plant_acoustic_frequency_stomatal_kinetics.html",
     "icon": "🧬",
     "desc": "Acoustic wave mechanosensory resonance (3.2 kHz at 80 dB) driving guard cell K+ influx, stomatal aperture expansion, and foliar Ca2+ uptake.",
-    "tags": "wiki plant acoustic frequency stomatal kinetics html acoustic wave resonance 1 5 khz inducing stomatal pore expansion for enhanced micro foliar uptake acoustic wave mechanosensory resonance "
+    "tags": "wiki plant acoustic frequency stomatal kinetics html acoustic wave resonance 1 5 khz inducing acoustic wave mechanosensory resonance 3 2 khz at 80 db driving guard cell k influx stomatal ape"
   },
   {
-    "title": "Lead-Free Perovskite Quantum Dot Wavelength-Shifting Films for Solar Photonic Yield Optimization",
+    "title": "Lead-Free Perovskite Quantum Dot",
     "cat": "wiki",
     "url": "wiki/quantum_dot_wavelength_shifting_films.html",
     "icon": "🧬",
     "desc": "Lead-free Cs3Bi2Br9 perovskite quantum dot greenhouse films shifting 500-560 nm green solar photons to 660 nm red for +18.4% biomass yield.",
-    "tags": "wiki quantum dot wavelength shifting films html lead free perovskite quantum dot wavelength shifting films for solar photonic yield optimization lead free cs3bi2br9 perovskite quantum dot gr"
+    "tags": "wiki quantum dot wavelength shifting films html lead free perovskite quantum dot lead free cs3bi2br9 perovskite quantum dot greenhouse films shifting 500 560 nm green solar photons to 660 nm"
   },
   {
     "title": "Scientific Research Library",
@@ -2934,36 +2934,36 @@
     "tags": "wiki research html scientific research library chronological index of phd level cea plant physiology bioenergetics and climate steering research papers by inwoovation lab"
   },
   {
-    "title": "Rhizosphere Proton (H+) Exudation and Cation Exchange Capacity (CEC) Kinetics under NO3-/NH4+ Dosing",
+    "title": "Rhizosphere Proton (H+) Exudation and Cation",
     "cat": "wiki",
     "url": "wiki/rhizosphere_ph_cation_exchange_kinetics.html",
     "icon": "🧬",
     "desc": "Root plasma membrane H+-ATPase proton flux, substrate Cation Exchange Capacity (CEC), and autonomous pH stabilization via NO3-/NH4+ dosing.",
-    "tags": "wiki rhizosphere ph cation exchange kinetics html rhizosphere proton h exudation and cation exchange capacity cec kinetics under no3 nh4 dosing root plasma membrane h atpase proton flux subs"
+    "tags": "wiki rhizosphere ph cation exchange kinetics html rhizosphere proton h exudation and cation root plasma membrane h atpase proton flux substrate cation exchange capacity cec and autonomous ph"
   },
   {
-    "title": "Droplet Size Distribution (30-80 μm) Optimization in Aeroponic Misters for Maximum Dissolved Oxygen Absorption",
+    "title": "Droplet Size Distribution (30-80 μm)",
     "cat": "wiki",
     "url": "wiki/root_zone_hypoxia_aeroponic_droplet_physics.html",
     "icon": "🧬",
     "desc": "Ultrasonic aeroponic droplet size distribution (40-60 um) optimization for 5-10 um root liquid film thickness and maximal DO respiration.",
-    "tags": "wiki root zone hypoxia aeroponic droplet physics html droplet size distribution 30 80 m optimization in aeroponic misters for maximum dissolved oxygen absorption ultrasonic aeroponic droplet"
+    "tags": "wiki root zone hypoxia aeroponic droplet physics html droplet size distribution 30 80 m ultrasonic aeroponic droplet size distribution 40 60 um optimization for 5 10 um root liquid film thic"
   },
   {
-    "title": "Plastidic Mitochondrial Coupling & Root-Zone Dissolved Oxygen (DO) Respiration Dynamics",
+    "title": "Plastidic Mitochondrial Coupling &amp; Root-Zone",
     "cat": "wiki",
     "url": "wiki/rootzone_dissolved_oxygen_respiration.html",
     "icon": "🧬",
     "desc": "Hydroponic root-zone dissolved oxygen (DO &gt; 9 mg/L) nanobubble dynamics, mitochondrial ATP synthase coupling, and active nitrate symport.",
-    "tags": "wiki rootzone dissolved oxygen respiration html plastidic mitochondrial coupling root zone dissolved oxygen do respiration dynamics hydroponic root zone dissolved oxygen do gt 9 mg l nanobub"
+    "tags": "wiki rootzone dissolved oxygen respiration html plastidic mitochondrial coupling amp root zone hydroponic root zone dissolved oxygen do gt 9 mg l nanobubble dynamics mitochondrial atp syntha"
   },
   {
-    "title": "Elicitation Kinetics of Phenolic Antioxidants & Solanine Glycoalkaloids via UV-B Irradiance",
+    "title": "Elicitation Kinetics of Phenolic Antioxidants",
     "cat": "wiki",
     "url": "wiki/secondary_metabolite_elicitation_uvb.html",
     "icon": "🧬",
     "desc": "UVR8 photoreceptor activation and Phenylalanine Ammonia-Lyase (PAL, EC 4.3.1.24) elicitation kinetics under pulsed UV-B greenhouse lighting.",
-    "tags": "wiki secondary metabolite elicitation uvb html elicitation kinetics of phenolic antioxidants solanine glycoalkaloids via uv b irradiance uvr8 photoreceptor activation and phenylalanine ammon"
+    "tags": "wiki secondary metabolite elicitation uvb html elicitation kinetics of phenolic antioxidants uvr8 photoreceptor activation and phenylalanine ammonia lyase pal ec 4 3 1 24 elicitation kinetic"
   },
   {
     "title": "Spinach (Spinacia oleracea)",
@@ -2974,12 +2974,12 @@
     "tags": "wiki spinach html spinach spinacia oleracea cea engineering guide for hydroponic spinach spinacia oleracea root zone do chilling pythium suppression oxalate reduction and nitrate steering"
   },
   {
-    "title": "Plastidic Nitrate Reductase (NR) Activation vs Petiole Nitrate Storage under Spectral Light Steering",
+    "title": "Plastidic Nitrate Reductase (NR) Activation",
     "cat": "wiki",
     "url": "wiki/statal_nitrate_accumulation_light_spectrum.html",
     "icon": "🧬",
     "desc": "Pre-harvest end-of-day blue LED activation of plastidic Nitrate Reductase (EC 1.7.1.1) reducing petiole nitrate 41.5% in hydroponic spinach.",
-    "tags": "wiki statal nitrate accumulation light spectrum html plastidic nitrate reductase nr activation vs petiole nitrate storage under spectral light steering pre harvest end of day blue led activa"
+    "tags": "wiki statal nitrate accumulation light spectrum html plastidic nitrate reductase nr activation pre harvest end of day blue led activation of plastidic nitrate reductase ec 1 7 1 1 reducing p"
   },
   {
     "title": "Strawberry (Fragaria × ananassa)",
@@ -3006,28 +3006,28 @@
     "tags": "wiki tomato html tomato solanum lycopersicum precision cea engineering guide for greenhouse tomato solanum lycopersicum vpd psychrometrics dif crop steering and ec brix fertigation"
   },
   {
-    "title": "Boundary Layer Resistance (rb) & Micro-Vectored Canopy Air Speed Steering in Vertical Farms",
+    "title": "Boundary Layer Resistance (rb)",
     "cat": "wiki",
     "url": "wiki/transpiration_boundary_layer_dynamics.html",
     "icon": "🧬",
     "desc": "3D CFD modeling of leaf boundary layer resistance (rb) and micro-vectored vertical airflow (0.35 m/s) for tip-burn elimination in vertical farms.",
-    "tags": "wiki transpiration boundary layer dynamics html boundary layer resistance rb micro vectored canopy air speed steering in vertical farms 3d cfd modeling of leaf boundary layer resistance rb a"
+    "tags": "wiki transpiration boundary layer dynamics html boundary layer resistance rb 3d cfd modeling of leaf boundary layer resistance rb and micro vectored vertical airflow 0 35 m s for tip burn el"
   },
   {
-    "title": "Micro-Climatological Telemetry Coupling with USDA Wholesale Agricultural Price Elasticity",
+    "title": "Micro-Climatological Telemetry Coupling",
     "cat": "wiki",
     "url": "wiki/usda_elasticity_market_index_model.html",
     "icon": "🧬",
     "desc": "Econometric coupling of NASA POWER solar irradiance telemetry with USDA MARS wholesale price elasticity for 14-day CEA harvest steering.",
-    "tags": "wiki usda elasticity market index model html micro climatological telemetry coupling with usda wholesale agricultural price elasticity econometric coupling of nasa power solar irradiance tel"
+    "tags": "wiki usda elasticity market index model html micro climatological telemetry coupling econometric coupling of nasa power solar irradiance telemetry with usda mars wholesale price elasticity f"
   },
   {
-    "title": "Aquaporin Expression Dynamics and Root Hydraulic Conductivity (Lpr) under Micro-Climate VPD Impulse",
+    "title": "Aquaporin Expression Dynamics and Root",
     "cat": "wiki",
     "url": "wiki/vapour_pressure_deficit_aquaporin_gating.html",
     "icon": "🧬",
     "desc": "PIP1/PIP2 aquaporin phosphorylation gating and root hydraulic conductivity (Lpr) stabilization under high-pressure greenhouse fogging impulses.",
-    "tags": "wiki vapour pressure deficit aquaporin gating html aquaporin expression dynamics and root hydraulic conductivity lpr under micro climate vpd impulse pip1 pip2 aquaporin phosphorylation gatin"
+    "tags": "wiki vapour pressure deficit aquaporin gating html aquaporin expression dynamics and root pip1 pip2 aquaporin phosphorylation gating and root hydraulic conductivity lpr stabilization under h"
   }
 ];
 

@@ -549,6 +549,212 @@ def fix_trust_footer(html, rel_path):
     return html
 
 
+def _smart_truncate(text, max_len, is_title=False):
+    """Trim plain text cleanly at sentence/clause/word boundaries within max_len without splitting tokens."""
+    t = re.sub(r"\s+", " ", text).strip()
+    if len(t) <= max_len:
+        return t
+
+    if not is_title:
+        for punct in (". ", "! ", "? ", "。", "．"):
+            cut = t[: max_len + 1].rfind(punct)
+            if cut >= 75:
+                return t[: cut + 1].strip()
+
+    has_cjk = bool(re.search(r"[\u3040-\u30ff\u4e00-\u9fff]", t))
+    if not has_cjk or " " in t[:max_len]:
+        # Break on major delimiters first for clean titles
+        if is_title:
+            for sep in (" | ", " — ", " – ", ": "):
+                idx = t[: max_len + 1].rfind(sep)
+                if idx >= 22:
+                    candidate = t[:idx].strip(" ,;:-–—(&")
+                    if len(candidate) <= max_len:
+                        return candidate
+        slice_txt = t[:max_len]
+        if " " in slice_txt:
+            sp = slice_txt.rfind(" ")
+            if sp >= int(max_len * 0.5):
+                slice_txt = slice_txt[:sp]
+        # Clean unbalanced parens and dangling stopwords/punctuation
+        if slice_txt.count("(") > slice_txt.count(")"):
+            op = slice_txt.rfind("(")
+            if op >= int(max_len * 0.45):
+                slice_txt = slice_txt[:op]
+        stop_tail = {"of", "in", "for", "and", "or", "the", "with", "via", "to", "a", "an", "on", "und", "für", "im", "bei", "mit", "des", "der", "die", "das"}
+        parts = slice_txt.strip(" ,;:-–—&/|").split()
+        while len(parts) > 2 and parts[-1].lower().strip(",;:-–—&") in stop_tail:
+            parts.pop()
+        res = " ".join(parts).strip(" ,;:-–—&/|(")
+        if not res:
+            res = t[:max_len].strip()
+        return res if is_title else (res.rstrip(".。") + ".")
+
+    # Pure CJK fallback without ASCII spaces
+    limit = max_len if is_title else max_len - 1
+    sub = t[:limit]
+    for sep in ("。", "・", "：", "、", "）"):
+        idx = sub.rfind(sep)
+        if idx >= int(limit * 0.6):
+            sub = sub[: idx + (1 if sep in ("。", "）") else 0)]
+            break
+    if sub.count("（") > sub.count("）"):
+        op = sub.rfind("（")
+        if op >= int(limit * 0.5):
+            sub = sub[:op]
+    sub = sub.rstrip(" ・：、")
+    return sub if is_title else (sub if sub.endswith(("。", ".")) else sub + "。")
+
+
+def _title_disambiguator(rel_path):
+    m_art = re.search(r"article-(\d+)", rel_path)
+    if rel_path.startswith("articles/de/") and m_art:
+        return f"(DE #{m_art.group(1)})"
+    if rel_path.startswith("articles/ja/") and m_art:
+        return f"(JA #{m_art.group(1)})"
+    if m_art:
+        return f"(Vol. {m_art.group(1)})"
+    sec = rel_path.split("/")[0] if "/" in rel_path else "Hub"
+    tag_map = {"tools": "[Tool]", "crops": "[Crop]", "climate": "[Climate]", "wiki": "[Wiki]", "smartfarm": "[Sim]", "benchmarks": "[Bench]", "parts": "[Parts]"}
+    return tag_map.get(sec, f"[{sec[:8].title()}]")
+
+
+def fix_serp_title(html, rel_path, used_titles=None):
+    """Keep every live <title> <= 65 visible chars and globally unique across Inwoovation Portal."""
+    head_m = re.search(r"<head\b[^>]*>[\s\S]*?</head>", html, re.I)
+    if not head_m:
+        return html
+    head = head_m.group(0)
+    mt = re.search(r"<title\b[^>]*>(.*?)</title>", head, re.I | re.S)
+    if not mt:
+        return html
+    raw_inner = mt.group(1)
+    title = re.sub(r"\s+", " ", html_lib.unescape(raw_inner)).strip()
+    key = title.lower()
+
+    if len(title) <= 65 and (used_titles is None or key not in used_titles):
+        if used_titles is not None:
+            used_titles.add(key)
+        return html
+
+    brand = " | Inwoovation"
+    core = title
+    for suf, repl_brand in (
+        (" | AgriAtlas CEA Engineering Wiki", " | Inwoovation Wiki"),
+        (" | Inwoovation Engineering Lab", " | Inwoovation"),
+        (" | Inwoovation Smart Farming", " | Inwoovation"),
+        (" | Inwoovation Lab", " | Inwoovation"),
+        (" — Inwoovation Lab", " | Inwoovation"),
+        (" – Inwoovation Lab", " | Inwoovation"),
+        (" | Inwoovation", " | Inwoovation"),
+    ):
+        if core.endswith(suf):
+            core = core[: -len(suf)].strip()
+            brand = repl_brand
+            break
+
+    if len(core) + len(brand) > 65:
+        for pat, rep in (
+            (r"\s*Microclimate,\s*VPD\s*&\s*DLI\s*Precision\s*Steering\s*Guide$", " CEA Steering Guide"),
+            (r"\s*Greenhouse\s*Microclimate\s*&\s*CEA\s*Engineering\s*Almanac$", " Climate Guide"),
+            (r"^Commercial\s+Greenhouse\s+", ""),
+            (r"^Commercial\s+", ""),
+            (r"^Industrial-Grade\s+", ""),
+            (r"^Biophysical\s+Foundations\s+of\s+", ""),
+            (r"^Precision\s+CEA\s+&\s+", ""),
+            (r"^Comprehensive\s+Guide\s+to\s+", ""),
+            (r"\s+in\s+Commercial\s+Greenhouses$", " in Greenhouses"),
+            (r"\s+in\s+Precision\s+CEA$", ""),
+            (r"\s+im\s+Gewächshaus$", " Gewächshaus"),
+        ):
+            core = re.sub(pat, rep, core, flags=re.I).strip()
+
+    budget = 65 - len(brand)
+    if len(core) > budget:
+        core = _smart_truncate(core, budget, is_title=True)
+
+    candidate = f"{core}{brand}"
+    if used_titles is not None and candidate.lower() in used_titles:
+        tag = _title_disambiguator(rel_path)
+        n_suffix = 1
+        base_tag = tag
+        while candidate.lower() in used_titles:
+            t_use = base_tag if n_suffix == 1 else f"{base_tag}-{n_suffix}"
+            sub_budget = 65 - len(brand) - len(t_use) - 1
+            sub_core = _smart_truncate(core, max(15, sub_budget), is_title=True)
+            candidate = f"{sub_core} {t_use}{brand}"
+            n_suffix += 1
+        used_titles.add(candidate.lower())
+    elif used_titles is not None:
+        used_titles.add(candidate.lower())
+
+    if candidate == title:
+        return html
+    escaped = html_lib.escape(candidate, quote=False)
+    new_head = head[: mt.start()] + f"<title>{escaped}</title>" + head[mt.end() :]
+    return html[: head_m.start()] + new_head + html[head_m.end() :]
+
+
+def fix_serp_description(html, rel_path, used_descs=None):
+    """Keep every live <meta name="description"> within 70..160 visible chars without splitting HTML quotes."""
+    head_m = re.search(r"<head\b[^>]*>[\s\S]*?</head>", html, re.I)
+    if not head_m:
+        return html
+    head = head_m.group(0)
+    desc_m = None
+    for tm in re.finditer(r"<meta\b[^>]*>", head, re.I):
+        tag_str = tm.group(0)
+        if re.search(r"""\bname\s*=\s*(["'])description\1""", tag_str, re.I):
+            desc_m = tm
+            break
+    if not desc_m:
+        return html
+
+    tag_str = desc_m.group(0)
+    cm = re.search(r"""\bcontent\s*=\s*(["'])(.*?)\1""", tag_str, re.I | re.S)
+    if not cm:
+        return html
+    desc = re.sub(r"\s+", " ", html_lib.unescape(cm.group(2))).strip()
+    key = desc.lower()
+
+    if 70 <= len(desc) <= 160 and (used_descs is None or key not in used_descs):
+        if used_descs is not None:
+            used_descs.add(key)
+        return html
+
+    if len(desc) < 70:
+        is_ja = rel_path.startswith("articles/ja/") or bool(re.search(r"[\u3040-\u30ff]", desc))
+        is_de = rel_path.startswith("articles/de/") or "meister" in rel_path or bool(re.search(r"[äöüß]", desc.lower()))
+        if is_ja:
+            pad = " 施設園芸・植物工場の定量工学解説と無料計算シミュレーターを公開 (Inwoovation Lab)。"
+        elif is_de:
+            pad = " Quantitative Gewächshaus- und CEA-Ingenieuranalyse von Inwoovation Lab."
+        else:
+            pad = " Quantitative CEA physics model and interactive calculator by Inwoovation Lab."
+        desc = (desc.rstrip(" .。") + ("" if is_ja else ".") + pad).strip()
+
+    if len(desc) > 160:
+        desc = _smart_truncate(desc, 158, is_title=False)
+
+    if used_descs is not None and desc.lower() in used_descs:
+        tag = _title_disambiguator(rel_path)
+        n_idx = 1
+        while desc.lower() in used_descs:
+            t_use = f" {tag}" if n_idx == 1 else f" {tag}-{n_idx}"
+            desc = _smart_truncate(desc, 158 - len(t_use), is_title=False) + t_use
+            n_idx += 1
+        used_descs.add(desc.lower())
+    elif used_descs is not None:
+        used_descs.add(desc.lower())
+
+    escaped_val = html_lib.escape(desc, quote=True)
+    new_tag = tag_str[: cm.start()] + f'content="{escaped_val}"' + tag_str[cm.end() :]
+    if new_tag == tag_str:
+        return html
+    new_head = head[: desc_m.start()] + new_tag + head[desc_m.end() :]
+    return html[: head_m.start()] + new_head + html[head_m.end() :]
+
+
 def is_live(rel_path, html):
     if os.path.basename(rel_path) == "404.html":
         return False
@@ -556,7 +762,7 @@ def is_live(rel_path, html):
     return not is_embed_widget and not re.search(r'http-equiv=["\']refresh', html, re.I)
 
 
-def transform(rel_path, html):
+def transform(rel_path, html, used_titles=None, used_descs=None):
     html = fix_dead_host(html)
     html = fix_head_meta_inequalities(html)
     html = fix_html_math_and_escapes(html)
@@ -570,6 +776,8 @@ def transform(rel_path, html):
     html = fix_defer_search_palette(html)
     html = fix_favicon(html)
     html = fix_meta_description(html)
+    html = fix_serp_title(html, rel_path, used_titles=used_titles)
+    html = fix_serp_description(html, rel_path, used_descs=used_descs)
     html = fix_canonical(html, rel_path)
     html = fix_canonical_self(html, rel_path)
     html = fix_opengraph(html, rel_path)
@@ -591,7 +799,7 @@ def iter_targets():
 
 def run_all(dry_run=False):
     from concurrent.futures import ThreadPoolExecutor
-    targets = list(iter_targets())
+    targets = sorted(iter_targets(), key=lambda item: item[1])
 
     def _read_target(item):
         path, rel_path = item
@@ -601,9 +809,15 @@ def run_all(dry_run=False):
     with ThreadPoolExecutor(max_workers=16) as pool:
         loaded = list(pool.map(_read_target, targets))
 
+    used_titles = set()
+    used_descs = set()
     changed = []
     for path, rel_path, original in loaded:
-        updated = fix_dead_host(original) if rel_path.endswith(".js") else transform(rel_path, original)
+        updated = (
+            fix_dead_host(original)
+            if rel_path.endswith(".js")
+            else transform(rel_path, original, used_titles=used_titles, used_descs=used_descs)
+        )
         if updated != original:
             changed.append(rel_path)
             if not dry_run:
