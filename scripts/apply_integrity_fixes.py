@@ -27,6 +27,17 @@ BOT_GUARD_JS = (
     "{ window['ga-disable-G-V4RYJBMEDE'] = true; }"
 )
 
+CONSENT_DEFAULT_JS = (
+    "gtag('consent', 'default', {"
+    "'ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','analytics_storage':'denied',"
+    "'wait_for_update':500,"
+    "'region':['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IS','IE','IT','LV','LI','LT','LU','MT','NL','NO','PL','PT','RO','SK','SI','ES','SE','GB','CH']"
+    "});"
+    "try{var _c=localStorage.getItem('inw_gdpr_consent_v2');"
+    "if(_c==='granted')gtag('consent','update',{'ad_storage':'granted','ad_user_data':'granted','ad_personalization':'granted','analytics_storage':'granted'});}"
+    "catch(_e){}"
+)
+
 GA4_SNIPPET = f"""
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id={GA4_ID}"></script>
@@ -34,6 +45,7 @@ GA4_SNIPPET = f"""
        {BOT_GUARD_JS}
        window.dataLayer = window.dataLayer || [];
        function gtag(){{dataLayer.push(arguments);}}
+       {CONSENT_DEFAULT_JS}
        gtag('js', new Date());
        gtag('config', '{GA4_ID}');
     </script>"""
@@ -255,13 +267,46 @@ def fix_ga4(html):
         return html
     if GA4_ID in html:
         if "ga-disable-G-V4RYJBMEDE" not in html and "window.dataLayer = window.dataLayer || [];" in html:
-            return html.replace(
+            html = html.replace(
                 "window.dataLayer = window.dataLayer || [];",
                 BOT_GUARD_JS + "\n       window.dataLayer = window.dataLayer || [];",
                 1,
             )
+        head_m = re.search(r"<head\b[^>]*>[\s\S]*?</head>", html, re.I)
+        if head_m and "gtag('consent'" not in head_m.group(0):
+            html = re.sub(
+                r"(?=(?:window\.)?gtag\(\s*['\"]js['\"])",
+                lambda _m: CONSENT_DEFAULT_JS + "\n       ",
+                html,
+                count=1,
+            )
         return html
     return re.sub(r"(<head[^>]*>)", lambda m: m.group(1) + GA4_SNIPPET, html, count=1, flags=re.I)
+
+
+def fix_defer_search_palette(html):
+    """Defer the 248 KB global-search-palette.js bundle so it never blocks First Contentful Paint."""
+    def _add_defer(match):
+        attrs = match.group(1)
+        if re.search(r"\bdefer\b", attrs, re.I):
+            return match.group(0)
+        return f"<script defer{attrs}>"
+    return re.sub(r"<script(\b[^>]*global-search-palette\.js[^>]*)>", _add_defer, html, flags=re.I)
+
+
+def fix_favicon(html):
+    """Ensure every live page declares the portal favicon suite in <head>."""
+    head_m = re.search(r"<head\b[^>]*>[\s\S]*?</head>", html, re.I)
+    if not head_m or re.search(r'<link\b[^>]*\brel=["\'](?:shortcut\s+)?icon["\']', head_m.group(0), re.I):
+        return html
+    fav_tags = (
+        '\n    <link rel="icon" href="/favicon.ico" sizes="any">'
+        '\n    <link rel="icon" href="/favicon.svg" type="image/svg+xml">'
+        '\n    <link rel="apple-touch-icon" href="/apple-touch-icon.png">'
+    )
+    if re.search(r'<meta\b[^>]*name=["\']viewport["\'][^>]*>', html, re.I):
+        return re.sub(r'(<meta\b[^>]*name=["\']viewport["\'][^>]*>)', lambda m: m.group(1) + fav_tags, html, count=1, flags=re.I)
+    return re.sub(r"(</title>)", lambda m: m.group(1) + fav_tags, html, count=1, flags=re.I)
 
 
 DUMMY_OR_SLOTLESS_INS_RE = re.compile(
@@ -522,6 +567,8 @@ def transform(rel_path, html):
     html = fix_reading_time(html)
     html = fix_ga4(html)
     html = fix_adsense(html, rel_path)
+    html = fix_defer_search_palette(html)
+    html = fix_favicon(html)
     html = fix_meta_description(html)
     html = fix_canonical(html, rel_path)
     html = fix_canonical_self(html, rel_path)

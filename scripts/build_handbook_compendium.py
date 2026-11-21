@@ -387,7 +387,7 @@ def _build_html(en_articles, de_count: int, ja_count: int, tools_list, grant_cou
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&family=JetBrains+Mono:wght@500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles.css">
   <link rel="stylesheet" href="../css/global-ui-enhancements.css?v=20261115">
-  <script src="../js/global-search-palette.js?v=20261115"></script>
+  <script src="../js/global-search-palette.js?v=20261115" defer></script>
 
   <style>
     .handbook-wrap {{ max-width: 1120px; margin: 28px auto 72px; padding: 0 20px; }}

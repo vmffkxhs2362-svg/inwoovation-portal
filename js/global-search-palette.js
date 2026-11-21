@@ -8,43 +8,9 @@
  *  3) Floating Bottom-Right Quick Action Bar (🔍 Ctrl+K + ↑ Top)
  */
 (function() {
-  // Google Consent Mode v2 (EEA / UK / CH Default Denied + Instant Persistence Restore)
+  // Consent choice persistence key (early default/restore runs in inline <head> prior to gtag('js'))
   const CONSENT_STORAGE_KEY = 'inw_gdpr_consent_v2';
-  const EEA_UK_CH_REGIONS = [
-    'AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IS','IE',
-    'IT','LV','LI','LT','LU','MT','NL','NO','PL','PT','RO','SK','SI','ES','SE','GB','CH'
-  ];
   window.dataLayer = window.dataLayer || [];
-  function pushGtag() { window.dataLayer.push(arguments); }
-  const gtagFn = typeof window.gtag === 'function' ? window.gtag : pushGtag;
-  try {
-    gtagFn('consent', 'default', {
-      ad_storage: 'denied',
-      ad_user_data: 'denied',
-      ad_personalization: 'denied',
-      analytics_storage: 'denied',
-      wait_for_update: 500,
-      region: EEA_UK_CH_REGIONS
-    });
-    const priorChoice = window.localStorage ? window.localStorage.getItem(CONSENT_STORAGE_KEY) : null;
-    if (priorChoice === 'granted') {
-      gtagFn('consent', 'update', {
-        ad_storage: 'granted',
-        ad_user_data: 'granted',
-        ad_personalization: 'granted',
-        analytics_storage: 'granted'
-      });
-    } else if (priorChoice === 'essential') {
-      gtagFn('consent', 'update', {
-        ad_storage: 'denied',
-        ad_user_data: 'denied',
-        ad_personalization: 'denied',
-        analytics_storage: 'denied'
-      });
-    }
-  } catch (_consentInitErr) {
-    // Non-blocking storage fallback in strict private browsing modes
-  }
 
   const ECOSYSTEM_INDEX = [
   {
@@ -56,12 +22,12 @@
     "tags": "directory html complete cea engineering directory amp index 382 pages master html sitemap and engineering taxonomy indexing all 382 calculators 192 global agricultural grants en de ja monogr"
   },
   {
-    "title": "Precision CEA & Horticultural Engineering Articles (78 Volumes / 199 Multilingual Editions)",
+    "title": "CEA &amp; Greenhouse Engineering Articles",
     "cat": "article",
     "url": "guides.html",
     "icon": "📚",
     "desc": "78-volume (199 multilingual editions) open-access Controlled Environment Agriculture (CEA) archive — VPD physics, biomass CHP, photobiology, closed-loop fertiga",
-    "tags": "guides html precision cea horticultural engineering articles 78 volumes 199 multilingual editions 78 volume 199 multilingual editions open access controlled environment agriculture cea archi"
+    "tags": "guides html cea amp greenhouse engineering articles 78 volume 199 multilingual editions open access controlled environment agriculture cea archive vpd physics biomass chp photobiology closed"
   },
   {
     "title": "Inwoovation Lab",
@@ -72,20 +38,20 @@
     "tags": "index html inwoovation lab inwoovation lab unified cea engineering command center 192 verified global agricultural grants across 8 countries us germany japan netherlands korea fr"
   },
   {
-    "title": "Deutscher Gartenbau-Meister &amp; KTBL-Standard Rechner",
+    "title": "Gärtnermeister &amp; KTBL Rechner",
     "cat": "tool",
     "url": "meister.html",
     "icon": "🇩🇪",
     "desc": "Offizielle deutsche Gartenbau-Normen (KTBL Datensammlung, DIN V 18599, DIN EN 13031-1, QS-GAP 2026, IFS Food v8, SVLFG VSG 4.2). Heizwärmebedarf, Deckungsbeitra",
-    "tags": "meister html deutscher gartenbau meister amp ktbl standard rechner offizielle deutsche gartenbau normen ktbl datensammlung din v 18599 din en 13031 1 qs gap 2026 ifs food v8 svlfg vsg 4 2 he"
+    "tags": "meister html gärtnermeister amp ktbl rechner offizielle deutsche gartenbau normen ktbl datensammlung din v 18599 din en 13031 1 qs gap 2026 ifs food v8 svlfg vsg 4 2 heizwärmebedarf deckungs"
   },
   {
-    "title": "OpenCEA Biophysics Mastery Quiz & Free Certificate Engine",
+    "title": "OpenCEA Biophysics Quiz &amp; Certificate",
     "cat": "tool",
     "url": "quiz.html",
     "icon": "🛠️",
     "desc": "Test your precision CEA horticultural biophysics knowledge. Solve 10 questions on VPD, DLI, DIN V 18599, and fertigation to earn a free verifiable Certificate o",
-    "tags": "quiz html opencea biophysics mastery quiz free certificate engine test your precision cea horticultural biophysics knowledge solve 10 questions on vpd dli din v 18599 and fertigation to earn"
+    "tags": "quiz html opencea biophysics quiz amp certificate test your precision cea horticultural biophysics knowledge solve 10 questions on vpd dli din v 18599 and fertigation to earn a free verifiab"
   },
   {
     "title": "Open-Access AgTech Engineering Repository &amp; Digital Assets",
@@ -96,12 +62,12 @@
     "tags": "store html open access agtech engineering repository amp digital assets 100 free open access institutional engineering assets python fertigation solvers 192 program global amp usda grant pla"
   },
   {
-    "title": "Greenhouse Cultivation & Facility Troubleshooting Wizard",
+    "title": "Greenhouse Climate Troubleshooting",
     "cat": "tool",
     "url": "troubleshoot.html",
     "icon": "🛠️",
     "desc": "Instant diagnostic wizard for commercial greenhouse and indoor farm issues. Identify root causes for tip burn, blossom-end rot, condensation, and heating spikes",
-    "tags": "troubleshoot html greenhouse cultivation facility troubleshooting wizard instant diagnostic wizard for commercial greenhouse and indoor farm issues identify root causes for tip burn blossom "
+    "tags": "troubleshoot html greenhouse climate troubleshooting instant diagnostic wizard for commercial greenhouse and indoor farm issues identify root causes for tip burn blossom end rot condensation"
   },
   {
     "title": "Biophysical Foundations of Vapor Pressure Deficit (VPD) Thermodynamics in CEA Greenhouses",
