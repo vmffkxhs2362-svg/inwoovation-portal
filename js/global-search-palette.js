@@ -48,20 +48,20 @@
 
   const ECOSYSTEM_INDEX = [
   {
-    "title": "Complete CEA Engineering Directory &amp; Index (381 Pages)",
+    "title": "Complete CEA Engineering Directory &amp; Index (382 Pages)",
     "cat": "part",
     "url": "directory.html",
     "icon": "⚙️",
-    "desc": "Master HTML sitemap and engineering taxonomy indexing all 381 calculators, 192 global agricultural grants, EN/DE/JA monographs, crop guides, and climate hubs.",
-    "tags": "directory html complete cea engineering directory amp index 381 pages master html sitemap and engineering taxonomy indexing all 381 calculators 192 global agricultural grants en de ja monogr"
+    "desc": "Master HTML sitemap and engineering taxonomy indexing all 382 calculators, 192 global agricultural grants, EN/DE/JA monographs, crop guides, and climate hubs.",
+    "tags": "directory html complete cea engineering directory amp index 382 pages master html sitemap and engineering taxonomy indexing all 382 calculators 192 global agricultural grants en de ja monogr"
   },
   {
-    "title": "Precision CEA & Horticultural Engineering Articles (78 Volumes / 198 Multilingual Editions)",
+    "title": "Precision CEA & Horticultural Engineering Articles (78 Volumes / 199 Multilingual Editions)",
     "cat": "article",
     "url": "guides.html",
     "icon": "📚",
-    "desc": "78-volume (198 multilingual editions) open-access Controlled Environment Agriculture (CEA) archive — VPD physics, biomass CHP, photobiology, closed-loop fertiga",
-    "tags": "guides html precision cea horticultural engineering articles 78 volumes 198 multilingual editions 78 volume 198 multilingual editions open access controlled environment agriculture cea archi"
+    "desc": "78-volume (199 multilingual editions) open-access Controlled Environment Agriculture (CEA) archive — VPD physics, biomass CHP, photobiology, closed-loop fertiga",
+    "tags": "guides html precision cea horticultural engineering articles 78 volumes 199 multilingual editions 78 volume 199 multilingual editions open access controlled environment agriculture cea archi"
   },
   {
     "title": "Inwoovation Lab",
@@ -1472,6 +1472,14 @@
     "tags": "articles ja article 13 smartfarm sensor calibration nernst tdr ndir jp html スマ ト温室の精密センサ校正工学 ネルンスト式 ph ec tdr fdr培地誘電率 ndir式co ドリフト補償 施設園芸 養液栽培におけるガラス電極phセンサ ネルンスト勾配と非対称電位 温度補償ec 25 基準換算 tdr"
   },
   {
+    "title": "Vol. 14: ドイツのデュアル園芸職業教育（Ausbildung）と園芸マイスター（Gärtnermeister）工学キャリア体系",
+    "cat": "article",
+    "url": "articles/ja/article-14-ausbildung-horticulture-germany-jp.html",
+    "icon": "🇯🇵",
+    "desc": "ドイツ連邦職業教育法 (BBiG) に基づくデュアル園芸職業訓練 (70 % 経営実習・30 % 職業学校)、GartMstrV § 2 法定 3 部構成の国家資格「園芸マイスター (Gärtnermeister)」、2026 年バイエルン州協約訓練手当、および § 16a AufenthG キャリア体系の精密工学モノ",
+    "tags": "articles ja article 14 ausbildung horticulture germany jp html vol 14 ドイツのデュアル園芸職業教育 ausbildung と園芸マイスタ gärtnermeister 工学キャリア体系 ドイツ連邦職業教育法 bbig に基づくデュアル園芸職業訓練 70 経営実習 30 職業学校 gartmstrv 2 法定 "
+  },
+  {
     "title": "遠赤色光（730nm）と深赤色光（660nm）の最適LEDスペクトル比率",
     "cat": "article",
     "url": "articles/ja/article-24-far-red-deep-red-led-spectrum-optimization-jp.html",
@@ -1704,12 +1712,12 @@
     "tags": "articles ja article 52 aquifer thermal energy storage ates heat pump jp html 帯水層蓄熱システム ates と産業用ヒ トポンプの温室熱工学モデル venlo型温室における帯水層蓄熱 ates wko ダブレット井戸システム 季節蓄熱回収効率 および高温産業用ヒ トポンプのcop熱力学モデル"
   },
   {
-    "title": "日本語 施設園芸・スマート農業工学モノグラフ一覧 (42 論文)",
+    "title": "日本語 施設園芸・スマート農業工学モノグラフ一覧 (43 論文)",
     "cat": "article",
     "url": "articles/ja/index.html",
     "icon": "🇯🇵",
-    "desc": "商業用 Venlo 型ガラス温室の VPD 飽差熱力学・DIN V 18599 暖房負荷・EN 13031-1 構造設計・FvCB CO2 施用・養液化学平衡を解説する 42 編の日本語技術論文アーカイブ。",
-    "tags": "articles ja index html 日本語 施設園芸 スマ ト農業工学モノグラフ一覧 42 論文 商業用 venlo 型ガラス温室の vpd 飽差熱力学 din v 18599 暖房負荷 en 13031 1 構造設計 fvcb co2 施用 養液化学平衡を解説する 42 編の日本語技術論文ア カイブ"
+    "desc": "商業用 Venlo 型ガラス温室の VPD 飽差熱力学・DIN V 18599 暖房負荷・EN 13031-1 構造設計・FvCB CO2 施用・養液化学平衡を解説する 43 編の日本語技術論文アーカイブ。",
+    "tags": "articles ja index html 日本語 施設園芸 スマ ト農業工学モノグラフ一覧 43 論文 商業用 venlo 型ガラス温室の vpd 飽差熱力学 din v 18599 暖房負荷 en 13031 1 構造設計 fvcb co2 施用 養液化学平衡を解説する 43 編の日本語技術論文ア カイブ"
   },
   {
     "title": "Diffuse AR Glass vs. Multi-Layer PO Film: Greenhouse Roof Cladding ROI",
@@ -2168,12 +2176,12 @@
     "tags": "crops vertical farm lettuce leafy greens tipburn prevention guide html controlled environment leafy greens lettuce lactuca sativa microclimate vpd dli precision steering guide precision cea "
   },
   {
-    "title": "The CEA Biophysics &amp; Greenhouse Engineering Handbook (78 Volumes / 198 Editions)",
+    "title": "The CEA Biophysics &amp; Greenhouse Engineering Handbook (78 Volumes / 199 Editions)",
     "cat": "article",
     "url": "handbooks/index.html",
     "icon": "📖",
-    "desc": "Open-access six-part Controlled Environment Agriculture compendium indexing 78 volumes (198 EN/DE/JA editions), 42 live biophysical calculators, and 192 agricul",
-    "tags": "handbooks index html the cea biophysics amp greenhouse engineering handbook 78 volumes 198 editions open access six part controlled environment agriculture compendium indexing 78 volumes 198"
+    "desc": "Open-access six-part Controlled Environment Agriculture compendium indexing 78 volumes (199 EN/DE/JA editions), 42 live biophysical calculators, and 192 agricul",
+    "tags": "handbooks index html the cea biophysics amp greenhouse engineering handbook 78 volumes 199 editions open access six part controlled environment agriculture compendium indexing 78 volumes 199"
   },
   {
     "title": "AgriMaster",
@@ -3078,13 +3086,13 @@
       <div class="inwoo-palette-box" role="dialog" aria-modal="true" aria-label="Inwoovation Spotlight Search">
         <div class="inwoo-palette-header">
           <span class="inwoo-palette-search-icon">🔍</span>
-          <input type="text" id="inwoo-palette-input" placeholder="Search all 376 tools, simulators, wiki, crops, climate hubs & EN/DE/JA articles..." autocomplete="off" />
+          <input type="text" id="inwoo-palette-input" placeholder="Search all 377 tools, simulators, wiki, crops, climate hubs & EN/DE/JA articles..." autocomplete="off" />
           <span class="inwoo-palette-esc-badge" onclick="window.InwooPalette.close()">ESC</span>
         </div>
         <div class="inwoo-palette-tabs">
-          <button class="inwoo-pal-tab active" data-cat="all">✨ All (376)</button>
+          <button class="inwoo-pal-tab active" data-cat="all">✨ All (377)</button>
           <button class="inwoo-pal-tab" data-cat="tool">🛠️ Tools (49)</button>
-          <button class="inwoo-pal-tab" data-cat="article">📚 Articles (204)</button>
+          <button class="inwoo-pal-tab" data-cat="article">📚 Articles (205)</button>
           <button class="inwoo-pal-tab" data-cat="wiki">🧬 Wiki (44)</button>
           <button class="inwoo-pal-tab" data-cat="climate">🌍 Climate (41)</button>
           <button class="inwoo-pal-tab" data-cat="sim">🧪 Simulators (19)</button>
@@ -3098,7 +3106,7 @@
             <span><kbd>↵</kbd> Open</span>
             <span><kbd>Esc</kbd> Close</span>
           </div>
-          <div style="color: #64748b; font-size: 0.75rem;">Inwoovation Universal Spotlight (376 Indexed Pages)</div>
+          <div style="color: #64748b; font-size: 0.75rem;">Inwoovation Universal Spotlight (377 Indexed Pages)</div>
         </div>
       </div>
     `;

@@ -1,14 +1,14 @@
 # 📘 The CEA Biophysics & Greenhouse Engineering Handbook
-## OpenCEA Compendium: 78 Volumes (198 Multilingual Editions) & 42 Live Simulators
+## OpenCEA Compendium: 78 Volumes (199 Multilingual Editions) & 42 Live Simulators
 
 > **Author**: Inwoovation Lab (Inwoo Hwang)  
 > **Target Audience**: Commercial Greenhouse Operators, Plant Factory Systems Engineers, Gärtnermeister Candidates, Agronomists  
-> **Publication Standard**: Verified Biophysical Equations (Magnus-Tetens, Penman-Monteith, Farquhar FvCB, DIN V 18599, Debye-Hückel), Interactive Simulator Synchronized (`2026-11-20`)  
+> **Publication Standard**: Verified Biophysical Equations (Magnus-Tetens, Penman-Monteith, Farquhar FvCB, DIN V 18599, Debye-Hückel), Interactive Simulator Synchronized (`2026-11-21`)  
 
 ---
 
 ## 📌 Executive Abstract & Compendium Profile
-This open-access technical compendium organizes all **78 English engineering monographs** (**198 total EN/DE/JA editions**) alongside **42 client-side biophysical simulators** and **192 hyper-local agricultural grant programs** into six engineering domains.
+This open-access technical compendium organizes all **78 English engineering monographs** (**199 total EN/DE/JA editions**) alongside **42 client-side biophysical simulators** and **192 hyper-local agricultural grant programs** into six engineering domains.
 
 ---
 
@@ -334,6 +334,7 @@ This open-access technical compendium organizes all **78 English engineering mon
 <a id="chapter-14-article-14-ausbildung-horticulture-germany"></a>
 - **EN Monograph**: [../articles/article-14-ausbildung-horticulture-germany.html](../articles/article-14-ausbildung-horticulture-germany.html)
 - **DE Edition**: [../articles/de/article-14-vertical-farming-hvac-entfeuchtung-kondensation-waermerueckgewinnung.html](../articles/de/article-14-vertical-farming-hvac-entfeuchtung-kondensation-waermerueckgewinnung.html)
+- **JA Edition**: [../articles/ja/article-14-ausbildung-horticulture-germany-jp.html](../articles/ja/article-14-ausbildung-horticulture-germany-jp.html)
 - **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
 - **Synopsis**: Comprehensive structural guide to Germany's dual vocational education system (Duale Ausbildung) in commercial production horticulture (Gartenbau).
 
