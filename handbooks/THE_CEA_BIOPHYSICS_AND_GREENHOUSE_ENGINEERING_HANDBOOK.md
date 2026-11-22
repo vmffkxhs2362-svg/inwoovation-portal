@@ -1,14 +1,14 @@
 # 📘 The CEA Biophysics & Greenhouse Engineering Handbook
-## OpenCEA Compendium: 78 Volumes (199 Multilingual Editions) & 42 Live Simulators
+## OpenCEA Compendium: 78 Volumes (200 Multilingual Editions) & 42 Live Simulators
 
 > **Author**: Inwoovation Lab (Inwoo Hwang)  
 > **Target Audience**: Commercial Greenhouse Operators, Plant Factory Systems Engineers, Gärtnermeister Candidates, Agronomists  
-> **Publication Standard**: Verified Biophysical Equations (Magnus-Tetens, Penman-Monteith, Farquhar FvCB, DIN V 18599, Debye-Hückel), Interactive Simulator Synchronized (`2026-11-21`)  
+> **Publication Standard**: Verified Biophysical Equations (Magnus-Tetens, Penman-Monteith, Farquhar FvCB, DIN V 18599, Debye-Hückel), Interactive Simulator Synchronized (`2026-11-22`)  
 
 ---
 
 ## 📌 Executive Abstract & Compendium Profile
-This open-access technical compendium organizes all **78 English engineering monographs** (**199 total EN/DE/JA editions**) alongside **42 client-side biophysical simulators** and **192 hyper-local agricultural grant programs** into six engineering domains.
+This open-access technical compendium organizes all **78 English engineering monographs** (**200 total EN/DE/JA editions**) alongside **42 client-side biophysical simulators** and **192 hyper-local agricultural grant programs** into six engineering domains.
 
 ---
 
@@ -547,6 +547,7 @@ This open-access technical compendium organizes all **78 English engineering mon
 <a id="chapter-15-article-15-plant-interior-biophilic-design"></a>
 - **EN Monograph**: [../articles/article-15-plant-interior-biophilic-design.html](../articles/article-15-plant-interior-biophilic-design.html)
 - **DE Edition**: [../articles/de/article-15-innenraumbegruenung-biophiles-design-lichtkompensationspunkt-voc.html](../articles/de/article-15-innenraumbegruenung-biophiles-design-lichtkompensationspunkt-voc.html)
+- **JA Edition**: [../articles/ja/article-15-biophilic-architecture-indoor-light-compensation-voc-jp.html](../articles/ja/article-15-biophilic-architecture-indoor-light-compensation-voc-jp.html)
 - **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
 - **Synopsis**: Architectural integration of living vegetation in high-performance buildings: daylight factor modeling, sub-irrigation hydraulics, particulate matter.
 

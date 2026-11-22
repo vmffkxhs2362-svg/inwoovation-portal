@@ -18,8 +18,8 @@
     "cat": "part",
     "url": "directory.html",
     "icon": "⚙️",
-    "desc": "Master HTML sitemap and engineering taxonomy indexing all 382 calculators, 192 global agricultural grants, EN/DE/JA monographs, crop guides, and climate hubs.",
-    "tags": "directory html complete cea engineering directory amp index master html sitemap and engineering taxonomy indexing all 382 calculators 192 global agricultural grants en de ja monographs crop "
+    "desc": "Master HTML sitemap and engineering taxonomy indexing all 383 calculators, 192 global agricultural grants, EN/DE/JA monographs, crop guides, and climate hubs.",
+    "tags": "directory html complete cea engineering directory amp index master html sitemap and engineering taxonomy indexing all 383 calculators 192 global agricultural grants en de ja monographs crop "
   },
   {
     "title": "CEA &amp; Greenhouse Engineering Articles",
@@ -1446,6 +1446,14 @@
     "tags": "articles ja article 14 ausbildung horticulture germany jp html vol 14 ドイツのデュアル園芸職業教育 ausbildung と園芸マイスタ gärtner ドイツ連邦職業教育法 bbig に基づくデュアル園芸職業訓練 70 経営実習 30 職業学校 gartmstrv 2 法定 3 部構成の国家資格 園芸マイス"
   },
   {
+    "title": "Vol. 15: バイオフィリック建築と室内緑化の環境物理学",
+    "cat": "article",
+    "url": "articles/ja/article-15-biophilic-architecture-indoor-light-compensation-voc-jp.html",
+    "icon": "🇯🇵",
+    "desc": "ドイツFLL室内緑化基準に基づくバイオフィリック建築の環境物理学。光補償点（LCP）、LuxからPPFDへの分光換算、底面灌水ハイドロニクスの毛管水理、根圏微生物によるVOCバイオ浄化（CADR）および多孔質吸音設計を数理モデルで詳説。",
+    "tags": "articles ja article 15 biophilic architecture indoor light compensation voc jp html vol 15 バイオフィリック建築と室内緑化の環境物理学 ドイツfll室内緑化基準に基づくバイオフィリック建築の環境物理学 光補償点 lcp luxからppfdへの分光換算 底面灌水ハイドロニクスの毛管水理 根圏"
+  },
+  {
     "title": "遠赤色光（730nm）と深赤色光（660nm）の最適LEDスペクトル比率",
     "cat": "article",
     "url": "articles/ja/article-24-far-red-deep-red-led-spectrum-optimization-jp.html",
@@ -1678,12 +1686,12 @@
     "tags": "articles ja article 52 aquifer thermal energy storage ates heat pump jp html 帯水層蓄熱システム ates と産業用ヒ トポンプの温室熱工学モデル venlo型温室における帯水層蓄熱 ates wko ダブレット井戸システム 季節蓄熱回収効率 および高温産業用ヒ トポンプのcop熱力学モデル"
   },
   {
-    "title": "日本語 施設園芸・スマート農業工学モノグラフ一覧 (43 論文)",
+    "title": "日本語 施設園芸・スマート農業工学モノグラフ一覧 (44 論文)",
     "cat": "article",
     "url": "articles/ja/index.html",
     "icon": "🇯🇵",
-    "desc": "商業用 Venlo 型ガラス温室の VPD 飽差熱力学・DIN V 18599 暖房負荷・EN 13031-1 構造設計・FvCB CO2 施用・養液化学平衡を解説する 43 編の日本語技術論文アーカイブ。",
-    "tags": "articles ja index html 日本語 施設園芸 スマ ト農業工学モノグラフ一覧 43 論文 商業用 venlo 型ガラス温室の vpd 飽差熱力学 din v 18599 暖房負荷 en 13031 1 構造設計 fvcb co2 施用 養液化学平衡を解説する 43 編の日本語技術論文ア カイブ"
+    "desc": "商業用 Venlo 型ガラス温室の VPD 飽差熱力学・DIN V 18599 暖房負荷・EN 13031-1 構造設計・FvCB CO2 施用・養液化学平衡を解説する 44 編の日本語技術論文アーカイブ。",
+    "tags": "articles ja index html 日本語 施設園芸 スマ ト農業工学モノグラフ一覧 44 論文 商業用 venlo 型ガラス温室の vpd 飽差熱力学 din v 18599 暖房負荷 en 13031 1 構造設計 fvcb co2 施用 養液化学平衡を解説する 44 編の日本語技術論文ア カイブ"
   },
   {
     "title": "Diffuse AR Glass vs. Multi-Layer PO Film",
@@ -2146,8 +2154,8 @@
     "cat": "article",
     "url": "handbooks/index.html",
     "icon": "📖",
-    "desc": "Open-access six-part Controlled Environment Agriculture compendium indexing 78 volumes (199 EN/DE/JA editions), 42 live biophysical calculators, and 192.",
-    "tags": "handbooks index html the cea biophysics amp greenhouse engineering open access six part controlled environment agriculture compendium indexing 78 volumes 199 en de ja editions 42 live biophy"
+    "desc": "Open-access six-part Controlled Environment Agriculture compendium indexing 78 volumes (200 EN/DE/JA editions), 42 live biophysical calculators, and 192.",
+    "tags": "handbooks index html the cea biophysics amp greenhouse engineering open access six part controlled environment agriculture compendium indexing 78 volumes 200 en de ja editions 42 live biophy"
   },
   {
     "title": "AgriMaster",
@@ -3052,13 +3060,13 @@
       <div class="inwoo-palette-box" role="dialog" aria-modal="true" aria-label="Inwoovation Spotlight Search">
         <div class="inwoo-palette-header">
           <span class="inwoo-palette-search-icon">🔍</span>
-          <input type="text" id="inwoo-palette-input" placeholder="Search all 377 tools, simulators, wiki, crops, climate hubs & EN/DE/JA articles..." autocomplete="off" />
+          <input type="text" id="inwoo-palette-input" placeholder="Search all 378 tools, simulators, wiki, crops, climate hubs & EN/DE/JA articles..." autocomplete="off" />
           <span class="inwoo-palette-esc-badge" onclick="window.InwooPalette.close()">ESC</span>
         </div>
         <div class="inwoo-palette-tabs">
-          <button class="inwoo-pal-tab active" data-cat="all">✨ All (377)</button>
+          <button class="inwoo-pal-tab active" data-cat="all">✨ All (378)</button>
           <button class="inwoo-pal-tab" data-cat="tool">🛠️ Tools (49)</button>
-          <button class="inwoo-pal-tab" data-cat="article">📚 Articles (205)</button>
+          <button class="inwoo-pal-tab" data-cat="article">📚 Articles (206)</button>
           <button class="inwoo-pal-tab" data-cat="wiki">🧬 Wiki (44)</button>
           <button class="inwoo-pal-tab" data-cat="climate">🌍 Climate (41)</button>
           <button class="inwoo-pal-tab" data-cat="sim">🧪 Simulators (19)</button>
@@ -3072,7 +3080,7 @@
             <span><kbd>↵</kbd> Open</span>
             <span><kbd>Esc</kbd> Close</span>
           </div>
-          <div style="color: #64748b; font-size: 0.75rem;">Inwoovation Universal Spotlight (377 Indexed Pages)</div>
+          <div style="color: #64748b; font-size: 0.75rem;">Inwoovation Universal Spotlight (378 Indexed Pages)</div>
         </div>
       </div>
     `;
