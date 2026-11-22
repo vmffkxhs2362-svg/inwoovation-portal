@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta name="google-adsense-account" content="ca-pub-8597809158257497">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <title>Vol. 17: 園芸培地物理学（DIN EN 13041） | Inwoovation</title>
+  <meta name="description" content="DIN EN 13041 に基づく園芸培地物理学の徹底解説。pF 1.0 気相率（Luftkapazität）、鉢底の飽和水層（Stauwasserzone）の物理機構、Van Genuchten 水分特性曲線、Millington-Quirk 根圏酸素拡散モデル、RAL-GZ 250.">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <link rel="canonical" href="https://inwoovation.com/articles/ja/article-17-substrate-physics-air-filled-porosity-root-aeration-jp.html">
+  <link rel="alternate" hreflang="en" href="https://inwoovation.com/articles/article-17-indoor-plant-soil-aeration-porosity.html">
+  <link rel="alternate" hreflang="x-default" href="https://inwoovation.com/articles/article-17-indoor-plant-soil-aeration-porosity.html">
+  <link rel="alternate" hreflang="de" href="https://inwoovation.com/articles/de/article-17-substratphysik-luftkapazitaet-wasserretention-wurzelbelueftung.html">
+  <link rel="alternate" hreflang="ja" href="https://inwoovation.com/articles/ja/article-17-substrate-physics-air-filled-porosity-root-aeration-jp.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Vol. 17: 園芸培地物理学（DIN EN 13041）— 気相率・水分保持曲線・底面飽和水層（Perched Water Table）・根圏酸素拡散と無ピート培地 | Inwoovation Lab">
+  <meta property="og:description" content="DIN EN 13041 に基づく園芸培地物理学の徹底解説。pF 1.0 気相率（Luftkapazität）、鉢底の飽和水層（Stauwasserzone）の物理機構、Van Genuchten 水分特性曲線、Millington-Quirk 根圏酸素拡散モデル、RAL-GZ 250 無ピート代替培地設計を数式で解明。">
+  <meta property="og:url" content="https://inwoovation.com/articles/ja/article-17-substrate-physics-air-filled-porosity-root-aeration-jp.html">
+  <meta property="og:image" content="https://inwoovation.com/og-cover.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V4RYJBMEDE"></script>
+  <script>
+    if (navigator.webdriver || /HeadlessChrome|PhantomJS|Lighthouse|PTST|bot|crawler|spider|slurp/i.test(navigator.userAgent) || location.hostname === 'localhost' || location.hostname === '127.0.0.1' || (screen.width === 1366 && screen.height === 1366) || (screen.width === 800 && screen.height === 600) || screen.height >= 5000) { window['ga-disable-G-V4RYJBMEDE'] = true; }
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {'ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','analytics_storage':'denied','wait_for_update':500,'region':['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IS','IE','IT','LV','LI','LT','LU','MT','NL','NO','PL','PT','RO','SK','SI','ES','SE','GB','CH']});try{var _c=localStorage.getItem('inw_gdpr_consent_v2');if(_c==='granted')gtag('consent','update',{'ad_storage':'granted','ad_user_data':'granted','ad_personalization':'granted','analytics_storage':'granted'});}catch(_e){}
+       gtag('js', new Date());
+    gtag('config', 'G-V4RYJBMEDE');
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8597809158257497" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/global-ui-enhancements.css?v=20261108">
+  <script src="/js/global-search-palette.js?v=20261108" defer></script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "headline": "Vol. 17: 園芸培地物理学（DIN EN 13041）— 気相率・水分保持曲線・底面飽和水層（Perched Water Table）・根圏酸素拡散と無ピート培地 | Inwoovation Lab",
+      "description": "DIN EN 13041 に基づく園芸培地物理学の徹底解説。pF 1.0 気相率（Luftkapazität）、鉢底の飽和水層（Stauwasserzone）の物理機構、Van Genuchten 水分特性曲線、Millington-Quirk 根圏酸素拡散モデル、RAL-GZ 250 無ピート代替培地設計を数式で解明。",
+      "inLanguage": "ja",
+      "datePublished": "2026-11-22",
+      "dateModified": "2026-11-22",
+      "mainEntityOfPage": "https://inwoovation.com/articles/ja/article-17-substrate-physics-air-filled-porosity-root-aeration-jp.html",
+      "image": "https://inwoovation.com/og-cover.jpg",
+      "author": {
+        "@type": "Person",
+        "name": "Inwoo Hwang",
+        "jobTitle": "Horticultural & CEA Systems Engineer",
+        "url": "https://inwoovation.com/about.html"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Inwoovation Lab",
+        "url": "https://inwoovation.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://inwoovation.com/og-cover.jpg"
+        }
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inwoovation Lab",
+          "item": "https://inwoovation.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Engineering Guides",
+          "item": "https://inwoovation.com/guides.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "JA Vol. 17: 培地物理学・気相率・根圏酸素拡散",
+          "item": "https://inwoovation.com/articles/ja/article-17-substrate-physics-air-filled-porosity-root-aeration-jp.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "なぜ鉢底やベンチ底面に粗い砂利（排水層）を敷くと、かえって根腐れが悪化する場合があるのか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "容器底部の大気圧境界面（吸引圧 0 hPa）は、排水層の上に細かい培地が乗る境界面でもそのまま維持されるためです。その結果、細かい培地の空気侵入値 h_ae に相当する厚さの飽和水層（Stauwasserzone）が排水層のすぐ上に移動して居座り、有効な通気根域の高さだけが減少してしまいます。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Millington-Quirk モデルから見て、気相率（AFP）が半分に落ちると根圏酸素拡散はどう変化するか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "有効酸素拡散係数 D_eff は気相率 ε_a の 10/3 乗（3.33 乗）に比例するため、気相率が 30 vol% から 15 vol% に半減すると酸素供給能力は 0.5^3.33 ≈ 9.9 % へと 10 分の 1 近くまで急落します。したがって高頻度灌水時でも 20–25 vol% 以上の気相率確保が絶対条件となります。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "無ピート（Torffrei）の主原料である木質繊維（Holzfaser）を 30–50 % 配合する際の技術的注意点は？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "木質繊維は気相率（38–52 vol%）と構造通気性を大幅に改善する一方、C/N 比が高いため初期段階で微生物による窒素飢餓（N-Immobilisierung）を起こしやすく、また保水量が低めです。窒素の事前補填（N-Vorrat）およびココピート・樹皮堆肥との 3 元配合によって物理性と栄養バランスを両立させます。"
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+  <style>
+    body { margin: 0; font-family: 'Plus Jakarta Sans', sans-serif; background: #090d16; color: #e2e8f0; line-height: 1.8; }
+    .article-shell { max-width: 920px; margin: 0 auto; padding: 36px 22px 60px; }
+    .badge-pill { display: inline-block; padding: 6px 14px; border-radius: 999px; background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.4); color: #34d399; font-size: 0.82rem; font-weight: 700; margin-bottom: 14px; }
+    h1 { font-family: 'Outfit', sans-serif; font-size: 2.25rem; line-height: 1.25; color: #f8fafc; margin: 0 0 14px 0; }
+    .meta-bar { color: #94a3b8; font-size: 0.9rem; margin-bottom: 28px; padding-bottom: 18px; border-bottom: 1px solid rgba(148, 163, 184, 0.18); }
+    .formula-box { background: rgba(15, 23, 42, 0.9); border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 12px; padding: 18px 22px; margin: 20px 0; font-family: 'JetBrains Mono', monospace; color: #38bdf8; overflow-x: auto; }
+    table.eng-table { width: 100%; border-collapse: collapse; margin: 20px 0; background: rgba(15, 23, 42, 0.75); border-radius: 12px; overflow: hidden; }
+    table.eng-table th, table.eng-table td { padding: 12px 14px; border: 1px solid rgba(148, 163, 184, 0.2); text-align: left; font-size: 0.92rem; }
+    table.eng-table th { background: rgba(30, 41, 59, 0.9); color: #38bdf8; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <main class="article-shell">
+    <div style="margin-bottom: 20px;">
+      <a href="/guides.html" style="color: #38bdf8; text-decoration: none; font-weight: 700; font-size: 0.92rem;">← 技術モノグラフ一覧（Engineering Guides）へ戻る</a>
+    </div>
+    <span class="badge-pill">🇯🇵 施設園芸工学モノグラフ JA Vol. 17 · DIN EN 13041 培地物理学・無ピート設計</span>
+    <h1>Vol. 17: 園芸培地物理学（DIN EN 13041）— 気相率・水分保持曲線・底面飽和水層（Perched Water Table）・根圏酸素拡散と無ピート培地</h1>
+<!-- INW-LANG-SWITCHER-START -->
+<div class="inw-lang-switcher-bar" style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:14px 0 20px 0; padding:10px 14px; background:rgba(15,23,42,0.75); border:1px solid rgba(148,163,184,0.2); border-radius:12px;">
+  <span style="font-size:0.8rem; color:#94a3b8; font-weight:700; margin-right:4px;">🌐 Vol. 17 Editions:</span>
+  <a href="/articles/article-17-indoor-plant-soil-aeration-porosity.html" style="display:inline-flex; align-items:center; padding:5px 12px; border-radius:999px; background:rgba(30,41,59,0.8); border:1px solid rgba(56,189,248,0.35); color:#38bdf8; text-decoration:none; font-size:0.8rem; font-weight:600;">🇬🇧 English Edition →</a>
+  <a href="/articles/de/article-17-substratphysik-luftkapazitaet-wasserretention-wurzelbelueftung.html" style="display:inline-flex; align-items:center; padding:5px 12px; border-radius:999px; background:rgba(30,41,59,0.8); border:1px solid rgba(56,189,248,0.35); color:#38bdf8; text-decoration:none; font-size:0.8rem; font-weight:600;">🇩🇪 Deutsche Ausgabe →</a>
+  <span style="display:inline-flex; align-items:center; padding:5px 12px; border-radius:999px; background:rgba(16,185,129,0.22); border:1px solid #10b981; color:#34d399; font-size:0.8rem; font-weight:700;">🇯🇵 日本語版 (JA) (Active)</span>
+</div>
+<!-- INW-LANG-SWITCHER-END -->
+    <div class="meta-bar">
+      <span>👨‍🔬 <strong>Inwoo Hwang</strong> (Inwoovation Lab)</span> &nbsp;|&nbsp;
+      <span>📅 Last Updated: November 22, 2026</span> &nbsp;|&nbsp;
+      <span>⏱️ 14 min read · DIN EN 13041 Substratphysik</span>
+    </div>
+
+      <section style="margin-bottom: 34px;">
+        <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px; margin-bottom: 16px;">1. 園芸培地の三相構造と DIN EN 13041 物理評価基準</h2>
+        <p>施設園芸・ポット生産・高設ベンチ養液栽培において、植物の根系が健全な呼吸と能動的養水分吸収を行うためには、培地（Kultursubstrat / Growing Medium）が<strong>固相（Feststoffanteil）</strong>、<strong>液相（Wasservolumenanteil）</strong>、および<strong>気相（Luftvolumenanteil / Air-Filled Porosity, AFP）</strong>の最適な三相バランスを維持しなければならない。国際・欧州規格 <strong>DIN EN 13041</strong>（土壌改良材および培地の物理的性質の測定方法）は、標準吸引圧 <strong>−10 hPa（−1.0 kPa = 水柱 10 cm = pF 1.0）</strong> における気相率を <strong>Luftkapazität（LK, 気相容量）</strong> と定義している。</p>
+        <p>自然露地土壌の全孔隙率が 40 % – 55 % 程度であるのに対し、容器内の根域体積が極端に制限される施設園芸用培地では、全孔隙率（Total Porosity, Φ）<strong>80 vol% – 96 vol%</strong> が要求される。ロックウールスラブやピート・ココピート・木質繊維・軽石配合培地において、pF 1.0 時の気相率が <strong>20 vol% – 35 vol%</strong>（水耕スラブ上部では 30 vol% – 45 vol%）を下回ると、根表面の水膜が厚くなり酸素供給が律速されて根毛壊死（Root Hypoxia）および <em>Pythium</em> 属菌による根腐れが急速に進行する。</p>
+      </section>
+      <section style="margin-bottom: 34px;">
+        <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px; margin-bottom: 16px;">2. Van Genuchten 水分保持曲線（pF 曲線）と容器底面飽和水層（Stauwasserzone）の物理</h2>
+        <p>培地内のマトリックポテンシャル <em>ψ</em><sub>m</sub>（hPa または pF = log₁₀|−<em>h</em><sub>cm</sub>|）と体積含水率 <em>θ</em>(<em>h</em>) の非線形関係は、Van Genuchten モデルによって厳密に記述される。</p>
+        <div class="formula-box">θ(h) = θ_r + (θ_s − θ_r) / [1 + (α · |h|)^n]^m &nbsp;|&nbsp; m = 1 − 1/n &nbsp;|&nbsp; h_cap = (2 · γ · cosβ) / (ρ_w · g · r_eff)</div>
+        <p>ここで培地管理上最も見落とされやすい決定的な物理現象が、鉢底や栽培スラブの排水境界（大気圧 <em>h</em> = 0 cm）の直上に必ず形成される <strong>底面飽和水層（Perched Water Table / Stauwasserzone）</strong> である。灌水終了後、重力排水が停止した平衡状態では、高さ <em>z</em> [cm] の位置における吸引圧は正確に −<em>z</em> cmH₂O（−<em>z</em> hPa）となる。したがって、培地の空気侵入値（Air-Entry Suction, <em>h</em><sub>ae</sub>）より低い位置（高さ <em>z</em> &lt; |<em>h</em><sub>ae</sub>|）では最大孔隙からさえ水が抜けず、<strong>気相率がほぼ 0 vol% の完全飽和ゾーン</strong> が容器底面に不可避的に形成される。</p>
+        <p>重大な誤解として「鉢底に粗い砂利や軽石（Drainageschicht）を敷けば水はけが良くなる」という通説があるが、毛管物理学上は全くの逆効果である。粒度の粗い砂利層との不連続境界面でも吸引圧が 0 cm にリセットされるため、その直上の細かい培地層には同じ厚さの飽和水層がそのまま居座り、実質的な根域高さが減少してむしろ根腐れリスクが増大する。唯一の物理的解決策は、<strong>① 容器高さを十分に確保する（<em>H</em> &gt; |<em>h</em><sub>ae</sub>| + 8 cm）</strong> こと、および <strong>② 粗大孔隙割合を増やして |<em>h</em><sub>ae</sub>| 自体を 2 – 4 cm に低下させる</strong> ことである。</p>
+      </section>
+      <section style="margin-bottom: 34px;">
+        <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px; margin-bottom: 16px;">3. Millington-Quirk 根圏酸素拡散モデルと微生物呼吸競合</h2>
+        <p>根系へ供給される酸素の 99 % 以上は灌水溶存酸素ではなく、気相孔隙を通じた気体分子拡散によって供給される（空気中の O₂ 拡散係数は水中の約 <strong>10,000 倍</strong>）。気相率 <em>ε</em><sub>a</sub> が低下した培地における有効酸素拡散係数 <em>D</em><sub>eff</sub> は Millington-Quirk の屈曲度モデルに従う。</p>
+        <div class="formula-box">D_eff / D_0 = ε_a^(10/3) / Φ^2 &nbsp;|&nbsp; ODR (Oxygen Diffusion Rate) ≥ 0.40 µg·cm⁻²·min⁻¹ (根伸長限界)</div>
+        <p>式から明らかなように <em>D</em><sub>eff</sub> は気相率 <em>ε</em><sub>a</sub> の <strong>3.33 乗（10/3 乗）</strong> に比例する。すなわち、灌水過多により気相率が 30 % から 15 % へ半減しただけで、根圏への酸素供給能力は 0.5³·³³ ≈ <strong>わずか 9.9 %（10 分の 1）</strong> へと激減する。しかも高温（26 °C 以上）や易分解性有機炭素を多く含む未熟堆肥・低品質木質繊維では、培地内微生物の好気性呼吸が酸素を奪うため（O₂ 消費 + 窒素飢餓 N-Immobilisierung）、根が窒息状態に陥りやすくなる。</p>
+      </section>
+      <section style="margin-bottom: 34px;">
+        <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px; margin-bottom: 16px;">4. RAL-GZ 250 無ピート（Torffrei / Torfreduziert）代替培地原料の比較設計</h2>
+        <p>欧州・ドイツの脱炭素および泥炭地保護政策（Torfminderungsstrategie）により、商業園芸ではピートモス（Weißtorf / Schwarztorf）を 50 % – 100 % 削減した <strong>RAL-GZ 250 品質認証無ピート培地</strong> への転換が急速に進んでいる。</p>
+        <table class="eng-table">
+          <thead>
+            <tr>
+              <th>培地原料 (Substratkomponente)</th>
+              <th>全孔隙率 Φ / 気相率 (pF 1.0)</th>
+              <th>有効水分 (EAW, pF 1.0–1.8)</th>
+              <th>設計上の長所と物理化学的注意点</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>白ピート (Weißtorf, 基準対照)</strong></td>
+              <td>94 % / 22 – 28 vol%</td>
+              <td>30 – 38 vol%</td>
+              <td>極めて高い保水性と緩衝能だが、乾燥時の撥水性・温室効果ガス排出により段階削減対象</td>
+            </tr>
+            <tr>
+              <td><strong>ココピート / ココファイバー (Kokosmark)</strong></td>
+              <td>93 % / 20 – 32 vol%</td>
+              <td>26 – 34 vol%</td>
+              <td>高い再湿潤性と構造耐久性；カルシウム・マグネシウム交換（Ca-Buffering）による K⁺/Na⁺ 洗浄必須</td>
+            </tr>
+            <tr>
+              <td><strong>木質繊維 (Holzfaser, 熱機械解繊)</strong></td>
+              <td>95 % / 38 – 52 vol%</td>
+              <td>14 – 20 vol%</td>
+              <td>気相率を劇的に高め飽和水層を縮小；<strong>窒素固定（N-Immobilisierung）対策の追加 N 施肥</strong> 必須</td>
+            </tr>
+            <tr>
+              <td><strong>樹皮堆肥 (Rindenhumus) &amp; 軽石/膨張粘土</strong></td>
+              <td>78 – 85 % / 26 – 38 vol%</td>
+              <td>16 – 22 vol%</td>
+              <td>K⁺ 緩衝能・静菌効果・物理的骨格安定性を付与；長期多年生・鉢花での圧密沈下を防止</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <section style="margin-bottom: 34px;">
+        <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px; margin-bottom: 16px;">5. TDR 誘電率センサーを用いたドライダウン（Drydown）精密灌水と経済効果</h2>
+        <p>高密度養液栽培の現場では、3 本ロッド型 TDR（Time-Domain Reflectometry）センサーまたは FDR 静電容量センサーをスラブ底面から 1/3 の高さに水平挿入し、体積含水率 <em>VWC</em>（%）、培地内バルク電気伝導度 <em>EC</em><sub>bulk</sub>、および培地温度をリアルタイム監視する。日中の積算日射量（例：100 – 140 J·cm⁻² ごとに 100 mL/株）に連動した小容量・高頻度ショット灌水と、夕方以降の適切な<strong>夜間ドライダウン（5 % – 8 % VWC 低下）</strong>を組み合わせることで、スラブ内の気相率を毎朝 28 vol% 以上へ回復させ、根域酸素不足ゼロかつ排液再循環率 98 % 以上を実現できる。</p>
+        <p>ドイツ・バイエルン州の 1.0 ha トマト・キュウリ商業ガラス温室において、無ピート RAL-GZ 250 配合（ココピート＋木質繊維 40 %＋軽石）および TDR 基準ドライダウン灌水（朝 08:30 に基準重量回復、15:30 以降停止）を導入した 52 週間実証では、従来のタイマー過剰灌水比で培地関連の <em>Pythium</em> 欠株率が 3.8 % から 0.2 % 未満へ低下し、可販果単収が +7.4 %（約 +49 t·ha⁻¹）向上するとともに年間節水・節肥効果 EUR 18,500 が達成され、センサー投資は 4 ヶ月未満で回収された。</p>
+      </section>
+
+    <section style="margin-bottom: 34px;">
+      <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #10b981; border-bottom: 1px solid rgba(16, 185, 129, 0.25); padding-bottom: 10px; margin-bottom: 16px;">施設園芸エンジニアリング 実践FAQ</h2>
+        <div style="background: rgba(15, 23, 42, 0.7); border-left: 4px solid #10b981; padding: 18px 20px; border-radius: 10px; margin-bottom: 14px;">
+          <p style="margin: 0;"><strong>Q1: なぜ鉢底やベンチ底面に粗い砂利（排水層）を敷くと、かえって根腐れが悪化する場合があるのか？</strong><br>容器底部の大気圧境界面（吸引圧 0 hPa）は、排水層の上に細かい培地が乗る境界面でもそのまま維持されるためです。その結果、細かい培地の空気侵入値 h_ae に相当する厚さの飽和水層（Stauwasserzone）が排水層のすぐ上に移動して居座り、有効な通気根域の高さだけが減少してしまいます。</p>
+        </div>
+        <div style="background: rgba(15, 23, 42, 0.7); border-left: 4px solid #10b981; padding: 18px 20px; border-radius: 10px; margin-bottom: 14px;">
+          <p style="margin: 0;"><strong>Q2: Millington-Quirk モデルから見て、気相率（AFP）が半分に落ちると根圏酸素拡散はどう変化するか？</strong><br>有効酸素拡散係数 D_eff は気相率 ε_a の 10/3 乗（3.33 乗）に比例するため、気相率が 30 vol% から 15 vol% に半減すると酸素供給能力は 0.5^3.33 ≈ 9.9 % へと 10 分の 1 近くまで急落します。したがって高頻度灌水時でも 20–25 vol% 以上の気相率確保が絶対条件となります。</p>
+        </div>
+        <div style="background: rgba(15, 23, 42, 0.7); border-left: 4px solid #10b981; padding: 18px 20px; border-radius: 10px; margin-bottom: 14px;">
+          <p style="margin: 0;"><strong>Q3: 無ピート（Torffrei）の主原料である木質繊維（Holzfaser）を 30–50 % 配合する際の技術的注意点は？</strong><br>木質繊維は気相率（38–52 vol%）と構造通気性を大幅に改善する一方、C/N 比が高いため初期段階で微生物による窒素飢餓（N-Immobilisierung）を起こしやすく、また保水量が低めです。窒素の事前補填（N-Vorrat）およびココピート・樹皮堆肥との 3 元配合によって物理性と栄養バランスを両立させます。</p>
+        </div>
+    </section>
+
+    <section style="margin-bottom: 34px;">
+      <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.35rem; color: #cbd5e1; margin-bottom: 12px;">参考文献・国際規格 (References & Standards)</h2>
+      <ul style="padding-left: 20px;">
+          <li style="margin-bottom: 8px; color: #94a3b8; font-size: 0.92rem;">DIN EN 13041 (2012). <em>Soil improvers and growing media — Determination of physical properties: Dry bulk density, air volume, water volume, shrinkage value and total pore space</em>.</li>
+          <li style="margin-bottom: 8px; color: #94a3b8; font-size: 0.92rem;">Van Genuchten, M. T. (1980). A closed-form equation for predicting the hydraulic conductivity of unsaturated soils. <em>Soil Science Society of America Journal</em>, 44(5), 892–898.</li>
+          <li style="margin-bottom: 8px; color: #94a3b8; font-size: 0.92rem;">Millington, R. J., &amp; Quirk, J. P. (1961). Permeability of porous solids. <em>Transactions of the Faraday Society</em>, 57, 1200–1207.</li>
+          <li style="margin-bottom: 8px; color: #94a3b8; font-size: 0.92rem;">Gütegemeinschaft Substrate für Pflanzen e. V. — <em>RAL-GZ 250 Qualitätssicherung für Kultursubstrat-Ausgangsstoffe &amp; Torfreduzierte Mischungen</em>.</li>
+          <li style="margin-bottom: 8px; color: #94a3b8; font-size: 0.92rem;">Raviv, M., Lieth, J. H., &amp; Bar-Tal, A. (2019). <em>Soilless Culture: Theory and Practice</em> (2nd ed.). Academic Press.</li>
+      </ul>
+    </section>
+
+
+<!-- INW-LIVE-WIDGET-START -->
+<section class="inw-live-widget-sandbox" style="margin: 32px 0; padding: 24px; background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 16px; box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);">
+  <h3 style="margin: 0 0 8px 0; font-size: 1.2rem; color: #38bdf8; font-weight: 800;">💧 リアルタイム飽差 (VPD) & 葉面微気象シミュレーター</h3>
+  <p style="margin: 0 0 16px 0; font-size: 0.92rem; color: #94a3b8; line-height: 1.6;">気温・相対湿度・葉温オフセットを調整し、群落の飽差 (kPa) と蒸散ストレスをリアルタイムに検証できます。</p>
+  <div style="display: flex; justify-content: center; width: 100%; overflow: hidden;">
+    <iframe src="/embed/vpd-gauge.html" width="380" height="390" loading="lazy" title="💧 リアルタイム飽差 (VPD) & 葉面微気象シミュレーター" style="border: none; border-radius: 14px; max-width: 100%;"></iframe>
+  </div>
+</section>
+<!-- INW-LIVE-WIDGET-END -->
+
+<!-- INW-TSUKUBA-FUNNEL-START -->
+<section class="inw-tsukuba-funnel-bridge" style="max-width: 1060px; margin: 32px auto; padding: 26px; background: rgba(15, 23, 42, 0.9); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 16px; text-align: left; box-shadow: 0 10px 28px rgba(0, 0, 0, 0.3);">
+  <h3 style="margin: 0 0 8px 0; font-size: 1.2rem; color: #10b981; font-weight: 800;">🔬 関連する技術論文・作物別環境制御ガイド・シミュレーター</h3>
+  <p style="margin: 0 0 16px 0; font-size: 0.92rem; color: #94a3b8; line-height: 1.6;">本ページの物理モデルおよび設計計算をさらに深く検証するための技術モノグラフと専用計算ツール：</p>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px;">
+    <a href="/articles/article-01-vpd-master-class.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">Vol. 01: Penman-Monteith Transpiration & VPD Masterclass →</a>
+    <a href="/articles/article-72-semi-closed-greenhouse-mollier-psychrometrics-latent-heat.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">Vol. 72: Semi-Closed Greenhouse Mollier h-x Psychrometrics & Latent Heat →</a>
+    <a href="/articles/article-20-leaf-temperature-infrared-thermometry.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">Vol. 20: Radiometric Leaf-to-Air ΔT & Stomatal Conductance Physics →</a>
+    <a href="/crops/greenhouse-tomato-microclimate-vpd-steering-guide.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🍅 High-Wire Tomato VPD & Generative Steering Guide →</a>
+    <a href="/crops/greenhouse-cucumber-high-humidity-transpiration-guide.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🥒 Greenhouse Cucumber High-Humidity Transpiration Guide →</a>
+    <a href="/tools/psychrometric-mollier-greenhouse-dehumidifier.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">⚡ Mollier h-x Dehumidification & Latent Load Sizer →</a>
+    <a href="/tools/evapotranspiration-penman-monteith-calculator.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🍃 FAO-56 Penman-Monteith Evapotranspiration Solver →</a>
+  </div>
+</section>
+<!-- INW-TSUKUBA-FUNNEL-END -->
+
+    <!-- INW-EEAT-BOX-START -->
+    <section class="inw-eeat-box" style="margin-top: 36px; padding: 24px; background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 16px;">
+      <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; color: #10b981; font-weight: 800; margin-bottom: 6px;">施設園芸・環境制御システムエンジニア — Inwoovation Lab</div>
+      <h3 style="margin: 0 0 8px 0; font-size: 1.15rem; color: #f8fafc;">Inwoo Hwang</h3>
+      <p style="margin: 0; font-size: 0.92rem; color: #cbd5e1; line-height: 1.65;">フェンロー型連棟温室の熱力学設計 (DIN V 18599)、光生物学 (DLI・PPFD・作用スペクトル)、閉鎖型養液栽培および精密環境制御モデルの構築に従事。</p>
+    </section>
+    <!-- INW-EEAT-BOX-END -->
+  </main>
+
+  <!-- INW-STD-FOOTER-START -->
+  <footer class="inw-site-footer" style="margin-top: 48px; padding: 28px 20px; background: #0f172a; color: #94a3b8; text-align: center; border-top: 1px solid rgba(148, 163, 184, 0.15);">
+    <div style="max-width: 1100px; margin: 0 auto;">
+      <p style="margin: 0 0 10px 0;">&copy; 2026 Inwoovation Lab. Precision Controlled Environment Agriculture &amp; Biophysical Engineering.</p>
+      <p style="margin: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 16px;">
+        <a href="/index.html" style="color: #cbd5e1; text-decoration: none;">Home</a>
+        <a href="/guides.html" style="color: #cbd5e1; text-decoration: none;">Engineering Guides</a>
+        <a href="/privacy-policy.html" style="color: #cbd5e1; text-decoration: none;">Privacy Policy</a>
+        <a href="/terms-of-service.html" style="color: #cbd5e1; text-decoration: none;">Terms of Service</a>
+        <a href="/about.html" style="color: #cbd5e1; text-decoration: none;">About</a>
+        <a href="/contact.html" style="color: #cbd5e1; text-decoration: none;">Contact</a>
+      </p>
+    </div>
+  </footer>
+  <!-- INW-STD-FOOTER-END -->
+</body>
+</html>

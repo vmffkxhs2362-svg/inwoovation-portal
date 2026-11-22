@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta name="google-adsense-account" content="ca-pub-8597809158257497">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <title>Vol. 23: 閉鎖型湛液水耕（DWC）の溶存酸素（DO）物理・Henry | Inwoovation</title>
+  <meta name="description" content="商業湛液水耕（Deep Water Culture, DWC）における水温上昇に伴う酸素溶解度低下（Henry の法則）、根呼吸酸素消費量と供給速度の物質収支、ベンチュリ（Venturi）マイクロバブル溶解効率、Pythium 抑止のための DO ≥ 7.0 mg/L 自動制御設計を数式で解明。">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <link rel="canonical" href="https://inwoovation.com/articles/ja/article-23-closed-loop-dwc-dissolved-oxygen-venturi-automation-jp.html">
+  <link rel="alternate" hreflang="en" href="https://inwoovation.com/articles/article-23-closed-loop-dwc-automation.html">
+  <link rel="alternate" hreflang="x-default" href="https://inwoovation.com/articles/article-23-closed-loop-dwc-automation.html">
+  <link rel="alternate" hreflang="de" href="https://inwoovation.com/articles/de/article-23-geschlossene-tiefwasserkultur-dwc-sauerstoffsaettigung-venturi-automatisierung.html">
+  <link rel="alternate" hreflang="ja" href="https://inwoovation.com/articles/ja/article-23-closed-loop-dwc-dissolved-oxygen-venturi-automation-jp.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Vol. 23: 閉鎖型湛液水耕（DWC）の溶存酸素（DO）物理・Henry の法則・ベンチュリ微細気泡供給と自動循環制御 | Inwoovation Lab">
+  <meta property="og:description" content="商業湛液水耕（Deep Water Culture, DWC）における水温上昇に伴う酸素溶解度低下（Henry の法則）、根呼吸酸素消費量と供給速度の物質収支、ベンチュリ（Venturi）マイクロバブル溶解効率、Pythium 抑止のための DO ≥ 7.0 mg/L 自動制御設計を数式で解明。">
+  <meta property="og:url" content="https://inwoovation.com/articles/ja/article-23-closed-loop-dwc-dissolved-oxygen-venturi-automation-jp.html">
+  <meta property="og:image" content="https://inwoovation.com/og-cover.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V4RYJBMEDE"></script>
+  <script>
+    if (navigator.webdriver || /HeadlessChrome|PhantomJS|Lighthouse|PTST|bot|crawler|spider|slurp/i.test(navigator.userAgent) || location.hostname === 'localhost' || location.hostname === '127.0.0.1' || (screen.width === 1366 && screen.height === 1366) || (screen.width === 800 && screen.height === 600) || screen.height >= 5000) { window['ga-disable-G-V4RYJBMEDE'] = true; }
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {'ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','analytics_storage':'denied','wait_for_update':500,'region':['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IS','IE','IT','LV','LI','LT','LU','MT','NL','NO','PL','PT','RO','SK','SI','ES','SE','GB','CH']});try{var _c=localStorage.getItem('inw_gdpr_consent_v2');if(_c==='granted')gtag('consent','update',{'ad_storage':'granted','ad_user_data':'granted','ad_personalization':'granted','analytics_storage':'granted'});}catch(_e){}
+       gtag('js', new Date());
+    gtag('config', 'G-V4RYJBMEDE');
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8597809158257497" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/global-ui-enhancements.css?v=20261108">
+  <script src="/js/global-search-palette.js?v=20261108" defer></script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "headline": "Vol. 23: 閉鎖型湛液水耕（DWC）の溶存酸素（DO）物理・Henry の法則・ベンチュリ微細気泡供給と自動循環制御 | Inwoovation Lab",
+      "description": "商業湛液水耕（Deep Water Culture, DWC）における水温上昇に伴う酸素溶解度低下（Henry の法則）、根呼吸酸素消費量と供給速度の物質収支、ベンチュリ（Venturi）マイクロバブル溶解効率、Pythium 抑止のための DO ≥ 7.0 mg/L 自動制御設計を数式で解明。",
+      "inLanguage": "ja",
+      "datePublished": "2026-11-22",
+      "dateModified": "2026-11-22",
+      "mainEntityOfPage": "https://inwoovation.com/articles/ja/article-23-closed-loop-dwc-dissolved-oxygen-venturi-automation-jp.html",
+      "image": "https://inwoovation.com/og-cover.jpg",
+      "author": {
+        "@type": "Person",
+        "name": "Inwoo Hwang",
+        "jobTitle": "Horticultural & CEA Systems Engineer",
+        "url": "https://inwoovation.com/about.html"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Inwoovation Lab",
+        "url": "https://inwoovation.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://inwoovation.com/og-cover.jpg"
+        }
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inwoovation Lab",
+          "item": "https://inwoovation.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Engineering Guides",
+          "item": "https://inwoovation.com/guides.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "JA Vol. 23: DWC 湛液水耕・溶存酸素・ベンチュリ",
+          "item": "https://inwoovation.com/articles/ja/article-23-closed-loop-dwc-dissolved-oxygen-venturi-automation-jp.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "夏場に DWC 養液水温が 25 °C を超えると急激に根腐れ（Pythium）が多発する物理的・生物学的理由は？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Henry の法則により水温が上がるほど水中の酸素飽和溶解度 C_sat が低下する（16 °C の 9.86 mg/L → 25 °C で 8.26 mg/L）一方、温度上昇に伴う Q₁₀ 則によって根と微生物の酸素消費速度は逆に 2〜3 倍へ急増するためです。この二重の酸欠（Oxygen Squeeze）で DO が 4 mg/L を切ると根組織が壊死し Pythium 菌が侵入します。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "なぜ商業 DWC 施設ではエアストーンではなく、ベンチュリ微細気泡または純酸素溶解が使われるのか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "エアストーンの粗大気泡（3–5 mm）は浮上速度が速すぎて酸素移動効率が 3–6 % しかなく、さらに根や藻類が絡んで詰まりやすいためです。ベンチュリ微細気泡＋高純度酸素（PSA）は、分圧を高めて飽和駆動力を 4.5 倍に押し上げ、槽外ループで目詰まりなく 35–85 % の効率で DO ≥ 8–12 mg/L を安定供給できます。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "DWC 養液槽に設置する溶存酸素（DO）センサーの最適タイプと配置場所は？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "流速の影響を受けにくくメンブレン交換が不要な光学式（ルミネッセンス式）DO センサーを選定し、注水口付近ではなく植物の呼吸によって酸素が最も消費された直後の「水槽排水出口（ワーストケース地点）」に設置して、出口時点でも DO ≥ 6.5–7.0 mg/L を下回らないよう自動制御します。"
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+  <style>
+    body { margin: 0; font-family: 'Plus Jakarta Sans', sans-serif; background: #090d16; color: #e2e8f0; line-height: 1.8; }
+    .article-shell { max-width: 920px; margin: 0 auto; padding: 36px 22px 60px; }
+    .badge-pill { display: inline-block; padding: 6px 14px; border-radius: 999px; background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.4); color: #34d399; font-size: 0.82rem; font-weight: 700; margin-bottom: 14px; }
+    h1 { font-family: 'Outfit', sans-serif; font-size: 2.25rem; line-height: 1.25; color: #f8fafc; margin: 0 0 14px 0; }
+    .meta-bar { color: #94a3b8; font-size: 0.9rem; margin-bottom: 28px; padding-bottom: 18px; border-bottom: 1px solid rgba(148, 163, 184, 0.18); }
+    .formula-box { background: rgba(15, 23, 42, 0.9); border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 12px; padding: 18px 22px; margin: 20px 0; font-family: 'JetBrains Mono', monospace; color: #38bdf8; overflow-x: auto; }
+    table.eng-table { width: 100%; border-collapse: collapse; margin: 20px 0; background: rgba(15, 23, 42, 0.75); border-radius: 12px; overflow: hidden; }
+    table.eng-table th, table.eng-table td { padding: 12px 14px; border: 1px solid rgba(148, 163, 184, 0.2); text-align: left; font-size: 0.92rem; }
+    table.eng-table th { background: rgba(30, 41, 59, 0.9); color: #38bdf8; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <main class="article-shell">
+    <div style="margin-bottom: 20px;">
+      <a href="/guides.html" style="color: #38bdf8; text-decoration: none; font-weight: 700; font-size: 0.92rem;">← 技術モノグラフ一覧（Engineering Guides）へ戻る</a>
+    </div>
+    <span class="badge-pill">🇯🇵 施設園芸工学モノグラフ JA Vol. 23 · 閉鎖型湛液水耕（DWC）・DO 物質収支</span>
+    <h1>Vol. 23: 閉鎖型湛液水耕（DWC）の溶存酸素（DO）物理・Henry の法則・ベンチュリ微細気泡供給と自動循環制御</h1>
+<!-- INW-LANG-SWITCHER-START -->
+<div class="inw-lang-switcher-bar" style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:14px 0 20px 0; padding:10px 14px; background:rgba(15,23,42,0.75); border:1px solid rgba(148,163,184,0.2); border-radius:12px;">
+  <span style="font-size:0.8rem; color:#94a3b8; font-weight:700; margin-right:4px;">🌐 Vol. 23 Editions:</span>
+  <a href="/articles/article-23-closed-loop-dwc-automation.html" style="display:inline-flex; align-items:center; padding:5px 12px; border-radius:999px; background:rgba(30,41,59,0.8); border:1px solid rgba(56,189,248,0.35); color:#38bdf8; text-decoration:none; font-size:0.8rem; font-weight:600;">🇬🇧 English Edition →</a>
+  <a href="/articles/de/article-23-geschlossene-tiefwasserkultur-dwc-sauerstoffsaettigung-venturi-automatisierung.html" style="display:inline-flex; align-items:center; padding:5px 12px; border-radius:999px; background:rgba(30,41,59,0.8); border:1px solid rgba(56,189,248,0.35); color:#38bdf8; text-decoration:none; font-size:0.8rem; font-weight:600;">🇩🇪 Deutsche Ausgabe →</a>
+  <span style="display:inline-flex; align-items:center; padding:5px 12px; border-radius:999px; background:rgba(16,185,129,0.22); border:1px solid #10b981; color:#34d399; font-size:0.8rem; font-weight:700;">🇯🇵 日本語版 (JA) (Active)</span>
+</div>
+<!-- INW-LANG-SWITCHER-END -->
+    <div class="meta-bar">
+      <span>👨‍🔬 <strong>Inwoo Hwang</strong> (Inwoovation Lab)</span> &nbsp;|&nbsp;
+      <span>📅 Last Updated: November 22, 2026</span> &nbsp;|&nbsp;
+      <span>⏱️ 14 min read · Tiefwasserkultur DWC & Sauerstoffsättigung</span>
+    </div>
+
+      <section style="margin-bottom: 34px;">
+        <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px; margin-bottom: 16px;">1. 湛液水耕（DWC）における「気相ゼロ環境」の脆弱性と根呼吸の臨界酸素濃度</h2>
+        <p>リーフレタス、バジル、ベビーリーフ等の軟弱葉菜類の大規模商業生産において、発泡スチロールまたは食品グレード樹脂製フローティングラフトを水深 20 – 35 cm（水量 200 – 350 L·m⁻²）の養液槽に浮かべる <strong>湛液水耕（DWC: Deep Water Culture / Tiefwasserkultur）</strong> は、極めて高い熱容量による根温安定性と自動搬送の容易さという圧倒的利点を持つ。しかし培地気相が存在するロックウールや NFT と異なり、DWC の根系は 100 % 液相中に水没しているため、<strong>空気中より拡散係数が 10,000 倍遅い「水中の溶存酸素（DO: Dissolved Oxygen）」のみが生死を分ける唯一のライフライン</strong> となる。</p>
+        <p>作物根系が ATP を生成し硝酸イオン・カリウム・カルシウムを能動吸収するには、根圏バルク水中の溶存酸素濃度が常に <strong>DO ≥ 6.5 – 7.5 mg·L⁻¹（対飽和比 ≥ 75 % – 85 %）</strong> 以上に保たれていなければならない。DO が 4.0 mg·L⁻¹ を下回ると、根細胞内で嫌気的エタノール発酵が始まって細胞膜の半透性が崩壊し、さらに通性嫌気条件を好む <strong><em>Pythium ultimum / aphanidermatum</em>（立枯病・根腐病菌）</strong> の遊走子（Zoospores）が爆発的に増殖して 48 時間以内に全池壊滅を引き起こす。</p>
+      </section>
+      <section style="margin-bottom: 34px;">
+        <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px; margin-bottom: 16px;">2. Henry の法則による酸素溶解度の温度・塩分依存性と呼吸酸素需要の逆転現象</h2>
+        <p>DWC 管理における最大の物理的罠は、<strong>「水温 <em>T</em><sub>water</sub> が上昇すると、根と微生物の酸素消費速度は指数関数的に増加する（<em>Q</em>₁₀ ≈ 2.0）にもかかわらず、水中に溶け込める酸素の飽和上限 <em>C</em><sub>sat</sub>(<em>T</em>) は逆に低下する」</strong> という二重の逆転現象（Oxygen Squeeze）である。</p>
+        <div class="formula-box">C_sat(T, S) = H_O2(T) · p_O2 · f_salinity &nbsp;|&nbsp; d(DO)/dt = k_L a · (C_sat − C) − R_root(T) − R_microbe(T)</div>
+        <table class="eng-table">
+          <thead>
+            <tr>
+              <th>養液水温 (T_water)</th>
+              <th>空気平衡飽和 DO (C_sat @ 1 atm)</th>
+              <th>高密度レタス根呼吸消費量 (R_root)</th>
+              <th>DWC システムの危険度と設計対策</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>16.0 °C</strong></td>
+              <td>9.86 mg·L⁻¹</td>
+              <td>45 – 65 mg_O₂·m⁻²·h⁻¹</td>
+              <td><strong>安全余裕最大</strong>（通常散気＋ポンプ循環で DO 8.5+ 容易に維持）</td>
+            </tr>
+            <tr>
+              <td><strong>20.0 °C（最適上限）</strong></td>
+              <td>9.08 mg·L⁻¹</td>
+              <td>75 – 105 mg_O₂·m⁻²·h⁻¹</td>
+              <td><strong>標準運転基準</strong>（ベンチュリ混合＋チラー予冷スタンバイ）</td>
+            </tr>
+            <tr>
+              <td><strong>25.0 °C（警告域）</strong></td>
+              <td>8.26 mg·L⁻¹</td>
+              <td>125 – 170 mg_O₂·m⁻²·h⁻¹</td>
+              <td><strong>要警戒：</strong> 従来型エアストーンでは追従不可 · 純酸素溶解・冷却必須</td>
+            </tr>
+            <tr>
+              <td><strong>30.0 °C（致死リスク域）</strong></td>
+              <td>7.56 mg·L⁻¹</td>
+              <td>190 – 260 mg_O₂·m⁻²·h⁻¹</td>
+              <td><strong>緊急危機：</strong> <em>Pythium</em> 大発生 · 24 時間以内に全池チラー冷却 (≤ 21 °C) 要</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <section style="margin-bottom: 34px;">
+        <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px; margin-bottom: 16px;">3. 従来型エアストーン対ベンチュリ（Venturi）マイクロバブル・純酸素溶解の物質移動係数 k_L a</h2>
+        <p>気液物質移動速度は総括物質移動容量係数 <strong><em>k</em><sub>L</sub><em>a</em></strong>（h⁻¹）と濃度勾配（<em>C</em><sub>sat</sub> − <em>C</em>）の積で決まる。気泡径 3 – 5 mm の粗大気泡を放出する安価なセラミックエアストーンは比表面積 <em>a</em> が小さく、上昇速度が速すぎるため水中滞留時間が 1 秒未満となり、標準酸素移動効率（SOTE）はわずか <strong>3 % – 6 %</strong> に過ぎず、さらに目詰まりや局所的な根の絡み・生物膜（Biofouling）付着の温床となる。</p>
+        <p>これに対し商業 DWC で標準採用されるのが、主流循環ポンプのバイパス回路に組み込む <strong>ベンチュリ・インジェクター（Venturi Microbubble Injector）</strong> または <strong>ナノバブル発生器（気泡径 100 nm – 30 µm）</strong> である。縮流ノズル部で流速を増大させベルヌーイの定理に基づく負圧（キャビテーション・せん断流）を利用して空気（飽和上限 ~9 mg/L）または PSA 発生<strong>高純度酸素ガス（<em>p</em><sub>O₂</sub> ≈ 0.93 atm ➔ 飽和溶解度 40 – 43 mg·L⁻¹ へ 4.5 倍上昇！）</strong> を微細気泡化することで、<em>k</em><sub>L</sub><em>a</em> が 4 – 8 倍向上し、SOTE <strong>35 % – 85 %</strong> の超効率酸素溶解を実現する。</p>
+      </section>
+      <section style="margin-bottom: 34px;">
+        <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px; margin-bottom: 16px;">4. 循環滞留時間（HRT）設計・デッドゾーン排除・光学 DO センサーフィードバック制御</h2>
+        <p>水槽（例：長さ 30 m × 幅 2.4 m × 水深 0.25 m = 容量 18 m³）の一端で DO = 9.0 mg·L⁻¹ に富化しても、循環流量が不十分で水が滞留すると、流路末端のコーナー部（Dead Zone）では DO が 3.5 mg·L⁻¹ 未満へ枯渇する。設計規律として、<strong>水槽全体積を 1.5 – 2.5 時間ごとに 1 回転（HRT ≤ 2.0 h）</strong> させる循環流量を確保し、長辺側面に配置した多孔ヘッダーノズルから均一な緩慢層流（流速 2 – 5 cm·s⁻¹、根毛を機械的に引きちぎらない速度上限）を供給する。</p>
+        <p>また計測系においては、定期的な隔膜交換と流速依存性（撹拌不足時のドリフト）が問題となる旧来ポーラログラフ式（ガルバニ式）ではなく、蛍光消光寿命を測定する <strong>光学式ルミネッセンス DO センサー（Optical DO Sensor）</strong> を水槽出口（最も DO が低下するワーストケース点）に配置し、VFD 循環ポンプ・ベンチュリ酸素注入弁・チラーを 60 秒周期 PID 制御する。</p>
+      </section>
+      <section style="margin-bottom: 34px;">
+        <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px; margin-bottom: 16px;">5. 商業 DWC レタス施設（5,000 m²）のチラー＋ベンチュリ統合による通年 99.2 % 歩留まり実証</h2>
+        <p>5,000 m² の商業用 DWC リーフレタス施設（水温夏期ピーク 27 °C 対策として地中熱/チラー冷却 20.5 °C 固定＋PSA 高純度酸素ベンチュリ溶解＋UV-C 循環殺菌を実装）の通年生産実績では、旧来のブロワー＋エアストーン方式で頻発していた夏季の根腐れ廃棄率（14 % – 22 %）が <strong>通年 0.8 % 未満（歩留まり 99.2 %）</strong> へと劇的に改善した。さらに高 DO 環境下での硝酸吸収促進と根張りの健全化により 1 株重 165 g までの生育日数が 34 日から 29 日へと <strong>5 日間短縮</strong> され、年間回転率 +17 % 向上によって設備追加投資を <strong>1.4 年</strong> で回収した。</p>
+        <p>水質衛生と設備信頼性の最終防衛線（Fail-Safe SOP）として、全池の出口光学式 DO センサー（月 1 回大気飽和 100 % 校正）は PLC と接続され、DO &lt; 6.0 mg·L⁻¹ 低下または主循環ポンプの電流異常を検知した瞬間に待機予備ポンプ（Standby Pump）および緊急純酸素パージ弁へ自動無瞬断切替を行う二重冗長系を構築する。同時に 1 次ポンプ前の 200 µm ストレーナを週 1 回清掃することで、根片によるベンチュリノズル閉塞を永久に防止している。</p>
+      </section>
+
+    <section style="margin-bottom: 34px;">
+      <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #10b981; border-bottom: 1px solid rgba(16, 185, 129, 0.25); padding-bottom: 10px; margin-bottom: 16px;">施設園芸エンジニアリング 実践FAQ</h2>
+        <div style="background: rgba(15, 23, 42, 0.7); border-left: 4px solid #10b981; padding: 18px 20px; border-radius: 10px; margin-bottom: 14px;">
+          <p style="margin: 0;"><strong>Q1: 夏場に DWC 養液水温が 25 °C を超えると急激に根腐れ（Pythium）が多発する物理的・生物学的理由は？</strong><br>Henry の法則により水温が上がるほど水中の酸素飽和溶解度 C_sat が低下する（16 °C の 9.86 mg/L → 25 °C で 8.26 mg/L）一方、温度上昇に伴う Q₁₀ 則によって根と微生物の酸素消費速度は逆に 2〜3 倍へ急増するためです。この二重の酸欠（Oxygen Squeeze）で DO が 4 mg/L を切ると根組織が壊死し Pythium 菌が侵入します。</p>
+        </div>
+        <div style="background: rgba(15, 23, 42, 0.7); border-left: 4px solid #10b981; padding: 18px 20px; border-radius: 10px; margin-bottom: 14px;">
+          <p style="margin: 0;"><strong>Q2: なぜ商業 DWC 施設ではエアストーンではなく、ベンチュリ微細気泡または純酸素溶解が使われるのか？</strong><br>エアストーンの粗大気泡（3–5 mm）は浮上速度が速すぎて酸素移動効率が 3–6 % しかなく、さらに根や藻類が絡んで詰まりやすいためです。ベンチュリ微細気泡＋高純度酸素（PSA）は、分圧を高めて飽和駆動力を 4.5 倍に押し上げ、槽外ループで目詰まりなく 35–85 % の効率で DO ≥ 8–12 mg/L を安定供給できます。</p>
+        </div>
+        <div style="background: rgba(15, 23, 42, 0.7); border-left: 4px solid #10b981; padding: 18px 20px; border-radius: 10px; margin-bottom: 14px;">
+          <p style="margin: 0;"><strong>Q3: DWC 養液槽に設置する溶存酸素（DO）センサーの最適タイプと配置場所は？</strong><br>流速の影響を受けにくくメンブレン交換が不要な光学式（ルミネッセンス式）DO センサーを選定し、注水口付近ではなく植物の呼吸によって酸素が最も消費された直後の「水槽排水出口（ワーストケース地点）」に設置して、出口時点でも DO ≥ 6.5–7.0 mg/L を下回らないよう自動制御します。</p>
+        </div>
+    </section>
+
+    <section style="margin-bottom: 34px;">
+      <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.35rem; color: #cbd5e1; margin-bottom: 12px;">参考文献・国際規格 (References & Standards)</h2>
+      <ul style="padding-left: 20px;">
+          <li style="margin-bottom: 8px; color: #94a3b8; font-size: 0.92rem;">Resh, H. M. (2022). <em>Hydroponic Food Production: A Definitive Guidebook for the Advanced Home Gardener and the Commercial Hydroponic Grower</em> (8th ed.). CRC Press.</li>
+          <li style="margin-bottom: 8px; color: #94a3b8; font-size: 0.92rem;">Soffer, H., Burger, D. W., &amp; Lieth, J. H. (1991). Plant growth and development of Chrysanthemum and Ficus in aero-hydroponics: Response to low dissolved oxygen concentrations. <em>Scientia Horticulturae</em>, 45, 287–294.</li>
+          <li style="margin-bottom: 8px; color: #94a3b8; font-size: 0.92rem;">Morard, P., &amp; Silvestre, J. (1996). Plant injury due to oxygen deficiency in the root environment of soilless culture: A review. <em>Plant and Soil</em>, 184, 243–254.</li>
+          <li style="margin-bottom: 8px; color: #94a3b8; font-size: 0.92rem;">Chérif, M., Tirilly, Y., &amp; Bélanger, R. R. (1997). Effect of oxygen concentration on plant growth, lipidperoxidation, and receptivity of tomato roots to <em>Pythium F</em> under hydroponic conditions. <em>European Journal of Plant Pathology</em>, 103, 255–264.</li>
+          <li style="margin-bottom: 8px; color: #94a3b8; font-size: 0.92rem;">DIN EN ISO 5814 — <em>Water quality: Determination of dissolved oxygen (Electrochemical &amp; Optical Sensor Standards)</em>.</li>
+      </ul>
+    </section>
+
+
+<!-- INW-LIVE-WIDGET-START -->
+<section class="inw-live-widget-sandbox" style="margin: 32px 0; padding: 24px; background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 16px; box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);">
+  <h3 style="margin: 0 0 8px 0; font-size: 1.2rem; color: #38bdf8; font-weight: 800;">🧪 リアルタイム養液栽培 A/B 原液タンク & EC 希釈シミュレーター</h3>
+  <p style="margin: 0 0 16px 0; font-size: 0.92rem; color: #94a3b8; line-height: 1.6;">原水EC・目標EC・希釈倍率から、A/B原液タンク注入量と必要肥料塩類質量をリアルタイムに計算します。</p>
+  <div style="display: flex; justify-content: center; width: 100%; overflow: hidden;">
+    <iframe src="/embed/fertigation-ec-widget.html" width="380" height="460" loading="lazy" title="🧪 リアルタイム養液栽培 A/B 原液タンク & EC 希釈シミュレーター" style="border: none; border-radius: 14px; max-width: 100%;"></iframe>
+  </div>
+</section>
+<!-- INW-LIVE-WIDGET-END -->
+
+<!-- INW-TSUKUBA-FUNNEL-START -->
+<section class="inw-tsukuba-funnel-bridge" style="max-width: 1060px; margin: 32px auto; padding: 26px; background: rgba(15, 23, 42, 0.9); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 16px; text-align: left; box-shadow: 0 10px 28px rgba(0, 0, 0, 0.3);">
+  <h3 style="margin: 0 0 8px 0; font-size: 1.2rem; color: #10b981; font-weight: 800;">🔬 関連する技術論文・作物別環境制御ガイド・シミュレーター</h3>
+  <p style="margin: 0 0 16px 0; font-size: 0.92rem; color: #94a3b8; line-height: 1.6;">本ページの物理モデルおよび設計計算をさらに深く検証するための技術モノグラフと専用計算ツール：</p>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px;">
+    <a href="/articles/article-06-hydroponic-nutrient-formulation.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">Vol. 06: Hydroponic A/B Nutrient Formulation & Electroneutrality →</a>
+    <a href="/articles/article-73-closed-loop-nutrient-recirculation-davies-ion-balance.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">Vol. 73: Closed-Loop Recirculation & Davies Ion Speciation Physics →</a>
+    <a href="/articles/article-18-recirculating-nutrient-sterilization.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">Vol. 18: Recirculating Drain UV-C & Ozone Pathogen Disinfection →</a>
+    <a href="/crops/greenhouse-sweet-pepper-climate-blossom-end-rot-guide.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🫑 Sweet Pepper Calcium Transport & Blossom-End Rot Prevention Guide →</a>
+    <a href="/crops/greenhouse-cut-flower-rose-microclimate-guide.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🌹 Cut-Flower Rose Substrate EC & Recirculation Steering Guide →</a>
+    <a href="/tools/hydroponic-nutrient-solution-calculator.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🧪 A/B Tank Hydroponic Nutrient & Ion Balance Calculator →</a>
+    <a href="/tools/soil-matrix-water-potential-matric-suction-calculator.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🌱 Van Genuchten Substrate Water Potential & Dryback Calculator →</a>
+  </div>
+</section>
+<!-- INW-TSUKUBA-FUNNEL-END -->
+
+    <!-- INW-EEAT-BOX-START -->
+    <section class="inw-eeat-box" style="margin-top: 36px; padding: 24px; background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 16px;">
+      <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; color: #10b981; font-weight: 800; margin-bottom: 6px;">施設園芸・環境制御システムエンジニア — Inwoovation Lab</div>
+      <h3 style="margin: 0 0 8px 0; font-size: 1.15rem; color: #f8fafc;">Inwoo Hwang</h3>
+      <p style="margin: 0; font-size: 0.92rem; color: #cbd5e1; line-height: 1.65;">フェンロー型連棟温室の熱力学設計 (DIN V 18599)、光生物学 (DLI・PPFD・作用スペクトル)、閉鎖型養液栽培および精密環境制御モデルの構築に従事。</p>
+    </section>
+    <!-- INW-EEAT-BOX-END -->
+  </main>
+
+  <!-- INW-STD-FOOTER-START -->
+  <footer class="inw-site-footer" style="margin-top: 48px; padding: 28px 20px; background: #0f172a; color: #94a3b8; text-align: center; border-top: 1px solid rgba(148, 163, 184, 0.15);">
+    <div style="max-width: 1100px; margin: 0 auto;">
+      <p style="margin: 0 0 10px 0;">&copy; 2026 Inwoovation Lab. Precision Controlled Environment Agriculture &amp; Biophysical Engineering.</p>
+      <p style="margin: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 16px;">
+        <a href="/index.html" style="color: #cbd5e1; text-decoration: none;">Home</a>
+        <a href="/guides.html" style="color: #cbd5e1; text-decoration: none;">Engineering Guides</a>
+        <a href="/privacy-policy.html" style="color: #cbd5e1; text-decoration: none;">Privacy Policy</a>
+        <a href="/terms-of-service.html" style="color: #cbd5e1; text-decoration: none;">Terms of Service</a>
+        <a href="/about.html" style="color: #cbd5e1; text-decoration: none;">About</a>
+        <a href="/contact.html" style="color: #cbd5e1; text-decoration: none;">Contact</a>
+      </p>
+    </div>
+  </footer>
+  <!-- INW-STD-FOOTER-END -->
+</body>
+</html>

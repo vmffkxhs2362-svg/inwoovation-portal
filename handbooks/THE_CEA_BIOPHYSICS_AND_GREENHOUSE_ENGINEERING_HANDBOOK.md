@@ -1,5 +1,5 @@
 # 📘 The CEA Biophysics & Greenhouse Engineering Handbook
-## OpenCEA Compendium: 78 Volumes (200 Multilingual Editions) & 42 Live Simulators
+## OpenCEA Compendium: 78 Volumes (208 Multilingual Editions) & 42 Live Simulators
 
 > **Author**: Inwoovation Lab (Inwoo Hwang)  
 > **Target Audience**: Commercial Greenhouse Operators, Plant Factory Systems Engineers, Gärtnermeister Candidates, Agronomists  
@@ -8,7 +8,7 @@
 ---
 
 ## 📌 Executive Abstract & Compendium Profile
-This open-access technical compendium organizes all **78 English engineering monographs** (**200 total EN/DE/JA editions**) alongside **42 client-side biophysical simulators** and **192 hyper-local agricultural grant programs** into six engineering domains.
+This open-access technical compendium organizes all **78 English engineering monographs** (**208 total EN/DE/JA editions**) alongside **42 client-side biophysical simulators** and **192 hyper-local agricultural grant programs** into six engineering domains.
 
 ---
 
@@ -158,6 +158,7 @@ This open-access technical compendium organizes all **78 English engineering mon
 <a id="chapter-18-article-18-recirculating-nutrient-sterilization"></a>
 - **EN Monograph**: [../articles/article-18-recirculating-nutrient-sterilization.html](../articles/article-18-recirculating-nutrient-sterilization.html)
 - **DE Edition**: [../articles/de/article-18-rezirkulierende-naehrloesungsentkeimung-uv-c-ozon-ultrafiltration-chelat.html](../articles/de/article-18-rezirkulierende-naehrloesungsentkeimung-uv-c-ozon-ultrafiltration-chelat.html)
+- **JA Edition**: [../articles/ja/article-18-recirculating-nutrient-sterilization-uvc-ozone-uf-jp.html](../articles/ja/article-18-recirculating-nutrient-sterilization-uvc-ozone-uf-jp.html)
 - **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
 - **Synopsis**: Engineering recirculating hydroponic drain water disinfection: UV-C irradiance dosage (mJ/cm2), ozone oxidation redox potential (ORP), and automated climate.
 
@@ -333,7 +334,7 @@ This open-access technical compendium organizes all **78 English engineering mon
 ## Volume 14: Dual Horticultural Education & Vocational Engineering in Germany: Gärtner Ausbildung to Meister
 <a id="chapter-14-article-14-ausbildung-horticulture-germany"></a>
 - **EN Monograph**: [../articles/article-14-ausbildung-horticulture-germany.html](../articles/article-14-ausbildung-horticulture-germany.html)
-- **DE Edition**: [../articles/de/article-14-vertical-farming-hvac-entfeuchtung-kondensation-waermerueckgewinnung.html](../articles/de/article-14-vertical-farming-hvac-entfeuchtung-kondensation-waermerueckgewinnung.html)
+- **DE Edition**: [../articles/de/article-14-duale-ausbildung-gaertnermeister-karriere-gehalt-deutschland.html](../articles/de/article-14-duale-ausbildung-gaertnermeister-karriere-gehalt-deutschland.html)
 - **JA Edition**: [../articles/ja/article-14-ausbildung-horticulture-germany-jp.html](../articles/ja/article-14-ausbildung-horticulture-germany-jp.html)
 - **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
 - **Synopsis**: Comprehensive structural guide to Germany's dual vocational education system (Duale Ausbildung) in commercial production horticulture (Gartenbau).
@@ -342,6 +343,7 @@ This open-access technical compendium organizes all **78 English engineering mon
 <a id="chapter-17-article-17-indoor-plant-soil-aeration-porosity"></a>
 - **EN Monograph**: [../articles/article-17-indoor-plant-soil-aeration-porosity.html](../articles/article-17-indoor-plant-soil-aeration-porosity.html)
 - **DE Edition**: [../articles/de/article-17-substratphysik-luftkapazitaet-wasserretention-wurzelbelueftung.html](../articles/de/article-17-substratphysik-luftkapazitaet-wasserretention-wurzelbelueftung.html)
+- **JA Edition**: [../articles/ja/article-17-substrate-physics-air-filled-porosity-root-aeration-jp.html](../articles/ja/article-17-substrate-physics-air-filled-porosity-root-aeration-jp.html)
 - **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
 - **Synopsis**: Engineering potting media physics: Total Porosity, Container Capacity (CC), and Air-Filled Porosity (AFP) to eliminate root hypoxia in containerized.
 
@@ -349,6 +351,7 @@ This open-access technical compendium organizes all **78 English engineering mon
 <a id="chapter-21-article-21-chlorophyll-a-fluorescence-fvfm-stress"></a>
 - **EN Monograph**: [../articles/article-21-chlorophyll-a-fluorescence-fvfm-stress.html](../articles/article-21-chlorophyll-a-fluorescence-fvfm-stress.html)
 - **DE Edition**: [../articles/de/article-21-chlorophyllfluoreszenz-fvfm-quantenausbeute-pflanzenstress-pam.html](../articles/de/article-21-chlorophyllfluoreszenz-fvfm-quantenausbeute-pflanzenstress-pam.html)
+- **JA Edition**: [../articles/ja/article-21-chlorophyll-fluorescence-fvfm-pam-stress-diagnostics-jp.html](../articles/ja/article-21-chlorophyll-fluorescence-fvfm-pam-stress-diagnostics-jp.html)
 - **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
 - **Synopsis**: Photosystem II maximum quantum yield (Fv/Fm), OJIP induction curves, and non-photochemical quenching (NPQ) for real-time non-destructive plant stress.
 
@@ -356,6 +359,7 @@ This open-access technical compendium organizes all **78 English engineering mon
 <a id="chapter-22-article-22-hps-vs-led-supplemental-lighting"></a>
 - **EN Monograph**: [../articles/article-22-hps-vs-led-supplemental-lighting.html](../articles/article-22-hps-vs-led-supplemental-lighting.html)
 - **DE Edition**: [../articles/de/article-22-hps-vs-led-assimilation-belichtung-strahlungsheizung-wirtschaftlichkeit.html](../articles/de/article-22-hps-vs-led-assimilation-belichtung-strahlungsheizung-wirtschaftlichkeit.html)
+- **JA Edition**: [../articles/ja/article-22-hps-vs-led-assimilation-lighting-radiant-heat-economics-jp.html](../articles/ja/article-22-hps-vs-led-assimilation-lighting-radiant-heat-economics-jp.html)
 - **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
 - **Synopsis**: Comparative biophysics of High-Pressure Sodium (HPS) and LED supplemental fixtures: PAR photon efficacy (µmol/J), Far-Red Emerson enhancement, and automated.
 
@@ -363,6 +367,7 @@ This open-access technical compendium organizes all **78 English engineering mon
 <a id="chapter-23-article-23-closed-loop-dwc-automation"></a>
 - **EN Monograph**: [../articles/article-23-closed-loop-dwc-automation.html](../articles/article-23-closed-loop-dwc-automation.html)
 - **DE Edition**: [../articles/de/article-23-geschlossene-tiefwasserkultur-dwc-sauerstoffsaettigung-venturi-automatisierung.html](../articles/de/article-23-geschlossene-tiefwasserkultur-dwc-sauerstoffsaettigung-venturi-automatisierung.html)
+- **JA Edition**: [../articles/ja/article-23-closed-loop-dwc-dissolved-oxygen-venturi-automation-jp.html](../articles/ja/article-23-closed-loop-dwc-dissolved-oxygen-venturi-automation-jp.html)
 - **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
 - **Synopsis**: Engineering recirculating Deep Water Culture (DWC) systems: Henry's Law dissolved oxygen (DO) dynamics, ion-selective electrode (ISE) feedback.
 
@@ -466,6 +471,7 @@ This open-access technical compendium organizes all **78 English engineering mon
 <a id="chapter-19-article-19-vertical-farm-biomass-conversion-efficiency"></a>
 - **EN Monograph**: [../articles/article-19-vertical-farm-biomass-conversion-efficiency.html](../articles/article-19-vertical-farm-biomass-conversion-efficiency.html)
 - **DE Edition**: [../articles/de/article-19-vertikale-landwirtschaft-biomasse-konversionseffizienz-lue-ernteindex.html](../articles/de/article-19-vertikale-landwirtschaft-biomasse-konversionseffizienz-lue-ernteindex.html)
+- **JA Edition**: [../articles/ja/article-19-vertical-farm-biomass-conversion-efficiency-lue-jp.html](../articles/ja/article-19-vertical-farm-biomass-conversion-efficiency-lue-jp.html)
 - **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
 - **Synopsis**: Quantifying photon use efficiency (g/mol) and energy yield (g/kWh) in indoor plant factories with artificial lighting (PFAL) across leafy greens.
 
@@ -473,6 +479,7 @@ This open-access technical compendium organizes all **78 English engineering mon
 <a id="chapter-20-article-20-leaf-temperature-infrared-thermometry"></a>
 - **EN Monograph**: [../articles/article-20-leaf-temperature-infrared-thermometry.html](../articles/article-20-leaf-temperature-infrared-thermometry.html)
 - **DE Edition**: [../articles/de/article-20-blatttemperatur-infrarot-thermometrie-emissionsgrad-energiebilanz.html](../articles/de/article-20-blatttemperatur-infrarot-thermometrie-emissionsgrad-energiebilanz.html)
+- **JA Edition**: [../articles/ja/article-20-leaf-temperature-infrared-thermometry-energy-balance-jp.html](../articles/ja/article-20-leaf-temperature-infrared-thermometry-energy-balance-jp.html)
 - **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
 - **Synopsis**: Physics of infrared canopy radiometry: Stefan-Boltzmann law, leaf-to-air temperature differential (ΔT), and Crop Water Stress Index (CWSI) for commercial.
 
@@ -555,6 +562,7 @@ This open-access technical compendium organizes all **78 English engineering mon
 <a id="chapter-16-article-16-german-meister-greenhouse-climate"></a>
 - **EN Monograph**: [../articles/article-16-german-meister-greenhouse-climate.html](../articles/article-16-german-meister-greenhouse-climate.html)
 - **DE Edition**: [../articles/de/article-16-gaertnermeister-gewaechshaus-klimasteuerung-taupunkt-heizrohr.html](../articles/de/article-16-gaertnermeister-gewaechshaus-klimasteuerung-taupunkt-heizrohr.html)
+- **JA Edition**: [../articles/ja/article-16-german-meister-greenhouse-climate-dewpoint-jp.html](../articles/ja/article-16-german-meister-greenhouse-climate-dewpoint-jp.html)
 - **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
 - **Synopsis**: Advanced European greenhouse climate steering: 24-hour temperature integration (RTI), pre-night temperature drops (DIP), and 3-way mixing valve heating.
 

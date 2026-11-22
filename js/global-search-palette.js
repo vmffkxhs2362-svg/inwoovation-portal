@@ -18,8 +18,8 @@
     "cat": "part",
     "url": "directory.html",
     "icon": "⚙️",
-    "desc": "Master HTML sitemap and engineering taxonomy indexing all 383 calculators, 192 global agricultural grants, EN/DE/JA monographs, crop guides, and climate hubs.",
-    "tags": "directory html complete cea engineering directory amp index master html sitemap and engineering taxonomy indexing all 383 calculators 192 global agricultural grants en de ja monographs crop "
+    "desc": "Master HTML sitemap and engineering taxonomy indexing all 391 calculators, 192 global agricultural grants, EN/DE/JA monographs, crop guides, and climate hubs.",
+    "tags": "directory html complete cea engineering directory amp index master html sitemap and engineering taxonomy indexing all 391 calculators 192 global agricultural grants en de ja monographs crop "
   },
   {
     "title": "CEA &amp; Greenhouse Engineering Articles",
@@ -806,12 +806,12 @@
     "tags": "articles de article 13 sensorkalibrierung messunsicherheit pt100 ndir fd smartfarm html präzisions sensorkalibrierung im smart greenhouse ingenieurleitfaden zur sensorkalibrierung im untergl"
   },
   {
-    "title": "Vertical Farming HVAC &amp; Entfeuchtung berechnen",
+    "title": "Vol. 14: Duale Gartenbau-Ausbildung",
     "cat": "article",
-    "url": "articles/de/article-14-vertical-farming-hvac-entfeuchtung-kondensation-waermerueckgewinnung.html",
+    "url": "articles/de/article-14-duale-ausbildung-gaertnermeister-karriere-gehalt-deutschland.html",
     "icon": "🇩🇪",
-    "desc": "Ingenieurleitfaden zur HVAC- und Entfeuchtungsauslegung im Vertical Farming und Indoor-Gartenbau: Latente Dampfmassenbilanz, Sensible-Heat-Ratio (SHR).",
-    "tags": "articles de article 14 vertical farming hvac entfeuchtung kondensation waermerueckgewinnung html vertical farming hvac amp entfeuchtung berechnen ingenieurleitfaden zur hvac und entfeuchtung"
+    "desc": "Systemanalyse der dualen Gartenbau-Ausbildung nach BBiG (70 % Betrieb, 30 % Berufsschule), dreiteilige Meisterprüfung nach § 2 GartMstrV inkl.",
+    "tags": "articles de article 14 duale ausbildung gaertnermeister karriere gehalt deutschland html vol 14 duale gartenbau ausbildung systemanalyse der dualen gartenbau ausbildung nach bbig 70 betrieb "
   },
   {
     "title": "Vol. 15: Innenraumbegrünung &amp; Biophiles Design",
@@ -1454,6 +1454,70 @@
     "tags": "articles ja article 15 biophilic architecture indoor light compensation voc jp html vol 15 バイオフィリック建築と室内緑化の環境物理学 ドイツfll室内緑化基準に基づくバイオフィリック建築の環境物理学 光補償点 lcp luxからppfdへの分光換算 底面灌水ハイドロニクスの毛管水理 根圏"
   },
   {
+    "title": "Vol. 16: ドイツ園芸マイスターの温室気候制御工学",
+    "cat": "article",
+    "url": "articles/ja/article-16-german-meister-greenhouse-climate-dewpoint-jp.html",
+    "icon": "🇯🇵",
+    "desc": "ドイツ Gärtnermeister の高度施設園芸気候制御。Cool-Morning 戦略、植物体露点凝縮（Botrytis 防除）の臨界マージン ΔT_dew、DIN V 18599 二重保温スクリーン間隙（Screen Gap）除湿、51 mm レールパイプ最小水温制御の数理モデルを詳説。",
+    "tags": "articles ja article 16 german meister greenhouse climate dewpoint jp html vol 16 ドイツ園芸マイスタ の温室気候制御工学 ドイツ gärtnermeister の高度施設園芸気候制御 cool morning 戦略 植物体露点凝縮 botrytis 防除 の臨界マ ジン t dew din v 18"
+  },
+  {
+    "title": "Vol. 17: 園芸培地物理学（DIN EN 13041）",
+    "cat": "article",
+    "url": "articles/ja/article-17-substrate-physics-air-filled-porosity-root-aeration-jp.html",
+    "icon": "🇯🇵",
+    "desc": "DIN EN 13041 に基づく園芸培地物理学の徹底解説。pF 1.0 気相率（Luftkapazität）、鉢底の飽和水層（Stauwasserzone）の物理機構、Van Genuchten 水分特性曲線、Millington-Quirk 根圏酸素拡散モデル、RAL-GZ 250.",
+    "tags": "articles ja article 17 substrate physics air filled porosity root aeration jp html vol 17 園芸培地物理学 din en 13041 din en 13041 に基づく園芸培地物理学の徹底解説 pf 1 0 気相率 luftkapazität 鉢底の飽和水層 stauwasserzone の"
+  },
+  {
+    "title": "Vol. 18: 閉鎖型循環養液栽培の無放流排液殺菌工学（WHG / DüV）— UV-C 254",
+    "cat": "article",
+    "url": "articles/ja/article-18-recirculating-nutrient-sterilization-uvc-ozone-uf-jp.html",
+    "icon": "🇯🇵",
+    "desc": "ドイツ水資源法（WHG）および肥料令（DüV）が求めるゼロエミッション閉鎖型養液循環の殺菌工学。UV-C 254 nm の Beer-Lambert 減衰と Chick-Watson 4-Log 殺菌線量、オゾン ORP ≥ 750 mV の CT 値、限外濾過（UF 0.02 µm）、Fe-DTPA/EDDHA.",
+    "tags": "articles ja article 18 recirculating nutrient sterilization uvc ozone uf jp html vol 18 閉鎖型循環養液栽培の無放流排液殺菌工学 whg düv uv c 254 ドイツ水資源法 whg および肥料令 düv が求めるゼロエミッション閉鎖型養液循環の殺菌工学 uv c 254 nm の bee"
+  },
+  {
+    "title": "Vol. 19: 完全人工光型植物工場（Vertical",
+    "cat": "article",
+    "url": "articles/ja/article-19-vertical-farm-biomass-conversion-efficiency-lue-jp.html",
+    "icon": "🇯🇵",
+    "desc": "植物工場（PFAL）の光利用効率（LUE: g_DM/mol_PAR）、収穫指数（HI）、LED 電気→光子変換効率（PPE 3.4–3.8 µmol/J）、および製品 1 kg あたり消費電力量（kWh/kg_FW）の決定方程式と限界突破エンジニアリングを詳説。",
+    "tags": "articles ja article 19 vertical farm biomass conversion efficiency lue jp html vol 19 完全人工光型植物工場 vertical 植物工場 pfal の光利用効率 lue g dm mol par 収穫指数 hi led 電気 光子変換効率 ppe 3 4 3 8 mol j および製品 1 kg"
+  },
+  {
+    "title": "Vol. 20: 非接触赤外線葉温計測と葉面エネルギー収支",
+    "cat": "article",
+    "url": "articles/ja/article-20-leaf-temperature-infrared-thermometry-energy-balance-jp.html",
+    "icon": "🇯🇵",
+    "desc": "施設園芸における非接触赤外線放射温度計（IRT）による葉温計測の物理と誤差補正。植物葉の放射率 ε = 0.96–0.98、冷たいガラス屋根の背景長波反射誤差補償、葉面熱収支方程式と作物水ストレス指数 CWSI を数式で解明。",
+    "tags": "articles ja article 20 leaf temperature infrared thermometry energy balance jp html vol 20 非接触赤外線葉温計測と葉面エネルギ 収支 施設園芸における非接触赤外線放射温度計 irt による葉温計測の物理と誤差補正 植物葉の放射率 0 96 0 98 冷たいガラス屋根の背景長波反射誤差補償 "
+  },
+  {
+    "title": "Vol. 21: クロロフィル蛍光診断（PAM）・最大量子収率",
+    "cat": "article",
+    "url": "articles/ja/article-21-chlorophyll-fluorescence-fvfm-pam-stress-diagnostics-jp.html",
+    "icon": "🇯🇵",
+    "desc": "パルス振幅変調（PAM）クロロフィル a 蛍光法を用いた施設園芸作物の非破壊光合成ストレス診断。最大量子収率 Fv/Fm の健全閾値（0.78–0.84）、明順応下実効量子収率 ΦPSII、電子伝達速度 ETR、非光化学的消光 NPQ による LED 調光・気候制御フィードバックを解説。",
+    "tags": "articles ja article 21 chlorophyll fluorescence fvfm pam stress diagnostics jp html vol 21 クロロフィル蛍光診断 pam 最大量子収率 パルス振幅変調 pam クロロフィル a 蛍光法を用いた施設園芸作物の非破壊光合成ストレス診断 最大量子収率 fv fm の健全閾値 0 78 0 84 "
+  },
+  {
+    "title": "Vol. 22: 高圧ナトリウムランプ（HPS）対 LED 補光工学",
+    "cat": "article",
+    "url": "articles/ja/article-22-hps-vs-led-assimilation-lighting-radiant-heat-economics-jp.html",
+    "icon": "🇯🇵",
+    "desc": "商業ガラス温室における 1,000 W DE-HPS 対フル LED 補光の熱力学的・経済的完全比較。PPE（1.7 vs 3.6 µmol/J）、長波赤外放射による葉温 +1.5 K 上昇と LED 導入時の暖房負荷振替（Heat-Replacement Effect）、1.0 ha.",
+    "tags": "articles ja article 22 hps vs led assimilation lighting radiant heat economics jp html vol 22 高圧ナトリウムランプ hps 対 led 補光工学 商業ガラス温室における 1 000 w de hps 対フル led 補光の熱力学的 経済的完全比較 ppe 1 7 vs 3 6 mol "
+  },
+  {
+    "title": "Vol. 23: 閉鎖型湛液水耕（DWC）の溶存酸素（DO）物理・Henry",
+    "cat": "article",
+    "url": "articles/ja/article-23-closed-loop-dwc-dissolved-oxygen-venturi-automation-jp.html",
+    "icon": "🇯🇵",
+    "desc": "商業湛液水耕（Deep Water Culture, DWC）における水温上昇に伴う酸素溶解度低下（Henry の法則）、根呼吸酸素消費量と供給速度の物質収支、ベンチュリ（Venturi）マイクロバブル溶解効率、Pythium 抑止のための DO ≥ 7.0 mg/L 自動制御設計を数式で解明。",
+    "tags": "articles ja article 23 closed loop dwc dissolved oxygen venturi automation jp html vol 23 閉鎖型湛液水耕 dwc の溶存酸素 do 物理 henry 商業湛液水耕 deep water culture dwc における水温上昇に伴う酸素溶解度低下 henry の法則 根呼吸酸素消費量と供給"
+  },
+  {
     "title": "遠赤色光（730nm）と深赤色光（660nm）の最適LEDスペクトル比率",
     "cat": "article",
     "url": "articles/ja/article-24-far-red-deep-red-led-spectrum-optimization-jp.html",
@@ -1686,12 +1750,12 @@
     "tags": "articles ja article 52 aquifer thermal energy storage ates heat pump jp html 帯水層蓄熱システム ates と産業用ヒ トポンプの温室熱工学モデル venlo型温室における帯水層蓄熱 ates wko ダブレット井戸システム 季節蓄熱回収効率 および高温産業用ヒ トポンプのcop熱力学モデル"
   },
   {
-    "title": "日本語 施設園芸・スマート農業工学モノグラフ一覧 (44 論文)",
+    "title": "日本語 施設園芸・スマート農業工学モノグラフ一覧 (52 論文)",
     "cat": "article",
     "url": "articles/ja/index.html",
     "icon": "🇯🇵",
-    "desc": "商業用 Venlo 型ガラス温室の VPD 飽差熱力学・DIN V 18599 暖房負荷・EN 13031-1 構造設計・FvCB CO2 施用・養液化学平衡を解説する 44 編の日本語技術論文アーカイブ。",
-    "tags": "articles ja index html 日本語 施設園芸 スマ ト農業工学モノグラフ一覧 44 論文 商業用 venlo 型ガラス温室の vpd 飽差熱力学 din v 18599 暖房負荷 en 13031 1 構造設計 fvcb co2 施用 養液化学平衡を解説する 44 編の日本語技術論文ア カイブ"
+    "desc": "商業用 Venlo 型ガラス温室の VPD 飽差熱力学・DIN V 18599 暖房負荷・EN 13031-1 構造設計・FvCB CO2 施用・養液化学平衡を解説する 52 編の日本語技術論文アーカイブ。",
+    "tags": "articles ja index html 日本語 施設園芸 スマ ト農業工学モノグラフ一覧 52 論文 商業用 venlo 型ガラス温室の vpd 飽差熱力学 din v 18599 暖房負荷 en 13031 1 構造設計 fvcb co2 施用 養液化学平衡を解説する 52 編の日本語技術論文ア カイブ"
   },
   {
     "title": "Diffuse AR Glass vs. Multi-Layer PO Film",
@@ -2154,8 +2218,8 @@
     "cat": "article",
     "url": "handbooks/index.html",
     "icon": "📖",
-    "desc": "Open-access six-part Controlled Environment Agriculture compendium indexing 78 volumes (200 EN/DE/JA editions), 42 live biophysical calculators, and 192.",
-    "tags": "handbooks index html the cea biophysics amp greenhouse engineering open access six part controlled environment agriculture compendium indexing 78 volumes 200 en de ja editions 42 live biophy"
+    "desc": "Open-access six-part Controlled Environment Agriculture compendium indexing 78 volumes (208 EN/DE/JA editions), 42 live biophysical calculators, and 192.",
+    "tags": "handbooks index html the cea biophysics amp greenhouse engineering open access six part controlled environment agriculture compendium indexing 78 volumes 208 en de ja editions 42 live biophy"
   },
   {
     "title": "AgriMaster",
@@ -3060,13 +3124,13 @@
       <div class="inwoo-palette-box" role="dialog" aria-modal="true" aria-label="Inwoovation Spotlight Search">
         <div class="inwoo-palette-header">
           <span class="inwoo-palette-search-icon">🔍</span>
-          <input type="text" id="inwoo-palette-input" placeholder="Search all 378 tools, simulators, wiki, crops, climate hubs & EN/DE/JA articles..." autocomplete="off" />
+          <input type="text" id="inwoo-palette-input" placeholder="Search all 386 tools, simulators, wiki, crops, climate hubs & EN/DE/JA articles..." autocomplete="off" />
           <span class="inwoo-palette-esc-badge" onclick="window.InwooPalette.close()">ESC</span>
         </div>
         <div class="inwoo-palette-tabs">
-          <button class="inwoo-pal-tab active" data-cat="all">✨ All (378)</button>
+          <button class="inwoo-pal-tab active" data-cat="all">✨ All (386)</button>
           <button class="inwoo-pal-tab" data-cat="tool">🛠️ Tools (49)</button>
-          <button class="inwoo-pal-tab" data-cat="article">📚 Articles (206)</button>
+          <button class="inwoo-pal-tab" data-cat="article">📚 Articles (214)</button>
           <button class="inwoo-pal-tab" data-cat="wiki">🧬 Wiki (44)</button>
           <button class="inwoo-pal-tab" data-cat="climate">🌍 Climate (41)</button>
           <button class="inwoo-pal-tab" data-cat="sim">🧪 Simulators (19)</button>
@@ -3080,7 +3144,7 @@
             <span><kbd>↵</kbd> Open</span>
             <span><kbd>Esc</kbd> Close</span>
           </div>
-          <div style="color: #64748b; font-size: 0.75rem;">Inwoovation Universal Spotlight (378 Indexed Pages)</div>
+          <div style="color: #64748b; font-size: 0.75rem;">Inwoovation Universal Spotlight (386 Indexed Pages)</div>
         </div>
       </div>
     `;

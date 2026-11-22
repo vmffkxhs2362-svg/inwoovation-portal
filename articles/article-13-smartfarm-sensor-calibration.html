@@ -69,7 +69,7 @@
         "url": "https://inwoovation.com"
       },
       "datePublished": "2026-09-01",
-      "dateModified": "2026-11-21",
+      "dateModified": "2026-11-22",
       "mainEntityOfPage": "https://inwoovation.com/articles/article-13-smartfarm-sensor-calibration.html"
     },
     {
@@ -77,26 +77,26 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "How do operators prevent humidity spikes when thermal screens are closed over 95%?",
+          "name": "How does Nernst equation temperature and slope verification detect failing double-junction pH probes?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "By coordinating a controlled 1.5%–4.0% moisture purge gap (Screen Gap) with a minimum pipe-rail temperature of 38–42 °C, gentle buoyancy-driven convection transports excess water vapor into the upper roof plenum where it condenses on the cold glass envelope and drains via gutter channels."
+            "text": "At 25 °C an ideal glass pH electrode outputs 59.16 mV per pH unit; bi-weekly two-point calibration against pH 7.00 and 4.01 buffers immediately flags probe aging when slope efficiency eta_S drops below 92% (54.4 mV/pH) or zero-offset drifts > ± 30 mV."
           }
         },
         {
           "@type": "Question",
-          "name": "What sampling frequency is required to synchronize solar radiation with irrigation and climate actuators?",
+          "name": "Why must raw hydroponic EC readings always be normalized to 25 °C (EC_25)?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Quantum PAR and pyranometer sensors are sampled every 5 seconds, filtered over a 60-second rolling window, and integrated into cumulative radiation sums (J/cm2) to trigger precision 100 mL drip shots while updating MPC climate trajectories every 5 minutes."
+            "text": "Ionic mobility in aqueous solutions increases ~1.9%–2.1% per °C; uncompensated 16 °C winter drain water appears ~18% lower in EC than actual molar salt concentration, triggering over-dosing errors."
           }
         },
         {
           "@type": "Question",
-          "name": "Where can I simulate these exact thermodynamic and agronomic equations for my own facility?",
+          "name": "Why do un-aspirated greenhouse temperature/humidity sensors read up to +4 °C too high under sunlight?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Launch our interactive Interactive CEA Engineering Calculator or explore the full suite of CEA engineering calculators linked below."
+            "text": "Direct solar shortwave radiation heats static white plastic shields unless an active fan draws canopy air past the PT1000 and RH element at >= 3.0 m/s inside a double-walled reflective radiation shield."
           }
         }
       ]
@@ -282,12 +282,12 @@
 
         <h2>Section E: Frequently Asked Engineering Questions (FAQ)</h2>
         <div class="faq-block" style="margin-top: 14px;">
-          <p><strong>Q1: How do operators prevent humidity spikes when thermal screens are closed over 95%?</strong><br>
-          By coordinating a controlled 1.5%–4.0% <em>moisture purge gap (Screen Gap)</em> with a minimum pipe-rail temperature of 38–42 °C, gentle buoyancy-driven convection transports excess water vapor into the upper roof plenum where it condenses on the cold glass envelope and drains via gutter channels.</p>
-          <p><strong>Q2: What sampling frequency is required to synchronize solar radiation with irrigation and climate actuators?</strong><br>
-          Quantum PAR and pyranometer sensors are sampled every 5 seconds, filtered over a 60-second rolling window, and integrated into cumulative radiation sums (J/cm<sup>2</sup>) to trigger precision 100 mL drip shots while updating MPC climate trajectories every 5 minutes.</p>
-          <p><strong>Q3: Where can I simulate these exact thermodynamic and agronomic equations for my own facility?</strong><br>
-          Launch our interactive <a href="/tools/hydroponic-nutrient-solution-calculator.html" style="color: #10b981; font-weight: 700;">Interactive CEA Engineering Calculator</a> or explore the full suite of CEA engineering calculators linked below.</p>
+          <p><strong>Q1: How does Nernst equation temperature and slope verification detect failing double-junction pH probes?</strong><br>
+          At 25 °C an ideal glass pH electrode outputs 59.16 mV per pH unit; bi-weekly two-point calibration against pH 7.00 and 4.01 buffers immediately flags probe aging when slope efficiency eta_S drops below 92% (54.4 mV/pH) or zero-offset drifts &gt; ± 30 mV.</p>
+          <p><strong>Q2: Why must raw hydroponic EC readings always be normalized to 25 °C (EC_25)?</strong><br>
+          Ionic mobility in aqueous solutions increases ~1.9%–2.1% per °C; uncompensated 16 °C winter drain water appears ~18% lower in EC than actual molar salt concentration, triggering over-dosing errors.</p>
+          <p><strong>Q3: Why do un-aspirated greenhouse temperature/humidity sensors read up to +4 °C too high under sunlight?</strong><br>
+          Direct solar shortwave radiation heats static white plastic shields unless an active fan draws canopy air past the PT1000 and RH element at &gt;= 3.0 m/s inside a double-walled reflective radiation shield. (Simulate these parameters directly in our <a href="/tools/hydroponic-nutrient-solution-calculator.html" style="color: #10b981; font-weight: 700;">Smartfarm Sensor Calibration &amp; EC25 Calculator</a>.)</p>
         </div>
       </section>
 <!-- INW-DEEP-ENG-END -->

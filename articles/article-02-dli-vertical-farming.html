@@ -67,7 +67,7 @@
         "url": "https://inwoovation.com"
       },
       "datePublished": "2026-09-01",
-      "dateModified": "2026-11-21",
+      "dateModified": "2026-11-22",
       "mainEntityOfPage": "https://inwoovation.com/articles/article-02-dli-vertical-farming.html"
     },
     {
@@ -75,26 +75,26 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "How do operators prevent humidity spikes when thermal screens are closed over 95%?",
+          "name": "How do you convert instantaneous PPFD (umol/m2·s) and photoperiod into Daily Light Integral (DLI)?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "By coordinating a controlled 1.5%–4.0% moisture purge gap (Screen Gap) with a minimum pipe-rail temperature of 38–42 °C, gentle buoyancy-driven convection transports excess water vapor into the upper roof plenum where it condenses on the cold glass envelope and drains via gutter channels."
+            "text": "Multiply average canopy PPFD by photoperiod seconds and divide by 1,000,000: DLI = PPFD × Hours × 0.0036 (mol/m2·d). For example, 250 umol/m2·s over an 18-hour photoperiod supplies exactly 16.2 mol/m2·d."
           }
         },
         {
           "@type": "Question",
-          "name": "What sampling frequency is required to synchronize solar radiation with irrigation and climate actuators?",
+          "name": "What target DLI range maximizes leafy green biomass in vertical farms without triggering tipburn?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Quantum PAR and pyranometer sensors are sampled every 5 seconds, filtered over a 60-second rolling window, and integrated into cumulative radiation sums (J/cm2) to trigger precision 100 mL drip shots while updating MPC climate trajectories every 5 minutes."
+            "text": "Commercial butterhead and romaine lettuce typically target 14–17 mol/m2·d paired with 0.35–0.50 m/s horizontal laminar airflow and 0.70–0.85 kPa VPD to sustain calcium delivery to expanding meristems."
           }
         },
         {
           "@type": "Question",
-          "name": "Where can I simulate these exact thermodynamic and agronomic equations for my own facility?",
+          "name": "Why is extending photoperiod at lower PPFD often more profitable than short high-intensity bursts?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Launch our interactive DLI &amp; Photonic Efficacy Calculator or explore the full suite of CEA engineering calculators linked below."
+            "text": "Photosynthetic quantum yield drops nonlinearly as leaves approach light saturation. Delivering the same 16 mol/m2·d at 222 umol/m2·s over 20 hours reduces LED fixture CapEx by 20% and avoids midday HVAC cooling spikes."
           }
         }
       ]
@@ -274,12 +274,12 @@
 
         <h2>Section E: Frequently Asked Engineering Questions (FAQ)</h2>
         <div class="faq-block" style="margin-top: 14px;">
-          <p><strong>Q1: How do operators prevent humidity spikes when thermal screens are closed over 95%?</strong><br>
-          By coordinating a controlled 1.5%–4.0% <em>moisture purge gap (Screen Gap)</em> with a minimum pipe-rail temperature of 38–42 °C, gentle buoyancy-driven convection transports excess water vapor into the upper roof plenum where it condenses on the cold glass envelope and drains via gutter channels.</p>
-          <p><strong>Q2: What sampling frequency is required to synchronize solar radiation with irrigation and climate actuators?</strong><br>
-          Quantum PAR and pyranometer sensors are sampled every 5 seconds, filtered over a 60-second rolling window, and integrated into cumulative radiation sums (J/cm<sup>2</sup>) to trigger precision 100 mL drip shots while updating MPC climate trajectories every 5 minutes.</p>
-          <p><strong>Q3: Where can I simulate these exact thermodynamic and agronomic equations for my own facility?</strong><br>
-          Launch our interactive <a href="/smartfarm/dli_calculator.html" style="color: #10b981; font-weight: 700;">DLI &amp; Photonic Efficacy Calculator</a> or explore the full suite of CEA engineering calculators linked below.</p>
+          <p><strong>Q1: How do you convert instantaneous PPFD (umol/m2·s) and photoperiod into Daily Light Integral (DLI)?</strong><br>
+          Multiply average canopy PPFD by photoperiod seconds and divide by 1,000,000: DLI = PPFD × Hours × 0.0036 (mol/m2·d). For example, 250 umol/m2·s over an 18-hour photoperiod supplies exactly 16.2 mol/m2·d.</p>
+          <p><strong>Q2: What target DLI range maximizes leafy green biomass in vertical farms without triggering tipburn?</strong><br>
+          Commercial butterhead and romaine lettuce typically target 14–17 mol/m2·d paired with 0.35–0.50 m/s horizontal laminar airflow and 0.70–0.85 kPa VPD to sustain calcium delivery to expanding meristems.</p>
+          <p><strong>Q3: Why is extending photoperiod at lower PPFD often more profitable than short high-intensity bursts?</strong><br>
+          Photosynthetic quantum yield drops nonlinearly as leaves approach light saturation. Delivering the same 16 mol/m2·d at 222 umol/m2·s over 20 hours reduces LED fixture CapEx by 20% and avoids midday HVAC cooling spikes. (Simulate these parameters directly in our <a href="/smartfarm/dli_calculator.html" style="color: #10b981; font-weight: 700;">DLI &amp; LED Spectrum Calculator</a>.)</p>
         </div>
       </section>
 <!-- INW-DEEP-ENG-END -->

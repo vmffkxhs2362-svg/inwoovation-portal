@@ -12,6 +12,7 @@
   <link rel="alternate" hreflang="en" href="https://inwoovation.com/articles/article-20-leaf-temperature-infrared-thermometry.html">
   <link rel="alternate" hreflang="x-default" href="https://inwoovation.com/articles/article-20-leaf-temperature-infrared-thermometry.html">
   <link rel="alternate" hreflang="de" href="https://inwoovation.com/articles/de/article-20-blatttemperatur-infrarot-thermometrie-emissionsgrad-energiebilanz.html">
+  <link rel="alternate" hreflang="ja" href="https://inwoovation.com/articles/ja/article-20-leaf-temperature-infrared-thermometry-energy-balance-jp.html">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-V4RYJBMEDE"></script>
     <script>
@@ -69,7 +70,7 @@
         "url": "https://inwoovation.com"
       },
       "datePublished": "2026-09-01",
-      "dateModified": "2026-11-21",
+      "dateModified": "2026-11-22",
       "mainEntityOfPage": "https://inwoovation.com/articles/article-20-leaf-temperature-infrared-thermometry.html"
     },
     {
@@ -77,26 +78,26 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "How do operators prevent humidity spikes when thermal screens are closed over 95%?",
+          "name": "Why must infrared leaf thermometers apply Stefan-Boltzmann background sky/glass reflection correction?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "By coordinating a controlled 1.5%–4.0% moisture purge gap (Screen Gap) with a minimum pipe-rail temperature of 38–42 °C, gentle buoyancy-driven convection transports excess water vapor into the upper roof plenum where it condenses on the cold glass envelope and drains via gutter channels."
+            "text": "Healthy leaves have thermal emissivity epsilon ≈ 0.975 and reflect ~2.5% of surrounding longwave radiation; uncompensated IRT readings under freezing winter roof glass (-5 °C) underestimate true leaf temperature by 0.6–1.1 °C."
           }
         },
         {
           "@type": "Question",
-          "name": "What sampling frequency is required to synchronize solar radiation with irrigation and climate actuators?",
+          "name": "How does the Crop Water Stress Index (CWSI) detect root or irrigation failures before wilting appears?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Quantum PAR and pyranometer sensors are sampled every 5 seconds, filtered over a 60-second rolling window, and integrated into cumulative radiation sums (J/cm2) to trigger precision 100 mL drip shots while updating MPC climate trajectories every 5 minutes."
+            "text": "As stomatal resistance rises, evaporative cooling ceases and delta-T = T_leaf - T_air climbs +3 to +6 °C above the well-watered baseline; CWSI > 0.40 triggers immediate pulse-irrigation diagnostics."
           }
         },
         {
           "@type": "Question",
-          "name": "Where can I simulate these exact thermodynamic and agronomic equations for my own facility?",
+          "name": "How should narrow-FOV infrared thermometers be aimed inside high-wire greenhouse canopies?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Launch our interactive Interactive CEA Engineering Calculator or explore the full suite of CEA engineering calculators linked below."
+            "text": "Mount a 15–22 degree FOV sensor 35–50 cm from upper fully expanded canopy leaves angled 35–45 degrees downward so neither floor pathways nor hot heating pipes contaminate the measurement cone."
           }
         }
       ]
@@ -158,6 +159,7 @@
   <span style="font-size:0.8rem; color:#94a3b8; font-weight:700; margin-right:4px;">🌐 Vol. 20 Editions:</span>
   <span style="display:inline-flex; align-items:center; padding:5px 12px; border-radius:999px; background:rgba(16,185,129,0.22); border:1px solid #10b981; color:#34d399; font-size:0.8rem; font-weight:700;">🇬🇧 English Edition (Active)</span>
   <a href="/articles/de/article-20-blatttemperatur-infrarot-thermometrie-emissionsgrad-energiebilanz.html" style="display:inline-flex; align-items:center; padding:5px 12px; border-radius:999px; background:rgba(30,41,59,0.8); border:1px solid rgba(56,189,248,0.35); color:#38bdf8; text-decoration:none; font-size:0.8rem; font-weight:600;">🇩🇪 Deutsche Ausgabe →</a>
+  <a href="/articles/ja/article-20-leaf-temperature-infrared-thermometry-energy-balance-jp.html" style="display:inline-flex; align-items:center; padding:5px 12px; border-radius:999px; background:rgba(30,41,59,0.8); border:1px solid rgba(56,189,248,0.35); color:#38bdf8; text-decoration:none; font-size:0.8rem; font-weight:600;">🇯🇵 日本語版 (JA) →</a>
 </div>
 <!-- INW-LANG-SWITCHER-END -->
         <div class="article-meta">
@@ -288,12 +290,12 @@
 
         <h2>Section E: Frequently Asked Engineering Questions (FAQ)</h2>
         <div class="faq-block" style="margin-top: 14px;">
-          <p><strong>Q1: How do operators prevent humidity spikes when thermal screens are closed over 95%?</strong><br>
-          By coordinating a controlled 1.5%–4.0% <em>moisture purge gap (Screen Gap)</em> with a minimum pipe-rail temperature of 38–42 °C, gentle buoyancy-driven convection transports excess water vapor into the upper roof plenum where it condenses on the cold glass envelope and drains via gutter channels.</p>
-          <p><strong>Q2: What sampling frequency is required to synchronize solar radiation with irrigation and climate actuators?</strong><br>
-          Quantum PAR and pyranometer sensors are sampled every 5 seconds, filtered over a 60-second rolling window, and integrated into cumulative radiation sums (J/cm<sup>2</sup>) to trigger precision 100 mL drip shots while updating MPC climate trajectories every 5 minutes.</p>
-          <p><strong>Q3: Where can I simulate these exact thermodynamic and agronomic equations for my own facility?</strong><br>
-          Launch our interactive <a href="/smartfarm/vpd.html" style="color: #10b981; font-weight: 700;">Interactive CEA Engineering Calculator</a> or explore the full suite of CEA engineering calculators linked below.</p>
+          <p><strong>Q1: Why must infrared leaf thermometers apply Stefan-Boltzmann background sky/glass reflection correction?</strong><br>
+          Healthy leaves have thermal emissivity epsilon ≈ 0.975 and reflect ~2.5% of surrounding longwave radiation; uncompensated IRT readings under freezing winter roof glass (-5 °C) underestimate true leaf temperature by 0.6–1.1 °C.</p>
+          <p><strong>Q2: How does the Crop Water Stress Index (CWSI) detect root or irrigation failures before wilting appears?</strong><br>
+          As stomatal resistance rises, evaporative cooling ceases and delta-T = T_leaf - T_air climbs +3 to +6 °C above the well-watered baseline; CWSI &gt; 0.40 triggers immediate pulse-irrigation diagnostics.</p>
+          <p><strong>Q3: How should narrow-FOV infrared thermometers be aimed inside high-wire greenhouse canopies?</strong><br>
+          Mount a 15–22 degree FOV sensor 35–50 cm from upper fully expanded canopy leaves angled 35–45 degrees downward so neither floor pathways nor hot heating pipes contaminate the measurement cone. (Simulate these parameters directly in our <a href="/smartfarm/vpd.html" style="color: #10b981; font-weight: 700;">Canopy Leaf Temperature &amp; VPD Calculator</a>.)</p>
         </div>
       </section>
 <!-- INW-DEEP-ENG-END -->

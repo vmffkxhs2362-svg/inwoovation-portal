@@ -69,7 +69,7 @@
         "url": "https://inwoovation.com"
       },
       "datePublished": "2026-09-01",
-      "dateModified": "2026-11-21",
+      "dateModified": "2026-11-22",
       "mainEntityOfPage": "https://inwoovation.com/articles/article-04-greenhouse-heating-loss.html"
     },
     {
@@ -77,26 +77,26 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "How do operators prevent humidity spikes when thermal screens are closed over 95%?",
+          "name": "How much peak heating demand do dual aluminized thermal screens save under DIN V 18599?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "By coordinating a controlled 1.5%–4.0% moisture purge gap (Screen Gap) with a minimum pipe-rail temperature of 38–42 °C, gentle buoyancy-driven convection transports excess water vapor into the upper roof plenum where it condenses on the cold glass envelope and drains via gutter channels."
+            "text": "Closing an outer diffused energy screen and inner aluminized blackout/thermal screen lowers the effective roof U_eff from 5.8–6.2 W/(m2·K) to 2.2–3.2 W/(m2·K), cutting nocturnal conductive and radiative heat loss by 40%–55%."
           }
         },
         {
           "@type": "Question",
-          "name": "What sampling frequency is required to synchronize solar radiation with irrigation and climate actuators?",
+          "name": "What boundary variables govern conductive, convective, and infiltration losses in Venlo glasshouses?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Quantum PAR and pyranometer sensors are sampled every 5 seconds, filtered over a 60-second rolling window, and integrated into cumulative radiation sums (J/cm2) to trigger precision 100 mL drip shots while updating MPC climate trajectories every 5 minutes."
+            "text": "Total heat loss Q_total = (U_eff × A_cover + 0.34 × n_inf × V_gh) × (T_in - T_out) + Q_sky_rad, accounting for glazing U-value, air exchange rate (0.25–0.80 h^-1), wind speed, and clear-sky longwave radiation."
           }
         },
         {
           "@type": "Question",
-          "name": "Where can I simulate these exact thermodynamic and agronomic equations for my own facility?",
+          "name": "Why must pipe-rail supply water temperature stay decoupled from thermal screen purge gaps?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Launch our interactive Greenhouse Heat Loss &amp; Thermal Screen Calculator or explore the full suite of CEA engineering calculators linked below."
+            "text": "Opening a 1.5%–4.0% moisture purge gap lets warm buoyant air condense on cold glass while lower 51 mm pipe-rails at 38–42 °C neutralize falling cold downdrafts (Kaltluftdusche) before they reach the crop canopy."
           }
         }
       ]
@@ -283,12 +283,12 @@
 
         <h2>Section E: Frequently Asked Engineering Questions (FAQ)</h2>
         <div class="faq-block" style="margin-top: 14px;">
-          <p><strong>Q1: How do operators prevent humidity spikes when thermal screens are closed over 95%?</strong><br>
-          By coordinating a controlled 1.5%–4.0% <em>moisture purge gap (Screen Gap)</em> with a minimum pipe-rail temperature of 38–42 °C, gentle buoyancy-driven convection transports excess water vapor into the upper roof plenum where it condenses on the cold glass envelope and drains via gutter channels.</p>
-          <p><strong>Q2: What sampling frequency is required to synchronize solar radiation with irrigation and climate actuators?</strong><br>
-          Quantum PAR and pyranometer sensors are sampled every 5 seconds, filtered over a 60-second rolling window, and integrated into cumulative radiation sums (J/cm<sup>2</sup>) to trigger precision 100 mL drip shots while updating MPC climate trajectories every 5 minutes.</p>
-          <p><strong>Q3: Where can I simulate these exact thermodynamic and agronomic equations for my own facility?</strong><br>
-          Launch our interactive <a href="/smartfarm/heat_loss.html" style="color: #10b981; font-weight: 700;">Greenhouse Heat Loss &amp; Thermal Screen Calculator</a> or explore the full suite of CEA engineering calculators linked below.</p>
+          <p><strong>Q1: How much peak heating demand do dual aluminized thermal screens save under DIN V 18599?</strong><br>
+          Closing an outer diffused energy screen and inner aluminized blackout/thermal screen lowers the effective roof U_eff from 5.8–6.2 W/(m2·K) to 2.2–3.2 W/(m2·K), cutting nocturnal conductive and radiative heat loss by 40%–55%.</p>
+          <p><strong>Q2: What boundary variables govern conductive, convective, and infiltration losses in Venlo glasshouses?</strong><br>
+          Total heat loss Q_total = (U_eff × A_cover + 0.34 × n_inf × V_gh) × (T_in - T_out) + Q_sky_rad, accounting for glazing U-value, air exchange rate (0.25–0.80 h^-1), wind speed, and clear-sky longwave radiation.</p>
+          <p><strong>Q3: Why must pipe-rail supply water temperature stay decoupled from thermal screen purge gaps?</strong><br>
+          Opening a 1.5%–4.0% moisture purge gap lets warm buoyant air condense on cold glass while lower 51 mm pipe-rails at 38–42 °C neutralize falling cold downdrafts (Kaltluftdusche) before they reach the crop canopy. (Simulate these parameters directly in our <a href="/smartfarm/heat_loss.html" style="color: #10b981; font-weight: 700;">Greenhouse Heat Loss (DIN V 18599) Calculator</a>.)</p>
         </div>
       </section>
 <!-- INW-DEEP-ENG-END -->

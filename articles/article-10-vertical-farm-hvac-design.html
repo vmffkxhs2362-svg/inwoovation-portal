@@ -69,7 +69,7 @@
         "url": "https://inwoovation.com"
       },
       "datePublished": "2026-09-01",
-      "dateModified": "2026-11-21",
+      "dateModified": "2026-11-22",
       "mainEntityOfPage": "https://inwoovation.com/articles/article-10-vertical-farm-hvac-design.html"
     },
     {
@@ -77,26 +77,26 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "How do operators prevent humidity spikes when thermal screens are closed over 95%?",
+          "name": "How is Sensible Heat Ratio (SHR) calculated for sizing vertical farm HVAC cooling and dehumidification coils?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "By coordinating a controlled 1.5%–4.0% moisture purge gap (Screen Gap) with a minimum pipe-rail temperature of 38–42 °C, gentle buoyancy-driven convection transports excess water vapor into the upper roof plenum where it condenses on the cold glass envelope and drains via gutter channels."
+            "text": "Total canopy latent moisture transpiration Q_lat = lambda_v × m_transp adds onto lighting and pump sensible heat Q_sens; SHR = Q_sens / (Q_sens + Q_lat) typically falls between 0.55 and 0.72 inside high-density PFAL rooms."
           }
         },
         {
           "@type": "Question",
-          "name": "What sampling frequency is required to synchronize solar radiation with irrigation and climate actuators?",
+          "name": "Why do standard comfort-HVAC air conditioners fail inside vertical farms?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Quantum PAR and pyranometer sensors are sampled every 5 seconds, filtered over a 60-second rolling window, and integrated into cumulative radiation sums (J/cm2) to trigger precision 100 mL drip shots while updating MPC climate trajectories every 5 minutes."
+            "text": "Office HVAC systems target SHR ~0.85–0.90 and allow RH to exceed 80% during dark photoperiods when lights turn off (sensible load drops while transpiration persists); vertical farms require dedicated reheat coils or variable-speed desiccant/heat-pump dehumidifiers."
           }
         },
         {
           "@type": "Question",
-          "name": "Where can I simulate these exact thermodynamic and agronomic equations for my own facility?",
+          "name": "How much condensate water can be recovered from closed-loop vertical farm cooling coils?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Launch our interactive Interactive CEA Engineering Calculator or explore the full suite of CEA engineering calculators linked below."
+            "text": "Over 95%–98% of transpired pure vapor condenses on chilled evaporator coils (7–10 °C surface), allowing direct collection, UV-C/mineral remineralization, and reuse back into hydroponic stock tanks."
           }
         }
       ]
@@ -281,12 +281,12 @@
 
         <h2>Section E: Frequently Asked Engineering Questions (FAQ)</h2>
         <div class="faq-block" style="margin-top: 14px;">
-          <p><strong>Q1: How do operators prevent humidity spikes when thermal screens are closed over 95%?</strong><br>
-          By coordinating a controlled 1.5%–4.0% <em>moisture purge gap (Screen Gap)</em> with a minimum pipe-rail temperature of 38–42 °C, gentle buoyancy-driven convection transports excess water vapor into the upper roof plenum where it condenses on the cold glass envelope and drains via gutter channels.</p>
-          <p><strong>Q2: What sampling frequency is required to synchronize solar radiation with irrigation and climate actuators?</strong><br>
-          Quantum PAR and pyranometer sensors are sampled every 5 seconds, filtered over a 60-second rolling window, and integrated into cumulative radiation sums (J/cm<sup>2</sup>) to trigger precision 100 mL drip shots while updating MPC climate trajectories every 5 minutes.</p>
-          <p><strong>Q3: Where can I simulate these exact thermodynamic and agronomic equations for my own facility?</strong><br>
-          Launch our interactive <a href="/tools/psychrometric-mollier-greenhouse-dehumidifier.html" style="color: #10b981; font-weight: 700;">Interactive CEA Engineering Calculator</a> or explore the full suite of CEA engineering calculators linked below.</p>
+          <p><strong>Q1: How is Sensible Heat Ratio (SHR) calculated for sizing vertical farm HVAC cooling and dehumidification coils?</strong><br>
+          Total canopy latent moisture transpiration Q_lat = lambda_v × m_transp adds onto lighting and pump sensible heat Q_sens; SHR = Q_sens / (Q_sens + Q_lat) typically falls between 0.55 and 0.72 inside high-density PFAL rooms.</p>
+          <p><strong>Q2: Why do standard comfort-HVAC air conditioners fail inside vertical farms?</strong><br>
+          Office HVAC systems target SHR ~0.85–0.90 and allow RH to exceed 80% during dark photoperiods when lights turn off (sensible load drops while transpiration persists); vertical farms require dedicated reheat coils or variable-speed desiccant/heat-pump dehumidifiers.</p>
+          <p><strong>Q3: How much condensate water can be recovered from closed-loop vertical farm cooling coils?</strong><br>
+          Over 95%–98% of transpired pure vapor condenses on chilled evaporator coils (7–10 °C surface), allowing direct collection, UV-C/mineral remineralization, and reuse back into hydroponic stock tanks. (Simulate these parameters directly in our <a href="/tools/psychrometric-mollier-greenhouse-dehumidifier.html" style="color: #10b981; font-weight: 700;">Psychrometric &amp; Dehumidification Load Calculator</a>.)</p>
         </div>
       </section>
 <!-- INW-DEEP-ENG-END -->

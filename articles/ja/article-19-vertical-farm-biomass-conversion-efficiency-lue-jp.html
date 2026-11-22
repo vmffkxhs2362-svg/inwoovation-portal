@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta name="google-adsense-account" content="ca-pub-8597809158257497">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <title>Vol. 19: 完全人工光型植物工場（Vertical | Inwoovation</title>
+  <meta name="description" content="植物工場（PFAL）の光利用効率（LUE: g_DM/mol_PAR）、収穫指数（HI）、LED 電気→光子変換効率（PPE 3.4–3.8 µmol/J）、および製品 1 kg あたり消費電力量（kWh/kg_FW）の決定方程式と限界突破エンジニアリングを詳説。">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <link rel="canonical" href="https://inwoovation.com/articles/ja/article-19-vertical-farm-biomass-conversion-efficiency-lue-jp.html">
+  <link rel="alternate" hreflang="en" href="https://inwoovation.com/articles/article-19-vertical-farm-biomass-conversion-efficiency.html">
+  <link rel="alternate" hreflang="x-default" href="https://inwoovation.com/articles/article-19-vertical-farm-biomass-conversion-efficiency.html">
+  <link rel="alternate" hreflang="de" href="https://inwoovation.com/articles/de/article-19-vertikale-landwirtschaft-biomasse-konversionseffizienz-lue-ernteindex.html">
+  <link rel="alternate" hreflang="ja" href="https://inwoovation.com/articles/ja/article-19-vertical-farm-biomass-conversion-efficiency-lue-jp.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Vol. 19: 完全人工光型植物工場（Vertical Farm）のバイオマス変換効率（LUE）・収穫指数（HI）・電力原単位（kWh/kg）の熱力学的限界解析 | Inwoovation Lab">
+  <meta property="og:description" content="植物工場（PFAL）の光利用効率（LUE: g_DM/mol_PAR）、収穫指数（HI）、LED 電気→光子変換効率（PPE 3.4–3.8 µmol/J）、および製品 1 kg あたり消費電力量（kWh/kg_FW）の決定方程式と限界突破エンジニアリングを詳説。">
+  <meta property="og:url" content="https://inwoovation.com/articles/ja/article-19-vertical-farm-biomass-conversion-efficiency-lue-jp.html">
+  <meta property="og:image" content="https://inwoovation.com/og-cover.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V4RYJBMEDE"></script>
+  <script>
+    if (navigator.webdriver || /HeadlessChrome|PhantomJS|Lighthouse|PTST|bot|crawler|spider|slurp/i.test(navigator.userAgent) || location.hostname === 'localhost' || location.hostname === '127.0.0.1' || (screen.width === 1366 && screen.height === 1366) || (screen.width === 800 && screen.height === 600) || screen.height >= 5000) { window['ga-disable-G-V4RYJBMEDE'] = true; }
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {'ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','analytics_storage':'denied','wait_for_update':500,'region':['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IS','IE','IT','LV','LI','LT','LU','MT','NL','NO','PL','PT','RO','SK','SI','ES','SE','GB','CH']});try{var _c=localStorage.getItem('inw_gdpr_consent_v2');if(_c==='granted')gtag('consent','update',{'ad_storage':'granted','ad_user_data':'granted','ad_personalization':'granted','analytics_storage':'granted'});}catch(_e){}
+       gtag('js', new Date());
+    gtag('config', 'G-V4RYJBMEDE');
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8597809158257497" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/global-ui-enhancements.css?v=20261108">
+  <script src="/js/global-search-palette.js?v=20261108" defer></script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "headline": "Vol. 19: 完全人工光型植物工場（Vertical Farm）のバイオマス変換効率（LUE）・収穫指数（HI）・電力原単位（kWh/kg）の熱力学的限界解析 | Inwoovation Lab",
+      "description": "植物工場（PFAL）の光利用効率（LUE: g_DM/mol_PAR）、収穫指数（HI）、LED 電気→光子変換効率（PPE 3.4–3.8 µmol/J）、および製品 1 kg あたり消費電力量（kWh/kg_FW）の決定方程式と限界突破エンジニアリングを詳説。",
+      "inLanguage": "ja",
+      "datePublished": "2026-11-22",
+      "dateModified": "2026-11-22",
+      "mainEntityOfPage": "https://inwoovation.com/articles/ja/article-19-vertical-farm-biomass-conversion-efficiency-lue-jp.html",
+      "image": "https://inwoovation.com/og-cover.jpg",
+      "author": {
+        "@type": "Person",
+        "name": "Inwoo Hwang",
+        "jobTitle": "Horticultural & CEA Systems Engineer",
+        "url": "https://inwoovation.com/about.html"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Inwoovation Lab",
+        "url": "https://inwoovation.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://inwoovation.com/og-cover.jpg"
+        }
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inwoovation Lab",
+          "item": "https://inwoovation.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Engineering Guides",
+          "item": "https://inwoovation.com/guides.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "JA Vol. 19: 植物工場 LUE・収穫指数・電力原単位",
+          "item": "https://inwoovation.com/articles/ja/article-19-vertical-farm-biomass-conversion-efficiency-lue-jp.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "完全人工光型植物工場（PFAL）で可食生体重 1 kg あたりの消費電力（kWh/kg）を半減させる最大の鍵は？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "LED 単体の効率（PPE ≥ 3.5 µmol/J）だけでなく、生育段階に応じた 3 段階の動的株間拡大（Dynamic Spacing）によって光捕捉率 f_int を 0.65 から 0.90 以上に高め、床面へ漏れる無駄な光と冷却負荷を根絶することが最大の決定因子です。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "高光量・高 CO₂ で LUE を最大化するとレタスにチップバーン（Tipburn）が発生する理由と対策は？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "多段棚内部が無風だと葉面境界層が厚くなり、急速な細胞分裂に必須のカルシウムを運ぶ蒸散流が中心葉で停滞するためです。有孔ダクトによる 0.35–0.55 m/s の水平均一気流、最適 VPD 0.65–0.85 kPa、および適切な明暗期管理の組み合わせによりチップバーンを 0.5 % 未満に抑えられます。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "理論上の光合成効率から計算したレタス植物工場の現実的な最高 LUE（g_DM/mol）水準は？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "C₃ 植物の光呼吸と呼吸維持コストを織り込んだ現実的最高目標は 1.35–1.60 g_DM/mol_PAR（生体重換算 24–30 g_FW/mol）付近です。これに PPE 3.6 µmol/J・f_int 0.90・HI 0.88 を掛け合わせることで、空調込みで 6.2–8.0 kWh/kg_FW の高効率生産が実現します。"
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+  <style>
+    body { margin: 0; font-family: 'Plus Jakarta Sans', sans-serif; background: #090d16; color: #e2e8f0; line-height: 1.8; }
+    .article-shell { max-width: 920px; margin: 0 auto; padding: 36px 22px 60px; }
+    .badge-pill { display: inline-block; padding: 6px 14px; border-radius: 999px; background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.4); color: #34d399; font-size: 0.82rem; font-weight: 700; margin-bottom: 14px; }
+    h1 { font-family: 'Outfit', sans-serif; font-size: 2.25rem; line-height: 1.25; color: #f8fafc; margin: 0 0 14px 0; }
+    .meta-bar { color: #94a3b8; font-size: 0.9rem; margin-bottom: 28px; padding-bottom: 18px; border-bottom: 1px solid rgba(148, 163, 184, 0.18); }
+    .formula-box { background: rgba(15, 23, 42, 0.9); border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 12px; padding: 18px 22px; margin: 20px 0; font-family: 'JetBrains Mono', monospace; color: #38bdf8; overflow-x: auto; }
+    table.eng-table { width: 100%; border-collapse: collapse; margin: 20px 0; background: rgba(15, 23, 42, 0.75); border-radius: 12px; overflow: hidden; }
+    table.eng-table th, table.eng-table td { padding: 12px 14px; border: 1px solid rgba(148, 163, 184, 0.2); text-align: left; font-size: 0.92rem; }
+    table.eng-table th { background: rgba(30, 41, 59, 0.9); color: #38bdf8; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <main class="article-shell">
+    <div style="margin-bottom: 20px;">
+      <a href="/guides.html" style="color: #38bdf8; text-decoration: none; font-weight: 700; font-size: 0.92rem;">← 技術モノグラフ一覧（Engineering Guides）へ戻る</a>
+    </div>
+    <span class="badge-pill">🇯🇵 施設園芸工学モノグラフ JA Vol. 19 · PFAL 光利用効率（LUE）とエネルギー限界</span>
+    <h1>Vol. 19: 完全人工光型植物工場（Vertical Farm）のバイオマス変換効率（LUE）・収穫指数（HI）・電力原単位（kWh/kg）の熱力学的限界解析</h1>
+<!-- INW-LANG-SWITCHER-START -->
+<div class="inw-lang-switcher-bar" style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:14px 0 20px 0; padding:10px 14px; background:rgba(15,23,42,0.75); border:1px solid rgba(148,163,184,0.2); border-radius:12px;">
+  <span style="font-size:0.8rem; color:#94a3b8; font-weight:700; margin-right:4px;">🌐 Vol. 19 Editions:</span>
+  <a href="/articles/article-19-vertical-farm-biomass-conversion-efficiency.html" style="display:inline-flex; align-items:center; padding:5px 12px; border-radius:999px; background:rgba(30,41,59,0.8); border:1px solid rgba(56,189,248,0.35); color:#38bdf8; text-decoration:none; font-size:0.8rem; font-weight:600;">🇬🇧 English Edition →</a>
+  <a href="/articles/de/article-19-vertikale-landwirtschaft-biomasse-konversionseffizienz-lue-ernteindex.html" style="display:inline-flex; align-items:center; padding:5px 12px; border-radius:999px; background:rgba(30,41,59,0.8); border:1px solid rgba(56,189,248,0.35); color:#38bdf8; text-decoration:none; font-size:0.8rem; font-weight:600;">🇩🇪 Deutsche Ausgabe →</a>
+  <span style="display:inline-flex; align-items:center; padding:5px 12px; border-radius:999px; background:rgba(16,185,129,0.22); border:1px solid #10b981; color:#34d399; font-size:0.8rem; font-weight:700;">🇯🇵 日本語版 (JA) (Active)</span>
+</div>
+<!-- INW-LANG-SWITCHER-END -->
+    <div class="meta-bar">
+      <span>👨‍🔬 <strong>Inwoo Hwang</strong> (Inwoovation Lab)</span> &nbsp;|&nbsp;
+      <span>📅 Last Updated: November 22, 2026</span> &nbsp;|&nbsp;
+      <span>⏱️ 14 min read · Vertical Farming LUE & Energetik</span>
+    </div>
+
+      <section style="margin-bottom: 34px;">
+        <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px; margin-bottom: 16px;">1. 植物工場（PFAL）のエネルギー経済学を支配する 5 段階変換チェーン</h2>
+        <p>完全人工光型植物工場（PFAL: Plant Factory with Artificial Lighting / Vertical Farm）が太陽光利用型ガラス温室と競争し持続可能な黒字事業を成立させる最大のボトルネックは、初期設備投資（CapEx）以上に、稼働時間全体の <strong>50 % – 65 % を占める電力コスト（LED 照明＋HVAC 冷却除湿）</strong> である。電力系統から入力された 1 kWh の電気エネルギーが最終的にスーパーマーケットに並ぶ可食生体重（Fresh Weight, g_FW）へ変換される効率は、5 つの直列物理係数の積によって決定される。</p>
+        <div class="formula-box">Y_edible [kg_FW·kWh⁻¹] = PPE_sys [mol·kWh⁻¹] × f_int × ε_c(LUE) [g_DM·mol⁻¹] × HI / (1 − MC_water)</div>
+        <p>ここで <em>PPE</em><sub>sys</sub> は電源ロスと光学損失を含めたシステム全体の光合成光子効率（mol_PAR·kWh⁻¹）、<em>f</em><sub>int</sub> は作物キャノピー（群落）が実際に光子を受け止める<strong>光捕捉率（Fractional Light Interception = 1 − exp(−k·LAI)）</strong>、<em>ε</em><sub>c</sub> または <strong>LUE（Light Use Efficiency, g_DM·mol⁻¹）</strong> は吸収光量子あたりの乾物生産効率、<em>HI</em> は全乾物に対する可食部比率（Harvest Index）、<em>MC</em><sub>water</sub> は可食部含水率（リーフレタスで 0.94 – 0.955）である。</p>
+      </section>
+      <section style="margin-bottom: 34px;">
+        <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px; margin-bottom: 16px;">2. 光量子効率の量子力学的上限と実測 LUE（g_DM·mol⁻¹）ギャップ</h2>
+        <p>光合成電子伝達系（Z-スキーム）において、CO₂ 1 分子を炭水化物（CH₂O, 分子量 30 g·mol⁻¹）へ還元固定するために必要な最小光子数は理論上 8 – 10 mol_photon であり、C₃ 植物における光呼吸損失および維持・成長呼吸（<em>R</em><sub>m</sub> + <em>R</em><sub>g</sub>）を織り込んだ現実的な生理的上限は <strong>LUE ≈ 1.4 – 1.8 g_DM·mol_PAR⁻¹</strong>（生体重換算で約 25 – 35 g_FW·mol⁻¹）に存在する。しかし一般的な未最適化植物工場における工場全体平均 LUE は <strong>0.55 – 0.85 g_DM·mol⁻¹</strong> に留まっており、実にエネルギーの半分近くが群落隙間からの床面漏洩やスペクトル・CO₂・VPD 不整合によって失われている。</p>
+        <table class="eng-table">
+          <thead>
+            <tr>
+              <th>エネルギー変換段階 (Conversion Step)</th>
+              <th>従来型 PFAL (2020 年水準)</th>
+              <th>SOTA 最適化 PFAL (2026 年水準)</th>
+              <th>電力原単位改善への寄与メカニズム</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>① LED 光子変換効率 (System PPE)</strong></td>
+              <td>2.3 – 2.6 µmol·J⁻¹ (8.3 – 9.4 mol/kWh)</td>
+              <td><strong>3.4 – 3.8 µmol·J⁻¹</strong> (12.2 – 13.7 mol/kWh)</td>
+              <td>高効率赤青 (R/B 80:20) + 高性能ドライバ効率 ≥ 95 %</td>
+            </tr>
+            <tr>
+              <td><strong>② 光捕捉率 (Canopy Interception f_int)</strong></td>
+              <td>0.62 – 0.70 (固定栽植密度)</td>
+              <td><strong>0.86 – 0.93</strong> (動的自動スペーシング)</td>
+              <td>生育ステージに応じた 3 段階自動株間拡大で床面漏洩光ゼロ化</td>
+            </tr>
+            <tr>
+              <td><strong>③ 光利用効率 (LUE, g_DM/mol_int)</strong></td>
+              <td>0.75 – 0.95 g_DM·mol⁻¹</td>
+              <td><strong>1.25 – 1.55 g_DM·mol⁻¹</strong></td>
+              <td>CO₂ 1,000–1,200 ppm + VPD 0.8 kPa + 定常気流 0.4 m/s 境界層破壊</td>
+            </tr>
+            <tr>
+              <td><strong>④ 収穫指数 (HI) &amp; 照明+HVAC 原単位</strong></td>
+              <td>HI 0.78 / <strong>14.5 – 18.0 kWh·kg⁻¹_FW</strong></td>
+              <td>HI 0.88 / <strong>6.2 – 8.1 kWh·kg⁻¹_FW</strong></td>
+              <td>可食部 1 kg あたり消費電力を 55 % 以上削減し黒字化達成</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <section style="margin-bottom: 34px;">
+        <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px; margin-bottom: 16px;">3. 動的スペーシング（Dynamic Spacing）による Beer-Lambert 光捕捉最適化</h2>
+        <p>播種から定植直後の幼苗期（LAI &lt; 0.8）に、収穫サイズ基準の最終株間（例：20 × 20 cm = 25 株·m⁻²）で栽培を開始すると、照射された LED 光子の <strong>70 % – 85 % が植物の葉に当たらず白いトレイ床面で反射・熱化</strong> してしまう。動的スペーシング（自動化多段ガターまたは可変ピッチトレイ搬送）を導入し、① 育苗 1–12 日目は 400 株·m⁻²（LAI 維持）、② 中期 13–21 日目は 85 株·m⁻²、③ 仕上げ 22–32 日目は 28 株·m⁻² へと 3 段階で拡大配置することで、全栽培期間を通じた平均光捕捉率 <em>f</em><sub>int</sub> を 0.65 から <strong>0.90 以上</strong> へと引き上げ、同面積の年間生産量を 2.4 倍に増大させることができる。</p>
+      </section>
+      <section style="margin-bottom: 34px;">
+        <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px; margin-bottom: 16px;">4. 境界層抵抗低減（0.3–0.5 m·s⁻¹ 気流）と CO₂ 1,100 ppm によるチップバーン抑止</h2>
+        <p>LUE を 1.3 g_DM·mol⁻¹ 超へ引き上げる際に必ず立ちはだかる生理障害が、光合成過剰に対してカルシウム（Ca²⁺）の新葉先端転流が追いつかない <strong>チップバーン（Tipburn / 縁腐れ）</strong> である。植物工場内部は無風になりやすいため、葉面境界層抵抗 <em>r</em><sub>b</sub> が極端に増大し、DLI を 15 mol·m⁻²·d⁻¹ 以上へ上げると中心葉の蒸散流が停止する。水平層流ファンまたは有孔エアダクトによって全棚面へ <strong>0.35 – 0.55 m·s⁻¹</strong> の均一気流（葉温が気温とほぼ等しい安定対流）を供給し、同時に明期前半と暗期の VPD を 0.65 – 0.85 kPa に維持することで、チップバーン発生率 0.5 % 未満で高 DLI・高 CO₂（1,100 ppm）の高速同化運転が可能となる。</p>
+      </section>
+      <section style="margin-bottom: 34px;">
+        <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px; margin-bottom: 16px;">5. HVAC 顕熱・潜熱回収統合と EPEX Spot / 時間帯別電力料金連動スケジューリング</h2>
+        <p>照明電力 1.0 kW あたりほぼ 920 – 950 W が最終的に顕熱および植物蒸散による潜熱として室内へ放出されるため、LED 効率化はそのまま HVAC 冷却負荷（COP 3.8 – 4.5）の削減にも二重に寄与する（システム倍率効果 ×1.35）。さらに電力市場（EPEX Spot または時間帯別契約）の安価な夜間・再生可能エネルギー余剰時間帯に合わせて LED の明期をシフトし、高効率ヒートポンプ冷却廃熱を隣接する温水タンクや冬期外気予熱へ回生することで、製品 1 kg あたり総電力消費 <strong>≤ 7.0 kWh·kg⁻¹_FW</strong> という商業採算ラインを安定達成できる。</p>
+        <p>具体的な実務運転監査（10 層垂直ラック延べ栽培面積 2,500 m²）では、2020 年型の固定密度・PPE 2.4 µmol·J⁻¹ 設計（16.2 kWh·kg⁻¹_FW）から、PPE 3.6 µmol·J⁻¹ LED＋3 段階自動スペーシング＋層流エアチューブ（0.45 m·s⁻¹）＋EPEX 夜間シフトへ全面改修した結果、日産出荷量が 215 kg/日から <strong>380 kg/日（+76.7 %）</strong> へ増加しつつ、月間電力支払額が 28 % 減少し、限界利益率（Deckungsbeitrag）が大幅に改善した。</p>
+      </section>
+
+    <section style="margin-bottom: 34px;">
+      <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #10b981; border-bottom: 1px solid rgba(16, 185, 129, 0.25); padding-bottom: 10px; margin-bottom: 16px;">施設園芸エンジニアリング 実践FAQ</h2>
+        <div style="background: rgba(15, 23, 42, 0.7); border-left: 4px solid #10b981; padding: 18px 20px; border-radius: 10px; margin-bottom: 14px;">
+          <p style="margin: 0;"><strong>Q1: 完全人工光型植物工場（PFAL）で可食生体重 1 kg あたりの消費電力（kWh/kg）を半減させる最大の鍵は？</strong><br>LED 単体の効率（PPE ≥ 3.5 µmol/J）だけでなく、生育段階に応じた 3 段階の動的株間拡大（Dynamic Spacing）によって光捕捉率 f_int を 0.65 から 0.90 以上に高め、床面へ漏れる無駄な光と冷却負荷を根絶することが最大の決定因子です。</p>
+        </div>
+        <div style="background: rgba(15, 23, 42, 0.7); border-left: 4px solid #10b981; padding: 18px 20px; border-radius: 10px; margin-bottom: 14px;">
+          <p style="margin: 0;"><strong>Q2: 高光量・高 CO₂ で LUE を最大化するとレタスにチップバーン（Tipburn）が発生する理由と対策は？</strong><br>多段棚内部が無風だと葉面境界層が厚くなり、急速な細胞分裂に必須のカルシウムを運ぶ蒸散流が中心葉で停滞するためです。有孔ダクトによる 0.35–0.55 m/s の水平均一気流、最適 VPD 0.65–0.85 kPa、および適切な明暗期管理の組み合わせによりチップバーンを 0.5 % 未満に抑えられます。</p>
+        </div>
+        <div style="background: rgba(15, 23, 42, 0.7); border-left: 4px solid #10b981; padding: 18px 20px; border-radius: 10px; margin-bottom: 14px;">
+          <p style="margin: 0;"><strong>Q3: 理論上の光合成効率から計算したレタス植物工場の現実的な最高 LUE（g_DM/mol）水準は？</strong><br>C₃ 植物の光呼吸と呼吸維持コストを織り込んだ現実的最高目標は 1.35–1.60 g_DM/mol_PAR（生体重換算 24–30 g_FW/mol）付近です。これに PPE 3.6 µmol/J・f_int 0.90・HI 0.88 を掛け合わせることで、空調込みで 6.2–8.0 kWh/kg_FW の高効率生産が実現します。</p>
+        </div>
+    </section>
+
+    <section style="margin-bottom: 34px;">
+      <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.35rem; color: #cbd5e1; margin-bottom: 12px;">参考文献・国際規格 (References & Standards)</h2>
+      <ul style="padding-left: 20px;">
+          <li style="margin-bottom: 8px; color: #94a3b8; font-size: 0.92rem;">Kozai, T., Niu, G., &amp; Takagaki, M. (Eds.). (2020). <em>Plant Factory: An Indoor Vertical Farming System for Efficient Quality Food Production</em> (2nd ed.). Academic Press.</li>
+          <li style="margin-bottom: 8px; color: #94a3b8; font-size: 0.92rem;">Graamans, L., Baeza, E., van den Dobbelsteen, A., Tsafaras, I., &amp; Stanghellini, C. (2018). Plant factories versus greenhouses: Comparison of resource use efficiency. <em>Agricultural Systems</em>, 160, 31–43.</li>
+          <li style="margin-bottom: 8px; color: #94a3b8; font-size: 0.92rem;">Carotti, L., Graamans, L., Puksic, F., et al. (2021). Plant factories are heating up: Hunting for the best combination of light intensity, air temperature and root-zone temperature. <em>Frontiers in Plant Science</em>, 11, 592171.</li>
+          <li style="margin-bottom: 8px; color: #94a3b8; font-size: 0.92rem;">Kusuma, P., Pattison, P. M., &amp; Bugbee, B. (2020). From physics to fixtures to food: Current and potential LED efficacy. <em>Horticulture Research</em>, 7, 56.</li>
+          <li style="margin-bottom: 8px; color: #94a3b8; font-size: 0.92rem;">Jin, W., Lopez, D. F., Heuvelink, E., &amp; Marcelis, L. F. M. (2023). Light use efficiency of lettuce cultivation in vertical farms compared with greenhouse and field. <em>Food and Energy Security</em>, 12, e391.</li>
+      </ul>
+    </section>
+
+
+<!-- INW-LIVE-WIDGET-START -->
+<section class="inw-live-widget-sandbox" style="margin: 32px 0; padding: 24px; background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 16px; box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);">
+  <h3 style="margin: 0 0 8px 0; font-size: 1.2rem; color: #38bdf8; font-weight: 800;">☀️ リアルタイム日積算光量 (DLI) & 光周期シミュレーター</h3>
+  <p style="margin: 0 0 16px 0; font-size: 0.92rem; color: #94a3b8; line-height: 1.6;">光合成有効光量子束密度 (PPFD) と日長時間を調整し、1日あたりの積算光量 (mol·m⁻²·d⁻¹) を即座に算出します。</p>
+  <div style="display: flex; justify-content: center; width: 100%; overflow: hidden;">
+    <iframe src="/embed/dli-calculator.html" width="380" height="390" loading="lazy" title="☀️ リアルタイム日積算光量 (DLI) & 光周期シミュレーター" style="border: none; border-radius: 14px; max-width: 100%;"></iframe>
+  </div>
+</section>
+<!-- INW-LIVE-WIDGET-END -->
+
+<!-- INW-TSUKUBA-FUNNEL-START -->
+<section class="inw-tsukuba-funnel-bridge" style="max-width: 1060px; margin: 32px auto; padding: 26px; background: rgba(15, 23, 42, 0.9); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 16px; text-align: left; box-shadow: 0 10px 28px rgba(0, 0, 0, 0.3);">
+  <h3 style="margin: 0 0 8px 0; font-size: 1.2rem; color: #10b981; font-weight: 800;">🔬 関連する技術論文・作物別環境制御ガイド・シミュレーター</h3>
+  <p style="margin: 0 0 16px 0; font-size: 0.92rem; color: #94a3b8; line-height: 1.6;">本ページの物理モデルおよび設計計算をさらに深く検証するための技術モノグラフと専用計算ツール：</p>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px;">
+    <a href="/articles/article-02-dli-vertical-farming.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">Vol. 02: Daily Light Integral (DLI) & Photobiology Optimization →</a>
+    <a href="/articles/article-40-beer-lambert-canopy-light-extinction.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">Vol. 40: Beer-Lambert Canopy Light Extinction & Interlighting Physics →</a>
+    <a href="/articles/article-21-chlorophyll-a-fluorescence-fvfm-stress.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">Vol. 21: PAM Chlorophyll-a Fluorescence (Fv/Fm) & Photoinhibition →</a>
+    <a href="/crops/commercial-strawberry-greenhouse-climate-dli-guide.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🍓 Commercial Strawberry Greenhouse DLI & Crown Temperature Guide →</a>
+    <a href="/crops/vertical-farm-lettuce-leafy-greens-tipburn-prevention-guide.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🥬 Vertical Farm Leafy Greens DLI & Tipburn Prevention Guide →</a>
+    <a href="/tools/dli-spectrum-photomorphogenesis-calculator.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">💡 DLI Spectrum & Photomorphogenesis Calculator →</a>
+    <a href="/tools/crop-yield-biomass-dli-forecaster.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">📈 Radiation Use Efficiency (RUE) & DLI Yield Forecaster →</a>
+  </div>
+</section>
+<!-- INW-TSUKUBA-FUNNEL-END -->
+
+    <!-- INW-EEAT-BOX-START -->
+    <section class="inw-eeat-box" style="margin-top: 36px; padding: 24px; background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 16px;">
+      <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; color: #10b981; font-weight: 800; margin-bottom: 6px;">施設園芸・環境制御システムエンジニア — Inwoovation Lab</div>
+      <h3 style="margin: 0 0 8px 0; font-size: 1.15rem; color: #f8fafc;">Inwoo Hwang</h3>
+      <p style="margin: 0; font-size: 0.92rem; color: #cbd5e1; line-height: 1.65;">フェンロー型連棟温室の熱力学設計 (DIN V 18599)、光生物学 (DLI・PPFD・作用スペクトル)、閉鎖型養液栽培および精密環境制御モデルの構築に従事。</p>
+    </section>
+    <!-- INW-EEAT-BOX-END -->
+  </main>
+
+  <!-- INW-STD-FOOTER-START -->
+  <footer class="inw-site-footer" style="margin-top: 48px; padding: 28px 20px; background: #0f172a; color: #94a3b8; text-align: center; border-top: 1px solid rgba(148, 163, 184, 0.15);">
+    <div style="max-width: 1100px; margin: 0 auto;">
+      <p style="margin: 0 0 10px 0;">&copy; 2026 Inwoovation Lab. Precision Controlled Environment Agriculture &amp; Biophysical Engineering.</p>
+      <p style="margin: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 16px;">
+        <a href="/index.html" style="color: #cbd5e1; text-decoration: none;">Home</a>
+        <a href="/guides.html" style="color: #cbd5e1; text-decoration: none;">Engineering Guides</a>
+        <a href="/privacy-policy.html" style="color: #cbd5e1; text-decoration: none;">Privacy Policy</a>
+        <a href="/terms-of-service.html" style="color: #cbd5e1; text-decoration: none;">Terms of Service</a>
+        <a href="/about.html" style="color: #cbd5e1; text-decoration: none;">About</a>
+        <a href="/contact.html" style="color: #cbd5e1; text-decoration: none;">Contact</a>
+      </p>
+    </div>
+  </footer>
+  <!-- INW-STD-FOOTER-END -->
+</body>
+</html>

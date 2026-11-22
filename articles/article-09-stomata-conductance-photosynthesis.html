@@ -69,7 +69,7 @@
         "url": "https://inwoovation.com"
       },
       "datePublished": "2026-09-01",
-      "dateModified": "2026-11-21",
+      "dateModified": "2026-11-22",
       "mainEntityOfPage": "https://inwoovation.com/articles/article-09-stomata-conductance-photosynthesis.html"
     },
     {
@@ -77,26 +77,26 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "How do operators prevent humidity spikes when thermal screens are closed over 95%?",
+          "name": "How does the Ball-Berry-Leuning stomatal model link photosynthesis A_n directly to stomatal conductance g_s?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "By coordinating a controlled 1.5%–4.0% moisture purge gap (Screen Gap) with a minimum pipe-rail temperature of 38–42 °C, gentle buoyancy-driven convection transports excess water vapor into the upper roof plenum where it condenses on the cold glass envelope and drains via gutter channels."
+            "text": "Stomatal conductance scales proportionally with net assimilation and ambient CO2 availability while decaying under rising VPD: g_s = g_0 + m × (A_n × RH / C_s), coupling leaf gas exchange and transpiration in one equation."
           }
         },
         {
           "@type": "Question",
-          "name": "What sampling frequency is required to synchronize solar radiation with irrigation and climate actuators?",
+          "name": "At what CO2 concentration does RuBisCO carboxylation saturate in protected C3 crops?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Quantum PAR and pyranometer sensors are sampled every 5 seconds, filtered over a 60-second rolling window, and integrated into cumulative radiation sums (J/cm2) to trigger precision 100 mL drip shots while updating MPC climate trajectories every 5 minutes."
+            "text": "Raising greenhouse CO2 from 420 ppm ambient to 850–1,050 ppm suppresses photorespiration and elevates net carboxylation by +18%–28%, beyond which RuBP regeneration and triose-phosphate utilization limit marginal returns."
           }
         },
         {
           "@type": "Question",
-          "name": "Where can I simulate these exact thermodynamic and agronomic equations for my own facility?",
+          "name": "When should greenhouse CO2 dosing be throttled or stopped during roof-vent cooling?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Launch our interactive Interactive CEA Engineering Calculator or explore the full suite of CEA engineering calculators linked below."
+            "text": "Once roof ventilation exceeds 15%–20% opening, convective air exchange dilutes injected CO2 rapidly; dynamic economic controllers drop setpoint back to 450–550 ppm when marginal carbon gain falls below gas cost."
           }
         }
       ]
@@ -280,12 +280,12 @@
 
         <h2>Section E: Frequently Asked Engineering Questions (FAQ)</h2>
         <div class="faq-block" style="margin-top: 14px;">
-          <p><strong>Q1: How do operators prevent humidity spikes when thermal screens are closed over 95%?</strong><br>
-          By coordinating a controlled 1.5%–4.0% <em>moisture purge gap (Screen Gap)</em> with a minimum pipe-rail temperature of 38–42 °C, gentle buoyancy-driven convection transports excess water vapor into the upper roof plenum where it condenses on the cold glass envelope and drains via gutter channels.</p>
-          <p><strong>Q2: What sampling frequency is required to synchronize solar radiation with irrigation and climate actuators?</strong><br>
-          Quantum PAR and pyranometer sensors are sampled every 5 seconds, filtered over a 60-second rolling window, and integrated into cumulative radiation sums (J/cm<sup>2</sup>) to trigger precision 100 mL drip shots while updating MPC climate trajectories every 5 minutes.</p>
-          <p><strong>Q3: Where can I simulate these exact thermodynamic and agronomic equations for my own facility?</strong><br>
-          Launch our interactive <a href="/smartfarm/co2_calculator.html" style="color: #10b981; font-weight: 700;">Interactive CEA Engineering Calculator</a> or explore the full suite of CEA engineering calculators linked below.</p>
+          <p><strong>Q1: How does the Ball-Berry-Leuning stomatal model link photosynthesis A_n directly to stomatal conductance g_s?</strong><br>
+          Stomatal conductance scales proportionally with net assimilation and ambient CO2 availability while decaying under rising VPD: g_s = g_0 + m × (A_n × RH / C_s), coupling leaf gas exchange and transpiration in one equation.</p>
+          <p><strong>Q2: At what CO2 concentration does RuBisCO carboxylation saturate in protected C3 crops?</strong><br>
+          Raising greenhouse CO2 from 420 ppm ambient to 850–1,050 ppm suppresses photorespiration and elevates net carboxylation by +18%–28%, beyond which RuBP regeneration and triose-phosphate utilization limit marginal returns.</p>
+          <p><strong>Q3: When should greenhouse CO2 dosing be throttled or stopped during roof-vent cooling?</strong><br>
+          Once roof ventilation exceeds 15%–20% opening, convective air exchange dilutes injected CO2 rapidly; dynamic economic controllers drop setpoint back to 450–550 ppm when marginal carbon gain falls below gas cost. (Simulate these parameters directly in our <a href="/smartfarm/co2_calculator.html" style="color: #10b981; font-weight: 700;">CO2 Assimilation &amp; Stomatal Conductance Calculator</a>.)</p>
         </div>
       </section>
 <!-- INW-DEEP-ENG-END -->

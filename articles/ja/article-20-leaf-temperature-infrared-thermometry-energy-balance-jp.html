@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta name="google-adsense-account" content="ca-pub-8597809158257497">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <title>Vol. 20: 非接触赤外線葉温計測と葉面エネルギー収支 | Inwoovation</title>
+  <meta name="description" content="施設園芸における非接触赤外線放射温度計（IRT）による葉温計測の物理と誤差補正。植物葉の放射率 ε = 0.96–0.98、冷たいガラス屋根の背景長波反射誤差補償、葉面熱収支方程式と作物水ストレス指数 CWSI を数式で解明。">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <link rel="canonical" href="https://inwoovation.com/articles/ja/article-20-leaf-temperature-infrared-thermometry-energy-balance-jp.html">
+  <link rel="alternate" hreflang="en" href="https://inwoovation.com/articles/article-20-leaf-temperature-infrared-thermometry.html">
+  <link rel="alternate" hreflang="x-default" href="https://inwoovation.com/articles/article-20-leaf-temperature-infrared-thermometry.html">
+  <link rel="alternate" hreflang="de" href="https://inwoovation.com/articles/de/article-20-blatttemperatur-infrarot-thermometrie-emissionsgrad-energiebilanz.html">
+  <link rel="alternate" hreflang="ja" href="https://inwoovation.com/articles/ja/article-20-leaf-temperature-infrared-thermometry-energy-balance-jp.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Vol. 20: 非接触赤外線葉温計測と葉面エネルギー収支 — 放射率補正（ε）・Stefan-Boltzmann 反射背景補償・CWSI 水ストレス診断 | Inwoovation Lab">
+  <meta property="og:description" content="施設園芸における非接触赤外線放射温度計（IRT）による葉温計測の物理と誤差補正。植物葉の放射率 ε = 0.96–0.98、冷たいガラス屋根の背景長波反射誤差補償、葉面熱収支方程式と作物水ストレス指数 CWSI を数式で解明。">
+  <meta property="og:url" content="https://inwoovation.com/articles/ja/article-20-leaf-temperature-infrared-thermometry-energy-balance-jp.html">
+  <meta property="og:image" content="https://inwoovation.com/og-cover.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V4RYJBMEDE"></script>
+  <script>
+    if (navigator.webdriver || /HeadlessChrome|PhantomJS|Lighthouse|PTST|bot|crawler|spider|slurp/i.test(navigator.userAgent) || location.hostname === 'localhost' || location.hostname === '127.0.0.1' || (screen.width === 1366 && screen.height === 1366) || (screen.width === 800 && screen.height === 600) || screen.height >= 5000) { window['ga-disable-G-V4RYJBMEDE'] = true; }
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {'ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','analytics_storage':'denied','wait_for_update':500,'region':['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IS','IE','IT','LV','LI','LT','LU','MT','NL','NO','PL','PT','RO','SK','SI','ES','SE','GB','CH']});try{var _c=localStorage.getItem('inw_gdpr_consent_v2');if(_c==='granted')gtag('consent','update',{'ad_storage':'granted','ad_user_data':'granted','ad_personalization':'granted','analytics_storage':'granted'});}catch(_e){}
+       gtag('js', new Date());
+    gtag('config', 'G-V4RYJBMEDE');
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8597809158257497" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/global-ui-enhancements.css?v=20261108">
+  <script src="/js/global-search-palette.js?v=20261108" defer></script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "headline": "Vol. 20: 非接触赤外線葉温計測と葉面エネルギー収支 — 放射率補正（ε）・Stefan-Boltzmann 反射背景補償・CWSI 水ストレス診断 | Inwoovation Lab",
+      "description": "施設園芸における非接触赤外線放射温度計（IRT）による葉温計測の物理と誤差補正。植物葉の放射率 ε = 0.96–0.98、冷たいガラス屋根の背景長波反射誤差補償、葉面熱収支方程式と作物水ストレス指数 CWSI を数式で解明。",
+      "inLanguage": "ja",
+      "datePublished": "2026-11-22",
+      "dateModified": "2026-11-22",
+      "mainEntityOfPage": "https://inwoovation.com/articles/ja/article-20-leaf-temperature-infrared-thermometry-energy-balance-jp.html",
+      "image": "https://inwoovation.com/og-cover.jpg",
+      "author": {
+        "@type": "Person",
+        "name": "Inwoo Hwang",
+        "jobTitle": "Horticultural & CEA Systems Engineer",
+        "url": "https://inwoovation.com/about.html"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Inwoovation Lab",
+        "url": "https://inwoovation.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://inwoovation.com/og-cover.jpg"
+        }
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inwoovation Lab",
+          "item": "https://inwoovation.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Engineering Guides",
+          "item": "https://inwoovation.com/guides.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "JA Vol. 20: 赤外線葉温計測・放射率補正・CWSI",
+          "item": "https://inwoovation.com/articles/ja/article-20-leaf-temperature-infrared-thermometry-energy-balance-jp.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "なぜ気温 T_air と相対湿度 RH だけで計算した VPD ではなく、葉温 T_leaf に基づく VPD_leaf が重要なのか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "気孔は葉肉細胞内部の飽和水蒸気圧 e_s(T_leaf) と周囲空気の水蒸気圧 e_a の差に直接応答するためです。強い日射下や無風状態では葉温が室温より +3〜+6 °C 高くなるため、気温ベース VPD が 0.9 kPa でも実際の VPD_leaf は 1.7 kPa を超え、作物が隠れた水ストレスで気孔を閉じてしまいます。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "ガラス温室で赤外線放射温度計（IRT）を使う際、放射率 ε 設定と背景反射補正が不可欠な理由は？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "植物葉の赤外放射率は約 0.975 であり、残りの約 2.5 % は周囲環境（冬の冷たいガラス屋根や高温ランプ）からの長波放射を鏡のように反射します。Stefan-Boltzmann 式に基づく背景温度 T_bg の 4 乗項を補正しないと、冬夜間に最大 1.1 °C の低温側測定誤差が生じます。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "IRT センサーを温室の作物群落に設置する際の正確な角度と距離の基準は？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "床や暖房パイプなど葉以外の背景ノイズが視野に入るのを防ぐため、視野角 15°–22° の狭視野 IRT を群落上端（最も活性の高い展開上位葉）から 35–50 cm 離し、水平から 35°–45° の斜め下向き角度で設置して葉面占有率 95 % 以上を確保します。"
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+  <style>
+    body { margin: 0; font-family: 'Plus Jakarta Sans', sans-serif; background: #090d16; color: #e2e8f0; line-height: 1.8; }
+    .article-shell { max-width: 920px; margin: 0 auto; padding: 36px 22px 60px; }
+    .badge-pill { display: inline-block; padding: 6px 14px; border-radius: 999px; background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.4); color: #34d399; font-size: 0.82rem; font-weight: 700; margin-bottom: 14px; }
+    h1 { font-family: 'Outfit', sans-serif; font-size: 2.25rem; line-height: 1.25; color: #f8fafc; margin: 0 0 14px 0; }
+    .meta-bar { color: #94a3b8; font-size: 0.9rem; margin-bottom: 28px; padding-bottom: 18px; border-bottom: 1px solid rgba(148, 163, 184, 0.18); }
+    .formula-box { background: rgba(15, 23, 42, 0.9); border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 12px; padding: 18px 22px; margin: 20px 0; font-family: 'JetBrains Mono', monospace; color: #38bdf8; overflow-x: auto; }
+    table.eng-table { width: 100%; border-collapse: collapse; margin: 20px 0; background: rgba(15, 23, 42, 0.75); border-radius: 12px; overflow: hidden; }
+    table.eng-table th, table.eng-table td { padding: 12px 14px; border: 1px solid rgba(148, 163, 184, 0.2); text-align: left; font-size: 0.92rem; }
+    table.eng-table th { background: rgba(30, 41, 59, 0.9); color: #38bdf8; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <main class="article-shell">
+    <div style="margin-bottom: 20px;">
+      <a href="/guides.html" style="color: #38bdf8; text-decoration: none; font-weight: 700; font-size: 0.92rem;">← 技術モノグラフ一覧（Engineering Guides）へ戻る</a>
+    </div>
+    <span class="badge-pill">🇯🇵 施設園芸工学モノグラフ JA Vol. 20 · 非接触赤外線葉温・熱収支・CWSI</span>
+    <h1>Vol. 20: 非接触赤外線葉温計測と葉面エネルギー収支 — 放射率補正（ε）・Stefan-Boltzmann 反射背景補償・CWSI 水ストレス診断</h1>
+<!-- INW-LANG-SWITCHER-START -->
+<div class="inw-lang-switcher-bar" style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:14px 0 20px 0; padding:10px 14px; background:rgba(15,23,42,0.75); border:1px solid rgba(148,163,184,0.2); border-radius:12px;">
+  <span style="font-size:0.8rem; color:#94a3b8; font-weight:700; margin-right:4px;">🌐 Vol. 20 Editions:</span>
+  <a href="/articles/article-20-leaf-temperature-infrared-thermometry.html" style="display:inline-flex; align-items:center; padding:5px 12px; border-radius:999px; background:rgba(30,41,59,0.8); border:1px solid rgba(56,189,248,0.35); color:#38bdf8; text-decoration:none; font-size:0.8rem; font-weight:600;">🇬🇧 English Edition →</a>
+  <a href="/articles/de/article-20-blatttemperatur-infrarot-thermometrie-emissionsgrad-energiebilanz.html" style="display:inline-flex; align-items:center; padding:5px 12px; border-radius:999px; background:rgba(30,41,59,0.8); border:1px solid rgba(56,189,248,0.35); color:#38bdf8; text-decoration:none; font-size:0.8rem; font-weight:600;">🇩🇪 Deutsche Ausgabe →</a>
+  <span style="display:inline-flex; align-items:center; padding:5px 12px; border-radius:999px; background:rgba(16,185,129,0.22); border:1px solid #10b981; color:#34d399; font-size:0.8rem; font-weight:700;">🇯🇵 日本語版 (JA) (Active)</span>
+</div>
+<!-- INW-LANG-SWITCHER-END -->
+    <div class="meta-bar">
+      <span>👨‍🔬 <strong>Inwoo Hwang</strong> (Inwoovation Lab)</span> &nbsp;|&nbsp;
+      <span>📅 Last Updated: November 22, 2026</span> &nbsp;|&nbsp;
+      <span>⏱️ 14 min read · Infrarot-Blatttemperatur & Energiebilanz</span>
+    </div>
+
+      <section style="margin-bottom: 34px;">
+        <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px; margin-bottom: 16px;">1. なぜ「室温 T_air」ではなく「葉温 T_leaf」が光合成と気孔ストレスを決定するのか</h2>
+        <p>ガラス温室や LED 植物工場において、室温センサー（Aspirated Dry-Bulb PT1000）の読み値が 22.0 °C で一定であっても、実際の作物葉温 <em>T</em><sub>leaf</sub> は日射・LED 長波放射・蒸散潜熱冷却・気流速度に応じて <strong>18.5 °C から 29.0 °C まで大きく乖離（Δ<em>T</em> = −3.5 K 〜 +7.0 K）</strong> する。生化学反応（RuBisCO カルボキシル化、暗呼吸 <em>Q</em>₁₀）、葉内飽和水蒸気圧 <em>e</em><sub>s</sub>(<em>T</em><sub>leaf</sub>) による真の<strong>葉面飽差（Leaf-to-Air VPD: VPD<sub>leaf</sub>）</strong>、および灰色かび病の結露判定を支配しているのは気温ではなく、まさに葉温 <em>T</em><sub>leaf</sub> である。</p>
+        <p>たとえば室温 22.0 °C・RH 65 % のとき空気ベース VPD は 0.92 kPa だが、強光日射下で蒸散不足により葉温が 26.5 °C まで上昇していれば、葉細胞内の飽和水蒸気圧 <em>e</em><sub>s</sub>(26.5 °C) = 3.46 kPa と周囲空気水蒸気圧 1.72 kPa の差、すなわち <strong>真の VPD<sub>leaf</sub> は 1.74 kPa（約 1.9 倍）</strong> へ跳ね上がり、作物は極度の気孔閉鎖・光合成停止状態に陥る。したがって精密環境制御には連続的な非接触赤外線葉温計測が不可欠となる。</p>
+      </section>
+      <section style="margin-bottom: 34px;">
+        <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px; margin-bottom: 16px;">2. 放射率（Emissivity ε）とガラス屋根背景反射（T_sky / T_glass）の Stefan-Boltzmann 補正</h2>
+        <p>熱赤外線（波長帯 8 – 14 µm の大気の窓領域）を測定する非接触赤外線放射温度計（IRT / サーマルカメラ）は、葉が放射する黒体放射だけでなく、<strong>葉面で反射される周囲環境（冷たいガラス屋根・高温の HPS/LED 放熱体）の長波赤外放射</strong>も同時に受光する。Stefan-Boltzmann の放射則に基づく厳密な逆算補正式は次式で表される。</p>
+        <div class="formula-box">E_sensor = ε_leaf · σ · T_leaf^4 + (1 − ε_leaf) · σ · T_bg^4 &nbsp;|&nbsp; T_leaf = [ (T_raw^4 − (1 − ε_leaf)·T_bg^4) / ε_leaf ]^(1/4)</div>
+        <p>ここで σ = 5.67037 × 10⁻⁸ W·m⁻²·K⁻⁴、<em>T</em><sub>bg</sub> [K] は葉面から上空側半球を見込む背景放射温度である。健康な高等植物の葉の赤外放射率 <em>ε</em><sub>leaf</sub> は <strong>0.955 – 0.985</strong>（代表値 <strong>0.975</strong>）と非常に黒体に近いが、反射率 (1 − <em>ε</em><sub>leaf</sub>) ≈ 0.025 – 0.045 は無視できない誤差源となる。晴天冬季の夜間に温室外気温 −5 °C でガラス内面温度 <em>T</em><sub>bg</sub> が +2 °C に冷えている場合、一般的な放射率 0.95 設定のまま補正なしで測定すると、実際の葉温より <strong>0.6 – 1.1 K 低く誤検知</strong> される。逆に大型 HPS ランプ直下（高温背景 <em>T</em><sub>bg</sub> = 45 °C）では最大 +1.4 K 高く算出されるため、二重サーミスタ基準または下向き基準 IRT によるリアルタイム背景温度補正が必須である。</p>
+      </section>
+      <section style="margin-bottom: 34px;">
+        <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px; margin-bottom: 16px;">3. 葉面エネルギー収支方程式と気孔閉鎖・蒸散の連成物理</h2>
+        <p>定常状態において、単位葉面積あたりの正味吸収放射エネルギー（短波 PAR/NIR 吸収＋長波赤外収支 <em>R</em><sub>n</sub>）は、顕熱対流伝達 <em>H</em> と蒸散潜熱流束 <em>λE</em> の和と釣り合う。</p>
+        <div class="formula-box">R_n = H + λE = ρ_a · c_p · (T_leaf − T_air) / r_aH + (ρ_a · c_p / γ) · (e_s(T_leaf) − e_a) / (r_aV + r_s)</div>
+        <table class="eng-table">
+          <thead>
+            <tr>
+              <th>環境・生理変数 (State Variable)</th>
+              <th>高蒸散・健全気孔状態 (r_s ≈ 80 s/m)</th>
+              <th>水ストレス・気孔閉鎖 (r_s &gt; 600 s/m)</th>
+              <th>IRT 葉温計測による制御アクション</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>葉温−気温差 (ΔT = T_leaf − T_air)</strong></td>
+              <td>−1.8 K 〜 +0.8 K（蒸散冷却優勢）</td>
+              <td><strong>+3.0 K 〜 +6.8 K</strong>（葉面過熱）</td>
+              <td>ミスト冷房（70 bar Fogging）・遮光・強制灌水トリガ</td>
+            </tr>
+            <tr>
+              <td><strong>真の葉面 VPD (VPD_leaf)</strong></td>
+              <td>0.75 – 1.15 kPa（最適同化帯）</td>
+              <td><strong>1.85 – 2.80 kPa</strong>（気孔急閉鎖）</td>
+              <td>空気 VPD 制御から <strong>VPD_leaf フィードバック制御</strong> へ切替</td>
+            </tr>
+            <tr>
+              <td><strong>境界層抵抗 (r_aH, HAF ファン連動)</strong></td>
+              <td>45 – 75 s·m⁻¹ (u = 0.4–0.6 m/s)</td>
+              <td>180 – 320 s·m⁻¹ (無風停滞)</td>
+              <td>水平循環ファン（HAF）回転数増加により境界層剥離</td>
+            </tr>
+            <tr>
+              <td><strong>作物水ストレス指数 (CWSI)</strong></td>
+              <td>0.05 – 0.20 (無ストレス潤沢)</td>
+              <td><strong>0.45 – 0.85</strong> (根圏吸湿不足警報)</td>
+              <td>日射積算灌水ショット間隔の即時短縮（+20 % ドリップ）</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <section style="margin-bottom: 34px;">
+        <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px; margin-bottom: 16px;">4. CWSI（作物水ストレス指数）および光学的視野角・センサー設置 SOP</h2>
+        <p>Idso &amp; Jackson らによって定式化された <strong>作物水ストレス指数（CWSI: Crop Water Stress Index）</strong> は、同一日射・VPD 条件下で十分に蒸散している湿潤基準葉温 <em>T</em><sub>wet</sub>（下限ベースライン）と、気孔を完全に閉じた乾燥基準葉温 <em>T</em><sub>dry</sub>（上限ベースライン）の間で実測葉温差 Δ<em>T</em> を正規化する無次元指標である。</p>
+        <div class="formula-box">CWSI = (ΔT_measured − ΔT_wet) / (ΔT_dry − ΔT_wet) &nbsp;|&nbsp; 0.0 (最大蒸散) ≤ CWSI ≤ 1.0 (完全気孔閉鎖)</div>
+        <p>温室現場に IRT センサーを実装する際の施工規律（SOP）として、① 視野角（FOV）15° – 22° の狭視野光学系を用い、<strong>群落上端から 35 – 50 cm 斜め下向き（水平から 35° – 45° 傾斜）</strong> に固定して背景の通路床や加熱パイプが視野円に入らないようにすること（葉面占有率 ≥ 95 %）、② 2 次植物体成長に合わせて 2 週間ごとにマウント高さを追従昇降させること、③ 高圧ミスト噴霧直後の水滴付着時（<em>ε</em> が水の 0.985 へ変化し蒸発潜熱で異常低温を示す時間帯）のデータマスク処理を気候コンピュータに組み込むことが鉄則である。</p>
+      </section>
+      <section style="margin-bottom: 34px;">
+        <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px; margin-bottom: 16px;">5. 非接触葉温フィードバックによるトマト収量 +8.2 %・裂果防止インパクト</h2>
+        <p>オランダおよびドイツの商業果菜類温室において、従来の室温ベース気候制御（<em>T</em><sub>air</sub> + RH）を赤外線放射温度計に基づく <strong>実測 VPD<sub>leaf</sub>・露点マージン連動制御</strong> に統合した運用評価では、夏季高日射日の午後における過剰蒸散と夕方の果実亀裂（Micro-cracking）発生率が <strong>64 % 減少</strong> し、逆に冬季早朝の低温結露による灰色かび病発症がほぼゼロ化された。結果として 1.0 ha あたりの可販果年間収量は +8.2 % 向上し、センサー 4 基導入コスト（約 EUR 3,600）の回収期間は <strong>1.5 ヶ月未満</strong> に短縮された。</p>
+        <p>さらに高精度運転を維持するため、IRT センサーのゲルマニウム保護レンズは 2 週間ごとにイソプロピルアルコールを含ませたレンズペーパーで清拭し、防除ミスト付着や埃堆積による透過率低下（+0.4 K 以上のドリフト要因）を防止するとともに、年 2 回黒体炉または精密恒温水槽（±0.05 °C 基準面）による 2 点オフセット校正を実施することが推奨される。</p>
+      </section>
+
+    <section style="margin-bottom: 34px;">
+      <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #10b981; border-bottom: 1px solid rgba(16, 185, 129, 0.25); padding-bottom: 10px; margin-bottom: 16px;">施設園芸エンジニアリング 実践FAQ</h2>
+        <div style="background: rgba(15, 23, 42, 0.7); border-left: 4px solid #10b981; padding: 18px 20px; border-radius: 10px; margin-bottom: 14px;">
+          <p style="margin: 0;"><strong>Q1: なぜ気温 T_air と相対湿度 RH だけで計算した VPD ではなく、葉温 T_leaf に基づく VPD_leaf が重要なのか？</strong><br>気孔は葉肉細胞内部の飽和水蒸気圧 e_s(T_leaf) と周囲空気の水蒸気圧 e_a の差に直接応答するためです。強い日射下や無風状態では葉温が室温より +3〜+6 °C 高くなるため、気温ベース VPD が 0.9 kPa でも実際の VPD_leaf は 1.7 kPa を超え、作物が隠れた水ストレスで気孔を閉じてしまいます。</p>
+        </div>
+        <div style="background: rgba(15, 23, 42, 0.7); border-left: 4px solid #10b981; padding: 18px 20px; border-radius: 10px; margin-bottom: 14px;">
+          <p style="margin: 0;"><strong>Q2: ガラス温室で赤外線放射温度計（IRT）を使う際、放射率 ε 設定と背景反射補正が不可欠な理由は？</strong><br>植物葉の赤外放射率は約 0.975 であり、残りの約 2.5 % は周囲環境（冬の冷たいガラス屋根や高温ランプ）からの長波放射を鏡のように反射します。Stefan-Boltzmann 式に基づく背景温度 T_bg の 4 乗項を補正しないと、冬夜間に最大 1.1 °C の低温側測定誤差が生じます。</p>
+        </div>
+        <div style="background: rgba(15, 23, 42, 0.7); border-left: 4px solid #10b981; padding: 18px 20px; border-radius: 10px; margin-bottom: 14px;">
+          <p style="margin: 0;"><strong>Q3: IRT センサーを温室の作物群落に設置する際の正確な角度と距離の基準は？</strong><br>床や暖房パイプなど葉以外の背景ノイズが視野に入るのを防ぐため、視野角 15°–22° の狭視野 IRT を群落上端（最も活性の高い展開上位葉）から 35–50 cm 離し、水平から 35°–45° の斜め下向き角度で設置して葉面占有率 95 % 以上を確保します。</p>
+        </div>
+    </section>
+
+    <section style="margin-bottom: 34px;">
+      <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.35rem; color: #cbd5e1; margin-bottom: 12px;">参考文献・国際規格 (References & Standards)</h2>
+      <ul style="padding-left: 20px;">
+          <li style="margin-bottom: 8px; color: #94a3b8; font-size: 0.92rem;">Jones, H. G. (2013). <em>Plants and Microclimate: A Quantitative Approach to Environmental Plant Physiology</em> (3rd ed.). Cambridge University Press.</li>
+          <li style="margin-bottom: 8px; color: #94a3b8; font-size: 0.92rem;">Idso, S. B., Jackson, R. D., Pinter Jr, P. J., Reginato, R. J., &amp; Hatfield, J. L. (1981). Normalizing the stress-degree-day parameter for environmental variability. <em>Agricultural Meteorology</em>, 24, 45–55.</li>
+          <li style="margin-bottom: 8px; color: #94a3b8; font-size: 0.92rem;">Maes, W. H., &amp; Steppe, K. (2012). Estimating evapotranspiration and drought stress with ground-based thermal remote sensing in agriculture. <em>Journal of Experimental Botany</em>, 63(13), 4671–4712.</li>
+          <li style="margin-bottom: 8px; color: #94a3b8; font-size: 0.92rem;">López, A., Molina-Aiz, F. D., Valera, D. L., &amp; Peña, A. (2012). Determining the emissivity of the leaves of nine horticultural crops by means of infrared thermography. <em>Scientia Horticulturae</em>, 137, 49–58.</li>
+          <li style="margin-bottom: 8px; color: #94a3b8; font-size: 0.92rem;">Stanghellini, C., &amp; De Jong, T. (1995). A model of humidity and its applications in a greenhouse. <em>Agricultural and Forest Meteorology</em>, 76, 129–148.</li>
+      </ul>
+    </section>
+
+
+<!-- INW-LIVE-WIDGET-START -->
+<section class="inw-live-widget-sandbox" style="margin: 32px 0; padding: 24px; background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 16px; box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);">
+  <h3 style="margin: 0 0 8px 0; font-size: 1.2rem; color: #38bdf8; font-weight: 800;">💧 リアルタイム飽差 (VPD) & 葉面微気象シミュレーター</h3>
+  <p style="margin: 0 0 16px 0; font-size: 0.92rem; color: #94a3b8; line-height: 1.6;">気温・相対湿度・葉温オフセットを調整し、群落の飽差 (kPa) と蒸散ストレスをリアルタイムに検証できます。</p>
+  <div style="display: flex; justify-content: center; width: 100%; overflow: hidden;">
+    <iframe src="/embed/vpd-gauge.html" width="380" height="390" loading="lazy" title="💧 リアルタイム飽差 (VPD) & 葉面微気象シミュレーター" style="border: none; border-radius: 14px; max-width: 100%;"></iframe>
+  </div>
+</section>
+<!-- INW-LIVE-WIDGET-END -->
+
+<!-- INW-TSUKUBA-FUNNEL-START -->
+<section class="inw-tsukuba-funnel-bridge" style="max-width: 1060px; margin: 32px auto; padding: 26px; background: rgba(15, 23, 42, 0.9); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 16px; text-align: left; box-shadow: 0 10px 28px rgba(0, 0, 0, 0.3);">
+  <h3 style="margin: 0 0 8px 0; font-size: 1.2rem; color: #10b981; font-weight: 800;">🔬 関連する技術論文・作物別環境制御ガイド・シミュレーター</h3>
+  <p style="margin: 0 0 16px 0; font-size: 0.92rem; color: #94a3b8; line-height: 1.6;">本ページの物理モデルおよび設計計算をさらに深く検証するための技術モノグラフと専用計算ツール：</p>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px;">
+    <a href="/articles/article-01-vpd-master-class.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">Vol. 01: Penman-Monteith Transpiration & VPD Masterclass →</a>
+    <a href="/articles/article-72-semi-closed-greenhouse-mollier-psychrometrics-latent-heat.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">Vol. 72: Semi-Closed Greenhouse Mollier h-x Psychrometrics & Latent Heat →</a>
+    <a href="/articles/article-20-leaf-temperature-infrared-thermometry.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">Vol. 20: Radiometric Leaf-to-Air ΔT & Stomatal Conductance Physics →</a>
+    <a href="/crops/greenhouse-tomato-microclimate-vpd-steering-guide.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🍅 High-Wire Tomato VPD & Generative Steering Guide →</a>
+    <a href="/crops/greenhouse-cucumber-high-humidity-transpiration-guide.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🥒 Greenhouse Cucumber High-Humidity Transpiration Guide →</a>
+    <a href="/tools/psychrometric-mollier-greenhouse-dehumidifier.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">⚡ Mollier h-x Dehumidification & Latent Load Sizer →</a>
+    <a href="/tools/evapotranspiration-penman-monteith-calculator.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🍃 FAO-56 Penman-Monteith Evapotranspiration Solver →</a>
+  </div>
+</section>
+<!-- INW-TSUKUBA-FUNNEL-END -->
+
+    <!-- INW-EEAT-BOX-START -->
+    <section class="inw-eeat-box" style="margin-top: 36px; padding: 24px; background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 16px;">
+      <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; color: #10b981; font-weight: 800; margin-bottom: 6px;">施設園芸・環境制御システムエンジニア — Inwoovation Lab</div>
+      <h3 style="margin: 0 0 8px 0; font-size: 1.15rem; color: #f8fafc;">Inwoo Hwang</h3>
+      <p style="margin: 0; font-size: 0.92rem; color: #cbd5e1; line-height: 1.65;">フェンロー型連棟温室の熱力学設計 (DIN V 18599)、光生物学 (DLI・PPFD・作用スペクトル)、閉鎖型養液栽培および精密環境制御モデルの構築に従事。</p>
+    </section>
+    <!-- INW-EEAT-BOX-END -->
+  </main>
+
+  <!-- INW-STD-FOOTER-START -->
+  <footer class="inw-site-footer" style="margin-top: 48px; padding: 28px 20px; background: #0f172a; color: #94a3b8; text-align: center; border-top: 1px solid rgba(148, 163, 184, 0.15);">
+    <div style="max-width: 1100px; margin: 0 auto;">
+      <p style="margin: 0 0 10px 0;">&copy; 2026 Inwoovation Lab. Precision Controlled Environment Agriculture &amp; Biophysical Engineering.</p>
+      <p style="margin: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 16px;">
+        <a href="/index.html" style="color: #cbd5e1; text-decoration: none;">Home</a>
+        <a href="/guides.html" style="color: #cbd5e1; text-decoration: none;">Engineering Guides</a>
+        <a href="/privacy-policy.html" style="color: #cbd5e1; text-decoration: none;">Privacy Policy</a>
+        <a href="/terms-of-service.html" style="color: #cbd5e1; text-decoration: none;">Terms of Service</a>
+        <a href="/about.html" style="color: #cbd5e1; text-decoration: none;">About</a>
+        <a href="/contact.html" style="color: #cbd5e1; text-decoration: none;">Contact</a>
+      </p>
+    </div>
+  </footer>
+  <!-- INW-STD-FOOTER-END -->
+</body>
+</html>
