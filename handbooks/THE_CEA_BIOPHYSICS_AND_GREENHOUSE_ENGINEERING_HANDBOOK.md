@@ -1,14 +1,14 @@
 # 📘 The CEA Biophysics & Greenhouse Engineering Handbook
-## OpenCEA Compendium: 78 Volumes (208 Multilingual Editions) & 42 Live Simulators
+## OpenCEA Compendium: 78 Volumes (209 Multilingual Editions) & 42 Live Simulators
 
 > **Author**: Inwoovation Lab (Inwoo Hwang)  
 > **Target Audience**: Commercial Greenhouse Operators, Plant Factory Systems Engineers, Gärtnermeister Candidates, Agronomists  
-> **Publication Standard**: Verified Biophysical Equations (Magnus-Tetens, Penman-Monteith, Farquhar FvCB, DIN V 18599, Debye-Hückel), Interactive Simulator Synchronized (`2026-11-22`)  
+> **Publication Standard**: Verified Biophysical Equations (Magnus-Tetens, Penman-Monteith, Farquhar FvCB, DIN V 18599, Debye-Hückel), Interactive Simulator Synchronized (`2026-11-23`)  
 
 ---
 
 ## 📌 Executive Abstract & Compendium Profile
-This open-access technical compendium organizes all **78 English engineering monographs** (**208 total EN/DE/JA editions**) alongside **42 client-side biophysical simulators** and **192 hyper-local agricultural grant programs** into six engineering domains.
+This open-access technical compendium organizes all **78 English engineering monographs** (**209 total EN/DE/JA editions**) alongside **42 client-side biophysical simulators** and **192 hyper-local agricultural grant programs** into six engineering domains.
 
 ---
 
@@ -634,8 +634,9 @@ This open-access technical compendium organizes all **78 English engineering mon
 <a id="chapter-53-article-53-biomass-chp-scr-co2-recovery-horticulture"></a>
 - **EN Monograph**: [../articles/article-53-biomass-chp-scr-co2-recovery-horticulture.html](../articles/article-53-biomass-chp-scr-co2-recovery-horticulture.html)
 - **DE Edition**: [../articles/de/article-53-biomasse-bhkw-scr-co2-rueckgewinnung-gartenbau.html](../articles/de/article-53-biomasse-bhkw-scr-co2-rueckgewinnung-gartenbau.html)
+- **JA Edition**: [../articles/ja/article-53-biomass-chp-scr-co2-recovery-horticulture-jp.html](../articles/ja/article-53-biomass-chp-scr-co2-recovery-horticulture-jp.html)
 - **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
-- **Synopsis**: Engineering thermodynamics of biomass combined heat and power (CHP), Selective Catalytic Reduction (SCR) DeNOx, ethylene scrubbers, and safe biogenic.
+- **Synopsis**: Thermodynamic modeling of biomass CHP flue gas SCR DeNOx, Pt/Pd ethylene oxidation catalysis, and biogenic CO2 enrichment in commercial Venlo glasshouses.
 
 ## Volume 58: Dynamic CO2 Enrichment Kinetics & RuBisCO Carboxylation Thermodynamics in High-Wire Venlo Greenhouses
 <a id="chapter-58-article-58-dynamic-co2-enrichment-kinetics-rubisco-carboxylation-venlo"></a>

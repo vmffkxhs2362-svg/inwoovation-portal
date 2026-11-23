@@ -18,8 +18,8 @@
     "cat": "part",
     "url": "directory.html",
     "icon": "⚙️",
-    "desc": "Master HTML sitemap and engineering taxonomy indexing all 391 calculators, 192 global agricultural grants, EN/DE/JA monographs, crop guides, and climate hubs.",
-    "tags": "directory html complete cea engineering directory amp index master html sitemap and engineering taxonomy indexing all 391 calculators 192 global agricultural grants en de ja monographs crop "
+    "desc": "Master HTML sitemap and engineering taxonomy indexing all 392 calculators, 192 global agricultural grants, EN/DE/JA monographs, crop guides, and climate hubs.",
+    "tags": "directory html complete cea engineering directory amp index master html sitemap and engineering taxonomy indexing all 392 calculators 192 global agricultural grants en de ja monographs crop "
   },
   {
     "title": "CEA &amp; Greenhouse Engineering Articles",
@@ -490,8 +490,8 @@
     "cat": "article",
     "url": "articles/article-53-biomass-chp-scr-co2-recovery-horticulture.html",
     "icon": "📚",
-    "desc": "Engineering thermodynamics of biomass combined heat and power (CHP), Selective Catalytic Reduction (SCR) DeNOx, ethylene scrubbers, and safe biogenic.",
-    "tags": "articles article 53 biomass chp scr co2 recovery horticulture html biomass chp flue gas scr cleaning amp biogenic co2 engineering thermodynamics of biomass combined heat and power chp select"
+    "desc": "Thermodynamic modeling of biomass CHP flue gas SCR DeNOx, Pt/Pd ethylene oxidation catalysis, and biogenic CO2 enrichment in commercial Venlo glasshouses.",
+    "tags": "articles article 53 biomass chp scr co2 recovery horticulture html biomass chp flue gas scr cleaning amp biogenic co2 thermodynamic modeling of biomass chp flue gas scr denox pt pd ethylene "
   },
   {
     "title": "AI-Driven Model Predictive Control (MPC)",
@@ -1750,12 +1750,20 @@
     "tags": "articles ja article 52 aquifer thermal energy storage ates heat pump jp html 帯水層蓄熱システム ates と産業用ヒ トポンプの温室熱工学モデル venlo型温室における帯水層蓄熱 ates wko ダブレット井戸システム 季節蓄熱回収効率 および高温産業用ヒ トポンプのcop熱力学モデル"
   },
   {
-    "title": "日本語 施設園芸・スマート農業工学モノグラフ一覧 (52 論文)",
+    "title": "Vol. 53: バイオマス熱電併給 (CHP/BHKW) の SCR 排ガス浄化と生源 CO2",
+    "cat": "article",
+    "url": "articles/ja/article-53-biomass-chp-scr-co2-recovery-horticulture-jp.html",
+    "icon": "🇯🇵",
+    "desc": "商業用フェンロー型温室における木質バイオマス CHP (BHKW) の熱力学収支、V2O5-WO3/TiO2 SCR 脱硝・Pt/Pd エチレン酸化触媒、植物毒性閾値管理および生源 CO2 施用の経済性 ROI モデルを詳説。",
+    "tags": "articles ja article 53 biomass chp scr co2 recovery horticulture jp html vol 53 バイオマス熱電併給 chp bhkw の scr 排ガス浄化と生源 co2 商業用フェンロ 型温室における木質バイオマス chp bhkw の熱力学収支 v2o5 wo3 tio2 scr 脱硝 pt pd エチレン酸化"
+  },
+  {
+    "title": "日本語 施設園芸・スマート農業工学モノグラフ一覧 (53 論文)",
     "cat": "article",
     "url": "articles/ja/index.html",
     "icon": "🇯🇵",
-    "desc": "商業用 Venlo 型ガラス温室の VPD 飽差熱力学・DIN V 18599 暖房負荷・EN 13031-1 構造設計・FvCB CO2 施用・養液化学平衡を解説する 52 編の日本語技術論文アーカイブ。",
-    "tags": "articles ja index html 日本語 施設園芸 スマ ト農業工学モノグラフ一覧 52 論文 商業用 venlo 型ガラス温室の vpd 飽差熱力学 din v 18599 暖房負荷 en 13031 1 構造設計 fvcb co2 施用 養液化学平衡を解説する 52 編の日本語技術論文ア カイブ"
+    "desc": "商業用 Venlo 型ガラス温室の VPD 飽差熱力学・DIN V 18599 暖房負荷・EN 13031-1 構造設計・FvCB CO2 施用・養液化学平衡を解説する 53 編の日本語技術論文アーカイブ。",
+    "tags": "articles ja index html 日本語 施設園芸 スマ ト農業工学モノグラフ一覧 53 論文 商業用 venlo 型ガラス温室の vpd 飽差熱力学 din v 18599 暖房負荷 en 13031 1 構造設計 fvcb co2 施用 養液化学平衡を解説する 53 編の日本語技術論文ア カイブ"
   },
   {
     "title": "Diffuse AR Glass vs. Multi-Layer PO Film",
@@ -2218,8 +2226,8 @@
     "cat": "article",
     "url": "handbooks/index.html",
     "icon": "📖",
-    "desc": "Open-access six-part Controlled Environment Agriculture compendium indexing 78 volumes (208 EN/DE/JA editions), 42 live biophysical calculators, and 192.",
-    "tags": "handbooks index html the cea biophysics amp greenhouse engineering open access six part controlled environment agriculture compendium indexing 78 volumes 208 en de ja editions 42 live biophy"
+    "desc": "Open-access six-part Controlled Environment Agriculture compendium indexing 78 volumes (209 EN/DE/JA editions), 42 live biophysical calculators, and 192.",
+    "tags": "handbooks index html the cea biophysics amp greenhouse engineering open access six part controlled environment agriculture compendium indexing 78 volumes 209 en de ja editions 42 live biophy"
   },
   {
     "title": "AgriMaster",
@@ -3124,13 +3132,13 @@
       <div class="inwoo-palette-box" role="dialog" aria-modal="true" aria-label="Inwoovation Spotlight Search">
         <div class="inwoo-palette-header">
           <span class="inwoo-palette-search-icon">🔍</span>
-          <input type="text" id="inwoo-palette-input" placeholder="Search all 386 tools, simulators, wiki, crops, climate hubs & EN/DE/JA articles..." autocomplete="off" />
+          <input type="text" id="inwoo-palette-input" placeholder="Search all 387 tools, simulators, wiki, crops, climate hubs & EN/DE/JA articles..." autocomplete="off" />
           <span class="inwoo-palette-esc-badge" onclick="window.InwooPalette.close()">ESC</span>
         </div>
         <div class="inwoo-palette-tabs">
-          <button class="inwoo-pal-tab active" data-cat="all">✨ All (386)</button>
+          <button class="inwoo-pal-tab active" data-cat="all">✨ All (387)</button>
           <button class="inwoo-pal-tab" data-cat="tool">🛠️ Tools (49)</button>
-          <button class="inwoo-pal-tab" data-cat="article">📚 Articles (214)</button>
+          <button class="inwoo-pal-tab" data-cat="article">📚 Articles (215)</button>
           <button class="inwoo-pal-tab" data-cat="wiki">🧬 Wiki (44)</button>
           <button class="inwoo-pal-tab" data-cat="climate">🌍 Climate (41)</button>
           <button class="inwoo-pal-tab" data-cat="sim">🧪 Simulators (19)</button>
@@ -3144,7 +3152,7 @@
             <span><kbd>↵</kbd> Open</span>
             <span><kbd>Esc</kbd> Close</span>
           </div>
-          <div style="color: #64748b; font-size: 0.75rem;">Inwoovation Universal Spotlight (386 Indexed Pages)</div>
+          <div style="color: #64748b; font-size: 0.75rem;">Inwoovation Universal Spotlight (387 Indexed Pages)</div>
         </div>
       </div>
     `;
