@@ -1,14 +1,14 @@
 # 📘 The CEA Biophysics & Greenhouse Engineering Handbook
-## OpenCEA Compendium: 78 Volumes (209 Multilingual Editions) & 42 Live Simulators
+## OpenCEA Compendium: 78 Volumes (210 Multilingual Editions) & 42 Live Simulators
 
 > **Author**: Inwoovation Lab (Inwoo Hwang)  
 > **Target Audience**: Commercial Greenhouse Operators, Plant Factory Systems Engineers, Gärtnermeister Candidates, Agronomists  
-> **Publication Standard**: Verified Biophysical Equations (Magnus-Tetens, Penman-Monteith, Farquhar FvCB, DIN V 18599, Debye-Hückel), Interactive Simulator Synchronized (`2026-11-23`)  
+> **Publication Standard**: Verified Biophysical Equations (Magnus-Tetens, Penman-Monteith, Farquhar FvCB, DIN V 18599, Debye-Hückel), Interactive Simulator Synchronized (`2026-11-24`)  
 
 ---
 
 ## 📌 Executive Abstract & Compendium Profile
-This open-access technical compendium organizes all **78 English engineering monographs** (**209 total EN/DE/JA editions**) alongside **42 client-side biophysical simulators** and **192 hyper-local agricultural grant programs** into six engineering domains.
+This open-access technical compendium organizes all **78 English engineering monographs** (**210 total EN/DE/JA editions**) alongside **42 client-side biophysical simulators** and **192 hyper-local agricultural grant programs** into six engineering domains.
 
 ---
 
@@ -527,8 +527,9 @@ This open-access technical compendium organizes all **78 English engineering mon
 <a id="chapter-54-article-54-ai-model-predictive-control-mpc-venlo-greenhouse"></a>
 - **EN Monograph**: [../articles/article-54-ai-model-predictive-control-mpc-venlo-greenhouse.html](../articles/article-54-ai-model-predictive-control-mpc-venlo-greenhouse.html)
 - **DE Edition**: [../articles/de/article-54-ki-modellpraediktive-regelung-mpc-venlo-gewaechshaus.html](../articles/de/article-54-ki-modellpraediktive-regelung-mpc-venlo-gewaechshaus.html)
+- **JA Edition**: [../articles/ja/article-54-ai-model-predictive-control-mpc-venlo-greenhouse-jp.html](../articles/ja/article-54-ai-model-predictive-control-mpc-venlo-greenhouse-jp.html)
 - **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
-- **Synopsis**: Engineering mathematical formulation of Model Predictive Control (MPC), transient thermodynamic microclimate modeling, dynamic assimilation lighting.
+- **Synopsis**: Engineering mathematical formulation of Model Predictive Control (MPC), transient thermodynamic microclimate modeling, VPD condensation control, and EPEX SPOT assimilation lighting optimization in commercial Venlo greenhouses.
 
 ---
 
