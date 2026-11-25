@@ -1,5 +1,5 @@
 # 📘 The CEA Biophysics & Greenhouse Engineering Handbook
-## OpenCEA Compendium: 78 Volumes (211 Multilingual Editions) & 42 Live Simulators
+## OpenCEA Compendium: 78 Volumes (213 Multilingual Editions) & 42 Live Simulators
 
 > **Author**: Inwoovation Lab (Inwoo Hwang)  
 > **Target Audience**: Commercial Greenhouse Operators, Plant Factory Systems Engineers, Gärtnermeister Candidates, Agronomists  
@@ -8,7 +8,7 @@
 ---
 
 ## 📌 Executive Abstract & Compendium Profile
-This open-access technical compendium organizes all **78 English engineering monographs** (**211 total EN/DE/JA editions**) alongside **42 client-side biophysical simulators** and **192 hyper-local agricultural grant programs** into six engineering domains.
+This open-access technical compendium organizes all **78 English engineering monographs** (**213 total EN/DE/JA editions**) alongside **42 client-side biophysical simulators** and **192 hyper-local agricultural grant programs** into six engineering domains.
 
 ---
 
@@ -316,8 +316,9 @@ This open-access technical compendium organizes all **78 English engineering mon
 <a id="chapter-56-article-56-far-red-photobiology-epar-phytochrome-photostationary-state"></a>
 - **EN Monograph**: [../articles/article-56-far-red-photobiology-epar-phytochrome-photostationary-state.html](../articles/article-56-far-red-photobiology-epar-phytochrome-photostationary-state.html)
 - **DE Edition**: [../articles/de/article-56-dunkelrot-photobiologie-epar-phytochrom-photostationaerer-zustand.html](../articles/de/article-56-dunkelrot-photobiologie-epar-phytochrom-photostationaerer-zustand.html)
+- **JA Edition**: [../articles/ja/article-56-far-red-photobiology-epar-phytochrome-photostationary-state-jp.html](../articles/ja/article-56-far-red-photobiology-epar-phytochrome-photostationary-state-jp.html)
 - **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
-- **Synopsis**: Engineering biophysics of far-red photon efficacy, ePAR extended photosynthetic range (400-750 nm), phytochrome photostationary state (PSS), and automated.
+- **Synopsis**: Engineering biophysics of far-red photon efficacy, ePAR extended photosynthetic range (400-750 nm), phytochrome photostationary state (PSS), and automated climate control.
 
 ---
 
@@ -425,7 +426,7 @@ This open-access technical compendium organizes all **78 English engineering mon
 - **DE Edition**: [../articles/de/article-55-naehrstoff-aufnahmekonzentrationsfaktor-geschlossene-hydrokultur.html](../articles/de/article-55-naehrstoff-aufnahmekonzentrationsfaktor-geschlossene-hydrokultur.html)
 - **JA Edition**: [../articles/ja/article-55-nutrient-uptake-concentration-factor-recirculating-hydroponics-jp.html](../articles/ja/article-55-nutrient-uptake-concentration-factor-recirculating-hydroponics-jp.html)
 - **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
-- **Synopsis**: Engineering mass balance formulation of nutrient uptake concentration factors (UCF), ion accumulation kinetics, sodium salinity limits, and optimal closed-loop leaching fractions.
+- **Synopsis**: Engineering mass balance formulation of nutrient uptake concentration factors (UCF), ion accumulation kinetics, sodium salinity limits, and optimal.
 
 ## Volume 60: Real-Time Ion-Selective Electrode (ISE) Arrays, Nicolsky-Eisenman Potentiometry & Closed-Loop Autonomous Nutrient Dosing in Commercial High-Wire Hydroponics
 <a id="chapter-60-article-60-potentiometric-ion-selective-electrode-ise-closed-loop-hydroponics"></a>
@@ -683,8 +684,9 @@ This open-access technical compendium organizes all **78 English engineering mon
 <a id="chapter-57-article-57-california-cea-greenhouse-electrification-rebate-grant-stacking"></a>
 - **EN Monograph**: [../articles/article-57-california-cea-greenhouse-electrification-rebate-grant-stacking.html](../articles/article-57-california-cea-greenhouse-electrification-rebate-grant-stacking.html)
 - **DE Edition**: [../articles/de/article-57-gewaechshaus-energieeffizienz-foerderung-ble-kfw-din13031.html](../articles/de/article-57-gewaechshaus-energieeffizienz-foerderung-ble-kfw-din13031.html)
+- **JA Edition**: [../articles/ja/article-57-california-cea-greenhouse-electrification-grant-stacking-jp.html](../articles/ja/article-57-california-cea-greenhouse-electrification-grant-stacking-jp.html)
 - **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
-- **Synopsis**: Engineering and grant stacking playbook for California commercial greenhouses, nurseries, and vertical farms to achieve up to 92% non-dilutive capital.
+- **Synopsis**: Engineering and grant stacking playbook for California commercial greenhouses, nurseries, and vertical farms to achieve up to 92% non-dilutive capital recovery via USDA REAP, CDFA SWEEP, and IOU rebates.
 
 ## Volume 62: 2026-2027 US 50-State Agricultural Grant & Subsidy Playbook: Non-Dilutive Capital for Smart Farms & CEA Growers
 <a id="chapter-62-article-62-us-50-state-agricultural-grant-playbook"></a>

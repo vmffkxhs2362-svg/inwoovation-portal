@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta name="google-adsense-account" content="ca-pub-8597809158257497">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <title>Vol. 56: 遠赤色光 (Far-Red)・拡張光合成有効放射 | Inwoovation</title>
+  <meta name="description" content="Zhen & Bugbee の ePAR (400–750 nm) 理論、エマーソン増強効果 (PSI/PSII)、フィトクロム光平衡状態 (PSS = Pfr/P_total) による草姿制御、および日没時 EOD-FR パルス照射と省エネ設計を数理詳説。">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <link rel="canonical" href="https://inwoovation.com/articles/ja/article-56-far-red-photobiology-epar-phytochrome-photostationary-state-jp.html">
+  <link rel="alternate" hreflang="en" href="https://inwoovation.com/articles/article-56-far-red-photobiology-epar-phytochrome-photostationary-state.html">
+  <link rel="alternate" hreflang="x-default" href="https://inwoovation.com/articles/article-56-far-red-photobiology-epar-phytochrome-photostationary-state.html">
+  <link rel="alternate" hreflang="de" href="https://inwoovation.com/articles/de/article-56-dunkelrot-photobiologie-epar-phytochrom-photostationaerer-zustand.html">
+  <link rel="alternate" hreflang="ja" href="https://inwoovation.com/articles/ja/article-56-far-red-photobiology-epar-phytochrome-photostationary-state-jp.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Vol. 56: 遠赤色光 (Far-Red)・拡張光合成有効放射 (ePAR 400–750 nm) とフィトクロム光平衡状態 (PSS) の環境制御工学 | Inwoovation">
+  <meta property="og:description" content="Zhen & Bugbee の ePAR (400–750 nm) 理論、エマーソン増強効果 (PSI/PSII)、フィトクロム光平衡状態 (PSS = Pfr/P_total) による草姿制御、および日没時 EOD-FR パルス照射と省エネ設計を数理詳説。">
+  <meta property="og:url" content="https://inwoovation.com/articles/ja/article-56-far-red-photobiology-epar-phytochrome-photostationary-state-jp.html">
+  <meta property="og:image" content="https://inwoovation.com/og-cover.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V4RYJBMEDE"></script>
+  <script>
+    if (navigator.webdriver || /HeadlessChrome|PhantomJS|Lighthouse|PTST|bot|crawler|spider|slurp/i.test(navigator.userAgent) || location.hostname === 'localhost' || location.hostname === '127.0.0.1' || (screen.width === 1366 && screen.height === 1366) || (screen.width === 800 && screen.height === 600) || screen.height >= 5000) { window['ga-disable-G-V4RYJBMEDE'] = true; }
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {'ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','analytics_storage':'denied','wait_for_update':500,'region':['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IS','IE','IT','LV','LI','LT','LU','MT','NL','NO','PL','PT','RO','SK','SI','ES','SE','GB','CH']});try{var _c=localStorage.getItem('inw_gdpr_consent_v2');if(_c==='granted')gtag('consent','update',{'ad_storage':'granted','ad_user_data':'granted','ad_personalization':'granted','analytics_storage':'granted'});}catch(_e){}
+       gtag('js', new Date());
+    gtag('config', 'G-V4RYJBMEDE');
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8597809158257497" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/global-ui-enhancements.css?v=20261108">
+  <script src="/js/global-search-palette.js?v=20261108" defer></script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "headline": "Vol. 56: 遠赤色光 (Far-Red)・拡張光合成有効放射 (ePAR 400–750 nm) とフィトクロム光平衡状態 (PSS) の環境制御工学 | Inwoovation",
+      "description": "Zhen & Bugbee の ePAR (400–750 nm) 理論、エマーソン増強効果 (PSI/PSII)、フィトクロム光平衡状態 (PSS = Pfr/P_total) による草姿制御、および日没時 EOD-FR パルス照射と省エネ設計を数理詳説。",
+      "inLanguage": "ja",
+      "datePublished": "2026-11-26",
+      "dateModified": "2026-11-26",
+      "mainEntityOfPage": "https://inwoovation.com/articles/ja/article-56-far-red-photobiology-epar-phytochrome-photostationary-state-jp.html",
+      "image": "https://inwoovation.com/og-cover.jpg",
+      "author": {
+        "@type": "Person",
+        "name": "Inwoo Hwang",
+        "jobTitle": "Horticultural & CEA Systems Engineer",
+        "url": "https://inwoovation.com/about.html"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Inwoovation Lab",
+        "url": "https://inwoovation.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://inwoovation.com/og-cover.jpg"
+        }
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inwoovation Lab",
+          "item": "https://inwoovation.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Engineering Guides",
+          "item": "https://inwoovation.com/guides.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "JA Vol. 56: 遠赤色光 ePAR・フィトクロム PSS 工学",
+          "item": "https://inwoovation.com/articles/ja/article-56-far-red-photobiology-epar-phytochrome-photostationary-state-jp.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "なぜ遠赤色光 (700–750 nm) を含めた ePAR が古典的な PAR (400–700 nm) に取って代わったのですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "従来の PAR は単独照射時の量子収率が低い 700–750 nm を除外していましたが、実際の太陽光や赤青 LED 下では PSI と PSII が直列稼働するため、700–750 nm の遠赤色光子が PSI を選択的に励起してエマーソン増強効果 (EER > 1.0) を発揮し、400–700 nm 光子と同等の高効率で光合成を促進することが Zhen & Bugbee (2020) により実証されたためです。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "フィトクロム光平衡状態 (PSS) は何%の遠赤色比率でどのように管理すべきですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "太陽光基準は PSS ≈ 0.70–0.72 です。徒長を抑えたい育苗・レタス生産では PSS 0.80–0.88（遠赤色ごく微量）、トマト・パプリカの本圃増収には PSS 0.68–0.74（総光量子の 8–12 % を 730 nm で配合）、冬季低日射期の早期葉面積拡大には PSS 0.55–0.65（15–20 % 配合）が標準目標となります。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "昼間連続照射と日没後 EOD パルス照射 (15–30 分) はどう使い分けますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "果実肥大期のトマト等で純光合成速度そのものを +8–12 % 引き上げたい場合は昼間連続照射（ePAR 戦略）を採用し、日中の節間伸長を抑えつつイチゴの花房抽出やキュウリの葉展開だけを最小電力で促したい場合は消灯直後の 15–30 分 EOD パルス (20–40 μmol·m⁻²·s⁻¹) を適用します。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "730 nm 遠赤色 LED の導入は日米欧の省エネ補助金 (MAFF / BLE / USDA REAP) の対象になりますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "はい。730 nm LED は器具効率 3.8–4.2 μmol/J と極めて高効率であるため、システム全体の PPE ≥ 2.8–3.0 μmol/J 要件および 0–10 V / DALI 調光制御要件を満たしやすく、ドイツ BLE、米国 USDA REAP / CDFA SWEEP、日本 MAFF 省エネ施設園芸支援のいずれでも有力な補助対象設備となります。"
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+  <style>
+    body { margin: 0; font-family: 'Plus Jakarta Sans', sans-serif; background: #090d16; color: #e2e8f0; line-height: 1.8; }
+    .article-shell { max-width: 920px; margin: 0 auto; padding: 36px 22px 60px; }
+    .badge-pill { display: inline-block; padding: 6px 14px; border-radius: 999px; background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.4); color: #34d399; font-size: 0.82rem; font-weight: 700; margin-bottom: 14px; }
+    h1 { font-family: 'Outfit', sans-serif; font-size: 2.25rem; line-height: 1.25; color: #f8fafc; margin: 0 0 14px 0; }
+    .meta-bar { color: #94a3b8; font-size: 0.9rem; margin-bottom: 28px; padding-bottom: 18px; border-bottom: 1px solid rgba(148, 163, 184, 0.18); }
+    .formula-box { background: rgba(15, 23, 42, 0.9); border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 12px; padding: 18px 22px; margin: 20px 0; font-family: 'JetBrains Mono', monospace; color: #38bdf8; overflow-x: auto; }
+    table.eng-table { width: 100%; border-collapse: collapse; margin: 20px 0; background: rgba(15, 23, 42, 0.75); border-radius: 12px; overflow: hidden; }
+    table.eng-table th, table.eng-table td { padding: 12px 14px; border: 1px solid rgba(148, 163, 184, 0.2); text-align: left; font-size: 0.92rem; }
+    table.eng-table th { background: rgba(30, 41, 59, 0.9); color: #38bdf8; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <main class="article-shell">
+    <div style="margin-bottom: 20px;">
+      <a href="/guides.html" style="color: #38bdf8; text-decoration: none; font-weight: 700; font-size: 0.92rem;">← 技術モノグラフ一覧（Engineering Guides）へ戻る</a>
+    </div>
+    <span class="badge-pill">🇯🇵 施設園芸工学モノグラフ JA Vol. 56 · Horticultural Photobiology &amp; ePAR (第 212 編)</span>
+    <h1>Vol. 56: 遠赤色光 (Far-Red)・拡張光合成有効放射 (ePAR 400–750 nm) とフィトクロム光平衡状態 (PSS) の環境制御工学</h1>
+<!-- INW-LANG-SWITCHER-START -->
+<div class="inw-lang-switcher-bar" style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:14px 0 20px 0; padding:10px 14px; background:rgba(15,23,42,0.75); border:1px solid rgba(148,163,184,0.2); border-radius:12px;">
+  <span style="font-size:0.8rem; color:#94a3b8; font-weight:700; margin-right:4px;">🌐 Vol. 56 Editions:</span>
+  <a href="/articles/article-56-far-red-photobiology-epar-phytochrome-photostationary-state.html" style="display:inline-flex; align-items:center; padding:5px 12px; border-radius:999px; background:rgba(30,41,59,0.8); border:1px solid rgba(56,189,248,0.35); color:#38bdf8; text-decoration:none; font-size:0.8rem; font-weight:600;">🇬🇧 English Edition →</a>
+  <a href="/articles/de/article-56-dunkelrot-photobiologie-epar-phytochrom-photostationaerer-zustand.html" style="display:inline-flex; align-items:center; padding:5px 12px; border-radius:999px; background:rgba(30,41,59,0.8); border:1px solid rgba(56,189,248,0.35); color:#38bdf8; text-decoration:none; font-size:0.8rem; font-weight:600;">🇩🇪 Deutsche Ausgabe →</a>
+  <span style="display:inline-flex; align-items:center; padding:5px 12px; border-radius:999px; background:rgba(16,185,129,0.22); border:1px solid #10b981; color:#34d399; font-size:0.8rem; font-weight:700;">🇯🇵 日本語版 (JA) (Active)</span>
+</div>
+<!-- INW-LANG-SWITCHER-END -->
+    <div class="meta-bar">
+      <span>👨‍🔬 <strong>Inwoo Hwang</strong> (Inwoovation Lab)</span> &nbsp;|&nbsp;
+      <span>📅 Last Updated: November 26, 2026</span> &nbsp;|&nbsp;
+      <span>⏱️ 15 min read · ePAR (400–750 nm), Emerson Enhancement &amp; Phytochrome PSS</span>
+    </div>
+
+      <section style="margin-bottom: 34px;">
+        <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px; margin-bottom: 16px;">1. PAR (400–700 nm) から ePAR (400–750 nm) への光生物学パラダイム転換</h2>
+        <p>半世紀以上にわたり、施設園芸および植物工場の補光設計は <strong>McCree (1972) の古典的 PAR (光合成有効放射, 400–700 nm)</strong> 定義を絶対基準としてきた。この枠組みでは波長 700 nm を超える遠赤色光 (Far-Red, 700–750 nm) は単独照射時の量子収率が急落するため光合成に寄与しない「非光合成帯域」と見なされ、従来の量子光センサーでも計測対象から除外されていた。</p>
+            <p>しかし、ユタ州立大学の <strong>Zhen &amp; Bugbee (2020)</strong> およびオランダ・ワーゲニンゲン大学 (WUR) の一連の精密光量子実験により、太陽光や多波長 LED 補光下では 700–750 nm の遠赤色光子が短波長光 (400–700 nm) と同等の量子収率で炭酸固定を駆動することが実証され、<strong>拡張光合成有効放射 (Extended PAR, ePAR: 400–750 nm)</strong> が国際標準へと定着しつつある。</p>
+            <p>その物理的機構は葉緑体チラコイド膜に直列配置された 2 つの光化学系の協調動作にある。狭帯域の赤色 (660 nm) と青色 (450 nm) のみで葉を照射すると、<strong>光化学系 II (PSII, 励起極大 ≈ 680 nm)</strong> が過剰励起される一方で、長波長域に吸収帯を持つ <strong>光化学系 I (PSI, 励起極大 ≈ 700–730 nm)</strong> が律速段階となり、プラストキノン (PQ) プールで電子輸送渋滞が発生する。ここに 700–750 nm の遠赤色光子を加えると PSI が選択的に励起されて PQ プールが解放され、線形電子伝達および ATP/NADPH 供給が劇的に回復する。この相乗効果は <strong>エマーソン増強比 (Emerson Enhancement Ratio, EER)</strong> として次式で定量化される。</p>
+            <div class="formula-box">
+              <code>EER = A<sub>combined</sub>(λ<sub>400–700</sub> + λ<sub>700–750</sub>) / [ A<sub>PAR</sub>(λ<sub>400–700</sub>) + A<sub>FR</sub>(λ<sub>700–750</sub>) ] &gt; 1.0</code>
+            </div>
+            <p>高軒高トマト (<em>Solanum lycopersicum</em>) やパプリカ (<em>Capsicum annuum</em>)、イチゴにおいて、赤青ベースライン光に対して <strong>10 % – 20 %</strong> の遠赤色光子 (PFD<sub>FR</sub>) を重畳すると、同じ光量子数を純粋な 660 nm 赤色光で増設した場合と同等以上の純光合成速度 A [ μmol CO<sub>2</sub>·m<sup>-2</sup>·s<sup>-1</sup> ] が得られる。結果として、オランダ・ウェストラントや日本・静岡/千葉の大型太陽光利用型植物工場では「赤+青+遠赤」の ePAR スペクトル設計が主力へと移行している。</p>
+      </section>
+      <section style="margin-bottom: 34px;">
+        <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px; margin-bottom: 16px;">2. フィトクロム光平衡状態 (PSS) の数理定式化とスペクトル制御</h2>
+        <p>遠赤色光は光化学系の駆動と同時に、植物の形態形成を司る光受容体 <strong>フィトクロム (Phytochrome)</strong> を直接制御する。フィトクロムは赤色光を吸収する不活性型 <strong>P<sub>r</sub> (吸収極大 660 nm)</strong> と、遠赤色光を吸収して戻る生物学的活性型 <strong>P<sub>fr</sub> (吸収極大 730 nm)</strong> の 2 状態間を可逆的に光変換する分子スイッチである。</p>
+            <p>任意の分光放射光量子束密度スペクトル N(λ) [ μmol·m<sup>-2</sup>·s<sup>-1</sup>·nm<sup>-1</sup> ] 下における定常状態での活性型割合を <strong>フィトクロム光平衡状態 (Phytochrome Photostationary State, PSS)</strong> と定義し、Sager et al. (1988) の光化学反応断面積 σ<sub>r</sub>(λ), σ<sub>fr</sub>(λ) を用いて以下の積分で厳密計算される。</p>
+            <div class="formula-box">
+              <code>PSS = [P<sub>fr</sub>] / [P<sub>total</sub>] = ∫<sub>300</sub><sup>800</sup> λ · N(λ) · σ<sub>r</sub>(λ) dλ / [ ∫<sub>300</sub><sup>800</sup> λ · N(λ) · σ<sub>r</sub>(λ) dλ + ∫<sub>300</sub><sup>800</sup> λ · N(λ) · σ<sub>fr</sub>(λ) dλ ]</code>
+            </div>
+            <ul>
+              <li><strong>太陽光 (自然光, R:FR ≈ 1.15–1.25) :</strong> 基準となる <strong>PSS ≈ 0.70–0.72</strong> を確立し、過度な徒長と矮化の中間にある調和した草姿を保つ。</li>
+              <li><strong>狭帯域 R+B LED (R:FR &gt; 8.0) :</strong> 730 nm 成分が欠如するため <strong>PSS ≈ 0.84–0.88</strong> まで上昇し、節間が極度に詰まったコンパクトな草姿・厚葉化（高 SLW）を示す。</li>
+              <li><strong>群落内日陰光 (R:FR &lt; 0.20) :</strong> 上位葉が 400–700 nm を 90 % 以上吸収する一方、遠赤色光の 80 % 以上が透過するため <strong>PSS ≈ 0.45–0.55</strong> へ急落し、典型的な <strong>避陰反応 (Shade Avoidance Syndrome, SAS)</strong> を誘発する。</li>
+            </ul>
+      </section>
+      <section style="margin-bottom: 34px;">
+        <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px; margin-bottom: 16px;">3. PSS ターゲット領域別の形態反応と施設園芸作物別ドーシング設計</h2>
+        <p>化学的矮化剤（植物成長調整剤）を使用せず、LED チャンネル調光のみで PSS を操作することで、育苗期の徒長防止から冬期の受光面積拡大まで自在に草姿をステアリングできる。</p>
+            <table class="eng-table">
+              <thead>
+                <tr>
+                  <th>目標 PSS 範囲</th>
+                  <th>光スペクトル条件目安 (R:FR / FR比率)</th>
+                  <th>主要形態・生理反応</th>
+                  <th>商業施設園芸での実務適用シーン</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>0.80 – 0.88</strong></td>
+                  <td>R:FR &gt; 5.0 (遠赤色無添加または極微弱)</td>
+                  <td>節間短縮、葉厚増加、葉面積比 (SLA) 低下による強健苗形成</td>
+                  <td>野菜接ぎ木苗・閉鎖型育苗センター、完全人工光型レタス工場のチップバーン抑制制御</td>
+                </tr>
+                <tr>
+                  <td><strong>0.68 – 0.74</strong></td>
+                  <td>R:FR ≈ 1.1 – 1.6 (FR 8–12 % 配合)</td>
+                  <td>栄養生長と生殖生長（着果分配・収穫指数 HI）の最適均衡</td>
+                  <td>高軒高トマト・パプリカの長段密植栽培（ドイツ・オランダ型 Venlo 温室基準）</td>
+                </tr>
+                <tr>
+                  <td><strong>0.55 – 0.65</strong></td>
+                  <td>R:FR ≈ 0.5 – 0.9 (FR 15–22 % 配合)</td>
+                  <td>葉柄伸長、葉面積の急速拡大による群落光遮断率 f<sub>int</sub> 向上</td>
+                  <td>北海道・東北・北陸や冬季低日射期の定植直後キャノピー早期立ち上げ</td>
+                </tr>
+                <tr>
+                  <td><strong>&lt; 0.45 (夜間 EOD)</strong></td>
+                  <td>日没直後 730 nm 単色パルス</td>
+                  <td>一晩を通じて P<sub>fr</sub> を完全リセットし、日中の過徒長を抑えつつ葉展開を促進</td>
+                  <td>高設イチゴの花房抽出促進（クラウン矮化回避）および冬季キュウリの受光姿勢改善</td>
+                </tr>
+              </tbody>
+            </table>
+      </section>
+      <section style="margin-bottom: 34px;">
+        <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px; margin-bottom: 16px;">4. 昼間連続 ePAR 添加と日没後 EOD-FR パルス照射の工学的比較</h2>
+        <p>商業施設において 730 nm 遠赤色 LED を運用する際、エンジニアリング上は大きく 2 つの制御アルゴリズムに大別される。</p>
+            <ol>
+              <li><strong>戦略 A：昼間連続 ePAR 補光 (Continuous Daytime Far-Red) :</strong> 主照明（広帯域白色または赤青 LED）の点灯時間全体を通じて総光量子束の <strong>10–15 %</strong> の遠赤色光を同時照射する方式。終日エマーソン増強効果（純炭素固定量 <strong>+8 % – +12 %</strong>）を享受できるうえ、PSS ≈ 0.65 前後を維持して葉面積を拡大し、温室全体の DLI (日積算光量) 捕捉率を底上げする。長段取りトマトの増収に直結する標準戦略である。</li>
+              <li><strong>戦略 B：日没後 EOD-FR パルス照射 (End-of-Day Far-Red Pulse) :</strong> 日中の強い補光時に連続照射すると茎長が伸びすぎて誘引作業負荷や倒伏リスクが増す場合、主照明消灯直後に <strong>15–30 分間、20–40 μmol·m<sup>-2</sup>·s<sup>-1</sup></strong> の遠赤色パルスのみを照射する。これにより夜間開始前にフィトクロムを速やかに不活性型 P<sub>r</sub> (PSS &lt; 0.40) へ反転させ、果実への乾物分配率（Brix 糖度）を損なうことなく葉展開と花梗・葉柄伸長だけを安価な電力投入で引き出せる。</li>
+            </ol>
+            <p>また日本の夏季・中間期の温暖地（太平洋側ハウス）では、遠赤色光を単独の補助モジュールとして分離し、外気温と日射積算に応じて <strong>0–10 V / DALI-2 調光</strong>で PSS を季節可変させる設計が冷房負荷と過徒長の両方を抑える最適解となる。</p>
+      </section>
+      <section style="margin-bottom: 34px;">
+        <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px; margin-bottom: 16px;">5. 730 nm 素子の電気光学効率、温熱収支および国際補助金連携</h2>
+        <p>半導体発光物理の観点では、AlGaAs 系 730 nm 遠赤色 LED チップはバンドギャップエネルギー（約 1.70 eV）が青色（450 nm, 約 2.75 eV）や蛍光体変換白色 LED より大幅に小さいため、壁コンセント効率 (WPE, η<sub>opt</sub>) が <strong>70–75 %</strong> に達し、照明器具レベルの光量子効率 (PPE) は <strong>3.8 – 4.2 μmol/J</strong> と極めて高い。</p>
+            <div class="formula-box">
+              <code>Δ H<sub>canopy</sub> = ∫ [ (1 - α<sub>PAR</sub>) · PPFD + (1 - α<sub>FR</sub>) · PFD<sub>FR</sub> ] dλ + Q&#775;<sub>convection</sub></code>
+            </div>
+            <p>さらに高圧ナトリウムランプ (HPS) のような過剰な赤外熱放射を伴わないため、上位葉群の葉温過昇（VPD 急騰・気孔閉鎖）を招きにくい。補光設備総電力の <strong>15 %</strong> を高効率 730 nm チャンネルへシフトすることで、同等の光化学駆動力を維持したまま <strong>設備接続電力および補光電力消費を約 7.4 % 削減</strong> でき、DLC Horticultural QPL 規格（PPE ≥ 2.8 μmol/J）や日本の農林水産省（MAFF）省エネ農業施設導入支援・米国 USDA REAP / CDFA SWEEP・ドイツ BLE 連邦エネルギー効率補助金の技術要件を同時に満たすことが可能である。</p>
+            <p>自社の目標 DLI と点灯時間から必要な 730 nm チャンネル比率と年間電力量を試算するには、当ラボの <a href="/smartfarm/dli_calculator.html" style="color:#38bdf8;">DLI・LED スペクトル統合計算機</a>、<a href="/tools/dli-spectrum-photomorphogenesis-calculator.html" style="color:#38bdf8;">DLI・光形態形成スペクトル計算機</a>、<a href="/tools/par-far-red-canopy-extinction-beer-lambert-calculator.html" style="color:#38bdf8;">PAR・遠赤色群落透過減衰計算機</a>、および <a href="/tools/global-agri-subsidy-grant-navigator.html" style="color:#34d399;">世界 8 か国 192 農業補助金ナビゲーター</a> を活用されたい。</p>
+      </section>
+
+    <section style="margin-bottom: 34px;">
+      <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #10b981; border-bottom: 1px solid rgba(16, 185, 129, 0.25); padding-bottom: 10px; margin-bottom: 16px;">施設園芸エンジニアリング 実践FAQ</h2>
+        <div style="background: rgba(15, 23, 42, 0.7); border-left: 4px solid #10b981; padding: 18px 20px; border-radius: 10px; margin-bottom: 14px;">
+          <p style="margin: 0;"><strong>Q1: なぜ遠赤色光 (700–750 nm) を含めた ePAR が古典的な PAR (400–700 nm) に取って代わったのですか？</strong><br>従来の PAR は単独照射時の量子収率が低い 700–750 nm を除外していましたが、実際の太陽光や赤青 LED 下では PSI と PSII が直列稼働するため、700–750 nm の遠赤色光子が PSI を選択的に励起してエマーソン増強効果 (EER > 1.0) を発揮し、400–700 nm 光子と同等の高効率で光合成を促進することが Zhen & Bugbee (2020) により実証されたためです。</p>
+        </div>
+        <div style="background: rgba(15, 23, 42, 0.7); border-left: 4px solid #10b981; padding: 18px 20px; border-radius: 10px; margin-bottom: 14px;">
+          <p style="margin: 0;"><strong>Q2: フィトクロム光平衡状態 (PSS) は何%の遠赤色比率でどのように管理すべきですか？</strong><br>太陽光基準は PSS ≈ 0.70–0.72 です。徒長を抑えたい育苗・レタス生産では PSS 0.80–0.88（遠赤色ごく微量）、トマト・パプリカの本圃増収には PSS 0.68–0.74（総光量子の 8–12 % を 730 nm で配合）、冬季低日射期の早期葉面積拡大には PSS 0.55–0.65（15–20 % 配合）が標準目標となります。</p>
+        </div>
+        <div style="background: rgba(15, 23, 42, 0.7); border-left: 4px solid #10b981; padding: 18px 20px; border-radius: 10px; margin-bottom: 14px;">
+          <p style="margin: 0;"><strong>Q3: 昼間連続照射と日没後 EOD パルス照射 (15–30 分) はどう使い分けますか？</strong><br>果実肥大期のトマト等で純光合成速度そのものを +8–12 % 引き上げたい場合は昼間連続照射（ePAR 戦略）を採用し、日中の節間伸長を抑えつつイチゴの花房抽出やキュウリの葉展開だけを最小電力で促したい場合は消灯直後の 15–30 分 EOD パルス (20–40 μmol·m⁻²·s⁻¹) を適用します。</p>
+        </div>
+        <div style="background: rgba(15, 23, 42, 0.7); border-left: 4px solid #10b981; padding: 18px 20px; border-radius: 10px; margin-bottom: 14px;">
+          <p style="margin: 0;"><strong>Q4: 730 nm 遠赤色 LED の導入は日米欧の省エネ補助金 (MAFF / BLE / USDA REAP) の対象になりますか？</strong><br>はい。730 nm LED は器具効率 3.8–4.2 μmol/J と極めて高効率であるため、システム全体の PPE ≥ 2.8–3.0 μmol/J 要件および 0–10 V / DALI 調光制御要件を満たしやすく、ドイツ BLE、米国 USDA REAP / CDFA SWEEP、日本 MAFF 省エネ施設園芸支援のいずれでも有力な補助対象設備となります。</p>
+        </div>
+    </section>
+
+    <section style="margin-bottom: 34px;">
+      <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.35rem; color: #cbd5e1; margin-bottom: 12px;">参考文献・国際規格 (References & Standards)</h2>
+      <ul style="padding-left: 20px;">
+          <li style="margin-bottom: 8px; color: #94a3b8; font-size: 0.92rem;">Zhen, S., &amp; Bugbee, B. (2020): Far-red photons have equivalent efficiency to traditional photosynthetic photons: Implications for redefining photosynthetically active radiation (Plant, Cell &amp; Environment, 43, 1259–1272).</li>
+          <li style="margin-bottom: 8px; color: #94a3b8; font-size: 0.92rem;">Zhen, S., van Iersel, M., &amp; Bugbee, B. (2021): Why far-red photons should be included in the definition of photosynthetic photons and the measurement of horticultural fixture efficacy (Frontiers in Plant Science, 12:693445).</li>
+          <li style="margin-bottom: 8px; color: #94a3b8; font-size: 0.92rem;">Sager, J. C., Smith, W. O., Edwards, J. L., &amp; Cyr, K. L. (1988): Photosynthetic efficiency and phytochrome photoequilibria determination using spectral data (Transactions of the ASAE, 31, 1882–1889).</li>
+          <li style="margin-bottom: 8px; color: #94a3b8; font-size: 0.92rem;">Kalaitzoglou, P., van Ieperen, W., Harbinson, J., et al. (2019): Effects of continuous or end-of-day far-red light on tomato plant growth, morphology, light absorption, and fruit production (Frontiers in Plant Science, 10:322).</li>
+          <li style="margin-bottom: 8px; color: #94a3b8; font-size: 0.92rem;">McCree, K. J. (1972): The action spectrum, absorptance and quantum yield of photosynthesis in crop plants (Agricultural Meteorology, 9, 191–216).</li>
+          <li style="margin-bottom: 8px; color: #94a3b8; font-size: 0.92rem;">DesignLights Consortium (DLC) Horticultural Lighting Technical Requirements V3.0 — ePAR &amp; PPE Qualified Products List Standards.</li>
+      </ul>
+    </section>
+
+
+<!-- INW-LIVE-WIDGET-START -->
+<section class="inw-live-widget-sandbox" style="margin: 32px 0; padding: 24px; background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 16px; box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);">
+  <h3 style="margin: 0 0 8px 0; font-size: 1.2rem; color: #38bdf8; font-weight: 800;">☀️ リアルタイム日積算光量 (DLI) & 光周期シミュレーター</h3>
+  <p style="margin: 0 0 16px 0; font-size: 0.92rem; color: #94a3b8; line-height: 1.6;">光合成有効光量子束密度 (PPFD) と日長時間を調整し、1日あたりの積算光量 (mol·m⁻²·d⁻¹) を即座に算出します。</p>
+  <div style="display: flex; justify-content: center; width: 100%; overflow: hidden;">
+    <iframe src="/embed/dli-calculator.html" width="380" height="390" loading="lazy" title="☀️ リアルタイム日積算光量 (DLI) & 光周期シミュレーター" style="border: none; border-radius: 14px; max-width: 100%;"></iframe>
+  </div>
+</section>
+<!-- INW-LIVE-WIDGET-END -->
+
+<!-- INW-TSUKUBA-FUNNEL-START -->
+<section class="inw-tsukuba-funnel-bridge" style="max-width: 1060px; margin: 32px auto; padding: 26px; background: rgba(15, 23, 42, 0.9); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 16px; text-align: left; box-shadow: 0 10px 28px rgba(0, 0, 0, 0.3);">
+  <h3 style="margin: 0 0 8px 0; font-size: 1.2rem; color: #10b981; font-weight: 800;">🔬 関連する技術論文・作物別環境制御ガイド・シミュレーター</h3>
+  <p style="margin: 0 0 16px 0; font-size: 0.92rem; color: #94a3b8; line-height: 1.6;">本ページの物理モデルおよび設計計算をさらに深く検証するための技術モノグラフと専用計算ツール：</p>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px;">
+    <a href="/articles/article-02-dli-vertical-farming.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">Vol. 02: Daily Light Integral (DLI) & Photobiology Optimization →</a>
+    <a href="/articles/article-40-beer-lambert-canopy-light-extinction.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">Vol. 40: Beer-Lambert Canopy Light Extinction & Interlighting Physics →</a>
+    <a href="/articles/article-21-chlorophyll-a-fluorescence-fvfm-stress.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">Vol. 21: PAM Chlorophyll-a Fluorescence (Fv/Fm) & Photoinhibition →</a>
+    <a href="/crops/commercial-strawberry-greenhouse-climate-dli-guide.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🍓 Commercial Strawberry Greenhouse DLI & Crown Temperature Guide →</a>
+    <a href="/crops/vertical-farm-lettuce-leafy-greens-tipburn-prevention-guide.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🥬 Vertical Farm Leafy Greens DLI & Tipburn Prevention Guide →</a>
+    <a href="/tools/dli-spectrum-photomorphogenesis-calculator.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">💡 DLI Spectrum & Photomorphogenesis Calculator →</a>
+    <a href="/tools/crop-yield-biomass-dli-forecaster.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">📈 Radiation Use Efficiency (RUE) & DLI Yield Forecaster →</a>
+  </div>
+</section>
+<!-- INW-TSUKUBA-FUNNEL-END -->
+
+    <!-- INW-EEAT-BOX-START -->
+    <section class="inw-eeat-box" style="margin-top: 36px; padding: 24px; background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 16px;">
+      <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; color: #10b981; font-weight: 800; margin-bottom: 6px;">施設園芸・環境制御システムエンジニア — Inwoovation Lab</div>
+      <h3 style="margin: 0 0 8px 0; font-size: 1.15rem; color: #f8fafc;">Inwoo Hwang</h3>
+      <p style="margin: 0; font-size: 0.92rem; color: #cbd5e1; line-height: 1.65;">フェンロー型連棟温室の熱力学設計 (DIN V 18599)、光生物学 (DLI・PPFD・作用スペクトル)、閉鎖型養液栽培および精密環境制御モデルの構築に従事。</p>
+    </section>
+    <!-- INW-EEAT-BOX-END -->
+  </main>
+
+  <!-- INW-STD-FOOTER-START -->
+  <footer class="inw-site-footer" style="margin-top: 48px; padding: 28px 20px; background: #0f172a; color: #94a3b8; text-align: center; border-top: 1px solid rgba(148, 163, 184, 0.15);">
+    <div style="max-width: 1100px; margin: 0 auto;">
+      <p style="margin: 0 0 10px 0;">&copy; 2026 Inwoovation Lab. Precision Controlled Environment Agriculture &amp; Biophysical Engineering.</p>
+      <p style="margin: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 16px;">
+        <a href="/index.html" style="color: #cbd5e1; text-decoration: none;">Home</a>
+        <a href="/guides.html" style="color: #cbd5e1; text-decoration: none;">Engineering Guides</a>
+        <a href="/privacy-policy.html" style="color: #cbd5e1; text-decoration: none;">Privacy Policy</a>
+        <a href="/terms-of-service.html" style="color: #cbd5e1; text-decoration: none;">Terms of Service</a>
+        <a href="/about.html" style="color: #cbd5e1; text-decoration: none;">About</a>
+        <a href="/contact.html" style="color: #cbd5e1; text-decoration: none;">Contact</a>
+      </p>
+    </div>
+  </footer>
+  <!-- INW-STD-FOOTER-END -->
+</body>
+</html>
