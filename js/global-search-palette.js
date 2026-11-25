@@ -18,8 +18,8 @@
     "cat": "part",
     "url": "directory.html",
     "icon": "⚙️",
-    "desc": "Master HTML sitemap and engineering taxonomy indexing all 393 calculators, 192 global agricultural grants, EN/DE/JA monographs, crop guides, and climate hubs.",
-    "tags": "directory html complete cea engineering directory amp index master html sitemap and engineering taxonomy indexing all 393 calculators 192 global agricultural grants en de ja monographs crop "
+    "desc": "Master HTML sitemap and engineering taxonomy indexing all 394 calculators, 192 global agricultural grants, EN/DE/JA monographs, crop guides, and climate hubs.",
+    "tags": "directory html complete cea engineering directory amp index master html sitemap and engineering taxonomy indexing all 394 calculators 192 global agricultural grants en de ja monographs crop "
   },
   {
     "title": "CEA &amp; Greenhouse Engineering Articles",
@@ -1766,12 +1766,20 @@
     "tags": "articles ja article 54 ai model predictive control mpc venlo greenhouse jp html vol 54 商業用フェンロ 温室における ai モデル予測制御 mpc 商業用フェンロ 型連棟温室における非線形状態空間モデル 日没前 vpd 結露パ ジ 24 48時間ロ リングホライズン mpc 目的関数 および "
   },
   {
-    "title": "日本語 施設園芸・スマート農業工学モノグラフ一覧 (54 論文)",
+    "title": "Vol. 55: 閉鎖型循環養液栽培における養分吸収濃縮係数 (UCF) とイオン蓄積・排液率設計",
+    "cat": "article",
+    "url": "articles/ja/article-55-nutrient-uptake-concentration-factor-recirculating-hydroponics-jp.html",
+    "icon": "🇯🇵",
+    "desc": "EU水枠組指令(WFD)およびドイツWHG/DüVゼロ排出規制に適合する閉鎖型循環養液栽培の養分吸収濃縮係数(UCF)、根圏物質収支、Na⁺蓄積限界、およびISE動的ブレンド・RO研磨設計を数理詳説。",
+    "tags": "articles ja article 55 nutrient uptake concentration factor recirculating hydroponics jp html vol 55 閉鎖型循環養液栽培における養分吸収濃縮係数 ucf とイオン蓄積 排液率設計 eu水枠組指令 wfd およびドイツwhg düvゼロ排出規制に適合する閉鎖型循環養液栽培の養分吸収"
+  },
+  {
+    "title": "日本語 施設園芸・スマート農業工学モノグラフ一覧 (55 論文)",
     "cat": "article",
     "url": "articles/ja/index.html",
     "icon": "🇯🇵",
-    "desc": "商業用 Venlo 型ガラス温室の VPD 飽差熱力学・DIN V 18599 暖房負荷・EN 13031-1 構造設計・FvCB CO2 施用・養液化学平衡を解説する 54 編の日本語技術論文アーカイブ。",
-    "tags": "articles ja index html 日本語 施設園芸 スマ ト農業工学モノグラフ一覧 54 論文 商業用 venlo 型ガラス温室の vpd 飽差熱力学 din v 18599 暖房負荷 en 13031 1 構造設計 fvcb co2 施用 養液化学平衡を解説する 54 編の日本語技術論文ア カイブ"
+    "desc": "商業用 Venlo 型ガラス温室の VPD 飽差熱力学・DIN V 18599 暖房負荷・EN 13031-1 構造設計・FvCB CO2 施用・養液化学平衡を解説する 55 編の日本語技術論文アーカイブ。",
+    "tags": "articles ja index html 日本語 施設園芸 スマ ト農業工学モノグラフ一覧 55 論文 商業用 venlo 型ガラス温室の vpd 飽差熱力学 din v 18599 暖房負荷 en 13031 1 構造設計 fvcb co2 施用 養液化学平衡を解説する 55 編の日本語技術論文ア カイブ"
   },
   {
     "title": "Diffuse AR Glass vs. Multi-Layer PO Film",
@@ -2234,8 +2242,8 @@
     "cat": "article",
     "url": "handbooks/index.html",
     "icon": "📖",
-    "desc": "Open-access six-part Controlled Environment Agriculture compendium indexing 78 volumes (210 EN/DE/JA editions), 42 live biophysical calculators, and 192.",
-    "tags": "handbooks index html the cea biophysics amp greenhouse engineering open access six part controlled environment agriculture compendium indexing 78 volumes 210 en de ja editions 42 live biophy"
+    "desc": "Open-access six-part Controlled Environment Agriculture compendium indexing 78 volumes (211 EN/DE/JA editions), 42 live biophysical calculators, and 192.",
+    "tags": "handbooks index html the cea biophysics amp greenhouse engineering open access six part controlled environment agriculture compendium indexing 78 volumes 211 en de ja editions 42 live biophy"
   },
   {
     "title": "AgriMaster",
@@ -3140,13 +3148,13 @@
       <div class="inwoo-palette-box" role="dialog" aria-modal="true" aria-label="Inwoovation Spotlight Search">
         <div class="inwoo-palette-header">
           <span class="inwoo-palette-search-icon">🔍</span>
-          <input type="text" id="inwoo-palette-input" placeholder="Search all 388 tools, simulators, wiki, crops, climate hubs & EN/DE/JA articles..." autocomplete="off" />
+          <input type="text" id="inwoo-palette-input" placeholder="Search all 389 tools, simulators, wiki, crops, climate hubs & EN/DE/JA articles..." autocomplete="off" />
           <span class="inwoo-palette-esc-badge" onclick="window.InwooPalette.close()">ESC</span>
         </div>
         <div class="inwoo-palette-tabs">
-          <button class="inwoo-pal-tab active" data-cat="all">✨ All (388)</button>
+          <button class="inwoo-pal-tab active" data-cat="all">✨ All (389)</button>
           <button class="inwoo-pal-tab" data-cat="tool">🛠️ Tools (49)</button>
-          <button class="inwoo-pal-tab" data-cat="article">📚 Articles (216)</button>
+          <button class="inwoo-pal-tab" data-cat="article">📚 Articles (217)</button>
           <button class="inwoo-pal-tab" data-cat="wiki">🧬 Wiki (44)</button>
           <button class="inwoo-pal-tab" data-cat="climate">🌍 Climate (41)</button>
           <button class="inwoo-pal-tab" data-cat="sim">🧪 Simulators (19)</button>
@@ -3160,7 +3168,7 @@
             <span><kbd>↵</kbd> Open</span>
             <span><kbd>Esc</kbd> Close</span>
           </div>
-          <div style="color: #64748b; font-size: 0.75rem;">Inwoovation Universal Spotlight (388 Indexed Pages)</div>
+          <div style="color: #64748b; font-size: 0.75rem;">Inwoovation Universal Spotlight (389 Indexed Pages)</div>
         </div>
       </div>
     `;

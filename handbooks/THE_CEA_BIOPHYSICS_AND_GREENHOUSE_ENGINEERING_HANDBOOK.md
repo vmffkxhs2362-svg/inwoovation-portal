@@ -1,14 +1,14 @@
 # 📘 The CEA Biophysics & Greenhouse Engineering Handbook
-## OpenCEA Compendium: 78 Volumes (210 Multilingual Editions) & 42 Live Simulators
+## OpenCEA Compendium: 78 Volumes (211 Multilingual Editions) & 42 Live Simulators
 
 > **Author**: Inwoovation Lab (Inwoo Hwang)  
 > **Target Audience**: Commercial Greenhouse Operators, Plant Factory Systems Engineers, Gärtnermeister Candidates, Agronomists  
-> **Publication Standard**: Verified Biophysical Equations (Magnus-Tetens, Penman-Monteith, Farquhar FvCB, DIN V 18599, Debye-Hückel), Interactive Simulator Synchronized (`2026-11-24`)  
+> **Publication Standard**: Verified Biophysical Equations (Magnus-Tetens, Penman-Monteith, Farquhar FvCB, DIN V 18599, Debye-Hückel), Interactive Simulator Synchronized (`2026-11-26`)  
 
 ---
 
 ## 📌 Executive Abstract & Compendium Profile
-This open-access technical compendium organizes all **78 English engineering monographs** (**210 total EN/DE/JA editions**) alongside **42 client-side biophysical simulators** and **192 hyper-local agricultural grant programs** into six engineering domains.
+This open-access technical compendium organizes all **78 English engineering monographs** (**211 total EN/DE/JA editions**) alongside **42 client-side biophysical simulators** and **192 hyper-local agricultural grant programs** into six engineering domains.
 
 ---
 
@@ -423,8 +423,9 @@ This open-access technical compendium organizes all **78 English engineering mon
 <a id="chapter-55-article-55-nutrient-uptake-concentration-factor-recirculating-hydroponics"></a>
 - **EN Monograph**: [../articles/article-55-nutrient-uptake-concentration-factor-recirculating-hydroponics.html](../articles/article-55-nutrient-uptake-concentration-factor-recirculating-hydroponics.html)
 - **DE Edition**: [../articles/de/article-55-naehrstoff-aufnahmekonzentrationsfaktor-geschlossene-hydrokultur.html](../articles/de/article-55-naehrstoff-aufnahmekonzentrationsfaktor-geschlossene-hydrokultur.html)
+- **JA Edition**: [../articles/ja/article-55-nutrient-uptake-concentration-factor-recirculating-hydroponics-jp.html](../articles/ja/article-55-nutrient-uptake-concentration-factor-recirculating-hydroponics-jp.html)
 - **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
-- **Synopsis**: Engineering mass balance formulation of nutrient uptake concentration factors (UCF), ion accumulation kinetics, sodium salinity limits, and optimal.
+- **Synopsis**: Engineering mass balance formulation of nutrient uptake concentration factors (UCF), ion accumulation kinetics, sodium salinity limits, and optimal closed-loop leaching fractions.
 
 ## Volume 60: Real-Time Ion-Selective Electrode (ISE) Arrays, Nicolsky-Eisenman Potentiometry & Closed-Loop Autonomous Nutrient Dosing in Commercial High-Wire Hydroponics
 <a id="chapter-60-article-60-potentiometric-ion-selective-electrode-ise-closed-loop-hydroponics"></a>
@@ -529,7 +530,7 @@ This open-access technical compendium organizes all **78 English engineering mon
 - **DE Edition**: [../articles/de/article-54-ki-modellpraediktive-regelung-mpc-venlo-gewaechshaus.html](../articles/de/article-54-ki-modellpraediktive-regelung-mpc-venlo-gewaechshaus.html)
 - **JA Edition**: [../articles/ja/article-54-ai-model-predictive-control-mpc-venlo-greenhouse-jp.html](../articles/ja/article-54-ai-model-predictive-control-mpc-venlo-greenhouse-jp.html)
 - **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
-- **Synopsis**: Engineering mathematical formulation of Model Predictive Control (MPC), transient thermodynamic microclimate modeling, VPD condensation control, and EPEX SPOT assimilation lighting optimization in commercial Venlo greenhouses.
+- **Synopsis**: Engineering mathematical formulation of Model Predictive Control (MPC), transient thermodynamic microclimate modeling, VPD condensation control, and EPEX.
 
 ---
 
