@@ -145,26 +145,26 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Why must calcium nitrate and sulfate/phosphate fertilizers be separated into A and B stock tanks?",
+          "name": "How does Ertragswert (capitalized earnings value) differ from Substanzwert (asset replacement value) in German Hofnachfolge?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Mixing concentrated calcium ions (Ca²⁺) with sulfate (SO₄²⁻) or orthophosphate (H₂PO₄⁻) in the same stock tank causes immediate precipitation of insoluble gypsum (CaSO₄·2H₂O) and calcium phosphate once the solubility product (Ksp) is exceeded."
+            "text": "In German agricultural appraisal (Landwirtschaftliche Taxationslehre), Substanzwert measures the physical replacement cost of land, glasshouses, and boilers, which often exceeds €3M–€6M. However, commercial farm succession (Hofnachfolge) and Landwirtschaftliche Rentenbank financing evaluate the operation primarily on Ertragswert—the capitalized sustainable net operating cash flow (EBITDA minus operator remuneration and reinvestment). Structuring a succession via Ertragspacht or phased equity tranches anchored to Ertragswert prevents over-leveraging the incoming Meister operator."
           }
         },
         {
           "@type": "Question",
-          "name": "How do you calculate the required acid volume for hydroponic bicarbonate (HCO₃⁻) alkalinity neutralization?",
+          "name": "What technical measures unlock the maximum 40% BLE federal grant rate in Germany?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Subtract target residual buffer alkalinity (typically 0.5 to 0.8 mmol/L HCO₃⁻ for pH 5.6–5.8 stability) from raw water bicarbonate concentration, then stoichiometry-match with nitric acid (HNO₃) or phosphoric acid (H₃PO₄) normality."
+            "text": "Individual component replacements (such as installing thermal screens or LED fixtures) typically qualify for base grant tiers, whereas holistic system modernizations verified by an accredited energy auditor—combining multi-layer thermal/blackout screens, hydronic buffer tanks, heat-pump integration, and climate computer predictive control achieving &ge;25% primary CO₂ reduction—unlock the highest BLE subsidy tiers (up to 35%–40% of eligible investment costs)."
           }
         },
         {
           "@type": "Question",
-          "name": "What drain percentage and slab EC dryback should be targeted in rockwool and cocopeat substrates?",
+          "name": "How does the BEHG carbon price affect greenhouse heating ROI between 2026 and 2030?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "During high-radiation summer days, target 25% to 35% daily drainage fraction with an overnight volumetric water content (VWC) dryback of 8% to 12% for vegetative steering, or 12% to 18% dryback for generative steering."
+            "text": "Natural gas combustion emits approximately 0.201 kg CO₂ per kWh of thermal energy. As carbon pricing transitions from national fixed corridors into the European ETS-2 market (€65 to €120+ per metric ton of CO₂), every 1,000 MWh of natural gas saved avoids 201 tons of CO₂ liability, accelerating the payback period of double thermal screens and heat pumps by 1.2 to 2.0 years."
           }
         }
       ]
@@ -189,7 +189,7 @@
     <a href="/index.html" style="color: #10b981; font-weight: 800; font-size: 1.15rem; text-decoration: none; letter-spacing: -0.02em;">Inwoovation Lab</a>
     <div style="display: flex; flex-wrap: wrap; gap: 14px; font-size: 0.9rem;">
       <a href="/index.html" style="color: #e2e8f0; text-decoration: none;">Home</a>
-      <a href="/smartfarm/vpd.html" style="color: #e2e8f0; text-decoration: none;">Calculators</a>
+      <a href="/tools/index.html" style="color: #e2e8f0; text-decoration: none;">Calculators</a>
       <a href="/articles/index.html" style="color: #38bdf8; font-weight: 600; text-decoration: none;">Articles</a>
       <a href="/wiki/index.html" style="color: #e2e8f0; text-decoration: none;">Wiki</a>
       <a href="/climate/index.html" style="color: #e2e8f0; text-decoration: none;">Climate Hub</a>
@@ -363,98 +363,24 @@
 
   <!-- Technical Theory, Mathematical Formulation & Agricultural Finance Documentation -->
   <div class="tool-editorial-wrapper">
-    <section class="editorial-card">
-      <h2><span>🔬</span> Engineering Theory: DIN V 18599 Thermal Retrofit &amp; German Hofnachfolge Finance</h2>
-      <p>
-        European commercial horticulture faces a dual structural transition between 2026 and 2036: rising fossil heating costs driven by the German National Emissions Trading System (<strong>BEHG CO₂-Bepreisung</strong> transitioning into <strong>EU ETS-2</strong>) and a generational succession wave (<strong>Hofnachfolge</strong>) across established family-owned glasshouse enterprises in Bavaria (Nürnberg-Knoblauchsland, Bamberg), Baden-Württemberg (Bodensee/Reichenau), and North Rhine-Westphalia (Niederrhein/Straelen).
-      </p>
-      <p>
-        For certified Master Horticulturists (<strong>Gärtnermeister</strong>) and agricultural engineers, combining technical energy modernization with structured lease-to-own (<strong>Ertragspacht</strong>) or phased silent/active partnership buyouts (<strong>Stille Beteiligung / GmbH &amp; Co. KG</strong>) unlocks non-dilutive federal capital while funding equity acquisition directly out of operational energy savings.
-      </p>
-
-      <h3>1. Governing Equations: DIN V 18599 &amp; EN 13031-1 Thermal Load Reduction</h3>
-      <p>
-        Following published engineering standards (<strong>DIN V 18599</strong>, <strong>EN 13031-1</strong>, and <strong>ASABE EP406.4</strong>), annual greenhouse heating energy demand Q<sub>heat</sub> (kWh/yr) is governed by the envelope heat transfer coefficient <em>U</em>&prime; (W/m²K), the ratio of glazing surface area to ground floor area (A<sub>c</sub> / A<sub>f</sub> ≈ 1.28 for multi-span Venlo), and regional Heating Degree-Hours (GTZ<sub>hourly</sub>, in Kh/yr):
-      </p>
-      <div class="formula-box">
-Annual Heating Demand &amp; Retrofit Savings:
-  Q_baseline (kWh/yr) = (A_c / A_f) · A_floor · U_base · GTZ_hourly / 1000
-  Q_retrofit (kWh/yr) = Q_baseline · (1 - η_screen_HP)
-  ΔCost_energy (€/yr) = (Q_baseline - Q_retrofit) · (c_fuel + EF_CO2 · P_BEHG)
-
-Ertragspacht &amp; Hofnachfolge Equity Valuation (Gordon Growth / Rentenbank DCF):
-  V_Ertragswert (€)   = (EBITDA_baseline + γ_share · ΔCost_energy - Maintenance_CapEx) / r_cap
-  Debt_Service (€/yr) = Equity_Tranche · [ i · (1 + i)^n ] / [ (1 + i)^n - 1 ]
-      </div>
-
-      <h3>2. German Federal BLE Energy Efficiency Grant &amp; Regional Benchmarks</h3>
-      <p>
-        Under the German Federal Ministry of Food and Agriculture (BMEL / <strong>BLE Bundesprogramm Energieeffizienz in der Landwirtschaft und im Gartenbau</strong>), commercial glasshouse retrofits incorporating double/triple thermal screens (<em>Energieschirme</em>), heat-recovery Air Treatment Units (ATU), and industrial heat pumps (<em>Großwärmepumpen</em>) qualify for up to <strong>30% to 40% non-dilutive CAPEX grants</strong> when verified by a certified energy audit (<em>Energieberatungsbericht</em>).
-      </p>
-      <div class="benchmark-table-wrapper">
-        <table class="benchmark-table">
-          <thead>
-            <tr>
-              <th>Horticultural Cluster</th>
-              <th>Heating Degree-Hours (Kh/yr)</th>
-              <th>Baseline U-Value (W/m²K)</th>
-              <th>Typical Succession Structure</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>Nürnberg-Knoblauchsland (49.45°N)</strong></td>
-              <td>76,000 – 82,000 Kh/yr</td>
-              <td>5.8 – 6.4 W/m²K (Single Float Glass)</td>
-              <td>GmbH &amp; Co. KG Phased Buy-In (25–49%) + BLE Retrofit</td>
-            </tr>
-            <tr>
-              <td><strong>Bodensee / Insel Reichenau (47.69°N)</strong></td>
-              <td>70,000 – 75,000 Kh/yr</td>
-              <td>5.5 – 6.2 W/m²K (Bio-Vegetable Venlo)</td>
-              <td>Long-Term Ertragspacht (12–18 yrs) + Cooperative Offtake</td>
-            </tr>
-            <tr>
-              <td><strong>Westland / Oostland NL (52.00°N)</strong></td>
-              <td>68,000 – 74,000 Kh/yr (Maritime)</td>
-              <td>3.8 – 4.8 W/m²K (Diffused AR + Dual Screen)</td>
-              <td>B.V. Equity Tranche + Geothermal / CHP Co-Generation</td>
-            </tr>
-            <tr>
-              <td><strong>Central Korea Smart Farm (36.35°N)</strong></td>
-              <td>58,000 – 66,000 Kh/yr (Continental Winter)</td>
-              <td>4.5 – 5.6 W/m²K (Venlo / Multi-Span)</td>
-              <td>Smart Farm Innovation Valley Lease-to-Own + Policy Loan</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <section class="editorial-card">
-      <h2><span>❓</span> Frequently Asked Engineering &amp; Ag-Finance Questions (FAQ)</h2>
-      <div class="faq-accordion">
+    <!-- Frequently Asked Questions (FAQ) Section -->
+      <section class="editorial-card">
+        <h2><span>❓</span> Frequently Asked Engineering Questions (FAQ)</h2>
+        <div class="faq-accordion">
         <details class="faq-item">
           <summary class="faq-summary">How does Ertragswert (capitalized earnings value) differ from Substanzwert (asset replacement value) in German Hofnachfolge? <span>▾</span></summary>
-          <div class="faq-content">
-            In German agricultural appraisal (<em>Landwirtschaftliche Taxationslehre</em>), <strong>Substanzwert</strong> measures the physical replacement cost of land, glasshouses, and boilers, which often exceeds €3M–€6M. However, commercial farm succession (<strong>Hofnachfolge</strong>) and <strong>Landwirtschaftliche Rentenbank</strong> financing evaluate the operation primarily on <strong>Ertragswert</strong>—the capitalized sustainable net operating cash flow (EBITDA minus operator remuneration and reinvestment). Structuring a succession via <em>Ertragspacht</em> or phased equity tranches anchored to Ertragswert prevents over-leveraging the incoming Meister operator.
-          </div>
+          <div class="faq-content">In German agricultural appraisal (Landwirtschaftliche Taxationslehre), Substanzwert measures the physical replacement cost of land, glasshouses, and boilers, which often exceeds €3M–€6M. However, commercial farm succession (Hofnachfolge) and Landwirtschaftliche Rentenbank financing evaluate the operation primarily on Ertragswert—the capitalized sustainable net operating cash flow (EBITDA minus operator remuneration and reinvestment). Structuring a succession via Ertragspacht or phased equity tranches anchored to Ertragswert prevents over-leveraging the incoming Meister operator.</div>
         </details>
         <details class="faq-item">
           <summary class="faq-summary">What technical measures unlock the maximum 40% BLE federal grant rate in Germany? <span>▾</span></summary>
-          <div class="faq-content">
-            Individual component replacements (such as installing thermal screens or LED fixtures) typically qualify for base grant tiers, whereas holistic system modernizations verified by an accredited energy auditor—combining multi-layer thermal/blackout screens, hydronic buffer tanks, heat-pump integration, and climate computer predictive control achieving &ge;25% primary CO₂ reduction—unlock the highest BLE subsidy tiers (up to 35%–40% of eligible investment costs).
-          </div>
+          <div class="faq-content">Individual component replacements (such as installing thermal screens or LED fixtures) typically qualify for base grant tiers, whereas holistic system modernizations verified by an accredited energy auditor—combining multi-layer thermal/blackout screens, hydronic buffer tanks, heat-pump integration, and climate computer predictive control achieving &amp;ge;25% primary CO₂ reduction—unlock the highest BLE subsidy tiers (up to 35%–40% of eligible investment costs).</div>
         </details>
         <details class="faq-item">
           <summary class="faq-summary">How does the BEHG carbon price affect greenhouse heating ROI between 2026 and 2030? <span>▾</span></summary>
-          <div class="faq-content">
-            Natural gas combustion emits approximately 0.201 kg CO₂ per kWh of thermal energy. As carbon pricing transitions from national fixed corridors into the European ETS-2 market (€65 to €120+ per metric ton of CO₂), every 1,000 MWh of natural gas saved avoids 201 tons of CO₂ liability, accelerating the payback period of double thermal screens and heat pumps by 1.2 to 2.0 years.
-          </div>
+          <div class="faq-content">Natural gas combustion emits approximately 0.201 kg CO₂ per kWh of thermal energy. As carbon pricing transitions from national fixed corridors into the European ETS-2 market (€65 to €120+ per metric ton of CO₂), every 1,000 MWh of natural gas saved avoids 201 tons of CO₂ liability, accelerating the payback period of double thermal screens and heat pumps by 1.2 to 2.0 years.</div>
         </details>
-      </div>
-    </section>
-  </div>
+        </div>
+      </section></div>
 
   <script>
     const EU_PRESETS = {
@@ -696,19 +622,6 @@ Ertragspacht &amp; Hofnachfolge Equity Valuation (Gordon Growth / Rentenbank DCF
     <a href="/crops/greenhouse-sweet-pepper-climate-blossom-end-rot-guide.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🫑 Sweet Pepper Night Temperature & Pipe-Rail Radiation Guide →</a>
     <a href="/tools/venlocad-3d.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🏗️ VenloCAD 3D Structural & EN 13031-1 BOM Architect →</a>
     <a href="/tools/global-agri-subsidy-grant-navigator.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🏛️ Global Agri-Subsidy & USDA REAP / German BLE Grant Navigator →</a>
-  </div>
-  <h3 style="margin: 24px 0 12px 0; font-size: 1.15rem; color: #10b981; font-weight: 800;">❓ Frequently Asked Engineering Questions (Technical FAQ)</h3>
-  <div>
-    <div style="margin-bottom:14px; padding:14px 18px; background:rgba(15,23,42,0.65); border-left:3px solid #10b981; border-radius:8px;">
-      <h4 style="margin:0 0 6px 0; color:#f8fafc; font-size:0.98rem;">Why must calcium nitrate and sulfate/phosphate fertilizers be separated into A and B stock tanks?</h4>
-      <p style="margin:0; color:#cbd5e1; font-size:0.9rem; line-height:1.65;">Mixing concentrated calcium ions (Ca²⁺) with sulfate (SO₄²⁻) or orthophosphate (H₂PO₄⁻) in the same stock tank causes immediate precipitation of insoluble gypsum (CaSO₄·2H₂O) and calcium phosphate once the solubility product (Ksp) is exceeded.</p>
-    </div><div style="margin-bottom:14px; padding:14px 18px; background:rgba(15,23,42,0.65); border-left:3px solid #10b981; border-radius:8px;">
-      <h4 style="margin:0 0 6px 0; color:#f8fafc; font-size:0.98rem;">How do you calculate the required acid volume for hydroponic bicarbonate (HCO₃⁻) alkalinity neutralization?</h4>
-      <p style="margin:0; color:#cbd5e1; font-size:0.9rem; line-height:1.65;">Subtract target residual buffer alkalinity (typically 0.5 to 0.8 mmol/L HCO₃⁻ for pH 5.6–5.8 stability) from raw water bicarbonate concentration, then stoichiometry-match with nitric acid (HNO₃) or phosphoric acid (H₃PO₄) normality.</p>
-    </div><div style="margin-bottom:14px; padding:14px 18px; background:rgba(15,23,42,0.65); border-left:3px solid #10b981; border-radius:8px;">
-      <h4 style="margin:0 0 6px 0; color:#f8fafc; font-size:0.98rem;">What drain percentage and slab EC dryback should be targeted in rockwool and cocopeat substrates?</h4>
-      <p style="margin:0; color:#cbd5e1; font-size:0.9rem; line-height:1.65;">During high-radiation summer days, target 25% to 35% daily drainage fraction with an overnight volumetric water content (VWC) dryback of 8% to 12% for vegetative steering, or 12% to 18% dryback for generative steering.</p>
-    </div>
   </div>
 </section>
 <!-- INW-TSUKUBA-FUNNEL-END -->

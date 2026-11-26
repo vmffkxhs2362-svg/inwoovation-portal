@@ -92,8 +92,8 @@
   },
   "faq_list": [
     {
-      "question": "How does leaf temperature (T_leaf) vs. air temperature (T_air) affect VPD calculation in KEGG Carotenoid Biosynthetic Pathway Flux and Lutein Xanthophyll Photoprotection under High PPFD Regimes?",
-      "answer": "Standard ambient VPD calculations assume T_leaf equals T_air, which introduces a 15–35% error in KEGG Carotenoid Biosynthetic Pathway Flux and Lutein Xanthophyll Photoprotection under High PPFD Regimes canopies. Under high solar radiation or HPS lighting, T_leaf exceeds T_air by +1.5°C to +3.0°C, raising internal leaf saturation vapor pressure (e_sat) and driving true leaf-to-air VPD much higher than wall sensors indicate. Conversely, under high-efficiency LED lighting without thermal IR radiation, high transpiration cools T_leaf 0.8°C to 1.5°C below T_air. Always compute VPD using an infrared leaf radiometer to prevent hidden stomatal closure or nocturnal condensation."
+      "question": "What role does the xanthophyll cycle (violaxanthin → antheraxanthin → zeaxanthin) play under high-PAR greenhouse irradiance?",
+      "answer": "Rapid deepoxidation to zeaxanthin drives Non-Photochemical Quenching (NPQ), safely dissipating excess excitation energy as heat to shield Photosystem II reaction centers from singlet-oxygen photodamage."
     },
     {
       "question": "What is the optimal root-zone dissolved oxygen (DO) and temperature threshold to prevent root hypoxia in Spinacia oleracea & Lactuca sativa?",

@@ -102,26 +102,26 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Why must calcium nitrate and sulfate/phosphate fertilizers be separated into A and B stock tanks?",
+          "name": "How does maintaining a sharp thermocline in a greenhouse buffer tank improve gas boiler condensation?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Mixing concentrated calcium ions (Ca²⁺) with sulfate (SO₄²⁻) or orthophosphate (H₂PO₄⁻) in the same stock tank causes immediate precipitation of insoluble gypsum (CaSO₄·2H₂O) and calcium phosphate once the solubility product (Ksp) is exceeded."
+            "text": "Sending 35–42 °C stratified cold bottom water back through boiler economizers and flue-gas condensers drops exhaust below the 56 °C water-vapor dew point, recovering +7% to +11% extra latent heat."
           }
         },
         {
           "@type": "Question",
-          "name": "How do you calculate the required acid volume for hydroponic bicarbonate (HCO₃⁻) alkalinity neutralization?",
+          "name": "What Richardson number (Ri) prevents hot and cold water layers from mixing inside a buffer tank?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Subtract target residual buffer alkalinity (typically 0.5 to 0.8 mmol/L HCO₃⁻ for pH 5.6–5.8 stability) from raw water bicarbonate concentration, then stoichiometry-match with nitric acid (HNO₃) or phosphoric acid (H₃PO₄) normality."
+            "text": "Engineers design wide perforated radial diffusers to keep inlet velocities below 0.35 m/s so buoyancy forces dominate inertial mixing (Ri ≥ 2.0), preserving an intact thermocline across charge/discharge cycles."
           }
         },
         {
           "@type": "Question",
-          "name": "What drain percentage and slab EC dryback should be targeted in rockwool and cocopeat substrates?",
+          "name": "How many MWh of usable heat does a 500 m³ buffer tank store between 90 °C and 40 °C?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "During high-radiation summer days, target 25% to 35% daily drainage fraction with an overnight volumetric water content (VWC) dryback of 8% to 12% for vegetative steering, or 12% to 18% dryback for generative steering."
+            "text": "Using Q = V · ρ · c_p · ΔT / 3.6e6, 500 m³ cycling across a 50 °C temperature span stores roughly 28.5 MWh_th—sufficient to heat a 1-hectare Venlo greenhouse through a full freezing winter night."
           }
         }
       ]
@@ -147,7 +147,7 @@
     <a href="/index.html" style="color: #10b981; font-weight: 800; font-size: 1.15rem; text-decoration: none; letter-spacing: -0.02em;">Inwoovation Lab</a>
     <div style="display: flex; flex-wrap: wrap; gap: 14px; font-size: 0.9rem;">
       <a href="/index.html" style="color: #e2e8f0; text-decoration: none;">Home</a>
-      <a href="/smartfarm/vpd.html" style="color: #e2e8f0; text-decoration: none;">Calculators</a>
+      <a href="/tools/index.html" style="color: #e2e8f0; text-decoration: none;">Calculators</a>
       <a href="/articles/index.html" style="color: #38bdf8; font-weight: 600; text-decoration: none;">Articles</a>
       <a href="/wiki/index.html" style="color: #e2e8f0; text-decoration: none;">Wiki</a>
       <a href="/climate/index.html" style="color: #e2e8f0; text-decoration: none;">Climate Hub</a>
@@ -231,67 +231,24 @@
     <!-- START: INJECTED EDITORIAL & AMAZON ASSOCIATES HARDWARE MODULE -->
     <div class="tool-editorial-wrapper">
       
-      <!-- Technical Theory & Mathematical Formulation -->
-      <section class="editorial-card">
-        <h2><span>🌡️</span> Engineering Theory & Biophysical Principles</h2>
-        <p>Greenhouse microclimate engineering balances sensible heat flux, latent energy transfers, and mass transport through the plant boundary layer. Vapor Pressure Deficit (VPD), defined as the difference between the saturation vapor pressure at leaf temperature and the actual ambient vapor pressure, is the fundamental driving gradient for crop transpiration and xylem sap translocation. If VPD is too low (< 0.4 kPa), transpiration stalls, leading to localized calcium deficiencies (blossom-end rot, tipburn) and fungal spore germination (Botrytis cinerea). Conversely, if VPD exceeds 1.5 kPa, stomatal closure occurs via abscisic acid (ABA) signaling to prevent desiccation, terminating CO2 assimilation. Precise psychrometric control via thermal screens, high-pressure fogging, and modulating ventilation louvers stabilizes VPD within the optimal photosynthetic window.</p>
-        
-        <h3>Governing Equations & Mathematical Model</h3>
-        <div class="formula-box">
-VPD (kPa) = VPsat(T_leaf) - VPair(T_air, RH)
-Where:
-  • VPsat(T) = 0.61078 × exp[ (17.27 × T) / (T + 237.3) ]  (Tetens equation)
-  • VPair = VPsat(T_air) × (RH% / 100)
-  • T_leaf is measured via infrared pyrometer (typically T_air ± 1.5°C)
-        </div>
-
-        <h3>Commercial Greenhouse Setpoints & Benchmark Matrix</h3>
-        <div class="benchmark-table-wrapper">
-          <table class="benchmark-table">
-            <thead>
-              <tr>
-                <th>Crop / System State</th>
-                <th>Target Setpoint</th>
-                <th>Engineering Range</th>
-                <th>Operational Impact</th>
-              </tr>
-            </thead>
-            <tbody>
-<tr><td><strong>Vegetative Phase (High Humidity)</strong></td><td>0.5 – 0.8 kPa</td><td>22.0 – 25.0 °C</td><td>70 – 80%</td></tr>
-<tr><td><strong>Early Flowering / Generative</strong></td><td>0.8 – 1.1 kPa</td><td>20.0 – 23.0 °C</td><td>65 – 75%</td></tr>
-<tr><td><strong>Late Fruiting / Heavy Load</strong></td><td>1.0 – 1.3 kPa</td><td>19.0 – 22.0 °C</td><td>60 – 70%</td></tr>
-<tr><td><strong>High Radiation Midday Peak</strong></td><td>1.2 – 1.5 kPa</td><td>24.0 – 27.0 °C</td><td>55 – 65%</td></tr>
-<tr><td><strong>Nighttime Transpiration Maintenance</strong></td><td>0.3 – 0.6 kPa</td><td>16.0 – 18.0 °C</td><td>75 – 85%</td></tr>
-
-            </tbody>
-          </table>
-        </div>
-      </section>
-
       <!-- Frequently Asked Questions (FAQ) Section -->
       <section class="editorial-card">
         <h2><span>❓</span> Frequently Asked Engineering Questions (FAQ)</h2>
         <div class="faq-accordion">
-
         <details class="faq-item">
-          <summary class="faq-summary">Why is leaf temperature more critical than ambient air temperature for VPD? <span>▾</span></summary>
-          <div class="faq-content">Because stomata are located on the leaf surface, the saturation vapor pressure must be calculated at leaf temperature, not air temperature. High transpiration can cool leaves 2°C below ambient air, while intense solar radiation without air movement can heat leaves 3°C above air, shifting calculated VPD by over 30%.</div>
+          <summary class="faq-summary">How does maintaining a sharp thermocline in a greenhouse buffer tank improve gas boiler condensation? <span>▾</span></summary>
+          <div class="faq-content">Sending 35–42 °C stratified cold bottom water back through boiler economizers and flue-gas condensers drops exhaust below the 56 °C water-vapor dew point, recovering +7% to +11% extra latent heat.</div>
         </details>
-        
         <details class="faq-item">
-          <summary class="faq-summary">How does high-pressure fogging (70 bar) achieve adiabatic cooling without leaf wetting? <span>▾</span></summary>
-          <div class="faq-content">Operating water pressure at 70 bar shears droplet diameters below 10–15 microns (Sauter Mean Diameter D32). Droplets of this microscopic size flash-evaporate into the ambient air stream in under 1.5 seconds, extracting latent heat of vaporization (2.45 MJ/kg) before they can gravity-settle onto foliage.</div>
+          <summary class="faq-summary">What Richardson number (Ri) prevents hot and cold water layers from mixing inside a buffer tank? <span>▾</span></summary>
+          <div class="faq-content">Engineers design wide perforated radial diffusers to keep inlet velocities below 0.35 m/s so buoyancy forces dominate inertial mixing (Ri ≥ 2.0), preserving an intact thermocline across charge/discharge cycles.</div>
         </details>
-        
         <details class="faq-item">
-          <summary class="faq-summary">What is the optimal air velocity through the greenhouse crop canopy? <span>▾</span></summary>
-          <div class="faq-content">Horizontal circulation fans should maintain an air speed of 0.3 to 0.5 m/s across leaves. This thins the laminar boundary layer resistance, replenishing localized CO2 supplies and preventing humid microclimates that invite fungal pathogens.</div>
+          <summary class="faq-summary">How many MWh of usable heat does a 500 m³ buffer tank store between 90 °C and 40 °C? <span>▾</span></summary>
+          <div class="faq-content">Using Q = V · ρ · c_p · ΔT / 3.6e6, 500 m³ cycling across a 50 °C temperature span stores roughly 28.5 MWh_th—sufficient to heat a 1-hectare Venlo greenhouse through a full freezing winter night.</div>
         </details>
-        
         </div>
-      </section>
-
-      <!-- Recommended Hardware & Amazon Associates Monetization -->
+      </section><!-- Recommended Hardware & Amazon Associates Monetization -->
       <section class="amazon-showcase">
         <div class="amazon-header">
           <h3><span>🛒</span> Recommended Precision Field Hardware (Amazon)</h3>
@@ -384,19 +341,6 @@ Where:
     <a href="/crops/greenhouse-sweet-pepper-climate-blossom-end-rot-guide.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🫑 Sweet Pepper Night Temperature & Pipe-Rail Radiation Guide →</a>
     <a href="/tools/venlocad-3d.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🏗️ VenloCAD 3D Structural & EN 13031-1 BOM Architect →</a>
     <a href="/tools/global-agri-subsidy-grant-navigator.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🏛️ Global Agri-Subsidy & USDA REAP / German BLE Grant Navigator →</a>
-  </div>
-  <h3 style="margin: 24px 0 12px 0; font-size: 1.15rem; color: #10b981; font-weight: 800;">❓ Frequently Asked Engineering Questions (Technical FAQ)</h3>
-  <div>
-    <div style="margin-bottom:14px; padding:14px 18px; background:rgba(15,23,42,0.65); border-left:3px solid #10b981; border-radius:8px;">
-      <h4 style="margin:0 0 6px 0; color:#f8fafc; font-size:0.98rem;">Why must calcium nitrate and sulfate/phosphate fertilizers be separated into A and B stock tanks?</h4>
-      <p style="margin:0; color:#cbd5e1; font-size:0.9rem; line-height:1.65;">Mixing concentrated calcium ions (Ca²⁺) with sulfate (SO₄²⁻) or orthophosphate (H₂PO₄⁻) in the same stock tank causes immediate precipitation of insoluble gypsum (CaSO₄·2H₂O) and calcium phosphate once the solubility product (Ksp) is exceeded.</p>
-    </div><div style="margin-bottom:14px; padding:14px 18px; background:rgba(15,23,42,0.65); border-left:3px solid #10b981; border-radius:8px;">
-      <h4 style="margin:0 0 6px 0; color:#f8fafc; font-size:0.98rem;">How do you calculate the required acid volume for hydroponic bicarbonate (HCO₃⁻) alkalinity neutralization?</h4>
-      <p style="margin:0; color:#cbd5e1; font-size:0.9rem; line-height:1.65;">Subtract target residual buffer alkalinity (typically 0.5 to 0.8 mmol/L HCO₃⁻ for pH 5.6–5.8 stability) from raw water bicarbonate concentration, then stoichiometry-match with nitric acid (HNO₃) or phosphoric acid (H₃PO₄) normality.</p>
-    </div><div style="margin-bottom:14px; padding:14px 18px; background:rgba(15,23,42,0.65); border-left:3px solid #10b981; border-radius:8px;">
-      <h4 style="margin:0 0 6px 0; color:#f8fafc; font-size:0.98rem;">What drain percentage and slab EC dryback should be targeted in rockwool and cocopeat substrates?</h4>
-      <p style="margin:0; color:#cbd5e1; font-size:0.9rem; line-height:1.65;">During high-radiation summer days, target 25% to 35% daily drainage fraction with an overnight volumetric water content (VWC) dryback of 8% to 12% for vegetative steering, or 12% to 18% dryback for generative steering.</p>
-    </div>
   </div>
 </section>
 <!-- INW-TSUKUBA-FUNNEL-END -->

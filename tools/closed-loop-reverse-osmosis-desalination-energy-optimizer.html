@@ -102,26 +102,26 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Why must calcium nitrate and sulfate/phosphate fertilizers be separated into A and B stock tanks?",
+          "name": "How does Van 't Hoff osmotic pressure dictate Reverse Osmosis feed pressure?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Mixing concentrated calcium ions (Ca²⁺) with sulfate (SO₄²⁻) or orthophosphate (H₂PO₄⁻) in the same stock tank causes immediate precipitation of insoluble gypsum (CaSO₄·2H₂O) and calcium phosphate once the solubility product (Ksp) is exceeded."
+            "text": "Water naturally flows toward higher salinity; RO feed pumps must supply osmotic pressure π (roughly 0.08 bar per 100 ppm TDS) plus membrane hydraulic drop and target Net Driving Pressure (NDP) to sustain permeate flux."
           }
         },
         {
           "@type": "Question",
-          "name": "How do you calculate the required acid volume for hydroponic bicarbonate (HCO₃⁻) alkalinity neutralization?",
+          "name": "Why do greenhouse RO plants acidify feed water or dose antiscalant before membranes?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Subtract target residual buffer alkalinity (typically 0.5 to 0.8 mmol/L HCO₃⁻ for pH 5.6–5.8 stability) from raw water bicarbonate concentration, then stoichiometry-match with nitric acid (HNO₃) or phosphoric acid (H₃PO₄) normality."
+            "text": "Concentrating brine to 75–80% recovery raises Calcium and Bicarbonate saturation inside the last RO elements. Acidification (pH 5.8–6.2) or antiscalant dosing keeps the Langelier Saturation Index (LSI) negative to prevent irreversible CaCO₃ scale."
           }
         },
         {
           "@type": "Question",
-          "name": "What drain percentage and slab EC dryback should be targeted in rockwool and cocopeat substrates?",
+          "name": "Must pure RO permeate water be remineralized before mixing hydroponic nutrients?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "During high-radiation summer days, target 25% to 35% daily drainage fraction with an overnight volumetric water content (VWC) dryback of 8% to 12% for vegetative steering, or 12% to 18% dryback for generative steering."
+            "text": "Yes. Ultra-pure RO permeate (< 0.05 mS/cm) lacks bicarbonate alkalinity (HCO₃⁻) and calcium, making pH unstable in rockwool slabs unless buffered to 0.5–0.8 mmol/L HCO₃⁻."
           }
         }
       ]
@@ -147,7 +147,7 @@
     <a href="/index.html" style="color: #10b981; font-weight: 800; font-size: 1.15rem; text-decoration: none; letter-spacing: -0.02em;">Inwoovation Lab</a>
     <div style="display: flex; flex-wrap: wrap; gap: 14px; font-size: 0.9rem;">
       <a href="/index.html" style="color: #e2e8f0; text-decoration: none;">Home</a>
-      <a href="/smartfarm/vpd.html" style="color: #e2e8f0; text-decoration: none;">Calculators</a>
+      <a href="/tools/index.html" style="color: #e2e8f0; text-decoration: none;">Calculators</a>
       <a href="/articles/index.html" style="color: #38bdf8; font-weight: 600; text-decoration: none;">Articles</a>
       <a href="/wiki/index.html" style="color: #e2e8f0; text-decoration: none;">Wiki</a>
       <a href="/climate/index.html" style="color: #e2e8f0; text-decoration: none;">Climate Hub</a>
@@ -235,65 +235,24 @@
     <!-- START: INJECTED EDITORIAL & AMAZON ASSOCIATES HARDWARE MODULE -->
     <div class="tool-editorial-wrapper">
       
-      <!-- Technical Theory & Mathematical Formulation -->
-      <section class="editorial-card">
-        <h2><span>🔬</span> Engineering Theory & Biophysical Principles</h2>
-        <p>Closed-loop recirculating greenhouse horticulture mandates 100% recycling of drain runoff to comply with environmental nitrogen/phosphorus discharge mandates. However, recirculation presents severe biosecurity vulnerabilities: zoosporic oomycetes such as Pythium ultimum and Phytophthora cryptogea, as well as Fusarium oxysporum and viral pathogens, spread rapidly throughout the shared irrigation loop. Physical disinfection via ultraviolet germicidal irradiation (UV-C at 254 nm) disrupts microbial DNA/RNA pyrimidine dimers, inactivating pathogens without depositing phytotoxic chemical residues. Meanwhile, reverse osmosis (RO) membrane arrays strip ballast sodium ions (Na⁺) to maintain low electrical conductivity.</p>
-        
-        <h3>Governing Equations & Mathematical Model</h3>
-        <div class="formula-box">
-UV-C Germicidal Dose (mJ/cm²) = Fluence Rate (mW/cm²) × Exposure Residence Time (seconds)
-  • Inactivation Equation: N / N_0 = exp(-k × Dose)
-  • Pythium / Phytophthora Inactivation Target: ≥ 100 mJ/cm² (99.9% 3-log kill)
-  • Fusarium Target: ≥ 250 mJ/cm² (due to melanized thick-walled conidia)
-        </div>
-
-        <h3>Commercial Greenhouse Setpoints & Benchmark Matrix</h3>
-        <div class="benchmark-table-wrapper">
-          <table class="benchmark-table">
-            <thead>
-              <tr>
-                <th>Crop / System State</th>
-                <th>Target Setpoint</th>
-                <th>Engineering Range</th>
-                <th>Operational Impact</th>
-              </tr>
-            </thead>
-            <tbody>
-<tr><td><strong>Pythium / Phytophthora Zoospores</strong></td><td>100 – 120 mJ/cm²</td><td>Complete 4-log eradication, clean drain reuse</td><td>-</td></tr>
-<tr><td><strong>Fusarium oxysporum microconidia</strong></td><td>250 – 300 mJ/cm²</td><td>Requires high-intensity lamp array and low turbidity</td><td>-</td></tr>
-<tr><td><strong>Tobacco Mosaic Virus (TMV / ToBRFV)</strong></td><td>350 – 450 mJ/cm²</td><td>Extremely resistant capsid structure</td><td>-</td></tr>
-<tr><td><strong>Reverse Osmosis Salt Rejection</strong></td><td>> 99.2%</td><td>Permeate EC < 0.05 mS/cm, zero sodium accumulation</td><td>-</td></tr>
-
-            </tbody>
-          </table>
-        </div>
-      </section>
-
       <!-- Frequently Asked Questions (FAQ) Section -->
       <section class="editorial-card">
         <h2><span>❓</span> Frequently Asked Engineering Questions (FAQ)</h2>
         <div class="faq-accordion">
-
         <details class="faq-item">
-          <summary class="faq-summary">Why does UV transmission (% UV-T) dictate the disinfection performance of drainage water? <span>▾</span></summary>
-          <div class="faq-content">Drainage runoff contains dissolved humic acids, organic root exudates, and suspended iron chelates that absorb 254nm photons. If UV-T drops from 90% to 60%, the effective germicidal radiation penetrating the fluid decreases exponentially, requiring slower flow rates or pre-filtration to maintain kill dosage.</div>
+          <summary class="faq-summary">How does Van &#x27;t Hoff osmotic pressure dictate Reverse Osmosis feed pressure? <span>▾</span></summary>
+          <div class="faq-content">Water naturally flows toward higher salinity; RO feed pumps must supply osmotic pressure π (roughly 0.08 bar per 100 ppm TDS) plus membrane hydraulic drop and target Net Driving Pressure (NDP) to sustain permeate flux.</div>
         </details>
-        
         <details class="faq-item">
-          <summary class="faq-summary">How does reverse osmosis membrane flux decay over time in greenhouse service? <span>▾</span></summary>
-          <div class="faq-content">Dissolved calcium sulfate (gypsum) and silica precipitate on the polyamide membrane surface, while biofilm creates a biological foul layer. Monitoring the Specific Energy Consumption (kWh/m³ permeate) and Normalized Transmembrane Pressure (TMP) enables precise scheduling of chemical Clean-In-Place (CIP) cycles.</div>
+          <summary class="faq-summary">Why do greenhouse RO plants acidify feed water or dose antiscalant before membranes? <span>▾</span></summary>
+          <div class="faq-content">Concentrating brine to 75–80% recovery raises Calcium and Bicarbonate saturation inside the last RO elements. Acidification (pH 5.8–6.2) or antiscalant dosing keeps the Langelier Saturation Index (LSI) negative to prevent irreversible CaCO₃ scale.</div>
         </details>
-        
         <details class="faq-item">
-          <summary class="faq-summary">Can UV-C treatment destroy chelated micronutrients in recirculating fertilizer water? <span>▾</span></summary>
-          <div class="faq-content">Yes. High-dose UV-C radiation photochemically degrades synthetic chelating agents like Fe-EDTA and Fe-DTPA into free ferric iron, which then precipitates as insoluble rust. Commercial facilities utilize photostable iron complexes such as Fe-EDDHA or inject chelated iron downstream of the UV reactor.</div>
+          <summary class="faq-summary">Must pure RO permeate water be remineralized before mixing hydroponic nutrients? <span>▾</span></summary>
+          <div class="faq-content">Yes. Ultra-pure RO permeate (&lt; 0.05 mS/cm) lacks bicarbonate alkalinity (HCO₃⁻) and calcium, making pH unstable in rockwool slabs unless buffered to 0.5–0.8 mmol/L HCO₃⁻.</div>
         </details>
-        
         </div>
-      </section>
-
-      <!-- Recommended Hardware & Amazon Associates Monetization -->
+      </section><!-- Recommended Hardware & Amazon Associates Monetization -->
       <section class="amazon-showcase">
         <div class="amazon-header">
           <h3><span>🛒</span> Recommended Precision Field Hardware (Amazon)</h3>
@@ -380,19 +339,6 @@ UV-C Germicidal Dose (mJ/cm²) = Fluence Rate (mW/cm²) × Exposure Residence Ti
     <a href="/crops/greenhouse-sweet-pepper-climate-blossom-end-rot-guide.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🫑 Sweet Pepper Night Temperature & Pipe-Rail Radiation Guide →</a>
     <a href="/tools/venlocad-3d.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🏗️ VenloCAD 3D Structural & EN 13031-1 BOM Architect →</a>
     <a href="/tools/global-agri-subsidy-grant-navigator.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🏛️ Global Agri-Subsidy & USDA REAP / German BLE Grant Navigator →</a>
-  </div>
-  <h3 style="margin: 24px 0 12px 0; font-size: 1.15rem; color: #10b981; font-weight: 800;">❓ Frequently Asked Engineering Questions (Technical FAQ)</h3>
-  <div>
-    <div style="margin-bottom:14px; padding:14px 18px; background:rgba(15,23,42,0.65); border-left:3px solid #10b981; border-radius:8px;">
-      <h4 style="margin:0 0 6px 0; color:#f8fafc; font-size:0.98rem;">Why must calcium nitrate and sulfate/phosphate fertilizers be separated into A and B stock tanks?</h4>
-      <p style="margin:0; color:#cbd5e1; font-size:0.9rem; line-height:1.65;">Mixing concentrated calcium ions (Ca²⁺) with sulfate (SO₄²⁻) or orthophosphate (H₂PO₄⁻) in the same stock tank causes immediate precipitation of insoluble gypsum (CaSO₄·2H₂O) and calcium phosphate once the solubility product (Ksp) is exceeded.</p>
-    </div><div style="margin-bottom:14px; padding:14px 18px; background:rgba(15,23,42,0.65); border-left:3px solid #10b981; border-radius:8px;">
-      <h4 style="margin:0 0 6px 0; color:#f8fafc; font-size:0.98rem;">How do you calculate the required acid volume for hydroponic bicarbonate (HCO₃⁻) alkalinity neutralization?</h4>
-      <p style="margin:0; color:#cbd5e1; font-size:0.9rem; line-height:1.65;">Subtract target residual buffer alkalinity (typically 0.5 to 0.8 mmol/L HCO₃⁻ for pH 5.6–5.8 stability) from raw water bicarbonate concentration, then stoichiometry-match with nitric acid (HNO₃) or phosphoric acid (H₃PO₄) normality.</p>
-    </div><div style="margin-bottom:14px; padding:14px 18px; background:rgba(15,23,42,0.65); border-left:3px solid #10b981; border-radius:8px;">
-      <h4 style="margin:0 0 6px 0; color:#f8fafc; font-size:0.98rem;">What drain percentage and slab EC dryback should be targeted in rockwool and cocopeat substrates?</h4>
-      <p style="margin:0; color:#cbd5e1; font-size:0.9rem; line-height:1.65;">During high-radiation summer days, target 25% to 35% daily drainage fraction with an overnight volumetric water content (VWC) dryback of 8% to 12% for vegetative steering, or 12% to 18% dryback for generative steering.</p>
-    </div>
   </div>
 </section>
 <!-- INW-TSUKUBA-FUNNEL-END -->

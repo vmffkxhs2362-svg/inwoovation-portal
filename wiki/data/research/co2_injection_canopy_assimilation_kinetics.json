@@ -91,8 +91,8 @@
   },
   "faq_list": [
     {
-      "question": "How does leaf temperature (T_leaf) vs. air temperature (T_air) affect VPD calculation in Canopy CO2 Enrichment Dynamics (1200 ppm) and Rubisco Carboxylation Kinetics under Variable PPFD Regimes?",
-      "answer": "Standard ambient VPD calculations assume T_leaf equals T_air, which introduces a 15–35% error in Canopy CO2 Enrichment Dynamics (1200 ppm) and Rubisco Carboxylation Kinetics under Variable PPFD Regimes canopies. Under high solar radiation or HPS lighting, T_leaf exceeds T_air by +1.5°C to +3.0°C, raising internal leaf saturation vapor pressure (e_sat) and driving true leaf-to-air VPD much higher than wall sensors indicate. Conversely, under high-efficiency LED lighting without thermal IR radiation, high transpiration cools T_leaf 0.8°C to 1.5°C below T_air. Always compute VPD using an infrared leaf radiometer to prevent hidden stomatal closure or nocturnal condensation."
+      "question": "How does canopy Rubisco kinetics respond to 1,000–1,200 ppm CO₂ enrichment at elevated temperatures?",
+      "answer": "High CO₂ suppresses Rubisco oxygenation (photorespiration), shifting optimal net assimilation temperature upward by +2.5 to +4.0 °C so daytime vents can stay closed longer for higher heat-use and carbon-use efficiency."
     },
     {
       "question": "What is the optimal root-zone dissolved oxygen (DO) and temperature threshold to prevent root hypoxia in Solanum lycopersicum & Lactuca sativa?",

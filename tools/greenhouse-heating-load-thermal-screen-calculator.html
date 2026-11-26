@@ -106,42 +106,40 @@
           "item": "https://inwoovation.com/tools/greenhouse-heating-load-thermal-screen-calculator.html"
         }
       ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How does a thermal energy screen achieve 40–45% energy conservation?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A closed thermal screen acts as a radiative barrier intercepting long-wave infrared radiation (wavelength 5–50 µm) emitted by the crop and floor. Furthermore, it creates a stagnant, decoupled air buffer beneath the cold glass roof, preventing convective looping and dropping the effective roof transmission by over 40% in accordance with DIN V 18599 calculations."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the optimal temperature differential (Delta T) for greenhouse pipe rails?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "High-wire horticultural heating loops are designed for a 20°C delta T (e.g. 75°C supply and 55°C return). A smaller delta T demands larger pump electrical energy and high flow rates, while a larger delta T creates uneven temperature gradients along crop rows, inducing cold pockets and localized condensation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does deep geothermal compare to biomass woodchip CHP for peak winter loads?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Deep geothermal (e.g. Gemüsebau Steiner in Kirchweidach) delivers continuous baseload energy at negligible marginal fuel cost, but requires high capital expenditure. Biomass woodchip systems (e.g. Scherzer Gemüse in Nürnberg) provide rapid modulation and high supply temperatures (85–95°C), while producing scrubbed flue-gas CO2 for plant growth, creating an ideal municipal-industrial hybrid energy loop."
+          }
+        }
+      ]
     }
   ]
 }
   </script>
-  <script type="application/ld+json">
-  {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "How does a thermal energy screen achieve 40–45% energy conservation? ▾",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A closed thermal screen acts as a radiative barrier intercepting long-wave infrared radiation (wavelength 5–50 µm) emitted by the crop and floor. Furthermore, it creates a stagnant, decoupled air buffer beneath the cold glass roof, preventing convective looping and dropping the effective roof transmission by over 40% in accordance with DIN V 18599 calculations."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is the optimal temperature differential (Delta T) for greenhouse pipe rails? ▾",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "High-wire horticultural heating loops are designed for a 20°C delta T (e.g. 75°C supply and 55°C return). A smaller delta T demands larger pump electrical energy and high flow rates, while a larger delta T creates uneven temperature gradients along crop rows, inducing cold pockets and localized condensation."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How does deep geothermal compare to biomass woodchip CHP for peak winter loads? ▾",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Deep geothermal (e.g. Gemüsebau Steiner in Kirchweidach) delivers continuous baseload energy at negligible marginal fuel cost, but requires high capital expenditure. Biomass woodchip systems (e.g. Scherzer Gemüse in Nürnberg) provide rapid modulation and high supply temperatures (85–95°C), while producing scrubbed flue-gas CO2 for plant growth, creating an ideal municipal-industrial hybrid energy loop."
-      }
-    }
-  ]
-}
-  </script>
+  
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8597809158257497" crossorigin="anonymous"></script>
 
     <meta property="og:type" content="website">
@@ -160,7 +158,7 @@
     <a href="/index.html" style="color: #10b981; font-weight: 800; font-size: 1.15rem; text-decoration: none; letter-spacing: -0.02em;">Inwoovation Lab</a>
     <div style="display: flex; flex-wrap: wrap; gap: 14px; font-size: 0.9rem;">
       <a href="/index.html" style="color: #e2e8f0; text-decoration: none;">Home</a>
-      <a href="/smartfarm/vpd.html" style="color: #e2e8f0; text-decoration: none;">Calculators</a>
+      <a href="/tools/index.html" style="color: #e2e8f0; text-decoration: none;">Calculators</a>
       <a href="/articles/index.html" style="color: #38bdf8; font-weight: 600; text-decoration: none;">Articles</a>
       <a href="/wiki/index.html" style="color: #e2e8f0; text-decoration: none;">Wiki</a>
       <a href="/climate/index.html" style="color: #e2e8f0; text-decoration: none;">Climate Hub</a>
@@ -358,74 +356,24 @@
     <div class="tool-editorial-wrapper">
       
       <!-- Technical Theory & Mathematical Formulation -->
-      <section class="editorial-card">
-        <h2><span>🌡️</span> Engineering Theory: DIN V 18599 Greenhouse Thermodynamics</h2>
-        <p>Commercial greenhouse heating demands a rigorous thermodynamic balance between transmission conduction through the envelope, infiltration ventilation losses, and radiant thermal exchange with the cold night sky. Unlike standard commercial buildings, agricultural glasshouses feature high surface-to-floor area ratios (A<sub>env</sub> / A<sub>floor</sub> ≈ 1.25 - 1.50), making envelope thermal resistance (U-value) and dynamic thermal screen deployment the decisive factors in energy consumption. This tool implements the DIN V 18599 and NEN 3859 thermal modeling kernel with integrated green heat source transition economics (Deep Geothermal, Biomass CHP, Industrial Waste Heat).</p>
-        
-        <h3>Governing Thermodynamic Formulations</h3>
-        <div class="formula-box">
-1. Total Peak Thermal Demand:
-   Q_total (W) = Q_trans + Q_inf
-   Where:
-   • Q_trans = [ A_roof · U_roof · (1 - f_screen · 0.45) + A_wall · U_wall ] · (T_in - T_out)
-   • Q_inf = rho_air · c_p,air · (V_greenhouse · ACH / 3600) · (T_in - T_out)
-   • rho_air = 1.204 kg/m³, c_p,air = 1005 J/(kg·K)
-
-2. Hydronic Pipe Rail Circulation (Ø51mm Steel Pipe):
-   V_flow (m³/h) = Q_total (kW) / [ rho_water · c_p,water · deltaT_circuit ] · 3600
-   • deltaT_circuit = T_supply - T_return (typically 20°C in high-wire cultivation)
-
-3. Decarbonization Abatement:
-   CO2_abatement (t/yr) = E_annual (MWh) · [ EF_baseline - EF_renewable ]
-   • EF_gas = 0.202 t CO2/MWh | EF_geothermal = 0.015 t CO2/MWh | EF_biomass = 0.025 t CO2/MWh
-        </div>
-
-        <h3>Commercial Envelope U-Values & Benchmark Performance</h3>
-        <div class="benchmark-table-wrapper">
-          <table class="benchmark-table">
-            <thead>
-              <tr>
-                <th>Glazing Material Specification</th>
-                <th>Nominal U-Value</th>
-                <th>Light Transmittance (PAR)</th>
-                <th>Typical Commercial Application</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><td><strong>Single 4mm Diffuse Glass (AR)</strong></td><td>6.5 W/m²K</td><td>91.5 %</td><td>High-wire tomato &amp; cucumber (Knoblauchsland, Westland)</td></tr>
-              <tr><td><strong>Double Anti-Reflective Glass</strong></td><td>3.2 W/m²K</td><td>87.0 %</td><td>High-latitude low-energy Venlo installations</td></tr>
-              <tr><td><strong>Double Inflatable Polyethylene</strong></td><td>4.2 W/m²K</td><td>78 – 82 %</td><td>Commercial berry tunnels and Asian multi-span houses</td></tr>
-              <tr><td><strong>16mm Multiwall Polycarbonate</strong></td><td>2.4 W/m²K</td><td>74.0 %</td><td>Greenhouse gables, north walls &amp; propagation nurseries</td></tr>
-              <tr><td><strong>Closed Energy Screen (Aluminized)</strong></td><td>Effective U -43%</td><td>Dynamic deploy</td><td>Nighttime thermal retention (Svensson Luxous / Harmony)</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
-
       <!-- Frequently Asked Questions (FAQ) Section -->
       <section class="editorial-card">
         <h2><span>❓</span> Frequently Asked Engineering Questions (FAQ)</h2>
         <div class="faq-accordion">
-
         <details class="faq-item">
           <summary class="faq-summary">How does a thermal energy screen achieve 40–45% energy conservation? <span>▾</span></summary>
           <div class="faq-content">A closed thermal screen acts as a radiative barrier intercepting long-wave infrared radiation (wavelength 5–50 µm) emitted by the crop and floor. Furthermore, it creates a stagnant, decoupled air buffer beneath the cold glass roof, preventing convective looping and dropping the effective roof transmission by over 40% in accordance with DIN V 18599 calculations.</div>
         </details>
-        
         <details class="faq-item">
           <summary class="faq-summary">What is the optimal temperature differential (Delta T) for greenhouse pipe rails? <span>▾</span></summary>
           <div class="faq-content">High-wire horticultural heating loops are designed for a 20°C delta T (e.g. 75°C supply and 55°C return). A smaller delta T demands larger pump electrical energy and high flow rates, while a larger delta T creates uneven temperature gradients along crop rows, inducing cold pockets and localized condensation.</div>
         </details>
-        
         <details class="faq-item">
           <summary class="faq-summary">How does deep geothermal compare to biomass woodchip CHP for peak winter loads? <span>▾</span></summary>
           <div class="faq-content">Deep geothermal (e.g. Gemüsebau Steiner in Kirchweidach) delivers continuous baseload energy at negligible marginal fuel cost, but requires high capital expenditure. Biomass woodchip systems (e.g. Scherzer Gemüse in Nürnberg) provide rapid modulation and high supply temperatures (85–95°C), while producing scrubbed flue-gas CO2 for plant growth, creating an ideal municipal-industrial hybrid energy loop.</div>
         </details>
-        
         </div>
-      </section>
-
-      <!-- Recommended Hardware & Amazon Associates Monetization -->
+      </section><!-- Recommended Hardware & Amazon Associates Monetization -->
       <section class="amazon-showcase">
         <div class="amazon-header">
           <h3><span>🛒</span> Recommended Heating &amp; Thermal Field Instruments (Amazon)</h3>
@@ -689,19 +637,6 @@
     <a href="/crops/greenhouse-sweet-pepper-climate-blossom-end-rot-guide.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🫑 Sweet Pepper Night Temperature & Pipe-Rail Radiation Guide →</a>
     <a href="/tools/venlocad-3d.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🏗️ VenloCAD 3D Structural & EN 13031-1 BOM Architect →</a>
     <a href="/tools/global-agri-subsidy-grant-navigator.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🏛️ Global Agri-Subsidy & USDA REAP / German BLE Grant Navigator →</a>
-  </div>
-  <h3 style="margin: 24px 0 12px 0; font-size: 1.15rem; color: #10b981; font-weight: 800;">❓ Frequently Asked Engineering Questions (Technical FAQ)</h3>
-  <div>
-    <div style="margin-bottom:14px; padding:14px 18px; background:rgba(15,23,42,0.65); border-left:3px solid #10b981; border-radius:8px;">
-      <h4 style="margin:0 0 6px 0; color:#f8fafc; font-size:0.98rem;">How does a thermal energy screen achieve 40–45% energy conservation? ▾</h4>
-      <p style="margin:0; color:#cbd5e1; font-size:0.9rem; line-height:1.65;">A closed thermal screen acts as a radiative barrier intercepting long-wave infrared radiation (wavelength 5–50 µm) emitted by the crop and floor. Furthermore, it creates a stagnant, decoupled air buffer beneath the cold glass roof, preventing convective looping and dropping the effective roof transmission by over 40% in accordance with DIN V 18599 calculations.</p>
-    </div><div style="margin-bottom:14px; padding:14px 18px; background:rgba(15,23,42,0.65); border-left:3px solid #10b981; border-radius:8px;">
-      <h4 style="margin:0 0 6px 0; color:#f8fafc; font-size:0.98rem;">What is the optimal temperature differential (Delta T) for greenhouse pipe rails? ▾</h4>
-      <p style="margin:0; color:#cbd5e1; font-size:0.9rem; line-height:1.65;">High-wire horticultural heating loops are designed for a 20°C delta T (e.g. 75°C supply and 55°C return). A smaller delta T demands larger pump electrical energy and high flow rates, while a larger delta T creates uneven temperature gradients along crop rows, inducing cold pockets and localized condensation.</p>
-    </div><div style="margin-bottom:14px; padding:14px 18px; background:rgba(15,23,42,0.65); border-left:3px solid #10b981; border-radius:8px;">
-      <h4 style="margin:0 0 6px 0; color:#f8fafc; font-size:0.98rem;">How does deep geothermal compare to biomass woodchip CHP for peak winter loads? ▾</h4>
-      <p style="margin:0; color:#cbd5e1; font-size:0.9rem; line-height:1.65;">Deep geothermal (e.g. Gemüsebau Steiner in Kirchweidach) delivers continuous baseload energy at negligible marginal fuel cost, but requires high capital expenditure. Biomass woodchip systems (e.g. Scherzer Gemüse in Nürnberg) provide rapid modulation and high supply temperatures (85–95°C), while producing scrubbed flue-gas CO2 for plant growth, creating an ideal municipal-industrial hybrid energy loop.</p>
-    </div>
   </div>
 </section>
 <!-- INW-TSUKUBA-FUNNEL-END -->

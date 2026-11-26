@@ -138,26 +138,26 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "How do you convert PPFD (µmol/m²/s) into Daily Light Integral (DLI in mol/m²/day)?",
+          "name": "Why do greenhouse IoT deployments prefer LoRaWAN and RS-485 over 2.4 GHz Wi-Fi?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Multiply canopy PPFD (µmol·m⁻²·s⁻¹) by photoperiod hours per day, then multiply by 0.0036 (since 3,600 seconds/hour divided by 1,000,000 µmol/mol equals 0.0036). For example, 250 µmol·m⁻²·s⁻¹ for 16 hours yields exactly 14.4 mol·m⁻²·d⁻¹."
+            "text": "Water-filled dense crop foliage and steel truss spans strongly scatter and absorb 2.4 GHz signals. Sub-GHz 868/915 MHz LoRaWAN penetrates multi-hectare foliage cleanly, while shielded RS-485 provides deterministic wired control."
           }
         },
         {
           "@type": "Question",
-          "name": "What DLI target is required for commercial greenhouse tomatoes, strawberries, and leafy greens?",
+          "name": "What is the practical difference between MQTT QoS 0 and QoS 1 for fertigation and climate alarms?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Butterhead and crisphead lettuce require 14 to 17 mol·m⁻²·d⁻¹ (above which tipburn risk rises without vertical airflow), greenhouse strawberries require 15 to 22 mol·m⁻²·d⁻¹, and high-wire fruiting tomatoes and bell peppers require 22 to 35+ mol·m⁻²·d⁻¹."
+            "text": "QoS 0 is fire-and-forget suitable for high-frequency diagnostics, whereas QoS 1 enforces PUBACK confirmation so critical low-tank-level, boiler-fault, or frost alarms never vanish silently over spotty farm WAN links."
           }
         },
         {
           "@type": "Question",
-          "name": "How do you calculate supplemental LED fixture wattage and electricity ROI per square meter?",
+          "name": "How do edge gateways prevent data loss during internet outages in rural greenhouse clusters?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Divide the required supplemental PPFD (µmol·m⁻²·s⁻¹) by the fixture photosynthetic photon efficacy (PPE, typically 2.8 to 3.6 µmol/J) to obtain electrical power density (W/m²), then multiply by operating hours and kWh tariff."
+            "text": "An industrial edge gateway stores incoming JSON sensor payloads in a local SQLite or flash ring buffer and replays chronologically to the cloud broker once cellular or fiber backhaul reconnects."
           }
         }
       ]
@@ -183,7 +183,7 @@
     <a href="/index.html" style="color: #10b981; font-weight: 800; font-size: 1.15rem; text-decoration: none; letter-spacing: -0.02em;">Inwoovation Lab</a>
     <div style="display: flex; flex-wrap: wrap; gap: 14px; font-size: 0.9rem;">
       <a href="/index.html" style="color: #e2e8f0; text-decoration: none;">Home</a>
-      <a href="/smartfarm/vpd.html" style="color: #e2e8f0; text-decoration: none;">Calculators</a>
+      <a href="/tools/index.html" style="color: #e2e8f0; text-decoration: none;">Calculators</a>
       <a href="/articles/index.html" style="color: #38bdf8; font-weight: 600; text-decoration: none;">Articles</a>
       <a href="/wiki/index.html" style="color: #e2e8f0; text-decoration: none;">Wiki</a>
       <a href="/climate/index.html" style="color: #e2e8f0; text-decoration: none;">Climate Hub</a>
@@ -244,67 +244,24 @@
     <!-- START: INJECTED EDITORIAL & AMAZON ASSOCIATES HARDWARE MODULE -->
     <div class="tool-editorial-wrapper">
       
-      <!-- Technical Theory & Mathematical Formulation -->
-      <section class="editorial-card">
-        <h2><span>🤖</span> Engineering Theory & Biophysical Principles</h2>
-        <p>Modern commercial greenhouse operations are rapidly transitioning from reactive feedback PID loops to predictive, physics-informed autonomous controllers. A digital twin combines dynamic greenhouse energy balances (solar heat gain, long-wave radiation loss, ground conduction) with physiological crop models (canopy photosynthesis, transpiration). By ingesting external weather station forecasts (solar irradiance, wind velocity, ambient temperature), Model Predictive Control (MPC) algorithms solve multi-objective optimization problems every 5 minutes. This enables anticipatory thermal screen deployment before outdoor temperatures plummet, pre-charging solar thermal buffer tanks, and dynamic peak-electricity shaving.</p>
-        
-        <h3>Governing Equations & Mathematical Model</h3>
-        <div class="formula-box">
-MPC Objective Function:
-  J = ∑ [ w_yield · (A_net - Target)² + w_energy · (Cost_gas + Cost_elec) + w_smooth · (Δu)² ]
-Subject to State Constraints:
-  • T_min ≤ T_canopy(t) ≤ T_max
-  • VPD_min ≤ VPD(t) ≤ VPD_max
-  • Window_aperture_rate ≤ max_speed
-        </div>
-
-        <h3>Commercial Greenhouse Setpoints & Benchmark Matrix</h3>
-        <div class="benchmark-table-wrapper">
-          <table class="benchmark-table">
-            <thead>
-              <tr>
-                <th>Crop / System State</th>
-                <th>Target Setpoint</th>
-                <th>Engineering Range</th>
-                <th>Operational Impact</th>
-              </tr>
-            </thead>
-            <tbody>
-<tr><td><strong>IoT Telemetry Frequency (MQTT)</strong></td><td>Every 10 – 30 seconds</td><td>QoS 1 telemetry stream to edge gateway</td><td>-</td></tr>
-<tr><td><strong>MPC Optimization Horizon</strong></td><td>24 – 48 Hours Ahead</td><td>Predictive rolling horizon with 5-minute step resolution</td><td>-</td></tr>
-<tr><td><strong>Energy Cost Reduction via MPC</strong></td><td>15 – 28%</td><td>Compared to traditional setpoint day/night thermostat loops</td><td>-</td></tr>
-<tr><td><strong>Thermal Stratification in Buffer Tank</strong></td><td>Top: 85 – 95°C | Bottom: 35 – 45°C</td><td>Sharp thermocline ensures maximum boiler heat recovery</td><td>-</td></tr>
-
-            </tbody>
-          </table>
-        </div>
-      </section>
-
       <!-- Frequently Asked Questions (FAQ) Section -->
       <section class="editorial-card">
         <h2><span>❓</span> Frequently Asked Engineering Questions (FAQ)</h2>
         <div class="faq-accordion">
-
         <details class="faq-item">
-          <summary class="faq-summary">What is the primary advantage of Model Predictive Control over standard greenhouse climate computers? <span>▾</span></summary>
-          <div class="faq-content">Standard PID controllers only respond after an error has already occurred (e.g. greenhouse has already gotten too cold or too humid). MPC looks 24 to 48 hours into the future using weather forecasts and dynamic thermal models to adjust screens, vents, and heating hours in advance, avoiding costly overshoot.</div>
+          <summary class="faq-summary">Why do greenhouse IoT deployments prefer LoRaWAN and RS-485 over 2.4 GHz Wi-Fi? <span>▾</span></summary>
+          <div class="faq-content">Water-filled dense crop foliage and steel truss spans strongly scatter and absorb 2.4 GHz signals. Sub-GHz 868/915 MHz LoRaWAN penetrates multi-hectare foliage cleanly, while shielded RS-485 provides deterministic wired control.</div>
         </details>
-        
         <details class="faq-item">
-          <summary class="faq-summary">How do MQTT and LoRaWAN architectures handle harsh greenhouse radio environments? <span>▾</span></summary>
-          <div class="faq-content">High humidity, dense wet crop canopies, and metal truss structures attenuate 2.4GHz Wi-Fi signals severely. Sub-GHz LoRaWAN (868/915 MHz) or industrial RS-485 Modbus RTU wire loops provide robust, noise-immune transmission from sensor nodes back to the central edge PLC.</div>
+          <summary class="faq-summary">What is the practical difference between MQTT QoS 0 and QoS 1 for fertigation and climate alarms? <span>▾</span></summary>
+          <div class="faq-content">QoS 0 is fire-and-forget suitable for high-frequency diagnostics, whereas QoS 1 enforces PUBACK confirmation so critical low-tank-level, boiler-fault, or frost alarms never vanish silently over spotty farm WAN links.</div>
         </details>
-        
         <details class="faq-item">
-          <summary class="faq-summary">What role do 3D digital twins play in commercial facility management? <span>▾</span></summary>
-          <div class="faq-content">3D WebGL digital twins visualize spatial temperature, humidity, and airflow non-uniformities that single-point aspiration box sensors fail to capture. They identify microclimate dead zones, fungal risk hotspots, and draft leaks before visible crop damage occurs.</div>
+          <summary class="faq-summary">How do edge gateways prevent data loss during internet outages in rural greenhouse clusters? <span>▾</span></summary>
+          <div class="faq-content">An industrial edge gateway stores incoming JSON sensor payloads in a local SQLite or flash ring buffer and replays chronologically to the cloud broker once cellular or fiber backhaul reconnects.</div>
         </details>
-        
         </div>
-      </section>
-
-      <!-- Recommended Hardware & Amazon Associates Monetization -->
+      </section><!-- Recommended Hardware & Amazon Associates Monetization -->
       <section class="amazon-showcase">
         <div class="amazon-header">
           <h3><span>🛒</span> Recommended Precision Field Hardware (Amazon)</h3>
@@ -419,19 +376,6 @@ Subject to State Constraints:
     <a href="/crops/greenhouse-sweet-pepper-climate-blossom-end-rot-guide.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🫑 Sweet Pepper Night Temperature & Pipe-Rail Radiation Guide →</a>
     <a href="/tools/venlocad-3d.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🏗️ VenloCAD 3D Structural & EN 13031-1 BOM Architect →</a>
     <a href="/tools/global-agri-subsidy-grant-navigator.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🏛️ Global Agri-Subsidy & USDA REAP / German BLE Grant Navigator →</a>
-  </div>
-  <h3 style="margin: 24px 0 12px 0; font-size: 1.15rem; color: #10b981; font-weight: 800;">❓ Frequently Asked Engineering Questions (Technical FAQ)</h3>
-  <div>
-    <div style="margin-bottom:14px; padding:14px 18px; background:rgba(15,23,42,0.65); border-left:3px solid #10b981; border-radius:8px;">
-      <h4 style="margin:0 0 6px 0; color:#f8fafc; font-size:0.98rem;">How do you convert PPFD (µmol/m²/s) into Daily Light Integral (DLI in mol/m²/day)?</h4>
-      <p style="margin:0; color:#cbd5e1; font-size:0.9rem; line-height:1.65;">Multiply canopy PPFD (µmol·m⁻²·s⁻¹) by photoperiod hours per day, then multiply by 0.0036 (since 3,600 seconds/hour divided by 1,000,000 µmol/mol equals 0.0036). For example, 250 µmol·m⁻²·s⁻¹ for 16 hours yields exactly 14.4 mol·m⁻²·d⁻¹.</p>
-    </div><div style="margin-bottom:14px; padding:14px 18px; background:rgba(15,23,42,0.65); border-left:3px solid #10b981; border-radius:8px;">
-      <h4 style="margin:0 0 6px 0; color:#f8fafc; font-size:0.98rem;">What DLI target is required for commercial greenhouse tomatoes, strawberries, and leafy greens?</h4>
-      <p style="margin:0; color:#cbd5e1; font-size:0.9rem; line-height:1.65;">Butterhead and crisphead lettuce require 14 to 17 mol·m⁻²·d⁻¹ (above which tipburn risk rises without vertical airflow), greenhouse strawberries require 15 to 22 mol·m⁻²·d⁻¹, and high-wire fruiting tomatoes and bell peppers require 22 to 35+ mol·m⁻²·d⁻¹.</p>
-    </div><div style="margin-bottom:14px; padding:14px 18px; background:rgba(15,23,42,0.65); border-left:3px solid #10b981; border-radius:8px;">
-      <h4 style="margin:0 0 6px 0; color:#f8fafc; font-size:0.98rem;">How do you calculate supplemental LED fixture wattage and electricity ROI per square meter?</h4>
-      <p style="margin:0; color:#cbd5e1; font-size:0.9rem; line-height:1.65;">Divide the required supplemental PPFD (µmol·m⁻²·s⁻¹) by the fixture photosynthetic photon efficacy (PPE, typically 2.8 to 3.6 µmol/J) to obtain electrical power density (W/m²), then multiply by operating hours and kWh tariff.</p>
-    </div>
   </div>
 </section>
 <!-- INW-TSUKUBA-FUNNEL-END -->

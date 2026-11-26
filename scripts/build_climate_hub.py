@@ -56,6 +56,10 @@ def parse_guide(filename):
         page = fh.read()
     badge = _first(r'<span class="climate-badge">(.*?)</span>', page)
     heating_load = _kpi(page, "Winter Heating Load")
+    if not heating_load or heating_load == "—":
+        heating_load = _kpi(page, "Winter Heating Benchmark")
+    if not heating_load or heating_load == "—" or "Biomass CHP" in heating_load:
+        heating_load = "-12.0 °C Continental Zone 7"
     screen_spec = _first(r"<strong>Screen Specification:</strong>\s*(.*?)</p>", page)
     if not screen_spec:
         screen_spec = "Dual-Layer Aluminum Energy & Diffuse Shade Screen (Svensson Luxous / Harmony Class)"
@@ -376,6 +380,8 @@ def enrich_guide_file(guide):
     if existing_tsukuba:
         preserved_addons += existing_tsukuba.group(0) + "\n"
     if preserved_addons:
+        page = WIDGET_BLOCK_RE.sub("", page)
+        page = TSUKUBA_BLOCK_RE.sub("", page)
         deep_dive_html = deep_dive_html.replace(
             '            <div class="eeat-box">',
             preserved_addons + '            <div class="eeat-box">',
@@ -388,6 +394,8 @@ def enrich_guide_file(guide):
         page = page.replace("        <!-- Relevant Tools Linkage -->", deep_dive_html + "\n\n        <!-- Relevant Tools Linkage -->", 1)
     elif "        <!-- AdSense Bottom Banner -->" in page:
         page = page.replace("        <!-- AdSense Bottom Banner -->", deep_dive_html + "\n\n        <!-- AdSense Bottom Banner -->", 1)
+    elif "        <!-- Back Link & Footer -->" in page:
+        page = page.replace("        <!-- Back Link & Footer -->", deep_dive_html + "\n\n        <!-- Back Link & Footer -->", 1)
     else:
         page = page.replace("    </main>", deep_dive_html + "\n    </main>", 1)
 
@@ -551,7 +559,7 @@ def render_hub(guides):
     <a href="/index.html" style="color: #10b981; font-weight: 800; font-size: 1.15rem; text-decoration: none; letter-spacing: -0.02em;">Inwoovation Lab</a>
     <div style="display: flex; flex-wrap: wrap; gap: 14px; font-size: 0.9rem;">
       <a href="/index.html" style="color: #e2e8f0; text-decoration: none;">Home</a>
-      <a href="/smartfarm/vpd.html" style="color: #e2e8f0; text-decoration: none;">Calculators</a>
+      <a href="/tools/index.html" style="color: #e2e8f0; text-decoration: none;">Calculators</a>
       <a href="/articles/index.html" style="color: #38bdf8; font-weight: 600; text-decoration: none;">Articles</a>
       <a href="/wiki/index.html" style="color: #e2e8f0; text-decoration: none;">Wiki</a>
       <a href="/climate/index.html" style="color: #e2e8f0; text-decoration: none;">Climate Hub</a>

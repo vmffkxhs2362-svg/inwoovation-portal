@@ -404,35 +404,6 @@
       }
     },
     {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Why must calcium nitrate and sulfate/phosphate fertilizers be separated into A and B stock tanks?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Mixing concentrated calcium ions (Ca²⁺) with sulfate (SO₄²⁻) or orthophosphate (H₂PO₄⁻) in the same stock tank causes immediate precipitation of insoluble gypsum (CaSO₄·2H₂O) and calcium phosphate once the solubility product (Ksp) is exceeded."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How do you calculate the required acid volume for hydroponic bicarbonate (HCO₃⁻) alkalinity neutralization?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Subtract target residual buffer alkalinity (typically 0.5 to 0.8 mmol/L HCO₃⁻ for pH 5.6–5.8 stability) from raw water bicarbonate concentration, then stoichiometry-match with nitric acid (HNO₃) or phosphoric acid (H₃PO₄) normality."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What drain percentage and slab EC dryback should be targeted in rockwool and cocopeat substrates?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "During high-radiation summer days, target 25% to 35% daily drainage fraction with an overnight volumetric water content (VWC) dryback of 8% to 12% for vegetative steering, or 12% to 18% dryback for generative steering."
-          }
-        }
-      ]
-    },
-    {
       "@type": "BreadcrumbList",
       "itemListElement": [
         {
@@ -454,6 +425,35 @@
           "item": "https://inwoovation.com/tools/greenhouse-energy-tariff-bess-p2h-arbitrage-calculator.html"
         }
       ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How does a 20 kV Power-to-Heat (P2H) electrode boiler capture negative EPEX SPOT electricity prices?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Midday solar and wind surges push spot prices to -30 to -100 €/MWh for 3–5 hours. A 20 kV electrode boiler ramps 0–100% in under 30 seconds at 99% thermal efficiency, getting paid to convert surplus grid power into 90 °C buffer water."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why pair an LFP Battery Energy Storage System (BESS) with § 19 StromNEV grid tariff rules?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Discharging LFP batteries during utility peak-load windows (Hochlastzeitfenster) qualifies German commercial greenhouses for § 19 Abs. 2 StromNEV atypical grid usage rebates, cutting annual capacity demand charges by up to 80%."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens if thermal buffer tank stratification is poor during P2H arbitrage?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Without radial low-velocity diffusers (Richardson number Ri ≥ 2.0), cold return mixes into hot 90 °C water, shrinking usable energy storage capacity per m³ and blocking nighttime pipe-rail discharge."
+          }
+        }
+      ]
     }
   ]
 }
@@ -466,7 +466,7 @@
     <a href="/index.html" style="color: #10b981; font-weight: 800; font-size: 1.15rem; text-decoration: none; letter-spacing: -0.02em;">Inwoovation Lab</a>
     <div style="display: flex; flex-wrap: wrap; gap: 14px; font-size: 0.9rem;">
       <a href="/index.html" style="color: #e2e8f0; text-decoration: none;">Home</a>
-      <a href="/smartfarm/vpd.html" style="color: #e2e8f0; text-decoration: none;">Calculators</a>
+      <a href="/tools/index.html" style="color: #e2e8f0; text-decoration: none;">Calculators</a>
       <a href="/articles/index.html" style="color: #38bdf8; font-weight: 600; text-decoration: none;">Articles</a>
       <a href="/wiki/index.html" style="color: #e2e8f0; text-decoration: none;">Wiki</a>
       <a href="/climate/index.html" style="color: #e2e8f0; text-decoration: none;">Climate Hub</a>
@@ -768,7 +768,7 @@
 
         <h3 style="font-size:1.12rem; color:#38bdf8; margin:18px 0 8px;">3. Non-Dilutive Capital Subsidies Across 8 Horticulture Jurisdictions</h3>
         <p style="font-size:0.91rem; line-height:1.7; color:#94a3b8;">
-          Combining federal and municipal decarbonization grants compresses turnkey P2H + Heat Pump + BESS payback from 5.8 years to 2.6–3.4 years. Eligible programs indexed in our <a href="/tools/global-agri-subsidy-grant-navigator.html" style="color:#34d399; font-weight:700;">150-Program Global Agri-Subsidy Navigator</a> include the German Federal BLE Energieeffizienzprogramm (up to 40% CAPEX), Nürnberg Knoblauchsland Klimafonds, Fürth Solar+Speicher Bonus, Dutch RVO SDE++ E-Boiler &amp; EIA (40% tax deduction), French ADEME Fonds Chaleur, Spanish IVACE Agro-Energía, and California CPUC SGIP / TECH Clean California incentives.
+          Combining federal and municipal decarbonization grants compresses turnkey P2H + Heat Pump + BESS payback from 5.8 years to 2.6–3.4 years. Eligible programs indexed in our <a href="/tools/global-agri-subsidy-grant-navigator.html" style="color:#34d399; font-weight:700;">192-Program Global Agri-Subsidy Navigator</a> include the German Federal BLE Energieeffizienzprogramm (up to 40% CAPEX), Nürnberg Knoblauchsland Klimafonds, Fürth Solar+Speicher Bonus, Dutch RVO SDE++ E-Boiler &amp; EIA (40% tax deduction), French ADEME Fonds Chaleur, Spanish IVACE Agro-Energía, and California CPUC SGIP / TECH Clean California incentives.
         </p>
       </div>
     </div>
@@ -1270,6 +1270,34 @@
 </div>
 
 
+<style>
+      .inw-faq-standalone { max-width: 1060px; margin: 28px auto; padding: 24px; background: rgba(15, 23, 42, 0.88); border: 1px solid rgba(56, 189, 248, 0.28); border-radius: 16px; text-align: left; }
+      .inw-faq-standalone h2 { margin: 0 0 16px 0; font-size: 1.25rem; color: #f8fafc; font-weight: 800; }
+      .inw-faq-standalone .faq-accordion { display: flex; flex-direction: column; gap: 10px; }
+      .inw-faq-standalone .faq-item { background: rgba(30, 41, 59, 0.72); border: 1px solid rgba(148, 163, 184, 0.2); border-radius: 10px; overflow: hidden; }
+      .inw-faq-standalone .faq-summary { padding: 14px 18px; cursor: pointer; font-weight: 700; color: #e2e8f0; list-style: none; display: flex; justify-content: space-between; align-items: center; font-size: 0.96rem; }
+      .inw-faq-standalone .faq-summary::-webkit-details-marker { display: none; }
+      .inw-faq-standalone .faq-content { padding: 0 18px 14px; color: #cbd5e1; font-size: 0.9rem; line-height: 1.65; }
+    </style>
+    <!-- Frequently Asked Questions (FAQ) Section -->
+      <section class="editorial-card inw-faq-standalone">
+        <h2><span>❓</span> Frequently Asked Engineering Questions (FAQ)</h2>
+        <div class="faq-accordion">
+        <details class="faq-item">
+          <summary class="faq-summary">How does a 20 kV Power-to-Heat (P2H) electrode boiler capture negative EPEX SPOT electricity prices? <span>▾</span></summary>
+          <div class="faq-content">Midday solar and wind surges push spot prices to -30 to -100 €/MWh for 3–5 hours. A 20 kV electrode boiler ramps 0–100% in under 30 seconds at 99% thermal efficiency, getting paid to convert surplus grid power into 90 °C buffer water.</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-summary">Why pair an LFP Battery Energy Storage System (BESS) with § 19 StromNEV grid tariff rules? <span>▾</span></summary>
+          <div class="faq-content">Discharging LFP batteries during utility peak-load windows (Hochlastzeitfenster) qualifies German commercial greenhouses for § 19 Abs. 2 StromNEV atypical grid usage rebates, cutting annual capacity demand charges by up to 80%.</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-summary">What happens if thermal buffer tank stratification is poor during P2H arbitrage? <span>▾</span></summary>
+          <div class="faq-content">Without radial low-velocity diffusers (Richardson number Ri ≥ 2.0), cold return mixes into hot 90 °C water, shrinking usable energy storage capacity per m³ and blocking nighttime pipe-rail discharge.</div>
+        </details>
+        </div>
+      </section>
+
 <!-- INW-AMAZON-HARDWARE-START -->
 <section class="amazon-showcase" style="max-width: 1060px; margin: 28px auto;">
   <div class="amazon-header">
@@ -1318,19 +1346,6 @@
     <a href="/crops/greenhouse-sweet-pepper-climate-blossom-end-rot-guide.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🫑 Sweet Pepper Night Temperature & Pipe-Rail Radiation Guide →</a>
     <a href="/tools/venlocad-3d.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🏗️ VenloCAD 3D Structural & EN 13031-1 BOM Architect →</a>
     <a href="/tools/global-agri-subsidy-grant-navigator.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🏛️ Global Agri-Subsidy & USDA REAP / German BLE Grant Navigator →</a>
-  </div>
-  <h3 style="margin: 24px 0 12px 0; font-size: 1.15rem; color: #10b981; font-weight: 800;">❓ Frequently Asked Engineering Questions (Technical FAQ)</h3>
-  <div>
-    <div style="margin-bottom:14px; padding:14px 18px; background:rgba(15,23,42,0.65); border-left:3px solid #10b981; border-radius:8px;">
-      <h4 style="margin:0 0 6px 0; color:#f8fafc; font-size:0.98rem;">Why must calcium nitrate and sulfate/phosphate fertilizers be separated into A and B stock tanks?</h4>
-      <p style="margin:0; color:#cbd5e1; font-size:0.9rem; line-height:1.65;">Mixing concentrated calcium ions (Ca²⁺) with sulfate (SO₄²⁻) or orthophosphate (H₂PO₄⁻) in the same stock tank causes immediate precipitation of insoluble gypsum (CaSO₄·2H₂O) and calcium phosphate once the solubility product (Ksp) is exceeded.</p>
-    </div><div style="margin-bottom:14px; padding:14px 18px; background:rgba(15,23,42,0.65); border-left:3px solid #10b981; border-radius:8px;">
-      <h4 style="margin:0 0 6px 0; color:#f8fafc; font-size:0.98rem;">How do you calculate the required acid volume for hydroponic bicarbonate (HCO₃⁻) alkalinity neutralization?</h4>
-      <p style="margin:0; color:#cbd5e1; font-size:0.9rem; line-height:1.65;">Subtract target residual buffer alkalinity (typically 0.5 to 0.8 mmol/L HCO₃⁻ for pH 5.6–5.8 stability) from raw water bicarbonate concentration, then stoichiometry-match with nitric acid (HNO₃) or phosphoric acid (H₃PO₄) normality.</p>
-    </div><div style="margin-bottom:14px; padding:14px 18px; background:rgba(15,23,42,0.65); border-left:3px solid #10b981; border-radius:8px;">
-      <h4 style="margin:0 0 6px 0; color:#f8fafc; font-size:0.98rem;">What drain percentage and slab EC dryback should be targeted in rockwool and cocopeat substrates?</h4>
-      <p style="margin:0; color:#cbd5e1; font-size:0.9rem; line-height:1.65;">During high-radiation summer days, target 25% to 35% daily drainage fraction with an overnight volumetric water content (VWC) dryback of 8% to 12% for vegetative steering, or 12% to 18% dryback for generative steering.</p>
-    </div>
   </div>
 </section>
 <!-- INW-TSUKUBA-FUNNEL-END -->

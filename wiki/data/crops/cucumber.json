@@ -90,8 +90,8 @@
   },
   "faq_list": [
     {
-      "question": "How does leaf temperature (T_leaf) vs. air temperature (T_air) affect VPD calculation in Cucumber (Cucumis sativus)?",
-      "answer": "Standard ambient VPD calculations assume T_leaf equals T_air, which introduces a 15–35% error in Cucumber (Cucumis sativus) canopies. Under high solar radiation or HPS lighting, T_leaf exceeds T_air by +1.5°C to +3.0°C, raising internal leaf saturation vapor pressure (e_sat) and driving true leaf-to-air VPD much higher than wall sensors indicate. Conversely, under high-efficiency LED lighting without thermal IR radiation, high transpiration cools T_leaf 0.8°C to 1.5°C below T_air. Always compute VPD using an infrared leaf radiometer to prevent hidden stomatal closure or nocturnal condensation."
+      "question": "Why do high-wire greenhouse cucumbers require high humidification (0.55–0.85 kPa VPD) compared to tomatoes?",
+      "answer": "Cucumis sativus possesses broad, thin laminae with high cuticular conductance and low stomatal drought resilience; sustained VPD > 1.2 kPa causes midday wilting, epidermal fruit russeting, and Ca2+ abortion in rapidly expanding fruit within hours."
     },
     {
       "question": "What is the optimal root-zone dissolved oxygen (DO) and temperature threshold to prevent root hypoxia in Cucumis sativus?",

@@ -51,7 +51,7 @@ def _prepare_live_template(raw_template):
 def render_tsukuba_funnel(faq_items, page_id="index"):
     if build_tsukuba_bridge_block is not None and match_profile is not None:
         prof = match_profile(f"wiki/{page_id}.html")
-        return "\n" + build_tsukuba_bridge_block(prof, "en", include_faqs=True) + "\n"
+        return "\n" + build_tsukuba_bridge_block(prof, "en", include_faqs=False) + "\n"
     faq_cards = []
     for item in faq_items:
         q_txt = html.escape(str(item.get("question", "")).strip())
@@ -460,7 +460,19 @@ def build_page(template, data, crop_nav_html, topic_nav_html):
         """
         for para in edd.get("paragraphs", []):
             content_html += f'<p style="color: #e2e8f0; font-size: 1rem; line-height: 1.75; margin-top: 0; margin-bottom: 1.2rem;">{para}</p>'
+        if data.get("references"):
+            cite_pills = " ".join(
+                f'<a id="cite-{ref["id"]}" href="#ref-{ref["id"]}" title="{html.escape(str(ref.get("text", "")), quote=True)}" style="color: var(--primary); text-decoration: none; font-weight: 700; margin-right: 0.45rem;">[{ref["id"]}]</a>'
+                for ref in data["references"]
+            )
+            content_html += f'<p style="color: #94a3b8; font-size: 0.85rem; margin: 0.5rem 0 0 0;"><strong>Citations:</strong> {cite_pills}</p>'
         content_html += "</div>"
+    elif data.get("references"):
+        cite_pills = " ".join(
+            f'<a id="cite-{ref["id"]}" href="#ref-{ref["id"]}" title="{html.escape(str(ref.get("text", "")), quote=True)}" style="color: var(--primary); text-decoration: none; font-weight: 700; margin-right: 0.45rem;">[{ref["id"]}]</a>'
+            for ref in data["references"]
+        )
+        content_html += f'<p style="color: #94a3b8; font-size: 0.85rem; margin: 0 0 1.5rem 0;"><strong>Citations:</strong> {cite_pills}</p>'
 
     # Section 7: Sensor & PLC Control Protocol
     if "sensor_control_protocol" in data:

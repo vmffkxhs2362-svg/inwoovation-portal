@@ -82,42 +82,26 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "What is the primary advantage of Model Predictive Control over standard greenhouse climate computers? ▾",
+          "name": "How does the 3-Tier Global Agri-Subsidy Radar classify Federal, State, and Municipal programs?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Standard PID controllers only respond after an error has already occurred (e.g. greenhouse has already gotten too cold or too humid). MPC looks 24 to 48 hours into the future using weather forecasts and dynamic thermal models to adjust screens, vents, and heating hours in advance, avoiding costly overshoot."
+            "text": "Each of the 192 verified statutory programs across 8 countries is tagged by Jurisdiction Tier (Tier 1 National/Federal like USDA REAP or German BLE, Tier 2 State/Bundesland like BaySL or CDFA SWEEP, and Tier 3 Municipal/Air District clusters)."
           }
         },
         {
           "@type": "Question",
-          "name": "How do MQTT and LoRaWAN architectures handle harsh greenhouse radio environments? ▾",
+          "name": "Can growers combine non-dilutive energy efficiency grants with low-interest agricultural loans?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "High humidity, dense wet crop canopies, and metal truss structures attenuate 2.4GHz Wi-Fi signals severely. Sub-GHz LoRaWAN (868/915 MHz) or industrial RS-485 Modbus RTU wire loops provide robust, noise-immune transmission from sensor nodes back to the central edge PLC."
+            "text": "Yes. In the US (USDA REAP grant + loan guarantee), Germany (BLE/KfW), and South Korea (MAFRA), direct CAPEX grants stack with subsidized green loans provided combined public aid stays within statutory ceilings."
           }
         },
         {
           "@type": "Question",
-          "name": "What role do 3D digital twins play in commercial facility management? ▾",
+          "name": "How should subsidy payback compression be modeled before signing turnkey Venlo EPC contracts?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "3D WebGL digital twins visualize spatial temperature, humidity, and airflow non-uniformities that single-point aspiration box sensors fail to capture. They identify microclimate dead zones, fungal risk hotspots, and draft leaks before visible crop damage occurs."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Why must calcium nitrate and sulfate/phosphate fertilizers be separated into A and B stock tanks?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Mixing concentrated calcium ions (Ca²⁺) with sulfate (SO₄²⁻) or orthophosphate (H₂PO₄⁻) in the same stock tank causes immediate precipitation of insoluble gypsum (CaSO₄·2H₂O) and calcium phosphate once the solubility product (Ksp) is exceeded."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How do you calculate the required acid volume for hydroponic bicarbonate (HCO₃⁻) alkalinity neutralization?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Subtract target residual buffer alkalinity (typically 0.5 to 0.8 mmol/L HCO₃⁻ for pH 5.6–5.8 stability) from raw water bicarbonate concentration, then stoichiometry-match with nitric acid (HNO₃) or phosphoric acid (H₃PO₄) normality."
+            "text": "Most European and US grants require official application submission and formal approval receipt BEFORE binding equipment purchase orders are signed; include a 4–9 month disbursement bridge in project working capital."
           }
         }
       ]
@@ -1083,7 +1067,7 @@
       border-radius: 4px;
     }
 
-    /* Multi-Tier Jurisdiction & Filing Badges (v5.0 Hyper-Local Radar) */
+    /* Multi-Tier Jurisdiction & Filing Badges (v7.0 Hyper-Local Radar) */
     .tier-badge {
       display: inline-flex;
       align-items: center;
@@ -2140,7 +2124,7 @@
     <a href="/index.html" style="color: #10b981; font-weight: 800; font-size: 1.15rem; text-decoration: none; letter-spacing: -0.02em;">Inwoovation Lab</a>
     <div style="display: flex; flex-wrap: wrap; gap: 14px; font-size: 0.9rem;">
       <a href="/index.html" style="color: #e2e8f0; text-decoration: none;">Home</a>
-      <a href="/smartfarm/vpd.html" style="color: #e2e8f0; text-decoration: none;">Calculators</a>
+      <a href="/tools/index.html" style="color: #e2e8f0; text-decoration: none;">Calculators</a>
       <a href="/articles/index.html" style="color: #38bdf8; font-weight: 600; text-decoration: none;">Articles</a>
       <a href="/wiki/index.html" style="color: #e2e8f0; text-decoration: none;">Wiki</a>
       <a href="/climate/index.html" style="color: #e2e8f0; text-decoration: none;">Climate Hub</a>
@@ -2162,7 +2146,7 @@
     </div>
     <div style="display: flex; align-items: center; gap: 10px;">
       <a href="/" style="background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(56, 189, 248, 0.4); color: #38bdf8; font-weight: 700; font-size: 0.8rem; padding: 4px 12px; border-radius: 6px; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">🏠 Home</a>
-      <a href="index.html" style="color: #cbd5e1; text-decoration: none; font-size: 0.82rem;">← All 35 Tools</a>
+      <a href="index.html" style="color: #cbd5e1; text-decoration: none; font-size: 0.82rem;">← All 42 Tools</a>
       <a href="/about.html" target="_blank" rel="noopener noreferrer" style="background: linear-gradient(135deg, #06b6d4, #10b981); color: #030712; font-weight: 800; font-size: 0.8rem; padding: 4px 12px; border-radius: 6px; text-decoration: none;">⭐ GitHub (Free)</a>
     </div>
   </div>
@@ -2171,10 +2155,10 @@
 
     <!-- Hero Header -->
     <header class="hero-header">
-      <div class="hero-badge">🏛️ Verified Agricultural Incentives &amp; Grants (v5.0 Multi-Tier Hyper-Local Radar)</div>
+      <div class="hero-badge">🏛️ Verified Agricultural Incentives &amp; Grants (v7.0 Multi-Tier Hyper-Local Radar)</div>
       <h1 class="hero-title">Global Agri-Subsidy &amp; Grant Navigator</h1>
       <p class="hero-subtitle">
-        Zero-hallucination commercial agricultural &amp; CEA subsidy intelligence across <strong>Federal, State/Bundesland/Prefecture, and Municipal/Local Cluster tiers</strong>. Explore <strong id="hero-total-programs">124 premier statutory programs</strong> covering all <strong>50 US States + Air/Water Districts (CDFA SWEEP, SJVAPCD, SCAQMD, NYSERDA)</strong>, <strong>Germany (BMEL, BLE, Bayern BaySL/KULAP, NRW LWK, BW AFP)</strong>, <strong>Japan (MAFF, NARO Tsukuba, Ibaraki/Tsukuba, Kochi, Aichi/Kumamoto)</strong>, <strong>Netherlands (RVO, Greenport Westland)</strong>, <strong>France (FranceAgriMer, PACA)</strong>, <strong>Spain (MAPA, Almería)</strong>, <strong>Canada (AAFC, OMAFRA Leamington, CleanBC)</strong>, and <strong>South Korea (MAFRA, Agricultural Tech Centers, Eup-Myeon-Dong Local Offices)</strong>.
+        Zero-hallucination commercial agricultural &amp; CEA subsidy intelligence across <strong>Federal, State/Bundesland/Prefecture, and Municipal/Local Cluster tiers</strong>. Explore <strong id="hero-total-programs">192 premier statutory programs</strong> covering all <strong>50 US States + Air/Water Districts (CDFA SWEEP, SJVAPCD, SCAQMD, NYSERDA)</strong>, <strong>Germany (BMEL, BLE, Bayern BaySL/KULAP, NRW LWK, BW AFP)</strong>, <strong>Japan (MAFF, NARO Tsukuba, Ibaraki/Tsukuba, Kochi, Aichi/Kumamoto)</strong>, <strong>Netherlands (RVO, Greenport Westland)</strong>, <strong>France (FranceAgriMer, PACA)</strong>, <strong>Spain (MAPA, Almería)</strong>, <strong>Canada (AAFC, OMAFRA Leamington, CleanBC)</strong>, and <strong>South Korea (MAFRA, Agricultural Tech Centers, Eup-Myeon-Dong Local Offices)</strong>.
       </p>
     </header>
 
@@ -2183,7 +2167,7 @@
       <!-- Row 1: Country / Target-Region Cluster -->
       <div class="tier-pill-row">
         <span style="font-size: 0.82rem; font-weight: 800; color: #34d399; min-width: 145px;">📡 Country / Cluster:</span>
-        <button type="button" id="reg-pill-ALL" class="tier-pill-btn active" onclick="jumpToTargetRegion('ALL')">🌍 All Regions (<span id="cnt-reg-ALL">124</span>)</button>
+        <button type="button" id="reg-pill-ALL" class="tier-pill-btn active" onclick="jumpToTargetRegion('ALL')">🌍 All Regions (<span id="cnt-reg-ALL">192</span>)</button>
         <button type="button" id="reg-pill-US-CA" class="tier-pill-btn" onclick="jumpToTargetRegion('US-CA')">🌴 California (<span id="cnt-reg-US-CA">25</span>)</button>
         <button type="button" id="reg-pill-DE" class="tier-pill-btn" onclick="jumpToTargetRegion('DE')">🇩🇪 Germany (<span id="cnt-reg-DE">13</span>)</button>
         <button type="button" id="reg-pill-JP" class="tier-pill-btn" onclick="jumpToTargetRegion('JP')">🇯🇵 Japan (<span id="cnt-reg-JP">10</span>)</button>
@@ -2646,130 +2630,30 @@
 
     <!-- Global Portal Footer -->
     
-<!-- INW-TSUKUBA-FUNNEL-START -->
-<section class="inw-tsukuba-funnel-bridge" style="max-width: 1060px; margin: 32px auto; padding: 26px; background: rgba(15, 23, 42, 0.9); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 16px; text-align: left; box-shadow: 0 10px 28px rgba(0, 0, 0, 0.3);">
-  <h3 style="margin: 0 0 8px 0; font-size: 1.2rem; color: #10b981; font-weight: 800;">🔬 Validated Engineering Monographs, Crop Guides & Simulators</h3>
-  <p style="margin: 0 0 16px 0; font-size: 0.92rem; color: #94a3b8; line-height: 1.6;">Explore the governing physical derivations, crop-specific microclimate targets, and full-screen engineering solvers connected to this page:</p>
-  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px;">
-    <a href="/articles/article-26-greenhouse-heating-load-din-v-18599.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">Vol. 26: DIN V 18599 Greenhouse Thermal Energy Balance & Screen Physics →</a>
-    <a href="/articles/article-43-greenhouse-structural-standards-en13031.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">Vol. 43: EN 13031-1 Commercial Venlo Structural Wind & Snow Load Engineering →</a>
-    <a href="/articles/article-28-greenhouse-co2-enrichment-economics.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">Vol. 28: CHP Cogeneration & CO₂ Enrichment Economics →</a>
-    <a href="/crops/greenhouse-tomato-microclimate-vpd-steering-guide.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🍅 Commercial High-Wire Tomato Thermal & Rail-Pipe Heating Guide →</a>
-    <a href="/crops/greenhouse-sweet-pepper-climate-blossom-end-rot-guide.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🫑 Sweet Pepper Night Temperature & Pipe-Rail Radiation Guide →</a>
-    <a href="/tools/venlocad-3d.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🏗️ VenloCAD 3D Structural & EN 13031-1 BOM Architect →</a>
-    <a href="/tools/global-agri-subsidy-grant-navigator.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🏛️ Global Agri-Subsidy & USDA REAP / German BLE Grant Navigator →</a>
-  </div>
-  <h3 style="margin: 24px 0 12px 0; font-size: 1.15rem; color: #10b981; font-weight: 800;">❓ Frequently Asked Engineering Questions (Technical FAQ)</h3>
-  <div>
-    <div style="margin-bottom:14px; padding:14px 18px; background:rgba(15,23,42,0.65); border-left:3px solid #10b981; border-radius:8px;">
-      <h4 style="margin:0 0 6px 0; color:#f8fafc; font-size:0.98rem;">What is the primary advantage of Model Predictive Control over standard greenhouse climate computers? ▾</h4>
-      <p style="margin:0; color:#cbd5e1; font-size:0.9rem; line-height:1.65;">Standard PID controllers only respond after an error has already occurred (e.g. greenhouse has already gotten too cold or too humid). MPC looks 24 to 48 hours into the future using weather forecasts and dynamic thermal models to adjust screens, vents, and heating hours in advance, avoiding costly overshoot.</p>
-    </div><div style="margin-bottom:14px; padding:14px 18px; background:rgba(15,23,42,0.65); border-left:3px solid #10b981; border-radius:8px;">
-      <h4 style="margin:0 0 6px 0; color:#f8fafc; font-size:0.98rem;">How do MQTT and LoRaWAN architectures handle harsh greenhouse radio environments? ▾</h4>
-      <p style="margin:0; color:#cbd5e1; font-size:0.9rem; line-height:1.65;">High humidity, dense wet crop canopies, and metal truss structures attenuate 2.4GHz Wi-Fi signals severely. Sub-GHz LoRaWAN (868/915 MHz) or industrial RS-485 Modbus RTU wire loops provide robust, noise-immune transmission from sensor nodes back to the central edge PLC.</p>
-    </div><div style="margin-bottom:14px; padding:14px 18px; background:rgba(15,23,42,0.65); border-left:3px solid #10b981; border-radius:8px;">
-      <h4 style="margin:0 0 6px 0; color:#f8fafc; font-size:0.98rem;">What role do 3D digital twins play in commercial facility management? ▾</h4>
-      <p style="margin:0; color:#cbd5e1; font-size:0.9rem; line-height:1.65;">3D WebGL digital twins visualize spatial temperature, humidity, and airflow non-uniformities that single-point aspiration box sensors fail to capture. They identify microclimate dead zones, fungal risk hotspots, and draft leaks before visible crop damage occurs.</p>
-    </div><div style="margin-bottom:14px; padding:14px 18px; background:rgba(15,23,42,0.65); border-left:3px solid #10b981; border-radius:8px;">
-      <h4 style="margin:0 0 6px 0; color:#f8fafc; font-size:0.98rem;">Why must calcium nitrate and sulfate/phosphate fertilizers be separated into A and B stock tanks?</h4>
-      <p style="margin:0; color:#cbd5e1; font-size:0.9rem; line-height:1.65;">Mixing concentrated calcium ions (Ca²⁺) with sulfate (SO₄²⁻) or orthophosphate (H₂PO₄⁻) in the same stock tank causes immediate precipitation of insoluble gypsum (CaSO₄·2H₂O) and calcium phosphate once the solubility product (Ksp) is exceeded.</p>
-    </div><div style="margin-bottom:14px; padding:14px 18px; background:rgba(15,23,42,0.65); border-left:3px solid #10b981; border-radius:8px;">
-      <h4 style="margin:0 0 6px 0; color:#f8fafc; font-size:0.98rem;">How do you calculate the required acid volume for hydroponic bicarbonate (HCO₃⁻) alkalinity neutralization?</h4>
-      <p style="margin:0; color:#cbd5e1; font-size:0.9rem; line-height:1.65;">Subtract target residual buffer alkalinity (typically 0.5 to 0.8 mmol/L HCO₃⁻ for pH 5.6–5.8 stability) from raw water bicarbonate concentration, then stoichiometry-match with nitric acid (HNO₃) or phosphoric acid (H₃PO₄) normality.</p>
-    </div>
-  </div>
-</section>
-<!-- INW-TSUKUBA-FUNNEL-END -->
 
-<footer>
-      <p>Inwoovation Engineering Intelligence • Zero-Hallucination Biophysical Horticultural Suite</p>
-      <p style="font-size: 0.78rem; margin-top: 4px;">Data compiled directly from official government program guidelines (CDFA, CARB, CEC, USDA, BLE, RVO, MAFRA). Verification Date: 2026-09-07.</p>
-        <div class="inw-trust-links" style="margin-top:16px; padding-top:14px; border-top:1px solid rgba(148,163,184,0.16); display:flex; justify-content:center; align-items:center; flex-wrap:wrap; gap:16px; font-size:0.84rem; color:#94a3b8;">
-      <a href="/index.html" style="color:#94a3b8; text-decoration:none; font-weight:600;">Home</a>
-      <a href="/about.html" style="color:#94a3b8; text-decoration:none; font-weight:600;">About Lab</a>
-      <a href="/contact.html" style="color:#94a3b8; text-decoration:none; font-weight:600;">Contact</a>
-      <a href="/privacy-policy.html" style="color:#94a3b8; text-decoration:none; font-weight:600;">Privacy Policy</a>
-      <a href="/terms-of-service.html" style="color:#94a3b8; text-decoration:none; font-weight:600;">Terms of Service</a>
-    </div>
-  </footer>
 
-  </div>
-
-  <!-- Deep 7-Point Farmer Dossier Modal -->
-  <div id="policy-modal" class="modal-backdrop" onclick="closeModalOnBackdrop(event)">
-    <div class="modal-box" onclick="event.stopPropagation()">
-      <button class="modal-close-btn" onclick="closeModalDirect()" aria-label="Close Dossier">✕</button>
-      
-      <div id="modal-content-container">
-        <!-- Injected via JavaScript -->
-      </div>
-    </div>
-  </div>
 
     <!-- START: INJECTED EDITORIAL & AMAZON ASSOCIATES HARDWARE MODULE -->
     <div class="tool-editorial-wrapper">
       
-      <!-- Technical Theory & Mathematical Formulation -->
-      <section class="editorial-card">
-        <h2><span>🤖</span> Engineering Theory & Biophysical Principles</h2>
-        <p>Modern commercial greenhouse operations are rapidly transitioning from reactive feedback PID loops to predictive, physics-informed autonomous controllers. A digital twin combines dynamic greenhouse energy balances (solar heat gain, long-wave radiation loss, ground conduction) with physiological crop models (canopy photosynthesis, transpiration). By ingesting external weather station forecasts (solar irradiance, wind velocity, ambient temperature), Model Predictive Control (MPC) algorithms solve multi-objective optimization problems every 5 minutes. This enables anticipatory thermal screen deployment before outdoor temperatures plummet, pre-charging solar thermal buffer tanks, and dynamic peak-electricity shaving.</p>
-        
-        <h3>Governing Equations & Mathematical Model</h3>
-        <div class="formula-box">
-MPC Objective Function:
-  J = ∑ [ w_yield · (A_net - Target)² + w_energy · (Cost_gas + Cost_elec) + w_smooth · (Δu)² ]
-Subject to State Constraints:
-  • T_min ≤ T_canopy(t) ≤ T_max
-  • VPD_min ≤ VPD(t) ≤ VPD_max
-  • Window_aperture_rate ≤ max_speed
-        </div>
-
-        <h3>Commercial Greenhouse Setpoints & Benchmark Matrix</h3>
-        <div class="benchmark-table-wrapper">
-          <table class="benchmark-table">
-            <thead>
-              <tr>
-                <th>Crop / System State</th>
-                <th>Target Setpoint</th>
-                <th>Engineering Range</th>
-                <th>Operational Impact</th>
-              </tr>
-            </thead>
-            <tbody>
-<tr><td><strong>IoT Telemetry Frequency (MQTT)</strong></td><td>Every 10 – 30 seconds</td><td>QoS 1 telemetry stream to edge gateway</td><td>-</td></tr>
-<tr><td><strong>MPC Optimization Horizon</strong></td><td>24 – 48 Hours Ahead</td><td>Predictive rolling horizon with 5-minute step resolution</td><td>-</td></tr>
-<tr><td><strong>Energy Cost Reduction via MPC</strong></td><td>15 – 28%</td><td>Compared to traditional setpoint day/night thermostat loops</td><td>-</td></tr>
-<tr><td><strong>Thermal Stratification in Buffer Tank</strong></td><td>Top: 85 – 95°C | Bottom: 35 – 45°C</td><td>Sharp thermocline ensures maximum boiler heat recovery</td><td>-</td></tr>
-
-            </tbody>
-          </table>
-        </div>
-      </section>
-
       <!-- Frequently Asked Questions (FAQ) Section -->
       <section class="editorial-card">
         <h2><span>❓</span> Frequently Asked Engineering Questions (FAQ)</h2>
         <div class="faq-accordion">
-
         <details class="faq-item">
-          <summary class="faq-summary">What is the primary advantage of Model Predictive Control over standard greenhouse climate computers? <span>▾</span></summary>
-          <div class="faq-content">Standard PID controllers only respond after an error has already occurred (e.g. greenhouse has already gotten too cold or too humid). MPC looks 24 to 48 hours into the future using weather forecasts and dynamic thermal models to adjust screens, vents, and heating hours in advance, avoiding costly overshoot.</div>
+          <summary class="faq-summary">How does the 3-Tier Global Agri-Subsidy Radar classify Federal, State, and Municipal programs? <span>▾</span></summary>
+          <div class="faq-content">Each of the 192 verified statutory programs across 8 countries is tagged by Jurisdiction Tier (Tier 1 National/Federal like USDA REAP or German BLE, Tier 2 State/Bundesland like BaySL or CDFA SWEEP, and Tier 3 Municipal/Air District clusters).</div>
         </details>
-        
         <details class="faq-item">
-          <summary class="faq-summary">How do MQTT and LoRaWAN architectures handle harsh greenhouse radio environments? <span>▾</span></summary>
-          <div class="faq-content">High humidity, dense wet crop canopies, and metal truss structures attenuate 2.4GHz Wi-Fi signals severely. Sub-GHz LoRaWAN (868/915 MHz) or industrial RS-485 Modbus RTU wire loops provide robust, noise-immune transmission from sensor nodes back to the central edge PLC.</div>
+          <summary class="faq-summary">Can growers combine non-dilutive energy efficiency grants with low-interest agricultural loans? <span>▾</span></summary>
+          <div class="faq-content">Yes. In the US (USDA REAP grant + loan guarantee), Germany (BLE/KfW), and South Korea (MAFRA), direct CAPEX grants stack with subsidized green loans provided combined public aid stays within statutory ceilings.</div>
         </details>
-        
         <details class="faq-item">
-          <summary class="faq-summary">What role do 3D digital twins play in commercial facility management? <span>▾</span></summary>
-          <div class="faq-content">3D WebGL digital twins visualize spatial temperature, humidity, and airflow non-uniformities that single-point aspiration box sensors fail to capture. They identify microclimate dead zones, fungal risk hotspots, and draft leaks before visible crop damage occurs.</div>
+          <summary class="faq-summary">How should subsidy payback compression be modeled before signing turnkey Venlo EPC contracts? <span>▾</span></summary>
+          <div class="faq-content">Most European and US grants require official application submission and formal approval receipt BEFORE binding equipment purchase orders are signed; include a 4–9 month disbursement bridge in project working capital.</div>
         </details>
-        
         </div>
-      </section>
-
-      <!-- Recommended Hardware & Amazon Associates Monetization -->
+      </section><!-- Recommended Hardware & Amazon Associates Monetization -->
       <section class="amazon-showcase">
         <div class="amazon-header">
           <h3><span>🛒</span> Recommended Precision Field Hardware (Amazon)</h3>
@@ -2810,7 +2694,47 @@ Subject to State Constraints:
     <!-- END: INJECTED EDITORIAL & AMAZON ASSOCIATES HARDWARE MODULE -->
     
 
-  <script>
+  
+<!-- INW-TSUKUBA-FUNNEL-START -->
+<section class="inw-tsukuba-funnel-bridge" style="max-width: 1060px; margin: 32px auto; padding: 26px; background: rgba(15, 23, 42, 0.9); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 16px; text-align: left; box-shadow: 0 10px 28px rgba(0, 0, 0, 0.3);">
+  <h3 style="margin: 0 0 8px 0; font-size: 1.2rem; color: #10b981; font-weight: 800;">🔬 Validated Engineering Monographs, Crop Guides & Simulators</h3>
+  <p style="margin: 0 0 16px 0; font-size: 0.92rem; color: #94a3b8; line-height: 1.6;">Explore the governing physical derivations, crop-specific microclimate targets, and full-screen engineering solvers connected to this page:</p>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px;">
+    <a href="/articles/article-26-greenhouse-heating-load-din-v-18599.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">Vol. 26: DIN V 18599 Greenhouse Thermal Energy Balance & Screen Physics →</a>
+    <a href="/articles/article-43-greenhouse-structural-standards-en13031.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">Vol. 43: EN 13031-1 Commercial Venlo Structural Wind & Snow Load Engineering →</a>
+    <a href="/articles/article-28-greenhouse-co2-enrichment-economics.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">Vol. 28: CHP Cogeneration & CO₂ Enrichment Economics →</a>
+    <a href="/crops/greenhouse-tomato-microclimate-vpd-steering-guide.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🍅 Commercial High-Wire Tomato Thermal & Rail-Pipe Heating Guide →</a>
+    <a href="/crops/greenhouse-sweet-pepper-climate-blossom-end-rot-guide.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🫑 Sweet Pepper Night Temperature & Pipe-Rail Radiation Guide →</a>
+    <a href="/tools/venlocad-3d.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🏗️ VenloCAD 3D Structural & EN 13031-1 BOM Architect →</a>
+    <a href="/tools/global-agri-subsidy-grant-navigator.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🏛️ Global Agri-Subsidy & USDA REAP / German BLE Grant Navigator →</a>
+  </div>
+</section>
+<!-- INW-TSUKUBA-FUNNEL-END -->
+
+<footer>
+      <p>Inwoovation Engineering Intelligence • Zero-Hallucination Biophysical Horticultural Suite</p>
+      <p style="font-size: 0.78rem; margin-top: 4px;">Data compiled directly from official government program guidelines (CDFA, CARB, CEC, USDA, BLE, RVO, MAFRA). Verification Date: 2026-09-07.</p>
+        <div class="inw-trust-links" style="margin-top:16px; padding-top:14px; border-top:1px solid rgba(148,163,184,0.16); display:flex; justify-content:center; align-items:center; flex-wrap:wrap; gap:16px; font-size:0.84rem; color:#94a3b8;">
+      <a href="/index.html" style="color:#94a3b8; text-decoration:none; font-weight:600;">Home</a>
+      <a href="/about.html" style="color:#94a3b8; text-decoration:none; font-weight:600;">About Lab</a>
+      <a href="/contact.html" style="color:#94a3b8; text-decoration:none; font-weight:600;">Contact</a>
+      <a href="/privacy-policy.html" style="color:#94a3b8; text-decoration:none; font-weight:600;">Privacy Policy</a>
+      <a href="/terms-of-service.html" style="color:#94a3b8; text-decoration:none; font-weight:600;">Terms of Service</a>
+    </div>
+  </footer>
+
+  </div>
+
+  <!-- Deep 7-Point Farmer Dossier Modal -->
+  <div id="policy-modal" class="modal-backdrop" onclick="closeModalOnBackdrop(event)">
+    <div class="modal-box" onclick="event.stopPropagation()">
+      <button class="modal-close-btn" onclick="closeModalDirect()" aria-label="Close Dossier">✕</button>
+      
+      <div id="modal-content-container">
+        <!-- Injected via JavaScript -->
+      </div>
+    </div>
+  </div><script>
     // Embedded 7-Point Farmer Subsidy Database (Works 100% Standalone & Air-Gapped)
     let SUB_DATA = window.__SUB_DATA_BUNDLE__ || { metadata: {}, categories: [], jurisdictions: [], countries: [], programs: [] };
     let LAST_FILTERED_PROGRAMS = [];

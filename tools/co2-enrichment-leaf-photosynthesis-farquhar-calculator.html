@@ -102,26 +102,26 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Why must calcium nitrate and sulfate/phosphate fertilizers be separated into A and B stock tanks?",
+          "name": "Why does increasing greenhouse CO₂ from 420 ppm to 900–1,000 ppm boost C3 crop yield by 20–30%?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Mixing concentrated calcium ions (Ca²⁺) with sulfate (SO₄²⁻) or orthophosphate (H₂PO₄⁻) in the same stock tank causes immediate precipitation of insoluble gypsum (CaSO₄·2H₂O) and calcium phosphate once the solubility product (Ksp) is exceeded."
+            "text": "Tomato, cucumber, pepper, and lettuce use C3 Rubisco carbon fixation, where atmospheric O₂ competes with CO₂ (photorespiration). Elevating intercellular CO₂ suppresses photorespiratory losses and increases light-saturated RuBP carboxylation rates."
           }
         },
         {
           "@type": "Question",
-          "name": "How do you calculate the required acid volume for hydroponic bicarbonate (HCO₃⁻) alkalinity neutralization?",
+          "name": "At what roof vent opening does greenhouse CO₂ enrichment become uneconomical?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Subtract target residual buffer alkalinity (typically 0.5 to 0.8 mmol/L HCO₃⁻ for pH 5.6–5.8 stability) from raw water bicarbonate concentration, then stoichiometry-match with nitric acid (HNO₃) or phosphoric acid (H₃PO₄) normality."
+            "text": "Above 15–20% ridge vent aperture or > 1.5–2.0 ACH air exchange, purge leakage dominates canopy uptake. Above this threshold, climate computers drop target CO₂ from 1,000 ppm to maintenance levels (450–600 ppm)."
           }
         },
         {
           "@type": "Question",
-          "name": "What drain percentage and slab EC dryback should be targeted in rockwool and cocopeat substrates?",
+          "name": "How does Farquhar leaf biochemistry separate Rubisco-limited vs. RuBP-regeneration-limited photosynthesis?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "During high-radiation summer days, target 25% to 35% daily drainage fraction with an overnight volumetric water content (VWC) dryback of 8% to 12% for vegetative steering, or 12% to 18% dryback for generative steering."
+            "text": "At low light or high CO₂, electron transport rate (J_max) limits RuBP regeneration; at high irradiance and lower CO₂, active Rubisco capacity (V_cmax) caps assimilation. Optimal greenhouses balance PPFD and CO₂ along this co-limitation curve."
           }
         }
       ]
@@ -147,7 +147,7 @@
     <a href="/index.html" style="color: #10b981; font-weight: 800; font-size: 1.15rem; text-decoration: none; letter-spacing: -0.02em;">Inwoovation Lab</a>
     <div style="display: flex; flex-wrap: wrap; gap: 14px; font-size: 0.9rem;">
       <a href="/index.html" style="color: #e2e8f0; text-decoration: none;">Home</a>
-      <a href="/smartfarm/vpd.html" style="color: #e2e8f0; text-decoration: none;">Calculators</a>
+      <a href="/tools/index.html" style="color: #e2e8f0; text-decoration: none;">Calculators</a>
       <a href="/articles/index.html" style="color: #38bdf8; font-weight: 600; text-decoration: none;">Articles</a>
       <a href="/wiki/index.html" style="color: #e2e8f0; text-decoration: none;">Wiki</a>
       <a href="/climate/index.html" style="color: #e2e8f0; text-decoration: none;">Climate Hub</a>
@@ -232,65 +232,24 @@
     <div class="tool-editorial-wrapper">
       
       <!-- Technical Theory & Mathematical Formulation -->
-      <section class="editorial-card">
-        <h2><span>💨</span> Engineering Theory & Biophysical Principles</h2>
-        <p>Carbon dioxide (CO2) is the primary carbon substrate for the photosynthetic light-independent Calvin cycle. Under atmospheric levels (~420 ppm), C3 horticultural crops (tomatoes, peppers, cucumbers) operate in a state of severe RuBisCO carbon starvation. The enzyme ribulose-1,5-bisphosphate carboxylase-oxygenase (RuBisCO) exhibits bifunctional catalytic behavior: it reacts with CO2 to synthesize 3-phosphoglycerate, but also reacts with O2 (oxygenation), generating 2-phosphoglycolate—a toxic byproduct that requires energy-intensive photorespiratory recycling, wasting up to 25–40% of captured solar energy. Enriching commercial greenhouse atmospheres to 800–1,200 ppm suppresses RuBisCO oxygenase activity, increasing net carboxylation rate by 30–50% and elevating light saturation thresholds.</p>
-        
-        <h3>Governing Equations & Mathematical Model</h3>
-        <div class="formula-box">
-Net CO2 Exchange: A_net = min(A_c, A_j) - R_d
-Where:
-  • A_c: RuBisCO-limited carboxylation = [V_cmax × (C_c - Γ*)] / [C_c + K_c × (1 + O_i / K_o)]
-  • A_j: RuBP regeneration rate = [J × (C_c - Γ*)] / (4 × C_c + 8 × Γ*)
-  • Injection Mass Balance: M_inject = V_greenhouse × dC/dt + Q_vent × (C_inside - C_ambient) + A_canopy
-        </div>
-
-        <h3>Commercial Greenhouse Setpoints & Benchmark Matrix</h3>
-        <div class="benchmark-table-wrapper">
-          <table class="benchmark-table">
-            <thead>
-              <tr>
-                <th>Crop / System State</th>
-                <th>Target Setpoint</th>
-                <th>Engineering Range</th>
-                <th>Operational Impact</th>
-              </tr>
-            </thead>
-            <tbody>
-<tr><td><strong>Closed Greenhouse (Winter/Spring)</strong></td><td>800 – 1,200 ppm</td><td>Maximum economic efficiency, minimal ventilation loss</td><td>+35% yield gain</td></tr>
-<tr><td><strong>Semi-Open Greenhouse (Moderate Venting)</strong></td><td>600 – 800 ppm</td><td>Dosing throttled by roof window aperture > 15%</td><td>+20% yield gain</td></tr>
-<tr><td><strong>Fully Vented Greenhouse (Summer Peak)</strong></td><td>420 – 500 ppm</td><td>Maintain ambient level, prevent canopy CO2 depletion dip (<350 ppm)</td><td>Prevents yield loss</td></tr>
-<tr><td><strong>Flue Gas SCR Direct Injected CO2</strong></td><td>< 0.05 ppm CO</td><td>< 0.1 ppm NOx</td><td>< 0.005 ppm Ethylene (C2H4)</td></tr>
-
-            </tbody>
-          </table>
-        </div>
-      </section>
-
       <!-- Frequently Asked Questions (FAQ) Section -->
       <section class="editorial-card">
         <h2><span>❓</span> Frequently Asked Engineering Questions (FAQ)</h2>
         <div class="faq-accordion">
-
         <details class="faq-item">
-          <summary class="faq-summary">Why does greenhouse CO2 concentration drop below atmospheric levels if no enrichment is provided? <span>▾</span></summary>
-          <div class="faq-content">A mature greenhouse tomato canopy with a Leaf Area Index (LAI) of 3.5 can consume between 25 and 45 grams of CO2 per square meter every hour under high solar irradiance. In a sealed winter greenhouse, the crop can deplete ambient CO2 from 420 ppm down to 180 ppm within 90 minutes, halting all growth.</div>
+          <summary class="faq-summary">Why does increasing greenhouse CO₂ from 420 ppm to 900–1,000 ppm boost C3 crop yield by 20–30%? <span>▾</span></summary>
+          <div class="faq-content">Tomato, cucumber, pepper, and lettuce use C3 Rubisco carbon fixation, where atmospheric O₂ competes with CO₂ (photorespiration). Elevating intercellular CO₂ suppresses photorespiratory losses and increases light-saturated RuBP carboxylation rates.</div>
         </details>
-        
         <details class="faq-item">
-          <summary class="faq-summary">What are the primary hazards of using boiler or CHP flue gas for CO2 dosing? <span>▾</span></summary>
-          <div class="faq-content">Incomplete combustion generates carbon monoxide (CO), nitrogen dioxide (NO2), and ethylene (C2H4). Ethylene concentrations as low as 0.01 ppm induce flower abortion and leaf epinasty. Modern systems must utilize Selective Catalytic Reduction (SCR) with continuous urea dosing to eliminate toxic gases.</div>
+          <summary class="faq-summary">At what roof vent opening does greenhouse CO₂ enrichment become uneconomical? <span>▾</span></summary>
+          <div class="faq-content">Above 15–20% ridge vent aperture or &gt; 1.5–2.0 ACH air exchange, purge leakage dominates canopy uptake. Above this threshold, climate computers drop target CO₂ from 1,000 ppm to maintenance levels (450–600 ppm).</div>
         </details>
-        
         <details class="faq-item">
-          <summary class="faq-summary">What is the economic marginal return threshold for summer CO2 enrichment? <span>▾</span></summary>
-          <div class="faq-content">When roof ventilators exceed 25–30% opening, the air exchange rate (ACH) exceeds 30–50 air changes per hour. At this rate, over 85% of injected pure liquid CO2 is lost immediately to the external atmosphere, causing the marginal cost of gas to exceed the marginal revenue of incremental crop biomass.</div>
+          <summary class="faq-summary">How does Farquhar leaf biochemistry separate Rubisco-limited vs. RuBP-regeneration-limited photosynthesis? <span>▾</span></summary>
+          <div class="faq-content">At low light or high CO₂, electron transport rate (J_max) limits RuBP regeneration; at high irradiance and lower CO₂, active Rubisco capacity (V_cmax) caps assimilation. Optimal greenhouses balance PPFD and CO₂ along this co-limitation curve.</div>
         </details>
-        
         </div>
-      </section>
-
-      <!-- Recommended Hardware & Amazon Associates Monetization -->
+      </section><!-- Recommended Hardware & Amazon Associates Monetization -->
       <section class="amazon-showcase">
         <div class="amazon-header">
           <h3><span>🛒</span> Recommended Precision Field Hardware (Amazon)</h3>
@@ -397,19 +356,6 @@ Where:
     <a href="/crops/greenhouse-cucumber-high-humidity-transpiration-guide.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🥒 Greenhouse Cucumber High-Radiation CO₂ Assimilation Guide →</a>
     <a href="/tools/co2-enrichment-leaf-photosynthesis-farquhar-calculator.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🫧 Farquhar-FvCB Leaf Photosynthesis & CO₂ Enrichment Solver →</a>
     <a href="/tools/greenhouse-natural-ventilation-buoyancy-airflow-calculator.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🌬️ Roof Ventilation Buoyancy & Air-Exchange (ACH) Calculator →</a>
-  </div>
-  <h3 style="margin: 24px 0 12px 0; font-size: 1.15rem; color: #10b981; font-weight: 800;">❓ Frequently Asked Engineering Questions (Technical FAQ)</h3>
-  <div>
-    <div style="margin-bottom:14px; padding:14px 18px; background:rgba(15,23,42,0.65); border-left:3px solid #10b981; border-radius:8px;">
-      <h4 style="margin:0 0 6px 0; color:#f8fafc; font-size:0.98rem;">Why must calcium nitrate and sulfate/phosphate fertilizers be separated into A and B stock tanks?</h4>
-      <p style="margin:0; color:#cbd5e1; font-size:0.9rem; line-height:1.65;">Mixing concentrated calcium ions (Ca²⁺) with sulfate (SO₄²⁻) or orthophosphate (H₂PO₄⁻) in the same stock tank causes immediate precipitation of insoluble gypsum (CaSO₄·2H₂O) and calcium phosphate once the solubility product (Ksp) is exceeded.</p>
-    </div><div style="margin-bottom:14px; padding:14px 18px; background:rgba(15,23,42,0.65); border-left:3px solid #10b981; border-radius:8px;">
-      <h4 style="margin:0 0 6px 0; color:#f8fafc; font-size:0.98rem;">How do you calculate the required acid volume for hydroponic bicarbonate (HCO₃⁻) alkalinity neutralization?</h4>
-      <p style="margin:0; color:#cbd5e1; font-size:0.9rem; line-height:1.65;">Subtract target residual buffer alkalinity (typically 0.5 to 0.8 mmol/L HCO₃⁻ for pH 5.6–5.8 stability) from raw water bicarbonate concentration, then stoichiometry-match with nitric acid (HNO₃) or phosphoric acid (H₃PO₄) normality.</p>
-    </div><div style="margin-bottom:14px; padding:14px 18px; background:rgba(15,23,42,0.65); border-left:3px solid #10b981; border-radius:8px;">
-      <h4 style="margin:0 0 6px 0; color:#f8fafc; font-size:0.98rem;">What drain percentage and slab EC dryback should be targeted in rockwool and cocopeat substrates?</h4>
-      <p style="margin:0; color:#cbd5e1; font-size:0.9rem; line-height:1.65;">During high-radiation summer days, target 25% to 35% daily drainage fraction with an overnight volumetric water content (VWC) dryback of 8% to 12% for vegetative steering, or 12% to 18% dryback for generative steering.</p>
-    </div>
   </div>
 </section>
 <!-- INW-TSUKUBA-FUNNEL-END -->

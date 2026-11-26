@@ -26,8 +26,8 @@
     "cat": "article",
     "url": "guides.html",
     "icon": "📚",
-    "desc": "78-volume (199 EN/DE/JA editions) open-access CEA engineering library covering VPD physics, DLI photobiology, fertigation, CHP heat, and smart grants.",
-    "tags": "guides html cea amp greenhouse engineering articles 78 volume 199 en de ja editions open access cea engineering library covering vpd physics dli photobiology fertigation chp heat and smart g"
+    "desc": "78-volume (214 EN/DE/JA editions) open-access CEA engineering library covering VPD physics, DLI photobiology, fertigation, CHP heat, and smart grants.",
+    "tags": "guides html cea amp greenhouse engineering articles 78 volume 214 en de ja editions open access cea engineering library covering vpd physics dli photobiology fertigation chp heat and smart g"
   },
   {
     "title": "Inwoovation Lab",
@@ -50,8 +50,8 @@
     "cat": "tool",
     "url": "quiz.html",
     "icon": "🛠️",
-    "desc": "Test your greenhouse biophysics mastery across 10 engineering questions on VPD, DLI, DIN V 18599, and fertigation to earn a free digital certificate.",
-    "tags": "quiz html opencea biophysics quiz amp certificate test your greenhouse biophysics mastery across 10 engineering questions on vpd dli din v 18599 and fertigation to earn a free digital certif"
+    "desc": "Test your greenhouse biophysics mastery across 30 engineering questions on VPD, DLI, DIN V 18599, and fertigation to earn a free digital certificate.",
+    "tags": "quiz html opencea biophysics quiz amp certificate test your greenhouse biophysics mastery across 30 engineering questions on vpd dli din v 18599 and fertigation to earn a free digital certif"
   },
   {
     "title": "Open-Access AgTech Engineering Repository",
@@ -698,8 +698,8 @@
     "cat": "article",
     "url": "articles/index.html",
     "icon": "📚",
-    "desc": "Multilingual library of 197 horticultural engineering articles on VPD psychrometrics, DIN V 18599 heating loads, FvCB CO2 kinetics, and MPC control.",
-    "tags": "articles index html cea amp greenhouse engineering articles library multilingual library of 197 horticultural engineering articles on vpd psychrometrics din v 18599 heating loads fvcb co2 ki"
+    "desc": "Multilingual library of 214 horticultural engineering articles on VPD psychrometrics, DIN V 18599 heating loads, FvCB CO2 kinetics, and MPC control.",
+    "tags": "articles index html cea amp greenhouse engineering articles library multilingual library of 214 horticultural engineering articles on vpd psychrometrics din v 18599 heating loads fvcb co2 ki"
   },
   {
     "title": "VPD-Meisterklasse im Gewächshaus",
@@ -2262,12 +2262,12 @@
     "tags": "crops vertical farm lettuce leafy greens tipburn prevention guide html controlled environment leafy greens amp lettuce precision cea engineering guide for controlled environment leafy greens"
   },
   {
-    "title": "The CEA Biophysics &amp; Greenhouse Engineering",
+    "title": "CEA Biophysics &amp; Engineering Handbook (214 Ed.)",
     "cat": "article",
     "url": "handbooks/index.html",
     "icon": "📖",
-    "desc": "Open-access six-part Controlled Environment Agriculture compendium indexing 78 volumes (214 EN/DE/JA editions), 42 live biophysical calculators, and 192.",
-    "tags": "handbooks index html the cea biophysics amp greenhouse engineering open access six part controlled environment agriculture compendium indexing 78 volumes 214 en de ja editions 42 live biophy"
+    "desc": "Open-access 6-part CEA engineering compendium indexing 78 volumes (214 EN/DE/JA editions), 42 live biophysical calculators, and 192 global grants.",
+    "tags": "handbooks index html cea biophysics amp engineering handbook 214 ed open access 6 part cea engineering compendium indexing 78 volumes 214 en de ja editions 42 live biophysical calculators an"
   },
   {
     "title": "AgriMaster",
@@ -2286,12 +2286,12 @@
     "tags": "parts vacuum systems html vacuum systems engineering amp semiconductor industrial vacuum engineering catalog amp mechatronics specification suite featuring thermal evaporators dev magnetron "
   },
   {
-    "title": "Deutscher Meisterfunk: Podcast für moderne",
+    "title": "Deutscher Meisterfunk: Agrartechnik-Podcast",
     "cat": "article",
     "url": "podcasts/index.html",
     "icon": "🎙️",
     "desc": "Der deutsche Lernpodcast für Gewächshaustechnik, Nachrichten, Wissenschaft und die Gärtnermeister-Karriere. Gesprochen in langsamem, deutlichem Deutsch (A2/B1).",
-    "tags": "podcasts index html deutscher meisterfunk podcast für moderne der deutsche lernpodcast für gewächshaustechnik nachrichten wissenschaft und die gärtnermeister karriere gesprochen in langsamem"
+    "tags": "podcasts index html deutscher meisterfunk agrartechnik podcast der deutsche lernpodcast für gewächshaustechnik nachrichten wissenschaft und die gärtnermeister karriere gesprochen in langsame"
   },
   {
     "title": "About Smart Farm Engineering Lab",
@@ -2714,8 +2714,8 @@
     "cat": "tool",
     "url": "tools/index.html",
     "icon": "🛠️",
-    "desc": "A comprehensive suite of 42 industrial-grade commercial greenhouse engineering calculators, 3D WebGL digital twin simulators, 192-grant global agri-subsidy.",
-    "tags": "tools index html greenhouse amp controlled environment engineering a comprehensive suite of 42 industrial grade commercial greenhouse engineering calculators 3d webgl digital twin simulators"
+    "desc": "Suite of 42 commercial greenhouse engineering calculators, 3D WebGL digital twins, and the 192-grant global agri-subsidy radar.",
+    "tags": "tools index html greenhouse amp controlled environment engineering suite of 42 commercial greenhouse engineering calculators 3d webgl digital twins and the 192 grant global agri subsidy rada"
   },
   {
     "title": "Greenhouse Nutrient Uptake Concentration Factor",
@@ -3517,10 +3517,11 @@
       safeSet(RECENT_KEY, JSON.stringify(recent.slice(0, 6)));
     } catch (e) {}
 
-    // Collect persistable controls with explicit IDs
-    const IGNORED_IDS = new Set(['inw-palette-input', 'home-quick-finder', 'rfqName', 'rfqCompany', 'rfqEmail', 'rfqLocation']);
+    // Collect persistable controls with explicit IDs + custom interactive widgets (42/42 coverage)
+    const IGNORED_IDS = new Set(['inw-palette-input', 'home-quick-finder', 'rfqName', 'rfqCompany', 'rfqEmail', 'rfqLocation', 'fileInput', 'vcad-file-input']);
+    const CONTROL_SELECTOR = 'input[type="range"], input[type="number"], select, textarea[id]';
     function getPersistableControls() {
-      return Array.from(document.querySelectorAll('input[type="range"], input[type="number"], select')).filter(el => {
+      return Array.from(document.querySelectorAll(CONTROL_SELECTOR)).filter(el => {
         if (!el.id || IGNORED_IDS.has(el.id)) return false;
         if (el.closest('#inwoo-command-palette-modal, #rfqModal, #dossierModal')) return false;
         return true;
@@ -3528,22 +3529,56 @@
     }
 
     const controls = getPersistableControls();
-    if (controls.length < 2) return;
+    const isAgrivision = path.includes('agrivision-ai');
+    const isMqttSim = path.includes('mqtt-edge');
+    const isOpenCea = path.includes('opencea-python');
+    const isVenloCad = path.includes('venlocad-3d.html');
+    const hasCustomWidget = isAgrivision || isMqttSim || isOpenCea;
+    if (controls.length < 1 && !hasCustomWidget) return;
 
     const CFG_KEY = 'inw_tool_cfg_' + path;
+    let activeSampleKey = isAgrivision ? 'early_blight' : '';
+    let activeEndpointKey = isOpenCea ? 'vpd' : '';
 
     function snapshotConfig() {
       const out = {};
       getPersistableControls().forEach(el => {
         out[el.id] = el.value;
       });
+      if (isAgrivision && activeSampleKey) out._inw_sample = activeSampleKey;
+      if (isOpenCea && activeEndpointKey) out._inw_endpoint = activeEndpointKey;
+      if (isMqttSim) {
+        const sBtn = document.getElementById('btn-stream');
+        out._inw_streaming = (sBtn && sBtn.innerText.includes('Stop')) ? '1' : '0';
+      }
       return out;
     }
 
     function applyConfig(cfgObj) {
       if (!cfgObj || typeof cfgObj !== 'object') return false;
       let changed = false;
+      if (isOpenCea && cfgObj._inw_endpoint) {
+        const tab = Array.from(document.querySelectorAll('.endpoint-tab')).find(b => (b.getAttribute('onclick') || '').includes("'" + cfgObj._inw_endpoint + "'"));
+        if (tab && typeof window.selectEndpoint === 'function') {
+          window.selectEndpoint(cfgObj._inw_endpoint, tab);
+          activeEndpointKey = cfgObj._inw_endpoint;
+          changed = true;
+        }
+      }
+      if (isAgrivision && cfgObj._inw_sample && typeof window.loadSample === 'function') {
+        window.loadSample(cfgObj._inw_sample);
+        activeSampleKey = cfgObj._inw_sample;
+        changed = true;
+      }
+      if (isMqttSim && cfgObj._inw_streaming === '1') {
+        const sBtn = document.getElementById('btn-stream');
+        if (sBtn && !sBtn.innerText.includes('Stop') && typeof window.toggleStream === 'function') {
+          window.toggleStream();
+          changed = true;
+        }
+      }
       Object.keys(cfgObj).forEach(id => {
+        if (id.startsWith('_inw_')) return;
         const el = document.getElementById(id);
         if (!el) return;
         const val = String(cfgObj[id]);
@@ -3557,8 +3592,32 @@
       return changed;
     }
 
-    // Mount Workspace Utility Pill Bar cleanly (skip fixed fullscreen canvas VenloCAD header)
-    if (!document.getElementById('inw-workspace-bar') && !path.includes('venlocad-3d.html')) {
+    // Mount Workspace Utility Pill Bar cleanly (compact inline toolbar controls on VenloCAD 3D)
+    if (isVenloCad && !document.getElementById('inw-ws-share-btn')) {
+      const saveTb = document.querySelector('.save-toolbar');
+      if (saveTb) {
+        const wsStatus = document.createElement('span');
+        wsStatus.id = 'inw-ws-status';
+        wsStatus.className = 'inw-ws-status';
+        wsStatus.style.cssText = 'font-size:0.72rem;color:#34d399;font-weight:700;white-space:nowrap;margin-left:4px;';
+        wsStatus.textContent = '💾 Workspace Ready';
+        const shareBtnEl = document.createElement('button');
+        shareBtnEl.type = 'button';
+        shareBtnEl.id = 'inw-ws-share-btn';
+        shareBtnEl.className = 'tool-btn';
+        shareBtnEl.title = 'Copy My CEA Workspace parameter URL';
+        shareBtnEl.textContent = '🔗 Share Workspace';
+        const resetBtnEl = document.createElement('button');
+        resetBtnEl.type = 'button';
+        resetBtnEl.id = 'inw-ws-reset-btn';
+        resetBtnEl.className = 'tool-btn';
+        resetBtnEl.title = 'Reset Workspace Defaults';
+        resetBtnEl.textContent = '↺ Reset';
+        saveTb.appendChild(wsStatus);
+        saveTb.appendChild(shareBtnEl);
+        saveTb.appendChild(resetBtnEl);
+      }
+    } else if (!document.getElementById('inw-workspace-bar') && !isVenloCad) {
       const bar = document.createElement('div');
       bar.id = 'inw-workspace-bar';
       bar.className = 'inw-workspace-bar';
@@ -3571,7 +3630,7 @@
       `;
       const simHeader = document.querySelector('.sim-header, .tool-header, .tool-hero');
       const bodyHeader = document.querySelector('body > header');
-      const simContainer = document.querySelector('.sim-container, .app-container, .api-hub-container, .nav-container');
+      const simContainer = document.querySelector('.sim-container, .app-container, .api-hub-container, .nav-container, .vision-container');
       if (simHeader && simHeader.parentNode) {
         simHeader.insertAdjacentElement('afterend', bar);
       } else if (bodyHeader && bodyHeader.parentNode) {
@@ -3579,6 +3638,37 @@
       } else if (simContainer) {
         simContainer.insertAdjacentElement('afterbegin', bar);
       }
+    }
+
+    // Track custom interactive button states for Workspace persistence
+    function persistNow() {
+      safeSet(CFG_KEY, JSON.stringify(snapshotConfig()));
+      const statusEl = document.getElementById('inw-ws-status');
+      if (statusEl) {
+        const now = new Date();
+        const hhmm = String(now.getHours()).padStart(2, '0') + ':' + String(now.getMinutes()).padStart(2, '0');
+        statusEl.textContent = `✅ Auto-Saved Locally (${hhmm})`;
+      }
+    }
+    if (isAgrivision) {
+      document.querySelectorAll('.sample-pill').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const m = (btn.getAttribute('onclick') || '').match(/loadSample\(['"]([^'"]+)['"]\)/);
+          if (m) { activeSampleKey = m[1]; persistNow(); }
+        });
+      });
+    }
+    if (isOpenCea) {
+      document.querySelectorAll('.endpoint-tab').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const m = (btn.getAttribute('onclick') || '').match(/selectEndpoint\(['"]([^'"]+)['"]/);
+          if (m) { activeEndpointKey = m[1]; persistNow(); }
+        });
+      });
+    }
+    if (isMqttSim) {
+      const sBtn = document.getElementById('btn-stream');
+      if (sBtn) sBtn.addEventListener('click', () => setTimeout(persistNow, 40));
     }
 
     // Restore saved or shared setup after tool scripts bind listeners
@@ -3615,17 +3705,9 @@
     function onControlChange(ev) {
       const t = ev.target;
       if (!t || !t.id || IGNORED_IDS.has(t.id)) return;
-      if (!t.matches('input[type="range"], input[type="number"], select')) return;
+      if (!t.matches(CONTROL_SELECTOR)) return;
       clearTimeout(saveTimer);
-      saveTimer = setTimeout(() => {
-        safeSet(CFG_KEY, JSON.stringify(snapshotConfig()));
-        const statusEl = document.getElementById('inw-ws-status');
-        if (statusEl) {
-          const now = new Date();
-          const hhmm = String(now.getHours()).padStart(2, '0') + ':' + String(now.getMinutes()).padStart(2, '0');
-          statusEl.textContent = `✅ Auto-Saved Locally (${hhmm})`;
-        }
-      }, 250);
+      saveTimer = setTimeout(persistNow, 250);
     }
 
     const shareBtn = document.getElementById('inw-ws-share-btn');

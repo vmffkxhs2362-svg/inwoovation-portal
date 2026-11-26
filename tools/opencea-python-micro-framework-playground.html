@@ -260,26 +260,26 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "How do you calculate greenhouse Vapor Pressure Deficit (VPD) accurately using leaf temperature?",
+          "name": "How do I install and run the OpenCEA Python calculation engine offline without internet?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "True canopy VPD must be calculated from saturated vapor pressure at actual radiometric leaf temperature (es(T_leaf) via the Tetens equation) minus ambient air vapor pressure (ea(T_air, RH)). Assuming T_leaf = T_air introduces a 0.25 to 0.45 kPa error under high solar radiation."
+            "text": "OpenCEA's Python CLI kernel (horti_cli.py) and JavaScript physics library (biophysics_kernel.js) use zero external pip or npm dependencies—download the standalone OpenCEA ZIP bundle and invoke any solver locally with Python 3.9+."
           }
         },
         {
           "@type": "Question",
-          "name": "What is the optimal VPD target range for commercial greenhouse crops?",
+          "name": "How does the OpenCEA Model Context Protocol (MCP) server help AI agronomic agents?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Vegetative propagation requires 0.4 to 0.7 kPa, active vegetative growth thrives at 0.8 to 1.1 kPa, and generative fruit set in tomato, bell pepper, and strawberry performs best between 1.1 and 1.4 kPa to balance stomatal CO2 uptake with xylem calcium mass flow."
+            "text": "By exposing typed JSON schemas for Tetens VPD, DIN V 18599 heat loads, and Penman-Monteith transpiration, AI agents invoke exact deterministic engineering equations instead of guessing arithmetic from prose."
           }
         },
         {
           "@type": "Question",
-          "name": "How do you size a greenhouse dehumidifier or Air Treatment Unit (ATU) for night-time latent moisture removal?",
+          "name": "Can I call the REST endpoint payloads shown in the Playground from my climate computer PLC?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Multiply canopy night-time transpiration rate (typically 15 to 35 g/m²·h) by cultivated floor area (m²), then divide by the specific moisture extraction rate (L/kWh) at the target dew-point temperature on the Mollier h-x psychrometric chart."
+            "text": "Yes. Every POST /v1/* payload follows deterministic SI inputs and returns reproducible JSON thermodynamic metrics ready for Node-RED, FastAPI, or Modbus-to-HTTP middleware bridges."
           }
         }
       ]
@@ -304,7 +304,7 @@
     <a href="/index.html" style="color: #10b981; font-weight: 800; font-size: 1.15rem; text-decoration: none; letter-spacing: -0.02em;">Inwoovation Lab</a>
     <div style="display: flex; flex-wrap: wrap; gap: 14px; font-size: 0.9rem;">
       <a href="/index.html" style="color: #e2e8f0; text-decoration: none;">Home</a>
-      <a href="/smartfarm/vpd.html" style="color: #e2e8f0; text-decoration: none;">Calculators</a>
+      <a href="/tools/index.html" style="color: #e2e8f0; text-decoration: none;">Calculators</a>
       <a href="/articles/index.html" style="color: #38bdf8; font-weight: 600; text-decoration: none;">Articles</a>
       <a href="/wiki/index.html" style="color: #e2e8f0; text-decoration: none;">Wiki</a>
       <a href="/climate/index.html" style="color: #e2e8f0; text-decoration: none;">Climate Hub</a>
@@ -459,111 +459,31 @@
   </div>
 
   
-<!-- INW-TSUKUBA-FUNNEL-START -->
-<section class="inw-tsukuba-funnel-bridge" style="max-width: 1060px; margin: 32px auto; padding: 26px; background: rgba(15, 23, 42, 0.9); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 16px; text-align: left; box-shadow: 0 10px 28px rgba(0, 0, 0, 0.3);">
-  <h3 style="margin: 0 0 8px 0; font-size: 1.2rem; color: #10b981; font-weight: 800;">🔬 Validated Engineering Monographs, Crop Guides & Simulators</h3>
-  <p style="margin: 0 0 16px 0; font-size: 0.92rem; color: #94a3b8; line-height: 1.6;">Explore the governing physical derivations, crop-specific microclimate targets, and full-screen engineering solvers connected to this page:</p>
-  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px;">
-    <a href="/articles/article-01-vpd-master-class.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">Vol. 01: Penman-Monteith Transpiration & VPD Masterclass →</a>
-    <a href="/articles/article-72-semi-closed-greenhouse-mollier-psychrometrics-latent-heat.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">Vol. 72: Semi-Closed Greenhouse Mollier h-x Psychrometrics & Latent Heat →</a>
-    <a href="/articles/article-20-leaf-temperature-infrared-thermometry.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">Vol. 20: Radiometric Leaf-to-Air ΔT & Stomatal Conductance Physics →</a>
-    <a href="/crops/greenhouse-tomato-microclimate-vpd-steering-guide.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🍅 High-Wire Tomato VPD & Generative Steering Guide →</a>
-    <a href="/crops/greenhouse-cucumber-high-humidity-transpiration-guide.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🥒 Greenhouse Cucumber High-Humidity Transpiration Guide →</a>
-    <a href="/tools/psychrometric-mollier-greenhouse-dehumidifier.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">⚡ Mollier h-x Dehumidification & Latent Load Sizer →</a>
-    <a href="/tools/evapotranspiration-penman-monteith-calculator.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🍃 FAO-56 Penman-Monteith Evapotranspiration Solver →</a>
-  </div>
-  <h3 style="margin: 24px 0 12px 0; font-size: 1.15rem; color: #10b981; font-weight: 800;">❓ Frequently Asked Engineering Questions (Technical FAQ)</h3>
-  <div>
-    <div style="margin-bottom:14px; padding:14px 18px; background:rgba(15,23,42,0.65); border-left:3px solid #10b981; border-radius:8px;">
-      <h4 style="margin:0 0 6px 0; color:#f8fafc; font-size:0.98rem;">How do you calculate greenhouse Vapor Pressure Deficit (VPD) accurately using leaf temperature?</h4>
-      <p style="margin:0; color:#cbd5e1; font-size:0.9rem; line-height:1.65;">True canopy VPD must be calculated from saturated vapor pressure at actual radiometric leaf temperature (es(T_leaf) via the Tetens equation) minus ambient air vapor pressure (ea(T_air, RH)). Assuming T_leaf = T_air introduces a 0.25 to 0.45 kPa error under high solar radiation.</p>
-    </div><div style="margin-bottom:14px; padding:14px 18px; background:rgba(15,23,42,0.65); border-left:3px solid #10b981; border-radius:8px;">
-      <h4 style="margin:0 0 6px 0; color:#f8fafc; font-size:0.98rem;">What is the optimal VPD target range for commercial greenhouse crops?</h4>
-      <p style="margin:0; color:#cbd5e1; font-size:0.9rem; line-height:1.65;">Vegetative propagation requires 0.4 to 0.7 kPa, active vegetative growth thrives at 0.8 to 1.1 kPa, and generative fruit set in tomato, bell pepper, and strawberry performs best between 1.1 and 1.4 kPa to balance stomatal CO2 uptake with xylem calcium mass flow.</p>
-    </div><div style="margin-bottom:14px; padding:14px 18px; background:rgba(15,23,42,0.65); border-left:3px solid #10b981; border-radius:8px;">
-      <h4 style="margin:0 0 6px 0; color:#f8fafc; font-size:0.98rem;">How do you size a greenhouse dehumidifier or Air Treatment Unit (ATU) for night-time latent moisture removal?</h4>
-      <p style="margin:0; color:#cbd5e1; font-size:0.9rem; line-height:1.65;">Multiply canopy night-time transpiration rate (typically 15 to 35 g/m²·h) by cultivated floor area (m²), then divide by the specific moisture extraction rate (L/kWh) at the target dew-point temperature on the Mollier h-x psychrometric chart.</p>
-    </div>
-  </div>
-</section>
-<!-- INW-TSUKUBA-FUNNEL-END -->
 
-<footer style="text-align:center; padding:30px; color:#64748b; font-size:0.85rem; border-top:1px solid rgba(255,255,255,0.08); margin-top:60px;">
-    <p>© 2026 Inwoovation Lab. All rights reserved. | Open-Source MIT License | <a href="/privacy-policy.html" style="color:#64748b;">Privacy Policy</a> | <a href="/terms-of-service.html" style="color:#64748b;">Terms</a></p>
-      <div class="inw-trust-links" style="margin-top:16px; padding-top:14px; border-top:1px solid rgba(148,163,184,0.16); display:flex; justify-content:center; align-items:center; flex-wrap:wrap; gap:16px; font-size:0.84rem; color:#94a3b8;">
-      <a href="/index.html" style="color:#94a3b8; text-decoration:none; font-weight:600;">Home</a>
-      <a href="/about.html" style="color:#94a3b8; text-decoration:none; font-weight:600;">About Lab</a>
-      <a href="/contact.html" style="color:#94a3b8; text-decoration:none; font-weight:600;">Contact</a>
-      <a href="/privacy-policy.html" style="color:#94a3b8; text-decoration:none; font-weight:600;">Privacy Policy</a>
-      <a href="/terms-of-service.html" style="color:#94a3b8; text-decoration:none; font-weight:600;">Terms of Service</a>
-    </div>
-  </footer>
+
 
 
     <!-- START: INJECTED EDITORIAL & AMAZON ASSOCIATES HARDWARE MODULE -->
     <div class="tool-editorial-wrapper">
       
-      <!-- Technical Theory & Mathematical Formulation -->
-      <section class="editorial-card">
-        <h2><span>🤖</span> Engineering Theory & Biophysical Principles</h2>
-        <p>Modern commercial greenhouse operations are rapidly transitioning from reactive feedback PID loops to predictive, physics-informed autonomous controllers. A digital twin combines dynamic greenhouse energy balances (solar heat gain, long-wave radiation loss, ground conduction) with physiological crop models (canopy photosynthesis, transpiration). By ingesting external weather station forecasts (solar irradiance, wind velocity, ambient temperature), Model Predictive Control (MPC) algorithms solve multi-objective optimization problems every 5 minutes. This enables anticipatory thermal screen deployment before outdoor temperatures plummet, pre-charging solar thermal buffer tanks, and dynamic peak-electricity shaving.</p>
-        
-        <h3>Governing Equations & Mathematical Model</h3>
-        <div class="formula-box">
-MPC Objective Function:
-  J = ∑ [ w_yield · (A_net - Target)² + w_energy · (Cost_gas + Cost_elec) + w_smooth · (Δu)² ]
-Subject to State Constraints:
-  • T_min ≤ T_canopy(t) ≤ T_max
-  • VPD_min ≤ VPD(t) ≤ VPD_max
-  • Window_aperture_rate ≤ max_speed
-        </div>
-
-        <h3>Commercial Greenhouse Setpoints & Benchmark Matrix</h3>
-        <div class="benchmark-table-wrapper">
-          <table class="benchmark-table">
-            <thead>
-              <tr>
-                <th>Crop / System State</th>
-                <th>Target Setpoint</th>
-                <th>Engineering Range</th>
-                <th>Operational Impact</th>
-              </tr>
-            </thead>
-            <tbody>
-<tr><td><strong>IoT Telemetry Frequency (MQTT)</strong></td><td>Every 10 – 30 seconds</td><td>QoS 1 telemetry stream to edge gateway</td><td>-</td></tr>
-<tr><td><strong>MPC Optimization Horizon</strong></td><td>24 – 48 Hours Ahead</td><td>Predictive rolling horizon with 5-minute step resolution</td><td>-</td></tr>
-<tr><td><strong>Energy Cost Reduction via MPC</strong></td><td>15 – 28%</td><td>Compared to traditional setpoint day/night thermostat loops</td><td>-</td></tr>
-<tr><td><strong>Thermal Stratification in Buffer Tank</strong></td><td>Top: 85 – 95°C | Bottom: 35 – 45°C</td><td>Sharp thermocline ensures maximum boiler heat recovery</td><td>-</td></tr>
-
-            </tbody>
-          </table>
-        </div>
-      </section>
-
       <!-- Frequently Asked Questions (FAQ) Section -->
       <section class="editorial-card">
         <h2><span>❓</span> Frequently Asked Engineering Questions (FAQ)</h2>
         <div class="faq-accordion">
-
         <details class="faq-item">
-          <summary class="faq-summary">What is the primary advantage of Model Predictive Control over standard greenhouse climate computers? <span>▾</span></summary>
-          <div class="faq-content">Standard PID controllers only respond after an error has already occurred (e.g. greenhouse has already gotten too cold or too humid). MPC looks 24 to 48 hours into the future using weather forecasts and dynamic thermal models to adjust screens, vents, and heating hours in advance, avoiding costly overshoot.</div>
+          <summary class="faq-summary">How do I install and run the OpenCEA Python calculation engine offline without internet? <span>▾</span></summary>
+          <div class="faq-content">OpenCEA&#x27;s Python CLI kernel (horti_cli.py) and JavaScript physics library (biophysics_kernel.js) use zero external pip or npm dependencies—download the standalone OpenCEA ZIP bundle and invoke any solver locally with Python 3.9+.</div>
         </details>
-        
         <details class="faq-item">
-          <summary class="faq-summary">How do MQTT and LoRaWAN architectures handle harsh greenhouse radio environments? <span>▾</span></summary>
-          <div class="faq-content">High humidity, dense wet crop canopies, and metal truss structures attenuate 2.4GHz Wi-Fi signals severely. Sub-GHz LoRaWAN (868/915 MHz) or industrial RS-485 Modbus RTU wire loops provide robust, noise-immune transmission from sensor nodes back to the central edge PLC.</div>
+          <summary class="faq-summary">How does the OpenCEA Model Context Protocol (MCP) server help AI agronomic agents? <span>▾</span></summary>
+          <div class="faq-content">By exposing typed JSON schemas for Tetens VPD, DIN V 18599 heat loads, and Penman-Monteith transpiration, AI agents invoke exact deterministic engineering equations instead of guessing arithmetic from prose.</div>
         </details>
-        
         <details class="faq-item">
-          <summary class="faq-summary">What role do 3D digital twins play in commercial facility management? <span>▾</span></summary>
-          <div class="faq-content">3D WebGL digital twins visualize spatial temperature, humidity, and airflow non-uniformities that single-point aspiration box sensors fail to capture. They identify microclimate dead zones, fungal risk hotspots, and draft leaks before visible crop damage occurs.</div>
+          <summary class="faq-summary">Can I call the REST endpoint payloads shown in the Playground from my climate computer PLC? <span>▾</span></summary>
+          <div class="faq-content">Yes. Every POST /v1/* payload follows deterministic SI inputs and returns reproducible JSON thermodynamic metrics ready for Node-RED, FastAPI, or Modbus-to-HTTP middleware bridges.</div>
         </details>
-        
         </div>
-      </section>
-
-      <!-- Recommended Hardware & Amazon Associates Monetization -->
+      </section><!-- Recommended Hardware & Amazon Associates Monetization -->
       <section class="amazon-showcase">
         <div class="amazon-header">
           <h3><span>🛒</span> Recommended Precision Field Hardware (Amazon)</h3>
@@ -604,7 +524,33 @@ Subject to State Constraints:
     <!-- END: INJECTED EDITORIAL & AMAZON ASSOCIATES HARDWARE MODULE -->
     
 
-  <script>
+  
+<!-- INW-TSUKUBA-FUNNEL-START -->
+<section class="inw-tsukuba-funnel-bridge" style="max-width: 1060px; margin: 32px auto; padding: 26px; background: rgba(15, 23, 42, 0.9); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 16px; text-align: left; box-shadow: 0 10px 28px rgba(0, 0, 0, 0.3);">
+  <h3 style="margin: 0 0 8px 0; font-size: 1.2rem; color: #10b981; font-weight: 800;">🔬 Validated Engineering Monographs, Crop Guides & Simulators</h3>
+  <p style="margin: 0 0 16px 0; font-size: 0.92rem; color: #94a3b8; line-height: 1.6;">Explore the governing physical derivations, crop-specific microclimate targets, and full-screen engineering solvers connected to this page:</p>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px;">
+    <a href="/articles/article-01-vpd-master-class.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">Vol. 01: Penman-Monteith Transpiration & VPD Masterclass →</a>
+    <a href="/articles/article-72-semi-closed-greenhouse-mollier-psychrometrics-latent-heat.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">Vol. 72: Semi-Closed Greenhouse Mollier h-x Psychrometrics & Latent Heat →</a>
+    <a href="/articles/article-20-leaf-temperature-infrared-thermometry.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">Vol. 20: Radiometric Leaf-to-Air ΔT & Stomatal Conductance Physics →</a>
+    <a href="/crops/greenhouse-tomato-microclimate-vpd-steering-guide.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🍅 High-Wire Tomato VPD & Generative Steering Guide →</a>
+    <a href="/crops/greenhouse-cucumber-high-humidity-transpiration-guide.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🥒 Greenhouse Cucumber High-Humidity Transpiration Guide →</a>
+    <a href="/tools/psychrometric-mollier-greenhouse-dehumidifier.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">⚡ Mollier h-x Dehumidification & Latent Load Sizer →</a>
+    <a href="/tools/evapotranspiration-penman-monteith-calculator.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🍃 FAO-56 Penman-Monteith Evapotranspiration Solver →</a>
+  </div>
+</section>
+<!-- INW-TSUKUBA-FUNNEL-END -->
+
+<footer style="text-align:center; padding:30px; color:#64748b; font-size:0.85rem; border-top:1px solid rgba(255,255,255,0.08); margin-top:60px;">
+    <p>© 2026 Inwoovation Lab. All rights reserved. | Open-Source MIT License | <a href="/privacy-policy.html" style="color:#64748b;">Privacy Policy</a> | <a href="/terms-of-service.html" style="color:#64748b;">Terms</a></p>
+      <div class="inw-trust-links" style="margin-top:16px; padding-top:14px; border-top:1px solid rgba(148,163,184,0.16); display:flex; justify-content:center; align-items:center; flex-wrap:wrap; gap:16px; font-size:0.84rem; color:#94a3b8;">
+      <a href="/index.html" style="color:#94a3b8; text-decoration:none; font-weight:600;">Home</a>
+      <a href="/about.html" style="color:#94a3b8; text-decoration:none; font-weight:600;">About Lab</a>
+      <a href="/contact.html" style="color:#94a3b8; text-decoration:none; font-weight:600;">Contact</a>
+      <a href="/privacy-policy.html" style="color:#94a3b8; text-decoration:none; font-weight:600;">Privacy Policy</a>
+      <a href="/terms-of-service.html" style="color:#94a3b8; text-decoration:none; font-weight:600;">Terms of Service</a>
+    </div>
+  </footer><script>
     const ENDPOINT_PRESETS = {
       vpd: {
         payload: JSON.stringify({

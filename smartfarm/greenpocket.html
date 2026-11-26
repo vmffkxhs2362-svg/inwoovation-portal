@@ -39,35 +39,6 @@
       }
     },
     {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "How do you convert PPFD (µmol/m²/s) into Daily Light Integral (DLI in mol/m²/day)?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Multiply canopy PPFD (µmol·m⁻²·s⁻¹) by photoperiod hours per day, then multiply by 0.0036 (since 3,600 seconds/hour divided by 1,000,000 µmol/mol equals 0.0036). For example, 250 µmol·m⁻²·s⁻¹ for 16 hours yields exactly 14.4 mol·m⁻²·d⁻¹."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What DLI target is required for commercial greenhouse tomatoes, strawberries, and leafy greens?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Butterhead and crisphead lettuce require 14 to 17 mol·m⁻²·d⁻¹ (above which tipburn risk rises without vertical airflow), greenhouse strawberries require 15 to 22 mol·m⁻²·d⁻¹, and high-wire fruiting tomatoes and bell peppers require 22 to 35+ mol·m⁻²·d⁻¹."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How do you calculate supplemental LED fixture wattage and electricity ROI per square meter?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Divide the required supplemental PPFD (µmol·m⁻²·s⁻¹) by the fixture photosynthetic photon efficacy (PPE, typically 2.8 to 3.6 µmol/J) to obtain electrical power density (W/m²), then multiply by operating hours and kWh tariff."
-          }
-        }
-      ]
-    },
-    {
       "@type": "BreadcrumbList",
       "itemListElement": [
         {
@@ -87,6 +58,35 @@
           "position": 3,
           "name": "GreenPocket Directory",
           "item": "https://inwoovation.com/smartfarm/greenpocket.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What water quality parameters should growers check before mixing hydroponic nutrients in compact systems?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Measure raw water baseline EC (< 0.4 mS/cm ideal), bicarbonate alkalinity (neutralized down to 0.5–0.8 mmol/L HCO₃⁻ for pH stability), and sodium/chloride concentrations (< 1.5 mmol/L) to prevent salt creep."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How often should closed hydroponic reservoirs be topped up vs. fully refreshed?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Top up daily evapotranspiration losses with fresh water/dilute solution, adjust EC and pH daily (5.6–6.0), and refresh reservoirs every 14–21 days (or sooner if Na⁺ exceeds crop limits or bio-slime rises)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do LED photoperiod and DLI targets prevent bolting and tipburn in compact indoor leafy crops?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Hold butterhead lettuce and herbs near 14–16 mol/m²/d over 16–18 hours with gentle horizontal canopy airflow (0.4 m/s) so outer/inner leaf calcium transport stays synchronized."
+          }
         }
       ]
     }
@@ -547,6 +547,33 @@
     </section>
 
     
+<style>
+      .inw-faq-standalone { max-width: 1060px; margin: 28px auto; padding: 24px; background: rgba(15, 23, 42, 0.9); border: 1px solid rgba(56, 189, 248, 0.28); border-radius: 16px; text-align: left; color: #f8fafc; }
+      .inw-faq-standalone h2 { margin: 0 0 16px 0; font-size: 1.25rem; color: #f8fafc; font-weight: 800; }
+      .inw-faq-standalone .faq-accordion { display: flex; flex-direction: column; gap: 10px; }
+      .inw-faq-standalone .faq-item { background: rgba(30, 41, 59, 0.78); border: 1px solid rgba(148, 163, 184, 0.22); border-radius: 10px; overflow: hidden; }
+      .inw-faq-standalone .faq-summary { padding: 14px 18px; cursor: pointer; font-weight: 700; color: #e2e8f0; list-style: none; display: flex; justify-content: space-between; align-items: center; font-size: 0.96rem; }
+      .inw-faq-standalone .faq-summary::-webkit-details-marker { display: none; }
+      .inw-faq-standalone .faq-content { padding: 0 18px 14px; color: #cbd5e1; font-size: 0.9rem; line-height: 1.65; }
+    </style>
+    <section class="inw-faq-standalone">
+      <h2>❓ Frequently Asked Engineering Questions (FAQ)</h2>
+      <div class="faq-accordion">
+        <details class="faq-item">
+          <summary class="faq-summary">What water quality parameters should growers check before mixing hydroponic nutrients in compact systems? <span>▾</span></summary>
+          <div class="faq-content">Measure raw water baseline EC (&lt; 0.4 mS/cm ideal), bicarbonate alkalinity (neutralized down to 0.5–0.8 mmol/L HCO₃⁻ for pH stability), and sodium/chloride concentrations (&lt; 1.5 mmol/L) to prevent salt creep.</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-summary">How often should closed hydroponic reservoirs be topped up vs. fully refreshed? <span>▾</span></summary>
+          <div class="faq-content">Top up daily evapotranspiration losses with fresh water/dilute solution, adjust EC and pH daily (5.6–6.0), and refresh reservoirs every 14–21 days (or sooner if Na⁺ exceeds crop limits or bio-slime rises).</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-summary">How do LED photoperiod and DLI targets prevent bolting and tipburn in compact indoor leafy crops? <span>▾</span></summary>
+          <div class="faq-content">Hold butterhead lettuce and herbs near 14–16 mol/m²/d over 16–18 hours with gentle horizontal canopy airflow (0.4 m/s) so outer/inner leaf calcium transport stays synchronized.</div>
+        </details>
+      </div>
+    </section>
+
 <!-- INW-TSUKUBA-FUNNEL-START -->
 <section class="inw-tsukuba-funnel-bridge" style="max-width: 1060px; margin: 32px auto; padding: 26px; background: rgba(15, 23, 42, 0.9); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 16px; text-align: left; box-shadow: 0 10px 28px rgba(0, 0, 0, 0.3);">
   <h3 style="margin: 0 0 8px 0; font-size: 1.2rem; color: #10b981; font-weight: 800;">🔬 Validated Engineering Monographs, Crop Guides & Simulators</h3>
@@ -559,19 +586,6 @@
     <a href="/crops/vertical-farm-lettuce-leafy-greens-tipburn-prevention-guide.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🥬 Vertical Farm Leafy Greens DLI & Tipburn Prevention Guide →</a>
     <a href="/tools/dli-spectrum-photomorphogenesis-calculator.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">💡 DLI Spectrum & Photomorphogenesis Calculator →</a>
     <a href="/tools/crop-yield-biomass-dli-forecaster.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">📈 Radiation Use Efficiency (RUE) & DLI Yield Forecaster →</a>
-  </div>
-  <h3 style="margin: 24px 0 12px 0; font-size: 1.15rem; color: #10b981; font-weight: 800;">❓ Frequently Asked Engineering Questions (Technical FAQ)</h3>
-  <div>
-    <div style="margin-bottom:14px; padding:14px 18px; background:rgba(15,23,42,0.65); border-left:3px solid #10b981; border-radius:8px;">
-      <h4 style="margin:0 0 6px 0; color:#f8fafc; font-size:0.98rem;">How do you convert PPFD (µmol/m²/s) into Daily Light Integral (DLI in mol/m²/day)?</h4>
-      <p style="margin:0; color:#cbd5e1; font-size:0.9rem; line-height:1.65;">Multiply canopy PPFD (µmol·m⁻²·s⁻¹) by photoperiod hours per day, then multiply by 0.0036 (since 3,600 seconds/hour divided by 1,000,000 µmol/mol equals 0.0036). For example, 250 µmol·m⁻²·s⁻¹ for 16 hours yields exactly 14.4 mol·m⁻²·d⁻¹.</p>
-    </div><div style="margin-bottom:14px; padding:14px 18px; background:rgba(15,23,42,0.65); border-left:3px solid #10b981; border-radius:8px;">
-      <h4 style="margin:0 0 6px 0; color:#f8fafc; font-size:0.98rem;">What DLI target is required for commercial greenhouse tomatoes, strawberries, and leafy greens?</h4>
-      <p style="margin:0; color:#cbd5e1; font-size:0.9rem; line-height:1.65;">Butterhead and crisphead lettuce require 14 to 17 mol·m⁻²·d⁻¹ (above which tipburn risk rises without vertical airflow), greenhouse strawberries require 15 to 22 mol·m⁻²·d⁻¹, and high-wire fruiting tomatoes and bell peppers require 22 to 35+ mol·m⁻²·d⁻¹.</p>
-    </div><div style="margin-bottom:14px; padding:14px 18px; background:rgba(15,23,42,0.65); border-left:3px solid #10b981; border-radius:8px;">
-      <h4 style="margin:0 0 6px 0; color:#f8fafc; font-size:0.98rem;">How do you calculate supplemental LED fixture wattage and electricity ROI per square meter?</h4>
-      <p style="margin:0; color:#cbd5e1; font-size:0.9rem; line-height:1.65;">Divide the required supplemental PPFD (µmol·m⁻²·s⁻¹) by the fixture photosynthetic photon efficacy (PPE, typically 2.8 to 3.6 µmol/J) to obtain electrical power density (W/m²), then multiply by operating hours and kWh tariff.</p>
-    </div>
   </div>
 </section>
 <!-- INW-TSUKUBA-FUNNEL-END -->

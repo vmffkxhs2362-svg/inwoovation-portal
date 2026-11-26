@@ -69,43 +69,6 @@
       }
     },
     {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Looking for 8,760-Hour Full-Year Dynamic Simulation?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Access OpenCEA GitHub : Multi-zone thermal screens, solar heat deduction, hourly local weather, and 24/7 offline python scripts — 100% free and open-source."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Why must calcium nitrate and sulfate/phosphate fertilizers be separated into A and B stock tanks?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Mixing concentrated calcium ions (Ca²⁺) with sulfate (SO₄²⁻) or orthophosphate (H₂PO₄⁻) in the same stock tank causes immediate precipitation of insoluble gypsum (CaSO₄·2H₂O) and calcium phosphate once the solubility product (Ksp) is exceeded."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How do you calculate the required acid volume for hydroponic bicarbonate (HCO₃⁻) alkalinity neutralization?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Subtract target residual buffer alkalinity (typically 0.5 to 0.8 mmol/L HCO₃⁻ for pH 5.6–5.8 stability) from raw water bicarbonate concentration, then stoichiometry-match with nitric acid (HNO₃) or phosphoric acid (H₃PO₄) normality."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What drain percentage and slab EC dryback should be targeted in rockwool and cocopeat substrates?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "During high-radiation summer days, target 25% to 35% daily drainage fraction with an overnight volumetric water content (VWC) dryback of 8% to 12% for vegetative steering, or 12% to 18% dryback for generative steering."
-          }
-        }
-      ]
-    },
-    {
       "@type": "BreadcrumbList",
       "itemListElement": [
         {
@@ -125,6 +88,35 @@
           "position": 3,
           "name": "Structure & Climate Data",
           "item": "https://inwoovation.com/smartfarm/heat_loss.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How does the ASABE EP406 / DIN V 18599 formula Q = U·A·ΔT calculate peak greenhouse heating load?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Multiply total exposed glazing wall and roof surface area (A) by the cladding overall heat-transfer coefficient (U, W/m²·K), screen attenuation factor, and design indoor-outdoor temperature differential (ΔT), then add air infiltration heat loss."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much winter heating energy does a closed aluminized thermal screen save?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Deploying a closed interior aluminum energy screen cuts long-wave sky radiation and lowers effective greenhouse U-value by 40% to 52%, trimming peak boiler capacity and annual fuel consumption dramatically."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does wind speed increase greenhouse heat demand even when outdoor air temperature stays constant?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Higher external wind strips away the exterior glazing thermal boundary layer and pressurizes structural lap/vent gaps, inflating both convective surface U-values and cold infiltration air exchange rates."
+          }
         }
       ]
     }
@@ -465,6 +457,33 @@
 
 
 
+<style>
+      .inw-faq-standalone { max-width: 1060px; margin: 28px auto; padding: 24px; background: rgba(15, 23, 42, 0.9); border: 1px solid rgba(56, 189, 248, 0.28); border-radius: 16px; text-align: left; color: #f8fafc; }
+      .inw-faq-standalone h2 { margin: 0 0 16px 0; font-size: 1.25rem; color: #f8fafc; font-weight: 800; }
+      .inw-faq-standalone .faq-accordion { display: flex; flex-direction: column; gap: 10px; }
+      .inw-faq-standalone .faq-item { background: rgba(30, 41, 59, 0.78); border: 1px solid rgba(148, 163, 184, 0.22); border-radius: 10px; overflow: hidden; }
+      .inw-faq-standalone .faq-summary { padding: 14px 18px; cursor: pointer; font-weight: 700; color: #e2e8f0; list-style: none; display: flex; justify-content: space-between; align-items: center; font-size: 0.96rem; }
+      .inw-faq-standalone .faq-summary::-webkit-details-marker { display: none; }
+      .inw-faq-standalone .faq-content { padding: 0 18px 14px; color: #cbd5e1; font-size: 0.9rem; line-height: 1.65; }
+    </style>
+    <section class="inw-faq-standalone">
+      <h2>❓ Frequently Asked Engineering Questions (FAQ)</h2>
+      <div class="faq-accordion">
+        <details class="faq-item">
+          <summary class="faq-summary">How does the ASABE EP406 / DIN V 18599 formula Q = U·A·ΔT calculate peak greenhouse heating load? <span>▾</span></summary>
+          <div class="faq-content">Multiply total exposed glazing wall and roof surface area (A) by the cladding overall heat-transfer coefficient (U, W/m²·K), screen attenuation factor, and design indoor-outdoor temperature differential (ΔT), then add air infiltration heat loss.</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-summary">How much winter heating energy does a closed aluminized thermal screen save? <span>▾</span></summary>
+          <div class="faq-content">Deploying a closed interior aluminum energy screen cuts long-wave sky radiation and lowers effective greenhouse U-value by 40% to 52%, trimming peak boiler capacity and annual fuel consumption dramatically.</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-summary">Why does wind speed increase greenhouse heat demand even when outdoor air temperature stays constant? <span>▾</span></summary>
+          <div class="faq-content">Higher external wind strips away the exterior glazing thermal boundary layer and pressurizes structural lap/vent gaps, inflating both convective surface U-values and cold infiltration air exchange rates.</div>
+        </details>
+      </div>
+    </section>
+
 <!-- INW-TSUKUBA-FUNNEL-START -->
 <section class="inw-tsukuba-funnel-bridge" style="max-width: 1060px; margin: 32px auto; padding: 26px; background: rgba(15, 23, 42, 0.9); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 16px; text-align: left; box-shadow: 0 10px 28px rgba(0, 0, 0, 0.3);">
   <h3 style="margin: 0 0 8px 0; font-size: 1.2rem; color: #10b981; font-weight: 800;">🔬 Validated Engineering Monographs, Crop Guides & Simulators</h3>
@@ -477,19 +496,6 @@
     <a href="/crops/greenhouse-sweet-pepper-climate-blossom-end-rot-guide.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🫑 Sweet Pepper Night Temperature & Pipe-Rail Radiation Guide →</a>
     <a href="/tools/venlocad-3d.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🏗️ VenloCAD 3D Structural & EN 13031-1 BOM Architect →</a>
     <a href="/tools/global-agri-subsidy-grant-navigator.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🏛️ Global Agri-Subsidy & USDA REAP / German BLE Grant Navigator →</a>
-  </div>
-  <h3 style="margin: 24px 0 12px 0; font-size: 1.15rem; color: #10b981; font-weight: 800;">❓ Frequently Asked Engineering Questions (Technical FAQ)</h3>
-  <div>
-    <div style="margin-bottom:14px; padding:14px 18px; background:rgba(15,23,42,0.65); border-left:3px solid #10b981; border-radius:8px;">
-      <h4 style="margin:0 0 6px 0; color:#f8fafc; font-size:0.98rem;">How do you calculate peak greenhouse heating load (kW and W/m²) under DIN V 18599 / ASABE standards?</h4>
-      <p style="margin:0; color:#cbd5e1; font-size:0.9rem; line-height:1.65;">Total peak heat loss Q_total = (U_glazing × A_surface × (1 - η_screen) + 0.34 × V_house × ACH_infiltration) × (T_indoor - T_outdoor_design). A single aluminized thermal screen typically reduces radiative and convective U-value by 40% to 47%.</p>
-    </div><div style="margin-bottom:14px; padding:14px 18px; background:rgba(15,23,42,0.65); border-left:3px solid #10b981; border-radius:8px;">
-      <h4 style="margin:0 0 6px 0; color:#f8fafc; font-size:0.98rem;">How are bivalent heat pumps and gas peaking boilers sized for commercial Venlo glasshouses?</h4>
-      <p style="margin:0; color:#cbd5e1; font-size:0.9rem; line-height:1.65;">Size the high-COP heat pump (COP 3.8–4.8) to cover 35% to 45% of peak winter thermal capacity—which supplies 75% to 85% of total annual heating degree-hours—while using condensing gas boilers + thermal buffer tanks for extreme cold snaps.</p>
-    </div><div style="margin-bottom:14px; padding:14px 18px; background:rgba(15,23,42,0.65); border-left:3px solid #10b981; border-radius:8px;">
-      <h4 style="margin:0 0 6px 0; color:#f8fafc; font-size:0.98rem;">What government grants and subsidies are available for greenhouse energy retrofits in 2026?</h4>
-      <p style="margin:0; color:#cbd5e1; font-size:0.9rem; line-height:1.65;">In Germany, the BLE Bundesprogramm Energieeffizienz funds up to 40% of eligible HVAC/LED/screen CAPEX; in the United States, USDA REAP provides 25%–50% grant coverage alongside utility kWh rebates; in the Netherlands, EIA/SDE++ supports geothermal and heat-pump decarbonization.</p>
-    </div>
   </div>
 </section>
 <!-- INW-TSUKUBA-FUNNEL-END -->

@@ -275,26 +275,26 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "How do you calculate greenhouse Vapor Pressure Deficit (VPD) accurately using leaf temperature?",
+          "name": "What spatial microclimate errors do 3D greenhouse digital twins detect that 1-point thermostats miss?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "True canopy VPD must be calculated from saturated vapor pressure at actual radiometric leaf temperature (es(T_leaf) via the Tetens equation) minus ambient air vapor pressure (ea(T_air, RH)). Assuming T_leaf = T_air introduces a 0.25 to 0.45 kPa error under high solar radiation."
+            "text": "3D spatial thermodynamic mapping exposes perimeter glass cold drafts, stagnant high-humidity pockets between dense tomato rows, and vertical thermal stratification under high Venlo ridges."
           }
         },
         {
           "@type": "Question",
-          "name": "What is the optimal VPD target range for commercial greenhouse crops?",
+          "name": "How does raising Venlo gutter height from 4.0 m to 6.5 m affect 3D airflow and temperature stability?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Vegetative propagation requires 0.4 to 0.7 kPa, active vegetative growth thrives at 0.8 to 1.1 kPa, and generative fruit set in tomato, bell pepper, and strawberry performs best between 1.1 and 1.4 kPa to balance stomatal CO2 uptake with xylem calcium mass flow."
+            "text": "Taller gutters double the convective air buffer above the crop canopy, dampening rapid radiation temperature spikes and allowing moist buoyant plumes to disperse away from fruit clusters."
           }
         },
         {
           "@type": "Question",
-          "name": "How do you size a greenhouse dehumidifier or Air Treatment Unit (ATU) for night-time latent moisture removal?",
+          "name": "How should HAF circulation fans and thermal screens be coordinated in a 3D twin?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Multiply canopy night-time transpiration rate (typically 15 to 35 g/m²·h) by cultivated floor area (m²), then divide by the specific moisture extraction rate (L/kWh) at the target dew-point temperature on the Mollier h-x psychrometric chart."
+            "text": "Run opposite-row racetrack HAF fans at 0.3–0.5 m/s continuously while screens are closed to break up cold boundary layers along glass walls and equalize canopy leaf temperature within ±0.8 °C."
           }
         }
       ]
@@ -319,7 +319,7 @@
     <a href="/index.html" style="color: #10b981; font-weight: 800; font-size: 1.15rem; text-decoration: none; letter-spacing: -0.02em;">Inwoovation Lab</a>
     <div style="display: flex; flex-wrap: wrap; gap: 14px; font-size: 0.9rem;">
       <a href="/index.html" style="color: #e2e8f0; text-decoration: none;">Home</a>
-      <a href="/smartfarm/vpd.html" style="color: #e2e8f0; text-decoration: none;">Calculators</a>
+      <a href="/tools/index.html" style="color: #e2e8f0; text-decoration: none;">Calculators</a>
       <a href="/articles/index.html" style="color: #38bdf8; font-weight: 600; text-decoration: none;">Articles</a>
       <a href="/wiki/index.html" style="color: #e2e8f0; text-decoration: none;">Wiki</a>
       <a href="/climate/index.html" style="color: #e2e8f0; text-decoration: none;">Climate Hub</a>
@@ -435,66 +435,24 @@
     <div class="tool-editorial-wrapper">
       
       <!-- Technical Theory & Mathematical Formulation -->
-      <section class="editorial-card">
-        <h2><span>🤖</span> Engineering Theory & Biophysical Principles</h2>
-        <p>Modern commercial greenhouse operations are rapidly transitioning from reactive feedback PID loops to predictive, physics-informed autonomous controllers. A digital twin combines dynamic greenhouse energy balances (solar heat gain, long-wave radiation loss, ground conduction) with physiological crop models (canopy photosynthesis, transpiration). By ingesting external weather station forecasts (solar irradiance, wind velocity, ambient temperature), Model Predictive Control (MPC) algorithms solve multi-objective optimization problems every 5 minutes. This enables anticipatory thermal screen deployment before outdoor temperatures plummet, pre-charging solar thermal buffer tanks, and dynamic peak-electricity shaving.</p>
-        
-        <h3>Governing Equations & Mathematical Model</h3>
-        <div class="formula-box">
-MPC Objective Function:
-  J = ∑ [ w_yield · (A_net - Target)² + w_energy · (Cost_gas + Cost_elec) + w_smooth · (Δu)² ]
-Subject to State Constraints:
-  • T_min ≤ T_canopy(t) ≤ T_max
-  • VPD_min ≤ VPD(t) ≤ VPD_max
-  • Window_aperture_rate ≤ max_speed
-        </div>
-
-        <h3>Commercial Greenhouse Setpoints & Benchmark Matrix</h3>
-        <div class="benchmark-table-wrapper">
-          <table class="benchmark-table">
-            <thead>
-              <tr>
-                <th>Crop / System State</th>
-                <th>Target Setpoint</th>
-                <th>Engineering Range</th>
-                <th>Operational Impact</th>
-              </tr>
-            </thead>
-            <tbody>
-<tr><td><strong>IoT Telemetry Frequency (MQTT)</strong></td><td>Every 10 – 30 seconds</td><td>QoS 1 telemetry stream to edge gateway</td><td>-</td></tr>
-<tr><td><strong>MPC Optimization Horizon</strong></td><td>24 – 48 Hours Ahead</td><td>Predictive rolling horizon with 5-minute step resolution</td><td>-</td></tr>
-<tr><td><strong>Energy Cost Reduction via MPC</strong></td><td>15 – 28%</td><td>Compared to traditional setpoint day/night thermostat loops</td><td>-</td></tr>
-<tr><td><strong>Thermal Stratification in Buffer Tank</strong></td><td>Top: 85 – 95°C | Bottom: 35 – 45°C</td><td>Sharp thermocline ensures maximum boiler heat recovery</td><td>-</td></tr>
-
-            </tbody>
-          </table>
-        </div>
-      </section>
-
       <!-- Frequently Asked Questions (FAQ) Section -->
       <section class="editorial-card">
         <h2><span>❓</span> Frequently Asked Engineering Questions (FAQ)</h2>
         <div class="faq-accordion">
-
         <details class="faq-item">
-          <summary class="faq-summary">What is the primary advantage of Model Predictive Control over standard greenhouse climate computers? <span>▾</span></summary>
-          <div class="faq-content">Standard PID controllers only respond after an error has already occurred (e.g. greenhouse has already gotten too cold or too humid). MPC looks 24 to 48 hours into the future using weather forecasts and dynamic thermal models to adjust screens, vents, and heating hours in advance, avoiding costly overshoot.</div>
+          <summary class="faq-summary">What spatial microclimate errors do 3D greenhouse digital twins detect that 1-point thermostats miss? <span>▾</span></summary>
+          <div class="faq-content">3D spatial thermodynamic mapping exposes perimeter glass cold drafts, stagnant high-humidity pockets between dense tomato rows, and vertical thermal stratification under high Venlo ridges.</div>
         </details>
-        
         <details class="faq-item">
-          <summary class="faq-summary">How do MQTT and LoRaWAN architectures handle harsh greenhouse radio environments? <span>▾</span></summary>
-          <div class="faq-content">High humidity, dense wet crop canopies, and metal truss structures attenuate 2.4GHz Wi-Fi signals severely. Sub-GHz LoRaWAN (868/915 MHz) or industrial RS-485 Modbus RTU wire loops provide robust, noise-immune transmission from sensor nodes back to the central edge PLC.</div>
+          <summary class="faq-summary">How does raising Venlo gutter height from 4.0 m to 6.5 m affect 3D airflow and temperature stability? <span>▾</span></summary>
+          <div class="faq-content">Taller gutters double the convective air buffer above the crop canopy, dampening rapid radiation temperature spikes and allowing moist buoyant plumes to disperse away from fruit clusters.</div>
         </details>
-        
         <details class="faq-item">
-          <summary class="faq-summary">What role do 3D digital twins play in commercial facility management? <span>▾</span></summary>
-          <div class="faq-content">3D WebGL digital twins visualize spatial temperature, humidity, and airflow non-uniformities that single-point aspiration box sensors fail to capture. They identify microclimate dead zones, fungal risk hotspots, and draft leaks before visible crop damage occurs.</div>
+          <summary class="faq-summary">How should HAF circulation fans and thermal screens be coordinated in a 3D twin? <span>▾</span></summary>
+          <div class="faq-content">Run opposite-row racetrack HAF fans at 0.3–0.5 m/s continuously while screens are closed to break up cold boundary layers along glass walls and equalize canopy leaf temperature within ±0.8 °C.</div>
         </details>
-        
         </div>
-      </section>
-
-      <!-- Recommended Hardware & Amazon Associates Monetization -->
+      </section><!-- Recommended Hardware & Amazon Associates Monetization -->
       <section class="amazon-showcase">
         <div class="amazon-header">
           <h3><span>🛒</span> Recommended Precision Field Hardware (Amazon)</h3>
@@ -898,19 +856,6 @@ Subject to State Constraints:
     <a href="/crops/greenhouse-cucumber-high-humidity-transpiration-guide.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🥒 Greenhouse Cucumber High-Humidity Transpiration Guide →</a>
     <a href="/tools/psychrometric-mollier-greenhouse-dehumidifier.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">⚡ Mollier h-x Dehumidification & Latent Load Sizer →</a>
     <a href="/tools/evapotranspiration-penman-monteith-calculator.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🍃 FAO-56 Penman-Monteith Evapotranspiration Solver →</a>
-  </div>
-  <h3 style="margin: 24px 0 12px 0; font-size: 1.15rem; color: #10b981; font-weight: 800;">❓ Frequently Asked Engineering Questions (Technical FAQ)</h3>
-  <div>
-    <div style="margin-bottom:14px; padding:14px 18px; background:rgba(15,23,42,0.65); border-left:3px solid #10b981; border-radius:8px;">
-      <h4 style="margin:0 0 6px 0; color:#f8fafc; font-size:0.98rem;">How do you calculate greenhouse Vapor Pressure Deficit (VPD) accurately using leaf temperature?</h4>
-      <p style="margin:0; color:#cbd5e1; font-size:0.9rem; line-height:1.65;">True canopy VPD must be calculated from saturated vapor pressure at actual radiometric leaf temperature (es(T_leaf) via the Tetens equation) minus ambient air vapor pressure (ea(T_air, RH)). Assuming T_leaf = T_air introduces a 0.25 to 0.45 kPa error under high solar radiation.</p>
-    </div><div style="margin-bottom:14px; padding:14px 18px; background:rgba(15,23,42,0.65); border-left:3px solid #10b981; border-radius:8px;">
-      <h4 style="margin:0 0 6px 0; color:#f8fafc; font-size:0.98rem;">What is the optimal VPD target range for commercial greenhouse crops?</h4>
-      <p style="margin:0; color:#cbd5e1; font-size:0.9rem; line-height:1.65;">Vegetative propagation requires 0.4 to 0.7 kPa, active vegetative growth thrives at 0.8 to 1.1 kPa, and generative fruit set in tomato, bell pepper, and strawberry performs best between 1.1 and 1.4 kPa to balance stomatal CO2 uptake with xylem calcium mass flow.</p>
-    </div><div style="margin-bottom:14px; padding:14px 18px; background:rgba(15,23,42,0.65); border-left:3px solid #10b981; border-radius:8px;">
-      <h4 style="margin:0 0 6px 0; color:#f8fafc; font-size:0.98rem;">How do you size a greenhouse dehumidifier or Air Treatment Unit (ATU) for night-time latent moisture removal?</h4>
-      <p style="margin:0; color:#cbd5e1; font-size:0.9rem; line-height:1.65;">Multiply canopy night-time transpiration rate (typically 15 to 35 g/m²·h) by cultivated floor area (m²), then divide by the specific moisture extraction rate (L/kWh) at the target dew-point temperature on the Mollier h-x psychrometric chart.</p>
-    </div>
   </div>
 </section>
 <!-- INW-TSUKUBA-FUNNEL-END -->

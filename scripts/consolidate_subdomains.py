@@ -103,6 +103,17 @@ def ensure_legacy_301_redirectors():
             wiki_writes += 1
     print(f"  ✅ Verified {len(wiki_html_files)} 301 redirects in AgTech_Wiki ({wiki_writes} updated)")
 
+    if os.path.exists(WIKI_DIR):
+        wiki_sitemap = os.path.join(WIKI_DIR, "sitemap.xml")
+        clean_wiki_sitemap = (
+            '<?xml version="1.0" encoding="UTF-8"?>\n'
+            f'<!-- Legacy wiki.inwoovation.com routes consolidated via 301/canonical redirect to https://inwoovation.com/sitemap.xml | Last verified: {TODAY_ISO} -->\n'
+            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+            '</urlset>\n'
+        )
+        if _write_if_changed(wiki_sitemap, clean_wiki_sitemap):
+            print(f"  ✅ Synced clean empty AgTech_Wiki/sitemap.xml ({TODAY_ISO})")
+
     # 3. AgriMaster legacy redirects & Passive_Income_Hub sub-directory redirects
     am_writes = 0
     agrimaster_dests = {
@@ -116,6 +127,16 @@ def ensure_legacy_301_redirectors():
         if os.path.exists(f):
             if _write_if_changed(f, make_redirect_html(dest_url)):
                 am_writes += 1
+    if os.path.exists(AGRIMASTER_DIR):
+        am_sitemap = os.path.join(AGRIMASTER_DIR, "sitemap.xml")
+        clean_am_sitemap = (
+            '<?xml version="1.0" encoding="UTF-8"?>\n'
+            f'<!-- Legacy agrimaster routes consolidated via 301/canonical redirect to https://inwoovation.com/sitemap.xml | Last verified: {TODAY_ISO} -->\n'
+            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+            '</urlset>\n'
+        )
+        if _write_if_changed(am_sitemap, clean_am_sitemap):
+            print(f"  ✅ Synced clean empty AgriMaster_Portal/sitemap.xml ({TODAY_ISO})")
 
     if os.path.exists(SMARTFARM_DIR):
         pih_subdir_dests = [

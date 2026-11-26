@@ -77,8 +77,8 @@
   },
   "faq_list": [
     {
-      "question": "How does leaf temperature (T_leaf) vs. air temperature (T_air) affect VPD calculation in Circadian Clock Gating of Plastidic Nitrate Reductase (NR) Activity under Photoperiod Extension?",
-      "answer": "Standard ambient VPD calculations assume T_leaf equals T_air, which introduces a 15–35% error in Circadian Clock Gating of Plastidic Nitrate Reductase (NR) Activity under Photoperiod Extension canopies. Under high solar radiation or HPS lighting, T_leaf exceeds T_air by +1.5°C to +3.0°C, raising internal leaf saturation vapor pressure (e_sat) and driving true leaf-to-air VPD much higher than wall sensors indicate. Conversely, under high-efficiency LED lighting without thermal IR radiation, high transpiration cools T_leaf 0.8°C to 1.5°C below T_air. Always compute VPD using an infrared leaf radiometer to prevent hidden stomatal closure or nocturnal condensation."
+      "question": "Why does leaf nitrate concentration peak pre-dawn and drop sharply after 4 hours of morning photosynthesis?",
+      "answer": "Nitrate Reductase (NR) transcription is gated by the circadian clock and phosphorylated into active form by light-driven sucrose and ferredoxin reducing power, making afternoon harvests naturally lower in foliar nitrate."
     },
     {
       "question": "What is the optimal root-zone dissolved oxygen (DO) and temperature threshold to prevent root hypoxia in Lactuca sativa & Spinacia oleracea?",

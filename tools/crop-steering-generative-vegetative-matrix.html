@@ -142,26 +142,26 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "How do you calculate greenhouse Vapor Pressure Deficit (VPD) accurately using leaf temperature?",
+          "name": "How do slab dryback (% ΔVWC) and irrigation start/stop timing steer crops generatively vs. vegetatively?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "True canopy VPD must be calculated from saturated vapor pressure at actual radiometric leaf temperature (es(T_leaf) via the Tetens equation) minus ambient air vapor pressure (ea(T_air, RH)). Assuming T_leaf = T_air introduces a 0.25 to 0.45 kPa error under high solar radiation."
+            "text": "Large overnight drybacks (12–18% ΔVWC), delayed morning first shot (2–3h post-sunrise), and elevated dripper EC induce mild osmotic stress that shifts assimilates toward flowers and fruit (generative). Small drybacks (6–9%) favor leaf expansion (vegetative)."
           }
         },
         {
           "@type": "Question",
-          "name": "What is the optimal VPD target range for commercial greenhouse crops?",
+          "name": "How do 24-hour mean temperature and Day-Night DIF interact with DLI during crop steering?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Vegetative propagation requires 0.4 to 0.7 kPa, active vegetative growth thrives at 0.8 to 1.1 kPa, and generative fruit set in tomato, bell pepper, and strawberry performs best between 1.1 and 1.4 kPa to balance stomatal CO2 uptake with xylem calcium mass flow."
+            "text": "24-hour temperature must scale proportionally with daily light integral (P24 / DLI ratio ≈ 0.8–1.0 °C per mol): high night temperatures without matching daytime photosynthesis exhaust carbohydrate reserves, causing thin stems and weak trusses."
           }
         },
         {
           "@type": "Question",
-          "name": "How do you size a greenhouse dehumidifier or Air Treatment Unit (ATU) for night-time latent moisture removal?",
+          "name": "What VPD and EC range triggers tipburn or blossom-end rot during aggressive generative steering?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Multiply canopy night-time transpiration rate (typically 15 to 35 g/m²·h) by cultivated floor area (m²), then divide by the specific moisture extraction rate (L/kWh) at the target dew-point temperature on the Mollier h-x psychrometric chart."
+            "text": "Combining excessive slab EC (> 4.5 mS/cm) with persistently high or near-zero VPD stalls xylem calcium transport to expanding fruit tips and meristems. Keep mid-day VPD between 0.9 and 1.3 kPa while adjusting EC incrementally."
           }
         }
       ]
@@ -187,7 +187,7 @@
     <a href="/index.html" style="color: #10b981; font-weight: 800; font-size: 1.15rem; text-decoration: none; letter-spacing: -0.02em;">Inwoovation Lab</a>
     <div style="display: flex; flex-wrap: wrap; gap: 14px; font-size: 0.9rem;">
       <a href="/index.html" style="color: #e2e8f0; text-decoration: none;">Home</a>
-      <a href="/smartfarm/vpd.html" style="color: #e2e8f0; text-decoration: none;">Calculators</a>
+      <a href="/tools/index.html" style="color: #e2e8f0; text-decoration: none;">Calculators</a>
       <a href="/articles/index.html" style="color: #38bdf8; font-weight: 600; text-decoration: none;">Articles</a>
       <a href="/wiki/index.html" style="color: #e2e8f0; text-decoration: none;">Wiki</a>
       <a href="/climate/index.html" style="color: #e2e8f0; text-decoration: none;">Climate Hub</a>
@@ -288,66 +288,24 @@
     <div class="tool-editorial-wrapper">
       
       <!-- Technical Theory & Mathematical Formulation -->
-      <section class="editorial-card">
-        <h2><span>💧</span> Engineering Theory & Biophysical Principles</h2>
-        <p>Modern commercial greenhouse fertigation balances matric potential, osmotic pressure, and stoichiometric ionic ratios in inert substrates such as rockwool or coir. Crops absorb water and essential mineral nutrients through specialized ion transport proteins in root epidermal cells. The total suction pressure required for water extraction is the sum of substrate matric suction (determined by pore capillary diameter) and osmotic suction (proportional to electrical conductivity, EC). Crop steering leverages diurnal substrate dry-back percentages: a larger morning dry-back (8–12%) generates mild osmotic stress that steers plants generatively (flowering and fruit set), whereas smaller dry-backs (< 5%) with higher runoff volume steer plants vegetatively (leaf canopy expansion and vegetative vigor).</p>
-        
-        <h3>Governing Equations & Mathematical Model</h3>
-        <div class="formula-box">
-Total Water Potential (Ψ_total) = Ψ_matric + Ψ_osmotic
-Where:
-  • Ψ_osmotic (kPa) ≈ -36 × EC_rootzone (mS/cm)
-  • Dry-back (%) = WC_peak_morning - WC_pre_first_irrigation
-  • Drain % = (Drain Volume / Inflow Volume) × 100
-        </div>
-
-        <h3>Commercial Greenhouse Setpoints & Benchmark Matrix</h3>
-        <div class="benchmark-table-wrapper">
-          <table class="benchmark-table">
-            <thead>
-              <tr>
-                <th>Crop / System State</th>
-                <th>Target Setpoint</th>
-                <th>Engineering Range</th>
-                <th>Operational Impact</th>
-              </tr>
-            </thead>
-            <tbody>
-<tr><td><strong>Rockwool Slab Water Content (WC)</strong></td><td>55 – 75%</td><td>Peak after midday irrigation</td><td>Daily dry-back: 8 – 12%</td></tr>
-<tr><td><strong>Coco Coir Slab Water Content (WC)</strong></td><td>60 – 80%</td><td>Higher water retention capacity</td><td>Daily dry-back: 6 – 10%</td></tr>
-<tr><td><strong>Vine Tomato Rootzone EC</strong></td><td>3.0 – 4.2 mS/cm</td><td>Slab EC typically +0.5–1.0 mS/cm over dripper EC</td><td>Target Drain: 25 – 35%</td></tr>
-<tr><td><strong>Cucumber Rootzone EC</strong></td><td>2.2 – 2.8 mS/cm</td><td>Lower salinity threshold, high water demand</td><td>Target Drain: 30 – 40%</td></tr>
-<tr><td><strong>Sweet Pepper Rootzone EC</strong></td><td>2.8 – 3.5 mS/cm</td><td>Sensitive to sudden osmotic swings</td><td>Target Drain: 20 – 30%</td></tr>
-
-            </tbody>
-          </table>
-        </div>
-      </section>
-
       <!-- Frequently Asked Questions (FAQ) Section -->
       <section class="editorial-card">
         <h2><span>❓</span> Frequently Asked Engineering Questions (FAQ)</h2>
         <div class="faq-accordion">
-
         <details class="faq-item">
-          <summary class="faq-summary">Why is drain percentage monitoring critical in closed-loop recirculating hydroponics? <span>▾</span></summary>
-          <div class="faq-content">Plants absorb water and ions at differential rates depending on vapor pressure deficit and irradiance. Monitoring drain volume and electrical conductivity ensures salts (especially Na⁺ and Cl⁻) do not accumulate in the slab while ensuring that roots receive adequate dissolved oxygen replenishment.</div>
+          <summary class="faq-summary">How do slab dryback (% ΔVWC) and irrigation start/stop timing steer crops generatively vs. vegetatively? <span>▾</span></summary>
+          <div class="faq-content">Large overnight drybacks (12–18% ΔVWC), delayed morning first shot (2–3h post-sunrise), and elevated dripper EC induce mild osmotic stress that shifts assimilates toward flowers and fruit (generative). Small drybacks (6–9%) favor leaf expansion (vegetative).</div>
         </details>
-        
         <details class="faq-item">
-          <summary class="faq-summary">How does chemical speciation affect calcium and phosphate availability? <span>▾</span></summary>
-          <div class="faq-content">In nutrient stock tanks and dripline solutions with pH > 6.2, free Ca²⁺ ions readily react with orthophosphate species (HPO₄²⁻) to precipitate insoluble calcium phosphate (brushite/apatite), clogging drip emitters and inducing blossom-end rot. Maintaining pH between 5.5 and 5.8 prevents crystallization.</div>
+          <summary class="faq-summary">How do 24-hour mean temperature and Day-Night DIF interact with DLI during crop steering? <span>▾</span></summary>
+          <div class="faq-content">24-hour temperature must scale proportionally with daily light integral (P24 / DLI ratio ≈ 0.8–1.0 °C per mol): high night temperatures without matching daytime photosynthesis exhaust carbohydrate reserves, causing thin stems and weak trusses.</div>
         </details>
-        
         <details class="faq-item">
-          <summary class="faq-summary">What is TDR technology and how does it calibrate rockwool moisture measurements? <span>▾</span></summary>
-          <div class="faq-content">Time-Domain Reflectometry (TDR) emits high-frequency electromagnetic pulses along stainless steel rods. By measuring the dielectric permittivity of the substrate (water ε ≈ 80 vs rockwool matrix ε ≈ 3), TDR calculates volumetric water content (VWC) within ±1% precision, independent of fertilizer EC variations.</div>
+          <summary class="faq-summary">What VPD and EC range triggers tipburn or blossom-end rot during aggressive generative steering? <span>▾</span></summary>
+          <div class="faq-content">Combining excessive slab EC (&gt; 4.5 mS/cm) with persistently high or near-zero VPD stalls xylem calcium transport to expanding fruit tips and meristems. Keep mid-day VPD between 0.9 and 1.3 kPa while adjusting EC incrementally.</div>
         </details>
-        
         </div>
-      </section>
-
-      <!-- Recommended Hardware & Amazon Associates Monetization -->
+      </section><!-- Recommended Hardware & Amazon Associates Monetization -->
       <section class="amazon-showcase">
         <div class="amazon-header">
           <h3><span>🛒</span> Recommended Precision Field Hardware (Amazon)</h3>
@@ -490,19 +448,6 @@ Where:
     <a href="/crops/greenhouse-sweet-pepper-climate-blossom-end-rot-guide.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🫑 Sweet Pepper Night Temperature & Pipe-Rail Radiation Guide →</a>
     <a href="/tools/venlocad-3d.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🏗️ VenloCAD 3D Structural & EN 13031-1 BOM Architect →</a>
     <a href="/tools/global-agri-subsidy-grant-navigator.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🏛️ Global Agri-Subsidy & USDA REAP / German BLE Grant Navigator →</a>
-  </div>
-  <h3 style="margin: 24px 0 12px 0; font-size: 1.15rem; color: #10b981; font-weight: 800;">❓ Frequently Asked Engineering Questions (Technical FAQ)</h3>
-  <div>
-    <div style="margin-bottom:14px; padding:14px 18px; background:rgba(15,23,42,0.65); border-left:3px solid #10b981; border-radius:8px;">
-      <h4 style="margin:0 0 6px 0; color:#f8fafc; font-size:0.98rem;">How do you calculate greenhouse Vapor Pressure Deficit (VPD) accurately using leaf temperature?</h4>
-      <p style="margin:0; color:#cbd5e1; font-size:0.9rem; line-height:1.65;">True canopy VPD must be calculated from saturated vapor pressure at actual radiometric leaf temperature (es(T_leaf) via the Tetens equation) minus ambient air vapor pressure (ea(T_air, RH)). Assuming T_leaf = T_air introduces a 0.25 to 0.45 kPa error under high solar radiation.</p>
-    </div><div style="margin-bottom:14px; padding:14px 18px; background:rgba(15,23,42,0.65); border-left:3px solid #10b981; border-radius:8px;">
-      <h4 style="margin:0 0 6px 0; color:#f8fafc; font-size:0.98rem;">What is the optimal VPD target range for commercial greenhouse crops?</h4>
-      <p style="margin:0; color:#cbd5e1; font-size:0.9rem; line-height:1.65;">Vegetative propagation requires 0.4 to 0.7 kPa, active vegetative growth thrives at 0.8 to 1.1 kPa, and generative fruit set in tomato, bell pepper, and strawberry performs best between 1.1 and 1.4 kPa to balance stomatal CO2 uptake with xylem calcium mass flow.</p>
-    </div><div style="margin-bottom:14px; padding:14px 18px; background:rgba(15,23,42,0.65); border-left:3px solid #10b981; border-radius:8px;">
-      <h4 style="margin:0 0 6px 0; color:#f8fafc; font-size:0.98rem;">How do you size a greenhouse dehumidifier or Air Treatment Unit (ATU) for night-time latent moisture removal?</h4>
-      <p style="margin:0; color:#cbd5e1; font-size:0.9rem; line-height:1.65;">Multiply canopy night-time transpiration rate (typically 15 to 35 g/m²·h) by cultivated floor area (m²), then divide by the specific moisture extraction rate (L/kWh) at the target dew-point temperature on the Mollier h-x psychrometric chart.</p>
-    </div>
   </div>
 </section>
 <!-- INW-TSUKUBA-FUNNEL-END -->

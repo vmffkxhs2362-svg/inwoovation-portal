@@ -372,9 +372,9 @@ def _build_html(en_articles, de_count: int, ja_count: int, tools_list, grant_cou
   <meta charset="UTF-8">
   <meta name="google-adsense-account" content="ca-pub-8597809158257497">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The CEA Biophysics &amp; Greenhouse Engineering Handbook ({en_count} Volumes / {total_editions} Editions) | Inwoovation Lab</title>
+  <title>CEA Biophysics &amp; Engineering Handbook (214 Ed.) | Inwoovation</title>
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-  <meta name="description" content="Open-access six-part Controlled Environment Agriculture compendium indexing {en_count} volumes ({total_editions} EN/DE/JA editions), {tool_count} live biophysical calculators, and {grant_count} agricultural subsidy programs.">
+  <meta name="description" content="Open-access 6-part CEA engineering compendium indexing {en_count} volumes ({total_editions} EN/DE/JA editions), {tool_count} live biophysical calculators, and {grant_count} global grants.">
   <link rel="canonical" href="https://inwoovation.com/handbooks/" />
   <meta property="og:type" content="book">
   <meta property="og:url" content="https://inwoovation.com/handbooks/">
