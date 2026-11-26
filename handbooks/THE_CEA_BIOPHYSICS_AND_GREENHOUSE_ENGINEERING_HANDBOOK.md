@@ -1,5 +1,5 @@
 # 📘 The CEA Biophysics & Greenhouse Engineering Handbook
-## OpenCEA Compendium: 78 Volumes (213 Multilingual Editions) & 42 Live Simulators
+## OpenCEA Compendium: 78 Volumes (214 Multilingual Editions) & 42 Live Simulators
 
 > **Author**: Inwoovation Lab (Inwoo Hwang)  
 > **Target Audience**: Commercial Greenhouse Operators, Plant Factory Systems Engineers, Gärtnermeister Candidates, Agronomists  
@@ -8,7 +8,7 @@
 ---
 
 ## 📌 Executive Abstract & Compendium Profile
-This open-access technical compendium organizes all **78 English engineering monographs** (**213 total EN/DE/JA editions**) alongside **42 client-side biophysical simulators** and **192 hyper-local agricultural grant programs** into six engineering domains.
+This open-access technical compendium organizes all **78 English engineering monographs** (**214 total EN/DE/JA editions**) alongside **42 client-side biophysical simulators** and **192 hyper-local agricultural grant programs** into six engineering domains.
 
 ---
 
@@ -318,7 +318,7 @@ This open-access technical compendium organizes all **78 English engineering mon
 - **DE Edition**: [../articles/de/article-56-dunkelrot-photobiologie-epar-phytochrom-photostationaerer-zustand.html](../articles/de/article-56-dunkelrot-photobiologie-epar-phytochrom-photostationaerer-zustand.html)
 - **JA Edition**: [../articles/ja/article-56-far-red-photobiology-epar-phytochrome-photostationary-state-jp.html](../articles/ja/article-56-far-red-photobiology-epar-phytochrome-photostationary-state-jp.html)
 - **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
-- **Synopsis**: Engineering biophysics of far-red photon efficacy, ePAR extended photosynthetic range (400-750 nm), phytochrome photostationary state (PSS), and automated climate control.
+- **Synopsis**: Engineering biophysics of far-red photon efficacy, ePAR extended photosynthetic range (400-750 nm), phytochrome photostationary state (PSS), and automated.
 
 ---
 
@@ -645,8 +645,9 @@ This open-access technical compendium organizes all **78 English engineering mon
 <a id="chapter-58-article-58-dynamic-co2-enrichment-kinetics-rubisco-carboxylation-venlo"></a>
 - **EN Monograph**: [../articles/article-58-dynamic-co2-enrichment-kinetics-rubisco-carboxylation-venlo.html](../articles/article-58-dynamic-co2-enrichment-kinetics-rubisco-carboxylation-venlo.html)
 - **DE Edition**: [../articles/de/article-58-dynamic-co2-enrichment-kinetics-rubisco-carboxylation-venlo.html](../articles/de/article-58-dynamic-co2-enrichment-kinetics-rubisco-carboxylation-venlo.html)
+- **JA Edition**: [../articles/ja/article-58-dynamic-co2-enrichment-kinetics-rubisco-carboxylation-venlo-jp.html](../articles/ja/article-58-dynamic-co2-enrichment-kinetics-rubisco-carboxylation-venlo-jp.html)
 - **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
-- **Synopsis**: Engineering biophysics and microeconomic modeling of dynamic CO2 enrichment, RuBisCO carboxylation kinetics (Farquhar FvCB model), stomatal conductance.
+- **Synopsis**: Engineering biophysics and microeconomic modeling of dynamic CO2 enrichment, Farquhar-FvCB RuBisCO carboxylation kinetics, ventilation loss, and CHP dosing.
 
 ## Volume 59: EPEX Spot Negative Day-Ahead Arbitrage, Hybrid BESS Sizing & Power-to-Heat Thermal Buffering in Modern European Venlo Greenhouses
 <a id="chapter-59-article-59-epex-spot-negative-pricing-bess-power-to-heat-greenhouse"></a>
@@ -686,7 +687,7 @@ This open-access technical compendium organizes all **78 English engineering mon
 - **DE Edition**: [../articles/de/article-57-gewaechshaus-energieeffizienz-foerderung-ble-kfw-din13031.html](../articles/de/article-57-gewaechshaus-energieeffizienz-foerderung-ble-kfw-din13031.html)
 - **JA Edition**: [../articles/ja/article-57-california-cea-greenhouse-electrification-grant-stacking-jp.html](../articles/ja/article-57-california-cea-greenhouse-electrification-grant-stacking-jp.html)
 - **Paired Live Simulator**: [`tools/venlocad-3d.html`](../tools/venlocad-3d.html)
-- **Synopsis**: Engineering and grant stacking playbook for California commercial greenhouses, nurseries, and vertical farms to achieve up to 92% non-dilutive capital recovery via USDA REAP, CDFA SWEEP, and IOU rebates.
+- **Synopsis**: Engineering and grant stacking playbook for California commercial greenhouses, nurseries, and vertical farms to achieve up to 92% non-dilutive capital.
 
 ## Volume 62: 2026-2027 US 50-State Agricultural Grant & Subsidy Playbook: Non-Dilutive Capital for Smart Farms & CEA Growers
 <a id="chapter-62-article-62-us-50-state-agricultural-grant-playbook"></a>

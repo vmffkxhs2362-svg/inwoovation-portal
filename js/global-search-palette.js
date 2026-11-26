@@ -18,8 +18,8 @@
     "cat": "part",
     "url": "directory.html",
     "icon": "⚙️",
-    "desc": "Master HTML sitemap and engineering taxonomy indexing all 396 calculators, 192 global agricultural grants, EN/DE/JA monographs, crop guides, and climate hubs.",
-    "tags": "directory html complete cea engineering directory amp index master html sitemap and engineering taxonomy indexing all 396 calculators 192 global agricultural grants en de ja monographs crop "
+    "desc": "Master HTML sitemap and engineering taxonomy indexing all 397 calculators, 192 global agricultural grants, EN/DE/JA monographs, crop guides, and climate hubs.",
+    "tags": "directory html complete cea engineering directory amp index master html sitemap and engineering taxonomy indexing all 397 calculators 192 global agricultural grants en de ja monographs crop "
   },
   {
     "title": "CEA &amp; Greenhouse Engineering Articles",
@@ -530,7 +530,7 @@
     "cat": "article",
     "url": "articles/article-58-dynamic-co2-enrichment-kinetics-rubisco-carboxylation-venlo.html",
     "icon": "📚",
-    "desc": "Engineering biophysics and microeconomic modeling of dynamic CO2 enrichment, RuBisCO carboxylation kinetics (Farquhar FvCB model), stomatal conductance.",
+    "desc": "Engineering biophysics and microeconomic modeling of dynamic CO2 enrichment, Farquhar-FvCB RuBisCO carboxylation kinetics, ventilation loss, and CHP dosing.",
     "tags": "articles article 58 dynamic co2 enrichment kinetics rubisco carboxylation venlo html dynamic co2 enrichment kinetics amp rubisco engineering biophysics and microeconomic modeling of dynamic "
   },
   {
@@ -1162,7 +1162,7 @@
     "cat": "article",
     "url": "articles/de/article-58-dynamic-co2-enrichment-kinetics-rubisco-carboxylation-venlo.html",
     "icon": "🇩🇪",
-    "desc": "Ingenieur-Monographie zur dynamischen CO₂-Anreicherung im Venlo-Gewächshaus: Biochemische Farquhar-von-Caemmerer-Berry-(FvCB)-Kinetik der RuBisCO.",
+    "desc": "Ingenieur-Monographie zur dynamischen CO₂-Anreicherung im Venlo-Gewächshaus: Farquhar-FvCB-Kinetik der RuBisCO, Firstlüftungs-Massenbilanz und BHKW-Ökonomie.",
     "tags": "articles de article 58 dynamic co2 enrichment kinetics rubisco carboxylation venlo html vol 58 dynamische co begasungskinetik ingenieur monographie zur dynamischen co anreicherung im venlo g"
   },
   {
@@ -1790,12 +1790,20 @@
     "tags": "articles ja article 57 california cea greenhouse electrification grant stacking jp html vol 57 自己負担 8 モデルの多層補助金スタッキング工学 商業温室 植物工場の led 化 ヒ トポンプ電化 vfd 灌漑更新において最大 92 の非希薄化補助金回収を実現するカリフォルニア 4 層"
   },
   {
-    "title": "日本語 施設園芸・スマート農業工学モノグラフ一覧 (57 論文)",
+    "title": "Vol. 58: 動的 CO₂ 施用速度論と RuBisCO 光合成熱力学",
+    "cat": "article",
+    "url": "articles/ja/article-58-dynamic-co2-enrichment-kinetics-rubisco-carboxylation-venlo-jp.html",
+    "icon": "🇯🇵",
+    "desc": "高軒高フェンロー温室の動的 CO₂ 施用工学：Farquhar-FvCB モデルによる RuBisCO カルボキシル化速度論、葉温アレニウス依存性と光呼吸抑制、天窓換気ロス物質収支、CHP 排ガス触媒精製と限界収益最適化を解説。",
+    "tags": "articles ja article 58 dynamic co2 enrichment kinetics rubisco carboxylation venlo jp html vol 58 動的 co 施用速度論と rubisco 光合成熱力学 高軒高フェンロ 温室の動的 co 施用工学 farquhar fvcb モデルによる rubisco カルボキシル化速度論 葉温"
+  },
+  {
+    "title": "日本語 施設園芸・スマート農業工学モノグラフ一覧 (58 論文)",
     "cat": "article",
     "url": "articles/ja/index.html",
     "icon": "🇯🇵",
-    "desc": "商業用 Venlo 型ガラス温室の VPD 飽差熱力学・DIN V 18599 暖房負荷・EN 13031-1 構造設計・FvCB CO2 施用・養液化学平衡を解説する 57 編の日本語技術論文アーカイブ。",
-    "tags": "articles ja index html 日本語 施設園芸 スマ ト農業工学モノグラフ一覧 57 論文 商業用 venlo 型ガラス温室の vpd 飽差熱力学 din v 18599 暖房負荷 en 13031 1 構造設計 fvcb co2 施用 養液化学平衡を解説する 57 編の日本語技術論文ア カイブ"
+    "desc": "商業用 Venlo 型ガラス温室の VPD 飽差熱力学・DIN V 18599 暖房負荷・EN 13031-1 構造設計・FvCB CO2 施用・養液化学平衡を解説する 58 編の日本語技術論文アーカイブ。",
+    "tags": "articles ja index html 日本語 施設園芸 スマ ト農業工学モノグラフ一覧 58 論文 商業用 venlo 型ガラス温室の vpd 飽差熱力学 din v 18599 暖房負荷 en 13031 1 構造設計 fvcb co2 施用 養液化学平衡を解説する 58 編の日本語技術論文ア カイブ"
   },
   {
     "title": "Diffuse AR Glass vs. Multi-Layer PO Film",
@@ -2258,8 +2266,8 @@
     "cat": "article",
     "url": "handbooks/index.html",
     "icon": "📖",
-    "desc": "Open-access six-part Controlled Environment Agriculture compendium indexing 78 volumes (213 EN/DE/JA editions), 42 live biophysical calculators, and 192.",
-    "tags": "handbooks index html the cea biophysics amp greenhouse engineering open access six part controlled environment agriculture compendium indexing 78 volumes 213 en de ja editions 42 live biophy"
+    "desc": "Open-access six-part Controlled Environment Agriculture compendium indexing 78 volumes (214 EN/DE/JA editions), 42 live biophysical calculators, and 192.",
+    "tags": "handbooks index html the cea biophysics amp greenhouse engineering open access six part controlled environment agriculture compendium indexing 78 volumes 214 en de ja editions 42 live biophy"
   },
   {
     "title": "AgriMaster",
@@ -3164,13 +3172,13 @@
       <div class="inwoo-palette-box" role="dialog" aria-modal="true" aria-label="Inwoovation Spotlight Search">
         <div class="inwoo-palette-header">
           <span class="inwoo-palette-search-icon">🔍</span>
-          <input type="text" id="inwoo-palette-input" placeholder="Search all 391 tools, simulators, wiki, crops, climate hubs & EN/DE/JA articles..." autocomplete="off" />
+          <input type="text" id="inwoo-palette-input" placeholder="Search all 392 tools, simulators, wiki, crops, climate hubs & EN/DE/JA articles..." autocomplete="off" />
           <span class="inwoo-palette-esc-badge" onclick="window.InwooPalette.close()">ESC</span>
         </div>
         <div class="inwoo-palette-tabs">
-          <button class="inwoo-pal-tab active" data-cat="all">✨ All (391)</button>
+          <button class="inwoo-pal-tab active" data-cat="all">✨ All (392)</button>
           <button class="inwoo-pal-tab" data-cat="tool">🛠️ Tools (49)</button>
-          <button class="inwoo-pal-tab" data-cat="article">📚 Articles (219)</button>
+          <button class="inwoo-pal-tab" data-cat="article">📚 Articles (220)</button>
           <button class="inwoo-pal-tab" data-cat="wiki">🧬 Wiki (44)</button>
           <button class="inwoo-pal-tab" data-cat="climate">🌍 Climate (41)</button>
           <button class="inwoo-pal-tab" data-cat="sim">🧪 Simulators (19)</button>
@@ -3184,7 +3192,7 @@
             <span><kbd>↵</kbd> Open</span>
             <span><kbd>Esc</kbd> Close</span>
           </div>
-          <div style="color: #64748b; font-size: 0.75rem;">Inwoovation Universal Spotlight (391 Indexed Pages)</div>
+          <div style="color: #64748b; font-size: 0.75rem;">Inwoovation Universal Spotlight (392 Indexed Pages)</div>
         </div>
       </div>
     `;

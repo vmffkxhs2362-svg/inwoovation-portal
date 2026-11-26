@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta name="google-adsense-account" content="ca-pub-8597809158257497">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <title>Vol. 58: 動的 CO₂ 施用速度論と RuBisCO 光合成熱力学 | Inwoovation</title>
+  <meta name="description" content="高軒高フェンロー温室の動的 CO₂ 施用工学：Farquhar-FvCB モデルによる RuBisCO カルボキシル化速度論、葉温アレニウス依存性と光呼吸抑制、天窓換気ロス物質収支、CHP 排ガス触媒精製と限界収益最適化を解説。">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <link rel="canonical" href="https://inwoovation.com/articles/ja/article-58-dynamic-co2-enrichment-kinetics-rubisco-carboxylation-venlo-jp.html">
+  <link rel="alternate" hreflang="en" href="https://inwoovation.com/articles/article-58-dynamic-co2-enrichment-kinetics-rubisco-carboxylation-venlo.html">
+  <link rel="alternate" hreflang="x-default" href="https://inwoovation.com/articles/article-58-dynamic-co2-enrichment-kinetics-rubisco-carboxylation-venlo.html">
+  <link rel="alternate" hreflang="de" href="https://inwoovation.com/articles/de/article-58-dynamic-co2-enrichment-kinetics-rubisco-carboxylation-venlo.html">
+  <link rel="alternate" hreflang="ja" href="https://inwoovation.com/articles/ja/article-58-dynamic-co2-enrichment-kinetics-rubisco-carboxylation-venlo-jp.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Vol. 58: 動的 CO₂ 施用速度論と RuBisCO 光合成熱力学 | Inwoovation">
+  <meta property="og:description" content="高軒高フェンロー温室の動的 CO₂ 施用工学：Farquhar-FvCB モデルによる RuBisCO カルボキシル化速度論、葉温アレニウス依存性と光呼吸抑制、天窓換気ロス物質収支、CHP 排ガス触媒精製と限界収益最適化を解説。">
+  <meta property="og:url" content="https://inwoovation.com/articles/ja/article-58-dynamic-co2-enrichment-kinetics-rubisco-carboxylation-venlo-jp.html">
+  <meta property="og:image" content="https://inwoovation.com/og-cover.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V4RYJBMEDE"></script>
+  <script>
+    if (navigator.webdriver || /HeadlessChrome|PhantomJS|Lighthouse|PTST|bot|crawler|spider|slurp/i.test(navigator.userAgent) || location.hostname === 'localhost' || location.hostname === '127.0.0.1' || (screen.width === 1366 && screen.height === 1366) || (screen.width === 800 && screen.height === 600) || screen.height >= 5000) { window['ga-disable-G-V4RYJBMEDE'] = true; }
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {'ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','analytics_storage':'denied','wait_for_update':500,'region':['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IS','IE','IT','LV','LI','LT','LU','MT','NL','NO','PL','PT','RO','SK','SI','ES','SE','GB','CH']});try{var _c=localStorage.getItem('inw_gdpr_consent_v2');if(_c==='granted')gtag('consent','update',{'ad_storage':'granted','ad_user_data':'granted','ad_personalization':'granted','analytics_storage':'granted'});}catch(_e){}
+       gtag('js', new Date());
+    gtag('config', 'G-V4RYJBMEDE');
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8597809158257497" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/global-ui-enhancements.css?v=20261108">
+  <script src="/js/global-search-palette.js?v=20261108" defer></script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "headline": "Vol. 58: 動的 CO₂ 施用速度論と RuBisCO 光合成熱力学 | Inwoovation",
+      "description": "高軒高フェンロー温室の動的 CO₂ 施用工学：Farquhar-FvCB モデルによる RuBisCO カルボキシル化速度論、葉温アレニウス依存性と光呼吸抑制、天窓換気ロス物質収支、CHP 排ガス触媒精製と限界収益最適化を解説。",
+      "inLanguage": "ja",
+      "datePublished": "2026-11-26",
+      "dateModified": "2026-11-26",
+      "mainEntityOfPage": "https://inwoovation.com/articles/ja/article-58-dynamic-co2-enrichment-kinetics-rubisco-carboxylation-venlo-jp.html",
+      "image": "https://inwoovation.com/og-cover.jpg",
+      "author": {
+        "@type": "Person",
+        "name": "Inwoo Hwang",
+        "jobTitle": "Horticultural & CEA Systems Engineer",
+        "url": "https://inwoovation.com/about.html"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Inwoovation Lab",
+        "url": "https://inwoovation.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://inwoovation.com/og-cover.jpg"
+        }
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inwoovation Lab",
+          "item": "https://inwoovation.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Engineering Guides",
+          "item": "https://inwoovation.com/guides.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "JA Vol. 58: 動的 CO₂ 施用速度論と RuBisCO 熱力学",
+          "item": "https://inwoovation.com/articles/ja/article-58-dynamic-co2-enrichment-kinetics-rubisco-carboxylation-venlo-jp.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "なぜ葉温が 25–28 °C に上昇すると C₃ 野菜の最適 CO₂ 目標値を 950–1,120 ppm へ引き上げる必要があるのですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "アレニウスの温度則により葉温が上昇すると、RuBisCO 酵素の CO₂ に対する親和性定数 Kc が O₂ に対する Ko よりも急激に増大し、同時に細胞液中の CO₂ 溶解度が低下して光呼吸（オキシゲナーゼ反応）が急増するためです。環境濃度を高めることで RuBisCO 活性中心での CO₂ 競合優位を回復し、光呼吸損失を 60 % 以上抑制できます。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "天窓が開いているとき、動的環境制御コンピューターはどの換気回数 (N) で CO₂ 施用を抑制しますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "天窓開度が 20–40 % を超えて時間あたり換気回数 N が 8–12 h⁻¹ 以上に達すると、注入した CO₂ の 75 % 以上が屋根から散逸し、限界費用 MC_C が光合成限界収益 MR_C を上回ります。このため動的制御では目標値を 450–550 ppm へ段階的に引き下げ、350 ppm 未満の欠乏防止のみに絞ってガスコストを最大 35 % 削減します。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "CHP (BHKW) コージェネレーション排ガスを温室内へ直接施用する際に監視すべきガス基準は何ですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "二段触媒（尿素 SCR 脱硝 + Pt/Pd 酸化触媒）の下流において、落花・異常黄化を防ぐためエチレン C₂H₄ < 5 ppb、慢性同化阻害を防ぐため窒素酸化物 NOₓ < 100–150 ppb、触媒劣化検知および安全基準として CO < 5 ppm をオンライン監視することが必須です。作業空間の CO₂ 許容濃度は TRGS 900 に準拠し 5,000 ppm 未満を維持します。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "1.0 ha 規模で動的 CO₂ 制御と蓄熱バッファを導入する際の主要な国際補助金は何ですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ドイツでは BMLEH/FNR 連邦エネルギー効率補助金（最大 40–50 %）と Rentenbank 低利環境融資、オランダでは EIA（40 % 投資税額控除）および OCAP 地域パイプライン連携、日本では農林水産省の産地生産基盤パワーアップ事業・みどり戦略省エネ補助（1/2 補助）が活用でき、Inwoovation Lab の世界 8 か国 192 制度ナビゲーターで詳細条件を検索できます。"
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+  <style>
+    body { margin: 0; font-family: 'Plus Jakarta Sans', sans-serif; background: #090d16; color: #e2e8f0; line-height: 1.8; }
+    .article-shell { max-width: 920px; margin: 0 auto; padding: 36px 22px 60px; }
+    .badge-pill { display: inline-block; padding: 6px 14px; border-radius: 999px; background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.4); color: #34d399; font-size: 0.82rem; font-weight: 700; margin-bottom: 14px; }
+    h1 { font-family: 'Outfit', sans-serif; font-size: 2.25rem; line-height: 1.25; color: #f8fafc; margin: 0 0 14px 0; }
+    .meta-bar { color: #94a3b8; font-size: 0.9rem; margin-bottom: 28px; padding-bottom: 18px; border-bottom: 1px solid rgba(148, 163, 184, 0.18); }
+    .formula-box { background: rgba(15, 23, 42, 0.9); border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 12px; padding: 18px 22px; margin: 20px 0; font-family: 'JetBrains Mono', monospace; color: #38bdf8; overflow-x: auto; }
+    table.eng-table { width: 100%; border-collapse: collapse; margin: 20px 0; background: rgba(15, 23, 42, 0.75); border-radius: 12px; overflow: hidden; }
+    table.eng-table th, table.eng-table td { padding: 12px 14px; border: 1px solid rgba(148, 163, 184, 0.2); text-align: left; font-size: 0.92rem; }
+    table.eng-table th { background: rgba(30, 41, 59, 0.9); color: #38bdf8; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <main class="article-shell">
+    <div style="margin-bottom: 20px;">
+      <a href="/guides.html" style="color: #38bdf8; text-decoration: none; font-weight: 700; font-size: 0.92rem;">← 技術モノグラフ一覧（Engineering Guides）へ戻る</a>
+    </div>
+    <span class="badge-pill">🇯🇵 施設園芸工学モノグラフ JA Vol. 58 · FvCB Assimilation Kinetics &amp; Dynamic CO₂ Control (第 214 編)</span>
+    <h1>Vol. 58: 高軒高フェンロー温室における動的 CO₂ 施用速度論と RuBisCO カルボキシル化熱力学 — Farquhar-FvCB 生化学モデル・天窓換気物質収支・CHP 排ガス精製と限界経済最適化</h1>
+<!-- INW-LANG-SWITCHER-START -->
+<div class="inw-lang-switcher-bar" style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:14px 0 20px 0; padding:10px 14px; background:rgba(15,23,42,0.75); border:1px solid rgba(148,163,184,0.2); border-radius:12px;">
+  <span style="font-size:0.8rem; color:#94a3b8; font-weight:700; margin-right:4px;">🌐 Vol. 58 Editions:</span>
+  <a href="/articles/article-58-dynamic-co2-enrichment-kinetics-rubisco-carboxylation-venlo.html" style="display:inline-flex; align-items:center; padding:5px 12px; border-radius:999px; background:rgba(30,41,59,0.8); border:1px solid rgba(56,189,248,0.35); color:#38bdf8; text-decoration:none; font-size:0.8rem; font-weight:600;">🇬🇧 English Edition →</a>
+  <a href="/articles/de/article-58-dynamic-co2-enrichment-kinetics-rubisco-carboxylation-venlo.html" style="display:inline-flex; align-items:center; padding:5px 12px; border-radius:999px; background:rgba(30,41,59,0.8); border:1px solid rgba(56,189,248,0.35); color:#38bdf8; text-decoration:none; font-size:0.8rem; font-weight:600;">🇩🇪 Deutsche Ausgabe →</a>
+  <span style="display:inline-flex; align-items:center; padding:5px 12px; border-radius:999px; background:rgba(16,185,129,0.22); border:1px solid #10b981; color:#34d399; font-size:0.8rem; font-weight:700;">🇯🇵 日本語版 (JA) (Active)</span>
+</div>
+<!-- INW-LANG-SWITCHER-END -->
+    <div class="meta-bar">
+      <span>👨‍🔬 <strong>Inwoo Hwang</strong> (Inwoovation Lab)</span> &nbsp;|&nbsp;
+      <span>📅 Last Updated: November 26, 2026</span> &nbsp;|&nbsp;
+      <span>⏱️ 17 min read · FvCB RuBisCO Kinetics, Ventilation Mass Balance &amp; CHP CO₂ Economics</span>
+    </div>
+
+      <section style="margin-bottom: 34px;">
+        <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px; margin-bottom: 16px;">1. C₃ 果菜類における炭素固定の生化学的律速：Farquhar-von Caemmerer-Berry (FvCB) モデル</h2>
+        <p>高軒高フェンロー (Venlo) 型商業ガラス温室において、ハイワイヤー誘引のトマト (<em>Solanum lycopersicum</em>)、キュウリ (<em>Cucumis sativus</em>)、およびパプリカ (<em>Capsicum annuum</em>) といった C<sub>3</sub> 果菜類を密植栽培する場合、大気中の標準二酸化炭素濃度 (CO<sub>2</sub> &approx; 420 ppm) は乾物生産を制限する最大のボトルネックとなる。晴天日の自然光に加えて補光 LED アレイが <strong>250–350 &mu;mol&middot;m<sup>&minus;2</sup>&middot;s<sup>&minus;1</sup></strong> を照射し、群落全体の光合成有効光量子束密度 (PPFD) が <strong>650–850 &mu;mol&middot;m<sup>&minus;2</sup>&middot;s<sup>&minus;1</sup></strong> に達すると、葉面積指数 (LAI) 3.2–3.8 m<sup>2</sup>&middot;m<sup>&minus;2</sup> の旺盛な群落は 1 時間あたり <strong>3.5–5.5 g CO<sub>2</sub>&middot;m<sup>&minus;2</sup>&middot;h<sup>&minus;1</sup> (35–55 kg CO<sub>2</sub>&middot;ha<sup>&minus;1</sup>&middot;h<sup>&minus;1</sup>)</strong> の炭素を固定する。天窓を閉鎖したまま積極的な施用を行わなければ、室内濃度はわずか 30–45 分で <strong>200–220 ppm</strong> まで枯渇し、純光合成速度が 40 % 以上低下する。</p>
+        <p>しかし、天窓が開いている状態でも一律 1,000 ppm の固定目標値で液化炭酸ガス (LCO<sub>2</sub>) やコージェネレーション (CHP) 排ガスを注入し続けると、多大なガスが屋根から大気へ散逸して収益性を毀損する。オランダ・ウェストラントやドイツ・ニーダーラインおよびニュルンベルク近郊の先進施設園芸拠点では、国際標準である <strong>Farquhar-von Caemmerer-Berry (FvCB, 1980) 生化学同化モデル</strong> と換気物質収支方程式を結合し、炭酸固定酵素 <strong>RuBisCO (リブロース-1,5-ビスリン酸カルボキシラーゼ／オキシゲナーゼ)</strong> の限界飽和点に合わせて施用量をリアルタイムに最適化している。</p>
+        <div class="formula-box">
+          FvCB 純光合成速度: A<sub>n</sub> = (1 &minus; &Gamma;* &divide; C<sub>i</sub>) &middot; min(W<sub>c</sub>, W<sub>j</sub>) &minus; R<sub>d</sub><br>
+          RuBisCO カルボキシル化律速: W<sub>c</sub> = (V<sub>cmax</sub> &middot; C<sub>i</sub>) &divide; [C<sub>i</sub> + K<sub>c</sub> &middot; (1 + O<sub>i</sub> &divide; K<sub>o</sub>)]<br>
+          RuBP 再生電子伝達律速: W<sub>j</sub> = (J(PPFD) &middot; C<sub>i</sub>) &divide; (4 &middot; C<sub>i</sub> + 8 &middot; &Gamma;*)
+        </div>
+        <p>ここで、<em>A</em><sub>n</sub> は純葉面同化速度 (&mu;mol CO<sub>2</sub>&middot;m<sup>&minus;2</sup>&middot;s<sup>&minus;1</sup>)、<em>W</em><sub>c</sub> は低細胞間隙 CO<sub>2</sub> 分圧 (<em>C</em><sub>i</sub>) 下での RuBisCO 酵素活性律速速度、<em>W</em><sub>j</sub> は高 <em>C</em><sub>i</sub> または弱光条件下での電子伝達速度 <em>J</em> による RuBP 再生律速速度、<em>R</em><sub>d</sub> は明期ミトコンドリア呼吸速度 (&approx; 1.2–1.6 &mu;mol&middot;m<sup>&minus;2</sup>&middot;s<sup>&minus;1</sup>) である。また、<em>V</em><sub>cmax</sub> はトマト 25 &deg;C 基準で <strong>80–110 &mu;mol&middot;m<sup>&minus;2</sup>&middot;s<sup>&minus;1</sup></strong>、細胞間隙酸素分圧 <em>O</em><sub>i</sub> は約 <strong>210 mbar</strong>、光呼吸補償点 &Gamma;* は 25 &deg;C で約 <strong>42.7 &mu;bar (ppm)</strong> となる。</p>
+      </section>
+      <section style="margin-bottom: 34px;">
+        <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px; margin-bottom: 16px;">2. 葉温上昇とアレニウス熱力学：光呼吸 (Photorespiration) の競合抑制数理</h2>
+        <p>RuBisCO は CO<sub>2</sub> 固定（カルボキシル化 <em>v</em><sub>c</sub>）だけでなく、酸素 O<sub>2</sub> を基質とする競合反応（オキシゲナーゼ反応 <em>v</em><sub>o</sub>）も触媒する二機能酵素である。オキシゲナーゼ反応はエネルギーを消費しながら固定済みの炭素を CO<sub>2</sub> として再放出する <strong>光呼吸 (Photorespiration)</strong> を引き起こし、特に夏季や高日射下で葉温が上昇するほど顕著になる。各反応速度定数 (<em>V</em><sub>cmax</sub>, <em>K</em><sub>c</sub>, <em>K</em><sub>o</sub>, &Gamma;*) は絶対温度 <em>T</em><sub>k</sub> (K) に対して非線形の <strong>アレニウス (Arrhenius) 温度依存式</strong> に従う。</p>
+        <div class="formula-box">
+          Arrhenius 温度補正: f(T<sub>k</sub>) = k<sub>25</sub> &middot; exp[ E<sub>a</sub> &middot; (T<sub>k</sub> &minus; 298.15) &divide; (298.15 &middot; R &middot; T<sub>k</sub>) ]
+        </div>
+        <p>普遍気体定数 <em>R</em> = <strong>8.314 J&middot;mol<sup>&minus;1</sup>&middot;K<sup>&minus;1</sup></strong>、活性化エネルギーは <em>E</em><sub>a,Kc</sub> &approx; <strong>79.43 kJ&middot;mol<sup>&minus;1</sup></strong>、<em>E</em><sub>a,Ko</sub> &approx; <strong>36.38 kJ&middot;mol<sup>&minus;1</sup></strong> である。葉温が 18 &deg;C から 28 &deg;C へ上昇すると、<em>K</em><sub>c</sub> が 235 &mu;bar から 502 &mu;bar へと倍増する一方で <em>K</em><sub>o</sub> の増加は緩やかであり、さらに葉肉液相における CO<sub>2</sub> 溶解度が O<sub>2</sub> よりも急速に低下する。そのため <strong>葉温が高い条件ほど光呼吸を競合抑制するために高い CO<sub>2</sub> 濃度目標値が必要</strong> となり、空間濃度を 800–1,000 ppm へ引き上げることで光呼吸損失を <strong>60 % 以上</strong> 抑制し、純同化の最適温度帯を +3〜+5 K 高温側へ拡張できる。</p>
+        <table class="eng-table">
+          <thead>
+            <tr>
+              <th>葉温 T<sub>leaf</sub> (&deg;C)</th>
+              <th>光呼吸補償点 &Gamma;* (ppm)</th>
+              <th>CO<sub>2</sub> ミカエリス定数 K<sub>c</sub> (&mu;bar)</th>
+              <th>O<sub>2</sub> ミカエリス定数 K<sub>o</sub> (mbar)</th>
+              <th>90 % 酵素飽和に向けた推奨細胞間隙 C<sub>i</sub></th>
+              <th>対応する温室空間目標 C<sub>a</sub> (g<sub>tc</sub> 考慮)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>18 &deg;C</strong> (早朝・冬期低温)</td>
+              <td>31.4 ppm</td>
+              <td>235 &mu;bar</td>
+              <td>220 mbar</td>
+              <td>~490 ppm</td>
+              <td><strong>680 ppm</strong></td>
+            </tr>
+            <tr>
+              <td><strong>22 &deg;C</strong> (標準栄養生長期)</td>
+              <td>37.2 ppm</td>
+              <td>328 &mu;bar</td>
+              <td>255 mbar</td>
+              <td>~590 ppm</td>
+              <td><strong>820 ppm</strong></td>
+            </tr>
+            <tr>
+              <td><strong>25 &deg;C</strong> (高日射基準点)</td>
+              <td>42.7 ppm</td>
+              <td>404 &mu;bar</td>
+              <td>278 mbar</td>
+              <td>~685 ppm</td>
+              <td><strong>950 ppm</strong></td>
+            </tr>
+            <tr>
+              <td><strong>28 &deg;C</strong> (高温・光呼吸抑制域)</td>
+              <td>49.6 ppm</td>
+              <td>502 &mu;bar</td>
+              <td>304 mbar</td>
+              <td>~805 ppm</td>
+              <td><strong>1,120 ppm</strong> (閉鎖・半閉鎖時)</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <section style="margin-bottom: 34px;">
+        <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px; margin-bottom: 16px;">3. 気孔拡散抵抗 (Fick の第 1 法則) とフェンロー温室の非定常 CO₂ 物質収支</h2>
+        <p>温室バルク空気の濃度 <em>C</em><sub>a</sub> を 1,000 ppm に設定しても、葉緑体近傍の <em>C</em><sub>i</sub> が直ちに 1,000 ppm になるわけではない。拡散フラックスはフィック (Fick) の第 1 法則により、葉面境界層コンダクタンス <em>g</em><sub>b</sub> と気孔コンダクタンス <em>g</em><sub>s</sub> の直列合成である全 CO<sub>2</sub> コンダクタンス <em>g</em><sub>tc</sub> = 1 / (<em>r</em><sub>bc</sub> + <em>r</em><sub>sc</sub>) に支配される。</p>
+        <div class="formula-box">
+          気孔拡散律速: A<sub>n</sub> = g<sub>tc</sub> &middot; (C<sub>a</sub> &minus; C<sub>i</sub>) = (C<sub>a</sub> &minus; C<sub>i</sub>) &divide; (r<sub>bc</sub> + r<sub>sc</sub>)
+        </div>
+        <p>飽差 (VPD) が <strong>1.5 kPa</strong> を超えて過剰蒸散ストレスが生じたり、根圏 EC が浸透圧許容上限を超過すると、気孔は防衛的に閉鎖方向へ動き <em>r</em><sub>sc</sub> が増大する。この際、<em>C</em><sub>i</sub> 低下を補って拡散勾配 (<em>C</em><sub>a</sub> &minus; <em>C</em><sub>i</sub>) を維持するには、むしろ適切な水平気流 (HAF) による境界層抵抗 <em>r</em><sub>bc</sub> 低減と、高湿度・中飽差制御下での <em>C</em><sub>a</sub> 補正が不可欠となる。次に、平均軒高・棟高平均 <em>h</em><sub>m</sub> = <strong>6.0–7.2 m</strong>（標準 6.5 m）、20 &deg;C における CO<sub>2</sub> 密度 &rho;<sub>CO2</sub> &approx; <strong>1.83 kg&middot;m<sup>&minus;3</sup></strong>、時間あたり換気回数 <em>N</em> (ACH, h<sup>&minus;1</sup>) を用いた温室全体の非定常 CO<sub>2</sub> 物質収支式を示す。</p>
+        <div class="formula-box">
+          温室 CO<sub>2</sub> 物質収支: h<sub>m</sub> &middot; (dC<sub>in</sub> &divide; dt) = &Phi;<sub>dos</sub> + R<sub>soil</sub> &minus; P<sub>canopy</sub>(PPFD, C<sub>in</sub>, T<sub>leaf</sub>) &minus; N &middot; h<sub>m</sub> &middot; &rho;<sub>CO2</sub> &middot; (C<sub>in</sub> &minus; C<sub>out</sub>) &times; 10<sup>&minus;3</sup>
+        </div>
+        <p>気密性の高い最新 Venlo ガラス温室では、冬期・早朝に天窓と保温スクリーンが全閉されている状態の隙間換気回数 <em>N</em> はわずか <strong>0.10–0.25 h<sup>&minus;1</sup></strong> に抑えられ、施用された CO<sub>2</sub> の <strong>85 % 以上</strong> がそのまま同化産物（糖・果実乾物）へ転換される。一方、全天日射量が 550 W&middot;m<sup>&minus;2</sup> を超えて顕熱・潜熱排除のために天窓を 40 % 以上開放すると <em>N</em> は <strong>15–35 h<sup>&minus;1</sup></strong> へと急増し、ガス利用効率は 15 % 未満へ急落する。半閉鎖型温室 (Semi-Closed Venlo + ATU 陽圧空調) が通常温室比で年間 15–20 % の増収を実現できる主因は、屋根閉鎖時間の延長によって 900 ppm 高濃度施用を維持できる総積算時間が劇的に伸びる点にある。</p>
+        <table class="eng-table">
+          <thead>
+            <tr>
+              <th>Venlo 温室の運転レジーム (h<sub>m</sub> = 6.5 m)</th>
+              <th>時間換気回数 N (h<sup>&minus;1</sup>)</th>
+              <th>動的最適 CO<sub>2</sub> 設定値</th>
+              <th>必要施用フラックス (kg&middot;ha<sup>&minus;1</sup>&middot;h<sup>&minus;1</sup>)</th>
+              <th>運用上の工学的意味</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>天窓全閉・高日射初期 (冬・春朝)</strong></td>
+              <td>0.15 – 0.35 h<sup>&minus;1</sup></td>
+              <td><strong>850 – 1,000 ppm</strong></td>
+              <td>45 – 65 kg/(ha&middot;h)</td>
+              <td>CO<sub>2</sub> 利用効率 &gt; 80 % の最高収益ウィンドウ</td>
+            </tr>
+            <tr>
+              <td><strong>微開除湿換気 (風下天窓 10–20 %)</strong></td>
+              <td>2.5 – 5.0 h<sup>&minus;1</sup></td>
+              <td><strong>650 – 750 ppm</strong></td>
+              <td>90 – 140 kg/(ha&middot;h)</td>
+              <td>換気ロス増加に伴うスライディング目標値低減</td>
+            </tr>
+            <tr>
+              <td><strong>盛夏高負荷換気 (&gt; 40 % 風下・風上開放)</strong></td>
+              <td>15.0 – 35.0 h<sup>&minus;1</sup></td>
+              <td><strong>430 – 500 ppm</strong> (枯渇防止)</td>
+              <td>110 – 180 kg/(ha&middot;h)</td>
+              <td>350 ppm 未満への群落枯渇を防ぐ最低維持制御</td>
+            </tr>
+            <tr>
+              <td><strong>Semi-Closed Venlo / ヒートポンプ除湿冷却</strong></td>
+              <td>0.25 – 1.2 h<sup>&minus;1</sup></td>
+              <td><strong>900 – 1,100 ppm</strong></td>
+              <td>55 – 85 kg/(ha&middot;h)</td>
+              <td>夏季高日射時間帯の同化ポテンシャル最大化</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <section style="margin-bottom: 34px;">
+        <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px; margin-bottom: 16px;">4. 液化炭酸 (LCO₂) 対 コージェネレーション (CHP/BHKW) 排ガス触媒精製と限界収益最適化</h2>
+        <p>商業施設園芸における CO<sub>2</sub> 供給方式は、大きく 2 つのエンジニアリング経路に大別される。(1) 深冷貯槽 (&minus;20 &deg;C, 20 bar) から気化する高純度 <strong>液化炭酸ガス (LCO<sub>2</sub></strong>、典型単価 <strong>0.18–0.34 EUR&middot;kg<sup>&minus;1</sup></strong> または日本国内 28–55 JPY&middot;kg<sup>&minus;1</sup>)、および (2) <strong>天然ガス・バイオガス CHP (BHKW / ガスエンジン熱電併給)</strong> の排ガスを 2 段触媒浄化して回収する方式である。都市ガス（メタン主成分）1 Nm<sup>3</sup> の化学量論燃焼により約 <strong>1.85–1.96 kg の CO<sub>2</sub></strong> が生成され、昼間の発電時に発生する温水は <strong>250–400 m<sup>3</sup>&middot;ha<sup>&minus;1</sup></strong> の成層蓄熱バッファタンクへ蓄えて夜間暖房に転用することで、実質的な CO<sub>2</sub> 調達限界コストを <strong>0.08–0.11 EUR&middot;kg<sup>&minus;1</sup></strong> 相当まで圧縮できる。</p>
+        <p>ただし、CHP 排ガスを栽培ベンチ直下の有孔 PE ダクト（ダームシュラウフ）へ直接供給する場合、作物の花芽・果実を保護するため <strong>VDI 3476 / OCAP 基準に準拠した厳格な植物毒性 (Phytotoxicity) 閾値</strong> を二段触媒（尿素 SCR 脱硝触媒 + 白金・パラジウム酸化触媒 <em>CODinox</em>）で連続担保しなければならない。</p>
+        <ul>
+          <li><strong>エチレン (C<sub>2</sub>H<sub>4</sub>) &lt; 5 ppb (最大許容 10 ppb) :</strong> 微量でも 20 ppb に達するとトマトやパプリカの落花・落蕾・異常黄化を誘発する最重要監視ガス。</li>
+          <li><strong>窒素酸化物 (NO<sub>x</sub>) &lt; 100–150 ppb :</strong> 未処理排ガス中の NO / NO<sub>2</sub> は気孔から侵入し、クロロフィル損傷と亜硝酸障害により光合成を慢性的に抑制する。</li>
+          <li><strong>一酸化炭素 (CO) &lt; 5 ppm ＆ 作業環境 CO<sub>2</sub> TWA &le; 5,000 ppm (TRGS 900) :</strong> CO センサーは酸化触媒の活性劣化を即座に検知する指標であり、同時に作業者の労働安全衛生基準を遵守する。</li>
+        </ul>
+        <p>現代の統合環境制御コンピューター (Priva Connext, Hoogendoorn i-Grow, Ridder MultiMa 等) は、FvCB 曲線の接線勾配から得られる <strong>光合成限界収益 (MR<sub>C</sub>)</strong> と換気ロスを含む <strong>ガス調達限界費用 (MC<sub>C</sub>)</strong> が等しくなる点 <em>C</em><sub>a</sub>* を数分周期の非線形最適化で逐次算出する。</p>
+        <div class="formula-box">
+          限界経済均衡条件: MR<sub>C</sub> = (&part;A<sub>n</sub> &divide; &part;C<sub>a</sub>) &middot; &epsilon;<sub>bio</sub> &middot; P<sub>crop</sub> = [ (&part;A<sub>n</sub> &divide; &part;C<sub>a</sub>) + N(t) &middot; h<sub>m</sub> &middot; &rho;<sub>CO2</sub> ] &middot; P<sub>CO2</sub> = MC<sub>C</sub>
+        </div>
+        <p>ここで &epsilon;<sub>bio</sub> は CO<sub>2</sub> 同化量から生鮮果実重量へのバイオマス変換係数（トマトで約 0.65–0.72 kg 生果 / kg 同化 CO<sub>2</sub>、水分率含む換算）、<em>P</em><sub>crop</sub> は市場単価、<em>P</em><sub>CO2</sub> は単位ガスコストである。この限界均衡アルゴリズムを導入することで、固定濃度制御と比較して季節収穫量を <strong>12–18 %</strong> 向上させつつ、純ガス購入コストを最大 <strong>35 %</strong> 削減できる。</p>
+      </section>
+      <section style="margin-bottom: 34px;">
+        <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px; margin-bottom: 16px;">5. 1.0 ha 投資回収 (ROI) と国際補助金比較（独 BMLEH/FNR・蘭 EIA/OCAP・日 MAFF みどり戦略）</h2>
+        <p>1.0 ha (10,000 m<sup>2</sup>) の高軒高トマト温室において、動的 FvCB-MPC 制御ソフトウェア更新、NDIR 赤外線 CO<sub>2</sub> センサー網、断熱蓄熱バッファ (300 m<sup>3</sup>)、および高純度 LCO<sub>2</sub> または BHKW 排ガス精製設備を組み合わせた場合の国際的な設備投資回収構造を比較する。</p>
+        <table class="eng-table">
+          <thead>
+            <tr>
+              <th>比較項目 (1.0 ha Venlo 基準)</th>
+              <th>ドイツ (BMLEH/FNR · Rentenbank)</th>
+              <th>オランダ (RVO EIA/SDE++ · OCAP 配管)</th>
+              <th>日本 (農林水産省 MAFF · みどり戦略)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>標準 CO<sub>2</sub> 供給インフラ</strong></td>
+              <td>BHKW + SCR/Oxikat (0.09 EUR/kg) または LCO<sub>2</sub> 併用</td>
+              <td>ロッテルダム製油・水素由来 OCAP 地域パイプライン / CHP</td>
+              <td>高純度 LCO<sub>2</sub> 貯槽 + 施設園芸用排気浄化・環境制御連携</td>
+            </tr>
+            <tr>
+              <td><strong>代表補助金・税制優遇</strong></td>
+              <td>BLE/FNR エネルギー効率 <strong>40–50 %</strong> 補助 (蓄熱槽・制御) + Rentenbank 低利融資</td>
+              <td>EIA (エネルギー投資控除 40 %) + SDE++ 脱炭素熱源・地熱併用</td>
+              <td>産地生産基盤パワーアップ事業・省エネ環境制御機器導入 <strong>1/2 補助</strong></td>
+            </tr>
+            <tr>
+              <td><strong>年間増収インパクト (トマト 65→74 kg/m<sup>2</sup>)</strong></td>
+              <td>+8–11 kg/m<sup>2</sup> (+15–22 EUR/m<sup>2</sup>&middot;年)</td>
+              <td>+9–12 kg/m<sup>2</sup> (OCAP 低コストで夏季も 650 ppm 維持)</td>
+              <td>+6–9 kg/m<sup>2</sup> (+1,800–2,700 万円/ha&middot;年 売上増)</td>
+            </tr>
+            <tr>
+              <td><strong>ガス・熱費節減＋単純回収年数</strong></td>
+              <td>CO<sub>2</sub> 浪費 &minus;30 % · 純 CAPEX 回収 <strong>2.1–2.9 年</strong></td>
+              <td>OCAP 連携時 回収 <strong>1.8–2.5 年</strong></td>
+              <td>動的換気連動制御導入で LCO<sub>2</sub> 費 &minus;28 % · 回収 <strong>2.4–3.3 年</strong></td>
+            </tr>
+          </tbody>
+        </table>
+        <p>具体的な温室体積・目標濃度・換気回数に基づく時間あたりガス消費量や除湿連携負荷を試算するには、当ラボの <a href="/smartfarm/co2_calculator.html" style="color:#38bdf8;">CO<sub>2</sub> 施用動態・換気ロス計算機</a>、<a href="/tools/psychrometric-mollier-greenhouse-dehumidifier.html" style="color:#38bdf8;">モリエル (h-x) 除湿・潜熱回収シミュレーター</a>、<a href="/tools/venlocad-3d.html" style="color:#38bdf8;">VenloCAD 3D 温室構造設計ツール</a>、および世界 8 か国 192 制度を収録した <a href="/tools/global-agri-subsidy-grant-navigator.html" style="color:#34d399;">世界農業補助金・助成金ナビゲーター</a> をあわせて活用されたい。</p>
+      </section>
+
+    <section style="margin-bottom: 34px;">
+      <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #10b981; border-bottom: 1px solid rgba(16, 185, 129, 0.25); padding-bottom: 10px; margin-bottom: 16px;">施設園芸エンジニアリング 実践FAQ</h2>
+        <div style="background: rgba(15, 23, 42, 0.7); border-left: 4px solid #10b981; padding: 18px 20px; border-radius: 10px; margin-bottom: 14px;">
+          <p style="margin: 0;"><strong>Q1: なぜ葉温が 25–28 °C に上昇すると C₃ 野菜の最適 CO₂ 目標値を 950–1,120 ppm へ引き上げる必要があるのですか？</strong><br>アレニウスの温度則により葉温が上昇すると、RuBisCO 酵素の CO₂ に対する親和性定数 Kc が O₂ に対する Ko よりも急激に増大し、同時に細胞液中の CO₂ 溶解度が低下して光呼吸（オキシゲナーゼ反応）が急増するためです。環境濃度を高めることで RuBisCO 活性中心での CO₂ 競合優位を回復し、光呼吸損失を 60 % 以上抑制できます。</p>
+        </div>
+        <div style="background: rgba(15, 23, 42, 0.7); border-left: 4px solid #10b981; padding: 18px 20px; border-radius: 10px; margin-bottom: 14px;">
+          <p style="margin: 0;"><strong>Q2: 天窓が開いているとき、動的環境制御コンピューターはどの換気回数 (N) で CO₂ 施用を抑制しますか？</strong><br>天窓開度が 20–40 % を超えて時間あたり換気回数 N が 8–12 h⁻¹ 以上に達すると、注入した CO₂ の 75 % 以上が屋根から散逸し、限界費用 MC_C が光合成限界収益 MR_C を上回ります。このため動的制御では目標値を 450–550 ppm へ段階的に引き下げ、350 ppm 未満の欠乏防止のみに絞ってガスコストを最大 35 % 削減します。</p>
+        </div>
+        <div style="background: rgba(15, 23, 42, 0.7); border-left: 4px solid #10b981; padding: 18px 20px; border-radius: 10px; margin-bottom: 14px;">
+          <p style="margin: 0;"><strong>Q3: CHP (BHKW) コージェネレーション排ガスを温室内へ直接施用する際に監視すべきガス基準は何ですか？</strong><br>二段触媒（尿素 SCR 脱硝 + Pt/Pd 酸化触媒）の下流において、落花・異常黄化を防ぐためエチレン C₂H₄ < 5 ppb、慢性同化阻害を防ぐため窒素酸化物 NOₓ < 100–150 ppb、触媒劣化検知および安全基準として CO < 5 ppm をオンライン監視することが必須です。作業空間の CO₂ 許容濃度は TRGS 900 に準拠し 5,000 ppm 未満を維持します。</p>
+        </div>
+        <div style="background: rgba(15, 23, 42, 0.7); border-left: 4px solid #10b981; padding: 18px 20px; border-radius: 10px; margin-bottom: 14px;">
+          <p style="margin: 0;"><strong>Q4: 1.0 ha 規模で動的 CO₂ 制御と蓄熱バッファを導入する際の主要な国際補助金は何ですか？</strong><br>ドイツでは BMLEH/FNR 連邦エネルギー効率補助金（最大 40–50 %）と Rentenbank 低利環境融資、オランダでは EIA（40 % 投資税額控除）および OCAP 地域パイプライン連携、日本では農林水産省の産地生産基盤パワーアップ事業・みどり戦略省エネ補助（1/2 補助）が活用でき、Inwoovation Lab の世界 8 か国 192 制度ナビゲーターで詳細条件を検索できます。</p>
+        </div>
+    </section>
+
+    <section style="margin-bottom: 34px;">
+      <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.35rem; color: #cbd5e1; margin-bottom: 12px;">参考文献・国際規格 (References & Standards)</h2>
+      <ul style="padding-left: 20px;">
+          <li style="margin-bottom: 8px; color: #94a3b8; font-size: 0.92rem;">Farquhar, G. D., von Caemmerer, S., &amp; Berry, J. A. (1980). A biochemical model of photosynthetic CO2 assimilation in leaves of C3 species. Planta, 149(1), 78–90.</li>
+          <li style="margin-bottom: 8px; color: #94a3b8; font-size: 0.92rem;">von Caemmerer, S. (2000). Biochemical Models of Leaf Photosynthesis. CSIRO Publishing, Collingwood, Australia.</li>
+          <li style="margin-bottom: 8px; color: #94a3b8; font-size: 0.92rem;">Nederhoff, E. M. (1994). Effects of CO2 concentration on photosynthesis, transpiration and production of greenhouse fruit vegetable crops. Wageningen University.</li>
+          <li style="margin-bottom: 8px; color: #94a3b8; font-size: 0.92rem;">Stanghellini, C., Ooster, B. van &apos;t, &amp; Heuvelink, E. (2019). Greenhouse Horticulture: Technology for Optimal Crop Production. Wageningen Academic Publishers.</li>
+          <li style="margin-bottom: 8px; color: #94a3b8; font-size: 0.92rem;">DIN EN 13031-1 (Gewächshäuser — Bemessung und Konstruktion) &amp; DIN V 18599 (Energetische Bewertung von Gebäuden).</li>
+          <li style="margin-bottom: 8px; color: #94a3b8; font-size: 0.92rem;">VDI 3476 / TA Luft &amp; TRGS 900: Catalytic Flue Gas Purification (SCR DeNOx &amp; Oxidation Catalysts) and Occupational CO2 Exposure Thresholds in Commercial Horticulture.</li>
+      </ul>
+    </section>
+
+
+<!-- INW-LIVE-WIDGET-START -->
+<section class="inw-live-widget-sandbox" style="margin: 32px 0; padding: 24px; background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 16px; box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);">
+  <h3 style="margin: 0 0 8px 0; font-size: 1.2rem; color: #38bdf8; font-weight: 800;">🫧 リアルタイム温室 CO₂ 施用 &amp; 換気ロス動態シミュレーター</h3>
+  <p style="margin: 0 0 16px 0; font-size: 0.92rem; color: #94a3b8; line-height: 1.6;">目標 CO₂ 濃度・換気回数 (ACH)・群落光合成吸収速度から、時間あたりの必要生源 CO₂ 施用量 (kg/h) を算出します。</p>
+  <div style="display: flex; justify-content: center; width: 100%; overflow: hidden;">
+    <iframe src="/embed/co2-enrichment-widget.html" width="380" height="460" loading="lazy" title="🫧 リアルタイム温室 CO₂ 施用 &amp; 換気ロス動態シミュレーター" style="border: none; border-radius: 14px; max-width: 100%;"></iframe>
+  </div>
+</section>
+<!-- INW-LIVE-WIDGET-END -->
+
+<!-- INW-TSUKUBA-FUNNEL-START -->
+<section class="inw-tsukuba-funnel-bridge" style="max-width: 1060px; margin: 32px auto; padding: 26px; background: rgba(15, 23, 42, 0.9); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 16px; text-align: left; box-shadow: 0 10px 28px rgba(0, 0, 0, 0.3);">
+  <h3 style="margin: 0 0 8px 0; font-size: 1.2rem; color: #10b981; font-weight: 800;">🔬 関連する技術論文・作物別環境制御ガイド・シミュレーター</h3>
+  <p style="margin: 0 0 16px 0; font-size: 0.92rem; color: #94a3b8; line-height: 1.6;">本ページの物理モデルおよび設計計算をさらに深く検証するための技術モノグラフと専用計算ツール：</p>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px;">
+    <a href="/articles/article-26-greenhouse-heating-load-din-v-18599.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">Vol. 26: DIN V 18599 Greenhouse Thermal Energy Balance & Screen Physics →</a>
+    <a href="/articles/article-43-greenhouse-structural-standards-en13031.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">Vol. 43: EN 13031-1 Commercial Venlo Structural Wind & Snow Load Engineering →</a>
+    <a href="/articles/article-28-greenhouse-co2-enrichment-economics.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">Vol. 28: CHP Cogeneration & CO₂ Enrichment Economics →</a>
+    <a href="/crops/greenhouse-tomato-microclimate-vpd-steering-guide.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🍅 Commercial High-Wire Tomato Thermal & Rail-Pipe Heating Guide →</a>
+    <a href="/crops/greenhouse-sweet-pepper-climate-blossom-end-rot-guide.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🫑 Sweet Pepper Night Temperature & Pipe-Rail Radiation Guide →</a>
+    <a href="/tools/venlocad-3d.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🏗️ VenloCAD 3D Structural & EN 13031-1 BOM Architect →</a>
+    <a href="/tools/global-agri-subsidy-grant-navigator.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🏛️ Global Agri-Subsidy & USDA REAP / German BLE Grant Navigator →</a>
+  </div>
+</section>
+<!-- INW-TSUKUBA-FUNNEL-END -->
+
+    <!-- INW-EEAT-BOX-START -->
+    <section class="inw-eeat-box" style="margin-top: 36px; padding: 24px; background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 16px;">
+      <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; color: #10b981; font-weight: 800; margin-bottom: 6px;">施設園芸・環境制御システムエンジニア — Inwoovation Lab</div>
+      <h3 style="margin: 0 0 8px 0; font-size: 1.15rem; color: #f8fafc;">Inwoo Hwang</h3>
+      <p style="margin: 0; font-size: 0.92rem; color: #cbd5e1; line-height: 1.65;">フェンロー型連棟温室の熱力学設計 (DIN V 18599)、光生物学 (DLI・PPFD・作用スペクトル)、閉鎖型養液栽培および精密環境制御モデルの構築に従事。</p>
+    </section>
+    <!-- INW-EEAT-BOX-END -->
+  </main>
+
+  <!-- INW-STD-FOOTER-START -->
+  <footer class="inw-site-footer" style="margin-top: 48px; padding: 28px 20px; background: #0f172a; color: #94a3b8; text-align: center; border-top: 1px solid rgba(148, 163, 184, 0.15);">
+    <div style="max-width: 1100px; margin: 0 auto;">
+      <p style="margin: 0 0 10px 0;">&copy; 2026 Inwoovation Lab. Precision Controlled Environment Agriculture &amp; Biophysical Engineering.</p>
+      <p style="margin: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 16px;">
+        <a href="/index.html" style="color: #cbd5e1; text-decoration: none;">Home</a>
+        <a href="/guides.html" style="color: #cbd5e1; text-decoration: none;">Engineering Guides</a>
+        <a href="/privacy-policy.html" style="color: #cbd5e1; text-decoration: none;">Privacy Policy</a>
+        <a href="/terms-of-service.html" style="color: #cbd5e1; text-decoration: none;">Terms of Service</a>
+        <a href="/about.html" style="color: #cbd5e1; text-decoration: none;">About</a>
+        <a href="/contact.html" style="color: #cbd5e1; text-decoration: none;">Contact</a>
+      </p>
+    </div>
+  </footer>
+  <!-- INW-STD-FOOTER-END -->
+</body>
+</html>
