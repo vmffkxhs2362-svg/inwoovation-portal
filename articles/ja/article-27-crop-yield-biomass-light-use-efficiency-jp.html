@@ -57,7 +57,7 @@
         "url": "https://inwoovation.com"
       },
       "datePublished": "2026-09-01",
-      "dateModified": "2026-11-21",
+      "dateModified": "2026-11-26",
       "mainEntityOfPage": "https://inwoovation.com/articles/ja/article-27-crop-yield-biomass-light-use-efficiency-jp.html"
     },
     {
@@ -88,26 +88,26 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "冬季の保温カーテン全閉時に発生する高湿度・結露リスクはどのように制御すべきですか？",
+          "name": "積算受光量（DLI）と光利用効率（LUE）からトマトの生鮮可販果収量を予測する生物物理式は？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "カーテンを 1.5 % 〜 4.0 % わずかに開けるギャップ制御 ( Screen Gap Purging ) と 、 最低管温度 ( Minimum Pipe Temperature : 38 - 42 °C ) を連動させることで 、 作物の蒸散流を維持しつつ余剰水蒸気を屋根ガラス面の結露樋へ安全に排出できます 。"
+            "text": "乾物生産量は Wdry = LUE · ∑[DLI(t) · (1 - exp(-kext · LAI))] に従い、CO2 施用下のハイワイヤートマトでは LUE = 2.8〜3.4 g DM/mol PAR に達します。これに収穫指数（HI = 0.65〜0.72）と果実乾物率（約 5.5%）を乗じることで生鮮果実重量が算出されます。"
           }
         },
         {
           "@type": "Question",
-          "name": "日射量に応じた灌水および CO2 施用の最適サンプリング周期はどのくらいですか？",
+          "name": "「光量 1% 増加＝収量 0.7〜1.0% 増加」の根拠と、DLI +1.0 mol/(m²·d) あたりの週間増収量は？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "日射強度 ( W/m2 ) と葉温・飽差 ( VPD ) は 5 秒周期で計測・移動平均処理を行い 、 積算日射量 70 〜 100 J/cm2 ごとに 100 mL/株の精密パルス灌水を実行し 、 換気窓開度 ( ACH ) に連動して CO2 目標濃度 ( 600 〜 1,050 ppm ) を 5 分周期で動的最適化します 。"
+            "text": "群落閉鎖後（LAI = 3.2〜3.8 m2/m2、受光率 85% 超）は DLI が +1.0 mol/(m2·d) 増えるごとに約 3.1 g/m2 の総乾物（果実乾物約 2.1 g/m2）が蓄積され、週間あたり約 +0.07 kg/(m2·週) の A 品生鮮トマト増収に直結します。"
           }
         },
         {
           "@type": "Question",
-          "name": "自社温室の条件に合わせた具体的な設計値・負荷計算はどこで行えますか？",
+          "name": "地域の季節別 DLI 推移や補光 LED 導入時の年間収量・採算性をシミュレーションできるツールは？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Inwoovation Lab が提供する無料の Interactive CEA Engineering Calculator および下部の関連エンジニアリング計算ツール群をそのままブラウザ上でご利用いただけます 。"
+            "text": "DLI・光利用効率（LUE）作物収量予測シミュレーター で 52 週間の乾物・果実収量を予測できます。"
           }
         }
       ]
@@ -259,22 +259,22 @@
 
         <h2>Section E: 施設園芸エンジニアリング よくある質問 ( Frequently Asked Engineering Questions : FAQ )</h2>
         <div class="faq-block" style="margin-top: 14px;">
-          <p><strong>Q1: 冬季の保温カーテン全閉時に発生する高湿度・結露リスクはどのように制御すべきですか？</strong><br>
-          A1: カーテンを 1.5 % 〜 4.0 % わずかに開けるギャップ制御 ( Screen Gap Purging ) と 、 最低管温度 ( Minimum Pipe Temperature : 38 - 42 °C ) を連動させることで 、 作物の蒸散流を維持しつつ余剰水蒸気を屋根ガラス面の結露樋へ安全に排出できます 。</p>
-          <p><strong>Q2: 日射量に応じた灌水および CO2 施用の最適サンプリング周期はどのくらいですか？</strong><br>
-          A2: 日射強度 ( W/m2 ) と葉温・飽差 ( VPD ) は 5 秒周期で計測・移動平均処理を行い 、 積算日射量 70 〜 100 J/cm2 ごとに 100 mL/株の精密パルス灌水を実行し 、 換気窓開度 ( ACH ) に連動して CO2 目標濃度 ( 600 〜 1,050 ppm ) を 5 分周期で動的最適化します 。</p>
-          <p><strong>Q3: 自社温室の条件に合わせた具体的な設計値・負荷計算はどこで行えますか？</strong><br>
-          A3: Inwoovation Lab が提供する無料の <a href="/smartfarm/dli_calculator.html" style="color: #10b981; font-weight: 700;">Interactive CEA Engineering Calculator</a> および下部の関連エンジニアリング計算ツール群をそのままブラウザ上でご利用いただけます 。</p>
+          <p><strong>Q1: 積算受光量（DLI）と光利用効率（LUE）からトマトの生鮮可販果収量を予測する生物物理式は？</strong><br>
+          乾物生産量は W<sub>dry</sub> = LUE · ∑[DLI(t) · (1 - exp(-k<sub>ext</sub> · LAI))] に従い、CO<sub>2</sub> 施用下のハイワイヤートマトでは LUE = 2.8〜3.4 g DM/mol PAR に達します。これに収穫指数（HI = 0.65〜0.72）と果実乾物率（約 5.5%）を乗じることで生鮮果実重量が算出されます。</p>
+          <p><strong>Q2: 「光量 1% 増加＝収量 0.7〜1.0% 増加」の根拠と、DLI +1.0 mol/(m²·d) あたりの週間増収量は？</strong><br>
+          群落閉鎖後（LAI = 3.2〜3.8 m<sup>2</sup>/m<sup>2</sup>、受光率 85% 超）は DLI が +1.0 mol/(m<sup>2</sup>·d) 増えるごとに約 3.1 g/m<sup>2</sup> の総乾物（果実乾物約 2.1 g/m<sup>2</sup>）が蓄積され、週間あたり約 +0.07 kg/(m<sup>2</sup>·週) の A 品生鮮トマト増収に直結します。</p>
+          <p><strong>Q3: 地域の季節別 DLI 推移や補光 LED 導入時の年間収量・採算性をシミュレーションできるツールは？</strong><br>
+          <a href="/tools/crop-yield-biomass-dli-forecaster.html" style="color: #10b981; font-weight: 700;">DLI・光利用効率（LUE）作物収量予測シミュレーター</a> で 52 週間の乾物・果実収量を予測できます。</p>
         </div>
       </section>
 <!-- INW-DEEP-ENG-END -->
 
 <!-- INW-LIVE-WIDGET-START -->
 <section class="inw-live-widget-sandbox" style="margin: 32px 0; padding: 24px; background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 16px; box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);">
-  <h3 style="margin: 0 0 8px 0; font-size: 1.2rem; color: #38bdf8; font-weight: 800;">🧪 リアルタイム養液栽培 A/B 原液タンク & EC 希釈シミュレーター</h3>
-  <p style="margin: 0 0 16px 0; font-size: 0.92rem; color: #94a3b8; line-height: 1.6;">原水EC・目標EC・希釈倍率から、A/B原液タンク注入量と必要肥料塩類質量をリアルタイムに計算します。</p>
+  <h3 style="margin: 0 0 8px 0; font-size: 1.2rem; color: #38bdf8; font-weight: 800;">☀️ リアルタイム日積算光量 (DLI) & 光周期シミュレーター</h3>
+  <p style="margin: 0 0 16px 0; font-size: 0.92rem; color: #94a3b8; line-height: 1.6;">光合成有効光量子束密度 (PPFD) と日長時間を調整し、1日あたりの積算光量 (mol·m⁻²·d⁻¹) を即座に算出します。</p>
   <div style="display: flex; justify-content: center; width: 100%; overflow: hidden;">
-    <iframe src="/embed/fertigation-ec-widget.html" width="380" height="460" loading="lazy" title="🧪 リアルタイム養液栽培 A/B 原液タンク & EC 希釈シミュレーター" style="border: none; border-radius: 14px; max-width: 100%;"></iframe>
+    <iframe src="/embed/dli-calculator.html" width="380" height="390" loading="lazy" title="☀️ リアルタイム日積算光量 (DLI) & 光周期シミュレーター" style="border: none; border-radius: 14px; max-width: 100%;"></iframe>
   </div>
 </section>
 <!-- INW-LIVE-WIDGET-END -->

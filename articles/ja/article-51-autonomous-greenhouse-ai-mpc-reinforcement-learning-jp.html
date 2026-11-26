@@ -57,7 +57,7 @@
         "url": "https://inwoovation.com"
       },
       "datePublished": "2026-09-01",
-      "dateModified": "2026-11-21",
+      "dateModified": "2026-11-26",
       "mainEntityOfPage": "https://inwoovation.com/articles/ja/article-51-autonomous-greenhouse-ai-mpc-reinforcement-learning-jp.html"
     },
     {
@@ -88,26 +88,26 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "冬季の保温カーテン全閉時に発生する高湿度・結露リスクはどのように制御すべきですか？",
+          "name": "商業用の自律型温室 AI がエンドツーエンド強化学習単独ではなく制約付きモデル予測制御（MPC）と融合させる理由は？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "カーテンを 1.5 % 〜 4.0 % わずかに開けるギャップ制御 ( Screen Gap Purging ) と 、 最低管温度 ( Minimum Pipe Temperature : 38 - 42 °C ) を連動させることで 、 作物の蒸散流を維持しつつ余剰水蒸気を屋根ガラス面の結露樋へ安全に排出できます 。"
+            "text": "モデルフリー強化学習単独では未知の寒波や急激な日射変動時に露点結露や低温障害のハード制約違反リスクが残ります。物理状態空間制約を組み込んだ 24 時間ホライズン MPC 目的関数 minu J = ∑(wenergy Pheat - wyield Anet + wΔu ||Δu||2) により、安全境界を厳守しつつ天然ガス消費 -22.4% 削減を達成します。"
           }
         },
         {
           "@type": "Question",
-          "name": "日射量に応じた灌水および CO2 施用の最適サンプリング周期はどのくらいですか？",
+          "name": "上位 MPC ループ（周期 300 s）と下位アンチワインドアップ PID（周期 1〜5 s）の 2 階層分離はどう機器摩耗を防ぎますか？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "日射強度 ( W/m2 ) と葉温・飽差 ( VPD ) は 5 秒周期で計測・移動平均処理を行い 、 積算日射量 70 〜 100 J/cm2 ごとに 100 mL/株の精密パルス灌水を実行し 、 換気窓開度 ( ACH ) に連動して CO2 目標濃度 ( 600 〜 1,050 ppm ) を 5 分周期で動的最適化します 。"
+            "text": "5 分周期の上位 MPC が 24 時間気象予測と操作量変動ペナルティ ||Δu(k)||2 から滑らかな最適目標軌道を生成し、1〜5 秒周期の下位 PID が三方弁水圧変動や突風外乱を即座に吸収することでアクチュエータのハンチングを根絶します。"
           }
         },
         {
           "@type": "Question",
-          "name": "自社温室の条件に合わせた具体的な設計値・負荷計算はどこで行えますか？",
+          "name": "暖房コスト重みと光合成増収重みのバランスを仮想温室上でリアルタイムに調整・実験するには？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Inwoovation Lab が提供する無料の Interactive CEA Engineering Calculator および下部の関連エンジニアリング計算ツール群をそのままブラウザ上でご利用いただけます 。"
+            "text": "自律型 AI・MPC 温室環境制御シミュレーター で最適制御軌道を体験できます。"
           }
         }
       ]
@@ -258,22 +258,22 @@
 
         <h2>Section E: 施設園芸エンジニアリング よくある質問 ( Frequently Asked Engineering Questions : FAQ )</h2>
         <div class="faq-block" style="margin-top: 14px;">
-          <p><strong>Q1: 冬季の保温カーテン全閉時に発生する高湿度・結露リスクはどのように制御すべきですか？</strong><br>
-          A1: カーテンを 1.5 % 〜 4.0 % わずかに開けるギャップ制御 ( Screen Gap Purging ) と 、 最低管温度 ( Minimum Pipe Temperature : 38 - 42 °C ) を連動させることで 、 作物の蒸散流を維持しつつ余剰水蒸気を屋根ガラス面の結露樋へ安全に排出できます 。</p>
-          <p><strong>Q2: 日射量に応じた灌水および CO2 施用の最適サンプリング周期はどのくらいですか？</strong><br>
-          A2: 日射強度 ( W/m2 ) と葉温・飽差 ( VPD ) は 5 秒周期で計測・移動平均処理を行い 、 積算日射量 70 〜 100 J/cm2 ごとに 100 mL/株の精密パルス灌水を実行し 、 換気窓開度 ( ACH ) に連動して CO2 目標濃度 ( 600 〜 1,050 ppm ) を 5 分周期で動的最適化します 。</p>
-          <p><strong>Q3: 自社温室の条件に合わせた具体的な設計値・負荷計算はどこで行えますか？</strong><br>
-          A3: Inwoovation Lab が提供する無料の <a href="/smartfarm/heat_loss.html" style="color: #10b981; font-weight: 700;">Interactive CEA Engineering Calculator</a> および下部の関連エンジニアリング計算ツール群をそのままブラウザ上でご利用いただけます 。</p>
+          <p><strong>Q1: 商業用の自律型温室 AI がエンドツーエンド強化学習単独ではなく制約付きモデル予測制御（MPC）と融合させる理由は？</strong><br>
+          モデルフリー強化学習単独では未知の寒波や急激な日射変動時に露点結露や低温障害のハード制約違反リスクが残ります。物理状態空間制約を組み込んだ 24 時間ホライズン MPC 目的関数 min<sub>u</sub> J = ∑(w<sub>energy</sub> P<sub>heat</sub> - w<sub>yield</sub> A<sub>net</sub> + w<sub>Δu</sub> ||Δu||<sup>2</sup>) により、安全境界を厳守しつつ天然ガス消費 -22.4% 削減を達成します。</p>
+          <p><strong>Q2: 上位 MPC ループ（周期 300 s）と下位アンチワインドアップ PID（周期 1〜5 s）の 2 階層分離はどう機器摩耗を防ぎますか？</strong><br>
+          5 分周期の上位 MPC が 24 時間気象予測と操作量変動ペナルティ ||Δu(k)||<sup>2</sup> から滑らかな最適目標軌道を生成し、1〜5 秒周期の下位 PID が三方弁水圧変動や突風外乱を即座に吸収することでアクチュエータのハンチングを根絶します。</p>
+          <p><strong>Q3: 暖房コスト重みと光合成増収重みのバランスを仮想温室上でリアルタイムに調整・実験するには？</strong><br>
+          <a href="/tools/greenhouse-autonomous-ai-climate-controller.html" style="color: #10b981; font-weight: 700;">自律型 AI・MPC 温室環境制御シミュレーター</a> で最適制御軌道を体験できます。</p>
         </div>
       </section>
 <!-- INW-DEEP-ENG-END -->
 
 <!-- INW-LIVE-WIDGET-START -->
 <section class="inw-live-widget-sandbox" style="margin: 32px 0; padding: 24px; background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 16px; box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);">
-  <h3 style="margin: 0 0 8px 0; font-size: 1.2rem; color: #38bdf8; font-weight: 800;">🧪 リアルタイム養液栽培 A/B 原液タンク & EC 希釈シミュレーター</h3>
-  <p style="margin: 0 0 16px 0; font-size: 0.92rem; color: #94a3b8; line-height: 1.6;">原水EC・目標EC・希釈倍率から、A/B原液タンク注入量と必要肥料塩類質量をリアルタイムに計算します。</p>
+  <h3 style="margin: 0 0 8px 0; font-size: 1.2rem; color: #38bdf8; font-weight: 800;">🌡️ リアルタイム湿り空気線図 (Mollier h-x) & 潜熱回収シミュレーター</h3>
+  <p style="margin: 0 0 16px 0; font-size: 0.92rem; color: #94a3b8; line-height: 1.6;">自律型温室制御における空気エンタルピー (kJ/kg)・絶対湿度 (g/kg)・露点温度余裕度および除湿潜熱回収量をリアルタイムに検証します。</p>
   <div style="display: flex; justify-content: center; width: 100%; overflow: hidden;">
-    <iframe src="/embed/fertigation-ec-widget.html" width="380" height="460" loading="lazy" title="🧪 リアルタイム養液栽培 A/B 原液タンク & EC 希釈シミュレーター" style="border: none; border-radius: 14px; max-width: 100%;"></iframe>
+    <iframe src="/embed/mollier-latent-heat-widget.html" width="380" height="460" loading="lazy" title="🌡️ リアルタイム湿り空気線図 (Mollier h-x) & 潜熱回収シミュレーター" style="border: none; border-radius: 14px; max-width: 100%;"></iframe>
   </div>
 </section>
 <!-- INW-LIVE-WIDGET-END -->

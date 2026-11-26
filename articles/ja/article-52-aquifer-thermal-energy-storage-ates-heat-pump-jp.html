@@ -57,7 +57,7 @@
         "url": "https://inwoovation.com"
       },
       "datePublished": "2026-09-01",
-      "dateModified": "2026-11-21",
+      "dateModified": "2026-11-26",
       "mainEntityOfPage": "https://inwoovation.com/articles/ja/article-52-aquifer-thermal-energy-storage-ates-heat-pump-jp.html"
     },
     {
@@ -88,26 +88,26 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "冬季の保温カーテン全閉時に発生する高湿度・結露リスクはどのように制御すべきですか？",
+          "name": "帯水層蓄熱システム（ATES / WKO）の温水井・冷水井ダブレットは夏季余剰太陽熱をどう季節間回収（効率 75〜85%）しますか？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "カーテンを 1.5 % 〜 4.0 % わずかに開けるギャップ制御 ( Screen Gap Purging ) と 、 最低管温度 ( Minimum Pipe Temperature : 38 - 42 °C ) を連動させることで 、 作物の蒸散流を維持しつつ余剰水蒸気を屋根ガラス面の結露樋へ安全に排出できます 。"
+            "text": "夏季の冷房・除湿時に冷水井（7〜9 °C）から汲み上げた地下水で温室余剰熱を回収し、深度 40〜120 m の砂質帯水層の温水井（16〜18 °C）へ全量還元貯蔵します。季節蓄熱量は Qstored = Vwater · ρw · cw · (Twarm - Tcold) · ηrecovery（ρw · cw ≈ 4.186 MJ/(m3·K)、ηrecovery = 0.75〜0.85）で表されます。"
           }
         },
         {
           "@type": "Question",
-          "name": "日射量に応じた灌水および CO2 施用の最適サンプリング周期はどのくらいですか？",
+          "name": "氷点下の厳冬期でも ATES 結合型産業用ヒートポンプが COP ≈ 6.03（季節成績係数 SPF > 5.2）を維持できる理由は？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "日射強度 ( W/m2 ) と葉温・飽差 ( VPD ) は 5 秒周期で計測・移動平均処理を行い 、 積算日射量 70 〜 100 J/cm2 ごとに 100 mL/株の精密パルス灌水を実行し 、 換気窓開度 ( ACH ) に連動して CO2 目標濃度 ( 600 〜 1,050 ppm ) を 5 分周期で動的最適化します 。"
+            "text": "年間を通じて安定した 16 °C の温水井地下水を熱源として 40〜45 °C の低温レール暖房管へ 29 K 昇温するだけなので、空気熱源式の着霜デフロスト損失が一切生じず、ローレンツ／カルノー効率 COPreal ≈ 0.55 · 318.15 / (318.15 - 289.15) = 6.03 の超高効率運転が可能となります。"
           }
         },
         {
           "@type": "Question",
-          "name": "自社温室の条件に合わせた具体的な設計値・負荷計算はどこで行えますか？",
+          "name": "オランダ・ウェストラントや欧州で ATES ダブレットを運用する際の水文地質学的・法的必須条件は？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Inwoovation Lab が提供する無料の Interactive CEA Engineering Calculator および下部の関連エンジニアリング計算ツール群をそのままブラウザ上でご利用いただけます 。"
+            "text": "地下水法により正味揚水量ゼロ（無酸素密閉配管での 100% 地下還元による水酸化鉄目詰まり防止）と、温水塊・冷水塊の熱的短絡を防ぐ複数年熱収支均衡が義務付けられています。基礎となる温室暖房負荷は DIN V 18599 温室暖房負荷・省エネ計算機 で算出できます。"
           }
         }
       ]
@@ -153,7 +153,7 @@
     </header>
 
     <div class="article-body">
-      <p class="lead">オランダ・ウェストラントおよび独NRW州シュトラエレン地域の施設園芸では、化石天然ガスCHPから<strong>帯水層蓄熱（ATES / WKO）</strong>と大型産業用ヒートポンプの組み合わせへの移行が加速しています。夏季の屋根面余剰太陽熱を地下帯水層（深度40〜120m）に蓄熱することで、80%を超える季節熱回収効率と$5.2$以上の期間成績係数（SPF）を達成します。</p>
+      <p class="lead">オランダ・ウェストラントおよび独NRW州シュトラエレン地域の施設園芸では、化石天然ガスCHPから<strong>帯水層蓄熱（ATES / WKO）</strong>と大型産業用ヒートポンプの組み合わせへの移行が加速しています。夏季の屋根面余剰太陽熱を地下帯水層（深度40〜120m）に蓄熱することで、80%を超える季節熱回収効率と5.2以上の期間成績係数（SPF）を達成します。</p>
 
       <h2>1. ATESダブレット熱容量モデル</h2>
       <div class="code-box">
@@ -265,22 +265,22 @@
 
         <h2>Section E: 施設園芸エンジニアリング よくある質問 ( Frequently Asked Engineering Questions : FAQ )</h2>
         <div class="faq-block" style="margin-top: 14px;">
-          <p><strong>Q1: 冬季の保温カーテン全閉時に発生する高湿度・結露リスクはどのように制御すべきですか？</strong><br>
-          A1: カーテンを 1.5 % 〜 4.0 % わずかに開けるギャップ制御 ( Screen Gap Purging ) と 、 最低管温度 ( Minimum Pipe Temperature : 38 - 42 °C ) を連動させることで 、 作物の蒸散流を維持しつつ余剰水蒸気を屋根ガラス面の結露樋へ安全に排出できます 。</p>
-          <p><strong>Q2: 日射量に応じた灌水および CO2 施用の最適サンプリング周期はどのくらいですか？</strong><br>
-          A2: 日射強度 ( W/m2 ) と葉温・飽差 ( VPD ) は 5 秒周期で計測・移動平均処理を行い 、 積算日射量 70 〜 100 J/cm2 ごとに 100 mL/株の精密パルス灌水を実行し 、 換気窓開度 ( ACH ) に連動して CO2 目標濃度 ( 600 〜 1,050 ppm ) を 5 分周期で動的最適化します 。</p>
-          <p><strong>Q3: 自社温室の条件に合わせた具体的な設計値・負荷計算はどこで行えますか？</strong><br>
-          A3: Inwoovation Lab が提供する無料の <a href="/smartfarm/heat_loss.html" style="color: #10b981; font-weight: 700;">Interactive CEA Engineering Calculator</a> および下部の関連エンジニアリング計算ツール群をそのままブラウザ上でご利用いただけます 。</p>
+          <p><strong>Q1: 帯水層蓄熱システム（ATES / WKO）の温水井・冷水井ダブレットは夏季余剰太陽熱をどう季節間回収（効率 75〜85%）しますか？</strong><br>
+          夏季の冷房・除湿時に冷水井（7〜9 °C）から汲み上げた地下水で温室余剰熱を回収し、深度 40〜120 m の砂質帯水層の温水井（16〜18 °C）へ全量還元貯蔵します。季節蓄熱量は Q<sub>stored</sub> = V<sub>water</sub> · ρ<sub>w</sub> · c<sub>w</sub> · (T<sub>warm</sub> - T<sub>cold</sub>) · η<sub>recovery</sub>（ρ<sub>w</sub> · c<sub>w</sub> ≈ 4.186 MJ/(m<sup>3</sup>·K)、η<sub>recovery</sub> = 0.75〜0.85）で表されます。</p>
+          <p><strong>Q2: 氷点下の厳冬期でも ATES 結合型産業用ヒートポンプが COP ≈ 6.03（季節成績係数 SPF &gt; 5.2）を維持できる理由は？</strong><br>
+          年間を通じて安定した 16 °C の温水井地下水を熱源として 40〜45 °C の低温レール暖房管へ 29 K 昇温するだけなので、空気熱源式の着霜デフロスト損失が一切生じず、ローレンツ／カルノー効率 COP<sub>real</sub> ≈ 0.55 · 318.15 / (318.15 - 289.15) = 6.03 の超高効率運転が可能となります。</p>
+          <p><strong>Q3: オランダ・ウェストラントや欧州で ATES ダブレットを運用する際の水文地質学的・法的必須条件は？</strong><br>
+          地下水法により正味揚水量ゼロ（無酸素密閉配管での 100% 地下還元による水酸化鉄目詰まり防止）と、温水塊・冷水塊の熱的短絡を防ぐ複数年熱収支均衡が義務付けられています。基礎となる温室暖房負荷は <a href="/tools/greenhouse-heating-load-thermal-screen-calculator.html" style="color: #10b981; font-weight: 700;">DIN V 18599 温室暖房負荷・省エネ計算機</a> で算出できます。</p>
         </div>
       </section>
 <!-- INW-DEEP-ENG-END -->
 
 <!-- INW-LIVE-WIDGET-START -->
 <section class="inw-live-widget-sandbox" style="margin: 32px 0; padding: 24px; background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 16px; box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);">
-  <h3 style="margin: 0 0 8px 0; font-size: 1.2rem; color: #38bdf8; font-weight: 800;">🧪 リアルタイム養液栽培 A/B 原液タンク & EC 希釈シミュレーター</h3>
-  <p style="margin: 0 0 16px 0; font-size: 0.92rem; color: #94a3b8; line-height: 1.6;">原水EC・目標EC・希釈倍率から、A/B原液タンク注入量と必要肥料塩類質量をリアルタイムに計算します。</p>
+  <h3 style="margin: 0 0 8px 0; font-size: 1.2rem; color: #38bdf8; font-weight: 800;">🔥 DIN V 18599 温室ピーク暖房負荷 & 保温カーテン省エネシミュレーター</h3>
+  <p style="margin: 0 0 16px 0; font-size: 0.92rem; color: #94a3b8; line-height: 1.6;">温室面積・外気設計温度・被覆材U値・保温カーテンを選択し、ピーク暖房負荷 (kW) と燃料消費量をリアルタイムに試算します。</p>
   <div style="display: flex; justify-content: center; width: 100%; overflow: hidden;">
-    <iframe src="/embed/fertigation-ec-widget.html" width="380" height="460" loading="lazy" title="🧪 リアルタイム養液栽培 A/B 原液タンク & EC 希釈シミュレーター" style="border: none; border-radius: 14px; max-width: 100%;"></iframe>
+    <iframe src="/embed/heating-loss-widget.html" width="380" height="460" loading="lazy" title="🔥 DIN V 18599 温室ピーク暖房負荷 & 保温カーテン省エネシミュレーター" style="border: none; border-radius: 14px; max-width: 100%;"></iframe>
   </div>
 </section>
 <!-- INW-LIVE-WIDGET-END -->

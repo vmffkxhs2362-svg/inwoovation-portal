@@ -73,16 +73,20 @@ PART_DEFS = [
 ]
 
 
-def _extract_meta(path: Path) -> tuple[str, str, str]:
-    txt = path.read_text(encoding="utf-8", errors="ignore")
+def _extract_meta_from_text(txt: str, stem: str) -> tuple[str, str, str]:
     h1_m = re.search(r"<h1[^>]*>(.*?)</h1>", txt, re.I | re.S)
     desc_m = re.search(r'<meta\s+[^>]*name=["\']description["\'][^>]*content="([^"]*)"', txt, re.I)
-    title = re.sub(r"<[^>]+>", "", h1_m.group(1)).strip() if h1_m else path.stem
+    title = re.sub(r"<[^>]+>", "", h1_m.group(1)).strip() if h1_m else stem
     title = html_lib.unescape(re.sub(r"\s+", " ", title))
     desc = html_lib.unescape(re.sub(r"\s+", " ", desc_m.group(1).strip())) if desc_m else title
     tool_links = re.findall(r'href=["\'](?:\.\./|/)+tools/([a-z0-9\-]+\.html)["\']', txt, re.I)
     paired_tool = tool_links[0] if tool_links else "index.html"
     return title, desc, paired_tool
+
+
+def _extract_meta(path: Path) -> tuple[str, str, str]:
+    txt = path.read_text(encoding="utf-8", errors="ignore")
+    return _extract_meta_from_text(txt, path.stem)
 
 
 def _vol_num(filename: str) -> str:
@@ -109,31 +113,48 @@ def _classify_part(vol: str, filename: str, title: str) -> int:
 
 
 def _load_catalog():
+    from concurrent.futures import ThreadPoolExecutor
+
     articles_dir = PORTAL_DIR / "articles"
     en_articles = []
     de_by_vol: dict[str, tuple[str, str]] = {}
     ja_by_vol: dict[str, tuple[str, str]] = {}
 
-    for p in sorted((articles_dir / "de").glob("article-*.html")):
-        txt = p.read_text(encoding="utf-8", errors="ignore")
-        if 'http-equiv="refresh"' in txt.lower() or "noindex" in txt.lower():
+    de_paths = sorted((articles_dir / "de").glob("article-*.html"))
+    ja_paths = sorted((articles_dir / "ja").glob("article-*.html"))
+    en_paths = sorted(articles_dir.glob("article-*.html"))
+    tool_paths = [p for p in sorted((PORTAL_DIR / "tools").glob("*.html")) if p.name != "index.html"]
+    all_paths = de_paths + ja_paths + en_paths + tool_paths
+
+    def _read_path(p: Path):
+        return p, p.read_text(encoding="utf-8", errors="ignore")
+
+    with ThreadPoolExecutor(max_workers=16) as pool:
+        text_by_path = dict(pool.map(_read_path, all_paths))
+
+    for p in de_paths:
+        txt = text_by_path[p]
+        low_txt = txt.lower()
+        if 'http-equiv="refresh"' in low_txt or "noindex" in low_txt:
             continue
-        title, _, _ = _extract_meta(p)
+        title, _, _ = _extract_meta_from_text(txt, p.stem)
         de_by_vol[_vol_num(p.name)] = (f"../articles/de/{p.name}", title)
 
-    for p in sorted((articles_dir / "ja").glob("article-*.html")):
-        txt = p.read_text(encoding="utf-8", errors="ignore")
-        if 'http-equiv="refresh"' in txt.lower() or "noindex" in txt.lower():
+    for p in ja_paths:
+        txt = text_by_path[p]
+        low_txt = txt.lower()
+        if 'http-equiv="refresh"' in low_txt or "noindex" in low_txt:
             continue
-        title, _, _ = _extract_meta(p)
+        title, _, _ = _extract_meta_from_text(txt, p.stem)
         ja_by_vol[_vol_num(p.name)] = (f"../articles/ja/{p.name}", title)
 
-    for p in sorted(articles_dir.glob("article-*.html")):
-        txt = p.read_text(encoding="utf-8", errors="ignore")
-        if 'http-equiv="refresh"' in txt.lower() or "noindex" in txt.lower():
+    for p in en_paths:
+        txt = text_by_path[p]
+        low_txt = txt.lower()
+        if 'http-equiv="refresh"' in low_txt or "noindex" in low_txt:
             continue
         vol = _vol_num(p.name)
-        title, desc, paired_tool = _extract_meta(p)
+        title, desc, paired_tool = _extract_meta_from_text(txt, p.stem)
         part_idx = _classify_part(vol, p.name, title)
         en_articles.append(
             {
@@ -151,10 +172,8 @@ def _load_catalog():
         )
 
     tools_list = []
-    for p in sorted((PORTAL_DIR / "tools").glob("*.html")):
-        if p.name == "index.html":
-            continue
-        title, _, _ = _extract_meta(p)
+    for p in tool_paths:
+        title, _, _ = _extract_meta_from_text(text_by_path[p], p.stem)
         tools_list.append((p.name, title.split("|")[0].strip()))
 
     grant_count = 192

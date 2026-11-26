@@ -57,7 +57,7 @@
         "url": "https://inwoovation.com"
       },
       "datePublished": "2026-09-01",
-      "dateModified": "2026-11-21",
+      "dateModified": "2026-11-26",
       "mainEntityOfPage": "https://inwoovation.com/articles/article-28-greenhouse-co2-enrichment-economics.html"
     },
     {
@@ -65,26 +65,26 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "How do operators prevent humidity spikes when thermal screens are closed over 95%?",
+          "name": "How quickly does an unenriched closed Venlo canopy deplete indoor CO2, and what yield penalty occurs below 320 ppm?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "By coordinating a controlled 1.5%–4.0% moisture purge gap (Screen Gap) with a minimum pipe-rail temperature of 38–42 °C, gentle buoyancy-driven convection transports excess water vapor into the upper roof plenum where it condenses on the cold glass envelope and drains via gutter channels."
+            "text": "Under clear morning irradiance, an active C3 fruiting canopy draws down closed-compartment CO2 from ambient 420 ppm to 250–320 ppm within 30–45 minutes. At 280 ppm, RuBisCO oxygenation (photorespiration) surges and net carboxylation drops by 25%–38% compared to enriched setpoints of 800–1,000 ppm."
           }
         },
         {
           "@type": "Question",
-          "name": "What sampling frequency is required to synchronize solar radiation with irrigation and climate actuators?",
+          "name": "At what roof-vent opening does CO2 purge loss destroy enrichment profitability, and how do liquid CO2 vs. CHP flue-gas costs compare?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Quantum PAR and pyranometer sensors are sampled every 5 seconds, filtered over a 60-second rolling window, and integrated into cumulative radiation sums (J/cm2) to trigger precision 100 mL drip shots while updating MPC climate trajectories every 5 minutes."
+            "text": "Once leeward/windward roof vents open beyond 20% (ACH > 8–12 h-1), 60%–80% of injected gas escapes to the atmosphere. Dynamic optimization solves MRCO2 = MCCO2: operators paying USD 0.25–0.35/kg for bulk liquid CO2 ramp targets down to 450–550 ppm during heavy ventilation, whereas SCR-purified CHP flue gas (USD 0.05–0.08/kg) supports higher daytime setpoints."
           }
         },
         {
           "@type": "Question",
-          "name": "Where can I simulate these exact thermodynamic and agronomic equations for my own facility?",
+          "name": "How can I calculate the exact economic break-even CO2 ppm setpoint for my greenhouse ventilation rate and crop price?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Launch our interactive Interactive CEA Engineering Calculator or explore the full suite of CEA engineering calculators linked below."
+            "text": "Simulate real-time canopy assimilation, ACH ventilation mass loss, and marginal net profit per hectare in the Greenhouse CO2 Enrichment Economic Optimizer."
           }
         }
       ]
@@ -156,7 +156,7 @@
       <p class="lead">Under un-enriched conditions, commercial greenhouse daytime CO₂ concentrations regularly drop to <strong>250–320 ppm</strong> due to aggressive photosynthetic consumption by mature canopies, severely limiting Rubisco carboxylation velocity (V<sub>c,max</sub>). Enriching the microclimate to <strong>800–1,000 ppm</strong> boosts net carbon assimilation by <strong>+25% to +35%</strong>.</p>
 
       <h2>1. The Ventilation Purge Dilemma</h2>
-      <p>When roof vents open beyond 20% to control heat and humidity, convective air exchange expels up to 60–80% of injected CO₂ to the external atmosphere. Sizing dosing rates and choosing between pure liquid CO₂ ($0.25–0.35/kg) and natural gas CHP flue gas ($0.05–0.08/kg) dictates overall farm profitability.</p>
+      <p>When roof vents open beyond 20% to control heat and humidity, convective air exchange expels up to 60–80% of injected CO₂ to the external atmosphere. Sizing dosing rates and choosing between pure liquid CO₂ (0.25–0.35/kg) and natural gas CHP flue gas (0.05–0.08/kg) dictates overall farm profitability.</p>
 
       <h2>2. Interactive ROI Optimization Tool</h2>
       <p>Determine your optimal dosing rate and net daily dollar profit per hectare:</p>
@@ -259,22 +259,22 @@
 
         <h2>Section E: Frequently Asked Engineering Questions (FAQ)</h2>
         <div class="faq-block" style="margin-top: 14px;">
-          <p><strong>Q1: How do operators prevent humidity spikes when thermal screens are closed over 95%?</strong><br>
-          By coordinating a controlled 1.5%–4.0% <em>moisture purge gap (Screen Gap)</em> with a minimum pipe-rail temperature of 38–42 °C, gentle buoyancy-driven convection transports excess water vapor into the upper roof plenum where it condenses on the cold glass envelope and drains via gutter channels.</p>
-          <p><strong>Q2: What sampling frequency is required to synchronize solar radiation with irrigation and climate actuators?</strong><br>
-          Quantum PAR and pyranometer sensors are sampled every 5 seconds, filtered over a 60-second rolling window, and integrated into cumulative radiation sums (J/cm<sup>2</sup>) to trigger precision 100 mL drip shots while updating MPC climate trajectories every 5 minutes.</p>
-          <p><strong>Q3: Where can I simulate these exact thermodynamic and agronomic equations for my own facility?</strong><br>
-          Launch our interactive <a href="/smartfarm/co2_calculator.html" style="color: #10b981; font-weight: 700;">Interactive CEA Engineering Calculator</a> or explore the full suite of CEA engineering calculators linked below.</p>
+          <p><strong>Q1: How quickly does an unenriched closed Venlo canopy deplete indoor CO2, and what yield penalty occurs below 320 ppm?</strong><br>
+          Under clear morning irradiance, an active C<sub>3</sub> fruiting canopy draws down closed-compartment CO<sub>2</sub> from ambient 420 ppm to 250–320 ppm within 30–45 minutes. At 280 ppm, RuBisCO oxygenation (photorespiration) surges and net carboxylation drops by 25%–38% compared to enriched setpoints of 800–1,000 ppm.</p>
+          <p><strong>Q2: At what roof-vent opening does CO2 purge loss destroy enrichment profitability, and how do liquid CO2 vs. CHP flue-gas costs compare?</strong><br>
+          Once leeward/windward roof vents open beyond 20% (ACH &gt; 8–12 h<sup>-1</sup>), 60%–80% of injected gas escapes to the atmosphere. Dynamic optimization solves MR<sub>CO2</sub> = MC<sub>CO2</sub>: operators paying USD 0.25–0.35/kg for bulk liquid CO<sub>2</sub> ramp targets down to 450–550 ppm during heavy ventilation, whereas SCR-purified CHP flue gas (USD 0.05–0.08/kg) supports higher daytime setpoints.</p>
+          <p><strong>Q3: How can I calculate the exact economic break-even CO2 ppm setpoint for my greenhouse ventilation rate and crop price?</strong><br>
+          Simulate real-time canopy assimilation, ACH ventilation mass loss, and marginal net profit per hectare in the <a href="/tools/greenhouse-co2-enrichment-optimizer.html" style="color: #10b981; font-weight: 700;">Greenhouse CO<sub>2</sub> Enrichment Economic Optimizer</a>.</p>
         </div>
       </section>
 <!-- INW-DEEP-ENG-END -->
 
 <!-- INW-LIVE-WIDGET-START -->
 <section class="inw-live-widget-sandbox" style="margin: 32px 0; padding: 24px; background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 16px; box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);">
-  <h3 style="margin: 0 0 8px 0; font-size: 1.2rem; color: #38bdf8; font-weight: 800;">🧪 Interactive Hydroponic A/B Stock Tank & EC Blending Simulator</h3>
-  <p style="margin: 0 0 16px 0; font-size: 0.92rem; color: #94a3b8; line-height: 1.6;">Compute A/B stock tank injection liters and dissolved fertilizer salt mass to hit target root-zone EC from raw source water.</p>
+  <h3 style="margin: 0 0 8px 0; font-size: 1.2rem; color: #38bdf8; font-weight: 800;">🫧 Interactive Canopy CO₂ Enrichment & Ventilation Loss Simulator</h3>
+  <p style="margin: 0 0 16px 0; font-size: 0.92rem; color: #94a3b8; line-height: 1.6;">Model net Farquhar-FvCB photosynthetic CO₂ assimilation vs. roof ventilation air-exchange leakage (ACH) to determine hourly CO₂ dosing (kg/h).</p>
   <div style="display: flex; justify-content: center; width: 100%; overflow: hidden;">
-    <iframe src="/embed/fertigation-ec-widget.html" width="380" height="460" loading="lazy" title="🧪 Interactive Hydroponic A/B Stock Tank & EC Blending Simulator" style="border: none; border-radius: 14px; max-width: 100%;"></iframe>
+    <iframe src="/embed/co2-enrichment-widget.html" width="380" height="460" loading="lazy" title="🫧 Interactive Canopy CO₂ Enrichment & Ventilation Loss Simulator" style="border: none; border-radius: 14px; max-width: 100%;"></iframe>
   </div>
 </section>
 <!-- INW-LIVE-WIDGET-END -->

@@ -35,7 +35,7 @@
       "description": "Diagnostic wizard for commercial greenhouse issues (tip burn, blossom-end rot, condensation, heating spikes) with actionable biophysical protocols.",
       "applicationCategory": "DiagnosticApplication, AgriculturalTool",
       "operatingSystem": "All",
-      "dateModified": "2026-11-21",
+      "dateModified": "2026-11-26",
       "provider": {
         "@type": "Organization",
         "name": "Inwoovation Lab",
@@ -64,26 +64,34 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "What governing engineering models and standards define Commercial Greenhouse Troubleshooting Wizard?",
+          "name": "Why do greenhouse crops suffer stomatal lock during CO₂ enrichment above 1,000 ppm when midday VPD exceeds 1.6 kPa?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Instant diagnostic wizard for commercial greenhouse and indoor farm issues. Identify root causes for tip burn, blossom-end rot, condensation, and heating spikes with 3-step actionable protocols and biophysical calculators. Quantitative setpoints and mass-energy balances are grounded in FAO-56 Penman-Monteith psychrometrics, DIN V 18599 thermal transmission standards, EN 13031-1 structural envelopes, and peer-referenced Wageningen CEA physics."
+            "text": "When leaf-to-air Vapor Pressure Deficit rises above 1.6 kPa or horizontal canopy air velocity drops below 0.2 m/s, abscisic acid (ABA) signaling forces guard-cell turgor loss and stomatal closure to prevent xylem cavitation. Injecting 1,000+ ppm CO₂ into closed stomata wastes gas until high-pressure fogging and 0.4–0.6 m/s HAF circulation restore VPD into the 0.85–1.25 kPa conductance window."
           }
         },
         {
           "@type": "Question",
-          "name": "How do commercial greenhouse operators implement Commercial Greenhouse Troubleshooting Wizard setpoints in automated control systems?",
+          "name": "How can growers distinguish calcium Blossom-End Rot (BER) mass-flow starvation from primary fungal fruit rot?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Operators pair calibrated canopy radiometers, PAR quantum sensors, and rhizosphere EC/pH probes with climate-computer control loops so real-time actuator ramping tracks the thermodynamic and stoichiometric targets derived on this page."
+            "text": "Blossom-End Rot originates strictly as a dry, sunken, leathery necrosis at the distal blossom scar of rapidly expanding green fruit without surface mycelium or water-soaked stem lesions. Because Ca²⁺ is phloem-immobile, BER is triggered when high foliar transpiration or elevated root-zone EC/NH₄⁺ diverts xylem Ca²⁺ flux away from low-transpiring fruit tissue."
           }
         },
         {
           "@type": "Question",
-          "name": "How can I validate facility-specific sizing and ROI scenarios for Commercial Greenhouse Troubleshooting Wizard?",
+          "name": "What root-zone dissolved oxygen (DO) and temperature thresholds trigger Pythium root rot in recirculating hydroponics?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Use the interactive engineering solver on this page alongside the Inwoovation Lab 42-tool suite (including VenloCAD 3D, Mollier ATU Psychrometrics, and the 192-Program Global Agri-Subsidy Navigator) to benchmark site-specific loads and grant eligibility."
+            "text": "Once rockwool or gully solution temperatures exceed 25–26 °C, Henry's-law oxygen solubility drops below 8.1 mg/L while root respiration doubles. If rhizosphere DO falls below 4.5–5.0 mg/L, roots shift toward anaerobic fermentation and lose epidermal resistance to motile Pythium aphanidermatum zoospores—requiring 19–21 °C irrigation chilling, nanobubble oxygenation (≥ 8–25 mg/L DO), and > 100 mJ/cm² UV-C drain sterilization."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do minimum pipe-rail heating and dew-point margins prevent nocturnal fruit condensation and Botrytis gray mold?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "After sunset and at sunrise, dense fruit clusters lag behind rising air temperatures by 2–4 °C; if fruit surface temperature falls below the indoor air dew point, free water films condense and trigger Botrytis cinerea conidia germination within 4 hours. Running 40–45 °C minimum rail-pipe radiative heat alongside active dehumidification holds canopy surfaces at least 1.5 °C above dew point."
           }
         }
       ]
@@ -833,45 +841,26 @@
       <h2 style="font-family:'Outfit',sans-serif; font-size:1.35rem; color:#f8fafc; margin:0 0 18px 0;">❓ Greenhouse Troubleshooting Frequently Asked Questions</h2>
       <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:18px;">
         <div>
-          <strong style="display:block; color:#38bdf8; font-size:0.94rem; margin-bottom:6px;">How can greenhouse growers distinguish calcium Blossom End Rot from fungal rot?</strong>
-          <p style="color:#94a3b8; font-size:0.88rem; line-height:1.65; margin:0;">Blossom End Rot (BER) starts strictly at the dry, sunken, leathery blossom scar (distal apex) of rapidly expanding green fruit without surface mycelium. It is caused by inadequate xylem calcium transport under excessive VPD (&gt;1.6 kPa) or salt stress rather than a primary pathogen.</p>
+          <strong style="display:block; color:#38bdf8; font-size:0.94rem; margin-bottom:6px;">Q1: Why do greenhouse crops suffer stomatal lock during CO₂ enrichment above 1,000 ppm when midday VPD exceeds 1.6 kPa?</strong>
+          <p style="color:#94a3b8; font-size:0.88rem; line-height:1.65; margin:0;">When leaf-to-air Vapor Pressure Deficit rises above 1.6 kPa or horizontal canopy air velocity drops below 0.2 m/s, abscisic acid (ABA) signaling forces guard-cell turgor loss and stomatal closure to prevent xylem cavitation. Injecting 1,000+ ppm CO₂ into closed stomata wastes gas until high-pressure fogging and 0.4–0.6 m/s HAF circulation restore VPD into the 0.85–1.25 kPa conductance window.</p>
         </div>
         <div>
-          <strong style="display:block; color:#38bdf8; font-size:0.94rem; margin-bottom:6px;">Why does inner-leaf tipburn occur in vertical farms even when calcium feed exceeds 180 ppm?</strong>
-          <p style="color:#94a3b8; font-size:0.88rem; line-height:1.65; margin:0;">Calcium travels almost exclusively in the xylem transpiration stream rather than phloem sap. Stagnant air (&lt;0.15 m/s) traps a saturated boundary layer inside enclosed lettuce hearts, halting xylem flow into newly unfolded leaves regardless of reservoir concentration.</p>
+          <strong style="display:block; color:#38bdf8; font-size:0.94rem; margin-bottom:6px;">Q2: How can growers distinguish calcium Blossom-End Rot (BER) mass-flow starvation from primary fungal fruit rot?</strong>
+          <p style="color:#94a3b8; font-size:0.88rem; line-height:1.65; margin:0;">Blossom-End Rot originates strictly as a dry, sunken, leathery necrosis at the distal blossom scar of rapidly expanding green fruit without surface mycelium or water-soaked stem lesions. Because Ca²⁺ is phloem-immobile, BER is triggered when high foliar transpiration or elevated root-zone EC/NH₄⁺ diverts xylem Ca²⁺ flux away from low-transpiring fruit tissue.</p>
         </div>
         <div>
-          <strong style="display:block; color:#38bdf8; font-size:0.94rem; margin-bottom:6px;">When should Sodium (Na⁺) trigger recirculation drain bleed in rockwool greenhouses?</strong>
-          <p style="color:#94a3b8; font-size:0.88rem; line-height:1.65; margin:0;">Crops exclude most sodium ions at the root membrane, causing recirculated drain Na⁺ to climb over weeks. Salt-sensitive strawberries require bleed above 1.5–2.5 mmol/L, whereas greenhouse tomatoes tolerate up to 8.0–10.0 mmol/L Na⁺ before osmotic yield penalty sets in.</p>
+          <strong style="display:block; color:#38bdf8; font-size:0.94rem; margin-bottom:6px;">Q3: What root-zone dissolved oxygen (DO) and temperature thresholds trigger Pythium root rot in recirculating hydroponics?</strong>
+          <p style="color:#94a3b8; font-size:0.88rem; line-height:1.65; margin:0;">Once rockwool or gully solution temperatures exceed 25–26 °C, Henry&#x27;s-law oxygen solubility drops below 8.1 mg/L while root respiration doubles. If rhizosphere DO falls below 4.5–5.0 mg/L, roots shift toward anaerobic fermentation and lose epidermal resistance to motile Pythium aphanidermatum zoospores—requiring 19–21 °C irrigation chilling, nanobubble oxygenation (≥ 8–25 mg/L DO), and &gt; 100 mJ/cm² UV-C drain sterilization.</p>
         </div>
         <div>
-          <strong style="display:block; color:#38bdf8; font-size:0.94rem; margin-bottom:6px;">How much heating fuel is wasted by unsealed thermal screen edge gaps?</strong>
-          <p style="color:#94a3b8; font-size:0.88rem; line-height:1.65; margin:0;">Because warm greenhouse air rises via buoyancy convection through open screen perimeter seams, leaving just 1% to 2% linear edge gap reduces true thermal energy retention by 25% to 35% on winter nights under DIN V 18599 heat balance modeling.</p>
+          <strong style="display:block; color:#38bdf8; font-size:0.94rem; margin-bottom:6px;">Q4: How do minimum pipe-rail heating and dew-point margins prevent nocturnal fruit condensation and Botrytis gray mold?</strong>
+          <p style="color:#94a3b8; font-size:0.88rem; line-height:1.65; margin:0;">After sunset and at sunrise, dense fruit clusters lag behind rising air temperatures by 2–4 °C; if fruit surface temperature falls below the indoor air dew point, free water films condense and trigger Botrytis cinerea conidia germination within 4 hours. Running 40–45 °C minimum rail-pipe radiative heat alongside active dehumidification holds canopy surfaces at least 1.5 °C above dew point.</p>
         </div>
       </div>
     </section>
 
   </main>
-
-  
-<section class="inw-synced-faq-section" style="max-width: 1060px; margin: 28px auto; padding: 24px; background: rgba(15, 23, 42, 0.88); border: 1px solid rgba(16, 185, 129, 0.32); border-radius: 16px; text-align: left;">
-  <h3 style="margin: 0 0 14px 0; font-size: 1.15rem; color: #10b981; font-weight: 800;">❓ Frequently Asked Engineering Questions (Technical FAQ)</h3>
-  <div>
-    <div style="margin-bottom:14px; padding:14px 18px; background:rgba(15,23,42,0.65); border-left:3px solid #10b981; border-radius:8px;">
-      <h4 style="margin:0 0 6px 0; color:#f8fafc; font-size:0.98rem;">What governing engineering models and standards define Commercial Greenhouse Troubleshooting Wizard?</h4>
-      <p style="margin:0; color:#cbd5e1; font-size:0.9rem; line-height:1.65;">Instant diagnostic wizard for commercial greenhouse and indoor farm issues. Identify root causes for tip burn, blossom-end rot, condensation, and heating spikes with 3-step actionable protocols and biophysical calculators. Quantitative setpoints and mass-energy balances are grounded in FAO-56 Penman-Monteith psychrometrics, DIN V 18599 thermal transmission standards, EN 13031-1 structural envelopes, and peer-referenced Wageningen CEA physics.</p>
-    </div>
-    <div style="margin-bottom:14px; padding:14px 18px; background:rgba(15,23,42,0.65); border-left:3px solid #10b981; border-radius:8px;">
-      <h4 style="margin:0 0 6px 0; color:#f8fafc; font-size:0.98rem;">How do commercial greenhouse operators implement Commercial Greenhouse Troubleshooting Wizard setpoints in automated control systems?</h4>
-      <p style="margin:0; color:#cbd5e1; font-size:0.9rem; line-height:1.65;">Operators pair calibrated canopy radiometers, PAR quantum sensors, and rhizosphere EC/pH probes with climate-computer control loops so real-time actuator ramping tracks the thermodynamic and stoichiometric targets derived on this page.</p>
-    </div>
-    <div style="margin-bottom:14px; padding:14px 18px; background:rgba(15,23,42,0.65); border-left:3px solid #10b981; border-radius:8px;">
-      <h4 style="margin:0 0 6px 0; color:#f8fafc; font-size:0.98rem;">How can I validate facility-specific sizing and ROI scenarios for Commercial Greenhouse Troubleshooting Wizard?</h4>
-      <p style="margin:0; color:#cbd5e1; font-size:0.9rem; line-height:1.65;">Use the interactive engineering solver on this page alongside the Inwoovation Lab 42-tool suite (including VenloCAD 3D, Mollier ATU Psychrometrics, and the 192-Program Global Agri-Subsidy Navigator) to benchmark site-specific loads and grant eligibility.</p>
-    </div>
-  </div>
-</section>
-<footer style="text-align:center; padding:30px 20px; color:#64748b; font-size:0.85rem; border-top:1px solid rgba(255,255,255,0.06); margin-top:auto;">
+  <footer style="text-align:center; padding:30px 20px; color:#64748b; font-size:0.85rem; border-top:1px solid rgba(255,255,255,0.06); margin-top:auto;">
     © 2026 Inwoovation Engineering Lab (Nürnberg Knoblauchsland &amp; Seoul). 100% Free &amp; Open Source.<br>
     <a href="index.html" style="color:#94a3b8;">Home</a> | <a href="tools/index.html" style="color:#94a3b8;">Tools Suite</a> | <a href="troubleshoot.html" style="color:#38bdf8;">Troubleshooting</a> | <a href="meister.html" style="color:#94a3b8;">Meister Hub</a> | <a href="quiz.html" style="color:#94a3b8;">Biophysics Quiz</a>
       <div class="inw-trust-links" style="margin-top:16px; padding-top:14px; border-top:1px solid rgba(148,163,184,0.16); display:flex; justify-content:center; align-items:center; flex-wrap:wrap; gap:16px; font-size:0.84rem; color:#94a3b8;">

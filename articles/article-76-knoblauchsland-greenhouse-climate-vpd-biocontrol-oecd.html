@@ -87,7 +87,7 @@
         "url": "https://inwoovation.com"
       },
       "datePublished": "2026-09-01",
-      "dateModified": "2026-11-21",
+      "dateModified": "2026-11-26",
       "mainEntityOfPage": "https://inwoovation.com/articles/article-76-knoblauchsland-greenhouse-climate-vpd-biocontrol-oecd.html"
     },
     {
@@ -149,6 +149,24 @@
     <script src="/js/global-search-palette.js?v=20261105" defer></script>
 </head>
 <body>
+<!-- INW-STD-NAV-START -->
+<nav class="inw-top-nav" aria-label="Main Navigation" style="background: #0f172a; border-bottom: 1px solid #1e293b; padding: 12px 20px; font-family: system-ui, -apple-system, sans-serif; box-sizing: border-box; width: 100%;">
+  <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px;">
+    <a href="/index.html" style="color: #10b981; font-weight: 800; font-size: 1.15rem; text-decoration: none; letter-spacing: -0.02em;">Inwoovation Lab</a>
+    <div style="display: flex; flex-wrap: wrap; gap: 14px; font-size: 0.9rem;">
+      <a href="/index.html" style="color: #e2e8f0; text-decoration: none;">Home</a>
+      <a href="/smartfarm/vpd.html" style="color: #e2e8f0; text-decoration: none;">Calculators</a>
+      <a href="/articles/index.html" style="color: #38bdf8; font-weight: 600; text-decoration: none;">Articles</a>
+      <a href="/wiki/index.html" style="color: #e2e8f0; text-decoration: none;">Wiki</a>
+      <a href="/climate/index.html" style="color: #e2e8f0; text-decoration: none;">Climate Hub</a>
+      <a href="/crops/index.html" style="color: #e2e8f0; text-decoration: none;">Crops</a>
+      <a href="/tools/venlocad-3d.html" style="color: #10b981; font-weight: 600; text-decoration: none;">VenloCAD 3D</a>
+      <button type="button" onclick="window.InwooPalette && window.InwooPalette.open()" style="background: rgba(15, 23, 42, 0.9); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.4); padding: 6px 12px; border-radius: 6px; font-size: 0.85rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">🔍 Search <kbd style="background: rgba(255,255,255,0.1); padding: 1px 5px; border-radius: 4px; font-size: 0.72rem;">Ctrl+K</kbd></button>
+      <a href="/about.html" style="color: #e2e8f0; text-decoration: none;">About</a>
+    </div>
+  </div>
+</nav>
+<!-- INW-STD-NAV-END -->
 
     <!-- Header Navigation -->
     <header class="site-header">
@@ -200,7 +218,7 @@
                 </p>
                 <div class="formula-box">
                     // Hemispherical Photon Transmission &amp; Haze Metric
-                    τ<sub>hemi</sub> = ∫<sub>0</sub><sup>π/2</sup> τ(θ) · sin(2θ)   dθ ≥ 0.96   (96.0%) \\
+                    τ<sub>hemi</sub> = ∫<sub>0</sub><sup>π/2</sup> τ(θ) · sin(2θ)   dθ ≥ 0.96   (96.0%)<br>
                     Haze Index = (Φ<sub>diffuse</sub>(scattered &gt; 2.5°))/(Φ<sub>total</sub>) × 100% = 25.0% ± 3.0%
                 </div>
                 <p>
@@ -258,7 +276,7 @@
                 </p>
                 <div class="formula-box">
                     // Low-Temperature Radiative &amp; Convective Rail Heat Flux
-                    q<sub>rail</sub> = π · D<sub>pipe</sub> · [ h<sub>conv</sub> · (T<sub>mean</sub> - T<sub>air</sub>) + ε · σ · (T<sub>mean</sub>^4 - T<sub>surr</sub>^4) ] \\
+                    q<sub>rail</sub> = π · D<sub>pipe</sub> · [ h<sub>conv</sub> · (T<sub>mean</sub> - T<sub>air</sub>) + ε · σ · (T<sub>mean</sub>^4 - T<sub>surr</sub><sup>4</sup>) ]<br>
                     Operating Regime:   T<sub>supply</sub> = 35.0°C,   T<sub>return</sub> = 30.0°C,   Δ T = 5.0°C
                 </div>
                 <p>
@@ -274,8 +292,8 @@
                 </p>
                 <div class="formula-box">
                     // Saturated Vapor Pressure (Tetens Equation) &amp; Air VPD
-                    e_s(T) = 0.61078 · exp( (17.27 · T)/(T + 237.3) )   [kPa] \\
-                    VPD = e_s(T<sub>canopy</sub>) - e_s(T<sub>air</sub>) · ( (RH)/(100) )   [kPa] \\
+                    e_s(T) = 0.61078 · exp( (17.27 · T)/(T + 237.3) )   [kPa]<br>
+                    VPD = e_s(T<sub>canopy</sub>) - e_s(T<sub>air</sub>) · ( (RH)/(100) )   [kPa]<br>
                     <strong>Target   Operational   Window:</strong>   0.60 ≤ VPD ≤ 0.85   kPa
                 </div>
                 
@@ -366,7 +384,7 @@
                 </p>
                 <div class="formula-box">
                     // Flavor Index &amp; Sugar-to-Acid Ratio
-                    TSS/TA Ratio = (Total Soluble Solids   [°Brix])/(Titratable Acidity   [g citric acid / 100   g]) ≥ 9.5 \\
+                    TSS/TA Ratio = (Total Soluble Solids   [°Brix])/(Titratable Acidity   [g citric acid / 100   g]) ≥ 9.5<br>
                     OECD Maturity Stage Target:   Stage 7 (Light Red)  to  Stage 9 (Deep Red / Full Ripe)
                 </div>
                 <p>

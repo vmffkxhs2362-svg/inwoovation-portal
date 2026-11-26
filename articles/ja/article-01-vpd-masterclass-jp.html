@@ -70,7 +70,7 @@
         "url": "https://inwoovation.com"
       },
       "datePublished": "2026-09-01",
-      "dateModified": "2026-11-21",
+      "dateModified": "2026-11-26",
       "mainEntityOfPage": "https://inwoovation.com/articles/ja/article-01-vpd-masterclass-jp.html"
     },
     {
@@ -101,26 +101,26 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "冬季の保温カーテン全閉時に発生する高湿度・結露リスクはどのように制御すべきですか？",
+          "name": "なぜ施設園芸の環境制御では相対湿度（%RH）単体ではなく葉温補正済みの葉面飽差（VPD_leaf）で制御すべきなのですか？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "カーテンを 1.5 % 〜 4.0 % わずかに開けるギャップ制御 ( Screen Gap Purging ) と 、 最低管温度 ( Minimum Pipe Temperature : 38 - 42 °C ) を連動させることで 、 作物の蒸散流を維持しつつ余剰水蒸気を屋根ガラス面の結露樋へ安全に排出できます 。"
+            "text": "テテンス（Magnus-Tetens）の式 es(T) = 0.61078 · exp(17.27 · T / (T + 237.3)) により、葉内細胞間隙の飽和水蒸気圧は葉温 Tleaf に対して指数関数的に変化します。強日射下や細霧冷房中は葉温が気温から ±1.5〜2.5 °C 乖離するため、放射温度計で計測した真の葉面飽差 VPDleaf = es(Tleaf) - ea のみが気孔蒸散駆動力を正確に表します。"
           }
         },
         {
           "@type": "Question",
-          "name": "日射量に応じた灌水および CO2 施用の最適サンプリング周期はどのくらいですか？",
+          "name": "トマト・パプリカ・キュウリの最適 VPD レンジと、0.45 kPa 未満および 1.60 kPa 超過時に発生する生理障害は？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "日射強度 ( W/m2 ) と葉温・飽差 ( VPD ) は 5 秒周期で計測・移動平均処理を行い 、 積算日射量 70 〜 100 J/cm2 ごとに 100 mL/株の精密パルス灌水を実行し 、 換気窓開度 ( ACH ) に連動して CO2 目標濃度 ( 600 〜 1,050 ppm ) を 5 分周期で動的最適化します 。"
+            "text": "果菜類の光合成・蒸散最適域は 0.80〜1.25 kPa です。0.40〜0.45 kPa 未満の過湿域では木部導管の蒸散流が停滞して果実先端への Ca2+ 輸送が途絶し、尻腐れ果（BER）や灰色かび病（Botrytis cinerea）を誘発します。逆に 1.60 kPa を超える高飽差では気孔が防御閉鎖し、CO2 同化速度が急落します。"
           }
         },
         {
           "@type": "Question",
-          "name": "自社温室の条件に合わせた具体的な設計値・負荷計算はどこで行えますか？",
+          "name": "自社の温室気温・相対湿度・葉温オフセットから正確な葉面 VPD と露点余裕度を計算するには？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Inwoovation Lab が提供する無料の VPD & Stomatal Transpiration Calculator および下部の関連エンジニアリング計算ツール群をそのままブラウザ上でご利用いただけます 。"
+            "text": "当ラボの VPD・気孔蒸散動態シミュレーター でリアルタイムに飽差（kPa）と結露リスクを算出できます。"
           }
         }
       ]
@@ -295,12 +295,12 @@
 
         <h2>Section E: 施設園芸エンジニアリング よくある質問 ( Frequently Asked Engineering Questions : FAQ )</h2>
         <div class="faq-block" style="margin-top: 14px;">
-          <p><strong>Q1: 冬季の保温カーテン全閉時に発生する高湿度・結露リスクはどのように制御すべきですか？</strong><br>
-          A1: カーテンを 1.5 % 〜 4.0 % わずかに開けるギャップ制御 ( Screen Gap Purging ) と 、 最低管温度 ( Minimum Pipe Temperature : 38 - 42 °C ) を連動させることで 、 作物の蒸散流を維持しつつ余剰水蒸気を屋根ガラス面の結露樋へ安全に排出できます 。</p>
-          <p><strong>Q2: 日射量に応じた灌水および CO2 施用の最適サンプリング周期はどのくらいですか？</strong><br>
-          A2: 日射強度 ( W/m2 ) と葉温・飽差 ( VPD ) は 5 秒周期で計測・移動平均処理を行い 、 積算日射量 70 〜 100 J/cm2 ごとに 100 mL/株の精密パルス灌水を実行し 、 換気窓開度 ( ACH ) に連動して CO2 目標濃度 ( 600 〜 1,050 ppm ) を 5 分周期で動的最適化します 。</p>
-          <p><strong>Q3: 自社温室の条件に合わせた具体的な設計値・負荷計算はどこで行えますか？</strong><br>
-          A3: Inwoovation Lab が提供する無料の <a href="/smartfarm/vpd.html" style="color: #10b981; font-weight: 700;">VPD &amp; Stomatal Transpiration Calculator</a> および下部の関連エンジニアリング計算ツール群をそのままブラウザ上でご利用いただけます 。</p>
+          <p><strong>Q1: なぜ施設園芸の環境制御では相対湿度（%RH）単体ではなく葉温補正済みの葉面飽差（VPD_leaf）で制御すべきなのですか？</strong><br>
+          テテンス（Magnus-Tetens）の式 e<sub>s</sub>(T) = 0.61078 · exp(17.27 · T / (T + 237.3)) により、葉内細胞間隙の飽和水蒸気圧は葉温 T<sub>leaf</sub> に対して指数関数的に変化します。強日射下や細霧冷房中は葉温が気温から ±1.5〜2.5 °C 乖離するため、放射温度計で計測した真の葉面飽差 VPD<sub>leaf</sub> = e<sub>s</sub>(T<sub>leaf</sub>) - e<sub>a</sub> のみが気孔蒸散駆動力を正確に表します。</p>
+          <p><strong>Q2: トマト・パプリカ・キュウリの最適 VPD レンジと、0.45 kPa 未満および 1.60 kPa 超過時に発生する生理障害は？</strong><br>
+          果菜類の光合成・蒸散最適域は 0.80〜1.25 kPa です。0.40〜0.45 kPa 未満の過湿域では木部導管の蒸散流が停滞して果実先端への Ca<sup>2+</sup> 輸送が途絶し、尻腐れ果（BER）や灰色かび病（<em>Botrytis cinerea</em>）を誘発します。逆に 1.60 kPa を超える高飽差では気孔が防御閉鎖し、CO<sub>2</sub> 同化速度が急落します。</p>
+          <p><strong>Q3: 自社の温室気温・相対湿度・葉温オフセットから正確な葉面 VPD と露点余裕度を計算するには？</strong><br>
+          当ラボの <a href="/smartfarm/vpd.html" style="color: #10b981; font-weight: 700;">VPD・気孔蒸散動態シミュレーター</a> でリアルタイムに飽差（kPa）と結露リスクを算出できます。</p>
         </div>
       </section>
 <!-- INW-DEEP-ENG-END -->

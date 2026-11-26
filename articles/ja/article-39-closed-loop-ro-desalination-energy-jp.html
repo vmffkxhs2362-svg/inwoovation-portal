@@ -57,7 +57,7 @@
         "url": "https://inwoovation.com"
       },
       "datePublished": "2026-09-01",
-      "dateModified": "2026-11-21",
+      "dateModified": "2026-11-26",
       "mainEntityOfPage": "https://inwoovation.com/articles/ja/article-39-closed-loop-ro-desalination-energy-jp.html"
     },
     {
@@ -88,26 +88,26 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "冬季の保温カーテン全閉時に発生する高湿度・結露リスクはどのように制御すべきですか？",
+          "name": "完全閉鎖型養液循環においてナトリウム（Na+）が何 mmol/L を超えると逆浸透（RO）脱塩や一部廃棄が必要になりますか？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "カーテンを 1.5 % 〜 4.0 % わずかに開けるギャップ制御 ( Screen Gap Purging ) と 、 最低管温度 ( Minimum Pipe Temperature : 38 - 42 °C ) を連動させることで 、 作物の蒸散流を維持しつつ余剰水蒸気を屋根ガラス面の結露樋へ安全に排出できます 。"
+            "text": "果菜類の根は Na+ を選択的に排除する（吸収濃度 < 0.2 mmol/L）ため、原水にわずか 1.0〜1.5 mmol/L 含まれる Na+ でも閉鎖循環内で濃縮されます。排液 Na+ がトマトで 6〜8 mmol/L、パプリカやバラで 4〜5 mmol/L を超えると浸透圧ストレスと Ca/K 吸収阻害が顕在化します。"
           }
         },
         {
           "@type": "Question",
-          "name": "日射量に応じた灌水および CO2 施用の最適サンプリング周期はどのくらいですか？",
+          "name": "ポリアミド薄膜複合 RO 膜と等圧式圧力交換器（PX）はどうやって消費電力を 0.85 kWh/m³ 未満に抑えますか？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "日射強度 ( W/m2 ) と葉温・飽差 ( VPD ) は 5 秒周期で計測・移動平均処理を行い 、 積算日射量 70 〜 100 J/cm2 ごとに 100 mL/株の精密パルス灌水を実行し 、 換気窓開度 ( ACH ) に連動して CO2 目標濃度 ( 600 〜 1,050 ppm ) を 5 分周期で動的最適化します 。"
+            "text": "溶解・拡散モデル Jw = A · (ΔP - Δπ) に基づき塩阻止率 99.2% 超の RO 膜を 12〜18 bar で運転しつつ、濃縮ブライン側（15〜20%）の残圧エネルギーを回転式 PX ローターで直接給水へ回収することで、ポンプ消費電力を 0.85 kWh/m3 未満へ削減し年間約 3,200 m3/ha の節水を実現します。"
           }
         },
         {
           "@type": "Question",
-          "name": "自社温室の条件に合わせた具体的な設計値・負荷計算はどこで行えますか？",
+          "name": "原水・排液の EC から浸透圧 Δπ・RO 回収率・脱塩ランニングコストを試算できるツールは？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Inwoovation Lab が提供する無料の Interactive CEA Engineering Calculator および下部の関連エンジニアリング計算ツール群をそのままブラウザ上でご利用いただけます 。"
+            "text": "閉鎖型逆浸透（RO）脱塩・省エネオプティマイザー で膜面積と電力収支を計算できます。"
           }
         }
       ]
@@ -259,12 +259,12 @@
 
         <h2>Section E: 施設園芸エンジニアリング よくある質問 ( Frequently Asked Engineering Questions : FAQ )</h2>
         <div class="faq-block" style="margin-top: 14px;">
-          <p><strong>Q1: 冬季の保温カーテン全閉時に発生する高湿度・結露リスクはどのように制御すべきですか？</strong><br>
-          A1: カーテンを 1.5 % 〜 4.0 % わずかに開けるギャップ制御 ( Screen Gap Purging ) と 、 最低管温度 ( Minimum Pipe Temperature : 38 - 42 °C ) を連動させることで 、 作物の蒸散流を維持しつつ余剰水蒸気を屋根ガラス面の結露樋へ安全に排出できます 。</p>
-          <p><strong>Q2: 日射量に応じた灌水および CO2 施用の最適サンプリング周期はどのくらいですか？</strong><br>
-          A2: 日射強度 ( W/m2 ) と葉温・飽差 ( VPD ) は 5 秒周期で計測・移動平均処理を行い 、 積算日射量 70 〜 100 J/cm2 ごとに 100 mL/株の精密パルス灌水を実行し 、 換気窓開度 ( ACH ) に連動して CO2 目標濃度 ( 600 〜 1,050 ppm ) を 5 分周期で動的最適化します 。</p>
-          <p><strong>Q3: 自社温室の条件に合わせた具体的な設計値・負荷計算はどこで行えますか？</strong><br>
-          A3: Inwoovation Lab が提供する無料の <a href="/tools/hydroponic-nutrient-solution-calculator.html" style="color: #10b981; font-weight: 700;">Interactive CEA Engineering Calculator</a> および下部の関連エンジニアリング計算ツール群をそのままブラウザ上でご利用いただけます 。</p>
+          <p><strong>Q1: 完全閉鎖型養液循環においてナトリウム（Na+）が何 mmol/L を超えると逆浸透（RO）脱塩や一部廃棄が必要になりますか？</strong><br>
+          果菜類の根は Na<sup>+</sup> を選択的に排除する（吸収濃度 &lt; 0.2 mmol/L）ため、原水にわずか 1.0〜1.5 mmol/L 含まれる Na<sup>+</sup> でも閉鎖循環内で濃縮されます。排液 Na<sup>+</sup> がトマトで 6〜8 mmol/L、パプリカやバラで 4〜5 mmol/L を超えると浸透圧ストレスと Ca/K 吸収阻害が顕在化します。</p>
+          <p><strong>Q2: ポリアミド薄膜複合 RO 膜と等圧式圧力交換器（PX）はどうやって消費電力を 0.85 kWh/m³ 未満に抑えますか？</strong><br>
+          溶解・拡散モデル J<sub>w</sub> = A · (ΔP - Δπ) に基づき塩阻止率 99.2% 超の RO 膜を 12〜18 bar で運転しつつ、濃縮ブライン側（15〜20%）の残圧エネルギーを回転式 PX ローターで直接給水へ回収することで、ポンプ消費電力を 0.85 kWh/m<sup>3</sup> 未満へ削減し年間約 3,200 m<sup>3</sup>/ha の節水を実現します。</p>
+          <p><strong>Q3: 原水・排液の EC から浸透圧 Δπ・RO 回収率・脱塩ランニングコストを試算できるツールは？</strong><br>
+          <a href="/tools/closed-loop-reverse-osmosis-desalination-energy-optimizer.html" style="color: #10b981; font-weight: 700;">閉鎖型逆浸透（RO）脱塩・省エネオプティマイザー</a> で膜面積と電力収支を計算できます。</p>
         </div>
       </section>
 <!-- INW-DEEP-ENG-END -->

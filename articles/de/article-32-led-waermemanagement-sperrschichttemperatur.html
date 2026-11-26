@@ -42,7 +42,7 @@
   "@graph": [
     {
       "@type": "TechArticle",
-      "headline": "Gartenbau-LED-Wärmemanagement, Sperrschichttemperatur ($T_j$) und Lebensdauer",
+      "headline": "Gartenbau-LED-Wärmemanagement, Sperrschichttemperatur (Tj) und Lebensdauer",
       "description": "Ingenieurwissenschaftliche Berechnung von LED-Kühlkörpern, Sperrschichttemperaturen (Tj), thermischer Effizienzdegradation und Konvektionswärme im Gewächshaus.",
       "url": "https://inwoovation.com/articles/de/article-32-led-waermemanagement-sperrschichttemperatur.html",
       "inLanguage": "de-DE",
@@ -57,7 +57,7 @@
         "url": "https://inwoovation.com"
       },
       "datePublished": "2026-09-01",
-      "dateModified": "2026-11-21",
+      "dateModified": "2026-11-26",
       "mainEntityOfPage": "https://inwoovation.com/articles/de/article-32-led-waermemanagement-sperrschichttemperatur.html"
     },
     {
@@ -65,26 +65,26 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Wie verhindert man bei geschlossenen Energieschirmen einen gefährlichen Feuchtestau im Bestand?",
+          "name": "Welcher Anteil der elektrischen Aufnahmeleistung wird selbst bei modernen Toplight-LEDs (≥ 3,2–3,8 μmol/J) noch in Abwärme umgewandelt?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Durch einen geregelten Feuchtespalt (Screen Gap) von 1,5% bis 4,0% in Kombination mit einer Mindest-Rohrtemperatur von 38–42 °C wird ein definierter konvektiver Auftrieb erzeugt, der Wasserdampf an die kalte Glasdachfläche transportiert, wo er kontrolliert an den Kondensatrinne-Profilen abgeleitet wird."
+            "text": "Trotz höchster Photonenausbeute setzen Halbleiterdioden 45 % bis 55 % der elektrischen Leistung direkt an der p-n-Sperrschicht in konduktive Wärme um. Anders als HPS-Strahler geben LEDs kaum Wärmestrahlung ans Blatt ab, sodass die Verlustleistung vollständig über Aluminium-Kühlrippen oder Wasserkühlkreise abgeführt werden muss."
           }
         },
         {
           "@type": "Question",
-          "name": "Welches Abtastintervall ist für die Kopplung von Strahlungssumme und Bewässerungs- bzw. Klimasteuerung optimal?",
+          "name": "Wie beeinflusst die Sperrschichttemperatur (T_j) über das thermische Widerstandsnetzwerk den Lichtstromerhalt (L90)?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Strahlungs- und Mikroklimadaten werden im 5-Sekunden-Takt erfasst, über ein gleitendes 60-Sekunden-Fenster gefiltert und alle 5 Minuten an den MPC-Optimierer übergeben, während Bewässerungsimpulse direkt über das kumulierte Einstrahlungsintegral (J/cm2) ausgelöst werden."
+            "text": "Gemäß Tj = TUmg + PWärme · (Rth,jc + Rth,cs + Rth,sa) beschleunigt ein Anstieg von Tj über 85 °C die Arrhenius-Alterung von Chip und Silikonoptik drastisch: Die L90-Nutzungsdauer sinkt von > 65.000 Betriebsstunden (bei Tj ≤ 65 °C) auf unter 28.000 Stunden bei gleichzeitigem thermischem Effizienzabfall (Thermal Droop) von 6–10 %."
           }
         },
         {
           "@type": "Question",
-          "name": "Wie lassen sich die physikalischen Parameter dieses Artikels für das eigene Gewächshaus berechnen?",
+          "name": "Wo können Planer Kühlkörper-Wärmewiderstände (R_th,sa) und wassergekühlte LED-Wärmerückgewinnung berechnen?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Nutzen Sie direkt unseren interaktiven Interactive CEA Engineering Calculator sowie die unten verlinkten Simulationswerkzeuge von Inwoovation Lab."
+            "text": "Simulieren Sie Sperrschichttemperatur, Konvektionsströmung und Abwärmenutzung im Gartenbau-LED-Thermal- & CFD-Optimierer."
           }
         }
       ]
@@ -153,7 +153,7 @@
     </header>
 
     <div class="article-body">
-      <p class="lead">Selbst hocheffiziente Belichtungs-LEDs (≥ 3,2\ μmol/J) wandeln rund <strong>50–55% der elektrischen Leistung in Abwärme</strong> um. Da LEDs im Gegensatz zu Natriumdampf-Hochdrucklampen (HPS) kaum Wärmestrahlung emittieren, muss diese Wärme über großflächige Aluminiumkühlkörper abgeführt werden.</p>
+      <p class="lead">Selbst hocheffiziente Belichtungs-LEDs (≥ 3,2 μmol/J) wandeln rund <strong>50–55% der elektrischen Leistung in Abwärme</strong> um. Da LEDs im Gegensatz zu Natriumdampf-Hochdrucklampen (HPS) kaum Wärmestrahlung emittieren, muss diese Wärme über großflächige Aluminiumkühlkörper abgeführt werden.</p>
 
       <h2>1. Thermischer Widerstand und Alterungsprozesse</h2>
       <p>Übersteigt die Sperrschichttemperatur T<sub>j</sub> dauerhaft 85°C, sinkt die L90-Lebensdauer durch thermische Gitterfehler drastisch von 65.000 auf unter 28.000 Betriebsstunden.</p>
@@ -259,12 +259,12 @@
 
         <h2>Section E: Häufig gestellte Ingenieurfragen (FAQ)</h2>
         <div class="faq-block" style="margin-top: 14px;">
-          <p><strong>F1: Wie verhindert man bei geschlossenen Energieschirmen einen gefährlichen Feuchtestau im Bestand?</strong><br>
-          Durch einen geregelten <em>Feuchtespalt (Screen Gap)</em> von 1,5% bis 4,0% in Kombination mit einer Mindest-Rohrtemperatur von 38–42 °C wird ein definierter konvektiver Auftrieb erzeugt, der Wasserdampf an die kalte Glasdachfläche transportiert, wo er kontrolliert an den Kondensatrinne-Profilen abgeleitet wird.</p>
-          <p><strong>F2: Welches Abtastintervall ist für die Kopplung von Strahlungssumme und Bewässerungs- bzw. Klimasteuerung optimal?</strong><br>
-          Strahlungs- und Mikroklimadaten werden im 5-Sekunden-Takt erfasst, über ein gleitendes 60-Sekunden-Fenster gefiltert und alle 5 Minuten an den MPC-Optimierer übergeben, während Bewässerungsimpulse direkt über das kumulierte Einstrahlungsintegral (J/cm<sup>2</sup>) ausgelöst werden.</p>
-          <p><strong>F3: Wie lassen sich die physikalischen Parameter dieses Artikels für das eigene Gewächshaus berechnen?</strong><br>
-          Nutzen Sie direkt unseren interaktiven <a href="/smartfarm/dli_calculator.html" style="color: #10b981; font-weight: 700;">Interactive CEA Engineering Calculator</a> sowie die unten verlinkten Simulationswerkzeuge von Inwoovation Lab.</p>
+          <p><strong>F1: Welcher Anteil der elektrischen Aufnahmeleistung wird selbst bei modernen Toplight-LEDs (≥ 3,2–3,8 μmol/J) noch in Abwärme umgewandelt?</strong><br>
+          Trotz höchster Photonenausbeute setzen Halbleiterdioden 45 % bis 55 % der elektrischen Leistung direkt an der p-n-Sperrschicht in konduktive Wärme um. Anders als HPS-Strahler geben LEDs kaum Wärmestrahlung ans Blatt ab, sodass die Verlustleistung vollständig über Aluminium-Kühlrippen oder Wasserkühlkreise abgeführt werden muss.</p>
+          <p><strong>F2: Wie beeinflusst die Sperrschichttemperatur (T_j) über das thermische Widerstandsnetzwerk den Lichtstromerhalt (L90)?</strong><br>
+          Gemäß T<sub>j</sub> = T<sub>Umg</sub> + P<sub>Wärme</sub> · (R<sub>th,jc</sub> + R<sub>th,cs</sub> + R<sub>th,sa</sub>) beschleunigt ein Anstieg von T<sub>j</sub> über 85 °C die Arrhenius-Alterung von Chip und Silikonoptik drastisch: Die L<sub>90</sub>-Nutzungsdauer sinkt von &gt; 65.000 Betriebsstunden (bei T<sub>j</sub> ≤ 65 °C) auf unter 28.000 Stunden bei gleichzeitigem thermischem Effizienzabfall (Thermal Droop) von 6–10 %.</p>
+          <p><strong>F3: Wo können Planer Kühlkörper-Wärmewiderstände (R_th,sa) und wassergekühlte LED-Wärmerückgewinnung berechnen?</strong><br>
+          Simulieren Sie Sperrschichttemperatur, Konvektionsströmung und Abwärmenutzung im <a href="/tools/greenhouse-lighting-led-thermal-cfd-optimizer.html" style="color: #10b981; font-weight: 700;">Gartenbau-LED-Thermal- &amp; CFD-Optimierer</a>.</p>
         </div>
       </section>
 <!-- INW-DEEP-ENG-END -->

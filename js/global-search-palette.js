@@ -18,8 +18,8 @@
     "cat": "part",
     "url": "directory.html",
     "icon": "⚙️",
-    "desc": "Master HTML sitemap and engineering taxonomy indexing all 397 calculators, 192 global agricultural grants, EN/DE/JA monographs, crop guides, and climate hubs.",
-    "tags": "directory html complete cea engineering directory amp index master html sitemap and engineering taxonomy indexing all 397 calculators 192 global agricultural grants en de ja monographs crop "
+    "desc": "Master HTML sitemap indexing all 397 live pages, 42 calculators, 192 global agricultural grants (v7.0), 214 EN/DE/JA monographs, crop guides, and 40 climate.",
+    "tags": "directory html complete cea engineering directory amp index master html sitemap indexing all 397 live pages 42 calculators 192 global agricultural grants v7 0 214 en de ja monographs crop gu"
   },
   {
     "title": "CEA &amp; Greenhouse Engineering Articles",
@@ -34,8 +34,8 @@
     "cat": "tool",
     "url": "index.html",
     "icon": "🛠️",
-    "desc": "Inwoovation Lab: 42 free CEA biophysics calculators, VenloCAD 3D glasshouse CAD, 192 global agricultural grants across 8 countries, and 199 monographs.",
-    "tags": "index html inwoovation lab inwoovation lab 42 free cea biophysics calculators venlocad 3d glasshouse cad 192 global agricultural grants across 8 countries and 199 monographs"
+    "desc": "Inwoovation Lab: 42 free CEA biophysics calculators, VenloCAD 3D glasshouse CAD, 192 global agricultural grants across 8 countries, and 214 monographs.",
+    "tags": "index html inwoovation lab inwoovation lab 42 free cea biophysics calculators venlocad 3d glasshouse cad 192 global agricultural grants across 8 countries and 214 monographs"
   },
   {
     "title": "Gärtnermeister &amp; KTBL Rechner",
@@ -1358,12 +1358,12 @@
     "tags": "articles ja article 03 pollinator safety bumblebee ipm rei jp html 施設園芸におけるマルハナバチ訪花受粉とipm天敵保護 農薬再入場待機期間 rei の数理モデル 商業温室におけるセイヨウオオマルハナバチ クロマルハナバチの振動受粉微気象条件 vpd 温度 農薬残留半減期 dt50 の一次減衰計算 および作業者再"
   },
   {
-    "title": "施設園芸の熱貫流率 (U'値)・多層保温カーテン・隙間換気熱損失・潜熱回収ヒートポンプ設計",
+    "title": "施設園芸の熱貫流率 (U′値)・多層保温カーテン・隙間換気熱損失・潜熱回収ヒートポンプ設計",
     "cat": "article",
     "url": "articles/ja/article-04-greenhouse-heat-loss-u-value-thermal-screen-design.html",
     "icon": "🇯🇵",
-    "desc": "フェンロー型連棟温室および大型園芸施設におけるピーク暖房負荷計算式 (Q = U'·A·ΔT)、パテ無しガラスの煙突効果、多層保温カーテン (Luxous 1147 FR) の放射・対流抑制、および潜熱回収ヒートポンプ・蓄熱槽の設計指針。",
-    "tags": "articles ja article 04 greenhouse heat loss u value thermal screen design html 施設園芸の熱貫流率 u 値 多層保温カ テン 隙間換気熱損失 潜熱回収ヒ トポンプ設計 フェンロ 型連棟温室および大型園芸施設におけるピ ク暖房負荷計算式 q u a t パテ無しガラスの煙突効果 多層保温カ テン lux"
+    "desc": "フェンロー型連棟温室のピーク暖房負荷式 (Q = U′·A·ΔT)、DIN V 18599 準拠の熱貫流率と隙間換気損失、多層保温カーテン (Luxous 1147 FR) の放射・対流抑制、およびバイバレント潜熱回収ヒートポンプと蓄熱槽の最適設計指針を解説。",
+    "tags": "articles ja article 04 greenhouse heat loss u value thermal screen design html 施設園芸の熱貫流率 u 値 多層保温カ テン 隙間換気熱損失 潜熱回収ヒ トポンプ設計 フェンロ 型連棟温室のピ ク暖房負荷式 q u a t din v 18599 準拠の熱貫流率と隙間換気損失 多層保温カ テン lux"
   },
   {
     "title": "FAO-56 Penman-Monteith 蒸散モデル・気孔コンダクタンス・飽差 (VPD)",
@@ -2714,7 +2714,7 @@
     "cat": "tool",
     "url": "tools/index.html",
     "icon": "🛠️",
-    "desc": "A comprehensive suite of 42 industrial-grade commercial greenhouse engineering calculators, 3D WebGL digital twin simulators, 150-grant global agri-subsidy.",
+    "desc": "A comprehensive suite of 42 industrial-grade commercial greenhouse engineering calculators, 3D WebGL digital twin simulators, 192-grant global agri-subsidy.",
     "tags": "tools index html greenhouse amp controlled environment engineering a comprehensive suite of 42 industrial grade commercial greenhouse engineering calculators 3d webgl digital twin simulators"
   },
   {

@@ -152,17 +152,23 @@ def render_directory_html(records: list[dict[str, str]], date_modified: str) -> 
             buckets["core"].append(rec)
 
     total_urls = sum(len(v) for v in buckets.values()) + 1
+    calc_count = sum(1 for r in buckets["tools"] if os.path.basename(r["rel"]) != "index.html")
+    en_mono_count = sum(1 for r in buckets["en"] if os.path.basename(r["rel"]).startswith("article-"))
+    de_mono_count = sum(1 for r in buckets["de"] if os.path.basename(r["rel"]).startswith("article-"))
+    ja_mono_count = sum(1 for r in buckets["ja"] if os.path.basename(r["rel"]).startswith("article-"))
+    climate_guide_count = sum(1 for r in buckets["climate"] if os.path.basename(r["rel"]) != "index.html")
+    total_monographs = en_mono_count + de_mono_count + ja_mono_count
     sections_meta = [
         ("sec-core", "🏛️ Core Command Hubs, Subsidy Radar & Portals", buckets["core"]),
-        ("sec-tools", f"🛠️ Enterprise CEA Biophysical Calculators & 3D CAD ({len(buckets['tools'])})", buckets["tools"]),
+        ("sec-tools", f"🛠️ Enterprise CEA Biophysical Calculators & 3D CAD ({calc_count} Engines + Hub)", buckets["tools"]),
         ("sec-handbooks", f"📖 Handbooks, OpenCEA Launcher, Embed SDK & Podcast ({len(buckets['handbooks'])})", buckets["handbooks"]),
         ("sec-benchmarks", f"⚖️ Hardware, Glazing & Substrate ROI Benchmarks ({len(buckets['benchmarks'])})", buckets["benchmarks"]),
         ("sec-parts", f"🔧 AgriMaster Precision Parts & Vacuum Fittings ({len(buckets['parts'])})", buckets["parts"]),
-        ("sec-en", f"📚 English CEA Engineering Monographs ({len(buckets['en'])})", buckets["en"]),
-        ("sec-de", f"🇩🇪 Deutsche Gartenbau-Meister Fachartikel ({len(buckets['de'])})", buckets["de"]),
-        ("sec-ja", f"🇯🇵 日本語 施設園芸・スマート農業工学モノグラフ ({len(buckets['ja'])})", buckets["ja"]),
+        ("sec-en", f"📚 English CEA Engineering Monographs ({en_mono_count} Volumes + Hub)", buckets["en"]),
+        ("sec-de", f"🇩🇪 Deutsche Gartenbau-Meister Fachartikel ({de_mono_count} Volumes + Hub)", buckets["de"]),
+        ("sec-ja", f"🇯🇵 日本語 施設園芸・スマート農業工学モノグラフ ({ja_mono_count} Volumes + Hub)", buckets["ja"]),
         ("sec-crops", f"🌱 Commercial Crop Steering & Agronomy Guides ({len(buckets['crops'])})", buckets["crops"]),
-        ("sec-climate", f"🌍 Global Regional Ag-Climate & DLI Atlas ({len(buckets['climate'])})", buckets["climate"]),
+        ("sec-climate", f"🌍 Global Regional Ag-Climate & DLI Atlas ({climate_guide_count} Regional Guides + Hub)", buckets["climate"]),
         ("sec-wiki", f"🧬 Botanical Physiology & Biochemical Wiki ({len(buckets['wiki'])})", buckets["wiki"]),
         ("sec-smartfarm", f"🧪 SmartFarm Interactive Simulators & Diagnostics ({len(buckets['smartfarm'])})", buckets["smartfarm"]),
     ]
@@ -200,7 +206,7 @@ def render_directory_html(records: list[dict[str, str]], date_modified: str) -> 
                 "@type": "CollectionPage",
                 "name": f"Complete CEA Engineering Directory & Multilingual Index ({total_urls} Live Resources)",
                 "url": "https://inwoovation.com/directory.html",
-                "description": f"Master architectural HTML index of all {total_urls} calculators, {grant_count} global agricultural subsidy dossiers, VenloCAD 3D engines, and EN/DE/JA horticultural monographs on Inwoovation Lab.",
+                "description": f"Master architectural HTML index of all {total_urls} live pages, {calc_count} calculators, Global Agri-Subsidy Radar v7.0 ({grant_count} verified grant programs), VenloCAD 3D, and {total_monographs} EN/DE/JA horticultural monographs ({en_mono_count} EN · {de_mono_count} DE · {ja_mono_count} JA) on Inwoovation Lab.",
                 "dateModified": date_modified,
                 "author": {"@type": "Person", "name": "Inwoo Hwang", "jobTitle": "Horticultural & CEA Systems Engineer"},
                 "publisher": {"@type": "Organization", "name": "Inwoovation Lab", "url": "https://inwoovation.com"},
@@ -220,7 +226,7 @@ def render_directory_html(records: list[dict[str, str]], date_modified: str) -> 
                         "name": "What engineering calculators and multilingual monographs are indexed in the Inwoovation Lab directory?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": f"The Inwoovation Lab master directory indexes {total_urls} open-access controlled environment agriculture (CEA) resources, including {len(buckets['tools'])} browser-side biophysical calculators, VenloCAD 3D parametric glasshouse CAD, {grant_count} verified agricultural subsidy programs across 8 countries, {len(buckets['en'])} English monographs, {len(buckets['de'])} German Gärtnermeister Fachartikel, {len(buckets['ja'])} Japanese smart-agriculture guides, and {len(buckets['climate'])} regional climate hubs.",
+                            "text": f"The Inwoovation Lab master directory indexes {total_urls} open-access controlled environment agriculture (CEA) live pages, including {calc_count} browser-side biophysical calculators, VenloCAD 3D parametric glasshouse CAD, Global Agri-Subsidy Radar v7.0 ({grant_count} verified agricultural subsidy programs across 8 countries: US 104, DE 34, NL 13, JP 11, KR 10, FR 7, ES 7, CA 6), {total_monographs} multilingual monographs ({en_mono_count} English, {de_mono_count} German Gärtnermeister Fachartikel, {ja_mono_count} Japanese smart-agriculture guides), and {climate_guide_count} regional climate hubs.",
                         },
                     },
                     {
@@ -244,7 +250,7 @@ def render_directory_html(records: list[dict[str, str]], date_modified: str) -> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Complete CEA Engineering Directory &amp; Index ({total_urls} Pages) | Inwoovation Lab</title>
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-    <meta name="description" content="Master HTML sitemap and engineering taxonomy indexing all {total_urls} calculators, {grant_count} global agricultural grants, EN/DE/JA monographs, crop guides, and climate hubs.">
+    <meta name="description" content="Master HTML sitemap indexing all {total_urls} live pages, {calc_count} calculators, {grant_count} global agricultural grants (v7.0), {total_monographs} EN/DE/JA monographs, crop guides, and {climate_guide_count} climate hubs.">
     <link rel="canonical" href="https://inwoovation.com/directory.html" />
 
     <!-- Google tag (gtag.js) -->
@@ -337,7 +343,7 @@ def render_directory_html(records: list[dict[str, str]], date_modified: str) -> 
         <p>To bridge agronomic research across major horticultural clusters—from Westland and Bleiswijk in the Netherlands to Knoblauchsland/Nürnberg and Freising in Germany, Tsukuba in Japan, Leamington in Canada, Salinas in California, and Gimje in South Korea—our research monographs are authored natively in English, German (<em>Fachdeutsch</em> aligned with KTBL and BLE guidelines), and Japanese. The Global Agri-Subsidy Navigator tracks {grant_count} verified federal, state/provincial, and municipal funding programs with direct agency URLs and 3-step statutory application playbooks.</p>
         <h3>3. Frequently Asked Questions (FAQ)</h3>
         <p><strong>What engineering calculators and multilingual monographs are indexed in the Inwoovation Lab directory?</strong><br>
-        The Inwoovation Lab master directory indexes {total_urls} open-access controlled environment agriculture (CEA) resources, including {len(buckets['tools'])} browser-side biophysical calculators, VenloCAD 3D parametric glasshouse CAD, {grant_count} verified agricultural subsidy programs across 8 countries, {len(buckets['en'])} English monographs, {len(buckets['de'])} German Gärtnermeister Fachartikel, {len(buckets['ja'])} Japanese smart-agriculture guides, and {len(buckets['climate'])} regional climate hubs.</p>
+        The Inwoovation Lab master directory indexes {total_urls} open-access controlled environment agriculture (CEA) live pages, including {calc_count} browser-side biophysical calculators, VenloCAD 3D parametric glasshouse CAD, Global Agri-Subsidy Radar v7.0 ({grant_count} verified agricultural subsidy programs across 8 countries: US 104, DE 34, NL 13, JP 11, KR 10, FR 7, ES 7, CA 6), {total_monographs} multilingual monographs ({en_mono_count} English, {de_mono_count} German Gärtnermeister Fachartikel, {ja_mono_count} Japanese smart-agriculture guides), and {climate_guide_count} regional climate hubs.</p>
         <p><strong>Which international greenhouse engineering standards govern the models on Inwoovation Lab?</strong><br>
         All thermal, structural, psychrometric, and fertigation models adhere to published engineering standards including DIN EN 13031-1 and NEN 3859 for Venlo glasshouse structures, DIN V 18599 and ASABE EP406 for greenhouse heating and energy screens, FAO-56 Penman-Monteith for canopy evapotranspiration, and KTBL / Wageningen UR benchmarks for horticultural economics.</p>
     </section>
@@ -545,6 +551,24 @@ def render_language_articles_hub(lang_code: str, items: list[dict[str, str]], da
     </style>
 </head>
 <body>
+<!-- INW-STD-NAV-START -->
+<nav class="inw-top-nav" aria-label="Main Navigation" style="background: #0f172a; border-bottom: 1px solid #1e293b; padding: 12px 20px; font-family: system-ui, -apple-system, sans-serif; box-sizing: border-box; width: 100%;">
+  <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px;">
+    <a href="/index.html" style="color: #10b981; font-weight: 800; font-size: 1.15rem; text-decoration: none; letter-spacing: -0.02em;">Inwoovation Lab</a>
+    <div style="display: flex; flex-wrap: wrap; gap: 14px; font-size: 0.9rem;">
+      <a href="/index.html" style="color: #e2e8f0; text-decoration: none;">Home</a>
+      <a href="/smartfarm/vpd.html" style="color: #e2e8f0; text-decoration: none;">Calculators</a>
+      <a href="/articles/index.html" style="color: #38bdf8; font-weight: 600; text-decoration: none;">Articles</a>
+      <a href="/wiki/index.html" style="color: #e2e8f0; text-decoration: none;">Wiki</a>
+      <a href="/climate/index.html" style="color: #e2e8f0; text-decoration: none;">Climate Hub</a>
+      <a href="/crops/index.html" style="color: #e2e8f0; text-decoration: none;">Crops</a>
+      <a href="/tools/venlocad-3d.html" style="color: #10b981; font-weight: 600; text-decoration: none;">VenloCAD 3D</a>
+      <button type="button" onclick="window.InwooPalette && window.InwooPalette.open()" style="background: rgba(15, 23, 42, 0.9); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.4); padding: 6px 12px; border-radius: 6px; font-size: 0.85rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">🔍 Search <kbd style="background: rgba(255,255,255,0.1); padding: 1px 5px; border-radius: 4px; font-size: 0.72rem;">Ctrl+K</kbd></button>
+      <a href="/about.html" style="color: #e2e8f0; text-decoration: none;">About</a>
+    </div>
+  </div>
+</nav>
+<!-- INW-STD-NAV-END -->
 <main class="dir-wrap">
     <div class="dir-top">
         <a href="/articles/" class="dir-back">{cfg['home_label']}</a>

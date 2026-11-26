@@ -42,7 +42,7 @@
   "@graph": [
     {
       "@type": "TechArticle",
-      "headline": "培地マトリックポテンシャル（$\\Psi_m$）、$pF$ 水分保持曲線およびファン・ヘヌフテン理論",
+      "headline": "培地マトリックポテンシャル（Ψm）、pF 水分保持曲線およびファン・ヘヌフテン理論",
       "description": "農業土壌物理学解析：マトリック吸引圧（Psi_m）、pF水分保持曲線、ファン・ヘヌフテン（van Genuchten）水理モデル、およびロックウール・ココピートの易有効水分（EAW）管理。",
       "url": "https://inwoovation.com/articles/ja/article-42-substrate-matric-potential-pf-curves-jp.html",
       "inLanguage": "ja-JP",
@@ -57,7 +57,7 @@
         "url": "https://inwoovation.com"
       },
       "datePublished": "2026-09-01",
-      "dateModified": "2026-11-21",
+      "dateModified": "2026-11-26",
       "mainEntityOfPage": "https://inwoovation.com/articles/ja/article-42-substrate-matric-potential-pf-curves-jp.html"
     },
     {
@@ -88,26 +88,26 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "冬季の保温カーテン全閉時に発生する高湿度・結露リスクはどのように制御すべきですか？",
+          "name": "マトリックポテンシャル Ψ_m と対数指標 pF の関係、および園芸培地の易有効水分（EAW）の定義は？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "カーテンを 1.5 % 〜 4.0 % わずかに開けるギャップ制御 ( Screen Gap Purging ) と 、 最低管温度 ( Minimum Pipe Temperature : 38 - 42 °C ) を連動させることで 、 作物の蒸散流を維持しつつ余剰水蒸気を屋根ガラス面の結露樋へ安全に排出できます 。"
+            "text": "水柱高さ |h|（cm H2O ≈ hPa）の常用対数が pF = log10(|h|) であり、pF 1.0 = -10 hPa（-1.0 kPa）、pF 2.0 = -100 hPa（-10.0 kPa）に相当します。容器容水量（pF 1.0）から pF 1.7（50 hPa）までに放出される水分が易有効水分（EAW）、pF 2.0 までが水分緩衝能（WBC）と定義されます。"
           }
         },
         {
           "@type": "Question",
-          "name": "日射量に応じた灌水および CO2 施用の最適サンプリング周期はどのくらいですか？",
+          "name": "ファン・ヘヌフテン（van Genuchten）水分保持式のパラメータ α・n はロックウールとココピートでどう異なりますか？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "日射強度 ( W/m2 ) と葉温・飽差 ( VPD ) は 5 秒周期で計測・移動平均処理を行い 、 積算日射量 70 〜 100 J/cm2 ごとに 100 mL/株の精密パルス灌水を実行し 、 換気窓開度 ( ACH ) に連動して CO2 目標濃度 ( 600 〜 1,050 ppm ) を 5 分周期で動的最適化します 。"
+            "text": "Θ(h) = Θr + (Θs - Θr) / [1 + (α|h|)n]1 - 1/n において、ロックウールは孔隙径分布指数 n > 3.5 と急峻で pF 1.0〜1.5 の狭い領域で大半の EAW を放出し pF 2.0 超で透水係数が急減しますが、ココピートやピートモス（n ≈ 1.4〜1.8）は穏やかな保持曲線で広い毛管バッファを持ちます。"
           }
         },
         {
           "@type": "Question",
-          "name": "自社温室の条件に合わせた具体的な設計値・負荷計算はどこで行えますか？",
+          "name": "各種培地の van Genuchten パラメータから pF 水分保持曲線とテンシオメーター灌水開始点を算出するには？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Inwoovation Lab が提供する無料の Interactive CEA Engineering Calculator および下部の関連エンジニアリング計算ツール群をそのままブラウザ上でご利用いただけます 。"
+            "text": "培地マトリックポテンシャル・pF 水分保持曲線計算機 で EAW% と気相率を計算できます。"
           }
         }
       ]
@@ -153,7 +153,7 @@
     </header>
 
     <div class="article-body">
-      <p class="lead">体積含水率（VWC%）は水分の絶対量を示すに過ぎず、植物根が水を吸い上げるために必要なエネルギー仕事量を表しません。<strong>マトリック吸引圧（Ψ<sub>m</sub>、hPa または pF = log<sub>10</sub>|hPa|）</strong>こそが水分の有効性を決定づけます。ロックウール培地における易有効水分（EAW）は、<strong>pF\ 1.0（10 hPa）〜pF\ 2.0（100 hPa）</strong>の極めて狭い範囲に存在します。</p>
+      <p class="lead">体積含水率（VWC%）は水分の絶対量を示すに過ぎず、植物根が水を吸い上げるために必要なエネルギー仕事量を表しません。<strong>マトリック吸引圧（Ψ<sub>m</sub>、hPa または pF = log<sub>10</sub>|hPa|）</strong>こそが水分の有効性を決定づけます。ロックウール培地における易有効水分（EAW）は、<strong>pF 1.0（10 hPa）〜pF 2.0（100 hPa）</strong>の極めて狭い範囲に存在します。</p>
 
       <h2>1. ファン・ヘヌフテン水分保持関数</h2>
       <p>pF > 2.2 を超えると根の通水コンダクタンスが急激に低下し、気孔閉鎖を引き起こします。</p>
@@ -259,12 +259,12 @@
 
         <h2>Section E: 施設園芸エンジニアリング よくある質問 ( Frequently Asked Engineering Questions : FAQ )</h2>
         <div class="faq-block" style="margin-top: 14px;">
-          <p><strong>Q1: 冬季の保温カーテン全閉時に発生する高湿度・結露リスクはどのように制御すべきですか？</strong><br>
-          A1: カーテンを 1.5 % 〜 4.0 % わずかに開けるギャップ制御 ( Screen Gap Purging ) と 、 最低管温度 ( Minimum Pipe Temperature : 38 - 42 °C ) を連動させることで 、 作物の蒸散流を維持しつつ余剰水蒸気を屋根ガラス面の結露樋へ安全に排出できます 。</p>
-          <p><strong>Q2: 日射量に応じた灌水および CO2 施用の最適サンプリング周期はどのくらいですか？</strong><br>
-          A2: 日射強度 ( W/m2 ) と葉温・飽差 ( VPD ) は 5 秒周期で計測・移動平均処理を行い 、 積算日射量 70 〜 100 J/cm2 ごとに 100 mL/株の精密パルス灌水を実行し 、 換気窓開度 ( ACH ) に連動して CO2 目標濃度 ( 600 〜 1,050 ppm ) を 5 分周期で動的最適化します 。</p>
-          <p><strong>Q3: 自社温室の条件に合わせた具体的な設計値・負荷計算はどこで行えますか？</strong><br>
-          A3: Inwoovation Lab が提供する無料の <a href="/tools/hydroponic-nutrient-solution-calculator.html" style="color: #10b981; font-weight: 700;">Interactive CEA Engineering Calculator</a> および下部の関連エンジニアリング計算ツール群をそのままブラウザ上でご利用いただけます 。</p>
+          <p><strong>Q1: マトリックポテンシャル Ψ_m と対数指標 pF の関係、および園芸培地の易有効水分（EAW）の定義は？</strong><br>
+          水柱高さ |h|（cm H<sub>2</sub>O ≈ hPa）の常用対数が pF = log<sub>10</sub>(|h|) であり、pF 1.0 = -10 hPa（-1.0 kPa）、pF 2.0 = -100 hPa（-10.0 kPa）に相当します。容器容水量（pF 1.0）から pF 1.7（50 hPa）までに放出される水分が易有効水分（EAW）、pF 2.0 までが水分緩衝能（WBC）と定義されます。</p>
+          <p><strong>Q2: ファン・ヘヌフテン（van Genuchten）水分保持式のパラメータ α・n はロックウールとココピートでどう異なりますか？</strong><br>
+          Θ(h) = Θ<sub>r</sub> + (Θ<sub>s</sub> - Θ<sub>r</sub>) / [1 + (α|h|)<sup>n</sup>]<sup>1 - 1/n</sup> において、ロックウールは孔隙径分布指数 n &gt; 3.5 と急峻で pF 1.0〜1.5 の狭い領域で大半の EAW を放出し pF 2.0 超で透水係数が急減しますが、ココピートやピートモス（n ≈ 1.4〜1.8）は穏やかな保持曲線で広い毛管バッファを持ちます。</p>
+          <p><strong>Q3: 各種培地の van Genuchten パラメータから pF 水分保持曲線とテンシオメーター灌水開始点を算出するには？</strong><br>
+          <a href="/tools/soil-matrix-water-potential-matric-suction-calculator.html" style="color: #10b981; font-weight: 700;">培地マトリックポテンシャル・pF 水分保持曲線計算機</a> で EAW% と気相率を計算できます。</p>
         </div>
       </section>
 <!-- INW-DEEP-ENG-END -->

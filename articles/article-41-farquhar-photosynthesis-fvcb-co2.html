@@ -57,7 +57,7 @@
         "url": "https://inwoovation.com"
       },
       "datePublished": "2026-09-01",
-      "dateModified": "2026-11-21",
+      "dateModified": "2026-11-26",
       "mainEntityOfPage": "https://inwoovation.com/articles/article-41-farquhar-photosynthesis-fvcb-co2.html"
     },
     {
@@ -65,26 +65,26 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "How do operators prevent humidity spikes when thermal screens are closed over 95%?",
+          "name": "What defines the biochemical crossover point between RuBisCO-limited (W_c) and electron-transport-limited (W_j) assimilation in the FvCB model?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "By coordinating a controlled 1.5%–4.0% moisture purge gap (Screen Gap) with a minimum pipe-rail temperature of 38–42 °C, gentle buoyancy-driven convection transports excess water vapor into the upper roof plenum where it condenses on the cold glass envelope and drains via gutter channels."
+            "text": "In Anet = min(Wc, Wj, Wp) - Rd, low intercellular CO2 (Ci < 350–450 μbar under high PPFD) restricts assimilation via RuBisCO carboxylation capacity Vcmax (Wc), whereas low irradiance or elevated Ci (> 650 μbar) shifts limitation to thylakoid electron transport Jmax regenerating RuBP (Wj)."
           }
         },
         {
           "@type": "Question",
-          "name": "What sampling frequency is required to synchronize solar radiation with irrigation and climate actuators?",
+          "name": "Why does raising greenhouse CO2 from 400 ppm to 800–1,000 ppm deliver maximum photosynthetic gain at higher leaf temperatures (25–28 °C)?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Quantum PAR and pyranometer sensors are sampled every 5 seconds, filtered over a 60-second rolling window, and integrated into cumulative radiation sums (J/cm2) to trigger precision 100 mL drip shots while updating MPC climate trajectories every 5 minutes."
+            "text": "Arrhenius activation energy causes RuBisCO's Michaelis constant for CO2 (Kc) and the photorespiratory compensation point (Γ*) to rise faster with leaf temperature than Ko, escalating O2 oxygenation losses at 400 ppm. Elevating ambient CO2 to 800–1,000 ppm competitively suppresses photorespiration by > 60%, raising Anet by up to +38% and shifting the thermal optimum upward by 3–4 °C."
           }
         },
         {
           "@type": "Question",
-          "name": "Where can I simulate these exact thermodynamic and agronomic equations for my own facility?",
+          "name": "Where can I plot live A-Ci response curves using cultivar-specific V_cmax, J_max, leaf temperature, and PPFD?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Launch our interactive Interactive CEA Engineering Calculator or explore the full suite of CEA engineering calculators linked below."
+            "text": "Compute coupled RuBisCO carboxylation (Wc), RuBP regeneration (Wj), and stomatal conductance interactively in the Farquhar (FvCB) Leaf Photosynthesis Calculator."
           }
         }
       ]
@@ -262,22 +262,22 @@
 
         <h2>Section E: Frequently Asked Engineering Questions (FAQ)</h2>
         <div class="faq-block" style="margin-top: 14px;">
-          <p><strong>Q1: How do operators prevent humidity spikes when thermal screens are closed over 95%?</strong><br>
-          By coordinating a controlled 1.5%–4.0% <em>moisture purge gap (Screen Gap)</em> with a minimum pipe-rail temperature of 38–42 °C, gentle buoyancy-driven convection transports excess water vapor into the upper roof plenum where it condenses on the cold glass envelope and drains via gutter channels.</p>
-          <p><strong>Q2: What sampling frequency is required to synchronize solar radiation with irrigation and climate actuators?</strong><br>
-          Quantum PAR and pyranometer sensors are sampled every 5 seconds, filtered over a 60-second rolling window, and integrated into cumulative radiation sums (J/cm<sup>2</sup>) to trigger precision 100 mL drip shots while updating MPC climate trajectories every 5 minutes.</p>
-          <p><strong>Q3: Where can I simulate these exact thermodynamic and agronomic equations for my own facility?</strong><br>
-          Launch our interactive <a href="/smartfarm/co2_calculator.html" style="color: #10b981; font-weight: 700;">Interactive CEA Engineering Calculator</a> or explore the full suite of CEA engineering calculators linked below.</p>
+          <p><strong>Q1: What defines the biochemical crossover point between RuBisCO-limited (W_c) and electron-transport-limited (W_j) assimilation in the FvCB model?</strong><br>
+          In A<sub>net</sub> = min(W<sub>c</sub>, W<sub>j</sub>, W<sub>p</sub>) - R<sub>d</sub>, low intercellular CO<sub>2</sub> (C<sub>i</sub> &lt; 350–450 μbar under high PPFD) restricts assimilation via RuBisCO carboxylation capacity V<sub>cmax</sub> (W<sub>c</sub>), whereas low irradiance or elevated C<sub>i</sub> (&gt; 650 μbar) shifts limitation to thylakoid electron transport J<sub>max</sub> regenerating RuBP (W<sub>j</sub>).</p>
+          <p><strong>Q2: Why does raising greenhouse CO2 from 400 ppm to 800–1,000 ppm deliver maximum photosynthetic gain at higher leaf temperatures (25–28 °C)?</strong><br>
+          Arrhenius activation energy causes RuBisCO's Michaelis constant for CO<sub>2</sub> (K<sub>c</sub>) and the photorespiratory compensation point (Γ<sup>*</sup>) to rise faster with leaf temperature than K<sub>o</sub>, escalating O<sub>2</sub> oxygenation losses at 400 ppm. Elevating ambient CO<sub>2</sub> to 800–1,000 ppm competitively suppresses photorespiration by &gt; 60%, raising A<sub>net</sub> by up to +38% and shifting the thermal optimum upward by 3–4 °C.</p>
+          <p><strong>Q3: Where can I plot live A-Ci response curves using cultivar-specific V_cmax, J_max, leaf temperature, and PPFD?</strong><br>
+          Compute coupled RuBisCO carboxylation (W<sub>c</sub>), RuBP regeneration (W<sub>j</sub>), and stomatal conductance interactively in the <a href="/tools/co2-enrichment-leaf-photosynthesis-farquhar-calculator.html" style="color: #10b981; font-weight: 700;">Farquhar (FvCB) Leaf Photosynthesis Calculator</a>.</p>
         </div>
       </section>
 <!-- INW-DEEP-ENG-END -->
 
 <!-- INW-LIVE-WIDGET-START -->
 <section class="inw-live-widget-sandbox" style="margin: 32px 0; padding: 24px; background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 16px; box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);">
-  <h3 style="margin: 0 0 8px 0; font-size: 1.2rem; color: #38bdf8; font-weight: 800;">🧪 Interactive Hydroponic A/B Stock Tank & EC Blending Simulator</h3>
-  <p style="margin: 0 0 16px 0; font-size: 0.92rem; color: #94a3b8; line-height: 1.6;">Compute A/B stock tank injection liters and dissolved fertilizer salt mass to hit target root-zone EC from raw source water.</p>
+  <h3 style="margin: 0 0 8px 0; font-size: 1.2rem; color: #38bdf8; font-weight: 800;">🫧 Interactive Canopy CO₂ Enrichment & Ventilation Loss Simulator</h3>
+  <p style="margin: 0 0 16px 0; font-size: 0.92rem; color: #94a3b8; line-height: 1.6;">Model net Farquhar-FvCB photosynthetic CO₂ assimilation vs. roof ventilation air-exchange leakage (ACH) to determine hourly CO₂ dosing (kg/h).</p>
   <div style="display: flex; justify-content: center; width: 100%; overflow: hidden;">
-    <iframe src="/embed/fertigation-ec-widget.html" width="380" height="460" loading="lazy" title="🧪 Interactive Hydroponic A/B Stock Tank & EC Blending Simulator" style="border: none; border-radius: 14px; max-width: 100%;"></iframe>
+    <iframe src="/embed/co2-enrichment-widget.html" width="380" height="460" loading="lazy" title="🫧 Interactive Canopy CO₂ Enrichment & Ventilation Loss Simulator" style="border: none; border-radius: 14px; max-width: 100%;"></iframe>
   </div>
 </section>
 <!-- INW-LIVE-WIDGET-END -->

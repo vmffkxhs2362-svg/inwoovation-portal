@@ -57,7 +57,7 @@
         "url": "https://inwoovation.com"
       },
       "datePublished": "2026-09-01",
-      "dateModified": "2026-11-21",
+      "dateModified": "2026-11-26",
       "mainEntityOfPage": "https://inwoovation.com/articles/ja/article-49-hydroponic-chemical-speciation-debye-huckel-jp.html"
     },
     {
@@ -88,26 +88,26 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "冬季の保温カーテン全閉時に発生する高湿度・結露リスクはどのように制御すべきですか？",
+          "name": "高 EC 培養液の沈殿予測において、単純モル濃度ではなくイオン強度（I）とデバイ・ヒュッケル活量係数が必要な理由は？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "カーテンを 1.5 % 〜 4.0 % わずかに開けるギャップ制御 ( Screen Gap Purging ) と 、 最低管温度 ( Minimum Pipe Temperature : 38 - 42 °C ) を連動させることで 、 作物の蒸散流を維持しつつ余剰水蒸気を屋根ガラス面の結露樋へ安全に排出できます 。"
+            "text": "EC 2.5〜4.5 dS/m の多価イオン共存溶液（イオン強度 I = 0.5 · ∑ ci zi2 ≈ 0.03〜0.06 mol/L）では静電遮蔽により有効化学活量 ai = γi [Ci] が低下します。拡張デバイ・ヒュッケル式に従い 2 価イオン（Ca2+, Mg2+, SO42-）の活量係数 γi は 0.45〜0.58 まで下がり、真の溶解度平衡を大きく左右します。"
           }
         },
         {
           "@type": "Question",
-          "name": "日射量に応じた灌水および CO2 施用の最適サンプリング周期はどのくらいですか？",
+          "name": "ドリップチューブ内でリン酸カルシウムや炭酸カルシウムが析出する pH 閾値と飽和指数（SI）条件は？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "日射強度 ( W/m2 ) と葉温・飽差 ( VPD ) は 5 秒周期で計測・移動平均処理を行い 、 積算日射量 70 〜 100 J/cm2 ごとに 100 mL/株の精密パルス灌水を実行し 、 換気窓開度 ( ACH ) に連動して CO2 目標濃度 ( 600 〜 1,050 ppm ) を 5 分周期で動的最適化します 。"
+            "text": "養液 pH が 6.2〜6.4 を超えると H2PO4- から HPO42-（pKa2 = 7.20）への解離が進み、イオン活量積が溶解度積を上回って（SI = log10(IAP / Ksp) > 0）点滴ラビリンスを閉塞させます。重炭酸を中和して pH 5.5〜5.8 に維持することで SI < 0（未飽和）を保てます。"
           }
         },
         {
           "@type": "Question",
-          "name": "自社温室の条件に合わせた具体的な設計値・負荷計算はどこで行えますか？",
+          "name": "A/B 原液処方のイオン強度・活量係数・石膏／リン酸塩沈殿リスクを事前に計算するには？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Inwoovation Lab が提供する無料の Interactive CEA Engineering Calculator および下部の関連エンジニアリング計算ツール群をそのままブラウザ上でご利用いただけます 。"
+            "text": "培養液化学種分化・デバイ-ヒュッケル沈殿飽和指数計算機 で安全性を検証できます。"
           }
         }
       ]
@@ -258,12 +258,12 @@
 
         <h2>Section E: 施設園芸エンジニアリング よくある質問 ( Frequently Asked Engineering Questions : FAQ )</h2>
         <div class="faq-block" style="margin-top: 14px;">
-          <p><strong>Q1: 冬季の保温カーテン全閉時に発生する高湿度・結露リスクはどのように制御すべきですか？</strong><br>
-          A1: カーテンを 1.5 % 〜 4.0 % わずかに開けるギャップ制御 ( Screen Gap Purging ) と 、 最低管温度 ( Minimum Pipe Temperature : 38 - 42 °C ) を連動させることで 、 作物の蒸散流を維持しつつ余剰水蒸気を屋根ガラス面の結露樋へ安全に排出できます 。</p>
-          <p><strong>Q2: 日射量に応じた灌水および CO2 施用の最適サンプリング周期はどのくらいですか？</strong><br>
-          A2: 日射強度 ( W/m2 ) と葉温・飽差 ( VPD ) は 5 秒周期で計測・移動平均処理を行い 、 積算日射量 70 〜 100 J/cm2 ごとに 100 mL/株の精密パルス灌水を実行し 、 換気窓開度 ( ACH ) に連動して CO2 目標濃度 ( 600 〜 1,050 ppm ) を 5 分周期で動的最適化します 。</p>
-          <p><strong>Q3: 自社温室の条件に合わせた具体的な設計値・負荷計算はどこで行えますか？</strong><br>
-          A3: Inwoovation Lab が提供する無料の <a href="/tools/hydroponic-nutrient-solution-calculator.html" style="color: #10b981; font-weight: 700;">Interactive CEA Engineering Calculator</a> および下部の関連エンジニアリング計算ツール群をそのままブラウザ上でご利用いただけます 。</p>
+          <p><strong>Q1: 高 EC 培養液の沈殿予測において、単純モル濃度ではなくイオン強度（I）とデバイ・ヒュッケル活量係数が必要な理由は？</strong><br>
+          EC 2.5〜4.5 dS/m の多価イオン共存溶液（イオン強度 I = 0.5 · ∑ c<sub>i</sub> z<sub>i</sub><sup>2</sup> ≈ 0.03〜0.06 mol/L）では静電遮蔽により有効化学活量 a<sub>i</sub> = γ<sub>i</sub> [C<sub>i</sub>] が低下します。拡張デバイ・ヒュッケル式に従い 2 価イオン（Ca<sup>2+</sup>, Mg<sup>2+</sup>, SO<sub>4</sub><sup>2-</sup>）の活量係数 γ<sub>i</sub> は 0.45〜0.58 まで下がり、真の溶解度平衡を大きく左右します。</p>
+          <p><strong>Q2: ドリップチューブ内でリン酸カルシウムや炭酸カルシウムが析出する pH 閾値と飽和指数（SI）条件は？</strong><br>
+          養液 pH が 6.2〜6.4 を超えると H<sub>2</sub>PO<sub>4</sub><sup>-</sup> から HPO<sub>4</sub><sup>2-</sup>（pK<sub>a2</sub> = 7.20）への解離が進み、イオン活量積が溶解度積を上回って（SI = log<sub>10</sub>(IAP / K<sub>sp</sub>) &gt; 0）点滴ラビリンスを閉塞させます。重炭酸を中和して pH 5.5〜5.8 に維持することで SI &lt; 0（未飽和）を保てます。</p>
+          <p><strong>Q3: A/B 原液処方のイオン強度・活量係数・石膏／リン酸塩沈殿リスクを事前に計算するには？</strong><br>
+          <a href="/tools/hydroponic-chemical-speciation-precipitation-index.html" style="color: #10b981; font-weight: 700;">培養液化学種分化・デバイ-ヒュッケル沈殿飽和指数計算機</a> で安全性を検証できます。</p>
         </div>
       </section>
 <!-- INW-DEEP-ENG-END -->

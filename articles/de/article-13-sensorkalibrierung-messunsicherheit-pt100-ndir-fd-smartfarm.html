@@ -74,7 +74,7 @@
         "url": "https://inwoovation.com"
       },
       "datePublished": "2026-11-08",
-      "dateModified": "2026-11-21",
+      "dateModified": "2026-11-26",
       "mainEntityOfPage": "https://inwoovation.com/articles/de/article-13-sensorkalibrierung-messunsicherheit-pt100-ndir-fd-smartfarm.html"
     },
     {
@@ -82,26 +82,26 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Welche physikalischen und normativen Grundlagen bestimmen das Thema „Präzisions-Sensorkalibrierung im Smart-Greenhouse: Nernst-Gleichung (pH/EC), TDR/FDR-Substratfeuchte & NDIR-CO 2 -Driftkompensation“ im Erwerbsgartenbau?",
+          "name": "Wie beurteilt man über die Nernst-Steilheit in der Zweipunkt-Kalibrierung (pH 7,00 / 4,01) den Zustand von Gewächshaus-pH-Elektroden?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Ingenieurleitfaden zur Sensorkalibrierung im Unterglasgartenbau: Zweipunkt-Kalibrierung nach der Nernst-Gleichung (pH 7,00/4,01), Temperaturkompensation der elektrischen Leitfähigkeit (EC 25 °C), dielektrische TDR/FDR-Substratfeuchte und optische NDIR-CO2-Driftkompensation. Alle Auslegungsparameter orientieren sich an verbindlichen europäischen Ingenieurnormen (DIN EN 13031-1, DIN V 18599, FAO-56 Penman-Monteith sowie DWA-/KTBL-Richtwerten) für kommerzielle Venlo-Gewächshäuser."
+            "text": "Nach der Nernst-Gleichung beträgt die theoretische Elektrodensteilheit bei 25 °C exakt −59,16 mV pro pH-Einheit, während der Nullpunkt (Asymmetriepotenzial) bei pH 7,00 nahe 0 mV (±15 mV) liegt. Fällt die gemessene Steilheit infolge Diaphragma-Verblockung oder Gel-Auslaugung unter 92 % (< 54,4 mV/pH) oder überschreitet der Offset ±25 mV, muss die Sonde gereinigt bzw. ersetzt werden."
           }
         },
         {
           "@type": "Question",
-          "name": "Wie lassen sich die Kennzahlen aus „Präzisions-Sensorkalibrierung im Smart-Greenhouse: Nernst-Gleichung (pH/EC), TDR/FDR-Substratfeuchte & NDIR-CO 2 -Driftkompensation“ in der Klimacomputer- und Kultursteuerung umsetzen?",
+          "name": "Warum müssen EC-Leitfähigkeitssonden und dielektrische TDR/FDR-Substratsensoren zwingend temperatur- und porenwasserkompensiert werden?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Produktionsleiter erfassen Blatttemperatur, Einstrahlung, Substratfeuchte und Drän-EC kontinuierlich über kalibrierte Sensoren und überführen die berechneten Zielgrößen als gleitende Sollwertkurven in die Klimacomputer- und Bewässerungsregelung."
+            "text": "Die elektrolytische Ionenbeweglichkeit steigt um rund 1,9–2,1 % pro Kelvin Temperaturerhöhung; ohne Kompensation auf 25 °C Referenztemperatur täuscht eine 30 °C warme Nährlösung eine um 10 % überhöhte Düngerkonzentration vor. Ebenso hängt die Dielektrizitätszahl (ε_b) in Steinwolle und Kokos von Temperatur und Porenwasser-EC (Hilhorst-Modell) ab."
           }
         },
         {
           "@type": "Question",
-          "name": "Welche Förderprogramme unterstützen entsprechende Effizienz- und Modernisierungsinvestitionen?",
+          "name": "Weshalb benötigen NDIR-CO₂-Sensoren Zweistrahl-Referenzoptik und Pt100/Pt1000-Klimafühler zwangsbelüftete Aspirationsmessboxen?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Je nach Bundesland und Systemgrenze kommen das BLE-Bundesprogramm Energieeffizienz (Modul 1–4), Rentenbank-Umweltkredite (LR-Top/LR-Premium) sowie landesspezifische Agrarinvestitionsförderprogramme (AFP) in Betracht."
+            "text": "Infrarot-Lichtquellen in einfachen Einstrahl-NDIR-Sensoren altern über Monate und erzeugen ohne Zweistrahl-Referenzkanal oder Auto-Baseline-Abgleich (420 ppm Außenluft) erhebliche CO₂-Fehldosierungen. Unbelüftete Temperatur-/Feuchtefühler heizen sich unter Sonneneinstrahlung um +2 bis +5 K auf; erst ein Aspirationsgebläse (≥ 3 m/s Luftstrom im Strahlungsschutzrohr) liefert wahre Luft- und Taupunktwerte."
           }
         }
       ]
@@ -326,22 +326,17 @@
     </section>
 <!-- INW-EEAT-BOX-END -->
     </div>
-
-  
-<section class="inw-synced-faq-section" style="max-width: 1060px; margin: 28px auto; padding: 24px; background: rgba(15, 23, 42, 0.88); border: 1px solid rgba(16, 185, 129, 0.32); border-radius: 16px; text-align: left;">
-  <h3 style="margin: 0 0 14px 0; font-size: 1.15rem; color: #10b981; font-weight: 800;">❓ Häufig gestellte Ingenieurfragen (Technische FAQ)</h3>
+<section aria-label="Technical FAQ" style="max-width: 1060px; margin: 32px auto; padding: 26px; background: rgba(15, 23, 42, 0.88); border: 1px solid rgba(16, 185, 129, 0.32); border-radius: 16px; text-align: left;">
+  <h2 style="margin: 0 0 16px 0; font-family: 'Outfit', sans-serif; font-size: 1.3rem; color: #10b981; font-weight: 800;">❓ Häufig gestellte Ingenieurfragen (Praxis-FAQ)</h2>
   <div>
-    <div style="margin-bottom:14px; padding:14px 18px; background:rgba(15,23,42,0.65); border-left:3px solid #10b981; border-radius:8px;">
-      <h4 style="margin:0 0 6px 0; color:#f8fafc; font-size:0.98rem;">Welche physikalischen und normativen Grundlagen bestimmen das Thema „Präzisions-Sensorkalibrierung im Smart-Greenhouse: Nernst-Gleichung (pH/EC), TDR/FDR-Substratfeuchte &amp; NDIR-CO 2 -Driftkompensation“ im Erwerbsgartenbau?</h4>
-      <p style="margin:0; color:#cbd5e1; font-size:0.9rem; line-height:1.65;">Ingenieurleitfaden zur Sensorkalibrierung im Unterglasgartenbau: Zweipunkt-Kalibrierung nach der Nernst-Gleichung (pH 7,00/4,01), Temperaturkompensation der elektrischen Leitfähigkeit (EC 25 °C), dielektrische TDR/FDR-Substratfeuchte und optische NDIR-CO2-Driftkompensation. Alle Auslegungsparameter orientieren sich an verbindlichen europäischen Ingenieurnormen (DIN EN 13031-1, DIN V 18599, FAO-56 Penman-Monteith sowie DWA-/KTBL-Richtwerten) für kommerzielle Venlo-Gewächshäuser.</p>
+    <div class="faq-item" style="margin-bottom:14px; padding:16px 20px; background:rgba(15,23,42,0.7); border-left:4px solid #10b981; border-radius:10px;">
+      <p style="margin:0; line-height:1.68; color:#cbd5e1; font-size:0.92rem;"><strong style="color:#f8fafc; font-size:0.98rem;">F1: Wie beurteilt man über die Nernst-Steilheit in der Zweipunkt-Kalibrierung (pH 7,00 / 4,01) den Zustand von Gewächshaus-pH-Elektroden?</strong><br>Nach der Nernst-Gleichung beträgt die theoretische Elektrodensteilheit bei 25 °C exakt −59,16 mV pro pH-Einheit, während der Nullpunkt (Asymmetriepotenzial) bei pH 7,00 nahe 0 mV (±15 mV) liegt. Fällt die gemessene Steilheit infolge Diaphragma-Verblockung oder Gel-Auslaugung unter 92 % (&lt; 54,4 mV/pH) oder überschreitet der Offset ±25 mV, muss die Sonde gereinigt bzw. ersetzt werden.</p>
     </div>
-    <div style="margin-bottom:14px; padding:14px 18px; background:rgba(15,23,42,0.65); border-left:3px solid #10b981; border-radius:8px;">
-      <h4 style="margin:0 0 6px 0; color:#f8fafc; font-size:0.98rem;">Wie lassen sich die Kennzahlen aus „Präzisions-Sensorkalibrierung im Smart-Greenhouse: Nernst-Gleichung (pH/EC), TDR/FDR-Substratfeuchte &amp; NDIR-CO 2 -Driftkompensation“ in der Klimacomputer- und Kultursteuerung umsetzen?</h4>
-      <p style="margin:0; color:#cbd5e1; font-size:0.9rem; line-height:1.65;">Produktionsleiter erfassen Blatttemperatur, Einstrahlung, Substratfeuchte und Drän-EC kontinuierlich über kalibrierte Sensoren und überführen die berechneten Zielgrößen als gleitende Sollwertkurven in die Klimacomputer- und Bewässerungsregelung.</p>
+    <div class="faq-item" style="margin-bottom:14px; padding:16px 20px; background:rgba(15,23,42,0.7); border-left:4px solid #10b981; border-radius:10px;">
+      <p style="margin:0; line-height:1.68; color:#cbd5e1; font-size:0.92rem;"><strong style="color:#f8fafc; font-size:0.98rem;">F2: Warum müssen EC-Leitfähigkeitssonden und dielektrische TDR/FDR-Substratsensoren zwingend temperatur- und porenwasserkompensiert werden?</strong><br>Die elektrolytische Ionenbeweglichkeit steigt um rund 1,9–2,1 % pro Kelvin Temperaturerhöhung; ohne Kompensation auf 25 °C Referenztemperatur täuscht eine 30 °C warme Nährlösung eine um 10 % überhöhte Düngerkonzentration vor. Ebenso hängt die Dielektrizitätszahl (ε_b) in Steinwolle und Kokos von Temperatur und Porenwasser-EC (Hilhorst-Modell) ab.</p>
     </div>
-    <div style="margin-bottom:14px; padding:14px 18px; background:rgba(15,23,42,0.65); border-left:3px solid #10b981; border-radius:8px;">
-      <h4 style="margin:0 0 6px 0; color:#f8fafc; font-size:0.98rem;">Welche Förderprogramme unterstützen entsprechende Effizienz- und Modernisierungsinvestitionen?</h4>
-      <p style="margin:0; color:#cbd5e1; font-size:0.9rem; line-height:1.65;">Je nach Bundesland und Systemgrenze kommen das BLE-Bundesprogramm Energieeffizienz (Modul 1–4), Rentenbank-Umweltkredite (LR-Top/LR-Premium) sowie landesspezifische Agrarinvestitionsförderprogramme (AFP) in Betracht.</p>
+    <div class="faq-item" style="margin-bottom:14px; padding:16px 20px; background:rgba(15,23,42,0.7); border-left:4px solid #10b981; border-radius:10px;">
+      <p style="margin:0; line-height:1.68; color:#cbd5e1; font-size:0.92rem;"><strong style="color:#f8fafc; font-size:0.98rem;">F3: Weshalb benötigen NDIR-CO₂-Sensoren Zweistrahl-Referenzoptik und Pt100/Pt1000-Klimafühler zwangsbelüftete Aspirationsmessboxen?</strong><br>Infrarot-Lichtquellen in einfachen Einstrahl-NDIR-Sensoren altern über Monate und erzeugen ohne Zweistrahl-Referenzkanal oder Auto-Baseline-Abgleich (420 ppm Außenluft) erhebliche CO₂-Fehldosierungen. Unbelüftete Temperatur-/Feuchtefühler heizen sich unter Sonneneinstrahlung um +2 bis +5 K auf; erst ein Aspirationsgebläse (≥ 3 m/s Luftstrom im Strahlungsschutzrohr) liefert wahre Luft- und Taupunktwerte.</p>
     </div>
   </div>
 </section>

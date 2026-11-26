@@ -57,7 +57,7 @@
         "url": "https://inwoovation.com"
       },
       "datePublished": "2026-09-01",
-      "dateModified": "2026-11-21",
+      "dateModified": "2026-11-26",
       "mainEntityOfPage": "https://inwoovation.com/articles/ja/article-26-greenhouse-heating-load-din-v-18599-jp.html"
     },
     {
@@ -88,26 +88,26 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "冬季の保温カーテン全閉時に発生する高湿度・結露リスクはどのように制御すべきですか？",
+          "name": "DIN V 18599-10 に基づく商業用フェンロー温室の冬季ピーク暖房負荷はどの 4 つの熱損失項で構成されますか？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "カーテンを 1.5 % 〜 4.0 % わずかに開けるギャップ制御 ( Screen Gap Purging ) と 、 最低管温度 ( Minimum Pipe Temperature : 38 - 42 °C ) を連動させることで 、 作物の蒸散流を維持しつつ余剰水蒸気を屋根ガラス面の結露樋へ安全に排出できます 。"
+            "text": "外皮貫流熱損失 Qtrans = Ueff · Aglass · (Tin - Tout)、隙間換気損失 Qinf = 0.34 · ACH · Vgh · (Tin - Tout)、換気窓開放エンタルピー損失 Qvent、および快晴放射冷却夜の大気の窓（波長 8〜14 μm）を通じた天空長波放射損失 Qrad,sky の総和で厳密に定式化されます。"
           }
         },
         {
           "@type": "Question",
-          "name": "日射量に応じた灌水および CO2 施用の最適サンプリング周期はどのくらいですか？",
+          "name": "一層および二層のアルミ蒸着保温カーテンは、単板ガラス温室の実効熱貫流率（U_eff）をどこまで低減しますか？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "日射強度 ( W/m2 ) と葉温・飽差 ( VPD ) は 5 秒周期で計測・移動平均処理を行い 、 積算日射量 70 〜 100 J/cm2 ごとに 100 mL/株の精密パルス灌水を実行し 、 換気窓開度 ( ACH ) に連動して CO2 目標濃度 ( 600 〜 1,050 ppm ) を 5 分周期で動的最適化します 。"
+            "text": "カーテン未展張の 4 mm フロートガラス（Ueff ≈ 5.8〜6.5 W/(m2·K)）に対し、高反射アルミ一層カーテン閉鎖時は約 3.2 W/(m2·K)、二層カーテンシステムでは静止空気層の二重形成と赤外線反射により Ueff = 2.1〜2.2 W/(m2·K) まで低下し、暖房燃料を 42〜55% 削減します。"
           }
         },
         {
           "@type": "Question",
-          "name": "自社温室の条件に合わせた具体的な設計値・負荷計算はどこで行えますか？",
+          "name": "温室面積・軒高・設計外気温からボイラー容量（kW/ha）と 51 mm レール暖房管の供給水温を算出するには？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Inwoovation Lab が提供する無料の Interactive CEA Engineering Calculator および下部の関連エンジニアリング計算ツール群をそのままブラウザ上でご利用いただけます 。"
+            "text": "DIN V 18599 温室暖房負荷・保温カーテン計算機 でピーク熱負荷と年間省エネ量を即座に試算できます。"
           }
         }
       ]
@@ -259,22 +259,22 @@
 
         <h2>Section E: 施設園芸エンジニアリング よくある質問 ( Frequently Asked Engineering Questions : FAQ )</h2>
         <div class="faq-block" style="margin-top: 14px;">
-          <p><strong>Q1: 冬季の保温カーテン全閉時に発生する高湿度・結露リスクはどのように制御すべきですか？</strong><br>
-          A1: カーテンを 1.5 % 〜 4.0 % わずかに開けるギャップ制御 ( Screen Gap Purging ) と 、 最低管温度 ( Minimum Pipe Temperature : 38 - 42 °C ) を連動させることで 、 作物の蒸散流を維持しつつ余剰水蒸気を屋根ガラス面の結露樋へ安全に排出できます 。</p>
-          <p><strong>Q2: 日射量に応じた灌水および CO2 施用の最適サンプリング周期はどのくらいですか？</strong><br>
-          A2: 日射強度 ( W/m2 ) と葉温・飽差 ( VPD ) は 5 秒周期で計測・移動平均処理を行い 、 積算日射量 70 〜 100 J/cm2 ごとに 100 mL/株の精密パルス灌水を実行し 、 換気窓開度 ( ACH ) に連動して CO2 目標濃度 ( 600 〜 1,050 ppm ) を 5 分周期で動的最適化します 。</p>
-          <p><strong>Q3: 自社温室の条件に合わせた具体的な設計値・負荷計算はどこで行えますか？</strong><br>
-          A3: Inwoovation Lab が提供する無料の <a href="/smartfarm/heat_loss.html" style="color: #10b981; font-weight: 700;">Interactive CEA Engineering Calculator</a> および下部の関連エンジニアリング計算ツール群をそのままブラウザ上でご利用いただけます 。</p>
+          <p><strong>Q1: DIN V 18599-10 に基づく商業用フェンロー温室の冬季ピーク暖房負荷はどの 4 つの熱損失項で構成されますか？</strong><br>
+          外皮貫流熱損失 Q<sub>trans</sub> = U<sub>eff</sub> · A<sub>glass</sub> · (T<sub>in</sub> - T<sub>out</sub>)、隙間換気損失 Q<sub>inf</sub> = 0.34 · ACH · V<sub>gh</sub> · (T<sub>in</sub> - T<sub>out</sub>)、換気窓開放エンタルピー損失 Q<sub>vent</sub>、および快晴放射冷却夜の大気の窓（波長 8〜14 μm）を通じた天空長波放射損失 Q<sub>rad,sky</sub> の総和で厳密に定式化されます。</p>
+          <p><strong>Q2: 一層および二層のアルミ蒸着保温カーテンは、単板ガラス温室の実効熱貫流率（U_eff）をどこまで低減しますか？</strong><br>
+          カーテン未展張の 4 mm フロートガラス（U<sub>eff</sub> ≈ 5.8〜6.5 W/(m<sup>2</sup>·K)）に対し、高反射アルミ一層カーテン閉鎖時は約 3.2 W/(m<sup>2</sup>·K)、二層カーテンシステムでは静止空気層の二重形成と赤外線反射により U<sub>eff</sub> = 2.1〜2.2 W/(m<sup>2</sup>·K) まで低下し、暖房燃料を 42〜55% 削減します。</p>
+          <p><strong>Q3: 温室面積・軒高・設計外気温からボイラー容量（kW/ha）と 51 mm レール暖房管の供給水温を算出するには？</strong><br>
+          <a href="/tools/greenhouse-heating-load-thermal-screen-calculator.html" style="color: #10b981; font-weight: 700;">DIN V 18599 温室暖房負荷・保温カーテン計算機</a> でピーク熱負荷と年間省エネ量を即座に試算できます。</p>
         </div>
       </section>
 <!-- INW-DEEP-ENG-END -->
 
 <!-- INW-LIVE-WIDGET-START -->
 <section class="inw-live-widget-sandbox" style="margin: 32px 0; padding: 24px; background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 16px; box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);">
-  <h3 style="margin: 0 0 8px 0; font-size: 1.2rem; color: #38bdf8; font-weight: 800;">🧪 リアルタイム養液栽培 A/B 原液タンク & EC 希釈シミュレーター</h3>
-  <p style="margin: 0 0 16px 0; font-size: 0.92rem; color: #94a3b8; line-height: 1.6;">原水EC・目標EC・希釈倍率から、A/B原液タンク注入量と必要肥料塩類質量をリアルタイムに計算します。</p>
+  <h3 style="margin: 0 0 8px 0; font-size: 1.2rem; color: #38bdf8; font-weight: 800;">🔥 DIN V 18599 温室ピーク暖房負荷 & 保温カーテン省エネシミュレーター</h3>
+  <p style="margin: 0 0 16px 0; font-size: 0.92rem; color: #94a3b8; line-height: 1.6;">温室面積・外気設計温度・被覆材U値・保温カーテンを選択し、ピーク暖房負荷 (kW) と燃料消費量をリアルタイムに試算します。</p>
   <div style="display: flex; justify-content: center; width: 100%; overflow: hidden;">
-    <iframe src="/embed/fertigation-ec-widget.html" width="380" height="460" loading="lazy" title="🧪 リアルタイム養液栽培 A/B 原液タンク & EC 希釈シミュレーター" style="border: none; border-radius: 14px; max-width: 100%;"></iframe>
+    <iframe src="/embed/heating-loss-widget.html" width="380" height="460" loading="lazy" title="🔥 DIN V 18599 温室ピーク暖房負荷 & 保温カーテン省エネシミュレーター" style="border: none; border-radius: 14px; max-width: 100%;"></iframe>
   </div>
 </section>
 <!-- INW-LIVE-WIDGET-END -->

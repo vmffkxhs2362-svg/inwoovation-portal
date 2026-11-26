@@ -57,7 +57,7 @@
         "url": "https://inwoovation.com"
       },
       "datePublished": "2026-09-01",
-      "dateModified": "2026-11-21",
+      "dateModified": "2026-11-26",
       "mainEntityOfPage": "https://inwoovation.com/articles/ja/article-32-horticultural-led-thermal-junction-temperature-jp.html"
     },
     {
@@ -88,26 +88,26 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "冬季の保温カーテン全閉時に発生する高湿度・結露リスクはどのように制御すべきですか？",
+          "name": "発光効率 3.2〜3.8 μmol/J の最新園芸用 LED でも、投入電力の何割が半導体ジャンクションの熱になりますか？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "カーテンを 1.5 % 〜 4.0 % わずかに開けるギャップ制御 ( Screen Gap Purging ) と 、 最低管温度 ( Minimum Pipe Temperature : 38 - 42 °C ) を連動させることで 、 作物の蒸散流を維持しつつ余剰水蒸気を屋根ガラス面の結露樋へ安全に排出できます 。"
+            "text": "高効率 660 nm/450 nm 素子であっても投入電力の 45〜55% は p-n 接合部で直接伝導熱へ変換されます。HPS ランプのように下向き赤外放射として逃げないため、大型アルミヒートシンクの自然対流または水冷ヒートパイプで確実に放熱する必要があります。"
           }
         },
         {
           "@type": "Question",
-          "name": "日射量に応じた灌水および CO2 施用の最適サンプリング周期はどのくらいですか？",
+          "name": "一次元熱抵抗モデルにおいてジャンクション温度（T_j）が 85 °C を超えると L90 寿命はどう劣化しますか？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "日射強度 ( W/m2 ) と葉温・飽差 ( VPD ) は 5 秒周期で計測・移動平均処理を行い 、 積算日射量 70 〜 100 J/cm2 ごとに 100 mL/株の精密パルス灌水を実行し 、 換気窓開度 ( ACH ) に連動して CO2 目標濃度 ( 600 〜 1,050 ppm ) を 5 分周期で動的最適化します 。"
+            "text": "Tj = Tamb + Pheat · (Rth,jc + Rth,cs + Rth,sa) において Tj が 85 °C を超過すると、アレニウス則に従い結晶欠陥と封止樹脂劣化が加速し、Tj ≤ 65 °C 時に 65,000 時間以上あった L90 光束維持寿命が 28,000 時間未満へ半減するとともに 6〜10% の熱ドループ損失が生じます。"
           }
         },
         {
           "@type": "Question",
-          "name": "自社温室の条件に合わせた具体的な設計値・負荷計算はどこで行えますか？",
+          "name": "ヒートシンク熱抵抗 R_th,sa や水冷 LED 排熱回収量を施設規模に合わせて計算するには？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Inwoovation Lab が提供する無料の Interactive CEA Engineering Calculator および下部の関連エンジニアリング計算ツール群をそのままブラウザ上でご利用いただけます 。"
+            "text": "園芸用 LED 熱抵抗・CFD 空調負荷オプティマイザー で Tj と放熱設計をシミュレーションできます。"
           }
         }
       ]
@@ -153,7 +153,7 @@
     </header>
 
     <div class="article-body">
-      <p class="lead">最新の高効率園芸用LED照明（≥ 3.2\ μmol/J）であっても、投入電力の<strong>50〜55%は熱エネルギーとして散逸</strong>します。LED素子のジャンクション温度（T<sub>j</sub>）が85℃を超えると、発光効率の熱劣化と寿命の大幅な短縮を招きます。</p>
+      <p class="lead">最新の高効率園芸用LED照明（≥ 3.2 μmol/J）であっても、投入電力の<strong>50〜55%は熱エネルギーとして散逸</strong>します。LED素子のジャンクション温度（T<sub>j</sub>）が85℃を超えると、発光効率の熱劣化と寿命の大幅な短縮を招きます。</p>
 
       <h2>1. 1次元熱抵抗ネットワーク解析</h2>
       <p>素子からヒートシンク、周囲空気への熱伝達経路を最適化することで、T<sub>j</sub> < 65°C を維持し、65,000時間以上の超長寿命を確保します。</p>
@@ -259,12 +259,12 @@
 
         <h2>Section E: 施設園芸エンジニアリング よくある質問 ( Frequently Asked Engineering Questions : FAQ )</h2>
         <div class="faq-block" style="margin-top: 14px;">
-          <p><strong>Q1: 冬季の保温カーテン全閉時に発生する高湿度・結露リスクはどのように制御すべきですか？</strong><br>
-          A1: カーテンを 1.5 % 〜 4.0 % わずかに開けるギャップ制御 ( Screen Gap Purging ) と 、 最低管温度 ( Minimum Pipe Temperature : 38 - 42 °C ) を連動させることで 、 作物の蒸散流を維持しつつ余剰水蒸気を屋根ガラス面の結露樋へ安全に排出できます 。</p>
-          <p><strong>Q2: 日射量に応じた灌水および CO2 施用の最適サンプリング周期はどのくらいですか？</strong><br>
-          A2: 日射強度 ( W/m2 ) と葉温・飽差 ( VPD ) は 5 秒周期で計測・移動平均処理を行い 、 積算日射量 70 〜 100 J/cm2 ごとに 100 mL/株の精密パルス灌水を実行し 、 換気窓開度 ( ACH ) に連動して CO2 目標濃度 ( 600 〜 1,050 ppm ) を 5 分周期で動的最適化します 。</p>
-          <p><strong>Q3: 自社温室の条件に合わせた具体的な設計値・負荷計算はどこで行えますか？</strong><br>
-          A3: Inwoovation Lab が提供する無料の <a href="/smartfarm/dli_calculator.html" style="color: #10b981; font-weight: 700;">Interactive CEA Engineering Calculator</a> および下部の関連エンジニアリング計算ツール群をそのままブラウザ上でご利用いただけます 。</p>
+          <p><strong>Q1: 発光効率 3.2〜3.8 μmol/J の最新園芸用 LED でも、投入電力の何割が半導体ジャンクションの熱になりますか？</strong><br>
+          高効率 660 nm/450 nm 素子であっても投入電力の 45〜55% は p-n 接合部で直接伝導熱へ変換されます。HPS ランプのように下向き赤外放射として逃げないため、大型アルミヒートシンクの自然対流または水冷ヒートパイプで確実に放熱する必要があります。</p>
+          <p><strong>Q2: 一次元熱抵抗モデルにおいてジャンクション温度（T_j）が 85 °C を超えると L90 寿命はどう劣化しますか？</strong><br>
+          T<sub>j</sub> = T<sub>amb</sub> + P<sub>heat</sub> · (R<sub>th,jc</sub> + R<sub>th,cs</sub> + R<sub>th,sa</sub>) において T<sub>j</sub> が 85 °C を超過すると、アレニウス則に従い結晶欠陥と封止樹脂劣化が加速し、T<sub>j</sub> ≤ 65 °C 時に 65,000 時間以上あった L<sub>90</sub> 光束維持寿命が 28,000 時間未満へ半減するとともに 6〜10% の熱ドループ損失が生じます。</p>
+          <p><strong>Q3: ヒートシンク熱抵抗 R_th,sa や水冷 LED 排熱回収量を施設規模に合わせて計算するには？</strong><br>
+          <a href="/tools/greenhouse-lighting-led-thermal-cfd-optimizer.html" style="color: #10b981; font-weight: 700;">園芸用 LED 熱抵抗・CFD 空調負荷オプティマイザー</a> で T<sub>j</sub> と放熱設計をシミュレーションできます。</p>
         </div>
       </section>
 <!-- INW-DEEP-ENG-END -->

@@ -57,7 +57,7 @@
         "url": "https://inwoovation.com"
       },
       "datePublished": "2026-09-01",
-      "dateModified": "2026-11-21",
+      "dateModified": "2026-11-26",
       "mainEntityOfPage": "https://inwoovation.com/articles/ja/article-45-agriquant-energy-commodity-quant-terminal-jp.html"
     },
     {
@@ -88,26 +88,26 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "冬季の保温カーテン全閉時に発生する高湿度・結露リスクはどのように制御すべきですか？",
+          "name": "クリーン・スパーク・スプレッド（CSS）は温室 CHP の売電稼働とボイラー待機の切り替えをどう決定しますか？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "カーテンを 1.5 % 〜 4.0 % わずかに開けるギャップ制御 ( Screen Gap Purging ) と 、 最低管温度 ( Minimum Pipe Temperature : 38 - 42 °C ) を連動させることで 、 作物の蒸散流を維持しつつ余剰水蒸気を屋根ガラス面の結露樋へ安全に排出できます 。"
+            "text": "AgriQuant は CSSt = Pelec,EPEX - (Pgas,TTF + PEUA · EFCO2) / ηelec + Vheat + VCO2 を 15〜60 分単位で評価します。卸電力価格が天然ガス＋炭素排出権の限界発電単価を上回る時間帯に CHP を 100% 稼働させ、売電収益・CO2 施用・蓄熱槽充電を同時最大化します。"
           }
         },
         {
           "@type": "Question",
-          "name": "日射量に応じた灌水および CO2 施用の最適サンプリング周期はどのくらいですか？",
+          "name": "再生可能エネルギー余剰により卸電力スポット価格がマイナス（負価格）になった際の最適ディスパッチ戦略は？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "日射強度 ( W/m2 ) と葉温・飽差 ( VPD ) は 5 秒周期で計測・移動平均処理を行い 、 積算日射量 70 〜 100 J/cm2 ごとに 100 mL/株の精密パルス灌水を実行し 、 換気窓開度 ( ACH ) に連動して CO2 目標濃度 ( 600 〜 1,050 ppm ) を 5 分周期で動的最適化します 。"
+            "text": "電力スポット価格がゼロ〜負価格へ突入するとガス CHP を即座に最低負荷へ絞り、Power-to-Heat 電気ボイラー・大型ヒートポンプ・補光 LED を最大出力で系統電力吸収へ切り替えることで、暖房・照明 OPEX を劇的に圧縮します。"
           }
         },
         {
           "@type": "Question",
-          "name": "自社温室の条件に合わせた具体的な設計値・負荷計算はどこで行えますか？",
+          "name": "天然ガス（TTF）・卸電力（EPEX）・肥料価格の変動に対する温室収益感応度を分析するには？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Inwoovation Lab が提供する無料の Interactive CEA Engineering Calculator および下部の関連エンジニアリング計算ツール群をそのままブラウザ上でご利用いただけます 。"
+            "text": "AgriQuant 施設園芸エネルギー・コモディティ定量ターミナル でスパークスプレッドを試算できます。"
           }
         }
       ]
@@ -258,22 +258,22 @@
 
         <h2>Section E: 施設園芸エンジニアリング よくある質問 ( Frequently Asked Engineering Questions : FAQ )</h2>
         <div class="faq-block" style="margin-top: 14px;">
-          <p><strong>Q1: 冬季の保温カーテン全閉時に発生する高湿度・結露リスクはどのように制御すべきですか？</strong><br>
-          A1: カーテンを 1.5 % 〜 4.0 % わずかに開けるギャップ制御 ( Screen Gap Purging ) と 、 最低管温度 ( Minimum Pipe Temperature : 38 - 42 °C ) を連動させることで 、 作物の蒸散流を維持しつつ余剰水蒸気を屋根ガラス面の結露樋へ安全に排出できます 。</p>
-          <p><strong>Q2: 日射量に応じた灌水および CO2 施用の最適サンプリング周期はどのくらいですか？</strong><br>
-          A2: 日射強度 ( W/m2 ) と葉温・飽差 ( VPD ) は 5 秒周期で計測・移動平均処理を行い 、 積算日射量 70 〜 100 J/cm2 ごとに 100 mL/株の精密パルス灌水を実行し 、 換気窓開度 ( ACH ) に連動して CO2 目標濃度 ( 600 〜 1,050 ppm ) を 5 分周期で動的最適化します 。</p>
-          <p><strong>Q3: 自社温室の条件に合わせた具体的な設計値・負荷計算はどこで行えますか？</strong><br>
-          A3: Inwoovation Lab が提供する無料の <a href="/smartfarm/heat_loss.html" style="color: #10b981; font-weight: 700;">Interactive CEA Engineering Calculator</a> および下部の関連エンジニアリング計算ツール群をそのままブラウザ上でご利用いただけます 。</p>
+          <p><strong>Q1: クリーン・スパーク・スプレッド（CSS）は温室 CHP の売電稼働とボイラー待機の切り替えをどう決定しますか？</strong><br>
+          AgriQuant は CSS<sub>t</sub> = P<sub>elec,EPEX</sub> - (P<sub>gas,TTF</sub> + P<sub>EUA</sub> · EF<sub>CO2</sub>) / η<sub>elec</sub> + V<sub>heat</sub> + V<sub>CO2</sub> を 15〜60 分単位で評価します。卸電力価格が天然ガス＋炭素排出権の限界発電単価を上回る時間帯に CHP を 100% 稼働させ、売電収益・CO<sub>2</sub> 施用・蓄熱槽充電を同時最大化します。</p>
+          <p><strong>Q2: 再生可能エネルギー余剰により卸電力スポット価格がマイナス（負価格）になった際の最適ディスパッチ戦略は？</strong><br>
+          電力スポット価格がゼロ〜負価格へ突入するとガス CHP を即座に最低負荷へ絞り、Power-to-Heat 電気ボイラー・大型ヒートポンプ・補光 LED を最大出力で系統電力吸収へ切り替えることで、暖房・照明 OPEX を劇的に圧縮します。</p>
+          <p><strong>Q3: 天然ガス（TTF）・卸電力（EPEX）・肥料価格の変動に対する温室収益感応度を分析するには？</strong><br>
+          <a href="/tools/agriquant-greenhouse-energy-commodity-terminal.html" style="color: #10b981; font-weight: 700;">AgriQuant 施設園芸エネルギー・コモディティ定量ターミナル</a> でスパークスプレッドを試算できます。</p>
         </div>
       </section>
 <!-- INW-DEEP-ENG-END -->
 
 <!-- INW-LIVE-WIDGET-START -->
 <section class="inw-live-widget-sandbox" style="margin: 32px 0; padding: 24px; background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 16px; box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);">
-  <h3 style="margin: 0 0 8px 0; font-size: 1.2rem; color: #38bdf8; font-weight: 800;">🧪 リアルタイム養液栽培 A/B 原液タンク & EC 希釈シミュレーター</h3>
-  <p style="margin: 0 0 16px 0; font-size: 0.92rem; color: #94a3b8; line-height: 1.6;">原水EC・目標EC・希釈倍率から、A/B原液タンク注入量と必要肥料塩類質量をリアルタイムに計算します。</p>
+  <h3 style="margin: 0 0 8px 0; font-size: 1.2rem; color: #38bdf8; font-weight: 800;">🔥 DIN V 18599 温室ピーク暖房負荷 & 保温カーテン省エネシミュレーター</h3>
+  <p style="margin: 0 0 16px 0; font-size: 0.92rem; color: #94a3b8; line-height: 1.6;">温室面積・外気設計温度・被覆材U値・保温カーテンを選択し、ピーク暖房負荷 (kW) と燃料消費量をリアルタイムに試算します。</p>
   <div style="display: flex; justify-content: center; width: 100%; overflow: hidden;">
-    <iframe src="/embed/fertigation-ec-widget.html" width="380" height="460" loading="lazy" title="🧪 リアルタイム養液栽培 A/B 原液タンク & EC 希釈シミュレーター" style="border: none; border-radius: 14px; max-width: 100%;"></iframe>
+    <iframe src="/embed/heating-loss-widget.html" width="380" height="460" loading="lazy" title="🔥 DIN V 18599 温室ピーク暖房負荷 & 保温カーテン省エネシミュレーター" style="border: none; border-radius: 14px; max-width: 100%;"></iframe>
   </div>
 </section>
 <!-- INW-LIVE-WIDGET-END -->

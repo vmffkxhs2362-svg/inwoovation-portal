@@ -57,7 +57,7 @@
         "url": "https://inwoovation.com"
       },
       "datePublished": "2026-09-01",
-      "dateModified": "2026-11-21",
+      "dateModified": "2026-11-26",
       "mainEntityOfPage": "https://inwoovation.com/articles/article-27-crop-yield-biomass-light-use-efficiency.html"
     },
     {
@@ -65,26 +65,26 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "How do operators prevent humidity spikes when thermal screens are closed over 95%?",
+          "name": "How does the Radiation Use / Light Use Efficiency (LUE) equation convert cumulative PAR photons into harvestable fresh tomato weight?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "By coordinating a controlled 1.5%–4.0% moisture purge gap (Screen Gap) with a minimum pipe-rail temperature of 38–42 °C, gentle buoyancy-driven convection transports excess water vapor into the upper roof plenum where it condenses on the cold glass envelope and drains via gutter channels."
+            "text": "Total dry biomass follows Wdry = LUE · ∑[DLI(t) · (1 - exp(-kext · LAI))], where well-steered CO2-enriched Venlo tomatoes achieve LUE = 2.8–3.4 g dry matter per mol intercepted PAR. Applying a generative Harvest Index (HI = 0.65–0.72) and fruit dry-matter fraction (DM% ≈ 5.5%) yields fresh marketable fruit mass."
           }
         },
         {
           "@type": "Question",
-          "name": "What sampling frequency is required to synchronize solar radiation with irrigation and climate actuators?",
+          "name": "Why is the '1% Light = 0.7%–1.0% Yield' benchmark physically accurate, and what is the weekly kg/m² rule per mol of DLI?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Quantum PAR and pyranometer sensors are sampled every 5 seconds, filtered over a 60-second rolling window, and integrated into cumulative radiation sums (J/cm2) to trigger precision 100 mL drip shots while updating MPC climate trajectories every 5 minutes."
+            "text": "At mature canopy closure (LAI = 3.2–3.8 m2/m2, intercepting > 85% of incident PAR), each +1.0 mol/(m2·d) increase in Daily Light Integral adds ~3.1 g/m2 dry weight (~2.1 g/m2 fruit DM), translating into approximately +0.07 kg/(m2·week) of fresh Class-I truss tomatoes when CO2 and VPD are non-limiting."
           }
         },
         {
           "@type": "Question",
-          "name": "Where can I simulate these exact thermodynamic and agronomic equations for my own facility?",
+          "name": "Where can commercial growers forecast seasonal biomass accumulation and supplemental LED electricity ROI from local DLI curves?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Launch our interactive Interactive CEA Engineering Calculator or explore the full suite of CEA engineering calculators linked below."
+            "text": "Input your target LAI, extinction coefficient kext, LUE, and cultivar dry-matter percentage into the Crop Yield & Biomass DLI Forecaster to project weekly harvest kg/m2 across 52-week production cycles."
           }
         }
       ]
@@ -262,22 +262,22 @@
 
         <h2>Section E: Frequently Asked Engineering Questions (FAQ)</h2>
         <div class="faq-block" style="margin-top: 14px;">
-          <p><strong>Q1: How do operators prevent humidity spikes when thermal screens are closed over 95%?</strong><br>
-          By coordinating a controlled 1.5%–4.0% <em>moisture purge gap (Screen Gap)</em> with a minimum pipe-rail temperature of 38–42 °C, gentle buoyancy-driven convection transports excess water vapor into the upper roof plenum where it condenses on the cold glass envelope and drains via gutter channels.</p>
-          <p><strong>Q2: What sampling frequency is required to synchronize solar radiation with irrigation and climate actuators?</strong><br>
-          Quantum PAR and pyranometer sensors are sampled every 5 seconds, filtered over a 60-second rolling window, and integrated into cumulative radiation sums (J/cm<sup>2</sup>) to trigger precision 100 mL drip shots while updating MPC climate trajectories every 5 minutes.</p>
-          <p><strong>Q3: Where can I simulate these exact thermodynamic and agronomic equations for my own facility?</strong><br>
-          Launch our interactive <a href="/smartfarm/dli_calculator.html" style="color: #10b981; font-weight: 700;">Interactive CEA Engineering Calculator</a> or explore the full suite of CEA engineering calculators linked below.</p>
+          <p><strong>Q1: How does the Radiation Use / Light Use Efficiency (LUE) equation convert cumulative PAR photons into harvestable fresh tomato weight?</strong><br>
+          Total dry biomass follows W<sub>dry</sub> = LUE · ∑[DLI(t) · (1 - exp(-k<sub>ext</sub> · LAI))], where well-steered CO<sub>2</sub>-enriched Venlo tomatoes achieve LUE = 2.8–3.4 g dry matter per mol intercepted PAR. Applying a generative Harvest Index (HI = 0.65–0.72) and fruit dry-matter fraction (DM% ≈ 5.5%) yields fresh marketable fruit mass.</p>
+          <p><strong>Q2: Why is the '1% Light = 0.7%–1.0% Yield' benchmark physically accurate, and what is the weekly kg/m² rule per mol of DLI?</strong><br>
+          At mature canopy closure (LAI = 3.2–3.8 m<sup>2</sup>/m<sup>2</sup>, intercepting &gt; 85% of incident PAR), each +1.0 mol/(m<sup>2</sup>·d) increase in Daily Light Integral adds ~3.1 g/m<sup>2</sup> dry weight (~2.1 g/m<sup>2</sup> fruit DM), translating into approximately +0.07 kg/(m<sup>2</sup>·week) of fresh Class-I truss tomatoes when CO<sub>2</sub> and VPD are non-limiting.</p>
+          <p><strong>Q3: Where can commercial growers forecast seasonal biomass accumulation and supplemental LED electricity ROI from local DLI curves?</strong><br>
+          Input your target LAI, extinction coefficient k<sub>ext</sub>, LUE, and cultivar dry-matter percentage into the <a href="/tools/crop-yield-biomass-dli-forecaster.html" style="color: #10b981; font-weight: 700;">Crop Yield &amp; Biomass DLI Forecaster</a> to project weekly harvest kg/m<sup>2</sup> across 52-week production cycles.</p>
         </div>
       </section>
 <!-- INW-DEEP-ENG-END -->
 
 <!-- INW-LIVE-WIDGET-START -->
 <section class="inw-live-widget-sandbox" style="margin: 32px 0; padding: 24px; background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 16px; box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);">
-  <h3 style="margin: 0 0 8px 0; font-size: 1.2rem; color: #38bdf8; font-weight: 800;">🧪 Interactive Hydroponic A/B Stock Tank & EC Blending Simulator</h3>
-  <p style="margin: 0 0 16px 0; font-size: 0.92rem; color: #94a3b8; line-height: 1.6;">Compute A/B stock tank injection liters and dissolved fertilizer salt mass to hit target root-zone EC from raw source water.</p>
+  <h3 style="margin: 0 0 8px 0; font-size: 1.2rem; color: #38bdf8; font-weight: 800;">☀️ Interactive Live Daily Light Integral (DLI) & Photoperiod Simulator</h3>
+  <p style="margin: 0 0 16px 0; font-size: 0.92rem; color: #94a3b8; line-height: 1.6;">Test canopy PPFD (µmol·m⁻²·s⁻¹) and photoperiod hours below to compute cumulative daily PAR photon flux (mol·m⁻²·d⁻¹).</p>
   <div style="display: flex; justify-content: center; width: 100%; overflow: hidden;">
-    <iframe src="/embed/fertigation-ec-widget.html" width="380" height="460" loading="lazy" title="🧪 Interactive Hydroponic A/B Stock Tank & EC Blending Simulator" style="border: none; border-radius: 14px; max-width: 100%;"></iframe>
+    <iframe src="/embed/dli-calculator.html" width="380" height="390" loading="lazy" title="☀️ Interactive Live Daily Light Integral (DLI) & Photoperiod Simulator" style="border: none; border-radius: 14px; max-width: 100%;"></iframe>
   </div>
 </section>
 <!-- INW-LIVE-WIDGET-END -->

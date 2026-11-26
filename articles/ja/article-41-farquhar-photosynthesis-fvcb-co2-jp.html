@@ -57,7 +57,7 @@
         "url": "https://inwoovation.com"
       },
       "datePublished": "2026-09-01",
-      "dateModified": "2026-11-21",
+      "dateModified": "2026-11-26",
       "mainEntityOfPage": "https://inwoovation.com/articles/ja/article-41-farquhar-photosynthesis-fvcb-co2-jp.html"
     },
     {
@@ -88,26 +88,26 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "冬季の保温カーテン全閉時に発生する高湿度・結露リスクはどのように制御すべきですか？",
+          "name": "FvCB 光合成生化学モデルにおいて RuBisCO 律速（W_c）と電子伝達 RuBP 再生律速（W_j）はどこで切り替わりますか？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "カーテンを 1.5 % 〜 4.0 % わずかに開けるギャップ制御 ( Screen Gap Purging ) と 、 最低管温度 ( Minimum Pipe Temperature : 38 - 42 °C ) を連動させることで 、 作物の蒸散流を維持しつつ余剰水蒸気を屋根ガラス面の結露樋へ安全に排出できます 。"
+            "text": "Anet = min(Wc, Wj, Wp) - Rd において、強光かつ低細胞間隙 CO2 分圧（Ci < 350〜450 μbar）では RuBisCO 最大カルボキシル化速度 Vcmax（Wc）が律速し、弱光下または高濃度 CO2 域（Ci > 650 μbar）ではチラコイド電子伝達速度 Jmax（Wj）へ移行します。"
           }
         },
         {
           "@type": "Question",
-          "name": "日射量に応じた灌水および CO2 施用の最適サンプリング周期はどのくらいですか？",
+          "name": "なぜ葉温 25〜28 °C の高温条件ほど CO2 濃度を 800〜1,000 ppm へ高める増収効果が大きいのですか？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "日射強度 ( W/m2 ) と葉温・飽差 ( VPD ) は 5 秒周期で計測・移動平均処理を行い 、 積算日射量 70 〜 100 J/cm2 ごとに 100 mL/株の精密パルス灌水を実行し 、 換気窓開度 ( ACH ) に連動して CO2 目標濃度 ( 600 〜 1,050 ppm ) を 5 分周期で動的最適化します 。"
+            "text": "アレニウス温度依存性により葉温上昇時はミカエリス定数 Kc と光呼吸補償点 Γ* が急上昇し、400 ppm 下では酸素化反応（光呼吸）ロスが激増するためです。800〜1,000 ppm 施用により光呼吸を 60% 以上競合抑制でき、Anet が最大 +38% 向上するとともに光合成適温が +3〜4 °C 高温側へ拡大します。"
           }
         },
         {
           "@type": "Question",
-          "name": "自社温室の条件に合わせた具体的な設計値・負荷計算はどこで行えますか？",
+          "name": "品種別の V_cmax・J_max・葉温・PPFD から A-Ci 光合成応答曲線をブラウザ上で描画するには？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Inwoovation Lab が提供する無料の Interactive CEA Engineering Calculator および下部の関連エンジニアリング計算ツール群をそのままブラウザ上でご利用いただけます 。"
+            "text": "ファーカー（FvCB）葉面光合成・CO2 速度論シミュレーター で同化曲線を解析できます。"
           }
         }
       ]
@@ -259,22 +259,22 @@
 
         <h2>Section E: 施設園芸エンジニアリング よくある質問 ( Frequently Asked Engineering Questions : FAQ )</h2>
         <div class="faq-block" style="margin-top: 14px;">
-          <p><strong>Q1: 冬季の保温カーテン全閉時に発生する高湿度・結露リスクはどのように制御すべきですか？</strong><br>
-          A1: カーテンを 1.5 % 〜 4.0 % わずかに開けるギャップ制御 ( Screen Gap Purging ) と 、 最低管温度 ( Minimum Pipe Temperature : 38 - 42 °C ) を連動させることで 、 作物の蒸散流を維持しつつ余剰水蒸気を屋根ガラス面の結露樋へ安全に排出できます 。</p>
-          <p><strong>Q2: 日射量に応じた灌水および CO2 施用の最適サンプリング周期はどのくらいですか？</strong><br>
-          A2: 日射強度 ( W/m2 ) と葉温・飽差 ( VPD ) は 5 秒周期で計測・移動平均処理を行い 、 積算日射量 70 〜 100 J/cm2 ごとに 100 mL/株の精密パルス灌水を実行し 、 換気窓開度 ( ACH ) に連動して CO2 目標濃度 ( 600 〜 1,050 ppm ) を 5 分周期で動的最適化します 。</p>
-          <p><strong>Q3: 自社温室の条件に合わせた具体的な設計値・負荷計算はどこで行えますか？</strong><br>
-          A3: Inwoovation Lab が提供する無料の <a href="/smartfarm/co2_calculator.html" style="color: #10b981; font-weight: 700;">Interactive CEA Engineering Calculator</a> および下部の関連エンジニアリング計算ツール群をそのままブラウザ上でご利用いただけます 。</p>
+          <p><strong>Q1: FvCB 光合成生化学モデルにおいて RuBisCO 律速（W_c）と電子伝達 RuBP 再生律速（W_j）はどこで切り替わりますか？</strong><br>
+          A<sub>net</sub> = min(W<sub>c</sub>, W<sub>j</sub>, W<sub>p</sub>) - R<sub>d</sub> において、強光かつ低細胞間隙 CO<sub>2</sub> 分圧（C<sub>i</sub> &lt; 350〜450 μbar）では RuBisCO 最大カルボキシル化速度 V<sub>cmax</sub>（W<sub>c</sub>）が律速し、弱光下または高濃度 CO<sub>2</sub> 域（C<sub>i</sub> &gt; 650 μbar）ではチラコイド電子伝達速度 J<sub>max</sub>（W<sub>j</sub>）へ移行します。</p>
+          <p><strong>Q2: なぜ葉温 25〜28 °C の高温条件ほど CO2 濃度を 800〜1,000 ppm へ高める増収効果が大きいのですか？</strong><br>
+          アレニウス温度依存性により葉温上昇時はミカエリス定数 K<sub>c</sub> と光呼吸補償点 Γ<sup>*</sup> が急上昇し、400 ppm 下では酸素化反応（光呼吸）ロスが激増するためです。800〜1,000 ppm 施用により光呼吸を 60% 以上競合抑制でき、A<sub>net</sub> が最大 +38% 向上するとともに光合成適温が +3〜4 °C 高温側へ拡大します。</p>
+          <p><strong>Q3: 品種別の V_cmax・J_max・葉温・PPFD から A-Ci 光合成応答曲線をブラウザ上で描画するには？</strong><br>
+          <a href="/tools/co2-enrichment-leaf-photosynthesis-farquhar-calculator.html" style="color: #10b981; font-weight: 700;">ファーカー（FvCB）葉面光合成・CO<sub>2</sub> 速度論シミュレーター</a> で同化曲線を解析できます。</p>
         </div>
       </section>
 <!-- INW-DEEP-ENG-END -->
 
 <!-- INW-LIVE-WIDGET-START -->
 <section class="inw-live-widget-sandbox" style="margin: 32px 0; padding: 24px; background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 16px; box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);">
-  <h3 style="margin: 0 0 8px 0; font-size: 1.2rem; color: #38bdf8; font-weight: 800;">🧪 リアルタイム養液栽培 A/B 原液タンク & EC 希釈シミュレーター</h3>
-  <p style="margin: 0 0 16px 0; font-size: 0.92rem; color: #94a3b8; line-height: 1.6;">原水EC・目標EC・希釈倍率から、A/B原液タンク注入量と必要肥料塩類質量をリアルタイムに計算します。</p>
+  <h3 style="margin: 0 0 8px 0; font-size: 1.2rem; color: #38bdf8; font-weight: 800;">🫧 リアルタイム温室 CO₂ 施用 & 換気ロス動態シミュレーター</h3>
+  <p style="margin: 0 0 16px 0; font-size: 0.92rem; color: #94a3b8; line-height: 1.6;">目標CO₂濃度・換気回数 (ACH)・群落光合成吸収速度から、時間あたりの必要CO₂施用量 (kg/h) をリアルタイムに算出します。</p>
   <div style="display: flex; justify-content: center; width: 100%; overflow: hidden;">
-    <iframe src="/embed/fertigation-ec-widget.html" width="380" height="460" loading="lazy" title="🧪 リアルタイム養液栽培 A/B 原液タンク & EC 希釈シミュレーター" style="border: none; border-radius: 14px; max-width: 100%;"></iframe>
+    <iframe src="/embed/co2-enrichment-widget.html" width="380" height="460" loading="lazy" title="🫧 リアルタイム温室 CO₂ 施用 & 換気ロス動態シミュレーター" style="border: none; border-radius: 14px; max-width: 100%;"></iframe>
   </div>
 </section>
 <!-- INW-LIVE-WIDGET-END -->

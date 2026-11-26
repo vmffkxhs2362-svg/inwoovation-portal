@@ -57,7 +57,7 @@
         "url": "https://inwoovation.com"
       },
       "datePublished": "2026-09-01",
-      "dateModified": "2026-11-21",
+      "dateModified": "2026-11-26",
       "mainEntityOfPage": "https://inwoovation.com/articles/ja/article-35-greenhouse-haf-fan-cfd-modeling-jp.html"
     },
     {
@@ -88,26 +88,26 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "冬季の保温カーテン全閉時に発生する高湿度・結露リスクはどのように制御すべきですか？",
+          "name": "群落内の過湿ポケットを解消しつつ風ストレスによる気孔閉鎖を招かない水平循環扇（HAF）の最適風速は？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "カーテンを 1.5 % 〜 4.0 % わずかに開けるギャップ制御 ( Screen Gap Purging ) と 、 最低管温度 ( Minimum Pipe Temperature : 38 - 42 °C ) を連動させることで 、 作物の蒸散流を維持しつつ余剰水蒸気を屋根ガラス面の結露樋へ安全に排出できます 。"
+            "text": "葉群内で 0.30〜0.50 m/s の均一な水平気流を維持すると、葉面境界層抵抗 ra が 250 s/m 超から 80 s/m 未満へ薄膜化して区画内温度ムラが ±0.4 °C 以内に収束し、物理的風害閾値（> 1.0 m/s）を避けながら結露（RH > 90%）を防止できます。"
           }
         },
         {
           "@type": "Question",
-          "name": "日射量に応じた灌水および CO2 施用の最適サンプリング周期はどのくらいですか？",
+          "name": "乱流自由噴流の減衰則に基づく HAF ファンの設置間隔とレーストラック配置の設計指針は？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "日射強度 ( W/m2 ) と葉温・飽差 ( VPD ) は 5 秒周期で計測・移動平均処理を行い 、 積算日射量 70 〜 100 J/cm2 ごとに 100 mL/株の精密パルス灌水を実行し 、 換気窓開度 ( ACH ) に連動して CO2 目標濃度 ( 600 〜 1,050 ppm ) を 5 分周期で動的最適化します 。"
+            "text": "中心軸風速減衰式 u(x) = u0 · (Kjet · D0 / x) に従い、口径 400〜500 mm ファンを 12〜18 m 間隔（羽根径 D0 の 25〜30 倍）で往路・復路交互の環状気流（レーストラック方式）に配置することで、吐出風量の約 4 倍の周囲空気を誘引循環させます。"
           }
         },
         {
           "@type": "Question",
-          "name": "自社温室の条件に合わせた具体的な設計値・負荷計算はどこで行えますか？",
+          "name": "棟長・軒高・LAI 抵抗係数から HAF ファン台数と境界層シャーウッド数を計算するには？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Inwoovation Lab が提供する無料の Interactive CEA Engineering Calculator および下部の関連エンジニアリング計算ツール群をそのままブラウザ上でご利用いただけます 。"
+            "text": "温室微気象 CFD・HAF 循環気流オプティマイザー で気流分布と所要電力を検証できます。"
           }
         }
       ]
@@ -259,12 +259,12 @@
 
         <h2>Section E: 施設園芸エンジニアリング よくある質問 ( Frequently Asked Engineering Questions : FAQ )</h2>
         <div class="faq-block" style="margin-top: 14px;">
-          <p><strong>Q1: 冬季の保温カーテン全閉時に発生する高湿度・結露リスクはどのように制御すべきですか？</strong><br>
-          A1: カーテンを 1.5 % 〜 4.0 % わずかに開けるギャップ制御 ( Screen Gap Purging ) と 、 最低管温度 ( Minimum Pipe Temperature : 38 - 42 °C ) を連動させることで 、 作物の蒸散流を維持しつつ余剰水蒸気を屋根ガラス面の結露樋へ安全に排出できます 。</p>
-          <p><strong>Q2: 日射量に応じた灌水および CO2 施用の最適サンプリング周期はどのくらいですか？</strong><br>
-          A2: 日射強度 ( W/m2 ) と葉温・飽差 ( VPD ) は 5 秒周期で計測・移動平均処理を行い 、 積算日射量 70 〜 100 J/cm2 ごとに 100 mL/株の精密パルス灌水を実行し 、 換気窓開度 ( ACH ) に連動して CO2 目標濃度 ( 600 〜 1,050 ppm ) を 5 分周期で動的最適化します 。</p>
-          <p><strong>Q3: 自社温室の条件に合わせた具体的な設計値・負荷計算はどこで行えますか？</strong><br>
-          A3: Inwoovation Lab が提供する無料の <a href="/smartfarm/vpd.html" style="color: #10b981; font-weight: 700;">Interactive CEA Engineering Calculator</a> および下部の関連エンジニアリング計算ツール群をそのままブラウザ上でご利用いただけます 。</p>
+          <p><strong>Q1: 群落内の過湿ポケットを解消しつつ風ストレスによる気孔閉鎖を招かない水平循環扇（HAF）の最適風速は？</strong><br>
+          葉群内で 0.30〜0.50 m/s の均一な水平気流を維持すると、葉面境界層抵抗 r<sub>a</sub> が 250 s/m 超から 80 s/m 未満へ薄膜化して区画内温度ムラが ±0.4 °C 以内に収束し、物理的風害閾値（&gt; 1.0 m/s）を避けながら結露（RH &gt; 90%）を防止できます。</p>
+          <p><strong>Q2: 乱流自由噴流の減衰則に基づく HAF ファンの設置間隔とレーストラック配置の設計指針は？</strong><br>
+          中心軸風速減衰式 u(x) = u<sub>0</sub> · (K<sub>jet</sub> · D<sub>0</sub> / x) に従い、口径 400〜500 mm ファンを 12〜18 m 間隔（羽根径 D<sub>0</sub> の 25〜30 倍）で往路・復路交互の環状気流（レーストラック方式）に配置することで、吐出風量の約 4 倍の周囲空気を誘引循環させます。</p>
+          <p><strong>Q3: 棟長・軒高・LAI 抵抗係数から HAF ファン台数と境界層シャーウッド数を計算するには？</strong><br>
+          <a href="/tools/greenhouse-microclimate-cfd-air-velocity-optimizer.html" style="color: #10b981; font-weight: 700;">温室微気象 CFD・HAF 循環気流オプティマイザー</a> で気流分布と所要電力を検証できます。</p>
         </div>
       </section>
 <!-- INW-DEEP-ENG-END -->

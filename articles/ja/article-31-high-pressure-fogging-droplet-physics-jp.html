@@ -57,7 +57,7 @@
         "url": "https://inwoovation.com"
       },
       "datePublished": "2026-09-01",
-      "dateModified": "2026-11-21",
+      "dateModified": "2026-11-26",
       "mainEntityOfPage": "https://inwoovation.com/articles/ja/article-31-high-pressure-fogging-droplet-physics-jp.html"
     },
     {
@@ -88,26 +88,26 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "冬季の保温カーテン全閉時に発生する高湿度・結露リスクはどのように制御すべきですか？",
+          "name": "細霧冷房システムはなぜ低圧（10〜15 bar）ではなく 70 bar 以上の高圧ポンプで微粒化しなければならないのですか？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "カーテンを 1.5 % 〜 4.0 % わずかに開けるギャップ制御 ( Screen Gap Purging ) と 、 最低管温度 ( Minimum Pipe Temperature : 38 - 42 °C ) を連動させることで 、 作物の蒸散流を維持しつつ余剰水蒸気を屋根ガラス面の結露樋へ安全に排出できます 。"
+            "text": "15 bar 未満の低圧ノズルではザウター平均粒径 D32 > 45 μm の粗大液滴が生成され、蒸発前に葉面へ落下して灰色かび病や葉焼けの原因となります。70〜100 bar の高圧ノズルは D32 < 10 μm の超微細ミストを生成し、d2 蒸発則に従い 1.5 秒以内に空中で完全気化します。"
           }
         },
         {
           "@type": "Question",
-          "name": "日射量に応じた灌水および CO2 施用の最適サンプリング周期はどのくらいですか？",
+          "name": "70 bar 高圧細霧冷房による断熱蒸発冷却は、夏季の温室気温を最大何 °C 低下させられますか？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "日射強度 ( W/m2 ) と葉温・飽差 ( VPD ) は 5 秒周期で計測・移動平均処理を行い 、 積算日射量 70 〜 100 J/cm2 ごとに 100 mL/株の精密パルス灌水を実行し 、 換気窓開度 ( ACH ) に連動して CO2 目標濃度 ( 600 〜 1,050 ppm ) を 5 分周期で動的最適化します 。"
+            "text": "霧化した純水 1 kg あたり蒸発潜熱 hfg ≈ 2,450 kJ を顕熱から奪い、モリエル線図上の湿球温度線に沿って空気を冷却します。外気 VPD > 2.0 kPa の盛夏晴天時に天窓換気と協調制御することで、葉濡れゼロのまま室温を 4.5〜7.0 °C 引き下げ、VPD を 0.85〜1.15 kPa に維持できます。"
           }
         },
         {
           "@type": "Question",
-          "name": "自社温室の条件に合わせた具体的な設計値・負荷計算はどこで行えますか？",
+          "name": "口径 0.15 mm のルビー／セラミック細霧ノズルの目詰まりを防ぐ原水処理基準は？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Inwoovation Lab が提供する無料の Interactive CEA Engineering Calculator および下部の関連エンジニアリング計算ツール群をそのままブラウザ上でご利用いただけます 。"
+            "text": "5 μm・1 μm 精密フィルターに加え、逆浸透膜（RO：EC < 0.05 dS/m）による脱塩と UV-C 殺菌が必須です。必要噴霧量と冷却能力は 高圧細霧液滴・蒸発冷却シミュレーター で設計できます。"
           }
         }
       ]
@@ -153,7 +153,7 @@
     </header>
 
     <div class="article-body">
-      <p class="lead">低圧噴霧システムは粗大な液滴（> 45\ μm）を生成し、葉面を濡らして病害リスクを高めます。一方、<strong>70 barの高圧細霧システムは微小なザウター平均粒径（D<sub>32</sub> < 10\ μm）</strong>に微粒化し、空中で瞬時に完全蒸発します。</p>
+      <p class="lead">低圧噴霧システムは粗大な液滴（&gt; 45 μm）を生成し、葉面を濡らして病害リスクを高めます。一方、<strong>70 barの高圧細霧システムは微小なザウター平均粒径（D<sub>32</sub> &lt; 10 μm）</strong>に微粒化し、空中で瞬時に完全蒸発します。</p>
 
       <h2>1. 完全気化と断熱冷却効果</h2>
       <p>微細液滴は1.5秒未満で気化し、気化潜熱（2,450 kJ/kg）を吸収することで、作物を濡らすことなく室温を最大<strong>-7.0 ℃</strong>低下させます。</p>
@@ -259,12 +259,12 @@
 
         <h2>Section E: 施設園芸エンジニアリング よくある質問 ( Frequently Asked Engineering Questions : FAQ )</h2>
         <div class="faq-block" style="margin-top: 14px;">
-          <p><strong>Q1: 冬季の保温カーテン全閉時に発生する高湿度・結露リスクはどのように制御すべきですか？</strong><br>
-          A1: カーテンを 1.5 % 〜 4.0 % わずかに開けるギャップ制御 ( Screen Gap Purging ) と 、 最低管温度 ( Minimum Pipe Temperature : 38 - 42 °C ) を連動させることで 、 作物の蒸散流を維持しつつ余剰水蒸気を屋根ガラス面の結露樋へ安全に排出できます 。</p>
-          <p><strong>Q2: 日射量に応じた灌水および CO2 施用の最適サンプリング周期はどのくらいですか？</strong><br>
-          A2: 日射強度 ( W/m2 ) と葉温・飽差 ( VPD ) は 5 秒周期で計測・移動平均処理を行い 、 積算日射量 70 〜 100 J/cm2 ごとに 100 mL/株の精密パルス灌水を実行し 、 換気窓開度 ( ACH ) に連動して CO2 目標濃度 ( 600 〜 1,050 ppm ) を 5 分周期で動的最適化します 。</p>
-          <p><strong>Q3: 自社温室の条件に合わせた具体的な設計値・負荷計算はどこで行えますか？</strong><br>
-          A3: Inwoovation Lab が提供する無料の <a href="/tools/psychrometric-mollier-greenhouse-dehumidifier.html" style="color: #10b981; font-weight: 700;">Interactive CEA Engineering Calculator</a> および下部の関連エンジニアリング計算ツール群をそのままブラウザ上でご利用いただけます 。</p>
+          <p><strong>Q1: 細霧冷房システムはなぜ低圧（10〜15 bar）ではなく 70 bar 以上の高圧ポンプで微粒化しなければならないのですか？</strong><br>
+          15 bar 未満の低圧ノズルではザウター平均粒径 D<sub>32</sub> &gt; 45 μm の粗大液滴が生成され、蒸発前に葉面へ落下して灰色かび病や葉焼けの原因となります。70〜100 bar の高圧ノズルは D<sub>32</sub> &lt; 10 μm の超微細ミストを生成し、d<sup>2</sup> 蒸発則に従い 1.5 秒以内に空中で完全気化します。</p>
+          <p><strong>Q2: 70 bar 高圧細霧冷房による断熱蒸発冷却は、夏季の温室気温を最大何 °C 低下させられますか？</strong><br>
+          霧化した純水 1 kg あたり蒸発潜熱 h<sub>fg</sub> ≈ 2,450 kJ を顕熱から奪い、モリエル線図上の湿球温度線に沿って空気を冷却します。外気 VPD &gt; 2.0 kPa の盛夏晴天時に天窓換気と協調制御することで、葉濡れゼロのまま室温を 4.5〜7.0 °C 引き下げ、VPD を 0.85〜1.15 kPa に維持できます。</p>
+          <p><strong>Q3: 口径 0.15 mm のルビー／セラミック細霧ノズルの目詰まりを防ぐ原水処理基準は？</strong><br>
+          5 μm・1 μm 精密フィルターに加え、逆浸透膜（RO：EC &lt; 0.05 dS/m）による脱塩と UV-C 殺菌が必須です。必要噴霧量と冷却能力は <a href="/tools/fogging-nozzle-droplet-evaporative-cooling-engine.html" style="color: #10b981; font-weight: 700;">高圧細霧液滴・蒸発冷却シミュレーター</a> で設計できます。</p>
         </div>
       </section>
 <!-- INW-DEEP-ENG-END -->

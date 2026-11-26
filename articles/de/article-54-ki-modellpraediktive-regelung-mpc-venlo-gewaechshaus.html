@@ -57,7 +57,7 @@
         "url": "https://inwoovation.com"
       },
       "datePublished": "2026-09-01",
-      "dateModified": "2026-11-24",
+      "dateModified": "2026-11-26",
       "mainEntityOfPage": "https://inwoovation.com/articles/de/article-54-ki-modellpraediktive-regelung-mpc-venlo-gewaechshaus.html"
     },
     {
@@ -65,26 +65,26 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Wie verhindert man bei geschlossenen Energieschirmen einen gefährlichen Feuchtestau im Bestand?",
+          "name": "Worin liegt der physikalische Hauptvorteil einer multivariablen KI-MPC gegenüber klassischen PID-Klimacomputer-Sollwertkurven?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Durch einen geregelten Feuchtespalt (Screen Gap) von 1,5% bis 4,0% in Kombination mit einer Mindest-Rohrtemperatur von 38–42 °C wird ein definierter konvektiver Auftrieb erzeugt, der Wasserdampf an die kalte Glasdachfläche transportiert, wo er kontrolliert an den Kondensatrinne-Profilen abgeleitet wird."
+            "text": "Während PID-Regler erst reaktiv nach einer Regelabweichung eingreifen, integriert die MPC die gekoppelte Wärme- und Feuchte-Zustandsraumdynamik über einen 24–48-h-Wetterhorizont vorab: Sie nutzt kostenlose Nachmittagssonne als thermischen Puffer, führt 45 min vor Sonnenuntergang eine gezielte Taupunkt-Trockenlüftung durch und spart 14–22 % Primärenergie."
           }
         },
         {
           "@type": "Question",
-          "name": "Welches Abtastintervall ist für die Kopplung von Strahlungssumme und Bewässerungs- bzw. Klimasteuerung optimal?",
+          "name": "Wie senkt die direkte Anbindung der MPC an die EPEX-SPOT-Day-Ahead-Strombörse die Belichtungskosten um 18–26 %?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Strahlungs- und Mikroklimadaten werden im 5-Sekunden-Takt erfasst, über ein gleitendes 60-Sekunden-Fenster gefiltert und alle 5 Minuten an den MPC-Optimierer übergeben, während Bewässerungsimpulse direkt über das kumulierte Einstrahlungsintegral (J/cm2) ausgelöst werden."
+            "text": "Bei konstanten Tageslichtintegral-Vorgaben (z. B. DLI = 24 mol·m-2·d-1) verschiebt der Optimierer den LED-Leistungseinsatz (200–350 μmol·m-2·s-1) gezielt in günstige Nacht- oder PV-Überschussstunden und dimmt die Leuchten während teurer Abendspitzen automatisch herunter."
           }
         },
         {
           "@type": "Question",
-          "name": "Wie lassen sich die physikalischen Parameter dieses Artikels für das eigene Gewächshaus berechnen?",
+          "name": "Welche harten agronomischen Nebenbedingungen verhindern in der MPC-Kostenfunktion Fruchtplatzer und Botrytis?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Nutzen Sie direkt unseren interaktiven Interactive CEA Engineering Calculator sowie die unten verlinkten Simulationswerkzeuge von Inwoovation Lab."
+            "text": "Der Solver erzwingt in jedem 5-Minuten-Schritt strikte Zustandsbänder wie 15 °C ≤ Tin ≤ 27 °C, 0,5 kPa ≤ VPD ≤ 1,5 kPa sowie maximale Aufheizgradienten ΔT/Δt ≤ 2,0 K/h; erproben Sie diese Mehrgrößenregelung im Autonomen KI-MPC-Klimaregler-Simulator."
           }
         }
       ]
@@ -162,7 +162,7 @@
       </div>
       <p>Hierbei bedeuten:</p>
       <ul>
-        <li><strong>C<sub>air</sub> · V</strong>: Effektive thermische Gesamtkapazität des Gewächshausluftvolumens ($J/K$).</li>
+        <li><strong>C<sub>air</sub> · V</strong>: Effektive thermische Gesamtkapazität des Gewächshausluftvolumens (J/K).</li>
         <li><strong>Q&#775;<sub>rohr</sub>(t)</strong>: Wärmeleistung der Rohrheizung (W).</li>
         <li><strong>U<sub>ges</sub>(t)</strong>: Dynamischer Wärmedurchgangskoeffizient (W/m<sup>2</sup>· K), der bei Schließen doppelter Energieschirme (z. B. Svensson Luxous + Obscura) von 6,5 W/m<sup>2K</sup> (Einfachglas 4 mm) auf unter 2,2 W/m<sup>2K</sup> absinkt.</li>
         <li><strong>V&#775;<sub>lueft</sub>(t)</strong>: Natürlicher Volumenstrom durch Firstlüftungsklappen infolge von Auftriebs- und Winddruckeffekten (m<sup>3</sup>/s).</li>
@@ -327,22 +327,22 @@
 
         <h2>Section E: Häufig gestellte Ingenieurfragen (FAQ)</h2>
         <div class="faq-block" style="margin-top: 14px;">
-          <p><strong>F1: Wie verhindert man bei geschlossenen Energieschirmen einen gefährlichen Feuchtestau im Bestand?</strong><br>
-          Durch einen geregelten <em>Feuchtespalt (Screen Gap)</em> von 1,5% bis 4,0% in Kombination mit einer Mindest-Rohrtemperatur von 38–42 °C wird ein definierter konvektiver Auftrieb erzeugt, der Wasserdampf an die kalte Glasdachfläche transportiert, wo er kontrolliert an den Kondensatrinne-Profilen abgeleitet wird.</p>
-          <p><strong>F2: Welches Abtastintervall ist für die Kopplung von Strahlungssumme und Bewässerungs- bzw. Klimasteuerung optimal?</strong><br>
-          Strahlungs- und Mikroklimadaten werden im 5-Sekunden-Takt erfasst, über ein gleitendes 60-Sekunden-Fenster gefiltert und alle 5 Minuten an den MPC-Optimierer übergeben, während Bewässerungsimpulse direkt über das kumulierte Einstrahlungsintegral (J/cm<sup>2</sup>) ausgelöst werden.</p>
-          <p><strong>F3: Wie lassen sich die physikalischen Parameter dieses Artikels für das eigene Gewächshaus berechnen?</strong><br>
-          Nutzen Sie direkt unseren interaktiven <a href="/smartfarm/heat_loss.html" style="color: #10b981; font-weight: 700;">Interactive CEA Engineering Calculator</a> sowie die unten verlinkten Simulationswerkzeuge von Inwoovation Lab.</p>
+          <p><strong>F1: Worin liegt der physikalische Hauptvorteil einer multivariablen KI-MPC gegenüber klassischen PID-Klimacomputer-Sollwertkurven?</strong><br>
+          Während PID-Regler erst reaktiv nach einer Regelabweichung eingreifen, integriert die MPC die gekoppelte Wärme- und Feuchte-Zustandsraumdynamik über einen 24–48-h-Wetterhorizont vorab: Sie nutzt kostenlose Nachmittagssonne als thermischen Puffer, führt 45 min vor Sonnenuntergang eine gezielte Taupunkt-Trockenlüftung durch und spart 14–22 % Primärenergie.</p>
+          <p><strong>F2: Wie senkt die direkte Anbindung der MPC an die EPEX-SPOT-Day-Ahead-Strombörse die Belichtungskosten um 18–26 %?</strong><br>
+          Bei konstanten Tageslichtintegral-Vorgaben (z. B. DLI = 24 mol·m<sup>-2</sup>·d<sup>-1</sup>) verschiebt der Optimierer den LED-Leistungseinsatz (200–350 μmol·m<sup>-2</sup>·s<sup>-1</sup>) gezielt in günstige Nacht- oder PV-Überschussstunden und dimmt die Leuchten während teurer Abendspitzen automatisch herunter.</p>
+          <p><strong>F3: Welche harten agronomischen Nebenbedingungen verhindern in der MPC-Kostenfunktion Fruchtplatzer und Botrytis?</strong><br>
+          Der Solver erzwingt in jedem 5-Minuten-Schritt strikte Zustandsbänder wie 15 °C ≤ T<sub>in</sub> ≤ 27 °C, 0,5 kPa ≤ VPD ≤ 1,5 kPa sowie maximale Aufheizgradienten ΔT/Δt ≤ 2,0 K/h; erproben Sie diese Mehrgrößenregelung im <a href="/tools/greenhouse-autonomous-ai-climate-controller.html" style="color: #10b981; font-weight: 700;">Autonomen KI-MPC-Klimaregler-Simulator</a>.</p>
         </div>
       </section>
 <!-- INW-DEEP-ENG-END -->
 
 <!-- INW-LIVE-WIDGET-START -->
 <section class="inw-live-widget-sandbox" style="margin: 32px 0; padding: 24px; background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 16px; box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);">
-  <h3 style="margin: 0 0 8px 0; font-size: 1.2rem; color: #38bdf8; font-weight: 800;">🧪 Interaktiver A/B-Stammlösungs- & EC-Düngemischer-Simulator</h3>
-  <p style="margin: 0 0 16px 0; font-size: 0.92rem; color: #94a3b8; line-height: 1.6;">Berechnen Sie das A/B-Stammlösungsvolumen und die benötigte Düngesalzmasse für Ihren Ziel-EC-Wert unter Berücksichtigung des Rohwassers.</p>
+  <h3 style="margin: 0 0 8px 0; font-size: 1.2rem; color: #38bdf8; font-weight: 800;">🔥 Interaktiver DIN V 18599 Heizlast- & Energieschirm-Simulator</h3>
+  <p style="margin: 0 0 16px 0; font-size: 0.92rem; color: #94a3b8; line-height: 1.6;">Berechnen Sie Spitzenheizlast (kW), spezifische Heizleistung (W/m²) und Erdgasbedarf mit Energieschirm-Einsparung direkt auf dieser Seite.</p>
   <div style="display: flex; justify-content: center; width: 100%; overflow: hidden;">
-    <iframe src="/embed/fertigation-ec-widget.html" width="380" height="460" loading="lazy" title="🧪 Interaktiver A/B-Stammlösungs- & EC-Düngemischer-Simulator" style="border: none; border-radius: 14px; max-width: 100%;"></iframe>
+    <iframe src="/embed/heating-loss-widget.html" width="380" height="460" loading="lazy" title="🔥 Interaktiver DIN V 18599 Heizlast- & Energieschirm-Simulator" style="border: none; border-radius: 14px; max-width: 100%;"></iframe>
   </div>
 </section>
 <!-- INW-LIVE-WIDGET-END -->

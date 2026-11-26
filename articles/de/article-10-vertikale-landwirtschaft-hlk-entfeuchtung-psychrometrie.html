@@ -72,7 +72,7 @@
         "url": "https://inwoovation.com"
       },
       "datePublished": "2026-11-06",
-      "dateModified": "2026-11-21",
+      "dateModified": "2026-11-26",
       "mainEntityOfPage": "https://inwoovation.com/articles/de/article-10-vertikale-landwirtschaft-hlk-entfeuchtung-psychrometrie.html"
     },
     {
@@ -80,26 +80,26 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Welche physikalischen und normativen Grundlagen bestimmen das Thema „HLK-Dimensionierung und psychrometrische Entfeuchtung in der vertikalen Landwirtschaft (Vertical Farming): Sensible vs. latente Kühllast & CFD-Strömung“ im Erwerbsgartenbau?",
+          "name": "Warum sinkt der Sensible Heat Ratio (SHR) in geschlossenen Vertical Farms bei dichtem Bestand (LAI > 3,5) auf Werte von 0,30 bis 0,45?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Ingenieurleitfaden (DE Vol. 10) zur HLK-Auslegung für kommerzielle Indoor Vertical Farms: Berechnung sensibler und latenter Kühllasten (SHR), Mollier-h-x-Psychrometrie, Wärmerückgewinnung und CFD-Luftführung gegen Tipburn. Alle Auslegungsparameter orientieren sich an verbindlichen europäischen Ingenieurnormen (DIN EN 13031-1, DIN V 18599, FAO-56 Penman-Monteith sowie DWA-/KTBL-Richtwerten) für kommerzielle Venlo-Gewächshäuser."
+            "text": "Im thermisch isolierten Indoor-Kulturraum stammt nahezu die gesamte Energiezufuhr aus der LED-Belichtung; ein geschlossener Pflanzenbestand setzt davon 55 % bis 70 % über stomatäre Transpiration direkt in latente Verdunstungswärme (Wasserdampf) um. Standard-Komfortklimageräte (SHR ≈ 0,75–0,85) kühlen den Raum zu schnell ab, ohne den Dampfstrom auszukondensieren, weshalb dedizierte Prozessentfeuchter erforderlich sind."
           }
         },
         {
           "@type": "Question",
-          "name": "Wie lassen sich die Kennzahlen aus „HLK-Dimensionierung und psychrometrische Entfeuchtung in der vertikalen Landwirtschaft (Vertical Farming): Sensible vs. latente Kühllast & CFD-Strömung“ in der Klimacomputer- und Kultursteuerung umsetzen?",
+          "name": "Wie wird die Entfeuchtung mit interner Wärmerückgewinnung im Mollier-h-x-Diagramm ohne Kälteschock ausgelegt?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Produktionsleiter erfassen Blatttemperatur, Einstrahlung, Substratfeuchte und Drän-EC kontinuierlich über kalibrierte Sensoren und überführen die berechneten Zielgrößen als gleitende Sollwertkurven in die Klimacomputer- und Bewässerungsregelung."
+            "text": "Die feuchte Umluft (z. B. 22 °C, 78 % rF) wird am Verdampfer gezielt unter den Taupunkt (ca. 10–12 °C) abgekühlt, um das Transpirationswasser abzuscheiden, und anschließend über ein nachgeschaltetes Heißgas-Nachheizregister (Reheat) isobar wieder auf die gewünschte Zulufttemperatur erwärmt, sodass die latente Kondensationswärme zurückgewonnen und Kondensation am Bestand vermieden wird."
           }
         },
         {
           "@type": "Question",
-          "name": "Welche Förderprogramme unterstützen entsprechende Effizienz- und Modernisierungsinvestitionen?",
+          "name": "Welche Überströmgeschwindigkeit in perforierten CFD-Luftschläuchen verhindert Tipburn (Innenbrand) im Salatherz?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Je nach Bundesland und Systemgrenze kommen das BLE-Bundesprogramm Energieeffizienz (Modul 1–4), Rentenbank-Umweltkredite (LR-Top/LR-Premium) sowie landesspezifische Agrarinvestitionsförderprogramme (AFP) in Betracht."
+            "text": "Da Kalzium ausschließlich passiv mit dem Xylem-Transpirationsstrom in junge Herzblätter gelangt, muss die laminare Grenzschicht (r_a) über dem Meristem aufgebrochen werden. Perforierte Überkopf-Luftschläuche (Air Socks) werden mittels CFD auf eine gleichmäßige vertikale bzw. schräge Anströmgeschwindigkeit von 0,35 bis 0,65 m/s in Bestandshöhe ausgelegt."
           }
         }
       ]
@@ -109,6 +109,24 @@
     </script>
 </head>
 <body>
+<!-- INW-STD-NAV-START -->
+<nav class="inw-top-nav" aria-label="Main Navigation" style="background: #0f172a; border-bottom: 1px solid #1e293b; padding: 12px 20px; font-family: system-ui, -apple-system, sans-serif; box-sizing: border-box; width: 100%;">
+  <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px;">
+    <a href="/index.html" style="color: #10b981; font-weight: 800; font-size: 1.15rem; text-decoration: none; letter-spacing: -0.02em;">Inwoovation Lab</a>
+    <div style="display: flex; flex-wrap: wrap; gap: 14px; font-size: 0.9rem;">
+      <a href="/index.html" style="color: #e2e8f0; text-decoration: none;">Home</a>
+      <a href="/smartfarm/vpd.html" style="color: #e2e8f0; text-decoration: none;">Calculators</a>
+      <a href="/articles/index.html" style="color: #38bdf8; font-weight: 600; text-decoration: none;">Articles</a>
+      <a href="/wiki/index.html" style="color: #e2e8f0; text-decoration: none;">Wiki</a>
+      <a href="/climate/index.html" style="color: #e2e8f0; text-decoration: none;">Climate Hub</a>
+      <a href="/crops/index.html" style="color: #e2e8f0; text-decoration: none;">Crops</a>
+      <a href="/tools/venlocad-3d.html" style="color: #10b981; font-weight: 600; text-decoration: none;">VenloCAD 3D</a>
+      <button type="button" onclick="window.InwooPalette && window.InwooPalette.open()" style="background: rgba(15, 23, 42, 0.9); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.4); padding: 6px 12px; border-radius: 6px; font-size: 0.85rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">🔍 Search <kbd style="background: rgba(255,255,255,0.1); padding: 1px 5px; border-radius: 4px; font-size: 0.72rem;">Ctrl+K</kbd></button>
+      <a href="/about.html" style="color: #e2e8f0; text-decoration: none;">About</a>
+    </div>
+  </div>
+</nav>
+<!-- INW-STD-NAV-END -->
     <div class="article-container">
         <div>
             <a href="../../guides.html" class="back-link">&larr; Zurück zur Übersicht (Engineering Guides)</a>
@@ -144,7 +162,7 @@ Q_sens = Q_ges - Q_lat                   (Sensible Wärmelast)
 SHR = Q_sens / (Q_sens + Q_lat)          (Sensible Heat Ratio: typ. 0,32 – 0,48)
         </div>
 
-        <p>Lediglich 1–2 % der PAR-Strahlung werden dauerhaft als chemische Bindungsenergie in der Biomasse (Assimilate) gespeichert. Die übrigen 60 % treffen auf die Blattoberfläche und treiben dort den Phasenwechsel von flüssigem Xylemwasser zu Wasserdampf an. Das resultierende <strong>Sensible Heat Ratio (SHR)</strong> sinkt bei geschlossenem Bestand ($LAI &gt; 3{,}5$) während der Lichtphase auf Werte zwischen <strong>$0{,}32$ und $0{,}45$</strong>.</p>
+        <p>Lediglich 1–2 % der PAR-Strahlung werden dauerhaft als chemische Bindungsenergie in der Biomasse (Assimilate) gespeichert. Die übrigen 60 % treffen auf die Blattoberfläche und treiben dort den Phasenwechsel von flüssigem Xylemwasser zu Wasserdampf an. Das resultierende <strong>Sensible Heat Ratio (SHR)</strong> sinkt bei geschlossenem Bestand (LAI &gt; 3,5) während der Lichtphase auf Werte zwischen <strong>0,32 und 0,45</strong>.</p>
 
         <table class="data-table">
             <thead>
@@ -158,7 +176,7 @@ SHR = Q_sens / (Q_sens + Q_lat)          (Sensible Heat Ratio: typ. 0,32 – 0,4
             </thead>
             <tbody>
                 <tr>
-                    <td><strong>Keimung / Jungpflanzen ($LAI &lt; 0{,}8$)</strong></td>
+                    <td><strong>Keimung / Jungpflanzen (LAI &lt; 0,8)</strong></td>
                     <td><code>0,70 – 0,82</code></td>
                     <td>70 % – 82 %</td>
                     <td>18 % – 30 %</td>
@@ -260,22 +278,17 @@ SHR = Q_sens / (Q_sens + Q_lat)          (Sensible Heat Ratio: typ. 0,32 – 0,4
             <li><a href="article-38-xylem-kalzium-bluetenendfaeule.html">DE Vol. 38: Xylem-Kalziumtransport und Vermeidung von Tipburn / Blütenendfäule</a></li>
         </ul>
     </div>
-
-  
-<section class="inw-synced-faq-section" style="max-width: 1060px; margin: 28px auto; padding: 24px; background: rgba(15, 23, 42, 0.88); border: 1px solid rgba(16, 185, 129, 0.32); border-radius: 16px; text-align: left;">
-  <h3 style="margin: 0 0 14px 0; font-size: 1.15rem; color: #10b981; font-weight: 800;">❓ Häufig gestellte Ingenieurfragen (Technische FAQ)</h3>
+<section aria-label="Technical FAQ" style="max-width: 1060px; margin: 32px auto; padding: 26px; background: rgba(15, 23, 42, 0.88); border: 1px solid rgba(16, 185, 129, 0.32); border-radius: 16px; text-align: left;">
+  <h2 style="margin: 0 0 16px 0; font-family: 'Outfit', sans-serif; font-size: 1.3rem; color: #10b981; font-weight: 800;">❓ Häufig gestellte Ingenieurfragen (Praxis-FAQ)</h2>
   <div>
-    <div style="margin-bottom:14px; padding:14px 18px; background:rgba(15,23,42,0.65); border-left:3px solid #10b981; border-radius:8px;">
-      <h4 style="margin:0 0 6px 0; color:#f8fafc; font-size:0.98rem;">Welche physikalischen und normativen Grundlagen bestimmen das Thema „HLK-Dimensionierung und psychrometrische Entfeuchtung in der vertikalen Landwirtschaft (Vertical Farming): Sensible vs. latente Kühllast &amp; CFD-Strömung“ im Erwerbsgartenbau?</h4>
-      <p style="margin:0; color:#cbd5e1; font-size:0.9rem; line-height:1.65;">Ingenieurleitfaden (DE Vol. 10) zur HLK-Auslegung für kommerzielle Indoor Vertical Farms: Berechnung sensibler und latenter Kühllasten (SHR), Mollier-h-x-Psychrometrie, Wärmerückgewinnung und CFD-Luftführung gegen Tipburn. Alle Auslegungsparameter orientieren sich an verbindlichen europäischen Ingenieurnormen (DIN EN 13031-1, DIN V 18599, FAO-56 Penman-Monteith sowie DWA-/KTBL-Richtwerten) für kommerzielle Venlo-Gewächshäuser.</p>
+    <div class="faq-item" style="margin-bottom:14px; padding:16px 20px; background:rgba(15,23,42,0.7); border-left:4px solid #10b981; border-radius:10px;">
+      <p style="margin:0; line-height:1.68; color:#cbd5e1; font-size:0.92rem;"><strong style="color:#f8fafc; font-size:0.98rem;">F1: Warum sinkt der Sensible Heat Ratio (SHR) in geschlossenen Vertical Farms bei dichtem Bestand (LAI &gt; 3,5) auf Werte von 0,30 bis 0,45?</strong><br>Im thermisch isolierten Indoor-Kulturraum stammt nahezu die gesamte Energiezufuhr aus der LED-Belichtung; ein geschlossener Pflanzenbestand setzt davon 55 % bis 70 % über stomatäre Transpiration direkt in latente Verdunstungswärme (Wasserdampf) um. Standard-Komfortklimageräte (SHR ≈ 0,75–0,85) kühlen den Raum zu schnell ab, ohne den Dampfstrom auszukondensieren, weshalb dedizierte Prozessentfeuchter erforderlich sind.</p>
     </div>
-    <div style="margin-bottom:14px; padding:14px 18px; background:rgba(15,23,42,0.65); border-left:3px solid #10b981; border-radius:8px;">
-      <h4 style="margin:0 0 6px 0; color:#f8fafc; font-size:0.98rem;">Wie lassen sich die Kennzahlen aus „HLK-Dimensionierung und psychrometrische Entfeuchtung in der vertikalen Landwirtschaft (Vertical Farming): Sensible vs. latente Kühllast &amp; CFD-Strömung“ in der Klimacomputer- und Kultursteuerung umsetzen?</h4>
-      <p style="margin:0; color:#cbd5e1; font-size:0.9rem; line-height:1.65;">Produktionsleiter erfassen Blatttemperatur, Einstrahlung, Substratfeuchte und Drän-EC kontinuierlich über kalibrierte Sensoren und überführen die berechneten Zielgrößen als gleitende Sollwertkurven in die Klimacomputer- und Bewässerungsregelung.</p>
+    <div class="faq-item" style="margin-bottom:14px; padding:16px 20px; background:rgba(15,23,42,0.7); border-left:4px solid #10b981; border-radius:10px;">
+      <p style="margin:0; line-height:1.68; color:#cbd5e1; font-size:0.92rem;"><strong style="color:#f8fafc; font-size:0.98rem;">F2: Wie wird die Entfeuchtung mit interner Wärmerückgewinnung im Mollier-h-x-Diagramm ohne Kälteschock ausgelegt?</strong><br>Die feuchte Umluft (z. B. 22 °C, 78 % rF) wird am Verdampfer gezielt unter den Taupunkt (ca. 10–12 °C) abgekühlt, um das Transpirationswasser abzuscheiden, und anschließend über ein nachgeschaltetes Heißgas-Nachheizregister (Reheat) isobar wieder auf die gewünschte Zulufttemperatur erwärmt, sodass die latente Kondensationswärme zurückgewonnen und Kondensation am Bestand vermieden wird.</p>
     </div>
-    <div style="margin-bottom:14px; padding:14px 18px; background:rgba(15,23,42,0.65); border-left:3px solid #10b981; border-radius:8px;">
-      <h4 style="margin:0 0 6px 0; color:#f8fafc; font-size:0.98rem;">Welche Förderprogramme unterstützen entsprechende Effizienz- und Modernisierungsinvestitionen?</h4>
-      <p style="margin:0; color:#cbd5e1; font-size:0.9rem; line-height:1.65;">Je nach Bundesland und Systemgrenze kommen das BLE-Bundesprogramm Energieeffizienz (Modul 1–4), Rentenbank-Umweltkredite (LR-Top/LR-Premium) sowie landesspezifische Agrarinvestitionsförderprogramme (AFP) in Betracht.</p>
+    <div class="faq-item" style="margin-bottom:14px; padding:16px 20px; background:rgba(15,23,42,0.7); border-left:4px solid #10b981; border-radius:10px;">
+      <p style="margin:0; line-height:1.68; color:#cbd5e1; font-size:0.92rem;"><strong style="color:#f8fafc; font-size:0.98rem;">F3: Welche Überströmgeschwindigkeit in perforierten CFD-Luftschläuchen verhindert Tipburn (Innenbrand) im Salatherz?</strong><br>Da Kalzium ausschließlich passiv mit dem Xylem-Transpirationsstrom in junge Herzblätter gelangt, muss die laminare Grenzschicht (r_a) über dem Meristem aufgebrochen werden. Perforierte Überkopf-Luftschläuche (Air Socks) werden mittels CFD auf eine gleichmäßige vertikale bzw. schräge Anströmgeschwindigkeit von 0,35 bis 0,65 m/s in Bestandshöhe ausgelegt.</p>
     </div>
   </div>
 </section>

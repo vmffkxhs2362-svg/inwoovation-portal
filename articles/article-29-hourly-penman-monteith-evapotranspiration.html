@@ -57,7 +57,7 @@
         "url": "https://inwoovation.com"
       },
       "datePublished": "2026-09-01",
-      "dateModified": "2026-11-21",
+      "dateModified": "2026-11-26",
       "mainEntityOfPage": "https://inwoovation.com/articles/article-29-hourly-penman-monteith-evapotranspiration.html"
     },
     {
@@ -65,26 +65,26 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "How do operators prevent humidity spikes when thermal screens are closed over 95%?",
+          "name": "How do the radiative and aerodynamic terms of the hourly FAO-56 Penman-Monteith equation interact inside a semi-closed glasshouse?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "By coordinating a controlled 1.5%–4.0% moisture purge gap (Screen Gap) with a minimum pipe-rail temperature of 38–42 °C, gentle buoyancy-driven convection transports excess water vapor into the upper roof plenum where it condenses on the cold glass envelope and drains via gutter channels."
+            "text": "In λET = [Δ(Rn - G) + ρa cp VPD / ra] / [Δ + γ(1 + rc / ra)], solar net radiation (Rn) dominates midday transpiration (~70%–80% of total water uptake), while the aerodynamic VPD term (ρa cp VPD / ra) sustains nocturnal and low-light xylem calcium mass flow via pipe-rail heating and HAF air velocity."
           }
         },
         {
           "@type": "Question",
-          "name": "What sampling frequency is required to synchronize solar radiation with irrigation and climate actuators?",
+          "name": "How is bulk canopy surface resistance (r_c) scaled from leaf stomatal resistance (r_s) and Leaf Area Index (LAI)?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Quantum PAR and pyranometer sensors are sampled every 5 seconds, filtered over a 60-second rolling window, and integrated into cumulative radiation sums (J/cm2) to trigger precision 100 mL drip shots while updating MPC climate trajectories every 5 minutes."
+            "text": "Bulk canopy resistance is modeled as rc = rs / LAIactive (typically rs / (0.5 · LAI) for sunlit upper leaves or rs / (2 · LAI) across amphistomatous diffuse-lit profiles). When VPD exceeds 1.5–1.6 kPa, abscisic-acid-mediated stomatal closure spikes rs from ~120 s/m to > 450 s/m, throttling both transpiration and carbon fixation."
           }
         },
         {
           "@type": "Question",
-          "name": "Where can I simulate these exact thermodynamic and agronomic equations for my own facility?",
+          "name": "How are hourly Penman-Monteith mm/h evapotranspiration rates translated into 100 mL solar-integrated drip irrigation shots?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Launch our interactive Interactive CEA Engineering Calculator or explore the full suite of CEA engineering calculators linked below."
+            "text": "Convert hourly ETc (1 mm/h = 1.0 L·m-2·h-1) plus target leaching fraction (20%–30% drain) into precise radiation-sum triggers (J/cm2) using the Hourly Penman-Monteith Evapotranspiration Calculator."
           }
         }
       ]
@@ -262,12 +262,12 @@
 
         <h2>Section E: Frequently Asked Engineering Questions (FAQ)</h2>
         <div class="faq-block" style="margin-top: 14px;">
-          <p><strong>Q1: How do operators prevent humidity spikes when thermal screens are closed over 95%?</strong><br>
-          By coordinating a controlled 1.5%–4.0% <em>moisture purge gap (Screen Gap)</em> with a minimum pipe-rail temperature of 38–42 °C, gentle buoyancy-driven convection transports excess water vapor into the upper roof plenum where it condenses on the cold glass envelope and drains via gutter channels.</p>
-          <p><strong>Q2: What sampling frequency is required to synchronize solar radiation with irrigation and climate actuators?</strong><br>
-          Quantum PAR and pyranometer sensors are sampled every 5 seconds, filtered over a 60-second rolling window, and integrated into cumulative radiation sums (J/cm<sup>2</sup>) to trigger precision 100 mL drip shots while updating MPC climate trajectories every 5 minutes.</p>
-          <p><strong>Q3: Where can I simulate these exact thermodynamic and agronomic equations for my own facility?</strong><br>
-          Launch our interactive <a href="/tools/psychrometric-mollier-greenhouse-dehumidifier.html" style="color: #10b981; font-weight: 700;">Interactive CEA Engineering Calculator</a> or explore the full suite of CEA engineering calculators linked below.</p>
+          <p><strong>Q1: How do the radiative and aerodynamic terms of the hourly FAO-56 Penman-Monteith equation interact inside a semi-closed glasshouse?</strong><br>
+          In λET = [Δ(R<sub>n</sub> - G) + ρ<sub>a</sub> c<sub>p</sub> VPD / r<sub>a</sub>] / [Δ + γ(1 + r<sub>c</sub> / r<sub>a</sub>)], solar net radiation (R<sub>n</sub>) dominates midday transpiration (~70%–80% of total water uptake), while the aerodynamic VPD term (ρ<sub>a</sub> c<sub>p</sub> VPD / r<sub>a</sub>) sustains nocturnal and low-light xylem calcium mass flow via pipe-rail heating and HAF air velocity.</p>
+          <p><strong>Q2: How is bulk canopy surface resistance (r_c) scaled from leaf stomatal resistance (r_s) and Leaf Area Index (LAI)?</strong><br>
+          Bulk canopy resistance is modeled as r<sub>c</sub> = r<sub>s</sub> / LAI<sub>active</sub> (typically r<sub>s</sub> / (0.5 · LAI) for sunlit upper leaves or r<sub>s</sub> / (2 · LAI) across amphistomatous diffuse-lit profiles). When VPD exceeds 1.5–1.6 kPa, abscisic-acid-mediated stomatal closure spikes r<sub>s</sub> from ~120 s/m to &gt; 450 s/m, throttling both transpiration and carbon fixation.</p>
+          <p><strong>Q3: How are hourly Penman-Monteith mm/h evapotranspiration rates translated into 100 mL solar-integrated drip irrigation shots?</strong><br>
+          Convert hourly ET<sub>c</sub> (1 mm/h = 1.0 L·m<sup>-2</sup>·h<sup>-1</sup>) plus target leaching fraction (20%–30% drain) into precise radiation-sum triggers (J/cm<sup>2</sup>) using the <a href="/tools/evapotranspiration-penman-monteith-calculator.html" style="color: #10b981; font-weight: 700;">Hourly Penman-Monteith Evapotranspiration Calculator</a>.</p>
         </div>
       </section>
 <!-- INW-DEEP-ENG-END -->

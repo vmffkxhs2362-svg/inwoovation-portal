@@ -104,7 +104,7 @@
           "name": "天窓が開いているとき、動的環境制御コンピューターはどの換気回数 (N) で CO₂ 施用を抑制しますか？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "天窓開度が 20–40 % を超えて時間あたり換気回数 N が 8–12 h⁻¹ 以上に達すると、注入した CO₂ の 75 % 以上が屋根から散逸し、限界費用 MC_C が光合成限界収益 MR_C を上回ります。このため動的制御では目標値を 450–550 ppm へ段階的に引き下げ、350 ppm 未満の欠乏防止のみに絞ってガスコストを最大 35 % 削減します。"
+            "text": "天窓開度が 20–40 % を超えて時間あたり換気回数 N が 8–12 h⁻¹ 以上に達すると、注入した CO₂ の 75 % 以上が屋根から散逸し、限界費用 MC<sub>C</sub> が光合成限界収益 MR<sub>C</sub> を上回ります。このため動的制御では目標値を 450–550 ppm へ段階的に引き下げ、350 ppm 未満の欠乏防止のみに絞ってガスコストを最大 35 % 削減します。"
           }
         },
         {
@@ -141,6 +141,24 @@
   </style>
 </head>
 <body>
+<!-- INW-STD-NAV-START -->
+<nav class="inw-top-nav" aria-label="Main Navigation" style="background: #0f172a; border-bottom: 1px solid #1e293b; padding: 12px 20px; font-family: system-ui, -apple-system, sans-serif; box-sizing: border-box; width: 100%;">
+  <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px;">
+    <a href="/index.html" style="color: #10b981; font-weight: 800; font-size: 1.15rem; text-decoration: none; letter-spacing: -0.02em;">Inwoovation Lab</a>
+    <div style="display: flex; flex-wrap: wrap; gap: 14px; font-size: 0.9rem;">
+      <a href="/index.html" style="color: #e2e8f0; text-decoration: none;">Home</a>
+      <a href="/smartfarm/vpd.html" style="color: #e2e8f0; text-decoration: none;">Calculators</a>
+      <a href="/articles/index.html" style="color: #38bdf8; font-weight: 600; text-decoration: none;">Articles</a>
+      <a href="/wiki/index.html" style="color: #e2e8f0; text-decoration: none;">Wiki</a>
+      <a href="/climate/index.html" style="color: #e2e8f0; text-decoration: none;">Climate Hub</a>
+      <a href="/crops/index.html" style="color: #e2e8f0; text-decoration: none;">Crops</a>
+      <a href="/tools/venlocad-3d.html" style="color: #10b981; font-weight: 600; text-decoration: none;">VenloCAD 3D</a>
+      <button type="button" onclick="window.InwooPalette && window.InwooPalette.open()" style="background: rgba(15, 23, 42, 0.9); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.4); padding: 6px 12px; border-radius: 6px; font-size: 0.85rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">🔍 Search <kbd style="background: rgba(255,255,255,0.1); padding: 1px 5px; border-radius: 4px; font-size: 0.72rem;">Ctrl+K</kbd></button>
+      <a href="/about.html" style="color: #e2e8f0; text-decoration: none;">About</a>
+    </div>
+  </div>
+</nav>
+<!-- INW-STD-NAV-END -->
   <main class="article-shell">
     <div style="margin-bottom: 20px;">
       <a href="/guides.html" style="color: #38bdf8; text-decoration: none; font-weight: 700; font-size: 0.92rem;">← 技術モノグラフ一覧（Engineering Guides）へ戻る</a>
@@ -281,7 +299,7 @@
       </section>
       <section style="margin-bottom: 34px;">
         <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px; margin-bottom: 16px;">4. 液化炭酸 (LCO₂) 対 コージェネレーション (CHP/BHKW) 排ガス触媒精製と限界収益最適化</h2>
-        <p>商業施設園芸における CO<sub>2</sub> 供給方式は、大きく 2 つのエンジニアリング経路に大別される。(1) 深冷貯槽 (&minus;20 &deg;C, 20 bar) から気化する高純度 <strong>液化炭酸ガス (LCO<sub>2</sub></strong>、典型単価 <strong>0.18–0.34 EUR&middot;kg<sup>&minus;1</sup></strong> または日本国内 28–55 JPY&middot;kg<sup>&minus;1</sup>)、および (2) <strong>天然ガス・バイオガス CHP (BHKW / ガスエンジン熱電併給)</strong> の排ガスを 2 段触媒浄化して回収する方式である。都市ガス（メタン主成分）1 Nm<sup>3</sup> の化学量論燃焼により約 <strong>1.85–1.96 kg の CO<sub>2</sub></strong> が生成され、昼間の発電時に発生する温水は <strong>250–400 m<sup>3</sup>&middot;ha<sup>&minus;1</sup></strong> の成層蓄熱バッファタンクへ蓄えて夜間暖房に転用することで、実質的な CO<sub>2</sub> 調達限界コストを <strong>0.08–0.11 EUR&middot;kg<sup>&minus;1</sup></strong> 相当まで圧縮できる。</p>
+        <p>商業施設園芸における CO<sub>2</sub> 供給方式は、大きく 2 つのエンジニアリング経路に大別される。(1) 深冷貯槽 (&minus;20 &deg;C, 20 bar) から気化する高純度 <strong>液化炭酸ガス (LCO<sub>2</sub>)</strong>、典型単価 <strong>0.18–0.34 EUR&middot;kg<sup>&minus;1</sup></strong> または日本国内 28–55 JPY&middot;kg<sup>&minus;1</sup>)、および (2) <strong>天然ガス・バイオガス CHP (BHKW / ガスエンジン熱電併給)</strong> の排ガスを 2 段触媒浄化して回収する方式である。都市ガス（メタン主成分）1 Nm<sup>3</sup> の化学量論燃焼により約 <strong>1.85–1.96 kg の CO<sub>2</sub></strong> が生成され、昼間の発電時に発生する温水は <strong>250–400 m<sup>3</sup>&middot;ha<sup>&minus;1</sup></strong> の成層蓄熱バッファタンクへ蓄えて夜間暖房に転用することで、実質的な CO<sub>2</sub> 調達限界コストを <strong>0.08–0.11 EUR&middot;kg<sup>&minus;1</sup></strong> 相当まで圧縮できる。</p>
         <p>ただし、CHP 排ガスを栽培ベンチ直下の有孔 PE ダクト（ダームシュラウフ）へ直接供給する場合、作物の花芽・果実を保護するため <strong>VDI 3476 / OCAP 基準に準拠した厳格な植物毒性 (Phytotoxicity) 閾値</strong> を二段触媒（尿素 SCR 脱硝触媒 + 白金・パラジウム酸化触媒 <em>CODinox</em>）で連続担保しなければならない。</p>
         <ul>
           <li><strong>エチレン (C<sub>2</sub>H<sub>4</sub>) &lt; 5 ppb (最大許容 10 ppb) :</strong> 微量でも 20 ppb に達するとトマトやパプリカの落花・落蕾・異常黄化を誘発する最重要監視ガス。</li>
@@ -290,9 +308,9 @@
         </ul>
         <p>現代の統合環境制御コンピューター (Priva Connext, Hoogendoorn i-Grow, Ridder MultiMa 等) は、FvCB 曲線の接線勾配から得られる <strong>光合成限界収益 (MR<sub>C</sub>)</strong> と換気ロスを含む <strong>ガス調達限界費用 (MC<sub>C</sub>)</strong> が等しくなる点 <em>C</em><sub>a</sub>* を数分周期の非線形最適化で逐次算出する。</p>
         <div class="formula-box">
-          限界経済均衡条件: MR<sub>C</sub> = (&part;A<sub>n</sub> &divide; &part;C<sub>a</sub>) &middot; &epsilon;<sub>bio</sub> &middot; P<sub>crop</sub> = [ (&part;A<sub>n</sub> &divide; &part;C<sub>a</sub>) + N(t) &middot; h<sub>m</sub> &middot; &rho;<sub>CO2</sub> ] &middot; P<sub>CO2</sub> = MC<sub>C</sub>
+          限界経済均衡条件 (1 ppm 増分あたり [EUR&middot;m<sup>&minus;2</sup>&middot;h<sup>&minus;1</sup>&middot;ppm<sup>&minus;1</sup>]): MR<sub>C</sub> = (&part;P<sub>canopy</sub> &divide; &part;C<sub>a</sub>) &middot; &epsilon;<sub>bio</sub> &middot; P<sub>crop</sub> = [ (&part;P<sub>canopy</sub> &divide; &part;C<sub>a</sub>) + N(t) &middot; h<sub>m</sub> &middot; &rho;<sub>CO2</sub> &times; 10<sup>&minus;6</sup> ] &middot; P<sub>CO2</sub> = MC<sub>C</sub>
         </div>
-        <p>ここで &epsilon;<sub>bio</sub> は CO<sub>2</sub> 同化量から生鮮果実重量へのバイオマス変換係数（トマトで約 0.65–0.72 kg 生果 / kg 同化 CO<sub>2</sub>、水分率含む換算）、<em>P</em><sub>crop</sub> は市場単価、<em>P</em><sub>CO2</sub> は単位ガスコストである。この限界均衡アルゴリズムを導入することで、固定濃度制御と比較して季節収穫量を <strong>12–18 %</strong> 向上させつつ、純ガス購入コストを最大 <strong>35 %</strong> 削減できる。</p>
+        <p>ここで <em>P</em><sub>canopy</sub> は単位面積あたり群落 CO<sub>2</sub> 固定質量速度 (kg CO<sub>2</sub>&middot;m<sup>&minus;2</sup>&middot;h<sup>&minus;1</sup>)、10<sup>&minus;6</sup> は空間濃度 <em>C</em><sub>a</sub> (ppm = 10<sup>&minus;6</sup> m<sup>3</sup>&middot;m<sup>&minus;3</sup>) に対する換気散逸質量感度の体積分率換算係数、&epsilon;<sub>bio</sub> は同化 CO<sub>2</sub> から生鮮果実重量へのバイオマス変換係数（トマトで約 0.65–0.72 kg 生果 / kg 同化 CO<sub>2</sub>）、<em>P</em><sub>crop</sub> は市場単価、<em>P</em><sub>CO2</sub> は単位ガスコスト (EUR&middot;kg<sup>&minus;1</sup>) である。この限界均衡アルゴリズムを導入することで、固定濃度制御と比較して季節収穫量を <strong>12–18 %</strong> 向上させつつ、純ガス購入コストを最大 <strong>35 %</strong> 削減できる。</p>
       </section>
       <section style="margin-bottom: 34px;">
         <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px; margin-bottom: 16px;">5. 1.0 ha 投資回収 (ROI) と国際補助金比較（独 BMLEH/FNR・蘭 EIA/OCAP・日 MAFF みどり戦略）</h2>
@@ -342,7 +360,7 @@
           <p style="margin: 0;"><strong>Q1: なぜ葉温が 25–28 °C に上昇すると C₃ 野菜の最適 CO₂ 目標値を 950–1,120 ppm へ引き上げる必要があるのですか？</strong><br>アレニウスの温度則により葉温が上昇すると、RuBisCO 酵素の CO₂ に対する親和性定数 Kc が O₂ に対する Ko よりも急激に増大し、同時に細胞液中の CO₂ 溶解度が低下して光呼吸（オキシゲナーゼ反応）が急増するためです。環境濃度を高めることで RuBisCO 活性中心での CO₂ 競合優位を回復し、光呼吸損失を 60 % 以上抑制できます。</p>
         </div>
         <div style="background: rgba(15, 23, 42, 0.7); border-left: 4px solid #10b981; padding: 18px 20px; border-radius: 10px; margin-bottom: 14px;">
-          <p style="margin: 0;"><strong>Q2: 天窓が開いているとき、動的環境制御コンピューターはどの換気回数 (N) で CO₂ 施用を抑制しますか？</strong><br>天窓開度が 20–40 % を超えて時間あたり換気回数 N が 8–12 h⁻¹ 以上に達すると、注入した CO₂ の 75 % 以上が屋根から散逸し、限界費用 MC_C が光合成限界収益 MR_C を上回ります。このため動的制御では目標値を 450–550 ppm へ段階的に引き下げ、350 ppm 未満の欠乏防止のみに絞ってガスコストを最大 35 % 削減します。</p>
+          <p style="margin: 0;"><strong>Q2: 天窓が開いているとき、動的環境制御コンピューターはどの換気回数 (N) で CO₂ 施用を抑制しますか？</strong><br>天窓開度が 20–40 % を超えて時間あたり換気回数 N が 8–12 h⁻¹ 以上に達すると、注入した CO₂ の 75 % 以上が屋根から散逸し、限界費用 MC<sub>C</sub> が光合成限界収益 MR<sub>C</sub> を上回ります。このため動的制御では目標値を 450–550 ppm へ段階的に引き下げ、350 ppm 未満の欠乏防止のみに絞ってガスコストを最大 35 % 削減します。</p>
         </div>
         <div style="background: rgba(15, 23, 42, 0.7); border-left: 4px solid #10b981; padding: 18px 20px; border-radius: 10px; margin-bottom: 14px;">
           <p style="margin: 0;"><strong>Q3: CHP (BHKW) コージェネレーション排ガスを温室内へ直接施用する際に監視すべきガス基準は何ですか？</strong><br>二段触媒（尿素 SCR 脱硝 + Pt/Pd 酸化触媒）の下流において、落花・異常黄化を防ぐためエチレン C₂H₄ < 5 ppb、慢性同化阻害を防ぐため窒素酸化物 NOₓ < 100–150 ppb、触媒劣化検知および安全基準として CO < 5 ppm をオンライン監視することが必須です。作業空間の CO₂ 許容濃度は TRGS 900 に準拠し 5,000 ppm 未満を維持します。</p>
@@ -380,13 +398,13 @@
   <h3 style="margin: 0 0 8px 0; font-size: 1.2rem; color: #10b981; font-weight: 800;">🔬 関連する技術論文・作物別環境制御ガイド・シミュレーター</h3>
   <p style="margin: 0 0 16px 0; font-size: 0.92rem; color: #94a3b8; line-height: 1.6;">本ページの物理モデルおよび設計計算をさらに深く検証するための技術モノグラフと専用計算ツール：</p>
   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px;">
-    <a href="/articles/article-26-greenhouse-heating-load-din-v-18599.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">Vol. 26: DIN V 18599 Greenhouse Thermal Energy Balance & Screen Physics →</a>
-    <a href="/articles/article-43-greenhouse-structural-standards-en13031.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">Vol. 43: EN 13031-1 Commercial Venlo Structural Wind & Snow Load Engineering →</a>
-    <a href="/articles/article-28-greenhouse-co2-enrichment-economics.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">Vol. 28: CHP Cogeneration & CO₂ Enrichment Economics →</a>
-    <a href="/crops/greenhouse-tomato-microclimate-vpd-steering-guide.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🍅 Commercial High-Wire Tomato Thermal & Rail-Pipe Heating Guide →</a>
-    <a href="/crops/greenhouse-sweet-pepper-climate-blossom-end-rot-guide.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🫑 Sweet Pepper Night Temperature & Pipe-Rail Radiation Guide →</a>
-    <a href="/tools/venlocad-3d.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🏗️ VenloCAD 3D Structural & EN 13031-1 BOM Architect →</a>
-    <a href="/tools/global-agri-subsidy-grant-navigator.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🏛️ Global Agri-Subsidy & USDA REAP / German BLE Grant Navigator →</a>
+    <a href="/articles/ja/article-58-dynamic-co2-enrichment-kinetics-rubisco-carboxylation-venlo-jp.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🇯🇵 JA Vol. 58: 動的 CO₂ 施用速度論と RuBisCO 光合成熱力学 →</a>
+    <a href="/articles/ja/article-28-greenhouse-co2-enrichment-economics-jp.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🇯🇵 JA Vol. 28: 温室CO2施用動態と経済的ROI閾値 →</a>
+    <a href="/articles/ja/article-41-farquhar-photosynthesis-fvcb-co2-jp.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🇯🇵 JA Vol. 41: ファーカー（FvCB）光合成生化学モデルとCO2施用動態 →</a>
+    <a href="/crops/greenhouse-tomato-microclimate-vpd-steering-guide.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🍅 High-Wire Tomato CO₂ Enrichment & Assimilate Steering Guide →</a>
+    <a href="/crops/greenhouse-cucumber-high-humidity-transpiration-guide.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🥒 Greenhouse Cucumber High-Radiation CO₂ Assimilation Guide →</a>
+    <a href="/tools/co2-enrichment-leaf-photosynthesis-farquhar-calculator.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🫧 Farquhar-FvCB Leaf Photosynthesis & CO₂ Enrichment Solver →</a>
+    <a href="/tools/greenhouse-natural-ventilation-buoyancy-airflow-calculator.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🌬️ Roof Ventilation Buoyancy & Air-Exchange (ACH) Calculator →</a>
   </div>
 </section>
 <!-- INW-TSUKUBA-FUNNEL-END -->

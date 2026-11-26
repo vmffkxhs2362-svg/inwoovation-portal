@@ -70,7 +70,7 @@
         "url": "https://inwoovation.com"
       },
       "datePublished": "2026-09-01",
-      "dateModified": "2026-11-21",
+      "dateModified": "2026-11-26",
       "mainEntityOfPage": "https://inwoovation.com/articles/de/article-01-vpd-meisterklasse.html"
     },
     {
@@ -78,26 +78,26 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Wie verhindert man bei geschlossenen Energieschirmen einen gefährlichen Feuchtestau im Bestand?",
+          "name": "Warum führt die alleinige Regelung nach relativer Luftfeuchte (% rF) ohne Blatt-Temperaturkorrektur im Venlo-Gewächshaus zu Fehlsteuerungen?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Durch einen geregelten Feuchtespalt (Screen Gap) von 1,5% bis 4,0% in Kombination mit einer Mindest-Rohrtemperatur von 38–42 °C wird ein definierter konvektiver Auftrieb erzeugt, der Wasserdampf an die kalte Glasdachfläche transportiert, wo er kontrolliert an den Kondensatrinne-Profilen abgeleitet wird."
+            "text": "Nach der Magnus-Tetens-Gleichung es(T) = 0,61078 · exp(17,27 · T / (T + 237,3)) steigt der Sättigungsdampfdruck im Blattinneren exponentiell mit der wahren Blatttemperatur TBlatt. Da TBlatt unter intensiver Globalstrahlung oder Verdunstungskühlung um ±1,5 bis 2,5 K von der Lufttemperatur abweicht, erfasst nur das wahre Blatt-Dampfdruckdefizit VPDBlatt = es(TBlatt) - ea den realen Transpirationsantrieb."
           }
         },
         {
           "@type": "Question",
-          "name": "Welches Abtastintervall ist für die Kopplung von Strahlungssumme und Bewässerungs- bzw. Klimasteuerung optimal?",
+          "name": "In welchem VPD-Korridor arbeiten Fruchtgemüsekulturen optimal und welche Schäden drohen unterhalb von 0,45 kPa bzw. oberhalb von 1,60 kPa?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Strahlungs- und Mikroklimadaten werden im 5-Sekunden-Takt erfasst, über ein gleitendes 60-Sekunden-Fenster gefiltert und alle 5 Minuten an den MPC-Optimierer übergeben, während Bewässerungsimpulse direkt über das kumulierte Einstrahlungsintegral (J/cm2) ausgelöst werden."
+            "text": "Tomate, Paprika und Schlangengurke erreichen zwischen 0,80 und 1,25 kPa maximale stomatäre CO2-Assimilation bei stabilem Xylem-Saftstrom. Fällt das VPD unter 0,40–0,45 kPa, kommt der Ca2+-Massentransport in junge Früchte zum Erliegen (Blütenendfäule und Botrytis cinerea-Infektionen); oberhalb von 1,60 kPa schließen die Schließzellen über Abscisinsäure-Signale und bremsen die Photosynthese abrupt aus."
           }
         },
         {
           "@type": "Question",
-          "name": "Wie lassen sich die physikalischen Parameter dieses Artikels für das eigene Gewächshaus berechnen?",
+          "name": "Wo lassen sich Blatt-VPD, Taupunktabstand und stomatärer Transpirationsfluss standortspezifisch berechnen?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Nutzen Sie direkt unseren interaktiven VPD &amp; Stomatal Transpiration Calculator sowie die unten verlinkten Simulationswerkzeuge von Inwoovation Lab."
+            "text": "Simulieren Sie Lufttemperatur, relative Feuchte und Infrarot-Blatttemperatur-Offset direkt in unserem VPD- & Stomata-Transpirationsrechner."
           }
         }
       ]
@@ -295,12 +295,12 @@
 
         <h2>Section E: Häufig gestellte Ingenieurfragen (FAQ)</h2>
         <div class="faq-block" style="margin-top: 14px;">
-          <p><strong>F1: Wie verhindert man bei geschlossenen Energieschirmen einen gefährlichen Feuchtestau im Bestand?</strong><br>
-          Durch einen geregelten <em>Feuchtespalt (Screen Gap)</em> von 1,5% bis 4,0% in Kombination mit einer Mindest-Rohrtemperatur von 38–42 °C wird ein definierter konvektiver Auftrieb erzeugt, der Wasserdampf an die kalte Glasdachfläche transportiert, wo er kontrolliert an den Kondensatrinne-Profilen abgeleitet wird.</p>
-          <p><strong>F2: Welches Abtastintervall ist für die Kopplung von Strahlungssumme und Bewässerungs- bzw. Klimasteuerung optimal?</strong><br>
-          Strahlungs- und Mikroklimadaten werden im 5-Sekunden-Takt erfasst, über ein gleitendes 60-Sekunden-Fenster gefiltert und alle 5 Minuten an den MPC-Optimierer übergeben, während Bewässerungsimpulse direkt über das kumulierte Einstrahlungsintegral (J/cm<sup>2</sup>) ausgelöst werden.</p>
-          <p><strong>F3: Wie lassen sich die physikalischen Parameter dieses Artikels für das eigene Gewächshaus berechnen?</strong><br>
-          Nutzen Sie direkt unseren interaktiven <a href="/smartfarm/vpd.html" style="color: #10b981; font-weight: 700;">VPD &amp; Stomatal Transpiration Calculator</a> sowie die unten verlinkten Simulationswerkzeuge von Inwoovation Lab.</p>
+          <p><strong>F1: Warum führt die alleinige Regelung nach relativer Luftfeuchte (% rF) ohne Blatt-Temperaturkorrektur im Venlo-Gewächshaus zu Fehlsteuerungen?</strong><br>
+          Nach der Magnus-Tetens-Gleichung e<sub>s</sub>(T) = 0,61078 · exp(17,27 · T / (T + 237,3)) steigt der Sättigungsdampfdruck im Blattinneren exponentiell mit der wahren Blatttemperatur T<sub>Blatt</sub>. Da T<sub>Blatt</sub> unter intensiver Globalstrahlung oder Verdunstungskühlung um ±1,5 bis 2,5 K von der Lufttemperatur abweicht, erfasst nur das wahre Blatt-Dampfdruckdefizit VPD<sub>Blatt</sub> = e<sub>s</sub>(T<sub>Blatt</sub>) - e<sub>a</sub> den realen Transpirationsantrieb.</p>
+          <p><strong>F2: In welchem VPD-Korridor arbeiten Fruchtgemüsekulturen optimal und welche Schäden drohen unterhalb von 0,45 kPa bzw. oberhalb von 1,60 kPa?</strong><br>
+          Tomate, Paprika und Schlangengurke erreichen zwischen 0,80 und 1,25 kPa maximale stomatäre CO<sub>2</sub>-Assimilation bei stabilem Xylem-Saftstrom. Fällt das VPD unter 0,40–0,45 kPa, kommt der Ca<sup>2+</sup>-Massentransport in junge Früchte zum Erliegen (Blütenendfäule und <em>Botrytis cinerea</em>-Infektionen); oberhalb von 1,60 kPa schließen die Schließzellen über Abscisinsäure-Signale und bremsen die Photosynthese abrupt aus.</p>
+          <p><strong>F3: Wo lassen sich Blatt-VPD, Taupunktabstand und stomatärer Transpirationsfluss standortspezifisch berechnen?</strong><br>
+          Simulieren Sie Lufttemperatur, relative Feuchte und Infrarot-Blatttemperatur-Offset direkt in unserem <a href="/smartfarm/vpd.html" style="color: #10b981; font-weight: 700;">VPD- &amp; Stomata-Transpirationsrechner</a>.</p>
         </div>
       </section>
 <!-- INW-DEEP-ENG-END -->

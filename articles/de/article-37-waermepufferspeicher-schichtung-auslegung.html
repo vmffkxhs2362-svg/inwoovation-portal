@@ -57,7 +57,7 @@
         "url": "https://inwoovation.com"
       },
       "datePublished": "2026-09-01",
-      "dateModified": "2026-11-21",
+      "dateModified": "2026-11-26",
       "mainEntityOfPage": "https://inwoovation.com/articles/de/article-37-waermepufferspeicher-schichtung-auslegung.html"
     },
     {
@@ -65,26 +65,26 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Wie verhindert man bei geschlossenen Energieschirmen einen gefährlichen Feuchtestau im Bestand?",
+          "name": "Wie entkoppeln großvolumige Tagesspeicher (2.000–5.000 m³) die BHKW-CO2-Produktion am Tag vom nächtlichen Heizwärmebedarf?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Durch einen geregelten Feuchtespalt (Screen Gap) von 1,5% bis 4,0% in Kombination mit einer Mindest-Rohrtemperatur von 38–42 °C wird ein definierter konvektiver Auftrieb erzeugt, der Wasserdampf an die kalte Glasdachfläche transportiert, wo er kontrolliert an den Kondensatrinne-Profilen abgeleitet wird."
+            "text": "Während das BHKW tagsüber für die CO2-Düngung und zu attraktiven Strom-Spotpreisen unter Volllast läuft, lädt es den drucklosen Stahl-Pufferspeicher von 40 °C Rücklauf auf 90 °C Vorlauf auf. Das speichert E = V · ρ · cp · ΔT / 3,6×106 ≈ 58 kWhth/m3 (116–290 MWhth) für die emissionsfreie Nachtheizung."
           }
         },
         {
           "@type": "Question",
-          "name": "Welches Abtastintervall ist für die Kopplung von Strahlungssumme und Bewässerungs- bzw. Klimasteuerung optimal?",
+          "name": "Warum muss an den Einströmdiffusoren des Schichtenspeichers eine Richardson-Zahl Ri > 10 eingehalten werden?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Strahlungs- und Mikroklimadaten werden im 5-Sekunden-Takt erfasst, über ein gleitendes 60-Sekunden-Fenster gefiltert und alle 5 Minuten an den MPC-Optimierer übergeben, während Bewässerungsimpulse direkt über das kumulierte Einstrahlungsintegral (J/cm2) ausgelöst werden."
+            "text": "In Ri = (g · β · ΔT · H) / uein2 stellt eine niedrige Einströmgeschwindigkeit (uein < 0,15 m/s über radiale Prallteller-Diffusoren) sicher, dass der thermische Auftrieb die Turbulenz dominiert. So bleibt die Trennschicht (Thermokline < 0,6 m) scharf erhalten und kühles 40-°C-Rücklaufwasser sichert den Brennwertnutzen im Abgaskondensator."
           }
         },
         {
           "@type": "Question",
-          "name": "Wie lassen sich die physikalischen Parameter dieses Artikels für das eigene Gewächshaus berechnen?",
+          "name": "Wo können Ingenieure das optimale Pufferspeichervolumen (m³) und die Schichtungs-Exergieeffizienz berechnen?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Nutzen Sie direkt unseren interaktiven Interactive CEA Engineering Calculator sowie die unten verlinkten Simulationswerkzeuge von Inwoovation Lab."
+            "text": "Dimensionieren Sie Speicherhöhe, ΔT-Spreizung und Ladezyklen im Wärmepufferspeicher-Schichtungs- & Auslegungsrechner."
           }
         }
       ]
@@ -259,22 +259,22 @@
 
         <h2>Section E: Häufig gestellte Ingenieurfragen (FAQ)</h2>
         <div class="faq-block" style="margin-top: 14px;">
-          <p><strong>F1: Wie verhindert man bei geschlossenen Energieschirmen einen gefährlichen Feuchtestau im Bestand?</strong><br>
-          Durch einen geregelten <em>Feuchtespalt (Screen Gap)</em> von 1,5% bis 4,0% in Kombination mit einer Mindest-Rohrtemperatur von 38–42 °C wird ein definierter konvektiver Auftrieb erzeugt, der Wasserdampf an die kalte Glasdachfläche transportiert, wo er kontrolliert an den Kondensatrinne-Profilen abgeleitet wird.</p>
-          <p><strong>F2: Welches Abtastintervall ist für die Kopplung von Strahlungssumme und Bewässerungs- bzw. Klimasteuerung optimal?</strong><br>
-          Strahlungs- und Mikroklimadaten werden im 5-Sekunden-Takt erfasst, über ein gleitendes 60-Sekunden-Fenster gefiltert und alle 5 Minuten an den MPC-Optimierer übergeben, während Bewässerungsimpulse direkt über das kumulierte Einstrahlungsintegral (J/cm<sup>2</sup>) ausgelöst werden.</p>
-          <p><strong>F3: Wie lassen sich die physikalischen Parameter dieses Artikels für das eigene Gewächshaus berechnen?</strong><br>
-          Nutzen Sie direkt unseren interaktiven <a href="/smartfarm/heat_loss.html" style="color: #10b981; font-weight: 700;">Interactive CEA Engineering Calculator</a> sowie die unten verlinkten Simulationswerkzeuge von Inwoovation Lab.</p>
+          <p><strong>F1: Wie entkoppeln großvolumige Tagesspeicher (2.000–5.000 m³) die BHKW-CO2-Produktion am Tag vom nächtlichen Heizwärmebedarf?</strong><br>
+          Während das BHKW tagsüber für die CO<sub>2</sub>-Düngung und zu attraktiven Strom-Spotpreisen unter Volllast läuft, lädt es den drucklosen Stahl-Pufferspeicher von 40 °C Rücklauf auf 90 °C Vorlauf auf. Das speichert E = V · ρ · c<sub>p</sub> · ΔT / 3,6×10<sup>6</sup> ≈ 58 kWh<sub>th</sub>/m<sup>3</sup> (116–290 MWh<sub>th</sub>) für die emissionsfreie Nachtheizung.</p>
+          <p><strong>F2: Warum muss an den Einströmdiffusoren des Schichtenspeichers eine Richardson-Zahl Ri &gt; 10 eingehalten werden?</strong><br>
+          In Ri = (g · β · ΔT · H) / u<sub>ein</sub><sup>2</sup> stellt eine niedrige Einströmgeschwindigkeit (u<sub>ein</sub> &lt; 0,15 m/s über radiale Prallteller-Diffusoren) sicher, dass der thermische Auftrieb die Turbulenz dominiert. So bleibt die Trennschicht (Thermokline &lt; 0,6 m) scharf erhalten und kühles 40-°C-Rücklaufwasser sichert den Brennwertnutzen im Abgaskondensator.</p>
+          <p><strong>F3: Wo können Ingenieure das optimale Pufferspeichervolumen (m³) und die Schichtungs-Exergieeffizienz berechnen?</strong><br>
+          Dimensionieren Sie Speicherhöhe, ΔT-Spreizung und Ladezyklen im <a href="/tools/solar-thermal-buffer-tank-stratification-calculator.html" style="color: #10b981; font-weight: 700;">Wärmepufferspeicher-Schichtungs- &amp; Auslegungsrechner</a>.</p>
         </div>
       </section>
 <!-- INW-DEEP-ENG-END -->
 
 <!-- INW-LIVE-WIDGET-START -->
 <section class="inw-live-widget-sandbox" style="margin: 32px 0; padding: 24px; background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 16px; box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);">
-  <h3 style="margin: 0 0 8px 0; font-size: 1.2rem; color: #38bdf8; font-weight: 800;">🧪 Interaktiver A/B-Stammlösungs- & EC-Düngemischer-Simulator</h3>
-  <p style="margin: 0 0 16px 0; font-size: 0.92rem; color: #94a3b8; line-height: 1.6;">Berechnen Sie das A/B-Stammlösungsvolumen und die benötigte Düngesalzmasse für Ihren Ziel-EC-Wert unter Berücksichtigung des Rohwassers.</p>
+  <h3 style="margin: 0 0 8px 0; font-size: 1.2rem; color: #38bdf8; font-weight: 800;">🔥 Interaktiver DIN V 18599 Heizlast- & Energieschirm-Simulator</h3>
+  <p style="margin: 0 0 16px 0; font-size: 0.92rem; color: #94a3b8; line-height: 1.6;">Berechnen Sie Spitzenheizlast (kW), spezifische Heizleistung (W/m²) und Erdgasbedarf mit Energieschirm-Einsparung direkt auf dieser Seite.</p>
   <div style="display: flex; justify-content: center; width: 100%; overflow: hidden;">
-    <iframe src="/embed/fertigation-ec-widget.html" width="380" height="460" loading="lazy" title="🧪 Interaktiver A/B-Stammlösungs- & EC-Düngemischer-Simulator" style="border: none; border-radius: 14px; max-width: 100%;"></iframe>
+    <iframe src="/embed/heating-loss-widget.html" width="380" height="460" loading="lazy" title="🔥 Interaktiver DIN V 18599 Heizlast- & Energieschirm-Simulator" style="border: none; border-radius: 14px; max-width: 100%;"></iframe>
   </div>
 </section>
 <!-- INW-LIVE-WIDGET-END -->

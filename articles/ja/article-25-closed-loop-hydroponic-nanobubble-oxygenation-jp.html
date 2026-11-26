@@ -57,7 +57,7 @@
         "url": "https://inwoovation.com"
       },
       "datePublished": "2026-09-01",
-      "dateModified": "2026-11-21",
+      "dateModified": "2026-11-26",
       "mainEntityOfPage": "https://inwoovation.com/articles/ja/article-25-closed-loop-hydroponic-nanobubble-oxygenation-jp.html"
     },
     {
@@ -88,26 +88,26 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "冬季の保温カーテン全閉時に発生する高湿度・結露リスクはどのように制御すべきですか？",
+          "name": "循環養液の溶存酸素（DO）が何 mg/L を下回ると根の好気呼吸が崩壊しピシウム根腐病リスクが急増しますか？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "カーテンを 1.5 % 〜 4.0 % わずかに開けるギャップ制御 ( Screen Gap Purging ) と 、 最低管温度 ( Minimum Pipe Temperature : 38 - 42 °C ) を連動させることで 、 作物の蒸散流を維持しつつ余剰水蒸気を屋根ガラス面の結露樋へ安全に排出できます 。"
+            "text": "夏季の液温上昇（24〜28 °C 超）により根圏 DO が 4.0 mg/L 未満へ低下すると、根端ミトコンドリアのシトクロム酸化酵素が酸素律速に陥り、グルコース 1 分子あたりの ATP 産生量が 38 ATP から嫌気発酵の 2 ATP へ激減します。結果として H+-ATPase による硝酸・カルシウム吸収が停止し、Pythium ultimum 遊走子の感染を招きます。"
           }
         },
         {
           "@type": "Question",
-          "name": "日射量に応じた灌水および CO2 施用の最適サンプリング周期はどのくらいですか？",
+          "name": "粒径 100 nm 未満のウルトラファインバブル（ナノバブル）が通常の気泡のようにすぐ浮上・消滅せず数日間滞留する物理原理は？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "日射強度 ( W/m2 ) と葉温・飽差 ( VPD ) は 5 秒周期で計測・移動平均処理を行い 、 積算日射量 70 〜 100 J/cm2 ごとに 100 mL/株の精密パルス灌水を実行し 、 換気窓開度 ( ACH ) に連動して CO2 目標濃度 ( 600 〜 1,050 ppm ) を 5 分周期で動的最適化します 。"
+            "text": "ヤング・ラプラス式（ΔP = 4γ / d > 30 bar）と負のゼータ電位（-25〜-40 mV）により、気泡同士の静電反発が合一を防ぎ、ブラウン運動がストークス浮上速度を上回るため、100 m 超のドリップ配管末端まで DO 18〜25 mg/L の過飽和酸素を安定供給できます。"
           }
         },
         {
           "@type": "Question",
-          "name": "自社温室の条件に合わせた具体的な設計値・負荷計算はどこで行えますか？",
+          "name": "光学式 DO センサーとナノバブル発生装置を閉鎖型養液調合システムとどう連携すべきですか？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Inwoovation Lab が提供する無料の Interactive CEA Engineering Calculator および下部の関連エンジニアリング計算ツール群をそのままブラウザ上でご利用いただけます 。"
+            "text": "給液タンクとベッド末端排液の双方で DO ≥ 8.5 mg/L を維持するようキャビテーション循環流量を PID 制御し、イオン組成は 水耕培養液イオン化学量論シミュレーター で最適化します。"
           }
         }
       ]
@@ -265,12 +265,12 @@
 
         <h2>Section E: 施設園芸エンジニアリング よくある質問 ( Frequently Asked Engineering Questions : FAQ )</h2>
         <div class="faq-block" style="margin-top: 14px;">
-          <p><strong>Q1: 冬季の保温カーテン全閉時に発生する高湿度・結露リスクはどのように制御すべきですか？</strong><br>
-          A1: カーテンを 1.5 % 〜 4.0 % わずかに開けるギャップ制御 ( Screen Gap Purging ) と 、 最低管温度 ( Minimum Pipe Temperature : 38 - 42 °C ) を連動させることで 、 作物の蒸散流を維持しつつ余剰水蒸気を屋根ガラス面の結露樋へ安全に排出できます 。</p>
-          <p><strong>Q2: 日射量に応じた灌水および CO2 施用の最適サンプリング周期はどのくらいですか？</strong><br>
-          A2: 日射強度 ( W/m2 ) と葉温・飽差 ( VPD ) は 5 秒周期で計測・移動平均処理を行い 、 積算日射量 70 〜 100 J/cm2 ごとに 100 mL/株の精密パルス灌水を実行し 、 換気窓開度 ( ACH ) に連動して CO2 目標濃度 ( 600 〜 1,050 ppm ) を 5 分周期で動的最適化します 。</p>
-          <p><strong>Q3: 自社温室の条件に合わせた具体的な設計値・負荷計算はどこで行えますか？</strong><br>
-          A3: Inwoovation Lab が提供する無料の <a href="/tools/hydroponic-nutrient-solution-calculator.html" style="color: #10b981; font-weight: 700;">Interactive CEA Engineering Calculator</a> および下部の関連エンジニアリング計算ツール群をそのままブラウザ上でご利用いただけます 。</p>
+          <p><strong>Q1: 循環養液の溶存酸素（DO）が何 mg/L を下回ると根の好気呼吸が崩壊しピシウム根腐病リスクが急増しますか？</strong><br>
+          夏季の液温上昇（24〜28 °C 超）により根圏 DO が 4.0 mg/L 未満へ低下すると、根端ミトコンドリアのシトクロム酸化酵素が酸素律速に陥り、グルコース 1 分子あたりの ATP 産生量が 38 ATP から嫌気発酵の 2 ATP へ激減します。結果として H<sup>+</sup>-ATPase による硝酸・カルシウム吸収が停止し、<em>Pythium ultimum</em> 遊走子の感染を招きます。</p>
+          <p><strong>Q2: 粒径 100 nm 未満のウルトラファインバブル（ナノバブル）が通常の気泡のようにすぐ浮上・消滅せず数日間滞留する物理原理は？</strong><br>
+          ヤング・ラプラス式（ΔP = 4γ / d &gt; 30 bar）と負のゼータ電位（-25〜-40 mV）により、気泡同士の静電反発が合一を防ぎ、ブラウン運動がストークス浮上速度を上回るため、100 m 超のドリップ配管末端まで DO 18〜25 mg/L の過飽和酸素を安定供給できます。</p>
+          <p><strong>Q3: 光学式 DO センサーとナノバブル発生装置を閉鎖型養液調合システムとどう連携すべきですか？</strong><br>
+          給液タンクとベッド末端排液の双方で DO ≥ 8.5 mg/L を維持するようキャビテーション循環流量を PID 制御し、イオン組成は <a href="/tools/hydroponic-nutrient-solution-calculator.html" style="color: #10b981; font-weight: 700;">水耕培養液イオン化学量論シミュレーター</a> で最適化します。</p>
         </div>
       </section>
 <!-- INW-DEEP-ENG-END -->

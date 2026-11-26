@@ -57,7 +57,7 @@
         "url": "https://inwoovation.com"
       },
       "datePublished": "2026-09-01",
-      "dateModified": "2026-11-21",
+      "dateModified": "2026-11-26",
       "mainEntityOfPage": "https://inwoovation.com/articles/ja/article-50-smart-greenhouse-mqtt-edge-iot-fleet-jp.html"
     },
     {
@@ -88,26 +88,26 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "冬季の保温カーテン全閉時に発生する高湿度・結露リスクはどのように制御すべきですか？",
+          "name": "20 ha 規模の大型施設園芸においてクラウド HTTP ポーリングではなく TLS 上の MQTT v5（QoS 1）＋エッジ PLC を採用する理由は？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "カーテンを 1.5 % 〜 4.0 % わずかに開けるギャップ制御 ( Screen Gap Purging ) と 、 最低管温度 ( Minimum Pipe Temperature : 38 - 42 °C ) を連動させることで 、 作物の蒸散流を維持しつつ余剰水蒸気を屋根ガラス面の結露樋へ安全に排出できます 。"
+            "text": "階層型 MQTT トピック（greenhouse/{facility}/zone_01..20/node_001..100/telemetry）と QoS 1 送達確認により通信帯域を 80% 以上削減しつつ無線パケット欠損を防ぎ、万一の外部回線切断時もローカルエッジ PLC が暖房・天窓の閉ループ安全制御を自律継続できるためです。"
           }
         },
         {
           "@type": "Question",
-          "name": "日射量に応じた灌水および CO2 施用の最適サンプリング周期はどのくらいですか？",
+          "name": "センサー断線やドリフト発生時、LWT（遺言メッセージ）と 3σ カルマン残差検定はどう暴走を防ぎますか？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "日射強度 ( W/m2 ) と葉温・飽差 ( VPD ) は 5 秒周期で計測・移動平均処理を行い 、 積算日射量 70 〜 100 J/cm2 ごとに 100 mL/株の精密パルス灌水を実行し 、 換気窓開度 ( ACH ) に連動して CO2 目標濃度 ( 600 〜 1,050 ppm ) を 5 分周期で動的最適化します 。"
+            "text": "通風センサーノードの通信途絶やカルマンフィルター革新残差 |rk| > 3σ の異常ドリフトを検知した瞬間、ブローカーが LWT 警報を発報し、制御系が隣接冗長センサーへ無衝撃切替（バンプレス・トランスファー）してボイラーや天窓の急開閉を防止します。"
           }
         },
         {
           "@type": "Question",
-          "name": "自社温室の条件に合わせた具体的な設計値・負荷計算はどこで行えますか？",
+          "name": "多区画温室の MQTT パケットロス耐性やエッジ・カルマンフィルタリング挙動を検証できるツールは？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Inwoovation Lab が提供する無料の Interactive CEA Engineering Calculator および下部の関連エンジニアリング計算ツール群をそのままブラウザ上でご利用いただけます 。"
+            "text": "スマート温室 MQTT・エッジ IoT フリートシミュレーター で通信負荷とフェイルオーバーを試算できます。"
           }
         }
       ]
@@ -258,22 +258,22 @@
 
         <h2>Section E: 施設園芸エンジニアリング よくある質問 ( Frequently Asked Engineering Questions : FAQ )</h2>
         <div class="faq-block" style="margin-top: 14px;">
-          <p><strong>Q1: 冬季の保温カーテン全閉時に発生する高湿度・結露リスクはどのように制御すべきですか？</strong><br>
-          A1: カーテンを 1.5 % 〜 4.0 % わずかに開けるギャップ制御 ( Screen Gap Purging ) と 、 最低管温度 ( Minimum Pipe Temperature : 38 - 42 °C ) を連動させることで 、 作物の蒸散流を維持しつつ余剰水蒸気を屋根ガラス面の結露樋へ安全に排出できます 。</p>
-          <p><strong>Q2: 日射量に応じた灌水および CO2 施用の最適サンプリング周期はどのくらいですか？</strong><br>
-          A2: 日射強度 ( W/m2 ) と葉温・飽差 ( VPD ) は 5 秒周期で計測・移動平均処理を行い 、 積算日射量 70 〜 100 J/cm2 ごとに 100 mL/株の精密パルス灌水を実行し 、 換気窓開度 ( ACH ) に連動して CO2 目標濃度 ( 600 〜 1,050 ppm ) を 5 分周期で動的最適化します 。</p>
-          <p><strong>Q3: 自社温室の条件に合わせた具体的な設計値・負荷計算はどこで行えますか？</strong><br>
-          A3: Inwoovation Lab が提供する無料の <a href="/smartfarm/vpd.html" style="color: #10b981; font-weight: 700;">Interactive CEA Engineering Calculator</a> および下部の関連エンジニアリング計算ツール群をそのままブラウザ上でご利用いただけます 。</p>
+          <p><strong>Q1: 20 ha 規模の大型施設園芸においてクラウド HTTP ポーリングではなく TLS 上の MQTT v5（QoS 1）＋エッジ PLC を採用する理由は？</strong><br>
+          階層型 MQTT トピック（<code>greenhouse/{facility}/zone_01..20/node_001..100/telemetry</code>）と QoS 1 送達確認により通信帯域を 80% 以上削減しつつ無線パケット欠損を防ぎ、万一の外部回線切断時もローカルエッジ PLC が暖房・天窓の閉ループ安全制御を自律継続できるためです。</p>
+          <p><strong>Q2: センサー断線やドリフト発生時、LWT（遺言メッセージ）と 3σ カルマン残差検定はどう暴走を防ぎますか？</strong><br>
+          通風センサーノードの通信途絶やカルマンフィルター革新残差 |r<sub>k</sub>| &gt; 3σ の異常ドリフトを検知した瞬間、ブローカーが LWT 警報を発報し、制御系が隣接冗長センサーへ無衝撃切替（バンプレス・トランスファー）してボイラーや天窓の急開閉を防止します。</p>
+          <p><strong>Q3: 多区画温室の MQTT パケットロス耐性やエッジ・カルマンフィルタリング挙動を検証できるツールは？</strong><br>
+          <a href="/tools/greenhouse-mqtt-edge-iot-fleet-simulator.html" style="color: #10b981; font-weight: 700;">スマート温室 MQTT・エッジ IoT フリートシミュレーター</a> で通信負荷とフェイルオーバーを試算できます。</p>
         </div>
       </section>
 <!-- INW-DEEP-ENG-END -->
 
 <!-- INW-LIVE-WIDGET-START -->
 <section class="inw-live-widget-sandbox" style="margin: 32px 0; padding: 24px; background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 16px; box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);">
-  <h3 style="margin: 0 0 8px 0; font-size: 1.2rem; color: #38bdf8; font-weight: 800;">🧪 リアルタイム養液栽培 A/B 原液タンク & EC 希釈シミュレーター</h3>
-  <p style="margin: 0 0 16px 0; font-size: 0.92rem; color: #94a3b8; line-height: 1.6;">原水EC・目標EC・希釈倍率から、A/B原液タンク注入量と必要肥料塩類質量をリアルタイムに計算します。</p>
+  <h3 style="margin: 0 0 8px 0; font-size: 1.2rem; color: #38bdf8; font-weight: 800;">💧 リアルタイム飽差 (VPD) & 葉面微気象シミュレーター</h3>
+  <p style="margin: 0 0 16px 0; font-size: 0.92rem; color: #94a3b8; line-height: 1.6;">気温・相対湿度・葉温オフセットを調整し、群落の飽差 (kPa) と蒸散ストレスをリアルタイムに検証できます。</p>
   <div style="display: flex; justify-content: center; width: 100%; overflow: hidden;">
-    <iframe src="/embed/fertigation-ec-widget.html" width="380" height="460" loading="lazy" title="🧪 リアルタイム養液栽培 A/B 原液タンク & EC 希釈シミュレーター" style="border: none; border-radius: 14px; max-width: 100%;"></iframe>
+    <iframe src="/embed/vpd-gauge.html" width="380" height="390" loading="lazy" title="💧 リアルタイム飽差 (VPD) & 葉面微気象シミュレーター" style="border: none; border-radius: 14px; max-width: 100%;"></iframe>
   </div>
 </section>
 <!-- INW-LIVE-WIDGET-END -->

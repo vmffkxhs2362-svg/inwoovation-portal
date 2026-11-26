@@ -65,26 +65,26 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Wie verhindert man bei geschlossenen Energieschirmen einen gefährlichen Feuchtestau im Bestand?",
+          "name": "Was beschreibt der dimensionslose Aufnahmekonzentrationsfaktor (UCF_i) in geschlossenen Steinwolle- und Rinnenkulturen?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Durch einen geregelten Feuchtespalt (Screen Gap) von 1,5% bis 4,0% in Kombination mit einer Mindest-Rohrtemperatur von 38–42 °C wird ein definierter konvektiver Auftrieb erzeugt, der Wasserdampf an die kalte Glasdachfläche transportiert, wo er kontrolliert an den Kondensatrinne-Profilen abgeleitet wird."
+            "text": "UCFi = Cuptake,i / Csupply,i setzt die tatsächliche Ionen-Aufnahmekonzentration der Pflanze (mmol Ion pro Liter transpiriertem Wasser) ins Verhältnis zur Tropfkonzentration. Ionen mit UCFi > 1,0 (K+, NO3-, H2PO4-) verarmen in der Matte, während Ionen mit UCFi < 1,0 (Ca2+, Mg2+, Na+, Cl-) passiv aufkonzentrieren."
           }
         },
         {
           "@type": "Question",
-          "name": "Welches Abtastintervall ist für die Kopplung von Strahlungssumme und Bewässerungs- bzw. Klimasteuerung optimal?",
+          "name": "Warum führt eine zu knappe Auswaschfraktion (LF = 10 %) bei Ballastionen mit UCF = 0,2 zu rascher Wurzelraumversalzung?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Strahlungs- und Mikroklimadaten werden im 5-Sekunden-Takt erfasst, über ein gleitendes 60-Sekunden-Fenster gefiltert und alle 5 Minuten an den MPC-Optimierer übergeben, während Bewässerungsimpulse direkt über das kumulierte Einstrahlungsintegral (J/cm2) ausgelöst werden."
+            "text": "Nach der stationären Massenbilanz Cdrain,i = Csupply,i · [1 - (1 - LF) · UCFi] / LF klettert die Drainkonzentration bei UCF = 0,2 und LF = 10 % auf das 4,6-Fache des Zulaufwerts. Deshalb benötigen Tomaten 25–35 % und salzempfindliche Blockpaprika 30–40 % Umlauf-Drainrate zur Verhinderung lokaler Mattenversalzung."
           }
         },
         {
           "@type": "Question",
-          "name": "Wie lassen sich die physikalischen Parameter dieses Artikels für das eigene Gewächshaus berechnen?",
+          "name": "Wo lassen sich kulturspezifische UCF-Anreicherungskurven und kritische Natrium-Schwellenwerte (2,0 bis 8,0 mmol/L) simulieren?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Nutzen Sie direkt unseren interaktiven Interactive CEA Engineering Calculator sowie die unten verlinkten Simulationswerkzeuge von Inwoovation Lab."
+            "text": "Berechnen Sie Ionenakkumulation und notwendige Spülintervalle für Tomate, Paprika, Gurke und Erdbeere im UCF- & Rezirkulations-Massenbilanz-Simulator."
           }
         }
       ]
@@ -166,14 +166,14 @@
 
       <p>Hierbei gilt:</p>
       <ul>
-        <li><strong>M&#775;<sub>uptake, i</sub></strong>: Massenstrom des assimilierten Ions i ($mmol/h$ bzw. $mg/h$).</li>
-        <li><strong>V&#775;<sub>trans</sub></strong>: Transpirationsvolumenstrom des Bestandes ($L/h$).</li>
-        <li><strong>C<sub>supply, i</sub></strong>: Über die Tropfer dosierte Konzentration ($mmol/L$).</li>
+        <li><strong>M&#775;<sub>uptake, i</sub></strong>: Massenstrom des assimilierten Ions i (mmol/h bzw. mg/h).</li>
+        <li><strong>V&#775;<sub>trans</sub></strong>: Transpirationsvolumenstrom des Bestandes (L/h).</li>
+        <li><strong>C<sub>supply, i</sub></strong>: Über die Tropfer dosierte Konzentration (mmol/L).</li>
       </ul>
 
       <p>Hinsichtlich des UCF<sub>i</sub>-Wertes unterscheidet man drei fundamentale Ionenklassen:</p>
       <ol>
-        <li><strong>Aktive Luxuskonsumtion (UCF<sub>i</sub> > 1.0)</strong>: Die Pflanze entzieht das Ion im Verhältnis zum Wasser schneller als im Tropfwasser vorgelegt (K<sup>+</sup>, NO<sub>3</sub><sup>-</sup>, H<sub>2PO</sub><sub>4</sub><sup>-</sup>). Die Substratkonzentration fällt ohne Nachdosierung ab.</li>
+        <li><strong>Aktive Luxuskonsumtion (UCF<sub>i</sub> > 1.0)</strong>: Die Pflanze entzieht das Ion im Verhältnis zum Wasser schneller als im Tropfwasser vorgelegt (K<sup>+</sup>, NO<sub>3</sub><sup>-</sup>, H<sub>2</sub>PO<sub>4</sub><sup>-</sup>). Die Substratkonzentration fällt ohne Nachdosierung ab.</li>
         <li><strong>Gleichgewichtige Aufnahme (UCF<sub>i</sub> ≈ 1.0)</strong>: Wasser und Ion werden proportional zur Tropfkonzentration aufgenommen. Die Konzentration in der Matte bleibt über Bewässerungstakte hinweg stabil.</li>
         <li><strong>Passive Ballastakkumulation (UCF<sub>i</sub> < 1.0)</strong>: Wasser wird wesentlich rascher aufgenommen als das Ion (Ca<sup>2+</sup>, Mg<sup>2+</sup>, sowie Ballastionen Na<sup>+</sup> und Cl<sup>-</sup>). Die unverbrauchten Ionen reichern sich im Wurzelraum an und treiben den EC-Wert drastisch in die Höhe.</li>
       </ol>
@@ -335,12 +335,12 @@
 
         <h2>Section E: Häufig gestellte Ingenieurfragen (FAQ)</h2>
         <div class="faq-block" style="margin-top: 14px;">
-          <p><strong>F1: Wie verhindert man bei geschlossenen Energieschirmen einen gefährlichen Feuchtestau im Bestand?</strong><br>
-          Durch einen geregelten <em>Feuchtespalt (Screen Gap)</em> von 1,5% bis 4,0% in Kombination mit einer Mindest-Rohrtemperatur von 38–42 °C wird ein definierter konvektiver Auftrieb erzeugt, der Wasserdampf an die kalte Glasdachfläche transportiert, wo er kontrolliert an den Kondensatrinne-Profilen abgeleitet wird.</p>
-          <p><strong>F2: Welches Abtastintervall ist für die Kopplung von Strahlungssumme und Bewässerungs- bzw. Klimasteuerung optimal?</strong><br>
-          Strahlungs- und Mikroklimadaten werden im 5-Sekunden-Takt erfasst, über ein gleitendes 60-Sekunden-Fenster gefiltert und alle 5 Minuten an den MPC-Optimierer übergeben, während Bewässerungsimpulse direkt über das kumulierte Einstrahlungsintegral (J/cm<sup>2</sup>) ausgelöst werden.</p>
-          <p><strong>F3: Wie lassen sich die physikalischen Parameter dieses Artikels für das eigene Gewächshaus berechnen?</strong><br>
-          Nutzen Sie direkt unseren interaktiven <a href="/tools/hydroponic-nutrient-solution-calculator.html" style="color: #10b981; font-weight: 700;">Interactive CEA Engineering Calculator</a> sowie die unten verlinkten Simulationswerkzeuge von Inwoovation Lab.</p>
+          <p><strong>F1: Was beschreibt der dimensionslose Aufnahmekonzentrationsfaktor (UCF_i) in geschlossenen Steinwolle- und Rinnenkulturen?</strong><br>
+          UCF<sub>i</sub> = C<sub>uptake,i</sub> / C<sub>supply,i</sub> setzt die tatsächliche Ionen-Aufnahmekonzentration der Pflanze (mmol Ion pro Liter transpiriertem Wasser) ins Verhältnis zur Tropfkonzentration. Ionen mit UCF<sub>i</sub> &gt; 1,0 (K<sup>+</sup>, NO<sub>3</sub><sup>-</sup>, H<sub>2</sub>PO<sub>4</sub><sup>-</sup>) verarmen in der Matte, während Ionen mit UCF<sub>i</sub> &lt; 1,0 (Ca<sup>2+</sup>, Mg<sup>2+</sup>, Na<sup>+</sup>, Cl<sup>-</sup>) passiv aufkonzentrieren.</p>
+          <p><strong>F2: Warum führt eine zu knappe Auswaschfraktion (LF = 10 %) bei Ballastionen mit UCF = 0,2 zu rascher Wurzelraumversalzung?</strong><br>
+          Nach der stationären Massenbilanz C<sub>drain,i</sub> = C<sub>supply,i</sub> · [1 - (1 - LF) · UCF<sub>i</sub>] / LF klettert die Drainkonzentration bei UCF = 0,2 und LF = 10 % auf das 4,6-Fache des Zulaufwerts. Deshalb benötigen Tomaten 25–35 % und salzempfindliche Blockpaprika 30–40 % Umlauf-Drainrate zur Verhinderung lokaler Mattenversalzung.</p>
+          <p><strong>F3: Wo lassen sich kulturspezifische UCF-Anreicherungskurven und kritische Natrium-Schwellenwerte (2,0 bis 8,0 mmol/L) simulieren?</strong><br>
+          Berechnen Sie Ionenakkumulation und notwendige Spülintervalle für Tomate, Paprika, Gurke und Erdbeere im <a href="/tools/nutrient-uptake-concentration-factor-analyzer.html" style="color: #10b981; font-weight: 700;">UCF- &amp; Rezirkulations-Massenbilanz-Simulator</a>.</p>
         </div>
       </section>
 <!-- INW-DEEP-ENG-END -->

@@ -42,7 +42,7 @@
   "@graph": [
     {
       "@type": "TechArticle",
-      "headline": "Substrate Matric Potential ($\\Psi_m$), $pF$ Water Retention Curves & van Genuchten Physics",
+      "headline": "Substrate Matric Potential (Ψm), pF Water Retention Curves & van Genuchten Physics",
       "description": "Industrial agricultural physics analysis of substrate matric suction potential (Psi_m), pF retention curves, van Genuchten hydraulic models, and plant.",
       "url": "https://inwoovation.com/articles/article-42-substrate-matric-potential-pf-curves.html",
       "inLanguage": "en-US",
@@ -57,7 +57,7 @@
         "url": "https://inwoovation.com"
       },
       "datePublished": "2026-09-01",
-      "dateModified": "2026-11-21",
+      "dateModified": "2026-11-26",
       "mainEntityOfPage": "https://inwoovation.com/articles/article-42-substrate-matric-potential-pf-curves.html"
     },
     {
@@ -65,26 +65,26 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "How do operators prevent humidity spikes when thermal screens are closed over 95%?",
+          "name": "How is logarithmic pF defined from matric suction Ψ_m, and what defines the Easily Available Water (EAW) band in horticultural substrates?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "By coordinating a controlled 1.5%–4.0% moisture purge gap (Screen Gap) with a minimum pipe-rail temperature of 38–42 °C, gentle buoyancy-driven convection transports excess water vapor into the upper roof plenum where it condenses on the cold glass envelope and drains via gutter channels."
+            "text": "The pF index equals log10(|h|), where |h| is matric suction head in cm of H2O (approx. hPa; pF 1.0 = -10 hPa = -1.0 kPa, pF 2.0 = -100 hPa = -10.0 kPa). Easily Available Water (EAW) is the volumetric pore water released between container capacity at pF 1.0 and the onset of hydraulic conductivity drop at pF 1.7 (50 hPa), followed by Water Buffering Capacity up to pF 2.0."
           }
         },
         {
           "@type": "Question",
-          "name": "What sampling frequency is required to synchronize solar radiation with irrigation and climate actuators?",
+          "name": "How do van Genuchten retention parameters (α and n) differentiate stone wool from coco-peat and peat-perlite mixes?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Quantum PAR and pyranometer sensors are sampled every 5 seconds, filtered over a 60-second rolling window, and integrated into cumulative radiation sums (J/cm2) to trigger precision 100 mL drip shots while updating MPC climate trajectories every 5 minutes."
+            "text": "In Θ(h) = Θr + (Θs - Θr) / [1 + (α|h|)n]1 - 1/n, stone wool exhibits a high air-entry α and steep pore-size distribution index (n > 3.5), releasing bulk EAW between pF 1.0 and 1.5 before abrupt hydraulic cavitation above pF 2.0, whereas coir/peat (n ≈ 1.4–1.8) provides a gentler retention slope and broader capillary buffer up to pF 2.2."
           }
         },
         {
           "@type": "Question",
-          "name": "Where can I simulate these exact thermodynamic and agronomic equations for my own facility?",
+          "name": "How can operators plot custom van Genuchten pF water-retention curves and tensiometer irrigation triggers?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Launch our interactive Interactive CEA Engineering Calculator or explore the full suite of CEA engineering calculators linked below."
+            "text": "Enter substrate Θs, Θr, α, and n parameters to compute EAW%, air-filled porosity, and kPa trigger thresholds in the Substrate Matric Potential & pF Curve Calculator."
           }
         }
       ]
@@ -153,7 +153,7 @@
     </header>
 
     <div class="article-body">
-      <p class="lead">Volumetric Water Content (VWC%) alone does not quantify the energy work a plant root must exert to extract water. <strong>Matric potential (Ψ<sub>m</sub>, expressed as suction tension in hPa or pF = log<sub>10</sub>|hPa|)</strong> dictates water availability across the pore-size distribution. In rockwool slabs, Easily Available Water (EAW) resides tightly between <strong>pF\ 1.0 (10 hPa) and pF\ 2.0 (100 hPa)</strong>.</p>
+      <p class="lead">Volumetric Water Content (VWC%) alone does not quantify the energy work a plant root must exert to extract water. <strong>Matric potential (Ψ<sub>m</sub>, expressed as suction tension in hPa or pF = log<sub>10</sub>|hPa|)</strong> dictates water availability across the pore-size distribution. In rockwool slabs, Easily Available Water (EAW) resides tightly between <strong>pF 1.0 (10 hPa) and pF 2.0 (100 hPa)</strong>.</p>
 
       <h2>1. The van Genuchten Soil Water Retention Curve</h2>
       <div class="code-box">
@@ -262,12 +262,12 @@
 
         <h2>Section E: Frequently Asked Engineering Questions (FAQ)</h2>
         <div class="faq-block" style="margin-top: 14px;">
-          <p><strong>Q1: How do operators prevent humidity spikes when thermal screens are closed over 95%?</strong><br>
-          By coordinating a controlled 1.5%–4.0% <em>moisture purge gap (Screen Gap)</em> with a minimum pipe-rail temperature of 38–42 °C, gentle buoyancy-driven convection transports excess water vapor into the upper roof plenum where it condenses on the cold glass envelope and drains via gutter channels.</p>
-          <p><strong>Q2: What sampling frequency is required to synchronize solar radiation with irrigation and climate actuators?</strong><br>
-          Quantum PAR and pyranometer sensors are sampled every 5 seconds, filtered over a 60-second rolling window, and integrated into cumulative radiation sums (J/cm<sup>2</sup>) to trigger precision 100 mL drip shots while updating MPC climate trajectories every 5 minutes.</p>
-          <p><strong>Q3: Where can I simulate these exact thermodynamic and agronomic equations for my own facility?</strong><br>
-          Launch our interactive <a href="/tools/hydroponic-nutrient-solution-calculator.html" style="color: #10b981; font-weight: 700;">Interactive CEA Engineering Calculator</a> or explore the full suite of CEA engineering calculators linked below.</p>
+          <p><strong>Q1: How is logarithmic pF defined from matric suction Ψ_m, and what defines the Easily Available Water (EAW) band in horticultural substrates?</strong><br>
+          The pF index equals log<sub>10</sub>(|h|), where |h| is matric suction head in cm of H<sub>2</sub>O (approx. hPa; pF 1.0 = -10 hPa = -1.0 kPa, pF 2.0 = -100 hPa = -10.0 kPa). Easily Available Water (EAW) is the volumetric pore water released between container capacity at pF 1.0 and the onset of hydraulic conductivity drop at pF 1.7 (50 hPa), followed by Water Buffering Capacity up to pF 2.0.</p>
+          <p><strong>Q2: How do van Genuchten retention parameters (α and n) differentiate stone wool from coco-peat and peat-perlite mixes?</strong><br>
+          In Θ(h) = Θ<sub>r</sub> + (Θ<sub>s</sub> - Θ<sub>r</sub>) / [1 + (α|h|)<sup>n</sup>]<sup>1 - 1/n</sup>, stone wool exhibits a high air-entry α and steep pore-size distribution index (n &gt; 3.5), releasing bulk EAW between pF 1.0 and 1.5 before abrupt hydraulic cavitation above pF 2.0, whereas coir/peat (n ≈ 1.4–1.8) provides a gentler retention slope and broader capillary buffer up to pF 2.2.</p>
+          <p><strong>Q3: How can operators plot custom van Genuchten pF water-retention curves and tensiometer irrigation triggers?</strong><br>
+          Enter substrate Θ<sub>s</sub>, Θ<sub>r</sub>, α, and n parameters to compute EAW%, air-filled porosity, and kPa trigger thresholds in the <a href="/tools/soil-matrix-water-potential-matric-suction-calculator.html" style="color: #10b981; font-weight: 700;">Substrate Matric Potential &amp; pF Curve Calculator</a>.</p>
         </div>
       </section>
 <!-- INW-DEEP-ENG-END -->

@@ -57,7 +57,7 @@
         "url": "https://inwoovation.com"
       },
       "datePublished": "2026-09-01",
-      "dateModified": "2026-11-21",
+      "dateModified": "2026-11-26",
       "mainEntityOfPage": "https://inwoovation.com/articles/ja/article-29-hourly-penman-monteith-evapotranspiration-jp.html"
     },
     {
@@ -88,26 +88,26 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "冬季の保温カーテン全閉時に発生する高湿度・結露リスクはどのように制御すべきですか？",
+          "name": "時間別 FAO-56 ペンマン・モンティス式における放射項と空気力学（VPD）項の役割分担は？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "カーテンを 1.5 % 〜 4.0 % わずかに開けるギャップ制御 ( Screen Gap Purging ) と 、 最低管温度 ( Minimum Pipe Temperature : 38 - 42 °C ) を連動させることで 、 作物の蒸散流を維持しつつ余剰水蒸気を屋根ガラス面の結露樋へ安全に排出できます 。"
+            "text": "λET = [Δ(Rn - G) + ρa cp VPD / ra] / [Δ + γ(1 + rc / ra)] において、日中の蒸散量の 70〜80% は純放射量 Rn が駆動し、夜間および曇雨天時は暖房管と循環扇による空気力学項（ρa cp VPD / ra）がカルシウム輸送に必要な基礎蒸散流を維持します。"
           }
         },
         {
           "@type": "Question",
-          "name": "日射量に応じた灌水および CO2 施用の最適サンプリング周期はどのくらいですか？",
+          "name": "群落表面抵抗（r_c）は葉面積指数（LAI）と気孔抵抗（r_s）からどう定式化されますか？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "日射強度 ( W/m2 ) と葉温・飽差 ( VPD ) は 5 秒周期で計測・移動平均処理を行い 、 積算日射量 70 〜 100 J/cm2 ごとに 100 mL/株の精密パルス灌水を実行し 、 換気窓開度 ( ACH ) に連動して CO2 目標濃度 ( 600 〜 1,050 ppm ) を 5 分周期で動的最適化します 。"
+            "text": "有効受光葉面積に基づき rc = rs / LAIactive でスケーリングされます。強日射・乾燥時に葉面 VPD が 1.5〜1.6 kPa を超えるとアブシジン酸応答により気孔抵抗 rs が約 120 s/m から 450 s/m 超へ急増し、蒸散冷却と光合成が同時に阻害されます。"
           }
         },
         {
           "@type": "Question",
-          "name": "自社温室の条件に合わせた具体的な設計値・負荷計算はどこで行えますか？",
+          "name": "時間あたり蒸発散量 ETc（mm/h）を日射比例 100 mL パルス灌水トリガー（J/cm²）へ変換する方法は？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Inwoovation Lab が提供する無料の Interactive CEA Engineering Calculator および下部の関連エンジニアリング計算ツール群をそのままブラウザ上でご利用いただけます 。"
+            "text": "1 mm/h = 1.0 L·m-2·h-1 に目標排液率（20〜30%）を加味し、時間別ペンマン・モンティス蒸発散計算機 で積算日射トリガー値を設計できます。"
           }
         }
       ]
@@ -259,12 +259,12 @@
 
         <h2>Section E: 施設園芸エンジニアリング よくある質問 ( Frequently Asked Engineering Questions : FAQ )</h2>
         <div class="faq-block" style="margin-top: 14px;">
-          <p><strong>Q1: 冬季の保温カーテン全閉時に発生する高湿度・結露リスクはどのように制御すべきですか？</strong><br>
-          A1: カーテンを 1.5 % 〜 4.0 % わずかに開けるギャップ制御 ( Screen Gap Purging ) と 、 最低管温度 ( Minimum Pipe Temperature : 38 - 42 °C ) を連動させることで 、 作物の蒸散流を維持しつつ余剰水蒸気を屋根ガラス面の結露樋へ安全に排出できます 。</p>
-          <p><strong>Q2: 日射量に応じた灌水および CO2 施用の最適サンプリング周期はどのくらいですか？</strong><br>
-          A2: 日射強度 ( W/m2 ) と葉温・飽差 ( VPD ) は 5 秒周期で計測・移動平均処理を行い 、 積算日射量 70 〜 100 J/cm2 ごとに 100 mL/株の精密パルス灌水を実行し 、 換気窓開度 ( ACH ) に連動して CO2 目標濃度 ( 600 〜 1,050 ppm ) を 5 分周期で動的最適化します 。</p>
-          <p><strong>Q3: 自社温室の条件に合わせた具体的な設計値・負荷計算はどこで行えますか？</strong><br>
-          A3: Inwoovation Lab が提供する無料の <a href="/tools/psychrometric-mollier-greenhouse-dehumidifier.html" style="color: #10b981; font-weight: 700;">Interactive CEA Engineering Calculator</a> および下部の関連エンジニアリング計算ツール群をそのままブラウザ上でご利用いただけます 。</p>
+          <p><strong>Q1: 時間別 FAO-56 ペンマン・モンティス式における放射項と空気力学（VPD）項の役割分担は？</strong><br>
+          λET = [Δ(R<sub>n</sub> - G) + ρ<sub>a</sub> c<sub>p</sub> VPD / r<sub>a</sub>] / [Δ + γ(1 + r<sub>c</sub> / r<sub>a</sub>)] において、日中の蒸散量の 70〜80% は純放射量 R<sub>n</sub> が駆動し、夜間および曇雨天時は暖房管と循環扇による空気力学項（ρ<sub>a</sub> c<sub>p</sub> VPD / r<sub>a</sub>）がカルシウム輸送に必要な基礎蒸散流を維持します。</p>
+          <p><strong>Q2: 群落表面抵抗（r_c）は葉面積指数（LAI）と気孔抵抗（r_s）からどう定式化されますか？</strong><br>
+          有効受光葉面積に基づき r<sub>c</sub> = r<sub>s</sub> / LAI<sub>active</sub> でスケーリングされます。強日射・乾燥時に葉面 VPD が 1.5〜1.6 kPa を超えるとアブシジン酸応答により気孔抵抗 r<sub>s</sub> が約 120 s/m から 450 s/m 超へ急増し、蒸散冷却と光合成が同時に阻害されます。</p>
+          <p><strong>Q3: 時間あたり蒸発散量 ETc（mm/h）を日射比例 100 mL パルス灌水トリガー（J/cm²）へ変換する方法は？</strong><br>
+          1 mm/h = 1.0 L·m<sup>-2</sup>·h<sup>-1</sup> に目標排液率（20〜30%）を加味し、<a href="/tools/evapotranspiration-penman-monteith-calculator.html" style="color: #10b981; font-weight: 700;">時間別ペンマン・モンティス蒸発散計算機</a> で積算日射トリガー値を設計できます。</p>
         </div>
       </section>
 <!-- INW-DEEP-ENG-END -->

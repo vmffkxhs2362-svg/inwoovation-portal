@@ -57,7 +57,7 @@
         "url": "https://inwoovation.com"
       },
       "datePublished": "2026-09-01",
-      "dateModified": "2026-11-21",
+      "dateModified": "2026-11-26",
       "mainEntityOfPage": "https://inwoovation.com/articles/de/article-29-stundengenaue-penman-monteith-evapotranspiration.html"
     },
     {
@@ -65,26 +65,26 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Wie verhindert man bei geschlossenen Energieschirmen einen gefährlichen Feuchtestau im Bestand?",
+          "name": "Wie gewichtet die stündliche FAO-56-Penman-Monteith-Gleichung Strahlungsanteil und aerodynamischen VPD-Anteil im Unterglasanbau?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Durch einen geregelten Feuchtespalt (Screen Gap) von 1,5% bis 4,0% in Kombination mit einer Mindest-Rohrtemperatur von 38–42 °C wird ein definierter konvektiver Auftrieb erzeugt, der Wasserdampf an die kalte Glasdachfläche transportiert, wo er kontrolliert an den Kondensatrinne-Profilen abgeleitet wird."
+            "text": "In λET = [Δ(Rn - G) + ρa cp VPD / ra] / [Δ + γ(1 + rc / ra)] treibt die Nettostrahlung Rn tagsüber rund 70–80 % der Gesamttranspiration an, während der aerodynamische VPD-Term nachts und bei Trübwetter über Schienenrohrheizung und Umluft den lebenswichtigen Xylem-Calciumstrom aufrechterhält."
           }
         },
         {
           "@type": "Question",
-          "name": "Welches Abtastintervall ist für die Kopplung von Strahlungssumme und Bewässerungs- bzw. Klimasteuerung optimal?",
+          "name": "Wie skaliert der Bestandeswiderstand (r_c) mit dem Blattflächenindex (LAI) und wann drosselt Stomataschluss die Verdunstung?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Strahlungs- und Mikroklimadaten werden im 5-Sekunden-Takt erfasst, über ein gleitendes 60-Sekunden-Fenster gefiltert und alle 5 Minuten an den MPC-Optimierer übergeben, während Bewässerungsimpulse direkt über das kumulierte Einstrahlungsintegral (J/cm2) ausgelöst werden."
+            "text": "Der effektive Bestandeswiderstand berechnet sich aus dem mittleren Stomatawiderstand über rc = rs / LAIaktiv. Steigt das Blatt-VPD im Sommer über 1,5–1,6 kPa an, erhöht sich rs von ~120 s/m sprunghaft auf über 450 s/m, wodurch Verdunstungskühlung und Photosynthese gleichermaßen einbrechen."
           }
         },
         {
           "@type": "Question",
-          "name": "Wie lassen sich die physikalischen Parameter dieses Artikels für das eigene Gewächshaus berechnen?",
+          "name": "Wie übersetzt der Klimacomputer stündliche Penman-Monteith-Raten (mm/h) in strahlungsintegrierte 100-mL-Tropfgaben?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Nutzen Sie direkt unseren interaktiven Interactive CEA Engineering Calculator sowie die unten verlinkten Simulationswerkzeuge von Inwoovation Lab."
+            "text": "Rechnen Sie ETc (1 mm/h = 1,0 L·m-2·h-1) inklusive 20–30 % Ziel-Drainanteil direkt im Stundengenauen Penman-Monteith-Evapotranspirationsrechner in Einstrahlungssummen (J/cm2) um."
           }
         }
       ]
@@ -259,12 +259,12 @@
 
         <h2>Section E: Häufig gestellte Ingenieurfragen (FAQ)</h2>
         <div class="faq-block" style="margin-top: 14px;">
-          <p><strong>F1: Wie verhindert man bei geschlossenen Energieschirmen einen gefährlichen Feuchtestau im Bestand?</strong><br>
-          Durch einen geregelten <em>Feuchtespalt (Screen Gap)</em> von 1,5% bis 4,0% in Kombination mit einer Mindest-Rohrtemperatur von 38–42 °C wird ein definierter konvektiver Auftrieb erzeugt, der Wasserdampf an die kalte Glasdachfläche transportiert, wo er kontrolliert an den Kondensatrinne-Profilen abgeleitet wird.</p>
-          <p><strong>F2: Welches Abtastintervall ist für die Kopplung von Strahlungssumme und Bewässerungs- bzw. Klimasteuerung optimal?</strong><br>
-          Strahlungs- und Mikroklimadaten werden im 5-Sekunden-Takt erfasst, über ein gleitendes 60-Sekunden-Fenster gefiltert und alle 5 Minuten an den MPC-Optimierer übergeben, während Bewässerungsimpulse direkt über das kumulierte Einstrahlungsintegral (J/cm<sup>2</sup>) ausgelöst werden.</p>
-          <p><strong>F3: Wie lassen sich die physikalischen Parameter dieses Artikels für das eigene Gewächshaus berechnen?</strong><br>
-          Nutzen Sie direkt unseren interaktiven <a href="/tools/psychrometric-mollier-greenhouse-dehumidifier.html" style="color: #10b981; font-weight: 700;">Interactive CEA Engineering Calculator</a> sowie die unten verlinkten Simulationswerkzeuge von Inwoovation Lab.</p>
+          <p><strong>F1: Wie gewichtet die stündliche FAO-56-Penman-Monteith-Gleichung Strahlungsanteil und aerodynamischen VPD-Anteil im Unterglasanbau?</strong><br>
+          In λET = [Δ(R<sub>n</sub> - G) + ρ<sub>a</sub> c<sub>p</sub> VPD / r<sub>a</sub>] / [Δ + γ(1 + r<sub>c</sub> / r<sub>a</sub>)] treibt die Nettostrahlung R<sub>n</sub> tagsüber rund 70–80 % der Gesamttranspiration an, während der aerodynamische VPD-Term nachts und bei Trübwetter über Schienenrohrheizung und Umluft den lebenswichtigen Xylem-Calciumstrom aufrechterhält.</p>
+          <p><strong>F2: Wie skaliert der Bestandeswiderstand (r_c) mit dem Blattflächenindex (LAI) und wann drosselt Stomataschluss die Verdunstung?</strong><br>
+          Der effektive Bestandeswiderstand berechnet sich aus dem mittleren Stomatawiderstand über r<sub>c</sub> = r<sub>s</sub> / LAI<sub>aktiv</sub>. Steigt das Blatt-VPD im Sommer über 1,5–1,6 kPa an, erhöht sich r<sub>s</sub> von ~120 s/m sprunghaft auf über 450 s/m, wodurch Verdunstungskühlung und Photosynthese gleichermaßen einbrechen.</p>
+          <p><strong>F3: Wie übersetzt der Klimacomputer stündliche Penman-Monteith-Raten (mm/h) in strahlungsintegrierte 100-mL-Tropfgaben?</strong><br>
+          Rechnen Sie ET<sub>c</sub> (1 mm/h = 1,0 L·m<sup>-2</sup>·h<sup>-1</sup>) inklusive 20–30 % Ziel-Drainanteil direkt im <a href="/tools/evapotranspiration-penman-monteith-calculator.html" style="color: #10b981; font-weight: 700;">Stundengenauen Penman-Monteith-Evapotranspirationsrechner</a> in Einstrahlungssummen (J/cm<sup>2</sup>) um.</p>
         </div>
       </section>
 <!-- INW-DEEP-ENG-END -->

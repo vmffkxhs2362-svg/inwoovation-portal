@@ -210,7 +210,7 @@ def fix_html_math_and_escapes(html):
             inner = m.group(1)
             if re.search(r"</?[a-zA-Z]", inner):
                 return m.group(0)
-            if re.search(r"\\|[_^%]|[=<>±×·Δσλτμρηαβγθ]", inner) or re.fullmatch(r"[A-Za-z0-9_+\-]+", inner):
+            if re.search(r"\\|[_^%]|[=<>±×·Δσλτμρηαβγθ–—]", inner) or re.fullmatch(r"[A-Za-z0-9_.+\-–—]+", inner):
                 return _convert_math_inner(inner)
             return m.group(0)
 

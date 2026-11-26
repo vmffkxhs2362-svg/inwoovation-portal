@@ -57,7 +57,7 @@
         "url": "https://inwoovation.com"
       },
       "datePublished": "2026-09-01",
-      "dateModified": "2026-11-21",
+      "dateModified": "2026-11-26",
       "mainEntityOfPage": "https://inwoovation.com/articles/de/article-51-autonome-gewaechshaeuser-ki-mpc-reinforcement-learning.html"
     },
     {
@@ -65,26 +65,26 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Wie verhindert man bei geschlossenen Energieschirmen einen gefährlichen Feuchtestau im Bestand?",
+          "name": "Warum kombinieren autonome Gewächshäuser zustandsbeschränkte MPC mit Reinforcement Learning statt ungeregeltem End-to-End-RL?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Durch einen geregelten Feuchtespalt (Screen Gap) von 1,5% bis 4,0% in Kombination mit einer Mindest-Rohrtemperatur von 38–42 °C wird ein definierter konvektiver Auftrieb erzeugt, der Wasserdampf an die kalte Glasdachfläche transportiert, wo er kontrolliert an den Kondensatrinne-Profilen abgeleitet wird."
+            "text": "Reines modellfreies Reinforcement Learning kann bei extremen Wetterumschwüngen harte physikalische Sicherheitsgrenzen verletzen. Die Einbettung gelernter Politiknetze in eine 24-h-MPC-Kostenfunktion minu J = ∑(wEnergie PHeiz - wErtrag Anet + wΔu ||Δu||2) erzielt -22,4 % Erdgaseinsparung bei garantierter Einhaltung von Taupunkt- und Frostschutzgrenzen."
           }
         },
         {
           "@type": "Question",
-          "name": "Welches Abtastintervall ist für die Kopplung von Strahlungssumme und Bewässerungs- bzw. Klimasteuerung optimal?",
+          "name": "Wie verhindert die Zeitskalentrennung zwischen übergeordneter MPC (Δt = 300 s) und unterlagerter Anti-Windup-PID (Δt = 1–5 s) Ventilverschleiß?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Strahlungs- und Mikroklimadaten werden im 5-Sekunden-Takt erfasst, über ein gleitendes 60-Sekunden-Fenster gefiltert und alle 5 Minuten an den MPC-Optimierer übergeben, während Bewässerungsimpulse direkt über das kumulierte Einstrahlungsintegral (J/cm2) ausgelöst werden."
+            "text": "Der 5-Minuten-MPC-Optimierer berechnet aus 24-h-Strahlungs- und Windprognosen glatte Sollwerttrajektorien mit Stellraten-Strafterm ||Δu(k)||2, während schnelle 1–5-Sekunden-PID-Schleifen lokale Druck- und Böenstörungen an Dreiwegemischern und Lüftungswinden schwingungsfrei ausregeln."
           }
         },
         {
           "@type": "Question",
-          "name": "Wie lassen sich die physikalischen Parameter dieses Artikels für das eigene Gewächshaus berechnen?",
+          "name": "Mit welchem Simulator lassen sich MPC-Gewichtungsfaktoren zwischen Heizkosten und Assimilationsertrag live erproben?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Nutzen Sie direkt unseren interaktiven Interactive CEA Engineering Calculator sowie die unten verlinkten Simulationswerkzeuge von Inwoovation Lab."
+            "text": "Testen Sie prädiktive Regelhorizonte direkt im Autonomen KI- & MPC-Gewächshaus-Klimaregler."
           }
         }
       ]
@@ -258,22 +258,22 @@
 
         <h2>Section E: Häufig gestellte Ingenieurfragen (FAQ)</h2>
         <div class="faq-block" style="margin-top: 14px;">
-          <p><strong>F1: Wie verhindert man bei geschlossenen Energieschirmen einen gefährlichen Feuchtestau im Bestand?</strong><br>
-          Durch einen geregelten <em>Feuchtespalt (Screen Gap)</em> von 1,5% bis 4,0% in Kombination mit einer Mindest-Rohrtemperatur von 38–42 °C wird ein definierter konvektiver Auftrieb erzeugt, der Wasserdampf an die kalte Glasdachfläche transportiert, wo er kontrolliert an den Kondensatrinne-Profilen abgeleitet wird.</p>
-          <p><strong>F2: Welches Abtastintervall ist für die Kopplung von Strahlungssumme und Bewässerungs- bzw. Klimasteuerung optimal?</strong><br>
-          Strahlungs- und Mikroklimadaten werden im 5-Sekunden-Takt erfasst, über ein gleitendes 60-Sekunden-Fenster gefiltert und alle 5 Minuten an den MPC-Optimierer übergeben, während Bewässerungsimpulse direkt über das kumulierte Einstrahlungsintegral (J/cm<sup>2</sup>) ausgelöst werden.</p>
-          <p><strong>F3: Wie lassen sich die physikalischen Parameter dieses Artikels für das eigene Gewächshaus berechnen?</strong><br>
-          Nutzen Sie direkt unseren interaktiven <a href="/smartfarm/heat_loss.html" style="color: #10b981; font-weight: 700;">Interactive CEA Engineering Calculator</a> sowie die unten verlinkten Simulationswerkzeuge von Inwoovation Lab.</p>
+          <p><strong>F1: Warum kombinieren autonome Gewächshäuser zustandsbeschränkte MPC mit Reinforcement Learning statt ungeregeltem End-to-End-RL?</strong><br>
+          Reines modellfreies Reinforcement Learning kann bei extremen Wetterumschwüngen harte physikalische Sicherheitsgrenzen verletzen. Die Einbettung gelernter Politiknetze in eine 24-h-MPC-Kostenfunktion min<sub>u</sub> J = ∑(w<sub>Energie</sub> P<sub>Heiz</sub> - w<sub>Ertrag</sub> A<sub>net</sub> + w<sub>Δu</sub> ||Δu||<sup>2</sup>) erzielt -22,4 % Erdgaseinsparung bei garantierter Einhaltung von Taupunkt- und Frostschutzgrenzen.</p>
+          <p><strong>F2: Wie verhindert die Zeitskalentrennung zwischen übergeordneter MPC (Δt = 300 s) und unterlagerter Anti-Windup-PID (Δt = 1–5 s) Ventilverschleiß?</strong><br>
+          Der 5-Minuten-MPC-Optimierer berechnet aus 24-h-Strahlungs- und Windprognosen glatte Sollwerttrajektorien mit Stellraten-Strafterm ||Δu(k)||<sup>2</sup>, während schnelle 1–5-Sekunden-PID-Schleifen lokale Druck- und Böenstörungen an Dreiwegemischern und Lüftungswinden schwingungsfrei ausregeln.</p>
+          <p><strong>F3: Mit welchem Simulator lassen sich MPC-Gewichtungsfaktoren zwischen Heizkosten und Assimilationsertrag live erproben?</strong><br>
+          Testen Sie prädiktive Regelhorizonte direkt im <a href="/tools/greenhouse-autonomous-ai-climate-controller.html" style="color: #10b981; font-weight: 700;">Autonomen KI- &amp; MPC-Gewächshaus-Klimaregler</a>.</p>
         </div>
       </section>
 <!-- INW-DEEP-ENG-END -->
 
 <!-- INW-LIVE-WIDGET-START -->
 <section class="inw-live-widget-sandbox" style="margin: 32px 0; padding: 24px; background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 16px; box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);">
-  <h3 style="margin: 0 0 8px 0; font-size: 1.2rem; color: #38bdf8; font-weight: 800;">🧪 Interaktiver A/B-Stammlösungs- & EC-Düngemischer-Simulator</h3>
-  <p style="margin: 0 0 16px 0; font-size: 0.92rem; color: #94a3b8; line-height: 1.6;">Berechnen Sie das A/B-Stammlösungsvolumen und die benötigte Düngesalzmasse für Ihren Ziel-EC-Wert unter Berücksichtigung des Rohwassers.</p>
+  <h3 style="margin: 0 0 8px 0; font-size: 1.2rem; color: #38bdf8; font-weight: 800;">🌡️ Interaktiver Mollier-h-x-Psychrometrie- & Entfeuchtungs-Simulator</h3>
+  <p style="margin: 0 0 16px 0; font-size: 0.92rem; color: #94a3b8; line-height: 1.6;">Simulieren Sie spezifische Luftenthalpie (kJ/kg), absolute Feuchte (g/kg), Taupunktabstand und latente Wärmerückgewinnung für die autonome Klimaregelung.</p>
   <div style="display: flex; justify-content: center; width: 100%; overflow: hidden;">
-    <iframe src="/embed/fertigation-ec-widget.html" width="380" height="460" loading="lazy" title="🧪 Interaktiver A/B-Stammlösungs- & EC-Düngemischer-Simulator" style="border: none; border-radius: 14px; max-width: 100%;"></iframe>
+    <iframe src="/embed/mollier-latent-heat-widget.html" width="380" height="460" loading="lazy" title="🌡️ Interaktiver Mollier-h-x-Psychrometrie- & Entfeuchtungs-Simulator" style="border: none; border-radius: 14px; max-width: 100%;"></iframe>
   </div>
 </section>
 <!-- INW-LIVE-WIDGET-END -->

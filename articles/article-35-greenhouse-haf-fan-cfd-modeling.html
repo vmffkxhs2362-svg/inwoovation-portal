@@ -57,7 +57,7 @@
         "url": "https://inwoovation.com"
       },
       "datePublished": "2026-09-01",
-      "dateModified": "2026-11-21",
+      "dateModified": "2026-11-26",
       "mainEntityOfPage": "https://inwoovation.com/articles/article-35-greenhouse-haf-fan-cfd-modeling.html"
     },
     {
@@ -65,26 +65,26 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "How do operators prevent humidity spikes when thermal screens are closed over 95%?",
+          "name": "What Horizontal Air Flow (HAF) canopy air velocity eliminates stagnant humidity pockets without inducing wind-stress stomatal closure?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "By coordinating a controlled 1.5%–4.0% moisture purge gap (Screen Gap) with a minimum pipe-rail temperature of 38–42 °C, gentle buoyancy-driven convection transports excess water vapor into the upper roof plenum where it condenses on the cold glass envelope and drains via gutter channels."
+            "text": "Maintaining a uniform horizontal air velocity of 0.30 to 0.50 m/s through the leaf profile disrupts the laminar boundary layer (thinning aerodynamic resistance ra from > 250 s/m to < 80 s/m), equalizes compartment ΔT within ±0.4 °C, and prevents localized RH > 90% condensation—while staying safely below the > 1.0 m/s mechanical thigmomorphogenic stress threshold."
           }
         },
         {
           "@type": "Question",
-          "name": "What sampling frequency is required to synchronize solar radiation with irrigation and climate actuators?",
+          "name": "How does turbulent free-jet axial decay govern longitudinal spacing and thrust selection of overhead HAF circulation fans?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Quantum PAR and pyranometer sensors are sampled every 5 seconds, filtered over a 60-second rolling window, and integrated into cumulative radiation sums (J/cm2) to trigger precision 100 mL drip shots while updating MPC climate trajectories every 5 minutes."
+            "text": "Follow the turbulent jet centerline velocity decay law u(x) = u0 · (Kjet · D0 / x) (with Kjet ≈ 5.8–6.2): spacing 400–500 mm basket or tube-axial fans every 12–18 meters (roughly 25–30× fan diameter D0) in counter-rotating racetrack loops entrains up to 4× primary discharge volume into coherent toroidal circulation."
           }
         },
         {
           "@type": "Question",
-          "name": "Where can I simulate these exact thermodynamic and agronomic equations for my own facility?",
+          "name": "Where can engineers calculate HAF fan spacing, boundary-layer Sherwood/Reynolds numbers, and specific W/m² fan power?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Launch our interactive Interactive CEA Engineering Calculator or explore the full suite of CEA engineering calculators linked below."
+            "text": "Simulate compartment length, gutter height, LAI drag resistance, and fan thrust spacing in the Greenhouse Microclimate CFD & HAF Air Velocity Optimizer."
           }
         }
       ]
@@ -262,12 +262,12 @@
 
         <h2>Section E: Frequently Asked Engineering Questions (FAQ)</h2>
         <div class="faq-block" style="margin-top: 14px;">
-          <p><strong>Q1: How do operators prevent humidity spikes when thermal screens are closed over 95%?</strong><br>
-          By coordinating a controlled 1.5%–4.0% <em>moisture purge gap (Screen Gap)</em> with a minimum pipe-rail temperature of 38–42 °C, gentle buoyancy-driven convection transports excess water vapor into the upper roof plenum where it condenses on the cold glass envelope and drains via gutter channels.</p>
-          <p><strong>Q2: What sampling frequency is required to synchronize solar radiation with irrigation and climate actuators?</strong><br>
-          Quantum PAR and pyranometer sensors are sampled every 5 seconds, filtered over a 60-second rolling window, and integrated into cumulative radiation sums (J/cm<sup>2</sup>) to trigger precision 100 mL drip shots while updating MPC climate trajectories every 5 minutes.</p>
-          <p><strong>Q3: Where can I simulate these exact thermodynamic and agronomic equations for my own facility?</strong><br>
-          Launch our interactive <a href="/smartfarm/vpd.html" style="color: #10b981; font-weight: 700;">Interactive CEA Engineering Calculator</a> or explore the full suite of CEA engineering calculators linked below.</p>
+          <p><strong>Q1: What Horizontal Air Flow (HAF) canopy air velocity eliminates stagnant humidity pockets without inducing wind-stress stomatal closure?</strong><br>
+          Maintaining a uniform horizontal air velocity of 0.30 to 0.50 m/s through the leaf profile disrupts the laminar boundary layer (thinning aerodynamic resistance r<sub>a</sub> from &gt; 250 s/m to &lt; 80 s/m), equalizes compartment ΔT within ±0.4 °C, and prevents localized RH &gt; 90% condensation—while staying safely below the &gt; 1.0 m/s mechanical thigmomorphogenic stress threshold.</p>
+          <p><strong>Q2: How does turbulent free-jet axial decay govern longitudinal spacing and thrust selection of overhead HAF circulation fans?</strong><br>
+          Follow the turbulent jet centerline velocity decay law u(x) = u<sub>0</sub> · (K<sub>jet</sub> · D<sub>0</sub> / x) (with K<sub>jet</sub> ≈ 5.8–6.2): spacing 400–500 mm basket or tube-axial fans every 12–18 meters (roughly 25–30× fan diameter D<sub>0</sub>) in counter-rotating racetrack loops entrains up to 4× primary discharge volume into coherent toroidal circulation.</p>
+          <p><strong>Q3: Where can engineers calculate HAF fan spacing, boundary-layer Sherwood/Reynolds numbers, and specific W/m² fan power?</strong><br>
+          Simulate compartment length, gutter height, LAI drag resistance, and fan thrust spacing in the <a href="/tools/greenhouse-microclimate-cfd-air-velocity-optimizer.html" style="color: #10b981; font-weight: 700;">Greenhouse Microclimate CFD &amp; HAF Air Velocity Optimizer</a>.</p>
         </div>
       </section>
 <!-- INW-DEEP-ENG-END -->

@@ -57,7 +57,7 @@
         "url": "https://inwoovation.com"
       },
       "datePublished": "2026-09-01",
-      "dateModified": "2026-11-21",
+      "dateModified": "2026-11-26",
       "mainEntityOfPage": "https://inwoovation.com/articles/article-36-chp-flue-gas-scr-denitrification.html"
     },
     {
@@ -65,26 +65,26 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "How do operators prevent humidity spikes when thermal screens are closed over 95%?",
+          "name": "What catalytic temperature window and urea stoichiometry allow an SCR unit to strip raw CHP exhaust NOx from 500 mg/Nm³ below 5 mg/Nm³?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "By coordinating a controlled 1.5%–4.0% moisture purge gap (Screen Gap) with a minimum pipe-rail temperature of 38–42 °C, gentle buoyancy-driven convection transports excess water vapor into the upper roof plenum where it condenses on the cold glass envelope and drains via gutter channels."
+            "text": "Injecting 32.5% aqueous urea (AdBlue) upstream of a V2O5-WO3/TiO2 honeycomb catalyst at 340–380 °C hydrolyzes urea into NH3, driving 4NO + 4NH3 + O2 → 4N2 + 6H2O at > 98% DeNOx efficiency and pushing outlet NOx below 5 mg/Nm3 (< 25 ppb) with NH3 slip < 2 ppm."
           }
         },
         {
           "@type": "Question",
-          "name": "What sampling frequency is required to synchronize solar radiation with irrigation and climate actuators?",
+          "name": "Why is a precious-metal Pt/Pd oxidation catalyst mandatory alongside SCR before dosing CHP flue gas into fruiting crops?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Quantum PAR and pyranometer sensors are sampled every 5 seconds, filtered over a 60-second rolling window, and integrated into cumulative radiation sums (J/cm2) to trigger precision 100 mL drip shots while updating MPC climate trajectories every 5 minutes."
+            "text": "Even trace unburned ethylene (C2H4 > 10–15 ppb) in lean-burn gas engine exhaust triggers severe epinasty and flower abscission in tomatoes and sweet peppers. A high-space-velocity Pt/Pd/Al2O3 oxidation stage completely oxidizes C2H4 below 3 ppb and CO below 5 ppm, allowing a 2.0 MWel CHP to safely supply ~960 kg/h of food-grade CO2 across 15 ha."
           }
         },
         {
           "@type": "Question",
-          "name": "Where can I simulate these exact thermodynamic and agronomic equations for my own facility?",
+          "name": "How do operators calculate hourly AdBlue urea consumption (L/h) and purified CO2 mass flow from engine MW load?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Launch our interactive Interactive CEA Engineering Calculator or explore the full suite of CEA engineering calculators linked below."
+            "text": "Input engine electrical output, raw exhaust NOx concentration, and fuel Nm3/h flow into the CHP Flue Gas SCR & Urea Dosing Calculator."
           }
         }
       ]
@@ -153,11 +153,11 @@
     </header>
 
     <div class="article-body">
-      <p class="lead">Natural gas Combined Heat and Power (CHP) cogenerators produce low-cost electricity, hot water, and massive volumes of carbon dioxide. However, raw engine exhaust contains highly phytotoxic nitric oxide (NO<sub>x</sub> > 500 mg/Nm<sup>3</sup>) and ethylene (C<sub>2H</sub><sub>4</sub>). Passing flue gases through a <strong>Selective Catalytic Reduction (SCR) converter with precision urea dosing</strong> reduces toxic NOx to below <strong>5 mg/Nm<sup>3</sup></strong>, producing 100% food-grade CO₂.</p>
+      <p class="lead">Natural gas Combined Heat and Power (CHP) cogenerators produce low-cost electricity, hot water, and massive volumes of carbon dioxide. However, raw engine exhaust contains highly phytotoxic nitric oxide (NO<sub>x</sub> > 500 mg/Nm<sup>3</sup>) and ethylene (C<sub>2</sub>H<sub>4</sub>). Passing flue gases through a <strong>Selective Catalytic Reduction (SCR) converter with precision urea dosing</strong> reduces toxic NOx to below <strong>5 mg/Nm<sup>3</sup></strong>, producing 100% food-grade CO₂.</p>
 
       <h2>1. The Stoichiometric Catalytic Reaction</h2>
       <div class="code-box">
-        <code>4NO + 4NH_3 + O_2 \xrightarrow{V_2O_5-TiO_2} 4N_2 + 6H_2O</code>
+        <code>4NO + 4NH<sub>3</sub> + O<sub>2</sub> → [V<sub>2</sub>O<sub>5</sub>-TiO<sub>2</sub>] → 4N<sub>2</sub> + 6H<sub>2</sub>O</code>
       </div>
       <p>A 2.0 MW gas engine yields over 960 kg/h of pure CO₂, satisfying the daytime assimilation demand of up to 15 hectares of high-wire tomatoes.</p>
 
@@ -262,22 +262,22 @@
 
         <h2>Section E: Frequently Asked Engineering Questions (FAQ)</h2>
         <div class="faq-block" style="margin-top: 14px;">
-          <p><strong>Q1: How do operators prevent humidity spikes when thermal screens are closed over 95%?</strong><br>
-          By coordinating a controlled 1.5%–4.0% <em>moisture purge gap (Screen Gap)</em> with a minimum pipe-rail temperature of 38–42 °C, gentle buoyancy-driven convection transports excess water vapor into the upper roof plenum where it condenses on the cold glass envelope and drains via gutter channels.</p>
-          <p><strong>Q2: What sampling frequency is required to synchronize solar radiation with irrigation and climate actuators?</strong><br>
-          Quantum PAR and pyranometer sensors are sampled every 5 seconds, filtered over a 60-second rolling window, and integrated into cumulative radiation sums (J/cm<sup>2</sup>) to trigger precision 100 mL drip shots while updating MPC climate trajectories every 5 minutes.</p>
-          <p><strong>Q3: Where can I simulate these exact thermodynamic and agronomic equations for my own facility?</strong><br>
-          Launch our interactive <a href="/smartfarm/co2_calculator.html" style="color: #10b981; font-weight: 700;">Interactive CEA Engineering Calculator</a> or explore the full suite of CEA engineering calculators linked below.</p>
+          <p><strong>Q1: What catalytic temperature window and urea stoichiometry allow an SCR unit to strip raw CHP exhaust NOx from 500 mg/Nm³ below 5 mg/Nm³?</strong><br>
+          Injecting 32.5% aqueous urea (AdBlue) upstream of a V<sub>2</sub>O<sub>5</sub>-WO<sub>3</sub>/TiO<sub>2</sub> honeycomb catalyst at 340–380 °C hydrolyzes urea into NH<sub>3</sub>, driving 4NO + 4NH<sub>3</sub> + O<sub>2</sub> → 4N<sub>2</sub> + 6H<sub>2</sub>O at &gt; 98% DeNO<sub>x</sub> efficiency and pushing outlet NO<sub>x</sub> below 5 mg/Nm<sup>3</sup> (&lt; 25 ppb) with NH<sub>3</sub> slip &lt; 2 ppm.</p>
+          <p><strong>Q2: Why is a precious-metal Pt/Pd oxidation catalyst mandatory alongside SCR before dosing CHP flue gas into fruiting crops?</strong><br>
+          Even trace unburned ethylene (C<sub>2</sub>H<sub>4</sub> &gt; 10–15 ppb) in lean-burn gas engine exhaust triggers severe epinasty and flower abscission in tomatoes and sweet peppers. A high-space-velocity Pt/Pd/Al<sub>2</sub>O<sub>3</sub> oxidation stage completely oxidizes C<sub>2</sub>H<sub>4</sub> below 3 ppb and CO below 5 ppm, allowing a 2.0 MW<sub>el</sub> CHP to safely supply ~960 kg/h of food-grade CO<sub>2</sub> across 15 ha.</p>
+          <p><strong>Q3: How do operators calculate hourly AdBlue urea consumption (L/h) and purified CO2 mass flow from engine MW load?</strong><br>
+          Input engine electrical output, raw exhaust NO<sub>x</sub> concentration, and fuel Nm<sup>3</sup>/h flow into the <a href="/tools/chp-flue-gas-scr-urea-dosing-calculator.html" style="color: #10b981; font-weight: 700;">CHP Flue Gas SCR &amp; Urea Dosing Calculator</a>.</p>
         </div>
       </section>
 <!-- INW-DEEP-ENG-END -->
 
 <!-- INW-LIVE-WIDGET-START -->
 <section class="inw-live-widget-sandbox" style="margin: 32px 0; padding: 24px; background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 16px; box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);">
-  <h3 style="margin: 0 0 8px 0; font-size: 1.2rem; color: #38bdf8; font-weight: 800;">🧪 Interactive Hydroponic A/B Stock Tank & EC Blending Simulator</h3>
-  <p style="margin: 0 0 16px 0; font-size: 0.92rem; color: #94a3b8; line-height: 1.6;">Compute A/B stock tank injection liters and dissolved fertilizer salt mass to hit target root-zone EC from raw source water.</p>
+  <h3 style="margin: 0 0 8px 0; font-size: 1.2rem; color: #38bdf8; font-weight: 800;">🫧 Interactive Canopy CO₂ Enrichment & Ventilation Loss Simulator</h3>
+  <p style="margin: 0 0 16px 0; font-size: 0.92rem; color: #94a3b8; line-height: 1.6;">Model net Farquhar-FvCB photosynthetic CO₂ assimilation vs. roof ventilation air-exchange leakage (ACH) to determine hourly CO₂ dosing (kg/h).</p>
   <div style="display: flex; justify-content: center; width: 100%; overflow: hidden;">
-    <iframe src="/embed/fertigation-ec-widget.html" width="380" height="460" loading="lazy" title="🧪 Interactive Hydroponic A/B Stock Tank & EC Blending Simulator" style="border: none; border-radius: 14px; max-width: 100%;"></iframe>
+    <iframe src="/embed/co2-enrichment-widget.html" width="380" height="460" loading="lazy" title="🫧 Interactive Canopy CO₂ Enrichment & Ventilation Loss Simulator" style="border: none; border-radius: 14px; max-width: 100%;"></iframe>
   </div>
 </section>
 <!-- INW-LIVE-WIDGET-END -->

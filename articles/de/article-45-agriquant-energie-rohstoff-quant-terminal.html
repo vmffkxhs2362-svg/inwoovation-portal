@@ -57,7 +57,7 @@
         "url": "https://inwoovation.com"
       },
       "datePublished": "2026-09-01",
-      "dateModified": "2026-11-21",
+      "dateModified": "2026-11-26",
       "mainEntityOfPage": "https://inwoovation.com/articles/de/article-45-agriquant-energie-rohstoff-quant-terminal.html"
     },
     {
@@ -65,26 +65,26 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Wie verhindert man bei geschlossenen Energieschirmen einen gefährlichen Feuchtestau im Bestand?",
+          "name": "Wie steuert der Clean Spark Spread (CSS) den wirtschaftlichen Fahrplan eines Gewächshaus-BHKW zwischen Netzeinspeisung und Kesselbetrieb?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Durch einen geregelten Feuchtespalt (Screen Gap) von 1,5% bis 4,0% in Kombination mit einer Mindest-Rohrtemperatur von 38–42 °C wird ein definierter konvektiver Auftrieb erzeugt, der Wasserdampf an die kalte Glasdachfläche transportiert, wo er kontrolliert an den Kondensatrinne-Profilen abgeleitet wird."
+            "text": "AgriQuant bewertet viertel- bis stündlich CSSt = PStrom,EPEX - (PGas,TTF + PEUA · EFCO2) / ηel + VWärme + VCO2. Liegt der EPEX-Spot-Erlös über den Grenzkosten aus Erdgas und CO2-Zertifikaten, fährt das BHKW Volllast, speist Strom ein, dosiert CO2 und belädt den Schichtenspeicher."
           }
         },
         {
           "@type": "Question",
-          "name": "Welches Abtastintervall ist für die Kopplung von Strahlungssumme und Bewässerungs- bzw. Klimasteuerung optimal?",
+          "name": "Wie reagiert die Energiezentrale optimal, wenn hohe Wind- und PV-Einspeisung zu negativen EPEX-Spot-Börsenstrompreisen führt?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Strahlungs- und Mikroklimadaten werden im 5-Sekunden-Takt erfasst, über ein gleitendes 60-Sekunden-Fenster gefiltert und alle 5 Minuten an den MPC-Optimierer übergeben, während Bewässerungsimpulse direkt über das kumulierte Einstrahlungsintegral (J/cm2) ausgelöst werden."
+            "text": "Fällt der Strompreis ins Negative, wird der Gasmotor abgeregelt; stattdessen schalten Power-to-Heat-Elektrokessel, Großwärmepumpen und dimmbare Assimilations-LEDs auf maximale Netzstromaufnahme um und senken die spezifischen Heizkosten pro Quadratmeter drastisch."
           }
         },
         {
           "@type": "Question",
-          "name": "Wie lassen sich die physikalischen Parameter dieses Artikels für das eigene Gewächshaus berechnen?",
+          "name": "Wo können Gartenbaubetriebe Gas-Strom-Spreads (TTF vs. EPEX) und Düngerpreisrisiken quantitativ simulieren?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Nutzen Sie direkt unseren interaktiven Interactive CEA Engineering Calculator sowie die unten verlinkten Simulationswerkzeuge von Inwoovation Lab."
+            "text": "Analysieren Sie Echtzeit-Deckungsbeiträge und Energie-Spreads im AgriQuant Energie- & Rohstoff-Quant-Terminal."
           }
         }
       ]
@@ -258,22 +258,22 @@
 
         <h2>Section E: Häufig gestellte Ingenieurfragen (FAQ)</h2>
         <div class="faq-block" style="margin-top: 14px;">
-          <p><strong>F1: Wie verhindert man bei geschlossenen Energieschirmen einen gefährlichen Feuchtestau im Bestand?</strong><br>
-          Durch einen geregelten <em>Feuchtespalt (Screen Gap)</em> von 1,5% bis 4,0% in Kombination mit einer Mindest-Rohrtemperatur von 38–42 °C wird ein definierter konvektiver Auftrieb erzeugt, der Wasserdampf an die kalte Glasdachfläche transportiert, wo er kontrolliert an den Kondensatrinne-Profilen abgeleitet wird.</p>
-          <p><strong>F2: Welches Abtastintervall ist für die Kopplung von Strahlungssumme und Bewässerungs- bzw. Klimasteuerung optimal?</strong><br>
-          Strahlungs- und Mikroklimadaten werden im 5-Sekunden-Takt erfasst, über ein gleitendes 60-Sekunden-Fenster gefiltert und alle 5 Minuten an den MPC-Optimierer übergeben, während Bewässerungsimpulse direkt über das kumulierte Einstrahlungsintegral (J/cm<sup>2</sup>) ausgelöst werden.</p>
-          <p><strong>F3: Wie lassen sich die physikalischen Parameter dieses Artikels für das eigene Gewächshaus berechnen?</strong><br>
-          Nutzen Sie direkt unseren interaktiven <a href="/smartfarm/heat_loss.html" style="color: #10b981; font-weight: 700;">Interactive CEA Engineering Calculator</a> sowie die unten verlinkten Simulationswerkzeuge von Inwoovation Lab.</p>
+          <p><strong>F1: Wie steuert der Clean Spark Spread (CSS) den wirtschaftlichen Fahrplan eines Gewächshaus-BHKW zwischen Netzeinspeisung und Kesselbetrieb?</strong><br>
+          AgriQuant bewertet viertel- bis stündlich CSS<sub>t</sub> = P<sub>Strom,EPEX</sub> - (P<sub>Gas,TTF</sub> + P<sub>EUA</sub> · EF<sub>CO2</sub>) / η<sub>el</sub> + V<sub>Wärme</sub> + V<sub>CO2</sub>. Liegt der EPEX-Spot-Erlös über den Grenzkosten aus Erdgas und CO<sub>2</sub>-Zertifikaten, fährt das BHKW Volllast, speist Strom ein, dosiert CO<sub>2</sub> und belädt den Schichtenspeicher.</p>
+          <p><strong>F2: Wie reagiert die Energiezentrale optimal, wenn hohe Wind- und PV-Einspeisung zu negativen EPEX-Spot-Börsenstrompreisen führt?</strong><br>
+          Fällt der Strompreis ins Negative, wird der Gasmotor abgeregelt; stattdessen schalten Power-to-Heat-Elektrokessel, Großwärmepumpen und dimmbare Assimilations-LEDs auf maximale Netzstromaufnahme um und senken die spezifischen Heizkosten pro Quadratmeter drastisch.</p>
+          <p><strong>F3: Wo können Gartenbaubetriebe Gas-Strom-Spreads (TTF vs. EPEX) und Düngerpreisrisiken quantitativ simulieren?</strong><br>
+          Analysieren Sie Echtzeit-Deckungsbeiträge und Energie-Spreads im <a href="/tools/agriquant-greenhouse-energy-commodity-terminal.html" style="color: #10b981; font-weight: 700;">AgriQuant Energie- &amp; Rohstoff-Quant-Terminal</a>.</p>
         </div>
       </section>
 <!-- INW-DEEP-ENG-END -->
 
 <!-- INW-LIVE-WIDGET-START -->
 <section class="inw-live-widget-sandbox" style="margin: 32px 0; padding: 24px; background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 16px; box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);">
-  <h3 style="margin: 0 0 8px 0; font-size: 1.2rem; color: #38bdf8; font-weight: 800;">🧪 Interaktiver A/B-Stammlösungs- & EC-Düngemischer-Simulator</h3>
-  <p style="margin: 0 0 16px 0; font-size: 0.92rem; color: #94a3b8; line-height: 1.6;">Berechnen Sie das A/B-Stammlösungsvolumen und die benötigte Düngesalzmasse für Ihren Ziel-EC-Wert unter Berücksichtigung des Rohwassers.</p>
+  <h3 style="margin: 0 0 8px 0; font-size: 1.2rem; color: #38bdf8; font-weight: 800;">🔥 Interaktiver DIN V 18599 Heizlast- & Energieschirm-Simulator</h3>
+  <p style="margin: 0 0 16px 0; font-size: 0.92rem; color: #94a3b8; line-height: 1.6;">Berechnen Sie Spitzenheizlast (kW), spezifische Heizleistung (W/m²) und Erdgasbedarf mit Energieschirm-Einsparung direkt auf dieser Seite.</p>
   <div style="display: flex; justify-content: center; width: 100%; overflow: hidden;">
-    <iframe src="/embed/fertigation-ec-widget.html" width="380" height="460" loading="lazy" title="🧪 Interaktiver A/B-Stammlösungs- & EC-Düngemischer-Simulator" style="border: none; border-radius: 14px; max-width: 100%;"></iframe>
+    <iframe src="/embed/heating-loss-widget.html" width="380" height="460" loading="lazy" title="🔥 Interaktiver DIN V 18599 Heizlast- & Energieschirm-Simulator" style="border: none; border-radius: 14px; max-width: 100%;"></iframe>
   </div>
 </section>
 <!-- INW-LIVE-WIDGET-END -->

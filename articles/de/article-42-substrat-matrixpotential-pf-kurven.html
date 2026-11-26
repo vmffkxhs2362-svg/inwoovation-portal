@@ -42,7 +42,7 @@
   "@graph": [
     {
       "@type": "TechArticle",
-      "headline": "Substrat-Matrixpotential ($\\Psi_m$), $pF$-Wasserspannungskurven und van-Genuchten-Modell",
+      "headline": "Substrat-Matrixpotential (Ψm), pF-Wasserspannungskurven und van-Genuchten-Modell",
       "description": "Ingenieurwissenschaftliche Bodenphysik: Matrixpotential (Psi_m), pF-Wasserspannungskurven, van-Genuchten-Gleichung und leicht verfügbares Wasser (EAW).",
       "url": "https://inwoovation.com/articles/de/article-42-substrat-matrixpotential-pf-kurven.html",
       "inLanguage": "de-DE",
@@ -57,7 +57,7 @@
         "url": "https://inwoovation.com"
       },
       "datePublished": "2026-09-01",
-      "dateModified": "2026-11-21",
+      "dateModified": "2026-11-26",
       "mainEntityOfPage": "https://inwoovation.com/articles/de/article-42-substrat-matrixpotential-pf-kurven.html"
     },
     {
@@ -65,26 +65,26 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Wie verhindert man bei geschlossenen Energieschirmen einen gefährlichen Feuchtestau im Bestand?",
+          "name": "Wie hängt der logarithmische pF-Wert mit dem Matrixpotenzial Ψ_m zusammen und wo liegt das leicht verfügbare Wasser (EAW)?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Durch einen geregelten Feuchtespalt (Screen Gap) von 1,5% bis 4,0% in Kombination mit einer Mindest-Rohrtemperatur von 38–42 °C wird ein definierter konvektiver Auftrieb erzeugt, der Wasserdampf an die kalte Glasdachfläche transportiert, wo er kontrolliert an den Kondensatrinne-Profilen abgeleitet wird."
+            "text": "Der pF-Wert ist definiert als log10(|h|) der Wassersäule in cm (≈ hPa; pF 1,0 = -10 hPa = -1,0 kPa, pF 2,0 = -100 hPa = -10,0 kPa). Als leicht verfügbares Wasser (Easily Available Water, EAW) gilt die zwischen Containerkapazität (pF 1,0) und pF 1,7 (50 hPa) freigesetzte Wassermenge, ergänzt um den Wasservorratspuffer bis pF 2,0."
           }
         },
         {
           "@type": "Question",
-          "name": "Welches Abtastintervall ist für die Kopplung von Strahlungssumme und Bewässerungs- bzw. Klimasteuerung optimal?",
+          "name": "Wie unterscheiden sich Steinwolle, Kokosmark und Weißtorf-Substrate in den van-Genuchten-Parametern α und n?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Strahlungs- und Mikroklimadaten werden im 5-Sekunden-Takt erfasst, über ein gleitendes 60-Sekunden-Fenster gefiltert und alle 5 Minuten an den MPC-Optimierer übergeben, während Bewässerungsimpulse direkt über das kumulierte Einstrahlungsintegral (J/cm2) ausgelöst werden."
+            "text": "In Θ(h) = Θr + (Θs - Θr) / [1 + (α|h|)n]1 - 1/n zeigt Steinwolle einen steilen Porengrößenindex (n > 3,5) und gibt fast ihr gesamtes EAW zwischen pF 1,0 und 1,5 ab, bevor ab pF 2,0 die hydraulische Leitfähigkeit abreißt; Kokos- und Torfsubstrate (n ≈ 1,4–1,8) entwässern gradueller mit breiterem Kapillarpuffer."
           }
         },
         {
           "@type": "Question",
-          "name": "Wie lassen sich die physikalischen Parameter dieses Artikels für das eigene Gewächshaus berechnen?",
+          "name": "Wo lassen sich individuelle pF-Wasserspannungskurven und Tensiometer-Schaltschwellen für Gärtnerkulturen berechnen?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Nutzen Sie direkt unseren interaktiven Interactive CEA Engineering Calculator sowie die unten verlinkten Simulationswerkzeuge von Inwoovation Lab."
+            "text": "Geben Sie Ihre van-Genuchten-Substratkennwerte direkt in den Substrat-Matrixpotenzial- & pF-Kurven-Rechner ein."
           }
         }
       ]
@@ -153,7 +153,7 @@
     </header>
 
     <div class="article-body">
-      <p class="lead">Der volumetrische Wassergehalt (VWC%) beschreibt nur die Menge, nicht die energetische Bindung des Wassers. Das <strong>Matrixpotential (Ψ<sub>m</sub>, als Saugspannung in hPa oder pF = log<sub>10</sub>|hPa|)</strong> definiert die Pflanzenverfügbarkeit. In Steinwolle liegt das leicht verfügbare Wasser exakt zwischen <strong>pF\ 1,0 (10 hPa) und pF\ 2,0 (100 hPa)</strong>.</p>
+      <p class="lead">Der volumetrische Wassergehalt (VWC%) beschreibt nur die Menge, nicht die energetische Bindung des Wassers. Das <strong>Matrixpotential (Ψ<sub>m</sub>, als Saugspannung in hPa oder pF = log<sub>10</sub>|hPa|)</strong> definiert die Pflanzenverfügbarkeit. In Steinwolle liegt das leicht verfügbare Wasser exakt zwischen <strong>pF 1,0 (10 hPa) und pF 2,0 (100 hPa)</strong>.</p>
 
       <h2>1. Die van-Genuchten-Retentionsfunktion</h2>
       <p>Übersteigt die Saugspannung pF > 2,2, bricht die hydraulische Wurzelleitfähigkeit drastisch ein.</p>
@@ -259,12 +259,12 @@
 
         <h2>Section E: Häufig gestellte Ingenieurfragen (FAQ)</h2>
         <div class="faq-block" style="margin-top: 14px;">
-          <p><strong>F1: Wie verhindert man bei geschlossenen Energieschirmen einen gefährlichen Feuchtestau im Bestand?</strong><br>
-          Durch einen geregelten <em>Feuchtespalt (Screen Gap)</em> von 1,5% bis 4,0% in Kombination mit einer Mindest-Rohrtemperatur von 38–42 °C wird ein definierter konvektiver Auftrieb erzeugt, der Wasserdampf an die kalte Glasdachfläche transportiert, wo er kontrolliert an den Kondensatrinne-Profilen abgeleitet wird.</p>
-          <p><strong>F2: Welches Abtastintervall ist für die Kopplung von Strahlungssumme und Bewässerungs- bzw. Klimasteuerung optimal?</strong><br>
-          Strahlungs- und Mikroklimadaten werden im 5-Sekunden-Takt erfasst, über ein gleitendes 60-Sekunden-Fenster gefiltert und alle 5 Minuten an den MPC-Optimierer übergeben, während Bewässerungsimpulse direkt über das kumulierte Einstrahlungsintegral (J/cm<sup>2</sup>) ausgelöst werden.</p>
-          <p><strong>F3: Wie lassen sich die physikalischen Parameter dieses Artikels für das eigene Gewächshaus berechnen?</strong><br>
-          Nutzen Sie direkt unseren interaktiven <a href="/tools/hydroponic-nutrient-solution-calculator.html" style="color: #10b981; font-weight: 700;">Interactive CEA Engineering Calculator</a> sowie die unten verlinkten Simulationswerkzeuge von Inwoovation Lab.</p>
+          <p><strong>F1: Wie hängt der logarithmische pF-Wert mit dem Matrixpotenzial Ψ_m zusammen und wo liegt das leicht verfügbare Wasser (EAW)?</strong><br>
+          Der pF-Wert ist definiert als log<sub>10</sub>(|h|) der Wassersäule in cm (≈ hPa; pF 1,0 = -10 hPa = -1,0 kPa, pF 2,0 = -100 hPa = -10,0 kPa). Als leicht verfügbares Wasser (Easily Available Water, EAW) gilt die zwischen Containerkapazität (pF 1,0) und pF 1,7 (50 hPa) freigesetzte Wassermenge, ergänzt um den Wasservorratspuffer bis pF 2,0.</p>
+          <p><strong>F2: Wie unterscheiden sich Steinwolle, Kokosmark und Weißtorf-Substrate in den van-Genuchten-Parametern α und n?</strong><br>
+          In Θ(h) = Θ<sub>r</sub> + (Θ<sub>s</sub> - Θ<sub>r</sub>) / [1 + (α|h|)<sup>n</sup>]<sup>1 - 1/n</sup> zeigt Steinwolle einen steilen Porengrößenindex (n &gt; 3,5) und gibt fast ihr gesamtes EAW zwischen pF 1,0 und 1,5 ab, bevor ab pF 2,0 die hydraulische Leitfähigkeit abreißt; Kokos- und Torfsubstrate (n ≈ 1,4–1,8) entwässern gradueller mit breiterem Kapillarpuffer.</p>
+          <p><strong>F3: Wo lassen sich individuelle pF-Wasserspannungskurven und Tensiometer-Schaltschwellen für Gärtnerkulturen berechnen?</strong><br>
+          Geben Sie Ihre van-Genuchten-Substratkennwerte direkt in den <a href="/tools/soil-matrix-water-potential-matric-suction-calculator.html" style="color: #10b981; font-weight: 700;">Substrat-Matrixpotenzial- &amp; pF-Kurven-Rechner</a> ein.</p>
         </div>
       </section>
 <!-- INW-DEEP-ENG-END -->

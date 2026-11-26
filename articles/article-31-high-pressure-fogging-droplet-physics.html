@@ -57,7 +57,7 @@
         "url": "https://inwoovation.com"
       },
       "datePublished": "2026-09-01",
-      "dateModified": "2026-11-21",
+      "dateModified": "2026-11-26",
       "mainEntityOfPage": "https://inwoovation.com/articles/article-31-high-pressure-fogging-droplet-physics.html"
     },
     {
@@ -65,26 +65,26 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "How do operators prevent humidity spikes when thermal screens are closed over 95%?",
+          "name": "Why must greenhouse evaporative fogging manifolds operate at ≥ 70 bar (1,000 psi) instead of low-pressure 10–15 bar misting?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "By coordinating a controlled 1.5%–4.0% moisture purge gap (Screen Gap) with a minimum pipe-rail temperature of 38–42 °C, gentle buoyancy-driven convection transports excess water vapor into the upper roof plenum where it condenses on the cold glass envelope and drains via gutter channels."
+            "text": "Low-pressure nozzles (< 15 bar) generate coarse droplets with Sauter Mean Diameter D32 > 45 μm whose terminal settling velocity deposits free liquid films onto leaves, triggering Botrytis cinerea and foliar salt burn. Pin-jet nozzles at 70–100 bar shear RO water into D32 < 10 μm aerosols that flash-evaporate entirely in mid-air within tevap < 1.5 seconds."
           }
         },
         {
           "@type": "Question",
-          "name": "What sampling frequency is required to synchronize solar radiation with irrigation and climate actuators?",
+          "name": "How much sensible cooling can adiabatic high-pressure fogging achieve without crossing the dew-point saturation safety limit?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Quantum PAR and pyranometer sensors are sampled every 5 seconds, filtered over a 60-second rolling window, and integrated into cumulative radiation sums (J/cm2) to trigger precision 100 mL drip shots while updating MPC climate trajectories every 5 minutes."
+            "text": "Every kilogram of atomized RO water absorbs hfg ≈ 2,450 kJ of sensible heat along a constant-wet-bulb enthalpy line on the Mollier diagram. During dry summer afternoons (outdoor VPD > 2.0 kPa) paired with modulated ridge ventilation, 70 bar fogging lowers compartment air temperature by 4.5 °C to 7.0 °C while holding VPD inside the 0.85–1.15 kPa stomatal optimum."
           }
         },
         {
           "@type": "Question",
-          "name": "Where can I simulate these exact thermodynamic and agronomic equations for my own facility?",
+          "name": "What water-quality specification prevents orifice erosion in 0.15 mm ruby/ceramic high-pressure fogging nozzles?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Launch our interactive Interactive CEA Engineering Calculator or explore the full suite of CEA engineering calculators linked below."
+            "text": "Feed water must undergo 5 μm/1 μm sediment filtration, Reverse Osmosis demineralization (EC < 0.05 dS/m, zero CaCO3 scaling), and UV-C sterilization to eliminate Legionella and nozzle clogging; size pump flow and droplet evaporation kinetics in the High-Pressure Fogging & Evaporative Cooling Engine."
           }
         }
       ]
@@ -153,13 +153,13 @@
     </header>
 
     <div class="article-body">
-      <p class="lead">During hot summer months, low humidity combined with high ambient temperatures creates extreme vapor pressure deficits (VPD > 2.0 kPa), causing instantaneous stomatal closure and blossom end rot. Low-pressure misting systems (< 15 bar) produce large droplets (> 45\ μm) that wet the leaf surface, creating optimal infection conditions for fungal pathogens. In contrast, <strong>70-bar high-pressure fogging atomizes droplets to a Sauter Mean Diameter (D<sub>32</sub> < 10\ μm)</strong>, enabling 100% flash evaporation in mid-air.</p>
+      <p class="lead">During hot summer months, low humidity combined with high ambient temperatures creates extreme vapor pressure deficits (VPD > 2.0 kPa), causing instantaneous stomatal closure and blossom end rot. Low-pressure misting systems (< 15 bar) produce large droplets (&gt; 45 μm) that wet the leaf surface, creating optimal infection conditions for fungal pathogens. In contrast, <strong>70-bar high-pressure fogging atomizes droplets to a Sauter Mean Diameter (D<sub>32</sub> &lt; 10 μm)</strong>, enabling 100% flash evaporation in mid-air.</p>
 
       <h2>1. The d² Evaporation Law</h2>
       <div class="code-box">
         <code>t<sub>evap</sub> = (D_0^2)/(8 D_v (Δ ρ)/(ρ_L))</code>
       </div>
-      <p>A 10\ μm micro-droplet evaporates completely in under <strong>1.5 seconds</strong>, absorbing 2,450 kJ of latent heat per kilogram of water and depressing greenhouse air temperatures by up to <strong>-7.0°C</strong> without wetting the crop.</p>
+      <p>A 10 μm micro-droplet evaporates completely in under <strong>1.5 seconds</strong>, absorbing 2,450 kJ of latent heat per kilogram of water and depressing greenhouse air temperatures by up to <strong>-7.0°C</strong> without wetting the crop.</p>
 
       <h2>2. Interactive Fogging Engine</h2>
       <p>Simulate your droplet atomization and adiabatic cooling potential:</p>
@@ -262,12 +262,12 @@
 
         <h2>Section E: Frequently Asked Engineering Questions (FAQ)</h2>
         <div class="faq-block" style="margin-top: 14px;">
-          <p><strong>Q1: How do operators prevent humidity spikes when thermal screens are closed over 95%?</strong><br>
-          By coordinating a controlled 1.5%–4.0% <em>moisture purge gap (Screen Gap)</em> with a minimum pipe-rail temperature of 38–42 °C, gentle buoyancy-driven convection transports excess water vapor into the upper roof plenum where it condenses on the cold glass envelope and drains via gutter channels.</p>
-          <p><strong>Q2: What sampling frequency is required to synchronize solar radiation with irrigation and climate actuators?</strong><br>
-          Quantum PAR and pyranometer sensors are sampled every 5 seconds, filtered over a 60-second rolling window, and integrated into cumulative radiation sums (J/cm<sup>2</sup>) to trigger precision 100 mL drip shots while updating MPC climate trajectories every 5 minutes.</p>
-          <p><strong>Q3: Where can I simulate these exact thermodynamic and agronomic equations for my own facility?</strong><br>
-          Launch our interactive <a href="/tools/psychrometric-mollier-greenhouse-dehumidifier.html" style="color: #10b981; font-weight: 700;">Interactive CEA Engineering Calculator</a> or explore the full suite of CEA engineering calculators linked below.</p>
+          <p><strong>Q1: Why must greenhouse evaporative fogging manifolds operate at ≥ 70 bar (1,000 psi) instead of low-pressure 10–15 bar misting?</strong><br>
+          Low-pressure nozzles (&lt; 15 bar) generate coarse droplets with Sauter Mean Diameter D<sub>32</sub> &gt; 45 μm whose terminal settling velocity deposits free liquid films onto leaves, triggering <em>Botrytis cinerea</em> and foliar salt burn. Pin-jet nozzles at 70–100 bar shear RO water into D<sub>32</sub> &lt; 10 μm aerosols that flash-evaporate entirely in mid-air within t<sub>evap</sub> &lt; 1.5 seconds.</p>
+          <p><strong>Q2: How much sensible cooling can adiabatic high-pressure fogging achieve without crossing the dew-point saturation safety limit?</strong><br>
+          Every kilogram of atomized RO water absorbs h<sub>fg</sub> ≈ 2,450 kJ of sensible heat along a constant-wet-bulb enthalpy line on the Mollier diagram. During dry summer afternoons (outdoor VPD &gt; 2.0 kPa) paired with modulated ridge ventilation, 70 bar fogging lowers compartment air temperature by 4.5 °C to 7.0 °C while holding VPD inside the 0.85–1.15 kPa stomatal optimum.</p>
+          <p><strong>Q3: What water-quality specification prevents orifice erosion in 0.15 mm ruby/ceramic high-pressure fogging nozzles?</strong><br>
+          Feed water must undergo 5 μm/1 μm sediment filtration, Reverse Osmosis demineralization (EC &lt; 0.05 dS/m, zero CaCO<sub>3</sub> scaling), and UV-C sterilization to eliminate <em>Legionella</em> and nozzle clogging; size pump flow and droplet evaporation kinetics in the <a href="/tools/fogging-nozzle-droplet-evaporative-cooling-engine.html" style="color: #10b981; font-weight: 700;">High-Pressure Fogging &amp; Evaporative Cooling Engine</a>.</p>
         </div>
       </section>
 <!-- INW-DEEP-ENG-END -->
