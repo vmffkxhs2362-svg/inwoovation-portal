@@ -1,14 +1,14 @@
 # 📘 The CEA Biophysics & Greenhouse Engineering Handbook
-## OpenCEA Compendium: 78 Volumes (214 Multilingual Editions) & 42 Live Simulators
+## OpenCEA Compendium: 78 Volumes (215 Multilingual Editions) & 42 Live Simulators
 
 > **Author**: Inwoovation Lab (Inwoo Hwang)  
 > **Target Audience**: Commercial Greenhouse Operators, Plant Factory Systems Engineers, Gärtnermeister Candidates, Agronomists  
-> **Publication Standard**: Verified Biophysical Equations (Magnus-Tetens, Penman-Monteith, Farquhar FvCB, DIN V 18599, Debye-Hückel), Interactive Simulator Synchronized (`2026-11-26`)  
+> **Publication Standard**: Verified Biophysical Equations (Magnus-Tetens, Penman-Monteith, Farquhar FvCB, DIN V 18599, Debye-Hückel), Interactive Simulator Synchronized (`2026-11-27`)  
 
 ---
 
 ## 📌 Executive Abstract & Compendium Profile
-This open-access technical compendium organizes all **78 English engineering monographs** (**214 total EN/DE/JA editions**) alongside **42 client-side biophysical simulators** and **192 hyper-local agricultural grant programs** into six engineering domains.
+This open-access technical compendium organizes all **78 English engineering monographs** (**215 total EN/DE/JA editions**) alongside **42 client-side biophysical simulators** and **192 hyper-local agricultural grant programs** into six engineering domains.
 
 ---
 
@@ -653,6 +653,7 @@ This open-access technical compendium organizes all **78 English engineering mon
 <a id="chapter-59-article-59-epex-spot-negative-pricing-bess-power-to-heat-greenhouse"></a>
 - **EN Monograph**: [../articles/article-59-epex-spot-negative-pricing-bess-power-to-heat-greenhouse.html](../articles/article-59-epex-spot-negative-pricing-bess-power-to-heat-greenhouse.html)
 - **DE Edition**: [../articles/de/article-59-epex-spot-negativstrompreise-bess-power-to-heat-elektrokessel-venlo.html](../articles/de/article-59-epex-spot-negativstrompreise-bess-power-to-heat-elektrokessel-venlo.html)
+- **JA Edition**: [../articles/ja/article-59-epex-spot-negative-pricing-bess-power-to-heat-greenhouse-jp.html](../articles/ja/article-59-epex-spot-negative-pricing-bess-power-to-heat-greenhouse-jp.html)
 - **Paired Live Simulator**: [`tools/index.html`](../tools/index.html)
 - **Synopsis**: Engineering thermodynamics and quantitative energy arbitrage: electrode boilers, heat pump integration, atmospheric thermocline buffer tanks, and BESS.
 

@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta name="google-adsense-account" content="ca-pub-8597809158257497">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <title>Vol. 59: EPEX SPOT マイナス電力価格と P2H・BESS 蓄熱設計 | Inwoovation</title>
+  <meta name="description" content="欧州 Venlo 温室における EPEX SPOT マイナス電力価格を利用した Power-to-Heat (20 kV 電極ボイラ・ヒートポンプ)、高リチャードソン数 (Ri 5超) 温度成層蓄熱槽、LFP ハイブリッド BESS (LCOS)、24時間 MILP 最適運用および Straelen 10 ha.">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <link rel="canonical" href="https://inwoovation.com/articles/ja/article-59-epex-spot-negative-pricing-bess-power-to-heat-greenhouse-jp.html">
+  <link rel="alternate" hreflang="en" href="https://inwoovation.com/articles/article-59-epex-spot-negative-pricing-bess-power-to-heat-greenhouse.html">
+  <link rel="alternate" hreflang="x-default" href="https://inwoovation.com/articles/article-59-epex-spot-negative-pricing-bess-power-to-heat-greenhouse.html">
+  <link rel="alternate" hreflang="de" href="https://inwoovation.com/articles/de/article-59-epex-spot-negativstrompreise-bess-power-to-heat-elektrokessel-venlo.html">
+  <link rel="alternate" hreflang="ja" href="https://inwoovation.com/articles/ja/article-59-epex-spot-negative-pricing-bess-power-to-heat-greenhouse-jp.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Vol. 59: EPEX SPOT マイナス電力価格と P2H・BESS 蓄熱設計 | Inwoovation">
+  <meta property="og:description" content="欧州 Venlo 温室における EPEX SPOT マイナス電力価格を利用した Power-to-Heat (20 kV 電極ボイラ・ヒートポンプ)、高リチャードソン数 (Ri 5超) 温度成層蓄熱槽、LFP ハイブリッド BESS (LCOS)、24時間 MILP 最適運用および Straelen 10 ha 実証と独蘭日補助金比較の精密工学解説。">
+  <meta property="og:url" content="https://inwoovation.com/articles/ja/article-59-epex-spot-negative-pricing-bess-power-to-heat-greenhouse-jp.html">
+  <meta property="og:image" content="https://inwoovation.com/og-cover.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V4RYJBMEDE"></script>
+  <script>
+    if (navigator.webdriver || /HeadlessChrome|PhantomJS|Lighthouse|PTST|bot|crawler|spider|slurp/i.test(navigator.userAgent) || location.hostname === 'localhost' || location.hostname === '127.0.0.1' || (screen.width === 1366 && screen.height === 1366) || (screen.width === 800 && screen.height === 600) || screen.height >= 5000) { window['ga-disable-G-V4RYJBMEDE'] = true; }
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {'ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','analytics_storage':'denied','wait_for_update':500,'region':['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IS','IE','IT','LV','LI','LT','LU','MT','NL','NO','PL','PT','RO','SK','SI','ES','SE','GB','CH']});try{var _c=localStorage.getItem('inw_gdpr_consent_v2');if(_c==='granted')gtag('consent','update',{'ad_storage':'granted','ad_user_data':'granted','ad_personalization':'granted','analytics_storage':'granted'});}catch(_e){}
+       gtag('js', new Date());
+    gtag('config', 'G-V4RYJBMEDE');
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8597809158257497" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/global-ui-enhancements.css?v=20261108">
+  <script src="/js/global-search-palette.js?v=20261108" defer></script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "headline": "Vol. 59: EPEX SPOT マイナス電力価格と P2H・BESS 蓄熱設計 | Inwoovation",
+      "description": "欧州 Venlo 温室における EPEX SPOT マイナス電力価格を利用した Power-to-Heat (20 kV 電極ボイラ・ヒートポンプ)、高リチャードソン数 (Ri 5超) 温度成層蓄熱槽、LFP ハイブリッド BESS (LCOS)、24時間 MILP 最適運用および Straelen 10 ha 実証と独蘭日補助金比較の精密工学解説。",
+      "inLanguage": "ja",
+      "datePublished": "2026-11-27",
+      "dateModified": "2026-11-27",
+      "mainEntityOfPage": "https://inwoovation.com/articles/ja/article-59-epex-spot-negative-pricing-bess-power-to-heat-greenhouse-jp.html",
+      "image": "https://inwoovation.com/og-cover.jpg",
+      "author": {
+        "@type": "Person",
+        "name": "Inwoo Hwang",
+        "jobTitle": "Horticultural & CEA Systems Engineer",
+        "url": "https://inwoovation.com/about.html"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Inwoovation Lab",
+        "url": "https://inwoovation.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://inwoovation.com/og-cover.jpg"
+        }
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inwoovation Lab",
+          "item": "https://inwoovation.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Engineering Guides",
+          "item": "https://inwoovation.com/guides.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Vol. 59: EPEX 負価格・P2H ＆ BESS",
+          "item": "https://inwoovation.com/articles/ja/article-59-epex-spot-negative-pricing-bess-power-to-heat-greenhouse-jp.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Q1: EPEX SPOT マイナス電力価格とドイツ EEG 第 51 条は、温室の CHP (WKK) と P2H 運用をどのように変化させますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ドイツ再生可能エネルギー法 (§ 51 EEG) では連続マイナス電力価格時間帯の売電支援金が停止されるため、ガス CHP の稼働は純損失となります。ダイナミック EMS は直ちに CHP を停止し、負価格の系統電力を 20 kV 電極ボイラ (効率 99.5%) やヒートポンプへ吸収させて系統からキャッシュを受け取りつつ、蓄熱槽と LFP-BESS を充電します。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Q2: 大流量 P2H 充電時に大気開放型蓄熱バッファ槽でリチャードソン数 Ri > 5 を維持しなければならない工学理由は何ですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ri = (g · β · ΔT · H_diff) / v_in² > 5.0 を満たすことで浮力がラジアルディフューザー噴流の乱流運動量に打ち勝ち、上部 90〜95 °C 高温層と下部 35〜40 °C 還水層の温度境界 (サーモクライン) を 30 cm 未満に維持できます。成層が崩壊すると有効蓄熱容量が半減し、翌日ヒートポンプや排ガス凝縮器の効率が著しく低下します。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Q3: 24 時間混合整数線形計画法 (MILP) は、温水蓄熱槽とハイブリッド LFP-BESS の役割をどのように最適分離しますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "MILP ソルバーは翌日 15 分/時間単位の電力価格、日射予測、DIN V 18599 熱負荷と LFP セルのサイクル劣化コスト (€/MWh) を同時に評価します。低エクセルギーの暖房負荷は CAPEX が極めて低い蓄熱バッファ槽 (< 3.5 €/kWhth) へ優先配分し、高価値な BESS 容量は夜間高騰帯の補光 LED 給電およびデマンドピーク抑制へ温存します。"
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+  <style>
+    body { margin: 0; font-family: 'Plus Jakarta Sans', sans-serif; background: #090d16; color: #e2e8f0; line-height: 1.8; }
+    .article-shell { max-width: 920px; margin: 0 auto; padding: 36px 22px 60px; }
+    .badge-pill { display: inline-block; padding: 6px 14px; border-radius: 999px; background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.4); color: #34d399; font-size: 0.82rem; font-weight: 700; margin-bottom: 14px; }
+    h1 { font-family: 'Outfit', sans-serif; font-size: 2.25rem; line-height: 1.25; color: #f8fafc; margin: 0 0 14px 0; }
+    .meta-bar { color: #94a3b8; font-size: 0.9rem; margin-bottom: 28px; padding-bottom: 18px; border-bottom: 1px solid rgba(148, 163, 184, 0.18); }
+    .formula-box { background: rgba(15, 23, 42, 0.9); border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 12px; padding: 18px 22px; margin: 20px 0; font-family: 'JetBrains Mono', monospace; color: #38bdf8; overflow-x: auto; }
+    table.eng-table { width: 100%; border-collapse: collapse; margin: 20px 0; background: rgba(15, 23, 42, 0.75); border-radius: 12px; overflow: hidden; }
+    table.eng-table th, table.eng-table td { padding: 12px 14px; border: 1px solid rgba(148, 163, 184, 0.2); text-align: left; font-size: 0.92rem; }
+    table.eng-table th { background: rgba(30, 41, 59, 0.9); color: #38bdf8; font-weight: 700; }
+  </style>
+</head>
+<body>
+<!-- INW-STD-NAV-START -->
+<nav class="inw-top-nav" aria-label="Main Navigation" style="background: #0f172a; border-bottom: 1px solid #1e293b; padding: 12px 20px; font-family: system-ui, -apple-system, sans-serif; box-sizing: border-box; width: 100%;">
+  <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px;">
+    <a href="/index.html" style="color: #10b981; font-weight: 800; font-size: 1.15rem; text-decoration: none; letter-spacing: -0.02em;">Inwoovation Lab</a>
+    <div style="display: flex; flex-wrap: wrap; gap: 14px; font-size: 0.9rem;">
+      <a href="/index.html" style="color: #e2e8f0; text-decoration: none;">Home</a>
+      <a href="/tools/index.html" style="color: #e2e8f0; text-decoration: none;">Calculators</a>
+      <a href="/articles/index.html" style="color: #38bdf8; font-weight: 600; text-decoration: none;">Articles</a>
+      <a href="/wiki/index.html" style="color: #e2e8f0; text-decoration: none;">Wiki</a>
+      <a href="/climate/index.html" style="color: #e2e8f0; text-decoration: none;">Climate Hub</a>
+      <a href="/crops/index.html" style="color: #e2e8f0; text-decoration: none;">Crops</a>
+      <a href="/tools/venlocad-3d.html" style="color: #10b981; font-weight: 600; text-decoration: none;">VenloCAD 3D</a>
+      <button type="button" onclick="window.InwooPalette && window.InwooPalette.open()" style="background: rgba(15, 23, 42, 0.9); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.4); padding: 6px 12px; border-radius: 6px; font-size: 0.85rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">🔍 Search <kbd style="background: rgba(255,255,255,0.1); padding: 1px 5px; border-radius: 4px; font-size: 0.72rem;">Ctrl+K</kbd></button>
+      <a href="/about.html" style="color: #e2e8f0; text-decoration: none;">About</a>
+    </div>
+  </div>
+</nav>
+<!-- INW-STD-NAV-END -->
+  <main class="article-shell">
+    <div style="margin-bottom: 20px;">
+      <a href="/guides.html" style="color: #38bdf8; text-decoration: none; font-weight: 700; font-size: 0.92rem;">← 技術モノグラフ一覧（Engineering Guides）へ戻る</a>
+    </div>
+    <span class="badge-pill">🇯🇵 Vol. 59 · エネルギー工学 &amp; CEA ミクロ経済学 (日本語版)</span>
+    <h1>EPEX SPOT マイナス電力価格裁定、ハイブリッド BESS 容量設計および次世代 Venlo 温室の Power-to-Heat 温度成層蓄熱物理学</h1>
+<!-- INW-LANG-SWITCHER-START -->
+<div class="inw-lang-switcher-bar" style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:14px 0 20px 0; padding:10px 14px; background:rgba(15,23,42,0.75); border:1px solid rgba(148,163,184,0.2); border-radius:12px;">
+  <span style="font-size:0.8rem; color:#94a3b8; font-weight:700; margin-right:4px;">🌐 Vol. 59 Editions:</span>
+  <a href="/articles/article-59-epex-spot-negative-pricing-bess-power-to-heat-greenhouse.html" style="display:inline-flex; align-items:center; padding:5px 12px; border-radius:999px; background:rgba(30,41,59,0.8); border:1px solid rgba(56,189,248,0.35); color:#38bdf8; text-decoration:none; font-size:0.8rem; font-weight:600;">🇬🇧 English Edition →</a>
+  <a href="/articles/de/article-59-epex-spot-negativstrompreise-bess-power-to-heat-elektrokessel-venlo.html" style="display:inline-flex; align-items:center; padding:5px 12px; border-radius:999px; background:rgba(30,41,59,0.8); border:1px solid rgba(56,189,248,0.35); color:#38bdf8; text-decoration:none; font-size:0.8rem; font-weight:600;">🇩🇪 Deutsche Ausgabe →</a>
+  <span style="display:inline-flex; align-items:center; padding:5px 12px; border-radius:999px; background:rgba(16,185,129,0.22); border:1px solid #10b981; color:#34d399; font-size:0.8rem; font-weight:700;">🇯🇵 日本語版 (JA) (Active)</span>
+</div>
+<!-- INW-LANG-SWITCHER-END -->
+    <div class="meta-bar">
+      <span>👨‍🔬 <strong>Inwoo Hwang</strong> (Inwoovation Lab)</span> &nbsp;|&nbsp;
+      <span>📅 Last Updated: November 27, 2026</span> &nbsp;|&nbsp;
+      <span>⏱️ 14 min read</span>
+    </div>
+
+      <section style="margin-bottom: 34px;">
+        <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px; margin-bottom: 16px;">1. EPEX SPOT マイナス電力価格の発生メカニズムと P2H ミクロ経済物理学</h2>
+        
+<p>欧州連系電力網 (ENTSO-E) において、ドイツおよびオランダの陸上・洋上風力発電と事業用太陽光発電 (PV) の大量導入が進んだ結果、卸売電力市場 (<strong>EPEX SPOT Day-Ahead / Intraday</strong>) におけるマイナス電力価格 (Negative Pricing) は偶発的な異常値ではなく構造的な常態となっています。年間 <strong>350 〜 500 時間</strong> 以上にわたりスポット価格が負値を記録し、気象条件次第では <strong>-50 〜 -150 €/MWh</strong> に達します。</p>
+<p>従来型のガスエンジン熱電併給システム (<strong>CHP / WKK</strong>) に依存する Venlo 型高軒高施設園芸温室では、この現象が二重の経済構造変化をもたらします。ドイツ再生可能エネルギー法 (<strong>EEG 第 51 条 / &sect; 51 EEG</strong>) に基づき連続マイナス価格時間帯には CHP 売電プレミアムが停止されるため、ガス発電の継続は逆ザヤ損失を生みます。一方、施設側が高電圧 <strong>電極ボイラ (Power-to-Heat: P2H)</strong> および蓄電池 <strong>BESS</strong> を備えた能動的仮想発電所 (<strong>VPP: Virtual Power Plant</strong>) へ転換すれば、余剰電力を吸収するだけで系統市場から直接現金収入を受け取りながら、暖房用化石ガスと EU-ETS 炭素コストを同時に代替できます。</p>
+<div class="formula-box">
+R<sub>P2H</sub> [€/MWh] = |P<sub>spot</sub>| &minus; ( C<sub>grid_fee</sub> + C<sub>concession</sub> + C<sub>levies</sub> ) + ( C<sub>avoided_gas</sub> / &eta;<sub>boiler</sub> )
+</div>
+<p>ここで、|P<sub>spot</sub>| は EPEX SPOT マイナス約定価格の絶対値、C<sub>grid_fee</sub> は系統利用料 (ドイツ StromNEV 第 19 条等の可制御負荷減免適用後)、C<sub>avoided_gas</sub> は置換された天然ガス燃料費および <strong>EU-ETS CO<sub>2</sub> 排出枠価格 (約 75 €/t CO<sub>2</sub>)</strong> を合算した回避熱コスト、&eta;<sub>boiler</sub> は電極ボイラの熱変換効率 (<strong>&ge; 99.4 %</strong>) です。例としてスポット価格が <strong>-60 €/MWh</strong> に低下した局面で <strong>8 MW 電極ボイラ</strong> を全負荷運転すると、1 時間あたり <strong>480 €</strong> の直接キャッシュフローを得ながら、燃料費ゼロで <strong>27.6 GJ/h</strong> の高温熱エネルギーを蓄熱バッファ槽へ充填できます。</p>
+
+      </section>
+      <section style="margin-bottom: 34px;">
+        <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px; margin-bottom: 16px;">2. Power-to-Heat (P2H) 二層電化アーキテクチャ：20 kV 電極ボイラ vs 産業用ヒートポンプ</h2>
+        
+<p>高軒高ガラス温室における電化熱源の設計では、マイナス電力価格スパイクおよび周波数調整市場 (<strong>FCR / aFRR</strong>) に数秒で追従する「高速ピーク吸収層」と、定常的なベースロード暖房を担う「高 COP 基盤層」を分離する二層ハイブリッド構成が最適です。各熱源・蓄エネ資産の技術経済特性を比較します。</p>
+<table class="eng-table">
+  <thead>
+    <tr>
+      <th>エネルギー資産</th>
+      <th>定格電圧 / 運転帯域</th>
+      <th>熱効率 / COP / RTE</th>
+      <th>負荷追従速度 (0 &rarr; 100%)</th>
+      <th>CAPEX 概算水準</th>
+      <th>電力市場での最適役割</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>高電圧電極ボイラ (P2H)</strong></td>
+      <td>10 kV &ndash; 24 kV (中圧系統)</td>
+      <td>99.5 % (&eta;<sub>th</sub>)</td>
+      <td><strong>&lt; 30 秒</strong> (1% &ndash; 100% 連続制御)</td>
+      <td>45 &ndash; 75 €/kW<sub>th</sub></td>
+      <td>マイナス価格裁定・FCR / aFRR 二次調整力供出</td>
+    </tr>
+    <tr>
+      <td><strong>水熱源ヒートポンプ (HP)</strong></td>
+      <td>400 V &ndash; 690 V</td>
+      <td>COP 4.2 &ndash; 5.8</td>
+      <td>3 &ndash; 8 分</td>
+      <td>350 &ndash; 550 €/kW<sub>th</sub></td>
+      <td>ベースロード連続暖房・帯水層蓄熱 (ATES) 回収</td>
+    </tr>
+    <tr>
+      <td><strong>天然ガス CHP (WKK 3.3 MW)</strong></td>
+      <td>10.5 kV</td>
+      <td>44 % 発電 / 48 % 排熱</td>
+      <td>10 &ndash; 15 分</td>
+      <td>600 &ndash; 850 €/kW<sub>e</sub></td>
+      <td>高騰時間帯の電力売電・SCR 浄化 CO<sub>2</sub> 施肥供給</td>
+    </tr>
+    <tr>
+      <td><strong>ハイブリッド LFP-BESS (4 MWh)</strong></td>
+      <td>800 V &ndash; 1,200 V DC</td>
+      <td>88 &ndash; 92 % (RTE)</td>
+      <td><strong>&lt; 200 ミリ秒</strong></td>
+      <td>220 &ndash; 310 €/kWh</td>
+      <td>日中スプレッド裁定・ピークカット・LED 給電</td>
+    </tr>
+  </tbody>
+</table>
+<h3>2.1. 電極ボイラ直接イオン通電の熱発生物理</h3>
+<p>金属シーズヒーターを用いる抵抗加熱と異なり、中圧 <strong>20 kV 電極ボイラ</strong> では高純度脱塩水に微量電解質を添加して電気伝導度 &sigma; (&mu;S/cm) を自動調圧し、三相交流電極を水中へ直接浸漬して水自身のイオン抵抗 R<sub>water</sub> によりジュール発熱させます。</p>
+<div class="formula-box">
+Q<sub>th</sub> = 3 &middot; I<sup>2</sup> &middot; R<sub>water</sub> = 3 &middot; V<sub>ph</sub><sup>2</sup> / R<sub>water</sub>(&sigma;, T)
+</div>
+<p>絶縁シールド高さまたは水位を比例弁で連続制御することで <strong>15 秒以内に 1% から 100%</strong> までの無段階出力変調が可能となり、欧州系統運用者 (TSO) が求める FCR (一次周波数制御) および aFRR (自動周波数復旧制御) の厳格な事前資格審査 (Prequalification) を単体でクリアできます。</p>
+
+      </section>
+      <section style="margin-bottom: 34px;">
+        <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px; margin-bottom: 16px;">3. 大気開放型・温度成層蓄熱バッファ槽の流体力学 (リチャードソン数 Ri &gt; 5)</h2>
+        
+<p>短時間のマイナス電力価格ウィンドウで急激に発生させた 100 MW<sub>th</sub> 級の熱エネルギーは、作物生長管 (Grow-pipe 35&ndash;42 °C) やレール暖房管 (Pipe-rail 45&ndash;55 °C) が要求する夜間連続暖房へ無損失で受け渡す必要があります。Venlo 温室では 1 ha あたり <strong>350 〜 500 m<sup>3</sup></strong> (10 ha 規模で <strong>2,000 〜 5,000 m<sup>3</sup></strong>) の大型垂直円筒形大気開放型蓄熱槽を設置します。</p>
+<p>上部から供給される <strong>95 °C 高温水 (密度 &rho; &approx; 961.9 kg/m<sup>3</sup>)</strong> と下部還水の <strong>35 °C 低温水 (密度 &rho; &approx; 994.0 kg/m<sup>3</sup>)</strong> が大流量充填時に乱流混合すると、有効エクセルギーと翌朝のヒートポンプ COP が急低下します。そのため槽上下端に低速ラジアルディフューザーを配置し、浮力と流入慣性力の比を表す無次元 <strong>リチャードソン数 (Richardson Number, Ri)</strong> を設計基準とします。</p>
+<div class="formula-box">
+Ri = ( g &middot; &beta; &middot; ( T<sub>hot</sub> &minus; T<sub>cold</sub> ) &middot; H<sub>diff</sub> ) / v<sub>in</sub><sup>2</sup> &gt;&gt; 1.0 &nbsp; (設計基準: Ri &gt; 5.0)
+</div>
+<ul>
+  <li><strong>g</strong>: 重力加速度 (9.81 m/s<sup>2</sup>)。</li>
+  <li><strong>&beta;</strong>: 水の体積熱膨張係数 (約 5.2 &times; 10<sup>&minus;4</sup> K<sup>&minus;1</sup>)。</li>
+  <li><strong>H<sub>diff</sub></strong>: ラジアルディフューザー有効水理直径。</li>
+  <li><strong>v<sub>in</sub></strong>: 流入放射速度 (浮力成層維持のため <strong>&lt; 0.15 m/s</strong> に厳密制限)。</li>
+</ul>
+<p><strong>Ri &gt; 5.0</strong> の条件下では高温域と低温域を隔てる温度遷移層 (<strong>Thermocline</strong>) の厚みが <strong>30 cm 未満</strong> に抑えられ、<strong>97.5 %</strong> に達する蓄熱効率で 6 時間の負価格帯から <strong>最大 150 MWh</strong> の熱量を回収し、続く 36 時間の冬季夜間暖房をガス消費ゼロで賄います。</p>
+
+      </section>
+      <section style="margin-bottom: 34px;">
+        <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px; margin-bottom: 16px;">4. ハイブリッド LFP-BESS 容量設計・LCOS と SEI 劣化抑制力学</h2>
+        
+<p>温水蓄熱槽は熱貯蔵 CAPEX が <strong>&lt; 3.5 €/kWh<sub>th</sub></strong> と極めて安価ですが、ランキンサイクルによる再発電効率は 15 % 未満にとどまり、植物工場・補光用 <strong>高効率トップ LED (2.8&ndash;3.5 &mu;mol/J、所要電力 1.2&ndash;1.8 MW<sub>e</sub>/ha)</strong> へ電力を戻すことは熱力学的に不合理です。したがって、熱負荷は P2H ＋ 蓄熱槽へ振り分け、高エクセルギーの電力需要 (補光・ポンプ・環境制御) 向けに <strong>リン酸鉄リチウム (LiFePO<sub>4</sub> / LFP) BESS</strong> を併設するハイブリッド最適化が不可欠となります。</p>
+<div class="formula-box">
+LCOS = [ CAPEX<sub>0</sub> + &sum;<sub>t=1..N</sub> ( OPEX<sub>t</sub> + C<sub>deg</sub>(DoD, C<sub>rate</sub>) ) / (1 + r)<sup>t</sup> ] / [ &sum;<sub>t=1..N</sub> E<sub>discharged,t</sub> / (1 + r)<sup>t</sup> ]
+</div>
+<p>LFP セルのカレンダー劣化および充放電サイクルに伴う固体電解質界面 (SEI) 被膜成長による容量低下 Q<sub>loss</sub> は、アレニウス型温度依存項とべき乗 DoD 項に従います。</p>
+<div class="formula-box">
+Q<sub>loss</sub> = B(C<sub>rate</sub>) &middot; exp( &minus;E<sub>a</sub> / (R &middot; T<sub>cell</sub>) ) &middot; (DoD)<sup>1.61</sup> &middot; (N<sub>cycles</sub>)<sup>0.5</sup>
+</div>
+<p>放電深度 (<strong>DoD</strong>) を <strong>10 % 〜 85 %</strong> の安全ウィンドウへ制約し、液冷チラーによりセル温度を <strong>22 °C &plusmn; 2 K</strong> に精密維持することで、容量維持率 80 % の EOL 到達までに <strong>6,000 〜 8,000 等価フルサイクル</strong> を確保でき、温室 BESS の均等化貯蔵原価 (<strong>LCOS</strong>) は <strong>0.052 〜 0.068 €/kWh</strong> まで低減します。</p>
+
+      </section>
+      <section style="margin-bottom: 34px;">
+        <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px; margin-bottom: 16px;">5. 24時間混合整数線形計画法 (MILP) による統合最適ディスパッチ</h2>
+        
+<p>毎日中央欧州時間 <strong>13:00 CET</strong> に EPEX SPOT 翌日 24 時間プライスベクトル (または日本市場では JEPX スポット価格予測) が確定すると、温室統合エネルギー管理システム (<strong>EMS</strong>) は熱力学境界条件と植物生理ハード制約を同時に満たす 24 時間ホライズンの <strong>混合整数線形計画法 (MILP)</strong> を 5〜15 分刻みで解きます。</p>
+<div class="formula-box">
+min &sum;<sub>t=1..24</sub> [ P<sub>spot</sub>(t) &middot; ( P<sub>imp</sub>(t) &minus; P<sub>exp</sub>(t) ) + C<sub>gas</sub> &middot; V&#775;<sub>gas</sub>(t) + C<sub>deg</sub> &middot; P<sub>bat,dis</sub>(t) ] &middot; &Delta;t
+</div>
+<ul>
+  <li><strong>熱的快適境界 (DIN V 18599 準拠)</strong>: 蓄熱槽保有熱量 E<sub>th</sub>(t) &ge; E<sub>th,min</sub>(t) により厳冬期夜間でも最低樹冠温度 <strong>T<sub>night</sub> &ge; 16.5 °C</strong> を絶対保証します。</li>
+  <li><strong>CO<sub>2</sub> 物質収支制約</strong>: 光合成同化必要量 A<sub>net</sub> を満たすため、CHP 停止中の P2H 運転時は純粋液化炭酸 (<strong>LCO<sub>2</sub></strong>) タンク供給または低価格帯での事前緩衝注入へ無瞬断で切り替えます。</li>
+  <li><strong>受電変圧器容量上限制約</strong>: 20 kV 電極ボイラと LED 補光の同時負荷が系統受電容量 S<sub>max,grid</sub> を超えないよう P<sub>imp</sub>(t) を調停します。</li>
+  <li><strong>光生物学・暗期制約</strong>: トマト等ナス科作物の目標 <strong>DLI &ge; 28 mol&middot;m<sup>&minus;2</sup>&middot;d<sup>&minus;1</sup></strong> を最安値時間帯で達成しつつ、生理障害防止のため <strong>連続暗期 &ge; 6 時間</strong> を厳守します。</li>
+</ul>
+
+      </section>
+      <section style="margin-bottom: 34px;">
+        <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px; margin-bottom: 16px;">6. Straelen 10 ha トマト温室実証分析および独・蘭・日 補助金制度比較 ROI</h2>
+        
+<p>北ライン・ヴェストファーレン州 <strong>Straelen (10 ha ハイワイヤートマト温室)</strong> をベンチマークとした年間エネルギー収支シミュレーション (2025&ndash;2026 年実績価格ベクトル基準) と、主要 3 地域の政策支援比較を示します。</p>
+<h3>6.1. 10 ha Straelen 施設年間シナジー成果</h3>
+<ul>
+  <li><strong>設備構成</strong>: 12 MW 中圧電極ボイラ (20 kV) + 3.3 MW<sub>e</sub> 天然ガス CHP + <strong>4,200 m<sup>3</sup> 温度成層蓄熱槽</strong> + <strong>4.0 MW / 8.0 MWh LFP-BESS</strong> + 10 ha トップ LED (300 &mu;mol/m<sup>2</sup>/s)。</li>
+  <li><strong>マイナス価格運転実績</strong>: 年間 <strong>385 時間</strong> の負価格帯を捕捉 (平均約定価格 <strong>-38.40 €/MWh</strong>) ➔ 買電による直接現金収入 <strong>+€177,408</strong>。</li>
+  <li><strong>天然ガス置換 &amp; ETS 価値</strong>: 年間 <strong>1,420,000 m<sup>3</sup></strong> のガス消費削減 (燃料費節減 <strong>€639,000</strong>) + 回避 CO<sub>2</sub> 排出 <strong>2,840 t</strong> (ETS 排出枠価値 <strong>€213,000</strong>)。</li>
+  <li><strong>BESS 裁定 &amp; 総合 ROI</strong>: BESS 日中裁定・デマンド抑制収益 <strong>€142,500</strong> を合算した <strong>年間純シナジー便益は €1,171,908</strong> に達し、P2H ＋ BESS 増設投資の単純回収年数は <strong>2.9 年</strong> を記録しました。</li>
+</ul>
+<h3>6.2. ドイツ・オランダ・日本の施設園芸電化/BESS 公的支援スキーム比較</h3>
+<table class="eng-table">
+  <thead>
+    <tr>
+      <th>対象国・制度</th>
+      <th>補助率・優遇枠組み</th>
+      <th>適用要件・工学基準</th>
+      <th>投資回収 (ROI) インパクト</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>ドイツ (BMLEH / FNR &middot; KfW 270)</strong></td>
+      <td>省エネ・電化設備 <strong>30 〜 45 % 補助</strong> + KfW 270 低利融資 + &sect; 19 StromNEV 系統託送料減免</td>
+      <td>DIN V 18599 エネルギー監査・CHP 新設除外・自然冷媒 HP 要件</td>
+      <td>10 ha モデル回収年数を <strong>2.9 年 &rarr; 1.8 年</strong> へ短縮</td>
+    </tr>
+    <tr>
+      <td><strong>オランダ (RVO EIA &middot; SDE++)</strong></td>
+      <td>EIA 投資税額控除 (投資額の <strong>40 % 所得控除</strong>) + SDE++ 炭素削減差額補填</td>
+      <td>E-boiler / 帯水層蓄熱 (ATES)・CO<sub>2</sub> 回収 OCAP 網連携認証</td>
+      <td>法人実効税負担を大幅圧縮し WKK 複合運用を加速</td>
+    </tr>
+    <tr>
+      <td><strong>日本 (農水省 MAFF &middot; 経産省 BESS 補助)</strong></td>
+      <td>系統用/再エネ併設 <strong>蓄電池導入支援 (1/3 〜 1/2 補助)</strong> + 施設園芸セーフティネット</td>
+      <td>九州・関東等の昼間出力制御 (ゼロ円/下限価格) 吸収型 HP 蓄熱・VPP アグリゲーション契約</td>
+      <td>出力制御連動型ヒートポンプ＋蓄熱槽の初期回収を <strong>3〜4 年圏</strong> へ改善</td>
+    </tr>
+  </tbody>
+</table>
+
+      </section>
+      <section style="margin-bottom: 34px;">
+        <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #38bdf8; border-bottom: 1px solid rgba(56, 189, 248, 0.25); padding-bottom: 10px; margin-bottom: 16px;">7. 結論：受動的な熱消費者から次世代電力網を支える能動的グリッド安定化資源へ</h2>
+        
+<p>商業温室を単なる化石燃料の受動的エネルギー消費施設と見なす従来の設計思想は完全に過去のものとなりました。風力・太陽光発電が主電源化する現代の電力市場において、<strong>20 kV P2H 電極ボイラ</strong>・高リチャードソン数 <strong>温度成層蓄熱バッファ槽</strong>・長寿命 <strong>LFP ハイブリッド BESS</strong>・そして <strong>MILP モデル予測ディスパッチ</strong> を統合した次世代 Venlo 型温室は、極めて高い熱容量とミリ秒単位の系統応答力を兼ね備えた最強のデマンドサイド調整力 (Flexible Load) として機能します。日本国内の九州・東北等における昼間再エネ出力制御対策にも同一の熱電協調物理アーキテクチャがそのまま適用可能であり、施設園芸経営の燃料費リスクゼロ化と脱炭素化を同時に達成します。</p>
+
+      </section>
+
+    <section style="margin-bottom: 34px;">
+      <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; color: #10b981; border-bottom: 1px solid rgba(16, 185, 129, 0.25); padding-bottom: 10px; margin-bottom: 16px;">施設園芸エンジニアリング 実践FAQ</h2>
+        <div style="background: rgba(15, 23, 42, 0.7); border-left: 4px solid #10b981; padding: 18px 20px; border-radius: 10px; margin-bottom: 14px;">
+          <p style="margin: 0;"><strong>Q1: Q1: EPEX SPOT マイナス電力価格とドイツ EEG 第 51 条は、温室の CHP (WKK) と P2H 運用をどのように変化させますか？</strong><br>ドイツ再生可能エネルギー法 (§ 51 EEG) では連続マイナス電力価格時間帯の売電支援金が停止されるため、ガス CHP の稼働は純損失となります。ダイナミック EMS は直ちに CHP を停止し、負価格の系統電力を 20 kV 電極ボイラ (効率 99.5%) やヒートポンプへ吸収させて系統からキャッシュを受け取りつつ、蓄熱槽と LFP-BESS を充電します。</p>
+        </div>
+        <div style="background: rgba(15, 23, 42, 0.7); border-left: 4px solid #10b981; padding: 18px 20px; border-radius: 10px; margin-bottom: 14px;">
+          <p style="margin: 0;"><strong>Q2: Q2: 大流量 P2H 充電時に大気開放型蓄熱バッファ槽でリチャードソン数 Ri > 5 を維持しなければならない工学理由は何ですか？</strong><br>Ri = (g · β · ΔT · H_diff) / v_in² > 5.0 を満たすことで浮力がラジアルディフューザー噴流の乱流運動量に打ち勝ち、上部 90〜95 °C 高温層と下部 35〜40 °C 還水層の温度境界 (サーモクライン) を 30 cm 未満に維持できます。成層が崩壊すると有効蓄熱容量が半減し、翌日ヒートポンプや排ガス凝縮器の効率が著しく低下します。</p>
+        </div>
+        <div style="background: rgba(15, 23, 42, 0.7); border-left: 4px solid #10b981; padding: 18px 20px; border-radius: 10px; margin-bottom: 14px;">
+          <p style="margin: 0;"><strong>Q3: Q3: 24 時間混合整数線形計画法 (MILP) は、温水蓄熱槽とハイブリッド LFP-BESS の役割をどのように最適分離しますか？</strong><br>MILP ソルバーは翌日 15 分/時間単位の電力価格、日射予測、DIN V 18599 熱負荷と LFP セルのサイクル劣化コスト (€/MWh) を同時に評価します。低エクセルギーの暖房負荷は CAPEX が極めて低い蓄熱バッファ槽 (< 3.5 €/kWhth) へ優先配分し、高価値な BESS 容量は夜間高騰帯の補光 LED 給電およびデマンドピーク抑制へ温存します。</p>
+        </div>
+    </section>
+
+    <section style="margin-bottom: 34px;">
+      <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.35rem; color: #cbd5e1; margin-bottom: 12px;">参考文献・国際規格 (References & Standards)</h2>
+      <ul style="padding-left: 20px;">
+          <li style="margin-bottom: 8px; color: #94a3b8; font-size: 0.92rem;">ENTSO-E Transparency Platform &amp; EPEX SPOT SE (2025/2026). Day-Ahead Negative Pricing Frequency and Intraday Auction Statistics in Germany/Netherlands/Belgium.</li>
+          <li style="margin-bottom: 8px; color: #94a3b8; font-size: 0.92rem;">German Federal Ministry of Justice — Erneuerbare-Energien-Gesetz (EEG 2023/2025), &sect; 51 Verringerung des anzulegenden Wertes bei negativen Preisen &amp; &sect; 19 StromNEV.</li>
+          <li style="margin-bottom: 8px; color: #94a3b8; font-size: 0.92rem;">DIN V 18599 &amp; VDI 2078: Thermodynamic Envelope Heat Loss Calculation and Peak Heating Load Balancing for Multi-Span Venlo Glasshouses.</li>
+          <li style="margin-bottom: 8px; color: #94a3b8; font-size: 0.92rem;">Wageningen University &amp; Research (WUR) Greenhouse Horticulture &amp; Energy Economics Reports: Thermocline Tank Stratification (Ri &gt; 5) and Power-to-Heat VPP Integration.</li>
+          <li style="margin-bottom: 8px; color: #94a3b8; font-size: 0.92rem;">Inwoovation Engineering Lab SSOT Benchmark (2026): 10 ha Straelen High-Wire Tomato Hybrid P2H + 8.0 MWh LFP-BESS 24h MILP Dispatch Simulation Dataset.</li>
+      </ul>
+    </section>
+
+
+<!-- INW-LIVE-WIDGET-START -->
+<section class="inw-live-widget-sandbox" style="margin: 32px 0; padding: 24px; background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(56, 189, 248, 0.35); border-radius: 16px; box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);">
+  <h3 style="margin: 0 0 8px 0; font-size: 1.2rem; color: #38bdf8; font-weight: 800;">🔥 DIN V 18599 温室ピーク暖房負荷 & 保温カーテン省エネシミュレーター</h3>
+  <p style="margin: 0 0 16px 0; font-size: 0.92rem; color: #94a3b8; line-height: 1.6;">温室面積・外気設計温度・被覆材U値・保温カーテンを選択し、ピーク暖房負荷 (kW) と燃料消費量をリアルタイムに試算します。</p>
+  <div style="display: flex; justify-content: center; width: 100%; overflow: hidden;">
+    <iframe src="/embed/heating-loss-widget.html" width="380" height="460" loading="lazy" title="🔥 DIN V 18599 温室ピーク暖房負荷 & 保温カーテン省エネシミュレーター" style="border: none; border-radius: 14px; max-width: 100%;"></iframe>
+  </div>
+</section>
+<!-- INW-LIVE-WIDGET-END -->
+
+<!-- INW-TSUKUBA-FUNNEL-START -->
+<section class="inw-tsukuba-funnel-bridge" style="max-width: 1060px; margin: 32px auto; padding: 26px; background: rgba(15, 23, 42, 0.9); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 16px; text-align: left; box-shadow: 0 10px 28px rgba(0, 0, 0, 0.3);">
+  <h3 style="margin: 0 0 8px 0; font-size: 1.2rem; color: #10b981; font-weight: 800;">🔬 関連する技術論文・作物別環境制御ガイド・シミュレーター</h3>
+  <p style="margin: 0 0 16px 0; font-size: 0.92rem; color: #94a3b8; line-height: 1.6;">本ページの物理モデルおよび設計計算をさらに深く検証するための技術モノグラフと専用計算ツール：</p>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px;">
+    <a href="/articles/ja/article-26-greenhouse-heating-load-din-v-18599-jp.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🇯🇵 JA Vol. 26: 温室暖房負荷モデリングと保温カーテン熱力学（DIN V 18599） →</a>
+    <a href="/articles/ja/article-43-greenhouse-structural-standards-en13031-jp.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🇯🇵 JA Vol. 43: 温室構造設計基準（EN 13031-1 & NEN 3859） →</a>
+    <a href="/articles/ja/article-28-greenhouse-co2-enrichment-economics-jp.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🇯🇵 JA Vol. 28: 温室CO2施用動態と経済的ROI閾値 →</a>
+    <a href="/crops/greenhouse-tomato-microclimate-vpd-steering-guide.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🍅 Commercial High-Wire Tomato Thermal & Rail-Pipe Heating Guide →</a>
+    <a href="/crops/greenhouse-sweet-pepper-climate-blossom-end-rot-guide.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🫑 Sweet Pepper Night Temperature & Pipe-Rail Radiation Guide →</a>
+    <a href="/tools/venlocad-3d.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🏗️ VenloCAD 3D Structural & EN 13031-1 BOM Architect →</a>
+    <a href="/tools/global-agri-subsidy-grant-navigator.html" style="display:block; padding:12px 16px; background:rgba(30,41,59,0.75); border:1px solid rgba(56,189,248,0.25); border-radius:10px; color:#f8fafc; text-decoration:none; font-weight:600; font-size:0.92rem; transition:border-color 0.2s;">🏛️ Global Agri-Subsidy & USDA REAP / German BLE Grant Navigator →</a>
+  </div>
+</section>
+<!-- INW-TSUKUBA-FUNNEL-END -->
+
+    <!-- INW-EEAT-BOX-START -->
+    <section class="inw-eeat-box" style="margin-top: 36px; padding: 24px; background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 16px;">
+      <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; color: #10b981; font-weight: 800; margin-bottom: 6px;">施設園芸・環境制御システムエンジニア — Inwoovation Lab</div>
+      <h3 style="margin: 0 0 8px 0; font-size: 1.15rem; color: #f8fafc;">Inwoo Hwang</h3>
+      <p style="margin: 0; font-size: 0.92rem; color: #cbd5e1; line-height: 1.65;">フェンロー型連棟温室の熱力学設計 (DIN V 18599)、光生物学 (DLI・PPFD・作用スペクトル)、閉鎖型養液栽培および精密環境制御モデルの構築に従事。</p>
+    </section>
+    <!-- INW-EEAT-BOX-END -->
+  </main>
+
+  <!-- INW-STD-FOOTER-START -->
+  <footer class="inw-site-footer" style="margin-top: 48px; padding: 28px 20px; background: #0f172a; color: #94a3b8; text-align: center; border-top: 1px solid rgba(148, 163, 184, 0.15);">
+    <div style="max-width: 1100px; margin: 0 auto;">
+      <p style="margin: 0 0 10px 0;">&copy; 2026 Inwoovation Lab. Precision Controlled Environment Agriculture &amp; Biophysical Engineering.</p>
+      <p style="margin: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 16px;">
+        <a href="/index.html" style="color: #cbd5e1; text-decoration: none;">Home</a>
+        <a href="/guides.html" style="color: #cbd5e1; text-decoration: none;">Engineering Guides</a>
+        <a href="/privacy-policy.html" style="color: #cbd5e1; text-decoration: none;">Privacy Policy</a>
+        <a href="/terms-of-service.html" style="color: #cbd5e1; text-decoration: none;">Terms of Service</a>
+        <a href="/about.html" style="color: #cbd5e1; text-decoration: none;">About</a>
+        <a href="/contact.html" style="color: #cbd5e1; text-decoration: none;">Contact</a>
+      </p>
+    </div>
+  </footer>
+  <!-- INW-STD-FOOTER-END -->
+</body>
+</html>

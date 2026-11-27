@@ -18,8 +18,8 @@
     "cat": "part",
     "url": "directory.html",
     "icon": "⚙️",
-    "desc": "Master HTML sitemap indexing all 397 live pages, 42 calculators, 192 global agricultural grants (v7.0), 214 EN/DE/JA monographs, crop guides, and 40 climate.",
-    "tags": "directory html complete cea engineering directory amp index master html sitemap indexing all 397 live pages 42 calculators 192 global agricultural grants v7 0 214 en de ja monographs crop gu"
+    "desc": "Master HTML sitemap indexing all 398 live pages, 42 calculators, 192 global agricultural grants (v7.0), 215 EN/DE/JA monographs, crop guides, and 40 climate.",
+    "tags": "directory html complete cea engineering directory amp index master html sitemap indexing all 398 live pages 42 calculators 192 global agricultural grants v7 0 215 en de ja monographs crop gu"
   },
   {
     "title": "CEA &amp; Greenhouse Engineering Articles",
@@ -34,8 +34,8 @@
     "cat": "tool",
     "url": "index.html",
     "icon": "🛠️",
-    "desc": "Inwoovation Lab: 42 free CEA biophysics calculators, VenloCAD 3D glasshouse CAD, 192 global agricultural grants across 8 countries, and 214 monographs.",
-    "tags": "index html inwoovation lab inwoovation lab 42 free cea biophysics calculators venlocad 3d glasshouse cad 192 global agricultural grants across 8 countries and 214 monographs"
+    "desc": "Inwoovation Lab: 42 free CEA biophysics calculators, VenloCAD 3D glasshouse CAD, 192 global agricultural grants across 8 countries, and 215 monographs.",
+    "tags": "index html inwoovation lab inwoovation lab 42 free cea biophysics calculators venlocad 3d glasshouse cad 192 global agricultural grants across 8 countries and 215 monographs"
   },
   {
     "title": "Gärtnermeister &amp; KTBL Rechner",
@@ -534,12 +534,12 @@
     "tags": "articles article 58 dynamic co2 enrichment kinetics rubisco carboxylation venlo html dynamic co2 enrichment kinetics amp rubisco engineering biophysics and microeconomic modeling of dynamic "
   },
   {
-    "title": "EPEX Spot Negative Day-Ahead Arbitrage, Hybrid",
+    "title": "EPEX Spot Negative Pricing, P2H &amp; Hybrid BESS",
     "cat": "article",
     "url": "articles/article-59-epex-spot-negative-pricing-bess-power-to-heat-greenhouse.html",
     "icon": "📚",
     "desc": "Engineering thermodynamics and quantitative energy arbitrage: electrode boilers, heat pump integration, atmospheric thermocline buffer tanks, and BESS.",
-    "tags": "articles article 59 epex spot negative pricing bess power to heat greenhouse html epex spot negative day ahead arbitrage hybrid engineering thermodynamics and quantitative energy arbitrage e"
+    "tags": "articles article 59 epex spot negative pricing bess power to heat greenhouse html epex spot negative pricing p2h amp hybrid bess engineering thermodynamics and quantitative energy arbitrage "
   },
   {
     "title": "Real-Time Ion-Selective Electrode (ISE) Arrays",
@@ -698,8 +698,8 @@
     "cat": "article",
     "url": "articles/index.html",
     "icon": "📚",
-    "desc": "Multilingual library of 214 horticultural engineering articles on VPD psychrometrics, DIN V 18599 heating loads, FvCB CO2 kinetics, and MPC control.",
-    "tags": "articles index html cea amp greenhouse engineering articles library multilingual library of 214 horticultural engineering articles on vpd psychrometrics din v 18599 heating loads fvcb co2 ki"
+    "desc": "Multilingual library of 215 horticultural engineering articles on VPD psychrometrics, DIN V 18599 heating loads, FvCB CO2 kinetics, and MPC control.",
+    "tags": "articles index html cea amp greenhouse engineering articles library multilingual library of 215 horticultural engineering articles on vpd psychrometrics din v 18599 heating loads fvcb co2 ki"
   },
   {
     "title": "VPD-Meisterklasse im Gewächshaus",
@@ -1798,12 +1798,20 @@
     "tags": "articles ja article 58 dynamic co2 enrichment kinetics rubisco carboxylation venlo jp html vol 58 動的 co 施用速度論と rubisco 光合成熱力学 高軒高フェンロ 温室の動的 co 施用工学 farquhar fvcb モデルによる rubisco カルボキシル化速度論 葉温"
   },
   {
-    "title": "日本語 施設園芸・スマート農業工学モノグラフ一覧 (58 論文)",
+    "title": "Vol. 59: EPEX SPOT マイナス電力価格と P2H・BESS 蓄熱設計",
+    "cat": "article",
+    "url": "articles/ja/article-59-epex-spot-negative-pricing-bess-power-to-heat-greenhouse-jp.html",
+    "icon": "🇯🇵",
+    "desc": "欧州 Venlo 温室における EPEX SPOT マイナス電力価格を利用した Power-to-Heat (20 kV 電極ボイラ・ヒートポンプ)、高リチャードソン数 (Ri 5超) 温度成層蓄熱槽、LFP ハイブリッド BESS (LCOS)、24時間 MILP 最適運用および Straelen 10 ha.",
+    "tags": "articles ja article 59 epex spot negative pricing bess power to heat greenhouse jp html vol 59 epex spot マイナス電力価格と p2h bess 蓄熱設計 欧州 venlo 温室における epex spot マイナス電力価格を利用した power to heat 20 kv 電"
+  },
+  {
+    "title": "日本語 施設園芸・スマート農業工学モノグラフ一覧 (59 論文)",
     "cat": "article",
     "url": "articles/ja/index.html",
     "icon": "🇯🇵",
-    "desc": "商業用 Venlo 型ガラス温室の VPD 飽差熱力学・DIN V 18599 暖房負荷・EN 13031-1 構造設計・FvCB CO2 施用・養液化学平衡を解説する 58 編の日本語技術論文アーカイブ。",
-    "tags": "articles ja index html 日本語 施設園芸 スマ ト農業工学モノグラフ一覧 58 論文 商業用 venlo 型ガラス温室の vpd 飽差熱力学 din v 18599 暖房負荷 en 13031 1 構造設計 fvcb co2 施用 養液化学平衡を解説する 58 編の日本語技術論文ア カイブ"
+    "desc": "商業用 Venlo 型ガラス温室の VPD 飽差熱力学・DIN V 18599 暖房負荷・EN 13031-1 構造設計・FvCB CO2 施用・養液化学平衡を解説する 59 編の日本語技術論文アーカイブ。",
+    "tags": "articles ja index html 日本語 施設園芸 スマ ト農業工学モノグラフ一覧 59 論文 商業用 venlo 型ガラス温室の vpd 飽差熱力学 din v 18599 暖房負荷 en 13031 1 構造設計 fvcb co2 施用 養液化学平衡を解説する 59 編の日本語技術論文ア カイブ"
   },
   {
     "title": "Diffuse AR Glass vs. Multi-Layer PO Film",
@@ -2266,8 +2274,8 @@
     "cat": "article",
     "url": "handbooks/index.html",
     "icon": "📖",
-    "desc": "Open-access 6-part CEA engineering compendium indexing 78 volumes (214 EN/DE/JA editions), 42 live biophysical calculators, and 192 global grants.",
-    "tags": "handbooks index html cea biophysics amp engineering handbook 214 ed open access 6 part cea engineering compendium indexing 78 volumes 214 en de ja editions 42 live biophysical calculators an"
+    "desc": "Open-access 6-part CEA engineering compendium indexing 78 volumes (215 EN/DE/JA editions), 42 live biophysical calculators, and 192 global grants.",
+    "tags": "handbooks index html cea biophysics amp engineering handbook 214 ed open access 6 part cea engineering compendium indexing 78 volumes 215 en de ja editions 42 live biophysical calculators an"
   },
   {
     "title": "AgriMaster",
@@ -3172,13 +3180,13 @@
       <div class="inwoo-palette-box" role="dialog" aria-modal="true" aria-label="Inwoovation Spotlight Search">
         <div class="inwoo-palette-header">
           <span class="inwoo-palette-search-icon">🔍</span>
-          <input type="text" id="inwoo-palette-input" placeholder="Search all 392 tools, simulators, wiki, crops, climate hubs & EN/DE/JA articles..." autocomplete="off" />
+          <input type="text" id="inwoo-palette-input" placeholder="Search all 393 tools, simulators, wiki, crops, climate hubs & EN/DE/JA articles..." autocomplete="off" />
           <span class="inwoo-palette-esc-badge" onclick="window.InwooPalette.close()">ESC</span>
         </div>
         <div class="inwoo-palette-tabs">
-          <button class="inwoo-pal-tab active" data-cat="all">✨ All (392)</button>
+          <button class="inwoo-pal-tab active" data-cat="all">✨ All (393)</button>
           <button class="inwoo-pal-tab" data-cat="tool">🛠️ Tools (49)</button>
-          <button class="inwoo-pal-tab" data-cat="article">📚 Articles (220)</button>
+          <button class="inwoo-pal-tab" data-cat="article">📚 Articles (221)</button>
           <button class="inwoo-pal-tab" data-cat="wiki">🧬 Wiki (44)</button>
           <button class="inwoo-pal-tab" data-cat="climate">🌍 Climate (41)</button>
           <button class="inwoo-pal-tab" data-cat="sim">🧪 Simulators (19)</button>
@@ -3192,7 +3200,7 @@
             <span><kbd>↵</kbd> Open</span>
             <span><kbd>Esc</kbd> Close</span>
           </div>
-          <div style="color: #64748b; font-size: 0.75rem;">Inwoovation Universal Spotlight (392 Indexed Pages)</div>
+          <div style="color: #64748b; font-size: 0.75rem;">Inwoovation Universal Spotlight (393 Indexed Pages)</div>
         </div>
       </div>
     `;
